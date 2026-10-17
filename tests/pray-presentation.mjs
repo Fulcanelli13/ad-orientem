@@ -361,7 +361,7 @@ assert.equal(directChildAnchor(body,{parentNode:null}),null,"foreign PRAY node i
 console.log("PASS locked v43.59.30 PRAY presentation extraction");
 
 const prayRuntimeSource=readFileSync("src/pray/presentation-runtime.js","utf8");
-for(const text of ["One Eucharistic family","5–15 MIN","OPEN-ENDED","Holy Hour","Four Ends","Traditional prayers for adoration and Benediction"]){
+for(const text of ["data-ao-adoration-chooser=\"quiet-v2\"","aoAdorationPrimaryGrid","Visit to the Blessed Sacrament","Silent Adoration","aoAdorationMethodsDisclosure","Guided Holy Hour","The Four Ends","Eucharistic Treasury"]){
   assert.ok(prayRuntimeSource.includes(text),"final Adoration donor landing lost: "+text);
 }
 assert.doesNotMatch(prayRuntimeSource,/data-p435930-go-ben><small>\$\{esc\(L\('PUBLIC RITE'/,"Benediction must not replace Holy Hour/Four Ends on the final Adoration landing");
