@@ -533,7 +533,7 @@ try{
   assert.equal(angelusRails.railPosition,"sticky","Angelus exact donor rail is no longer sticky with the reader");
   assert.equal(angelusRails.postureChannel,"posture","Angelus rail no longer identifies the persistent posture channel");
   assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.postureAsset),"Angelus posture slot is not using the canonical posture bank");
-  assert.ok(angelusRails.slotHeight>=54,"Angelus phone ritual slot collapsed below donor-readable geometry");
+  assert.ok(angelusRails.slotHeight>=44,"Angelus compact posture cue must remain at least a 44px touch target: "+JSON.stringify(angelusRails));
   assert.equal(angelusRails.incarnationUnits,1,"Angelus lost the unique Incarnation focus marker");
   assert.equal(angelusRails.genericAngelusContext,0,"Angelus regained the later generic devotional context card");
   assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");
