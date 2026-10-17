@@ -96,6 +96,29 @@ export const ADORATION_FOLIO_CSS=String.raw`
 #aoPray435930 .aoAdorationQuietScreen h2{font:400 clamp(28px,7vw,39px)/1.25 Georgia,serif;color:var(--text,#f0e5d7);margin:22px 0 12px}
 #aoPray435930 .aoAdorationQuietScreen p{max-width:30ch;color:var(--muted,#aca39a);font:italic 15px/1.65 Georgia,serif}
 #aoPray435930 .aoAdorationQuietScreen .aoAdorationQuietExit{margin-top:75px}
+/* Canonical rails float on phones. Keep the actual prayer lines clear. */
+@media(max-width:560px){
+ #aoPray435930 .aoP435930AdorationReader[data-ao-adoration-folio=v1] .aoDevoCardScroll{
+  padding-left:clamp(40px,11vw,48px)!important;
+  padding-right:clamp(40px,11vw,48px)!important;
+ }
+}
+/* User-requested silence must cover both rails and global navigation, not merely
+   create an empty panel surrounded by navigation controls. */
+#aoPray435930:has(.aoAdorationQuietScreen){z-index:2147482000!important}
+#aoPray435930 .aoAdorationQuietScreen{
+ position:fixed!important;inset:0!important;width:100vw!important;
+ max-width:none!important;max-height:none!important;min-height:100dvh!important;
+ z-index:2147482001!important;box-sizing:border-box!important;
+ padding:clamp(36px,7dvh,80px) 17px!important;
+ background:radial-gradient(ellipse 42% 28% at 50% 46%,
+  color-mix(in srgb,var(--liturgical,#bb9f78) 6%,#080c12),#080c12 83%)!important;
+ overflow-y:auto;overscroll-behavior:contain;
+}
+#aoPray435930 .aoAdorationQuietScreen .aoAdorationQuietExit{
+ margin-top:clamp(40px,10dvh,110px)!important;
+}
+
 @media(max-width:360px){
  #aoPray435930 .aoAdorationChooser .aoP435930BigGrid{grid-template-columns:1fr}
  #aoPray435930 .aoAdorationChooser .aoP435930BigGrid button{min-height:96px}
