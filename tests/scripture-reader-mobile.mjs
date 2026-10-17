@@ -453,6 +453,33 @@ try{
   await page.locator("#module").selectOption("historia");
   await page.waitForFunction(()=>document.querySelector("#linkedObject")?.options?.length===151,null,{timeout:18000});
   assert.equal(await page.locator("#linkedObject option").count(),151,"Reuse all 151 Atlas event IDs");
+  await page.locator("#historiaAuditUnit option[value='H42-02']").waitFor({state:"attached",timeout:12000});
+  await page.locator("#historiaAuditUnit").selectOption("H42-02");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("6 source fragments loaded"),
+    null,{timeout:20000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),6);
+  assert.ok(await page.locator("#historiaSequence .gapNote").count()>=2,
+    "Shortened Daniel must label omitted Scripture");
+  assert.match(await page.locator("#historiaSequence").innerText(),/3:92/);
+  await page.locator("#historiaAuditUnit").selectOption("H42-07");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("19 source fragments loaded"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),19);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Esther 11:1–10/);
+  const estherAudit=page.locator("#historiaSequence .auditSegment").first();
+  assert.match(await estherAudit.innerText(),/CPDV|Mordecai|Esther/i);
+  await estherAudit.getByRole("button",{name:"Rate / inspect this extract"}).click();
+  await page.waitForFunction(()=>document.querySelector("#resultHeading")?.textContent==="Esther 4:5–7",
+    null,{timeout:12000});
+  await page.locator("#rating").selectOption("4");
+  await page.locator("#saveReview").click();
+  const auditSaved=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-mining-review-v1")));
+  assert.ok(auditSaved.some(r=>r.originModule==="historia"&&r.originId==="H42-07"&&
+    r.reference==="Esther 4:5–7"&&r.referenceEdition==="cpdv-2009"));
+  assert.deepEqual(pageErrors,[],"Historia corrected verse-reading audit must not produce browser errors");
+
   await page.locator("#module").selectOption("novena");
   await page.locator("#linkedObject option[value='annunciation']").waitFor({state:"attached",timeout:12000});
   await page.locator("#linkedObject").selectOption("annunciation");
