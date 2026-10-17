@@ -9,7 +9,7 @@ const el=(doc,id)=>doc.getElementById(id);
 function load(win){
  try{return JSON.parse(win.sessionStorage?.getItem(KEY)||"null");}catch{return null;}
 }
-export function mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigate}){
+export function mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigate,onModeChange=()=>{}}){
  const doc=win.document;
  const director=createVisibleMassDialogueDirector(graph,pilot,answerIds,{initialState:load(win)});
  const registry=new Map(pilot.questions.map(q=>[q.id,q]));
@@ -50,7 +50,7 @@ export function mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigat
    // dismissed. The visitor must never resume a skipped path to switch tracks.
    for(const route of st.availableRoutes){
      const action=button(route.title.en+(route.unread?"":" · nothing new"),
-       ()=>{director.chooseTrail(route.id);save();render();},
+       ()=>{director.chooseTrail(route.id);save();render();onModeChange("discover");},
        {pressed:route.id===st.active&&st.visible});
      action.dataset.trail=route.id;routes.appendChild(action);
    }
@@ -76,8 +76,8 @@ export function mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigat
      prompt.textContent="No new suggestions on this trail. Switch paths, revisit a discovery, or explore freely.";
    }
    actions.append(
-     button("Skip this path",()=>{director.skipTrail();save();render();},{kind:"guide-quiet"}),
-     button("Explore freely",()=>{director.leaveGuide();save();render();},{kind:"guide-quiet"})
+     button("Skip this path",()=>{director.skipTrail();save();render();onModeChange("explore");},{kind:"guide-quiet"}),
+     button("Explore freely",()=>{director.leaveGuide();save();render();onModeChange("explore");},{kind:"guide-quiet"})
    );
    for(const relation of director.related().slice(0,2)){
      const source=registry.get(relation.questionId);
@@ -95,19 +95,20 @@ export function mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigat
      el(doc,"guide-routes")?.querySelector?.("button")?.focus?.({preventScroll:true});
      return;
    }
-   if(st.visible)director.leaveGuide();
-   else director.resume();
+   if(st.visible){director.leaveGuide();onModeChange("explore");}
+   else {director.resume();onModeChange("discover");}
    save();render();
  };
  render();
  return Object.freeze({
    status:()=>director.status(),
    serialize:()=>director.serialize(),
-   chooseTrail(id){const ok=director.chooseTrail(id);if(ok){save();render();}return ok;},
+   chooseTrail(id){const ok=director.chooseTrail(id);if(ok){save();render();onModeChange("discover");}return ok;},
    nextSuggestion:()=>director.nextSuggestion(),
    explore:go,
    markRead(id){const changed=director.markRead(id);if(changed){save();render();}return changed;},
    show(){const ok=director.resume();if(ok){save();render();}return ok;},
+   hide(){director.leaveGuide();save();render();return true;},
    render,
    // No review UI can cause automatic publication of the research answers.
    publication:"RESEARCH_ONLY_NEVER_PUBLICATION"
