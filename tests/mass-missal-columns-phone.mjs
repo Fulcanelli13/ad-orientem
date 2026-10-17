@@ -100,6 +100,33 @@ try{
     "Missal chalice context language or form is wrong");
   assert.ok(!(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)>1),
     "Long practical Missal description overflows "+width+"px viewport");
+  // Avoid duplicating an action already printed as a bracketed source rubric.
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.010.2"));
+  await page.waitForFunction(()=>document.querySelectorAll(
+    '.ao-reader-paragraph').length>0,null,{timeout:5000});
+  assert.equal(await page.locator(".ao-missal-inline-rubrics").count(),0,
+    "Bracketed paten action is already a Missal rubric; do not reprint it");
+  // Insert unobtrusive sourced directions at actual prayer words.
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.010.5"));
+  await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
+    .some(x=>/blesses the offerings|bénit les offrandes/i.test(x.textContent)),
+    null,{timeout:5000});
+  const offertory=await page.evaluate(()=>({
+    notes:[...document.querySelectorAll(".ao-missal-rubric-action")].map(x=>x.textContent),
+    link:document.querySelector(".ao-missal-inline-rubrics a")?.getAttribute("href"),
+    width:document.documentElement.scrollWidth-innerWidth,
+  }));
+  assert.ok(offertory.notes.every(x=>lang==="fr"?x.startsWith("Le prêtre "):x.startsWith("The priest ")),
+    "In-page priest rubrics must be localized");
+  assert.match(offertory.link||"",/ritus-servandus/i);
+  assert.ok(offertory.width<=1,"Missal inline Offertory rubric overflows phone width");
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.014.3"));
+  await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
+    .some(x=>/inclines his head|incline la tête/i.test(x.textContent)),
+    null,{timeout:5000});
+  assert.equal(await page.locator(".ao-canon-inline-rubrics").count(),0,
+    "Missal should use restrained book rubric, not duplicate LIVE Canon rail note");
+
   assert.deepEqual(errors,[],width+"px Missal runtime errors: "+errors.join(" | "));
   await context.close();
  }

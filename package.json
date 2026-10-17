@@ -159,7 +159,7 @@
     "test:reader-rubric-events": "node tests/reader-rubric-events.mjs",
     "test:canon-rubric-review": "node tests/reader-canon-rubric-review.mjs",
     "test:canon-rubric-adjudication": "node tests/reader-canon-rubric-adjudication.mjs",
-    "test:canon-published-rubrics": "node tests/reader-canon-published-rubrics.mjs",
+    "test:canon-published-rubrics": "node tests/reader-canon-published-rubrics.mjs && node tests/missal-inline-rubrics.mjs",
     "test:canon-minister-branches": "node tests/reader-canon-minister-branches.mjs",
     "test:canon-viii8-attendants": "node tests/reader-canon-viii8-elevation-attendants.mjs",
     "test:canon-20-minister-acceptance": "node tests/reader-canon-20-minister-stage-acceptance.mjs",
