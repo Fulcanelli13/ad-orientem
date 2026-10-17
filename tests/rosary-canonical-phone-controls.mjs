@@ -397,10 +397,14 @@ try{
        "Historical Douay–Rheims must remain a normal reading option");
      assert.equal(await restored.locator("[data-ao-rosary-english-edition]").count(),2);
      await restored.locator(".aoRosaryBeadVerse").first().waitFor({state:"visible",timeout:12000});
+     await restored.screenshot({path:resolve(captures,"rosary-bead-douay-390.png"),timeout:14000});
+     await page.screenshot({path:resolve(captures,"rosary-bead-douay-phone-390.png"),timeout:14000});
      const rosaryBead=await page.evaluate(()=>window.AO_ROSARY_V381.state().step);
      await restored.locator('[data-ao-rosary-english-edition="cpdv-2009"]').click();
      await restored.locator(".aoRosaryBeadVerse").first().waitFor({state:"visible",timeout:12000});
      assert.match(await restored.locator(".aoRosaryBeadScriptureLabel").innerText(),/CPDV/);
+     await restored.screenshot({path:resolve(captures,"rosary-bead-cpdv-390.png"),timeout:14000});
+     await page.screenshot({path:resolve(captures,"rosary-bead-cpdv-phone-390.png"),timeout:14000});
      assert.equal(await restored.locator('[data-ao-rosary-english-edition="cpdv-2009"]').getAttribute("aria-pressed"),"true");
      assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-v1")).englishEdition),"cpdv-2009",
        "Chosen readable edition should be remembered by the shared Bible reader");
@@ -434,6 +438,14 @@ try{
    await beadSource.click();
    const scripture=page.locator("#ao-scripture-overlay");
    await scripture.waitFor({state:"visible",timeout:10000});
+   if(width===390){
+     await scripture.screenshot({path:resolve(captures,"scripture-reader-douay-390.png"),timeout:14000});
+     await scripture.locator('[data-scripture-english-edition="cpdv-2009"]').click();
+     await scripture.locator('[data-scripture-witness-unreviewed="cpdv-2009"]').waitFor({state:"visible",timeout:16000});
+     await scripture.screenshot({path:resolve(captures,"scripture-reader-cpdv-390.png"),timeout:14000});
+     await scripture.locator('[data-scripture-english-edition="dr-challoner"]').click();
+     await scripture.locator('[data-scripture-witness-unreviewed="dr-challoner"]').waitFor({state:"visible",timeout:16000});
+   }
    assert.equal(await scripture.locator("[data-scripture-context-depth='selected']").count(),1,
      "Bead source opened an external page or another Scripture reader");
    await scripture.locator("[data-scripture-context-depth='chapter']").click();
