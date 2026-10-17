@@ -49,8 +49,12 @@ try{
   assert.equal(baseline.count,32,width+" cannot navigate all 32 original Guide moments");
   assert.equal(baseline.explorer?.indexView,"map",width+" must open the visual Map by default");
   assert.equal(baseline.explorer?.explanatoryPrayerBlocks,84,width+" missing complete prayer explanations");
+  assert.equal(baseline.explorer?.approvedDeepStudyBlocks,0,
+    width+" must not expose unapproved Roman Canon studies");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-phase]").count(),5,
     width+" missing one of five phase navigation controls");
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-study-owner]").count(),0,
+    "Unapproved draft commentary must not appear in the public map");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
     width+" lost a canonical text in expanded map ownership");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-stage]").count(),0,
