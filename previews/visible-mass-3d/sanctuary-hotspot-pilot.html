@@ -190,6 +190,18 @@ body[data-experience=discover] .info{min-height:0}
  body[data-experience=understand] .info.has-selection{max-height:min(38dvh,350px)}
 }
 @media(prefers-reduced-motion:reduce){.marker{transition:none}.guide-dock *{scroll-behavior:auto!important}}
+
+/* M4 photographs have distinct scene identities, not transferable photo hotspots. */
+.photo-mode-nav{display:flex;gap:7px;margin:9px 0;overflow-x:auto;scrollbar-width:thin}
+.photo-mode-nav button{flex:0 0 auto;min-height:40px;border:1px solid #45525e;border-radius:7px;background:#111922;color:var(--muted);padding:8px 12px;font:12px system-ui,sans-serif}
+.photo-mode-nav button[aria-pressed=true]{border-color:var(--gold);background:#252725;color:var(--text)}
+.panorama-stage{min-height:250px;background:#05080c;padding:10px}
+.panorama-stage #panorama-mount{max-width:100%;min-height:190px}
+.panorama-stage canvas{cursor:grab}.panorama-stage canvas:active{cursor:grabbing}
+.panorama-actions{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0}
+.panorama-actions button{min-width:43px;min-height:43px;border:1px solid #4b5762;color:var(--text);background:#17202a;border-radius:6px;font:15px system-ui,sans-serif}
+.panorama-notice{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:7px 2px 3px}
+@media(max-width:600px){.panorama-stage{padding:6px}.photo-mode-nav{gap:4px}.photo-mode-nav button{padding:8px}}
 </style>
 </head>
 <body>
@@ -211,7 +223,24 @@ body[data-experience=discover] .info{min-height:0}
 <p class="occasion-hint" id="occasion-hint" aria-live="polite" hidden>Occasion study only: the original Brompton photograph has not been altered to represent this rite.</p>
 <main>
 <section aria-label="Church photograph and clickable objects">
+<div class="photo-mode-nav" id="photo-mode-nav" role="group" aria-label="Choose an original church photograph">
+<button type="button" data-photo-mode="still" aria-pressed="true">High altar · 6 objects</button>
+<button type="button" data-photo-mode="brompton" aria-pressed="false">Brompton · 360°</button>
+<button type="button" data-photo-mode="newman" aria-pressed="false">Dublin · 360°</button>
+</div>
 <div class="photo-shell">
+<div class="panorama-stage" id="panorama-stage" hidden tabindex="0" role="region" aria-label="Genuine fixed-position 360-degree photographic interior">
+<div id="panorama-mount" aria-live="off"></div>
+<div class="panorama-actions" role="group" aria-label="Adjust panorama view">
+<button type="button" data-pan="left" aria-label="Look left">←</button>
+<button type="button" data-pan="right" aria-label="Look right">→</button>
+<button type="button" data-pan="up" aria-label="Look up">↑</button>
+<button type="button" data-pan="down" aria-label="Look down">↓</button>
+<button type="button" data-pan="closer" aria-label="Zoom in">+</button>
+<button type="button" data-pan="farther" aria-label="Zoom out">−</button>
+</div>
+<p class="panorama-notice" id="panorama-notice" role="status">Genuine photographic panorama, from a single fixed camera position. No simulated walking.</p>
+</div>
 <div class="photo-viewport" id="photo-viewport" role="region" tabindex="0" aria-label="Pan horizontally to inspect high altar photograph">
 <div class="photo-canvas" id="photo-canvas">
 <img id="altar-photo" alt="Photograph of the high altar of Brompton Oratory, with altar crucifix, candlesticks, ornamental retable, altar steps and communion rail" width="4797" height="3219" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/The_High_Altar_-_geograph.org.uk_-_6213275.jpg/1280px-The_High_Altar_-_geograph.org.uk_-_6213275.jpg" loading="eager" decoding="async">
@@ -295,7 +324,7 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null,experience:"explore",returnExperience:"explore",studyLang:new URLSearchParams(location.search).get("lang")==="fr"?"fr":"en",m3Index:null};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",photoMode:"still",returnPhotoMode:"still",loaded:false,guide:null,experience:"explore",returnExperience:"explore",studyLang:new URLSearchParams(location.search).get("lang")==="fr"?"fr":"en",m3Index:null};
 const GUIDED_OBJECTS=new Set(["AL01","AL06","AL07","AL19","SN02","SN04"]);
 function clearGuidedPreview(){
  delete $("photo-canvas").dataset.guidePreview;
@@ -303,7 +332,10 @@ function clearGuidedPreview(){
 }
 function previewGuideObject(id){
  const spot=SPOTS.find(s=>s.id===id);
- if(!spot||state.view!=="church")return false;
+ if(!spot)return false;
+ // Guided focus belongs only to the exact six-object still, never the 360 panorama.
+ if(state.view==="panorama")showChurch();
+ if(state.view!=="church")return false;
  clearGuidedPreview();
  $("photo-canvas").dataset.guidePreview=id;
  const button=document.querySelector('.marker[data-object="'+id+'"]');
@@ -338,13 +370,48 @@ function findSpot(id){
  if(other)return {id:other.object_id,g:other.glossary_id,title:other.label,match:other.glossary_match,referenceOnly:true};
  return null;
 }
+let panoramaController=null;
+function syncPhotoNav(){
+ for(const b of $("photo-mode-nav").querySelectorAll("button"))
+  b.setAttribute("aria-pressed",String(b.dataset.photoMode===state.photoMode));
+}
 function showChurch(){
- state.view="church";
+ state.view="church";state.photoMode="still";
+ panoramaController?.hide();
+ $("panorama-stage").hidden=true;
  $("inspection-stage").hidden=true;$("photo-viewport").hidden=false;
  $("photo-caption").textContent=CHURCH.caption;$("photo-credit").textContent=CHURCH.credit;$("photo-credit").href=CHURCH.url;
+ syncPhotoNav();
+}
+async function showPanorama(mode){
+ if(!["brompton","newman"].includes(mode))return false;
+ state.photoMode=mode;state.view="panorama";
+ $("panorama-stage").hidden=false;$("photo-viewport").hidden=true;$("inspection-stage").hidden=true;
+ $("panorama-notice").textContent="Loading genuine 360° source photograph…";
+ syncPhotoNav();
+ const sceneId=mode==="brompton"?"BROMPTON_PANO":"NEWMAN_360";
+ try{
+  if(!panoramaController){
+   const mod=await import("./visible-mass-m4-panorama.mjs");
+   panoramaController=mod.createM4Panorama({
+    mount:$("panorama-mount"),notice:$("panorama-notice"),
+    onScene:scene=>{
+     $("photo-caption").textContent=scene.caption;
+     $("photo-credit").textContent=scene.creator+" · "+scene.licence+" ↗";
+     $("photo-credit").href=scene.source;
+    }
+   });
+  }
+  if(state.view!=="panorama"||state.photoMode!==mode)return false;
+  return await panoramaController.open(sceneId);
+ }catch(error){
+  $("panorama-notice").textContent="360° photograph unavailable; open the original source credit or return to the high altar. "+String(error.message||error);
+  return false;
+ }
 }
 function showInspection(asset){
  state.view="inspection";
+ panoramaController?.hide();$("panorama-stage").hidden=true;
  $("photo-viewport").hidden=true;$("inspection-stage").hidden=false;
  $("inspection-failed").hidden=true;$("inspection-photo").hidden=false;
  $("inspection-type").textContent=asset.asset_kind==="HISTORICAL_ILLUSTRATION"?"Historical reference illustration":"Separate reference photograph";
@@ -369,7 +436,7 @@ function setExperience(mode){
 function select(id,from,{guided=false}={}){
  const spot=findSpot(id);if(!spot)return;
  if(spot.inspection)showInspection(spot.inspection);else if(!spot.referenceOnly)showChurch();
- if(!state.selected)state.returnScroll=window.scrollY;
+ if(!state.selected){state.returnScroll=window.scrollY;state.returnPhotoMode=state.photoMode;}
  state.returnExperience=guided?"discover":(state.experience==="discover"?"discover":"explore");
  state.selected=id;state.question=null;state.showAll=false;
  if(from)state.returnFocus=from;
@@ -605,7 +672,7 @@ function renderQuestions(){
  }
 }
 function closeCard(){
- state.selected=null;state.question=null;showChurch();$("info").classList.remove("has-selection");document.body.classList.remove("object-open");state.returnFocus=state.returnFocus||$("object-choices");
+ state.selected=null;state.question=null;const returnPhotoMode=state.returnPhotoMode;showChurch();if(returnPhotoMode!=="still")void showPanorama(returnPhotoMode);$("info").classList.remove("has-selection");document.body.classList.remove("object-open");state.returnFocus=state.returnFocus||$("object-choices");
  const restoreY=state.returnScroll;state.returnScroll=0;
  $("intro-card").hidden=false;$("object-card").hidden=true;
  delete $("photo-canvas").dataset.guidedFocus;
@@ -622,6 +689,15 @@ for(const spot of SPOTS){
  b.onclick=()=>select(spot.id,b);$("hotspots").appendChild(b);
  const c=document.createElement("button");c.type="button";c.textContent=spot.title;c.onclick=()=>select(spot.id,c);$("object-choices").appendChild(c);
 }
+const PAN_DELTAS={left:[-.13,0,0],right:[.13,0,0],up:[0,.12,0],down:[0,-.12,0],closer:[0,0,-5],farther:[0,0,5]};
+for(const b of $("photo-mode-nav").querySelectorAll("button"))b.onclick=()=>{
+ if(state.selected)closeCard();
+ const mode=b.dataset.photoMode;
+ if(mode==="still")showChurch();else void showPanorama(mode);
+};
+for(const b of document.querySelectorAll("[data-pan]"))b.onclick=()=>{
+ if(state.view==="panorama")panoramaController?.adjust(...PAN_DELTAS[b.dataset.pan]);
+};
 $("guide-return").onclick=()=>{
  closeCard();setExperience("discover");
  if(state.guide?.status().active)state.guide.show();
@@ -723,7 +799,7 @@ if(window.frameElement)document.body.classList.add("embedded");
 setExperience("explore");
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
- status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,studyLanguage:state.studyLang,translatedSourceCandidates:state.m3Index?.count??0,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,studyLanguage:state.studyLang,photoMode:state.photoMode,panorama:panoramaController?.status()??null,translatedSourceCandidates:state.m3Index?.count??0,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  experience:()=>state.experience,
  guideStatus:()=>state.guide?.status()??null,
  chooseTrail:id=>state.guide?.chooseTrail(id)??false,
