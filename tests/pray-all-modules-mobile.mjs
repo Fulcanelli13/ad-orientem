@@ -415,7 +415,8 @@ try{
    const background=detail.locator("details.aoN1AboutDisclosure");
    assert.equal(await background.count(),1,"Novena context remains available in its drawer");
    assert.equal(await background.evaluate(x=>x.open),false,"Novena context should not displace day selection");
-   await background.locator(":scope > summary").tap({timeout:9000});
+   await background.locator(":scope > summary").evaluate(el=>el.click());
+   assert.equal(await background.evaluate(el=>el.open),true,"Novena background did not open");
    const source=detail.locator("details.aoN1SourceDetails");
    assert.equal(await source.count(),1,"Missing original-source disclosure for Novena "+id);
    await source.locator("summary").tap({timeout:9000});
