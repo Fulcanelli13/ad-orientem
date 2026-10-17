@@ -174,7 +174,7 @@ try{
     await indirect.click();
     const scripture=page.locator("#ao-scripture-overlay");
     await scripture.waitFor({state:"visible",timeout:12000});
-    assert.match(await scripture.locator(".aoScriptureContextTitle").innerText(),/Romans 12:1/);
+    assert.match(await scripture.locator(".aoScriptureReading h3").innerText(),/Romans 12:1/);
     await scripture.locator('[data-scripture-context-depth="chapter"]').click();
     assert.ok(await scripture.locator(".aoScriptureVerse").count()>10,"MF03 biblical chapter unavailable");
     await scripture.locator("[data-scripture-close]").click();
