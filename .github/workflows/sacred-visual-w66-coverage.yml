@@ -11,6 +11,10 @@ on:
       - "tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs"
       - "data/research/sacred-visual-w68-2026-runtime-proper-and-151-atlas-artwork-crosswalk-20261015.v1.json"
       - "tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs"
+      - "data/research/sacred-art-class-i-53-release-intake-20261017.v1.json"
+      - "data/calendar/sacred-art-certified-media.v1.json"
+      - "src/calendar/sacred-art-release-selector.js"
+      - "tests/sacred-art-class-i-53-release-gates.mjs"
   workflow_dispatch:
 
 permissions:
@@ -30,3 +34,4 @@ jobs:
           node tests/sacred-visual-w66-visual-demand-preaudit.mjs
           node tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs
           node tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs
+          node tests/sacred-art-class-i-53-release-gates.mjs
