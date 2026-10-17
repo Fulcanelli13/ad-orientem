@@ -140,7 +140,10 @@ try{
       assert.equal(observed.active,expectVisible?"true":"false",
         "Wrong Requiem minister visibility at "+cue);
       if(expectVisible){
-        assert.match(observed.text??"",part);
+        // The compact rail intentionally shows actor + short label only;
+        // the sourced full action remains available in the native projection.
+        assert.match(observed.minister?.action??"",part);
+        assert.match(observed.text??"",/REQUIEM/i);
         assert.match(observed.aria??"",/not independently observed/i);
         assert.ok(observed.minister);
       }else{
