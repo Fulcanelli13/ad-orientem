@@ -554,6 +554,13 @@ assert.match(runtime,/<details class="aoCalMonthUtilities"/,"Export and direct-d
 assert.match(runtime,/calendarMonthView==="calendar"\?"":"<\/details>"/,
   "Month grid must retain its existing immediately available export and exact-date actions");
 assert.match(runtime,/\.aoCalMonthIndexCompact \.aoCalMonthIndexDay/,"Compact observance layout must be scoped to month indexes");
+assert.match(runtime,/\.aoCalMonthIndexCompact \.aoCalMonthIndexDay\{[^}]*min-height:61px!important/,
+  "Month register row must remain compact without falling below the 44px touch minimum");
+assert.match(runtime,/\.aoCalMonthIndexCompact \.aoCalMonthSaintDetail\{[^}]*min-width:48px!important/,
+  "Saint biography control must remain a 48px separately tappable target on desktop");
+assert.match(runtime,/@media\(max-width:700px\)[\s\S]*?\.aoCalMonthIndexCompact \.aoCalMonthSaintDetail\{[^}]*min-width:46px!important/,
+  "Mobile biography control must retain at least a 44px touch target");
+
 
 console.log("PASS language-neutral observed cycle and unclassified-day disclosure");
 
