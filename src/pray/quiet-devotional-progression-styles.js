@@ -6,11 +6,11 @@ export const QUIET_DEVOTIONAL_PROGRESSION_CSS=String.raw`
 /* Progressive horizon: abstract atmospheric light, not a drawn landscape. */
 #aoPray435930 [data-ao-quiet-daily-horizon]{
   --ao-sky-top:#111b29;--ao-sky-mid:#283440;--ao-sky-low:#50494a;--ao-sky-light:#916b60;
-  margin:5px 0 11px;flex:0 0 auto;min-width:0;
+  margin:3px 0 5px;flex:0 0 auto;min-width:0;
 }
 #aoPray435930 .aoQuietHorizonCanvas{
   position:relative;isolation:isolate;overflow:hidden;
-  height:clamp(90px,13.5dvh,130px);
+  height:clamp(86px,10dvh,98px);
   border-radius:3px;
   border:1px solid color-mix(in srgb,var(--liturgical,#ba9e71) 15%,transparent);
   background:linear-gradient(180deg,var(--ao-sky-top),var(--ao-sky-mid) 59%,var(--ao-sky-low));
