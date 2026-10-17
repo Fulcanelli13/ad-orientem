@@ -53,9 +53,10 @@ export function verifiedMassExplorerPrayerReadings(registry,catalog){
  for(const r of registry.entries){
   const original=catalog.byBlock.get(r?.block_id);
   const status=original?.source?.Branch_Status;
-  const expectedStatus=r.block_id==="AO.SM.B077"||
-    r.block_id==="AO.SM.B078"||r.block_id==="AO.SM.B079"?
-      "LOCAL_CUSTOM_PRE1960_SURVIVAL":"NORMATIVE_1962";
+  const expectedStatus=["AO.SM.B077","AO.SM.B078","AO.SM.B079"].includes(r.block_id)?
+      "LOCAL_CUSTOM_PRE1960_SURVIVAL":
+      ["AO.SM.B013","AO.SM.B036"].includes(r.block_id)?
+        "CONDITIONAL_1962":"NORMATIVE_1962";
   const branch=r?.conditionality;
   if(!/^AO\.SM\.B\d{3}$/.test(r?.block_id||"")||
      !/^AO\.FORM\.PRAYER\./.test(r?.id||"")||
@@ -70,7 +71,9 @@ export function verifiedMassExplorerPrayerReadings(registry,catalog){
      (r.source_status&&r.source_status!==status)||
      (branch!==null&&branch!==undefined&&branch!=="STANDARD_FIXED"&&!Object.hasOwn(conditional,branch))||
      (expectedStatus==="LOCAL_CUSTOM_PRE1960_SURVIVAL"&&branch!=="OPTIONAL_LOCAL_OLDER_CUSTOM")||
-     (expectedStatus==="NORMATIVE_1962"&&branch==="OPTIONAL_LOCAL_OLDER_CUSTOM"))
+     (expectedStatus==="CONDITIONAL_1962"&&branch!=="INCENSATION_DEPENDENT")||
+     (expectedStatus==="NORMATIVE_1962"&&(branch==="OPTIONAL_LOCAL_OLDER_CUSTOM"||
+       branch==="INCENSATION_DEPENDENT")))
      return empty();
   totals[r.family]=(totals[r.family]||0)+1;
   out.set(r.block_id,Object.freeze({
