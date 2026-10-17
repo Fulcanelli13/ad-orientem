@@ -57,11 +57,18 @@ const STYLE=`
 }
 `;
 
-export function canonicalManualFollowContext({mode=null,curated=false,cueId=null,sectionId=null,
-  specialRite=false}={}){
+export function canonicalManualFollowContext({mode=null,curated=false,cueId=null,
+  sectionId=null,presentationCardId=null,specialRite=false}={}){
  if(String(mode??"").toUpperCase()!=="LIVE"||curated!==true||specialRite===true)return null;
- if(cueId==="AO.SM.C0174"&&sectionId==="AO.CANON.06")return "HOST";
- if(cueId==="AO.SM.C0181"&&sectionId==="AO.CANON.07")return "CHALICE";
+ // CanonicalSourceId is sometimes the underlying AO.CARD.* macro. The
+ // 65-curated card ID always retains the actual AO.CANON.06/.07 division.
+ const source=String(sectionId??""),card=String(presentationCardId??"");
+ const isHost=source==="AO.CANON.06"||
+   /^AO\.LIVECURATED\.AO\.CANON\.06\.[0-9]+$/.test(card);
+ const isChalice=source==="AO.CANON.07"||
+   /^AO\.LIVECURATED\.AO\.CANON\.07\.[0-9]+$/.test(card);
+ if(cueId==="AO.SM.C0174"&&isHost)return "HOST";
+ if(cueId==="AO.SM.C0181"&&isChalice)return "CHALICE";
  return null;
 }
 
