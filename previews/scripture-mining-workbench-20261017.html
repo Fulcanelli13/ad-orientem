@@ -118,7 +118,7 @@ for(const id of keys){$("mystery").append(new Option(idLabel(id),id));$("destina
 for(let i=1;i<=10;i++){$("bead").append(new Option(String(i),String(i)));$("destinationBead").append(new Option(String(i),String(i)))}
 $("mystery").value="joy1";$("destination").value="joy1";
 const params=new URLSearchParams(location.search);
-if(Object.hasOwn(SCRIPTURE_MINING_MODULES,params.get("module"))))$("module").value=params.get("module");
+if(Object.hasOwn(SCRIPTURE_MINING_MODULES,params.get("module")))$("module").value=params.get("module");
 if(keys.includes(params.get("mystery")))$("mystery").value=params.get("mystery");
 if(Number.isInteger(Number(params.get("bead")))&&+params.get("bead")>=1&&+params.get("bead")<=10)$("bead").value=params.get("bead");
 const bridgeFetch=(url,opts)=>fetch(typeof url==="string"&&url.startsWith("/data/")?new URL(url.slice(1),appRoot):url,opts);
