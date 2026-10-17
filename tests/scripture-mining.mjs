@@ -722,8 +722,8 @@ assert.equal(desk.counts.movements,37);
 assert.equal(desk.counts.essentialUnits,93);
 assert.equal(desk.counts.originalBContextUnits,67);
 assert.deepEqual(desk.counts.bContextDisposition,{
- MANDATORY_BRIEF_CONTEXT:31,GENEALOGY_NAVIGATION_NOT_PROSE:2,
- TYPOLOGICAL_REFERENCE_ONLY:5,NO_MAIN_CONTEXT_NEEDED:29});
+ MANDATORY_BRIEF_CONTEXT:29,GENEALOGY_NAVIGATION_NOT_PROSE:2,
+ TYPOLOGICAL_REFERENCE_ONLY:5,NO_MAIN_CONTEXT_NEEDED:31});
 assert.equal(desk.counts.independentStoryUnitsStillC,54);
 assert.equal(desk.counts.noFeaturedReadingUnitsStillD,3);
 assert.equal(desk.counts.bridgeSourceCandidates,11);
@@ -750,7 +750,7 @@ for(const decision of desk.contextDecisions){
  }
 }
 assert.equal(seenBDesk.size,67);
-assert.equal(keepB,31);
+assert.equal(keepB,29);
 assert.equal(desk.contextDecisions.find(d=>d.unitId==="H07-01").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED",
  "Ark construction is already supplied by the original Genesis 6 bridge; never repeat it");
 assert.equal(desk.contextDecisions.find(d=>d.unitId==="H06-01").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED",
@@ -790,6 +790,13 @@ assert.equal(seenBridge.size,11);
 assert.equal(desk.movementDecisions.length,37);
 assert.ok(desk.movementDecisions.every(x=>!x.mainNarrativeReadyForFullLiteraryReading));
 assert.ok(desk.genreAndOwnershipGuards.some(g=>g.issue==="Narrative without filler"));
+assert.deepEqual(desk.contextBatch10_19.retiredDuplicateNotes,["H34-02","H48-02"]);
+assert.equal(desk.contextDecisions.find(x=>x.unitId==="H34-02").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED");
+assert.equal(desk.contextDecisions.find(x=>x.unitId==="H48-02").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED");
+assert.ok(desk.contextDecisions.filter(x=>x.editorialBatch==="MOVEMENTS_10_19"&&x.proposedReadingTransition)
+ .every(x=>/\((?:Exodus|Numbers|Deuteronomy|Ruth|1 Samuel|2 Samuel|1 Kings|Isaiah|Nehemiah|1 Maccabees|2 Maccabees|Luke|Matthew) /.test(x.contextPurpose)),
+ "Context prose must name genuine biblical sources, not issue reader-facing editor instructions");
+
 
 await import("./historia-essential-economy.mjs");
 await import("./historia-continuous-proof.mjs");
