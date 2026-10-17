@@ -65,7 +65,7 @@ import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
-import { resolvePriestChantAction, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
+import { resolvePriestChantAction, resolvePriestChantVoice, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
@@ -1472,7 +1472,6 @@ export async function mountNativeReaderPreview({
     const response=transient.response;
     const bell=transient.bell;
     const cinematic=partCinematic ?? transient.cinematic;
-    const priestVoice=observedPriest?.priestVoice ?? owned.priestVoice;
     const priestPosition=observedPriest?.priestPosition ??
       (focusedFaithful?.conditionalSedilia
       ? Object.freeze({station:"SEDILIA",label:"AT SEDILIA",
@@ -1513,6 +1512,12 @@ export async function mountNativeReaderPreview({
       observation:observedPriestEvent,gestureMatrix:ready.data?.gestureMatrix,
       ordinaryAction:originalPriestAction
     });
+    const priestVoiceState=resolvePriestChantVoice({
+      form,cueId:activeCueId,sourceClock:sourceCueClocks.get(activeCueId)??null,
+      ordinaryVoice:owned.priestVoice,
+      observedPriestAction:priestLane,observation:observedPriestEvent
+    });
+    const priestVoice=observedPriest?.priestVoice??priestVoiceState.priestVoice;
     const priestEntrance=priestEntranceState.project();
     const preMassPriestAction=projectObservedPreMassPriestAction({
       state:priestEntrance,activeCueId,
@@ -1536,7 +1541,7 @@ export async function mountNativeReaderPreview({
       posture:focusedFaithful ? focusedFaithful.source : postureResolved.owner,
       schola:scholaProjection.ownership,
       priestEntrance:priestEntrance.sourceOwner,
-      priestVoice:observedPriest?.priestVoice ? "EXPLICIT_SOURCE_PRIEST_EVENT" : owned.ownership.priestVoice,
+      priestVoice:observedPriest?.priestVoice ? "EXPLICIT_SOURCE_PRIEST_EVENT" : priestVoiceState.owner==="EXISTING_SOURCE_VOICE" ? owned.ownership.priestVoice : priestVoiceState.owner,
       priestPosition:observedPriest?.priestPosition ? "EXPLICIT_SOURCE_PRIEST_EVENT" : owned.ownership.priestPosition,
       priestAction:observedPriest?.priestAction ? "EXPLICIT_SOURCE_PRIEST_EVENT" : preMassPriestAction
         ? "OBSERVED_PREMASS_PRIEST"
