@@ -81,6 +81,16 @@ try{
    assert.ok(scripture.overflow<=1,"Scripture horizontal overflow");
    await page.screenshot({path:resolve(artifactRoot,"scripture-"+width+".png"),
      fullPage:false,animations:"disabled"});
+   // Visual regression evidence: same passage, both genuine English editions,
+   // using the production one-tap reader selector rather than mock screens.
+   await page.locator('#ao-scripture-overlay [data-scripture-english-edition="cpdv-2009"]').click();
+   await page.locator("#ao-scripture-overlay [data-scripture-witness-unreviewed='cpdv-2009']")
+     .waitFor({state:"visible",timeout:12000});
+   await page.screenshot({path:resolve(artifactRoot,"scripture-cpdv-"+width+".png"),
+     fullPage:false,animations:"disabled"});
+   await page.locator('#ao-scripture-overlay [data-scripture-english-edition="dr-challoner"]').click();
+   await page.locator("#ao-scripture-overlay [data-scripture-witness-unreviewed='dr-challoner']")
+     .waitFor({state:"visible",timeout:12000});
    await page.evaluate(()=>window.AO_SCRIPTURE_APP_V1.close());
 
    const settingsOpen=await page.evaluate(()=>window.AO_SETTINGS_APP_V1.open("/settings/accessibility"));
