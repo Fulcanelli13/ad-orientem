@@ -23,7 +23,8 @@
     "essential": 93,
     "edited": 32,
     "protected": 35,
-    "unchanged": 26
+    "unchanged": 25,
+    "editionCorrections": 1
   },
   "candidateSourceEditions": [
     "cpdv-2009",
@@ -34,7 +35,20 @@
     "textCollation": false,
     "fullLiteraryReadAloud": false,
     "CatholicEditorialApproval": false,
-    "translationRightsApproval": false
+    "translationRightsApproval": false,
+    "explicitEditionBoundaryExceptions": [
+      {
+        "unitId": "H15-02",
+        "original": "Genesis 32:23–33",
+        "originalCandidateEdition": "crampon-1923",
+        "target": "Genesis 32:22–32",
+        "targetEditions": [
+          "cpdv-2009",
+          "dr-challoner"
+        ],
+        "status": "REFERENCE_BOUNDARY_RECONCILED_NOT_CERTIFIED_PRINTED_EDITIONS"
+      }
+    ]
   },
   "rules": [
     "Verse order preserved in every excerpt",
@@ -323,17 +337,23 @@
       "v18ChapterId": "H15",
       "scene": "Jacob wrestles and receives his name Israel",
       "proposedSelectedReferences": [
-        "Genesis 32:23–33"
+        "Genesis 32:22–32"
       ],
-      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
-      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Jacob wrestles and receives his name Israel.",
-      "editorReviewedForNarrativeEconomy": false,
+      "selectionStatus": "EDITION_AWARE_REFERENCE_CORRECTION",
+      "reason": "The original 32:23–33 follows the Crampon (French) 1923 numbering; CPDV and Douay–Rheims have the corresponding Jabbok encounter at Genesis 32:22–32. The CPDV/Douay first verse supplies Jacob crossing Jabbok; their verse 32 is the final dietary-custom explanation. Same source scene, no actual omitted verse. Historical source edition is probable, not certified.",
+      "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
       "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "originalReferenceEditionWorkingHypothesis": "crampon-1923",
+      "targetReferenceEditions": [
+        "cpdv-2009",
+        "dr-challoner"
+      ],
+      "originalEditionIndependentlyCertified": false
     },
     {
       "unitId": "H15-03",
