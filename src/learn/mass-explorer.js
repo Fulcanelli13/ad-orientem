@@ -119,8 +119,8 @@ function sourceBlockHtml(catalog,source,fr,selectedCalendarProper=null){
     return '<section id="ao-mx-prayer" class="aoMXText" data-ao-mx-anchor="prayer">'+
       '<h2>'+esc(source.Title)+'</h2>'+
       (selectedText||'<p class="aoMXQuiet">'+esc(pick(fr,
-        "No fully verified Proper for this selected Calendar day and ordinary Sung Mass is available here. The source text is never guessed or replaced.",
-        "Aucun Propre entièrement vérifié n’est disponible ici pour le jour choisi au Calendrier et la messe chantée ordinaire. Aucun texte n’est inventé ni substitué."))+'</p>')+
+        "This is a variable Proper text. No fully verified Proper for the selected Calendar day and ordinary Sung Mass is available here; no generic text is substituted.",
+        "Ce texte du Propre varie selon la Messe choisie. Aucun Propre entièrement vérifié n’est disponible ici pour le jour choisi au Calendrier et la messe chantée ordinaire ; aucun texte générique n’est substitué."))+'</p>')+
       '</section>';
   }
   const rows=(source.units||[]).filter(unit=>unit?.latin||unit?.english).map(unit=>{
