@@ -90,7 +90,8 @@ function collectParagraphs(body,id){
  for(const unit of body.querySelectorAll(".aoP435930PrayerUnit")){
   const voice=[...unit.querySelectorAll('[data-face-v] [data-ao-angelus-voice]')];
   const latin=[...unit.querySelectorAll('[data-face-la] [data-ao-angelus-voice]')];
-  const paragraphs=voice.length?voice:[unit];
+  const repeated=[...unit.querySelectorAll("[data-face-v] .aoFolioGloria")];
+  const paragraphs=voice.length?voice:repeated.length?repeated:[unit];
   // Focus the actual visible translation, not only the vernacular face.
   latin.forEach((line,i)=>{line.classList.add("aoDevoParagraph");
    line.dataset.aoDevoParagraph=String(all.length+i);
@@ -112,7 +113,7 @@ function visible(el){return Boolean(el&&el.getClientRects().length)}
  * recitation role markup, language flip handlers, or seasonal posture resolver.
  */
 export function installAngelusCardDeck({mount,form="angelus",language="en",
- historicalConclusion=false,appendixText,recitationMode="individual",initialIndex=0,onCardChange=()=>{},onCue=()=>{}}={}){
+ historicalConclusion=false,appendixText,recitationMode="individual",guided=false,initialIndex=0,onCardChange=()=>{},onCue=()=>{}}={}){
  const doc=mount?.ownerDocument,host=mount?.querySelector(".aoP435930AngelusSequence");
  if(!doc||!host)return null;
  if(host.dataset.aoDevotionalDeck==="v1")return host.__aoDevotionalDeck||null;
@@ -149,6 +150,17 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   header.append(create(doc,"small","aoDevoCardNumber",String(i+1)+" / "+plan.length),
    create(doc,"h2","aoDevoCardTitle",entry.title),
    create(doc,"p","aoDevoCardLatin",entry.latin));
+  if(guided){
+   const hints=form==="angelus"?{
+    announcement:["The angel announces the Incarnation to Mary.","L’ange annonce à Marie l’Incarnation."],
+    fiat:["Mary consents freely to the word of God.","Marie consent librement à la parole de Dieu."],
+    incarnation:["The eternal Word truly assumed human nature.","Le Verbe éternel a véritablement assumé la nature humaine."],
+    intercession:["Ask the Mother of God to pray for us.","Demandez à la Mère de Dieu d’intercéder pour nous."],
+    collect:["The prayer joins the Incarnation to the Passion and Resurrection.","La prière unit l’Incarnation à la Passion et à la Résurrection."]
+   }:null;
+   const hint=hints?.[entry.id];
+   if(hint)header.append(create(doc,"p","aoFolioGuidedHint",language==="fr"?hint[1]:hint[0]));
+  }
   const body=create(doc,"div","aoDevoCardScroll");body.dataset.aoDevoScroll="";
   body.setAttribute("role","region");body.setAttribute("aria-label",entry.title);
   entry.unitIndices.forEach(j=>body.append(units[j]));
