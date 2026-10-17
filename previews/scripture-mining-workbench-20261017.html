@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ad Orientem · Scripture & Commentary Mine</title>
+<style>
+:root{color-scheme:dark;background:#080c12;color:#ede6d9;font-family:Georgia,"Iowan Old Style",serif}
+*{box-sizing:border-box}body{margin:0}main{max-width:1170px;margin:auto;padding:clamp(16px,3vw,38px)}
+h1,h2,h3{font-weight:400;line-height:1.2}h1{font-size:clamp(30px,4vw,46px);margin:.4rem 0}h2{font-size:24px}
+p{line-height:1.65}.eyebrow,legend,label,button,input,select,.meta,.tag,.status,.support{font-family:system-ui,sans-serif}
+.eyebrow{letter-spacing:.18em;color:#c6ac7c;font-size:11px;text-transform:uppercase}
+.lead{color:#b8b5b0;max-width:850px;font-size:16px}.panel{background:#101721;border:1px solid #323943;border-radius:12px;padding:20px;min-width:0}
+.layout{display:grid;grid-template-columns:minmax(270px,340px) 1fr;gap:18px;margin-top:26px}
+.controls{display:grid;gap:14px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{display:grid;gap:6px;color:#c9c0b2;font-size:12px}
+button,select,input{font:14px system-ui,sans-serif;border:1px solid #515763;border-radius:6px;background:#17202c;color:#f2e9d9;padding:10px;width:100%}
+button{cursor:pointer}button:hover,button:focus-visible,select:focus-visible,input:focus-visible{outline:1px solid #d5bb85;outline-offset:2px}
+button:disabled{opacity:.45;cursor:default}.primary{background:#c5a46b;color:#0b1118;font-weight:700;border-color:#c5a46b}
+.secondary{background:transparent}.small{font-size:12px;padding:7px 10px}.row{display:flex;align-items:center;gap:9px}.row>button{width:auto}
+.meta,.support,.status{color:#b2b5bd;font-size:12px;line-height:1.55}.status{min-height:1.3rem}.tag{display:inline-block;font-size:10px;letter-spacing:.05em;border:1px solid #626152;color:#d6bd86;border-radius:4px;padding:3px 6px}
+header.top{border-bottom:1px solid #363d43;padding-bottom:22px}
+.readings{display:grid;gap:14px}.reading{border-left:2px solid #b6a079;padding:10px 0 10px 17px}
+.reading p{font-size:clamp(18px,2vw,23px);line-height:1.75;margin:.6rem 0}
+.reading .verse{color:#bba578;font:12px system-ui,sans-serif;min-width:45px;display:inline-block}
+.reading .record{display:flex;gap:10px;align-items:baseline}
+.reading .record span:last-child{flex:1}
+a{color:#d9ba80;text-decoration:underline;text-underline-offset:3px}
+details{border-top:1px solid #363d43;margin-top:16px;padding-top:12px}
+summary{cursor:pointer;font-family:system-ui,sans-serif;color:#dfd4c1;font-size:14px}
+.comment{border-left:2px solid #3c656b;padding:8px 0 8px 14px;margin:12px 0}
+.comment strong{color:#bad4d8;font:13px system-ui,sans-serif}
+.comment p{margin:6px 0;font-size:16px}.hidden{display:none!important}
+hr{border:0;border-top:1px solid #383c42;margin:20px 0}
+h3{font-size:20px}.resultsHead{display:flex;justify-content:space-between;gap:20px;align-items:baseline}
+aside .panel+.panel{margin-top:15px}.checklabel{display:flex;align-items:center;gap:8px}
+.checklabel input{width:auto}.queue{display:grid;gap:8px;margin-top:13px;max-height:380px;overflow:auto}
+.queueItem{border-bottom:1px solid #42454b;padding:8px 0;font:13px system-ui,sans-serif;color:#d8d0c2}
+.queueItem small{color:#aaa}.narrow{max-width:540px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.pair{grid-template-columns:1fr 1fr}aside{order:0}.results{order:1}.panel{padding:16px}}
+@media(prefers-reduced-motion:no-preference){button{transition:border-color .16s ease,background .16s ease}}
+</style>
+</head>
+<body>
+<main>
+<header class="top">
+<div class="eyebrow">Ad Orientem / Editorial workbench / P0</div>
+<h1>Scripture &amp; Commentary Mine</h1>
+<p class="lead">Read exact Catholic text witnesses, compare CPDV with optional Douay–Rheims, inspect the original attributed Catena Aurea, and record verse selections. One mining service for Rosary, Mass, Formation, Historia Salutis and Prayer. Nothing here automatically publishes or replaces liturgical text.</p>
+<div class="row"><span class="tag">CPDV first</span><span class="tag">Original commentary</span><span class="tag">Uncollated source disclosure</span></div>
+</header>
+<div class="layout">
+<aside>
+<section class="panel controls" aria-label="Passage and origin">
+<h2 style="margin:0">Mine a passage</h2>
+<label>Owning module
+<select id="module"><option value="rosary">Rosary</option><option value="mass">Mass</option><option value="formation">Formation</option><option value="historia">Historia Salutis</option><option value="prayer">Prayer / Devotions</option><option value="other">Other</option></select></label>
+<div id="rosaryControls" class="controls">
+<label>Mystery<select id="mystery"></select></label>
+<div class="pair">
+<label>Guided bead<select id="bead"></select></label>
+<label>Source context<select id="contextMode"><option value="bead">Bead citation</option><option value="mystery">Whole mystery reference</option></select></label>
+</div>
+<div class="row"><button id="previous" class="small secondary" type="button">← Previous bead</button><button id="next" class="small secondary" type="button">Next bead →</button></div>
+</div>
+<form id="mineForm" class="controls">
+<label>Bible reference<input id="reference" autocomplete="off" spellcheck="false" required placeholder="Luke 1:28"></label>
+<button type="submit" class="primary">Mine reference</button>
+</form>
+<p class="support">For Rosary beads, the original evidence reference is retained. These source-cited meditations are not certified verbatim Bible quotations. Use one verse, or at most two, for a final bead selection; OT parallels belong on independent beads.</p>
+</section>
+<section class="panel" id="ratingPanel">
+<h2 style="margin-top:0">Editorial selection</h2>
+<p class="meta">Your reviews are local research decisions, not approved Scripture text. Export them for the canonical editorial pipeline.</p>
+<div class="controls">
+<label>Rating (0–5)<select id="rating"><option value="0">0 — Reject</option><option value="1">1 — Poor</option><option value="2">2 — Weak</option><option value="3">3 — Useful</option><option value="4">4 — Strong</option><option value="5">5 — Essential</option></select></label>
+<label>Disposition<select id="disposition"><option value="UNDECIDED">Not decided</option><option value="KEEP_HERE">Keep here</option><option value="SUITABLE_ELSEWHERE">Suitable elsewhere</option><option value="REJECT">Reject</option></select></label>
+<div class="pair">
+<label>Target mystery<select id="destination"></select></label>
+<label>Target bead<select id="destinationBead"></select></label>
+</div>
+<label class="checklabel"><input type="checkbox" id="duplicate"> Duplicate, retaining original placement</label>
+<button type="button" class="primary" id="saveReview">Save review</button>
+</div>
+<p class="status" id="reviewStatus" role="status"></p>
+</section>
+<section class="panel">
+<h2 style="margin-top:0">Saved decisions <span id="reviewCount" class="meta">0</span></h2>
+<div class="row"><button id="export" class="small" type="button">Export JSON</button><button id="import" class="small" type="button">Import JSON</button></div>
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+<div id="queue" class="queue"></div>
+</section>
+</aside>
+<section class="panel results" aria-live="polite">
+<div class="resultsHead"><h2 id="resultHeading" style="margin-top:0">Select a reference</h2><span class="tag">Read · Compare · Interpret</span></div>
+<p id="message" class="status">Source text is loaded on demand from Ad Orientem's existing Bible witness files.</p>
+<div id="results" class="readings"></div>
+</section>
+</div>
+</main>
+<script type="module">
+import {mineScriptureReference,validateScriptureMiningDecision} from "../src/scripture/mining-service.js";
+import {ROSARY_GUIDED_BEAD_EVIDENCE_V1} from "../src/pray/rosary-guided-bead-evidence.v1.js";
+import {ROSARY_SCRIPTURE_REFERENCE_V1} from "../src/pray/rosary-scripture-policy.js";
+
+const $=id=>document.getElementById(id);
+const make=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el};
+const keys=Object.keys(ROSARY_GUIDED_BEAD_EVIDENCE_V1);
+const labels={joy:"Joyful",lum:"Luminous",sor:"Sorrowful",glo:"Glorious"};
+const memoryKey="ao-scripture-mining-review-v1";
+const appRoot=new URL("../",import.meta.url);
+let active=null,notes=[];
+try{const data=JSON.parse(localStorage.getItem(memoryKey)||"[]");if(Array.isArray(data))notes=data.map(validateScriptureMiningDecision)}catch{}
+const idLabel=id=>labels[id.slice(0,3)]+" · "+id.slice(3);
+for(const id of keys){$("mystery").append(new Option(idLabel(id),id));$("destination").append(new Option(idLabel(id),id))}
+for(let i=1;i<=10;i++){$("bead").append(new Option(String(i),String(i)));$("destinationBead").append(new Option(String(i),String(i)))}
+$("mystery").value="joy1";$("destination").value="joy1";
+const params=new URLSearchParams(location.search);
+if(["rosary","mass","formation","historia","prayer","other"].includes(params.get("module")))$("module").value=params.get("module");
+if(keys.includes(params.get("mystery")))$("mystery").value=params.get("mystery");
+if(Number.isInteger(Number(params.get("bead")))&&+params.get("bead")>=1&&+params.get("bead")<=10)$("bead").value=params.get("bead");
+const bridgeFetch=(url,opts)=>fetch(typeof url==="string"&&url.startsWith("/data/")?new URL(url.slice(1),appRoot):url,opts);
+function citationFromRosary(){
+ const id=$("mystery").value,bead=Number($("bead").value);
+ const evidence=ROSARY_GUIDED_BEAD_EVIDENCE_V1[id]?.find(x=>x.bead===bead);
+ return $("contextMode").value==="mystery"?ROSARY_SCRIPTURE_REFERENCE_V1[id]?.reference:(evidence?.reference||"");
+}
+function updateMode(){
+ $("rosaryControls").classList.toggle("hidden",$("module").value!=="rosary");
+ if($("module").value==="rosary")$("reference").value=citationFromRosary();
+}
+$("module").addEventListener("change",updateMode);
+for(const id of ["mystery","bead","contextMode"])$(id).addEventListener("change",()=>{updateMode();void mine()});
+function stepBead(delta){
+ const pos=keys.indexOf($("mystery").value)*10+(Number($("bead").value)-1);
+ const next=(pos+delta+keys.length*10)%(keys.length*10);
+ $("mystery").value=keys[Math.floor(next/10)];$("bead").value=String(1+next%10);
+ updateMode();void mine();
+}
+$("previous").addEventListener("click",()=>stepBead(-1));
+$("next").addEventListener("click",()=>stepBead(1));
+$("mineForm").addEventListener("submit",event=>{event.preventDefault();void mine()});
+function textRows(rows,parent){
+ for(const row of rows){
+  const line=make("p");
+  line.className="record";
+  line.append(make("span",row.chapter+":"+row.verse,"verse"),make("span",row.text));
+  parent.append(line);
+ }
+}
+function sourceLink(url,caption){
+ if(!url)return make("span","Source URL not available","meta");
+ const a=make("a",caption||"Original source ↗");
+ a.href=url;a.target="_blank";a.rel="noopener noreferrer";return a;
+}
+function renderMining(data){
+ const target=$("results");target.replaceChildren();
+ $("resultHeading").textContent=data.reference;
+ const notice=make("p","English source witnesses are not yet collated against all printed/author-master editions. Same verse numbers do not prove exact textual correspondence, especially in Psalms and Greek additions.","meta");
+ target.append(notice);
+ if(data.referenceWarning)target.append(make("p",data.referenceWarning,"meta"));
+ const primary=data.readings["cpdv-2009"],older=data.readings["dr-challoner"];
+ const cp=make("article");cp.className="reading";
+ cp.append(make("h3","Catholic Public Domain Version · Primary reading"));
+ if(primary.verses.length)textRows(primary.verses,cp);
+ else cp.append(make("p",primary.error||"No source verse is present at these coordinates.","meta"));
+ cp.append(sourceLink(primary.sourceUrl,"CPDV author-source book ↗"));
+ target.append(cp);
+ const compare=make("details");compare.append(make("summary","Compare original Douay–Rheims / Challoner wording"));
+ if(older.verses.length)textRows(older.verses,compare);
+ else compare.append(make("p",older.error||"No Douay–Rheims source verse at these coordinates.","meta"));
+ compare.append(sourceLink(older.sourceUrl,"Douay–Rheims source passage ↗"));
+ target.append(compare);
+ const commentary=make("details");commentary.open=true;
+ commentary.append(make("summary","Traditional commentary · attributed original sources"));
+ if(data.commentary.sections?.length){
+  commentary.append(make("p","Catena Aurea · Oxford/Newman translation (1841–45). Each extract retains its original Father's attribution.","meta"));
+  const filter=make("input");filter.type="search";filter.placeholder="Find in loaded commentary";
+  filter.setAttribute("aria-label","Find in loaded commentary");
+  commentary.append(filter);
+  const found=make("div");
+  for(const pericope of data.commentary.sections){
+   const group=make("section");group.append(make("h3",pericope.citation));
+   for(const seg of pericope.segments){
+    const div=make("div");div.className="comment";
+    div.append(make("strong",seg.father),make("p",seg.text));
+    group.append(div);
+   }
+   group.append(sourceLink(pericope.source?.url,"Original Catena source ↗"));
+   found.append(group);
+  }
+  filter.addEventListener("input",()=>{
+   const needle=filter.value.trim().toLocaleLowerCase();
+   for(const item of found.querySelectorAll(".comment"))item.classList.toggle("hidden",Boolean(needle&&!item.textContent.toLocaleLowerCase().includes(needle)));
+  });
+  commentary.append(found);
+ }else{
+  commentary.append(make("p",data.commentary.error||"No locally imported Catena section for these verses.","meta"));
+ }
+ if(data.otherCommentarySource?.url){
+  commentary.append(make("p",data.otherCommentarySource.title+" · "+data.otherCommentarySource.scope,"meta"));
+  commentary.append(sourceLink(data.otherCommentarySource.url,"View source commentary ↗"));
+ }
+ target.append(commentary);
+ if(data.origin?.moduleId==="rosary"){
+  const info=ROSARY_GUIDED_BEAD_EVIDENCE_V1[data.origin.objectId]?.find(x=>x.bead===data.origin.bead);
+  if(info)target.append(make("p","Rosary source relation: "+info.relationship+". Original Guided meditation is not a direct Bible quotation.","meta"));
+ }
+}
+function decisionKey(x){return [x.originModule,x.originId,x.destinationBead??"",x.reference].join("|")}
+function paintQueue(){
+ $("reviewCount").textContent=String(notes.length);$("queue").replaceChildren();
+ for(const note of notes.slice().reverse()){
+  const row=make("div",note.reference+" · "+note.rating+"/5 · "+note.disposition,"queueItem");
+  row.append(make("small"," — "+note.originModule+"/"+note.originId+(note.duplicate?" · duplicate":"")));
+  $("queue").append(row);
+ }
+}
+function currentOrigin(){
+ return {moduleId:$("module").value,objectId:$("module").value==="rosary"?$("mystery").value:($("reference").value.trim()||"unassigned"),bead:$("module").value==="rosary"?Number($("bead").value):null};
+}
+async function mine(){
+ const reference=$("reference").value.trim();if(!reference)return;
+ $("message").textContent="Loading original Scripture witnesses and available commentary…";
+ $("results").replaceChildren();$("resultHeading").textContent=reference;
+ try{
+  const data=await mineScriptureReference(reference,{origin:currentOrigin(),fetcher:bridgeFetch});
+  active=data;renderMining(data);
+  $("message").textContent="CPDV primary · Douay–Rheims optional · Commentary source-labelled · Research only";
+  const old=notes.find(x=>x.originModule===$("module").value&&x.originId===currentOrigin().objectId&&x.reference===reference);
+  if(old){$("rating").value=String(old.rating);$("disposition").value=old.disposition}
+  else{$("rating").value="0";$("disposition").value="UNDECIDED"}
+  if($("module").value==="rosary"){$("destination").value=$("mystery").value;$("destinationBead").value=$("bead").value}
+ }catch(error){
+  active=null;$("message").textContent="Unable to mine this exact reference: "+String(error?.message??error);
+ }
+}
+$("saveReview").addEventListener("click",()=>{
+ if(!active){$("reviewStatus").textContent="Mine a valid passage first.";return}
+ try{
+  const origin=currentOrigin();
+  const decision=validateScriptureMiningDecision({reference:active.reference,rating:Number($("rating").value),
+   disposition:$("disposition").value,originModule:origin.moduleId,originId:origin.objectId,
+   destinationId:$("module").value==="rosary"?$("destination").value:null,
+   destinationBead:$("module").value==="rosary"?Number($("destinationBead").value):null,
+   duplicate:$("duplicate").checked});
+  notes=notes.filter(n=>decisionKey(n)!==decisionKey(decision));notes.push(decision);
+  localStorage.setItem(memoryKey,JSON.stringify(notes));paintQueue();
+  $("reviewStatus").textContent="Saved locally. Export the JSON before changing browser or clearing data.";
+ }catch(error){$("reviewStatus").textContent=String(error?.message??error)}
+});
+$("export").addEventListener("click",()=>{
+ const data=JSON.stringify({schema:"ao.scripture.mining-export.v1",decisions:notes},null,2);
+ const url=URL.createObjectURL(new Blob([data],{type:"application/json"}));
+ const a=make("a");a.href=url;a.download="ad-orientem-scripture-mining-decisions.json";a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+$("import").addEventListener("click",()=>$("importFile").click());
+$("importFile").addEventListener("change",async()=>{
+ try{
+  const file=$("importFile").files?.[0];if(!file)return;
+  const raw=JSON.parse(await file.text());
+  if(raw.schema!=="ao.scripture.mining-export.v1"||!Array.isArray(raw.decisions)||raw.decisions.length>4000)throw Error("Unsupported source review export");
+  notes=raw.decisions.map(validateScriptureMiningDecision);localStorage.setItem(memoryKey,JSON.stringify(notes));paintQueue();
+  $("reviewStatus").textContent="Imported "+notes.length+" source-reference decisions; none are published.";
+ }catch(error){$("reviewStatus").textContent="Import rejected: "+String(error.message||error)}
+ $("importFile").value="";
+});
+updateMode();
+if(params.get("reference"))$("reference").value=params.get("reference");
+paintQueue();void mine();
+</script>
+</body>
+</html>
