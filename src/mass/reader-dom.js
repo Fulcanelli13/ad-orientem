@@ -3140,12 +3140,12 @@ export function createReaderDomAdapter({
             ? inlineRubrics.filter(event=>event.kind==="STATE")
             : inlineRubrics;
           if(shortRubrics?.length){
-            const note=doc.createElement("span");
+            const note=doc.createElement(mode==="MISSAL"?"div":"span");
             note.className=mode==="MISSAL"
               ?"ao-missal-inline-rubrics":"ao-canon-inline-rubrics";
             note.dataset.sourceAuthority="MR62_RITUS";
             note.dataset.observedNow="false";
-            const actions=doc.createElement("span");
+            const actions=doc.createElement(mode==="MISSAL"?"div":"span");
             actions.className="ao-canon-inline-actions";
             if(mode==="MISSAL"){
               for(const event of shortRubrics){
