@@ -58,6 +58,9 @@ try{
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview")?.dataset.r17OwnerPriestAction==="PRIEST_EVENT_UNOBSERVED_FAIL_CLOSED",null,{timeout:3000});
   const unobserved=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(unobserved.priestAction,null);
+  assert.equal(unobserved.priestVoice,null,
+    "Schola-owned Sanctus cue must not project an inferred private priest voice");
+  assert.equal(unobserved.ownership?.priestVoice,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
   const scholaBefore=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState());
   const accepted=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.observePriestEvent({
    actor:"PRIEST",observed:true,source:"EXPLICIT_OBSERVATION",
@@ -68,6 +71,10 @@ try{
   const after=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(after.priestAction.sourceGestureId,"GM.P.C0148.01");
   assert.equal(after.priestAction.owner,"INDEPENDENT_PRIEST_OBSERVATION");
+  assert.equal(after.priestVoice?.owner,"INDEPENDENT_PRIEST_OBSERVATION");
+  assert.match(after.priestVoice?.label??"",/BENEDICTUS/,
+    "Independent priest Benedictus observation must restore priest-only quiet voice");
+  assert.equal(after.ownership?.priestVoice,"INDEPENDENT_PRIEST_OBSERVATION");
   assert.equal(after.nativeCueId,cue,"reader cue changed because of priest observation");
   assert.deepEqual(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState()),scholaBefore,
    "explicit priest observation changed Schola position");
@@ -78,6 +85,9 @@ try{
   assert.equal(forged.accepted,false,"Schola forged a priest movement");
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.clearPriestObservation());
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview")?.dataset.r17OwnerPriestAction==="PRIEST_EVENT_UNOBSERVED_FAIL_CLOSED");
+  const cleared=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
+  assert.equal(cleared.priestVoice,null);
+  assert.equal(cleared.ownership?.priestVoice,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
   const stale=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
