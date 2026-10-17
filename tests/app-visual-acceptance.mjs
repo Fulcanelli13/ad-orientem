@@ -539,7 +539,16 @@ try{
   assert.equal(angelusRails.railPosition,"sticky","Angelus exact donor rail is no longer sticky with the reader");
   assert.equal(angelusRails.postureChannel,"posture","Angelus rail no longer identifies the persistent posture channel");
   assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.postureAsset),"Angelus posture slot is not using the canonical posture bank");
-  assert.ok(angelusRails.slotHeight>=54,"Angelus phone ritual slot collapsed below donor-readable geometry: "+JSON.stringify(angelusRails));
+  // The approved Folio replaces the visible old donor rail with a compact
+  // posture disclosure; the donor rail remains in the source DOM but hidden
+  // deliberately, avoiding two conflicting posture surfaces.
+  assert.ok(angelusRails.folioPostureHeight>=44,
+    "Angelus visible Folio posture must remain touch-readable: "+JSON.stringify(angelusRails));
+  assert.match(angelusRails.folioPostureText,/kneel|stand|genoux|debout/i,
+    "Angelus visible Folio posture text is missing");
+  assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.folioPostureAsset),
+    "Angelus Folio must reuse the canonical posture icon bank");
+  assert.equal(angelusRails.slotHeight,0,"Obsolete duplicate Angelus rail must remain hidden in Folio mode");
   assert.equal(angelusRails.incarnationUnits,1,"Angelus lost the unique Incarnation focus marker");
   assert.equal(angelusRails.genericAngelusContext,0,"Angelus regained the later generic devotional context card");
   assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");
