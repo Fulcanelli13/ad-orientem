@@ -45,6 +45,15 @@ try{
    return status?.active===expected&&(status.loaded||!!status.error);
   },id,{timeout:55000});
   const current=await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama);
+  if(current.error){
+   const metadata=await page.evaluate(async scene=>{
+    const mod=await import("./visible-mass-m4-panorama.mjs");
+    const data=await (await fetch(mod.m4SourceRequest(scene))).json();
+    const info=data?.query?.pages?.[0]?.imageinfo?.[0]||{};
+    return {thumburl:info.thumburl,url:info.url,thumbwidth:info.thumbwidth,thumbheight:info.thumbheight,page:data?.query?.pages?.[0]?.title};
+   },id);
+   console.log("M4 DIRECT COMMONS SOURCE METADATA",id,JSON.stringify(metadata));
+  }
   assert.equal(current.error,null,"Direct Commons image access failed: "+JSON.stringify({id,error:current.error,diagnostics}));
   assert.equal(current.loaded,true);
   assert.equal(await page.locator("#panorama-retry").isVisible(),false);
