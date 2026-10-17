@@ -11,7 +11,7 @@ assert.equal(map.size,279);
 assert.equal(a.items.length,36);
 assert.equal(a.rubricPresentationPolicy.priestOnly,true);
 assert.equal(b.events.length,46);
-assert.equal(c.events.length,67);
+assert.equal(c.events.length,68); // The new Latin VII.9 water-pour record is research-only.
 assert.equal(a.invariants.runtimeImportAllowed,false);
 assert.equal(a.invariants.faithfulPostureMandateAllowed,false);
 const ids=new Set();
