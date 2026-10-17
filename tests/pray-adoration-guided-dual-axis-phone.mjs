@@ -89,6 +89,16 @@ try{
  assert.equal(await page.locator("#aoPray435930.open .aoP435930BigGrid").count(),1,
   "Finishing Visit did not restore the Adoration mode chooser");
  assert.equal(await page.locator(timeline).count(),0);
+ const chooser="#aoPray435930.open .aoAdorationChooser";
+ assert.equal(await page.locator(chooser).getAttribute("data-ao-adoration-chooser"),"quiet-v2");
+ assert.equal(await page.locator(chooser+" .aoAdorationPrimaryGrid button").count(),2,
+   "Visit and untimed silence should be the only primary options");
+ assert.equal(await page.locator(chooser+" .aoAdorationMethodsDisclosure").evaluate(el=>el.open),false,
+   "Secondary prayer methods should not crowd the entrance");
+ assert.equal(await page.locator(chooser+" .aoP435930BigGrid button").count(),3,
+   "Holy Hour, Four Ends, and Treasury must stay accessible");
+ assert.equal(await page.locator(chooser+" .aoAdorationPrimaryGrid button").first().isVisible(),true);
+ await page.screenshot({path:resolve(captures,"adoration-chooser-quiet-390.png"),animations:"disabled"});
  // Open-ended adoration must remain SILENCE FIRST, not become a 7-card workout.
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='open']").tap();
  assert.equal(await page.locator(sel+" .aoAdorationOpenPrayer").count(),1,"Open adoration is silence-first");
@@ -131,6 +141,7 @@ try{
  }
  await page.setViewportSize({width:390,height:844});
  await page.locator("#aoPray435930.open [data-p435930-ador-home]").tap();
+ await page.locator("#aoPray435930.open .aoAdorationMethodsDisclosure > summary").tap();
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='holy']").tap();
  await page.waitForSelector(timeline);
  v=await snapshot();assert.equal(v.mode,"holy");assert.equal(v.stops,8);
@@ -142,6 +153,7 @@ try{
  assert.equal(await page.locator(sel+" [data-p435930-go-rosary]").count(),1,
   "Optional Rosary handoff was lost from the Holy Hour");
  await page.locator("#aoPray435930.open [data-p435930-ador-home]").tap();
+ await page.locator("#aoPray435930.open .aoAdorationMethodsDisclosure > summary").tap();
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='four']").tap();
  await page.waitForSelector(timeline);
  v=await snapshot();assert.equal(v.mode,"four");assert.equal(v.stops,5);
