@@ -82,6 +82,15 @@ function semantic(text){
 }
 function semanticFace(el){
   if(!el||el.dataset.aoPraySemantic==='1')return;
+  // The Folio reader already owns language, communal-response and repeated
+  // doxology markup. Flattening its three Gloria Patri repetitions into one
+  // string destroys the response boundaries and Individual Mode semantics.
+  // Other PRAY modules retain the shared text normaliser unchanged.
+  if(el.closest?.('.aoFolioReader')){
+    el.classList.add('aoP435930SemanticFace');
+    el.dataset.aoPraySemantic='1';
+    return;
+  }
   // The canonical Angelus already provides a separate leader and response.
   // TextContent flattens its two nested spans into one line, which previously
   // destroyed the response role (and the spoken pairing) in Group mode.
