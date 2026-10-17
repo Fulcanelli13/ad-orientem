@@ -10,6 +10,7 @@ import {sourceReferenceSafeUrl} from "./source-reference-panel.js";
 import {massMapHtml,massMapCss,projectMassMap,MASS_MAP_PHASES,massMapPhaseIndex} from "./mass-map.js";
 import {massStudyStages,massStudyPathsHtml,massStudyPathsCss} from "./mass-study-paths.js";
 import {projectPublishedMassPrayerContexts,publishedMassPrayerContextHtml} from "./mass-explorer-published-prayer-context.js";
+import {verifiedMassExplorerPrayerReadings} from "./mass-explorer-prayer-readings.js";
 
 export const MASS_EXPLORER_ROUTE="learn.mass_explorer";
 export const MASS_EXPLORER_VERSION="mass-explorer-p1-sung-guide-v1";
@@ -17,6 +18,7 @@ export const MASS_EXPLORER_ROOT="ao-mass-explorer-root";
 const TEXT_URL=new URL("../../data/presentation/reader-text-sung.v1.json",import.meta.url);
 const FRENCH_URL=new URL("../../data/presentation/reader-french-ordinary.v1.json",import.meta.url);
 const FORMATION_URL=new URL("../../data/learn/mass-formation-campion.v1.json",import.meta.url);
+const PRAYER_READING_URL=new URL("../../data/learn/mass-explorer-prayer-readings.v1.json",import.meta.url);
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick=(fr,en,french)=>fr?french:en;
 const keys=["PRE.ASPERGES",...Array.from({length:30},(_,i)=>"AO.CARD."+String(i+1).padStart(3,"0")),"POST.MASS"];
@@ -29,7 +31,7 @@ function assertCorpus(corpus,french){
 }
 
 /** No new Mass IDs: Guide macro identity and AO.SM source blocks stay distinct. */
-export function buildMassExplorerCatalog(guideRegistry,corpus,french,formation=null){
+export function buildMassExplorerCatalog(guideRegistry,corpus,french,formation=null,prayerReadings=null){
   validateGuideRegistry(guideRegistry);
   assertCorpus(corpus,french);
   const byKey=new Map(),byBlock=new Map();
@@ -53,8 +55,9 @@ export function buildMassExplorerCatalog(guideRegistry,corpus,french,formation=n
   for(const entry of byKey.values())Object.freeze(entry.blocks);
   const formationStages=formation?massStudyStages(formation):Object.freeze([]);
   const publishedPrayerContextByBlock=projectPublishedMassPrayerContexts({byKey,byBlock,sequence:keys},formation);
+  const explanatoryReadingByBlock=verifiedMassExplorerPrayerReadings(prayerReadings,{byKey,byBlock,sequence:keys});
   return Object.freeze({byKey,byBlock,frenchByCue:french.byCue,formationStages,
-    publishedPrayerContextByBlock,
+    publishedPrayerContextByBlock,explanatoryReadingByBlock,
     sequence:Object.freeze([...keys]),source:"CERTIFIED_SUNG_GUIDE_AND_RITUAL_TEXT",
     crosswalkStatus:"P0_PENDING"});
 }
@@ -80,15 +83,18 @@ async function fetchJson(url,fetchImpl){
   return response.json();
 }
 export async function loadMassExplorerCatalog({fetchImpl=globalThis.fetch}={}){
-  const [guides,text,fr,formation]=await Promise.all([
+  const [guides,text,fr,formation,prayerReadings]=await Promise.all([
     loadGuideRegistry({fetchImpl}),
     fetchJson(TEXT_URL,fetchImpl),
     fetchJson(FRENCH_URL,fetchImpl),
     // The optional learning-path index must never prevent reading the
     // already-published Sung Mass if the separate Formation file is offline.
-    fetchJson(FORMATION_URL,fetchImpl).catch(()=>null)
+    fetchJson(FORMATION_URL,fetchImpl).catch(()=>null),
+    // Optional explanatory layer: the original Missal/Guide remains readable
+    // offline if the study file is not present in a cached app version.
+    fetchJson(PRAYER_READING_URL,fetchImpl).catch(()=>null)
   ]);
-  return buildMassExplorerCatalog(guides.registry,text,fr,formation);
+  return buildMassExplorerCatalog(guides.registry,text,fr,formation,prayerReadings);
 }
 
 function guideSources(guide,fr){
@@ -160,6 +166,7 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
   const {guide,blocks}=moment;
   const selected=blocks.find(x=>x.Block_ID===blockId)??blocks.find(x=>!x.Proper_Slot)??blocks[0]??null;
   const publishedContext=selected?.Block_ID?catalog.publishedPrayerContextByBlock?.get(selected.Block_ID)||[]:[];
+  const prayerReading=selected?.Block_ID?catalog.explanatoryReadingByBlock?.get(selected.Block_ID)||null:null;
   const positions=catalog.sequence,idx=positions.indexOf(key);
   const guideSections=massMomentExistingGuideSections(guide);
   const links=massMomentStudyLinks(key);
@@ -169,7 +176,7 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
   const hasBibliography=String(guide.sourceLinks||"").split(";").some(x=>sourceReferenceSafeUrl(x.trim()));
   const available=[
     ["prayer",pick(french,"Prayer","Prière")],
-    ...(publishedContext.length?[["meaning",pick(french,"Understand","Comprendre")]]:[]),
+    ...(publishedContext.length||prayerReading?[["meaning",pick(french,"Understand","Comprendre")]]:[]),
     ["guide",pick(french,"Explanation","Explication")],
     ...(links.scriptureAnchorIds.length?[["scripture",pick(french,"Scripture","Écritures")]]:[]),
     ...(hasBibliography?[["sources",pick(french,"References","Références")]]:[]),
@@ -185,7 +192,7 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
      blocks.map(b=>'<button type="button" data-ao-mx-block="'+esc(b.Block_ID)+'" aria-current="'+(b===selected?"true":"false")+'">'+esc(b.Title)+'</button>').join("")+
      '</nav>':'<p class="aoMXQuiet">'+pick(french,"This Guide moment has no ordinary Sung source block; ceremony depends on the selected rite.","Cette étape du Guide ne comporte pas de texte ordinaire de la Messe chantée ; la cérémonie dépend du rite choisi.")+'</p>')+
    sourceBlockHtml(catalog,selected,french)+
-   publishedMassPrayerContextHtml(publishedContext,{french})+
+   publishedMassPrayerContextHtml(publishedContext,{french,reading:prayerReading})+
    '<details id="ao-mx-guide" class="aoMXDetails" data-ao-mx-anchor="guide" open><summary>'+pick(french,"Guide explanation","Explication du Guide")+'</summary>'+
      (french?'<p class="aoMXQuiet" lang="fr">Le commentaire du Guide est actuellement disponible en anglais ; aucune traduction française n’est inventée.</p>':"")+
      '<p class="aoMXQuiet">'+pick(french,"Existing Guide commentary for the broader Mass moment, not an independently certified commentary on every individual prayer.",
@@ -227,6 +234,7 @@ export function massExplorerCss(){
   massMapCss(),massStudyPathsCss(),
   ".aoMXStudySwitch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:min(820px,100%);margin:0 auto;padding:15px 16px 2px}.aoMXStudySwitch button{min-height:50px;padding:9px 11px;border:1px solid var(--ao-rule,#393c40);border-radius:10px;color:inherit;background:var(--ao-surface-1,#101821);font:500 .88rem/1.4 var(--ao-font-ui,system-ui);cursor:pointer}.aoMXStudySwitch button[aria-current=page]{border-color:var(--liturgical,#c9ad78);color:var(--liturgical,#c9ad78)}.aoMXStudySwitch button:disabled{opacity:.35;cursor:default}.aoMXThemePage .aoMXStudyPaths{border-top:0;margin-top:0}",
   ".aoMXReadingNav{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;margin:12px 0 18px;padding:7px 0}.aoMXReadingNav button{flex:0 0 auto;min-height:40px;padding:9px 11px;border:1px solid var(--ao-rule,#393c40);border-radius:9px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);font:.75rem/1.35 var(--ao-font-ui,system-ui);cursor:pointer}#ao-mass-explorer-root [data-ao-mx-anchor]{scroll-margin-top:85px}.aoMXFormationLink{margin:22px 0}.aoMXFormationLink h2,.aoMXRelated>h2{font:500 1.35rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXFormationLink p{line-height:1.6;margin:7px 0 11px}",
+  ".aoMXPrayerReading{margin:4px 0 15px}.aoMXPrayerReading h3{font:500 1.14rem/1.4 var(--ao-font-display,Georgia,serif);color:var(--liturgical,#c9ad78);margin:6px 0}.aoMXPrayerReading p{line-height:1.62;margin:9px 0}.aoMXReadingConditional{font:400 .8rem/1.5 var(--ao-font-ui,system-ui);color:var(--ao-text-muted,#adb2b7);padding:9px 12px;border-left:2px solid var(--liturgical,#c9ad78);background:var(--ao-bg-canvas,#080c12)}",
   ".aoMXPrayerMeaning{margin:19px 0 24px;border:1px solid var(--ao-rule,#393c40);border-radius:12px;background:var(--ao-surface-1,#101821);padding:16px}.aoMXPrayerMeaning h2{font:500 1.4rem/1.4 var(--ao-font-display,Georgia,serif);margin:2px 0 12px}.aoMXMeaningGroup{padding:10px 0;border-top:1px solid var(--ao-rule,#393c40)}.aoMXMeaningGroup small{display:block;color:var(--liturgical,#c9ad78);font:600 .69rem/1.45 var(--ao-font-ui,system-ui);letter-spacing:.02em}.aoMXMeaningGroup p{line-height:1.65;margin:9px 0 12px;overflow-wrap:anywhere}.aoMXPrayerMeaning>.aoMXQuiet{margin:12px 0 0}",
   ".aoMXDetails{border-top:1px solid var(--ao-rule,#393c40);margin:17px 0;padding:9px 0}.aoMXDetails summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font:500 1.05rem/1.5 var(--ao-font-display,Georgia,serif);padding:10px 0}.aoMXDetails p{white-space:pre-line;line-height:1.65}.aoMXDetails a{color:var(--liturgical,#c9ad78);overflow-wrap:anywhere}.aoMXQuiet{font:400 .8rem/1.52 system-ui;color:var(--ao-text-muted,#adb2b7)}",
   ".aoMXRelated .aoMFBible{margin-top:12px}.aoMXRelated .aoMFBible ul{list-style:none;margin:0;padding:0}.aoMXRelated .aoMFBibleItem{margin:8px 0;border:1px solid var(--ao-rule,#393c40);border-radius:10px;padding:12px}.aoMXRelated .aoScriptureContextCapsule{display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:center;width:100%;min-height:44px;background:transparent;color:var(--liturgical,#c9ad78);border:0;text-align:left}.aoMXRelated .aoMFBibleItem small{display:block;color:var(--ao-text-muted,#adb2b7);line-height:1.4}",
@@ -469,6 +477,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     momentKey,blockId,indexView,indexScrollTop,indexFocusKey,indexFocusBlockId,studyStageId,moments:catalog?.sequence.length??0,
     sourceBlocks:catalog?.byBlock.size??0,formationLessons:catalog?.formationStages.length??0,
     publishedPrayerContextBlocks:catalog?.publishedPrayerContextByBlock?.size??0,
+    explanatoryPrayerBlocks:catalog?.explanatoryReadingByBlock?.size??0,
     p0Crosswalk:catalog?.crosswalkStatus??"P0_PENDING"});
   return Object.freeze({open,close,status,setMoment});
 }

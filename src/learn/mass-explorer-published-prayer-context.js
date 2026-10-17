@@ -6,6 +6,8 @@
  * Deliberately sparse: not every source block has a certified prayer-specific
  * explanation. Editorial-only P2 84-prayer drafts are NEVER loaded here.
  */
+import {massExplorerPrayerReadingHtml} from "./mass-explorer-prayer-readings.js";
+
 export const MASS_EXPLORER_PUBLISHED_PRAYER_CONTEXT_VERSION="ao-mass-explorer-p1-prayer-context-v1";
 
 const claimEdges=Object.freeze([
@@ -80,8 +82,9 @@ export function projectPublishedMassPrayerContexts(catalog,formation){
  for(const [key,rows] of out)out.set(key,Object.freeze(rows));
  return out;
 }
-export function publishedMassPrayerContextHtml(context,{french=false}={}){
- if(!Array.isArray(context)||context.length===0)return "";
+export function publishedMassPrayerContextHtml(context,{french=false,reading=null}={}){
+ if(!Array.isArray(context))return "";
+ if(context.length===0&&!reading)return "";
  const lg=french?"fr":"en";
  const groups=[];
  for(const item of context){
@@ -90,15 +93,16 @@ export function publishedMassPrayerContextHtml(context,{french=false}={}){
   else groups.push({kind:item.kind,rows:[item]});
  }
  return '<section class="aoMXPrayerMeaning" id="ao-mx-prayer-meaning" data-ao-mx-anchor="meaning">'+
- '<h2>'+escape(french?"Comprendre ce passage":"Understand this passage")+'</h2>'+
+ '<h2>'+escape(french?"Comprendre cette prière":"Understand this prayer")+'</h2>'+
+ massExplorerPrayerReadingHtml(reading,{french})+
  groups.map(group=>
   '<div class="aoMXMeaningGroup"><small>'+escape(notices[group.kind][lg])+'</small>'+
   group.rows.map(row=>
    '<p data-ao-mx-published-claim="'+escape(row.id)+'">'+escape(row.text[lg])+'</p>'
   ).join("")+'</div>'
  ).join("")+
- '<p class="aoMXQuiet">'+escape(french?
-  "Ces explications reprennent les affirmations déjà publiées dans les leçons de Formation. Les recherches historiques supplémentaires restent en examen.":
-  "These explanations reuse already published Formation teaching. Additional historical research remains under editorial review.")+'</p>'+
+ (context.length?'<p class="aoMXQuiet">'+escape(french?
+  "Contexte complémentaire repris des enseignements déjà publiés en Formation.":
+  "Further context from the existing published Formation lessons.")+'</p>':"")+
  '</section>';
 }

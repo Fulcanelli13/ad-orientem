@@ -48,6 +48,7 @@ try{
   });
   assert.equal(baseline.count,32,width+" cannot navigate all 32 original Guide moments");
   assert.equal(baseline.explorer?.indexView,"map",width+" must open the visual Map by default");
+  assert.equal(baseline.explorer?.explanatoryPrayerBlocks,84,width+" missing complete prayer explanations");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-phase]").count(),5,
     width+" missing one of five phase navigation controls");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
@@ -150,6 +151,8 @@ try{
   const meaning=page.locator('#ao-mass-explorer-root [data-ao-mx-anchor="meaning"]');
   assert.equal(await meaning.count(),1,width+" should display existing published Formation context for Suscipe");
   assert.equal(await meaning.locator('[data-ao-mx-published-claim="MF03-C03"]').count(),1);
+  assert.equal(await meaning.locator('[data-ao-mx-text-reading="AO.SM.B031"]').count(),1,
+    width+" source-anchored explanatory paragraph missing from in-app panel");
   assert.match(await meaning.innerText(),/faithful to offer their work/);
   await page.locator('#ao-mass-explorer-root [data-ao-mx-jump="meaning"]').click();
   assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.010"]').count(),1,
@@ -242,6 +245,8 @@ try{
   const meaningFr=page.locator('#ao-mass-explorer-root [data-ao-mx-anchor="meaning"]');
   assert.equal(await meaningFr.count(),1);
   assert.equal(await meaningFr.locator('[data-ao-mx-published-claim="MF03-C03"]').count(),1);
+  assert.equal(await meaningFr.locator('[data-ao-mx-text-reading="AO.SM.B031"]').count(),1,
+    width+" French source-anchored explanatory paragraph missing");
   assert.match(await meaningFr.innerText(),/Offertoire|fidèles/i);
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-fr.png")});
   await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
