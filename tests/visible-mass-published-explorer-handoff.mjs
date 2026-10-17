@@ -12,6 +12,13 @@ const expected=new Map([
  ["SN04",[]]
 ]);
 assert.equal(VISIBLE_MASS_PUBLICATION_STATE,"DRAFT_CONTEXTUAL_LINKS_REVIEW_ONLY");
+const publishedReadings=JSON.parse(fs.readFileSync("data/learn/mass-explorer-prayer-readings.v1.json","utf8"));
+const publishedExplorerSource=fs.readFileSync("src/learn/mass-explorer.js","utf8");
+assert.equal(publishedReadings.status,"EDUCATIONAL_SOURCE_READING");
+assert.equal(publishedReadings.scope,"EXPLORER_ONLY");
+assert.equal(publishedReadings.entries.length,84,"Visible Mass must stay synchronized with current production Mass Explorer");
+assert.ok(publishedExplorerSource.includes("mass-explorer-prayer-readings.js"),"canonical Mass Explorer must own the 84 readings");
+
 for(const [id,ids] of expected){
  assert.deepEqual(visibleMassResearchMomentLinks(id).map(x=>x.guideId),[],
    "unapproved relationship must not be exposed by default");
