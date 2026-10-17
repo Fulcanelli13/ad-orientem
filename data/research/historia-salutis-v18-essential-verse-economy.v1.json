@@ -21,10 +21,11 @@
   },
   "counts": {
     "essential": 93,
-    "edited": 32,
+    "edited": 31,
     "protected": 34,
     "unchanged": 25,
-    "editionCorrections": 2
+    "editionCorrections": 2,
+    "priorContinuityRestorations": 1
   },
   "candidateSourceEditions": [
     "cpdv-2009",
@@ -59,7 +60,15 @@
         ],
         "status": "SPLIT_MERGED_VERSE_ALIGNMENT_NOT_CERTIFIED_PRINTED_EDITIONS"
       }
-    ]
+    ],
+    "continuityReconciliation": {
+      "priorHighRiskUnitsOverlappingA": 5,
+      "identicalSelections": 3,
+      "deliberateMoreCompleteEnding": "H73-07",
+      "priorSourceSeamCarried": "H21-03",
+      "reason": "Longer full Acts 28:23–31 avoids detaching verse 28 from Isaiah's preceding explanation; Red Sea pursuit cannot be omitted from Exodus 14 opening.",
+      "priorCorrectionBlobSha": "387eeab46041fd853eccee0fdcd8a89df66e1b97"
+    }
   },
   "rules": [
     "Verse order preserved in every excerpt",
@@ -592,19 +601,34 @@
       "v18ChapterId": "H21",
       "scene": "Pharaoh pursues and the sea is crossed",
       "proposedSelectedReferences": [
-        "Exodus 14:15–16",
+        "Exodus 14:5–10",
+        "Exodus 14:13–16",
         "Exodus 14:19–22",
         "Exodus 14:26–31"
       ],
-      "selectionStatus": "PROPOSED_CURATED_TRIM",
-      "reason": "Remove incidental or repeated material without losing the necessary content of pharaoh pursues and the sea is crossed; make every gap visibly non-contiguous.",
+      "selectionStatus": "PRIOR_SOURCE_CONTINUITY_RESTORED",
+      "reason": "The original v18 excerpt begins after Pharaoh's pursuit was established. Restore 14:5–10 and Moses' assurance 14:13–14 from the prior 40-unit source correction overlay. Retain the crossing and deliverance in 14:15–16,19–22,26–31. The Exodus 15 song remains accessible as canonical Scripture and earlier research, but is not compulsory narrative.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
       "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "priorHighRiskResearch": {
+        "sourcePath": "data/research/historia-salutis-v18-part-ii-correction-delta.v1.json",
+        "sourceBlobSha": "387eeab46041fd853eccee0fdcd8a89df66e1b97",
+        "principalReadings": [
+          "Exodus 14:5–10",
+          "Exodus 14:13–16",
+          "Exodus 14:19–23",
+          "Exodus 14:26–31",
+          "Exodus 15:1–2",
+          "Exodus 15:20–21"
+        ],
+        "choice": "SELECTED_SUBSET_OF_PREVIOUS_HIGH_RISK_CONTINUITY_CORRECTION",
+        "noPriorResearchDeleted": true
+      }
     },
     {
       "unitId": "H22-01",
