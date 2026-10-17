@@ -85,6 +85,21 @@ try{
    await clickable.click({force:true});
    assert.equal(await clickable.locator(".ao-line-primary").innerText(),before,"A Missal column was replaced on tap");
   }
+  // Real Missal navigation: the source-owned B032 heading is an ordinary
+  // practical rubric, not an invented priest action fired on page entry.
+  const chalice=await page.evaluate(()=>{
+    const preview=window.__AO_PHONE_PREVIEW;
+    preview.showSection("AO.MISSAL.010.3");
+    return preview.getCurrentCard()?.sectionId??null;
+  });
+  assert.equal(chalice,"AO.MISSAL.010.3","Missal chalice preparation page is missing");
+  await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-prayer-description")]
+    .some(x=>/verse le vin avant cette prière|pours the wine before this prayer/.test(x.textContent)),null,{timeout:4000});
+  const shortRubric=await page.locator(".ao-missal-prayer-description").first().innerText();
+  assert.match(shortRubric,lang==="fr"?/Le prêtre verse le vin/:/The priest pours the wine/,
+    "Missal chalice context language or form is wrong");
+  assert.ok(!(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)>1),
+    "Long practical Missal description overflows "+width+"px viewport");
   assert.deepEqual(errors,[],width+"px Missal runtime errors: "+errors.join(" | "));
   await context.close();
  }
