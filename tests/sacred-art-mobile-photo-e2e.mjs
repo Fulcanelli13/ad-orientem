@@ -24,6 +24,11 @@ const categories=data.categories,photos=categories.flatMap(c=>c.works.flatMap(w=
 const active=photos.filter(p=>!p.deliveryHold&&!p.identityHold);
 const distinct=[...new Map(active.map(p=>[p.preview,p])).values()];
 const fullRemoteAudit=process.env.AO_ART_REMOTE_AUDIT==='full';
+// A normal PR checks a bounded, geographically/source-diverse slice of ACTUAL browser image decoding.
+// The entire catalog is intentionally retained for manual workflow_dispatch only.
+const priorityPreviewCategories=[1,6,11,12,13,25,29,41,43,81,89,101,103,107,113,117,129,135,139,142,152,154,160,167];
+const sampledPreviews=priorityPreviewCategories.map(n=>distinct.find(p=>p.categoryIndex===n)).filter(Boolean);
+const auditPreviewRows=fullRemoteAudit?distinct:sampledPreviews;
 const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
 const page=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
 const pageErrors=[];
@@ -40,7 +45,7 @@ page.on('requestfailed',request=>{
     remoteRequestFailures.push({url,reason:typeof failure==='string'?failure:(failure?.errorText||JSON.stringify(failure)||'unknown')});
   }
 });
-const outcome={schema:'AO_SACRED_ART_390PX_REMOTE_PREVIEW_QA_V1',researchOnly:true,mode:fullRemoteAudit?'full-remote':'layout-only',
+const outcome={schema:'AO_SACRED_ART_390PX_REMOTE_PREVIEW_QA_V1',researchOnly:true,mode:fullRemoteAudit?'full-remote':'sample-remote',
   testedAt:new Date().toISOString(),viewport:{width:390,height:844},
   categories:categories.length,categoryWithLinkedPreview:categories.filter(c=>c.works.some(w=>w.photos.length)).length,
   photoEntries:photos.length,knownDeliveryHolds:photos.filter(p=>p.deliveryHold).length,
@@ -118,12 +123,12 @@ try {
     }));
     outcome.heldCardChecks.push({index,expected,...visible});
   }
-  if(fullRemoteAudit){
+  if(auditPreviewRows.length){
   // Actual browser decode for supported-size previews and bounded gallery fallback.
   // A 500px Commons retry is always distinguished from a successful primary load.
   const batchSize=3;
-  for(let offset=0;offset<distinct.length;offset+=batchSize){
-    const batch=distinct.slice(offset,offset+batchSize);
+  for(let offset=0;offset<auditPreviewRows.length;offset+=batchSize){
+    const batch=auditPreviewRows.slice(offset,offset+batchSize);
     const results=await page.evaluate(async rows=>Promise.all(rows.map(async row=>{
       const decode=url=>new Promise(done=>{
         const im=new Image();im.referrerPolicy='no-referrer';im.decoding='async';
@@ -156,16 +161,16 @@ try {
       if(!r.primaryOk)outcome.primaryFailures.push(r);
       if(r.reason==='500px_fallback_loaded')outcome.recoveredViaFallback.push(r);
     }
-    if((offset+batch.length)%32===0)process.stdout.write('Checked '+(offset+batch.length)+'/'+distinct.length+' source preview URLs\n');
+    if((offset+batch.length)%32===0)process.stdout.write('Checked '+(offset+batch.length)+'/'+auditPreviewRows.length+' source preview URLs\n');
     await page.waitForTimeout(220);
   }
-  outcome.browserLoadChecks={primarySuccessful:distinct.length-outcome.primaryFailures.length,
+  outcome.browserLoadChecks={testType:fullRemoteAudit?'full':'representative-24-category-sample',testedURLs:auditPreviewRows.length,totalDistinctPreviewURLs:distinct.length,primarySuccessful:auditPreviewRows.length-outcome.primaryFailures.length,
     recoveredViaFallback:outcome.recoveredViaFallback.length,
-    successful:distinct.length-outcome.broken.length,
+    successful:auditPreviewRows.length-outcome.broken.length,
     failures:outcome.broken.length,undersizeMobileCandidates:outcome.unavailable.length,
     note:'Failures may include external 403/429/network outages; retry before treating as an invalid artwork.'};
   }else{
-    outcome.browserLoadChecks={skipped:true,reason:'Full 224-URL external test runs only via GitHub workflow_dispatch to avoid repeated remote-host throttling.'};
+    outcome.browserLoadChecks={skipped:true,reason:'No active photo rows available to test.'};
   }
   const badLayout=outcome.layoutChecks.filter(x=>x.photoPresent&&(!x.containFit||!x.singlePhotoColumn||!x.enoughMobilePaintingSpace||!x.noImageFrameOverflow||!x.boundedPreviewFallback));
   outcome.layoutFailures=badLayout;
