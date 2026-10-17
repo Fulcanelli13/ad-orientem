@@ -118,7 +118,7 @@ try{
   assert.ok(offertoryRubrics.width<=1,"Missal inline Offertory rubric overflows phone width");
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.014.2"));
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
-    .some(x=>/remembers the living|mémoire des vivants/i.test(x.textContent)),null,{timeout:5000});
+    .some(x=>/commemorates the living|mémoire des vivants/i.test(x.textContent)),null,{timeout:5000});
   assert.equal(await page.locator(".ao-canon-inline-rubrics").count(),0,
     "Missal should use restrained book rubric, not duplicate LIVE Canon rail note");
 
