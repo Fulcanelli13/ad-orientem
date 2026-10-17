@@ -89,6 +89,7 @@ try {
   await verified.waitFor({state:"visible",timeout:12000});
   assert.ok((await verified.getAttribute("href")).includes("ecatholic2000.com/catena/"),
     "Passage-specific patristic link lost provenance");
+  await page.locator("#ao-scripture-overlay .aoScriptureTools > summary").click();
   await page.locator("#ao-scripture-overlay .aoScriptureBrowse summary").click();
   await page.locator("#ao-scripture-overlay .aoScriptureNav select").nth(1).selectOption("cpdv-2009");
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.editionId),"cpdv-2009",

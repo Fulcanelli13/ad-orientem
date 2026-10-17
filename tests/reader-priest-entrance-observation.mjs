@@ -67,4 +67,81 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   assert.equal(controller.project().reverence,null);
 }
 assert.throws(()=>createObservedPriestEntranceController({form:"UNKNOWN"}),/Supported 1962/);
+
+import {createObservedChalicePreparationController} from "../src/mass/reader-priest-chalice-observation.js";
+
+// Source-backed Missal guidance is NOT proof of a performed movement.
+// Human reports must explicitly identify actor, object, action and whether
+// the action occurred before/during Deus, qui humanae (Ritus VII.4, VII.9).
+const standard={actualCelebration:{id:"selected",type:"CALENDAR"},overlays:[]};
+const reported=(action,actor,object,phase)=>({
+  action,actor,object,phase,observed:true,source:"EXPLICIT_OBSERVATION"
+});
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const requiem of [false,true]){
+    const selection={...standard,form,
+      ...(requiem?{overlays:["REQUIEM"]}:{})};
+    const controller=createObservedChalicePreparationController({resolvedMass:selection});
+    assert.equal(controller.project().supported,true);
+    assert.equal(controller.project().observations.length,0);
+    assert.equal(controller.project().latest,null);
+    assert.equal(controller.project().sourceOwner,"CHALICE_UNOBSERVED_FAIL_CLOSED");
+    assert.equal(controller.project().cueId,null);
+    assert.equal(controller.project().priestAction,null);
+    assert.equal(controller.project().faithfulPosture,null);
+    const solemn=form==="SOLEMN";
+    const wine=reported("WINE_POURED",solemn?"DEACON":"PRIEST","WINE","BEFORE_PRAYER");
+    assert.equal(controller.observe({...wine,observed:false}).accepted,false,
+      "Text/cursor must not impersonate a reported observation");
+    assert.equal(controller.observe({...wine,source:"SCROLL"}).accepted,false);
+    assert.equal(controller.observe({...wine,actor:"SCHOLA"}).accepted,false);
+    assert.equal(controller.observe({...wine,object:"WATER"}).accepted,false);
+    assert.equal(controller.observe({...wine,phase:"DURING_PRAYER"}).accepted,false);
+    assert.equal(controller.project().latest,null);
+    assert.equal(controller.observe(wine).accepted,true);
+    assert.equal(controller.observe(wine).reason,"ACTION_ALREADY_REPORTED");
+    const water=reported("WATER_ADDED",solemn?"SUBDEACON":"PRIEST",
+      "WATER","DURING_PRAYER");
+    if(solemn){
+      assert.equal(controller.observe(reported("WATER_PRESENTED","SUBDEACON",
+        "WATER","DURING_PRAYER")).accepted,true);
+      assert.equal(controller.observe(reported("WATER_PRESENTED","PRIEST",
+        "WATER","DURING_PRAYER")).accepted,false);
+    }else{
+      assert.equal(controller.observe(reported("WATER_PRESENTED","SUBDEACON",
+        "WATER","DURING_PRAYER")).accepted,false);
+    }
+    assert.equal(controller.observe(reported("WATER_BLESSED","DEACON",
+      "WATER","DURING_PRAYER")).accepted,false);
+    const blessing=reported("WATER_BLESSED","PRIEST","WATER","DURING_PRAYER");
+    assert.equal(controller.observe(blessing).accepted,!requiem,
+      "Requiem must not assert a water blessing");
+    assert.equal(controller.observe(water).accepted,true);
+    const state=controller.project();
+    assert.equal(state.latest.action,"WATER_ADDED");
+    assert.equal(state.priestAction,null,"Observation must not assert ongoing priest gesture");
+    assert.equal(state.cinematic,null,"No timed or scroll-derived cinematic");
+    assert.equal(state.automatedIconAllowed,false);
+    assert.ok(state.observations.every(x=>x.canonicalCueId===null&&
+      x.observationStatus==="REPORTED_NOT_PHYSICALLY_VERIFIED"));
+    assert.equal(state.observations.length,solemn?(requiem?3:4):(requiem?2:3));
+    const priorState=state;
+    controller.reset();
+    assert.equal(controller.project().observations.length,0);
+    assert.equal(priorState.observations.length,solemn?(requiem?3:4):(requiem?2:3),
+      "Older immutable observer snapshot changed on reset");
+    assert.equal(controller.observe(water).accepted,true,
+      "A late first witness is valid even if wine was not witnessed");
+    controller.close();
+    assert.equal(controller.project().observations.length,0);
+    assert.equal(controller.observe(wine).reason,"CLOSED");
+  }
+}
+assert.equal(createObservedChalicePreparationController().observe(
+  reported("WINE_POURED","PRIEST","WINE","BEFORE_PRAYER")
+).reason,"MASS_SELECTION_UNRESOLVED");
+assert.equal(createObservedChalicePreparationController({resolvedMass:{
+  form:"UNKNOWN",actualCelebration:{id:"unknown"}
+}}).project().supported,false);
+
 console.log("PASS observed entrance controller: four forms, optional events, no forced posture or C0001 cue, and mass always starts");

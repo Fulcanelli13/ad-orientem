@@ -4,13 +4,15 @@
  * Canonical PRAY owner remains responsible for all texts and form selection.
  */
 import "./devotional-card-deck-styles.js";
+import {angelusCommunalParts,stripGloriaRepetition} from "./angelus-folio-recitation.js";
 export const DEVOTIONAL_CARD_SCHEMA="dual-axis-devotional-cards-v1";
 const DATA={
  angelus:[
   ["announcement","The Announcement","L’Annonce","Angelus Domini",[0,1]],
   ["fiat","Mary’s Fiat","Le Fiat de Marie","Ecce ancilla Domini",[2,3]],
   ["incarnation","The Incarnation","L’Incarnation","Et Verbum caro factum est",[4,5]],
-  ["intercession","Intercession and Collect","Intercession et oraison","Ora pro nobis / Oremus",[6,7]]
+  ["intercession","Intercession","Intercession","Ora pro nobis",[6]],
+  ["collect","The Collect","L’Oraison","Oremus",[7]]
  ],
  regina:[
   ["rejoice","Rejoice, O Queen of Heaven","Réjouissez-vous, Reine du ciel","Regina cæli",[0]],
@@ -31,39 +33,55 @@ export function angelusCardPlan({form="angelus",language="en",historicalConclusi
   id,title:fr?titleFr:en,latin,unitIndices:Object.freeze([...indices]),
   appendixIndex:null,ritual:id==="incarnation"?"profound-bow":null
  }));
- if(form==="angelus"&&historicalConclusion)
-  APPENDIX.forEach(([id,en,titleFr,latin,i])=>items.push(Object.freeze({
-   id,title:fr?titleFr:en,latin,unitIndices:Object.freeze([]),appendixIndex:i,ritual:null
-  })));
+ // The customary conclusion belongs on the Collect card, never extra cards.
  return Object.freeze(items);
 }
 function create(doc,tag,className,value){
  const x=doc.createElement(tag);x.className=className||"";
  if(value!==undefined)x.textContent=value;return x;
 }
-function formattedFace(doc,text){
+function voiceLine(doc,role,value){
+ const row=create(doc,"span","aoAngelusDialogueLine "+role+" aoDevoParagraph");
+ row.dataset.aoAngelusVoice=role;
+ const sign=create(doc,"span","ao-liturgical-speaker",role==="response"?"℟.":"℣.");
+ sign.dataset.aoSpeakerRole=role==="response"?"response":"versicle";
+ row.append(sign,create(doc,"span","",value));return row;
+}
+function formattedFace(doc,text,recitationMode="individual",appendixIndex=0){
  const el=create(doc,"span","aoDevoAppendixFace");
- for(const line of String(text||"").split("\n").filter(x=>x.trim())){
+ const lines=String(text||"").split("\n").filter(x=>x.trim());
+ lines.forEach(line=>{
   const pair=line.match(/^\s*(?:℣|V|℟|R)\.\s*(.*)$/);
   const role=/^\s*(?:℟|R)\./.test(line)?"response":"leader";
-  if(pair){
-   const row=create(doc,"span","aoAngelusDialogueLine "+role);
-   row.dataset.aoAngelusVoice=role;
-   const sig=create(doc,"span","ao-liturgical-speaker",role==="response"?"℟.":"℣.");
-   sig.dataset.aoSpeakerRole=role==="response"?"response":"versicle";
-   row.append(sig,create(doc,"span","",pair[1]));el.append(row);
-  }else el.append(create(doc,"span","aoDevoAppendixLine",line));
- }
+  if(pair){el.append(voiceLine(doc,role,pair[1]));return}
+  if(appendixIndex===0){
+   // The canonical Appendix says "three times", but its text is not copied
+   // three times in the data owner. Expand the three repetitions in the view.
+   const prayer=stripGloriaRepetition(line);
+   for(let i=0;i<3;i++){
+    const repeat=create(doc,"span","aoFolioGloria");
+    repeat.dataset.aoGloriaRepeat=String(i+1);
+    const parts=recitationMode==="group"?angelusCommunalParts(prayer,"doxology"):null;
+    if(parts)parts.forEach(p=>repeat.append(voiceLine(doc,p.role,p.text)));
+    else repeat.append(create(doc,"span","aoDevoAppendixLine",prayer));
+    el.append(repeat);
+   }
+   return;
+  }
+  el.append(create(doc,"span","aoDevoAppendixLine",line));
+ });
  return el;
 }
-function appendixUnit(doc,v,l,language){
+function appendixUnit(doc,v,l,language,recitationMode,appendixIndex){
  const el=create(doc,"article","aoP435930LitCard aoP435930PrayerUnit aoDevoAppendixUnit");
  el.dataset.aoAngelusUnit="appendix";
+ el.dataset.aoAppendixIndex=String(appendixIndex);
  const b=create(doc,"button","");b.type="button";b.dataset.p435930CardFlip="";
  b.setAttribute("aria-label",language==="fr"?"Changer la langue de la prière":"Switch prayer language");
  const vern=create(doc,"span",""),lat=create(doc,"span","");
  vern.dataset.faceV="";lat.dataset.faceLa="";lat.hidden=true;
- vern.append(formattedFace(doc,v));lat.append(formattedFace(doc,l));
+ vern.append(formattedFace(doc,v,recitationMode,appendixIndex));
+ lat.append(formattedFace(doc,l,recitationMode,appendixIndex));
  b.append(vern,lat);el.append(b);
  return el;
 }
@@ -72,7 +90,12 @@ function collectParagraphs(body,id){
  for(const unit of body.querySelectorAll(".aoP435930PrayerUnit")){
   const voice=[...unit.querySelectorAll('[data-face-v] [data-ao-angelus-voice]')];
   const latin=[...unit.querySelectorAll('[data-face-la] [data-ao-angelus-voice]')];
-  const paragraphs=voice.length?voice:[unit];
+  const repeated=[...unit.querySelectorAll("[data-face-v] .aoFolioGloria")];
+  const paragraphs=voice.length?voice:repeated.length?repeated:[unit];
+  // Individual Mode keeps a continuous V/R text block. The canonical first
+  // Incarnation unit must still own the scroll-triggered gesture cue.
+  if(id==="incarnation"&&!voice.length&&unit.dataset.aoAngelusUnit==="vr")
+   unit.dataset.aoDevoCue="profound-bow";
   // Focus the actual visible translation, not only the vernacular face.
   latin.forEach((line,i)=>{line.classList.add("aoDevoParagraph");
    line.dataset.aoDevoParagraph=String(all.length+i);
@@ -94,7 +117,7 @@ function visible(el){return Boolean(el&&el.getClientRects().length)}
  * recitation role markup, language flip handlers, or seasonal posture resolver.
  */
 export function installAngelusCardDeck({mount,form="angelus",language="en",
- historicalConclusion=false,appendixText,initialIndex=0,onCardChange=()=>{},onCue=()=>{}}={}){
+ historicalConclusion=false,appendixText,recitationMode="individual",guided=false,initialIndex=0,onCardChange=()=>{},onCue=()=>{}}={}){
  const doc=mount?.ownerDocument,host=mount?.querySelector(".aoP435930AngelusSequence");
  if(!doc||!host)return null;
  if(host.dataset.aoDevotionalDeck==="v1")return host.__aoDevotionalDeck||null;
@@ -131,11 +154,29 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   header.append(create(doc,"small","aoDevoCardNumber",String(i+1)+" / "+plan.length),
    create(doc,"h2","aoDevoCardTitle",entry.title),
    create(doc,"p","aoDevoCardLatin",entry.latin));
+  if(guided){
+   const hints=form==="angelus"?{
+    announcement:["The angel announces the Incarnation to Mary.","L’ange annonce à Marie l’Incarnation."],
+    fiat:["Mary consents freely to the word of God.","Marie consent librement à la parole de Dieu."],
+    incarnation:["The eternal Word truly assumed human nature.","Le Verbe éternel a véritablement assumé la nature humaine."],
+    intercession:["Ask the Mother of God to pray for us.","Demandez à la Mère de Dieu d’intercéder pour nous."],
+    collect:["The prayer joins the Incarnation to the Passion and Resurrection.","La prière unit l’Incarnation à la Passion et à la Résurrection."]
+   }:null;
+   const hint=hints?.[entry.id];
+   if(hint)header.append(create(doc,"p","aoFolioGuidedHint",language==="fr"?hint[1]:hint[0]));
+  }
   const body=create(doc,"div","aoDevoCardScroll");body.dataset.aoDevoScroll="";
   body.setAttribute("role","region");body.setAttribute("aria-label",entry.title);
   entry.unitIndices.forEach(j=>body.append(units[j]));
-  if(entry.appendixIndex!==null)body.append(appendixUnit(doc,parts.v[entry.appendixIndex],
-   parts.l[entry.appendixIndex],language));
+  if(form==="angelus"&&entry.id==="collect"&&parts){
+   APPENDIX.forEach(([id,en,titleFr,latin,appendixIndex])=>{
+    const group=create(doc,"section","aoFolioConclusionPart");
+    group.dataset.aoConclusionPart=id;
+    group.append(create(doc,"h3","aoFolioConclusionHeading",language==="fr"?titleFr:en));
+    group.append(appendixUnit(doc,parts.v[appendixIndex],parts.l[appendixIndex],language,recitationMode,appendixIndex));
+    body.append(group);
+   });
+  }
   collectParagraphs(body,entry.id);
   card.append(header,body);viewport.append(card);cards.push(card);
  });

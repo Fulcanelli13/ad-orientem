@@ -52,6 +52,32 @@ try{
     await page.waitForFunction(()=>Boolean(document.querySelector(
       ".aoTodayV2CalendarInline .aoCalV2Commemorations p span")),null,{timeout:35000});
     const fromCalendar=await cal.locator(".aoCalV2Commemorations p span").allTextContents();
+    const dayHierarchy=await cal.locator(".aoCalV2Hero").evaluate(hero=>{
+      const title=hero.querySelector("h2"),commem=hero.querySelector(".aoCalV2Commemorations"),
+        reading=hero.querySelector(".aoCalDayScripture"),
+        mass=hero.querySelector("[data-cal-mass]"),
+        documentation=hero.querySelector(".aoCalV2Documentation"),
+        source=hero.querySelector(".aoCalDaySources");
+      const precedes=(a,b)=>Boolean(a&&b&&(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING));
+      return {commemorations:hero.querySelectorAll(".aoCalV2Commemorations").length,
+        documentations:hero.querySelectorAll(".aoCalV2Documentation").length,
+        titleBeforeCommem:precedes(title,commem),
+        commemBeforeReadings:!reading||precedes(commem,reading),
+        readingsBeforeMass:!reading||!mass||precedes(reading,mass),
+        massBeforeSources:!mass||precedes(mass,source),
+        sourcesInsideDocumentation:Boolean(documentation?.contains(source)),
+        printVisibleWithoutDisclosure:Boolean(hero.querySelector('.aoCalV2PrintOptions:not([open]) [data-cal-print-proper]')?.getClientRects().length),
+        width:hero.getBoundingClientRect().width
+      };
+    });
+    assert.equal(dayHierarchy.commemorations,1,"Calendar Day cannot repeat historical commemorations");
+    assert.equal(dayHierarchy.documentations,1);
+    assert.ok(dayHierarchy.titleBeforeCommem&&dayHierarchy.commemBeforeReadings&&
+      dayHierarchy.readingsBeforeMass&&dayHierarchy.massBeforeSources,
+      "Calendar Day information sequence regressed: "+JSON.stringify(dayHierarchy));
+    assert.equal(dayHierarchy.sourcesInsideDocumentation,true);
+    assert.equal(dayHierarchy.printVisibleWithoutDisclosure,false);
+    assert.ok(dayHierarchy.width<=width+1,"Calendar hero wider than phone "+width+": "+dayHierarchy.width);
     assert.ok(fromCalendar.length>0,"No 1962 commemoration on "+date);
     assert.ok(fromCalendar.every(v=>v.trim()&&!/^(sancti|tempora|commune):/.test(v)),
       "Calendar exposes raw source ID on "+date+": "+JSON.stringify(fromCalendar));
@@ -70,16 +96,20 @@ try{
     assert.ok(!/Commemorations|Commémorations/i.test(heroMeta),
       "Historic saints should not appear twice: the header and dedicated observed-day list");
     if(width===320&&date==="2026-01-14"){
-      const word=await page.locator(".aoTodayV2Context button+button strong").evaluate(el=>{
-        const range=document.createRange();
-        const target=el.firstChild;
-        const len=Math.min(13,target?.textContent?.length||0);
-        if(!target||!len)return {text:el.textContent,fragments:0};
-        range.setStart(target,0);range.setEnd(target,len);
-        return {text:el.textContent,fragments:range.getClientRects().length};
+      // The retired Coming Soon tile no longer owns the next feast.
+      // Check the single canonical Coming next date list at the same 320px width.
+      const candidates=page.locator(".aoTodayV2Approaching .aoTodayV2Event strong");
+      assert.ok(await candidates.count()>0,"The one upcoming list must remain accessible on a historical day");
+      const longWord=await candidates.first().evaluate(el=>{
+        const range=document.createRange(),target=el.firstChild;
+        const text=target?.textContent||"";
+        const word=text.match(/[A-Za-zÀ-ÿ]{8,}/);
+        if(!target||!word)return {text,fragments:0,hasLongWord:false};
+        range.setStart(target,word.index);range.setEnd(target,word.index+word[0].length);
+        return {text,fragments:range.getClientRects().length,hasLongWord:true};
       });
-      assert.match(word.text,/Septuagesima/i);
-      assert.equal(word.fragments,1,"Septuagesima must not break mid-word at 320px");
+      if(longWord.hasLongWord)
+        assert.equal(longWord.fragments,1,"Coming next feast titles must not split a word at 320px");
     }
     if(date==="2026-01-14")
       await page.screenshot({path:resolve(out,"home-1962-commemoration-"+width+".png"),animations:"disabled"});

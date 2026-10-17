@@ -804,6 +804,36 @@ const ROSARY_SCRIPTURE_POLICY_CSS=`
   text-decoration:underline;text-underline-offset:3px;font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
 }
 /* Guided Rosary: authored contemplations (not Scripture quotations). */
+#aoPrayerBookRoot .aoRosaryBeadScripture{margin:12px 0 6px;padding:13px 14px;border-left:2px solid var(--liturgical,#9b886c);background:rgba(140,119,80,.06);border-radius:0 9px 9px 0;color:var(--text,#f3ead7);overflow-wrap:break-word}
+#aoPrayerBookRoot .aoRosaryEnglishSwitch{display:flex;gap:6px;margin:8px 0 10px;align-items:center}
+#aoPrayerBookRoot .aoRosaryEnglishSwitch button{flex:1;min-height:44px;padding:8px 11px;background:transparent;color:inherit;border:1px solid rgba(185,158,111,.5);border-radius:9px;font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+#aoPrayerBookRoot .aoRosaryEnglishSwitch button[aria-pressed="true"]{background:rgba(170,136,78,.15);border-color:var(--liturgical,#b9a073);font-weight:750}
+#aoPrayerBookRoot .aoRosaryEnglishSwitch button:disabled{opacity:.45}
+#aoPrayerBookRoot .aoRosaryEnglishSwitch button:focus-visible{outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px}
+/* Rosary Scripture: one quiet line of controls, verse first, sources on demand. */
+#aoPrayerBookRoot .aoRosaryBeadScripture{margin:8px 0 4px;padding:7px 0 3px;border:0;border-top:1px solid rgba(188,155,104,.22);border-radius:0;background:transparent}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead .aoRosaryBeadScriptureLabel{margin:0;font:600 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--muted,#c8b89a)}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead .aoRosaryEnglishFlip{flex:0 0 auto;min-height:44px;max-width:168px;min-width:114px;border:0;border-radius:4px;background:transparent;padding:10px 7px;color:var(--liturgical,#c4ac80);font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead .aoRosaryEnglishFlip:disabled{opacity:.4;cursor:default}
+#aoPrayerBookRoot .aoRosaryBeadScriptureHead .aoRosaryEnglishFlip:focus-visible{outline:2px solid var(--liturgical,#d8bd7d);outline-offset:2px}
+#aoPrayerBookRoot .aoRosaryBeadScriptureText{font:normal clamp(17px,2vw,19px)/1.65 var(--ao-font-display,Georgia,serif);margin:2px 0 3px}
+#aoPrayerBookRoot .aoRosaryBeadVerse{margin-bottom:3px}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions{gap:4px 13px;margin:4px 0 0}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button){min-height:44px;border:0;padding:10px 0;background:transparent;text-decoration:none;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--liturgical,#d2ba8b)}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button):hover{text-decoration:underline;text-underline-offset:3px}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice{display:block;opacity:1;margin:0;border-top:1px solid rgba(188,155,104,.12);font:normal 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b6a99c)}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice>summary{display:flex;align-items:center;min-height:44px;font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice p{margin:0 0 7px;font:normal 11px/1.55 var(--ao-font-ui,system-ui,sans-serif)}
+#aoPrayerBookRoot .aoRosaryBeadScriptureLabel{display:block;letter-spacing:.13em;text-transform:uppercase;font:650 10px/1.6 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#c8b89a)}
+#aoPrayerBookRoot .aoRosaryBeadScriptureText{font:normal 1.08rem/1.6 var(--ao-font-display,Georgia,serif);margin:8px 0 6px;color:inherit}
+#aoPrayerBookRoot .aoRosaryBeadVerse{display:block;margin-bottom:5px}
+#aoPrayerBookRoot .aoRosaryBeadVerse sup{font:700 .66rem var(--ao-font-ui,system-ui,sans-serif);margin-right:7px;opacity:.7}
+#aoPrayerBookRoot .aoRosaryBeadVerseScope{display:block;margin-top:4px;font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);opacity:.7}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 0}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button){color:inherit;background:transparent;border:0;border-bottom:1px solid currentColor;border-radius:0;min-height:40px;font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);padding:7px 1px;text-decoration:none;cursor:pointer}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button):focus-visible{outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice{display:block;font:500 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);opacity:.65;margin-top:5px}
 #aoPrayerBookRoot .aoRosaryGuidedBeadMeditation{margin:12px 0 3px;padding:10px 12px;border-left:2px solid var(--liturgical,#9b886c);color:var(--text,#f3ead7);background:transparent;font:italic 0.94rem/1.55 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
 #aoPrayerBookRoot .aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]{
  display:block;width:fit-content;margin-top:6px;padding:4px 0;
@@ -945,6 +975,69 @@ const PRAY_ORG_ENTRY_CSS=`
 }
 `;
 
+const PRAYER_PRACTICE_FOCUS_CSS=String.raw`
+/* Phone reading density only: no prayer, rubric or posture ownership. */
+@media(max-width:560px){
+ #aoPray435930 [data-ao-angelus-options]{
+   margin:0 0 5px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.12));
+   border-radius:0;background:transparent
+ }
+ #aoPray435930 [data-ao-angelus-options]>summary{
+   min-height:44px;padding:6px 3px;color:var(--muted,#c1b8aa);font-weight:500
+ }
+ #aoPray435930 [data-ao-angelus-options]>summary>small{
+   font-weight:500;font-size:11px
+ }
+ #aoPray435930 [data-ao-ritual-module="angelus"].aoRitualRail{
+   padding:0 0 2px!important;gap:4px!important;margin:0!important;
+   background:transparent!important;backdrop-filter:none!important
+ }
+ #aoPray435930 [data-ao-ritual-module="angelus"] .aoRitualSlot[data-channel="posture"]{
+   min-height:44px!important;border-radius:8px!important;padding:3px 7px!important
+ }
+ #aoPray435930 [data-ao-ritual-module="angelus"] .aoRitualIcon{
+   width:30px!important;height:30px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoTimeline{
+   min-height:48px!important;padding:2px 0!important;gap:3px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoStop{
+   min-height:44px!important;padding:5px 7px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoNavArrow{
+   min-height:44px!important;border-color:transparent!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoCardHead{
+   padding:8px 12px 7px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoCardNumber{display:none!important}
+ #aoPray435930 .aoP435930AngelusReader .aoDevoCardTitle{
+   margin:2px 0!important;font-size:clamp(22px,5.4vw,27px)!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoCardScroll{
+   padding-top:12px!important;gap:18px!important;
+   min-height:min(340px,48dvh);height:min(62dvh,550px)
+ }
+ #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions{
+   margin:0 0 3px!important;border:0!important;
+   border-bottom:1px solid var(--border,rgba(255,255,255,.12))!important;
+   border-radius:0!important;background:transparent!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions>summary{
+   min-height:44px!important;padding:5px 2px!important;
+   color:var(--muted,#c1b8aa)!important;font-weight:500!important
+ }
+ #aoPrayerBookRoot.open .aoRosaryNamedTimeline{padding:3px 2px!important;gap:3px!important}
+ #aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStop{
+   min-height:44px!important;padding:5px 8px!important
+ }
+ #aoPrayerBookRoot.open .aoRosaryActiveCard{padding:12px 12px 9px!important}
+ #aoPrayerBookRoot.open .aoRosaryActiveCard > h2.aoDevoCardTitle{
+   margin-bottom:8px!important
+ }
+}
+`;
+
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
@@ -963,6 +1056,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-devotional-prayer-first-style",DEVOTIONAL_PRAYER_FIRST_CSS);
   ensureStyle(doc,"ao-pray-readable-guidance-style",PRAY_READING_TYPE_CSS);
   ensureStyle(doc,"ao-pray-organised-family-entry-style",PRAY_ORG_ENTRY_CSS);
+  ensureStyle(doc,"ao-pray-practice-focus-phone-style",PRAYER_PRACTICE_FOCUS_CSS);
   return true;
 }
 

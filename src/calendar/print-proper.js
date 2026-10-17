@@ -43,6 +43,28 @@ function sectionsFromProper(p,lang){
     ...section("postcommunion",p.postcommunions)
   ].filter(x=>x.latin||x.vernacular);
 }
+/**
+ * Shared, pure source-text completeness gate.
+ * Printable Calendar Proper and explicitly selected alternate Mass Proper
+ * MUST pass the same bilingual source/structure checks. The caller alone
+ * owns liturgical selection, permitted commemoration and authorization.
+ */
+export function assessResolvedProperTextSections(proper,{language="en"}={}){
+  if(!["en","fr"].includes(language))return {ok:false,reason:"Unsupported vernacular"};
+  const p=proper?.data&&proper?.status?proper.data:proper;
+  if(!p||typeof p!=="object")return {ok:false,reason:"Resolved Proper unavailable"};
+  if(!["ordinary_mass","ordinary_mass_1962"].includes(String(p.riteProfile||"ordinary_mass").toLowerCase())||
+    (p.preparatoryLessons||[]).length||(p.specialSections||[]).length)
+    return {ok:false,reason:"Special structure requires the native Missal reader"};
+  const sections=sectionsFromProper(p,language);
+  const mandatory=["introit","collect","epistle","gospel","offertory","secret","communion","postcommunion"];
+  const missing=mandatory.filter(kind=>!sections.some(x=>x.kind===kind));
+  if(missing.length)return {ok:false,reason:"Required Proper section unavailable",missing};
+  if(sections.some(x=>!x.latin||!x.vernacular))
+    return {ok:false,reason:"Incomplete bilingual source passages"};
+  if(!String(p.sourcePath||"").trim())return {ok:false,reason:"Canonical source identity unavailable"};
+  return {ok:true,reason:null,sections,proper:p};
+}
 export function assessPrintableProper(resolved,{language="en",massForm=null}={}){
   if(!["en","fr"].includes(language))return {ok:false,reason:"Unsupported vernacular"};
   const raw=resolved?.proper?.status==="ready"?resolved.proper.data:null;
@@ -55,17 +77,7 @@ export function assessPrintableProper(resolved,{language="en",massForm=null}={})
     resolved.day.commemorations.length>0&&selected?.status!=="CERTIFIED")
     return {ok:false,reason:"Form-specific commemoration rules not yet source-certified"};
   const p=selected?.proper??raw;
-  if(!["ordinary_mass","ordinary_mass_1962"].includes(String(p.riteProfile||"ordinary_mass").toLowerCase())||
-    (p.preparatoryLessons||[]).length||(p.specialSections||[]).length)
-    return {ok:false,reason:"Special structure requires the native Missal reader"};
-  const sections=sectionsFromProper(p,language);
-  const mandatory=["introit","collect","epistle","gospel","offertory","secret","communion","postcommunion"];
-  const missing=mandatory.filter(kind=>!sections.some(x=>x.kind===kind));
-  if(missing.length)return {ok:false,reason:"Required Proper section unavailable",missing};
-  if(sections.some(x=>!x.latin||!x.vernacular))
-    return {ok:false,reason:"Incomplete bilingual source passages"};
-  if(!String(p.sourcePath||"").trim())return {ok:false,reason:"Canonical source identity unavailable"};
-  return {ok:true,reason:null,sections,proper:p};
+  return assessResolvedProperTextSections(p,{language});
 }
 export function renderPrintableProperHtml(resolved,{language="en",massForm=null}={}){
   const audit=assessPrintableProper(resolved,{language,massForm});

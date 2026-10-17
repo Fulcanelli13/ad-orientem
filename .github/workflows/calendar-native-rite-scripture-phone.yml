@@ -1,0 +1,32 @@
+name: Calendar P0 native rite Scripture links
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/calendar/native-rite-scripture-handoff.js"
+      - "src/calendar/scripture-handoff.js"
+      - "src/calendar/selected-scripture-objects.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/mass/scripture-native-rite-index.js"
+      - "src/calendar/traditional-year-v384.js"
+      - "tests/calendar-native-rite-scripture-handoff.mjs"
+      - "tests/calendar-native-rite-scripture-phone.mjs"
+      - ".github/workflows/calendar-native-rite-scripture-phone.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  native-rite-mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/calendar-native-rite-scripture-handoff.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/calendar-native-rite-scripture-phone.mjs

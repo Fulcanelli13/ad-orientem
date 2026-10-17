@@ -198,7 +198,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    }
    return false;
  }
- function open({passage=null,language=null,context=null,onCloseReturn:restoreOnClose=null}={}){
+ function open({passage=null,language=null,context=null,initialDepth="selected",onCloseReturn:restoreOnClose=null}={}){
    const node=overlay();if(!node||journey)return false;
    installScriptureStyles(doc);
    if(!reader){previousFocus=doc.activeElement;previousOverflow=doc.body?.style?.overflow??"";}
@@ -206,7 +206,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    reader?.destroy?.();
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
    reader=mountScriptureLibrary(node,{
-     passage,context,language:current==="fr"?"fr":"en",storage:win.localStorage,
+     passage,context,initialDepth,language:current==="fr"?"fr":"en",storage:win.localStorage,
      records:[...loaded.values()].flat(),
      onClose:close,
      canOpenRelatedObject,
@@ -236,10 +236,10 @@ export function installScriptureBrowserOwner(win=globalThis){
    node.querySelector?.("[data-scripture-close]")?.focus?.();
    return true;
  }
- function openContext(reference,{language=null,onCloseReturn=null}={}){
+ function openContext(reference,{language=null,depth="selected",onCloseReturn=null}={}){
    const parsed=parseScriptureContext(reference);
    if(!parsed)return false;
-   return open({passage:parsed.passage,context:parsed,language,onCloseReturn});
+   return open({passage:parsed.passage,context:parsed,language,initialDepth:depth==="commentary"?"commentary":"selected",onCloseReturn});
  }
  function openSegments(segments,{language=null,reference=null,provenance=null,liturgicalArrangement=null,onCloseReturn=null}={}){
    try{
@@ -265,7 +265,10 @@ export function installScriptureBrowserOwner(win=globalThis){
    const capsule=e.target?.closest?.("[data-ao-scripture-context]");
    if(capsule){
      e.preventDefault?.();e.stopImmediatePropagation?.();
-     const accepted=openContext(capsule.getAttribute("data-ao-scripture-context"));
+     const accepted=openContext(capsule.getAttribute("data-ao-scripture-context"),{
+       depth:capsule.dataset.aoScriptureDepth==="commentary"?"commentary":"selected",
+       language:capsule.dataset.aoScriptureLanguage==="en"?"en":null
+     });
      if(!accepted){
        const error=doc.createElement("span");
        error.setAttribute("role","alert");error.className="aoScriptureContextError";

@@ -44,7 +44,7 @@ try {
    await anchor.tap();
    const bible=page.locator("#ao-scripture-overlay");
    await bible.waitFor({state:"visible",timeout:12000});
-   assert.match(await bible.locator(".aoScriptureContextTitle").innerText(),/Genesis 14:18/);
+   assert.match(await bible.locator(".aoScriptureReading h3").innerText(),/Genesis 14:18/);
    await bible.locator('[data-scripture-close]').tap();
    await root.locator('[data-ao-mf-moment-detail="AO.CARD.017"]').waitFor();
    await root.locator('[data-ao-mf-related-stage="MF04"]').tap();

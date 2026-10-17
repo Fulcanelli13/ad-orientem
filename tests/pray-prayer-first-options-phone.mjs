@@ -110,21 +110,24 @@ try{
    await open("pray.angelus");
    const angelus="#aoPray435930.open [data-ao-angelus-options]";
    const ag=page.locator(angelus);
+   const settings=page.locator("#aoPray435930.open [data-p435930-angelus-settings]");
    const angelusDom=await page.evaluate(()=>{
     const r=document.querySelector("#aoPray435930.open .aoP435930AngelusReader"),
       p=r?.querySelector(":scope > [data-ao-angelus-options]"),
       reader=r?.querySelector(":scope > .aoAngelusRitualGrid"),
-      warning=r?.querySelector(":scope > .aoP435930Callout.warn");
+      warning=r?.querySelector(":scope > .aoP435930Callout.warn"),
+       settings=r?.closest(".aoP435930Mount")?.querySelector("[data-p435930-angelus-settings]");
     return {one:r?.querySelectorAll("[data-ao-angelus-options]").length,closed:!p?.open,
-      abovePrayer:p?.nextElementSibling===reader,
+      abovePrayer:!!p&&!!reader&&!!(p.compareDocumentPosition(reader)&Node.DOCUMENT_POSITION_FOLLOWING),
+       settings:!!settings,
       guideSources:p?.querySelectorAll(".aoAngelusGuideSection a[href^='https://']").length,
       paragraphs:reader?.querySelectorAll("[data-ao-angelus-unit]").length,
       hasVR:!!reader?.querySelector("[data-ao-angelus-voice=leader]")&&
         !!reader?.querySelector("[data-ao-angelus-voice=response]"),
       warningsVisible:!warning||warning.getClientRects().length>0,
-      labelHeight:p?.querySelector("summary")?.getBoundingClientRect().height};
+      labelHeight:settings?.getBoundingClientRect().height};
    });
-   assert.ok(angelusDom.one===1&&angelusDom.closed&&angelusDom.abovePrayer&&angelusDom.hasVR&&
+   assert.ok(angelusDom.one===1&&angelusDom.closed&&angelusDom.settings&&angelusDom.abovePrayer&&angelusDom.hasVR&&
       angelusDom.paragraphs>=3&&angelusDom.labelHeight>=44&&angelusDom.warningsVisible,
     "Angelus canonical prayer hierarchy damaged: "+JSON.stringify(angelusDom));
    assert.ok([4,5].includes(angelusDom.guideSources),
@@ -138,7 +141,7 @@ try{
    assert.equal(await ag.locator('[data-p435930-seg="group"]').isVisible(),false,
      "Angelus recitation choice is visible outside its closed disclosure");
    await page.screenshot({path:resolve(shots,"angelus-first-"+width+".png"),animations:"disabled"});
-   await ag.locator(":scope > summary").click();
+   await settings.click();
    await expanded(angelus);
    await ag.locator('[data-p435930-seg="angelus"]').click();
    await expanded(angelus);
@@ -155,7 +158,7 @@ try{
    await expanded(angelus);
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"regina");
    assert.equal(await ag.locator(".aoAngelusGuideSection a[href^='https://']").count(),4);
-   await ag.locator(":scope > summary").click();
+   await settings.click();
    assert.equal(await ag.getAttribute("open"),null);
    assert.equal(await ag.locator('[data-p435930-seg="group"]').isVisible(),false,
      "Collapsed Regina settings still occupy prayer reading space");

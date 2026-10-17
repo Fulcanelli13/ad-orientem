@@ -124,7 +124,19 @@
         "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
         "locator": "General Rubrics 119(a), 127(a): white from Christmas through the end of Epiphany; green begins January 14."
       },
-      "secondary": "https://gcatholic.org/calendar/2024/Extraordinary-en"
+      "secondary": "https://gcatholic.org/calendar/2024/Extraordinary-en",
+      "rubricClaim": {
+        "id": "EPIPHANY_2024_WHITE",
+        "kind": "SEASONAL_MASS_COLOUR",
+        "clauses": [
+          "RG 119(a)",
+          "RG 127(a)"
+        ],
+        "expectedColour": "White",
+        "en": "For this source-resolved weekday before 14 January, the 1960 rubrics prescribe white during Epiphanytide; the green season has not yet begun. The independent calendar disagreement is retained as a source distinction.",
+        "fr": "Pour ce jour de férie attesté avant le 14 janvier, les rubriques de 1960 prescrivent le blanc pendant le temps de l’Épiphanie ; la période verte n’a pas encore commencé. Le désaccord entre calendriers demeure signalé.",
+        "referencePage": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf#page=20"
+      }
     },
     {
       "date": "2027-01-11",
@@ -143,7 +155,19 @@
         "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
         "locator": "General Rubrics 119(a), 127(a): white from Christmas through the end of Epiphany; green begins January 14."
       },
-      "secondary": "https://gcatholic.org/calendar/2027/Extraordinary-en"
+      "secondary": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+      "rubricClaim": {
+        "id": "EPIPHANY_2027_WHITE",
+        "kind": "SEASONAL_MASS_COLOUR",
+        "clauses": [
+          "RG 119(a)",
+          "RG 127(a)"
+        ],
+        "expectedColour": "White",
+        "en": "For this source-resolved weekday before 14 January, the 1960 rubrics prescribe white during Epiphanytide; the green season has not yet begun. The independent calendar disagreement is retained as a source distinction.",
+        "fr": "Pour ce jour de férie attesté avant le 14 janvier, les rubriques de 1960 prescrivent le blanc pendant le temps de l’Épiphanie ; la période verte n’a pas encore commencé. Le désaccord entre calendriers demeure signalé.",
+        "referencePage": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf#page=20"
+      }
     }
   ],
   "secondaryAdjudications": [
@@ -159,7 +183,18 @@
         "url": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf",
         "locator": "General Rubrics 128(a): Advent through the Vigil of Christmas inclusive."
       },
-      "otherSource": "https://missalemeum.com/en/calendar/2062-12-24"
+      "otherSource": "https://missalemeum.com/en/calendar/2062-12-24",
+      "rubricClaim": {
+        "id": "NATIVITY_VIGIL_VIOLET",
+        "kind": "SEASONAL_MASS_COLOUR",
+        "clauses": [
+          "RG 128(a)"
+        ],
+        "expectedColour": "Violet",
+        "en": "For the source-resolved Christmas Vigil, the Advent violet period includes 24 December. The conflicting calendar colour is not adopted as the rubrical norm.",
+        "fr": "Pour la vigile de Noël attestée par la source, le violet de l’Avent reste prescrit le 24 décembre inclusivement. La couleur divergente d’un autre calendrier ne constitue pas la norme rubricale.",
+        "referencePage": "https://propria.org/wp-content/uploads/2019/10/the-new-rubrics-of-the-roman-missal-and-breviary-1960-by-rev.-patrick-l.-murphy.pdf#page=20"
+      }
     }
   ],
   "outstandingSecondaryCases": [
@@ -184,7 +219,26 @@
       "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Commemoration of Saint Peter absent under St Paul feast in pinned resolver; secondary 1962 calendar includes it.",
       "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
-      "implementation": "Inseparable St Peter commemoration is represented in day metadata; Sancti/06-30 contains the reciprocal Collect, Secret and Postcommunion under one conclusion per §110."
+      "implementation": "Inseparable St Peter commemoration is represented in day metadata; Sancti/06-30 contains the reciprocal Collect, Secret and Postcommunion under one conclusion per §110.",
+      "rubricalClaim": {
+        "id": "PETER_PAUL_INSEPARABLE_2027",
+        "kind": "INSEPARABLE_APOSTLES",
+        "sourcePath": "Sancti/06-30",
+        "principalId": "sancti:06-30:3:r",
+        "principalClass": 3,
+        "commemorationId": "inseparable:sancti:06-29-petrus",
+        "clauses": [
+          "RG 110",
+          "RG 110(b)"
+        ],
+        "en": "At the Mass of St Paul, St Peter is commemorated inseparably. The 1960 rubrics direct the two apostolic prayers to be joined under one conclusion and counted as one prayer. The Mass reader alone certifies the actual Latin, English and French orations.",
+        "fr": "À la messe de saint Paul, saint Pierre est commémoré de façon inséparable. Les rubriques de 1960 prescrivent de joindre les deux oraisons sous une seule conclusion et de les compter comme une seule. Seul le lecteur de la messe certifie les oraisons latines, anglaises et françaises effectivement utilisées.",
+        "authorityKind": "NORMATIVE_1960_RUBRICS",
+        "massOrationSourceOwner": "src/mass/1962-inseparable-apostles-source.js",
+        "explanationOnly": true,
+        "orationCertification": "EXISTING_MASS_OWNER_ONLY",
+        "automaticMassChange": false
+      }
     },
     {
       "dates": [
@@ -193,7 +247,24 @@
       "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "XIII Sunday after Pentecost commemoration missing under first-class Assumption.",
       "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
-      "implementation": "Privileged Sunday or Advent feria is supplied as a resolved commemoration with Collect, Secret, and Postcommunion from an existing temporal Mass Proper per §§108–114."
+      "implementation": "Privileged Sunday or Advent feria is supplied as a resolved commemoration with Collect, Secret, and Postcommunion from an existing temporal Mass Proper per §§108–114.",
+      "rubricalClaim": {
+        "id": "ASSUMPTION_SUNDAY_2027",
+        "sourcePath": "Sancti/08-15",
+        "principalClass": 1,
+        "commemorationPath": "Tempora/Pent13-0",
+        "commemorationClass": 2,
+        "kind": "PRIVILEGED_SUNDAY",
+        "clauses": [
+          "RG 108(a)",
+          "RG 111(a)"
+        ],
+        "en": "The first-class Assumption takes precedence; the occurring thirteenth Sunday after Pentecost remains a privileged commemoration in the Mass.",
+        "fr": "L’Assomption, de première classe, a préséance ; le treizième dimanche après la Pentecôte est néanmoins commémoré à titre privilégié à la messe.",
+        "authorityKind": "NORMATIVE_1960_RUBRICS",
+        "explanationOnly": true,
+        "formSpecificOrationCertification": "DELEGATED_TO_CANONICAL_MASS_OWNER"
+      }
     },
     {
       "dates": [
@@ -202,7 +273,25 @@
       "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Advent feria commemoration missing under St Andrew.",
       "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
-      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria."
+      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria.",
+      "rubricalClaim": {
+        "id": "ST_ANDREW_ADVENT_FERIA_2027",
+        "sourcePath": "Sancti/11-30",
+        "principalClass": 2,
+        "commemorationPath": "Tempora/Adv1-2",
+        "commemorationClass": 3,
+        "kind": "PRIVILEGED_ADVENT_FERIA",
+        "clauses": [
+          "RG 25(b)",
+          "RG 108(e)",
+          "RG 111(c)"
+        ],
+        "en": "The second-class feast of St Andrew takes precedence over the Tuesday of Advent I; the observed Advent feria is privileged and commemorated.",
+        "fr": "La fête de deuxième classe de saint André a préséance sur le mardi de la première semaine de l’Avent ; la férie constatée est commémorée à titre privilégié.",
+        "authorityKind": "NORMATIVE_1960_RUBRICS",
+        "explanationOnly": true,
+        "formSpecificOrationCertification": "DELEGATED_TO_CANONICAL_MASS_OWNER"
+      }
     },
     {
       "dates": [
@@ -211,8 +300,411 @@
       "status": "FIXED_IN_PINNED_DAY_RESOLVER",
       "issue": "Advent feria commemoration missing under Immaculate Conception.",
       "source": "https://gcatholic.org/calendar/2027/Extraordinary-en",
-      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria."
+      "implementation": "Privileged Advent feria has preserved original weekday source path; the modern shared Proper parser resolves `Oratio Dominica` against the corresponding Advent Sunday without relabelling the commemorated feria.",
+      "rubricalClaim": {
+        "id": "IMMACULATE_CONCEPTION_ADVENT_FERIA_2027",
+        "sourcePath": "Sancti/12-08",
+        "principalClass": 1,
+        "commemorationPath": "Tempora/Adv2-3",
+        "commemorationClass": 3,
+        "kind": "PRIVILEGED_ADVENT_FERIA",
+        "clauses": [
+          "RG 25(b)",
+          "RG 108(e)",
+          "RG 111(a)"
+        ],
+        "en": "The first-class Immaculate Conception takes precedence over the Wednesday of Advent II; the Advent feria is commemorated as privileged.",
+        "fr": "L’Immaculée Conception, de première classe, a préséance sur le mercredi de la deuxième semaine de l’Avent ; la férie de l’Avent fait l’objet d’une commémoraison privilégiée.",
+        "authorityKind": "NORMATIVE_1960_RUBRICS",
+        "explanationOnly": true,
+        "formSpecificOrationCertification": "DELEGATED_TO_CANONICAL_MASS_OWNER"
+      }
     }
   ],
-  "sourceCorrectionStatus": "2026-10-09: after PR #700, principal default Rogation weekdays and four commemorations are corrected; explicit violet Rogation Mass remains uncertified"
+  "sourceCorrectionStatus": "2026-10-09: after PR #700, principal default Rogation weekdays and four commemorations are corrected; explicit violet Rogation Mass remains uncertified",
+  "nonCommemorationWitnesses": [
+    {
+      "id": "FRANCIS_ASSISI_2026_SUNDAY_OMISSION",
+      "date": "2026-10-04",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent19-0",
+        "sourceId": "tempora:Pent19-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/10-04",
+        "class": 3,
+        "saint": "SAINT_FRANCIS_OF_ASSISI",
+        "fixedMonthDay": "10-04"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "The nineteenth Sunday after Pentecost is celebrated in the general 1962 calendar. Although 4 October is normally the third-class feast of St Francis of Assisi, a second-class Sunday cannot add a third-class saint's commemoration. His feast is omitted from this Mass, not transferred to the next day. Particular Franciscan calendars may require separate adjudication.",
+      "fr": "Dans le calendrier romain général de 1962, on célèbre le dix-neuvième dimanche après la Pentecôte. Le 4 octobre est normalement la fête de troisième classe de saint François d’Assise, mais un dimanche de deuxième classe n’admet pas la commémoraison d’un saint de troisième classe. Sa fête est omise à cette messe, et non reportée au lendemain. Les calendriers particuliers franciscains exigent un examen distinct.",
+      "observedWitness": "https://ordo.fsspx.org/day/2026-10-04?lang=en",
+      "feastClassWitness": "https://ordo.fsspx.org/day/2027-10-04",
+      "independent1962Contrast": "https://www.voxliturgica.com/p/the-nineteenth-sunday-after-pentecost-737",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true
+    },
+    {
+      "id": "PENT6_ANTHONY_MARY_ZACCARIA_2026_OMITTED",
+      "date": "2026-07-05",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent06-0",
+        "sourceId": "tempora:Pent06-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/07-05",
+        "class": 3,
+        "saint": "SAINT_ANTHONY_MARY_ZACCARIA",
+        "fixedMonthDay": "07-05"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "In the general 1962 Roman calendar, the sixth Sunday after Pentecost takes precedence over the third-class feast of saint Anthony Mary Zaccaria fixed on this date. The saint is neither commemorated in this Sunday Mass nor transferred to the following day. Particular diocesan or religious calendars require independent review.",
+      "fr": "Dans le calendrier romain général de 1962, le sixième dimanche après la Pentecôte a préséance sur la fête de troisième classe de saint Antoine-Marie Zaccaria fixée à cette date. Le saint n’est ni commémoré à cette messe dominicale ni reporté au lendemain. Les calendriers diocésains ou religieux particuliers exigent un examen indépendant.",
+      "observedWitness": "https://ordo.fsspx.org/day/2026-07-05?lang=en",
+      "feastClassWitness": "https://www.1962ordo.com/feast/",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true,
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2026"
+    },
+    {
+      "id": "PENT7_JOHN_GUALBERT_2026_OMITTED",
+      "date": "2026-07-12",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent07-0",
+        "sourceId": "tempora:Pent07-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/07-12",
+        "class": 3,
+        "saint": "SAINT_JOHN_GUALBERT",
+        "fixedMonthDay": "07-12"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "In the general 1962 Roman calendar, the seventh Sunday after Pentecost takes precedence over the third-class feast of saint John Gualbert fixed on this date. The saint is neither commemorated in this Sunday Mass nor transferred to the following day. Particular diocesan or religious calendars require independent review.",
+      "fr": "Dans le calendrier romain général de 1962, le septième dimanche après la Pentecôte a préséance sur la fête de troisième classe de saint Jean Gualbert fixée à cette date. Le saint n’est ni commémoré à cette messe dominicale ni reporté au lendemain. Les calendriers diocésains ou religieux particuliers exigent un examen indépendant.",
+      "observedWitness": "https://ordo.fsspx.org/day/2026-07-12?lang=en",
+      "feastClassWitness": "https://www.1962ordo.com/feast/",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true,
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2026"
+    },
+    {
+      "id": "PENT14_ROSE_LIMA_2026_OMITTED",
+      "date": "2026-08-30",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent14-0",
+        "sourceId": "tempora:Pent14-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/08-30",
+        "class": 3,
+        "saint": "SAINT_ROSE_OF_LIMA",
+        "fixedMonthDay": "08-30"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "In the general 1962 Roman calendar, the fourteenth Sunday after Pentecost takes precedence over the third-class feast of saint Rose of Lima fixed on this date. The saint is neither commemorated in this Sunday Mass nor transferred to the following day. Particular diocesan or religious calendars require independent review.",
+      "fr": "Dans le calendrier romain général de 1962, le quatorzième dimanche après la Pentecôte a préséance sur la fête de troisième classe de sainte Rose de Lima fixée à cette date. Le saint n’est ni commémoré à cette messe dominicale ni reporté au lendemain. Les calendriers diocésains ou religieux particuliers exigent un examen indépendant.",
+      "observedWitness": "https://ordo.fsspx.org/day/2026-08-30?lang=en",
+      "feastClassWitness": "https://www.1962ordo.com/feast/",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true,
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2026"
+    },
+    {
+      "id": "PENT24_CECILIA_2026_OMITTED",
+      "date": "2026-11-22",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent24-0",
+        "sourceId": "tempora:Pent24-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/11-22",
+        "class": 3,
+        "saint": "SAINT_CECILIA",
+        "fixedMonthDay": "11-22"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "In the general 1962 Roman calendar, the twenty-fourth and last Sunday after Pentecost takes precedence over the third-class feast of saint Cecilia fixed on this date. The saint is neither commemorated in this Sunday Mass nor transferred to the following day. Particular diocesan or religious calendars require independent review.",
+      "fr": "Dans le calendrier romain général de 1962, le vingt-quatrième et dernier dimanche après la Pentecôte a préséance sur la fête de troisième classe de sainte Cécile fixée à cette date. Le saint n’est ni commémoré à cette messe dominicale ni reporté au lendemain. Les calendriers diocésains ou religieux particuliers exigent un examen indépendant.",
+      "observedWitness": "https://ordo.fsspx.org/day/2026-11-22?lang=en",
+      "feastClassWitness": "https://www.1962ordo.com/feast/",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true,
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2026"
+    },
+    {
+      "id": "ADVENT2_NICHOLAS_2026_OMITTED",
+      "date": "2026-12-06",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Adv2-0",
+        "sourceId": "tempora:Adv2-0:1:v",
+        "class": 1,
+        "kind": "I_CLASS_ADVENT_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/12-06",
+        "class": 3,
+        "saint": "SAINT_NICHOLAS_MYRA",
+        "fixedMonthDay": "12-06"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(a)"
+      ],
+      "en": "In the general 1962 Roman calendar, the second Sunday of Advent takes precedence over the third-class feast of saint Nicholas of Myra fixed on this date. The saint is neither commemorated in this Sunday Mass nor transferred to the following day. Particular diocesan or religious calendars require independent review.",
+      "fr": "Dans le calendrier romain général de 1962, le deuxième dimanche de l’Avent a préséance sur la fête de troisième classe de saint Nicolas de Myre fixée à cette date. Le saint n’est ni commémoré à cette messe dominicale ni reporté au lendemain. Les calendriers diocésains ou religieux particuliers exigent un examen indépendant.",
+      "observedWitness": "https://ordo.fsspx.org/day/2026-12-06?lang=en",
+      "feastClassWitness": "https://www.1962ordo.com/feast/",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true,
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2026"
+    },
+    {
+      "id": "LENT4_THOMAS_AQUINAS_2027_OMITTED",
+      "date": "2027-03-07",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Quad4-0",
+        "sourceId": "tempora:Quad4-0:1:pv",
+        "class": 1,
+        "kind": "I_CLASS_LENT_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/03-07",
+        "class": 3,
+        "saint": "SAINT_THOMAS_AQUINAS",
+        "fixedMonthDay": "03-07"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(a)"
+      ],
+      "en": "In the general Roman calendar of 1962, the fourth Sunday of Lent (Laetare) takes precedence over the third-class feast of St Thomas Aquinas on this date. The feast is omitted, not commemorated in this Mass or transferred to the following day. Particular diocesan and religious calendars are outside this conclusion.",
+      "fr": "Dans le calendrier romain général de 1962, le quatrième dimanche de Carême (Laetare) a préséance sur la fête de troisième classe de saint Thomas d’Aquin fixée à cette date. La fête est omise, sans commémoraison à cette messe ni report au lendemain. Les calendriers diocésains et religieux particuliers restent hors de cette conclusion.",
+      "observedWitness": "https://ordo.fsspx.org/calendar/2027/3",
+      "feastClassWitness": "https://1962missal.com/feast",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2027_2028",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true
+    },
+    {
+      "id": "PENT4_ANTHONY_PADUA_2027_OMITTED",
+      "date": "2027-06-13",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent04-0",
+        "sourceId": "tempora:Pent04-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/06-13",
+        "class": 3,
+        "saint": "SAINT_ANTHONY_PADUA",
+        "fixedMonthDay": "06-13"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "In the general Roman calendar of 1962, the fourth Sunday after Pentecost takes precedence over the third-class feast of St Anthony of Padua on this date. The feast is omitted, not commemorated in this Mass or transferred to the following day. Particular diocesan and religious calendars are outside this conclusion.",
+      "fr": "Dans le calendrier romain général de 1962, le quatrième dimanche après la Pentecôte a préséance sur la fête de troisième classe de saint Antoine de Padoue fixée à cette date. La fête est omise, sans commémoraison à cette messe ni report au lendemain. Les calendriers diocésains et religieux particuliers restent hors de cette conclusion.",
+      "observedWitness": "https://ordo.fsspx.org/calendar/2027/6",
+      "feastClassWitness": "https://1962missal.com/feast",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2027_2028",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true
+    },
+    {
+      "id": "PENT12_JOHN_VIANNEY_2027_OMITTED",
+      "date": "2027-08-08",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent12-0",
+        "sourceId": "tempora:Pent12-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/08-08",
+        "class": 3,
+        "saint": "SAINT_JOHN_MARY_VIANNEY",
+        "fixedMonthDay": "08-08"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "In the general Roman calendar of 1962, the twelfth Sunday after Pentecost takes precedence over the third-class feast of St John Mary Vianney on this date. The feast is omitted, not commemorated in this Mass or transferred to the following day. Particular diocesan and religious calendars are outside this conclusion.",
+      "fr": "Dans le calendrier romain général de 1962, le douzième dimanche après la Pentecôte a préséance sur la fête de troisième classe de saint Jean-Marie Vianney fixée à cette date. La fête est omise, sans commémoraison à cette messe ni report au lendemain. Les calendriers diocésains et religieux particuliers restent hors de cette conclusion.",
+      "observedWitness": "https://ordo.fsspx.org/calendar/2027/8",
+      "feastClassWitness": "https://1962missal.com/feast",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2027_2028",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true
+    },
+    {
+      "id": "TRINITY_BARNABAS_2028_OMITTED",
+      "date": "2028-06-11",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent01-0r",
+        "sourceId": "tempora:Pent01-0r:1:w",
+        "class": 1,
+        "kind": "I_CLASS_TRINITY_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/06-11",
+        "class": 3,
+        "saint": "SAINT_BARNABAS_APOSTLE",
+        "fixedMonthDay": "06-11"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(a)"
+      ],
+      "en": "In the general Roman calendar of 1962, Trinity Sunday takes precedence over the third-class feast of St Barnabas the Apostle on this date. The feast is omitted, not commemorated in this Mass or transferred to the following day. Particular diocesan and religious calendars are outside this conclusion.",
+      "fr": "Dans le calendrier romain général de 1962, le dimanche de la Très Sainte Trinité a préséance sur la fête de troisième classe de saint Barnabé apôtre fixée à cette date. La fête est omise, sans commémoraison à cette messe ni report au lendemain. Les calendriers diocésains et religieux particuliers restent hors de cette conclusion.",
+      "observedWitness": "https://ordo.fsspx.org/calendar/2028/6",
+      "feastClassWitness": "https://1962missal.com/feast",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2027_2028",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true
+    },
+    {
+      "id": "PENT11_BERNARD_2028_OMITTED",
+      "date": "2028-08-20",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Pent11-0",
+        "sourceId": "tempora:Pent11-0:2:g",
+        "class": 2,
+        "kind": "II_CLASS_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/08-20",
+        "class": 3,
+        "saint": "SAINT_BERNARD_CLAIRVAUX",
+        "fixedMonthDay": "08-20"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(b)"
+      ],
+      "en": "In the general Roman calendar of 1962, the eleventh Sunday after Pentecost takes precedence over the third-class feast of St Bernard of Clairvaux on this date. The feast is omitted, not commemorated in this Mass or transferred to the following day. Particular diocesan and religious calendars are outside this conclusion.",
+      "fr": "Dans le calendrier romain général de 1962, le onzième dimanche après la Pentecôte a préséance sur la fête de troisième classe de saint Bernard de Clairvaux fixée à cette date. La fête est omise, sans commémoraison à cette messe ni report au lendemain. Les calendriers diocésains et religieux particuliers restent hors de cette conclusion.",
+      "observedWitness": "https://ordo.fsspx.org/calendar/2028/8",
+      "feastClassWitness": "https://1962missal.com/feast",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2027_2028",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true
+    },
+    {
+      "id": "ADVENT1_FRANCIS_XAVIER_2028_OMITTED",
+      "date": "2028-12-03",
+      "scope": "1962_GENERAL_ROMAN_CALENDAR",
+      "principal": {
+        "sourcePath": "Tempora/Adv1-0",
+        "sourceId": "tempora:Adv1-0:1:v",
+        "class": 1,
+        "kind": "I_CLASS_ADVENT_SUNDAY"
+      },
+      "impeded": {
+        "sourcePath": "Sancti/12-03",
+        "class": 3,
+        "saint": "SAINT_FRANCIS_XAVIER",
+        "fixedMonthDay": "12-03"
+      },
+      "disposition": "OMITTED_NOT_TRANSFERRED_NOT_COMMEMORATED",
+      "clauses": [
+        "RG 91",
+        "RG 93",
+        "RG 111(a)"
+      ],
+      "en": "In the general Roman calendar of 1962, the first Sunday of Advent takes precedence over the third-class feast of St Francis Xavier on this date. The feast is omitted, not commemorated in this Mass or transferred to the following day. Particular diocesan and religious calendars are outside this conclusion.",
+      "fr": "Dans le calendrier romain général de 1962, le premier dimanche de l’Avent a préséance sur la fête de troisième classe de saint François Xavier fixée à cette date. La fête est omise, sans commémoraison à cette messe ni report au lendemain. Les calendriers diocésains et religieux particuliers restent hors de cette conclusion.",
+      "observedWitness": "https://ordo.fsspx.org/calendar/2028/12",
+      "feastClassWitness": "https://1962missal.com/feast",
+      "independent1962Contrast": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+      "sourceReview": "DATE_AND_FEAST_CLASS_INDEPENDENTLY_CROSSCHECKED_2027_2028",
+      "explanationOnly": true,
+      "changes1962Mass": false,
+      "doesNotDetermineParticularCalendar": true
+    }
+  ]
 }

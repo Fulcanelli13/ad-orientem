@@ -125,6 +125,202 @@ try{
      "Newman 2026 memorial erroneously back-projected to 2025");
    assert.equal(await page.locator(".aoCalV2Hero").count(),1,
      "1962 principal feast disappeared when changing days");
+   if(width===390){
+     // Original RG claims are shown only for the source-resolved 1962 occurrence.
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-11-01")),true);
+     const exact=page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-rubric-claim="ALL_SAINTS_OCCURRENT_SUNDAY"]');
+     await exact.waitFor({state:"attached",timeout:55000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await exact.waitFor({state:"visible",timeout:12000});
+     assert.match(await exact.innerText(),/RG 108\(a\).*RG 111\(a\)/);
+     const witness=exact.locator("a");
+     assert.match(await witness.getAttribute("href"),/^https:\/\/ordo\.fsspx\.org\/day\/2026-11-01/);
+     assert.equal(await witness.getAttribute("rel"),"noopener noreferrer");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-10-11")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8.store.getState().resolution?.date==="2026-10-11");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-rubric-claim]").count(),0,
+       "No date-specific clauses may survive when another observance is selected");
+   }
+   if(width===390){
+     // Check the observed source-verified Annunciation and original Holy Thursday.
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-04-05")),true);
+     const transfer=page.locator('.aoTodayV2CalendarInline [data-cal-transfer-claim="ANNUNCIATION_2027"]');
+     await transfer.waitFor({state:"attached",timeout:55000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await transfer.waitFor({state:"visible",timeout:12000});
+     assert.match(await transfer.innerText(),/RG 96\(a\)/);
+     assert.equal(await transfer.locator('time[datetime="2027-03-25"]').count(),1);
+     assert.equal(await transfer.locator('time[datetime="2027-04-05"]').count(),1);
+     assert.match(await transfer.locator("a").getAttribute("href"),
+       /^https:\/\/missale\.online\/festkalender\/en\/2027$/);
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-03-25")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-03-25",
+       null,{timeout:50000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-transfer-claim]").count(),0,
+       "Holy Thursday must not falsely claim to be the transferred Annunciation");
+   }
+   if(width===390){
+     // An independently audited 2027 occurrence gets an exact clause; an
+     // unrelated Sunday may not inherit a source-only commemoration.
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-08-15")),true);
+     const claim=page.locator('.aoTodayV2CalendarInline [data-cal-observed-commemoration="ASSUMPTION_SUNDAY_2027"]');
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-08-15",null,{timeout:55000});
+     await claim.waitFor({state:"attached",timeout:55000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await claim.waitFor({state:"visible",timeout:12000});
+     assert.match(await claim.innerText(),/RG 108\(a\).*RG 111\(a\)/);
+     assert.match(await claim.locator("a").getAttribute("href"),
+       /^https:\/\/gcatholic\.org\/calendar\/2027\/Extraordinary-en$/);
+     assert.equal(await claim.locator("a").getAttribute("rel"),"noopener noreferrer");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-08-22")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-08-22",
+       null,{timeout:55000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-observed-commemoration]").count(),0,
+       "No 2027-source claim can leak into an unrelated Sunday");
+   }
+   if(width===390){
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-06-30")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-06-30",
+       null,{timeout:55000});
+     const peterPaul=page.locator('.aoTodayV2CalendarInline [data-cal-apostles-inseparable="PETER_PAUL_INSEPARABLE_2027"]');
+     await peterPaul.waitFor({state:"attached",timeout:30000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await peterPaul.waitFor({state:"visible",timeout:12000});
+     assert.match(await peterPaul.innerText(),/RG 110/);
+     assert.match(await peterPaul.innerText(),/one conclusion/i);
+     assert.equal(await peterPaul.locator("a").getAttribute("href"),
+       "https://gcatholic.org/calendar/2027/Extraordinary-en");
+     assert.equal(await peterPaul.locator("a").getAttribute("rel"),"noopener noreferrer");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-06-29")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-06-29",
+       null,{timeout:50000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-apostles-inseparable]").count(),0,
+       "The combined Peter-Paul feast on June 29 must not inherit the June 30 §110 claim");
+   }
+   if(width===390){
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-10-04")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-10-04",
+       null,{timeout:55000});
+     const omission=page.locator('.aoTodayV2CalendarInline [data-cal-omitted-feast="FRANCIS_ASSISI_2026_SUNDAY_OMISSION"]');
+     await omission.waitFor({state:"attached",timeout:30000});
+     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await omission.waitFor({state:"visible",timeout:12000});
+     assert.match(await omission.innerText(),/RG 111\(b\)/);
+     assert.match(await omission.innerText(),/St Francis of Assisi/);
+     assert.equal(await omission.locator("a").count(),2);
+     assert.equal(await omission.locator("a").first().getAttribute("href"),
+       "https://ordo.fsspx.org/day/2026-10-04?lang=en");
+     assert.equal(await omission.locator("a").first().getAttribute("rel"),"noopener noreferrer");
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-10-05")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-10-05",
+       null,{timeout:55000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-omitted-feast]").count(),0,
+       "An omitted October 4 feast cannot be carried as a commemoration to October 5");
+   }
+   if(width===390){
+     const sourceSurvey=await page.evaluate(async()=>{
+       const dates=["2026-07-05","2026-07-12","2026-08-30","2026-11-22","2026-12-06"];
+       const resolver=window.AO_RUNTIME_V8.resolver;
+       return Promise.all(dates.map(async date=>{
+         const r=await resolver.resolveDay(date);
+         return {date,status:r?.status,main:r?.day?.main?.id,mainPath:r?.day?.main?.path,
+           properPath:r?.proper?.data?.sourcePath,comms:r?.day?.commemorations?.map(x=>x.id)};
+       }));
+     });
+     console.log("BATCH_OMISSION_SOURCE_AUDIT",JSON.stringify(sourceSurvey));
+     for(const [date,id,clause] of [
+       ["2026-07-05","PENT6_ANTHONY_MARY_ZACCARIA_2026_OMITTED","RG 111(b)"],
+       ["2026-07-12","PENT7_JOHN_GUALBERT_2026_OMITTED","RG 111(b)"],
+       ["2026-08-30","PENT14_ROSE_LIMA_2026_OMITTED","RG 111(b)"],
+       ["2026-11-22","PENT24_CECILIA_2026_OMITTED","RG 111(b)"],
+       ["2026-12-06","ADVENT2_NICHOLAS_2026_OMITTED","RG 111(a)"],
+     ]){
+       assert.equal(await page.evaluate(async d=>window.AO_CALENDAR_APP_V1.select(d),date),true);
+       await page.waitForFunction(d=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date===d,
+         date,{timeout:55000});
+       const c=page.locator('.aoTodayV2CalendarInline [data-cal-omitted-feast="'+id+'"]');
+       const exists=await c.count();
+       if(!exists){
+         const source=await page.evaluate(()=>{
+           const r=window.AO_RUNTIME_V8?.store?.getState?.()?.resolution;
+           return {date:r?.date,status:r?.status,main:r?.day?.main,comms:r?.day?.commemorations,
+             properPath:r?.proper?.data?.sourcePath,properStatus:r?.proper?.status};
+         });
+         console.log("BATCH_OMISSION_MISMATCH",date,JSON.stringify(source));
+       }
+       await c.waitFor({state:"attached",timeout:30000});
+       assert.match(await c.textContent(),new RegExp(clause.replace(/[()]/g,x=>"\\"+x)));
+       assert.equal(await c.locator("a").first().getAttribute("href"),
+         "https://ordo.fsspx.org/day/"+date+"?lang=en");
+       assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     }
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-12-13")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-12-13",
+       null,{timeout:55000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-omitted-feast]").count(),0,
+       "Disputed St Lucy/Advent III must remain without a certified omission claim");
+   }
+   if(width===390){
+     const dates=["2027-03-07","2027-06-13","2027-08-08","2028-06-11","2028-08-20","2028-12-03"];
+     const observed=await page.evaluate(async dates=>{
+       const resolver=window.AO_RUNTIME_V8.resolver;
+       return Promise.all(dates.map(async date=>{
+         const r=await resolver.resolveDay(date);
+         return {date,status:r?.status,main:r?.day?.main?.id,path:r?.day?.main?.path,
+           comms:r?.day?.commemorations?.map(c=>c?.id),
+           properPath:r?.proper?.data?.sourcePath};
+       }));
+     },dates);
+     console.log("MULTI_YEAR_OMISSIONS_REAL_SOURCE",JSON.stringify(observed));
+     for(const [date,id,clause] of [
+      ["2027-03-07","LENT4_THOMAS_AQUINAS_2027_OMITTED","RG 111(a)"],
+      ["2027-06-13","PENT4_ANTHONY_PADUA_2027_OMITTED","RG 111(b)"],
+      ["2027-08-08","PENT12_JOHN_VIANNEY_2027_OMITTED","RG 111(b)"],
+      ["2028-06-11","TRINITY_BARNABAS_2028_OMITTED","RG 111(a)"],
+      ["2028-08-20","PENT11_BERNARD_2028_OMITTED","RG 111(b)"],
+      ["2028-12-03","ADVENT1_FRANCIS_XAVIER_2028_OMITTED","RG 111(a)"]
+     ]){
+       assert.equal(await page.evaluate(async d=>window.AO_CALENDAR_APP_V1.select(d),date),true);
+       await page.waitForFunction(d=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date===d,
+         date,{timeout:55000});
+       const claim=page.locator('.aoTodayV2CalendarInline [data-cal-omitted-feast="'+id+'"]');
+       await claim.waitFor({state:"attached",timeout:30000});
+       assert.ok((await claim.textContent())?.includes(clause),date+" correct original clause");
+       assert.equal(await claim.locator("a").first().getAttribute("href"),
+        "https://ordo.fsspx.org/calendar/"+date.slice(0,4)+"/"+Number(date.slice(5,7)));
+       assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true);
+     }
+     assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2028-12-04")),true);
+     await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2028-12-04",
+       null,{timeout:55000});
+     assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-omitted-feast]").count(),0,
+       "Do not transfer the omitted Francis Xavier feast to 4 December");
+   }
+   // A later saint may have a source-reviewed physical shrine even when no
+   // dedicated Saints biography is published. Link only the exact Place ID.
+   assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
+   const placeAction=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root "+
+     '[data-cal-secondary-place="place:IT:santuario-san-pio-rotondo"]');
+   await placeAction.waitFor({state:"visible",timeout:55000});
+   assert.equal(await placeAction.getAttribute("data-cal-secondary-saint"),"saint.pio-pietrelcina");
+   assert.ok((await placeAction.boundingBox())?.height>=44,"Physical Place action below 44px target");
+   assert.equal(await page.locator(".aoTodayV2CalendarInline [data-cal-mass]").count()<=1,true,
+     "Additional Place button must not create Mass selection");
+   if(width===390){
+     await placeAction.click();
+     await page.waitForFunction(()=>window.AO_FIND_APP_V1?.status?.().open===true&&
+       window.AO_FIND_APP_V1.status().lens==="shrines"&&
+       window.AO_FIND_APP_V1.status().selectedPlaceId==="place:IT:santuario-san-pio-rotondo",
+       null,{timeout:60000});
+     assert.equal(await page.evaluate(()=>window.AO_RUNTIME_V8.store.getState().selectedDate),"2026-09-23",
+       "Explore must not reset the Calendar-selected date");
+     assert.equal(await page.locator("#ao-find-root").count()<=1,true,"No duplicate Explore mount");
+   }
    assert.equal(errors.length,0,"Browser runtime errors: "+errors.slice(0,4).join(" ; "));
    reports.push({width,...metrics,requestCount:requests.length,pageErrors:errors.length});
    console.log("PASS "+width+"px Calendar: Newman modern saint under 1962 principal, accessible disclosure, one lazy fetch, historical gate");

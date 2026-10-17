@@ -25,9 +25,9 @@ await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0
 let browser;
 try{
  browser=await chromium.launch({headless:true});
- for(const width of [320,390,430]){
+ for(const width of [320,390,430])for(const lang of ["en","fr"]){
   const page=await browser.newPage({viewport:{width,height:width===320?700:width===390?844:932},
-   isMobile:true,hasTouch:true,deviceScaleFactor:1,locale:"en-GB",reducedMotion:"reduce"});
+   isMobile:true,hasTouch:true,deviceScaleFactor:1,locale:lang==="fr"?"fr-FR":"en-GB",reducedMotion:"reduce"});
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error.message||error)));
   try{
@@ -35,6 +35,17 @@ try{
      {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.().visibleOwner===true,
      null,{timeout:35000});
+   if(lang==="fr"){
+     // Exercise the actual settings owner, not a mocked locale flag.
+     await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.navigate?.("settings"));
+     await page.locator("#ao-settings-modular-root").waitFor({state:"visible",timeout:15000});
+     await page.locator('[data-settings-route="/settings/language-reading"]').click();
+     await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().route==="/settings/language-reading");
+     await page.locator('[data-pref-path="general.uiLanguage"][data-pref-value="fr"]').click();
+     await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr");
+     await page.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.close?.());
+     await page.locator(".homeScreen.aoTodayV2").waitFor({state:"visible",timeout:20000});
+   }
    await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
    const cal=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
    await cal.locator('.aoCalV2MonthGrid').waitFor({state:"visible",timeout:40000});
@@ -64,6 +75,10 @@ try{
    assert.equal(metrics.gridCount,42,"Never suppress unresolved liturgical days");
    assert.equal(metrics.tabDisplay,"flex","Month views must stay on one horizontal rail");
    assert.equal(metrics.tabs.length,5);
+   if(lang==="fr"){
+     assert.ok(metrics.tabs.some(t=>/Jours majeurs/i.test(t.label)),"French Major tab untranslated");
+     assert.ok(metrics.tabs.some(t=>/Pratiques/i.test(t.label)),"French Practices tab untranslated");
+   }
    assert.ok(metrics.tabs.every(x=>Math.abs(x.top-metrics.tabs[0].top)<2),
      "Month categories wrapped, hiding the calendar dates: "+JSON.stringify(metrics.tabs));
    assert.ok(metrics.tabs.every(x=>x.height>=44&&x.font>=12&&x.whiteSpace==="nowrap"),
@@ -74,7 +89,7 @@ try{
    assert.ok(metrics.overflow<=1,"Calendar caused global horizontal overflow: "+metrics.overflow);
    assert.ok(metrics.tabScrollWidth>=metrics.tabWidth,
      "Calendar horizontal month rail has invalid scroll geometry");
-   await page.screenshot({path:resolve(output,"calendar-month-"+width+".png"),
+   await page.screenshot({path:resolve(output,"calendar-month-"+lang+"-"+width+".png"),
      fullPage:false,animations:"disabled"});
    const practices=cal.locator('[data-cal-month-view="practices"]');
    await practices.click();
@@ -89,7 +104,7 @@ try{
      original,{timeout:10000});
    assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
    assert.equal(errors.length,0,"Calendar runtime errors: "+errors.slice(0,3).join("; "));
-   console.log("PASS "+width+"px: five single-row month tabs, 44px controls, 42 days, month navigation");
+   console.log("PASS "+width+"px "+lang+": five single-row month tabs, 44px controls, 42 days, month navigation");
   }finally{await page.close();}
  }
 }finally{

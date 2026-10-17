@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {resolvePriestChantAction,validatePriestChantObservation,
+import {resolvePriestChantAction,resolvePriestChantVoice,validatePriestChantObservation,
   PRIEST_SANCTUS_OBSERVATION_TYPES} from "../src/mass/reader-priest-chant-owner.js";
 
 const load=p=>JSON.parse(readFileSync(new URL("../data/"+p,import.meta.url),"utf8"));
@@ -20,6 +20,11 @@ for(const form of forms){
     assert.equal(closed.priestAction,null);
     assert.equal(closed.owner,"PRIEST_EVENT_UNOBSERVED");
     assert.equal(closed.reason,"SCHOLA_PUBLIC_CUE_NOT_PRIEST_ACTION");
+    const ambiguous={label:"QUIET PRIEST TRACK → SECRET CANON"};
+    const quiet=resolvePriestChantVoice({form,cueId:id,sourceClock:"SCHOLA_PUBLIC",
+      ordinaryVoice:ambiguous});
+    assert.equal(quiet.priestVoice,null,"Public Schola words must not assert current priest voice");
+    assert.equal(quiet.owner,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
   }
   for(const [type,source] of [
     ["PRIEST_SANCTUS_RECITATION","GM.P.C0145.01"],
@@ -38,11 +43,22 @@ for(const form of forms){
     assert.equal(result.priestAction.cueId,currentChoir);
     assert.equal(result.owner,"INDEPENDENT_PRIEST_OBSERVATION");
     assert.equal(result.observed,true);
+    const voice=resolvePriestChantVoice({
+      form,cueId:currentChoir,sourceClock:"SCHOLA_PUBLIC",
+      ordinaryVoice:{label:"STALE"},observedPriestAction:result,observation:observed
+    });
+    assert.equal(voice.observed,true);
+    assert.equal(voice.priestVoice.owner,"INDEPENDENT_PRIEST_OBSERVATION");
+    assert.equal(voice.priestVoice.sourceCueId,type==="PRIEST_SANCTUS_RECITATION"?"AO.SM.C0145":"AO.SM.C0148");
+    assert.match(voice.priestVoice.label,type==="PRIEST_SANCTUS_RECITATION"?/SANCTUS/:/BENEDICTUS/);
     // Navigation invalidates an old observation; no gesture persists across reader cues.
     const expired=resolvePriestChantAction({
       form,cueId:"AO.SM.C0148",sourceClock:"SCHOLA_PUBLIC",
       gestureMatrix:matrix,observation:observed});
     assert.equal(expired.priestAction,null);
+    assert.equal(resolvePriestChantVoice({form,cueId:"AO.SM.C0148",
+      sourceClock:"SCHOLA_PUBLIC",observation:observed,
+      observedPriestAction:expired}).priestVoice,null);
   }
   const unobserved=resolvePriestChantAction({
     form,cueId:"AO.SM.C0145",sourceClock:"SCHOLA_PUBLIC",
@@ -74,6 +90,21 @@ for(const form of forms){
       eventType:"PRIEST_SANCTUS_RECITATION",atCueId:"AO.SM.C0145"
     }
   }).priestAction,null);
+  for(const cue of ["AO.SM.C0146","AO.SM.C0147","AO.SM.C0149"]){
+    const projection=resolvePriestChantVoice({form,cueId:cue,
+      sourceClock:"SCHOLA_PUBLIC",ordinaryVoice:{label:"INHERITED QUIET PRIEST TRACK"}});
+    assert.equal(projection.priestVoice,null,form+" "+cue+" inherited private voice from Sanctus");
+  }
+  const spoof=resolvePriestChantVoice({form,cueId:"AO.SM.C0145",
+    sourceClock:"SCHOLA_PUBLIC",
+    observation:{actor:"SCHOLA",observed:true,source:"EXPLICIT_OBSERVATION",
+      eventType:"PRIEST_SANCTUS_RECITATION",atCueId:"AO.SM.C0145"},
+    observedPriestAction:{observed:true,owner:"INDEPENDENT_PRIEST_OBSERVATION"}});
+  assert.equal(spoof.priestVoice,null,"Schola cannot forge independent priest voice");
+  const originalVoice={label:"PRIEST READS CANON QUIETLY"};
+  assert.equal(resolvePriestChantVoice({form,cueId:"AO.SM.C0150",
+    sourceClock:"PRIEST_PRIVATE",ordinaryVoice:originalVoice}).priestVoice,originalVoice,
+    "Canon priest speech outside Schola region must remain source-owned");
   // An unrelated canonical action remains owned by the existing cue/rubric matrix.
   const otherAction={label:"GENUFLECTS",cueId:"AO.SM.C0181"};
   assert.equal(resolvePriestChantAction({
@@ -92,5 +123,9 @@ assert.equal(resolvePriestChantAction({
 assert.equal(resolvePriestChantAction({
   form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT"
 }).owner,"UNCHANGED_FORM");
+const lowVoice={label:"PRIEST RECITES SANCTUS"};
+assert.equal(resolvePriestChantVoice({
+  form:"LOW",cueId:"AO.SM.C0145",sourceClock:"PUBLIC_TEXT",ordinaryVoice:lowVoice
+}).priestVoice,lowVoice,"Low Mass priest voice must never be suppressed");
 // Explicit input is not a claim of automatic sensing, camera, or audio recognition.
 console.log("PASS priest/Schola owner guard: three Sung form variants fail closed; explicit priest observations only; Low, Canon and faithful lanes unchanged.");

@@ -4,11 +4,16 @@ export function installScriptureStyles(doc=globalThis.document){
  if(doc.getElementById(SCRIPTURE_STYLE_ID))return true;
  const style=doc.createElement("style");style.id=SCRIPTURE_STYLE_ID;
  style.textContent=`
- #ao-scripture-overlay{position:fixed;inset:0;z-index:2147483647!important;background:#080c12ee;overflow:auto;padding:max(12px,env(safe-area-inset-top)) 12px max(24px,env(safe-area-inset-bottom));color:#ece6d6}
+ #ao-scripture-overlay{position:fixed;inset:0;z-index:2147483647!important;background:#080c12;overflow:auto;padding:max(12px,env(safe-area-inset-top)) 12px max(24px,env(safe-area-inset-bottom));color:#ece6d6}
  #ao-scripture-overlay[hidden]{display:none!important}
  .aoScriptureLibrary{max-width:820px;margin:0 auto;padding:clamp(14px,4vw,34px);border:1px solid #655d4d;background:#111720;border-radius:14px;font-family:Georgia,"Garamond",serif;line-height:1.6}
  .aoScriptureHeader{display:flex;align-items:center;justify-content:space-between;gap:12px}
  .aoScriptureHeader h2{font-size:clamp(24px,4vw,36px);font-weight:400;margin:0;color:#e9dfc4}
+ .aoScriptureEnglishSwitch{display:flex;align-items:center;gap:6px;margin:10px 0 13px}
+ .aoScriptureLibrary .aoScriptureEnglishSwitch button{flex:1;min-height:44px;padding:9px 12px;border:1px solid #665b48;border-radius:8px;background:transparent;color:#cfc3ac;font:600 13px/1.25 system-ui,sans-serif}
+ .aoScriptureLibrary .aoScriptureEnglishSwitch button[aria-pressed="true"]{border-color:#b79c6a;background:rgba(175,142,89,.16);color:#f5e7c4}
+ .aoScriptureEditorialMine{display:inline-block;color:#c5b48f;font:12px/1.6 system-ui,sans-serif;margin:8px 0 15px;text-decoration:underline;text-underline-offset:3px}
+ .aoScriptureEditorialMine:focus-visible{outline:2px solid #e1cc99;outline-offset:2px}
  .aoScriptureLibrary button,.aoScriptureLibrary select,.aoScriptureLibrary input{font:inherit;color:#efe8d9;background:#1a2330;border:1px solid #786b56;border-radius:8px;padding:8px 12px;max-width:100%}
  .aoScriptureLibrary button{cursor:pointer}
  .aoScriptureLibrary button:disabled{opacity:.45;cursor:not-allowed}
@@ -96,6 +101,31 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureLibrary .aoScriptureContextCommentary a{
    min-height:44px;align-items:center
  }
+ /* Quiet, text-first edition chrome shared by Mass, Rosary, Formation and Atlas. */
+ .aoScriptureHeader{gap:7px;align-items:center;position:sticky;top:0;z-index:3;background:#0e151d;padding:7px 0;border-bottom:1px solid rgba(205,182,135,.14)}
+ .aoScriptureHeader h2{font:600 11px/1.3 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#bbae96;margin:0 auto 0 0}
+ .aoScriptureLibrary .aoScriptureEditionFlip{flex:0 1 auto;min-width:116px;min-height:44px;border:0;border-radius:6px;background:transparent;font:600 12px/1.2 system-ui,sans-serif;color:#dbc79d;padding:9px 6px;white-space:nowrap}
+ .aoScriptureLibrary [data-scripture-close]{width:44px;height:44px;flex:0 0 44px;border:0;border-radius:50%;padding:0;background:transparent;color:#d6cbb6;font:300 30px/1 system-ui,sans-serif}
+ .aoScriptureContextBar{padding:4px 0 0;margin:0}
+ .aoScriptureContextTitle{margin:0 0 6px;font:500 11px/1.4 system-ui,sans-serif;color:#b6a990}
+ .aoScriptureContextControls{display:flex;gap:5px;padding:2px 0;border-bottom:1px solid rgba(205,182,135,.16)}
+ .aoScriptureLibrary .aoScriptureContextControls button{flex:1;min-height:44px;border:0;border-bottom:1px solid transparent;border-radius:0;background:transparent;padding:10px 4px;font:500 12px/1.25 system-ui,sans-serif;color:#b5ad9d}
+ .aoScriptureLibrary .aoScriptureContextControls button[aria-pressed="true"]{border:0;border-bottom:2px solid #b49b70;background:transparent;color:#eddec4}
+ .aoScriptureReading{margin:0 0 7px;padding:8px 0 11px}
+ .aoScriptureReading h3{font:400 clamp(21px,3.4vw,26px)/1.4 Georgia,"Garamond",serif;margin:6px 0 12px}
+ .aoScriptureWitnessDetails{margin:9px 0 0;color:#a9a18e;border:0}
+ .aoScriptureLibrary .aoScriptureWitnessDetails>summary{min-height:44px;display:flex;align-items:center;font:500 11px/1.35 system-ui,sans-serif;color:#b5aa94;cursor:pointer}
+ .aoScriptureWitnessDetails p{margin:3px 0 8px}
+ .aoScriptureLibrary .aoScriptureReferenceWarning>summary{min-height:44px;display:flex;align-items:center;color:#bdb196;font:500 12px/1.3 system-ui,sans-serif}
+ .aoScriptureLibrary .aoScriptureReferenceWarning>p{margin:0 0 10px}
+ .aoScriptureActions{margin:7px 0 3px;padding-top:7px;gap:4px}
+ .aoScriptureLibrary .aoScriptureActions button{min-height:44px;border:0;border-radius:6px;background:transparent;color:#c8b99c;padding:7px 9px;text-decoration:underline;text-decoration-color:rgba(197,168,119,.34);text-underline-offset:3px}
+ .aoScriptureTools{border-top:1px solid rgba(205,182,135,.18);margin:12px 0 0;padding:0}
+ .aoScriptureLibrary .aoScriptureTools>summary{min-height:48px;display:flex;align-items:center;padding:12px 2px;color:#d8c7a7;font:500 13px/1.35 system-ui,sans-serif;cursor:pointer}
+ .aoScriptureToolsBody{padding:2px 0 12px}
+ .aoScriptureToolsBody>details{padding:3px 0;border-bottom:1px solid rgba(205,182,135,.12)}
+ .aoScriptureBrowse,.aoScriptureSearch,.aoScriptureBookmarks,.aoScriptureRosary{padding:4px 0}
+ .aoScriptureLibrary :is(.aoScriptureBrowse,.aoScriptureSearch,.aoScriptureBookmarks,.aoScriptureRosary)>summary{min-height:44px;padding:8px 0}
  @media(max-width:700px){.aoScriptureNav{grid-template-columns:repeat(2,minmax(0,1fr))}.aoScriptureLibrary{padding:16px;border:0;border-radius:0}.aoScriptureText{font-size:19px}.aoScriptureContextControls{gap:3px}#ao-scripture-overlay{padding:0 0 max(16px,env(safe-area-inset-bottom))}.aoScriptureHeader{position:sticky;top:0;z-index:2;background:#0e151d;padding-top:max(10px,env(safe-area-inset-top))}}
  @media(prefers-reduced-motion:reduce){#ao-scripture-overlay *{scroll-behavior:auto!important;transition:none!important}}
  `;

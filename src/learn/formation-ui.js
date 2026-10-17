@@ -48,6 +48,21 @@ ${roots} .aoFNavIndex button>span:first-child{flex:0 0 auto;color:var(--liturgic
 ${roots} .aoFNavIndex button>span:last-child{min-width:0;overflow-wrap:break-word}
 ${roots} .aoFNav :is(button):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}
 ${roots} .aoFNavTarget{scroll-margin-top:150px}
+@media(max-width:560px){
+ /* Formation overview owns the real H1; the sticky shell need not repeat it. */
+ #ao-learn-modular-root[data-ao-learn-family=""] .aoLearnModTopTitle strong{display:none}
+ #ao-learn-modular-root[data-ao-learn-family=""] .aoLearnModTop{padding-top:4px;padding-bottom:4px}
+ #ao-learn-modular-root[data-ao-learn-family=""] .aoLearnModHero{padding-top:5px;padding-bottom:14px}
+ #ao-learn-modular-root[data-ao-learn-family=""] .aoLearnModHero .kicker{display:none}
+ /* The canonical Mass lesson keeps its full heading in the actual content. */
+ #ao-mass-formation-root .aoMFTopStage{padding-top:3px;padding-bottom:3px}
+ #ao-mass-formation-root .aoMFTopStage small{display:none}
+ #ao-mass-formation-root .aoMFTopStage strong{
+   margin:0;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+   color:var(--ao-text-muted,var(--muted,#a9a5b1))
+ }
+ #ao-mass-formation-root .aoMFStage h1{margin-top:4px}
+}
 ${roots} main{animation:aoFReaderAppear .19s ease-out both}
 @keyframes aoFNavAppear{from{opacity:.5;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
 @keyframes aoFReaderAppear{from{opacity:.85}to{opacity:1}}

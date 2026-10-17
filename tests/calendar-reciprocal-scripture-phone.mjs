@@ -49,6 +49,26 @@ try{
  assert.equal(selected.path,"Tempora/Pent10-0",
    "Test must use a source-owned actual 1962 Mass, not a guessed feast");
  assert.ok(selected.linkSlots.includes("GOSPEL"),JSON.stringify(selected));
+ const visual=await page.locator("#ao-calendar-modular-root .aoCalV2Hero").evaluate(hero=>{
+   const reading=hero.querySelector(".aoCalDayScripture"),
+     mass=hero.querySelector("[data-cal-mass]"),
+     source=hero.querySelector(".aoCalDaySources");
+   const before=(a,b)=>Boolean(a&&b&&(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING));
+   return {label:reading?.getAttribute("aria-label"),
+     scriptureButtons:reading?.querySelectorAll("[data-cal-scripture-slot]").length,
+     slots:[...reading?.querySelectorAll("[data-cal-scripture-slot]")||[]].map(n=>n.dataset.calScriptureSlot),
+     readingBeforeMass:before(reading,mass),
+     massBeforeSources:before(mass,source),
+     sourceCollapsed:source?.open===false,
+     printCollapsed:hero.querySelector(".aoCalV2PrintOptions")?.open!==true};
+ });
+ assert.equal(visual.label,"Appointed readings");
+ assert.deepEqual(visual.slots,["EPISTLE_OR_LESSON","GOSPEL"]);
+ assert.equal(visual.scriptureButtons,2);
+ assert.ok(visual.readingBeforeMass&&visual.massBeforeSources,
+   "The Scripture links must follow principal observance and precede technical sources");
+ assert.equal(visual.sourceCollapsed,true);
+ assert.equal(visual.printCollapsed,true);
  await page.locator("#ao-calendar-modular-root [data-cal-close]").tap();
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1.getActive()==="home",null,{timeout:15000});
  assert.equal(await page.evaluate(()=>
@@ -60,6 +80,7 @@ try{
    edition:globalThis.AO_SCRIPTURE_APP_V1.status().reader?.editionId
  }));
  assert.match(initial.title,/Luke 18:9/);
+ await scripture.locator(".aoScriptureTools > summary").tap();
  await scripture.locator(".aoScriptureRelated summary").tap();
  const button=scripture.locator('[data-scripture-open-related-object^="calendarReading:"]')
   .filter({hasText:""}).first();

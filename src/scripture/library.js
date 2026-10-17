@@ -17,7 +17,7 @@ const L={
   book:"Book",chapter:"Chapter",verse:"Verse",open:"Read at source",save:"Bookmark",saved:"Bookmarked",
   bookmarks:"Bookmarks",search:"Search",find:"Search approved text",results:"Results",none:"No verified local text found.",
   rosary:"Rosary mysteries",source:"Source edition", unavailable:"This chapter is not available offline. Open the Catholic edition at its source.",
-  readable:"Douay–Rheims is the traditional reading. CPDV is the selected free alternative for easier English, but its wording and verse numbering still require verification before full text can appear inside the app.",
+  readable:"Choose Douay–Rheims or CPDV at any time. Both use source-labelled transcriptions pending edition-level collation.",
   frenchSource:"Crampon 1923 source",close:"Close",next:"Next chapter",previous:"Previous chapter",noBookmarks:"No bookmarks saved", language:"Language"},
  fr:{heading:"Sainte Écriture",notice:"Lecture de la Bible catholique. Les transcriptions historiques non collationnées sont signalées.",
   book:"Livre",chapter:"Chapitre",verse:"Verset",open:"Consulter la source",save:"Marquer",saved:"Marqué",
@@ -42,7 +42,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null,initialDepth="selected"
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -60,10 +60,11 @@ export function mountScriptureLibrary(root,{
  let query="";
  let section="read";
  let contextDepth="selected";
- let commentaryVisible=false;
+ let commentaryVisible=Boolean(context?.reference&&initialDepth==="commentary");
  let relatedExpanded=false;
  const relatedTrail=[];
- let browseExpanded=!context?.reference;
+ let browseExpanded=false;
+ let toolsExpanded=false;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
  function moveEdition(nextEdition){
@@ -112,8 +113,34 @@ export function mountScriptureLibrary(root,{
    }
    const heading=element("header",null,"aoScriptureHeader");
    heading.append(element("h2",t.heading));
-   const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
+   // One quiet edition flip replaces a full-height translation selection row.
+   if(lang==="en"){
+     const next=editionId==="dr-challoner"?"cpdv-2009":"dr-challoner";
+     const flip=element("button",editionId==="dr-challoner"?"Douay  ⇄  CPDV":"CPDV  ⇄  Douay","aoScriptureEditionFlip");
+     flip.type="button";flip.dataset.scriptureEnglishEdition=next;
+     flip.dataset.scriptureActiveEdition=editionId;
+     flip.setAttribute("aria-label",next==="cpdv-2009"?"Switch to CPDV":"Switch to Douay–Rheims");
+     flip.addEventListener("click",()=>{
+       moveEdition(next);prefs.setEnglishEdition(next);draw();
+       queueMicrotask(()=>wrap.querySelector(".aoScriptureEditionFlip")?.focus?.({preventScroll:true}));
+     });
+     heading.append(flip);
+   }
+   const close=element("button","×");close.type="button";close.setAttribute("data-scripture-close","");
+   close.setAttribute("aria-label",t.close);
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
+   // Explicit research opt-in only: the public reader and parent Mass/Rosary
+   // state remain unchanged. This opens the editor's separate source workbench.
+   const researchFlag=root.ownerDocument?.defaultView?.location?.search??"";
+   if(new URLSearchParams(researchFlag).get("ao_scripture_research")==="1"){
+     const mine=element("a",lang==="fr"?"Analyser les sources de ce passage ↗":"Mine this passage and commentary ↗","aoScriptureEditorialMine");
+     const target=new URL("../../previews/scripture-mining-workbench-20261017.html",import.meta.url);
+     target.searchParams.set("module","other");
+     target.searchParams.set("reference",passageReference(location));
+     mine.href=target.href;mine.target="_blank";mine.rel="noopener noreferrer";
+     mine.dataset.scriptureEditorialMine="";
+     wrap.append(mine);
+   }
    if(relatedTrail.length){
      const back=element("button",lang==="fr"?"Retour au passage précédent":"Back to previous passage");
      back.type="button";back.dataset.scriptureRelatedBack="";
@@ -122,7 +149,7 @@ export function mountScriptureLibrary(root,{
        if(!prev)return;
        location=prev.location;context=prev.context;contextDepth=prev.contextDepth;
        commentaryVisible=prev.commentaryVisible;relatedExpanded=prev.relatedExpanded;
-       browseExpanded=prev.browseExpanded;
+       browseExpanded=prev.browseExpanded;toolsExpanded=prev.toolsExpanded;
        segmentSet=prev.segmentSet??null;
        activeSegmentIndex=prev.activeSegmentIndex??-1;
        draw();
@@ -161,13 +188,13 @@ export function mountScriptureLibrary(root,{
    for(const edition of Object.values(SCRIPTURE_EDITIONS).filter(x=>x.language===lang)){
      const opt=element("option",edition.title);
      opt.value=edition.id;
-     opt.disabled=!(edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || edition.id==="cpdv-2009" || (edition.enabled && edition.rights==="cleared"));
+     opt.disabled=!(["dr-challoner","cpdv-2009"].includes(edition.id) || edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || (edition.enabled && edition.rights==="cleared"));
      editionSelect.append(opt);
    }
    editionSelect.value=editionId;
    editionSelect.addEventListener("change",()=>{
      const chosen=SCRIPTURE_EDITIONS[editionSelect.value];
-     if(!chosen || chosen.language!==lang || (chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && chosen.id!=="cpdv-2009" && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
+     if(!chosen || chosen.language!==lang || (!["dr-challoner","cpdv-2009"].includes(chosen.id) && chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
      moveEdition(chosen.id);
      if(lang==="en" && ["dr-challoner","cpdv-2009"].includes(editionId))prefs.setEnglishEdition(editionId);
      draw();
@@ -203,7 +230,7 @@ export function mountScriptureLibrary(root,{
      const contextBar=element("section",null,"aoScriptureContextBar");
      contextBar.dataset.aoScriptureContextReader=context.reference;
      const title=element("p",(lang==="fr"?"Passage cité · ":"Cited passage · ")+context.reference,"aoScriptureContextTitle");
-     contextBar.append(title);
+     if(segmentSet?.length>1)contextBar.append(title);
      if(context.liturgicalArrangement){
        const arrangement=context.liturgicalArrangement;
        if(arrangement.schema!=="ao-liturgical-bible-verse-order-v1"||
@@ -299,10 +326,11 @@ export function mountScriptureLibrary(root,{
    }
    const crosswalkWarning=scriptureReferenceWarning(location.book,lang);
    if(crosswalkWarning){
-     const notice=element("p",crosswalkWarning,"aoScriptureNotice aoScriptureReferenceWarning");
-     notice.setAttribute("role","status");
-     notice.setAttribute("data-crosswalk-unverified",location.book);
-     wrap.append(notice);
+     const note=element("details",null,"aoScriptureReferenceWarning");
+     const summary=element("summary",lang==="fr"?"Numérotation variable":"Verse numbering varies");
+     summary.setAttribute("data-crosswalk-unverified",location.book);
+     note.append(summary,element("p",crosswalkWarning,"aoScriptureNotice"));
+     wrap.append(note);
    }
    const main=element("div",null,"aoScriptureReading");
    main.append(element("h3",passageReference(location)));
@@ -324,11 +352,15 @@ export function mountScriptureLibrary(root,{
    const textBlock=element("div",null,"aoScriptureText");
    if(chapterEntries.length){
      if(chapterEntries.some(item=>item.sourceWitness)){
-       const sourceNotice=element("p",lang==="fr"
+       const sourceNotice=element("details",null,"aoScriptureWitnessDetails");
+       const status=element("summary",lang==="fr"?"Transcription · non collationnée":"Source transcription · uncollated");
+       status.dataset.scriptureWitnessUnreviewed=editionId;
+       status.setAttribute("aria-label",lang==="fr"?"Source non collationnée · afficher les détails":"Uncollated source · show provenance");
+       sourceNotice.append(status,element("p",lang==="fr"
          ?"Transcription de la source, pas encore collationnée avec l'édition imprimée. Vérifier les versets incomplets ou divergents."
-         :"Source transcription, not yet collated against the printed edition. Verify missing or divergent verses.","aoScriptureNotice aoScriptureWitnessNote");
-       sourceNotice.dataset.scriptureWitnessUnreviewed=editionId;
-       textBlock.append(sourceNotice);
+         :"Source transcription, not yet collated against the printed edition. Verify missing or divergent verses.","aoScriptureNotice aoScriptureWitnessNote"));
+       // Source status stays visible; extended qualifications follow the text.
+       textBlock._sourceDisclosure=sourceNotice;
      }
      const entireChapter=contextDepth==="chapter"||!context?.reference;
      const visible=chapterEntries.filter(item=>entireChapter||
@@ -353,6 +385,7 @@ export function mountScriptureLibrary(root,{
          ?"Aucun texte disponible pour ces versets dans la transcription de référence."
          :"The source transcription contains no text for these selected verses.","aoScriptureNotice"));
    } else textBlock.append(element("p",t.unavailable));
+   if(textBlock._sourceDisclosure)textBlock.append(textBlock._sourceDisclosure);
    main.append(textBlock);
    const textualNotes=cpdvTextualNotesFor(editionId,location);
    for(const note of textualNotes){
@@ -375,7 +408,7 @@ export function mountScriptureLibrary(root,{
    bookmark.textContent=present?t.saved:t.save;
    bookmark.setAttribute("aria-pressed",String(present));
    bookmark.addEventListener("click",()=>{prefs.toggleBookmark(location,editionId);draw();});actions.append(bookmark);
-   for(const [direction,label] of [[-1,t.previous],[1,t.next]]){
+   if(!context?.reference)for(const [direction,label] of [[-1,t.previous],[1,t.next]]){
      const button=element("button",label);button.type="button";
      button.disabled=direction<0 ? location.chapter===1 : location.chapter>=scriptureChapterLimit(location.book);
      button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage({book:location.book,chapter:location.chapter+direction,verseStart:1});draw();});
@@ -384,6 +417,15 @@ export function mountScriptureLibrary(root,{
    main.append(actions);
    // Commentary is a reading-depth panel, not an additional section competing with Scripture.
    if(!commentaryVisible||!context?.reference)wrap.append(main);
+   // One secondary disclosure shared by every source-owned Scripture entry.
+   const tools=element("details",null,"aoScriptureTools");
+   tools.open=toolsExpanded;
+   const toolsSummary=element("summary",lang==="fr"?"Explorer · bibliothèque et liens":"Explore · library & connections");
+   toolsSummary.addEventListener("click",event=>{
+     event.preventDefault();toolsExpanded=!tools.open;tools.open=toolsExpanded;
+   });
+   const toolsBody=element("div",null,"aoScriptureToolsBody");
+   tools.append(toolsSummary,toolsBody);wrap.append(tools);
    // Lazy reverse index from the exact same cited-object source registries.
    // Presence here indicates intersecting verses, not an identical rite.
    const related=element("details",null,"aoScriptureRelated");
@@ -428,7 +470,7 @@ export function mountScriptureLibrary(root,{
          read.addEventListener("click",()=>{
            relatedTrail.push({
              location,context,contextDepth,commentaryVisible,relatedExpanded,
-             segmentSet,activeSegmentIndex,browseExpanded,scrollTop:root.scrollTop
+             segmentSet,activeSegmentIndex,browseExpanded,toolsExpanded,scrollTop:root.scrollTop
            });
            segmentSet=hit.segments?scriptureSegments(hit.segments):null;
            activeSegmentIndex=segmentSet?0:-1;
@@ -436,7 +478,7 @@ export function mountScriptureLibrary(root,{
            context=Object.freeze({reference:hit.reference,passage:location,
              ...(segmentSet?{segments:segmentSet}:{})});
            contextDepth="selected";commentaryVisible=false;
-           relatedExpanded=false;browseExpanded=false;
+           relatedExpanded=false;browseExpanded=false;toolsExpanded=false;
            draw();root.scrollTop=0;
            queueMicrotask(()=>wrap.querySelector("[data-scripture-context-depth='selected']")?.focus?.({preventScroll:true}));
          });
@@ -475,9 +517,9 @@ export function mountScriptureLibrary(root,{
      e.preventDefault();relatedExpanded=!related.open;related.open=relatedExpanded;
      if(relatedExpanded)void paintRelated();
    });
-   related.append(relatedSummary,relatedBody);wrap.append(related);
+   related.append(relatedSummary,relatedBody);toolsBody.append(related);
    if(relatedExpanded)void paintRelated();
-   wrap.append(browse);
+   toolsBody.append(browse);
    const searchSection=element("details",null,"aoScriptureSearch");
    searchSection.append(element("summary",t.search));
    const searchField=element("input");searchField.type="search";searchField.placeholder=t.find;searchField.value=query;
@@ -498,7 +540,7 @@ export function mountScriptureLibrary(root,{
      }
    };
    searchField.addEventListener("input",()=>{query=searchField.value;paintResults();});
-   searchSection.append(searchField,resultArea);wrap.append(searchSection);paintResults();
+   searchSection.append(searchField,resultArea);toolsBody.append(searchSection);paintResults();
    const savedSection=element("details",null,"aoScriptureBookmarks");
    savedSection.append(element("summary",t.bookmarks));
    const marks=prefs.load().bookmarks.filter(b=>b.editionId===editionId);
@@ -508,7 +550,7 @@ export function mountScriptureLibrary(root,{
      button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage(mark);draw();});
      savedSection.append(button);
    }
-   wrap.append(savedSection);
+   toolsBody.append(savedSection);
    const oldMarks=prefs.load().bookmarks.filter(b=>b.editionId===null);
    if(oldMarks.length){
      const older=element("details",null,"aoScriptureUnassignedBookmarks");
@@ -518,7 +560,7 @@ export function mountScriptureLibrary(root,{
        const add=element("button",(lang==="fr"?"Attribuer à cette édition : ":"Assign to this edition: ")+passageReference(mark));
        add.type="button";add.addEventListener("click",()=>{prefs.assignLegacyBookmark(mark,editionId);draw();});older.append(add);
      }
-     wrap.append(older);
+     toolsBody.append(older);
    }
    const rosary=element("details",null,"aoScriptureRosary");
    rosary.append(element("summary",t.rosary));
@@ -528,7 +570,7 @@ export function mountScriptureLibrary(root,{
      button.addEventListener("click",()=>{leaveSourceSegments();location=item.passage;draw();});
      line.append(button,element("p",item.editorialSummary[lang]));rosary.append(line);
    }
-   wrap.append(rosary);
+   toolsBody.append(rosary);
  }
  draw();
  return Object.freeze({

@@ -154,15 +154,17 @@ try{
     await page.evaluate(()=>document.querySelector("#ao-r17-native-reader-preview [data-reader-scripture-context]").click());
     const overlay=page.locator("#ao-scripture-overlay");
     await overlay.waitFor({state:"visible",timeout:15000});
-    assert.equal((await overlay.locator(".aoScriptureContextTitle").innerText()).includes(reference),true);
     assert.equal(await overlay.locator(".aoScriptureReading h3").innerText(),firstPassage);
     // Full historical witnesses are now readable only inside the separate
     // Bible overlay. They remain uncollated and must never become an
     // implicitly certified translation of the 1962 native prophecy.
     const witness=overlay.locator("[data-scripture-witness-unreviewed='dr-challoner']");
     await witness.waitFor({state:"visible",timeout:12000});
-    assert.match(await witness.innerText(),/not yet collated/i,
-      "The restored Douay witness must carry its source-collation warning");
+    assert.match(await witness.innerText(),/uncollated/i,
+      "The compact reader must disclose the original source's uncollated status");
+    await witness.click();
+    assert.match(await overlay.locator(".aoScriptureWitnessDetails p").innerText(),/not yet collated/i,
+      "The original source-collation warning must remain available on demand");
     assert.ok(await overlay.locator(".aoScriptureVerse").count()>0,
       "The source-bound Scripture overlay lost its historical text");
     assert.equal(await page.locator("#ao-r17-native-reader-preview .aoScriptureVerse").count(),0,

@@ -43,7 +43,7 @@ try{
    await origin.tap();
    const scripture=page.locator("#ao-scripture-overlay");
    await scripture.waitFor({state:"visible",timeout:9000});
-   assert.match(await scripture.locator(".aoScriptureContextTitle").innerText(),/Genesis 14:18/);
+   assert.match(await scripture.locator(".aoScriptureReading h3").innerText(),/Genesis 14:18/);
    await scripture.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
    assert.equal(await scripture.locator('[data-scripture-witness-unreviewed="dr-challoner"]').count(),1);
    await scripture.locator('[data-scripture-context-depth="chapter"]').tap();

@@ -48,8 +48,13 @@ try{
   });
   assert.equal(baseline.count,32,width+" cannot navigate all 32 original Guide moments");
   assert.equal(baseline.explorer?.indexView,"map",width+" must open the visual Map by default");
+  assert.equal(baseline.explorer?.explanatoryPrayerBlocks,84,width+" missing complete prayer explanations");
+  assert.equal(baseline.explorer?.approvedDeepStudyBlocks,0,
+    width+" must not expose unapproved Roman Canon studies");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-phase]").count(),5,
     width+" missing one of five phase navigation controls");
+  assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-study-owner]").count(),0,
+    "Unapproved draft commentary must not appear in the public map");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-map-block]").count(),96,
     width+" lost a canonical text in expanded map ownership");
   assert.equal(await page.locator("#ao-mass-explorer-root [data-ao-mx-stage]").count(),0,
@@ -71,7 +76,7 @@ try{
     const topicScripture=page.locator('#ao-mass-formation-root [data-ao-mass-formation-anchor="MFS05"]');
     await topicScripture.click();
     await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:12000});
-    assert.match(await page.locator("#ao-scripture-overlay .aoScriptureContextTitle").innerText(),/Romans 12:1/);
+    assert.match(await page.locator("#ao-scripture-overlay .aoScriptureReading h3").innerText(),/Romans 12:1/);
     await page.locator('#ao-scripture-overlay [data-scripture-close]').click();
     await page.locator('#ao-mass-formation-root [data-ao-mf-close]').click();
     await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.indexView==="themes"&&
@@ -147,6 +152,15 @@ try{
   const action=prayer.locator('[data-ao-mx-cue="AO.SM.C0111"]');
   assert.equal(await action.locator("[lang=la]").count(),0,"Priset action must not falsely claim a Latin original");
   assert.match(await action.innerText(),/Priest.s action|Makes the cross/i);
+  const meaning=page.locator('#ao-mass-explorer-root [data-ao-mx-anchor="meaning"]');
+  assert.equal(await meaning.count(),1,width+" should display existing published Formation context for Suscipe");
+  assert.equal(await meaning.locator('[data-ao-mx-published-claim="MF03-C03"]').count(),1);
+  assert.equal(await meaning.locator('[data-ao-mx-text-reading="AO.SM.B031"]').count(),1,
+    width+" source-anchored explanatory paragraph missing from in-app panel");
+  assert.match(await meaning.innerText(),/faithful to offer their work/);
+  await page.locator('#ao-mass-explorer-root [data-ao-mx-jump="meaning"]').click();
+  assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.010"]').count(),1,
+    "In-place teaching must retain Guide ownership and the original Mass passage");
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-en.png")});
   // Suscipe's approved biblical comparison is in the existing Formation MF03
   // lesson, NOT an unverified direct prayer-to-verse attribution.
@@ -160,7 +174,7 @@ try{
     await indirect.click();
     const scripture=page.locator("#ao-scripture-overlay");
     await scripture.waitFor({state:"visible",timeout:12000});
-    assert.match(await scripture.locator(".aoScriptureContextTitle").innerText(),/Romans 12:1/);
+    assert.match(await scripture.locator(".aoScriptureReading h3").innerText(),/Romans 12:1/);
     await scripture.locator('[data-scripture-context-depth="chapter"]').click();
     assert.ok(await scripture.locator(".aoScriptureVerse").count()>10,"MF03 biblical chapter unavailable");
     await scripture.locator("[data-scripture-close]").click();
@@ -214,7 +228,7 @@ try{
     await origin.click();
     const bible=page.locator("#ao-scripture-overlay");
     await bible.waitFor({state:"visible",timeout:12000});
-    assert.match(await bible.locator(".aoScriptureContextTitle").innerText(),/Isaiah 6:3/);
+    assert.match(await bible.locator(".aoScriptureReading h3").innerText(),/Isaiah 6:3/);
     await bible.locator("[data-scripture-close]").click();
     assert.equal(await origin.evaluate(el=>el===document.activeElement),true,"Scripture source-owner must restore exact Explorer focus");
     assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.013"]').count(),1,
@@ -232,6 +246,12 @@ try{
   assert.match(await page.locator("#ao-mass-explorer-root .aoMXText").innerText(),/Suscipe, sancte Pater/);
   assert.ok(await page.locator("#ao-mass-explorer-root .aoMXTextRow [lang=fr]").count()>0,
     width+" missing source-owned French by-cue witness");
+  const meaningFr=page.locator('#ao-mass-explorer-root [data-ao-mx-anchor="meaning"]');
+  assert.equal(await meaningFr.count(),1);
+  assert.equal(await meaningFr.locator('[data-ao-mx-published-claim="MF03-C03"]').count(),1);
+  assert.equal(await meaningFr.locator('[data-ao-mx-text-reading="AO.SM.B031"]').count(),1,
+    width+" French source-anchored explanatory paragraph missing");
+  assert.match(await meaningFr.innerText(),/Offertoire|fidèles/i);
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-fr.png")});
   await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
   await page.screenshot({path:resolve(screenshotDir,"mass-map-"+width+"-fr.png")});

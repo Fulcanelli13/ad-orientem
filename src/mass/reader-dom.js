@@ -372,6 +372,21 @@ const SHELL_STYLE = `
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
 .ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
+/* No new artwork/clock: one occasional Solemn minister *rubric*, not a
+   claimed observation or a priest-action clone. Only certified existing
+   sacredMinister states may populate this otherwise absent right-rail tile. */
+.ao-reader-shell[data-mode="LIVE"] .ao-rail-item[data-channel="sacred-minister"][data-active="true"]{
+  border-color:color-mix(in srgb,var(--ao-mass-accent) 34%,transparent);
+  background:color-mix(in srgb,var(--ao-mass-panel) 92%,transparent);
+  opacity:.91;padding:3px
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-rail-item[data-channel="sacred-minister"] .ao-rail-copy{
+  display:block!important;max-width:48px;font:600 7px/1.1 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.015em;text-transform:uppercase;color:#d6ddd3;text-align:center;
+  overflow-wrap:break-word;display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden
+}
+.ao-reader-shell:not([data-mode="LIVE"]) [data-channel="sacred-minister"]{display:none!important}
+
 .ao-rail .ao-icon-mask{width:38px;height:38px}
 .ao-bell-icon{display:block;width:38px;height:38px;color:#d8c590}
 .ao-bell-icon svg{display:block;width:100%;height:100%}
@@ -789,7 +804,6 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"]{
   --ao-missal-column-gap:clamp(16px,3.4vw,48px);
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon,
 .ao-reader-shell[data-mode="MISSAL"] .ao-schola-dock,
 .ao-reader-shell[data-mode="MISSAL"] .ao-progress-track,
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-progress,
@@ -1038,6 +1052,95 @@ button.ao-schola-control{cursor:pointer}
 }
 
 
+
+/* Missal retains the source-owned posture/gesture and priest position/action
+   in one compact horizontal state ribbon, never the LIVE transient rails. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon{
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(74px,.56fr) minmax(0,1fr);
+  min-height:64px;height:64px;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{gap:5px;padding:4px 6px}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-icon-mask:not(.ao-missal-gesture-icon){
+  width:35px;height:35px;flex:0 0 35px;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-label{
+  max-width:120px;font-size:10px;line-height:1.17;
+}
+@media(max-width:360px){
+  .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell>.ao-icon-mask:not(.ao-missal-gesture-icon){
+    width:29px;height:29px;flex:0 0 29px;
+  }
+  .ao-reader-shell[data-mode="MISSAL"] .ao-missal-gesture-icon{
+    width:27px;height:27px;flex:0 0 27px;
+  }
+  .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{gap:3px;padding:3px}
+}
+/* The Canon's contextual source banner is a LIVE-specific chrome
+   alternative. In Missal, rubrics remain inline and the gesture ribbon
+   must never be replaced by a redundant source title. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-source{display:none!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{display:flex!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-guide{height:64px}
+/* In a 320px Missal, show one priest image: the current source action
+   (if present) replaces the position pictogram; the position remains text.
+   The LIVE floating action badge continues unchanged. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"]{
+  justify-content:flex-start;gap:5px;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"]:has(.ao-priest-action-badge[data-active="true"])>
+.ao-icon-mask[data-icon-slot="priest-position"]{display:none!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge{
+  position:static!important;right:auto!important;top:auto!important;
+  width:31px!important;height:31px!important;flex:0 0 31px;
+  order:-1;border-radius:7px;background:transparent;
+  border:0;box-shadow:none;transform:none!important;
+  transition:none;opacity:1;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge[data-active="false"]{display:none}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"] .ao-state-copy{
+  flex:1;min-width:0;align-items:flex-start;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"] .ao-state-label{
+  white-space:normal;overflow:hidden;max-height:22px;
+  font-size:9px;line-height:1.09;letter-spacing:0;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-cell[data-side="priest"] .ao-missal-state-detail{
+  width:100%;font-size:8px;line-height:1.1;white-space:nowrap;
+}
+@media(max-width:360px){
+  .ao-reader-shell[data-mode="MISSAL"] .ao-priest-action-badge{
+    width:26px!important;height:26px!important;flex-basis:26px;
+  }
+}
+/* Source-owned Missal prayer divisions. No in-Mass study links. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading{
+  margin:26px 0 12px;padding:12px 0 8px;
+  border-top:1px solid color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);
+  text-align:center;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading:first-child{
+  margin-top:0;border-top:0;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-name{
+  margin:0;font:500 clamp(1rem,2.2vw,1.3rem)/1.4 var(--ao-missal-display);
+  color:var(--ao-text);letter-spacing:.015em;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-description{
+  display:block;margin:4px auto 0;max-width:45ch;
+  font:italic clamp(.83rem,1.4vw,1rem)/1.35 var(--ao-missal-face);
+  color:var(--ao-muted);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-state-detail{
+  display:block;max-width:142px;margin-top:3px;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap;color:var(--ao-mass-accent-text);
+  font:400 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-gesture-icon{
+  width:33px;height:33px;flex:0 0 33px;color:var(--ao-mass-accent-text);
+}
+.ao-reader-shell:not([data-mode="MISSAL"]) .ao-missal-gesture-icon{display:none}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-state-detail[hidden]{display:none}
+.ao-reader-shell[data-mode="MISSAL"] .ao-prayer-title{display:none}
 `;
 
 function esc(value){
@@ -1180,6 +1283,21 @@ export function syncReaderRitualHighlights(root,gesture){
   return applied;
 }
 
+// Treat the existing 19 R18 Solemn source events as **rubrical expectations**.
+// Their cue alignment is not evidence anyone independently observed a minister.
+// Only the pre-certified form-state owner may supply this discrete LIVE label.
+export function projectCertifiedSolemnMinisterRubric(value){
+  if(!value||!["R18_SOLEMN_R04_MINISTER","R18_SOLEMN_PAX_PRIMARY_SOURCE"].includes(value.owner) ||
+    !["RECOVERED_R04_CERTIFIED","CERTIFIED_PRIMARY_1962_RUBRIC"].includes(value.authorityStatus) ||
+    !/^AO\.SM\.C\d{4}$/.test(String(value.cueId??"")) ||
+    !String(value.actor??"").trim() || !String(value.labelShort??"").trim())return null;
+  return Object.freeze({
+    label:String(value.actor).trim()+" · "+String(value.labelShort).trim(),
+    actor:value.actor,sourceCueId:value.cueId,observed:false,
+    owner:"EXISTING_SOLEMN_MINISTER_RUBRIC_EXPECTED_ONLY",
+  });
+}
+
 export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
   const momentTitle=String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "");
@@ -1250,6 +1368,10 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     cardTitle:String(moment.cardUpdate === false ? (previous.cardTitle ?? "") : (moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "")),
     cardUpdate:moment.cardUpdate !== false,
     paragraphs,
+    missalHeadings:moment.cardUpdate===false ? (previous.missalHeadings??[]) :
+      Object.freeze([...(moment.missalHeadings??[])]),
+    missalRubric:moment.cardUpdate===false ? (previous.missalRubric??null) :
+      (moment.missalRubric??null),
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
     customary:moment.customary??(moment.cardUpdate===false?previous.customary:null),
     paragraphCues:moment.paragraphCues??(moment.cardUpdate===false?previous.paragraphCues:Object.freeze({})),
@@ -1264,6 +1386,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     cinematicScene:moment.cinematicScene ?? null,
     priestPosition:persist(moment.priestPosition, previous.priestPosition),
     priestAction:moment.priestAction ?? null,
+    sacredMinister:projectCertifiedSolemnMinisterRubric(moment.sacredMinister),
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
     scholaShared:sharedTextWithSchola && Boolean(textValue(schola)),
@@ -1370,7 +1493,8 @@ export function buildReaderShellMarkup(prepared = {}) {
     <span class="ao-state-source" data-role="canon-source-summary">CANON · RITUS SERVANDUS (1962)</span>
     <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
       <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
-      <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span></span>
+      <span class="ao-icon-mask ao-missal-gesture-icon" data-icon-slot="faithful-gesture-top" hidden aria-hidden="true"></span>
+      <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span><span class="ao-missal-state-detail" data-role="missal-faithful-gesture" hidden></span></span>
     </div>
     <button class="ao-state-guide" type="button" data-role="guide-button" disabled aria-label="Open Guide and rubrics">
       <span class="ao-guide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.75h10.5A2.5 2.5 0 0 1 18 7.25v12H7.5A2.5 2.5 0 0 1 5 16.75z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h6.5M8 11h6.5M8 14h4.5" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/></svg></span>
@@ -1378,7 +1502,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     </button>
     <div class="ao-state-cell" data-side="priest">
       <span class="ao-icon-mask" data-icon-slot="priest-position" hidden></span>
-      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span></span>
+      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span><span class="ao-missal-state-detail" data-role="missal-priest-action" hidden></span></span>
       <span class="ao-priest-action-badge" data-role="priest-action-badge" data-active="false" data-major="false" aria-hidden="true"><span class="ao-icon-mask" data-icon-slot="priest-action-top" hidden></span></span>
     </div>
   </div>
@@ -1462,9 +1586,10 @@ export function buildReaderShellMarkup(prepared = {}) {
       </article>
     </main>
 
-    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest, bell, and shared Schola cues">
+    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest, ministers, bell, and shared Schola cues">
       <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="priest-action" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-rail-copy" data-role="priest-action">—</span></div>
+      <div class="ao-rail-item" data-channel="sacred-minister" data-active="false" aria-hidden="true"><span class="ao-rail-copy" data-role="sacred-minister">—</span></div>
       <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-icon-mask ao-bell-icon" data-icon-slot="bell" hidden aria-hidden="true"></span><span class="ao-rail-copy" data-role="bell">—</span></div>
       <div class="ao-rail-item" data-channel="schola-shared" data-active="false" aria-label="Schola shares the current text"><span class="ao-icon-mask" data-icon-slot="schola-shared" hidden></span><span class="ao-rail-copy" aria-hidden="true">—</span></div>
     </aside>
@@ -1518,9 +1643,12 @@ function setChannel(root, channel, value){
     if(!item.classList?.contains("ao-rail-item"))continue;
     if(active){
       item.setAttribute("role","img");
-      item.setAttribute("aria-label",label);
+      const accessibleLabel=channel==="sacred-minister"
+        ? "Expected 1962 minister rubric (not independently observed): "+label
+        : label;
+      item.setAttribute("aria-label",accessibleLabel);
       item.removeAttribute("aria-hidden");
-      item.title=label;
+      item.title=accessibleLabel;
     }else{
       item.removeAttribute("role");
       item.removeAttribute("aria-label");
@@ -2557,10 +2685,22 @@ export function createReaderDomAdapter({
     }
     setText(root,"card-title",current.cardTitle);
     setText(root,"progress",current.progress);
-    setText(root,"priest-position",textValue(current.priestPosition));
+    setText(root,"priest-position",textValue(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition));
     setText(root,"priest-action",textValue(current.priestAction));
+    setText(root,"sacred-minister",textValue(current.sacredMinister));
     setText(root,"posture",textValue(current.posture));
     setText(root,"gesture",textValue(current.gesture));
+    // In Missal the upper ribbon is the only persistent faithful/priest
+    // gestural reference; LIVE keeps its vertical-rail behaviour unchanged.
+    const missalChrome=mode==="MISSAL";
+    for(const [role,value] of [
+      ["missal-faithful-gesture",current.missalRubric?.faithfulGesture??current.gesture],
+      ["missal-priest-action",current.missalRubric?.priestAction??current.priestAction],
+    ]){
+      const label=textValue(value);
+      const node=root.querySelector('[data-role="'+role+'"]');
+      if(node){node.hidden=!missalChrome||!label;node.textContent=missalChrome&&label?label:"";}
+    }
     setText(root,"response",textValue(current.response));
     const visibleBell=displayBell(current.bell);
     setText(root,"bell",visibleBell ? [textValue(visibleBell),visibleBell.detail].filter(Boolean).join(" · ") : null);
@@ -2606,6 +2746,7 @@ export function createReaderDomAdapter({
     if(postureRail)postureRail.dataset.change=String(postureChangeVisible);
     setChannel(root,"attention",current.attention);
     setChannel(root,"priest-action",current.priestAction);
+    setChannel(root,"sacred-minister",mode==="LIVE"?current.sacredMinister:null);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
     setChannel(root,"bell",visibleBell);
@@ -2617,8 +2758,9 @@ export function createReaderDomAdapter({
     syncProgress();
     syncRailVisibility(root);
 
-    applyIcon(root,"priest-position",current.priestPositionIconKey,iconResolver);
+    applyIcon(root,"priest-position",mode==="MISSAL" ? (current.missalRubric?.priestPosition?.iconKey??current.priestPositionIconKey) : current.priestPositionIconKey,iconResolver);
     applyIcon(root,"posture-top",current.postureIconKey,iconResolver);
+    applyIcon(root,"faithful-gesture-top",mode==="MISSAL"?(current.missalRubric?.faithfulGesture?.iconKey??current.gestureIconKey):null,iconResolver);
     applyIcon(root,"posture",current.postureIconKey,iconResolver);
     applyIcon(root,"posture-change",postureChangeVisible ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
     applyIcon(root,"attention",current.attentionIconKey??current.attention?.iconKey,iconResolver);
@@ -2626,7 +2768,7 @@ export function createReaderDomAdapter({
     applyIcon(root,"response",current.responseIconKey,iconResolver);
     applyIcon(root,"priest-voice",current.priestVoiceIconKey,iconResolver);
     applyIcon(root,"priest-action",current.priestActionIconKey,iconResolver);
-    applyIcon(root,"priest-action-top",current.priestActionIconKey,iconResolver);
+    applyIcon(root,"priest-action-top",mode==="MISSAL" ? (current.missalRubric?.priestAction?.iconKey??current.priestActionIconKey) : current.priestActionIconKey,iconResolver);
     applyIcon(root,"bell",visibleBell ? (current.bellIconKey??"bells") : null,iconResolver);
     applyIcon(root,"schola-shared",current.scholaShared ? current.scholaIconKey : null,iconResolver);
     applyIcon(root,"schola",current.scholaIconKey,iconResolver);
@@ -2635,7 +2777,11 @@ export function createReaderDomAdapter({
     const actionRail=root.querySelector('[data-channel="priest-action"]');
     const majorCue=new Set(["AO.SM.C0161","AO.SM.C0174","AO.SM.C0181","AO.SM.C0225","AO.SM.C0265","AO.SM.C0273"]);
     const activeCue=current.cinematic?.cueId ?? current.bell?.cueId ?? current.priestAction?.cueId ?? null;
-    const actionActive=Boolean(textValue(current.priestAction) && current.priestActionIconKey);
+    const missalAction=mode==="MISSAL"?current.missalRubric?.priestAction:null;
+    const actionActive=Boolean(
+      textValue(missalAction??current.priestAction) &&
+      (missalAction?.iconKey??current.priestActionIconKey)
+    );
     if(actionBadge){actionBadge.dataset.active=String(actionActive);actionBadge.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));}
     if(actionRail)actionRail.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));
     const bellRail=root.querySelector('[data-channel="bell"]');
@@ -2696,7 +2842,28 @@ export function createReaderDomAdapter({
           ORATION_UNDER_ONE_CONCLUSION:frenchReader?"Oraison à conclusion commune":"Prayer under one conclusion",
         };
         const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
-        for(const p of current.paragraphs){
+        for(const [paragraphIndex,p] of current.paragraphs.entries()){
+          if(mode==="MISSAL"){
+            // Source-block headings are distinct from spoken Latin and from
+            // rubrics. They never acquire a ritual cue or trigger gesture.
+            for(const heading of (current.missalHeadings??[]).filter(h=>
+              h.paragraphIndex===paragraphIndex)){
+              const headingNode=doc.createElement("div");
+              headingNode.className="ao-missal-prayer-heading";
+              headingNode.dataset.sourceBlockId=heading.blockId;
+              const title=doc.createElement("h2");
+              title.className="ao-missal-prayer-name";
+              title.textContent=heading.title;
+              headingNode.append(title);
+              if(heading.description){
+                const description=doc.createElement("small");
+                description.className="ao-missal-prayer-description";
+                description.textContent=heading.description;
+                headingNode.append(description);
+              }
+              body.append(headingNode);
+            }
+          }
           const node=doc.createElement("p");
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;

@@ -1,6 +1,7 @@
 import {massScriptureContextForCard} from "../mass/scripture-reading-context.js";
 import {passageReference} from "../scripture/passages.js";
 import {scriptureSegmentsReference} from "../scripture/segments.js";
+import {calendarNativeRiteScriptureContexts} from "./native-rite-scripture-handoff.js";
 
 /*
  * Calendar is a presentation of the resolved 1962 Proper, not a second
@@ -29,5 +30,7 @@ export function calendarScriptureContexts(resolution){
       witnessUrl:resolved.witnessUrl??null
     });
   }).filter(Boolean);
-  return Object.freeze(rows);
+  // The native Good Friday action and Easter Vigil prophecies have their own
+  // source-backed, staged reader; they are not extra Ordinary Proper slots.
+  return Object.freeze([...calendarNativeRiteScriptureContexts(resolution),...rows]);
 }

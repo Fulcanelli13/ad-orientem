@@ -6,7 +6,8 @@ assert.deepEqual(Object.keys(SCRIPTURE_EDITIONS).sort(), ["crampon-1923","cpdv-2
 assert.equal(DEFAULT_SCRIPTURE_EDITION.fr, "crampon-1923");
 assert.equal(scriptureEditionFor("en").id, "dr-challoner");
 assert.equal(scriptureEditionFor("en", "cpdv-2009").id, "cpdv-2009");
-assert.equal(scriptureEditionFor("en", "cpdv-2009").role, "readability-alternative");
+assert.equal(scriptureEditionFor("en", "cpdv-2009").role, "readability-option");
+assert.equal(scriptureEditionFor("en", "dr-challoner").role,"default");
 assert.equal(scriptureEditionFor("en", "cpdv-2009").selectionStatus, "approved-by-product-owner-pending-certification");
 assert.equal(scriptureEditionFor("en", "cpdv-2009").doctrinalReview, "pending");
 assert.equal(scriptureEditionFor("en", "cpdv-2009").textAccuracyReview, "pending");

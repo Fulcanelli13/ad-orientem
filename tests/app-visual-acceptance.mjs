@@ -254,6 +254,11 @@ try{
     scripture:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-scripture]").length,
     catechism:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-daily-catechism]").length,
     calendar:document.querySelectorAll(".homeScreen .aoTodayV2Context [data-home-calendar]").length,
+    year:document.querySelectorAll('.homeScreen .aoTodayV2Context [data-home-calendar-view="year"]').length,
+    upcoming:document.querySelectorAll('.homeScreen .aoTodayV2Approaching [data-home-calendar-view="picker"]').length,
+    upcomingDates:document.querySelectorAll('.homeScreen .aoTodayV2Approaching [data-home-calendar-date]').length,
+    contextHeight:document.querySelector(".homeScreen .aoTodayV2Context button")?.getBoundingClientRect().height??0,
+    horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-document.documentElement.clientWidth),
     massEntry:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
     obsoleteYearWheel:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
     unresolvedArt:document.querySelectorAll(".homeScreen .aoSaintArtCard .aoSaintArtPlaceholder").length,
@@ -265,7 +270,12 @@ try{
   assert.equal(homeParity.gospel,1,"Today v2 lost appointed-Gospel navigation");
   assert.equal(homeParity.scripture,1,"Today v2 lost Scripture navigation");
   assert.equal(homeParity.catechism,1,"Today v2 lost the Daily Catechism entry");
-  assert.equal(homeParity.calendar,2,"Today v2 must preserve Liturgical Time and Coming Soon calendar navigation");
+  assert.equal(homeParity.calendar,1,"Today v2 must keep one contextual Liturgical Time entry");
+  assert.equal(homeParity.year,1,"The season link must still open the canonical Liturgical Year");
+  assert.equal(homeParity.upcoming,1,"One Coming next section must still reach Calendar Month");
+  assert.ok(homeParity.upcomingDates>=1,"Upcoming dates must preserve Calendar Day entry");
+  assert.ok(homeParity.contextHeight>=44,"The compact season control must meet the 44px touch target");
+  assert.ok(homeParity.horizontalOverflow<=1,"Home decluttering introduced horizontal overflow");
   assert.equal(homeParity.massEntry,1,"Home does not expose a canonical Follow Mass entry");
   assert.equal(homeParity.obsoleteYearWheel,0,"Calendar dashboard leaked onto Home");
   assert.equal(homeParity.unresolvedArt,0,"Home displayed an unapproved artwork placeholder");
@@ -394,20 +404,31 @@ try{
 
   const todayTabs=".homeScreen.aoTodayV2 .aoTodayV2Tabs";
   await page.locator(todayTabs+" [data-home-calendar-view='year']").click();
-  await page.waitForSelector("#ao-calendar-modular-root .aoCalV2Ring",{state:"visible",timeout:10000});
+  await page.waitForSelector("#ao-calendar-modular-root .aoClockDial",{state:"visible",timeout:10000});
   const inlineYear=await page.evaluate(()=>({
     segments:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-segment]").length,
     periods:document.querySelectorAll("#ao-calendar-modular-root [data-cal-year-period]").length,
     track:document.querySelectorAll("#ao-calendar-modular-root .aoCalYearTrack").length,
-    ringWidth:document.querySelector("#ao-calendar-modular-root .aoCalV2Ring")?.getBoundingClientRect().width??0,
+    context:document.querySelectorAll("#ao-calendar-modular-root .aoClockContext").length,
+    anchors:[...document.querySelectorAll("#ao-calendar-modular-root .aoClockFeastMenu [data-cal-clock-feast]")].map(n=>n.dataset.calClockFeast),
+    colourSectors:[...document.querySelectorAll("#ao-calendar-modular-root .aoClockSector")].filter(n=>n.getAttribute("style")?.includes("--ao-clock-glow:")).length,
+    clockWidth:document.querySelector("#ao-calendar-modular-root .aoClockDial")?.getBoundingClientRect().width??0,
+    seasons:document.querySelectorAll("#ao-calendar-modular-root [data-cal-clock-season]").length,
+    obsoleteRings:document.querySelectorAll("#ao-calendar-modular-root .aoCalV2Ring").length,
     overflow:document.querySelector("#ao-calendar-modular-root").scrollWidth-document.querySelector("#ao-calendar-modular-root").clientWidth,
     selected:document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs [data-home-calendar-view='year']")?.getAttribute("aria-current")??null
   }));
-  assert.equal(inlineYear.segments,11,"Liturgical Year lost its eleven 1962 periods");
-  assert.equal(inlineYear.periods,11,"Liturgical Year periods are not selectable");
-  assert.equal(inlineYear.track,1,"Liturgical Year must have one proportional timeline");
-  assert.ok(inlineYear.ringWidth>=105&&inlineYear.ringWidth<=160,"Year date ring is not phone-legible");
-  assert.ok(inlineYear.overflow<=1,"Liturgical Year overflows the phone");
+  assert.equal(inlineYear.segments,0,"Home Year must not duplicate Clock as a separate season bar");
+  assert.equal(inlineYear.periods,0,"Home Year must not stack eleven duplicate cards");
+  assert.equal(inlineYear.track,0,"Home Year must not repeat daily colours in another timeline");
+  assert.equal(inlineYear.context,1,"One contextual season panel must replace duplicate journeys");
+  for(const date of ["2026-10-25","2026-11-01","2026-11-02"])
+    assert.ok(inlineYear.anchors.includes(date),"Major feast missing from source-owned Clock index: "+date);
+  assert.equal(inlineYear.colourSectors,8,"Every Clock season needs a translucent liturgical colour");
+  assert.ok(inlineYear.clockWidth>=250&&inlineYear.clockWidth<=390,"Interactive Clock is not phone-legible: "+JSON.stringify(inlineYear));
+  assert.ok(inlineYear.seasons>=8,"Year Clock did not expose interactive seasonal controls");
+  assert.equal(inlineYear.obsoleteRings,0,"The old mini-wheel still hides the interactive year");
+  assert.ok(inlineYear.overflow<=1,"Liturgical Year overflows the phone: "+JSON.stringify(inlineYear));
   assert.equal(inlineYear.selected,"page","Today did not identify the active Year tab");
   await shot("02b-calendar-year");
 

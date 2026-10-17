@@ -6,6 +6,7 @@ import {
   toggleReaderTranslation,
   syncReaderRitualHighlights,
   normalizeReaderMoment,
+  projectCertifiedSolemnMinisterRubric,
   SCHOLA_SPEEDS,
   DEFAULT_SCHOLA_SPEED,
   normalizeScholaSpeed,
@@ -38,6 +39,8 @@ for(const token of [
   'data-channel="gesture"',
   'data-channel="response"',
   'data-channel="priest-voice"',
+  'data-channel="sacred-minister"',
+  'data-role="sacred-minister"',
   'data-channel="bell"',
   'data-channel="schola"',
   'data-channel="schola-shared"',
@@ -62,6 +65,14 @@ for(const token of [
   'data-schola-faster',
   'data-schola-pause'
 ]) expect(html.includes(token),"reader shell missing "+token);
+expect(html.includes('data-icon-slot="faithful-gesture-top"'),
+  "Missal top ribbon must show a source-owned gesture glyph independently from posture");
+expect(html.includes('data-role="missal-faithful-gesture"'),
+  "Missal faithful gesture must have a dedicated top-ribbon display");
+expect(html.includes('data-role="missal-priest-action"'),
+  "Missal priest action must have a dedicated top-ribbon display");
+expect(html.includes(".ao-missal-prayer-heading"),
+  "Missal source prayer headings must have an accessible visible style");
 expect(html.includes('data-ao-donor-icon="home"'),"reader Home control lost exact v1.80 donor ownership");
 expect(html.includes("M3.5 10.7 12 3.8l8.5 6.9v9.1h-5.4v-5.7H8.9v5.7H3.5z"),"reader Home glyph drifted from v1.80 donor");
 expect(html.includes('data-ao-donor-icon="preferences"'),"reader Mass-preferences control lost exact v1.80 donor ownership");
@@ -72,6 +83,12 @@ expect(html.includes(".ao-rail{\n  position:absolute"),"ritual rails are no long
 expect(html.includes("padding:clamp(28px,4.5vh,48px) max(18px,calc((100% - 790px)/2))"),"centre reader lost donor 790px reading measure");
 expect(html.includes("border:0;border-radius:0;background:transparent;box-shadow:none"),"giant card chrome returned to the Mass reader");
 expect(html.includes(".ao-reader-body")===false,"unexpected duplicate reader body presentation layer appeared");
+expect(html.includes('Existing 19 R18 Solemn source events')===false,
+  "UI must not duplicate research/editorial registry into HTML labels");
+expect(typeof projectCertifiedSolemnMinisterRubric==="function",
+  "Solemn source projection must remain a pure guarded presentation helper");
+expect(html.includes('data-channel="sacred-minister" data-active="false" aria-hidden="true"'),
+  "Unselected and non-Solemn readers must not show a phantom minister tile");
 expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matches the final executable donor");
 expect(html.includes("opacity:.84"),"donor forward near-focus level no longer matches the final executable donor");
 expect(html.includes("opacity:.67"),"donor backward near-focus level no longer matches the final executable donor");
@@ -110,6 +127,31 @@ expect(oration.paragraphs[0].sourcePath==="Sancti/10-11",
 expect(oration.paragraphs[0].sourceAnchorCueId==="AO.SM.C0073",
   "Proper canonical cue anchor disappeared before reader gestures/rubrics");
 
+const sanctioned={
+  actor:"DEACON",labelShort:"PUBLIC GOSPEL",cueId:"AO.SM.C0082",
+  owner:"R18_SOLEMN_R04_MINISTER",authorityStatus:"RECOVERED_R04_CERTIFIED"
+};
+const expected=projectCertifiedSolemnMinisterRubric(sanctioned);
+expect(expected?.label==="DEACON · PUBLIC GOSPEL" && expected.observed===false,
+  "Certified Solemn action must show as rubrical (not observed)");
+expect(expected.owner==="EXISTING_SOLEMN_MINISTER_RUBRIC_EXPECTED_ONLY",
+  "Minister rail lost exact R18 ownership");
+for(const invalid of [
+  null,
+  {...sanctioned,owner:"RESEARCH_MINISTER_PROPOSAL"},
+  {...sanctioned,authorityStatus:"RESEARCH_REVIEW_NOT_LIVE"},
+  {...sanctioned,cueId:"AO.SM.C0112",authorityStatus:"PENDING_1962_SOURCE"},
+  {...sanctioned,labelShort:""},
+  {...sanctioned,actor:null},
+]){
+ expect(projectCertifiedSolemnMinisterRubric(invalid)===null,
+   "Unapproved/unidentified actor was promoted into the Solemn rail");
+}
+const ministerMoment=normalizeReaderMoment({id:"MINISTER-AUDIT",sacredMinister:sanctioned});
+expect(ministerMoment.sacredMinister?.label==="DEACON · PUBLIC GOSPEL",
+  "Solemn source action never reached the DOM moment");
+expect(normalizeReaderMoment({id:"NO-MINISTER",sacredMinister:null},ministerMoment).sacredMinister===null,
+  "Transient sacred minister action leaked to the next cue");
 const first=normalizeReaderMoment({
   id:"A",
   sectionTitle:"Credo",
@@ -126,6 +168,23 @@ const first=normalizeReaderMoment({
   guide:{registryAvailable:false,text:"must not render"},
   paragraphs:[{id:"p1",primary:"Credo in unum Deum",secondary:"I believe in one God",active:true}]
 });
+const namedMissal=normalizeReaderMoment({
+  id:"MISSAL-PRAYER-EXAMPLE",sectionTitle:"Offertory",cardTitle:"Offertory",
+  missalRubric:{sourceCueId:"AO.SM.C0110",priestAction:{label:"OFFERS HOST",iconKey:"priest-offers-host"}},
+  missalHeadings:[{blockId:"AO.SM.B031",paragraphIndex:0,
+    title:"Suscipe, sancte Pater",description:"The offering of the bread."}],
+  paragraphs:[{id:"AO.SM.C0110",primary:"Suscipe",secondary:"Receive"}],
+});
+expect(namedMissal.missalRubric?.priestAction?.label==="OFFERS HOST",
+  "Sourced Missal action was lost before ribbon rendering");
+expect(normalizeReaderMoment({id:"SAME",cardUpdate:false},namedMissal).missalRubric?.sourceCueId==="AO.SM.C0110",
+  "Static Missal page cue lost during a non-card update");
+expect(namedMissal.missalHeadings[0].blockId==="AO.SM.B031",
+  "Canonical Missal source-block heading lost before DOM rendering");
+expect(normalizeReaderMoment({id:"SAME",cardUpdate:false},namedMissal).missalHeadings.length===1,
+  "Source prayer heading disappeared on cue-only ribbon update");
+expect(normalizeReaderMoment({id:"NEW",cardUpdate:true,paragraphs:[]},namedMissal).missalHeadings.length===0,
+  "Source prayer heading leaked to a new card");
 expect(first.guide===null,"unsourced Guide rubric did not fail closed");
 expect(first.gesture?.label==="BOW","transient gesture missing");
 expect(first.posture?.label==="STAND","persistent posture missing");
