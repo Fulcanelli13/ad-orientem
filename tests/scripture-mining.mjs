@@ -101,7 +101,7 @@ const beadReview=validateScriptureMiningDecision({reference:"Luke 1:28",
 assert.equal(beadReview.originBead,2,"Distinct Guided beads must retain editorial identity");
 const legacyReview=validateScriptureMiningDecision({...beadReview,originBead:undefined});
 assert.equal(legacyReview.originBead,null,"Older exported ratings remain readable");
-const inlineScript=html.match(/<script type="module">([\\s\\S]*?)<\\/script>/)?.[1];
+const inlineScript=html.split('<script type="module">')[1]?.split("</script>")[0];
 assert.ok(inlineScript,"Workbench must retain a single module entry point");
 const syntax=spawnSync(process.execPath,["--check","--input-type=module"],
  {input:inlineScript,encoding:"utf8"});
