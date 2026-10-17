@@ -420,10 +420,17 @@
       "question_id": "VMQ-0044",
       "object_id": "AL17",
       "question_en": "Which side is the Epistle side when looking towards the altar?",
-      "answer_en": "From the congregation looking toward the high altar, the Epistle side is normally on the right-hand side of the picture's viewer? No: it is on the viewer's right? This sentence is deliberately withheld pending a certified orientation witness.",
-      "explanation_en": "The traditional terms are defined from the altar-facing priest's right and left, not by the building's compass orientation. A definitive diagram must mark the viewer/priest viewpoints independently before publication.",
+      "answer_en": "From the nave facing a normally arranged traditional high altar, the Epistle side is the viewer's RIGHT; the Gospel side is the viewer's LEFT.",
+      "explanation_en": "Historically the naming of the altar's liturgical 'right' and 'left' shifted because the later Roman rubrics adopted the perspective of the altar cross facing outward. That old rubrical convention can reverse an unqualified left/right label. Ad Orientem should show explicit NAVE-VIEW and ALTAR-CROSS-VIEW arrows, rather than describe a side without declaring the viewpoint.",
       "interpretation_type": "HISTORICAL_FUNCTIONAL",
       "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01356e.htm",
+          "title": "Altar Side",
+          "article_section": "Terminology from altar-cross perspective after 1488",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
         {
           "url": "https://www.newadvent.org/cathen/01351b.htm",
           "title": "Altar Cards",
@@ -440,7 +447,7 @@
         }
       ],
       "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
-      "editorial_guard": "SIDE_DIRECTION_NEEDS_VIEWPOINT_CHECK",
+      "editorial_guard": "ALTAR_SIDE_VIEWER_VS_CROSS_PERSPECTIVE",
       "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
     },
     {
@@ -448,9 +455,16 @@
       "object_id": "AL17",
       "question_en": "Does the term depend on geographical east or the orientation of the church?",
       "answer_en": "The Epistle/Gospel terminology is liturgical, not a statement about the geographical compass direction of the building.",
-      "explanation_en": "A church can be oriented differently, yet the named altar sides still refer to ceremonial position. Exact left/right diagrams must declare whose perspective is used.",
+      "explanation_en": "Before the late fifteenth century the Epistle side was described as the altar's right; later Roman rubrics took their left/right terminology from the altar cross facing the people. This explains why different historical descriptions of 'left' and 'right' may be misleading; a viewer-oriented diagram should give an explicit reference position.",
       "interpretation_type": "HISTORICAL_FUNCTIONAL",
       "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01356e.htm",
+          "title": "Altar Side",
+          "article_section": "Terminology from altar-cross perspective after 1488",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
         {
           "url": "https://www.newadvent.org/cathen/01351b.htm",
           "title": "Altar Cards",
@@ -474,10 +488,17 @@
       "question_id": "VMQ-0048",
       "object_id": "AL18",
       "question_en": "Which side is the Gospel side when facing the altar?",
-      "answer_en": "The Gospel side is the altar side associated with the Gospel reading and the Gospel-side altar card.",
-      "explanation_en": "A visitor should be shown the term relative to the priest's working position at the altar and to the viewer's facing direction, rather than given an unlabelled left/right rule.",
+      "answer_en": "From the nave facing a normally arranged traditional high altar, the Gospel side is the viewer's LEFT, opposite the Epistle side on the RIGHT.",
+      "explanation_en": "This is the side at which the Missal is placed for the Gospel in the Low Mass; the traditional names are ceremonial and do not depend on the church having a precisely east-facing sanctuary. Old rubrics sometimes call this side the altar's RIGHT because they assume the cross facing the people.",
       "interpretation_type": "HISTORICAL_FUNCTIONAL",
       "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01356e.htm",
+          "title": "Altar Side",
+          "article_section": "Terminology from altar-cross perspective after 1488",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
         {
           "url": "https://www.newadvent.org/cathen/01351b.htm",
           "title": "Altar Cards",
@@ -487,7 +508,7 @@
         }
       ],
       "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
-      "editorial_guard": "VIEWPOINT_DECLARED",
+      "editorial_guard": "ALTAR_SIDE_VIEWER_VS_CROSS_PERSPECTIVE",
       "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
     },
     {
