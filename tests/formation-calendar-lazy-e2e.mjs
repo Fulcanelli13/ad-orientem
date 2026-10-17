@@ -104,7 +104,7 @@ try{
    "Year must not repeat the Clock as a proportional bar");
  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalYearSeason").count(),0,
    "Year must not stack redundant permanent season cards");
- assert.equal(await page.locator("#ao-calendar-modular-root [data-cal-clock-season]").count(),8);
+ assert.equal(await page.locator("#ao-calendar-modular-root g[data-cal-clock-season]").count(),8,"Eight SVG sectors, plus one contextual season action");
  assert.equal(await page.locator("#ao-calendar-modular-root .aoClockContext").count(),1);
  for(const width of [320,360,390,430,1280]){
    await page.setViewportSize({width,height:844});
