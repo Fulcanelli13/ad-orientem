@@ -67,6 +67,7 @@ import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rub
 import { withPublishedMissalParagraphRubrics } from "./reader-missal-rubrics.js";
 import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
+import { certifiedLiveCanonActionOverride } from "./reader-live-canon-action.js";
 import { resolvePriestChantAction, resolvePriestChantVoice, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
 import { createObservedChalicePreparationController } from "./reader-priest-chalice-observation.js";
@@ -1515,7 +1516,16 @@ export async function mountNativeReaderPreview({
       rubricAction?.iconKey && rubricAction.cueId===matrixAction.cueId
       ? Object.freeze({...matrixAction,iconKey:rubricAction.iconKey})
       : matrixAction;
-    const originalPriestAction=cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
+    // The C0185 frozen priest label omits the separately prescribed Chalice
+    // cross. Only in LIVE may the already certified matrix correct its
+    // wording; this does not claim the two gestures have been observed.
+    const canonLiveAction=certifiedLiveCanonActionOverride({
+      presentationMode:readerModel?.presentationMode,
+      curatedPresentation:current?.curatedPresentationReview===true &&
+        readerModel?.sourceModelTotalCards===39,
+      cueId:activeCueId,matrixAction:resolvedMatrixAction,
+    });
+    const originalPriestAction=canonLiveAction??cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
     const priestLane=resolvePriestChantAction({
       form,cueId:activeCueId,sourceClock:sourceCueClocks.get(activeCueId)??null,
       observation:observedPriestEvent,gestureMatrix:ready.data?.gestureMatrix,
@@ -1558,8 +1568,10 @@ export async function mountNativeReaderPreview({
         ? "INDEPENDENT_PRIEST_OBSERVATION"
         : priestLane.owner==="PRIEST_EVENT_UNOBSERVED"
           ? "PRIEST_EVENT_UNOBSERVED_FAIL_CLOSED"
-          : cueProjection?.priestAction
-            ? cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED"
+          : canonLiveAction
+            ? "GESTURE_MATRIX_SOT_CERTIFIED_LIVE_CANON"
+            : cueProjection?.priestAction
+              ? cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED"
             : gestureMatrixProjection?.primaryPriestAction
               ? "GESTURE_MATRIX_SOT"
               : rubricProjection?.primaryPriestAction
