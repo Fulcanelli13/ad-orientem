@@ -1237,8 +1237,10 @@ try{
   assert.equal(await page.locator("#aoPray435930 .aoN1Card").count(),16,"Novenas overview must expose the frozen 16-target bilingual corpus");
   await shot("03f-pray-novenas");
   await page.locator("#aoPray435930 [data-n1-select='st_michael']").click();
-  await page.waitForSelector("#aoPray435930 .aoN1Calendar",{state:"visible",timeout:3000});
-  const stMichaelCalendarText=await page.locator("#aoPray435930 .aoN1Calendar").innerText();
+  await page.waitForSelector("#aoPray435930 .aoN1ContextLine",{state:"visible",timeout:3000});
+  const stMichaelCalendarText=await page.locator("#aoPray435930 .aoN1ContextLine").innerText();
+  assert.equal(await page.locator("#aoPray435930 .aoN1DayLeaf").count(),9,"Novena Folio must retain nine selectable days");
+  assert.equal(await page.locator("#aoPray435930 .aoN1AboutDisclosure").evaluate(x=>x.open),false,"Historical notes should start collapsed");
   assert.match(stMichaelCalendarText,/Suggested start|Début suggéré/,"St Michael feast-aligned novena window is being misrepresented as a historical start rule");
   await shot("03f2-pray-novena-st-michael-suggested-start");
 
