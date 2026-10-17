@@ -46,8 +46,19 @@ try{
    };
    for(const id of ids){
     assert.equal(await page.evaluate(id=>globalThis.AO_NOVENAS_V3.open({novenaId:id,returnContext:null}),id),true,"Novena did not open: "+id);
+    const detail=page.locator("#aoPray435930.open .aoN1DetailFolio");
+    assert.equal(await detail.locator(".aoN1DayLeaf").count(),9,id+" source-owned days not visible");
+    assert.equal(await detail.locator(".aoN1DayLeaf[aria-current='step']").count(),1,id+" suggested day is ambiguous");
+    assert.equal(await detail.locator(".aoN1AboutDisclosure").evaluate(el=>el.open),false,id+" background should start collapsed");
+    assert.equal(await detail.locator(".aoN1Hero").count(),0,id+" oversized introductory panel returned");
+    if(id==="st_michael")await page.screenshot({path:resolve(shots,"st_michael-detail-quiet-"+width+".png"),animations:"disabled"});
     await page.locator("#aoPray435930.open [data-n1-mode='guided']").evaluate(el=>el.click());
     await page.locator("#aoPray435930.open [data-n1-begin]").evaluate(el=>el.click());
+    assert.equal(await page.locator("#aoPray435930.open .aoN1Reader .aoN1DayDisclosure").count(),1,id+" missing compact day navigator");
+    assert.equal(await page.locator("#aoPray435930.open .aoN1Reader .aoN1DayDisclosure").evaluate(el=>el.open),false,id+" day navigator must not crowd prayer");
+    const top=await page.locator("#aoPray435930.open .aoN1Reader .aoDevoCardScroll").evaluate(el=>el.getBoundingClientRect().top);
+    assert.ok(top<620,id+" main prayer pushed too low: "+top);
+
     await page.waitForSelector("#aoPray435930.open .aoN1Reader[data-ao-novena-deck='guided'] .aoDevoSequenceTimeline",{timeout:9000});
     // Paragraph illumination is committed on the next animation frame;
     // assert its actual visible state rather than racing the first paint.
@@ -94,6 +105,15 @@ try{
     assert.equal(await page.locator(".aoN1Reader .aoDevoStop").count(),1,id+" Simple is not continuous");
     assert.ok((await page.locator(".aoN1Reader .aoDevoCardScroll").innerText()).length>90,id+" Simple omitted source prayers");
     assert.equal(await page.locator("#aoPray435930.open .aoN1Reader [data-n1-day-next]").count(),1,id+" next-day navigation missing");
+    if(id==="st_michael"){
+     await page.locator("#aoPray435930.open .aoN1DayDisclosure > summary").evaluate(el=>el.click());
+     assert.equal(await page.locator("#aoPray435930.open .aoN1DayDisclosure .aoN1DayLeaf").count(),9);
+     await page.locator("#aoPray435930.open .aoN1DayDisclosure [data-n1-day='9']").evaluate(el=>el.click());
+     assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.state().day),9,id+" skipping directly to day 9 failed");
+     assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.state().mode),"simple");
+     await page.screenshot({path:resolve(shots,"st_michael-day9-quiet-"+width+".png"),animations:"disabled"});
+    }
+
    }
    assert.deepEqual(errors,[],"Novena browser errors "+width+": "+errors.join("; "));
    console.log("PASS "+width+"px Novena dual-axis named reader, source-owned stages, Simple/Guided, phone gestures: "+ids.length+" novenas");
