@@ -180,6 +180,14 @@ for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
  ["H70-01","PROPOSED_CURATED_TRIM"]])
  assert.equal(economy.decisions.find(x=>x.unitId===id).selectionStatus,status);
 assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
+assert.equal(economy.verification.coordinateChecks,"ALL_93_PASS_REGISTERED_SCRIPTURE_CONTRACTS");
+assert.equal(economy.verification.targetCPDVAndDouaySourceCoordinatePresenceVerified,true);
+assert.equal(economy.verification.originalPrintedEditionAttested,false);
+assert.equal(economy.comparativeScriptureEconomy.originalNominalVerseUnits,originalVerseCount);
+assert.equal(economy.comparativeScriptureEconomy.proposedNominalVerseUnits,selectedVerseCount);
+assert.equal(economy.comparativeScriptureEconomy.comparableActualVerseUnitReductions,155);
+assert.equal(economy.comparativeScriptureEconomy.comparableReductionRatePct,13);
+assert.ok(economy.decisions.every(x=>x.bothCatholicEditionVersePresenceVerified===true));
 assert.equal(economy.verification.fullLiteraryReadAloud,false);
 assert.equal(economy.verification.CatholicEditorialApproval,false);
 assert.equal(economy.verification.translationRightsApproval,false);
