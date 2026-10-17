@@ -163,7 +163,7 @@ export const PRAY_FOLIO_CSS=String.raw`
  box-shadow:none;margin:0 auto 4px;max-width:740px;
 }
 #aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoP435930PrayerOptions>summary{
- min-height:39px;padding:4px 12px;
+ min-height:44px;padding:6px 12px;
  font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
  color:var(--ao-folio-muted);
 }
