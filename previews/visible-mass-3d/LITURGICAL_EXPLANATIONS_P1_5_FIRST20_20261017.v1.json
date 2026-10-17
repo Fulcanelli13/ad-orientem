@@ -1,0 +1,744 @@
+{
+  "schema": "AO_VISIBLE_MASS_LITURGICAL_EXPLANATIONS_P1_5_V1",
+  "version": "1.0.0",
+  "date": "2026-10-17",
+  "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING",
+  "purpose": "Concise original English explanations grounded in the 1960/1962 code for a read-only research preview, not a replacement for canonical liturgical texts.",
+  "source_policy": {
+    "basis": "1960 General Rubrics / General Rubrics of Roman Missal as incorporated in 1962, checked through publicly accessible English renderings",
+    "not_yet": "Line-by-line Latin 1962 typica collation, case-specific local determinations and editorial publication approval",
+    "historical_explanations": "Label traditional interpretations separately from mandates",
+    "exceptions": "Selected Mass, Church calendar, ceremonial phase and rite edition control final display",
+    "language": "English only; no French approved",
+    "owner": "Do not mutate Calendar, G###, Mass source controllers or LIVE 48-card concept"
+  },
+  "canonical_sources": {
+    "general_rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+    "missal_rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html"
+  },
+  "answers": [
+    {
+      "id": "VMLQ-001",
+      "title": "Which liturgical colour is worn?",
+      "object_ids": [
+        "AL01",
+        "AL03",
+        "AL07",
+        "BK01",
+        "LN05",
+        "VE07",
+        "VE15",
+        "AL12"
+      ],
+      "topic_ids": [
+        "VM-RB09",
+        "VM-RB11"
+      ],
+      "question": {
+        "en": "How is the colour of the vestments decided?"
+      },
+      "answer": {
+        "en": "The colour is governed by the Office or Mass actually being celebrated, not simply by today's calendar heading."
+      },
+      "detail": {
+        "en": "The 1960 Code names five usual Roman liturgical colours: white, red, green, violet and black. The relevant feast, permitted votive or Requiem Mass, and sometimes the exact stage of a rite determine which applies."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 117–132",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        },
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+          "locator": "RGMR 270, 323",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "REQUIRE_SELECTED_MASS",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-002",
+      "title": "Five usual colours",
+      "object_ids": [
+        "AL01",
+        "LN05",
+        "BK01",
+        "VE15",
+        "AL12"
+      ],
+      "topic_ids": [
+        "VM-RB09"
+      ],
+      "question": {
+        "en": "What do the five usual Roman liturgical colours correspond to?"
+      },
+      "answer": {
+        "en": "White is associated with Christmas, Eastertide and many non-martyr feasts; red with Pentecost and martyrs; green with specified weeks after Epiphany and Pentecost; violet with penitential seasons and certain rites; black with Masses of the Dead and part of Good Friday."
+      },
+      "detail": {
+        "en": "These are rubrical associations, not exhaustive statements of colour symbolism. Feast and rite exceptions matter: a seasonal green feria can have an authorized votive Mass in another colour."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 117, 119–132",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "COLOUR_CATEGORIES_NOT_FULL_DAY_RESOLVER",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-003",
+      "title": "Rose on Gaudete and Laetare",
+      "object_ids": [
+        "AL01",
+        "LN05",
+        "BK01",
+        "VE15"
+      ],
+      "topic_ids": [
+        "VM-RB10",
+        "VM-RB19"
+      ],
+      "question": {
+        "en": "Why might rose vestments appear on only two Sundays?"
+      },
+      "answer": {
+        "en": "Rose may replace violet for the Office and Mass of Gaudete Sunday, the Third Sunday of Advent, and Laetare Sunday, the Fourth Sunday of Lent."
+      },
+      "detail": {
+        "en": "This is a permitted option, not an additional ordinary liturgical season, nor a permission applying to every weekday of the surrounding week."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 131",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "ROSE_ONLY_SUNDAY_OWN_OFFICE_MASS",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-004",
+      "title": "Four classes of liturgical days",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "SC07",
+        "VE15"
+      ],
+      "topic_ids": [
+        "VM-RB02"
+      ],
+      "question": {
+        "en": "What do first, second, third and fourth class mean?"
+      },
+      "answer": {
+        "en": "The four classes indicate the rank of liturgical days. Together with the table of precedence, they help decide which observance takes priority when several coincide."
+      },
+      "detail": {
+        "en": "The 1962 system distinguishes Sundays, ferias, vigils, feasts and octaves as well as their classes. The class is not the form in which Mass is offered: first-class does not mean Solemn Mass."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 6–12, 21–26, 91",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "RANK_NOT_MASS_CEREMONY",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-005",
+      "title": "Why a saint's feast is not celebrated",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "SC07"
+      ],
+      "topic_ids": [
+        "VM-RB03",
+        "VM-RB04"
+      ],
+      "question": {
+        "en": "Why is a saint's feast printed for today but not celebrated at Mass?"
+      },
+      "answer": {
+        "en": "A higher-ranking Sunday, feria, vigil or feast may take precedence. Depending on the precise rubrics, the lower observance may be commemorated, transferred or omitted."
+      },
+      "detail": {
+        "en": "For instance, Lenten third-class ferias rank above third-class feasts. Only certain impeded first-class feasts enjoy accidental transfer; not every displaced saint's feast automatically moves to Sunday."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 25, 91–99",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "SPECIFIC_DATE_AND_COLLISION_REQUIRED",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-006",
+      "title": "Why calendars differ between churches",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "AL03",
+        "SC07"
+      ],
+      "topic_ids": [
+        "VM-RB05",
+        "VM-RB42"
+      ],
+      "question": {
+        "en": "Why might a church celebrate a feast not found on the general calendar?"
+      },
+      "answer": {
+        "en": "The 1962 rite recognizes both the universal calendar and proper calendars of places, churches, dioceses and religious communities."
+      },
+      "detail": {
+        "en": "An actual church can have its own titular, dedication or patronal observance. The priest normally follows the calendar applicable to the church or oratory where Mass is celebrated; a generic internet calendar cannot determine every local case."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 2, 35–62",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        },
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+          "locator": "RGMR 274–279",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "PARTICULAR_CALENDAR_PROOF_REQUIRED",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-007",
+      "title": "Why the Mass differs from today's Office",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "SC07"
+      ],
+      "topic_ids": [
+        "VM-RB16",
+        "VM-RB06"
+      ],
+      "question": {
+        "en": "Why is today's Mass different from the Office or calendar day?"
+      },
+      "answer": {
+        "en": "The Mass normally follows the day's Office, but the 1962 Missal also permits properly qualified votive Masses and Masses of the Dead."
+      },
+      "detail": {
+        "en": "Certain feast Masses and external solemnities have further special rules. One must know which Mass was actually selected, and whether it was permitted; neither the season nor the civil date alone suffices."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+          "locator": "RGMR 270, 301–325, 356–361",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "SELECTED_MASS_AND_PERMISSION_REQUIRED",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-008",
+      "title": "Low, Sung and Solemn are not feast ranks",
+      "object_ids": [
+        "AL01",
+        "AL07",
+        "BK01",
+        "SC07"
+      ],
+      "topic_ids": [
+        "VM-RB12",
+        "VM-RB02"
+      ],
+      "question": {
+        "en": "Does a first-class feast mean a Solemn Mass?"
+      },
+      "answer": {
+        "en": "No. The class belongs to the liturgical day. Low, Missa Cantata and Solemn describe the mode and ministers of the Mass."
+      },
+      "detail": {
+        "en": "Under rubric 271, a sung Mass without the sacred ministers is Missa Cantata; when celebrated with deacon and subdeacon it is Solemn Mass. Pontifical Mass has additional episcopal ceremonies."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+          "locator": "RGMR 271",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "DAY_CLASS_NE_MASS_FORM",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-009",
+      "title": "Palm Sunday colour change",
+      "object_ids": [
+        "AL01",
+        "AL06",
+        "BK01",
+        "LN05",
+        "VE15",
+        "SE03"
+      ],
+      "topic_ids": [
+        "VM-RB23",
+        "VM-RB11"
+      ],
+      "question": {
+        "en": "Why are red vestments used for palms, but violet for the Mass?"
+      },
+      "answer": {
+        "en": "The 1962 rubrics prescribe red for the blessing and procession of palms. The Mass of Palm Sunday belongs to Passiontide and uses violet."
+      },
+      "detail": {
+        "en": "These are successive ritual stages of one day, not contradictory calendar entries. An actual procession should be shown only when that event is part of the represented celebration."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 126, 128(b)",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "PALM_1962_PHASE_AND_PROCESSION_FLAG",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-010",
+      "title": "Good Friday's black and violet",
+      "object_ids": [
+        "AL01",
+        "AL06",
+        "BK01",
+        "VE15",
+        "SE06"
+      ],
+      "topic_ids": [
+        "VM-RB25",
+        "VM-RB11"
+      ],
+      "question": {
+        "en": "Why do the vestments change colour during Good Friday?"
+      },
+      "answer": {
+        "en": "The 1962 Good Friday liturgical action prescribes black up to—but not including—the Communion portion, when violet is used."
+      },
+      "detail": {
+        "en": "The day is not celebrated with the ordinary Mass. The distinct actions of the Good Friday liturgy must be taken from the printed 1962 ceremonial, without silently importing pre-1955 practice or the 2008 wording of the solemn prayers."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 130(c), 132(a)",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "GOOD_FRIDAY_1962_NOT_ORDINARY_MASS",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-011",
+      "title": "Veiling in Passiontide",
+      "object_ids": [
+        "AL01",
+        "AL06",
+        "AL03",
+        "BK01",
+        "SE05"
+      ],
+      "topic_ids": [
+        "VM-RB22"
+      ],
+      "question": {
+        "en": "Why are crucifixes and sacred images covered in Passiontide?"
+      },
+      "answer": {
+        "en": "The 1962 tradition prescribes violet veiling of specified crosses and images as Passiontide begins, before Palm Sunday."
+      },
+      "detail": {
+        "en": "The practice is traditionally associated with the growing solemnity of the Passion and Christ's hiddenness in John 8:59. Exact obligations differ for altar images, other images and Stations of the Cross; do not assume that every sacred image is covered."
+      },
+      "sources": [
+        {
+          "url": "https://1962ordo.today/season/",
+          "locator": "Passiontide, veiling instructions",
+          "type": "SECONDARY_1962_ORDO"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/11535b.htm",
+          "locator": "Passiontide veiling and the tradition's development",
+          "type": "HISTORICAL_EXPLANATION"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "VEILING_REQUIREMENTS_AND_SYMBOLISM_SEPARATE",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-012",
+      "title": "When crosses and images are unveiled",
+      "object_ids": [
+        "AL01",
+        "AL06",
+        "AL03",
+        "SE05",
+        "SE06"
+      ],
+      "topic_ids": [
+        "VM-RB22",
+        "VM-RB25"
+      ],
+      "question": {
+        "en": "When are the veils removed?"
+      },
+      "answer": {
+        "en": "Crosses are unveiled for their Good Friday veneration; the other images remain covered until the Gloria of the Easter Vigil."
+      },
+      "detail": {
+        "en": "This rule must be applied to the relevant physical object and liturgical stage, not treated as one global image-toggle at the stroke of midnight."
+      },
+      "sources": [
+        {
+          "url": "https://1962ordo.today/season/",
+          "locator": "Passiontide: start/end of veiling",
+          "type": "SECONDARY_1962_ORDO"
+        },
+        {
+          "url": "https://wdtprs.com/2018/02/ask-father-must-images-be-veiled-from-passion-sunday-or-is-it-only-an-option/",
+          "locator": "Reproduction and translation of printed-1962 Saturday-before-Passion rubric",
+          "type": "PRINTED_1962_RUBRIC_DISCUSSION"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "SAME_OBJECT_DIFFERENT_END_CONDITIONS",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-013",
+      "title": "Only three octaves remain",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "SC07"
+      ],
+      "topic_ids": [
+        "VM-RB08",
+        "VM-RB27",
+        "VM-RB28"
+      ],
+      "question": {
+        "en": "Why does the 1962 calendar retain only three octaves?"
+      },
+      "answer": {
+        "en": "The common 1962 calendar celebrates the octaves of Christmas, Easter and Pentecost; older octaves are not automatically retained."
+      },
+      "detail": {
+        "en": "Easter and Pentecost have first-class octaves. Christmas has a second-class octave, although its octave day is first class. Earlier editions must not be substituted without an explicit historical-mode label."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 63–70",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "NO_PRE1962_OCTAVE_IMPORT",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-014",
+      "title": "What is a commemoration?",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "SC07"
+      ],
+      "topic_ids": [
+        "VM-RB04"
+      ],
+      "question": {
+        "en": "Why are prayers for another observance added to the Mass?"
+      },
+      "answer": {
+        "en": "A commemoration preserves a secondary liturgical observance through prescribed prayers without replacing the principal Mass."
+      },
+      "detail": {
+        "en": "The 1960 Code distinguishes privileged and ordinary commemorations and sets different limits for first-, second-, third- and fourth-class days and for certain sung Masses. These are not optional additions at will."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 106–114",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        },
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+          "locator": "RGMR 433–465",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "EXACT_COMM_LIMITS_AND_PRAYERS_REQUIRED",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-015",
+      "title": "Why Pentecost has red vestments",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "LN05",
+        "VE15"
+      ],
+      "topic_ids": [
+        "VM-RB28",
+        "VM-RB09"
+      ],
+      "question": {
+        "en": "Why are red vestments used at Pentecost and during its octave?"
+      },
+      "answer": {
+        "en": "Under the 1962 rubrics, red belongs to the Mass of the Vigil of Pentecost and continues through the liturgical octave until None on the following Saturday."
+      },
+      "detail": {
+        "en": "Pentecost retains a first-class octave in the 1962 calendar. This must not be conflated with older versions of the Pentecost Vigil ceremonies."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 66, 123",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "RITE_EDITION_AND_OCTAVE",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-016",
+      "title": "The Rosary Mass on a Sunday",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "SC07"
+      ],
+      "topic_ids": [
+        "VM-RB06"
+      ],
+      "question": {
+        "en": "Why might a Sunday Mass honour Our Lady of the Rosary although the feast is dated 7 October?"
+      },
+      "answer": {
+        "en": "The 1962 Missal expressly allows an external solemnity of Our Lady of the Rosary on the first Sunday of October under its prescribed conditions."
+      },
+      "detail": {
+        "en": "An external solemnity is a permitted celebration of the feast's Mass for the faithful without transferring its Office to that day. It is not an unrestricted license to replace any Sunday Mass."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+          "locator": "RGMR 356–361, especially 358(b)",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "PERMITTED_EXTERNAL_SOLEMNITY_NOT_TRANSFER",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-017",
+      "title": "Not every Rogation date has a procession",
+      "object_ids": [
+        "AL01",
+        "BK01",
+        "SN07",
+        "EQ06",
+        "SC07",
+        "EN10"
+      ],
+      "topic_ids": [
+        "VM-RB31"
+      ],
+      "question": {
+        "en": "Does the Rogation date mean this church holds a procession?"
+      },
+      "answer": {
+        "en": "No. The 1960 rubrics expressly accommodate local decisions and circumstances: a procession may take place, or special supplications may be prescribed instead."
+      },
+      "detail": {
+        "en": "The Greater Litanies ordinarily fall on 25 April and the Lesser Litanies before Ascension, but the local Ordinary and the actual celebration must be known before showing a procession or its Mass as occurring."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 80–90",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        },
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+          "locator": "RGMR 346–347",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "DATE_NOT_PROCESSION_EVENT",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-018",
+      "title": "Why Holy Thursday is white",
+      "object_ids": [
+        "AL01",
+        "AL03",
+        "BK01",
+        "LN05",
+        "VE15",
+        "SE13"
+      ],
+      "topic_ids": [
+        "VM-RB24",
+        "VM-RB09"
+      ],
+      "question": {
+        "en": "Why is Holy Thursday's Mass celebrated in white despite Lent?"
+      },
+      "answer": {
+        "en": "The Mass of the Lord's Supper is assigned white vestments by the 1960 rubrics, as a specific exception to the violet Lenten season."
+      },
+      "detail": {
+        "en": "The subsequent transfer of the Blessed Sacrament and the stripping of the altars are separate ceremonies with their own sequencing. The Mandatum must not be assumed unless actually celebrated."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 122, 128(b)",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        },
+        {
+          "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/docs/HOLY-WEEK-LEGACY-RECONCILIATION-2026-10-10.md",
+          "locator": "Current project rite-event crosswalk",
+          "type": "PROJECT_OWNER"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "MASS_PHASE_NE_POST_MASS_ACTION",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-019",
+      "title": "Candlemas candles and white",
+      "object_ids": [
+        "AL01",
+        "BK01",
+        "LN05",
+        "SE02",
+        "VE15"
+      ],
+      "topic_ids": [
+        "VM-RB29",
+        "VM-RB09"
+      ],
+      "question": {
+        "en": "Why are white vestments and blessed candles used on Candlemas?"
+      },
+      "answer": {
+        "en": "The 1960 Code specifies white for the blessing and procession of candles on the Purification of the Blessed Virgin Mary, 2 February."
+      },
+      "detail": {
+        "en": "The blessing of candles, any distribution and any procession must be represented as the applicable ceremony, not inferred to have occurred at every church from the date alone."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 120(b)",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "CANDLE_PROCESSION_ONLY_IF_PRESENT",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    },
+    {
+      "id": "VMLQ-020",
+      "title": "Lenten weekday outranks a third-class saint",
+      "object_ids": [
+        "BK01",
+        "AL01",
+        "SC07"
+      ],
+      "topic_ids": [
+        "VM-RB21",
+        "VM-RB03"
+      ],
+      "question": {
+        "en": "Why does a Lenten weekday sometimes take precedence over a saint's feast?"
+      },
+      "answer": {
+        "en": "Under the 1960 precedence rules, third-class ferias of Lent and Passiontide ordinarily outrank third-class feasts."
+      },
+      "detail": {
+        "en": "This is different from many third-class Advent ferias before 17 December, which yield to a third-class feast. Any required seasonal commemoration is resolved separately under the rubric limits."
+      },
+      "sources": [
+        {
+          "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "locator": "RG 25, 91 table III.22–25",
+          "type": "PRIMARY_1960_RUBRICAL_CODE"
+        }
+      ],
+      "context": "UNIVERSAL_1962_WITH_SPECIFIED_EXCEPTIONS",
+      "gate": "THIRD_CLASS_DAY_REQUIRES_SEASON",
+      "answer_kind": "ORIGINAL_ENGLISH_RUBRICALLY_GROUNDED_PARAPHRASE",
+      "status": "SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING"
+    }
+  ],
+  "counts": {
+    "answers": 20,
+    "covered_pilot_objects": 8
+  }
+}
