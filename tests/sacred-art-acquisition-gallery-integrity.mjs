@@ -90,6 +90,18 @@ for(const [idx,id] of [
 }
 const categoriesWithPhoto=current.categories.filter(c=>c.works.some(w=>w.photos.length)).length;
 assert.ok(categoriesWithPhoto===168,'Acquisition-to-gallery linked photo coverage has is not exactly 168; photo pointer source discovery regressions');
+const archiveWork=at(55,'W02-015');
+const historicArchive=archiveWork.photos.find(p=>p.id==='Commons archive 2012 - Francisco de Zurbaran 009 NG5655 3554x4226.jpg');
+assert.ok(historicArchive,'Earlier physical-object photograph revision must not be lost');
+assert.ok(historicArchive.preview.includes('width=960'),'Never auto-fetch full 3554x4226 Commons archive on mobile');
+assert.ok(historicArchive.original.includes('upload.wikimedia.org/wikipedia/commons/archive/'),'Keep old version accessible only through explicit original-file link');
+assert.equal(archiveWork.photoSourceEvidence.archivedFrancisFullSizeNeverAutoLoaded,true);
+assert.equal(archiveWork.photoSourceEvidence.archivedDifferentPhotoRenderingMustNotInheritRating,true);
+for(const c of current.categories)for(const w of c.works)for(const p of w.photos){
+ assert.ok(!(/api\\.nga\\.gov\\/iiif/.test(p.preview)&&/\\/full\\/full\\//.test(p.preview)), 'No full-size NGA IIIF masters in auto-loaded gallery');
+ assert.ok(!p.preview.includes('bmmweb.blob.core.windows.net/kress/'), 'No full Kress master images auto-loaded');
+ assert.ok(!p.preview.startsWith('https://upload.wikimedia.org/wikipedia/commons/archive/'), 'No giant archive auto-load in any category');
+}
 const stationCategories=current.categories.filter(c=>c.index>=116&&c.index<=129);
 assert.equal(stationCategories.length,14);
 assert.ok(stationCategories.every(c=>c.works.some(w=>w.photos.length>0)),'All fourteen Station originals must have an exact source photo linked');
