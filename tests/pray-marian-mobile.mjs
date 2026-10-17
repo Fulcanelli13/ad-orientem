@@ -313,6 +313,19 @@ try{
     response:host?.querySelectorAll("[data-ao-angelus-voice=response]").length??0};
  });
  assert.ok(dialogue.leader>0&&dialogue.response>0,"Group V/R pairing absent in mobile DOM: "+JSON.stringify(dialogue));
+ await page.locator("#aoPray435930 [data-ao-devo-jump='0']").evaluate(x=>x.click());
+ const speakerGeometry=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoAngelusDialogueLine").first().evaluate(line=>{
+   const speaker=line.querySelector(".ao-liturgical-speaker"),words=line.querySelector("span:not(.ao-liturgical-speaker)");
+   const a=speaker?.getBoundingClientRect(),b=words?.getBoundingClientRect();
+   return {speakerRight:a?.right,textLeft:b?.left,textWidth:b?.width,speakerTop:a?.top,textTop:b?.top};
+ });
+ assert.ok(speakerGeometry.textWidth>90 &&
+   speakerGeometry.speakerRight+2<=speakerGeometry.textLeft &&
+   Math.abs(speakerGeometry.speakerTop-speakerGeometry.textTop)<20,
+   "Angelus speaker symbols must not collide with text: "+JSON.stringify(speakerGeometry));
+ await page.screenshot({path:resolve(captures,"12-angelus-group-dialogue-390.png"),
+   fullPage:false,animations:"disabled"});
+
  const flip=page.locator("#aoPray435930 .aoP435930PrayerUnit [data-p435930-card-flip]").first();
  await flip.evaluate(x=>x.click());
  assert.equal(await flip.locator("[data-face-la]").evaluate(x=>x.hidden),false,"Latin replacement did not open");
