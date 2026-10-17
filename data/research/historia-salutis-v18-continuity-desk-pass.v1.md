@@ -9,14 +9,14 @@ The 37-movement consolidated main narrative is subjected to a **causal-seam and 
 | Decision | Original v18 units |
 |---|---:|
 | A: indispensable narrative beats (unchanged from prior classification) | 93 |
-| B: **31** required pieces of *brief context*, not compulsory full passages | 31 |
+| B: **29** required pieces of *brief context*, not compulsory full passages | 29 |
 | B: the two complete genealogical witnesses kept in lineage navigation | 2 |
 | B: genuine typology/prophecy references rather than chronological events | 5 |
-| B: background no longer necessary to the continuous reading | 29 |
+| B: background no longer necessary to the continuous reading | 31 |
 | C: distinct biblical episodes not mandatory | 54 |
 | D: no separate featured presentation | 3 |
 
-**The 31 B units are short context leads, not 31 additional chapters or 31 unabridged Scripture extracts.** No source is removed from the Bible, and no destination story screen is assumed to exist.
+**The 29 B units are short context leads, not 29 additional chapters or 29 unabridged Scripture extracts.** No source is removed from the Bible, and no destination story screen is assumed to exist.
 
 The desk review also identified **11 exact source references** that warrant editorial consideration for resolving narrative discontinuity, including 7 non-destructive source supplements outside v18. Their verses are present in CPDV and Douay–Rheims, but original-edition/wording and full literary continuity remain unapproved.
 
@@ -48,7 +48,7 @@ The desk review also identified **11 exact source references** that warrant edit
 
 ## Every movement: context disposition
 
-| Movement | Subject | A anchors | Contextual original units actually useful | Additional source coordinates to review | Noncompulsory B units |
+| Movement | Subject | A anchors | B notes actually used | Source references under consideration | Noncompulsory B units |
 |---|---|---:|---|---|---|
 | HS-M01 | Creation and the human vocation | 4 | — | — | — |
 | HS-M02 | The Fall and the First Promise | 2 | — | — | — |
@@ -62,13 +62,13 @@ The desk review also identified **11 exact source references** that warrant edit
 | HS-M10 | Sinai: covenant and unfaithfulness | 4 | H23-02 | — | — |
 | HS-M11 | Israel enters the promised land | 3 | H24-02 | — | H24-01, H25-02 |
 | HS-M12 | From Ruth to Samuel and Saul | 3 | H28-01, H29-02 | — | — |
-| HS-M13 | David and the enduring royal promise | 5 | H31-04 | 1 Samuel 16:1–3 | H33-02 |
-| HS-M14 | The Temple and the divided kingdom | 4 | H34-01, H34-02, H35-04 | — | — |
+| HS-M13 | David and the enduring royal promise | 5 | H31-04 | 1 Samuel 16:1–3 (absorbed in H30-01) | H33-02 |
+| HS-M14 | The Temple and the divided kingdom | 4 | H34-01, H35-04 | — | H34-02 |
 | HS-M15 | Prophetic warning and Israel's judgment | 5 | H37-02 | — | H37-03, H38-01, H39-02 |
-| HS-M16 | The New Covenant promised in exile | 3 | — | — | H42-01, H42-04 |
+| HS-M16 | Judah's fall and the promise of a New Covenant | 3 | — | — | H42-01, H42-04 |
 | HS-M17 | Restoration and the expectation of Christ | 2 | H43-03, H44-01, H44-03 | — | H44-04, H44-06 |
 | HS-M18 | The generations and the Annunciation | 1 | — | — | H45-01, H45-02 |
-| HS-M19 | The birth of the Saviour | 3 | H47-01, H48-02, H49-01, H49-03 | — | — |
+| HS-M19 | The birth of the Saviour | 3 | H47-01, H49-01, H49-03 | — | H48-02 |
 | HS-M20 | The Forerunner and first disciples | 3 | H51-02 | — | H52-02 |
 | HS-M21 | The Kingdom in Christ's teaching and signs | 2 | H54-02 | — | H53-03, H53-04, H55-01 |
 | HS-M22 | Christ the Bread of Life | 1 | H56-01 | — | — |
@@ -88,12 +88,16 @@ The desk review also identified **11 exact source references** that warrant edit
 | HS-M36 | The final conflict and judgment | 2 | H76-03 | — | H76-01, H76-04, H76-05 |
 | HS-M37 | The New Creation | 2 | — | — | — |
 
-The first nine movements have now been desk-read against their actual CPDV openings and endings. Eight context descriptions were rewritten as short reader-facing, source-attributed text. H07-01's additional Ark explanation is redundant with the proposed Genesis 6 passage and has been moved to **no additional context needed**. None of these editorial sentences is presented as Scripture or yet accepted for publication.
+**Movements 1–19:** The first nineteen movements have source-level opening/closing desk checks; fourteen additional contextual instructions in M10–M19 are now short, source-attributed sentences suitable for further editorial review. H34-02 (David's repentance) duplicates H34-01, so it no longer provides a second narration. H48-02 repeats Jesus' naming already in Matthew 1:25, so it is likewise omitted. Both passages remain accessible in the Catholic Bible.
+
+The earlier H30-01 bridging proposal, 1 Samuel 16:1–3, has been **absorbed into the complete native text of 1 Samuel 16:1–13**. The candidate remains visible in the research record but is no longer a separate displayed bridge; **10 of the original 11** are still shown as optional/unapproved sources in the reading proof.
+
+**Chronological caution:** Jeremiah's promise of a New Covenant is spoken before Jerusalem's destruction. Isaiah's messianic oracles are separate prophetic witnesses, and the restored Jerusalem of Ezra must not be collapsed into the later Maccabean period. Distinct Lukan and Matthean accounts remain independently identified, rather than compiled into a fictional combined Gospel quotation.
 
 ## Limits and acceptance gates
 
-This is a **desk examination of biblical source coordinates and selected opening/end passages**, not a finished recitation of the proposed 93 selected A texts and 31 context bridges. Overlong A passages (e.g. Lazarus, Sinai, Cornelius and multiple prophetic readings) still need an economical, faithful verse-by-verse literary pass. The review does not certify original printed editions, rights, Catholic theological commentary, or final story length.
+This is a **desk examination of biblical source coordinates and selected opening/end passages**, not a finished recitation of the proposed 93 selected A texts and 29 context bridges. Overlong A passages (e.g. Lazarus, Sinai, Cornelius and multiple prophetic readings) still need an economical, faithful verse-by-verse literary pass. The review does not certify original printed editions, rights, Catholic theological commentary, or final story length.
 
-Review the proposed 31 necessary context ideas, 11 source-reference bridge candidates and individual A-section compression before promoting anything. There is no change to the public app, no new user-facing experience, and no new canonical Atlas event.
+Review the proposed 29 necessary context ideas, 11 source-reference bridge candidates and individual A-section compression before promoting anything. There is no change to the public app, no new user-facing experience, and no new canonical Atlas event.
 
 [Machine-readable 67-unit B disposition and 11-source candidate manifest](./historia-salutis-v18-continuity-desk-pass.v1.json).
