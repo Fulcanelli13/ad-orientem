@@ -190,7 +190,23 @@ assert.equal(hilaryPhoto.historicalArtRating,undefined,'Auction photo cannot inh
 assert.match(hilaryPhoto.hold,/PHOTO_COMMERCIAL_REUSE_RIGHTS_UNCLEARED/);
 assert.equal(hilaryPhoto.photos.length,1);
 const ineligibleSourceCategories=current.categories.filter(cat=>!cat.works.some(w=>w.photos.length&&!w.notEligible)).map(cat=>cat.index);
-assert.deepEqual(ineligibleSourceCategories,[41,43],'Exactly Cyril and Hilary still have no eligible image-source record');
+assert.deepEqual(ineligibleSourceCategories,[],'All 168 categories now have a reviewable source image or a context fallback');
+// Fallback visual coverage must not be presented as exact oil-painting coverage.
+for(const [index,media,id] of [[41,'engraving','AO-OPEN-CYRIL-BARTOLOZZI-PRINT'],[43,'statue photograph','AO-OPEN-HILARY-FRENCH-CHURCH-STATUE']]){
+ const candidate=at(index,id);
+ assert.equal(candidate.medium,media,'Honest fallback medium label required');
+ assert.equal(candidate.historicalArtRating,null,'Open fallback cannot inherit user artwork rating');
+ assert.equal(candidate.oct12Selected,false,'Open fallback cannot be published as historical selected art');
+ assert.ok(candidate.photos.some(p=>p.rights.includes(index===41?'Public Domain':'CC BY-SA 4.0')),'Source rights missing');
+}
+for(const id of ['AO-OPEN-ALPHONSUS-PAINTING-1850','AO-OPEN-ALPHONSUS-ENGRAVING']){
+ const candidate=at(26,id);
+ assert.equal(candidate.historicalArtRating,null,'Open Alphonsus photo needs user choice first');
+}
+for(const [index,id] of [[2,'W05-004'],[12,'W05-012'],[44,'W40-006'],[79,'W40-006'],[56,'ART-laudio-oello-aint-ominic-of-uzm-n']]){
+ const candidate=at(index,id);
+ assert.ok(candidate.photos.some(p=>p.id.startsWith('AO-OPEN-PRADO-MIRROR-')),'Missing Wikimedia fallback for exact original '+index);
+}
 // Explicit photographic holds must never be silently treated as app-ready images.
 const linked=current.categories.flatMap(c=>c.works.flatMap(w=>w.photos.map(p=>({index:c.index,work:w,photo:p}))));
 const deliveryHolds=linked.filter(x=>x.photo.deliveryHold);
