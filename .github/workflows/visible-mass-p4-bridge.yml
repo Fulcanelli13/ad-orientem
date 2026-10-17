@@ -19,6 +19,9 @@ on:
       - tests/visible-mass-learn-integration.mjs
       - tests/visible-mass-guided-trail-graph.mjs
       - tests/visible-mass-guided-folio.mjs
+      - tests/visible-mass-m3-content.mjs
+      - previews/visible-mass-3d/VMQ_FRENCH_EDITORIAL_OVERLAY_20261018.v1.json
+      - previews/visible-mass-3d/visible-mass-m3-localization.mjs
       - previews/visible-mass-3d/visible-mass-dialogue-director.mjs
       - previews/visible-mass-3d/visible-mass-dialogue-folio.mjs
       - previews/visible-mass-3d/GUIDED_TRAIL_GRAPH_RESEARCH_20261018.v1.json
@@ -52,3 +55,5 @@ jobs:
       - run: node --check previews/visible-mass-3d/visible-mass-dialogue-director.mjs
       - run: node --check previews/visible-mass-3d/visible-mass-dialogue-folio.mjs
       - run: node tests/visible-mass-guided-folio.mjs
+      - run: node --check previews/visible-mass-3d/visible-mass-m3-localization.mjs
+      - run: node tests/visible-mass-m3-content.mjs
