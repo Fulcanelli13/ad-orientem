@@ -144,11 +144,17 @@ try{
   await assertPrayFit("Angelus");
   assert.ok(await page.locator("#aoPray435930 [data-ao-angelus-unit]").count()>=4,"Angelus sequence lost prayer units");
 
-  // The reference reader intentionally places seasonal form selection inside
-  // a collapsed Prayer options disclosure. Exercise the visible phone path.
+  // Folio keeps the options in the discrete top-ribbon parameters window.
+  // The old summary is deliberately invisible, so test the real phone control.
   const angelusOptions=page.locator("#aoPray435930 [data-ao-angelus-options]");
-  if(await angelusOptions.getAttribute("open")===null)
-    await angelusOptions.locator(":scope > summary").click();
+  const angelusSettings=page.locator("#aoPray435930 [data-p435930-angelus-settings]");
+  assert.equal(await angelusSettings.count(),1,"Angelus ribbon parameters button missing");
+  assert.ok(await angelusSettings.isVisible(),"Angelus ribbon parameters button hidden");
+  assert.equal(await angelusSettings.getAttribute("aria-expanded"),"false");
+  assert.equal(await angelusOptions.getAttribute("open"),null);
+  await angelusSettings.click();
+  assert.equal(await angelusOptions.getAttribute("open"),"");
+  assert.equal(await angelusSettings.getAttribute("aria-expanded"),"true");
   await page.locator("#aoPray435930 [data-p435930-seg='regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoP435930Title")?.textContent?.includes("Regina C"),null,{timeout:5000});
   const angelusFlip=page.locator("#aoPray435930 [data-p435930-card-flip]").first();
