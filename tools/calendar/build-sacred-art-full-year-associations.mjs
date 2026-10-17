@@ -4,6 +4,7 @@
 import assert from "node:assert/strict";
 import {readFileSync,mkdirSync,writeFileSync,existsSync} from "node:fs";
 import {buildLiturgicalYear} from "../../src/calendar/liturgical-year.js";
+import {gospelEpisodes,matchesGospelEpisode,gospelSceneKeys} from "./sacred-art-gospel-scenes.mjs";
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const folder="artifacts/sacred-art-coverage";
 const year=read("artifacts/calendar-oracle/1962-2026-full-year-audit.json");
@@ -113,67 +114,6 @@ const titles=[
  [/\bchrist the king\b/,"christ-in-glory"],
  [/\bholy family\b/,"holy-family"]
 ];
-const episodes=[
- ["john-baptist-preaching","Luke",3,1,6],
- ["annunciation","Luke",1,26,38],["visitation","Luke",1,39,56],
- ["nativity-john-baptist","Luke",1,57,66],["presentation-jesus","Luke",2,22,38],
- ["adoration-magi","Matthew",2,1,12],["flight-egypt","Matthew",2,13,23],
- ["baptism-christ","Matthew",3,13,17],["baptism-christ","Mark",1,9,11],
- ["baptism-christ","Luke",3,21,22],["good-samaritan","Luke",10,25,37],
- ["woman-at-well","John",4,5,42],["transfiguration","Matthew",17,1,9],
- ["transfiguration","Mark",9,2,10],["transfiguration","Luke",9,28,36],
- ["calling-matthew","Matthew",9,9,13],["calling-matthew","Mark",2,13,17],
- ["calling-matthew","Luke",5,27,32],["agony-garden","Matthew",26,36,46],
- ["agony-garden","Mark",14,32,42],["agony-garden","Luke",22,39,46],
- ["supper-emmaus","Luke",24,13,35],
- ["raising-lazarus","John",11,1,45],
- ["miraculous-catch","Luke",5,1,11],
- ["presentation-jesus","Luke",2,22,38],
- ["nativity","Luke",2,15,20],
- ["adoration-shepherds","Luke",2,15,20],
- ["finding-jesus-temple","Luke",2,42,52],
- ["wise-foolish-virgins","Matthew",25,1,13],
- ["talents","Matthew",25,14,23],
- ["last-judgment","Matthew",25,31,46],
- ["keys-to-peter","Matthew",16,13,19],
- ["raising-widows-son","Luke",7,11,16],
- ["tribute-money","Matthew",22,15,21],
- ["healing-paralytic","Matthew",9,1,8],
- ["lost-sheep","Luke",15,1,7],
- ["great-supper","Luke",14,16,24],
- ["wedding-feast","Matthew",22,1,14],
- ["unforgiving-servant","Matthew",18,23,35],
- ["publican-pharisee","Luke",18,9,14],
- ["laborers-vineyard","Matthew",20,1,16],
- ["parable-sower","Luke",8,4,15],
- ["centurion-servant","Matthew",8,5,13],
- ["raising-jairus","Matthew",9,18,26],
- ["christ-and-children","Matthew",18,1,5],
- ["ten-lepers-scene","Luke",17,11,19],
- ["canaanite-woman","Matthew",15,21,28],
- ["anointing-bethany","John",12,1,9],
- ["exorcism-mute","Luke",11,14,28],
- ["peter-denial","Matthew",26,69,75],
- ["peter-denial","Mark",14,66,72],
- ["peter-denial","Luke",22,54,62],
- ["peter-denial","John",18,15,27],
- ["cleansing-temple","Luke",19,45,46],
- ["parable-vine","John",15,1,7],
- ["healing-deaf-mute","Mark",7,31,37],
- ["healing-leper","Matthew",8,1,4],
- ["feeding-four-thousand","Mark",8,1,9],
- ["feeding-five-thousand","John",6,1,15],
- ["feeding-five-thousand","Matthew",14,13,21],
- ["good-shepherd","John",10,11,16],
- ["wedding-cana","John",2,1,11],
- ["doubting-thomas","John",20,24,29],
- ["raising-jairus-daughter","Mark",5,21,43],
- ["noli-me-tangere","John",20,11,18]
-];
-const books={mt:"Matthew",matthew:"Matthew",mk:"Mark",mark:"Mark",mc:"Mark",
- lk:"Luke",luke:"Luke",lc:"Luke",jn:"John",joh:"John",john:"John"};
-const matches=(p,row)=>p&&books[norm(p.book).replaceAll(" ","")]===row[1]
- &&Number(p.chapter)===row[2]&&Number(p.verseStart)<=row[4]&&Number(p.verseEnd)>=row[3];
 const ranks=["STRICT_DAY_SOURCE_LINK","VERIFIED_CONTEXTUAL_LEDGER","OBSERVED_ID_TAG_UNREVIEWED",
  "TITULAR_PERSON_OR_EVENT_CANDIDATE","APPOINTED_GOSPEL_SCENE_CANDIDATE",
  "MARIAN_SATURDAY_CONTEXT","LITURGICAL_SEASON_CONTEXT","GENERIC_BACKGROUND"];
@@ -185,6 +125,7 @@ const days=year.rows.map(r=>{
  assert.ok(observedDay&&observedDay.observedPrincipalId===r.mainId,"Source date mismatch "+r.date);
  const id=r.mainId,period=buildLiturgicalYear(r.date).currentPeriod.id,name=norm(r.title);
  const gospel=arr(r.scriptureContexts).find(s=>s.slot==="GOSPEL"&&s.passage);
+ const matchedGospelScenes=gospel?.passage?gospelSceneKeys(gospel.passage):[];
  const proposals=new Map(),rawCounts={};
  function link(a,tier,evidence){
   if(!a)return;
@@ -207,7 +148,7 @@ const days=year.rows.map(r=>{
   link(a,"OBSERVED_ID_TAG_UNREVIEWED","Canonical observed ID tag, independent date-level verification pending");
  for(const [regex,tag] of titles)if(regex.test(name))for(const a of tagged(tag))
   link(a,"TITULAR_PERSON_OR_EVENT_CANDIDATE","Proper name suggests "+tag+"; confirm identity and artwork context");
- if(gospel?.passage)for(const e of episodes)if(matches(gospel.passage,e))
+ if(gospel?.passage)for(const e of gospelEpisodes)if(matchesGospelEpisode(gospel.passage,e))
   for(const a of tagged(e[0]))link(a,"APPOINTED_GOSPEL_SCENE_CANDIDATE",
    "Source-bound appointed Gospel "+gospel.reference+"; event "+e[0]+"; inspect art");
  if(id.startsWith("commune:C10")&&/blessed virgin mary|virgin mary on saturday/.test(name))
@@ -227,6 +168,8 @@ const days=year.rows.map(r=>{
  const contextual=options.filter(x=>ranks.indexOf(x.tier)===5||ranks.indexOf(x.tier)===6).length;
  return {date:r.date,class:observedDay.rank,observedPrincipalId:id,observedTitle:r.title,
   liturgicalPeriod:period,appointedScripture:arr(r.scriptureContexts),
+  sundayGospelScenes:new Date(r.date+'T12:00:00Z').getUTCDay()===0?matchedGospelScenes:[],
+  sundayGospelReference:new Date(r.date+'T12:00:00Z').getUTCDay()===0?gospel?.reference||null:null,
   alternatives:options,alternativeCount:options.length,originalCandidatesBeforeTierCaps:rawCounts,
   coverage:specific?"SUBJECT_RESEARCH":contextual?"CONTEXT_ONLY":"GENERIC_ONLY",
   specificSubjectResearchStillNeeded:!specific,editorialAudit:"NOT_YET_PERFORMED"};
