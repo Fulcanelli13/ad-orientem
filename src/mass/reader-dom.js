@@ -3047,7 +3047,11 @@ export function createReaderDomAdapter({
           }
           const inlineRubrics=mode==="MISSAL"
             ? p.publishedMissalRubrics : p.publishedCanonRubrics;
-          if(inlineRubrics?.length){
+          // Existing bracketed directions are already rubrics in the
+          // Missal's source text. Never print a second paraphrase below them.
+          const alreadyPrintedRubric=mode==="MISSAL" &&
+            (p.kind==="RUBRIC" || /^\s*\[/.test(String(p.primary??"")));
+          if(inlineRubrics?.length && !alreadyPrintedRubric){
             const note=doc.createElement("span");
             note.className=mode==="MISSAL"?"ao-missal-inline-rubrics":"ao-canon-inline-rubrics";
             note.dataset.sourceAuthority="MR62_RITUS";
