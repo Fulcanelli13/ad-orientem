@@ -823,7 +823,7 @@ const ROSARY_SCRIPTURE_POLICY_CSS=`
 #aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button){min-height:44px;border:0;padding:10px 0;background:transparent;text-decoration:none;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--liturgical,#d2ba8b)}
 #aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button):hover{text-decoration:underline;text-underline-offset:3px}
 #aoPrayerBookRoot .aoRosaryBeadSourceNotice{display:block;opacity:1;margin:0;border-top:1px solid rgba(188,155,104,.12);font:normal 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#b6a99c)}
-#aoPrayerBookRoot .aoRosaryBeadSourceNotice>summary{display:flex;align-items:center;min-height:36px;font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice>summary{display:flex;align-items:center;min-height:44px;font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
 #aoPrayerBookRoot .aoRosaryBeadSourceNotice p{margin:0 0 7px;font:normal 11px/1.55 var(--ao-font-ui,system-ui,sans-serif)}
 #aoPrayerBookRoot .aoRosaryBeadScriptureLabel{display:block;letter-spacing:.13em;text-transform:uppercase;font:650 10px/1.6 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#c8b89a)}
 #aoPrayerBookRoot .aoRosaryBeadScriptureText{font:normal 1.08rem/1.6 var(--ao-font-display,Georgia,serif);margin:8px 0 6px;color:inherit}
