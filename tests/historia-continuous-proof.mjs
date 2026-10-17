@@ -13,16 +13,18 @@ assert.equal(proof.schema,"ao.historia.v18.continuous-scripture-proof.v1");
 assert.equal(proof.stage,"REAL_VERSE_READ_THROUGH_PROOF_NOT_APPROVED");
 assert.equal(proof.totals.movements,37);
 assert.equal(proof.totals.essentialUnits,93);
-assert.equal(proof.totals.briefEditorialContextNotes,31);
-assert.equal(proof.literaryReviewProgress.movementsDeskExamined,9);
+assert.equal(proof.totals.briefEditorialContextNotes,29);
+assert.equal(proof.literaryReviewProgress.movementsDeskExamined,19);
+assert.equal(proof.literaryReviewProgress.historicSourceBridgesAbsorbedIntoEssentialText,1);
 assert.equal(proof.literaryReviewProgress.oralReadingsApproved,0);
-assert.equal(proof.totals.sourceBridgeCandidates,11);
+assert.equal(proof.totals.sourceBridgeCandidates,10);
 assert.equal(proof.totals.independentlyReadAndApproved,false);
 assert.equal(proof.displayRules.neverCombineDifferentWitnessText,true);
 assert.equal(proof.displayRules.showEveryDroppedSpanBetweenAdjacentScriptureFragments,true);
 const originalA=new Map(economy.decisions.map(x=>[x.unitId,x]));
 const originalB=new Map(desk.contextDecisions.filter(x=>x.readthroughDecision==="MANDATORY_BRIEF_CONTEXT").map(x=>[x.unitId,x]));
-const originalBridges=new Map(desk.sourceBridgeCandidates.map(x=>[x.id,x]));
+const originalBridges=new Map(desk.sourceBridgeCandidates.filter(x=>x.id!=="HS-CF-04").map(x=>[x.id,x]));
+assert.deepEqual(proof.historicallyProposedBridgeStatus.absorbedByCompleteNativeReading,["HS-CF-04"]);
 const seenA=new Set(),seenB=new Set(),seenBridges=new Set();
 let scriptureVerses=0,previousId=0;
 const witnesses=new Map();
@@ -102,6 +104,24 @@ for(const needle of ["historiaProofMovement","historiaProofEdition","historiaPro
  assert.ok(html.includes(needle),"Single existing workbench must render the complete source sequence: "+needle);
 }
 assert.equal(proof.movements.find(x=>x.id==="HS-M03").beats.some(x=>x.id==="H07-01"),false);
+assert.equal(proof.movements.find(x=>x.id==="HS-M13").beats.some(x=>x.id==="HS-CF-04"),false);
+assert.equal(proof.movements.find(x=>x.id==="HS-M14").beats.some(x=>x.id==="H34-02"),false);
+assert.equal(proof.movements.find(x=>x.id==="HS-M19").beats.some(x=>x.id==="H48-02"),false);
+assert.match(proof.movements.find(x=>x.id==="HS-M16").title,/Judah's fall/);
+for(const [id,expected] of [
+ ["H22-01",["Exodus 19:1–8"]],
+ ["H30-01",["1Samuel 16:1–13"]],
+ ["H33-01",["2Samuel 7:1–16"]],
+ ["H39-01",["2Kings 17:3–8","2Kings 17:13–18"]],
+ ["H35-02",["1Kings 6:1"]],
+ ["H36-02",["1Kings 12:1–5","1Kings 12:13–20"]],
+ ["H43-02",["Ezra 6:14–16","Ezra 6:19–22"]]
+]){
+ const beat=proof.movements.flatMap(x=>x.beats).find(x=>x.id===id);
+ assert.deepEqual(beat.refs,expected);
+ assert.equal(beat.publicationApproved,false);
+}
+
 for(const [id,expected] of [
  ["H11-02",["Genesis 15:1–6","Genesis 15:9–10","Genesis 15:13–14","Genesis 15:17–18"]],
  ["H13-01",["Genesis 22:1–19"]],
@@ -112,7 +132,7 @@ for(const [id,expected] of [
  assert.deepEqual(beat.refs,expected);
  assert.equal(beat.publicationApproved,false);
 }
-for(const beat of proof.movements.slice(0,9).flatMap(x=>x.beats).filter(x=>x.kind==="EDITORIAL_CONTEXT_NOT_BIBLE")){
+for(const beat of proof.movements.slice(0,19).flatMap(x=>x.beats).filter(x=>x.kind==="EDITORIAL_CONTEXT_NOT_BIBLE")){
  assert.ok(!/^(Mention|Identify|Keep|Indicate|Use|Name|State)\b/i.test(beat.explanation),
  "A readable text proof cannot contain instructions to the editor in place of transition prose");
  assert.match(beat.explanation,/\((?:Genesis|Exodus) /,
@@ -120,4 +140,4 @@ for(const beat of proof.movements.slice(0,9).flatMap(x=>x.beats).filter(x=>x.kin
  assert.equal(beat.editorialTextApproved,false);
 }
 assert.ok(necessity.units.length===217);
-console.log("PASS Historia continuous proof: 37 movements, 93 real Scripture units, 31 visibly distinct context notes, 11 held original-source candidates, "+scriptureVerses+" verse displays validated in CPDV + Douay; no character filler or extra Bible experience");
+console.log("PASS Historia continuous proof: 37 movements, 93 real Scripture units, 29 visibly distinct context notes, 10 held original-source candidates, "+scriptureVerses+" verse displays validated in CPDV + Douay; no character filler or extra Bible experience");
