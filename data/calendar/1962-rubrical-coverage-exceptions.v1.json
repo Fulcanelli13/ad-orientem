@@ -19,7 +19,8 @@
     "protectedAnnex": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json",
     "particularWitnesses": "data/calendar/particular-traditional-calendar-witnesses.review.v1.json",
     "observedClaimAdapter": "src/calendar/rubrical-claim-citations.js",
-    "scriptureReturn": "tests/calendar-reciprocal-scripture-phone.mjs"
+    "scriptureReturn": "tests/calendar-reciprocal-scripture-phone.mjs",
+    "sundayDispositions": "data/calendar/1962-sunday-overlap-dispositions-2026-2028.review.v1.json"
   },
   "authorities": {
     "normativeRubrics1960": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=597",
@@ -43,7 +44,9 @@
     "protectedOverlapPendingClassification": 24,
     "particularWitnessesOnHold": 3,
     "transferWitnesses": 7,
-    "transferClaimsSourceCertified": 4
+    "transferClaimsSourceCertified": 4,
+    "preliminaryRuleAssessedOverlaps": 24,
+    "scopeOrSourceOverlapExceptions": 4
   },
   "exceptions": [
     {

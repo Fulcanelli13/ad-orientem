@@ -1,0 +1,852 @@
+{
+  "schema": "AO_CALENDAR_SUNDAY_OVERLAP_DISPOSITION_SCREENING_V1",
+  "asOf": "2026-10-17",
+  "publicationStatus": "INTERNAL_RUBRICAL_ASSESSMENTS_NO_AUTOMATIC_CALENDAR_OR_MASS_CHANGES",
+  "sourcePopulation": "2026–2028 Sunday intersections of the canonical 70 Cum sanctissima protected III-class feast identities, excluding 9 already reviewed dated omission cases.",
+  "canonicalInputOwner": "data/calendar/cum-sanctissima-protected-third-class.review.v1.json",
+  "reviewedOmissionOwner": "data/calendar/1962-ordo-corrections.v1.json",
+  "governingRule": "Cum sanctissima annex protects against its optional 2020 Mass choices; 1960 Sunday precedence, transference and commemoration restrictions are separate. RG 109 enumerates privileged commemorations; a III-class saint is ordinary by default; RG 111(a) and 111(b) disallow such a commemoration at a I-/II-class Sunday.",
+  "normativeSources": {
+    "rubrics": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=615",
+    "Sunday": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=598",
+    "decree": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20200222_decreto-cum-sanctissima_en.html"
+  },
+  "caveat": "This registry records rule-level preliminary dispositions and verified-accessible monthly/yearly secondary sources. It does not claim original 1962 Missal Proper/orations were compared for all dates; neither liturgical decisions nor calendar texts may be published directly from it. Particular-calendar exception records are not universal endorsements.",
+  "cases": [
+    {
+      "date": "2026-01-25",
+      "feastTitle": "Conversion of St Paul",
+      "protectedFeastResolverIdentity": "sancti:01-25r:3:w",
+      "generalSundayPrincipal": "III Sunday after Epiphany",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2026/1",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2026-02-01",
+      "feastTitle": "St Ignatius, Bishop and Martyr",
+      "protectedFeastResolverIdentity": "sancti:02-01:3:r",
+      "generalSundayPrincipal": "Septuagesima Sunday",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2026/2",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2026-06-14",
+      "feastTitle": "St Basil the Great",
+      "protectedFeastResolverIdentity": "sancti:06-14:3:w",
+      "generalSundayPrincipal": "III Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2026/6",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2026-06-21",
+      "feastTitle": "St Aloysius Gonzaga",
+      "protectedFeastResolverIdentity": "sancti:06-21:3:w",
+      "generalSundayPrincipal": "IV Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2026/6",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2026-07-19",
+      "feastTitle": "St Vincent de Paul",
+      "protectedFeastResolverIdentity": "sancti:07-19:3:w",
+      "generalSundayPrincipal": "VIII Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2026/7",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2026-08-02",
+      "feastTitle": "St Alphonsus Liguori",
+      "protectedFeastResolverIdentity": "sancti:08-02:3:w",
+      "generalSundayPrincipal": "X Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2026/8",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2026-09-27",
+      "feastTitle": "Ss Cosmas and Damian",
+      "protectedFeastResolverIdentity": "sancti:09-27:3:r",
+      "generalSundayPrincipal": "XVIII Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2026/9",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2026-12-13",
+      "feastTitle": "St Lucy",
+      "protectedFeastResolverIdentity": "sancti:12-13r:3:r",
+      "generalSundayPrincipal": "III Sunday of Advent",
+      "generalSundayClass": 1,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 15",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(a)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2026/12",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2026/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "SCOPE_OR_SOURCE_EXCEPTION_HELD",
+      "exception": {
+        "id": "LUCY_ADVENT_III_2026",
+        "kind": "SECONDARY_ORDO_CONFLICT",
+        "note": "1962ordo.com lists St Lucy as commemorated despite RG 109 and 111(a); FSSPX monthly ordo lists Advent III without her Collect. Preserve source conflict until actual 1962 Missal prayer parity is checked.",
+        "externalSource": "https://1962ordo.com/2026/12/13"
+      },
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-01-17",
+      "feastTitle": "St Anthony, Abbot",
+      "protectedFeastResolverIdentity": "sancti:01-17:3:w",
+      "generalSundayPrincipal": "II Sunday after Epiphany",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/1",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-01-24",
+      "feastTitle": "St Timothy",
+      "protectedFeastResolverIdentity": "sancti:01-24:3:r",
+      "generalSundayPrincipal": "Septuagesima Sunday",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/1",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-01-31",
+      "feastTitle": "St John Bosco",
+      "protectedFeastResolverIdentity": "sancti:01-31:3:w",
+      "generalSundayPrincipal": "Sexagesima Sunday",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/1",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-03-21",
+      "feastTitle": "St Benedict",
+      "protectedFeastResolverIdentity": "sancti:03-21:3:w",
+      "generalSundayPrincipal": "Palm Sunday",
+      "generalSundayClass": 1,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 15",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(a)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/3",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "SCOPE_OR_SOURCE_EXCEPTION_HELD",
+      "exception": {
+        "id": "BENEDICT_BENEDICTINE_2027",
+        "kind": "PARTICULAR_RELIGIOUS_CALENDAR",
+        "note": "St Benedict may have a higher class in a Benedictine proper; any first-class displacement or transference must be verified for the specific house, not generalized."
+      },
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-04-11",
+      "feastTitle": "St Leo the Great",
+      "protectedFeastResolverIdentity": "sancti:04-11:3:w",
+      "generalSundayPrincipal": "II Sunday after Easter",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/4",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-05-02",
+      "feastTitle": "St Athanasius",
+      "protectedFeastResolverIdentity": "sancti:05-02:3:w",
+      "generalSundayPrincipal": "V Sunday after Easter",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/5",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-05-09",
+      "feastTitle": "St Gregory Nazianzen",
+      "protectedFeastResolverIdentity": "sancti:05-09:3:w",
+      "generalSundayPrincipal": "Sunday after the Ascension",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/5",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-08-29",
+      "feastTitle": "Beheading of St John the Baptist",
+      "protectedFeastResolverIdentity": "sancti:08-29:3:r",
+      "generalSundayPrincipal": "XV Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/8",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-09-12",
+      "feastTitle": "Most Holy Name of Mary",
+      "protectedFeastResolverIdentity": "sancti:09-12:3:w",
+      "generalSundayPrincipal": "XVII Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/9",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-10-03",
+      "feastTitle": "St Thérèse of the Child Jesus",
+      "protectedFeastResolverIdentity": "sancti:10-03:3:w",
+      "generalSundayPrincipal": "XX Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/10",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "SCOPE_OR_SOURCE_EXCEPTION_HELD",
+      "exception": {
+        "id": "THERESE_FRANCE_2027",
+        "kind": "PARTICULAR_PATRONAGE_RANK",
+        "note": "SSPX September 2026 month ordo gives St Thérèse as France's secondary patroness at second class; the October 2027 Sunday ordo carries her as an additional observance. Verify the applicable French/SSPX particular calendar; a universal third-class commemoration is not implied.",
+        "externalSource": "https://ordo.fsspx.org/calendar/2026/9"
+      },
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2027-11-14",
+      "feastTitle": "St Josaphat",
+      "protectedFeastResolverIdentity": "sancti:11-14:3:r",
+      "generalSundayPrincipal": "VI Sunday after Epiphany (transferred)",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2027/11",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2027/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2028-02-06",
+      "feastTitle": "St Titus",
+      "protectedFeastResolverIdentity": "sancti:02-06:3:w",
+      "generalSundayPrincipal": "V Sunday after Epiphany",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2028/2",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2028-03-12",
+      "feastTitle": "St Gregory the Great",
+      "protectedFeastResolverIdentity": "sancti:03-12:3:w",
+      "generalSundayPrincipal": "II Sunday of Lent",
+      "generalSundayClass": 1,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 15",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(a)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2028/3",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2028-04-30",
+      "feastTitle": "St Catherine of Siena",
+      "protectedFeastResolverIdentity": "sancti:04-30:3:w",
+      "generalSundayPrincipal": "II Sunday after Easter",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2028/4",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2028-09-03",
+      "feastTitle": "St Pius X",
+      "protectedFeastResolverIdentity": "sancti:09-03:3:w",
+      "generalSundayPrincipal": "XIII Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2028/9",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "SCOPE_OR_SOURCE_EXCEPTION_HELD",
+      "exception": {
+        "id": "PIUS_X_SSPX_2028",
+        "kind": "SSPX_PARTICULAR_FIRST_CLASS",
+        "note": "SSPX September 2028 ordo explicitly makes St Pius X first class, with XIII Sunday after Pentecost added; this is NOT the general Roman 1962 order. Existing Pius X exception hold remains.",
+        "externalSource": "https://ordo.fsspx.org/calendar/2028/9"
+      },
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    },
+    {
+      "date": "2028-10-15",
+      "feastTitle": "St Teresa of Ávila",
+      "protectedFeastResolverIdentity": "sancti:10-15:3:w",
+      "generalSundayPrincipal": "XIX Sunday after Pentecost",
+      "generalSundayClass": 2,
+      "fixedFeastClass": 3,
+      "assessedGeneralDisposition": "SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION",
+      "assessedUnder": [
+        "RG 16",
+        "RG 93",
+        "RG 95",
+        "RG 109",
+        "RG 111(b)"
+      ],
+      "scope": "1962_GENERAL_ROMAN_ONLY",
+      "historicalWitness": {
+        "kind": "DATED_MONTHLY_ORDO_SECONDARY_SOURCE",
+        "url": "https://ordo.fsspx.org/calendar/2028/10",
+        "review": "MONTH_PAGE_OPENED_DOES_NOT_ESTABLISH_UNIVERSAL_PARTICULAR_RANK"
+      },
+      "secondWitness": {
+        "kind": "INDEPENDENT_1962_YEAR_CALENDAR",
+        "url": "https://gcatholic.org/calendar/2028/Extraordinary-en",
+        "review": "YEAR_PAGE_OPENED_DATE_ORATION_AND_PROPER_NOT_YET_CERTIFIED"
+      },
+      "sourceAndProperGate": "CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED",
+      "editorialStatus": "RUBRICAL_PRELIMINARY_NOT_PUBLISHED",
+      "exception": null,
+      "changesMass": false,
+      "changesCalendarPrincipal": false,
+      "autoCreatesCommemoration": false,
+      "publishAsOmission": false
+    }
+  ]
+}

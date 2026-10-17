@@ -18,8 +18,12 @@ assert.equal(report.counts.sourceTransferWitnesses,7);
 assert.equal(report.counts.sourceAnnotatedTransfers,4);
 assert.equal(report.counts.transferWitnessesWithoutClauseCitation,3);
 assert.equal(report.counts.explicitExceptionHolds,8);
+assert.equal(report.counts.preliminaryRuleAssessedOverlaps,24);
+assert.equal(report.counts.scopeOrSourceOverlapExceptions,4);
+assert.equal(report.counts.publishedClaimsFromThisReview,0);
 assert.equal(report.omittedFeastClaims.length,12);
 assert.equal(report.screeningOnly.length,24);
+assert.equal(report.preliminaryDispositions.length,24);
 assert.equal(report.protectedAnnexSundayOverlaps.length,33);
 assert.equal(new Set(report.protectedAnnexSundayOverlaps.map(x=>x.date)).size,33);
 assert.equal(JSON.stringify(inputs),sourceBefore,"Audit must never mutate any source/production owner");
@@ -30,6 +34,32 @@ for(const row of report.screeningOnly){
   assert.equal(report.omittedFeastClaims.some(x=>x.date===row.date),false,
     "Editorial shortlist was silently promoted to a public liturgical claim: "+row.date);
 }
+// Rubrical screening is more complete than published source certification.
+const assessmentsByDate=new Map(report.preliminaryDispositions.map(x=>[x.date,x]));
+for(const row of report.screeningOnly){
+ const assessed=assessmentsByDate.get(row.date);
+ assert.ok(assessed,"Every unresolved overlap must be individually disposition-screened");
+ assert.equal(assessed.protectedFeastResolverIdentity,row.annexIdentity);
+ assert.equal(assessed.publishAsOmission,false);
+ assert.equal(assessed.changesMass,false);
+ assert.equal(assessed.changesCalendarPrincipal,false);
+ assert.equal(assessed.autoCreatesCommemoration,false);
+ assert.equal(assessed.fixedFeastClass,3);
+ assert.equal(assessed.scope,"1962_GENERAL_ROMAN_ONLY");
+ assert.equal(assessed.historicalWitness.url,"https://ordo.fsspx.org/calendar/"+Number(row.date.slice(0,4))+"/"+Number(row.date.slice(5,7)));
+ assert.equal(assessed.secondWitness.url,"https://gcatholic.org/calendar/"+Number(row.date.slice(0,4))+"/Extraordinary-en");
+ assert.deepEqual(assessed.assessedUnder,[
+   "RG "+(assessed.generalSundayClass===1?"15":"16"),
+   "RG 93","RG 95","RG 109",
+   "RG 111("+(assessed.generalSundayClass===1?"a":"b")+")"
+ ]);
+}
+assert.equal(report.preliminaryDispositions.filter(x=>x.generalSundayClass===1).length,3);
+assert.deepEqual(report.preliminaryDispositions.filter(x=>x.exception).map(x=>x.date),
+ ["2026-12-13","2027-03-21","2027-10-03","2028-09-03"]);
+assert.match(assessmentsByDate.get("2027-11-14").generalSundayPrincipal,/Epiphany.*transferred/i);
+assert.equal(assessmentsByDate.get("2028-09-03").exception.kind,"SSPX_PARTICULAR_FIRST_CLASS");
+assert.equal(assessmentsByDate.get("2027-10-03").exception.kind,"PARTICULAR_PATRONAGE_RANK");
 for(const row of report.omittedFeastClaims){
   assert.equal(row.publicationOwner,"CALENDAR_EXISTING_SOURCE_DISCLOSURE");
   assert.equal(row.needsParticularCalendarAdjudication,true);
@@ -67,7 +97,13 @@ for(const poison of [
  x=>x.manifest.exceptions=x.manifest.exceptions.filter(row=>row.id!=="LUCY_ADVENT_III_2026"),
  x=>x.manifest.exceptions.find(row=>row.id==="DUBLIN_NEWMAN_2026").automaticallyAffectsMass=true,
  x=>x.manifest.exceptions=x.manifest.exceptions.filter(row=>row.id!=="DUBLIN_LUIGI_SCROSOPPI_2026"),
- x=>x.manifest.scope.years=[2026,2027,2028,2029]
+ x=>x.manifest.scope.years=[2026,2027,2028,2029],
+ x=>x.adjudications.cases.pop(),
+ x=>x.adjudications.cases[0].publishAsOmission=true,
+ x=>x.adjudications.cases[0].generalSundayClass=1,
+ x=>x.adjudications.cases[0].protectedFeastResolverIdentity="sancti:wrong:3:w",
+ x=>x.adjudications.cases.find(y=>y.date==="2028-09-03").exception=null,
+ x=>x.manifest.snapshotExpectations.preliminaryRuleAssessedOverlaps=23
 ]){
  const copy=cloned();poison(copy);
  assert.throws(()=>buildRubricalCoverageAudit(copy),
@@ -80,4 +116,4 @@ const notes=readFileSync(new URL("../docs/CALENDAR-1962-COVERAGE-EXCEPTIONS-2026
 for(const phrase of ["33","24","12","70","Cum sanctissima","St Lucy","2028","particular","Mass resolver"]){
  assert.ok(notes.includes(phrase),"Audit editorial report is missing "+phrase);
 }
-console.log("PASS 1962 Calendar coverage: 12 actual date-specific omission records (2026–28), 70 protected feasts, 33 Sunday collisions / 9 already cited / 24 research only, 3 particular-calendar holds, 7 transfer witnesses / 4 annotated, 8 explicit exception gates; all source mutations rejected.");
+console.log("PASS 1962 Calendar coverage: 12 public source-reviewed omissions, 33 protected overlaps / 9 previously reviewed / 24 preliminarily rubric-assessed, 3 first-class Sundays, 4 scope/source exception cases, 0 newly published omissions or Mass mutations; 3 local holds / 7 transfer witnesses / 8 original exception gates and poison tests.");

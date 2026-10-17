@@ -20,12 +20,13 @@ const HOLD_STATUSES=new Set([
 ]);
 export const COVERAGE_REVIEW_YEARS=Object.freeze([2026,2027,2028]);
 
-export function buildRubricalCoverageAudit({corrections,protectedAnnex,particular,transfers,manifest}){
+export function buildRubricalCoverageAudit({corrections,protectedAnnex,particular,transfers,manifest,adjudications}){
   if(corrections?.schema!=="AO_1962_CALENDAR_CORRECTIONS_V1"||
      protectedAnnex?.schema!=="AO_CUM_SANCTISSIMA_PROTECTED_FEASTS_RESEARCH_V1"||
      particular?.schema!=="AO_PARTICULAR_TRADITIONAL_CALENDAR_WITNESSES_REVIEW_V1"||
      transfers?.schema!=="ao-1962-observance-transfer-oracle-v1"||
-     manifest?.schema!=="AO_CALENDAR_1962_RUBRICAL_COVERAGE_EXCEPTIONS_V1")
+     manifest?.schema!=="AO_CALENDAR_1962_RUBRICAL_COVERAGE_EXCEPTIONS_V1"||
+     adjudications?.schema!=="AO_CALENDAR_SUNDAY_OVERLAP_DISPOSITION_SCREENING_V1")
     throw new Error("Coverage source schema mismatch; do not silently substitute a different calendar.");
   if(JSON.stringify(manifest.scope?.years)!==JSON.stringify(COVERAGE_REVIEW_YEARS)||
      manifest.publicationStatus!=="EDITORIAL_AND_CI_AUDIT_ONLY_NOT_RUNTIME_RULES")
@@ -100,6 +101,63 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
      heldParticular.size!==particularIds.size)
     throw new Error("An unapproved particular-calendar source escaped the hold registry.");
   if(!unique(transfers.witnesses,x=>x.id))throw new Error("Duplicate original transfer witness.");
+  // The 24 formerly unclassified candidates now have a bounded rubrical
+  // assessment, NOT a published 1962 omission or alternative Mass.
+  const assessed=adjudications.cases;
+  const indexedScreening=new Map(screenOnly.map(x=>[x.date,x]));
+  if(adjudications.publicationStatus!=="INTERNAL_RUBRICAL_ASSESSMENTS_NO_AUTOMATIC_CALENDAR_OR_MASS_CHANGES"||
+     !Array.isArray(assessed)||assessed.length!==screenOnly.length||
+     !unique(assessed,x=>x.date)||!unique(assessed,x=>x.protectedFeastResolverIdentity+"|"+x.date))
+    throw new Error("Incomplete, duplicated or publishable Sunday overlap dispositions.");
+  const requiredScopeExceptions=new Map([
+    ["2026-12-13","LUCY_ADVENT_III_2026"],
+    ["2027-03-21","BENEDICT_BENEDICTINE_2027"],
+    ["2027-10-03","THERESE_FRANCE_2027"],
+    ["2028-09-03","PIUS_X_SSPX_2028"]
+  ]);
+  const sourceHoldIds=new Set((manifest.exceptions||[]).map(x=>x.id));
+  const allowedRubric=id=>/^RG (?:15|16|93|95|109|111\([ab]\))$/.test(id);
+  for(const row of assessed){
+    const screening=indexedScreening.get(row.date);
+    const expectedFeast=byFixedDay.get(row.date.slice(5));
+    const rank=row.generalSundayClass,exceptionId=requiredScopeExceptions.get(row.date);
+    const expectedClauses=[
+      "RG "+(rank===1?"15":"16"),"RG 93","RG 95","RG 109",
+      "RG 111("+(rank===1?"a":"b")+")"
+    ];
+    const year=yearOf(row.date),month=Number(row.date.slice(5,7));
+    if(!screening||!expectedFeast||row.feastTitle!==screening.saint||
+       row.protectedFeastResolverIdentity!==screening.annexIdentity||
+       row.protectedFeastResolverIdentity!==expectedFeast.resolverIdentity||
+       !COVERAGE_REVIEW_YEARS.includes(year)||!utcSunday(row.date)||
+       ![1,2].includes(rank)||row.fixedFeastClass!==3||
+       typeof row.generalSundayPrincipal!=="string"||!row.generalSundayPrincipal.trim()||
+       row.scope!=="1962_GENERAL_ROMAN_ONLY"||
+       row.assessedGeneralDisposition!=="SUNDAY_PRECEDES_THIRD_CLASS_FEAST_NO_GENERAL_TRANSFER_OR_COMMEMORATION"||
+       JSON.stringify(row.assessedUnder)!==JSON.stringify(expectedClauses)||
+       !row.assessedUnder.every(allowedRubric)||
+       row.historicalWitness?.kind!=="DATED_MONTHLY_ORDO_SECONDARY_SOURCE"||
+       row.historicalWitness?.url!=="https://ordo.fsspx.org/calendar/"+year+"/"+month||
+       row.secondWitness?.kind!=="INDEPENDENT_1962_YEAR_CALENDAR"||
+       row.secondWitness?.url!=="https://gcatholic.org/calendar/"+year+"/Extraordinary-en"||
+       row.sourceAndProperGate!=="CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED"||
+       row.changesMass!==false||row.changesCalendarPrincipal!==false||
+       row.autoCreatesCommemoration!==false||row.publishAsOmission!==false||
+       row.editorialStatus!==(exceptionId?"SCOPE_OR_SOURCE_EXCEPTION_HELD":"RUBRICAL_PRELIMINARY_NOT_PUBLISHED")||
+       (exceptionId?row.exception?.id!==exceptionId:row.exception!==null))
+      throw new Error("An overlap lost its source, rank, provenance or non-runtime publication gate: "+String(row.date));
+    if(exceptionId&&(!row.exception?.kind||!row.exception.note?.trim()))
+      throw new Error("Unexplained particular-calendar/source conflict: "+row.date);
+    if(["LUCY_ADVENT_III_2026","PIUS_X_SSPX_2028"].includes(exceptionId)&&!sourceHoldIds.has(exceptionId))
+      throw new Error("An existing source/scope hold was removed: "+exceptionId);
+  }
+  // Require one-to-one review coverage of *all* screened date identities.
+  for(const date of indexedScreening.keys()){
+    if(!assessed.some(row=>row.date===date))throw new Error("Unassessed protected Sunday overlap: "+date);
+  }
+  if(assessed.filter(x=>x.generalSundayClass===1).length!==3||
+     assessed.filter(x=>x.exception!==null).length!==4)
+    throw new Error("Class-I/II or exception-review baseline changed; revisit original evidence.");
   const annotatedTransfers=transfers.witnesses.filter(x=>!!x.rubricalClaim);
   const counts=Object.freeze({
     omissionClaimDates:omissionRows.length,
@@ -114,7 +172,10 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
     sourceTransferWitnesses:transfers.witnesses.length,
     sourceAnnotatedTransfers:annotatedTransfers.length,
     transferWitnessesWithoutClauseCitation:transfers.witnesses.length-annotatedTransfers.length,
-    explicitExceptionHolds:held.length
+    explicitExceptionHolds:held.length,
+    preliminaryRuleAssessedOverlaps:assessed.length,
+    scopeOrSourceOverlapExceptions:assessed.filter(x=>x.exception!==null).length,
+    publishedClaimsFromThisReview:assessed.filter(x=>x.publishAsOmission).length
   });
   const snap=manifest.snapshotExpectations;
   const checks=[
@@ -126,7 +187,9 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
     ["protectedOverlapPendingClassification",counts.protectedScreeningsAwaitingIndividualReview],
     ["particularWitnessesOnHold",counts.particularWitnessesHeld],
     ["transferWitnesses",counts.sourceTransferWitnesses],
-    ["transferClaimsSourceCertified",counts.sourceAnnotatedTransfers]
+    ["transferClaimsSourceCertified",counts.sourceAnnotatedTransfers],
+    ["preliminaryRuleAssessedOverlaps",counts.preliminaryRuleAssessedOverlaps],
+    ["scopeOrSourceOverlapExceptions",counts.scopeOrSourceOverlapExceptions]
   ];
   for(const [name,current] of checks)
     if(snap?.[name]!==current)throw new Error("Audit snapshot "+name+" drifted; reconcile original evidence before changing the published coverage report.");
@@ -137,6 +200,7 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
     omittedFeastClaims:Object.freeze(omissionRows),
     protectedAnnexSundayOverlaps:Object.freeze(overlaps),
     screeningOnly:Object.freeze(screenOnly),
+    preliminaryDispositions:Object.freeze(assessed.map(x=>Object.freeze({...x}))),
     exceptionHolds:Object.freeze(held),
     transferUnannotated:Object.freeze(transfers.witnesses.filter(x=>!x.rubricalClaim).map(x=>Object.freeze({
       witnessId:x.id,original:x.original,observed:x.observed,
@@ -157,7 +221,8 @@ export function loadCanonicalRubricalCoverageInputs(){
     protectedAnnex:load("data/calendar/cum-sanctissima-protected-third-class.review.v1.json"),
     particular:load("data/calendar/particular-traditional-calendar-witnesses.review.v1.json"),
     transfers:load("data/calendar/1962-transfer-oracle.v1.json"),
-    manifest:load("data/calendar/1962-rubrical-coverage-exceptions.v1.json")
+    manifest:load("data/calendar/1962-rubrical-coverage-exceptions.v1.json"),
+    adjudications:load("data/calendar/1962-sunday-overlap-dispositions-2026-2028.review.v1.json")
   };
 }
 if(process.argv[1]&&fileURLToPath(import.meta.url)===process.argv[1]){
