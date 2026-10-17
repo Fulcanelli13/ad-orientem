@@ -30,6 +30,10 @@ try{
  await entry.waitFor({state:"visible",timeout:20000});
  await entry.click();
  const dialog=page.locator("#ao-scripture-overlay");
+ const openTools=async()=>{
+   const shelf=dialog.locator(".aoScriptureTools");
+   if(!(await shelf.evaluate(el=>el.open)))await shelf.locator("summary").first().click();
+ };
  await dialog.waitFor({state:"visible",timeout:15000});
  assert.equal(await dialog.getAttribute("role"),"dialog");
  assert.equal(await dialog.locator(".aoScriptureBrowse").count(),1);
@@ -45,6 +49,7 @@ try{
    "Fresh reading preserves Douay–Rheims, with an immediate CPDV option");
  // Existing source-owner objects referencing Luke 1:28 must be discoverable
  // without changing the current verse, Mass state or Rosary session.
+ await openTools();
  await dialog.locator(".aoScriptureRelated summary").click();
  await dialog.locator('[data-scripture-linked-object="rosary:joy1"]').waitFor({state:"visible",timeout:15000});
  assert.equal(await dialog.locator('[data-scripture-linked-object="novena:annunciation"]').count(),1);
@@ -143,6 +148,7 @@ try{
  // A second reciprocal journey opens precisely the source-owned Mass lesson,
  // not the Mass reader or a generic Learn landing.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 2:14")),true);
+ await openTools();
  await dialog.locator(".aoScriptureRelated summary").tap();
  const massLink=dialog.locator('[data-scripture-open-related-object="massFormation:MFS01"]');
  await massLink.waitFor({state:"visible",timeout:9000});
@@ -161,6 +167,7 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),false);
+ await openTools();
  await dialog.locator(".aoScriptureBrowse summary").click();
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1,
    "Fresh reader should retain Douay–Rheims");
@@ -331,6 +338,7 @@ try{
  await dialog.locator("[data-scripture-segment-index='1']").click();
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Matthew 27:1–60");
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader.activeSegmentIndex),1);
+ await openTools();
  await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("en");
  assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true,
@@ -384,6 +392,7 @@ try{
    "A liturgical arrangement may explain source order but never unlock additional Bible text");
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1,
    "The five uncollated source verses must remain explicitly unreviewed");
+ await openTools();
  await dialog.locator(".aoScriptureBrowse summary").click();
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
  assert.match(await notice.innerText(),/ordre liturgique/);
