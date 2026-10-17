@@ -10,10 +10,11 @@ import {
   SPIRITUAL_LIFE_ROUTE_ID,LATIN_COURSE_ROUTE_ID,GLOSSARY_ROUTE_ID,MASS_FORMATION_ROUTE,MASS_EXPLORER_ROUTE_ID,
 } from "./lazy-module-registry.js";
 import {loadReferenceDiscovery,loadFormationContentDiscovery} from "./discovery.js";
+import {visibleMassReviewEnabled,VISIBLE_MASS_REVIEW_ROUTE} from "./visible-mass-review-gate.js";
 
 const VERSION="modular-learn-v1";
 const ROOT_ID="ao-learn-modular-root";
-const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint","today.gospel",SPIRITUAL_LIFE_ROUTE_ID]);
+const MODULE_SET=new Set([...LEARN_MODULE_IDS,"today.saint","today.gospel",SPIRITUAL_LIFE_ROUTE_ID,VISIBLE_MASS_REVIEW_ROUTE]);
 
 function runtime(win){return win?.AO_RUNTIME_V8??null;}
 function appState(win){return runtime(win)?.store?.getState?.()??null;}
@@ -45,6 +46,7 @@ function childOpen(win,id){
   if(id===GLOSSARY_ROUTE_ID)return Boolean(win?.AO_GLOSSARY_V1?.status?.()?.open);
   if(id===MASS_FORMATION_ROUTE)return Boolean(win?.AO_MASS_FORMATION_V1?.status?.()?.open);
   if(id===MASS_EXPLORER_ROUTE_ID)return Boolean(win?.AO_MASS_EXPLORER_V1?.status?.()?.open);
+  if(id===VISIBLE_MASS_REVIEW_ROUTE)return Boolean(win?.AO_VISIBLE_MASS_REVIEW_V1?.status?.()?.open);
   if(id==="learn.sexual_ethics")return Boolean(win?.AO_SEXUAL_ETHICS_V1?.status?.()?.open);
   if(id===SPIRITUAL_LIFE_ROUTE_ID)return Boolean(win?.AO_SPIRITUAL_LIFE_V1?.status?.()?.open);
   if(TRADITIONAL_LEARN_ROUTES[id]){const s=win?.AO_TRADITIONAL_LEARN_V381?.status?.();return Boolean(s?.open&&s?.route===id)}
@@ -73,6 +75,7 @@ function closeChild(win,id){
     if(id===GLOSSARY_ROUTE_ID){win?.AO_GLOSSARY_V1?.close?.();return true;}
     if(id===MASS_FORMATION_ROUTE){win?.AO_MASS_FORMATION_V1?.close?.();return true;}
     if(id===MASS_EXPLORER_ROUTE_ID){win?.AO_MASS_EXPLORER_V1?.close?.();return true;}
+    if(id===VISIBLE_MASS_REVIEW_ROUTE){win?.AO_VISIBLE_MASS_REVIEW_V1?.close?.();return true;}
     if(id==="learn.sexual_ethics"){win?.AO_SEXUAL_ETHICS_V1?.close?.();return true;}
     if(id===SPIRITUAL_LIFE_ROUTE_ID){win?.AO_SPIRITUAL_LIFE_V1?.close?.();return true;}
     if(TRADITIONAL_LEARN_ROUTES[id]){win?.AO_TRADITIONAL_LEARN_V381?.close?.();return true;}
@@ -403,7 +406,8 @@ export function createLearnOwner(win=globalThis,{pollMs=80,maxOpenPolls=30}={}){
   }
 
   async function openModule(id,opts={}){
-    if(!state.open||!MODULE_SET.has(id))return false;
+    if(!state.open||!MODULE_SET.has(id)||
+      (id===VISIBLE_MASS_REVIEW_ROUTE&&!visibleMassReviewEnabled(win)))return false;
     const attempt=++launchEpoch;
     const current=()=>state.open&&launchEpoch===attempt;
     try{
