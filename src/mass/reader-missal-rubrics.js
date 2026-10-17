@@ -77,6 +77,27 @@ const APPROVED_MISSAL_PRIEST_STATES=Object.freeze({
   fr:"Après l’ablution des doigts qui suit la communion, le prêtre cesse de tenir joints le pouce et l’index de chaque main.",
  }),
 });
+// Exact existing VIII.6 server-bell source rows. These are printed ceremonial
+// directions, NOT signals that the server rang a bell while a reader scrolled.
+// The 1962 text permits either three rings or a continuous ring at each
+// elevation; no local pattern is selected or simulated by this presentation.
+const APPROVED_MISSAL_BELL_DIRECTIONS=Object.freeze({
+ "AO.RUB.C0161.02":Object.freeze({
+  label:"WARNING BELL",
+  en:"A little before the Consecration, the server signals the faithful with the small altar bell.",
+  fr:"Peu avant la consécration, le servant avertit les fidèles par un signal de sonnette.",
+ }),
+ "AO.RUB.C0174.03":Object.freeze({
+  label:"ELEVATION BELL · HOST",
+  en:"At the elevation of the Host, the server rings the bell three times, or continuously until the Host is replaced upon the corporal.",
+  fr:"À l’élévation de la sainte Hostie, le servant sonne trois fois, ou de façon continue jusqu’à ce que l’Hostie soit reposée sur le corporal.",
+ }),
+ "AO.RUB.C0181.03":Object.freeze({
+  label:"ELEVATION BELL · CHALICE",
+  en:"At the elevation of the Chalice, the server rings the bell three times, or continuously until the Chalice is replaced upon the corporal.",
+  fr:"À l’élévation du calice, le servant sonne trois fois, ou de façon continue jusqu’à ce que le calice soit reposé sur le corporal.",
+ }),
+});
 const FORM=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const validCue=id=>/^AO\.SM\.C\d{4}$/.test(String(id??""));
 const frozen=Object.freeze;
@@ -131,13 +152,32 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
   candidates.push(...rows.map(x=>({id:x.id,cueId,order:x.order,
    label:x.label,sourceUrl:source.url,kind:"STATE"})));
  }
+ // The reader's THREE already sourced VIII.6 bell rows may be explained in
+ // MISSAL at their exact source cue; they never activate an audio effect,
+ // encode an observed server action, or choose a local ringing pattern.
+ for(const cueId of ids){
+  const rows=registry.items.filter(x=>x.cueId===cueId&&
+   Object.hasOwn(APPROVED_MISSAL_BELL_DIRECTIONS,x.id)&&
+   x.actor==="SERVER"&&x.kind==="BELL"&&x.displayPrimary===false&&
+   x.authorityClass==="1962_NORMATIVE_WITH_LOCAL_PATTERN"&&
+   x.sources?.includes("MR62_RITUS")&&
+   x.presentationOwner==="reader-transients"&&
+   Number.isInteger(x.order)&&
+   x.label===APPROVED_MISSAL_BELL_DIRECTIONS[x.id].label);
+  candidates.push(...rows.map(x=>({id:x.id,cueId,order:x.order,
+   label:x.label,sourceUrl:source.url,kind:"BELL"})));
+ }
  const positioned=new Map(ids.map((id,i)=>[id,i]));
  return frozen(candidates.sort((a,b)=>
      positioned.get(a.cueId)-positioned.get(b.cueId)||a.order-b.order)
-   .filter(x=>ACTIONS[x.label] || (x.kind==="STATE"&&APPROVED_MISSAL_PRIEST_STATES[x.id]))
+   .filter(x=>ACTIONS[x.label] || (x.kind==="STATE"&&APPROVED_MISSAL_PRIEST_STATES[x.id]) || (x.kind==="BELL"&&APPROVED_MISSAL_BELL_DIRECTIONS[x.id]))
    .map(x=>frozen({
-     id:x.id,sourceCueId:x.cueId,actor:"PRIEST",
-     shortAction:x.label,displayText:x.kind==="STATE" ? APPROVED_MISSAL_PRIEST_STATES[x.id][isFrench?"fr":"en"] : ACTIONS[x.label][isFrench?1:0],
+     id:x.id,sourceCueId:x.cueId,actor:x.kind==="BELL"?"SERVER":"PRIEST",
+     shortAction:x.label,displayText:x.kind==="BELL"
+       ? APPROVED_MISSAL_BELL_DIRECTIONS[x.id][isFrench?"fr":"en"]
+       : x.kind==="STATE"
+         ? APPROVED_MISSAL_PRIEST_STATES[x.id][isFrench?"fr":"en"]
+         : ACTIONS[x.label][isFrench?1:0],
      kind:x.kind??"ACTION",
      latinTrigger:x.triggerLat??null,sourceId:"MR62_RITUS",
      sourceUrl:x.sourceUrl??source.url,review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
