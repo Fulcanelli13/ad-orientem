@@ -106,6 +106,58 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
 assert.match(usual.project("AO.SM.C0229").priestAction?.label??"",/strik(es|ing).*breast/i);
 assert.match(requiem.project("AO.SM.C0229").priestAction?.label??"",/strik(es|ing).*breast/i);
 
+// Canon-to-Communion boundary: these are already named action cues in BOTH
+// certified reader corpora. A text focus alone must never claim an observed
+// genuflection, altar movement, bell or minister action.
+const canonBoundary=[
+  ["AO.SM.C0174",/elevat/i],
+  ["AO.SM.C0181",/elevat/i],
+  ["AO.SM.C0204",/(?:minor elevation|raises the host and chalice slightly)/i],
+  ["AO.SM.C0205",/genuflect/i],
+];
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const overlays of [[],["REQUIEM"]]){
+    const ctl=createReaderFormCueStateController({
+      formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+      prepared:prepared(form,overlays),gestureMatrix:gestures
+    });
+    for(const [cueId,expected] of canonBoundary){
+      const state=ctl.project(cueId);
+      assert.match(state.priestAction?.label??"",expected,
+        form+" lost existing Canon stage "+cueId);
+      assert.ok(state.priestVoice,form+" lost priest voice "+cueId);
+      assert.equal(state.reason,null,form+" source cue was suppressed "+cueId);
+      assert.ok(!String(state.ownership.priestAction).includes("LEGACY"));
+    }
+    for(const cueId of ["AO.SM.C0174","AO.SM.C0181"]){
+      const minister=ctl.project(cueId).sacredMinister;
+      if(form==="SOLEMN"){
+        assert.match(minister?.actor??"",/DEACON/);
+        assert.match(minister?.actor??"",/SUBDEACON/);
+      }else assert.equal(minister,null,form+" invented sacred ministers at "+cueId);
+    }
+  }
+}
+const rubricEvents=load("presentation/reader-rubric-events.v1.json").items;
+const byCue=(cueId)=>rubricEvents.filter(x=>x.cueId===cueId);
+for(const [id,expectedBell] of [
+  ["AO.SM.C0174","ELEVATION BELL · HOST"],
+  ["AO.SM.C0181","ELEVATION BELL · CHALICE"]
+]){
+  const rows=byCue(id);
+  assert.equal(rows.filter(x=>x.actor==="SERVER"&&x.label===expectedBell).length,1,
+    id+" must keep one existing server-bell source, never duplicate a bell");
+  assert.equal(rows.filter(x=>x.actor==="PRIEST"&&/ELEVATES/.test(x.label)).length,1,
+    id+" must keep one existing elevation action");
+}
+const canonSources=load("research/mass-canon-62-source-trigger-audit-20261013.json");
+const ministerSources=load("research/mass-canon-20-minister-stage-acceptance-20261014.json");
+assert.equal(canonSources.rows.length,62,"62-action Canon SOT was replaced or split");
+assert.equal(ministerSources.rows.length,20,"20 existing minister/server events were duplicated");
+assert.equal(ministerSources.counts.independentlyTimed,0,
+  "Reading a cue must not certify physical minister event timing");
+assert.equal(ministerSources.counts.published,0,"Research stages were promoted without gate");
+
 const lowResponse=formState.low.responseEvents.find(x=>x.cueId==="AO.SM.C0076");
 assert.equal(lowResponse.owner,"MINISTER_OR_SERVER");
 assert.equal(lowResponse.defaultUserResponse,false);
