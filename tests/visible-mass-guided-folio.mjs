@@ -148,7 +148,7 @@ assert.equal(folio.explore("VMQ-0065"),true);
 assert.equal(folio.markRead("VMQ-0065"),true);
 assert.equal(folio.nextSuggestion().questionId,"VMQ-0063");
 // Dismiss an entire trail; every alternative trail must remain selectable.
-const dismiss=elements.get("guide-actions").children.find(b=>b.textContent==="Skip this path");
+const dismiss=elements.get("guide-actions").children.flatMap(x=>x.className==="guide-exits"?x.children:[x]).find(b=>b.textContent==="Skip this path");
 assert.ok(dismiss);
 dismiss.onclick();
 assert.equal(folio.status().visible,false);
