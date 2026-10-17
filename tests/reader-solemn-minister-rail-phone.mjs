@@ -40,6 +40,12 @@ async function focusCue(page,section,cue){
     el.scrollTop=Math.max(0,b.top-a.top+el.scrollTop+b.height/2-el.clientHeight*.39);
   },cue);
   await page.waitForFunction(cue=>window.__AO_PHONE_PREVIEW.getActiveCue()===cue,cue,{timeout:7000});
+  // The cue focus tracker reports before the next RAF paints rail channels.
+  // Assert against the *rendered* native state, not the unpainted cursor.
+  await page.waitForFunction(cue=>
+    window.__AO_PHONE_PREVIEW.getNativeEventState()?.nativeCueId===cue &&
+    document.querySelector('[data-r17-native-cue]')?.dataset.r17NativeCue===cue,
+    cue,{timeout:7000});
 }
 try{
   browser=await chromium.launch({headless:true});
@@ -98,7 +104,64 @@ try{
       await context.close();
     }
   }
-  console.log("PASS 360/390px: source-owned Solemn deacon Gospel rubric is visibly distinct from priest, never claimed observed, absent in Cantata and at held Offertory C0112; LIVE 48 intact.");
+  // Actual selected Solemn Requiem, not a CSS-only hidden label. The
+  // expected minister rail uses the existing 19 source events with explicit
+  // 1962 Requiem omissions; observation status must remain false.
+  for(const width of [360,390]){
+    const context=await browser.newContext({viewport:{width,height:844},
+      hasTouch:true,isMobile:true,deviceScaleFactor:2});
+    const page=await context.newPage(),errors=[];
+    page.on("pageerror",e=>errors.push(String(e?.message??e)));
+    await page.goto("http://127.0.0.1:4368/tests/fixtures/reader-phone-harness.html?mode=LIVE&form=SOLEMN&requiem=1",
+      {waitUntil:"networkidle"});
+    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
+      null,{timeout:25000});
+    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),48);
+    for(const [cue,expectVisible,part] of [
+      ["AO.SM.C0076",true,/without receiving.*blessing/i],
+      ["AO.SM.C0080",false,null],
+      ["AO.SM.C0081",true,/neither incense nor lighted candles/i],
+      ["AO.SM.C0120",true,/choir and people are not/i],
+      ["AO.SM.C0212",false,null],
+      ["AO.SM.C0225",false,null],
+    ]){
+      const section=await page.evaluate(cue=>{
+        const card=window.__AO_PHONE_PREVIEW.model.cards.find(c=>
+          c.paragraphs?.some(p=>(p.sourceCueIds??[]).includes(cue)));
+        return card?.sourceSectionId??card?.sectionId??null;
+      },cue);
+      if(!section){
+        // An explicitly omitted Requiem prayer is a legitimate absence.
+        assert.equal(expectVisible,false,"Retained Requiem event disappeared: "+cue);
+        continue;
+      }
+      await focusCue(page,section,cue);
+      const observed=await page.evaluate(()=>{
+        const rail=document.querySelector('.ao-rail-right [data-channel="sacred-minister"]');
+        const state=window.__AO_PHONE_PREVIEW.getNativeEventState();
+        return {active:rail?.dataset.active,text:rail?.textContent,
+          aria:rail?.getAttribute("aria-label"),minister:state?.sacredMinister,
+          width:document.documentElement.scrollWidth-innerWidth};
+      });
+      assert.equal(observed.active,expectVisible?"true":"false",
+        "Wrong Requiem minister visibility at "+cue);
+      if(expectVisible){
+        // The compact rail intentionally shows actor + short label only;
+        // the sourced full action remains available in the native projection.
+        assert.match(observed.minister?.action??"",part);
+        assert.match(observed.text??"",/REQUIEM/i);
+        assert.match(observed.aria??"",/not independently observed/i);
+        assert.ok(observed.minister);
+      }else{
+        assert.equal(observed.minister,null,"Absent Requiem action was exported");
+        assert.equal(observed.aria,null,"Stale Requiem minister tile still accessible");
+      }
+      assert.ok(observed.width<=1,"Requiem minister tile overflow "+width+"px");
+    }
+    assert.deepEqual(errors,[],"Requiem phone browser errors");
+    await context.close();
+  }
+  console.log("PASS 360/390px ordinary and Requiem: source-owned Solemn deacon Gospel rubric is visibly distinct from priest, never claimed observed, absent in Cantata and at held Offertory C0112; LIVE 48 intact.");
 }finally{
   await browser?.close().catch(()=>{});
   await new Promise(resolve=>server.close(resolve));

@@ -70,6 +70,7 @@ const withAsh=rite==="ash";
 const withGoodFriday=rite==="good-friday";
 const precedingRites=withAsperges?["ASPERGES"]:withPalm?["PALM"]:withAsh?["ASH"]:[];
 const requestedForm=String(params.get("form")??"MISSA_CANTATA_INCENSE").toUpperCase();
+const fixtureRequiem=params.get("requiem")==="1";
 const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
 if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
 const fixtureDate=params.get("date")||(withGoodFriday?"2026-04-03":"2026-10-04");
@@ -80,12 +81,13 @@ const resolvedMass={
   form:requestedForm,
   presentationMode:mode,
   actualCelebration:withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
+    fixtureRequiem?{id:"requiem",type:"REQUIEM",title:"Requiem"}:
     {id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
   calendarCelebration:withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
     {id:"Tempora/Pent18-0",type:"CALENDAR",title:"Sunday"},
   explicitlySelectedCelebration:params.get("print")!=="1",
   proper:{status:"READY",data:proper,sourcePath:"Sancti/10-07"},
-  overlays:params.get("print")==="1"?[]:["VOTIVE_PROPER"],
+  overlays:fixtureRequiem?["REQUIEM"]:(params.get("print")==="1"?[]:["VOTIVE_PROPER"]),
   precedingRites,
   followingActions:[],
   distinctRite:withGoodFriday?"GOOD_FRIDAY":null,
