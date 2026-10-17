@@ -491,7 +491,7 @@ function buildQuestionButton(q){
  const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
  if(findExactAnswer(q.id))b.classList.add("has-research");
  const l=document.createElement("span");l.textContent=q.question.en;const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
- b.onclick=()=>{state.question=q.id;$("question-list").hidden=true;$("question-detail").hidden=false;$("question-title").textContent=q.question.en;$("question-type").textContent=q.category_label||q.category;renderExactHistoricalAnswer(q.id);renderPublishedReferences(q.id);$("back-to-object").focus({preventScroll:true});};
+ b.onclick=()=>openQuestion(q);
  return b;
 }
 function renderQuestions(){
@@ -520,6 +520,10 @@ for(const spot of SPOTS){
  b.onclick=()=>select(spot.id,b);$("hotspots").appendChild(b);
  const c=document.createElement("button");c.type="button";c.textContent=spot.title;c.onclick=()=>select(spot.id,c);$("object-choices").appendChild(c);
 }
+$("guide-return").onclick=()=>{
+ closeCard();
+ if(state.guide?.status().visible)$("guide-toggle").focus({preventScroll:true});
+};
 $("close-card").onclick=closeCard;
 $("return-to-church").onclick=closeCard;
 $("inspection-photo").onerror=()=>{$("inspection-photo").hidden=true;$("inspection-failed").hidden=false;};
@@ -575,11 +579,15 @@ async function loadCanon(){
    }
  }else $("inspection-choices").textContent="Inspection sources unavailable; serve the pilot over HTTPS with its source files.";
  state.loaded=true;
+ if(outcome[3].status==="fulfilled")void guideInit(outcome[3].value);
  if(state.selected){buildDefinition(findSpot(state.selected));renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();if(state.question){renderExactHistoricalAnswer(state.question);renderPublishedReferences(state.question);}}
 }
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
  status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ guideStatus:()=>state.guide?.status()??null,
+ chooseTrail:id=>state.guide?.chooseTrail(id)??false,
+ guideExplore:id=>state.guide?.explore(id)??false,
  select:id=>select(id,null)
 });
 })();
