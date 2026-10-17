@@ -94,6 +94,7 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
  passage.dataset.aoRosaryReadPassage=identity;
  passage.dataset.aoRosaryMeditationSource=identity;
  passage.textContent=french?"Lire le passage":"Read passage";
+ passage.title=french?"Ouvrir le chapitre cité dans la Bible Crampon":"Open the cited Scripture passage";
  actions.append(passage);
  if(plan.catenaAvailable){
   const fathers=doc.createElement("button");
