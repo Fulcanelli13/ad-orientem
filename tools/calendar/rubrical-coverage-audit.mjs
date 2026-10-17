@@ -141,6 +141,16 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
        row.secondWitness?.kind!=="INDEPENDENT_1962_YEAR_CALENDAR"||
        row.secondWitness?.url!=="https://gcatholic.org/calendar/"+year+"/Extraordinary-en"||
        row.sourceAndProperGate!=="CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED"||
+       row.productionSnapshot?.reviewScope!=="PRODUCTION_ID_AND_ORATION_CARDINALITY_ONLY_NOT_ORIGINAL_BOOK_TEXT"||
+       row.productionSnapshot?.sourceCertified!==false||
+       row.productionSnapshot?.publishable!==false||
+       row.productionSnapshot?.evidenceRun!=="https://github.com/Fulcanelli13/ad-orientem/actions/runs/39008864503"||
+       row.productionSnapshot?.observedProperSourcePath?.startsWith("Tempora/")!==true||
+       row.productionSnapshot?.observedPrincipalId?.match(/^tempora:([A-Za-z0-9-]+):([1-4]):[a-z]{1,3}$/i)?.[1]!==row.productionSnapshot?.observedProperSourcePath?.slice(8)||
+       Number(row.productionSnapshot?.observedPrincipalId?.match(/:([1-4]):[a-z]{1,3}$/i)?.[1])!==rank||
+       !Array.isArray(row.productionSnapshot?.canonicalCommemorationIds)||
+       row.productionSnapshot.canonicalCommemorationIds.length!==0||
+       !["collects","secrets","postcommunions"].every(k=>row.productionSnapshot?.orationCounts?.[k]===1)||
        row.changesMass!==false||row.changesCalendarPrincipal!==false||
        row.autoCreatesCommemoration!==false||row.publishAsOmission!==false||
        row.editorialStatus!==(exceptionId?"SCOPE_OR_SOURCE_EXCEPTION_HELD":"RUBRICAL_PRELIMINARY_NOT_PUBLISHED")||

@@ -80,6 +80,13 @@ Four separately tracked exception situations must **not** be flattened:
 
 **Remaining acceptance:** match all 24 against the canonical DayResolver principal ID, actual 1962 Proper identity and orations, canonical commemoration owner, and dated independent witness (not merely year/month access). Where a particular rank applies, retain separate jurisdiction and venue witnesses. The registry is read-only research input and deliberately **not** a runtime calendar rule or publication source. The executable Calendar audit enforces exact 24-date coverage, class/rubric compatibility, four exceptional holds and no automatic Mass mutation.
 
+## Production resolver/Proper parity acceptance (17 October 2026)
+
+[Chromium production audit run 39008864503](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39008864503)
+tested all 24 date-specific, read-only preliminarily reviewed Sunday cases directly through `AO_RUNTIME_V8.resolver.resolveDay`. Result: **24/24 days ready, 24/24 canonical Sunday identity/class and Proper paths matched, 0 third-class displaced saint commemorations, 0 missing oration groups, 0 mismatched Collect/Secret/Postcommunion counts**. The observed principal IDs and canonical Proper source paths are now stored as date-specific `productionSnapshot` fields, with equal **1 / 1 / 1** primary Collect, Secret and Postcommunion arrays in each case.
+
+A separate path-scoped browser workflow runs **strictly** and fails if any previously observed ID, Proper source, commemoration source ID or oration count drifts. The existing non-browser `test:calendar-coverage` gate also checks the snapshots and publication restrictions. This is a **production source-owner parity gate**, not collated certification of the original printed 1962 texts, use of other particular calendars, or authorization of additional Mass formularies. The four contextual exception holds remain in force. Any discrepancy is an audit finding until adjudicated; no fallback replaces original source prayers.
+
 ## Exceptions requiring adjudication
 
 | Priority | Case | Current action |
