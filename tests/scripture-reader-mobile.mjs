@@ -489,6 +489,37 @@ try{
     r.reference==="Esther 4:5–7"&&r.referenceEdition==="cpdv-2009"));
   assert.deepEqual(pageErrors,[],"Historia corrected verse-reading audit must not produce browser errors");
 
+  // H76 uses the same source-owned editor, not a competing apocalypse reader.
+  await page.locator("#historiaAuditUnit").selectOption("H76-04");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("4 source fragments loaded (principal abridgment)"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),4);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Revelation 13:10–12/);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Revelation 13:15–18/);
+  assert.ok(await page.locator("#historiaSequence .gapNote").count()>=2);
+  await page.locator("#historiaReadingDepth").selectOption("expanded");
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("1 source fragments loaded (expanded selection)"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),1);
+  await page.locator("#historiaReadingDepth").selectOption("principal");
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("4 source fragments loaded (principal abridgment)"),
+    null,{timeout:24000});
+  await page.locator("#historiaAuditUnit").selectOption("H76-05");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("5 source fragments loaded (principal abridgment)"),
+    null,{timeout:24000});
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),5);
+  assert.match(await page.locator("#historiaSequence").innerText(),/Revelation 18:24/);
+  assert.match(await page.locator("#historiaSequence details").last().innerText(),
+    /LAMB_AND_THE_REDEEMED/);
+  assert.deepEqual(pageErrors,[],"H76 source-owned principal/companion editor must not create browser errors");
+
+
   await page.locator("#module").selectOption("novena");
   await page.locator("#linkedObject option[value='annunciation']").waitFor({state:"attached",timeout:12000});
   await page.locator("#linkedObject").selectOption("annunciation");
