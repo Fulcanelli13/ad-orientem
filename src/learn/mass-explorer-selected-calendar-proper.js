@@ -38,10 +38,18 @@ export function selectedCalendarProperProjection(calendarState,{french=false}={}
  // Votive, Requiem, alternate observed Mass and special rites are not
  // inferred from a Calendar date.
  const language=french?"fr":"en";
- const audit=assessPrintableProper(resolution,{
-   language,massForm:"MISSA_CANTATA_SIMPLE"
+ const english=assessPrintableProper(resolution,{
+   language:"en",massForm:"MISSA_CANTATA_SIMPLE"
  });
- if(!audit.ok||!audit.proper?.sourcePath)return null;
+ const frenchProper=assessPrintableProper(resolution,{
+   language:"fr",massForm:"MISSA_CANTATA_SIMPLE"
+ });
+ // A complete English Proper must not imply the French one is ready (or
+ // vice versa). Both language editions and provenance must pass the SAME gate.
+ if(!english.ok||!frenchProper.ok||
+    !english.proper?.sourcePath||
+    english.proper.sourcePath!==frenchProper.proper?.sourcePath)return null;
+ const audit=french?frenchProper:english;
  const slotRows=new Map();
  for(const [slot,kinds] of Object.entries(SLOT_KINDS)){
   const rows=audit.sections.filter(row=>kinds.includes(row.kind));
