@@ -1,13 +1,25 @@
 {
   "schema": "ao-solemn-minister-ritus1962-batch02",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "status": "RESEARCH_SOURCE_CHECKED_NOT_RUNTIME_CERTIFIED",
-  "description": "Fine-grained Solemn Mass priest/deacon/subdeacon/acolyte/thurifer movements, with Requiem branch gates. English 1962 translation source checked; Latin facsimile and concurrent event timing pending.",
+  "description": "Fine-grained Solemn Mass priest/deacon/subdeacon/acolyte/thurifer movements, with Requiem branch gates. English Ritus source checked; Offertory VII.9/XIII.1 Latin wording crosschecked against a Latin transcription, including correction of English translation actor omission. Original printed 1962 Latin facsimile and independent event timing remain pending.",
   "authority": {
     "primary": "1962_RITUS_SERVANDUS",
     "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
     "includesHistoricalBooksAsAuthority": false,
-    "originalMissalLatinReview": "PENDING"
+    "originalMissalLatinReview": "PENDING",
+    "offertoryLatinCrosscheck": {
+      "status": "LATIN_TEXT_CROSSCHECK_ONLY_ORIGINAL_1962_PRINTED_FACSIMILE_STILL_PENDING",
+      "sections": [
+        "VII.9",
+        "XIII.1"
+      ],
+      "latinTextWitness": "https://aomoi.net/odv/tlm/ritus_servandus_lat.pdf",
+      "printed1962MissalReference": "https://www.documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+      "englishWitness": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "editorialFinding": "Latin VII.9 says Subdiaconus infundit paululum aquae in Calicem; Diaconus illum Celebranti dat, et pedem Calicis tangens. The cited English rendering skips the subdeacon water pour and assigns the succeeding chalice handoff/support clause to the wrong minister. XIII.1 omits the water blessing, not the Deus qui humanae prayer or the subdeacon's physical pouring.",
+      "limit": "Research correction only. NOT proof of live movement, event clock or final facsimile certification."
+    }
   },
   "sourceIdentity": {
     "sourceFile": "data/presentation/reader-text-sung.v1.json",
@@ -349,7 +361,7 @@
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
       "sourceCueText": null,
-      "reviewNote": "The 1962 XIII.1 wording omits the blessing of water in Requiem; whether the Subdeacon speaks Benedicite requires a separate source decision. Do not project this as an active Requiem formula."
+      "reviewNote": "Latin VII.9 assigns presentation of the cruet and Benedicite to the subdeacon in ordinary Solemn Mass. XIII.1 omits blessing of the water in Requiem; it does not cancel the subdeacon's physical water-pour. Whether the verbal Benedicite is retained in Solemn Requiem is not separately certified, so this combined speech record remains NOT_REQUIEM and must not be projected as an active Requiem formula."
     },
     {
       "id": "MR62.SOL.B02.019",
@@ -380,16 +392,17 @@
       "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
       "sourcePdfPage": 24,
       "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=24",
-      "shortRubricFr": "Verse l'eau sans la bénir, tout en disant la prière Deus, qui humanae.",
+      "shortRubricFr": "Le célébrant ne bénit pas l'eau ; le sous-diacre la verse dans le calice pendant que le célébrant dit Deus, qui humanae.",
       "formScope": "SOLEMN",
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
-      "sourceCueText": "Deus, qui humánæ substántiæ dignitátem mirabíliter condidísti, et mirabílius reformásti:"
+      "sourceCueText": "Deus, qui humánæ substántiæ dignitátem mirabíliter condidísti, et mirabílius reformásti:",
+      "reviewNote": "XIII.1 removes the priest's blessing, not the prayer. Under VII.9, the SUBDEACON pours the water in Solemn Mass; PRIEST is the correct actor only for the omitted blessing in this negative-action record. See distinct research-only water-pour MR62.SOL.B02.068. No observed or timed priest movement is implied."
     },
     {
       "id": "MR62.SOL.B02.021",
-      "actor": "SUBDEACON",
+      "actor": "DEACON",
       "cueId": "AO.SM.C0114",
       "anchorType": "WITHIN_TEXT_CUE",
       "actionKey": "SUPPORT_CHALICE_OR_CELEBRANT_ARM",
@@ -403,7 +416,8 @@
       "evidenceClass": "1962_RITUS_ENGLISH_TRANSLATION_DIRECT",
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
-      "sourceCueText": "Offérimus tibi, Dómine, cálicem salutáris, tuam deprecántes cleméntiam: ut in conspéctu divínæ maiestátis tuæ, pro nostra et totíu"
+      "sourceCueText": "Offérimus tibi, Dómine, cálicem salutáris, tuam deprecántes cleméntiam: ut in conspéctu divínæ maiestátis tuæ, pro nostra et totíu",
+      "reviewNote": "Latin VII.9 assigns the chalice handoff and support (Diaconus illum Celebranti dat, et pedem Calicis tangens, seu brachium dexterum Celebrantis sustentans) to the DEACON, not the subdeacon. English PDF translation loses this actor transition."
     },
     {
       "id": "MR62.SOL.B02.022",
@@ -1237,6 +1251,25 @@
       "latinFacsimileReviewed": false,
       "runtimeCertified": false,
       "sourceCueText": null
+    },
+    {
+      "id": "MR62.SOL.B02.068",
+      "actor": "SUBDEACON",
+      "cueId": "AO.SM.C0112",
+      "anchorType": "WITHIN_TEXT_CUE",
+      "actionKey": "POUR_WATER_INTO_CHALICE",
+      "condition": "ALL",
+      "ritus": "VII.9;XIII.1",
+      "primarySource": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "sourcePdfPage": 12,
+      "sourceUrl": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=12",
+      "shortRubricFr": "Verse un peu d'eau dans le calice pendant que le célébrant dit Deus, qui humanae, sans bénédiction à la messe des défunts.",
+      "formScope": "SOLEMN",
+      "evidenceClass": "1962_RITUS_LATIN_TEXT_CROSSCHECK_RESEARCH_ONLY",
+      "latinFacsimileReviewed": false,
+      "runtimeCertified": false,
+      "sourceCueText": "Deus, qui humánæ substántiæ dignitátem mirabíliter condidísti, et mirabílius reformásti:",
+      "reviewNote": "Latin VII.9 explicitly says Subdiaconus infundit paululum aquae in Calicem. Applies in ordinary Solemn and Solemn Requiem; XIII.1 only suppresses the priest blessing. Not covered by B02.018 (water presented and spoken Benedicite, held in Requiem). The original Latin printed-facsimile authority and an independent non-text event owner/clock remain held; text position cannot observe the pour."
     }
   ],
   "corrections": [
@@ -1270,6 +1303,21 @@
       "secondary": "O'Connell synopsis Solemn Mass Pater",
       "difference": "around end Pater vs Et dimitte for subdeacon",
       "runtimeRule": "DO_NOT_ASSERT_INSTANT_TIMING_BEFORE_ADJUDICATION"
+    },
+    {
+      "key": "SOLEMN_OFFERTORY_WATER_ACTOR_AND_EVENT_CLOCK",
+      "status": "OPEN",
+      "affectedEvents": [
+        "MR62.SOL.B02.017",
+        "MR62.SOL.B02.018",
+        "MR62.SOL.B02.019",
+        "MR62.SOL.B02.020",
+        "MR62.SOL.B02.021",
+        "MR62.SOL.B02.068"
+      ],
+      "primary": "Ritus VII.9 / XIII.1",
+      "difference": "Latin water-pour and chalice support actors were missed in English translation; physical actor roles now recorded in research, with Benedicite in Requiem still unresolved.",
+      "runtimeRule": "RESEARCH_ONLY: no LIVE rail promotion without original 1962 facsimile acceptance plus explicit canonical event ownership and independent timing; no synthetic cue or observed gesture from text scroll."
     }
   ],
   "latinSectionCorrections": [
