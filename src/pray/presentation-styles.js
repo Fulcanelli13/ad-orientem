@@ -804,6 +804,16 @@ const ROSARY_SCRIPTURE_POLICY_CSS=`
   text-decoration:underline;text-underline-offset:3px;font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
 }
 /* Guided Rosary: authored contemplations (not Scripture quotations). */
+#aoPrayerBookRoot .aoRosaryBeadScripture{margin:12px 0 6px;padding:13px 14px;border-left:2px solid var(--liturgical,#9b886c);background:rgba(140,119,80,.06);border-radius:0 9px 9px 0;color:var(--text,#f3ead7);overflow-wrap:break-word}
+#aoPrayerBookRoot .aoRosaryBeadScriptureLabel{display:block;letter-spacing:.13em;text-transform:uppercase;font:650 10px/1.6 var(--ao-font-ui,system-ui,sans-serif);color:var(--muted,#c8b89a)}
+#aoPrayerBookRoot .aoRosaryBeadScriptureText{font:normal 1.08rem/1.6 var(--ao-font-display,Georgia,serif);margin:8px 0 6px;color:inherit}
+#aoPrayerBookRoot .aoRosaryBeadVerse{display:block;margin-bottom:5px}
+#aoPrayerBookRoot .aoRosaryBeadVerse sup{font:700 .66rem var(--ao-font-ui,system-ui,sans-serif);margin-right:7px;opacity:.7}
+#aoPrayerBookRoot .aoRosaryBeadVerseScope{display:block;margin-top:4px;font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);opacity:.7}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 0}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button){color:inherit;background:transparent;border:0;border-bottom:1px solid currentColor;border-radius:0;min-height:40px;font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);padding:7px 1px;text-decoration:none;cursor:pointer}
+#aoPrayerBookRoot .aoRosaryBeadScriptureActions :is(a,button):focus-visible{outline:2px solid var(--liturgical,#d8bd7d);outline-offset:3px}
+#aoPrayerBookRoot .aoRosaryBeadSourceNotice{display:block;font:500 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);opacity:.65;margin-top:5px}
 #aoPrayerBookRoot .aoRosaryGuidedBeadMeditation{margin:12px 0 3px;padding:10px 12px;border-left:2px solid var(--liturgical,#9b886c);color:var(--text,#f3ead7);background:transparent;font:italic 0.94rem/1.55 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
 #aoPrayerBookRoot .aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source]{
  display:block;width:fit-content;margin-top:6px;padding:4px 0;
