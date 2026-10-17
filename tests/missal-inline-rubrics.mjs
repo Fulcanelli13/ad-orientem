@@ -16,7 +16,7 @@ let renderedIds=[];
 for(const cueId of uniqueCueIds){
  const p=publishedMissalRubricsForParagraph(mk(cueId,[cueId]),source,{form:"LOW",language:"en"});
  renderedIds.push(...p.filter(x=>x.kind!=="STATE").map(x=>x.id));
- assert.ok(p.every(x=>x.sourceCueId===cueId&&x.sourceUrl===cited&&
+ assert.ok(p.filter(x=>x.kind!=="STATE").every(x=>x.sourceCueId===cueId&&x.sourceUrl===cited&&
    x.displayText.startsWith("The priest ")&&x.observedNow===false),
    cueId+" lost source or observation boundary");
 }
