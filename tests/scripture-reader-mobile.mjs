@@ -222,7 +222,9 @@ try{
  assert.equal(await dialog.getByRole("button",{name:"Next chapter"}).isDisabled(),true);
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("Esther");
  assert.equal(await dialog.locator("[data-crosswalk-unverified=Esther]").count(),1);
- assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/different chapter order/i);
+ assert.match(await dialog.locator("[data-crosswalk-unverified=Esther]").innerText(),/Verse numbering varies/i);
+ await dialog.locator(".aoScriptureReferenceWarning summary").click();
+ assert.match(await dialog.locator(".aoScriptureReferenceWarning").innerText(),/different chapter order/i);
  // Same Catholic Esther event lives at Douay 11:2 but CPDV 1:1.
  await dialog.locator(".aoScriptureNav input").nth(0).fill("11");
  await dialog.locator(".aoScriptureNav input").nth(0).dispatchEvent("change");
