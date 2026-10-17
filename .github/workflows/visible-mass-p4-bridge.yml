@@ -18,6 +18,9 @@ on:
       - src/learn/presentation.js
       - tests/visible-mass-learn-integration.mjs
       - tests/visible-mass-guided-trail-graph.mjs
+      - tests/visible-mass-guided-folio.mjs
+      - previews/visible-mass-3d/visible-mass-dialogue-director.mjs
+      - previews/visible-mass-3d/visible-mass-dialogue-folio.mjs
       - previews/visible-mass-3d/GUIDED_TRAIL_GRAPH_RESEARCH_20261018.v1.json
       - previews/visible-mass-3d/GUIDED_TRAIL_EDITORIAL_DECISION_20261018.md
       - previews/visible-mass-3d/HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json
@@ -46,3 +49,6 @@ jobs:
       - run: node --check src/learn/browser-entry.js
       - run: node tests/visible-mass-learn-integration.mjs
       - run: node tests/visible-mass-guided-trail-graph.mjs
+      - run: node --check previews/visible-mass-3d/visible-mass-dialogue-director.mjs
+      - run: node --check previews/visible-mass-3d/visible-mass-dialogue-folio.mjs
+      - run: node tests/visible-mass-guided-folio.mjs
