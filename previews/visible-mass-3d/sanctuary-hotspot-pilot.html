@@ -100,6 +100,10 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;
 .study-source li{margin:8px 0}
 .study-source li small{display:block;color:var(--muted)}
 .study-source .disclaimer{color:var(--muted);font-size:11px;line-height:1.5;margin:6px 0}
+.mass-context{margin:13px 0;border:1px solid #384657;border-radius:8px;padding:2px 12px;background:#101a24}
+.mass-context>summary{font:13px/1.5 system-ui,sans-serif;color:var(--gold);cursor:pointer;padding:11px 0}
+.mass-context button{display:block;text-align:left;width:100%;padding:11px;border:1px solid #4d5965;margin:8px 0;border-radius:7px;background:#141e28;color:var(--text);font:13px/1.45 system-ui,sans-serif;min-height:44px}
+.mass-context .context-caveat,.mass-context #mass-context-status{font:11px/1.5 system-ui,sans-serif;color:var(--muted)}
 .liturgical-explanations{margin:13px 0;border:1px solid #384657;border-radius:8px;padding:2px 12px;background:#101a24}
 .liturgical-explanations>summary{font:13px/1.5 system-ui,sans-serif;color:var(--gold);cursor:pointer;padding:11px 0}
 .liturgical-explanations .answer-entry{padding:9px 0;border-top:1px solid var(--line)}
@@ -168,7 +172,13 @@ footer a{color:#d8bd89}
 <div id="object-card" hidden>
 <div class="row"><div class="state" id="object-state"></div><button type="button" class="close" id="close-card" aria-label="Close object">Close ×</button></div>
 <h2 id="object-title"></h2>
-<div class="definition" id="definition"></div><p class="related" id="inspection-provenance" hidden></p><div class="related-objects" id="related-objects" hidden><strong>Explore related objects</strong><div id="related-items"></div></div>
+<div class="definition" id="definition"></div>
+<details class="mass-context" id="mass-context" hidden>
+<summary>Related Mass moments · research preview</summary>
+<p class="context-caveat">These are provisional contextual study links, not approved object-specific 1962 rubrics. The published Mass Explorer remains the only owner of its Guide, text and bilingual prayer readings.</p>
+<div id="mass-context-actions"></div><p id="mass-context-status" role="status"></p>
+</details>
+<p class="related" id="inspection-provenance" hidden></p><div class="related-objects" id="related-objects" hidden><strong>Explore related objects</strong><div id="related-items"></div></div>
 <details class="liturgical-explanations" id="liturgical-explanations" hidden>
 <summary id="liturgical-answer-summary">Liturgical explanations</summary>
 <p class="answer-warning">Original research summaries grounded in published rubrics. For study only; local permissions, chosen Mass and rite edition still matter.</p>
@@ -256,7 +266,7 @@ function select(id,from){
  $("object-title").textContent=spot.title;
  $("question-detail").hidden=true;$("question-list").hidden=false;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
- buildDefinition(spot);renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
+ buildDefinition(spot);void renderMassContext();renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
  $("info").classList.add("has-selection");
  document.body.classList.add("object-open");
  if(window.innerWidth<930){
@@ -288,6 +298,39 @@ function buildDefinition(spot){
    $("definition").innerHTML='<small>Dictionary · '+esc(label)+' · '+esc(spot.g)+'</small>'+esc(definition);
  }
  $("canonical-link").innerHTML='Source record: <a href="../../data/glossary/concepts-'+(Number(spot.g.slice(1))<=150?"001-150":Number(spot.g.slice(1))<=300?"151-300":"301-450")+'.v1.json" target="_blank" rel="noopener">'+esc(spot.g)+'</a> · <span>existing canonical glossary</span>';
+}
+// The existing P5 crosswalk supplies only IDs; the app's published Mass
+// Explorer owns the actual Guide, Latin, vernacular and prayer explanation.
+async function renderMassContext(){
+ const ownerId=state.selected,panel=$("mass-context"),items=$("mass-context-actions");
+ panel.hidden=true;panel.open=false;items.replaceChildren();$("mass-context-status").textContent="";
+ try{
+   const bridge=await import("./photographic-published-explorer-handoff.mjs");
+   if(state.selected!==ownerId)return;
+   const links=bridge.visibleMassResearchMomentLinks(ownerId,{reviewMode:true});
+   panel.hidden=links.length===0;
+   for(const link of links){
+     const b=document.createElement("button");b.type="button";
+     b.textContent=link.label+" · "+link.guideId;
+     b.setAttribute("aria-label","Open existing Mass Explorer: "+link.label);
+     b.onclick=async()=>{
+       $("mass-context-status").textContent="Opening the existing Mass Explorer…";
+       const verdict=await bridge.openVisibleMassInExistingExplorer(window,{
+         objectId:ownerId,guideId:link.guideId,trigger:b,reviewMode:true,form:"SUNG"
+       });
+       if(verdict.ok){$("mass-context-status").textContent="";return;}
+       $("mass-context-status").textContent=verdict.reason==="PRODUCTION_EXPLORER_NOT_IN_STANDALONE_PREVIEW"?
+         "This standalone research pilot does not contain the app's Mass Explorer. The link becomes active inside Ad Orientem, without copying its Guide or prayer texts.":
+         "The existing Mass Explorer could not open. Your sanctuary selection is unchanged.";
+     };
+     items.appendChild(b);
+   }
+ }catch(error){
+   if(state.selected===ownerId){
+     panel.hidden=true;$("mass-context-status").textContent="";
+     console.warn("Visible Mass existing Explorer adapter unavailable",error);
+   }
+ }
 }
 function renderRelatedObjects(){
  const ids=(RELATED_OBJECTS[state.selected]||[]).filter(id=>state.inspections.some(x=>x.object_id===id)||state.objects.some(x=>x.object_id===id));
