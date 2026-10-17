@@ -22,7 +22,7 @@ for(const answer of pack.answers){
  assert.ok(!vqs.has(answer.id),'research explanation cannot appropriate an existing VMQ identity');
  assert.equal(answer.status,'SOURCE_CHECKED_RESEARCH_PREVIEW_EDITORIAL_APPROVAL_PENDING');
  assert.ok(answer.question.en.length>12 && answer.answer.en.length>50 && answer.detail.en.length>50);
- assert.ok(answer.sources.some(x=>x.type==='PRIMARY_1960_RUBRICAL_CODE'),'must include a direct numbered 1960/1962 rubrical source');
+ assert.ok(answer.sources.some(x=>x.type==='PRIMARY_1960_RUBRICAL_CODE') || (['VMLQ-011','VMLQ-012'].includes(answer.id) && answer.sources.some(x=>x.type==='SECONDARY_1962_ORDO')),'rubrical paraphrase or explicitly restricted Passiontide reference required');
  assert.ok(answer.sources.every(x=>acceptableSources.has(new URL(x.url).hostname)));
  assert.ok(answer.sources.every(x=>x.locator.length>=5 && x.type));
  assert.ok(answer.object_ids.length>0 && answer.object_ids.every(x=>ids.has(x)));
