@@ -18,6 +18,7 @@ export function missalRubricDetailForParagraph(paragraph){
    paragraph.publishedMissalRubrics:[];
  const sourceCueIds=Array.isArray(paragraph?.sourceCueIds)?paragraph.sourceCueIds:[];
  const valid=events.filter(x=>x?.observedNow===false &&
+   x.kind!=="STATE" && // persistent finger state is not a timed step
    EVIDENCE.has(x.sourceId) && EVENT.test(String(x.id??"")) &&
    ((x.sourceId==="MR62_RITUS" && x.actor==="PRIEST" &&
      x.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
