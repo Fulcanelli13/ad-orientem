@@ -1113,6 +1113,26 @@ button.ao-schola-control{cursor:pointer}
   }
 }
 /* Source-owned Missal prayer divisions. No in-Mass study links. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics{
+  grid-column:1 / -1;grid-row:auto;display:block;
+  margin:10px 0 2px;padding:7px 0 8px 14px;
+  border:0;border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 42%,transparent);
+  background:none;color:var(--ao-muted);
+  font:italic 400 clamp(.88rem,1.55vw,1.04rem)/1.48 var(--ao-missal-face);
+  text-align:left;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-heading{
+  font:500 .64rem/1.25 var(--ao-font-ui,system-ui,sans-serif);
+  text-transform:uppercase;letter-spacing:.09em;color:var(--ao-mass-accent-text);
+  opacity:.78;margin-bottom:5px;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-action{
+  display:block;font:inherit;letter-spacing:0;color:var(--ao-muted);margin:2px 0;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-source{
+  display:inline-block;margin-top:6px;font:500 .65rem/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  color:var(--ao-mass-accent-text);opacity:.68;
+}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading{
   margin:26px 0 12px;padding:12px 0 8px;
   border-top:1px solid color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);
@@ -1333,6 +1353,19 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       sourcePath:p.sourcePath??null,
       sourceAnchorCueId:p.sourceAnchorCueId??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
+      publishedMissalRubrics:Object.freeze((Array.isArray(p.publishedMissalRubrics)?p.publishedMissalRubrics:[])
+        .filter(event=>event?.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
+          event.owner==="PUBLISHED_R17_MISSAL_INLINE" &&
+          event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
+          event.observedNow===false && typeof event.displayText==="string" &&
+          event.displayText.trim() &&
+          (p.sourceCueIds??[]).includes(event.sourceCueId))
+        .map(event=>Object.freeze({
+          id:String(event.id),displayText:event.displayText,
+          sourceCueId:event.sourceCueId,observedNow:false,
+          sourceUrl:typeof event.sourceUrl==="string" &&
+            event.sourceUrl.startsWith("https://") ? event.sourceUrl : null,
+        }))),
       publishedCanonRubrics:Object.freeze((Array.isArray(p.publishedCanonRubrics)?p.publishedCanonRubrics:[])
         .filter(event=>event?.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
           event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
@@ -2822,7 +2855,7 @@ export function createReaderDomAdapter({
 
     const shell=root.querySelector("[data-ao-reader-shell]");
     if(shell && current.cardUpdate)shell.dataset.canonInline=String(
-      current.paragraphs.some(p=>p.publishedCanonRubrics?.length>0));
+      mode!=="MISSAL" && current.paragraphs.some(p=>p.publishedCanonRubrics?.length>0));
     const body=root.querySelector('[data-role="paragraphs"]');
     if(body && current.cardUpdate){
       body.replaceChildren();
@@ -3012,19 +3045,32 @@ export function createReaderDomAdapter({
             decorateLiturgicalSpeaker(secondary,parallel);
             node.append(secondary);
           }
-          if(p.publishedCanonRubrics?.length){
+          const inlineRubrics=mode==="MISSAL"
+            ? p.publishedMissalRubrics : p.publishedCanonRubrics;
+          if(inlineRubrics?.length){
             const note=doc.createElement("span");
-            note.className="ao-canon-inline-rubrics";
+            note.className=mode==="MISSAL"?"ao-missal-inline-rubrics":"ao-canon-inline-rubrics";
             note.dataset.sourceAuthority="MR62_RITUS";
             note.dataset.observedNow="false";
             const heading=doc.createElement("span");
             heading.className="ao-canon-inline-heading";
-            heading.textContent=frenchReader?"PRÊTRE · RUBRIQUE DE 1962":"PRIEST · 1962 RUBRIC";
+            heading.textContent=mode==="MISSAL"
+              ? (frenchReader?"Rubrique · prêtre":"Rubric · priest")
+              : (frenchReader?"PRÊTRE · RUBRIQUE DE 1962":"PRIEST · 1962 RUBRIC");
             const actions=doc.createElement("span");
             actions.className="ao-canon-inline-actions";
-            actions.textContent=p.publishedCanonRubrics.map(event=>event.shortAction).join(" · ");
+            if(mode==="MISSAL"){
+              for(const event of inlineRubrics){
+                const text=doc.createElement("span");
+                text.className="ao-missal-rubric-action";
+                text.textContent=event.displayText;
+                actions.append(text);
+              }
+            }else{
+              actions.textContent=inlineRubrics.map(event=>event.shortAction).join(" · ");
+            }
             note.append(heading,actions);
-            const sourceUrl=p.publishedCanonRubrics[0]?.sourceUrl;
+            const sourceUrl=inlineRubrics[0]?.sourceUrl;
             if(sourceUrl){
               const source=doc.createElement("a");
               source.className="ao-canon-inline-source";
