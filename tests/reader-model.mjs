@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createMassReaderModel } from "../src/mass/reader-model.js";
+import { projectSourceFirst48Presentation } from "../src/mass/reader-live-product48.js";
+import { projectGranularMissalCards } from "../src/mass/reader-missal-granularity.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const low=load("../data/presentation/reader-text-low.v1.json");
@@ -149,6 +151,38 @@ const requiemModel=createMassReaderModel({
   resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 });
 assert.equal(requiemModel.totalCards,39,"plan-owned Requiem overlay duplicated or removed Mass reader cards");
+
+// Source 39 / product 48 and MISSAL granularities must retain the two valid
+// Communion prayers, omit only B069/C0225 at Requiem, and never invent a
+// blank card or disturb the historical presentation-card denominator.
+const requiem48=projectSourceFirst48Presentation(requiemModel);
+assert.equal(requiem48.totalCards,48,"Requiem omission changed the 48-card LIVE structure");
+assert.equal(requiem48.cards.filter(c=>c.paragraphs?.some(p=>
+  p.sourceCueIds?.includes("AO.SM.C0225"))).length,0);
+const communion48=requiem48.cards.find(c=>c.sectionId==="AO.LIVE48.022.A");
+assert.ok(communion48,"Missing original decompressed Communion source card");
+for(const cueId of ["AO.SM.C0226","AO.SM.C0227"])
+  assert.ok(communion48.paragraphs.some(p=>p.sourceCueIds?.includes(cueId)),
+    "Requiem 48-step projection lost "+cueId);
+assert.equal(communion48.blocks.find(b=>b.blockId==="AO.SM.B069")?.paragraphCount,0);
+
+const requiemMissal=projectGranularMissalCards(createMassReaderModel({
+  resolvedMass:{...base,form:"LOW",presentationMode:"MISSAL",overlays:["REQUIEM"]},
+  sectionMap,lowCorpus:low,sungCorpus:sung
+}));
+assert.ok(requiemMissal.totalCards>30,"Missal prayer granularity unexpectedly collapsed");
+assert.ok(requiemMissal.cards.every(c=>c.stateOnly||c.paragraphs?.length>0),
+  "Requiem Missal created a blank fictional Communion prayer");
+const missalText=requiemMissal.cards.flatMap(c=>c.paragraphs);
+assert.ok(!missalText.some(p=>p.sourceCueIds?.includes("AO.SM.C0225")),
+  "Requiem MISSAL includes omitted first peace prayer");
+for(const id of ["AO.SM.C0226","AO.SM.C0227"])
+  assert.ok(missalText.some(p=>p.sourceCueIds?.includes(id)),
+    "Requiem MISSAL lost valid Communion prayer "+id);
+assert.ok(requiemMissal.cards.flatMap(c=>c.blocks).some(b=>
+  b.blockId==="AO.SM.B069"&&b.omittedByRite==="RITUS_XIII_1_REQUIEM"),
+  "Requiem Missal lost canonical owner metadata for omitted prayer");
+
 
 // The Requiem Ordinary substitutes the three EXACT Agnus texts. The raw
 // Low/Sung donor corpora remain immutable; the preselected celebration or
