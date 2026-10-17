@@ -10,7 +10,7 @@ const ev=minister.events;
 const get=id=>ev.find(e=>e.id==="MR62.SOL.B02."+id);
 
 assert.equal(cues.size,279);
-assert.equal(ev.length,67);
+assert.equal(ev.length,68);
 assert.equal(earlier.events.length,46);
 assert.equal(minister.invariants.noRuntimeImport,true);
 assert.equal(minister.invariants.preserveLIVE48,true);
@@ -37,7 +37,7 @@ for(const e of ev){
     assert(e.branchMoment,e.id+" missing explicit stage");
   }
 }
-assert.equal(ev.filter(e=>e.actor==="DEACON").length,31);
+assert.equal(ev.filter(e=>e.actor==="DEACON").length,32);
 assert.equal(ev.filter(e=>e.actor==="SUBDEACON").length,23);
 assert.equal(ev.filter(e=>e.actor==="ACOLYTES").length,5);
 assert.equal(ev.filter(e=>e.actor==="PRIEST").length,4);
@@ -64,11 +64,26 @@ for(const id of ["057","063"]){
  assert.equal(get(id).anchorType,"BRANCH_ONLY_RITE_EVENT");
 }
 assert.equal(get("065").actor,"ACOLYTES","Requiem Gospel book is supported by two acolytes (Ritus XIII.2)");
-assert.equal(get("018").condition,"NOT_REQUIEM","Requiem water formula is not verified");
+assert.equal(get("017").actor,"DEACON");
+assert.equal(get("017").anchorType,"BEFORE_CUE","Wine pouring occurs before Deus qui humanae");
+assert.equal(get("018").condition,"NOT_REQUIEM","Requiem Benedicite remains unresolved");
+assert.equal(get("019").actor,"PRIEST");
+assert.equal(get("019").condition,"NOT_REQUIEM","Water blessing excluded in Requiem");
+assert.equal(get("020").actor,"PRIEST","Omission of blessing belongs to the priest, not the water-pour actor");
+assert.match(get("020").shortRubricFr,/sous-diacre la verse/,"Requiem description must preserve the subdeacon's water role");
+assert.equal(get("021").actor,"DEACON","Latin VII.9 assigns chalice/arm support to the deacon");
+assert.equal(get("068").actor,"SUBDEACON","Latin VII.9 assigns actual water-pour to the subdeacon");
+assert.equal(get("068").actionKey,"POUR_WATER_INTO_CHALICE");
+assert.equal(get("068").condition,"ALL","Subdeacon still adds water at Solemn Requiem");
+assert.equal(get("068").cueId,"AO.SM.C0112");
+assert.equal(get("068").anchorType,"WITHIN_TEXT_CUE");
+assert.equal(minister.authority.originalMissalLatinReview,"PENDING","Text crosscheck cannot imply printed 1962 facsimile certification");
+assert.equal(get("068").runtimeCertified,false,"Reading C0112 cannot clock the actual physical water-pour");
+assert.equal(minister.reviewGates.at(-1).status,"OPEN");
 assert.equal(get("062").cueId,null,"Oratio super populum branch cannot fabricate an ordinary source cue");
 assert.equal(get("061").condition,"ITE_MISSA_EST");
 assert.equal(get("061").actor,"DEACON");
 assert.equal(get("020").condition,"REQUIEM");
 assert.equal(get("019").condition,"NOT_REQUIEM");
 
-console.log("PASS 1962 Solemn-minister research QA: 67 actions, 5 actor lanes, 12 Requiem exceptions, no fabricated cues.");
+console.log("PASS 1962 Solemn-minister research QA: 68 research actions, actor and water-pour correction, 12 Requiem exceptions, no live event promotion.");
