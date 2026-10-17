@@ -51,7 +51,7 @@ assert.match(page,/renderExactHistoricalAnswer/);
 assert.match(page,/renderOccasionNote/);
 assert.match(page,/No independent object photograph/);
 assert.match(page,/original Brompton photograph has not been altered/);
-assert.match(page,/Historical research · not a 1962 rubrical instruction/);
+assert.match(page,/Historical and functional research · not a 1962 rubrical instruction/);
 assert.match(page,/id="answer-pending"/);
 assert.match(page,/id="historical-answer"/);
 assert.match(page,/id="occasion-select"/);
