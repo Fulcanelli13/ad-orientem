@@ -242,15 +242,7 @@ const SPOTS=[
 ];
 const $=id=>document.getElementById(id);
 const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null};
-const GUIDE_SESSION_KEY="ao-visible-mass-visitor-trails-v1";
 const GUIDED_OBJECTS=new Set(["AL01","AL06","SN02"]);
-function guideSave(){
- if(!state.guide)return;
- try{window.sessionStorage?.setItem(GUIDE_SESSION_KEY,JSON.stringify(state.guide.serialize()));}catch{}
-}
-function guideRead(){
- try{return JSON.parse(window.sessionStorage?.getItem(GUIDE_SESSION_KEY)||"null");}catch{return null;}
-}
 const RELATED_OBJECTS={
  AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
  AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
