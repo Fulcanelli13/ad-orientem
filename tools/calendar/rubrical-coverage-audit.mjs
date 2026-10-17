@@ -145,7 +145,8 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
        row.productionSnapshot?.sourceCertified!==false||
        row.productionSnapshot?.publishable!==false||
        row.productionSnapshot?.evidenceRun!=="https://github.com/Fulcanelli13/ad-orientem/actions/runs/39008864503"||
-       row.productionSnapshot?.observedPrincipalId?.match(/^tempora:([A-Za-z0-9-]+):([1-4]):[a-z]{1,3}$/i)?.[1]!==row.productionSnapshot?.observedProperSourcePath?.replace(/^Tempora\\//,"")||
+       row.productionSnapshot?.observedProperSourcePath?.startsWith("Tempora/")!==true||
+       row.productionSnapshot?.observedPrincipalId?.match(/^tempora:([A-Za-z0-9-]+):([1-4]):[a-z]{1,3}$/i)?.[1]!==row.productionSnapshot?.observedProperSourcePath?.slice(8)||
        Number(row.productionSnapshot?.observedPrincipalId?.match(/:([1-4]):[a-z]{1,3}$/i)?.[1])!==rank||
        !Array.isArray(row.productionSnapshot?.canonicalCommemorationIds)||
        row.productionSnapshot.canonicalCommemorationIds.length!==0||
