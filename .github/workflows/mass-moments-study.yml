@@ -22,6 +22,8 @@ on:
       - 'tests/mass-prayer-reading-pilot.mjs'
       - 'scripts/build-mass-prayer-editorial-review.mjs'
       - 'src/learn/mass-explorer.js'
+      - 'src/learn/mass-explorer-published-prayer-context.js'
+      - 'tests/mass-explorer-published-prayer-context.mjs'
       - 'src/learn/mass-explorer-study-publication.js'
       - 'data/learn/mass-explorer-approved-studies.v1.json'
       - 'data/learn/research/mass-explorer-first-two-release-candidates-20261016.v1.json'
@@ -72,6 +74,7 @@ jobs:
       - run: node tests/mass-moments-study.mjs
       - run: node tests/mass-prayer-reading-pilot.mjs
       - run: node tests/mass-explorer-study-publication.mjs
+      - run: node tests/mass-explorer-published-prayer-context.mjs
       - run: node scripts/build-mass-prayer-editorial-review.mjs
       - run: python3 scripts/build-mass-canon-deep-review.py
       - run: node scripts/build-mass-explorer-editorial-bridge.mjs
