@@ -63,6 +63,42 @@ export function resolvePriestChantAction({
   });
 }
 
+/**
+ * Keep the priest's *voice* as independent of the Schola as his actions.
+ * The frozen cue voice at C0145 describes a quiet priest track, not an
+ * observation that he happens to be reciting it when the choir sings.
+ * The source voice applies normally outside the five Schola-owned cues.
+ */
+export function resolvePriestChantVoice({
+  form=null,cueId=null,sourceClock=null,
+  ordinaryVoice=null,observedPriestAction=null,observation=null
+}={}){
+  const selected=String(form??"").toUpperCase(),id=String(cueId??"");
+  if(!SUNG_FORMS.has(selected)||!WINDOW_CUES.has(id)||sourceClock!=="SCHOLA_PUBLIC"){
+    return Object.freeze({priestVoice:ordinaryVoice??null,
+      owner:"EXISTING_SOURCE_VOICE",observed:false});
+  }
+  const verified=observedPriestAction?.observed===true &&
+    observedPriestAction?.owner==="INDEPENDENT_PRIEST_OBSERVATION" &&
+    observation?.actor==="PRIEST" && observation?.observed===true &&
+    observation?.source==="EXPLICIT_OBSERVATION" &&
+    observation?.atCueId===id &&
+    Object.hasOwn(SOURCE_GESTURES,String(observation?.eventType??""));
+  if(!verified){
+    return Object.freeze({priestVoice:null,
+      owner:"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED",observed:false});
+  }
+  const label=observation.eventType==="PRIEST_SANCTUS_RECITATION"
+    ?"PRIEST RECITES SANCTUS QUIETLY"
+    :"PRIEST RECITES BENEDICTUS QUIETLY";
+  return Object.freeze({priestVoice:Object.freeze({
+    label,value:"QUIET / SECRET",
+    owner:"INDEPENDENT_PRIEST_OBSERVATION",cueId:id,
+    sourceCueId:SOURCE_GESTURES[observation.eventType].sourceCueId,
+    transient:true
+  }),owner:"INDEPENDENT_PRIEST_OBSERVATION",observed:true});
+}
+
 export function validatePriestChantObservation(event,cueId,form){
   const id=String(cueId??"");
   if(!SUNG_FORMS.has(String(form??"").toUpperCase()))return false;
