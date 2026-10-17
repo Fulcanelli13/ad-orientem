@@ -508,6 +508,11 @@ try{
   await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
+  // The folio intentionally has one visible posture cue; its source-owned
+  // semantic rail stays hidden to avoid duplicating a second control.
+  await page.waitForFunction(()=>document.querySelector(
+    '#aoPray435930 .aoFolioPostureNote > summary'
+  )?.getBoundingClientRect()?.height>=44,null,{timeout:12000});
   const angelusRails=await page.evaluate(()=>{
     const grid=document.querySelector("#aoPray435930 .aoAngelusRitualGrid");
     const rail=grid?.querySelector('[data-ao-ritual-module="angelus"]')??null;
@@ -523,6 +528,10 @@ try{
       postureChannel:posture?.dataset?.channel??null,
       postureAsset:icon?.dataset?.aoAssetId??null,
       slotHeight:posture?.getBoundingClientRect?.().height??0,
+      visiblePostureHeight:document.querySelector("#aoPray435930 .aoFolioPostureNote>summary")
+        ?.getBoundingClientRect?.().height??0,
+      visiblePostureCount:[...document.querySelectorAll("#aoPray435930 .aoFolioPostureNote>summary")]
+        .filter(el=>el.getBoundingClientRect().height>=44).length,
       incarnationUnits:grid?.querySelectorAll?.('[data-ao-incarnation="true"]')?.length??0,
       genericAngelusContext:grid?.querySelectorAll?.('[data-ao-asset-id="ao-rich-angelus"]')?.length??0,
     };
@@ -533,7 +542,8 @@ try{
   assert.equal(angelusRails.railPosition,"sticky","Angelus exact donor rail is no longer sticky with the reader");
   assert.equal(angelusRails.postureChannel,"posture","Angelus rail no longer identifies the persistent posture channel");
   assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.postureAsset),"Angelus posture slot is not using the canonical posture bank");
-  assert.ok(angelusRails.slotHeight>=54,"Angelus phone ritual slot collapsed below donor-readable geometry");
+  assert.ok(angelusRails.visiblePostureHeight>=44&&angelusRails.visiblePostureCount===1,
+    "Angelus must show exactly one readable 44px folio posture cue: "+JSON.stringify(angelusRails));
   assert.equal(angelusRails.incarnationUnits,1,"Angelus lost the unique Incarnation focus marker");
   assert.equal(angelusRails.genericAngelusContext,0,"Angelus regained the later generic devotional context card");
   assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");

@@ -194,6 +194,7 @@ try{
        stop:height(".aoP435930AngelusReader .aoDevoStop"),
        counter:getComputedStyle(root.querySelector(".aoP435930AngelusReader .aoDevoCardNumber")).display,
        ritual:height("[data-ao-ritual-module='angelus'] [data-channel='posture']"),
+       folioPosture:height(".aoFolioPostureNote>summary"),
        postureText:/\b(kneel|stand|à genoux|debout)\b/i.test(root.innerText)
      };
    });
@@ -202,7 +203,8 @@ try{
    assert.ok(density.timeline<=55&&density.stop>=44,
      "Angelus chapter controls should fit one compact row: "+JSON.stringify(density));
    assert.equal(density.counter,"none","Avoid repeating chapter count above the named prayer");
-   assert.ok(density.postureText,"The traditional posture instruction must remain visible");
+   assert.ok(density.postureText&&density.folioPosture>=44,
+     "The single visible Angelus posture control must be readable and at least 44px: "+JSON.stringify(density));
    assert.ok(density.ritual===0||density.ritual>=44,"A rendered posture control must remain readable");
  }
  await page.setViewportSize({width:390,height:844});

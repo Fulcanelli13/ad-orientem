@@ -397,6 +397,28 @@ try{
      assert.equal(await restored.locator(".aoRosaryEnglishFlip").count(),1,
        "One unobtrusive translation flip, not two full buttons");
      await restored.locator(".aoRosaryBeadVerse").first().waitFor({state:"visible",timeout:12000});
+     // Browser-computed UX acceptance: the final CSS cascade, not just class
+     // presence, must preserve the quiet reading layout and accessible actions.
+     const compact=await restored.evaluate(node=>{
+       const p=node.querySelector(".aoRosaryBeadScriptureText");
+       const action=node.querySelector(".aoRosaryBeadScriptureActions a");
+       const source=node.querySelector(".aoRosaryBeadSourceNotice");
+       const summary=source?.querySelector("summary");
+       return {
+         marginTop:parseFloat(getComputedStyle(p).marginTop),
+         actionMinHeight:parseFloat(getComputedStyle(action).minHeight),
+         actionBorderBottom:parseFloat(getComputedStyle(action).borderBottomWidth),
+         sourceOpacity:Number(getComputedStyle(source).opacity),
+         sourceTargetHeight:summary?.getBoundingClientRect().height??0,
+         overflow:document.documentElement.scrollWidth-innerWidth
+       };
+     });
+     assert.ok(compact.marginTop<=3&&compact.actionMinHeight>=44&&
+       compact.actionBorderBottom===0&&compact.sourceOpacity>=.99&&
+       compact.sourceTargetHeight>=44&&compact.overflow<=2,
+       "Stale Scripture CSS overrides the compact Rosary reading: "+JSON.stringify(compact));
+     await restored.scrollIntoViewIfNeeded();
+     await page.screenshot({path:resolve(captures,"rosary-guided-scripture-douay-390.png"),animations:"disabled"});
      const rosaryBead=await page.evaluate(()=>window.AO_ROSARY_V381.state().step);
      await restored.locator('[data-ao-rosary-english-edition="cpdv-2009"]').click();
      await restored.locator(".aoRosaryBeadVerse").first().waitFor({state:"visible",timeout:12000});
