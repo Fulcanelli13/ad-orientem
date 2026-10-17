@@ -1129,23 +1129,6 @@ button.ao-schola-control{cursor:pointer}
     width:26px!important;height:26px!important;flex-basis:26px;
   }
 }
-/* Source-owned Missal prayer divisions. No in-Mass study links. */
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics{
-  grid-column:1 / -1;grid-row:auto;display:block;
-  margin:10px 0 2px;padding:7px 0 8px 14px;
-  border:0;border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 42%,transparent);
-  background:none;color:var(--ao-muted);
-  font:italic 400 clamp(.88rem,1.55vw,1.04rem)/1.48 var(--ao-missal-face);
-  text-align:left;
-}
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-heading{
-  font:500 .64rem/1.25 var(--ao-font-ui,system-ui,sans-serif);
-  text-transform:uppercase;letter-spacing:.09em;color:var(--ao-mass-accent-text);
-  opacity:.78;margin-bottom:5px;
-}
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-action{
-  display:block;font:inherit;letter-spacing:0;color:var(--ao-muted);margin:2px 0;
-}
 /* A source rubric is a single understated italic line, NOT a card.
    The source, actor and date remain metadata, not repeated reading chrome. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics{
