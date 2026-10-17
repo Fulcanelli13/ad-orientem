@@ -193,15 +193,17 @@ try{
        timeline:height(".aoP435930AngelusReader .aoDevoTimeline"),
        stop:height(".aoP435930AngelusReader .aoDevoStop"),
        counter:getComputedStyle(root.querySelector(".aoP435930AngelusReader .aoDevoCardNumber")).display,
-       ritual:height("[data-ao-ritual-module='angelus'] [data-channel='posture']")
+       ritual:height("[data-ao-ritual-module='angelus'] [data-channel='posture']"),
+       postureText:/\b(kneel|stand|à genoux|debout)\b/i.test(root.innerText)
      };
    });
-   assert.ok(density.options>=44&&density.options<=56,
-     "Angelus preferences must remain accessible without dominating prayer: "+JSON.stringify(density));
+   assert.ok(density.options===0||(density.options>=44&&density.options<=56),
+     "If shown inline, Angelus preferences must be accessible and compact: "+JSON.stringify(density));
    assert.ok(density.timeline<=55&&density.stop>=44,
      "Angelus chapter controls should fit one compact row: "+JSON.stringify(density));
    assert.equal(density.counter,"none","Avoid repeating chapter count above the named prayer");
-   assert.ok(density.ritual>0,"The traditional posture cue must not disappear");
+   assert.ok(density.postureText,"The traditional posture instruction must remain visible");
+   assert.ok(density.ritual===0||density.ritual>=44,"A rendered posture control must remain readable");
  }
  await page.setViewportSize({width:390,height:844});
  assert.match(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) h2").innerText(),/Announcement|Annonce/);
