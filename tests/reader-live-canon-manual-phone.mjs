@@ -6,7 +6,7 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
-const out=resolve(root,"artifacts/live-canon-manual");
+const out=resolve(root,"artifacts/curated65-phone");
 await mkdir(out,{recursive:true});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
  ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
