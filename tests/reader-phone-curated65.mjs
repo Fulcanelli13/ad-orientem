@@ -580,15 +580,21 @@ try{
     assert.equal(priestObservedFive.finalTurn,true);
     assert.equal(priestObservedFive.finalCue,"AO.SM.C0256");
     const guide=page.locator('[data-role="guide-button"]');
-    assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
-    const guides=await page.evaluate(()=>{
+    assert.equal(await guide.count(),1,"Compatibility-only Guide control marker disappeared");
+    const surface=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
       const card=api.model.cards.find(c=>c.title==="Credo · Incarnation, Passion and Resurrection");
       api.showSequence(card.sequence);
-      const label=document.querySelector('[data-role="guide-button"]')?.textContent?.trim();
-      return {label};
+      const tile=document.querySelector('[data-role="guide-button"]');
+      return {hidden:tile?.hidden,disabled:tile?.disabled,
+        visible:getComputedStyle(tile).display!=="none",
+        ribbonCells:document.querySelectorAll('.ao-state-cell').length,
+        explanatoryGuide:!!api.getNativeEventState()?.guide};
     });
-    assert.ok(guides.label!=null,"Guide did not render");
+    assert.equal(surface.hidden,true,"The explanatory Guide remains in LIVE");
+    assert.equal(surface.disabled,true,"LIVE Guide still accepts user interaction");
+    assert.equal(surface.visible,false,"LIVE Guide still occupies a ribbon column");
+    assert.equal(surface.ribbonCells,2,"LIVE YOU / PRIEST ribbon was not preserved");
     await page.screenshot({path:resolve(out,lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-credo.png"),fullPage:false});
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
@@ -739,7 +745,7 @@ try{
       await page.screenshot({path:resolve(out,"priest-dual-clock-"+form.toLowerCase()+".png")});
     }finally{await context.close()}
   }
-  console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and Guide.");
+  console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and inline rubrics without Guide.");
 }finally{
   await browser?.close();
   await new Promise(done=>server.close(()=>done()));
