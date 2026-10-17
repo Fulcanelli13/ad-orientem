@@ -23,7 +23,7 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
   ["2026-09-29","ART-uido-eni-rchangel-ichael-efeating-atan","FEAST_ICONOGRAPHY",null,"sancti:09-29:1:w","Sancti/09-29"],
   ["2026-12-08","ART-eter-aul-ubens-mmaculate-onception","FEAST_ICONOGRAPHY",null,"sancti:12-08:1:w","Sancti/12-08"],
   ["2026-12-24","ART-hilippe-de-hampaigne-he-ream-of-aint-oseph","GOSPEL_SCENE","Matthew 1:18","sancti:12-24:1:v","Sancti/12-24"],
-  ["2026-12-25","cma-143784","GOSPEL_SCENE","Luke 2:1","sancti:12-25m1:1:w","Sancti/12-25m1"]
+  ["2026-12-25","cma-143784","GOSPEL_CONTEXT","Luke 2:1","sancti:12-25m1:1:w","Sancti/12-25m1"]
 ].map(([date,artworkId,relation,gospelStart,principalId,sourcePath])=>Object.freeze({date,artworkId,relation,gospelStart,principalId,sourcePath})));
 
 /** Release entries must name exact LOCAL masters. No remote thumbnail fallback. */
