@@ -81,6 +81,20 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;
 .pill{display:inline-block;border:1px solid #53606a;border-radius:100px;padding:4px 8px;font:11px system-ui,sans-serif;color:var(--muted);margin-bottom:12px}
 .held{padding:13px;border-left:2px solid #b7a179;background:var(--surface);font:13px/1.55 system-ui,sans-serif;color:var(--muted)}
 .meta-link{margin-top:14px;font:12px system-ui,sans-serif}
+.guide-dock{margin:13px 0;border:1px solid #5a5141;border-radius:10px;background:#111b25;padding:12px 13px;color:var(--text);font-family:system-ui,sans-serif}
+.guide-dock .guide-head{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.guide-dock .guide-head strong{font:500 17px Georgia,serif;color:var(--gold)}
+.guide-dock .guide-sub{margin:7px 0;color:var(--muted);font:12px/1.5 system-ui,sans-serif}
+.guide-dock .guide-routes{display:flex;gap:7px;flex-wrap:wrap}
+.guide-dock button,.guide-in-detail button{min-height:44px;border:1px solid #53606b;border-radius:8px;padding:9px 11px;background:#182431;color:var(--text);text-align:left;font:12px/1.35 system-ui,sans-serif}
+.guide-dock button[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
+.guide-dock .guide-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.guide-dock .guide-prompt{margin:11px 0 2px;font:normal 16px/1.45 Georgia,serif}
+.guide-dock .guide-target{color:var(--gold);font:11px/1.4 system-ui,sans-serif;margin:0}
+.guide-dock .guide-quiet{border:0;background:transparent;text-decoration:underline;color:var(--muted)}
+.guide-dock .guide-foot{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:10px 0 0}
+.guide-in-detail{border-top:1px solid #465361;margin-top:16px;padding-top:12px;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.guide-in-detail p{color:var(--muted);font:12px/1.45 system-ui,sans-serif;margin:0}
 .other{margin-top:16px;padding-top:11px;border-top:1px solid var(--line)}
 .other summary{cursor:pointer;font:13px system-ui,sans-serif;color:var(--muted);padding:7px 0}
 .other .choices{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
@@ -164,6 +178,15 @@ footer a{color:#d8bd89}
 <a id="photo-credit" href="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg" target="_blank" rel="noopener">Anthony O'Neil · CC BY-SA 2.0 ↗</a>
 </div>
 </div>
+<section class="guide-dock" id="guide-dock" aria-label="Optional guided discoveries" hidden>
+<div class="guide-head"><strong>Discover with the Guide</strong><button id="guide-toggle" type="button">Choose a trail</button></div>
+<p class="guide-sub" id="guide-status" role="status">Research-only guided discovery · three photographed objects in this first slice</p>
+<div id="guide-routes" class="guide-routes"></div>
+<p id="guide-prompt" class="guide-prompt" hidden></p>
+<p id="guide-target" class="guide-target" hidden></p>
+<div class="guide-actions" id="guide-actions"></div>
+<p class="guide-foot">Every suggestion is optional. Your earlier discoveries remain available, even after changing or leaving a trail. Historical answer drafts are not approved liturgical instruction.</p>
+</section>
 <details class="other"><summary>Choose a visible object by name</summary><div class="choices" id="object-choices"></div></details>
 <details class="other" id="inspection-details"><summary>Inspect further · sourced objects and illustrations</summary><div class="choices" id="inspection-choices">Loading sourced object references…</div></details>
 </section>
@@ -198,6 +221,7 @@ footer a{color:#d8bd89}
 </div>
 <details class="study-source" id="study-sources"><summary>Published references under review</summary><p class="disclaimer">These publications relate to this object's themes, not necessarily this precise question. They are research leads—not an approved explanation or permission to copy their contents.</p><ul id="study-source-links"></ul><p class="disclaimer">The printed 1962 Missal and 1960 Code of Rubrics govern any binding claims. Explanatory guides and computed Ordos are supporting references only.</p></details></div>
 <p class="meta-link" id="canonical-link"></p>
+<div id="guide-in-detail" class="guide-in-detail" hidden><p>Continue exploring the church whenever you wish.</p><button type="button" id="guide-return">Return to guide</button></div>
 </div>
 </aside>
 </main>
@@ -217,7 +241,16 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null};
+const GUIDE_SESSION_KEY="ao-visible-mass-visitor-trails-v1";
+const GUIDED_OBJECTS=new Set(["AL01","AL06","SN02"]);
+function guideSave(){
+ if(!state.guide)return;
+ try{window.sessionStorage?.setItem(GUIDE_SESSION_KEY,JSON.stringify(state.guide.serialize()));}catch{}
+}
+function guideRead(){
+ try{return JSON.parse(window.sessionStorage?.getItem(GUIDE_SESSION_KEY)||"null");}catch{return null;}
+}
 const RELATED_OBJECTS={
  AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
  AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
