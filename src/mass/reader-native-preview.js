@@ -9,6 +9,7 @@ import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
 import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards } from "./reader-live-curated-cards.js";
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
+import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -399,7 +400,9 @@ export async function prepareNativeReaderPreview({
     ? (explicitIntroitEntry
         ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
         : curatedOrdinary)
-    : projectSourceFirst48Presentation(model);
+    : String(model.presentationMode??"").toUpperCase()==="MISSAL"
+      ? projectGranularMissalCards(model)
+      : projectSourceFirst48Presentation(model);
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
   if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
   const eventState=createNativeEventStateController(events);
@@ -2308,6 +2311,17 @@ export async function mountNativeReaderPreview({
       root.dataset.r17NativeCue="unresolved";
     }
     current=card;
+    // Missal is a static book: select only the canonical opening cue as a
+    // page-level reference for its ribbon. Unlike LIVE, never advance the
+    // ritual clock/cinematics from reading scroll. A page with no exact
+    // sourced cue remains unresolved, not a guessed posture or action.
+    if((changed || !activeCueId) && String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"){
+      const firstSourceCue=(visibleCard.paragraphs??[])
+        .flatMap(paragraph=>paragraph.sourceCueIds??[])
+        .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)))??null;
+      activeCueId=firstSourceCue;
+      if(firstSourceCue)transientGuard.resolveCue(firstSourceCue);
+    }
     ready.scholaState.activateForCard(visibleCard);
     const state=projectedState();
     reader.renderMoment({
@@ -2315,6 +2329,36 @@ export async function mountNativeReaderPreview({
       sectionTitle:visibleCard.title,
       cardTitle:visibleCard.title,
       cardUpdate:true,
+      missalRubric:String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
+        ? (()=>{
+          const first=(visibleCard.paragraphs??[])
+            .flatMap(row=>row.sourceCueIds??[])
+            .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
+          const sourced=first&&ready.cueState.supported
+            ? ready.cueState.project(first):null;
+          if(!sourced?.supported)return null;
+          const icons=iconKeysForReaderState({
+            priestAction:sourced.priestAction,
+            priestPosition:sourced.priestPosition,
+            gesture:sourced.gesture,
+          });
+          const withIcon=(value,key)=>value
+            ? Object.freeze({...value,iconKey:key??null}) : null;
+          return Object.freeze({
+            sourceCueId:first,
+            priestAction:withIcon(sourced.priestAction,icons.priestActionIconKey),
+            priestPosition:withIcon(sourced.priestPosition,icons.priestPositionIconKey),
+            faithfulGesture:withIcon(sourced.gesture,icons.gestureIconKey),
+          });
+        })()
+        :null,
+      missalHeadings:String(ready.prepared?.readerPreferences?.mode ??
+        ready.prepared?.session?.resolvedMass?.presentationMode??"").toUpperCase()==="MISSAL" ||
+        String(root.dataset.r17PresentationMode??"").toUpperCase()==="MISSAL"
+          ? missalPrayerHeadingsForCard(visibleCard,{
+              language:ready.prepared?.readerPreferences?.language??"en",
+            })
+          : [],
       paragraphs:withPublishedCanonParagraphRubrics(
         visibleCard.paragraphs,ready.data?.rubricEvents??null,{
           form:ready.prepared?.session?.resolvedMass?.form,

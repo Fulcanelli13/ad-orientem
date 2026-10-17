@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import { readFile } from "node:fs/promises";
+import { mkdir, readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
@@ -281,8 +281,14 @@ try{
     source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
     progress:document.querySelector('[data-role="progress"]')?.textContent??"",
   }));
-  assert.deepEqual(switched,{mode:"MISSAL",card:"AO.CARD.015",cue:"AO.SM.C0174",product:30,source:30,progress:"15 / 30"},
+  assert.deepEqual(switched,{mode:"MISSAL",card:"AO.CARD.015",cue:"AO.SM.C0174",product:67,source:30,progress:"34 / 67"},
     "SIMPLE -> MISSAL changed the canonical Host elevation anchor");
+  assert.equal(await page.locator('.ao-missal-prayer-heading[data-source-block-id="AO.SM.B052"]').count(),1,
+    "Missal lacks its in-text canonical prayer title at the Host Consecration");
+  assert.equal(await page.locator('[data-role="missal-faithful-gesture"]').count(),1,
+    "Missal faithful gesture channel missing from top ribbon");
+  assert.equal(await page.locator('[data-role="missal-priest-action"]').count(),1,
+    "Missal priest action channel missing from top ribbon");
 
   await tapMode("LIVE");
   switched=await page.evaluate(()=>({
@@ -544,6 +550,68 @@ try{
   }
   console.log("PASS Native source-first Mass text print on phone: 30 sections, 96 blocks, Canon B061, EN/FR, LIVE48 preserved");
 
+  // Missal-only visual QA: independently capture actual 320/390px source
+  // prayer pages and ribbon without perturbing the LIVE phone assertions.
+  // Captures are presentation evidence, not a claim of editorial approval.
+  await mkdir(resolve(repoRoot,"artifacts/missal-phone-review"),{recursive:true});
+  for(const width of [320,390]){
+    const visualContext=await browser.newContext({
+      viewport:{width,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,
+    });
+    const visualPage=await visualContext.newPage();
+    await visualPage.goto("http://127.0.0.1:4173/tests/fixtures/reader-phone-harness.html",
+      {waitUntil:"networkidle"});
+    await visualPage.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
+      null,{timeout:20000});
+    await visualPage.locator("[data-reader-preferences]").click();
+    await visualPage.locator('[data-reader-mode="MISSAL"]').click();
+    await visualPage.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getPresentationMode()==="MISSAL");
+    await visualPage.locator('[data-reader-preferences-close]').click();
+    await visualPage.waitForFunction(()=>document.querySelector(
+      '[data-role="mass-preferences"]')?.dataset.open==="false");
+    await visualPage.waitForTimeout(270);
+    const ribbon=visualPage.locator(".ao-state-ribbon");
+    assert.equal(await ribbon.isVisible(),true,
+      "Missal gesture and priest-action top ribbon must be visible");
+    assert.ok((await ribbon.boundingBox())?.height>=56,
+      "Missal top ribbon collapsed");
+    const pages=[
+      ["offertory-bread","AO.MISSAL.010.2","AO.SM.B031"],
+      ["canon-opening","AO.MISSAL.014.1","AO.SM.B047"],
+      ["canon-memento-dead","AO.MISSAL.017.4","AO.SM.B057"],
+      ["consecration-host","AO.CARD.015","AO.SM.B052"],
+    ];
+    for(const [name,sectionId,blockId] of pages){
+      await visualPage.evaluate(id=>window.__AO_PHONE_PREVIEW.showSection(id),sectionId);
+      await visualPage.waitForFunction(id=>
+        window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId===id,sectionId,{timeout:5000});
+      const heading=visualPage.locator('.ao-missal-prayer-heading[data-source-block-id="'+blockId+'"]');
+      assert.equal(await heading.count(),1,
+        "Missal visual target lacks exact source block "+blockId);
+      assert.equal(await visualPage.locator('.ao-state-cell[data-side="faithful"]').isVisible(),true,
+        "Missal "+name+" faithful ribbon hidden");
+      assert.equal(await visualPage.locator('.ao-state-cell[data-side="priest"]').isVisible(),true,
+        "Missal "+name+" priest ribbon hidden");
+      assert.equal(await visualPage.locator(".ao-state-source").isVisible(),false,
+        "Missal "+name+" has duplicate Canon source banner in the rubric ribbon");
+      if(blockId==="AO.SM.B031"){
+        assert.match(
+          (await visualPage.locator('[data-role="missal-priest-action"]').textContent())??"",
+          /OFFERS HOST/,
+          "Missal rubric ribbon did not retrieve B031's exact C0110 action"
+        );
+      }
+
+      const horizontalOverflow=await visualPage.evaluate(()=>
+        document.documentElement.scrollWidth>window.innerWidth+1);
+      assert.equal(horizontalOverflow,false,
+        "Missal "+name+" has horizontal page overflow at "+width+"px");
+      await visualPage.screenshot({
+        path:resolve(repoRoot,"artifacts/missal-phone-review",width+"-"+name+".png"),
+      });
+    }
+    await visualContext.close();
+  }
   console.log("phone browser acceptance: PASS — 320/360/390/430px Chromium touch, source-first Mass, plus native Asperges/Palm/Ash prelude handoffs.");
 }finally{
   await browser?.close();
