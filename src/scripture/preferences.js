@@ -26,7 +26,7 @@ export function createScripturePreferences(storage=globalThis.localStorage){
   },
   englishEdition(){
    const v=read(storage).englishEdition;
-   return ["dr-challoner","cpdv-2009"].includes(v)?v:"cpdv-2009";
+   return ["dr-challoner","cpdv-2009"].includes(v)?v:"dr-challoner";
   },
   setEnglishEdition(id){
    if(!["dr-challoner","cpdv-2009"].includes(id))throw Error("Unavailable English reader preference");
