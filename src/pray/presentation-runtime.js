@@ -555,6 +555,16 @@ function prayFamilies(){
     ['external','pray.nightly_examen',L('Nightly Examination','Examen du soir'),L('A short examination before night prayer.','Un bref examen avant la prière du soir.')]
    ])
   }),
+  chaplets:Object.freeze({
+   title:L('Rosary & Chaplets','Rosaire & chapelets'),
+   description:L('Choose a bead devotion. Each retains its own traditional prayers and method.','Choisissez une dévotion au chapelet. Chacune conserve ses prières et sa méthode traditionnelles.'),
+   assetId:'ao-rich-novenas',
+   items:Object.freeze([
+    ['own','pray.rosary',L('The Holy Rosary','Le Saint Rosaire'),L('Pray the Mysteries in the existing Rosary companion, unchanged.','Priez les mystères dans le compagnon du Rosaire existant, sans modification.')],
+    ['own','pray.rosary_methods',L('Ways to pray the Rosary','Manières de prier le Rosaire'),L('Choose the existing traditional Rosary methods.','Choisissez parmi les méthodes traditionnelles existantes du Rosaire.')],
+    ['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('A distinct five-decade chaplet with its own prayers.','Un chapelet distinct de cinq dizaines avec ses propres prières.')]
+   ])
+  }),
   eucharistic:Object.freeze({
    title:L('Eucharistic Prayer','Prière eucharistique'),
    description:L('Prayer before the Blessed Sacrament and public Eucharistic devotions.','Prière devant le Saint-Sacrement et dévotions eucharistiques publiques.'),
@@ -629,7 +639,8 @@ function renderPrayHome(){
   ${group('Before the Blessed Sacrament','Devant le Saint-Sacrement',door('eucharistic'))}
   ${group('Penance and the Passion','Pénitence et Passion',door('penance')+door('passion'))}
   ${group('Devotions and prayers','Dévotions et prières',door('devotions')+door('library'))}
-  <section class="aoP435930RootGroup"><h3>${esc(L('Bead devotions','Dévotions au chapelet'))}</h3><div class="aoP435930ModuleGrid"><button type="button" data-p435930-mercy-open class="aoP435930Module">${esc(L('Divine Mercy Chaplet','Chapelet de la Divine Miséricorde'))}</button><button type="button" data-p435930-rosary-methods class="aoP435930Module">${esc(L('Rosary methods','Méthodes du Rosaire'))}</button></div></section>
+  ${group('Rosary and chaplets','Rosaire et chapelets',
+    door('chaplets')+prayFamilyItem(['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Open the chaplet directly','Ouvrir directement le chapelet')]))}
  </main>`;
 }
 function renderPrayFamily(){
