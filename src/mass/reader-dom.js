@@ -1,7 +1,7 @@
 import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
-import { missalRubricDetailForParagraph } from "./reader-missal-rubric-detail.js";
+import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
@@ -820,6 +820,16 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"] .ao-prayer-body{
   max-width:1120px;width:100%;gap:0;
 }
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-state-guide{
+  display:none!important;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="TEXT"],
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{
+  border-bottom:1px solid color-mix(in srgb,var(--ao-text-primary,#e9e4d9) 7%,transparent);
+}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   column-gap:var(--ao-missal-column-gap);
@@ -852,11 +862,17 @@ button.ao-schola-control{cursor:pointer}
   cursor:default;
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"]{
-  display:block;padding:9px 0;margin:8px 0;
-  font-size:clamp(13px,1.5vw,16px)!important;
+  display:block;padding:7px 0;margin:4px 0;
+  border-bottom:0;font-size:clamp(13px,1.48vw,16px)!important;
   font-family:var(--ao-missal-face)!important;
   font-style:italic!important;
   color:var(--ao-text-muted,#b5b8b4);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"]::before,
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"]::after{display:none!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"] .ao-line-primary{
+  font-style:italic!important;font-size:.91em!important;line-height:1.45!important;
+  color:var(--ao-text-muted,#b5b8b4);text-align:center;
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RUBRIC"] .ao-line-secondary{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="CONSECRATION_WORDS"]{
@@ -1130,50 +1146,46 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-action{
   display:block;font:inherit;letter-spacing:0;color:var(--ao-muted);margin:2px 0;
 }
-/* Optional second depth of the *same* certified ceremonial rubric.
-   Collapsed natively, so ordinary Missal columns remain quiet and legible. */
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth{
-  grid-column:1 / -1;display:block;margin:5px 0 10px;padding:0 0 2px 14px;
-  border:0;border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 25%,transparent);
-  font:400 .8rem/1.48 var(--ao-font-ui,system-ui,sans-serif);
-  color:var(--ao-muted);max-width:100%;min-width:0;
+/* A source rubric is a single understated italic line, NOT a card.
+   The source, actor and date remain metadata, not repeated reading chrome. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics{
+  grid-column:1 / -1;grid-row:auto;display:block;
+  margin:5px 0 0;padding:1px 0 0;
+  border:0;background:transparent;text-align:center;
+  color:var(--ao-text-muted,#b5b8b4);
+  font:italic 400 clamp(.82rem,1.45vw,.98rem)/1.43 var(--ao-missal-face);
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth>summary{
-  display:list-item;cursor:pointer;list-style-position:inside;
-  color:var(--ao-mass-accent-text);font-size:.75rem;
-  padding:6px 0;min-height:34px;user-select:none;
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-heading,
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-source{display:none!important}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-missal-rubric-action{
+  display:block;font:inherit;color:inherit;margin:1px 0;
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth[open]>summary{
-  padding-bottom:9px;
+/* Actual additional rubrical information exists at chalice preparation:
+   the brief direction is visible and the form-specific action/exception is
+   accessible on tap. Generic per-word "Placement and source" was removed. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-chalice-short{
+  display:block;margin:6px auto 0;
+  color:var(--ao-text-muted,#b5b8b4);
+  font:italic 400 clamp(.8rem,1.25vw,.95rem)/1.4 var(--ao-missal-face);
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth ol{
-  margin:0 0 9px;padding:0 0 0 20px;
-  font:italic 400 clamp(.84rem,1.45vw,.96rem)/1.55 var(--ao-missal-face);
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-chalice-detail{
+  display:block;margin:1px auto 0;max-width:60ch;
+  color:var(--ao-text-muted,#b5b8b4);font:.76rem/1.5 var(--ao-font-ui,system-ui,sans-serif);
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth li{
-  padding:0 0 7px 3px;overflow-wrap:anywhere;
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-chalice-detail>summary{
+  cursor:pointer;display:list-item;list-style-position:inside;
+  width:max-content;max-width:100%;margin:0 auto;
+  padding:5px 7px;min-height:30px;
+  color:var(--ao-mass-accent-text);font-size:.74rem;
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth .ao-missal-latin-trigger{
-  display:block;font:400 .71rem/1.45 var(--ao-font-ui,system-ui,sans-serif);
-  color:var(--ao-muted);margin-top:3px;
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-chalice-detail p{
+  margin:5px 5px 7px;font:italic 400 clamp(.86rem,1.4vw,1rem)/1.5 var(--ao-missal-face);
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth .ao-missal-rubric-evidence{
-  margin:5px 0 2px;font:400 .7rem/1.4 var(--ao-font-ui,system-ui,sans-serif);
-  color:var(--ao-muted);
-}
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth a{
-  display:inline-block;color:var(--ao-mass-accent-text);text-underline-offset:3px;
-  font:500 .72rem/1.5 var(--ao-font-ui,system-ui,sans-serif);
-}
-@media(prefers-reduced-motion:reduce){
- .ao-reader-shell[data-mode="MISSAL"] .ao-missal-rubric-depth *{scroll-behavior:auto}
-}
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-canon-inline-source{
-  display:inline-block;margin-top:6px;font:500 .65rem/1.3 var(--ao-font-ui,system-ui,sans-serif);
-  color:var(--ao-mass-accent-text);opacity:.68;
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-chalice-detail a{
+  color:var(--ao-mass-accent-text);font-size:.72rem;
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-heading{
-  margin:26px 0 12px;padding:12px 0 8px;
+  margin:15px 0 8px;padding:8px 0 4px;
   border-top:1px solid color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);
   text-align:center;
 }
@@ -1184,11 +1196,7 @@ button.ao-schola-control{cursor:pointer}
   margin:0;font:500 clamp(1rem,2.2vw,1.3rem)/1.4 var(--ao-missal-display);
   color:var(--ao-text);letter-spacing:.015em;
 }
-.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-description{
-  display:block;margin:4px auto 0;max-width:45ch;
-  font:italic clamp(.83rem,1.4vw,1rem)/1.35 var(--ao-missal-face);
-  color:var(--ao-muted);
-}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-prayer-description{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-state-detail{
   display:block;max-width:142px;margin-top:3px;overflow:hidden;
   text-overflow:ellipsis;white-space:nowrap;color:var(--ao-mass-accent-text);
@@ -1578,7 +1586,7 @@ export function buildReaderShellMarkup(prepared = {}) {
       <span class="ao-icon-mask ao-missal-gesture-icon" data-icon-slot="faithful-gesture-top" hidden aria-hidden="true"></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span><span class="ao-missal-state-detail" data-role="missal-faithful-gesture" hidden></span></span>
     </div>
-    <button class="ao-state-guide" type="button" data-role="guide-button" disabled aria-label="Open Guide and rubrics">
+    <button class="ao-state-guide" type="button" data-role="guide-button" disabled ${mode==="MISSAL" ? 'hidden aria-hidden="true" tabindex="-1"' : ""} aria-label="Open Guide and rubrics">
       <span class="ao-guide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.75h10.5A2.5 2.5 0 0 1 18 7.25v12H7.5A2.5 2.5 0 0 1 5 16.75z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h6.5M8 11h6.5M8 14h4.5" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/></svg></span>
       <span class="ao-guide-copy"><small>GUIDE</small><b class="ao-guide-short" data-role="guide-short">RUBRICS</b></span>
     </button>
@@ -2894,8 +2902,9 @@ export function createReaderDomAdapter({
 
     const guideButton=root.querySelector('[data-role="guide-button"]');
     if(guideButton){
-      guideButton.disabled=!current.guide;
-      guideButton.title=current.guide?.text??"Guide";
+      guideButton.disabled=mode==="MISSAL"||!current.guide;
+      guideButton.hidden=mode==="MISSAL";
+      guideButton.title=mode==="MISSAL"?"":(current.guide?.text??"Guide");
     }
     const pop=root.querySelector('[data-role="guide-popover"]');
     // Preserve an open Guide during in-card gesture, posture and Schola updates.
@@ -2937,16 +2946,34 @@ export function createReaderDomAdapter({
               title.className="ao-missal-prayer-name";
               title.textContent=heading.title;
               headingNode.append(title);
-              if(heading.description){
-                const description=doc.createElement("small");
-                description.className="ao-missal-prayer-description";
-                description.textContent=heading.description;
-                headingNode.append(description);
+              // All generic descriptions merely restate the title and
+              // belong to Guide/Formation, not underneath each prayer name.
+              // B032 alone has *material* form-specific rubrical detail.
+              if(heading.blockId==="AO.SM.B032" && heading.description){
+                const short=doc.createElement("span");
+                short.className="ao-missal-chalice-short";
+                short.textContent=frenchReader
+                  ?"Le vin et l’eau sont préparés dans le calice."
+                  :"The wine and water are prepared in the chalice.";
+                const extended=doc.createElement("details");
+                extended.className="ao-missal-chalice-detail";
+                extended.dataset.sourceBlockId=heading.blockId;
+                const trigger=doc.createElement("summary");
+                trigger.textContent=frenchReader?"Précision de la rubrique":"Ceremonial detail";
+                const bodyText=doc.createElement("p");
+                bodyText.textContent=heading.description;
+                const witness=doc.createElement("a");
+                witness.href="https://www.intratext.com/IXT/LAT0820/_PI.HTM";
+                witness.target="_blank";
+                witness.rel="noopener noreferrer";
+                witness.textContent=frenchReader?"Ritus servandus · 1962":"Ritus servandus · 1962";
+                extended.append(trigger,bodyText,witness);
+                headingNode.append(short,extended);
               }
               body.append(headingNode);
             }
           }
-          const node=doc.createElement("p");
+          const node=doc.createElement(mode==="MISSAL"?"div":"p");
           node.className="ao-reader-paragraph";
           node.dataset.kind=p.kind;
           if(p.speakerRole)node.dataset.speakerRole=p.speakerRole;
@@ -2963,7 +2990,7 @@ export function createReaderDomAdapter({
           if(p.kind==="RUBRIC"){
             const rubricText=stripRubricBrackets(p.primary);
             node.dataset.stateDuplicate=String(rubricIsStateDuplicate(rubricText));
-            const canExpand=rubricText.length>180;
+            const canExpand=mode!=="MISSAL" && rubricText.length>180;
             node.dataset.rubricExpandable=String(canExpand);
             node.dataset.expanded="false";
             if(canExpand){
@@ -3083,9 +3110,17 @@ export function createReaderDomAdapter({
           // The initial paragraph.active state is not authoritative after
           // native scroll tracking starts. Cue highlighting follows the live
           // DOM focus and the *same* projected gesture as the rail below.
-          renderReaderText(primary,p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary);
+          const bookRubric=mode==="MISSAL" && p.kind==="RUBRIC"
+            ? missalSourceRubricCopy(p,{language:frenchReader?"fr":"en"}):null;
+          renderReaderText(primary,bookRubric?.text ??
+            (p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary));
+          if(bookRubric){
+            node.dataset.missalRubricLanguage=bookRubric.requestedLanguage;
+            node.dataset.sourceRubricWitness=bookRubric.owner;
+          }
           node.append(primary);
-          const parallel=p.kind==="RUBRIC"?p.secondary:(p.secondary??p.alternate);
+          const parallel=mode==="MISSAL"&&p.kind==="RUBRIC"
+            ? null:(p.kind==="RUBRIC"?p.secondary:(p.secondary??p.alternate));
           if(parallel){
             const secondary=doc.createElement("span");
             secondary.className="ao-line-secondary";
@@ -3100,32 +3135,17 @@ export function createReaderDomAdapter({
           // Missal's source text. Never print a second paraphrase below them.
           const alreadyPrintedRubric=mode==="MISSAL" &&
             (p.kind==="RUBRIC" || /^\s*\[/.test(String(p.primary??"")));
-          const rubricDepth=mode==="MISSAL"
-            ? missalRubricDetailForParagraph(p):null;
-          // Only already-printed *actions* are suppressed. A certified
-          // persistent state that begins at the same bracketed source cue
-          // supplies a different fact and must remain visible once.
+          // Exact source-printed rubric wins. The only exception is a
+          // separately approved persistent priest state: not another action.
           const shortRubrics=mode==="MISSAL"&&alreadyPrintedRubric
             ? inlineRubrics.filter(event=>event.kind==="STATE")
             : inlineRubrics;
           if(shortRubrics?.length){
             const note=doc.createElement("span");
-            note.className=mode==="MISSAL"?"ao-missal-inline-rubrics":"ao-canon-inline-rubrics";
+            note.className=mode==="MISSAL"
+              ?"ao-missal-inline-rubrics":"ao-canon-inline-rubrics";
             note.dataset.sourceAuthority="MR62_RITUS";
             note.dataset.observedNow="false";
-            const heading=doc.createElement("span");
-            heading.className="ao-canon-inline-heading";
-            const hasMinisters=mode==="MISSAL" &&
-              shortRubrics.some(event=>event.actor!=="PRIEST");
-            const hasPriest=mode==="MISSAL" &&
-              shortRubrics.some(event=>event.actor==="PRIEST");
-            heading.textContent=mode==="MISSAL"
-              ? (hasMinisters
-                ? (hasPriest
-                  ? (frenchReader?"Rubriques · célébrant et ministres":"Rubrics · celebrant and ministers")
-                  : (frenchReader?"Rubrique · ministres sacrés":"Rubric · sacred ministers"))
-                : (frenchReader?"Rubrique · prêtre":"Rubric · priest"))
-              : (frenchReader?"PRÊTRE · RUBRIQUE DE 1962":"PRIEST · 1962 RUBRIC");
             const actions=doc.createElement("span");
             actions.className="ao-canon-inline-actions";
             if(mode==="MISSAL"){
@@ -3140,59 +3160,12 @@ export function createReaderDomAdapter({
             }else{
               actions.textContent=shortRubrics.map(event=>event.shortAction).join(" · ");
             }
-            note.append(heading,actions);
-            const sourceUrl=shortRubrics[0]?.sourceUrl;
-            if(sourceUrl){
-              const source=doc.createElement("a");
-              source.className="ao-canon-inline-source";
-              source.dataset.rubricSourceLink="true";
-              source.href=sourceUrl;
-              source.target="_blank";
-              source.rel="noopener noreferrer";
-              source.textContent="Ritus servandus · 1962";
-              note.append(source);
-            }
+            note.append(actions);
             node.append(note);
           }
-          // The source's bracketed rubric remains the visible SHORT form.
-          // Its approved ordered actions are disclosed only on request.
-          // This is deliberately not a Guide or formation commentary.
-          if(rubricDepth){
-            const detail=doc.createElement("details");
-            detail.className="ao-missal-rubric-depth";
-            detail.dataset.rubricDetailOwner=rubricDepth.owner;
-            detail.dataset.shortInSource=String(rubricDepth.shortAlreadyInSource);
-            detail.dataset.observedNow="false";
-            const summary=doc.createElement("summary");
-            summary.textContent=frenchReader
-              ? (rubricDepth.steps.length>1?"Déroulement précis de la rubrique":"Emplacement et source")
-              : (rubricDepth.steps.length>1?"Detailed ceremonial sequence":"Placement and source");
-            const steps=doc.createElement("ol");
-            steps.className="ao-missal-rubric-steps";
-            for(const event of rubricDepth.steps){
-              const step=doc.createElement("li");
-              step.dataset.rubricStepId=event.id;
-              step.dataset.sourceCueId=event.cueId;
-              step.textContent=event.text;
-              if(event.latinTrigger){
-                const trigger=doc.createElement("small");
-                trigger.className="ao-missal-latin-trigger";
-                trigger.textContent=(frenchReader?"Aux mots : ":"At the words: ")+event.latinTrigger;
-                step.append(trigger);
-              }
-              steps.append(step);
-            }
-            const evidence=doc.createElement("p");
-            evidence.className="ao-missal-rubric-evidence";
-            evidence.textContent=(frenchReader?"Rubrique prescrite ; non une observation en direct.":"Prescribed rubric; not a live observation.");
-            const link=doc.createElement("a");
-            link.href=rubricDepth.sourceUrl;
-            link.target="_blank";
-            link.rel="noopener noreferrer";
-            link.textContent=frenchReader?"Source · Ritus servandus (1962)":"Source · Ritus servandus (1962)";
-            detail.append(summary,steps,evidence,link);
-            node.append(detail);
-          }
+          // Existing "long" registry data contains only the SAME short
+          // actions again. No fake detail buttons, source-link repetition
+          // or secondary guide panels inside the Mass text.
           body.append(node);
         }
       }
