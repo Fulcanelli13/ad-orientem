@@ -23,8 +23,8 @@
     "essential": 93,
     "edited": 32,
     "protected": 35,
-    "unchanged": 25,
-    "editionCorrections": 1
+    "unchanged": 24,
+    "editionCorrections": 2
   },
   "candidateSourceEditions": [
     "cpdv-2009",
@@ -47,6 +47,17 @@
           "dr-challoner"
         ],
         "status": "REFERENCE_BOUNDARY_RECONCILED_NOT_CERTIFIED_PRINTED_EDITIONS"
+      },
+      {
+        "unitId": "H68-04",
+        "original": "Acts 7:54–60",
+        "originalCandidateEdition": "crampon-1923",
+        "target": "Acts 7:54–59",
+        "targetEditions": [
+          "cpdv-2009",
+          "dr-challoner"
+        ],
+        "status": "SPLIT_MERGED_VERSE_ALIGNMENT_NOT_CERTIFIED_PRINTED_EDITIONS"
       }
     ]
   },
@@ -1657,17 +1668,23 @@
       "v18ChapterId": "H68",
       "scene": "St Stephen's martyrdom",
       "proposedSelectedReferences": [
-        "Acts 7:54–60"
+        "Acts 7:54–59"
       ],
-      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
-      "reason": "Keep Stephen's witness; add the earlier accusation as separate bridge.",
+      "selectionStatus": "EDITION_AWARE_REFERENCE_CORRECTION",
+      "reason": "Original Acts 7:54–60 follows Crampon's split between the vision and Stephen's words in 7:55–56, with his final prayer in 7:60. CPDV/Douay combine the vision and words in 7:55 and close Stephen's martyrdom at 7:59. Do not misinterpret the shorter target range as omitted martyrdom verses.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
       "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "originalReferenceEditionWorkingHypothesis": "crampon-1923",
+      "targetReferenceEditions": [
+        "cpdv-2009",
+        "dr-challoner"
+      ],
+      "originalEditionIndependentlyCertified": false
     },
     {
       "unitId": "H69-01",
