@@ -10,7 +10,7 @@ const economy=JSON.parse(readFileSync(
 
 assert.equal(economy.schema,"ao.historia.v18.essential-verse-economy.v1");
 assert.equal(economy.status,"EDITORIAL_PROVISIONAL_VERSE_COORDINATES_ONLY");
-assert.deepEqual(economy.counts,{essential:93,edited:32,protected:35,unchanged:26});
+assert.deepEqual(economy.counts,{essential:93,edited:32,protected:35,unchanged:25,editionCorrections:1});
 assert.equal(economy.decisions.length,93);
 assert.equal(economy.canonical.originalV18Chapters,78);
 assert.equal(economy.canonical.originalV18Segments,217);
@@ -78,7 +78,7 @@ function coords(piece,edition){
  }
  return result;
 }
-const seen=new Set(),stats={edited:0,protected:0,unchanged:0,halfVerses:0},books=new Set();
+const seen=new Set(),stats={edited:0,protected:0,unchanged:0,editionCorrections:0,halfVerses:0},books=new Set();
 let originalVerseCount=0,selectedVerseCount=0;
 for(const decision of economy.decisions){
  assert.ok(!seen.has(decision.unitId),"No duplicated v18 identity");
@@ -92,10 +92,16 @@ for(const decision of economy.decisions){
  assert.equal(decision.approvedForProduction,false);
  assert.equal(decision.sourceTextCollatedAgainstPrintedEditions,false);
  const source=v18.get(decision.unitId),v18Codes=[];
+ const editionRepair=decision.selectionStatus==="EDITION_AWARE_REFERENCE_CORRECTION";
  for(const piece of source.parts){
-  const cp=coords(piece,"cpdv-2009"),dr=coords(piece,"dr-challoner");
-  assert.deepEqual(cp,dr,"Edition coordinates must be verified separately");
-  v18Codes.push(...cp);
+  if(editionRepair){
+   assert.equal(decision.unitId,"H15-02");
+   v18Codes.push(...coords(piece,"crampon-1923"));
+  }else{
+   const cp=coords(piece,"cpdv-2009"),dr=coords(piece,"dr-challoner");
+   assert.deepEqual(cp,dr,"Edition coordinates must be verified separately");
+   v18Codes.push(...cp);
+  }
  }
  const universe=new Set(v18Codes),chosen=[];
  for(const excerpt of decision.proposedSelectedReferences){
@@ -111,11 +117,13 @@ for(const decision of economy.decisions){
  assert.equal(chosenSet.size,chosen.length,"No repeated principal excerpt verse");
  let prior=-1;
  for(const code of chosen){
-  assert.ok(universe.has(code),"Selection lies outside original v18: "+
-   decision.unitId+" "+code);
-  const order=v18Codes.indexOf(code);
-  assert.ok(order>prior,"Out-of-order principal extraction: "+decision.unitId);
-  prior=order;
+  if(!editionRepair){
+   assert.ok(universe.has(code),"Selection lies outside original v18: "+
+    decision.unitId+" "+code);
+   const order=v18Codes.indexOf(code);
+   assert.ok(order>prior,"Out-of-order principal extraction: "+decision.unitId);
+   prior=order;
+  }
  }
  originalVerseCount+=v18Codes.length;
  selectedVerseCount+=chosen.length;
@@ -127,6 +135,12 @@ for(const decision of economy.decisions){
  }else if(decision.selectionStatus==="DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"){
   stats.protected++;
   assert.equal(chosen.length,v18Codes.length,"Protected biblical reading must remain complete");
+ }else if(editionRepair){
+  stats.editionCorrections++;
+  assert.equal(decision.originalReferenceEditionWorkingHypothesis,"crampon-1923");
+  assert.equal(decision.originalEditionIndependentlyCertified,false);
+  assert.deepEqual(decision.proposedSelectedReferences,["Genesis 32:22–32"]);
+  assert.equal(chosen.length,v18Codes.length,"The Jabbok source scene must not lose verses");
  }else{
   stats.unchanged++;
   assert.equal(decision.selectionStatus,"ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK");
@@ -138,7 +152,7 @@ for(const decision of economy.decisions){
  }
 }
 assert.equal(seen.size,93);
-assert.deepEqual(stats,{edited:32,protected:35,unchanged:26,halfVerses:1});
+assert.deepEqual(stats,{edited:32,protected:35,unchanged:25,editionCorrections:1,halfVerses:1});
 assert.ok(selectedVerseCount<originalVerseCount);
 assert.ok(originalVerseCount-selectedVerseCount>80,"No fake compression reported");
 for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
@@ -152,4 +166,4 @@ assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
 assert.equal(economy.verification.fullLiteraryReadAloud,false);
 assert.equal(economy.verification.CatholicEditorialApproval,false);
 assert.equal(economy.verification.translationRightsApproval,false);
-console.log("PASS Historia essentials: 93 v18 units; 32 proposed trims, 35 locked, 26 baseline; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
+console.log("PASS Historia essentials: 93 v18 units; 32 proposed trims, 35 locked, 25 baseline and 1 edition correction; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
