@@ -722,8 +722,8 @@ assert.equal(desk.counts.movements,37);
 assert.equal(desk.counts.essentialUnits,93);
 assert.equal(desk.counts.originalBContextUnits,67);
 assert.deepEqual(desk.counts.bContextDisposition,{
- MANDATORY_BRIEF_CONTEXT:32,GENEALOGY_NAVIGATION_NOT_PROSE:2,
- TYPOLOGICAL_REFERENCE_ONLY:5,NO_MAIN_CONTEXT_NEEDED:28});
+ MANDATORY_BRIEF_CONTEXT:31,GENEALOGY_NAVIGATION_NOT_PROSE:2,
+ TYPOLOGICAL_REFERENCE_ONLY:5,NO_MAIN_CONTEXT_NEEDED:29});
 assert.equal(desk.counts.independentStoryUnitsStillC,54);
 assert.equal(desk.counts.noFeaturedReadingUnitsStillD,3);
 assert.equal(desk.counts.bridgeSourceCandidates,11);
@@ -750,9 +750,9 @@ for(const decision of desk.contextDecisions){
  }
 }
 assert.equal(seenBDesk.size,67);
-assert.equal(keepB,32);
-assert.equal(desk.contextDecisions.find(d=>d.unitId==="H07-01").readthroughDecision,"MANDATORY_BRIEF_CONTEXT",
- "Ark construction must be explained before the Flood's Ark-entry scene");
+assert.equal(keepB,31);
+assert.equal(desk.contextDecisions.find(d=>d.unitId==="H07-01").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED",
+ "Ark construction is already supplied by the original Genesis 6 bridge; never repeat it");
 assert.equal(desk.contextDecisions.find(d=>d.unitId==="H06-01").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED",
  "Do not double-count moral corruption before the Ark");
 assert.equal(desk.contextDecisions.find(d=>d.unitId==="H73-03").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED",
