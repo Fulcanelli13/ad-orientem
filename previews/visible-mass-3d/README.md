@@ -1,5 +1,12 @@
 # The Visible Mass — 3D explorer research prototype P0
 
+## Sanctuary photo hotspot pilot (Phase 1; 17 October)
+
+Open [**Explore the sanctuary — six actual-photo object hotspots**](sanctuary-hotspot-pilot.html) for the separate **authentic Brompton Oratory** research interface. It uses Anthony O'Neil's July 2019 photograph (CC BY-SA 2.0), six provisional image-relative hotspot coordinates, existing glossary G### definitions and 134 indexed research questions across the broader 30-object pilot. Select an object; open and return from questions. Questions do **not** yet have independently approved answers. Link/text availability requires serving the whole repository over HTTPS, not opening the file directly via `file://`. The original CC photo is requested over HTTPS; the viewer is therefore **not an offline bundle**.
+
+Two staged research documents accompany it: [30-object / 134-question registry](PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json) and [scene / UX acceptance gates](PHASE1_SANCTUARY_PILOT_SCENE_AND_UX_20261017.md). Regression contract: `node tests/visible-mass-sanctuary-hotspot-contract.mjs` (static; actual mobile visual QA pending). This is a **photographic scene**, not the experimental walkable GLB shown below, and has no dependency on Babylon.js.
+
+
 **Status:** Experimental. Isolated from the canonical Ad Orientem Mass reader and navigation. Not approved for release.
 
 ## Goal
