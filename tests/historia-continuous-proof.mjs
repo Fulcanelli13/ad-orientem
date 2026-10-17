@@ -135,7 +135,7 @@ for(const [id,expected] of [
 for(const beat of proof.movements.slice(0,19).flatMap(x=>x.beats).filter(x=>x.kind==="EDITORIAL_CONTEXT_NOT_BIBLE")){
  assert.ok(!/^(Mention|Identify|Keep|Indicate|Use|Name|State)\b/i.test(beat.explanation),
  "A readable text proof cannot contain instructions to the editor in place of transition prose");
- assert.match(beat.explanation,/\((?:Genesis|Exodus) /,
+ assert.match(beat.explanation,/\((?:Genesis|Exodus|Numbers|Deuteronomy|Ruth|1 Samuel|2 Samuel|1 Kings|Isaiah|Nehemiah|1 Maccabees|2 Maccabees|Luke|Matthew) /,
  "Every reader-facing transition must carry a source attribution");
  assert.equal(beat.editorialTextApproved,false);
 }
