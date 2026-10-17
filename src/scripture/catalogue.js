@@ -8,13 +8,13 @@ import {scriptureChapterExists,scriptureChapterLimit} from "./chapter-counts.js"
 export const SCRIPTURE_EDITIONS = Object.freeze({
   "dr-challoner": Object.freeze({
     id: "dr-challoner", language: "en", title: "Douay–Rheims (Challoner)",
-    tradition: "Catholic; Vulgate-derived", role: "default",
+    tradition: "Catholic; Vulgate-derived", role: "traditional-comparison",
     rights: "cleared", sourceReview: "1899-text-collation-pending", enabled: false
   }),
   "cpdv-2009": Object.freeze({
     id: "cpdv-2009", language: "en", title: "Catholic Public Domain Version (2009)",
     tradition: "Catholic; independent contemporary-English translation from Clementine Vulgate",
-    role: "readability-alternative", selectionStatus: "approved-by-product-owner-pending-certification",
+    role: "default", selectionStatus: "approved-by-product-owner-pending-certification",
     rights: "cleared", sourceReview: "author-master-text-review-pending",
     doctrinalReview: "pending", textAccuracyReview: "pending", enabled: false
   }),
@@ -31,7 +31,7 @@ export const SCRIPTURE_EDITIONS = Object.freeze({
 });
 
 export const DEFAULT_SCRIPTURE_EDITION = Object.freeze({
-  en: "dr-challoner", fr: "crampon-1923", la: "vulgate-clementine"
+  en: "cpdv-2009", fr: "crampon-1923", la: "vulgate-clementine"
 });
 
 /**
