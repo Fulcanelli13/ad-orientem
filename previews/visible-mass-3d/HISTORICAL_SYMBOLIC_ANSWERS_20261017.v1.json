@@ -1,0 +1,744 @@
+{
+  "schema": "AO_VISIBLE_MASS_HISTORICAL_SYMBOLIC_QUESTION_ANSWERS_V1",
+  "version": "1.0.0",
+  "researched_at": "2026-10-17",
+  "status": "HISTORICAL_SOURCES_CHECKED_RESEARCH_DRAFT_NOT_LITURGICAL_APPROVAL",
+  "canonical_question_owner": "previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json",
+  "interpretation_policy": {
+    "historical_witness": "Catholic Encyclopedia volumes 1907–1914, with historical source-date and edition caveats",
+    "legal_authority": "Never use these articles as the source of a current 1962 ritual instruction; check Code of Rubrics, Missale 1962 or Rituale as appropriate",
+    "proof_standard": "Historical explanation grounded in cited source, not proof of universal 1962 law or of an exact ceremonial phase",
+    "no_duplicate_questions": "Direct answers refer to unchanged VMQ IDs; no new canonical G### records or published new VMQ question IDs",
+    "citations": "Link to the actual source article, not to its homepage; original paraphrases, no lengthy reuse",
+    "special_days": "Five tradition/explanation notes are triggered only by explicit represented occasion and are not images of that occasion"
+  },
+  "answers": [
+    {
+      "question_id": "VMQ-0003",
+      "object_id": "AL01",
+      "question_en": "How does a Catholic altar relate to altars in the Old Testament and in early Christianity?",
+      "answer_en": "Early Christians described the Eucharistic altar both as the Lord's table and as an altar of sacrifice. Its architectural form developed as Christian worship moved from houses into purpose-built churches.",
+      "explanation_en": "Early sources use Greek terms for table and sacrificial altar. By late antiquity, stone altars and altars associated with martyrs' tombs gained importance, although the evidence does not support the idea that every early Christian Eucharist was offered on a tomb.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01362a.htm",
+          "section": "Opening history; earliest forms; martyrs' tombs",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "NO_SINGLE_ORIGIN_STORY",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0005",
+      "object_id": "AL01",
+      "question_en": "Why does the priest approach and reverence the altar?",
+      "answer_en": "The priest kisses the altar as a sign of reverence. In classical explanations the altar represents Christ, and the opening prayers also connect the kiss with the relics traditionally enclosed in the altar.",
+      "explanation_en": "The early Roman ordines mention altar kisses; the frequency grew during the Middle Ages. This historical account explains the gesture without claiming that each later repetition was present in the earliest liturgy.",
+      "interpretation_type": "HISTORY_AND_TRADITIONAL_SYMBOLISM",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/08663a.htm",
+          "section": "Kissing the altar",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "DO_NOT_INVENT_EARLY_FIXED_KISS_COUNT",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0009",
+      "object_id": "AL03",
+      "question_en": "Why is the tabernacle sometimes placed on the high altar?",
+      "answer_en": "Reservation of the Blessed Sacrament long predates the familiar fixed tabernacle on the high altar. Secure reservation for Communion, especially for the sick, was the continuing purpose; the container and location changed over time.",
+      "explanation_en": "Historical examples include hanging Eucharistic doves, separate sacrament houses, and locked tabernacles. The modern central altar tabernacle became widespread comparatively late; not every traditional Catholic church reserves the Sacrament on its high altar.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/12784b.htm",
+          "section": "Manner and place of reservation",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "DO_NOT_INFER_SACRAMENT_PRESENT_FROM_PHOTO",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0013",
+      "object_id": "AL06",
+      "question_en": "Why does the altar ordinarily have a crucifix?",
+      "answer_en": "The altar crucifix directs the priest and faithful toward the sacrifice of Christ on Calvary, represented sacramentally in the Mass. It is a visible focus for prayer, not an additional object of divine worship apart from Christ.",
+      "explanation_en": "The historical use of crosses near the altar is well established, but the precise form and location changed. The theological purpose of the crucifix should be distinguished from the architectural history of the cross itself.",
+      "interpretation_type": "THEOLOGICAL_INTERPRETATION",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/04533a.htm",
+          "section": "Crosses in the liturgy; cross near the altar",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "VERIFY_EXACT_CROSS_REQUIREMENTS_SEPARATELY",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0016",
+      "object_id": "AL06",
+      "question_en": "How did the use of an altar crucifix develop?",
+      "answer_en": "A cross was not invariably placed on the altar in the first centuries. Earlier churches used crosses above altars or hanging from canopies, while altar-top crosses and crucifixes developed gradually.",
+      "explanation_en": "Medieval authors describe a cross between two altar candles; the familiar fixed arrangement did not appear all at once. A history of the crucifix must also distinguish an empty cross from the later common crucifix bearing Christ's figure.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/04533a.htm",
+          "section": "History of cross and crucifix in liturgy",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "NO_APOSTOLIC_ALTAR_CRUCIFIX_ASSUMPTION",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0017",
+      "object_id": "AL07",
+      "question_en": "Why are six candlesticks traditionally arranged on the high altar?",
+      "answer_en": "Six candlesticks became the traditional furnishing of a principal altar especially for more solemn ceremonies. Their number reflects the historical development of Roman ceremonial and is not proof that six candles must burn at every Mass.",
+      "explanation_en": "Earlier practice often used two candles and, in more solemn settings, four or six. The symbolism of light is established, but assigning a single mandatory mystical meaning to the number six would go beyond the evidence examined.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01350a.htm",
+          "section": "High-altar candlestick arrangement",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "SIX_PHYSICAL_CANDLESTICKS_NOT_SIX_ALWAYS_LIT",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0019",
+      "object_id": "AL07",
+      "question_en": "What does candlelight signify in Catholic worship?",
+      "answer_en": "Candlelight expresses honour, rejoicing and prayer before God, and recalls Christ as the light of the world. The candles are not merely a practical way of illuminating the sanctuary.",
+      "explanation_en": "St Jerome defended the use of lighted candles even in daylight as a sign of joy. Later Christian explanations also associate a burning votive candle with a prayer or offering that continues while the flame endures.",
+      "interpretation_type": "HISTORY_AND_TRADITIONAL_SYMBOLISM",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/03246a.htm",
+          "section": "Early evidence and symbolic use of candles",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "SYMBOLISM_NOT_QUANTITY_RUBRIC",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0020",
+      "object_id": "AL07",
+      "question_en": "When did the arrangement of six altar candlesticks become customary?",
+      "answer_en": "Candles carried by acolytes are documented before candles standing directly on altars. Candlesticks upon the altar are attested by medieval writers, and the arrangement became widespread particularly in the late Middle Ages and sixteenth century.",
+      "explanation_en": "The historical survey finds no clear altar-candlestick evidence before the tenth century; thirteenth-century descriptions place a cross between candles. Exact local customs and altar fittings continued to differ.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01350a.htm",
+          "section": "Chronology of altar candlesticks",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "HISTORICAL_DATES_APPROXIMATE",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0024",
+      "object_id": "AL08",
+      "question_en": "Why is beeswax traditionally preferred for altar candles?",
+      "answer_en": "Beeswax was prized for altar candles both as a suitable natural material and for its developed Christian symbolism. Traditional writers saw the wax as recalling the humanity Christ received from the Virgin Mary.",
+      "explanation_en": "The familiar interpretation links wax with Christ's body, wick with His human soul, and flame with His divinity. These are devotional analogies, not separate dogmatic definitions; precise beeswax-content requirements belong to historical or edition-specific regulation.",
+      "interpretation_type": "TRADITIONAL_SYMBOLISM",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01347a.htm",
+          "section": "Material and mystical reasons for beeswax candles",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/03246a.htm",
+          "section": "Beeswax and Christological symbolism",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "1904_COMPOSITION_RULE_NOT_AUTOMATIC_PRESENT_LAW",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0025",
+      "object_id": "AL08",
+      "question_en": "What does a burning candle express about prayer and sacrifice?",
+      "answer_en": "A steadily burning candle can represent persistent prayer, love and self-offering to God. It also points beyond itself toward Christ, the true light.",
+      "explanation_en": "Christian writers described candles before shrines as signs of prayer and sacrifice. The flame is not itself a sacrament or an automatic measure of the worshipper's devotion; the symbolism accompanies real prayer.",
+      "interpretation_type": "TRADITIONAL_SYMBOLISM",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/03246a.htm",
+          "section": "Devotional lights and prayer",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "NO_MAGICAL_CANDLE_INTERPRETATION",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0033",
+      "object_id": "AL13",
+      "question_en": "How have altar linens been associated with the burial cloths of Christ?",
+      "answer_en": "Traditional commentators associate the white altar linens with the cloths that wrapped Christ's body for burial, as well as with purity and the faithful gathered around Christ.",
+      "explanation_en": "This spiritual interpretation coexists with a practical purpose: altar cloths protect and fittingly prepare the place of Eucharistic sacrifice. The burial-cloth association is a venerable symbolic reading, not an explanation for every measurement or fold.",
+      "interpretation_type": "TRADITIONAL_SYMBOLISM",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01351e.htm",
+          "section": "Symbolism of the altar cloths",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/04386c.htm",
+          "section": "Burial-cloth interpretations",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "SYMBOLISM_DISTINCT_FROM_1962_CLOTH_COUNTS",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0034",
+      "object_id": "AL13",
+      "question_en": "How does the altar cloth differ from the corporal?",
+      "answer_en": "The altar cloth covers and adorns the altar table; the corporal is the smaller square linen on which the Host and sacred vessels are placed during Mass.",
+      "explanation_en": "Historically the corporal could be large enough to cover the table and even fold over the chalice. As it became smaller, it developed into a distinct piece of linen with particular handling and storage.",
+      "interpretation_type": "HISTORICAL_AND_FUNCTIONAL",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/04386c.htm",
+          "section": "Historical size and distinction",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/01351e.htm",
+          "section": "Altar cloths versus corporal",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "NO_CURRENT_RUBRIC_COUNT_INFERRED",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0036",
+      "object_id": "AL14",
+      "question_en": "Why were relics historically enclosed in consecrated altar stones?",
+      "answer_en": "Relics in Catholic altars preserve the Church's ancient link between Eucharistic sacrifice and the witness of the martyrs, whose tombs became places of commemoration and worship.",
+      "explanation_en": "Celebration at martyrs' tombs influenced Christian altar architecture; later rites placed relics beneath or within the consecrated altar. It would be inaccurate to claim that Mass was universally celebrated in catacombs or that every ancient altar enclosed relics.",
+      "interpretation_type": "HISTORICAL_AND_SYMBOLIC",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01362a.htm",
+          "section": "Martyrs' tombs, relics and altar consecration",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/04276a.htm",
+          "section": "Relics within the sepulchre",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "NOT_ALL_EARLY_MASSES_AT_TOMBS",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0040",
+      "object_id": "AL16",
+      "question_en": "What does each of the three altar cards contain?",
+      "answer_en": "The central altar card supports prayers said near the middle of the altar. The Gospel-side card contains the opening of St John's Gospel; the Epistle-side card includes the mixing-of-water prayer and parts of the Lavabo.",
+      "explanation_en": "These three printed aids are not miniature copies of the whole Missal. Their exact content and positioning are historically conditioned; the existing 1962 reader remains the source for the complete prayers.",
+      "interpretation_type": "HISTORICAL_AND_FUNCTIONAL",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01351b.htm",
+          "section": "Central, Gospel-side and Epistle-side cards",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "1950S_CARD_SET_NE_FULL_MISSAL",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0041",
+      "object_id": "AL16",
+      "question_en": "When and why did altar cards become common?",
+      "answer_en": "Altar cards developed as memory aids for the priest; they are not part of the earliest Christian altar arrangement.",
+      "explanation_en": "Historical accounts place their rise after the fifteenth century. At the time of Pius V's missal reform, the middle card was established; Gospel-side and Epistle-side cards were added, leading to the familiar set of three.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01351b.htm",
+          "section": "History of the altar cards",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "HISTORICAL_USAGE_NOT_PERMANENT_THREE_IN_EVERY_RITE",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0057",
+      "object_id": "SN02",
+      "question_en": "Why is Holy Communion traditionally distributed at the rail?",
+      "answer_en": "The Communion rail marks a fitting place for the faithful to kneel and receive Communion from the priest. A cloth or Communion paten historically served to catch any fallen Eucharistic particles.",
+      "explanation_en": "Its use joins practical protection with reverence toward the Blessed Sacrament. The rail itself does not consecrate the sanctuary or determine the Church's doctrine of the Real Presence.",
+      "interpretation_type": "HISTORICAL_AND_FUNCTIONAL",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01356c.htm",
+          "section": "Communion rail and cloth",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "DO_NOT_ASSERT_RAIL_ITSELF_CONFERS_SACREDNESS",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0059",
+      "object_id": "SN02",
+      "question_en": "How did communion rails develop in Western churches?",
+      "answer_en": "The Communion rail developed from older barriers separating the sanctuary from the nave. Its shape changed as Western Communion practice changed.",
+      "explanation_en": "Historical summaries describe earlier reception standing near a barrier, later reception on the tongue, and the growth of kneeling Communion in the late Middle Ages. The familiar rail therefore reflects a gradual practical development rather than a single founding decree.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/04170a.htm",
+          "section": "Evolution of communion bench",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/01356c.htm",
+          "section": "Rail as sanctuary boundary",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "REGIONAL_AND_PERIOD_VARIATION",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0087",
+      "object_id": "SV01",
+      "question_en": "Why must chalices be treated with special reverence?",
+      "answer_en": "The chalice receives the wine which is consecrated as the Precious Blood; its purpose requires extraordinary respect, careful handling and purification.",
+      "explanation_en": "The historical Church reserved precious materials and special blessings or consecrations for sacred vessels. Those detailed material and handling rules must be evaluated according to the particular liturgical edition before being given as instructions.",
+      "interpretation_type": "HISTORICAL_AND_THEOLOGICAL",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/03561a.htm",
+          "section": "Sacred vessel and associated observances",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "HISTORICAL_VESSEL_REGULATIONS_NOT_1983_CANON_LAW",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0090",
+      "object_id": "SV01",
+      "question_en": "How have Catholic chalice forms changed historically?",
+      "answer_en": "Chalices have not always had the familiar narrow cup, stem and foot. Ancient evidence suggests a wider variety of shapes and materials, with precious metals increasingly favoured.",
+      "explanation_en": "Examples and written descriptions from late antiquity through the Middle Ages document the development. A museum chalice is useful for illustrating a historical form, but not proof of the precise vessel employed at a 1962 celebration.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/03561a.htm",
+          "section": "Early shapes and materials",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "MUSEUM_SPECIMEN_NOT_1962_STANDARD",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0093",
+      "object_id": "SV02",
+      "question_en": "How have patens changed in size and design?",
+      "answer_en": "Early Christian patens were sometimes large dishes used in the distribution of the Eucharistic bread. As the form of Eucharistic bread and Communion practice changed, the priest's altar paten became smaller.",
+      "explanation_en": "Historical articles distinguish the large ministerial dish from the smaller paten that accompanies the chalice. The later Communion paten held by a server under the communicant is a different vessel with a separate purpose.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/11541b.htm",
+          "section": "Size and development of patens",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "ALTAR_PATEN_NE_COMMUNION_PATEN",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0105",
+      "object_id": "LN01",
+      "question_en": "Why is the corporal folded and handled in particular ways?",
+      "answer_en": "The corporal is folded to protect the linen associated with the Eucharistic species and any particles that might remain upon it, and is kept in a burse when not in use.",
+      "explanation_en": "Its folds and storage have a long ceremonial history, but the way corporals were folded and carried changed as they became smaller. Earlier practices are historical context, not automatic instructions for the printed 1962 rite.",
+      "interpretation_type": "HISTORICAL_AND_FUNCTIONAL",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/04386c.htm",
+          "section": "Folding and storage",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/01355a.htm",
+          "section": "Corporal and burse",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "EXACT_1962_FOLDING_NEEDS_RITUS_CHECK",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0113",
+      "object_id": "LN03",
+      "question_en": "How did the modern small chalice pall develop?",
+      "answer_en": "The small stiff chalice pall developed after the corporal ceased to be used as a large cloth folded over the chalice.",
+      "explanation_en": "Medieval writers describe two corporals: one spread beneath the sacred vessels, another folded to cover the chalice. That second covering gradually took the form of the small pall known in later Roman practice.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01355a.htm",
+          "section": "From large corporal to separate pall",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/03561a.htm",
+          "section": "Pall as chalice adjunct",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "EARLY_PALL_NOT_ALWAYS_STIFF_SQUARE",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0116",
+      "object_id": "LN04",
+      "question_en": "What does the burse contain?",
+      "answer_en": "The burse is a flat case that carries the folded corporal to and from the altar and protects it from dirt or careless handling.",
+      "explanation_en": "Its ordinary form is two firm squares hinged along three edges and left open on one side. Medieval corporal cases were diverse, and the familiar burse shape appeared gradually.",
+      "interpretation_type": "HISTORICAL_AND_FUNCTIONAL",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/03084b.htm",
+          "section": "Definition and origin of the burse",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "NO_CUSTOM_SHAPE_PRESENTED_AS_UNIVERSAL",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0117",
+      "object_id": "LN04",
+      "question_en": "Why does the burse usually match the priest's vestments?",
+      "answer_en": "The burse normally forms part of a matching vestment set, so its visible fabric and colour correspond to the chasuble and other vestments of that Mass.",
+      "explanation_en": "This is a historical and ceremonial convention rather than an independent liturgical colour system; the permitted colour depends on the actual Mass and its rubrics. The case is valued primarily because it carries the corporal reverently.",
+      "interpretation_type": "HISTORICAL_AND_FUNCTIONAL",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/03084b.htm",
+          "section": "Materials and vestment colour",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/03561a.htm",
+          "section": "Burse and chalice veil matching",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "SELECTED_MASS_COLOUR_NOT_CALENDAR_DATE",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0128",
+      "object_id": "EQ02",
+      "question_en": "Why is a small quantity of water added to the wine?",
+      "answer_en": "A little water is mixed with the Mass wine in the Latin rite because it is an established element of the Eucharistic tradition, not an attempt to dilute the sacred action.",
+      "explanation_en": "Early Christian witnesses discuss the mixed chalice; the Council of Trent identifies both the blood and water flowing from Christ's side and the faithful joined to Christ as meanings of this practice. The actual sequence and minister depend on the selected form of Mass.",
+      "interpretation_type": "HISTORICAL_AND_THEOLOGICAL",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/15564a.htm",
+          "section": "Mixed chalice and theological rationale",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "1962_OFFERTORY_ROLE_CONDITIONAL",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0129",
+      "object_id": "EQ02",
+      "question_en": "What symbolic meanings are traditionally associated with mixing water and wine?",
+      "answer_en": "Tradition associates the mingled water and wine with Christ's union with His people and with the blood and water flowing from His pierced side on Calvary.",
+      "explanation_en": "St Cyprian stresses the union of Christ and the faithful; the Council of Trent also relates the mixture to John 19:34. These are two complementary explanations, not competing instructions about how much water to add.",
+      "interpretation_type": "TRADITIONAL_SYMBOLISM",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/15564a.htm",
+          "section": "St Cyprian and Council of Trent symbolism",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "DO_NOT_SUBSTITUTE_SYMBOLISM_FOR_1962_MINISTER_RUBRICS",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0133",
+      "object_id": "EQ06",
+      "question_en": "When did the altar-bell custom develop?",
+      "answer_en": "The altar bell developed during the Middle Ages as the elevation of the Sacred Host became a central visible moment of Eucharistic devotion.",
+      "explanation_en": "Thirteenth-century diocesan instructions mention bells that summoned the faithful's attention to the Elevation, sometimes even church bells heard outside. The small bell at the altar grew within these devotional and ceremonial practices.",
+      "interpretation_type": "HISTORICAL_ACCOUNT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/05380b.htm",
+          "section": "Elevation and thirteenth-century bells",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/02418b.htm",
+          "section": "Development of church and hand bells",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "NO_APOSTOLIC_ELEVATION_BELL",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    },
+    {
+      "question_id": "VMQ-0134",
+      "object_id": "EQ06",
+      "question_en": "Why do bells differ between Low and Sung celebrations?",
+      "answer_en": "The bell's use differs across Mass forms and local ceremonial custom. It cannot be determined solely from the class of the feast.",
+      "explanation_en": "Traditional reference works report differences at High Mass and between dioceses, including occasions when a hand bell was not used. The 1962 liturgical rule and the locality must be consulted before a user-facing 'ring now' cue is issued.",
+      "interpretation_type": "HISTORICAL_AND_CEREMONIAL_CONTEXT",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/13432a.htm",
+          "section": "High Mass Sanctus bell variation",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/02418b.htm",
+          "section": "Local elevation-bell customs",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_SECONDARY_NOT_1962_LEGISLATION"
+        }
+      ],
+      "edition_scope": "HISTORICAL_REFERENCE_NOT_AUTOMATIC_1962_NORM",
+      "editorial_guard": "DO_NOT_AUTHOR_NEW_LIVE_BELL_TIMINGS",
+      "status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED"
+    }
+  ],
+  "occasion_notes": [
+    {
+      "id": "VMSYM-PASSION",
+      "object_ids": [
+        "AL06",
+        "AL01",
+        "SE05"
+      ],
+      "title_en": "Passiontide: the hidden images",
+      "short_en": "Traditional writers connect the covering of crosses with Christ's hiddenness as His Passion approaches (John 8:59). The covered saints' images reinforce the solemnity of the season.",
+      "detail_en": "This is an explanation handed down by commentators, not an assertion that every image is covered without exception. A separate 1962 rubrical record determines which images are covered and when they are uncovered.",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/11535b.htm",
+          "section": "Historical interpretations and regional variants",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_INTERPRETIVE_WITNESS"
+        }
+      ],
+      "illustration_edition_warning": "1911_EXPLANATION_EARLIER_THAN_1962",
+      "scope": "PASSIONTIDE_CONDITIONAL",
+      "interpretation_type": "TRADITIONAL_HISTORICAL_EXPLANATION",
+      "status": "RESEARCH_DRAFT_NOT_1962_CEREMONY_CERTIFICATION"
+    },
+    {
+      "id": "VMSYM-THURSDAY",
+      "object_ids": [
+        "AL01",
+        "AL13",
+        "SE13"
+      ],
+      "title_en": "Holy Thursday: the stripped altar",
+      "short_en": "The denuded altar has traditionally evoked Christ deprived of His garments and the desolation approaching His Passion.",
+      "detail_en": "Earlier commentators connect the stripping to the Psalm describing the division of His garments. The 1962 post-Mass rite owns exactly when the altar is stripped; historical descriptions may include older vestment assignments or omitted ceremonies.",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/01349a.htm",
+          "section": "Historical symbolism; Psalm Deus Deus meus",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_INTERPRETIVE_WITNESS"
+        }
+      ],
+      "illustration_edition_warning": "1907_CEREMONY_DESCRIPTION_NOT_VALIDATED_FOR_1962_SEQUENCE",
+      "scope": "HOLY_THURSDAY_POST_MASS_ONLY",
+      "interpretation_type": "TRADITIONAL_HISTORICAL_EXPLANATION",
+      "status": "RESEARCH_DRAFT_NOT_1962_CEREMONY_CERTIFICATION"
+    },
+    {
+      "id": "VMSYM-GOODFRIDAY",
+      "object_ids": [
+        "AL06",
+        "AL01",
+        "SE06"
+      ],
+      "title_en": "Good Friday: veneration of the Cross",
+      "short_en": "The Good Friday veneration of the Cross recalls Christ crucified and the instrument of Redemption; its worship is directed to Christ, not to wood as a god.",
+      "detail_en": "The practice has roots in the late-fourth-century Jerusalem veneration of relics of the True Cross. Later Latin ceremonies developed from that historical practice; the 1962 rite must supply the actual gestures, chants and sequence.",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/04529a.htm",
+          "section": "Jerusalem relic-veneration and Western development",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_INTERPRETIVE_WITNESS"
+        }
+      ],
+      "illustration_edition_warning": "1911_DESCRIPTION_MAY_MIX_PRE1955_GESTURES_AND_MASS_OF_PRESANCTIFIED",
+      "scope": "GOOD_FRIDAY_PRINTED_1962",
+      "interpretation_type": "TRADITIONAL_HISTORICAL_EXPLANATION",
+      "status": "RESEARCH_DRAFT_NOT_1962_CEREMONY_CERTIFICATION"
+    },
+    {
+      "id": "VMSYM-VIGIL",
+      "object_ids": [
+        "AL07",
+        "EN03",
+        "SE01"
+      ],
+      "title_en": "Easter Vigil: the candle and new light",
+      "short_en": "The Paschal candle is a traditional sign of the risen Christ, whose light defeats darkness. The light of Easter also recalls baptism as Christian illumination.",
+      "detail_en": "Early Easter Vigils linked lights and baptism; medieval commentators developed the imagery of pure wax, wick and flame. A 1911 encyclopaedia describes an older Paschal-candle rite and cannot govern the restored 1962 order, including the candle's preparation.",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/11515b.htm",
+          "section": "Symbolic meaning and historical vigils",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_INTERPRETIVE_WITNESS"
+        },
+        {
+          "url": "https://www.newadvent.org/cathen/03246a.htm",
+          "section": "Early Christian light symbolism",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_INTERPRETIVE_WITNESS"
+        }
+      ],
+      "illustration_edition_warning": "PRE1955_PASCHAL_CANDLE_SEQUENCE_QUARANTINED",
+      "scope": "EASTER_VIGIL_1962_ONLY",
+      "interpretation_type": "TRADITIONAL_HISTORICAL_EXPLANATION",
+      "status": "RESEARCH_DRAFT_NOT_1962_CEREMONY_CERTIFICATION"
+    },
+    {
+      "id": "VMSYM-TENEBRAE",
+      "object_ids": [
+        "AL07",
+        "SE14",
+        "BK09"
+      ],
+      "title_en": "Tenebrae: the extinguished candles",
+      "short_en": "The progressively darkened church gives dramatic expression to the sorrow surrounding Christ's Passion. Traditional interpreters offer different meanings for the individual candles.",
+      "detail_en": "Historical sources report that the number of candles varied across centuries; the familiar triangular hearse of fifteen candles and its developed symbolism should not be treated as apostolic or as proof of the identical 1962 Office sequence.",
+      "source_evidence": [
+        {
+          "url": "https://www.newadvent.org/cathen/07162c.htm",
+          "section": "Historic hearse and competing symbolic explanations",
+          "source_family": "CATHOLIC_ENCYCLOPEDIA_1907_1914",
+          "role": "HISTORICAL_INTERPRETIVE_WITNESS"
+        }
+      ],
+      "illustration_edition_warning": "1911_TENEBRAE_RUBRIC_NEEDS_1960_BREVIARY_CHECK",
+      "scope": "HOLY_WEEK_OFFICE_NOT_MASS",
+      "interpretation_type": "TRADITIONAL_HISTORICAL_EXPLANATION",
+      "status": "RESEARCH_DRAFT_NOT_1962_CEREMONY_CERTIFICATION"
+    }
+  ],
+  "counts": {
+    "direct_question_answers": 28,
+    "occasion_history_notes": 5,
+    "existing_sanctuary_questions": 134,
+    "remaining_existing_questions_unanswered": 106
+  },
+  "excluded_claims": [
+    "Precise 1962 candle-count, washing and bell requirements require primary printed-rubric source collation.",
+    "1910/1911 Passiontide, Good Friday, Easter Vigil and Tenebrae prose may describe pre-1955 rituals and is not a script for the 1962 event graph.",
+    "Claims that the symbolism of six candles, veiling of each image, or all precise candle arrangements is universal remain unapproved.",
+    "These notes do not certify local practice, particular calendar options or presentation of an object not visually identified in the reference church."
+  ]
+}
