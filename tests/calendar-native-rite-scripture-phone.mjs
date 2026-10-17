@@ -64,6 +64,9 @@ try{
   assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.status().open),true);
   await overlay.locator("[data-scripture-close]").tap();
   await overlay.waitFor({state:"hidden",timeout:14000});
+  // The source owner restores scroll after the pending Calendar paint frame.
+  await page.evaluate(()=>new Promise(resolve=>
+    requestAnimationFrame(()=>requestAnimationFrame(resolve))));
   const returned=await page.evaluate(()=>({
    date:globalThis.AO_CALENDAR_APP_V1.status().selectedDate,
    slot:document.activeElement?.dataset?.calScriptureSlot,
