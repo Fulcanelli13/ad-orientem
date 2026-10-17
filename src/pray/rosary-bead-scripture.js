@@ -107,7 +107,7 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
  const disclosure=doc.createElement("details");
  disclosure.className="aoRosaryBeadSourceNotice";
  const provenance=doc.createElement("summary");
- provenance.textContent=french?"Transcription · source":"Source · uncollated";
+ provenance.textContent=french?"Source du texte":"About this text";
  const sourceDetail=doc.createElement("p");
  sourceDetail.textContent=french
    ?"Transcription de la source, collation imprimée en attente."
@@ -138,9 +138,7 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
   plan=current;
   const ticket=++requestSeq;
   container.dataset.aoRosaryEnglishEdition=current.editionId;
-  title.textContent=french?"SAINTE ÉCRITURE · CRAMPON 1923":
-    current.editionId==="dr-challoner"?"SACRED SCRIPTURE · DOUAY–RHEIMS":
-    "SACRED SCRIPTURE · CPDV";
+  title.textContent=french?"SAINTE ÉCRITURE · CRAMPON 1923":"SACRED SCRIPTURE";
   if(flip){
     const next=current.editionId==="dr-challoner"?"cpdv-2009":"dr-challoner";
     flip.dataset.aoRosaryEnglishEdition=next;
