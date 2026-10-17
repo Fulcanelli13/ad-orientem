@@ -494,4 +494,74 @@ assert.ok(findChapter("H73").units[1].principalReadings.includes("Acts 16:35–4
 assert.match(workbenchAudit,/historiaResearch/);
 assert.match(workbenchAudit,/Publisher research/);
 
+
+// Narrative-necessity audit is an editorial filter over exactly the 217 original
+// v18 verse-segment slots, not a second Bible app, not a rewrite of canon.
+const necessity=JSON.parse(readFileSync(
+ new URL("../data/research/historia-salutis-v18-necessity-audit.v1.json",import.meta.url),"utf8"));
+assert.equal(necessity.schema,"ao.historia.v18.narrative-necessity-disposition.v1");
+assert.equal(necessity.status,"PROPOSED_EDITORIAL_AUDIT_NOT_PUBLISHED");
+assert.equal(necessity.upstream.originalWorkbookEdited,false);
+assert.equal(necessity.upstream.originalSegmentCount,217);
+assert.equal(necessity.upstream.originalChapterCount,78);
+assert.equal(necessity.upstream.existingResearchUnitsReused,40);
+assert.equal(necessity.units.length,217);
+assert.equal(necessity.chapterSummaries.length,78);
+assert.deepEqual(necessity.counts.dispositionUnits,{A:93,B:67,C:54,D:3});
+assert.deepEqual(necessity.counts.chapterTreatments,{main:61,merge:15,storyOnly:2});
+const auditCount={A:0,B:0,C:0,D:0};
+const foundChapters=new Set(),foundIds=new Set(),orders=new Map();
+let reused=0;
+for(const u of necessity.units){
+ assert.ok(!foundIds.has(u.unitId),"Every v18 segment has one and only one proposed classification");
+ foundIds.add(u.unitId);
+ foundChapters.add(u.historiaChapterId);
+ auditCount[u.disposition]++;
+ assert.equal(u.presentationApproved,false);
+ assert.equal(u.sourceTextApproved,false);
+ assert.equal(u.originalV18ScopePreserved,true);
+ assert.equal(u.editorialApproval,"PROPOSED_REVIEW_REQUIRED");
+ assert.equal(u.canonicalDestinationVerified,false,"Do not invent new person/event/story locations");
+ assert.ok(u.sourceReferenceOriginal.length>2);
+ assert.ok(u.sceneFocus.length>5);
+ assert.ok(u.narrativeRationale.length>15);
+ const expected=(orders.get(u.historiaChapterId)||0)+1;
+ assert.equal(u.sourceOrder,expected,"Do not reorder the original v18 source segment series");
+ orders.set(u.historiaChapterId,expected);
+ if(u.existingAbridgmentResearch){
+  reused++;
+  assert.equal(u.existingAbridgmentResearch.originalRefConcordant,true);
+  assert.equal(u.existingAbridgmentResearch.unitId,u.unitId);
+  const older=findChapter(u.historiaChapterId)?.units.find(x=>x.unitId===u.unitId);
+  assert.ok(older&&older.originalReference===u.sourceReferenceOriginal,
+   "New triage must refer to the old abridgment registry rather than fork it");
+ }
+ if(u.disposition==="C"){
+  assert.match(u.mainNarrativeAction,/LINK_FROM_EXISTING_CHARACTER_EVENT_OR_SCRIPTURE/);
+  assert.match(u.destinationPolicy,/Never create a compulsory secondary series/);
+ }
+ if(u.disposition==="D")assert.equal(u.mainNarrativeAction,
+  "CANONICAL_SCRIPTURE_READER_ONLY_NO_FEATURED_STORY");
+}
+assert.equal(foundChapters.size,78);
+assert.equal(foundIds.size,217);
+assert.equal(reused,40);
+assert.deepEqual(auditCount,necessity.counts.dispositionUnits);
+const disp=id=>necessity.units.find(u=>u.unitId===id);
+assert.equal(disp("H73-02").disposition,"C","Philippi is an optional Paul story");
+assert.equal(disp("H73-07").disposition,"A","The universal mission culminates in Rome");
+assert.equal(disp("H27-01").disposition,"C");
+assert.equal(disp("H27-05").disposition,"C");
+assert.equal(disp("H54-04").disposition,"D");
+assert.equal(disp("H54-04").suggestedExistingIntegrationTarget,"H56-01");
+assert.equal(disp("H70-02").disposition,"D");
+assert.equal(disp("H70-02").suggestedExistingIntegrationTarget,"H70-01");
+assert.equal(disp("H45-01").disposition,"B");
+assert.equal(disp("H45-02").disposition,"B");
+assert.match(disp("H45-01").specialFunction,/SEPARATE_GOSPEL_GENEALOGY/);
+assert.match(disp("H04-01").narrativeRationale,/protoevangelium/);
+assert.ok(necessity.nonNegotiable.includes("No second extended Bible experience"));
+assert.ok(necessity.nonNegotiable.some(x=>x.includes("original 151 Atlas event")));
+assert.equal(necessity.reviewGates.canPublish,false);
+
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
