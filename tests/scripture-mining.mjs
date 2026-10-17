@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {SCRIPTURE_EDITIONS,DEFAULT_SCRIPTURE_EDITION} from "../src/scripture/catalogue.js";
 import {createScripturePreferences} from "../src/scripture/preferences.js";
+import {sourceMiningTargets,loadSourceMiningTargets,miningWorkbenchUrl} from "../src/scripture/mining-targets.js";
+import {SCRIPTURE_LINK_COUNTS} from "../src/scripture/related-objects.js";
 import {mineScriptureReference,validateScriptureMiningDecision,
   countIndependentSelections,MINING_ENGLISH_EDITIONS} from "../src/scripture/mining-service.js";
 
@@ -70,4 +72,36 @@ assert.match(html,/ROSARY_GUIDED_BEAD_EVIDENCE_V1/);
 assert.match(html,/Export JSON/);
 assert.match(html,/CPDV first/);
 assert.ok(!/https:\/\/raw\.githubusercontent\.com/.test(html),"No live third-party corpus fetch");
-console.log("Shared source mining, edition default, typology safety and research UI contracts passed");
+assert.equal(sourceMiningTargets("mass").length,SCRIPTURE_LINK_COUNTS.massFormation);
+assert.equal(sourceMiningTargets("formation").length,SCRIPTURE_LINK_COUNTS.massFormation,
+ "Formation reuses the Mass study source owner rather than creating duplicate citations");
+assert.equal(sourceMiningTargets("novena").length,16);
+assert.equal(sourceMiningTargets("prayer").length,8);
+assert.equal(sourceMiningTargets("stations").length,9);
+assert.equal(sourceMiningTargets("historia").length,0,"Never invent Atlas data without its owner");
+assert.equal(sourceMiningTargets("rosary").length,0,"Rosary already owns its per-bead controls");
+assert.equal(sourceMiningTargets("novena").find(x=>x.objectId==="annunciation")?.reference,"Luke 1:26–38");
+assert.equal(sourceMiningTargets("mass").find(x=>x.objectId==="MFS01")?.relation,"ADAPTED_WORDS");
+const atlasFixture=Object.freeze([{
+ source:"atlas",objectId:"biblical:event:fixture",id:"atlas:biblical:event:fixture",
+ reference:"Luke 1:28",title:{en:"Atlas source fixture",fr:"Fixture Atlas"},
+ relation:"BIBLICAL_NARRATIVE_OR_VISION_EVENT"
+}]);
+const atlasTargets=await loadSourceMiningTargets("historia",{atlasLoader:async()=>atlasFixture});
+assert.equal(atlasTargets.length,1);
+assert.equal(atlasTargets[0].objectId,"biblical:event:fixture");
+assert.equal(sourceMiningTargets("historia",{atlasEvents:atlasFixture}).length,1);
+assert.match(miningWorkbenchUrl({module:"novena",objectId:"annunciation",reference:"Luke 1:26–38"}),
+ /scripture-mining-workbench-20261017\.html\?module=novena/);
+assert.throws(()=>miningWorkbenchUrl({module:"rosary",mystery:"joy9",bead:2}),/INVALID_MINING_MYSTERY/);
+const beadReview=validateScriptureMiningDecision({reference:"Luke 1:28",
+ rating:5,disposition:"KEEP_HERE",originModule:"rosary",originId:"joy1",
+ originBead:2,destinationId:"joy1",destinationBead:2,duplicate:false});
+assert.equal(beadReview.originBead,2,"Distinct Guided beads must retain editorial identity");
+const legacyReview=validateScriptureMiningDecision({...beadReview,originBead:undefined});
+assert.equal(legacyReview.originBead,null,"Older exported ratings remain readable");
+assert.match(html,/loadSourceMiningTargets/);
+assert.match(html,/linkedObject/);
+assert.match(readFileSync(new URL("../src/scripture/library.js",import.meta.url),"utf8"),/ao_scripture_research/,
+ "The canonical reader can open editorial mining on explicit opt-in only");
+console.log("Shared source mining, source-owned module selectors and editorial review contracts passed");
