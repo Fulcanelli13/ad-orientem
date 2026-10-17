@@ -76,15 +76,19 @@ const matrix=JSON.parse(read("data/mass/gesture-matrix.v1.json"));
 const sourceAction=createReaderGestureMatrixController({data:matrix})
   .project("AO.SM.C0185").primaryPriestAction;
 const c0185=certifiedLiveCanonActionOverride({
- presentationMode:"LIVE",cueId:"AO.SM.C0185",matrixAction:sourceAction,
+ presentationMode:"LIVE",curatedPresentation:true,cueId:"AO.SM.C0185",matrixAction:sourceAction,
 });
 assert.equal(c0185.label,"CROSSES HOST THEN CHALICE");
 assert.equal(c0185.owner,"GESTURE_MATRIX_SOT");
 assert.equal(c0185.observedNow,false);
 assert.equal(c0185.sourceCueAdvisory,true);
+assert.equal(certifiedLiveCanonActionOverride({
+ presentationMode:"LIVE",curatedPresentation:false,
+ cueId:"AO.SM.C0185",matrixAction:sourceAction,
+}),null,"Explicit 48-card rollback and noncurated readers must be untouched");
 for(const mode of ["MISSAL","SIMPLE"]){
  assert.equal(certifiedLiveCanonActionOverride({
-  presentationMode:mode,cueId:"AO.SM.C0185",matrixAction:sourceAction,
+  presentationMode:mode,curatedPresentation:true,cueId:"AO.SM.C0185",matrixAction:sourceAction,
  }),null,"Other modes must retain their existing presentation contracts");
 }
 for(const incorrect of [
@@ -94,11 +98,11 @@ for(const incorrect of [
  {...sourceAction,label:"SIGNS HOST"},
 ]){
  assert.equal(certifiedLiveCanonActionOverride({
-  presentationMode:"LIVE",cueId:"AO.SM.C0185",matrixAction:incorrect,
+  presentationMode:"LIVE",curatedPresentation:true,cueId:"AO.SM.C0185",matrixAction:incorrect,
  }),null,"Uncertified source-cue action must fail closed");
 }
 assert.equal(certifiedLiveCanonActionOverride({
- presentationMode:"LIVE",cueId:"AO.SM.C0174",matrixAction:sourceAction,
+ presentationMode:"LIVE",curatedPresentation:true,cueId:"AO.SM.C0174",matrixAction:sourceAction,
 }),null,"No source action may leak onto the Host elevation");
 assert.match(native,/originalPriestAction=canonLiveAction\?\?/,
  "LIVE projector must use the certified correction before the frozen cue label");
