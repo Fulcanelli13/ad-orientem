@@ -624,7 +624,8 @@ try{
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
   await page.locator("#aoPray435930.open .aoMercyPrayer").waitFor({timeout:12000});
   assert.match(await page.locator("#aoPray435930.open .aoMercyPrayer").innerText(),/Au nom du Père/);
- assert.match(await page.locator("#aoPray435930.open .aoMercyKicker").innerText(),/Prière 1 \/ 63/i);
+ assert.equal(await page.locator("#aoPray435930.open .aoMercyKicker").count(),0);
+ assert.match(await page.locator("#aoPray435930.open .aoMercyBeadPosition").innerText(),/Prières initiales|Signe de croix/);
   await page.screenshot({path:resolve(captures,"07-divine-mercy-french-390.png"),fullPage:false,animations:"disabled"});
   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
   await page.locator("#aoPray435930.open [data-ao-rosary-chooser]").waitFor({timeout:12000});
