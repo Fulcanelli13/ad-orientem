@@ -103,6 +103,7 @@ function createM4Gpu(canvas){
   gl.uniform1i(gl.getUniformLocation(program,"photo"),0);
   const loc=Object.fromEntries(["aspect","halftan","yaw","pitch"].map(k=>[k,gl.getUniformLocation(program,k)]));
   return {
+   clear(){gl.clearColor(.02,.03,.045,1);gl.clear(gl.COLOR_BUFFER_BIT);},
    upload(img){gl.bindTexture(gl.TEXTURE_2D,texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);
      if(gl.getError()!==gl.NO_ERROR)throw Error("Panorama texture upload failed");},
    render(pose,w,h){
@@ -170,6 +171,7 @@ export function createM4Panorama({mount,notice,onScene}){
   cancelPending();
   const token=loading;active=sceneId;ready=false;lastError=null;
   const requestController=new AbortController();request=requestController;
+  if(gpu)gpu.clear();else ctx.clearRect(0,0,canvas.width,canvas.height);
   if(!poses.has(sceneId))poses.set(sceneId,m4PanoramaPose(sceneId,{yaw:0,pitch:0,fov:72}));
   onScene(scene);setNotice("Loading original photographic panorama…");
   try{
@@ -222,7 +224,7 @@ export function createM4Panorama({mount,notice,onScene}){
    if(token!==loading)return false;
    request=null;lastError=String(err.message||err);
    sourcePixels=null;ready=false;
-   if(ctx)ctx.clearRect(0,0,canvas.width,canvas.height);
+   if(gpu)gpu.clear();else ctx.clearRect(0,0,canvas.width,canvas.height);
    setNotice("Panorama image unavailable. Open the original Commons photograph via the source credit, or return to the high altar. "+String(err.message||err));
    return false;
   }
