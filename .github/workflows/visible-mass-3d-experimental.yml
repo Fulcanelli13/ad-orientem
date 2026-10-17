@@ -9,6 +9,7 @@ on:
       - "tests/visible-mass-3d-contract.mjs"
       - "tests/visible-mass-sanctuary-hotspot-contract.mjs"
       - "tests/visible-mass-m4-panorama.mjs"
+      - "tests/visible-mass-m4-photo-browser.mjs"
       - "tests/visible-mass-liturgical-source-crosswalk.mjs"
       - "tests/visible-mass-liturgical-explanations-first20.mjs"
       - "tests/visible-mass-historical-symbolic-answers.mjs"
@@ -76,6 +77,8 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Browser-check photo scene, glossary and inspection return
         run: node tests/visible-mass-sanctuary-photo-browser.mjs
+      - name: Browser-check M4 genuine-scene switching and pose continuity
+        run: node tests/visible-mass-m4-photo-browser.mjs
       - name: Save phone and desktop review images
         if: always()
         uses: actions/upload-artifact@v4
