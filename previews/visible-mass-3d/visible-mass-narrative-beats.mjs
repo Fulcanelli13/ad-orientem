@@ -20,7 +20,7 @@ const beats=[
  ["VMQ-0005","The still photograph cannot show a priest moving. The original question takes us to the meaning of reverence."],
  ["VMQ-0057","The Communion rail is clearly visible in the foreground."],
  ["VMQ-0052","Notice the elaborate structure rising behind the altar."],
- ["VMQ-0053","The decorated structure and the altar can appear to be a single composition. Are they the same object?"],
+ ["VMQ-0053","The decorated structure and the altar can appear to be one composition. The next source question distinguishes them."],
  ["VMQ-0017","Consider the group of candlesticks arranged around the altar."],
  ["VMQ-0019","The candlesticks offer a separate line of inquiry about light in worship."],
  ["VMQ-0021","A visible arrangement alone cannot tell us the rules for every form of Mass."],
