@@ -17,11 +17,11 @@ export function missalSourceRubricCopy(paragraph,{language="en"}={}){
  // Other projections use secondary. Select the sentence-case existing
  // witness, NEVER the donor's uppercase English masquerading as Latin.
  const candidates=[primary,secondary,alternate].filter(Boolean);
- const text=candidates.find(x=>/\\p{Ll}/u.test(x)) ?? candidates[0] ?? "";
+ const text=candidates.find(x=>/\p{Ll}/u.test(x)) ?? candidates[0] ?? "";
  if(!text)return null;
  return Object.freeze({
    text:text.replace(/^\[([\s\S]*)\]$/,"$1").trim(),
-   translationAvailable:/\\p{Ll}/u.test(text),
+   translationAvailable:/\p{Ll}/u.test(text),
    requestedLanguage:isFrench?"fr":"en",
    isLiturgicalLatin:false,
    owner:"EXISTING_SOURCE_VERNACULAR_RUBRIC",
