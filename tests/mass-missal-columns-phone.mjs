@@ -93,11 +93,25 @@ try{
     return preview.getCurrentCard()?.sectionId??null;
   });
   assert.equal(chalice,"AO.MISSAL.010.3","Missal chalice preparation page is missing");
-  await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-prayer-description")]
-    .some(x=>/verse le vin avant cette prière|pours the wine before this prayer/.test(x.textContent)),null,{timeout:4000});
-  const shortRubric=await page.locator(".ao-missal-prayer-description").first().innerText();
-  assert.match(shortRubric,lang==="fr"?/Le prêtre verse le vin/:/The priest pours the wine/,
-    "Missal chalice context language or form is wrong");
+  await page.waitForFunction(()=>!!document.querySelector(
+    '.ao-missal-chalice-short'),null,{timeout:4000});
+  const chaliceShort=await page.locator(".ao-missal-chalice-short").innerText();
+  assert.match(chaliceShort,lang==="fr"?/vin et l’eau/:/wine and water/,
+    "Missal chalice has no concise direction");
+  assert.equal(await page.locator(".ao-missal-prayer-description:visible").count(),0,
+    "Repetitive prayer-description subtitles must disappear");
+  const chaliceDetails=page.locator(".ao-missal-chalice-detail");
+  assert.equal(await chaliceDetails.getAttribute("open"),null);
+  await chaliceDetails.locator("summary").click();
+  assert.match(await chaliceDetails.locator("p").innerText(),
+    lang==="fr"?/Le prêtre verse le vin/:/The priest pours the wine/,
+    "Meaningfully deeper chalice directions lost original 1962 form");
+  assert.match(await chaliceDetails.locator("a").getAttribute("href"),/LAT0820/);
+  assert.equal(await page.locator(".ao-state-guide:visible").count(),0,
+    "MISSAL must not display the GUIDE/Formation panel");
+  assert.equal(await page.locator(".ao-state-ribbon").evaluate(el=>
+    getComputedStyle(el).gridTemplateColumns.split(" ").length),2,
+    "Missal chrome must be balanced between the faithful and priest");
   assert.ok(!(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)>1),
     "Long practical Missal description overflows "+width+"px viewport");
   // Avoid duplicating an action already printed as a bracketed source rubric.
@@ -106,27 +120,28 @@ try{
     '.ao-reader-paragraph').length>0,null,{timeout:5000});
   assert.equal(await page.locator(".ao-missal-inline-rubrics").count(),0,
     "Bracketed paten action is already a Missal rubric; do not reprint it");
-  // Native short/long contract: leave the source-printed bracket as the
-  // SHORT rubric, offer the existing certified chronological action
-  // sequence only on an explicit reader tap. No GUIDE or study copy.
-  const patenDetails=page.locator(".ao-missal-rubric-depth").first();
-  assert.equal(await patenDetails.count(),1,"Bracketed paten rubric has no second depth");
-  assert.equal(await patenDetails.getAttribute("open"),null,
-    "Missal detail must default collapsed");
-  assert.match(await patenDetails.locator("summary").innerText(),
-    lang==="fr"?/Déroulement précis/:/Detailed ceremonial sequence/);
-  const beforePaten=await page.locator(".ao-reader-paragraph .ao-line-primary").first().innerText();
-  await patenDetails.locator("summary").click();
-  assert.equal(await patenDetails.locator("li").count(),3,
-    "Missal long rubric must preserve three certified paten actions");
-  assert.deepEqual(await patenDetails.locator("li").evaluateAll(nodes=>
-    nodes.map(x=>x.dataset.rubricStepId)),
-    ["AO.RUB.C0111.01","AO.RUB.C0111.02","AO.RUB.C0111.03"]);
-  assert.match(await patenDetails.locator("a").getAttribute("href"),/ritus-servandus/);
-  assert.equal(await page.locator(".ao-reader-paragraph .ao-line-primary").first().innerText(),
-    beforePaten,"Opening the detail changed the original Latin");
-  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
-    "Paten long rubric overflows narrow Missal page");
+  // The short source rubric must be one honest VERNACULAR line.
+  // The donor's alleged "Latin" bracket is actually editorial ENGLISH;
+  // in French mode use the existing byCue French witness instead.
+  const paten=await page.evaluate(()=>{
+    const row=[...document.querySelectorAll(".ao-reader-paragraph[data-kind='RUBRIC']")]
+      .find(x=>x.dataset.sourceCueIds?.includes("AO.SM.C0111"));
+    return {
+      text:row?.querySelector(".ao-line-primary")?.textContent,
+      secondary:row?.querySelector(".ao-line-secondary")?.textContent,
+      witness:row?.dataset.sourceRubricWitness,
+      expanded:row?.getAttribute("role")==="button",
+      overflow:document.documentElement.scrollWidth-innerWidth,
+    };
+  });
+  assert.ok(paten.text && (lang==="fr"?/patène/.test(paten.text):/Paten/i.test(paten.text)),
+    "Source rubric must be rendered from the selected existing English/French witness");
+  assert.equal(paten.secondary,undefined,"English square-bracket directions cannot masquerade as Latin");
+  assert.equal(paten.witness,"EXISTING_SOURCE_VERNACULAR_RUBRIC");
+  assert.equal(paten.expanded,false,"Source rubric must not be a competing tappable paragraph");
+  assert.equal(await page.locator(".ao-missal-rubric-depth").count(),0,
+    "Duplicate action lists are not genuine long rubrics");
+  assert.ok(paten.overflow<=1,"Vernacular source rubric caused book overflow");
   // Insert unobtrusive sourced directions at actual prayer words.
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.010.5"));
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
@@ -140,12 +155,12 @@ try{
   assert.ok(offertory.notes.every(x=>lang==="fr"?x.startsWith("Le prêtre "):x.startsWith("The priest ")),
     "In-page priest rubrics must be localized");
   assert.match(offertory.link||"",/ritus-servandus/i);
-  // For word-triggered instructions, depth reveals the precise Latin
-  // anchor instead of a second paraphrase or devotional Guide.
-  const wordDetail=page.locator(".ao-missal-rubric-depth:has(li[data-source-cue-id='AO.SM.C0119'])");
-  assert.ok(await wordDetail.count()>0,"Word-triggered Missal rubric lost source depth");
-  await wordDetail.locator("summary").click();
-  assert.match(await wordDetail.innerText(),/bene|word|mots/i);
+  assert.equal(await page.locator(".ao-missal-rubric-depth").count(),0,
+    "A word-triggered short action alone must NOT create a fake long rubric");
+  assert.equal(await page.locator(".ao-canon-inline-heading:visible").count(),0,
+    "No repeated RUBRIC / PRIEST headings inside Missal text");
+  assert.equal(await page.locator(".ao-canon-inline-source:visible").count(),0,
+    "The source URL must not be repeated after every brief gesture");
   assert.ok(offertory.width<=1,"Missal inline Offertory rubric overflows phone width");
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.014.3"));
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
@@ -180,11 +195,10 @@ try{
   assert.match(note,requiem
     ?(lang==="fr"?/Seul le célébrant est encensé/:/choir and people are not/)
     :(lang==="fr"?/ministres sacrés assistent/:/sacred ministers assist/i));
-  const solemnDetail=page.locator(".ao-missal-rubric-depth").first();
-  assert.ok(await solemnDetail.count()>0,"Solemn minister rubric lost its actor/source details");
-  await solemnDetail.locator("summary").click();
-  assert.equal(await solemnDetail.locator("li[data-rubric-step-id='SMIN-009']").count(),1,
-    "Solemn priest/deacon actor must retain certified R18 owner");
+  assert.equal(await page.locator(".ao-missal-rubric-depth").count(),0,
+    "The Solemn minister single action is not an extended rubric");
+  assert.equal(await page.locator(".ao-canon-inline-heading:visible").count(),0,
+    "Solemn minister is identified in wording, not a repeated heading");
   const layout=await page.evaluate(()=>({
    overflow:document.documentElement.scrollWidth-innerWidth,
    tags:[...document.querySelectorAll(".ao-missal-rubric-action")].map(e=>e.dataset.rubricId),
