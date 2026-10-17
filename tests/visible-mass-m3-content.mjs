@@ -14,7 +14,7 @@ assert.equal(index.count,20);
 assert.equal(overlay.translations.length,20);
 assert.equal(new Set(overlay.translations.map(x=>x.question_id)).size,20);
 assert.deepEqual(overlay.counts.triage,{
- SOURCE_CORROBORATED_CANDIDATE:14,1962_RITUAL_CROSSCHECK_REQUIRED:3,HISTORICAL_REVIEW_REQUIRED:3
+ SOURCE_CORROBORATED_CANDIDATE:14,"1962_RITUAL_CROSSCHECK_REQUIRED":3,HISTORICAL_REVIEW_REQUIRED:3
 });
 const ids=["VMQ-0062","VMQ-0056","VMQ-0001","VMQ-0013","VMQ-0005","VMQ-0057",
 "VMQ-0052","VMQ-0053","VMQ-0017","VMQ-0019","VMQ-0021","VMQ-0016",
