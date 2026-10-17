@@ -51,6 +51,7 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.open({
      novenaId:"corpus_christi",returnContext:null})),true);
    const panel=page.locator('#aoPray435930.open [data-n1-scripture-context="corpus_christi"]');
+   await page.locator("#aoPray435930.open .aoN1AboutDisclosure > summary").tap();
    await panel.locator("summary").tap();
    const trigger=panel.locator("[data-ao-scripture-context]");
    await trigger.tap();

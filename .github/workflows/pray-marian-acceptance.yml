@@ -34,6 +34,14 @@ jobs:
         run: timeout --signal=TERM --kill-after=5s 160s node tests/pray-marian-mobile.mjs
       - name: All devotional routes and canonical Prayer Library mobile
         run: timeout --signal=TERM --kill-after=5s 190s node tests/pray-all-modules-mobile.mjs
+      - name: Preserve Novena Folio phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quiet-novena-folio-mobile
+          path: artifacts/pray-novena-dual-axis/
+          if-no-files-found: warn
+          retention-days: 21
       - name: Preserve Marian mobile screenshot evidence
         if: always()
         uses: actions/upload-artifact@v4
