@@ -86,7 +86,7 @@ try{
   assert.ok(afterDrag.frameCount>=beforeDrag.frameCount,"camera redraw remains available");
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()))?.readCount??0,beforeRead);
   const beforeResize=await page.locator("#panorama-stage canvas").evaluate(el=>el.width);
-  await page.setViewportSize({width:spec.mobile?790:1100,height:spec.height});
+  await page.setViewportSize({width:spec.mobile?790:700,height:spec.height});
   await page.waitForTimeout(180);
   const afterResize=await page.locator("#panorama-stage canvas").evaluate(el=>el.width);
   assert.notEqual(afterResize,beforeResize,"panorama canvas adapts to viewport change");
