@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root=path.resolve(import.meta.dirname,'..');
 const html=fs.readFileSync(path.join(root,'previews/visible-mass-3d/sanctuary-hotspot-pilot.html'),'utf8');
@@ -14,6 +15,15 @@ for(const photo of photos.assets) {
  assert.match(photo.image_url,/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//);
  assert.match(photo.source_url,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
  assert.ok(photo.creator && photo.licence && photo.licence_url,'explicit rights evidence');
+ const url=new URL(photo.image_url);
+ const bits=decodeURIComponent(url.pathname).split('/').filter(Boolean);
+ const i=bits.indexOf('commons')+1;
+ const sliced=bits[i]==='thumb'?bits.slice(i+1):bits.slice(i);
+ const filename=sliced[2];
+ const hash=createHash('md5').update(filename,'utf8').digest('hex');
+ assert.equal(sliced[0],hash[0],photo.object_id+' Wikimedia storage prefix');
+ assert.equal(sliced[1],hash.slice(0,2),photo.object_id+' Wikimedia filename hash');
+
  assert.ok(photo.note.includes('not') || photo.note.includes('museum') || photo.note.includes('Museum'),'independent reference must disclose scene separation');
  const object=registry.objects.find(o=>o.object_id===photo.object_id);
  assert.ok(object,'inspection must be a registry subject: '+photo.object_id);
