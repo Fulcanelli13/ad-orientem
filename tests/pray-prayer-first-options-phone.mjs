@@ -144,8 +144,11 @@ try{
    await settings.click();
    await expanded(angelus);
    await ag.locator('[data-p435930-seg="angelus"]').click();
-   await expanded(angelus);
+   assert.equal(await ag.getAttribute("open"),null,
+     "Choosing the Angelus form should dismiss the Folio popover before prayer");
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"angelus");
+   await settings.click();
+   await expanded(angelus);
    await ag.locator('[data-p435930-seg="group"]').click();
    await expanded(angelus);
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-recitation]").getAttribute("data-ao-angelus-recitation"),"group");
@@ -155,8 +158,11 @@ try{
    assert.equal(await guide.evaluate(x=>x.open),true);
    await guide.locator(":scope > summary").click();
    await ag.locator('[data-p435930-seg="regina"]').click();
-   await expanded(angelus);
+   assert.equal(await ag.getAttribute("open"),null,
+     "Choosing Regina Cæli should dismiss the Folio popover before prayer");
    assert.equal(await page.locator("#aoPray435930.open [data-ao-angelus-form]").getAttribute("data-ao-angelus-form"),"regina");
+   await settings.click();
+   await expanded(angelus);
    assert.equal(await ag.locator(".aoAngelusGuideSection a[href^='https://']").count(),4);
    await settings.click();
    assert.equal(await ag.getAttribute("open"),null);
