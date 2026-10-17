@@ -65,6 +65,12 @@ aside .panel+.panel{margin-top:15px}.checklabel{display:flex;align-items:center;
 <div id="linkedControls" class="controls hidden"><label>Existing source-owned object<select id="linkedObject"></select></label><p id="linkedRelation" class="support"></p></div>
 <form id="mineForm" class="controls">
 <label>Bible reference<input id="reference" autocomplete="off" spellcheck="false" required placeholder="Luke 1:28"></label>
+<label id="estherEditionControls" class="hidden">Esther citation numbering
+<select id="referenceEdition">
+<option value="cpdv-2009">CPDV (author's 16-chapter order)</option>
+<option value="dr-challoner">Douay–Rheims (traditional order)</option>
+</select></label>
+<p class="support" id="editionNote">Esther references need their source edition. Never assume that a v18 Douay citation uses CPDV numbering.</p>
 <button type="submit" class="primary">Mine reference</button>
 </form>
 <p class="support">For Rosary beads, the original evidence reference is retained. These source-cited meditations are not certified verbatim Bible quotations. Use one verse, or at most two, for a final bead selection; OT parallels belong on independent beads.</p>
@@ -119,6 +125,7 @@ for(let i=1;i<=10;i++){$("bead").append(new Option(String(i),String(i)));$("dest
 $("mystery").value="joy1";$("destination").value="joy1";
 const params=new URLSearchParams(location.search);
 if(Object.hasOwn(SCRIPTURE_MINING_MODULES,params.get("module")))$("module").value=params.get("module");
+if(params.get("referenceEdition")==="dr-challoner")$("referenceEdition").value="dr-challoner";
 if(keys.includes(params.get("mystery")))$("mystery").value=params.get("mystery");
 if(Number.isInteger(Number(params.get("bead")))&&+params.get("bead")>=1&&+params.get("bead")<=10)$("bead").value=params.get("bead");
 const bridgeFetch=(url,opts)=>fetch(typeof url==="string"&&url.startsWith("/data/")?new URL(url.slice(1),appRoot):url,opts);
@@ -179,6 +186,7 @@ function stepBead(delta){
 $("previous").addEventListener("click",()=>stepBead(-1));
 $("next").addEventListener("click",()=>stepBead(1));
 $("mineForm").addEventListener("submit",event=>{event.preventDefault();void mine()});
+$("referenceEdition").addEventListener("change",()=>{void mine()});
 function textRows(rows,parent){
  for(const row of rows){
   const line=make("p");
@@ -186,6 +194,14 @@ function textRows(rows,parent){
   line.append(make("span",row.chapter+":"+row.verse,"verse"),make("span",row.text));
   parent.append(line);
  }
+}
+function sourceLinks(reading,caption){
+ const urls=reading.sourceUrls||[];
+ if(urls.length<2)return sourceLink(reading.sourceUrl,caption);
+ const wrap=make("div");wrap.className="meta";
+ wrap.append(make("span","Mapped source fragments, in reading order: "));
+ urls.forEach((url,i)=>{if(i)wrap.append(make("span"," · "));wrap.append(sourceLink(url,"Part "+(i+1)+" ↗"))});
+ return wrap;
 }
 function sourceLink(url,caption){
  if(!url)return make("span","Source URL not available","meta");
@@ -203,12 +219,12 @@ function renderMining(data){
  cp.append(make("h3","Catholic Public Domain Version · Primary reading"));
  if(primary.verses.length)textRows(primary.verses,cp);
  else cp.append(make("p",primary.error||"No source verse is present at these coordinates.","meta"));
- cp.append(sourceLink(primary.sourceUrl,"CPDV author-source book ↗"));
+ cp.append(sourceLinks(primary,"CPDV author-source book ↗"));
  target.append(cp);
  const compare=make("details");compare.append(make("summary","Compare original Douay–Rheims / Challoner wording"));
  if(older.verses.length)textRows(older.verses,compare);
  else compare.append(make("p",older.error||"No Douay–Rheims source verse at these coordinates.","meta"));
- compare.append(sourceLink(older.sourceUrl,"Douay–Rheims source passage ↗"));
+ compare.append(sourceLinks(older,"Douay–Rheims source passage ↗"));
  target.append(compare);
  const commentary=make("details");commentary.open=true;
  commentary.append(make("summary","Traditional commentary · attributed original sources"));
@@ -247,14 +263,14 @@ function renderMining(data){
  }
 }
 function decisionKey(x){
- return [x.originModule,x.originId,x.originBead??"",x.reference,
+ return [x.originModule,x.originId,x.originBead??"",x.reference,x.referenceEdition??"cpdv-2009",
    x.duplicate?x.destinationId??"":"",x.duplicate?x.destinationBead??"":""
  ].join("|");
 }
 function paintQueue(){
  $("reviewCount").textContent=String(notes.length);$("queue").replaceChildren();
  for(const note of notes.slice().reverse()){
-  const row=make("div",note.reference+" · "+note.rating+"/5 · "+note.disposition,"queueItem");
+  const row=make("div",note.reference+" ["+(note.referenceEdition??"cpdv-2009")+"] · "+note.rating+"/5 · "+note.disposition,"queueItem");
   row.append(make("small"," — "+note.originModule+"/"+note.originId+(note.duplicate?" · duplicate":"")));
   $("queue").append(row);
  }
@@ -266,7 +282,12 @@ async function mine(){
  const seq=++mineSequence;
  const reference=$("reference").value.trim();if(!reference)return;
  const mod=$("module").value,origin=currentOrigin();
- if(!parseScriptureContext(reference)){
+ const parsedReference=parseScriptureContext(reference);
+ const isEsther=parsedReference?.passage.book==="Esther";
+ $("estherEditionControls").classList.toggle("hidden",!isEsther);
+ $("editionNote").classList.toggle("hidden",!isEsther);
+ if(!isEsther)$("referenceEdition").value="cpdv-2009";
+ if(!parsedReference){
   active=null;$("results").replaceChildren();
   const evidence=mod==="rosary"?ROSARY_GUIDED_BEAD_EVIDENCE_V1[$("mystery").value]?.find(x=>x.bead===Number($("bead").value)):null;
   $("resultHeading").textContent="Source witness outside Scripture";
@@ -277,11 +298,11 @@ async function mine(){
  $("message").textContent="Loading original Scripture witnesses and available commentary…";
  $("results").replaceChildren();$("resultHeading").textContent=reference;
  try{
-  const data=await mineScriptureReference(reference,{origin,fetcher:bridgeFetch});
+  const data=await mineScriptureReference(reference,{origin,referenceEdition:$("referenceEdition").value,fetcher:bridgeFetch});
   if(seq!==mineSequence)return;
   active=data;renderMining(data);
   $("message").textContent="CPDV primary · Douay–Rheims optional · Commentary source-labelled · Research only";
-  const old=notes.find(x=>x.originModule===mod&&x.originId===origin.objectId&&x.originBead===origin.bead&&x.reference===reference);
+  const old=notes.find(x=>x.originModule===mod&&x.originId===origin.objectId&&x.originBead===origin.bead&&x.reference===reference&&(x.referenceEdition??"cpdv-2009")===$("referenceEdition").value);
   if(old){$("rating").value=String(old.rating);$("disposition").value=old.disposition}
   else{$("rating").value="0";$("disposition").value="UNDECIDED"}
   if($("module").value==="rosary"){$("destination").value=$("mystery").value;$("destinationBead").value=$("bead").value}
@@ -294,8 +315,8 @@ $("saveReview").addEventListener("click",()=>{
  if(!active){$("reviewStatus").textContent="Mine a valid passage first.";return}
  try{
   const origin=currentOrigin();
-  if(active.reference!==$("reference").value.trim()||active.origin?.objectId!==origin.objectId||active.origin?.bead!==origin.bead){$("reviewStatus").textContent="Reference or origin changed; mine the current selection before saving.";return}
-  const decision=validateScriptureMiningDecision({reference:active.reference,rating:Number($("rating").value),
+  if(active.reference!==$("reference").value.trim()||active.referenceEdition!==$("referenceEdition").value||active.origin?.objectId!==origin.objectId||active.origin?.bead!==origin.bead){$("reviewStatus").textContent="Reference or origin changed; mine the current selection before saving.";return}
+  const decision=validateScriptureMiningDecision({reference:active.reference,referenceEdition:active.referenceEdition,rating:Number($("rating").value),
    disposition:$("disposition").value,originModule:origin.moduleId,originId:origin.objectId,originBead:origin.bead,
    destinationId:$("module").value==="rosary"?$("destination").value:null,
    destinationBead:$("module").value==="rosary"?Number($("destinationBead").value):null,
