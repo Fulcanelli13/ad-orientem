@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createMassReaderModel } from "../src/mass/reader-model.js";
+import { projectSourceFirst48Presentation } from "../src/mass/reader-live-product48.js";
+import { projectGranularMissalCards } from "../src/mass/reader-missal-granularity.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const low=load("../data/presentation/reader-text-low.v1.json");
@@ -149,6 +151,104 @@ const requiemModel=createMassReaderModel({
   resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 });
 assert.equal(requiemModel.totalCards,39,"plan-owned Requiem overlay duplicated or removed Mass reader cards");
+
+// Source 39 / product 48 and MISSAL granularities must retain the two valid
+// Communion prayers, omit only B069/C0225 at Requiem, and never invent a
+// blank card or disturb the historical presentation-card denominator.
+const requiem48=projectSourceFirst48Presentation(requiemModel);
+assert.equal(requiem48.totalCards,48,"Requiem omission changed the 48-card LIVE structure");
+assert.equal(requiem48.cards.filter(c=>c.paragraphs?.some(p=>
+  p.sourceCueIds?.includes("AO.SM.C0225"))).length,0);
+const communion48=requiem48.cards.find(c=>c.sectionId==="AO.LIVE48.022.A");
+assert.ok(communion48,"Missing original decompressed Communion source card");
+for(const cueId of ["AO.SM.C0226","AO.SM.C0227"])
+  assert.ok(communion48.paragraphs.some(p=>p.sourceCueIds?.includes(cueId)),
+    "Requiem 48-step projection lost "+cueId);
+assert.equal(communion48.blocks.find(b=>b.blockId==="AO.SM.B069")?.paragraphCount,0);
+
+const requiemMissal=projectGranularMissalCards(createMassReaderModel({
+  resolvedMass:{...base,form:"LOW",presentationMode:"MISSAL",overlays:["REQUIEM"]},
+  sectionMap,lowCorpus:low,sungCorpus:sung
+}));
+assert.ok(requiemMissal.totalCards>30,"Missal prayer granularity unexpectedly collapsed");
+assert.ok(requiemMissal.cards.every(c=>c.stateOnly||c.paragraphs?.length>0),
+  "Requiem Missal created a blank fictional Communion prayer");
+const missalText=requiemMissal.cards.flatMap(c=>c.paragraphs);
+assert.ok(!missalText.some(p=>p.sourceCueIds?.includes("AO.SM.C0225")),
+  "Requiem MISSAL includes omitted first peace prayer");
+for(const id of ["AO.SM.C0226","AO.SM.C0227"])
+  assert.ok(missalText.some(p=>p.sourceCueIds?.includes(id)),
+    "Requiem MISSAL lost valid Communion prayer "+id);
+assert.ok(requiemMissal.cards.flatMap(c=>c.blocks).some(b=>
+  b.blockId==="AO.SM.B069"&&b.omittedByRite==="RITUS_XIII_1_REQUIEM"),
+  "Requiem Missal lost canonical owner metadata for omitted prayer");
+
+
+// The Requiem Ordinary substitutes the three EXACT Agnus texts. The raw
+// Low/Sung donor corpora remain immutable; the preselected celebration or
+// explicit overlay determines the variant, never the civil date alone.
+const agnusRequiemByCue={
+  "AO.SM.C0222":"dona eis réquiem.",
+  "AO.SM.C0223":"dona eis réquiem.",
+  "AO.SM.C0224":"dona eis réquiem sempitérnam.",
+};
+const paragraphForCue=(reader,id)=>reader.cards.flatMap(c=>c.paragraphs).find(
+  p=>p.sourceCueIds?.includes(id)
+);
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const [language,expectedRest] of [["en",/grant them (?:eternal )?rest/i],
+                                        ["fr",/donnez-leur le repos(?: éternel)?/i]]){
+    for(const selectedRequiem of [
+      {...base,form,overlays:["REQUIEM"]},
+      {...base,form,overlays:[],actualCelebration:{id:"requiem",type:"REQUIEM"}},
+    ]){
+      const r=createMassReaderModel({
+        resolvedMass:{...selectedRequiem,
+          presentationMode:form==="LOW"?"SIMPLE":"LIVE",
+          proper:language==="fr"?{...base.proper,data:frenchSpeakerProper}:base.proper},
+        sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+        frenchOrdinary,vernacularLanguage:language
+      });
+      assert.equal(r.cards.length,form==="LOW"?30:39,form+" changed card count");
+      // XIII.1: C0225 first peace prayer is absent, while C0226 and C0227
+      // remain actual prayers with their original cue IDs and navigable card.
+      assert.equal(paragraphForCue(r,"AO.SM.C0225"),undefined,
+        form+" Requiem displayed the forbidden peace prayer");
+      for(const id of ["AO.SM.C0226","AO.SM.C0227"])
+        assert.ok(paragraphForCue(r,id),form+" lost "+id+" after omission");
+      const peaceBlock=r.cards.flatMap(c=>c.blocks).find(b=>b.blockId==="AO.SM.B069");
+      assert.equal(peaceBlock?.omittedByRite,"RITUS_XIII_1_REQUIEM");
+      assert.equal(peaceBlock.paragraphCount,0);
+
+      for(const [cueId,ending] of Object.entries(agnusRequiemByCue)){
+        const p=paragraphForCue(r,cueId);
+        assert.ok(p,form+" missing Requiem "+cueId);
+        const words=[p.primary,p.secondary,p.alternate,p.latin,p.vernacular].filter(Boolean);
+        const joined=words.join(" | ");
+        assert.ok(joined.includes(ending),form+" Latin Agnus variant missing "+cueId);
+        assert.match(joined,expectedRest,form+" "+language+" Requiem variant missing "+cueId);
+        assert.doesNotMatch(joined,/miserére nobis|dona nobis pacem|have mercy on us|grant us peace|ayez pitié de nous|donnez-nous la paix/i,
+          form+" imported ordinary Agnus wording into Requiem "+cueId);
+      }
+    }
+    const ordinary=createMassReaderModel({
+      resolvedMass:{...base,form,overlays:[],presentationMode:form==="LOW"?"SIMPLE":"LIVE",
+        proper:language==="fr"?{...base.proper,data:frenchSpeakerProper}:base.proper},
+      sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+      frenchOrdinary,vernacularLanguage:language
+    });
+    assert.ok(paragraphForCue(ordinary,"AO.SM.C0225"),
+      form+" ordinary pre-Communion peace prayer disappeared");
+    for(const cueId of Object.keys(agnusRequiemByCue)){
+      const p=paragraphForCue(ordinary,cueId);
+      assert.ok(p,form+" ordinary Agnus was removed");
+      const words=[p.primary,p.secondary,p.alternate,p.latin,p.vernacular].filter(Boolean).join(" | ");
+      assert.doesNotMatch(words,/dona eis réquiem/i,
+        form+" unselected Requiem variant leaked into ordinary "+cueId);
+    }
+  }
+}
+
 const requiemAbsolutionModel=createMassReaderModel({
   resolvedMass:{...base,overlays:["REQUIEM"],followingActions:["REQUIEM_ABSOLUTION"]},
   sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap

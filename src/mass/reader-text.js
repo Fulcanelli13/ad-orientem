@@ -253,6 +253,7 @@ export function buildReaderSectionCard({
   vernacularLanguage="en",
   frenchOrdinary=null,
   ordinaryVariants=null,
+  omittedOrdinaryCues=[],
   actualForm=null,
 }={}){
   validateReaderTextCorpus(corpus);
@@ -267,6 +268,19 @@ export function buildReaderSectionCard({
   const paragraphs=[];
   const blockMeta=[];
   for(const block of blocks){
+    // XIII.1 omits the complete FIRST peace-prayer block at Requiem Masses.
+    // Retain its non-rendered block metadata for original Missal section
+    // ownership; never invent a blank prayer or renumber the other two.
+    if(block.Block_ID==="AO.SM.B069"&&omittedOrdinaryCues.includes("AO.SM.C0225")){
+      if(block.units?.length!==1||block.units[0]?.cue_id!=="AO.SM.C0225")
+        throw new Error("REQUIEM_PEACE_PRAYER_SOURCE_IDENTITY_MISMATCH");
+      blockMeta.push(Object.freeze({
+        blockId:block.Block_ID,title:block.Title,properSlot:block.Proper_Slot,
+        stateOnly:false,firstParagraphIndex:null,paragraphCount:0,
+        omittedByRite:"RITUS_XIII_1_REQUIEM",
+      }));
+      continue;
+    }
     const explicitNotApplicable=Boolean(
       block.Proper_Slot && properSlots?.[block.Proper_Slot]?.status==="NOT_APPLICABLE"
     );
