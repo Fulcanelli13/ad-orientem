@@ -194,6 +194,99 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  #aoPrayerBookRoot.open .aoRosaryActiveCard .aoDevoParagraph{transition:none!important}
 }
 
+
+/* Angelus Folio v1: five movements. Same canonical prayer owner; visually
+   sparse and directly usable. The approved artwork slot can be populated later. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoP435930Head{position:relative}
+#aoPray435930 .aoFolioSettingsTrigger{
+ width:38px;height:42px;min-width:38px;display:grid;place-items:center;
+ flex:0 0 38px;padding:7px;border:0;border-radius:9px;
+ color:var(--muted,#c7bfad);background:transparent;
+}
+#aoPray435930 .aoFolioSettingsTrigger svg,
+#aoPray435930 .aoFolioSettingsTrigger [data-ao-asset-id]{width:21px!important;height:21px!important}
+#aoPray435930 .aoFolioSettingsTrigger[aria-expanded="true"],
+#aoPray435930 .aoFolioSettingsTrigger:focus-visible{
+ color:var(--text,#f1e7d7);outline:1px solid var(--liturgical,#d8bd7d)}
+#aoPray435930 .aoFolioReader{position:relative;min-width:0}
+#aoPray435930 .aoFolioReader .aoFolioOptions:not([open]){display:none!important}
+#aoPray435930 .aoFolioReader .aoFolioOptions[open]{
+ display:block!important;position:fixed;z-index:150;top:78px;right:clamp(10px,4vw,55px);
+ width:min(355px,calc(100vw - 22px));max-height:min(75dvh,650px);
+ overflow-y:auto;overscroll-behavior:contain;
+ margin:0!important;border:1px solid var(--border,rgba(217,197,154,.28))!important;
+ border-radius:12px!important;box-shadow:0 18px 44px rgba(0,0,0,.55);
+ padding:14px!important;background:var(--surface-1,#121920)!important;
+}
+#aoPray435930 .aoFolioReader .aoFolioOptions>summary{display:none!important}
+#aoPray435930 .aoFolioReader .aoFolioOptions .aoP435930PrayerOptionsBody{display:grid;gap:13px}
+#aoPray435930 .aoFolioReader .aoFolioPostureNote{
+ margin:3px 10px 10px;border:0;border-radius:8px;background:transparent;
+ color:var(--muted,#b6ad9a);font:500 12px/1.45 Georgia,serif;
+}
+#aoPray435930 .aoFolioReader .aoFolioPostureNote summary{
+ display:flex;gap:8px;align-items:center;cursor:pointer;min-height:32px;list-style:none}
+#aoPray435930 .aoFolioReader .aoFolioPostureNote summary::-webkit-details-marker{display:none}
+#aoPray435930 .aoFolioReader .aoFolioPostureNote summary span:last-child{opacity:.65;font-style:normal}
+#aoPray435930 .aoFolioReader .aoFolioPostureNote p{margin:5px 0 8px 26px;max-width:56ch;line-height:1.5}
+#aoPray435930 .aoFolioReader .aoFolioPostureIcon{width:20px!important;height:20px!important;color:var(--liturgical,#d8bd7d)}
+#aoPray435930 .aoFolioReader .aoAngelusRitualGrid{display:block!important;min-width:0}
+#aoPray435930 .aoFolioReader .aoAngelusRitualGrid>.aoRitualRail{display:none!important}
+#aoPray435930 .aoFolioReader .aoDevoTimeline{
+ min-height:52px;padding:4px 3px!important;top:74px;
+ border-top:0;background:var(--bg,#080c12);
+}
+#aoPray435930 .aoFolioReader .aoDevoStop{flex-basis:max(105px,35%);min-height:44px;padding:7px 10px}
+#aoPray435930 .aoFolioReader .aoDevoStopNumber{font-size:10px}
+#aoPray435930 .aoFolioReader .aoDevoStopTitle{font-size:12px}
+#aoPray435930 .aoFolioReader .aoDevoCard{max-width:850px;margin-inline:auto;width:100%}
+#aoPray435930 .aoFolioReader .aoDevoCardHead{
+ padding:22px 14px 16px;background:linear-gradient(180deg,rgba(210,170,103,.045),transparent);
+}
+#aoPray435930 .aoFolioReader .aoDevoCardTitle{font:500 clamp(24px,5.8vw,32px)/1.2 Georgia,serif}
+#aoPray435930 .aoFolioReader .aoDevoCardScroll{
+ height:min(65dvh,660px);min-height:min(330px,50dvh);padding:20px clamp(14px,3vw,38px) 21dvh;
+ gap:20px;line-height:1.62;scrollbar-width:thin;
+}
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoP435930PrayerUnit button{
+ font:400 clamp(18px,4.4vw,23px)/1.66 Georgia,serif!important;
+ letter-spacing:.01em;
+}
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoDevoParagraph{
+ transition:opacity .22s ease,color .22s ease!important}
+#aoPray435930 .aoFolioReader .aoDevoCardScroll .aoDevoParagraph[data-ao-devo-active="true"]{opacity:1!important}
+#aoPray435930 .aoFolioReader .aoFolioConclusionPart{
+ display:grid;gap:8px;padding:17px 0 0;margin:4px 0 0;
+ border-top:1px solid var(--border,rgba(255,255,255,.13));
+}
+#aoPray435930 .aoFolioReader .aoFolioConclusionHeading{
+ font:italic 15px/1.45 Georgia,serif;font-weight:400;color:var(--liturgical,#d8bd7d);
+ margin:0 0 4px;
+}
+#aoPray435930 .aoFolioReader .aoFolioGloria{display:block;margin-bottom:17px}
+#aoPray435930 .aoFolioReader .aoDevoAppendixFace{display:block}
+#aoPray435930 .aoFolioReader .aoDevoAppendixLine{display:block;white-space:normal}
+#aoPray435930 .aoFolioReader .aoFolioIncarnationCue{
+ display:flex;align-items:center;justify-content:center;gap:12px;
+ max-height:0;opacity:0;overflow:hidden;transition:opacity .3s ease,max-height .3s ease;
+ margin:0;color:var(--liturgical,#d8bd7d);font:500 13px/1.35 Georgia,serif}
+#aoPray435930 .aoFolioReader .aoFolioIncarnationCue.is-active{
+ max-height:100px;opacity:1;margin-top:12px}
+#aoPray435930 .aoFolioReader .aoFolioIncarnationIcon{
+ width:50px!important;height:50px!important;flex:0 0 50px}
+#aoPray435930 .aoFolioReader .aoDevoCard.aoFolioIncarnationActive .aoDevoCardHead{
+ background:radial-gradient(ellipse at top,rgba(211,174,105,.19),transparent 75%);
+ border-bottom-color:var(--liturgical,#d8bd7d)}
+@media(max-width:600px){
+ #aoPray435930 .aoFolioReader .aoDevoCardHead{padding-top:17px}
+ #aoPray435930 .aoFolioReader .aoDevoCardScroll{height:min(63dvh,615px);padding-bottom:23dvh}
+ #aoPray435930 .aoFolioReader .aoDevoStop{flex-basis:max(112px,45%)}
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPray435930 .aoFolioReader .aoFolioIncarnationCue,
+ #aoPray435930 .aoFolioReader .aoDevoCardScroll .aoDevoParagraph{transition:none!important}
+}
+
 @keyframes aoDevoCardEnter{from{opacity:.55;transform:translateX(5px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoDevoCard{animation:none}#aoPray435930 .aoDevoParagraph{transition:none!important}}
 `;
