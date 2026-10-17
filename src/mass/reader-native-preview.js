@@ -69,7 +69,7 @@ import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubri
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { certifiedLiveCanonActionOverride } from "./reader-live-canon-action.js";
 import { createLiveCanonStageObservationController } from "./reader-live-canon-stage-observation.js";
-import { mountLiveCanonManualFollow } from "./reader-live-canon-manual-follow.js";
+import { mountLiveCanonManualFollow,canonicalManualFollowContext } from "./reader-live-canon-manual-follow.js";
 import { resolvePriestChantAction, resolvePriestChantVoice, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
 import { createObservedChalicePreparationController } from "./reader-priest-chalice-observation.js";
@@ -2657,6 +2657,7 @@ export async function mountNativeReaderPreview({
         readerModel?.sourceModelTotalCards===39),
       cueId:activeCueId,
       sectionId:current?.sourceSectionId??current?.sectionId,
+      presentationCardId:current?.sectionId,
       language:ready.prepared?.readerPreferences?.language??"en",
       specialRite:inAsperges||inPalm||inAsh||inCandlemas||inRogations||
         inRequiemAbsolution||inCorpusChristi||inHolyThursdayPost||
@@ -2716,9 +2717,16 @@ export async function mountNativeReaderPreview({
 
   function observeCanonCeremonyStage(observation){
       const form=String(readerModel?.presentationMode??"").toUpperCase();
-      const sourceSection=current?.sourceSectionId??current?.sectionId;
-      const correctSection=(activeCueId==="AO.SM.C0174"&&sourceSection==="AO.CANON.06")||
-        (activeCueId==="AO.SM.C0181"&&sourceSection==="AO.CANON.07");
+      const correctSection=Boolean(canonicalManualFollowContext({
+        mode:form,curated:Boolean(ready.curatedEligible&&current?.curatedPresentationReview===true&&
+          readerModel?.sourceModelTotalCards===39),
+        cueId:activeCueId,
+        sectionId:current?.sourceSectionId??current?.sectionId,
+        presentationCardId:current?.sectionId,
+        specialRite:inAsperges||inPalm||inAsh||inCandlemas||inRogations||
+          inRequiemAbsolution||inCorpusChristi||inHolyThursdayPost||
+          inGenericProcession||inLifecycle,
+      }));
       if(!canonStageObservation || !ready.curatedEligible ||
          current?.curatedPresentationReview!==true ||
          readerModel?.sourceModelTotalCards!==39 || form!=="LIVE" ||
