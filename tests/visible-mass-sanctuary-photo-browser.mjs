@@ -35,6 +35,17 @@ try{
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.status().questionsLoaded===134,{timeout:30000});
   const first=page.locator('.marker[data-object="AL01"]');
   assert.equal(await page.locator('.marker').count(),6);
+  if(spec.mobile){
+   await first.scrollIntoViewIfNeeded();
+   await page.screenshot({path:screenshotDir+'/phone-before-tap.png'});
+   const probe=await page.evaluate(()=>{
+    const b=document.querySelector('.marker[data-object="AL01"]');
+    const r=b.getBoundingClientRect(),vp=document.querySelector('#photo-viewport').getBoundingClientRect();
+    const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);
+    return {documentWidth:document.documentElement.scrollWidth,viewportWidth:window.innerWidth,scrollX:window.scrollX,scrollY:window.scrollY,photoViewport:{x:vp.x,y:vp.y,width:vp.width,height:vp.height},marker:{x:r.x,y:r.y,width:r.width,height:r.height},hit:hit?.tagName,hitClass:hit?.getAttribute('class'),hitId:hit?.id};
+   });
+   console.log('PHOTO_PHONE_TAP_DIAGNOSTIC',JSON.stringify(probe));
+  }
   await first.click();
   assert.equal(await page.locator('#object-title').innerText(),'High altar');
   assert.equal(await page.locator('#question-items button').count(),4);
