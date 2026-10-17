@@ -58,7 +58,7 @@ import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
-import { projectGloriaCredoFaithfulCue } from "./gloria-credo-faithful.js";
+import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
 import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
@@ -1434,13 +1434,15 @@ export async function mountNativeReaderPreview({
       gestureProfile,
     });
     const cueNative=owned.cueNative;
-    const form=ready.prepared?.session?.resolvedMass?.form??"LOW";
+    const resolvedMass=ready.prepared?.session?.resolvedMass;
+    const form=resolvedMass?.form??"LOW";
+    const incarnatusAction=resolveIncarnatusSungAction(resolvedMass);
     const faithfulCueFor=id=>{
       if(!id)return null;
       const source=ready.cueState.supported?ready.cueState.project(id):null;
       return projectGloriaCredoFaithfulCue({
         cueId:id,form,preferences:customaryPrefs,
-        sourcedPosture:source?.posture??null,
+        sourcedPosture:source?.posture??null,incarnatusAction,
       });
     };
     const focusedFaithful=faithfulCueFor(activeCueId);
@@ -1450,7 +1452,7 @@ export async function mountNativeReaderPreview({
       (current?.paragraphs??[]).flatMap(p=>{
         const ids=p.sourceCueIds??[p.id];
         const id=ids.find(v=>projectGloriaCredoFaithfulCue({
-          cueId:v,form,preferences:customaryPrefs,
+          cueId:v,form,preferences:customaryPrefs,incarnatusAction,
         }));
         if(!id)return [];
         const projection=faithfulCueFor(id);
