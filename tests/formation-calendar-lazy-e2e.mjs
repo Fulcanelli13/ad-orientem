@@ -171,6 +171,10 @@ try{
  // for all original daily Proper sources before enabling download.
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-10-07")),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
+ const monthTools=page.locator("#ao-calendar-modular-root .aoCalMonthTools");
+ await monthTools.locator("summary").waitFor({state:"visible",timeout:12000});
+ assert.equal(await monthTools.getAttribute("open"),null,"Month export and exact-date navigation begin in collapsed tools");
+ await monthTools.locator("summary").click();
  await page.locator("#ao-calendar-modular-root [data-cal-export-ics='2026-10']").waitFor({state:"visible",timeout:12000});
  try{
    await page.waitForFunction(()=>{
@@ -258,10 +262,13 @@ try{
  assert.match(await sources.textContent(),/General Roman Calendar|Calendrier romain général/);
  assert.equal(await sources.locator('a[href*="vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf"]').count(),1);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
+ const jumpTools=page.locator("#ao-calendar-modular-root .aoCalMonthTools");
+ await jumpTools.locator("summary").click();
  const input=page.locator("#ao-calendar-modular-root [data-cal-input]");
  await input.fill("19/03/2028");
  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.paint());
  assert.equal(await input.inputValue(),"19/03/2028","Unsubmitted date was erased by a background repaint");
+ assert.equal(await jumpTools.getAttribute("open"),"","Month tools must remain expanded through same-month source repaint");
  assert.equal(await input.evaluate(el=>document.activeElement===el),true,"Background repaint stole date-input focus");
  assert.doesNotMatch(await page.locator("#ao-calendar-modular-root [data-cal-month-status]").textContent(),/verified|vérifié/i);
  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
