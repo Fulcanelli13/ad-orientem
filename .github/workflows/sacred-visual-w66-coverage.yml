@@ -24,7 +24,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify-source-demand-ledger:
@@ -54,3 +54,20 @@ jobs:
           path: artifacts/sacred-art-first-five/
           retention-days: 30
           if-no-files-found: warn
+      - name: Commit exact Met master as staged review image on the existing art branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'research/w60-sanctoral-art-physical-dedupe-20261015'
+        run: |
+          set -euo pipefail
+          test -s artifacts/sacred-art-first-five/met-438724-champaigne-annunciation-original.jpg
+          test -s artifacts/sacred-art-first-five/met-438724-source-evidence.json
+          git fetch origin refs/heads/research/w60-sanctoral-art-physical-dedupe-20261015
+          git checkout -B stage-met-master FETCH_HEAD
+          mkdir -p assets/staged/sacred-art
+          cp artifacts/sacred-art-first-five/met-438724-champaigne-annunciation-original.jpg assets/staged/sacred-art/
+          cp artifacts/sacred-art-first-five/met-438724-source-evidence.json assets/staged/sacred-art/
+          git add assets/staged/sacred-art/met-438724-champaigne-annunciation-original.jpg assets/staged/sacred-art/met-438724-source-evidence.json
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Stage exact Met 438724 open-access master for technical QA; not production release'
+            git push origin HEAD:refs/heads/research/w60-sanctoral-art-physical-dedupe-20261015
+          fi
+
