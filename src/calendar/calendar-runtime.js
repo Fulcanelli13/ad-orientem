@@ -633,11 +633,11 @@ function practiceContext(selected,r){
 function calendarScriptureControls(selected,r){
   const rows=calendarScriptureContexts(r);
   if(!rows.length)return "";
-  const slotLabel=slot=>slot==="GOSPEL"?L("Gospel","Évangile"):L("Epistle / Lesson","Épître / Lecture");
+  const slotLabel=row=>row.label?(fr()?row.label.fr:row.label.en):row.slot==="GOSPEL"?L("Gospel","Évangile"):L("Epistle / Lesson","Épître / Lecture");
   // Only source-confirmed passages from the selected Proper appear here. Do
   // not substitute a nominal lesson, invent a reading or flatten the Passion.
   return `<section class="aoCalDayScripture" aria-label="${esc(L("Appointed readings","Lectures de la messe"))}"><small>${esc(L("APPOINTED READINGS","LECTURES DE LA MESSE"))}</small><div class="aoCalDayScriptureActions">${rows.map(row=>
-    `<button type="button" data-cal-scripture-date="${esc(selected)}" data-cal-scripture-slot="${esc(row.slot)}" aria-label="${esc(slotLabel(row.slot)+" · "+row.reference)}"><strong>${esc(slotLabel(row.slot))}</strong><span>${esc(row.reference)}</span></button>`
+    `<button type="button" data-cal-scripture-date="${esc(selected)}" data-cal-scripture-slot="${esc(row.slot)}" aria-label="${esc(slotLabel(row)+" · "+row.reference)}"><strong>${esc(slotLabel(row))}</strong><span>${esc(row.reference)}</span></button>`
   ).join("")}</div><p class="aoCalDayScriptureError" role="alert" hidden></p></section>`;
 }
 async function openCalendarScripture(button){
