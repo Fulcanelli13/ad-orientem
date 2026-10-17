@@ -97,9 +97,20 @@ for(const n of [117,119,120,121,123,127]){
  const c=current.categories.find(c=>c.index===n);
  assert.ok(c.works.some(w=>w.photos.some(p=>p.status.includes('CC_BY_SA'))),'The six reopened San Polo source photos must retain their attribution-sharealike licence provenance');
 }
-for(const n of [89,93,99]){
- const c=current.categories.find(c=>c.index===n);
- assert.ok(c.works.some(w=>w.photos.some(p=>p.id.startsWith('W87-SHA-'))),'W87 verified museum photo disappeared from gallery');
+for(const [n,accession,filename] of [
+ [89,'nga-96688','Jacopo_Bassano'],
+ [93,'kress-k2016','Maestro_bartolome-transfiguracion-tucson'],
+ [99,'kress-k2017','Maestro_bartolome-entrada_en_jerusalen-tucson']
+]){
+ const w=current.categories.find(c=>c.index===n).works.find(w=>w.id===accession);
+ assert.ok(w,'Exact museum work disappeared from category '+n);
+ const p=w.photos.find(p=>p.id==='CLOSEOUT-OPEN-MOBILE-'+n);
+ assert.ok(p,'Accession-matched compact Commons source missing '+n);
+ const normalize=s=>decodeURIComponent(s).replace(/[\s_-]+/g,'').toLowerCase();
+ assert.ok(normalize(p.page).includes(normalize(filename)),'Wrong physical artwork Commons source '+n);
+ assert.ok(p.preview.includes('width=960'),'Gallery must not auto-fetch multi-megapixel institutional master '+n);
+ assert.ok(w.photoSourceEvidence.W87ArchivedMasterOriginal,'Original SHA-verified W87 source must remain archived in provenance '+n);
+ assert.equal(w.photoSourceEvidence.acquisitionShaDoesNotCertifyCommonsBytes,true);
 }
 // Research images are not themselves rights-cleared, visually approved, or app-published.
 const protectedExact = (n,id,needle) => {
