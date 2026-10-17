@@ -46,7 +46,10 @@ try{
    });
    console.log('PHOTO_PHONE_TAP_DIAGNOSTIC',JSON.stringify(probe));
   }
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'explore');
+  assert.equal(await page.locator('#experience-understand').isDisabled(),true);
   await first.click();
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'understand');
   assert.equal(await page.locator('#object-title').innerText(),'High altar');
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().inspections===17,{timeout:20000});
   assert.ok(await page.locator('#related-items [data-related="AL03"]').count()===1,'altar links to tabernacle reference');
@@ -113,6 +116,7 @@ try{
   await page.screenshot({path:screenshotDir+'/'+spec.name+'-object.png'});
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#object-card').isVisible(),false);
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'explore');
   if(spec.mobile)assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('object-open')),false);
   // Physical ancestor → question-only object; do not fabricate a photographic hotspot.
   await page.locator('.marker[data-object="AL07"]').click();
@@ -162,15 +166,22 @@ try{
   // photograph, not in an independent course or duplicated question owner.
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.guideStatus()?.availableRoutes?.length===4);
   assert.equal(await page.locator('#guide-routes [data-trail]').count(),4);
+  await page.locator('#experience-discover').click();
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'discover');
+  assert.equal(await page.locator('#guide-dock').isVisible(),true);
+  assert.equal(await page.locator('#intro-card').isVisible(),false);
+  assert.equal(await page.locator('#object-card').isVisible(),false);
   // "Secrets" begins at the retable and then crosses to candlesticks.
   await page.locator('#guide-routes [data-trail="SANCTUARY_SECRETS"]').click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0052');
   await page.locator('#guide-actions [data-guide-question="VMQ-0052"]').click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).selected,'AL19');
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'understand');
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).question,'VMQ-0052');
   assert.equal(await page.locator('#photo-canvas').getAttribute('data-guided-focus'),'AL19');
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).readCount,1);
   await page.locator('#guide-return').click();
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'discover');
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0053');
   await page.locator('#guide-actions button').filter({hasText:'Skip suggestion'}).click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0017');
@@ -199,12 +210,16 @@ try{
   await page.locator('#guide-return').click();
   await page.locator('#guide-actions button').filter({hasText:'Skip this path'}).click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).visible,false);
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'explore');
   assert.equal(await page.locator('#guide-routes [data-trail]').count(),4,'skip whole trail must leave alternate paths selectable');
-  await page.locator('#guide-toggle').click();
+  await page.locator('#experience-discover').click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).visible,true);
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'discover');
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0056');
   await page.reload({waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.guideStatus()?.readCount===4);
+  assert.equal(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.experience()),'explore');
+  await page.locator('#experience-discover').click();
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0056');
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).active,'FIRST_VISIT');
   await page.screenshot({path:screenshotDir+'/'+spec.name+'-guided.png'});
