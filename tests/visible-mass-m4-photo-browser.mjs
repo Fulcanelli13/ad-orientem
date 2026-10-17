@@ -98,7 +98,7 @@ try{
   assert.equal(await page.locator("#photo-viewport").isVisible(),false);
   await page.locator('[data-photo-mode="brompton"]').click();
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.active==="BROMPTON_PANO"&&window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama.loaded);
-  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.pose.pitch,moved.pitch,"pose retained for original photograph");
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.pose.pitch,afterDrag.pose.pitch,"last finger-adjusted pose retained for original photograph");
   await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.select("AL01"));
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).view,"church","object selection uses original hotspot still");
   await page.locator("#close-card").click();
