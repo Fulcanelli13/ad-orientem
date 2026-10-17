@@ -129,7 +129,17 @@ export function createM4Panorama({mount,notice,onScene}){
  if(!gpu&&!sctx)throw new Error("Source canvas unavailable");
  const poses=new Map(),images=new Map();
  let active=null,sourcePixels=null,ready=false,loading=0,frame=0,drag=null,renderCount=0,lastRenderMs=null;
+ let lastError=null,request=null,resizeFrame=0,disposed=false;
  const setNotice=(message)=>{notice.textContent=message;};
+ function cancelPending(){
+  ++loading;
+  if(request){request.abort();request=null;}
+ }
+ function resize(){
+  if(disposed||!ready||resizeFrame)return;
+  resizeFrame=requestAnimationFrame(()=>{resizeFrame=0;schedule();});
+ }
+ window.addEventListener("resize",resize);
  function schedule(){
   if(!active||!ready||frame)return;
   frame=requestAnimationFrame(()=>{frame=0;render();});
@@ -156,18 +166,29 @@ export function createM4Panorama({mount,notice,onScene}){
  async function open(sceneId){
   const scene=M4_PANORAMA_SCENES[sceneId];
   if(!scene)throw new Error("Unrecognised church photograph");
-  const token=++loading;active=sceneId;ready=false;
+  if(disposed)throw Error("Panorama controller has been released");
+  cancelPending();
+  const token=loading;active=sceneId;ready=false;lastError=null;
+  const requestController=new AbortController();request=requestController;
   if(!poses.has(sceneId))poses.set(sceneId,m4PanoramaPose(sceneId,{yaw:0,pitch:0,fov:72}));
   onScene(scene);setNotice("Loading original photographic panorama…");
   try{
    if(!images.has(sceneId)){
-    const response=await fetch(m4SourceRequest(sceneId));
+    const timeout=setTimeout(()=>requestController.abort(),15000);
+    let response;
+    try{response=await fetch(m4SourceRequest(sceneId),{signal:requestController.signal,credentials:"omit"});}
+    finally{clearTimeout(timeout);}
     if(!response.ok)throw new Error("Commons source metadata unavailable");
     const doc=await response.json(),info=doc?.query?.pages?.[0]?.imageinfo?.[0];
     const imageUrl=info?.thumburl||info?.url;
     if(!/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(imageUrl||""))throw new Error("Unverified photographic host");
     const img=new Image();img.crossOrigin="anonymous";img.decoding="async";
-    await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(Error("Photographic image unavailable"));img.src=imageUrl;});
+    await new Promise((resolve,reject)=>{
+     const timeout=setTimeout(()=>{img.src="";reject(Error("Photographic image timed out"));},20000);
+     img.onload=()=>{clearTimeout(timeout);resolve();};
+     img.onerror=()=>{clearTimeout(timeout);reject(Error("Photographic image unavailable or cross-origin access blocked"));};
+     img.src=imageUrl;
+    });
     if(Math.abs(img.naturalWidth/img.naturalHeight-2)>.02)throw new Error("Source is not a 360×180 equirectangular photograph");
     images.set(sceneId,img);
    }
@@ -180,8 +201,12 @@ export function createM4Panorama({mount,notice,onScene}){
    if(img.naturalWidth>2048){
     const reduced=document.createElement("canvas");
     reduced.width=2048;reduced.height=Math.round(img.naturalHeight*2048/img.naturalWidth);
-    reduced.getContext("2d").drawImage(img,0,0,reduced.width,reduced.height);
+    const reducedContext=reduced.getContext("2d");
+    if(!reducedContext)throw Error("Unable to downscale original photograph");
+    reducedContext.drawImage(img,0,0,reduced.width,reduced.height);
     photo=reduced;
+    // Retain the bounded image only, not the 4096px+ decoded original.
+    images.set(sceneId,photo);
    }
    if(gpu)gpu.upload(photo);
    else{
@@ -189,11 +214,13 @@ export function createM4Panorama({mount,notice,onScene}){
     sctx.drawImage(photo,0,0,source.width,source.height);
     sourcePixels=sctx.getImageData(0,0,source.width,source.height);
    }
-   ready=true;
+   if(token!==loading)return false;
+   request=null;ready=true;
    setNotice("Fixed photographic viewpoint · drag to look, arrow keys to turn, +/- to zoom. No virtual walking.");
    schedule();return true;
   }catch(err){
    if(token!==loading)return false;
+   request=null;lastError=String(err.message||err);
    sourcePixels=null;ready=false;
    if(ctx)ctx.clearRect(0,0,canvas.width,canvas.height);
    setNotice("Panorama image unavailable. Open the original Commons photograph via the source credit, or return to the high altar. "+String(err.message||err));
@@ -216,6 +243,9 @@ export function createM4Panorama({mount,notice,onScene}){
   const keys={ArrowLeft:[-.12,0,0],ArrowRight:[.12,0,0],ArrowUp:[0,.1,0],ArrowDown:[0,-.1,0],"+":[0,0,-5],"-":[0,0,5]};
   if(Object.hasOwn(keys,e.key)){e.preventDefault();adjust(...keys[e.key]);}
  });
- return Object.freeze({open,adjust,status:()=>({active,pose:active?poses.get(active):null,loaded:ready,renderer:gpu?"webgl":"software",frameCount:renderCount,lastRenderMs}),
-  redraw:schedule,hide:()=>{loading++;active=null;ready=false;sourcePixels=null;if(frame)cancelAnimationFrame(frame);frame=0;}});
+ return Object.freeze({open,adjust,status:()=>({active,pose:active?poses.get(active):null,loaded:ready,renderer:gpu?"webgl":"software",frameCount:renderCount,lastRenderMs,error:lastError,cachedScenes:images.size}),
+  redraw:schedule,
+  hide:()=>{cancelPending();active=null;ready=false;sourcePixels=null;if(frame)cancelAnimationFrame(frame);frame=0;},
+  dispose:()=>{cancelPending();disposed=true;active=null;ready=false;sourcePixels=null;images.clear();window.removeEventListener("resize",resize);if(frame)cancelAnimationFrame(frame);if(resizeFrame)cancelAnimationFrame(resizeFrame);}
+ });
 }
