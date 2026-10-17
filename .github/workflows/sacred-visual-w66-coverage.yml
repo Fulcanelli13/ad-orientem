@@ -2,7 +2,7 @@ name: Sacred Art W66-W68 coverage, site media and selector
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, research/w59-sanctoral-legacy-art-20261015]
     paths:
       - "data/research/sacred-visual-w66-cross-module-938-visual-demand-preaudit-20261015.v1.json"
       - "tests/sacred-visual-w66-visual-demand-preaudit.mjs"
