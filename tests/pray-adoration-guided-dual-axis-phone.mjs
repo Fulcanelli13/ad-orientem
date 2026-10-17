@@ -106,8 +106,10 @@ try{
   const r=el.getBoundingClientRect(),center=document.elementFromPoint(innerWidth/2,innerHeight-32);
   return {fixed:getComputedStyle(el).position==="fixed",left:r.left,top:r.top,bottom:r.bottom,right:r.right,
    viewport:[innerWidth,innerHeight],hit:el.contains(center)||center===el,
+   hitElement:center?.outerHTML?.slice(0,450),hitAncestors:Array.from((function*(x){for(let i=0;i<4&&x;i++,x=x.parentElement)yield x})(center)).map(x=>({tag:x.tagName,id:x.id,cls:String(x.className).slice(0,110),z:getComputedStyle(x).zIndex})),
    focused:document.activeElement?.matches("[data-p435930-ador-quiet-exit]")===true}
  });
+ await page.screenshot({path:resolve(captures,"quiet-screen-390.png"),animations:"disabled"});
  assert.ok(noChrome.fixed&&noChrome.left===0&&noChrome.top===0&&
   noChrome.bottom>=noChrome.viewport[1]-1&&noChrome.right>=noChrome.viewport[0]-1&&
   noChrome.hit&&noChrome.focused,"Quiet screen must cover global chrome and focus the only exit: "+JSON.stringify(noChrome));
