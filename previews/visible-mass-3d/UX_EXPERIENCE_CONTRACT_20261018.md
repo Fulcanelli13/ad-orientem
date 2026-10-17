@@ -39,3 +39,18 @@ The following should pass on the draft branch after each relevant modification:
 
 ## Definition of approved visitor experience
 A newcomer can inspect the altar without starting a lesson; an investigator can start at the retable, switch to the crucifix and skip a candle question; a returning visitor retains previous questions without compulsory replay; a liturgical learner can open certified Mass Explorer context and return to the authentic church. **No content is generated solely to create a transition.**
+
+
+## M2 implementation: narrative observations and branching (18 October)
+
+The four original guide trails now use `visible-mass-narrative-beats.mjs` to render **short, documentary observation prompts** before showing the exact source-owned VMQ question. The editorial copy never provides the religious answer, invents a fictional historical character, or claims that a ceremony in another church was photographed at Brompton. The original `VMQ` question-detail card remains the only path to the actual research draft and its source caveats.
+
+- Four trail introductions are shown **once per trail per session**, never at every return. Existing visited-question and skipped-suggestion state continues to be shared without compulsory replay.
+- Nineteen distinct source-backed route stops are covered by observational beats, representing 20 research-draft questions in the trial pool (plus four explicitly held source-sensitive questions).
+- Six deliberately prioritised, original-graph crossover edges offer an **optional alternative**; the guide no longer displays all 13 research associations indiscriminately. Such links remain editorial *navigation candidates*, not certified theological or ceremonial inferences.
+- **Locate in photograph** points out one of six genuine photographed objects and pans within its original photograph. It does **not** open a question, count a discovery, fabricate camera movement or remove the ability to explore freely.
+- Explore/Discover/Understand remains the single native experience, not a seventh preview or a second doctrine registry. All trails can still be changed or entirely skipped, and the guide can remain silent while the visitor explores.
+
+Contracts: `tests/visible-mass-guided-folio.mjs` validates source ownership, dialogue observation status, one-time introductions, prioritised alternatives and focus without reading. `tests/visible-mass-sanctuary-photo-browser.mjs` checks the same core states on Chromium desktop and 390px emulated phone. Browser passing does not replace editorial acceptance or actual phone testing. Text is **English draft copy**; M3 must approve educational prose and bilingual delivery.
+
+Do not begin free-form *Ask the Guide* or re-enacted priest narration from this milestone. M3 source approval and M4 original 360° photographic continuity remain separate required milestones.
