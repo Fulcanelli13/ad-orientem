@@ -1492,7 +1492,40 @@ function guidedStage(kind,steps,index,lastLabel){
  </div></section>${guideNav(kind,index,steps.length,lastLabel)}`
 }
 function renderAdoration(){
- if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('One Eucharistic family · choose the form that matches the situation','Une même famille eucharistique · choisissez la forme adaptée à la situation'))}<main class="aoP435930Body aoAdorationChooser" data-ao-adoration-chooser="quiet-v1"><div class="aoP435930BigGrid"><button data-p435930-ador-mode="visit"><small>${esc(L('5–15 MIN','5–15 MIN'))}</small><b>${esc(L('Visit to the Blessed Sacrament','Visite au Saint-Sacrement'))}</b><span>${esc(L('Reserved tabernacle · guided arrival, adoration, thanksgiving, reparation, petition and silence','Tabernacle · arrivée guidée, adoration, action de grâces, réparation, demande et silence'))}</span></button><button data-p435930-ador-mode="open"><small>${esc(L('OPEN-ENDED','LIBRE'))}</small><b>${esc(L('Adoration','Adoration'))}</b><span>${esc(L('Silence first · optional guidance only when you need it','Silence d’abord · aide facultative seulement si nécessaire'))}</span></button><button data-p435930-ador-mode="holy"><small>${esc(L('~60 MIN','~60 MIN'))}</small><b>${esc(L('Holy Hour','Heure Sainte'))}</b><span>${esc(L('Gethsemane-centred · guided stages without forced timing','Centrée sur Gethsémani · étapes guidées sans minutage imposé'))}</span></button><button data-p435930-ador-mode="four"><small>${esc(L('METHOD','MÉTHODE'))}</small><b>${esc(L('Four Ends','Quatre fins'))}</b><span>${esc(L('Adoration · thanksgiving · reparation · petition · silence','Adoration · action de grâces · réparation · demande · silence'))}</span></button><button data-p435930-ador-mode="treasury"><small>${esc(L('TEXTS','TEXTES'))}</small><b>${esc(L('Eucharistic Treasury','Trésor eucharistique'))}</b><span>${esc(L('Traditional prayers for adoration and Benediction','Prières traditionnelles pour l’adoration et la Bénédiction'))}</span></button></div></main>`;
+ if(ADOR.mode==='home')return `${head(L('Adoration & Visit','Adoration et visite'),L('Enter prayer without a prescribed duration','Entrer en prière sans durée imposée'))}
+  <main class="aoP435930Body aoAdorationChooser" data-ao-adoration-chooser="quiet-v2">
+   <p class="aoAdorationChooserIntroduction">${esc(L('Choose the form suited to where you are.','Choisissez la forme adaptée au lieu où vous vous trouvez.'))}</p>
+   <div class="aoAdorationPrimaryGrid">
+    <button type="button" data-p435930-ador-mode="visit">
+     <small>${esc(L('AT THE TABERNACLE','DEVANT LE TABERNACLE'))}</small>
+     <b>${esc(L('Visit to the Blessed Sacrament','Visite au Saint-Sacrement'))}</b>
+     <span>${esc(L('A simple path for prayer before the reserved Sacrament.','Un chemin simple de prière devant le Saint-Sacrement réservé.'))}</span>
+    </button>
+    <button type="button" data-p435930-ador-mode="open">
+     <small>${esc(L('IN STILLNESS','DANS LE SILENCE'))}</small>
+     <b>${esc(L('Silent Adoration','Adoration silencieuse'))}</b>
+     <span>${esc(L('Be still. Prayers and guidance are available only when wanted.','Demeurez en silence. Prières et aide restent facultatives.'))}</span>
+    </button>
+   </div>
+   <details class="aoAdorationMethodsDisclosure" data-ao-adoration-methods>
+    <summary>${esc(L('Guided forms and Eucharistic prayers','Formes guidées et prières eucharistiques'))}</summary>
+    <div class="aoP435930BigGrid">
+     <button type="button" data-p435930-ador-mode="holy">
+      <b>${esc(L('Guided Holy Hour','Heure Sainte guidée'))}</b>
+      <span>${esc(L('Meditation centred on Gethsemane, without enforced timing.','Méditation centrée sur Gethsémani, sans minutage imposé.'))}</span>
+     </button>
+     <button type="button" data-p435930-ador-mode="four">
+      <b>${esc(L('The Four Ends','Les quatre fins'))}</b>
+      <span>${esc(L('Adoration, thanksgiving, reparation and petition.','Adoration, action de grâces, réparation et demande.'))}</span>
+     </button>
+     <button type="button" data-p435930-ador-mode="treasury">
+      <b>${esc(L('Eucharistic Treasury','Trésor eucharistique'))}</b>
+      <span>${esc(L('Traditional Eucharistic prayers, available directly.','Prières eucharistiques traditionnelles, en accès direct.'))}</span>
+     </button>
+    </div>
+   </details>
+   <p class="aoAdorationChooserAfterword">${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
+  </main>`;
  if(ADOR.quiet)return `${head(L('Silent Adoration','Adoration silencieuse'),L('No prescribed duration','Sans durée imposée'))}
  <main class="aoP435930Body aoP435930AdorationReader aoAdorationQuietScreen" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-quiet="true">
  <small>${esc(L('IN SILENCE','EN SILENCE'))}</small>
