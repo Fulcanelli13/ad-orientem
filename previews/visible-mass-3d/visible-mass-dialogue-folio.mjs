@@ -89,8 +89,14 @@ export function mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigat
  const toggle=el(doc,"guide-toggle");
  toggle.onclick=()=>{
    const st=director.status();
+   if(!st.active){
+     // The label "Choose a trail" must actually take the visitor to the
+     // available trails; no inert first-visit control.
+     el(doc,"guide-routes")?.querySelector?.("button")?.focus?.({preventScroll:true});
+     return;
+   }
    if(st.visible)director.leaveGuide();
-   else if(st.active)director.resume();
+   else director.resume();
    save();render();
  };
  render();
