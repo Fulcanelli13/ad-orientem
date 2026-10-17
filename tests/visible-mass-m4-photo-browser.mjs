@@ -109,6 +109,27 @@ try{
   assert.equal(await page.locator("#panorama-stage").isVisible(),false);
   assert.equal(await page.locator("#hotspots .marker").count(),6);
   assert.deepEqual(errors,[],"no uncaught JS errors");
+  // M4 fail-closed image case: no unbounded full-resolution substitution,
+  // and the user can retry without abandoning the original visitor.
+  const retryPage=await context.newPage();
+  let metadataCalls=0;
+  await retryPage.route(/^https:\/\/commons\.wikimedia\.org\/w\/api\.php\?/,route=>{
+   metadataCalls++;
+   const info=metadataCalls===1?{}:{thumburl:"https://upload.wikimedia.org/wikipedia/commons/thumb/m4-review-panorama.jpg"};
+   return route.fulfill({status:200,contentType:"application/json",headers:{"access-control-allow-origin":"*"},body:JSON.stringify({query:{pages:[{imageinfo:[info]}]}})});
+  });
+  await retryPage.route("https://upload.wikimedia.org/wikipedia/commons/thumb/m4-review-panorama.jpg",route=>route.fulfill({
+   status:200,contentType:"image/svg+xml",headers:{"access-control-allow-origin":"*"},body:pano}));
+  await retryPage.goto(url,{waitUntil:"domcontentloaded"});
+  await retryPage.locator('[data-photo-mode="brompton"]').click();
+  await retryPage.waitForFunction(()=>!!window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.error,{timeout:10000});
+  assert.match((await retryPage.locator("#panorama-notice").innerText()),/bounded panorama preview/);
+  assert.equal(await retryPage.locator("#panorama-retry").isVisible(),true);
+  await retryPage.locator("#panorama-retry").click();
+  await retryPage.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.loaded===true,{timeout:10000});
+  assert.equal(await retryPage.locator("#panorama-retry").isVisible(),false);
+  assert.equal(metadataCalls,2,"retry loads the same original Commons source exactly once more");
+  await retryPage.close();
   await context.close();
   console.log("M4 browser continuity PASS",spec.name,spec.width+"x"+spec.height);
  }
