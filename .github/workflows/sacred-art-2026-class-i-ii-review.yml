@@ -1,0 +1,55 @@
+name: Sacred Art 2026 Class I-II complete date review
+on:
+  push:
+    branches:
+      - platform/885-sacred-art-candidates
+    paths:
+      - 'tools/calendar/build-sacred-art-class-i-ii-review.mjs'
+      - 'tools/calendar/build-sacred-art-full-year-associations.mjs'
+      - '.github/workflows/sacred-art-2026-class-i-ii-review.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'tools/calendar/build-sacred-art-class-i-ii-review.mjs'
+      - 'tools/calendar/build-sacred-art-full-year-associations.mjs'
+      - '.github/workflows/sacred-art-2026-class-i-ii-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-2026-class-i-ii-branch-review
+  cancel-in-progress: false
+jobs:
+  review-129-observed-days:
+    name: Build date-complete Class I-II Sacred Art review
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright test dependency
+        run: npm install --no-package-lock --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium browser
+        run: npx playwright install --with-deps chromium
+      - name: Resolve every day in 2026 through production 1962 DayResolver
+        run: node tests/calendar-1962-full-year-audit.mjs
+      - name: Link observed feasts to already acquired open-source artworks
+        run: |
+          node tools/calendar/build-sacred-art-full-year-associations.mjs
+          node tools/calendar/build-sacred-art-class-i-ii-review.mjs
+      - name: Archive all 129 dates, source candidates and mobile HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-2026-class-i-ii-129-date-review
+          path: |
+            artifacts/sacred-art-coverage/class-i-ii-2026-review.json
+            artifacts/sacred-art-coverage/class-i-ii-2026-review.md
+            artifacts/sacred-art-coverage/class-i-ii-2026-review.html
+            artifacts/sacred-art-coverage/full-year-multiple-associations.v1.json
+            artifacts/calendar-oracle/1962-2026-full-year-audit.json
+          retention-days: 30
+          if-no-files-found: warn
