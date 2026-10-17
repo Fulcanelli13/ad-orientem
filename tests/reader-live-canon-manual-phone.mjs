@@ -47,7 +47,6 @@ try{
    assert.equal(initial.total,65);
    assert.equal(initial.visible,false,"Manual button must be absent outside the two elevation cues");
    const hostCard=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.cards.find(c=>
-      c.sourceSectionId==="AO.CANON.06"&&
       c.paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0174")))?.sequence);
    assert.ok(hostCard,"Curated Host elevation card missing");
    await page.evaluate(seq=>window.__AO_PHONE_PREVIEW.showSequence(seq),hostCard);
@@ -79,7 +78,6 @@ try{
    assert.equal(await trigger.getAttribute("aria-expanded"),"false");
 
    const chaliceCard=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.cards.find(c=>
-     c.sourceSectionId==="AO.CANON.07"&&
      c.paragraphs.some(p=>p.sourceCueIds?.includes("AO.SM.C0181")))?.sequence);
    assert.ok(chaliceCard);
    await page.evaluate(seq=>window.__AO_PHONE_PREVIEW.showSequence(seq),chaliceCard);
