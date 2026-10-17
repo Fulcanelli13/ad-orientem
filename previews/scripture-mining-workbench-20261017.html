@@ -44,6 +44,34 @@ aside .panel+.panel{margin-top:15px}.checklabel{display:flex;align-items:center;
 .auditSegment .small{width:auto}.auditStatus{font:13px system-ui,sans-serif;color:#c4c1ba}
 @media(max-width:800px){.layout{grid-template-columns:1fr}.pair{grid-template-columns:1fr 1fr}aside{order:0}.results{order:1}.panel{padding:16px}}
 @media(prefers-reduced-motion:no-preference){button{transition:border-color .16s ease,background .16s ease}}
+
+/* Scripture proof only: source text remains visually distinct from editorial matter. */
+.proofNav{margin:18px 0}.proofNav select{min-width:0;flex:1}.proofNav button{min-width:42px;flex:none}
+.proofChoices{display:flex;align-items:end;gap:15px;flex-wrap:wrap}
+.proofChoices>label:first-child{min-width:220px;max-width:330px;flex:1}
+.proofChoices .checklabel{flex:2;min-width:180px;align-self:center}
+.proofHeading{font-size:clamp(27px,3.4vw,36px);margin:25px 0 6px}
+.proofLead{color:#bdb8ae;font:14px/1.55 system-ui,sans-serif}
+.proofBeat{padding:18px 0;border-bottom:1px solid #313945}
+.proofBeat h4{font-size:19px;font-weight:400;margin:0 0 9px}
+.proofCitation{font:12px/1.4 system-ui,sans-serif;color:#c8b183;margin:10px 0}
+.proofVerse{font-size:clamp(17px,2vw,21px);line-height:1.76;margin:7px 0;display:flex;gap:12px}
+.proofVerse .verse{font:11px/2 system-ui,sans-serif;color:#aa9981;flex:none;width:40px}
+.proofVerse span:last-child{flex:1}
+.proofContext,.proofSourceBridge{background:#171e29;border-left:2px solid #657280;padding:10px 14px;margin:15px 0}
+.proofContext{border-color:#928269;background:#141923}
+.proofContext p,.proofSourceBridge p{margin:6px 0;font:13px/1.6 system-ui,sans-serif;color:#c2c0bc}
+.proofContext .caption,.proofSourceBridge .caption{font:10px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#cdb68f}
+.proofSourceBridge{border-style:dashed}
+.proofGap{font:12px/1.5 system-ui,sans-serif;color:#bd9a86;margin:12px 0}
+body.historiaProofFocus main{max-width:890px}
+body.historiaProofFocus header.top{display:none}
+body.historiaProofFocus .layout{display:block;margin-top:0}
+body.historiaProofFocus aside,body.historiaProofFocus .resultsHead,
+body.historiaProofFocus #message,body.historiaProofFocus #results{display:none}
+body.historiaProofFocus .results.panel{border:0;background:transparent;padding:0}
+body.historiaProofFocus #historiaAudit>h3,body.historiaProofFocus #historiaAudit>p.meta{display:none}
+@media(max-width:650px){.proofNav{gap:5px}.proofChoices{display:grid}.proofVerse{line-height:1.65}}
 </style>
 </head>
 <body>
@@ -109,6 +137,28 @@ aside .panel+.panel{margin-top:15px}.checklabel{display:flex;align-items:center;
 <section id="historiaAudit" class="hidden" aria-label="Historia Salutis v18 reading audit">
 <h3>Historia Salutis · v18 reading audit</h3>
 <p class="meta">Research overlay, not approved text. Original 151 Atlas events remain unchanged.</p>
+<button id="historiaProofToggle" type="button" class="small secondary">Open continuous reading proof · 37 movements</button>
+<section id="historiaProof" class="hidden" aria-label="Historia Salutis continuous main-story research proof">
+ <p class="meta">One continuous sequence, not a second Bible experience. Exact biblical text is distinguished from unapproved context and source bridges. No excerpt here is publication-approved.</p>
+ <div class="row proofNav">
+  <button id="historiaProofPrev" type="button" class="small secondary" aria-label="Previous movement">←</button>
+  <select id="historiaProofMovement" aria-label="Choose narrative movement"></select>
+  <button id="historiaProofNext" type="button" class="small secondary" aria-label="Next movement">→</button>
+ </div>
+ <div class="proofChoices">
+  <label>Scripture edition
+   <select id="historiaProofEdition">
+    <option value="cpdv-2009">Catholic Public Domain Version</option>
+    <option value="dr-challoner">Douay–Rheims · Challoner</option>
+   </select>
+  </label>
+  <label class="checklabel"><input id="historiaProofBridges" type="checkbox" checked>
+   Include held source-bridge proposals</label>
+ </div>
+ <p id="historiaProofStatus" class="auditStatus" role="status"></p>
+ <div id="historiaProofText"></div>
+</section>
+<div id="historiaUnitControls">
 <label>Proposed reading unit<select id="historiaAuditUnit"></select></label>
 <label>Reading depth<select id="historiaReadingDepth">
 <option value="principal">Principal · shorter Scripture sequence</option>
@@ -117,6 +167,7 @@ aside .panel+.panel{margin-top:15px}.checklabel{display:flex;align-items:center;
 <button id="showHistoriaUnit" class="small primary" type="button">Read entire proposed unit</button>
 <p id="historiaAuditStatus" class="auditStatus" role="status"></p>
 <div id="historiaSequence"></div><hr>
+</div>
 </section>
 <div id="results" class="readings"></div>
 </section>
@@ -138,6 +189,7 @@ const memoryKey="ao-scripture-mining-review-v1";
 const appRoot=new URL("../",import.meta.url);
 let active=null,notes=[],mineSequence=0,selectionSequence=0,linkedTargets=[],selectedObject=null;
 let auditUnits=[],auditOriginId=null,auditLoadToken=0;
+let historiaProof=null,historiaProofToken=0;
 const witnessPromises=new Map();
 function sharedWitnessLoader(edition,book,options){
  const key=edition+"/"+book;
@@ -223,9 +275,124 @@ async function loadHistoriaAudit(){
   const id=params.get("unit");
   if(params.get("depth")==="expanded")$("historiaReadingDepth").value="expanded";
   if(id&&auditUnits.some(u=>u.unitId===id)){$("historiaAuditUnit").value=id;void showHistoriaUnit()}
+  if(params.get("movement"))void toggleHistoriaProof(true);
   $("historiaAuditStatus").textContent=auditUnits.length+" corrective units available. All are unapproved research.";
  }catch(error){$("historiaAuditStatus").textContent=String(error.message||error)}
 }
+
+async function initializeHistoriaProof(){
+ if(historiaProof)return historiaProof;
+ const url=new URL("../data/research/historia-salutis-v18-continuous-reading-proof.v1.json",appRoot);
+ const response=await fetch(url);
+ if(!response.ok)throw Error("Continuous Scripture proof not found on this branch");
+ const data=await response.json();
+ if(data.schema!=="ao.historia.v18.continuous-scripture-proof.v1"||
+    data.stage!=="REAL_VERSE_READ_THROUGH_PROOF_NOT_APPROVED"||
+    data.movements.length!==37)throw Error("Unrecognized or already-published proof registry");
+ historiaProof=data;
+ $("historiaProofMovement").replaceChildren();
+ for(const m of data.movements)$("historiaProofMovement").append(
+  new Option(String(m.sequence).padStart(2,"0")+" · "+m.title,m.id));
+ const wanted=params.get("movement");
+ if(wanted&&data.movements.some(m=>m.id===wanted))$("historiaProofMovement").value=wanted;
+ if(params.get("proofEdition")==="dr-challoner")$("historiaProofEdition").value="dr-challoner";
+ return data;
+}
+async function toggleHistoriaProof(visible){
+ $("historiaProof").classList.toggle("hidden",!visible);
+ $("historiaUnitControls").classList.toggle("hidden",visible);
+ document.body.classList.toggle("historiaProofFocus",visible);
+ $("historiaProofToggle").textContent=visible?"Return to individual source review":"Open continuous reading proof · 37 movements";
+ if(visible){
+  try{await initializeHistoriaProof();await showHistoriaMovement()}
+  catch(error){$("historiaProofStatus").textContent="Source proof unavailable: "+String(error.message||error)}
+ }else{
+  ++historiaProofToken;
+  const url=new URL(location.href);url.searchParams.delete("movement");
+  history.replaceState(null,"",url.pathname+url.search);
+ }
+}
+function moveHistoriaProof(n){
+ const all=historiaProof?.movements||[],current=all.findIndex(m=>m.id===$("historiaProofMovement").value);
+ const next=Math.min(all.length-1,Math.max(0,current+n));
+ if(next!==current){$("historiaProofMovement").value=all[next].id;void showHistoriaMovement();}
+}
+async function showHistoriaMovement(){
+ const all=await initializeHistoriaProof();
+ const m=all.movements.find(x=>x.id===$("historiaProofMovement").value);
+ if(!m)return;
+ const host=$("historiaProofText");host.replaceChildren();
+ const token=++historiaProofToken;
+ const edition=$("historiaProofEdition").value,showBridges=$("historiaProofBridges").checked;
+ $("historiaProofPrev").disabled=m.sequence===1;
+ $("historiaProofNext").disabled=m.sequence===all.movements.length;
+ $("historiaProofStatus").textContent="Loading exact "+(edition==="cpdv-2009"?"CPDV":"Douay–Rheims")+" Scripture · research only…";
+ const url=new URL(location.href);url.searchParams.set("movement",m.id);url.searchParams.set("module","historia");
+ url.searchParams.set("proofEdition",edition);
+ history.replaceState(null,"",url.pathname+url.search);
+ host.append(make("h2",m.title,"proofHeading"),
+  make("p","Movement "+m.sequence+" of "+all.movements.length+" · "+m.purpose,"proofLead"));
+ let previous=null,rendered=0,held=0;
+ try{
+  for(const beat of m.beats){
+   if(token!==historiaProofToken)return;
+   if(beat.kind==="EDITORIAL_CONTEXT_NOT_BIBLE"){
+    const note=make("aside",undefined,"proofContext");
+    note.append(make("span","Editorial context · not Scripture","caption"),
+     make("p",beat.explanation));
+    host.append(note);previous=null;continue;
+   }
+   if(beat.kind==="SOURCE_BRIDGE_CANDIDATE"&&!showBridges){previous=null;continue;}
+   const bridge=beat.kind==="SOURCE_BRIDGE_CANDIDATE";
+   const section=make("article",undefined,bridge?"proofSourceBridge":"proofBeat");
+   if(bridge){section.append(make("div","Unapproved source-bridge candidate · "+beat.reference,"caption"),
+     make("p",beat.purpose));held++;}
+   else{
+    section.append(make("h4",beat.scene));
+    if(beat.hasPartialVerseHold)section.append(make("p",
+      "Partial-verse edition hold: this witness displays the complete verse; the original editorial source specifies only part of it.","proofGap"));
+   }
+   const references=bridge?[beat.reference]:beat.refs;
+   for(const reference of references){
+    const parsed=parseScriptureContext(reference);
+    if(!parsed)throw Error("Unknown Catholic Bible coordinate "+reference);
+    const p=parsed.passage;
+    if(previous&&previous.book===p.book){
+     const gap=omission(previous,p);
+     if(gap)section.append(make("p",gap,"proofGap"));
+    }else if(previous){
+     section.append(make("p","New independently attributed biblical source; the texts are not one uninterrupted quotation.","proofGap"));
+    }
+    const verses=await sharedWitnessLoader(edition,p.book,{fetcher:bridgeFetch});
+    if(token!==historiaProofToken)return;
+    const rows=verses.filter(v=>v.chapter===p.chapter&&v.verseStart>=p.verseStart&&v.verseStart<=p.verseEnd);
+    if(rows.length!==p.verseEnd-p.verseStart+1)throw Error("Missing Bible source verses at "+reference+" — no substituted text supplied");
+    section.append(make("div",reference,"proofCitation"));
+    for(const v of rows){
+     const line=make("p",undefined,"proofVerse");
+     line.append(make("span",v.chapter+":"+v.verseStart,"verse"),make("span",v.text));
+     section.append(line);
+    }
+    previous=p;rendered+=rows.length;
+   }
+   host.append(section);
+  }
+  $("historiaProofStatus").textContent=rendered+" source verses displayed, "+
+    held+" proposed source bridge(s) visible · "+(edition==="cpdv-2009"?"CPDV":"Douay–Rheims")+
+    " · Never approved; omissions and contextual text are signposted.";
+ }catch(error){
+  if(token===historiaProofToken)$("historiaProofStatus").textContent=
+   "Incomplete reading: "+String(error.message||error);
+ }
+}
+$("historiaProofToggle").addEventListener("click",()=>
+ void toggleHistoriaProof($("historiaProof").classList.contains("hidden")));
+$("historiaProofPrev").addEventListener("click",()=>moveHistoriaProof(-1));
+$("historiaProofNext").addEventListener("click",()=>moveHistoriaProof(1));
+$("historiaProofMovement").addEventListener("change",()=>void showHistoriaMovement());
+$("historiaProofEdition").addEventListener("change",()=>void showHistoriaMovement());
+$("historiaProofBridges").addEventListener("change",()=>void showHistoriaMovement());
+
 const omission=(before,after)=>{
  if(!before||!after)return null;
  if(before.book!==after.book)return "Independent biblical witness — not a single continuous historical episode.";
