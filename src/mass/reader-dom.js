@@ -3080,6 +3080,8 @@ export function createReaderDomAdapter({
               for(const event of inlineRubrics){
                 const text=doc.createElement("span");
                 text.className="ao-missal-rubric-action";
+                text.dataset.rubricId=event.id;
+                text.dataset.sourceCueId=event.sourceCueId;
                 text.textContent=event.displayText;
                 actions.append(text);
               }
