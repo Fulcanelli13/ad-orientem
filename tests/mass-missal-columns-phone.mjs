@@ -130,6 +130,48 @@ try{
   assert.deepEqual(errors,[],width+"px Missal runtime errors: "+errors.join(" | "));
   await context.close();
  }
+ // Solemn only: actual source-cue book note, with the Requiem form
+ // projected through the existing R18 controller, not inferred by scrolling.
+ for(const {requiem,lang} of [
+   {requiem:false,lang:"en"},{requiem:true,lang:"en"},
+   {requiem:false,lang:"fr"},{requiem:true,lang:"fr"}
+ ]){
+  const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
+  const page=await context.newPage(),errors=[];
+  page.on("pageerror",e=>errors.push(e.message));
+  await page.goto(`http://127.0.0.1:4288/tests/fixtures/reader-phone-harness.html?mode=MISSAL&form=SOLEMN&lang=${lang}&requiem=${requiem?1:0}`,{waitUntil:"domcontentloaded",timeout:90000});
+  await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:60000});
+  const source=await page.evaluate(()=>{
+    const preview=window.__AO_PHONE_PREVIEW;
+    preview.showSection("AO.MISSAL.010.6");
+    return preview.getCurrentCard()?.sectionId;
+  });
+  assert.equal(source,"AO.MISSAL.010.6","Offertory incensation Must retain source page in Solemn Missal");
+  await page.waitForFunction(()=>!!document.querySelector(
+   '.ao-missal-rubric-action[data-rubric-id="SMIN-009"]'),null,{timeout:9000});
+  const note=await page.locator('.ao-missal-rubric-action[data-rubric-id="SMIN-009"]').innerText();
+  assert.match(note,requiem
+    ?(lang==="fr"?/Seul le célébrant est encensé/:/choir and people are not/)
+    :(lang==="fr"?/ministres sacrés assistent/:/sacred ministers assist/i));
+  const layout=await page.evaluate(()=>({
+   overflow:document.documentElement.scrollWidth-innerWidth,
+   tags:[...document.querySelectorAll(".ao-missal-rubric-action")].map(e=>e.dataset.rubricId),
+   visible:!!document.querySelector('.ao-missal-inline-rubrics[data-observed-now="false"]')
+  }));
+  assert.ok(layout.overflow<=1,"Solemn minister notes cause horizontal Missal overflow");
+  assert.ok(!layout.tags.some(id=>id==="SMIN-013"),"Pax belongs to its own prayer, not Offertory");
+  if(!requiem){
+    const paxCard=await page.evaluate(()=>{
+      window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.022.1");
+      return window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId;
+    });
+    assert.equal(paxCard,"AO.MISSAL.022.1","Canonical Pax prayer has been moved");
+    await page.waitForFunction(()=>!!document.querySelector(
+     '.ao-missal-rubric-action[data-rubric-id="SMIN-013"]'),null,{timeout:8000});
+  }
+  assert.deepEqual(errors,[], "Solemn Missal runtime errors: "+errors.join(" | "));
+  await context.close();
+ }
  console.log("PASS minimal MISSAL two-column Latin/vernacular alignment, equal serif font, Missal state ribbon, no Schola, EN/FR at 320/390/768");
 }finally{
  await browser?.close().catch(()=>{});

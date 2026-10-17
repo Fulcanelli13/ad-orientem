@@ -1354,14 +1354,19 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       sourceAnchorCueId:p.sourceAnchorCueId??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
       publishedMissalRubrics:Object.freeze((Array.isArray(p.publishedMissalRubrics)?p.publishedMissalRubrics:[])
-        .filter(event=>event?.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
-          event.owner==="PUBLISHED_R17_MISSAL_INLINE" &&
-          event.actor==="PRIEST" && event.sourceId==="MR62_RITUS" &&
-          event.observedNow===false && typeof event.displayText==="string" &&
-          event.displayText.trim() &&
-          (p.sourceCueIds??[]).includes(event.sourceCueId))
+        .filter(event=>event?.observedNow===false &&
+          typeof event.displayText==="string" && event.displayText.trim() &&
+          (p.sourceCueIds??[]).includes(event.sourceCueId) &&
+          ((event.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
+            event.owner==="PUBLISHED_R17_MISSAL_INLINE" &&
+            event.actor==="PRIEST" && event.sourceId==="MR62_RITUS") ||
+           (event.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
+            event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
+            typeof event.actor==="string" && event.actor.trim() &&
+            /^SMIN-0(?:0[1-9]|1[0-9])$/.test(String(event.id)) &&
+            event.sourceId==="R18_SOLEMN_FORM_STATE")))
         .map(event=>Object.freeze({
-          id:String(event.id),displayText:event.displayText,
+          id:String(event.id),displayText:event.displayText,actor:event.actor,
           sourceCueId:event.sourceCueId,observedNow:false,
           sourceUrl:typeof event.sourceUrl==="string" &&
             event.sourceUrl.startsWith("https://") ? event.sourceUrl : null,
@@ -3058,8 +3063,16 @@ export function createReaderDomAdapter({
             note.dataset.observedNow="false";
             const heading=doc.createElement("span");
             heading.className="ao-canon-inline-heading";
+            const hasMinisters=mode==="MISSAL" &&
+              inlineRubrics.some(event=>event.actor!=="PRIEST");
+            const hasPriest=mode==="MISSAL" &&
+              inlineRubrics.some(event=>event.actor==="PRIEST");
             heading.textContent=mode==="MISSAL"
-              ? (frenchReader?"Rubrique · prêtre":"Rubric · priest")
+              ? (hasMinisters
+                ? (hasPriest
+                  ? (frenchReader?"Rubriques · célébrant et ministres":"Rubrics · celebrant and ministers")
+                  : (frenchReader?"Rubrique · ministres sacrés":"Rubric · sacred ministers"))
+                : (frenchReader?"Rubrique · prêtre":"Rubric · priest"))
               : (frenchReader?"PRÊTRE · RUBRIQUE DE 1962":"PRIEST · 1962 RUBRIC");
             const actions=doc.createElement("span");
             actions.className="ao-canon-inline-actions";
@@ -3067,6 +3080,8 @@ export function createReaderDomAdapter({
               for(const event of inlineRubrics){
                 const text=doc.createElement("span");
                 text.className="ao-missal-rubric-action";
+                text.dataset.rubricId=event.id;
+                text.dataset.sourceCueId=event.sourceCueId;
                 text.textContent=event.displayText;
                 actions.append(text);
               }
