@@ -7,7 +7,7 @@ import { chromium } from '@playwright/test';
 
 const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const target='/previews/visible-mass-3d/sanctuary-hotspot-pilot.html';
-const mime={'.html':'text/html; charset=utf-8','.json':'application/json; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8'};
+const mime={'.html':'text/html; charset=utf-8','.json':'application/json; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8'};
 const server=http.createServer(async(req,res)=>{
  try {
   const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
@@ -153,6 +153,37 @@ try{
   await page.locator('#return-to-church').click();
   assert.equal(await page.locator('#inspection-stage').isVisible(),false);
   assert.equal(await page.locator('#photo-viewport').isVisible(),true);
+  // The optional dialogue director is mounted on the EXISTING sanctuary
+  // photograph, not in an independent course or duplicated question owner.
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.guideStatus()?.availableRoutes?.length===4);
+  assert.equal(await page.locator('#guide-routes [data-trail]').count(),4);
+  await page.locator('#guide-routes [data-trail="ALTAR_MYSTERY"]').click();
+  assert.equal((await page.locator('#guide-prompt').innerText()).includes('crucifix'),true);
+  await page.locator('#guide-actions [data-guide-question="VMQ-0013"]').click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).selected,'AL06');
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).question,'VMQ-0013');
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).readCount,1);
+  await page.locator('#guide-return').click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0014');
+  await page.locator('#guide-actions button').filter({hasText:'Skip suggestion'}).click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0002');
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).readCount,1);
+  await page.locator('#guide-routes [data-trail="FIRST_VISIT"]').click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0056');
+  await page.locator('#guide-actions [data-guide-question="VMQ-0056"]').click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).selected,'SN02');
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).readCount,2);
+  await page.locator('#guide-return').click();
+  await page.locator('#guide-actions button').filter({hasText:'Skip this path'}).click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).visible,false);
+  await page.locator('#guide-toggle').click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).visible,true);
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0001');
+  await page.reload({waitUntil:'domcontentloaded'});
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.guideStatus()?.readCount===2);
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0001');
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).active,'FIRST_VISIT');
+  await page.screenshot({path:screenshotDir+'/'+spec.name+'-guided.png'});
   assert.deepEqual(errors,[],'no uncaught JS errors');
   await context.close();
   console.log('Sanctuary photo-browser PASS '+spec.name+' '+spec.width+'x'+spec.height);
