@@ -8,9 +8,10 @@
  * priest gesture or an independently timed minister event.
  */
 export function certifiedLiveCanonActionOverride({
-  presentationMode=null,cueId=null,matrixAction=null,
+  presentationMode=null,curatedPresentation=false,cueId=null,matrixAction=null,
 }={}){
   if(String(presentationMode??"").toUpperCase()!=="LIVE" ||
+     curatedPresentation!==true ||
      cueId!=="AO.SM.C0185" ||
      matrixAction?.owner!=="GESTURE_MATRIX_SOT" ||
      matrixAction?.sourceGestureId!=="GM.P.C0185.01" ||
