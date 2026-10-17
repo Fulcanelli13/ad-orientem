@@ -20,6 +20,7 @@ import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
+import {selectedPreflightStudyProper} from "./preflight-study-proper.js";
 import {massScriptureContextForCard} from "./scripture-reading-context.js";
 import {nativeRiteScriptureContext} from "./scripture-native-rite-context.js";
 import {extendedLessonScriptureContext} from "./scripture-extended-lesson-context.js";
@@ -874,6 +875,24 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     get polls() { return state.polls; },
     prepare: () => state.controller?.prepare?.(),
     enter: () => state.controller?.enter?.(),
+    // Read-only Formation projection. The host keeps exclusive ownership of
+    // selection and Proper resolution; no preparation or reader activation.
+    selectedStudyProper: () => {
+      if(!state.installed)return null;
+      try{
+        const base=celebrationApi()?.getResolvedMass?.();
+        const observed=state.observedSource?.selectionFor?.(base)??null;
+        return selectedPreflightStudyProper({
+          base,
+          observedSelection:observed,
+          observedStatus:state.observedSource?.status?.()??null,
+          observedGate:state.observedSource?.preparationGate?.()??null,
+          formSelection:state.fullMassPreflight?.selectionFor?.(observed?.legacy??base)??null,
+          selectedCalendarDate:runtimeState()?.selectedDate??null,
+          assemblyStatus:statusSnapshot()
+        });
+      }catch{return null}
+    },
     hasResumable: () => hasResumableMass(),
     resume: () => resumePersistedMass(),
     suspend: () => suspendPersistedMass(),
