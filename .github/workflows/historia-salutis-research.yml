@@ -1,0 +1,31 @@
+name: Historia Salutis research crosswalk
+
+on:
+  pull_request:
+    paths:
+      - 'data/explore/historia-salutis-p0-master-crosswalk.v1.json'
+      - 'data/explore/historia-salutis-p1-person-story-scripture-links.v1.json'
+      - 'tests/historia-salutis-p0-master-crosswalk.mjs'
+      - 'tests/historia-salutis-p1-person-story-links.mjs'
+      - 'data/explore/historia-salutis-p2-covenant-character-source-queue.v1.json'
+      - 'tests/historia-salutis-p2-covenant-story-sources.mjs'
+      - '.github/workflows/historia-salutis-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research-crosswalk-identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check canonical 151 and P0 covenant/narrative matrix
+        run: node tests/historia-salutis-p0-master-crosswalk.mjs
+      - name: Check P1 genealogy and story source guards
+        run: node tests/historia-salutis-p1-person-story-links.mjs
+      - name: Check P2 covenant and character story Scripture sources
+        run: node tests/historia-salutis-p2-covenant-story-sources.mjs
