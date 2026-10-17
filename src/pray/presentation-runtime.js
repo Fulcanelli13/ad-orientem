@@ -1552,6 +1552,31 @@ function devotionalMonthRegisterMarkup(kind,records,tracking,selectedDate){
   <p class="aoQuietMonthNote">${esc(details)} ${esc(L('An unrecorded month is not automatically a missed devotion.','Un mois non enregistré ne signifie pas automatiquement une dévotion manquée.'))}</p>
  </section>`;
 }
+function devotionalMonthSummary(kind,records,tracking,selectedDate){
+ const saturday=kind==="saturday",needed=saturday?5:9;
+ const report=monthlyDevotionalRegister(tracking?records:[],{needed,selectedDate});
+ const title=saturday?L('First Saturdays · month record','Premiers samedis · suivi mensuel'):L('First Fridays · month record','Premiers vendredis · suivi mensuel');
+ const count=tracking?report.streak+' / '+needed:L('Optional','Facultatif');
+ const cells=tracking?report.cells.map(c=>`<i class="aoQuietSeriesPip" data-status="${c.status}"></i>`).join(''):'';
+ const tracker=saturday?'fs':'ff';
+ return `<details class="aoQuietSeriesDisclosure" data-ao-series-kind="${kind}">
+  <summary aria-label="${esc(title+' · '+count)}">
+   <span class="aoQuietSeriesHeading">${esc(title)}</span>
+   <span class="aoQuietSeriesPips" aria-hidden="true">${cells}</span>
+   <span class="aoQuietSeriesCount">${esc(count)}</span>
+   <span class="aoQuietSeriesChevron" aria-hidden="true">⌄</span>
+  </summary>
+  <div class="aoQuietSeriesExpanded">
+   <label class="aoP435930TrackingToggle">
+    <input type="checkbox" data-p435930-${tracker}-tracking ${tracking?'checked':''}>
+    <span><b>${esc(L('Keep a private month-by-month record','Conserver un suivi privé mois par mois'))}</b>
+     <small>${esc(L('Optional · the guide works without tracking','Facultatif · le guide fonctionne sans suivi'))}</small></span>
+   </label>
+   ${tracking?devotionalMonthRegisterMarkup(kind,records,tracking,selectedDate):
+      `<p class="aoQuietSeriesOffNote">${esc(L('Nothing is recorded unless you choose to report each month.','Aucun mois n’est enregistré sans votre déclaration explicite.'))}</p>`}
+  </div>
+ </details>`;
+}
 function programmeRail(kind,step,items){
  return `<div class="aoP435930StageRail aoP435930ProgrammeRail">${items.map((x,i)=>`<button type="button" class="${i===step?'active':''}" ${i===step?'aria-current="step"':''} data-p435930-${kind}-stage="${i}"><span>${i+1}</span><b>${esc(L(x[0],x[1]))}</b></button>`).join('')}</div>`
 }
@@ -1580,7 +1605,13 @@ function firstFridayStage(date,valid){
 }
 function renderFirstFriday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,5),records=S.firstFriday.records,tracking=!!S.firstFriday.tracking;
- return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">${devotionalGuide('firstFriday')}<label class="aoP435930TrackingToggle"><input type="checkbox" data-p435930-ff-tracking ${tracking?'checked':''}><span><b>${esc(L('Keep a private month-by-month record','Conserver un suivi privé mois par mois'))}</b><small>${esc(L('Optional · guidance works without tracking','Facultatif · le guide fonctionne sans suivi'))}</small></span></label>${devotionalMonthRegisterMarkup("friday",records,tracking,date)}<section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Friday','Premier vendredi'):tracking?L('Not the First Friday · guide available, recording disabled','Ce n’est pas le premier vendredi · guide disponible, enregistrement désactivé'):L('Not the First Friday · you may still preview the guide','Ce n’est pas le premier vendredi · vous pouvez quand même consulter le guide'))}</span></section>${firstFridayStage(date,valid)}${tracking&&FF.step===4?history(records,L("Private history","Historique privé")):""}</main>`;
+ return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">
+  <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Friday','Premier vendredi'):tracking?L('Not the First Friday · guide available, recording disabled','Ce n’est pas le premier vendredi · guide disponible, enregistrement désactivé'):L('Not the First Friday · you may still preview the guide','Ce n’est pas le premier vendredi · vous pouvez quand même consulter le guide'))}</span></section>
+  ${devotionalMonthSummary('friday',records,tracking,date)}
+  ${firstFridayStage(date,valid)}
+  ${devotionalGuide('firstFriday')}
+  ${tracking&&FF.step===4?history(records,L('Private history','Historique privé')):''}
+ </main>`;
 }
 function firstSaturdayStage(date,valid){
  const s=FS.step;
@@ -1596,7 +1627,13 @@ function firstSaturdayStage(date,valid){
 }
 function renderFirstSaturday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,6),records=S.firstSaturday.records,tracking=!!S.firstSaturday.tracking;
- return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">${devotionalGuide('firstSaturday')}<label class="aoP435930TrackingToggle"><input type="checkbox" data-p435930-fs-tracking ${tracking?'checked':''}><span><b>${esc(L('Keep a private month-by-month record','Conserver un suivi privé mois par mois'))}</b><small>${esc(L('Optional · guidance works without tracking','Facultatif · le guide fonctionne sans suivi'))}</small></span></label>${devotionalMonthRegisterMarkup("saturday",records,tracking,date)}<section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Saturday','Premier samedi'):tracking?L('Not the First Saturday · guide available, recording disabled','Ce n’est pas le premier samedi · guide disponible, enregistrement désactivé'):L('Not the First Saturday · you may still preview the guide','Ce n’est pas le premier samedi · vous pouvez quand même consulter le guide'))}</span></section>${firstSaturdayStage(date,valid)}${tracking&&FS.step===5?history(records,L("Private history","Historique privé")):""}</main>`;
+ return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">
+  <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Saturday','Premier samedi'):tracking?L('Not the First Saturday · guide available, recording disabled','Ce n’est pas le premier samedi · guide disponible, enregistrement désactivé'):L('Not the First Saturday · you may still preview the guide','Ce n’est pas le premier samedi · vous pouvez quand même consulter le guide'))}</span></section>
+  ${devotionalMonthSummary('saturday',records,tracking,date)}
+  ${firstSaturdayStage(date,valid)}
+  ${devotionalGuide('firstSaturday')}
+  ${tracking&&FS.step===5?history(records,L('Private history','Historique privé')):''}
+ </main>`;
 }
 function mysterySetButtons(){return `<div class="aoP435930MysterySets">${Object.entries(FS_MYSTERIES).map(([id,x])=>`<button type="button" class="${FS.medSet===id?'active':''}" data-p435930-fs-med-set="${id}">${esc(isFr()?x.fr:x.en)}</button>`).join('')}</div>`}
 function mysteryButtons(){const set=FS_MYSTERIES[FS.medSet]||FS_MYSTERIES.joyful,items=set.items[lang()]||set.items.en;return `<div class="aoP435930MysteryList">${items.map((x,i)=>`<button type="button" class="${FS.medMystery===i?'active':''}" data-p435930-fs-med-mystery="${i}"><span>${i+1}</span><b>${esc(x)}</b></button>`).join('')}</div>`}
@@ -2552,8 +2589,8 @@ function onClick(e){
  if(b.matches('[data-p435930-fs-interrupt]')){const date=selectedDateKey();if(!isFirstWeekday(date,6))return;upsert(S.firstSaturday.records,{date,intention:!!FS.intention,communion:!!FS.communion,rosary:!!FS.rosary,meditation:!!FS.meditation,confessionDate:FS.confessionDate||'',complete:false,interrupted:true,reportedAt:nowIso()});save();FS.step=5;return render()}
 }
 function onChange(e){const x=e.target;
- if(x.matches('[data-p435930-ff-tracking]')){S.firstFriday.tracking=x.checked;save();return render()}
- if(x.matches('[data-p435930-fs-tracking]')){S.firstSaturday.tracking=x.checked;save();return render()}
+ if(x.matches('[data-p435930-ff-tracking]')){const expanded=!!x.closest('details.aoQuietSeriesDisclosure')?.open;S.firstFriday.tracking=x.checked;save();render();if(expanded)mount()?.querySelector('details.aoQuietSeriesDisclosure')?.setAttribute('open','');return}
+ if(x.matches('[data-p435930-fs-tracking]')){const expanded=!!x.closest('details.aoQuietSeriesDisclosure')?.open;S.firstSaturday.tracking=x.checked;save();render();if(expanded)mount()?.querySelector('details.aoQuietSeriesDisclosure')?.setAttribute('open','');return}
  if(x.matches('[data-p435930-angelus-appendix]')){S.angelusHistoricalConclusion=x.checked;save();return render()}
  if(x.matches('[data-p435930-angelus-vespers]')){angelusSaturdayVespersDate=x.checked&&selectedWeekday()===6?selectedDateKey():null;return render()}
  if(x.matches('[data-p435930-grave-reviewed]')){CONF.graveReviewed=x.checked;return}
