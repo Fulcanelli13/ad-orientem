@@ -10,7 +10,7 @@ function ready(date,id,sourcePath){
  }};
 }
 const good=ready("2026-04-03","tempora:Quad6-5r:1:v","Tempora/Quad6-5r");
-const vigil=ready("2026-04-04","tempora:Quad6-6:1:w","Tempora/Quad6-6");
+const vigil=ready("2026-04-04","tempora:Quad6-6r:1:vw","Tempora/Quad6-6r");
 const gf=calendarScriptureContexts(good),ev=calendarScriptureContexts(vigil);
 assert.deepEqual(gf.map(x=>x.role),[
  "FIRST_LESSON","SECOND_LESSON","PASSION_BEFORE_DEATH","PASSION_AFTER_DEATH"
@@ -46,7 +46,7 @@ for(const corrupt of [
  {...good,proper:{...good.proper,sourcePath:"Tempora/Quad6-5"}},
  {...good,proper:{...good.proper,status:"failed"}},
  {...good,status:"failed"},
- {...vigil,day:{main:{id:"tempora:Quad6-6:2:w"}}},
+ {...vigil,day:{main:{id:"tempora:Quad6-6r:2:vw"}}},
  {...vigil,date:"2027-04-04"},
  {...vigil,proper:{...vigil.proper,sourcePath:"Sancti/04-04"}}
  ])assert.deepEqual(calendarNativeRiteScriptureContexts(corrupt),[],
