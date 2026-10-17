@@ -80,6 +80,7 @@ try{
    edition:globalThis.AO_SCRIPTURE_APP_V1.status().reader?.editionId
  }));
  assert.match(initial.title,/Luke 18:9/);
+ await scripture.locator(".aoScriptureTools > summary").tap();
  await scripture.locator(".aoScriptureRelated summary").tap();
  const button=scripture.locator('[data-scripture-open-related-object^="calendarReading:"]')
   .filter({hasText:""}).first();
