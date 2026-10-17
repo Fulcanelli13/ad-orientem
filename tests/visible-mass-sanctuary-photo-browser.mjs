@@ -153,6 +153,11 @@ try{
   await page.locator('#return-to-church').click();
   assert.equal(await page.locator('#inspection-stage').isVisible(),false);
   assert.equal(await page.locator('#photo-viewport').isVisible(),true);
+  // Reset ONLY the test visitor's trail history after the preceding glossary
+  // and inspection coverage, so the navigation checks start with a fresh
+  // research visitor rather than falsely assuming earlier answers were unread.
+  await page.evaluate(()=>sessionStorage.removeItem('ao-visible-mass-visitor-trails-v1'));
+  await page.reload({waitUntil:'domcontentloaded'});
   // The optional dialogue director is mounted on the EXISTING sanctuary
   // photograph, not in an independent course or duplicated question owner.
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.guideStatus()?.availableRoutes?.length===4);
