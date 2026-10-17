@@ -1,0 +1,47 @@
+name: Visible Mass living glossary object review
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - tools/build-visible-mass-living-object-photos.py
+      - .github/workflows/visible-mass-living-object-photos.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-object-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install Pillow requests
+      - name: Validate builder
+        run: python -m py_compile tools/build-visible-mass-living-object-photos.py
+      - name: Acquire verifiable object images and bundle offline
+        run: python -u tools/build-visible-mass-living-object-photos.py
+      - name: Check HTML and candidate count
+        run: |
+          test -s dist/visible-mass/Visible_Mass_Living_Glossary_Objects.html
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("dist/visible-mass/Visible_Mass_Living_Glossary_Objects.html")
+          s=p.read_text()
+          report=json.loads(Path("dist/visible-mass/living-objects-acquisition-report.json").read_text())
+          assert report["verified"] >= 15
+          assert s.count("data:image/jpeg;base64,") >= 15
+          assert "Your overall priority rank" in s
+          print("VERIFIED:", report["verified"], "images in",len(report["categories"]),"object categories")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Visible-Mass-Living-Glossary-Objects
+          path: |
+            dist/visible-mass/Visible_Mass_Living_Glossary_Objects.html
+            dist/visible-mass/living-objects-acquisition-report.json
+          retention-days: 60
+          if-no-files-found: error
