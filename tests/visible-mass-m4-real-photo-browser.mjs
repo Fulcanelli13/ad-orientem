@@ -92,7 +92,7 @@ try{
       const top=ctx.getImageData(Math.min(src.width-1,Math.floor(uv.u*src.width)),Math.min(src.height-1,Math.floor(uv.v*src.height)),1,1).data;
       const inverted=ctx.getImageData(Math.min(src.width-1,Math.floor(uv.u*src.width)),Math.min(src.height-1,Math.floor((1-uv.v)*src.height)),1,1).data;
       const error=(a,b)=>Math.sqrt((a[0]-b[0])**2+(a[1]-b[1])**2+(a[2]-b[2])**2);
-      samples.push({expected:error(drawn,top),flipped:error(drawn,inverted),u:uv.u,v:uv.v});
+      samples.push({expected:error(drawn,top),flipped:error(drawn,inverted),drawn:Array.from(drawn).slice(0,3),source:Array.from(top).slice(0,3),inverted:Array.from(inverted).slice(0,3),u:uv.u,v:uv.v});
      }
      return {renderer:panorama.renderer,lastRenderMs:panorama.lastRenderMs,pitch:panorama.pose.pitch,samples};
     },"https://upload.wikimedia.org/wikipedia/commons/m4-original-"+sceneId+".jpg");
@@ -104,6 +104,7 @@ try{
    const mean=key=>readings.flatMap(r=>r.samples.map(s=>s[key])).reduce((a,b)=>a+b,0)/6;
    const uprightError=mean("expected"),flippedError=mean("flipped");
    assert.ok(readings[0].pitch>.3&&readings[1].pitch<-.3,"vertical controls must move in physical directions");
+   console.log("M4 REAL IMAGE PIXEL PROOF",sceneId,viewport.name,JSON.stringify({uprightError,flippedError,readings}));
    assert.ok(uprightError+12<flippedError,"ACTUAL photograph must be upright, not inverted: "+JSON.stringify({sceneId,uprightError,flippedError,readings}));
    report.push({viewport:viewport.name,sceneId,renderer:readings[0].renderer,uprightError:Math.round(uprightError),flippedError:Math.round(flippedError),lastRenderMs:readings[0].lastRenderMs});
   }
