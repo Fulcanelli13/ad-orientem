@@ -10,7 +10,7 @@ const economy=JSON.parse(readFileSync(
 
 assert.equal(economy.schema,"ao.historia.v18.essential-verse-economy.v1");
 assert.equal(economy.status,"EDITORIAL_PROVISIONAL_VERSE_COORDINATES_ONLY");
-assert.deepEqual(economy.counts,{essential:93,edited:30,protected:31,unchanged:22,editionCorrections:2,priorContinuityRestorations:1,literaryContinuityExpansions:7});
+assert.deepEqual(economy.counts,{essential:93,edited:30,protected:31,unchanged:22,editionCorrections:2,priorContinuityRestorations:1,literaryContinuityExpansions:6,literaryContextRebalances:1});
 assert.equal(economy.decisions.length,93);
 assert.equal(economy.canonical.originalV18Chapters,78);
 assert.equal(economy.canonical.originalV18Segments,217);
@@ -89,7 +89,7 @@ const continuityExpansions=new Map([
  ["H33-01",Array.from({length:7},(_,i)=>"2Samuel:7:"+(i+1))],
  ["H39-01",["2Kings:17:3","2Kings:17:4"]]
 ]);
-const seen=new Set(),stats={edited:0,protected:0,unchanged:0,editionCorrections:0,priorContinuityRestorations:0,literaryContinuityExpansions:0,halfVerses:0},books=new Set();
+const seen=new Set(),stats={edited:0,protected:0,unchanged:0,editionCorrections:0,priorContinuityRestorations:0,literaryContinuityExpansions:0,literaryContextRebalances:0,halfVerses:0},books=new Set();
 let originalVerseCount=0,selectedVerseCount=0;
 for(const decision of economy.decisions){
  assert.ok(!seen.has(decision.unitId),"No duplicated v18 identity");
@@ -106,6 +106,7 @@ for(const decision of economy.decisions){
  const editionRepair=decision.selectionStatus==="EDITION_AWARE_REFERENCE_CORRECTION";
  const seamRepair=decision.selectionStatus==="PRIOR_SOURCE_CONTINUITY_RESTORED";
  const literaryExpansion=decision.selectionStatus==="LITERARY_CONTINUITY_EXPANSION";
+ const rebalanced=decision.selectionStatus==="LITERARY_CONTEXT_REBALANCED";
  for(const piece of source.parts){
   if(editionRepair){
    assert.ok(["H15-02","H68-04"].includes(decision.unitId));
@@ -130,7 +131,7 @@ for(const decision of economy.decisions){
  assert.equal(chosenSet.size,chosen.length,"No repeated principal excerpt verse");
  let prior=-1;
  for(const code of chosen){
-  if(literaryExpansion){
+  if(literaryExpansion||rebalanced){
    const extras=new Set(continuityExpansions.get(decision.unitId)||[]);
    assert.ok(extras.size,"Every enlargement beyond v18 must be enumerated exactly");
    for(const k of chosen)assert.ok(universe.has(k)||extras.has(k),
@@ -156,6 +157,13 @@ for(const decision of economy.decisions){
  }else if(decision.selectionStatus==="DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"){
   stats.protected++;
   assert.equal(chosen.length,v18Codes.length,"Protected biblical reading must remain complete");
+ }else if(rebalanced){
+  stats.literaryContextRebalances++;
+  assert.equal(decision.unitId,"H39-01");
+  assert.ok(chosen.length<v18Codes.length);
+  assert.deepEqual(decision.proposedSelectedReferences,["2Kings 17:3–8","2Kings 17:13–18"]);
+  assert.equal(decision.omittedVersesMustBeVisible,true);
+  assert.equal(decision.literaryBatch,"MOVEMENTS_10_19_DESK_READING");
  }else if(literaryExpansion){
   stats.literaryContinuityExpansions++;
   assert.ok(chosen.length>v18Codes.length);
@@ -193,7 +201,7 @@ for(const decision of economy.decisions){
  }
 }
 assert.equal(seen.size,93);
-assert.deepEqual(stats,{edited:30,protected:31,unchanged:22,editionCorrections:2,priorContinuityRestorations:1,literaryContinuityExpansions:7,halfVerses:1});
+assert.deepEqual(stats,{edited:30,protected:31,unchanged:22,editionCorrections:2,priorContinuityRestorations:1,literaryContinuityExpansions:6,literaryContextRebalances:1,halfVerses:1});
 assert.ok(selectedVerseCount<originalVerseCount);
 assert.ok(originalVerseCount-selectedVerseCount>80,"No fake compression reported");
 for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
@@ -217,11 +225,12 @@ assert.ok(economy.decisions.filter(x=>x.literaryBatch==="MOVEMENTS_01_09_DESK_RE
 assert.ok(economy.decisions.filter(x=>x.literaryBatch==="MOVEMENTS_10_19_DESK_READING")
  .every(x=>x.bothCatholicEditionVersePresenceVerified===false));
 assert.deepEqual(economy.verification.batch10_19.sourceContinuityExpansions,
- ["H22-01","H30-01","H33-01","H39-01"]);
+ ["H22-01","H30-01","H33-01"]);
+assert.deepEqual(economy.verification.batch10_19.sourceSpanRebalances,["H39-01"]);
 assert.deepEqual(economy.verification.batch10_19.trims,
  ["H35-02","H36-02","H43-02"]);
 assert.equal(economy.verification.batch10_19.approved,false);
 assert.equal(economy.verification.fullLiteraryReadAloud,false);
 assert.equal(economy.verification.CatholicEditorialApproval,false);
 assert.equal(economy.verification.translationRightsApproval,false);
-console.log("PASS Historia essentials: 93 v18 units; 30 proposed trims, 31 locked, 22 baseline, 2 edition corrections, 1 prior seam repair and 7 literary expansions; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
+console.log("PASS Historia essentials: 93 v18 units; 30 proposed trims, 31 locked, 22 baseline, 2 edition corrections, 1 prior seam repair, 6 literary expansions and 1 historical-source rebalance; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
