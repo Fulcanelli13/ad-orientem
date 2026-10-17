@@ -1,0 +1,767 @@
+{
+  "schema": "AO_SACRED_ART_FEAST_COVERAGE_TRUTH_2026_V1",
+  "created": "2026-10-17",
+  "scope": "Research evidence and editorial selection needs; NOT full 1962 calendar or all saint-feast visual coverage certification",
+  "pr": 887,
+  "origin": {
+    "firstClass": "data/calendar/sacred-art-first-class-2026-research-crosswalk.v1.json",
+    "exactArtworkLinks": "data/calendar/sacred-art-1962-exact-feast-source-links.v1.json",
+    "nonFirstClass": "data/calendar/sacred-art-class-ii-iii-occasions-20261013.v1.json",
+    "canonicalCalendarRuntime": "src/calendar/calendar-runtime.js"
+  },
+  "counts": {
+    "classIObserved2026": 53,
+    "classIWithAtLeastOneExactSourceResearchLink": 21,
+    "classIWithoutExactResearchLink": 32,
+    "exactFeastResearchLinks": 24,
+    "classIIIIIEditorialCandidateDates": 46,
+    "classIIIIIExplicitlyConfirmedObservedPrincipal": 23,
+    "classIIIIICommemoratedOrSuperseded": 6,
+    "classIIIIIStillRequireDayResolver": 17,
+    "fullYearLowerRankedFeastDateEnumerationAudited": false,
+    "additionalLocalOrModernSaintFeastsEnumerated": false,
+    "everyFeastHasSubjectSpecificArt": false,
+    "anyProductionArtApprovalEstablishedByTheseResearchFiles": false
+  },
+  "classI2026": [
+    {
+      "date": "2026-01-01",
+      "observedPrincipalId": "sancti:01-01:1:w",
+      "title": "Octave Day of Christmas",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-01-06",
+      "observedPrincipalId": "sancti:01-06:1:w",
+      "title": "Epiphany of the Lord",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-436984",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-02-18",
+      "observedPrincipalId": "tempora:Quadp3-3:1:v",
+      "title": "Ash Wednesday",
+      "rank": 1,
+      "associationTier": "LITURGY_AND_GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-02-22",
+      "observedPrincipalId": "tempora:Quad1-0:1:v",
+      "title": "I Sunday of Lent",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [
+        {
+          "artworkId": "nga-50726",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-01",
+      "observedPrincipalId": "tempora:Quad2-0:1:v",
+      "title": "II Sunday of Lent",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [
+        {
+          "artworkId": "kress-k2016",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-08",
+      "observedPrincipalId": "tempora:Quad3-0:1:v",
+      "title": "III Sunday of Lent",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-15",
+      "observedPrincipalId": "tempora:Quad4-0:1:pv",
+      "title": "IV Sunday of Lent",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [
+        {
+          "artworkId": "met-437821",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-19",
+      "observedPrincipalId": "sancti:03-19:1:w",
+      "title": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-22",
+      "observedPrincipalId": "tempora:Quad5-0:1:v",
+      "title": "Passion Sunday",
+      "rank": 1,
+      "associationTier": "LITURGY_AND_GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-25",
+      "observedPrincipalId": "sancti:03-25:1:w",
+      "title": "Annunciation of the Blessed Virgin Mary",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-438724",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-29",
+      "observedPrincipalId": "tempora:Quad6-0r:1:rv",
+      "title": "Palm Sunday",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "kress-k2017",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "PUBLIC_DOMAIN_KRESS_REUSE_HOLD",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-30",
+      "observedPrincipalId": "tempora:Quad6-1:1:v",
+      "title": "Feria II of Holy Week",
+      "rank": 1,
+      "associationTier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-03-31",
+      "observedPrincipalId": "tempora:Quad6-2:1:v",
+      "title": "Feria III of Holy Week",
+      "rank": 1,
+      "associationTier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "researchLinks": [
+        {
+          "artworkId": "met-437371",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-01",
+      "observedPrincipalId": "tempora:Quad6-3:1:v",
+      "title": "Feria IV of Holy Week",
+      "rank": 1,
+      "associationTier": "HOLY_WEEK_SCRIPTURE_RESEARCH",
+      "researchLinks": [
+        {
+          "artworkId": "met-437371",
+          "association": "EXACT_APPOINTED_GOSPEL",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-02",
+      "observedPrincipalId": "tempora:Quad6-4r:1:w",
+      "title": "Holy Thursday",
+      "rank": 1,
+      "associationTier": "COMPLEX_RITE_SUBJECT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-03",
+      "observedPrincipalId": "tempora:Quad6-5r:1:bv",
+      "title": "Good Friday",
+      "rank": 1,
+      "associationTier": "COMPLEX_RITE_SUBJECT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-04",
+      "observedPrincipalId": "tempora:Quad6-6r:1:vw",
+      "title": "Holy Saturday",
+      "rank": 1,
+      "associationTier": "COMPLEX_RITE_SUBJECT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-05",
+      "observedPrincipalId": "tempora:Pasc0-0:1:w",
+      "title": "Easter Sunday",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-437272",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-06",
+      "observedPrincipalId": "tempora:Pasc0-1:1:w",
+      "title": "Monday in the Octave of Easter",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-07",
+      "observedPrincipalId": "tempora:Pasc0-2:1:w",
+      "title": "Tuesday in the Octave of Easter",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-08",
+      "observedPrincipalId": "tempora:Pasc0-3:1:w",
+      "title": "Wednesday in the Octave of Easter",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-09",
+      "observedPrincipalId": "tempora:Pasc0-4:1:w",
+      "title": "Thursday in the Octave of Easter",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-10",
+      "observedPrincipalId": "tempora:Pasc0-5:1:w",
+      "title": "Friday in the Octave of Easter",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-11",
+      "observedPrincipalId": "tempora:Pasc0-6:1:w",
+      "title": "Saturday in the Octave of Easter",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-04-12",
+      "observedPrincipalId": "tempora:Pasc1-0:1:w",
+      "title": "Low Sunday",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-01",
+      "observedPrincipalId": "sancti:05-01r:1:w",
+      "title": "St. Joseph the Workman",
+      "rank": 1,
+      "associationTier": "RELATED_SAINT_DIFFERENT_FEAST",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-14",
+      "observedPrincipalId": "tempora:Pasc5-4:1:w",
+      "title": "Ascension of the Lord",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-436835",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-23",
+      "observedPrincipalId": "tempora:Pasc6-6:1:r",
+      "title": "Vigil of Pentecost",
+      "rank": 1,
+      "associationTier": "VIGIL_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-24",
+      "observedPrincipalId": "tempora:Pasc7-0:1:r",
+      "title": "Pentecost Sunday",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "commons-multscher-pentecost",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-25",
+      "observedPrincipalId": "tempora:Pasc7-1:1:r",
+      "title": "Monday after Pentecost",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-26",
+      "observedPrincipalId": "tempora:Pasc7-2:1:r",
+      "title": "Tuesday after Pentecost",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-27",
+      "observedPrincipalId": "tempora:Pasc7-3:1:r",
+      "title": "Ember Wednesday of Pentecost",
+      "rank": 1,
+      "associationTier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-28",
+      "observedPrincipalId": "tempora:Pasc7-4:1:r",
+      "title": "Thursday after Pentecost",
+      "rank": 1,
+      "associationTier": "OCTAVE_CONTEXT",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-29",
+      "observedPrincipalId": "tempora:Pasc7-5:1:r",
+      "title": "Ember Friday of Pentecost",
+      "rank": 1,
+      "associationTier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-30",
+      "observedPrincipalId": "tempora:Pasc7-6:1:r",
+      "title": "Ember Saturday of Pentecost",
+      "rank": 1,
+      "associationTier": "OCTAVE_EMBER_GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-05-31",
+      "observedPrincipalId": "tempora:Pent01-0r:1:w",
+      "title": "Trinity Sunday",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-435618",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-06-04",
+      "observedPrincipalId": "tempora:Pent01-4:1:w",
+      "title": "Corpus Christi",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-06-12",
+      "observedPrincipalId": "tempora:Pent02-5:1:w",
+      "title": "Sacred Heart of Jesus",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "commons-morlete-sacred-heart-1759",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "approvedForProduction": false
+        },
+        {
+          "artworkId": "commons-el-paso-sacred-heart-retablo",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "PUBLIC_DOMAIN_PD_ART_PDM",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-06-24",
+      "observedPrincipalId": "sancti:06-24:1:w",
+      "title": "Nativity of St. John the Baptist",
+      "rank": 1,
+      "associationTier": "NATIVITY_SUBJECT_REQUIRED",
+      "researchLinks": [
+        {
+          "artworkId": "met-458984",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        },
+        {
+          "artworkId": "met-438467",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        },
+        {
+          "artworkId": "met-436567",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-06-29",
+      "observedPrincipalId": "sancti:06-29:1:r",
+      "title": "Sts. Peter & Paul",
+      "rank": 1,
+      "associationTier": "TWO_SAINTS_SUBJECT_REQUIRED",
+      "researchLinks": [
+        {
+          "artworkId": "met-442491",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-07-01",
+      "observedPrincipalId": "sancti:07-01:1:r",
+      "title": "The Precious Blood of Our Lord Jesus Christ",
+      "rank": 1,
+      "associationTier": "EXACT_DEVOTION",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-08-15",
+      "observedPrincipalId": "sancti:08-15:1:w",
+      "title": "Assumption of the Blessed Virgin Mary",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-458998",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-09-29",
+      "observedPrincipalId": "sancti:09-29:1:w",
+      "title": "Dedication of St. Michael the Archangel",
+      "rank": 1,
+      "associationTier": "EXACT_DEVOTION",
+      "researchLinks": [
+        {
+          "artworkId": "met-437729",
+          "association": "EXACT_TITULAR_SAINT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-10-25",
+      "observedPrincipalId": "sancti:10-DU:1:w",
+      "title": "Christ the King",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-11-01",
+      "observedPrincipalId": "sancti:11-01:1:w",
+      "title": "All Saints",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-437743",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-11-02",
+      "observedPrincipalId": "sancti:11-02m1:1:b",
+      "title": "Commemoration of All Souls",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-437542",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-11-29",
+      "observedPrincipalId": "tempora:Adv1-0:1:v",
+      "title": "I Sunday of Advent",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-12-06",
+      "observedPrincipalId": "tempora:Adv2-0:1:v",
+      "title": "II Sunday of Advent",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-12-08",
+      "observedPrincipalId": "sancti:12-08:1:w",
+      "title": "Immaculate Conception of the Blessed Virgin Mary",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-437423",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-12-13",
+      "observedPrincipalId": "tempora:Adv3-0:1:pv",
+      "title": "III Sunday of Advent",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-12-20",
+      "observedPrincipalId": "tempora:Adv4-0:1:v",
+      "title": "IV Sunday of Advent",
+      "rank": 1,
+      "associationTier": "GOSPEL_RESEARCH",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-12-24",
+      "observedPrincipalId": "sancti:12-24:1:v",
+      "title": "Vigil of Christmas",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [],
+      "sourceLinkStatus": "NO_EXACT_RESEARCH_LINK_IN_FROZEN_20261010_CROSSWALK_NOT_NECESSARILY_NO_ARTWORK",
+      "appReleaseApproved": false
+    },
+    {
+      "date": "2026-12-25",
+      "observedPrincipalId": "sancti:12-25m1:1:w",
+      "title": "The Nativity of Our Lord",
+      "rank": 1,
+      "associationTier": "EXACT_FEAST",
+      "researchLinks": [
+        {
+          "artworkId": "met-435584",
+          "association": "EXACT_FEAST_SUBJECT",
+          "sourceRights": "CC0",
+          "approvedForProduction": false
+        }
+      ],
+      "sourceLinkStatus": "EXACT_RESEARCH_LINK_PRESENT_NOT_APP_RELEASE",
+      "appReleaseApproved": false
+    }
+  ],
+  "allSaintsAndSouls": {
+    "allSaints": [
+      {
+        "artworkId": "met-437743",
+        "association": "EXACT_FEAST_SUBJECT",
+        "sourceRights": "CC0",
+        "approvedForProduction": false
+      }
+    ],
+    "allSouls": [
+      {
+        "artworkId": "met-437542",
+        "association": "EXACT_FEAST_SUBJECT",
+        "sourceRights": "CC0",
+        "approvedForProduction": false
+      }
+    ],
+    "conclusion": "Both already have exact-subject source association, not a release-approved image or proof the calendar UI actually displays it."
+  },
+  "practicalDelivery": {
+    "photoAndArtSelection": "For fast user curation, offer at least one readable, openly licensed candidate on every editorial subject; allow engravings, statues, historical prints and modern photography explicitly labelled. Do not misidentify a person or physical artwork.",
+    "minimumMobile": "Usable visual subject and intact image edges; no blanket pixel threshold or mandatory two painting originals",
+    "missingExactFeastLink": "Reuse a verified seasonal, mystery, event or saint-family image where genuinely relevant and label thematic; never imply exact liturgical Gospel representation",
+    "sourcePriority": [
+      "self-hosted public-domain or CC0 museum images when available",
+      "Wikimedia PD-Art/public domain original and license-tagged original photograph, with attribution if required",
+      "Creative Commons BY or BY-SA photos with full credits, license and alteration notice",
+      "other rights-controlled files held for source reference only"
+    ],
+    "forbid": [
+      "broken external hotlink as only app asset",
+      "Prado-only/SIGEC-only thumbnail without an accessible fallback",
+      "transferring legacy scores between distinct physical originals",
+      "asserting visual coverage for all calendar dates based on 168 research cards"
+    ],
+    "appRuntime": "Do not alter or overrule the 1962 DayResolver. Calendar card queries correct observance and falls back thematically only after checking source and rank. No artwork selection silently updates Mass Proper."
+  },
+  "pendingAudit": [
+    "Generate all 365 observed principal dates in 2026 using the authoritative DayResolver, then repeat for 2027–2028 for transfers and anomalies",
+    "Include vigils, octaves, saints in the lesser classes, Sundays, commemorations and local calendars in separate keyed registers",
+    "Crosswalk every observed principal feast ID to artwork IDs and scored/usable image candidates; classify EXACT, THEMATIC, SAINT_CONTEXT, SEASONAL, NONE",
+    "Identify 2026 All Saints/All Souls UI visibility issue separately from existing research source association",
+    "Target least-worst selection panels only for distinct visual gaps and never reopen rejected art by default"
+  ]
+}
