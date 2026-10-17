@@ -22,8 +22,17 @@ const server=http.createServer(async(req,res)=>{
 await new Promise((done,fail)=>{server.once("error",fail);server.listen(4368,"127.0.0.1",done);});
 let browser;
 async function focusCue(page,section,cue){
-  const found=await page.evaluate(section=>Boolean(window.__AO_PHONE_PREVIEW.showSection(section)),section);
-  assert.ok(found,"Missing source section "+section);
+  // LIVE48 may split a source section (notably Offertory 010) into
+  // multiple presentation cards. Resolve the source CUE, not a guessed
+  // presentation section ID; retain its canonical source-section owner.
+  const found=await page.evaluate(({section,cue})=>{
+    const api=window.__AO_PHONE_PREVIEW;
+    const card=api.model.cards.find(c=>
+      (c.sectionId===section||c.sourceSectionId===section) &&
+      c.paragraphs?.some(p=>(p.sourceCueIds??[]).includes(cue)));
+    return card?Boolean(api.showSequence(card.sequence)):false;
+  },{section,cue});
+  assert.ok(found,"Missing source cue "+cue+" within "+section);
   await page.locator(".ao-prayer-card").evaluate((el,cue)=>{
     const hit=el.querySelector('[data-cue-id="'+cue+'"]');
     if(!hit)throw new Error("Source cue missing from "+el.parentElement?.className+": "+cue);
