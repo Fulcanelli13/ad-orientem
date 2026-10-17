@@ -6,6 +6,7 @@ import {
   toggleReaderTranslation,
   syncReaderRitualHighlights,
   normalizeReaderMoment,
+  projectCertifiedSolemnMinisterRubric,
   SCHOLA_SPEEDS,
   DEFAULT_SCHOLA_SPEED,
   normalizeScholaSpeed,
@@ -38,6 +39,8 @@ for(const token of [
   'data-channel="gesture"',
   'data-channel="response"',
   'data-channel="priest-voice"',
+  'data-channel="sacred-minister"',
+  'data-role="sacred-minister"',
   'data-channel="bell"',
   'data-channel="schola"',
   'data-channel="schola-shared"',
@@ -80,6 +83,12 @@ expect(html.includes(".ao-rail{\n  position:absolute"),"ritual rails are no long
 expect(html.includes("padding:clamp(28px,4.5vh,48px) max(18px,calc((100% - 790px)/2))"),"centre reader lost donor 790px reading measure");
 expect(html.includes("border:0;border-radius:0;background:transparent;box-shadow:none"),"giant card chrome returned to the Mass reader");
 expect(html.includes(".ao-reader-body")===false,"unexpected duplicate reader body presentation layer appeared");
+expect(html.includes('Existing 19 R18 Solemn source events')===false,
+  "UI must not duplicate research/editorial registry into HTML labels");
+expect(html.includes("Expected 1962 minister rubric (not independently observed)"),
+  "Solemn minister accessibility must distinguish rubrical expectation from observation");
+expect(html.includes('data-channel="sacred-minister" data-active="false" aria-hidden="true"'),
+  "Unselected and non-Solemn readers must not show a phantom minister tile");
 expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matches the final executable donor");
 expect(html.includes("opacity:.84"),"donor forward near-focus level no longer matches the final executable donor");
 expect(html.includes("opacity:.67"),"donor backward near-focus level no longer matches the final executable donor");
@@ -118,6 +127,31 @@ expect(oration.paragraphs[0].sourcePath==="Sancti/10-11",
 expect(oration.paragraphs[0].sourceAnchorCueId==="AO.SM.C0073",
   "Proper canonical cue anchor disappeared before reader gestures/rubrics");
 
+const sanctioned={
+  actor:"DEACON",labelShort:"PUBLIC GOSPEL",cueId:"AO.SM.C0082",
+  owner:"R18_SOLEMN_R04_MINISTER",authorityStatus:"RECOVERED_R04_CERTIFIED"
+};
+const expected=projectCertifiedSolemnMinisterRubric(sanctioned);
+expect(expected?.label==="DEACON · PUBLIC GOSPEL" && expected.observed===false,
+  "Certified Solemn action must show as rubrical (not observed)");
+expect(expected.owner==="EXISTING_SOLEMN_MINISTER_RUBRIC_EXPECTED_ONLY",
+  "Minister rail lost exact R18 ownership");
+for(const invalid of [
+  null,
+  {...sanctioned,owner:"RESEARCH_MINISTER_PROPOSAL"},
+  {...sanctioned,authorityStatus:"RESEARCH_REVIEW_NOT_LIVE"},
+  {...sanctioned,cueId:"AO.SM.C0112",authorityStatus:"PENDING_1962_SOURCE"},
+  {...sanctioned,labelShort:""},
+  {...sanctioned,actor:null},
+]){
+ expect(projectCertifiedSolemnMinisterRubric(invalid)===null,
+   "Unapproved/unidentified actor was promoted into the Solemn rail");
+}
+const ministerMoment=normalizeReaderMoment({id:"MINISTER-AUDIT",sacredMinister:sanctioned});
+expect(ministerMoment.sacredMinister?.label==="DEACON · PUBLIC GOSPEL",
+  "Solemn source action never reached the DOM moment");
+expect(normalizeReaderMoment({id:"NO-MINISTER",sacredMinister:null},ministerMoment).sacredMinister===null,
+  "Transient sacred minister action leaked to the next cue");
 const first=normalizeReaderMoment({
   id:"A",
   sectionTitle:"Credo",
