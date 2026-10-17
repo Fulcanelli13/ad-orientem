@@ -120,6 +120,10 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureLibrary .aoScriptureReferenceWarning>p{margin:0 0 10px}
  .aoScriptureActions{margin:7px 0 3px;padding-top:7px;gap:4px}
  .aoScriptureLibrary .aoScriptureActions button{min-height:44px;border:0;border-radius:6px;background:transparent;color:#c8b99c;padding:7px 9px;text-decoration:underline;text-decoration-color:rgba(197,168,119,.34);text-underline-offset:3px}
+ .aoScriptureTools{border-top:1px solid rgba(205,182,135,.18);margin:12px 0 0;padding:0}
+ .aoScriptureLibrary .aoScriptureTools>summary{min-height:48px;display:flex;align-items:center;padding:12px 2px;color:#d8c7a7;font:500 13px/1.35 system-ui,sans-serif;cursor:pointer}
+ .aoScriptureToolsBody{padding:2px 0 12px}
+ .aoScriptureToolsBody>details{padding:3px 0;border-bottom:1px solid rgba(205,182,135,.12)}
  .aoScriptureBrowse,.aoScriptureSearch,.aoScriptureBookmarks,.aoScriptureRosary{padding:4px 0}
  .aoScriptureLibrary :is(.aoScriptureBrowse,.aoScriptureSearch,.aoScriptureBookmarks,.aoScriptureRosary)>summary{min-height:44px;padding:8px 0}
  @media(max-width:700px){.aoScriptureNav{grid-template-columns:repeat(2,minmax(0,1fr))}.aoScriptureLibrary{padding:16px;border:0;border-radius:0}.aoScriptureText{font-size:19px}.aoScriptureContextControls{gap:3px}#ao-scripture-overlay{padding:0 0 max(16px,env(safe-area-inset-bottom))}.aoScriptureHeader{position:sticky;top:0;z-index:2;background:#0e151d;padding-top:max(10px,env(safe-area-inset-top))}}
