@@ -1359,7 +1359,10 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
           (p.sourceCueIds??[]).includes(event.sourceCueId) &&
           ((event.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
             event.owner==="PUBLISHED_R17_MISSAL_INLINE" &&
-            event.actor==="PRIEST" && event.sourceId==="MR62_RITUS") ||
+            event.sourceId==="MR62_RITUS" &&
+            (event.actor==="PRIEST" ||
+             (event.actor==="SERVER" && event.kind==="BELL" &&
+              /^(AO\\.RUB\\.C0161\\.02|AO\\.RUB\\.C0174\\.03|AO\\.RUB\\.C0181\\.03)$/.test(String(event.id))))) ||
            (event.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
             event.owner==="R18_CERTIFIED_SOLEMN_MISSAL" &&
             typeof event.actor==="string" && event.actor.trim() &&
