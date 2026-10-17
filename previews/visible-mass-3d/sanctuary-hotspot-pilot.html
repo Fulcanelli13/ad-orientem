@@ -83,6 +83,15 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;
 .study-source li{margin:8px 0}
 .study-source li small{display:block;color:var(--muted)}
 .study-source .disclaimer{color:var(--muted);font-size:11px;line-height:1.5;margin:6px 0}
+.liturgical-explanations{margin:13px 0;border:1px solid #384657;border-radius:8px;padding:2px 12px;background:#101a24}
+.liturgical-explanations>summary{font:13px/1.5 system-ui,sans-serif;color:var(--gold);cursor:pointer;padding:11px 0}
+.liturgical-explanations .answer-entry{padding:9px 0;border-top:1px solid var(--line)}
+.liturgical-explanations .answer-entry>summary{font:14px/1.48 Georgia,serif;color:var(--text);cursor:pointer;padding:7px 0}
+.liturgical-explanations .answer-entry p{font:13px/1.55 system-ui,sans-serif;color:var(--muted);margin:8px 0}
+.liturgical-explanations .answer-entry p.answer-lead{color:var(--text)}
+.liturgical-explanations .answer-entry .answer-source{font:11px/1.6 system-ui,sans-serif}
+.liturgical-explanations .answer-entry a{color:var(--gold)}
+.liturgical-explanations .answer-warning{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:6px 0 12px}
 footer{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
 footer a{color:#d8bd89}
 .noscript{padding:14px;color:#f7d19b}
@@ -140,6 +149,10 @@ footer a{color:#d8bd89}
 <div class="row"><div class="state" id="object-state"></div><button type="button" class="close" id="close-card" aria-label="Close object">Close ×</button></div>
 <h2 id="object-title"></h2>
 <div class="definition" id="definition"></div><p class="related" id="inspection-provenance" hidden></p><div class="related-objects" id="related-objects" hidden><strong>Explore related objects</strong><div id="related-items"></div></div>
+<details class="liturgical-explanations" id="liturgical-explanations" hidden>
+<summary id="liturgical-answer-summary">Liturgical explanations</summary>
+<p class="answer-warning">Original research summaries grounded in published rubrics. For study only; local permissions, chosen Mass and rite edition still matter.</p>
+<div id="liturgical-answer-items"></div></details>
 <div class="question-list" id="question-list"><h3>Questions to explore</h3><div id="question-items"></div><button type="button" class="more" id="more-questions" hidden>More questions ↓</button></div>
 <div id="question-detail" hidden><button type="button" class="back" id="back-to-object">← Questions</button><h3 id="question-title"></h3><div class="pill" id="question-type"></div><div class="held">This question is indexed for Phase 1.5 source research. A verified answer has not yet been published; the glossary definition above remains available.</div>
 <details class="study-source" id="study-sources"><summary>Published references under review</summary><p class="disclaimer">These publications relate to this object's themes, not necessarily this precise question. They are research leads—not an approved explanation or permission to copy their contents.</p><ul id="study-source-links"></ul><p class="disclaimer">The printed 1962 Missal and 1960 Code of Rubrics govern any binding claims. Explanatory guides and computed Ordos are supporting references only.</p></details></div>
@@ -163,7 +176,7 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,view:"church",loaded:false};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,view:"church",loaded:false};
 const RELATED_OBJECTS={
  AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
  AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
@@ -212,7 +225,7 @@ function select(id,from){
  $("object-title").textContent=spot.title;
  $("question-detail").hidden=true;$("question-list").hidden=false;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
- buildDefinition(spot);renderRelatedObjects();renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
+ buildDefinition(spot);renderRelatedObjects();renderLiturgicalExplanations();renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
  $("info").classList.add("has-selection");
  document.body.classList.add("object-open");
  if(window.innerWidth<930){
@@ -251,6 +264,28 @@ function renderRelatedObjects(){
   const isQuestionOnly=!state.inspections.some(x=>x.object_id===id)&&!SPOTS.some(x=>x.id===id);
   const b=document.createElement("button");b.type="button";b.textContent=a.label+(isQuestionOnly?" · questions only":"");
   b.dataset.related=id;b.onclick=()=>select(id,b);$("related-items").appendChild(b);
+ }
+}
+function renderLiturgicalExplanations(){
+ const panel=$("liturgical-explanations"),items=$("liturgical-answer-items");
+ items.replaceChildren();panel.open=false;
+ const all=state.explanationPack?.answers||[];
+ const matched=all.filter(x=>x.object_ids.includes(state.selected));
+ panel.hidden=!matched.length;
+ $("liturgical-answer-summary").textContent="Liturgical explanations ("+matched.length+")";
+ for(const explanation of matched){
+  const entry=document.createElement("details");entry.className="answer-entry";entry.dataset.explanation=explanation.id;
+  const summary=document.createElement("summary");summary.textContent=explanation.question.en;
+  const lead=document.createElement("p");lead.className="answer-lead";lead.textContent=explanation.answer.en;
+  const context=document.createElement("p");context.textContent=explanation.detail.en;
+  const rule=document.createElement("p");rule.className="answer-source";
+  rule.textContent="Ritual condition: "+explanation.gate.replaceAll("_"," ").toLowerCase()+".";
+  const refs=document.createElement("div");refs.className="answer-source";
+  for(const source of explanation.sources){
+   const link=document.createElement("a");link.href=source.url;link.rel="noopener noreferrer";link.target="_blank";link.textContent=source.locator+" ↗";
+   refs.append(link,document.createTextNode(" · "));
+  }
+  entry.append(summary,lead,context,rule,refs);items.appendChild(entry);
  }
 }
 function renderPublishedReferences(questionId){
@@ -330,11 +365,13 @@ async function loadCanon(){
   ...files.map(s=>fetch("../../data/glossary/concepts-"+s+".v1.json").then(r=>{if(!r.ok)throw Error("Glossary HTTP "+r.status);return r.json();})),
   fetch("PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Questions HTTP "+r.status);return r.json();}),
   fetch("sanctuary-inspection-sources-20261017.v1.json").then(r=>{if(!r.ok)throw Error("Inspection HTTP "+r.status);return r.json();}),
-  fetch("LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Source crosswalk HTTP "+r.status);return r.json();})
+  fetch("LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Source crosswalk HTTP "+r.status);return r.json();}),
+  fetch("LITURGICAL_EXPLANATIONS_P1_5_FIRST20_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Explanations HTTP "+r.status);return r.json();})
  ]);
  outcome.slice(0,3).forEach(x=>{if(x.status==="fulfilled"){(x.value.entries||[]).forEach(e=>state.entries.set(e.id,e));}});
  if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];state.objects=outcome[3].value.objects||[];}
  if(outcome[5].status==="fulfilled"){state.sourcePack=outcome[5].value;}
+ if(outcome[6].status==="fulfilled"){state.explanationPack=outcome[6].value;}
  if(outcome[4].status==="fulfilled"){
    state.inspections=outcome[4].value.assets||[];
    const root=$("inspection-choices");root.replaceChildren();
@@ -353,11 +390,11 @@ async function loadCanon(){
    }
  }else $("inspection-choices").textContent="Inspection sources unavailable; serve the pilot over HTTPS with its source files.";
  state.loaded=true;
- if(state.selected){buildDefinition(findSpot(state.selected));renderRelatedObjects();renderQuestions();if(state.question)renderPublishedReferences(state.question);}
+ if(state.selected){buildDefinition(findSpot(state.selected));renderRelatedObjects();renderLiturgicalExplanations();renderQuestions();if(state.question)renderPublishedReferences(state.question);}
 }
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
- status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  select:id=>select(id,null)
 });
 })();
