@@ -41,8 +41,8 @@ try{
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(2).locator("option").count(),73);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator(".aoScriptureVerse").first().waitFor({state:"visible",timeout:12000});
- assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Since, indeed, many have attempted/i,
-   "Fresh English reading must use CPDV instead of archaic Douay–Rheims");
+ assert.match(await dialog.locator(".aoScriptureVerse").first().innerText(),/Forasmuch as many have taken in hand/i,
+   "Fresh reading preserves Douay–Rheims, with an immediate CPDV option");
  // Existing source-owner objects referencing Luke 1:28 must be discoverable
  // without changing the current verse, Mass state or Rosary session.
  await dialog.locator(".aoScriptureRelated summary").click();
@@ -161,17 +161,23 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true);
- assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").count(),1,
-   "Fresh reader should select CPDV");
+ assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1,
+   "Fresh reader should retain Douay–Rheims");
+ assert.equal(await dialog.locator("[data-scripture-english-edition]").count(),2,
+   "Both Catholic English editions must be one tap away");
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
  await dialog.getByRole("button",{name:"Read at source"}).click();
- assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
- await dialog.locator(".aoScriptureNav select").nth(1).selectOption("dr-challoner");
- await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
- await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
- await dialog.locator(".aoScriptureNav select").nth(1).selectOption("cpdv-2009");
+ await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').click();
+ await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").waitFor({state:"visible",timeout:12000});
+ assert.equal(await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').getAttribute("aria-pressed"),"true");
+ await dialog.getByRole("button",{name:"Read at source"}).click();
+ assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
+ await dialog.locator('[data-scripture-english-edition="dr-challoner"]').click();
+ await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
+ assert.equal(await dialog.locator('[data-scripture-english-edition="dr-challoner"]').getAttribute("aria-pressed"),"true");
+ await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').click();
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").waitFor({state:"visible",timeout:12000});
  assert.ok(await dialog.locator(".aoScriptureVerse").count()>0,"CPDV source witness should display locally");
