@@ -34,7 +34,7 @@
     "dr-challoner"
   ],
   "verification": {
-    "coordinateChecks": "AWAITING_M10_M19_SOURCE_VERIFICATION",
+    "coordinateChecks": "ALL_93_PASS_SCRIPTURE_CONTRACTS_AFTER_M10_M19_CORRECTIONS",
     "textCollation": false,
     "fullLiteraryReadAloud": false,
     "CatholicEditorialApproval": false,
@@ -72,8 +72,8 @@
       "priorCorrectionBlobSha": "387eeab46041fd853eccee0fdcd8a89df66e1b97"
     },
     "sourceWitnessTest": "tests/historia-essential-economy.mjs",
-    "sourceWitnessTestCommit": "0a02afdb265e365538e0e86a7086e27a2b0de81b",
-    "sourceWitnessTestRunId": 39045360396,
+    "sourceWitnessTestCommit": "284ea2e4ff6c574903cede70e63115989b94539f",
+    "sourceWitnessTestRunId": 39047169092,
     "targetCPDVAndDouaySourceCoordinatePresenceVerified": true,
     "historicalCramponExceptionSourcePresenceVerified": true,
     "originalPrintedEditionAttested": false,
@@ -131,7 +131,7 @@
       "editsToCanonicalBible": false,
       "approved": false,
       "oralReadThrough": false,
-      "contractsPassed": false,
+      "contractsPassed": true,
       "sourceSpanRebalances": [
         "H39-01"
       ]
@@ -749,7 +749,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -960,7 +960,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -1044,7 +1044,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -1067,7 +1067,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -1135,7 +1135,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -1239,7 +1239,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -1344,7 +1344,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -2121,5 +2121,17 @@
       "selectedCoordinatesAreScriptureOnly": true
     }
   ],
-  "comparativeScriptureEconomy": null
+  "comparativeScriptureEconomy": {
+    "originalNominalVerseUnits": 1207,
+    "proposedNominalVerseUnits": 1086,
+    "nominalDifference": 121,
+    "historicalEditionExceptions": 2,
+    "nominalCountingDifferenceNotEditorialCut": 1,
+    "comparableOriginalVerseUnits": 1189,
+    "comparableSelectedVerseUnits": 1069,
+    "comparableActualVerseUnitReductions": 120,
+    "comparableReductionRatePct": 10.1,
+    "countingRule": "Measures only proposed essential A-verse counts. Excludes the two edition-concordance units from like-for-like rate. Excludes 29 distinct editorial context notes and 10 held native-source bridge passages, not a whole-movement manuscript word count.",
+    "readAloudApproved": false
+  }
 }
