@@ -51,11 +51,17 @@ try{
   assert.ok(actual.slots.some(x=>x.startsWith("NATIVE_RITE:")));
   const first=buttons.first();
   assert.match(await first.innerText(),firstReference);
-  const scroll=await page.locator("#ao-calendar-modular-root").evaluate(root=>{
-   root.scrollTop=Math.min(80,Math.max(0,root.scrollHeight-root.clientHeight));
-   return root.scrollTop;
-  });
   const slot=await first.getAttribute("data-cal-scripture-slot");
+  // A real tap can scroll the offscreen button into view *before* its click
+  // callback. Capture the actual scroll at the click event, not a synthetic
+  // earlier value that the user never saw at tap time.
+  await first.evaluate(button=>{
+    const root=document.querySelector("#ao-calendar-modular-root");
+    root.scrollTop=Math.min(80,Math.max(0,root.scrollHeight-root.clientHeight));
+    button.addEventListener("click",()=>{
+      root.dataset.aoScrollAtActualTap=String(root.scrollTop);
+    },{capture:true,once:true});
+  });
   await first.tap();
   const overlay=page.locator("#ao-scripture-overlay");
   await overlay.waitFor({state:"visible",timeout:16000});
@@ -74,7 +80,10 @@ try{
   }));
   assert.equal(returned.date,date);
   assert.equal(returned.slot,slot,"Return focus must restore the exact native-rite lesson");
-  assert.equal(returned.scroll,scroll,"Return should preserve selected Calendar scroll");
+  const clickedScroll=Number(await page.locator("#ao-calendar-modular-root")
+   .getAttribute("data-ao-scroll-at-actual-tap"));
+  assert.equal(returned.scroll,clickedScroll,
+   "Return must restore the actual reading-button click scroll, not an earlier test scroll");
   await page.locator("#ao-calendar-modular-root [data-cal-close]").tap();
  }
  assert.deepEqual(errors,[]);
