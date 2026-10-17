@@ -58,6 +58,14 @@ const yes={mode:"LIVE",curated:true,sectionId:"AO.CANON.06",
  cueId:cueHost,specialRite:false};
 assert.equal(canonicalManualFollowContext(yes),"HOST");
 assert.equal(canonicalManualFollowContext({...yes,sectionId:"AO.CANON.07"}),null);
+assert.equal(canonicalManualFollowContext({...yes,sectionId:"AO.CARD.016",
+  presentationCardId:"AO.LIVECURATED.AO.CANON.06.2"}),"HOST",
+  "Curated card ID must preserve Canon subdivision even with macro sourceSectionId");
+assert.equal(canonicalManualFollowContext({...yes,sectionId:"AO.CARD.016",
+  presentationCardId:"AO.LIVECURATED.AO.CANON.07.2"}),null,
+  "Host observation cannot be offered on Chalice card");
+assert.equal(canonicalManualFollowContext({...yes,sectionId:"AO.CARD.016",
+  cueId:cueChalice,presentationCardId:"AO.LIVECURATED.AO.CANON.07.2"}),"CHALICE");
 assert.equal(canonicalManualFollowContext({...yes,cueId:cueChalice,
  sectionId:"AO.CANON.07"}),"CHALICE");
 for(const context of [
