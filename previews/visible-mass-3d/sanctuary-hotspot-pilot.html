@@ -449,6 +449,44 @@ function renderPublishedReferences(questionId){
  const locator=topics.filter(t=>t.source_locator).slice(0,2).map(t=>t.source_locator);
  if(locator.length){const li=document.createElement("li");li.textContent="Topic locator (not certified for this question): "+locator.join("; ");list.appendChild(li);}
 }
+function openQuestion(q){
+ if(!q||state.selected!==q.primary_object_id)return false;
+ state.question=q.id;
+ $("question-list").hidden=true;$("question-detail").hidden=false;
+ $("question-title").textContent=q.question.en;
+ $("question-type").textContent=q.category_label||q.category;
+ renderExactHistoricalAnswer(q.id);renderPublishedReferences(q.id);
+ // A hotspot or suggestion does not count as read: the original question
+ // and its source-owned research detail must actually have been opened.
+ if(findExactAnswer(q.id))state.guide?.markRead(q.id);
+ $("guide-in-detail").hidden=!state.guide?.status().active;
+ $("back-to-object").focus({preventScroll:true});
+ return true;
+}
+function guideNavigate(objectId,questionId){
+ if(!GUIDED_OBJECTS.has(objectId))return false;
+ const q=state.questions.find(x=>x.id===questionId&&x.primary_object_id===objectId);
+ if(!q)return false;
+ select(objectId,$("guide-toggle"));
+ return openQuestion(q);
+}
+async function guideInit(pilot){
+ try{
+   const response=await fetch("GUIDED_TRAIL_GRAPH_RESEARCH_20261018.v1.json");
+   if(!response.ok)throw Error("Guided route data unavailable");
+   const [graph,mod]=await Promise.all([response.json(),import("./visible-mass-dialogue-folio.mjs")]);
+   const ids=[...(state.historyPack?.answers||[]),...(state.functionPack?.answers||[])]
+     .filter(a=>a.status==="RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED")
+     .map(a=>a.question_id);
+   if(ids.length!==97)throw Error("Research answer owners unavailable");
+   state.guide=mod.mountVisibleMassDialogueFolio(window,{
+     graph,pilot,answerIds:ids,navigate:guideNavigate
+   });
+ }catch(error){
+   console.warn("Optional guide unavailable; free exploration remains accessible",error);
+   $("guide-dock").hidden=true;
+ }
+}
 function buildQuestionButton(q){
  const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
  if(findExactAnswer(q.id))b.classList.add("has-research");
