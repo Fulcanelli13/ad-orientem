@@ -142,6 +142,7 @@ try{
   assert.equal(await page.locator(".ao-missal-rubric-depth").count(),0,
     "Duplicate action lists are not genuine long rubrics");
   assert.ok(paten.overflow<=1,"Vernacular source rubric caused book overflow");
+  await page.screenshot({path:resolve(captureDir,`book-offertory-paten-${width}-${lang}.png`),fullPage:false});
   // Insert unobtrusive sourced directions at actual prayer words.
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.010.5"));
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
@@ -168,6 +169,7 @@ try{
     null,{timeout:5000});
   assert.equal(await page.locator(".ao-canon-inline-rubrics").count(),0,
     "Missal should use restrained book rubric, not duplicate LIVE Canon rail note");
+  await page.screenshot({path:resolve(captureDir,`book-canon-opening-${width}-${lang}.png`),fullPage:false});
 
   assert.deepEqual(errors,[],width+"px Missal runtime errors: "+errors.join(" | "));
   await context.close();
