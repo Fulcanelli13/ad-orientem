@@ -116,7 +116,7 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
     ["2028-09-03","PIUS_X_SSPX_2028"]
   ]);
   const sourceHoldIds=new Set((manifest.exceptions||[]).map(x=>x.id));
-  const allowedRubric=id=>/^RG (?:15|16|93|95|109|111\\([ab]\\))$/.test(id);
+  const allowedRubric=id=>/^RG (?:15|16|93|95|109|111\([ab]\))$/.test(id);
   for(const row of assessed){
     const screening=indexedScreening.get(row.date);
     const expectedFeast=byFixedDay.get(row.date.slice(5));
@@ -140,7 +140,7 @@ export function buildRubricalCoverageAudit({corrections,protectedAnnex,particula
        row.historicalWitness?.url!=="https://ordo.fsspx.org/calendar/"+year+"/"+month||
        row.secondWitness?.kind!=="INDEPENDENT_1962_YEAR_CALENDAR"||
        row.secondWitness?.url!=="https://gcatholic.org/calendar/"+year+"/Extraordinary-en"||
-       row.sourceAndProperGate!=="CANONICAL_1962_RESOLVER_PROPER_AND_COMMENCEMENT_ORATION_PARITY_REQUIRED"||
+       row.sourceAndProperGate!=="CANONICAL_1962_RESOLVER_PROPER_AND_COMMEMORATIVE_ORATION_PARITY_REQUIRED"||
        row.changesMass!==false||row.changesCalendarPrincipal!==false||
        row.autoCreatesCommemoration!==false||row.publishAsOmission!==false||
        row.editorialStatus!==(exceptionId?"SCOPE_OR_SOURCE_EXCEPTION_HELD":"RUBRICAL_PRELIMINARY_NOT_PUBLISHED")||
