@@ -59,6 +59,20 @@ function validatePublished(registry){
  }
  return events;
 }
+// These short control labels are navigational/UI text, not rubrical copy.
+// Canonical actions and publication authority remain the verified R17 IDs.
+const CHOICE_LABELS=FREEZE({
+ "AO.RUB.C0174.01":["First genuflection","Première génuflexion"],
+ "AO.RUB.C0174.02":["Elevation of the Host","Élévation de l’Hostie"],
+ "AO.RUB.C0174.03":["Server rings bell","Le servant sonne la clochette"],
+ "AO.RUB.C0174.04":["Replace the Host","Repose l’Hostie"],
+ "AO.RUB.C0174.05":["Second genuflection","Deuxième génuflexion"],
+ "AO.RUB.C0181.01":["First genuflection","Première génuflexion"],
+ "AO.RUB.C0181.02":["Elevation of the Chalice","Élévation du Calice"],
+ "AO.RUB.C0181.03":["Server rings bell","Le servant sonne la clochette"],
+ "AO.RUB.C0181.04":["Replace and cover the Chalice","Repose et couvre le Calice"],
+ "AO.RUB.C0181.05":["Second genuflection","Deuxième génuflexion"],
+});
 const STAGE_OFF=FREEZE({
  status:"NO_INDEPENDENT_CANON_OBSERVATION",cueId:null,
  priestAction:null,bell:null,cinematic:null,observedNow:false,
@@ -148,12 +162,39 @@ export function createLiveCanonStageObservationController({registry,form}={}){
    }
    return FREEZE({accepted:true,reason:null,eventId:event.id,state:snapshot()});
  }
+ /**
+  * The action sheet offers independent observations. It never provides
+  * automatic timing: even its disabled/completed state derives only from
+  * events the user or an independent observer explicitly recorded.
+  */
+ function getChoices({sourceCueId,language="en"}={}){
+   const id=String(sourceCueId??"");
+   const spec=SPECS[id];
+   if(!spec)return FREEZE([]);
+   const french=String(language).toLowerCase().startsWith("fr");
+   return FREEZE(spec.ids.flatMap(eventId=>{
+     const event=events.get(eventId);
+     const mixed=selected==="SOLEMN"&&eventId==="AO.RUB.C0181.04";
+     // Do not offer an inaccurately assigned priest/deacon composite.
+     if(mixed)return [];
+     const completed=event.actor==="PRIEST"&&event.order<=lastPriestOrder&&
+       cueId===id;
+     const bellLate=event.actor==="SERVER"&&
+       cueId===id&&lastPriestOrder>=4;
+     return [FREEZE({
+       eventId:event.id,actor:event.actor,sourceCueId:id,
+       label:CHOICE_LABELS[eventId][french?1:0],
+       disabled:completed||bellLate,
+       completed,kind:event.kind,
+     })];
+   }));
+ }
  function settleTransient(){
    visible=false;
    return snapshot();
  }
  return FREEZE({
-   form:selected,observe,reset,snapshot,settleTransient,
+   form:selected,observe,reset,snapshot,settleTransient,getChoices,
    expectedCueIds:FREEZE(Object.keys(SPECS)),
    stageIds:FREEZE(Object.values(SPECS).flatMap(spec=>spec.ids)),
  });

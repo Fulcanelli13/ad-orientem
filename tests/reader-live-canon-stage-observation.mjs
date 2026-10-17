@@ -116,7 +116,8 @@ for(const mutate of [
 }
 assert.throws(()=>mk("REQUIEM"),/Unsupported Mass form/);
 const native=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
-assert.match(native,/observeCanonCeremonyStage:observation=>/);
+assert.match(native,/function observeCanonCeremonyStage\(observation\)/);
+assert.match(native,/observeCanonCeremonyStage,\s*\/\/|observeCanonCeremonyStage,\s*getObservedCanonCeremonyStage/);
 assert.match(native,/getObservedCanonCeremonyStage/);
 assert.match(native,/clearObservedCanonCeremonyStage/);
 assert.match(native,/observedCanon\?\.priestAction\?\?/);

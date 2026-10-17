@@ -69,6 +69,7 @@ import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubri
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { certifiedLiveCanonActionOverride } from "./reader-live-canon-action.js";
 import { createLiveCanonStageObservationController } from "./reader-live-canon-stage-observation.js";
+import { mountLiveCanonManualFollow,canonicalManualFollowContext } from "./reader-live-canon-manual-follow.js";
 import { resolvePriestChantAction, resolvePriestChantVoice, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
 import { createObservedChalicePreparationController } from "./reader-priest-chalice-observation.js";
@@ -977,7 +978,7 @@ export async function mountNativeReaderPreview({
     host.querySelector?.(".ao-prayer-card")?.addEventListener?.("scroll",onGoodFridayScroll,{passive:true});
     showGoodFriday();
 
-    const api=Object.freeze({
+  const api=Object.freeze({
       root,
       reader,
       model:null,
@@ -1228,6 +1229,7 @@ export async function mountNativeReaderPreview({
     }):null;
   let current=readerModel.cardBySequence(1);
   let reader=null;
+  let canonManualUI=null;
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
   let inAsh=Boolean(ready.ashController);
@@ -2438,6 +2440,7 @@ export async function mountNativeReaderPreview({
       guide:guideForCurrent(visibleCard),
       ...state,
     });
+    canonManualUI?.update();
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
     root.dataset.r17NativeCue=state.nativeCueId??"unresolved";
     root.dataset.r17OwnerGesture=state.ownership?.gesture??"UNRESOLVED";
@@ -2585,6 +2588,7 @@ export async function mountNativeReaderPreview({
       guide:guideForCurrent(current),
       ...state,
     });
+    canonManualUI?.update();
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
     root.dataset.r17NativeCue=state.nativeCueId??"unresolved";
     root.dataset.r17OwnerGesture=state.ownership?.gesture??"UNRESOLVED";
@@ -2613,6 +2617,8 @@ export async function mountNativeReaderPreview({
     priestEntranceState.reset();
     chaliceObservationState.close();
     observedPriestEvent=null;
+    canonManualUI?.destroy();
+    canonManualUI=null;
     clearCanonObservation();
     clearScheduledTimer(partCinemaTimer);
     clearScheduledTimer(eventCinemaTimer);
@@ -2641,6 +2647,25 @@ export async function mountNativeReaderPreview({
   if(massPrintControl&&nativePreferences)nativePreferences.append(massPrintControl);
   root.dataset.aoNativePrintGate=printAssessment.ok?"READY":String(printAssessment.reason||"SOURCE_UNAVAILABLE");
   root.dataset.aoNativePrintMounted=String(Boolean(host.querySelector('[data-ao-native-mass-print]')));
+  // Hidden by default. The only two entrances are the certified Host
+  // and Chalice elevation cues on the 65-family LIVE reader.
+  canonManualUI=mountLiveCanonManualFollow({
+    doc,host,controller:canonStageObservation,
+    getContext:()=>({
+      mode:readerModel?.presentationMode,
+      curated:Boolean(ready.curatedEligible&&current?.curatedPresentationReview===true&&
+        readerModel?.sourceModelTotalCards===39),
+      cueId:activeCueId,
+      sectionId:current?.sourceSectionId??current?.sectionId,
+      presentationCardId:current?.sectionId,
+      language:ready.prepared?.readerPreferences?.language??"en",
+      specialRite:inAsperges||inPalm||inAsh||inCandlemas||inRogations||
+        inRequiemAbsolution||inCorpusChristi||inHolyThursdayPost||
+        inGenericProcession||inLifecycle,
+    }),
+    observe:input=>observeCanonCeremonyStage(input),
+    clear:()=>{const state=clearCanonObservation();queue();return state;},
+  });
   createRiteChoice();
   root.addEventListener?.("click",onRiteChoiceClick);
   if(inRogations)showRogations();
@@ -2688,6 +2713,41 @@ export async function mountNativeReaderPreview({
     for(const target of targets){
       observer.observe(target,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:["class","aria-hidden"]});
     }
+  }
+
+  function observeCanonCeremonyStage(observation){
+      const form=String(readerModel?.presentationMode??"").toUpperCase();
+      const correctSection=Boolean(canonicalManualFollowContext({
+        mode:form,curated:Boolean(ready.curatedEligible&&current?.curatedPresentationReview===true&&
+          readerModel?.sourceModelTotalCards===39),
+        cueId:activeCueId,
+        sectionId:current?.sourceSectionId??current?.sectionId,
+        presentationCardId:current?.sectionId,
+        specialRite:inAsperges||inPalm||inAsh||inCandlemas||inRogations||
+          inRequiemAbsolution||inCorpusChristi||inHolyThursdayPost||
+          inGenericProcession||inLifecycle,
+      }));
+      if(!canonStageObservation || !ready.curatedEligible ||
+         current?.curatedPresentationReview!==true ||
+         readerModel?.sourceModelTotalCards!==39 || form!=="LIVE" ||
+         !correctSection || inAsperges||inPalm||inAsh||inCandlemas||
+         inRogations||inRequiemAbsolution||inCorpusChristi||
+         inHolyThursdayPost||inGenericProcession||inLifecycle)
+        return Object.freeze({accepted:false,reason:"NOT_IN_CURATED_LIVE_CANON_ELEVATION"});
+      const result=canonStageObservation.observe({
+        ...observation,sourceCueId:activeCueId,
+      });
+      if(result.accepted){
+        clearScheduledTimer(canonStageTimer);
+        // The visual highlight expires; the accepted source sequence remains
+        // available for audit until a different cue or card is selected.
+        canonStageTimer=later(()=>{
+          canonStageObservation.settleTransient();
+          canonStageTimer=null;queue();
+        },1800);
+        queue();
+      }
+      return result;
   }
 
   const api=Object.freeze({
@@ -2763,33 +2823,7 @@ export async function mountNativeReaderPreview({
     // distinct event IDs and may never be activated by scrolling or chant.
     // This optional adapter overlays the existing LIVE rails/cinematics only
     // for the selected curated 65-family Canon cue.
-    observeCanonCeremonyStage:observation=>{
-      const form=String(readerModel?.presentationMode??"").toUpperCase();
-      const sourceSection=current?.sourceSectionId??current?.sectionId;
-      const correctSection=(activeCueId==="AO.SM.C0174"&&sourceSection==="AO.CANON.06")||
-        (activeCueId==="AO.SM.C0181"&&sourceSection==="AO.CANON.07");
-      if(!canonStageObservation || !ready.curatedEligible ||
-         current?.curatedPresentationReview!==true ||
-         readerModel?.sourceModelTotalCards!==39 || form!=="LIVE" ||
-         !correctSection || inAsperges||inPalm||inAsh||inCandlemas||
-         inRogations||inRequiemAbsolution||inCorpusChristi||
-         inHolyThursdayPost||inGenericProcession||inLifecycle)
-        return Object.freeze({accepted:false,reason:"NOT_IN_CURATED_LIVE_CANON_ELEVATION"});
-      const result=canonStageObservation.observe({
-        ...observation,sourceCueId:activeCueId,
-      });
-      if(result.accepted){
-        clearScheduledTimer(canonStageTimer);
-        // The visual highlight expires; the accepted source sequence remains
-        // available for audit until a different cue or card is selected.
-        canonStageTimer=later(()=>{
-          canonStageObservation.settleTransient();
-          canonStageTimer=null;queue();
-        },1800);
-        queue();
-      }
-      return result;
-    },
+    observeCanonCeremonyStage,
     getObservedCanonCeremonyStage:()=>canonStageObservation?.snapshot()??null,
     clearObservedCanonCeremonyStage:()=>{
       const result=clearCanonObservation();queue();return result;
