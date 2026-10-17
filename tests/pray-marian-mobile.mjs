@@ -372,7 +372,7 @@ try{
  assert.equal(await guidedCue.count(),1,"Guided Hail Mary lacks its original coherent bilingual meditation");
  assert.match(await guidedCue.innerText(),/God sends Gabriel|Dieu envoie Gabriel/);
  assert.equal(await guidedCue.getAttribute("data-ao-rosary-context"),"editorial-meditation");
- const beadSource=guidedCue.locator("a[data-ao-rosary-meditation-source]");
+ const beadSource=page.locator("#aoPrayerBookRoot.open .aoRosaryBeadScripture a[data-ao-rosary-meditation-source]");
  assert.equal(await beadSource.count(),1,"Guided bead lacks contextual primary witness");
  assert.match(await beadSource.innerText(),/Luke 1:26-27/);
  assert.match(await beadSource.getAttribute("href"),/^https:\/\/(?:www\.biblegateway\.com\/passage|fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\/)/);
