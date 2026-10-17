@@ -508,6 +508,11 @@ try{
   await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
+  // Module status can update one paint before the reader/posture rail becomes
+  // measurable. Inspect settled visible geometry, not a 0px transition frame.
+  await page.waitForFunction(()=>document.querySelector(
+    '#aoPray435930 .aoAngelusRitualGrid [data-channel="posture"]'
+  )?.getBoundingClientRect()?.height>=44,null,{timeout:12000});
   const angelusRails=await page.evaluate(()=>{
     const grid=document.querySelector("#aoPray435930 .aoAngelusRitualGrid");
     const rail=grid?.querySelector('[data-ao-ritual-module="angelus"]')??null;
