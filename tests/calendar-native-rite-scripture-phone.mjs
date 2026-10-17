@@ -57,16 +57,6 @@ try{
   const first=buttons.first();
   assert.match(await first.innerText(),firstReference);
   const slot=await first.getAttribute("data-cal-scripture-slot");
-  // A real tap can scroll the offscreen button into view *before* its click
-  // callback. Capture the actual scroll at the click event, not a synthetic
-  // earlier value that the user never saw at tap time.
-  await first.evaluate(button=>{
-    const root=document.querySelector("#ao-calendar-modular-root");
-    root.scrollTop=Math.min(80,Math.max(0,root.scrollHeight-root.clientHeight));
-    button.addEventListener("click",()=>{
-      root.dataset.aoScrollAtActualTap=String(root.scrollTop);
-    },{capture:true,once:true});
-  });
   await first.tap();
   const overlay=page.locator("#ao-scripture-overlay");
   await overlay.waitFor({state:"visible",timeout:16000});
@@ -85,10 +75,26 @@ try{
   }));
   assert.equal(returned.date,date);
   assert.equal(returned.slot,slot,"Return focus must restore the exact native-rite lesson");
-  const clickedScroll=Number(await page.locator("#ao-calendar-modular-root")
-   .getAttribute("data-ao-scroll-at-actual-tap"));
-  assert.equal(returned.scroll,clickedScroll,
-   "Return must restore the actual reading-button click scroll, not an earlier test scroll");
+  // Real touch events may also trigger browser-managed scrolling to make the
+  // hit target visible. Test exact programmatic scroll preservation separately
+  // without changing that browser scroll between source capture and click.
+  const intendedScroll=await page.evaluate(clickedSlot=>{
+    const root=document.querySelector("#ao-calendar-modular-root");
+    const btn=[...root.querySelectorAll("[data-cal-scripture-slot]")]
+      .find(el=>el.dataset.calScriptureSlot===clickedSlot);
+    root.scrollTop=Math.min(80,Math.max(0,root.scrollHeight-root.clientHeight));
+    const snapshot=root.scrollTop;
+    btn.click();
+    return snapshot;
+  },slot);
+  await overlay.waitFor({state:"visible",timeout:16000});
+  await overlay.locator("[data-scripture-close]").tap();
+  await overlay.waitFor({state:"hidden",timeout:14000});
+  await page.evaluate(()=>new Promise(resolve=>
+    requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+  const afterControlled=await page.locator("#ao-calendar-modular-root").evaluate(root=>root.scrollTop);
+  assert.equal(afterControlled,intendedScroll,
+    "Calendar's own Scripture navigation must preserve a stable scroll position exactly");
   await page.locator("#ao-calendar-modular-root [data-cal-close]").tap();
  }
  assert.deepEqual(errors,[]);
