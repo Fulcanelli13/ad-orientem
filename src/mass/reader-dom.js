@@ -372,6 +372,21 @@ const SHELL_STYLE = `
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
 .ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
+/* No new artwork/clock: one occasional Solemn minister *rubric*, not a
+   claimed observation or a priest-action clone. Only certified existing
+   sacredMinister states may populate this otherwise absent right-rail tile. */
+.ao-reader-shell[data-mode="LIVE"] .ao-rail-item[data-channel="sacred-minister"][data-active="true"]{
+  border-color:color-mix(in srgb,var(--ao-mass-accent) 34%,transparent);
+  background:color-mix(in srgb,var(--ao-mass-panel) 92%,transparent);
+  opacity:.91;padding:3px
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-rail-item[data-channel="sacred-minister"] .ao-rail-copy{
+  display:block!important;max-width:48px;font:600 7px/1.1 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.015em;text-transform:uppercase;color:#d6ddd3;text-align:center;
+  overflow-wrap:break-word;display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden
+}
+.ao-reader-shell:not([data-mode="LIVE"]) [data-channel="sacred-minister"]{display:none!important}
+
 .ao-rail .ao-icon-mask{width:38px;height:38px}
 .ao-bell-icon{display:block;width:38px;height:38px;color:#d8c590}
 .ao-bell-icon svg{display:block;width:100%;height:100%}
@@ -1268,6 +1283,21 @@ export function syncReaderRitualHighlights(root,gesture){
   return applied;
 }
 
+// Treat the existing 19 R18 Solemn source events as **rubrical expectations**.
+// Their cue alignment is not evidence anyone independently observed a minister.
+// Only the pre-certified form-state owner may supply this discrete LIVE label.
+export function projectCertifiedSolemnMinisterRubric(value){
+  if(!value||!["R18_SOLEMN_R04_MINISTER","R18_SOLEMN_PAX_PRIMARY_SOURCE"].includes(value.owner) ||
+    !["RECOVERED_R04_CERTIFIED","CERTIFIED_PRIMARY_1962_RUBRIC"].includes(value.authorityStatus) ||
+    !/^AO\.SM\.C\d{4}$/.test(String(value.cueId??"")) ||
+    !String(value.actor??"").trim() || !String(value.labelShort??"").trim())return null;
+  return Object.freeze({
+    label:String(value.actor).trim()+" · "+String(value.labelShort).trim(),
+    actor:value.actor,sourceCueId:value.cueId,observed:false,
+    owner:"EXISTING_SOLEMN_MINISTER_RUBRIC_EXPECTED_ONLY",
+  });
+}
+
 export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
   const momentTitle=String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "");
@@ -1356,6 +1386,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     cinematicScene:moment.cinematicScene ?? null,
     priestPosition:persist(moment.priestPosition, previous.priestPosition),
     priestAction:moment.priestAction ?? null,
+    sacredMinister:projectCertifiedSolemnMinisterRubric(moment.sacredMinister),
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
     scholaShared:sharedTextWithSchola && Boolean(textValue(schola)),
@@ -1555,9 +1586,10 @@ export function buildReaderShellMarkup(prepared = {}) {
       </article>
     </main>
 
-    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest, bell, and shared Schola cues">
+    <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest, ministers, bell, and shared Schola cues">
       <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="priest-action" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-rail-copy" data-role="priest-action">—</span></div>
+      <div class="ao-rail-item" data-channel="sacred-minister" data-active="false" aria-hidden="true"><span class="ao-rail-copy" data-role="sacred-minister">—</span></div>
       <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-icon-mask ao-bell-icon" data-icon-slot="bell" hidden aria-hidden="true"></span><span class="ao-rail-copy" data-role="bell">—</span></div>
       <div class="ao-rail-item" data-channel="schola-shared" data-active="false" aria-label="Schola shares the current text"><span class="ao-icon-mask" data-icon-slot="schola-shared" hidden></span><span class="ao-rail-copy" aria-hidden="true">—</span></div>
     </aside>
@@ -1611,9 +1643,12 @@ function setChannel(root, channel, value){
     if(!item.classList?.contains("ao-rail-item"))continue;
     if(active){
       item.setAttribute("role","img");
-      item.setAttribute("aria-label",label);
+      const accessibleLabel=channel==="sacred-minister"
+        ? "Expected 1962 minister rubric (not independently observed): "+label
+        : label;
+      item.setAttribute("aria-label",accessibleLabel);
       item.removeAttribute("aria-hidden");
-      item.title=label;
+      item.title=accessibleLabel;
     }else{
       item.removeAttribute("role");
       item.removeAttribute("aria-label");
@@ -2652,6 +2687,7 @@ export function createReaderDomAdapter({
     setText(root,"progress",current.progress);
     setText(root,"priest-position",textValue(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition));
     setText(root,"priest-action",textValue(current.priestAction));
+    setText(root,"sacred-minister",textValue(current.sacredMinister));
     setText(root,"posture",textValue(current.posture));
     setText(root,"gesture",textValue(current.gesture));
     // In Missal the upper ribbon is the only persistent faithful/priest
@@ -2710,6 +2746,7 @@ export function createReaderDomAdapter({
     if(postureRail)postureRail.dataset.change=String(postureChangeVisible);
     setChannel(root,"attention",current.attention);
     setChannel(root,"priest-action",current.priestAction);
+    setChannel(root,"sacred-minister",mode==="LIVE"?current.sacredMinister:null);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
     setChannel(root,"bell",visibleBell);

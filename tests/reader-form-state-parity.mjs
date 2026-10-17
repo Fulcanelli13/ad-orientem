@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createReaderFormCueStateController } from "../src/mass/reader-form-state.js";
+import { projectCertifiedSolemnMinisterRubric } from "../src/mass/reader-dom.js";
 import { createNativeScholaController } from "../src/mass/reader-schola.js";
 import { properToReaderSlots } from "../src/mass/proper-reader-slots.js";
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
@@ -21,6 +22,33 @@ const solemn=createReaderFormCueStateController({formStateData:formState,registr
 s=solemn.project("AO.SM.C0075");assert.equal(s.priestPosition.station,"SEDILIA");assert.equal(s.priestVoice.value,"LISTENS");assert.match(s.sacredMinister.actor,/SUBDEACON/);
 s=solemn.project("AO.SM.C0082");assert.equal(s.priestPosition.station,"SOLEMN_CELEBRANT_TRACK");assert.equal(s.priestVoice.value,"LISTENS");assert.match(s.sacredMinister.actor,/DEACON/);
 s=solemn.project("AO.SM.C0174");assert.equal(s.priestAction?.label,"ELEVATES HOST","Solemn form wrapper erased the celebrant Host elevation action");assert.match(s.sacredMinister.actor,/DEACON/);assert.match(s.sacredMinister.actor,/SUBDEACON/);assert.match(s.sacredMinister.actor,/TORCHBEARERS/);
+// The visible Solemn rubrical lane is entirely sourced from the already
+// certified 19 R18 minister events. No P2/Ultra Master research is imported,
+// and no tap/scroll is represented as an *observed* physical minister act.
+const expectedMinisterCues=new Set();
+for(const cue of sungCorpus.blocks.flatMap(b=>(b.units??[]).map(u=>u.cue_id))){
+  const owned=solemn.project(cue);
+  const projected=projectCertifiedSolemnMinisterRubric(owned.sacredMinister);
+  if(owned.sacredMinister){
+    assert.ok(projected,"Existing certified Solemn minister event hidden at "+cue);
+    assert.equal(projected.sourceCueId,cue);
+    assert.equal(projected.observed,false);
+    assert.match(projected.label,/ · /);
+    expectedMinisterCues.add(cue);
+  }else assert.equal(projected,null);
+}
+assert.equal(formState.solemn.ministerEvents.length,19,
+  "Existing canonical minister source corpus denominator changed");
+for(const required of ["AO.SM.C0075","AO.SM.C0082","AO.SM.C0174","AO.SM.C0225"])
+  assert.ok(expectedMinisterCues.has(required),
+    "Existing certified Solemn minister action missing from rail "+required);
+for(const cue of ["AO.SM.C0111","AO.SM.C0112","AO.SM.C0113"]){
+  assert.equal(solemn.project(cue).sacredMinister,null,
+    "Unapproved Offertory actor event was attributed to the public Mass");
+}
+const paxExpected=projectCertifiedSolemnMinisterRubric(solemn.project("AO.SM.C0225").sacredMinister);
+assert.match(paxExpected?.label??"",/DEACON.*SUBDEACON.*PAX/);
+assert.equal(paxExpected.observed,false);
 s=solemn.project("AO.SM.C0259");assert.equal(s.priestVoice.value,"LISTENS");assert.match(s.sacredMinister.actor,/DEACON/);
 s=solemn.project("AO.SM.C0268");assert.equal(s.response,null);assert.equal(s.ownership.response,"R18_SOLEMN_MINISTER_RESPONSE");assert.match(s.sacredMinister.actor,/SUBDEACON/);
 s=solemn.project("AO.SM.C0225");assert.match(s.sacredMinister.actor,/DEACON/);assert.match(s.sacredMinister.actor,/SUBDEACON/);assert.equal(s.sacredMinister.owner,"R18_SOLEMN_PAX_PRIMARY_SOURCE");assert.equal(s.sacredMinister.authorityStatus,"CERTIFIED_PRIMARY_1962_RUBRIC");assert.equal(s.sacredMinisterAdvisory,null);assert.equal(s.ownership.sacredMinister,"R18_SOLEMN_PAX_PRIMARY_SOURCE");assert.equal(solemn.audit.pendingPaxAuthority,0);
