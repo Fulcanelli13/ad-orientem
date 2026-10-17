@@ -32,7 +32,7 @@
     "dr-challoner"
   ],
   "verification": {
-    "coordinateChecks": "NOT_YET_COMPLETED_FOR_ALL_BOOKS",
+    "coordinateChecks": "ALL_93_PASS_REGISTERED_SCRIPTURE_CONTRACTS",
     "textCollation": false,
     "fullLiteraryReadAloud": false,
     "CatholicEditorialApproval": false,
@@ -68,7 +68,14 @@
       "priorSourceSeamCarried": "H21-03",
       "reason": "Longer full Acts 28:23–31 avoids detaching verse 28 from Isaiah's preceding explanation; Red Sea pursuit cannot be omitted from Exodus 14 opening.",
       "priorCorrectionBlobSha": "387eeab46041fd853eccee0fdcd8a89df66e1b97"
-    }
+    },
+    "sourceWitnessTest": "tests/historia-essential-economy.mjs",
+    "sourceWitnessTestCommit": "907fc20ea7b156ea0dde862c7ead1e673fbbda28",
+    "sourceWitnessTestRunId": 39042889387,
+    "targetCPDVAndDouaySourceCoordinatePresenceVerified": true,
+    "historicalCramponExceptionSourcePresenceVerified": true,
+    "originalPrintedEditionAttested": false,
+    "originalTextAndRightsCollated": false
   },
   "rules": [
     "Verse order preserved in every excerpt",
@@ -95,10 +102,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H01-02",
@@ -114,10 +122,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H02-01",
@@ -133,10 +142,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H02-02",
@@ -153,10 +163,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H03-01",
@@ -172,10 +183,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H04-01",
@@ -191,10 +203,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H07-02",
@@ -211,10 +224,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H07-03",
@@ -230,10 +244,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H08-01",
@@ -249,10 +264,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H10-01",
@@ -268,10 +284,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H11-02",
@@ -288,10 +305,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H11-03",
@@ -307,10 +325,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H12-02",
@@ -326,10 +345,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H13-01",
@@ -345,10 +365,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H15-02",
@@ -364,7 +385,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -373,7 +394,8 @@
         "cpdv-2009",
         "dr-challoner"
       ],
-      "originalEditionIndependentlyCertified": false
+      "originalEditionIndependentlyCertified": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H15-03",
@@ -389,10 +411,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H16-01",
@@ -411,10 +434,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H16-03",
@@ -430,10 +454,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H16-04",
@@ -450,10 +475,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H16-05",
@@ -469,10 +495,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H17-01",
@@ -488,10 +515,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H18-01",
@@ -507,10 +535,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": true,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H19-01",
@@ -527,10 +556,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H19-05",
@@ -546,10 +576,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H20-01",
@@ -569,10 +600,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H21-01",
@@ -589,10 +621,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H21-03",
@@ -611,7 +644,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -628,7 +661,8 @@
         ],
         "choice": "SELECTED_SUBSET_OF_PREVIOUS_HIGH_RISK_CONTINUITY_CORRECTION",
         "noPriorResearchDeleted": true
-      }
+      },
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H22-01",
@@ -644,10 +678,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H22-02",
@@ -663,10 +698,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H22-03",
@@ -682,10 +718,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H23-01",
@@ -704,10 +741,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H24-03",
@@ -724,10 +762,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H25-01",
@@ -744,10 +783,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H26-01",
@@ -764,10 +804,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H28-04",
@@ -784,10 +825,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H29-03",
@@ -804,10 +846,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H29-04",
@@ -823,10 +866,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H30-01",
@@ -842,10 +886,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H32-01",
@@ -861,10 +906,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H32-02",
@@ -880,10 +926,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H32-03",
@@ -900,10 +947,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H33-01",
@@ -919,10 +967,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H35-02",
@@ -938,10 +987,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H35-03",
@@ -960,10 +1010,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H36-01",
@@ -979,10 +1030,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H36-02",
@@ -1000,10 +1052,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H38-02",
@@ -1019,10 +1072,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H38-03",
@@ -1038,10 +1092,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H38-04",
@@ -1057,10 +1112,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H38-05",
@@ -1076,10 +1132,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H39-01",
@@ -1096,10 +1153,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H40-01",
@@ -1115,10 +1173,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H41-01",
@@ -1135,10 +1194,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H41-02",
@@ -1154,10 +1214,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H43-01",
@@ -1173,10 +1234,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H43-02",
@@ -1193,10 +1255,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H46-01",
@@ -1212,10 +1275,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H47-02",
@@ -1231,10 +1295,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H48-01",
@@ -1250,10 +1315,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H49-02",
@@ -1269,10 +1335,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H51-01",
@@ -1289,10 +1356,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H51-03",
@@ -1308,10 +1376,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H52-01",
@@ -1327,10 +1396,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H53-01",
@@ -1346,10 +1416,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H53-02",
@@ -1365,10 +1436,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H56-02",
@@ -1385,10 +1457,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H57-01",
@@ -1404,10 +1477,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H57-02",
@@ -1423,10 +1497,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H58-04",
@@ -1446,10 +1521,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H59-01",
@@ -1465,10 +1541,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H60-01",
@@ -1484,10 +1561,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H62-01",
@@ -1503,10 +1581,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H62-02",
@@ -1522,10 +1601,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H63-01",
@@ -1541,10 +1621,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H63-02",
@@ -1561,10 +1642,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H64-01",
@@ -1580,10 +1662,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H65-01",
@@ -1601,10 +1684,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H65-02",
@@ -1620,10 +1704,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H66-01",
@@ -1639,10 +1724,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H67-01",
@@ -1661,10 +1747,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H68-01",
@@ -1680,10 +1767,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H68-04",
@@ -1699,7 +1787,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -1708,7 +1796,8 @@
         "cpdv-2009",
         "dr-challoner"
       ],
-      "originalEditionIndependentlyCertified": false
+      "originalEditionIndependentlyCertified": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H69-01",
@@ -1725,10 +1814,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H70-01",
@@ -1749,10 +1839,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H71-01",
@@ -1768,10 +1859,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H71-02",
@@ -1787,10 +1879,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H72-01",
@@ -1809,10 +1902,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H73-07",
@@ -1828,10 +1922,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H75-02",
@@ -1847,10 +1942,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H77-01",
@@ -1866,10 +1962,11 @@
       "editorReviewedForNarrativeEconomy": false,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H77-02",
@@ -1885,10 +1982,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H78-01",
@@ -1904,10 +2002,11 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     },
     {
       "unitId": "H78-02",
@@ -1923,10 +2022,24 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
-      "approvedForProduction": false
+      "approvedForProduction": false,
+      "selectedCoordinatesAreScriptureOnly": true
     }
-  ]
+  ],
+  "comparativeScriptureEconomy": {
+    "originalNominalVerseUnits": 1207,
+    "proposedNominalVerseUnits": 1051,
+    "nominalDifference": 156,
+    "historicalEditionExceptions": 2,
+    "nominalCountingDifferenceNotEditorialCut": 1,
+    "comparableOriginalVerseUnits": 1189,
+    "comparableSelectedVerseUnits": 1034,
+    "comparableActualVerseUnitReductions": 155,
+    "comparableReductionRatePct": 13,
+    "countingRule": "Count biblical verse-unit coordinates in the source edition for original and proposed extracts. Exclude historical Crampon/CPDV numbering exceptions for like-for-like percent. Does not count the 32 brief B-context ideas or any separate bridge references. Does not estimate word count or reading duration.",
+    "readAloudApproved": false
+  }
 }
