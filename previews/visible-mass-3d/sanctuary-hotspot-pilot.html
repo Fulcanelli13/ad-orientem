@@ -62,7 +62,7 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;
 .marker[data-object=SN04] .marker-label{bottom:auto;top:calc(100% + 9px)}
 .marker[data-object=SN02] .marker-label{bottom:auto;top:calc(100% + 9px)}
 .photobar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 13px;border-top:1px solid var(--line);background:#0c1219;font:12px/1.45 system-ui,sans-serif;color:var(--muted)}
-.photobar a{white-space:nowrap}
+.photobar a{white-space:nowrap}.photo-transform{font:11px/1.45 system-ui,sans-serif;color:var(--muted);white-space:normal}
 .info{background:var(--pane);border:1px solid var(--line);border-radius:10px;min-height:340px;padding:18px;box-shadow:0 6px 30px #0003}
 .info h2{font:normal clamp(23px,2.4vw,29px)/1.17 Georgia,serif;margin:0 0 9px}
 .info p{line-height:1.56;margin:10px 0}
@@ -258,6 +258,7 @@ body[data-experience=discover] .info{min-height:0}
 <div class="photobar">
 <span id="photo-caption">High Altar · actual photograph, July 2019 · not a reconstruction or Mass in progress</span>
 <a id="photo-credit" href="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg" target="_blank" rel="noopener">Anthony O'Neil · CC BY-SA 2.0 ↗</a>
+<a id="photo-license" href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">Licence ↗</a><span id="photo-transform" class="photo-transform" hidden>Perspective projection of the original panorama</span>
 </div>
 </div>
 
@@ -382,6 +383,7 @@ function showChurch(){
  $("panorama-stage").hidden=true;
  $("inspection-stage").hidden=true;$("photo-viewport").hidden=false;
  $("photo-caption").textContent=CHURCH.caption;$("photo-credit").textContent=CHURCH.credit;$("photo-credit").href=CHURCH.url;
+ $("photo-license").href="https://creativecommons.org/licenses/by-sa/2.0/";$("photo-license").textContent="CC BY-SA 2.0 ↗";$("photo-transform").hidden=true;
  syncPhotoNav();
 }
 async function showPanorama(mode){
@@ -400,6 +402,9 @@ async function showPanorama(mode){
      $("photo-caption").textContent=scene.caption;
      $("photo-credit").textContent=scene.creator+" · "+scene.licence+" ↗";
      $("photo-credit").href=scene.source;
+     $("photo-license").href=scene.licenceUrl;
+     $("photo-license").textContent=scene.licence+" ↗";
+     $("photo-transform").hidden=false;
     }
    });
   }
@@ -421,6 +426,7 @@ function showInspection(asset){
  $("inspection-notice").textContent=asset.note;
  $("photo-caption").textContent="Reference · "+asset.source_location+" · not photographed at Brompton";
  $("photo-credit").textContent=asset.creator+" · "+asset.licence+" ↗";$("photo-credit").href=asset.source_url;
+ $("photo-license").href=asset.licence_url;$("photo-license").textContent=asset.licence+" ↗";$("photo-transform").hidden=true;
 }
 function setExperience(mode){
  if(!["explore","discover","understand"].includes(mode))return false;
