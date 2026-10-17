@@ -436,8 +436,9 @@ function setExperience(mode){
 }
 function select(id,from,{guided=false}={}){
  const spot=findSpot(id);if(!spot)return;
- if(spot.inspection)showInspection(spot.inspection);else if(!spot.referenceOnly)showChurch();
+ // Remember the true original photograph BEFORE switching to the exact hotspot still.
  if(!state.selected){state.returnScroll=window.scrollY;state.returnPhotoMode=state.photoMode;}
+ if(spot.inspection)showInspection(spot.inspection);else if(!spot.referenceOnly)showChurch();
  state.returnExperience=guided?"discover":(state.experience==="discover"?"discover":"explore");
  state.selected=id;state.question=null;state.showAll=false;
  if(from)state.returnFocus=from;
