@@ -480,7 +480,9 @@ try{
     legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
   }));
   assert.equal(prayHub.owner,"modular-pray-v1");
-  assert.equal(prayHub.cards,6,"PRAY landing must expose exactly six user-intent doors");
+  assert.equal(prayHub.cards,8,"PRAY landing preserves six original doors, plus Chaplets discovery and a direct Divine Mercy shortcut");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-family='chaplets']").count(),1,"Rosary & Chaplets family missing");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-own='pray.divine_mercy']").count(),1,"Direct Divine Mercy shortcut missing");
   assert.equal(prayHub.legacyOpen,false,"legacy Prayer Book is visible beneath modular PRAY");
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930HomeIntro")?.dataset?.aoPresentationFxHero,null,{timeout:3000});
   const prayFx=await page.evaluate(()=>({
