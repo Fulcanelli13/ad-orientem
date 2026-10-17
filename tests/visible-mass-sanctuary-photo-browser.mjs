@@ -236,6 +236,32 @@ try{
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).nextQuestionId,'VMQ-0056');
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus())).active,'FIRST_VISIT');
   await page.screenshot({path:screenshotDir+'/'+spec.name+'-guided.png'});
+  // M3: switch study language without altering English owners, published
+  // glossary, Mass Guide, or unanswered higher-certification questions.
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.status()?.translatedSourceCandidates===20);
+  await page.locator('#study-language').selectOption('fr');
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).studyLanguage,'fr');
+  assert.equal(await page.locator('#m3-language-notice').isVisible(),true);
+  await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.select('AL01'));
+  await page.locator('#question-items [data-question="VMQ-0001"]').click();
+  assert.match(await page.locator('#question-title').innerText(),/Pourquoi l'autel est-il/i);
+  assert.equal(await page.locator('#question-title').getAttribute('lang'),'fr');
+  assert.match(await page.locator('#historical-answer-lead').innerText(),/Saint Sacrifice de la Messe/);
+  assert.match(await page.locator('#historical-answer-guard').innerText(),/non approuvée/i);
+  assert.equal(await page.locator('#historical-answer').isVisible(),true);
+  assert.ok(await page.locator('#historical-answer-sources a').count()>0);
+  await page.locator('#study-language').selectOption('en');
+  assert.match(await page.locator('#question-title').innerText(),/Why is the altar/i);
+  assert.equal(await page.locator('#question-title').getAttribute('lang'),'en');
+  await page.locator('#study-language').selectOption('fr');
+  await page.locator('#back-to-object').click();
+  await page.locator('#more-questions').click();
+  await page.locator('#question-items [data-question="VMQ-0004"]').click();
+  assert.equal(await page.locator('#answer-pending').isVisible(),true,
+    'the held question is still unanswered after choosing French');
+  assert.equal(await page.locator('#historical-answer').isVisible(),false);
+  await page.screenshot({path:screenshotDir+'/'+spec.name+'-french-research.png'});
+
   assert.deepEqual(errors,[],'no uncaught JS errors');
   await context.close();
   console.log('Sanctuary photo-browser PASS '+spec.name+' '+spec.width+'x'+spec.height);
