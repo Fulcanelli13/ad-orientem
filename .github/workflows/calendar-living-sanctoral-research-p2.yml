@@ -1,0 +1,27 @@
+name: P2 Living Sanctoral research evidence integrity
+
+on:
+  pull_request:
+    paths:
+      - 'data/calendar/research/**'
+      - 'tests/calendar-living-sanctoral-research-p2.mjs'
+      - 'tests/calendar-living-sanctoral-authority-certification-p2.mjs'
+      - '.github/workflows/calendar-living-sanctoral-research-p2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p2-research-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate subject identities, sourced dates, authority, historical gates and reconciled counts
+        run: |
+          node tests/calendar-living-sanctoral-research-p2.mjs
+          node tests/calendar-living-sanctoral-authority-certification-p2.mjs

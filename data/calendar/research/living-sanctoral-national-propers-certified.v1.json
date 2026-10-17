@@ -1,0 +1,519 @@
+{
+  "schema": "AO_P2_APPROVED_MODERN_NATIONAL_PROPER_CERTIFICATION_V1",
+  "asOf": "2026-10-16",
+  "publicationStatus": "RESEARCH_ONLY_NO_RUNTIME_IMPORT",
+  "goal": "Preserve one saint ID with multiple geographically scoped canonical memorial dates and authoritative national ranks.",
+  "sourceDocuments": [
+    {
+      "jurisdiction": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "country": "US",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourceEdition": "2026",
+      "entryCount": 9,
+      "rankVerified": true,
+      "originalApprovalDate": null,
+      "documentEditionLastEmended": "2026-02",
+      "effectiveFrom": "UNKNOWN",
+      "retrojectYears": false
+    },
+    {
+      "jurisdiction": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "country": "CA",
+      "sourceUrl": "https://www.cccb.ca/wp-content/uploads/2026/03/CanLitCalUpdated_2025_04_01.pdf",
+      "sourceEdition": "2016_APPROVED_2025_UPDATED",
+      "entryCount": 6,
+      "rankVerified": true,
+      "originalApprovalDate": "2016-01-27",
+      "documentEditionLastUpdated": "2025-04-01",
+      "effectiveFrom": "UNKNOWN",
+      "retrojectYears": false
+    }
+  ],
+  "counts": {
+    "newEdges": 15,
+    "uniqueCanonicalIndividuals": 13,
+    "US": 9,
+    "Canada": 6,
+    "scopedDifferencesFromPreexistingDateEvidence": 7
+  },
+  "certifiedEntries": [
+    {
+      "sourceEvidenceId": "p2-national-us-001",
+      "canonicalPersonId": "saint.elizabeth-ann-seton",
+      "preferredName": "Elizabeth Ann Bayley Seton",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "01-04",
+      "liturgicalRank": "MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "Elizabeth Ann Bayley Seton: 4 January, Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "01-04"
+      ],
+      "distinctFromPreviousEvidenceDate": false,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-us-002",
+      "canonicalPersonId": "saint.john-neumann-philadelphia",
+      "preferredName": "Giovanni Nepomuceno Neumann",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "01-05",
+      "liturgicalRank": "MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "Giovanni Nepomuceno Neumann: 5 January, Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "01-05"
+      ],
+      "distinctFromPreviousEvidenceDate": false,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-us-003",
+      "canonicalPersonId": "saint.andre-bessette",
+      "preferredName": "André (Alfred) Bessette",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "01-06",
+      "liturgicalRank": "OPTIONAL_MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "André (Alfred) Bessette: 6 January, Optional Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "01-06"
+      ],
+      "distinctFromPreviousEvidenceDate": false,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-us-004",
+      "canonicalPersonId": "saint.marianne-cope",
+      "preferredName": "Marianna (Marianne) Cope",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "01-23",
+      "liturgicalRank": "OPTIONAL_MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "Marianna (Marianne) Cope: 23 January, Optional Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "08-09"
+      ],
+      "distinctFromPreviousEvidenceDate": true,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-us-005",
+      "canonicalPersonId": "saint.katharine-drexel",
+      "preferredName": "Katharine Drexel",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "03-03",
+      "liturgicalRank": "OPTIONAL_MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "Katharine Drexel: 3 March, Optional Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "03-03"
+      ],
+      "distinctFromPreviousEvidenceDate": false,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-us-006",
+      "canonicalPersonId": "saint.damien-de-veuster",
+      "preferredName": "Damiano (Damien) de Veuster",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "05-10",
+      "liturgicalRank": "OPTIONAL_MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "Damiano (Damien) de Veuster: 10 May, Optional Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "04-15"
+      ],
+      "distinctFromPreviousEvidenceDate": true,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-us-007",
+      "canonicalPersonId": "saint.junipero-serra",
+      "preferredName": "Junípero Serra",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "07-01",
+      "liturgicalRank": "OPTIONAL_MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "Junípero Serra: 1 July, Optional Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "08-28"
+      ],
+      "distinctFromPreviousEvidenceDate": true,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-us-008",
+      "canonicalPersonId": "saint.kateri-tekakwitha",
+      "preferredName": "Kateri Tekakwitha",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "07-14",
+      "liturgicalRank": "MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "Kateri Tekakwitha: 14 July, Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "04-17"
+      ],
+      "distinctFromPreviousEvidenceDate": true,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-us-009",
+      "canonicalPersonId": "saint.rose-philippine-duchesne",
+      "preferredName": "Rose-Philippine Duchesne",
+      "jurisdictionCountry": "US",
+      "territory": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "celebrationMonthDay": "11-18",
+      "liturgicalRank": "OPTIONAL_MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "United States Conference of Catholic Bishops — Secretariat of Divine Worship",
+      "sourceUrl": "https://www.usccb.org/resources/2026cal.pdf",
+      "sourcePage": 11,
+      "proofText": "Rose-Philippine Duchesne: 18 November, Optional Memorial; USCCB Liturgical Calendar for 2026, Proper Calendar page 9.",
+      "sourceDocumentEdition": "2026",
+      "holySeeOriginalApprovalDated": null,
+      "documentRevisionMonthOrDate": "2026-02",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": "2026",
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "11-18"
+      ],
+      "distinctFromPreviousEvidenceDate": false,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-ca-001",
+      "canonicalPersonId": "saint.andre-bessette",
+      "preferredName": "André (Alfred) Bessette",
+      "jurisdictionCountry": "CA",
+      "territory": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "celebrationMonthDay": "01-07",
+      "liturgicalRank": "MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "Canadian Conference of Catholic Bishops",
+      "sourceUrl": "https://www.cccb.ca/wp-content/uploads/2026/03/CanLitCalUpdated_2025_04_01.pdf",
+      "sourcePage": 1,
+      "proofText": "André (Alfred) Bessette: 7 January, Memorial; CCCB Calendar Proper to the Dioceses of Canada (2016 approval, 2025 revision).",
+      "sourceDocumentEdition": "2016_APPROVED_2025_UPDATED",
+      "holySeeOriginalApprovalDated": "2016-01-27",
+      "documentRevisionMonthOrDate": "2025-04-01",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": null,
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "01-06"
+      ],
+      "distinctFromPreviousEvidenceDate": true,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-ca-002",
+      "canonicalPersonId": "saint.marguerite-bourgeoys",
+      "preferredName": "Marguerite Bourgeoys",
+      "jurisdictionCountry": "CA",
+      "territory": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "celebrationMonthDay": "01-12",
+      "liturgicalRank": "MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "Canadian Conference of Catholic Bishops",
+      "sourceUrl": "https://www.cccb.ca/wp-content/uploads/2026/03/CanLitCalUpdated_2025_04_01.pdf",
+      "sourcePage": 1,
+      "proofText": "Marguerite Bourgeoys: 12 January, Memorial; CCCB Calendar Proper to the Dioceses of Canada (2016 approval, 2025 revision).",
+      "sourceDocumentEdition": "2016_APPROVED_2025_UPDATED",
+      "holySeeOriginalApprovalDated": "2016-01-27",
+      "documentRevisionMonthOrDate": "2025-04-01",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": null,
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "01-12"
+      ],
+      "distinctFromPreviousEvidenceDate": false,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-ca-003",
+      "canonicalPersonId": "saint.kateri-tekakwitha",
+      "preferredName": "Kateri Tekakwitha",
+      "jurisdictionCountry": "CA",
+      "territory": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "celebrationMonthDay": "04-17",
+      "liturgicalRank": "MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "Canadian Conference of Catholic Bishops",
+      "sourceUrl": "https://www.cccb.ca/wp-content/uploads/2026/03/CanLitCalUpdated_2025_04_01.pdf",
+      "sourcePage": 1,
+      "proofText": "Kateri Tekakwitha: 17 April, Memorial; CCCB Calendar Proper to the Dioceses of Canada (2016 approval, 2025 revision).",
+      "sourceDocumentEdition": "2016_APPROVED_2025_UPDATED",
+      "holySeeOriginalApprovalDated": "2016-01-27",
+      "documentRevisionMonthOrDate": "2025-04-01",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": null,
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "04-17"
+      ],
+      "distinctFromPreviousEvidenceDate": false,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-ca-004",
+      "canonicalPersonId": "saint.marie-leonie-paradis",
+      "preferredName": "Marie-Léonie Paradis",
+      "jurisdictionCountry": "CA",
+      "territory": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "celebrationMonthDay": "05-04",
+      "liturgicalRank": "OPTIONAL_MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "Canadian Conference of Catholic Bishops",
+      "sourceUrl": "https://www.cccb.ca/wp-content/uploads/2026/03/CanLitCalUpdated_2025_04_01.pdf",
+      "sourcePage": 1,
+      "proofText": "Marie-Léonie Paradis: 4 May, Optional Memorial; CCCB Calendar Proper to the Dioceses of Canada (2016 approval, 2025 revision).",
+      "sourceDocumentEdition": "2016_APPROVED_2025_UPDATED",
+      "holySeeOriginalApprovalDated": "2016-01-27",
+      "documentRevisionMonthOrDate": "2025-04-01",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": null,
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "05-03"
+      ],
+      "distinctFromPreviousEvidenceDate": true,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-ca-005",
+      "canonicalPersonId": "saint.eugene-de-mazenod",
+      "preferredName": "Eugène de Mazenod",
+      "jurisdictionCountry": "CA",
+      "territory": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "celebrationMonthDay": "05-21",
+      "liturgicalRank": "OPTIONAL_MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "Canadian Conference of Catholic Bishops",
+      "sourceUrl": "https://www.cccb.ca/wp-content/uploads/2026/03/CanLitCalUpdated_2025_04_01.pdf",
+      "sourcePage": 1,
+      "proofText": "Eugène de Mazenod: 21 May, Optional Memorial; CCCB Calendar Proper to the Dioceses of Canada (2016 approval, 2025 revision).",
+      "sourceDocumentEdition": "2016_APPROVED_2025_UPDATED",
+      "holySeeOriginalApprovalDated": "2016-01-27",
+      "documentRevisionMonthOrDate": "2025-04-01",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": null,
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "05-21"
+      ],
+      "distinctFromPreviousEvidenceDate": false,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    },
+    {
+      "sourceEvidenceId": "p2-national-ca-006",
+      "canonicalPersonId": "saint.marguerite-dyouville",
+      "preferredName": "Marie Marguerite d’Youville",
+      "jurisdictionCountry": "CA",
+      "territory": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "celebrationMonthDay": "10-16",
+      "liturgicalRank": "MEMORIAL",
+      "formalSourceRankCertified": true,
+      "sourcePublisher": "Canadian Conference of Catholic Bishops",
+      "sourceUrl": "https://www.cccb.ca/wp-content/uploads/2026/03/CanLitCalUpdated_2025_04_01.pdf",
+      "sourcePage": 2,
+      "proofText": "Marie Marguerite d’Youville: 16 October, Memorial; CCCB Calendar Proper to the Dioceses of Canada (2016 approval, 2025 revision).",
+      "sourceDocumentEdition": "2016_APPROVED_2025_UPDATED",
+      "holySeeOriginalApprovalDated": "2016-01-27",
+      "documentRevisionMonthOrDate": "2025-04-01",
+      "specificJuridicalEffectiveFrom": null,
+      "legalEffectiveDateUnknown": true,
+      "selectedHistoricalYear": null,
+      "liturgicalTradition": "POSTCONCILIAR_NATIONAL_PROPER",
+      "existingSamePersonAttestedMonthDays": [
+        "12-23"
+      ],
+      "distinctFromPreviousEvidenceDate": true,
+      "eligibleFor1962Mass": false,
+      "runtimePublished": false
+    }
+  ],
+  "contrastRule": "A national modern proper neither creates a General Roman universal memorial nor authorizes a celebration with the 1962 Missal. Local precedence and promulgation are owned by P0/P1.",
+  "knownDivergences": [
+    {
+      "subjectId": "saint.marianne-cope",
+      "jurisdiction": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "certifiedDate": "01-23",
+      "existingOtherMonthDays": [
+        "08-09"
+      ],
+      "reason": "DIFFERENT_SCOPED_CALENDAR_OR_DICASTERY_DATE_NO_CONFLICT_IN_ONE_SINGLE_JURISDICTION",
+      "P0Outcome": "PRESERVE_EACH_DATE_UNDER_SOURCE_AUTHORITY_ID"
+    },
+    {
+      "subjectId": "saint.damien-de-veuster",
+      "jurisdiction": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "certifiedDate": "05-10",
+      "existingOtherMonthDays": [
+        "04-15"
+      ],
+      "reason": "DIFFERENT_SCOPED_CALENDAR_OR_DICASTERY_DATE_NO_CONFLICT_IN_ONE_SINGLE_JURISDICTION",
+      "P0Outcome": "PRESERVE_EACH_DATE_UNDER_SOURCE_AUTHORITY_ID"
+    },
+    {
+      "subjectId": "saint.junipero-serra",
+      "jurisdiction": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "certifiedDate": "07-01",
+      "existingOtherMonthDays": [
+        "08-28"
+      ],
+      "reason": "DIFFERENT_SCOPED_CALENDAR_OR_DICASTERY_DATE_NO_CONFLICT_IN_ONE_SINGLE_JURISDICTION",
+      "P0Outcome": "PRESERVE_EACH_DATE_UNDER_SOURCE_AUTHORITY_ID"
+    },
+    {
+      "subjectId": "saint.kateri-tekakwitha",
+      "jurisdiction": "DIOCESES_OF_USA_MODERN_ROMAN",
+      "certifiedDate": "07-14",
+      "existingOtherMonthDays": [
+        "04-17"
+      ],
+      "reason": "DIFFERENT_SCOPED_CALENDAR_OR_DICASTERY_DATE_NO_CONFLICT_IN_ONE_SINGLE_JURISDICTION",
+      "P0Outcome": "PRESERVE_EACH_DATE_UNDER_SOURCE_AUTHORITY_ID"
+    },
+    {
+      "subjectId": "saint.andre-bessette",
+      "jurisdiction": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "certifiedDate": "01-07",
+      "existingOtherMonthDays": [
+        "01-06"
+      ],
+      "reason": "DIFFERENT_SCOPED_CALENDAR_OR_DICASTERY_DATE_NO_CONFLICT_IN_ONE_SINGLE_JURISDICTION",
+      "P0Outcome": "PRESERVE_EACH_DATE_UNDER_SOURCE_AUTHORITY_ID"
+    },
+    {
+      "subjectId": "saint.marie-leonie-paradis",
+      "jurisdiction": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "certifiedDate": "05-04",
+      "existingOtherMonthDays": [
+        "05-03"
+      ],
+      "reason": "DIFFERENT_SCOPED_CALENDAR_OR_DICASTERY_DATE_NO_CONFLICT_IN_ONE_SINGLE_JURISDICTION",
+      "P0Outcome": "PRESERVE_EACH_DATE_UNDER_SOURCE_AUTHORITY_ID"
+    },
+    {
+      "subjectId": "saint.marguerite-dyouville",
+      "jurisdiction": "DIOCESES_OF_CANADA_MODERN_ROMAN",
+      "certifiedDate": "10-16",
+      "existingOtherMonthDays": [
+        "12-23"
+      ],
+      "reason": "DIFFERENT_SCOPED_CALENDAR_OR_DICASTERY_DATE_NO_CONFLICT_IN_ONE_SINGLE_JURISDICTION",
+      "P0Outcome": "PRESERVE_EACH_DATE_UNDER_SOURCE_AUTHORITY_ID"
+    }
+  ]
+}
