@@ -108,7 +108,8 @@ export function publishedMissalRubricsForParagraph(paragraph,registry,{
    .map(x=>frozen({
      id:x.id,sourceCueId:x.cueId,actor:"PRIEST",
      shortAction:x.label,displayText:ACTIONS[x.label][isFrench?1:0],
-     latinTrigger:x.triggerLat??null,sourceId:"MR62_RITUS",
+     latinTrigger:x.triggerLat??null,order:x.order,
+     sourceId:"MR62_RITUS",
      sourceUrl:x.sourceUrl??source.url,review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
      observedNow:false,owner:MISSAL_RUBRIC_OWNER,
    })));
