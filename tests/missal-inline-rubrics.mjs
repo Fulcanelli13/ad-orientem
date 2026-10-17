@@ -104,5 +104,61 @@ for(const id of ["AO.RUB.C0174.06","AO.RUB.C0248.01"]){
  assert.ok(!publishedMissalRubricsForParagraph(mk("tampered",[cue]),invalid).some(x=>x.id===id),
    "Uncertified persistent state leaked into published Missal "+id);
 }
-// SOURCE-CERTIFIED_BELL_ACCEPTANCE_BLOCK
+// Existing Ritus servandus VIII.6 bell source rows: printed rubrics only.
+// NEVER synthesize three strikes, sounds, elapsed stage clocks or actual bells.
+const bellCases=[
+ ["AO.SM.C0161","AO.RUB.C0161.02",/before the Consecration/i,/avant la consécration/i],
+ ["AO.SM.C0174","AO.RUB.C0174.03",/three times, or continuously/i,/trois fois, ou de façon continue/i],
+ ["AO.SM.C0181","AO.RUB.C0181.03",/three times, or continuously/i,/trois fois, ou de façon continue/i],
+];
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ for(const language of ["en","fr"]){
+  for(const [cue,id,en,fr] of bellCases){
+   const rows=publishedMissalRubricsForParagraph(mk("bell",[cue]),source,{form,language})
+    .filter(x=>x.kind==="BELL");
+   assert.deepEqual(rows.map(x=>x.id),[id],"Exactly one print direction per original cue");
+   const bell=rows[0];
+   assert.equal(bell.actor,"SERVER");
+   assert.equal(bell.observedNow,false);
+   assert.equal(bell.sourceCueId,cue);
+   assert.equal(bell.sourceUrl,cited);
+   assert.equal(bell.review,"EXISTING_PUBLISHED_R17_1962_RUBRIC");
+   assert.equal(bell.owner,"PUBLISHED_R17_MISSAL_INLINE");
+   assert.match(bell.displayText,language==="fr"?fr:en);
+   if(cue==="AO.SM.C0161")assert.doesNotMatch(bell.displayText,/once|trois fois|three times/i,
+     "The normative source does not specify the warning-ring count");
+   const paragraph=withPublishedMissalParagraphRubrics([mk("bell",[cue])],source,{form,language})[0];
+   const normalized=normalizeReaderMoment({paragraphs:[paragraph]}).paragraphs[0];
+   assert.equal(normalized.publishedMissalRubrics.filter(x=>x.id===id).length,1,
+     "Printed bell source did not pass real reader normalization");
+   assert.equal(normalized.publishedMissalRubrics.find(x=>x.id===id).actor,"SERVER");
+  }
+ }
+}
+for(const [cue,id] of bellCases){
+ for(const [attr,value] of [
+  ["authorityClass","EDITORIAL_DRAFT"],["actor","PRIEST"],
+  ["kind","ACTION"],["presentationOwner","UNREVIEWED_LIVE"],
+  ["displayPrimary",true],
+ ]){
+  const corrupted=structuredClone(source);
+  corrupted.items.find(x=>x.id===id)[attr]=value;
+  assert.ok(!publishedMissalRubricsForParagraph(mk("corrupted",[cue]),corrupted)
+    .some(x=>x.id===id),"Unsafe source row was published: "+id+"/"+attr);
+ }
+}
+const forged=normalizeReaderMoment({paragraphs:[{
+ id:"forged-bell",sourceCueIds:["AO.SM.C0174"],kind:"TEXT",primary:"A",secondary:"B",
+ publishedMissalRubrics:[{
+  id:"AO.RUB.C0174.99",sourceCueId:"AO.SM.C0174",actor:"SERVER",kind:"BELL",
+  owner:"PUBLISHED_R17_MISSAL_INLINE",review:"EXISTING_PUBLISHED_R17_1962_RUBRIC",
+  sourceId:"MR62_RITUS",observedNow:false,displayText:"Fake bell",
+ }]
+}]}).paragraphs[0];
+assert.equal(forged.publishedMissalRubrics.length,0,
+ "Forged server bell passed the three-ID allowlist");
+assert.equal(publishedMissalRubricsForParagraph(mk("empty",[]),source).length,0,
+ "No source cue: must not infer a bell");
+console.log("PASS 52 original priest directions + 2 certified states + 3 static Ritus VIII.6 bell notes (EN/FR; four Mass forms), without clock or local-pattern selection.");
+
 
