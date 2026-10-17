@@ -13,7 +13,8 @@ for(const source of witnesses){
  const plan=rosaryInlineVersePlan(citation);
  const french=rosaryInlineVersePlan(citation,{french:true});
  assert.ok(plan&&french);
- assert.equal(plan.editionId,"cpdv-2009");
+ assert.equal(plan.editionId,"dr-challoner");
+ assert.equal(rosaryInlineVersePlan(citation,{englishEdition:"cpdv-2009"})?.editionId,"cpdv-2009");
  assert.equal(french.editionId,"crampon-1923");
  assert.ok(plan.shownEnd-plan.shownStart<2,"Bead must not repeat full passages");
  assert.equal(plan.catenaAvailable,["Matthew","Mark","Luke","John"].includes(plan.passage.book));
@@ -39,4 +40,4 @@ assert.match(scripture,/initialDepth:depth==="commentary"/);
 assert.match(library,/commentaryVisible=Boolean\(context\?\.reference&&initialDepth==="commentary"\)/);
 assert.match(policy,/\.lab-scripture-cue/,"Unsafe donor fragments remain excluded");
 assert.ok(!policy.includes("window.AO_ROSARY_V381="),"Existing Rosary player remains the sole owner");
-console.log("PASS Lab-ora-style CPDV/Crampon Rosary inline verse and Fathers contracts; 190 source citations + 10 doctrinal holds");
+console.log("PASS Lab-ora-style Douay/CPDV/Crampon Rosary verse and Fathers contracts; 190 citations + 10 doctrinal holds");
