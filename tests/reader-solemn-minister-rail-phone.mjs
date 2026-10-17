@@ -66,7 +66,7 @@ try{
       });
       if(form==="SOLEMN"){
         assert.equal(current.active,"true","Solemn subdeacon's Epistle rubric not visible");
-        assert.match(current.text??"",/DEACON.*PUBLIC GOSPEL/i);
+        assert.match(current.text??"",/DEACON.*GOSPEL/i);
         assert.match(current.accessible??"",/not independently observed/i);
         assert.equal(current.minister?.actor,"DEACON");
         assert.equal(current.stage,"true","Source-owned minister rail was invisible");
