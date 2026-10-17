@@ -136,6 +136,23 @@ A/B/C/D columns count **original v18 editorial source segments**, not pages, ver
 | H77 | Judgment and Final Victory | 2 | 0 | 0 | 0 | Retain decisive beats; trim ancillary scenes | The final victory of Christ; The last judgment |
 | H78 | The New Heaven and New Earth | 2 | 0 | 0 | 0 | Retain decisive beats; trim ancillary scenes | New heaven and new earth; The river and tree of life |
 
+## Verification of existing destinations for 54 independent stories
+
+This routing check uses the **151 existing Atlas event records** and the separate **39-group person/story research crosswalk**. It does not infer that any proposed story card has already been published.
+
+| Routing evidence for C stories | Count |
+|---|---:|
+| Original v18 passage exactly matches an existing canonical Atlas event | **20** |
+| No exact corresponding event; retain as a Scripture reference unless other existing UI is independently verified | **34** |
+| Of the 20 exact matches: also linked to an existing donor research story group | **10** |
+| Exact references with unresolved citation-edition safety (Esther) | **1** |
+| New character/story destinations created | **0** |
+| User-facing destination pages certified in this audit | **0** |
+
+A candidate match is not permission to route into a new or unbuilt experience. The **Philippi jail episode (H73-02)**, and all five detailed Deborah/Gideon/Samson segments (H27), lack an exact existing Atlas event. Their fallback is their canonical Bible reference, with a person link only if an actual existing Paul/Judges person view is separately verified. **The C classification removes mandatory narration; it does not require creating any featured story at all.**
+
+Esther's nominal source reference requires the pre-existing Catholic Esther edition concordance before deep linking. Existing donor story-group classifications remain research-only, never equivalent to live user-facing character biographies.
+
 ## Editorial gates before changing the main reader
 
 1. Review **every C** against already-existing person, event and Scripture destinations. If no real record exists, retain the Scripture reference, **do not invent** a new character module or secondary story collection.
