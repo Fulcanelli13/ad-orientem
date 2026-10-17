@@ -120,7 +120,7 @@ footer a{color:#d8bd89}
  .info.has-selection h2{font-size:23px}
  .info.has-selection .definition{font-size:14px}
  body.object-open{overflow:hidden}
- body.object-open .photo-viewport{height:min(38dvh,330px);overflow:auto;touch-action:pan-x pan-y}
+ body.object-open .photo-viewport{height:min(28dvh,235px);overflow:auto;touch-action:pan-x pan-y}
  body.object-open .inspection-stage{max-height:min(38dvh,330px);overflow-y:auto}
  body.object-open .inspection-stage img{height:min(27dvh,230px)}
  .wrap{padding-top:8px}header{align-items:flex-start}
@@ -265,7 +265,10 @@ function select(id,from){
      requestAnimationFrame(()=>{
        const viewport=$("photo-viewport"),photo=$("photo-canvas");
        viewport.scrollLeft=Math.max(0,photo.clientWidth*spot.x/100-viewport.clientWidth/2);
-       viewport.scrollTop=Math.max(0,photo.clientHeight*spot.y/100-viewport.clientHeight/2);
+       const sheetTop=$("info").getBoundingClientRect().top;
+       const photoTop=viewport.getBoundingClientRect().top;
+       const visibleHeight=Math.max(40,Math.min(viewport.clientHeight,sheetTop-photoTop-14));
+       viewport.scrollTop=Math.max(0,photo.clientHeight*spot.y/100-visibleHeight/2);
      });
    }
  }
