@@ -29,7 +29,15 @@ const unique=(entries,label)=>{
 const sort=x=>[...x].sort();
 const prayerEntries=map.pray.entries;
 assert.equal(prayerEntries.length,23);
-const srcPray=[...familySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
+// Historic mapping is a frozen October snapshot. New discovery links are not
+// new canonical prayers and must not rewrite that source inventory.
+const start=familySource.indexOf("chaplets:Object.freeze(");
+const end=familySource.indexOf("eucharistic:Object.freeze(",start);
+assert.ok(start>=0&&end>start,"New Rosary & Chaplets family missing");
+const additional=[...familySource.slice(start,end).matchAll(/\['own','([^']+)'/g)].map(x=>x[1]);
+assert.deepEqual(additional,["pray.rosary","pray.rosary_methods","pray.divine_mercy"]);
+const originalFamily=familySource.slice(0,start)+familySource.slice(end);
+const srcPray=[...originalFamily.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
 assert.equal(srcPray.length,23,"Prayer runtime source family count changed unexpectedly: 22 historical + Tenebrae");
 assert.ok(srcPray.includes("pray.tenebrae"),"New seasonal Tenebrae Prayer route unavailable");
 const srcLazy=[...familySource.matchAll(/\['external','([^']+)'/g)].map(x=>x[1]);
