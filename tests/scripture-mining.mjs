@@ -564,4 +564,45 @@ assert.ok(necessity.nonNegotiable.includes("No second extended Bible experience"
 assert.ok(necessity.nonNegotiable.some(x=>x.includes("original 151 Atlas event")));
 assert.equal(necessity.reviewGates.canPublish,false);
 
+
+assert.equal(necessity.routeReconciliation.status,
+ "CONSERVATIVE_EXISTING_ROUTE_IDENTITIES_CHECKED_NOT_PROMOTED");
+assert.equal(necessity.routeReconciliation.counts.C,54);
+assert.equal(necessity.routeReconciliation.counts.exactAtlasReference,20);
+assert.equal(necessity.routeReconciliation.counts.noExactAtlasReference,34);
+assert.equal(necessity.routeReconciliation.counts.existingStoryResearchGroupCandidate,10);
+assert.equal(necessity.routeReconciliation.counts.editionHeldExactReference,1);
+assert.equal(necessity.routeReconciliation.counts.readyToAutoPublish,0);
+assert.equal(necessity.routeReconciliation.counts.verifiedUserFacingCharacterPages,0);
+let exactEvents=0,scriptureOnly=0,storyCandidates=0;
+for(const unit of necessity.units.filter(x=>x.disposition==="C")){
+ const route=unit.existingRouteAudit;
+ assert.ok(route,"Never assign a fictional external story destination");
+ assert.equal(route.willCreateAdditionalExperience,false);
+ assert.equal(route.bibleReaderPassageAvailableAsFallback,true);
+ assert.equal(route.standaloneStoryPageVerified,false);
+ if(route.canonicalAtlasIdExists){
+  exactEvents++;
+  assert.ok(route.candidateCanonicalAtlasEvent.eventKey.startsWith("biblical:"));
+  assert.ok(route.candidateCanonicalAtlasEvent.sourceBlobSha.length===40);
+ }else{
+  scriptureOnly++;
+  assert.equal(route.candidateCanonicalAtlasEvent,null);
+  assert.equal(route.linkActivationStatus,"NO_EXACT_EVENT_USE_EXISTING_SCRIPTURE_LINK_ONLY");
+ }
+ storyCandidates+=route.existingDonorStoryResearchCandidates.length;
+ for(const z of route.existingDonorStoryResearchCandidates)
+  assert.equal(z.status,"RESEARCH_ONLY_NOT_A_VERIFIED_USER_FACING_PAGE");
+}
+assert.equal(exactEvents,20);
+assert.equal(scriptureOnly,34);
+assert.equal(storyCandidates,10);
+assert.equal(disp("H73-02").existingRouteAudit.linkActivationStatus,
+ "NO_EXACT_EVENT_USE_EXISTING_SCRIPTURE_LINK_ONLY");
+assert.equal(disp("H27-01").existingRouteAudit.canonicalAtlasIdExists,false);
+assert.equal(disp("H54-05").existingRouteAudit.candidateCanonicalAtlasEvent.eventKey,
+ "biblical:event:siloam-miracle-26");
+assert.equal(disp("H42-07").existingRouteAudit.linkActivationStatus,
+ "HOLD_EDITION_CROSSWALK");
+
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
