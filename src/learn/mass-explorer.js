@@ -11,6 +11,7 @@ import {massMapHtml,massMapCss,projectMassMap,MASS_MAP_PHASES,massMapPhaseIndex}
 import {massStudyStages,massStudyPathsHtml,massStudyPathsCss} from "./mass-study-paths.js";
 import {projectPublishedMassPrayerContexts,publishedMassPrayerContextHtml} from "./mass-explorer-published-prayer-context.js";
 import {verifiedMassExplorerPrayerReadings} from "./mass-explorer-prayer-readings.js";
+import {approvedMassExplorerStudies,massExplorerStudyForBlock,massExplorerApprovedStudyHtml} from "./mass-explorer-study-publication.js";
 
 export const MASS_EXPLORER_ROUTE="learn.mass_explorer";
 export const MASS_EXPLORER_VERSION="mass-explorer-p1-sung-guide-v1";
@@ -19,6 +20,7 @@ const TEXT_URL=new URL("../../data/presentation/reader-text-sung.v1.json",import
 const FRENCH_URL=new URL("../../data/presentation/reader-french-ordinary.v1.json",import.meta.url);
 const FORMATION_URL=new URL("../../data/learn/mass-formation-campion.v1.json",import.meta.url);
 const PRAYER_READING_URL=new URL("../../data/learn/mass-explorer-prayer-readings.v1.json",import.meta.url);
+const STUDY_RELEASE_URL=new URL("../../data/learn/mass-explorer-approved-studies.v1.json",import.meta.url);
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const pick=(fr,en,french)=>fr?french:en;
 const keys=["PRE.ASPERGES",...Array.from({length:30},(_,i)=>"AO.CARD."+String(i+1).padStart(3,"0")),"POST.MASS"];
@@ -31,7 +33,7 @@ function assertCorpus(corpus,french){
 }
 
 /** No new Mass IDs: Guide macro identity and AO.SM source blocks stay distinct. */
-export function buildMassExplorerCatalog(guideRegistry,corpus,french,formation=null,prayerReadings=null){
+export function buildMassExplorerCatalog(guideRegistry,corpus,french,formation=null,prayerReadings=null,studyRelease=null){
   validateGuideRegistry(guideRegistry);
   assertCorpus(corpus,french);
   const byKey=new Map(),byBlock=new Map();
@@ -56,8 +58,11 @@ export function buildMassExplorerCatalog(guideRegistry,corpus,french,formation=n
   const formationStages=formation?massStudyStages(formation):Object.freeze([]);
   const publishedPrayerContextByBlock=projectPublishedMassPrayerContexts({byKey,byBlock,sequence:keys},formation);
   const explanatoryReadingByBlock=verifiedMassExplorerPrayerReadings(prayerReadings,{byKey,byBlock,sequence:keys});
+  // The original P2 publication gate is reused on the existing P1 catalog;
+  // the 84 already-shipping bilingual short explanations remain independent.
+  const approvedStudyByBlock=approvedMassExplorerStudies(studyRelease,{byKey,byBlock,sequence:keys},formation);
   return Object.freeze({byKey,byBlock,frenchByCue:french.byCue,formationStages,
-    publishedPrayerContextByBlock,explanatoryReadingByBlock,
+    publishedPrayerContextByBlock,explanatoryReadingByBlock,approvedStudyByBlock,
     sequence:Object.freeze([...keys]),source:"CERTIFIED_SUNG_GUIDE_AND_RITUAL_TEXT",
     crosswalkStatus:"P0_PENDING"});
 }
@@ -83,7 +88,7 @@ async function fetchJson(url,fetchImpl){
   return response.json();
 }
 export async function loadMassExplorerCatalog({fetchImpl=globalThis.fetch}={}){
-  const [guides,text,fr,formation,prayerReadings]=await Promise.all([
+  const [guides,text,fr,formation,prayerReadings,studyRelease]=await Promise.all([
     loadGuideRegistry({fetchImpl}),
     fetchJson(TEXT_URL,fetchImpl),
     fetchJson(FRENCH_URL,fetchImpl),
@@ -92,9 +97,12 @@ export async function loadMassExplorerCatalog({fetchImpl=globalThis.fetch}={}){
     fetchJson(FORMATION_URL,fetchImpl).catch(()=>null),
     // Optional explanatory layer: the original Missal/Guide remains readable
     // offline if the study file is not present in a cached app version.
-    fetchJson(PRAYER_READING_URL,fetchImpl).catch(()=>null)
+    fetchJson(PRAYER_READING_URL,fetchImpl).catch(()=>null),
+    // A missing, unreviewed or malformed release changes nothing in the
+    // existing Missal, Map, short prayer explanations or thematic Formation.
+    fetchJson(STUDY_RELEASE_URL,fetchImpl).catch(()=>null)
   ]);
-  return buildMassExplorerCatalog(guides.registry,text,fr,formation,prayerReadings);
+  return buildMassExplorerCatalog(guides.registry,text,fr,formation,prayerReadings,studyRelease);
 }
 
 function guideSources(guide,fr){
@@ -167,6 +175,8 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
   const selected=blocks.find(x=>x.Block_ID===blockId)??blocks.find(x=>!x.Proper_Slot)??blocks[0]??null;
   const publishedContext=selected?.Block_ID?catalog.publishedPrayerContextByBlock?.get(selected.Block_ID)||[]:[];
   const prayerReading=selected?.Block_ID?catalog.explanatoryReadingByBlock?.get(selected.Block_ID)||null:null;
+  const approvedStudy=selected?.Block_ID?massExplorerStudyForBlock(catalog.approvedStudyByBlock,selected.Block_ID):null;
+  const studyStage=approvedStudy?catalog.formationStages.find(x=>x.id===approvedStudy.stageId):null;
   const positions=catalog.sequence,idx=positions.indexOf(key);
   const guideSections=massMomentExistingGuideSections(guide);
   const links=massMomentStudyLinks(key);
@@ -177,6 +187,7 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
   const available=[
     ["prayer",pick(french,"Prayer","Prière")],
     ...(publishedContext.length||prayerReading?[["meaning",pick(french,"Understand","Comprendre")]]:[]),
+    ...(approvedStudy?[["deep-study",pick(french,"Full study","Étude complète")]]:[]),
     ["guide",pick(french,"Explanation","Explication")],
     ...(links.scriptureAnchorIds.length?[["scripture",pick(french,"Scripture","Écritures")]]:[]),
     ...(hasBibliography?[["sources",pick(french,"References","Références")]]:[]),
@@ -193,6 +204,8 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
      '</nav>':'<p class="aoMXQuiet">'+pick(french,"This Guide moment has no ordinary Sung source block; ceremony depends on the selected rite.","Cette étape du Guide ne comporte pas de texte ordinaire de la Messe chantée ; la cérémonie dépend du rite choisi.")+'</p>')+
    sourceBlockHtml(catalog,selected,french)+
    publishedMassPrayerContextHtml(publishedContext,{french,reading:prayerReading})+
+   (approvedStudy?massExplorerApprovedStudyHtml(approvedStudy,{french,
+     sourceTitle:studyStage?(french?studyStage.title.fr:studyStage.title.en):approvedStudy.stageId}):"")+
    '<details id="ao-mx-guide" class="aoMXDetails" data-ao-mx-anchor="guide" open><summary>'+pick(french,"Guide explanation","Explication du Guide")+'</summary>'+
      (french?'<p class="aoMXQuiet" lang="fr">Le commentaire du Guide est actuellement disponible en anglais ; aucune traduction française n’est inventée.</p>':"")+
      '<p class="aoMXQuiet">'+pick(french,"Existing Guide commentary for the broader Mass moment, not an independently certified commentary on every individual prayer.",
@@ -478,6 +491,7 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
     sourceBlocks:catalog?.byBlock.size??0,formationLessons:catalog?.formationStages.length??0,
     publishedPrayerContextBlocks:catalog?.publishedPrayerContextByBlock?.size??0,
     explanatoryPrayerBlocks:catalog?.explanatoryReadingByBlock?.size??0,
+    approvedDeepStudyBlocks:catalog?.approvedStudyByBlock?.size??0,
     p0Crosswalk:catalog?.crosswalkStatus??"P0_PENDING"});
   return Object.freeze({open,close,status,setMoment});
 }
