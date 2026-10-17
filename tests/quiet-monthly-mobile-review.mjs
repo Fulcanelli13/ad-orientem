@@ -35,7 +35,7 @@ try{
   const route=kind==="friday"?"programme.first_friday":"programme.first_saturday";
   const result=await page.evaluate(route=>globalThis.AO_PRAY_V435930.open(route,{returnContext:null}),route);
   assert.equal(result,true,route);
-  await page.waitForSelector("#aoPray435930.open .aoQuietMonthRegister",{timeout:12000});
+  await page.waitForSelector("#aoPray435930.open .aoQuietSeriesDisclosure",{timeout:12000});
  };
  const sample={
   firstFriday:{tracking:true,records:[
@@ -47,17 +47,21 @@ try{
    {date:"2026-09-05",complete:true}
   ]}
  };
- const snapshot=async(name,kind)=>{
-  const selector="#aoPray435930.open .aoQuietMonthRegister";
-  const data=await page.evaluate(selector=>{
-   const box=document.querySelector(selector);
+ const snapshot=async(name,kind,{expanded=false}={})=>{
+  const drawer=page.locator("#aoPray435930.open .aoQuietSeriesDisclosure");
+  if(expanded)await drawer.locator("summary").evaluate(el=>el.click());
+  const data=await page.evaluate(()=>{
+   const details=document.querySelector("#aoPray435930.open .aoQuietSeriesDisclosure"),box=details?.querySelector(".aoQuietMonthRegister");
    const rect=el=>{if(!el)return null;const r=el.getBoundingClientRect();return {top:Math.round(r.top),bottom:Math.round(r.bottom),height:Math.round(r.height),width:Math.round(r.width)}};
    return {
-    kind:box?.dataset.aoMonthKind,
-    streak:box?.dataset.aoMonthStreak,
-    tracking:box?.dataset.aoMonthTracking,
-    statuses:[...box.querySelectorAll(".aoQuietMonthCell")].map(c=>({month:c.dataset.month,status:c.dataset.status})),
+    kind:details?.dataset.aoSeriesKind,
+    expanded:details?.open,
+    streak:box?.dataset.aoMonthStreak||null,
+    tracking:box?.dataset.aoMonthTracking||"false",
+    statuses:[...(box?.querySelectorAll(".aoQuietMonthCell")||[])].map(c=>({month:c.dataset.month,status:c.dataset.status})),
+    pips:[...details.querySelectorAll(".aoQuietSeriesPip")].map(c=>c.dataset.status),
     regions:{
+      summary:rect(details?.querySelector("summary")),
       monthRegister:rect(box),
       guidedDate:rect(document.querySelector("#aoPray435930.open .aoP435930Date")),
       guide:rect(document.querySelector("#aoPray435930.open .aoP435930GuideNow")),
@@ -66,32 +70,44 @@ try{
     horizontalOverflow:Math.round(document.documentElement.scrollWidth-innerWidth),
     screenshotViewport:{width:innerWidth,height:innerHeight}
    };
-  },selector);
-  assert.equal(data.kind,kind);assert.ok(data.regions.monthRegister?.height>0);assert.ok(data.horizontalOverflow<=1);
+  });
+  assert.equal(data.kind,kind);assert.equal(data.expanded,expanded);
+  assert.ok(data.regions.summary?.height>=44&&data.regions.summary?.height<76,
+    "A compact month summary must not crowd the prayer: "+JSON.stringify(data.regions.summary));
+  assert.ok(data.horizontalOverflow<=1);
+  if(!expanded)assert.ok(data.regions.guide?.top<580,
+    "First prayer instruction must be visible on opening: "+JSON.stringify(data.regions.guide));
   await page.screenshot({path:resolve(out,name+".png"),animations:"disabled"});
   return data;
  };
  await start();
  await open("friday");
- const fridayOff=await snapshot("friday-tracking-off-390","friday");
+ const fridayOff=await snapshot("friday-tracking-off-compact-390","friday");
  assert.equal(fridayOff.tracking,"false");
- assert.ok(fridayOff.statuses.every(x=>x.status==="unrecorded"));
+ assert.equal(fridayOff.statuses.length,0,"Opted-out users must not see a large empty register");
+ const fridayOffOpen=await snapshot("friday-tracking-off-expanded-390","friday",{expanded:true});
+ assert.equal(fridayOffOpen.regions.monthRegister,null,"No register without opt-in");
  await page.evaluate(records=>{
   const state=JSON.parse(localStorage.getItem("ao.pray.v435930")||"{}");
   state.firstFriday=records.firstFriday;state.firstSaturday=records.firstSaturday;
   localStorage.setItem("ao.pray.v435930",JSON.stringify(state));
  },sample);
  await start();await open("friday");
- const fridayRecorded=await snapshot("friday-three-months-390","friday");
+ const fridayCompact=await snapshot("friday-three-months-compact-390","friday");
+ assert.deepEqual(fridayCompact.pips.slice(0,4),["recorded","recorded","recorded","unrecorded"]);
+ const fridayRecorded=await snapshot("friday-three-months-expanded-390","friday",{expanded:true});
  assert.equal(fridayRecorded.streak,"3");
  assert.equal(fridayRecorded.statuses.filter(x=>x.status==="recorded").length,3);
  await open("saturday");
- const saturdayRecorded=await snapshot("saturday-three-months-390","saturday");
+ const saturdayCompact=await snapshot("saturday-three-months-compact-390","saturday");
+ assert.deepEqual(saturdayCompact.pips,["recorded","recorded","recorded","unrecorded","unrecorded"]);
+ const saturdayRecorded=await snapshot("saturday-three-months-expanded-390","saturday",{expanded:true});
  assert.equal(saturdayRecorded.streak,"3");
  assert.equal(saturdayRecorded.statuses.filter(x=>x.status==="recorded").length,3);
  await page.setViewportSize({width:320,height:720});
- const saturdayNarrow=await snapshot("saturday-three-months-320","saturday");
- assert.ok(saturdayNarrow.regions.monthRegister.width<=320);
+ await open("saturday");
+ const saturdayNarrow=await snapshot("saturday-three-months-compact-320","saturday");
+ assert.ok(saturdayNarrow.regions.summary.width<=320);
  await page.setViewportSize({width:390,height:844});
  await page.evaluate(()=>{
   const state=JSON.parse(localStorage.getItem("ao.pray.v435930")||"{}");
@@ -99,13 +115,13 @@ try{
   localStorage.setItem("ao.pray.v435930",JSON.stringify(state));
  });
  await start();await open("friday");
- const fridayInterrupted=await snapshot("friday-interrupted-390","friday");
+ const fridayInterrupted=await snapshot("friday-interrupted-390","friday",{expanded:true});
  assert.equal(fridayInterrupted.streak,"0");
  assert.deepEqual(fridayInterrupted.statuses.slice(0,4).map(x=>x.status),
   ["recorded","recorded","recorded","incomplete"]);
- await writeFile(resolve(out,"report.json"),JSON.stringify({fridayOff,fridayRecorded,saturdayRecorded,saturdayNarrow,fridayInterrupted,errors},null,2));
+ await writeFile(resolve(out,"report.json"),JSON.stringify({fridayOff,fridayOffOpen,fridayCompact,fridayRecorded,saturdayCompact,saturdayRecorded,saturdayNarrow,fridayInterrupted,errors},null,2));
  assert.deepEqual(errors,[],"Unhandled browser errors");
- console.log("PASS actual phone review: empty 9-month, recorded 9-month, recorded 5-month, narrow 320px and interrupted states");
+ console.log("PASS actual phone review: compact opt-out, recorded 9/5-month, narrow 320px, expanded register and interrupted series");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(done=>server.close(done));
