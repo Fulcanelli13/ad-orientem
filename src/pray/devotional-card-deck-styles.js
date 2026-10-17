@@ -328,8 +328,8 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 }
 #aoPray435930 .aoFolioReader .aoDevoTimeline{
  display:grid!important;
- grid-template-columns:40px minmax(0,1fr) 40px!important;
- min-height:44px!important;max-height:48px!important;
+ grid-template-columns:44px minmax(0,1fr) 44px!important;
+ min-height:48px!important;max-height:52px!important;
  gap:3px!important;padding:1px 3px!important;
  top:56px!important;border-block:0 1px solid var(--border,rgba(255,255,255,.14))!important;
 }
@@ -338,15 +338,15 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  align-items:center!important;justify-content:safe center;
 }
 #aoPray435930 .aoFolioReader .aoDevoNavArrow{
- min-width:40px!important;min-height:40px!important;
- height:40px!important;padding:0!important;
+ min-width:44px!important;min-height:44px!important;
+ height:44px!important;padding:0!important;
  border:0!important;border-radius:9px!important;
  font:20px/1 Georgia,serif!important;
 }
 #aoPray435930 .aoFolioReader .aoDevoStop{
  display:flex!important;align-items:center!important;justify-content:center!important;
- flex:0 0 38px!important;min-width:38px!important;width:38px!important;
- min-height:36px!important;height:36px!important;
+ flex:0 0 44px!important;min-width:44px!important;width:44px!important;
+ min-height:44px!important;height:44px!important;
  padding:0!important;border-radius:7px!important;
  background:transparent!important;border:1px solid transparent!important;
 }
@@ -404,7 +404,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  margin-block:2px!important;
 }
 @media(max-width:370px){
- #aoPray435930 .aoFolioReader .aoDevoStop{flex-basis:36px!important;min-width:36px!important;width:36px!important}
+ #aoPray435930 .aoFolioReader .aoDevoStop{flex-basis:44px!important;min-width:44px!important;width:44px!important}
  #aoPray435930 .aoFolioReader .aoDevoStops{justify-content:flex-start}
  #aoPray435930 .aoFolioReader .aoDevoCardScroll .aoAngelusDialogueLine{
   grid-template-columns:26px minmax(0,1fr)!important;gap:8px!important
