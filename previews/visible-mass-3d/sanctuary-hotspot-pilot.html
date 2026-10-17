@@ -345,7 +345,7 @@ function renderExactHistoricalAnswer(questionId){
  $("historical-answer-context").textContent=note.explanation_en;
  $("historical-answer-guard").textContent="Historic source (1907–1914), not a current rubric. Review condition: "+note.editorial_guard.replaceAll("_"," ").toLowerCase()+".";
  for(const source of note.source_evidence){
-   const a=document.createElement("a");a.href=source.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=source.section+" ↗";
+   const a=document.createElement("a");a.href=source.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=(source.title||source.section||source.article_section||"Historical source")+" ↗";
    $("historical-answer-sources").append(a,document.createTextNode(" · "));
  }
 }
