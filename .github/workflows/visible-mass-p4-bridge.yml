@@ -1,0 +1,22 @@
+name: Visible Mass P4 scene bridge contract
+on:
+  push:
+    branches: [feature/visible-mass-3d-explorer-p0]
+    paths:
+      - previews/visible-mass-3d/photographic-scene-bridge.mjs
+      - previews/visible-mass-3d/sanctuary-hotspot-pilot.html
+      - previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json
+      - tests/visible-mass-photo-bridge.mjs
+      - .github/workflows/visible-mass-p4-bridge.yml
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: node --check previews/visible-mass-3d/photographic-scene-bridge.mjs
+      - run: node tests/visible-mass-photo-bridge.mjs
