@@ -33,7 +33,7 @@
     "dr-challoner"
   ],
   "verification": {
-    "coordinateChecks": "REQUIRES_NEW_CI_AFTER_BATCH_SOURCE_EXPANSIONS",
+    "coordinateChecks": "ALL_93_PASS_SCRIPTURE_CONTRACTS_AFTER_M01_M09_CORRECTIONS",
     "textCollation": false,
     "fullLiteraryReadAloud": false,
     "CatholicEditorialApproval": false,
@@ -71,8 +71,8 @@
       "priorCorrectionBlobSha": "387eeab46041fd853eccee0fdcd8a89df66e1b97"
     },
     "sourceWitnessTest": "tests/historia-essential-economy.mjs",
-    "sourceWitnessTestCommit": "907fc20ea7b156ea0dde862c7ead1e673fbbda28",
-    "sourceWitnessTestRunId": 39042889387,
+    "sourceWitnessTestCommit": "0a02afdb265e365538e0e86a7086e27a2b0de81b",
+    "sourceWitnessTestRunId": 39045360396,
     "targetCPDVAndDouaySourceCoordinatePresenceVerified": true,
     "historicalCramponExceptionSourcePresenceVerified": true,
     "originalPrintedEditionAttested": false,
@@ -98,7 +98,10 @@
       ],
       "approved": false,
       "oralReadThrough": false,
-      "reason": "Actual CPDV opening/end verses inspected; incomplete antecedents and broken causal links restored from the same canonical books."
+      "reason": "Actual CPDV opening/end verses inspected; incomplete antecedents and broken causal links restored from the same canonical books.",
+      "contractsPassed": true,
+      "phoneGatePassed": true,
+      "mainGatePassed": true
     }
   },
   "rules": [
@@ -331,7 +334,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -393,7 +396,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -486,7 +489,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -678,7 +681,7 @@
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": false,
+      "bothCatholicEditionVersePresenceVerified": true,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -2064,5 +2067,17 @@
       "selectedCoordinatesAreScriptureOnly": true
     }
   ],
-  "comparativeScriptureEconomy": null
+  "comparativeScriptureEconomy": {
+    "originalNominalVerseUnits": 1207,
+    "proposedNominalVerseUnits": 1069,
+    "nominalDifference": 138,
+    "historicalEditionExceptions": 2,
+    "nominalCountingDifferenceNotEditorialCut": 1,
+    "comparableOriginalVerseUnits": 1189,
+    "comparableSelectedVerseUnits": 1052,
+    "comparableActualVerseUnitReductions": 137,
+    "comparableReductionRatePct": 11.5,
+    "countingRule": "Counts essential A verse units only. Excludes two historical Crampon↔CPDV numbering cases from comparable rate; does not count separate held sources or 31 short contextual descriptions. Source integrity and story coherence outrank a compression percentage.",
+    "readAloudApproved": false
+  }
 }
