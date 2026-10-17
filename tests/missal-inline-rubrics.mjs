@@ -15,7 +15,7 @@ const uniqueCueIds=[...new Set(selected.map(x=>x.cueId))];
 let renderedIds=[];
 for(const cueId of uniqueCueIds){
  const p=publishedMissalRubricsForParagraph(mk(cueId,[cueId]),source,{form:"LOW",language:"en"});
- renderedIds.push(...p.map(x=>x.id));
+ renderedIds.push(...p.filter(x=>x.kind!=="STATE").map(x=>x.id));
  assert.ok(p.every(x=>x.sourceCueId===cueId&&x.sourceUrl===cited&&
    x.displayText.startsWith("The priest ")&&x.observedNow===false),
    cueId+" lost source or observation boundary");
@@ -66,4 +66,47 @@ const invalid=normalizeReaderMoment({paragraphs:[{
 }]});
 assert.equal(invalid.paragraphs[0].publishedMissalRubrics.length,0);
 assert.ok(Object.isFrozen(normal.paragraphs[0].publishedMissalRubrics));
-console.log("PASS 52 existing published Ritus servandus priest directions (33 outside Canon + 19 Canon), EN/FR, Missal-only, Solemn actor guard, no invented cues, no extra Mass cards.");
+// Existing 1962 priest "canonical digits" rubric: two persistent states,
+// no extra source clock, no blessing or minister inferred from opening a page.
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+ for(const language of ["en","fr"]){
+  const start=publishedMissalRubricsForParagraph(mk("consecration",["AO.SM.C0174"]),source,{form,language});
+  const end=publishedMissalRubricsForParagraph(mk("ablutions",["AO.SM.C0248"]),source,{form,language});
+  const s=start.filter(x=>x.kind==="STATE"),e=end.filter(x=>x.kind==="STATE");
+  assert.deepEqual(s.map(x=>x.id),["AO.RUB.C0174.06"],form+" start not anchored");
+  assert.deepEqual(e.map(x=>x.id),["AO.RUB.C0248.01"],form+" end not anchored");
+  for(const x of [...s,...e]){
+   assert.equal(x.actor,"PRIEST");
+   assert.equal(x.observedNow,false);
+   assert.equal(x.sourceUrl,cited);
+   assert.equal(x.review,"EXISTING_PUBLISHED_R17_1962_RUBRIC");
+   assert.ok(x.displayText.length>50);
+  }
+  if(language==="fr"){
+   assert.match(s[0].displayText,/pouce et l’index/);
+   assert.match(e[0].displayText,/ablution/);
+  }else{
+   assert.match(s[0].displayText,/after replacing the elevated Host/i);
+   assert.match(e[0].displayText,/purification/i);
+  }
+  const normalized=normalizeReaderMoment({paragraphs:withPublishedMissalParagraphRubrics([
+   mk("veneration",["AO.SM.C0174"]),mk("purification",["AO.SM.C0248"])
+  ],source,{form,language})});
+  for(const p of normalized.paragraphs)assert.equal(p.publishedMissalRubrics.filter(
+   x=>["AO.RUB.C0174.06","AO.RUB.C0248.01"].includes(x.id)
+  ).length,1,"State not available in actual inline Missal bridge");
+ }
+}
+for(const id of ["AO.RUB.C0174.06","AO.RUB.C0248.01"]){
+ const invalid=structuredClone(source);
+ invalid.items.find(x=>x.id===id).authorityClass="EDITORIAL_DRAFT";
+ const cue=id==="AO.RUB.C0174.06"?"AO.SM.C0174":"AO.SM.C0248";
+ assert.ok(!publishedMissalRubricsForParagraph(mk("tampered",[cue]),invalid).some(x=>x.id===id),
+   "Uncertified persistent state leaked into published Missal "+id);
+}
+for(const id of ["AO.SM.C0161","AO.SM.C0174","AO.SM.C0181"]){
+ const bells=publishedMissalRubricsForParagraph(mk("bell",[id]),source).filter(x=>x.actor==="SERVER");
+ assert.equal(bells.length,0,"Uncertified independent bell stage auto-published");
+}
+
+console.log("PASS 52 existing approved priest actions + 2 published canonical-digits STATE annotations (EN/FR, four forms); bells remain unpromoted.");
