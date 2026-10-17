@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/calendar/build-sacred-art-class-i-ii-review.mjs'
       - 'tools/calendar/build-sacred-art-full-year-associations.mjs'
+      - 'tools/calendar/sacred-art-gospel-scenes.mjs'
       - '.github/workflows/sacred-art-2026-class-i-ii-review.yml'
   pull_request:
     branches:
@@ -13,6 +14,7 @@ on:
     paths:
       - 'tools/calendar/build-sacred-art-class-i-ii-review.mjs'
       - 'tools/calendar/build-sacred-art-full-year-associations.mjs'
+      - 'tools/calendar/sacred-art-gospel-scenes.mjs'
       - '.github/workflows/sacred-art-2026-class-i-ii-review.yml'
   workflow_dispatch:
 permissions:
@@ -48,6 +50,8 @@ jobs:
           path: |
             artifacts/sacred-art-coverage/class-i-ii-2026-review.json
             artifacts/sacred-art-coverage/class-i-ii-2026-review.md
+            artifacts/sacred-art-coverage/sunday-gospel-2026-review.json
+            artifacts/sacred-art-coverage/sunday-gospel-2026-backlog.md
             artifacts/sacred-art-coverage/class-i-ii-2026-review.html
             artifacts/sacred-art-coverage/full-year-multiple-associations.v1.json
             artifacts/calendar-oracle/1962-2026-full-year-audit.json
