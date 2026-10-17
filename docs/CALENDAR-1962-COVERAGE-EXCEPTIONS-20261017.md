@@ -28,6 +28,58 @@ The [2020 decree *Cum sanctissima*](https://www.vatican.va/roman_curia/congregat
 
 Historical [FSSPX 1962 ordos](https://ordo.fsspx.org/calendar/2028/6), [GCatholic 1962 date witnesses](https://gcatholic.org/calendar/2028/Extraordinary-en), the pinned app resolver, and local venue bulletins are **different kinds of evidence**. An ordo URL alone does not certify the entire Proper or provide local permission for an alternative Mass.
 
+## Sunday-overlap rubrical dispositions — added 17 October 2026
+
+The previous **24 screening candidates** now each have a bounded, independently inspectable *preliminary general-calendar rubrical assessment* in
+[`data/calendar/1962-sunday-overlap-dispositions-2026-2028.review.v1.json`](../data/calendar/1962-sunday-overlap-dispositions-2026-2028.review.v1.json).
+All 24 are classified under the 1960 Sunday-precedence and commemoration clauses; **0 new Calendar omission claims, 0 Mass changes and 0 automatically created commemorations** follow.
+This is **24/24 preliminary rule-level disposition**, **not 24/24 completed Proper/source certification**.
+The previously published and separately crosschecked 12 omissions remain the only source-reviewed omission records.
+
+The original [AAS pp. 598–599, 615–616](https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=615)
+provides RG 15–16, 93, 95, 109 and 111(a–b). RG 109 defines ordinary versus privileged commemorations; RG 111(a–b) blocks a third-class saint's ordinary commemoration on first- and second-class Sundays (absent a separately established particular rank, permission or privileged case).
+RG 95 allows accidental transference only for first-class feasts.
+The `Cum sanctissima` annex is not the source of Sunday precedence or the calendar Proper.
+The printed general-calendar witness [GCatholic 2026](https://gcatholic.org/calendar/2026/Extraordinary-en),
+[2027](https://gcatholic.org/calendar/2027/Extraordinary-en), [2028](https://gcatholic.org/calendar/2028/Extraordinary-en)
+and the individually linked FSSPX monthly ordos corroborate dated principal identities,
+but cannot establish a universal special institute rank or certify all source/oration parity.
+
+| Date | Fixed III-class feast in protected annex | Preliminary general-calendar Sunday principal | Scope/source exception |
+|---|---|---|---|
+| 2026-01-25 | Conversion of St Paul | III Sunday after Epiphany (class 2) | None identified |
+| 2026-02-01 | St Ignatius, Bishop and Martyr | Septuagesima Sunday (class 2) | None identified |
+| 2026-06-14 | St Basil the Great | III Sunday after Pentecost (class 2) | None identified |
+| 2026-06-21 | St Aloysius Gonzaga | IV Sunday after Pentecost (class 2) | None identified |
+| 2026-07-19 | St Vincent de Paul | VIII Sunday after Pentecost (class 2) | None identified |
+| 2026-08-02 | St Alphonsus Liguori | X Sunday after Pentecost (class 2) | None identified |
+| 2026-09-27 | Ss Cosmas and Damian | XVIII Sunday after Pentecost (class 2) | None identified |
+| 2026-12-13 | St Lucy | III Sunday of Advent (class 1) | SECONDARY_ORDO_CONFLICT |
+| 2027-01-17 | St Anthony, Abbot | II Sunday after Epiphany (class 2) | None identified |
+| 2027-01-24 | St Timothy | Septuagesima Sunday (class 2) | None identified |
+| 2027-01-31 | St John Bosco | Sexagesima Sunday (class 2) | None identified |
+| 2027-03-21 | St Benedict | Palm Sunday (class 1) | PARTICULAR_RELIGIOUS_CALENDAR |
+| 2027-04-11 | St Leo the Great | II Sunday after Easter (class 2) | None identified |
+| 2027-05-02 | St Athanasius | V Sunday after Easter (class 2) | None identified |
+| 2027-05-09 | St Gregory Nazianzen | Sunday after the Ascension (class 2) | None identified |
+| 2027-08-29 | Beheading of St John the Baptist | XV Sunday after Pentecost (class 2) | None identified |
+| 2027-09-12 | Most Holy Name of Mary | XVII Sunday after Pentecost (class 2) | None identified |
+| 2027-10-03 | St Thérèse of the Child Jesus | XX Sunday after Pentecost (class 2) | PARTICULAR_PATRONAGE_RANK |
+| 2027-11-14 | St Josaphat | VI Sunday after Epiphany (transferred) (class 2) | None identified |
+| 2028-02-06 | St Titus | V Sunday after Epiphany (class 2) | None identified |
+| 2028-03-12 | St Gregory the Great | II Sunday of Lent (class 1) | None identified |
+| 2028-04-30 | St Catherine of Siena | II Sunday after Easter (class 2) | None identified |
+| 2028-09-03 | St Pius X | XIII Sunday after Pentecost (class 2) | SSPX_PARTICULAR_FIRST_CLASS |
+| 2028-10-15 | St Teresa of Ávila | XIX Sunday after Pentecost (class 2) | None identified |
+
+Four separately tracked exception situations must **not** be flattened:
+1. **13 December 2026, St Lucy** — Advent III remains principal. A secondary 1962ordo page [explicitly claims a Lucy commemoration](https://1962ordo.com/2026/12/13), while [FSSPX's dated 2026 ordo](https://ordo.fsspx.org/day/2026-12-13?lang=en) shows the Advent Mass. The first-class ordinary-commemoration exclusion is clear, but leave the pre-existing conflict hold until the actual Missal orations and resolver are checked.
+2. **21 March 2027, St Benedict** — Palm Sunday is first class in the general calendar. Benedictine particular rank/observance and any transfer require their **own** authenticated religious calendar; they do not follow from the general III-class record.
+3. **3 October 2027, St Thérèse** — [SSPX October 2027 ordo](https://ordo.fsspx.org/calendar/2027/10) lists the saint alongside Sunday, and [its September 2026 calendar](https://ordo.fsspx.org/calendar/2026/9) explicitly calls her a **second-class secondary patroness of France**. This particular-calendar rank can explain a commemoration that is *not* generally available for the universal III-class feast. Confirm jurisdiction before importing.
+4. **3 September 2028, St Pius X** — [SSPX September 2028](https://ordo.fsspx.org/calendar/2028/9) has **first-class St Pius X** with XIII Sunday after Pentecost as additional observance, in contrast to the 1962 general-calendar third-class feast. Keep the existing `PIUS_X_SSPX_2028` particular-scope hold.
+
+**Remaining acceptance:** match all 24 against the canonical DayResolver principal ID, actual 1962 Proper identity and orations, canonical commemoration owner, and dated independent witness (not merely year/month access). Where a particular rank applies, retain separate jurisdiction and venue witnesses. The registry is read-only research input and deliberately **not** a runtime calendar rule or publication source. The executable Calendar audit enforces exact 24-date coverage, class/rubric compatibility, four exceptional holds and no automatic Mass mutation.
+
 ## Exceptions requiring adjudication
 
 | Priority | Case | Current action |
