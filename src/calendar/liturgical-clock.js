@@ -183,7 +183,8 @@ function detailHtml({selection,year,feasts,fr}){
    +'<div class="aoClockDetailTop"><span>'+E(L(fr,"LITURGICAL SEASON","TEMPS LITURGIQUE"))+'</span><button type="button" data-cal-clock-close aria-label="'+E(L(fr,"Close details","Fermer le détail"))+'">×</button></div>'
    +'<h3>'+E(g[fr?"fr":"en"])+'</h3><small>'+E(longDate(g.start,fr))+' – '+E(longDate(g.end,fr))+'</small>'
    +'<p>'+E(labels.join(" · "))+'</p>'
-
+   +'<div class="aoClockSeasonActions"><button type="button" data-cal-clock-open-day="'+E(g.start)+'">'+E(L(fr,"Open first day","Ouvrir le premier jour"))+' →</button>'
+   +'<button type="button" data-cal-clock-browse="'+E(g.start.slice(0,7))+'">'+E(L(fr,"Browse month","Parcourir le mois"))+' →</button></div>'
    +'</section>';
  }
  // A cluster may become a single jewel when earlier source dates load.
@@ -386,6 +387,7 @@ export const liturgicalClockCss=[
 ".aoClockSector .aoClockSeasonText{fill:var(--ao-clock-glow,#d1d8dc)!important;fill-opacity:.88!important;stroke:var(--bg,#080c12)!important;stroke-opacity:1;stroke-width:2px!important}",
 ".aoClockMarkerLandmark{fill:var(--bg,#080c12);stroke:#dbe6ee;stroke-width:2.2;filter:drop-shadow(0 0 4px rgba(155,205,245,.3))}",
 ".aoClockFeast:hover .aoClockMarkerLandmark,.aoClockFeast:focus-visible .aoClockMarkerLandmark,.aoClockFeast.active .aoClockMarkerLandmark{stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 5px rgba(205,230,255,.5))}",
+".aoClockSeasonActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.aoClockSeasonActions button{min-height:44px!important;padding:6px 10px!important;border:1px solid var(--ao-rule,rgba(226,214,190,.2))!important;border-radius:7px!important;background:transparent!important;color:var(--text)!important;font:500 12px/1.3 var(--ao-font-ui,system-ui)}",
 ".aoClockContext{border-top:1px solid var(--ao-rule,rgba(226,214,190,.18));padding:12px 0;margin:6px auto 0;max-width:690px}",
 ".aoClockContext button{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 9px;width:100%;padding:3px 4px!important;border:0!important;background:transparent!important;text-align:left!important}",
 ".aoClockContext strong{font:400 22px/1.3 Georgia,serif;color:var(--text)}",
