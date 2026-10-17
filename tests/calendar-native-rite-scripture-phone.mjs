@@ -49,6 +49,11 @@ try{
   const buttons=page.locator("#ao-calendar-modular-root [data-cal-scripture-slot^='NATIVE_RITE:']");
   assert.equal(await buttons.count(),count,date+" selected rite records missing");
   assert.ok(actual.slots.some(x=>x.startsWith("NATIVE_RITE:")));
+  const groups=await page.locator("#ao-calendar-modular-root .aoCalDayScriptureGroupLabel").allInnerTexts();
+  if(expected==="EASTER_VIGIL"){
+    assert.equal(groups.length,2,"Vigil prophecies and subsequent Mass must be distinct reading groups");
+    assert.match(groups[0],/Vigil/);assert.match(groups[1],/Mass/);
+  }else assert.equal(groups.length,0,"Avoid redundant headings for Good Friday's single rite group");
   const first=buttons.first();
   assert.match(await first.innerText(),firstReference);
   const slot=await first.getAttribute("data-cal-scripture-slot");
