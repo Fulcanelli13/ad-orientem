@@ -186,7 +186,7 @@ export function createM4Panorama({mount,notice,onScene}){
     // The API must supply a bounded thumbnail so mobile memory stays controlled.
     const imageUrl=info?.thumburl;
     if(!imageUrl)throw Error("Commons did not supply a bounded panorama preview");
-    if(!/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(imageUrl||""))throw new Error("Unverified photographic host");
+    if(!/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//.test(imageUrl||""))throw new Error("Unverified photographic host");
     const img=new Image();img.crossOrigin="anonymous";img.decoding="async";
     await new Promise((resolve,reject)=>{
      const timeout=setTimeout(()=>{img.src="";reject(Error("Photographic image timed out"));},20000);
