@@ -172,8 +172,8 @@ try{
    "The first card must not show a blank cinematic or a rating-4 painting");
  // The prayer begins directly when no final-approved reproduction exists.
  // Incarnation still receives its source-owned full posture cinematic.
- assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),4);
- assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),4);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),5);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),5);
  // Actual mobile presentation evidence: same current card at three widths.
  for(const [width,height] of [[320,700],[390,844],[430,932]]){
    await page.setViewportSize({width,height});
@@ -192,11 +192,10 @@ try{
   .filter(x=>x.getClientRects().length).some(x=>x.dataset.aoDevoActive==="true"),null,{timeout:9000});
  const paragraphEnergy=await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>
   nodes.filter(x=>x.getClientRects().length).map(x=>({active:x.dataset.aoDevoActive,opacity:Number(getComputedStyle(x).opacity)})));
- assert.equal(paragraphEnergy.length,3,"Angelus first chapter must expose V/R and one Hail Mary");
+ assert.equal(paragraphEnergy.length,2,"Individual Angelus presents one V/R unit and one continuous Hail Mary");
  assert.ok(paragraphEnergy[0].opacity>paragraphEnergy[1].opacity,
   "Active V. must be brighter than its muted R.: "+JSON.stringify(paragraphEnergy));
- assert.ok(paragraphEnergy[1].opacity>paragraphEnergy[2].opacity,
-  "Upcoming Hail Mary must also be muted, not full-bright: "+JSON.stringify(paragraphEnergy));
+ assert.ok(paragraphEnergy[1].opacity<1,"Upcoming Hail Mary must be muted: "+JSON.stringify(paragraphEnergy));
  // Distinct axes: diagonal/vertical motion must not advance cards;
  // deliberate horizontal touch swipe must advance exactly one named card.
  const swipe=async(dx,dy)=>{
@@ -220,28 +219,20 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").getAttribute("data-ao-devo-jump"),"0",
   "Timeline did not return to the original prayer card");
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
- const shot=page.locator("body > .aoDevoPostureCinematic[data-ao-devotional-scene='incarnation-posture']");
- await shot.waitFor({state:"attached",timeout:3000});
- const shotStatus=await shot.evaluate(el=>({
-  action:el.dataset.aoPostureAction,
-  caption:el.querySelector(".aoDevoPostureLatin")?.textContent,
-  one:el.parentElement.querySelectorAll(".aoDevoPostureCinematic").length,
-  imageRepeats:el.parentElement.querySelectorAll(".aoDevoCinematicOpening").length,
-  iconSize:el.querySelector(".aoDevoPostureIcon")?.getBoundingClientRect().width,
-  continueHeight:el.querySelector("button")?.getBoundingClientRect().height,
- }));
- assert.ok(["HEAD_BOW","GENUFLECT"].includes(shotStatus.action));
- assert.deepEqual(
-  {caption:shotStatus.caption,one:shotStatus.one,imageRepeats:shotStatus.imageRepeats},
-  {caption:"Et Verbum caro factum est",one:1,imageRepeats:0},
-  "Incarnation must use a distinct full posture scene, not repeat artwork");
- assert.ok(shotStatus.iconSize>=100 && shotStatus.continueHeight>=44,
-  "Posture cinematic icon/action is too inconspicuous on a phone");
- await page.screenshot({path:resolve(captures,"11-angelus-incarnation-cinematic-390.png"),
-   fullPage:false,animations:"disabled"});
- await shot.locator(".aoDevoPostureContinue").click();
- await shot.waitFor({state:"detached",timeout:2500});
- await page.emulateMedia({reducedMotion:"reduce"});
+ const shot=page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoFolioIncarnationCue");
+  await shot.waitFor({state:"visible",timeout:3000});
+  assert.equal(await page.locator("body > .aoDevoPostureCinematic").count(),0,
+   "Angelus Incarnation must not block prayer with a full-screen modal");
+  const shotStatus=await shot.evaluate(el=>({
+   action:el.textContent.trim(),
+   iconSize:el.querySelector(".aoFolioIncarnationIcon")?.getBoundingClientRect().width,
+   active:el.classList.contains("is-active"),
+  }));
+  assert.ok(shotStatus.active&&shotStatus.iconSize>=44,
+   "Incarnation gesture should be salient but non-blocking: "+JSON.stringify(shotStatus));
+  await page.screenshot({path:resolve(captures,"11-angelus-incarnation-inline-390.png"),
+    fullPage:false,animations:"disabled"});
+  await page.emulateMedia({reducedMotion:"reduce"});
  await page.locator("#aoPray435930 [data-ao-devo-jump='3']").evaluate(x=>x.click());
  assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
   "No opening art may recur on chapter change, even in reduced motion");
@@ -249,7 +240,7 @@ try{
  await page.emulateMedia({reducedMotion:"no-preference"});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"incarnation");
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").count(),1);
- assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),3);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),2);
  const devotionalScroll=page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll");
  assert.equal(await devotionalScroll.evaluate(x=>getComputedStyle(x).overflowY),"auto");
  await devotionalScroll.evaluate(x=>{x.scrollTop=80;x.dispatchEvent(new Event("scroll"))});
@@ -258,18 +249,22 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"fiat");
  await page.locator("#aoPray435930 [data-ao-devo-jump='0']").evaluate(x=>x.click());
  const historicalConclusion=page.locator("#aoPray435930 [data-p435930-angelus-appendix]");
- await historicalConclusion.evaluate(x=>x.click());
- await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===7,null,{timeout:10000});
- assert.deepEqual(await page.locator("#aoPray435930 .aoDevoCard").evaluateAll(nodes=>nodes.slice(4).map(x=>x.dataset.aoDevoCard)),
-  ["doxology","faithful-departed","divine-assistance"]);
- await page.locator("#aoPray435930 [data-ao-devo-jump='5']").evaluate(x=>x.click());
- assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),2,
-  "Faithful departed card lost its Latin/French leader/response pair");
- await page.screenshot({path:resolve(captures,"10-angelus-optional-souls-390.png"),
-  fullPage:false,animations:"disabled"});
- await historicalConclusion.evaluate(x=>x.click());
- await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===4,null,{timeout:10000});
- assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
+  await historicalConclusion.evaluate(x=>{if(!x.checked)x.click()});
+  await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===5,null,{timeout:10000});
+  assert.equal(await page.locator("#aoPray435930 .aoDevoCard[data-ao-devo-card='collect'] .aoFolioConclusionPart").count(),3);
+
+  assert.equal(await page.locator("#aoPray435930 .aoDevoCard[data-ao-devo-card='collect'] [data-face-v] .aoFolioGloria").count(),3,
+   "Three Gloria Patri repetitions must appear inside the Collect");
+  await page.locator("#aoPray435930 [data-ao-devo-jump='4']").evaluate(x=>x.click());
+  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"collect");
+  assert.ok(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").count()>=4,
+   "Collect and optional concluding prayers must remain within the same card");
+  await page.screenshot({path:resolve(captures,"10-angelus-collect-and-closing-390.png"),
+   fullPage:false,animations:"disabled"});
+  await historicalConclusion.evaluate(x=>x.click());
+  assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),5);
+  assert.equal(await page.locator("#aoPray435930 .aoFolioConclusionPart").count(),0);
+  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection a[href^='https://']").count(),5);
  await page.locator("#aoPray435930 .aoAngelusGuide>summary").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuide").evaluate(x=>x.open),true);

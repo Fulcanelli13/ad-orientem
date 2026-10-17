@@ -68,11 +68,11 @@ assert.equal(mercyChapters(divineMercySteps({includeClosing:true})).at(-1).id,"o
 assert.equal(mercyChapters(divineMercySteps({includeClosing:true})).reduce((sum,c)=>sum+c.entries.length,0),63);
 
 const angelusCardModel=angelusCardPlan({form:"angelus",language:"fr"});
-assert.deepEqual(angelusCardModel.map(x=>x.id),["announcement","fiat","incarnation","intercession"]);
-assert.deepEqual(angelusCardModel.map(x=>x.unitIndices),[[0,1],[2,3],[4,5],[6,7]]);
+assert.deepEqual(angelusCardModel.map(x=>x.id),["announcement","fiat","incarnation","intercession","collect"]);
+assert.deepEqual(angelusCardModel.map(x=>x.unitIndices),[[0,1],[2,3],[4,5],[6],[7]]);
 assert.equal(angelusCardModel[2].ritual,"profound-bow");
-assert.deepEqual(angelusCardPlan({form:"angelus",language:"fr",historicalConclusion:true}).slice(4).map(x=>x.id),
- ["doxology","faithful-departed","divine-assistance"]);
+assert.deepEqual(angelusCardPlan({form:"angelus",language:"fr",historicalConclusion:true}).map(x=>x.id),
+ angelusCardModel.map(x=>x.id),"Optional conclusion belongs in Collect rather than separate cards");
 assert.deepEqual(angelusCardPlan({form:"regina",language:"fr"}).map(x=>x.id),
  ["rejoice","resurrection","intercession","collect"]);
 assert.throws(()=>angelusCardPlan({form:"undefined"}),/Unknown canonical/);
