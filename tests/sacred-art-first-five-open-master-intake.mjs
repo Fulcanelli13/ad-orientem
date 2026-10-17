@@ -17,13 +17,20 @@ for(const x of batch.works) {
   assert(x.subject);
 }
 const open=batch.works.filter(x=>x.provider==="MET_OPEN_ACCESS");
-assert.equal(open.length,1,"Only verified Met object may be auto-acquired");
+assert.equal(open.length,1,"Only the exact reviewed Met painting may use the Met API");
 assert.deepEqual({id:open[0].museumObjectId,accession:open[0].accession},{id:438724,accession:"2004.31"});
 assert.equal(open[0].sourceObjectUrl,"https://www.metmuseum.org/art/collection/search/438724");
 assert.equal(open[0].artworkId,"ART-hilippe-de-hampaigne-he-nnunciation");
-const pending=batch.works.filter(x=>x.provider!=="MET_OPEN_ACCESS");
-assert.equal(pending.length,4,"Other originals must stay unacquired until evidence is secured");
+const commons=batch.works.filter(x=>x.provider==="WIKIMEDIA_COMMONS_PD_ART");
+assert.equal(commons.length,2,"Only the Rubens Prado and Wolffort Antwerp PD-Art files may be staged from Commons");
+assert.deepEqual(new Set(commons.map(x=>x.artworkId)),new Set([
+  "ART-eter-aul-ubens-doration-of-the-agi",
+  "ART-rtus-olffort-scension-ntwerp-osary-cycle"
+]));
+assert(commons.every(x=>x.commonsTitle.startsWith("File:")&&x.sourceKind.includes("TECHNICAL_STAGING")));
+const pending=batch.works.filter(x=>!x.provider);
+assert.equal(pending.length,2,"Unusable Lanfranco/Restout masters stay on hold");
 assert(pending.every(x=>x.sourceKind.startsWith("PENDING")));
 assert.equal(released.mediaReleaseCount,0);
 assert.deepEqual(released.media,[]);
-console.log("Sacred Art first five: 1 exact Met open-access acquisition, 4 holds; zero production releases: PASS");
+console.log("Sacred Art first five: 1 exact Met + 2 Commons PD-Art staged acquisitions, 2 holds; zero production releases: PASS");
