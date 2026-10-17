@@ -71,6 +71,41 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
  assert(water.priestVoice!=null,form+" lost priest voice in Requiem water prayer");
  if(form==="LOW")assert.equal(water.priestAction,null);
 }
+// Canon/Communion Batch B: the 1962 Ritus servandus X.4 and XIII.1
+// omit the priest's three Agnus Dei breast strikes in Masses for the dead.
+// This is an ACTION/faithful-cue restriction; the text, voice and posture remain.
+const agnus=["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"];
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const selection of [
+    {overlays:["REQUIEM"]},
+    {overlays:[],actualCelebration:{type:"REQUIEM"}},
+    {overlays:["MASS_FOR_THE_DEAD"]},
+  ]){
+    const ctl=createReaderFormCueStateController({
+      formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+      prepared:prepared(form,selection.overlays,{actualCelebration:selection.actualCelebration}),gestureMatrix:gestures
+    });
+    for(const cueId of agnus){
+      const state=ctl.project(cueId);
+      assert.equal(state.reason,null,form+" Requiem lost Agnus prayer "+cueId);
+      assert.equal(state.priestAction,null,form+" Requiem inherited ordinary chest strike at "+cueId);
+      assert.equal(state.gesture,null,form+" Requiem suggested ordinary faithful strike at "+cueId);
+      assert.ok(state.priestVoice,form+" Requiem lost priest voice at "+cueId);
+      assert.ok(state.priestPosition,form+" Requiem lost priest position at "+cueId);
+      assert.notEqual(state.ownership.priestAction,"R17_V180_EXACT_CUE_ACTION");
+    }
+  }
+  const normal=createReaderFormCueStateController({
+    formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+    prepared:prepared(form),gestureMatrix:gestures
+  });
+  for(const cueId of agnus)assert.match(normal.project(cueId).priestAction?.label??"",
+    /strik(es|ing).*breast/i,form+" ordinary Agnus strike vanished at "+cueId);
+}
+// Do not confuse Agnus Dei with the separate Domine non sum dignus breast strikes.
+assert.match(usual.project("AO.SM.C0229").priestAction?.label??"",/strik(es|ing).*breast/i);
+assert.match(requiem.project("AO.SM.C0229").priestAction?.label??"",/strik(es|ing).*breast/i);
+
 const lowResponse=formState.low.responseEvents.find(x=>x.cueId==="AO.SM.C0076");
 assert.equal(lowResponse.owner,"MINISTER_OR_SERVER");
 assert.equal(lowResponse.defaultUserResponse,false);
