@@ -8,7 +8,15 @@ const learn=await load("src/learn/presentation.js");
 const apostolate=await load("src/apostolate/browser-entry.js");
 const families=pray.slice(pray.indexOf("function prayFamilies(){"),pray.indexOf("function prayFamilyDoor"));
 assert.ok(families,"Prayer family source must exist");
-const livePrayerIds=[...families.matchAll(/\['(?:own|external)','([^']+)',L\('/g)].map(m=>m[1]);
+// The historical 10 October crosswalk has 24 canonical entrances.
+ // New Rosary & Chaplets links are discovery aliases, not a new prayer corpus.
+const chapletsStart=families.indexOf("chaplets:Object.freeze(");
+const chapletsEnd=families.indexOf("eucharistic:Object.freeze(",chapletsStart);
+assert.ok(chapletsStart>=0&&chapletsEnd>chapletsStart,"Chaplets discovery family missing");
+const chapletDiscovery=[...families.slice(chapletsStart,chapletsEnd).matchAll(/\['own','([^']+)'/g)].map(m=>m[1]);
+assert.deepEqual(chapletDiscovery,["pray.rosary","pray.rosary_methods","pray.divine_mercy"]);
+const historicalSource=families.slice(0,chapletsStart)+families.slice(chapletsEnd);
+const livePrayerIds=[...historicalSource.matchAll(/\['(?:own|external)','([^']+)',L\('/g)].map(m=>m[1]);
 assert.ok(families.includes("direct:'pray.library'"),"Prayer Library direct launcher must exist");
 livePrayerIds.push("pray.library");
 const sourceFormation=learn.slice(learn.indexOf("export const LEARN_LAYOUT"),learn.indexOf("export const LEARN_MODULE_IDS"));
@@ -34,7 +42,7 @@ const sameIds=(actual,expected,label)=>{
  assert.deepEqual([...actual].sort(),[...expected].sort(),label+" IDs must match current source");
  assert.equal(new Set(expected).size,expected.length,label+" duplicated mapping");
 };
-sameIds(livePrayerIds,crosswalk.prayer.map(x=>x.id),"Prayer 24 entrances");
+sameIds(livePrayerIds,crosswalk.prayer.map(x=>x.id),"Prayer 24 historical entrances");
 // 10 October audit stays immutable; P1 adds exactly one new, separate public child.
 sameIds(liveFormationIds.filter(id=>id!=="learn.mass_explorer"),crosswalk.formation.map(x=>x.id),"Formation 15 historical launchers");
 assert.ok(liveFormationIds.includes("learn.mass_explorer"),"New Mass Explorer must be a distinct route");
@@ -56,4 +64,4 @@ assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions
 assert.ok(crosswalk.navigation.formation.landing_views.some(v=>v.id==="questions"&&v.gated?.includes("learn.church_crisis")));
 for(const x of crosswalk.prayer)assert.ok(x.primary_entrance&&x.content_owner==="pray");
 for(const x of crosswalk.formation)assert.ok(x.primary_view&&x.canonical_owner);
-console.log("Pray/Formation IA static parity OK: 24 Prayer, 15 legacy Formation + Mass Explorer, 36 Apostolate, 72 scenario handoffs, 2 unresolved Calendar router blocks; 4 repaired Prayer handoffs awaiting phone verification");
+console.log("Pray/Formation IA static parity OK: 24 historical Prayer entrances + 3 Rosary/Chaplet discovery aliases, 15 legacy Formation + Mass Explorer, 36 Apostolate, 72 scenario handoffs, 2 unresolved Calendar router blocks; 4 repaired Prayer handoffs awaiting phone verification");
