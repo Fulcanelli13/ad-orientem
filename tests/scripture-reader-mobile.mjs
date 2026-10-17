@@ -282,7 +282,7 @@ try{
  assert.equal(await page.evaluate(()=>document.body.style.overflow),"");
  assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-home-scripture")),true,"Focus was not restored to Home Scripture entry");
  await entry.click();
- assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/,"French preference did not persist");
+ assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/i,"French preference did not persist");
  await dialog.locator("[data-scripture-close]").click();
  assert.equal(await dialog.isHidden(),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_APP_SHELL_V1?.getActive?.()),"home","Scripture overlay changed app route");
