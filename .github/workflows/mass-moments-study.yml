@@ -12,6 +12,10 @@ on:
       - 'tests/mass-source-reading-all-lessons-phone.mjs'
       - 'tests/mass-explorer-phone-e2e.mjs'
       - 'src/learn/mass-moments-study.js'
+      - 'src/learn/mass-explorer-published-prayer-context.js'
+      - 'tests/mass-explorer-published-prayer-context.mjs'
+      - 'src/learn/mass-explorer.js'
+      - 'tests/mass-explorer-phone-e2e.mjs'
       - 'src/learn/mass-formation-scripture-context.js'
       - 'tests/mass-moments-study.mjs'
       - 'tests/mass-moments-phone.mjs'
@@ -40,6 +44,7 @@ jobs:
       - run: node --check src/learn/mass-moments-study.js
       - run: node --check src/learn/mass-formation.js
       - run: node tests/mass-moments-study.mjs
+      - run: node tests/mass-explorer-published-prayer-context.mjs
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
