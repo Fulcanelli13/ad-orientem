@@ -508,48 +508,56 @@ try{
   await page.locator("#aoPray435930 [data-p435930-family='daily']").click();
   await page.locator("#aoPray435930 [data-p435930-own='pray.angelus_regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="angelus",null,{timeout:5000});
-  const angelusRails=await page.evaluate(()=>{
-    const grid=document.querySelector("#aoPray435930 .aoAngelusRitualGrid");
-    const rail=grid?.querySelector('[data-ao-ritual-module="angelus"]')??null;
-    const posture=rail?.querySelector('[data-channel="posture"]')??null;
-    const icon=posture?.querySelector(".aoRitualIcon")??null;
-    const gs=grid?getComputedStyle(grid):null,rs=rail?getComputedStyle(rail):null;
+  // Folio is the user-facing Angelus owner. The old donor ritual rail stays
+  // hidden deliberately, avoiding duplicated persistent posture guidance.
+  // Assert the visible source-owned Folio posture note, current prayer card,
+  // and navigable timeline instead of measuring a hidden legacy rail.
+  const angelusFolio=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930 .aoP435930AngelusReader.aoFolioReader");
+    const grid=root?.querySelector(".aoAngelusRitualGrid")??null;
+    const oldRail=grid?.querySelector('[data-ao-ritual-module="angelus"]')??null;
+    const posture=root?.querySelector(".aoFolioPostureNote")??null;
+    const summary=posture?.querySelector("summary")??null;
+    const icon=summary?.querySelector(".aoFolioPostureIcon")??null;
+    const timeline=root?.querySelector(".aoDevoTimeline")??null;
+    const viewport=root?.querySelector(".aoDevoCardViewport")??null;
+    const cards=[...(viewport?.querySelectorAll("[data-ao-devo-card]")??[])];
+    const visible=el=>Boolean(el&&el.getClientRects().length&&el.getBoundingClientRect().height>0);
     return {
-      oldOverlay:document.querySelectorAll("#aoPray435930 .aoP435930SemanticRails").length,
-      gridColumns:gs?.gridTemplateColumns??"",
-      channels:rail?.dataset?.aoRitualChannels??null,
-      railDirection:rs?.flexDirection??null,
-      railPosition:rs?.position??null,
-      postureChannel:posture?.dataset?.channel??null,
-      postureAsset:icon?.dataset?.aoAssetId??null,
-      slotHeight:posture?.getBoundingClientRect?.().height??0,
-      incarnationUnits:grid?.querySelectorAll?.('[data-ao-incarnation="true"]')?.length??0,
-      genericAngelusContext:grid?.querySelectorAll?.('[data-ao-asset-id="ao-rich-angelus"]')?.length??0,
+      folioVisible:visible(root),
+      oldOverlay:root?.querySelectorAll(".aoP435930SemanticRails").length??0,
+      oldRailHidden:Boolean(oldRail&&!visible(oldRail)),
+      channels:oldRail?.dataset?.aoRitualChannels??null,
+      postureVisible:visible(posture),
+      postureSummaryVisible:visible(summary),
+      postureSummaryHeight:summary?.getBoundingClientRect().height??0,
+      postureText:summary?.textContent?.trim()??"",
+      postureIcon:icon?.dataset?.aoAssetId??null,
+      timelineVisible:visible(timeline),
+      timelineControlCount:timeline?.querySelectorAll("button").length??0,
+      viewportVisible:visible(viewport),
+      visibleCards:cards.filter(visible).length,
+      incarnationUnits:root?.querySelectorAll('[data-ao-incarnation="true"]').length??0,
+      genericAngelusContext:root?.querySelectorAll('[data-ao-asset-id="ao-rich-angelus"]').length??0,
     };
   });
-  assert.equal(angelusRails.oldOverlay,0,"Angelus exact donor view still exposes the later fixed semantic-overlay rail");
-  assert.equal(angelusRails.channels,"posture,gesture","Angelus ritual rail lost the donor posture/gesture channel contract");
-  assert.equal(angelusRails.railDirection,"row","Angelus phone rail did not reflow into the donor horizontal cue row");
-  assert.equal(angelusRails.railPosition,"sticky","Angelus exact donor rail is no longer sticky with the reader");
-  assert.equal(angelusRails.postureChannel,"posture","Angelus rail no longer identifies the persistent posture channel");
-  assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.postureAsset),"Angelus posture slot is not using the canonical posture bank");
-  console.log("ANGELUS_RITUAL_GEOMETRY",JSON.stringify({
-    ...angelusRails,
-    computed:await page.evaluate(()=>{
-      const p=document.querySelector('#aoPray435930 [data-ao-ritual-module="angelus"] .aoRitualSlot[data-channel="posture"]');
-      const st=p?getComputedStyle(p):null,rail=p?.closest('.aoRitualRail'),anc=p?.parentElement;
-      return {style:st?{height:st.height,minHeight:st.minHeight,transform:st.transform,
-        animation:st.animation,display:st.display,position:st.position}:null,
-        box:p?.getBoundingClientRect()?.toJSON?.()??null,
-        railTransform:rail?getComputedStyle(rail).transform:null,
-        parentTransform:anc?getComputedStyle(anc).transform:null,
-        rectWidth:p?.getBoundingClientRect()?.width??null};
-    })
-  }));
-  assert.ok(angelusRails.slotHeight>=54,"Angelus phone ritual slot collapsed below donor-readable geometry");
-  assert.equal(angelusRails.incarnationUnits,1,"Angelus lost the unique Incarnation focus marker");
-  assert.equal(angelusRails.genericAngelusContext,0,"Angelus regained the later generic devotional context card");
-  assert.ok(angelusRails.gridColumns.length>0&&!angelusRails.gridColumns.includes("80px"),"Angelus phone ritual grid did not collapse to the donor one-column layout");
+  assert.equal(angelusFolio.folioVisible,true,"Angelus Folio reader is not visible");
+  assert.equal(angelusFolio.oldOverlay,0,"Angelus regained a duplicate semantic-overlay rail");
+  assert.equal(angelusFolio.oldRailHidden,true,"Folio exposed its obsolete duplicate ritual rail");
+  assert.equal(angelusFolio.channels,"posture,gesture","Source ritual rail lost its posture/gesture identities");
+  assert.equal(angelusFolio.postureVisible,true,"Folio's source-owned posture note is hidden");
+  assert.equal(angelusFolio.postureSummaryVisible,true,"Folio posture disclosure is inaccessible");
+  assert.ok(angelusFolio.postureSummaryHeight>=32,"Folio posture disclosure collapsed");
+  assert.match(angelusFolio.postureText,/Stand|Kneel|Debout|genoux/i,
+    "Folio no longer explains the current prayer posture");
+  assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusFolio.postureIcon),
+    "Folio posture is not using the canonical bank icon");
+  assert.equal(angelusFolio.timelineVisible,true,"Folio prayer timeline is not visible");
+  assert.ok(angelusFolio.timelineControlCount>=3,"Folio timeline lost section navigation");
+  assert.equal(angelusFolio.viewportVisible,true,"Folio prayer card viewport is hidden");
+  assert.equal(angelusFolio.visibleCards,1,"Folio must expose exactly one active prayer card");
+  assert.equal(angelusFolio.incarnationUnits,1,"Angelus lost the unique Incarnation source marker");
+  assert.equal(angelusFolio.genericAngelusContext,0,"Angelus regained a generic devotional context card");
   await shot("03a-pray-angelus-rails");
   await page.locator("#aoPray435930 [data-p435930-back]").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="family",null,{timeout:5000});
