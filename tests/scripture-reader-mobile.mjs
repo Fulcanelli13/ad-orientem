@@ -464,16 +464,16 @@ try{
   assert.match(await page.locator("#historiaSequence").innerText(),/3:92/);
   await page.locator("#historiaAuditUnit").selectOption("H42-07");
   await page.locator("#showHistoriaUnit").click();
-  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("12 source fragments loaded"),
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("13 source fragments loaded"),
     null,{timeout:24000});
-  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),12);
+  assert.equal(await page.locator("#historiaSequence .auditSegment").count(),13);
   await page.locator("#historiaReadingDepth").selectOption("expanded");
   await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("19 source fragments loaded"),
     null,{timeout:24000});
   assert.equal(await page.locator("#historiaSequence .auditSegment").count(),19,
     "Earlier expanded research selection is preserved independently");
   await page.locator("#historiaReadingDepth").selectOption("principal");
-  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("12 source fragments loaded"),
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent?.includes("13 source fragments loaded"),
     null,{timeout:24000});
 
   assert.match(await page.locator("#historiaSequence").innerText(),/Esther 11:2–6/);
@@ -538,7 +538,7 @@ try{
   await page.locator("#historiaAuditUnit").selectOption("H54-05");
   await page.locator("#showHistoriaUnit").click();
   await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
-    ?.includes("5 source fragments loaded (principal abridgment)"),
+    ?.includes("6 source fragments loaded (principal abridgment)"),
     null,{timeout:25000});
   assert.match(await page.locator("#historiaSequence").innerText(),/John 9:35–38/);
   assert.ok(await page.locator("#historiaSequence .gapNote").count()>=2);
@@ -550,6 +550,24 @@ try{
   assert.match(await page.locator("#historiaSequence").innerText(),/Acts 16:16–21/);
   assert.match(await page.locator("#historiaSequence").innerText(),/Acts 16:27–34/);
   assert.deepEqual(pageErrors,[],"Eight-chapter original-source editorial workbench cannot raise browser errors");
+
+  await page.locator("#historiaAuditUnit").selectOption("H54-02");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("1 source fragments loaded (principal abridgment)"),null,{timeout:20000});
+  const publisherDisclosure=page.locator("#historiaSequence details.historiaResearch");
+  await publisherDisclosure.locator("summary").click();
+  assert.match(await publisherDisclosure.innerText(),/Mark 2:1-12/);
+  assert.match(await publisherDisclosure.innerText(),/Publisher research/);
+  assert.match(await publisherDisclosure.innerText(),/not verse-level popularity votes/);
+  await page.locator("#historiaAuditUnit").selectOption("H45-01");
+  await page.locator("#showHistoriaUnit").click();
+  await page.waitForFunction(()=>document.querySelector("#historiaAuditStatus")?.textContent
+    ?.includes("1 source fragments loaded (principal abridgment)"),null,{timeout:24000});
+  assert.match(await page.locator("#historiaSequence details.historiaResearch").textContent(),
+    /No overlapping qualified source record/);
+  assert.deepEqual(pageErrors,[],"Publisher provenance and research-gap disclosures remain readable on mobile");
+
 
 
 
