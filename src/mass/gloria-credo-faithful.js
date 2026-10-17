@@ -32,12 +32,12 @@ export function resolveIncarnatusSungAction(resolvedMass){
   // The three Nativity Masses can resolve from distinct source owners. Their
   // common obligation is safely keyed by the actual Christmas calendar
   // celebration, never by the selected civil day if another Mass is followed.
-  const nativityProper=/^Sancti\\/12-25(?:$|[._-][123abc])/.test(path);
+  const nativityProper=/^Sancti\/12-25(?:$|[._-][123abc])/.test(path);
   const sameCalendar=actual.type==="CALENDAR" &&
     resolvedMass?.explicitlySelectedCelebration!==true &&
     Boolean(actual.id) && actual.id===resolvedMass?.calendarCelebration?.id;
   const calendarChristmas=sameCalendar &&
-    /^\\d{4}-12-25$/.test(String(resolvedMass?.date??""));
+    /^\d{4}-12-25$/.test(String(resolvedMass?.date??""));
   return annunciation||nativityProper||calendarChristmas?"KNEEL":"GENUFLECT";
 }
 
