@@ -46,7 +46,7 @@ try{
         null,{timeout:25000});
       assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),48,
         "Solemn minister label changed LIVE cards");
-      await focusCue(page,"AO.CARD.005","AO.SM.C0075");
+      await focusCue(page,"AO.CARD.007","AO.SM.C0082");
       const current=await page.evaluate(()=>{
         const rail=document.querySelector('.ao-rail-right [data-channel="sacred-minister"]');
         const state=window.__AO_PHONE_PREVIEW.getNativeEventState();
@@ -57,12 +57,12 @@ try{
       });
       if(form==="SOLEMN"){
         assert.equal(current.active,"true","Solemn subdeacon's Epistle rubric not visible");
-        assert.match(current.text??"",/SUBDEACON.*EPISTLE/i);
+        assert.match(current.text??"",/DEACON.*PUBLIC GOSPEL/i);
         assert.match(current.accessible??"",/not independently observed/i);
-        assert.equal(current.minister?.actor,"SUBDEACON");
+        assert.equal(current.minister?.actor,"DEACON");
         assert.equal(current.stage,"true","Source-owned minister rail was invisible");
       }else{
-        assert.equal(current.active,"false","Cantata improperly invented a subdeacon");
+        assert.equal(current.active,"false","Cantata improperly invented a deacon");
         assert.equal(current.minister,null);
       }
       assert.ok(current.overflow<=1,"New rail overflows "+width+"px phone");
@@ -80,7 +80,7 @@ try{
       await context.close();
     }
   }
-  console.log("PASS 360/390px: source-owned Solemn minister rubric is visibly distinct from priest, never claimed observed, absent in Cantata and at held Offertory C0112; LIVE 48 intact.");
+  console.log("PASS 360/390px: source-owned Solemn deacon Gospel rubric is visibly distinct from priest, never claimed observed, absent in Cantata and at held Offertory C0112; LIVE 48 intact.");
 }finally{
   await browser?.close().catch(()=>{});
   await new Promise(resolve=>server.close(resolve));
