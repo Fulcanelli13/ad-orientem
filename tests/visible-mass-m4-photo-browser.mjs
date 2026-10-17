@@ -65,6 +65,33 @@ try{
   await page.locator('[data-pan="up"]').click();
   const moved=(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.pose;
   assert.ok(moved.pitch>initial.pitch,"up control must turn toward zenith");
+  // M4 touch/drag contract: real pointer gestures must turn the actual camera,
+  // never navigate the page or mark source-owned VMQ questions as read.
+  const surface=page.locator("#panorama-stage canvas");
+  const box=await surface.boundingBox();
+  assert.ok(box&&box.width>100&&box.height>100);
+  const x=box.x+box.width*.5,y=box.y+box.height*.5;
+  const beforeDrag=(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama;
+  if(spec.mobile){
+   const session=await context.newCDPSession(page);
+   await session.send("Input.dispatchTouchEvent",{type:"touchStart",touchPoints:[{x,y,id:1}]});
+   await session.send("Input.dispatchTouchEvent",{type:"touchMove",touchPoints:[{x:x+48,y:y-20,id:1}]});
+   await session.send("Input.dispatchTouchEvent",{type:"touchEnd",touchPoints:[]});
+   await session.detach();
+  }else{
+   await page.mouse.move(x,y);await page.mouse.down();await page.mouse.move(x+48,y-20,{steps:4});await page.mouse.up();
+  }
+  const afterDrag=(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama;
+  assert.notEqual(afterDrag.pose.yaw,beforeDrag.pose.yaw,"drag gesture changes fixed-position photographic yaw");
+  assert.ok(afterDrag.frameCount>=beforeDrag.frameCount,"camera redraw remains available");
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()))?.readCount??0,beforeRead);
+  const beforeResize=await page.locator("#panorama-stage canvas").evaluate(el=>el.width);
+  await page.setViewportSize({width:spec.mobile?790:1100,height:spec.height});
+  await page.waitForTimeout(180);
+  const afterResize=await page.locator("#panorama-stage canvas").evaluate(el=>el.width);
+  assert.notEqual(afterResize,beforeResize,"panorama canvas adapts to viewport change");
+  await page.setViewportSize({width:spec.width,height:spec.height});
+  await page.waitForTimeout(180);
   await page.locator('[data-photo-mode="newman"]').click();
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.active==="NEWMAN_360"&&window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama.loaded);
   assert.match(await page.locator("#photo-caption").innerText(),/separate Catholic church, not a 1962 Mass record/);
