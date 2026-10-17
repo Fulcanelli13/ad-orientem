@@ -70,7 +70,7 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoMercyControls button").count(),2);
  assert.match(await page.locator("#aoPray435930 .aoMercyPrayer").innerText(),/Au nom du Père|In the name of the Father/);
  assert.equal(await page.locator("#aoPray435930 [data-ao-mercy-bead-navigation]").getAttribute("data-mercy-phase"),"opening");
- assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Sign of Cross|Signe de croix/i);
+ assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Sign of (?:the )?Cross|Signe de croix/i);
  assert.equal(await page.locator("#aoPray435930 .aoMercyKicker").count(),0,"No redundant numbered chapter kicker");
  await page.locator("#aoPray435930 [data-p435930-mercy-next]").evaluate(x=>x.click());
  assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Our Father|Notre Père/);
