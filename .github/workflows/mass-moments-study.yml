@@ -13,6 +13,9 @@ on:
       - 'tests/mass-explorer-phone-e2e.mjs'
       - 'src/learn/mass-moments-study.js'
       - 'src/learn/mass-explorer-published-prayer-context.js'
+      - 'src/learn/mass-explorer-selected-calendar-proper.js'
+      - 'src/calendar/print-proper.js'
+      - 'tests/mass-explorer-selected-calendar-proper.mjs'
       - 'src/learn/mass-explorer-prayer-readings.js'
       - 'data/learn/mass-explorer-prayer-readings.v1.json'
       - 'tests/mass-explorer-84-prayer-readings.mjs'
@@ -49,6 +52,7 @@ jobs:
       - run: node tests/mass-moments-study.mjs
       - run: node tests/mass-explorer-published-prayer-context.mjs
       - run: node tests/mass-explorer-84-prayer-readings.mjs
+      - run: node tests/mass-explorer-selected-calendar-proper.mjs
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
