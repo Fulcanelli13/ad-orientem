@@ -7,6 +7,7 @@ import {sourceMiningTargets,loadSourceMiningTargets,miningWorkbenchUrl} from "..
 import {SCRIPTURE_LINK_COUNTS} from "../src/scripture/related-objects.js";
 import {mineScriptureReference,validateScriptureMiningDecision,
   countIndependentSelections,MINING_ENGLISH_EDITIONS} from "../src/scripture/mining-service.js";
+import {estherParallelSpans} from "../src/scripture/esther-span-crosswalk.js";
 
 assert.equal(DEFAULT_SCRIPTURE_EDITION.en,"cpdv-2009");
 assert.equal(SCRIPTURE_EDITIONS["cpdv-2009"].role,"default");
@@ -110,4 +111,52 @@ assert.match(html,/loadSourceMiningTargets/);
 assert.match(html,/linkedObject/);
 assert.match(readFileSync(new URL("../src/scripture/library.js",import.meta.url),"utf8"),/ao_scripture_research/,
  "The canonical reader can open editorial mining on explicit opt-in only");
-console.log("Shared source mining, source-owned module selectors and editorial review contracts passed");
+
+// P3: original Esther source-collated verses are composed into ordered spans.
+const esther=({chapter,verseStart,verseEnd=verseStart})=>({book:"Esther",chapter,verseStart,verseEnd});
+assert.deepEqual(estherParallelSpans(esther({chapter:7,verseStart:12,verseEnd:17}),
+ "cpdv-2009","dr-challoner"),[
+ esther({chapter:4,verseStart:10,verseEnd:14}),
+ esther({chapter:15,verseStart:1}),
+ esther({chapter:4,verseStart:15})
+],"Do not flatten rearranged Catholic Esther to a fabricated continuous Douay passage");
+assert.deepEqual(estherParallelSpans(esther({chapter:4,verseStart:12,verseEnd:13}),
+ "dr-challoner","cpdv-2009"),[esther({chapter:7,verseStart:14})],
+ "Two Douay verses are precisely one CPDV verse, not duplicate text");
+assert.equal(estherParallelSpans(esther({chapter:15,verseStart:15}),
+ "cpdv-2009","dr-challoner"),null,"Unknown coordinates fail closed");
+const estherRows=async(editionId,book)=>{
+ const rows=[];
+ const add=(chapter,verse)=>rows.push({book,chapter,verseStart:verse,verseEnd:verse,
+  text:editionId+" verse "+chapter+":"+verse,sourceStatus:"UNCOLLATED_SOURCE_WITNESS"});
+ if(editionId==="cpdv-2009"){for(let v=12;v<=17;v++)add(7,v)}
+ else{for(let v=10;v<=15;v++)add(4,v);add(15,1)}
+ return rows;
+};
+const multiEsther=await mineScriptureReference("Esther 7:12-17",{
+ witnessLoader:estherRows,commentaryLoader:async()=>[]
+});
+assert.equal(multiEsther.referenceEdition,"cpdv-2009");
+assert.equal(multiEsther.exactEditionParallelVerified,true);
+assert.equal(multiEsther.readings["cpdv-2009"].verses.length,6);
+assert.deepEqual(multiEsther.readings["dr-challoner"].verses.map(x=>x.chapter+":"+x.verse),[
+ "4:10","4:11","4:12","4:13","4:14","15:1","4:15"
+]);
+assert.equal(multiEsther.readings["dr-challoner"].sourceUrls.length,3);
+assert.equal(multiEsther.readings["dr-challoner"].sourceUrl,null,
+ "One source URL would conceal a discontiguous traditional sequence");
+const traditionalEsther=await mineScriptureReference("Esther 4:12-13",{
+ referenceEdition:"dr-challoner",witnessLoader:estherRows,commentaryLoader:async()=>[]
+});
+assert.equal(traditionalEsther.readings["cpdv-2009"].passage.chapter,7);
+assert.equal(traditionalEsther.readings["cpdv-2009"].passage.verseStart,14);
+assert.equal(traditionalEsther.readings["cpdv-2009"].verses.length,1);
+await assert.rejects(()=>mineScriptureReference("Luke 1:28",{
+ referenceEdition:"dr-challoner",witnessLoader
+}),/REFERENCE_EDITION_OVERRIDE_ONLY_FOR_ESTHER/);
+const sourceAware=validateScriptureMiningDecision({...selected,referenceEdition:"dr-challoner"});
+assert.equal(sourceAware.referenceEdition,"dr-challoner");
+assert.equal(validateScriptureMiningDecision(selected).referenceEdition,"cpdv-2009",
+ "Historic decision exports without edition metadata stay readable");
+
+console.log("Shared source mining, Esther spans and editorial review contracts passed");
