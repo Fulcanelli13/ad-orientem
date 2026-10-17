@@ -252,7 +252,7 @@ try{
   await historicalConclusion.evaluate(x=>{if(!x.checked)x.click()});
   await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===5,null,{timeout:10000});
   assert.equal(await page.locator("#aoPray435930 .aoDevoCard[data-ao-devo-card='collect'] .aoFolioConclusionPart").count(),3);
-  console.log("COLLECT_Gloria_DIAGNOSTIC "+JSON.stringify(await page.locator("#aoPray435930 .aoDevoCard[data-ao-devo-card='collect'] [data-ao-conclusion-part='doxology'],#aoPray435930 .aoDevoCard[data-ao-devo-card='collect'] [data-ao-appendix-index='0']").evaluateAll(els=>els.map(el=>el.outerHTML.slice(0,1800)))));
+
   assert.equal(await page.locator("#aoPray435930 .aoDevoCard[data-ao-devo-card='collect'] [data-face-v] .aoFolioGloria").count(),3,
    "Three Gloria Patri repetitions must appear inside the Collect");
   await page.locator("#aoPray435930 [data-ao-devo-jump='4']").evaluate(x=>x.click());
