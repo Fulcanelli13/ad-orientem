@@ -164,7 +164,7 @@ function select(id,from){
  $("question-detail").hidden=true;$("question-list").hidden=false;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
  buildDefinition(spot);renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
- if(window.innerWidth<930)$("info").scrollIntoView({block:"nearest",behavior:"auto"});
+ if(window.innerWidth<930){(spot.inspection?$("inspection-stage"):$("info")).scrollIntoView({block:"nearest",behavior:"auto"});}
 }
 function buildDefinition(spot){
  const e=state.entries.get(spot.g);
