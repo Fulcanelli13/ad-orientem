@@ -1,4 +1,5 @@
 import { validateReaderGestureMatrix } from "./reader-gesture-matrix.js";
+import { isRequiemAgnusBreastStrikeOmitted } from "./reader-requiem-conditions.js";
 import { ORDINARY_SUNG_GESTURE_ANCHORS } from "./faithful-gesture-cues.js";
 // R17 cue-scoped reader state projection.
 // Source-backed only: exact cue IDs from the certified Sung Mass blueprint.
@@ -397,7 +398,8 @@ export function createReaderCueStateController({
     const activeSort=sortIndex.get(cueId);
 
     const gestureItem=gestureItemForCue(cueId,gestures);
-    const gestureAllowed=gestureItem && conditionPasses(gestureItem.condition,activeConditions);
+    const omitRequiemAgnusStrike=isRequiemAgnusBreastStrikeOmitted(cueId,prepared,activeConditions);
+    const gestureAllowed=gestureItem && !omitRequiemAgnusStrike && conditionPasses(gestureItem.condition,activeConditions);
     const gesture=gestureAllowed ? sourceGesture(gestureItem) : null;
 
     const responseItem=responses.get(cueId);
@@ -405,7 +407,7 @@ export function createReaderCueStateController({
       ? sourceResponse(responseItem) : null;
 
     const actionItem=actions.get(cueId);
-    const priestAction=actionItem && conditionPasses(actionItem.condition,activeConditions)
+    const priestAction=actionItem && !omitRequiemAgnusStrike && conditionPasses(actionItem.condition,activeConditions)
       ? sourcePriestAction(actionItem) : null;
 
     const positionItem=latestPassing(positions,activeSort,activeConditions);
