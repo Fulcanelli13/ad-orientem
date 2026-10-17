@@ -90,3 +90,16 @@ rubrics published.
   photo licences, phone performance and user aesthetics need approval.
 - The offline file is ~22 MB; production must adopt tiled image loading
   rather than embedding all high-resolution assets in one web page.
+
+
+## P4.1 offline continuation (17 October 2026)
+
+The previous P4 offline visitor file was recovered from the user’s file library and updated **without starting a new object inventory**. The resulting single-file experimental handoff is `The_Visible_Mass_P4_1_Sanctuary_Questions_and_Fallback.html` (about 23.5 MB), delivered directly in the original ChatGPT conversation; this image-embedded build is **not checked into Git**, and no public deployment/merge is implied.
+
+- The six exact-photo subjects remain **AL01, AL06, AL07, AL19, SN02 and SN04**, with unchanged G### direct-versus-related attribution and unchanged photographic coordinates.
+- The corresponding cards now expose three existing, ID-stable, **unanswered** research questions each (18 read-only prompt extracts), selected verbatim from the parallel `PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json` registry. Full glossary description remains available on demand. No newly authored question ID, answer, liturgical claim or Mass reader content was added.
+- WebGL still sets `UNPACK_FLIP_Y_WEBGL = 0` for the original top-origin equirectangular shader. A texture-dimension/upload-error check precedes declaring GL ready; an otherwise valid-but-failed WebGL canvas can be **replaced** to acquire a 2D rendering context, and lost WebGL context attempts software recovery from the already decoded panorama image.
+- Mobile panorama interaction now includes genuine two-pointer pinch-to-zoom, scene chips stay in one horizontally scrollable row, and marker hit targets are at least 44 CSS pixels.
+- Local headless Chromium smoke checks on 1280×820 and 390×844 passed upright **CPU fallback** panoramas, six markers, glossary card open/close, the three display questions, and zero uncaught page errors. Separate targeted tests passed simulated two-pointer zoom and forced WebGL-context-to-2D-canvas recovery.
+
+**Still unverified:** a real WebGL/GPU device, hardware panorama orientation, image/attribution publication approval, actual phone target precision, native-mobile performance, and canonical answer links after Phase 1.5. The sandboxed Chromium session did not provide a WebGL context even with SwiftShader flags. The offline file is a test artifact; it does not supersede source-owner registries or authorize merging draft PR #1309.
