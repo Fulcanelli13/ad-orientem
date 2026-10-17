@@ -658,9 +658,16 @@ async function openCalendarScripture(button){
       (await import("../scripture/browser-entry.js")).installScriptureBrowserOwner(globalThis);
     if(root()!==origin||state()?.selectedDate!==selected)return fail();
     const returnToCalendar=()=>{
-      if(root()!==origin||state()?.selectedDate!==selected||calendarView!=="day")return;
-      origin.scrollTop=atScroll;
-      origin.querySelector('[data-cal-scripture-date="'+selected+'"][data-cal-scripture-slot="'+slot+'"]')?.focus?.({preventScroll:true});
+      const restore=()=>{
+        if(root()!==origin||state()?.selectedDate!==selected||calendarView!=="day")return;
+        origin.scrollTop=atScroll;
+        origin.querySelector('[data-cal-scripture-date="'+selected+'"][data-cal-scripture-slot="'+slot+'"]')?.focus?.({preventScroll:true});
+      };
+      restore();
+      // Calendar repaint/centering can be queued while the Bible overlay is
+      // open. Restore after that paint as well so the exact prior reading
+      // remains visible rather than jumping to the top of the special rite.
+      requestAnimationFrame(()=>requestAnimationFrame(restore));
     };
     const options={language,onCloseReturn:returnToCalendar};
     const opened=reading.segments
