@@ -1143,6 +1143,22 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-inline-rubrics .ao-missal-rubric-action{
   display:block;font:inherit;color:inherit;margin:1px 0;
 }
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-ceremonial-state-detail{
+  display:block;margin:0 auto;max-width:65ch;font:inherit;color:inherit;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-ceremonial-state-detail>summary{
+  display:list-item;list-style-position:inside;cursor:pointer;
+  width:fit-content;max-width:100%;padding:4px;margin:0 auto;
+  text-align:center;font:inherit;color:inherit;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-ceremonial-state-detail>p{
+  margin:3px auto 6px;max-width:62ch;text-align:center;font:inherit;
+  line-height:1.52;color:var(--ao-text-muted,#b5b8b4);
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-ceremonial-state-detail>a{
+  display:inline-block;font:400 .68rem/1.5 var(--ao-font-ui,system-ui,sans-serif);
+  color:var(--ao-mass-accent-text);text-underline-offset:3px;
+}
 /* Actual additional rubrical information exists at chalice preparation:
    the brief direction is visible and the form-specific action/exception is
    accessible on tap. Generic per-word "Placement and source" was removed. */
@@ -3133,12 +3149,44 @@ export function createReaderDomAdapter({
             actions.className="ao-canon-inline-actions";
             if(mode==="MISSAL"){
               for(const event of shortRubrics){
+                // Only two separately approved persistent states exist.
+                // A full C0174.06 paragraph would overwhelm the Consecration;
+                // preserve its exception and duration in a real, optional
+                // extension rather than a fake four-step action list.
+                const isFingerStart=event.kind==="STATE" &&
+                  event.id==="AO.RUB.C0174.06";
+                const isFingerEnd=event.kind==="STATE" &&
+                  event.id==="AO.RUB.C0248.01";
+                const short=isFingerStart
+                  ? (frenchReader
+                    ?"Le prêtre garde les pouces et les index joints."
+                    :"The priest keeps his thumbs and forefingers joined.")
+                  : isFingerEnd
+                    ? (frenchReader
+                      ?"Le prêtre cesse de tenir les doigts joints après les ablutions."
+                      :"The priest releases his joined fingers after the ablutions.")
+                    : event.displayText;
                 const text=doc.createElement("span");
                 text.className="ao-missal-rubric-action";
                 text.dataset.rubricId=event.id;
                 text.dataset.sourceCueId=event.sourceCueId;
-                text.textContent=event.displayText;
-                actions.append(text);
+                text.textContent=short;
+                if(isFingerStart && event.sourceUrl){
+                  const detail=doc.createElement("details");
+                  detail.className="ao-missal-ceremonial-state-detail";
+                  detail.dataset.rubricStateId=event.id;
+                  const toggle=doc.createElement("summary");
+                  toggle.append(text);
+                  const full=doc.createElement("p");
+                  full.textContent=event.displayText;
+                  const source=doc.createElement("a");
+                  source.href=event.sourceUrl;
+                  source.target="_blank";
+                  source.rel="noopener noreferrer";
+                  source.textContent="Ritus servandus · 1962";
+                  detail.append(toggle,full,source);
+                  actions.append(detail);
+                }else actions.append(text);
               }
             }else{
               actions.textContent=shortRubrics.map(event=>event.shortAction).join(" · ");
