@@ -37,8 +37,11 @@ for(const cue of sungCorpus.blocks.flatMap(b=>(b.units??[]).map(u=>u.cue_id))){
     expectedMinisterCues.add(cue);
   }else assert.equal(projected,null);
 }
-assert.ok(expectedMinisterCues.size>=16 && expectedMinisterCues.size<=25,
-  "Solemn minister view escaped recovered 19-event corpus");
+assert.equal(formState.solemn.ministerEvents.length,19,
+  "Existing canonical minister source corpus denominator changed");
+for(const required of ["AO.SM.C0075","AO.SM.C0082","AO.SM.C0174","AO.SM.C0225"])
+  assert.ok(expectedMinisterCues.has(required),
+    "Existing certified Solemn minister action missing from rail "+required);
 for(const cue of ["AO.SM.C0111","AO.SM.C0112","AO.SM.C0113"]){
   assert.equal(solemn.project(cue).sacredMinister,null,
     "Unapproved Offertory actor event was attributed to the public Mass");
