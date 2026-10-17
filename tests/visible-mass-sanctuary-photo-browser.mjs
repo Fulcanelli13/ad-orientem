@@ -76,7 +76,14 @@ try{
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#object-card').isVisible(),false);
   if(spec.mobile)assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('object-open')),false);
-  await page.locator('#inspection-details > summary').click();
+  // Physical ancestor → question-only object; do not fabricate a photographic hotspot.
+  await page.locator('.marker[data-object="AL07"]').click();
+  await page.locator('#related-items [data-related="AL08"]').click();
+  assert.equal(await page.locator('#object-title').innerText(),'Individual altar candle');
+  assert.match(await page.locator('#inspection-provenance').innerText(),/No independent object photograph/);
+  assert.equal(await page.locator('#question-items button').count(),4);
+  await page.locator('#close-card').click();
+    await page.locator('#inspection-details > summary').click();
   await page.locator('.inspect-family > summary').filter({hasText:'Altar & sanctuary'}).click();
   await page.locator('[data-inspection="AL03"]').click();
   assert.equal(await page.locator('#object-title').innerText(),'Tabernacle');
@@ -85,6 +92,12 @@ try{
   await page.screenshot({path:screenshotDir+'/'+spec.name+'-inspection.png'});
   await page.locator('#return-to-church').click();
   assert.equal(await page.locator('#inspection-stage').isVisible(),false);
+  await page.locator('[data-inspection="SN07"]').click();
+  await page.locator('#related-items [data-related="EQ06"]').click();
+  assert.equal(await page.locator('#object-title').innerText(),'Altar bell');
+  assert.match(await page.locator('#canonical-link').innerText(),/No G### glossary identity/);
+  assert.equal(await page.locator('#question-items button').count(),4);
+  await page.locator('#close-card').click();
   await page.locator('.inspect-family > summary').filter({hasText:'Sacred linens'}).click();
   await page.locator('[data-inspection="LN01"]').click();
   assert.match(await page.locator('#inspection-provenance').innerText(),/corporal/);
