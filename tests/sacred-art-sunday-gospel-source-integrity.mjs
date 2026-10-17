@@ -48,17 +48,18 @@ assert.ok(all.some(x=>x.rightsClaim==="CC_BY_SA_4_0"&&x.artist==="Andrei Mironov
 assert.ok(all.some(x=>x.rightsClaim==="CC0"&&/Nobleman/.test(x.title)),"Cleveland exact-source CC0 lead missing");
 
 // New phase3: direct scene, contextual saint, and provisional loaves must remain separate.
-assert.equal(third.sourceLeads.length,4);
+assert.equal(third.sourceLeads.length,6);
 assert.equal(third.contextualReuse.length,7);
 assert.equal(third.sourceLeads.filter(x=>x.relationship==="DEPICTS_APPOINTED_GOSPEL_EPISODE").length,2);
 assert.equal(third.sourceLeads.filter(x=>x.relationship==="PERSON_CONTEXT_NOT_PRECISE_ENVOYS_SCENE").length,1);
 assert.equal(third.sourceLeads.filter(x=>x.relationship==="TENTATIVE_FOUR_THOUSAND_LINK_NOT_MUSEUM_EXACT").length,1);
+assert.equal(third.sourceLeads.filter(x=>x.relationship==="PALM_SUNDAY_PROCESSION_EVENT_NOT_APPOINTED_MASS_GOSPEL").length,2);
 for(const x of third.sourceLeads){
  assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(x.sourceUrl),"Untrusted Commons file "+x.title);
  assert.ok(x.preview.startsWith("https://commons.wikimedia.org/wiki/Special:FilePath/")&&x.preview.endsWith("?width=500"),"Unbounded research thumbnail "+x.title);
  assert.equal(x.curatorialScore,null,"New image already rated "+x.title);
  assert.equal(x.productionApproved,false,"Third phase must not mark production-ready");
- assert.ok(["PUBLIC_DOMAIN_PD_ART_PDM","CC_BY_SA_4_0"].includes(x.rights),"Wrong rights label "+x.title);
+ assert.ok(["PUBLIC_DOMAIN_PD_ART_PDM","CC_BY_SA_4_0","CC0"].includes(x.rights),"Wrong rights label "+x.title);
  assert.ok(!/fra angelico|el greco/i.test(x.artist),"Excluded painter "+x.artist);
 }
 const four=third.sourceLeads.find(x=>x.date2026==="2026-07-05");
@@ -70,6 +71,10 @@ assert.equal(dropsy.rights,"CC_BY_SA_4_0");
 assert.equal(dropsy.photographer,"Wolfgang Sauber");
 const healed=third.sourceLeads.find(x=>x.date2026==="2026-02-15");
 assert.equal(healed.accession,"ГЭ-407");
+const palm=third.sourceLeads.filter(x=>x.date2026==="2026-03-29");
+assert.equal(palm.length,2);
+assert.ok(palm.every(x=>x.gospel===null&&x.relationship==="PALM_SUNDAY_PROCESSION_EVENT_NOT_APPOINTED_MASS_GOSPEL"),"Do not map Palm procession to Mass Passion Gospel");
+assert.ok(palm.some(x=>x.rights==="CC0"&&x.photographer==="MPim studio"),"Commons CC0 photographer credit missing");
 const c=third.contextualReuse;
 assert.equal(c.filter(x=>x.canonicalArtworkId==="nga-12130").length,4,"Reuse one Ricci Last Supper original");
 assert.equal(c.filter(x=>x.canonicalArtworkRef==="PHASE_2_CARL_BLOCH_SERMON_MOUNT").length,3,"Reuse one Carl Bloch image");
