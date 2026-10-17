@@ -41,8 +41,8 @@ export function selectedCalendarScriptureObjects(snapshot){
      segments:Array.isArray(reading.segments)?Object.freeze([...passages]):null,
      relation:native?"SELECTED_1962_NATIVE_RITE_BIBLICAL_RECORD":"SELECTED_1962_PROPER_SOURCE_VERIFIED",
      title:Object.freeze({
-       en:"Selected 1962 Mass · "+label[0]+" · "+date,
-       fr:"Messe de 1962 sélectionnée · "+label[1]+" · "+date
+       en:(native?reading.groupLabel.en:"Selected 1962 Mass")+" · "+label[0]+" · "+date,
+       fr:(native?reading.groupLabel.fr:"Messe de 1962 sélectionnée")+" · "+label[1]+" · "+date
      }),
      description:Object.freeze({
        en:native
