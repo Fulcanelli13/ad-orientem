@@ -131,6 +131,8 @@ export function createLiveCanonStageObservationController({registry,form}={}){
      return rejected("CEREMONY_CHANGED_RESET_REQUIRED");
    if(event.actor==="PRIEST"&&event.order<=lastPriestOrder)
      return rejected("PRIEST_STAGES_NOT_CHRONOLOGICAL");
+   if(event.actor==="SERVER"&&lastPriestOrder>=4)
+     return rejected("BELL_OUTSIDE_ELEVATION_WINDOW");
    cueId=nextCue;
    visible=true;
    if(event.actor==="PRIEST"){
@@ -138,7 +140,7 @@ export function createLiveCanonStageObservationController({registry,form}={}){
      lastPriest=event;
      // A server bell is independently witnessed, and cannot persist
      // through a later priest phase as though the bell were still ringing.
-     if(event.order>2)lastServer=null;
+     if(event.order!==2)lastServer=null;
    }else{
      // One witnessed bell does not imply that elevation or genuflection
      // has been seen, and never advances the priest's own action index.
