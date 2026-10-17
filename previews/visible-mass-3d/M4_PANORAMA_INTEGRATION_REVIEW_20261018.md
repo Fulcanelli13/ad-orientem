@@ -28,3 +28,22 @@ The controller retains pose separately for each original panorama; entering the 
 5. Re-run M3 editorial, French copy and all required Formation/R17 gates. Keep PR #1309 draft and unmerged until those approvals.
 
 No change to LIVE/Simple/Missal Mass readers or the original certified Mass/Formation/Glossary owners.
+
+
+## M4.1 — Actual licensed-photograph orientation and rendering acceptance (18 October 2026)
+
+**Verified research browser gate:** [GitHub Actions real-photo review #39079617512](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39079617512) ran successfully against commit `975014f8c8912f325d5025d3e9a7666769cfec50`. [Review artifact](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39079617512/artifacts/12118696940) contains desktop/phone panoramic captures plus JSON measurements. This is a source/raster test, **not** visual sign-off on a physical device.
+
+The first authentic-image test detected a real regression: the WebGL shader worked with a small synthetic image, but the photographed 4096×2048 research files rendered **black** with WebGL in headless Chromium. This occurred despite successful file decode and texture upload, so prior synthetic tests were insufficient. The controller now enforces a **maximum 2048px source texture**, consistent with its Commons API request (`iiurlwidth=2048`). The updated real-image gate checks that genuine source pixels project upright, comparing each output against both correct source UV coordinates and deliberately inverted coordinates. WebGL and software fallback still share the same north-up convention.
+
+Verified cases with WebGL renderer:
+| Original 360° source | Desktop correct-pixel average error | Desktop deliberately-inverted error | Phone emulation correct / inverted |
+| --- | ---: | ---: | ---: |
+| Brompton Oratory · David Iliff | 25 | 122 | 33 / 108 |
+| Newman University Church · David Iliff | 15 | 167 | 13 / 176 |
+
+Scores are mean sampled RGB Euclidean distances from original pixels: **lower is closer**, not percentages or a human visual score. All four cases distinguish the genuine upright view from an upside-down projection. Both panorama sources passed 2:1 geometry and CC BY-SA 3.0 source metadata verification. Screenshots record the genuine photographs, not generated images. The browser test also checks strict venue separation, each photo’s creator/source, actual Creative Commons licence URL, and perspective-adaptation disclosure.
+
+The main viewer now uses a GPU path when available with a software fallback; the source image and photographs still preserve their original attribution and rights. The adaptation notice explicitly describes the projected view. Existing six original Brompton high-altar markers are not copied onto either panorama; the 4 guide trails and VMQ/M3 ownership remain intact. The normal desktop/phone sanctuary regression workflow passed alongside the authentic-image workflow.
+
+**Still blocked:** user visual approval on physical Windows/Edge and Android devices; calibrated touch comfort and motion/performance on actual phones; photographic pixel quality and source orientation approval from the user; external Wikimedia API/CORS behavior under real network conditions (automated real-image tests route original files through same-byte controlled responses); distribution/cache strategy; any legal publication review of CC BY-SA adaptations; M3 doctrine and translation approvals and four held VMQ questions; independent R17 acceptance. This is NOT a release approval, and PR #1309 remains draft.
