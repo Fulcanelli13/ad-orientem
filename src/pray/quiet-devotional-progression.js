@@ -55,7 +55,13 @@ export function monthlyDevotionalRegister(records,{needed=9,selectedDate=""}={})
  if(latest!==undefined&&entries.get(latest)?.complete){
   while(streak<needed&&entries.get(latest-streak)?.complete===true)streak++;
  }
- const start=streak?latest-streak+1:anchor;
+ // An explicitly interrupted sequence must still show the preceding
+ // recorded months beside the interruption. Do not erase the visual history.
+ let preceding=0;
+ if(latest!==undefined&&entries.get(latest)?.complete===false){
+  while(preceding<needed-1&&entries.get(latest-preceding-1)?.complete===true)preceding++;
+ }
+ const start=streak?latest-streak+1:anchor-preceding;
  const cells=Array.from({length:needed},(_,index)=>{
   const month=start+index,rec=entries.get(month),status=rec?(rec.complete?"recorded":"incomplete"):"unrecorded";
   const date=monthDate(month),key=date.toISOString().slice(0,7);
