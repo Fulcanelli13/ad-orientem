@@ -7,6 +7,11 @@ on:
       - previews/visible-mass-3d/sanctuary-hotspot-pilot.html
       - previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json
       - tests/visible-mass-photo-bridge.mjs
+      - tests/visible-mass-stage-a-reconciliation.mjs
+      - previews/visible-mass-3d/HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json
+      - previews/visible-mass-3d/HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json
+      - previews/visible-mass-3d/LITURGICAL_EXPLANATIONS_P1_5_FIRST20_20261017.v1.json
+      - previews/visible-mass-3d/LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json
       - .github/workflows/visible-mass-p4-bridge.yml
   workflow_dispatch:
 permissions: {contents: read}
@@ -20,3 +25,4 @@ jobs:
         with: {node-version: '22'}
       - run: node --check previews/visible-mass-3d/photographic-scene-bridge.mjs
       - run: node tests/visible-mass-photo-bridge.mjs
+      - run: node tests/visible-mass-stage-a-reconciliation.mjs
