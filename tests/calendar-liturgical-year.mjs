@@ -450,7 +450,10 @@ assert.match(unresolvedClock,/Commemoration of All the Faithful Departed/,
   "All Souls must remain a discoverable calendar landmark");
 assert.match(unresolvedClock,/data-cal-clock-cluster-members="2026-11-01,2026-11-02"/,
   "All Saints and All Souls must have a shared, accessible adjacent-date marker");
-assert.match(unresolvedClock,/Calendar landmark/,"Unresolved date detail must not claim observed Mass");
+const unresolvedDetail=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-17",todayDate:"2026-10-17",
+ selection:{type:"feast",date:"2026-11-01"}});
+assert.match(unresolvedDetail,/CALENDAR LANDMARK/,"Unresolved date detail must not claim observed Mass");
+assert.doesNotMatch(unresolvedDetail,/OBSERVED CELEBRATION/,"Unresolved landmark must never claim a confirmed Mass");
 const integratedCalendarSource=fs.readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 assert.match(integratedCalendarSource,/clockForYear\(y,selected\)/);
 assert.match(integratedCalendarSource,/renderYearJourney\(/,"Original eleven-period journey preserved");
