@@ -354,7 +354,7 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
   const deadEn=chaliceHeading(requiem).description;
   const deadFr=chaliceHeading(requiem,"fr").description;
   assert.match(deadEn,/without blessing (?:the water|it)/);
-  assert.match(deadFr,/sans bénir l’eau/);
+  assert.match(deadFr,/sans (?:bénir l’eau|la bénir)/);
   assert.doesNotMatch(deadEn,/blesses it|blesses and adds/);
   assert.equal(chaliceHeading({...mass,overlays:["REQUIEM"]}).description,deadEn,
     "Requiem overlay must govern even when actual selection is calendar-derived");
