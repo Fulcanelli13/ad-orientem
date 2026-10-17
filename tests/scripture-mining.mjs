@@ -175,9 +175,9 @@ assert.deepEqual(correctionDelta.chapters.map(x=>x.units.length),[5,5,7,2,4,5,7,
 assert.equal(new Set(correctionDelta.chapters.flatMap(x=>x.units.map(y=>y.unitId))).size,40);
 assert.ok(correctionDelta.chapters.flatMap(x=>x.units).every(x=>
  x.originalReference&&x.candidateReadings.length&&x.approved===false&&x.textReviewed===false));
-assert.equal(correctionDelta.chapters[0].units[6].originalReference,"Esther 4:1–17");
-assert.equal(correctionDelta.chapters[0].units[6].sourceEdition,"UNDETERMINED_IN_V18");
-assert.equal(correctionDelta.chapters[1].units[3].originalReference,"Revelation 13:1–10");
+assert.equal(correctionDelta.chapters.find(c=>c.chapterId==="H42").units[6].originalReference,"Esther 4:1–17");
+assert.equal(correctionDelta.chapters.find(c=>c.chapterId==="H42").units[6].sourceEdition,"UNDETERMINED_IN_V18");
+assert.equal(correctionDelta.chapters.find(c=>c.chapterId==="H76").units[3].originalReference,"Revelation 13:1–10");
 
 
 const sourceVerses=(edition,book)=>{
