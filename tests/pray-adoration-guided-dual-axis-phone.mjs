@@ -102,6 +102,17 @@ try{
   "Silence entry must remove prayer controls, not start a countdown");
  assert.equal(await page.locator(sel+" .aoDevoSequenceTimeline").count(),0);
  assert.equal(await page.locator(sel+" [data-p435930-timer]").count(),0);
+ const noChrome=await page.locator(sel+" .aoAdorationQuietScreen").evaluate(el=>{
+  const r=el.getBoundingClientRect(),center=document.elementFromPoint(innerWidth/2,innerHeight-32);
+  return {fixed:getComputedStyle(el).position==="fixed",left:r.left,top:r.top,bottom:r.bottom,right:r.right,
+   viewport:[innerWidth,innerHeight],hit:el.contains(center)||center===el,
+   focused:document.activeElement?.matches("[data-p435930-ador-quiet-exit]")===true}
+ });
+ assert.ok(noChrome.fixed&&noChrome.left===0&&noChrome.top===0&&
+  noChrome.bottom>=noChrome.viewport[1]-1&&noChrome.right>=noChrome.viewport[0]-1&&
+  noChrome.hit&&noChrome.focused,"Quiet screen must cover global chrome and focus the only exit: "+JSON.stringify(noChrome));
+ assert.equal(await page.locator("#aoPray435930.open [data-ao-pray-rail-channel]").count(),0,
+  "Quiet mode must remove floating posture/priest labels");
  await page.screenshot({path:resolve(captures,"quiet-screen-390.png"),animations:"disabled"});
  await page.locator(sel+" [data-p435930-ador-quiet-exit]").tap();
  assert.equal(await page.locator(sel+" .aoAdorationOpenPrayer").count(),1,"Returning to prayer must restore the same mode");
