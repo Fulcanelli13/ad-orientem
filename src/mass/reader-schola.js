@@ -1,3 +1,4 @@
+import { requiemAgnusVariantsForResolvedMass } from "./reader-requiem-conditions.js";
 // Native Schola state for certified sung forms. Low Mass is a structural absence; Solemn shares the recovered sung Schola donor.
 // The opening intonations of Gloria and Credo belong to the celebrant,
 // even though their trailing donor syllables were catalogued SCHOLA_PUBLIC.
@@ -25,19 +26,20 @@ const TRACK_SPECS=Object.freeze([
 function clean(value){const s=String(value??"").trim();return s||null}
 function freezeSegment(segment){return Object.freeze({...segment});}
 
-function ordinarySegments(corpus,macroId,{language="en",frenchOrdinary=null}={}){
+function ordinarySegments(corpus,macroId,{language="en",frenchOrdinary=null,ordinaryVariants=null}={}){
   const blocks=(corpus?.blocks??[]).filter(b=>b.Macro_ID===macroId);
   const rows=[];
   for(const block of blocks){
     for(const unit of block.units??[]){
       if(unit.clock!=="SCHOLA_PUBLIC"||PRIEST_INTONATION_END_CUES.has(unit.cue_id))continue;
-      const latin=clean(unit.latin);
+      const variant=ordinaryVariants?.[unit.cue_id]??null;
+      const latin=clean(variant?.lat??unit.latin);
       const fr=String(language).toLowerCase().startsWith("fr");
       // The Schola's translation follows the reader's language, but Latin
       // always remains the immutable default sung text.
       const english=fr
-        ? clean(frenchOrdinary?.byCue?.[unit.cue_id]??unit.english)
-        : clean(unit.english);
+        ? clean(variant?.fr??frenchOrdinary?.byCue?.[unit.cue_id]??unit.english)
+        : clean(variant?.en??unit.english);
       if(!latin&&!english)continue;
       rows.push(freezeSegment({
         id:unit.cue_id,cueId:unit.cue_id,
@@ -77,6 +79,7 @@ export function buildNativeScholaTracks({sungCorpus,properSlots,prepared,frenchO
     const segments=spec.kind==="ORDINARY"
       ? ordinarySegments(sungCorpus,spec.macroId,{
           language:prepared?.readerPreferences?.language??"en",frenchOrdinary,
+          ordinaryVariants:requiemAgnusVariantsForResolvedMass(prepared?.session?.resolvedMass),
         })
       : properSegments(properSlots,spec.slot);
     if(!segments.length && !spec.optional)throw new Error("Native Schola track has no source text: "+spec.id);

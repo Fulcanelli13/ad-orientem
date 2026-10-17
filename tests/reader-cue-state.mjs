@@ -89,6 +89,26 @@ assert.ok(state.gesture);
 assert.doesNotMatch(state.gesture.action,/Sign of the Cross/i,"Chalice elevation invented a cross");
 assert.match(state.gesture.action,/Chalice/i);
 
+// Requiem identification by resolved celebration or overlay must suppress
+// the three priest/faithful Agnus strike projections even in the base Sung
+// controller, not only the Solemn wrapper.
+for(const selection of [
+  {actualCelebration:{type:"REQUIEM"}},
+  {overlays:["REQUIEM"],actualCelebration:{type:"CALENDAR"}}
+]){
+  const reqCtrl=createReaderCueStateController({
+    registries,sungCorpus:sung,gestureMatrix,
+    prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",...selection}},
+      readerPreferences:{mode:"LIVE",gestureProfile:"TRADITIONAL"}}
+  });
+  for(const cueId of ["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"]){
+    const row=reqCtrl.project(cueId);
+    assert.equal(row.priestAction,null,"Direct Sung Requiem action leak "+cueId);
+    assert.equal(row.gesture,null,"Direct Sung Requiem gesture leak "+cueId);
+    assert.ok(row.priestVoice,"Keep Agnus voice "+cueId);
+  }
+}
+
 assert.equal(ctrl.project("AO.SM.C0174").priestAction?.label,"ELEVATES HOST");
 assert.equal(ctrl.project("AO.SM.C0181").priestAction?.label,"ELEVATES CHALICE");
 assert.equal(ctrl.project("AO.SM.C0161").priestAction,null,"action lane invented an unsourced action");

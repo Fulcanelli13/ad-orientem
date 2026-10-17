@@ -71,6 +71,113 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
  assert(water.priestVoice!=null,form+" lost priest voice in Requiem water prayer");
  if(form==="LOW")assert.equal(water.priestAction,null);
 }
+// Canon/Communion Batch B: the 1962 Ritus servandus X.4 and XIII.1
+// omit the priest's three Agnus Dei breast strikes in Masses for the dead.
+// This is an ACTION/faithful-cue restriction; the text, voice and posture remain.
+const agnus=["AO.SM.C0222","AO.SM.C0223","AO.SM.C0224"];
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const selection of [
+    {overlays:["REQUIEM"]},
+    {overlays:[],actualCelebration:{type:"REQUIEM"}},
+    {overlays:["MASS_FOR_THE_DEAD"]},
+  ]){
+    const ctl=createReaderFormCueStateController({
+      formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+      prepared:prepared(form,selection.overlays,{actualCelebration:selection.actualCelebration}),gestureMatrix:gestures
+    });
+    for(const cueId of agnus){
+      const state=ctl.project(cueId);
+      assert.equal(state.reason,null,form+" Requiem lost Agnus prayer "+cueId);
+      assert.equal(state.priestAction,null,form+" Requiem inherited ordinary chest strike at "+cueId);
+      assert.equal(state.gesture,null,form+" Requiem suggested ordinary faithful strike at "+cueId);
+      assert.ok(state.priestVoice,form+" Requiem lost priest voice at "+cueId);
+      assert.ok(state.priestPosition,form+" Requiem lost priest position at "+cueId);
+      assert.notEqual(state.ownership.priestAction,"R17_V180_EXACT_CUE_ACTION");
+    }
+  }
+  const normal=createReaderFormCueStateController({
+    formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+    prepared:prepared(form),gestureMatrix:gestures
+  });
+  for(const cueId of agnus)assert.match(normal.project(cueId).priestAction?.label??"",
+    /strik(es|ing).*breast/i,form+" ordinary Agnus strike vanished at "+cueId);
+}
+// Do not confuse Agnus Dei with the separate Domine non sum dignus breast strikes.
+assert.match(usual.project("AO.SM.C0229").priestAction?.label??"",/strik(es|ing).*breast/i);
+assert.match(requiem.project("AO.SM.C0229").priestAction?.label??"",/strik(es|ing).*breast/i);
+
+// Canon-to-Communion boundary: these are already named action cues in BOTH
+// certified reader corpora. A text focus alone must never claim an observed
+// genuflection, altar movement, bell or minister action.
+const canonBoundary=[
+  ["AO.SM.C0174",/elevat/i],
+  ["AO.SM.C0181",/elevat/i],
+  ["AO.SM.C0204",/(?:minor elevation|raises the host and chalice slightly)/i],
+  ["AO.SM.C0205",/genuflect/i],
+];
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const overlays of [[],["REQUIEM"]]){
+    const ctl=createReaderFormCueStateController({
+      formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+      prepared:prepared(form,overlays),gestureMatrix:gestures
+    });
+    for(const [cueId,expected] of canonBoundary){
+      const state=ctl.project(cueId);
+      assert.match(state.priestAction?.label??"",expected,
+        form+" lost existing Canon stage "+cueId);
+      assert.ok(state.priestVoice,form+" lost priest voice "+cueId);
+      assert.equal(state.reason,null,form+" source cue was suppressed "+cueId);
+      assert.ok(!String(state.ownership.priestAction).includes("LEGACY"));
+    }
+    for(const cueId of ["AO.SM.C0174","AO.SM.C0181"]){
+      const minister=ctl.project(cueId).sacredMinister;
+      if(form==="SOLEMN"){
+        assert.match(minister?.actor??"",/DEACON/);
+        assert.match(minister?.actor??"",/SUBDEACON/);
+      }else assert.equal(minister,null,form+" invented sacred ministers at "+cueId);
+    }
+  }
+}
+const rubricEvents=load("presentation/reader-rubric-events.v1.json").items;
+const byCue=(cueId)=>rubricEvents.filter(x=>x.cueId===cueId);
+for(const [id,expectedBell] of [
+  ["AO.SM.C0174","ELEVATION BELL · HOST"],
+  ["AO.SM.C0181","ELEVATION BELL · CHALICE"]
+]){
+  const rows=byCue(id);
+  assert.equal(rows.filter(x=>x.actor==="SERVER"&&x.label===expectedBell).length,1,
+    id+" must keep one existing server-bell source, never duplicate a bell");
+  assert.equal(rows.filter(x=>x.actor==="PRIEST"&&/ELEVATES/.test(x.label)).length,1,
+    id+" must keep one existing elevation action");
+}
+const canonSources=load("research/mass-canon-62-source-trigger-audit-20261013.json");
+const ministerSources=load("research/mass-canon-20-minister-stage-acceptance-20261014.json");
+assert.equal(canonSources.rows.length,62,"62-action Canon SOT was replaced or split");
+assert.equal(ministerSources.rows.length,20,"20 existing minister/server events were duplicated");
+assert.equal(ministerSources.counts.independentlyTimed,0,
+  "Reading a cue must not certify physical minister event timing");
+assert.equal(ministerSources.counts.published,0,"Research stages were promoted without gate");
+
+// XIII.1 conditional cue omission is authoritative even when an excluded
+// source cue is requested directly: do not project ghost priest actions,
+// priest voices, sacred minister Pax, or lay gestures from removed prayer.
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const x=createReaderFormCueStateController({
+    formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+    prepared:prepared(form,["REQUIEM"]),gestureMatrix:gestures
+  });
+  const omitted=x.project("AO.SM.C0225");
+  assert.equal(omitted.reason,"RITUS_XIII_1_REQUIEM_PEACE_PRAYER_OMITTED");
+  assert.equal(omitted.priestAction,null,form+" projected omitted peace action");
+  assert.equal(omitted.priestVoice,null,form+" projected omitted peace voice");
+  assert.equal(omitted.sacredMinister,null,form+" projected forbidden Pax");
+  assert.equal(omitted.gesture,null,form+" projected omitted gesture");
+  for(const cueId of ["AO.SM.C0226","AO.SM.C0227"]){
+    const next=x.project(cueId);
+    assert.equal(next.reason,null,form+" suppressed required Communion prayer "+cueId);
+    assert.ok(next.priestVoice,form+" lost next prayer voice "+cueId);
+  }
+}
 const lowResponse=formState.low.responseEvents.find(x=>x.cueId==="AO.SM.C0076");
 assert.equal(lowResponse.owner,"MINISTER_OR_SERVER");
 assert.equal(lowResponse.defaultUserResponse,false);
