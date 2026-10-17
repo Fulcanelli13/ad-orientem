@@ -20,6 +20,7 @@ header h1{font:normal clamp(21px,2.4vw,31px)/1.15 Georgia,serif;margin:5px 0 0}
 .topactions .occasion-control{font:12px/1.4 system-ui,sans-serif;color:var(--muted);display:flex;align-items:center;gap:6px}
 .topactions select{max-width:170px;background:#18212b;border:1px solid var(--line);border-radius:7px;color:var(--text);padding:9px 7px;font:12px system-ui,sans-serif}
 .occasion-hint{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:0 0 12px}
+.m3-language-notice{color:#bdad91;font:11px/1.5 system-ui,sans-serif;margin:8px 0;padding:6px 8px;border-left:2px solid #8d7c55}
 .occasion-note{border:1px solid #4a3e33;background:#1b1c20;border-radius:9px;padding:11px;margin:12px 0}
 .occasion-note strong{color:var(--gold);font:14px Georgia,serif}
 .occasion-note p{font:12px/1.55 system-ui,sans-serif;color:var(--muted);margin:8px 0 0}
@@ -195,7 +196,8 @@ body[data-experience=discover] .info{min-height:0}
 <div class="wrap">
 <header>
 <div><div class="kicker">Ad Orientem · The Visible Mass</div><h1>Explore the sanctuary</h1></div>
-<div class="topactions"><label class="occasion-control" for="occasion-select">Occasion <select id="occasion-select" aria-label="Explore the church on a particular liturgical occasion">
+<div class="topactions"><label class="occasion-control" for="study-language">Study language
+<select id="study-language" aria-label="Research question language"><option value="en">English</option><option value="fr">Français · brouillon</option></select></label><label class="occasion-control" for="occasion-select">Occasion <select id="occasion-select" aria-label="Explore the church on a particular liturgical occasion">
 <option value="ordinary">Ordinary arrangement</option><option value="passion">Passiontide</option><option value="thursday">Holy Thursday</option><option value="friday">Good Friday</option><option value="vigil">Easter Vigil</option><option value="tenebrae">Tenebrae Office</option>
 </select></label><button id="show-markers" type="button" aria-pressed="true">Objects visible</button><a href="https://commons.wikimedia.org/wiki/Category:Brompton_Oratory,_Interior" target="_blank" rel="noopener">Photo sources ↗</a></div>
 </header>
@@ -205,6 +207,7 @@ body[data-experience=discover] .info{min-height:0}
 <button id="experience-discover" data-experience="discover" type="button" aria-pressed="false"><span>Discover</span><small>Follow the Guide</small></button>
 <button id="experience-understand" data-experience="understand" type="button" aria-pressed="false" disabled><span>Understand</span><small>Object &amp; sources</small></button>
 </nav>
+<p class="m3-language-notice" id="m3-language-notice" hidden>French translations are editorial study drafts attached to original VMQ records. The glossary, Guide controls and other content remain in English until separately approved.</p>
 <p class="occasion-hint" id="occasion-hint" aria-live="polite" hidden>Occasion study only: the original Brompton photograph has not been altered to represent this rite.</p>
 <main>
 <section aria-label="Church photograph and clickable objects">
@@ -292,7 +295,7 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null,experience:"explore",returnExperience:"explore"};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null,experience:"explore",returnExperience:"explore",studyLang:new URLSearchParams(location.search).get("lang")==="fr"?"fr":"en",m3Index:null};
 const GUIDED_OBJECTS=new Set(["AL01","AL06","AL07","AL19","SN02","SN04"]);
 function clearGuidedPreview(){
  delete $("photo-canvas").dataset.guidePreview;
@@ -499,14 +502,20 @@ function renderOccasionNote(){
  }
 }
 function findExactAnswer(questionId){return [ ...(state.historyPack?.answers||[]),...(state.functionPack?.answers||[])].find(x=>x.question_id===questionId&&x.object_id===state.selected);}
+function languageView(id){return state.m3Index?.languageRecord(id,state.studyLang)??null;}
+function questionHeading(q){return languageView(q.id)?.question??q.question.en;}
 function renderExactHistoricalAnswer(questionId){
  const note=findExactAnswer(questionId);
  $("answer-pending").hidden=!!note;$("historical-answer").hidden=!note;
  $("historical-answer-sources").replaceChildren();
  if(!note)return;
- $("historical-answer-lead").textContent=note.answer_en;
- $("historical-answer-context").textContent=note.explanation_en;
- $("historical-answer-guard").textContent="Historic source (1907–1914), not a current rubric. Review condition: "+note.editorial_guard.replaceAll("_"," ").toLowerCase()+".";
+ const localized=languageView(questionId);
+ $("historical-answer-lead").textContent=localized?.answer??note.answer_en;
+ $("historical-answer-context").textContent=localized?.context??note.explanation_en;
+ const guard="Historic source (1907–1914), not a current rubric. Review condition: "+note.editorial_guard.replaceAll("_"," ").toLowerCase()+".";
+ $("historical-answer-guard").textContent=localized?.language==="fr"?
+  "Traduction française provisoire — non approuvée. Source historique (1907–1914), non prescriptive pour la liturgie de 1962. Vérification : "+
+   (localized.triage==="1962_RITUAL_CROSSCHECK_REQUIRED"?"confrontation aux rubriques de 1962 requise.":localized.triage==="HISTORICAL_REVIEW_REQUIRED"?"relecture historique requise.":"relecture éditoriale requise.") :guard;
  for(const source of note.source_evidence){
    const a=document.createElement("a");a.href=source.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=(source.title||source.section||source.article_section||"Historical source")+" ↗";
    $("historical-answer-sources").append(a,document.createTextNode(" · "));
@@ -540,7 +549,7 @@ function openQuestion(q){
  if(!q||state.selected!==q.primary_object_id)return false;
  state.question=q.id;
  $("question-list").hidden=true;$("question-detail").hidden=false;
- $("question-title").textContent=q.question.en;
+ $("question-title").textContent=questionHeading(q);
  $("question-type").textContent=q.category_label||q.category;
  renderExactHistoricalAnswer(q.id);renderPublishedReferences(q.id);
  // A hotspot or suggestion does not count as read: the original question
@@ -578,7 +587,7 @@ async function guideInit(pilot){
 function buildQuestionButton(q){
  const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
  if(findExactAnswer(q.id))b.classList.add("has-research");
- const l=document.createElement("span");l.textContent=q.question.en;const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
+ const l=document.createElement("span");l.textContent=questionHeading(q);const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
  b.onclick=()=>openQuestion(q);
  return b;
 }
@@ -633,6 +642,21 @@ $("return-to-church").onclick=closeCard;
 $("inspection-photo").onerror=()=>{$("inspection-photo").hidden=true;$("inspection-failed").hidden=false;};
 $("back-to-object").onclick=()=>{state.question=null;$("question-detail").hidden=true;$("question-list").hidden=false;$("question-items").querySelector("button")?.focus({preventScroll:true});};
 $("more-questions").onclick=()=>{state.showAll=!state.showAll;renderQuestions();$("more-questions").focus({preventScroll:true});};
+$("study-language").value=state.studyLang;
+$("m3-language-notice").hidden=state.studyLang!=="fr";
+$("study-language").onchange=()=>{
+ state.studyLang=$("study-language").value==="fr"?"fr":"en";
+ document.documentElement.lang=state.studyLang;
+ $("m3-language-notice").hidden=state.studyLang!=="fr";
+ if(state.selected){
+  renderQuestions();
+  if(state.question){
+   const q=state.questions.find(q=>q.id===state.question);
+   if(q)$("question-title").textContent=questionHeading(q);
+   renderExactHistoricalAnswer(state.question);
+  }
+ }
+};
 $("occasion-select").onchange=()=>{
  state.occasion=$("occasion-select").value;
  $("occasion-hint").hidden=state.occasion==="ordinary";
@@ -657,7 +681,8 @@ async function loadCanon(){
   fetch("LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Source crosswalk HTTP "+r.status);return r.json();}),
   fetch("LITURGICAL_EXPLANATIONS_P1_5_FIRST20_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Explanations HTTP "+r.status);return r.json();}),
   fetch("HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json").then(r=>{if(!r.ok)throw Error("History HTTP "+r.status);return r.json();}),
-  fetch("HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Functional Q&A HTTP "+r.status);return r.json();})
+  fetch("HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Functional Q&A HTTP "+r.status);return r.json();}),
+   fetch("VMQ_FRENCH_EDITORIAL_OVERLAY_20261018.v1.json").then(r=>{if(!r.ok)throw Error("French research preview HTTP "+r.status);return r.json();})
  ]);
  outcome.slice(0,3).forEach(x=>{if(x.status==="fulfilled"){(x.value.entries||[]).forEach(e=>state.entries.set(e.id,e));}});
  if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];state.objects=outcome[3].value.objects||[];}
@@ -665,6 +690,12 @@ async function loadCanon(){
  if(outcome[6].status==="fulfilled"){state.explanationPack=outcome[6].value;}
  if(outcome[7].status==="fulfilled"){state.historyPack=outcome[7].value;}
  if(outcome[8].status==="fulfilled"){state.functionPack=outcome[8].value;}
+ if(outcome[3].status==="fulfilled"&&outcome[7].status==="fulfilled"&&outcome[8].status==="fulfilled"&&outcome[9].status==="fulfilled"){
+  try{
+   const mod=await import("./visible-mass-m3-localization.mjs");
+   state.m3Index=mod.buildVisibleMassM3Index(outcome[3].value,outcome[7].value,outcome[8].value,outcome[9].value);
+  }catch(error){console.warn("M3 French research preview is gated: owner records or translations failed reconciliation",error);}
+ }
  if(outcome[4].status==="fulfilled"){
    state.inspections=outcome[4].value.assets||[];
    const root=$("inspection-choices");root.replaceChildren();
@@ -690,7 +721,7 @@ if(window.frameElement)document.body.classList.add("embedded");
 setExperience("explore");
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
- status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,studyLanguage:state.studyLang,translatedSourceCandidates:state.m3Index?.count??0,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  experience:()=>state.experience,
  guideStatus:()=>state.guide?.status()??null,
  chooseTrail:id=>state.guide?.chooseTrail(id)??false,
