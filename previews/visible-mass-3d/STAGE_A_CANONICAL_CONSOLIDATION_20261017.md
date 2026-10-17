@@ -59,3 +59,16 @@ The P5 six object→Guide edges on four objects are still **contextual candidate
 4. **Ceremonial integration later:** use source-certified objective engine or R17 cue engine for relevant selected action links, not a newly written 168/177 traversal. Requiem, processions and special-day branches remain explicit form-specific gates.
 
 **Stop condition:** No further standalone prototype release, mass study copy rewrite, new object inventory or new object-specific rubric until the current main/source-owner parity checks and six-hotspot release statuses are resolved.
+
+
+## 17 October continuation — production-main sync and first integration
+
+The historical divergence recorded above applied to the pre-sync branch. The branch was synchronized with current `main` at commit `86156ccffd1c6f18eddcd10b7724a3b45179065a` through a **normal two-parent merge commit** `7cbedd2b93cdd09a5c8f2eea11588080ac5f587a`. Before moving the branch ref, its new tree was checked to preserve every `main` file exactly, and every one of the **62 unique Visible Mass additions**. The PR then compared **136 commits ahead, zero behind** `main`. This sync changes only the draft feature branch, **not production `main`**; future new main commits must still be checked before merge.
+
+The synchronized draft now includes the production `src/learn/mass-explorer.js` with the already-shipping **84 EN/FR prayer readings** and the existing Mass Explorer navigation. The reader route was not rewritten.
+
+The authoritative existing `sanctuary-hotspot-pilot.html` already dynamically loads both Phase 1.5 historical answer packs (**28 + 69 = 97 research drafts**) and the separate first 20 liturgical explanations. No new content registry was created. The sole new runtime handoff is `photographic-published-explorer-handoff.mjs`: it reads the six old P5 contextual relationship candidates; shows none by default; permits the preview panel to display them only as unapproved research candidates; and calls the actual `AO_MODULES.open("learn.mass_explorer",{momentKey,trigger})` or existing `AO_MASS_EXPLORER_V1.open` when hosted inside the app. Standalone mode returns an explicit unavailable reason, with no false route or duplicated Guide.
+
+`tests/visible-mass-published-explorer-handoff.mjs` now verifies original guide IDs, no Low-to-Sung leakage, return-focus arguments, refusal of absent runtime, and a mandatory 84-reading parity check. `.github/workflows/visible-mass-p4-bridge.yml` runs it alongside the Stage A source inventory test. The photographic pilot itself remains research-only; no runtime VISIBLE MASS entry has been added to the production app, no source candidate edge has been certified as a rubric, and PR #1309 remains draft.
+
+**Next acceptance gate:** pass the latest post-sync CI and actual-device browser QA, then integrate the photographic experience into the app shell with source-owned EN/FR and the existing bottom navigation. Do not expose research answers as published teaching or lift the six tentative links into the Mass reader without explicit editorial approval.
