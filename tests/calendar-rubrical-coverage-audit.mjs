@@ -46,8 +46,8 @@ for(const row of report.screeningOnly){
  assert.equal(assessed.autoCreatesCommemoration,false);
  assert.equal(assessed.fixedFeastClass,3);
  assert.equal(assessed.scope,"1962_GENERAL_ROMAN_ONLY");
- assert.match(assessed.historicalWitness.url,/^https:\\/\\/ordo\\.fsspx\\.org\\/calendar\\/202[678]\\/\\d{1,2}$/);
- assert.match(assessed.secondWitness.url,/^https:\\/\\/gcatholic\\.org\\/calendar\\/202[678]\\/Extraordinary-en$/);
+ assert.equal(assessed.historicalWitness.url,"https://ordo.fsspx.org/calendar/"+Number(row.date.slice(0,4))+"/"+Number(row.date.slice(5,7)));
+ assert.equal(assessed.secondWitness.url,"https://gcatholic.org/calendar/"+Number(row.date.slice(0,4))+"/Extraordinary-en");
  assert.deepEqual(assessed.assessedUnder,[
    "RG "+(assessed.generalSundayClass===1?"15":"16"),
    "RG 93","RG 95","RG 109",
