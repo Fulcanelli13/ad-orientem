@@ -230,4 +230,57 @@ for(const edition of ["cpdv-2009","dr-challoner"]){
   "The two installed Catholic witnesses require the dragon transition and second beast");
 }
 
+
+const H42_PRINCIPAL_VERSES=181;
+const H42_PRINCIPAL_IDS=["H42-01","H42-02","H42-03","H42-04","H42-05","H42-06","H42-07"];
+let h42PrincipalCount=0;
+for(const [idx,unit] of h42.units.entries()){
+ assert.equal(unit.unitId,H42_PRINCIPAL_IDS[idx]);
+ assert.equal(unit.principalEdition,"cpdv-2009");
+ assert.equal(unit.principalStatus,"SOURCE_SELECTED_CONTINUITY_PENDING");
+ assert.ok(unit.principalReadings.length>0&&unit.candidateReadings.length>0);
+ assert.notEqual(unit.principalReadings,unit.candidateReadings,
+  "The concise and expanded source selection must be separately retained");
+ let lastBook=null,lastPosition=-1;
+ for(const ref of unit.principalReadings){
+  const parsed=parseScriptureContext(ref);
+  assert.ok(parsed,"All principal references must parse: "+ref);
+  const p=parsed.passage;
+  const current=p.chapter*1000+p.verseStart;
+  assert.ok(lastBook===null||lastBook===p.book&&current>lastPosition,
+    "H42 independent witness should read forward: "+unit.unitId+" "+ref);
+  lastBook=p.book;lastPosition=p.chapter*1000+p.verseEnd;
+  const cp=sourceVerses("cpdv-2009",p.book),dr=sourceVerses("dr-challoner",p.book);
+  for(let v=p.verseStart;v<=p.verseEnd;v++){
+   h42PrincipalCount++;
+   assert.ok(cp.has(p.chapter+":"+v),"Absent CPDV H42 verse "+ref);
+   if(p.book==="Esther"){
+    const linked=estherParallelSpans(esther({chapter:p.chapter,verseStart:v}),
+       "cpdv-2009","dr-challoner");
+    assert.ok(linked,"Unmapped principal Esther verse "+p.chapter+":"+v);
+    for(const span of linked)for(let w=span.verseStart;w<=span.verseEnd;w++)
+     assert.ok(dr.has(span.chapter+":"+w),"Unresolved Douay principal Esther verse");
+   }else{
+    assert.ok(dr.has(p.chapter+":"+v),"Missing DR companion H42 verse "+ref);
+   }
+  }
+ }
+ assert.equal(unit.approved,false,"Short excerpts are research, never publish by default");
+}
+assert.equal(h42PrincipalCount,H42_PRINCIPAL_VERSES);
+assert.equal(correctionDelta.principalSelectionCount.principalVerseUnits,H42_PRINCIPAL_VERSES);
+assert.ok(h42.units.find(x=>x.unitId==="H42-05").principalReadings.includes("Tobit 3:24–25"),
+ "Raphael's initial intercession role must be represented");
+assert.ok(h42.units.find(x=>x.unitId==="H42-05").principalReadings.includes("Tobit 12:12–15"),
+ "The angelic identity revelation must not be cut off");
+assert.ok(h42.units.find(x=>x.unitId==="H42-06").principalReadings.includes("Judith 7:6–7"),
+ "The siege threat must not be cut from Judith's climax");
+assert.ok(h42.units.find(x=>x.unitId==="H42-07").principalReadings.includes("Esther 14:16–17"),
+ "The Purim outcome may not suppress the defensive violence");
+const workbenchAudit=readFileSync(
+ new URL("../previews/scripture-mining-workbench-20261017.html",import.meta.url),"utf8");
+assert.match(workbenchAudit,/historiaReadingDepth/);
+assert.match(workbenchAudit,/principalReadings/);
+assert.match(workbenchAudit,/EXPANDED RESEARCH READING/);
+
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
