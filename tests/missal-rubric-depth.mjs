@@ -16,7 +16,7 @@ const mk=(cue,latin,vernacular)=>({
 // All fifteen "Latin" donor brackets are in fact editorial ENGLISH.
 // They have an existing, independently preserved French byCue witness.
 const rubrics=sung.blocks.flatMap(b=>b.units.filter(u=>
- /^\\s*\\[/.test(String(u.latin??""))));
+ /^\s*\[/.test(String(u.latin??""))));
 assert.equal(rubrics.length,15);
 for(const u of rubrics){
  assert.ok(french.byCue[u.cue_id],"Missing French bracket source: "+u.cue_id);
@@ -26,10 +26,10 @@ for(const u of rubrics){
  assert.equal(fr.translationAvailable,true);
  assert.equal(fr.isLiturgicalLatin,false);
  assert.equal(fr.requestedLanguage,"fr");
- assert.equal(fr.text,french.byCue[u.cue_id].replace(/^\\[([\\s\\S]*)\\]$/,"$1").trim());
- assert.ok(!/^\\[/.test(fr.text),"Rubric displayed with donor square brackets");
+ assert.equal(fr.text,french.byCue[u.cue_id].replace(/^\[([\s\S]*)\]$/,"$1").trim());
+ assert.ok(!/^\[/.test(fr.text),"Rubric displayed with donor square brackets");
  const en=missalSourceRubricCopy(mk(u.cue_id,u.latin,u.english),{language:"en"});
- assert.equal(en.text,u.english.replace(/^\\[([\\s\\S]*)\\]$/,"$1").trim());
+ assert.equal(en.text,u.english.replace(/^\[([\s\S]*)\]$/,"$1").trim());
 }
 assert.equal(missalSourceRubricCopy({kind:"TEXT",primary:"Hoc est enim"}),null);
 const host=mk("AO.SM.C0174",
