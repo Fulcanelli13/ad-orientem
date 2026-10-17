@@ -1,0 +1,231 @@
+{
+  "schema": "ao.historia.v18.part-ii-correction-delta.v1",
+  "sourceWorkbook": "Ad_Orientem_Historia_Salutis_Master_Matrix_v18_Abridgment_Decisions.xlsx",
+  "sourceTab": "V18 Ordered Verse Segments",
+  "sourceRowCount": 217,
+  "scope": "H42 and H76 only; other six chapters remain reviewed in workbook/chat",
+  "originalSourcePreserved": true,
+  "releaseStatus": "EDITORIAL_RESEARCH_ONLY_NOT_APPROVED",
+  "sourceAddressing": "Scripture references in v18 are not consistently edition-tagged. Do not import traditional Esther references as CPDV by matching numbers.",
+  "editPolicy": "Overlay keyed by H chapter and exact original reference; never overwrite v18 or canonical 151 event IDs.",
+  "chapters": [
+    {
+      "chapterId": "H42",
+      "title": "Faithfulness under Foreign Rule",
+      "sourceTitle": "Faithfulness in Exile",
+      "genre": "INDEPENDENT_BIBLICAL_WITNESSES",
+      "units": [
+        {
+          "unitId": "H42-01",
+          "v18Order": 1,
+          "originalReference": "Daniel 1:1–21",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "SHORTEN",
+          "candidateReadings": [
+            "Daniel 1:1–8",
+            "Daniel 1:11–21"
+          ],
+          "editorialRationale": "Narrative of refusal and outcome; verify skipped dialogue.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H42-02",
+          "v18Order": 2,
+          "originalReference": "Daniel 3:24–90",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND_AND_SPLIT",
+          "candidateReadings": [
+            "Daniel 3:1",
+            "Daniel 3:4–6",
+            "Daniel 3:8",
+            "Daniel 3:12–25",
+            "Daniel 3:49–52",
+            "Daniel 3:88–97"
+          ],
+          "editorialRationale": "Original omits accusation and rescue. Keep complete Prayer of Azariah and Song of Three Young Men as distinct canonical full reading, Daniel 3:25–90.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H42-03",
+          "v18Order": 3,
+          "originalReference": "Daniel 6:10–24",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND",
+          "candidateReadings": [
+            "Daniel 6:4–24",
+            "Daniel 6:26–28"
+          ],
+          "editorialRationale": "Restore decree and concluding proclamation.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H42-04",
+          "v18Order": 4,
+          "originalReference": "Ezekiel 1:1–28",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "RETAIN",
+          "candidateReadings": [
+            "Ezekiel 1:1–28"
+          ],
+          "editorialRationale": "Independent vision with its own prophetic setting.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H42-05",
+          "v18Order": 5,
+          "originalReference": "Tobit 1:10–22",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "RECONSTRUCT",
+          "candidateReadings": [
+            "Tobit 1:1–3",
+            "Tobit 1:16–22",
+            "Tobit 2:1–14",
+            "Tobit 3:7–17",
+            "Tobit 5:1–17",
+            "Tobit 6:1–9",
+            "Tobit 7:9–17",
+            "Tobit 8:1–9",
+            "Tobit 11:1–19",
+            "Tobit 12:11–22"
+          ],
+          "editorialRationale": "Independent family narrative, not Daniel's timeline. All cuts require source-context check.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H42-06",
+          "v18Order": 6,
+          "originalReference": "Judith 13:1–20",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "RECONSTRUCT",
+          "candidateReadings": [
+            "Judith 7:1–7",
+            "Judith 7:19–32",
+            "Judith 8:1–8",
+            "Judith 8:28–36",
+            "Judith 9:1–14",
+            "Judith 10:1–10",
+            "Judith 12:10–20",
+            "Judith 13:1–20",
+            "Judith 15:1–7"
+          ],
+          "editorialRationale": "Restore siege, mission, climax and deliverance. Genre is not historical itinerary.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H42-07",
+          "v18Order": 7,
+          "originalReference": "Esther 4:1–17",
+          "sourceEdition": "UNDETERMINED_IN_V18",
+          "action": "RECONSTRUCT_AND_MAP_EDITION",
+          "candidateReadings": [
+            "Esther 2:15–18",
+            "Esther 3:8–15",
+            "Esther 4:1–17",
+            "Esther 13:8–15",
+            "Esther 14:1–19",
+            "Esther 15:1–19",
+            "Esther 7:1–10",
+            "Esther 8:3–8"
+          ],
+          "editorialRationale": "REFERENCE HOLD: these are candidate traditional Douay-style locators, not verified CPDV equivalents. Greek additions and ending require source-edition collation.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        }
+      ]
+    },
+    {
+      "chapterId": "H76",
+      "title": "The Great Conflict",
+      "sourceTitle": "The Great Conflict",
+      "genre": "APOCALYPTIC_VISION_SEQUENCE",
+      "units": [
+        {
+          "unitId": "H76-01",
+          "v18Order": 1,
+          "originalReference": "Revelation 6:1–8",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "RETAIN",
+          "candidateReadings": [
+            "Revelation 6:1–8"
+          ],
+          "editorialRationale": "Four horsemen as first vision; martyrs 6:9–11 are linked companion.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H76-02",
+          "v18Order": 2,
+          "originalReference": "Revelation 8:1–6",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND",
+          "candidateReadings": [
+            "Revelation 8:1–13"
+          ],
+          "editorialRationale": "Trumpet introduction otherwise stops before the first trumpet sounds.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H76-03",
+          "v18Order": 3,
+          "originalReference": "Revelation 12:1–17",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND_WITH_EDITION_CHECK",
+          "candidateReadings": [
+            "Revelation 12:1–17"
+          ],
+          "editorialRationale": "Retain complete source vision; validate verse 18 / 13:1 boundary per edition before expanding.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H76-04",
+          "v18Order": 4,
+          "originalReference": "Revelation 13:1–10",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND",
+          "candidateReadings": [
+            "Revelation 13:1–18"
+          ],
+          "editorialRationale": "Retain both beasts; do not stop after first beast.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        },
+        {
+          "unitId": "H76-05",
+          "v18Order": 5,
+          "originalReference": "Revelation 18:1–8",
+          "sourceEdition": "CHECK_REQUIRED",
+          "action": "EXPAND_AND_SPLIT",
+          "candidateReadings": [
+            "Revelation 17:1–6",
+            "Revelation 17:12–18",
+            "Revelation 18:1–8",
+            "Revelation 18:20–24"
+          ],
+          "editorialRationale": "Identify Babylon and preserve final judgment. Linked Revelation 14:1–5 as hope counterpoint.",
+          "textReviewed": false,
+          "rightsReviewed": false,
+          "approved": false
+        }
+      ]
+    }
+  ]
+}
