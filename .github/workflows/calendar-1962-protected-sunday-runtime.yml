@@ -47,7 +47,7 @@ jobs:
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Observe all 24 live DayResolver and Proper dispositions
-        run: node tests/calendar-1962-protected-sunday-24-runtime-e2e.mjs
+        run: node tests/calendar-1962-protected-sunday-24-runtime-e2e.mjs --strict
       - name: Preserve per-date production evidence
         if: always()
         uses: actions/upload-artifact@v4
