@@ -286,7 +286,8 @@ function select(id,from,{guided=false}={}){
  if(!state.selected)state.returnScroll=window.scrollY;
  state.selected=id;state.question=null;state.showAll=false;
  if(from)state.returnFocus=from;
- $("photo-canvas").dataset.guidedFocus=guided&&GUIDED_OBJECTS.has(id)?id:"";
+ if(guided&&GUIDED_OBJECTS.has(id))$("photo-canvas").dataset.guidedFocus=id;
+ else delete $("photo-canvas").dataset.guidedFocus;
  $("intro-card").hidden=true;$("object-card").hidden=false;
  $("object-state").textContent=(spot.inspection?"Separate reference · ":spot.referenceOnly?"Question-only object · ":"Object "+spot.n+" · ")+(spot.match==="D"?"Dictionary entry":spot.match==="M"?"Glossary gap":"Related dictionary entry");
  $("inspection-provenance").hidden=!(spot.inspection||spot.referenceOnly);
