@@ -12,6 +12,7 @@ import {massStudyStages,massStudyPathsHtml,massStudyPathsCss} from "./mass-study
 import {projectPublishedMassPrayerContexts,publishedMassPrayerContextHtml} from "./mass-explorer-published-prayer-context.js";
 import {verifiedMassExplorerPrayerReadings} from "./mass-explorer-prayer-readings.js";
 import {approvedMassExplorerStudies,massExplorerStudyForBlock,massExplorerApprovedStudyHtml} from "./mass-explorer-study-publication.js";
+import {selectedCalendarProperProjection,selectedCalendarProperSlotHtml} from "./mass-explorer-selected-calendar-proper.js";
 
 export const MASS_EXPLORER_ROUTE="learn.mass_explorer";
 export const MASS_EXPLORER_VERSION="mass-explorer-p1-sung-guide-v1";
@@ -119,11 +120,17 @@ function guideSources(guide,fr){
        esc(pick(fr,"Reference ","Référence ")+(i+1))+' ↗</a></li>').join("")+'</ol></details>';
 }
 
-function sourceBlockHtml(catalog,source,fr){
+function sourceBlockHtml(catalog,source,fr,selectedCalendarProper=null){
   if(!source)return "";
-  if(source.Proper_Slot)return '<section id="ao-mx-prayer" class="aoMXText" data-ao-mx-anchor="prayer"><h2>'+esc(source.Title)+'</h2><p class="aoMXQuiet">'+esc(pick(fr,
-    "This is a variable Proper text. It must be supplied by the selected Mass; no generic text is substituted.",
-    "Ce texte du Propre varie selon la Messe choisie ; aucun texte générique n’est substitué."))+'</p></section>';
+  if(source.Proper_Slot){
+    const selectedText=selectedCalendarProperSlotHtml(source.Proper_Slot,selectedCalendarProper,{french:fr});
+    return '<section id="ao-mx-prayer" class="aoMXText" data-ao-mx-anchor="prayer">'+
+      '<h2>'+esc(source.Title)+'</h2>'+
+      (selectedText||'<p class="aoMXQuiet">'+esc(pick(fr,
+        "This is a variable Proper text. No fully verified Proper for the selected Calendar day and ordinary Sung Mass is available here; no generic text is substituted.",
+        "Ce texte du Propre varie selon la Messe choisie. Aucun Propre entièrement vérifié n’est disponible ici pour le jour choisi au Calendrier et la messe chantée ordinaire ; aucun texte générique n’est substitué."))+'</p>')+
+      '</section>';
+  }
   const rows=(source.units||[]).filter(unit=>unit?.latin||unit?.english).map(unit=>{
     const translation=fr?catalog.frenchByCue[unit.cue_id]:unit.english;
     // Canonical clock, not the legacy source field name, distinguishes
@@ -168,7 +175,7 @@ export function massExplorerIndexHtml(catalog,{french=false}={}){
     '</p></div><div class="aoMXIndexSwitch"><button type="button" data-ao-mx-view="map">'+pick(french,"Visual Mass Map","Carte visuelle de la Messe")+'</button></div>'+
     rows+'</main>';
 }
-export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={}){
+export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false,selectedCalendarProper=null}={}){
   const moment=getMassExplorerMoment(catalog,key,{form:"SUNG"});
   if(!moment)return "";
   const {guide,blocks}=moment;
@@ -202,7 +209,7 @@ export function massExplorerMomentHtml(catalog,key,{blockId=null,french=false}={
    (blocks.length?'<nav class="aoMXBlockIndex" aria-label="'+esc(pick(french,"Prayers and ceremonies","Prières et cérémonies"))+'">'+
      blocks.map(b=>'<button type="button" data-ao-mx-block="'+esc(b.Block_ID)+'" aria-current="'+(b===selected?"true":"false")+'">'+esc(b.Title)+'</button>').join("")+
      '</nav>':'<p class="aoMXQuiet">'+pick(french,"This Guide moment has no ordinary Sung source block; ceremony depends on the selected rite.","Cette étape du Guide ne comporte pas de texte ordinaire de la Messe chantée ; la cérémonie dépend du rite choisi.")+'</p>')+
-   sourceBlockHtml(catalog,selected,french)+
+   sourceBlockHtml(catalog,selected,french,selectedCalendarProper)+
    publishedMassPrayerContextHtml(publishedContext,{french,reading:prayerReading})+
    (approvedStudy?massExplorerApprovedStudyHtml(approvedStudy,{french,
      sourceTitle:studyStage?(french?studyStage.title.fr:studyStage.title.en):approvedStudy.stageId}):"")+
@@ -248,6 +255,7 @@ export function massExplorerCss(){
   ".aoMXStudySwitch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:min(820px,100%);margin:0 auto;padding:15px 16px 2px}.aoMXStudySwitch button{min-height:50px;padding:9px 11px;border:1px solid var(--ao-rule,#393c40);border-radius:10px;color:inherit;background:var(--ao-surface-1,#101821);font:500 .88rem/1.4 var(--ao-font-ui,system-ui);cursor:pointer}.aoMXStudySwitch button[aria-current=page]{border-color:var(--liturgical,#c9ad78);color:var(--liturgical,#c9ad78)}.aoMXStudySwitch button:disabled{opacity:.35;cursor:default}.aoMXThemePage .aoMXStudyPaths{border-top:0;margin-top:0}",
   ".aoMXReadingNav{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;margin:12px 0 18px;padding:7px 0}.aoMXReadingNav button{flex:0 0 auto;min-height:40px;padding:9px 11px;border:1px solid var(--ao-rule,#393c40);border-radius:9px;background:var(--ao-surface-1,#101821);color:var(--liturgical,#c9ad78);font:.75rem/1.35 var(--ao-font-ui,system-ui);cursor:pointer}#ao-mass-explorer-root [data-ao-mx-anchor]{scroll-margin-top:85px}.aoMXFormationLink{margin:22px 0}.aoMXFormationLink h2,.aoMXRelated>h2{font:500 1.35rem/1.4 var(--ao-font-display,Georgia,serif)}.aoMXFormationLink p{line-height:1.6;margin:7px 0 11px}",
   ".aoMXDeepStudy{margin:16px 0 24px;border:1px solid var(--ao-rule,#393c40);border-radius:12px;background:var(--ao-surface-1,#101821);padding:12px 16px;overflow-wrap:anywhere}.aoMXDeepStudy>summary{cursor:pointer;font:500 1.15rem/1.45 var(--ao-font-display,Georgia,serif);color:var(--liturgical,#c9ad78);padding:5px 0;min-height:44px}.aoMXDeepStudy>small{display:block;color:var(--ao-text-muted,#adb2b7);font:.66rem/1.45 var(--ao-font-ui,system-ui);letter-spacing:.09em;margin-top:10px}.aoMXDeepStudy>p{line-height:1.68}.aoMXDeepSection{border-top:1px solid var(--ao-rule,#393c40);margin-top:9px;padding:9px 0}.aoMXDeepSection>summary{min-height:42px;cursor:pointer;font:500 1rem/1.5 var(--ao-font-display,Georgia,serif)}.aoMXDeepSection>p{margin:12px 0 4px;line-height:1.72}.aoMXDeepStudy:focus-within{border-color:var(--liturgical,#c9ad78)}",
+  ".aoMXSelectedProper{border-left:2px solid var(--liturgical,#c9ad78);padding:11px 0 2px 14px}.aoMXProperProvenance{color:var(--liturgical,#c9ad78);font:600 .75rem/1.5 var(--ao-font-ui,system-ui);margin:5px 0 17px}.aoMXProperPrayer{padding:10px 0 15px;border-bottom:1px solid var(--ao-rule,#393c40)}.aoMXProperPrayer h3{font:500 1.14rem/1.45 var(--ao-font-display,Georgia,serif);margin:3px 0 11px}.aoMXProperPrayer .aoMXLatin,.aoMXProperPrayer .aoMXTranslation{white-space:pre-line;overflow-wrap:anywhere}",
   ".aoMXPrayerReading{margin:4px 0 15px}.aoMXPrayerReading h3{font:500 1.14rem/1.4 var(--ao-font-display,Georgia,serif);color:var(--liturgical,#c9ad78);margin:6px 0}.aoMXPrayerReading p{line-height:1.62;margin:9px 0}.aoMXReadingConditional{font:400 .8rem/1.5 var(--ao-font-ui,system-ui);color:var(--ao-text-muted,#adb2b7);padding:9px 12px;border-left:2px solid var(--liturgical,#c9ad78);background:var(--ao-bg-canvas,#080c12)}",
   ".aoMXPrayerMeaning{margin:19px 0 24px;border:1px solid var(--ao-rule,#393c40);border-radius:12px;background:var(--ao-surface-1,#101821);padding:16px}.aoMXPrayerMeaning h2{font:500 1.4rem/1.4 var(--ao-font-display,Georgia,serif);margin:2px 0 12px}.aoMXMeaningGroup{padding:10px 0;border-top:1px solid var(--ao-rule,#393c40)}.aoMXMeaningGroup small{display:block;color:var(--liturgical,#c9ad78);font:600 .69rem/1.45 var(--ao-font-ui,system-ui);letter-spacing:.02em}.aoMXMeaningGroup p{line-height:1.65;margin:9px 0 12px;overflow-wrap:anywhere}.aoMXPrayerMeaning>.aoMXQuiet{margin:12px 0 0}",
   ".aoMXDetails{border-top:1px solid var(--ao-rule,#393c40);margin:17px 0;padding:9px 0}.aoMXDetails summary{min-height:44px;cursor:pointer;color:var(--liturgical,#c9ad78);font:500 1.05rem/1.5 var(--ao-font-display,Georgia,serif);padding:10px 0}.aoMXDetails p{white-space:pre-line;line-height:1.65}.aoMXDetails a{color:var(--liturgical,#c9ad78);overflow-wrap:anywhere}.aoMXQuiet{font:400 .8rem/1.52 system-ui;color:var(--ao-text-muted,#adb2b7)}",
@@ -289,7 +297,10 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
       '<div><small>FORMATION</small><strong>'+pick(fr,"Understand the Mass","Comprendre la Messe")+'</strong></div>'+
       '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
       switcher+
-      (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr}):
+      (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr,
+        selectedCalendarProper:selectedCalendarProperProjection(
+          win?.AO_RUNTIME_V8?.store?.getState?.(),{french:fr}
+        )}):
         indexView==="themes"?themesPage:
         indexView==="map"?massMapHtml(catalog,{french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
     const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
