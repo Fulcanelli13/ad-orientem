@@ -26,7 +26,8 @@
     "unchanged": 22,
     "editionCorrections": 2,
     "priorContinuityRestorations": 1,
-    "literaryContinuityExpansions": 7
+    "literaryContinuityExpansions": 6,
+    "literaryContextRebalances": 1
   },
   "candidateSourceEditions": [
     "cpdv-2009",
@@ -120,8 +121,7 @@
       "sourceContinuityExpansions": [
         "H22-01",
         "H30-01",
-        "H33-01",
-        "H39-01"
+        "H33-01"
       ],
       "trims": [
         "H35-02",
@@ -131,7 +131,10 @@
       "editsToCanonicalBible": false,
       "approved": false,
       "oralReadThrough": false,
-      "contractsPassed": false
+      "contractsPassed": false,
+      "sourceSpanRebalances": [
+        "H39-01"
+      ]
     }
   },
   "rules": [
@@ -1231,8 +1234,8 @@
         "2Kings 17:3–8",
         "2Kings 17:13–18"
       ],
-      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
-      "reason": "Original 17:5 begins 'And he wandered' without naming the Assyrian king. Verses 3–4 establish Shalmaneser, Hoshea, rebellion and the siege before Samaria's fall.",
+      "selectionStatus": "LITERARY_CONTEXT_REBALANCED",
+      "reason": "Samaria's fall had an unnamed assailant and should begin by identifying Shalmaneser in 2 Kings 17:3–4; verses 9–12 are omitted because 17:13–18 already interprets Israel's apostasy. This is a shorter overall source passage with a small but necessary pre-original antecedent.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
