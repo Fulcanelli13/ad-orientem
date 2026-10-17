@@ -265,7 +265,10 @@ export function installScriptureBrowserOwner(win=globalThis){
    const capsule=e.target?.closest?.("[data-ao-scripture-context]");
    if(capsule){
      e.preventDefault?.();e.stopImmediatePropagation?.();
-     const accepted=openContext(capsule.getAttribute("data-ao-scripture-context"),{depth:capsule.dataset.aoScriptureDepth==="commentary"?"commentary":"selected"});
+     const accepted=openContext(capsule.getAttribute("data-ao-scripture-context"),{
+       depth:capsule.dataset.aoScriptureDepth==="commentary"?"commentary":"selected",
+       language:capsule.dataset.aoScriptureLanguage==="en"?"en":null
+     });
      if(!accepted){
        const error=doc.createElement("span");
        error.setAttribute("role","alert");error.className="aoScriptureContextError";
