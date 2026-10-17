@@ -78,7 +78,7 @@ function coords(piece,edition){
  }
  return result;
 }
-const prior=JSON.parse(readFileSync(new URL("../data/research/historia-salutis-v18-part-ii-correction-delta.v1.json",import.meta.url),"utf8"));
+const priorCorrection=JSON.parse(readFileSync(new URL("../data/research/historia-salutis-v18-part-ii-correction-delta.v1.json",import.meta.url),"utf8"));
 const seen=new Set(),stats={edited:0,protected:0,unchanged:0,editionCorrections:0,priorContinuityRestorations:0,halfVerses:0},books=new Set();
 let originalVerseCount=0,selectedVerseCount=0;
 for(const decision of economy.decisions){
@@ -140,7 +140,7 @@ for(const decision of economy.decisions){
  }else if(seamRepair){
   stats.priorContinuityRestorations++;
   assert.equal(decision.unitId,"H21-03");
-  const old=prior.chapters.find(x=>x.chapterId==="H21").units.find(x=>x.unitId==="H21-03");
+  const old=priorCorrection.chapters.find(x=>x.chapterId==="H21").units.find(x=>x.unitId==="H21-03");
   const allowed=new Set(old.principalReadings.flatMap(z=>decodeBibleSequence(z).parts.flatMap(p=>coords(p,"cpdv-2009"))));
   for(const code of chosen)assert.ok(allowed.has(code),
    "Sea-crossing correction may only use verses previously defended in the eight-chapter source pass");
