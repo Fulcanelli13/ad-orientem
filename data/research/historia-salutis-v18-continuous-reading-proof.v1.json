@@ -1,0 +1,2227 @@
+{
+  "schema": "ao.historia.v18.continuous-scripture-proof.v1",
+  "date": "2026-10-17",
+  "stage": "REAL_VERSE_READ_THROUGH_PROOF_NOT_APPROVED",
+  "origin": "One research overlay integrated in existing Scripture mining workbench; NOT a new Bible mode or published replacement",
+  "inputs": [
+    {
+      "path": "data/research/historia-salutis-v18-necessity-audit.v1.json",
+      "blobSha": "e06db54e347382b7abdb240b76ebc19c0ad3b2e5"
+    },
+    {
+      "path": "data/research/historia-salutis-v18-main-spine-consolidation.v1.json",
+      "blobSha": "18f73172b814727f835955fd379d751dcf1ba453"
+    },
+    {
+      "path": "data/research/historia-salutis-v18-continuity-desk-pass.v1.json",
+      "blobSha": "487731c29bdc2345ccf47c77d487c01b6a3298fe"
+    },
+    {
+      "path": "data/research/historia-salutis-v18-essential-verse-economy.v1.json",
+      "blobSha": "773a1d715b7046732d05684f8923fafef243db56"
+    }
+  ],
+  "totals": {
+    "movements": 37,
+    "essentialUnits": 93,
+    "briefEditorialContextNotes": 32,
+    "sourceBridgeCandidates": 11,
+    "independentlyReadAndApproved": false
+  },
+  "displayRules": {
+    "sourceEditionDefault": "cpdv-2009",
+    "allowSwitchTo": "dr-challoner",
+    "neverCombineDifferentWitnessText": true,
+    "sourceEditionNotesAreNotScripture": true,
+    "sourceCandidatesMustBeVisuallyDistinct": true,
+    "showEveryDroppedSpanBetweenAdjacentScriptureFragments": true,
+    "showHistoricallyPartialVerseAsWholeEditionWitnessWithWarning": true,
+    "noAutomaticallyApprovedReadings": true
+  },
+  "movements": [
+    {
+      "id": "HS-M01",
+      "title": "Creation and the human vocation",
+      "sequence": 1,
+      "purpose": "The world, humanity made for communion with God, and the Sabbath complete the opening frame",
+      "originalResearchChapterIds": [
+        "H01",
+        "H02"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H01-01",
+          "sourceV18": "Genesis 1:1–31",
+          "scene": "The six days of Creation",
+          "refs": [
+            "Genesis 1:1–31"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H01-02",
+          "sourceV18": "2:1–3",
+          "scene": "The seventh day and divine rest",
+          "refs": [
+            "Genesis 2:1–3"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H02-01",
+          "sourceV18": "Genesis 2:7–9",
+          "scene": "Adam formed and placed in Eden",
+          "refs": [
+            "Genesis 2:7–9"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H02-02",
+          "sourceV18": "2:15–25",
+          "scene": "Eve and the first human communion",
+          "refs": [
+            "Genesis 2:15–18",
+            "Genesis 2:21–25"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M02",
+      "title": "The Fall and the First Promise",
+      "sequence": 2,
+      "purpose": "Disobedience, death and the first announced victory over evil form one continuous Genesis 3 account",
+      "originalResearchChapterIds": [
+        "H03",
+        "H04"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H03-01",
+          "sourceV18": "Genesis 3:1–13",
+          "scene": "The disobedience of the first parents",
+          "refs": [
+            "Genesis 3:1–13"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H04-01",
+          "sourceV18": "Genesis 3:14–24",
+          "scene": "Judgment and the first promise of victory over evil",
+          "refs": [
+            "Genesis 3:14–24"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M03",
+      "title": "Noah, the covenant and the peoples",
+      "sequence": 3,
+      "purpose": "Human corruption, judgment, preservation and the rainbow covenant; the nations and Babel close this transition",
+      "originalResearchChapterIds": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H09"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H05-02",
+          "label": "Seth and continuity of generations",
+          "explanation": "Identify the line through Seth as a genealogical bridge, not read Genesis 4–5 as an extra episode.",
+          "sourceReference": "Genesis 4:25–26",
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H07-01",
+          "label": "Human evil in Noah's generation",
+          "explanation": "Ark construction and divine command are missing before Genesis 7:1 begins with entering the Ark; source context must precede the flood.",
+          "sourceReference": "Genesis 6:5–8",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-01",
+          "reference": "Genesis 6:9–22",
+          "purpose": "Ark construction and Noah's response must precede the instruction to enter the ark in Genesis 7:1",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H07-02",
+          "sourceV18": "7:1–5, 10–12, 17–23",
+          "scene": "The flood and preservation of Noah's household",
+          "refs": [
+            "Genesis 7:1–5",
+            "Genesis 7:17–23"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H07-03",
+          "sourceV18": "8:6–12, 15–22",
+          "scene": "The receding waters and renewed life",
+          "refs": [
+            "Genesis 8:6–12",
+            "Genesis 8:15–22"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H08-01",
+          "sourceV18": "Genesis 9:8–17",
+          "scene": "The covenant with Noah and every living creature",
+          "refs": [
+            "Genesis 9:8–17"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H09-02",
+          "label": "Babel and the dispersion of languages",
+          "explanation": "Keep Babel as an explanatory event for dispersed nations; retain the distinction from Pentecost rather than claiming simple word-for-word symmetry.",
+          "sourceReference": "Genesis 11:1–9",
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M04",
+      "title": "Abraham called into covenant",
+      "sequence": 4,
+      "purpose": "God elects Abraham and makes a promise for Israel and all nations",
+      "originalResearchChapterIds": [
+        "H10",
+        "H11"
+      ],
+      "beats": [
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-02",
+          "reference": "Genesis 11:26–31",
+          "purpose": "From Shem's descendants to Terah/Abram before Genesis 12:1; this is a genealogical transition, not a full story",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H10-01",
+          "sourceV18": "Genesis 12:1–9",
+          "scene": "Abram called to a land and promise",
+          "refs": [
+            "Genesis 12:1–9"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H11-02",
+          "sourceV18": "Genesis 15:1–6, 17–21",
+          "scene": "Covenant promise and the land",
+          "refs": [
+            "Genesis 15:1–6",
+            "Genesis 15:17–18"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H11-03",
+          "sourceV18": "Genesis 17:1–11",
+          "scene": "Covenant sign given to Abraham",
+          "refs": [
+            "Genesis 17:1–11"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M05",
+      "title": "Isaac, Jacob and Israel",
+      "sequence": 5,
+      "purpose": "The promised line passes through Isaac and Jacob and Israel receives his identity",
+      "originalResearchChapterIds": [
+        "H12",
+        "H13",
+        "H14",
+        "H15"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H12-02",
+          "sourceV18": "Genesis 21:1–7",
+          "scene": "The birth of Isaac",
+          "refs": [
+            "Genesis 21:1–7"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H13-01",
+          "sourceV18": "Genesis 22:1–2, 6–14, 15–19",
+          "scene": "Isaac offered and providentially spared",
+          "refs": [
+            "Genesis 22:1–2",
+            "Genesis 22:6–14",
+            "Genesis 22:15–19"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H14-02",
+          "label": "Birth and rivalry of Jacob and Esau",
+          "explanation": "Name Esau and Jacob to establish the selected covenant line, not rehearse their entire youth.",
+          "sourceReference": "Genesis 25:19–26, 29–34",
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H14-03",
+          "label": "Blessing transferred to Jacob",
+          "explanation": "Indicate the paternal blessing passing to Jacob before the Bethel/Jabbok narrative.",
+          "sourceReference": "Genesis 27:18–29, 34–40",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H15-02",
+          "sourceV18": "Genesis 32:23–33",
+          "scene": "Jacob wrestles and receives his name Israel",
+          "refs": [
+            "Genesis 32:22–32"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "EDITION_AWARE_REFERENCE_CORRECTION",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H15-03",
+          "sourceV18": "Genesis 35:9–15",
+          "scene": "God renews the promises to Israel",
+          "refs": [
+            "Genesis 35:9–15"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M06",
+      "title": "Joseph and the descent into Egypt",
+      "sequence": 6,
+      "purpose": "Joseph's providential reconciliation places the family of Israel in Egypt",
+      "originalResearchChapterIds": [
+        "H16"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H16-01",
+          "sourceV18": "Genesis 37:3–4, 12–28",
+          "scene": "Joseph sold by his brothers",
+          "refs": [
+            "Genesis 37:3–4",
+            "Genesis 37:12–14",
+            "Genesis 37:18–24",
+            "Genesis 37:26–28"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-03",
+          "reference": "Genesis 39:20–21",
+          "purpose": "Genesis 41 summons Joseph from imprisonment; the short bridge identifies when he entered prison without restoring his separate adventures",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H16-03",
+          "sourceV18": "Genesis 41:14–16, 37–45",
+          "scene": "Joseph raised to authority",
+          "refs": [
+            "Genesis 41:14–16",
+            "Genesis 41:37–45"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H16-04",
+          "sourceV18": "Genesis 45:1–15",
+          "scene": "Joseph's reconciliation with his brothers",
+          "refs": [
+            "Genesis 45:1–11",
+            "Genesis 45:14–15"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H16-05",
+          "sourceV18": "Genesis 46:1–7",
+          "scene": "Israel's family enters Egypt",
+          "refs": [
+            "Genesis 46:1–7"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M07",
+      "title": "Bondage and the calling of Moses",
+      "sequence": 7,
+      "purpose": "Oppression prepares Israel's deliverance and the divine name is revealed",
+      "originalResearchChapterIds": [
+        "H17",
+        "H18"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H17-01",
+          "sourceV18": "Exodus 1:7–14, 22",
+          "scene": "Israel oppressed in Egypt",
+          "refs": [
+            "Exodus 1:7–14",
+            "Exodus 1:22"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H17-02",
+          "label": "The infancy of Moses and cry of Israel",
+          "explanation": "Identify who Moses is and why the cry of Israel is heard, without needing the full infancy story.",
+          "sourceReference": "Exodus 2:1–10, 23–25",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H18-01",
+          "sourceV18": "Exodus 3:1–8a, 10–15",
+          "scene": "Moses meets God and receives the divine name",
+          "refs": [
+            "Exodus 3:1–8",
+            "Exodus 3:10–15"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": true,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M08",
+      "title": "Plagues and the first Passover",
+      "sequence": 8,
+      "purpose": "God judges Pharaoh, gives the saving Passover and prepares the Exodus",
+      "originalResearchChapterIds": [
+        "H19",
+        "H20"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H19-01",
+          "sourceV18": "Exodus 7:14–21",
+          "scene": "The opening signs against Egypt",
+          "refs": [
+            "Exodus 7:14–17",
+            "Exodus 7:20–21"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H19-03",
+          "label": "Pharaoh warned of divine judgment",
+          "explanation": "Pharaoh's hardened resistance makes the Passover's judgment understandable without listing every plague.",
+          "sourceReference": "Exodus 9:13–16",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H19-05",
+          "sourceV18": "Exodus 11:4–8",
+          "scene": "Announcement of the final plague",
+          "refs": [
+            "Exodus 11:4–8"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H20-01",
+          "sourceV18": "Exodus 12:1–8, 11–14, 21–28",
+          "scene": "The paschal lamb and the saving Passover",
+          "refs": [
+            "Exodus 12:1–3",
+            "Exodus 12:5–8",
+            "Exodus 12:11–14",
+            "Exodus 12:21–23",
+            "Exodus 12:27–28"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M09",
+      "title": "Exodus through the sea",
+      "sequence": 9,
+      "purpose": "Israel leaves Egypt and passes through the sea toward Sinai; wilderness provision is kept brief",
+      "originalResearchChapterIds": [
+        "H21"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H21-01",
+          "sourceV18": "Exodus 12:31–42",
+          "scene": "Departure from Egypt",
+          "refs": [
+            "Exodus 12:31–33",
+            "Exodus 12:37–42"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H21-02",
+          "label": "God guides Israel through the wilderness",
+          "explanation": "Mention the cloud/fire guidance connecting departure to the crossing, without requiring every Exodus travel detail.",
+          "sourceReference": "Exodus 13:17–22",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H21-03",
+          "sourceV18": "Exodus 14:15–31",
+          "scene": "Pharaoh pursues and the sea is crossed",
+          "refs": [
+            "Exodus 14:5–10",
+            "Exodus 14:13–16",
+            "Exodus 14:19–22",
+            "Exodus 14:26–31"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PRIOR_SOURCE_CONTINUITY_RESTORED",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H21-04",
+          "label": "Bread from heaven in the wilderness",
+          "explanation": "Mention the manna as divine sustenance in the wilderness and avoid merging it with the later Bread of Life discourse.",
+          "sourceReference": "Exodus 16:2–4, 12–15",
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M10",
+      "title": "Sinai: covenant and unfaithfulness",
+      "sequence": 10,
+      "purpose": "Law and blood of covenant meet the golden calf and intercession; the divine dwelling supplies its resolution",
+      "originalResearchChapterIds": [
+        "H22",
+        "H23"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H22-01",
+          "sourceV18": "Exodus 19:3–8",
+          "scene": "The covenant invitation to Israel",
+          "refs": [
+            "Exodus 19:3–8"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H22-02",
+          "sourceV18": "20:1–17",
+          "scene": "The divine commandments",
+          "refs": [
+            "Exodus 20:1–17"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H22-03",
+          "sourceV18": "24:3–8",
+          "scene": "The covenant ratified in blood",
+          "refs": [
+            "Exodus 24:3–8"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H23-01",
+          "sourceV18": "Exodus 32:1–14, 19–35",
+          "scene": "The golden calf and Moses' intercession",
+          "refs": [
+            "Exodus 32:1–4",
+            "Exodus 32:7–14",
+            "Exodus 32:19–20",
+            "Exodus 32:30–34"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H23-02",
+          "label": "The Tabernacle and cloud of God's presence",
+          "explanation": "Describe the divine dwelling in the Tabernacle, linking Sinai and Solomon's Temple without repeating architectural inventories.",
+          "sourceReference": "Exodus 40:16–21, 34–38",
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M11",
+      "title": "Israel enters the promised land",
+      "sequence": 11,
+      "purpose": "Moses dies, Joshua leads Israel into the land, and the cycle of the Judges explains why kingship follows",
+      "originalResearchChapterIds": [
+        "H24",
+        "H25",
+        "H26"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H24-02",
+          "label": "Joshua commissioned as successor",
+          "explanation": "Name Joshua as commissioned successor before the crossing of Jordan.",
+          "sourceReference": "Deuteronomy 31:1–8",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H24-03",
+          "sourceV18": "Deuteronomy 34:1–12",
+          "scene": "Moses dies before the promised land",
+          "refs": [
+            "Deuteronomy 34:1–7",
+            "Deuteronomy 34:9–12"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H25-01",
+          "sourceV18": "Joshua 3:7–17",
+          "scene": "Israel passes the Jordan",
+          "refs": [
+            "Joshua 3:7–8",
+            "Joshua 3:13–17"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H26-01",
+          "sourceV18": "Judges 2:6–19",
+          "scene": "The recurring cycle of apostasy and deliverance",
+          "refs": [
+            "Judges 2:6–12",
+            "Judges 2:16–19"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M12",
+      "title": "From Ruth to Samuel and Saul",
+      "sequence": 12,
+      "purpose": "The Ruth-to-David family bridge and Israel's request for a king supply the transition from Judges to monarchy",
+      "originalResearchChapterIds": [
+        "H27",
+        "H28",
+        "H29"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H28-01",
+          "label": "Ruth's fidelity to Naomi",
+          "explanation": "Identify Ruth as the Moabite who remained faithful to Naomi before Ruth 4 identifies her offspring and David's lineage.",
+          "sourceReference": "Ruth 1:1–18",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H28-04",
+          "sourceV18": "Ruth 4:1–13, 17–22",
+          "scene": "Ruth and Boaz's union and descent to David",
+          "refs": [
+            "Ruth 4:13",
+            "Ruth 4:17–22"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H29-02",
+          "label": "Samuel called by the Lord",
+          "explanation": "Identify Samuel as a prophet entrusted with guiding Israel through its transition to kingship.",
+          "sourceReference": "1 Samuel 3:1–21",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H29-03",
+          "sourceV18": "1 Samuel 8:4–22",
+          "scene": "Israel demands a king",
+          "refs": [
+            "1Samuel 8:4–8",
+            "1Samuel 8:19–22"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H29-04",
+          "sourceV18": "1 Samuel 10:1–8",
+          "scene": "Saul anointed as the first king",
+          "refs": [
+            "1Samuel 10:1–8"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M13",
+      "title": "David and the enduring royal promise",
+      "sequence": 13,
+      "purpose": "David is chosen, receives Jerusalem and the Ark, and hears God's promise of an enduring throne",
+      "originalResearchChapterIds": [
+        "H30",
+        "H31",
+        "H32",
+        "H33"
+      ],
+      "beats": [
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-04",
+          "reference": "1 Samuel 16:1–3",
+          "purpose": "Existing 1 Samuel 16:10–13 opens after Samuel has already seen seven sons; the prophet's commission to Jesse must be supplied",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H30-01",
+          "sourceV18": "1 Samuel 16:10–13",
+          "scene": "David anointed by Samuel",
+          "refs": [
+            "1Samuel 16:10–13"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H31-04",
+          "label": "Saul dies and kingship changes",
+          "explanation": "Indicate Saul's death before David is shown receiving the kingdom.",
+          "sourceReference": "1 Samuel 31:1–13",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H32-01",
+          "sourceV18": "2 Samuel 2:1–4",
+          "scene": "David receives the kingdom",
+          "refs": [
+            "2Samuel 2:1–4"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H32-02",
+          "sourceV18": "2 Samuel 5:1–10",
+          "scene": "Jerusalem becomes David's capital",
+          "refs": [
+            "2Samuel 5:1–10"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H32-03",
+          "sourceV18": "2 Samuel 6:12–19",
+          "scene": "The Ark brought to Jerusalem",
+          "refs": [
+            "2Samuel 6:12–15",
+            "2Samuel 6:17–19"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H33-01",
+          "sourceV18": "2 Samuel 7:8–16",
+          "scene": "God promises David an enduring royal house",
+          "refs": [
+            "2Samuel 7:8–16"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M14",
+      "title": "The Temple and the divided kingdom",
+      "sequence": 14,
+      "purpose": "The moral frailty of kings, Temple worship, Solomon's infidelity and division after him",
+      "originalResearchChapterIds": [
+        "H34",
+        "H35",
+        "H36"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H34-01",
+          "label": "David's sin with Bathsheba and Uriah",
+          "explanation": "King David's grave sin supplies a moral counterpoint to the enduring covenant, not a full additional court narrative.",
+          "sourceReference": "2 Samuel 11:1–5, 14–17",
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H34-02",
+          "label": "Nathan rebukes David and he repents",
+          "explanation": "Keep Nathan's condemnation and David's repentance together, without duplicating the penitential psalm as mandatory narration.",
+          "sourceReference": "2 Samuel 12:1–13",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H35-02",
+          "sourceV18": "1 Kings 6:1–2",
+          "scene": "Solomon builds the Temple",
+          "refs": [
+            "1Kings 6:1–2"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H35-03",
+          "sourceV18": "1 Kings 8:1–13, 22–30",
+          "scene": "The Ark enters the dedicated Temple",
+          "refs": [
+            "1Kings 8:1–6",
+            "1Kings 8:10–13",
+            "1Kings 8:22–23",
+            "1Kings 8:27–30"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H35-04",
+          "label": "Solomon turns to other gods",
+          "explanation": "Explain Solomon's infidelity as the direct prelude to the divided kingdom.",
+          "sourceReference": "1 Kings 11:1–13",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H36-01",
+          "sourceV18": "1 Kings 11:29–32",
+          "scene": "The kingdom is foretold to divide",
+          "refs": [
+            "1Kings 11:29–32"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H36-02",
+          "sourceV18": "1 Kings 12:1–24",
+          "scene": "Israel and Judah divide",
+          "refs": [
+            "1Kings 12:1–5",
+            "1Kings 12:13–20",
+            "1Kings 12:24"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M15",
+      "title": "Prophetic warning and Israel's judgment",
+      "sequence": 15,
+      "purpose": "Prophetic voices and messianic promises interpret the divisions and Israel's catastrophe",
+      "originalResearchChapterIds": [
+        "H37",
+        "H38",
+        "H39"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H37-02",
+          "label": "Elijah confronts Baal's prophets",
+          "explanation": "Use Elijah's opposition to Baal as evidence of prophetic fidelity amid idolatry; the dramatic contest is not itself mandatory reading.",
+          "sourceReference": "1 Kings 18:20–39",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H38-02",
+          "sourceV18": "Isaiah 7:10–17",
+          "scene": "The sign of Emmanuel",
+          "refs": [
+            "Isaiah 7:10–17"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H38-03",
+          "sourceV18": "Isaiah 9:1–6",
+          "scene": "The promised royal child",
+          "refs": [
+            "Isaiah 9:1–6"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H38-04",
+          "sourceV18": "Isaiah 11:1–10",
+          "scene": "The shoot from Jesse",
+          "refs": [
+            "Isaiah 11:1–10"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H38-05",
+          "sourceV18": "Isaiah 52:13–53:12",
+          "scene": "The suffering servant",
+          "refs": [
+            "Isaiah 52:13–15",
+            "Isaiah 53:1–12"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H39-01",
+          "sourceV18": "2 Kings 17:5–18",
+          "scene": "The northern kingdom falls under judgment",
+          "refs": [
+            "2Kings 17:5–8",
+            "2Kings 17:13–18"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M16",
+      "title": "The New Covenant promised in exile",
+      "sequence": 16,
+      "purpose": "Jeremiah promises a new covenant; Jerusalem falls, and distinct voices witness exile without forced chronology",
+      "originalResearchChapterIds": [
+        "H40",
+        "H41",
+        "H42"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H40-01",
+          "sourceV18": "Jeremiah 31:31–34",
+          "scene": "God announces a new covenant through Jeremiah",
+          "refs": [
+            "Jeremiah 31:31–34"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H41-01",
+          "sourceV18": "2 Kings 25:1–12",
+          "scene": "Jerusalem and the Temple fall",
+          "refs": [
+            "2Kings 25:1–5",
+            "2Kings 25:8–12"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H41-02",
+          "sourceV18": "2 Kings 25:18–21",
+          "scene": "The elite are carried into exile",
+          "refs": [
+            "2Kings 25:18–21"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M17",
+      "title": "Restoration and the expectation of Christ",
+      "sequence": 17,
+      "purpose": "Exiles return, the Temple is rebuilt, and the period before Christ is oriented by fidelity and hope",
+      "originalResearchChapterIds": [
+        "H43",
+        "H44"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H43-01",
+          "sourceV18": "Ezra 1:1–6",
+          "scene": "The decree permitting return from exile",
+          "refs": [
+            "Ezra 1:1–6"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H43-02",
+          "sourceV18": "Ezra 6:13–22",
+          "scene": "The Temple rebuilt",
+          "refs": [
+            "Ezra 6:13–16",
+            "Ezra 6:19–22"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H43-03",
+          "label": "Ezra and Nehemiah renew the hearing of the law",
+          "explanation": "Use the return of the Law and communal worship to explain restoration; Nehemiah's whole ceremony is not required.",
+          "sourceReference": "Nehemiah 8:1–12",
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H44-01",
+          "label": "Maccabean resistance to imposed idolatry",
+          "explanation": "State the Maccabean persecution and resistance to bridge restoration and messianic expectation; do not put it in the Babylonian exile.",
+          "sourceReference": "1 Maccabees 2:15–28",
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H44-03",
+          "label": "Martyrdom and hope of resurrection",
+          "explanation": "Mention witness to resurrection hope under persecution; do not require the full narrative of all seven martyrdoms.",
+          "sourceReference": "2 Maccabees 7:1–42",
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M18",
+      "title": "The generations and the Annunciation",
+      "sequence": 18,
+      "purpose": "The Abraham-David-Christ lineage frames the Incarnation; Matthew and Luke remain distinct navigation witnesses",
+      "originalResearchChapterIds": [
+        "H45",
+        "H46"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H46-01",
+          "sourceV18": "Luke 1:26–38",
+          "scene": "Gabriel announces the Incarnation and Mary's fiat",
+          "refs": [
+            "Luke 1:26–38"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M19",
+      "title": "The birth of the Saviour",
+      "sequence": 19,
+      "purpose": "Joseph accepts Mary's Son, Christ is born, and the Magi signal the Gospel's universal horizon",
+      "originalResearchChapterIds": [
+        "H47",
+        "H48",
+        "H49",
+        "H50"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H47-01",
+          "label": "The Visitation and Magnificat",
+          "explanation": "Mention the Visitation/Magnificat briefly, preserving the distinct Lukan episode rather than stitching it into Matthew's Joseph account.",
+          "sourceReference": "Luke 1:39–56",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H47-02",
+          "sourceV18": "Matthew 1:18–25",
+          "scene": "The angel reassures Joseph",
+          "refs": [
+            "Matthew 1:18–25"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H48-01",
+          "sourceV18": "Luke 2:1–20",
+          "scene": "The birth of Christ in Bethlehem",
+          "refs": [
+            "Luke 2:1–20"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H48-02",
+          "label": "Circumcision and naming of Jesus",
+          "explanation": "Ensure the child is explicitly named Jesus, without a separate ceremonial chapter.",
+          "sourceReference": "Luke 2:21",
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H49-01",
+          "label": "Presentation of Christ and Simeon's prophecy",
+          "explanation": "Simeon's recognition places the Presentation in Israel's expectation without a separate compulsory temple scene.",
+          "sourceReference": "Luke 2:22–38",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H49-02",
+          "sourceV18": "Matthew 2:1–12",
+          "scene": "Gentiles represented by the Magi",
+          "refs": [
+            "Matthew 2:1–12"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H49-03",
+          "label": "The flight to Egypt and the return",
+          "explanation": "Identify the return and dwelling in Nazareth as the bridge from infancy to the Forerunner.",
+          "sourceReference": "Matthew 2:13–23",
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M20",
+      "title": "The Forerunner and first disciples",
+      "sequence": 20,
+      "purpose": "Jesus is baptized, proclaims the Kingdom and gathers disciples; the first sign is context not a miracle catalogue",
+      "originalResearchChapterIds": [
+        "H51",
+        "H52"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H51-01",
+          "sourceV18": "Matthew 3:1–17",
+          "scene": "John prepares Israel and baptizes Jesus",
+          "refs": [
+            "Matthew 3:1–6",
+            "Matthew 3:11–17"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H51-02",
+          "label": "Christ's temptation in the wilderness",
+          "explanation": "Christ's temptation may be mentioned briefly as the transition into his public ministry.",
+          "sourceReference": "Matthew 4:1–11",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H51-03",
+          "sourceV18": "Mark 1:14–15",
+          "scene": "Christ begins proclaiming the Kingdom",
+          "refs": [
+            "Mark 1:14–15"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H52-01",
+          "sourceV18": "John 1:35–51",
+          "scene": "The first disciples recognise and follow Christ",
+          "refs": [
+            "John 1:35–51"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M21",
+      "title": "The Kingdom in Christ's teaching and signs",
+      "sequence": 21,
+      "purpose": "The Beatitudes, prayer and forgiveness reveal the Kingdom; use one representative healing, not serial miracle anthologies",
+      "originalResearchChapterIds": [
+        "H53",
+        "H54",
+        "H55"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H53-01",
+          "sourceV18": "Matthew 5:1–12",
+          "scene": "The Beatitudes teach the Kingdom's nature",
+          "refs": [
+            "Matthew 5:1–12"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H53-02",
+          "sourceV18": "Matthew 6:9–15",
+          "scene": "The Lord's Prayer",
+          "refs": [
+            "Matthew 6:9–15"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H54-02",
+          "label": "Christ forgives and heals the paralytic",
+          "explanation": "A representative forgiveness/healing sign demonstrates authority; this one remains the only nominated main-narrative miracle from H54.",
+          "sourceReference": "Mark 2:1–12",
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M22",
+      "title": "Christ the Bread of Life",
+      "sequence": 22,
+      "purpose": "The sign of the loaves leads to Christ's explicit discourse on the Bread of Life",
+      "originalResearchChapterIds": [
+        "H56"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H56-01",
+          "label": "The multiplication of loaves as prelude to the Bread of Life",
+          "explanation": "Introduce the loaves once as the setting for Jesus' subsequent Bread of Life declaration; do not repeat H54-04.",
+          "sourceReference": "John 6:1–15",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H56-02",
+          "sourceV18": "John 6:24–35, 47–59",
+          "scene": "The Bread of Life discourse",
+          "refs": [
+            "John 6:26–35",
+            "John 6:47–59"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M23",
+      "title": "Peter's confession and the Transfiguration",
+      "sequence": 23,
+      "purpose": "Peter identifies the Christ and the Transfiguration reveals his glory before the Passion",
+      "originalResearchChapterIds": [
+        "H57"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H57-01",
+          "sourceV18": "Matthew 16:13–28",
+          "scene": "Peter confesses Christ and receives the promise",
+          "refs": [
+            "Matthew 16:13–28"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H57-02",
+          "sourceV18": "Matthew 17:1–13",
+          "scene": "Christ's Transfiguration",
+          "refs": [
+            "Matthew 17:1–9"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M24",
+      "title": "The approach to Jerusalem",
+      "sequence": 24,
+      "purpose": "The raising of Lazarus anticipates Christ's death and Resurrection without requiring every Bethany or Jericho encounter",
+      "originalResearchChapterIds": [
+        "H58"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H58-04",
+          "sourceV18": "John 11:1–44",
+          "scene": "Lazarus raised shortly before the Passion",
+          "refs": [
+            "John 11:1–7",
+            "John 11:14–17",
+            "John 11:20–27",
+            "John 11:32–35",
+            "John 11:38–44"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-05",
+          "reference": "John 11:45–53",
+          "purpose": "The final miracle itself does not explain the decision to put Jesus to death; the explicit plot follows in John 11:45–53",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M25",
+      "title": "The King's entry into Jerusalem",
+      "sequence": 25,
+      "purpose": "Christ enters Jerusalem and approaches the Passion",
+      "originalResearchChapterIds": [
+        "H59"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H59-01",
+          "sourceV18": "Matthew 21:1–11",
+          "scene": "Christ enters Jerusalem as King",
+          "refs": [
+            "Matthew 21:1–11"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M26",
+      "title": "The Last Supper and Christ's final teaching",
+      "sequence": 26,
+      "purpose": "The Eucharist and new covenant at the Supper; Christ's promise of the Father's house and union with him",
+      "originalResearchChapterIds": [
+        "H60",
+        "H61"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H60-01",
+          "sourceV18": "Luke 22:7–20",
+          "scene": "The Last Supper and institution of the Eucharist",
+          "refs": [
+            "Luke 22:7–20"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-09",
+          "reference": "John 14:16–17",
+          "purpose": "Jesus promises the Spirit of Truth before Pentecost; this can replace compulsory extended farewell-discourse reading",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M27",
+      "title": "Gethsemane, betrayal and trial",
+      "sequence": 27,
+      "purpose": "Christ accepts the cup, is betrayed and condemned; the Johannine account is separately referenced, not silently merged",
+      "originalResearchChapterIds": [
+        "H62",
+        "H63"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H62-01",
+          "sourceV18": "Matthew 26:36–46",
+          "scene": "Christ's agony in Gethsemane",
+          "refs": [
+            "Matthew 26:36–46"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H62-02",
+          "sourceV18": "Matthew 26:47–56",
+          "scene": "Judas betrays Christ and he is arrested",
+          "refs": [
+            "Matthew 26:47–56"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H63-01",
+          "sourceV18": "Matthew 26:57–75",
+          "scene": "Jesus questioned and denied by Peter",
+          "refs": [
+            "Matthew 26:57–75"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H63-02",
+          "sourceV18": "Matthew 27:1–26",
+          "scene": "Christ before Pilate in Matthew",
+          "refs": [
+            "Matthew 27:1–2",
+            "Matthew 27:11–26"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H63-04",
+          "label": "The scourging, crowning and handing over",
+          "explanation": "Carry scourging and crowning as a clearly attributed Johannine witness without conflating it with Matthew's separate Pilate scene.",
+          "sourceReference": "John 19:1–16",
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M28",
+      "title": "The sacrifice on Calvary",
+      "sequence": 28,
+      "purpose": "The Cross accomplishes the saving death of Christ",
+      "originalResearchChapterIds": [
+        "H64"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H64-01",
+          "sourceV18": "John 19:17–30",
+          "scene": "The Crucifixion and death of Christ",
+          "refs": [
+            "John 19:17–30"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-06",
+          "reference": "John 19:38–42",
+          "purpose": "Jesus is placed in a tomb before the next selected text begins with the empty tomb; burial is part of the death-resurrection sequence",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M29",
+      "title": "The risen Lord and his witnesses",
+      "sequence": 29,
+      "purpose": "The empty tomb and encounters with Mary Magdalene, the Apostles and Thomas establish the Resurrection",
+      "originalResearchChapterIds": [
+        "H65"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H65-01",
+          "sourceV18": "John 20:1–18",
+          "scene": "The empty tomb and encounter with Magdalene",
+          "refs": [
+            "John 20:1–3",
+            "John 20:6–9",
+            "John 20:11–18"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H65-02",
+          "sourceV18": "John 20:19–29",
+          "scene": "Christ appears to the Apostles and Thomas",
+          "refs": [
+            "John 20:19–29"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H65-03",
+          "label": "The road to Emmaus",
+          "explanation": "Emmaus may supply the key scriptural interpretation that the Messiah had to suffer; do not require the complete walk dialogue.",
+          "sourceReference": "Luke 24:13–35",
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M30",
+      "title": "The Ascension and promised mission",
+      "sequence": 30,
+      "purpose": "Christ ascends and commissions the Apostles for the nations",
+      "originalResearchChapterIds": [
+        "H66"
+      ],
+      "beats": [
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-07",
+          "reference": "Acts 1:3–5",
+          "purpose": "The risen Christ appeared over forty days and instructed the apostles concerning the Spirit before Acts 1:6–12 opens mid-conversation",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H66-01",
+          "sourceV18": "Acts 1:6–12",
+          "scene": "The Ascension of Christ",
+          "refs": [
+            "Acts 1:6–12"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M31",
+      "title": "Pentecost and the first Church",
+      "sequence": 31,
+      "purpose": "The Holy Ghost descends, the Church forms its common life, and Stephen witnesses unto death",
+      "originalResearchChapterIds": [
+        "H67",
+        "H68"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H67-01",
+          "sourceV18": "Acts 2:1–21, 37–41",
+          "scene": "The descent of the Holy Ghost and birth of the Church",
+          "refs": [
+            "Acts 2:1–8",
+            "Acts 2:11–18",
+            "Acts 2:21",
+            "Acts 2:37–41"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H68-01",
+          "sourceV18": "Acts 2:42–47",
+          "scene": "The earliest community of believers",
+          "refs": [
+            "Acts 2:42–47"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-08",
+          "reference": "Acts 7:51–53",
+          "purpose": "Acts 7:54 begins with the crowd's anger at words not yet included; the preceding accusation is essential context",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H68-04",
+          "sourceV18": "Acts 7:54–60",
+          "scene": "St Stephen's martyrdom",
+          "refs": [
+            "Acts 7:54–59"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "EDITION_AWARE_REFERENCE_CORRECTION",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M32",
+      "title": "Saul and the Gospel to the Gentiles",
+      "sequence": 32,
+      "purpose": "Saul is converted and Cornelius is received; no repetition of the same Cornelius event",
+      "originalResearchChapterIds": [
+        "H69",
+        "H70"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H69-01",
+          "sourceV18": "Acts 9:1–22",
+          "scene": "Saul encounters Christ and becomes his witness",
+          "refs": [
+            "Acts 9:1–11",
+            "Acts 9:17–22"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H70-01",
+          "sourceV18": "Acts 10:1–48",
+          "scene": "Cornelius receives the Gospel and the Holy Ghost",
+          "refs": [
+            "Acts 10:1–6",
+            "Acts 10:9–16",
+            "Acts 10:19–20",
+            "Acts 10:24",
+            "Acts 10:28–29",
+            "Acts 10:33–48"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M33",
+      "title": "Antioch, apostolic missions and the Council",
+      "sequence": 33,
+      "purpose": "Antioch sends missionaries, and the Council settles Gentile inclusion",
+      "originalResearchChapterIds": [
+        "H71",
+        "H72"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H71-01",
+          "sourceV18": "Acts 11:19–26",
+          "scene": "The Church at Antioch and the Gentile mission",
+          "refs": [
+            "Acts 11:19–26"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H71-02",
+          "sourceV18": "Acts 13:1–12",
+          "scene": "Paul and Barnabas sent forth",
+          "refs": [
+            "Acts 13:1–5"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H72-01",
+          "sourceV18": "Acts 15:1–29",
+          "scene": "The apostolic Council of Jerusalem resolves the Gentile question",
+          "refs": [
+            "Acts 15:1–2",
+            "Acts 15:5–11",
+            "Acts 15:13–20",
+            "Acts 15:22–29"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "PROPOSED_CURATED_TRIM",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M34",
+      "title": "The Gospel proclaimed in Rome",
+      "sequence": 34,
+      "purpose": "The universal apostolic mission reaches Rome; individual missionary episodes need not be read in sequence",
+      "originalResearchChapterIds": [
+        "H73"
+      ],
+      "beats": [
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-10",
+          "reference": "Acts 19:21",
+          "purpose": "Paul's expressed intention to see Rome supplies a short missionary-journey hinge without requiring the Philippi jailer or shipwreck",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-CF-11",
+          "reference": "Acts 28:16",
+          "purpose": "Paul actually arrives in Rome before the final proclamation pericope opens at Acts 28:23",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H73-07",
+          "sourceV18": "Acts 28:23–31",
+          "scene": "Paul freely preaches Christ in Rome",
+          "refs": [
+            "Acts 28:23–31"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M35",
+      "title": "Christ and the Lamb in heavenly vision",
+      "sequence": 35,
+      "purpose": "Christ addresses his Church and the slain Lamb stands at the center of God's heavenly plan",
+      "originalResearchChapterIds": [
+        "H74",
+        "H75"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H75-01",
+          "label": "The heavenly worship around the throne",
+          "explanation": "The throne vision supplies the antecedent for the book held by the One upon the throne in Revelation 5.",
+          "sourceReference": "Revelation 4:1–11",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H75-02",
+          "sourceV18": "Revelation 5:1–14",
+          "scene": "The slain Lamb receives the scroll",
+          "refs": [
+            "Revelation 5:1–14"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M36",
+      "title": "The final conflict and judgment",
+      "sequence": 36,
+      "purpose": "Visionary images of conflict lead to Christ's victory and judgment without a contrived literal timeline",
+      "originalResearchChapterIds": [
+        "H76",
+        "H77"
+      ],
+      "beats": [
+        {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H76-03",
+          "label": "The woman, dragon and conflict",
+          "explanation": "Use the woman/dragon vision as symbolic conflict linked to the first promise; never turn apocalyptic imagery into dated literal history.",
+          "sourceReference": "Revelation 12:1–17",
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H77-01",
+          "sourceV18": "Revelation 19:11–21",
+          "scene": "The final victory of Christ",
+          "refs": [
+            "Revelation 19:11–21"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H77-02",
+          "sourceV18": "Revelation 20:1–15",
+          "scene": "The last judgment",
+          "refs": [
+            "Revelation 20:1–15"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    },
+    {
+      "id": "HS-M37",
+      "title": "The New Creation",
+      "sequence": 37,
+      "purpose": "God's renewed dwelling with his people, the river of life and consummation of the promise",
+      "originalResearchChapterIds": [
+        "H78"
+      ],
+      "beats": [
+        {
+          "kind": "SCRIPTURE",
+          "id": "H78-01",
+          "sourceV18": "Revelation 21:1–7",
+          "scene": "New heaven and new earth",
+          "refs": [
+            "Revelation 21:1–7"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        },
+        {
+          "kind": "SCRIPTURE",
+          "id": "H78-02",
+          "sourceV18": "22:1–5",
+          "scene": "The river and tree of life",
+          "refs": [
+            "Revelation 22:1–5"
+          ],
+          "edition": "cpdv-2009",
+          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "hasPartialVerseHold": false,
+          "publicationApproved": false
+        }
+      ],
+      "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
+      "readAloudAccepted": false,
+      "readyForPublication": false
+    }
+  ]
+}
