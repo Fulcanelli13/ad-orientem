@@ -114,6 +114,26 @@ export function mountScriptureLibrary(root,{
    heading.append(element("h2",t.heading));
    const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
+   // A translation is a reading choice, distinct from switching language.
+   // Keep both Catholic English witnesses one tap away, even when the full
+   // Bible navigation drawer is closed. Persist an explicit reader choice.
+   if(lang==="en"){
+     const editions=element("div",null,"aoScriptureEnglishSwitch");
+     editions.setAttribute("role","group");
+     editions.setAttribute("aria-label","English Bible translation");
+     for(const [id,name] of [["dr-challoner","Douay–Rheims"],["cpdv-2009","CPDV"]]){
+       const button=element("button",name);
+       button.type="button";
+       button.dataset.scriptureEnglishEdition=id;
+       button.setAttribute("aria-pressed",String(id===editionId));
+       button.addEventListener("click",()=>{
+         if(id===editionId)return;
+         moveEdition(id);prefs.setEnglishEdition(id);draw();
+       });
+       editions.append(button);
+     }
+     wrap.append(editions);
+   }
    // Explicit research opt-in only: the public reader and parent Mass/Rosary
    // state remain unchanged. This opens the editor's separate source workbench.
    const researchFlag=root.ownerDocument?.defaultView?.location?.search??"";
