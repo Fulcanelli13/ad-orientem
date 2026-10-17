@@ -62,7 +62,7 @@ for(const [fr,lang] of [[false,"en"],[true,"fr"]]){
    blockId,french:fr,selectedCalendarProper:projection
   });
   assert.match(html,new RegExp('data-ao-mx-calendar-proper="'+slot+'"'));
-  assert.match(html,new RegExp("data-ao-mx-calendar-date=\\"2026-10-07\\""));
+  assert.ok(html.includes('data-ao-mx-calendar-date="2026-10-07"'));
   assert.ok(html.includes("Sancti/10-07"));
   assert.ok(html.includes("&lt;tested&gt;"),"Source must be safely escaped");
   assert.ok(html.includes((fr?"Français ":"English ")+kind));
