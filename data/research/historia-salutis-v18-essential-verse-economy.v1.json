@@ -21,18 +21,19 @@
   },
   "counts": {
     "essential": 93,
-    "edited": 31,
-    "protected": 34,
-    "unchanged": 25,
+    "edited": 30,
+    "protected": 33,
+    "unchanged": 24,
     "editionCorrections": 2,
-    "priorContinuityRestorations": 1
+    "priorContinuityRestorations": 1,
+    "literaryContinuityExpansions": 3
   },
   "candidateSourceEditions": [
     "cpdv-2009",
     "dr-challoner"
   ],
   "verification": {
-    "coordinateChecks": "ALL_93_PASS_REGISTERED_SCRIPTURE_CONTRACTS",
+    "coordinateChecks": "REQUIRES_NEW_CI_AFTER_BATCH_SOURCE_EXPANSIONS",
     "textCollation": false,
     "fullLiteraryReadAloud": false,
     "CatholicEditorialApproval": false,
@@ -75,7 +76,30 @@
     "targetCPDVAndDouaySourceCoordinatePresenceVerified": true,
     "historicalCramponExceptionSourcePresenceVerified": true,
     "originalPrintedEditionAttested": false,
-    "originalTextAndRightsCollated": false
+    "originalTextAndRightsCollated": false,
+    "batch01_09": {
+      "movementIds": [
+        "HS-M01",
+        "HS-M02",
+        "HS-M03",
+        "HS-M04",
+        "HS-M05",
+        "HS-M06",
+        "HS-M07",
+        "HS-M08",
+        "HS-M09"
+      ],
+      "status": "TEXT_SEAMS_DESK_EXAMINED_PROVISIONAL",
+      "sourceContinuityFixes": [
+        "H11-02",
+        "H13-01",
+        "H16-03",
+        "H21-03"
+      ],
+      "approved": false,
+      "oralReadThrough": false,
+      "reason": "Actual CPDV opening/end verses inspected; incomplete antecedents and broken causal links restored from the same canonical books."
+    }
   },
   "rules": [
     "Verse order preserved in every excerpt",
@@ -298,18 +322,22 @@
       "scene": "Covenant promise and the land",
       "proposedSelectedReferences": [
         "Genesis 15:1–6",
+        "Genesis 15:9–10",
+        "Genesis 15:13–14",
         "Genesis 15:17–18"
       ],
-      "selectionStatus": "PROPOSED_CURATED_TRIM",
-      "reason": "Remove incidental or repeated material without losing the necessary content of covenant promise and the land; make every gap visibly non-contiguous.",
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "The original split introduced a smoking fire passing between 'those divisions' without showing the animals divided (15:9–10). The prophecy of enslavement and deliverance (15:13–14) is indispensable covenant-to-Exodus foreshadowing.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "PROPOSED_CURATED_TRIM",
+      "literaryBatch": "MOVEMENTS_01_09_DESK_READING"
     },
     {
       "unitId": "H11-03",
@@ -358,18 +386,20 @@
       "v18ChapterId": "H13",
       "scene": "Isaac offered and providentially spared",
       "proposedSelectedReferences": [
-        "Genesis 22:1–2, 6–14, 15–19"
+        "Genesis 22:1–19"
       ],
-      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
-      "reason": "The sacrifice of Isaac must retain divine intervention and promise.",
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "The original 22:1–2 to 22:6 handoff starts 'He also took the wood' without the journey, preparation or servants; preserving 22:1–19 avoids an artificial gap in the covenant's decisive trial.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "literaryBatch": "MOVEMENTS_01_09_DESK_READING"
     },
     {
       "unitId": "H15-02",
@@ -447,18 +477,22 @@
       "v18ChapterId": "H16",
       "scene": "Joseph raised to authority",
       "proposedSelectedReferences": [
-        "Genesis 41:14–16, 37–45"
+        "Genesis 41:14–16",
+        "Genesis 41:25–30",
+        "Genesis 41:33–45"
       ],
-      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
-      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Joseph raised to authority.",
-      "editorReviewedForNarrativeEconomy": false,
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "Pharaoh's approval at 41:37 called the counsel good without any counsel in the selected verses. Restore Joseph's interpretation of seven years of plenty and famine and his recommendation to store grain (41:25–30,33–36).",
+      "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
-      "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "omittedVersesMustBeVisible": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "literaryBatch": "MOVEMENTS_01_09_DESK_READING"
     },
     {
       "unitId": "H16-04",
@@ -636,15 +670,15 @@
       "proposedSelectedReferences": [
         "Exodus 14:5–10",
         "Exodus 14:13–16",
-        "Exodus 14:19–22",
+        "Exodus 14:19–23",
         "Exodus 14:26–31"
       ],
       "selectionStatus": "PRIOR_SOURCE_CONTINUITY_RESTORED",
-      "reason": "The original v18 excerpt begins after Pharaoh's pursuit was established. Restore 14:5–10 and Moses' assurance 14:13–14 from the prior 40-unit source correction overlay. Retain the crossing and deliverance in 14:15–16,19–22,26–31. The Exodus 15 song remains accessible as canonical Scripture and earlier research, but is not compulsory narrative.",
+      "reason": "Keep the previously restored pursuit (14:5–10), Moses's reassurance (14:13–14), the sea crossing (14:15–22) AND the Egyptians' entry into the sea (14:23) before the waters return (14:26–31); removing 14:23 breaks causal continuity.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
@@ -662,7 +696,8 @@
         "choice": "SELECTED_SUBSET_OF_PREVIOUS_HIGH_RISK_CONTINUITY_CORRECTION",
         "noPriorResearchDeleted": true
       },
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "literaryBatch": "MOVEMENTS_01_09_DESK_READING"
     },
     {
       "unitId": "H22-01",
@@ -2029,17 +2064,5 @@
       "selectedCoordinatesAreScriptureOnly": true
     }
   ],
-  "comparativeScriptureEconomy": {
-    "originalNominalVerseUnits": 1207,
-    "proposedNominalVerseUnits": 1051,
-    "nominalDifference": 156,
-    "historicalEditionExceptions": 2,
-    "nominalCountingDifferenceNotEditorialCut": 1,
-    "comparableOriginalVerseUnits": 1189,
-    "comparableSelectedVerseUnits": 1034,
-    "comparableActualVerseUnitReductions": 155,
-    "comparableReductionRatePct": 13,
-    "countingRule": "Count biblical verse-unit coordinates in the source edition for original and proposed extracts. Exclude historical Crampon/CPDV numbering exceptions for like-for-like percent. Does not count the 32 brief B-context ideas or any separate bridge references. Does not estimate word count or reading duration.",
-    "readAloudApproved": false
-  }
+  "comparativeScriptureEconomy": null
 }
