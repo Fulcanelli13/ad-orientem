@@ -87,8 +87,37 @@ function labelFor(meta,locale){
   const exact=properTitles[meta.properSlot];
   return exact?exact[locale==="fr"?1:0]:String(meta.title??meta.blockId);
 }
-/** Non-normative, optional one-line identification; no history or symbolism. */
-export function missalPrayerHeadingsForCard(card,{language="en"}={}){
+// Actual-Mass-owner contextual rubric, not a timed priest/minister event.
+// Missale Romanum 1962, Ritus servandus VII.4 and VII.9; the Requiem
+// omission is in VII.4 and Ordo Missae. This is static Missal guidance at
+// the B032 prayer, not a synthetic "pour wine" cue when the page is opened.
+// Latin witnesses:
+// https://www.intratext.com/IXT/LAT0820/_PI.HTM
+// https://www.intratext.com/IXT/LAT0820/_PP.HTM
+export function missalChalicePreparationDescription(resolvedMass,{language="en"}={}){
+  const form=String(resolvedMass?.form??"").toUpperCase();
+  if(!["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(form)
+    || !resolvedMass?.actualCelebration)return null;
+  const locale=String(language).toLowerCase().startsWith("fr")?"fr":"en";
+  const requiem=String(resolvedMass.actualCelebration.type??"").toUpperCase()==="REQUIEM"
+    || (resolvedMass.overlays??[]).includes("REQUIEM");
+  const solemn=form==="SOLEMN";
+  const rows=solemn
+    ? requiem
+      ? ["Before this prayer, the deacon pours the wine and the subdeacon presents and adds the water. The priest says the prayer without blessing the water.",
+         "Avant cette prière, le diacre verse le vin et le sous-diacre présente et ajoute l’eau. Le prêtre récite la prière sans bénir l’eau."]
+      : ["Before this prayer, the deacon pours the wine; the subdeacon presents and adds the water as the priest blesses it and says the prayer.",
+         "Avant cette prière, le diacre verse le vin ; le sous-diacre présente et ajoute l’eau tandis que le prêtre la bénit et récite la prière."]
+    : requiem
+      ? ["The priest pours the wine before this prayer, then adds water without blessing it while saying the prayer.",
+         "Le prêtre verse le vin avant cette prière, puis ajoute l’eau sans la bénir en récitant la prière."]
+      : ["The priest pours the wine before this prayer, then blesses and adds the water while saying it.",
+         "Le prêtre verse le vin avant cette prière, puis bénit et ajoute l’eau en la récitant."];
+  return rows[locale==="fr"?1:0];
+}
+
+/** Brief prayer identity and form-specific practical context; no history or inferred live events. */
+export function missalPrayerHeadingsForCard(card,{language="en",resolvedMass=null}={}){
   const locale=String(language).toLowerCase().startsWith("fr")?"fr":"en";
   return Object.freeze((card?.blocks??[])
     .filter(block=>block.firstParagraphIndex!=null&&block.paragraphCount>0)
@@ -96,7 +125,10 @@ export function missalPrayerHeadingsForCard(card,{language="en"}={}){
       blockId:block.blockId,
       paragraphIndex:block.firstParagraphIndex,
       title:labelFor(block,locale),
-      description:shortDescriptions[block.blockId.replace("AO.SM.","")]?.[locale==="fr"?1:0]??null,
+      description:block.blockId==="AO.SM.B032"
+        ? missalChalicePreparationDescription(resolvedMass,{language:locale})
+          ??shortDescriptions.B032[locale==="fr"?1:0]
+        : shortDescriptions[block.blockId.replace("AO.SM.","")]?.[locale==="fr"?1:0]??null,
     })));
 }
 function subsections(card,groups){

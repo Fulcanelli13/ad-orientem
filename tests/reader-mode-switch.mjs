@@ -323,6 +323,54 @@ assert.equal(enHeadings[0].title,"Suscipe, sancte Pater");
 assert.equal(enHeadings[0].description,"The offering of the bread.");
 assert.equal(frHeadings[0].description,"Offrande du pain.");
 assert.equal(enHeadings[0].paragraphIndex,0);
+// Ritus servandus VII.4, VII.9: describe the actual selected form without
+// attributing a *live* chalice preparation action to the opening of B032.
+// Requiem keeps Deus qui humanae and omits the blessing, not the prayer.
+const chalicePage=missal.presentationModel.cards.find(c=>
+  c.blocks.some(b=>b.blockId==="AO.SM.B032"));
+assert.ok(chalicePage&&chalicePage.blocks.length===1&&chalicePage.paragraphs.length,
+  "Chalice preparation must retain its own source-owned Missal prayer page");
+const chaliceHeading=(mass,language="en")=>
+  missalPrayerHeadingsForCard(chalicePage,{language,resolvedMass:mass})[0];
+assert.equal(chaliceHeading(null).description,"Preparation of the chalice.",
+  "Unknown form must not generate a form-specific ceremonial claim");
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const mass={...resolvedMass,form};
+  const normalEn=chaliceHeading(mass).description;
+  const normalFr=chaliceHeading(mass,"fr").description;
+  if(form==="SOLEMN"){
+    assert.match(normalEn,/deacon pours the wine/);
+    assert.match(normalEn,/subdeacon presents and adds the water/);
+    assert.match(normalFr,/diacre verse le vin/);
+    assert.match(normalFr,/sous-diacre présente et ajoute l’eau/);
+  }else{
+    assert.match(normalEn,/priest pours the wine/);
+    assert.match(normalEn,/blesses and adds the water/);
+    assert.match(normalFr,/prêtre verse le vin/);
+  }
+  assert.match(normalEn,/before this prayer/i,
+    "Wine pouring must not be projected as simultaneous C0112 action");
+  const requiem={...mass,actualCelebration:{id:"requiem",type:"REQUIEM"},overlays:["REQUIEM"]};
+  const deadEn=chaliceHeading(requiem).description;
+  const deadFr=chaliceHeading(requiem,"fr").description;
+  assert.match(deadEn,/without blessing (?:the water|it)/);
+  assert.match(deadFr,/sans (?:bénir l’eau|la bénir)/);
+  assert.doesNotMatch(deadEn,/blesses it|blesses and adds/);
+  assert.equal(chaliceHeading({...mass,overlays:["REQUIEM"]}).description,deadEn,
+    "Requiem overlay must govern even when actual selection is calendar-derived");
+  assert.equal(chaliceHeading({...mass,actualCelebration:{id:"requiem",type:"REQUIEM"},overlays:[]}).description,deadEn,
+    "Requiem type must govern even without a duplicated overlay flag");
+  assert.equal(chaliceHeading(mass).blockId,"AO.SM.B032");
+  assert.equal(chaliceHeading(mass).paragraphIndex,0);
+}
+assert.equal(chaliceHeading({...resolvedMass,form:"UNKNOWN"}).description,
+  "Preparation of the chalice.","Unsupported form must remain generic");
+assert.equal(missalPrayerHeadingsForCard(offertoryPage,{
+  resolvedMass:{...resolvedMass,form:"SOLEMN"},language:"en"
+})[0].description,"The offering of the bread.",
+  "Offertory adjacent prayer identity must not inherit chalice-specific minister text");
+assert.ok(live.presentationModel.cards.some(c=>c.blocks?.some(b=>b.blockId==="AO.SM.B032")),
+  "The original LIVE source block must be preserved");
 assert.equal(missal.sourceModel.cards.find(c=>c.blocks.some(b=>b.blockId==="AO.SM.B031")).sectionId,
   "AO.CARD.010","canonical source section identity must remain the owner");
 
