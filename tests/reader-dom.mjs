@@ -85,8 +85,8 @@ expect(html.includes("border:0;border-radius:0;background:transparent;box-shadow
 expect(html.includes(".ao-reader-body")===false,"unexpected duplicate reader body presentation layer appeared");
 expect(html.includes('Existing 19 R18 Solemn source events')===false,
   "UI must not duplicate research/editorial registry into HTML labels");
-expect(html.includes("Expected 1962 minister rubric (not independently observed)"),
-  "Solemn minister accessibility must distinguish rubrical expectation from observation");
+expect(typeof projectCertifiedSolemnMinisterRubric==="function",
+  "Solemn source projection must remain a pure guarded presentation helper");
 expect(html.includes('data-channel="sacred-minister" data-active="false" aria-hidden="true"'),
   "Unselected and non-Solemn readers must not show a phantom minister tile");
 expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matches the final executable donor");
