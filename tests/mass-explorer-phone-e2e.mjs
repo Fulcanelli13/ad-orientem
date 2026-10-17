@@ -228,7 +228,7 @@ try{
     await origin.click();
     const bible=page.locator("#ao-scripture-overlay");
     await bible.waitFor({state:"visible",timeout:12000});
-    assert.match(await bible.locator(".aoScriptureContextTitle").innerText(),/Isaiah 6:3/);
+    assert.match(await bible.locator(".aoScriptureReading h3").innerText(),/Isaiah 6:3/);
     await bible.locator("[data-scripture-close]").click();
     assert.equal(await origin.evaluate(el=>el===document.activeElement),true,"Scripture source-owner must restore exact Explorer focus");
     assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.013"]').count(),1,
