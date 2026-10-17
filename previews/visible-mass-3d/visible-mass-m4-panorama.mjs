@@ -11,14 +11,14 @@ export const M4_PANORAMA_SCENES=Object.freeze({
   id:"BROMPTON_PANO", venue:"Brompton Oratory, London",
   filename:"Brompton Oratory 360x180, London, UK - Diliff.jpg",
   source:"https://commons.wikimedia.org/wiki/File:Brompton_Oratory_360x180,_London,_UK_-_Diliff.jpg",
-  creator:"David Iliff",licence:"CC BY-SA 3.0",
+  creator:"David Iliff",licence:"CC BY-SA 3.0",licenceUrl:"https://creativecommons.org/licenses/by-sa/3.0/",
   caption:"Brompton Oratory · genuine 360° interior photograph · not a Mass in progress"
  }),
  NEWMAN_360:Object.freeze({
   id:"NEWMAN_360",venue:"Newman University Church, Dublin",
   filename:"Newman University Church Interior 360x180, Dublin, Ireland - Diliff.jpg",
   source:"https://commons.wikimedia.org/wiki/File:Newman_University_Church_Interior_360x180,_Dublin,_Ireland_-_Diliff.jpg",
-  creator:"David Iliff",licence:"CC BY-SA 3.0",
+  creator:"David Iliff",licence:"CC BY-SA 3.0",licenceUrl:"https://creativecommons.org/licenses/by-sa/3.0/",
   caption:"Newman University Church · genuine 360° interior photograph · separate Catholic church, not a 1962 Mass record"
  })
 });
