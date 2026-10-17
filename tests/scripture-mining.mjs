@@ -448,7 +448,7 @@ for(const chapter of correctionDelta.chapters)for(const unit of chapter.units){
  assert.equal(e.provenance.sourceSchema,"AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7");
  assert.match(e.provenance.sourceBlobSha,/^[a-f0-9]{40}$/);
  assert.equal(e.automaticApproval,false);
- assert.match(e.interpretation,/not count agreements with these proposed principal verses/);
+ assert.match(e.interpretation,/not count agreements with these proposed principal verses/i);
  if(e.matchedAtlasEvents.length){linked++}else{unlinked++;
   assert.equal(e.status,"NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT");
  }
