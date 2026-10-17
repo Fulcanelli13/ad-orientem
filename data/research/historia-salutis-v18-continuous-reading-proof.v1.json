@@ -14,18 +14,18 @@
     },
     {
       "path": "data/research/historia-salutis-v18-continuity-desk-pass.v1.json",
-      "blobSha": "6b5fab6a936ea3c4fe10e7b7e645df1b12e7d486"
+      "blobSha": "1db7987e0416622ba8f8a636be11f824af05ff87"
     },
     {
       "path": "data/research/historia-salutis-v18-essential-verse-economy.v1.json",
-      "blobSha": "56fbb5bcf53e749d468813cabf6015e8a5b5d699"
+      "blobSha": "6b2bb69a08d4eb7c9f2ec33229ebcd77ee4b3d22"
     }
   ],
   "totals": {
     "movements": 37,
     "essentialUnits": 93,
-    "briefEditorialContextNotes": 31,
-    "sourceBridgeCandidates": 11,
+    "briefEditorialContextNotes": 29,
+    "sourceBridgeCandidates": 10,
     "independentlyReadAndApproved": false
   },
   "displayRules": {
@@ -733,12 +733,13 @@
           "sourceV18": "Exodus 19:3–8",
           "scene": "The covenant invitation to Israel",
           "refs": [
-            "Exodus 19:3–8"
+            "Exodus 19:1–8"
           ],
           "edition": "cpdv-2009",
-          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "Israel's arrival at Sinai is necessary before Moses ascends the mountain to receive the covenant summons; Exodus 19:1–2 identifies place and setting."
         },
         {
           "kind": "SCRIPTURE",
@@ -786,14 +787,22 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H23-02",
           "label": "The Tabernacle and cloud of God's presence",
-          "explanation": "Describe the divine dwelling in the Tabernacle, linking Sinai and Solomon's Temple without repeating architectural inventories.",
+          "explanation": "The Lord commanded Israel to erect the Tabernacle, where the Ark of the Covenant signified his dwelling among the people during their journey (Exodus 40:17–38).",
           "sourceReference": "Exodus 40:16–21, 34–38",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Exodus 40:16–21, 34–38",
+          "editorialTextApproved": false
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M11",
@@ -810,9 +819,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H24-02",
           "label": "Joshua commissioned as successor",
-          "explanation": "Name Joshua as commissioned successor before the crossing of Jordan.",
+          "explanation": "After the years in the wilderness, Moses commissioned Joshua to lead Israel across the Jordan into the promised land (Numbers 14:33–34; Deuteronomy 31:7–8).",
           "sourceReference": "Deuteronomy 31:1–8",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Deuteronomy 31:1–8",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -859,7 +870,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M12",
@@ -876,9 +893,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H28-01",
           "label": "Ruth's fidelity to Naomi",
-          "explanation": "Identify Ruth as the Moabite who remained faithful to Naomi before Ruth 4 identifies her offspring and David's lineage.",
+          "explanation": "Ruth, a Moabite widow, remained faithful to her mother-in-law Naomi and returned with her to Bethlehem (Ruth 1:16–22).",
           "sourceReference": "Ruth 1:1–18",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Ruth 1:1–18",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -898,9 +917,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H29-02",
           "label": "Samuel called by the Lord",
-          "explanation": "Identify Samuel as a prophet entrusted with guiding Israel through its transition to kingship.",
+          "explanation": "Samuel served as a prophet during Israel's transition to kingship. Saul, a Benjaminite, came to Samuel, whom the Lord had instructed to anoint him (1 Samuel 3:19–21; 9:15–27).",
           "sourceReference": "1 Samuel 3:1–21",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "1 Samuel 3:1–21",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -932,7 +953,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M13",
@@ -947,34 +974,28 @@
       ],
       "beats": [
         {
-          "kind": "SOURCE_BRIDGE_CANDIDATE",
-          "id": "HS-CF-04",
-          "reference": "1 Samuel 16:1–3",
-          "purpose": "Existing 1 Samuel 16:10–13 opens after Samuel has already seen seven sons; the prophet's commission to Jesse must be supplied",
-          "sourceEdition": "cpdv-2009",
-          "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
-        },
-        {
           "kind": "SCRIPTURE",
           "id": "H30-01",
           "sourceV18": "1 Samuel 16:10–13",
           "scene": "David anointed by Samuel",
           "refs": [
-            "1Samuel 16:10–13"
+            "1Samuel 16:1–13"
           ],
           "edition": "cpdv-2009",
-          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "Without verses 4–9 the Lord's instruction to Jesse and Samuel's examination of the elder sons are missing before verse 10. Preserve the complete chosen-king episode, replacing the earlier provisional 1Samuel 16:1–3 source bridge."
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H31-04",
           "label": "Saul dies and kingship changes",
-          "explanation": "Indicate Saul's death before David is shown receiving the kingdom.",
+          "explanation": "Saul died in battle against the Philistines, and David subsequently began his reign over Judah at Hebron (1 Samuel 31; 2 Samuel 2:1–4).",
           "sourceReference": "1 Samuel 31:1–13",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "1 Samuel 31:1–13",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -1022,17 +1043,24 @@
           "sourceV18": "2 Samuel 7:8–16",
           "scene": "God promises David an enduring royal house",
           "refs": [
-            "2Samuel 7:8–16"
+            "2Samuel 7:1–16"
           ],
           "edition": "cpdv-2009",
-          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "The divine answer in 7:8 begins mid-command to Nathan; verses 1–7 establish David's desire to build God a house and God's response before the covenant promise of an enduring royal dynasty."
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M14",
@@ -1049,17 +1077,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H34-01",
           "label": "David's sin with Bathsheba and Uriah",
-          "explanation": "King David's grave sin supplies a moral counterpoint to the enduring covenant, not a full additional court narrative.",
+          "explanation": "David sinned grievously against Bathsheba and Uriah. Nathan confronted him, and David acknowledged his sin before the Lord (2 Samuel 11–12).",
           "sourceReference": "2 Samuel 11:1–5, 14–17",
-          "publicationApproved": false
-        },
-        {
-          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
-          "id": "H34-02",
-          "label": "Nathan rebukes David and he repents",
-          "explanation": "Keep Nathan's condemnation and David's repentance together, without duplicating the penitential psalm as mandatory narration.",
-          "sourceReference": "2 Samuel 12:1–13",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "2 Samuel 11:1–5, 14–17",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -1067,12 +1089,13 @@
           "sourceV18": "1 Kings 6:1–2",
           "scene": "Solomon builds the Temple",
           "refs": [
-            "1Kings 6:1–2"
+            "1Kings 6:1"
           ],
           "edition": "cpdv-2009",
-          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "Preserve the Temple-construction event but omit numerical dimensions from this introductory narrative unit; the Temple's consecration is already narrated in the next original passage."
         },
         {
           "kind": "SCRIPTURE",
@@ -1094,9 +1117,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H35-04",
           "label": "Solomon turns to other gods",
-          "explanation": "Explain Solomon's infidelity as the direct prelude to the divided kingdom.",
+          "explanation": "Solomon subsequently turned to foreign gods, and the Lord announced that the kingdom would be torn apart after him, though a portion would remain for David's sake (1 Kings 11:1–13).",
           "sourceReference": "1 Kings 11:1–13",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "1 Kings 11:1–13",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -1118,24 +1143,30 @@
           "scene": "Israel and Judah divide",
           "refs": [
             "1Kings 12:1–5",
-            "1Kings 12:13–20",
-            "1Kings 12:24"
+            "1Kings 12:13–20"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "The final verse 12:24 begins in the middle of Shemaiah's unintroduced quotation. The division is already completed and explained in 12:13–20; do not feature an orphan quotation."
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M15",
       "title": "Prophetic warning and Israel's judgment",
       "sequence": 15,
-      "purpose": "Prophetic voices and messianic promises interpret the divisions and Israel's catastrophe",
+      "purpose": "Idolatry and prophetic calls to fidelity frame Isaiah's distinct messianic oracles; the northern kingdom's fall is a historical event, not a simultaneous fulfillment of every oracle.",
       "originalResearchChapterIds": [
         "H37",
         "H38",
@@ -1146,9 +1177,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H37-02",
           "label": "Elijah confronts Baal's prophets",
-          "explanation": "Use Elijah's opposition to Baal as evidence of prophetic fidelity amid idolatry; the dramatic contest is not itself mandatory reading.",
+          "explanation": "Elijah opposed the worship of Baal during Israel's apostasy (1 Kings 18). The following oracles of Isaiah are distinct prophetic witnesses to God's promises, not episodes occurring in one continuous scene (Isaiah 7; 9; 11; 52–53).",
           "sourceReference": "1 Kings 18:20–39",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "1 Kings 18:20–39",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -1209,24 +1242,31 @@
           "sourceV18": "2 Kings 17:5–18",
           "scene": "The northern kingdom falls under judgment",
           "refs": [
-            "2Kings 17:5–8",
+            "2Kings 17:3–8",
             "2Kings 17:13–18"
           ],
           "edition": "cpdv-2009",
-          "policy": "PROPOSED_CURATED_TRIM",
+          "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "Original 17:5 begins 'And he wandered' without naming the Assyrian king. Verses 3–4 establish Shalmaneser, Hoshea, rebellion and the siege before Samaria's fall."
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M16",
-      "title": "The New Covenant promised in exile",
+      "title": "Judah's fall and the promise of a New Covenant",
       "sequence": 16,
-      "purpose": "Jeremiah promises a new covenant; Jerusalem falls, and distinct voices witness exile without forced chronology",
+      "purpose": "Jeremiah announces God's new covenant before the fall of Jerusalem and the Babylonian exile; these are distinct prophetic and historical witnesses.",
       "originalResearchChapterIds": [
         "H40",
         "H41",
@@ -1276,13 +1316,20 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      },
+      "priorResearchTitle": "The New Covenant promised in exile"
     },
     {
       "id": "HS-M17",
       "title": "Restoration and the expectation of Christ",
       "sequence": 17,
-      "purpose": "Exiles return, the Temple is rebuilt, and the period before Christ is oriented by fidelity and hope",
+      "purpose": "The restoration after the Babylonian exile leads to later Maccabean resistance and expectation of the Messiah, without collapsing historically separate centuries.",
       "originalResearchChapterIds": [
         "H43",
         "H44"
@@ -1307,42 +1354,55 @@
           "sourceV18": "Ezra 6:13–22",
           "scene": "The Temple rebuilt",
           "refs": [
-            "Ezra 6:13–16",
+            "Ezra 6:14–16",
             "Ezra 6:19–22"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "Ezra 6:13 depends on Darius's otherwise absent administrative instructions and named officials; begin with the elders' actual rebuilding and preserve the Temple dedication and Passover."
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H43-03",
           "label": "Ezra and Nehemiah renew the hearing of the law",
-          "explanation": "Use the return of the Law and communal worship to explain restoration; Nehemiah's whole ceremony is not required.",
+          "explanation": "After the return, Ezra publicly proclaimed the Law and the community renewed its worship of the Lord (Nehemiah 8:1–8).",
           "sourceReference": "Nehemiah 8:1–12",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Nehemiah 8:1–12",
+          "editorialTextApproved": false
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H44-01",
           "label": "Maccabean resistance to imposed idolatry",
-          "explanation": "State the Maccabean persecution and resistance to bridge restoration and messianic expectation; do not put it in the Babylonian exile.",
+          "explanation": "In later generations, foreign rulers pressured the Jewish people to forsake their law. Mattathias resisted enforced idolatry, beginning the Maccabean struggle (1 Maccabees 2:15–28).",
           "sourceReference": "1 Maccabees 2:15–28",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "1 Maccabees 2:15–28",
+          "editorialTextApproved": false
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H44-03",
           "label": "Martyrdom and hope of resurrection",
-          "explanation": "Mention witness to resurrection hope under persecution; do not require the full narrative of all seven martyrdoms.",
+          "explanation": "The martyrs under persecution witnessed to Israel's hope in the resurrection, even in the face of death (2 Maccabees 7).",
           "sourceReference": "2 Maccabees 7:1–42",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "2 Maccabees 7:1–42",
+          "editorialTextApproved": false
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M18",
@@ -1370,7 +1430,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M19",
@@ -1388,9 +1454,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H47-01",
           "label": "The Visitation and Magnificat",
-          "explanation": "Mention the Visitation/Magnificat briefly, preserving the distinct Lukan episode rather than stitching it into Matthew's Joseph account.",
+          "explanation": "Mary visited Elizabeth, whose child leapt at her greeting, and praised the Lord for his mercy and promises to Israel in the Magnificat (Luke 1:39–56).",
           "sourceReference": "Luke 1:39–56",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Luke 1:39–56",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -1420,19 +1488,13 @@
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
-          "id": "H48-02",
-          "label": "Circumcision and naming of Jesus",
-          "explanation": "Ensure the child is explicitly named Jesus, without a separate ceremonial chapter.",
-          "sourceReference": "Luke 2:21",
-          "publicationApproved": false
-        },
-        {
-          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H49-01",
           "label": "Presentation of Christ and Simeon's prophecy",
-          "explanation": "Simeon's recognition places the Presentation in Israel's expectation without a separate compulsory temple scene.",
+          "explanation": "Mary and Joseph presented Jesus in the Temple, where Simeon recognised the promised salvation, a light to the Gentiles (Luke 2:22–32).",
           "sourceReference": "Luke 2:22–38",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Luke 2:22–38",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -1451,14 +1513,22 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H49-03",
           "label": "The flight to Egypt and the return",
-          "explanation": "Identify the return and dwelling in Nazareth as the bridge from infancy to the Forerunner.",
+          "explanation": "Warned that Herod threatened the child, Joseph took Jesus and Mary into Egypt. After Herod's death, the family returned and settled in Nazareth (Matthew 2:13–23).",
           "sourceReference": "Matthew 2:13–23",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Matthew 2:13–23",
+          "editorialTextApproved": false
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M20",
@@ -2293,12 +2363,20 @@
     }
   ],
   "literaryReviewProgress": {
-    "movementsDeskExamined": 9,
+    "movementsDeskExamined": 19,
     "movementsTotal": 37,
-    "sourceContinuityExpansions": 3,
-    "priorRedSeaSourceRestored": true,
-    "editorialContextNotesReducedFrom32To31": true,
+    "sourceContinuityExpansions": 7,
+    "historicSourceBridgesAbsorbedIntoEssentialText": 1,
+    "editorialContextNotesReducedFrom32To29": true,
     "oralReadingsApproved": 0,
     "theologicalPublicationApprovals": 0
+  },
+  "historicallyProposedBridgeStatus": {
+    "sourceCandidatesInDeskRegistry": 11,
+    "activeInProof": 10,
+    "absorbedByCompleteNativeReading": [
+      "HS-CF-04"
+    ],
+    "preservedHistory": true
   }
 }
