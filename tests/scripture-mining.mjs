@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {spawnSync} from "node:child_process";
 import {SCRIPTURE_EDITIONS,DEFAULT_SCRIPTURE_EDITION} from "../src/scripture/catalogue.js";
 import {createScripturePreferences} from "../src/scripture/preferences.js";
 import {sourceMiningTargets,loadSourceMiningTargets,miningWorkbenchUrl} from "../src/scripture/mining-targets.js";
@@ -100,6 +101,11 @@ const beadReview=validateScriptureMiningDecision({reference:"Luke 1:28",
 assert.equal(beadReview.originBead,2,"Distinct Guided beads must retain editorial identity");
 const legacyReview=validateScriptureMiningDecision({...beadReview,originBead:undefined});
 assert.equal(legacyReview.originBead,null,"Older exported ratings remain readable");
+const inlineScript=html.match(/<script type="module">([\\s\\S]*?)<\\/script>/)?.[1];
+assert.ok(inlineScript,"Workbench must retain a single module entry point");
+const syntax=spawnSync(process.execPath,["--check","--input-type=module"],
+ {input:inlineScript,encoding:"utf8"});
+assert.equal(syntax.status,0,syntax.stderr||"Workbench script failed syntax validation");
 assert.match(html,/loadSourceMiningTargets/);
 assert.match(html,/linkedObject/);
 assert.match(readFileSync(new URL("../src/scripture/library.js",import.meta.url),"utf8"),/ao_scripture_research/,
