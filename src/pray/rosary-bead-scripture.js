@@ -74,13 +74,9 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
  passage.textContent=french?"Lire le passage":"Read passage";
  actions.append(passage);
  if(plan.catenaAvailable){
-  const fathers=doc.createElement("a");
-  fathers.href="https://www.ecatholic2000.com/catena/untitled-62.shtml";
-  // The actual Catena source is resolved from the verse in the canonical
-  // reader; never use an invented fixed Gospel-pericope external URL.
-  fathers.removeAttribute("href");
-  fathers.setAttribute("role","button");
-  fathers.tabIndex=0;
+  const fathers=doc.createElement("button");
+  fathers.type="button";
+  // The original Catena source is resolved by the canonical passage reader.
   fathers.dataset.aoScriptureContext=plan.reference;
   fathers.dataset.aoScriptureDepth="commentary";
   fathers.dataset.aoRosaryChurchFathers=identity;
@@ -95,8 +91,7 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
  prayer.append(container);
  void rosaryInlineSourceVerses(plan).then(rows=>{
   if(!container.isConnected||
-    root.querySelector(".pbShell")?.dataset?.aoRosaryCurrentBead!==String(identity.split(".b")[1])||
-    root.querySelector(".pbShell")?.dataset?.aoRosaryKind!=="prayer")return;
+    root.querySelector(".pbShell")?.dataset?.aoRosaryCurrentBead!==String(identity.split(".b")[1]))return;
   text.replaceChildren();
   if(rows.length!==plan.shownEnd-plan.shownStart+1){
    text.textContent=french?"Verset indisponible dans cette transcription.":"Verse unavailable in this source transcription.";
