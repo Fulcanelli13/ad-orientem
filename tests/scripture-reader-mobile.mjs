@@ -603,7 +603,8 @@ try{
     ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
   assert.match(await page.locator("#historiaProofText").innerText(),/Acts 28:16/);
   assert.match(await page.locator("#historiaProofText").innerText(),/Acts 28:23–31/);
-  assert.doesNotMatch(await page.locator("#historiaProofText").innerText(),/Philippi|Philippian jailer/i);
+  assert.doesNotMatch(await page.locator("#historiaProofText").innerText(),/Acts 16:22–40|the jailer baptized/i,
+    "Omitted Philippi cannot reappear as a compulsory Scripture reading; editorial notes may mention why it was excluded");
   assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),2);
   assert.deepEqual(pageErrors,[],"Research story proof must not disrupt the established mobile Scripture workbench");
   await page.locator("#historiaProofToggle").click();
