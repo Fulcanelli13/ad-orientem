@@ -35,17 +35,28 @@ export async function mineScriptureReference(reference,{
  if(!parsed)throw new Error("INVALID_CATHOLIC_SCRIPTURE_REFERENCE");
  const p=parsed.passage;
  if(p.verseEnd-p.verseStart+1>MAX_RANGE)throw new Error("MINING_RANGE_OVER_100_VERSES");
+ const parallel=scriptureParallelReferenceState(p,"cpdv-2009","dr-challoner");
+ // The same numeric coordinates are unsafe in these three Catholic books.
+ // Use a source-collated destination where available; otherwise withhold
+ // the Douay comparison rather than display a different biblical verse.
+ const exceptional=["Psalms","Esther","SongOfSongs"].includes(p.book);
+ const douayPassage=exceptional?(parallel.canAutoParallel?parallel.reference:null):p;
  const results=await Promise.all(MINING_ENGLISH_EDITIONS.map(async editionId=>{
+   const selected=editionId==="dr-challoner"?douayPassage:p;
+   if(!selected)return Object.freeze({editionId,available:false,
+     sourceStatus:"CROSS_EDITION_REFERENCE_UNVERIFIED",verses:Object.freeze([]),
+     error:"Exact cross-edition coordinates are not verified for this span.",
+     sourceUrl:null,passage:null});
    try{
-     const rows=await witnessLoader(editionId,p.book,{fetcher,cacheStorage});
+     const rows=await witnessLoader(editionId,selected.book,{fetcher,cacheStorage});
      if(!Array.isArray(rows))throw new Error("INVALID_WITNESS_LOADER_RESULT");
      return Object.freeze({editionId,available:true,sourceStatus:"UNCOLLATED_SOURCE_WITNESS",
-       verses:Object.freeze(onlyVerses(rows,p)),
-       sourceUrl:sourceReadingLink(p,editionId)});
+       verses:Object.freeze(onlyVerses(rows,selected)),passage:selected,
+       sourceUrl:sourceReadingLink(selected,editionId)});
    }catch(error){
      return Object.freeze({editionId,available:false,sourceStatus:"SOURCE_UNAVAILABLE",
        verses:Object.freeze([]),error:String(error?.message??error),
-       sourceUrl:sourceReadingLink(p,editionId)});
+       sourceUrl:sourceReadingLink(selected,editionId),passage:selected});
    }
  }));
  let catena=Object.freeze({available:false,sections:Object.freeze([])});
@@ -61,7 +72,6 @@ export async function mineScriptureReference(reference,{
    }
  }
  const warning=scriptureReferenceWarning(p.book,"en");
- const parallel=scriptureParallelReferenceState(p,"cpdv-2009","dr-challoner");
  return Object.freeze({
    schema:SCRIPTURE_MINING_SCHEMA,
    reference:parsed.reference,passage:p,origin:origin?Object.freeze({...origin}):null,
