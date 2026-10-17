@@ -978,34 +978,6 @@ export async function mountNativeReaderPreview({
     host.querySelector?.(".ao-prayer-card")?.addEventListener?.("scroll",onGoodFridayScroll,{passive:true});
     showGoodFriday();
 
-    function observeCanonCeremonyStage(observation){
-      const form=String(readerModel?.presentationMode??"").toUpperCase();
-      const sourceSection=current?.sourceSectionId??current?.sectionId;
-      const correctSection=(activeCueId==="AO.SM.C0174"&&sourceSection==="AO.CANON.06")||
-        (activeCueId==="AO.SM.C0181"&&sourceSection==="AO.CANON.07");
-      if(!canonStageObservation || !ready.curatedEligible ||
-         current?.curatedPresentationReview!==true ||
-         readerModel?.sourceModelTotalCards!==39 || form!=="LIVE" ||
-         !correctSection || inAsperges||inPalm||inAsh||inCandlemas||
-         inRogations||inRequiemAbsolution||inCorpusChristi||
-         inHolyThursdayPost||inGenericProcession||inLifecycle)
-        return Object.freeze({accepted:false,reason:"NOT_IN_CURATED_LIVE_CANON_ELEVATION"});
-      const result=canonStageObservation.observe({
-        ...observation,sourceCueId:activeCueId,
-      });
-      if(result.accepted){
-        clearScheduledTimer(canonStageTimer);
-        // The visual highlight expires; the accepted source sequence remains
-        // available for audit until a different cue or card is selected.
-        canonStageTimer=later(()=>{
-          canonStageObservation.settleTransient();
-          canonStageTimer=null;queue();
-        },1800);
-        queue();
-      }
-      return result;
-  }
-
   const api=Object.freeze({
       root,
       reader,
@@ -2740,6 +2712,34 @@ export async function mountNativeReaderPreview({
     for(const target of targets){
       observer.observe(target,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:["class","aria-hidden"]});
     }
+  }
+
+  function observeCanonCeremonyStage(observation){
+      const form=String(readerModel?.presentationMode??"").toUpperCase();
+      const sourceSection=current?.sourceSectionId??current?.sectionId;
+      const correctSection=(activeCueId==="AO.SM.C0174"&&sourceSection==="AO.CANON.06")||
+        (activeCueId==="AO.SM.C0181"&&sourceSection==="AO.CANON.07");
+      if(!canonStageObservation || !ready.curatedEligible ||
+         current?.curatedPresentationReview!==true ||
+         readerModel?.sourceModelTotalCards!==39 || form!=="LIVE" ||
+         !correctSection || inAsperges||inPalm||inAsh||inCandlemas||
+         inRogations||inRequiemAbsolution||inCorpusChristi||
+         inHolyThursdayPost||inGenericProcession||inLifecycle)
+        return Object.freeze({accepted:false,reason:"NOT_IN_CURATED_LIVE_CANON_ELEVATION"});
+      const result=canonStageObservation.observe({
+        ...observation,sourceCueId:activeCueId,
+      });
+      if(result.accepted){
+        clearScheduledTimer(canonStageTimer);
+        // The visual highlight expires; the accepted source sequence remains
+        // available for audit until a different cue or card is selected.
+        canonStageTimer=later(()=>{
+          canonStageObservation.settleTransient();
+          canonStageTimer=null;queue();
+        },1800);
+        queue();
+      }
+      return result;
   }
 
   const api=Object.freeze({
