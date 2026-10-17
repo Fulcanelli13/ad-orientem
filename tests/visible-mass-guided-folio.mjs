@@ -65,6 +65,7 @@ const doc={
     tagName:tag.toUpperCase(),children:[],dataset:{},hidden:false,attributes:{},
     setAttribute(k,v){this.attributes[k]=v;},
     append(...items){this.children.push(...items);},
+    appendChild(item){this.children.push(item);return item;},
     replaceChildren(...items){this.children=[...items];}
   })
 };
