@@ -2127,11 +2127,14 @@ function installLibraryParagraphFocus(m,id){
   if(event.target.closest("[data-p435930-flip]"))queueMicrotask(()=>reader?.focus?.());
  });
 }
-function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=semanticRails()+(homeNavigationError
+function render(){const m=mount();if(!m)return;const sig=navigationSignature(),moved=sig!==lastRenderSignature;let html='';if(view==='home')html=renderPrayHome();else if(view==='mercy')html=renderMercy();else if(view==='rosaryMethods')html=renderRosaryMethods();else if(view==='family')html=renderPrayFamily();else if(view==='angelus')html=renderAngelus();else if(view==='rosary')html=renderRosary();else if(view==='confession')html=renderConfession();else if(view==='benediction')html=renderBenediction();else if(view==='adoration')html=renderAdoration();else if(view==='library')html=renderLibrary();else if(view==='stations')html=renderStations();else if(view==='penitential')html=renderPenitential();else if(view==='litany')html=renderLitany();else if(view==='sevenWords')html=renderSevenWords();else if(view==='tenebrae')html=renderTenebrae();else if(view==='fortyHours')html=renderFortyHours();else if(view==='firstFriday')html=renderFirstFriday();else if(view==='firstSaturday')html=renderFirstSaturday();else if(view==='fsMeditation')html=renderFSMeditation();else if(view==='prayerOnly')html=renderPrayerOnly(prayerId);else html=renderPrayHome();m.dataset.aoPrayView=view;m.innerHTML=(view==='adoration'&&ADOR.quiet?'':semanticRails())+(homeNavigationError
  ?'<div role="alert" data-p435930-home-error style="padding:12px 16px;border-bottom:1px solid var(--ao-rule,rgba(217,197,154,.2));font:inherit"><span>'+esc(L('Home could not be opened. Your Prayer screen has been restored.','Impossible d’ouvrir l’accueil. L’écran Prière a été rétabli.'))+'</span> <button type="button" data-p435930-home-retry style="min-height:44px;margin-left:8px;padding:8px 16px;border:1px solid var(--ao-rule,rgba(217,197,154,.35));border-radius:999px;background:transparent;color:inherit;font:inherit">'+esc(L('Retry','Réessayer'))+'</button></div>':'')+html;lastRenderSignature=sig;if(moved)queueMicrotask(()=>{m.scrollTop=0});
  // Source-owned public rite stages and private Visit arrival are projected,
  // never interpreted as observed acts or additional liturgical requirements.
- if(view==='benediction'||view==='adoration'||view==='stations'){
+ if(view==='adoration'&&ADOR.quiet){
+  actionCinematics.sync(null,{mount:m});
+  queueMicrotask(()=>m.querySelector('[data-p435930-ador-quiet-exit]')?.focus?.({preventScroll:true}));
+ }else if(view==='benediction'||view==='adoration'||view==='stations'){
   const scene=resolveDevotionalActionScene({
     view,benedictionStage:view==='benediction'?BEN_STAGES[BEN.step]?.[0]:null,
     adorationMode:view==='adoration'?ADOR.mode:null,
@@ -2520,7 +2523,7 @@ function onClick(e){
  if(b.dataset.p435930BenStep!=null){BEN.step=+b.dataset.p435930BenStep;return render()}
  if(b.matches('[data-p435930-ben-prev]')){BEN.step=Math.max(0,BEN.step-1);return render()}
  if(b.matches('[data-p435930-ben-next]')){if(BEN.step===BEN_STAGES.length-1){setAdorationPresence('reserved');BEN={step:0,divinePraises:false};popView('home');return render()}BEN.step++;return render()}
- if(b.matches('[data-p435930-ador-quiet-enter]')){ADOR.quiet=true;return render()}
+ if(b.matches('[data-p435930-ador-quiet-enter]')){stopTimer();ADOR.quiet=true;return render()}
  if(b.matches('[data-p435930-ador-quiet-exit]')){ADOR.quiet=false;return render()}
  if(b.dataset.p435930AdorMode){ADOR.quiet=false;ADOR.mode=b.dataset.p435930AdorMode;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;return render()}
  if(b.matches('[data-p435930-ador-home]')){ADOR.quiet=false;ADOR.mode='home';stopTimer();return render()}
