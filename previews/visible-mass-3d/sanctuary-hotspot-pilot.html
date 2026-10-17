@@ -68,7 +68,15 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(285px,.8fr);gap:2
 footer{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
 footer a{color:#d8bd89}
 .noscript{padding:14px;color:#f7d19b}
-@media(max-width:930px){main{grid-template-columns:1fr;gap:14px}.info{min-height:0}.wrap{padding-top:8px}header{align-items:flex-start}}
+@media(max-width:930px){
+ main{grid-template-columns:1fr;gap:14px}
+ .info{min-height:0}
+ .info.has-selection{position:fixed;z-index:30;bottom:0;left:0;right:0;width:100%;max-height:min(61dvh,620px);overflow:auto;overscroll-behavior:contain;background:#101821f7;border:1px solid #54616d;border-radius:16px 16px 0 0;padding:17px 17px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -14px 40px #000b}
+ .info.has-selection #object-card>.row{position:sticky;top:-17px;z-index:5;padding:10px 0;background:#101821}
+ .info.has-selection h2{font-size:23px}
+ .info.has-selection .definition{font-size:14px}
+ .wrap{padding-top:8px}header{align-items:flex-start}
+}
 @media(max-width:600px){header h1{font-size:23px}.topactions{align-self:flex-start}.intro{margin:10px 0}.photo-canvas{min-width:750px}.marker{width:44px;height:44px}.info{padding:16px}.photobar{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.marker{transition:none}}
 </style>
@@ -124,12 +132,12 @@ footer a{color:#d8bd89}
 "use strict";
 // Positions are normalized for the *exact* Geograph 4797x3219 photo; never reuse on other viewpoints.
 const SPOTS=[
-{id:"AL01",g:"G404",title:"High altar",n:1,x:61.0,y:67.5,match:"D"},
+{id:"AL01",g:"G404",title:"High altar",n:1,x:56.5,y:68.4,match:"D"},
 {id:"AL06",g:"G079",title:"Altar crucifix",n:2,x:50.0,y:48.6,match:"R"},
-{id:"AL07",g:"G079",title:"Altar candlesticks",n:3,x:61.0,y:57.0,match:"R"},
+{id:"AL07",g:"G079",title:"Altar candlesticks",n:3,x:59.5,y:57.0,match:"R"},
 {id:"AL19",g:"G418",title:"Retable and altarpiece",n:4,x:50.0,y:35.0,match:"D"},
 {id:"SN02",g:"G186",title:"Communion rail",n:5,x:78.0,y:82.0,match:"D"},
-{id:"SN04",g:"G181",title:"Altar steps",n:6,x:50.5,y:76.5,match:"R"}
+{id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
 const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,entries:new Map(),questions:[],inspections:[],view:"church",loaded:false};
@@ -164,7 +172,8 @@ function select(id,from){
  $("question-detail").hidden=true;$("question-list").hidden=false;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
  buildDefinition(spot);renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
- if(window.innerWidth<930){(spot.inspection?$("inspection-stage"):$("info")).scrollIntoView({block:"nearest",behavior:"auto"});}
+ $("info").classList.add("has-selection");
+ if(window.innerWidth<930){window.scrollTo({top:0,behavior:"instant"});}
 }
 function buildDefinition(spot){
  const e=state.entries.get(spot.g);
@@ -194,7 +203,7 @@ function renderQuestions(){
  }
 }
 function closeCard(){
- state.selected=null;state.question=null;showChurch();state.returnFocus=state.returnFocus||$("object-choices");
+ state.selected=null;state.question=null;showChurch();$("info").classList.remove("has-selection");state.returnFocus=state.returnFocus||$("object-choices");
  $("intro-card").hidden=false;$("object-card").hidden=true;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed","false"));
  let previous=state.returnFocus;
