@@ -95,6 +95,44 @@ try{
    await practices.click();
    assert.equal(await practices.getAttribute("aria-current"),"page",
      "Practices not keyboard/touch accessible in horizontal category rail");
+   // These are index views, not a second full Calendar. Their source-owned
+   // list is compact, while every saint action remains independently tappable.
+   for(const view of ["temporale","sanctorale"]){
+     await cal.locator('[data-cal-month-view="'+view+'"]').click();
+     await cal.locator('[data-cal-month-index="'+view+'"]').waitFor({state:"visible",timeout:12000});
+     // Source resolution can repaint this entire index repeatedly. Inspect
+     // semantic controls synchronously, and measure geometry only if this
+     // snapshot already has laid-out rows; no stale Playwright element wait.
+     const index=await cal.locator('[data-cal-month-index="'+view+'"]').evaluate(el=>{
+       const rows=[...el.querySelectorAll(".aoCalMonthIndexRow")];
+       const actions=[...el.querySelectorAll(".aoCalMonthSaintDetail")];
+       const unknown=el.querySelector("[data-cal-unclassified]");
+       const utilities=document.querySelector(".aoTodayV2CalendarInline .aoCalMonthUtilities");
+       return {rows:rows.length,actions:actions.length,
+         heights:rows.map(x=>x.getBoundingClientRect().height),
+         actionWidths:actions.map(x=>x.getBoundingClientRect().width),
+         legacyPills:actions.filter(x=>x.textContent.includes("Life & sources")||x.textContent.includes("Vie & sources")).length,
+         unknownCollapsed:unknown?unknown.open===false:true,
+         utilitiesCollapsed:utilities?.open===false,
+         overflow:el.scrollWidth-el.clientWidth};
+     });
+     assert.equal(index.unknownCollapsed,true,"Unclassified source identities should begin in a collapsed, inspectable note");
+     assert.equal(index.utilitiesCollapsed,true,"Month list export and jump should not fill the normal list");
+     assert.equal(index.overflow<=1,true,"Month "+view+" causes horizontal overflow: "+JSON.stringify(index));
+     assert.equal(index.legacyPills,0,"Month index restored repetitive large biography buttons");
+     if(index.rows){
+       if(view==="sanctorale")
+         assert.equal(index.actions,index.rows,"Every saint still needs an independent Life & sources control");
+       // A concurrent source-cache repaint can briefly return 0px rectangles
+       // for detached rows. Restrict size assertions to laid-out snapshots.
+       const laidOut=index.heights.every(x=>x>=44);
+       if(laidOut){
+         assert.ok(index.heights.every(x=>x<=106),"Month "+view+" still uses oversized list cards: "+JSON.stringify(index));
+         if(view==="sanctorale")
+           assert.ok(index.actionWidths.every(x=>x>=44&&x<=56),"Biography action must be compact but touch accessible: "+JSON.stringify({width,lang,view,index}));
+       }
+     }
+   }
    await cal.locator('[data-cal-month-view="calendar"]').click();
    assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
    const original=await cal.locator(".aoCalV2YearHeading h2").innerText();
