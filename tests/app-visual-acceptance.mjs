@@ -533,6 +533,19 @@ try{
   assert.equal(angelusRails.railPosition,"sticky","Angelus exact donor rail is no longer sticky with the reader");
   assert.equal(angelusRails.postureChannel,"posture","Angelus rail no longer identifies the persistent posture channel");
   assert.ok(["ao-live-stand","ao-live-kneel"].includes(angelusRails.postureAsset),"Angelus posture slot is not using the canonical posture bank");
+  console.log("ANGELUS_RITUAL_GEOMETRY",JSON.stringify({
+    ...angelusRails,
+    computed:await page.evaluate(()=>{
+      const p=document.querySelector('#aoPray435930 [data-ao-ritual-module="angelus"] .aoRitualSlot[data-channel="posture"]');
+      const st=p?getComputedStyle(p):null,rail=p?.closest('.aoRitualRail'),anc=p?.parentElement;
+      return {style:st?{height:st.height,minHeight:st.minHeight,transform:st.transform,
+        animation:st.animation,display:st.display,position:st.position}:null,
+        box:p?.getBoundingClientRect()?.toJSON?.()??null,
+        railTransform:rail?getComputedStyle(rail).transform:null,
+        parentTransform:anc?getComputedStyle(anc).transform:null,
+        rectWidth:p?.getBoundingClientRect()?.width??null};
+    })
+  }));
   assert.ok(angelusRails.slotHeight>=54,"Angelus phone ritual slot collapsed below donor-readable geometry");
   assert.equal(angelusRails.incarnationUnits,1,"Angelus lost the unique Incarnation focus marker");
   assert.equal(angelusRails.genericAngelusContext,0,"Angelus regained the later generic devotional context card");
