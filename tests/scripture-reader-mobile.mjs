@@ -413,6 +413,33 @@ try{
     "Closing twice must not replay the return callback");
   await page.evaluate(()=>document.getElementById("ao-scripture-return-fixture")?.remove());
   assert.deepEqual(pageErrors,[],"Unexpected browser runtime errors");
+  // Editorial mining uses the very same Scripture and Catena source packs.
+  await page.goto("http://127.0.0.1:4199/previews/scripture-mining-workbench-20261017.html",{
+    waitUntil:"domcontentloaded",timeout:25000});
+  await page.locator("#results .reading").first().waitFor({state:"visible",timeout:20000});
+  assert.match(await page.locator("#resultHeading").innerText(),/Luke 1:26-27/);
+  assert.match(await page.locator("#results .reading").first().innerText(),
+    /Catholic Public Domain Version/);
+  await page.locator("#bead").selectOption("2");
+  await page.waitForFunction(()=>document.querySelector("#resultHeading")?.textContent==="Luke 1:28",
+    null,{timeout:20000});
+  await page.locator("#results details").first().locator("summary").click();
+  assert.match(await page.locator("#results details").first().innerText(),/Douay/);
+  await page.locator("#rating").selectOption("5");
+  await page.locator("#disposition").selectOption("SUITABLE_ELSEWHERE");
+  await page.locator("#destination").selectOption("joy2");
+  await page.locator("#destinationBead").selectOption("7");
+  await page.locator("#duplicate").check();
+  await page.locator("#saveReview").click();
+  assert.equal(await page.locator("#reviewCount").innerText(),"1");
+  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-mining-review-v1")));
+  assert.equal(saved[0].reference,"Luke 1:28");
+  assert.equal(saved[0].destinationId,"joy2");
+  assert.equal(saved[0].destinationBead,7);
+  assert.equal(saved[0].duplicate,true);
+  assert.equal(saved[0].rating,5);
+  assert.equal("text" in saved[0],false);
+  assert.deepEqual(pageErrors,[],"Unexpected mining workbench runtime errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{
  await browser?.close?.();
