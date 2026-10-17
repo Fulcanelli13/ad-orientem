@@ -284,4 +284,66 @@ assert.match(workbenchAudit,/historiaReadingDepth/);
 assert.match(workbenchAudit,/principalReadings/);
 assert.match(workbenchAudit,/EXPANDED RESEARCH READING/);
 
+
+// H76 edition-specific continuity: condensed Apocalypse while retaining H77/H78.
+assert.equal(correctionDelta.principalSelectionCount.h76Witnesses,5);
+assert.equal(correctionDelta.principalSelectionCount.h76PrincipalVerseUnits,59);
+assert.equal(correctionDelta.principalSelectionCount.h76ExpandedVerseUnits,83);
+assert.equal(correctionDelta.principalSelectionCount.h76PublicationApprovals,0);
+assert.match(correctionDelta.revelationEditorialBoundary.h77,/19–20/);
+assert.match(correctionDelta.revelationEditorialBoundary.h78,/21–22/);
+const cpRevelation=sourceVerses("cpdv-2009","Revelation");
+const drRevelation=sourceVerses("dr-challoner","Revelation");
+let h76VerseCount=0, h76Expanded=0;
+for(const [index,unit] of h76.units.entries()){
+ assert.equal(unit.unitId,"H76-"+String(index+1).padStart(2,"0"));
+ assert.equal(unit.principalEdition,"cpdv-2009");
+ assert.equal(unit.principalStatus,"SOURCE_SELECTED_CONTINUITY_PENDING");
+ assert.equal(unit.approved,false);
+ assert.ok(unit.fullCompanionReadings.length>=1,"Each H76 unit has independently accessible full/hope texts");
+ let previous=-1;
+ for(const ref of unit.principalReadings){
+  const passage=parseScriptureContext(ref)?.passage;
+  assert.ok(passage&&passage.book==="Revelation","Bad Revelation excerpt "+ref);
+  const pos=passage.chapter*1000+passage.verseStart;
+  assert.ok(pos>previous,"Revelation vision spans must retain original source order");
+  previous=passage.chapter*1000+passage.verseEnd;
+  assert.ok(passage.chapter<19,"H77/H78 may not be absorbed by H76");
+  for(let v=passage.verseStart;v<=passage.verseEnd;v++){
+   const verse=passage.chapter+":"+v;
+   h76VerseCount++;
+   assert.ok(cpRevelation.has(verse)&&drRevelation.has(verse),
+    "Missing original Catholic witness at Revelation "+verse);
+  }
+ }
+ for(const ref of unit.candidateReadings){
+  const passage=parseScriptureContext(ref)?.passage; assert.ok(passage&&passage.book==="Revelation");
+  h76Expanded+=passage.verseEnd-passage.verseStart+1;
+ }
+ for(const comp of unit.fullCompanionReadings){
+  const passage=parseScriptureContext(comp.reference)?.passage;
+  assert.ok(passage&&passage.book==="Revelation"&&passage.chapter<19,
+   "Companion Scripture must remain within H76 scenes, not H77/H78");
+  assert.equal(comp.edition,"cpdv-2009");
+  assert.equal(comp.canonicalStatus,"CATHOLIC_SCRIPTURE");
+ }
+}
+assert.equal(h76VerseCount,59);
+assert.equal(h76Expanded,83);
+const rev12Short=h76.units.find(u=>u.unitId==="H76-03");
+const rev13Short=h76.units.find(u=>u.unitId==="H76-04");
+const babylonShort=h76.units.find(u=>u.unitId==="H76-05");
+assert.ok(rev12Short.principalReadings.includes("Revelation 12:17–18"),
+ "The dragon's seashore transition into the beasts must remain");
+assert.ok(rev13Short.principalReadings.includes("Revelation 13:10–12")&&
+          rev13Short.principalReadings.includes("Revelation 13:15–18"),
+ "Both beasts, testimony and mark must be preserved");
+assert.ok(babylonShort.principalReadings.includes("Revelation 17:12–14")&&
+          babylonShort.principalReadings.includes("Revelation 18:24"),
+ "The Lamb's victory and persecution of martyrs must remain");
+assert.ok(h76.units[0].fullCompanionReadings.some(x=>x.reference==="Revelation 7:9–17"),
+ "The vision of the redeemed cannot disappear from the H76 reading experience");
+assert.ok(h76.units[4].fullCompanionReadings.some(x=>x.reference==="Revelation 14:1–5"),
+ "Keep the Lamb and the redeemed as a hope counterpoint");
+
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
