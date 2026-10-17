@@ -1,5 +1,13 @@
 # The Visible Mass — 3D explorer research prototype P0
 
+## First 20 source-checked liturgical answers (Phase 1.5 preview)
+
+Read [**20 concise original answers**](LITURGICAL_EXPLANATIONS_P1_5_FIRST20_20261017.v1.json) to questions about five usual liturgical colours; optional rose on Gaudete and Laetare; classes and precedence; displaced feasts, local calendars, votives and external solemnities; Low/Sung/Solemn versus day class; commemorations; Passiontide veiling and unveiling; Palm Sunday's red blessing and violet Mass; Good Friday's black/violet phases; Holy Thursday, Pentecost, Candlemas, Lenten ferias and the conditional Rogation procession. The source references are from the *General Rubrics* (1960), *General Rubrics of the Roman Missal* (1960/1962) and specifically labelled Passiontide/printed-edition commentary. Long manuals and institute PDFs are not copied.
+
+**Editorial state: source-checked research preview, not production-approved**. The English numbered rubrics were inspected; a page-by-page Latin typica cross-check and exceptional/local-rite arbitration remain open. The Passiontide symbolic explanation is distinguished from the actual veiling obligation. Mass form, calendar class, locale, selected Mass and rite stage must always determine the practical application. Existing VMQ-0001–VMQ-0134 research prompts are unchanged and not silently marked answered.
+
+Within the existing [Brompton sanctuary object explorer](sanctuary-hotspot-pilot.html), open a physically identifiable object or a separately photographed inspection, then expand the **Liturgical explanations** disclosure to read only the subject-linked answers and their exact source references. The ordinary VMQ question experience stays separate; the overlay remains dark and restrained. CI: `node tests/visible-mass-liturgical-explanations-first20.mjs` plus desktop/mobile simulated-touch Chromium checks.
+
 ## Liturgical source-to-subject crosswalk (17 October)
 
 [**1962 published-reference crosswalk — JSON**](LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json) is a **research-only adapter** built from the existing 170-object matrix and 134 sanctuary questions. It routes **nine published/existing source references to 44 topics**, yielding **316 topic/object associations** and **109/170 objects with relevant special-day, rubrical, Mass-form, colour or ceremonial topics**. The other **61/170 are outside this first liturgical-conditional index** (many are architectural, historical or ordinary devotional objects), not 61 missing glossary definitions or approved answers. **93/134** sanctuary questions have object-level candidate topical routes; those are *not* question-specific certification.
