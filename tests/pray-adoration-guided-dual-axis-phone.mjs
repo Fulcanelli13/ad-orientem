@@ -98,11 +98,17 @@ try{
  assert.equal(await page.locator(chooser+" .aoP435930BigGrid button").count(),3,
    "Holy Hour, Four Ends, and Treasury must stay accessible");
  assert.equal(await page.locator(chooser+" .aoAdorationPrimaryGrid button").first().isVisible(),true);
+ assert.equal(await page.locator("#aoPray435930.open [data-ao-pray-rail-channel]").evaluateAll(
+  es=>es.every(el=>getComputedStyle(el).display==="none")
+ ),true,"Floating rail icons should not cover the Adoration chooser");
  await page.screenshot({path:resolve(captures,"adoration-chooser-quiet-390.png"),animations:"disabled"});
  // Open-ended adoration must remain SILENCE FIRST, not become a 7-card workout.
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='open']").tap();
  assert.equal(await page.locator(sel+" .aoAdorationOpenPrayer").count(),1,"Open adoration is silence-first");
  assert.equal(await page.locator(sel+" .aoAdorationOptionDisclosure").count(),3);
+ assert.equal(await page.locator("#aoPray435930.open [data-ao-pray-rail-channel]").evaluateAll(
+  es=>es.every(el=>getComputedStyle(el).display==="none")
+ ),true,"Open-ended silent prayer must not be obscured by posture rail icons");
  assert.equal(await page.locator(sel+" .aoAdorationOptionDisclosure[open]").count(),0,"Aids must be collapsed until asked for");
  assert.equal(await page.locator(timeline).count(),0,"Open silent Adoration was forced into a step timeline");
  assert.match(await page.locator("#aoPray435930.open .aoP435930GuideNow").innerText(),/Silence is the default|Be still/i);
