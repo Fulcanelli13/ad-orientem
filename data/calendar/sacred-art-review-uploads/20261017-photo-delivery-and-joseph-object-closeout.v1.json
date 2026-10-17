@@ -1,0 +1,148 @@
+{
+  "schema": "AO_SACRED_ART_DELIVERY_AND_EXACT_ORIGINAL_CLOSEOUT_V1",
+  "date": "2026-10-17",
+  "branch": "platform/885-sacred-art-candidates",
+  "pr": 887,
+  "scope": "Research gallery only; no production asset changes, rights approval, historical rating or Oct12 selection changes",
+  "sources": {
+    "louvreObject": "https://collections.louvre.fr/ark:/53355/cl010060517",
+    "louvreStructured": "https://collections.louvre.fr/ark:/53355/cl010060517.json",
+    "ngObject": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+    "ngPhoto": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+    "oldTinyPhoto": "https://commons.wikimedia.org/wiki/File:The_Dream_of_Saint_Joseph.jpg"
+  },
+  "joseph": {
+    "affectedCategoryIndices": [
+      44,
+      79
+    ],
+    "historicalRegisteredWorkId": "W04-009",
+    "existingArtRating": 5,
+    "artRatingPreserved": true,
+    "louvre": {
+      "accession": "INV 20450",
+      "circa": 1629,
+      "dimensionsMetres": "3.43 × 3.10",
+      "location": "Louvre",
+      "damage": "1870 fire at Musée des Beaux-Arts de Bordeaux; painting itself severely damaged",
+      "photo": "https://collections.louvre.fr/media/cache/large/0000000021/0000060517/0000684393_OG.JPG",
+      "photoCredit": "© 2017 GrandPalaisRmn (musée du Louvre) / Franck Raux",
+      "photoHold": true,
+      "role": "institutional physical-object proof only; not an acceptable production image by default"
+    },
+    "london": {
+      "accession": "NG6276",
+      "circa": "1642–43",
+      "location": "National Gallery London",
+      "existingCanonicalWorkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "existingSourceCategory": 160,
+      "nowReferencedIn": [
+        44,
+        79
+      ],
+      "artScore": null,
+      "inheritedArtScore": false,
+      "independentOriginal": true,
+      "publishableWithoutReview": false
+    },
+    "historicalPhoto": {
+      "id": "The Dream of Saint Joseph.jpg",
+      "resolution": "246 × 344",
+      "status": "identityHold",
+      "reason": "original Commons metadata recommends newer photograph of NG6276, not a certified image of INV 20450; old reference retained without transferable painting approval"
+    },
+    "acceptedResolution": "Maintain W04-009 and historical 5★ locked, suppress legacy wrong-object photo from scoring; link correct but severely damaged Louvre painting for provenance; reuse unscored NG6276 candidate; never merge originals or transfer ratings"
+  },
+  "knownInstitutionalPhotoDeliveryHolds": [
+    {
+      "category": 26,
+      "subject": "St Alphonsus Liguori",
+      "workId": "italy-0900119548",
+      "sourceAccession": "0900119548",
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900119548",
+      "artist": "Antonio Marini",
+      "painted": 1838,
+      "metadataLicenseDoesNotCoverPhoto": true,
+      "artObjectIdentityConfirmed": true,
+      "photoStatus": "SIGEC public image endpoint repeatedly times out; no usable rights-cleared reproduction",
+      "galleryTreatment": "visible institutional provenance card; no automatic image request, user photograph score, or Best-photo selection",
+      "nextProof": "exact full-picture photograph + photographer/custodian reuse rights"
+    },
+    {
+      "category": 26,
+      "subject": "St Alphonsus Liguori",
+      "workId": "G28-003",
+      "sourceAccession": "1500005082",
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500005082",
+      "artist": "Michele Lenzi",
+      "painted": 1851,
+      "metadataLicenseDoesNotCoverPhoto": true,
+      "artObjectIdentityConfirmed": true,
+      "photoStatus": "SIGEC public image endpoint repeatedly times out; no usable rights-cleared reproduction",
+      "galleryTreatment": "visible institutional provenance card; no automatic image request, user photograph score, or Best-photo selection",
+      "nextProof": "exact full-picture photograph + photographer/custodian reuse rights"
+    },
+    {
+      "category": 35,
+      "subject": "St Peter Damian",
+      "workId": "G30-007",
+      "sourceAccession": "1500926537",
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500926537",
+      "artist": "local school",
+      "painted": null,
+      "metadataLicenseDoesNotCoverPhoto": true,
+      "artObjectIdentityConfirmed": true,
+      "photoStatus": "SIGEC public image endpoint repeatedly times out; no usable rights-cleared reproduction",
+      "galleryTreatment": "visible institutional provenance card; no automatic image request, user photograph score, or Best-photo selection",
+      "nextProof": "exact full-picture photograph + photographer/custodian reuse rights"
+    },
+    {
+      "category": 35,
+      "subject": "St Peter Damian",
+      "workId": "G30-006",
+      "sourceAccession": "0800072792",
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800072792",
+      "artist": "Emilian school",
+      "painted": "17th century",
+      "metadataLicenseDoesNotCoverPhoto": true,
+      "artObjectIdentityConfirmed": true,
+      "photoStatus": "SIGEC public image endpoint repeatedly times out; no usable rights-cleared reproduction",
+      "galleryTreatment": "visible institutional provenance card; no automatic image request, user photograph score, or Best-photo selection",
+      "nextProof": "exact full-picture photograph + photographer/custodian reuse rights"
+    },
+    {
+      "category": 37,
+      "subject": "St Robert Bellarmine",
+      "workId": "G30-010",
+      "sourceAccession": "1200225121",
+      "source": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200225121",
+      "artist": "Roman school",
+      "painted": "circa 1621",
+      "metadataLicenseDoesNotCoverPhoto": true,
+      "artObjectIdentityConfirmed": true,
+      "photoStatus": "SIGEC public image endpoint repeatedly times out; no usable rights-cleared reproduction",
+      "galleryTreatment": "visible institutional provenance card; no automatic image request, user photograph score, or Best-photo selection",
+      "nextProof": "exact full-picture photograph + photographer/custodian reuse rights"
+    }
+  ],
+  "restrictedSubjects": [
+    {
+      "index": 41,
+      "subject": "Cyril of Jerusalem",
+      "status": "notEligible, identity and photographic reuse unresolved"
+    },
+    {
+      "index": 43,
+      "subject": "Hilary of Poitiers",
+      "status": "notEligible, photograph/frame and commercial reuse unresolved"
+    }
+  ],
+  "permanentTests": [
+    "168 category identities + historical seeds untouched",
+    "five SIGEC deliveryHold flags and four Joseph photo identityHold flags retained",
+    "historical Louvre star score locked; distinct NG6276 candidate unscored",
+    "mobile UI does not request failed or wrong-object image, show photo rating, or allow primary choice on holds",
+    "full 224-url external audit is manual and does not equate remote network failures to artwork rejection"
+  ],
+  "publication": "HOLD; neither gallery source URL, rights status, nor a pass in mobile layout CI constitutes app approval"
+}
