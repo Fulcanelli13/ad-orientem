@@ -2967,9 +2967,10 @@ export function createReaderDomAdapter({
     if(pop && current.cardUpdate){pop.hidden=true;pop.replaceChildren?.();}
 
     const shell=root.querySelector("[data-ao-reader-shell]");
-    if(shell && current.cardUpdate)shell.dataset.canonInline=String(
-      mode==="LIVE" ? current.paragraphs.some(p=>p.publishedMissalRubrics?.length>0)
-      : mode!=="MISSAL" && current.paragraphs.some(p=>p.publishedCanonRubrics?.length>0));
+    // Inline rubrics must not replace LIVE's persistent YOU/PRIEST ribbon
+    // with a source-banner or collapse the two rails. Source provenance is
+    // retained on each inline action, never as an extra toolbar.
+    if(shell && current.cardUpdate)shell.dataset.canonInline="false";
     const body=root.querySelector('[data-role="paragraphs"]');
     if(body && current.cardUpdate){
       body.replaceChildren();
