@@ -48,6 +48,19 @@ try{
   assert.equal(await page.locator("#photo-viewport").isVisible(),false);
   assert.equal(await page.locator("#panorama-stage canvas").count(),1);
   assert.match(await page.locator("#photo-credit").innerText(),/David Iliff.*CC BY-SA 3.0/);
+  await page.waitForTimeout(150);
+  const pixelProof=await page.evaluate(async()=>{
+   const canvas=document.querySelector("#panorama-stage canvas");
+   const image=new Image();
+   await new Promise((ok,fail)=>{image.onload=ok;image.onerror=fail;image.src=canvas.toDataURL("image/png");});
+   const sampler=document.createElement("canvas");sampler.width=canvas.width;sampler.height=canvas.height;
+   const ctx=sampler.getContext("2d");ctx.drawImage(image,0,0);
+   const point=y=>Array.from(ctx.getImageData(Math.floor(canvas.width/2),Math.floor(canvas.height*y),1,1).data).slice(0,3);
+   return {renderer:window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama.renderer,upper:point(.2),lower:point(.8)};
+  });
+  console.log("M4 SYNTHETIC SPHERE PIXELS",spec.name,JSON.stringify(pixelProof));
+  assert.ok(pixelProof.upper[2]>pixelProof.upper[0],"upright scene upper half must be blue, not black or floor");
+  assert.ok(pixelProof.lower[0]>pixelProof.lower[2],"upright scene lower half must be brown, not ceiling");
   const initial=(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.pose;
   await page.locator('[data-pan="up"]').click();
   const moved=(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.pose;
