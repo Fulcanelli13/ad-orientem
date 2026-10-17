@@ -187,7 +187,36 @@ try{
    });
    assert.ok(order,"Divine Mercy settings should remain below the actual prayer and navigation");
    await mercy.locator("[data-p435930-mercy-next]").click();
-   assert.match(await mercy.locator(".aoMercyControls").innerText(),/2\s*\/\s*62/);
+   assert.match(await mercy.locator(".aoMercyControls").innerText(),/Our Father/);
+   assert.equal(await mercy.locator(".aoMercyDecadeLink").count(),5);
+   assert.equal(await mercy.locator(".aoMercyBeadButton").count(),0,
+    "Opening prayer should not invent an opening bead decade");
+   assert.equal(await mercy.locator(".aoDevoSequenceTimeline").evaluate(el=>getComputedStyle(el).display),"none",
+    "Numbered chapter navigation should not remain visible");
+   await mercy.locator('[data-p435930-mercy-jump="4"]').click();
+   assert.equal(await mercy.locator(".aoMercyBeadButton").count(),11,
+    "The decade needs one large bead plus ten smaller beads");
+   assert.equal(await mercy.locator('.aoMercyBeadButton[data-bead="0"][aria-current="step"]').count(),1);
+   assert.match(await mercy.locator(".aoMercyPrayer").innerText(),/Eternal Father/);
+   await page.screenshot({path:resolve(shots,"mercy-large-bead-"+width+".png"),animations:"disabled"});
+   await mercy.locator('.aoMercyBeadButton[data-bead="6"]').click();
+   assert.equal(await mercy.locator('[data-ao-mercy-bead-navigation]').getAttribute("data-mercy-bead"),"6");
+   assert.match(await mercy.locator(".aoMercyPrayer").innerText(),/For the sake of His sorrowful Passion/);
+   await page.screenshot({path:resolve(shots,"mercy-small-bead-"+width+".png"),animations:"disabled"});
+   await mercy.locator('.aoMercyDecadeLink[data-decade="5"]').click();
+   assert.equal(await mercy.locator('[data-ao-mercy-bead-navigation]').getAttribute("data-mercy-decade"),"5");
+   assert.equal(await mercy.locator(".aoMercyBeadButton").count(),11);
+   await mercy.locator('.aoMercyPhaseLink').last().click();
+   assert.equal(await mercy.locator('[data-ao-mercy-bead-navigation]').getAttribute("data-mercy-phase"),"conclusion");
+   assert.equal(await mercy.locator(".aoMercyBeadButton").count(),0);
+   await mercy.locator('.aoMercyPhaseLink').first().click();
+   assert.equal(await mercy.locator('[data-ao-mercy-bead-navigation]').getAttribute("data-mercy-phase"),"opening");
+   const beadGeometry=await mercy.locator(".aoMercyPhases").evaluate(el=>({
+     width:el.getBoundingClientRect().width,viewport:innerWidth,
+     bounds:[...el.querySelectorAll("button")].map(b=>{const r=b.getBoundingClientRect();return {left:r.left,right:r.right,height:r.height}})
+   }));
+   assert.ok(beadGeometry.bounds.every(b=>b.left>=-1&&b.right<=beadGeometry.viewport+1&&b.height>=40),
+     "Chaplet navigation must stay touchable and in the phone viewport: "+JSON.stringify(beadGeometry));
    await page.screenshot({path:resolve(shots,"mercy-second-"+width+".png"),animations:"disabled"});
    await checkDoc("Divine Mercy");
    assert.deepEqual(errors,[],"Uncaught errors in devotional readers: "+errors.join("; "));
