@@ -47,7 +47,8 @@ const STYLE=`
 }
 .ao-live-canon-follow-actor{font-size:8px;letter-spacing:.06em;color:#a2aaa6;
   text-transform:uppercase;white-space:nowrap}
-.ao-live-canon-follow-close{display:block;margin:9px 0 0 auto;padding:4px 6px;
+.ao-live-canon-follow-reset{display:inline-block;margin:9px 3px 0 0;padding:4px 6px;border:0;background:transparent;color:#b9bdb8;cursor:pointer;font-size:11px}
+.ao-live-canon-follow-close{display:inline-block;margin:9px 0 0 auto;padding:4px 6px;
   border:0;background:transparent;color:#aab1ad;cursor:pointer;font-size:11px}
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-live-canon-follow-trigger,
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-live-canon-follow-sheet{display:none!important}
@@ -64,7 +65,7 @@ export function canonicalManualFollowContext({mode=null,curated=false,cueId=null
  return null;
 }
 
-export function mountLiveCanonManualFollow({doc,host,controller,getContext,observe}={}){
+export function mountLiveCanonManualFollow({doc,host,controller,getContext,observe,clear}={}){
  const rail=host?.querySelector?.(".ao-rail-right");
  const stage=host?.querySelector?.(".ao-reader-stage");
  if(!rail||!stage||!doc?.createElement||!controller ||
@@ -135,12 +136,17 @@ export function mountLiveCanonManualFollow({doc,host,controller,getContext,obser
      btn.append(label,actor);
      choices.append(btn);
    }
+   const reset=doc.createElement("button");
+   reset.type="button";
+   reset.className="ao-live-canon-follow-reset";
+   reset.setAttribute("data-canon-follow-reset","");
+   reset.textContent=fr?"Recommencer":"Reset";
    const done=doc.createElement("button");
    done.type="button";
    done.className="ao-live-canon-follow-close";
    done.setAttribute("data-canon-follow-close","");
    done.textContent=fr?"Fermer":"Close";
-   sheet.append(heading,hint,choices,done);
+   sheet.append(heading,hint,choices,reset,done);
    sheet.hidden=false;
    trigger.setAttribute("aria-expanded","true");
    if(wasFocused){
@@ -153,6 +159,10 @@ export function mountLiveCanonManualFollow({doc,host,controller,getContext,obser
    if(event.target?.closest?.("[data-live-canon-follow-trigger]")===trigger){
      opened=!opened;
      if(opened)update();else close(true);
+     return;
+   }
+   if(event.target?.closest?.("[data-canon-follow-reset]")){
+     if(typeof clear==="function"){clear();update();}
      return;
    }
    if(event.target?.closest?.("[data-canon-follow-close]")){
