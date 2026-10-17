@@ -171,11 +171,11 @@ body[data-experience=discover] .info{min-height:0}
  body[data-experience=discover] .info{max-height:min(74dvh,780px);overflow-y:auto}
 }
 @media(max-width:930px){
- body[data-experience=discover] .info,body[data-experience=understand] .info.has-selection{position:fixed;z-index:30;bottom:0;left:0;right:0;max-height:min(46dvh,430px);width:100%;overflow:auto;overscroll-behavior:contain;border:1px solid #53606b;border-radius:16px 16px 0 0;padding:14px 16px calc(14px + env(safe-area-inset-bottom));background:#101821f7;box-shadow:0 -12px 36px #000a}
+ body[data-experience=discover] .info,body[data-experience=understand] .info.has-selection{position:fixed;z-index:30;bottom:0;left:0;right:0;max-height:min(42dvh,390px);width:100%;overflow:auto;overscroll-behavior:contain;border:1px solid #53606b;border-radius:16px 16px 0 0;padding:14px 16px calc(14px + env(safe-area-inset-bottom));background:#101821f7;box-shadow:0 -12px 36px #000a}
  body[data-experience=discover] .info{display:block}
  body[data-experience=discover] .photo-viewport{max-height:48dvh}
  body[data-experience=discover] .guide-dock .guide-foot{font-size:10px}
- body[data-experience=understand] .info.has-selection{max-height:min(51dvh,460px)}
+ body[data-experience=understand] .info.has-selection{max-height:min(43dvh,400px)}
 }
 @media(prefers-reduced-motion:reduce){.marker{transition:none}.guide-dock *{scroll-behavior:auto!important}}
 </style>
@@ -344,10 +344,11 @@ function select(id,from,{guided=false}={}){
  $("object-title").textContent=spot.title;
  $("question-detail").hidden=true;$("question-list").hidden=false;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
- buildDefinition(spot);void renderMassContext();renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
+ buildDefinition(spot);void renderMassContext();renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();
  $("info").classList.add("has-selection");
  document.body.classList.add("object-open");
  setExperience("understand");
+ $("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
  if(window.innerWidth<930){
    window.scrollTo(0,0);
    if(!spot.inspection){
