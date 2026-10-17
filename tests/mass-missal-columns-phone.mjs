@@ -106,6 +106,27 @@ try{
     '.ao-reader-paragraph').length>0,null,{timeout:5000});
   assert.equal(await page.locator(".ao-missal-inline-rubrics").count(),0,
     "Bracketed paten action is already a Missal rubric; do not reprint it");
+  // Native short/long contract: leave the source-printed bracket as the
+  // SHORT rubric, offer the existing certified chronological action
+  // sequence only on an explicit reader tap. No GUIDE or study copy.
+  const patenDetails=page.locator(".ao-missal-rubric-depth").first();
+  assert.equal(await patenDetails.count(),1,"Bracketed paten rubric has no second depth");
+  assert.equal(await patenDetails.getAttribute("open"),null,
+    "Missal detail must default collapsed");
+  assert.match(await patenDetails.locator("summary").innerText(),
+    lang==="fr"?/Déroulement précis/:/Detailed ceremonial sequence/);
+  const beforePaten=await page.locator(".ao-reader-paragraph .ao-line-primary").first().innerText();
+  await patenDetails.locator("summary").click();
+  assert.equal(await patenDetails.locator("li").count(),3,
+    "Missal long rubric must preserve three certified paten actions");
+  assert.deepEqual(await patenDetails.locator("li").evaluateAll(nodes=>
+    nodes.map(x=>x.dataset.rubricStepId)),
+    ["AO.RUB.C0111.01","AO.RUB.C0111.02","AO.RUB.C0111.03"]);
+  assert.match(await patenDetails.locator("a").getAttribute("href"),/ritus-servandus/);
+  assert.equal(await page.locator(".ao-reader-paragraph .ao-line-primary").first().innerText(),
+    beforePaten,"Opening the detail changed the original Latin");
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
+    "Paten long rubric overflows narrow Missal page");
   // Insert unobtrusive sourced directions at actual prayer words.
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.010.5"));
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
@@ -119,6 +140,12 @@ try{
   assert.ok(offertory.notes.every(x=>lang==="fr"?x.startsWith("Le prêtre "):x.startsWith("The priest ")),
     "In-page priest rubrics must be localized");
   assert.match(offertory.link||"",/ritus-servandus/i);
+  // For word-triggered instructions, depth reveals the precise Latin
+  // anchor instead of a second paraphrase or devotional Guide.
+  const wordDetail=page.locator(".ao-missal-rubric-depth").first();
+  assert.ok(await wordDetail.count()>0,"Word-triggered Missal rubric lost source depth");
+  await wordDetail.locator("summary").click();
+  assert.match(await wordDetail.innerText(),/bene|word|mots/i);
   assert.ok(offertory.width<=1,"Missal inline Offertory rubric overflows phone width");
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.014.3"));
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
@@ -153,6 +180,11 @@ try{
   assert.match(note,requiem
     ?(lang==="fr"?/Seul le célébrant est encensé/:/choir and people are not/)
     :(lang==="fr"?/ministres sacrés assistent/:/sacred ministers assist/i));
+  const solemnDetail=page.locator(".ao-missal-rubric-depth").first();
+  assert.ok(await solemnDetail.count()>0,"Solemn minister rubric lost its actor/source details");
+  await solemnDetail.locator("summary").click();
+  assert.equal(await solemnDetail.locator("li[data-rubric-step-id='SMIN-009']").count(),1,
+    "Solemn priest/deacon actor must retain certified R18 owner");
   const layout=await page.evaluate(()=>({
    overflow:document.documentElement.scrollWidth-innerWidth,
    tags:[...document.querySelectorAll(".ao-missal-rubric-action")].map(e=>e.dataset.rubricId),
