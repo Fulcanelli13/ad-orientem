@@ -44,10 +44,20 @@
             "Daniel 3:49–52",
             "Daniel 3:88–97"
           ],
-          "editorialRationale": "Original omits accusation and rescue. Keep complete Prayer of Azariah and Song of Three Young Men as distinct canonical full reading, Daniel 3:25–90.",
+          "editorialRationale": "Actual CPDV/Challoner Daniel 3:1–100 checked; v18 3:24–90 lacks decree, confrontation and rescue. Main short narrative retains refusal, protective angel, representative hymn and king's response, with explicit omission markers; complete canonical prayer/song independently accessible.",
           "textReviewed": false,
           "rightsReviewed": false,
-          "approved": false
+          "approved": false,
+          "candidateEdition": "cpdv-2009",
+          "fullCompanionReadings": [
+            {
+              "reference": "Daniel 3:25–90",
+              "edition": "cpdv-2009",
+              "role": "PRAYER_OF_AZARIAH_AND_SONG",
+              "canonicalStatus": "CATHOLIC_SCRIPTURE"
+            }
+          ],
+          "continuityStatus": "CPDV_AND_CHALLONER_SOURCE_VERSES_INSPECTED; TEXTUAL_ABRIDGMENT_PROVISIONAL"
         },
         {
           "unitId": "H42-03",
@@ -128,21 +138,61 @@
           "v18Order": 7,
           "originalReference": "Esther 4:1–17",
           "sourceEdition": "UNDETERMINED_IN_V18",
-          "action": "RECONSTRUCT_AND_MAP_EDITION",
+          "action": "RECONSTRUCT_WITH_EXPLICIT_CPDV_SOURCE_ORDER",
           "candidateReadings": [
-            "Esther 2:15–18",
-            "Esther 3:8–15",
-            "Esther 4:1–17",
-            "Esther 13:8–15",
-            "Esther 14:1–19",
-            "Esther 15:1–19",
-            "Esther 7:1–10",
-            "Esther 8:3–8"
+            "Esther 4:5–7",
+            "Esther 4:16–17",
+            "Esther 5:1–2",
+            "Esther 5:5–6",
+            "Esther 5:8–13",
+            "Esther 7:1–8",
+            "Esther 7:12–19",
+            "Esther 7:20–21",
+            "Esther 7:29–30",
+            "Esther 8:1–3",
+            "Esther 8:12–14",
+            "Esther 8:19",
+            "Esther 9:17–24",
+            "Esther 10:1–3",
+            "Esther 10:6–11",
+            "Esther 10:14",
+            "Esther 11:1–10",
+            "Esther 12:3–12",
+            "Esther 14:20–22"
           ],
-          "editorialRationale": "REFERENCE HOLD: these are candidate traditional Douay-style locators, not verified CPDV equivalents. Greek additions and ending require source-edition collation.",
+          "editorialRationale": "Actual CPDV witness read: Haman's decree in CPDV 5; risk/intercession in 7; Greek prayers in 7–8; Greek entrance expansion 9:1–16 distinct from the repeated entrance in 9:17–19; royal audience and banquets 9–11; reversal 12; Purim 14. The v18 Esther 4:1–17 edition remains UNDETERMINED; do not silently infer CPDV coordinates. All cuts visible; full Catholic additions separately navigable.",
           "textReviewed": false,
           "rightsReviewed": false,
-          "approved": false
+          "approved": false,
+          "candidateEdition": "cpdv-2009",
+          "fullCompanionReadings": [
+            {
+              "reference": "Esther 7:20–30",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_MORDECAI_PRAYER",
+              "canonicalStatus": "CATHOLIC_GREEK_ADDITION"
+            },
+            {
+              "reference": "Esther 8:1–19",
+              "edition": "cpdv-2009",
+              "role": "WHOLE_ESTHER_PRAYER",
+              "canonicalStatus": "CATHOLIC_GREEK_ADDITION"
+            },
+            {
+              "reference": "Esther 9:1–16",
+              "edition": "cpdv-2009",
+              "role": "GREEK_ADDITION_D_EXPANDED_AUDIENCE",
+              "canonicalStatus": "CATHOLIC_GREEK_ADDITION"
+            },
+            {
+              "reference": "Esther 6:1–7",
+              "edition": "cpdv-2009",
+              "role": "FULL_ROYAL_DECREE",
+              "canonicalStatus": "CATHOLIC_GREEK_ADDITION"
+            }
+          ],
+          "continuityStatus": "SOURCE_VERSES_INSPECTED_SEQUENCE_STILL_AWAITING_READ_ALOUD",
+          "candidateApproval": "PROVISIONAL_TEXTUAL_READ_ONLY"
         }
       ]
     },
@@ -185,14 +235,16 @@
           "v18Order": 3,
           "originalReference": "Revelation 12:1–17",
           "sourceEdition": "CHECK_REQUIRED",
-          "action": "EXPAND_WITH_EDITION_CHECK",
+          "action": "EXPAND",
           "candidateReadings": [
-            "Revelation 12:1–17"
+            "Revelation 12:1–18"
           ],
-          "editorialRationale": "Retain complete source vision; validate verse 18 / 13:1 boundary per edition before expanding.",
+          "editorialRationale": "Both the installed CPDV and DR Challoner witnesses contain verse 12:18 ('he stood upon the sand of the sea'), the transition into 13:1. Include in this edition-specific chapter boundary.",
           "textReviewed": false,
           "rightsReviewed": false,
-          "approved": false
+          "approved": false,
+          "candidateEdition": "cpdv-2009",
+          "continuityStatus": "CPDV_AND_CHALLONER_WITNESSES_VERIFIED"
         },
         {
           "unitId": "H76-04",
@@ -227,5 +279,8 @@
         }
       ]
     }
-  ]
+  ],
+  "auditPass": "H42_DANIEL3_ESTHER_AND_H76_12_20261017",
+  "auditMethod": "Direct extraction of checked-in CPDV and Douay–Rheims verse arrays; confirm own source-edition references. No reproduced Bible words in research overlay.",
+  "statusNote": "Narrative ordering source-checked, but oral continuity, complete Catholic editorial acceptance, production edition certification and all remaining H42 witnesses are still pending."
 }
