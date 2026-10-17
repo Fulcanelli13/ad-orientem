@@ -191,6 +191,28 @@ assert.match(hilaryPhoto.hold,/PHOTO_COMMERCIAL_REUSE_RIGHTS_UNCLEARED/);
 assert.equal(hilaryPhoto.photos.length,1);
 const ineligibleSourceCategories=current.categories.filter(cat=>!cat.works.some(w=>w.photos.length&&!w.notEligible)).map(cat=>cat.index);
 assert.deepEqual(ineligibleSourceCategories,[41,43],'Exactly Cyril and Hilary still have no eligible image-source record');
+// Explicit photographic holds must never be silently treated as app-ready images.
+const linked=current.categories.flatMap(c=>c.works.flatMap(w=>w.photos.map(p=>({index:c.index,work:w,photo:p}))));
+const deliveryHolds=linked.filter(x=>x.photo.deliveryHold);
+assert.equal(deliveryHolds.length,5,'All five known SIGEC delivery failures must remain clearly held');
+assert.ok(deliveryHolds.every(x=>/sigecweb\.beniculturali\.it/.test(x.photo.preview)),'Delivery holds must reference real SIGEC photo links');
+const josephCategories=[44,79];
+for(const index of josephCategories){
+ const louvre=at(index,'W04-009');
+ assert.equal(louvre.historicalArtRating,5,'Historical 5-star decision remains untouched');
+ assert.equal(louvre.lockedArtRating,true,'Historic approval remains locked');
+ assert.ok(louvre.photoSourceEvidence?.sourceObject==='Louvre paintings INV 20450','Institutional painting identity not certified');
+ assert.ok(louvre.photos.some(p=>p.id==='The Dream of Saint Joseph.jpg'&&p.identityHold&&/NG6276/.test(p.holdReason)),'Old tiny Commons photo must remain a clearly excluded physical-object mismatch');
+ assert.ok(louvre.photos.some(p=>p.id==='LOUVRE-INV20450-FRANCK-RAUX-2017'&&p.identityHold&&/fire/.test(p.holdReason)&&/GrandPalaisRmn/.test(p.rights)),'Real fire-damaged Louvre original is provenance only and rights-held');
+ const national=at(index,'ART-hilippe-de-hampaigne-he-ream-of-aint-oseph');
+ assert.equal(national.historicalArtRating,null,'Never transfer old rating to distinct National Gallery painting');
+ assert.equal(national.oct12Selected,false,'NG Joseph must not inherit an October 12 selection in this category');
+ assert.ok(/NO_RATING_TRANSFER/.test(national.hold),'Must keep explicit cross-original score lock');
+ assert.ok(national.photos.some(p=>p.preview.includes('NG6276')),'Exact London painting needs its own existing photo');
+}
+assert.equal(linked.filter(x=>x.photo.identityHold).length,4,'Two historical mismatch + two real fire-damaged painting photos held');
+assert.ok(html.includes('const photoHold=Boolean(p.deliveryHold||p.identityHold)'),'Gallery UI must hide held photo preview');
+assert.ok(html.includes('Photo source on research hold — scoring disabled'),'Gallery must not request scores for unusable source');
 const holdCategories=[];
 const missingNow=current.categories.filter(c=>!c.works.some(w=>w.photos.length)).map(c=>c.index).sort((a,b)=>a-b);
 assert.deepEqual(missingNow,holdCategories,'All 168 subject categories should have at least one research photo source, not silently substituted');
