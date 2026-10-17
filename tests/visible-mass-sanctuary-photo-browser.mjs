@@ -75,7 +75,7 @@ try{
    assert.ok(pos.markerBottom<pos.sheetTop+2,'selected object should remain visibly above the question sheet '+JSON.stringify(pos));
    assert.ok(pos.sheetBottom<=pos.viewport+3,'sheet should fit phone viewport '+JSON.stringify(pos));
   }
-  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().historicalAnswerCount===28,{timeout:30000});
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().historicalAnswerCount===97,{timeout:30000});
   await page.locator('#question-items button[data-question="VMQ-0003"]').click();
   assert.equal(await page.locator('#historical-answer').isVisible(),true,'canonical question shows its exact history answer');
   assert.equal(await page.locator('#answer-pending').isVisible(),false);
@@ -84,7 +84,10 @@ try{
   assert.equal(await page.locator('#historical-answer').getAttribute('data-question'),null);
   await page.locator('#back-to-object').click();
   await page.locator('#question-items button[data-question="VMQ-0001"]').click();
-  assert.equal(await page.locator('#historical-answer').isVisible(),false,'unanswered question does not borrow another answer');
+  assert.equal(await page.locator('#historical-answer').isVisible(),true,'newly answered question has a response');
+  await page.locator('#back-to-object').click();
+  await page.locator('#question-items button[data-question="VMQ-0004"]').click();
+  assert.equal(await page.locator('#historical-answer').isVisible(),false,'unanswered liturgical requirement remains pending');
   assert.equal(await page.locator('#answer-pending').isVisible(),true);
   await page.locator('#back-to-object').click();
   await page.locator('#occasion-select').selectOption('thursday');
