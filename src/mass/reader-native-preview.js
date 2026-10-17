@@ -65,6 +65,7 @@ import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
 import { withPublishedMissalParagraphRubrics } from "./reader-missal-rubrics.js";
+import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
 import { resolvePriestChantAction, resolvePriestChantVoice, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
@@ -2381,8 +2382,14 @@ export async function mountNativeReaderPreview({
             })
           : [],
       paragraphs:String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
-        ? withPublishedMissalParagraphRubrics(
-          visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+        ? withCertifiedSolemnMissalMinisters(
+          withPublishedMissalParagraphRubrics(
+            visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+              form:ready.prepared?.session?.resolvedMass?.form,
+              language:ready.prepared?.readerPreferences?.language??"en",
+            }),{
+            formStateData:ready.formState,
+            cueState:ready.cueState,
             form:ready.prepared?.session?.resolvedMass?.form,
             language:ready.prepared?.readerPreferences?.language??"en",
           })
