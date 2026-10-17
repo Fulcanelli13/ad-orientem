@@ -2,9 +2,9 @@
  * The Visible Mass — review-only, source-ID dialogue director (slice 1).
  * No question/answer text lives here; the P1 VMQ and P1.5 answer registries
  * and the existing Mass Explorer remain the sole educational owners.
- * The slice is restricted to three objects with exact Brompton photo marks.
+ * All six provisional Brompton photo marks are sourced to the same camera frame.
  */
-export const GUIDED_SLICE_OBJECTS=Object.freeze(["AL01","AL06","SN02"]);
+export const GUIDED_SLICE_OBJECTS=Object.freeze(["AL01","AL06","AL07","AL19","SN02","SN04"]);
 export const GUIDED_SLICE_STATE_VERSION=1;
 const GRAPH_SCHEMA="AO_VISIBLE_MASS_GUIDED_TRAIL_GRAPH_RESEARCH_V1";
 const OBJECTS=new Set(GUIDED_SLICE_OBJECTS);
@@ -14,7 +14,9 @@ const unique=a=>[...new Set(a)];
 export function createVisibleMassDialogueDirector(graph,pilot,answeredIds,{initialState=null}={}){
  if(graph?.schema!==GRAPH_SCHEMA||graph?.status!=="RESEARCH_NAVIGATION_DESIGN_ONLY_NOT_PUBLICATION_NOT_A_SCRIPT"||
     pilot?.status!=="RESEARCH_ONLY_NO_PUBLICATION"||pilot?.questions?.length!==134||
-    graph?.trails?.length!==4||graph?.exactPhotoBinding!=="BROMPTON_ALTAR_2019_B")
+    graph?.trails?.length!==4||graph?.exactPhotoBinding!=="BROMPTON_ALTAR_2019_B"||
+    !Array.isArray(graph?.visibleHotspotIds)||graph.visibleHotspotIds.length!==OBJECTS.size||
+    graph.visibleHotspotIds.some(id=>!OBJECTS.has(id)))
    throw new Error("Visible Mass guide source-owner gate failed");
  const sourceQuestions=new Map(pilot.questions.map(q=>[q.id,q]));
  const researched=new Set(answeredIds||[]);
@@ -26,7 +28,7 @@ export function createVisibleMassDialogueDirector(graph,pilot,answeredIds,{initi
    originalStops:readonly([...t.suggested]),
    availableStops:readonly(t.suggested.filter(permitted))
  })]));
- if(routes.size!==4||[...routes.values()].some(t=>t.availableStops.length<2))throw Error("Three-photo route slice has insufficient sourced questions");
+ if(routes.size!==4||[...routes.values()].some(t=>t.availableStops.length<4))throw Error("Six-photo route has insufficient source-owned questions");
  let active=null,visible=false;
  const read=new Set();
  const skipped=new Map([...routes.keys()].map(id=>[id,new Set()]));
@@ -74,7 +76,7 @@ export function createVisibleMassDialogueDirector(graph,pilot,answeredIds,{initi
    visible=true;return true;
  }
  function skipSuggestion(){
-   if(!active)return false;
+   if(!active||!visible)return false;
    const id=nextFor(active);
    if(!id)return false;
    skipped.get(active).add(id);
