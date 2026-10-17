@@ -2,6 +2,12 @@
 export const ADORATION_FOLIO_CSS=String.raw`
 /* Adoration-only: no numbered stage tiles, performance scores or animations. */
 
+/* Rail icons are meaningful in the guided Visit, but not at a mode
+   selection or during unstructured stillness, where they obscure text. */
+#aoPray435930:has(.aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"]) [data-ao-pray-rail-channel],
+#aoPray435930:has(.aoP435930AdorationReader[data-ao-adoration-mode="open"]) [data-ao-pray-rail-channel]{
+ display:none!important;visibility:hidden!important;pointer-events:none!important;
+}
 /* Entry hierarchy: immediately available Visit and untimed silence;
    optional guided methods have equal access through a native disclosure. */
 #aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"]{
