@@ -35,7 +35,7 @@ export function selectedCalendarArtProper({selectedDate, resolution, scriptureCo
     : scriptureContexts;
   if (!Array.isArray(readings)) return null;
   const gospels = readings.filter(r => r?.slot === "GOSPEL"
-    && word(r?.reference) && word(r?.provenance)
+    && word(r?.reference) && Boolean(r?.provenance)
     && word(r?.sourceReference));
   // Mixed, extra, and unverified Gospel contexts fail closed.
   if (gospels.length !== 1) return null;
