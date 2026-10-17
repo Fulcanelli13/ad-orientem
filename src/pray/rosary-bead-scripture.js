@@ -104,34 +104,32 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
   fathers.textContent=french?"Pères de l’Église (anglais)":"Church Fathers";
   actions.append(fathers);
  }
- const disclosure=doc.createElement("small");disclosure.className="aoRosaryBeadSourceNotice";
- disclosure.textContent=french
-  ?"Transcription de la source, collation imprimée en attente."
-  :"Source transcription; printed-edition collation pending.";
- container.append(title);
- let choiceButtons=[];
+ const disclosure=doc.createElement("details");
+ disclosure.className="aoRosaryBeadSourceNotice";
+ const provenance=doc.createElement("summary");
+ provenance.textContent=french?"Transcription · source":"Source · uncollated";
+ const sourceDetail=doc.createElement("p");
+ sourceDetail.textContent=french
+   ?"Transcription de la source, collation imprimée en attente."
+   :"Source transcription; printed-edition collation pending.";
+ disclosure.append(provenance,sourceDetail);
+ const header=doc.createElement("div");
+ header.className="aoRosaryBeadScriptureHead";
+ header.append(title);
+ let flip=null;
  if(!french){
-  const group=doc.createElement("div");
-  group.className="aoRosaryEnglishSwitch";
-  group.setAttribute("role","group");
-  group.setAttribute("aria-label","English Bible translation");
-  for(const [edition,label] of [["dr-challoner","Douay–Rheims"],["cpdv-2009","CPDV"]]){
-   const button=doc.createElement("button");
-   button.type="button";
-   button.textContent=label;
-   button.dataset.aoRosaryEnglishEdition=edition;
-   button.disabled=!rosaryInlineVersePlan(witness.reference,{englishEdition:edition});
-   button.addEventListener("click",()=>{
-    if(button.disabled||englishEdition===edition)return;
-    englishEdition=edition;
-    prefs.setEnglishEdition(edition);
-    renderEdition();
+   flip=doc.createElement("button");
+   flip.className="aoRosaryEnglishFlip";
+   flip.type="button";
+   flip.addEventListener("click",()=>{
+     const next=englishEdition==="dr-challoner"?"cpdv-2009":"dr-challoner";
+     if(!rosaryInlineVersePlan(witness.reference,{englishEdition:next}))return;
+     englishEdition=next;prefs.setEnglishEdition(next);renderEdition();
+     flip.focus({preventScroll:true});
    });
-   group.append(button);choiceButtons.push(button);
-  }
-  container.append(group);
+   header.append(flip);
  }
- container.append(text,actions,disclosure);
+ container.append(header,text,actions,disclosure);
  prayer.append(container);
  let requestSeq=0;
  function renderEdition(){
@@ -143,8 +141,15 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
   title.textContent=french?"SAINTE ÉCRITURE · CRAMPON 1923":
     current.editionId==="dr-challoner"?"SACRED SCRIPTURE · DOUAY–RHEIMS":
     "SACRED SCRIPTURE · CPDV";
-  for(const b of choiceButtons)
-   b.setAttribute("aria-pressed",String(b.dataset.aoRosaryEnglishEdition===current.editionId));
+  if(flip){
+    const next=current.editionId==="dr-challoner"?"cpdv-2009":"dr-challoner";
+    flip.dataset.aoRosaryEnglishEdition=next;
+    flip.dataset.aoRosaryActiveEdition=current.editionId;
+    flip.textContent=current.editionId==="dr-challoner"?"Douay ⇄ CPDV":"CPDV ⇄ Douay";
+    flip.disabled=!rosaryInlineVersePlan(witness.reference,{englishEdition:next});
+    flip.setAttribute("aria-label",next==="cpdv-2009"?"Switch to CPDV":"Switch to Douay–Rheims");
+    flip.title=flip.getAttribute("aria-label");
+  }
   passage.href=french?witness.frenchPrimaryUrl:
    current.editionId==="dr-challoner"?witness.primaryUrl:
    sourceReadingLink(current.passage,current.editionId);
