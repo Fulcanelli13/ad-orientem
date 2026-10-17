@@ -77,6 +77,12 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;
 .related-objects strong{display:block;margin-bottom:8px;color:var(--muted);font:12px system-ui,sans-serif}
 .related-objects button{display:inline-flex;margin:0 6px 7px 0;padding:8px 10px;border:1px solid var(--line);background:transparent;border-radius:7px;color:var(--gold);font:12px system-ui,sans-serif;min-height:38px}
 .related-objects button:hover{border-color:var(--gold)}
+.study-source{margin-top:13px;padding:9px 0;border-top:1px solid var(--line);font:12px/1.55 system-ui,sans-serif;color:var(--muted)}
+.study-source summary{cursor:pointer;color:var(--gold);padding:8px 0}
+.study-source ul{list-style:none;margin:5px 0 8px;padding:0}
+.study-source li{margin:8px 0}
+.study-source li small{display:block;color:var(--muted)}
+.study-source .disclaimer{color:var(--muted);font-size:11px;line-height:1.5;margin:6px 0}
 footer{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
 footer a{color:#d8bd89}
 .noscript{padding:14px;color:#f7d19b}
@@ -135,7 +141,8 @@ footer a{color:#d8bd89}
 <h2 id="object-title"></h2>
 <div class="definition" id="definition"></div><p class="related" id="inspection-provenance" hidden></p><div class="related-objects" id="related-objects" hidden><strong>Explore related objects</strong><div id="related-items"></div></div>
 <div class="question-list" id="question-list"><h3>Questions to explore</h3><div id="question-items"></div><button type="button" class="more" id="more-questions" hidden>More questions ↓</button></div>
-<div id="question-detail" hidden><button type="button" class="back" id="back-to-object">← Questions</button><h3 id="question-title"></h3><div class="pill" id="question-type"></div><div class="held">This question is indexed for Phase 1.5 source research. A verified answer has not yet been published; the glossary definition above remains available.</div></div>
+<div id="question-detail" hidden><button type="button" class="back" id="back-to-object">← Questions</button><h3 id="question-title"></h3><div class="pill" id="question-type"></div><div class="held">This question is indexed for Phase 1.5 source research. A verified answer has not yet been published; the glossary definition above remains available.</div>
+<details class="study-source" id="study-sources"><summary>Published references under review</summary><p class="disclaimer">These publications relate to this object's themes, not necessarily this precise question. They are research leads—not an approved explanation or permission to copy their contents.</p><ul id="study-source-links"></ul><p class="disclaimer">The printed 1962 Missal and 1960 Code of Rubrics govern any binding claims. Explanatory guides and computed Ordos are supporting references only.</p></details></div>
 <p class="meta-link" id="canonical-link"></p>
 </div>
 </aside>
@@ -156,7 +163,7 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],view:"church",loaded:false};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,view:"church",loaded:false};
 const RELATED_OBJECTS={
  AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
  AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
@@ -246,10 +253,34 @@ function renderRelatedObjects(){
   b.dataset.related=id;b.onclick=()=>select(id,b);$("related-items").appendChild(b);
  }
 }
+function renderPublishedReferences(questionId){
+ const list=$("study-source-links");list.replaceChildren();
+ $("study-sources").open=false;
+ const pack=state.sourcePack;
+ if(!pack){
+  const li=document.createElement("li");li.textContent="Source crosswalk unavailable; references must be checked separately.";list.appendChild(li);return;
+ }
+ const route=pack.question_routes.find(q=>q.question_id===questionId);
+ const applicable=route?.topic_candidates||[];
+ const topics=applicable.map(id=>pack.topics.find(t=>t.id===id)).filter(Boolean);
+ const unique=[...new Set(topics.flatMap(t=>t.source_ids))];
+ const order=["NORMATIVE_1962","PROJECT_CROSSWALK","CEREMONIAL_SECONDARY","SEASONAL_EXPLANATION","CHANT_PROPER_WITNESS","SECONDARY_EXPLANATION","CALENDAR_COMPARISON"];
+ unique.sort((a,b)=>order.indexOf(pack.source_roles.find(x=>x.id===a)?.role)-order.indexOf(pack.source_roles.find(x=>x.id===b)?.role));
+ if(!unique.length){const li=document.createElement("li");li.textContent="No exact subject-to-source route has been assigned yet. This does not indicate that no historical sources exist.";list.appendChild(li);return;}
+ for(const id of unique.slice(0,6)){
+  const src=pack.source_roles.find(s=>s.id===id);if(!src)continue;
+  const li=document.createElement("li");
+  const link=document.createElement("a");link.href=src.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=src.title+" ↗";
+  const note=document.createElement("small");note.textContent=src.role.replaceAll("_"," ").toLowerCase()+" · "+src.limitation;
+  li.append(link,note);list.appendChild(li);
+ }
+ const locator=topics.filter(t=>t.source_locator).slice(0,2).map(t=>t.source_locator);
+ if(locator.length){const li=document.createElement("li");li.textContent="Topic locator (not certified for this question): "+locator.join("; ");list.appendChild(li);}
+}
 function buildQuestionButton(q){
  const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
  const l=document.createElement("span");l.textContent=q.question.en;const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
- b.onclick=()=>{state.question=q.id;$("question-list").hidden=true;$("question-detail").hidden=false;$("question-title").textContent=q.question.en;$("question-type").textContent=q.category_label||q.category;$("back-to-object").focus({preventScroll:true});};
+ b.onclick=()=>{state.question=q.id;$("question-list").hidden=true;$("question-detail").hidden=false;$("question-title").textContent=q.question.en;$("question-type").textContent=q.category_label||q.category;renderPublishedReferences(q.id);$("back-to-object").focus({preventScroll:true});};
  return b;
 }
 function renderQuestions(){
@@ -298,10 +329,12 @@ async function loadCanon(){
  const outcome=await Promise.allSettled([
   ...files.map(s=>fetch("../../data/glossary/concepts-"+s+".v1.json").then(r=>{if(!r.ok)throw Error("Glossary HTTP "+r.status);return r.json();})),
   fetch("PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Questions HTTP "+r.status);return r.json();}),
-  fetch("sanctuary-inspection-sources-20261017.v1.json").then(r=>{if(!r.ok)throw Error("Inspection HTTP "+r.status);return r.json();})
+  fetch("sanctuary-inspection-sources-20261017.v1.json").then(r=>{if(!r.ok)throw Error("Inspection HTTP "+r.status);return r.json();}),
+  fetch("LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Source crosswalk HTTP "+r.status);return r.json();})
  ]);
  outcome.slice(0,3).forEach(x=>{if(x.status==="fulfilled"){(x.value.entries||[]).forEach(e=>state.entries.set(e.id,e));}});
  if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];state.objects=outcome[3].value.objects||[];}
+ if(outcome[5].status==="fulfilled"){state.sourcePack=outcome[5].value;}
  if(outcome[4].status==="fulfilled"){
    state.inspections=outcome[4].value.assets||[];
    const root=$("inspection-choices");root.replaceChildren();
@@ -320,11 +353,11 @@ async function loadCanon(){
    }
  }else $("inspection-choices").textContent="Inspection sources unavailable; serve the pilot over HTTPS with its source files.";
  state.loaded=true;
- if(state.selected){buildDefinition(findSpot(state.selected));renderRelatedObjects();renderQuestions();}
+ if(state.selected){buildDefinition(findSpot(state.selected));renderRelatedObjects();renderQuestions();if(state.question)renderPublishedReferences(state.question);}
 }
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
- status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  select:id=>select(id,null)
 });
 })();
