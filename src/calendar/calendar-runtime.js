@@ -634,11 +634,18 @@ function calendarScriptureControls(selected,r){
   const rows=calendarScriptureContexts(r);
   if(!rows.length)return "";
   const slotLabel=row=>row.label?(fr()?row.label.fr:row.label.en):row.slot==="GOSPEL"?L("Gospel","Évangile"):L("Epistle / Lesson","Épître / Lecture");
-  // Only source-confirmed passages from the selected Proper appear here. Do
-  // not substitute a nominal lesson, invent a reading or flatten the Passion.
-  return `<section class="aoCalDayScripture" aria-label="${esc(L("Appointed readings","Lectures de la messe"))}"><small>${esc(L("APPOINTED READINGS","LECTURES DE LA MESSE"))}</small><div class="aoCalDayScriptureActions">${rows.map(row=>
+  // Keep the distinct Vigil prophecies apart from the Mass readings that
+  // follow. These are independent source owners, not duplicate Gospel slots.
+  const rites=rows.filter(row=>row.kind==="NATIVE_RITE_READING");
+  const proper=rows.filter(row=>row.kind!=="NATIVE_RITE_READING");
+  const mixed=rites.length>0&&proper.length>0;
+  const controls=items=>`<div class="aoCalDayScriptureActions">${items.map(row=>
     `<button type="button" data-cal-scripture-date="${esc(selected)}" data-cal-scripture-slot="${esc(row.slot)}" aria-label="${esc(slotLabel(row)+" · "+row.reference)}"><strong>${esc(slotLabel(row))}</strong><span>${esc(row.reference)}</span></button>`
-  ).join("")}</div><p class="aoCalDayScriptureError" role="alert" hidden></p></section>`;
+  ).join("")}</div>`;
+  const riteLabel=rites[0]?.groupLabel;
+  return `<section class="aoCalDayScripture" aria-label="${esc(L("Appointed readings","Lectures de la messe"))}"><small>${esc(L("APPOINTED READINGS","LECTURES DE LA MESSE"))}</small>${rites.length?
+    (mixed?`<p class="aoCalDayScriptureGroupLabel">${esc(fr()?riteLabel.fr:riteLabel.en)}</p>`:"")+controls(rites):""}${proper.length?
+    (mixed?`<p class="aoCalDayScriptureGroupLabel">${esc(L("Mass · Epistle and Gospel","Messe · Épître et Évangile"))}</p>`:"")+controls(proper):""}<p class="aoCalDayScriptureError" role="alert" hidden></p></section>`;
 }
 async function openCalendarScripture(button){
   const origin=root(),selected=String(button.dataset.calScriptureDate||""),slot=button.dataset.calScriptureSlot;
@@ -681,7 +688,7 @@ async function openCalendarScripture(button){
   }
 }
 function calendarScriptureStyles(){
- return `.aoCalDayScripture{margin:12px auto 0;max-width:580px;text-align:left}.aoCalDayScripture>small{display:block;color:var(--ao-text-muted,#a6a198);font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em}.aoCalDayScriptureActions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.aoCalDayScriptureActions button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px!important;border:1px solid var(--ao-rule,rgba(226,214,190,.22))!important;background:var(--ao-surface-1,rgba(16,24,33,.94))!important;border-radius:999px!important;color:var(--ao-text-primary,#e9e4d9)!important;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important}.aoCalDayScriptureActions button strong{font-weight:650}.aoCalDayScriptureActions button span{color:var(--ao-text-muted,#a6a198)}.aoCalDayScriptureActions button:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}.aoCalDayScriptureActions button:disabled{opacity:.55}.aoCalDayScriptureError:not([hidden]){color:#d9b99a;margin:8px 0 0;font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}`;
+ return `.aoCalDayScripture{margin:12px auto 0;max-width:580px;text-align:left}.aoCalDayScripture>small{display:block;color:var(--ao-text-muted,#a6a198);font:650 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em}.aoCalDayScriptureGroupLabel{margin:12px 0 2px;color:var(--ao-text-muted,#a6a198);font:650 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)}.aoCalDayScriptureActions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}.aoCalDayScriptureActions button{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 12px!important;border:1px solid var(--ao-rule,rgba(226,214,190,.22))!important;background:var(--ao-surface-1,rgba(16,24,33,.94))!important;border-radius:999px!important;color:var(--ao-text-primary,#e9e4d9)!important;font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)!important}.aoCalDayScriptureActions button strong{font-weight:650}.aoCalDayScriptureActions button span{color:var(--ao-text-muted,#a6a198)}.aoCalDayScriptureActions button:focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}.aoCalDayScriptureActions button:disabled{opacity:.55}.aoCalDayScriptureError:not([hidden]){color:#d9b99a;margin:8px 0 0;font:500 12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}`;
 }
 function supplementaryDayCards(selected,r){
   if(!secondarySaintModel||!r?.day?.main?.id)return [];
