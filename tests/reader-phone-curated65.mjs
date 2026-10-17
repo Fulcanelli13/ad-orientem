@@ -595,6 +595,36 @@ try{
     assert.equal(surface.disabled,true,"LIVE Guide still accepts user interaction");
     assert.equal(surface.visible,false,"LIVE Guide still occupies a ribbon column");
     assert.equal(surface.ribbonCells,2,"LIVE YOU / PRIEST ribbon was not preserved");
+    // Check the source-owned in-text 1962 actions on actual rendered LIVE
+    // paragraphs. A source-printed rubric must not be duplicated beneath it.
+    const rubricEvidence=await page.evaluate(async()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const eligible=new Set(["AO.SM.C0111","AO.SM.C0155","AO.SM.C0174",
+        "AO.SM.C0181","AO.SM.C0232","AO.SM.C0263"]);
+      const entries=[];
+      const frame=()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok)));
+      for(const card of api.model.cards.filter(c=>c.paragraphs.some(p=>
+        (p.sourceCueIds??[]).some(id=>eligible.has(id))))){
+        api.showSequence(card.sequence);
+        await frame();
+        for(const node of document.querySelectorAll(".ao-live-inline-rubrics")){
+          entries.push({
+            card:card.title,
+            text:node.textContent.trim(),
+            authority:node.dataset.sourceAuthority,
+            observed:node.dataset.observedNow,
+            ids:[...node.querySelectorAll("[data-rubric-id]")].map(el=>el.dataset.rubricId),
+          });
+        }
+      }
+      return entries;
+    });
+    assert.ok(rubricEvidence.length>0,"LIVE printed no certified 1962 inline rubrics");
+    assert.ok(rubricEvidence.every(x=>x.authority==="MR62_RITUS" &&
+      x.observed==="false" && x.ids.every(id=>/^AO\\.RUB\\.C\\d{4}\\.\\d{2}$/.test(id))),
+      "LIVE rubric text lost source provenance or misrepresented an observation");
+    assert.ok(rubricEvidence.some(x=>lang==="fr"?/Le prêtre/.test(x.text):/The priest/.test(x.text)),
+      "LIVE rubric language does not follow the reader preference");
     await page.screenshot({path:resolve(out,lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-credo.png"),fullPage:false});
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
