@@ -993,7 +993,7 @@ const PRAYER_PRACTICE_FOCUS_CSS=String.raw`
    background:transparent!important;backdrop-filter:none!important
  }
  #aoPray435930 [data-ao-ritual-module="angelus"] .aoRitualSlot[data-channel="posture"]{
-   min-height:56px!important;border-radius:8px!important;padding:3px 7px!important
+   min-height:44px!important;border-radius:8px!important;padding:3px 7px!important
  }
  #aoPray435930 [data-ao-ritual-module="angelus"] .aoRitualIcon{
    width:30px!important;height:30px!important
