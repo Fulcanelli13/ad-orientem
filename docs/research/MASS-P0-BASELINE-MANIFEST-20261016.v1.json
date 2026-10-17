@@ -1,0 +1,171 @@
+{
+  "schema": "AO_MASS_P0_FROZEN_BASELINE_V1",
+  "date": "2026-10-16",
+  "repository": {
+    "fullName": "Fulcanelli13/ad-orientem",
+    "canonicalProduction": "https://fulcanelli13.github.io/ad-orientem/",
+    "mainSha": "7d88a0f193d947565259d8a41ed3c53aa38d1980",
+    "p0OwningPr": 1270,
+    "originalPrHead": "2f827dea5c54bd4c7b96ab1404b492ea1588fa32",
+    "mysteryOwnerPr": 1193,
+    "massBibleOwnerPr": 1082,
+    "curatedReaderMergedPr": 1210,
+    "coordinationIssue": 342
+  },
+  "workbook": {
+    "name": "Ad_Orientem_Ultra_Master_Research_Only_Low_Long_Guides_2026-10-16.xlsx",
+    "sha256": "d7d0ed3bd52d3d6fde58edaac0db5046ab767913cd489a4cadfba5491562b9a2",
+    "bytes": 1366218,
+    "tabs": 41,
+    "loadedAndExamined": true,
+    "sourceTextImportedIntoRuntime": false
+  },
+  "frozenOwners": [
+    {
+      "path": "data/presentation/reader-text-sung.v1.json",
+      "blobSha": "29dd8a6da521cf1c16b2c3d13005bd1e3bb76f25",
+      "scope": "Sung donor text, 96 blocks, 280 source cue entries / 279 canonical priest events"
+    },
+    {
+      "path": "data/presentation/reader-text-low.v1.json",
+      "blobSha": "afabbd1679f88a45a19f6a24a7795692803d594a",
+      "scope": "Low donor text, 96 blocks, 276 source cue entries / 275 canonical priest events"
+    },
+    {
+      "path": "data/presentation/guide-registry.v1.json",
+      "blobSha": "b6b3b5f1fbed738ba89b3244aecc75da6d3764c6",
+      "scope": "32 published Guides"
+    },
+    {
+      "path": "data/learn/mass-formation-campion.v1.json",
+      "scope": "8 canonical Formation lessons"
+    },
+    {
+      "path": "src/mass/reader-live-curated-cards.js",
+      "blobSha": "6972ed41adc50e12a71ca8ad9d93c4b14fedc6f0",
+      "scope": "active curated card projection (no changes)"
+    },
+    {
+      "path": "src/mass/reader-live-product48.js",
+      "blobSha": "7e992c07ccc81e27fd0bfbf22b611c4bec34582a",
+      "scope": "48-card rollback (no changes)"
+    },
+    {
+      "path": "src/mass/reader-rubric-events.js",
+      "blobSha": "770d81f5dbe9557edf37690dc5142f0d9ee64ac0",
+      "scope": "priest, actor and rubric source registry"
+    },
+    {
+      "path": "src/learn/mass-moments-study.js",
+      "blobSha": "005aa6410c14ad69edaf900638e0c275cd4408a3",
+      "scope": "existing Guide-based study owner"
+    },
+    {
+      "path": "src/learn/mass-formation-scripture-context.js",
+      "blobSha": "bfc6ac97be61215608010c63dfd10abf1678b618",
+      "scope": "existing typed canonical Scripture stage anchors"
+    },
+    {
+      "path": "src/learn/mass-knowledge-research-bridge.js",
+      "pr": "1270",
+      "scope": "extended ID validator, bidirectional reconciliation and owner-gated P1 link lookup"
+    }
+  ],
+  "census": {
+    "microUnits": 435,
+    "researchCues": 279,
+    "canonicalSungSourceCues": 280,
+    "canonicalLowSourceCues": 276,
+    "wordAnchors": 66,
+    "authorClaims": 139,
+    "allHistoricalGuideVariants": 154,
+    "existingPublishedGuides": 32,
+    "unpublishedGuideVariants": 122,
+    "mysteryOwnerIds": 39,
+    "formationStages": 8,
+    "sourceTypedScriptureResearchCandidates": 48,
+    "researchPriestEventRows": 279
+  },
+  "sourceCoverage": {
+    "researchUnitsWithValidCanonicalSungCue": 435,
+    "matrixCuesPresentInCanonicalSung": 279,
+    "canonicalSourceCuesWithResearchUnits": 246,
+    "canonicalSourceCuesWithoutResearchMicroUnits": 34,
+    "sourceUnitsTextVerifiedAgainstOriginalWorkbook": 0,
+    "exactWordTriggerSpansVerified": 0,
+    "newPublicationApprovals": 0,
+    "originalWorkbookLatinComparedNFC": 435,
+    "originalWorkbookLatinLiteralEqualOrSubstring": 282,
+    "originalWorkbookLatinContentDifferences": 3,
+    "originalWorkbookVariableTextSlots": 5,
+    "originalWorkbookLatinNotCompared": 0,
+    "originalWorkbookLatinDirectCompared": 288,
+    "originalWorkbookLatinDualHashCompared": 147,
+    "originalWorkbookLatinDirectDifferences": 2,
+    "originalWorkbookLatinFingerprintedEqualOrSubstring": 145,
+    "originalWorkbookLatinDualHashDifferences": 1,
+    "originalWorkbookWholeCueIdentityMatches": 153,
+    "originalWorkbookSubspanIdentityMatches": 274,
+    "independentlyCertifiedPrinted1962LatinSpans": 0,
+    "independentlyCertifiedExactWordTriggers": 0,
+    "exactWordTriggersLocatedInCanonicalSungSource": 66,
+    "exactWordTriggerActorRitualApprovals": 0,
+    "canonicalSourceOnlyEntriesStructurallyClassified": 34,
+    "publishedGuideSectionExceptionsClassified": 4,
+    "workbookMicroUnitsComparedDirectlyWithWorkbookCueMaster": 435,
+    "workbookInternalLatinExactWholeCues": 159,
+    "workbookInternalLatinContainedSubspans": 276,
+    "workbookInternalLatinDifferences": 0,
+    "priestEventIdsLinkedToCanonicalSungSourceCues": 279,
+    "priestEventActorGestureAndApplicabilityCertified": 0,
+    "productionSourceBlobParityCheckedOnAdvancingMain": {
+      "sungText": "UNCHANGED",
+      "lowText": "UNCHANGED",
+      "publishedGuide": "UNCHANGED",
+      "curatedCards": "UNCHANGED",
+      "rollback48": "UNCHANGED",
+      "rubricOverlay": "UNCHANGED"
+    },
+    "wordAnchorsLinkedToExistingRubricOrPriestActionOwners": 53,
+    "wordAnchorsWithoutMatchedCueLevelGestureOwner": 13,
+    "wordAnchorsWithExistingExactRubricTriggerSpan": 2,
+    "observedOriginalResearchLatinContentDifferenceRows": 3,
+    "latinDiscrepanciesClassifiedAsAccentVariations": 2,
+    "latinDiscrepanciesConditionalGospelName": 1,
+    "approvedNewCeremonialTriggers": 0,
+    "gospelEvangelistHeaderSourceFirstMismatchReproduced": 1,
+    "gospelAuthorRuntimeOwnerFixMerged": {
+      "pullRequest": 1297,
+      "sha": "e198a0a65536180830dbf0d6cb1c198abcf480d5",
+      "validatedForms": [
+        "LOW_MISSAL",
+        "LOW_SIMPLE",
+        "MISSA_CANTATA_LIVE",
+        "SOLEMN_LIVE"
+      ],
+      "releaseNotYetVerifiedLivePages": true
+    }
+  },
+  "controls": {
+    "canonicalReaderFilesModified": false,
+    "ritualTextsModified": false,
+    "rubricsModified": false,
+    "publicRuntimeImportEnabled": false,
+    "sourceClaimsAutomaticallyPublished": false
+  },
+  "limitations": [
+    "All 435 workbook Latin micro-units were compared to frozen canonical Sung donor identity: 288 direct NFC strings and 147 dual independent UTF-16 32-bit fingerprint/length comparisons. 153 whole cues, 274 subspans, 3 wording differences and 5 variable slots. Fingerprint equivalence is probabilistic; independent word-boundary/1962 printed certification remains zero.",
+    "Compiled reader card and paragraph IDs have not been independently reconciled for all 435 units",
+    "Current guide field parity matches are asserted by the workbook's 32-field parity sheet, not independently recertified against this newer main commit",
+    "Scripture and historical-author content remain individually held for editorial source certification",
+    "All results require rebasing/checking main if production advances after frozen SHA",
+    "All 66 source-trigger offsets identify exact canonical Sung UTF-16 text spans, but actor, posture/gesture, 1962 authority and ritual applicability remain editorial holds; none is approved for new public binding.",
+    "All 435 research-unit Latin extracts are internally exact/substring-consistent with the workbook's own 279-cue source sheet (159 whole, 276 subspan); this does not override 3 donor differences and 5 dynamic source slots found against GitHub.",
+    "The workbook's 279 priest-event IDs now have one-to-one source-cue identities; exact actor/action/voice/ritual certification and conformity to printed 1962 rubrics remain separate gates.",
+    "The P0 branch currently diverges from main by other pipelines' commits. Tested source-owner file hashes remain equal, but the PR must be updated and full integration CI completed before merge.",
+    "1960 Codex Rubricarum §518(b) requires position/form/feast checks for Et incarnatus est; an unconditional priest kneel from one Latin token would contradict seated-vs-standing distinction.",
+    "The frozen source-first model has a potentially static 'secúndum Matthǽum' donor at C0084 independent from the resolved Gospel Proper at B026; targeted John Gospel reproduction test is part of P0. Owner must certify and correct form-applicable runtime behavior before P1.",
+    "CI P0 research suite reproduced fixed 'secúndum Matthǽum' heading while a source-first test model renders synthetic Gospel according to John (run 38876627431); production deployment paths not exhaustively examined, owner correction required.",
+    "The canonical reader correction was separately merged to main via PR #1297; P0's donor snapshot, its original three literal source differences, independent printed-source approvals and publication holds remain unchanged."
+  ]
+}
