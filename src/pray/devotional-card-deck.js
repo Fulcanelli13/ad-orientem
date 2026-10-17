@@ -4,13 +4,15 @@
  * Canonical PRAY owner remains responsible for all texts and form selection.
  */
 import "./devotional-card-deck-styles.js";
+import {installAngelusFolioArtwork} from "./folio-presentation.js";
 export const DEVOTIONAL_CARD_SCHEMA="dual-axis-devotional-cards-v1";
 const DATA={
  angelus:[
   ["announcement","The Announcement","L’Annonce","Angelus Domini",[0,1]],
   ["fiat","Mary’s Fiat","Le Fiat de Marie","Ecce ancilla Domini",[2,3]],
   ["incarnation","The Incarnation","L’Incarnation","Et Verbum caro factum est",[4,5]],
-  ["intercession","Intercession and Collect","Intercession et oraison","Ora pro nobis / Oremus",[6,7]]
+  ["intercession","Intercession","Intercession","Ora pro nobis",[6]],
+  ["collect","Collect","Oraison","Oremus",[7]]
  ],
  regina:[
   ["rejoice","Rejoice, O Queen of Heaven","Réjouissez-vous, Reine du ciel","Regina cæli",[0]],
@@ -29,12 +31,10 @@ export function angelusCardPlan({form="angelus",language="en",historicalConclusi
  const fr=language==="fr";
  const items=DATA[form].map(([id,en,titleFr,latin,indices])=>Object.freeze({
   id,title:fr?titleFr:en,latin,unitIndices:Object.freeze([...indices]),
-  appendixIndex:null,ritual:id==="incarnation"?"profound-bow":null
+  appendixIndex:null,
+  appendixIndices:Object.freeze(form==="angelus"&&id==="collect"&&historicalConclusion?[0,1,2]:[]),
+  ritual:id==="incarnation"?"profound-bow":null
  }));
- if(form==="angelus"&&historicalConclusion)
-  APPENDIX.forEach(([id,en,titleFr,latin,i])=>items.push(Object.freeze({
-   id,title:fr?titleFr:en,latin,unitIndices:Object.freeze([]),appendixIndex:i,ritual:null
-  })));
  return Object.freeze(items);
 }
 function create(doc,tag,className,value){
@@ -102,6 +102,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
  const units=[...host.querySelectorAll(":scope > .aoP435930PrayerUnit")];
  if(units.length!==(form==="angelus"?8:4))return null;
  const originalAppendix=mount.querySelector(".aoP435930Appendix");
+ const appendixToggle=mount.querySelector("[data-p435930-angelus-appendix]")?.closest("label");
  if(historicalConclusion&&(!appendixText?.vern||!appendixText?.latin||!originalAppendix))return null;
  const parts=historicalConclusion?{
   v:String(appendixText.vern).split(/\n\s*\n/),
@@ -134,14 +135,27 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   const body=create(doc,"div","aoDevoCardScroll");body.dataset.aoDevoScroll="";
   body.setAttribute("role","region");body.setAttribute("aria-label",entry.title);
   entry.unitIndices.forEach(j=>body.append(units[j]));
-  if(entry.appendixIndex!==null)body.append(appendixUnit(doc,parts.v[entry.appendixIndex],
-   parts.l[entry.appendixIndex],language));
+  if(entry.id==="collect" && appendixToggle)body.append(appendixToggle);
+  if(entry.appendixIndices?.length){
+   const closing=create(doc,"section","aoFolioClosing");
+   closing.setAttribute("aria-label",language==="fr"?"Conclusion traditionnelle":"Traditional conclusion");
+   closing.append(create(doc,"h3","aoFolioClosingTitle",language==="fr"?"Prières de conclusion":"Closing prayers"));
+   entry.appendixIndices.forEach(k=>{
+    const section=create(doc,"section","aoFolioClosingPrayer");
+    section.append(create(doc,"small","aoFolioClosingLabel",language==="fr"?APPENDIX[k][2]:APPENDIX[k][1]));
+    section.append(appendixUnit(doc,parts.v[k],parts.l[k],language));
+    closing.append(section);
+   });
+   body.append(closing);
+  }
   collectParagraphs(body,entry.id);
   card.append(header,body);viewport.append(card);cards.push(card);
  });
  timeline.append(previous,stops,next);
- host.replaceChildren(timeline,viewport);host.dataset.aoDevotionalDeck="v1";
- host.classList.add("aoDevoDeck");
+ // Content precedes navigation in the DOM and focus order; the compact
+ // Folio timeline sits after the prayer instead of taking over the header.
+ host.replaceChildren(viewport,timeline);host.dataset.aoDevotionalDeck="v1";
+ host.classList.add("aoDevoDeck","aoFolioSurface");
  originalAppendix?.remove();
  let index=0,lastParagraph=null,lastCue=null,raf=0;
  function focus(){
@@ -216,5 +230,8 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
  go(initialIndex,{initial:true});
  const api=Object.freeze({schema:DEVOTIONAL_CARD_SCHEMA,plan,current:()=>index,go,cards:()=>cards.length,sync:queue});
  host.__aoDevotionalDeck=api;
+ // Artwork is deliberately absent until both image and reproduction are
+ // individually approved. Nothing decorative may block the source prayer.
+ installAngelusFolioArtwork({form,cards,win:doc.defaultView}).catch(()=>{});
  return api;
 }

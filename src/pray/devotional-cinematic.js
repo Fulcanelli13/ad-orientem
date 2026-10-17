@@ -113,61 +113,42 @@ export function showDevotionalInterlude({
   entry.openingTimer=win?.setTimeout?.(()=>closeOpening(mount,win),plan.durationMs);
   return true;
 }
-/** Full cinematic action is intentionally persistent until acknowledged.
- * It is a prayer instruction, not proof of a performed gesture.
+/** Folio v1: the certified Incarnation cue lives beside its prayer.
+ * This is a presentation hint, not evidence of a performed gesture.
+ * The caller supplies the actual focused verse; no timer invents a cue.
  */
 export function showDevotionalParagraphCue({
-  mount,cue,action=null,language="en",win=globalThis,
+  mount,cue,action=null,anchor=null,language="en",win=globalThis,
 }={}){
   const card=mount?.querySelector?.(".aoDevoCard:not([hidden])");
   if(!card)return false;
+  closePosture(mount); // retire legacy blocking scene, if any
+  card.querySelectorAll(".aoFolioInlineGesture").forEach(node=>node.remove());
   card.removeAttribute("data-ao-gesture-cinematic");
   if(cue!=="profound-bow"||!action||
-    action.sourceCue!=="Et Verbum caro factum est"||
-    action.id!=="ANGELUS.INCARNATION")return true;
-  const entry=session(mount);
-  if(entry.seenCues.has(action.id))return true;
-  entry.seenCues.add(action.id);
-  closeOpening(mount,win);
-  closePosture(mount);
+    action.id!=="ANGELUS.INCARNATION"||
+    action.sourceCue!=="Et Verbum caro factum est")return true;
+  const unit=anchor?.closest?.(".aoP435930PrayerUnit")||
+    card.querySelector('[data-ao-incarnation="true"]');
+  if(!unit||!card.contains(unit))return false;
   const doc=card.ownerDocument;
-  const root=create(doc,"section","aoDevoPostureCinematic");
-  root.dataset.aoPostureAction=action.action;
-  root.dataset.aoDevotionalScene="incarnation-posture";
-  root.setAttribute("role","dialog");
-  root.setAttribute("aria-modal","true");
-  root.setAttribute("aria-label",language==="fr"?"Geste de l’Incarnation":"Incarnation posture cue");
-  root.__aoPreviousFocus=doc.activeElement;
-  const inner=create(doc,"div","aoDevoPostureInner");
-  inner.append(
-    create(doc,"small","aoDevoPostureKicker",language==="fr"?"L’INCARNATION":"THE INCARNATION"),
-    create(doc,"p","aoDevoPostureLatin","Et Verbum caro factum est"),
-    create(doc,"span","aoDevoPostureRule")
-  );
-  const icon=create(doc,"span","aoDevoPostureIcon");
-  const source=resolveCanonicalAssetUrl(action.iconAssetId);
-  if(source){
-    const safeUrl='url("'+source.replaceAll('"',"%22")+'")';
-    icon.style.maskImage=safeUrl;
-    icon.style.webkitMaskImage=safeUrl;
-  }else icon.dataset.aoIconUnavailable="true";
-  inner.append(icon,create(doc,"h2","aoDevoPostureInstruction",action.label),
-    create(doc,"p","aoDevoPostureResponse",language==="fr"?"Et il a habité parmi nous.":"And dwelt among us."));
-  const button=create(doc,"button","aoDevoPostureContinue",
-    language==="fr"?"Continuer la prière":"Continue praying");
-  button.type="button";
-  button.addEventListener("click",()=>closePosture(mount),{once:true});
-  inner.append(button);root.append(inner);
-  root.addEventListener("keydown",event=>{
-    if(event.key==="Escape"){event.preventDefault();closePosture(mount)}
-    if(event.key==="Tab"){
-      event.preventDefault();button.focus();
-    }
-  });
-  doc.body.append(root);
-  entry.posture=root;
+  const note=create(doc,"aside","aoFolioInlineGesture");
+  note.dataset.aoDevotionalScene="incarnation-inline";
+  note.dataset.aoPostureAction=action.action;
+  note.dataset.aoSourceCue=action.sourceCue;
+  note.dataset.aoReducedMotion=String(reduced(win));
+  note.setAttribute("aria-label",language==="fr"?"Geste de l’Incarnation":"Incarnation gesture");
+  const icon=create(doc,"span","aoFolioGestureIcon");
+  icon.setAttribute("aria-hidden","true");
+  const url=resolveCanonicalAssetUrl(action.iconAssetId);
+  if(url){
+    const masked='url("'+url.replaceAll('"',"%22")+'")';
+    icon.style.maskImage=masked;icon.style.webkitMaskImage=masked;
+  }else icon.hidden=true;
+  const label=create(doc,"span","aoFolioGestureLabel",action.label);
+  label.append(create(doc,"small","aoFolioGestureLatin","Et Verbum caro factum est"));
+  note.append(icon,label);
+  unit.after(note);
   card.dataset.aoGestureCinematic=action.action.toLowerCase();
-  root.dataset.aoReducedMotion=String(reduced(win));
-  button.focus?.({preventScroll:true});
   return true;
 }

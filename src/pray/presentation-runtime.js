@@ -6,7 +6,7 @@ import "./presentation-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
-import {showDevotionalInterlude,showDevotionalParagraphCue,resetDevotionalCinematicSession} from "./devotional-cinematic.js";
+import {showDevotionalParagraphCue,resetDevotionalCinematicSession} from "./devotional-cinematic.js";
 import {resolveAngelusIncarnationCinematic} from "./angelus-cinematic-policy.js";
 import {certifiedPublicStationCue,stationPhaseOfFocusedParagraph,STATIONS_PUBLIC_POSTURE_SOURCE} from "./stations-posture-policy.js";
 import {resolveDevotionalActionScene,createDevotionalActionCinematic} from "./devotional-action-cinematics.js";
@@ -2062,15 +2062,14 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     // Opening sacred artwork belongs only to prayer entry, never card changes.
     ANGELUS_CARD_INDEX=index;
    },
-   onCue:cue=>{
+   onCue:(cue,{paragraph}={})=>{
     const action=cue==='profound-bow'?resolveAngelusIncarnationCinematic({
       form,weekday:selectedWeekday(),
       saturdayAfterVespers:angelusSaturdayVespersDate===selectedDateKey(),
       language:lang(),
     }):null;
-    // The full-screen cue deliberately remains salient even when the source
-    // posture state says the faithful are already kneeling on weekdays.
-    showDevotionalParagraphCue({mount:m,cue,action,language:lang(),win:window});
+    // Exact source cue remains in the prayer flow; no full-screen modal.
+    showDevotionalParagraphCue({mount:m,cue,action,anchor:paragraph,language:lang(),win:window});
     const rail=m.querySelector('[data-ao-ritual-module="angelus"]');
     if(!rail)return;
     rail.querySelectorAll('[data-channel="gesture"]').forEach(el=>el.remove());
@@ -2079,8 +2078,6 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
       L('Bow profoundly','Inclination profonde'),{emphasis:true,value:'profound-bow'}));
    }
   });
-  if(cardDeck && form==='angelus' && ANGELUS_CARD_INDEX===0)
-    showDevotionalInterlude({mount:m,form,card:cardDeck.plan[0],language:lang(),win:window});
   if(!cardDeck)bindAngelusExactRail();
  });else stopAngelusExactRail();
  if((view==='library'&&LIB.open)||(view==='prayerOnly'&&prayerId))queueMicrotask(()=>installLibraryParagraphFocus(m,view==='library'?LIB.open:prayerId));
