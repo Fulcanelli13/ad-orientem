@@ -12,7 +12,7 @@ import {massStudyStages,massStudyPathsHtml,massStudyPathsCss} from "./mass-study
 import {projectPublishedMassPrayerContexts,publishedMassPrayerContextHtml} from "./mass-explorer-published-prayer-context.js";
 import {verifiedMassExplorerPrayerReadings} from "./mass-explorer-prayer-readings.js";
 import {approvedMassExplorerStudies,massExplorerStudyForBlock,massExplorerApprovedStudyHtml} from "./mass-explorer-study-publication.js";
-import {selectedCalendarProperProjection,selectedCalendarProperSlotHtml} from "./mass-explorer-selected-calendar-proper.js";
+import {selectedCalendarProperProjection,selectedCalendarProperSlotHtml,selectedPreflightMassProperProjection} from "./mass-explorer-selected-calendar-proper.js";
 
 export const MASS_EXPLORER_ROUTE="learn.mass_explorer";
 export const MASS_EXPLORER_VERSION="mass-explorer-p1-sung-guide-v1";
@@ -126,9 +126,16 @@ function sourceBlockHtml(catalog,source,fr,selectedCalendarProper=null){
     const selectedText=selectedCalendarProperSlotHtml(source.Proper_Slot,selectedCalendarProper,{french:fr});
     return '<section id="ao-mx-prayer" class="aoMXText" data-ao-mx-anchor="prayer">'+
       '<h2>'+esc(source.Title)+'</h2>'+
-      (selectedText||'<p class="aoMXQuiet">'+esc(pick(fr,
-        "This is a variable Proper text. No fully verified Proper for the selected Calendar day and ordinary Sung Mass is available here; no generic text is substituted.",
-        "Ce texte du Propre varie selon la Messe choisie. Aucun Propre entièrement vérifié n’est disponible ici pour le jour choisi au Calendrier et la messe chantée ordinaire ; aucun texte générique n’est substitué."))+'</p>')+
+      (selectedText||'<p class="aoMXQuiet">'+esc(
+        selectedCalendarProper?.owner==="EXPLICIT_ALTERNATE_MASS_BLOCKED"?
+          pick(fr,
+            "A different Mass is selected, but its complete bilingual Proper is not verified for this study view. The Calendar-day Proper will not be substituted.",
+            "Une autre Messe est choisie, mais son Propre bilingue n’est pas entièrement vérifié pour cet espace d’étude. Le Propre du jour ne lui sera pas substitué.")+
+          " ("+String(selectedCalendarProper.reason||"UNVERIFIED")+")":
+          pick(fr,
+            "This is a variable Proper text. No fully verified Proper for the selected Calendar day and ordinary Sung Mass is available here; no generic text is substituted.",
+            "Ce texte du Propre varie selon la Messe choisie. Aucun Propre entièrement vérifié n’est disponible ici pour le jour choisi au Calendrier et la messe chantée ordinaire ; aucun texte générique n’est substitué.")
+      )+'</p>')+
       '</section>';
   }
   const rows=(source.units||[]).filter(unit=>unit?.latin||unit?.english).map(unit=>{
@@ -292,15 +299,17 @@ export function createMassExplorerRuntime(win=globalThis,{fetchImpl=globalThis.f
         pick(fr,"Study by theme","Étudier par thème")+'</button></nav>';
     const themesPage='<main class="aoMXWrap aoMXThemePage">'+
       massStudyPathsHtml(catalog.formationStages,{french:fr,standalone:true})+'</main>';
+    const explicitChoice=win?.AO_R17_BROWSER_ENTRY?.selectedStudyProper?.()??null;
+    const properForStudy=explicitChoice?
+      selectedPreflightMassProperProjection(explicitChoice,{french:fr}):
+      selectedCalendarProperProjection(win?.AO_RUNTIME_V8?.store?.getState?.(),{french:fr});
     node.innerHTML='<style>'+massExplorerCss()+'</style>'+
       '<header class="aoMXTop"><button type="button" data-ao-mx-back aria-label="'+pick(fr,"Back","Retour")+'">←</button>'+
       '<div><small>FORMATION</small><strong>'+pick(fr,"Understand the Mass","Comprendre la Messe")+'</strong></div>'+
       '<button type="button" data-ao-mx-close aria-label="'+pick(fr,"Close","Fermer")+'">×</button></header>'+
       switcher+
       (momentKey?massExplorerMomentHtml(catalog,momentKey,{blockId,french:fr,
-        selectedCalendarProper:selectedCalendarProperProjection(
-          win?.AO_RUNTIME_V8?.store?.getState?.(),{french:fr}
-        )}):
+        selectedCalendarProper:properForStudy}):
         indexView==="themes"?themesPage:
         indexView==="map"?massMapHtml(catalog,{french:fr}):massExplorerIndexHtml(catalog,{french:fr}));
     const selected=node.querySelector('.aoMXBlockIndex [aria-current="true"]');
