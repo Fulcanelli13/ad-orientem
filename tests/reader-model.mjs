@@ -149,6 +149,58 @@ const requiemModel=createMassReaderModel({
   resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 });
 assert.equal(requiemModel.totalCards,39,"plan-owned Requiem overlay duplicated or removed Mass reader cards");
+
+// The Requiem Ordinary substitutes the three EXACT Agnus texts. The raw
+// Low/Sung donor corpora remain immutable; the preselected celebration or
+// explicit overlay determines the variant, never the civil date alone.
+const agnusRequiemByCue={
+  "AO.SM.C0222":"dona eis réquiem.",
+  "AO.SM.C0223":"dona eis réquiem.",
+  "AO.SM.C0224":"dona eis réquiem sempitérnam.",
+};
+const paragraphForCue=(reader,id)=>reader.cards.flatMap(c=>c.paragraphs).find(
+  p=>p.sourceCueIds?.includes(id)
+);
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  for(const [language,expectedRest] of [["en",/grant them (?:eternal )?rest/i],
+                                        ["fr",/donnez-leur le repos(?: éternel)?/i]]){
+    for(const selectedRequiem of [
+      {...base,form,overlays:["REQUIEM"]},
+      {...base,form,overlays:[],actualCelebration:{id:"requiem",type:"REQUIEM"}},
+    ]){
+      const r=createMassReaderModel({
+        resolvedMass:{...selectedRequiem,
+          presentationMode:form==="LOW"?"SIMPLE":"LIVE"},
+        sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+        frenchOrdinary,vernacularLanguage:language
+      });
+      assert.equal(r.cards.length,form==="LOW"?30:39,form+" changed card count");
+      for(const [cueId,ending] of Object.entries(agnusRequiemByCue)){
+        const p=paragraphForCue(r,cueId);
+        assert.ok(p,form+" missing Requiem "+cueId);
+        const words=[p.primary,p.secondary,p.latin,p.vernacular].filter(Boolean);
+        const joined=words.join(" | ");
+        assert.ok(joined.includes(ending),form+" Latin Agnus variant missing "+cueId);
+        assert.match(joined,expectedRest,form+" "+language+" Requiem variant missing "+cueId);
+        assert.doesNotMatch(joined,/miserére nobis|dona nobis pacem|have mercy on us|grant us peace|ayez pitié de nous|donnez-nous la paix/i,
+          form+" imported ordinary Agnus wording into Requiem "+cueId);
+      }
+    }
+    const ordinary=createMassReaderModel({
+      resolvedMass:{...base,form,overlays:[],presentationMode:form==="LOW"?"SIMPLE":"LIVE"},
+      sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+      frenchOrdinary,vernacularLanguage:language
+    });
+    for(const cueId of Object.keys(agnusRequiemByCue)){
+      const p=paragraphForCue(ordinary,cueId);
+      assert.ok(p,form+" ordinary Agnus was removed");
+      const words=[p.primary,p.secondary,p.latin,p.vernacular].filter(Boolean).join(" | ");
+      assert.doesNotMatch(words,/dona eis réquiem/i,
+        form+" unselected Requiem variant leaked into ordinary "+cueId);
+    }
+  }
+}
+
 const requiemAbsolutionModel=createMassReaderModel({
   resolvedMass:{...base,overlays:["REQUIEM"],followingActions:["REQUIEM_ABSOLUTION"]},
   sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
