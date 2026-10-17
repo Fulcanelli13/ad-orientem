@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Visible Mass · Sanctuary object pilot</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--pane:#101821;--surface:#17212c;--line:#374351;--text:#eee9e0;--muted:#bac2cb;--gold:#c9b487;--focus:#f2dfaa}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}
+body{font-family:Georgia,"Times New Roman",serif}
+button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+a{color:#d8bd89}
+.wrap{max-width:1480px;margin:auto;padding:16px clamp(14px,2.6vw,36px) 24px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0 18px;border-bottom:1px solid var(--line)}
+.kicker{font:11px/1.4 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+header h1{font:normal clamp(21px,2.4vw,31px)/1.15 Georgia,serif;margin:5px 0 0}
+.topactions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.topactions button,.topactions a{border:1px solid var(--line);background:transparent;border-radius:8px;padding:10px 13px;color:var(--muted);font:13px system-ui,sans-serif;text-decoration:none}
+.topactions button[aria-pressed=true]{color:var(--text);border-color:#b8a176}
+.topactions .occasion-control{font:12px/1.4 system-ui,sans-serif;color:var(--muted);display:flex;align-items:center;gap:6px}
+.topactions select{max-width:170px;background:#18212b;border:1px solid var(--line);border-radius:7px;color:var(--text);padding:9px 7px;font:12px system-ui,sans-serif}
+.occasion-hint{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:0 0 12px}
+.occasion-note{border:1px solid #4a3e33;background:#1b1c20;border-radius:9px;padding:11px;margin:12px 0}
+.occasion-note strong{color:var(--gold);font:14px Georgia,serif}
+.occasion-note p{font:12px/1.55 system-ui,sans-serif;color:var(--muted);margin:8px 0 0}
+.occasion-note .scope{font-size:11px;color:var(--muted)}
+.occasion-note a{color:var(--gold)}
+.historical-answer{margin:12px 0;padding:12px 12px 11px;border:1px solid #3a4a58;border-radius:9px;background:#101b25}
+.historical-answer h4{font:14px/1.45 Georgia,serif;margin:0 0 7px;color:var(--gold)}
+.historical-answer p{margin:7px 0;font:13px/1.55 system-ui,sans-serif}
+.historical-answer p.answer-lead{color:var(--text)}
+.historical-answer p.answer-context{color:var(--muted)}
+.historical-answer p.answer-caveat{color:var(--muted);font:11px/1.5 system-ui,sans-serif}
+.historical-answer .answer-links{font:11px/1.6 system-ui,sans-serif;padding-top:5px}
+.historical-answer a{color:var(--gold)}
+.question.has-research{border-color:#606252}
+.intro{font:13px/1.5 system-ui,sans-serif;color:var(--muted);margin:12px 0 16px}
+main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;align-items:start;min-width:0}main>section{min-width:0}
+.photo-shell{background:#05070b;border:1px solid #313b45;border-radius:10px;overflow:hidden;min-width:0;max-width:100%}
+.photo-viewport{overflow:auto;scrollbar-width:thin;overscroll-behavior:contain;touch-action:pan-x pan-y;min-width:0;max-width:100%}
+[hidden]{display:none!important}
+.inspection-stage{min-height:300px;padding:10px;background:#0a0e13;display:flex;flex-direction:column;gap:9px}
+.inspection-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;font:12px/1.4 system-ui,sans-serif;color:var(--muted)}
+.inspection-nav button{border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--text);padding:8px 10px}
+.inspection-stage img{display:block;max-width:100%;width:100%;height:min(57vh,610px);object-fit:contain}
+.inspection-failed{color:var(--muted);text-align:center;font:13px/1.4 system-ui,sans-serif;padding:15px}
+.inspection-notice{font:12px/1.4 system-ui,sans-serif;color:var(--muted);margin:0}
+.marker{touch-action:manipulation}
+.photo-canvas{position:relative;width:100%;min-width:750px;aspect-ratio:4797/3219}
+.photo-canvas img{width:100%;height:100%;display:block;object-fit:contain;-webkit-user-drag:none;user-select:none;pointer-events:none}
+#hotspots{position:absolute;inset:0;z-index:5;pointer-events:none}
+#hotspots .marker{pointer-events:auto}
+.photo-canvas .photo-failed{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:#151e27;color:#e5e1db;text-align:center;font:14px system-ui,sans-serif}
+.photo-canvas.image-failed .photo-failed{display:flex}
+.photo-canvas.image-failed #hotspots{display:none}
+.marker{position:absolute;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;border:1px solid #e7d7ab;background:rgba(9,15,21,.68);color:#f2e7d1;font:600 13px system-ui,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 3px #070c1299;transition:background .16s,box-shadow .16s;z-index:2}
+.marker:hover,.marker:focus-visible,.marker[aria-pressed=true]{background:#bca576;color:#111820;box-shadow:0 0 0 4px #e6d3a649}
+.marker[aria-pressed=true]{z-index:3}
+.marker-label{position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);white-space:nowrap;border:1px solid #67707a;background:#0b121aee;border-radius:5px;padding:6px 9px;color:#eee;font:12px system-ui,sans-serif;display:none;pointer-events:none}
+.marker:hover .marker-label,.marker:focus-visible .marker-label,.marker[aria-pressed=true] .marker-label{display:block}
+.marker[data-object=SN04] .marker-label{bottom:auto;top:calc(100% + 9px)}
+.marker[data-object=SN02] .marker-label{bottom:auto;top:calc(100% + 9px)}
+.photobar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 13px;border-top:1px solid var(--line);background:#0c1219;font:12px/1.45 system-ui,sans-serif;color:var(--muted)}
+.photobar a{white-space:nowrap}
+.info{background:var(--pane);border:1px solid var(--line);border-radius:10px;min-height:340px;padding:18px;box-shadow:0 6px 30px #0003}
+.info h2{font:normal clamp(23px,2.4vw,29px)/1.17 Georgia,serif;margin:0 0 9px}
+.info p{line-height:1.56;margin:10px 0}
+.intro-card p{color:var(--muted)}
+.state{font:11px system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.close,.back{background:none;border:1px solid #4a5867;border-radius:7px;color:var(--muted);font:12px system-ui,sans-serif;padding:7px 10px}
+.definition{background:var(--surface);border-radius:7px;border:1px solid #34424d;padding:13px;line-height:1.5}
+.definition small{display:block;color:var(--muted);font:12px system-ui,sans-serif;margin-bottom:7px}
+.related{color:var(--muted);font:12px system-ui,sans-serif}
+.question-list{margin-top:17px}
+.question-list h3{font:normal 18px Georgia,serif;margin:0 0 12px}
+.question{display:flex;gap:10px;justify-content:space-between;text-align:left;width:100%;border:0;background:transparent;color:var(--text);padding:12px 1px;border-bottom:1px solid #303d49;line-height:1.45}
+.question span:last-child{color:var(--gold);flex-shrink:0}
+.question:hover{color:#f3dba9}
+.more{background:none;color:var(--gold);border:0;padding:12px 0;font:13px system-ui,sans-serif}
+.pill{display:inline-block;border:1px solid #53606a;border-radius:100px;padding:4px 8px;font:11px system-ui,sans-serif;color:var(--muted);margin-bottom:12px}
+.held{padding:13px;border-left:2px solid #b7a179;background:var(--surface);font:13px/1.55 system-ui,sans-serif;color:var(--muted)}
+.meta-link{margin-top:14px;font:12px system-ui,sans-serif}
+.guide-dock{margin:13px 0;border:1px solid #5a5141;border-radius:10px;background:#111b25;padding:12px 13px;color:var(--text);font-family:system-ui,sans-serif}
+.guide-dock .guide-head{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.guide-dock .guide-head strong{font:500 17px Georgia,serif;color:var(--gold)}
+.guide-dock .guide-sub{margin:7px 0;color:var(--muted);font:12px/1.5 system-ui,sans-serif}
+.guide-dock .guide-routes{display:flex;gap:7px;flex-wrap:wrap}
+.guide-dock button,.guide-in-detail button{min-height:44px;border:1px solid #53606b;border-radius:8px;padding:9px 11px;background:#182431;color:var(--text);text-align:left;font:12px/1.35 system-ui,sans-serif}
+.guide-dock button[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
+.guide-dock .guide-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.guide-dock .guide-prompt{margin:11px 0 2px;font:normal 16px/1.45 Georgia,serif}
+.guide-dock .guide-target{color:var(--gold);font:11px/1.4 system-ui,sans-serif;margin:0}
+.guide-dock .guide-quiet{border:0;background:transparent;text-decoration:underline;color:var(--muted)}
+.guide-dock .guide-foot{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:10px 0 0}
+.guide-in-detail{border-top:1px solid #465361;margin-top:16px;padding-top:12px;display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.guide-in-detail p{color:var(--muted);font:12px/1.45 system-ui,sans-serif;margin:0}
+.other{margin-top:16px;padding-top:11px;border-top:1px solid var(--line)}
+.other summary{cursor:pointer;font:13px system-ui,sans-serif;color:var(--muted);padding:7px 0}
+.other .choices{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.other button{font:12px system-ui,sans-serif;padding:8px 10px;border-radius:6px;background:#19232d;color:var(--muted);border:1px solid var(--line)}
+#inspection-choices{display:block}
+.inspect-family{border-bottom:1px solid #2d3945;padding:7px 0}
+.inspect-family:last-child{border-bottom:0}
+.inspect-family>summary{font:12px/1.5 system-ui,sans-serif;cursor:pointer;color:#e4d8c7;padding:6px 0}
+.inspect-family .choices{padding:4px 0 8px}
+.related-objects{margin:12px 0;padding:10px 0 4px;border-top:1px solid var(--line)}
+.related-objects strong{display:block;margin-bottom:8px;color:var(--muted);font:12px system-ui,sans-serif}
+.related-objects button{display:inline-flex;margin:0 6px 7px 0;padding:8px 10px;border:1px solid var(--line);background:transparent;border-radius:7px;color:var(--gold);font:12px system-ui,sans-serif;min-height:38px}
+.related-objects button:hover{border-color:var(--gold)}
+.study-source{margin-top:13px;padding:9px 0;border-top:1px solid var(--line);font:12px/1.55 system-ui,sans-serif;color:var(--muted)}
+.study-source summary{cursor:pointer;color:var(--gold);padding:8px 0}
+.study-source ul{list-style:none;margin:5px 0 8px;padding:0}
+.study-source li{margin:8px 0}
+.study-source li small{display:block;color:var(--muted)}
+.study-source .disclaimer{color:var(--muted);font-size:11px;line-height:1.5;margin:6px 0}
+.mass-context{margin:13px 0;border:1px solid #384657;border-radius:8px;padding:2px 12px;background:#101a24}
+.mass-context>summary{font:13px/1.5 system-ui,sans-serif;color:var(--gold);cursor:pointer;padding:11px 0}
+.mass-context button{display:block;text-align:left;width:100%;padding:11px;border:1px solid #4d5965;margin:8px 0;border-radius:7px;background:#141e28;color:var(--text);font:13px/1.45 system-ui,sans-serif;min-height:44px}
+.mass-context .context-caveat,.mass-context #mass-context-status{font:11px/1.5 system-ui,sans-serif;color:var(--muted)}
+.liturgical-explanations{margin:13px 0;border:1px solid #384657;border-radius:8px;padding:2px 12px;background:#101a24}
+.liturgical-explanations>summary{font:13px/1.5 system-ui,sans-serif;color:var(--gold);cursor:pointer;padding:11px 0}
+.liturgical-explanations .answer-entry{padding:9px 0;border-top:1px solid var(--line)}
+.liturgical-explanations .answer-entry>summary{font:14px/1.48 Georgia,serif;color:var(--text);cursor:pointer;padding:7px 0}
+.liturgical-explanations .answer-entry p{font:13px/1.55 system-ui,sans-serif;color:var(--muted);margin:8px 0}
+.liturgical-explanations .answer-entry p.answer-lead{color:var(--text)}
+.liturgical-explanations .answer-entry .answer-source{font:11px/1.6 system-ui,sans-serif}
+.liturgical-explanations .answer-entry a{color:var(--gold)}
+.liturgical-explanations .answer-warning{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:6px 0 12px}
+footer{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
+footer a{color:#d8bd89}
+.noscript{padding:14px;color:#f7d19b}
+@media(max-width:930px){
+ main{grid-template-columns:minmax(0,1fr);gap:14px}
+ .info{min-height:0}
+ .info.has-selection{position:fixed;z-index:30;bottom:0;left:0;right:0;width:100%;max-height:min(50dvh,460px);overflow:auto;overscroll-behavior:contain;background:#101821f7;border:1px solid #54616d;border-radius:16px 16px 0 0;padding:17px 17px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -14px 40px #000b}
+ .info.has-selection #object-card>.row{position:sticky;top:-17px;z-index:5;padding:10px 0;background:#101821}
+ .info.has-selection h2{font-size:23px}
+ .info.has-selection .definition{font-size:14px}
+ body.object-open{overflow:hidden}
+ body.object-open .photo-viewport{height:min(28dvh,235px);overflow:auto;touch-action:pan-x pan-y}
+ body.object-open .inspection-stage{max-height:min(38dvh,330px);overflow-y:auto}
+ body.object-open .inspection-stage img{height:min(27dvh,230px)}
+ .wrap{padding-top:8px}header{align-items:flex-start}
+}
+@media(max-width:600px){header h1{font-size:23px}.topactions{align-self:flex-start}.intro{margin:10px 0}.photo-canvas{min-width:750px}.photo-viewport{max-height:440px}.marker{width:44px;height:44px}.info{padding:16px}.photobar{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.marker{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div><div class="kicker">Ad Orientem · The Visible Mass</div><h1>Explore the sanctuary</h1></div>
+<div class="topactions"><label class="occasion-control" for="occasion-select">Occasion <select id="occasion-select" aria-label="Explore the church on a particular liturgical occasion">
+<option value="ordinary">Ordinary arrangement</option><option value="passion">Passiontide</option><option value="thursday">Holy Thursday</option><option value="friday">Good Friday</option><option value="vigil">Easter Vigil</option><option value="tenebrae">Tenebrae Office</option>
+</select></label><button id="show-markers" type="button" aria-pressed="true">Objects visible</button><a href="https://commons.wikimedia.org/wiki/Category:Brompton_Oratory,_Interior" target="_blank" rel="noopener">Photo sources ↗</a></div>
+</header>
+<p class="intro">The real high altar of Brompton Oratory, London. Select one of the discreet numbered markers, or choose an object below the image. On narrow screens, swipe sideways to explore the photograph.</p>
+<p class="occasion-hint" id="occasion-hint" aria-live="polite" hidden>Occasion study only: the original Brompton photograph has not been altered to represent this rite.</p>
+<main>
+<section aria-label="Church photograph and clickable objects">
+<div class="photo-shell">
+<div class="photo-viewport" id="photo-viewport" role="region" tabindex="0" aria-label="Pan horizontally to inspect high altar photograph">
+<div class="photo-canvas" id="photo-canvas">
+<img id="altar-photo" alt="Photograph of the high altar of Brompton Oratory, with altar crucifix, candlesticks, ornamental retable, altar steps and communion rail" width="4797" height="3219" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/The_High_Altar_-_geograph.org.uk_-_6213275.jpg/1280px-The_High_Altar_-_geograph.org.uk_-_6213275.jpg" loading="eager" decoding="async">
+<div class="photo-failed" role="status">The source photograph could not load. You can still select objects using the list below, or <a href="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg" target="_blank" rel="noopener">open the original photograph</a>.</div>
+<div id="hotspots"></div>
+</div>
+</div>
+<div class="inspection-stage" id="inspection-stage" hidden>
+<div class="inspection-nav"><button type="button" id="return-to-church">← Return to Brompton</button><span id="inspection-type">Separate reference photograph</span></div>
+<img id="inspection-photo" alt="" loading="lazy" decoding="async">
+<div class="inspection-failed" id="inspection-failed" hidden>Image unavailable. Use its source link below; the canonical glossary questions remain accessible.</div>
+<p class="inspection-notice" id="inspection-notice"></p>
+</div>
+<div class="photobar">
+<span id="photo-caption">High Altar · actual photograph, July 2019 · not a reconstruction or Mass in progress</span>
+<a id="photo-credit" href="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg" target="_blank" rel="noopener">Anthony O'Neil · CC BY-SA 2.0 ↗</a>
+</div>
+</div>
+<section class="guide-dock" id="guide-dock" aria-label="Optional guided discoveries" hidden>
+<div class="guide-head"><strong>Discover with the Guide</strong><button id="guide-toggle" type="button">Choose a trail</button></div>
+<p class="guide-sub" id="guide-status" role="status">Research-only guided discovery · three photographed objects in this first slice</p>
+<div id="guide-routes" class="guide-routes"></div>
+<p id="guide-prompt" class="guide-prompt" hidden></p>
+<p id="guide-target" class="guide-target" hidden></p>
+<div class="guide-actions" id="guide-actions"></div>
+<p class="guide-foot">Every suggestion is optional. Your earlier discoveries remain available, even after changing or leaving a trail. Historical answer drafts are not approved liturgical instruction.</p>
+</section>
+<details class="other"><summary>Choose a visible object by name</summary><div class="choices" id="object-choices"></div></details>
+<details class="other" id="inspection-details"><summary>Inspect further · sourced objects and illustrations</summary><div class="choices" id="inspection-choices">Loading sourced object references…</div></details>
+</section>
+<aside class="info" id="info" aria-label="Selected object and questions" aria-live="polite">
+<div class="intro-card" id="intro-card"><div class="state">Living glossary · Phase 1</div><h2>Look closer</h2><p>Choose an object in the photograph to identify it and explore the questions it raises.</p><p>This is the object-discovery pilot. Detailed answers will be added after source research and approval.</p></div>
+<div id="object-card" hidden>
+<div class="row"><div class="state" id="object-state"></div><button type="button" class="close" id="close-card" aria-label="Close object">Close ×</button></div>
+<h2 id="object-title"></h2>
+<div class="definition" id="definition"></div>
+<details class="mass-context" id="mass-context" hidden>
+<summary>Related Mass moments · research preview</summary>
+<p class="context-caveat">These are provisional contextual study links, not approved object-specific 1962 rubrics. The published Mass Explorer remains the only owner of its Guide, text and bilingual prayer readings.</p>
+<div id="mass-context-actions"></div><p id="mass-context-status" role="status"></p>
+</details>
+<p class="related" id="inspection-provenance" hidden></p><div class="related-objects" id="related-objects" hidden><strong>Explore related objects</strong><div id="related-items"></div></div>
+<details class="liturgical-explanations" id="liturgical-explanations" hidden>
+<summary id="liturgical-answer-summary">Liturgical explanations</summary>
+<p class="answer-warning">Original research summaries grounded in published rubrics. For study only; local permissions, chosen Mass and rite edition still matter.</p>
+<div id="liturgical-answer-items"></div></details>
+<div class="occasion-note" id="occasion-note" hidden>
+<strong id="occasion-note-title"></strong><p id="occasion-note-lead"></p><p id="occasion-note-detail"></p>
+<p class="scope">Historical explanation only. The original photograph does not depict the selected occasion; the 1962 source event graph, not this note, governs the ceremony.</p>
+<div id="occasion-note-sources"></div></div>
+<div class="question-list" id="question-list"><h3>Questions to explore</h3><div id="question-items"></div><button type="button" class="more" id="more-questions" hidden>More questions ↓</button></div>
+<div id="question-detail" hidden><button type="button" class="back" id="back-to-object">← Questions</button><h3 id="question-title"></h3><div class="pill" id="question-type"></div><div class="held" id="answer-pending">This question is indexed for Phase 1.5 source research. A verified answer has not yet been published; the glossary definition above remains available.</div>
+<div class="historical-answer" id="historical-answer" hidden>
+<h4>Historical and functional research · not a 1962 rubrical instruction</h4>
+<p class="answer-lead" id="historical-answer-lead"></p>
+<p class="answer-context" id="historical-answer-context"></p>
+<p class="answer-caveat" id="historical-answer-guard"></p>
+<div class="answer-links" id="historical-answer-sources"></div>
+</div>
+<details class="study-source" id="study-sources"><summary>Published references under review</summary><p class="disclaimer">These publications relate to this object's themes, not necessarily this precise question. They are research leads—not an approved explanation or permission to copy their contents.</p><ul id="study-source-links"></ul><p class="disclaimer">The printed 1962 Missal and 1960 Code of Rubrics govern any binding claims. Explanatory guides and computed Ordos are supporting references only.</p></details></div>
+<p class="meta-link" id="canonical-link"></p>
+<div id="guide-in-detail" class="guide-in-detail" hidden><p>Continue exploring the church whenever you wish.</p><button type="button" id="guide-return">Return to guide</button></div>
+</div>
+</aside>
+</main>
+<footer>Research-only photographic pilot; six visually identified parent objects, not a complete model of the church. Object positions are provisional editor coordinates awaiting phone and desktop tap review. Dictionary text is read from the existing Ad Orientem G### registry. The canonical glossary, Formation and Mass reader remain unchanged. The main Brompton high-altar photograph is credited to Anthony O'Neil under <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a>. Each separate inspection photograph has its own current source, creator and licence, shown beneath the image. Historical examples do not establish the particular fittings at Brompton or the rubrics of a 1962 Mass. Photo overlays add interactive markers only; no photographer or church endorsement is implied.</footer>
+</div>
+<noscript><div class="noscript">JavaScript is required to select objects. The photograph and its source remain accessible above.</div></noscript>
+<script>
+(function(){
+"use strict";
+// Positions are normalized for the *exact* Geograph 4797x3219 photo; never reuse on other viewpoints.
+const SPOTS=[
+{id:"AL01",g:"G404",title:"High altar",n:1,x:56.5,y:68.4,match:"D"},
+{id:"AL06",g:"G079",title:"Altar crucifix",n:2,x:50.0,y:48.6,match:"R"},
+{id:"AL07",g:"G079",title:"Altar candlesticks",n:3,x:59.5,y:57.0,match:"R"},
+{id:"AL19",g:"G418",title:"Retable and altarpiece",n:4,x:50.0,y:35.0,match:"D"},
+{id:"SN02",g:"G186",title:"Communion rail",n:5,x:78.0,y:82.0,match:"D"},
+{id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
+];
+const $=id=>document.getElementById(id);
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null};
+const GUIDED_OBJECTS=new Set(["AL01","AL06","SN02"]);
+const RELATED_OBJECTS={
+ AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
+ AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
+ BK01:["AL16","BK02"],AL16:["BK01","BK02"],AL03:["SN05"],SN05:["AL03"],AL17:["AL18","BK02"],AL18:["AL17","BK02"],BK02:["BK01","AL17","AL18"],AL08:["AL07"],AL10:["AL07"],AL13:["LN01"],EQ06:["SN07"],
+ SV01:["SV02","SV03","LN01","LN02","LN03","LN04","LN05"],
+ SV02:["SV01","SV13"],SV03:["SV01"],SV13:["SV02"],
+ LN01:["LN02","LN04","LN05"],LN02:["LN01","SV01"],LN03:["SV01","LN01"],
+ LN04:["LN05","LN01"],LN05:["LN04","LN01"],EQ01:["EQ02","SN07"],EQ02:["EQ01","SN07"]
+};
+const CHURCH={caption:"High Altar · actual photograph, July 2019 · not a reconstruction or Mass in progress",credit:"Anthony O'Neil · CC BY-SA 2.0 ↗",url:"https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg"};
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function findSpot(id){
+ const scene=SPOTS.find(x=>x.id===id);if(scene)return scene;
+ const asset=state.inspections.find(x=>x.object_id===id);
+ if(asset)return {id:asset.object_id,g:asset.glossary_id,title:asset.label,match:"D",inspection:asset};
+ const other=state.objects.find(x=>x.object_id===id);
+ if(other)return {id:other.object_id,g:other.glossary_id,title:other.label,match:other.glossary_match,referenceOnly:true};
+ return null;
+}
+function showChurch(){
+ state.view="church";
+ $("inspection-stage").hidden=true;$("photo-viewport").hidden=false;
+ $("photo-caption").textContent=CHURCH.caption;$("photo-credit").textContent=CHURCH.credit;$("photo-credit").href=CHURCH.url;
+}
+function showInspection(asset){
+ state.view="inspection";
+ $("photo-viewport").hidden=true;$("inspection-stage").hidden=false;
+ $("inspection-failed").hidden=true;$("inspection-photo").hidden=false;
+ $("inspection-type").textContent=asset.asset_kind==="HISTORICAL_ILLUSTRATION"?"Historical reference illustration":"Separate reference photograph";
+ $("inspection-photo").alt=(asset.asset_kind==="HISTORICAL_ILLUSTRATION"?"Historical illustration":"Independent reference photograph")+" of "+asset.label+", "+asset.source_location;
+ $("inspection-photo").src=asset.image_url;
+ $("inspection-notice").textContent=asset.note;
+ $("photo-caption").textContent="Reference · "+asset.source_location+" · not photographed at Brompton";
+ $("photo-credit").textContent=asset.creator+" · "+asset.licence+" ↗";$("photo-credit").href=asset.source_url;
+}
+function select(id,from){
+ const spot=findSpot(id);if(!spot)return;
+ if(spot.inspection)showInspection(spot.inspection);else if(!spot.referenceOnly)showChurch();
+ if(!state.selected)state.returnScroll=window.scrollY;
+ state.selected=id;state.question=null;state.showAll=false;
+ if(from)state.returnFocus=from;
+ $("intro-card").hidden=true;$("object-card").hidden=false;
+ $("object-state").textContent=(spot.inspection?"Separate reference · ":spot.referenceOnly?"Question-only object · ":"Object "+spot.n+" · ")+(spot.match==="D"?"Dictionary entry":spot.match==="M"?"Glossary gap":"Related dictionary entry");
+ $("inspection-provenance").hidden=!(spot.inspection||spot.referenceOnly);
+ $("inspection-provenance").textContent=spot.inspection?spot.inspection.note:spot.referenceOnly?"No independent object photograph or direct church hotspot has been verified. This subject is reached through a related visible parent object; the displayed image must not be taken as a photograph of this specific object.":"";
+ $("object-title").textContent=spot.title;
+ $("question-detail").hidden=true;$("question-list").hidden=false;
+ document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
+ buildDefinition(spot);void renderMassContext();renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
+ $("info").classList.add("has-selection");
+ document.body.classList.add("object-open");
+ if(window.innerWidth<930){
+   window.scrollTo(0,0);
+   if(!spot.inspection){
+     requestAnimationFrame(()=>{
+       const viewport=$("photo-viewport"),photo=$("photo-canvas");
+       viewport.scrollLeft=Math.max(0,photo.clientWidth*spot.x/100-viewport.clientWidth/2);
+       const sheetTop=$("info").getBoundingClientRect().top;
+       const photoTop=viewport.getBoundingClientRect().top;
+       const visibleHeight=Math.max(40,Math.min(viewport.clientHeight,sheetTop-photoTop-14));
+       viewport.scrollTop=Math.max(0,photo.clientHeight*spot.y/100-visibleHeight/2);
+     });
+   }
+ }
+}
+function buildDefinition(spot){
+ if(!spot.g){
+  $("definition").innerHTML='<small>Canonical object definition pending</small>There is no exact approved glossary entry for this object. Its questions remain research prompts, not published claims.';
+  $("canonical-link").textContent='No G### glossary identity is assigned. Editorial reconciliation required.';
+  return;
+ }
+ const e=state.entries.get(spot.g);
+ let label=e?.labels?.en||"Related glossary entry";
+ let definition=e?.short_definition?.en||"The canonical glossary entry is not available on this connection.";
+ if(spot.match==="R"){
+   $("definition").innerHTML='<small>Related concept: '+esc(label)+' · '+esc(spot.g)+'</small>'+esc(definition)+'<p class="related">This is a related concept, not yet a separately approved definition of '+esc(spot.title.toLowerCase())+'.</p>';
+ }else{
+   $("definition").innerHTML='<small>Dictionary · '+esc(label)+' · '+esc(spot.g)+'</small>'+esc(definition);
+ }
+ $("canonical-link").innerHTML='Source record: <a href="../../data/glossary/concepts-'+(Number(spot.g.slice(1))<=150?"001-150":Number(spot.g.slice(1))<=300?"151-300":"301-450")+'.v1.json" target="_blank" rel="noopener">'+esc(spot.g)+'</a> · <span>existing canonical glossary</span>';
+}
+// The existing P5 crosswalk supplies only IDs; the app's published Mass
+// Explorer owns the actual Guide, Latin, vernacular and prayer explanation.
+async function renderMassContext(){
+ const ownerId=state.selected,panel=$("mass-context"),items=$("mass-context-actions");
+ panel.hidden=true;panel.open=false;items.replaceChildren();$("mass-context-status").textContent="";
+ try{
+   const bridge=await import("./photographic-published-explorer-handoff.mjs");
+   if(state.selected!==ownerId)return;
+   const links=bridge.visibleMassResearchMomentLinks(ownerId,{reviewMode:true});
+   panel.hidden=links.length===0;
+   for(const link of links){
+     const b=document.createElement("button");b.type="button";
+     b.textContent=link.label+" · "+link.guideId;
+     b.setAttribute("aria-label","Open existing Mass Explorer: "+link.label);
+     b.onclick=async()=>{
+       $("mass-context-status").textContent="Opening the existing Mass Explorer…";
+       const verdict=await bridge.openVisibleMassInExistingExplorer(window,{
+         objectId:ownerId,guideId:link.guideId,trigger:b,reviewMode:true,form:"SUNG"
+       });
+       if(verdict.ok){$("mass-context-status").textContent="";return;}
+       $("mass-context-status").textContent=verdict.reason==="PRODUCTION_EXPLORER_NOT_IN_STANDALONE_PREVIEW"?
+         "This standalone research pilot does not contain the app's Mass Explorer. The link becomes active inside Ad Orientem, without copying its Guide or prayer texts.":
+         "The existing Mass Explorer could not open. Your sanctuary selection is unchanged.";
+     };
+     items.appendChild(b);
+   }
+ }catch(error){
+   if(state.selected===ownerId){
+     panel.hidden=true;$("mass-context-status").textContent="";
+     console.warn("Visible Mass existing Explorer adapter unavailable",error);
+   }
+ }
+}
+function renderRelatedObjects(){
+ const ids=(RELATED_OBJECTS[state.selected]||[]).filter(id=>state.inspections.some(x=>x.object_id===id)||state.objects.some(x=>x.object_id===id));
+ $("related-items").replaceChildren();
+ $("related-objects").hidden=ids.length===0;
+ for(const id of ids){
+  const a=state.inspections.find(x=>x.object_id===id)||state.objects.find(x=>x.object_id===id);
+  const isQuestionOnly=!state.inspections.some(x=>x.object_id===id)&&!SPOTS.some(x=>x.id===id);
+  const b=document.createElement("button");b.type="button";b.textContent=a.label+(isQuestionOnly?" · questions only":"");
+  b.dataset.related=id;b.onclick=()=>select(id,b);$("related-items").appendChild(b);
+ }
+}
+function renderLiturgicalExplanations(){
+ const panel=$("liturgical-explanations"),items=$("liturgical-answer-items");
+ items.replaceChildren();panel.open=false;
+ const all=state.explanationPack?.answers||[];
+ const matched=all.filter(x=>x.object_ids.includes(state.selected));
+ panel.hidden=!matched.length;
+ $("liturgical-answer-summary").textContent="Liturgical explanations ("+matched.length+")";
+ for(const explanation of matched){
+  const entry=document.createElement("details");entry.className="answer-entry";entry.dataset.explanation=explanation.id;
+  const summary=document.createElement("summary");summary.textContent=explanation.question.en;
+  const lead=document.createElement("p");lead.className="answer-lead";lead.textContent=explanation.answer.en;
+  const context=document.createElement("p");context.textContent=explanation.detail.en;
+  const rule=document.createElement("p");rule.className="answer-source";
+  rule.textContent="Ritual condition: "+explanation.gate.replaceAll("_"," ").toLowerCase()+".";
+  const refs=document.createElement("div");refs.className="answer-source";
+  for(const source of explanation.sources){
+   const link=document.createElement("a");link.href=source.url;link.rel="noopener noreferrer";link.target="_blank";link.textContent=source.locator+" ↗";
+   refs.append(link,document.createTextNode(" · "));
+  }
+  entry.append(summary,lead,context,rule,refs);items.appendChild(entry);
+ }
+}
+function renderOccasionNote(){
+ const panel=$("occasion-note");panel.hidden=true;$("occasion-note-sources").replaceChildren();
+ if(!state.selected||state.occasion==="ordinary")return;
+ const name={passion:"VMSYM-PASSION",thursday:"VMSYM-THURSDAY",friday:"VMSYM-GOODFRIDAY",vigil:"VMSYM-VIGIL",tenebrae:"VMSYM-TENEBRAE"}[state.occasion];
+ const note=state.historyPack?.occasion_notes?.find(x=>x.id===name&&x.object_ids.includes(state.selected));if(!note)return;
+ panel.hidden=false;$("occasion-note-title").textContent=note.title_en;
+ $("occasion-note-lead").textContent=note.short_en;
+ $("occasion-note-detail").textContent=note.detail_en;
+ for(const src of note.source_evidence){
+  const a=document.createElement("a");a.href=src.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=src.section+" ↗";
+  $("occasion-note-sources").append(a,document.createTextNode(" · "));
+ }
+}
+function findExactAnswer(questionId){return [ ...(state.historyPack?.answers||[]),...(state.functionPack?.answers||[])].find(x=>x.question_id===questionId&&x.object_id===state.selected);}
+function renderExactHistoricalAnswer(questionId){
+ const note=findExactAnswer(questionId);
+ $("answer-pending").hidden=!!note;$("historical-answer").hidden=!note;
+ $("historical-answer-sources").replaceChildren();
+ if(!note)return;
+ $("historical-answer-lead").textContent=note.answer_en;
+ $("historical-answer-context").textContent=note.explanation_en;
+ $("historical-answer-guard").textContent="Historic source (1907–1914), not a current rubric. Review condition: "+note.editorial_guard.replaceAll("_"," ").toLowerCase()+".";
+ for(const source of note.source_evidence){
+   const a=document.createElement("a");a.href=source.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=(source.title||source.section||source.article_section||"Historical source")+" ↗";
+   $("historical-answer-sources").append(a,document.createTextNode(" · "));
+ }
+}
+function renderPublishedReferences(questionId){
+ const list=$("study-source-links");list.replaceChildren();
+ $("study-sources").open=false;
+ const pack=state.sourcePack;
+ if(!pack){
+  const li=document.createElement("li");li.textContent="Source crosswalk unavailable; references must be checked separately.";list.appendChild(li);return;
+ }
+ const route=pack.question_routes.find(q=>q.question_id===questionId);
+ const applicable=route?.topic_candidates||[];
+ const topics=applicable.map(id=>pack.topics.find(t=>t.id===id)).filter(Boolean);
+ const unique=[...new Set(topics.flatMap(t=>t.source_ids))];
+ const order=["NORMATIVE_1962","PROJECT_CROSSWALK","CEREMONIAL_SECONDARY","SEASONAL_EXPLANATION","CHANT_PROPER_WITNESS","SECONDARY_EXPLANATION","CALENDAR_COMPARISON"];
+ unique.sort((a,b)=>order.indexOf(pack.source_roles.find(x=>x.id===a)?.role)-order.indexOf(pack.source_roles.find(x=>x.id===b)?.role));
+ if(!unique.length){const li=document.createElement("li");li.textContent="No exact subject-to-source route has been assigned yet. This does not indicate that no historical sources exist.";list.appendChild(li);return;}
+ for(const id of unique.slice(0,6)){
+  const src=pack.source_roles.find(s=>s.id===id);if(!src)continue;
+  const li=document.createElement("li");
+  const link=document.createElement("a");link.href=src.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=src.title+" ↗";
+  const note=document.createElement("small");note.textContent=src.role.replaceAll("_"," ").toLowerCase()+" · "+src.limitation;
+  li.append(link,note);list.appendChild(li);
+ }
+ const locator=topics.filter(t=>t.source_locator).slice(0,2).map(t=>t.source_locator);
+ if(locator.length){const li=document.createElement("li");li.textContent="Topic locator (not certified for this question): "+locator.join("; ");list.appendChild(li);}
+}
+function openQuestion(q){
+ if(!q||state.selected!==q.primary_object_id)return false;
+ state.question=q.id;
+ $("question-list").hidden=true;$("question-detail").hidden=false;
+ $("question-title").textContent=q.question.en;
+ $("question-type").textContent=q.category_label||q.category;
+ renderExactHistoricalAnswer(q.id);renderPublishedReferences(q.id);
+ // A hotspot or suggestion does not count as read: the original question
+ // and its source-owned research detail must actually have been opened.
+ if(findExactAnswer(q.id))state.guide?.markRead(q.id);
+ $("guide-in-detail").hidden=!state.guide?.status().active;
+ $("back-to-object").focus({preventScroll:true});
+ return true;
+}
+function guideNavigate(objectId,questionId){
+ if(!GUIDED_OBJECTS.has(objectId))return false;
+ const q=state.questions.find(x=>x.id===questionId&&x.primary_object_id===objectId);
+ if(!q)return false;
+ select(objectId,$("guide-toggle"));
+ return openQuestion(q);
+}
+async function guideInit(pilot){
+ try{
+   const response=await fetch("GUIDED_TRAIL_GRAPH_RESEARCH_20261018.v1.json");
+   if(!response.ok)throw Error("Guided route data unavailable");
+   const [graph,mod]=await Promise.all([response.json(),import("./visible-mass-dialogue-folio.mjs")]);
+   const ids=[...(state.historyPack?.answers||[]),...(state.functionPack?.answers||[])]
+     .filter(a=>a.status==="RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED")
+     .map(a=>a.question_id);
+   if(ids.length!==97)throw Error("Research answer owners unavailable");
+   state.guide=mod.mountVisibleMassDialogueFolio(window,{
+     graph,pilot,answerIds:ids,navigate:guideNavigate
+   });
+ }catch(error){
+   console.warn("Optional guide unavailable; free exploration remains accessible",error);
+   $("guide-dock").hidden=true;
+ }
+}
+function buildQuestionButton(q){
+ const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
+ if(findExactAnswer(q.id))b.classList.add("has-research");
+ const l=document.createElement("span");l.textContent=q.question.en;const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
+ b.onclick=()=>openQuestion(q);
+ return b;
+}
+function renderQuestions(){
+ const all=state.questions.filter(q=>q.primary_object_id===state.selected);
+ const shown=state.showAll?all:all.slice(0,4);
+ $("question-items").replaceChildren(...shown.map(buildQuestionButton));
+ $("more-questions").hidden=all.length<=4;
+ $("more-questions").textContent=state.showAll?"Show fewer ↑":"More questions ("+(all.length-4)+") ↓";
+ if(!all.length){
+  $("question-items").textContent=state.loaded?"Questions pending editorial reconciliation.":"Loading existing question records…";
+ }
+}
+function closeCard(){
+ state.selected=null;state.question=null;showChurch();$("info").classList.remove("has-selection");document.body.classList.remove("object-open");state.returnFocus=state.returnFocus||$("object-choices");
+ const restoreY=state.returnScroll;state.returnScroll=0;
+ $("intro-card").hidden=false;$("object-card").hidden=true;
+ document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed","false"));
+ let previous=state.returnFocus;
+ if(previous&&previous.isConnected&&typeof previous.focus==="function")previous.focus({preventScroll:true});
+ else $("photo-viewport").focus({preventScroll:true});
+ if(window.innerWidth<930)window.scrollTo(0,restoreY);
+}
+for(const spot of SPOTS){
+ const b=document.createElement("button");b.type="button";b.className="marker";b.dataset.object=spot.id;b.style.left=spot.x+"%";b.style.top=spot.y+"%";b.title=spot.title;b.setAttribute("aria-label",spot.title);b.setAttribute("aria-pressed","false");b.textContent=spot.n;
+ const label=document.createElement("span");label.className="marker-label";label.textContent=spot.title;label.setAttribute("aria-hidden","true");b.appendChild(label);
+ b.onclick=()=>select(spot.id,b);$("hotspots").appendChild(b);
+ const c=document.createElement("button");c.type="button";c.textContent=spot.title;c.onclick=()=>select(spot.id,c);$("object-choices").appendChild(c);
+}
+$("guide-return").onclick=()=>{
+ closeCard();
+ if(state.guide?.status().visible)$("guide-toggle").focus({preventScroll:true});
+};
+$("close-card").onclick=closeCard;
+$("return-to-church").onclick=closeCard;
+$("inspection-photo").onerror=()=>{$("inspection-photo").hidden=true;$("inspection-failed").hidden=false;};
+$("back-to-object").onclick=()=>{state.question=null;$("question-detail").hidden=true;$("question-list").hidden=false;$("question-items").querySelector("button")?.focus({preventScroll:true});};
+$("more-questions").onclick=()=>{state.showAll=!state.showAll;renderQuestions();$("more-questions").focus({preventScroll:true});};
+$("occasion-select").onchange=()=>{
+ state.occasion=$("occasion-select").value;
+ $("occasion-hint").hidden=state.occasion==="ordinary";
+ if(state.selected)renderOccasionNote();
+};
+$("show-markers").onclick=()=>{
+ state.markers=!state.markers;$("show-markers").setAttribute("aria-pressed",String(state.markers));$("show-markers").textContent=state.markers?"Objects visible":"Show objects";
+ $("hotspots").hidden=!state.markers;
+};
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape"){if(state.question){$("back-to-object").click();}else if(state.selected){closeCard();}}
+});
+$("altar-photo").onerror=()=>{$("photo-canvas").classList.add("image-failed");};
+$("photo-viewport").scrollLeft=($("photo-viewport").scrollWidth-$("photo-viewport").clientWidth)/2;
+window.addEventListener("resize",()=>{if(!state.selected&&window.innerWidth<600){$("photo-viewport").scrollLeft=($("photo-viewport").scrollWidth-$("photo-viewport").clientWidth)/2;}});
+async function loadCanon(){
+ const files=["001-150","151-300","301-450"];
+ const outcome=await Promise.allSettled([
+  ...files.map(s=>fetch("../../data/glossary/concepts-"+s+".v1.json").then(r=>{if(!r.ok)throw Error("Glossary HTTP "+r.status);return r.json();})),
+  fetch("PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Questions HTTP "+r.status);return r.json();}),
+  fetch("sanctuary-inspection-sources-20261017.v1.json").then(r=>{if(!r.ok)throw Error("Inspection HTTP "+r.status);return r.json();}),
+  fetch("LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Source crosswalk HTTP "+r.status);return r.json();}),
+  fetch("LITURGICAL_EXPLANATIONS_P1_5_FIRST20_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Explanations HTTP "+r.status);return r.json();}),
+  fetch("HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json").then(r=>{if(!r.ok)throw Error("History HTTP "+r.status);return r.json();}),
+  fetch("HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Functional Q&A HTTP "+r.status);return r.json();})
+ ]);
+ outcome.slice(0,3).forEach(x=>{if(x.status==="fulfilled"){(x.value.entries||[]).forEach(e=>state.entries.set(e.id,e));}});
+ if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];state.objects=outcome[3].value.objects||[];}
+ if(outcome[5].status==="fulfilled"){state.sourcePack=outcome[5].value;}
+ if(outcome[6].status==="fulfilled"){state.explanationPack=outcome[6].value;}
+ if(outcome[7].status==="fulfilled"){state.historyPack=outcome[7].value;}
+ if(outcome[8].status==="fulfilled"){state.functionPack=outcome[8].value;}
+ if(outcome[4].status==="fulfilled"){
+   state.inspections=outcome[4].value.assets||[];
+   const root=$("inspection-choices");root.replaceChildren();
+   const families=["Altar & sanctuary","Books","Vessels","Sacred linens","Serving equipment"];
+   for(const family of families){
+     const assets=state.inspections.filter(a=>a.zone===family);
+     if(!assets.length)continue;
+     const panel=document.createElement("details");panel.className="inspect-family";
+     const title=document.createElement("summary");title.textContent=family+" ("+assets.length+")";
+     const group=document.createElement("div");group.className="choices";
+     for(const a of assets){
+       const c=document.createElement("button");c.type="button";c.textContent=a.label;c.dataset.inspection=a.object_id;
+       c.onclick=()=>select(a.object_id,c);group.appendChild(c);
+     }
+     panel.append(title,group);root.appendChild(panel);
+   }
+ }else $("inspection-choices").textContent="Inspection sources unavailable; serve the pilot over HTTPS with its source files.";
+ state.loaded=true;
+ if(outcome[3].status==="fulfilled")void guideInit(outcome[3].value);
+ if(state.selected){buildDefinition(findSpot(state.selected));renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();if(state.question){renderExactHistoricalAnswer(state.question);renderPublishedReferences(state.question);}}
+}
+loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
+window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
+ status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ guideStatus:()=>state.guide?.status()??null,
+ chooseTrail:id=>state.guide?.chooseTrail(id)??false,
+ guideExplore:id=>state.guide?.explore(id)??false,
+ select:id=>select(id,null)
+});
+})();
+</script>
+</body>
+</html>

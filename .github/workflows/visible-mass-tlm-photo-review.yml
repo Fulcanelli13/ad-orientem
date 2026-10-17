@@ -1,0 +1,46 @@
+name: Visible Mass TLM photo rating shortlist
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - "tools/build-visible-mass-tlm-photo-review.py"
+      - ".github/workflows/visible-mass-tlm-photo-review.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-tlm-offline-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install pillow requests
+      - name: Check packaging script
+        run: python -m py_compile tools/build-visible-mass-tlm-photo-review.py
+      - name: Download and validate TLM photographs
+        run: python -u tools/build-visible-mass-tlm-photo-review.py
+      - name: Validate embedded image count and ranking feature
+        run: |
+          test -s dist/visible-mass/Visible_Mass_TLM_Photo_Rating.html
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("dist/visible-mass/Visible_Mass_TLM_Photo_Rating.html")
+          s=p.read_text()
+          assert s.count("data:image/jpeg;base64,")>=20
+          assert "Your overall priority rank" in s
+          assert "Export JSON" in s
+          assert "Rated only" in s
+          print("Verified embedded image count:",s.count("data:image/jpeg;base64,"))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Visible-Mass-TLM-Photo-Ratings
+          path: |
+            dist/visible-mass/Visible_Mass_TLM_Photo_Rating.html
+            dist/visible-mass/tlm-acquisition-report.json
+          retention-days: 60
+          if-no-files-found: error

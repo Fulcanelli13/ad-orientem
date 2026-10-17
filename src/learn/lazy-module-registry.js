@@ -4,6 +4,7 @@
  * Each canonical runtime/registry remains authoritative when first opened.
  */
 import { LEARN_LAYOUT } from "./presentation.js";
+import {visibleMassReviewEnabled,VISIBLE_MASS_REVIEW_ROUTE} from "./visible-mass-review-gate.js";
 const traditionalIds=[
  "learn.rites.sick","learn.rites.baptism","learn.rites.first_communion",
  "learn.rites.confirmation","learn.rites.holy_orders","learn.rites.matrimony",
@@ -29,7 +30,8 @@ const loaders=Object.freeze({
  latin:()=>import("./latin-course-v2.js"),
  glossary:()=>import("../glossary/browser-entry.js"),
  mass:()=>import("./mass-formation.js"),
- massExplorer:()=>import("./mass-explorer.js")
+ massExplorer:()=>import("./mass-explorer.js"),
+ visibleMass:()=>import("./visible-mass-review.js")
 });
 const groupFor=id=>{
  if(TRADITIONAL_LEARN_ROUTES[id])return "traditional";
@@ -39,11 +41,13 @@ const groupFor=id=>{
  if(id===GLOSSARY_ROUTE_ID)return "glossary";
  if(id===MASS_FORMATION_ROUTE)return "mass";
  if(id===MASS_EXPLORER_ROUTE_ID)return "massExplorer";
+ if(id===VISIBLE_MASS_REVIEW_ROUTE)return "visibleMass";
  return null; // existing Daily Catechism, Catechism, Today are untouched
 };
 export async function ensureLearnModule(id,win=globalThis){
  const key=aliases[id]||id,group=groupFor(key);
  if(!group)return true;
+ if(group==="visibleMass"&&!visibleMassReviewEnabled(win))throw new Error("Visible Mass research review is disabled");
  if(!imported.has(group)){
    const loading=win?.AO_LOADING_DIRECTOR_V1?.begin?.("learn");
    const promise=loaders[group]().catch(err=>{imported.delete(group);throw err}).finally(()=>loading?.end?.());
@@ -58,20 +62,24 @@ export async function ensureLearnModule(id,win=globalThis){
  else if(group==="glossary")mod.installGlossaryModule(win);
  else if(group==="mass")mod.installMassFormationModule(win);
  else if(group==="massExplorer")mod.installMassExplorerModule(win);
+ else if(group==="visibleMass")mod.installVisibleMassReviewModule(win);
  return true;
 }
 export function installLazyLearnRegistry(win=globalThis){
  const base=win?.AO_MODULES;
  if(!base||base.__aoLearnLazyV1)return false;
+ const reviewDescriptors=visibleMassReviewEnabled(win)?{[VISIBLE_MASS_REVIEW_ROUTE]:Object.freeze({id:VISIBLE_MASS_REVIEW_ROUTE,domain:"learn",type:"module",category:"research-preview",title:"The Visible Mass · research review"})}:{};
+ const allDescriptors={...descriptors,...reviewDescriptors};
  const proxy={...base,__aoLearnLazyV1:true,
-  definitions:{...base.definitions,...descriptors},
+  definitions:{...base.definitions,...allDescriptors},
   aliases:{...base.aliases,...aliases},
-  get(id){return descriptors[aliases[id]||id]||base.get?.(id)||null},
-  resolve(id){const canonical=aliases[id]||id,def=descriptors[canonical];
+  get(id){return allDescriptors[aliases[id]||id]||base.get?.(id)||null},
+  resolve(id){const canonical=aliases[id]||id,def=allDescriptors[canonical];
    return def?{ok:true,input:id,id:canonical,defaults:{},chain:canonical===id?[]:[id],definition:def}:base.resolve?.(id);
   },
   async open(id,opts={}){
    const key=aliases[id]||id;
+   if(key===VISIBLE_MASS_REVIEW_ROUTE&&!visibleMassReviewEnabled(win))return {ok:false,error:"RESEARCH_PREVIEW_DISABLED"};
    if(!groupFor(key))return base.open?.(id,opts);
    try{
     await ensureLearnModule(key,win);
@@ -88,7 +96,7 @@ export function installLazyLearnRegistry(win=globalThis){
    const previous=base.list?.(filter)||[];
    if(filter.domain&&filter.domain!=="learn")return previous;
    const seen=new Set(previous.map(x=>x.id));
-   return [...previous,...Object.values(descriptors).filter(x=>!seen.has(x.id)&&(!filter.type||filter.type===x.type))];
+   return [...previous,...Object.values(allDescriptors).filter(x=>!seen.has(x.id)&&(!filter.type||filter.type===x.type))];
   }
  };
  win.AO_MODULES=proxy;

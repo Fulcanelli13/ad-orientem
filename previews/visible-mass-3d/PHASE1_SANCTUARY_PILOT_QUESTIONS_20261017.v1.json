@@ -1,0 +1,3129 @@
+{
+  "schema": "AO_VISIBLE_MASS_P1_SANCTUARY_QUESTION_RECONCILIATION_V1",
+  "version": "1.0.0",
+  "date": "2026-10-17",
+  "status": "RESEARCH_ONLY_NO_PUBLICATION",
+  "primary_owner": "data/glossary/concepts-*.v1.json",
+  "policy": {
+    "scope": "Object-first Phase 1 navigation/questions. No duplicated doctrinal answers; separate phase 1.5 verifies research; Phase 2 owns Mass actions/actors/timing.",
+    "question_language": "English inventory only; French translation not approved.",
+    "question_record": "Canonical question identity across several object entrypoints; no duplicate answer.",
+    "scene_status": "Source photo visual census is not hotspot QA or publication approval.",
+    "rubric_status": "None approved by this candidate register.",
+    "mass_references": "Cross-link to existing G###, MF01–MF08 and canonical Mass cue IDs by owner-validated IDs only; 48-card LIVE unchanged."
+  },
+  "scene_assets": [
+    {
+      "id": "BROMPTON_PANO",
+      "name": "Brompton Oratory equirectangular nave",
+      "url": "https://commons.wikimedia.org/wiki/File:Brompton_Oratory_360x180,_London,_UK_-_Diliff.jpg",
+      "creator": "David Iliff",
+      "licence": "CC BY-SA 3.0",
+      "role": "actual fixed-vantage panorama",
+      "size": "13704x6852",
+      "context": "Not a GLB/free-walk"
+    },
+    {
+      "id": "BROMPTON_ALTAR_2019_A",
+      "name": "Brompton Oratory high altar 1",
+      "url": "https://commons.wikimedia.org/wiki/File:The_Oratory_of_S_Philip_Neri,_High_Altar_1.jpg",
+      "creator": "AndyScott",
+      "licence": "CC BY-SA 4.0",
+      "role": "same-venue dedicated high-altar closer view",
+      "size": "5000x3335",
+      "context": "Photo dated August 2019"
+    },
+    {
+      "id": "BROMPTON_ALTAR_2019_B",
+      "name": "Brompton Oratory high altar (Geograph)",
+      "url": "https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg",
+      "creator": "Anthony O'Neil",
+      "licence": "CC BY-SA 2.0",
+      "role": "same-venue dedicated high-altar and communion-rail view",
+      "size": "4797x3219",
+      "context": "Photo dated July 2019"
+    },
+    {
+      "id": "BROMPTON_STPHILIP_SIDE",
+      "name": "St Philip Neri side altar",
+      "url": "https://commons.wikimedia.org/wiki/File:St_Philip_Neri_Altar,_Brompton_Oratory.jpg",
+      "creator": "TheLonelyPather",
+      "licence": "CC BY-SA 4.0",
+      "role": "separate optional side chapel; never main altar",
+      "size": "2909x4027",
+      "context": "Photo dated May 2024; optional comparison only"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "AL01",
+      "label": "High altar",
+      "glossary_id": "G404",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_PANO",
+          "BROMPTON_ALTAR_2019_A",
+          "BROMPTON_ALTAR_2019_B"
+        ],
+        "photographic_state": "VISIBLE_OBJECT_CONFIRMED_IN_REFERENCE_STILLS",
+        "clickable_state": "POTENTIAL_PARENT_REGION_REQUIRES_HOTSPOT_QA",
+        "note": "Central high altar structure visibly depicted; tap target should cover whole altar without including surrounding retable."
+      },
+      "question_ids": [
+        "VMQ-0001",
+        "VMQ-0002",
+        "VMQ-0003",
+        "VMQ-0004",
+        "VMQ-0005",
+        "VMQ-0006"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL03",
+      "label": "Tabernacle",
+      "glossary_id": "G080",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A",
+          "BROMPTON_ALTAR_2019_B"
+        ],
+        "photographic_state": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Central reservation structure cannot be definitively identified from inspected preview; do not label a tiny pixel as tabernacle without close-up."
+      },
+      "question_ids": [
+        "VMQ-0007",
+        "VMQ-0008",
+        "VMQ-0009",
+        "VMQ-0010",
+        "VMQ-0011",
+        "VMQ-0012"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL06",
+      "label": "Altar crucifix",
+      "glossary_id": "G079",
+      "glossary_match": "R",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A",
+          "BROMPTON_ALTAR_2019_B"
+        ],
+        "photographic_state": "VISIBLE_OBJECT_CONFIRMED_IN_REFERENCE_STILLS",
+        "clickable_state": "POTENTIAL_PARENT_REGION_REQUIRES_HOTSPOT_QA",
+        "note": "A small central altar crucifix is discernible in the 2019 closer views; use group/zoom hotspot, not a tiny mobile tap target."
+      },
+      "question_ids": [
+        "VMQ-0013",
+        "VMQ-0014",
+        "VMQ-0015",
+        "VMQ-0016"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL07",
+      "label": "Six altar candlesticks",
+      "glossary_id": "G079",
+      "glossary_match": "R",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A",
+          "BROMPTON_ALTAR_2019_B"
+        ],
+        "photographic_state": "VISIBLE_OBJECT_CONFIRMED_IN_REFERENCE_STILLS",
+        "clickable_state": "POTENTIAL_PARENT_REGION_REQUIRES_HOTSPOT_QA",
+        "note": "Candlestick group visible, but exact count and what is lit are not certified from these shots; question on six belongs to the general tradition."
+      },
+      "question_ids": [
+        "VMQ-0017",
+        "VMQ-0018",
+        "VMQ-0019",
+        "VMQ-0020",
+        "VMQ-0021",
+        "VMQ-0022"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL08",
+      "label": "Individual altar candle",
+      "glossary_id": "G079",
+      "glossary_match": "R",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0023",
+        "VMQ-0024",
+        "VMQ-0025",
+        "VMQ-0026"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL10",
+      "label": "Altar gradine / candle shelf",
+      "glossary_id": "G079",
+      "glossary_match": "R",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A",
+          "BROMPTON_ALTAR_2019_B"
+        ],
+        "photographic_state": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Candidate raised candle shelf behind altar appears, but object boundaries are unclear."
+      },
+      "question_ids": [
+        "VMQ-0027",
+        "VMQ-0028",
+        "VMQ-0029",
+        "VMQ-0030"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL13",
+      "label": "Altar linen coverings",
+      "glossary_id": "G079",
+      "glossary_match": "R",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0031",
+        "VMQ-0032",
+        "VMQ-0033",
+        "VMQ-0034"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL14",
+      "label": "Consecrated altar stone",
+      "glossary_id": "G219",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0035",
+        "VMQ-0036",
+        "VMQ-0037",
+        "VMQ-0038"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL16",
+      "label": "Three altar cards",
+      "glossary_id": "G213",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A"
+        ],
+        "photographic_state": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "The three separate altar-card texts cannot be identified or read in inspected still."
+      },
+      "question_ids": [
+        "VMQ-0039",
+        "VMQ-0040",
+        "VMQ-0041",
+        "VMQ-0042",
+        "VMQ-0043"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL17",
+      "label": "Epistle side of altar",
+      "glossary_id": "G077",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0044",
+        "VMQ-0045",
+        "VMQ-0046",
+        "VMQ-0047"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL18",
+      "label": "Gospel side of altar",
+      "glossary_id": "G078",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0048",
+        "VMQ-0049",
+        "VMQ-0050",
+        "VMQ-0051"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "AL19",
+      "label": "Retable / reredos",
+      "glossary_id": "G418",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A",
+          "BROMPTON_ALTAR_2019_B"
+        ],
+        "photographic_state": "VISIBLE_OBJECT_CONFIRMED_IN_REFERENCE_STILLS",
+        "clickable_state": "POTENTIAL_PARENT_REGION_REQUIRES_HOTSPOT_QA",
+        "note": "Large painted and architecturally framed altar backdrop visible, though the high-altar detail should be manually delimited from the altar mensa."
+      },
+      "question_ids": [
+        "VMQ-0052",
+        "VMQ-0053",
+        "VMQ-0054",
+        "VMQ-0055"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "SN02",
+      "label": "Communion rail",
+      "glossary_id": "G186",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_B",
+          "BROMPTON_PANO"
+        ],
+        "photographic_state": "VISIBLE_OBJECT_CONFIRMED_IN_REFERENCE_STILLS",
+        "clickable_state": "POTENTIAL_PARENT_REGION_REQUIRES_HOTSPOT_QA",
+        "note": "Marble rail runs across the foreground of the 2019 high-altar 2019 B photograph."
+      },
+      "question_ids": [
+        "VMQ-0056",
+        "VMQ-0057",
+        "VMQ-0058",
+        "VMQ-0059",
+        "VMQ-0060",
+        "VMQ-0061"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "SN04",
+      "label": "Sanctuary steps",
+      "glossary_id": "G181",
+      "glossary_match": "R",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A",
+          "BROMPTON_ALTAR_2019_B"
+        ],
+        "photographic_state": "VISIBLE_OBJECT_CONFIRMED_IN_REFERENCE_STILLS",
+        "clickable_state": "POTENTIAL_PARENT_REGION_REQUIRES_HOTSPOT_QA",
+        "note": "Multiple steps leading to the high altar are visibly depicted in the 2019 close views."
+      },
+      "question_ids": [
+        "VMQ-0062",
+        "VMQ-0063",
+        "VMQ-0064",
+        "VMQ-0065"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "SN05",
+      "label": "Sanctuary lamp",
+      "glossary_id": "G218",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A"
+        ],
+        "photographic_state": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "No reliably distinguishable sanctuary lamp in inspected images; do not mark a red object by guess."
+      },
+      "question_ids": [
+        "VMQ-0066",
+        "VMQ-0067",
+        "VMQ-0068",
+        "VMQ-0069",
+        "VMQ-0070"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "SN07",
+      "label": "Credence table",
+      "glossary_id": "G184",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A"
+        ],
+        "photographic_state": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Small furniture to either side must not be classified as a credence without reliable contextual view."
+      },
+      "question_ids": [
+        "VMQ-0071",
+        "VMQ-0072",
+        "VMQ-0073",
+        "VMQ-0074",
+        "VMQ-0075"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "BK01",
+      "label": "Roman Missal on altar",
+      "glossary_id": "G214",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A"
+        ],
+        "photographic_state": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "The altar Missal is not separately identifiable from inspected static high-altar views."
+      },
+      "question_ids": [
+        "VMQ-0076",
+        "VMQ-0077",
+        "VMQ-0078",
+        "VMQ-0079",
+        "VMQ-0080"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "BK02",
+      "label": "Missal stand or cushion",
+      "glossary_id": "G215",
+      "glossary_match": "D",
+      "navigation_tier": "PRIMARY_HOTSPOT_CANDIDATE",
+      "original_visibility_plan": "V",
+      "scene_audit": {
+        "scene_assets": [
+          "BROMPTON_ALTAR_2019_A"
+        ],
+        "photographic_state": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "No trustworthy isolated stand/cushion detail in inspected views."
+      },
+      "question_ids": [
+        "VMQ-0081",
+        "VMQ-0082",
+        "VMQ-0083",
+        "VMQ-0084"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "SV01",
+      "label": "Chalice",
+      "glossary_id": "G190",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0085",
+        "VMQ-0086",
+        "VMQ-0087",
+        "VMQ-0088",
+        "VMQ-0089",
+        "VMQ-0090"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "SV02",
+      "label": "Paten",
+      "glossary_id": "G191",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0091",
+        "VMQ-0092",
+        "VMQ-0093",
+        "VMQ-0094"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "SV03",
+      "label": "Ciborium",
+      "glossary_id": "G192",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0095",
+        "VMQ-0096",
+        "VMQ-0097",
+        "VMQ-0098"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "SV13",
+      "label": "Communion paten / plate",
+      "glossary_id": "G191",
+      "glossary_match": "R",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "S",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0099",
+        "VMQ-0100",
+        "VMQ-0101",
+        "VMQ-0102"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "LN01",
+      "label": "Corporal",
+      "glossary_id": "G187",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0103",
+        "VMQ-0104",
+        "VMQ-0105",
+        "VMQ-0106"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "LN02",
+      "label": "Purificator",
+      "glossary_id": "G188",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0107",
+        "VMQ-0108",
+        "VMQ-0109",
+        "VMQ-0110"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "LN03",
+      "label": "Pall for chalice",
+      "glossary_id": "G189",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0111",
+        "VMQ-0112",
+        "VMQ-0113",
+        "VMQ-0114"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "LN04",
+      "label": "Burse",
+      "glossary_id": "G212",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0115",
+        "VMQ-0116",
+        "VMQ-0117",
+        "VMQ-0118"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "LN05",
+      "label": "Chalice veil",
+      "glossary_id": "G211",
+      "glossary_match": "D",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0119",
+        "VMQ-0120",
+        "VMQ-0121",
+        "VMQ-0122"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "EQ01",
+      "label": "Wine cruet",
+      "glossary_id": "G193",
+      "glossary_match": "R",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0123",
+        "VMQ-0124",
+        "VMQ-0125",
+        "VMQ-0126"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "EQ02",
+      "label": "Water cruet",
+      "glossary_id": "G193",
+      "glossary_match": "R",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "Z",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0127",
+        "VMQ-0128",
+        "VMQ-0129",
+        "VMQ-0130"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    },
+    {
+      "object_id": "EQ06",
+      "label": "Altar bell",
+      "glossary_id": null,
+      "glossary_match": "M",
+      "navigation_tier": "SECONDARY_INSPECTION",
+      "original_visibility_plan": "S",
+      "scene_audit": {
+        "scene_assets": [],
+        "photographic_state": "NO_DIRECT_SCENE_EVIDENCE",
+        "clickable_state": "NO_DIRECT_HOTSPOT_AUTHORISED",
+        "note": "Requires independently licensed subject-specific inspection photography; 2019 altar stills cannot expose individual linens/vessels."
+      },
+      "question_ids": [
+        "VMQ-0131",
+        "VMQ-0132",
+        "VMQ-0133",
+        "VMQ-0134"
+      ],
+      "source_backed_definition_is_not_answer_approval": true,
+      "state": "RECONCILED_QUESTIONS_UNREVIEWED"
+    }
+  ],
+  "questions": [
+    {
+      "id": "VMQ-0001",
+      "question": {
+        "en": "Why is the altar the most important furnishing in the sanctuary?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "newcomer",
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G404",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0002",
+      "question": {
+        "en": "In what sense is an altar both a table and a place of sacrifice?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G404",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0003",
+      "question": {
+        "en": "How does a Catholic altar relate to altars in the Old Testament and in early Christianity?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G404",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0004",
+      "question": {
+        "en": "What makes an altar fixed, movable, blessed, or consecrated under the relevant historical rules?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G404",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0005",
+      "question": {
+        "en": "Why does the priest approach and reverence the altar?"
+      },
+      "category": "WY",
+      "category_label": "Purpose",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "AL01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G404",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0006",
+      "question": {
+        "en": "What is the difference between a high altar, side altar, and freestanding altar?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "newcomer",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G404",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0007",
+      "question": {
+        "en": "What is kept inside the tabernacle?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G080",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0008",
+      "question": {
+        "en": "Why do Catholics genuflect before the tabernacle when the Blessed Sacrament is reserved?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "AL03",
+      "additional_object_ids": [
+        "SN05"
+      ],
+      "existing_glossary_id": "G080",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0009",
+      "question": {
+        "en": "Why is the tabernacle sometimes placed on the high altar?"
+      },
+      "category": "WY",
+      "category_label": "Purpose",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G080",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0010",
+      "question": {
+        "en": "What do the symbols on a tabernacle door mean?"
+      },
+      "category": "SY",
+      "category_label": "Symbolism",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "AL03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G080",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0011",
+      "question": {
+        "en": "What distinguishes a tabernacle used for reservation from an altar used for sacrifice?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G080",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0012",
+      "question": {
+        "en": "Why do some traditional churches reserve the Blessed Sacrament on a side altar?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G080",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0013",
+      "question": {
+        "en": "Why does the altar ordinarily have a crucifix?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "AL06",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0014",
+      "question": {
+        "en": "What is the relationship between the altar crucifix and the sacrifice of Calvary?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "AL06",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0015",
+      "question": {
+        "en": "What do traditional rubrical sources prescribe about the altar cross and its position?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL06",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0016",
+      "question": {
+        "en": "How did the use of an altar crucifix develop?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL06",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0017",
+      "question": {
+        "en": "Why are six candlesticks traditionally arranged on the high altar?"
+      },
+      "category": "WY",
+      "category_label": "Purpose",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "AL07",
+      "additional_object_ids": [
+        "AL01"
+      ],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0018",
+      "question": {
+        "en": "How many altar candles are lighted at Low Mass, Sung Mass, Solemn Mass, and Pontifical Mass?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "newcomer",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL07",
+      "additional_object_ids": [
+        "AL08"
+      ],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0019",
+      "question": {
+        "en": "What does candlelight signify in Catholic worship?"
+      },
+      "category": "SY",
+      "category_label": "Symbolism",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL07",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0020",
+      "question": {
+        "en": "When did the arrangement of six altar candlesticks become customary?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL07",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0021",
+      "question": {
+        "en": "Does a six-candlestick arrangement mean all six must always be lit?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL07",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0022",
+      "question": {
+        "en": "What exceptions or local privileges affect the number of lights?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL07",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0023",
+      "question": {
+        "en": "Why use real candles rather than ordinary electric lights for liturgical functions?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL08",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0024",
+      "question": {
+        "en": "Why is beeswax traditionally preferred for altar candles?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL08",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0025",
+      "question": {
+        "en": "What does a burning candle express about prayer and sacrifice?"
+      },
+      "category": "SY",
+      "category_label": "Symbolism",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "AL08",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0026",
+      "question": {
+        "en": "Which traditional material and placement rules apply to altar candles?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL08",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0027",
+      "question": {
+        "en": "What is the raised shelf beneath the altar candlesticks called?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL10",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0028",
+      "question": {
+        "en": "Why are candlesticks set on a gradine rather than the altar table itself?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL10",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0029",
+      "question": {
+        "en": "How did gradines and altar retables develop together?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL10",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0030",
+      "question": {
+        "en": "Is a gradine required for an altar to be suitable for Mass?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL10",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0031",
+      "question": {
+        "en": "Why are cloths laid over the altar?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL13",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0032",
+      "question": {
+        "en": "How many altar cloths were traditionally prescribed?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL13",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0033",
+      "question": {
+        "en": "How have altar linens been associated with the burial cloths of Christ?"
+      },
+      "category": "SY",
+      "category_label": "Symbolism",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL13",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0034",
+      "question": {
+        "en": "How does the altar cloth differ from the corporal?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL13",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G079",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0035",
+      "question": {
+        "en": "What is an altar stone?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL14",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G219",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0036",
+      "question": {
+        "en": "Why were relics historically enclosed in consecrated altar stones?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL14",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G219",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0037",
+      "question": {
+        "en": "When was a portable altar stone permitted or required?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL14",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G219",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0038",
+      "question": {
+        "en": "How do historical altar-stone requirements differ from current law?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL14",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G219",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0039",
+      "question": {
+        "en": "What are the three framed texts on a traditional altar?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL16",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G213",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0040",
+      "question": {
+        "en": "What does each of the three altar cards contain?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL16",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G213",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0041",
+      "question": {
+        "en": "When and why did altar cards become common?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL16",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G213",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0042",
+      "question": {
+        "en": "Which prayers and moments are served by the centre and side cards?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL16",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G213",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0043",
+      "question": {
+        "en": "Do the altar cards replace the Roman Missal?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "AL16",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G213",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0044",
+      "question": {
+        "en": "Which side is the Epistle side when looking towards the altar?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL17",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G077",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0045",
+      "question": {
+        "en": "Why is this side called the Epistle side?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL17",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G077",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0046",
+      "question": {
+        "en": "Does the term depend on geographical east or the orientation of the church?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL17",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G077",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0047",
+      "question": {
+        "en": "Which furnishings are usually placed on the Epistle side?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL17",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G077",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0048",
+      "question": {
+        "en": "Which side is the Gospel side when facing the altar?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL18",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G078",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0049",
+      "question": {
+        "en": "Why is the Gospel associated with this side of the altar?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL18",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G078",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0050",
+      "question": {
+        "en": "What liturgical significance does the Gospel-side location have in the traditional Mass?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL18",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G078",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0051",
+      "question": {
+        "en": "How is the Gospel-side location connected with the altar Missal?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "AL18",
+      "additional_object_ids": [
+        "BK01"
+      ],
+      "existing_glossary_id": "G078",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0052",
+      "question": {
+        "en": "What is the large decorated structure rising behind an altar?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "AL19",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G418",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0053",
+      "question": {
+        "en": "How does a retable differ from the consecrated altar itself?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "AL19",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G418",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0054",
+      "question": {
+        "en": "Why are sacred paintings and statues placed behind altars?"
+      },
+      "category": "SY",
+      "category_label": "Symbolism",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "AL19",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G418",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0055",
+      "question": {
+        "en": "How did Roman Catholic altarpieces develop over time?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "AL19",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G418",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0056",
+      "question": {
+        "en": "What is the railing at the boundary of the sanctuary called?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G186",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0057",
+      "question": {
+        "en": "Why is Holy Communion traditionally distributed at the rail?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G186",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0058",
+      "question": {
+        "en": "Does the rail itself make the space sacred?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "SN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G186",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0059",
+      "question": {
+        "en": "How did communion rails develop in Western churches?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G186",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0060",
+      "question": {
+        "en": "Must every church where the Traditional Mass is offered have a communion rail?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "newcomer",
+        "enthusiast"
+      ],
+      "primary_object_id": "SN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G186",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0061",
+      "question": {
+        "en": "Where should a first-time attendee go for Holy Communion if able and properly disposed?"
+      },
+      "category": "PR",
+      "category_label": "Practical",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G186",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0062",
+      "question": {
+        "en": "Why are there steps leading up to the sanctuary and to the altar?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SN04",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G181",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0063",
+      "question": {
+        "en": "Are the steps a practical feature, a symbolic feature, or both?"
+      },
+      "category": "SY",
+      "category_label": "Symbolism",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "SN04",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G181",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0064",
+      "question": {
+        "en": "Is a fixed number of altar steps prescribed in the traditional rite?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SN04",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G181",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0065",
+      "question": {
+        "en": "What is the distinction between sanctuary steps and the altar predella?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SN04",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G181",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0066",
+      "question": {
+        "en": "What is the lamp burning near the tabernacle?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SN05",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G218",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0067",
+      "question": {
+        "en": "What does the sanctuary lamp signify about the Real Presence?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "SN05",
+      "additional_object_ids": [
+        "AL03"
+      ],
+      "existing_glossary_id": "G218",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0068",
+      "question": {
+        "en": "When must a sanctuary lamp be kept alight?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SN05",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G218",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0069",
+      "question": {
+        "en": "Does its glass have to be red, and what about oil or electric light?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "SN05",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G218",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0070",
+      "question": {
+        "en": "What should someone infer if the sanctuary lamp is not burning?"
+      },
+      "category": "PR",
+      "category_label": "Practical",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SN05",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G218",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0071",
+      "question": {
+        "en": "What is the small table at the side of the sanctuary?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SN07",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G184",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0072",
+      "question": {
+        "en": "What is normally laid out on the credence table?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SN07",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G184",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0073",
+      "question": {
+        "en": "How does the credence table differ between Low and Solemn Mass?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SN07",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G184",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0074",
+      "question": {
+        "en": "Why is a credence table not treated as a second altar?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "SN07",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G184",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0075",
+      "question": {
+        "en": "How does the credence relate to the cruets and lavabo equipment?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer",
+        "enthusiast"
+      ],
+      "primary_object_id": "SN07",
+      "additional_object_ids": [
+        "EQ01",
+        "EQ02"
+      ],
+      "existing_glossary_id": "G184",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0076",
+      "question": {
+        "en": "What is the large book placed on the altar?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "BK01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G214",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0077",
+      "question": {
+        "en": "How is the day's Mass found in the Roman Missal?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "BK01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G214",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0078",
+      "question": {
+        "en": "What distinguishes a 1962 Missal from modern editions?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "BK01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G214",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0079",
+      "question": {
+        "en": "What do the red directions and black prayers mean?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "BK01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G214",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0080",
+      "question": {
+        "en": "How does the priest's altar Missal differ from a hand Missal?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "BK01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G214",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0081",
+      "question": {
+        "en": "What supports the Missal on the altar?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "BK02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G215",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0082",
+      "question": {
+        "en": "Why does the Missal rest on a stand or cushion?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "BK02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G215",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0083",
+      "question": {
+        "en": "Are all forms of traditional Missal stand equally suitable?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "BK02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G215",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0084",
+      "question": {
+        "en": "How does the stand relate to the Epistle and Gospel sides?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "BK02",
+      "additional_object_ids": [
+        "AL17",
+        "AL18"
+      ],
+      "existing_glossary_id": "G215",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0085",
+      "question": {
+        "en": "What is the sacred cup called?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G190",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0086",
+      "question": {
+        "en": "What is the chalice used for at Mass?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G190",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0087",
+      "question": {
+        "en": "Why must chalices be treated with special reverence?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "SV01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G190",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0088",
+      "question": {
+        "en": "What are the traditional rules for the chalice's material and gilding?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SV01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G190",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0089",
+      "question": {
+        "en": "How is a chalice different from a ciborium?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV01",
+      "additional_object_ids": [
+        "SV03"
+      ],
+      "existing_glossary_id": "G190",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0090",
+      "question": {
+        "en": "How have Catholic chalice forms changed historically?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SV01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G190",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0091",
+      "question": {
+        "en": "What is the small plate paired with the chalice called?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G191",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0092",
+      "question": {
+        "en": "Why does the paten accompany the chalice?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G191",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0093",
+      "question": {
+        "en": "How have patens changed in size and design?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SV02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G191",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0094",
+      "question": {
+        "en": "How is the priest's paten different from a Communion paten?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV02",
+      "additional_object_ids": [
+        "SV13"
+      ],
+      "existing_glossary_id": "G191",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0095",
+      "question": {
+        "en": "What is the covered vessel containing many Hosts?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G192",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0096",
+      "question": {
+        "en": "Why does the ciborium normally have a lid?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G192",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0097",
+      "question": {
+        "en": "What makes a ciborium different from an ordinary container?"
+      },
+      "category": "TH",
+      "category_label": "Theology",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "SV03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G192",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0098",
+      "question": {
+        "en": "What is the difference between a ciborium, a chalice, and a pyx?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV03",
+      "additional_object_ids": [
+        "SV01"
+      ],
+      "existing_glossary_id": "G192",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0099",
+      "question": {
+        "en": "What is the small plate held beneath a communicant's chin?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV13",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G191",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0100",
+      "question": {
+        "en": "What is the Communion paten intended to protect against?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "SV13",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G191",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0101",
+      "question": {
+        "en": "How did use of the Communion paten develop?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "SV13",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G191",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0102",
+      "question": {
+        "en": "How does it differ from the paten on the altar?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "SV13",
+      "additional_object_ids": [
+        "SV02"
+      ],
+      "existing_glossary_id": "G191",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0103",
+      "question": {
+        "en": "What is the square linen unfolded on the altar?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G187",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0104",
+      "question": {
+        "en": "Why is the corporal placed beneath the Eucharistic species and vessels?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G187",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0105",
+      "question": {
+        "en": "Why is the corporal folded and handled in particular ways?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "LN01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G187",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0106",
+      "question": {
+        "en": "How is the corporal different from the altar cloth or purificator?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN01",
+      "additional_object_ids": [
+        "LN01",
+        "LN02"
+      ],
+      "existing_glossary_id": "G187",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0107",
+      "question": {
+        "en": "What is the linen used to wipe the chalice?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G188",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0108",
+      "question": {
+        "en": "What is the purificator for?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G188",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0109",
+      "question": {
+        "en": "What are the traditional purification and laundering precautions for a purificator?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "LN02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G188",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0110",
+      "question": {
+        "en": "How can the purificator be distinguished from the corporal?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN02",
+      "additional_object_ids": [
+        "LN01"
+      ],
+      "existing_glossary_id": "G188",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0111",
+      "question": {
+        "en": "What is the stiff square cover placed over the chalice?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G189",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0112",
+      "question": {
+        "en": "Why is a pall placed over the chalice?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G189",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0113",
+      "question": {
+        "en": "How did the modern small chalice pall develop?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "LN03",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G189",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0114",
+      "question": {
+        "en": "How is it different from the chalice veil or funeral pall?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN03",
+      "additional_object_ids": [
+        "LN05"
+      ],
+      "existing_glossary_id": "G189",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0115",
+      "question": {
+        "en": "What is the stiff square case placed over the chalice veil?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN04",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G212",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0116",
+      "question": {
+        "en": "What does the burse contain?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN04",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G212",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0117",
+      "question": {
+        "en": "Why does the burse usually match the priest's vestments?"
+      },
+      "category": "SY",
+      "category_label": "Symbolism",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "LN04",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G212",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0118",
+      "question": {
+        "en": "How does the burse relate to the corporal?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN04",
+      "additional_object_ids": [
+        "LN01"
+      ],
+      "existing_glossary_id": "G212",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0119",
+      "question": {
+        "en": "Why is the chalice hidden beneath a coloured veil before Mass?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN05",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G211",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0120",
+      "question": {
+        "en": "What is a chalice veil for?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN05",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G211",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0121",
+      "question": {
+        "en": "When is the chalice veil used or removed in the 1962 rite?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "LN05",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G211",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0122",
+      "question": {
+        "en": "How is it different from the humeral veil?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "LN05",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G211",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0123",
+      "question": {
+        "en": "Which cruet contains the wine?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "EQ01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G193",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0124",
+      "question": {
+        "en": "Why is wine supplied in a cruet rather than the chalice before Mass?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "EQ01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G193",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0125",
+      "question": {
+        "en": "What care is required to distinguish wine and water cruets?"
+      },
+      "category": "RU",
+      "category_label": "Rubrics",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "EQ01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G193",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0126",
+      "question": {
+        "en": "What makes valid Mass wine different from other beverages?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "catechumen"
+      ],
+      "primary_object_id": "EQ01",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G193",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0127",
+      "question": {
+        "en": "Which cruet contains the water?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "EQ02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G193",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0128",
+      "question": {
+        "en": "Why is a small quantity of water added to the wine?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer",
+        "catechumen"
+      ],
+      "primary_object_id": "EQ02",
+      "additional_object_ids": [
+        "EQ01"
+      ],
+      "existing_glossary_id": "G193",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0129",
+      "question": {
+        "en": "What symbolic meanings are traditionally associated with mixing water and wine?"
+      },
+      "category": "SY",
+      "category_label": "Symbolism",
+      "audience": [
+        "catechumen",
+        "enthusiast"
+      ],
+      "primary_object_id": "EQ02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G193",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0130",
+      "question": {
+        "en": "Why is water also needed for the lavabo and purification?"
+      },
+      "category": "CX",
+      "category_label": "Connections",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "EQ02",
+      "additional_object_ids": [],
+      "existing_glossary_id": "G193",
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0131",
+      "question": {
+        "en": "What is the little bell near the altar called?"
+      },
+      "category": "ID",
+      "category_label": "Identification",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "EQ06",
+      "additional_object_ids": [],
+      "existing_glossary_id": null,
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0132",
+      "question": {
+        "en": "Why is a bell rung at certain moments of the Mass?"
+      },
+      "category": "FN",
+      "category_label": "Function",
+      "audience": [
+        "newcomer"
+      ],
+      "primary_object_id": "EQ06",
+      "additional_object_ids": [],
+      "existing_glossary_id": null,
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0133",
+      "question": {
+        "en": "When did the altar-bell custom develop?"
+      },
+      "category": "HI",
+      "category_label": "History",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "EQ06",
+      "additional_object_ids": [],
+      "existing_glossary_id": null,
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    },
+    {
+      "id": "VMQ-0134",
+      "question": {
+        "en": "Why do bells differ between Low and Sung celebrations?"
+      },
+      "category": "VA",
+      "category_label": "Variation",
+      "audience": [
+        "enthusiast"
+      ],
+      "primary_object_id": "EQ06",
+      "additional_object_ids": [],
+      "existing_glossary_id": null,
+      "existing_answer_policy": "REUSE_GLOSSARY_OR_FORMATION_IF_ALREADY_ANSWERED",
+      "phase": "P1_5_ANSWER_RESEARCH",
+      "status": "QUESTION_INVENTORIED_UNCERTIFIED"
+    }
+  ],
+  "source_links": {
+    "glossary_files": [
+      "data/glossary/concepts-001-150.v1.json",
+      "data/glossary/concepts-151-300.v1.json",
+      "data/glossary/concepts-301-450.v1.json"
+    ],
+    "formation": "data/learn/mass-formation-campion.v1.json",
+    "mass_research": "https://github.com/Fulcanelli13/ad-orientem/pull/1270",
+    "scene_research": "https://github.com/Fulcanelli13/ad-orientem/pull/1309"
+  },
+  "known_limitations": [
+    "This transcribes and normalises the first high-altar/sanctuary pilot subset; it does not exhaust every 170-object question from prior conversation.",
+    "A photograph can show a candlestick group without proving the total number required for a particular form of Mass.",
+    "Primary hotspot status is provisional until phone/desktop scene-renderer validation; none of these 30 entries is machine or device position-certified.",
+    "Authentic altar architecture and a 1962 liturgical action are different kinds of evidence.",
+    "No source texts, quotes or historical claims are introduced or approved here."
+  ]
+}

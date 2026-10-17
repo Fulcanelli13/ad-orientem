@@ -1,0 +1,44 @@
+name: Visible Mass photographic offline review
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - tools/build-visible-mass-commons-offline.py
+      - .github/workflows/visible-mass-commons-offline.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verified-commons-photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow requests
+      - name: Check Python builder syntax
+        run: python -m py_compile tools/build-visible-mass-commons-offline.py
+      - name: Retrieve and embed real Commons photographs
+        run: python -u tools/build-visible-mass-commons-offline.py
+      - name: Verify offline output
+        run: |
+          test -s dist/visible-mass/Visible_Mass_Offline_Photo_Review.html
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('dist/visible-mass/Visible_Mass_Offline_Photo_Review.html').read_text()
+          assert s.count('data:image/jpeg;base64,')>=12, "Not enough embedded photographs"
+          assert 'ratings.json' in s
+          assert '<script src=' not in s, "Unexpected remote JS dependency"
+          print("Embedded photo count",s.count('data:image/jpeg;base64,'))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Visible-Mass-Offline-Reference-Photos
+          path: |
+            dist/visible-mass/Visible_Mass_Offline_Photo_Review.html
+            dist/visible-mass/acquisition-report.json
+          retention-days: 60
+          if-no-files-found: error

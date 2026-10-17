@@ -1,0 +1,83 @@
+name: Visible Mass 3D experimental HTML
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - "previews/visible-mass-3d/**"
+      - "tools/build-visible-mass-standalone.mjs"
+      - "tests/visible-mass-3d-contract.mjs"
+      - "tests/visible-mass-sanctuary-hotspot-contract.mjs"
+      - "tests/visible-mass-liturgical-source-crosswalk.mjs"
+      - "tests/visible-mass-liturgical-explanations-first20.mjs"
+      - "tests/visible-mass-historical-symbolic-answers.mjs"
+      - "tests/visible-mass-historical-functional-next.mjs"
+      - "tests/visible-mass-sanctuary-photo-browser.mjs"
+      - "data/glossary/concepts-*.v1.json"
+      - ".github/workflows/visible-mass-3d-experimental.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build-portable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax and source contract
+        run: |
+          node --check previews/visible-mass-3d/viewer.js
+          node --check tools/build-visible-mass-standalone.mjs
+          node tests/visible-mass-3d-contract.mjs
+          node tests/visible-mass-sanctuary-hotspot-contract.mjs
+          node tests/visible-mass-liturgical-source-crosswalk.mjs
+          node tests/visible-mass-liturgical-explanations-first20.mjs
+          node tests/visible-mass-historical-symbolic-answers.mjs
+          node tests/visible-mass-historical-functional-next.mjs
+      - name: Vendor browser 3D engine for offline package
+        run: |
+          mkdir -p /tmp/visible-mass-deps
+          npm install --prefix /tmp/visible-mass-deps --no-save --no-package-lock --ignore-scripts babylonjs@7 babylonjs-loaders@7
+          test -s /tmp/visible-mass-deps/node_modules/babylonjs/babylon.js
+          test -s /tmp/visible-mass-deps/node_modules/babylonjs-loaders/babylonjs.loaders.min.js
+      - name: Generate standalone offline HTML
+        env:
+          AO_BABYLON_VENDOR_DIR: /tmp/visible-mass-deps/node_modules
+        run: node tools/build-visible-mass-standalone.mjs
+      - name: Basic artifact checks
+        run: |
+          test -s dist/visible-mass/The_Visible_Mass_P0_Offline.html
+          grep -q 'ao-glossary-entries' dist/visible-mass/The_Visible_Mass_P0_Offline.html
+          grep -q 'Test controls (instant)' dist/visible-mass/The_Visible_Mass_P0_Offline.html
+          grep -q 'G190' dist/visible-mass/The_Visible_Mass_P0_Offline.html
+      - name: Downloadable research prototype
+        uses: actions/upload-artifact@v4
+        with:
+          name: Visible-Mass-3D-P0-HTML
+          path: dist/visible-mass/The_Visible_Mass_P0_Offline.html
+          if-no-files-found: error
+
+  phone-and-desktop-photo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Browser-check photo scene, glossary and inspection return
+        run: node tests/visible-mass-sanctuary-photo-browser.mjs
+      - name: Save phone and desktop review images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visible-mass-sanctuary-phone-desktop
+          path: dist/visible-mass/sanctuary-qa/*.png
+          if-no-files-found: warn
