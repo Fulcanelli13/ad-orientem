@@ -11,6 +11,12 @@ on:
       - previews/visible-mass-3d/photographic-published-explorer-handoff.mjs
       - previews/visible-mass-3d/photographic-object-mass-bridge.mjs
       - tests/visible-mass-published-explorer-handoff.mjs
+      - src/learn/visible-mass-review-gate.js
+      - src/learn/visible-mass-review.js
+      - src/learn/lazy-module-registry.js
+      - src/learn/browser-entry.js
+      - src/learn/presentation.js
+      - tests/visible-mass-learn-integration.mjs
       - previews/visible-mass-3d/HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json
       - previews/visible-mass-3d/HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json
       - previews/visible-mass-3d/LITURGICAL_EXPLANATIONS_P1_5_FIRST20_20261017.v1.json
@@ -31,3 +37,8 @@ jobs:
       - run: node tests/visible-mass-stage-a-reconciliation.mjs
       - run: node --check previews/visible-mass-3d/photographic-published-explorer-handoff.mjs
       - run: node tests/visible-mass-published-explorer-handoff.mjs
+      - run: node --check src/learn/visible-mass-review.js
+      - run: node --check src/learn/presentation.js
+      - run: node --check src/learn/lazy-module-registry.js
+      - run: node --check src/learn/browser-entry.js
+      - run: node tests/visible-mass-learn-integration.mjs
