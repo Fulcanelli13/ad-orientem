@@ -171,9 +171,9 @@ try{
  assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
    "The first card must not show a blank cinematic or a rating-4 painting");
  // The prayer begins directly when no final-approved reproduction exists.
- // Incarnation still receives its source-owned full posture cinematic.
- assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),4);
- assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),4);
+ // Incarnation has one source-owned, nonblocking inline gesture.
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),5);
+ assert.equal(await page.locator("#aoPray435930 .aoDevoStop").count(),5);
  // Actual mobile presentation evidence: same current card at three widths.
  for(const [width,height] of [[320,700],[390,844],[430,932]]){
    await page.setViewportSize({width,height});
@@ -220,27 +220,25 @@ try{
  assert.equal(await page.locator("#aoPray435930 .aoDevoStop[aria-current='step']").getAttribute("data-ao-devo-jump"),"0",
   "Timeline did not return to the original prayer card");
  await page.locator("#aoPray435930 [data-ao-devo-jump='2']").evaluate(x=>x.click());
- const shot=page.locator("body > .aoDevoPostureCinematic[data-ao-devotional-scene='incarnation-posture']");
+ const shot=page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoFolioInlineGesture[data-ao-devotional-scene='incarnation-inline']");
  await shot.waitFor({state:"attached",timeout:3000});
  const shotStatus=await shot.evaluate(el=>({
   action:el.dataset.aoPostureAction,
-  caption:el.querySelector(".aoDevoPostureLatin")?.textContent,
-  one:el.parentElement.querySelectorAll(".aoDevoPostureCinematic").length,
-  imageRepeats:el.parentElement.querySelectorAll(".aoDevoCinematicOpening").length,
-  iconSize:el.querySelector(".aoDevoPostureIcon")?.getBoundingClientRect().width,
-  continueHeight:el.querySelector("button")?.getBoundingClientRect().height,
+  caption:el.querySelector(".aoFolioGestureLatin")?.textContent,
+  one:el.closest(".aoDevoCard").querySelectorAll(".aoFolioInlineGesture").length,
+  imageRepeats:document.querySelectorAll("body > .aoDevoCinematicOpening").length,
+  iconSize:el.querySelector(".aoFolioGestureIcon")?.getBoundingClientRect().width,
+  blockingOverlay:document.querySelectorAll("body > .aoDevoPostureCinematic").length,
  }));
  assert.ok(["HEAD_BOW","GENUFLECT"].includes(shotStatus.action));
  assert.deepEqual(
-  {caption:shotStatus.caption,one:shotStatus.one,imageRepeats:shotStatus.imageRepeats},
-  {caption:"Et Verbum caro factum est",one:1,imageRepeats:0},
-  "Incarnation must use a distinct full posture scene, not repeat artwork");
- assert.ok(shotStatus.iconSize>=100 && shotStatus.continueHeight>=44,
-  "Posture cinematic icon/action is too inconspicuous on a phone");
- await page.screenshot({path:resolve(captures,"11-angelus-incarnation-cinematic-390.png"),
+  {caption:shotStatus.caption,one:shotStatus.one,imageRepeats:shotStatus.imageRepeats,
+   blockingOverlay:shotStatus.blockingOverlay},
+  {caption:"Et Verbum caro factum est",one:1,imageRepeats:0,blockingOverlay:0},
+  "Incarnation should present one inline cue without replacing the prayer");
+ assert.ok(shotStatus.iconSize>=29,"Canonical inline gesture icon is too small");
+ await page.screenshot({path:resolve(captures,"11-angelus-incarnation-inline-390.png"),
    fullPage:false,animations:"disabled"});
- await shot.locator(".aoDevoPostureContinue").click();
- await shot.waitFor({state:"detached",timeout:2500});
  await page.emulateMedia({reducedMotion:"reduce"});
  await page.locator("#aoPray435930 [data-ao-devo-jump='3']").evaluate(x=>x.click());
  assert.equal(await page.locator("body > .aoDevoCinematicOpening").count(),0,
@@ -256,19 +254,22 @@ try{
  await page.waitForFunction(()=>!!document.querySelector("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph[data-ao-devo-active='true']"),null,{timeout:9000});
  await page.locator("#aoPray435930 [data-ao-devo-move='-1']").evaluate(x=>x.click());
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"fiat");
- await page.locator("#aoPray435930 [data-ao-devo-jump='0']").evaluate(x=>x.click());
+ await page.locator("#aoPray435930 [data-ao-devo-jump='4']").evaluate(x=>x.click());
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"collect");
  const historicalConclusion=page.locator("#aoPray435930 [data-p435930-angelus-appendix]");
+ assert.equal(await historicalConclusion.count(),1);
  await historicalConclusion.evaluate(x=>x.click());
- await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===7,null,{timeout:10000});
- assert.deepEqual(await page.locator("#aoPray435930 .aoDevoCard").evaluateAll(nodes=>nodes.slice(4).map(x=>x.dataset.aoDevoCard)),
-  ["doxology","faithful-departed","divine-assistance"]);
- await page.locator("#aoPray435930 [data-ao-devo-jump='5']").evaluate(x=>x.click());
- assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoParagraph").evaluateAll(nodes=>nodes.filter(x=>x.getClientRects().length).length),2,
-  "Faithful departed card lost its Latin/French leader/response pair");
- await page.screenshot({path:resolve(captures,"10-angelus-optional-souls-390.png"),
+ await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoFolioClosingPrayer").length===3,null,{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),5,
+  "Historical closing prayers must remain inside the Collect card");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),"collect");
+ assert.ok(await page.locator("#aoPray435930 .aoFolioClosingPrayer [data-ao-angelus-voice=response]").count()>0,
+  "Historical conclusion lost its canonical response");
+ await page.screenshot({path:resolve(captures,"10-angelus-collect-conclusion-390.png"),
   fullPage:false,animations:"disabled"});
  await historicalConclusion.evaluate(x=>x.click());
- await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoDevoCard").length===4,null,{timeout:10000});
+ await page.waitForFunction(()=>document.querySelectorAll("#aoPray435930.open .aoFolioClosingPrayer").length===0,null,{timeout:10000});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection").count(),5);
  assert.equal(await page.locator("#aoPray435930 .aoAngelusGuideSection a[href^='https://']").count(),5);
  await page.locator("#aoPray435930 .aoAngelusGuide>summary").evaluate(x=>x.click());
