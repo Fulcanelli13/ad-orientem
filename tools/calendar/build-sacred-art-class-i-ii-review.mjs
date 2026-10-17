@@ -8,6 +8,8 @@ const read=path=>JSON.parse(readFileSync(path,'utf8'));
 const out='artifacts/sacred-art-coverage';
 const year=read('artifacts/calendar-oracle/1962-2026-full-year-audit.json');
 const linked=read(out+'/full-year-multiple-associations.v1.json');
+const artworkById=new Map(read('data/calendar/sacred-art-candidates.v1.json').artworks.map(x=>[x.id,x]));
+const openRights=new Set(['CC0','PUBLIC_DOMAIN_PD_ART_PDM']);
 const exactCrosswalk=read('data/calendar/sacred-art-1962-exact-feast-source-links.v1.json');
 const exactResearchDates=new Set(exactCrosswalk.links.map(x=>x.observedDate2026));
 assert.equal(exactResearchDates.size,21,'2026 exact-source research inventory changed');
@@ -30,18 +32,35 @@ const tiers=['STRICT_DAY_SOURCE_LINK','VERIFIED_CONTEXTUAL_LEDGER','OBSERVED_ID_
 const rows=year.rows.filter(r=>r.rawRank==='I class'||r.rawRank==='II class').map(r=>{
  const existing=byDate.get(r.date);
  assert.ok(existing&&existing.observedPrincipalId===r.mainId,'DayResolver identity mismatch '+r.date);
- const options=existing.alternatives.filter(x=>x.rights==='CC0').slice(0,12).map(x=>{
+ const sunday=new Date(r.date+'T12:00:00Z').getUTCDay()===0;
+ const gospel=r.scriptureContexts.find(x=>x.slot==='GOSPEL')||null;
+ const scenes=sunday?existing.sundayGospelScenes||[]:[];
+ const feastOnSunday=sunday&&r.mainId.startsWith('sancti:');
+ const sourceOptions=existing.alternatives.filter(x=>openRights.has(x.rights)).map(x=>{
+   const w=artworkById.get(x.artworkId);
+   const tags=[...(w?.tags?.iconography||[]),...(w?.association?.subjectKeys||[])];
+   return {...x,gospelDepictsReading:scenes.some(k=>tags.includes(k))};
+ }).sort((x,y)=>sunday&&!feastOnSunday&&x.gospelDepictsReading!==y.gospelDepictsReading?(x.gospelDepictsReading?-1:1):0);
+ const options=sourceOptions.slice(0,12).map(x=>{
   const found=previewByMuseum.get(norm(x.sourceUrl))||'';
   const preview=found.startsWith('https://commons.wikimedia.org/wiki/Special:FilePath/')?
    found.replace(/([?&]width=)\d+(?=&|$)/,'$1'+'500'):found;
   return {artworkId:x.artworkId,title:x.title,artist:x.artist,sourceUrl:x.sourceUrl,
-    rights:x.rights,tier:x.tier,evidence:x.evidence,preview,
+    rights:x.rights,tier:x.tier,evidence:x.evidence,preview,gospelDepictsReading:x.gospelDepictsReading,
     metId:(x.sourceUrl.match(/metmuseum\.org\/art\/collection\/search\/(\d+)/)||[])[1]||null};
  });
  const specific=options.some(x=>tiers.indexOf(x.tier)<=4);
+ const gospelArtworkCount=sourceOptions.filter(x=>x.gospelDepictsReading).length;
+ const sundayGospel=sunday?{
+  reference:gospel?.reference||null,passage:gospel?.passage||null,
+  sceneKeys:scenes,gospelArtworkCount,
+  source:'ACTUAL_1962_MASS_PROPER',
+  policy:feastOnSunday?'PRINCIPAL_FEAST_FIRST_AND_GOSPEL_CONTEXT':'APPOINTED_GOSPEL_SCENE_FIRST',
+  evidence:gospelArtworkCount?'OPEN_ARTWORK_DEPICTS_GOSPEL_SCENE':!gospel?.reference?'SPECIAL_RITE_OR_SOURCE_UNAVAILABLE':scenes.length?'SCENE_IDENTIFIED_ARTWORK_MISSING':'DISCOURSE_OR_SCENE_UNINDEXED'
+ }:null;
  const exact=options.some(x=>x.tier==='STRICT_DAY_SOURCE_LINK');
  return {date:r.date,class:r.rawRank==='I class'?'I':'II',observedPrincipalId:r.mainId,
-   title:r.title,gospel:r.scriptureContexts.find(x=>x.slot==='GOSPEL')?.reference||null,
+   title:r.title,gospel:gospel?.reference||null,sundayGospel,
    options,artworkCoverage:exact?'EXACT_SOURCE_RESEARCH':specific?'SUBJECT_CANDIDATE':'THEMATIC_ONLY',
    specificArtStillNeeded:!specific,reviewStatus:'USER_SELECTION_PENDING',
    productionApproved:false};
@@ -77,6 +96,15 @@ for(const row of rows)for(const option of row.options){
 
 assert.ok(rows.filter(x=>x.class==='I'&&x.artworkCoverage==='EXACT_SOURCE_RESEARCH').length<=exactResearchDates.size,
  'CC0 linked exact-source options cannot outnumber the historic research source dates');
+const sundays=rows.filter(x=>x.sundayGospel);
+assert.equal(sundays.length,52,'Expected 52 calendar Sundays');
+const sundayGospelCounts={
+ sundayDates:sundays.length,withReference:sundays.filter(r=>r.sundayGospel.reference).length,
+ withOpenGospelScenePainting:sundays.filter(r=>r.sundayGospel.gospelArtworkCount>0).length,
+ sceneNeedsArtwork:sundays.filter(r=>r.sundayGospel.evidence==='SCENE_IDENTIFIED_ARTWORK_MISSING').length,
+ discourseOrUnindexed:sundays.filter(r=>r.sundayGospel.evidence==='DISCOURSE_OR_SCENE_UNINDEXED').length,
+ specialSourceMissing:sundays.filter(r=>r.sundayGospel.evidence==='SPECIAL_RITE_OR_SOURCE_UNAVAILABLE').length
+};
 const counts=Object.fromEntries(['I','II'].map(k=>{
  const d=rows.filter(r=>r.class===k);
  return [k,{observed:d.length,openSourceOptions:d.filter(r=>r.options.length>0).length,
@@ -88,6 +116,7 @@ const counts=Object.fromEntries(['I','II'].map(k=>{
 const report={schema:'AO_SACRED_ART_2026_CLASS_I_II_REVIEW_V1',year:2026,
  cmaWebPreviewResolved:cmaImages.size,cmaWebPreviewRequested:cmaAccessions.length,
  exactResearchDatesInEarlierCrosswalk:exactResearchDates.size,
+ sundayGospelCounts,
  status:'DATE_INVENTORY_COMPLETE_ARTWORK_EDITION_UNFINISHED',
  source:'2026 full-year 1962 production DayResolver / CC0 acquired-original artwork registry',
  scope:'All observed general-calendar Class I/II principal days in 2026; not every displaced nominal or local feast',
