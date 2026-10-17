@@ -146,6 +146,35 @@ footer a{color:#d8bd89}
  .wrap{padding-top:8px}header{align-items:flex-start}
 }
 @media(max-width:600px){header h1{font-size:23px}.topactions{align-self:flex-start}.intro{margin:10px 0}.photo-canvas{min-width:750px}.photo-viewport{max-height:440px}.marker{width:44px;height:44px}.info{padding:16px}.photobar{font-size:11px}}
+
+.experience-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #3b4750;border-radius:11px;background:#101821;overflow:hidden;margin:13px 0 16px}
+.experience-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px;padding:10px 7px;border:0;border-right:1px solid #303a44;background:transparent;color:var(--muted);font:15px Georgia,serif;text-align:center}
+.experience-nav button:last-child{border-right:0}
+.experience-nav button small{font:10px/1.4 system-ui,sans-serif;color:var(--muted);letter-spacing:.015em}
+.experience-nav button[aria-pressed=true]{background:#252b30;color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
+.experience-nav button:disabled{opacity:.45;cursor:not-allowed}
+body[data-experience=explore] main{display:block}
+body[data-experience=explore] main>section{width:100%}
+body[data-experience=explore] .info{display:none}
+body[data-experience=discover] .info,body[data-experience=understand] .info{display:block}
+body[data-experience=discover] .intro-card,body[data-experience=discover] #object-card{display:none}
+body[data-experience=discover] .guide-dock{display:block;margin:0;background:transparent;border:0;padding:0}
+body[data-experience=understand] .guide-dock{display:none}
+body.embedded header{display:none}
+body.embedded .intro{display:none}
+body.embedded .experience-nav{margin-top:5px}
+body[data-experience=discover] .info{min-height:0}
+@media(min-width:931px){
+ body[data-experience=discover] main,body[data-experience=understand] main{grid-template-columns:minmax(0,1.9fr) minmax(275px,.8fr);gap:15px}
+ body[data-experience=discover] .info{max-height:min(74dvh,780px);overflow-y:auto}
+}
+@media(max-width:930px){
+ body[data-experience=discover] .info,body[data-experience=understand] .info.has-selection{position:fixed;z-index:30;bottom:0;left:0;right:0;max-height:min(46dvh,430px);width:100%;overflow:auto;overscroll-behavior:contain;border:1px solid #53606b;border-radius:16px 16px 0 0;padding:14px 16px calc(14px + env(safe-area-inset-bottom));background:#101821f7;box-shadow:0 -12px 36px #000a}
+ body[data-experience=discover] .info{display:block}
+ body[data-experience=discover] .photo-viewport{max-height:48dvh}
+ body[data-experience=discover] .guide-dock .guide-foot{font-size:10px}
+ body[data-experience=understand] .info.has-selection{max-height:min(51dvh,460px)}
+}
 @media(prefers-reduced-motion:reduce){.marker{transition:none}.guide-dock *{scroll-behavior:auto!important}}
 </style>
 </head>
@@ -158,6 +187,11 @@ footer a{color:#d8bd89}
 </select></label><button id="show-markers" type="button" aria-pressed="true">Objects visible</button><a href="https://commons.wikimedia.org/wiki/Category:Brompton_Oratory,_Interior" target="_blank" rel="noopener">Photo sources ↗</a></div>
 </header>
 <p class="intro">The real high altar of Brompton Oratory, London. Select one of the discreet numbered markers, or choose an object below the image. On narrow screens, swipe sideways to explore the photograph.</p>
+<nav class="experience-nav" id="experience-nav" aria-label="Visible Mass experience modes">
+<button id="experience-explore" data-experience="explore" type="button" aria-pressed="true"><span>Explore</span><small>Look around</small></button>
+<button id="experience-discover" data-experience="discover" type="button" aria-pressed="false"><span>Discover</span><small>Follow the Guide</small></button>
+<button id="experience-understand" data-experience="understand" type="button" aria-pressed="false" disabled><span>Understand</span><small>Object &amp; sources</small></button>
+</nav>
 <p class="occasion-hint" id="occasion-hint" aria-live="polite" hidden>Occasion study only: the original Brompton photograph has not been altered to represent this rite.</p>
 <main>
 <section aria-label="Church photograph and clickable objects">
@@ -180,19 +214,20 @@ footer a{color:#d8bd89}
 <a id="photo-credit" href="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg" target="_blank" rel="noopener">Anthony O'Neil · CC BY-SA 2.0 ↗</a>
 </div>
 </div>
+
+<details class="other"><summary>Choose a visible object by name</summary><div class="choices" id="object-choices"></div></details>
+<details class="other" id="inspection-details"><summary>Inspect further · sourced objects and illustrations</summary><div class="choices" id="inspection-choices">Loading sourced object references…</div></details>
+</section>
+<aside class="info" id="info" aria-label="Contextual discovery and source questions" aria-live="polite">
 <section class="guide-dock" id="guide-dock" aria-label="Optional guided discoveries" hidden>
 <div class="guide-head"><strong>Discover with the Guide</strong><button id="guide-toggle" type="button">Choose a trail</button></div>
-<p class="guide-sub" id="guide-status" role="status">Research-only guided discovery · three photographed objects in this first slice</p>
+<p class="guide-sub" id="guide-status" role="status">Research-only dialogue · all six photographed objects</p>
 <div id="guide-routes" class="guide-routes"></div>
 <p id="guide-prompt" class="guide-prompt" hidden></p>
 <p id="guide-target" class="guide-target" hidden></p>
 <div class="guide-actions" id="guide-actions"></div>
 <p class="guide-foot">Every suggestion is optional. Your earlier discoveries remain available, even after changing or leaving a trail. Historical answer drafts are not approved liturgical instruction.</p>
 </section>
-<details class="other"><summary>Choose a visible object by name</summary><div class="choices" id="object-choices"></div></details>
-<details class="other" id="inspection-details"><summary>Inspect further · sourced objects and illustrations</summary><div class="choices" id="inspection-choices">Loading sourced object references…</div></details>
-</section>
-<aside class="info" id="info" aria-label="Selected object and questions" aria-live="polite">
 <div class="intro-card" id="intro-card"><div class="state">Living glossary · Phase 1</div><h2>Look closer</h2><p>Choose an object in the photograph to identify it and explore the questions it raises.</p><p>This is the object-discovery pilot. Detailed answers will be added after source research and approval.</p></div>
 <div id="object-card" hidden>
 <div class="row"><div class="state" id="object-state"></div><button type="button" class="close" id="close-card" aria-label="Close object">Close ×</button></div>
@@ -243,7 +278,7 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null,experience:"explore",returnExperience:"explore"};
 const GUIDED_OBJECTS=new Set(["AL01","AL06","AL07","AL19","SN02","SN04"]);
 const RELATED_OBJECTS={
  AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
@@ -280,10 +315,22 @@ function showInspection(asset){
  $("photo-caption").textContent="Reference · "+asset.source_location+" · not photographed at Brompton";
  $("photo-credit").textContent=asset.creator+" · "+asset.licence+" ↗";$("photo-credit").href=asset.source_url;
 }
+function setExperience(mode){
+ if(!["explore","discover","understand"].includes(mode))return false;
+ if(mode==="understand"&&!state.selected)return false;
+ state.experience=mode;
+ document.body.dataset.experience=mode;
+ $("experience-understand").disabled=!state.selected;
+ for(const b of $("experience-nav").querySelectorAll("button")){
+  b.setAttribute("aria-pressed",String(b.dataset.experience===mode));
+ }
+ return true;
+}
 function select(id,from,{guided=false}={}){
  const spot=findSpot(id);if(!spot)return;
  if(spot.inspection)showInspection(spot.inspection);else if(!spot.referenceOnly)showChurch();
  if(!state.selected)state.returnScroll=window.scrollY;
+ state.returnExperience=guided?"discover":(state.experience==="discover"?"discover":"explore");
  state.selected=id;state.question=null;state.showAll=false;
  if(from)state.returnFocus=from;
  if(guided&&GUIDED_OBJECTS.has(id))$("photo-canvas").dataset.guidedFocus=id;
@@ -298,6 +345,7 @@ function select(id,from,{guided=false}={}){
  buildDefinition(spot);void renderMassContext();renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
  $("info").classList.add("has-selection");
  document.body.classList.add("object-open");
+ setExperience("understand");
  if(window.innerWidth<930){
    window.scrollTo(0,0);
    if(!spot.inspection){
@@ -480,7 +528,8 @@ async function guideInit(pilot){
      .map(a=>a.question_id);
    if(ids.length!==97)throw Error("Research answer owners unavailable");
    state.guide=mod.mountVisibleMassDialogueFolio(window,{
-     graph,pilot,answerIds:ids,navigate:guideNavigate
+     graph,pilot,answerIds:ids,navigate:guideNavigate,
+     onModeChange:mode=>{if(mode==="explore"&&state.selected)closeCard();setExperience(mode);}
    });
  }catch(error){
    console.warn("Optional guide unavailable; free exploration remains accessible",error);
@@ -508,6 +557,8 @@ function closeCard(){
  state.selected=null;state.question=null;showChurch();$("info").classList.remove("has-selection");document.body.classList.remove("object-open");state.returnFocus=state.returnFocus||$("object-choices");
  const restoreY=state.returnScroll;state.returnScroll=0;
  $("intro-card").hidden=false;$("object-card").hidden=true;
+ delete $("photo-canvas").dataset.guidedFocus;
+ setExperience(state.returnExperience==="discover"?"discover":"explore");
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed","false"));
  let previous=state.returnFocus;
  if(previous&&previous.isConnected&&typeof previous.focus==="function")previous.focus({preventScroll:true});
@@ -521,8 +572,22 @@ for(const spot of SPOTS){
  const c=document.createElement("button");c.type="button";c.textContent=spot.title;c.onclick=()=>select(spot.id,c);$("object-choices").appendChild(c);
 }
 $("guide-return").onclick=()=>{
- closeCard();
- if(state.guide?.status().visible)$("guide-toggle").focus({preventScroll:true});
+ closeCard();setExperience("discover");
+ if(state.guide?.status().active)state.guide.show();
+ $("guide-toggle").focus({preventScroll:true});
+};
+$("experience-explore").onclick=()=>{
+ if(state.selected)closeCard();
+ state.guide?.hide?.();
+ setExperience("explore");
+};
+$("experience-discover").onclick=()=>{
+ if(state.selected)closeCard();
+ if(state.guide?.status().active)state.guide.show();
+ setExperience("discover");
+};
+$("experience-understand").onclick=()=>{
+ if(state.selected)setExperience("understand");
 };
 $("close-card").onclick=closeCard;
 $("return-to-church").onclick=closeCard;
@@ -582,9 +647,12 @@ async function loadCanon(){
  if(outcome[3].status==="fulfilled")void guideInit(outcome[3].value);
  if(state.selected){buildDefinition(findSpot(state.selected));renderRelatedObjects();renderLiturgicalExplanations();renderOccasionNote();renderQuestions();if(state.question){renderExactHistoricalAnswer(state.question);renderPublishedReferences(state.question);}}
 }
+if(window.frameElement)document.body.classList.add("embedded");
+setExperience("explore");
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
  status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ experience:()=>state.experience,
  guideStatus:()=>state.guide?.status()??null,
  chooseTrail:id=>state.guide?.chooseTrail(id)??false,
  guideExplore:id=>state.guide?.explore(id)??false,
