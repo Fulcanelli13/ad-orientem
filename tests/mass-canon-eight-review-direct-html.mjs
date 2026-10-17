@@ -55,7 +55,7 @@ try{
  const page=await context.newPage();
  await page.goto(pathToFileURL(path).href);
  await page.locator(".study-button").first().waitFor();
- await page.locator('[data-decision="revise"]').click();
+ await page.locator('.review [data-decision="revise"]').click();
  await page.locator("#note").fill("Review: tighten biblical source attribution.");
  await page.locator("#reviewer").fill("Editorial Reviewer");
  const downloadEvent=page.waitForEvent("download");
@@ -78,7 +78,7 @@ try{
  assert.equal(proposed.totals.needs_revision,1);
  assert.equal(proposed.totals.unreviewed,7);
  await page.reload();
- assert.equal(await page.locator('[data-decision="revise"]').getAttribute("aria-pressed"),"true");
+ assert.equal(await page.locator('.review [data-decision="revise"]').getAttribute("aria-pressed"),"true");
  const fileChooser=page.locator("#import-input");
  await fileChooser.setInputFiles({name:"review-decisions.json",mimeType:"application/json",buffer:Buffer.from(JSON.stringify(exportData))});
  await page.locator("#status").waitFor();
