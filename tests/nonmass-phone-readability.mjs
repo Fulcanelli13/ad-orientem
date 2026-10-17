@@ -59,6 +59,19 @@ try{
    });
    assert.ok(formation.cards>=8,"Formation subjects missing at "+width+"px");
    if(width<=430){
+     const duplicate=await page.evaluate(()=>{
+       const root=document.querySelector("#ao-learn-modular-root");
+       return {
+         shell:getComputedStyle(root.querySelector(".aoLearnModTopTitle strong")).display,
+         kicker:getComputedStyle(root.querySelector(".aoLearnModHero .kicker")).display,
+         h1:root.querySelector(".aoLearnModHero h1")?.getBoundingClientRect().height||0
+       };
+     });
+     assert.equal(duplicate.shell,"none","Formation home must not repeat its hero title in sticky chrome");
+     assert.equal(duplicate.kicker,"none","Formation home must not repeat the page label");
+     assert.ok(duplicate.h1>25,"The actual Formation heading must remain visible");
+   }
+   if(width<=430){
     assert.ok(formation.boxes.every(x=>x.w>=width-45),
       "Phone Formation family rows remain cramped: "+JSON.stringify(formation.boxes.slice(0,2)));
     assert.ok(formation.boxes.slice(1).every((b,i)=>b.y>formation.boxes[i].y+8),

@@ -63,8 +63,8 @@ async function loadData(fetchImpl=globalThis.fetch){
 }
 
 function sourceMap(data){return Object.fromEntries((data?.sources??[]).map(source=>[source.id,source]));}
-function top(win,title){
-  return '<style data-ao-mf-style>'+css()+'</style><header class="aoMFTop"><button type="button" data-ao-mf-back aria-label="'+esc(isFr(win)?"Retour":"Back")+'">'+uiIcon("ao-ui-back")+'</button><div><small>FORMATION</small><strong>'+esc(title)+'</strong></div><button type="button" data-ao-mf-close aria-label="'+esc(isFr(win)?"Fermer":"Close")+'">'+uiIcon("ao-ui-close")+'</button></header>';
+function top(win,title,{stage=false}={}){
+  return '<style data-ao-mf-style>'+css()+'</style><header class="aoMFTop'+(stage?' aoMFTopStage':'')+'"><button type="button" data-ao-mf-back aria-label="'+esc(isFr(win)?"Retour":"Back")+'">'+uiIcon("ao-ui-back")+'</button><div><small>FORMATION</small><strong>'+esc(title)+'</strong></div><button type="button" data-ao-mf-close aria-label="'+esc(isFr(win)?"Fermer":"Close")+'">'+uiIcon("ao-ui-close")+'</button></header>';
 }
 function listHtml(win,data){
   const rows=data.stages.map(stage=>'<button type="button" class="aoMFStageRow" data-ao-mf-stage="'+esc(stage.id)+'"><span class="n">'+esc(stage.order)+'</span><span><strong>'+esc(pick(win,stage.title))+'</strong><p>'+esc(pick(win,stage.summary))+'</p></span></button>').join("");
@@ -90,7 +90,7 @@ function stageHtml(win,data,stage){
     furtherReadingIds:MASS_FORMATION_FURTHER_READING[stage.id]||[],
     enableStudySource:true
   });
-  return top(win,pick(win,stage.title))+'<main class="aoMFWrap aoMFStage"><div class="aoMFQuestion">'+esc(pick(win,stage.question))+'</div><h1>'+esc(pick(win,stage.title))+'</h1><p class="aoMFStageLead">'+esc(pick(win,stage.summary))+'</p>'+claims+
+  return top(win,pick(win,stage.title),{stage:true})+'<main class="aoMFWrap aoMFStage"><div class="aoMFQuestion">'+esc(pick(win,stage.question))+'</div><h1>'+esc(pick(win,stage.title))+'</h1><p class="aoMFStageLead">'+esc(pick(win,stage.summary))+'</p>'+claims+
     massFormationScriptureHtml(stage.id,{french:isFr(win)})+references+
     '<nav class="aoMFNav"><button type="button" data-ao-mf-prev>'+esc(isFr(win)?"Précédent":"Previous")+'</button><button type="button" data-ao-mf-list>'+esc(isFr(win)?"Toutes les étapes":"All stages")+'</button><button type="button" data-ao-mf-next>'+esc(isFr(win)?"Suivant":"Next")+'</button></nav></main>';
 }
