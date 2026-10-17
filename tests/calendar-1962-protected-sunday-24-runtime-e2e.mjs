@@ -95,6 +95,19 @@ const results=cases.map(expected=>{
  if(path&&actual?.proper?.sourcePath!==path)
   problems.push("PRINCIPAL_PROPER_SOURCE_MISMATCH");
  const fixedId=String(expected.protectedFeastResolverIdentity).replace(/:[1-4]:[a-z]{1,3}$/i,"");
+ const snapshot=expected.productionSnapshot;
+ if(!snapshot||actual?.main?.id!==snapshot.observedPrincipalId)
+  problems.push("OBSERVED_PRINCIPAL_SNAPSHOT_DRIFT");
+ if(actual?.proper?.sourcePath!==snapshot?.observedProperSourcePath)
+  problems.push("OBSERVED_PROPER_SNAPSHOT_DRIFT");
+ if(JSON.stringify(actual?.canonicalCommemorations||[])!==JSON.stringify(snapshot?.canonicalCommemorationIds))
+  problems.push("OBSERVED_COMMEMORATION_SNAPSHOT_DRIFT");
+ for(const name of ["collects","secrets","postcommunions"]){
+  const actualCount=actual?.proper?.[name==="collects"?"collectCount":name==="secrets"?"secretCount":"postcommunionCount"];
+  if(actualCount!==snapshot?.orationCounts?.[name])problems.push("OBSERVED_"+name.toUpperCase()+"_SNAPSHOT_DRIFT");
+ }
+ if(snapshot?.sourceCertified!==false||snapshot?.publishable!==false)
+  problems.push("UNSAFE_PRODUCTION_SNAPSHOT_CERTIFICATION");
  if((actual?.canonicalCommemorations||[]).some(id=>
    String(id).replace(/:[1-4]:[a-z]{1,3}$/i,"")===fixedId))
   problems.push("FORBIDDEN_III_CLASS_SAINT_COMMEMORATION");
