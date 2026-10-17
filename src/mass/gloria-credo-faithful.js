@@ -12,6 +12,36 @@ export const GLORIA_CREDO_SEDILIA_WITNESSES=Object.freeze({
 export const FAITHFUL_LOCAL_GESTURES=Object.freeze([
   "DEFAULT","NONE","HEAD_BOW","PROFOUND_BOW","GENUFLECT","KNEEL","SIGN_OF_CROSS",
 ]);
+// 1960 Code of Rubrics §518(b): during the *sung* Et incarnatus, everyone
+// kneels at the three Christmas Masses or Mass of the Annunciation. Do not
+// infer this from the calendar date alone: the actual selected Proper wins,
+// including an Annunciation transferred to a different civil date. Do not
+// reuse this choir-phase rule for the priest's private recitation or Low Mass.
+export function resolveIncarnatusSungAction(resolvedMass){
+  const form=String(resolvedMass?.form??"").toUpperCase();
+  if(!["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(form))
+    return "GENUFLECT";
+  const actual=resolvedMass?.actualCelebration;
+  const proper=resolvedMass?.proper;
+  if(!actual||proper?.status!=="READY")return "GENUFLECT";
+  const inner=proper?.data??proper;
+  const path=String(inner?.sourcePath??proper?.sourcePath??"").trim();
+  // Annunciation is source-identified, not March-25-identified: transferred
+  // observances still use the proper of the Annunciation.
+  const annunciation=path==="Sancti/03-25";
+  // The three Nativity Masses can resolve from distinct source owners. Their
+  // common obligation is safely keyed by the actual Christmas calendar
+  // celebration, never by the selected civil day if another Mass is followed.
+  const nativityProper=/^Sancti\/12-25(?:$|[._-][123abc])/.test(path);
+  const sameCalendar=actual.type==="CALENDAR" &&
+    resolvedMass?.explicitlySelectedCelebration!==true &&
+    Boolean(actual.id) && actual.id===resolvedMass?.calendarCelebration?.id;
+  const calendarChristmas=sameCalendar &&
+    /^\d{4}-12-25$/.test(String(resolvedMass?.date??"")) &&
+    (nativityProper||/^Tempora\/Nat/.test(path));
+  return annunciation||nativityProper||calendarChristmas?"KNEEL":"GENUFLECT";
+}
+
 const postureValues=new Set(["STAND","SIT","KNEEL"]);
 const gestureValues=new Set(FAITHFUL_LOCAL_GESTURES);
 const num=id=>{const hit=String(id??"").match(/^AO\.SM\.C(\d{4})$/);return hit?Number(hit[1]):null;};
@@ -47,7 +77,9 @@ export function projectGloriaCredoFaithfulCue({
   const customSitting=phase==="CREDO"
     ? num(cueId)>=credoSitStart&&num(cueId)<104
     : gloriaCredoSittingCue(cueId);
-  const defaultPosture=follow&&customSitting?"SIT":sourceValue;
+  const sungSpecialKneel=phase==="CREDO" && String(cueId)==="AO.SM.C0096" &&
+    sung && incarnatusAction==="KNEEL";
+  const defaultPosture=sungSpecialKneel?"KNEEL":follow&&customSitting?"SIT":sourceValue;
   const local=preferences.localPostures??{};
   let saved=null;
   const key=String(cueId??"");
@@ -84,7 +116,7 @@ export function projectGloriaCredoFaithfulCue({
     cueId:key,phase,posture,postureIconKey:R17_ICON_KEYS.posture[posture]??null,
     gesture,gestureIconKey:gestureKey,
     savedPosture:saved,savedGesture:gestureSetting,
-    source:"GLORIA_CREDO_CUSTOMARY_DISPLAY",
+    source:sungSpecialKneel?"RG60_518B_EXCEPTIONAL_CHANT_KNEEL":"GLORIA_CREDO_CUSTOMARY_DISPLAY",
     conditionalSedilia:follow && customSitting,
     priestStateWitness:follow
       ? GLORIA_CREDO_SEDILIA_WITNESSES[phase][customSitting?"sit":"rise"]
