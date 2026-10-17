@@ -2,6 +2,7 @@ import { ROSARY_MYSTERY_CONTEXT_V1 } from "./rosary-mystery-context.v1.js";
 import { ROSARY_GUIDED_BEAD_MEDITATIONS_V1 } from "./rosary-guided-bead-meditations.v1.js";
 import { ROSARY_GUIDED_BEAD_EVIDENCE_V1 } from "./rosary-guided-bead-evidence.v1.js";
 import { parseScriptureContext } from "../scripture/context.js";
+import {restoreRosaryBeadScripture} from "./rosary-bead-scripture.js";
 
 /**
  * Rosary Scripture display policy — editorial safety gate, 9 October 2026.
@@ -165,7 +166,7 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
   if(!root?.querySelectorAll || !info?.step)return false;
   const shell=root.querySelector(".pbShell");
   if(!shell)return false;
-  shell.dataset.aoRosaryScripturePolicy="context-first-v1";
+  shell.dataset.aoRosaryScripturePolicy="labora-inline-canonical-witness-v2";
   // The legacy player renders each cue as a supposedly certified verse.
   // Do not change its underlying state or source records: withhold the UI
   // until all original edition/reference mappings receive editorial review.
@@ -215,6 +216,11 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
         citation.title="Texte latin original du Saint-Siège · ouvrir la source";
       }
       note.appendChild(citation);
+      // Reinstate Lab-ora's immediate verse / Read passage / Church Fathers
+      // beneath the same canonical Rosary bead. Source text comes from the
+      // already imported CPDV/Crampon witness, not uncollated donor snippets.
+      const contextReading=rosaryBeadContextReference(witness);
+      if(contextReading)restoreRosaryBeadScripture(root,prayer,witness,id+".b"+bead,{french});
       prayer.appendChild(note);
     }
   }
