@@ -975,6 +975,69 @@ const PRAY_ORG_ENTRY_CSS=`
 }
 `;
 
+const PRAYER_PRACTICE_FOCUS_CSS=String.raw`
+/* Phone reading density only: no prayer, rubric or posture ownership. */
+@media(max-width:560px){
+ #aoPray435930 .aoP435930AngelusReader>.aoP435930PrayerOptions{
+   margin:0 0 5px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.12));
+   border-radius:0;background:transparent
+ }
+ #aoPray435930 .aoP435930AngelusReader>.aoP435930PrayerOptions>summary{
+   min-height:44px;padding:6px 3px;color:var(--muted,#c1b8aa);font-weight:500
+ }
+ #aoPray435930 .aoP435930AngelusReader>.aoP435930PrayerOptions>summary>small{
+   font-weight:500;font-size:11px
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoRitualRail{
+   padding:0 0 2px!important;gap:4px!important;margin:0!important;
+   background:transparent!important;backdrop-filter:none!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoRitualSlot[data-channel="posture"]{
+   min-height:44px!important;border-radius:8px!important;padding:3px 7px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoRitualIcon{
+   width:30px!important;height:30px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoTimeline{
+   min-height:48px!important;padding:2px 0!important;gap:3px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoStop{
+   min-height:44px!important;padding:5px 7px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoNavArrow{
+   min-height:44px!important;border-color:transparent!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoCardHead{
+   padding:8px 12px 7px!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoCardNumber{display:none!important}
+ #aoPray435930 .aoP435930AngelusReader .aoDevoCardTitle{
+   margin:2px 0!important;font-size:clamp(22px,5.4vw,27px)!important
+ }
+ #aoPray435930 .aoP435930AngelusReader .aoDevoCardScroll{
+   padding-top:12px!important;gap:18px!important;
+   min-height:min(340px,48dvh);height:min(62dvh,550px)
+ }
+ #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions{
+   margin:0 0 3px!important;border:0!important;
+   border-bottom:1px solid var(--border,rgba(255,255,255,.12))!important;
+   border-radius:0!important;background:transparent!important
+ }
+ #aoPrayerBookRoot[data-ao-rosary-active-root="true"] .aoRosaryActiveOptions>summary{
+   min-height:44px!important;padding:5px 2px!important;
+   color:var(--muted,#c1b8aa)!important;font-weight:500!important
+ }
+ #aoPrayerBookRoot.open .aoRosaryNamedTimeline{padding:3px 2px!important;gap:3px!important}
+ #aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStop{
+   min-height:44px!important;padding:5px 8px!important
+ }
+ #aoPrayerBookRoot.open .aoRosaryActiveCard{padding:12px 12px 9px!important}
+ #aoPrayerBookRoot.open .aoRosaryActiveCard > h2.aoDevoCardTitle{
+   margin-bottom:8px!important
+ }
+}
+`;
+
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
@@ -993,6 +1056,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-devotional-prayer-first-style",DEVOTIONAL_PRAYER_FIRST_CSS);
   ensureStyle(doc,"ao-pray-readable-guidance-style",PRAY_READING_TYPE_CSS);
   ensureStyle(doc,"ao-pray-organised-family-entry-style",PRAY_ORG_ENTRY_CSS);
+  ensureStyle(doc,"ao-pray-practice-focus-phone-style",PRAYER_PRACTICE_FOCUS_CSS);
   return true;
 }
 
