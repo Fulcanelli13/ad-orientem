@@ -643,7 +643,7 @@ function calendarScriptureControls(selected,r){
     `<button type="button" data-cal-scripture-date="${esc(selected)}" data-cal-scripture-slot="${esc(row.slot)}" aria-label="${esc(slotLabel(row)+" · "+row.reference)}"><strong>${esc(slotLabel(row))}</strong><span>${esc(row.reference)}</span></button>`
   ).join("")}</div>`;
   const riteLabel=rites[0]?.groupLabel;
-  return `<section class="aoCalDayScripture" aria-label="${esc(L("Appointed readings","Lectures liturgiques"))}"><small>${esc(L("APPOINTED READINGS","LECTURES LITURGIQUES"))}</small>${rites.length?
+  return `<section class="aoCalDayScripture" aria-label="${esc(fr()?(rites.length?"Lectures liturgiques":"Lectures de la messe"):"Appointed readings")}"><small>${esc(fr()?(rites.length?"LECTURES LITURGIQUES":"LECTURES DE LA MESSE"):"APPOINTED READINGS")}</small>${rites.length?
     (mixed?`<p class="aoCalDayScriptureGroupLabel">${esc(fr()?riteLabel.fr:riteLabel.en)}</p>`:"")+controls(rites):""}${proper.length?
     (mixed?`<p class="aoCalDayScriptureGroupLabel">${esc(L("Mass · Epistle and Gospel","Messe · Épître et Évangile"))}</p>`:"")+controls(proper):""}<p class="aoCalDayScriptureError" role="alert" hidden></p></section>`;
 }
