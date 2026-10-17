@@ -25,6 +25,10 @@ for(const html of [en,fr]){
    "Source study must not offer a ritual action");
 }
 assert.match(en,/not quotations or verified passages/);
+assert.match(en,/<details class="aoMFSourceLimitations">/);
+assert.match(en,/Lesson commentary · not original quotations/);
+assert.ok(en.indexOf("aoMFSourceMetaSummary")<en.indexOf("aoMFSourceClaimList"),
+  "Source identity should be compact and placed ahead of the lesson claims");
 assert.match(en,/Papal encyclical/);
 assert.match(fr,/non des citations ou des passages vérifiés/);
 assert.match(fr,/Encyclique pontificale/);
