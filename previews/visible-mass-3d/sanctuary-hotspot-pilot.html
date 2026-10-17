@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Visible Mass · Sanctuary object pilot</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--pane:#101821;--surface:#17212c;--line:#374351;--text:#eee9e0;--muted:#bac2cb;--gold:#c9b487;--focus:#f2dfaa}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}
+body{font-family:Georgia,"Times New Roman",serif}
+button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+a{color:#d8bd89}
+.wrap{max-width:1480px;margin:auto;padding:16px clamp(14px,2.6vw,36px) 24px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0 18px;border-bottom:1px solid var(--line)}
+.kicker{font:11px/1.4 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+header h1{font:normal clamp(21px,2.4vw,31px)/1.15 Georgia,serif;margin:5px 0 0}
+.topactions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.topactions button,.topactions a{border:1px solid var(--line);background:transparent;border-radius:8px;padding:10px 13px;color:var(--muted);font:13px system-ui,sans-serif;text-decoration:none}
+.topactions button[aria-pressed=true]{color:var(--text);border-color:#b8a176}
+.intro{font:13px/1.5 system-ui,sans-serif;color:var(--muted);margin:12px 0 16px}
+main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(285px,.8fr);gap:22px;align-items:start}
+.photo-shell{background:#05070b;border:1px solid #313b45;border-radius:10px;overflow:hidden}
+.photo-viewport{overflow:auto;scrollbar-width:thin;overscroll-behavior:contain;touch-action:pan-x pan-y}
+.photo-canvas{position:relative;width:100%;min-width:750px;aspect-ratio:4797/3219}
+.photo-canvas img{width:100%;height:100%;display:block;object-fit:contain;-webkit-user-drag:none;user-select:none}
+.photo-canvas .photo-failed{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:#151e27;color:#e5e1db;text-align:center;font:14px system-ui,sans-serif}
+.photo-canvas.image-failed .photo-failed{display:flex}
+.marker{position:absolute;transform:translate(-50%,-50%);width:37px;height:37px;border-radius:50%;border:1px solid #e7d7ab;background:rgba(9,15,21,.68);color:#f2e7d1;font:600 13px system-ui,sans-serif;display:grid;place-items:center;box-shadow:0 0 0 3px #070c1299;transition:background .16s,box-shadow .16s;z-index:2}
+.marker:hover,.marker:focus-visible,.marker[aria-pressed=true]{background:#bca576;color:#111820;box-shadow:0 0 0 4px #e6d3a649}
+.marker[aria-pressed=true]{z-index:3}
+.marker-label{position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);white-space:nowrap;border:1px solid #67707a;background:#0b121aee;border-radius:5px;padding:6px 9px;color:#eee;font:12px system-ui,sans-serif;display:none;pointer-events:none}
+.marker:hover .marker-label,.marker:focus-visible .marker-label,.marker[aria-pressed=true] .marker-label{display:block}
+.marker[data-object=SN04] .marker-label{bottom:auto;top:calc(100% + 9px)}
+.marker[data-object=SN02] .marker-label{bottom:auto;top:calc(100% + 9px)}
+.photobar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 13px;border-top:1px solid var(--line);background:#0c1219;font:12px/1.45 system-ui,sans-serif;color:var(--muted)}
+.photobar a{white-space:nowrap}
+.info{background:var(--pane);border:1px solid var(--line);border-radius:10px;min-height:340px;padding:18px;box-shadow:0 6px 30px #0003}
+.info h2{font:normal clamp(23px,2.4vw,29px)/1.17 Georgia,serif;margin:0 0 9px}
+.info p{line-height:1.56;margin:10px 0}
+.intro-card p{color:var(--muted)}
+.state{font:11px system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.close,.back{background:none;border:1px solid #4a5867;border-radius:7px;color:var(--muted);font:12px system-ui,sans-serif;padding:7px 10px}
+.definition{background:var(--surface);border-radius:7px;border:1px solid #34424d;padding:13px;line-height:1.5}
+.definition small{display:block;color:var(--muted);font:12px system-ui,sans-serif;margin-bottom:7px}
+.related{color:var(--muted);font:12px system-ui,sans-serif}
+.question-list{margin-top:17px}
+.question-list h3{font:normal 18px Georgia,serif;margin:0 0 12px}
+.question{display:flex;gap:10px;justify-content:space-between;text-align:left;width:100%;border:0;background:transparent;color:var(--text);padding:12px 1px;border-bottom:1px solid #303d49;line-height:1.45}
+.question span:last-child{color:var(--gold);flex-shrink:0}
+.question:hover{color:#f3dba9}
+.more{background:none;color:var(--gold);border:0;padding:12px 0;font:13px system-ui,sans-serif}
+.pill{display:inline-block;border:1px solid #53606a;border-radius:100px;padding:4px 8px;font:11px system-ui,sans-serif;color:var(--muted);margin-bottom:12px}
+.held{padding:13px;border-left:2px solid #b7a179;background:var(--surface);font:13px/1.55 system-ui,sans-serif;color:var(--muted)}
+.meta-link{margin-top:14px;font:12px system-ui,sans-serif}
+.other{margin-top:16px;padding-top:11px;border-top:1px solid var(--line)}
+.other summary{cursor:pointer;font:13px system-ui,sans-serif;color:var(--muted);padding:7px 0}
+.other .choices{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.other button{font:12px system-ui,sans-serif;padding:8px 10px;border-radius:6px;background:#19232d;color:var(--muted);border:1px solid var(--line)}
+footer{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:20px;padding-top:15px;border-top:1px solid var(--line)}
+footer a{color:#d8bd89}
+.noscript{padding:14px;color:#f7d19b}
+@media(max-width:930px){main{grid-template-columns:1fr;gap:14px}.info{min-height:0}.wrap{padding-top:8px}header{align-items:flex-start}}
+@media(max-width:600px){header h1{font-size:23px}.topactions{align-self:flex-start}.intro{margin:10px 0}.photo-canvas{min-width:750px}.marker{width:40px;height:40px}.info{padding:16px}.photobar{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.marker{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div><div class="kicker">Ad Orientem · The Visible Mass</div><h1>Explore the sanctuary</h1></div>
+<div class="topactions"><button id="show-markers" type="button" aria-pressed="true">Objects visible</button><a href="https://commons.wikimedia.org/wiki/Category:Brompton_Oratory,_Interior" target="_blank" rel="noopener">Photo sources ↗</a></div>
+</header>
+<p class="intro">The real high altar of Brompton Oratory, London. Select one of the discreet numbered markers, or choose an object below the image. On narrow screens, swipe sideways to explore the photograph.</p>
+<main>
+<section aria-label="Church photograph and clickable objects">
+<div class="photo-shell">
+<div class="photo-viewport" id="photo-viewport" role="region" tabindex="0" aria-label="Pan horizontally to inspect high altar photograph">
+<div class="photo-canvas" id="photo-canvas">
+<img id="altar-photo" alt="Photograph of the high altar of Brompton Oratory, with altar crucifix, candlesticks, ornamental retable, altar steps and communion rail" width="4797" height="3219" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/The_High_Altar_-_geograph.org.uk_-_6213275.jpg/1280px-The_High_Altar_-_geograph.org.uk_-_6213275.jpg" loading="eager" decoding="async">
+<div class="photo-failed" role="status">The source photograph could not load. You can still select objects using the list below, or <a href="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg" target="_blank" rel="noopener">open the original photograph</a>.</div>
+<div id="hotspots"></div>
+</div>
+</div>
+<div class="photobar">
+<span>High Altar · actual photograph, July 2019 · not a reconstruction or Mass in progress</span>
+<a href="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg" target="_blank" rel="noopener">Anthony O'Neil · CC BY-SA 2.0 ↗</a>
+</div>
+</div>
+<details class="other"><summary>Choose an object by name</summary><div class="choices" id="object-choices"></div></details>
+</section>
+<aside class="info" id="info" aria-label="Selected object and questions" aria-live="polite">
+<div class="intro-card" id="intro-card"><div class="state">Living glossary · Phase 1</div><h2>Look closer</h2><p>Choose an object in the photograph to identify it and explore the questions it raises.</p><p>This is the object-discovery pilot. Detailed answers will be added after source research and approval.</p></div>
+<div id="object-card" hidden>
+<div class="row"><div class="state" id="object-state"></div><button type="button" class="close" id="close-card" aria-label="Close object">Close ×</button></div>
+<h2 id="object-title"></h2>
+<div class="definition" id="definition"></div>
+<div class="question-list" id="question-list"><h3>Questions to explore</h3><div id="question-items"></div><button type="button" class="more" id="more-questions" hidden>More questions ↓</button></div>
+<div id="question-detail" hidden><button type="button" class="back" id="back-to-object">← Questions</button><h3 id="question-title"></h3><div class="pill" id="question-type"></div><div class="held">This question is indexed for Phase 1.5 source research. A verified answer has not yet been published; the glossary definition above remains available.</div></div>
+<p class="meta-link" id="canonical-link"></p>
+</div>
+</aside>
+</main>
+<footer>Research-only photographic pilot; six visually identified parent objects, not a complete model of the church. Object positions are provisional editor coordinates awaiting phone and desktop tap review. Dictionary text is read from the existing Ad Orientem G### registry. The canonical glossary, Formation and Mass reader remain unchanged. This photograph is reused under <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">Creative Commons Attribution–ShareAlike 2.0</a> with source and author credit, and adaptation limited to an interactive overlay; neither the photographer nor the church endorses this prototype.</footer>
+</div>
+<noscript><div class="noscript">JavaScript is required to select objects. The photograph and its source remain accessible above.</div></noscript>
+<script>
+(function(){
+"use strict";
+// Positions are normalized for the *exact* Geograph 4797x3219 photo; never reuse on other viewpoints.
+const SPOTS=[
+{id:"AL01",g:"G404",title:"High altar",n:1,x:50.2,y:66.9,match:"D"},
+{id:"AL06",g:"G079",title:"Altar crucifix",n:2,x:50.0,y:48.6,match:"R"},
+{id:"AL07",g:"G079",title:"Altar candlesticks",n:3,x:55.0,y:55.9,match:"R"},
+{id:"AL19",g:"G418",title:"Retable and altarpiece",n:4,x:50.0,y:35.0,match:"D"},
+{id:"SN02",g:"G186",title:"Communion rail",n:5,x:78.0,y:82.0,match:"D"},
+{id:"SN04",g:"G181",title:"Altar steps",n:6,x:51.0,y:74.5,match:"R"}
+];
+const $=id=>document.getElementById(id);
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,entries:new Map(),questions:[],loaded:false};
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function select(id,from){
+ const spot=SPOTS.find(x=>x.id===id);if(!spot)return;
+ state.selected=id;state.question=null;state.showAll=false;
+ if(from)state.returnFocus=from;
+ $("intro-card").hidden=true;$("object-card").hidden=false;
+ $("object-state").textContent="Object "+spot.n+" · "+(spot.match==="D"?"Dictionary entry":"Related dictionary entry");
+ $("object-title").textContent=spot.title;
+ $("question-detail").hidden=true;$("question-list").hidden=false;
+ document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
+ buildDefinition(spot);renderQuestions();$("object-title").setAttribute("tabindex","-1");$("object-title").focus({preventScroll:true});
+ if(window.innerWidth<930)$("info").scrollIntoView({block:"nearest",behavior:"auto"});
+}
+function buildDefinition(spot){
+ const e=state.entries.get(spot.g);
+ let label=e?.labels?.en||"Related glossary entry";
+ let definition=e?.short_definition?.en||"The canonical glossary entry is not available on this connection.";
+ if(spot.match==="R"){
+   $("definition").innerHTML='<small>Related concept: '+esc(label)+' · '+esc(spot.g)+'</small>'+esc(definition)+'<p class="related">This is a related concept, not yet a separately approved definition of '+esc(spot.title.toLowerCase())+'.</p>';
+ }else{
+   $("definition").innerHTML='<small>Dictionary · '+esc(label)+' · '+esc(spot.g)+'</small>'+esc(definition);
+ }
+ $("canonical-link").innerHTML='Source record: <a href="../../data/glossary/concepts-'+(Number(spot.g.slice(1))<=150?"001-150":Number(spot.g.slice(1))<=300?"151-300":"301-450")+'.v1.json" target="_blank" rel="noopener">'+esc(spot.g)+'</a> · <span>existing canonical glossary</span>';
+}
+function buildQuestionButton(q){
+ const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
+ const l=document.createElement("span");l.textContent=q.question.en;const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
+ b.onclick=()=>{state.question=q.id;$("question-list").hidden=true;$("question-detail").hidden=false;$("question-title").textContent=q.question.en;$("question-type").textContent=q.category_label||q.category;$("back-to-object").focus({preventScroll:true});};
+ return b;
+}
+function renderQuestions(){
+ const all=state.questions.filter(q=>q.primary_object_id===state.selected);
+ const shown=state.showAll?all:all.slice(0,4);
+ $("question-items").replaceChildren(...shown.map(buildQuestionButton));
+ $("more-questions").hidden=all.length<=4;
+ $("more-questions").textContent=state.showAll?"Show fewer ↑":"More questions ("+(all.length-4)+") ↓";
+ if(!all.length){
+  $("question-items").textContent=state.loaded?"Questions pending editorial reconciliation.":"Loading existing question records…";
+ }
+}
+function closeCard(){
+ state.selected=null;state.question=null;state.returnFocus=state.returnFocus||$("object-choices");
+ $("intro-card").hidden=false;$("object-card").hidden=true;
+ document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed","false"));
+ let previous=state.returnFocus;
+ if(previous&&previous.isConnected&&typeof previous.focus==="function")previous.focus({preventScroll:true});
+ else $("photo-viewport").focus({preventScroll:true});
+}
+for(const spot of SPOTS){
+ const b=document.createElement("button");b.type="button";b.className="marker";b.dataset.object=spot.id;b.style.left=spot.x+"%";b.style.top=spot.y+"%";b.title=spot.title;b.setAttribute("aria-label",spot.title);b.setAttribute("aria-pressed","false");b.textContent=spot.n;
+ const label=document.createElement("span");label.className="marker-label";label.textContent=spot.title;label.setAttribute("aria-hidden","true");b.appendChild(label);
+ b.onclick=()=>select(spot.id,b);$("hotspots").appendChild(b);
+ const c=document.createElement("button");c.type="button";c.textContent=spot.title;c.onclick=()=>select(spot.id,c);$("object-choices").appendChild(c);
+}
+$("close-card").onclick=closeCard;
+$("back-to-object").onclick=()=>{state.question=null;$("question-detail").hidden=true;$("question-list").hidden=false;$("question-items").querySelector("button")?.focus({preventScroll:true});};
+$("more-questions").onclick=()=>{state.showAll=!state.showAll;renderQuestions();$("more-questions").focus({preventScroll:true});};
+$("show-markers").onclick=()=>{
+ state.markers=!state.markers;$("show-markers").setAttribute("aria-pressed",String(state.markers));$("show-markers").textContent=state.markers?"Objects visible":"Show objects";
+ $("hotspots").hidden=!state.markers;
+};
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape"){if(state.question){$("back-to-object").click();}else if(state.selected){closeCard();}}
+});
+$("altar-photo").onerror=()=>{$("photo-canvas").classList.add("image-failed");};
+$("photo-viewport").scrollLeft=($("photo-viewport").scrollWidth-$("photo-viewport").clientWidth)/2;
+window.addEventListener("resize",()=>{if(!state.selected&&window.innerWidth<600){$("photo-viewport").scrollLeft=($("photo-viewport").scrollWidth-$("photo-viewport").clientWidth)/2;}});
+async function loadCanon(){
+ const files=["001-150","151-300","301-450"];
+ const outcome=await Promise.allSettled([
+  ...files.map(s=>fetch("../../data/glossary/concepts-"+s+".v1.json").then(r=>{if(!r.ok)throw Error("Glossary HTTP "+r.status);return r.json();})),
+  fetch("PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Questions HTTP "+r.status);return r.json();})
+ ]);
+ outcome.slice(0,3).forEach(x=>{if(x.status==="fulfilled"){(x.value.entries||[]).forEach(e=>state.entries.set(e.id,e));}});
+ if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];}
+ state.loaded=true;
+ if(state.selected){buildDefinition(SPOTS.find(x=>x.id===state.selected));renderQuestions();}
+}
+loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
+window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
+ status:()=>({hotspots:SPOTS.length,selected:state.selected,question:state.question,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ select:id=>select(id,null)
+});
+})();
+</script>
+</body>
+</html>
