@@ -102,7 +102,7 @@ try{
   "Silence entry must remove prayer controls, not start a countdown");
  assert.equal(await page.locator(sel+" .aoDevoSequenceTimeline").count(),0);
  assert.equal(await page.locator(sel+" [data-p435930-timer]").count(),0);
- const noChrome=await page.locator(sel+" .aoAdorationQuietScreen").evaluate(el=>{
+ const noChrome=await page.locator(sel+".aoAdorationQuietScreen").evaluate(el=>{
   const r=el.getBoundingClientRect(),center=document.elementFromPoint(innerWidth/2,innerHeight-32);
   return {fixed:getComputedStyle(el).position==="fixed",left:r.left,top:r.top,bottom:r.bottom,right:r.right,
    viewport:[innerWidth,innerHeight],hit:el.contains(center)||center===el,
