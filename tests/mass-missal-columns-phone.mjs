@@ -136,6 +136,8 @@ try{
   });
   assert.ok(paten.text && (lang==="fr"?/patène/.test(paten.text):/Paten/i.test(paten.text)),
     "Source rubric must be rendered from the selected existing English/French witness");
+  assert.ok(paten.text.startsWith(lang==="fr"?"Fait":"Makes"),
+    "Book must use the selected sentence-case EN/FR source, not uppercase English donor");
   assert.equal(paten.secondary,undefined,"English square-bracket directions cannot masquerade as Latin");
   assert.equal(paten.witness,"EXISTING_SOURCE_VERNACULAR_RUBRIC");
   assert.equal(paten.expanded,false,"Source rubric must not be a competing tappable paragraph");
