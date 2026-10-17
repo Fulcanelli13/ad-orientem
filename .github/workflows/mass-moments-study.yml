@@ -15,6 +15,9 @@ on:
       - 'src/learn/mass-explorer-published-prayer-context.js'
       - 'src/learn/mass-explorer-prayer-readings.js'
       - 'src/learn/mass-explorer-selected-calendar-proper.js'
+      - 'src/mass/preflight-study-proper.js'
+      - 'src/mass/browser-entry.js'
+      - 'tests/mass-explorer-preflight-proper.mjs'
       - 'src/calendar/print-proper.js'
       - 'tests/mass-explorer-selected-calendar-proper.mjs'
       - 'data/learn/mass-explorer-prayer-readings.v1.json'
@@ -56,6 +59,7 @@ jobs:
       - run: node tests/mass-explorer-published-prayer-context.mjs
       - run: node tests/mass-explorer-84-prayer-readings.mjs
       - run: node tests/mass-explorer-selected-calendar-proper.mjs
+      - run: node tests/mass-explorer-preflight-proper.mjs
       - run: node tests/mass-explorer-study-publication.mjs
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
