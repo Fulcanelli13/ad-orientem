@@ -44,7 +44,7 @@ const allowedImageUrl = input => {
   return u.protocol==="https:" && (u.hostname==="images.metmuseum.org"||u.hostname==="collectionapi.metmuseum.org");
 };
 async function request(url) {
-  const result=await fetch(url,{signal:AbortSignal.timeout(45000),headers:{"user-agent":"AdOrientemOpenAccessAcquisition/1.0"}});
+  const result=await fetch(url,{signal:AbortSignal.timeout(45000),headers:{"user-agent":"AdOrientemSacredArtResearch/1.0 (https://github.com/Fulcanelli13/ad-orientem)"}});
   if(!result.ok)throw Error("HTTP "+result.status+" for "+url);
   return result;
 }
@@ -104,6 +104,65 @@ async function acquireMet(work) {
   await writeFile(join(outputDir,"met-438724-phone-review.html"),html);
   return {artworkId:work.artworkId,stage:"STAGED_NOT_PUBLISHED",sha256:hash,...dimensions,bytes:data.length};
 }
+
+async function acquireCommons(work) {
+  const api=new URL("https://commons.wikimedia.org/w/api.php");
+  const params={action:"query",format:"json",formatversion:"2",prop:"imageinfo",titles:work.commonsTitle,iiprop:"url|size|sha1|extmetadata"};
+  for(const [k,v] of Object.entries(params))api.searchParams.set(k,v);
+  const response=await request(api.toString());
+  const payload=await response.json();
+  const page=payload?.query?.pages?.[0];
+  assert(page && page.missing!==true,"No exact Commons file page");
+  assert.equal(page.title.replaceAll("_"," "),work.commonsTitle.replaceAll("_"," "),"Commons title normalization mismatch");
+  const info=page.imageinfo?.[0];
+  assert(info && info.mime==="image/jpeg","Commons source is not an original JPEG");
+  const license=String(info.extmetadata?.LicenseShortName?.value||"");
+  const copyright=String(info.extmetadata?.Copyrighted?.value||"");
+  assert(/public.domain/i.test(license),"Commons file has no public-domain license declaration");
+  assert(!copyright || /^false$/i.test(copyright.replace(/<[^>]+>/g,"").trim()),"Commons claims file is copyrighted");
+  assert(info.width>=2000 && info.height>=2000,"Commons original lacks premium image resolution");
+  assert(info.url && new URL(info.url).protocol==="https:" && new URL(info.url).hostname==="upload.wikimedia.org",
+    "Commons did not return an approved media host");
+  const imgResponse=await request(info.url);
+  assert(new URL(imgResponse.url).hostname==="upload.wikimedia.org","Commons image redirected away from media host");
+  assert(/image\/jpeg/i.test(imgResponse.headers.get("content-type")||""),"Commons original is not JPEG bytes");
+  const data=Buffer.from(await imgResponse.arrayBuffer());
+  assert(data.length>100000 && data.length<30000000,"Commons master bytes outside allowed bounds");
+  const dimensions=jpegDimensions(data);
+  assert.equal(dimensions.width,info.width,"Commons pixel width changed");
+  assert.equal(dimensions.height,info.height,"Commons pixel height changed");
+  const sha1=createHash("sha1").update(data).digest("hex");
+  if(/^[0-9a-f]{40}$/.test(info.sha1||""))assert.equal(sha1,info.sha1,"Commons source SHA-1 mismatch");
+  const sha256=createHash("sha256").update(data).digest("hex");
+  const basename=work.artworkId==="ART-eter-aul-ubens-doration-of-the-agi"
+    ? "commons-rubens-prado-adoration-original.jpg":"commons-wolffort-ascension-original.jpg";
+  const preferredReviewImageKey=freeze.approved.find(x=>x.artworkId===work.artworkId)?.preferredImageKey??null;
+  const preferredSha=preferredReviewImageKey?.split("|")[2];
+  const matchedPreferred=Boolean(preferredSha&&sha256===preferredSha);
+  await writeFile(join(outputDir,basename),data);
+  const evidence={
+    schema:"AO_SACRED_ART_STAGED_COMMONS_SOURCE_V1",
+    artworkId:work.artworkId,approvedPhysicalOriginal:true,
+    original:{title:work.title,artist:work.artist,collectionSource:work.sourceObjectUrl,accession:work.verifiedMuseumAccession},
+    preferredReviewImageKey,sourceShaMatchesCuratorSelectedImage:matchedPreferred,
+    technicalFile:{name:basename,sha256,sha1,bytes:data.length,...dimensions,downloadedFrom:info.url},
+    publishedSource:{filePage:work.filePageUrl,apiUrl:api.toString(),licenseDeclaration:license,
+      rightsEvidenceUrl:work.filePageUrl,rightsLayer:"PD-Art historical reproduction declaration from Commons; jurisdiction review still required"},
+    researchPlacement:{date:work.researchDate,subject:work.subject,feast:work.feast},
+    selectionState:"STAGED_FOR_INDEPENDENT_OBJECT_AND_PHONE_QA",
+    identityEvidenceNeedsFinalReview:true,
+    rightsJurisdictionCheckComplete:false,
+    curatorPreferredImageMatchNeedsReview:!matchedPreferred,
+    cropAndFrameFreeVerified:false,independentPhoneVisualQaVerified:false,
+    actual1962ProperAndGospelVerified:false,certifiedForProduction:false
+  };
+  const stem=basename.replace(/\.jpg$/,"");
+  await writeFile(join(outputDir,stem+"-source-evidence.json"),JSON.stringify(evidence,null,2)+"\n");
+  const html='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ad Orientem · Technical visual check</title><style>body{background:#090d13;color:#ede6d9;font:16px Georgia,serif;margin:0;padding:16px}main{max-width:900px;margin:auto}img{display:block;max-width:100%;max-height:85vh;margin:auto}p{line-height:1.5}small{color:#aaa092}</style><main><small>TECHNICAL SOURCE PREVIEW · NOT RELEASED</small><h1>'+esc(work.title)+'</h1><img src="'+esc(basename)+'" alt="'+esc(work.title)+'"><p>'+esc(work.artist)+' · '+esc(work.feast)+' · '+dimensions.width+' × '+dimensions.height+' px</p><p>Verify physical original, file crop, color, sharpness, phone view and jurisdictional reuse before production.</p><small>SHA-256 '+sha256+'</small></main></html>';
+  await writeFile(join(outputDir,stem+"-phone-review.html"),html);
+  return {artworkId:work.artworkId,stage:"STAGED_NOT_PUBLISHED",sha256,...dimensions,bytes:data.length};
+}
+
 async function main() {
   assert.equal(batch.works.length,5);
   assert.equal(certified.mediaReleaseCount,0);
@@ -118,6 +177,7 @@ async function main() {
   const statuses=[];
   for(const work of batch.works) {
     if(work.provider==="MET_OPEN_ACCESS")statuses.push(await acquireMet(work));
+    else if(work.provider==="WIKIMEDIA_COMMONS_PD_ART")statuses.push(await acquireCommons(work));
     else statuses.push({artworkId:work.artworkId,stage:"HOLD",reason:work.note});
   }
   await writeFile(join(outputDir,"first-five-status.json"),JSON.stringify({asOf:batch.asOf,results:statuses,certifiedForProduction:0},null,2)+"\n");
