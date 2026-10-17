@@ -76,7 +76,7 @@ try{
     const topicScripture=page.locator('#ao-mass-formation-root [data-ao-mass-formation-anchor="MFS05"]');
     await topicScripture.click();
     await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:12000});
-    assert.match(await page.locator("#ao-scripture-overlay .aoScriptureContextTitle").innerText(),/Romans 12:1/);
+    assert.match(await page.locator("#ao-scripture-overlay .aoScriptureReading h3").innerText(),/Romans 12:1/);
     await page.locator('#ao-scripture-overlay [data-scripture-close]').click();
     await page.locator('#ao-mass-formation-root [data-ao-mf-close]').click();
     await page.waitForFunction(()=>globalThis.AO_MASS_EXPLORER_V1?.status?.()?.indexView==="themes"&&
