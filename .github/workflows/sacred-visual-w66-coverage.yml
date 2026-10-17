@@ -15,6 +15,8 @@ on:
       - "data/research/sacred-art-class-i-53-unrejected-research-leads-20261017.v1.json"
       - "data/calendar/sacred-art-certified-media.v1.json"
       - "src/calendar/sacred-art-release-selector.js"
+      - "src/calendar/sacred-art-selected-proper-bridge.js"
+      - "tests/sacred-art-calendar-selected-proper-bridge.mjs"
       - "tests/sacred-art-class-i-53-release-gates.mjs"
   workflow_dispatch:
 
@@ -36,3 +38,4 @@ jobs:
           node tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs
           node tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs
           node tests/sacred-art-class-i-53-release-gates.mjs
+          node tests/sacred-art-calendar-selected-proper-bridge.mjs
