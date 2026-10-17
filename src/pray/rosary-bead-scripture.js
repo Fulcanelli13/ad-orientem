@@ -109,7 +109,7 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
  const disclosure=doc.createElement("details");
  disclosure.className="aoRosaryBeadSourceNotice";
  const provenance=doc.createElement("summary");
- provenance.textContent=french?"Source du texte":"About this text";
+ provenance.textContent=french?"Source · non collationnée":"Source · uncollated";
  const sourceDetail=doc.createElement("p");
  sourceDetail.textContent=french
    ?"Transcription de la source, collation imprimée en attente."
