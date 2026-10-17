@@ -470,7 +470,7 @@ try{
   const miningLink=page.locator("[data-scripture-editorial-mine]");
   await miningLink.waitFor({state:"visible",timeout:12000});
   assert.match(await miningLink.getAttribute("href"),/module=other/);
-  assert.match(await miningLink.getAttribute("href"),/reference=Luke%201%3A28/);
+  assert.equal(new URL(await miningLink.getAttribute("href")).searchParams.get("reference"),"Luke 1:28");
   assert.deepEqual(pageErrors,[],"Unexpected research link browser errors");
  console.log("PASS Scripture mobile entry, 73 books, bilingual sources, bookmarks, search, Rosary cross-links, accessibility, close and isolation");
 }finally{
