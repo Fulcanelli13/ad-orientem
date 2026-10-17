@@ -571,6 +571,42 @@ try{
 
 
 
+
+  // The proposed end-to-end reading remains an in-workbench source proof,
+  // not a separate extended Bible mode or a new user-facing app.
+  await page.locator("#historiaProofToggle").click();
+  await page.locator("#historiaProof").waitFor({state:"visible",timeout:20000});
+  assert.equal(await page.locator("#historiaProofMovement option").count(),37);
+  await page.locator("#historiaProofMovement").selectOption("HS-M24");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:30000});
+  assert.match(await page.locator("#historiaProofText").innerText(),/I am the Resurrection and the Life/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/John 11:45–53/);
+  assert.ok(await page.locator("#historiaProofText .proofGap").count()>=1,
+    "Discontinuous source ranges must display omission cues");
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),1,
+    "The plot after Lazarus remains a visibly held source proposal, not silently stitched into Scripture");
+  await page.locator("#historiaProofBridges").uncheck();
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("0 proposed source bridge(s) visible"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),0);
+  await page.locator("#historiaProofBridges").check();
+  await page.locator("#historiaProofEdition").selectOption("dr-challoner");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("Douay–Rheims"),null,{timeout:25000});
+  assert.match(await page.locator("#historiaProofText").innerText(),/I am the resurrection and the life/i);
+  await page.locator("#historiaProofMovement").selectOption("HS-M34");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.match(await page.locator("#historiaProofText").innerText(),/Acts 28:16/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Acts 28:23–31/);
+  assert.doesNotMatch(await page.locator("#historiaProofText").innerText(),/Philippi|Philippian jailer/i);
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),2);
+  assert.deepEqual(pageErrors,[],"Research story proof must not disrupt the established mobile Scripture workbench");
+  await page.locator("#historiaProofToggle").click();
+  assert.equal(await page.locator("#historiaProof").isVisible(),false);
+  assert.equal(await page.locator("#historiaUnitControls").isVisible(),true);
+
   await page.locator("#module").selectOption("novena");
   await page.locator("#linkedObject option[value='annunciation']").waitFor({state:"attached",timeout:12000});
   await page.locator("#linkedObject").selectOption("annunciation");
