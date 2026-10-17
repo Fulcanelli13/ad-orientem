@@ -1,0 +1,323 @@
+{
+  "schema": "AO_P1_CANONICAL_COMMON_APP_SOURCE_CROSSWALK_V1",
+  "asOf": "2026-10-16",
+  "scope": "DIRECT_SOURCE_IDENTITIES_NOT_PRINTED_PAGE_NAVIGATION",
+  "message": "The same 1962 Common can be represented by one source family and distinct variants. The canonical source is the existing Ad Orientem ProperResolver, never a new prayer copy.",
+  "checkedAgainst": "globalThis.AO_RUNTIME_V8.resolver.properResolver.resolveSource(path,lang,diagnostic)",
+  "coreReader": "src/mass/proper-reader-slots.js",
+  "appEvidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
+  "vendorSourceShape": "https://github.com/DivinumOfficium/divinum-officium/tree/master/web/www/horas/Latin/Commune",
+  "sourceStatusDefinitions": {
+    "VERIFIED": "Current app ProperResolver yielded source-owned Oratio, Secreta and Postcommunio in la/en/fr; not approved for an actual saint feast.",
+    "PENDING": "Upstream structural code exists or is suspected but direct app-resolver trilingual content not yet checked."
+  },
+  "rows": [
+    {
+      "researchId": "p1:index:1962:bishop_and_confessor",
+      "printedFamilyId": "commune-print:confessor-pontiff",
+      "variant": "FIRST_MASS",
+      "candidateCanonicalSourcePath": "Commune/C4",
+      "inAppSourceStatus": "ACTUAL_RUNTIME_TRILINGUAL_SEVEN_SECTIONS",
+      "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
+      "sourceSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Evangelium",
+        "Secreta",
+        "Communio",
+        "Postcommunio"
+      ],
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "contentUsedAsPublishedPrayer": false,
+      "interpolationApproved": false,
+      "route": null,
+      "approvedForNewSaintMass": false,
+      "actualSaintChoice": null,
+      "sourceIdentityCertified": true,
+      "remainingGate": "Before use require complete named 1962 Mass, language consistency, grammatical substitution and liturgical permission; source verification alone never authorizes Newman or changes Mass.",
+      "directLanguageSectionCoverage": {
+        "la": 7,
+        "en": 7,
+        "fr": 7
+      },
+      "vernacularCompletenessCertified": true,
+      "sharedFamilyForIncompleteLanguageSections": null,
+      "legitimateVariantSections": null
+    },
+    {
+      "researchId": "p1:index:1962:bishop_and_confessor_second_mass",
+      "printedFamilyId": "commune-print:confessor-pontiff",
+      "variant": "ALTERA_MISSA",
+      "candidateCanonicalSourcePath": "Commune/C4-1",
+      "inAppSourceStatus": "ACTUAL_RUNTIME_TRILINGUAL_SEVEN_SECTIONS",
+      "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
+      "sourceSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Evangelium",
+        "Secreta",
+        "Communio",
+        "Postcommunio"
+      ],
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "contentUsedAsPublishedPrayer": false,
+      "interpolationApproved": false,
+      "route": null,
+      "approvedForNewSaintMass": false,
+      "actualSaintChoice": null,
+      "sourceIdentityCertified": true,
+      "remainingGate": "Before use require complete named 1962 Mass, language consistency, grammatical substitution and liturgical permission; source verification alone never authorizes Newman or changes Mass.",
+      "directLanguageSectionCoverage": {
+        "la": 7,
+        "en": 7,
+        "fr": 7
+      },
+      "vernacularCompletenessCertified": true,
+      "sharedFamilyForIncompleteLanguageSections": null,
+      "legitimateVariantSections": null
+    },
+    {
+      "researchId": "commune:1962:doctor_pontiff",
+      "printedFamilyId": "commune-print:doctorum",
+      "variant": "DOCTOR_PONTIFF",
+      "candidateCanonicalSourcePath": "Commune/C4a",
+      "inAppSourceStatus": "ACTUAL_RUNTIME_TRILINGUAL_SEVEN_SECTIONS",
+      "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
+      "sourceSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Evangelium",
+        "Secreta",
+        "Communio",
+        "Postcommunio"
+      ],
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "contentUsedAsPublishedPrayer": false,
+      "interpolationApproved": false,
+      "route": null,
+      "approvedForNewSaintMass": false,
+      "actualSaintChoice": null,
+      "sourceIdentityCertified": true,
+      "remainingGate": "Before use require complete named 1962 Mass, language consistency, grammatical substitution and liturgical permission; source verification alone never authorizes Newman or changes Mass.",
+      "directLanguageSectionCoverage": {
+        "la": 7,
+        "en": 7,
+        "fr": 7
+      },
+      "vernacularCompletenessCertified": true,
+      "sharedFamilyForIncompleteLanguageSections": null,
+      "legitimateVariantSections": null
+    },
+    {
+      "researchId": "commune:1962:confessor_non_pontiff",
+      "printedFamilyId": "commune-print:confessor-non-pontiff",
+      "variant": "FIRST_MASS",
+      "candidateCanonicalSourcePath": "Commune/C5",
+      "inAppSourceStatus": "ACTUAL_RUNTIME_TRILINGUAL_SEVEN_SECTIONS",
+      "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
+      "sourceSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Evangelium",
+        "Secreta",
+        "Communio",
+        "Postcommunio"
+      ],
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "contentUsedAsPublishedPrayer": false,
+      "interpolationApproved": false,
+      "route": null,
+      "approvedForNewSaintMass": false,
+      "actualSaintChoice": null,
+      "sourceIdentityCertified": true,
+      "remainingGate": "Before use require complete named 1962 Mass, language consistency, grammatical substitution and liturgical permission; source verification alone never authorizes Newman or changes Mass.",
+      "directLanguageSectionCoverage": {
+        "la": 7,
+        "en": 7,
+        "fr": 7
+      },
+      "vernacularCompletenessCertified": true,
+      "sharedFamilyForIncompleteLanguageSections": null,
+      "legitimateVariantSections": null
+    },
+    {
+      "researchId": "p1:index:1962:confessor_not_a_bishop_second_mass",
+      "printedFamilyId": "commune-print:confessor-non-pontiff",
+      "variant": "ALTERA_MISSA",
+      "candidateCanonicalSourcePath": "Commune/C5-1",
+      "inAppSourceStatus": "ACTUAL_RUNTIME_TRILINGUAL_SEVEN_SECTIONS",
+      "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
+      "sourceSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Evangelium",
+        "Secreta",
+        "Communio",
+        "Postcommunio"
+      ],
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "contentUsedAsPublishedPrayer": false,
+      "interpolationApproved": false,
+      "route": null,
+      "approvedForNewSaintMass": false,
+      "actualSaintChoice": null,
+      "sourceIdentityCertified": true,
+      "remainingGate": "Before use require complete named 1962 Mass, language consistency, grammatical substitution and liturgical permission; source verification alone never authorizes Newman or changes Mass.",
+      "directLanguageSectionCoverage": {
+        "la": 7,
+        "en": 7,
+        "fr": 7
+      },
+      "vernacularCompletenessCertified": true,
+      "sharedFamilyForIncompleteLanguageSections": null,
+      "legitimateVariantSections": null
+    },
+    {
+      "researchId": "commune:1962:doctor_non_pontiff",
+      "printedFamilyId": "commune-print:doctorum",
+      "variant": "DOCTOR_NON_PONTIFF",
+      "candidateCanonicalSourcePath": "Commune/C5a",
+      "inAppSourceStatus": "INTERNAL_VIRTUAL_COMMON_SOURCE_COMPOSITION_VERIFIED_LATIN_PARITY",
+      "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
+      "sourceSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Evangelium",
+        "Secreta",
+        "Communio",
+        "Postcommunio"
+      ],
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "contentUsedAsPublishedPrayer": false,
+      "interpolationApproved": false,
+      "route": null,
+      "approvedForNewSaintMass": false,
+      "actualSaintChoice": null,
+      "sourceIdentityCertified": true,
+      "remainingGate": "Reader integration must consume derived source-map aliases rather than import duplicate text. No Newman Mass selected; 1962 print/legal coverage and permission still require adjudication.",
+      "directLanguageSectionCoverage": {
+        "la": 7,
+        "en": 2,
+        "fr": 2
+      },
+      "vernacularCompletenessCertified": true,
+      "sharedFamilyForIncompleteLanguageSections": "Commune/C4a",
+      "legitimateVariantSections": [
+        "Secreta",
+        "Postcommunio"
+      ],
+      "verifiedLatinInheritedSharedSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Graduale",
+        "GradualeP",
+        "Tractus",
+        "Evangelium",
+        "Offertorium",
+        "Communio"
+      ],
+      "verifiedBorrowedVernacularCount": 18,
+      "verifiedBorrowedLanguages": [
+        "en",
+        "fr"
+      ],
+      "sourceCompositionOwner": "src/calendar/p1-doctor-common-inheritance.js",
+      "sourceCompositionTest": "tests/calendar-p1-doctor-common-inheritance.mjs",
+      "liveCompositionEvidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907380467",
+      "inheritedLanguageSectionsComplete": true,
+      "languageCompletenessCertainty": "SOURCE_COMPOSITION_ONLY_NOT_LITURGICAL_FORMULARY_APPROVAL",
+      "nonPontiffVariantPrayersPreserved": true,
+      "collectDuplicationException": "Pinned C5a Latin Collect prints identical second occurrence after exact '(sed communi Summorum Pontificum)' rubric, with cœlis/cælis variation; the source-verified inherited C4a Collect is identical to the genuine first Collect. Other unknown extra prayer held."
+    },
+    {
+      "researchId": "p1:index:1962:abbots",
+      "printedFamilyId": "commune-print:abbatum",
+      "variant": "ABBOT",
+      "candidateCanonicalSourcePath": "Commune/C5b",
+      "inAppSourceStatus": "ACTUAL_RUNTIME_TRILINGUAL_SEVEN_SECTIONS",
+      "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38902782888",
+      "sourceSections": [
+        "Introitus",
+        "Oratio",
+        "Lectio",
+        "Evangelium",
+        "Secreta",
+        "Communio",
+        "Postcommunio"
+      ],
+      "languages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "contentUsedAsPublishedPrayer": false,
+      "interpolationApproved": false,
+      "route": null,
+      "approvedForNewSaintMass": false,
+      "actualSaintChoice": null,
+      "sourceIdentityCertified": true,
+      "remainingGate": "Before use require complete named 1962 Mass, language consistency, grammatical substitution and liturgical permission; source verification alone never authorizes Newman or changes Mass.",
+      "directLanguageSectionCoverage": {
+        "la": 7,
+        "en": 7,
+        "fr": 7
+      },
+      "vernacularCompletenessCertified": true,
+      "sharedFamilyForIncompleteLanguageSections": null,
+      "legitimateVariantSections": null
+    }
+  ],
+  "newmanExample": {
+    "saintId": "saint.john-henry-newman",
+    "possibleIds": [
+      "commune:1962:doctor_non_pontiff",
+      "commune:1962:confessor_non_pontiff"
+    ],
+    "permittedFormularyChoice": null,
+    "validDateSpecificMass": false,
+    "reason": "No Common may be auto-selected from a saint's later Doctor title alone.",
+    "venacularSourceCompositionReady": true
+  },
+  "notSourceOfLaw": true,
+  "notRuntimeImport": true,
+  "allSevenSourcePathsFound": true,
+  "sourcePathsVerified": 7,
+  "directTrilingualSevenSectionPaths": 6,
+  "sourcePathsNeedingInheritedLanguageSections": 0,
+  "keyDifference": "Original Commune Doctorum uses C4a Bishop-Doctor and C5a non-Bishop Doctor; C5a shares readings/collect/chants with C4a but differs in Secret and Postcommunion. The app's direct English/French C5a sources only expose those distinct orations.",
+  "status": "SEVEN_COMMON_APP_SOURCES_CONFIRMED_SEVEN_COMPLETE_AFTER_SOURCE_PARITY_INHERITANCE",
+  "allSevenSectionSourceCompletenessVerified": 7,
+  "sourcePathsWithVerifiedInheritance": 1,
+  "distinctSharedDoctorVernacularRecoveries": 18
+}

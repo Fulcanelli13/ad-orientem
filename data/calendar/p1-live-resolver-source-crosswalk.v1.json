@@ -1,0 +1,149 @@
+{
+  "schema": "AO_P1_ACTUAL_APP_1962_PROPER_RESOLVER_WITNESS_V1",
+  "asOf": "2026-10-16",
+  "evidenceKind": "PLAYWRIGHT_ACTUAL_UNMODIFIED_AO_RUNTIME_V8_RESOLVE_DAY",
+  "jobUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38899362197",
+  "sourceTest": "tests/calendar-p1-live-1962-source-discovery.mjs",
+  "sourceOfTruth": "Existing Ad Orientem production resolver; browser output is a source identity and language-availability witness, not rights/permission or full printed-edition collation.",
+  "status": "ACTUAL_APP_1962_PATHS_AND_ALL_SIX_READ_ONLY_PARAGRAPH_TARGETS_VERIFIED_ROUTER_NOT_IMPLEMENTED",
+  "observations": [
+    {
+      "date": "2026-10-09",
+      "principalId": "sancti:10-09:3:w",
+      "properSourcePath": "Sancti/10-09",
+      "principalPath": "Sancti/10-09",
+      "rank": 3,
+      "commemorations": [
+        {
+          "id": "sancti:10-09t:4:r",
+          "path": "Sancti/10-09t",
+          "prayerSourcePath": "Sancti/10-09t",
+          "title": "St. Dionysius and companions"
+        }
+      ],
+      "collects": 2,
+      "secrets": 2,
+      "postcommunions": 2,
+      "languageAvailability": "ALL_6_PRAYER_ROWS_LAT_EN_FR_PRESENT",
+      "orationsAppliedForSpecificMassForm": false,
+      "sourceRowIdsExposed": false
+    },
+    {
+      "date": "2027-10-09",
+      "principalId": "sancti:10-09:3:w",
+      "properSourcePath": "Sancti/10-09",
+      "principalPath": "Sancti/10-09",
+      "rank": 3,
+      "commemorations": [
+        {
+          "id": "sancti:10-09t:4:r",
+          "path": "Sancti/10-09t",
+          "prayerSourcePath": "Sancti/10-09t",
+          "title": "St. Dionysius and companions"
+        }
+      ],
+      "collects": 2,
+      "secrets": 2,
+      "postcommunions": 2,
+      "languageAvailability": "ALL_6_PRAYER_ROWS_LAT_EN_FR_PRESENT",
+      "orationsAppliedForSpecificMassForm": false,
+      "sourceRowIdsExposed": false
+    },
+    {
+      "date": "2026-10-15",
+      "principalId": "sancti:10-15:3:w",
+      "properSourcePath": "Sancti/10-15",
+      "rank": 3,
+      "commemorations": [],
+      "collects": 1,
+      "secrets": 1,
+      "postcommunions": 1,
+      "languageAvailability": "ALL_3_PRAYER_ROWS_LAT_EN_FR_PRESENT"
+    },
+    {
+      "date": "2026-10-03",
+      "principalId": "sancti:10-03:3:w",
+      "properSourcePath": "Sancti/10-03",
+      "rank": 3,
+      "commemorations": [],
+      "collects": 1,
+      "secrets": 1,
+      "postcommunions": 1,
+      "languageAvailability": "ALL_3_PRAYER_ROWS_LAT_EN_FR_PRESENT"
+    },
+    {
+      "date": "2026-09-23",
+      "principalId": "tempora:093-3:2:v",
+      "properSourcePath": "Tempora/093-3",
+      "rank": 2,
+      "commemorations": [
+        {
+          "id": "sancti:09-23:3:r",
+          "path": "Sancti/09-23",
+          "prayerSourcePath": "Sancti/09-23",
+          "title": "St. Linus"
+        }
+      ],
+      "collects": 2,
+      "secrets": 2,
+      "postcommunions": 2,
+      "languageAvailability": "ALL_6_PRAYER_ROWS_LAT_EN_FR_PRESENT",
+      "note": "Source app differs from the earlier editorial label tempora:Pent17-3:2:v; use observed source, not predicted identifier."
+    }
+  ],
+  "keyFindings": {
+    "liveHistoricalNineOctoberPrincipalPath": "Sancti/10-09",
+    "liveHistoricalNineOctoberCommemorationPath": "Sancti/10-09t",
+    "liveHistoricalNineOctoberCommemorationId": "sancti:10-09t:4:r",
+    "nineOctoberPrayerRowsPerYear": 6,
+    "yearsChecked": [
+      2026,
+      2027
+    ],
+    "liveObservedOptionalNewmanFormulary": null,
+    "liveCommonDoctorumResolvedPath": null,
+    "runtimeReadOnlyExactParagraphNavigationImplemented": false,
+    "formSpecificAppliedCommemorations": "INDEPENDENT_OF_READ_ONLY_REFERENCE; ACTIVE_MASS_SELECTION_PENDING",
+    "establishedMassSourceRows": "ORIGINAL_DAY_RESOLVER_INCLUDES_COMMEMORATIONS_BUT_FORM_FILTER_MAY_OMIT_IN_SUNG_MASS",
+    "outputLinkPolicy": "AD_ORIENTEM_INTERNAL_MISSAL_ONLY",
+    "runtimeSourceToReaderParagraphsVerified": 6
+  },
+  "unverified": [
+    "Exact 9 October reader-side deep-link API",
+    "Actual Reader proper paragraph IDs after source/formation projection",
+    "Exact chosen form for St Kevin's 2026 Newman High Mass",
+    "Newman proper or Doctorum Common source path",
+    "Full printed 1962 prayer text parity and redistribution rights",
+    "2020 vs 1960 and later legal permission rules"
+  ],
+  "readOnlyReaderParagraphProof": {
+    "jobUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38900302630",
+    "adapter": "src/calendar/p1-internal-missal-link-resolution.js",
+    "sourcePath": "Sancti/10-09",
+    "principal": {
+      "id": "sancti:10-09:3:w",
+      "prayerParagraphIds": [
+        "COLLECT_SET.1",
+        "SECRET_SET.1",
+        "POSTCOMMUNION_SET.1"
+      ]
+    },
+    "historicalCommemoration": {
+      "id": "sancti:10-09t:4:r",
+      "prayerSourcePath": "Sancti/10-09t",
+      "prayerParagraphIds": [
+        "COLLECT_SET.2",
+        "SECRET_SET.2",
+        "POSTCOMMUNION_SET.2"
+      ]
+    },
+    "orderedSlots": [
+      "COLLECT_SET",
+      "SECRET_SET",
+      "POSTCOMMUNION_SET"
+    ],
+    "verifiedTargets": 6,
+    "status": "SOURCE_READY_ROUTER_NOT_IMPLEMENTED",
+    "liturgyStatement": "Historical Missal references; not evidence of which prayers are recited at a selected sung Mass."
+  }
+}
