@@ -107,7 +107,7 @@ async function acquireMet(work) {
 
 async function acquireCommons(work) {
   const api=new URL("https://commons.wikimedia.org/w/api.php");
-  const params={action:"query",format:"json",formatversion:"2",prop:"imageinfo",titles:work.commonsTitle,iiprop:"url|size|sha1|extmetadata"};
+  const params={action:"query",format:"json",formatversion:"2",prop:"imageinfo",titles:work.commonsTitle,iiprop:"url|size|sha1|mime|extmetadata"};
   for(const [k,v] of Object.entries(params))api.searchParams.set(k,v);
   const response=await request(api.toString());
   const payload=await response.json();
