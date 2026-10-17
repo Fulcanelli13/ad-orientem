@@ -1408,6 +1408,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
           id:String(event.id),displayText:event.displayText,actor:event.actor,
           sourceCueId:event.sourceCueId,sourceId:event.sourceId,
           owner:event.owner,review:event.review,
+          kind:event.kind??"ACTION",
           latinTrigger:typeof event.latinTrigger==="string"?event.latinTrigger:null,
           order:Number.isInteger(event.order)?event.order:null,
           observedNow:false,
@@ -3101,7 +3102,13 @@ export function createReaderDomAdapter({
             (p.kind==="RUBRIC" || /^\s*\[/.test(String(p.primary??"")));
           const rubricDepth=mode==="MISSAL"
             ? missalRubricDetailForParagraph(p):null;
-          if(inlineRubrics?.length && !alreadyPrintedRubric){
+          // Only already-printed *actions* are suppressed. A certified
+          // persistent state that begins at the same bracketed source cue
+          // supplies a different fact and must remain visible once.
+          const shortRubrics=mode==="MISSAL"&&alreadyPrintedRubric
+            ? inlineRubrics.filter(event=>event.kind==="STATE")
+            : inlineRubrics;
+          if(shortRubrics?.length){
             const note=doc.createElement("span");
             note.className=mode==="MISSAL"?"ao-missal-inline-rubrics":"ao-canon-inline-rubrics";
             note.dataset.sourceAuthority="MR62_RITUS";
@@ -3109,9 +3116,9 @@ export function createReaderDomAdapter({
             const heading=doc.createElement("span");
             heading.className="ao-canon-inline-heading";
             const hasMinisters=mode==="MISSAL" &&
-              inlineRubrics.some(event=>event.actor!=="PRIEST");
+              shortRubrics.some(event=>event.actor!=="PRIEST");
             const hasPriest=mode==="MISSAL" &&
-              inlineRubrics.some(event=>event.actor==="PRIEST");
+              shortRubrics.some(event=>event.actor==="PRIEST");
             heading.textContent=mode==="MISSAL"
               ? (hasMinisters
                 ? (hasPriest
@@ -3122,7 +3129,7 @@ export function createReaderDomAdapter({
             const actions=doc.createElement("span");
             actions.className="ao-canon-inline-actions";
             if(mode==="MISSAL"){
-              for(const event of inlineRubrics){
+              for(const event of shortRubrics){
                 const text=doc.createElement("span");
                 text.className="ao-missal-rubric-action";
                 text.dataset.rubricId=event.id;
@@ -3131,10 +3138,10 @@ export function createReaderDomAdapter({
                 actions.append(text);
               }
             }else{
-              actions.textContent=inlineRubrics.map(event=>event.shortAction).join(" · ");
+              actions.textContent=shortRubrics.map(event=>event.shortAction).join(" · ");
             }
             note.append(heading,actions);
-            const sourceUrl=inlineRubrics[0]?.sourceUrl;
+            const sourceUrl=shortRubrics[0]?.sourceUrl;
             if(sourceUrl){
               const source=doc.createElement("a");
               source.className="ao-canon-inline-source";
