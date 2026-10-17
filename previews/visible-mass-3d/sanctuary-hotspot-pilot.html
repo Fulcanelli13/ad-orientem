@@ -510,6 +510,8 @@ function renderExactHistoricalAnswer(questionId){
  $("historical-answer-sources").replaceChildren();
  if(!note)return;
  const localized=languageView(questionId);
+ $("historical-answer-lead").lang=localized?.language==="fr"?"fr":"en";
+ $("historical-answer-context").lang=localized?.language==="fr"?"fr":"en";
  $("historical-answer-lead").textContent=localized?.answer??note.answer_en;
  $("historical-answer-context").textContent=localized?.context??note.explanation_en;
  const guard="Historic source (1907–1914), not a current rubric. Review condition: "+note.editorial_guard.replaceAll("_"," ").toLowerCase()+".";
@@ -550,6 +552,7 @@ function openQuestion(q){
  state.question=q.id;
  $("question-list").hidden=true;$("question-detail").hidden=false;
  $("question-title").textContent=questionHeading(q);
+ $("question-title").lang=languageView(q.id)?.language==="fr"?"fr":"en";
  $("question-type").textContent=q.category_label||q.category;
  renderExactHistoricalAnswer(q.id);renderPublishedReferences(q.id);
  // A hotspot or suggestion does not count as read: the original question
@@ -587,7 +590,7 @@ async function guideInit(pilot){
 function buildQuestionButton(q){
  const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
  if(findExactAnswer(q.id))b.classList.add("has-research");
- const l=document.createElement("span");l.textContent=questionHeading(q);const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
+ const l=document.createElement("span");l.textContent=questionHeading(q);l.lang=languageView(q.id)?.language==="fr"?"fr":"en";const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
  b.onclick=()=>openQuestion(q);
  return b;
 }
@@ -646,13 +649,12 @@ $("study-language").value=state.studyLang;
 $("m3-language-notice").hidden=state.studyLang!=="fr";
 $("study-language").onchange=()=>{
  state.studyLang=$("study-language").value==="fr"?"fr":"en";
- document.documentElement.lang=state.studyLang;
  $("m3-language-notice").hidden=state.studyLang!=="fr";
  if(state.selected){
   renderQuestions();
   if(state.question){
    const q=state.questions.find(q=>q.id===state.question);
-   if(q)$("question-title").textContent=questionHeading(q);
+   if(q){$("question-title").textContent=questionHeading(q);$("question-title").lang=languageView(q.id)?.language==="fr"?"fr":"en";}
    renderExactHistoricalAnswer(state.question);
   }
  }
