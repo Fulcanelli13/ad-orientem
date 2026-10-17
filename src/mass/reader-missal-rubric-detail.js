@@ -19,6 +19,12 @@ export function missalRubricDetailForParagraph(paragraph){
  const sourceCueIds=Array.isArray(paragraph?.sourceCueIds)?paragraph.sourceCueIds:[];
  const valid=events.filter(x=>x?.observedNow===false &&
    EVIDENCE.has(x.sourceId) && EVENT.test(String(x.id??"")) &&
+   ((x.sourceId==="MR62_RITUS" && x.actor==="PRIEST" &&
+     x.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC" &&
+     x.owner==="PUBLISHED_R17_MISSAL_INLINE") ||
+    (x.sourceId==="R18_SOLEMN_FORM_STATE" &&
+     x.review==="EXISTING_CERTIFIED_R18_SOLEMN_MINISTER" &&
+     x.owner==="R18_CERTIFIED_SOLEMN_MISSAL")) &&
    CUE.test(x.sourceCueId) && sourceCueIds.includes(x.sourceCueId) &&
    typeof x.displayText==="string"&&x.displayText.trim() &&
    typeof x.sourceUrl==="string"&&x.sourceUrl.startsWith("https://") &&
