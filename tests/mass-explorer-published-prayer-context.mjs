@@ -62,9 +62,9 @@ for(const [blockId,edges] of catalog.publishedPrayerContextByBlock){
 assert.equal(covered.size,19);
 assert.ok(claims.size>=9);
 assert.match(massExplorerCss(),/aoMXPrayerMeaning/);
-assert.ok(!massExplorerMomentHtml(catalog,"AO.CARD.027",{blockId:"AO.SM.B090"}).includes('data-ao-mx-anchor="meaning"'),
+assert.ok(!massExplorerMomentHtml(catalog,catalog.byBlock.get("AO.SM.B090").key,{blockId:"AO.SM.B090"}).includes('data-ao-mx-anchor="meaning"'),
  "No generic, unverified paragraph should fill uncovered source blocks");
-assert.ok(!massExplorerMomentHtml(catalog,"AO.CARD.017",{blockId:"AO.SM.B059"}).includes('data-ao-mx-anchor="meaning"'),
+assert.ok(!massExplorerMomentHtml(catalog,catalog.byBlock.get("AO.SM.B059").key,{blockId:"AO.SM.B059"}).includes('data-ao-mx-anchor="meaning"'),
  "No unrelated doctrine should be forced onto Per quem");
 
 const files=[
