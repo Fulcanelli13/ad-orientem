@@ -30,9 +30,10 @@ export function selectedPreflightStudyProper({
    observedSelection:null;
  const pendingObserved=Boolean(observedStatus?.sourceDate&&!observed);
  const type=String(base?.celebrationType??"").toUpperCase().replace(/[- ]+/g,"_");
- const id=String(base?.celebrationId??base?.requestedCelebrationId??"").trim();
+ const ids=[base?.celebrationId,base?.requestedCelebrationId]
+   .map(x=>String(x??"").trim().toLowerCase()).filter(Boolean);
  const explicit=Boolean(observed||pendingObserved||types.has(type)||
-   (id&&id!=="mass_of_day"&&id!=="calendar"));
+   ids.some(id=>id!=="mass_of_day"&&id!=="calendar"));
  if(!explicit)return null;
  const identity=observed?"OBSERVED_SOURCE_DAY":type||"ALTERNATE_MASS";
  if(pendingObserved||observedGate?.ready===false)
