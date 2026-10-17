@@ -10,7 +10,7 @@ const economy=JSON.parse(readFileSync(
 
 assert.equal(economy.schema,"ao.historia.v18.essential-verse-economy.v1");
 assert.equal(economy.status,"EDITORIAL_PROVISIONAL_VERSE_COORDINATES_ONLY");
-assert.deepEqual(economy.counts,{essential:93,edited:32,protected:35,unchanged:25,editionCorrections:1});
+assert.deepEqual(economy.counts,{essential:93,edited:32,protected:35,unchanged:24,editionCorrections:2});
 assert.equal(economy.decisions.length,93);
 assert.equal(economy.canonical.originalV18Chapters,78);
 assert.equal(economy.canonical.originalV18Segments,217);
@@ -95,7 +95,7 @@ for(const decision of economy.decisions){
  const editionRepair=decision.selectionStatus==="EDITION_AWARE_REFERENCE_CORRECTION";
  for(const piece of source.parts){
   if(editionRepair){
-   assert.equal(decision.unitId,"H15-02");
+   assert.ok(["H15-02","H68-04"].includes(decision.unitId));
    v18Codes.push(...coords(piece,"crampon-1923"));
   }else{
    const cp=coords(piece,"cpdv-2009"),dr=coords(piece,"dr-challoner");
@@ -139,8 +139,12 @@ for(const decision of economy.decisions){
   stats.editionCorrections++;
   assert.equal(decision.originalReferenceEditionWorkingHypothesis,"crampon-1923");
   assert.equal(decision.originalEditionIndependentlyCertified,false);
-  assert.deepEqual(decision.proposedSelectedReferences,["Genesis 32:22–32"]);
-  assert.equal(chosen.length,v18Codes.length,"The Jabbok source scene must not lose verses");
+  const expected=decision.unitId==="H15-02"?["Genesis 32:22–32"]:["Acts 7:54–59"];
+  assert.deepEqual(decision.proposedSelectedReferences,expected);
+  assert.equal(chosen.length,decision.unitId==="H15-02"?11:6,
+   "Edition-specific boundary normalization must retain the complete scene");
+  assert.equal(v18Codes.length,decision.unitId==="H15-02"?11:7,
+   "Crampon's full scene has edition-dependent verse numbering");
  }else{
   stats.unchanged++;
   assert.equal(decision.selectionStatus,"ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK");
@@ -152,7 +156,7 @@ for(const decision of economy.decisions){
  }
 }
 assert.equal(seen.size,93);
-assert.deepEqual(stats,{edited:32,protected:35,unchanged:25,editionCorrections:1,halfVerses:1});
+assert.deepEqual(stats,{edited:32,protected:35,unchanged:24,editionCorrections:2,halfVerses:1});
 assert.ok(selectedVerseCount<originalVerseCount);
 assert.ok(originalVerseCount-selectedVerseCount>80,"No fake compression reported");
 for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
@@ -166,4 +170,4 @@ assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
 assert.equal(economy.verification.fullLiteraryReadAloud,false);
 assert.equal(economy.verification.CatholicEditorialApproval,false);
 assert.equal(economy.verification.translationRightsApproval,false);
-console.log("PASS Historia essentials: 93 v18 units; 32 proposed trims, 35 locked, 25 baseline and 1 edition correction; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
+console.log("PASS Historia essentials: 93 v18 units; 32 proposed trims, 35 locked, 24 baseline and 2 edition corrections; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
