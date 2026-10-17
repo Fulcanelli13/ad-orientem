@@ -23,10 +23,10 @@ jobs:
       - run: python -u tools/build-visible-mass-authentic-church-candidates.py
       - name: Validate embedded thumbnails
         run: |
-          test -s dist/visible-mass/Visible_Mass_Authentic_Church_Candidates.html
+          test -s dist/visible-mass/Visible_Mass_Authentic_Church_Hires.html
           python - <<'PY'
           from pathlib import Path
-          p=Path('dist/visible-mass/Visible_Mass_Authentic_Church_Candidates.html').read_text()
+          p=Path('dist/visible-mass/Visible_Mass_Authentic_Church_Hires.html').read_text()
           assert p.count('data:image/jpeg;base64,') >= 10
           print('Photos',p.count('data:image/jpeg;base64,'))
           PY
@@ -34,6 +34,6 @@ jobs:
         with:
           name: Visible-Mass-Authentic-Church-Research
           path: |
-            dist/visible-mass/Visible_Mass_Authentic_Church_Candidates.html
-            dist/visible-mass/church-candidates-report.json
+            dist/visible-mass/Visible_Mass_Authentic_Church_Hires.html
+            dist/visible-mass/church-hires-report.json
           if-no-files-found: error
