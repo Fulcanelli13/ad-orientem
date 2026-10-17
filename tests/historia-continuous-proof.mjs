@@ -120,4 +120,4 @@ for(const beat of proof.movements.slice(0,9).flatMap(x=>x.beats).filter(x=>x.kin
  assert.equal(beat.editorialTextApproved,false);
 }
 assert.ok(necessity.units.length===217);
-console.log("PASS Historia continuous proof: 37 movements, 93 real Scripture units, 32 visibly distinct context notes, 11 held original-source candidates, "+scriptureVerses+" verse displays validated in CPDV + Douay; no character filler or extra Bible experience");
+console.log("PASS Historia continuous proof: 37 movements, 93 real Scripture units, 31 visibly distinct context notes, 11 held original-source candidates, "+scriptureVerses+" verse displays validated in CPDV + Douay; no character filler or extra Bible experience");
