@@ -8,6 +8,7 @@ on:
       - "tools/build-visible-mass-standalone.mjs"
       - "tests/visible-mass-3d-contract.mjs"
       - "tests/visible-mass-sanctuary-hotspot-contract.mjs"
+      - "tests/visible-mass-sanctuary-photo-browser.mjs"
       - "data/glossary/concepts-*.v1.json"
       - ".github/workflows/visible-mass-3d-experimental.yml"
   workflow_dispatch:
@@ -50,3 +51,25 @@ jobs:
           name: Visible-Mass-3D-P0-HTML
           path: dist/visible-mass/The_Visible_Mass_P0_Offline.html
           if-no-files-found: error
+
+  phone-and-desktop-photo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Browser-check photo scene, glossary and inspection return
+        run: node tests/visible-mass-sanctuary-photo-browser.mjs
+      - name: Save phone and desktop review images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visible-mass-sanctuary-phone-desktop
+          path: dist/visible-mass/sanctuary-qa/*.png
+          if-no-files-found: warn
