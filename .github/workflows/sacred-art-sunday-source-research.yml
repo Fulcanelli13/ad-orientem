@@ -1,0 +1,33 @@
+name: Sacred Art Sunday painting source integrity
+
+on:
+  push:
+    branches: [platform/885-sacred-art-candidates]
+    paths:
+      - 'data/calendar/sacred-art-sunday-gospel-paintings-open-sources-20261017.v1.json'
+      - 'data/calendar/sacred-art-sunday-gospel-open-paintings-phase2-20261017.v1.json'
+      - 'tests/sacred-art-sunday-gospel-source-integrity.mjs'
+      - '.github/workflows/sacred-art-sunday-source-research.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/calendar/sacred-art-sunday-gospel-paintings-open-sources-20261017.v1.json'
+      - 'data/calendar/sacred-art-sunday-gospel-open-paintings-phase2-20261017.v1.json'
+      - 'tests/sacred-art-sunday-gospel-source-integrity.mjs'
+      - '.github/workflows/sacred-art-sunday-source-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-research-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify verified-source ledgers, exact Gospel and no rating reassignment
+        run: node tests/sacred-art-sunday-gospel-source-integrity.mjs
