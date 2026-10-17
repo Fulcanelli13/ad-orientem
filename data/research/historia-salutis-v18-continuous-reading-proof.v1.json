@@ -14,17 +14,17 @@
     },
     {
       "path": "data/research/historia-salutis-v18-continuity-desk-pass.v1.json",
-      "blobSha": "487731c29bdc2345ccf47c77d487c01b6a3298fe"
+      "blobSha": "6b5fab6a936ea3c4fe10e7b7e645df1b12e7d486"
     },
     {
       "path": "data/research/historia-salutis-v18-essential-verse-economy.v1.json",
-      "blobSha": "773a1d715b7046732d05684f8923fafef243db56"
+      "blobSha": "56fbb5bcf53e749d468813cabf6015e8a5b5d699"
     }
   ],
   "totals": {
     "movements": 37,
     "essentialUnits": 93,
-    "briefEditorialContextNotes": 32,
+    "briefEditorialContextNotes": 31,
     "sourceBridgeCandidates": 11,
     "independentlyReadAndApproved": false
   },
@@ -36,7 +36,8 @@
     "sourceCandidatesMustBeVisuallyDistinct": true,
     "showEveryDroppedSpanBetweenAdjacentScriptureFragments": true,
     "showHistoricallyPartialVerseAsWholeEditionWitnessWithWarning": true,
-    "noAutomaticallyApprovedReadings": true
+    "noAutomaticallyApprovedReadings": true,
+    "editorialContextProposalsSeparateFromScripture": true
   },
   "movements": [
     {
@@ -105,7 +106,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M02",
@@ -146,7 +153,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M03",
@@ -165,17 +178,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H05-02",
           "label": "Seth and continuity of generations",
-          "explanation": "Identify the line through Seth as a genealogical bridge, not read Genesis 4–5 as an extra episode.",
+          "explanation": "Adam's descendants continued through Seth, whose line leads to Noah (Genesis 4–5).",
           "sourceReference": "Genesis 4:25–26",
-          "publicationApproved": false
-        },
-        {
-          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
-          "id": "H07-01",
-          "label": "Human evil in Noah's generation",
-          "explanation": "Ark construction and divine command are missing before Genesis 7:1 begins with entering the Ark; source context must precede the flood.",
-          "sourceReference": "Genesis 6:5–8",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Genesis 4:25–26",
+          "editorialTextApproved": false
         },
         {
           "kind": "SOURCE_BRIDGE_CANDIDATE",
@@ -231,14 +238,22 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H09-02",
           "label": "Babel and the dispersion of languages",
-          "explanation": "Keep Babel as an explanatory event for dispersed nations; retain the distinction from Pentecost rather than claiming simple word-for-word symmetry.",
+          "explanation": "After the flood, Noah's descendants spread into peoples and nations; at Babel their language was confounded and they were scattered (Genesis 10–11).",
           "sourceReference": "Genesis 11:1–9",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Genesis 11:1–9",
+          "editorialTextApproved": false
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M04",
@@ -279,12 +294,15 @@
           "scene": "Covenant promise and the land",
           "refs": [
             "Genesis 15:1–6",
+            "Genesis 15:9–10",
+            "Genesis 15:13–14",
             "Genesis 15:17–18"
           ],
           "edition": "cpdv-2009",
-          "policy": "PROPOSED_CURATED_TRIM",
+          "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "The original split introduced a smoking fire passing between 'those divisions' without showing the animals divided (15:9–10). The prophecy of enslavement and deliverance (15:13–14) is indispensable covenant-to-Exodus foreshadowing."
         },
         {
           "kind": "SCRIPTURE",
@@ -302,7 +320,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M05",
@@ -335,30 +359,33 @@
           "sourceV18": "Genesis 22:1–2, 6–14, 15–19",
           "scene": "Isaac offered and providentially spared",
           "refs": [
-            "Genesis 22:1–2",
-            "Genesis 22:6–14",
-            "Genesis 22:15–19"
+            "Genesis 22:1–19"
           ],
           "edition": "cpdv-2009",
-          "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+          "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "The original 22:1–2 to 22:6 handoff starts 'He also took the wood' without the journey, preparation or servants; preserving 22:1–19 avoids an artificial gap in the covenant's decisive trial."
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H14-02",
           "label": "Birth and rivalry of Jacob and Esau",
-          "explanation": "Name Esau and Jacob to establish the selected covenant line, not rehearse their entire youth.",
+          "explanation": "Isaac and Rebecca had two sons, Esau and Jacob (Genesis 25:19–26).",
           "sourceReference": "Genesis 25:19–26, 29–34",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Genesis 25:19–26, 29–34",
+          "editorialTextApproved": false
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H14-03",
           "label": "Blessing transferred to Jacob",
-          "explanation": "Indicate the paternal blessing passing to Jacob before the Bethel/Jabbok narrative.",
+          "explanation": "Jacob received his father Isaac's blessing amid the conflict with his elder brother Esau (Genesis 27).",
           "sourceReference": "Genesis 27:18–29, 34–40",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Genesis 27:18–29, 34–40",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -389,7 +416,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M06",
@@ -420,7 +453,7 @@
           "kind": "SOURCE_BRIDGE_CANDIDATE",
           "id": "HS-CF-03",
           "reference": "Genesis 39:20–21",
-          "purpose": "Genesis 41 summons Joseph from imprisonment; the short bridge identifies when he entered prison without restoring his separate adventures",
+          "purpose": "An Egyptian official purchased Joseph after his sale; following an accusation, his master imprisoned him. Genesis 39:20–21 then records God's continuing presence with Joseph. This is a short causal bridge, not a featured Potiphar episode.",
           "sourceEdition": "cpdv-2009",
           "comparisonEdition": "dr-challoner",
           "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
@@ -432,12 +465,14 @@
           "scene": "Joseph raised to authority",
           "refs": [
             "Genesis 41:14–16",
-            "Genesis 41:37–45"
+            "Genesis 41:25–30",
+            "Genesis 41:33–45"
           ],
           "edition": "cpdv-2009",
-          "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+          "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "Pharaoh's approval at 41:37 called the counsel good without any counsel in the selected verses. Restore Joseph's interpretation of seven years of plenty and famine and his recommendation to store grain (41:25–30,33–36)."
         },
         {
           "kind": "SCRIPTURE",
@@ -469,7 +504,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M07",
@@ -499,9 +540,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H17-02",
           "label": "The infancy of Moses and cry of Israel",
-          "explanation": "Identify who Moses is and why the cry of Israel is heard, without needing the full infancy story.",
+          "explanation": "Moses was a Hebrew child rescued from Pharaoh's decree, raised by Pharaoh's daughter, and later driven into Midian (Exodus 2).",
           "sourceReference": "Exodus 2:1–10, 23–25",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Exodus 2:1–10, 23–25",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -520,7 +563,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M08",
@@ -550,9 +599,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H19-03",
           "label": "Pharaoh warned of divine judgment",
-          "explanation": "Pharaoh's hardened resistance makes the Passover's judgment understandable without listing every plague.",
+          "explanation": "Pharaoh repeatedly refused to let Israel go despite the plagues (Exodus 7–10). Moses then warned of the final judgment.",
           "sourceReference": "Exodus 9:13–16",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Exodus 9:13–16",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -587,7 +638,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M09",
@@ -616,9 +673,11 @@
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H21-02",
           "label": "God guides Israel through the wilderness",
-          "explanation": "Mention the cloud/fire guidance connecting departure to the crossing, without requiring every Exodus travel detail.",
+          "explanation": "God guided Israel in the wilderness by a pillar of cloud by day and of fire by night (Exodus 13:21–22).",
           "sourceReference": "Exodus 13:17–22",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Exodus 13:17–22",
+          "editorialTextApproved": false
         },
         {
           "kind": "SCRIPTURE",
@@ -628,26 +687,35 @@
           "refs": [
             "Exodus 14:5–10",
             "Exodus 14:13–16",
-            "Exodus 14:19–22",
+            "Exodus 14:19–23",
             "Exodus 14:26–31"
           ],
           "edition": "cpdv-2009",
           "policy": "PRIOR_SOURCE_CONTINUITY_RESTORED",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "editorialReason": "Keep the previously restored pursuit (14:5–10), Moses's reassurance (14:13–14), the sea crossing (14:15–22) AND the Egyptians' entry into the sea (14:23) before the waters return (14:26–31); removing 14:23 breaks causal continuity."
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
           "id": "H21-04",
           "label": "Bread from heaven in the wilderness",
-          "explanation": "Mention the manna as divine sustenance in the wilderness and avoid merging it with the later Bread of Life discourse.",
+          "explanation": "In the wilderness God provided manna to sustain the people of Israel (Exodus 16).",
           "sourceReference": "Exodus 16:2–4, 12–15",
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchSourceReference": "Exodus 16:2–4, 12–15",
+          "editorialTextApproved": false
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "literaryDeskPass": {
+        "status": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+        "date": "2026-10-17",
+        "userAcceptanceRequired": true,
+        "editorialApproval": false
+      }
     },
     {
       "id": "HS-M10",
@@ -2223,5 +2291,14 @@
       "readAloudAccepted": false,
       "readyForPublication": false
     }
-  ]
+  ],
+  "literaryReviewProgress": {
+    "movementsDeskExamined": 9,
+    "movementsTotal": 37,
+    "sourceContinuityExpansions": 3,
+    "priorRedSeaSourceRestored": true,
+    "editorialContextNotesReducedFrom32To31": true,
+    "oralReadingsApproved": 0,
+    "theologicalPublicationApprovals": 0
+  }
 }
