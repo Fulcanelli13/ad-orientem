@@ -8,16 +8,18 @@ import {SCRIPTURE_LINK_COUNTS} from "../src/scripture/related-objects.js";
 import {mineScriptureReference,validateScriptureMiningDecision,
   countIndependentSelections,MINING_ENGLISH_EDITIONS} from "../src/scripture/mining-service.js";
 
-assert.equal(DEFAULT_SCRIPTURE_EDITION.en,"cpdv-2009");
-assert.equal(SCRIPTURE_EDITIONS["cpdv-2009"].role,"default");
-assert.equal(SCRIPTURE_EDITIONS["dr-challoner"].role,"traditional-comparison");
+assert.equal(DEFAULT_SCRIPTURE_EDITION.en,"dr-challoner");
+assert.equal(SCRIPTURE_EDITIONS["cpdv-2009"].role,"readability-option");
+assert.equal(SCRIPTURE_EDITIONS["dr-challoner"].role,"default");
 assert.deepEqual(MINING_ENGLISH_EDITIONS,["cpdv-2009","dr-challoner"]);
 assert.ok(Object.values(SCRIPTURE_EDITIONS).every(edition=>edition.enabled===false));
 const storage={read:null,getItem(){return this.read},setItem(_key,v){this.read=v}};
 const pref=createScripturePreferences(storage);
-assert.equal(pref.englishEdition(),"cpdv-2009","Old implicit default must not persist");
+assert.equal(pref.englishEdition(),"dr-challoner","Fresh reader opens the historical edition; CPDV is optional");
+assert.equal(pref.setEnglishEdition("cpdv-2009"),true);
+assert.equal(pref.englishEdition(),"cpdv-2009","Explicit readable alternative must persist");
 assert.equal(pref.setEnglishEdition("dr-challoner"),true);
-assert.equal(pref.englishEdition(),"dr-challoner","Explicit historic choice preserved");
+assert.equal(pref.englishEdition(),"dr-challoner","Switching back remains possible");
 const events=[];
 const witnessLoader=async(editionId,book)=>{
  events.push("witness:"+editionId+":"+book);
