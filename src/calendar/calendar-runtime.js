@@ -1,7 +1,7 @@
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { addDaysIso, buildLiturgicalYear } from "./liturgical-year.js";
-import { renderLiturgicalClock, liturgicalClockCss } from "./liturgical-clock.js";
+import { renderLiturgicalClock, liturgicalClockCss, orderedClockCandidateDates } from "./liturgical-clock.js";
 import { romanClassTier } from "./roman-class-tier.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
@@ -748,7 +748,14 @@ function daySurface(selected,r){
 }
 function requestYearDailyColours(year){
   if(calendarView!=="year"||!root()||yearColourLoad?.start===year.start)return;
-  const ids=Array.from({length:year.totalDays},(_,i)=>addDaysIso(year.start,i));
+  // The Clock's 1962 year geometry is deterministic. We only request its
+  // major feast anchors and nearby selected days, never 364 remote missal
+  // documents upon opening one phone screen. Unresolved daily colour stays
+  // neutral instead of issuing hundreds of 404s or inventing green Masses.
+  const selected=state()?.selectedDate||year.start;
+  const nearby=Array.from({length:15},(_,i)=>addDaysIso(selected,i-7))
+    .filter(id=>id>=year.start&&id<=year.end);
+  const ids=[...new Set([...nearby,...orderedClockCandidateDates(year,selected)])];
   const missing=ids.filter(id=>!weekCache.has(id));
   if(!missing.length)return;
   const job={start:year.start};
@@ -836,8 +843,7 @@ function yearSurface(selected,r){
       </div>
     </section>
     `:""}
-    ${renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate,dailyColours:daily})}
-    ${embedded?"":`<button class="aoCalV2TextLink" type="button" data-cal-open-month="major">${esc(L("Major days this month","Jours majeurs de ce mois"))} →</button>`}
+    ${embedded&&!embeddedHomeYear?renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate,dailyColours:daily}):""}
   `;
 }
 function pickerSurface(selected){

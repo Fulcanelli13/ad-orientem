@@ -1,6 +1,7 @@
 /* Source-bound, vector Liturgical Clock. 1962 day resolver remains authoritative. */
 import { buildMajorCelebrations, addDaysIso } from "./liturgical-year.js";
 import { yearDailyProjection } from "./year-colour-wheel.js";
+import { normalizeMassLiturgicalColour } from "../mass/reader-liturgical-theme.js";
 import { SEASON_GUIDE } from "./year-journey.js";
 
 const E=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -110,6 +111,28 @@ export function resolvedClockFeasts(year,getDay,titleFor,rankFor=()=>"",colourFo
 }
 // A week of adjacent celebrations occupies only a few pixels of the circular bezel.
 // Collect nearby verified feasts rather than stacking unreadable, overlapping dots.
+// Fixed calendar landmarks are discoverable without fetching all 364 daily
+// Mass Propers. They are NOT verified observed celebrations and never supply
+// Mass rank, Mass colour, transferral or permission to the reader. Only the
+// canonical resolver can upgrade them to observed feast markers.
+const ANCHOR_TITLES=new Set([
+ "Christ the King","All Saints","Commemoration of All the Faithful Departed"
+]);
+export function clockVisibleFeasts(year,getDay,titleFor,rankFor=()=>"",colourFor=()=>"",fr=false){
+ const observed=resolvedClockFeasts(year,getDay,titleFor,rankFor,colourFor);
+ const byDate=new Map(observed.map(f=>[f.date,{...f,observed:true}]));
+ for(const candidate of clockCandidates(year)){
+  if(!ANCHOR_TITLES.has(candidate.en)||byDate.has(candidate.date))continue;
+  byDate.set(candidate.date,{date:candidate.date,title:fr?candidate.fr:candidate.en,
+   kind:candidate.kind,importance:candidate.importance,observed:false,tier:"landmark"});
+ }
+ return [...byDate.values()].sort((a,b)=>a.date.localeCompare(b.date));
+}
+const CLOCK_LIGHT=Object.freeze({
+ WHITE:"#E5F7FF",GREEN:"#22E4AD",RED:"#FF5C75",VIOLET:"#AF80FF",
+ ROSE:"#FF8DB8",BLACK:"#95A1B9",GOLD:"#EED58E"
+});
+const clockLight=value=>CLOCK_LIGHT[normalizeMassLiturgicalColour(value)]||"#B7BFCB";
 export function clockMarkerClusters(feasts,withinDays=4){
  const result=[];
  for(const feast of [...feasts].sort((a,b)=>a.date.localeCompare(b.date))){
@@ -160,7 +183,8 @@ function detailHtml({selection,year,feasts,fr}){
    +'<div class="aoClockDetailTop"><span>'+E(L(fr,"LITURGICAL SEASON","TEMPS LITURGIQUE"))+'</span><button type="button" data-cal-clock-close aria-label="'+E(L(fr,"Close details","Fermer le détail"))+'">×</button></div>'
    +'<h3>'+E(g[fr?"fr":"en"])+'</h3><small>'+E(longDate(g.start,fr))+' – '+E(longDate(g.end,fr))+'</small>'
    +'<p>'+E(labels.join(" · "))+'</p>'
-
+   +'<div class="aoClockSeasonActions"><button type="button" data-cal-clock-open-day="'+E(g.start)+'">'+E(L(fr,"Open first day","Ouvrir le premier jour"))+' →</button>'
+   +'<button type="button" data-cal-clock-browse="'+E(g.start.slice(0,7))+'">'+E(L(fr,"Browse month","Parcourir le mois"))+' →</button></div>'
    +'</section>';
  }
  // A cluster may become a single jewel when earlier source dates load.
@@ -169,9 +193,9 @@ function detailHtml({selection,year,feasts,fr}){
   const feast=feasts.find(f=>f.date===selection.date);
   if(!feast)return "";
   return '<section class="aoClockDetail" aria-label="'+E(L(fr,"Feast detail","Détail de la fête"))+'">'
-   +'<div class="aoClockDetailTop"><span>'+E(L(fr,"OBSERVED CELEBRATION","CÉLÉBRATION OBSERVÉE"))+'</span><button type="button" data-cal-clock-close aria-label="'+E(L(fr,"Close details","Fermer le détail"))+'">×</button></div>'
+   +'<div class="aoClockDetailTop"><span>'+E(feast.observed?L(fr,"OBSERVED CELEBRATION","CÉLÉBRATION OBSERVÉE"):L(fr,"CALENDAR LANDMARK","REPÈRE DU CALENDRIER"))+'</span><button type="button" data-cal-clock-close aria-label="'+E(L(fr,"Close details","Fermer le détail"))+'">×</button></div>'
    +'<h3>'+E(feast.title)+'</h3><small>'+E(longDate(feast.date,fr))+'</small>'
-   +'<p class="aoClockDetailMeta">'+E([feast.rank,feast.colour].filter(Boolean).join(" · ")||L(fr,"1962 principal observance","Observance principale du calendrier de 1962"))+'</p>'
+   +'<p class="aoClockDetailMeta">'+E(feast.observed?([feast.rank,feast.colour].filter(Boolean).join(" · ")||L(fr,"1962 principal observance","Observance principale du calendrier de 1962")):L(fr,"Feast date from the traditional calendar; the observed Mass for this day is not yet verified.","Date du calendrier traditionnel ; la messe observée de ce jour n’est pas encore vérifiée."))+'</p>'
    +(feast.transferredFrom?'<p>'+E(L(fr,"Transferred from","Transférée du"))+' '+E(longDate(feast.transferredFrom,fr))+'</p>':"")
    +'<button class="aoClockPrimary" type="button" data-cal-clock-open-day="'+E(feast.date)+'">'+E(L(fr,"Open this day","Ouvrir ce jour"))+' →</button></section>';
  }
@@ -182,7 +206,7 @@ export function renderLiturgicalClock({
  selection=null,nextMajor=null
 }={}){
  if(!year)return "";
- const geom=clockGeometry(year,fr),feasts=resolvedClockFeasts(year,getDay,titleFor,rankFor,massColourFor);
+ const geom=clockGeometry(year,fr),feasts=clockVisibleFeasts(year,getDay,titleFor,rankFor,massColourFor,fr);
  const daily=yearDailyProjection(year,getDay);
  const activeDate=selectedDate>=year.start&&selectedDate<=year.end?selectedDate:year.start;
  const row=getDay(activeDate),ready=verified(row,activeDate),activePeriod=year.periods.find(p=>p.start<=activeDate&&p.end>=activeDate);
@@ -195,7 +219,7 @@ export function renderLiturgicalClock({
   const selected=selection?.type==="season"&&selection.id===g.id;
   const font=g.id==="advent"?19:width<48?20:22;
   const label=(g.id==="advent"||width>=32)?'<text class="aoClockSeasonText" x="'+n(xy[0])+'" y="'+n(xy[1])+'" style="font-size:'+font+'px" text-anchor="middle" dominant-baseline="central" transform="rotate('+(mid>0&&mid<180?mid-90:mid+90)+' '+n(xy[0])+' '+n(xy[1])+')">'+E(({advent:["ADVENT","AVENT"],christmas:["CHRISTMAS","NOËL"],"after-epiphany":["EPIPHANY","ÉPIPHANIE"],septuagesima:["PRE-LENT","SEPTUAGÉSIME"],lent:["LENT","CARÊME"],easter:["EASTER","PÂQUES"],pentecost:["PENTECOST","PENTECÔTE"],"after-pentecost":["AFTER PENTECOST","APRÈS PENTECÔTE"]})[g.id][fr?1:0])+'</text>':"";
-  return '<g class="aoClockSector'+(selected?' aoClockSectorSelected':'')+'" data-cal-clock-season="'+E(g.id)+'" role="button" tabindex="0" aria-label="'+E(g[fr?"fr":"en"])+'" aria-pressed="'+selected+'">'
+  return '<g class="aoClockSector'+(selected?' aoClockSectorSelected':'')+'" style="--ao-clock-glow:'+clockLight(g.color)+'" data-cal-clock-season="'+E(g.id)+'" role="button" tabindex="0" aria-label="'+E(g[fr?"fr":"en"])+'" aria-pressed="'+selected+'">'
    +'<path d="'+arc(250,160,start,end)+'" class="aoClockSectorFace"/>'+label+'</g>';
  }).join("");
  const subdivisions=year.periods.slice(1).map(p=>'<path class="aoClockSubdivision" d="'+lineAt(angle(year,p.start)-180/year.totalDays,160,249)+'"/>').join("");
@@ -216,27 +240,30 @@ export function renderLiturgicalClock({
   const attr=multiple?'data-cal-clock-cluster="'+E(first.date)+'" data-cal-clock-cluster-members="'+E(cluster.map(f=>f.date).join(","))+'"':'data-cal-clock-feast="'+E(first.date)+'"';
   const label=multiple?L(fr,cluster.length+" nearby major celebrations",cluster.length+" grandes fêtes rapprochées")+" · "+cluster.map(f=>shortDate(f.date,fr)+" "+f.title).join("; ")
     :longDate(first.date,fr)+": "+first.title;
-  const radius=multiple?10:first.tier==="principal"?7.1:4.4;
-  return '<g '+attr+' role="button" tabindex="0" class="aoClockFeast'+(selected?' active':'')+'" aria-label="'+E(label)+'" aria-pressed="'+Boolean(selected)+'"><circle cx="'+n(xy[0])+'" cy="'+n(xy[1])+'" r="18" fill="transparent"/>'
-   +'<circle cx="'+n(xy[0])+'" cy="'+n(xy[1])+'" r="'+radius+'" class="'+(multiple?'aoClockMarkerCluster':first.tier==="principal"?'aoClockMarkerPrincipal':'aoClockMarkerOther')+'"/>'
+  const radius=multiple?10:first.tier==="principal"?7.1:first.tier==="landmark"?5.7:4.4;
+  return '<g '+attr+' role="button" tabindex="0" class="aoClockFeast'+(selected?' active':'')+'" aria-label="'+E(label+(cluster.every(x=>!x.observed)?L(fr," · date pending source verification"," · date en attente de vérification"):""))+'" aria-pressed="'+Boolean(selected)+'"><circle cx="'+n(xy[0])+'" cy="'+n(xy[1])+'" r="18" fill="transparent"/>'
+   +'<circle cx="'+n(xy[0])+'" cy="'+n(xy[1])+'" r="'+radius+'" class="'+(multiple?'aoClockMarkerCluster':first.tier==="principal"?'aoClockMarkerPrincipal':first.tier==="landmark"?'aoClockMarkerLandmark':'aoClockMarkerOther')+'"/>'
    +(multiple?'<text x="'+n(xy[0])+'" y="'+n(xy[1]+3.3)+'" font-size="10.5" text-anchor="middle" class="aoClockClusterCount">'+cluster.length+'</text>':"")+'</g>';
  }).join("");
  const pointerAngle=angle(year,activeDate),p1=point(145,pointerAngle),p2=point(291,pointerAngle);
  const todayInYear=todayDate>=year.start&&todayDate<=year.end;
  const t=point(294,angle(year,todayDate));
- const first=geom.groups.find(g=>g.start>activeDate);
  const observedNext=nextVerifiedClockFeast(year,activeDate,getDay,feasts);
- // The Calendar's independent next-major scan is allowed only when it has
- // returned source-confirmed evidence for the proposed date.
  const explicit=nextMajor?.verified===true&&nextMajor.date>activeDate
-  ?{date:nextMajor.date,title:nextMajor.title||nextMajor.en||nextMajor.fr}:null;
- const feast=explicit&&(!observedNext||explicit.date<=observedNext.date)?explicit
-  :observedNext?{date:observedNext.date,title:observedNext.title}:null;
- const upcoming=feast?[feast]:[];
- const season=first?{date:first.start,title:first[fr?"fr":"en"]}:{date:addDaysIso(year.end,1),title:L(fr,"Advent","Avent")};
- if(season)upcoming.push(season);
- const cards=upcoming.slice(0,3).map(c=>'<button type="button" data-cal-clock-open-day="'+E(c.date)+'"><small>'+E(shortDate(c.date,fr))+'</small><strong>'+E(c.title)+'</strong></button>').join("");
- return '<section class="aoClock" data-ao-liturgical-clock="v1" data-year-start="'+E(year.start)+'" aria-label="'+E(L(fr,"Liturgical Clock","Horloge liturgique"))+'">'
+  ?{date:nextMajor.date,title:nextMajor.title||nextMajor.en||nextMajor.fr,observed:true}:null;
+ // One compact future index: dates from the canonical major-calendar registry
+ // remain visible when remote Mass Proper loading is incomplete.
+ const byDate=new Map(feasts.filter(f=>f.date>activeDate).map(f=>[f.date,f]));
+ if(observedNext)byDate.set(observedNext.date,observedNext);
+ if(explicit)byDate.set(explicit.date,explicit);
+ const upcoming=[...byDate.values()].sort((a,b)=>a.date.localeCompare(b.date)).slice(0,4);
+ const cards=upcoming.map(c=>'<button type="button" data-cal-clock-open-day="'+E(c.date)+'" class="aoClockUpcomingItem">'
+  +'<small>'+E(shortDate(c.date,fr))+'</small><span>'+E(c.title)+'</span>'
+  +(c.observed?'':'<i aria-label="'+E(L(fr,"Observance pending verification","Observance en attente de vérification"))+'">◌</i>')
+  +'</button>').join("");
+ const currentMeaning=SEASON_GUIDE[activePeriod?.id]?.focus?.[fr?1:0]||"";
+ const periodEnd=activeGroup?.end||year.end;
+  return '<section class="aoClock" data-ao-liturgical-clock="v1" data-year-start="'+E(year.start)+'" aria-label="'+E(L(fr,"Liturgical Clock","Horloge liturgique"))+'">'
   +'<div class="aoClockHeader"><div class="aoClockYearIdentity"><small>1962</small></div>'
   +'<div class="aoClockYearNav"><button type="button" data-cal-clock-year="-1" aria-label="'+E(L(fr,"Previous liturgical year","Année liturgique précédente"))+'">‹</button><strong>'+E(year.label)+'</strong><button type="button" data-cal-clock-year="1" aria-label="'+E(L(fr,"Next liturgical year","Année liturgique suivante"))+'">›</button></div>'
   +(todayDate>=year.start&&todayDate<=year.end?"":'<button type="button" class="aoClockReturnToday" data-cal-clock-today>'+E(L(fr,"Today","Aujourd’hui"))+'</button>')+'</div>'
@@ -250,11 +277,11 @@ export function renderLiturgicalClock({
   +'<button type="button" class="aoClockCore" data-cal-clock-open-day="'+E(activeDate)+'" aria-label="'+E(L(fr,"Open selected day","Ouvrir le jour choisi")+": "+longDate(activeDate,fr))+'">'
   +'<small>'+E(weekday(activeDate,fr))+'</small><strong>'+E(shortDate(activeDate,fr))+'</strong><span class="aoClockCoreRule"></span>'
   +'<span class="aoClockCoreFeast">'+E(centerTitle)+'</span>'+(rank?'<span class="aoClockCoreRank">'+E(rank)+'</span>':"")+'</button></div>'
-  +(feasts.length?'<details class="aoClockFeastMenu"><summary>'+E(L(fr,"Feast dates","Dates des fêtes"))+'</summary><nav aria-label="'+E(L(fr,"Verified feast selection","Choisir une fête confirmée"))+'">'
+  +(feasts.length?'<details class="aoClockFeastMenu"><summary>'+E(L(fr,"Browse feast dates","Parcourir les fêtes"))+'</summary><nav aria-label="'+E(L(fr,"Feast landmarks and verified principal celebrations","Repères des fêtes et célébrations principales vérifiées"))+'">'
    +feasts.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(f=>'<button type="button" data-cal-clock-feast="'+E(f.date)+'"><small>'+E(shortDate(f.date,fr))+'</small><span>'+E(f.title)+'</span></button>').join("")+'</nav></details>':"")+'</div>'
-  +(selection?detailHtml({selection,year,feasts,fr}):"")
-  +(cards?'<section class="aoClockUpcoming"><h3>'+E(L(fr,"Coming next","À venir"))+'</h3><div>'+cards+'</div></section>':"")
-
+  +(selection?detailHtml({selection,year,feasts,fr}):'<div class="aoClockContext"><button type="button" data-cal-clock-season="'+E(activeGroup?.id||"after-pentecost")+'"><strong>'+E(activeGroup?.[fr?"fr":"en"]||"")+'</strong><span>'+E(longDate(activeGroup?.start||year.start,fr))+' – '+E(longDate(periodEnd,fr))+'</span><small>'+E(currentMeaning)+'</small></button></div>')
+  +(cards?'<nav class="aoClockUpcoming" aria-label="'+E(L(fr,"Next major feast dates","Prochaines grandes fêtes"))+'"><strong>'+E(L(fr,"Upcoming","À venir"))+'</strong><div>'+cards+'</div></nav>':"")
+  +'<details class="aoClockSources"><summary>'+E(L(fr,"1962 sources and verification","Sources et vérification de 1962"))+'</summary><p data-cal-year-colour-status>'+E(L(fr,"Daily colours from the verified 1962 calendar","Couleurs quotidiennes du calendrier 1962 vérifié"))+' · '+daily.verified+'/'+daily.total+'</p><p>'+E(L(fr,"Only resolved Mass colours are drawn in the thin outer band. Outlined feast landmarks are traditional calendar dates; their observed Mass is confirmed when opened.","Seules les couleurs des messes résolues figurent sur la couronne extérieure. Les repères évidés sont des dates du calendrier traditionnel ; la messe observée est confirmée à l’ouverture."))+'</p><a href="https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=607" target="_blank" rel="noopener noreferrer">'+E(L(fr,"1960 General Rubrics","Rubriques générales de 1960"))+' ↗</a></details>'
   +'</section>';
 }
 export const liturgicalClockCss=[
@@ -351,4 +378,32 @@ export const liturgicalClockCss=[
 ".aoClockFeast:hover .aoClockMarkerPrincipal,.aoClockFeast:focus-visible .aoClockMarkerPrincipal,.aoClockFeast.active .aoClockMarkerPrincipal,.aoClockFeast:hover .aoClockMarkerOther,.aoClockFeast:focus-visible .aoClockMarkerOther,.aoClockFeast.active .aoClockMarkerOther,.aoClockFeast:hover .aoClockMarkerCluster,.aoClockFeast:focus-visible .aoClockMarkerCluster,.aoClockFeast.active .aoClockMarkerCluster{filter:none!important;stroke:var(--text)!important}",
 ".aoClockDial svg>circle:first-of-type{stroke-opacity:.55;stroke-width:1!important}",
 "@media(prefers-reduced-motion:reduce){.aoClockSector .aoClockSectorFace{transition:none}}",
+
+/* The liturgical year has one visualization. Jewel-light is a translucent
+   instrument rendering of canonical 1962 seasonal colour, never a Mass Proper. */
+".aoClockSector .aoClockSectorFace{fill:var(--ao-clock-glow,#8695a6)!important;fill-opacity:.13!important;stroke:var(--ao-clock-glow,#8695a6)!important;stroke-opacity:.47!important;stroke-width:1.4!important;filter:none!important;transition:fill-opacity .2s,stroke-opacity .2s!important}",
+".aoClockSector:nth-of-type(even) .aoClockSectorFace{fill:var(--ao-clock-glow,#8695a6)!important;fill-opacity:.095!important}",
+".aoClockSector:hover .aoClockSectorFace,.aoClockSector:focus-visible .aoClockSectorFace,.aoClockSectorSelected .aoClockSectorFace{fill:var(--ao-clock-glow,#8695a6)!important;fill-opacity:.25!important;stroke:var(--ao-clock-glow,#8695a6)!important;stroke-opacity:.9!important;stroke-width:2!important;filter:drop-shadow(0 0 5px var(--ao-clock-glow,#8695a6))!important}",
+".aoClockSector .aoClockSeasonText{fill:var(--ao-clock-glow,#d1d8dc)!important;fill-opacity:.88!important;stroke:var(--bg,#080c12)!important;stroke-opacity:1;stroke-width:2px!important}",
+".aoClockMarkerLandmark{fill:var(--bg,#080c12);stroke:#dbe6ee;stroke-width:2.2;filter:drop-shadow(0 0 4px rgba(155,205,245,.3))}",
+".aoClockFeast:hover .aoClockMarkerLandmark,.aoClockFeast:focus-visible .aoClockMarkerLandmark,.aoClockFeast.active .aoClockMarkerLandmark{stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 5px rgba(205,230,255,.5))}",
+".aoClockSeasonActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.aoClockSeasonActions button{min-height:44px!important;padding:6px 10px!important;border:1px solid var(--ao-rule,rgba(226,214,190,.2))!important;border-radius:7px!important;background:transparent!important;color:var(--text)!important;font:500 12px/1.3 var(--ao-font-ui,system-ui)}",
+".aoClockContext{border-top:1px solid var(--ao-rule,rgba(226,214,190,.18));padding:12px 0;margin:6px auto 0;max-width:690px}",
+".aoClockContext button{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 9px;width:100%;padding:3px 4px!important;border:0!important;background:transparent!important;text-align:left!important}",
+".aoClockContext strong{font:400 22px/1.3 Georgia,serif;color:var(--text)}",
+".aoClockContext span{font:500 11px/1.3 var(--ao-font-ui,system-ui);color:var(--muted);text-align:right}",
+".aoClockContext small{font:400 13px/1.4 Georgia,serif;color:var(--muted);grid-column:1/-1}",
+".aoClockUpcoming{margin:3px auto 8px!important;padding:8px 0!important;max-width:690px!important;border-top:1px solid var(--ao-rule,rgba(226,214,190,.18))!important}",
+".aoClockUpcoming>strong{font:650 10px/1.3 var(--ao-font-ui,system-ui);letter-spacing:.09em;color:var(--muted);text-transform:uppercase}",
+".aoClockUpcoming>div{display:flex!important;gap:4px 13px!important;align-items:center;flex-wrap:wrap!important;margin-top:7px}",
+".aoClockUpcoming .aoClockUpcomingItem{display:inline-flex!important;min-height:36px!important;align-items:baseline!important;gap:6px!important;padding:4px 0!important;margin:0;border:0!important;border-radius:0!important;background:transparent!important;color:var(--text)!important;box-shadow:none!important}",
+".aoClockUpcomingItem small{font:600 12px/1.3 var(--ao-font-ui,system-ui);white-space:nowrap;color:var(--liturgical)!important}",
+".aoClockUpcomingItem span{font:400 13px/1.3 Georgia,serif}",
+".aoClockUpcomingItem i{font-style:normal;color:var(--muted);font-size:14px}",
+".aoClockSources{margin:5px auto 0;max-width:690px;color:var(--muted);border-top:1px solid var(--ao-rule,rgba(226,214,190,.18));font:400 12px/1.5 var(--ao-font-ui,system-ui)}",
+".aoClockSources summary{padding:10px 3px;cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--muted)}",
+".aoClockSources p{margin:4px 4px 8px}.aoClockSources a{color:var(--text)}",
+".aoClockFeastMenu{margin:0 auto 5px!important}",
+"@media(max-width:560px){.aoClockContext strong{font-size:20px}.aoClockContext span{font-size:10px}.aoClockUpcoming>div{gap:0 10px!important}.aoClockUpcomingItem span{font-size:12px}}",
+
 ].join("\n");
