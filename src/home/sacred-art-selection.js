@@ -6,25 +6,25 @@
  */
 
 export const APPROVED_CLASS_I_2026 = Object.freeze([
-  ["2026-01-06","ART-eter-aul-ubens-doration-of-the-agi","GOSPEL_SCENE","Matthew 2:1"],
-  ["2026-03-15","ART-iovanni-anfranco-iracle-of-oaves-and-ishes","GOSPEL_SCENE","John 6:1"],
-  ["2026-03-19","ART-hilippe-de-hampaigne-he-ream-of-aint-oseph","GOSPEL_SCENE","Matthew 1:18"],
-  ["2026-03-25","ART-hilippe-de-hampaigne-he-nnunciation","GOSPEL_SCENE","Luke 1:26"],
-  ["2026-04-02","met-459131","FEAST_EUCHARIST",null],
-  ["2026-04-03","ART-nthony-van-yck-he-ance-hrust","PASSION_EVENT",null],
-  ["2026-04-12","W07-014","GOSPEL_SCENE","John 20:19"],
-  ["2026-05-14","ART-rtus-olffort-scension-ntwerp-osary-cycle","FEAST_EVENT",null],
-  ["2026-05-24","ART-ean-estout-entecost","FEAST_EVENT",null],
-  ["2026-05-31","cma-136507","FEAST_ICONOGRAPHY",null],
-  ["2026-06-12","ART-nthony-van-yck-he-ance-hrust","GOSPEL_SCENE","John 19:31"],
-  ["2026-06-29","met-442491","FEAST_PERSONS",null],
-  ["2026-07-01","ART-nthony-van-yck-he-ance-hrust","GOSPEL_SCENE","John 19:30"],
-  ["2026-08-15","ART-eter-aul-ubens-ssumption-of-the-irgin","FEAST_EVENT",null],
-  ["2026-09-29","ART-uido-eni-rchangel-ichael-efeating-atan","FEAST_ICONOGRAPHY",null],
-  ["2026-12-08","ART-eter-aul-ubens-mmaculate-onception","FEAST_ICONOGRAPHY",null],
-  ["2026-12-24","ART-hilippe-de-hampaigne-he-ream-of-aint-oseph","GOSPEL_SCENE","Matthew 1:18"],
-  ["2026-12-25","cma-143784","GOSPEL_SCENE","Luke 2:1"]
-].map(([date,artworkId,relation,gospelStart])=>Object.freeze({date,artworkId,relation,gospelStart})));
+  ["2026-01-06","ART-eter-aul-ubens-doration-of-the-agi","GOSPEL_SCENE","Matthew 2:1","sancti:01-06:1:w","Sancti/01-06"],
+  ["2026-03-15","ART-iovanni-anfranco-iracle-of-oaves-and-ishes","GOSPEL_SCENE","John 6:1","tempora:Quad4-0:1:pv","Tempora/Quad4-0"],
+  ["2026-03-19","ART-hilippe-de-hampaigne-he-ream-of-aint-oseph","GOSPEL_SCENE","Matthew 1:18","sancti:03-19:1:w","Sancti/03-19"],
+  ["2026-03-25","ART-hilippe-de-hampaigne-he-nnunciation","GOSPEL_SCENE","Luke 1:26","sancti:03-25:1:w","Sancti/03-25"],
+  ["2026-04-02","met-459131","FEAST_EUCHARIST",null,"tempora:Quad6-4r:1:w","Tempora/Quad6-4"],
+  ["2026-04-03","ART-nthony-van-yck-he-ance-hrust","PASSION_EVENT",null,"tempora:Quad6-5r:1:bv","Tempora/Quad6-5"],
+  ["2026-04-12","W07-014","GOSPEL_SCENE","John 20:19","tempora:Pasc1-0:1:w","Tempora/Pasc1-0"],
+  ["2026-05-14","ART-rtus-olffort-scension-ntwerp-osary-cycle","FEAST_EVENT",null,"tempora:Pasc5-4:1:w","Tempora/Pasc5-4"],
+  ["2026-05-24","ART-ean-estout-entecost","FEAST_EVENT",null,"tempora:Pasc7-0:1:r","Tempora/Pasc7-0"],
+  ["2026-05-31","cma-136507","FEAST_ICONOGRAPHY",null,"tempora:Pent01-0r:1:w","Tempora/Pent01-0"],
+  ["2026-06-12","ART-nthony-van-yck-he-ance-hrust","GOSPEL_SCENE","John 19:31","tempora:Pent02-5:1:w","Tempora/Pent02-5"],
+  ["2026-06-29","met-442491","FEAST_PERSONS",null,"sancti:06-29:1:r","Sancti/06-29"],
+  ["2026-07-01","ART-nthony-van-yck-he-ance-hrust","GOSPEL_SCENE","John 19:30","sancti:07-01:1:r","Sancti/07-01"],
+  ["2026-08-15","ART-eter-aul-ubens-ssumption-of-the-irgin","FEAST_EVENT",null,"sancti:08-15:1:w","Sancti/08-15"],
+  ["2026-09-29","ART-uido-eni-rchangel-ichael-efeating-atan","FEAST_ICONOGRAPHY",null,"sancti:09-29:1:w","Sancti/09-29"],
+  ["2026-12-08","ART-eter-aul-ubens-mmaculate-onception","FEAST_ICONOGRAPHY",null,"sancti:12-08:1:w","Sancti/12-08"],
+  ["2026-12-24","ART-hilippe-de-hampaigne-he-ream-of-aint-oseph","GOSPEL_SCENE","Matthew 1:18","sancti:12-24:1:v","Sancti/12-24"],
+  ["2026-12-25","cma-143784","GOSPEL_SCENE","Luke 2:1","sancti:12-25m1:1:w","Sancti/12-25m1"]
+].map(([date,artworkId,relation,gospelStart,principalId,sourcePath])=>Object.freeze({date,artworkId,relation,gospelStart,principalId,sourcePath})));
 
 /** Release entries must name exact LOCAL masters. No remote thumbnail fallback. */
 export const RELEASED_SACRED_ART_MASTERS = Object.freeze({});
@@ -61,6 +61,10 @@ export function releasedClassIArtwork(state,masters=RELEASED_SACRED_ART_MASTERS)
      state?.resolution?.proper?.status!=="ready")return null;
   const entry=approvedClassIEntry(state?.selectedDate);
   if(!entry)return null;
+  // W68 principal IDs are witnessed candidates, never replacements for the live resolver.
+  // Release only if the live selected day and actual Proper independently agree.
+  if(state?.resolution?.day?.main?.id!==entry.principalId)return null;
+  if(state?.resolution?.proper?.data?.sourcePath!==entry.sourcePath)return null;
   if(entry.gospelStart&&resolvedGospelRef(state)!==expectedGospelRef(entry.gospelStart))return null;
   const file=masters?.[entry.artworkId];
   if(!file||file.artworkId!==entry.artworkId||file.releaseGate!=="ALL_CHECKS_PASS")return null;
