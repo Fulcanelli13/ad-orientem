@@ -48,6 +48,8 @@ try{
   }
   await first.click();
   assert.equal(await page.locator('#object-title').innerText(),'High altar');
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().inspections===17,{timeout:20000});
+  assert.ok(await page.locator('#related-items [data-related="AL03"]').count()===1,'altar links to tabernacle reference');
   assert.equal(await page.locator('#question-items button').count(),4);
   const stat=await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status());
   assert.equal(stat.selected,'AL01');
@@ -74,12 +76,21 @@ try{
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#object-card').isVisible(),false);
   if(spec.mobile)assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('object-open')),false);
-  await page.locator('#inspection-details summary').click();
+  await page.locator('#inspection-details > summary').click();
+  await page.locator('.inspect-family > summary').filter({hasText:'Altar & sanctuary'}).click();
   await page.locator('[data-inspection="AL03"]').click();
   assert.equal(await page.locator('#object-title').innerText(),'Tabernacle');
   assert.equal(await page.locator('#inspection-stage').isVisible(),true);
   assert.match(await page.locator('#photo-caption').innerText(),/not photographed at Brompton/);
   await page.screenshot({path:screenshotDir+'/'+spec.name+'-inspection.png'});
+  await page.locator('#return-to-church').click();
+  assert.equal(await page.locator('#inspection-stage').isVisible(),false);
+  await page.locator('.inspect-family > summary').filter({hasText:'Sacred linens'}).click();
+  await page.locator('[data-inspection="LN01"]').click();
+  assert.match(await page.locator('#inspection-provenance').innerText(),/corporal/);
+  await page.locator('#related-items [data-related="LN04"]').click();
+  assert.equal(await page.locator('#inspection-type').innerText(),'Historical reference illustration');
+  assert.match(await page.locator('#photo-caption').innerText(),/not photographed at Brompton/);
   await page.locator('#return-to-church').click();
   assert.equal(await page.locator('#inspection-stage').isVisible(),false);
   assert.equal(await page.locator('#photo-viewport').isVisible(),true);
