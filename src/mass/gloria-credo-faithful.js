@@ -37,7 +37,8 @@ export function resolveIncarnatusSungAction(resolvedMass){
     resolvedMass?.explicitlySelectedCelebration!==true &&
     Boolean(actual.id) && actual.id===resolvedMass?.calendarCelebration?.id;
   const calendarChristmas=sameCalendar &&
-    /^\d{4}-12-25$/.test(String(resolvedMass?.date??""));
+    /^\d{4}-12-25$/.test(String(resolvedMass?.date??"")) &&
+    (nativityProper||/^Tempora\/Nat/.test(path));
   return annunciation||nativityProper||calendarChristmas?"KNEEL":"GENUFLECT";
 }
 
@@ -115,7 +116,7 @@ export function projectGloriaCredoFaithfulCue({
     cueId:key,phase,posture,postureIconKey:R17_ICON_KEYS.posture[posture]??null,
     gesture,gestureIconKey:gestureKey,
     savedPosture:saved,savedGesture:gestureSetting,
-    source:"GLORIA_CREDO_CUSTOMARY_DISPLAY",
+    source:sungSpecialKneel?"RG60_518B_EXCEPTIONAL_CHANT_KNEEL":"GLORIA_CREDO_CUSTOMARY_DISPLAY",
     conditionalSedilia:follow && customSitting,
     priestStateWitness:follow
       ? GLORIA_CREDO_SEDILIA_WITNESSES[phase][customSitting?"sit":"rise"]
