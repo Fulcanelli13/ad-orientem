@@ -18,6 +18,9 @@ on:
       - "src/calendar/sacred-art-selected-proper-bridge.js"
       - "tests/sacred-art-calendar-selected-proper-bridge.mjs"
       - "tests/sacred-art-class-i-53-release-gates.mjs"
+      - "data/research/sacred-art-first-five-master-acquisition-20261017.v1.json"
+      - "tools/calendar/acquire-sacred-art-first-five.mjs"
+      - "tests/sacred-art-first-five-open-master-intake.mjs"
   workflow_dispatch:
 
 permissions:
@@ -39,3 +42,15 @@ jobs:
           node tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs
           node tests/sacred-art-class-i-53-release-gates.mjs
           node tests/sacred-art-calendar-selected-proper-bridge.mjs
+          node tests/sacred-art-first-five-open-master-intake.mjs
+      - name: Stage exact Open Access Met master (never publish automatically)
+        continue-on-error: true
+        run: node tools/calendar/acquire-sacred-art-first-five.mjs
+      - name: Archive first-five acquired pixels, provenance and phone review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-met-438724-technical-master-qa
+          path: artifacts/sacred-art-first-five/
+          retention-days: 30
+          if-no-files-found: warn
