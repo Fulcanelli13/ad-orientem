@@ -657,12 +657,14 @@ function angelusGuideMarkup(form){
  const sections=angelusGuideSections(form,lang());
  return `<details class="aoP435930GuideInfo aoAngelusGuide" data-ao-devotional-guide="${esc(form)}"><summary>${esc(L('Guide · history, meaning & practice','Guide · histoire, sens et pratique'))}</summary><div class="aoAngelusGuideBody">${sections.map(entry=>`<section class="aoAngelusGuideSection"><h3>${esc(entry.heading)}</h3><p>${esc(entry.body)} <a href="${esc(entry.source.url)}" target="_blank" rel="noopener noreferrer">${esc(entry.source.label)} ↗</a></p></section>`).join('')}</div></details>`;
 }
+function angelusDialogueHTML(parts){
+ return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
+}
 function angelusUtterance(text,type){
- const communal=S.rosary.recitation==='group';
- if(!communal)return nl(text);
+ if(S.rosary.recitation!=='group')return nl(text);
  if(type==='hail'||type==='collect'){
-  const parts=angelusCommunalParts(text,type);
-  if(parts)return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
+  const prayer=angelusCommunalParts(text,type);
+  if(prayer)return angelusDialogueHTML(prayer);
  }
  if(type!=='vr')return nl(text);
  const lines=String(text||'').replace(/\r/g,'').split('\n').map(x=>x.trim()).filter(Boolean);
@@ -671,8 +673,7 @@ function angelusUtterance(text,type){
    role:i===0?'leader':'response',
    text:line.replace(i===0?/^(?:℣|V)\.?\s*/i:/^(?:℟|R)\.?\s*/i,'').trim()
  })):[];
- if(parts.length!==2)return nl(text);
- return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
+ return parts.length===2?angelusDialogueHTML(parts):nl(text);
 }
 function renderAngelus(){
  const c=angelusChoice(),form=c.form,obj=form==='regina'?DATA.regina:DATA.angelus,vern=obj?.[lang()]||'',lat=obj?.la||'';
