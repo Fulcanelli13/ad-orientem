@@ -285,6 +285,35 @@ async function showHistoriaUnit(){
   host.prepend(make("p",(principal?"PRINCIPAL SHORT READING":principalAvailable?"EXPANDED RESEARCH READING":"EXPANDED SOURCE READING · short version pending")+
    " · Original v18: "+u.originalReference+" · "+
    (principal?u.principalRationale:u.editorialRationale||"")+" · RESEARCH ONLY","meta"));
+  const v7=u.v7FrequencyReconciliation;
+  if(v7){
+   const linked=v7.matchedAtlasEvents.length,agreements=v7.exactSimpleSelectionBoundaryAgreements.length;
+   const research=make("details");research.className="historiaResearch";
+   research.append(make("summary","Publisher research · "+linked+" Atlas event"+(linked===1?"":"s")+
+      " · "+v7.linkedIndependentPublisherFamilyCount+" independent publisher famil"+(v7.linkedIndependentPublisherFamilyCount===1?"y":"ies")+
+      " · "+agreements+" exact multi-family range agreement"+(agreements===1?"":"s")));
+   research.append(make("p","These figures come from existing V7 Atlas events, not verse-level popularity votes. Only identical printed references from distinct qualified publishers count as boundary agreement. Missing coverage does not prove the passage has no sources.","meta"));
+   for(const event of v7.matchedAtlasEvents)research.append(
+    make("p","Atlas · "+event.title+" · "+event.atlasReference,"meta"));
+   if(v7.qualifiedSelectionRecords.length){
+    const rows=make("div");rows.className="queue";
+    for(const source of v7.qualifiedSelectionRecords){
+     const line=make("p",undefined,"queueItem");
+     const url=sourceLink(source.sourceURL,source.sourceId+" · "+source.reference);
+     line.append(url,make("small"," · "+source.variant+" · "+source.relation));
+     rows.append(line);
+    }
+    research.append(rows);
+   }else research.append(make("p","No overlapping qualified source record in this existing Atlas evidence sample; research remains open.","meta"));
+   if(agreements){
+    const shared=v7.exactSimpleSelectionBoundaryAgreements.map(x=>x.reference+" ("+x.independentFamilyCount+" families)");
+    research.append(make("p","Publisher reference agreements: "+shared.join("; ")+
+     ". Not automatically equal to the selected text or its edition numbering.","meta"));
+   }
+   if(v7.excludedNonQualifiedSelections.length)research.append(
+    make("p",v7.excludedNonQualifiedSelections.length+" provisional or unauthenticated reference(s) excluded from independent-family counts.","meta"));
+   host.insertBefore(research,host.children[1]||null);
+  }
   if(Array.isArray(u.fullCompanionReadings)&&u.fullCompanionReadings.length){
    const companion=make("details");companion.append(make("summary","Complete Catholic companion readings (not included in abbreviated extract)"));
    for(const c of u.fullCompanionReadings){
