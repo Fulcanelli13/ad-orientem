@@ -51,9 +51,13 @@ assert.ok(mined.readings["cpdv-2009"].sourceUrl.startsWith("https://sacredbible.
 assert.ok(mined.readings["dr-challoner"].sourceUrl.includes("biblegateway.com"));
 await assert.rejects(()=>mineScriptureReference("UnknownBook 1:1",{witnessLoader}),/INVALID_CATHOLIC/);
 const split=await mineScriptureReference("Esther 14:1-2",{witnessLoader,commentaryLoader});
-assert.equal(split.readings["dr-challoner"].available,false,"Never align Greek additions by assumed verse coordinates");
-assert.equal(split.readings["dr-challoner"].sourceStatus,"CROSS_EDITION_REFERENCE_UNVERIFIED");
-assert.equal(split.readings["dr-challoner"].sourceUrl,null);
+assert.equal(split.readings["dr-challoner"].available,true,
+ "Mapped Greek-addition spans now use the existing source-collated Esther concordance");
+assert.equal(split.readings["dr-challoner"].passage.chapter,9,
+ "CPDV 14:1–2 maps to traditional Esther 9:1–2 rather than matching numbered chapters");
+assert.equal(split.readings["dr-challoner"].sourceStatus,"UNCOLLATED_SOURCE_WITNESS");
+assert.equal(split.readings["dr-challoner"].verses.length,0,
+ "The tiny Luke-only test fixture supplies no Esther words; never fabricate missing text");
 const selected=validateScriptureMiningDecision({reference:"Luke 1:28",rating:5,
  disposition:"SUITABLE_ELSEWHERE",originModule:"rosary",originId:"joy1",
  destinationId:"joy2",destinationBead:8,duplicate:true});
