@@ -8,6 +8,9 @@ const read=path=>JSON.parse(readFileSync(path,'utf8'));
 const out='artifacts/sacred-art-coverage';
 const year=read('artifacts/calendar-oracle/1962-2026-full-year-audit.json');
 const linked=read(out+'/full-year-multiple-associations.v1.json');
+const exactCrosswalk=read('data/calendar/sacred-art-1962-exact-feast-source-links.v1.json');
+const exactResearchDates=new Set(exactCrosswalk.links.map(x=>x.observedDate2026));
+assert.equal(exactResearchDates.size,21,'2026 exact-source research inventory changed');
 const galleryText=readFileSync('docs/research/review-galleries/ao-sacred-art-unified-curator-20261016.html','utf8');
 const marker='<script type="application/json" id="model-data">';
 const a=galleryText.indexOf(marker),b=galleryText.indexOf('</script>',a);
@@ -47,7 +50,8 @@ assert.equal(rows.length,129,'All 53 Class I and 76 Class II principal dates req
 assert.equal(rows.filter(x=>x.class==='I').length,53);
 assert.equal(rows.filter(x=>x.class==='II').length,76);
 assert.equal(new Set(rows.map(x=>x.date)).size,129);
-assert.equal(rows.filter(x=>x.class==='I'&&x.artworkCoverage==='EXACT_SOURCE_RESEARCH').length,21);
+assert.ok(rows.filter(x=>x.class==='I'&&x.artworkCoverage==='EXACT_SOURCE_RESEARCH').length<=exactResearchDates.size,
+ 'CC0 linked exact-source options cannot outnumber the historic research source dates');
 const counts=Object.fromEntries(['I','II'].map(k=>{
  const d=rows.filter(r=>r.class===k);
  return [k,{observed:d.length,openSourceOptions:d.filter(r=>r.options.length>0).length,
@@ -57,6 +61,7 @@ const counts=Object.fromEntries(['I','II'].map(k=>{
    noOption:d.filter(r=>!r.options.length).length}];
 }));
 const report={schema:'AO_SACRED_ART_2026_CLASS_I_II_REVIEW_V1',year:2026,
+ exactResearchDatesInEarlierCrosswalk:exactResearchDates.size,
  status:'DATE_INVENTORY_COMPLETE_ARTWORK_EDITION_UNFINISHED',
  source:'2026 full-year 1962 production DayResolver / CC0 acquired-original artwork registry',
  scope:'All observed general-calendar Class I/II principal days in 2026; not every displaced nominal or local feast',
