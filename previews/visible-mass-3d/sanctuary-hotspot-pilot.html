@@ -91,7 +91,18 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;
 .guide-dock .guide-routes button{flex:0 0 auto;scroll-snap-align:start;max-width:min(88vw,260px)}
 .photo-canvas[data-guided-focus] .marker[aria-pressed=true]{box-shadow:0 0 0 5px #d6be8445,0 0 0 9px #d6be8420;border-color:var(--gold)}
 .guide-dock .guide-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
-.guide-dock .guide-prompt{margin:11px 0 2px;font:normal 16px/1.45 Georgia,serif}
+.guide-dock .guide-opening{margin:8px 0 10px;color:var(--muted);font:12px/1.55 system-ui,sans-serif;border-left:2px solid #887651;padding-left:10px}
+.guide-dock .guide-prompt{margin:11px 0 7px;font:normal 17px/1.5 Georgia,serif;color:#e9e2d7}
+.guide-dock .guide-target{font:13px/1.5 Georgia,serif;color:var(--text);margin:6px 0 3px}
+.guide-dock .guide-actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.guide-dock .guide-actions .guide-primary{background:#302f2b;border-color:#ac9671;color:#f2e6d0;font-weight:500}
+.guide-dock .guide-actions .guide-photo{background:transparent;color:var(--gold);border-color:#6f6554}
+.guide-dock .guide-actions .guide-quiet{border:0;background:transparent;color:var(--muted);text-decoration:underline;padding:8px 5px}
+.guide-dock .guide-option-title{width:100%;margin:11px 0 0;padding-top:10px;border-top:1px solid #36414c;font:11px/1.4 system-ui,sans-serif;color:var(--muted)}
+.guide-dock .guide-actions .guide-alternative{width:100%;border:0;border-bottom:1px solid #35404b;border-radius:0;padding:9px 2px;background:transparent;font:13px/1.45 Georgia,serif;color:#d9c7a5}
+.guide-dock .guide-exits{width:100%;display:flex;gap:11px;flex-wrap:wrap;justify-content:flex-end;margin-top:4px}
+.marker[data-guide-preview=true]{border-color:var(--gold);box-shadow:0 0 0 5px #d6be8445;background:#665b48;color:#fff}
+.guide-dock .guide-target{margin:0}
 .guide-dock .guide-target{color:var(--gold);font:11px/1.4 system-ui,sans-serif;margin:0}
 .guide-dock .guide-quiet{border:0;background:transparent;text-decoration:underline;color:var(--muted)}
 .guide-dock .guide-foot{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:10px 0 0}
@@ -225,6 +236,7 @@ body[data-experience=discover] .info{min-height:0}
 <div class="guide-head"><strong>Discover with the Guide</strong><button id="guide-toggle" type="button">Choose a trail</button></div>
 <p class="guide-sub" id="guide-status" role="status">Research-only dialogue · all six photographed objects</p>
 <div id="guide-routes" class="guide-routes"></div>
+<p id="guide-opening" class="guide-opening" hidden></p>
 <p id="guide-prompt" class="guide-prompt" hidden></p>
 <p id="guide-target" class="guide-target" hidden></p>
 <div class="guide-actions" id="guide-actions"></div>
@@ -282,6 +294,28 @@ const SPOTS=[
 const $=id=>document.getElementById(id);
 const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null,experience:"explore",returnExperience:"explore"};
 const GUIDED_OBJECTS=new Set(["AL01","AL06","AL07","AL19","SN02","SN04"]);
+function clearGuidedPreview(){
+ delete $("photo-canvas").dataset.guidePreview;
+ document.querySelectorAll(".marker").forEach(b=>{delete b.dataset.guidePreview;});
+}
+function previewGuideObject(id){
+ const spot=SPOTS.find(s=>s.id===id);
+ if(!spot||state.view!=="church")return false;
+ clearGuidedPreview();
+ $("photo-canvas").dataset.guidePreview=id;
+ const button=document.querySelector('.marker[data-object="'+id+'"]');
+ if(button)button.dataset.guidePreview="true";
+ const viewport=$("photo-viewport"),photo=$("photo-canvas");
+ const left=Math.max(0,photo.clientWidth*spot.x/100-viewport.clientWidth/2);
+ const sheetTop=$("info").getBoundingClientRect().top;
+ const photoTop=viewport.getBoundingClientRect().top;
+ const usable=state.experience==="discover"&&window.innerWidth<931?
+   Math.max(60,Math.min(viewport.clientHeight,sheetTop-photoTop-14)):viewport.clientHeight;
+ const top=Math.max(0,photo.clientHeight*spot.y/100-usable/2);
+ const reduced=window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches===true;
+ viewport.scrollTo({left,top,behavior:reduced?"instant":"smooth"});
+ return true;
+}
 const RELATED_OBJECTS={
  AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
  AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
@@ -322,6 +356,7 @@ function setExperience(mode){
  if(mode==="understand"&&!state.selected)return false;
  state.experience=mode;
  document.body.dataset.experience=mode;
+ if(mode!=="discover")clearGuidedPreview();
  $("experience-understand").disabled=!state.selected;
  for(const b of $("experience-nav").querySelectorAll("button")){
   b.setAttribute("aria-pressed",String(b.dataset.experience===mode));
@@ -335,6 +370,7 @@ function select(id,from,{guided=false}={}){
  state.returnExperience=guided?"discover":(state.experience==="discover"?"discover":"explore");
  state.selected=id;state.question=null;state.showAll=false;
  if(from)state.returnFocus=from;
+ clearGuidedPreview();
  if(guided&&GUIDED_OBJECTS.has(id))$("photo-canvas").dataset.guidedFocus=id;
  else delete $("photo-canvas").dataset.guidedFocus;
  $("intro-card").hidden=true;$("object-card").hidden=false;
@@ -531,7 +567,7 @@ async function guideInit(pilot){
      .map(a=>a.question_id);
    if(ids.length!==97)throw Error("Research answer owners unavailable");
    state.guide=mod.mountVisibleMassDialogueFolio(window,{
-     graph,pilot,answerIds:ids,navigate:guideNavigate,
+     graph,pilot,answerIds:ids,navigate:guideNavigate,onPreview:previewGuideObject,
      onModeChange:mode=>{if(mode==="explore"&&state.selected)closeCard();setExperience(mode);}
    });
  }catch(error){
