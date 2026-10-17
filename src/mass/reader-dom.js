@@ -1151,6 +1151,9 @@ button.ao-schola-control{cursor:pointer}
   width:fit-content;max-width:100%;padding:4px;margin:0 auto;
   text-align:center;font:inherit;color:inherit;
 }
+.ao-reader-shell[data-mode="MISSAL"] .ao-missal-ceremonial-state-detail>summary>.ao-missal-rubric-action{
+  display:inline!important;font:inherit;color:inherit;
+}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-ceremonial-state-detail>p{
   margin:3px auto 6px;max-width:62ch;text-align:center;font:inherit;
   line-height:1.52;color:var(--ao-text-muted,#b5b8b4);
