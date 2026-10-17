@@ -199,8 +199,8 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
    sparse and directly usable. The approved artwork slot can be populated later. */
 #aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoP435930Head{position:relative}
 #aoPray435930 .aoFolioSettingsTrigger{
- width:38px;height:42px;min-width:38px;display:grid;place-items:center;
- flex:0 0 38px;padding:7px;border:0;border-radius:9px;
+ width:44px;height:44px;min-width:44px;display:grid;place-items:center;
+ flex:0 0 44px;padding:8px;border:0;border-radius:9px;
  color:var(--muted,#c7bfad);background:transparent;
 }
 #aoPray435930 .aoFolioSettingsTrigger svg,
