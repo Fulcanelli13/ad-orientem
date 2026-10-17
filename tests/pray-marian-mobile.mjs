@@ -45,7 +45,8 @@ try{
  await page.screenshot({path:resolve(captures,"01-divine-mercy-390.png"),fullPage:false,animations:"disabled"});
  // A single chapter displays many canonical bead prayers; vertical movement
  // retains the chapter, horizontal movement advances exactly one named card.
- await page.waitForSelector("#aoPray435930 .aoMercyReader .aoDevoSequenceTimeline",{timeout:9000});
+ await page.waitForSelector("#aoPray435930 .aoMercyReader [data-ao-mercy-bead-navigation]",{timeout:9000});
+ assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoSequenceTimeline").evaluate(el=>getComputedStyle(el).display),"none","Retired numbered chapter strip must not be visible");
  assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoStop").count(),7);
  assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoMercyLine").count(),4);
  assert.equal(await page.locator("#aoPray435930 .aoMercyReader .aoDevoParagraph[data-ao-devo-active='true']").count(),1);
@@ -68,15 +69,11 @@ try{
 
  assert.equal(await page.locator("#aoPray435930 .aoMercyControls button").count(),2);
  assert.match(await page.locator("#aoPray435930 .aoMercyPrayer").innerText(),/Au nom du Père|In the name of the Father/);
- assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/1 \/ 62/);
- assert.match(await page.locator("#aoPray435930 .aoMercyKicker").innerText(),/Prayer 1 \/ 62|Prière 1 \/ 62/i);
- assert.notEqual(
-  (await page.locator("#aoPray435930 .aoMercyKicker").innerText()).trim().toLowerCase(),
-  (await page.locator("#aoPray435930 .aoMercyReader h2").innerText()).trim().toLowerCase(),
-  "Divine Mercy should not repeat the section title as the kicker"
- );
+ assert.equal(await page.locator("#aoPray435930 [data-ao-mercy-bead-navigation]").getAttribute("data-mercy-phase"),"opening");
+ assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Sign of Cross|Signe de croix/i);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyKicker").count(),0,"No redundant numbered chapter kicker");
  await page.locator("#aoPray435930 [data-p435930-mercy-next]").evaluate(x=>x.click());
- assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/2 \/ 62/);
+ assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Our Father|Notre Père/);
  const mercyOptions=page.locator("#aoPray435930.open [data-ao-mercy-options]");
  assert.equal(await mercyOptions.count(),1,"Canonical Divine Mercy options disclosure missing");
  assert.equal(await mercyOptions.evaluate(x=>x.open),false,"Optional settings should start collapsed");
@@ -84,7 +81,8 @@ try{
  await mercyOptions.locator(":scope > summary").click();
  assert.equal(await mercyOptions.evaluate(x=>x.open),true,"Mercy options did not respond to touch");
  await page.locator("#aoPray435930 [data-p435930-mercy-closing]").evaluate(x=>x.click());
- assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/2 \/ 63/);
+ assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Our Father|Notre Père/);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyOptions button").count(),2);
  assert.equal(await mercyOptions.evaluate(x=>x.open),true,"Optional controls collapsed after repaint");
  assert.equal(await mercyOptions.locator("[data-p435930-mercy-closing]").getAttribute("aria-pressed"),"true");
  await mercyOptions.locator(":scope > summary").click();
