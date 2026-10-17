@@ -30,6 +30,18 @@ for(const u of rubrics){
  assert.ok(!/^\[/.test(fr.text),"Rubric displayed with donor square brackets");
  const en=missalSourceRubricCopy(mk(u.cue_id,u.latin,u.english),{language:"en"});
  assert.equal(en.text,u.english.replace(/^\[([\s\S]*)\]$/,"$1").trim());
+ // Real reader language policy: vernacular primary, English uppercase donor
+ // alternate. The former MUST win, even without a separate secondary.
+ const actualEnglish=missalSourceRubricCopy({
+   kind:"RUBRIC",primary:u.english,secondary:null,alternate:u.latin
+ },{language:"en"});
+ const actualFrench=missalSourceRubricCopy({
+   kind:"RUBRIC",primary:french.byCue[u.cue_id],secondary:null,alternate:u.latin
+ },{language:"fr"});
+ assert.equal(actualEnglish.text,en.text,"EN reader selected donor's uppercase pseudo-Latin rubric");
+ assert.equal(actualFrench.text,fr.text,"FR reader selected donor's uppercase pseudo-Latin rubric");
+ assert.ok(/\p{Ll}/u.test(actualEnglish.text)&&/\p{Ll}/u.test(actualFrench.text),
+  "Source rubrics must be editorial sentence-case, not all-uppercase donor labels");
 }
 assert.equal(missalSourceRubricCopy({kind:"TEXT",primary:"Hoc est enim"}),null);
 const host=mk("AO.SM.C0174",
