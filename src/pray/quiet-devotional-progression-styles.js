@@ -75,6 +75,61 @@ export const QUIET_DEVOTIONAL_PROGRESSION_CSS=String.raw`
 #aoPray435930 .aoP435930Mount[data-ao-traditional-dual-axis="daily"] .aoDevoCardScroll{
  min-height:min(270px,42dvh);
 }
+/* The active prayer must appear before optional history and provenance. */
+#aoPray435930 .aoQuietSeriesDisclosure{
+  margin:8px 0 18px;
+  border:1px solid var(--border,rgba(220,200,171,.18));
+  border-radius:9px;background:rgba(19,25,31,.32);
+}
+#aoPray435930 .aoQuietSeriesDisclosure>summary{
+  display:flex;align-items:center;gap:9px;
+  min-height:46px;padding:9px 12px;
+  cursor:pointer;list-style:none;
+}
+#aoPray435930 .aoQuietSeriesDisclosure>summary::-webkit-details-marker{display:none}
+#aoPray435930 .aoQuietSeriesDisclosure>summary:focus-visible{outline:2px solid var(--liturgical,#b9a17d);outline-offset:2px}
+#aoPray435930 .aoQuietSeriesHeading{
+  color:var(--text,#e9dfd1);
+  font:italic 13px/1.3 var(--ao-font-liturgical,Georgia,serif);
+  flex:1 1 auto;min-width:0;
+}
+#aoPray435930 .aoQuietSeriesCount{
+  color:var(--muted,#a7a49f);
+  font:11px/1.2 var(--ao-font-ui,system-ui,sans-serif);white-space:nowrap;
+}
+#aoPray435930 .aoQuietSeriesPips{display:flex;flex:0 0 auto;gap:4px}
+#aoPray435930 .aoQuietSeriesPip{
+  width:5px;height:5px;border:1px solid color-mix(in srgb,var(--liturgical,#b9a17d) 42%,transparent);
+  border-radius:50%;display:block;
+}
+#aoPray435930 .aoQuietSeriesPip[data-status="recorded"]{background:var(--liturgical,#b9a17d);border-color:var(--liturgical,#b9a17d)}
+#aoPray435930 .aoQuietSeriesPip[data-status="incomplete"]{border-style:dashed}
+#aoPray435930 .aoQuietSeriesChevron{
+  color:var(--muted,#a7a49f);font:18px/1 Georgia,serif;
+  margin:0 1px 2px 2px;transform:rotate(0deg);
+}
+#aoPray435930 .aoQuietSeriesDisclosure[open] .aoQuietSeriesChevron{transform:rotate(180deg)}
+#aoPray435930 .aoQuietSeriesExpanded{
+  border-top:1px solid var(--border,rgba(220,200,171,.12));
+  padding:11px 10px 12px;
+}
+#aoPray435930 .aoQuietSeriesExpanded .aoP435930TrackingToggle{
+  margin:0 0 10px;min-height:44px;
+  padding:8px 10px;
+}
+#aoPray435930 .aoQuietSeriesExpanded .aoP435930TrackingToggle b{
+  font-size:.83rem;line-height:1.36;
+}
+#aoPray435930 .aoQuietSeriesOffNote{
+  margin:10px 4px 2px;color:var(--muted,#a7a49f);
+  font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+}
+#aoPray435930 .aoQuietSeriesExpanded .aoQuietMonthRegister{margin:0}
+@media(max-width:365px){
+ #aoPray435930 .aoQuietSeriesPips{gap:3px}
+ #aoPray435930 .aoQuietSeriesHeading{font-size:12px}
+ #aoPray435930 .aoQuietSeriesDisclosure>summary{gap:6px;padding:9px 10px}
+}
 /* Nine / five-month register: quiet ink marks rather than medals or badges. */
 #aoPray435930 .aoQuietMonthRegister{
  --ao-series-ink:#a98b78;
