@@ -2067,7 +2067,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
   const form=angelusChoice().form,posture=angelusExactPosture();
   const cardDeck=installAngelusCardDeck({
    mount:m,form,language:lang(),historicalConclusion:form==='angelus'&&S.angelusHistoricalConclusion,
-   recitationMode:S.rosary.recitation,
+   recitationMode:S.rosary.recitation,guided:!!S.angelusGuided,
    appendixText:{vern:DATA.angelusAppendix?.[lang()],latin:DATA.angelusAppendix?.la},
    initialIndex:ANGELUS_CARD_INDEX,
    onCardChange:(_card,index)=>{
