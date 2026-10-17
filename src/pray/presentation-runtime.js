@@ -665,11 +665,11 @@ function angelusUtterance(text,type){
   if(parts)return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
  }
  if(type!=='vr')return nl(text);
- const lines=String(text||'').replace(/\\r/g,'').split('\\n').map(x=>x.trim()).filter(Boolean);
+ const lines=String(text||'').replace(/\r/g,'').split('\n').map(x=>x.trim()).filter(Boolean);
  const strict=splitAngelusVersicleResponse(text);
  const parts=strict.length===2?strict:lines.length===2?lines.map((line,i)=>({
    role:i===0?'leader':'response',
-   text:line.replace(i===0?/^(?:℣|V)\\.?\\s*/i:/^(?:℟|R)\\.?\\s*/i,'').trim()
+   text:line.replace(i===0?/^(?:℣|V)\.?\s*/i:/^(?:℟|R)\.?\s*/i,'').trim()
  })):[];
  if(parts.length!==2)return nl(text);
  return `<span class="aoAngelusDialogue">${parts.map(part=>`<span class="aoAngelusDialogueLine ${part.role}" data-ao-angelus-voice="${part.role}"><span class="ao-liturgical-speaker" data-ao-speaker-role="${part.role==='leader'?'versicle':'response'}">${part.role==='leader'?'℣.':'℟.'}</span><span>${esc(part.text)}</span></span>`).join('')}</span>`;
