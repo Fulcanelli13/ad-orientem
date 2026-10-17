@@ -70,6 +70,11 @@ try{
   await page.locator('#question-items button').first().click();
   assert.equal(await page.locator('#question-detail').isVisible(),true);
   assert.match(await page.locator('#question-detail').innerText(),/not yet been published/);
+  await page.locator('#study-sources > summary').click();
+  assert.equal(await page.locator('#study-sources').evaluate(e=>e.open),true);
+  assert.ok(await page.locator('#study-source-links li').count()>=2);
+  assert.match(await page.locator('#study-sources').innerText(),/not necessarily this precise question/);
+  assert.ok(await page.locator('#study-source-links a[target="_blank"]').count()>=1);
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#question-list').isVisible(),true);
   await page.screenshot({path:screenshotDir+'/'+spec.name+'-object.png'});
