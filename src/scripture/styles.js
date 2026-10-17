@@ -9,6 +9,9 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureLibrary{max-width:820px;margin:0 auto;padding:clamp(14px,4vw,34px);border:1px solid #655d4d;background:#111720;border-radius:14px;font-family:Georgia,"Garamond",serif;line-height:1.6}
  .aoScriptureHeader{display:flex;align-items:center;justify-content:space-between;gap:12px}
  .aoScriptureHeader h2{font-size:clamp(24px,4vw,36px);font-weight:400;margin:0;color:#e9dfc4}
+ .aoScriptureEnglishSwitch{display:flex;align-items:center;gap:6px;margin:10px 0 13px}
+ .aoScriptureLibrary .aoScriptureEnglishSwitch button{flex:1;min-height:44px;padding:9px 12px;border:1px solid #665b48;border-radius:8px;background:transparent;color:#cfc3ac;font:600 13px/1.25 system-ui,sans-serif}
+ .aoScriptureLibrary .aoScriptureEnglishSwitch button[aria-pressed="true"]{border-color:#b79c6a;background:rgba(175,142,89,.16);color:#f5e7c4}
  .aoScriptureEditorialMine{display:inline-block;color:#c5b48f;font:12px/1.6 system-ui,sans-serif;margin:8px 0 15px;text-decoration:underline;text-underline-offset:3px}
  .aoScriptureEditorialMine:focus-visible{outline:2px solid #e1cc99;outline-offset:2px}
  .aoScriptureLibrary button,.aoScriptureLibrary select,.aoScriptureLibrary input{font:inherit;color:#efe8d9;background:#1a2330;border:1px solid #786b56;border-radius:8px;padding:8px 12px;max-width:100%}

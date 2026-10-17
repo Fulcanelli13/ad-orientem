@@ -17,7 +17,7 @@ const L={
   book:"Book",chapter:"Chapter",verse:"Verse",open:"Read at source",save:"Bookmark",saved:"Bookmarked",
   bookmarks:"Bookmarks",search:"Search",find:"Search approved text",results:"Results",none:"No verified local text found.",
   rosary:"Rosary mysteries",source:"Source edition", unavailable:"This chapter is not available offline. Open the Catholic edition at its source.",
-  readable:"CPDV is the default for more accessible English. Douay–Rheims remains an optional traditional comparison. Both currently use source-labelled transcriptions pending edition-level collation.",
+  readable:"Choose Douay–Rheims or CPDV at any time. Both use source-labelled transcriptions pending edition-level collation.",
   frenchSource:"Crampon 1923 source",close:"Close",next:"Next chapter",previous:"Previous chapter",noBookmarks:"No bookmarks saved", language:"Language"},
  fr:{heading:"Sainte Écriture",notice:"Lecture de la Bible catholique. Les transcriptions historiques non collationnées sont signalées.",
   book:"Livre",chapter:"Chapitre",verse:"Verset",open:"Consulter la source",save:"Marquer",saved:"Marqué",
@@ -114,6 +114,26 @@ export function mountScriptureLibrary(root,{
    heading.append(element("h2",t.heading));
    const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
    close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
+   // A translation is a reading choice, distinct from switching language.
+   // Keep both Catholic English witnesses one tap away, even when the full
+   // Bible navigation drawer is closed. Persist an explicit reader choice.
+   if(lang==="en"){
+     const editions=element("div",null,"aoScriptureEnglishSwitch");
+     editions.setAttribute("role","group");
+     editions.setAttribute("aria-label","English Bible translation");
+     for(const [id,name] of [["dr-challoner","Douay–Rheims"],["cpdv-2009","CPDV"]]){
+       const button=element("button",name);
+       button.type="button";
+       button.dataset.scriptureEnglishEdition=id;
+       button.setAttribute("aria-pressed",String(id===editionId));
+       button.addEventListener("click",()=>{
+         if(id===editionId)return;
+         moveEdition(id);prefs.setEnglishEdition(id);draw();
+       });
+       editions.append(button);
+     }
+     wrap.append(editions);
+   }
    // Explicit research opt-in only: the public reader and parent Mass/Rosary
    // state remain unchanged. This opens the editor's separate source workbench.
    const researchFlag=root.ownerDocument?.defaultView?.location?.search??"";
