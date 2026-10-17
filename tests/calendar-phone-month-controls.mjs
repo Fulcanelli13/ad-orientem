@@ -100,6 +100,17 @@ try{
    for(const view of ["temporale","sanctorale"]){
      await cal.locator('[data-cal-month-view="'+view+'"]').click();
      await cal.locator('[data-cal-month-index="'+view+'"]').waitFor({state:"visible",timeout:12000});
+     // The Month list is below a scrollable tab rail. Measure controls only
+     // after scrolling the actual first row into the rendered viewport, or
+     // off-screen lazy layout may report zero-sized rectangles.
+     const firstRow=cal.locator('[data-cal-month-index="'+view+'"] .aoCalMonthIndexRow').first();
+     if(await firstRow.count()){
+       await firstRow.scrollIntoViewIfNeeded({timeout:12000});
+       await page.waitForFunction(selector=>{
+         const row=document.querySelector(selector);
+         return Boolean(row&&row.getBoundingClientRect().height>=44);
+       },'.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-month-index="'+view+'"] .aoCalMonthIndexRow',{timeout:8000});
+     }
      const index=await cal.locator('[data-cal-month-index="'+view+'"]').evaluate(el=>{
        const rows=[...el.querySelectorAll(".aoCalMonthIndexRow")];
        const actions=[...el.querySelectorAll(".aoCalMonthSaintDetail")];
