@@ -11,7 +11,7 @@ import {
 } from "../src/calendar/liturgical-year.js";
 import { v384Dates, v384Events, v384Event } from "../src/calendar/traditional-year-v384.js";
 import { SEASON_GUIDE, yearSegmentGeometry, renderYearJourney } from "../src/calendar/year-journey.js";
-import { clockGeometry, renderLiturgicalClock, resolvedClockFeasts } from "../src/calendar/liturgical-clock.js";
+import { clockGeometry, renderLiturgicalClock, resolvedClockFeasts, clockVisibleFeasts } from "../src/calendar/liturgical-clock.js";
 import { calendarMassColour } from "../src/calendar/colour-projection.js";
 import { calendarPaletteColour, resolvedYearColour, yearDailyProjection, yearSeasonGradient } from "../src/calendar/year-colour-wheel.js";
 import { MASS_LITURGICAL_PALETTES } from "../src/mass/reader-liturgical-theme.js";
@@ -316,12 +316,12 @@ assert.match(browser, /renderYearJourney\(\{year:y/, "Liturgical Year lost the p
 assert.match(browser, /yearJourneyCss/, "Liturgical Year did not import responsive journey styles");
 const clockSource = fs.readFileSync(new URL("../src/calendar/liturgical-clock.js",import.meta.url),"utf8");
 assert.match(browser,/clockForYear\(y,selected\)/,"Standalone Year lost Liturgical Clock");
-assert.match(clockSource,/aoClockUpcoming/,"Standalone Year lost its upcoming season and feast entries");
+assert.match(clockSource,/aoClockUpcoming/,"Clock lost the compact next feast dates");
 assert.match(browser,/const embedded=root\(\)\?\.dataset\.aoCalendarEmbedded===/,"Embedded Year must not repeat the full clock");
-assert.match(browser, /data-cal-open-month="major"/, "Liturgical Year lost its major-days route into Month");
+assert.match(browser,/embedded&&!embeddedHomeYear\?renderYearJourney/,"The full/Home Year must not repeat the season timeline; Mass preparation retains its contextual navigation");
 assert.ok(browser.includes('data-cal-year-open-day="${next.date}"'),"Next feast must open Day through existing Year-Journey handler");
-assert.match(clockSource,/if\(season\)upcoming.push\(season\)/,"Full clock lost the next seasonal transition");
-assert.match(clockSource,/data-cal-clock-open-day/,"Clock seasonal transition no longer opens the selected day");
+assert.match(clockSource,/clockVisibleFeasts\(year,getDay/,"Upcoming feasts must be source-owned or marked as traditional date landmarks");
+assert.match(clockSource,/data-cal-clock-open-day/,"Calendar landmarks must open the canonical selected day");
 assert.ok(!browser.includes('data-cal-month-index-date="${x.date}" ${view==="sanctorale"'),"Sanctorale rows cannot intercept Day selection with saint-detail handler");
 assert.ok(browser.includes('if(openMonth&&calendarView!=="picker")pickerMonthId='),"Year-to-Month route must reset stale month");
 assert.match(browser,/data-cal-year-open-day/,"Period to Day journey navigation is missing");
@@ -434,14 +434,29 @@ assert.ok(visualClock.includes(MASS_LITURGICAL_PALETTES.WHITE.accent),"A resolve
 assert.ok(visualClock.includes(MASS_LITURGICAL_PALETTES.BLACK.accent),"A resolved black day must not inherit green");
 assert.ok(visualClock.includes(MASS_LITURGICAL_PALETTES.NEUTRAL.panel),"Unresolved daily ring sectors must remain neutral");
 assert.doesNotMatch(visualClock,/aoClockTracery/,"The instrument dial must not reintroduce floral ornament");
+assert.match(visualClock,/--ao-clock-glow:/,"Liturgical clock sectors must own translucent colour accents");
+assert.match(visualClock,/aoClockSources/,"Source verification must be available on demand");
+assert.doesNotMatch(visualClock,/aoCalYearTrack|aoCalYearDailyTrack/,"Clock must not duplicate the season and daily-colour timelines");
 const unresolvedClock=renderLiturgicalClock({year:rosary,selectedDate:"2026-10-07",todayDate:"2026-10-16"});
 assert.match(unresolvedClock,/data-verified-days="0"/,"The dial must not manufacture daily liturgical colours");
 assert.equal(resolvedClockFeasts(rosary,()=>null,()=>"",()=>"",()=>"" ).length,0,
   "Unresolved projected candidate dates cannot produce a certified clock feast");
+const landmarks=clockVisibleFeasts(rosary,()=>null,()=>"",()=>"",()=>"");
+assert.deepEqual(landmarks.map(f=>f.date),["2026-10-25","2026-11-01","2026-11-02"]);
+assert.ok(landmarks.every(f=>!f.observed&&f.tier==="landmark"&&!f.rank&&!f.colour),
+  "Calendar landmarks may not masquerade as verified Mass observances");
+assert.match(unresolvedClock,/All Saints/,"All Saints must be listed without full-year network resolution");
+assert.match(unresolvedClock,/Commemoration of All the Faithful Departed/,
+  "All Souls must remain a discoverable calendar landmark");
+assert.match(unresolvedClock,/data-cal-clock-cluster-members="2026-11-01,2026-11-02"/,
+  "All Saints and All Souls must have a shared, accessible adjacent-date marker");
+assert.match(unresolvedClock,/Calendar landmark/,"Unresolved date detail must not claim observed Mass");
 const integratedCalendarSource=fs.readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 assert.match(integratedCalendarSource,/clockForYear\(y,selected\)/);
 assert.match(integratedCalendarSource,/renderYearJourney\(/,"Original eleven-period journey preserved");
-assert.match(integratedCalendarSource,/requestYearDailyColours\(/,"Full 1962 daily-colour projection preserved");
+assert.match(integratedCalendarSource,/requestYearDailyColours\(/,"Verified 1962 day-colour projection preserved");
+assert.match(integratedCalendarSource,/orderedClockCandidateDates\(year,selected\)/,
+  "Opening Year must not fetch all 364 daily missal files to show feast landmarks");
 assert.match(integratedCalendarSource,/dial\.style\.setProperty\("--ao-clock-daily-gradient",projection\.gradient\)/,"Clock ring must hydrate without displacing selected keyboard focus");
 assert.match(integratedCalendarSource,/calendarPracticeMonthEntries/,"Month Practices source owner preserved");
 assert.match(integratedCalendarSource,/serialize1962CalendarMonth/,"Month ICS export preserved");
