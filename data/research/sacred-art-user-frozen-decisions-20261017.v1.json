@@ -1,0 +1,1204 @@
+{
+  "schema": "AO_SACRED_ART_CURATORIAL_FREEZE_20261017_V1",
+  "asOf": "2026-10-17",
+  "provenance": {
+    "userFinalSelection": "ad-orientem-sacred-art-final-review-decisions.json",
+    "userEarlierRatings": "Ad_Orientem_Sacred_Art_Ratings_2026-10-13.json",
+    "editorialFreeze": "Ad_Orientem_Sacred_Art_Decision_Freeze_2026-10-17.json",
+    "historical109": "data/research/sacred-visual-w64-explicit-user-5star-physical-record-authority-20261015.v1.json"
+  },
+  "precedence": "Latest explicit user approval or rejection overrides prior review for identical artwork ID; earlier 5-star works not addressed by the new user export remain intact under W64 authority. Never equate different artwork record IDs without physical identity evidence.",
+  "policy": {
+    "rejectBelowThree": true,
+    "rejectedIsFinal": true,
+    "approvedIsFinal": true,
+    "doNotAskForMoreArtRatings": true,
+    "preserveEarlierUnreviewedFives": true,
+    "doNotPublishWithoutIndependentFileAndRightsGates": true,
+    "doNotContactRightsHolders": true
+  },
+  "counts": {
+    "newlyApprovedArtworkIDs": 107,
+    "explicitlyLockedArtworkIDs": 90,
+    "permanentlyRejectedArtworkIDs": 68,
+    "existingW64FiveRecordIDs": 109,
+    "existingW64FiveAlsoApprovedNew": 29,
+    "existingW64FiveExplicitlyRejectedNew": 0
+  },
+  "approved": [
+    {
+      "artworkId": "2020.263.8",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-acopo-intoretto-udith-and-olofernes",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-aphael-and-iulio-omano-he-isitation",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-aravaggio-avid-with-the-ead-of-oliath",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-aravaggio-he-acrifice-of-saac",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-aravaggio-nspiration-of-aint-atthew",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-arlo-rivelli-aint-homas-quinas",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-bastien-ourdon-he-inding-of-oses",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-ean-estout-entecost",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "113|ART-ean-estout-entecost|2f81e53275f9c32f7afb71c03d870c29cdde943f4ffd6f8d0ea23c5efd341589|ART-ean-estout-entecost-c5cfe496792ba757.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-ean-ouvenet-aising-of-azarus",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-aniel-in-the-ions-en",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "107|ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle|d55c169f3b2f8dc28d51e79e8769187a2b3a2cab3fff0fdd9cebca25b9d195b3|ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle-0b37acf17d221f07.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-he-razen-erpent",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-mmaculate-onception",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "134|ART-eter-aul-ubens-ssumption-of-the-irgin|d63e1af78afea928731e58e642aa2e643bc66b4a8b012c5cd601d0a5e59ed782|ART-eter-aul-ubens-ssumption-of-the-irgin-89329a1b27c3d310.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-aint-ugustine",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "101|ART-hilippe-de-hampaigne-he-nnunciation|ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6|ART-hilippe-de-hampaigne-he-nnunciation-afa559b282fb1ebd.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "104|ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple|c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869|ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple-747bbb92d6a5945f.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "117|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross|115a2b6be63cb372263c2ea327b0fbfe6aa3e8a016691e391bb7394888b46498|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross-6fd952c042728a14.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "119|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other|a63135ad0e387e3e1c53ce4505758054967091e43f2a4576fb5b62dcb38bb17b|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other-f44fbe09be8e9f35.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-ieter-ruegel-the-lder-ower-of-abel",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "138|ART-ietro-da-ortona-he-uardian-ngel|9e1d8a2732d7f156d9fc94d4c552e915c0c54b756049de03a37b3b41ffbae01f|ART-ietro-da-ortona-he-uardian-ngel-1939da2959bd4371.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": "161|ART-iovanni-anfranco-iracle-of-oaves-and-ishes|f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa|ART-iovanni-anfranco-iracle-of-oaves-and-ishes-f913f038c1f0973e.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-itian-hrist-arrying-the-ross",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-os-de-ibera-acob-s-ream",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": "53|ART-uan-de-uanes-artyrdom-of-aint-tephen|5e4aa3db3f35edd7a06f033e958a6c3799bf7b35c146f0dc5c7deebc9cc90d3b|ART-uan-de-uanes-artyrdom-of-aint-tephen-cc8cdf079fb214c1.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "144|ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels|9f4907309cf5603285ae26615dcba47213e426d3b8eace3cbd0b879ff9ce0796|ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels-639ba7cbdfacb8e7.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-ug-ne-elacroix-eliodorus-riven-from-the-emple",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-uido-eni-aint-ary-agdalene",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "68|ART-uido-eni-aint-ary-agdalene|651aeae81e3cda249643e742916ca9eafc3c755c8cb836c31dfe9b00970f1216|ART-uido-eni-aint-ary-agdalene-6f28af2cc1363f7a.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "45|ART-uido-eni-rchangel-ichael-efeating-atan|4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad|ART-uido-eni-rchangel-ichael-efeating-atan-a5b2f45a4aa02345.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-uido-eni-usannah-and-the-lders",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-usepe-de-ibera-aint-erome-riting",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "B01-MARK-MARATTA-THYSSEN",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "B01-MARK-RENI-BJU",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "B01-MARK-RENI-GENOA",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "14|B01-MARK-RENI-GENOA|fd7adbc610f0d0c9c87f8d472d82a78348152ac5dba5fce9f35195f07607c3ab|B01-MARK-RENI-GENOA-550ed8219e6413ef.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "B01-MARK-TINTORETTO-ACCADEMIA",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": "14|B01-MARK-TINTORETTO-ACCADEMIA|8918fa4ea8d29e6fb6566e70e8b446005ad998e136914680c2eab4fb821e8bab|B01-MARK-TINTORETTO-ACCADEMIA-c6a145ae4e634532.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "B02-HEART-MARY-MORLETE",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "C32:andreyivanovstambrosebarringtheodosiusfrommilancathedral1829",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+      "status": "HUMAN_LOCKED",
+      "score": 4,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "C32:bernardinomeisantacaterinadasiena1641jpg",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "C34:saintmatthewbyvalentindeboulognejpg",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "G25-003",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "W01-001",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "W02-001",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "W05-027",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": "1|W05-027|0d9f7b9c85319cbb859baa002c684ca788dcf6f5b371819ac18c144af62cf6a2|W05-027-badf92d27d70b41b.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "W07-007",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": "18|W07-007|32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158|W07-007-90ae4676f7500320.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "W07-014",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": "7|W07-014|1dbb8185f9e878a8f59494c4af0b0d619f5eeabdc0d9fd2baab960754b0339f7|W07-014-d83e76537a75d620.webp",
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "W14-016",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "W36-SNT-AP-03-3e9d9be5f41a",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "W38-006",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "cma-122338",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "cma-127572",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "cma-135659",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "cma-136507",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "cma-143644",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "cma-143784",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "cma-148758",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-436199",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-436502",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-436672",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-436791",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-436835",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-436839",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-437423",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-437722",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-437738",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-437977",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-438724",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-442488",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-442491",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-459131",
+      "status": "HUMAN_FIVE_APPROVED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "met-712539",
+      "status": "HUMAN_LOCKED",
+      "score": 5,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "prado-ribalta-p002804",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "prado-rubens-p001647",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "prado-rubens-p001651",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    },
+    {
+      "artworkId": "prado-rubens-p001655",
+      "status": "HUMAN_LOCKED",
+      "score": null,
+      "preferredImageKey": null,
+      "imageMasterReleased": false
+    }
+  ],
+  "rejected": [
+    {
+      "artworkId": "ART-aspard-ughet-lijah-and-the-ngel",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-114684",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-120995",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-122339",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-124117",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-124118",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-127664",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-128075",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-128389",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-128842",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-130377",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-131820",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-132367",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-136864",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-140149",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-142474",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-162322",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-515375",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-97136",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-97139",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-97142",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "cma-97166",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "commons-el-paso-sacred-heart-retablo",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "commons-multscher-pentecost",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "kress-k0355",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-435618",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-435766",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-435828",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-435863",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-436416",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-436565",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-436793",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-436795",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-436797",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-437272",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-437527",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-437578",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-437639",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-437736",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-437821",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-439977",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-458966",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-458974",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-458978",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-458984",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-458998",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459005",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459007",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459021",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459041",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459044",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459053",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459059",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459064",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459065",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459066",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-459133",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "met-910391",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-106787",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-167923",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-195513",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-206072",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-357",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-41627",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-41667",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-42494",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-440",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    },
+    {
+      "artworkId": "nga-46145",
+      "status": "PERMANENTLY_REJECTED",
+      "allowSuggestedSubstitution": false
+    }
+  ],
+  "historicallyFiveIDsPreservedSeparately": [
+    "ART-artolom-steban-urillo-aint-sidore-of-eville",
+    "ART-eter-aul-ubens-aint-ebastian",
+    "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
+    "ART-ierre-ubert-ubleyras-he-ass-of-aint-asil-oil-modello",
+    "ART-ietro-da-ortona-aint-ecilia",
+    "ART-nthony-van-yck-aint-artin-ividing-is-loak",
+    "ART-nthony-van-yck-aint-osalia-nterceding-for-alermo",
+    "ART-nthony-van-yck-aint-rancis-in-cstasy",
+    "C32:antoniosicurezzacharityofstlaurencejpg",
+    "C32:cavalierarpinosantaceciliajpg",
+    "C32:claudevignonstcatherinerefusestosacrificetotheidolsjpg",
+    "C32:eliseuviscontirecompensadesaosebastiaojpg",
+    "C32:gustavevanaisemagdaleneinchriststombjpg",
+    "C32:hippolytefourniersaintcecilejpg",
+    "C32:pompeobatoniestasidisantateresa1743circajpg",
+    "C32:sanbasilioysanatanasioalonsosanchezcoellojpg",
+    "C32:stnicholasofbaripresentstherovellistudentstomadonnaandchildb",
+    "C34:albertusmagnusparishofguayaquiljpg",
+    "C34:ambrosiusbensonsantodomingodeguzmanmuseodelpradomadridjpg",
+    "C34:colognavenetachiesadisantamarianascenteilmiracolodellamulajp",
+    "C34:luketheevangelistbyjanjanszdestommejpg",
+    "C34:marcoantoniofranceschiniilsfrancescodisalesneldesertojpg",
+    "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
+    "C35:laeducaciondelavirgentheeducationofthevirginworkshopofvicent",
+    "C35:saintagnesbycesaredandinijpg",
+    "C35:saintegenevieve1821byelisabethvigeelebrunjpg",
+    "G17-003",
+    "G17-006",
+    "G17-010",
+    "G20-004",
+    "G26-005",
+    "G26-007",
+    "G27-002",
+    "G30-004",
+    "G30-007",
+    "G31-001",
+    "G32-001",
+    "G32-002",
+    "W02-015",
+    "W02-017",
+    "W04-009",
+    "W05-004",
+    "W05-008",
+    "W08-009",
+    "W10-009",
+    "W14-004",
+    "W14-006",
+    "W36-SNT-OT-13-5387d641cce6",
+    "W38-001",
+    "W38-009",
+    "W38-019",
+    "W39-014",
+    "W40-006",
+    "W40-010",
+    "W40-011",
+    "W40-012",
+    "W42-NEW-002",
+    "W44-005",
+    "W44-006",
+    "carmel-lisieux-1925-therese-aux-roses",
+    "celine-1894-john-cross",
+    "cma-130392",
+    "cma-136680",
+    "cma-150046",
+    "cma-150389",
+    "cma-150955",
+    "cma-160143",
+    "cma-370119",
+    "france-PM01002671-vianney",
+    "louvre-crespi-inv259",
+    "met-437458",
+    "met-438134",
+    "met-438434",
+    "met-724811",
+    "nga-106362",
+    "nga-12209",
+    "nga-46185",
+    "paris-pm75001042-halle-sales",
+    "podesti-margaret-mary-source",
+    "prado-rubens-defenders"
+  ],
+  "overwriteLegacyRatings": false
+}
