@@ -41,6 +41,7 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({
 const localized=o=>o&&typeof o==="object"&&
  ["en","fr"].every(l=>typeof o[l]==="string"&&o[l].trim()===o[l]&&o[l].length>=8&&o[l].length<=1600);
 const empty=()=>new Map();
+const normalize=s=>String(s??"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 export function verifiedMassExplorerPrayerReadings(registry,catalog){
  if(registry?.schema!==MASS_EXPLORER_PRAYER_READINGS_VERSION||
     registry?.status!=="EDUCATIONAL_SOURCE_READING"||
@@ -61,6 +62,8 @@ export function verifiedMassExplorerPrayerReadings(registry,catalog){
      !["MF01","MF02","MF03","MF04","MF05","MF06","MF07","MF08"].includes(r.stage_id)||
      !Object.hasOwn(requiredFamilies,r.family)||
      !localized(r.title)||!localized(r.reading)||
+     typeof r.text_anchor_en!=="string"||r.text_anchor_en.length<3||
+     !normalize(original?.source?.units?.map(u=>u.english).join(" ")).includes(normalize(r.text_anchor_en))||
      out.has(r.block_id)||!original||original.key!==r.moment_id||
      original.source.Proper_Slot||!original.source.units?.length||
      status!==expectedStatus||
