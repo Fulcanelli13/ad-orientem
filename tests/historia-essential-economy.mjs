@@ -10,7 +10,7 @@ const economy=JSON.parse(readFileSync(
 
 assert.equal(economy.schema,"ao.historia.v18.essential-verse-economy.v1");
 assert.equal(economy.status,"EDITORIAL_PROVISIONAL_VERSE_COORDINATES_ONLY");
-assert.deepEqual(economy.counts,{essential:93,edited:32,protected:35,unchanged:24,editionCorrections:2});
+assert.deepEqual(economy.counts,{essential:93,edited:32,protected:34,unchanged:25,editionCorrections:2});
 assert.equal(economy.decisions.length,93);
 assert.equal(economy.canonical.originalV18Chapters,78);
 assert.equal(economy.canonical.originalV18Segments,217);
@@ -156,7 +156,7 @@ for(const decision of economy.decisions){
  }
 }
 assert.equal(seen.size,93);
-assert.deepEqual(stats,{edited:32,protected:35,unchanged:24,editionCorrections:2,halfVerses:1});
+assert.deepEqual(stats,{edited:32,protected:34,unchanged:25,editionCorrections:2,halfVerses:1});
 assert.ok(selectedVerseCount<originalVerseCount);
 assert.ok(originalVerseCount-selectedVerseCount>80,"No fake compression reported");
 for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
@@ -170,4 +170,4 @@ assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
 assert.equal(economy.verification.fullLiteraryReadAloud,false);
 assert.equal(economy.verification.CatholicEditorialApproval,false);
 assert.equal(economy.verification.translationRightsApproval,false);
-console.log("PASS Historia essentials: 93 v18 units; 32 proposed trims, 35 locked, 24 baseline and 2 edition corrections; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
+console.log("PASS Historia essentials: 93 v18 units; 32 proposed trims, 34 locked, 25 baseline and 2 edition corrections; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
