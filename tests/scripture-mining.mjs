@@ -710,4 +710,85 @@ assert.equal(spine.editorialGates.catholicEditorialReview,false);
 assert.equal(spine.editorialGates.userAccepted,false);
 assert.equal(spine.editorialGates.publicReaderChanged,false);
 
+
+// The next economy pass must never silently restore filler by copying every B passage.
+const desk=JSON.parse(readFileSync(new URL(
+ "../data/research/historia-salutis-v18-continuity-desk-pass.v1.json",import.meta.url),"utf8"));
+assert.equal(desk.schema,"ao.historia.v18.main-spine-continuity-desk-pass.v1");
+assert.equal(desk.status,"EDITORIAL_DESK_TRIAGE_PENDING_FULL_READALOUD");
+assert.equal(desk.counts.originalV18Units,217);
+assert.equal(desk.counts.originalChapters,78);
+assert.equal(desk.counts.movements,37);
+assert.equal(desk.counts.essentialUnits,93);
+assert.equal(desk.counts.originalBContextUnits,67);
+assert.deepEqual(desk.counts.bContextDisposition,{
+ MANDATORY_BRIEF_CONTEXT:32,GENEALOGY_NAVIGATION_NOT_PROSE:2,
+ TYPOLOGICAL_REFERENCE_ONLY:5,NO_MAIN_CONTEXT_NEEDED:28});
+assert.equal(desk.counts.independentStoryUnitsStillC,54);
+assert.equal(desk.counts.noFeaturedReadingUnitsStillD,3);
+assert.equal(desk.counts.bridgeSourceCandidates,11);
+assert.equal(desk.counts.bridgesOutsideV18,7);
+assert.equal(desk.counts.fullReadAloudCompleted,false);
+assert.equal(desk.publication.editorialApproved,false);
+assert.equal(desk.publication.sourceEditionCollationApproved,false);
+assert.equal(desk.publication.alteredPublicApp,false);
+const seenBDesk=new Set();
+let keepB=0;
+for(const decision of desk.contextDecisions){
+ assert.ok(!seenBDesk.has(decision.unitId),"Original B identity must appear only once");
+ seenBDesk.add(decision.unitId);
+ assert.equal(disp(decision.unitId).disposition,"B");
+ assert.equal(decision.originalReference,disp(decision.unitId).sourceReferenceOriginal);
+ assert.equal(decision.sourceOwner,"ORIGINAL_V18_SEGMENT");
+ assert.equal(decision.requiredAsWholePassage,false,"B context must not be wholesale reinstated");
+ assert.equal(decision.nativeTextPublicationApproved,false);
+ assert.equal(decision.reviewStatus,"DESK_TRIAGED_ORAL_READING_PENDING");
+ assert.ok(spine.movements.some(m=>m.id===decision.movementId));
+ if(decision.readthroughDecision==="MANDATORY_BRIEF_CONTEXT"){
+  keepB++;
+  assert.ok(decision.contextPurpose.length>25);
+ }
+}
+assert.equal(seenBDesk.size,67);
+assert.equal(keepB,32);
+assert.equal(desk.contextDecisions.find(d=>d.unitId==="H07-01").readthroughDecision,"MANDATORY_BRIEF_CONTEXT",
+ "Ark construction must be explained before the Flood's Ark-entry scene");
+assert.equal(desk.contextDecisions.find(d=>d.unitId==="H06-01").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED",
+ "Do not double-count moral corruption before the Ark");
+assert.equal(desk.contextDecisions.find(d=>d.unitId==="H73-03").readthroughDecision,"NO_MAIN_CONTEXT_NEEDED",
+ "Athens is not a required stop en route to Rome");
+assert.equal(desk.contextDecisions.find(d=>d.unitId==="H45-01").readthroughDecision,"GENEALOGY_NAVIGATION_NOT_PROSE");
+assert.equal(desk.contextDecisions.find(d=>d.unitId==="H45-02").readthroughDecision,"GENEALOGY_NAVIGATION_NOT_PROSE");
+let outsideV18=0;
+const seenBridge=new Set();
+for(const b of desk.sourceBridgeCandidates){
+ assert.ok(!seenBridge.has(b.id));seenBridge.add(b.id);
+ assert.ok(desk.movementDecisions.some(m=>m.movementId===b.movementId&&m.sourceBridgeCandidates.includes(b.id)));
+ assert.equal(b.approvedToInsertText,false);
+ assert.equal(b.originalWorkbookModified,false);
+ assert.equal(b.installedSourceVersePresenceVerified,true);
+ assert.equal(b.identicalCoordsInCPDVAndDouay,true);
+ assert.equal(b.needsLiteraryConcordanceReview,true);
+ const p=parseScriptureContext(b.reference)?.passage;
+ assert.ok(p,"All proposed bridge references must be exact Scripture passages");
+ assert.equal(p.verseEnd-p.verseStart+1,b.cpVerses);
+ assert.equal(p.verseEnd-p.verseStart+1,b.douayVerses);
+ for(let vv=p.verseStart;vv<=p.verseEnd;vv++){
+  assert.ok(getSet("cpdv-2009",p.book).has(p.chapter+":"+vv),
+    "CPDV missing continuity source "+b.reference);
+  assert.ok(getSet("dr-challoner",p.book).has(p.chapter+":"+vv),
+    "Douay missing continuity source "+b.reference);
+ }
+ if(b.selectionOrigin==="NEW_VERSE_CANDIDATE")outsideV18++;
+ if(b.originalV18SourceIdIfAny){
+  assert.ok(disp(b.originalV18SourceIdIfAny),
+   "Pre-existing B/C source must keep its original ownership");
+ }
+}
+assert.equal(outsideV18,7);
+assert.equal(seenBridge.size,11);
+assert.equal(desk.movementDecisions.length,37);
+assert.ok(desk.movementDecisions.every(x=>!x.mainNarrativeReadyForFullLiteraryReading));
+assert.ok(desk.genreAndOwnershipGuards.some(g=>g.issue==="Narrative without filler"));
+
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
