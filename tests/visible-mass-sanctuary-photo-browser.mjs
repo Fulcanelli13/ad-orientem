@@ -100,7 +100,9 @@ try{
   assert.ok(await page.locator('#question-items button').count()>4);
   await page.locator('#question-items button').first().click();
   assert.equal(await page.locator('#question-detail').isVisible(),true);
-  assert.match(await page.locator('#question-detail').innerText(),/not yet been published/);
+  assert.equal(await page.locator('#historical-answer').isVisible(),true);
+  assert.equal(await page.locator('#answer-pending').isVisible(),false);
+  assert.ok((await page.locator('#historical-answer-sources a').first().innerText()).trim().length>6);
   await page.locator('#study-sources > summary').click();
   assert.equal(await page.locator('#study-sources').evaluate(e=>e.open),true);
   assert.ok(await page.locator('#study-source-links li').count()>=2);
