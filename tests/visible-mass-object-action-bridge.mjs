@@ -7,7 +7,7 @@ import {projectVisibleMassObjectActions} from "../previews/visible-mass-3d/photo
 const base="previews/visible-mass-3d/";
 const pilot=JSON.parse(fs.readFileSync(base+"PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json","utf8"));
 const html=fs.readFileSync(base+"sanctuary-hotspot-pilot.html","utf8");
-const match=html.match(/const SPOTS\\s*=\\s*(\\[[\\s\\S]*?\\]);/);
+const match=html.match(/const SPOTS\s*=\s*(\[[\s\S]*?\]);/);
 assert.ok(match,"source-owner original photo coordinates required");
 const marks=vm.runInNewContext("("+match[1]+")",Object.create(null));
 const glossary={};
