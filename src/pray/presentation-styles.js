@@ -978,24 +978,24 @@ const PRAY_ORG_ENTRY_CSS=`
 const PRAYER_PRACTICE_FOCUS_CSS=String.raw`
 /* Phone reading density only: no prayer, rubric or posture ownership. */
 @media(max-width:560px){
- #aoPray435930 .aoP435930AngelusReader>.aoP435930PrayerOptions{
+ #aoPray435930 [data-ao-angelus-options]{
    margin:0 0 5px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.12));
    border-radius:0;background:transparent
  }
- #aoPray435930 .aoP435930AngelusReader>.aoP435930PrayerOptions>summary{
+ #aoPray435930 [data-ao-angelus-options]>summary{
    min-height:44px;padding:6px 3px;color:var(--muted,#c1b8aa);font-weight:500
  }
- #aoPray435930 .aoP435930AngelusReader>.aoP435930PrayerOptions>summary>small{
+ #aoPray435930 [data-ao-angelus-options]>summary>small{
    font-weight:500;font-size:11px
  }
- #aoPray435930 .aoP435930AngelusReader .aoRitualRail{
+ #aoPray435930 [data-ao-ritual-module="angelus"].aoRitualRail{
    padding:0 0 2px!important;gap:4px!important;margin:0!important;
    background:transparent!important;backdrop-filter:none!important
  }
- #aoPray435930 .aoP435930AngelusReader .aoRitualSlot[data-channel="posture"]{
+ #aoPray435930 [data-ao-ritual-module="angelus"] .aoRitualSlot[data-channel="posture"]{
    min-height:44px!important;border-radius:8px!important;padding:3px 7px!important
  }
- #aoPray435930 .aoP435930AngelusReader .aoRitualIcon{
+ #aoPray435930 [data-ao-ritual-module="angelus"] .aoRitualIcon{
    width:30px!important;height:30px!important
  }
  #aoPray435930 .aoP435930AngelusReader .aoDevoTimeline{
