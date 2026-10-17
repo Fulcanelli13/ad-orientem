@@ -1,6 +1,87 @@
 /** Adoration-only contemplative presentation. Canonical prayers remain in the existing runtime. */
 export const ADORATION_FOLIO_CSS=String.raw`
 /* Adoration-only: no numbered stage tiles, performance scores or animations. */
+
+/* Rail icons are meaningful in the guided Visit, but not at a mode
+   selection or during unstructured stillness, where they obscure text. */
+#aoPray435930:has(.aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"]) [data-ao-pray-rail-channel],
+#aoPray435930:has(.aoP435930AdorationReader[data-ao-adoration-mode="open"]) [data-ao-pray-rail-channel]{
+ display:none!important;visibility:hidden!important;pointer-events:none!important;
+}
+/* Entry hierarchy: immediately available Visit and untimed silence;
+   optional guided methods have equal access through a native disclosure. */
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"]{
+ max-width:720px;padding:4px clamp(7px,3vw,20px) 27px;
+}
+#aoPray435930 .aoAdorationChooserIntroduction{
+ margin:3px 0 16px;color:var(--muted,#b0a59a);
+ font:italic 14px/1.55 Georgia,serif;text-align:center;
+}
+#aoPray435930 .aoAdorationPrimaryGrid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+}
+#aoPray435930 .aoAdorationPrimaryGrid button{
+ min-width:0;min-height:164px;padding:18px 17px;text-align:left;
+ display:flex;flex-direction:column;align-items:flex-start;
+ background:transparent;border:1px solid color-mix(in srgb,var(--liturgical,#b8a17e) 27%,var(--border,#414043));
+ border-radius:7px;color:var(--text,#ede3d5);box-shadow:none;
+}
+#aoPray435930 .aoAdorationPrimaryGrid button small{
+ font:10px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ letter-spacing:.1em;color:var(--liturgical,#c3a982);
+}
+#aoPray435930 .aoAdorationPrimaryGrid button b{
+ display:block;margin:15px 0 10px;
+ font:400 clamp(20px,5vw,25px)/1.24 Georgia,serif;
+}
+#aoPray435930 .aoAdorationPrimaryGrid button span{
+ font:italic 13px/1.55 Georgia,serif;color:var(--muted,#b0a49b);
+}
+#aoPray435930 .aoAdorationPrimaryGrid button:hover{
+ border-color:color-mix(in srgb,var(--liturgical,#c3a982) 55%,var(--border,#414043));
+}
+#aoPray435930 .aoAdorationPrimaryGrid button:focus-visible,
+#aoPray435930 .aoAdorationMethodsDisclosure>summary:focus-visible{
+ outline:2px solid var(--liturgical,#c3a982);outline-offset:2px;
+}
+#aoPray435930 .aoAdorationMethodsDisclosure{
+ margin:18px 0 0;border-top:1px solid var(--border,rgba(255,255,255,.15));
+}
+#aoPray435930 .aoAdorationMethodsDisclosure>summary{
+ list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;
+ cursor:pointer;min-height:47px;padding:10px 3px;
+ color:var(--muted,#a9a39a);font:italic 14px/1.45 Georgia,serif;
+}
+#aoPray435930 .aoAdorationMethodsDisclosure>summary::-webkit-details-marker{display:none}
+#aoPray435930 .aoAdorationMethodsDisclosure>summary:after{
+ content:"⌄";font:19px/1 Georgia,serif;color:var(--liturgical,#c3a982);
+}
+#aoPray435930 .aoAdorationMethodsDisclosure[open]>summary:after{transform:rotate(180deg)}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid{
+ grid-template-columns:1fr;gap:0;margin:2px 0 7px;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid button{
+ min-height:68px;padding:12px 9px;
+ background:transparent!important;border:0!important;border-top:1px solid var(--border,rgba(255,255,255,.12))!important;
+ border-radius:0!important;box-shadow:none!important;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid button b{
+ font:400 18px/1.25 Georgia,serif;margin:0 0 5px;
+}
+#aoPray435930 .aoAdorationChooser[data-ao-adoration-chooser="quiet-v2"] .aoP435930BigGrid button span{
+ font:italic 12px/1.5 Georgia,serif;
+}
+#aoPray435930 .aoAdorationChooserAfterword{
+ border-top:1px solid var(--border,rgba(255,255,255,.10));
+ padding:12px 1px 0;margin:4px 0 0;
+ color:var(--muted,#a9a39a);font:italic 12px/1.55 Georgia,serif;
+}
+@media(max-width:360px){
+ #aoPray435930 .aoAdorationPrimaryGrid{grid-template-columns:1fr}
+ #aoPray435930 .aoAdorationPrimaryGrid button{min-height:104px;padding:13px}
+ #aoPray435930 .aoAdorationPrimaryGrid button b{margin:8px 0 4px}
+}
+
 #aoPray435930 .aoAdorationChooser{max-width:760px;margin:auto;padding-top:5px}
 #aoPray435930 .aoAdorationChooser .aoP435930BigGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 #aoPray435930 .aoAdorationChooser .aoP435930BigGrid button{
