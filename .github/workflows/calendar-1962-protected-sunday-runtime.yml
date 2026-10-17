@@ -1,0 +1,57 @@
+name: Calendar P0 protected Sunday runtime parity
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/calendar/1962-sunday-overlap-dispositions-2026-2028.review.v1.json"
+      - "data/calendar/1962-ordo-corrections.v1.json"
+      - "data/calendar/cum-sanctissima-protected-third-class.review.v1.json"
+      - "data/calendar/1962-rubrical-coverage-exceptions.v1.json"
+      - "tests/calendar-1962-protected-sunday-24-runtime-e2e.mjs"
+      - "tools/calendar/rubrical-coverage-audit.mjs"
+      - "ao-boot-*.js"
+      - "src/calendar/**"
+      - "src/mass/**"
+      - ".github/workflows/calendar-1962-protected-sunday-runtime.yml"
+  push:
+    branches: [main]
+    paths:
+      - "data/calendar/1962-sunday-overlap-dispositions-2026-2028.review.v1.json"
+      - "tests/calendar-1962-protected-sunday-24-runtime-e2e.mjs"
+      - "src/calendar/**"
+      - "ao-boot-*.js"
+      - ".github/workflows/calendar-1962-protected-sunday-runtime.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: calendar-protected-sunday-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  protected-sunday-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate canonical coverage and fail-closed rubric gates
+        run: npm run test:calendar-coverage
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Observe all 24 live DayResolver and Proper dispositions
+        run: node tests/calendar-1962-protected-sunday-24-runtime-e2e.mjs
+      - name: Preserve per-date production evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-protected-sunday-24-production-parity
+          path: artifacts/calendar-oracle/sunday-overlap-24-production-parity.json
+          if-no-files-found: warn
