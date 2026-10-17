@@ -8,16 +8,20 @@
  */
 export function missalSourceRubricCopy(paragraph,{language="en"}={}){
  if(paragraph?.kind!=="RUBRIC")return null;
- const vernacular=String(paragraph.secondary??paragraph.alternate??"").trim();
  const primary=String(paragraph.primary??"").trim();
+ const secondary=String(paragraph.secondary??"").trim();
+ const alternate=String(paragraph.alternate??"").trim();
  const isFrench=String(language).toLowerCase().startsWith("fr");
- // If a French witness is unavailable, do not pretend an English source
- // square bracket is actually Latin. Preserve it as untranslated evidence.
- const text=vernacular || primary;
+ // The actual reader's language policy normally puts the EN/FR *vernacular*
+ // into primary and the editorial ALL-CAPS EN donor into alternate.
+ // Other projections use secondary. Select the sentence-case existing
+ // witness, NEVER the donor's uppercase English masquerading as Latin.
+ const candidates=[primary,secondary,alternate].filter(Boolean);
+ const text=candidates.find(x=>/\\p{Ll}/u.test(x)) ?? candidates[0] ?? "";
  if(!text)return null;
  return Object.freeze({
    text:text.replace(/^\[([\s\S]*)\]$/,"$1").trim(),
-   translationAvailable:Boolean(vernacular),
+   translationAvailable:/\\p{Ll}/u.test(text),
    requestedLanguage:isFrench?"fr":"en",
    isLiturgicalLatin:false,
    owner:"EXISTING_SOURCE_VERNACULAR_RUBRIC",
