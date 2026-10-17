@@ -15,6 +15,9 @@ on:
       - 'src/learn/mass-explorer-published-prayer-context.js'
       - 'src/learn/mass-explorer-prayer-readings.js'
       - 'data/learn/mass-explorer-prayer-readings.v1.json'
+      - 'data/learn/mass-explorer-approved-studies.v1.json'
+      - 'src/learn/mass-explorer-study-publication.js'
+      - 'tests/mass-explorer-study-publication.mjs'
       - 'tests/mass-explorer-84-prayer-readings.mjs'
       - 'tests/mass-explorer-published-prayer-context.mjs'
       - 'src/learn/mass-explorer.js'
@@ -49,6 +52,7 @@ jobs:
       - run: node tests/mass-moments-study.mjs
       - run: node tests/mass-explorer-published-prayer-context.mjs
       - run: node tests/mass-explorer-84-prayer-readings.mjs
+      - run: node tests/mass-explorer-study-publication.mjs
       - run: node tests/mass-formation.mjs
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
