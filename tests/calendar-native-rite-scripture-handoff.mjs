@@ -34,6 +34,8 @@ for(const row of [good,vigil]){
  assert.equal(links.length,4);
  for(const link of links){
    assert.equal(link.relation,"SELECTED_1962_NATIVE_RITE_BIBLICAL_RECORD");
+   assert.ok(!link.title.en.includes("Selected 1962 Mass"),
+     "Good Friday and Vigil prophecy objects must not be mislabelled as Mass readings");
    assert.equal(matchingSelectedCalendarScriptureObject(chosen,link.target)?.id,link.id);
    assert.equal(matchingSelectedCalendarScriptureObject(chosen,{...link.target,date:"2026-05-03"}),null);
  }
