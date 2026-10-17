@@ -18,9 +18,9 @@ header h1{font:normal clamp(21px,2.4vw,31px)/1.15 Georgia,serif;margin:5px 0 0}
 .topactions button,.topactions a{border:1px solid var(--line);background:transparent;border-radius:8px;padding:10px 13px;color:var(--muted);font:13px system-ui,sans-serif;text-decoration:none}
 .topactions button[aria-pressed=true]{color:var(--text);border-color:#b8a176}
 .intro{font:13px/1.5 system-ui,sans-serif;color:var(--muted);margin:12px 0 16px}
-main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(285px,.8fr);gap:22px;align-items:start}
-.photo-shell{background:#05070b;border:1px solid #313b45;border-radius:10px;overflow:hidden}
-.photo-viewport{overflow:auto;scrollbar-width:thin;overscroll-behavior:contain;touch-action:pan-x pan-y}
+main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;align-items:start;min-width:0}main>section{min-width:0}
+.photo-shell{background:#05070b;border:1px solid #313b45;border-radius:10px;overflow:hidden;min-width:0;max-width:100%}
+.photo-viewport{overflow:auto;scrollbar-width:thin;overscroll-behavior:contain;touch-action:pan-x pan-y;min-width:0;max-width:100%}
 [hidden]{display:none!important}
 .inspection-stage{min-height:300px;padding:10px;background:#0a0e13;display:flex;flex-direction:column;gap:9px}
 .inspection-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;font:12px/1.4 system-ui,sans-serif;color:var(--muted)}
@@ -72,7 +72,7 @@ footer{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:20px;pad
 footer a{color:#d8bd89}
 .noscript{padding:14px;color:#f7d19b}
 @media(max-width:930px){
- main{grid-template-columns:1fr;gap:14px}
+ main{grid-template-columns:minmax(0,1fr);gap:14px}
  .info{min-height:0}
  .info.has-selection{position:fixed;z-index:30;bottom:0;left:0;right:0;width:100%;max-height:min(50dvh,460px);overflow:auto;overscroll-behavior:contain;background:#101821f7;border:1px solid #54616d;border-radius:16px 16px 0 0;padding:17px 17px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -14px 40px #000b}
  .info.has-selection #object-card>.row{position:sticky;top:-17px;z-index:5;padding:10px 0;background:#101821}
