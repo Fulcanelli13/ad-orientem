@@ -496,7 +496,7 @@ try{
    await page.waitForSelector("#aoPrayerBookRoot.open [data-ao-rosary-guided-bead]",{timeout:9000});
    const note=page.locator("#aoPrayerBookRoot.open [data-ao-rosary-guided-bead]");
    assert.equal(await note.getAttribute("data-ao-rosary-source-type"),"SCRIPTURAL_PARAPHRASE");
-   assert.match(await note.locator("a[data-ao-rosary-meditation-source]").getAttribute("href"),
+   assert.match(await page.locator("#aoPrayerBookRoot.open .aoRosaryBeadScripture a[data-ao-rosary-meditation-source]").getAttribute("href"),
     /^https:\/\/(?:www\.biblegateway\.com\/passage|fr\.wikisource\.org\/wiki\/Bible_Crampon_1923\/)/);
    assert.equal(await page.locator("#aoPrayerBookRoot.open .lab-prayer-sheet .lab-scripture-cue").count(),0);
   }
