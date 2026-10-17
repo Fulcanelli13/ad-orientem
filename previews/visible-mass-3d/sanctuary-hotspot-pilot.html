@@ -133,7 +133,7 @@ footer a{color:#d8bd89}
 <div id="object-card" hidden>
 <div class="row"><div class="state" id="object-state"></div><button type="button" class="close" id="close-card" aria-label="Close object">Close ×</button></div>
 <h2 id="object-title"></h2>
-<div class="definition" id="definition"></div><p class="related" id="inspection-provenance" hidden></p><div class="related-objects" id="related-objects" hidden><strong>Explore related objects · separate references</strong><div id="related-items"></div></div>
+<div class="definition" id="definition"></div><p class="related" id="inspection-provenance" hidden></p><div class="related-objects" id="related-objects" hidden><strong>Explore related objects</strong><div id="related-items"></div></div>
 <div class="question-list" id="question-list"><h3>Questions to explore</h3><div id="question-items"></div><button type="button" class="more" id="more-questions" hidden>More questions ↓</button></div>
 <div id="question-detail" hidden><button type="button" class="back" id="back-to-object">← Questions</button><h3 id="question-title"></h3><div class="pill" id="question-type"></div><div class="held">This question is indexed for Phase 1.5 source research. A verified answer has not yet been published; the glossary definition above remains available.</div></div>
 <p class="meta-link" id="canonical-link"></p>
@@ -156,11 +156,11 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],inspections:[],view:"church",loaded:false};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],view:"church",loaded:false};
 const RELATED_OBJECTS={
- AL01:["AL03","AL16","BK01","AL14","SN05","SN07"],
- AL07:["SN05"],AL19:["AL16","AL03"],SN02:["SV13"],SN07:["EQ01","EQ02"],
- BK01:["AL16"],AL16:["BK01"],AL03:["SN05"],SN05:["AL03"],
+ AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
+ AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
+ BK01:["AL16","BK02"],AL16:["BK01","BK02"],AL03:["SN05"],SN05:["AL03"],AL17:["AL18","BK02"],AL18:["AL17","BK02"],BK02:["BK01","AL17","AL18"],AL08:["AL07"],AL10:["AL07"],AL13:["LN01"],EQ06:["SN07"],
  SV01:["SV02","SV03","LN01","LN02","LN03","LN04","LN05"],
  SV02:["SV01","SV13"],SV03:["SV01"],SV13:["SV02"],
  LN01:["LN02","LN04","LN05"],LN02:["LN01","SV01"],LN03:["SV01","LN01"],
@@ -168,7 +168,14 @@ const RELATED_OBJECTS={
 };
 const CHURCH={caption:"High Altar · actual photograph, July 2019 · not a reconstruction or Mass in progress",credit:"Anthony O'Neil · CC BY-SA 2.0 ↗",url:"https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg"};
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function findSpot(id){return SPOTS.find(x=>x.id===id)||state.inspections.filter(x=>x.object_id===id).map(x=>({id:x.object_id,g:x.glossary_id,title:x.label,match:"D",inspection:x}))[0];}
+function findSpot(id){
+ const scene=SPOTS.find(x=>x.id===id);if(scene)return scene;
+ const asset=state.inspections.find(x=>x.object_id===id);
+ if(asset)return {id:asset.object_id,g:asset.glossary_id,title:asset.label,match:"D",inspection:asset};
+ const other=state.objects.find(x=>x.object_id===id);
+ if(other)return {id:other.object_id,g:other.glossary_id,title:other.label,match:other.glossary_match,referenceOnly:true};
+ return null;
+}
 function showChurch(){
  state.view="church";
  $("inspection-stage").hidden=true;$("photo-viewport").hidden=false;
@@ -187,14 +194,14 @@ function showInspection(asset){
 }
 function select(id,from){
  const spot=findSpot(id);if(!spot)return;
- if(spot.inspection)showInspection(spot.inspection);else showChurch();
+ if(spot.inspection)showInspection(spot.inspection);else if(!spot.referenceOnly)showChurch();
  if(!state.selected)state.returnScroll=window.scrollY;
  state.selected=id;state.question=null;state.showAll=false;
  if(from)state.returnFocus=from;
  $("intro-card").hidden=true;$("object-card").hidden=false;
- $("object-state").textContent=(spot.inspection?"Separate reference · ":"Object "+spot.n+" · ")+(spot.match==="D"?"Dictionary entry":"Related dictionary entry");
- $("inspection-provenance").hidden=!spot.inspection;
- $("inspection-provenance").textContent=spot.inspection?spot.inspection.note:"";
+ $("object-state").textContent=(spot.inspection?"Separate reference · ":spot.referenceOnly?"Question-only object · ":"Object "+spot.n+" · ")+(spot.match==="D"?"Dictionary entry":spot.match==="M"?"Glossary gap":"Related dictionary entry");
+ $("inspection-provenance").hidden=!(spot.inspection||spot.referenceOnly);
+ $("inspection-provenance").textContent=spot.inspection?spot.inspection.note:spot.referenceOnly?"No independent object photograph or direct church hotspot has been verified. This subject is reached through a related visible parent object; the displayed image must not be taken as a photograph of this specific object.":"";
  $("object-title").textContent=spot.title;
  $("question-detail").hidden=true;$("question-list").hidden=false;
  document.querySelectorAll(".marker").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.object===id)));
@@ -213,6 +220,11 @@ function select(id,from){
  }
 }
 function buildDefinition(spot){
+ if(!spot.g){
+  $("definition").innerHTML='<small>Canonical object definition pending</small>There is no exact approved glossary entry for this object. Its questions remain research prompts, not published claims.';
+  $("canonical-link").textContent='No G### glossary identity is assigned. Editorial reconciliation required.';
+  return;
+ }
  const e=state.entries.get(spot.g);
  let label=e?.labels?.en||"Related glossary entry";
  let definition=e?.short_definition?.en||"The canonical glossary entry is not available on this connection.";
@@ -224,12 +236,13 @@ function buildDefinition(spot){
  $("canonical-link").innerHTML='Source record: <a href="../../data/glossary/concepts-'+(Number(spot.g.slice(1))<=150?"001-150":Number(spot.g.slice(1))<=300?"151-300":"301-450")+'.v1.json" target="_blank" rel="noopener">'+esc(spot.g)+'</a> · <span>existing canonical glossary</span>';
 }
 function renderRelatedObjects(){
- const ids=(RELATED_OBJECTS[state.selected]||[]).filter(id=>state.inspections.some(x=>x.object_id===id));
+ const ids=(RELATED_OBJECTS[state.selected]||[]).filter(id=>state.inspections.some(x=>x.object_id===id)||state.objects.some(x=>x.object_id===id));
  $("related-items").replaceChildren();
  $("related-objects").hidden=ids.length===0;
  for(const id of ids){
-  const a=state.inspections.find(x=>x.object_id===id);
-  const b=document.createElement("button");b.type="button";b.textContent=a.label;
+  const a=state.inspections.find(x=>x.object_id===id)||state.objects.find(x=>x.object_id===id);
+  const isQuestionOnly=!state.inspections.some(x=>x.object_id===id)&&!SPOTS.some(x=>x.id===id);
+  const b=document.createElement("button");b.type="button";b.textContent=a.label+(isQuestionOnly?" · questions only":"");
   b.dataset.related=id;b.onclick=()=>select(id,b);$("related-items").appendChild(b);
  }
 }
@@ -288,7 +301,7 @@ async function loadCanon(){
   fetch("sanctuary-inspection-sources-20261017.v1.json").then(r=>{if(!r.ok)throw Error("Inspection HTTP "+r.status);return r.json();})
  ]);
  outcome.slice(0,3).forEach(x=>{if(x.status==="fulfilled"){(x.value.entries||[]).forEach(e=>state.entries.set(e.id,e));}});
- if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];}
+ if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];state.objects=outcome[3].value.objects||[];}
  if(outcome[4].status==="fulfilled"){
    state.inspections=outcome[4].value.assets||[];
    const root=$("inspection-choices");root.replaceChildren();
@@ -311,7 +324,7 @@ async function loadCanon(){
 }
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
- status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,view:state.view,selected:state.selected,question:state.question,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  select:id=>select(id,null)
 });
 })();
