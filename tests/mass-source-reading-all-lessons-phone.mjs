@@ -78,6 +78,19 @@ try {
       const url=sourceReader.locator("[data-ao-mf-source-original]");
       assert.equal(await url.getAttribute("href"),originalUrl);
       assert.equal(await url.getAttribute("target"),"_blank");
+      const sourceNotes=sourceReader.locator(".aoMFSourceLimitations");
+      assert.equal(await sourceNotes.count(),1,"One source-verification disclosure per document");
+      assert.equal(await sourceNotes.evaluate(el=>el.open),false,
+        "Long source and reproduction notes must not interrupt the reading by default");
+      assert.equal(await sourceReader.locator(".aoMFSourceKicker").count(),0,
+        "The source-document heading must not be duplicated by an ornamental subtitle");
+      const firstClaim=sourceReader.locator("[data-ao-mf-source-claim]").first();
+      const firstClaimTop=await firstClaim.evaluate(el=>el.getBoundingClientRect().top);
+      if(size<500)assert.ok(firstClaimTop<710,
+        stage.id+" original lesson claims must become visible on the first phone screen: "+firstClaimTop);
+      await sourceNotes.locator("summary").click();
+      assert.match(await sourceNotes.innerText(),/not reproduced|reproduced|non reproduit|reproduits/i);
+      await sourceNotes.locator("summary").click();
       const metrics=await sourceReader.evaluate(node=>{
         const action=node.querySelector("[data-ao-mf-source-original]"),rect=action.getBoundingClientRect();
         return {overflow:node.scrollWidth-node.clientWidth,actionTop:rect.top,
