@@ -1,0 +1,4010 @@
+{
+  "schema": "AO_SACRED_ART_EXACT_PLACEMENT_HANDOFF_20261017_V1",
+  "asOf": "2026-10-17",
+  "basis": {
+    "userCuratorialFreeze": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+    "inputEditorialProposals": "Ad_Orientem_Sacred_Art_Integration_Proposals_v2_2026-10-17.json",
+    "canonicalDateWitness": "data/research/sacred-visual-w68-2026-runtime-proper-and-151-atlas-artwork-crosswalk-20261015.v1.json"
+  },
+  "status": "RESEARCH_BRIDGE_ONLY_NOT_MAIN_NOT_PUBLISHED",
+  "rules": {
+    "onlyApprovedImages": true,
+    "allRejectedExcluded": true,
+    "doNotReuseForLooseSeason": true,
+    "saintPortraitDoesNotAssertGospelScene": true,
+    "observedPrincipalIdNotActualResolvedProper": true,
+    "mustCheckExactGospelAndCanonicalEvent": true,
+    "cannotPromoteWithoutMasterIdentityLicenseAttributionQualityAndCrop": true
+  },
+  "counts": {
+    "relations": 152,
+    "dated": 58,
+    "subjects": 90,
+    "bibleSubscenes": 4,
+    "secondaryOnly": 3,
+    "dateWitnessRows": 365,
+    "previouslyVerifiedProductionFiles": 0,
+    "newReleaseReadyImages": 0
+  },
+  "exactnessCorrections": [
+    {
+      "paintingSubject": "The Fall in Eden",
+      "not": "The Creation",
+      "correctTarget": "Genesis 3"
+    },
+    {
+      "paintingSubject": "The Finding of Moses",
+      "not": "The Birth of Moses",
+      "correctTarget": "Exodus 2:5–10"
+    },
+    {
+      "paintingSubject": "Susanna and the Elders",
+      "not": "Susanna's Vindication",
+      "correctTarget": "Daniel 13 (Greek/Vulgate)"
+    },
+    {
+      "paintingSubject": "St Michael defeating Satan",
+      "not": "A guardian angel portrait",
+      "correctTarget": "St Michael feast / Apocalypse 12:7–9 (iconography)"
+    }
+  ],
+  "relations": [
+    {
+      "artworkId": "W05-027",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-01",
+        "label": "Saint Peter",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "1|W05-027|0d9f7b9c85319cbb859baa002c684ca788dcf6f5b371819ac18c144af62cf6a2|W05-027-badf92d27d70b41b.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W05-027",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-06-29",
+        "label": "Sts. Peter & Paul",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 16:13–19",
+        "observedPrincipalId": "sancti:06-29:1:r",
+        "observedPrincipalTitle": "Sts. Peter & Paul",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "1|W05-027|0d9f7b9c85319cbb859baa002c684ca788dcf6f5b371819ac18c144af62cf6a2|W05-027-badf92d27d70b41b.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "C32:anthonyvandyckfollowersaintpeter2009nyr021350301jpg",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-01",
+        "label": "Saint Peter",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-usepe-de-ibera-aint-eter-postolate",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-01",
+        "label": "Saint Peter",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W36-SNT-AP-03-3e9d9be5f41a",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-03",
+        "label": "Saint James the Greater",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W36-SNT-AP-03-3e9d9be5f41a",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-07-25",
+        "label": "St. James the Greater",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 20:20–23",
+        "observedPrincipalId": "sancti:07-25:2:r",
+        "observedPrincipalTitle": "St. James the Greater",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "prado-rubens-p001647",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-04",
+        "label": "Saint John",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W01-001",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-05",
+        "label": "Saint Philip",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W01-001",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-05-11",
+        "label": "Sts. Philip & James",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 14:1–13",
+        "observedPrincipalId": "sancti:05-11r:2:r",
+        "observedPrincipalTitle": "Sts. Philip & James",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W38-006",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-05",
+        "label": "Saint Philip",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W38-006",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-05-11",
+        "label": "Sts. Philip & James",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 14:1–13",
+        "observedPrincipalId": "sancti:05-11r:2:r",
+        "observedPrincipalTitle": "Sts. Philip & James",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W02-001",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-06",
+        "label": "Saint Bartholomew",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W02-001",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-08-24",
+        "label": "St. Bartholomew",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 6:12–19",
+        "observedPrincipalId": "sancti:08-24:2:r",
+        "observedPrincipalTitle": "St. Bartholomew",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W07-014",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-07",
+        "label": "Saint Thomas",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "7|W07-014|1dbb8185f9e878a8f59494c4af0b0d619f5eeabdc0d9fd2baab960754b0339f7|W07-014-d83e76537a75d620.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W07-014",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-04-12",
+        "label": "Low Sunday",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 20:19–31",
+        "observedPrincipalId": "tempora:Pasc1-0:1:w",
+        "observedPrincipalTitle": "Low Sunday",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "7|W07-014|1dbb8185f9e878a8f59494c4af0b0d619f5eeabdc0d9fd2baab960754b0339f7|W07-014-d83e76537a75d620.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W07-014",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-21",
+        "label": "St. Thomas",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 20:24–29",
+        "observedPrincipalId": "sancti:12-21:2:r",
+        "observedPrincipalTitle": "St. Thomas",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "7|W07-014|1dbb8185f9e878a8f59494c4af0b0d619f5eeabdc0d9fd2baab960754b0339f7|W07-014-d83e76537a75d620.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "C34:saintmatthewbyvalentindeboulognejpg",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-08",
+        "label": "Saint Matthew",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "C34:saintmatthewbyvalentindeboulognejpg",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-09-21",
+        "label": "St. Matthew",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 9:9–13",
+        "observedPrincipalId": "sancti:09-21:2:r",
+        "observedPrincipalTitle": "St. Matthew",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-aravaggio-nspiration-of-aint-atthew",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-08",
+        "label": "Saint Matthew",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-aravaggio-nspiration-of-aint-atthew",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-09-21",
+        "label": "St. Matthew",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 9:9–13",
+        "observedPrincipalId": "sancti:09-21:2:r",
+        "observedPrincipalTitle": "St. Matthew",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "prado-rubens-p001651",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-09",
+        "label": "Saint James the Less",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "prado-rubens-p001651",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-05-11",
+        "label": "Sts. Philip & James",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 14:1–13",
+        "observedPrincipalId": "sancti:05-11r:2:r",
+        "observedPrincipalTitle": "Sts. Philip & James",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "prado-rubens-p001655",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-10",
+        "label": "Saint Simon",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-11",
+        "label": "Saint Matthias",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-aint-atthias-postolate",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-02-24",
+        "label": "St. Matthias",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 11:25–30",
+        "observedPrincipalId": "sancti:02-24:2:r",
+        "observedPrincipalTitle": "St. Matthias",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-12",
+        "label": "Saint Paul",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-usepe-de-ibera-aint-aul-postolate",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-06-29",
+        "label": "Sts. Peter & Paul",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 16:13–19",
+        "observedPrincipalId": "sancti:06-29:1:r",
+        "observedPrincipalTitle": "Sts. Peter & Paul",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W14-016",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-AP-13",
+        "label": "Saint Jude Thaddeus",
+        "category": "Apostles"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B01-MARK-MARATTA-THYSSEN",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-EV-01",
+        "label": "Saint Mark the Evangelist",
+        "category": "Evangelists"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B01-MARK-MARATTA-THYSSEN",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-04-25",
+        "label": "St. Mark",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 10:1–9",
+        "observedPrincipalId": "sancti:04-25:2:r",
+        "observedPrincipalTitle": "St. Mark",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B01-MARK-RENI-GENOA",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-EV-01",
+        "label": "Saint Mark the Evangelist",
+        "category": "Evangelists"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "14|B01-MARK-RENI-GENOA|fd7adbc610f0d0c9c87f8d472d82a78348152ac5dba5fce9f35195f07607c3ab|B01-MARK-RENI-GENOA-550ed8219e6413ef.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B01-MARK-RENI-GENOA",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-04-25",
+        "label": "St. Mark",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 10:1–9",
+        "observedPrincipalId": "sancti:04-25:2:r",
+        "observedPrincipalTitle": "St. Mark",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "14|B01-MARK-RENI-GENOA|fd7adbc610f0d0c9c87f8d472d82a78348152ac5dba5fce9f35195f07607c3ab|B01-MARK-RENI-GENOA-550ed8219e6413ef.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B01-MARK-RENI-BJU",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-EV-01",
+        "label": "Saint Mark the Evangelist",
+        "category": "Evangelists"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B01-MARK-RENI-BJU",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-04-25",
+        "label": "St. Mark",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 10:1–9",
+        "observedPrincipalId": "sancti:04-25:2:r",
+        "observedPrincipalTitle": "St. Mark",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B01-MARK-TINTORETTO-ACCADEMIA",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-EV-01",
+        "label": "Saint Mark the Evangelist",
+        "category": "Evangelists"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "14|B01-MARK-TINTORETTO-ACCADEMIA|8918fa4ea8d29e6fb6566e70e8b446005ad998e136914680c2eab4fb821e8bab|B01-MARK-TINTORETTO-ACCADEMIA-c6a145ae4e634532.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B01-MARK-TINTORETTO-ACCADEMIA",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-04-25",
+        "label": "St. Mark",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 10:1–9",
+        "observedPrincipalId": "sancti:04-25:2:r",
+        "observedPrincipalTitle": "St. Mark",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "14|B01-MARK-TINTORETTO-ACCADEMIA|8918fa4ea8d29e6fb6566e70e8b446005ad998e136914680c2eab4fb821e8bab|B01-MARK-TINTORETTO-ACCADEMIA-c6a145ae4e634532.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-EV-02",
+        "label": "Saint Luke the Evangelist",
+        "category": "Evangelists"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-01",
+        "label": "Saint Ambrose",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "C32:andreyivanovstambrosebarringtheodosiusfrommilancathedral1829",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-01",
+        "label": "Saint Ambrose",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-nthony-van-yck-aint-mbrose-arring-heodosius",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-01",
+        "label": "Saint Ambrose",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "G25-003",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-02",
+        "label": "Saint Augustine",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-aint-ugustine",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-02",
+        "label": "Saint Augustine",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "W07-007",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-03",
+        "label": "Saint Jerome",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "18|W07-007|32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158|W07-007-90ae4676f7500320.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-usepe-de-ibera-aint-erome-riting",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-03",
+        "label": "Saint Jerome",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-437722",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-04",
+        "label": "Saint Gregory the Great",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-arlo-rivelli-aint-homas-quinas",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-05",
+        "label": "Saint Thomas Aquinas",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-06",
+        "label": "Saint Bonaventure",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "prado-ribalta-p002804",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-07",
+        "label": "Saint Bernard of Clairvaux",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "C32:bernardinomeisantacaterinadasiena1641jpg",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-DC-09",
+        "label": "Saint Catherine of Siena",
+        "category": "Doctors of the Church"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-OT-02",
+        "label": "Saint Michael Archangel",
+        "category": "Other traditional saints"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "45|ART-uido-eni-rchangel-ichael-efeating-atan|4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad|ART-uido-eni-rchangel-ichael-efeating-atan-a5b2f45a4aa02345.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:DEV-16",
+        "label": "Saint Michael",
+        "category": "Devotions"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "45|ART-uido-eni-rchangel-ichael-efeating-atan|4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad|ART-uido-eni-rchangel-ichael-efeating-atan-a5b2f45a4aa02345.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-09-29",
+        "label": "Dedication of St. Michael the Archangel",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 18:1–10",
+        "observedPrincipalId": "sancti:09-29:1:w",
+        "observedPrincipalTitle": "Dedication of St. Michael the Archangel",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "45|ART-uido-eni-rchangel-ichael-efeating-atan|4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad|ART-uido-eni-rchangel-ichael-efeating-atan-a5b2f45a4aa02345.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-OT-07",
+        "label": "Saint Joan of Arc",
+        "category": "Other traditional saints"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-OT-10",
+        "label": "Saint Stephen",
+        "category": "Saints"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "53|ART-uan-de-uanes-artyrdom-of-aint-tephen|5e4aa3db3f35edd7a06f033e958a6c3799bf7b35c146f0dc5c7deebc9cc90d3b|ART-uan-de-uanes-artyrdom-of-aint-tephen-cc8cdf079fb214c1.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-A03",
+        "label": "Martyrdom of Stephen",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "53|ART-uan-de-uanes-artyrdom-of-aint-tephen|5e4aa3db3f35edd7a06f033e958a6c3799bf7b35c146f0dc5c7deebc9cc90d3b|ART-uan-de-uanes-artyrdom-of-aint-tephen-cc8cdf079fb214c1.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-26",
+        "label": "St. Stephen",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 23:34–39",
+        "observedPrincipalId": "sancti:12-26:2:r",
+        "observedPrincipalTitle": "St. Stephen",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "53|ART-uan-de-uanes-artyrdom-of-aint-tephen|5e4aa3db3f35edd7a06f033e958a6c3799bf7b35c146f0dc5c7deebc9cc90d3b|ART-uan-de-uanes-artyrdom-of-aint-tephen-cc8cdf079fb214c1.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-laudio-oello-aint-ominic-of-uzm-n",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-OT-13",
+        "label": "Saint Dominic",
+        "category": "Saints"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-OT-15",
+        "label": "Saint Francis Xavier",
+        "category": "Saints"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-OT-16",
+        "label": "Saint Ignatius of Loyola",
+        "category": "Saints"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uido-eni-aint-ary-agdalene",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:SNT-OT-25",
+        "label": "Saint Mary Magdalene",
+        "category": "Saints"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "68|ART-uido-eni-aint-ary-agdalene|651aeae81e3cda249643e742916ca9eafc3c755c8cb836c31dfe9b00970f1216|ART-uido-eni-aint-ary-agdalene-6f28af2cc1363f7a.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:DEV-01",
+        "label": "Sacred Heart of Jesus",
+        "category": "Devotions"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-06-12",
+        "label": "Sacred Heart of Jesus",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 19:31–37",
+        "observedPrincipalId": "tempora:Pent02-5:1:w",
+        "observedPrincipalTitle": "Sacred Heart of Jesus",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B02-HEART-MARY-MORLETE",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:DEV-02",
+        "label": "Immaculate Heart of Mary",
+        "category": "Devotions"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "B02-HEART-MARY-MORLETE",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-08-22",
+        "label": "Immaculate Heart of Mary",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 19:25–27",
+        "observedPrincipalId": "sancti:08-22:2:w",
+        "observedPrincipalTitle": "Immaculate Heart of Mary",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "2020.263.8",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-G03",
+        "label": "Flight into Egypt",
+        "category": "Bible"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-01",
+        "label": "Annunciation",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "101|ART-hilippe-de-hampaigne-he-nnunciation|ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6|ART-hilippe-de-hampaigne-he-nnunciation-afa559b282fb1ebd.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:DEV-07",
+        "label": "Annunciation devotion",
+        "category": "Devotions"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "101|ART-hilippe-de-hampaigne-he-nnunciation|ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6|ART-hilippe-de-hampaigne-he-nnunciation-afa559b282fb1ebd.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-03-25",
+        "label": "Annunciation of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–38",
+        "observedPrincipalId": "sancti:03-25:1:w",
+        "observedPrincipalTitle": "Annunciation of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "101|ART-hilippe-de-hampaigne-he-nnunciation|ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6|ART-hilippe-de-hampaigne-he-nnunciation-afa559b282fb1ebd.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-10-07",
+        "label": "Our Lady of the Rosary",
+        "category": null
+      },
+      "role": "GOSPEL_ONLY",
+      "relationClass": "SECONDARY_GOSPEL_RELATED_ONLY",
+      "primaryEligibleForEditorialReview": false,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–38",
+        "observedPrincipalId": "sancti:10-07:2:w",
+        "observedPrincipalTitle": "Our Lady of the Rosary",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "101|ART-hilippe-de-hampaigne-he-nnunciation|ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6|ART-hilippe-de-hampaigne-he-nnunciation-afa559b282fb1ebd.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "SECONDARY_ONLY_NO_PRIMARY"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-16",
+        "label": "Ember Wednesday of Advent",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–38",
+        "observedPrincipalId": "tempora:Adv3-3:2:v",
+        "observedPrincipalTitle": "Ember Wednesday of Advent",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "101|ART-hilippe-de-hampaigne-he-nnunciation|ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6|ART-hilippe-de-hampaigne-he-nnunciation-afa559b282fb1ebd.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-aphael-and-iulio-omano-he-isitation",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-02",
+        "label": "Visitation",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-aphael-and-iulio-omano-he-isitation",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-07-02",
+        "label": "Visitation of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:39–47",
+        "observedPrincipalId": "sancti:07-02:2:w",
+        "observedPrincipalTitle": "Visitation of the Blessed Virgin Mary",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-aphael-and-iulio-omano-he-isitation",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-18",
+        "label": "Ember Friday of Advent",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:39–47",
+        "observedPrincipalId": "tempora:Adv3-5:2:v",
+        "observedPrincipalTitle": "Ember Friday of Advent",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-04",
+        "label": "Presentation of Jesus",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "104|ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple|c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869|ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple-747bbb92d6a5945f.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-02-02",
+        "label": "Purification of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 2:22–32",
+        "observedPrincipalId": "sancti:02-02:2:w",
+        "observedPrincipalTitle": "Purification of the Blessed Virgin Mary",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "104|ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple|c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869|ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple-747bbb92d6a5945f.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-27",
+        "label": "Sunday in the Octave of Christmas",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 2:33–40",
+        "observedPrincipalId": "tempora:Nat1-0:2:w",
+        "observedPrincipalTitle": "Sunday in the Octave of Christmas",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "104|ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple|c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869|ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple-747bbb92d6a5945f.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-06",
+        "label": "Agony in the Garden",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-07",
+        "label": "Scourging at the Pillar",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "107|ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle|d55c169f3b2f8dc28d51e79e8769187a2b3a2cab3fff0fdd9cebca25b9d195b3|ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle-0b37acf17d221f07.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-itian-hrist-arrying-the-ross",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-09",
+        "label": "Carrying of the Cross",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-10",
+        "label": "Crucifixion",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-04-03",
+        "label": "Good Friday",
+        "category": null
+      },
+      "role": "LITURGICAL_EVENT",
+      "relationClass": "LITURGICAL_MYSTERY_NOT_NECESSARILY_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": "tempora:Quad6-5r:1:bv",
+        "observedPrincipalTitle": "Good Friday",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-06-12",
+        "label": "Sacred Heart of Jesus",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 19:31–37",
+        "observedPrincipalId": "tempora:Pent02-5:1:w",
+        "observedPrincipalTitle": "Sacred Heart of Jesus",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-07-01",
+        "label": "The Precious Blood of Our Lord Jesus Christ",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 19:30–35",
+        "observedPrincipalId": "sancti:07-01:1:r",
+        "observedPrincipalTitle": "The Precious Blood of Our Lord Jesus Christ",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+      "target": {
+        "type": "BIBLE_EVENT",
+        "id": "bible:event:piercing-side",
+        "label": "",
+        "category": null
+      },
+      "role": "EXACT_SUBSCENE",
+      "relationClass": "SPECIFIC_BIBLICAL_SUBSCENE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-12",
+        "label": "Ascension",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-05-14",
+        "label": "Ascension of the Lord",
+        "category": null
+      },
+      "role": "LITURGICAL_EVENT",
+      "relationClass": "LITURGICAL_MYSTERY_NOT_NECESSARILY_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Mark 16:14–20",
+        "observedPrincipalId": "tempora:Pasc5-4:1:w",
+        "observedPrincipalTitle": "Ascension of the Lord",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ean-estout-entecost",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-13",
+        "label": "Pentecost",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "113|ART-ean-estout-entecost|2f81e53275f9c32f7afb71c03d870c29cdde943f4ffd6f8d0ea23c5efd341589|ART-ean-estout-entecost-c5cfe496792ba757.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ean-estout-entecost",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:DEV-03",
+        "label": "Holy Ghost / Pentecost",
+        "category": "Devotions"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "113|ART-ean-estout-entecost|2f81e53275f9c32f7afb71c03d870c29cdde943f4ffd6f8d0ea23c5efd341589|ART-ean-estout-entecost-c5cfe496792ba757.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ean-estout-entecost",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-A01",
+        "label": "Pentecost",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "113|ART-ean-estout-entecost|2f81e53275f9c32f7afb71c03d870c29cdde943f4ffd6f8d0ea23c5efd341589|ART-ean-estout-entecost-c5cfe496792ba757.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ean-estout-entecost",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-05-24",
+        "label": "Pentecost Sunday",
+        "category": null
+      },
+      "role": "LITURGICAL_EVENT",
+      "relationClass": "LITURGICAL_MYSTERY_NOT_NECESSARILY_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 14:23–31",
+        "observedPrincipalId": "tempora:Pasc7-0:1:r",
+        "observedPrincipalTitle": "Pentecost Sunday",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "113|ART-ean-estout-entecost|2f81e53275f9c32f7afb71c03d870c29cdde943f4ffd6f8d0ea23c5efd341589|ART-ean-estout-entecost-c5cfe496792ba757.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:ROS-14",
+        "label": "Assumption",
+        "category": "Rosary"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "134|ART-eter-aul-ubens-ssumption-of-the-irgin|d63e1af78afea928731e58e642aa2e643bc66b4a8b012c5cd601d0a5e59ed782|ART-eter-aul-ubens-ssumption-of-the-irgin-89329a1b27c3d310.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:DEV-08",
+        "label": "Assumption devotion",
+        "category": "Devotions"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "134|ART-eter-aul-ubens-ssumption-of-the-irgin|d63e1af78afea928731e58e642aa2e643bc66b4a8b012c5cd601d0a5e59ed782|ART-eter-aul-ubens-ssumption-of-the-irgin-89329a1b27c3d310.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-08-15",
+        "label": "Assumption of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:41–50",
+        "observedPrincipalId": "sancti:08-15:1:w",
+        "observedPrincipalTitle": "Assumption of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "134|ART-eter-aul-ubens-ssumption-of-the-irgin|d63e1af78afea928731e58e642aa2e643bc66b4a8b012c5cd601d0a5e59ed782|ART-eter-aul-ubens-ssumption-of-the-irgin-89329a1b27c3d310.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-01",
+        "label": "Station 1: Christ Condemned to Death",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-02",
+        "label": "Station 2: Jesus Takes Up the Cross",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "117|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross|115a2b6be63cb372263c2ea327b0fbfe6aa3e8a016691e391bb7394888b46498|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross-6fd952c042728a14.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-03",
+        "label": "Station 3: First Fall",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-04",
+        "label": "Station 4: Jesus Meets His Mother",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "119|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other|a63135ad0e387e3e1c53ce4505758054967091e43f2a4576fb5b62dcb38bb17b|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other-f44fbe09be8e9f35.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-09-15",
+        "label": "Seven Sorrows of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "DEVOTIONAL_ASSOCIATION",
+      "relationClass": "SECONDARY_CONTEXT_OR_TYPOLOGY_ONLY",
+      "primaryEligibleForEditorialReview": false,
+      "evidence": {
+        "claimedGospelForDate": "John 19:25–27",
+        "observedPrincipalId": "sancti:09-15:2:w",
+        "observedPrincipalTitle": "Seven Sorrows of the Blessed Virgin Mary",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "119|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other|a63135ad0e387e3e1c53ce4505758054967091e43f2a4576fb5b62dcb38bb17b|ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other-f44fbe09be8e9f35.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "SECONDARY_ONLY_NO_PRIMARY"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-05",
+        "label": "Station 5: Simon of Cyrene Helps",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-06",
+        "label": "Station 6: Veronica Wipes His Face",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-07",
+        "label": "Station 7: Second Fall",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-08",
+        "label": "Station 8: Jesus Addresses the Women of Jerusalem",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-09",
+        "label": "Station 9: Third Fall",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-10",
+        "label": "Station 10: Stripping of His Garments",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-11",
+        "label": "Station 11: Nailing to the Cross",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-12",
+        "label": "Station 12: Death on the Cross",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-04-03",
+        "label": "Good Friday",
+        "category": null
+      },
+      "role": "LITURGICAL_EVENT",
+      "relationClass": "LITURGICAL_MYSTERY_NOT_NECESSARILY_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": "tempora:Quad6-5r:1:bv",
+        "observedPrincipalTitle": "Good Friday",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:STN-13",
+        "label": "Station 13: Descent from the Cross",
+        "category": "Stations"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-mmaculate-onception",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:DEV-06",
+        "label": "Immaculate Conception",
+        "category": "Devotions"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-mmaculate-onception",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-08",
+        "label": "Immaculate Conception of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–28",
+        "observedPrincipalId": "sancti:12-08:1:w",
+        "observedPrincipalTitle": "Immaculate Conception of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ietro-da-ortona-he-uardian-ngel",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:DEV-17",
+        "label": "Guardian Angel",
+        "category": "Devotions"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "138|ART-ietro-da-ortona-he-uardian-ngel|9e1d8a2732d7f156d9fc94d4c552e915c0c54b756049de03a37b3b41ffbae01f|ART-ietro-da-ortona-he-uardian-ngel-1939da2959bd4371.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-and-an-rueghel-the-lder-arden-of-den-with-the-all",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-OR02",
+        "label": "The Fall",
+        "category": "Bible"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ieter-ruegel-the-lder-ower-of-abel",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-OR06",
+        "label": "Tower of Babel",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-PA02",
+        "label": "Abraham and Three Angels at Mamre",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "144|ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels|9f4907309cf5603285ae26615dcba47213e426d3b8eace3cbd0b879ff9ce0796|ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels-639ba7cbdfacb8e7.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-aravaggio-he-acrifice-of-saac",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-PA06",
+        "label": "Sacrifice of Isaac",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-os-de-ibera-acob-s-ream",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-PA07",
+        "label": "Jacob’s Dream",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-bastien-ourdon-he-inding-of-oses",
+      "target": {
+        "type": "BIBLE_EVENT",
+        "id": "bible:event:moses-found-in-nile",
+        "label": "",
+        "category": null
+      },
+      "role": "EXACT_SUBSCENE",
+      "relationClass": "SPECIFIC_BIBLICAL_SUBSCENE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-he-razen-erpent",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-EX12",
+        "label": "The Bronze Serpent",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-aravaggio-avid-with-the-ead-of-oliath",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-IS03",
+        "label": "David and Goliath",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-aravaggio-avid-with-the-ead-of-oliath",
+      "target": {
+        "type": "BIBLE_EVENT",
+        "id": "bible:event:david-goliath-aftermath",
+        "label": "",
+        "category": null
+      },
+      "role": "EXACT_SUBSCENE",
+      "relationClass": "SPECIFIC_BIBLICAL_SUBSCENE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-aniel-in-the-ions-en",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-XL05",
+        "label": "Daniel in the Lions’ Den",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-acopo-intoretto-udith-and-olofernes",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-XL07",
+        "label": "Judith and Holofernes",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-uido-eni-usannah-and-the-lders",
+      "target": {
+        "type": "BIBLE_EVENT",
+        "id": "bible:event:susanna-and-elders",
+        "label": "",
+        "category": null
+      },
+      "role": "EXACT_SUBSCENE",
+      "relationClass": "SPECIFIC_BIBLICAL_SUBSCENE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ug-ne-elacroix-eliodorus-riven-from-the-emple",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-XL15",
+        "label": "Heliodorus Expelled from Temple",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-G01",
+        "label": "Adoration of the Magi",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-01-06",
+        "label": "Epiphany of the Lord",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 2:1–12",
+        "observedPrincipalId": "sancti:01-06:1:w",
+        "observedPrincipalTitle": "Epiphany of the Lord",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-G02",
+        "label": "Joseph’s Dream",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-03-19",
+        "label": "St. Joseph, Spouse of the Bl. Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 1:18–21",
+        "observedPrincipalId": "sancti:03-19:1:w",
+        "observedPrincipalTitle": "St. Joseph, Spouse of the Bl. Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-24",
+        "label": "Vigil of Christmas",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 1:18–21",
+        "observedPrincipalId": "sancti:12-24:1:v",
+        "observedPrincipalTitle": "Vigil of Christmas",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-G14",
+        "label": "Multiplication of Loaves",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "161|ART-iovanni-anfranco-iracle-of-oaves-and-ishes|f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa|ART-iovanni-anfranco-iracle-of-oaves-and-ishes-f913f038c1f0973e.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-03-15",
+        "label": "IV Sunday of Lent",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "John 6:1–15",
+        "observedPrincipalId": "tempora:Quad4-0:1:pv",
+        "observedPrincipalTitle": "IV Sunday of Lent",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": "161|ART-iovanni-anfranco-iracle-of-oaves-and-ishes|f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa|ART-iovanni-anfranco-iracle-of-oaves-and-ishes-f913f038c1f0973e.webp",
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ean-ouvenet-aising-of-azarus",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-G16",
+        "label": "Raising of Lazarus",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-artolom-steban-urillo-onversion-of-aint-aul",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-A05",
+        "label": "Conversion of Saul",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
+      "target": {
+        "type": "MODULE_SUBJECT",
+        "id": "subject:BIB-A15",
+        "label": "Paul at Ephesus",
+        "category": "Bible Atlas"
+      },
+      "role": "PRIMARY_CANDIDATE",
+      "relationClass": "CANONICAL_SUBJECT_CANDIDATE",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": null,
+        "observedPrincipalTitle": null,
+        "observedRank": null,
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": false
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-436672",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-01-11",
+        "label": "The Holy Family: Jesus, Mary & Joseph",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 2:42–52",
+        "observedPrincipalId": "tempora:Epi1-0:2:w",
+        "observedPrincipalTitle": "The Holy Family: Jesus, Mary & Joseph",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-122338",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-03-25",
+        "label": "Annunciation of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–38",
+        "observedPrincipalId": "sancti:03-25:1:w",
+        "observedPrincipalTitle": "Annunciation of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-436791",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-03-25",
+        "label": "Annunciation of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–38",
+        "observedPrincipalId": "sancti:03-25:1:w",
+        "observedPrincipalTitle": "Annunciation of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-436502",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-03-25",
+        "label": "Annunciation of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–38",
+        "observedPrincipalId": "sancti:03-25:1:w",
+        "observedPrincipalTitle": "Annunciation of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-127572",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-03-25",
+        "label": "Annunciation of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–38",
+        "observedPrincipalId": "sancti:03-25:1:w",
+        "observedPrincipalTitle": "Annunciation of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-148758",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-11-30",
+        "label": "St. Andrew",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 4:18–22",
+        "observedPrincipalId": "sancti:11-30:2:r",
+        "observedPrincipalTitle": "St. Andrew",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-143784",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-25",
+        "label": "The Nativity of Our Lord",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 2:1–14",
+        "observedPrincipalId": "sancti:12-25m1:1:w",
+        "observedPrincipalTitle": "The Nativity of Our Lord",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-143784",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-29",
+        "label": "Feria in the Octave of Christmas",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 2:15–20",
+        "observedPrincipalId": "tempora:Nat1-1:2:w",
+        "observedPrincipalTitle": "Feria in the Octave of Christmas",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-143784",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-30",
+        "label": "Feria in the Octave of Christmas",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 2:15–20",
+        "observedPrincipalId": "tempora:Nat1-1:2:w",
+        "observedPrincipalTitle": "Feria in the Octave of Christmas",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-143784",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-31",
+        "label": "Feria in the Octave of Christmas",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 2:15–20",
+        "observedPrincipalId": "tempora:Nat1-1:2:w",
+        "observedPrincipalTitle": "Feria in the Octave of Christmas",
+        "observedRank": "II class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-438724",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-03-25",
+        "label": "Annunciation of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "GOSPEL_SCENE",
+      "relationClass": "PROPOSED_GOSPEL_SCENE__PROPER_VERIFY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–38",
+        "observedPrincipalId": "sancti:03-25:1:w",
+        "observedPrincipalTitle": "Annunciation of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-459131",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-04-02",
+        "label": "Holy Thursday",
+        "category": null
+      },
+      "role": "LITURGICAL_EVENT",
+      "relationClass": "LITURGICAL_MYSTERY_NOT_NECESSARILY_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": null,
+        "observedPrincipalId": "tempora:Quad6-4r:1:w",
+        "observedPrincipalTitle": "Holy Thursday",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-459131",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-06-04",
+        "label": "Corpus Christi",
+        "category": null
+      },
+      "role": "EUCHARISTIC_TYPOLOGY",
+      "relationClass": "SECONDARY_CONTEXT_OR_TYPOLOGY_ONLY",
+      "primaryEligibleForEditorialReview": false,
+      "evidence": {
+        "claimedGospelForDate": "John 6:56–59",
+        "observedPrincipalId": "tempora:Pent01-4:1:w",
+        "observedPrincipalTitle": "Corpus Christi",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "SECONDARY_ONLY_NO_PRIMARY"
+    },
+    {
+      "artworkId": "met-436835",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-05-14",
+        "label": "Ascension of the Lord",
+        "category": null
+      },
+      "role": "LITURGICAL_EVENT",
+      "relationClass": "LITURGICAL_MYSTERY_NOT_NECESSARILY_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Mark 16:14–20",
+        "observedPrincipalId": "tempora:Pasc5-4:1:w",
+        "observedPrincipalTitle": "Ascension of the Lord",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-136507",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-05-31",
+        "label": "Trinity Sunday",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 28:18–20",
+        "observedPrincipalId": "tempora:Pent01-0r:1:w",
+        "observedPrincipalTitle": "Trinity Sunday",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-442491",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-06-29",
+        "label": "Sts. Peter & Paul",
+        "category": null
+      },
+      "role": "FEAST_PERSON",
+      "relationClass": "FEAST_SAINT_IDENTITY",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Matthew 16:13–19",
+        "observedPrincipalId": "sancti:06-29:1:r",
+        "observedPrincipalTitle": "Sts. Peter & Paul",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": false,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "met-437423",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-08",
+        "label": "Immaculate Conception of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–28",
+        "observedPrincipalId": "sancti:12-08:1:w",
+        "observedPrincipalTitle": "Immaculate Conception of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    },
+    {
+      "artworkId": "cma-135659",
+      "target": {
+        "type": "LITURGICAL_DATE",
+        "id": "2026-12-08",
+        "label": "Immaculate Conception of the Blessed Virgin Mary",
+        "category": null
+      },
+      "role": "FEAST_ICONOGRAPHY",
+      "relationClass": "FEAST_ICONOGRAPHY_NOT_GOSPEL",
+      "primaryEligibleForEditorialReview": true,
+      "evidence": {
+        "claimedGospelForDate": "Luke 1:26–28",
+        "observedPrincipalId": "sancti:12-08:1:w",
+        "observedPrincipalTitle": "Immaculate Conception of the Blessed Virgin Mary",
+        "observedRank": "I class",
+        "dayHasOtherCommemorations": true,
+        "observedCalendarIsNotCertifiedResolvedProper": true
+      },
+      "humanArtApproval": "FROZEN",
+      "selectedImageKey": null,
+      "calendarProperPassageVerified": false,
+      "imageExactOriginalRightsCropVerified": false,
+      "visibleInProduction": false,
+      "editorialStatus": "PROPOSED_NEEDS_PROPER_AND_IMAGE_GATES"
+    }
+  ],
+  "releaseGate": {
+    "verifiedRightsAndOriginalFiles": 0,
+    "calendarProperSceneCertified": 0,
+    "authorisedForProduction": false
+  }
+}

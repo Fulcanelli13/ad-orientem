@@ -1,0 +1,26 @@
+name: Sacred visual W65 original and rights safeguards
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/research/sacred-visual-w64-rated5-bible-atlas-and-saints-map-exact-subject-reuse-20261015.v1.json"
+      - "data/research/sacred-visual-w65-first-user-five-saints-technical-release-gates-20261015.v1.json"
+      - "tests/sacred-visual-w65-saint-release-gates.mjs"
+      - ".github/workflows/sacred-visual-w65-release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  technical-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retain already approved 5 of 5 art and block unauthorised publication
+        run: node tests/sacred-visual-w65-saint-release-gates.mjs

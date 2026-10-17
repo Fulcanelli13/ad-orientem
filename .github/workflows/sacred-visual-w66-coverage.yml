@@ -1,0 +1,75 @@
+name: Sacred Art W66-W68 coverage, site media and selector
+
+on:
+  pull_request:
+    branches: [main, research/w59-sanctoral-legacy-art-20261015]
+    paths:
+      - "data/research/sacred-visual-w66-cross-module-938-visual-demand-preaudit-20261015.v1.json"
+      - "tests/sacred-visual-w66-visual-demand-preaudit.mjs"
+      - ".github/workflows/sacred-visual-w66-coverage.yml"
+      - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
+      - "tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs"
+      - "data/research/sacred-visual-w68-2026-runtime-proper-and-151-atlas-artwork-crosswalk-20261015.v1.json"
+      - "tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs"
+      - "data/research/sacred-art-class-i-53-release-intake-20261017.v1.json"
+      - "data/research/sacred-art-class-i-53-unrejected-research-leads-20261017.v1.json"
+      - "data/calendar/sacred-art-certified-media.v1.json"
+      - "src/calendar/sacred-art-release-selector.js"
+      - "src/calendar/sacred-art-selected-proper-bridge.js"
+      - "tests/sacred-art-calendar-selected-proper-bridge.mjs"
+      - "tests/sacred-art-class-i-53-release-gates.mjs"
+      - "data/research/sacred-art-first-five-master-acquisition-20261017.v1.json"
+      - "tools/calendar/acquire-sacred-art-first-five.mjs"
+      - "tests/sacred-art-first-five-open-master-intake.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify-source-demand-ledger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check counts, non-promotion and no-permission policy
+        run: |
+          node tests/sacred-visual-w66-visual-demand-preaudit.mjs
+          node tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs
+          node tests/sacred-visual-w68-2026-selector-and-bible-evidence.mjs
+          node tests/sacred-art-class-i-53-release-gates.mjs
+          node tests/sacred-art-calendar-selected-proper-bridge.mjs
+          node tests/sacred-art-first-five-open-master-intake.mjs
+      - name: Stage exact Open Access Met master (never publish automatically)
+        continue-on-error: true
+        run: node tools/calendar/acquire-sacred-art-first-five.mjs
+      - name: Archive first-five acquired pixels, provenance and phone review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-met-438724-technical-master-qa
+          path: artifacts/sacred-art-first-five/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Commit acquired approved originals as staged media on the existing art branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'research/w60-sanctoral-art-physical-dedupe-20261015'
+        run: |
+          set -euo pipefail
+          if [[ ! -s artifacts/sacred-art-first-five/met-438724-champaigne-annunciation-original.jpg || ! -s artifacts/sacred-art-first-five/met-438724-source-evidence.json ]]; then
+            echo "::warning::No verified Met master staged; research gates remain green, nothing committed"
+            exit 0
+          fi
+          git fetch origin refs/heads/research/w60-sanctoral-art-physical-dedupe-20261015
+          git checkout -B stage-met-master FETCH_HEAD
+          mkdir -p assets/staged/sacred-art
+          cp artifacts/sacred-art-first-five/*.jpg assets/staged/sacred-art/
+          cp artifacts/sacred-art-first-five/*-source-evidence.json assets/staged/sacred-art/
+          git add assets/staged/sacred-art/
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Stage exact Met 438724 open-access master for technical QA; not production release'
+            git push origin HEAD:refs/heads/research/w60-sanctoral-art-physical-dedupe-20261015
+          fi
+
