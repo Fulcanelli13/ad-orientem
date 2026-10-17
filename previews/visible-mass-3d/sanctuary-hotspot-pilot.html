@@ -85,9 +85,11 @@ main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,.8fr);gap:22px;
 .guide-dock .guide-head{display:flex;align-items:center;gap:10px;justify-content:space-between}
 .guide-dock .guide-head strong{font:500 17px Georgia,serif;color:var(--gold)}
 .guide-dock .guide-sub{margin:7px 0;color:var(--muted);font:12px/1.5 system-ui,sans-serif}
-.guide-dock .guide-routes{display:flex;gap:7px;flex-wrap:wrap}
+.guide-dock .guide-routes{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:5px 0;scroll-snap-type:x proximity}
 .guide-dock button,.guide-in-detail button{min-height:44px;border:1px solid #53606b;border-radius:8px;padding:9px 11px;background:#182431;color:var(--text);text-align:left;font:12px/1.35 system-ui,sans-serif}
 .guide-dock button[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
+.guide-dock .guide-routes button{flex:0 0 auto;scroll-snap-align:start;max-width:min(88vw,260px)}
+.photo-canvas[data-guided-focus] .marker[aria-pressed=true]{box-shadow:0 0 0 5px #d6be8445,0 0 0 9px #d6be8420;border-color:var(--gold)}
 .guide-dock .guide-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
 .guide-dock .guide-prompt{margin:11px 0 2px;font:normal 16px/1.45 Georgia,serif}
 .guide-dock .guide-target{color:var(--gold);font:11px/1.4 system-ui,sans-serif;margin:0}
@@ -144,7 +146,7 @@ footer a{color:#d8bd89}
  .wrap{padding-top:8px}header{align-items:flex-start}
 }
 @media(max-width:600px){header h1{font-size:23px}.topactions{align-self:flex-start}.intro{margin:10px 0}.photo-canvas{min-width:750px}.photo-viewport{max-height:440px}.marker{width:44px;height:44px}.info{padding:16px}.photobar{font-size:11px}}
-@media(prefers-reduced-motion:reduce){.marker{transition:none}}
+@media(prefers-reduced-motion:reduce){.marker{transition:none}.guide-dock *{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -242,7 +244,7 @@ const SPOTS=[
 ];
 const $=id=>document.getElementById(id);
 const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false,guide:null};
-const GUIDED_OBJECTS=new Set(["AL01","AL06","SN02"]);
+const GUIDED_OBJECTS=new Set(["AL01","AL06","AL07","AL19","SN02","SN04"]);
 const RELATED_OBJECTS={
  AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
  AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
@@ -278,12 +280,13 @@ function showInspection(asset){
  $("photo-caption").textContent="Reference · "+asset.source_location+" · not photographed at Brompton";
  $("photo-credit").textContent=asset.creator+" · "+asset.licence+" ↗";$("photo-credit").href=asset.source_url;
 }
-function select(id,from){
+function select(id,from,{guided=false}={}){
  const spot=findSpot(id);if(!spot)return;
  if(spot.inspection)showInspection(spot.inspection);else if(!spot.referenceOnly)showChurch();
  if(!state.selected)state.returnScroll=window.scrollY;
  state.selected=id;state.question=null;state.showAll=false;
  if(from)state.returnFocus=from;
+ $("photo-canvas").dataset.guidedFocus=guided&&GUIDED_OBJECTS.has(id)?id:"";
  $("intro-card").hidden=true;$("object-card").hidden=false;
  $("object-state").textContent=(spot.inspection?"Separate reference · ":spot.referenceOnly?"Question-only object · ":"Object "+spot.n+" · ")+(spot.match==="D"?"Dictionary entry":spot.match==="M"?"Glossary gap":"Related dictionary entry");
  $("inspection-provenance").hidden=!(spot.inspection||spot.referenceOnly);
@@ -299,11 +302,15 @@ function select(id,from){
    if(!spot.inspection){
      requestAnimationFrame(()=>{
        const viewport=$("photo-viewport"),photo=$("photo-canvas");
-       viewport.scrollLeft=Math.max(0,photo.clientWidth*spot.x/100-viewport.clientWidth/2);
+       const left=Math.max(0,photo.clientWidth*spot.x/100-viewport.clientWidth/2);
        const sheetTop=$("info").getBoundingClientRect().top;
        const photoTop=viewport.getBoundingClientRect().top;
        const visibleHeight=Math.max(40,Math.min(viewport.clientHeight,sheetTop-photoTop-14));
-       viewport.scrollTop=Math.max(0,photo.clientHeight*spot.y/100-visibleHeight/2);
+       const top=Math.max(0,photo.clientHeight*spot.y/100-visibleHeight/2);
+       // Photo-native pan only: no fictitious camera, object or stage.
+       // A guided hop may transition smoothly unless motion is reduced.
+       const reduced=window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches===true;
+       viewport.scrollTo({left,top,behavior:guided&&!reduced?"smooth":"instant"});
      });
    }
  }
@@ -459,7 +466,7 @@ function guideNavigate(objectId,questionId){
  if(!GUIDED_OBJECTS.has(objectId))return false;
  const q=state.questions.find(x=>x.id===questionId&&x.primary_object_id===objectId);
  if(!q)return false;
- select(objectId,$("guide-toggle"));
+ select(objectId,$("guide-toggle"),{guided:true});
  return openQuestion(q);
 }
 async function guideInit(pilot){
