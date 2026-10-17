@@ -7,6 +7,7 @@ import { projectEmberInsertionModel } from "./reader-ember-lessons.js";
 import { projectNuptialInsertionModel } from "./reader-nuptial.js";
 import { holyThursdayCanonVariantsForProper } from "./reader-holy-thursday-canon.js";
 import { gospelHeadingVariantForProper } from "./reader-gospel-heading.js";
+import { requiemAgnusVariantsForResolvedMass, requiemOmittedOrdinaryCuesForResolvedMass } from "./reader-requiem-conditions.js";
 import { projectHolyThursdayMass } from "./reader-holy-thursday-mandatum.js";
 
 const SUPPORTED_OVERLAYS=new Set(["VOTIVE_PROPER","REQUIEM","EMBER_LESSONS","NUPTIAL"]);
@@ -72,6 +73,7 @@ export function createMassReaderModel({
   // Gospel author. The actual source-checked Proper owns this announcement.
   const ordinaryVariants=Object.freeze({
     ...(holyThursdayCanonVariantsForProper(resolvedMass)??{}),
+    ...(requiemAgnusVariantsForResolvedMass(resolvedMass)??{}),
     "AO.SM.C0084":gospelHeadingVariantForProper(proper,{
       sourcePath:resolvedMass.proper?.sourcePath??proper.sourcePath??null,
     }),
@@ -84,6 +86,7 @@ export function createMassReaderModel({
       vernacularLanguage,
       frenchOrdinary,
       ordinaryVariants,
+      omittedOrdinaryCues:requiemOmittedOrdinaryCuesForResolvedMass(resolvedMass),
       actualForm:resolvedMass.form,
     })
   ));

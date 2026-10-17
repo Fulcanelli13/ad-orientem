@@ -11,6 +11,7 @@ on:
       - "tests/pray-prayer-first-options-phone.mjs"
       - "tests/pray-marian-mobile.mjs"
       - "tests/pray-all-modules-mobile.mjs"
+      - "tests/quiet-monthly-mobile-review.mjs"
       - ".github/workflows/pray-prayer-first-phone.yml"
   workflow_dispatch:
 
@@ -27,6 +28,15 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Stations, Angelus, Regina Caeli and Divine Mercy at 320/390/430px
         run: node tests/pray-prayer-first-options-phone.mjs
+      - name: First Friday and Saturday registers — real phone screenshots
+        run: node tests/quiet-monthly-mobile-review.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quiet-monthly-phone-review
+          path: artifacts/quiet-monthly-review/
+          if-no-files-found: warn
+          retention-days: 30
       - uses: actions/upload-artifact@v4
         if: always()
         with:

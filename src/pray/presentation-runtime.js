@@ -7,6 +7,8 @@ import {installAngelusCardDeck} from "./devotional-card-deck.js";
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
+import {monthlyDevotionalRegister} from "./quiet-devotional-progression.js";
+import "./quiet-devotional-progression-styles.js";
 import {showDevotionalInterlude,showDevotionalParagraphCue,resetDevotionalCinematicSession} from "./devotional-cinematic.js";
 import {resolveAngelusIncarnationCinematic} from "./angelus-cinematic-policy.js";
 import {certifiedPublicStationCue,stationPhaseOfFocusedParagraph,STATIONS_PUBLIC_POSTURE_SOURCE} from "./stations-posture-policy.js";
@@ -20,6 +22,8 @@ import { rosaryGuideSections } from "./rosary-guide-data.js";
 import { rosaryNamedChapters,rosaryCurrentChapter } from "./rosary-card-chapters.js";
 import {installRosaryActiveCard} from "./rosary-active-card.js";
 import { divineMercySteps, mercyStepText, MERCY_WITNESSES, rosaryPlan, ROSARY_METHODS } from "./devotional-methods-v1.js";
+import {mercyBeadNavigationModel} from "./mercy-bead-navigation.js";
+import {mercyBeadNavHTML,updateMercyBeadNav} from "./mercy-bead-presentation.js";
 import { applyRosaryScripturePolicy } from "./rosary-scripture-policy.js";
 import { scriptureContextCapsule } from "../scripture/context.js";
 import { glossaryContextCapsule } from "../app/contextual-study.js";
@@ -1524,6 +1528,57 @@ function consecutive(records,needed){const done=records.filter(x=>x.complete).so
 function history(records,label){return `<div class="aoP435930History"><h3>${esc(label)}</h3>${records.length?records.slice().reverse().map(r=>`<div><span>${esc(fmtDate(r.date))}</span><b class="${r.complete?'ok':'partial'}">${esc(r.complete?L('Reported complete','Déclaré accompli'):L('Incomplete / interrupted','Incomplet / interrompu'))}</b>${r.confessionDate?`<small>${esc(L('Confession','Confession'))}: ${esc(fmtDate(r.confessionDate))}</small>`:''}</div>`).join(''):`<p>${esc(L('No reports yet.','Aucune déclaration pour le moment.'))}</p>`}</div>`}
 function upsert(arr,rec){const i=arr.findIndex(x=>x.date===rec.date);if(i>=0)arr[i]=rec;else arr.push(rec);arr.sort((a,b)=>a.date.localeCompare(b.date));while(arr.length>36)arr.shift()}
 function handoff(id){externalResume=captureResume();close({silent:true,preserve:true});return BASE?.open?.(id,{returnContext:PRAY_CTX})}
+function devotionalMonthRegisterMarkup(kind,records,tracking,selectedDate){
+ const saturday=kind==="saturday",needed=saturday?5:9;
+ const report=monthlyDevotionalRegister(tracking?records:[],{needed,selectedDate});
+ const format=new Intl.DateTimeFormat(isFr()?'fr-FR':'en-GB',{month:'short',year:'numeric',timeZone:'UTC'});
+ const fullFormat=new Intl.DateTimeFormat(isFr()?'fr-FR':'en-GB',{month:'long',year:'numeric',timeZone:'UTC'});
+ const statusLabel=status=>status==='recorded'?L('Self-reported complete','Déclaré accompli'):status==='incomplete'?L('Self-reported incomplete','Déclaré incomplet'):L('Not recorded','Non enregistré');
+ const cells=report.cells.map(c=>{
+  const d=new Date(Date.UTC(c.year,Number(c.key.slice(5))-1,1));
+  const name=fullFormat.format(d),short=format.format(d);
+  const status=tracking?c.status:'unrecorded';
+  return `<div class="aoQuietMonthCell" data-status="${status}" data-month="${c.key}" aria-label="${esc(name+' · '+statusLabel(status))}"><span aria-hidden="true"></span><abbr title="${esc(name+' · '+statusLabel(status))}">${esc(short)}</abbr></div>`;
+ }).join('');
+ const details=!tracking
+  ?L('Private recording is optional. No devotional acts are inferred.','Le suivi privé est facultatif. Aucun acte dévotionnel n’est déduit.')
+  :report.interrupted
+  ?L('The latest entry was reported incomplete. Earlier reports remain in your history.','La dernière entrée est déclarée incomplète. Les déclarations antérieures restent dans l’historique.')
+  :report.streak
+  ?L('Consecutive months explicitly reported: ','Mois consécutifs explicitement déclarés : ')+report.streak+L(' of ',' sur ')+needed+'.'
+  :L('No consecutive completed months recorded in this series.','Aucune suite de mois consécutifs accomplis n’est enregistrée.');
+ const title=saturday?L('The five-month register','Le registre des cinq mois'):L('The nine-month register','Le registre des neuf mois');
+ return `<section class="aoQuietMonthRegister" data-ao-month-kind="${kind}" data-ao-month-streak="${tracking?report.streak:0}" data-ao-month-tracking="${tracking}" aria-label="${esc(title)}">
+  <div class="aoQuietMonthTitle"><span>${esc(title)}</span><small>${esc(L('Private record','Suivi privé'))}</small></div>
+  <div class="aoQuietMonthGrid" aria-label="${esc(L('Monthly participation, as reported by you','Participation mensuelle déclarée par vous-même'))}">${cells}</div>
+  <p class="aoQuietMonthNote">${esc(details)} ${esc(L('An unrecorded month is not automatically a missed devotion.','Un mois non enregistré ne signifie pas automatiquement une dévotion manquée.'))}</p>
+ </section>`;
+}
+function devotionalMonthSummary(kind,records,tracking,selectedDate){
+ const saturday=kind==="saturday",needed=saturday?5:9;
+ const report=monthlyDevotionalRegister(tracking?records:[],{needed,selectedDate});
+ const title=saturday?L('First Saturdays · month record','Premiers samedis · suivi mensuel'):L('First Fridays · month record','Premiers vendredis · suivi mensuel');
+ const count=tracking?report.streak+' / '+needed:L('Optional','Facultatif');
+ const cells=tracking?report.cells.map(c=>`<i class="aoQuietSeriesPip" data-status="${c.status}"></i>`).join(''):'';
+ const tracker=saturday?'fs':'ff';
+ return `<details class="aoQuietSeriesDisclosure" data-ao-series-kind="${kind}">
+  <summary aria-label="${esc(title+' · '+count)}">
+   <span class="aoQuietSeriesHeading">${esc(title)}</span>
+   <span class="aoQuietSeriesPips" aria-hidden="true">${cells}</span>
+   <span class="aoQuietSeriesCount">${esc(count)}</span>
+   <span class="aoQuietSeriesChevron" aria-hidden="true">⌄</span>
+  </summary>
+  <div class="aoQuietSeriesExpanded">
+   <label class="aoP435930TrackingToggle">
+    <input type="checkbox" data-p435930-${tracker}-tracking ${tracking?'checked':''}>
+    <span><b>${esc(L('Keep a private month-by-month record','Conserver un suivi privé mois par mois'))}</b>
+     <small>${esc(L('Optional · the guide works without tracking','Facultatif · le guide fonctionne sans suivi'))}</small></span>
+   </label>
+   ${tracking?devotionalMonthRegisterMarkup(kind,records,tracking,selectedDate):
+      `<p class="aoQuietSeriesOffNote">${esc(L('Nothing is recorded unless you choose to report each month.','Aucun mois n’est enregistré sans votre déclaration explicite.'))}</p>`}
+  </div>
+ </details>`;
+}
 function programmeRail(kind,step,items){
  return `<div class="aoP435930StageRail aoP435930ProgrammeRail">${items.map((x,i)=>`<button type="button" class="${i===step?'active':''}" ${i===step?'aria-current="step"':''} data-p435930-${kind}-stage="${i}"><span>${i+1}</span><b>${esc(L(x[0],x[1]))}</b></button>`).join('')}</div>`
 }
@@ -1551,8 +1606,14 @@ function firstFridayStage(date,valid){
  return `${guideNow(L('Review and record','Vérifiez et enregistrez'),L('The app records only what you explicitly report. It does not certify worthiness, grace, validity, salvation, or any promised effect.','L’application enregistre seulement ce que vous déclarez explicitement. Elle ne certifie ni dignité, ni grâce, ni validité, ni salut, ni aucun effet promis.'))}${programmeSummary(rows)}<button class="aoP435930Primary" data-p435930-ff-save ${!valid||!FF.intention||!FF.communion?'disabled':''}>${esc(L('Record this First Friday','Enregistrer ce premier vendredi'))}</button>${valid?`<button class="aoP435930Secondary" data-p435930-ff-interrupt>${esc(L('Record this month as incomplete / interrupted','Enregistrer ce mois comme incomplet / interrompu'))}</button>`:''}${programmeNav('ff',s,FF_STAGES.length)}`
 }
 function renderFirstFriday(){
- const date=selectedDateKey(),valid=isFirstWeekday(date,5),records=S.firstFriday.records,run=consecutive(records,9),tracking=!!S.firstFriday.tracking;
- return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">${devotionalGuide('firstFriday')}<label class="aoP435930TrackingToggle"><input type="checkbox" data-p435930-ff-tracking ${tracking?'checked':''}><span><b>${esc(L('Keep a private month-by-month record','Conserver un suivi privé mois par mois'))}</b><small>${esc(L('Optional · guidance works without tracking','Facultatif · le guide fonctionne sans suivi'))}</small></span></label><section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Friday','Premier vendredi'):tracking?L('Not the First Friday · guide available, recording disabled','Ce n’est pas le premier vendredi · guide disponible, enregistrement désactivé'):L('Not the First Friday · you may still preview the guide','Ce n’est pas le premier vendredi · vous pouvez quand même consulter le guide'))}</span></section>${firstFridayStage(date,valid)}${tracking?`<div class="aoP435930Run"><b>${run}/9</b><span>${esc(L('consecutive months represented by your private records','mois consécutifs représentés par votre suivi privé'))}</span></div>${FF.step===4?history(records,L('Private history','Historique privé')):''}`:''}</main>`;
+ const date=selectedDateKey(),valid=isFirstWeekday(date,5),records=S.firstFriday.records,tracking=!!S.firstFriday.tracking;
+ return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">
+  <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Friday','Premier vendredi'):tracking?L('Not the First Friday · guide available, recording disabled','Ce n’est pas le premier vendredi · guide disponible, enregistrement désactivé'):L('Not the First Friday · you may still preview the guide','Ce n’est pas le premier vendredi · vous pouvez quand même consulter le guide'))}</span></section>
+  ${devotionalMonthSummary('friday',records,tracking,date)}
+  ${firstFridayStage(date,valid)}
+  ${devotionalGuide('firstFriday')}
+  ${tracking&&FF.step===4?history(records,L('Private history','Historique privé')):''}
+ </main>`;
 }
 function firstSaturdayStage(date,valid){
  const s=FS.step;
@@ -1567,8 +1628,14 @@ function firstSaturdayStage(date,valid){
  return `${guideNow(L('Review the four acts and record the month','Vérifiez les quatre actes et enregistrez le mois'),L('Record completion only from your own report. The app does not infer sacramental validity, interior disposition, grace, or devotional effects.','N’enregistrez l’accomplissement qu’à partir de votre propre déclaration. L’application ne déduit ni validité sacramentelle, ni disposition intérieure, ni grâce, ni effets dévotionnels.'))}${programmeSummary(rows)}<button class="aoP435930Primary" data-p435930-fs-save ${complete?'':'disabled'}>${esc(L('Record this First Saturday','Enregistrer ce premier samedi'))}</button>${valid?`<button class="aoP435930Secondary" data-p435930-fs-interrupt>${esc(L('Record this month as incomplete / interrupted','Enregistrer ce mois comme incomplet / interrompu'))}</button>`:''}${programmeNav('fs',s,FS_STAGES.length)}`
 }
 function renderFirstSaturday(){
- const date=selectedDateKey(),valid=isFirstWeekday(date,6),records=S.firstSaturday.records,run=consecutive(records,5),tracking=!!S.firstSaturday.tracking;
- return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">${devotionalGuide('firstSaturday')}<label class="aoP435930TrackingToggle"><input type="checkbox" data-p435930-fs-tracking ${tracking?'checked':''}><span><b>${esc(L('Keep a private month-by-month record','Conserver un suivi privé mois par mois'))}</b><small>${esc(L('Optional · guidance works without tracking','Facultatif · le guide fonctionne sans suivi'))}</small></span></label><section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Saturday','Premier samedi'):tracking?L('Not the First Saturday · guide available, recording disabled','Ce n’est pas le premier samedi · guide disponible, enregistrement désactivé'):L('Not the First Saturday · you may still preview the guide','Ce n’est pas le premier samedi · vous pouvez quand même consulter le guide'))}</span></section>${firstSaturdayStage(date,valid)}${tracking?`<div class="aoP435930Run"><b>${run}/5</b><span>${esc(L('consecutive months represented by your private records','mois consécutifs représentés par votre suivi privé'))}</span></div>${FS.step===5?history(records,L('Private history','Historique privé')):''}`:''}</main>`;
+ const date=selectedDateKey(),valid=isFirstWeekday(date,6),records=S.firstSaturday.records,tracking=!!S.firstSaturday.tracking;
+ return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">
+  <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Saturday','Premier samedi'):tracking?L('Not the First Saturday · guide available, recording disabled','Ce n’est pas le premier samedi · guide disponible, enregistrement désactivé'):L('Not the First Saturday · you may still preview the guide','Ce n’est pas le premier samedi · vous pouvez quand même consulter le guide'))}</span></section>
+  ${devotionalMonthSummary('saturday',records,tracking,date)}
+  ${firstSaturdayStage(date,valid)}
+  ${devotionalGuide('firstSaturday')}
+  ${tracking&&FS.step===5?history(records,L('Private history','Historique privé')):''}
+ </main>`;
 }
 function mysterySetButtons(){return `<div class="aoP435930MysterySets">${Object.entries(FS_MYSTERIES).map(([id,x])=>`<button type="button" class="${FS.medSet===id?'active':''}" data-p435930-fs-med-set="${id}">${esc(isFr()?x.fr:x.en)}</button>`).join('')}</div>`}
 function mysteryButtons(){const set=FS_MYSTERIES[FS.medSet]||FS_MYSTERIES.joyful,items=set.items[lang()]||set.items.en;return `<div class="aoP435930MysteryList">${items.map((x,i)=>`<button type="button" class="${FS.medMystery===i?'active':''}" data-p435930-fs-med-mystery="${i}"><span>${i+1}</span><b>${esc(x)}</b></button>`).join('')}</div>`}
@@ -1953,12 +2020,9 @@ function renderMercy(){
  const index=Math.max(0,Math.min(MERCY.step,steps.length-1));MERCY.step=index;
  const item=steps[index],fr=isFr(),language=fr?'fr':'en';
  const groupTitle={opening:L('Opening prayers','Prières initiales'),'large-bead':L('Large bead','Gros grain'),'small-bead':L('Small bead','Petit grain'),conclusion:L('Closing invocations','Invocations finales'),'optional-conclusion':L('Optional closing prayer','Prière finale facultative')}[item.group];
- const count=item.decade?L('Decade ','Dizaine ')+item.decade+' / 5 · '+(item.bead?item.bead+' / 10':groupTitle):L('Prayer ','Prière ')+(index+1)+' / '+steps.length;
- const text=mercyStepText(item,language);
  const chapters=mercyChapters(steps,{french:fr});
  const activeChapter=chapters.find(x=>index>=x.start&&index<x.start+x.entries.length)||chapters[0];
  const chapterIndex=chapters.indexOf(activeChapter);
- const stepType=groupTitle===activeChapter.title?'':`<small class="aoMercyStepType">${esc(groupTitle)}</small>`;
  const prayerParagraphs=activeChapter.entries.map(({index:stepIndex,step})=>{
   const selected=stepIndex===index;
   const marker=step.decade
@@ -1967,8 +2031,7 @@ function renderMercy(){
   return '<article tabindex="0" class="aoMercyLine aoDevoParagraph'+(selected?' aoMercyPrayer':'')+'" data-ao-mercy-step="'+stepIndex+'" data-ao-devo-active="'+selected+'"><small>'+esc(marker)+'</small><p>'+esc(mercyStepText(step,language))+'</p></article>';
  }).join('');
  const note=item.group==='large-bead'?L('Pray once on the large bead.','Récitez une fois sur le gros grain.'):item.group==='small-bead'?L('Pray on each of the ten small beads.','Récitez sur chacun des dix petits grains.'):item.group==='conclusion'?L('Repeat three times.','Répétez trois fois.'):'';
- const dots=item.group==='small-bead'?'<div class="aoMercyBeads" aria-label="'+esc(L('Ten beads','Dix grains'))+'">'+Array.from({length:10},(_,n)=>'<i class="'+(n<item.bead?'active':'')+'" aria-hidden="true"></i>').join('')+'</div>':'';
- return `${head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Five decades · St Faustina, 1935','Cinq dizaines · Sainte Faustine, 1935'))}<main class="aoP435930Body aoMercyReader" data-ao-mercy-deck="chapters-v1"><p class="aoMercyKicker">${esc(count)}</p>${stepType}${dots}<section class="aoDevoCard" data-ao-devo-card="${esc(activeChapter.id)}"><header class="aoDevoCardHead"><small class="aoDevoCardNumber">${chapterIndex+1} / ${chapters.length}</small><h2 class="aoDevoCardTitle">${esc(activeChapter.title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(activeChapter.title)}">${prayerParagraphs}</div></section><p class="aoMercyNote">${esc(note)}</p>${MERCY.guide==='guided'?'<p class="aoMercyHelp">'+esc(L('Contemplate the sorrowful Passion of Our Lord and pray for the whole world. Continue at your own pace.','Méditez la douloureuse Passion de Notre-Seigneur et priez pour le monde entier. Avancez à votre rythme.'))+'</p>':''}<nav class="aoMercyControls" aria-label="${esc(L('Prayer navigation','Navigation des prières'))}"><button data-p435930-mercy-prev ${index===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button><span>${index+1} / ${steps.length}</span><button data-p435930-mercy-next ${index===steps.length-1?'disabled':''}>${esc(L('Next','Suivant'))}</button></nav><details class="aoMercyOptional" data-ao-mercy-options ${MERCY.optionsOpen?"open":""}><summary>${esc(L("Prayer options","Options de prière"))}<small>${esc(L("Guidance and concluding prayer","Guide et prière finale"))}</small></summary><div class="aoMercyOptions"><button type="button" data-p435930-mercy-guide aria-pressed="${MERCY.guide==='guided'}">${esc(L('Guided explanation','Explication guidée'))}</button><button type="button" data-p435930-mercy-closing aria-pressed="${MERCY.includeClosing}">${esc(L('Optional concluding prayer','Prière finale facultative'))}</button></div></details><p class="aoMercySource"><a href="${esc(MERCY_WITNESSES[language])}" target="_blank" rel="noopener noreferrer">${esc(L('Original published prayer sequence','Texte et ordre publiés'))} ↗</a></p></main>`;
+ return `${head(L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Five decades · St Faustina, 1935','Cinq dizaines · Sainte Faustine, 1935'))}<main class="aoP435930Body aoMercyReader" data-ao-mercy-deck="chapters-v1" data-ao-mercy-bead-reader="quiet-v1">${mercyBeadNavHTML(steps,index,{french:fr})}<section class="aoDevoCard" data-ao-devo-card="${esc(activeChapter.id)}"><header class="aoDevoCardHead"><h2 class="aoDevoCardTitle">${esc(activeChapter.title)}</h2></header><div class="aoDevoCardScroll" role="region" aria-label="${esc(activeChapter.title)}">${prayerParagraphs}</div></section><p class="aoMercyNote">${esc(note)}</p>${MERCY.guide==='guided'?'<p class="aoMercyHelp">'+esc(L('Contemplate the sorrowful Passion of Our Lord and pray for the whole world. Continue at your own pace.','Méditez la douloureuse Passion de Notre-Seigneur et priez pour le monde entier. Avancez à votre rythme.'))+'</p>':''}<nav class="aoMercyControls" aria-label="${esc(L('Prayer navigation','Navigation des prières'))}"><button data-p435930-mercy-prev ${index===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button><span>${esc(mercyBeadNavigationModel(steps,index,{french:fr}).shortName)}</span><button data-p435930-mercy-next ${index===steps.length-1?'disabled':''}>${esc(L('Next','Suivant'))}</button></nav><details class="aoMercyOptional" data-ao-mercy-options ${MERCY.optionsOpen?"open":""}><summary>${esc(L("Prayer options","Options de prière"))}<small>${esc(L("Guidance and concluding prayer","Guide et prière finale"))}</small></summary><div class="aoMercyOptions"><button type="button" data-p435930-mercy-guide aria-pressed="${MERCY.guide==='guided'}">${esc(L('Guided explanation','Explication guidée'))}</button><button type="button" data-p435930-mercy-closing aria-pressed="${MERCY.includeClosing}">${esc(L('Optional concluding prayer','Prière finale facultative'))}</button></div></details><p class="aoMercySource"><a href="${esc(MERCY_WITNESSES[language])}" target="_blank" rel="noopener noreferrer">${esc(L('Original published prayer sequence','Texte et ordre publiés'))} ↗</a></p></main>`;
 }
 function renderRosaryMethods(){
  const allowed=['ordinary','dominican','montfort','montfort_short','scriptural'];
@@ -2225,10 +2288,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    restoreStep:MERCY.step,paragraphSelector:'.aoMercyLine',
    onNavigate:(i,chapter)=>{
     MERCY.step=chapter.start;render();
-    const fx=window.AO_CINEMATIC_V4312||window.AO_CINEMATIC_V4311;
-    if(!fx?.isReducedMotion?.())fx?.showTransition?.({
-     kicker:L('DIVINE MERCY','DIVINE MISÉRICORDE'),title:chapter.title,hold:430
-    });
+    // A bead change is enough; do not interrupt recitation with a chapter cinematic.
    },
    onFocus:paragraph=>{
     const i=Number(paragraph.dataset.aoMercyStep);
@@ -2236,8 +2296,9 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     MERCY.step=i;
     m.querySelectorAll('.aoMercyPrayer').forEach(el=>el.classList.remove('aoMercyPrayer'));
     paragraph.classList.add('aoMercyPrayer');
+    updateMercyBeadNav(m,steps,i,{french:isFr()});
     const counter=m.querySelector('.aoMercyControls span');
-    if(counter)counter.textContent=(i+1)+' / '+steps.length;
+    if(counter)counter.textContent=mercyBeadNavigationModel(steps,i,{french:isFr()}).shortName;
     const prev=m.querySelector('[data-p435930-mercy-prev]');
     const next=m.querySelector('[data-p435930-mercy-next]');
     if(prev)prev.disabled=i===0;
@@ -2347,6 +2408,12 @@ function onClick(e){
  if(b.hasAttribute('data-p435930-rosary-method-launch'))return launchTraditionalRosaryMethod(b.dataset.p435930RosaryMethodLaunch);
  if(b.hasAttribute('data-p435930-rosary-fifteen'))return launchFifteenRosary();
  if(view==='mercy'){
+  if(b.hasAttribute('data-p435930-mercy-jump')){
+   const steps=divineMercySteps({includeClosing:MERCY.includeClosing});
+   const n=Number(b.dataset.p435930MercyJump);
+   if(Number.isInteger(n)&&n>=0&&n<steps.length){MERCY.step=n;return render()}
+   return;
+  }
   if(b.hasAttribute('data-p435930-mercy-prev')){MERCY.step=Math.max(0,MERCY.step-1);return render()}
   if(b.hasAttribute('data-p435930-mercy-next')){MERCY.step=Math.min(divineMercySteps({includeClosing:MERCY.includeClosing}).length-1,MERCY.step+1);return render()}
   if(b.hasAttribute('data-p435930-mercy-guide')){MERCY.guide=MERCY.guide==='guided'?'simple':'guided';return render()}
@@ -2389,7 +2456,7 @@ function onClick(e){
  }
  if(b.matches('[data-p435930-flip]')){const a=b.querySelector('[data-face-la]'),v=b.querySelector('[data-face-v]');if(a&&v){const showV=v.hidden;v.hidden=!showV;a.hidden=showV}return}
  if(b.matches('[data-p435930-card-flip]')){const v=b.querySelector('[data-face-v]'),a=b.querySelector('[data-face-la]');if(v&&a){const showA=a.hidden;a.hidden=!showA;v.hidden=showA}return}
- const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){if(['individual','group'].includes(seg))setRecitationMode(seg);else if(['simple','guided'].includes(seg)){S.angelusGuided=seg==='guided';save()}else if(['auto','angelus','regina'].includes(seg)){S.angelusMode=seg;ANGELUS_CARD_INDEX=0;save()}}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;if(seg==='simple')STATIONS.publicPosture=false;save()}else if(view==='stations'&&['individual','group'].includes(seg)){setRecitationMode(seg);if(seg==='individual')STATIONS.publicPosture=false}else if(view==='litany'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
+ const seg=b.dataset.p435930Seg;if(seg){if(view==='angelus'){if(['individual','group'].includes(seg))setRecitationMode(seg);else if(['simple','guided'].includes(seg)){S.angelusGuided=seg==='guided';save()}else if(['auto','angelus','regina'].includes(seg)){S.angelusMode=seg;ANGELUS_CARD_INDEX=0;angelusOptionsOpen=false;save()}}else if(view==='rosary'){if(['standard','devotional'].includes(seg)){S.rosary.form=seg;save()}else if(['simple','guided'].includes(seg)){S.rosary.mode=seg;save()}else if(['individual','group'].includes(seg)){setRecitationMode(seg);try{window.AO_PRAY_COHERENCE_V435930?.setMode?.(seg)}catch{}}}else if(view==='adoration'&&['reserved','exposed'].includes(seg)){setAdorationPresence(seg)}else if(view==='stations'&&['guided','simple'].includes(seg)){S.stations.mode=seg;if(seg==='simple')STATIONS.publicPosture=false;save()}else if(view==='stations'&&['individual','group'].includes(seg)){setRecitationMode(seg);if(seg==='individual')STATIONS.publicPosture=false}else if(view==='litany'&&['individual','group'].includes(seg)){setRecitationMode(seg)}else if(view==='library'&&LIB.open){LIB.language=seg}return render()}
  if(b.matches('[data-p435930-launch-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930ConfPath!=null){
    if(!confessionPath(b.dataset.p435930ConfPath))return;
@@ -2524,8 +2591,8 @@ function onClick(e){
  if(b.matches('[data-p435930-fs-interrupt]')){const date=selectedDateKey();if(!isFirstWeekday(date,6))return;upsert(S.firstSaturday.records,{date,intention:!!FS.intention,communion:!!FS.communion,rosary:!!FS.rosary,meditation:!!FS.meditation,confessionDate:FS.confessionDate||'',complete:false,interrupted:true,reportedAt:nowIso()});save();FS.step=5;return render()}
 }
 function onChange(e){const x=e.target;
- if(x.matches('[data-p435930-ff-tracking]')){S.firstFriday.tracking=x.checked;save();return render()}
- if(x.matches('[data-p435930-fs-tracking]')){S.firstSaturday.tracking=x.checked;save();return render()}
+ if(x.matches('[data-p435930-ff-tracking]')){const expanded=!!x.closest('details.aoQuietSeriesDisclosure')?.open;S.firstFriday.tracking=x.checked;save();render();if(expanded)mount()?.querySelector('details.aoQuietSeriesDisclosure')?.setAttribute('open','');return}
+ if(x.matches('[data-p435930-fs-tracking]')){const expanded=!!x.closest('details.aoQuietSeriesDisclosure')?.open;S.firstSaturday.tracking=x.checked;save();render();if(expanded)mount()?.querySelector('details.aoQuietSeriesDisclosure')?.setAttribute('open','');return}
  if(x.matches('[data-p435930-angelus-appendix]')){S.angelusHistoricalConclusion=x.checked;save();return render()}
  if(x.matches('[data-p435930-angelus-vespers]')){angelusSaturdayVespersDate=x.checked&&selectedWeekday()===6?selectedDateKey():null;return render()}
  if(x.matches('[data-p435930-grave-reviewed]')){CONF.graveReviewed=x.checked;return}

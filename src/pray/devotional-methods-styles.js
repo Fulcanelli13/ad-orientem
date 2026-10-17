@@ -89,6 +89,85 @@ const css=`
  #aoPray435930 .aoRosaryReady{padding:18px 14px 16px}
  #aoPray435930 .aoRosaryReady h2{font-size:25px}
 }
+
+/* Divine Mercy: authentic large/small bead strand; no numbers-as-chapters. */
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader]{padding:10px 14px 35px}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoMercyKicker,
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader]>.aoMercyStepType,
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader]>.aoMercyBeads,
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoDevoCardNumber,
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoDevoSequenceTimeline{display:none!important}
+#aoPray435930 .aoMercyBeadNavigation{
+ display:grid;gap:7px;padding:0 3px 11px;margin:0 0 8px;
+ border-bottom:1px solid color-mix(in srgb,var(--liturgical,#b9a17d) 25%,transparent)
+}
+#aoPray435930 .aoMercyPhases{display:flex;align-items:center;justify-content:space-between;gap:2px;min-width:0}
+#aoPray435930 .aoMercyPhaseLink{
+ flex:0 0 auto;min-height:44px;padding:7px 4px;border:0;border-radius:5px;background:transparent;
+ color:var(--ao-muted,#a9a19a);font:italic 11px/1.25 Georgia,serif;text-align:center
+}
+#aoPray435930 .aoMercyPhaseLink[aria-current=step]{color:var(--ao-ink,#eee3d3);text-decoration:underline;text-decoration-color:var(--liturgical,#bda079);text-underline-offset:5px}
+#aoPray435930 .aoMercyDecades{display:flex;align-items:center;justify-content:space-around;flex:1 1 auto;min-width:0;gap:1px}
+#aoPray435930 .aoMercyDecadeLink{
+ display:grid;place-items:center;flex:1 1 40px;max-width:48px;height:44px;min-width:28px;
+ position:relative;border:0;border-radius:5px;background:transparent;
+ color:var(--ao-muted,#8e8c89);font:12px/1.2 Georgia,serif
+}
+#aoPray435930 .aoMercyDecadeLink:after{
+ content:"";position:absolute;bottom:4px;left:50%;transform:translateX(-50%);
+ width:3px;height:3px;border-radius:50%;background:color-mix(in srgb,var(--liturgical,#b9a17d) 35%,transparent)
+}
+#aoPray435930 .aoMercyDecadeLink[data-status=active]{color:var(--ao-ink,#f0e4d3)}
+#aoPray435930 .aoMercyDecadeLink[data-status=active]:after{width:6px;height:6px;background:var(--liturgical,#d6b780)}
+#aoPray435930 .aoMercyDecadeLink[data-status=prayed]{color:var(--liturgical,#bd9f73)}
+#aoPray435930 .aoMercyBeadPosition{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+#aoPray435930 .aoMercyBeadPosition>span{font:italic 13px/1.3 Georgia,serif;color:var(--ao-ink,#e9dcc8)}
+#aoPray435930 .aoMercyBeadPosition>small{font:11px/1.3 system-ui,sans-serif;color:var(--ao-muted,#aea49c)}
+#aoPray435930 .aoMercyStrand{
+ position:relative;isolation:isolate;display:flex;justify-content:space-between;align-items:center;
+ gap:0;min-height:48px;padding:0
+}
+#aoPray435930 .aoMercyStrand:before{
+ content:"";position:absolute;left:4.6%;right:4.6%;top:50%;z-index:0;pointer-events:none;
+ border-top:1px solid color-mix(in srgb,var(--liturgical,#b8a27c) 42%,transparent)
+}
+#aoPray435930 .aoMercyBeadButton{
+ position:relative;z-index:1;display:grid;place-items:center;flex:1 1 0;
+ min-width:0;max-width:44px;height:44px;border:0;border-radius:6px;
+ background:transparent;padding:0
+}
+#aoPray435930 .aoMercyBeadButton:before{
+ content:"";display:block;width:7px;height:7px;border-radius:50%;
+ border:1px solid color-mix(in srgb,var(--liturgical,#b9a17d) 58%,#626066);
+ background:var(--surface-1,#151c24);box-shadow:inset 0 0 3px #0004
+}
+#aoPray435930 .aoMercyBeadButton[data-bead="0"]:before{width:13px;height:13px;border-width:1.5px}
+#aoPray435930 .aoMercyBeadButton[data-status=prayed]:before{
+ background:color-mix(in srgb,var(--liturgical,#c0a37a) 36%,#26303b);border-color:var(--liturgical,#c0a37a)
+}
+#aoPray435930 .aoMercyBeadButton[data-status=active]:before{
+ width:10px;height:10px;background:var(--liturgical,#cdb489);border:2px solid var(--ao-ink,#efe5d5);
+ box-shadow:0 0 0 3px color-mix(in srgb,var(--liturgical,#be9c66) 13%,transparent)
+}
+#aoPray435930 .aoMercyBeadButton[data-status=active][data-bead="0"]:before{width:16px;height:16px}
+#aoPray435930 .aoMercyBeadButton:focus-visible,
+#aoPray435930 .aoMercyDecadeLink:focus-visible,
+#aoPray435930 .aoMercyPhaseLink:focus-visible{outline:2px solid var(--liturgical,#ba9e71);outline-offset:2px}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoDevoCardHead{padding:9px 12px 8px}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoDevoCardScroll{
+ padding:12px clamp(11px,3vw,25px) 110px;max-height:min(45dvh,430px);min-height:min(185px,30dvh)
+}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoDevoCardTitle{font:400 clamp(21px,5.7vw,27px)/1.15 Georgia,serif}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoMercyLine{margin:0 0 12px}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoMercyLine>small{font:italic 12px/1.3 Georgia,serif;opacity:.75}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoMercyControls{margin:12px 0}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoMercyControls span{font:italic 12px/1.3 Georgia,serif;text-align:center;color:var(--ao-muted,#a99f96)}
+#aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoMercyNote{margin:8px 2px;font-size:12px}
+@media(max-width:350px){
+ #aoPray435930 .aoMercyPhaseLink{font-size:10px;padding-inline:2px}
+ #aoPray435930 .aoMercyDecadeLink{min-width:27px;font-size:11px}
+ #aoPray435930 .aoMercyBeadNavigation{padding-inline:0}
+}
 @media(min-width:650px){#aoPray435930 .aoRosaryChoiceGrid{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoMercyReader *{animation:none!important;transition:none!important}}
 `;
