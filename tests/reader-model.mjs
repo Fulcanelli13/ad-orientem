@@ -176,6 +176,16 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
         frenchOrdinary,vernacularLanguage:language
       });
       assert.equal(r.cards.length,form==="LOW"?30:39,form+" changed card count");
+      // XIII.1: C0225 first peace prayer is absent, while C0226 and C0227
+      // remain actual prayers with their original cue IDs and navigable card.
+      assert.equal(paragraphForCue(r,"AO.SM.C0225"),undefined,
+        form+" Requiem displayed the forbidden peace prayer");
+      for(const id of ["AO.SM.C0226","AO.SM.C0227"])
+        assert.ok(paragraphForCue(r,id),form+" lost "+id+" after omission");
+      const peaceBlock=r.cards.flatMap(c=>c.blocks).find(b=>b.blockId==="AO.SM.B069");
+      assert.equal(peaceBlock?.omittedByRite,"RITUS_XIII_1_REQUIEM");
+      assert.equal(peaceBlock.paragraphCount,0);
+
       for(const [cueId,ending] of Object.entries(agnusRequiemByCue)){
         const p=paragraphForCue(r,cueId);
         assert.ok(p,form+" missing Requiem "+cueId);
@@ -193,6 +203,8 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
       sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
       frenchOrdinary,vernacularLanguage:language
     });
+    assert.ok(paragraphForCue(ordinary,"AO.SM.C0225"),
+      form+" ordinary pre-Communion peace prayer disappeared");
     for(const cueId of Object.keys(agnusRequiemByCue)){
       const p=paragraphForCue(ordinary,cueId);
       assert.ok(p,form+" ordinary Agnus was removed");
