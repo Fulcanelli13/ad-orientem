@@ -37,11 +37,21 @@ assert.ok(first>=0&&last>first,"Canonical Prayer family projection moved");
 const familySource=pray.slice(first,last);
 const published=[...familySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
 const external=[...familySource.matchAll(/\['external','([^']+)'/g)].map(x=>x[1]);
-assert.equal(published.length,23,"Prayer family cards drifted from the approved five families plus Tenebrae");
+assert.equal(published.length,26,"Prayer family must retain the original 23 entries plus three chaplet discovery links");
+const chapletStart=familySource.indexOf("chaplets:Object.freeze(");
+const chapletEnd=familySource.indexOf("eucharistic:Object.freeze(",chapletStart);
+assert.ok(chapletStart>=0&&chapletEnd>chapletStart,"Shared Rosary & Chaplets family missing");
+const chapletSource=familySource.slice(chapletStart,chapletEnd);
+const chapletRoutes=[...chapletSource.matchAll(/\['own','([^']+)'/g)].map(x=>x[1]);
+assert.deepEqual(chapletRoutes,["pray.rosary","pray.rosary_methods","pray.divine_mercy"],
+  "Rosary, its methods and Divine Mercy must remain distinct canonical readers");
+const coreFamilySource=familySource.slice(0,chapletStart)+familySource.slice(chapletEnd);
+const originalPublished=[...coreFamilySource.matchAll(/\['(?:own|external)','([^']+)'/g)].map(x=>x[1]);
+assert.equal(originalPublished.length,23,"Original Prayer family entries must remain untouched");
 assert.ok(published.includes("pray.tenebrae"),"Seasonal Tenebrae must remain in the Passion family");
 assert.equal(external.length,10,"External Prayer card count drifted");
 assert.ok(familySource.includes("direct:'pray.library'"),"Prayer Library direct family door missing");
-const actual=[...published.filter(id=>id!=="pray.tenebrae"),"pray.library"].sort();
+const actual=[...originalPublished.filter(id=>id!=="pray.tenebrae"),"pray.library"].sort();
 const prior=previous.routes.filter(x=>x.kind==="PRAY_FAMILY_ITEM").map(x=>x.id).sort();
 assert.deepEqual(actual,prior,"Existing 23 audited Prayer family entries must remain unaltered by Tenebrae");
 const lazy=read("src/pray/lazy-module-registry.js");
@@ -55,4 +65,4 @@ assert.equal(new Set(EXPLORE_LENSES).size,7);
 for(const lens of ["tlm","shrines","apparitions","relics","traditions","pilgrimages","saints"]){
   assert.ok(EXPLORE_LENSES.includes(lens),"Explore missing published lens "+lens);
 }
-console.log("PASS current app reachability contract: five tabs, three utility routes, 16 Formation cards including Explorer, 24 Prayer family entries including Tenebrae (10 lazy) and seven Explore lenses");
+console.log("PASS current app reachability: 23 preserved Prayer family items plus 3 Rosary/Chaplet discovery entries, no duplicate engine or route owner");
