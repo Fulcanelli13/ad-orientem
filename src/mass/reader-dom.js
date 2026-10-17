@@ -1283,13 +1283,13 @@ export function syncReaderRitualHighlights(root,gesture){
   return applied;
 }
 
-export // Treat the existing 19 R18 Solemn source events as **rubrical expectations**.
+// Treat the existing 19 R18 Solemn source events as **rubrical expectations**.
 // Their cue alignment is not evidence anyone independently observed a minister.
 // Only the pre-certified form-state owner may supply this discrete LIVE label.
 export function projectCertifiedSolemnMinisterRubric(value){
   if(!value||!["R18_SOLEMN_R04_MINISTER","R18_SOLEMN_PAX_PRIMARY_SOURCE"].includes(value.owner) ||
     !["RECOVERED_R04_CERTIFIED","CERTIFIED_PRIMARY_1962_RUBRIC"].includes(value.authorityStatus) ||
-    !/^AO\\.SM\\.C\\d{4}$/.test(String(value.cueId??"")) ||
+    !/^AO\.SM\.C\d{4}$/.test(String(value.cueId??"")) ||
     !String(value.actor??"").trim() || !String(value.labelShort??"").trim())return null;
   return Object.freeze({
     label:String(value.actor).trim()+" · "+String(value.labelShort).trim(),
@@ -1298,7 +1298,7 @@ export function projectCertifiedSolemnMinisterRubric(value){
   });
 }
 
-function normalizeReaderMoment(moment = {}, previous = {}) {
+export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
   const momentTitle=String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "");
   const latinProminent=/Consecration of (?:the )?(?:Sacred )?(?:Host|Chalice)/i.test(momentTitle);
