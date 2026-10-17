@@ -515,7 +515,7 @@ try{
     null,{timeout:24000});
   assert.equal(await page.locator("#historiaSequence .auditSegment").count(),5);
   assert.match(await page.locator("#historiaSequence").innerText(),/Revelation 18:24/);
-  assert.match(await page.locator("#historiaSequence details").last().innerText(),
+  assert.match(await page.locator("#historiaSequence details").last().textContent(),
     /LAMB_AND_THE_REDEEMED/);
   assert.deepEqual(pageErrors,[],"H76 source-owned principal/companion editor must not create browser errors");
 
