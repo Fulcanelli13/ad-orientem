@@ -9,6 +9,7 @@ on:
       - "src/pray/presentation-coherence.js"
       - "src/pray/presentation-styles.js"
       - "tests/pray-prayer-first-options-phone.mjs"
+      - "tests/pray-chaplets-discovery-phone.mjs"
       - "tests/pray-marian-mobile.mjs"
       - "tests/pray-all-modules-mobile.mjs"
       - "tests/quiet-monthly-mobile-review.mjs"
@@ -28,8 +29,17 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Stations, Angelus, Regina Caeli and Divine Mercy at 320/390/430px
         run: node tests/pray-prayer-first-options-phone.mjs
+      - name: Rosary and Chaplets family — real phone navigation
+        run: node tests/pray-chaplets-discovery-phone.mjs
       - name: First Friday and Saturday registers — real phone screenshots
         run: node tests/quiet-monthly-mobile-review.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rosary-chaplets-discovery-phone
+          path: artifacts/rosary-chaplets-discovery/
+          if-no-files-found: warn
+          retention-days: 21
       - uses: actions/upload-artifact@v4
         if: always()
         with:
