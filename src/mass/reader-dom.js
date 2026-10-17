@@ -1073,7 +1073,7 @@ button.ao-schola-control{cursor:pointer}
 /* Missal retains the source-owned posture/gesture and priest position/action
    in one compact horizontal state ribbon, never the LIVE transient rails. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon{
-  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(74px,.56fr) minmax(0,1fr);
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   min-height:64px;height:64px;
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-cell{gap:5px;padding:4px 6px}
