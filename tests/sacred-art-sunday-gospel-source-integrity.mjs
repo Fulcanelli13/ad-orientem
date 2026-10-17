@@ -4,8 +4,10 @@ import {readFileSync} from "node:fs";
 const load=p=>JSON.parse(readFileSync(p,"utf8"));
 const first=load("data/calendar/sacred-art-sunday-gospel-paintings-open-sources-20261017.v1.json");
 const second=load("data/calendar/sacred-art-sunday-gospel-open-paintings-phase2-20261017.v1.json");
+const third=load("data/calendar/sacred-art-sunday-gospel-open-paintings-phase3-20261017.v1.json");
 assert.equal(first.schema,"AO_SACRED_ART_OPEN_SUNDAY_GOSPEL_CANDIDATES_2026_V1");
 assert.equal(second.schema,"AO_SACRED_ART_SUNDAY_GOSPEL_SECOND_SOURCE_PASS_2026_V1");
+assert.equal(third.schema,"AO_SACRED_ART_SUNDAY_GOSPEL_PHASE_3_OPEN_PAINTINGS_V1");
 assert.equal(first.leads.length,17);
 assert.equal(second.leads.length,9);
 const all=[...first.leads,...second.leads];
@@ -44,8 +46,38 @@ assert.ok(all.some(x=>x.artist==="Philippe de Champaigne"&&x.appointedGospel==="
 assert.ok(all.some(x=>x.artist==="James Tissot"&&x.appointedGospel==="Luke 11:14–28"),"Luke 11 possessed mute missing");
 assert.ok(all.some(x=>x.rightsClaim==="CC_BY_SA_4_0"&&x.artist==="Andrei Mironov"),"Modern painting attribution/share-alike lost");
 assert.ok(all.some(x=>x.rightsClaim==="CC0"&&/Nobleman/.test(x.title)),"Cleveland exact-source CC0 lead missing");
+
+// New phase3: direct scene, contextual saint, and provisional loaves must remain separate.
+assert.equal(third.sourceLeads.length,4);
+assert.equal(third.contextualReuse.length,7);
+assert.equal(third.sourceLeads.filter(x=>x.relationship==="DEPICTS_APPOINTED_GOSPEL_EPISODE").length,2);
+assert.equal(third.sourceLeads.filter(x=>x.relationship==="PERSON_CONTEXT_NOT_PRECISE_ENVOYS_SCENE").length,1);
+assert.equal(third.sourceLeads.filter(x=>x.relationship==="TENTATIVE_FOUR_THOUSAND_LINK_NOT_MUSEUM_EXACT").length,1);
+for(const x of third.sourceLeads){
+ assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(x.sourceUrl),"Untrusted Commons file "+x.title);
+ assert.ok(x.preview.startsWith("https://commons.wikimedia.org/wiki/Special:FilePath/")&&x.preview.endsWith("?width=500"),"Unbounded research thumbnail "+x.title);
+ assert.equal(x.curatorialScore,null,"New image already rated "+x.title);
+ assert.equal(x.productionApproved,false,"Third phase must not mark production-ready");
+ assert.ok(["PUBLIC_DOMAIN_PD_ART_PDM","CC_BY_SA_4_0"].includes(x.rights),"Wrong rights label "+x.title);
+ assert.ok(!/fra angelico|el greco/i.test(x.artist),"Excluded painter "+x.artist);
+}
+const four=third.sourceLeads.find(x=>x.date2026==="2026-07-05");
+assert.equal(four.collection,"National Gallery of Ireland");
+assert.equal(four.accession,"NGI.72");
+assert.equal(four.relationship,"TENTATIVE_FOUR_THOUSAND_LINK_NOT_MUSEUM_EXACT","Don't conflate feeding miracle accounts");
+const dropsy=third.sourceLeads.find(x=>x.date2026==="2026-09-13");
+assert.equal(dropsy.rights,"CC_BY_SA_4_0");
+assert.equal(dropsy.photographer,"Wolfgang Sauber");
+const healed=third.sourceLeads.find(x=>x.date2026==="2026-02-15");
+assert.equal(healed.accession,"ГЭ-407");
+const c=third.contextualReuse;
+assert.equal(c.filter(x=>x.canonicalArtworkId==="nga-12130").length,4,"Reuse one Ricci Last Supper original");
+assert.equal(c.filter(x=>x.canonicalArtworkRef==="PHASE_2_CARL_BLOCH_SERMON_MOUNT").length,3,"Reuse one Carl Bloch image");
+assert.ok(c.every(x=>x.physicalOriginalReused&&x.reviewOnly&&!x.humanSelection));
+assert.ok(!c.some(x=>/EXACT_APPOINTED_GOSPEL_EPISODE/.test(x.relationship)),"Context images cannot be exact depiction");
+
 console.log("SACRED_ART_SUNDAY_DISCOVERY_SOURCE_GATE="+JSON.stringify({
  paintingLeads:all.length,originalSceneGapDatesResolved:firstDays.size,
  secondPassAdditionalDays:new Set(second.leads.map(x=>x.date2026)).size,
  sourceFiles:files.size,legacyPaintingsReused:reused.length,
- knownSceneUnillustrated:["2026-07-05"],historicalRatingsChanged:0}));
+ feedingFourThousandStatus:"TENTATIVE_NGI_72_MUSEUM_NOT_EXACT",phase3NewLeads:third.sourceLeads.length,contextReuse:third.contextualReuse.length,historicalRatingsChanged:0}));
