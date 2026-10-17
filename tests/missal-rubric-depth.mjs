@@ -24,6 +24,11 @@ assert.deepEqual(hostDetail.steps.map(x=>x.id),[
  "AO.RUB.C0174.04","AO.RUB.C0174.05"
 ]);
 assert.equal(hostDetail.steps.length,4);
+const finger=host.publishedMissalRubrics.find(x=>x.id==="AO.RUB.C0174.06");
+assert.equal(finger?.kind,"STATE",
+ "Newly approved finger discipline from #1374 must remain visible in short Missal");
+assert.equal(hostDetail.steps.some(x=>x.id==="AO.RUB.C0174.06"),false,
+ "Persistent finger discipline is NOT a fifth timed elevation step");
 assert.equal(new Set(hostDetail.steps.map(x=>x.cueId)).size,1);
 assert.match(hostDetail.sourceUrl,/ritus-servandus/);
 const paten=published(p("AO.SM.C0111",
