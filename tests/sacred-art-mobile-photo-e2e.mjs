@@ -18,9 +18,11 @@ assert.ok(from>=0&&to>from,'Source gallery embeds model-data');
 const data=JSON.parse(html.slice(from+marker.length,to));
 const categories=data.categories,photos=categories.flatMap(c=>c.works.flatMap(w=>w.photos.map(p=>({
   categoryIndex:c.index,categoryId:c.id,subject:c.label,workId:w.id,photoId:p.id,
-  preview:p.preview,original:p.original,sourcePage:p.page,sourceStatus:p.status||'',sourceRights:p.rights||''
+  preview:p.preview,original:p.original,sourcePage:p.page,sourceStatus:p.status||'',sourceRights:p.rights||'',
+  deliveryHold:Boolean(p.deliveryHold),identityHold:Boolean(p.identityHold)
 }))));
-const distinct=[...new Map(photos.map(p=>[p.preview,p])).values()];
+const active=photos.filter(p=>!p.deliveryHold&&!p.identityHold);
+const distinct=[...new Map(active.map(p=>[p.preview,p])).values()];
 const fullRemoteAudit=process.env.AO_ART_REMOTE_AUDIT==='full';
 const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
 const page=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
@@ -41,7 +43,9 @@ page.on('requestfailed',request=>{
 const outcome={schema:'AO_SACRED_ART_390PX_REMOTE_PREVIEW_QA_V1',researchOnly:true,mode:fullRemoteAudit?'full-remote':'layout-only',
   testedAt:new Date().toISOString(),viewport:{width:390,height:844},
   categories:categories.length,categoryWithLinkedPreview:categories.filter(c=>c.works.some(w=>w.photos.length)).length,
-  photoEntries:photos.length,distinctPreviewURLs:distinct.length,
+  photoEntries:photos.length,knownDeliveryHolds:photos.filter(p=>p.deliveryHold).length,
+  knownIdentityHolds:photos.filter(p=>p.identityHold).length,
+  activePhotoEntries:active.length,distinctPreviewURLs:distinct.length,
   owner:'draft PR #887 only',ratingOrSelectedStatusChanged:false,productionPhotoRightsCertified:false,
   browserLoadChecks:{},networkDiagnostics:{httpErrors:remoteHTTPErrors,requestFailures:remoteRequestFailures},layoutChecks:[],broken:[],primaryFailures:[],recoveredViaFallback:[],unavailable:[],pageErrors,notes:[
     'A linked URL does not establish an image byte acquisition, complete painted surface or reusable app rights.',
