@@ -100,25 +100,30 @@ try{
     "Missal chalice context language or form is wrong");
   assert.ok(!(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)>1),
     "Long practical Missal description overflows "+width+"px viewport");
-  // Source-backed rubrics are BOOK annotations beneath their exact Latin
-  // and vernacular pairs, not a second LIVE priest clock.
+  // Avoid duplicating an action already printed as a bracketed source rubric.
   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.010.2"));
   await page.waitForFunction(()=>document.querySelectorAll(
-    '.ao-missal-inline-rubrics[data-source-authority="MR62_RITUS"] .ao-missal-rubric-action').length===3,
+    '.ao-reader-paragraph').length>0,null,{timeout:5000});
+  assert.equal(await page.locator(".ao-missal-inline-rubrics").count(),0,
+    "Bracketed paten action is already a Missal rubric; do not reprint it");
+  // Insert unobtrusive sourced directions at actual prayer words.
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.010.5"));
+  await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
+    .some(x=>/blesses the offerings|bénit les offrandes/i.test(x.textContent)),
     null,{timeout:5000});
-  const offertoryRubrics=await page.evaluate(()=>({
-    texts:[...document.querySelectorAll(".ao-missal-rubric-action")].map(x=>x.textContent),
-    note:document.querySelector(".ao-missal-inline-rubrics"),
+  const offertory=await page.evaluate(()=>({
+    notes:[...document.querySelectorAll(".ao-missal-rubric-action")].map(x=>x.textContent),
     link:document.querySelector(".ao-missal-inline-rubrics a")?.getAttribute("href"),
     width:document.documentElement.scrollWidth-innerWidth,
   }));
-  assert.equal(offertoryRubrics.texts.length,3,"Offertory has three 1962 paten gestures");
-  assert.match(offertoryRubrics.texts[0],lang==="fr"?/Le prêtre/:/The priest/);
-  assert.match(offertoryRubrics.link||"",/ritus-servandus/i);
-  assert.ok(offertoryRubrics.width<=1,"Missal inline Offertory rubric overflows phone width");
-  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.014.2"));
+  assert.ok(offertory.notes.every(x=>lang==="fr"?x.startsWith("Le prêtre "):x.startsWith("The priest ")),
+    "In-page priest rubrics must be localized");
+  assert.match(offertory.link||"",/ritus-servandus/i);
+  assert.ok(offertory.width<=1,"Missal inline Offertory rubric overflows phone width");
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.MISSAL.014.3"));
   await page.waitForFunction(()=>[...document.querySelectorAll(".ao-missal-rubric-action")]
-    .some(x=>/commemorates the living|mémoire des vivants/i.test(x.textContent)),null,{timeout:5000});
+    .some(x=>/inclines his head|incline la tête/i.test(x.textContent)),
+    null,{timeout:5000});
   assert.equal(await page.locator(".ao-canon-inline-rubrics").count(),0,
     "Missal should use restrained book rubric, not duplicate LIVE Canon rail note");
 
