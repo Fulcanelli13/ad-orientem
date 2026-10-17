@@ -9,14 +9,14 @@ The 37-movement consolidated main narrative is subjected to a **causal-seam and 
 | Decision | Original v18 units |
 |---|---:|
 | A: indispensable narrative beats (unchanged from prior classification) | 93 |
-| B: **32** required pieces of *brief context*, not compulsory full passages | 32 |
+| B: **31** required pieces of *brief context*, not compulsory full passages | 31 |
 | B: the two complete genealogical witnesses kept in lineage navigation | 2 |
 | B: genuine typology/prophecy references rather than chronological events | 5 |
-| B: background no longer necessary to the continuous reading | 28 |
+| B: background no longer necessary to the continuous reading | 29 |
 | C: distinct biblical episodes not mandatory | 54 |
 | D: no separate featured presentation | 3 |
 
-**The 32 B units are source leads for context, not 32 additional chapters or 32 unabridged Scripture extracts.** No source is removed from the Bible, and no destination story screen is assumed to exist.
+**The 31 B units are short context leads, not 31 additional chapters or 31 unabridged Scripture extracts.** No source is removed from the Bible, and no destination story screen is assumed to exist.
 
 The desk review also identified **11 exact source references** that warrant editorial consideration for resolving narrative discontinuity, including 7 non-destructive source supplements outside v18. Their verses are present in CPDV and Douay–Rheims, but original-edition/wording and full literary continuity remain unapproved.
 
@@ -26,7 +26,7 @@ The desk review also identified **11 exact source references** that warrant edit
 |---|---|---|
 | Genesis 6:9–22 | Ark construction and Noah's response must precede the instruction to enter the ark in Genesis 7:1 | b context promoted from prior held h07-01 · **candidate** |
 | Genesis 11:26–31 | From Shem's descendants to Terah/Abram before Genesis 12:1; this is a genealogical transition, not a full story | new verse candidate · **candidate** |
-| Genesis 39:20–21 | Genesis 41 summons Joseph from imprisonment; the short bridge identifies when he entered prison without restoring his separate adventures | c story remains optional native bridge only · **candidate** |
+| Genesis 39:20–21 | Joseph entered service in an Egyptian official’s household and was imprisoned after an accusation; this brief passage establishes his continued divine protection without narrating the entire independent Potiphar episode | c story remains optional native bridge only · **candidate** |
 | 1 Samuel 16:1–3 | Existing 1 Samuel 16:10–13 opens after Samuel has already seen seven sons; the prophet's commission to Jesse must be supplied | new verse candidate · **candidate** |
 | John 11:45–53 | The final miracle itself does not explain the decision to put Jesus to death; the explicit plot follows in John 11:45–53 | new verse candidate · **candidate** |
 | John 19:38–42 | Jesus is placed in a tomb before the next selected text begins with the empty tomb; burial is part of the death-resurrection sequence | new verse candidate · **candidate** |
@@ -52,7 +52,7 @@ The desk review also identified **11 exact source references** that warrant edit
 |---|---|---:|---|---|---|
 | HS-M01 | Creation and the human vocation | 4 | — | — | — |
 | HS-M02 | The Fall and the First Promise | 2 | — | — | — |
-| HS-M03 | Noah, the covenant and the peoples | 3 | H05-02, H07-01, H09-02 | Genesis 6:9–22 | H06-01, H09-01 |
+| HS-M03 | Noah, the covenant and the peoples | 3 | H05-02, H09-02 | Genesis 6:9–22 | H06-01, H07-01, H09-01 |
 | HS-M04 | Abraham called into covenant | 3 | — | Genesis 11:26–31 | H11-01 |
 | HS-M05 | Isaac, Jacob and Israel | 4 | H14-02, H14-03 | — | H12-01, H15-01 |
 | HS-M06 | Joseph and the descent into Egypt | 4 | — | Genesis 39:20–21 | — |
@@ -88,10 +88,12 @@ The desk review also identified **11 exact source references** that warrant edit
 | HS-M36 | The final conflict and judgment | 2 | H76-03 | — | H76-01, H76-04, H76-05 |
 | HS-M37 | The New Creation | 2 | — | — | — |
 
+The first nine movements have now been desk-read against their actual CPDV openings and endings. Eight context descriptions were rewritten as short reader-facing, source-attributed text. H07-01's additional Ark explanation is redundant with the proposed Genesis 6 passage and has been moved to **no additional context needed**. None of these editorial sentences is presented as Scripture or yet accepted for publication.
+
 ## Limits and acceptance gates
 
-This is a **desk examination of biblical source coordinates and selected opening/end passages**, not a finished recitation of the proposed 93 selected A texts and 32 context bridges. Overlong A passages (e.g. Lazarus, Sinai, Cornelius and multiple prophetic readings) still need an economical, faithful verse-by-verse literary pass. The review does not certify original printed editions, rights, Catholic theological commentary, or final story length.
+This is a **desk examination of biblical source coordinates and selected opening/end passages**, not a finished recitation of the proposed 93 selected A texts and 31 context bridges. Overlong A passages (e.g. Lazarus, Sinai, Cornelius and multiple prophetic readings) still need an economical, faithful verse-by-verse literary pass. The review does not certify original printed editions, rights, Catholic theological commentary, or final story length.
 
-Review the proposed 32 necessary context ideas, 11 source-reference bridge candidates and individual A-section compression before promoting anything. There is no change to the public app, no new user-facing experience, and no new canonical Atlas event.
+Review the proposed 31 necessary context ideas, 11 source-reference bridge candidates and individual A-section compression before promoting anything. There is no change to the public app, no new user-facing experience, and no new canonical Atlas event.
 
 [Machine-readable 67-unit B disposition and 11-source candidate manifest](./historia-salutis-v18-continuity-desk-pass.v1.json).
