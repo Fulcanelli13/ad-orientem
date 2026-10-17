@@ -1407,6 +1407,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
         .map(event=>Object.freeze({
           id:String(event.id),displayText:event.displayText,actor:event.actor,
           sourceCueId:event.sourceCueId,sourceId:event.sourceId,
+          owner:event.owner,review:event.review,
           latinTrigger:typeof event.latinTrigger==="string"?event.latinTrigger:null,
           order:Number.isInteger(event.order)?event.order:null,
           observedNow:false,
