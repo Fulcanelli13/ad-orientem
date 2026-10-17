@@ -13,7 +13,9 @@ assert.equal(proof.schema,"ao.historia.v18.continuous-scripture-proof.v1");
 assert.equal(proof.stage,"REAL_VERSE_READ_THROUGH_PROOF_NOT_APPROVED");
 assert.equal(proof.totals.movements,37);
 assert.equal(proof.totals.essentialUnits,93);
-assert.equal(proof.totals.briefEditorialContextNotes,32);
+assert.equal(proof.totals.briefEditorialContextNotes,31);
+assert.equal(proof.literaryReviewProgress.movementsDeskExamined,9);
+assert.equal(proof.literaryReviewProgress.oralReadingsApproved,0);
 assert.equal(proof.totals.sourceBridgeCandidates,11);
 assert.equal(proof.totals.independentlyReadAndApproved,false);
 assert.equal(proof.displayRules.neverCombineDifferentWitnessText,true);
@@ -98,6 +100,24 @@ assert.equal(proof.movements.find(x=>x.id==="HS-M18").beats.some(x=>x.id==="H45-
 for(const needle of ["historiaProofMovement","historiaProofEdition","historiaProofBridges",
  "proofSourceBridge","proofGap","showHistoriaMovement","toggleHistoriaProof"]){
  assert.ok(html.includes(needle),"Single existing workbench must render the complete source sequence: "+needle);
+}
+assert.equal(proof.movements.find(x=>x.id==="HS-M03").beats.some(x=>x.id==="H07-01"),false);
+for(const [id,expected] of [
+ ["H11-02",["Genesis 15:1–6","Genesis 15:9–10","Genesis 15:13–14","Genesis 15:17–18"]],
+ ["H13-01",["Genesis 22:1–19"]],
+ ["H16-03",["Genesis 41:14–16","Genesis 41:25–30","Genesis 41:33–45"]],
+ ["H21-03",["Exodus 14:5–10","Exodus 14:13–16","Exodus 14:19–23","Exodus 14:26–31"]]
+]){
+ const beat=proof.movements.flatMap(x=>x.beats).find(x=>x.id===id);
+ assert.deepEqual(beat.refs,expected);
+ assert.equal(beat.publicationApproved,false);
+}
+for(const beat of proof.movements.slice(0,9).flatMap(x=>x.beats).filter(x=>x.kind==="EDITORIAL_CONTEXT_NOT_BIBLE")){
+ assert.ok(!/^(Mention|Identify|Keep|Indicate|Use|Name|State)\b/i.test(beat.explanation),
+ "A readable text proof cannot contain instructions to the editor in place of transition prose");
+ assert.match(beat.explanation,/\((?:Genesis|Exodus) /,
+ "Every reader-facing transition must carry a source attribution");
+ assert.equal(beat.editorialTextApproved,false);
 }
 assert.ok(necessity.units.length===217);
 console.log("PASS Historia continuous proof: 37 movements, 93 real Scripture units, 32 visibly distinct context notes, 11 held original-source candidates, "+scriptureVerses+" verse displays validated in CPDV + Douay; no character filler or extra Bible experience");
