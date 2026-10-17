@@ -67,6 +67,12 @@ async function acquireMet(work) {
   const dimensions=jpegDimensions(data);
   assert(dimensions.width>=2000 && dimensions.height>=2000,"Master resolution insufficient");
   const hash=createHash("sha256").update(data).digest("hex");
+  // The curator selected the underlying source original in the review export;
+  // a different crop or reproduction is NOT an interchangeable replacement.
+  const preferredReviewImageKey=freeze.approved.find(x=>x.artworkId===work.artworkId)?.preferredImageKey;
+  const reviewedSourceSha=preferredReviewImageKey?.split("|")[2];
+  assert(/^[a-f0-9]{64}$/.test(reviewedSourceSha||""),"No source fingerprint in curator-selected image key");
+  assert.equal(hash,reviewedSourceSha,"Open-access download differs from the curator-reviewed source original");
   const basename="met-438724-champaigne-annunciation-original.jpg";
   await writeFile(join(outputDir,basename),data,{flag:"w"});
   const review={
@@ -74,7 +80,8 @@ async function acquireMet(work) {
     artworkId:work.artworkId,
     approvedPhysicalOriginal:true,
     userRating:freeze.approved.find(x=>x.artworkId===work.artworkId)?.score??null,
-    preferredReviewImageKey:freeze.approved.find(x=>x.artworkId===work.artworkId)?.preferredImageKey??null,
+    preferredReviewImageKey,
+    sourceShaMatchesCuratorSelectedImage:true,
     original:{museum:"The Metropolitan Museum of Art",accession:meta.accessionNumber,objectId:meta.objectID,title:meta.title,artist:meta.artistDisplayName,medium:meta.medium},
     technicalFile:{name:basename,sha256:hash,bytes:data.length,...dimensions,downloadedFrom:meta.primaryImage},
     source:{objectUrl:work.sourceObjectUrl,metadataUrl:apiUrl,publicDomainFlagFromMuseumApi:true,
@@ -85,7 +92,7 @@ async function acquireMet(work) {
     researchPlacement:{date:work.researchDate,subject:work.subject,feast:work.feast},
     rightsSourceIdentified:true,
     selectionState:"STAGED_FOR_INDEPENDENT_IMAGE_AND_PHONE_QA",
-    requiresPhotoMatchToPreferredReviewImage:true,
+    requiresPhotoMatchToPreferredReviewImage:false,
     actual1962ProperAndGospelVerified:false,
     cropAndFrameFreeVerified:false,
     independentPhoneVisualQaVerified:false,
