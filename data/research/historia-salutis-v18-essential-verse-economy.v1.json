@@ -22,18 +22,18 @@
   "counts": {
     "essential": 93,
     "edited": 30,
-    "protected": 33,
-    "unchanged": 24,
+    "protected": 31,
+    "unchanged": 22,
     "editionCorrections": 2,
     "priorContinuityRestorations": 1,
-    "literaryContinuityExpansions": 3
+    "literaryContinuityExpansions": 7
   },
   "candidateSourceEditions": [
     "cpdv-2009",
     "dr-challoner"
   ],
   "verification": {
-    "coordinateChecks": "ALL_93_PASS_SCRIPTURE_CONTRACTS_AFTER_M01_M09_CORRECTIONS",
+    "coordinateChecks": "AWAITING_M10_M19_SOURCE_VERIFICATION",
     "textCollation": false,
     "fullLiteraryReadAloud": false,
     "CatholicEditorialApproval": false,
@@ -102,6 +102,36 @@
       "contractsPassed": true,
       "phoneGatePassed": true,
       "mainGatePassed": true
+    },
+    "batch10_19": {
+      "movementIds": [
+        "HS-M10",
+        "HS-M11",
+        "HS-M12",
+        "HS-M13",
+        "HS-M14",
+        "HS-M15",
+        "HS-M16",
+        "HS-M17",
+        "HS-M18",
+        "HS-M19"
+      ],
+      "status": "TEXT_SEAMS_DESK_EXAMINED_PROVISIONAL",
+      "sourceContinuityExpansions": [
+        "H22-01",
+        "H30-01",
+        "H33-01",
+        "H39-01"
+      ],
+      "trims": [
+        "H35-02",
+        "H36-02",
+        "H43-02"
+      ],
+      "editsToCanonicalBible": false,
+      "approved": false,
+      "oralReadThrough": false,
+      "contractsPassed": false
     }
   },
   "rules": [
@@ -709,18 +739,21 @@
       "v18ChapterId": "H22",
       "scene": "The covenant invitation to Israel",
       "proposedSelectedReferences": [
-        "Exodus 19:3–8"
+        "Exodus 19:1–8"
       ],
-      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
-      "reason": "Keep the covenant summons and Israel's response.",
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "Israel's arrival at Sinai is necessary before Moses ascends the mountain to receive the covenant summons; Exodus 19:1–2 identifies place and setting.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
     },
     {
       "unitId": "H22-02",
@@ -917,18 +950,21 @@
       "v18ChapterId": "H30",
       "scene": "David anointed by Samuel",
       "proposedSelectedReferences": [
-        "1 Samuel 16:10–13"
+        "1Samuel 16:1–13"
       ],
-      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
-      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: David anointed by Samuel.",
-      "editorReviewedForNarrativeEconomy": false,
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "Without verses 4–9 the Lord's instruction to Jesse and Samuel's examination of the elder sons are missing before verse 10. Preserve the complete chosen-king episode, replacing the earlier provisional 1Samuel 16:1–3 source bridge.",
+      "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
     },
     {
       "unitId": "H32-01",
@@ -998,18 +1034,21 @@
       "v18ChapterId": "H33",
       "scene": "God promises David an enduring royal house",
       "proposedSelectedReferences": [
-        "2 Samuel 7:8–16"
+        "2Samuel 7:1–16"
       ],
-      "selectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
-      "reason": "The enduring Davidic royal promise must remain intact.",
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "The divine answer in 7:8 begins mid-command to Nathan; verses 1–7 establish David's desire to build God a house and God's response before the covenant promise of an enduring royal dynasty.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
     },
     {
       "unitId": "H35-02",
@@ -1018,18 +1057,21 @@
       "v18ChapterId": "H35",
       "scene": "Solomon builds the Temple",
       "proposedSelectedReferences": [
-        "1 Kings 6:1–2"
+        "1Kings 6:1"
       ],
-      "selectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
-      "reason": "Retain the existing v18 verse selection pending a complete oral continuity read-through: Solomon builds the Temple.",
-      "editorReviewedForNarrativeEconomy": false,
+      "selectionStatus": "PROPOSED_CURATED_TRIM",
+      "reason": "Preserve the Temple-construction event but omit numerical dimensions from this introductory narrative unit; the Temple's consecration is already narrated in the next original passage.",
+      "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": false,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
     },
     {
       "unitId": "H35-03",
@@ -1082,19 +1124,21 @@
       "scene": "Israel and Judah divide",
       "proposedSelectedReferences": [
         "1Kings 12:1–5",
-        "1Kings 12:13–20",
-        "1Kings 12:24"
+        "1Kings 12:13–20"
       ],
       "selectionStatus": "PROPOSED_CURATED_TRIM",
-      "reason": "Remove incidental or repeated material without losing the necessary content of israel and judah divide; make every gap visibly non-contiguous.",
+      "reason": "The final verse 12:24 begins in the middle of Shemaiah's unintroduced quotation. The division is already completed and explained in 12:13–20; do not feature an orphan quotation.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "PROPOSED_CURATED_TRIM",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
     },
     {
       "unitId": "H38-02",
@@ -1183,19 +1227,22 @@
       "v18ChapterId": "H39",
       "scene": "The northern kingdom falls under judgment",
       "proposedSelectedReferences": [
-        "2Kings 17:5–8",
+        "2Kings 17:3–8",
         "2Kings 17:13–18"
       ],
-      "selectionStatus": "PROPOSED_CURATED_TRIM",
-      "reason": "Remove incidental or repeated material without losing the necessary content of the northern kingdom falls under judgment; make every gap visibly non-contiguous.",
+      "selectionStatus": "LITERARY_CONTINUITY_EXPANSION",
+      "reason": "Original 17:5 begins 'And he wandered' without naming the Assyrian king. Verses 3–4 establish Shalmaneser, Hoshea, rebellion and the siege before Samaria's fall.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "PROPOSED_CURATED_TRIM",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
     },
     {
       "unitId": "H40-01",
@@ -1285,19 +1332,22 @@
       "v18ChapterId": "H43",
       "scene": "The Temple rebuilt",
       "proposedSelectedReferences": [
-        "Ezra 6:13–16",
+        "Ezra 6:14–16",
         "Ezra 6:19–22"
       ],
       "selectionStatus": "PROPOSED_CURATED_TRIM",
-      "reason": "Remove incidental or repeated material without losing the necessary content of the temple rebuilt; make every gap visibly non-contiguous.",
+      "reason": "Ezra 6:13 depends on Darius's otherwise absent administrative instructions and named officials; begin with the elders' actual rebuilding and preserve the Temple dedication and Passover.",
       "editorReviewedForNarrativeEconomy": true,
       "halfVerseNotationInOriginal": false,
       "omittedVersesMustBeVisible": true,
-      "bothCatholicEditionVersePresenceVerified": true,
+      "bothCatholicEditionVersePresenceVerified": false,
       "sourceTextCollatedAgainstPrintedEditions": false,
       "reviewApproved": false,
       "approvedForProduction": false,
-      "selectedCoordinatesAreScriptureOnly": true
+      "selectedCoordinatesAreScriptureOnly": true,
+      "previousSelectionStatus": "PROPOSED_CURATED_TRIM",
+      "literaryBatch": "MOVEMENTS_10_19_DESK_READING",
+      "readAloudApproved": false
     },
     {
       "unitId": "H46-01",
@@ -2067,17 +2117,5 @@
       "selectedCoordinatesAreScriptureOnly": true
     }
   ],
-  "comparativeScriptureEconomy": {
-    "originalNominalVerseUnits": 1207,
-    "proposedNominalVerseUnits": 1069,
-    "nominalDifference": 138,
-    "historicalEditionExceptions": 2,
-    "nominalCountingDifferenceNotEditorialCut": 1,
-    "comparableOriginalVerseUnits": 1189,
-    "comparableSelectedVerseUnits": 1052,
-    "comparableActualVerseUnitReductions": 137,
-    "comparableReductionRatePct": 11.5,
-    "countingRule": "Counts essential A verse units only. Excludes two historical Crampon↔CPDV numbering cases from comparable rate; does not count separate held sources or 31 short contextual descriptions. Source integrity and story coherence outrank a compression percentage.",
-    "readAloudApproved": false
-  }
+  "comparativeScriptureEconomy": null
 }
