@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {createObservedChalicePreparationController} from "../src/mass/reader-priest-chalice-observation.js";
 
 const read=name=>JSON.parse(readFileSync(new URL("../data/"+name,import.meta.url),"utf8"));
 const corpus=read("presentation/reader-text-sung.v1.json");
@@ -85,5 +86,39 @@ assert.equal(get("061").condition,"ITE_MISSA_EST");
 assert.equal(get("061").actor,"DEACON");
 assert.equal(get("020").condition,"REQUIEM");
 assert.equal(get("019").condition,"NOT_REQUIEM");
+
+// Batch A ownership bridge. 22 Offertory research records do not become
+// 22 new R18 rail tiles: SMIN-009 already covers broad C0120–C0124.
+const formState=read("presentation/reader-form-state.v1.json");
+assert.equal(formState.solemn.ministerEvents.length,19,"R18 released minister-state denominator must not drift");
+const off=ev.filter(x=>/^MR62\\.SOL\\.B02\\.(?:0(?:1[4-9]|2[0-9]|3[0-4])|068)$/.test(x.id));
+assert.equal(off.length,22,"Offertory research crosswalk 014–034 plus 068");
+assert(off.every(x=>x.runtimeCertified===false),"Do not auto-promote Offertory research");
+assert(off.every(x=>x.latinFacsimileReviewed===false),"Latin transcription crosscheck is not 1962 printed facsimile approval");
+assert.equal(formState.solemn.ministerEvents.some(x=>x.cue==="AO.SM.C0112"),false,
+  "The prayer cue is not an independently observed minister clock");
+const incense=formState.solemn.ministerEvents.find(x=>x.id==="SMIN-009");
+assert.deepEqual(incense.cueRange,["AO.SM.C0120","AO.SM.C0124"],
+  "Retain broad certified incensation instead of duplicate microtiles");
+const solemnRequiemObservation=createObservedChalicePreparationController({
+  resolvedMass:{form:"SOLEMN",actualCelebration:{type:"REQUIEM"},overlays:["REQUIEM"]}
+});
+const reported=(action,actor,object,phase)=>({action,actor,object,phase,observed:true,source:"EXPLICIT_OBSERVATION"});
+assert.equal(solemnRequiemObservation.observe(
+  reported("WINE_POURED","DEACON","WINE","BEFORE_PRAYER")).accepted,true);
+assert.equal(solemnRequiemObservation.observe(
+  reported("WATER_PRESENTED","SUBDEACON","WATER","DURING_PRAYER")).accepted,true);
+assert.equal(solemnRequiemObservation.observe(
+  reported("WATER_ADDED","SUBDEACON","WATER","DURING_PRAYER")).accepted,true);
+assert.equal(solemnRequiemObservation.observe(
+  reported("WATER_BLESSED","PRIEST","WATER","DURING_PRAYER")).accepted,false,
+  "No water blessing in Solemn Requiem");
+const observed=solemnRequiemObservation.project();
+assert.equal(observed.observationAuthority,"EXPLICIT_HUMAN_REPORT_NOT_SENSOR_VERIFIED");
+assert.equal(observed.priestAction,null);
+assert.equal(observed.sacredMinister,null);
+assert.equal(observed.cueId,null);
+assert.equal(observed.cinematic,null);
+assert.equal(observed.automatedIconAllowed,false);
 
 console.log("PASS 1962 Solemn-minister research QA: 68 research actions, actor and water-pour correction, 12 Requiem exceptions, no live event promotion.");
