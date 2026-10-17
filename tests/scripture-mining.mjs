@@ -234,13 +234,13 @@ for(const edition of ["cpdv-2009","dr-challoner"]){
 }
 
 
-const H42_PRINCIPAL_VERSES=181;
+const H42_PRINCIPAL_VERSES=195;
 const H42_PRINCIPAL_IDS=["H42-01","H42-02","H42-03","H42-04","H42-05","H42-06","H42-07"];
 let h42PrincipalCount=0;
 for(const [idx,unit] of h42.units.entries()){
  assert.equal(unit.unitId,H42_PRINCIPAL_IDS[idx]);
  assert.equal(unit.principalEdition,"cpdv-2009");
- assert.equal(unit.principalStatus,"SOURCE_SELECTED_CONTINUITY_PENDING");
+ assert.ok(["SOURCE_SELECTED_CONTINUITY_PENDING","SOURCE_SEAM_INSPECTED_NOT_READALOUD"].includes(unit.principalStatus),"No sequence has yet passed complete oral continuity acceptance");
  assert.ok(unit.principalReadings.length>0&&unit.candidateReadings.length>0);
  assert.notEqual(unit.principalReadings,unit.candidateReadings,
   "The concise and expanded source selection must be separately retained");
@@ -300,7 +300,7 @@ let h76VerseCount=0, h76Expanded=0;
 for(const [index,unit] of h76.units.entries()){
  assert.equal(unit.unitId,"H76-"+String(index+1).padStart(2,"0"));
  assert.equal(unit.principalEdition,"cpdv-2009");
- assert.equal(unit.principalStatus,"SOURCE_SELECTED_CONTINUITY_PENDING");
+ assert.ok(["SOURCE_SELECTED_CONTINUITY_PENDING","SOURCE_SEAM_INSPECTED_NOT_READALOUD"].includes(unit.principalStatus),"No sequence has yet passed complete oral continuity acceptance");
  assert.equal(unit.approved,false);
  assert.ok(unit.fullCompanionReadings.length>=1,"Each H76 unit has independently accessible full/hope texts");
  let previous=-1;
@@ -411,7 +411,7 @@ assert.ok(checkedAdditional>100);
 assert.ok(findChapter("H21").units[2].principalReadings.includes("Exodus 14:5–10"));
 assert.ok(findChapter("H21").units[2].principalReadings.includes("Exodus 15:1–2"));
 assert.ok(findChapter("H21").units[2].fullCompanionReadings.some(x=>x.reference==="Exodus 15:1–21"));
-assert.ok(findChapter("H27").units[4].principalReadings.includes("Judges 16:17–22"),
+assert.ok(findChapter("H27").units[4].principalReadings.includes("Judges 16:15–22"),
  "Samson's betrayal must precede the final collapse");
 assert.deepEqual(findChapter("H45").units.map(u=>u.principalReadings[0]),
  ["Matthew 1:1–17","Luke 3:23–38"]);
@@ -427,5 +427,71 @@ assert.ok(findChapter("H73").units[1].principalReadings.includes("Acts 16:16–2
 assert.ok(findChapter("H73").units[5].principalReadings.includes("Acts 27:30–32"),
  "Crew escape is an antecedent to Paul's warning");
 assert.equal(findChapter("H73").status,"SEVEN_REPRESENTATIVE_SCENES_NOT_COMPLETE_ACTS_ITINERARY");
+
+
+// V7 evidence is associated by original overlapping Atlas events, never
+// confused with the independently unapproved selected verse snippets.
+assert.equal(correctionDelta.frequencyReconciliation.v7PublishedSelections,460);
+assert.equal(correctionDelta.frequencyReconciliation.v7AtlasEvents,151);
+assert.equal(correctionDelta.frequencyReconciliation.reconciledEditorialUnits,40);
+assert.equal(correctionDelta.frequencyReconciliation.withOverlappingAtlasEvent,19);
+assert.equal(correctionDelta.frequencyReconciliation.withoutOverlappingAtlasEvent,21);
+assert.equal(correctionDelta.frequencyReconciliation.distinctAtlasEventsLinked,20);
+assert.equal(correctionDelta.frequencyReconciliation.qualifiedSourceRowsLinked,53);
+assert.equal(correctionDelta.frequencyReconciliation.heldNonQualifiedRowsLinked,3);
+assert.equal(correctionDelta.frequencyReconciliation.unitsWithStrictSimpleMultiFamilyBoundaryAgreement,4);
+assert.equal(correctionDelta.frequencyReconciliation.noPublisherPopularityClaim,true);
+let linked=0,unlinked=0,strict=0;
+for(const chapter of correctionDelta.chapters)for(const unit of chapter.units){
+ const e=unit.v7FrequencyReconciliation;
+ assert.ok(e,"Every original v18 unit must have independently sourced research disposition");
+ assert.equal(e.provenance.sourceSchema,"AO_COMPARATIVE_PERICOPE_MASTER_MATRIX_V7");
+ assert.match(e.provenance.sourceBlobSha,/^[a-f0-9]{40}$/);
+ assert.equal(e.automaticApproval,false);
+ assert.match(e.interpretation,/not count agreements with these proposed principal verses/);
+ if(e.matchedAtlasEvents.length){linked++}else{unlinked++;
+  assert.equal(e.status,"NO_OVERLAPPING_ATLAS_EVENT_IN_V7_NOT_A_NEGATIVE_SEARCH_RESULT");
+ }
+ const families=new Set(e.qualifiedSelectionRecords.map(z=>z.sourceFamily));
+ assert.equal(e.linkedIndependentPublisherFamilyCount,families.size,
+  "Publisher variants must never count as distinct independent sources");
+ assert.equal(e.linkedIndependentPublisherFamilies.length,families.size);
+ for(const row of e.qualifiedSelectionRecords){
+  assert.ok(row.sourceURL?.startsWith("https://"));
+  assert.ok(row.sourceId&&row.reference&&row.sourceFamily);
+  assert.notEqual(row.sourceId,"MISSAL62");
+  assert.notEqual(row.sourceId,"CHRON152");
+ }
+ for(const group of e.exactSimpleSelectionBoundaryAgreements){
+  strict++;
+  assert.ok(group.independentFamilyCount>=2);
+  assert.equal(group.independentFamilies.length,group.independentFamilyCount);
+  assert.ok(group.reference.includes(":"));
+ }
+}
+assert.equal(linked,19);
+assert.equal(unlinked,21);
+assert.equal(strict,4);
+assert.ok(findChapter("H27").units.every(u=>u.v7FrequencyReconciliation.status.startsWith("NO_OVERLAPPING")),
+ "Do not invent V7 support for the judges who have no existing Atlas event");
+assert.ok(findChapter("H45").units.every(u=>u.v7FrequencyReconciliation.linkedIndependentPublisherFamilyCount===0),
+ "No V7 publisher count proves that two genealogical lists are identical");
+assert.ok(findChapter("H76").units.every(u=>u.v7FrequencyReconciliation.qualifiedSelectionRecords.length===0),
+ "There is no matched V7 publisher comparison for the H76 beast visions");
+assert.equal(findChapter("H54").units[1].v7FrequencyReconciliation.exactSimpleSelectionBoundaryAgreements[0].independentFamilyCount,3,
+ "Three distinct families choose Mark 2:1–12, without implying doctrinal approval");
+assert.equal(findChapter("H54").units[2].v7FrequencyReconciliation.exactSimpleSelectionBoundaryAgreements[0].fullyMatchesPrincipal,false,
+ "Conventional Mark 4:35–41 must not masquerade as verbatim installed 4:35–40");
+assert.ok(findChapter("H42").units[6].v7FrequencyReconciliation.qualifiedSelectionRecords.every(r=>
+ r.relation==="ESTHER_EDITION_UNSPECIFIED_IN_PUBLISHER_RECORD"),
+ "Do not compare traditional Esther references against rearranged CPDV as if they were identical");
+assert.ok(findChapter("H42").units[6].principalReadings.includes("Esther 5:5–6"));
+assert.ok(findChapter("H42").units[6].principalReadings.includes("Esther 11:2–10"));
+assert.ok(findChapter("H42").units[6].principalReadings.includes("Esther 12:3–12"));
+assert.ok(findChapter("H54").units[4].principalReadings.includes("John 9:5–7"));
+assert.ok(findChapter("H54").units[4].principalReadings.includes("John 9:13–17"));
+assert.ok(findChapter("H73").units[1].principalReadings.includes("Acts 16:35–40"));
+assert.match(workbenchAudit,/historiaResearch/);
+assert.match(workbenchAudit,/Publisher research/);
 
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
