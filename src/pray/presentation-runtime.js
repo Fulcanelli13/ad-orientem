@@ -558,7 +558,7 @@ function prayFamilies(){
   chaplets:Object.freeze({
    title:L('Rosary & Chaplets','Rosaire & chapelets'),
    description:L('Choose a bead devotion. Each retains its own traditional prayers and method.','Choisissez une dévotion au chapelet. Chacune conserve ses prières et sa méthode traditionnelles.'),
-   assetId:'ao-rich-novenas',
+   assetId:'ao-rich-rosary',
    items:Object.freeze([
     ['own','pray.rosary',L('The Holy Rosary','Le Saint Rosaire'),L('Pray the Mysteries in the existing Rosary companion, unchanged.','Priez les mystères dans le compagnon du Rosaire existant, sans modification.')],
     ['own','pray.rosary_methods',L('Ways to pray the Rosary','Manières de prier le Rosaire'),L('Choose the existing traditional Rosary methods.','Choisissez parmi les méthodes traditionnelles existantes du Rosaire.')],
