@@ -10,7 +10,7 @@ const economy=JSON.parse(readFileSync(
 
 assert.equal(economy.schema,"ao.historia.v18.essential-verse-economy.v1");
 assert.equal(economy.status,"EDITORIAL_PROVISIONAL_VERSE_COORDINATES_ONLY");
-assert.deepEqual(economy.counts,{essential:93,edited:30,protected:33,unchanged:24,editionCorrections:2,priorContinuityRestorations:1,literaryContinuityExpansions:3});
+assert.deepEqual(economy.counts,{essential:93,edited:30,protected:31,unchanged:22,editionCorrections:2,priorContinuityRestorations:1,literaryContinuityExpansions:7});
 assert.equal(economy.decisions.length,93);
 assert.equal(economy.canonical.originalV18Chapters,78);
 assert.equal(economy.canonical.originalV18Segments,217);
@@ -83,7 +83,11 @@ const continuityExpansions=new Map([
  ["H11-02",["Genesis:15:9","Genesis:15:10","Genesis:15:13","Genesis:15:14"]],
  ["H13-01",["Genesis:22:3","Genesis:22:4","Genesis:22:5"]],
  ["H16-03",["Genesis:41:25","Genesis:41:26","Genesis:41:27","Genesis:41:28","Genesis:41:29","Genesis:41:30",
-            "Genesis:41:33","Genesis:41:34","Genesis:41:35","Genesis:41:36"]]
+            "Genesis:41:33","Genesis:41:34","Genesis:41:35","Genesis:41:36"]],
+ ["H22-01",["Exodus:19:1","Exodus:19:2"]],
+ ["H30-01",Array.from({length:9},(_,i)=>"1Samuel:16:"+(i+1))],
+ ["H33-01",Array.from({length:7},(_,i)=>"2Samuel:7:"+(i+1))],
+ ["H39-01",["2Kings:17:3","2Kings:17:4"]]
 ]);
 const seen=new Set(),stats={edited:0,protected:0,unchanged:0,editionCorrections:0,priorContinuityRestorations:0,literaryContinuityExpansions:0,halfVerses:0},books=new Set();
 let originalVerseCount=0,selectedVerseCount=0;
@@ -155,7 +159,7 @@ for(const decision of economy.decisions){
  }else if(literaryExpansion){
   stats.literaryContinuityExpansions++;
   assert.ok(chosen.length>v18Codes.length);
-  assert.equal(decision.literaryBatch,"MOVEMENTS_01_09_DESK_READING");
+  assert.ok(["MOVEMENTS_01_09_DESK_READING","MOVEMENTS_10_19_DESK_READING"].includes(decision.literaryBatch),"Literary expansions must be attributed to a reviewed batch");
   assert.equal(decision.approvedForProduction,false);
  }else if(seamRepair){
   stats.priorContinuityRestorations++;
@@ -189,7 +193,7 @@ for(const decision of economy.decisions){
  }
 }
 assert.equal(seen.size,93);
-assert.deepEqual(stats,{edited:30,protected:33,unchanged:24,editionCorrections:2,priorContinuityRestorations:1,literaryContinuityExpansions:3,halfVerses:1});
+assert.deepEqual(stats,{edited:30,protected:31,unchanged:22,editionCorrections:2,priorContinuityRestorations:1,literaryContinuityExpansions:7,halfVerses:1});
 assert.ok(selectedVerseCount<originalVerseCount);
 assert.ok(originalVerseCount-selectedVerseCount>80,"No fake compression reported");
 for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
@@ -200,20 +204,24 @@ for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
  ["H70-01","PROPOSED_CURATED_TRIM"]])
  assert.equal(economy.decisions.find(x=>x.unitId===id).selectionStatus,status);
 assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
-assert.equal(economy.verification.coordinateChecks,"ALL_93_PASS_SCRIPTURE_CONTRACTS_AFTER_M01_M09_CORRECTIONS");
+assert.equal(economy.verification.coordinateChecks,"AWAITING_M10_M19_SOURCE_VERIFICATION");
 assert.equal(economy.verification.targetCPDVAndDouaySourceCoordinatePresenceVerified,true);
 assert.equal(economy.verification.originalPrintedEditionAttested,false);
-assert.equal(economy.comparativeScriptureEconomy.originalNominalVerseUnits,originalVerseCount);
-assert.equal(economy.comparativeScriptureEconomy.proposedNominalVerseUnits,selectedVerseCount);
-assert.equal(economy.comparativeScriptureEconomy.comparableActualVerseUnitReductions,137);
-assert.equal(economy.comparativeScriptureEconomy.comparableReductionRatePct,11.5);
+assert.equal(economy.comparativeScriptureEconomy,null,
+ "Comparative counts must remain provisional until all seven new Bible-source changes pass");
 assert.deepEqual(economy.verification.batch01_09.sourceContinuityFixes,
  ["H11-02","H13-01","H16-03","H21-03"]);
 assert.equal(economy.verification.batch01_09.approved,false);
 assert.ok(economy.decisions.filter(x=>x.literaryBatch==="MOVEMENTS_01_09_DESK_READING")
- .every(x=>x.bothCatholicEditionVersePresenceVerified===true),
- "Every restored source boundary must pass witness checks");
+ .every(x=>x.bothCatholicEditionVersePresenceVerified===true));
+assert.ok(economy.decisions.filter(x=>x.literaryBatch==="MOVEMENTS_10_19_DESK_READING")
+ .every(x=>x.bothCatholicEditionVersePresenceVerified===false));
+assert.deepEqual(economy.verification.batch10_19.sourceContinuityExpansions,
+ ["H22-01","H30-01","H33-01","H39-01"]);
+assert.deepEqual(economy.verification.batch10_19.trims,
+ ["H35-02","H36-02","H43-02"]);
+assert.equal(economy.verification.batch10_19.approved,false);
 assert.equal(economy.verification.fullLiteraryReadAloud,false);
 assert.equal(economy.verification.CatholicEditorialApproval,false);
 assert.equal(economy.verification.translationRightsApproval,false);
-console.log("PASS Historia essentials: 93 v18 units; 30 proposed trims, 33 locked, 24 baseline, 2 edition corrections, 1 prior seam repair and 3 literary expansions; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
+console.log("PASS Historia essentials: 93 v18 units; 30 proposed trims, 31 locked, 22 baseline, 2 edition corrections, 1 prior seam repair and 7 literary expansions; "+originalVerseCount+" -> "+selectedVerseCount+" verse units checked in CPDV and Douay; literary/text approval HELD");
