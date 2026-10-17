@@ -255,7 +255,7 @@ try{
  await dialog.locator(".aoScriptureNav select").nth(2).selectOption("John");
  assert.equal(await dialog.locator("[data-crosswalk-unverified]").count(),0);
  await dialog.locator(".aoScriptureNav select").first().selectOption("fr");
- assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/);
+ assert.match(await dialog.locator(".aoScriptureHeader h2").innerText(),/Sainte Écriture/i);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),1);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").first().evaluate(el=>el.disabled),false);
  await dialog.getByRole("button",{name:"Consulter la source"}).click();
