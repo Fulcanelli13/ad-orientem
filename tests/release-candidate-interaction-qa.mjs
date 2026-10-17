@@ -157,6 +157,10 @@ try{
   assert.equal(await angelusSettings.getAttribute("aria-expanded"),"true");
   await page.locator("#aoPray435930 [data-p435930-seg='regina']").click();
   await page.waitForFunction(()=>document.querySelector("#aoP435930Title")?.textContent?.includes("Regina C"),null,{timeout:5000});
+  assert.equal(await angelusOptions.getAttribute("open"),null,
+    "Choosing Regina Cæli must dismiss settings before returning to the prayer");
+  assert.equal(await angelusSettings.getAttribute("aria-expanded"),"false",
+    "Angelus settings ribbon must reflect the dismissed popover");
   const angelusFlip=page.locator("#aoPray435930 [data-p435930-card-flip]").first();
   assert.ok(await angelusFlip.count(),"Regina Caeli lost prayer-language toggle");
   const beforeFlip=await angelusFlip.evaluate(el=>({
