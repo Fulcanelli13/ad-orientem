@@ -169,9 +169,10 @@ const correctionDelta=JSON.parse(readFileSync(
  new URL("../data/research/historia-salutis-v18-part-ii-correction-delta.v1.json",import.meta.url),"utf8"));
 assert.equal(correctionDelta.sourceRowCount,217);
 assert.equal(correctionDelta.releaseStatus,"EDITORIAL_RESEARCH_ONLY_NOT_APPROVED");
-assert.deepEqual(correctionDelta.chapters.map(x=>x.chapterId),["H42","H76"]);
-assert.deepEqual(correctionDelta.chapters.map(x=>x.units.length),[7,5]);
-assert.equal(new Set(correctionDelta.chapters.flatMap(x=>x.units.map(y=>y.unitId))).size,12);
+assert.deepEqual(correctionDelta.chapters.map(x=>x.chapterId),
+ ["H21","H27","H42","H45","H53","H54","H73","H76"]);
+assert.deepEqual(correctionDelta.chapters.map(x=>x.units.length),[5,5,7,2,4,5,7,5]);
+assert.equal(new Set(correctionDelta.chapters.flatMap(x=>x.units.map(y=>y.unitId))).size,40);
 assert.ok(correctionDelta.chapters.flatMap(x=>x.units).every(x=>
  x.originalReference&&x.candidateReadings.length&&x.approved===false&&x.textReviewed===false));
 assert.equal(correctionDelta.chapters[0].units[6].originalReference,"Esther 4:1–17");
@@ -187,7 +188,8 @@ const sourceVerses=(edition,book)=>{
 };
 const cpEsther=sourceVerses("cpdv-2009","Esther");
 const drEsther=sourceVerses("dr-challoner","Esther");
-const h42=correctionDelta.chapters[0],h76=correctionDelta.chapters[1];
+const findChapter=id=>correctionDelta.chapters.find(c=>c.chapterId===id);
+const h42=findChapter("H42"),h76=findChapter("H76");
 const estherUnit=h42.units.find(x=>x.originalReference==="Esther 4:1–17");
 assert.equal(estherUnit.sourceEdition,"UNDETERMINED_IN_V18",
  "v18's unnamed Esther reference edition is never guessed");
@@ -345,5 +347,85 @@ assert.ok(h76.units[0].fullCompanionReadings.some(x=>x.reference==="Revelation 7
  "The vision of the redeemed cannot disappear from the H76 reading experience");
 assert.ok(h76.units[4].fullCompanionReadings.some(x=>x.reference==="Revelation 14:1–5"),
  "Keep the Lamb and the redeemed as a hope counterpoint");
+
+
+// All six additional chapters share the existing one-owner editorial delta.
+assert.equal(correctionDelta.researchMetrics.highRiskChapters,8);
+assert.equal(correctionDelta.researchMetrics.legacyUnits,12);
+assert.equal(correctionDelta.researchMetrics.addedUnits,28);
+assert.equal(correctionDelta.researchMetrics.totalUnits,40);
+const additionalIds=["H21","H27","H45","H53","H54","H73"];
+assert.equal(additionalIds.reduce((n,id)=>n+findChapter(id).units.length,0),28);
+const intendedOriginals={
+ H21:["Exodus 12:31–42","Exodus 13:17–22","Exodus 14:15–31","Exodus 16:2–4, 12–15","Exodus 17:1–7"],
+ H27:["Judges 4:4–9, 14–24","Judges 6:11–24","Judges 7:2–8, 16–22","Judges 13:2–7, 24–25","Judges 16:23–30"],
+ H45:["Matthew 1:1–17","Luke 3:23–38"],
+ H53:["Matthew 5:1–12","Matthew 6:9–15","Matthew 7:24–29","Matthew 13:1–23"],
+ H54:["Mark 1:21–28","Mark 2:1–12","Mark 4:35–41","John 6:1–15","John 9:1–12"],
+ H73:["Acts 16:11–15","Acts 16:22–40","Acts 17:16–34","Acts 18:1–11","Acts 20:17–38","Acts 27:1–44","Acts 28:23–31"]
+};
+const sourceCache=new Map();
+const getSet=(edition,book)=>{
+ const key=edition+":"+book;
+ if(!sourceCache.has(key))sourceCache.set(key,sourceVerses(edition,book));
+ return sourceCache.get(key);
+};
+let checkedAdditional=0;
+for(const id of additionalIds){
+ const chapter=findChapter(id);
+ assert.deepEqual(chapter.units.map(u=>u.originalReference),intendedOriginals[id],
+  "Never overwrite a v18 original reference when making a correction: "+id);
+ for(let i=0;i<chapter.units.length;i++){
+  const u=chapter.units[i];
+  assert.equal(u.unitId,id+"-"+String(i+1).padStart(2,"0"));
+  assert.equal(u.principalEdition,"cpdv-2009");
+  assert.equal(u.candidateEdition,"cpdv-2009");
+  assert.equal(u.approved,false);
+  assert.equal(u.textReviewed,false);
+  assert.equal(u.rightsReviewed,false);
+  assert.equal(u.principalStatus,"SOURCE_SELECTED_CONTINUITY_PENDING");
+  let lastChapter=-1,lastVerse=-1;
+  for(const ref of [...u.candidateReadings,...u.principalReadings,
+    ...u.fullCompanionReadings.map(c=>c.reference)]){
+   const p=parseScriptureContext(ref)?.passage;
+   assert.ok(p,"All research extracts resolve into a single Scripture passage: "+ref);
+   assert.ok(p.verseStart<=p.verseEnd,ref);
+   const cp=getSet("cpdv-2009",p.book),dr=getSet("dr-challoner",p.book);
+   for(let v=p.verseStart;v<=p.verseEnd;v++){
+    assert.ok(cp.has(p.chapter+":"+v),"Absent CPDV "+ref+": "+v);
+    assert.ok(dr.has(p.chapter+":"+v),"Absent Douay "+ref+": "+v);
+   }
+  }
+  for(const ref of u.principalReadings){
+   const p=parseScriptureContext(ref).passage;
+   assert.ok(p.chapter>lastChapter||p.chapter===lastChapter&&p.verseStart>lastVerse,
+    "Principal unit is strictly ordered with no overlapping verses: "+id+" "+ref);
+   lastChapter=p.chapter;lastVerse=p.verseEnd;
+   checkedAdditional+=p.verseEnd-p.verseStart+1;
+  }
+  assert.ok(u.fullCompanionReadings.every(c=>c.canonicalStatus==="CATHOLIC_SCRIPTURE"));
+ }
+}
+assert.ok(checkedAdditional>100);
+// The faithful-scripture exceptions are not interchangeable story cuts.
+assert.ok(findChapter("H21").units[2].principalReadings.includes("Exodus 14:5–10"));
+assert.ok(findChapter("H21").units[2].principalReadings.includes("Exodus 15:1–2"));
+assert.ok(findChapter("H21").units[2].fullCompanionReadings.some(x=>x.reference==="Exodus 15:1–21"));
+assert.ok(findChapter("H27").units[4].principalReadings.includes("Judges 16:17–22"),
+ "Samson's betrayal must precede the final collapse");
+assert.deepEqual(findChapter("H45").units.map(u=>u.principalReadings[0]),
+ ["Matthew 1:1–17","Luke 3:23–38"]);
+assert.match(findChapter("H45").excludedInference,/MARYS_BIOLOGICAL_GENEALOGY/);
+assert.ok(findChapter("H53").units[3].principalReadings.includes("Matthew 13:18–23"),
+ "Jesus' own explanation must accompany the parable of the sower");
+assert.ok(findChapter("H54").units[4].principalReadings.includes("John 9:35–38"),
+ "The man born blind must confess faith at the end of his episode");
+assert.equal(findChapter("H54").units[3].relatedChapter,"H56",
+ "The one multiplication miracle is cross-linked, not duplicated");
+assert.ok(findChapter("H73").units[1].principalReadings.includes("Acts 16:16–21"),
+ "The imprisonment's cause and charge must be visible");
+assert.ok(findChapter("H73").units[5].principalReadings.includes("Acts 27:30–32"),
+ "Crew escape is an antecedent to Paul's warning");
+assert.equal(findChapter("H73").status,"SEVEN_REPRESENTATIVE_SCENES_NOT_COMPLETE_ACTS_ITINERARY");
 
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
