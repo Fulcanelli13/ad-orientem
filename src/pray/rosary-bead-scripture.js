@@ -92,6 +92,7 @@ export function restoreRosaryBeadScripture(root,prayer,witness,identity,{french=
  passage.target="_blank";passage.rel="noopener noreferrer";
  passage.dataset.aoScriptureContext=plan.reference;
  passage.dataset.aoRosaryReadPassage=identity;
+ passage.dataset.aoRosaryMeditationSource=identity;
  passage.textContent=french?"Lire le passage":"Read passage";
  actions.append(passage);
  if(plan.catenaAvailable){
