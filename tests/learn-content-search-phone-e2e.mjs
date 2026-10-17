@@ -44,7 +44,7 @@ try{
  const hubControls=await hubNav.locator(".aoFNavRail button").evaluateAll(nodes=>
   nodes.map(n=>({h:n.getBoundingClientRect().height,w:n.getBoundingClientRect().width})));
  assert.ok(hubControls.every(x=>x.h>=44&&x.w>=44),
-  "Intra-Formation navigation controls must remain finger-sized on 320px phones");
+  "Intra-Formation navigation controls must remain finger-sized on 320px phones: "+JSON.stringify(hubControls));
  await hubNav.locator('[data-ao-fnav-action="toggle"]').tap();
  assert.equal(await hubNav.locator(".aoFNavMenu").isVisible(),true,
   "The contents index must open on an explicit tap");
