@@ -1,0 +1,75 @@
+{
+  "schema": "AO_SACRED_ART_FIRST_FIVE_MASTER_ACQUISITION_V1",
+  "asOf": "2026-10-17",
+  "context": "Acquisition into build artifacts only. No publication, no replacement of the curator-selected physical work, no new aesthetic rating.",
+  "approvalSource": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+  "productionMediaSource": "data/calendar/sacred-art-certified-media.v1.json",
+  "policy": {
+    "noRightsHolderContact": true,
+    "noPaidLicences": true,
+    "neverAutoPublish": true,
+    "neverAssumeCandidatePhotoIsUserApproved": true,
+    "requiresExactOriginal": true,
+    "requiresCanonicalGospelAndPhoneQA": true
+  },
+  "works": [
+    {
+      "artworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+      "feast": "Epiphany",
+      "researchDate": "2026-01-06",
+      "subject": "Matthew 2:1–12",
+      "artist": "Peter Paul Rubens",
+      "title": "Adoration of the Magi",
+      "sourceObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
+      "sourceKind": "PENDING_EXACT_OPEN_FILE",
+      "note": "Approved original; Prado image reproduction rights and exact master not yet certified."
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "feast": "Annunciation",
+      "researchDate": "2026-03-25",
+      "subject": "Luke 1:26–38",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/438724",
+      "provider": "MET_OPEN_ACCESS",
+      "museumObjectId": 438724,
+      "accession": "2004.31",
+      "sourceKind": "PUBLIC_DOMAIN_OBJECT_API_VERIFIED",
+      "note": "User approved this exact Met physical painting; Met Open Access primary image may be acquired, but final crop/phone/Proper release remains blocked."
+    },
+    {
+      "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "feast": "Laetare Sunday",
+      "researchDate": "2026-03-15",
+      "subject": "John 6:1–15",
+      "artist": "Giovanni Lanfranco",
+      "title": "Miracle of Loaves and Fishes",
+      "sourceObjectUrl": null,
+      "sourceKind": "PENDING_EXACT_OPEN_FILE",
+      "note": "Approved original but acquisition register contains no certified source object page."
+    },
+    {
+      "artworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "feast": "Ascension",
+      "researchDate": "2026-05-14",
+      "subject": "Mark 16:14–20",
+      "artist": "Artus Wolffort",
+      "title": "Ascension — Antwerp Rosary cycle",
+      "sourceObjectUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+      "sourceKind": "PENDING_EXACT_OPEN_FILE",
+      "note": "Approved cycle painting; photo rights and exact open source not verified."
+    },
+    {
+      "artworkId": "ART-ean-estout-entecost",
+      "feast": "Pentecost",
+      "researchDate": "2026-05-24",
+      "subject": "John 14:23–31 / Acts 2 (feast subject)",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentec%C3%B4te.jpg",
+      "sourceKind": "PENDING_QUALITY_AND_PHOTO_MATCH",
+      "note": "Commons has a public-domain historical file, only 1000×589, too small to certify as a premium phone hero."
+    }
+  ]
+}
