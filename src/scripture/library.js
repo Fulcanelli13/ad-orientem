@@ -63,7 +63,7 @@ export function mountScriptureLibrary(root,{
  let commentaryVisible=Boolean(context?.reference&&initialDepth==="commentary");
  let relatedExpanded=false;
  const relatedTrail=[];
- let browseExpanded=!context?.reference;
+ let browseExpanded=false;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
  function moveEdition(nextEdition){
@@ -112,28 +112,22 @@ export function mountScriptureLibrary(root,{
    }
    const heading=element("header",null,"aoScriptureHeader");
    heading.append(element("h2",t.heading));
-   const close=element("button",t.close);close.type="button";close.setAttribute("data-scripture-close","");
-   close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
-   // A translation is a reading choice, distinct from switching language.
-   // Keep both Catholic English witnesses one tap away, even when the full
-   // Bible navigation drawer is closed. Persist an explicit reader choice.
+   // One quiet edition flip replaces a full-height translation selection row.
    if(lang==="en"){
-     const editions=element("div",null,"aoScriptureEnglishSwitch");
-     editions.setAttribute("role","group");
-     editions.setAttribute("aria-label","English Bible translation");
-     for(const [id,name] of [["dr-challoner","Douay–Rheims"],["cpdv-2009","CPDV"]]){
-       const button=element("button",name);
-       button.type="button";
-       button.dataset.scriptureEnglishEdition=id;
-       button.setAttribute("aria-pressed",String(id===editionId));
-       button.addEventListener("click",()=>{
-         if(id===editionId)return;
-         moveEdition(id);prefs.setEnglishEdition(id);draw();
-       });
-       editions.append(button);
-     }
-     wrap.append(editions);
+     const next=editionId==="dr-challoner"?"cpdv-2009":"dr-challoner";
+     const flip=element("button",editionId==="dr-challoner"?"Douay  ⇄  CPDV":"CPDV  ⇄  Douay","aoScriptureEditionFlip");
+     flip.type="button";flip.dataset.scriptureEnglishEdition=next;
+     flip.dataset.scriptureActiveEdition=editionId;
+     flip.setAttribute("aria-label",next==="cpdv-2009"?"Switch to CPDV":"Switch to Douay–Rheims");
+     flip.addEventListener("click",()=>{
+       moveEdition(next);prefs.setEnglishEdition(next);draw();
+       queueMicrotask(()=>wrap.querySelector(".aoScriptureEditionFlip")?.focus?.({preventScroll:true}));
+     });
+     heading.append(flip);
    }
+   const close=element("button","×");close.type="button";close.setAttribute("data-scripture-close","");
+   close.setAttribute("aria-label",t.close);
+   close.addEventListener("click",onClose);heading.append(close);wrap.append(heading);
    // Explicit research opt-in only: the public reader and parent Mass/Rosary
    // state remain unchanged. This opens the editor's separate source workbench.
    const researchFlag=root.ownerDocument?.defaultView?.location?.search??"";
@@ -235,7 +229,7 @@ export function mountScriptureLibrary(root,{
      const contextBar=element("section",null,"aoScriptureContextBar");
      contextBar.dataset.aoScriptureContextReader=context.reference;
      const title=element("p",(lang==="fr"?"Passage cité · ":"Cited passage · ")+context.reference,"aoScriptureContextTitle");
-     contextBar.append(title);
+     if(segmentSet?.length>1)contextBar.append(title);
      if(context.liturgicalArrangement){
        const arrangement=context.liturgicalArrangement;
        if(arrangement.schema!=="ao-liturgical-bible-verse-order-v1"||
@@ -331,10 +325,11 @@ export function mountScriptureLibrary(root,{
    }
    const crosswalkWarning=scriptureReferenceWarning(location.book,lang);
    if(crosswalkWarning){
-     const notice=element("p",crosswalkWarning,"aoScriptureNotice aoScriptureReferenceWarning");
-     notice.setAttribute("role","status");
-     notice.setAttribute("data-crosswalk-unverified",location.book);
-     wrap.append(notice);
+     const note=element("details",null,"aoScriptureReferenceWarning");
+     const summary=element("summary",lang==="fr"?"Numérotation variable":"Verse numbering varies");
+     summary.setAttribute("data-crosswalk-unverified",location.book);
+     note.append(summary,element("p",crosswalkWarning,"aoScriptureNotice"));
+     wrap.append(note);
    }
    const main=element("div",null,"aoScriptureReading");
    main.append(element("h3",passageReference(location)));
@@ -356,11 +351,15 @@ export function mountScriptureLibrary(root,{
    const textBlock=element("div",null,"aoScriptureText");
    if(chapterEntries.length){
      if(chapterEntries.some(item=>item.sourceWitness)){
-       const sourceNotice=element("p",lang==="fr"
+       const sourceNotice=element("details",null,"aoScriptureWitnessDetails");
+       const status=element("summary",lang==="fr"?"Transcription · non collationnée":"Source transcription · uncollated");
+       status.dataset.scriptureWitnessUnreviewed=editionId;
+       status.setAttribute("aria-label",lang==="fr"?"Source non collationnée · afficher les détails":"Uncollated source · show provenance");
+       sourceNotice.append(status,element("p",lang==="fr"
          ?"Transcription de la source, pas encore collationnée avec l'édition imprimée. Vérifier les versets incomplets ou divergents."
-         :"Source transcription, not yet collated against the printed edition. Verify missing or divergent verses.","aoScriptureNotice aoScriptureWitnessNote");
-       sourceNotice.dataset.scriptureWitnessUnreviewed=editionId;
-       textBlock.append(sourceNotice);
+         :"Source transcription, not yet collated against the printed edition. Verify missing or divergent verses.","aoScriptureNotice aoScriptureWitnessNote"));
+       // Source status stays visible; extended qualifications follow the text.
+       textBlock._sourceDisclosure=sourceNotice;
      }
      const entireChapter=contextDepth==="chapter"||!context?.reference;
      const visible=chapterEntries.filter(item=>entireChapter||
@@ -385,6 +384,7 @@ export function mountScriptureLibrary(root,{
          ?"Aucun texte disponible pour ces versets dans la transcription de référence."
          :"The source transcription contains no text for these selected verses.","aoScriptureNotice"));
    } else textBlock.append(element("p",t.unavailable));
+   if(textBlock._sourceDisclosure)textBlock.append(textBlock._sourceDisclosure);
    main.append(textBlock);
    const textualNotes=cpdvTextualNotesFor(editionId,location);
    for(const note of textualNotes){
