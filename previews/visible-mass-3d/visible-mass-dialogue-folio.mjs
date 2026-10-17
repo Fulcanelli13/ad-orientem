@@ -1,7 +1,7 @@
 /**
  * Small folio over original sanctuary pilot. Displays original VMQ question
- * labels from Phase 1; never copies answer prose, invents rubrics or navigates
- * an unseen photographic object in the three-object trial.
+ * labels from Phase 1; never copies answer prose, invents rubrics or pretends
+ * a camera position is certified beyond the six source-mapped photo hotspots.
  */
 import {createVisibleMassDialogueDirector} from "./visible-mass-dialogue-director.mjs";
 const KEY="ao-visible-mass-visitor-trails-v1";
@@ -42,14 +42,12 @@ export function mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigat
    const toggle=el(doc,"guide-toggle");
    toggle.textContent=st.visible?"Hide guide":st.active?"Resume guide":"Choose a trail";
    toggle.setAttribute("aria-pressed",String(st.visible));
-   el(doc,"guide-status").textContent="Three photographed objects · "+st.readCount+
+   el(doc,"guide-status").textContent="Six photographed objects · "+st.readCount+
       " questions visited · research-only, not approved instruction";
    const prompt=el(doc,"guide-prompt"),targetLabel=el(doc,"guide-target");
    prompt.hidden=false;targetLabel.hidden=true;
-   if(!st.visible&&st.active){
-     prompt.textContent="Your trail is paused. Explore freely or resume it.";
-     return;
-   }
+   // Keep alternative trails directly accessible even when a whole path is
+   // dismissed. The visitor must never resume a skipped path to switch tracks.
    for(const route of st.availableRoutes){
      const action=button(route.title.en+(route.unread?"":" · nothing new"),
        ()=>{director.chooseTrail(route.id);save();render();},
@@ -57,7 +55,9 @@ export function mountVisibleMassDialogueFolio(win,{graph,pilot,answerIds,navigat
      action.dataset.trail=route.id;routes.appendChild(action);
    }
    if(!st.active||!st.visible){
-     prompt.textContent="What would you like to investigate?";
+     prompt.textContent=st.active?
+       "Your trail is paused. Choose another path, explore freely, or resume.":
+       "What would you like to investigate?";
      return;
    }
    const next=director.nextSuggestion();
