@@ -576,6 +576,9 @@ try{
   // not a separate extended Bible mode or a new user-facing app.
   await page.locator("#historiaProofToggle").click();
   await page.locator("#historiaProof").waitFor({state:"visible",timeout:20000});
+  await page.waitForFunction(()=>
+    document.querySelectorAll("#historiaProofMovement option").length===37,
+    null,{timeout:20000});
   assert.equal(await page.locator("#historiaProofMovement option").count(),37);
   await page.locator("#historiaProofMovement").selectOption("HS-M24");
   await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
