@@ -147,6 +147,13 @@ try{
   const action=prayer.locator('[data-ao-mx-cue="AO.SM.C0111"]');
   assert.equal(await action.locator("[lang=la]").count(),0,"Priset action must not falsely claim a Latin original");
   assert.match(await action.innerText(),/Priest.s action|Makes the cross/i);
+  const meaning=page.locator('#ao-mass-explorer-root [data-ao-mx-anchor="meaning"]');
+  assert.equal(await meaning.count(),1,width+" should display existing published Formation context for Suscipe");
+  assert.equal(await meaning.locator('[data-ao-mx-published-claim="MF03-C03"]').count(),1);
+  assert.match(await meaning.innerText(),/faithful to offer their work/);
+  await page.locator('#ao-mass-explorer-root [data-ao-mx-jump="meaning"]').click();
+  assert.equal(await page.locator('#ao-mass-explorer-root [data-ao-mx-current="AO.CARD.010"]').count(),1,
+    "In-place teaching must retain Guide ownership and the original Mass passage");
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-en.png")});
   // Suscipe's approved biblical comparison is in the existing Formation MF03
   // lesson, NOT an unverified direct prayer-to-verse attribution.
@@ -232,6 +239,10 @@ try{
   assert.match(await page.locator("#ao-mass-explorer-root .aoMXText").innerText(),/Suscipe, sancte Pater/);
   assert.ok(await page.locator("#ao-mass-explorer-root .aoMXTextRow [lang=fr]").count()>0,
     width+" missing source-owned French by-cue witness");
+  const meaningFr=page.locator('#ao-mass-explorer-root [data-ao-mx-anchor="meaning"]');
+  assert.equal(await meaningFr.count(),1);
+  assert.equal(await meaningFr.locator('[data-ao-mx-published-claim="MF03-C03"]').count(),1);
+  assert.match(await meaningFr.innerText(),/Offertoire|fidèles/i);
   await page.screenshot({path:resolve(screenshotDir,"explorer-"+width+"-fr.png")});
   await page.locator('#ao-mass-explorer-root [data-ao-mx-index]').click();
   await page.screenshot({path:resolve(screenshotDir,"mass-map-"+width+"-fr.png")});
