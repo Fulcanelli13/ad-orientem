@@ -9,6 +9,8 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureLibrary{max-width:820px;margin:0 auto;padding:clamp(14px,4vw,34px);border:1px solid #655d4d;background:#111720;border-radius:14px;font-family:Georgia,"Garamond",serif;line-height:1.6}
  .aoScriptureHeader{display:flex;align-items:center;justify-content:space-between;gap:12px}
  .aoScriptureHeader h2{font-size:clamp(24px,4vw,36px);font-weight:400;margin:0;color:#e9dfc4}
+ .aoScriptureEditorialMine{display:inline-block;color:#c5b48f;font:12px/1.6 system-ui,sans-serif;margin:8px 0 15px;text-decoration:underline;text-underline-offset:3px}
+ .aoScriptureEditorialMine:focus-visible{outline:2px solid #e1cc99;outline-offset:2px}
  .aoScriptureLibrary button,.aoScriptureLibrary select,.aoScriptureLibrary input{font:inherit;color:#efe8d9;background:#1a2330;border:1px solid #786b56;border-radius:8px;padding:8px 12px;max-width:100%}
  .aoScriptureLibrary button{cursor:pointer}
  .aoScriptureLibrary button:disabled{opacity:.45;cursor:not-allowed}
