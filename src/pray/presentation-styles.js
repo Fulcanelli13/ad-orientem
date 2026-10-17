@@ -1012,6 +1012,10 @@ const PRAY_ORG_ENTRY_CSS=`
 const PRAYER_PRACTICE_FOCUS_CSS=String.raw`
 /* Phone reading density only: no prayer, rubric or posture ownership. */
 @media(max-width:560px){
+ /* The folio, not the hidden semantic rail, owns the one visible posture cue. */
+ #aoPray435930 .aoP435930AngelusReader .aoFolioPostureNote>summary{
+   box-sizing:border-box;min-height:44px!important;display:flex;align-items:center;
+ }
  #aoPray435930 [data-ao-angelus-options]{
    margin:0 0 5px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.12));
    border-radius:0;background:transparent
