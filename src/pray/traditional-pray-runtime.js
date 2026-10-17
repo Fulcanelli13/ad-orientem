@@ -3,6 +3,8 @@ import {captureObservedModuleOrigin,returnToObservedModuleOrigin} from "../app/o
 import {DYING_COMPANION_STAGES,nextDyingCompanionStage} from "./dying-companion-flow.js";
 import {guidedDailyCards,NIGHTLY_EXAMEN_CARDS,clampPrayerCardStep,guidedStepLabel} from "./guided-daily-cards.js";
 import {installSequentialDevotionalReader} from "./devotional-sequence-adapter.js";
+import {dailyHorizonState} from "./quiet-devotional-progression.js";
+import "./quiet-devotional-progression-styles.js";
 import {
   SACRED_HYMNS_V381,
   MORNING_PRAYER_SEQUENCE_V381,
@@ -116,13 +118,32 @@ function renderDailyGuided(rows){
    step,total,body,onStep:"daily"});
  return `<section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(L("Daily prayer card","Carte de prière quotidienne"))}">${content}</div></section>`;
 }
+let lastDailyHorizonScene=null;
+function dailyHorizonMarkup(total){
+ const mood=dailyHorizonState(S.daypart,S.dailyStep,total);
+ const signature=mood.daypart+":"+mood.phase;
+ const changed=signature!==lastDailyHorizonScene;
+ lastDailyHorizonScene=signature;
+ const description=L(mood.en,mood.fr);
+ const variables=`--ao-sky-top:${mood.top};--ao-sky-mid:${mood.mid};--ao-sky-low:${mood.low};--ao-sky-light:${mood.light}`;
+ return `<figure class="aoQuietHorizon" data-ao-quiet-daily-horizon="${mood.daypart}"
+  data-ao-horizon-phase="${mood.phase}" data-ao-horizon-position="${mood.step}"
+  data-ao-horizon-total="${mood.total}" style="${variables}">
+  <div class="aoQuietHorizonCanvas ${changed?'is-changing':''}" role="img"
+    aria-label="${esc(L('Atmosphere: ','Atmosphère : ')+description)}"></div>
+  <figcaption class="aoQuietHorizonMeta"><span>${esc(description)}</span>
+   <div class="aoQuietHorizonTrace" aria-hidden="true">
+    <span style="width:${(mood.fraction*100).toFixed(2)}%"></span>
+   </div>
+  </figcaption></figure>`;
+}
 function renderMorningEvening(){
  const rows=guidedDailyCards(S.daypart);
  const intro=L("A traditional daily rule of prayer built from sourced Catholic forms. Foundational prayers may recur later in the Rosary or another devotion; that repetition belongs to the devotion and is not an error to be optimized away.","Une règle quotidienne traditionnelle bâtie à partir de formes catholiques sourcées. Les prières fondamentales peuvent revenir ensuite dans le Rosaire ou une autre dévotion ; cette répétition appartient à la dévotion et n’est pas une erreur à supprimer.");
  const guided=S.dailyMode==="guided";
  const choice=`<nav class="aoTP381DaypartStrip" aria-label="${esc(L("Time of prayer","Moment de prière"))}"><button type="button" data-tp381-daypart="morning" aria-pressed="${S.daypart==="morning"}" class="${S.daypart==="morning"?"active":""}">${esc(L("Morning","Matin"))}</button><button type="button" data-tp381-daypart="evening" aria-pressed="${S.daypart==="evening"}" class="${S.daypart==="evening"?"active":""}">${esc(L("Evening","Soir"))}</button></nav>`;
  const options=`<details class="aoTP381SecondaryOptions" data-ao-daily-options><summary>${esc(L("Reading options and guidance","Options de lecture et guide"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(intro)}</p><div class="aoTP381GuideMode" role="group" aria-label="${esc(L("Prayer view","Présentation des prières"))}"><button type="button" data-tp381-daily-mode="guided" aria-pressed="${guided}">${esc(L("Guided","Guidé"))}</button><button type="button" data-tp381-daily-mode="list" aria-pressed="${!guided}">${esc(L("All prayers","Toutes les prières"))}</button></div></div></details>`;
- return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${guided?renderDailyGuided(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${options}${source("Baltimore Manual · Morning Prayers",TRADITIONAL_PRAY_SOURCES_V381.morning)}${source("Baltimore Manual · Evening Prayers",TRADITIONAL_PRAY_SOURCES_V381.evening)}</main>`;
+ return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody">${choice}${guided?dailyHorizonMarkup(rows.length):""}${guided?renderDailyGuided(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]))}${options}${source("Baltimore Manual · Morning Prayers",TRADITIONAL_PRAY_SOURCES_V381.morning)}${source("Baltimore Manual · Evening Prayers",TRADITIONAL_PRAY_SOURCES_V381.evening)}</main>`;
 }
 const HYMN_KEYS=Object.freeze(["te_deum","veni_creator","ave_maris_stella"]);
 function hymnLineMarkup(value){
