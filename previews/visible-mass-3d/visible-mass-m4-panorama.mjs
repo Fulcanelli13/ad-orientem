@@ -182,7 +182,10 @@ export function createM4Panorama({mount,notice,onScene}){
     finally{clearTimeout(timeout);}
     if(!response.ok)throw new Error("Commons source metadata unavailable");
     const doc=await response.json(),info=doc?.query?.pages?.[0]?.imageinfo?.[0];
-    const imageUrl=info?.thumburl||info?.url;
+    // Reject an unbounded original download (13K-wide Commons photograph).
+    // The API must supply a bounded thumbnail so mobile memory stays controlled.
+    const imageUrl=info?.thumburl;
+    if(!imageUrl)throw Error("Commons did not supply a bounded panorama preview");
     if(!/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\//.test(imageUrl||""))throw new Error("Unverified photographic host");
     const img=new Image();img.crossOrigin="anonymous";img.decoding="async";
     await new Promise((resolve,reject)=>{
