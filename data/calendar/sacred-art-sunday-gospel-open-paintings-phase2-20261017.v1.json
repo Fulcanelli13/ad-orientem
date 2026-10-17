@@ -39,7 +39,12 @@
       "collection": "National Gallery of Art, Washington",
       "accession": "1967.7.1",
       "dateOfArtwork": "c. 1500–1504",
-      "note": "NGA-donated CC0 file; depicts encounter with Satan; unlike merely solitary Christ in wilderness."
+      "note": "NGA-donated CC0 file; depicts encounter with Satan; unlike merely solitary Christ in wilderness. This original is already entered as nga-50726 in the 281-work CC0 registry; reuse canonical ID and existing SHA256, do not duplicate it.",
+      "alreadyInCanonicalArtworkRegistry": {
+        "artworkId": "nga-50726",
+        "sourceObjectUrl": "https://www.nga.gov/artworks/50726-temptation-christ",
+        "relation": "EXACT_SAME_PAINTING_REUSE_NOT_NEW_WORK"
+      }
     },
     {
       "date2026": "2026-04-05",
@@ -166,7 +171,9 @@
     "exactGospelNarrative": 8,
     "personContextNotVerseExact": 1,
     "userRatingsCollected": 0,
-    "productionAssetsInserted": 0
+    "productionAssetsInserted": 0,
+    "newlyResearchedPaintingsNotAlreadyInRegistry": 8,
+    "preExistingCanonicalPaintingReused": 1
   },
   "furtherTargets": [
     "2026-02-15 — heal the blind near Jericho; existing Met healing-blind painting may be reused as thematic pending exact identity",
