@@ -119,6 +119,13 @@ const noObserved={...input,base:{...selected,
 const undecided=selectedPreflightStudyProper(noObserved);
 assert.equal(undecided.ready,false);
 assert.equal(undecided.reason,"OBSERVED_SOURCE_SELECTION_UNCONFIRMED");
+const mismatchedRequested=selectedPreflightStudyProper({
+ ...input,base:{...selected,celebrationId:"mass_of_day",
+   requestedCelebrationId:"our_lady_rosary",celebrationType:"CALENDAR"}
+});
+assert.equal(mismatchedRequested?.ready,false);
+assert.equal(mismatchedRequested?.selection,"EXPLICIT_ALTERNATE_MASS",
+ "A requested alternate must not silently fall back to the Calendar when the host has not resolved that change");
 const observedLegacy={...selected,
  sourceDiagnostics:{actualMassSelection:"OBSERVED_SOURCE_DAY"}};
 const observed={
