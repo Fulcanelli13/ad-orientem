@@ -1521,6 +1521,8 @@ export async function mountNativeReaderPreview({
     // wording; this does not claim the two gestures have been observed.
     const canonLiveAction=certifiedLiveCanonActionOverride({
       presentationMode:readerModel?.presentationMode,
+      curatedPresentation:current?.curatedPresentationReview===true &&
+        readerModel?.sourceModelTotalCards===39,
       cueId:activeCueId,matrixAction:resolvedMatrixAction,
     });
     const originalPriestAction=canonLiveAction??cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
