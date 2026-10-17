@@ -2691,6 +2691,7 @@ export async function mountNativeReaderPreview({
         inGenericProcession||inLifecycle,
     }),
     observe:input=>observeCanonCeremonyStage(input),
+    clear:()=>{const state=clearCanonObservation();queue();return state;},
   });
   createRiteChoice();
   root.addEventListener?.("click",onRiteChoiceClick);
