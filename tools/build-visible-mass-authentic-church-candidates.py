@@ -7,14 +7,14 @@ from PIL import Image, ImageOps
 
 S=requests.Session()
 S.headers.update({'User-Agent':'AdOrientemReferenceResearch/0.1 (contact via github.com/Fulcanelli13/ad-orientem)','Accept':'application/json,image/*'})
-GROUPS=[["interior","Brompton Oratory — nave and sanctuary views",[["Brompton interior 2022 wide","Brompton Oratory (Interior) - London, UK 2022-09-18 08-41-37.jpg"],["Brompton interior 01","2016 Brompton Oratory, interior 01.jpg"],["Brompton interior 03","2016 Brompton Oratory, interior 03.jpg"],["Brompton interior 04","2016 Brompton Oratory, interior 04.jpg"],["Brompton interior 05","2016 Brompton Oratory, interior 05.jpg"],["Brompton interior 06","2016 Brompton Oratory, interior 06.jpg"],["Brompton interior 07","2016 Brompton Oratory, interior 07.jpg"],["Brompton interior 08","2016 Brompton Oratory, interior 08.jpg"],["Brompton interior 09","2016 Brompton Oratory, interior 09.jpg"],["Brompton high altar 1","The Oratory of S Philip Neri, High Altar 1.jpg"],["Brompton high altar 2","The Oratory of S Philip Neri, High Altar 2.jpg"],["Brompton high altar Geograph","The High Altar - geograph.org.uk - 6213275.jpg"],["Brompton Lady Altar","The Oratory of S Philip Neri, The Lady Altar.jpg"],["Brompton Sacred Heart Chapel","The Oratory of S Philip Neri, Sacred Heart Chapel.jpg"],["Brompton Chapel of St Philip","The Oratory of S Philip Neri, Chapel of St Philip Neri.jpg"]]],["alternative","Alternative TLM church views",[["St Francis de Sales Oratory interior","St. Francis de Sales Oratory interior.jpg"],["St John Cantius interior","St. John Cantius Church in Chicago interior.jpg"]]],["action","Documented TLM actions (previous user ratings 4/5)",[["Prayers at the foot of the altar","Confiteor at Tridentine Mass.jpg"],["Priest at Confiteor","TridentineConfiteor.jpg"],["Elevation at TLM","Traditional Latin Mass - Elevation.jpg"],["Ecce Agnus Dei","Ecce Agnus Dei.jpg"]]],["object","Closeup authentic objects (not AI)",[["Benzinger altar card","Benzinger altar card center HD.jpg"],["Chalice and paten","Chalice and paten MET 20268.jpg"],["Ciborium","Ciborium MET 13446.jpg"],["Chasuble, stole and maniple","Chasuble, stole and maniple MET 27.341a-c front CP4.jpg"]]]]
+GROUPS=[["nave","Brompton Oratory nave",[["Nave, 2022","Brompton Oratory (Interior) - London, UK 2022-09-18 08-41-37.jpg"],["Nave, 2016","2016 Brompton Oratory, interior 01.jpg"]]],["sanctuary","Brompton Oratory high altar and side chapels",[["High altar, view 1","The Oratory of S Philip Neri, High Altar 1.jpg"],["High altar, view 2","The Oratory of S Philip Neri, High Altar 2.jpg"],["Lady altar","The Oratory of S Philip Neri, The Lady Altar.jpg"],["Sacred Heart chapel","The Oratory of S Philip Neri, Sacred Heart Chapel.jpg"]]],["mass","Documented 1962 TLM action photography",[["Prayers at the foot of altar","Confiteor at Tridentine Mass.jpg"],["Elevation in the traditional Mass","Traditional Latin Mass - Elevation.jpg"],["Ecce Agnus Dei","Ecce Agnus Dei.jpg"]]],["detail","Liturgical object photographs",[["Chalice and paten, Metropolitan Museum","Chalice and paten MET 20268.jpg"],["Altar card, Benzinger","Benzinger altar card center HD.jpg"]]]]
 
 names=list(dict.fromkeys(f for k,t,lst in GROUPS for label,f in lst))
 info={}
 for offset in range(0,len(names),35):
  batch=names[offset:offset+35]
  p={'action':'query','format':'json','formatversion':'2','prop':'imageinfo','iiprop':'url|mime|extmetadata',
-    'iiurlwidth':600,'titles':'|'.join('File:'+n for n in batch)}
+    'iiurlwidth':2400,'titles':'|'.join('File:'+n for n in batch)}
  u='https://commons.wikimedia.org/w/api.php?'+urlencode(p)
  res=S.get(u,timeout=45)
  res.raise_for_status()
@@ -37,8 +37,8 @@ for n in names:
    rr=S.get(url,timeout=28);rr.raise_for_status()
    im=Image.open(io.BytesIO(rr.content));im.load()
    if im.width<120 or im.height<120:raise ValueError('small image')
-   im=ImageOps.exif_transpose(im).convert('RGB');im.thumbnail((720,650),Image.Resampling.LANCZOS)
-   b=io.BytesIO();im.save(b,format='JPEG',quality=74,optimize=True)
+   im=ImageOps.exif_transpose(im).convert('RGB');im.thumbnail((2400,1800),Image.Resampling.LANCZOS)
+   b=io.BytesIO();im.save(b,format='JPEG',quality=83,optimize=True)
    ext=item.get('extmetadata')or{}
    images[n]={'data':'data:image/jpeg;base64,'+base64.b64encode(b.getvalue()).decode(),
       'url':'https://commons.wikimedia.org/wiki/File:'+quote(n.replace(' ','_'),safe='()'),
@@ -55,7 +55,7 @@ for k,title,items in GROUPS:
  if c:payload.append({'key':k,'title':title,'items':c})
 total=sum(len(x['items']) for x in payload)
 print('TOTAL VERIFIED',total,'FAILURES',len(missing),flush=True)
-if total<10:raise RuntimeError('Insufficient verified images for candidate review.')
+if total<7:raise RuntimeError('Insufficient verified photographs for visitor experience.')
 page=r'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Visible Mass — Curated reference photographs</title>
 <style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#080d12;color:#e9e3d9;font:15px Georgia,serif}header{padding:18px;position:sticky;top:0;background:#080d12ed;border-bottom:1px solid #48505a;z-index:5}h1{font-size:21px;letter-spacing:.05em;font-weight:normal;margin:0 0 8px}p,small{color:#b2b6ba}main{max-width:1520px;margin:auto;padding:14px}section{margin:15px 0 35px}h2{font-size:18px;font-weight:normal}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px}.card{background:#151d26;border:1px solid #3e4954;border-radius:9px;overflow:hidden}.image{height:255px;background:black}.image img{width:100%;height:100%;object-fit:contain;cursor:zoom-in}.info{padding:12px}.info h3{font-size:15px;margin:0 0 6px}.row{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.score{background:#232d37;border:1px solid #586370;color:#eee;border-radius:5px;cursor:pointer;padding:7px 10px}.score.sel{background:#d0b081;color:#111}select,button,textarea{font:13px system-ui,sans-serif}select,textarea{background:#202b37;color:#eee;border:1px solid #566270;border-radius:6px;padding:8px}textarea{width:100%;height:50px;resize:vertical;margin-top:7px}a{color:#d9bd93}.meta{font:11px/1.5 system-ui,sans-serif;color:#b3bbc5}.controls{display:flex;gap:8px;flex-wrap:wrap}.controls select,.controls button{border:1px solid #53606b;background:#1b2631;color:#eee;border-radius:5px;padding:8px;cursor:pointer}.controls span{font:12px system-ui,sans-serif;color:#b3bbc5;align-self:center}#overlay{position:fixed;inset:0;background:#000e;z-index:20;display:none;align-items:center;justify-content:center}#overlay.visible{display:flex}#overlay img{max-width:98vw;max-height:95vh;object-fit:contain}#overlay button{position:absolute;top:12px;right:12px;padding:10px}</style></head><body>
 <header><h1>The Visible Mass · Authentic Church Research</h1><small>Real Catholic church photographs: inspecting a possible coherent environment before final selection. Source credits in each card.</small>
@@ -85,6 +85,6 @@ el('json').onclick=()=>download('visible-mass-real-church-ratings.json',JSON.str
 el('csv').onclick=()=>{let lines=[['category','image','score','rank','fit','notes','url']];D.forEach(g=>g.items.forEach(it=>{let r=R[it.id]||{};lines.push([g.title,it.title,r.score??'',r.rank??'',r.fit??'',r.notes??'',it.url])}));let q=x=>'"'+String(x).replace(/"/g,'""')+'"';download('visible-mass-real-church-ratings.csv',lines.map(r=>r.map(q).join(',')).join('\n'),'text/csv')};draw();
 </script></body></html>'''
 out=Path('dist/visible-mass');out.mkdir(parents=True,exist_ok=True)
-f=out/'Visible_Mass_Authentic_Church_Candidates.html';f.write_text(page.replace('__PAYLOAD__',json.dumps(payload,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')),encoding='utf8')
-(out/'church-candidates-report.json').write_text(json.dumps({'requested':len(names),'verified':total,'missing':missing,'categories':{g['key']:len(g['items']) for g in payload}},indent=2),encoding='utf8')
+f=out/'Visible_Mass_Authentic_Church_Hires.html';f.write_text(page.replace('__PAYLOAD__',json.dumps(payload,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')),encoding='utf8')
+(out/'church-hires-report.json').write_text(json.dumps({'requested':len(names),'verified':total,'missing':missing,'categories':{g['key']:len(g['items']) for g in payload}},indent=2),encoding='utf8')
 print('BUILT',f,f.stat().st_size,flush=True)
