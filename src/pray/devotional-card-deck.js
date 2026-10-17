@@ -92,6 +92,10 @@ function collectParagraphs(body,id){
   const latin=[...unit.querySelectorAll('[data-face-la] [data-ao-angelus-voice]')];
   const repeated=[...unit.querySelectorAll("[data-face-v] .aoFolioGloria")];
   const paragraphs=voice.length?voice:repeated.length?repeated:[unit];
+  // Individual Mode keeps a continuous V/R text block. The canonical first
+  // Incarnation unit must still own the scroll-triggered gesture cue.
+  if(id==="incarnation"&&!voice.length&&unit.dataset.aoAngelusUnit==="vr")
+   unit.dataset.aoDevoCue="profound-bow";
   // Focus the actual visible translation, not only the vernacular face.
   latin.forEach((line,i)=>{line.classList.add("aoDevoParagraph");
    line.dataset.aoDevoParagraph=String(all.length+i);
