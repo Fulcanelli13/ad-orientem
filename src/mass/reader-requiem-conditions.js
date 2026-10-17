@@ -43,3 +43,15 @@ export function requiemAgnusVariantsForResolvedMass(resolvedMass){
   if(!isExplicitRequiemMass({session:{resolvedMass}}))return null;
   return REQUIEM_AGNUS;
 }
+
+// In the 1962 Requiem the FIRST pre-Communion peace prayer is omitted,
+// but the two following priest-Communion prayers remain. Exact canonical
+// cue ownership must be preserved for LIVE / SIMPLE / MISSAL navigation.
+// Ritus servandus X.4; XIII.1: https://www.intratext.com/IXT/LAT0820/_PO.HTM
+const OMITTED_REQUIEM_ORDINARY_CUES=Object.freeze(["AO.SM.C0225"]);
+export function requiemOmittedOrdinaryCuesForResolvedMass(resolvedMass){
+  return isExplicitRequiemMass({session:{resolvedMass}})?OMITTED_REQUIEM_ORDINARY_CUES:Object.freeze([]);
+}
+export function isRequiemFirstPeacePrayerOmitted(cueId,prepared,conditions=null){
+  return String(cueId??"")==="AO.SM.C0225"&&isExplicitRequiemMass(prepared,conditions);
+}
