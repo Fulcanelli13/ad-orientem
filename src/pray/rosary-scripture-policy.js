@@ -173,6 +173,10 @@ export function applyRosaryScripturePolicy(root,info,{french=false,guided=false}
   for(const el of root.querySelectorAll(".lab-prayer-sheet .lab-scripture-cue,.lab-prayer-sheet .lab-scripture-actions")){
     el.remove();
   }
+  // The donor re-renders the same bead during layout/mode changes: remove
+  // the prior source panel before restoring exactly one. Pending loads may
+  // update only their still-connected instance, never a successor bead.
+  for(const previous of root.querySelectorAll(".lab-prayer-sheet .aoRosaryBeadScripture"))previous.remove();
   // Original editorial contemplations, never represented as Bible quotations.
   // Canonical Rosary player still owns bead count, prayer text and progression.
   for(const old of root.querySelectorAll("[data-ao-rosary-guided-bead]"))old.remove();
