@@ -102,7 +102,12 @@ assert.match(html,/id="inspection-type"/);
 
 assert.match(html,/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017\.v1\.json/);
 assert.match(html,/not yet been published/,'not fabricating Phase 1.5 answers');
-assert.match(html,/aria-label="Selected object and questions"/);
+assert.match(html,/aria-label="Contextual discovery and source questions"/);
+assert.match(html,/id="experience-explore"/);
+assert.match(html,/id="experience-discover"/);
+assert.match(html,/id="experience-understand"/);
+assert.match(html,/body\[data-experience=explore\] \.info\{display:none\}/,'photo-dominant free exploration must suppress unused folio');
+assert.match(html,/body\[data-experience=understand\] \.guide-dock\{display:none\}/,'same contextual folio cannot compete with guide');
 assert.match(html,/prefers-reduced-motion:reduce/);
 assert.doesNotMatch(html,/<canvas\b/,'this photo must not pretend to be GLB/3D');
 console.log('VISIBLE MASS SANCTUARY P1 CONTRACT PASS:',spots.length,'photo hotspots;',registry.questions.length,'registered questions');
