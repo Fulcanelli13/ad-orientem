@@ -212,18 +212,25 @@ for(const [id,status] of [["H22-02","DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK"],
  ["H70-01","PROPOSED_CURATED_TRIM"]])
  assert.equal(economy.decisions.find(x=>x.unitId===id).selectionStatus,status);
 assert.ok(books.has("John")&&books.has("Acts")&&books.has("Exodus"));
-assert.equal(economy.verification.coordinateChecks,"AWAITING_M10_M19_SOURCE_VERIFICATION");
+assert.equal(economy.verification.coordinateChecks,"ALL_93_PASS_SCRIPTURE_CONTRACTS_AFTER_M10_M19_CORRECTIONS");
 assert.equal(economy.verification.targetCPDVAndDouaySourceCoordinatePresenceVerified,true);
 assert.equal(economy.verification.originalPrintedEditionAttested,false);
-assert.equal(economy.comparativeScriptureEconomy,null,
- "Comparative counts must remain provisional until all seven new Bible-source changes pass");
+assert.equal(economy.comparativeScriptureEconomy.originalNominalVerseUnits,originalVerseCount);
+assert.equal(economy.comparativeScriptureEconomy.proposedNominalVerseUnits,selectedVerseCount);
+assert.equal(economy.comparativeScriptureEconomy.comparableOriginalVerseUnits,1189);
+assert.equal(economy.comparativeScriptureEconomy.comparableSelectedVerseUnits,1069);
+assert.equal(economy.comparativeScriptureEconomy.comparableActualVerseUnitReductions,120);
+assert.equal(economy.comparativeScriptureEconomy.comparableReductionRatePct,10.1);
 assert.deepEqual(economy.verification.batch01_09.sourceContinuityFixes,
  ["H11-02","H13-01","H16-03","H21-03"]);
 assert.equal(economy.verification.batch01_09.approved,false);
 assert.ok(economy.decisions.filter(x=>x.literaryBatch==="MOVEMENTS_01_09_DESK_READING")
  .every(x=>x.bothCatholicEditionVersePresenceVerified===true));
 assert.ok(economy.decisions.filter(x=>x.literaryBatch==="MOVEMENTS_10_19_DESK_READING")
- .every(x=>x.bothCatholicEditionVersePresenceVerified===false));
+ .every(x=>x.bothCatholicEditionVersePresenceVerified===true),
+ "All revised original/selected source spans must have passed both Catholic witnesses");
+assert.equal(economy.verification.batch10_19.contractsPassed,true);
+assert.equal(economy.verification.batch10_19.approved,false);
 assert.deepEqual(economy.verification.batch10_19.sourceContinuityExpansions,
  ["H22-01","H30-01","H33-01"]);
 assert.deepEqual(economy.verification.batch10_19.sourceSpanRebalances,["H39-01"]);
