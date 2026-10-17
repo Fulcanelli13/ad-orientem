@@ -158,6 +158,26 @@ assert.equal(ministerSources.counts.independentlyTimed,0,
   "Reading a cue must not certify physical minister event timing");
 assert.equal(ministerSources.counts.published,0,"Research stages were promoted without gate");
 
+// XIII.1 conditional cue omission is authoritative even when an excluded
+// source cue is requested directly: do not project ghost priest actions,
+// priest voices, sacred minister Pax, or lay gestures from removed prayer.
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const x=createReaderFormCueStateController({
+    formStateData:formState,registries,lowCorpus:lowText,sungCorpus:sungText,
+    prepared:prepared(form,["REQUIEM"]),gestureMatrix:gestures
+  });
+  const omitted=x.project("AO.SM.C0225");
+  assert.equal(omitted.reason,"RITUS_XIII_1_REQUIEM_PEACE_PRAYER_OMITTED");
+  assert.equal(omitted.priestAction,null,form+" projected omitted peace action");
+  assert.equal(omitted.priestVoice,null,form+" projected omitted peace voice");
+  assert.equal(omitted.sacredMinister,null,form+" projected forbidden Pax");
+  assert.equal(omitted.gesture,null,form+" projected omitted gesture");
+  for(const cueId of ["AO.SM.C0226","AO.SM.C0227"]){
+    const next=x.project(cueId);
+    assert.equal(next.reason,null,form+" suppressed required Communion prayer "+cueId);
+    assert.ok(next.priestVoice,form+" lost next prayer voice "+cueId);
+  }
+}
 const lowResponse=formState.low.responseEvents.find(x=>x.cueId==="AO.SM.C0076");
 assert.equal(lowResponse.owner,"MINISTER_OR_SERVER");
 assert.equal(lowResponse.defaultUserResponse,false);
