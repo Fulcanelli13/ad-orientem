@@ -7,6 +7,7 @@ on:
       - "previews/visible-mass-3d/**"
       - "tools/build-visible-mass-standalone.mjs"
       - "tests/visible-mass-3d-contract.mjs"
+      - "tests/visible-mass-sanctuary-hotspot-contract.mjs"
       - "data/glossary/concepts-*.v1.json"
       - ".github/workflows/visible-mass-3d-experimental.yml"
   workflow_dispatch:
@@ -26,6 +27,7 @@ jobs:
           node --check previews/visible-mass-3d/viewer.js
           node --check tools/build-visible-mass-standalone.mjs
           node tests/visible-mass-3d-contract.mjs
+          node tests/visible-mass-sanctuary-hotspot-contract.mjs
       - name: Vendor browser 3D engine for offline package
         run: |
           mkdir -p /tmp/visible-mass-deps
