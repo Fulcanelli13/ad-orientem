@@ -17,6 +17,9 @@ on:
       - src/learn/browser-entry.js
       - src/learn/presentation.js
       - tests/visible-mass-learn-integration.mjs
+      - tests/visible-mass-guided-trail-graph.mjs
+      - previews/visible-mass-3d/GUIDED_TRAIL_GRAPH_RESEARCH_20261018.v1.json
+      - previews/visible-mass-3d/GUIDED_TRAIL_EDITORIAL_DECISION_20261018.md
       - previews/visible-mass-3d/HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json
       - previews/visible-mass-3d/HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json
       - previews/visible-mass-3d/LITURGICAL_EXPLANATIONS_P1_5_FIRST20_20261017.v1.json
@@ -42,3 +45,4 @@ jobs:
       - run: node --check src/learn/lazy-module-registry.js
       - run: node --check src/learn/browser-entry.js
       - run: node tests/visible-mass-learn-integration.mjs
+      - run: node tests/visible-mass-guided-trail-graph.mjs
