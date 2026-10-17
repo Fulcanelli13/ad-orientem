@@ -36,6 +36,12 @@ aside .panel+.panel{margin-top:15px}.checklabel{display:flex;align-items:center;
 .checklabel input{width:auto}.queue{display:grid;gap:8px;margin-top:13px;max-height:380px;overflow:auto}
 .queueItem{border-bottom:1px solid #42454b;padding:8px 0;font:13px system-ui,sans-serif;color:#d8d0c2}
 .queueItem small{color:#aaa}.narrow{max-width:540px}
+.auditSegment{padding:15px 0;border-bottom:1px solid #353d47}.auditSegment h3{font-size:18px;margin:0 0 7px}
+.auditSegment .record{display:flex;gap:10px;align-items:baseline;line-height:1.7;font-size:17px;margin:7px 0}
+.auditSegment .record span:last-child{flex:1}
+.auditSegment .verse{color:#bba578;font:12px system-ui,sans-serif;min-width:48px;display:inline-block}
+.gapNote{font:12px system-ui,sans-serif;color:#cfb48a;background:#1f252b;border-left:2px solid #ab8c51;padding:8px 10px;margin:15px 0}
+.auditSegment .small{width:auto}.auditStatus{font:13px system-ui,sans-serif;color:#c4c1ba}
 @media(max-width:800px){.layout{grid-template-columns:1fr}.pair{grid-template-columns:1fr 1fr}aside{order:0}.results{order:1}.panel{padding:16px}}
 @media(prefers-reduced-motion:no-preference){button{transition:border-color .16s ease,background .16s ease}}
 </style>
@@ -100,6 +106,14 @@ aside .panel+.panel{margin-top:15px}.checklabel{display:flex;align-items:center;
 <section class="panel results" aria-live="polite">
 <div class="resultsHead"><h2 id="resultHeading" style="margin-top:0">Select a reference</h2><span class="tag">Read · Compare · Interpret</span></div>
 <p id="message" class="status">Source text is loaded on demand from Ad Orientem's existing Bible witness files.</p>
+<section id="historiaAudit" class="hidden" aria-label="Historia Salutis v18 reading audit">
+<h3>Historia Salutis · v18 reading audit</h3>
+<p class="meta">Research overlay, not approved text. Original 151 Atlas events remain unchanged.</p>
+<label>Proposed reading unit<select id="historiaAuditUnit"></select></label>
+<button id="showHistoriaUnit" class="small primary" type="button">Read entire proposed unit</button>
+<p id="historiaAuditStatus" class="auditStatus" role="status"></p>
+<div id="historiaSequence"></div><hr>
+</section>
 <div id="results" class="readings"></div>
 </section>
 </div>
@@ -110,6 +124,7 @@ import {ROSARY_GUIDED_BEAD_EVIDENCE_V1} from "../src/pray/rosary-guided-bead-evi
 import {ROSARY_SCRIPTURE_REFERENCE_V1} from "../src/pray/rosary-scripture-policy.js";
 import {loadSourceMiningTargets,SCRIPTURE_MINING_MODULES} from "../src/scripture/mining-targets.js";
 import {parseScriptureContext} from "../src/scripture/context.js";
+import {loadScriptureWitness} from "../src/scripture/witness-loader.js";
 
 const $=id=>document.getElementById(id);
 const make=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el};
@@ -118,6 +133,16 @@ const labels={joy:"Joyful",lum:"Luminous",sor:"Sorrowful",glo:"Glorious"};
 const memoryKey="ao-scripture-mining-review-v1";
 const appRoot=new URL("../",import.meta.url);
 let active=null,notes=[],mineSequence=0,selectionSequence=0,linkedTargets=[],selectedObject=null;
+let auditUnits=[],auditOriginId=null,auditLoadToken=0;
+const witnessPromises=new Map();
+function sharedWitnessLoader(edition,book,options){
+ const key=edition+"/"+book;
+ if(!witnessPromises.has(key)){
+  const pending=loadScriptureWitness(edition,book,options).catch(error=>{witnessPromises.delete(key);throw error});
+  witnessPromises.set(key,pending);
+ }
+ return witnessPromises.get(key);
+}
 try{const data=JSON.parse(localStorage.getItem(memoryKey)||"[]");if(Array.isArray(data))notes=data.map(validateScriptureMiningDecision)}catch{}
 const idLabel=id=>labels[id.slice(0,3)]+" · "+id.slice(3);
 for(const id of keys){$("mystery").append(new Option(idLabel(id),id));$("destination").append(new Option(idLabel(id),id))}
@@ -138,6 +163,9 @@ async function updateMode({initial=false}={}){
  const seq=++selectionSequence,mod=$("module").value;
  const rosary=mod==="rosary";
  $("rosaryControls").classList.toggle("hidden",!rosary);
+ $("historiaAudit").classList.toggle("hidden",mod!=="historia");
+ if(mod!=="historia"){auditOriginId=null;$("historiaSequence").replaceChildren()}
+ else if(!auditUnits.length)await loadHistoriaAudit();
  $("linkedControls").classList.toggle("hidden",rosary||mod==="other");
  $("rosaryDestinationControls").classList.toggle("hidden",!rosary);
  $("duplicate").parentElement.classList.toggle("hidden",!rosary);
@@ -166,12 +194,104 @@ async function updateMode({initial=false}={}){
  void mine();
 }
 function selectLinkedObject(){
+ auditOriginId=null;
  selectedObject=linkedTargets.find(x=>x.objectId===$("linkedObject").value)??null;
  if(!selectedObject)return;
  $("reference").value=selectedObject.reference;
  $("linkedRelation").textContent="Original citation: "+selectedObject.reference+" · "+selectedObject.relation+
   ". This is a source relationship, not a certified new liturgical text.";
 }
+
+async function loadHistoriaAudit(){
+ try{
+  const uri=new URL("../data/research/historia-salutis-v18-part-ii-correction-delta.v1.json",appRoot);
+  const response=await fetch(uri);
+  if(!response.ok)throw Error("Reading-unit overlay not available on this branch");
+  const data=await response.json();
+  if(data.releaseStatus!=="EDITORIAL_RESEARCH_ONLY_NOT_APPROVED"||
+     !Array.isArray(data.chapters))throw Error("Incorrect research overlay");
+  auditUnits=data.chapters.flatMap(ch=>ch.units.map(u=>({
+   ...u,chapterId:ch.chapterId,chapterTitle:ch.title
+  })));
+  $("historiaAuditUnit").replaceChildren();
+  for(const u of auditUnits)
+   $("historiaAuditUnit").append(new Option(u.chapterId+" · "+u.originalReference+" · "+u.action,u.unitId));
+  const id=params.get("unit");
+  if(id&&auditUnits.some(u=>u.unitId===id))$("historiaAuditUnit").value=id;
+  $("historiaAuditStatus").textContent=auditUnits.length+" corrective units available. All are unapproved research.";
+ }catch(error){$("historiaAuditStatus").textContent=String(error.message||error)}
+}
+const omission=(before,after)=>{
+ if(!before||!after)return null;
+ if(before.book!==after.book)return "Independent biblical witness — not a single continuous historical episode.";
+ if(before.chapter===after.chapter&&after.verseStart>before.verseEnd+1)
+  return "Omitted verses "+before.chapter+":"+(before.verseEnd+1)+"–"+(after.verseStart-1)+". Open the full chapter for context.";
+ if(before.chapter!==after.chapter)
+  return "New chapter or scene. Unselected intervening Scripture is not being presented as consecutive text.";
+ return null;
+};
+async function showHistoriaUnit(){
+ const u=auditUnits.find(x=>x.unitId===$("historiaAuditUnit").value);
+ if(!u)return;
+ const token=++auditLoadToken;
+ const host=$("historiaSequence");host.replaceChildren();
+ $("historiaAuditStatus").textContent="Reading source witnesses for "+u.unitId+"…";
+ auditOriginId=u.unitId;
+ const list=u.candidateReadings||[];
+ if(!list.length)return;
+ let previous=null;
+ try{
+  for(const reference of list){
+   const parsed=parseScriptureContext(reference);
+   if(!parsed)throw Error("Unresolved candidate reference: "+reference);
+   const gap=omission(previous,parsed.passage);
+   if(gap)host.append(make("p",gap,"gapNote"));
+   const data=await mineScriptureReference(reference,{
+    referenceEdition:u.candidateEdition||"cpdv-2009",
+    origin:{moduleId:"historia",objectId:u.unitId},
+    fetcher:bridgeFetch,witnessLoader:sharedWitnessLoader,
+    commentaryLoader:async()=>[]
+   });
+   if(token!==auditLoadToken)return;
+   const section=make("article");section.className="auditSegment";
+   section.append(make("h3",reference));
+   const cp=data.readings["cpdv-2009"];
+   if(cp.verses.length)textRows(cp.verses,section);
+   else section.append(make("p",cp.error||"Text unavailable; do not infer its words.","meta"));
+   const compare=make("details");compare.append(make("summary","Compare original Douay–Rheims"));
+   const dr=data.readings["dr-challoner"];
+   if(dr.verses.length)textRows(dr.verses,compare);
+   else compare.append(make("p",dr.error||"Source comparison unavailable.","meta"));
+   compare.append(sourceLinks(dr,"Douay–Rheims source ↗"));section.append(compare);
+   const inspect=make("button","Rate / inspect this extract","small secondary");
+   inspect.type="button";
+   inspect.addEventListener("click",()=>{
+    auditOriginId=u.unitId;
+    $("reference").value=reference;
+    $("referenceEdition").value=u.candidateEdition||"cpdv-2009";
+    void mine();
+   });
+   section.append(inspect);host.append(section);
+   previous=parsed.passage;
+  }
+  host.prepend(make("p",u.action+" · Original v18: "+u.originalReference+
+   " · "+(u.editorialRationale||"")+" · RESEARCH ONLY","meta"));
+  if(Array.isArray(u.fullCompanionReadings)&&u.fullCompanionReadings.length){
+   const companion=make("details");companion.append(make("summary","Complete Catholic companion readings (not included in abbreviated extract)"));
+   for(const c of u.fullCompanionReadings){
+    const button=make("button",c.reference+" · "+c.role,"small secondary");
+    button.type="button";button.addEventListener("click",()=>{
+     auditOriginId=u.unitId;$("reference").value=c.reference;
+     $("referenceEdition").value=c.edition;void mine();
+    });companion.append(button);
+   }
+   host.append(companion);
+  }
+  $("historiaAuditStatus").textContent=u.unitId+": "+list.length+" source fragments loaded. Omissions shown. Not publication-approved.";
+ }catch(error){if(token===auditLoadToken)$("historiaAuditStatus").textContent="Reading blocked: "+String(error.message||error)}
+}
+$("showHistoriaUnit").addEventListener("click",()=>{void showHistoriaUnit()});
+
 $("module").addEventListener("change",()=>{void updateMode()});
 $("linkedObject").addEventListener("change",()=>{selectLinkedObject();void mine()});
 for(const id of ["mystery","bead","contextMode"])$(id).addEventListener("change",()=>{
@@ -276,7 +396,7 @@ function paintQueue(){
  }
 }
 function currentOrigin(){
- return {moduleId:$("module").value,objectId:$("module").value==="rosary"?$("mystery").value:(selectedObject?.objectId||$("reference").value.trim()||"unassigned"),bead:$("module").value==="rosary"?Number($("bead").value):null};
+ return {moduleId:$("module").value,objectId:$("module").value==="rosary"?$("mystery").value:(auditOriginId||selectedObject?.objectId||$("reference").value.trim()||"unassigned"),bead:$("module").value==="rosary"?Number($("bead").value):null};
 }
 async function mine(){
  const seq=++mineSequence;
@@ -298,7 +418,7 @@ async function mine(){
  $("message").textContent="Loading original Scripture witnesses and available commentary…";
  $("results").replaceChildren();$("resultHeading").textContent=reference;
  try{
-  const data=await mineScriptureReference(reference,{origin,referenceEdition:$("referenceEdition").value,fetcher:bridgeFetch});
+  const data=await mineScriptureReference(reference,{origin,referenceEdition:$("referenceEdition").value,fetcher:bridgeFetch,witnessLoader:sharedWitnessLoader});
   if(seq!==mineSequence)return;
   active=data;renderMining(data);
   $("message").textContent="CPDV primary · Douay–Rheims optional · Commentary source-labelled · Research only";
