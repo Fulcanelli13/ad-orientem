@@ -393,23 +393,20 @@ try{
    if(width===390){
      const restored=player.locator(".aoRosaryBeadScripture");
      await restored.waitFor({state:"visible",timeout:12000});
-     assert.match(await restored.locator(".aoRosaryBeadScriptureLabel").innerText(),/DOUAY/,
-       "Historical Douay–Rheims must remain a normal reading option");
-     assert.equal(await restored.locator("[data-ao-rosary-english-edition]").count(),2);
+     assert.match(await restored.locator(".aoRosaryBeadScriptureLabel").innerText(),/SCRIPTURE/);
+     assert.equal(await restored.locator(".aoRosaryEnglishFlip").count(),1,
+       "One unobtrusive translation flip, not two full buttons");
      await restored.locator(".aoRosaryBeadVerse").first().waitFor({state:"visible",timeout:12000});
      const rosaryBead=await page.evaluate(()=>window.AO_ROSARY_V381.state().step);
      await restored.locator('[data-ao-rosary-english-edition="cpdv-2009"]').click();
      await restored.locator(".aoRosaryBeadVerse").first().waitFor({state:"visible",timeout:12000});
-     assert.match(await restored.locator(".aoRosaryBeadScriptureLabel").innerText(),/CPDV/);
-     assert.equal(await restored.locator('[data-ao-rosary-english-edition="cpdv-2009"]').getAttribute("aria-pressed"),"true");
-     assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-v1")).englishEdition),"cpdv-2009",
-       "Chosen readable edition should be remembered by the shared Bible reader");
+     assert.equal(await restored.locator('[data-ao-rosary-active-edition="cpdv-2009"]').count(),1);
+     assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-v1")).englishEdition),"cpdv-2009");
      assert.equal(await page.evaluate(()=>window.AO_ROSARY_V381.state().step),rosaryBead,
-       "Bible translation toggle must never advance the prayer");
+       "Bible translation toggle must never advance a prayer bead");
      await restored.locator('[data-ao-rosary-english-edition="dr-challoner"]').click();
      await restored.locator(".aoRosaryBeadVerse").first().waitFor({state:"visible",timeout:12000});
-     assert.match(await restored.locator(".aoRosaryBeadScriptureLabel").innerText(),/DOUAY/);
-     assert.equal(await restored.locator('[data-ao-rosary-english-edition="dr-challoner"]').getAttribute("aria-pressed"),"true");
+     assert.equal(await restored.locator('[data-ao-rosary-active-edition="dr-challoner"]').count(),1);
      assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-scripture-v1")).englishEdition),"dr-challoner");
      assert.equal(await restored.getAttribute("data-ao-rosary-verse-status"),
        "UNCOLLATED_SOURCE_WITNESS","Do not mislabel a source transcription as certified text");
