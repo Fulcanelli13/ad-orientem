@@ -390,6 +390,27 @@ try{
    const beadSource=player.locator(
      ".aoRosaryGuidedBeadMeditation a[data-ao-rosary-meditation-source][data-ao-scripture-context]").first();
    await beadSource.waitFor({state:"visible",timeout:9000});
+   if(width===390){
+     const restored=player.locator(".aoRosaryBeadScripture");
+     await restored.waitFor({state:"visible",timeout:12000});
+     assert.match(await restored.locator(".aoRosaryBeadScriptureLabel").innerText(),/CPDV/,
+       "Restore the selected readable Catholic Bible edition");
+     await restored.locator(".aoRosaryBeadVerse").first().waitFor({state:"visible",timeout:12000});
+     assert.equal(await restored.getAttribute("data-ao-rosary-verse-status"),
+       "UNCOLLATED_SOURCE_WITNESS","Do not mislabel a source transcription as certified text");
+     assert.ok((await restored.locator(".aoRosaryBeadVerse").first().innerText()).length>12);
+     const fathers=restored.locator("[data-ao-rosary-church-fathers]");
+     if(await fathers.count()){
+       await fathers.click();
+       const patristic=page.locator("#ao-scripture-overlay");
+       await patristic.waitFor({state:"visible",timeout:12000});
+       await patristic.locator(".aoScriptureFatherText").first().waitFor({state:"visible",timeout:15000});
+       assert.ok((await patristic.locator(".aoScriptureFatherText").first().innerText()).length>80);
+       await patristic.locator("[data-scripture-close]").click();
+       assert.equal(await page.evaluate(()=>globalThis.AO_ROSARY_V381.state().step),citedBead,
+         "Church Fathers deep link must not progress the canonical Rosary");
+     }
+   }
    const citedReference=await beadSource.getAttribute("data-ao-scripture-context");
    assert.match(citedReference,/^[A-Za-z1-3 ]+\s+\d+:\d+/,
      "The same original bead reference must be used in the shared Bible reader");

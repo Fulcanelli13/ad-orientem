@@ -42,7 +42,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null,initialDepth="selected"
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -60,7 +60,7 @@ export function mountScriptureLibrary(root,{
  let query="";
  let section="read";
  let contextDepth="selected";
- let commentaryVisible=false;
+ let commentaryVisible=Boolean(context?.reference&&initialDepth==="commentary");
  let relatedExpanded=false;
  const relatedTrail=[];
  let browseExpanded=!context?.reference;
