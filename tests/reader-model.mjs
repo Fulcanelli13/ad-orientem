@@ -170,7 +170,8 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
     ]){
       const r=createMassReaderModel({
         resolvedMass:{...selectedRequiem,
-          presentationMode:form==="LOW"?"SIMPLE":"LIVE"},
+          presentationMode:form==="LOW"?"SIMPLE":"LIVE",
+          proper:language==="fr"?{...base.proper,data:frenchSpeakerProper}:base.proper},
         sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
         frenchOrdinary,vernacularLanguage:language
       });
@@ -187,7 +188,8 @@ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"
       }
     }
     const ordinary=createMassReaderModel({
-      resolvedMass:{...base,form,overlays:[],presentationMode:form==="LOW"?"SIMPLE":"LIVE"},
+      resolvedMass:{...base,form,overlays:[],presentationMode:form==="LOW"?"SIMPLE":"LIVE",
+        proper:language==="fr"?{...base.proper,data:frenchSpeakerProper}:base.proper},
       sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
       frenchOrdinary,vernacularLanguage:language
     });
