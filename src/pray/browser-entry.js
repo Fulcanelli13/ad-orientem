@@ -26,6 +26,8 @@ export function ensurePrayReader({win=globalThis}={}){
     await import("./novena-runtime.js");
     await import("./traditional-pray-runtime.js");
     await import("./focus-installer.js");
+    // Shared Folio presentation is visual only: canonical Prayer owners stay intact.
+    await import("./folio-presentation.js");
     // All of these modules install via their original production side-effects.
     // Preserve their original API globals instead of introducing a new owner.
     const coherence=win?.AO_PRAY_COHERENCE_V435930;
