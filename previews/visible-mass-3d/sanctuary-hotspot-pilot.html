@@ -180,7 +180,7 @@ footer a{color:#d8bd89}
 <div class="question-list" id="question-list"><h3>Questions to explore</h3><div id="question-items"></div><button type="button" class="more" id="more-questions" hidden>More questions ↓</button></div>
 <div id="question-detail" hidden><button type="button" class="back" id="back-to-object">← Questions</button><h3 id="question-title"></h3><div class="pill" id="question-type"></div><div class="held" id="answer-pending">This question is indexed for Phase 1.5 source research. A verified answer has not yet been published; the glossary definition above remains available.</div>
 <div class="historical-answer" id="historical-answer" hidden>
-<h4>Historical research · not a 1962 rubrical instruction</h4>
+<h4>Historical and functional research · not a 1962 rubrical instruction</h4>
 <p class="answer-lead" id="historical-answer-lead"></p>
 <p class="answer-context" id="historical-answer-context"></p>
 <p class="answer-caveat" id="historical-answer-guard"></p>
@@ -207,7 +207,7 @@ const SPOTS=[
 {id:"SN04",g:"G181",title:"Altar steps",n:6,x:44.0,y:77.0,match:"R"}
 ];
 const $=id=>document.getElementById(id);
-const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,occasion:"ordinary",view:"church",loaded:false};
+const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",loaded:false};
 const RELATED_OBJECTS={
  AL01:["AL03","AL16","BK01","AL14","SN05","SN07","AL13","AL17","AL18"],
  AL07:["AL08","AL10","SN05"],AL19:["AL16","AL03","AL10"],SN02:["SV13"],SN07:["EQ01","EQ02","EQ06"],
@@ -335,8 +335,9 @@ function renderOccasionNote(){
   $("occasion-note-sources").append(a,document.createTextNode(" · "));
  }
 }
+function findExactAnswer(questionId){return [ ...(state.historyPack?.answers||[]),...(state.functionPack?.answers||[])].find(x=>x.question_id===questionId&&x.object_id===state.selected);}
 function renderExactHistoricalAnswer(questionId){
- const note=state.historyPack?.answers?.find(x=>x.question_id===questionId&&x.object_id===state.selected);
+ const note=findExactAnswer(questionId);
  $("answer-pending").hidden=!!note;$("historical-answer").hidden=!note;
  $("historical-answer-sources").replaceChildren();
  if(!note)return;
@@ -374,7 +375,7 @@ function renderPublishedReferences(questionId){
 }
 function buildQuestionButton(q){
  const b=document.createElement("button");b.type="button";b.className="question";b.dataset.question=q.id;
- if(state.historyPack?.answers?.some(x=>x.question_id===q.id&&x.object_id===state.selected))b.classList.add("has-research");
+ if(findExactAnswer(q.id))b.classList.add("has-research");
  const l=document.createElement("span");l.textContent=q.question.en;const a=document.createElement("span");a.textContent="›";a.setAttribute("aria-hidden","true");b.append(l,a);
  b.onclick=()=>{state.question=q.id;$("question-list").hidden=true;$("question-detail").hidden=false;$("question-title").textContent=q.question.en;$("question-type").textContent=q.category_label||q.category;renderExactHistoricalAnswer(q.id);renderPublishedReferences(q.id);$("back-to-object").focus({preventScroll:true});};
  return b;
@@ -433,13 +434,15 @@ async function loadCanon(){
   fetch("sanctuary-inspection-sources-20261017.v1.json").then(r=>{if(!r.ok)throw Error("Inspection HTTP "+r.status);return r.json();}),
   fetch("LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Source crosswalk HTTP "+r.status);return r.json();}),
   fetch("LITURGICAL_EXPLANATIONS_P1_5_FIRST20_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Explanations HTTP "+r.status);return r.json();}),
-  fetch("HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json").then(r=>{if(!r.ok)throw Error("History HTTP "+r.status);return r.json();})
+  fetch("HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json").then(r=>{if(!r.ok)throw Error("History HTTP "+r.status);return r.json();}),
+  fetch("HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json").then(r=>{if(!r.ok)throw Error("Functional Q&A HTTP "+r.status);return r.json();})
  ]);
  outcome.slice(0,3).forEach(x=>{if(x.status==="fulfilled"){(x.value.entries||[]).forEach(e=>state.entries.set(e.id,e));}});
  if(outcome[3].status==="fulfilled"){state.questions=outcome[3].value.questions||[];state.objects=outcome[3].value.objects||[];}
  if(outcome[5].status==="fulfilled"){state.sourcePack=outcome[5].value;}
  if(outcome[6].status==="fulfilled"){state.explanationPack=outcome[6].value;}
  if(outcome[7].status==="fulfilled"){state.historyPack=outcome[7].value;}
+ if(outcome[8].status==="fulfilled"){state.functionPack=outcome[8].value;}
  if(outcome[4].status==="fulfilled"){
    state.inspections=outcome[4].value.assets||[];
    const root=$("inspection-choices");root.replaceChildren();
@@ -462,7 +465,7 @@ async function loadCanon(){
 }
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
- status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:state.historyPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  select:id=>select(id,null)
 });
 })();
