@@ -33,8 +33,8 @@ try{
  await dialog.waitFor({state:"visible",timeout:15000});
  assert.equal(await dialog.getAttribute("role"),"dialog");
  assert.equal(await dialog.locator(".aoScriptureBrowse").count(),1);
- assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true,
-   "Standalone Bible entry should expose book navigation");
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),false,
+   "Standalone Bible must open with Scripture visible, not a large navigation form");
  assert.equal(await dialog.getAttribute("aria-modal"),"true");
  assert.equal(await page.evaluate(()=>document.activeElement?.hasAttribute("data-scripture-close")),true);
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option").count(),2);
@@ -160,23 +160,24 @@ try{
  // Restore standalone reading before testing the existing edition/book UI.
  assert.equal(await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.open()),true);
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
- assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),true);
+ assert.equal(await dialog.locator(".aoScriptureBrowse").evaluate(el=>el.open),false);
+ await dialog.locator(".aoScriptureBrowse summary").click();
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1,
    "Fresh reader should retain Douay–Rheims");
- assert.equal(await dialog.locator("[data-scripture-english-edition]").count(),2,
-   "Both Catholic English editions must be one tap away");
+ assert.equal(await dialog.locator("[data-scripture-english-edition]").count(),1,
+   "The visible edition switch should be one unobtrusive touch target");
  assert.equal(await dialog.locator(".aoScriptureNav select").nth(1).locator("option[value='ncb-2019']").count(),0);
  await page.evaluate(()=>{window.__scriptureOpened=null;window.open=(url)=>{window.__scriptureOpened=String(url);return null;};});
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/biblegateway\.com.*version=DRA/);
  await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').click();
  await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").waitFor({state:"visible",timeout:12000});
- assert.equal(await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').getAttribute("aria-pressed"),"true");
+ assert.equal(await dialog.locator('[data-scripture-active-edition="cpdv-2009"]').count(),1);
  await dialog.getByRole("button",{name:"Read at source"}).click();
  assert.match(await page.evaluate(()=>window.__scriptureOpened),/sacredbible\.org\/catholic\/NT-03_Luke\.htm/);
  await dialog.locator('[data-scripture-english-edition="dr-challoner"]').click();
  await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").waitFor({state:"visible",timeout:12000});
- assert.equal(await dialog.locator('[data-scripture-english-edition="dr-challoner"]').getAttribute("aria-pressed"),"true");
+ assert.equal(await dialog.locator('[data-scripture-active-edition="dr-challoner"]').count(),1);
  await dialog.locator('[data-scripture-english-edition="cpdv-2009"]').click();
  assert.equal(await dialog.locator(".aoScriptureReading h3").innerText(),"Luke 1:28");
  await dialog.locator("[data-scripture-witness-unreviewed='cpdv-2009']").waitFor({state:"visible",timeout:12000});
