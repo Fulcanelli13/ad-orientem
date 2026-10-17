@@ -791,4 +791,5 @@ assert.equal(desk.movementDecisions.length,37);
 assert.ok(desk.movementDecisions.every(x=>!x.mainNarrativeReadyForFullLiteraryReading));
 assert.ok(desk.genreAndOwnershipGuards.some(g=>g.issue==="Narrative without filler"));
 
+await import("./historia-essential-economy.mjs");
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
