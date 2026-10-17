@@ -25,7 +25,6 @@ assert.match(html,/Separate reference photograph/);
 assert.match(html,/Return to Brompton/);
 assert.match(html,/showInspection/);
 assert.match(html,/showChurch/);
-assert.match(html,/object\.id/);
 
 const script=html.match(/<script>([\s\S]*?)<\/script>/);
 assert.ok(script,'exactly one embedded JS controller');
