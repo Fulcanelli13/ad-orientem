@@ -171,6 +171,9 @@ try{
  // for all original daily Proper sources before enabling download.
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-10-07")),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
+ // Export remains an immediately available Month-grid action; the new
+ // category registers instead place it under their secondary tools disclosure.
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("calendar")),true);
  await page.locator("#ao-calendar-modular-root [data-cal-export-ics='2026-10']").waitFor({state:"visible",timeout:12000});
  try{
    await page.waitForFunction(()=>{

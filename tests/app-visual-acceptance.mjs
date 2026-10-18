@@ -455,6 +455,28 @@ try{
       {state:"visible",timeout:5000});
     assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='"+category+"'] [data-cal-month-index-date]").count()>=3,
       "Month category has no date-linked content: "+category);
+    if(category==="temporale"||category==="sanctorale"){
+      const compact=await page.locator("#ao-calendar-modular-root [data-cal-month-index='"+category+"']").evaluate(el=>{
+        const rows=[...el.querySelectorAll(".aoCalMonthIndexRow")];
+        const actions=[...el.querySelectorAll(".aoCalMonthSaintDetail")];
+        return {rows:rows.length,actions:actions.length,
+          heights:rows.map(x=>x.getBoundingClientRect().height),
+          widths:actions.map(x=>x.getBoundingClientRect().width),
+          sourceClosed:el.querySelector("[data-cal-unclassified]")?.open!==true,
+          overflow:el.scrollWidth-el.clientWidth};
+      });
+      assert.ok(compact.rows>=3,"Expected multiple principal observances in "+category);
+      assert.equal(compact.sourceClosed,true,"Unclassified identity disclosure should not dominate "+category);
+      assert.ok(compact.overflow<=1,category+" index clips the phone width");
+      if(compact.heights.every(x=>x>=44)){
+        assert.ok(compact.heights.every(x=>x<=106),category+" still renders oversized cards: "+JSON.stringify(compact));
+        if(category==="sanctorale"){
+          assert.equal(compact.actions,compact.rows,"Saint details must remain separate and available");
+          assert.ok(compact.widths.every(x=>x>=44&&x<=56),"Saint biography links should be compact 44px+ touch targets");
+        }
+      }
+      await shot("02"+(category==="temporale"?"e":"f")+"-calendar-month-"+category);
+    }
   }
   await shot("02g-calendar-month-categories");
 

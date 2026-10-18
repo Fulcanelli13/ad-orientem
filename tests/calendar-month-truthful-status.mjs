@@ -537,6 +537,31 @@ assert.equal(cycleFromCanonicalIdentity("some-unsupported-id"),"unknown");
 assert.match(runtime,/import \{ observedCycle \} from "\.\/observed-cycle\.js";/);
 assert.doesNotMatch(runtime,/const temporal=\//,"Title-based cycle regex must not recur");
 assert.match(runtime,/data-cal-unclassified/,"Unknown resolved days need a visible fail-closed explanation");
+const monthListSource=runtime.split("function monthIndexList(monthId,selected,view){")[1]
+  ?.split("function updateMonthStatusDom(monthId)")[0]||"";
+assert.ok(monthListSource,"Month category presenter must retain one source-owned list");
+assert.match(monthListSource,/aoCalMonthIndexCompact/,"Category rows should use the compact source-owned Month index");
+assert.match(monthListSource,/role="listitem"/,"Compact observances must remain semantic list entries");
+assert.match(monthListSource,/datetime=/,"Compact dates must retain machine-readable ISO values");
+assert.match(monthListSource,/dateOf\(x.date\)\.toLocaleDateString/,"Row dates should be concise inside a month");
+assert.match(monthListSource,/aoCalMonthSaintDetail/,"Saint biography action must remain separate from opening the observed Mass");
+assert.match(monthListSource,/data-cal-saint-date/,"Saint biography must route through the existing detail owner");
+assert.match(monthListSource,/aria-label=.*Life & sources/s,"Compact saint action must retain an accessible text label");
+assert.match(monthListSource,/<details class="aoCalMonthUnclassified"/,
+  "Unclassified source identities must remain accessible, but no longer dominate the observance list");
+assert.match(monthListSource,/unknownRows\.map\(/,"No unresolved source identity may disappear from the inspection note");
+assert.match(runtime,/<details class="aoCalMonthUtilities"/,"Export and direct-date actions must stay discoverable from category indexes");
+assert.match(runtime,/calendarMonthView==="calendar"\?"":"<\/details>"/,
+  "Month grid must retain its existing immediately available export and exact-date actions");
+assert.match(runtime,/\.aoCalMonthIndexCompact \.aoCalMonthIndexDay/,"Compact observance layout must be scoped to month indexes");
+assert.match(runtime,/\.aoCalMonthIndexCompact \.aoCalMonthIndexDay\{[^}]*min-height:61px!important/,
+  "Month register row must remain compact without falling below the 44px touch minimum");
+assert.match(runtime,/\.aoCalMonthIndexCompact \.aoCalMonthSaintDetail\{[^}]*min-width:48px!important/,
+  "Saint biography control must remain a 48px separately tappable target on desktop");
+assert.match(runtime,/@media\(max-width:700px\)[\s\S]*?\.aoCalMonthIndexCompact \.aoCalMonthSaintDetail\{[^}]*min-width:46px!important/,
+  "Mobile biography control must retain at least a 44px touch target");
+
+
 console.log("PASS language-neutral observed cycle and unclassified-day disclosure");
 
 
