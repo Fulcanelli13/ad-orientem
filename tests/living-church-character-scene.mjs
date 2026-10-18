@@ -77,6 +77,7 @@ try{
   await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().groundedFailure==="NOT_SUPPORTED_BY_APPROVED_CORPUS");
   assert.equal(await page.locator("#lc-stage .lc-source-record").isVisible(),false);
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"canon");
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Return to Mass discussion"}).click();
 
   await expectSprite("canon_explaining");
   await page.screenshot({path:resolve(output,"living-church-canon-"+viewport.width+".png")});
