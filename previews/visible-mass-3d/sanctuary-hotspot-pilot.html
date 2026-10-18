@@ -392,7 +392,7 @@ function previewGuideObject(id){
  const spot=SPOTS.find(s=>s.id===id);
  if(!spot)return false;
  // Guided focus belongs only to the exact six-object still, never the 360 panorama.
- if(state.view==="panorama")showChurch();
+ if(state.view!=="church")showChurch();
  if(state.view!=="church")return false;
  clearGuidedPreview();
  $("photo-canvas").dataset.guidePreview=id;
@@ -428,7 +428,28 @@ function findSpot(id){
  if(other)return {id:other.object_id,g:other.glossary_id,title:other.label,match:other.glossary_match,referenceOnly:true};
  return null;
 }
-let panoramaController=null;
+let panoramaController=null,m5PhotoModule=null,m5PhotoToken=0,m5Photo=null;
+const m5CachedUrls=new Map(),m5StillPoses=new Map();
+const m5PhotoIds=["NEWMAN_ALTAR_1","NEWMAN_ALTAR_2","NEWMAN_APSE","NEWMAN_PULPIT"];
+function m5VenueNav(){
+ const root=$("m5-viewpoint-nav"),venue=state.photoMode==="newman"?"newman":"brompton";
+ root.replaceChildren();
+ const entries=venue==="newman"?
+  [{id:"panorama",label:"↩ Dublin · 360°"},...m5PhotoIds.map(id=>({id,label:m5PhotoModule?.M5_PHOTO_VIEWS[id]?.label||id.replaceAll("_"," ")}))]:
+  [{id:"panorama",label:"↩ Brompton · 360°"},{id:"altar",label:"High altar · 6 objects"}];
+ for(const entry of entries){
+  const button=document.createElement("button");button.type="button";button.textContent=entry.label;
+  button.dataset.m5Viewpoint=entry.id;
+  const current=(entry.id==="panorama"&&state.view==="panorama")||
+   (entry.id==="altar"&&state.view==="church")||(entry.id===m5Photo&&state.view==="m5-close");
+  button.setAttribute("aria-pressed",String(current));
+  button.onclick=()=>{if(state.selected)closeCard();if(entry.id==="panorama")void showPanorama(venue);
+   else if(entry.id==="altar")showChurch();else void showM5Photo(entry.id);};
+  root.appendChild(button);
+ }
+ root.hidden=false;
+}
+
 const PHOTO_INTROS=Object.freeze({
  still:"The real high altar of Brompton Oratory, London. Select one of the six visible markers, or choose an object below the image. On narrow screens, swipe sideways to inspect the photograph.",
  brompton:"Brompton Oratory, London · genuine 360° photograph from one fixed position. Drag to look around, or choose High altar · 6 objects to study the documented details.",
@@ -436,7 +457,10 @@ const PHOTO_INTROS=Object.freeze({
 });
 function syncPhotoNav(){
  document.body.dataset.photoMode=state.photoMode;
- $("photo-intro").textContent=PHOTO_INTROS[state.photoMode]||PHOTO_INTROS.still;
+ $("photo-intro").textContent=state.view==="m5-close"
+  ?(m5PhotoModule?.M5_PHOTO_VIEWS[m5Photo]?.caption||"Original closer photograph")+" · distinct source photograph, not evidence of a 1962 Mass."
+  :PHOTO_INTROS[state.photoMode]||PHOTO_INTROS.still;
+ m5VenueNav();
  $("show-markers").hidden=state.photoMode!=="still";
  $("original-object-choices").hidden=state.photoMode!=="still";
  $("inspection-details").hidden=state.photoMode!=="still";
@@ -445,22 +469,26 @@ function syncPhotoNav(){
   :state.photoMode==="brompton"
    ?"https://commons.wikimedia.org/wiki/File:Brompton_Oratory_360x180,_London,_UK_-_Diliff.jpg"
    :"https://commons.wikimedia.org/wiki/Category:Brompton_Oratory,_Interior";
+ if(state.view==="m5-close"&&m5PhotoModule?.M5_PHOTO_VIEWS[m5Photo])
+  $("photo-sources-top").href=m5PhotoModule.M5_PHOTO_VIEWS[m5Photo].source;
  for(const b of $("photo-mode-nav").querySelectorAll("button"))
   b.setAttribute("aria-pressed",String(b.dataset.photoMode===state.photoMode));
 }
 function showChurch(){
+ ++m5PhotoToken;m5Photo=null;
  state.view="church";state.photoMode="still";
  panoramaController?.hide();
  $("panorama-stage").hidden=true;
- $("inspection-stage").hidden=true;$("photo-viewport").hidden=false;
+ $("inspection-stage").hidden=true;$("m5-close-stage").hidden=true;$("photo-viewport").hidden=false;
  $("photo-caption").textContent=CHURCH.caption;$("photo-credit").textContent=CHURCH.credit;$("photo-credit").href=CHURCH.url;
  $("photo-license").href="https://creativecommons.org/licenses/by-sa/2.0/";$("photo-license").textContent="CC BY-SA 2.0 ↗";$("photo-transform").hidden=true;
  syncPhotoNav();
 }
 async function showPanorama(mode){
  if(!["brompton","newman"].includes(mode))return false;
+ ++m5PhotoToken;m5Photo=null;
  state.photoMode=mode;state.view="panorama";
- $("panorama-stage").hidden=false;$("photo-viewport").hidden=true;$("inspection-stage").hidden=true;
+ $("panorama-stage").hidden=false;$("photo-viewport").hidden=true;$("inspection-stage").hidden=true;$("m5-close-stage").hidden=true;
  $("panorama-notice").textContent="Loading genuine 360° source photograph…";
  $("panorama-retry").hidden=true;
  syncPhotoNav();
@@ -493,9 +521,10 @@ async function showPanorama(mode){
  }
 }
 function showInspection(asset){
+ ++m5PhotoToken;m5Photo=null;
  state.view="inspection";
  panoramaController?.hide();$("panorama-stage").hidden=true;
- $("photo-viewport").hidden=true;$("inspection-stage").hidden=false;
+ $("photo-viewport").hidden=true;$("m5-close-stage").hidden=true;$("inspection-stage").hidden=false;
  $("inspection-failed").hidden=true;$("inspection-photo").hidden=false;
  $("inspection-type").textContent=asset.asset_kind==="HISTORICAL_ILLUSTRATION"?"Historical reference illustration":"Separate reference photograph";
  $("inspection-photo").alt=(asset.asset_kind==="HISTORICAL_ILLUSTRATION"?"Historical illustration":"Independent reference photograph")+" of "+asset.label+", "+asset.source_location;
