@@ -66,7 +66,8 @@ export function createCanonSourceDialogueOverlay(win=globalThis,{root,getLang=()
  const act=(wrap,text,fn,key)=>wrap.appendChild(button(doc,text,fn,key));
  function back(){
   if(mode==="reading"){mode="results";selected=null;}
-  else if(mode==="results"){mode="index";bank=null;query="";}
+  else if(mode==="results"){mode="banks";query="";}
+  else if(mode==="banks"){mode="index";bank=null;query="";}
   else close();
   render();
  }
