@@ -18,11 +18,12 @@ const TARGET_TITLES={
  'learn.rites.matrimony':['Marriage preparation','Préparer le Mariage']
 };
 function mk(doc,tag,cls,body){const n=doc.createElement(tag);if(cls)n.className=cls;if(body!==undefined)n.textContent=String(body);return n;}
-export async function mountAskChurchGuide(win=globalThis,{survey=null,bridge=null,lang=null,hostManagesReturn=false}={}){
+export async function mountAskChurchGuide(win=globalThis,{survey=null,bridge=null,lang=null,hostManagesReturn=false,engine=null}={}){
  const doc=win?.document;if(!doc?.body)throw new Error('Document not ready');
  const source=survey||(await(await win.fetch(SURVEY_URL.href)).json());
  const language=lang||(win?.AO_RUNTIME_V8?.store?.getState?.()?.language)||'en';
- const core=createAskChurchObjectiveEngine(source,{lang:language});
+ const core=engine||createAskChurchObjectiveEngine(source,{lang:language});
+ if(engine&&(!engine.snapshot||!engine.objectives||!engine.setObjective||!engine.setBranch))throw Error('Invalid canonical Ask objective session');
  const navigator=bridge||createAskChurchNativeHandoff(win,{survey:source});
  doc.getElementById('aoAskChurchGuideV5')?.remove();doc.getElementById('aoAskChurchGuideStylesV5')?.remove();doc.getElementById('aoAskChurchReturnV5')?.remove();
  const style=mk(doc,'style');style.id='aoAskChurchGuideStylesV5';style.textContent=CSS;doc.head.append(style);

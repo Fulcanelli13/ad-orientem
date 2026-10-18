@@ -1,0 +1,244 @@
+{
+  "schema": "AO_LIVING_CHURCH_P5_SOURCE_CONVERGENCE_V1",
+  "date": "2026-10-18",
+  "state": "REVIEW_INTEGRATION_RELEASE_BLOCKED",
+  "releaseAuthorized": false,
+  "sourceHeads": {
+    "visibleMass": {
+      "pr": 1309,
+      "sha": "fe9fb6de79faec7f716ec8ff975ca88ec4e152b0",
+      "snapshotIncludes": "M6_FIFTH_BATCH_56_IMAGE_RECORDS_125_OBJECTS_NEEDING_QUALIFYING_PHOTOS"
+    },
+    "askChurch": {
+      "pr": 1391,
+      "sha": "374e34f9032665c315e5eda95e99c71784978e39"
+    },
+    "sharedContext": {
+      "pr": 1395,
+      "sha": "c9cc400144c657cf8726545117469cf04adfd791"
+    },
+    "livingChurchP4": {
+      "pr": 1406,
+      "sha": "b2a83094ebe62be42e40ef1e288c8434fc91f982",
+      "snapshotIncludes": "CANON_EDITORIAL_READER_AND_PIUS_CANONICAL_CATECHISM_TWO_PARENT_RECONCILIATION"
+    },
+    "characterStage": {
+      "pr": 1404,
+      "sha": "7603c175164f918884f749d76654c214f14aa969",
+      "snapshotIncludes": "CANON_FOLIO_SOURCE_MIRROR_27_RESEARCH_FILES_FOUR_FLAG_ONLY_NOT_RELEASE_APPROVED"
+    },
+    "formationResearch": {
+      "repo": "Fulcanelli13/folio-core",
+      "pr": 36,
+      "sha": "a4b0257d9d787e8f715557deac0c930b7fd98555",
+      "p3MirrorOwnerSnapshot": "44f00c1272ce3ee40b65bab31753783ea9186915",
+      "state": "DRAFT_UNMERGED_SOURCE_CI_FAILED_ZERO_PUBLIC_APPROVALS",
+      "neverAutoCopyResearchAnswers": true
+    }
+  },
+  "verifiedOwnerBlobs": [
+    {
+      "path": "src/learn/living-church-context.js",
+      "gitBlobSha": "19fb33d1aa0924b4aca31a02a5390a5b512779cd",
+      "owner": "P0"
+    },
+    {
+      "path": "src/learn/ask-church-objective-engine.js",
+      "gitBlobSha": "edd937ddc721ceaecc617c34157e33e38e95addf",
+      "owner": "ASK"
+    },
+    {
+      "path": "src/learn/ask-church-source-digest.js",
+      "gitBlobSha": "acfc57cee099cb3402c8b5ae6ae066ca0ab136eb",
+      "owner": "ASK"
+    },
+    {
+      "path": "src/learn/ask-church-native-handoff.js",
+      "gitBlobSha": "e2d120e272cfbb641048abd5ab200cfcfe9b31cb",
+      "owner": "ASK"
+    },
+    {
+      "path": "data/learn/ask-church-app-route-survey.v1.json",
+      "gitBlobSha": "af787cb864b6fc60f9df9c85537b1e798da7b400",
+      "owner": "ASK"
+    },
+    {
+      "path": "previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json",
+      "gitBlobSha": "9f5d3b9bcce7e5bd9140c614b188a1ffb3b287fd",
+      "owner": "VISIBLE"
+    },
+    {
+      "path": "previews/visible-mass-3d/GUIDED_TRAIL_GRAPH_RESEARCH_20261018.v1.json",
+      "gitBlobSha": "da0e72a1548a0ce9ab7c484b357d004a1bf22108",
+      "owner": "VISIBLE"
+    },
+    {
+      "path": ".github/workflows/visible-mass-m6-photographic-atlas.yml",
+      "gitBlobSha": "2590151f5d5bc8752d5447a040ea209388f80f07",
+      "owner": "M6"
+    },
+    {
+      "path": "previews/visible-mass-3d/M6_ATLAS_RESEARCH_STRATEGY_20261018.md",
+      "gitBlobSha": "677b3c3d4297c9fb832427ce2e697ffbd78a6859",
+      "owner": "M6"
+    },
+    {
+      "path": "previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json",
+      "gitBlobSha": "d864818f6b82c27335d79aedf0d32ce9b5766e08",
+      "owner": "M6"
+    },
+    {
+      "path": "previews/visible-mass-3d/m6-atlas-review-template.html",
+      "gitBlobSha": "ba3821bc176e2f1dd3ee47c44ca62288a7dde7e7",
+      "owner": "M6"
+    },
+    {
+      "path": "tests/visible-mass-m4-offline-file-browser.mjs",
+      "gitBlobSha": "94b43580d9d13c1a9a20014a6d0dadeab3c8e58f",
+      "owner": "M5"
+    },
+    {
+      "path": "tests/visible-mass-m4-panorama.mjs",
+      "gitBlobSha": "d091f7e660c26f3838c96e1e298077e5643bcd98",
+      "owner": "M5"
+    },
+    {
+      "path": "tests/visible-mass-m6-atlas-review-browser.mjs",
+      "gitBlobSha": "24212dc2fa6308063b167b72962a9e482491d4a4",
+      "owner": "M6"
+    },
+    {
+      "path": "tests/visible-mass-m6-photo-atlas-contract.mjs",
+      "gitBlobSha": "5e8b2c4bd7cc69fc4f8d0abc9307a6f782a2c40b",
+      "owner": "M6"
+    },
+    {
+      "path": "tools/build-visible-mass-m6-atlas-review.mjs",
+      "gitBlobSha": "0e107e190d0dc6fbba48cbdaeb602a9e4c7738c9",
+      "owner": "M6"
+    },
+    {
+      "path": ".github/workflows/living-church-character-p3.yml",
+      "gitBlobSha": "85b7e2799e36c9d1dd8eda7f26af38b230595524",
+      "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
+    },
+    {
+      "path": "data/learn/living-church-canon-formation-referral-contract.v1.json",
+      "gitBlobSha": "3bd6e8592c20f3652069646a7ca6d0e527f36345",
+      "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
+    },
+    {
+      "path": "data/learn/living-church-character-assets.v1.json",
+      "gitBlobSha": "80d7a69bfffe341abc32bcf5e26b4152c614241d",
+      "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
+    },
+    {
+      "path": "tests/living-church-canon-source-contract.mjs",
+      "gitBlobSha": "3da52f526df197e79acb57a9813b3e7285884e4b",
+      "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
+    },
+    {
+      "path": "data/learn/formation-canon-migration-provenance-20261018.v1.json",
+      "gitBlobSha": "b6e37ed0f0865423dd95d1f86213be2d30a97843",
+      "owner": "P3_FOLIO_DRAFT_RESEARCH_MIRROR_EXACT_NO_PUBLIC_APPROVAL"
+    },
+    {
+      "path": "src/learn/formation-canon-question-catalog.mjs",
+      "gitBlobSha": "4db5ecb4739f7ad56594e8cfba3e5ef58bc267f2",
+      "owner": "P3_FOLIO_DRAFT_RESEARCH_MIRROR_EXACT_NO_PUBLIC_APPROVAL"
+    },
+    {
+      "path": "src/learn/living-church-canon-research-reader.mjs",
+      "gitBlobSha": "bac553139ff4939e9d4d0a103a20d205ac8926c4",
+      "owner": "P3_FOLIO_DRAFT_RESEARCH_MIRROR_EXACT_NO_PUBLIC_APPROVAL"
+    },
+    {
+      "path": "src/learn/living-church-canon-dialogue-ui.mjs",
+      "gitBlobSha": "7f0385d2cdb78ef347d306aab987d1571459ef66",
+      "owner": "P3_FOLIO_DRAFT_RESEARCH_MIRROR_EXACT_NO_PUBLIC_APPROVAL"
+    }
+  ],
+  "layeredAdaptations": [
+    {
+      "path": "src/learn/ask-church-guided-preview.js",
+      "upstreamBlobSha": "0b32c4ca3c11b4d262431f20fe6c7a57a0ef0306",
+      "scope": "P2 hostManagesReturn, hide(), focus; original 7 objectives/26 branches retained"
+    },
+    {
+      "path": "previews/visible-mass-3d/sanctuary-hotspot-pilot.html",
+      "originalBaselineCommit": "beb4aa5148a3f1e43522666ec1c43bfc3f496697",
+      "lateSourceCommit": "1685bb951b3189d549b3372fbd2afd7c5d8b6518",
+      "portedChangeHunks": 10,
+      "scope": "Original P1-P4 source adapter PLUS latest M5 image decode/360 preloading"
+    },
+    {
+      "path": "src/learn/visible-mass-review.js",
+      "scope": "Review-only P2-P4 native return and temporarily staged canonical Catechism, not cloned answer"
+    }
+  ],
+  "publicationGates": {
+    "originalPhotoLicensingHumanReviewed": false,
+    "newM6PhotoReferencesPublicationApproved": false,
+    "historicAndRubricalAnswersCertified": false,
+    "approvedAvatarDistributionRightsVerified": false,
+    "canonicalQuestionTranslationsReviewed": false,
+    "actualAndroidPhysicalDeviceAcceptance": false,
+    "physical320pxTouchAndVoiceOverAcceptance": false,
+    "fullP0P4MainBranchConvergenceApproved": false,
+    "massReaderParityCertifiedForMerge": false,
+    "canonFolioFormationAnswersImportedAndReviewed": false,
+    "canonResearchSourceCIAndCanonicalOwnershipVerified": false,
+    "canonUnpublishedJsonAssetsExcludedFromPublicStaticDeploy": false,
+    "originalFolioSourceEditorialSignoff": false
+  },
+  "scopedReadiness": {
+    "sourceOwnerReconciled": true,
+    "originalViewerP0P4ReviewFlow": true,
+    "originalCatechism433SourceBound": true,
+    "canonicalMassExplorerRoundTrip": true,
+    "headless320_390_1280Passed": true,
+    "productionReady": false
+  },
+  "dependencies": [
+    {
+      "pr": 1309,
+      "state": "DRAFT_NOT_MERGED"
+    },
+    {
+      "pr": 1391,
+      "state": "DRAFT_NOT_MERGED"
+    },
+    {
+      "pr": 1395,
+      "state": "DRAFT_NOT_MERGED"
+    },
+    {
+      "pr": 1397,
+      "state": "DRAFT_NOT_MERGED"
+    },
+    {
+      "pr": 1400,
+      "state": "DRAFT_NOT_MERGED"
+    },
+    {
+      "pr": 1404,
+      "state": "DRAFT_NOT_MERGED"
+    },
+    {
+      "pr": 1406,
+      "state": "DRAFT_NOT_MERGED"
+    },
+    {
+      "repo": "Fulcanelli13/folio-core",
+      "pr": 36,
+      "state": "DRAFT_CI_UNVERIFIED_534_HISTORICAL_CANDIDATES_ZERO_PUBLIC_APPROVALS"
+    }
+  ],
+  "sourceMirror": {
+    "migrationManifest": "data/learn/formation-canon-migration-provenance-20261018.v1.json",
+    "draftSourceFileCount": 27,
+    "publicStaticAccessVerifiedBlocked": false,
+    "exactOriginalGitBlobsRequired": true,
+    "publishableAnswerCount": 0
+  }
+}

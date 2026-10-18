@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Visible Mass — M6 photographic atlas research</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--surface:#131c28;--panel:#0d1520;--text:#e7e0d5;--sub:#aeb5bb;--line:#394656;--gold:#c8ad82}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}
+body{font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1350px;margin:0 auto;padding:20px}
+header{border-bottom:1px solid var(--line);padding:12px 0 17px}
+.kicker{font:11px/1.5 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+h1{font:small-caps 30px/1.1 Georgia,serif;margin:6px 0 10px}
+p{margin:7px 0;color:var(--sub)}
+.summary{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.stat{border:1px solid var(--line);border-radius:8px;padding:10px 14px;min-width:140px;background:var(--panel)}
+.stat strong{display:block;font:24px Georgia,serif;color:var(--text)}
+.stat small{display:block;color:var(--sub);font:11px/1.4 system-ui,sans-serif}
+.controls{position:sticky;top:0;z-index:10;background:#080c12f4;border-bottom:1px solid var(--line);padding:11px 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap;backdrop-filter:blur(9px)}
+button,select,input{font:12px/1.4 system-ui,sans-serif;border:1px solid #505b66;background:#182330;color:var(--text);border-radius:6px;padding:9px;min-height:40px}
+button{cursor:pointer}button[aria-pressed=true]{color:var(--gold);border-color:var(--gold);background:#262e34}
+label{color:var(--sub)}#search{flex:1;min-width:150px}#zone{max-width:230px}
+#results-note{color:var(--sub);padding:11px 0;font-size:12px}
+.review{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:13px}
+.record{min-width:0;border:1px solid var(--line);background:var(--panel);border-radius:11px;overflow:hidden;display:flex;flex-direction:column}
+.preview{height:168px;background:radial-gradient(ellipse at 50% 30%,#252b31,#080c12 76%);position:relative;display:flex;justify-content:center;align-items:center}
+.preview img{width:100%;height:100%;object-fit:contain;display:block}
+.preview .placeholder{font:12px/1.55 Georgia,serif;text-align:center;max-width:190px;color:#9fa7af;padding:20px}
+.record .body{padding:12px;flex:1}
+.heading{font:17px/1.25 Georgia,serif;margin:0 0 5px;color:var(--text)}
+.eyebrow{color:var(--gold);font:11px/1.4 system-ui,sans-serif;letter-spacing:.06em;margin-bottom:5px}
+.detail{font:12px/1.5 system-ui,sans-serif;color:var(--sub)}
+.note{border-top:1px solid var(--line);padding-top:9px;margin-top:10px}
+.source{color:#d9c5a4;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
+.asset{border-top:1px solid var(--line);padding:9px 0;margin-top:8px}
+.asset-title{color:var(--text);font-size:12px;line-height:1.4}
+.review-controls{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:9px 0 2px}
+.review-controls select{min-height:36px;padding:6px 4px;max-width:150px}
+.review-controls label{font-size:11px}
+footer{margin:25px 0;font-size:12px;border-top:1px solid var(--line);padding-top:16px;color:var(--sub)}
+@media(max-width:580px){.wrap{padding:12px}.summary .stat{min-width:calc(50% - 8px)}h1{font-size:24px}.controls{top:0}.controls button{flex:1 0 auto}.review{grid-template-columns:1fr}.preview{height:190px}#zone,#coverage{flex:1;max-width:none}#search{flex-basis:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">Ad Orientem · The Visible Mass · M6 Research</div>
+<h1>Photographic Atlas</h1>
+<p>One canonical object checklist, authenticated photographic sources and a review queue. This is a research and curation tool, not a published liturgical guide.</p>
+<p>Photographs are from individual credited collections; they do not establish the fittings of another church or what happened at a particular 1962 Mass. Preview thumbnails load from Wikimedia Commons only when online. All inventory records remain available offline.</p>
+</header>
+<section class="summary" id="summary" aria-label="Atlas coverage statistics"></section>
+<nav class="controls" aria-label="Review filters">
+<button type="button" id="mode-objects" aria-pressed="true">Physical objects</button>
+<button type="button" id="mode-images" aria-pressed="false">Source images</button>
+<label for="zone">Category</label><select id="zone"><option value="">All 13 categories</option></select>
+<label for="coverage">Coverage</label><select id="coverage">
+<option value="">All statuses</option>
+<option value="NO_OBJECT_IMAGE_CANDIDATE">No image</option>
+<option value="PROVISIONAL_ORIGINAL_STILL_HOTSPOT">Hotspot only</option>
+<option value="EXISTING_OBJECT_IMAGE_CANDIDATE">Existing source</option>
+<option value="NEW_SOURCE_PHOTO_CANDIDATE">New sourced photo</option>
+<option value="RESEARCH_LEAD_ONLY">Research lead only</option>
+</select>
+<input id="search" aria-label="Search object, source or original ID" placeholder="Search objects, photography, IDs…" type="search">
+<label><input type="checkbox" id="pilot"> 30-object pilot</label>
+<button type="button" id="export">Export review decisions</button>
+</nav>
+<p id="results-note" role="status"></p>
+<main id="results" class="review" aria-live="off"></main>
+<footer>All original G###, VMQ, M5 and existing sanctuary-image owners are referenced, never rewritten. Scores and placement decisions are held in this browser only until exported as JSON; they do not approve publication or modify repository data. Publication remains gated by editorial, photographer-rights and physical-device approval. No photographer or church endorses Ad Orientem.</footer>
+</div>
+<script>window.AO_M6_ATLAS_DATA=/*__M6_INLINE_DATA__*/null;</script>
+<script>
+(function(){
+"use strict";
+const data=window.AO_M6_ATLAS_DATA;
+if(!data||data.objects.length!==170)throw Error("Atlas canonical source records unavailable");
+const $=id=>document.getElementById(id);
+const imgById=new Map(data.images.map(image=>[image.asset_id,image]));
+const objectById=new Map(data.objects.map(x=>[x.object_id,x]));
+const ratings=new Map();
+let mode="objects",filterZone="",filterEvidence="",query="",pilotOnly=false;
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const quoteAttr=s=>esc(s);
+const classified=x=>({
+ NO_OBJECT_IMAGE_CANDIDATE:"No object image",
+ PROVISIONAL_ORIGINAL_STILL_HOTSPOT:"One shared contextual image · provisional marker",
+ EXISTING_OBJECT_IMAGE_CANDIDATE:"Existing inspection-photo candidate",
+ NEW_SOURCE_PHOTO_CANDIDATE:"New sourced photograph · awaiting approval",
+ RESEARCH_LEAD_ONLY:"Discovery lead only"
+}[x]||x);
+for(const zone of data.zones){const option=document.createElement("option");option.value=zone.id;option.textContent=zone.label+" ("+zone.total+")";$("zone").append(option);}
+const sceneCount=data.images.filter(x=>x.role==="360_environment"||x.role==="closer_same_venue_photo"||x.asset_id==="BROMPTON_ALTAR_2019_GEOGRAPH").length;
+const stats=[
+ [data.objects.length,"physical objects"],[data.zones.length,"subject families"],
+ [data.images.filter(x=>x.asset_id.startsWith("EXISTING-")).length,"existing image leads"],
+ [sceneCount,"M5 original church photos"],
+ [data.objects.filter(x=>x.evidence_status==="NO_OBJECT_IMAGE_CANDIDATE").length,"without image candidates"]
+];
+$("summary").innerHTML=stats.map(([value,label])=>'<div class="stat"><strong>'+value+'</strong><small>'+esc(label)+'</small></div>').join("");
+function linkFor(x){
+ const url=x?.source_url;
+ if(typeof url!=="string")return null;
+ if(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(url))return url;
+ // This one publisher photo has a verified original author page and CC BY 4.0 site policy.
+ if(x?.asset_id==="M6B4-BK02-CASON-1962-MISSAL-STAND"&&url==="https://sdcason.com/1962-roman-missal-at-latin-mass-2022-virginia-usa-catholic-stock-photo/")return url;
+ return null;
+}
+function imagePreview(image){
+ if(!image)return '<div class="preview"><span class="placeholder">Image required · physical object record only</span></div>';
+ const url=image.review_thumbnail_url;
+ const commons=typeof url==="string"&&/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//i.test(url)?url:null;
+ const external=image.asset_id==="M6B4-BK02-CASON-1962-MISSAL-STAND"&&image.image_url==="https://sdcason.com/content/files/2022/11/DSCF1039.jpg"?image.image_url:null;
+ const safeURL=commons||external,source=linkFor(image);
+ return '<div class="preview">'+
+ (safeURL?'<img alt="Existing source-owned research image" loading="lazy" src="'+quoteAttr(safeURL)+'">':
+ '<span class="placeholder">Original credited image<br>Load source thumbnail online; attribution below</span>'+
+ (source&&source.startsWith("https://commons.wikimedia.org/")?'<img hidden alt="Original Wikimedia Commons research candidate" data-commons-source="'+quoteAttr(source)+'">':''))+
+ '</div>';
+}
+function chosenAsset(obj){return obj.candidate_assets.map(ref=>imgById.get(ref.asset_id)).find(x=>x&&(x.role==="object_detail"||x.role==="alternative_detail"))||
+ obj.candidate_assets.map(ref=>imgById.get(ref.asset_id)).find(Boolean);}
+function assetLine(image){
+ const link=linkFor(image);
+ return '<div class="asset"><div class="asset-title">'+esc(image.asset_id)+' · '+esc(image.role)+
+ '</div><div class="detail">'+esc(image.creator||"Creator to verify")+' · '+esc(image.licence||"Rights unverified")+
+ ' · '+esc(image.review_status||"Existing research source")+'</div>'+
+ (link?'<a class="source" href="'+quoteAttr(link)+'" target="_blank" rel="noopener noreferrer">Original source and licensing ↗</a>':'')+
+ reviewLine(image.asset_id)+'</div>';
+}
+function reviewLine(assetId){
+ const state=ratings.get(assetId)||{rating:"",placement:""};
+ return '<div class="review-controls"><label>Quality <select data-rank="'+quoteAttr(assetId)+'">'+
+ ['','0','1','2','3','4','5'].map(v=>'<option value="'+v+'"'+(state.rating===v?' selected':'')+'>'+(v===''?'Not rated':v+' / 5')+'</option>').join("")+'</select></label>'+
+ '<label>Use <select data-placement="'+quoteAttr(assetId)+'">'+
+ [["","Undecided"],["primary","Primary atlas"],["secondary","Supplementary"],["historical","Historical only"],["elsewhere","Use elsewhere"],["reject","Reject"]].map(([v,t])=>'<option value="'+v+'"'+(state.placement===v?' selected':'')+'>'+t+'</option>').join("")+'</select></label></div>';
+}
+
+function researchCue(item){
+ const orientation=item.orientation_annotation;
+ if(orientation){
+  const direction=orientation.viewer_side==="LEFT"?"viewer’s left (Gospel side)":"viewer’s right (Epistle side)";
+  return '<div class="asset"><div class="asset-title">Orientation rule · awaiting photo viewpoint verification</div>'+
+   '<p class="detail">From the nave facing the high altar: '+esc(direction)+'. Original source: '+esc(orientation.source_asset_id)+'. No independent photograph or clickable hotspot has been approved.</p>'+
+   '<p class="detail">Mirror state and exact camera orientation must be checked before placing this label.</p>'+
+   '<a class="source" href="https://www.newadvent.org/cathen/01356e.htm" target="_blank" rel="noopener noreferrer">Rubrical orientation source ↗</a></div>';
+ }
+ const lead=item.context_scene_lead;
+ if(lead){
+  const source=lead.additional_rights_unknown_research_url;
+  const link=source==="https://www.friendsofflorence.org/projects/altar-gradine-oratory-and-tabernacle-chapel-annunziata-ss-annunziata/"?
+   '<a class="source" href="'+quoteAttr(source)+'" target="_blank" rel="noopener noreferrer">Florentine historical gradine reference · rights unknown ↗</a>':'';
+  const licensed=item.candidate_assets.some(x=>x.asset_id==="M6B5-AL10-ARS-SIXTE-GRADINE-ENSEMBLE");
+  return '<div class="asset"><div class="asset-title">'+(licensed?'Licensed independent gradine context photo · not a Brompton hotspot':'Contextual lead only · object still needs photograph')+'</div>'+
+   '<p class="detail">Original Brompton viewpoint: '+esc(lead.source_asset_id)+'. The exact gradine boundaries in Brompton remain unverified. No clickable hotspot approved.</p>'+link+'</div>';
+ }
+ return "";
+}
+
+function objectCard(item){
+ const photo=chosenAsset(item),list=item.candidate_assets.map(ref=>imgById.get(ref.asset_id)).filter(Boolean);
+ return '<article class="record">'+imagePreview(photo)+'<div class="body">'+
+ '<div class="eyebrow">'+esc(item.zone)+' · '+esc(item.object_id)+'</div>'+
+ '<h2 class="heading">'+esc(item.label)+'</h2>'+
+ '<div class="detail">'+esc(classified(item.evidence_status))+
+ ' · Glossary '+esc(item.canonical_glossary_id||"not mapped")+' ('+esc(item.glossary_match)+')'+
+ (item.pilot_30?' · sanctuary pilot':'')+'</div>'+
+ (list.length?list.map(assetLine).join(""):'<p class="note">No original object-specific image candidate yet. A wide church photo must not be treated as proof that this object is visible.</p>')+
+ researchCue(item)+
+ '</div></article>';
+}
+function photoCard(image){
+ const object=image.object_id?objectById.get(image.object_id):null;
+ return '<article class="record">'+imagePreview(image)+'<div class="body">'+
+ '<div class="eyebrow">'+esc(image.role)+' · '+esc(image.asset_id)+'</div>'+
+ '<h2 class="heading">'+esc(object?.label||image.venue||"Church photographic viewpoint")+'</h2>'+
+ '<div class="detail">'+esc(image.creator||"Creator to verify")+' · '+esc(image.licence||"Rights unknown")+
+ (object?' · '+esc(object.object_id):'')+'</div>'+
+ (image.source_description?'<p class="detail">'+esc(image.source_description)+'</p>':'')+
+ assetLine(image)+'</div></article>';
+}
+/* Optional online previews are fetched from the exact source page's Commons
+ * imageinfo record; this never changes the offline atlas or source ownership.
+ * Observe only visible images and serialize requests to avoid Commons 429s.
+ */
+let previewObserver=null,previewChain=Promise.resolve();
+async function resolveCommonsPreview(el){
+ if(!el.isConnected)return;
+ try{
+  const page=new URL(el.dataset.commonsSource);
+  if(page.origin!=="https://commons.wikimedia.org"||!page.pathname.startsWith("/wiki/File:"))return;
+  const title=decodeURIComponent(page.pathname.slice("/wiki/".length)).replace(/_/g," ");
+  if(!title.startsWith("File:"))return;
+  const api=new URL("https://commons.wikimedia.org/w/api.php");
+  api.search=new URLSearchParams({action:"query",format:"json",formatversion:"2",prop:"imageinfo",iiprop:"url|mime",iiurlwidth:"580",titles:title,origin:"*"}).toString();
+  const response=await fetch(api,{credentials:"omit"});
+  if(!response.ok)return;
+  const info=(await response.json())?.query?.pages?.[0]?.imageinfo?.[0];
+  const url=info?.thumburl;
+  if(!/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//i.test(url||""))return;
+  el.onload=()=>{if(el.isConnected){el.hidden=false;el.parentElement.querySelector(".placeholder")?.remove();}};
+  el.onerror=()=>{el.removeAttribute("src");};
+  el.src=url;
+ }catch{/* Offline preview failure does not affect object navigation or source links. */}
+}
+function hydratePreviews(){
+ previewObserver?.disconnect();
+ if(!("IntersectionObserver" in window))return;
+ previewObserver=new IntersectionObserver(entries=>{
+  for(const entry of entries)if(entry.isIntersecting){
+   const el=entry.target;previewObserver.unobserve(el);
+   previewChain=previewChain.then(()=>new Promise(done=>setTimeout(done,350))).then(()=>resolveCommonsPreview(el)).catch(()=>{});
+  }
+ },{rootMargin:"180px"});
+ for(const img of $("results").querySelectorAll("img[data-commons-source]"))previewObserver.observe(img);
+}
+function apply(){
+ const q=query.trim().toLowerCase();
+ $("mode-objects").setAttribute("aria-pressed",String(mode==="objects"));
+ $("mode-images").setAttribute("aria-pressed",String(mode==="images"));
+ $("coverage").disabled=mode==="images";
+ let items;
+ if(mode==="objects"){
+  items=data.objects.filter(x=>(!filterZone||x.zone_id===filterZone)&&(!filterEvidence||x.evidence_status===filterEvidence)&&
+   (!pilotOnly||x.pilot_30)&&(!q||[x.object_id,x.label,x.zone,x.canonical_glossary_id,...x.candidate_assets.map(a=>a.asset_id)].join(" ").toLowerCase().includes(q)));
+ }else{
+  items=data.images.filter(x=>(!filterZone||(x.object_id&&x.object_id.startsWith(filterZone)))&&
+   (!pilotOnly||(x.object_id&&objectById.get(x.object_id)?.pilot_30))&&
+   (!q||[x.asset_id,x.creator,x.venue,x.role,x.object_id,x.source_url].join(" ").toLowerCase().includes(q)));
+ }
+ $("results-note").textContent=items.length+" "+(mode==="objects"?"objects":"source-image records")+" displayed · "+ratings.size+" recorded review decisions. No photos are automatically approved.";
+ $("results").innerHTML=items.length?items.map(mode==="objects"?objectCard:photoCard).join(""):'<p>No records match these filters.</p>';
+ hydratePreviews();
+}
+function saveRating(id,key,value){const current=ratings.get(id)||{rating:"",placement:""};const next={...current,[key]:value};if(!next.rating&&!next.placement)ratings.delete(id);else ratings.set(id,next);$("results-note").textContent=$("results-note").textContent.replace(/\d+ recorded review decisions/,ratings.size+" recorded review decisions");}
+$("results").addEventListener("change",e=>{
+ const el=e.target;if(!(el instanceof HTMLSelectElement))return;
+ if(el.dataset.rank)saveRating(el.dataset.rank,"rating",el.value);
+ if(el.dataset.placement)saveRating(el.dataset.placement,"placement",el.value);
+});
+$("mode-objects").onclick=()=>{mode="objects";apply();};
+$("mode-images").onclick=()=>{mode="images";apply();};
+$("zone").onchange=e=>{filterZone=e.target.value;apply();};
+$("coverage").onchange=e=>{filterEvidence=e.target.value;apply();};
+$("search").oninput=e=>{query=e.target.value;apply();};
+$("pilot").onchange=e=>{pilotOnly=e.target.checked;apply();};
+function exportReview(){
+ const out={schema:"AO_VISIBLE_MASS_M6_PHOTOGRAPHIC_REVIEW_V1",source_version:data.version,exported_at:new Date().toISOString(),
+  disclaimer:"Editorial review notes only; no canonical object, source or publication status changed.",
+  decisions:[...ratings.entries()].map(([asset_id,values])=>({asset_id,...values}))};
+ const url=URL.createObjectURL(new Blob([JSON.stringify(out,null,2)],{type:"application/json"}));
+ const a=document.createElement("a");a.href=url;a.download="Ad_Orientem_M6_Photo_Review.json";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ return out;
+}
+$("export").onclick=exportReview;
+window.AO_VISIBLE_MASS_M6_ATLAS=Object.freeze({
+ status:()=>({objects:data.objects.length,zones:data.zones.length,images:data.images.length,visible:$("results").children.length,mode,ratings:ratings.size}),
+ showMode:value=>{if(!["objects","images"].includes(value))return false;mode=value;apply();return true;},
+ exportReview
+});
+apply();
+})();
+</script>
+</body>
+</html>

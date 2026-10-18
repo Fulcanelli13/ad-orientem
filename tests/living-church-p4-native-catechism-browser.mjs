@@ -66,6 +66,8 @@ try{
   const launch=host.getByRole("button",{name:"Talk with the three guides"});
   assert.equal(await launch.isVisible(),true);
   await launch.click();
+  assert.equal(await host.getByRole("button",{name:"Ask the Church from the selected sanctuary object"}).isVisible(),false,
+   "Character mode must not expose a competing Ask conversation UI");
   const stage=page.locator("#aoLivingChurchCharacterFolio");
   await stage.waitFor({state:"visible",timeout:30000});
   assert.equal(await stage.getAttribute("data-guide"),"sacristan");
@@ -90,7 +92,17 @@ try{
   assert.match(await stage.locator(".lcDisclaimer").innerText(),/not his words/i);
   await stage.getByRole("button",{name:"Catechism topics"}).click();
   assert.ok(await stage.locator(".lcChoices button").count()>=4);
+  const oneSession=await page.evaluate(()=>window.__LC_REVIEW.status());
+  assert.equal(oneSession.singleConversationSurface,"three-character-folio");
+  assert.equal(oneSession.canonicalObjectiveSessionCount,1,"One objective engine must own both views");
+  assert.equal(oneSession.objective?.objective,"understand");
+  assert.equal(oneSession.folioObjective?.objective,"understand");
+  assert.deepEqual(oneSession.folioObjective,oneSession.objective,"Folio must be a presentation of canonical state");
   await stage.locator('[data-persona="pius-x"]').click();
+  const afterPersona=await page.evaluate(()=>window.__LC_REVIEW.status());
+  assert.equal(afterPersona.canonicalObjectiveSessionCount,1);
+  assert.deepEqual(afterPersona.objective,oneSession.objective,
+    "Changing guide must not reset or fork Ask objectives");
   await stage.getByRole("button",{name:"Find an original Catechism question"}).click();
   const search=stage.getByRole("textbox",{name:"Objective or topic"});
   await search.fill("What is the Church?");
@@ -146,6 +158,11 @@ try{
   await page.screenshot({path:screenshotDir+"/"+width+"-pius-x-canonical-catechism.png"});
   await catReturn.click();
   await stage.waitFor({state:"visible",timeout:12000});
+  const oneSessionAfterReturn=await page.evaluate(()=>window.__LC_REVIEW.status());
+  assert.equal(oneSessionAfterReturn.canonicalObjectiveSessionCount,1);
+  assert.deepEqual(oneSessionAfterReturn.objective,oneSession.objective,
+    "Native Catechism return must preserve the one canonical Ask session");
+  assert.deepEqual(oneSessionAfterReturn.folioObjective,oneSession.objective);
   const afterCatechism=await page.evaluate(()=>{
    const w=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
    return {context:w.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
