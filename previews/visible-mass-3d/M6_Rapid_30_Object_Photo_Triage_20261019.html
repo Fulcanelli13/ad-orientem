@@ -14,25 +14,25 @@ main{width:min(1500px,100%);margin:auto;padding:20px}.top{display:flex;justify-c
 .quick strong{color:var(--text)}.quick small{color:#d4ac75}.quick[aria-current=true]{border:1px solid #6e604e;background:#25232a;color:white}
 .panel{min-width:0}.panelHead{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}.group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .note{color:var(--muted);font-size:13px}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:10px 0 20px}
-.card{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}.pic{height:225px;background:#070b10;display:flex;justify-content:center;align-items:center;overflow:hidden}
-.pic img{width:100%;height:100%;object-fit:contain}.pic .missing{padding:18px;text-align:center;color:var(--dim);font-size:12px}.meta{padding:11px}.meta strong{display:block;overflow-wrap:anywhere;line-height:1.35}.meta p{margin:5px 0}.chip{color:#c7b397;font-size:11px}.hold{color:#b9a5a0}.lead{color:#e6aa79}.score{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
-.score button{padding:6px 8px;min-width:29px}.options{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:10px 0 7px}.options select{max-width:100%;width:100%}
+.card{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}.pic{height:290px;background:#070b10;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.pic img{width:100%;height:100%;object-fit:contain}.pic .missing{padding:18px;text-align:center;color:var(--dim);font-size:12px}.meta{padding:9px}.meta strong{display:block;overflow-wrap:anywhere;line-height:1.35;font-size:12px}.meta p{margin:3px 0}.chip{color:#c7b397;font-size:11px}.hold{color:#b9a5a0}.lead{color:#e6aa79}.score{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.score button{padding:6px 8px;min-width:29px}.options{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:5px 0 4px}.options select{max-width:100%;width:100%}
 .meta a{display:inline-block;margin-top:6px}.meta .why{color:#9fa6af;font-size:12px}
 .summary{margin:13px 0;padding:10px;border-top:1px solid #3c4350;border-bottom:1px solid #3c4350;color:var(--muted)}.links{margin:10px 0}
 .compact{display:flex;justify-content:space-between;gap:12px;padding:8px;border-bottom:1px solid #28313c}.compact:last-child{border-bottom:0}
 progress{width:120px;height:9px;accent-color:#bc9c73}
-textarea{width:100%;min-height:44px;resize:vertical;padding:7px;background:#0b121d;border:1px solid #44505b;border-radius:6px;color:var(--text)}
+.extra{font-size:12px;margin:5px 0;border-top:1px solid #36404d;padding-top:6px}.extra summary{cursor:pointer;color:var(--gold);list-style:none}.extra summary::before{content:"＋ ";}.extra[open] summary::before{content:"− ";}.mobileJump{display:none}textarea{width:100%;min-height:44px;resize:vertical;padding:7px;background:#0b121d;border:1px solid #44505b;border-radius:6px;color:var(--text)}
 [hidden]{display:none!important}
-@media(max-width:1050px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace{grid-template-columns:225px 1fr}}
-@media(max-width:680px){main{padding:9px}.workspace{display:block}.outline{position:static;height:180px;margin-bottom:12px}.outline div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.pic{height:170px}.meta{padding:7px}.meta strong{font-size:12px}h1{font-size:21px}.score button{padding:5px 6px}}
+@media(max-width:1050px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace{grid-template-columns:205px 1fr}}
+@media(max-width:680px){main{padding:9px}.workspace{display:block}.outline{display:none}.mobileJump{display:block;margin:6px 0 10px}.mobileJump select{width:100%}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.pic{height:195px}.meta{padding:7px}.meta strong{font-size:12px}h1{font-size:21px}.score button{padding:5px 6px}}
 </style></head><body><main>
 <div class="top"><div><h1>M6 · Rapid photographic triage</h1><div class="sub">30-object sanctuary pilot · Source-identified photographs · Draft review only</div></div>
 <div class="actions"><button id="exp">Export decisions JSON</button><button id="impBtn">Import earlier ratings</button><input id="imp" hidden type="file" accept="application/json,.json"></div></div>
-<div class="notice">Start with the object, inspect its actual photographs, and score only what you have seen. Scores are <b>your own editorial choices</b>, not automatic acceptance. Original-photo QA reached 3/20 before Wikimedia rate limiting; remaining photographs need visual review. All 112 canonical sources and 26 earlier staged candidates remain untouched. The newer French-collection leads are <b>unverified discovery leads</b>, not approved photography.</div>
+<div class="notice">This review requires visible source photographs: <strong id="embeddedCount">open-source previews are bundled only when fetched successfully</strong>. Never rate an empty card. Start with the object, inspect its actual photographs, and score only what you have seen. Scores are <b>your own editorial choices</b>, not automatic acceptance. Original-photo QA reached 3/20 before Wikimedia rate limiting; remaining photographs need visual review. All 112 canonical sources and 26 earlier staged candidates remain untouched. The newer French-collection leads are <b>unverified discovery leads</b>, not approved photography.</div>
 <div class="stats" id="stats"></div>
 <div class="workspace">
 <aside class="outline"><h3>P0 objects · <span id="objectProgress">0/30</span> checked</h3><div id="outline"></div></aside>
-<section class="panel"><div class="panelHead"><div><h2 id="name"></h2><div class="note" id="objectFacts"></div></div><div class="group"><button id="prev">←</button><button id="next">Next object →</button></div></div>
+<section class="panel"><label class="mobileJump">Select object <select id="jumpObject" aria-label="Jump to any of 30 pilot objects"></select></label><div class="panelHead"><div><h2 id="name"></h2><div class="note" id="objectFacts"></div></div><div class="group"><button id="prev">←</button><button id="next">Next object →</button></div></div>
 <div id="summary" class="summary"></div>
 <div class="group" aria-label="Object review status"><span class="note">Object decision:</span><button data-objstate="reviewed">Reviewed</button><button data-objstate="needs_more">Find better photographs</button><button data-objstate="defer">Defer</button></div>
 <h3>Candidate photography</h3><div id="choices" class="gallery"></div>
@@ -43,6 +43,8 @@ textarea{width:100%;min-height:44px;resize:vertical;padding:7px;background:#0b12
 (()=>{
 "use strict";
 const data=JSON.parse(document.getElementById("dataset").textContent),$=id=>document.getElementById(id);
+const embedded=data.thumbnail_bundle?.number_unique_downloaded||0;
+document.getElementById("embeddedCount").textContent=embedded+" source photographs embedded offline";
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const holds=new Map(data.qa.screening_overrides.map(x=>[x.asset_id,x.reason]));
 function tier(x){
@@ -62,6 +64,7 @@ function rec(o,x){return review.get(key(o,x))||{rating:"",rank:"",placement:"",n
 function current(){return objs[at]}
 function fileTitle(x){return decodeURIComponent(x.source_url.split("/File:").slice(-1)[0]).replaceAll("_"," ")}
 function preview(x){
+ if(x.embedded_thumbnail_data_uri&&/^data:image\/jpeg;base64,/.test(x.embedded_thumbnail_data_uri))return x.embedded_thumbnail_data_uri;
  if(x.review_thumbnail_url&&/^https:\/\/(?:upload|thumb)\.wikimedia\.org\//.test(x.review_thumbnail_url))return x.review_thumbnail_url;
  if(x.source_url?.startsWith("https://commons.wikimedia.org/wiki/File:"))return "https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(fileTitle(x).replaceAll(" ","_"))+"?width=480";
  return null;
@@ -71,18 +74,18 @@ function metric(){const n=objs.filter(o=>o.records.filter(eligible).length>=4).l
 function paintSide(){
  $("stats").innerHTML=metric().map(x=>'<div class="stat"><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></div>').join("");
  $("objectProgress").textContent=objStates.size+"/30";
+ $("jumpObject").innerHTML=objs.map((o,i)=>'<option value="'+i+'"'+(i===at?" selected":"")+'>'+esc(o.object_id+" · "+o.label)+"</option>").join("");
  $("outline").innerHTML=objs.map((o,i)=>'<button class="quick" data-i="'+i+'" aria-current="'+(i===at)+'"><span><strong>'+esc(o.object_id)+'</strong> · '+esc(o.label)+'</span><small>'+o.records.filter(eligible).length+'/4 '+(objStates.has(o.object_id)?'✓':'')+'</small></button>').join("");
 }
 function photoCard(o,x){
  const v=rec(o,x),t=tier(x),p=preview(x),src=x.source_url||"";
  return '<article class="card" data-asset="'+esc(x.asset_id)+'"><div class="pic">'+(p?'<img loading="lazy" src="'+esc(p)+'" alt="Source preview, verify at original URL" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div hidden class="missing">Preview unavailable; open original Commons page.</div>':'<div class="missing">Preview unavailable; inspect source before rating.</div>')+'</div>'+
  '<div class="meta"><strong>'+esc(x.asset_id.replace(/^M6B\d+-/,""))+'</strong><div class="chip '+(t.startsWith("HOLD")?"hold":t.startsWith("DISCOVERY")?"lead":"")+'">'+esc(t)+'</div>'+
- '<p class="why">'+esc(x.creator||"Creator unverified")+' · '+esc(x.licence||"Rights pending")+' · '+esc(x.width&&x.height?x.width+"×"+x.height:"Size pending")+'</p>'+
- (holds.has(x.asset_id)?'<p class="why">QA: '+esc(holds.get(x.asset_id))+'</p>':'')+
- '<a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Open original and licence ↗</a>'+
+ '<p class="why">'+esc(x.creator||"Creator unverified")+' · '+esc(x.licence||"Rights pending")+'</p>'+
+ '<details class="extra"><summary>Details, source and notes</summary>'+(holds.has(x.asset_id)?'<p class="why">QA: '+esc(holds.get(x.asset_id))+'</p>':'')+'<p class="why">'+esc(x.width&&x.height?x.width+"×"+x.height:"Size pending")+'</p>'+ '<a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Open original and licence ↗</a>'+ '<textarea data-notes rows="2" aria-label="Review notes" placeholder="Optional notes">'+esc(v.notes)+'</textarea></details>'+
  '<div class="score" aria-label="Score 0 to 5">'+[0,1,2,3,4,5].map(n=>'<button type="button" data-rate="'+n+'" aria-pressed="'+(v.rating===String(n))+'">'+n+'</button>').join("")+'</div>'+
  '<div class="options"><select aria-label="Use assignment" data-placement>'+[["","Use undecided"],["primary","Primary candidate"],["secondary","Secondary"],["historical","Historical context"],["elsewhere","Elsewhere in app"],["reject","Reject"]].map(([value,label])=>'<option value="'+value+'"'+(value===v.placement?" selected":"")+'>'+label+'</option>').join("")+'</select></div>'+
- '<textarea data-notes rows="2" aria-label="Review notes" placeholder="Optional notes">'+esc(v.notes)+'</textarea></div></article>';
+ '</div></article>';
 }
 function render(){
  const o=current(),cand=o.records.filter(eligible),others=o.records.filter(x=>!eligible(x));
@@ -106,6 +109,7 @@ document.addEventListener("change",e=>{
  if(el.matches("[data-notes]"))update(o,x,{notes:el.value});
 });
 document.addEventListener("focusout",e=>{const el=e.target;if(!el.matches("[data-notes]"))return;const card=el.closest("[data-asset]");if(!card)return;const o=current(),x=o.records.find(v=>v.asset_id===card.dataset.asset);if(x)review.set(key(o,x),{...rec(o,x),notes:el.value})});
+$("jumpObject").onchange=e=>{at=Number(e.target.value);render()};
 $("prev").onclick=()=>{at=Math.max(0,at-1);render();window.scrollTo(0,0)};
 $("next").onclick=()=>{at=Math.min(objs.length-1,at+1);render();window.scrollTo(0,0)};
 function exportData(){
