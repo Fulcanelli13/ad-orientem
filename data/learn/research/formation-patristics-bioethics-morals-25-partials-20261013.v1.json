@@ -1,0 +1,880 @@
+{
+  "schema": "AO_FORMATION_25_PARTIALS_SOURCEFIRST_V1",
+  "date": "2026-10-13",
+  "status": "UNPUBLISHED_BILINGUAL_RESEARCH",
+  "source_registry": [
+    {
+      "id": "IGN",
+      "title": "Ignatius of Antioch, Smyrnaeans §§7–8",
+      "url": "https://www.newadvent.org/fathers/0109.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CLEM",
+      "title": "1 Clement §§42–44, 59–63",
+      "url": "https://www.newadvent.org/fathers/1010.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "IREN",
+      "title": "Irenaeus, Against Heresies III.3",
+      "url": "https://www.newadvent.org/fathers/0103303.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "JUST",
+      "title": "Justin, First Apology §§61,65–67",
+      "url": "https://www.newadvent.org/fathers/0126.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "ATHAN",
+      "title": "Athanasius, 39th Festal Letter (367), New Testament canon",
+      "url": "https://www.newadvent.org/fathers/2806039.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TERB",
+      "title": "Tertullian, On Baptism §18",
+      "url": "https://www.newadvent.org/fathers/0321.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TERC",
+      "title": "Tertullian, De Corona §3",
+      "url": "https://www.newadvent.org/fathers/0304.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "MART",
+      "title": "Martyrdom of Polycarp §§17–18",
+      "url": "https://www.newadvent.org/fathers/0102.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "YAL",
+      "title": "Yale, Dura-Europos Christian baptistery paintings c. 240",
+      "url": "https://duraeuropos.artgallery.yale.edu/christian-building",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "IRMARY",
+      "title": "Irenaeus, Against Heresies III.22.4, Mary and Eve",
+      "url": "https://www.newadvent.org/fathers/0103322.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DID",
+      "title": "Didache, chapters 7, 9–10, 14",
+      "url": "https://www.newadvent.org/fathers/0714.htm",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false,
+      "official_french_parallel_url": "https://www.vatican.va/archive/FRA0013/_INDEX.HTM",
+      "parallel_french_url_checked": true,
+      "independent_french_paragraph_approval": false
+    },
+    {
+      "id": "CCC-LIFE",
+      "title": "Catechism §§2277–2279, Euthanasia and proportionate treatments",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_5/i_respect_for_human_life.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "official_french_parallel_url": "https://www.vatican.va/archive/FRA0013/_INDEX.HTM",
+      "parallel_french_url_checked": true,
+      "independent_french_paragraph_approval": false
+    },
+    {
+      "id": "DP",
+      "title": "CDF, Dignitas personae §§21,25–30",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "official_french_parallel_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_fr.html",
+      "parallel_french_url_checked": true,
+      "independent_french_paragraph_approval": false
+    },
+    {
+      "id": "HV",
+      "title": "Paul VI, Humanae vitae §15, therapeutic treatments",
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "official_french_parallel_url": "https://www.vatican.va/content/paul-vi/fr/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "parallel_french_url_checked": true,
+      "independent_french_paragraph_approval": false
+    },
+    {
+      "id": "VS",
+      "title": "John Paul II, Veritatis splendor §§75–83, objects and consequences",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "official_french_parallel_url": "https://www.vatican.va/content/john-paul-ii/fr/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html",
+      "parallel_french_url_checked": true,
+      "independent_french_paragraph_approval": false
+    },
+    {
+      "id": "AQU64",
+      "title": "Thomas Aquinas, Summa theologiae II-II q.64 a.7",
+      "url": "https://www.newadvent.org/summa/3064.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AQU43",
+      "title": "Thomas Aquinas, Summa theologiae I-II q.43, Scandal",
+      "url": "https://www.newadvent.org/summa/3043.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TER_BAPT_7_8",
+      "title": "Tertullian, On Baptism, chapters 7–8: post-font anointing and imposition of hands",
+      "url": "https://www.newadvent.org/fathers/0321.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TER_PAEN_7_9",
+      "title": "Tertullian, On Repentance, chapters 7–9: penitence after baptism and exomologesis",
+      "url": "https://www.newadvent.org/fathers/0320.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CYP_EP_12",
+      "title": "Cyprian of Carthage, Epistle 12 (New Advent numbering): presbyter, confession and laying on hands in grave danger",
+      "url": "https://www.newadvent.org/fathers/050612.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CYP_EP_13",
+      "title": "Cyprian of Carthage, Epistle 13 (New Advent numbering): bishop and clerical consultation on the lapsed",
+      "url": "https://www.newadvent.org/fathers/050613.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "PAV_COOP_2005",
+      "title": "Pontifical Academy for Life, 2005 Moral Reflections on Vaccines Prepared from Cells Derived from Aborted Human Foetuses, original text reproduced with Academy presidential letter (Catholic Culture archival copy)",
+      "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=6539",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "alternate_journal_reprint_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6699053/",
+      "original_authority": "Pontifical Academy for Life (2005), text reproduced by secondary host; NOT new independent magisterial endorsement"
+    },
+    {
+      "id": "EV_74",
+      "title": "John Paul II, Evangelium vitae §74 (1995), participation in acts against innocent human life",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_25031995_evangelium-vitae.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "PASTOR_AET",
+      "title": "Vatican I, Pastor aeternus (1870), chapters III–IV, Vatican original Latin",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DID14",
+      "title": "Didache chapter 14, Lord's Day assembly, confession, breaking bread, pure sacrifice",
+      "url": "https://www.stromata-ev.de/en/projects/early-christian-texts/didache/text/chapter-14",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SLATER_DBL",
+      "title": "Thomas Slater, A Manual of Moral Theology for English-Speaking Countries, Book I, Chapter II, §4 (voluntary acts): four conditions of double effect; later theologian, not Aquinas verbatim",
+      "url": "https://en.wikisource.org/wiki/A_manual_of_moral_theology_for_English-speaking_countries/Book_1",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "exact_chapter_locator": "Book I, Chapter II, §4",
+      "claim_scope_limitation": "Slater reproduces later four-condition formula, while Aquinas II-II q64 a7 is a prior distinction of intentions and effects, not the identical four-term list"
+    },
+    {
+      "id": "CCC_BAPT",
+      "title": "Catechism §§1213–1266, baptism and regeneration",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "official_french_parallel_url": "https://www.vatican.va/archive/FRA0013/_INDEX.HTM",
+      "parallel_french_url_checked": true,
+      "independent_french_paragraph_approval": false
+    },
+    {
+      "id": "CCC_SAINTS",
+      "title": "Catechism §§956–957, communion with the saints and intercession",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_9/paragraph_5_the_communion_of_saints.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "official_french_parallel_url": "https://www.vatican.va/archive/FRA0013/_INDEX.HTM",
+      "parallel_french_url_checked": true,
+      "independent_french_paragraph_approval": false
+    },
+    {
+      "id": "CCC_SEX",
+      "title": "Catechism §§2399, 2370 on sterilization and contraception",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/iii_the_love_of_husband_and_wife.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false,
+      "official_french_parallel_url": "https://www.vatican.va/archive/FRA0013/_INDEX.HTM",
+      "parallel_french_url_checked": true,
+      "independent_french_paragraph_approval": false
+    },
+    {
+      "id": "IREN_GREEK_NOTE",
+      "title": "Irenaeus, Against Heresies III.3.2, transmitted Roman succession passage and disputed translation",
+      "url": "https://www.newadvent.org/fathers/0103303.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "PAT-004",
+      "original_title_candidate": "Did bishop–presbyter–deacon hierarchy exist before Constantine?",
+      "owner_reuse": [
+        "APOL-019"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes. Ignatius of Antioch, Smyrnaeans §8, explicitly names bishop, presbytery and deacons and connects the celebration of the Eucharist with the bishop or his delegate. 1 Clement §§42–44 also documents apostolic appointment of ministers and succession, though it does not describe Ignatius's threefold pattern identically. These are actual witnesses from particular early Christian communities before Constantine; they do not demonstrate uniform diocesan structures or every later canonical distinction in all churches.",
+            "fr": "Oui. Ignace d'Antioche, Aux Smyrniotes (§8), nomme expressément l'évêque, le presbyterium et les diacres, et rattache l'Eucharistie à l'évêque ou à son délégué. La première lettre de Clément (§§42–44) atteste aussi la nomination de ministres par les Apôtres et leur succession, sans décrire exactement la même structure tripartite qu'Ignace. Ces témoignages concernent des communautés réelles antérieures à Constantin ; ils n'établissent ni l'uniformité de toutes les Églises ni toutes les distinctions canoniques ultérieures."
+          },
+          "source_ids": [
+            "IGN",
+            "CLEM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-005",
+      "original_title_candidate": "Was Rome already exercising authority outside Rome?",
+      "owner_reuse": [
+        "APOL-018",
+        "APOL-019"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes, in a historically qualified sense. The letter known as 1 Clement opens as a communication from the Church at Rome to the Church at Corinth and addresses the deposition of ministers, urging restoration (§§42–44 and 59–63). Irenaeus, Against Heresies III.3.2–3, subsequently gives Rome a special place when arguing from apostolic succession. These sources establish early Roman concern and intervention outside Rome; they do not, without further argument, define the later full scope of ordinary universal papal jurisdiction, and the rendering of Irenaeus III.3.2 must be assessed critically.",
+            "fr": "Oui, mais dans un sens historiquement précisé. La lettre dite Première de Clément se présente comme une communication de l'Église de Rome à celle de Corinthe, traite de la déposition de ministres et demande leur rétablissement (§§42–44 et 59–63). Irénée, Contre les hérésies III,3,2–3, donne ensuite à Rome une place particulière dans son argument tiré de la succession apostolique. Ces textes établissent une intervention et une sollicitude romaines hors de Rome ; ils ne définissent pas, sans argument supplémentaire, toute l'étendue ultérieure de la juridiction pontificale ordinaire et universelle, et la traduction d'Irénée III,3,2 exige une critique précise."
+          },
+          "source_ids": [
+            "CLEM",
+            "IREN"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-006",
+      "original_title_candidate": "Does the second/third century already give us Vatican I papal doctrine in fully developed form?",
+      "owner_reuse": [
+        "APOL-020"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Not in the same developed terminology. Irenaeus, Against Heresies III.3, adduces Roman succession and a special relationship of other churches to Rome, but it is not an articulation of all four chapters of Vatican I's Pastor aeternus (1870). In that constitution chapters III–IV define the scope of Roman primatial jurisdiction and the conditions of papal infallibility; both need to be read directly before comparing them with the second century. Neither textual nonidentity nor the historical development of formulations proves that the entire idea of Roman primacy was invented in 1870.",
+            "fr": "Non, pas dans les mêmes formulations développées. Irénée, Contre les hérésies III,3, invoque la succession romaine et un rapport particulier des autres Églises avec Rome, mais n'expose pas les quatre chapitres de Pastor aeternus (Vatican I, 1870). Dans cette constitution, les chapitres III–IV définissent l'étendue de la juridiction primatiale et les conditions de l'infaillibilité pontificale ; il faut lire ces définitions avant de les comparer au IIe siècle. Ni la différence textuelle ni le développement historique des formules ne démontrent que toute idée de primauté romaine fut inventée en 1870."
+          },
+          "source_ids": [
+            "IREN",
+            "PASTOR_AET"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-008",
+      "original_title_candidate": "Do we possess the exact 27-book NT list before Constantine?",
+      "owner_reuse": [
+        "APOL-013"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "The earliest surviving complete list in precisely the present twenty-seven-book New Testament form is commonly identified in Athanasius's 39th Festal Letter (AD 367), notably §§5–6. He expressly names four Gospels, Acts, the seven Catholic epistles, fourteen Pauline letters and Revelation. That is after Constantine, but the books' composition and many individual recognitions are earlier. The claim concerns the currently known documentary witnesses, not proof that no earlier exact list ever existed or that Constantine composed the books.",
+            "fr": "La plus ancienne liste complète conservée que l'on cite couramment pour les vingt-sept livres du Nouveau Testament dans leur ensemble est la 39e lettre festale d'Athanase (367), notamment §§5–6. Elle énumère les quatre Évangiles, les Actes, les sept épîtres catholiques, les quatorze épîtres pauliniennes et l'Apocalypse. Ce document suit Constantin, mais la rédaction des livres et la réception de nombreux écrits sont antérieures. Cette affirmation porte sur les témoins documentaires actuellement connus : elle ne prouve ni l'inexistence de toute liste antérieure identique ni l'invention des livres par Constantin."
+          },
+          "source_ids": [
+            "ATHAN"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-011",
+      "original_title_candidate": "Is Eucharistic sacrificial language pre-Constantine?",
+      "owner_reuse": [
+        "APOL-031"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes. Didache 14 links the Lord's Day assembly, breaking bread and thanksgiving with the requirement that the community's sacrifice be pure and cites the prophetic language of an offering among the nations. Ignatius, Smyrnaeans 7–8, identifies the Eucharist with Christ's flesh and connects it to episcopal oversight; Justin, First Apology 65–67, describes the Eucharistic action and consecrated food. These are different early witnesses, not identical systematic definitions. The extent to which Didache's sacrifice describes Eucharistic offering in the exact later Tridentine sense must be argued rather than assumed.",
+            "fr": "Oui. La Didachè (chapitre 14) relie assemblée dominicale, fraction du pain et action de grâces à l'exigence d'un sacrifice pur, en invoquant la prophétie d'une offrande parmi les nations. Ignace, Aux Smyrniotes (§§7–8), identifie l'Eucharistie à la chair du Christ et la rattache à l'évêque ; Justin, Première Apologie (§§65–67), décrit la célébration et les aliments consacrés. Il s'agit de témoignages anciens distincts, non de définitions systématiques identiques. Il faut démontrer, et non présupposer, jusqu'où le langage sacrificiel de la Didachè correspond exactement à la théologie tridentine ultérieure."
+          },
+          "source_ids": [
+            "DID14",
+            "IGN",
+            "JUST"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-013",
+      "original_title_candidate": "Is baptismal regeneration early?",
+      "owner_reuse": [
+        "APOL-024"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes. Justin's First Apology §61 speaks of those who accept the teaching being led to water, receiving washing in the name of Father, Son and Holy Spirit, with the washing explicitly described in terms of regeneration and remission of earlier sins. This is a direct second-century witness to baptismal regeneration, not a medieval invention; Justin also mentions instruction and believing, so the passage is not itself a complete later Catholic treatise on infant baptism or sacramental dispositions.",
+            "fr": "Oui. Justin, Première Apologie (§61), rapporte que ceux qui reçoivent l'enseignement sont conduits à l'eau et lavés au nom du Père, du Fils et de l'Esprit Saint ; il lie expressément cette ablution à la régénération et à la rémission des fautes passées. C'est un témoignage direct du IIe siècle sur la régénération baptismale, non une invention médiévale ; Justin évoque aussi l'instruction et la foi, si bien que ce passage n'est pas un traité catholique ultérieur complet sur le baptême des enfants ou les dispositions sacramentelles."
+          },
+          "source_ids": [
+            "JUST",
+            "CCC_BAPT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-014",
+      "original_title_candidate": "Is infant Baptism pre-Constantine?",
+      "owner_reuse": [
+        "APOL-024"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes, as an early disputed practice rather than a universally mandated rule. Tertullian, On Baptism §18, advises postponing baptism, especially for little children, and asks why their sponsors should be exposed to obligations. His argument presupposes that baptizing such children was sufficiently familiar to be debated before Constantine. This opposition cannot be cited as approval by every early community, but neither can it be used to prove infant baptism was not yet practised.",
+            "fr": "Oui, comme pratique ancienne discutée et non comme obligation déjà universelle. Tertullien, Du baptême (§18), recommande de différer le baptême, particulièrement pour les petits enfants, et interroge les responsabilités de leurs parrains. Son opposition suppose que le baptême de ces enfants était assez connu pour faire débat avant Constantin. Il serait inexact d'y voir l'accord de toutes les communautés anciennes, mais également d'y lire la preuve que la pratique n'existait pas encore."
+          },
+          "source_ids": [
+            "TERB"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-015",
+      "original_title_candidate": "Is post-baptismal anointing/chrism early?",
+      "owner_reuse": [
+        "APOL-025"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes. Tertullian, On Baptism §§7–8, describes anointing with blessed oil after emergence from the baptismal font and then the laying on of a hand with prayer for the Holy Spirit. This is direct pre-Constantinian evidence for post-baptismal anointing and the laying on of hands. It does not establish that the separate later Latin Confirmation rite or its ordinary minister had precisely the same organization in every early Christian community.",
+            "fr": "Oui. Dans le De baptismo (§§7–8), Tertullien décrit, après la sortie des fonts baptismaux, une onction d'huile bénite, suivie de l'imposition de la main avec invocation de l'Esprit Saint. C'est un témoignage direct, antérieur à Constantin, de l'onction et de l'imposition des mains après le baptême. Il ne prouve pas que le rite latin ultérieur de la confirmation, ni son ministre ordinaire, étaient déjà organisés partout de manière identique."
+          },
+          "source_ids": [
+            "TER_BAPT_7_8"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-016",
+      "original_title_candidate": "Is serious post-baptismal confession/penance early?",
+      "owner_reuse": [
+        "APOL-026"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes, though the ancient discipline differed from later routine private confession. Tertullian, On Repentance §§7–9, treats repentance for sins committed after baptism and describes exomologesis, an outward penitential discipline involving confession before God and acts of public humility before the Christian community and presbyters. Cyprian's third-century letters about the lapsed likewise presuppose ecclesial penance and reconciliation. These sources show early post-baptismal penance, without proving that its practice was identical to later repeatable auricular confession.",
+            "fr": "Oui, mais la discipline ancienne différait de la confession privée devenue habituelle par la suite. Tertullien, De paenitentia (§§7–9), traite du repentir pour les péchés commis après le baptême et décrit l'exomologèse : une discipline pénitentielle extérieure comportant l'aveu devant Dieu et des actes publics d'humilité au sein de la communauté et devant les presbytres. Les lettres de saint Cyprien sur les lapsi supposent également pénitence et réconciliation ecclésiales au IIIe siècle. Ces sources attestent la pénitence postbaptismale sans établir une identité de pratique avec la confession auriculaire répétable ultérieure."
+          },
+          "source_ids": [
+            "TER_PAEN_7_9",
+            "CYP_EP_12",
+            "CYP_EP_13"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-017",
+      "original_title_candidate": "Was reconciliation mediated through clergy?",
+      "owner_reuse": [
+        "APOL-026"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes. Cyprian of Carthage, Epistles 12–13 (in the edition linked), discusses penitents who had lapsed during persecution. He describes confession before a presbyter, the laying on of hands as an expression of penance, and episcopal or clerical regulation of readmission to communion; he notes exceptional arrangements for those in immediate danger. This documents a ministerial and ecclesial process, not merely private self-absolution, but it does not establish that every detail of the later sacramental discipline was already fixed.",
+            "fr": "Oui. Dans ses lettres 12–13 (selon la numérotation de l'édition citée), saint Cyprien de Carthage traite des chrétiens tombés pendant la persécution. Il évoque l'aveu devant un prêtre, l'imposition des mains liée à la pénitence, et la réglementation de la réadmission à la communion par l'évêque et le clergé, avec des dispositions exceptionnelles pour les personnes en danger de mort. Cela atteste une réconciliation ministérielle et ecclésiale, non une simple auto-absolution privée, sans démontrer que tous les détails de la discipline sacramentelle postérieure étaient déjà fixés."
+          },
+          "source_ids": [
+            "CYP_EP_12",
+            "CYP_EP_13"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-018",
+      "original_title_candidate": "Were Christians praying for the dead before Constantine?",
+      "owner_reuse": [
+        "APOL-040"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes. Tertullian, De Corona §3, refers to offerings made for the dead on the anniversaries of their deaths; this is an explicit pre-Constantinian record of a Christian custom of suffrages for the departed. It does not establish that every subsequent scholastic description of purgatory or later liturgical memorial was already fixed in Tertullian's community. Commemoration and doctrinal systematization are separate historical questions.",
+            "fr": "Oui. Dans De corona (§3), Tertullien mentionne des offrandes pour les morts aux anniversaires de leur décès : c'est un témoignage explicite, antérieur à Constantin, d'une coutume chrétienne de suffrages pour les défunts. Il ne démontre pas que toutes les explications scolastiques ultérieures du purgatoire ou les rites de commémoration postérieurs existaient déjà sous cette forme. Commémoration et systématisation doctrinale sont deux questions historiques distinctes."
+          },
+          "source_ids": [
+            "TERC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-020",
+      "original_title_candidate": "Is veneration of martyrs/relics pre-Constantine?",
+      "owner_reuse": [
+        "APOL-037"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes. The Martyrdom of Polycarp §§17–18 distinguishes worship due to Christ from love for his martyrs, records the collection of Polycarp's bones, and describes gathering to mark his martyrdom's anniversary. Those are direct early acts of honoring the martyr and preserving his remains, not evidence that Christians adored his bones as divine. The text by itself does not prove later classes of relics or every devotional use of reliquaries.",
+            "fr": "Oui. Le Martyre de Polycarpe (§§17–18) distingue le culte rendu au Christ de l'amour des martyrs, rapporte la collecte des ossements de Polycarpe et décrit le rassemblement anniversaire de son martyre. Ce sont des actes anciens directs d'honneur rendu au martyr et à ses restes, non l'adoration de ses os comme divins. Le texte ne démontre pas à lui seul les classes ultérieures de reliques ni chaque usage dévotionnel des reliquaires."
+          },
+          "source_ids": [
+            "MART"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-021",
+      "original_title_candidate": "Is direct invocation of saints equally well documented before Constantine?",
+      "owner_reuse": [
+        "APOL-035"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "The evidence must be distinguished. Martyrdom of Polycarp §§17–18 directly records the honoring and annual remembrance of a dead martyr, but does not give a clear formula of a prayer addressed to Polycarp requesting his intercession. Therefore this source must not be cited as proof of an explicitly documented second-century invocation. Catholic doctrine of the heavenly saints' intercession is a separate theological claim (Catechism §§956–957); positive historical claims about early direct invocation require separately dated invocation texts and scrutiny of their provenance.",
+            "fr": "Il faut distinguer les preuves. Le Martyre de Polycarpe (§§17–18) atteste directement l'honneur rendu à un martyr défunt et sa commémoration annuelle, mais ne livre pas de formule claire de prière adressée à Polycarpe pour solliciter son intercession. On ne saurait donc invoquer ce document comme preuve d'une invocation explicite attestée au IIe siècle. La doctrine catholique sur l'intercession des saints du ciel relève d'une autre argumentation théologique (Catéchisme §§956–957) ; toute affirmation historique positive sur les premières invocations exige des textes précisément datés et une étude de leur provenance."
+          },
+          "source_ids": [
+            "MART",
+            "CCC_SAINTS"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-022",
+      "original_title_candidate": "Did pre-Constantinian Christians use sacred images?",
+      "owner_reuse": [
+        "APOL-036"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes. The excavated pre-Constantinian Christian assembly building at Dura-Europos contained a baptistery decorated with identifiable paintings, including the Good Shepherd and scenes of Christ's miracles, as documented by Yale's archaeological collection. The evidence shows that at least one third-century Christian community employed biblical painted imagery in a religious setting. It cannot by itself establish universal practice, a fully articulated theology of icon veneration, or the dating of every image to exactly AD 240.",
+            "fr": "Oui. Le bâtiment chrétien de Doura-Europos, fouillé et antérieur à Constantin, possédait un baptistère décoré de peintures identifiables, notamment le Bon Pasteur et des scènes des miracles du Christ, attestées par le catalogue archéologique de Yale. Cela montre qu'au moins une communauté du IIIe siècle employait des images bibliques dans un cadre religieux. Ce constat ne suffit pas à établir une pratique universelle, une théologie complète de la vénération des icônes ni une date exactement fixée à l'année 240 pour chaque peinture."
+          },
+          "source_ids": [
+            "YAL"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-023",
+      "original_title_candidate": "Is Marian theology simply a late Constantinian invention?",
+      "owner_reuse": [
+        "APOL-032"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "No. Irenaeus, Against Heresies III.22.4, written in the second century, explicitly juxtaposes Eve's disobedience and Mary's obedience in the work of Christ's recapitulation. That is a genuine theological account of Mary's role in salvation history long before Constantine. It is not identical with later definitions of the Immaculate Conception or Assumption, whose later formulation cannot be silently read back word for word into the second-century witness.",
+            "fr": "Non. Irénée, Contre les hérésies III,22,4, au IIe siècle, met explicitement en parallèle la désobéissance d'Ève et l'obéissance de Marie dans l'œuvre de récapitulation du Christ. C'est une véritable interprétation théologique de la place de Marie dans l'histoire du salut bien avant Constantin. Elle ne se confond pas avec les définitions ultérieures de l'Immaculée Conception ou de l'Assomption, dont les formules ne doivent pas être projetées mot à mot sur le témoin ancien."
+          },
+          "source_ids": [
+            "IRMARY"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "PAT-025",
+      "original_title_candidate": "Did Constantine invent ‘Catholicism’?",
+      "owner_reuse": [
+        "APOL-014",
+        "APOL-019"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "No. Before Constantine, Ignatius of Antioch names the 'Catholic Church' and an episcopally ordered Eucharist (Smyrnaeans 8); Justin describes baptism and Sunday Eucharist (First Apology 61, 65–67); and Irenaeus invokes apostolic succession (Against Heresies III.3). These discrete witnesses disprove the claim that the emperor invented all such Christian practices in the fourth century. Constantine's age nevertheless transformed Christianity's legal and political circumstances; none of the three sources certifies every doctrine and institution in its modern Catholic form.",
+            "fr": "Non. Avant Constantin, Ignace d'Antioche parle de l'« Église catholique » et de l'Eucharistie célébrée en communion avec l'évêque (Aux Smyrniotes §8) ; Justin décrit le baptême et l'Eucharistie dominicale (Première Apologie §§61, 65–67) ; Irénée invoque la succession apostolique (Contre les hérésies III,3). Ces témoignages distincts réfutent l'idée que l'empereur aurait inventé toutes ces pratiques au IVe siècle. Son époque a néanmoins profondément changé le cadre légal et politique du christianisme ; aucun de ces trois auteurs ne certifie toutes les institutions et doctrines dans leur forme catholique actuelle."
+          },
+          "source_ids": [
+            "IGN",
+            "JUST",
+            "IREN"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "BIO-004",
+      "original_title_candidate": "Are sterilization and medical treatment that causes infertility morally identical?",
+      "owner_reuse": [
+        "CSE069"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "No. Humanae vitae §15 permits therapies genuinely necessary to treat bodily disease even when infertility is a foreseen consequence, provided that prevention of procreation is not directly intended; §14 separately rejects direct sterilization as a contraceptive choice. The moral difference is not merely surgical technique or the resulting infertility: it includes the procedure's therapeutic object, the clinician's and patient's intention, and proportionality. A genuine pathological organ may require treatment even if fertility is lost incidentally; invoking a therapeutic label does not excuse an operation whose chosen means is simply direct sterilization.",
+            "fr": "Non. Humanae vitae (§15) admet les traitements véritablement nécessaires pour soigner une maladie corporelle, même si l'infertilité en est une conséquence prévue, à condition de ne pas viser directement l'empêchement de procréer ; le §14 rejette par ailleurs la stérilisation directe choisie comme moyen contraceptif. La différence morale ne se réduit donc ni à la technique chirurgicale ni au résultat : il faut examiner l'objet thérapeutique de l'intervention, l'intention des soignants et du patient, ainsi que la proportionnalité. Une pathologie réelle peut nécessiter un traitement entraînant indirectement l'infertilité ; une étiquette thérapeutique ne justifie pas une intervention dont le moyen choisi serait simplement une stérilisation directe."
+          },
+          "source_ids": [
+            "HV",
+            "CCC_SEX"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "BIO-009",
+      "original_title_candidate": "Is ‘embryo reduction’ different from abortion?",
+      "owner_reuse": [
+        "CSE123",
+        "CSE105"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "In the practice described by Dignitas personae §21, embryo reduction is a form of intentional selective abortion: one or more living embryos or fetuses in a multiple pregnancy are deliberately killed, usually in order to improve predicted outcomes for the others. The document explicitly rejects applying lesser-evil or double-effect arguments when eliminating the selected child is itself the chosen means. This categorical judgment addresses deliberate reduction, not every distinct obstetric treatment in a complex pregnancy; medical cases involving foreseen but unintended loss require separate moral analysis.",
+            "fr": "Dans la pratique décrite par Dignitas personae (§21), la réduction embryonnaire constitue un avortement sélectif intentionnel : un ou plusieurs embryons ou fœtus vivants d'une grossesse multiple sont délibérément supprimés afin, généralement, d'améliorer le pronostic des autres. Le document écarte expressément l'argument du moindre mal ou du double effet lorsque l'élimination de l'enfant sélectionné est elle-même le moyen choisi. Ce jugement concerne la réduction volontaire et non tout traitement obstétrical distinct dans une grossesse complexe ; une intervention dont la perte est prévue mais non recherchée demande une analyse morale propre."
+          },
+          "source_ids": [
+            "DP",
+            "VS"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "BIO-013",
+      "original_title_candidate": "Is genetic engineering intrinsically wrong?",
+      "owner_reuse": [
+        "CSE107"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "No. Dignitas personae §§25–26 distinguishes treatment of somatic cells from alterations of germ-line cells. It holds strictly therapeutic somatic gene therapy morally permissible in principle, provided informed consent and proportionate risk. Its rejection of germ-line interventions explicitly invokes risks transmitted to descendants in the state of research then assessed; §27 separately criticizes attempts at enhancement and eugenic selection. These are distinct evaluations: the text is not a blanket condemnation of every use of genetic engineering, nor may a technological advance automatically be assumed to satisfy all moral criteria concerning embryos, consent and human dignity.",
+            "fr": "Non. Dignitas personae (§§25–26) distingue le traitement des cellules somatiques de la modification des cellules germinales. La thérapie génique somatique réellement thérapeutique est en principe licite, sous réserve du consentement éclairé et de risques proportionnés. La critique des interventions germinales mentionne explicitement les risques pour la descendance dans l'état de la recherche examiné à l'époque ; le §27 condamne séparément les projets d'amélioration eugénique. Ce sont des évaluations distinctes : le texte ne proscrit pas indistinctement tout génie génétique, et un progrès technique ne résout pas automatiquement toutes les exigences concernant les embryons, le consentement et la dignité humaine."
+          },
+          "source_ids": [
+            "DP"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "BIO-014",
+      "original_title_candidate": "Is human cloning objectionable only because present technology is unsafe?",
+      "owner_reuse": [
+        "CSE107"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "No. Dignitas personae §§28–29 calls human cloning intrinsically illicit because a human being is generated outside conjugal reciprocal self-giving, under an imposed genetic design, and is exposed to instrumentalization. This judgment is not simply a forecast about current technical failure. Section 28 distinguishes the reproductive and so-called therapeutic purposes of human-organism cloning; it must not be conflated with culturing or cloning ordinary nonembryonic cells. Any proposal producing human embryos for destructive research also raises the separate prohibition on using embryos as disposable material (§§4, 19, 30–31).",
+            "fr": "Non. Dignitas personae (§§28–29) qualifie le clonage humain d'intrinsèquement illicite parce que la génération d'un être humain est dissociée du don réciproque conjugal, subordonnée à un projet génétique imposé et exposée à l'instrumentalisation. Le jugement ne dépend pas seulement d'un pronostic sur les échecs techniques actuels. Le §28 distingue les finalités reproductive et dite thérapeutique du clonage d'un organisme humain ; il ne faut pas les confondre avec la culture ou le clonage de cellules ordinaires non embryonnaires. La production d'embryons humains pour une recherche qui les détruit rencontre également l'interdiction de les traiter comme du matériel jetable (§§4, 19, 30–31)."
+          },
+          "source_ids": [
+            "DP"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "BIO-016",
+      "original_title_candidate": "Is euthanasia morally different from refusing burdensome treatment?",
+      "owner_reuse": [
+        "APOL-052"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "Yes, the chosen act differs. Catechism §2277 rejects action or omission that by itself or intention causes death in order to eliminate suffering. Section 2278 permits declining burdensome, dangerous, extraordinary or disproportionate medical procedures when the aim is to accept medicine's limits rather than cause death. Section 2279 simultaneously requires ordinary care and supports proportionate pain relief and palliation. The distinction requires attention to the particular treatment, its expected benefit and burdens, patient competence and legitimate decision-making; it is not a general permission to withhold ordinary care.",
+            "fr": "Oui, l'acte choisi est différent. Le Catéchisme (§2277) rejette l'acte ou l'omission qui, par lui-même ou intentionnellement, provoque la mort pour supprimer la souffrance. Le §2278 permet de renoncer à des procédures lourdes, dangereuses, extraordinaires ou disproportionnées lorsque l'on accepte les limites de la médecine sans vouloir provoquer la mort. Le §2279 maintient le devoir des soins ordinaires et encourage le soulagement proportionné et les soins palliatifs. La distinction exige d'examiner le traitement précis, son bénéfice attendu, ses charges, la capacité du patient et les décisions légitimes ; elle n'autorise pas à suspendre indistinctement les soins ordinaires."
+          },
+          "source_ids": [
+            "CCC-LIFE"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "MOR-005",
+      "original_title_candidate": "Does “choose the lesser evil” mean that I may deliberately do a smaller evil?",
+      "owner_reuse": [
+        "APOL-052"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "No. Deliberately choosing an intrinsically wrong act is not justified because it is numerically 'less evil' than another possibility. Veritatis splendor §§79–83 rejects measuring the morality of the chosen object solely by a balance of good and bad consequences. Aquinas, Summa II-II q.64 a.7, instead distinguishes the intention to preserve life from a foreseen unintended death in proportionate self-defence; this is not permission to choose murder as a means. When harms seem unavoidable, distinguish choosing a morally permissible action with tolerated side effects from selecting a wrong action as the means to a desired good.",
+            "fr": "Non. Choisir délibérément un acte intrinsèquement mauvais n'est pas justifié parce qu'il serait quantitativement « moins mauvais » qu'une autre possibilité. Veritatis splendor (§§79–83) refuse de déterminer la moralité de l'objet choisi par la seule balance des conséquences bonnes et mauvaises. Thomas d'Aquin, Somme II-II, q.64, a.7, distingue au contraire l'intention de préserver la vie de la mort prévue sans être voulue dans une légitime défense proportionnée ; il n'autorise pas à choisir le meurtre comme moyen. Lorsque des dommages semblent inévitables, il faut distinguer un acte licite aux effets nuisibles tolérés du choix d'un acte mauvais comme moyen d'atteindre le bien."
+          },
+          "source_ids": [
+            "VS",
+            "AQU64"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "MOR-006",
+      "original_title_candidate": "What is the principle of double effect?",
+      "owner_reuse": [
+        "APOL-052"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "The principle of double effect governs a good or morally neutral act that has a foreseen adverse effect. Aquinas's Summa II-II q.64 a.7 supplies an early treatment of the distinction between an intended act of self-defence and an unintended killing, but does not itself state the familiar four-point textbook formula. A later Catholic moral-theology manual, Thomas Slater's A Manual of Moral Theology, Book I, Chapter II §4, explicitly requires: (1) a good or indifferent act, (2) no intention of the evil effect, (3) no causation of the good through the bad effect, and (4) a sufficiently weighty proportionate reason. Veritatis splendor preserves the absolute prohibition of intrinsically evil chosen acts; this principle cannot excuse one by renaming it an 'unintended side effect'.",
+            "fr": "Le principe du double effet s'applique à un acte bon ou moralement indifférent comportant un effet nuisible prévu. Thomas d'Aquin, Somme II-II, q.64, a.7, distingue déjà la défense de soi voulue de la mort non voulue qui peut en résulter ; il ne formule toutefois pas lui-même le schéma scolaire classique en quatre points. Un manuel catholique ultérieur, celui de Thomas Slater (Manual of Moral Theology, livre I, chapitre II, §4), expose explicitement : 1) un acte bon ou indifférent ; 2) l'absence d'intention de l'effet mauvais ; 3) le fait que le bien ne résulte pas du mal comme de son moyen ; 4) une raison proportionnellement assez grave. Veritatis splendor maintient l'interdiction absolue de choisir des actes intrinsèquement mauvais ; on ne peut y échapper en rebaptisant le moyen mauvais « effet secondaire non voulu »."
+          },
+          "source_ids": [
+            "AQU64",
+            "SLATER_DBL",
+            "VS"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "MOR-009",
+      "original_title_candidate": "Are all forms of cooperation with another person's wrongdoing equally sinful?",
+      "owner_reuse": [
+        "APOL-052",
+        "VACCINES"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "No. Catholic moral analysis distinguishes formal cooperation, which shares the wrongful intention and is always illicit, from material cooperation, which does not share it; the latter may be immediate or mediate, proximate or remote, with different responsibilities. The Pontifical Academy for Life's 2005 synthesis explicitly sets out these distinctions in its analysis of vaccines connected to abortion-derived cell lines; that application should not be mistaken for a blanket permission in unrelated cases. Evangelium vitae §74 independently rejects direct participation in attacks on innocent human life or sharing the perpetrator's intention. Material cooperation still requires judgment about the nature of the act, proximity, proportionate reasons, scandal and realistic alternatives; some forms are gravely illicit.",
+            "fr": "Non. La théologie morale catholique distingue la coopération formelle, qui partage l'intention mauvaise et demeure toujours illicite, de la coopération matérielle, qui ne partage pas cette intention ; celle-ci peut être immédiate ou médiate, proche ou éloignée, et engage des responsabilités différentes. Une synthèse de l'Académie pontificale pour la vie (2005) expose précisément ces distinctions à propos des vaccins liés à des lignées cellulaires provenant d'avortements : cette application particulière ne saurait devenir une autorisation générale dans d'autres situations. Evangelium vitae (§74) rejette indépendamment la participation directe aux atteintes à la vie innocente ou l'adhésion à l'intention de leur auteur. La coopération matérielle exige encore d'apprécier l'acte, sa proximité, les raisons proportionnées, le risque de scandale et les solutions de remplacement ; certaines formes sont gravement illicites."
+          },
+          "source_ids": [
+            "PAV_COOP_2005",
+            "EV_74"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    },
+    {
+      "id": "MOR-013",
+      "original_title_candidate": "Is refusing extraordinary treatment a form of suicide?",
+      "owner_reuse": [
+        "APOL-052"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "question_specific_primary_source_and_catholic_reply",
+          "text": {
+            "en": "No. Catechism §2278 allows discontinuing medical procedures that are burdensome, dangerous, extraordinary or disproportionate to the expected outcome, because the decision need not aim to cause death: it may acknowledge the limits of medicine. Section 2279 specifies that ordinary care must continue even if death appears imminent, and commends palliation. The moral difference is between accepting an illness's course and deliberately causing death through action or omission (§2277), not a simplistic rule that every available life-prolonging procedure must always be undertaken. Actual decisions require proportionate medical and ethical assessment.",
+            "fr": "Non. Le Catéchisme (§2278) permet d'interrompre des procédures lourdes, dangereuses, extraordinaires ou disproportionnées au bénéfice attendu, car il ne s'agit pas nécessairement de vouloir provoquer la mort, mais de reconnaître les limites de la médecine. Le §2279 précise que les soins ordinaires demeurent dus même quand la mort paraît imminente et recommande les soins palliatifs. La distinction morale oppose l'acceptation de l'évolution d'une maladie au fait de provoquer délibérément la mort par acte ou omission (§2277), sans imposer systématiquement toute procédure disponible pour prolonger la vie. Chaque décision appelle une évaluation médicale et éthique proportionnée."
+          },
+          "source_ids": [
+            "CCC-LIFE"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER",
+      "question_provenance": "INDEX_TITLE_NOT_RAW_VERBATIM_CERTIFIED"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}
