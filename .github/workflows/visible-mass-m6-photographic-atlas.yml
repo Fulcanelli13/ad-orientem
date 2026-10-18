@@ -42,7 +42,9 @@ jobs:
       - name: Save reviewable photographic coverage atlas
         uses: actions/upload-artifact@v4
         with:
-          name: Visible-Mass-M6-Photographic-Atlas-Review
-          path: dist/visible-mass/The_Visible_Mass_M6_Photographic_Atlas_Review.html
+          name: Visible-Mass-M6-Comparative-Photo-Review
+          path: |
+            dist/visible-mass/The_Visible_Mass_M6_Photographic_Atlas_Review.html
+            previews/visible-mass-3d/Ad_Orientem_M6_Acquired_Photo_Review_112.html
           if-no-files-found: error
           retention-days: 30
