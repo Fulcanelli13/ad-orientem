@@ -69,13 +69,16 @@ try{
      const scroller=root?.querySelector(".ao-prayer-card");
      const body=root?.querySelector("[data-role='paragraphs']");
      const rows=[...(body?.querySelectorAll(".ao-reader-paragraph")||[])];
+     const eligible=rows.filter(x=>x.dataset.kind!=="RUBRIC"&&x.getClientRects().length&&!x.hidden);
      const r={id:current?.step?.recordId,cardId:current?.card?.id,cardUpdate:current?.step?.cardUpdate,
       index:current?.index,sourceRows:current?.card?.paragraphs?.length||0,
       visibleRows:rows.filter(x=>x.getClientRects().length).length,
       domText:body?.textContent?.trim().length||0,
       sourceCueRows:rows.filter(x=>x.dataset.cueId).length,
       activeCueRows:rows.filter(x=>x.dataset.active==="true").length,
-      dimRows:rows.filter(x=>Number(getComputedStyle(x).opacity)<.5).length,
+      focusEligible:eligible.length,
+      focusActive:eligible.filter(x=>x.dataset.aoDistinctReadingActive==="true").length,
+      dimRows:eligible.filter(x=>Number(getComputedStyle(x).opacity)<.5).length,
       viewportOverflow:document.documentElement.scrollWidth-innerWidth,
       maxScroll:scroller?Math.max(0,scroller.scrollHeight-scroller.clientHeight):null,
       owner:root?.dataset.r17CardOwner,
@@ -91,6 +94,10 @@ try{
     assert.ok(datum.domText>0,scenario.id+"/"+datum.id+" source card rendered blank");
     assert.ok(datum.visibleRows>0,scenario.id+"/"+datum.id+" no visible DOM prayer paragraph");
     assert.ok(datum.viewportOverflow<=2,scenario.id+"/"+datum.id+" horizontal phone overflow");
+    assert.equal(datum.focusActive,datum.focusEligible>0?1:0,
+      scenario.id+"/"+datum.id+" active text focus is not unique");
+    if(datum.focusEligible>=2)assert.ok(datum.dimRows>0,
+      scenario.id+"/"+datum.id+" adjacent text does not mute in distinct rite");
    }
    row.status="source-steps-rendered";
    assert.equal(new Set(row.steps.map(x=>x.id)).size,init.total,scenario.id+" duplicate or missed source step");
