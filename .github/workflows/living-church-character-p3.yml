@@ -5,10 +5,12 @@ on:
     paths:
       - "assets/living-church/**"
       - "data/learn/living-church-character-assets.v1.json"
+      - "data/learn/living-church-canon-formation-referral-contract.v1.json"
       - "src/learn/living-church-character-folio.js"
       - "src/learn/living-church-ask-integration.js"
       - "src/learn/visible-mass-review.js"
       - "tests/living-church-character-*.mjs"
+      - "tests/living-church-canon-source-contract.mjs"
       - ".github/workflows/living-church-character-p3.yml"
   workflow_dispatch:
 
@@ -33,6 +35,7 @@ jobs:
           node --check src/learn/living-church-character-folio.js
           node --check src/learn/visible-mass-review.js
           node tests/living-church-character-folio.mjs
+          node tests/living-church-canon-source-contract.mjs
           node tests/living-church-ask-native-return.mjs
           node tests/living-church-visible-mass-adapter.mjs
           node tests/ask-church-objective-engine.mjs
