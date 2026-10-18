@@ -100,9 +100,10 @@ for(const [corpus,form] of [[low,"LOW"],[sung,"MISSA_CANTATA_SIMPLE"]]){
 assert.equal(present.filter(x=>x.cueId==="AO.SM.C0122").length,4,
  "Incensation Psalm must be visible in LOW/SUNG both reader languages");
 for(const row of present.filter(x=>x.cueId==="AO.SM.C0122")){
- assert.ok([row.primary,row.alternate,row.secondary].some(s=>
-   String(s??"").includes("Let my prayer, O Lord, like incense before You")),
-   "Audited corrupt English sentence was not found in active Ordo Missae projection");
+ const phrase=row.lang==="en"?"Let my prayer, O Lord, like incense before You":
+   "Seigneur, que ma prière s’élève devant Vous comme l’encens";
+ assert.ok([row.primary,row.alternate,row.secondary].some(s=>String(s??"").includes(phrase)),
+   "Audited "+row.lang+" incensation Psalm is absent from "+row.form+" active Ordinary reader");
 }
 for(const row of present.filter(x=>x.cueId==="AO.SM.C0194")){
  assert.ok([row.primary,row.alternate,row.secondary].some(s=>
