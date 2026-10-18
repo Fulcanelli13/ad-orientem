@@ -1,0 +1,112 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_ASSISTANT_PHOTO_PRESELECTION_V1",
+  "date": "2026-10-19",
+  "branch_intent": "RESEARCH_ONLY_UNAPPROVED",
+  "selected_from": "Ad_Orientem_M6_Rapid_30_Object_Offline_Photos.html",
+  "inspected_medium": "45 distinct source-owned embedded ~520 px image previews, not originals; prior original-pixel audit available for only three chalice photos",
+  "original_photo_qa_coverage": "3/20; remaining 17 original pixels not inspected",
+  "method": "First priority plain neutral background and complete, single liturgical object; then sharpness, natural color/lighting, representativeness of Roman-rite use, source license. Distinguish recommendations from user ratings and release approval.",
+  "user_ratings_modified": false,
+  "publication_approved": false,
+  "recommendations": [
+    {
+      "object_id": "SV01",
+      "label": "Chalice",
+      "preferred_asset_id": "M6B18-CLERMONT-CHALICE-BIAIS-RONDELET",
+      "other_asset_ids": [
+        "M6B18-CLERMONT-CHALICE-SILVER",
+        "M6B15-SV01-GENOA-1780-DADEROT",
+        "EXISTING-SV01"
+      ],
+      "rationale": "Full traditional chalice with good silhouette against a pale, relatively simple museum display; low distraction. Existing MET white-background image would require cropping to isolate the chalice.",
+      "restriction": "B18 individual image attribution/licence pending. Genoa 1780 is the source-identified fallback; avoid Genoa pre-1777 intruding second chalice and Seville low contrast."
+    },
+    {
+      "object_id": "SV02",
+      "label": "Paten",
+      "preferred_asset_id": "EXISTING-SV02",
+      "other_asset_ids": [
+        "M6B17-SV02-CLERMONT-STSAMSON-19C20C",
+        "M6B16-SV02-SPAIN-MET-17190366"
+      ],
+      "rationale": "Existing MET studio image has almost plain white background and very clear physical shape of the paten at left.",
+      "restriction": "Preferred only after paten-only crop. Source image contains a chalice, so it is not a compliant standalone primary without cropping; Spanish MET is historical-only."
+    },
+    {
+      "object_id": "SV03",
+      "label": "Ciborium",
+      "preferred_asset_id": "EXISTING-SV03",
+      "other_asset_ids": [
+        "M6B17-SV03-EVELLIN-1962",
+        "M6B17-SV03-ABBEVILLE-PUCHE-19C"
+      ],
+      "rationale": "Single complete covered vessel with distinctive cross, isolated on almost pure neutral background. Strongest immediate teaching silhouette.",
+      "restriction": "Studio image is grayscale and historical; Evellin is clearer color alternate but stylistically austere, not necessarily representative of ordinary 1962 Mass."
+    },
+    {
+      "object_id": "LN03",
+      "label": "Chalice pall",
+      "preferred_asset_id": "M6B18-ABBEVILLE-PALL-IHS",
+      "other_asset_ids": [
+        "M6B18-ABBEVILLE-PALL-PELICAN",
+        "M6B18-CLERMONT-PALL-EMBROIDERED"
+      ],
+      "rationale": "Full square pall, centered on neutral background; red/gold embroidered IHS is readily recognizable. Pelican pall is also excellent.",
+      "restriction": "B18 creator and individual photo licence not yet checked. Earlier MET textile collage is not a useful isolated pall primary."
+    },
+    {
+      "object_id": "LN04",
+      "label": "Corporal burse",
+      "preferred_asset_id": "M6B16-LN04-STGALLEN-BURSE-3348",
+      "other_asset_ids": [
+        "M6B16-LN04-COOPER-HEWITT-19C",
+        "M6B16-LN04-RENNES-CORPORAL-1900"
+      ],
+      "rationale": "Single complete square burse photographed straight-on against restrained gray/beige wall. Rich decoration, minimal surrounding objects.",
+      "restriction": "Cooper Hewitt is best white-background alternative; some alternatives include exhibit labels, other textiles or plinths."
+    },
+    {
+      "object_id": "LN05",
+      "label": "Chalice veil",
+      "preferred_asset_id": "M6B16-LN05-POLAND-CHRIST-COLUMN",
+      "other_asset_ids": [
+        "M6B16-LN05-FRANCE-MET-1632-330",
+        "M6B16-LN05-FRANCE-COOPER-HEWITT-18383717"
+      ],
+      "rationale": "Complete square veil isolated against black, with clear edge separation and good textile detail.",
+      "restriction": "Historical textile identification only. Need separate in-use image showing a veil over the prepared chalice before using it to teach arrangement."
+    },
+    {
+      "object_id": "AL16",
+      "label": "Three altar cards",
+      "preferred_asset_id": null,
+      "ensemble_asset_ids": [
+        "M6B18-CLERMONT-ALTAR-CARDS-LEFT",
+        "M6B18-CLERMONT-ALTAR-CARDS-CENTRE",
+        "M6B18-CLERMONT-ALTAR-CARDS-RIGHT"
+      ],
+      "rationale": "Three good frontal color photos from one coherent Catholic altar-card set. Assemble left, center and right into one correctly ordered teaching illustration, preserving independent source references.",
+      "restriction": "Not three alternative sets. B18 attribution and rights pending. One central card alone is not a representation of all three."
+    },
+    {
+      "object_id": "EQ01",
+      "label": "Wine cruet",
+      "preferred_asset_id": null,
+      "context_asset_ids": [
+        "M6B18-CLERMONT-CRUETS-GLASS-GILT"
+      ],
+      "rationale": "The glass and gilt pair is a reasonable combined context photo on a light surface, but it cannot identify which of the two contains wine.",
+      "restriction": "Do not nominate a wine-cruet primary until isolated or documented A/V designation is verified. EQ01 and EQ02 share source."
+    },
+    {
+      "object_id": "EQ02",
+      "label": "Water cruet",
+      "preferred_asset_id": null,
+      "context_asset_ids": [
+        "M6B18-CLERMONT-CRUETS-GLASS-GILT"
+      ],
+      "rationale": "The same cleanest cruet-pair photo can illustrate paired liturgical vessels but does not establish which is water.",
+      "restriction": "Do not nominate a water-cruet primary until the individual vessel is identified from the source."
+    }
+  ]
+}
