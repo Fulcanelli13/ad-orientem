@@ -57,6 +57,9 @@ try{
   await page.locator("#search").fill("");
   await page.locator("#mode-images").click();
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,75);
+  await page.locator("#search").fill("M6B9-EQ07-EQ08-TUSCAN-THURIBLE-BOAT");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.match(await page.locator("#results").innerText(),/Linked objects EQ07, EQ08/);
   await page.locator("#search").fill("M6B8-VE15-VIOLET-EUGENIO-HANSEN");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/Eugenio Hansen/);
