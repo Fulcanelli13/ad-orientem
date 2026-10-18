@@ -40,7 +40,13 @@
     "historical_illustration_leads": 1,
     "rights_unknown_discovery_leads": 1,
     "no_prior_object_image_or_hotspot": 147,
-    "new_m6_total_candidate_records": 6
+    "new_m6_total_candidate_records": 6,
+    "second_batch_new_licensed_photo_candidates": 7,
+    "m6_all_research_records": 13,
+    "post_second_batch_photo_candidate_or_hotspot": 32,
+    "post_second_batch_needs_photo": 138,
+    "post_second_batch_pilot_needs_photo": 4,
+    "post_second_batch_vestment_photo_candidates": 6
   },
   "zones": [
     {
@@ -890,15 +896,20 @@
       "intended_navigation": "Z",
       "pilot_30": true,
       "pilot_photo_evidence": "NO_DIRECT_SCENE_EVIDENCE",
-      "evidence_status": "RESEARCH_LEAD_ONLY",
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
       "candidate_assets": [
         {
           "asset_id": "M6-AL13-1948-DICTIONARY-ILLUSTRATION",
           "role": "historical_reference",
           "evidence": "HISTORICAL_ILLUSTRATION_ONLY_NOT_PHOTOGRAPHIC_COVERAGE"
+        },
+        {
+          "asset_id": "M6B2-AL13-MET-GENOA-ALTAR-CLOTH",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
         }
       ],
-      "needs_photo": true
+      "needs_photo": false
     },
     {
       "object_id": "AL14",
@@ -1775,9 +1786,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B2-VE02-ENGELBERG-AMICE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE03",
@@ -1817,9 +1834,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B2-VE05-MET-ITALIAN-STOLE-SET",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE06",
@@ -1831,9 +1854,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B2-VE06-VATICAN-CLEMENT-VIII-MANIPLE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE07",
@@ -1845,9 +1874,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B2-VE07-MET-ITALIAN-CHASUBLE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE08",
@@ -1859,9 +1894,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B2-VE08-CAORLE-ST-PIUS-X-ROMAN-CHASUBLE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE09",
@@ -1873,9 +1914,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B2-VE09-ST-IGNATIUS-DALMATIC",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE10",
@@ -3194,6 +3241,118 @@
       "source_description": "Single altar candlestick of Igreja do Santíssimo Sacramento de Sant'Ana, Salvador, Brazil. Not the Brompton candlestick arrangement and not a six-candle count certification.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_WEB"
+    },
+    {
+      "asset_id": "M6B2-AL13-MET-GENOA-ALTAR-CLOTH",
+      "object_id": "AL13",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Altar_cloth_MET_47677.jpg",
+      "creator": "Metropolitan Museum of Art (open-access collection photograph; individual photographer not specified)",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 2329,
+      "height": 2937,
+      "venue": "Metropolitan Museum of Art; Italian (Genoese) 16th-century altar cloth",
+      "source_description": "Actual historical Roman Catholic altar linen textile in a museum collection. An individual lace cloth only: not a photograph of three linen coverings in situ or a specific 1962 altar arrangement.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH2"
+    },
+    {
+      "asset_id": "M6B2-VE02-ENGELBERG-AMICE",
+      "object_id": "VE02",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shoulder_cloth_(amice),_Benedictine_convent_of_Engelberg,_Switzerland,_c._1300-1310,_white_linen_fabric,_linen_and_colored_silk_embroidery_-_Museum_Schnütgen_-_Cologne,_Germany_-_DSC09888.jpg",
+      "creator": "Daderot",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 3588,
+      "height": 4326,
+      "venue": "Museum Schnütgen, Cologne; Benedictine convent of Engelberg historical amice",
+      "source_description": "Authentic medieval Western Benedictine amice, photographed in a Catholic-museum context. Its historic decoration and shape should not be presented as a typical 1962 serving exemplar.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH2"
+    },
+    {
+      "asset_id": "M6B2-VE05-MET-ITALIAN-STOLE-SET",
+      "object_id": "VE05",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chasuble,_stole_and_maniple_MET_27.341a-c_front_CP4.jpg",
+      "creator": "Metropolitan Museum of Art (open-access collection photograph; individual photographer not specified)",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 2291,
+      "height": 4000,
+      "venue": "Metropolitan Museum of Art; Italian vestment set of 1704",
+      "source_description": "Stole appears in a documented three-piece Italian Catholic vestment ensemble with chasuble and maniple. Group photograph; inspect how clearly the stole is individually distinguishable. Not a photo of liturgical use.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH2"
+    },
+    {
+      "asset_id": "M6B2-VE06-VATICAN-CLEMENT-VIII-MANIPLE",
+      "object_id": "VE06",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maniple,_with_Instruments_of_the_Passion,_1593-1597,_silk,_gilt_silver_-_Mass_vestments_of_Pope_Clement_VIII_Aldobrandini_-_Sala_degli_Indirizzi_di_Pio_IX_-_Vatican_Museums_-_DSC00675.jpg",
+      "creator": "Daderot",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 3548,
+      "height": 4779,
+      "venue": "Vatican Museums, Rome; vestments of Pope Clement VIII",
+      "source_description": "An identifiable late-16th-century maniple and stole in a Vatican Museums display. Historic artefact, not proof of precise 1962 vesting or rite.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH2"
+    },
+    {
+      "asset_id": "M6B2-VE07-MET-ITALIAN-CHASUBLE",
+      "object_id": "VE07",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chasuble,_stole_and_maniple_MET_11.641a-c_front_CP4.jpg",
+      "creator": "Metropolitan Museum of Art (open-access collection photograph; individual photographer not specified)",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 2373,
+      "height": 4000,
+      "venue": "Metropolitan Museum of Art; 17th-century Italian vestment ensemble",
+      "source_description": "Genuine Italian Roman Catholic chasuble photographed with stole and maniple in a museum. Representative historic form; does not establish that it is the preferable contemporary 1962 model.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH2"
+    },
+    {
+      "asset_id": "M6B2-VE08-CAORLE-ST-PIUS-X-ROMAN-CHASUBLE",
+      "object_id": "VE08",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pianeta_San_Pio_X_Caorle.jpg",
+      "creator": "Copholon",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3024,
+      "height": 4032,
+      "venue": "Liturgical Museum of Caorle, Italy; Roman chasuble attributed to St Pius X",
+      "source_description": "Museum-identified historical Roman-style chasuble attributed to Pope St Pius X. Original single-object photograph. Attribution to this historic garment is the museum/photographer's claim; not a Mass-in-use photograph.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH2"
+    },
+    {
+      "asset_id": "M6B2-VE09-ST-IGNATIUS-DALMATIC",
+      "object_id": "VE09",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dalmatic,_19th_century,_silk,_view_1_-_Saint_Ignatius_Church,_San_Francisco,_CA_-_DSC02641.JPG",
+      "creator": "Daderot",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 5034,
+      "height": 3546,
+      "venue": "Saint Ignatius Church, San Francisco; historical dalmatic exhibit",
+      "source_description": "19th-century silk dalmatic photographed at a Catholic-church exhibition, not worn during Solemn Mass. Confirm object shape and suitability for explaining the role of a deacon.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH2"
     }
   ]
 }
