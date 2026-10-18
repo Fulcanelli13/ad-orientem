@@ -1,5 +1,9 @@
 /** Discreet, mirrored Latin crosses; navigation targets are larger than the ink. */
 export const CRUCIFORM_NAVIGATION_CSS=String.raw`
+/* Short Angelus movements still need real vertical travel for the focus line. */
+#aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoDevoCardScroll{
+ padding-bottom:max(50dvh,320px);
+}
 #aoPray435930 .aoCrossPair{
  position:fixed;inset:0;z-index:120;pointer-events:none;
  color:var(--liturgical,#c8b28a);
