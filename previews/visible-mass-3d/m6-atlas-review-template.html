@@ -143,10 +143,13 @@ function researchCue(item){
  const orientation=item.orientation_annotation;
  if(orientation){
   const direction=orientation.viewer_side==="LEFT"?"viewer’s left (Gospel side)":"viewer’s right (Epistle side)";
-  return '<div class="asset"><div class="asset-title">Orientation rule · awaiting photo viewpoint verification</div>'+
+  const frame=orientation.source_frame_review;
+  const verified=frame?.directional_label_supported&&frame?.exif_orientation==="Normal"&&frame?.viewer_position==="NAVE_FACING_HIGH_ALTAR"&&frame?.approval==="RESEARCH_ONLY_NOT_RELEASE_SIGNOFF";
+  const source=verified&&frame.source_url==="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg"?'<a class="source" href="'+quoteAttr(frame.source_url)+'" target="_blank" rel="noopener noreferrer">Original verified Brompton viewpoint ↗</a>':'';
+  return '<div class="asset"><div class="asset-title">'+(verified?'Original nave-facing source verified · directional research only':'Orientation rule · source-frame verification outstanding')+'</div>'+
    '<p class="detail">From the nave facing the high altar: '+esc(direction)+'. Original source: '+esc(orientation.source_asset_id)+'. No independent photograph or clickable hotspot has been approved.</p>'+
-   '<p class="detail">Mirror state and exact camera orientation must be checked before placing this label.</p>'+
-   '<a class="source" href="https://www.newadvent.org/cathen/01356e.htm" target="_blank" rel="noopener noreferrer">Rubrical orientation source ↗</a></div>';
+   '<p class="detail">'+(verified?'Original camera frame and EXIF orientation checked. Final interface must preserve direction without mirroring or mislabelling under crop/rotation.':'Original frame and mirror state must be confirmed before placing the directional label.')+'</p>'+
+   source+' <a class="source" href="https://www.newadvent.org/cathen/01356e.htm" target="_blank" rel="noopener noreferrer">Rubrical orientation source ↗</a></div>';
  }
  const lead=item.context_scene_lead;
  if(lead){
