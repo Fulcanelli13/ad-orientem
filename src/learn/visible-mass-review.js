@@ -130,6 +130,7 @@ export function createVisibleMassReviewRuntime(win=globalThis){
      if(askLoading)return;
      askLoading=true;askButton.disabled=true;
      try{
+      characterFolio?.hide?.();
       if(!askIntegration){
        const mod=await import("./living-church-ask-integration.js");
        const response=await win.fetch(new URL("../../data/learn/ask-church-app-route-survey.v1.json",import.meta.url));
@@ -147,6 +148,36 @@ export function createVisibleMassReviewRuntime(win=globalThis){
       win?.console?.warn?.("Ask the Church source-owner connection failed",error);
      }finally{askLoading=false;askButton.disabled=false;}
     };
+    if(characterReviewEnabled()){
+     charactersButton.onclick=async()=>{
+      if(characterLoading)return;
+      characterLoading=true;charactersButton.disabled=true;
+      try{
+       let survey;
+       if(!askIntegration){
+        const mod=await import('./living-church-ask-integration.js');
+        const response=await win.fetch(new URL('../../data/learn/ask-church-app-route-survey.v1.json',import.meta.url));
+        if(!response.ok)throw Error('Original Ask route registry unavailable');
+        survey=await response.json();
+        askIntegration=mod.createLivingChurchAskIntegration(win,{frame,returnButton:askReturnButton,survey});
+       }
+       askIntegration.hideGuide?.();
+       if(!characterFolio){
+        if(!survey){
+         const response=await win.fetch(new URL('../../data/learn/ask-church-app-route-survey.v1.json',import.meta.url));
+         if(!response.ok)throw Error('Original Ask route registry unavailable');
+         survey=await response.json();
+        }
+        const mod=await import('./living-church-character-folio.js');
+        characterFolio=await mod.mountLivingChurchCharacterFolio(win,{host:node,frame,integration:askIntegration,survey});
+       }else if(!characterFolio.show())throw Error('Original selected photo is not source-verified');
+       disclaimer.textContent='Three-guide review · original source records only · no historical speech attributed';
+      }catch(error){
+       disclaimer.textContent='Select an original photograph object before opening the three guides.';
+       win?.console?.warn?.('Living Church character stage unavailable',error);
+      }finally{characterLoading=false;charactersButton.disabled=false;}
+     };
+    }
    }
    return node;
  }
