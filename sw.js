@@ -13,7 +13,8 @@ const VERCEL_WEB_PREVIEW=/\.vercel\.app$/i.test(BASE.hostname);
 const ROOT=new URL("index.html",BASE).href;
 const KEY=new URL("__ao_bootstrap_state__",BASE).href;
 const READY=new URL("__ao_bootstrap_completed__",BASE).href;
-const MAX_ITEMS=320,MAX_BYTES=35_000_000;
+// Keep a hard byte ceiling, but allow the expanded canonical module graph.
+const MAX_ITEMS=512,MAX_BYTES=35_000_000;
 let stagedJob=null,activeVersion=null;
 const liveClients=new Map();
  // Only the first-use Prayer graph is promoted from a lazy module graph into
