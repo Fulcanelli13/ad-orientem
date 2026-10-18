@@ -162,7 +162,7 @@ const gradineSources=atlas.objects.find(o=>o.object_id==="AL10").context_scene_l
 assert.ok(gradineSources.additional_rights_unknown_research_url.startsWith("https://www.friendsofflorence.org/"));
 const ars=batch5.find(x=>x.object_id==="AL10");
 assert.equal(ars.external_object_record_url,"https://pop.culture.gouv.fr/notice/palissy/PM01002646");
-assert.ok(ars.source_description.includes("pixel-level gradine boundaries remain unreviewed".slice(0,20))===false || ars.source_description.includes("Pixel-level gradine boundaries remain unreviewed"));
+assert.match(ars.source_description,/Pixel-level gradine boundaries remain unreviewed/);
 assert.equal(ars.role,"context_detail");
 assert.ok(!atlas.objects.find(o=>o.object_id==="AL10").needs_photo);
 
