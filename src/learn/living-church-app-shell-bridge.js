@@ -12,7 +12,7 @@ const approved=result=>result===true||result?.ok===true;
 export function installLivingChurchCatechismShellBridge(win,{frame,reviewRoot,enabled}={}){
  if(!win?.document||!frame||typeof reviewRoot!=="function"||typeof enabled!=="function")
   throw Error("Visible Mass host reference and review gate required");
- let owned=false,busy=false,savedStyle=null,disposed=false;
+ let owned=false,busy=false,savedStyle=null,disposed=false,lastOpening=null;
  const parentButton=win.document.createElement("button");
  parentButton.type="button";parentButton.id="ao-living-church-native-return";parentButton.hidden=true;
  parentButton.textContent="Return to the Living Church";
@@ -58,12 +58,14 @@ export function installLivingChurchCatechismShellBridge(win,{frame,reviewRoot,en
   busy=true;
   try{
    const opened=await win.AO_MODULES.open("learn.catechism",{});
+   lastOpening={stage:"registry",opened,learn:win.AO_LEARN_APP_V1?.status?.()};
    if(!approved(opened))return fail("NATIVE_REGISTRY_REJECTED");
    // The existing 433-question owner, not Living Church, selects the text.
    const {openNativeCatechismQuestion}=await import("./catechism-guided-reader.js");
    const focused=await openNativeCatechismQuestion(win,322,
      win.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"?"fr":"en");
    const node=win.document.getElementById("ao-cate-root");
+   lastOpening={stage:"focused",focused,hasNode:!!node,hidden:node?.hidden,learn:win.AO_LEARN_APP_V1?.status?.()};
    if(!focused||!node||node.hidden||!win.AO_TRADITIONAL_CATECHISM)
     return fail("ORIGINAL_Q322_NOT_FOCUSED");
    const host=reviewRoot();if(!host?.contains(frame))return fail("VIEWER_REMOVED");
@@ -72,7 +74,7 @@ export function installLivingChurchCatechismShellBridge(win,{frame,reviewRoot,en
    owned=true;
    parentButton.hidden=false;
    return Object.freeze({ok:true,owner:"AO_TRADITIONAL_CATECHISM",question:322});
-  }catch{return fail("NATIVE_CATECHISM_EXCEPTION");}
+  }catch(error){lastOpening={stage:"exception",message:String(error?.message||error)};return fail("NATIVE_CATECHISM_EXCEPTION");}
   finally{
    if(!owned){
     try{win.AO_TRADITIONAL_CATECHISM?.close?.()}catch{}
@@ -105,7 +107,7 @@ export function installLivingChurchCatechismShellBridge(win,{frame,reviewRoot,en
  };
  return Object.freeze({
   api:Object.freeze({version:LIVING_CHURCH_SHELL_BRIDGE_VERSION,
-   open,restore,status:()=>Object.freeze({owned,busy,available:!disposed&&enabled()})}),
+   open,restore,status:()=>Object.freeze({owned,busy,available:!disposed&&enabled(),lastOpening})}),
   status:()=>Object.freeze({owned,busy,returnVisible:!parentButton.hidden}),
   dispose(){
    if(owned)try{win.AO_TRADITIONAL_CATECHISM?.close?.()}catch{}
