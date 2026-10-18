@@ -33,7 +33,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  root.innerHTML='<div class="lc-bg"></div><div class="lc-shade"></div><header class="lc-head"><div><small>AD ORIENTEM · REVIEW ONLY</small><div><strong>The Living Church</strong></div></div><button data-close>Return to photograph</button></header><nav class="lc-guides" aria-label="Choose a guide"></nav><div class="lc-small">Original Brompton Oratory photograph<br>Scripted, non-authoritative dialogue</div><img class="lc-sprite" alt=""><div class="lc-missing" hidden role="status">The approved character portrait is not yet installed in this research branch. Its locked original must be imported; no substitute will be generated.</div><section class="lc-panel" aria-label="Visual novel dialogue"><span class="lc-name"></span><p class="lc-dialogue" aria-live="polite"></p><section class="lc-source-record" aria-label="Original source excerpt" hidden></section><p class="lc-note" hidden>Scripted educational preview; original source owners remain authoritative.</p><div class="lc-actions"></div><div class="lc-objective-door"><button type="button" data-objectives>Choose a learning objective</button></div><form class="lc-ask"><input maxlength="240" aria-label="Ask a question" placeholder="Ask about something in the church…"><button>Ask</button></form></section>';
  doc.body.append(root);
  const el=s=>root.querySelector(s),people=el(".lc-guides"),action=el(".lc-actions"),sprite=el(".lc-sprite");
- const state={id:"welcome",guide:"sacristan",question:null,history:[],open:false,returnToken:null,nativePending:false,nativeFailure:null,selectedObjective:null,sourceReadCount:0,sourceOpen:null,sourcePending:false};
+ const state={id:"welcome",guide:"sacristan",question:null,history:[],open:false,returnToken:null,nativePending:false,nativeFailure:null,selectedObjective:null,sourceReadCount:0,sourceOpen:null,sourcePending:false,sourceRecord:null,sourceHistory:[]};
  let directorPromise=null;
  const getDirector=()=>directorPromise??=(import("./living-church-objective-director.mjs")
    .then(m=>m.loadLivingChurchObjectives({language:context.status()?.context?.lang||"en"}))
@@ -43,7 +43,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
   b.onclick=handler;action.append(b);return b;
  }
  const sourcePanel=el(".lc-source-record");
- function clearSource(){sourcePanel.hidden=true;sourcePanel.replaceChildren();state.sourceOpen=null;}
+ function clearSource(){sourcePanel.hidden=true;sourcePanel.replaceChildren();state.sourceOpen=null;state.sourceRecord=null;}
  const safe=(tag,cls,value)=>{const e=doc.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=String(value);return e;};
  function renderSource(record){
   sourcePanel.replaceChildren();
@@ -75,7 +75,10 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
     el(".lc-dialogue").textContent="No approved source extract is available here ["+(record?.reason||"unavailable")+"]. Choose another reference.";
     addSourceActions(director);return false;
    }
-   state.sourceOpen=record.id;state.sourceReadCount++;
+   state.sourceOpen=record.id;state.sourceRecord=record;state.sourceReadCount++;
+   // Keep source IDs only; do not retain the user's private free-text messages in this log.
+   state.sourceHistory.push(record.id);
+   if(state.sourceHistory.length>12)state.sourceHistory.shift();
    // These are editor/source-owner words, NEVER an impersonated historical quotation.
    el(".lc-dialogue").textContent="The following passage comes from "+record.owner+
     ", not from an invented statement by "+roles[state.guide].name+".";
@@ -87,12 +90,25 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
    addSourceActions(director);return false;
   }finally{state.sourcePending=false;}
  }
+ function readableSource(id){
+  if(id.startsWith("apostolate:"))return "Question "+id.split(":")[1];
+  if(id==="learn.mass_explorer")return "Mass Explorer";
+  if(id==="learn.catechism")return "Original Catechism";
+  if(id==="pray.confession")return "Confession preparation";
+  return id.replace(/^learn\./,"Formation: ").replace(/^pray\./,"Prayer: ").replace(/[._]/g," ");
+ }
  function addSourceActions(director){
   action.replaceChildren();
   const selection=state.selectedObjective;
   if(!selection)return;
   for(const id of selection.sourceRoutes.slice(0,4).filter(x=>x!==state.sourceOpen))
-   addChoice("Read "+id,()=>openSource(director,id));
+   addChoice("Read "+readableSource(id),()=>openSource(director,id));
+  if(state.sourceHistory.length>1)addChoice("Earlier references",()=>{
+    action.replaceChildren();
+    for(const id of [...new Set(state.sourceHistory)].reverse())
+      addChoice("Revisit "+readableSource(id),()=>openSource(director,id));
+    addChoice("Back to current source",()=>addSourceActions(director));
+  });
   addChoice("Back to subject",()=>presentObjective(selection));
   addChoice("Consult "+roles[selection.guide].name,
    ()=>visit(selection.guide==="sacristan"?"altar":selection.guide==="canon"?"canon":"pius"));
@@ -222,6 +238,30 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  }
  async function ask(q){
   q=String(q||"").trim();if(!q)return false;state.question=q;
+  // A follow-up works only on the source record explicitly opened by the visitor.
+  // Do not infer new theology or impersonate a historical guide.
+  if(state.sourceRecord&&state.selectedObjective){
+   const normalized=q.toLowerCase();
+   if(/^(why|explain|tell me more|more detail|how come|pourquoi|explique)/.test(normalized)){
+    const detail=sourcePanel.querySelector("details");
+    if(detail){detail.open=true;el(".lc-dialogue").textContent="Expanded explanation from "+
+       state.sourceRecord.owner+"; this is the owning module's text, not a generated answer.";
+    }else el(".lc-dialogue").textContent="The original module supplies no longer approved explanation here.";
+    return true;
+   }
+   if(/\b(source|sources|citation|reference|references|proof|origine|source|référence)\b/i.test(q)){
+    el(".lc-dialogue").textContent=state.sourceRecord.sources.length?
+      "References supplied by "+state.sourceRecord.owner+" appear below the excerpt.":
+      "This excerpt is a module description only; no external source citation is certified here.";
+    return true;
+   }
+   if(/^(next|another|other|more references|suivant|autre)/.test(normalized)){
+    const ids=state.selectedObjective.sourceRoutes.filter(x=>x!==state.sourceOpen);
+    if(ids.length)return openSource(await getDirector(),ids[0]);
+    el(".lc-dialogue").textContent="No additional approved source extract is listed for this objective.";
+    return true;
+   }
+  }
   try{
    const director=await getDirector();
    const suggested=director.interpret(q);
@@ -252,5 +292,5 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  button.onclick=open;el("[data-close]").onclick=close;
  el(".lc-ask").onsubmit=e=>{e.preventDefault();const i=el(".lc-ask input");ask(i.value);i.value="";};
  root.addEventListener("keydown",e=>{if(e.key==="Escape"){e.stopPropagation();close();}});
- return Object.freeze({open,close,visit,ask,openObjectives,returnFromNative,status:()=>Object.freeze({version:LIVING_CHURCH_SCENE_VERSION,open:state.open,guide:state.guide,node:state.id,question:state.question,historyCount:state.history.length,sourceReadCount:state.sourceReadCount,sourceOpen:state.sourceOpen,selectedObjective:state.selectedObjective?.branch||null,nativeHandoffPending:state.nativePending,nativeReturnAvailable:!!state.returnToken,nativeFailure:state.nativeFailure,canonicalOwner:"EXISTING_CATECHISM_VISIBLE_MASS_AND_MASS_EXPLORER",published:false}),dispose:()=>{if(state.returnToken)throw Error("Cannot dispose active native Catechism return");button.remove();returnBtn.remove();root.remove();style.remove();}});
+ return Object.freeze({open,close,visit,ask,openObjectives,returnFromNative,status:()=>Object.freeze({version:LIVING_CHURCH_SCENE_VERSION,open:state.open,guide:state.guide,node:state.id,question:state.question,historyCount:state.history.length,sourceReadCount:state.sourceReadCount,sourceHistoryCount:state.sourceHistory.length,sourceOpen:state.sourceOpen,selectedObjective:state.selectedObjective?.branch||null,nativeHandoffPending:state.nativePending,nativeReturnAvailable:!!state.returnToken,nativeFailure:state.nativeFailure,canonicalOwner:"EXISTING_CATECHISM_VISIBLE_MASS_AND_MASS_EXPLORER",published:false}),dispose:()=>{if(state.returnToken)throw Error("Cannot dispose active native Catechism return");button.remove();returnBtn.remove();root.remove();style.remove();}});
 }
