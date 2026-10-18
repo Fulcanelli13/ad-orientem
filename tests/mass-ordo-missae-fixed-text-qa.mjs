@@ -97,6 +97,14 @@ for(const [corpus,form] of [[low,"LOW"],[sung,"MISSA_CANTATA_SIMPLE"]]){
   }
  }
 }
+assert.equal(present.filter(x=>x.cueId==="AO.SM.C0121").length,4,
+ "Incense prayer must be visible in both forms and both reader languages");
+for(const row of present.filter(x=>x.cueId==="AO.SM.C0121")){
+ const phrase=row.lang==="en"?"May this incense blessed by You, arise":
+   "Que cet encens béni par vous";
+ assert.ok([row.primary,row.alternate,row.secondary].some(s=>String(s??"").includes(phrase)),
+  "Incense opening is not projected into "+row.lang+"/"+row.form);
+}
 assert.equal(present.filter(x=>x.cueId==="AO.SM.C0122").length,4,
  "Incensation Psalm must be visible in LOW/SUNG both reader languages");
 for(const row of present.filter(x=>x.cueId==="AO.SM.C0122")){
