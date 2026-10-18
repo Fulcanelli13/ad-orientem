@@ -67,6 +67,9 @@ import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rub
 import { withPublishedMissalParagraphRubrics } from "./reader-missal-rubrics.js";
 import { withCertifiedSolemnMissalMinisters } from "./reader-missal-solemn-rubrics.js";
 import { createReaderGestureMatrixController } from "./reader-gesture-matrix.js";
+import { certifiedLiveCanonActionOverride } from "./reader-live-canon-action.js";
+import { createLiveCanonStageObservationController } from "./reader-live-canon-stage-observation.js";
+import { mountLiveCanonManualFollow,canonicalManualFollowContext } from "./reader-live-canon-manual-follow.js";
 import { resolvePriestChantAction, resolvePriestChantVoice, validatePriestChantObservation } from "./reader-priest-chant-owner.js";
 import { createObservedPriestEntranceController, projectObservedPreMassPriestAction } from "./reader-priest-entrance-observation.js";
 import { createObservedChalicePreparationController } from "./reader-priest-chalice-observation.js";
@@ -975,7 +978,7 @@ export async function mountNativeReaderPreview({
     host.querySelector?.(".ao-prayer-card")?.addEventListener?.("scroll",onGoodFridayScroll,{passive:true});
     showGoodFriday();
 
-    const api=Object.freeze({
+  const api=Object.freeze({
       root,
       reader,
       model:null,
@@ -1210,6 +1213,13 @@ export async function mountNativeReaderPreview({
   const chaliceObservationState=createObservedChalicePreparationController({
     resolvedMass:ready.prepared.session.resolvedMass
   });
+  // The live Canon action clock is driven exclusively by an independent
+  // observer. This does not modify the decorative cue-focused experience.
+  const canonStageObservation=ready.curatedEligible && ready.data?.rubricEvents
+    ? createLiveCanonStageObservationController({
+        registry:ready.data.rubricEvents,
+        form:ready.prepared.session.resolvedMass.form,
+      }):null;
   let sourceModel=ready.model;
   let readerModel=ready.presentationModel??ready.model;
   const mandatumController=ready.model?.mandatumSource
@@ -1219,6 +1229,7 @@ export async function mountNativeReaderPreview({
     }):null;
   let current=readerModel.cardBySequence(1);
   let reader=null;
+  let canonManualUI=null;
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
   let inAsh=Boolean(ready.ashController);
@@ -1249,6 +1260,7 @@ export async function mountNativeReaderPreview({
   let eventCinematic=null;
   let partCinemaTimer=null;
   let eventCinemaTimer=null;
+  let canonStageTimer=null;
   let lastEventCinemaCue=null;
   const transientGuard=createCardTransitionTransientGuard();
   const win=doc.defaultView ?? globalThis;
@@ -1371,6 +1383,11 @@ export async function mountNativeReaderPreview({
     const set=win?.setTimeout ?? globalThis.setTimeout;
     return typeof set==="function" ? set.call(win,fn,ms) : null;
   }
+  function clearCanonObservation(){
+    clearScheduledTimer(canonStageTimer);
+    canonStageTimer=null;
+    return canonStageObservation?.reset()??null;
+  }
   function armPartCinematic(next){
     clearScheduledTimer(partCinemaTimer);
     partCinemaTimer=null;
@@ -1469,6 +1486,11 @@ export async function mountNativeReaderPreview({
       })
     ));
     const transientProjection=activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null);
+    const observedCanon=canonStageObservation && current?.curatedPresentationReview===true &&
+      readerModel?.sourceModelTotalCards===39 &&
+      String(readerModel?.presentationMode).toUpperCase()==="LIVE" &&
+      canonStageObservation.snapshot().cueId===activeCueId
+        ? canonStageObservation.snapshot():null;
     const rubricProjection=activeCueId ? ready.rubricState.project(activeCueId) : ready.rubricState.project(null);
     const gestureMatrixProjection=activeCueId ? ready.gestureMatrixState.project(activeCueId) : ready.gestureMatrixState.project(null);
     const transient=transientGuard.filter({
@@ -1479,8 +1501,8 @@ export async function mountNativeReaderPreview({
     });
     const gesture=focusedFaithful ? focusedFaithful.gesture : transient.gesture;
     const response=transient.response;
-    const bell=transient.bell;
-    const cinematic=partCinematic ?? transient.cinematic;
+    const bell=observedCanon?.bell??transient.bell;
+    const cinematic=observedCanon?.cinematic??partCinematic??transient.cinematic;
     const priestPosition=observedPriest?.priestPosition ??
       (focusedFaithful?.conditionalSedilia
       ? Object.freeze({station:"SEDILIA",label:"AT SEDILIA",
@@ -1515,7 +1537,16 @@ export async function mountNativeReaderPreview({
       rubricAction?.iconKey && rubricAction.cueId===matrixAction.cueId
       ? Object.freeze({...matrixAction,iconKey:rubricAction.iconKey})
       : matrixAction;
-    const originalPriestAction=cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
+    // The C0185 frozen priest label omits the separately prescribed Chalice
+    // cross. Only in LIVE may the already certified matrix correct its
+    // wording; this does not claim the two gestures have been observed.
+    const canonLiveAction=certifiedLiveCanonActionOverride({
+      presentationMode:readerModel?.presentationMode,
+      curatedPresentation:current?.curatedPresentationReview===true &&
+        readerModel?.sourceModelTotalCards===39,
+      cueId:activeCueId,matrixAction:resolvedMatrixAction,
+    });
+    const originalPriestAction=canonLiveAction??cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
     const priestLane=resolvePriestChantAction({
       form,cueId:activeCueId,sourceClock:sourceCueClocks.get(activeCueId)??null,
       observation:observedPriestEvent,gestureMatrix:ready.data?.gestureMatrix,
@@ -1532,13 +1563,16 @@ export async function mountNativeReaderPreview({
       state:priestEntrance,activeCueId,
       preMassVisualWindowOpen:!enteredCanonicalCueSequence && current?.sequence===1
     });
-    const priestAction=observedPriest?.priestAction??preMassPriestAction??priestLane.priestAction;
+    const priestAction=observedCanon?.priestAction??observedPriest?.priestAction??preMassPriestAction??priestLane.priestAction;
     const ownership=Object.freeze({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
       response:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.response,
-      bell:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : transientProjection.ownership.bell,
-      cinematic:partCinematic
+      bell:observedCanon?.bell ? "INDEPENDENT_CANON_SERVER_OBSERVATION" :
+        transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : transientProjection.ownership.bell,
+      cinematic:observedCanon?.cinematic
+        ? "INDEPENDENT_CANON_PRIEST_OBSERVATION"
+        : partCinematic
         ? partCinematic.owner
         : transientGuard.pending
           ? "V1_83_CARD_TRANSITION_CLEARED"
@@ -1552,14 +1586,17 @@ export async function mountNativeReaderPreview({
       priestEntrance:priestEntrance.sourceOwner,
       priestVoice:observedPriest?.priestVoice ? "EXPLICIT_SOURCE_PRIEST_EVENT" : priestVoiceState.owner==="EXISTING_SOURCE_VOICE" ? owned.ownership.priestVoice : priestVoiceState.owner,
       priestPosition:observedPriest?.priestPosition ? "EXPLICIT_SOURCE_PRIEST_EVENT" : owned.ownership.priestPosition,
-      priestAction:observedPriest?.priestAction ? "EXPLICIT_SOURCE_PRIEST_EVENT" : preMassPriestAction
+      priestAction:observedCanon?.priestAction ? "INDEPENDENT_CANON_PRIEST_OBSERVATION" :
+        observedPriest?.priestAction ? "EXPLICIT_SOURCE_PRIEST_EVENT" : preMassPriestAction
         ? "OBSERVED_PREMASS_PRIEST"
         : priestLane.owner==="INDEPENDENT_PRIEST_OBSERVATION"
         ? "INDEPENDENT_PRIEST_OBSERVATION"
         : priestLane.owner==="PRIEST_EVENT_UNOBSERVED"
           ? "PRIEST_EVENT_UNOBSERVED_FAIL_CLOSED"
-          : cueProjection?.priestAction
-            ? cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED"
+          : canonLiveAction
+            ? "GESTURE_MATRIX_SOT_CERTIFIED_LIVE_CANON"
+            : cueProjection?.priestAction
+              ? cueProjection?.ownership?.priestAction??"R18_CUE_WAITING_FAIL_CLOSED"
             : gestureMatrixProjection?.primaryPriestAction
               ? "GESTURE_MATRIX_SOT"
               : rubricProjection?.primaryPriestAction
@@ -1573,7 +1610,7 @@ export async function mountNativeReaderPreview({
       mode:readerModel?.presentationMode,
       cueId:activeCueId,
       cueNative,
-      cinematic:transient.cinematic,
+      cinematic:observedCanon?.cinematic??transient.cinematic,
       faithfulGesture:focusedFaithful?.gesture??null,
       priestAction,
       priestPosition,
@@ -1621,6 +1658,7 @@ export async function mountNativeReaderPreview({
       schola:scholaProjection.schola,
       priestAction,
       priestEntrance,
+      independentlyObservedCanonStage:observedCanon,
       // Audit-only report: no timed priest/minister action or rail projection.
       observedChalicePreparation,
       sacredMinister:cueProjection?.sacredMinister??null,
@@ -2316,6 +2354,7 @@ export async function mountNativeReaderPreview({
        (card.sourceSectionId??card.sectionId)){
       observedCuratedPriestEvent=null;
       chaliceObservationState.reset();
+      clearCanonObservation();
     }
     // A direct section/sequence jump is navigation, not a liturgical
     // procession between adjacent cards. Preserve donor cinematics during
@@ -2393,14 +2432,24 @@ export async function mountNativeReaderPreview({
             form:ready.prepared?.session?.resolvedMass?.form,
             language:ready.prepared?.readerPreferences?.language??"en",
           })
-        : withPublishedCanonParagraphRubrics(
-          visibleCard.paragraphs,ready.data?.rubricEvents??null,{
-            form:ready.prepared?.session?.resolvedMass?.form,
-          }),
+        : String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
+          ? withPublishedMissalParagraphRubrics(
+              visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+                form:ready.prepared?.session?.resolvedMass?.form,
+                language:ready.prepared?.readerPreferences?.language??"en",
+              })
+          : withPublishedCanonParagraphRubrics(
+              visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+                form:ready.prepared?.session?.resolvedMass?.form,
+              }),
       progress:visibleProgress(visibleCard),
-      guide:guideForCurrent(visibleCard),
+      // Guide/Formation is an independent educational destination. The
+      // published R17 1962 event registry, not an inherited 32-card Guide,
+      // supplies LIVE rubrics at the exact source cue paragraph.
+      guide:null,
       ...state,
     });
+    canonManualUI?.update();
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
     root.dataset.r17NativeCue=state.nativeCueId??"unresolved";
     root.dataset.r17OwnerGesture=state.ownership?.gesture??"UNRESOLVED";
@@ -2453,6 +2502,7 @@ export async function mountNativeReaderPreview({
     // Mode switch invalidates the curated independent-event adapter.
     observedCuratedPriestEvent=null;
     chaliceObservationState.reset();
+    clearCanonObservation();
     const anchor=captureReaderModeAnchor(current,{activeCueId});
     const desiredCue=anchor.cueId;
     const rebuilt=buildReaderModeModels({
@@ -2544,9 +2594,10 @@ export async function mountNativeReaderPreview({
       sectionTitle:current?.title ?? "",
       cardUpdate:false,
       progress:current ? visibleProgress(current) : null,
-      guide:guideForCurrent(current),
+      guide:null,
       ...state,
     });
+    canonManualUI?.update();
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
     root.dataset.r17NativeCue=state.nativeCueId??"unresolved";
     root.dataset.r17OwnerGesture=state.ownership?.gesture??"UNRESOLVED";
@@ -2575,6 +2626,9 @@ export async function mountNativeReaderPreview({
     priestEntranceState.reset();
     chaliceObservationState.close();
     observedPriestEvent=null;
+    canonManualUI?.destroy();
+    canonManualUI=null;
+    clearCanonObservation();
     clearScheduledTimer(partCinemaTimer);
     clearScheduledTimer(eventCinemaTimer);
     partCinemaTimer=null;
@@ -2602,6 +2656,25 @@ export async function mountNativeReaderPreview({
   if(massPrintControl&&nativePreferences)nativePreferences.append(massPrintControl);
   root.dataset.aoNativePrintGate=printAssessment.ok?"READY":String(printAssessment.reason||"SOURCE_UNAVAILABLE");
   root.dataset.aoNativePrintMounted=String(Boolean(host.querySelector('[data-ao-native-mass-print]')));
+  // Hidden by default. The only two entrances are the certified Host
+  // and Chalice elevation cues on the 65-family LIVE reader.
+  canonManualUI=mountLiveCanonManualFollow({
+    doc,host,controller:canonStageObservation,
+    getContext:()=>({
+      mode:readerModel?.presentationMode,
+      curated:Boolean(ready.curatedEligible&&current?.curatedPresentationReview===true&&
+        readerModel?.sourceModelTotalCards===39),
+      cueId:activeCueId,
+      sectionId:current?.sourceSectionId??current?.sectionId,
+      presentationCardId:current?.sectionId,
+      language:ready.prepared?.readerPreferences?.language??"en",
+      specialRite:inAsperges||inPalm||inAsh||inCandlemas||inRogations||
+        inRequiemAbsolution||inCorpusChristi||inHolyThursdayPost||
+        inGenericProcession||inLifecycle,
+    }),
+    observe:input=>observeCanonCeremonyStage(input),
+    clear:()=>{const state=clearCanonObservation();queue();return state;},
+  });
   createRiteChoice();
   root.addEventListener?.("click",onRiteChoiceClick);
   if(inRogations)showRogations();
@@ -2622,7 +2695,10 @@ export async function mountNativeReaderPreview({
         // The classical Missal is a static reading view. Scrolling must not
         // move the underlying source cue or trigger LIVE cinematics.
         if(root.querySelector?.("[data-ao-reader-shell]")?.dataset?.mode==="MISSAL")return;
-        if(activeCueId!==cueId)observedPriestEvent=null;
+        if(activeCueId!==cueId){
+          observedPriestEvent=null;
+          clearCanonObservation();
+        }
         if(cueId)enteredCanonicalCueSequence=true;
         activeCueId=cueId;
         ready.scholaState.syncCue(cueId);
@@ -2646,6 +2722,41 @@ export async function mountNativeReaderPreview({
     for(const target of targets){
       observer.observe(target,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:["class","aria-hidden"]});
     }
+  }
+
+  function observeCanonCeremonyStage(observation){
+      const form=String(readerModel?.presentationMode??"").toUpperCase();
+      const correctSection=Boolean(canonicalManualFollowContext({
+        mode:form,curated:Boolean(ready.curatedEligible&&current?.curatedPresentationReview===true&&
+          readerModel?.sourceModelTotalCards===39),
+        cueId:activeCueId,
+        sectionId:current?.sourceSectionId??current?.sectionId,
+        presentationCardId:current?.sectionId,
+        specialRite:inAsperges||inPalm||inAsh||inCandlemas||inRogations||
+          inRequiemAbsolution||inCorpusChristi||inHolyThursdayPost||
+          inGenericProcession||inLifecycle,
+      }));
+      if(!canonStageObservation || !ready.curatedEligible ||
+         current?.curatedPresentationReview!==true ||
+         readerModel?.sourceModelTotalCards!==39 || form!=="LIVE" ||
+         !correctSection || inAsperges||inPalm||inAsh||inCandlemas||
+         inRogations||inRequiemAbsolution||inCorpusChristi||
+         inHolyThursdayPost||inGenericProcession||inLifecycle)
+        return Object.freeze({accepted:false,reason:"NOT_IN_CURATED_LIVE_CANON_ELEVATION"});
+      const result=canonStageObservation.observe({
+        ...observation,sourceCueId:activeCueId,
+      });
+      if(result.accepted){
+        clearScheduledTimer(canonStageTimer);
+        // The visual highlight expires; the accepted source sequence remains
+        // available for audit until a different cue or card is selected.
+        canonStageTimer=later(()=>{
+          canonStageObservation.settleTransient();
+          canonStageTimer=null;queue();
+        },1800);
+        queue();
+      }
+      return result;
   }
 
   const api=Object.freeze({
@@ -2716,6 +2827,15 @@ export async function mountNativeReaderPreview({
       const result=chaliceObservationState.observe(observation);
       if(result.accepted)queue();
       return result;
+    },
+    // Observed priest stages and independently observed server bells retain
+    // distinct event IDs and may never be activated by scrolling or chant.
+    // This optional adapter overlays the existing LIVE rails/cinematics only
+    // for the selected curated 65-family Canon cue.
+    observeCanonCeremonyStage,
+    getObservedCanonCeremonyStage:()=>canonStageObservation?.snapshot()??null,
+    clearObservedCanonCeremonyStage:()=>{
+      const result=clearCanonObservation();queue();return result;
     },
     getObservedChalicePreparation:()=>chaliceObservationState.project(),
     clearObservedChalicePreparation:()=>{

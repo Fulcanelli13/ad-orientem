@@ -141,7 +141,7 @@ try{
     stateLabels:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-state-kicker")].map(x=>x.textContent?.trim()??""),
     openingPosture:document.querySelector("#ao-r17-native-reader-preview [data-role='posture']")?.textContent?.trim()??"",
     openingPostureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture-top']")?.hidden??null,
-    guideLabel:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-short']")?.textContent?.trim()??"",
+    guideHidden:(()=>{const el=document.querySelector("#ao-r17-native-reader-preview [data-role='guide-button']");return !!el && el.hidden && getComputedStyle(el).display==="none";})(),
     preferencesOpen:document.querySelector("#ao-r17-native-reader-preview [data-role='mass-preferences']")?.dataset?.open??null,
     floatingClose:Boolean(document.querySelector("#ao-r17-native-reader-preview [aria-label='Close Mass reader']")),
     sectionJumpDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='section-jump']")?.disabled??null,
@@ -182,10 +182,10 @@ try{
     "Mass preferences icon drifted from the v1.80 sliders glyph");
   assert.ok(opening.homeControlRect?.width>=44&&opening.homeControlRect?.height>=44,"Home control lost a usable phone touch target");
   assert.ok(opening.preferencesControlRect?.width>=44&&opening.preferencesControlRect?.height>=44,"Mass preferences control lost a usable phone touch target");
-  assert.deepEqual(opening.stateLabels,["YOU","PRIEST"],"persistent state ribbon is no longer YOU / GUIDE / PRIEST");
+  assert.deepEqual(opening.stateLabels,["YOU","PRIEST"],"persistent state ribbon must contain only YOU / PRIEST");
   assert.equal(opening.openingPosture,"STAND","opening YOU state regressed to an empty or incorrect posture");
   assert.equal(opening.openingPostureIconHidden,false,"opening YOU state lost its exact posture icon");
-  assert.ok(["OPEN","RUBRICS"].includes(opening.guideLabel),"Guide centre cell lost v1.79/v1.80 semantics");
+  assert.equal(opening.guideHidden,true,"LIVE has a visible Guide tile instead of YOU/PRIEST");
   assert.equal(opening.preferencesOpen,"false","Mass preferences sheet should be closed at reader entry");
   assert.equal(opening.floatingClose,false,"obsolete floating close button still overlays the LIVE ribbon");
   assert.equal(opening.sectionJumpDisabled,false,"source-first section jump is disabled");
@@ -439,8 +439,8 @@ try{
       "preferences actions are too small to tap/read: "+JSON.stringify(audit));
     assert.ok(audit.sectionItem?.height>=44&&audit.sectionItem?.fontSize>=12,
       "section picker targets are too small: "+JSON.stringify(audit));
-    assert.ok(audit.guideKicker?.fontSize>=9,
-      "Guide label is microscopic: "+JSON.stringify(audit));
+    assert.ok(audit.guideKicker?.width===0&&audit.guideKicker?.height===0,
+      "Guide label still takes space in the LIVE ribbon: "+JSON.stringify(audit));
     for(const name of ["scholaSlower","scholaFaster","scholaPause"]){
       assert.ok(audit[name]?.height>=44,
         "Schola "+name+" has an undersized target: "+JSON.stringify(audit));
@@ -468,30 +468,15 @@ try{
   }
   await page.setViewportSize({width:390,height:844});
 
-  // v1.79 Guide: structured sheet, curated sections and source links.
+  // LIVE and the historical 48-card rollback use source-linked rubrics,
+  // not a teaching Guide or an expandable explanatory panel. The dedicated
+  // Guide registry remains independently tested in tests/reader-guide.mjs.
   const guideButton=page.locator("#ao-r17-native-reader-preview [data-role='guide-button']");
-  assert.equal(await guideButton.isDisabled(),false,"opening v1.79 Guide is disabled");
-  await guideButton.click();
-  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===false);
-  const guideAudit=await page.evaluate(()=>({
-    kicker:document.querySelector("#ao-r17-native-reader-preview .ao-guide-kicker")?.textContent?.trim()??"",
-    title:document.querySelector("#ao-r17-native-reader-preview .ao-guide-title")?.textContent?.trim()??"",
-    summary:document.querySelector("#ao-r17-native-reader-preview .ao-guide-summary")?.textContent?.trim()??"",
-    headings:[...document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-section h3,#ao-r17-native-reader-preview .ao-guide-section h4")].map(x=>x.textContent?.trim()??""),
-    sectionCount:document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-section").length,
-    sources:document.querySelector("#ao-r17-native-reader-preview .ao-guide-sources p")?.textContent?.trim()??"",
-    sourceLinks:document.querySelectorAll("#ao-r17-native-reader-preview .ao-guide-links a").length,
-  }));
-  assert.equal(guideAudit.kicker,"Guide · 1962 Sung Mass","Guide lost v1.79 identity");
-  assert.ok(guideAudit.title.length>0&&guideAudit.summary.length>0,"Guide header is not curated");
-  assert.ok(guideAudit.sectionCount>=5,"Guide collapsed back into an unstructured long-text dump");
-  for(const heading of ["What is happening","What should I do?","For prayer"]){
-    assert.ok(guideAudit.headings.includes(heading),"Guide is missing curated section: "+heading);
-  }
-  assert.ok(guideAudit.sources.length>0,"Guide lost its source line");
-  assert.ok(guideAudit.sourceLinks>=1,"Guide lost source links");
-  await page.locator("#ao-r17-native-reader-preview [data-guide-close]").click();
-  await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='guide-popover']")?.hidden===true);
+  assert.equal(await guideButton.count(),1,"Compatibility Guide marker lost");
+  assert.equal(await guideButton.isDisabled(),true,"Guide must be inert in LIVE");
+  assert.equal(await guideButton.isVisible(),false,"Guide must not occupy the LIVE ribbon");
+  assert.equal(await page.locator("#ao-r17-native-reader-preview [data-role='guide-popover']").isVisible(),
+    false,"An explanatory Guide sheet is visible in LIVE");
 
   const scholaDock=page.locator("#ao-r17-native-reader-preview .ao-schola-dock");
   const scholaToggle=scholaDock.locator("[data-schola-toggle]");
@@ -687,7 +672,7 @@ try{
   assert.equal(rubricPresentation.headingDisplay,"none","LIVE rubric regained repeated micro-sized RUBRIC headings");
   assert.ok(rubricPresentation.fontSize>=12,"LIVE rubrics remain too small to read");
 
-  assert.notEqual(consecration.guideShort,"","short Guide rubric is not visible in the state ribbon");
+  assert.equal(consecration.guideDisabled,true,"Guide returned during the Host Consecration cue");
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"07-mass-live-consecration.png"),fullPage:false});
 
@@ -960,6 +945,12 @@ try{
   await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("DEFAULT");
   await faithfulPicker.locator("[data-faithful-picker-close]").click();
   assert.equal(await faithfulPicker.isVisible(),false,"faithful picker did not close");
+
+  // The picker and its close action are independent user interactions that
+  // may change the 39%-focus scroll position. Re-establish the exact Gloria
+  // source cue before demanding its *priest* rail gesture.
+  const gloriaPriestCue=await focusCanonicalCue("AO.SM.C0061");
+  assert.equal(gloriaPriestCue.cue,"AO.SM.C0061");
 
   const priestBowArt=await page.evaluate(()=>{
     const root=document.getElementById("ao-r17-native-reader-preview");

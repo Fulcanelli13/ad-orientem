@@ -3,6 +3,9 @@ import {readFileSync} from "node:fs";
 import {resolve} from "node:path";
 import {fileURLToPath} from "node:url";
 import {CURATED_LIVE_GROUPS} from "../src/mass/reader-live-curated-cards.js";
+import {normalizeReaderMoment} from "../src/mass/reader-dom.js";
+import {createReaderGestureMatrixController} from "../src/mass/reader-gesture-matrix.js";
+import {certifiedLiveCanonActionOverride} from "../src/mass/reader-live-canon-action.js";
 import {assertV183PreGospelLiveContract} from "../src/mass/reader-live-pre-gospel.js";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const read=path=>readFileSync(resolve(root,path),"utf8");
@@ -30,4 +33,78 @@ assert.match(properSlots,/const sequenceRows=values\(proper\.sequence,locale\)/)
 assert.ok(properSlots.includes("No separately sourced Alleluia/Tract or Sequence."),"Missing chant must not create invented content");
 assert.match(packageJson.scripts["test:mass-batch4-release"],/mass-phase12-curated65-contract/);
 assert.ok(packageJson.scripts.test.includes("test:mass-batch4-release"));
+// The 65-card Consecrations use *different titles* from their preparation
+// cards. Latin must be prominent when the reader follows the actual words.
+for(const [title,latin,vernacular,cue] of [
+ ["Words of Consecration and Elevation · Host",
+  "Hoc est enim Corpus meum","For this is my Body","AO.SM.C0173"],
+ ["Words of Consecration and Elevation · Chalice",
+  "Hic est enim Calix Sanguinis mei","For this is the Chalice of my Blood","AO.SM.C0179"],
+]){
+ assert.ok(Object.values(CURATED_LIVE_GROUPS).some(group=>group.titles.includes(title)),
+   "The 65-card Consecration title changed without its Latin priority gate");
+ const vernacularFirst=normalizeReaderMoment({cardTitle:title,paragraphs:[{
+   id:cue,sourceCueIds:[cue],kind:"TEXT",primary:vernacular,alternate:latin,
+   displayLanguage:"VERNACULAR",replaceOnToggle:true,
+ }]});
+ assert.equal(vernacularFirst.paragraphs[0].primary,latin,title+" must show Latin first");
+ assert.equal(vernacularFirst.paragraphs[0].secondary,vernacular);
+ assert.equal(vernacularFirst.paragraphs[0].kind,"CONSECRATION_WORDS");
+ assert.equal(vernacularFirst.paragraphs[0].displayLanguage,"LATIN");
+ assert.equal(vernacularFirst.paragraphs[0].replaceOnToggle,false);
+ const latinFirst=normalizeReaderMoment({cardTitle:title,paragraphs:[{
+   id:cue,sourceCueIds:[cue],kind:"TEXT",primary:latin,alternate:vernacular,
+   displayLanguage:"LATIN",replaceOnToggle:true,
+ }]});
+ assert.equal(latinFirst.paragraphs[0].primary,latin,
+   title+" cannot reverse already Latin-first source");
+ assert.equal(latinFirst.paragraphs[0].alternate,vernacular);
+ assert.equal(latinFirst.paragraphs[0].kind,"CONSECRATION_WORDS");
+}
+const outside=normalizeReaderMoment({cardTitle:"Unde et memores",paragraphs:[{
+ id:"ordinary",kind:"TEXT",primary:"English text",alternate:"Latin text",
+ displayLanguage:"VERNACULAR",replaceOnToggle:true,
+}]});
+assert.equal(outside.paragraphs[0].primary,"English text",
+  "Latin prominence must not spill across other LIVE cards");
+
+// The frozen donor only says SIGNS HOST at C0185, whereas a separately
+// certified priest gesture covers Host THEN Chalice at this exact cue.
+const donor=JSON.parse(read("data/presentation/reader-priest-actions.v1.json"));
+assert.equal(donor.items.find(x=>x.cueId==="AO.SM.C0185").label,"SIGNS HOST");
+const matrix=JSON.parse(read("data/mass/gesture-matrix.v1.json"));
+const sourceAction=createReaderGestureMatrixController({data:matrix})
+  .project("AO.SM.C0185").primaryPriestAction;
+const c0185=certifiedLiveCanonActionOverride({
+ presentationMode:"LIVE",curatedPresentation:true,cueId:"AO.SM.C0185",matrixAction:sourceAction,
+});
+assert.equal(c0185.label,"CROSSES HOST THEN CHALICE");
+assert.equal(c0185.owner,"GESTURE_MATRIX_SOT");
+assert.equal(c0185.observedNow,false);
+assert.equal(c0185.sourceCueAdvisory,true);
+assert.equal(certifiedLiveCanonActionOverride({
+ presentationMode:"LIVE",curatedPresentation:false,
+ cueId:"AO.SM.C0185",matrixAction:sourceAction,
+}),null,"Explicit 48-card rollback and noncurated readers must be untouched");
+for(const mode of ["MISSAL","SIMPLE"]){
+ assert.equal(certifiedLiveCanonActionOverride({
+  presentationMode:mode,curatedPresentation:true,cueId:"AO.SM.C0185",matrixAction:sourceAction,
+ }),null,"Other modes must retain their existing presentation contracts");
+}
+for(const incorrect of [
+ {...sourceAction,sourceGestureId:"EDITORIAL_CANDIDATE"},
+ {...sourceAction,sources:["UNAPPROVED"]},
+ {...sourceAction,authorityClass:"DRAFT"},
+ {...sourceAction,label:"SIGNS HOST"},
+]){
+ assert.equal(certifiedLiveCanonActionOverride({
+  presentationMode:"LIVE",curatedPresentation:true,cueId:"AO.SM.C0185",matrixAction:incorrect,
+ }),null,"Uncertified source-cue action must fail closed");
+}
+assert.equal(certifiedLiveCanonActionOverride({
+ presentationMode:"LIVE",curatedPresentation:true,cueId:"AO.SM.C0174",matrixAction:sourceAction,
+}),null,"No source action may leak onto the Host elevation");
+assert.match(native,/originalPriestAction=canonLiveAction\?\?/,
+ "LIVE projector must use the certified correction before the frozen cue label");
+
 console.log("PASS Phase 1/2: 39-source/65-curated product, 64-visible option, explicit 48 rollback and pre-Gospel source ownership; independently sourced Sequence navigation tested separately.");

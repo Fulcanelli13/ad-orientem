@@ -633,7 +633,7 @@ try{
     benedictionCard:document.querySelectorAll("#aoPray435930 [data-p435930-go-ben]").length,
   }));
   assert.deepEqual(adorationLanding.modes,["visit","open","holy","four","treasury"],"Adoration landing no longer matches the final five-entry donor composition");
-  assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Adoration","Holy Hour","Four Ends","Eucharistic Treasury"],"Adoration landing titles regressed");
+  assert.deepEqual(adorationLanding.titles,["Visit to the Blessed Sacrament","Silent Adoration","Guided Holy Hour","The Four Ends","Eucharistic Treasury"],"Adoration landing titles regressed");
   assert.equal(adorationLanding.benedictionCard,0,"Benediction incorrectly replaced a private Adoration entry on the landing page");
   await page.locator("#aoPray435930 [data-p435930-ador-mode='visit']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 .aoP435930SemanticRail.left [data-ao-pray-rail-asset]")?.dataset?.aoPrayRailAsset==="ao-live-genuflect",null,{timeout:3000});
