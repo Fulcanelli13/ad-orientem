@@ -54,7 +54,7 @@ const copy={
  }
 };
 const CSS=`
-#aoLivingChurchCharacterFolio{position:absolute;inset:62px 0 0;z-index:17;pointer-events:none;font-family:Georgia,serif;color:#f0e7d9;isolation:isolate}
+#aoLivingChurchCharacterFolio{position:absolute;inset:62px 0 0;z-index:17;pointer-events:none;font-family:Georgia,serif;color:#f0e7d9;isolation:isolate;overflow:hidden}
 #aoLivingChurchCharacterFolio[hidden]{display:none!important}
 #aoLivingChurchCharacterFolio .lcVeil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,11,16,.49),rgba(7,10,14,.04) 52%,rgba(8,11,16,.14)),linear-gradient(0deg,rgba(6,9,14,.8),transparent 70%);pointer-events:none}
 #aoLivingChurchCharacterFolio[data-guide="pius-x"] .lcVeil{background:linear-gradient(90deg,rgba(8,12,19,.32),rgba(7,9,15,.22)),linear-gradient(0deg,rgba(6,9,14,.75),transparent 75%),url('/assets/living-church/backgrounds/pius-x-papal-study.webp') center/cover no-repeat}
@@ -224,9 +224,15 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
  function hide(){root.hidden=true;}
  function show(){if(closed)return false;if(!current())return false;root.hidden=false;message="";render();return true;}
  function close(){closed=true;root.remove();sheet.remove();}
- closeButton.addEventListener("click",()=>{
+ function returnToPhoto(){
   hide();frame.contentWindow?.AO_VISIBLE_MASS_HOTSPOT_PILOT?.focusContext?.();
   frame.focus?.({preventScroll:true});
+ }
+ closeButton.addEventListener("click",returnToPhoto);
+ root.addEventListener("keydown",event=>{
+  if(event.key==="Escape"&&!root.hidden){
+   event.preventDefault();returnToPhoto();
+  }
  });
  form.addEventListener("submit",e=>{
   e.preventDefault();const v=input.value.trim();input.value="";
