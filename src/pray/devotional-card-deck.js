@@ -3,6 +3,8 @@
  * many vertically scrollable lit/muted paragraphs. Presentation only.
  * Canonical PRAY owner remains responsible for all texts and form selection.
  */
+import {devotionalFocusIndex} from "./devotional-focus-geometry.js";
+
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 
 import "./devotional-card-deck-styles.js";
@@ -196,15 +198,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
    ensureDevotionalReadingRunway(body,all,{ratio:.41});
    body.dataset.aoFocusRunway="1";
   }
-  const r=body.getBoundingClientRect(),y=r.top+r.height*.41;
-  let active=0,best=Infinity;
-  all.forEach((p,i)=>{
-   const rect=p.getBoundingClientRect();
-   const distance=y<rect.top?rect.top-y:y>rect.bottom?y-rect.bottom:0;
-   if(distance<best){active=i;best=distance}
-  });
-  // Opening a card starts with its opening sentence, not paragraph two.
-  if(body.scrollTop<2)active=0;
+  const active=devotionalFocusIndex(body,all,{ratio:.41});
   all.forEach((p,i)=>{
    const strength=i===active?"1":Math.abs(i-active)===1?".56":".30";
    p.style.setProperty("--ao-devo-focus",strength);
