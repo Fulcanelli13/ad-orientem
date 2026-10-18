@@ -115,6 +115,11 @@ The screen points to major weaknesses in the **current APOL/CR source-owned draf
 
 **P3 — Canon product integration.** Connect the Canon character as a **read-only approved-answer presenter** under The Living Church #1395/#1397/#1400 and Ask the Church #1391, retaining original source IDs. Allow Ask / Browse / Prepare a discussion; preserve exact scene, question, trail and native-return state. No fabricated persona quotations, unsolicited doctrinal generation, automatic public launcher or modification to Mass LIVE 65/SIMPLE/MISSAL.
 
+
+## Both current and historical question namespaces preserved
+
+The [two-namespace Canon source-pointer index](CANON_TWO_NAMESPACE_SOURCE_POINTERS_20261018.v1.json) now registers **452 historic question references** and **282 separate current GitHub source-record references** as **734 reference handles, not 734 distinct question answers**. This ensures the Canon's future retrieval can reach all original current research records as well as recovered historical prompts **without moving or duplicating their source text**. Of the 282 current records, eight existing AQ cases are already available in their own Apostolate runtime; this new index does not grant them a new public Canon route or republish any content.
+
 ## Exact machine-readable files
 
 - [452 historical question P1 topic concordance](CANON_HISTORICAL_452_TOPIC_CONCORDANCE_P1_20261018.v1.json)
