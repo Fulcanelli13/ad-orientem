@@ -7,7 +7,7 @@ const pinned=json("data/learn/living-church-p5-convergence-lock.v1.json");
 assert.equal(pinned.schema,"AO_LIVING_CHURCH_P5_SOURCE_CONVERGENCE_V1");
 assert.equal(pinned.state,"REVIEW_INTEGRATION_RELEASE_BLOCKED");
 assert.equal(pinned.releaseAuthorized,false);
-assert.equal(pinned.verifiedOwnerBlobs.length,20);
+assert.equal(pinned.verifiedOwnerBlobs.length,24);
 for(const entry of pinned.verifiedOwnerBlobs){
  const data=read(entry.path);
  const gitSha=createHash("sha1").update("blob "+data.length+"\0").update(data).digest("hex");
@@ -66,8 +66,36 @@ assert.equal(canonContract.originalResearchOwner.repo,"Fulcanelli13/folio-core")
 assert.equal(canonContract.originalResearchOwner.sourceFirstReadback.historicalCandidateIds,534);
 assert.equal(canonContract.originalResearchOwner.sourceFirstReadback.publicCanonAnswerApprovals,0);
 assert.equal(canonContract.existingAppState.apologeticsQuestionAnswersAvailableInP3,false);
-assert.equal(pinned.sourceHeads.formationResearch.state,"DRAFT_UNMERGED_CI_NOT_CERTIFIED");
+assert.equal(pinned.sourceHeads.formationResearch.state,"DRAFT_UNMERGED_SOURCE_CI_FAILED_ZERO_PUBLIC_APPROVALS");
+assert.equal(pinned.sourceHeads.characterStage.sha,"7603c175164f918884f749d76654c214f14aa969");
+assert.equal(pinned.sourceHeads.livingChurchP4.sha,"b2a83094ebe62be42e40ef1e288c8434fc91f982");
 assert.equal(pinned.publicationGates.canonFolioFormationAnswersImportedAndReviewed,false);
+const mirror=json("data/learn/formation-canon-migration-provenance-20261018.v1.json");
+assert.equal(mirror.schema,"AO_CANON_SOURCE_MIGRATION_SHA_P3_V1");
+assert.equal(mirror.sourceFileCount,27);
+assert.equal(mirror.files.length,27);
+assert.equal(mirror.source.repository,"Fulcanelli13/folio-core");
+assert.equal(mirror.source.pinnedAtReadHead,pinned.sourceHeads.formationResearch.p3MirrorOwnerSnapshot);
+assert.equal(pinned.sourceMirror.publicStaticAccessVerifiedBlocked,false,
+ "Review URL flags are not authorization for public static JSON paths");
+const mirrors=new Set();
+for(const source of mirror.files){
+ assert.match(source.path,/^data\/learn\/(?:research\/)?[a-z0-9./_-]+\.json$/);
+ assert.ok(!source.path.includes("..")&&!mirrors.has(source.path),"Unsafe or duplicate research source path");
+ mirrors.add(source.path);
+ const data=read(source.path);
+ const sha=createHash("sha1").update("blob "+data.length+"\0").update(data).digest("hex");
+ assert.equal(sha,source.gitBlobSha,"Folio original draft mirror has diverged: "+source.path);
+}
+const canonReader=read("src/learn/living-church-canon-research-reader.mjs").toString();
+const canonUI=read("src/learn/living-church-canon-dialogue-ui.mjs").toString();
+assert.match(canonReader,/aoCanonResearchReview/);
+assert.match(canonReader,/publicHandoff:.*ORIGINAL_EDITORIAL_PUBLICATION_HOLD/);
+assert.match(canonUI,/publicAnswerAuthorized:false/);
+assert.match(folio,/canonOverlay/);
+assert.match(folio,/openCatechismQuestion/);
+assert.equal(pinned.publicationGates.canonUnpublishedJsonAssetsExcludedFromPublicStaticDeploy,false);
+assert.equal(pinned.publicationGates.originalFolioSourceEditorialSignoff,false);
 assert.equal(characters.chars.length,3);
 assert.equal(characters.emotions.length,5);
 const review=read("src/learn/visible-mass-review.js").toString();
@@ -82,8 +110,8 @@ assert.match(cate,/catechismNumber\(sourceRef\)/);
 assert.match(cate,/EXACT_SANCTUARY_CONTEXT_MISMATCH/);
 assert.match(cate,/learn\.catechism/);
 const paths=Object.keys(pinned.publicationGates);
-assert.ok(paths.length>=11);
+assert.ok(paths.length>=13);
 for(const name of paths)assert.equal(pinned.publicationGates[name],false,
  "Unreviewed publication gate unexpectedly marked approved: "+name);
 assert.equal(pinned.scopedReadiness.productionReady,false);
-console.log("Living Church P5 source convergence PASS: 20 exact source blob pins, all 10 M5 handoff edits, original M6 atlas 170/13/56 and 125 qualifying photo gaps, VMQ 134/4, Ask 7/26 with one shared objective session, PX 433, 15 sprites and 9 locked human release gates.");
+console.log("Living Church P5 source convergence PASS: 24 exact source blob pins and 27 separate draft Folio source hashes, all 10 M5 handoff edits, original M6 atlas 170/13/56 and 125 qualifying photo gaps, VMQ 134/4, Ask 7/26 with one shared objective session, PX 433, 15 sprites and 13 locked human release gates.");
