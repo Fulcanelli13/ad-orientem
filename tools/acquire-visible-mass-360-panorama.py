@@ -11,6 +11,11 @@ files={
 "newman_altar2":"Dublin Newman University Church Interior Choir Main Altar 2.jpg",
 "newman_apse":"Dublin Newman University Church Interior Choir Apse 1.jpg",
 "newman_pulpit":"Dublin Newman University Church Interior Nave Pulpit.jpg",
+"newman_altar3":"Dublin Newman University Church Interior Choir Main Altar 3.jpg",
+"brompton_altar1":"The Oratory of S Philip Neri, High Altar 1.jpg",
+"brompton_altar2":"The Oratory of S Philip Neri, High Altar 2.jpg",
+"brompton_lady":"The Oratory of S Philip Neri, The Lady Altar.jpg",
+"brompton_heart":"The Oratory of S Philip Neri, Sacred Heart Chapel.jpg",
 "brompton_still":"The High Altar - geograph.org.uk - 6213275.jpg"
 }
 out=Path("dist/visible-mass/panorama-sources");out.mkdir(parents=True,exist_ok=True)
