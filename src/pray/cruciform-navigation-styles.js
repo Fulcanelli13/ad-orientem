@@ -1,5 +1,5 @@
 /** Discreet, mirrored Latin crosses; navigation targets are larger than the ink. */
-export const CRUCIFORM_NAVIGATION_CSS=String.raw\`
+export const CRUCIFORM_NAVIGATION_CSS=String.raw`
 #aoPray435930 .aoCrossPair{
  position:fixed;inset:0;z-index:120;pointer-events:none;
  color:var(--liturgical,#c8b28a);
@@ -41,7 +41,7 @@ export const CRUCIFORM_NAVIGATION_CSS=String.raw\`
 @media(forced-colors:active){
  #aoPray435930 .aoCrossMark{opacity:.65;forced-color-adjust:auto}
 }
-\`;
+`;
 export function installCruciformNavigationStyles(doc=globalThis.document){
  if(!doc||doc.getElementById("ao-cruciform-navigation-style"))return;
  const style=doc.createElement("style");
