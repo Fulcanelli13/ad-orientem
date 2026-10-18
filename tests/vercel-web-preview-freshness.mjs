@@ -52,7 +52,7 @@ const pages=simulate("fulcanelli13.github.io");
 await pages.lifecycle("install");
 await pages.lifecycle("activate");
 await pages.navigate();
-assert.equal(pages.events.skipped,0);
+assert.equal(pages.events.skipped,1,"GitHub Pages replacement worker must activate while app window remains open");
 assert.equal(pages.events.unregistered,0,"Do not disable normal offline support");
 assert.equal(pages.events.intercepted,1,"Offline service worker must continue intercepting on Pages");
 

@@ -13,7 +13,8 @@ const VERCEL_WEB_PREVIEW=/\.vercel\.app$/i.test(BASE.hostname);
 const ROOT=new URL("index.html",BASE).href;
 const KEY=new URL("__ao_bootstrap_state__",BASE).href;
 const READY=new URL("__ao_bootstrap_completed__",BASE).href;
-const MAX_ITEMS=320,MAX_BYTES=35_000_000;
+// Keep a hard byte ceiling, but allow the expanded canonical module graph.
+const MAX_ITEMS=384,MAX_BYTES=35_000_000;
 let stagedJob=null,activeVersion=null;
 const liveClients=new Map();
  // Only the first-use Prayer graph is promoted from a lazy module graph into
@@ -192,7 +193,10 @@ async function useSnapshot(version,clientId=null){
  await broadcast("ACTIVE_VERSION",{version});
  return {ok:true,version};
 }
-self.addEventListener("install",event=>event.waitUntil(VERCEL_WEB_PREVIEW?self.skipWaiting():Promise.resolve()));
+// A replacement worker must take control of an installed app even while its old
+// window remains open. Activation does NOT promote snapshots or reload a reader;
+// the existing active version remains pinned until explicit user consent.
+self.addEventListener("install",event=>event.waitUntil(self.skipWaiting()));
 self.addEventListener("activate",event=>{
  event.waitUntil((async()=>{
   await self.clients.claim();

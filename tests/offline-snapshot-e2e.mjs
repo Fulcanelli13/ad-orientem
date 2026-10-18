@@ -7,7 +7,7 @@ import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".js":"text/javascript; charset=utf-8",".html":"text/html; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".jpg":"image/jpeg",".woff2":"font/woff2",".webmanifest":"application/manifest+json"};
-let variant=1,failedPath=null,served=0,failedHits=0,assetHits=[];
+let variant=1,swRevision=1,failedPath=null,served=0,failedHits=0,assetHits=[];
 const server=http.createServer(async(req,res)=>{
  try{
   let pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
@@ -21,6 +21,8 @@ const server=http.createServer(async(req,res)=>{
   const file=resolve(root,"."+pathname);
   if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return}
   let body=await readFile(file);
+  if(pathname==="/sw.js"&&swRevision>1)
+   body=Buffer.from(body.toString("utf8")+"\n// worker-revision-"+swRevision+"\n");
   if(pathname==="/index.html"&&variant!==1){
     const extra='<script src="./__ao_offline_test_'+variant+'.js"></script><!-- offline-build-'+variant+' -->';
     body=Buffer.from(body.toString("utf8").replace("</body>",extra+"</body>"));
@@ -90,7 +92,7 @@ try{
    return {...meta,missing};
  });
  assert.deepEqual(firstSnapshot.missing,[],"First-use Prayer lazy entry modules not in completed snapshot");
- assert.ok(firstSnapshot.files<=320 && firstSnapshot.bytes<=35000000,
+ assert.ok(firstSnapshot.files<=384 && firstSnapshot.bytes<=35000000,
   "Offline Rosary change exceeded transactional bootstrap limits");
  console.log("OFFLINE_FIRST_USE_SNAPSHOT="+JSON.stringify(firstSnapshot));
  await context.setOffline(true);
@@ -166,10 +168,10 @@ try{
  await page.locator("#aoPray435930.open .aoMercyReader").waitFor({timeout:12000});
  assert.match(await page.locator("#aoPray435930.open .aoMercyPrayer").innerText(),/Au nom du Père/,
   "First-use offline Divine Mercy did not render French opening prayer");
- assert.match(await page.locator("#aoPray435930.open .aoMercyKicker").innerText(),/Prière 1 \/ 62/i,
+ assert.match(await page.locator("#aoPray435930.open [data-ao-mercy-bead-navigation] .aoMercyBeadPosition").innerText(),/Prières initiales/i,
   "First-use offline Divine Mercy lost its French prayer counter");
  await page.locator("#aoPray435930.open [data-p435930-mercy-next]").first().evaluate(el=>el.click());
- assert.match(await page.locator("#aoPray435930.open .aoMercyControls").innerText(),/2 \/ 62/,
+ assert.match(await page.locator("#aoPray435930.open .aoMercyControls span").innerText(),/Notre Père/i,
   "First-use offline Divine Mercy did not advance");
  assert.match(await page.locator("#aoPray435930.open .aoMercySource a").getAttribute("href"),
   /^https:\/\/www\.vaticannews\.va\/fr\//,
@@ -272,6 +274,30 @@ try{
    assert.deepEqual(current,{...activeRosary,playerOpen:true},
      "PWA update "+stage+" interrupted active Rosary before consent");
  };
+ // A replacement worker must take control of the existing installed-like tab,
+ // while retaining the explicit snapshot consent and current Rosary state.
+ swRevision=2;
+ const takeoverResult=await page.evaluate(async()=>{
+   if(!navigator.serviceWorker.controller)return {changed:false,error:"NO_CONTROLLER"};
+   let changed=false;
+   const takeover=new Promise(resolve=>{
+     const timeout=setTimeout(()=>resolve(false),20000);
+     navigator.serviceWorker.addEventListener("controllerchange",()=>{
+       changed=true;clearTimeout(timeout);resolve(true);
+     },{once:true});
+   });
+   const reg=await navigator.serviceWorker.getRegistration();
+   const prior={active:reg.active?.state,waiting:reg.waiting?.state,script:reg.active?.scriptURL};
+   await reg.update();
+   await takeover;
+   return {changed,prior,active:reg.active?.state,waiting:reg.waiting?.state,
+     installing:reg.installing?.state,controller:navigator.serviceWorker.controller?.state};
+ });
+ console.log("OFFLINE_WORKER_UPGRADE_DIAGNOSTIC="+JSON.stringify({swRevision,takeoverResult}));
+ assert.equal(takeoverResult.changed,true,"Replacement worker remained waiting behind an installed app");
+ await assertRosaryUninterrupted("service-worker takeover");
+ assert.equal((await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status)).version,original.version,
+  "Worker activation promoted a snapshot without user consent");
  // A deliberately incomplete release must NOT replace a usable version.
  variant=3;failedPath="/__ao_offline_test_3.js";
  const failed=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());

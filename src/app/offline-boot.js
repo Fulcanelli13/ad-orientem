@@ -43,7 +43,7 @@ function paintCheckFailure(){
  box.setAttribute("aria-live","polite");
  box.style.cssText="position:fixed;z-index:2147483490;bottom:calc(82px + env(safe-area-inset-bottom,0px));right:12px;left:12px;max-width:380px;margin-left:auto;background:#101923;color:#f0e9dc;border:1px solid #746748;border-radius:10px;padding:12px 14px;font:14px/1.45 system-ui,sans-serif;box-shadow:0 12px 28px rgba(0,0,0,.4)";
  const message=document.createElement("span");
- message.textContent=fr?"Impossible de vérifier la mise à jour. Réessayez lorsque la connexion est stable.":"Could not check for an app update. Retry when your connection is stable.";
+ message.textContent=(fr?"Impossible de vérifier la mise à jour.":"Could not check for an app update.")+" "+String(error).slice(0,180);
  const actions=document.createElement("div");
  actions.style.cssText="display:flex;justify-content:flex-end;gap:8px;margin-top:10px";
  const later=document.createElement("button"),retry=document.createElement("button");
