@@ -18,6 +18,12 @@ One recovery workspace inside the existing Ad Orientem GitHub repository. The ai
 
 **All existing publication gates remain closed.** Do not count 425 provisional topic links as answered questions, 282 current records as unique additional historic questions, or source excerpts as raw-transcript verified quotations. This branch adds no public Canon reader or dialogue scripts.
 
+### 18 October — complete first denominational Q&A bank: Lutheranism
+
+The [Lutheran 25-question source-first report](CANON_LUTHERAN_25_SOURCE_FIRST_REPORT_20261018.md) documents **LUT-001–LUT-025** as distinct EN/FR Canon research-dialogue records with two original-question follow-ups per entry, 57 source pointer uses, and an original-witness manifest of 28 reference entries. [Questions 001–013](CANON_LUTHERAN_DIALOGUES_LUT001_013_20261018.v1.json), [questions 014–025](CANON_LUTHERAN_DIALOGUES_LUT014_025_20261018.v1.json), [source manifest](CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json) and [validation script](validate-canon-lutheran-dialogues.mjs) are committed. A connector-run structural consistency audit passed for all 25, while the Node script has not been executed in CI.
+
+These are **25 candidate source-anchored bilingual Q&A drafts, not 25 published or source-certified answers**. The two questions LUT-001 and LUT-025 still have **no suitable existing canonical topical owner**; this bank does not usurp that ownership. All 25 require close original-text claims review, final French, Catholic doctrinal and publication approvals. No app runtime is modified.
+
 ## Source classes — do not add or conflate
 
 | Source class | Records | Provenance / what it proves |
