@@ -30,4 +30,9 @@ for(const size of [192,512]){
  assert.deepEqual([bytes.readUInt32BE(16),bytes.readUInt32BE(20)],[size,size],
   "Manifest icon physical dimensions do not match "+declared.sizes);
 }
-console.log("PASS PWA manifest installability: project-relative scope, standalone mode and exact 192/512 PNG icons");
+const workerSource=await readFile(join(root,"sw.js"),"utf8");
+assert.match(workerSource,/self\.addEventListener\("install",event=>event\.waitUntil\(self\.skipWaiting\(\)\)\)/,
+ "Replacement service worker must activate while an old installed app is open");
+assert.match(workerSource,/async function useSnapshot\(version,clientId=null\)/,
+ "Snapshot promotion remains a separate, consented operation");
+console.log("PASS PWA manifest installability and safe replacement-worker activation");
