@@ -100,6 +100,7 @@ const classified=x=>({
  EXISTING_M5_PHOTO_REUSED:"Existing M5 source photograph · reused without duplication",
  COMPOSITE_COMPONENT_PHOTO_CANDIDATES_UNAPPROVED:"Composite object photographed in separate parts · awaiting approval",
  COMPOSITE_FIVE_COLOR_PHOTO_CANDIDATES_UNAPPROVED:"Five separately photographed colours · awaiting approval",
+ PARTIAL_COMPONENT_ONLY_STILL_NEEDS_PHOTO:"Partial photographic component only · complete liturgical object still missing",
  NEW_SOURCE_PHOTO_CANDIDATE:"New sourced photograph · awaiting approval",
  RESEARCH_LEAD_ONLY:"Discovery lead only"
 }[x]||x);
@@ -181,7 +182,7 @@ function objectCard(item){
  '<h2 class="heading">'+esc(item.label)+'</h2>'+
  '<div class="detail">'+esc(classified(item.evidence_status))+
  ' · Glossary '+esc(item.canonical_glossary_id||"not mapped")+' ('+esc(item.glossary_match)+')'+
- (item.pilot_30?' · sanctuary pilot':'')+'</div>'+
+ (item.pilot_30?' · sanctuary pilot':'')+(item.needs_photo?' · qualifying photo still missing':' · photo candidate only, not approved')+'</div>'+
  (list.length?list.map(assetLine).join(""):'<p class="note">No original object-specific image candidate yet. A wide church photo must not be treated as proof that this object is visible.</p>')+
  researchCue(item)+
  '</div></article>';
