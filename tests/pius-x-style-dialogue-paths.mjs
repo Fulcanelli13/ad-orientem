@@ -76,4 +76,47 @@ assert.ok(cases.cases[1].router.routeUseLimit.includes("ONLY_WHEN_CHILD_PREPARIN
 const raw=JSON.stringify(cases);
 assert.ok(!raw.includes("answerText"),"No duplicate Catechism answers");
 assert.ok(!raw.includes("autographVerified"),"Do not falsely certify manuscripts");
-console.log("PASS Pius X 3 bilingual x 3 exchanges = 9 style-only replies; pinned route references, original-source gate, approved sprite names, no fabricated quotations or new doctrinal corpus");
+
+/**
+ * An editorial playback driver, NOT a production conversation engine:
+ * advance each scripted exchange in both languages, asserting complete
+ * turn-to-turn continuity, fail-closed source ownership, and no fourth reply.
+ * This never loads the character runtime or emits authentic papal text.
+ */
+function editorialPlayback(scenario,{lang,preparingForFirstCommunion=false}={}){
+ if(scenario.router.branch==="first_communion"&&!preparingForFirstCommunion)
+  return {blocked:"FIRST_COMMUNION_CONTEXT_REQUIRED"};
+ let cursor=0;
+ return {next(input){
+  if(cursor>=scenario.turns.length)return {ok:false,reason:"END_OF_SCRIPTED_PREVIEW"};
+  const turn=scenario.turns[cursor];
+  if(input!==turn.visitor[lang])return {ok:false,reason:"NO_UNSCRIPTED_THEOLOGY"};
+  cursor++;
+  return {ok:true,turn:cursor,sprite:turn.sprite,register:turn.register,
+   reply:turn.reply[lang],historicalQuotation:false,authoritativeAnswer:null,
+   sourceGate:turn.requiresOriginalSourceForSubstance?"ORIGINAL_CONTENT_OWNER_PENDING":"STYLE_ONLY_CONNECTIVE"};
+ }};
+}
+for(const scenario of cases.cases){
+ for(const lang of ["en","fr"]){
+  const player=editorialPlayback(scenario,{lang,preparingForFirstCommunion:true});
+  assert.equal(player.next("Unmapped visitor question").reason,"NO_UNSCRIPTED_THEOLOGY");
+  for(const turn of scenario.turns){
+   const exchange=player.next(turn.visitor[lang]);
+   assert.equal(exchange.ok,true);
+   assert.equal(exchange.turn,turn.no);
+   assert.equal(exchange.reply,turn.reply[lang]);
+   assert.equal(exchange.sprite,turn.sprite);
+   assert.equal(exchange.authoritativeAnswer,null);
+   assert.equal(exchange.historicalQuotation,false);
+   if(turn.requiresOriginalSourceForSubstance)
+    assert.equal(exchange.sourceGate,"ORIGINAL_CONTENT_OWNER_PENDING");
+  }
+  assert.equal(player.next("One more question").reason,"END_OF_SCRIPTED_PREVIEW");
+ }
+}
+const child=cases.cases.find(x=>x.router.branch==="first_communion");
+assert.equal(editorialPlayback(child,{lang:"en",preparingForFirstCommunion:false}).blocked,
+ "FIRST_COMMUNION_CONTEXT_REQUIRED");
+
+console.log("PASS Pius X 3 bilingual x 3 exchanges in both languages, source-gated end-to-end scripted playback = 18 interactions, 9 unique style-only replies; pinned route references, original-source gate, approved sprite names, no fabricated quotations or new doctrinal corpus");
