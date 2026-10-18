@@ -81,7 +81,11 @@
     "post_seventh_batch_pilot_needs_photo": 2,
     "all_zones_have_initial_photographic_reference": true,
     "sanctuary_original_source_directional_notes_verified": 2,
-    "pilot_photo_missing_unchanged": 2
+    "pilot_photo_missing_unchanged": 2,
+    "eighth_batch_new_color_photo_records": 5,
+    "post_eighth_batch_photo_candidate_or_hotspot": 56,
+    "post_eighth_batch_needs_photo": 114,
+    "post_eighth_batch_vestment_photo_candidates": 20
   },
   "zones": [
     {
@@ -2185,9 +2189,35 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true,
+      "evidence_status": "COMPOSITE_FIVE_COLOR_PHOTO_CANDIDATES_UNAPPROVED",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B8-VE15-WHITE-SAINT-VENANT-CATHOLIC",
+          "role": "five_color_comparison_component",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        },
+        {
+          "asset_id": "M6B8-VE15-RED-LOMBEZ-CATHEDRAL",
+          "role": "five_color_comparison_component",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        },
+        {
+          "asset_id": "M6B8-VE15-GREEN-LOMBEZ-CATHEDRAL",
+          "role": "five_color_comparison_component",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        },
+        {
+          "asset_id": "M6B8-VE15-VIOLET-EUGENIO-HANSEN",
+          "role": "five_color_comparison_component",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        },
+        {
+          "asset_id": "M6B8-VE15-BLACK-LOMBEZ-CATHEDRAL",
+          "role": "five_color_comparison_component",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false,
       "required_colors_1962": [
         "white",
         "red",
@@ -2196,7 +2226,19 @@
         "black"
       ],
       "coverage_scope": "COMPOSITE_FIVE_COLOR_REQUIREMENT",
-      "coverage_note": "Do not mark complete from single colour, a digital schematic, or improperly conflated modern colour selection. Source separate 1962-valid fabric photographs and present as a controlled five-variant set."
+      "coverage_note": "Do not mark complete from single colour, a digital schematic, or improperly conflated modern colour selection. Source separate 1962-valid fabric photographs and present as a controlled five-variant set.",
+      "color_set_photo_requirements": {
+        "colors": {
+          "white": "M6B8-VE15-WHITE-SAINT-VENANT-CATHOLIC",
+          "red": "M6B8-VE15-RED-LOMBEZ-CATHEDRAL",
+          "green": "M6B8-VE15-GREEN-LOMBEZ-CATHEDRAL",
+          "violet": "M6B8-VE15-VIOLET-EUGENIO-HANSEN",
+          "black": "M6B8-VE15-BLACK-LOMBEZ-CATHEDRAL"
+        },
+        "nature": "INDEPENDENT_PHOTOGRAPHS_NOT_MATCHING_SET",
+        "status": "FIVE_COLOR_PHOTOGRAPHIC_CANDIDATES_PRESENT_NO_PUBLICATION_APPROVAL",
+        "limitations": "Objects differ in date, style and venue, white example includes red features and violet lacks independently established Roman Catholic venue; these are five research images not proof of one liturgical collection or 1962 ceremonial use."
+      }
     },
     {
       "object_id": "VE16",
@@ -4028,6 +4070,91 @@
       "source_description": "Authored source photograph of a genuine Roman Catholic church's Stations of the Cross artwork. It demonstrates the physical devotional furnishing, not evidence of use during a 1962 Mass or a depiction of all fourteen stations.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH7"
+    },
+    {
+      "asset_id": "M6B8-VE15-WHITE-SAINT-VENANT-CATHOLIC",
+      "object_id": "VE15",
+      "liturgical_color": "white",
+      "role": "five_color_comparison_component",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%C3%89glise_de_Saint-Venant-de-Paquette_-_chasuble_-_3.jpg",
+      "creator": "Cantons-de-l'Est",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3072,
+      "height": 4608,
+      "venue": "Église de Saint-Venant-de-Paquette, Québec, Canada; Roman Catholic heritage church",
+      "source_description": "Photograph of exhibited chasuble in an authentic Catholic heritage church, classified under both white and red chasubles. Mixed white and red elements; use as provisional WHITE color example only after direct visual curation.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH8"
+    },
+    {
+      "asset_id": "M6B8-VE15-RED-LOMBEZ-CATHEDRAL",
+      "object_id": "VE15",
+      "liturgical_color": "red",
+      "role": "five_color_comparison_component",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chasuble_rouge_-_Cath%C3%A9drale_de_Lombez.jpg",
+      "creator": "Zzabeth",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 1604,
+      "height": 2336,
+      "venue": "Cathédrale Sainte-Marie de Lombez, France",
+      "source_description": "Red velvet chasuble and stole in a genuine Roman Catholic French cathedral; 2008 photographer original, historical reference, not a 1962 Mass photo.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH8"
+    },
+    {
+      "asset_id": "M6B8-VE15-GREEN-LOMBEZ-CATHEDRAL",
+      "object_id": "VE15",
+      "liturgical_color": "green",
+      "role": "five_color_comparison_component",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chasuble_vert_-_Cath%C3%A9drale_de_Lombez.jpg",
+      "creator": "Zzabeth",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 1808,
+      "height": 2828,
+      "venue": "Cathédrale Sainte-Marie de Lombez, France",
+      "source_description": "Green silk chasuble with painted and applied Christ imagery in original cathedral collection; not asserted to be currently in liturgical use.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH8"
+    },
+    {
+      "asset_id": "M6B8-VE15-VIOLET-EUGENIO-HANSEN",
+      "object_id": "VE15",
+      "liturgical_color": "violet",
+      "role": "five_color_comparison_component",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chasuble.JPG",
+      "creator": "Eugenio Hansen, OFS",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 2325,
+      "height": 3100,
+      "venue": "Photographer's original violet chasuble photograph; exact physical Catholic collection or venue not identified",
+      "source_description": "Image and Commons summary directly identify a violet chasuble. Photographer identified, but object's Catholic venue and 1962 usage not verified; editorial source/representativeness review required.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH8"
+    },
+    {
+      "asset_id": "M6B8-VE15-BLACK-LOMBEZ-CATHEDRAL",
+      "object_id": "VE15",
+      "liturgical_color": "black",
+      "role": "five_color_comparison_component",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chasuble_noire_-_Cath%C3%A9drale_de_Lombez.jpg",
+      "creator": "Zzabeth",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 1296,
+      "height": 2096,
+      "venue": "Cathédrale Sainte-Marie de Lombez, France",
+      "source_description": "Original photograph of black chasuble in same French Catholic cathedral as red and green variants, available for research comparison of Latin-Rite colors, not a 1962 Requiem use photograph.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH8"
     }
   ]
 }
