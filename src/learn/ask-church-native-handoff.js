@@ -4,6 +4,7 @@ const success = (surface,id)=>({ok:true,surface,id});
 export function createAskChurchNativeHandoff(win=globalThis,{survey=null}={}){
  const routes=new Map((survey?.routes||[]).map(x=>[x.id,x]));
  const scenarios=new Set((survey?.apostolateScenarios||[]).filter(x=>x.publicationState==='READY_IN_RUNTIME_SOT').map(x=>x.id));
+ let opening=false;
  async function open(targetId){
   const id=String(targetId??'');
   if(id==='learn.apologetics'||id==='learn.church_crisis')return failure('PUBLICATION_HOLD');
@@ -12,6 +13,9 @@ export function createAskChurchNativeHandoff(win=globalThis,{survey=null}={}){
   if(route&&(route.releaseGate==='RESEARCH_ONLY'||/RETIRED|ALIAS|GATED/.test(route.routeStatus)))return failure('INACTIVE_OR_GATED');
   const nav=win?.AO_APP_SHELL_V1?.navigate;
   if(typeof nav!=='function')return failure('NATIVE_SHELL_UNAVAILABLE');
+  // Avoid two competing shell transitions when a user double-clicks a destination.
+  if(opening)return failure('OPEN_IN_PROGRESS');
+  opening=true;
   try{
    if(id.startsWith('apostolate:')){
     const navigated=await nav.call(win.AO_APP_SHELL_V1,'apostolate');
@@ -20,7 +24,9 @@ export function createAskChurchNativeHandoff(win=globalThis,{survey=null}={}){
     if(typeof owner?.open!=='function')return failure('APOSTOLATE_NOT_READY');
     const raw=id.slice('apostolate:'.length);
     const opened=owner.open({scenarioId:raw,practice:false});
-    return opened===true||opened?.ok===true?success('apostolate',id):failure('APOSTOLATE_OPEN_FAILED');
+    if(opened!==true&&opened?.ok!==true)return failure('APOSTOLATE_OPEN_FAILED');
+    if(owner.status?.()?.open===false)return failure('APOSTOLATE_NOT_VISIBLE');
+    return success('apostolate',id);
    }
    if(id.startsWith('learn.')){
     const navigated=await nav.call(win.AO_APP_SHELL_V1,'learn');
@@ -52,6 +58,7 @@ export function createAskChurchNativeHandoff(win=globalThis,{survey=null}={}){
    }
    return failure('UNSUPPORTED_DESTINATION');
   }catch(err){return failure('RUNTIME_EXCEPTION',String(err?.message||err));}
+  finally{opening=false;}
  }
  return Object.freeze({open});
 }
