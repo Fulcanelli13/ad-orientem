@@ -1,0 +1,28 @@
+name: Pius X documentary voice style
+on:
+  push:
+    branches:
+      - feature/pius-x-documentary-voice-style-20261018
+    paths:
+      - data/learn/pius-x-documentary-voice-style.v1.json
+      - docs/product/PIUS-X-DOCUMENTARY-VOICE-STYLE-V1.md
+      - tests/pius-x-documentary-voice-style.mjs
+      - .github/workflows/pius-x-documentary-voice-style.yml
+  pull_request:
+    paths:
+      - data/learn/pius-x-documentary-voice-style.v1.json
+      - docs/product/PIUS-X-DOCUMENTARY-VOICE-STYLE-V1.md
+      - tests/pius-x-documentary-voice-style.mjs
+      - .github/workflows/pius-x-documentary-voice-style.yml
+permissions:
+  contents: read
+jobs:
+  historical-voice-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate documentary style without any answer-owner changes
+        run: node tests/pius-x-documentary-voice-style.mjs
