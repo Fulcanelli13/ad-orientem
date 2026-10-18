@@ -17,6 +17,14 @@ P0 #1395 through P4 #1406 were tested on the stacked branch, but **NONE is merge
 
 Original M6 atlas state in the reconciled owner snapshot: **170 objects in 13 zones**, **56 research image/source records** (mixed types and roles), **45 objects with a photo candidate or exact hotspot**, **125 still needing a qualifying photograph**, including **2 of the 30 sanctuary pilot objects**. These are research records, not publication-approved images; six Brompton hotspots belong to a *single* original photograph. A historical illustration or a reference image from another venue is not proof that an object appears in a given sanctuary.
 
+## Conversation deduplication — same P5 PR, no new phase
+
+P5 now removes the genuinely duplicate Ask objective session. Previously `ask-church-guided-preview.js` and `living-church-character-folio.js` each independently called `createAskChurchObjectiveEngine`, allowing diverging objectives after switching presentations. The P2 integration adapter now creates **exactly one** lazy canonical engine per mounted visitor session. Both renderers receive that engine; the character folio does not create one. Guide/persona switches, original module handoffs and returns preserve the same objective/branch/turn data. Closing the Living Church review disposes that session; reopening begins a new one.
+
+With character review explicitly enabled, the approved Sacristan / Canon / St Pius X folio is the **single visible conversational presentation**; the generic Ask window is hidden. Without the character review flag, the existing P2 Ask-the-Church experience remains unchanged. There is one source survey fetch per review session, one original source-owned engine and one native return button; original photo/VMQ and 433-question Catechism remain independent canonical owners.
+
+P5's integrated browser job is reduced to the original M6 offline atlas plus **one** representative 320/390/1280px full journey (character objective, original Catechism, Mass Explorer, exact return). P1, P2, P3 and P4 continue to own their focused regressions in their respective workflows; there is no need for P5 to re-run all four full browser journeys. One owner for each test concern is preferred to repeated look-alike acceptance scripts.
+
 ## Current acceptance matrix
 
 | Scope | Verified automated? | Required human/owner approval |
