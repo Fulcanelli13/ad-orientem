@@ -129,11 +129,14 @@ try{
   ["DUPLICATE_WORD_EN",/\b(the the|and and|of of|to to|in in|that that|which which)\b/iu],
   ["DUPLICATE_WORD_FR",/\b(de de|la la|les les|et et|que que|qui qui|du du)\b/iu],
   ["BROKEN_SPACE_BEFORE_PUNCTUATION_EN",/\s+[,.!?](?:\s|$)/u],
+  ["FR_CLOSING_GUILLEMET_SPACING",/[^\s]»/u],
   ["REPLACEMENT_CHARACTER",/\uFFFD/u],
   ["EMPTY_RENDERED_PASSAGE",/^\s*$/u],
  ];
  const scan=(s,details)=>{
   for(const [rule,re] of suspicious){
+   if(rule.endsWith("_EN")&&details.language!=="en")continue;
+   if(rule.startsWith("FR_")&&details.language!=="fr")continue;
    const m=String(s??"").match(re);
    if(m)flags.push({...details,rule,excerpt:String(s).slice(Math.max(0,(m.index??0)-100),Math.min(String(s).length,(m.index??0)+180))});
   }
