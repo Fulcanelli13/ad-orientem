@@ -104,11 +104,15 @@ export function createVisibleMassLivingChurchAdapter({
  return Object.freeze({
   sync,
   chooseGuide:(id)=>supported?bridge.chooseGuide(id):Object.freeze({ok:false,code:"SCENE_NOT_IN_P1_SLICE"}),
-  status:()=>Object.freeze({version:VISIBLE_MASS_LC_ADAPTER_VERSION,
-   publication:"UNPUBLISHED_REVIEW_ONLY",sceneSupported:supported,
-   ...bridge.status(),massHandoffIntegrated:false,
+  status:()=>{
+   const owner=bridge.status();
+   return Object.freeze({version:VISIBLE_MASS_LC_ADAPTER_VERSION,
+    publication:"UNPUBLISHED_REVIEW_ONLY",sceneSupported:supported,
+    ...owner,context:supported&&owner.enabled?owner.context:null,
+    massHandoffIntegrated:false,
    answersOwnedBy:"ORIGINAL_VISIBLE_MASS_AND_CATECHISM",
-   trailsOwnedBy:"ORIGINAL_VISIBLE_MASS_DIALOGUE_DIRECTOR"}),
+    trailsOwnedBy:"ORIGINAL_VISIBLE_MASS_DIALOGUE_DIRECTOR"});
+  },
   // No public answer, speaker impersonation, or native navigation exposed.
  });
 }
