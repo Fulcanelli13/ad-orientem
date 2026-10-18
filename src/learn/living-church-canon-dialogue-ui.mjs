@@ -128,6 +128,17 @@ export function createCanonSourceDialogueOverlay(win=globalThis,{root,getLang=()
      a.target="_blank";a.rel="noopener noreferrer";refs.append(a);
     }
    }
+   if(rec.editorialCorrection){
+    const note=put(stage,"section","crEvidence");
+    put(note,"div","crKicker",getLang()==="fr"?"Sources précisées · non approuvées":"Source-owner citation errata · still unpublished");
+    put(note,"p","crCaution",getLang()==="fr"?
+      "Les sources ont été précisées dans un correctif documentaire. Le contenu et sa traduction restent à valider.":
+      rec.editorialCorrection.why);
+    for(const witness of rec.editorialExtraWitnesses||[]){
+     const a=node(doc,"a","crLink",witness.title);
+     a.href=witness.url;a.rel="noopener noreferrer";a.target="_blank";note.append(a);
+    }
+   }
    if(rec.editorialAudit){
     const check=put(stage,"section","crEvidence");
     const french=getLang()==="fr";
