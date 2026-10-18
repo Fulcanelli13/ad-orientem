@@ -2432,12 +2432,21 @@ export async function mountNativeReaderPreview({
             form:ready.prepared?.session?.resolvedMass?.form,
             language:ready.prepared?.readerPreferences?.language??"en",
           })
-        : withPublishedCanonParagraphRubrics(
-          visibleCard.paragraphs,ready.data?.rubricEvents??null,{
-            form:ready.prepared?.session?.resolvedMass?.form,
-          }),
+        : String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
+          ? withPublishedMissalParagraphRubrics(
+              visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+                form:ready.prepared?.session?.resolvedMass?.form,
+                language:ready.prepared?.readerPreferences?.language??"en",
+              })
+          : withPublishedCanonParagraphRubrics(
+              visibleCard.paragraphs,ready.data?.rubricEvents??null,{
+                form:ready.prepared?.session?.resolvedMass?.form,
+              }),
       progress:visibleProgress(visibleCard),
-      guide:guideForCurrent(visibleCard),
+      // Guide/Formation is an independent educational destination. The
+      // published R17 1962 event registry, not an inherited 32-card Guide,
+      // supplies LIVE rubrics at the exact source cue paragraph.
+      guide:null,
       ...state,
     });
     canonManualUI?.update();
@@ -2585,7 +2594,7 @@ export async function mountNativeReaderPreview({
       sectionTitle:current?.title ?? "",
       cardUpdate:false,
       progress:current ? visibleProgress(current) : null,
-      guide:guideForCurrent(current),
+      guide:null,
       ...state,
     });
     canonManualUI?.update();

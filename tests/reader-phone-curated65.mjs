@@ -579,16 +579,76 @@ try{
     assert.equal(priestObservedFive.noFinalTurn,false);
     assert.equal(priestObservedFive.finalTurn,true);
     assert.equal(priestObservedFive.finalCue,"AO.SM.C0256");
+    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("LIVE"));
+    await page.waitForFunction(()=>document.querySelector("[data-ao-reader-shell]")?.dataset.mode==="LIVE");
     const guide=page.locator('[data-role="guide-button"]');
-    assert.equal(await guide.count(),1,"Curated card lacks native Guide control");
-    const guides=await page.evaluate(()=>{
+    assert.equal(await guide.count(),1,"Compatibility-only Guide control marker disappeared");
+    const surface=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
       const card=api.model.cards.find(c=>c.title==="Credo · Incarnation, Passion and Resurrection");
       api.showSequence(card.sequence);
-      const label=document.querySelector('[data-role="guide-button"]')?.textContent?.trim();
-      return {label};
+      const tile=document.querySelector('[data-role="guide-button"]');
+      return {hidden:tile?.hidden,disabled:tile?.disabled,
+        visible:getComputedStyle(tile).display!=="none",
+        ribbonCells:document.querySelectorAll('.ao-state-cell').length,
+        explanatoryGuide:!!api.getNativeEventState()?.guide};
     });
-    assert.ok(guides.label!=null,"Guide did not render");
+    assert.equal(surface.hidden,true,"The explanatory Guide remains in LIVE");
+    assert.equal(surface.disabled,true,"LIVE Guide still accepts user interaction");
+    assert.equal(surface.visible,false,"LIVE Guide still occupies a ribbon column");
+    assert.equal(surface.ribbonCells,2,"LIVE YOU / PRIEST ribbon was not preserved");
+    // Check the source-owned in-text 1962 actions on actual rendered LIVE
+    // paragraphs. A source-printed rubric must not be duplicated beneath it.
+    const rubricEvidence=await page.evaluate(async()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const eligible=new Set(["AO.SM.C0111","AO.SM.C0155","AO.SM.C0174",
+        "AO.SM.C0181","AO.SM.C0232","AO.SM.C0263"]);
+      const entries=[];
+      const frame=()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok)));
+      for(const card of api.model.cards.filter(c=>c.paragraphs.some(p=>
+        (p.sourceCueIds??[]).some(id=>eligible.has(id))))){
+        api.showSequence(card.sequence);
+        await frame();
+        for(const node of document.querySelectorAll(".ao-live-inline-rubrics")){
+          entries.push({
+            card:card.title,
+            text:node.textContent.trim(),
+            authority:node.dataset.sourceAuthority,
+            observed:node.dataset.observedNow,
+            ids:[...node.querySelectorAll("[data-rubric-id]")].map(el=>el.dataset.rubricId),
+          });
+        }
+      }
+      return entries;
+    });
+    assert.ok(rubricEvidence.length>0,"LIVE printed no certified 1962 inline rubrics");
+    assert.ok(rubricEvidence.every(x=>x.authority==="MR62_RITUS" &&
+      x.observed==="false" && x.ids.every(id=>/^AO\.RUB\.C\d{4}\.\d{2}$/.test(id))),
+      "LIVE rubric text lost source provenance or misrepresented an observation");
+    assert.ok(rubricEvidence.some(x=>lang==="fr"?/Le prêtre/.test(x.text):/The priest/.test(x.text)),
+      "LIVE rubric language does not follow the reader preference");
+    // Preserve direct visual evidence for human acceptance of the actual
+    // 65-card Host/Chalice rubrics, not only the earlier generic Credo shot.
+    if(width<=390){
+      for(const [name,cueId] of [
+        ["host","AO.SM.C0174"],["chalice","AO.SM.C0181"],
+      ]){
+        const selected=await page.evaluate(id=>{
+          const api=window.__AO_PHONE_PREVIEW;
+          const card=api.model.cards.find(c=>c.paragraphs.some(p=>
+            (p.sourceCueIds??[]).includes(id)));
+          if(!card)return null;
+          api.showSequence(card.sequence);
+          return card.title;
+        },cueId);
+        assert.ok(selected,"Source-owned curated elevation card absent: "+cueId);
+        await page.evaluate(()=>new Promise(resolve=>
+          requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+        await page.screenshot({path:resolve(out,
+          "live-65-inline-"+name+"-"+lang+"-"+width+".png"),
+          fullPage:false,animations:"disabled"});
+      }
+    }
     await page.screenshot({path:resolve(out,lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-credo.png"),fullPage:false});
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
@@ -739,7 +799,7 @@ try{
       await page.screenshot({path:resolve(out,"priest-dual-clock-"+form.toLowerCase()+".png")});
     }finally{await context.close()}
   }
-  console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and Guide.");
+  console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and inline rubrics without Guide.");
 }finally{
   await browser?.close();
   await new Promise(done=>server.close(()=>done()));
