@@ -76,6 +76,14 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-p435930-go-ben]").count(),0,"Benediction leaked into the private Adoration landing surface");
 
   await page.locator("#aoPray435930 [data-p435930-ador-mode='open']").click();
+  // The updated Adoration folio deliberately keeps optional methods
+  // collapsed until requested. Open that disclosure before asserting that
+  // Four Ends can still be reached from silent Adoration.
+  const guidedDisclosure=page.locator("#aoPray435930 .aoAdorationOptionDisclosure:has([data-p435930-ador-four])");
+  assert.equal(await guidedDisclosure.count(),1,"Optional Four Ends disclosure is missing");
+  assert.equal(await guidedDisclosure.evaluate(node=>node.open),false,
+    "Four Ends should remain optional, not displace silent Adoration");
+  await guidedDisclosure.locator(":scope > summary").click();
   await page.waitForSelector("#aoPray435930 [data-p435930-ador-four]",{timeout:5000});
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-mode='holy']").count(),1,"Guided Holy Hour is not available from open Adoration");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-ador-four]").count(),1,"Four Ends is not available from open Adoration");
