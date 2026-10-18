@@ -35,7 +35,7 @@ try{
    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",{},{timeout:25000});
    const chosen=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
-     const sanctus=api.model.cards.find(card=>card.title==="Sanctus");
+     const sanctus=api.model.cards.find(card=>card.title==="Sanctus — Benedictus");
      const canon=api.model.cards.find(card=>card.title==="Te igitur");
      if(!sanctus||!canon)return {error:"SANCTUS_OR_CANON_CARD_MISSING"};
      // The Schola continues independently into the priest's silent Canon,
@@ -95,7 +95,7 @@ try{
    await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
      const preface=api.model.cards.find(c=>c.title==="Preface");
-     const sanctus=api.model.cards.find(c=>c.title==="Sanctus");
+     const sanctus=api.model.cards.find(c=>c.title==="Sanctus — Benedictus");
      const canon=api.model.cards.find(c=>c.title==="Te igitur");
      api.showSequence(preface.sequence);
      api.showSequence(sanctus.sequence);
@@ -140,7 +140,7 @@ try{
    await page.screenshot({path:resolve(out,"live-schola-correction-"+width+".png"),animations:"disabled"});
   }finally{await ctx.close();}
  }
- console.log("PASS LIVE 65 Schola: independent tap next/previous, 320/390 phone layout, manual pause ownership, no Mass focus movement");
+ console.log("PASS LIVE 64 Schola: independent tap next/previous, 320/390 phone layout, manual pause ownership, no Mass focus movement");
 }finally{
  await browser?.close();
  await new Promise(resolve=>server.close(resolve));
