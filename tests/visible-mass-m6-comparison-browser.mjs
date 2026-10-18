@@ -16,14 +16,24 @@ try{
   await page.waitForFunction(()=>window.AO_M6_COMPARATIVE?.status()?.objects===170);
   const status=await page.evaluate(()=>window.AO_M6_COMPARATIVE.status());
   assert.equal(status.images,112);
-  assert.equal(status.staged,17,"Two staged acquisition batches must not inflate the 112-record canonical register");
-  assert.equal(status.ready_four,3,"Chalice, corporal burse and chalice veil must have at least four distinct metadata candidates; no approval implied");
+  assert.equal(status.staged,26,"Three staged acquisition batches must not inflate the 112-record canonical register");
+  assert.equal(status.ready_four,5,"Chalice, corporal burse, chalice veil, paten, and ciborium have four metadata candidates; no editorial approval implied");
   assert.equal(status.pilot,30);
-  assert.equal(status.showing,3,"Start with only genuinely populated comparison groups, not weak one-photo source records");
-  assert.equal(status.selected,"SV01");
+  assert.equal(status.showing,5,"Show only five filled same-object comparisons, not single-photo source records");
+  assert.equal(status.selected,"SV02","Prioritize new paten comparison on initial open");
   assert.equal(await page.locator("#m6-source-archive").isVisible(),false,"Research archive starts hidden");
   assert.ok(status.ready_four<30,"Do not misrepresent existing sparse acquisitions as curated alternatives");
 
+  assert.equal(await page.locator("#m6-best .m6-card").count(),4,"SV02 patens: four distinct isolated Roman Catholic paten specimens");
+  assert.match(await page.locator("#m6-best").innerText(),/POUSSIELGUE-1900/);
+  assert.match(await page.locator("#m6-best").innerText(),/CLERMONT-STSAMSON/);
+  assert.match(await page.locator("#m6-best").innerText(),/DOL-STSAMSON-VERMEIL/);
+  assert.match(await page.locator("#m6-other").innerText(),/BERGER-NESME-CONTEXT/,"Partially visible paten must be contextual rather than a full isolated object candidate");
+  assert.equal(await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("SV03")),true);
+  assert.equal(await page.locator("#m6-best .m6-card").count(),4,"SV03 ciboria: four distinct covered Latin Catholic host vessels");
+  assert.match(await page.locator("#m6-best").innerText(),/ARRAS-FAVIER-1871/);
+  assert.match(await page.locator("#m6-best").innerText(),/EVELLIN-1962/);
+  assert.doesNotMatch(await page.locator("#m6-best").innerText(),/MORLOT/,"Mislabeled Notre-Dame source actually depicts altar cruets");
   assert.equal(await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("SV01")),true);
   assert.match(await page.locator("#m6-object-head").innerText(),/Chalice/);
   assert.equal(await page.locator("#m6-best .m6-card").count(),4,"Four distinct Western Roman Catholic chalices staged for real side-by-side choice");
