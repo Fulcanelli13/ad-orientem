@@ -45,7 +45,9 @@ export function installLivingChurchCatechismShellBridge(win,{frame,reviewRoot,en
    return fail("ORIGINAL_SCENE_NOT_VERIFIED");
   if(busy||owned)return fail("NATIVE_CATECHISM_ALREADY_OPEN");
   const learn=win.AO_LEARN_APP_V1?.status?.();
-  if(!learn?.open||learn?.child!=="learn.visible_mass")
+  // Formation reports open=false while its hub is hidden behind an active child.
+  // Verify the real child owner instead of hub visibility.
+  if(learn?.child!=="learn.visible_mass")
    return fail("FORMATION_SCENE_NOT_OWNED");
   if(typeof win.AO_MODULES?.open!=="function")
    return fail("ORIGINAL_CATECHISM_UNAVAILABLE");
