@@ -220,6 +220,8 @@ body[data-experience=discover] .info{min-height:0}
  body:not(.embedded) .experience-nav button small{font-size:9px}
  body:not(.embedded) .photo-mode-nav{margin:6px 0 8px;gap:5px}
  body:not(.embedded) .photo-mode-nav button{padding:7px 9px;min-height:40px;font-size:11px}
+ body:not(.embedded) .panorama-actions{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+ body:not(.embedded) .panorama-actions button{min-width:0;min-height:42px;padding:0}
  body:not(.embedded)[data-photo-mode="brompton"] .topactions #show-markers,
  body:not(.embedded)[data-photo-mode="newman"] .topactions #show-markers{display:none}
 }
@@ -259,6 +261,7 @@ body[data-experience=discover] .info{min-height:0}
 <button type="button" data-pan="down" aria-label="Look down">↓</button>
 <button type="button" data-pan="closer" aria-label="Zoom in">+</button>
 <button type="button" data-pan="farther" aria-label="Zoom out">−</button>
+<button type="button" data-pan="home" aria-label="Face the sanctuary" title="Return to sanctuary-facing starting view">↺</button>
 </div>
 <p class="panorama-notice" id="panorama-notice" role="status">Genuine photographic panorama, from a single fixed camera position. No simulated walking.</p>
 <button type="button" id="panorama-retry" hidden>Retry original photograph</button>
@@ -745,7 +748,9 @@ for(const b of $("photo-mode-nav").querySelectorAll("button"))b.onclick=()=>{
 };
 $("panorama-retry").onclick=()=>{if(state.view==="panorama")void showPanorama(state.photoMode);};
 for(const b of document.querySelectorAll("[data-pan]"))b.onclick=()=>{
- if(state.view==="panorama")panoramaController?.adjust(...PAN_DELTAS[b.dataset.pan]);
+ if(state.view!=="panorama")return;
+ if(b.dataset.pan==="home")panoramaController?.faceSanctuary();
+ else panoramaController?.adjust(...PAN_DELTAS[b.dataset.pan]);
 };
 $("guide-return").onclick=()=>{
  closeCard();setExperience("discover");
