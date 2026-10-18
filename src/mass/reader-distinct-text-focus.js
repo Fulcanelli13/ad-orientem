@@ -91,9 +91,13 @@ export function installDistinctRiteReadingFocus(root,{mode="LIVE"}={}){
   if(!rows.length)return;
   const at=distinctReadingIndex(scroll,rows);
   for(const [i,node] of rows.entries()){
+   const strength=i===at?"1":Math.abs(i-at)===1?".42":".22";
    node.dataset.aoDistinctReadingActive=String(i===at);
-   node.style.setProperty("--ao-distinct-reading-opacity",
-     Math.abs(i-at)===1?".42":".22");
+   node.style.setProperty("--ao-distinct-reading-opacity",strength);
+   // The native Mass reader already assigns opacity inline with !important.
+   // Equal-priority inline styling is required: a scoped stylesheet alone
+   // does not supersede that existing reading-surface declaration.
+   node.style.setProperty("opacity",strength,"important");
   }
   // A previously visible row may have become an exempt rubric or hidden
   // translation face. Never leave stale dimming on it.
