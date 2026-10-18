@@ -14,11 +14,33 @@ export function correct1962ProperEditorialReferences(proper){
   if(!latin.startsWith(INCORRECT+"\n")||!VERSE.test(latin))return proper;
   const frenchCorrupt=french.startsWith(INCORRECT+"\n") &&
     /Il dominera de la mer à la mer[\s\S]*?Et tous les rois de la terre/u.test(french);
+  // The native print path uses the original named preGospelChants array
+  // rather than gradual directly. Correct that *same* canonical reference
+  // in the projected Gradual section too, never in an Alleluia/Tract.
+  const chantCopy=(proper.preGospelChants??[]).map(entry=>{
+    const kind=String(entry?.kind??"").toLowerCase();
+    if(kind!=="graduale"&&kind!=="gradual")return entry;
+    const text=entry?.text;
+    if(!text||typeof text!=="object")return entry;
+    const la=String(text.lat??"");
+    if(!la.startsWith(INCORRECT+"\n")||
+      !/Dominábitur a mari usque ad mare/u.test(la))return entry;
+    const fr=String(text.fr??"");
+    const frWrong=fr.startsWith(INCORRECT+"\n")&&
+      /Il dominera de la mer à la mer/u.test(fr);
+    return Object.freeze({...entry,text:Object.freeze({...text,
+      lat:CORRECT+la.slice(INCORRECT.length),
+      ...(frWrong?{fr:CORRECT+fr.slice(INCORRECT.length)}:{}),
+    })});
+  });
+  const copyChanged=Array.isArray(proper.preGospelChants)&&
+    chantCopy.some((entry,i)=>entry!==proper.preGospelChants[i]);
   return Object.freeze({...proper,
     gradual:Object.freeze({...proper.gradual,
       lat:CORRECT+latin.slice(INCORRECT.length),
       ...(frenchCorrupt?{fr:CORRECT+french.slice(INCORRECT.length)}:{}),
     }),
+    ...(copyChanged?{preGospelChants:Object.freeze(chantCopy)}:{}),
     editorialReferenceCorrections:Object.freeze([
       ...(proper.editorialReferenceCorrections??[]),
       Object.freeze({
