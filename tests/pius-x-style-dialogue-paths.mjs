@@ -30,7 +30,7 @@ const routeContract=new Map([
  ["PX-STYL-TEACHING-OBJECTION-03",["defend","critic","learn.catechism"]]
 ]);
 const sourceIds=new Set(voices.sourceDocuments.map(x=>x.id));
-const historicalIds=new Set(pre.documents.map(x=>x.id));
+const historicalIds=new Set(pre.documentedItems.map(x=>x.id));
 const availableSprites=new Set(["pius_neutral","pius_welcoming","pius_explaining","pius_thoughtful","pius_grave"]);
 const voicesAllowed=new Set(["PASTORAL","CATECHETICAL","FAMILIAR","DOCTRINAL_CORRECTION","SOLEMN"]);
 assert.equal(cases.cases.length,3);
