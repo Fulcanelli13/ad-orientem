@@ -141,6 +141,35 @@ export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
     from:"whose relics are here, and of all the Saints: that thou wouldst vouchsafe to forgive me all my sins. Amen.",
     to:"whose relics are here, and of all the Saints, that Thou wilt deign to pardon me all my sins. Amen.",
   }),
+  // Red Missal 2013, printed pp.31 and 33: first Canon prayer group.
+  "AO.SM.C0150": Object.freeze({
+    id:"RED-EN-2013-W5-01",
+    blockId:"AO.SM.B047",
+    field:"english",
+    from:"Therefore, most merciful Father, through Jesus Christ thy Son our Lord, we humbly pray and beseech thee,",
+    to:"Most merciful Father, we humbly pray and beseech Thee, through Jesus Christ Thy Son, our Lord,",
+  }),
+  "AO.SM.C0151": Object.freeze({
+    id:"RED-EN-2013-W5-02",
+    blockId:"AO.SM.B047",
+    field:"english",
+    from:"that thou wouldst accept and bless,",
+    to:"to accept and bless",
+  }),
+  "AO.SM.C0163": Object.freeze({
+    id:"RED-EN-2013-W5-03",
+    blockId:"AO.SM.B051",
+    field:"english",
+    from:"Which offering do thou, O God, we beseech thee,",
+    to:"Humbly we pray Thee, O God, be pleased to make this same offering",
+  }),
+  "AO.SM.C0164": Object.freeze({
+    id:"RED-EN-2013-W5-04",
+    blockId:"AO.SM.B051",
+    field:"english",
+    from:"make blessed, approved, ratified, reasonable and acceptable:",
+    to:"wholly blessed, approved, ratified, reasonable and acceptable:",
+  }),
   "AO.SM.C0110": Object.freeze({
     id:"RED-EN-2013-001",
     blockId:"AO.SM.B031",
@@ -159,8 +188,8 @@ export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
     id:"RED-EN-2013-003",
     blockId:"AO.SM.B036",
     field:"english",
-    from:"Let my prayer, O Lord, like incense before You; the lifting up of my hands, like the evening sacrifice.",
-    to:"Let my prayer rise before Thee as incense, O Lord; let the lifting up of my hands be as the evening sacrifice.",
+    from:"Ps 140, 2–4\nLet my prayer, O Lord, like incense before You; the lifting up of my hands, like the evening sacrifice.\nO Lord, set a watch before my mouth, a guard at the door of my lips.\nLet not my heart incline to the evil of engaging in deeds of wickedness.",
+    to:"Ps 140, 2–4\nLet my prayer rise before Thee as incense, O Lord; let the lifting up of my hands be as the evening sacrifice.\nO Lord, set a watch before my mouth, a guard at the door of my lips.\nLet not my heart incline to words of malice, to make excuses for sins.",
   }),
   "AO.SM.C0132": Object.freeze({
     id:"RED-EN-2013-004",
