@@ -452,7 +452,7 @@ const SHELL_STYLE = `
 .ao-schola-meta{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px;min-height:0}
 .ao-schola-progress{grid-row:1;width:100%;height:2px;max-width:none;min-width:0;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px;opacity:.76}
 .ao-schola-progress>span{display:block;height:100%;width:0;background:var(--ao-mass-accent);transition:none}
-.ao-schola-controls{grid-row:2;width:100%;display:grid;grid-template-columns:38px 38px 58px 38px 38px minmax(72px,1fr);gap:5px;align-items:center;opacity:1;pointer-events:auto;overflow:visible}
+.ao-schola-controls{grid-row:2;width:100%;display:grid;grid-template-columns:38px 58px 38px minmax(72px,1fr);gap:6px;align-items:center;opacity:1;pointer-events:auto;overflow:visible}
 .ao-schola-control{
   appearance:none;border:1px solid rgba(255,255,255,.065);background:rgba(255,255,255,.025);color:#9eada2;
   border-radius:7px;min-height:26px;padding:4px 7px;
@@ -466,6 +466,20 @@ button.ao-schola-control{cursor:pointer}
 }
 .ao-schola-control[data-schola-previous]:disabled,.ao-schola-control[data-schola-next]:disabled{
   opacity:.25;cursor:default
+}
+/* Preserve the frozen 4-column donor geometry in SIMPLE and MISSAL.
+   In LIVE only, expose explicit independent phrase correction at 320px+. */
+.ao-reader-shell:not([data-mode="LIVE"]) .ao-schola-control[data-schola-previous],
+.ao-reader-shell:not([data-mode="LIVE"]) .ao-schola-control[data-schola-next]{display:none!important}
+.ao-reader-shell[data-mode="LIVE"] .ao-schola-controls{
+  grid-template-columns:38px 38px 58px 38px 38px minmax(72px,1fr);gap:5px
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-schola-speed,
+.ao-reader-shell[data-mode="LIVE"] .ao-schola-control[data-schola-pause]{min-width:0}
+@media(max-width:760px){
+  .ao-reader-shell[data-mode="LIVE"] .ao-schola-controls{
+    grid-template-columns:36px 36px 48px 36px 36px minmax(54px,1fr);gap:3px
+  }
 }
 .ao-schola-speed{display:grid;place-items:center;min-width:58px;height:34px;text-align:center;color:#c9d8cc;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.07);padding:0}
 .ao-schola-control[data-schola-pause]{justify-self:stretch;min-width:72px;height:34px;color:#aebcaf;border-color:rgba(255,255,255,.09);background:rgba(255,255,255,.03)}
@@ -735,7 +749,7 @@ button.ao-schola-control{cursor:pointer}
   .ao-schola-main{height:44px;margin-top:4px}
   .ao-schola-dock [data-role="schola"]{font-size:14px}.ao-schola-translation{font-size:12px;padding:7px 8px}
   .ao-schola-meta{gap:8px;margin-top:8px}
-  .ao-schola-controls{grid-template-columns:34px 34px 50px 34px 34px minmax(60px,1fr);gap:4px}
+  .ao-schola-controls{grid-template-columns:36px 54px 36px minmax(66px,1fr);gap:5px}
   .ao-schola-control{min-height:28px;padding:4px 6px;font-size:7px}
   .ao-schola-speed{min-width:54px;padding:0}
   .ao-schola-title{padding-right:62px;gap:6px}
@@ -774,7 +788,7 @@ button.ao-schola-control{cursor:pointer}
   .ao-schola-title{min-height:32px}
   .ao-schola-kicker{font-size:10px}
   .ao-schola-page{font-size:10px}
-  .ao-schola-controls{grid-template-columns:36px 36px 48px 36px 36px minmax(54px,1fr);gap:3px}
+  .ao-schola-controls{grid-template-columns:44px 54px 44px minmax(72px,1fr);gap:5px}
   .ao-schola-control{min-height:44px;padding:7px 6px;font-size:11px;line-height:1.2;letter-spacing:.03em}
   .ao-schola-control[data-schola-slower],.ao-schola-control[data-schola-faster]{height:44px;font-size:19px}
   .ao-schola-speed{height:44px}
