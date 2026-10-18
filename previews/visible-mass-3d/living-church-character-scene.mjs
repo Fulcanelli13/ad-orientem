@@ -47,14 +47,18 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  const sourcePanel=el(".lc-source-record"),trailPanel=el(".lc-trail");
  function showTrail(){
   const list=el(".lc-trail-list");list.replaceChildren();
-  const entries=trail.entries();
+  const entries=trail.entries(),seenSources=new Set();
   if(!entries.length)list.append(safe("li","","No guide or source selections yet."));
   for(const entry of entries){
    const li=doc.createElement("li");list.append(li);
    const objectiveNow=state.selectedObjective?.branch||null;
    if(entry.kind==="source"){
     const label="Source: "+readableSource(entry.sourceId)+" ("+roles[entry.guide].name+")";
-    if(objectiveNow===entry.objective){
+    const historyKey=entry.objective+":"+entry.sourceId;
+    const alreadyListed=seenSources.has(historyKey);
+    seenSources.add(historyKey);
+    if(alreadyListed){li.textContent=label+" · revisited";}
+    else if(objectiveNow===entry.objective){
      const b=safe("button","",label+" · revisit");
      b.type="button";b.onclick=async()=>{trailPanel.hidden=true;await openSource(await getDirector(),entry.sourceId);};
      li.append(b);
