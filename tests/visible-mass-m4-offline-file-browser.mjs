@@ -42,6 +42,19 @@ try{
    await page.locator('[data-m5-viewpoint="'+id+'"]').click();
    await page.waitForFunction(id=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().m5Viewpoint===id&&
     document.querySelector("#m5-close-photo").naturalWidth>1000,id,{timeout:25000});
+   if(id==="BROMPTON_ALTAR_1"){
+    const imageState=await page.locator("#m5-close-photo").evaluate(el=>{
+     const s=getComputedStyle(el),b=el.getBoundingClientRect(),v=el.parentElement.getBoundingClientRect();
+     const canvas=document.createElement("canvas");canvas.width=20;canvas.height=20;
+     const ctx=canvas.getContext("2d");ctx.drawImage(el,0,0,20,20);
+     return {naturalWidth:el.naturalWidth,complete:el.complete,bounds:[b.width,b.height,b.x,b.y],
+      viewport:[v.width,v.height,v.x,v.y],style:{display:s.display,visibility:s.visibility,opacity:s.opacity,position:s.position,objectFit:s.objectFit},
+      pixel:[...ctx.getImageData(10,10,1,1).data],scrollY:el.parentElement.scrollTop};
+    });
+    console.log("M5 OFFLINE CLOSE PHOTO RENDER DIAGNOSTICS",spec.name,JSON.stringify(imageState));
+    assert.ok(imageState.bounds[0]>200&&imageState.bounds[1]>180,"original image must occupy visible stage");
+    await page.locator("#m5-close-photo").screenshot({path:out+"/"+spec.name+"-m5-close-photo-element.png"});
+   }
    assert.match(await page.locator("#photo-credit").innerText(),/AndyScott.*CC BY-SA 4.0/);
    assert.match(await page.locator("#photo-caption").innerText(),/Brompton Oratory/);
    assert.equal(await page.locator("#hotspots").isVisible(),false);

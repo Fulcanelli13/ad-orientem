@@ -32,7 +32,7 @@ assert.throws(()=>m4PanoramaPose("BROMPTON_PANO",{yaw:NaN,pitch:0,fov:60}),/Inva
 const html=fs.readFileSync(new URL("../previews/visible-mass-3d/sanctuary-hotspot-pilot.html",import.meta.url),"utf8");
 for(const target of ['data-photo-mode="still"','data-photo-mode="brompton"','data-photo-mode="newman"',
  'id="panorama-stage"','id="photo-viewport"','visible-mass-m4-panorama.mjs',
- 'returnPhotoMode','panoramaController?.hide()','if(state.view==="panorama")showChurch()'])
+ 'returnPhotoMode','panoramaController?.hide()','if(state.view!=="church")showChurch()', 'id="m5-close-stage"'])
  assert.ok(html.includes(target),"M4 same-viewer integration: "+target);
 assert.match(html,/state\.view="panorama"[\s\S]*?\$\("photo-viewport"\)\.hidden=true/,"no six still-photo hotspots on panorama");
 assert.match(html,/state\.view="church"[\s\S]*?\$\("panorama-stage"\)\.hidden=true/,"original still stays independent");
