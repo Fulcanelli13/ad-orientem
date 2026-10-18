@@ -106,6 +106,9 @@ assert.deepEqual(alleluiaTrack.canonicalBlockIds,["AO.SM.B022"]);
 s=schola.selectTrack("ALLELUIA_TRACT_SEQUENCE");
 assert.equal(s.schola.latin,"Sequentia");
 
+// The existing full Schola track traversal is explicitly Gregorian:
+ // never assume this setting from an unknown local choir.
+schola.setSanctusPerformance("GREGORIAN");
 s=schola.activateForCard(13);
 assert.equal(s.trackId,"SANCTUS_BENEDICTUS");
 assert.equal(s.schola.cueId,"AO.SM.C0145");
@@ -120,6 +123,29 @@ assert.equal(ended.complete,true);
 const last=ended.schola.segmentId;
 assert.equal(schola.next().schola.segmentId,last,"completed Schola track looped to the beginning");
 
+// An unspecified or polyphonic setting must NEVER imply the choir has
+// begun Benedictus merely because a timer completed or priest cue advanced.
+for(const performance of ["UNSPECIFIED","POLYPHONIC"]){
+  const c=createNativeScholaController({sungCorpus:sung,properSlots,
+    prepared:{...prepared,readerPreferences:{sanctusPerformance:performance}}});
+  c.selectTrack("SANCTUS_BENEDICTUS");
+  c.next();c.next();
+  assert.equal(c.project().schola.cueId,"AO.SM.C0147");
+  assert.equal(c.project().benedictusHold,true);
+  assert.equal(c.next().schola.cueId,"AO.SM.C0147",
+    "automatic ticker crossed observed sung Benedictus barrier");
+  assert.equal(c.syncCue("AO.SM.C0148").schola.cueId,"AO.SM.C0147",
+    "priest's Benedictus cue was misused as a Schola observation");
+  assert.equal(c.project().benedictusHold,true);
+  const released=c.releaseBenedictus();
+  assert.equal(released.schola.cueId,"AO.SM.C0148");
+  assert.equal(released.benedictusHold,false);
+  assert.equal(c.next().schola.cueId,"AO.SM.C0149");
+  const reset=c.setSanctusPerformance("GREGORIAN");
+  assert.equal(reset.sanctusPerformance,"GREGORIAN");
+}
+assert.equal(schola.releaseBenedictus().schola.cueId,last,
+  "Gregorian performance must not create an unnecessary second release");
 s=schola.activateForCard(4);
 assert.equal(s.schola,null);
 assert.equal(s.ownership,"R17_EXACT_SCHOLA_NONE");
