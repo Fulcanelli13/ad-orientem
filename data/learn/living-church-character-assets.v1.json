@@ -1,0 +1,74 @@
+{
+  "schema": "AO_LIVING_CHURCH_P3_SPRITE_BANK_V1",
+  "date": "2026-10-18",
+  "state": "REVIEW_ONLY_APPROVED_CONVERSATION_VISUAL_REFERENCE_NOT_PUBLICATION_CERTIFIED",
+  "source": "Previously approved Ad Orientem Living Church three-character local prototype generated in a prior chat, 18 October 2026",
+  "chars": [
+    {
+      "id": "sacristan",
+      "name": {
+        "en": "The Sacristan",
+        "fr": "Le Sacristain"
+      },
+      "expertise": "physical-objects",
+      "sourceOwner": "VISIBLE_MASS_OBJECT_AND_GLOSSARY",
+      "approvedSelection": "S5",
+      "description": "Elderly Sacristan character; approved prototype reference"
+    },
+    {
+      "id": "canon",
+      "name": {
+        "en": "Monsieur le Chanoine",
+        "fr": "Monsieur le Chanoine"
+      },
+      "expertise": "liturgy-mass-formation",
+      "sourceOwner": "MASS_EXPLORER_AND_SOURCE_REGISTRIES",
+      "approvedSelection": "C3",
+      "description": "Canon reference selected by user; documentary dialogue only"
+    },
+    {
+      "id": "pius-x",
+      "name": {
+        "en": "St Pius X",
+        "fr": "Saint Pie X"
+      },
+      "expertise": "catechism",
+      "sourceOwner": "PX1912_433_CANONICAL_CATECHISM",
+      "approvedSelection": "OCT18_FIVE_EXPRESSION_SET",
+      "description": "Historical-simulation character; answers must be exactly original source-owned text"
+    }
+  ],
+  "emotions": [
+    "neutral",
+    "welcoming",
+    "explaining",
+    "thoughtful",
+    "grave"
+  ],
+  "images": {
+    "sacristan": {
+      "neutral": "/assets/living-church/sprites/sacristan-neutral.webp",
+      "welcoming": "/assets/living-church/sprites/sacristan-welcoming.webp",
+      "explaining": "/assets/living-church/sprites/sacristan-explaining.webp",
+      "thoughtful": "/assets/living-church/sprites/sacristan-thoughtful.webp",
+      "grave": "/assets/living-church/sprites/sacristan-grave.webp"
+    },
+    "canon": {
+      "neutral": "/assets/living-church/sprites/canon-neutral.webp",
+      "welcoming": "/assets/living-church/sprites/canon-welcoming.webp",
+      "explaining": "/assets/living-church/sprites/canon-explaining.webp",
+      "thoughtful": "/assets/living-church/sprites/canon-thoughtful.webp",
+      "grave": "/assets/living-church/sprites/canon-grave.webp"
+    },
+    "pius-x": {
+      "neutral": "/assets/living-church/sprites/pius-neutral.webp",
+      "welcoming": "/assets/living-church/sprites/pius-welcoming.webp",
+      "explaining": "/assets/living-church/sprites/pius-explaining.webp",
+      "thoughtful": "/assets/living-church/sprites/pius-thoughtful.webp",
+      "grave": "/assets/living-church/sprites/pius-grave.webp"
+    }
+  },
+  "licence": "AI-generated conversation reference assets; rights and final distribution approval pending",
+  "publication": "DRAFT_DO_NOT_RELEASE",
+  "claims": "Do not treat avatar artwork as a historical photograph or text as historically spoken"
+}
