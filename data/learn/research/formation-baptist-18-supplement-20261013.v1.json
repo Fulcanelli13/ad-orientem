@@ -1,0 +1,460 @@
+{
+  "schema": "AO_FORMATION_BAPTIST_EVANGELICAL_18_RESEARCH_V1",
+  "date": "2026-10-13",
+  "status": "SOURCE_LINKED_EN_FR_RESEARCH_ONLY",
+  "source_registry": [
+    {
+      "id": "BFM",
+      "title": "Southern Baptist Convention, Baptist Faith and Message 2000 (with 2023 Article VI amendment)",
+      "url": "https://bfm.sbc.net/bfm2000/",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG",
+      "title": "Assemblies of God, Statement of Fundamental Truths",
+      "url": "https://ag.org/Beliefs/Statement-of-Fundamental-truths",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DTS",
+      "title": "Dallas Theological Seminary, Doctrinal Statement",
+      "url": "https://www.dts.edu/about/doctrinal-statement/",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT",
+      "title": "Council of Trent, decrees",
+      "url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "BAP-EV-001",
+      "original_title_candidate": "What does ‘evangelical’ mean?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Evangelical denotes a broad Protestant movement centred on Scripture, conversion and evangelization, not one denomination. Baptist, Pentecostal, Reformed and independent churches do not share identical sacramental or ecclesial teaching.",
+            "fr": "Le terme évangélique désigne un vaste mouvement protestant centré sur l'Écriture, la conversion et l'évangélisation, non une dénomination unique. Baptistes, pentecôtistes, réformés et communautés indépendantes ne professent pas une doctrine sacramentelle ou ecclésiale uniforme."
+          },
+          "source_ids": [
+            "BFM",
+            "AG"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-002",
+      "original_title_candidate": "What specifically makes a church Baptist?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "A representative Baptist confession combines personal profession of faith before baptism, immersion, two ordinances and an autonomous local congregation. Baptist groups differ among themselves on predestination and eschatology.",
+            "fr": "Une confession baptiste représentative associe profession personnelle de foi avant le baptême, immersion, deux ordonnances et autonomie de l'assemblée locale. Les groupes baptistes divergent notamment sur la prédestination et l'eschatologie."
+          },
+          "source_ids": [
+            "BFM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-003",
+      "original_title_candidate": "Is ‘non-denominational’ a theological system?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Non-denominational identifies organizational independence, not lack of theology. An independent church may hold beliefs similar to Baptist or Pentecostal teaching; its own doctrinal statement, not its label, is decisive.",
+            "fr": "L'appellation « non confessionnelle » décrit une indépendance institutionnelle et non une absence de théologie. Une communauté indépendante peut être proche des baptistes ou des pentecôtistes ; sa profession de foi effective est décisive."
+          },
+          "source_ids": [
+            "BFM",
+            "AG"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-004",
+      "original_title_candidate": "What does ‘born again’ mean in evangelical usage?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "In Baptist usage the new birth is regeneration by the Holy Spirit, accompanied by repentance and personal faith. Catholic teaching also affirms regeneration, normally conferred sacramentally in Baptism, including infant Baptism.",
+            "fr": "Dans l'usage baptiste, la nouvelle naissance est la régénération par l'Esprit Saint avec repentir et foi personnelle. La doctrine catholique affirme également la régénération, normalement conférée sacramentellement au Baptême, y compris des enfants."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-005",
+      "original_title_candidate": "Is saying a ‘sinner’s prayer’ itself what saves?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "A sinner's prayer may express conversion but is not a mechanically saving formula. The Baptist confession presents salvation as God's grace received in repentance and faith; Catholic teaching likewise rejects magical reliance on recited words.",
+            "fr": "Une prière du pécheur peut exprimer la conversion sans constituer une formule salvifique automatique. La confession baptiste présente le salut comme grâce reçue dans le repentir et la foi ; le catholicisme rejette également la confiance magique dans des mots récités."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-006",
+      "original_title_candidate": "What does ‘accept Jesus as your personal Lord and Savior’ mean?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Accepting Jesus as personal Lord and Saviour means entrusting oneself to Christ with repentance and obedience, not simply claiming religious identity. The Catholic disagreement concerns the proper relationship of personal faith to sacramental incorporation and ecclesial communion.",
+            "fr": "Accepter Jésus comme Seigneur et Sauveur personnel signifie se confier au Christ dans le repentir et l'obéissance, non revendiquer une identité religieuse. Le désaccord catholique porte sur l'articulation de la foi personnelle, de l'incorporation sacramentelle et de la communion ecclésiale."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-007",
+      "original_title_candidate": "Is salvation understood as purely intellectual belief?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Classical Baptist faith is not merely intellectual agreement: the Baptist Faith and Message requires repentance and describes lifelong sanctification. Catholic disagreement about justification cannot fairly be recast as an evangelical permission to sin.",
+            "fr": "La foi baptiste classique ne se réduit pas à l'adhésion intellectuelle : la confession baptiste du Sud exige le repentir et décrit une sanctification durant toute la vie. Le désaccord catholique sur la justification ne permet pas de caricaturer l'évangélisme comme une permission de pécher."
+          },
+          "source_ids": [
+            "BFM",
+            "TRENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-011",
+      "original_title_candidate": "Why immersion?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Baptists require immersion because it visibly portrays burial and resurrection with Christ and follows the believer's profession. Catholics recognize that symbolism but do not require immersion alone for valid Baptism.",
+            "fr": "Les baptistes prescrivent l'immersion parce qu'elle représente visiblement ensevelissement et résurrection avec le Christ après la profession de foi. Les catholiques reconnaissent cette symbolique sans faire de l'immersion la seule forme valide du Baptême."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-012",
+      "original_title_candidate": "Does Baptist Baptism regenerate?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "In the Southern Baptist confession Baptism is a symbolic ordinance following personal faith, rather than the sacramental act that brings rebirth. Catholic doctrine instead attributes real regenerative efficacy to Baptism.",
+            "fr": "Dans la confession baptiste du Sud, le baptême est une ordonnance symbolique suivant la foi personnelle, non l'acte sacramentel qui confère la nouvelle naissance. La doctrine catholique lui reconnaît au contraire une efficacité régénératrice réelle."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-014",
+      "original_title_candidate": "Is Baptist Communion always “just a symbol”?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "The Southern Baptist statement explicitly describes the Lord's Supper as symbolic remembrance; other Baptist thinkers may describe deeper spiritual fellowship. Baptist Eucharistic practice should not be presented as universally identical or confused with transubstantiation.",
+            "fr": "La confession baptiste du Sud décrit expressément la Cène comme mémoire symbolique ; d'autres auteurs baptistes évoquent une communion spirituelle plus forte. Il ne faut ni attribuer à tous une seule interprétation ni confondre cette pratique avec la transsubstantiation."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-015",
+      "original_title_candidate": "Do Baptists believe Christ becomes present in the bread and wine?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "The Baptist Faith and Message does not profess Christ's substantial Eucharistic presence under consecrated bread and wine, unlike the Catholic doctrine of the Real Presence and transubstantiation. This is a doctrinal disagreement, not simply different vocabulary.",
+            "fr": "La confession baptiste du Sud ne professe pas la présence eucharistique substantielle du Christ sous le pain et le vin consacrés, contrairement à la présence réelle et à la transsubstantiation catholiques. La divergence est doctrinale, non purement verbale."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-016",
+      "original_title_candidate": "Why call Baptism and Communion “ordinances” rather than sacraments?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Ordinance emphasizes Christ's command and the believer's response; the Southern Baptist confession calls Baptism and the Lord's Supper symbolic ordinances. Catholic sacraments are efficacious signs imparting grace, not only commemorations or public testimonies.",
+            "fr": "Le mot ordonnance souligne le commandement du Christ et la réponse du croyant ; la confession baptiste du Sud qualifie ainsi baptême et Cène. Les sacrements catholiques sont des signes efficaces conférant la grâce, non de simples commémorations ou témoignages publics."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-018",
+      "original_title_candidate": "What is congregationalism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Congregationalism gives each gathered community authority over local governance under Christ, with pastors and deacons; it does not exclude leadership, church discipline or interchurch cooperation. It differs from the Catholic episcopal structure.",
+            "fr": "Le congrégationalisme confie à chaque assemblée le gouvernement local sous le Christ, avec pasteurs et diacres ; il n'exclut ni ministère, ni discipline, ni coopération entre Églises. Il diffère de la structure épiscopale catholique."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-019",
+      "original_title_candidate": "Is there therefore no “Baptist Church” with authority over all Baptist congregations?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Baptist conventions can coordinate missions without becoming a single worldwide Baptist Church possessing universal jurisdiction. The Southern Baptist confession explicitly calls the local church autonomous.",
+            "fr": "Les conventions baptistes coordonnent parfois la mission sans constituer une unique Église baptiste mondiale dotée d'une juridiction universelle. La confession baptiste du Sud déclare expressément l'autonomie de la communauté locale."
+          },
+          "source_ids": [
+            "BFM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-021",
+      "original_title_candidate": "Do Baptists normally believe “once saved, always saved”?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Some Baptists, including the Southern Baptist tradition, teach that all truly regenerate believers persevere until the end even if they fall into sin. Other Baptist groups reject that formulation; 'once saved, always saved' is not universal Baptist dogma.",
+            "fr": "Certains baptistes, dont ceux du Sud, enseignent la persévérance finale des véritables régénérés, même après des chutes graves. D'autres groupes baptistes rejettent cette formulation : « sauvé une fois, sauvé toujours » n'est pas un dogme baptiste universel."
+          },
+          "source_ids": [
+            "BFM",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-022",
+      "original_title_candidate": "Is dispensationalism essential to Baptist or evangelical Christianity?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Dispensationalism distinguishes stages of God's historical administration and often Israel from the Church. Dallas Theological Seminary professes this approach, whereas the Baptist Faith and Message does not prescribe its detailed scheme; it is not constitutive of evangelicalism as a whole.",
+            "fr": "Le dispensationalisme distingue les économies historiques divines et souvent Israël de l'Église. Le séminaire de Dallas le professe, tandis que la confession baptiste du Sud n'en impose pas le système détaillé ; il ne définit pas l'évangélisme entier."
+          },
+          "source_ids": [
+            "DTS",
+            "BFM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-023",
+      "original_title_candidate": "Is the pre-tribulation Rapture universal evangelical doctrine?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "A pre-tribulation Rapture places the gathering of believers before the final tribulation; Dallas Theological Seminary is an example. This chronology is disputed within evangelicalism and is not the Catholic teaching on the return of Christ.",
+            "fr": "L'enlèvement prétribulationniste situe le rassemblement des croyants avant la tribulation finale, comme le professe notamment le séminaire de Dallas. Cette chronologie est contestée parmi les évangéliques et ne correspond pas à la doctrine catholique du retour du Christ."
+          },
+          "source_ids": [
+            "DTS",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    },
+    {
+      "id": "BAP-EV-024",
+      "original_title_candidate": "What about Pentecostal evangelicals and speaking in tongues?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_primary_confession_and_catholic_comparison",
+          "text": {
+            "en": "Pentecostal evangelical teaching may stress tongues, healing and Spirit baptism; Assemblies of God regards initial tongues as evidence of Spirit baptism. That is not the Baptist Faith and Message and cannot be imputed to every evangelical church.",
+            "fr": "Le pentecôtisme évangélique peut mettre l'accent sur langues, guérison et baptême dans l'Esprit ; les Assemblées de Dieu tiennent les langues initiales pour son signe. Cette doctrine n'est pas la confession baptiste du Sud et ne s'étend pas à toute Église évangélique."
+          },
+          "source_ids": [
+            "AG",
+            "BFM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Not independently approved for historical original text, source passage context, translations or doctrine."
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

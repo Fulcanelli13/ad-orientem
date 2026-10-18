@@ -1,0 +1,190 @@
+{
+  "schema": "AO_FORMATION_AI_6_PARTIAL_ENRICHMENTS_V1",
+  "date": "2026-10-13",
+  "status": "BILINGUAL_DRAFT_UNPUBLISHED",
+  "source_registry": [
+    {
+      "id": "AN-EN",
+      "title": "Antiqua et nova (2025), English original",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250128_antiqua-et-nova_en.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AN-FR",
+      "title": "Antiqua et nova (2025), official French",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250128_antiqua-et-nova_fr.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "AI-001",
+      "original_title_candidate": "Is artificial intelligence intrinsically evil?",
+      "owner_reuse": [
+        "APOL-050"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "specific_ethics_and_source_limit",
+          "text": {
+            "en": "Artificial intelligence is not intrinsically evil as a kind of technology. Antiqua et nova §§36–48 treats scientific skill as a possible good, while requiring that the purposes, means and wider social effects of each application respect human dignity; useful tools can nonetheless be designed or used for intrinsically wrongful ends. The Catholic moral judgment concerns human acts of creating, directing and using AI, not the mere presence of software.",
+            "fr": "L'intelligence artificielle n'est pas intrinsèquement mauvaise en tant que technologie. Antiqua et nova §§36–48 présente le savoir technique comme un bien possible, tout en exigeant que les fins, les moyens et les effets sociaux de chaque application respectent la dignité humaine ; un outil utile peut néanmoins servir des actes mauvais par leur objet. Le jugement moral catholique concerne les actes humains de création, de direction et d'utilisation de l'IA, non la simple existence d'un logiciel."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "AI-002",
+      "original_title_candidate": "Is an AI actually a person or a human-like mind?",
+      "owner_reuse": [
+        "APOL-050"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "specific_ethics_and_source_limit",
+          "text": {
+            "en": "Current AI systems can mimic conversation and perform cognitive tasks but do not thereby acquire the embodied, relational and spiritual identity of a human person. Antiqua et nova §§7–12 and 29–35 rejects reducing human intellect to task performance and insists on the human person as an integral unity. Whether hypothetical future systems could exhibit consciousness is a separate philosophical and empirical dispute; good performance is not evidence of sacramental or juridical personhood.",
+            "fr": "Les IA actuelles peuvent imiter la conversation et accomplir des tâches cognitives sans acquérir pour autant l'identité corporelle, relationnelle et spirituelle d'une personne humaine. Antiqua et nova §§7–12 et 29–35 refuse de réduire l'intelligence humaine à une performance fonctionnelle et affirme l'unité intégrale de la personne. L'éventuelle conscience de systèmes futurs demeure une autre question philosophique et empirique ; de bonnes performances ne prouvent ni personnalité sacramentelle ni personnalité juridique."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "AI-003",
+      "original_title_candidate": "Can an AI become morally responsible for its decisions?",
+      "owner_reuse": [
+        "APOL-050"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "specific_ethics_and_source_limit",
+          "text": {
+            "en": "The fact that AI software selects outputs or operates autonomously does not make it a moral subject in the sense of human free choice. Antiqua et nova §§43–48 holds that responsibility for consequential AI use remains with human designers, deployers and decision-makers, although their respective fault depends on knowledge, control and foreseeability. A claim that 'the algorithm chose it' does not absolve responsible humans.",
+            "fr": "Qu'un logiciel d'IA sélectionne des réponses ou fonctionne de manière autonome ne fait pas de lui un sujet moral au sens du libre choix humain. Antiqua et nova §§43–48 maintient la responsabilité humaine des concepteurs, déployeurs et décideurs, même si leurs fautes respectives dépendent de la connaissance, du contrôle et de la prévisibilité. Dire que « l'algorithme l'a décidé » ne dispense pas les responsables humains de leurs obligations."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "AI-009",
+      "original_title_candidate": "Should AI replace human workers whenever it is cheaper?",
+      "owner_reuse": [
+        "APOL-053"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "specific_ethics_and_source_limit",
+          "text": {
+            "en": "Economic savings are not a sufficient moral reason to replace every worker with AI. Antiqua et nova §§68–70 and Catholic social teaching distinguish productivity gains from the dignity of work, fair wages, opportunities for meaningful employment and protection of vulnerable people. Some automation can liberate workers from dangerous tasks, but policy must also address retraining, power inequalities and the distribution of gains.",
+            "fr": "Les économies ne suffisent pas moralement à justifier le remplacement systématique des travailleurs par l'IA. Antiqua et nova §§68–70 et la doctrine sociale distinguent productivité, dignité du travail, juste salaire, possibilité d'emploi significatif et protection des plus vulnérables. Certaines automatisations libèrent de tâches dangereuses, mais il faut aussi traiter reconversion, inégalités de pouvoir et répartition des bénéfices."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "AI-013",
+      "original_title_candidate": "Can AI determine what is morally right for me?",
+      "owner_reuse": [
+        "APOL-051"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "specific_ethics_and_source_limit",
+          "text": {
+            "en": "An AI can summarize moral teaching and help clarify an ethical dilemma but cannot be the final authority that creates right and wrong for a person. Catholic conscience is a practical judgment that must be formed by reason and moral truth; Antiqua et nova §§43–48 cautions against surrendering responsible discernment to automated systems. In grave cases seek competent human advice and apply authentic Church teaching rather than treat model output as a magisterial decree.",
+            "fr": "Une IA peut résumer la doctrine morale et éclairer un dilemme, mais ne devient pas l'autorité ultime créant le bien et le mal. La conscience catholique est un jugement pratique à former selon la raison et la vérité morale ; Antiqua et nova §§43–48 met en garde contre l'abandon du discernement aux systèmes automatisés. Dans les cas graves, il faut consulter des personnes compétentes et appliquer l'enseignement authentique de l'Église, non recevoir une réponse du modèle comme un décret du magistère."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "AI-014",
+      "original_title_candidate": "Can AI be used for Catholic formation or evangelization?",
+      "owner_reuse": [
+        "APOL-005"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "specific_ethics_and_source_limit",
+          "text": {
+            "en": "AI may aid Catholic formation through translation, accessible study, search, question practice and retrieval of authoritative texts. Antiqua et nova §§80–84 emphasizes that education must build real understanding rather than passive answer consumption. Generated catechetical content therefore requires theological review, paragraph-level source verification, acknowledgement of uncertainty and clear limits: AI cannot replace Scripture, authentic teaching, sacramental ministers or personal spiritual accompaniment.",
+            "fr": "L'IA peut servir la formation catholique par traduction, étude accessible, recherche, exercices de questions et consultation des textes faisant autorité. Antiqua et nova §§80–84 rappelle que l'éducation doit former l'intelligence plutôt qu'encourager une consommation passive de réponses. Le contenu catéchétique généré exige donc relecture théologique, vérification des sources paragraphe par paragraphe, reconnaissance des incertitudes et limites explicites : l'IA ne remplace ni l'Écriture, ni l'enseignement authentique, ni les ministres sacramentels, ni l'accompagnement spirituel personnel."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

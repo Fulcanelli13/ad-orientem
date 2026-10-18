@@ -1,0 +1,488 @@
+{
+  "schema": "AO_FORMATION_PENTECOSTAL_17_RESEARCH_V1",
+  "date": "2026-10-13",
+  "status": "BILINGUAL_EN_FR_SOURCE_LINKED_RESEARCH_ONLY",
+  "source_registry": [
+    {
+      "id": "AG-HIST",
+      "title": "Assemblies of God, Historical account of Azusa Street, Topeka and movement",
+      "url": "https://news.ag.org/en/article-repository/news/1999/04/william-j-seymour-and-the-azusa-street-revival/",
+      "kind": "PENTECOSTAL_HISTORICAL_ACCOUNT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG-ST",
+      "title": "Assemblies of God, Statement of Fundamental Truths",
+      "url": "https://ag.org/Beliefs/Statement-of-Fundamental-truths",
+      "kind": "PENTECOSTAL_PRIMARY_CONFESSION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG-BAP",
+      "title": "Assemblies of God, Baptism in the Holy Spirit doctrinal paper",
+      "url": "https://ag.org/beliefs/position-papers/baptism-in-the-holy-spirit",
+      "kind": "PENTECOSTAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG-PROPH",
+      "title": "Assemblies of God, Modern-Day Prophecy (2025)",
+      "url": "https://ag.org/Beliefs/Position-Papers/Modern-Day-Prophecy",
+      "kind": "PENTECOSTAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG-HEAL",
+      "title": "Assemblies of God, Divine Healing (2010)",
+      "url": "https://ag.org/beliefs/position-papers/divine-healing",
+      "kind": "PENTECOSTAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG-PROSP",
+      "title": "Frank D. Macchia, The Prosperity Gospel: A Biblical Evaluation, AG Enrichment Journal 2015",
+      "url": "https://enrichmentjournal.ag.org/Issues/2015/Winter-2015/The-Prosperity-Gospel-A-Biblical-Evaluation",
+      "kind": "PENTECOSTAL_INTERNAL_CRITICAL_STUDY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church, Holy Spirit, baptism, charisms, prayer and discernment",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "kind": "CATHOLIC_OFFICIAL_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CHARIS",
+      "title": "Francis, To CHARIS leaders (2019)",
+      "url": "https://www.vatican.va/content/francesco/en/speeches/2019/june/documents/papa-francesco_20190608_charis.html",
+      "kind": "CATHOLIC_PAPAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "JP2-CHAR",
+      "title": "John Paul II to Catholic Charismatic Renewal Office (1992)",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1992/march/documents/hf_jp-ii_spe_19920314_charismatic-renewal.html",
+      "kind": "CATHOLIC_PAPAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DDF-BAPT",
+      "title": "CDF, Doctrinal commentary on validity of Trinitarian baptism formulas (2008)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20080201_validity-baptism-miralles_en.html",
+      "kind": "CATHOLIC_DOCTRINAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "PEN-001",
+      "original_title_candidate": "What is Pentecostalism historically?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "Modern classical Pentecostalism developed from holiness and revivalist movements, including events in Topeka (1901) and the interracial Azusa Street revival led by William J. Seymour (1906). Its emphasis on empowerment by the Holy Spirit and charismatic gifts arose within Protestant Christianity. It is therefore neither an ancient single denomination nor a synonym for all Christians who pray for miracles.",
+            "fr": "Le pentecôtisme classique moderne s'est développé à partir des mouvements de sainteté et de réveil, notamment à Topeka (1901) et lors du réveil interracial d'Azusa Street dirigé par William J. Seymour (1906). Il met l'accent sur la puissance de l'Esprit Saint et les charismes dans un contexte protestant. Ce n'est donc ni une dénomination ancienne unique ni un synonyme de tous les chrétiens qui prient pour des miracles."
+          },
+          "source_ids": [
+            "AG-HIST"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-002",
+      "original_title_candidate": "Is Pentecostalism one denomination?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "Pentecostalism is a family of churches and movements rather than one denomination. The Assemblies of God is Trinitarian and has a published confession; Oneness Pentecostal bodies reject the Nicene three-person distinction, and independent charismatic communities have other policies. One organization's teaching must not be treated as universal.",
+            "fr": "Le pentecôtisme est une famille d'Églises et de mouvements, non une seule dénomination. Les Assemblées de Dieu sont trinitaires et possèdent une confession publiée ; certains groupes pentecôtistes dits « unicitaires » rejettent la distinction nicéenne des trois personnes, et les communautés charismatiques indépendantes ont d'autres positions. La doctrine d'une organisation ne vaut pas pour toutes."
+          },
+          "source_ids": [
+            "AG-ST",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-003",
+      "original_title_candidate": "What distinguishes classical Pentecostalism from ordinary evangelicalism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "Classical Pentecostal distinctives often include a post-conversion empowering experience called Spirit baptism and an expectation of continuing charismatic gifts. The Assemblies of God teaches initial physical evidence of tongues, while other evangelicals may affirm regeneration without that doctrine. Pentecostals still share broad Protestant convictions about Scripture and salvation.",
+            "fr": "Le pentecôtisme classique se distingue souvent par une expérience d'effusion de puissance après la conversion, appelée baptême dans l'Esprit, et par l'attente de charismes actuels. Les Assemblées de Dieu enseignent que les langues en sont le signe physique initial, contrairement à d'autres évangéliques. Elles partagent pourtant de nombreuses convictions protestantes sur l'Écriture et le salut."
+          },
+          "source_ids": [
+            "AG-ST",
+            "AG-BAP"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-004",
+      "original_title_candidate": "What is ‘Baptism in the Holy Spirit’ in classical Pentecostalism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "In the Assemblies of God confession, baptism in the Holy Spirit is an empowering experience available to believers, distinguished from regeneration and water baptism, and intended for witness and ministry. Its claimed initial physical sign is speaking in tongues; Catholics should first describe this denominational account accurately rather than assuming it refers to the sacrament of Baptism.",
+            "fr": "Selon la confession des Assemblées de Dieu, le baptême dans l'Esprit est une expérience de puissance offerte aux croyants, distincte de la régénération et du baptême d'eau, destinée au témoignage et au ministère. Son signe physique initial serait le parler en langues ; le catholique doit décrire cette conception avant de l'assimiler par erreur au sacrement du Baptême."
+          },
+          "source_ids": [
+            "AG-ST",
+            "AG-BAP",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-005",
+      "original_title_candidate": "Does Pentecostal Spirit baptism equal Christian Baptism with water?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "No. Classical Pentecostals often distinguish Christian water baptism, commanded by Christ, from a subsequent Spirit-baptism experience of empowerment. Catholics confess that Baptism and Confirmation truly give the Spirit sacramentally, and may speak of a renewal of baptismal grace, but do not recognize a necessary second sacrament replacing water Baptism.",
+            "fr": "Non. Les pentecôtistes classiques distinguent souvent le baptême chrétien d'eau, commandé par le Christ, d'une expérience ultérieure de puissance de l'Esprit. Les catholiques confessent le don sacramentel de l'Esprit au Baptême et à la Confirmation et parlent parfois de renouveau de la grâce baptismale, sans reconnaître un second sacrement nécessaire remplaçant le baptême d'eau."
+          },
+          "source_ids": [
+            "AG-ST",
+            "CCC",
+            "CHARIS"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-006",
+      "original_title_candidate": "Must a Spirit-baptized person speak in tongues?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "Within the Assemblies of God doctrine, initial speaking in tongues is treated as the physical evidence of Spirit baptism. It is not a rule binding all Pentecostal movements or the Catholic Church; Paul in 1 Corinthians 12 distinguishes charisms, so Christians disagree about whether those texts concern the same experience and gift.",
+            "fr": "Selon les Assemblées de Dieu, les langues initiales sont considérées comme le signe physique du baptême dans l'Esprit. Cette règle n'engage ni tous les pentecôtistes ni l'Église catholique ; 1 Corinthiens 12 distingue les charismes, d'où des interprétations différentes de la relation entre l'expérience et le don public des langues."
+          },
+          "source_ids": [
+            "AG-BAP",
+            "AG-ST",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-007",
+      "original_title_candidate": "Are all tongues the same phenomenon?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "No. The Assemblies of God Statement of Fundamental Truths §8 distinguishes tongues as initial evidence of Spirit baptism from the public gift of tongues in purpose and use, while treating the manner of speech as related. Acts 2 describes foreign-language speech intelligible to hearers, whereas interpretations of 1 Corinthians 12–14 include charismatic prayer requiring interpretation. Claims that every reported instance is identical need evidence.",
+            "fr": "Non. La déclaration des Assemblées de Dieu §8 distingue les langues comme signe initial du baptême dans l'Esprit du don public des langues quant à leur fin et à leur usage, tout en les rapprochant dans leur mode. Actes 2 présente une parole entendue dans diverses langues, tandis que 1 Corinthiens 12–14 traite notamment d'une parole charismatique requérant une interprétation. Leur identité universelle ne peut être présumée."
+          },
+          "source_ids": [
+            "AG-ST",
+            "AG-BAP"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-008",
+      "original_title_candidate": "Does Pentecostalism teach that every Christian must exercise the public gift of tongues?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "No. Although the Assemblies of God expects tongues as an initial sign of Spirit baptism, it distinguishes that from the exercise of the congregational gift, which is not assigned to every worshipper on every occasion. It is particularly misleading to turn one denomination's account of 'initial evidence' into a universal command that every Christian publicly speak in tongues.",
+            "fr": "Non. Bien que les Assemblées de Dieu attendent des langues comme signe initial du baptême dans l'Esprit, elles distinguent ce signe de l'exercice du don dans l'assemblée, qui n'est pas exigé de chacun à toute occasion. Il serait particulièrement trompeur d'ériger une doctrine confessionnelle de « signe initial » en obligation universelle de parler publiquement en langues."
+          },
+          "source_ids": [
+            "AG-ST",
+            "AG-BAP"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-009",
+      "original_title_candidate": "Does speaking in tongues prove holiness or spiritual superiority?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "No. A charismatic manifestation, even if genuine, is not proof of sanctity or moral superiority. In 1 Corinthians 13 Paul puts charity above remarkable spiritual gifts; the Assemblies of God itself identifies sanctification as a separate doctrinal concern. Catholic discernment assesses humility, charity and obedience rather than ranking believers by spectacular experiences.",
+            "fr": "Non. Une manifestation charismatique, même authentique, ne prouve ni la sainteté ni une supériorité morale. Dans 1 Corinthiens 13, saint Paul place la charité au-dessus des dons extraordinaires ; les Assemblées de Dieu présentent elles-mêmes la sanctification séparément. Le discernement catholique juge humilité, charité et obéissance, non la valeur d'un fidèle à l'aune du spectaculaire."
+          },
+          "source_ids": [
+            "AG-ST",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-010",
+      "original_title_candidate": "Are miraculous gifts supposed to have ceased with the Apostles?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "Cessationism is the view that some extraordinary apostolic gifts were not intended to continue normally after the foundational apostolic age; continuationists dispute it. Classical Pentecostalism is continuationist and expects prophecy, tongues and healing. The presence of spiritual gifts in the New Testament alone does not resolve every claim of modern authenticity, which requires discernment.",
+            "fr": "Le cessationnisme estime que certains charismes extraordinaires de l'âge apostolique ne devaient pas se poursuivre normalement après sa période fondatrice ; d'autres chrétiens le contestent. Le pentecôtisme classique soutient leur continuation et attend prophéties, langues et guérisons. La présence de dons dans le Nouveau Testament ne certifie pas automatiquement chaque manifestation moderne, qui demande discernement."
+          },
+          "source_ids": [
+            "AG-PROPH",
+            "AG-ST",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-014",
+      "original_title_candidate": "Can Pentecostal prophecies be wrong?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "Claims of modern prophecy can be mistaken, misleading or falsely attributed to the Holy Spirit, and must be tested rather than treated as an infallible supplement to Scripture. The Assemblies of God 2025 position paper requires communal discernment; Catholics further hold that public Revelation closed with Christ and the apostles, even while allowing discerned charisms and private revelations.",
+            "fr": "Des prétentions prophétiques contemporaines peuvent être erronées, trompeuses ou faussement attribuées à l'Esprit Saint : il faut les éprouver et non les traiter comme un complément infaillible à l'Écriture. Le texte des Assemblées de Dieu de 2025 prescrit un discernement communautaire ; le catholicisme tient de plus la Révélation publique pour achevée avec le Christ et les apôtres, tout en discernant charismes et révélations privées."
+          },
+          "source_ids": [
+            "AG-PROPH",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-016",
+      "original_title_candidate": "Does that mean every sick believer must be healed if faith is strong enough?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "No tradition can rightly infer that every sick believer must be cured immediately if only faith is strong enough. The Assemblies of God teaches divine healing and prays for the sick, but its healing position paper considers suffering and the variability of outcomes. Catholic teaching equally permits prayer for healing while requiring care for the sick and rejecting blame of patients whose illness persists.",
+            "fr": "Aucune tradition ne peut déduire à bon droit que tout malade croyant doit guérir immédiatement s'il possède assez de foi. Les Assemblées de Dieu confessent la guérison divine et prient pour les malades, mais leur étude tient compte de la souffrance et des résultats variables. Le catholicisme autorise également la prière de guérison tout en exigeant des soins et en refusant de culpabiliser les malades non guéris."
+          },
+          "source_ids": [
+            "AG-HEAL",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-017",
+      "original_title_candidate": "Is the prosperity gospel simply Pentecostal doctrine?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "The prosperity gospel is not simply identical with Pentecostalism. Some Pentecostal preachers assert a strong connection between faithful giving and material wealth, but other Pentecostal theologians—including Frank Macchia writing in an Assemblies of God journal—criticize its excessive emphasis on money. The original doctrine and internal criticism should both be presented.",
+            "fr": "L'Évangile de prospérité ne se confond pas simplement avec le pentecôtisme. Certains prédicateurs lient fortement dons religieux et richesse matérielle, mais d'autres théologiens pentecôtistes — dont Frank Macchia dans une revue des Assemblées de Dieu — critiquent cette insistance excessive sur l'argent. Il faut présenter la doctrine et sa critique interne."
+          },
+          "source_ids": [
+            "AG-PROSP",
+            "AG-ST"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-019",
+      "original_title_candidate": "What does Pentecostalism teach about demons and deliverance?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "Classical Pentecostal teaching generally recognizes personal evil spirits and prayer for liberation in Jesus' name, as do many other Christian traditions. That belief does not mean every illness or psychological condition is demonic; discernment and ordinary medical care remain indispensable. Catholic discipline reserves formal exorcism to a duly authorized priest.",
+            "fr": "Le pentecôtisme classique reconnaît généralement les esprits mauvais personnels et la prière de délivrance au nom de Jésus, comme d'autres traditions chrétiennes. Cette croyance n'implique pas que toute maladie ou difficulté psychologique soit démoniaque ; discernement et soins ordinaires demeurent indispensables. La discipline catholique réserve l'exorcisme solennel à un prêtre autorisé."
+          },
+          "source_ids": [
+            "AG-ST",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-020",
+      "original_title_candidate": "Are ‘deliverance ministries’ automatically representative of Pentecostalism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "No. 'Deliverance ministry' covers varied independent practices, from prayer for people in distress to highly ritualized claims of exorcism. It is not a uniform marker of all Pentecostal churches. Catholic assessment must distinguish ordinary prayer, suggestive or coercive practices, mental-health safeguards and the Church's regulated rite of exorcism.",
+            "fr": "Non. Le « ministère de délivrance » regroupe des pratiques indépendantes diverses, de la prière pour des personnes en détresse à des revendications fortement ritualisées d'exorcisme. Il ne caractérise pas uniformément toutes les Églises pentecôtistes. Le discernement catholique distingue prière ordinaire, pratiques suggestives ou coercitives, protection psychique et rite ecclésial réglementé d'exorcisme."
+          },
+          "source_ids": [
+            "AG-ST",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-023",
+      "original_title_candidate": "Is the Catholic Charismatic Renewal simply Protestant Pentecostalism imported into Catholicism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "The Catholic Charismatic Renewal was influenced historically by Pentecostal and evangelical currents, yet has received explicit Catholic pastoral support as a movement within Catholic sacramental communion. John Paul II described it as a possible spiritual renewal, and Francis encouraged CHARIS to serve unity and the poor. Its legitimacy is not approval of every individual practice, nor abandonment of Catholic doctrine.",
+            "fr": "Le Renouveau charismatique catholique a reçu historiquement des influences pentecôtistes et évangéliques, mais aussi un soutien pastoral explicite au sein de la communion sacramentelle catholique. Jean-Paul II y a vu une possible revitalisation spirituelle, et François a demandé à CHARIS de servir l'unité et les pauvres. Sa légitimité ne justifie ni toute pratique individuelle ni l'abandon de la doctrine catholique."
+          },
+          "source_ids": [
+            "JP2-CHAR",
+            "CHARIS",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    },
+    {
+      "id": "PEN-024",
+      "original_title_candidate": "What does a Catholic mean by ‘Baptism in the Spirit’?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_pentecostal_claim_and_catholic_comparison",
+          "text": {
+            "en": "Catholics sometimes use 'baptism in the Spirit' for a renewed experience or awakening of graces already received sacramentally in Baptism and Confirmation. It is not a replacement for those sacraments, an eighth sacrament, or a required proof of salvation. Francis's 2019 address to CHARIS uses the phrase pastorally, while Catholic sacramental doctrine remains normative.",
+            "fr": "Des catholiques emploient parfois « baptême dans l'Esprit » pour une expérience de renouveau ou une prise de conscience des grâces déjà reçues au Baptême et à la Confirmation. Ce n'est ni leur remplacement, ni un huitième sacrement, ni une preuve nécessaire du salut. François a utilisé cette expression pastoralement à CHARIS en 2019, sans abolir la doctrine sacramentelle catholique."
+          },
+          "source_ids": [
+            "CHARIS",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Independent source-passage, theology, regional Pentecostal variation, and French editorial approval required."
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

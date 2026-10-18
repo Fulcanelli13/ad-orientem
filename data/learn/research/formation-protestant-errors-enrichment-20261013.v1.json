@@ -1,0 +1,1095 @@
+{
+  "schema": "AO_FORMATION_PROTESTANT_ERRORS_RESEARCH_ENRICHMENT_20261013_V1",
+  "status": "RESEARCH_ONLY_UNPUBLISHED_SOURCE_LINKED_EN_FR",
+  "date": "2026-10-13",
+  "description": "Twenty-one targeted bilingual answer drafts supporting audited Protestantism and historical Catholic errors/Modernism questions; the existing canonical owner remains authoritative. PROT-025 shares SAN-023 and intentionally has no duplicate answer here.",
+  "source_registry": [
+    {
+      "id": "AC-IV",
+      "title": "Augsburg Confession IV, justification",
+      "url": "https://bookofconcord.cph.org/en/augsburg-confession/chief_articles/article_iv/",
+      "kind": "LUTHERAN_CONFESSION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AC-IX",
+      "title": "Augsburg Confession IX, infant baptism",
+      "url": "https://thebookofconcord.org/augsburg-confession/article-ix/",
+      "kind": "LUTHERAN_CONFESSION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AC-X",
+      "title": "Augsburg Confession X, Eucharistic presence",
+      "url": "https://thebookofconcord.org/augsburg-confession/article-x/",
+      "kind": "LUTHERAN_CONFESSION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AC-XI",
+      "title": "Augsburg Confession XI, private confession and absolution",
+      "url": "https://thebookofconcord.org/augsburg-confession/article-xi/",
+      "kind": "LUTHERAN_CONFESSION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AC-XXV",
+      "title": "Augsburg Confession XXV, confession and absolution",
+      "url": "https://thebookofconcord.org/augsburg-confession/article-xxv/",
+      "kind": "LUTHERAN_CONFESSION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AC-COMP",
+      "title": "Augsburg Confession, full articles including XIII and XV",
+      "url": "https://thebookofconcord.org/augsburg-confession/",
+      "kind": "LUTHERAN_CONFESSION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "WCF-I",
+      "title": "Westminster Confession of Faith chapter I, Scripture, canon and Holy Spirit",
+      "url": "https://wts.edu/wcf",
+      "kind": "REFORMED_CONFESSION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "WCF-XI",
+      "title": "Westminster Confession chapters XI and XVI, justification and good works",
+      "url": "https://wts.edu/wcf",
+      "kind": "REFORMED_CONFESSION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "WCF-XXVIII",
+      "title": "Westminster Confession XXVIII, infant baptism",
+      "url": "https://wts.edu/wcf",
+      "kind": "REFORMED_CONFESSION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "WCF-XXIX",
+      "title": "Westminster Confession XXIX, communion and presence",
+      "url": "https://wts.edu/wcf",
+      "kind": "REFORMED_CONFESSION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "BAPT-XXIX",
+      "title": "Second London Baptist Confession (1689), chapter 29, baptism",
+      "url": "https://www.the1689confession.com/1689/chapter-29",
+      "kind": "BAPTIST_CONFESSION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT-IV",
+      "title": "Council of Trent, Session IV, Scripture and Tradition",
+      "url": "https://www.ewtn.com/catholicism/library/decree-concerning-the-canonical-scriptures-1494",
+      "kind": "ECUMENICAL_CONCILIAR_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT-VI",
+      "title": "Council of Trent, Session VI, justification",
+      "url": "https://www.ewtn.com/catholicism/library/decree-on-justification-1496",
+      "kind": "ECUMENICAL_CONCILIAR_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT-XIII",
+      "title": "Council of Trent, Session XIII, transubstantiation",
+      "url": "https://www.ewtn.com/catholicism/library/thirteenth-session-of-the-council-of-trent-1493",
+      "kind": "ECUMENICAL_CONCILIAR_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT-XXV",
+      "title": "Council of Trent, Session XXV, Purgatory, saints, images and relics",
+      "url": "https://www.ewtn.com/catholicism/library/twentyfifth-session-of-the-council-of-trent-1492",
+      "kind": "ECUMENICAL_CONCILIAR_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "POLYCARP-17-18",
+      "title": "Martyrdom of Polycarp 17–18, martyrs and relics",
+      "url": "https://www.newadvent.org/fathers/0102.htm",
+      "kind": "ANCIENT_CHRISTIAN_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC-2089",
+      "title": "Catechism §2089, heresy versus schism, apostasy",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/i_you_shall_worship_the_lord_your_god_and_him_only_shall_you_serve.html",
+      "kind": "OFFICIAL_CATHOLIC_CATECHISM",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC-2111",
+      "title": "Catechism §§2110–2117, superstition, divination, magic and spiritism",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iii_you_shall_have_no_other_gods_before_me.index.html",
+      "kind": "OFFICIAL_CATHOLIC_CATECHISM",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CDF-MASON-1983",
+      "title": "CDF, Declaration on Masonic Associations (26 Nov 1983)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19831126_declaration-masonic_en.html",
+      "kind": "OFFICIAL_DOCTRINAL_DECLARATION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "PASCENDI-EN",
+      "title": "Pius X, Pascendi dominici gregis §§6–10, 19–20, 29–30",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "kind": "ORIGINAL_PAPAL_ENCYCLICAL",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "PASCENDI-FR",
+      "title": "Pius X, Pascendi dominici gregis (8 septembre 1907), texte français",
+      "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "kind": "ORIGINAL_PAPAL_ENCYCLICAL_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DEI-VERBUM",
+      "title": "Second Vatican Council, Dei Verbum §§7–10",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html",
+      "kind": "CONCILIAR_DOGMATIC_CONSTITUTION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "LIBERTAS-EN",
+      "title": "Leo XIII, Libertas (20 June 1888), true freedom and liberalism",
+      "url": "https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+      "kind": "ORIGINAL_PAPAL_ENCYCLICAL",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "LIBERTAS-FR",
+      "title": "Léon XIII, Libertas (20 juin 1888) en français",
+      "url": "https://www.vatican.va/content/leo-xiii/fr/encyclicals/documents/hf_l-xiii_enc_20061888_libertas.html",
+      "kind": "ORIGINAL_PAPAL_ENCYCLICAL_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DOMINUS-IESUS",
+      "title": "CDF, Dominus Iesus (2000) on one Saviour and religious pluralism",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+      "kind": "OFFICIAL_DOCTRINAL_DECLARATION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "VATICANI-DEI-FILIUS",
+      "title": "First Vatican Council, Dei Filius (1870), reason and revelation",
+      "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+      "kind": "ECUMENICAL_CONCILIAR_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TESTEM-LA",
+      "title": "Leo XIII, Testem benevolentiae, 22 Jan 1899, original Latin",
+      "url": "https://www.vatican.va/content/leo-xiii/la/letters/documents/hf_l-xiii_let_18990122_testem-benevolentiae.html",
+      "kind": "ORIGINAL_PAPAL_LETTER",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TESTEM-EN",
+      "title": "Leo XIII, Testem benevolentiae, English translation",
+      "url": "https://www.papalencyclicals.net/leo13/l13teste.htm",
+      "kind": "PAPAL_LETTER_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SILLON-AAS",
+      "title": "Pius X, Notre charge apostolique, original French in Acta Apostolicae Sedis vol 2, pp 607 onward, 31 Aug 1910",
+      "url": "https://www.vatican.va/archive/aas/documents/AAS-02-1910-ocr.pdf",
+      "kind": "OFFICIAL_ORIGINAL_FR_PAPAL_LETTER",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SILLON-FR",
+      "title": "Pius X, Notre charge apostolique, full French transcription",
+      "url": "https://rome.sillon.net/1910-08-25-pie-x-aux-eveques-francais-notre-charge-apostolique/",
+      "kind": "PAPAL_LETTER_FR_TRANSCRIPTION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "LOISY-BNF",
+      "title": "Alfred Loisy, L'Évangile et l'Église, BnF catalog and 1903 edition witness",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb308287915",
+      "kind": "ORIGINAL_AUTHOR_BIBLIOGRAPHY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "LOISY-TEXT",
+      "title": "Alfred Loisy, L'Évangile et l'Église, French text (1904 edition)",
+      "url": "https://fr.wikisource.org/wiki/L%E2%80%99%C3%89vangile_et_l%E2%80%99%C3%89glise",
+      "kind": "ORIGINAL_OPPONENT_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TYRRELL-TEXT",
+      "title": "George Tyrrell, Medievalism (1908), original book reproduction",
+      "url": "https://archive.org/details/cu31924029380676",
+      "kind": "ORIGINAL_OPPONENT_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "WCF-XXVII",
+      "title": "Westminster Confession XXVII and XXIX: two sacraments, and Reformed communion",
+      "url": "https://wts.edu/wcf",
+      "kind": "REFORMED_CONFESSION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TERT-DE-CORONA",
+      "title": "Tertullian, De Corona §3, memorial offerings for the dead",
+      "url": "https://www.newadvent.org/fathers/0304.htm",
+      "kind": "PATRISTIC_ORIGINAL_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "PROT-001",
+      "original_title_candidate": "What does “Protestant” mean?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-014|APOL-015",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "'Protestant' is a historically broad designation for churches arising from the sixteenth-century Reformation and their later denominational descendants. It does not refer to a single binding doctrinal confession; Lutheran, Reformed, Anglican and Baptist forms differ on ministry and sacraments.",
+            "fr": "« Protestant » désigne historiquement, au sens large, des Églises issues de la Réforme du XVIe siècle et leurs héritières confessionnelles. Il ne renvoie pas à une confession unique : luthériens, réformés, anglicans et baptistes divergent notamment sur le ministère et les sacrements."
+          },
+          "source_ids": [
+            "AC-COMP",
+            "WCF-I",
+            "BAPT-XXIX"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "The Augsburg and Westminster confessions both insist on Scriptural authority and justification by grace, yet articulate baptismal and Eucharistic doctrines differently. Do not indiscriminately include every non-Catholic Christian denomination within the word 'Protestant'.",
+            "fr": "Les confessions d'Augsbourg et de Westminster invoquent toutes deux l'autorité de l'Écriture et la justification par grâce, mais divergent sur le baptême et l'eucharistie. Il ne faut pas qualifier indistinctement de « protestante » toute confession chrétienne non catholique."
+          },
+          "source_ids": [
+            "AC-IX",
+            "AC-X",
+            "WCF-XXVIII",
+            "WCF-XXIX",
+            "AC-IV",
+            "WCF-XI"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "PROT-004",
+      "original_title_candidate": "How does a Protestant know the biblical canon?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-013|APOL-014",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Westminster Confession chapter I gives an explicit Reformed account: the Church's testimony can prompt reverence toward the Bible, but full persuasion of its infallible truth and divine authority comes through the inward work of the Holy Spirit bearing witness by and with the Word. It is not the assertion that any individual can establish the canon by private taste.",
+            "fr": "La Confession de Westminster, chapitre I, propose un critère réformé explicite : le témoignage de l'Église peut disposer à respecter la Bible, mais la pleine persuasion de sa vérité et de son autorité divines est attribuée à l'action intérieure du Saint-Esprit témoignant par et avec la Parole. Elle ne repose pas sur le seul goût du lecteur."
+          },
+          "source_ids": [
+            "WCF-I"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "The Catholic challenge concerns identifying the exact canon when communities disagree about the deuterocanonical books. Trent lists these books authoritatively; the Westminster confession excludes them from inspired Scripture. Recognition by the Spirit and authoritative ecclesial reception are different answers to the epistemic question.",
+            "fr": "L'objection catholique demande comment établir le canon exact lorsque les confessions divergent sur les deutérocanoniques. Trente les énumère avec autorité ; Westminster les exclut de l'Écriture inspirée. Témoignage intérieur de l'Esprit et réception ecclésiale autorisée répondent différemment à cette question de connaissance."
+          },
+          "source_ids": [
+            "WCF-I",
+            "TRENT-IV"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "PROT-009",
+      "original_title_candidate": "What does “faith alone” actually mean?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-038",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Historically 'faith alone' normally means that the sinner is justified before God through faith in Christ rather than earning justification by prior good works. Augsburg IV teaches free justification for Christ's sake through faith; Westminster XI presents a forensic reckoning of Christ's righteousness received by faith.",
+            "fr": "Historiquement, « la foi seule » signifie normalement que le pécheur est justifié devant Dieu par la foi au Christ et non par les mérites de ses œuvres antérieures. Augsbourg IV enseigne la justification gratuite à cause du Christ par la foi ; Westminster XI présente l'imputation de la justice du Christ reçue dans la foi."
+          },
+          "source_ids": [
+            "AC-IV",
+            "WCF-XI"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "This does not mean classic Lutheran or Reformed confessions endorse indifference to moral life; their dispute with Trent concerns the nature and instrument of justification and its relation to sanctification. Trent teaches a truly interior renewal by grace, not human self-redemption.",
+            "fr": "Cela ne signifie pas que les confessions luthériennes ou réformées classiques approuvent l'indifférence morale ; leur débat avec Trente porte sur la nature et le mode de réception de la justification et son rapport à la sanctification. Trente enseigne un renouvellement intérieur par grâce, non l'autosauvetage de l'homme."
+          },
+          "source_ids": [
+            "TRENT-VI",
+            "WCF-XI",
+            "AC-COMP"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "PROT-013",
+      "original_title_candidate": "Is infant Baptism ‘Catholic versus Protestant’?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-024",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No: infant baptism is not a simple Catholic-versus-all-Protestants dispute. The Augsburg Confession IX explicitly defends infant baptism and condemns its rejection; classic Reformed Westminster XXVIII also supports baptising infants of believing parents.",
+            "fr": "Non : le baptême des petits enfants n'oppose pas simplement les catholiques à tous les protestants. Augsbourg IX le défend explicitement et condamne son rejet ; la confession réformée de Westminster XXVIII admet aussi le baptême des enfants de parents croyants."
+          },
+          "source_ids": [
+            "AC-IX",
+            "WCF-XXVIII"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Baptist confessional tradition instead reserves baptism to those professing faith. The real debate concerns the sacrament's subjects and its relation to covenant, faith and grace; to call all Protestant baptism merely symbolic or adult-only is an inaccurate objection.",
+            "fr": "La tradition baptiste réserve au contraire le baptême à ceux qui professent personnellement la foi. Le débat réel porte sur les sujets du sacrement et son rapport à l'alliance, à la foi et à la grâce ; réduire tout baptême protestant à un symbole réservé aux adultes est inexact."
+          },
+          "source_ids": [
+            "BAPT-XXIX",
+            "AC-IX"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "PROT-014",
+      "original_title_candidate": "Did Protestants abolish confession entirely?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-026",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No. The Augsburg Confession XI says private absolution should be retained, while article XXV explicitly denies that confession has been abolished among its churches. Classical Lutheran practice therefore cannot be described as eliminating individual confession wholesale.",
+            "fr": "Non. La Confession d'Augsbourg XI demande de conserver l'absolution privée, et son article XXV nie expressément que la confession ait été abolie dans ses Églises. Il serait donc erroné de présenter le luthéranisme classique comme supprimant toute confession individuelle."
+          },
+          "source_ids": [
+            "AC-XI",
+            "AC-XXV"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "The Lutheran account rejects the Catholic obligation to enumerate every grave sin and is not identical to the Catholic sacrament of Penance. Some Protestant churches reject sacramental confession while retaining pastoral admission of sins and absolution; compare each denomination's own rite instead of imposing one summary.",
+            "fr": "Le luthéranisme refuse l'obligation catholique d'énumérer tous les péchés graves et n'est pas identique au sacrement catholique de pénitence. D'autres Églises protestantes refusent la confession sacramentelle tout en pratiquant l'aveu pastoral et l'annonce du pardon ; il faut distinguer les confessions."
+          },
+          "source_ids": [
+            "AC-XI",
+            "AC-XXV",
+            "WCF-XXVII"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "PROT-015",
+      "original_title_candidate": "Do all Protestants believe the Eucharist is only a symbol?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-030",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No. Lutheran Augsburg X expressly confesses that Christ's body and blood are truly present in the Lord's Supper. Westminster XXIX teaches a real spiritual reception of Christ by worthy believers while rejecting transubstantiation. Neither can be reduced to 'all Protestants teach an empty symbol'.",
+            "fr": "Non. Augsbourg X confesse expressément que le corps et le sang du Christ sont réellement présents dans la Cène. Westminster XXIX enseigne une participation spirituelle réelle au Christ par les fidèles dignes, tout en rejetant la transsubstantiation. Aucun de ces deux témoignages ne permet de parler d'un « simple symbole » universel."
+          },
+          "source_ids": [
+            "AC-X",
+            "WCF-XXIX"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Confessional divisions nevertheless remain: the mode of presence, distribution, sacrificial language and ordination are contested. Fair debate presents Catholic substantial presence, Lutheran sacramental presence and Reformed spiritual communion separately instead of inventing one opposing thesis.",
+            "fr": "Les divergences demeurent sur le mode de présence, la distribution, le langage sacrificiel et le ministère. Une controverse loyale expose séparément la présence substantielle catholique, la présence sacramentelle luthérienne et la communion spirituelle réformée, sans leur prêter une thèse adverse unique."
+          },
+          "source_ids": [
+            "AC-X",
+            "WCF-XXIX",
+            "TRENT-XIII"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "PROT-016",
+      "original_title_candidate": "Is transubstantiation the same as ‘Christ is really present’?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-030",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "'Real presence' describes Christ's genuine Eucharistic presence; 'transubstantiation' is the more specific Catholic explanation that the substance of bread and wine is changed into Christ's Body and Blood while their appearances remain. These expressions are therefore related, not synonyms in every confessional usage.",
+            "fr": "« Présence réelle » affirme la présence véritable du Christ dans l'eucharistie ; « transsubstantiation » est la formulation catholique plus précise selon laquelle la substance du pain et du vin devient le corps et le sang du Christ tandis que leurs apparences demeurent. Ces expressions sont liées sans être synonymes dans tous les usages confessionnels."
+          },
+          "source_ids": [
+            "TRENT-XIII"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Lutheran Augsburg X affirms true Eucharistic presence without professing Trent's full definition; Westminster rejects transubstantiation yet speaks of spiritual feeding on Christ. It is wrong both to claim everyone affirming real presence accepts transubstantiation and to describe every rejection of transubstantiation as pure memorialism.",
+            "fr": "Augsbourg X affirme la vraie présence sans reprendre la définition complète de Trente ; Westminster rejette la transsubstantiation tout en parlant d'une nourriture spirituelle reçue du Christ. Il est erroné d'assimiler toute affirmation de présence réelle à la transsubstantiation, ou tout refus de celle-ci à un pur mémorialisme."
+          },
+          "source_ids": [
+            "AC-X",
+            "WCF-XXIX",
+            "TRENT-XIII"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "PROT-024",
+      "original_title_candidate": "Are images, relics and purgatory later Catholic inventions?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-036|APOL-037|APOL-040",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Calling images, relics and prayer for the departed collectively 'late inventions' collapses separate historical questions. The Martyrdom of Polycarp 17–18 is pre-Constantinian evidence of honouring a martyr and caring for his remains; Tertullian already mentions offerings for the departed. Later councils defined particular rules on sacred images.",
+            "fr": "Qualifier globalement les images, les reliques et la prière pour les défunts d'« inventions tardives » confond des histoires distinctes. Le Martyre de Polycarpe 17–18 témoigne, avant Constantin, de l'honneur rendu aux martyrs et de la conservation de leurs restes ; Tertullien mentionne déjà des offrandes pour les défunts. Les conciles ont ensuite défini des règles relatives aux images."
+          },
+          "source_ids": [
+            "POLYCARP-17-18",
+            "TRENT-XXV",
+            "TERT-DE-CORONA"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Early precedents do not prove every late rite or image practice already existed. Reuse specific research answers SAN-007/008/010, SAN-013 and PAT-019 for early martyrs, Second Nicaea and offerings for the dead; the Catholic teaching on purgatory must also distinguish defined purification from historical devotion.",
+            "fr": "Des précédents anciens ne prouvent pas que chaque rite ou usage iconographique tardif existait déjà. Il faut réutiliser les réponses de recherche SAN-007/008/010, SAN-013 et PAT-019 pour les martyrs, Nicée II et les offrandes pour les morts ; la doctrine du purgatoire distingue elle aussi la purification définie des formes historiques de dévotion."
+          },
+          "source_ids": [
+            "POLYCARP-17-18",
+            "TRENT-XXV"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Separate initial martyr/relic historical witnesses from later dogmatic definitions; new text reuses existing SAN/PAT material and does not certify a detailed history of sacred images.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-001",
+      "original_title_candidate": "Is Freemasonry properly a “heresy”?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-060",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Strictly speaking, 'heresy' names an obstinate post-baptismal denial or doubt of a truth to be believed with divine and Catholic faith (Catechism §2089). Freemasonry is an association, not itself a baptized individual capable of incurring the personal canonical delict of heresy; it may embody teachings inconsistent with Catholic dogma.",
+            "fr": "Strictement, l'« hérésie » est le refus obstiné, après le baptême, ou le doute obstiné à l'égard d'une vérité à croire de foi divine et catholique (Catéchisme §2089). La franc-maçonnerie est une association, non une personne baptisée capable de commettre personnellement le délit canonique d'hérésie ; elle peut néanmoins professer des principes incompatibles avec la foi."
+          },
+          "source_ids": [
+            "CCC-2089",
+            "CDF-MASON-1983"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "The CDF's 1983 judgment does not depend on classifying each lodge as a separate Christian heretical denomination: it states a negative doctrinal judgment and prohibits Catholics from joining. Individual guilt and formal canonical qualification demand their own evidence.",
+            "fr": "Le jugement de la CDF de 1983 ne suppose pas que chaque obédience soit une confession chrétienne hérétique : il maintient un jugement doctrinal négatif et l'interdiction de l'adhésion catholique. La culpabilité individuelle et la qualification canonique exacte demandent des preuves distinctes."
+          },
+          "source_ids": [
+            "CDF-MASON-1983",
+            "CCC-2089"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-007",
+      "original_title_candidate": "What is superstition?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-051",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Superstition is a distortion of authentic religion that treats objects, prayers or sacred actions as automatically effective magic independent of faith and the proper dispositions. The Catechism §§2110–2111 specifically warns that even otherwise lawful prayers or sacramental signs can be used superstitiously.",
+            "fr": "La superstition déforme la vraie religion lorsqu'elle traite des objets, des prières ou des actions sacrées comme une magie automatiquement efficace sans égard à la foi et aux dispositions requises. Le Catéchisme (§§2110–2111) avertit que des prières ou signes sacramentels pourtant légitimes peuvent être utilisés superstitieusement."
+          },
+          "source_ids": [
+            "CCC-2111"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "This does not abolish sacramentals, relics or the objective efficacy of sacraments. It rejects the claim that a formula, amulet or mechanical repetition forces God's action; sound devotion remains ordered to God and does not replace repentance and conversion.",
+            "fr": "Cela n'abolit ni les sacramentaux, ni les reliques, ni l'efficacité objective des sacrements. Ce qui est rejeté, c'est l'idée qu'une formule, un talisman ou une répétition mécanique contraindraient Dieu ; la dévotion authentique demeure tournée vers Dieu et n'abolit pas la conversion."
+          },
+          "source_ids": [
+            "CCC-2111"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-008",
+      "original_title_candidate": "What counts as divination/occult practice?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-051",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Divination seeks hidden knowledge of the future or unseen events by recourse to supposedly occult means, omens, astrology, mediums or spirits; the Catechism §2116 lists concrete examples and rejects them. Seeking reliable medical or meteorological forecasts by natural evidence is not divination.",
+            "fr": "La divination recherche la connaissance cachée de l'avenir ou des événements invisibles au moyen de prétendus pouvoirs occultes, présages, astrologie, médiums ou esprits ; le Catéchisme (§2116) en fournit des exemples et les rejette. Se fonder sur des données naturelles pour une prévision médicale ou météorologique n'est pas diviner."
+          },
+          "source_ids": [
+            "CCC-2111"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Magic or sorcery, distinguished in §2117, attempts to manipulate occult powers or enlist them for desired effects, even apparently benevolent cures. Biblical prophecy and Christian prayer are not attempts to control God. An actual practice must be evaluated by its claimed mechanism, intention and behaviour, not merely by an exotic label.",
+            "fr": "La magie ou sorcellerie (§2117) prétend manipuler des puissances occultes pour obtenir certains effets, même sous prétexte de guérison. La prophétie biblique et la prière chrétienne ne visent pas à commander Dieu. Il faut juger une pratique selon ses prétentions et ses actes, non son seul nom exotique."
+          },
+          "source_ids": [
+            "CCC-2111"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-009",
+      "original_title_candidate": "Is “magic” merely stage magic?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-051",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No. Stage 'magic' ordinarily means optical illusion, sleight of hand or psychological misdirection presented as entertainment, without asserting occult efficacy. The Catechism's prohibition concerns divination and attempted use of supernatural or hidden powers, not every performance using the word 'magic'.",
+            "fr": "Non. La « magie » de spectacle désigne normalement l'illusion d'optique, la prestidigitation ou la diversion psychologique proposées comme divertissement, sans revendiquer un pouvoir occulte. L'interdiction du Catéchisme porte sur la divination et la prétention à utiliser des puissances cachées, non sur tout numéro appelé « magie »."
+          },
+          "source_ids": [
+            "CCC-2111"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "A performance that truly invokes spirits or presents occult manipulation as efficacious raises a different moral question. The relevant distinction is the nature of the action and what is claimed, not whether children enjoy a card trick or an audience cannot see how it is done.",
+            "fr": "Un spectacle faisant réellement appel aux esprits, ou présentant des manipulations occultes comme efficaces, soulève une autre question morale. La distinction repose sur l'acte et la prétention de l'artiste, non sur l'étonnement du public devant un tour de cartes."
+          },
+          "source_ids": [
+            "CCC-2111"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-010",
+      "original_title_candidate": "What is spiritism?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-051",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Spiritism seeks knowledge or communication from the spirits of the dead through mediums, séances or associated techniques. The Catechism §2117 warns against spiritism, especially where divination or magical practice is involved; §2116 expressly rejects conjuring up the dead.",
+            "fr": "Le spiritisme cherche à obtenir des connaissances ou des communications des esprits des défunts par des médiums, séances ou procédés analogues. Le Catéchisme (§2117) met en garde contre le spiritisme, notamment en raison de la divination et de la magie ; le §2116 rejette expressément l'évocation des morts."
+          },
+          "source_ids": [
+            "CCC-2111"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Prayer for the faithful departed and seeking saints' intercession are not equivalent to conducting a séance: the former petitions God or a saint within worship; the latter attempts illicit control of alleged spiritual communications. Psychological fraud and uncertain phenomena do not make the practice a safe spiritual path.",
+            "fr": "Prier pour les défunts ou demander l'intercession des saints ne revient pas à organiser une séance spirite : on implore Dieu ou un saint dans la foi, alors que la séance prétend provoquer des communications interdites. La fraude possible et l'incertitude des phénomènes ne rendent pas la pratique spirituellement sûre."
+          },
+          "source_ids": [
+            "CCC-2111"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-013",
+      "original_title_candidate": "What does Modernist “agnosticism” mean in Pascendi?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "CR-DOC-01",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "In Pascendi §6, 'agnosticism' is not merely an ordinary admission that one lacks sufficient evidence. Pius X describes a philosophical rule restricting reason to sensible phenomena and excluding God's existence from rational demonstration; applied to history, it forbids treating God as a historical actor a priori.",
+            "fr": "Dans Pascendi (§6), l'« agnosticisme » n'est pas simplement l'aveu ordinaire d'un manque de preuves. Pie X expose un principe philosophique restreignant la raison aux seuls phénomènes sensibles et excluant la démonstration rationnelle de l'existence divine ; appliqué à l'histoire, il interdit d'emblée de considérer Dieu comme acteur historique."
+          },
+          "source_ids": [
+            "PASCENDI-EN",
+            "PASCENDI-FR"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "The Catholic counterposition allows human reason, from created realities, to reach knowledge of God and recognises that revelation needs not be reduced to interior feeling. This doctrinal dispute must be distinguished from the legitimate empirical limits of an individual scientific method.",
+            "fr": "La position catholique affirme que la raison peut remonter des choses créées à la connaissance de Dieu et que la révélation ne se réduit pas à un sentiment intérieur. Ce désaccord doctrinal doit être distingué des limites empiriques légitimes de certaines méthodes scientifiques."
+          },
+          "source_ids": [
+            "VATICANI-DEI-FILIUS",
+            "PASCENDI-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-014",
+      "original_title_candidate": "What is “vital immanence”?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "CR-DOC-01",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "'Vital immanence' in Pascendi §§7–10 refers to the account by which religion arises from an immanent religious need or feeling within consciousness, rather than being first received as an external divine revelation. Pius X considers this positive component the counterpart of philosophical agnosticism.",
+            "fr": "L'« immanence vitale » de Pascendi (§§7–10) désigne l'explication d'une religion qui naîtrait d'un besoin ou d'un sentiment religieux immanent à la conscience, au lieu d'être d'abord reçue comme révélation divine extérieure. Pour Pie X, ce principe positif répond à l'agnosticisme philosophique."
+          },
+          "source_ids": [
+            "PASCENDI-EN",
+            "PASCENDI-FR"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Catholic faith includes real inward action of grace, but denies that the Incarnation, Scripture or dogma is simply an evolution of collective religious experience. Not every use of the philosophical word 'immanence' reproduces this specific condemned system.",
+            "fr": "La foi catholique reconnaît une réelle action intérieure de la grâce, mais nie que l'Incarnation, l'Écriture ou le dogme soient de simples évolutions de l'expérience religieuse collective. Tout emploi du mot philosophique « immanence » ne reproduit pas ce système précis condamné."
+          },
+          "source_ids": [
+            "PASCENDI-EN",
+            "PASCENDI-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-017",
+      "original_title_candidate": "Who are genuine historical examples of Catholic Modernism?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "CR-DOC-01",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Alfred Loisy and George Tyrrell are identifiable historical writers linked to the early twentieth-century Catholic Modernist controversy: Loisy authored L'Évangile et l'Église, and Tyrrell published Medievalism. These are real texts whose precise claims can be examined, rather than mythical representatives of a single invented 'modernist confession'.",
+            "fr": "Alfred Loisy et George Tyrrell sont des auteurs historiques identifiables, associés à la controverse moderniste du début du XXe siècle : Loisy publia L'Évangile et l'Église, Tyrrell Medievalism. Leurs livres sont des textes réels à examiner précisément, non des représentants imaginaires d'une « confession moderniste » unifiée."
+          },
+          "source_ids": [
+            "LOISY-TEXT",
+            "LOISY-BNF",
+            "TYRRELL-TEXT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Pascendi analyses a composite system but does not name every author of every proposition in its critique. Fair historical attribution must quote a particular passage from Loisy or Tyrrell before ascribing an exact condemned thesis, and distinguish publication, reception, censorship and personal canonical acts.",
+            "fr": "Pascendi analyse un système composite sans attribuer nominativement chaque proposition à tous les auteurs visés. Une attribution historique loyale cite un passage précis de Loisy ou Tyrrell avant de leur imputer une thèse condamnée et distingue publication, réception, censure et mesures canoniques personnelles."
+          },
+          "source_ids": [
+            "PASCENDI-FR",
+            "LOISY-TEXT",
+            "TYRRELL-TEXT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "This entry identifies documented authors and original works only: chapter-specific positions, canonical sanctions and full historical comparison are intentionally still unverified.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-019",
+      "original_title_candidate": "What is rationalism in this corpus?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "CR-DOC-01|APOL-049",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "'Rationalism', in the technical theological sense relevant here, means making unaided human reason the final criterion of what can count as divine truth, so that supernatural revelation is dismissed whenever it transcends a rational scheme. It is not a synonym for reasoning carefully or using evidence.",
+            "fr": "Le « rationalisme », au sens théologique retenu ici, fait de la raison humaine sans révélation le critère ultime de la vérité divine et récuse le surnaturel dès qu'il dépasse le cadre rationnel adopté. Il ne signifie pas simplement le fait de raisonner avec rigueur ou de chercher des preuves."
+          },
+          "source_ids": [
+            "VATICANI-DEI-FILIUS",
+            "PASCENDI-EN"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "The First Vatican Council teaches that God can be known from creatures by natural reason, and that revealed mysteries exceed what reason alone discovers. Pascendi rejects the modernist move from limits on certain scientific explanations to an a priori exclusion of revelation.",
+            "fr": "Vatican I enseigne que Dieu peut être connu à partir des créatures par la raison naturelle et que les mystères révélés dépassent ce qu'elle découvre seule. Pascendi rejette le passage abusif des limites de certaines explications scientifiques à l'exclusion préalable de la révélation."
+          },
+          "source_ids": [
+            "VATICANI-DEI-FILIUS",
+            "PASCENDI-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-020",
+      "original_title_candidate": "What is religious indifferentism?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "APOL-048|CR-DOC-04",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Religious indifferentism is the claim that distinct and contradictory religions are equally true or that their truth is ultimately irrelevant to worship and salvation. It is distinct from civil tolerance of religious neighbours and from recognising authentic moral goods in other traditions.",
+            "fr": "L'indifférentisme religieux affirme que des religions contradictoires seraient également vraies ou que leur vérité importe peu pour le culte et le salut. Il se distingue de la tolérance civile envers des voisins d'autres religions et de la reconnaissance de véritables biens moraux dans leurs traditions."
+          },
+          "source_ids": [
+            "LIBERTAS-EN",
+            "DOMINUS-IESUS"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "A state may refrain from coercing religious acts without declaring all doctrines revealed by God. Leo XIII's account of tolerated error and later discussion of civil immunity must be assessed on their actual legal meaning; neither proposition by itself proves that all salvific paths are equivalent.",
+            "fr": "Un État peut s'abstenir de contraindre les actes religieux sans déclarer toutes les doctrines également révélées par Dieu. La tolérance selon Léon XIII et les débats ultérieurs sur l'immunité civile doivent être examinés selon leur sens juridique réel ; aucune n'implique à elle seule l'équivalence des voies de salut."
+          },
+          "source_ids": [
+            "LIBERTAS-EN",
+            "LIBERTAS-FR",
+            "DOMINUS-IESUS"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-022",
+      "original_title_candidate": "What is ‘Liberalism’ in Leo XIII’s technical sense?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "CR-DOC-04",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "In Libertas (1888), Leo XIII criticises forms of liberalism that treat individual freedom as independent of objective moral truth and deny the right of law to acknowledge the authority of God. His target is a specified philosophy of liberty, not every constitutional parliament, legal liberty or act of political reform.",
+            "fr": "Dans Libertas (1888), Léon XIII critique les formes de libéralisme qui rendent la liberté individuelle indépendante de la vérité morale objective et refusent à la loi la reconnaissance de l'autorité divine. Il vise une philosophie déterminée de la liberté, non tout parlement constitutionnel, toute liberté civile ou toute réforme politique."
+          },
+          "source_ids": [
+            "LIBERTAS-EN",
+            "LIBERTAS-FR"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Leo's text also discusses permissible toleration of evils to avoid greater harms. Thus one must distinguish moral rights, civil toleration, public order and divine truth; reducing his argument to 'liberty is evil' falsifies the original Catholic position.",
+            "fr": "Le même texte admet une tolérance prudente de certains maux afin d'en éviter de plus graves. Il faut donc distinguer droit moral, tolérance civile, ordre public et vérité divine ; résumer cette doctrine à « la liberté est mauvaise » déforme l'enseignement original."
+          },
+          "source_ids": [
+            "LIBERTAS-EN",
+            "LIBERTAS-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-024",
+      "original_title_candidate": "What is ‘Americanism’?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "CR-DOC-04",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "'Americanism' in Leo XIII's Testem benevolentiae (1899) is the name of disputed opinions allegedly favouring excessive adaptation of Catholic doctrine and spiritual formation to modern American culture, disparagement of traditional virtues and the prioritising of natural over supernatural virtues. It does not condemn American citizenship or national identity.",
+            "fr": "Dans Testem benevolentiae (1899), l'« américanisme » désigne des opinions contestées favorisant, selon le texte, une adaptation excessive de la doctrine et de la vie spirituelle catholiques à la culture américaine moderne, au détriment des vertus traditionnelles et des vertus surnaturelles. Il ne condamne ni la citoyenneté ni l'identité américaine."
+          },
+          "source_ids": [
+            "TESTEM-LA",
+            "TESTEM-EN"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "Leo praises genuine merits of Americans while warning against identifiable doctrinal proposals. Historical judgment must distinguish the opinions actually described, their attribution to particular clergy and how American bishops responded; no assumption that every American Catholic held them is warranted.",
+            "fr": "Léon XIII loue aussi des qualités réelles des Américains tout en mettant en garde contre certaines propositions doctrinales identifiables. Il faut distinguer les opinions décrites, leur attribution à des ecclésiastiques précis et la réponse des évêques ; il ne faut pas les imputer à tous les catholiques américains."
+          },
+          "source_ids": [
+            "TESTEM-LA",
+            "TESTEM-EN"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Review exact Latin terms concerning active/passive virtues and complete reception history before publication.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "original_chat_verbatim_verified": false
+    },
+    {
+      "id": "ERR-025",
+      "original_title_candidate": "What was condemned in the Sillon controversy?",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_VERBATIM_CERTIFIED",
+      "owner_reuse": "CR-DOC-04|CR-DOC-01",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "In Notre charge apostolique (25 August 1910), Pius X criticised doctrinal tendencies of Marc Sangnier's Sillon, particularly a vision of social democracy and fraternity detached from Catholic teaching on authority, grace and the uniquely Christian basis of charity. The original French letter is printed in the Acta Apostolicae Sedis 1910 volume.",
+            "fr": "Dans Notre charge apostolique (25 août 1910), Pie X critique des tendances doctrinales du Sillon de Marc Sangnier, notamment une conception de la démocratie sociale et de la fraternité détachée de l'enseignement catholique sur l'autorité, la grâce et la charité chrétienne. La lettre originale française est publiée dans les Acta Apostolicae Sedis de 1910."
+          },
+          "source_ids": [
+            "SILLON-AAS",
+            "SILLON-FR"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "comparison_and_evidence",
+          "text": {
+            "en": "The same letter expressly recognises the movement's early zeal, Christian motivation and work among workers. Its condemnation therefore cannot fairly be paraphrased as a papal ban on all workers' organisation, all democracy, every search for social justice or Sangnier's every personal intention.",
+            "fr": "La même lettre reconnaît expressément le zèle initial du mouvement, ses motivations chrétiennes et son engagement auprès des ouvriers. Elle ne saurait être résumée comme une interdiction pontificale de toute organisation ouvrière, de toute démocratie, de toute recherche de justice sociale ou comme un jugement global sur les intentions personnelles de Sangnier."
+          },
+          "source_ids": [
+            "SILLON-AAS",
+            "SILLON-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "editorial_limit": "Source context, exact original question wording, native French theology and canonical-owner fit require independent review.",
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_CANONICAL_DOSSIER_NOT_NEW_CARD",
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "original_chat_verbatim_verified": false
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

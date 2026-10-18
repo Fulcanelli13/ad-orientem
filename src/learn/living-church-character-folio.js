@@ -6,6 +6,8 @@
  */
 import {createAskChurchObjectiveEngine} from "./ask-church-objective-engine.js";
 import {loadOriginalCatechismReferralIndex} from "./living-church-catechism-source.js";
+import {canonResearchPreviewEnabled} from "./living-church-canon-research-reader.mjs";
+import {createCanonSourceDialogueOverlay} from "./living-church-canon-dialogue-ui.mjs";
 import {visibleMassResearchMomentLinks} from "../../previews/visible-mass-3d/photographic-published-explorer-handoff.mjs";
 export const LIVING_CHURCH_FOLIO_VERSION="AO_LIVING_CHURCH_P3_FOLIO_V1";
 const BANK_URL=new URL("../../data/learn/living-church-character-assets.v1.json",import.meta.url);
@@ -32,7 +34,8 @@ const copy={
   return:"Return to the photograph",piusSource:"PX1912 · 433 original Catechism questions",
   sourceQuestion:"Open original question",new:"Change objective",unsupported:"Source owner rejected the request",
   topic:"Choose a more specific objective",shown:"Original source · research review only",
-  catechismSearch:"Find an original Catechism question",catechismFind:"Original 1912 Catechism: select a question to read its canonical answer in Ad Orientem. English question titles are retained verbatim from the witness index.",catechismNoResult:"No matching question in the original 433-question index.",catechismSearching:"Search the original English question titles…",catechismOpen:"Read original answer",catechismReview:"Not a historical conversation: each answer is opened in the existing St Pius X Catechism reader."
+  catechismSearch:"Find an original Catechism question",catechismFind:"Original 1912 Catechism: select a question to read its canonical answer in Ad Orientem. English question titles are retained verbatim from the witness index.",catechismNoResult:"No matching question in the original 433-question index.",catechismSearching:"Search the original English question titles…",catechismOpen:"Read original answer",catechismReview:"Not a historical conversation: each answer is opened in the existing St Pius X Catechism reader.",
+  apologetics:"Apologetics questions · source review",debate:"Prepare a discussion · source review"
  },
  fr:{
   label:"L’Église vivante",status:"Aperçu documentaire · non publié",guide:"Choisir un guide",
@@ -53,7 +56,8 @@ const copy={
   return:"Revenir à la photographie",piusSource:"PX1912 · 433 questions originales",
   sourceQuestion:"Ouvrir la question originale",new:"Changer d’objectif",unsupported:"La source a refusé la requête",
   topic:"Précisez votre objectif",shown:"Source originale · recherche non publiée",
-  catechismSearch:"Chercher une question du Catéchisme original",catechismFind:"Catéchisme original de 1912 : choisissez une question pour consulter sa réponse dans Ad Orientem. Les titres anglais sont conservés tels qu’ils figurent dans l’index de référence.",catechismNoResult:"Aucune question trouvée dans l’index original des 433 questions.",catechismSearching:"Rechercher parmi les titres anglais d’origine…",catechismOpen:"Lire la réponse originale",catechismReview:"Il ne s’agit pas d’une conversation historique : la réponse est ouverte dans le Catéchisme existant."
+  catechismSearch:"Chercher une question du Catéchisme original",catechismFind:"Catéchisme original de 1912 : choisissez une question pour consulter sa réponse dans Ad Orientem. Les titres anglais sont conservés tels qu’ils figurent dans l’index de référence.",catechismNoResult:"Aucune question trouvée dans l’index original des 433 questions.",catechismSearching:"Rechercher parmi les titres anglais d’origine…",catechismOpen:"Lire la réponse originale",catechismReview:"Il ne s’agit pas d’une conversation historique : la réponse est ouverte dans le Catéchisme existant.",
+  apologetics:"Questions d’apologétique · aperçu documentaire",debate:"Préparer une discussion · aperçu documentaire"
  }
 };
 const CSS=`
@@ -131,6 +135,7 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
  const snapshot=()=>integration.sourceContext?.()?.context||null;
  const current=()=>{const s=snapshot();return s&&s.scene?.sceneId==="BROMPTON_ALTAR_2019_B"?s:null;};
  const L=()=>copy[engine.snapshot().lang];
+  const canonOverlay=canonResearchPreviewEnabled(win)?createCanonSourceDialogueOverlay(win,{root,getLang:()=>engine.snapshot().lang}):null;
  const refer=key=>bank.images[guide]?.[key]||null;
  function addChoice(label,callback,{primary=false,disabled=false}={}){
   const b=el(doc,"button","",label);b.type="button";b.dataset.primary=String(primary);
@@ -142,7 +147,7 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
   const origin=frame.contentWindow?.AO_VISIBLE_MASS_LIVING_CHURCH_P1;
   const verdict=origin?.chooseGuide?.(next);
   if(!isOK(verdict)){message=L().unsupported;render();return false;}
-  guide=next;emotion="welcoming";mode="home";message="";render();return true;
+  canonOverlay?.close();guide=next;emotion="welcoming";mode="home";message="";render();return true;
  }
  async function enterMoment(){
   const c=current();if(!c){message=L().unsupported;render();return;}
@@ -209,7 +214,13 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
    if(guide==="pius-x")addChoice(words.catechismSearch,()=>{mode="catechism";emotion="explaining";render();},{primary:true});
    addChoice(guide==="pius-x"?words.study:words.objectives,()=>beginObjectives(guide==="pius-x"?"understand":null));
    if(guide==="sacristan")addChoice(words.canon,()=>selectGuide("canon"));
-   if(guide==="canon")addChoice(words.pius,()=>selectGuide("pius-x"));
+   if(guide==="canon"){
+     if(canonOverlay){
+      addChoice(words.apologetics,()=>{void canonOverlay.open({purpose:"learn",focusFrom:doc.activeElement});},{primary:true});
+      addChoice(words.debate,()=>{void canonOverlay.open({purpose:"debate",focusFrom:doc.activeElement});});
+     }
+     addChoice(words.pius,()=>selectGuide("pius-x"));
+    }
    if(guide==="pius-x")addChoice(words.canon,()=>selectGuide("canon"));
   }else if(mode==="questions"){
    prompt.textContent=words.questionIntro;
@@ -252,9 +263,9 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
   }
   notice.textContent=message;
  }
- function hide(){root.hidden=true;}
+ function hide(){canonOverlay?.close();root.hidden=true;}
  function show(){if(closed)return false;if(!current())return false;root.hidden=false;message="";render();return true;}
- function close(){closed=true;root.remove();sheet.remove();}
+ function close(){closed=true;canonOverlay?.dispose();root.remove();sheet.remove();}
  function returnToPhoto(){
   hide();frame.contentWindow?.AO_VISIBLE_MASS_HOTSPOT_PILOT?.focusContext?.();
   frame.focus?.({preventScroll:true});
@@ -285,6 +296,7 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
    questionCount:questions.size,catechismQuestionCount:catechismIndex.status().count,
    catechismSearchResultCount:mode==="catechism"?catechismIndex.search(catechismQuery).length:null,
    assetReady:!image.hidden&&Boolean(image.src),
+    canonResearch:canonOverlay?.status()||null,
    publication:"REVIEW_ONLY_NOT_HISTORICAL_SPEECH",nativeHandoff:"P2_SOURCE_GATED"})
  });
 }
