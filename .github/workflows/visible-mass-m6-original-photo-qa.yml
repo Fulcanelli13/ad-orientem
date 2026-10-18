@@ -1,14 +1,5 @@
 name: Visible Mass M6 original-photo evidence (research only)
 on:
-  push:
-    branches:
-      - feature/visible-mass-3d-explorer-p0
-    paths:
-      - "tools/visible-mass-m6-full-resolution-qa.py"
-      - "previews/visible-mass-3d/M6_COMPARATIVE_P0_BATCH15_UNAPPROVED_20261018.v1.json"
-      - "previews/visible-mass-3d/M6_COMPARATIVE_P0_BATCH16_UNAPPROVED_20261019.v1.json"
-      - "previews/visible-mass-3d/M6_COMPARATIVE_P0_BATCH17_UNAPPROVED_20261019.v1.json"
-      - ".github/workflows/visible-mass-m6-original-photo-qa.yml"
   workflow_dispatch:
 permissions:
   contents: read
