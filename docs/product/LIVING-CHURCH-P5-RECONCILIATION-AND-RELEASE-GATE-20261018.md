@@ -73,5 +73,22 @@ P3's independent research owner `Fulcanelli13/folio-core` PR #36 is still unmerg
 
 One Canon visual-novel folio, one original Catechism reader, one Ask objective engine. No new scripted religious answers, duplicated research or live Mass reader changes.
 
+
+## Public static deployment boundary — security correction
+
+The real Vercel build is `tools/build-web-preview.mjs`, with `dist/web-preview` as its public output. Previously it recursively copied the **entire** `data/` and `assets/` trees, inadvertently including the 27 mirrored Folio editorial JSON files, the 534-question draft crosswalk, migration provenance and unfinished sprite-licensing assets. Four URL review flags only gate the UI; they are not data authorization.
+
+The build now uses `tools/public-preview-research-boundary.mjs` in its recursive copy filter and scans the completed output, failing if held paths survive. The policy holds:
+- `data/learn/research/**` (including unlisted future editorial packs);
+- `data/learn/formation-historical-answer-crosswalk*` and `data/learn/formation-canon-migration-provenance*`;
+- `data/learn/living-church-canon-formation-referral-contract*` and `data/learn/living-church-p5-convergence-lock*`;
+- `assets/living-church/**` while artwork distribution approval is outstanding.
+
+The build validates the original manifest's 27 names against the exclusion policy, preserving the **original Pius X public Catechism** and normal app files. The review source branch and owner data remain available for editorial work; excluding output is not deleting canonical research. Automated acceptance builds Vercel's actual `dist/web-preview`, checks all 27 paths are absent, probes representative published URLs for **404**, verifies legitimate app and original Catechism paths return **200**, and injects a synthetic held file to ensure the post-build auditor fails.
+
+**Boundary of this protection:** the `Fulcanelli13/ad-orientem` GitHub repository currently has `visibility: public`. Thus material in a public Git branch, its history, or a public Folio source repository can still be retrieved via GitHub regardless of Vercel exclusion. Even a subsequent Git deletion is insufficient to guarantee that prior public Git objects have not been copied. To make editorial research genuinely confidential requires repository/source access changes and possibly legal/operational consultation on historical exposure; this branch does **not** claim to accomplish that. No production deploy or Git history rewrite is authorized here.
+
+**Release state:** web-output exclusion is a technical gate, not doctrinal/source/rights approval. The migration content remains `REVIEW_ONLY` and no public Canon answer route is authorized. Any future licensed asset-publication change must explicitly modify and pass the central boundary policy rather than bypass it.
+
 ## Scope limitation
 This snapshot reconciles the named owner commits listed above. Upstream source branches may continue to evolve; newer commits require another comparison. A green test cannot substitute for physical-device and human historical/editorial review. P5 is **merge-review ready, not release-ready**.
