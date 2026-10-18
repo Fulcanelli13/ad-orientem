@@ -157,6 +157,10 @@ try{
   const localizedKyrie=test.lang==="fr"?"Seigneur, ayez pitié":"Lord, have mercy";
   assert.ok(kyrie.vernacular.includes(localizedKyrie),
     test.mode+"/"+test.lang+" did not render the expected translation");
+  if(test.mode==="SIMPLE"||test.mode==="LIVE"){
+   assert.equal(scenario.registered,scenario.focused,
+     test.mode+"/"+test.lang+" contains unreadable source-cue paragraphs: "+JSON.stringify(scenario.focusGaps));
+  }
   if(test.mode==="MISSAL"){
    assert.equal(scenario.darkParagraphs,0,"Missal must remain fully readable, never dimmed");
    assert.equal(scenario.missalStateDrift.length,0,"Missal scroll must not advance ceremonial state");
