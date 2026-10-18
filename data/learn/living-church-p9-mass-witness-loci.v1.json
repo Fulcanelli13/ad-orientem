@@ -1,0 +1,896 @@
+{
+  "schema": "AO_LIVING_CHURCH_P9_MASS_SOURCE_LOCUS_RESEARCH_V1",
+  "createdOn": "2026-10-18",
+  "purpose": "Reconcile candidate primary loci to canonical Formation P1; not a certification ledger or generative publication manifest.",
+  "sourceOfTruth": "data/learn/mass-formation-campion.v1.json",
+  "massReaderTouched": false,
+  "recordCount": 24,
+  "coverage": {
+    "originalPrimaryCandidates": 15,
+    "missalSectionCandidates": 11,
+    "campionChapterLeads": 7,
+    "oconnellUnverifiedLeads": 3,
+    "fullyVerifiedClaims": 0,
+    "approvedGeneratedAnswers": 0
+  },
+  "reviewPolicy": {
+    "exactPassageProof": "REQUIRES_DIRECT_TEXTUAL_CHECK_AND_EDITOR_SIGNOFF",
+    "docLevelPointer": "NEVER_EQUIVALENT_TO_EXACT_PASSAGE",
+    "historicalScope": "1962_ROMAN_RITE_DISTINCT_FROM_CATECHETICAL_USAGE",
+    "bilingual": "EN_AND_FR_SEPARATE_CHECKS",
+    "generatedAnswer": "DENIED_UNTIL_EXPLICIT_NEW_PUBLICATION_GATES"
+  },
+  "records": [
+    {
+      "claimId": "MF01-C01",
+      "stageId": "MF01",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-CAMPION-1954",
+        "SRC-OCONNELL-1962"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-CAMPION-1954",
+          "locator": "Chapter Two — Two Masses in One; indicative printed-page range 13–14",
+          "anchor": null,
+          "note": "Chapter heading confirmed in digitized flipbook; not evidence the complete claim occurs on those pages",
+          "status": "CHAPTER_DISCOVERY_ONLY_NOT_PAGE_ATTESTATION",
+          "url": "https://anyflip.com/iwnc/atsv/basic"
+        },
+        {
+          "sourceId": "SRC-OCONNELL-1962",
+          "locator": "General Rubrics of the Mass / introduction",
+          "anchor": null,
+          "note": "Textual distinction not collated",
+          "status": "OCR_EXCERPT_OR_SECTION_CANDIDATE_PAGE_UNCHECKED",
+          "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF01-C02",
+      "stageId": "MF01",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62",
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ordo Missae, prayers at foot of altar through Credo",
+          "anchor": null,
+          "note": "Liturgical order only; original page images pending",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "sourceId": "SRC-CAMPION-1954",
+          "locator": "Chapters Three–Six; indicative printed-page range 15–34",
+          "anchor": null,
+          "note": "Table of contents/chapter sequence only",
+          "status": "CHAPTER_DISCOVERY_ONLY_NOT_PAGE_ATTESTATION",
+          "url": "https://anyflip.com/iwnc/atsv/basic"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF01-C03",
+      "stageId": "MF01",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62",
+        "SRC-MEDIATOR-DEI",
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§§67–70",
+          "anchor": "visible sacrifice; one same Victim",
+          "note": "Supports sacrificial theme, not the exact multi-part instructional arrangement",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ordo Missae: Offertory / Canon / Communion",
+          "anchor": null,
+          "note": "Original edition headings and sequence not collated",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF02-C01",
+      "stageId": "MF02",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62",
+        "SRC-OCONNELL-1962"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ritus servandus in celebratione Missae; gestures and signs",
+          "anchor": null,
+          "note": "Identify exact subsection for each motion",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "sourceId": "SRC-OCONNELL-1962",
+          "locator": "General rubrics and gestures in low/sung Mass",
+          "anchor": null,
+          "note": "Exact 1962 sections and page not checked",
+          "status": "OCR_EXCERPT_OR_SECTION_CANDIDATE_PAGE_UNCHECKED",
+          "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF02-C02",
+      "stageId": "MF02",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62",
+        "SRC-OCONNELL-1962",
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-OCONNELL-1962",
+          "locator": "Ceremonial of congregation at Missa Cantata or High Mass",
+          "anchor": null,
+          "note": "Indexed OCR excerpt found about bow, genuflection and posture; printed-page location unknown",
+          "status": "OCR_EXCERPT_OR_SECTION_CANDIDATE_PAGE_UNCHECKED",
+          "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf"
+        },
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ritus servandus, celebrant gestures",
+          "anchor": null,
+          "note": "Distinguish priest-prescribed action from local congregational custom",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF02-C03",
+      "stageId": "MF02",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§93",
+          "anchor": "external sacrificial rite should signify internal worship",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§197",
+          "anchor": "what pertains to external worship has importance",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 2,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF03-C01",
+      "stageId": "MF03",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§87",
+          "anchor": "my sacrifice and yours",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ordo Missae — Orate, fratres; response Suscipiat Dominus",
+          "anchor": null,
+          "note": "Confirm exact Latin in 1962 edition",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF03-C02",
+      "stageId": "MF03",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§92",
+          "anchor": "priest and by him alone",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§93",
+          "anchor": "unite their hearts in praise",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 2,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF03-C03",
+      "stageId": "MF03",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-CAMPION-1954",
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§§80–81",
+          "anchor": "unite themselves with the High Priest",
+          "note": "Supports interior oblation generally",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-CAMPION-1954",
+          "locator": "Chapter Seven — We Bring Gifts; indicative printed-page range 35–44",
+          "anchor": null,
+          "note": "Heading known; specific work/suffering/petition applications not text-checked",
+          "status": "CHAPTER_DISCOVERY_ONLY_NOT_PAGE_ATTESTATION",
+          "url": "https://anyflip.com/iwnc/atsv/basic"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF04-C01",
+      "stageId": "MF04",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62",
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ritus servandus, Roman Canon recitation in low voice",
+          "anchor": null,
+          "note": "Missal precise ruby/section pending",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "sourceId": "SRC-CAMPION-1954",
+          "locator": "Chapter Eight — Holy of Holies; indicative printed-page range 45 onward",
+          "anchor": null,
+          "note": "Chapter header confirmed; silence explanation not page verified",
+          "status": "CHAPTER_DISCOVERY_ONLY_NOT_PAGE_ATTESTATION",
+          "url": "https://anyflip.com/iwnc/atsv/basic"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF04-C02",
+      "stageId": "MF04",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ordo Missae, Te igitur / Memento vivorum / Communicantes / Memento defunctorum / Nobis quoque",
+          "anchor": null,
+          "note": "Need edition-page and exact attribution reconciliation",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF04-C03",
+      "stageId": "MF04",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62",
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Canon: Memento of living and of dead",
+          "anchor": null,
+          "note": "Text exists as prayer; personal participation as catechesis requires separate witness",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        },
+        {
+          "sourceId": "SRC-CAMPION-1954",
+          "locator": "Chapter Eight — Holy of Holies; indicative printed-page range 45 onward",
+          "anchor": null,
+          "note": "Exact instructional interpretation unavailable",
+          "status": "CHAPTER_DISCOVERY_ONLY_NOT_PAGE_ATTESTATION",
+          "url": "https://anyflip.com/iwnc/atsv/basic"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF05-C01",
+      "stageId": "MF05",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§70",
+          "anchor": "transubstantiation of bread into the body",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF05-C02",
+      "stageId": "MF05",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§70",
+          "anchor": "symbols of His death",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§115",
+          "anchor": "separation of the sacred species",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 2,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF05-C03",
+      "stageId": "MF05",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62",
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§20",
+          "anchor": "Christ present under the eucharistic species",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ritus servandus / elevations after each Consecration",
+          "anchor": null,
+          "note": "Precise 1962 rite page/caption not verified",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF06-C01",
+      "stageId": "MF06",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§68",
+          "anchor": "one and the same victim",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§70",
+          "anchor": "shedding of His blood is impossible",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 2,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF06-C02",
+      "stageId": "MF06",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Canon Missae, Supra quae propitio ac sereno vultu respicere digneris",
+          "anchor": null,
+          "note": "Abel, Abraham and Melchisedech; Latin original and 1962 edition-page not independently collated",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF06-C03",
+      "stageId": "MF06",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI",
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§§112–115",
+          "anchor": "integrity of the sacrifice; partaking in communion",
+          "note": "Supports link, but synthesized 'not rival explanations' requires editorial interpretation",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF07-C01",
+      "stageId": "MF07",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§115",
+          "anchor": "obligatory for the priest who says the Mass",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF07-C02",
+      "stageId": "MF07",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§112",
+          "anchor": "not required for the integrity of the sacrifice",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§115",
+          "anchor": "earnestly recommended to the faithful",
+          "note": "Primary Holy See encyclical is open-access; proposed paragraph relation needs editorial review",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 2,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF07-C03",
+      "stageId": "MF07",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MEDIATOR-DEI",
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§§112–115",
+          "anchor": "communion and integrity of the sacrifice",
+          "note": "Supports the inference from priest's communion, subject to editorial verification",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF08-C01",
+      "stageId": "MF08",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-MR62",
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§§123–124",
+          "anchor": "duty of thanksgiving after Mass",
+          "note": "Supports personal thanksgiving, not exact Postcommunion characterization",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-MR62",
+          "locator": "Ordo Missae, Postcommunio; prayers for respective days",
+          "anchor": null,
+          "note": "Check actual prayers before claiming single universal text",
+          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
+          "url": "https://archive.org/details/sp07mr62-editio-typica"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF08-C02",
+      "stageId": "MF08",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-CAMPION-1954"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-CAMPION-1954",
+          "locator": "Late chapters / conclusion; indicative printed-page range after 45",
+          "anchor": null,
+          "note": "Claim is attributed to Campion's final application, but no precise chapter/page yet inspected",
+          "status": "CHAPTER_DISCOVERY_ONLY_NOT_PAGE_ATTESTATION",
+          "url": "https://anyflip.com/iwnc/atsv/basic"
+        }
+      ],
+      "primaryParagraphCandidates": 0,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    },
+    {
+      "claimId": "MF08-C03",
+      "stageId": "MF08",
+      "canonicalClaimHash": "",
+      "ownerClaimSources": [
+        "SRC-CAMPION-1954",
+        "SRC-MEDIATOR-DEI"
+      ],
+      "witnessLeads": [
+        {
+          "sourceId": "SRC-MEDIATOR-DEI",
+          "locator": "§§123–126",
+          "anchor": "duty of thanksgiving after Mass",
+          "note": "Supports thanksgiving but not full scope of charity and example",
+          "status": "ORIGINAL_PRIMARY_PARAGRAPH_LOCATED",
+          "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"
+        },
+        {
+          "sourceId": "SRC-CAMPION-1954",
+          "locator": "Late chapters / conclusion; indicative printed-page range after 45",
+          "anchor": null,
+          "note": "Catechetical closing content not verified",
+          "status": "CHAPTER_DISCOVERY_ONLY_NOT_PAGE_ATTESTATION",
+          "url": "https://anyflip.com/iwnc/atsv/basic"
+        }
+      ],
+      "primaryParagraphCandidates": 1,
+      "completeClaimVerified": false,
+      "editionPaginationVerified": false,
+      "englishClaimChecked": false,
+      "frenchClaimChecked": false,
+      "independentEditorialApproval": false,
+      "conversationParaphraseReleased": false,
+      "blockingReasons": [
+        "Exact original quotation context must be compared against the entire claim",
+        "Claim-level English/French and witness edition review incomplete"
+      ],
+      "notes": "Research pointers only. No new theological source text, source approval, or answer-release permission."
+    }
+  ]
+}
