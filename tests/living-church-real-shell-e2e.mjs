@@ -43,8 +43,24 @@ try{
   const before=await frame.locator("#lc-stage").evaluate(el=>el.ownerDocument.defaultView.AO_LIVING_CHURCH_P2.status());
   assert.equal(before.node,"real-presence");
   await frame.locator("#lc-stage .lc-actions").getByRole("button",{name:"Open Catechism"}).click();
-  await page.waitForFunction(()=>document.getElementById("ao-cate-root")&&!document.getElementById("ao-cate-root").hidden,
-    null,{timeout:30000});
+  await page.waitForFunction(()=>{
+    const root=document.getElementById("ao-cate-root");
+    const child=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
+    return root&&!root.hidden||child?.AO_LIVING_CHURCH_P2?.status?.().nativeFailure;
+  },null,{timeout:12000});
+  const diagnostic=await page.evaluate(()=>{
+    const child=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
+    return {scene:child?.AO_LIVING_CHURCH_P2?.status?.(),
+      context:child?.AO_VISIBLE_MASS_LIVING_CHURCH_P1?.status?.(),
+      delegated:child?.AO_LIVING_CHURCH_CATECHISM_NATIVE_V1?.status?.(),
+      learn:window.AO_LEARN_APP_V1?.status?.(),
+      cate:window.AO_TRADITIONAL_CATECHISM?.status?.(),
+      cateRoot:!!document.getElementById("ao-cate-root"),
+      cateHidden:document.getElementById("ao-cate-root")?.hidden,
+      ribbon:document.getElementById("ao-global-ribbon")?.getBoundingClientRect()?.bottom};
+  });
+  console.log("REAL_SHELL_HANDOFF_STATE",width,JSON.stringify(diagnostic));
+  assert.equal(diagnostic.scene.nativeFailure,null,"Real-shell native handoff rejected");
   const current=await page.evaluate(()=>({
    catechism:!!document.getElementById("ao-cate-root")&&!document.getElementById("ao-cate-root").hidden,
    original:AO_LEARN_APP_V1.status(),host:AO_VISIBLE_MASS_REVIEW_V1.status(),
