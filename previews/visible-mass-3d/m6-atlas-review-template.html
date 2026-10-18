@@ -98,6 +98,7 @@ const classified=x=>({
  PROVISIONAL_ORIGINAL_STILL_HOTSPOT:"One shared contextual image · provisional marker",
  EXISTING_OBJECT_IMAGE_CANDIDATE:"Existing inspection-photo candidate",
  EXISTING_M5_PHOTO_REUSED:"Existing M5 source photograph · reused without duplication",
+ EXISTING_OBJECT_PHOTO_REUSED:"1962 Missal source photograph reused for page tabs · detail needs visual approval",
  COMPOSITE_COMPONENT_PHOTO_CANDIDATES_UNAPPROVED:"Composite object photographed in separate parts · awaiting approval",
  COMPOSITE_FIVE_COLOR_PHOTO_CANDIDATES_UNAPPROVED:"Five separately photographed colours · awaiting approval",
  PARTIAL_COMPONENT_ONLY_STILL_NEEDS_PHOTO:"Partial photographic component only · complete liturgical object still missing",
@@ -177,6 +178,9 @@ function researchCue(item){
 
 function objectCard(item){
  const photo=chosenAsset(item),list=item.candidate_assets.map(ref=>imgById.get(ref.asset_id)).filter(Boolean);
+ const extra=item.page_edge_reuse_note?'<p class="note">'+esc(item.page_edge_reuse_note)+'</p>':'';
+ const gap=item.needs_photo&&Array.isArray(item.required_missing_components)&&item.required_missing_components.length?
+  '<p class="note">Still needed: '+item.required_missing_components.map(esc).join("; ")+'.</p>':'';
  return '<article class="record">'+imagePreview(photo)+'<div class="body">'+
  '<div class="eyebrow">'+esc(item.zone)+' · '+esc(item.object_id)+'</div>'+
  '<h2 class="heading">'+esc(item.label)+'</h2>'+
@@ -184,7 +188,7 @@ function objectCard(item){
  ' · Glossary '+esc(item.canonical_glossary_id||"not mapped")+' ('+esc(item.glossary_match)+')'+
  (item.pilot_30?' · sanctuary pilot':'')+(item.needs_photo?' · qualifying photo still missing':' · photo candidate only, not approved')+'</div>'+
  (list.length?list.map(assetLine).join(""):'<p class="note">No original object-specific image candidate yet. A wide church photo must not be treated as proof that this object is visible.</p>')+
- researchCue(item)+
+ researchCue(item)+extra+gap+
  '</div></article>';
 }
 function photoCard(image){
