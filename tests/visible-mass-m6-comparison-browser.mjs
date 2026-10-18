@@ -60,6 +60,7 @@ try{
   await page.locator("#m6-show-archive").click();
   assert.equal(await page.locator("#m6-source-archive").isVisible(),true);
   await page.locator("#mode-images").click();
+  await page.locator("#only-new").uncheck(); // the source archive defaults to newly acquired M6 only
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status())).visible,112);
   await page.locator("#m6-show-comparison").click();
   assert.equal(await page.locator("#m6-comparison").isVisible(),true);
