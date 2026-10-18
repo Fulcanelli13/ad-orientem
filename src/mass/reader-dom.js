@@ -2834,16 +2834,18 @@ export function createReaderDomAdapter({
     // scroll edge. Reserve precisely enough additional scroll to place
     // that cue on the 39% focus line *before* the final-cue edge zone.
     let closingExtra=0;
-    if(closingOrdinary){
-      const cues=[...(body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
-      const penultimate=cues.at(-2);
-      if(penultimate){
-        const cr=card.getBoundingClientRect(),pr=penultimate.getBoundingClientRect();
-        const center=pr.top-cr.top+card.scrollTop+pr.height/2;
-        const requiredScroll=center-viewport*.39+24;
-        const availableScroll=Math.max(0,card.scrollHeight-viewport);
-        closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
-      }
+    // The penultimate cue must have reading territory BEFORE the hard
+    // final-cue edge guard. This applies to the Confiteor, altar ascent,
+    // responses and Offertory as well as the Gloria/Credo doxologies.
+    // Only the source cue's geometric position determines the tail.
+    const cues=[...(body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
+    const penultimate=cues.at(-2);
+    if(penultimate){
+      const cr=card.getBoundingClientRect(),pr=penultimate.getBoundingClientRect();
+      const center=pr.top-cr.top+card.scrollTop+pr.height/2;
+      const requiredScroll=center-viewport*.39+24;
+      const availableScroll=Math.max(0,card.scrollHeight-viewport);
+      closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
     }
     let tail=Math.max(extra,closingExtra);
     if(tail)card.style.setProperty("--ao-short-cue-tail",tail+"px");
