@@ -27,8 +27,9 @@ try{
   await page.locator("#coverage").selectOption("PROVISIONAL_ORIGINAL_STILL_HOTSPOT");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,6);
   await page.locator("#coverage").selectOption("NEW_SOURCE_PHOTO_CANDIDATE");
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,2);
   assert.match(await page.locator("#results").innerText(),/Altar bell/);
+  assert.match(await page.locator("#results").innerText(),/Individual altar candle/);
   await page.locator("#coverage").selectOption("");
   await page.locator("#mode-images").click();
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,35);
