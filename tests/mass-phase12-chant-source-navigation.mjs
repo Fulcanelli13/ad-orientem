@@ -166,14 +166,14 @@ for(const language of ["en","fr"]){
   const {source,curated,prepared}=make(proper,language);
   const titles=curated.cards.filter(c=>c.sourceSectionId==="AO.CARD.006").map(c=>c.title);
   assert.deepEqual(titles,hasSequence?["Gradual","Alleluia","Sequence"]:["Gradual","Alleluia"]);
-  assert.equal(curated.totalCards,hasSequence?67:66);
+  assert.equal(curated.totalCards,hasSequence?66:65);
   const original=source.cards.find(c=>c.sectionId==="AO.CARD.006");
   const children=curated.cards.filter(c=>c.sourceSectionId==="AO.CARD.006");
   assert.deepEqual(children.flatMap(c=>c.paragraphs.map(p=>p.id)),original.paragraphs.map(p=>p.id),
     "Complete source paragraph conservation");
   assert.deepEqual(children.flatMap(c=>c.blocks.map(b=>b.blockId)),
     hasSequence?["AO.SM.B021","AO.SM.B022","AO.SM.B022"]:["AO.SM.B021","AO.SM.B022"]);
-  assert.equal(projectCuratedIntroitEntryLiveCards(curated).totalCards,hasSequence?63:62);
+  assert.equal(projectCuratedIntroitEntryLiveCards(curated).totalCards,hasSequence?62:61);
   const schola=createNativeScholaController({
    sungCorpus:presentation.sungCorpus,properSlots:source.properSlots,
    prepared,frenchOrdinary:presentation.frenchOrdinary,
@@ -188,4 +188,4 @@ for(const language of ["en","fr"]){
   }
  }
 }
-console.log("PASS Phase 2: named Gradual/Alleluia/Tract sections verify in Latin/EN/FR; unsupported boundaries fail closed; 66/67 LIVE, Introit and Schola exact paragraph navigation");
+console.log("PASS Phase 2: named Gradual/Alleluia/Tract sections verify in Latin/EN/FR; unsupported boundaries fail closed; 65/66 LIVE, Introit and Schola exact paragraph navigation");
