@@ -1,0 +1,36 @@
+name: Ordo Missae Fixed Text QA
+
+on:
+  pull_request:
+    paths:
+      - "tests/mass-ordo-missae-fixed-text-qa.mjs"
+      - ".github/workflows/mass-ordo-missae-qa.yml"
+      - "src/mass/**"
+      - "data/presentation/reader-text-low.v1.json"
+      - "data/presentation/reader-text-sung.v1.json"
+      - "data/presentation/reader-french-ordinary.v1.json"
+      - "data/mass/canonical-text-corrections.v1.json"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit-fixed-text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Audit actual fixed Order of Mass and native reader projection
+        run: node tests/mass-ordo-missae-fixed-text-qa.mjs
+      - name: Retain bilingual Ordinary text audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ordo-missae-fixed-text-qa
+          path: artifacts/mass-ordo-grammar/fixed-ordo-phase1b.json
+          if-no-files-found: warn
+          retention-days: 30
