@@ -279,3 +279,33 @@ Ten entirely new original Commons source photographs are linked to ten previousl
 Next investigative areas: *seasonal special-day funeral objects* (catafalque, coffin/bier, pall, Ash Wednesday ashes), *missing Roman books* (hand Missal, Book of Gospels, ribbon/tab close-ups, choir lectern), and *remaining devotional objects* (ex-voto, rosary at shrine). Selection must not substitute an Anglican/Protestant object for a Catholic one, or modern postconciliar activities as 1962 documentary proof.
 
 Viewer/browser-test counters have been updated for 101 records; source provenance, copyright terms, photographic coverage and object links remain separate assertions, and browser-acceptance status should be confirmed from the dedicated M6 workflow before release.
+
+## Thirteenth acquisition — Lourdes ex-voto, historic funeral and shrine objects
+
+Seven source-owned original photographs were linked to seven canonical IDs; **six objects gain some source-qualified photograph**, while the Ash Wednesday record is **partial only** and intentionally excluded from completed photograph coverage. Distinguish historically credible traditional Catholic source imagery from merely photographed modern context.
+
+| Object | Credited source | Rights | Why the photograph is relevant, and why it is not approved |
+|:--|:--|:--|:--|
+| DV10 ex-voto plaque | [Thanksgiving plaque in Basilica of the Immaculate Conception, Lourdes](https://commons.wikimedia.org/wiki/File:Ex-voto_railway_accident_Lourdes.jpg), Tangopaso | Public domain, original author dedication, 4416×3312 | A Catholic Lourdes gratitude plaque for passengers surviving a railway accident. No miracle validation or 1962 liturgical assertion. |
+| DV11 rosary displayed at shrine | [Virgin Mary statue covered in deposited rosaries, Holy Hill National Shrine, Wisconsin](https://commons.wikimedia.org/wiki/File:A_statue_of_the_Virgin_Mary,_covered_in_rosaries,_at_Holy_Hill.jpg), Cmarsch | CC0 1.0, 3072×4080 | Real physical rosaries publicly displayed at a Roman Catholic national Marian shrine; photo 2024. |
+| SE07 Requiem catafalque | [Funeral of Duchess of Chartres, Royal Chapel St-Louis, Dreux, 7 Nov 1925](https://commons.wikimedia.org/wiki/File:Dreux,_7-11-25,_obs%C3%A8ques_de_la_duchesse_de_Chartres_(le_catafalque_%C3%A0_l%27int%C3%A9rieur_de_la_chapelle_royale)_-_btv1b53155647t.jpg), Agence Rol / BnF Gallica btv1b53155647t | Public domain France/US (1925 anonymous/collective press work); 8638×6151; retain agency/BnF attribution and French moral rights | **Strong actual pre-1962 Catholic catafalque photograph**. Historic French aristocratic funeral, not a guarantee of universally typical 1962 rite or all catafalque details. |
+| SE08 funeral bier / coffin | [Coffin display arranged for Roman Catholic funeral](https://commons.wikimedia.org/wiki/File:CoffinDisplay.jpg), Willjay | CC BY 3.0, 1024×768 | Physical coffin in staged Catholic funerary context, **not** a certified view of its supporting bier, actual funeral ceremony, black pall or 1962 Mass. |
+| BK05 Book of Gospels | [Saint Francis of Assisi's evangeliary with other relics, Chiesa di San Francesco, Cortona](https://commons.wikimedia.org/wiki/File:Tunica,_cuscino_cucito_da_jacopa_settesoli_ed_evangeliario_di_san_francesco_d%27assisi,_donati_da_frate_elia.jpg), Sailko | CC BY-SA 4.0, 5003×1794 | Authentic Roman Catholic historical evangeliary, displayed with multiple relics. No claim that the object resembles the typical 1962 deacon's Gospel book. |
+| BK15 choir lectern | [Medieval brass eagle lectern, Aachen Cathedral choir](https://commons.wikimedia.org/wiki/File:Adlerpult_mit_Fledermaus.jpg), ACBahn | CC BY-SA 4.0, 4160×3120 | Catholic choir furnishing, older and more ornate than a compact portable chant lectern; 19th-century bat support belongs to a historic repair. |
+| SE04 ashes and ash vessel | [Ash portions dispensed in plastic take-home containers, St Augustine Parish, Baliuag, Philippines](https://commons.wikimedia.org/wiki/File:Ashes_(Ash_Wednesday_2022_during_COVID-19_pandemic_in_the_Philippines)_03.jpg), FBenjr123 | CC BY-SA 4.0, 5184×3888 | **PARTIAL ONLY**: COVID-era home containers are neither proof of a metal altar ash vessel nor appropriate illustration of 1962 Ash Wednesday preparation. SE04 remains `needs_photo=true` and cannot count toward qualified coverage. |
+
+The distinction between **SE07 catafalque** (empty symbolic cenotaph) and **SE08 coffin/bier** (actual body/coffin) is canonically consequential; the original [Catholic Encyclopedia on catafalque](https://www.newadvent.org/cathen/03427a.htm) confirms that separation. Do not link the Dreux source to both subject IDs simply because it is funeral-related. Likewise, do not label any visible piece of funeral drapery an actual Roman funeral pall (SE09) without inspection and source evidence.
+
+### Post-batch-13 totals and next target
+
+**170 physical-object IDs**, 13 zones, **108 registered source/photo records across 105 unique original source URLs**, **95/170** source-qualified or original-scene provisional object references; **75/170** still without qualification. These figures are *candidate research coverage*, not approvals or published images. The earlier 20/20 vestments and 28/30 sanctuary pilot remain unchanged.
+
+Only **four of this specifically scoped ten-object shortlist** remain without adequate source photography:
+
+- BK03 Mass Missal ribbons/tabs: require clear photographic detail of the liturgical Missal with ribbons, and do not substitute modern commercial product imagery with ambiguous reproduction rights.
+- BK04 hand Missal: require original photographer's image of real Catholic faithful hand-Missal, edition provenance if it is claimed to be 1962, and rights sufficient for in-app use.
+- SE04 ash vessel and ashes: partial lead exists, but 1962 ash bowl/tray not yet documented.
+- SE09 funeral pall: require physical black Catholic pall clearly draped over a coffin/bier, and a rights-clear source, not a generic cloth or an Orthodox/Anglican funeral.
+
+No image was given editor approval; branch PR #1309 remains draft, unmerged and separate from app production. The M5 originals and all G###/VMQ/R17 ownership remain unchanged.
+
