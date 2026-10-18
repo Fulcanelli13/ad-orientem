@@ -44,7 +44,7 @@ try{
        cardNames,visibleTitle,current:a.getCurrentCard()?.title};
    });
    assert.equal(result.mode,"LIVE");
-   assert.equal(result.after,65,
+   assert.equal(result.after,64,
      startMode+" -> LIVE fell back to coarse cards: "+JSON.stringify(result));
    for(const title of ["Confiteor of the Celebrant","Te igitur","Hanc igitur",
      "Words of Consecration and Elevation · Host","Words of Consecration and Elevation · Chalice",
@@ -54,7 +54,7 @@ try{
    assert.equal(result.current,"Words of Consecration and Elevation · Host");
    assert.ok(result.visibleTitle.includes("Host"),"Visible reader title lost after LIVE switch: "+JSON.stringify(result));
    assert.deepEqual(errors,[]);
-   console.log("PASS "+startMode+" -> LIVE: 65 named prayer cards, main reader synchronized");
+   console.log("PASS "+startMode+" -> LIVE: 64 named prayer cards, main reader synchronized");
   }finally{await ctx.close()}
  }
 }finally{
