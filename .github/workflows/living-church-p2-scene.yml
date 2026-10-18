@@ -1,0 +1,31 @@
+name: Living Church P2 three-guide review
+on:
+  pull_request:
+    paths:
+      - "previews/visible-mass-3d/living-church-character-scene.mjs"
+      - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
+      - "tests/living-church-character-scene.mjs"
+      - ".github/workflows/living-church-p2-scene.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gated-review-scene:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify JavaScript source
+        run: |
+          node --check previews/visible-mass-3d/living-church-character-scene.mjs
+          node --check tests/living-church-character-scene.mjs
+          node tests/living-church-visible-mass-adapter.mjs
+      - name: Install isolated browser tooling
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Test review-only scene at phone and desktop sizes
+        run: node tests/living-church-character-scene.mjs
