@@ -100,3 +100,18 @@ This extends the P7 **extractive, non-generative** approach without creating an 
 - Tests cover: eight-stage/24-claim lineage, two P7 original answers, narrow Formation question routing and French, forged citation/wording refusal, unavailable sources/changed release manifests, editorial approval=zero, and original 390px/1280px scene and native handoff regressions.
 
 **Release decision:** source-extractive pilot only. True open-ended generative chat remains intentionally unimplemented until the provenance/entailment and publishing gate exists; returning a source-backed paragraph is not synonymous with certifying a newly written theological answer.
+
+## P9 — Four-source witness-locus collation (research; 18 October 2026)
+
+The research register `data/learn/living-church-p9-mass-witness-loci.v1.json` maps **all 24** canonical Formation P1 claim IDs to **candidate** locations in the four existing cited sources. It is not a new Formation text registry and does not copy third-party volumes, issue approvals or change canonical answers.
+
+- **Pius XII / `Mediator Dei`:** 15 claims have direct official-Vatican paragraph candidates, including §20 (Eucharistic presence in liturgical worship), §§67–70 (sacrifice, identity of the victim, Eucharistic species), §87 and §§92–93 (priestly versus faithful oblation), §§112–115 (Communion and integrity), and §§123–126 (thanksgiving). Paragraph candidates are meaningful bibliographic progress but do **not** establish complete claim entailment or approved new wording.
+- **1962 `Missale Romanum`:** 11 claims have exact Latin rite section leads, usually `Ordo Missae`, `Ritus servandus` or `Canon Missae`. The indexed original-1962 OCR identifies **Rubricae generales no. 500** for the low-voice Canon (`Post praefationem et Sanctus dicitur Canon Missae secreto`); *edition-page image checking remains outstanding*. This is distinct from the Catechism's own explanation of the Canon.
+- **Campion 1954:** seven claims have chapter-level leads from the 1954 text reproduced as `Saint Edmund Campion Children's Missal`, especially chapter 2 (pp. 13–14), chapter 7 (pp. 35–44) and chapter 8 (starting p. 45). The discoverable table of contents verifies those **chapter starts**, not the details of each proposed claim. Never invent page citations from this index.
+- **O'Connell 1962:** three claims have section or indexed OCR-excerpt leads. Original pagination/exact quotation and distinction between celebrant rubrics and congregational practice remain outstanding.
+
+All witness leads carry source ID, locator, access URL, evidence strength, caveats and blocking checks. The adjacent **P8 publication approval queue is unchanged at zero** approved exact claim witnesses and zero approved fresh chatbot paraphrases. These registers are separate on purpose: a found source locator is not an editorial permission.
+
+`tests/living-church-p9-mass-witness-loci.mjs` enforces the complete 24-ID correspondence, valid original source IDs, permitted locator statuses, edition caveats, paragraph level and rubric no. 500, and zero approval flags. It is part of the review-only P2 browser/CI workflow.
+
+**Next source-review actions:** check original 1962 Missal page images for numbered rubrics and prayer clauses; inspect Campion/O'Connell pages rather than assuming headings prove content; compare all French and English Formation claims to each specific primary text in full context; then request human editorial/rights review **before** enabling any newly composed generative answer. LIVE/SIMPLE/MISSAL reader and production remain untouched.
