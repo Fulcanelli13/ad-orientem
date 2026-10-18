@@ -200,7 +200,9 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   // Opening a card starts with its opening sentence, not paragraph two.
   if(body.scrollTop<2)active=0;
   all.forEach((p,i)=>{
-   const strength=i===active?"1":Math.abs(i-active)===1?".56":".30";
+   // Stronger prayer focus: the active words stay fully lit, adjacent words
+   // remain readable on demand, and distant text recedes further.
+   const strength=i===active?"1":Math.abs(i-active)===1?".38":".18";
    p.style.setProperty("--ao-devo-focus",strength);
    // Legacy Angelus styles contain important whole-unit opacity declarations.
    // The shared card paragraph controller is the single active focus owner.
