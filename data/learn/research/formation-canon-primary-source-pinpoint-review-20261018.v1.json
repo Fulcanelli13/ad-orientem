@@ -7,10 +7,12 @@
   "summary": {
     "checkedQuestions": 7,
     "centralClaimsSupportedWithScope": 3,
-    "pinpointCorrectionsRequired": 2,
-    "opponentOriginalEvidenceStillIncomplete": 1,
+    "pinpointCorrectionsRequired": 0,
+    "opponentOriginalEvidenceStillIncomplete": 0,
     "comparativeContextFurtherReview": 1,
-    "publishedApprovalsGranted": 0
+    "publishedApprovalsGranted": 0,
+    "pinpointCorrectionsRecordedInErrataPendingReview": 2,
+    "namedOpposingSourceIdentifiedPendingReview": 1
   },
   "rules": [
     "This metadata contains no new answers and must never supersede the original Folio 519+15 Q&A source owner.",
@@ -78,7 +80,7 @@
     {
       "id": "LUT-011",
       "sourcePack": "data/learn/research/formation-lutheran-13-partials-20261013.v1.json",
-      "class": "PINPOINT_SOURCE_CORRECTION_REQUIRED",
+      "class": "PINPOINT_CORRECTED_IN_SOURCE_OWNER_ERRATA_PENDING_APPROVAL",
       "key": "TRENT",
       "pinpoints": [
         {
@@ -98,12 +100,12 @@
         }
       ],
       "checkedClaim": "Correct to distinguish Lutheran true presence from Catholic transubstantiation; false to portray Lutherans as mere memorialists.",
-      "held": "Fix the source-level locator TRENT to Session XIII ch.IV/canon II, and use FC VII for the specifically Lutheran sacramental position, before source-context approval."
+      "held": "An immutable original-source citation errata overlay now identifies the precise section for this question. Original answer prose, external source context and French remain not approved. See data/learn/research/formation-canon-source-owner-errata-20261018.v1.json"
     },
     {
       "id": "ERR-009",
       "sourcePack": "data/learn/research/formation-protestant-errors-enrichment-20261013.v1.json",
-      "class": "PINPOINT_SOURCE_CORRECTION_REQUIRED",
+      "class": "PINPOINT_CORRECTED_IN_SOURCE_OWNER_ERRATA_PENDING_APPROVAL",
       "key": "CCC-2111",
       "pinpoints": [
         {
@@ -118,22 +120,27 @@
         }
       ],
       "checkedClaim": "A mere card trick or stage illusion is not identical with attempting occult powers; the original draft is a reasonable contextual interpretation.",
-      "held": "Pinpoint the cited definition to §2117 rather than treating §2111 as the specific definition, and identify stage-magic application as inference rather than direct Catechism quotation."
+      "held": "An immutable original-source citation errata overlay now identifies the precise section for this question. Original answer prose, external source context and French remain not approved. See data/learn/research/formation-canon-source-owner-errata-20261018.v1.json"
     },
     {
       "id": "PEN-010",
       "sourcePack": "data/learn/research/formation-pentecostal-17-supplement-20261013.v1.json",
-      "class": "OPPONENT_EVIDENCE_INCOMPLETE",
+      "class": "NAMED_CESSATIONIST_PRIMARY_ARGUMENT_FOUND_REVIEW_PENDING",
       "key": "AG-ST",
       "pinpoints": [
         {
           "authority": "Assemblies of God, Statement of Fundamental Truths §§7–8",
           "url": "https://ag.org/Beliefs/Statement-of-Fundamental-truths",
           "why": "Affirms ongoing gifts and speaking in tongues: a continuationist Pentecostal position"
+        },
+        {
+          "authority": "Thomas R. Schreiner, Why I Am a Cessationist (2014)",
+          "url": "https://www.thegospelcoalition.org/article/cessationist/",
+          "why": "First-person cessationist: some revelatory/sign gifts ended with apostolic foundation; 1 Cor 13 not decisive; distinguish from cessationist varieties and not a Pentecostal position"
         }
       ],
       "checkedClaim": "Classical Assemblies of God continuationism is documented and should not be confused with cessationism.",
-      "held": "For the precise question whether gifts ceased, a historical cessationist's actual original argument is still absent; Assemblies of God sources alone cannot certify the other party's position."
+      "held": "Named first-person cessationist witness now linked in Folio source-owned errata. Independent original context and Catholic comparison still require editor certification; avoid generalising to all Protestants."
     },
     {
       "id": "ISL-014",
@@ -160,5 +167,7 @@
       "checkedClaim": "It would be unsupported to claim Qur'an 5:116 explicitly names Mary as the third Trinitarian person.",
       "held": "Muslim exegetical diversity, Arabic translation and contextual attribution require a reviewer familiar with the sources; avoid homogenizing Islamic exegesis."
     }
-  ]
+  ],
+  "status": "EDITORIAL_SOURCE_PINPOINT_UPDATE_NO_PUBLISHED_APPROVAL",
+  "sourceOwnerErrata": "data/learn/research/formation-canon-source-owner-errata-20261018.v1.json"
 }
