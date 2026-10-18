@@ -62,7 +62,7 @@ try{
    }
   }
   const exceptions=["2026-12-11","2026-06-30","2026-10-18","2026-12-04",
-    "2026-05-16","2026-10-03","2026-12-02"];
+    "2026-05-16","2026-10-03","2026-12-02","2026-06-19","2026-07-21"];
   const extract=r=>{
     const p=r?.proper?.status==="ready"?r.proper.data:null,d=r?.day?.main??null;
     const label=lang=>{
@@ -143,7 +143,7 @@ try{
   }
   return {schema:"ao.calendar.ordo.language-qa.v1",
     year:2026,sourceOrdo,sourceDayCount:sourceOrdo.length,seed:"AO-ORDO-GRAMMAR-2026-10-18-V1",
-    selection:"2 Sunday + 2 non-Sunday random dates per month; 48 sampled dates + 7 known-risk sentinel days",
+    selection:"2 Sunday + 2 non-Sunday random dates per month; 48 sampled dates + 9 known-risk sentinel days",
     sampled,supplement,exceptions,unresolved,flags:textFlags,frenchFallbackCandidates:fallback,
     exportSamples};
  });
@@ -151,7 +151,17 @@ try{
  assert.equal(findings.sampled.length,48,"Expected 48 sampled resolved Ordo days");
  assert.equal(findings.sampled.filter(x=>x.fr.visible&&x.en.visible).length,48);
  assert.deepEqual(errors,[],"Ordo browser evaluation threw");
- const totals={rawDayRecords:findings.sourceDayCount,actualResolvedRandomDays:findings.sampled.length,
+ const allResolved=[...findings.sampled,...findings.supplement];
+ const totals={rawDayRecords:findings.sourceDayCount,
+   rawDaysWithFrenchTitle:findings.sourceOrdo.filter(x=>x.main?.titleFr||x.main?.nameFr).length,
+   actualResolvedRandomDays:findings.sampled.length,
+   sameENFRHeadingsInRandomSample:findings.sampled.filter(x=>x.en.visible===x.fr.visible).length,
+   properNameFrEqualsEnglishInRandomSample:findings.sampled.filter(x=>x.properName&&x.properName===x.properNameFr).length,
+   sampledDaysWithCommemorations:findings.sampled.filter(x=>x.en.commemorations.length).length,
+   sampledDaysWithUntranslatedFrenchCommemorations:findings.sampled.filter(x=>x.en.commemorations.length&&JSON.stringify(x.en.commemorations)===JSON.stringify(x.fr.commemorations)).length,
+   allResolvedSameENFRHeadings:allResolved.filter(x=>x.en.visible===x.fr.visible).length,
+   allResolvedProperNameFrEqualsEnglish:allResolved.filter(x=>x.properName&&x.properName===x.properNameFr).length,
+   
    exceptionDates:findings.supplement.length,unresolved:findings.unresolved.length,
    sourceOrdoFlags:findings.flags.filter(x=>x.surface==="SOURCE_ORDO"||x.surface==="SOURCE_COMMEMORATION").length,
    displayedFlags:findings.flags.filter(x=>x.surface.startsWith("CALENDAR_VISIBLE")).length,
