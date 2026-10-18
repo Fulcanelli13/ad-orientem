@@ -14,6 +14,9 @@ on:
       - "previews/visible-mass-3d/M6_COMPARATIVE_P0_BATCH16_UNAPPROVED_20261019.v1.json"
       - "previews/visible-mass-3d/M6_COMPARATIVE_P0_BATCH17_UNAPPROVED_20261019.v1.json"
       - "previews/visible-mass-3d/M6_P0_ORIGINAL_PIXEL_VISUAL_SCREEN_20261019.v1.json"
+      - "previews/visible-mass-3d/M6_P0_BATCH18_FRENCH_CATHOLIC_COLLECTIONS_20261019.v1.json"
+      - "previews/visible-mass-3d/M6_Rapid_30_Object_Photo_Triage_20261019.html"
+      - "tests/visible-mass-m6-rapid-review-browser.mjs"
       - "tests/visible-mass-m6-photo-atlas-contract.mjs"
       - "tests/visible-mass-m6-atlas-review-browser.mjs"
       - "tools/build-visible-mass-m6-atlas-review.mjs"
@@ -42,6 +45,7 @@ jobs:
           npx playwright install --with-deps chromium
           node tests/visible-mass-m6-atlas-review-browser.mjs
           node tests/visible-mass-m6-comparison-browser.mjs
+          node tests/visible-mass-m6-rapid-review-browser.mjs
       - name: Save reviewable photographic coverage atlas
         uses: actions/upload-artifact@v4
         with:
@@ -49,5 +53,6 @@ jobs:
           path: |
             dist/visible-mass/The_Visible_Mass_M6_Photographic_Atlas_Review.html
             previews/visible-mass-3d/Ad_Orientem_M6_Acquired_Photo_Review_112.html
+            previews/visible-mass-3d/M6_Rapid_30_Object_Photo_Triage_20261019.html
           if-no-files-found: error
           retention-days: 30
