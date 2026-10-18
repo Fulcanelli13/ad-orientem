@@ -22,7 +22,7 @@ SESSION=requests.Session()
 SESSION.headers.update({"User-Agent":"AdOrientemResearch/0.2 (noncommercial source review, attribution retained)",
                         "Accept":"application/json,image/jpeg,image/png,*/*"})
 SIZE=520
-MAX=75
+MAX=45  # MediaWiki anonymous API hard limit: <=50 file titles per request
 PACING_SECONDS=1.4
 
 def decode_dataset(raw):
