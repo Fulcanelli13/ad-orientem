@@ -66,3 +66,12 @@ The LIVE, SIMPLE and MISSAL Mass reader, rubrics, source prayer texts and Schola
 ### Still outside P5
 
 Live unscripted bot conversations, broad arbitrary apologetics retrieval, historical role impersonation, source-certification expansion, full Ask the Church V7 native destinations and final production/physical-device approval are **not implemented by this review stage**. The original Apostolate and other canonical owners remain authoritative. Do not merge solely because the scripted source-reader/browser tests pass.
+
+## P6 — One ephemeral visit across all three guides (review only)
+
+- `previews/visible-mass-3d/living-church-conversation-trail.mjs` adds a **bounded, memory-only** record of confirmed guide visits, objective IDs and canonical source IDs (limit 20). Typed free-text questions, sensitive personal circumstances, script dialogue, source answers and citation bodies do **not** enter that trail. Closing/disposal clears it. No storage, backend mutation or network transmission.
+- A discreet **Conversation trail** button within the existing visual-novel panel lists those reviewed steps. The visitor can return to a guide, or reopen an original approved source associated with the **currently selected objective**. Entries from prior objectives remain identifiable but cannot be reopened without new path selection/authorization. Repeated source visits are marked rather than creating duplicate navigation buttons.
+- This does **not** claim permanent memory, an autonomous LLM, streaming answer generation or new content certification. The authorized `Ask the Church` director still decides source eligibility.
+- `tests/living-church-conversation-trail.mjs` enforces hard bounds, de-duplication, sanitised IDs and zero free-message capture. `tests/living-church-character-scene.mjs` tests the full guide switch → source revisit → new objective denial path at 390px and 1280px.
+
+**Merge conditions unchanged:** #1391 and upstream source branches must be reconciled, existing original church/shell regressions green, and visual and accessibility approval granted. Reader unchanged.
