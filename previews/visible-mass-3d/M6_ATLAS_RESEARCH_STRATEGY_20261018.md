@@ -257,3 +257,25 @@ Nine additional **independent and directly verified Commons source photographs**
 
 **Reject false-positive examples found in discovery:** 2017 Candlemas photo at Calvary **Episcopal** Church, Rochester, and the veiled Good Friday altar at Houston Memorial **United Methodist** Church do not belong in a Roman Catholic photographic documentary register. They have not been imported.
 
+## Twelfth acquisition batch — Catholic devotional subjects, choir and Requiem
+
+Ten entirely new original Commons source photographs are linked to ten previously-unreferenced canonical object IDs. No original M5 photo is duplicated, no hotspot or image of ceremony from an unrelated place is fabricated, and all records remain `SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL`.
+
+| Object | Original documented photographic source | Rights and explanatory qualification |
+|:--|:--|:--|
+| DV02 Blessed Virgin statue | [Basilica of Saint Joseph Proto-Cathedral, Bardstown](https://commons.wikimedia.org/wiki/File:Basilica_of_Saint_Joseph_Proto-Cathedral_(Bardstown,_Kentucky)_-_Blessed_Virgin_Mary_statue.jpg) | Nheyob, CC BY-SA 4.0, 2888×3613; genuine Catholic statue, not a ceremony |
+| DV03 St Joseph statue | [St Mary's Pro-Cathedral, Dublin](https://commons.wikimedia.org/wiki/File:Statue_of_Saint_Joseph.jpg) | ManuRoquette, CC BY-SA 4.0, 2976×3968; authentic Irish Catholic church |
+| DV04 another saint statue | [St Peter statue at Saint Mary's Catholic Church, Delaware, Ohio](https://commons.wikimedia.org/wiki/File:Saint_Mary_Catholic_Church_(Delaware,_Ohio)_-_side_altar,_Saint_Peter_statue.jpg) | Nheyob, CC BY-SA 4.0, 2397×3598; Catholic physical example, not Brompton |
+| DV09 stained glass | [Saint Margaret Mary Chapel in Basilique du Sacré-Cœur, Paris](https://commons.wikimedia.org/wiki/File:Basilique_du_Sacr%C3%A9-C%C5%93ur_chapelle_Sainte_Marguerite_Marie_stained-glass_windows_2026-01-03.jpg) | Renée Kools, CC BY 4.0, 3000×3000; quality-assessed genuine devotional stained glass |
+| DV12 devotional shrine | [Our Lady's shrine in Saint Joseph's Catholic Church, Central City](https://commons.wikimedia.org/wiki/File:Saint_Joseph%27s_Catholic_Church_(Central_City,_Kentucky)_-_Blessed_Virgin_Mary_shrine.jpg) | Nheyob, CC BY-SA 3.0, 3437×2755; wider shrine context |
+| BK06 Epistolary | [1868 Notre-Dame de Paris treasury epistolary](https://commons.wikimedia.org/wiki/File:%C3%89pistolaire_du_tr%C3%A9sor_de_la_cath%C3%A9drale_Notre-Dame_de_Paris.jpg) | Tangopaso, public-domain photo dedication, 2112×2816; historical ornamental cover, not the typical 1962 solemn Mass Epistolary |
+| BK13 pipe organ | [Pipe organ at Notre-Dame d'Amiens](https://commons.wikimedia.org/wiki/File:Amiens,_cathedral_Notre-Dame,_the_pipe_organ.JPG) | Dguendel, CC BY 4.0, 2632×4115; authentic Catholic church instrument, not sung liturgy photo |
+| BK14 choir stalls | [Notre-Dame de Paris stalls and choir organ](https://commons.wikimedia.org/wiki/File:Cathedrale_Notre-Dame_de_Paris_stalles_orgue_choeur.jpg) | Myrabella, CC BY-SA 3.0, 3973×2393; historical pre-2019 Catholic choir furniture, not a 1962 Mass scene |
+| SE11 processional banner | [Carmelite confraternity banner in San Sebastián Basilica, Manila](https://commons.wikimedia.org/wiki/File:2025-01-25_-_Processional_banner_for_the_Nuestra_Se%C3%B1ora_del_Carmen_de_San_Sebasti%C3%A1n_01.jpg) | EyeTrick, CC BY-SA 4.0, 3341×4454; Catholic exhibition object, not actual 1962 procession |
+| SE12 Requiem vestments | [Requiem Mass, Strasbourg Cathedral crypt, 2013](https://commons.wikimedia.org/wiki/File:Strasbourg_crypte_de_la_cath%C3%A9drale_Notre_Dame_messe_de_Requiem_2013_06.jpg) | Claude TRUONG-NGOC, CC BY-SA 3.0, 3156×5016; categorised Tridentine Requiem with black vestments, but original garment visibility and precise form require further visual approval |
+
+**Cumulative research coverage:** 170 canonical object IDs, 13 zones, **101 source records across 98 unique original source URLs**, **89/170** with photographic candidates or source-specific provisional hotspots, **81/170** still missing a qualifying photo. Remaining candidate gaps: DV 2, BK 4, SE 4; other zones remain incomplete. No image has been editorially approved, no source has been published and no change was made to the LIVE/Simple/Missal Mass reader.
+
+Next investigative areas: *seasonal special-day funeral objects* (catafalque, coffin/bier, pall, Ash Wednesday ashes), *missing Roman books* (hand Missal, Book of Gospels, ribbon/tab close-ups, choir lectern), and *remaining devotional objects* (ex-voto, rosary at shrine). Selection must not substitute an Anglican/Protestant object for a Catholic one, or modern postconciliar activities as 1962 documentary proof.
+
+Viewer/browser-test counters have been updated for 101 records; source provenance, copyright terms, photographic coverage and object links remain separate assertions, and browser-acceptance status should be confirmed from the dedicated M6 workflow before release.
