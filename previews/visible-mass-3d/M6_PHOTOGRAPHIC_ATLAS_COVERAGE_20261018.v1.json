@@ -51,7 +51,13 @@
     "legacy_illustration_only_objects_reflagged": [
       "LN04",
       "LN05"
-    ]
+    ],
+    "third_batch_new_licensed_photo_candidates": 6,
+    "third_batch_new_object_links": 8,
+    "post_third_batch_photo_candidate_or_hotspot": 38,
+    "post_third_batch_needs_photo": 132,
+    "post_third_batch_pilot_needs_photo": 4,
+    "post_third_batch_vestment_photo_candidates": 12
   },
   "zones": [
     {
@@ -1308,15 +1314,20 @@
       "intended_navigation": "Z",
       "pilot_30": true,
       "pilot_photo_evidence": "NO_DIRECT_SCENE_EVIDENCE",
-      "evidence_status": "HISTORICAL_ILLUSTRATION_ONLY_NEEDS_PHOTO",
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
       "candidate_assets": [
         {
           "asset_id": "EXISTING-LN04",
           "role": "historical_reference",
           "evidence": "EXISTING_INDEPENDENT_SOURCE_CANDIDATE_NOT_EDITORIAL_APPROVED"
+        },
+        {
+          "asset_id": "M6B3-LN04-MAASTRICHT-BURSE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
         }
       ],
-      "needs_photo": true
+      "needs_photo": false
     },
     {
       "object_id": "LN05",
@@ -1328,15 +1339,20 @@
       "intended_navigation": "Z",
       "pilot_30": true,
       "pilot_photo_evidence": "NO_DIRECT_SCENE_EVIDENCE",
-      "evidence_status": "HISTORICAL_ILLUSTRATION_ONLY_NEEDS_PHOTO",
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
       "candidate_assets": [
         {
           "asset_id": "EXISTING-LN05",
           "role": "historical_reference",
           "evidence": "EXISTING_INDEPENDENT_SOURCE_CANDIDATE_NOT_EDITORIAL_APPROVED"
+        },
+        {
+          "asset_id": "M6B3-LN05-HONOLULU-SPANISH-CHALICE-VEIL",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
         }
       ],
-      "needs_photo": true
+      "needs_photo": false
     },
     {
       "object_id": "LN06",
@@ -1967,9 +1983,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B3-VE12-CATHOLIC-MONSIGNOR-BIRETTA",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE13",
@@ -1981,9 +2003,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B3-VE13-CLEMENT-VIII-VATICAN-COPE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE14",
@@ -2023,9 +2051,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B3-VE16-18-19-GAMMARELLI-INSIGNIA-CONTEXT",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE17",
@@ -2037,9 +2071,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B3-VE17-VENICE-MET-CLOISTERS-CROZIER",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE18",
@@ -2051,9 +2091,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B3-VE16-18-19-GAMMARELLI-INSIGNIA-CONTEXT",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE19",
@@ -2065,9 +2111,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B3-VE16-18-19-GAMMARELLI-INSIGNIA-CONTEXT",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE20",
@@ -3358,6 +3410,102 @@
       "source_description": "19th-century silk dalmatic photographed at a Catholic-church exhibition, not worn during Solemn Mass. Confirm object shape and suitability for explaining the role of a deacon.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH2"
+    },
+    {
+      "asset_id": "M6B3-LN04-MAASTRICHT-BURSE",
+      "object_id": "LN04",
+      "creator": "Kleon3",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 2169,
+      "height": 1901,
+      "venue": "Treasury of the Basilica of Our Lady, Maastricht, Netherlands",
+      "source_description": "Direct original photograph of a ca. 1850 liturgical burse beside a maniple, an authentic Roman Catholic basilica treasury item; not photographed in use with the corporal in a 1962 Mass.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maastricht,_Schatkamer_OLV-basiliek,_textielschat,_lade_5,_manipel_%26_bursa_ca_1850.jpg",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH3"
+    },
+    {
+      "asset_id": "M6B3-LN05-HONOLULU-SPANISH-CHALICE-VEIL",
+      "object_id": "LN05",
+      "creator": "Hiart",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 2900,
+      "height": 2836,
+      "venue": "Honolulu Museum of Art; 17th-century Spanish chalice veil, accession 803.1",
+      "source_description": "Original photograph of a genuine Roman Catholic Western chalice veil, isolated flat textile; not on a veiled chalice in actual 1962 use.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chalice_veil_from_Spain,_17th_century,_Honolulu_Museum_of_Art,_803.1.JPG",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH3"
+    },
+    {
+      "asset_id": "M6B3-VE12-CATHOLIC-MONSIGNOR-BIRETTA",
+      "object_id": "VE12",
+      "creator": "Patrickwooldridge",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 1080,
+      "height": 1080,
+      "venue": "Roman Catholic biretta photographed as an isolated object",
+      "source_description": "Original photographed black biretta with red pompon used by a monsignor. Useful for the shape; typical priest's biretta commonly has a black pompon, so do not present it as the ordinary priest variant.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Biretta_of_a_Roman_Catholic_Monsignor.jpg",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH3"
+    },
+    {
+      "asset_id": "M6B3-VE13-CLEMENT-VIII-VATICAN-COPE",
+      "object_id": "VE13",
+      "creator": "Daderot",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 5015,
+      "height": 3408,
+      "venue": "Vatican Museums, Rome; cope from the Mass vestments of Clement VIII, 1593–1597",
+      "source_description": "Historic Roman pontifical cope on museum display, not a photograph of a priest using a cope for Benediction or a 1962 liturgy.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cope,_with_Original_Sin,_Sacrifice_of_Isaac,_Christ%27s_forebears,_coat-of-arms,_1593-1597_-_Mass_vestments_of_Pope_Clement_VIII_Aldobrandini_-_Sala_degli_Indirizzi_di_Pio_IX_-_Vatican_Museums_-_DSC00676.jpg",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH3"
+    },
+    {
+      "asset_id": "M6B3-VE17-VENICE-MET-CLOISTERS-CROZIER",
+      "object_id": "VE17",
+      "creator": "EgorovaSvetlana",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3240,
+      "height": 4320,
+      "venue": "The Met Cloisters, New York; bishop's crosier from Venice lagoon region",
+      "source_description": "Original photograph of a historic Western Catholic pastoral staff with Lamb of God detail; not proof of a particular pontifical rite or modern staff configuration.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Crozier_with_Lamb_of_God_Lagoon_District_Venice_North_Italy_The_Met_Cloisters_Treasury_Gallery_14.jpg",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH3"
+    },
+    {
+      "asset_id": "M6B3-VE16-18-19-GAMMARELLI-INSIGNIA-CONTEXT",
+      "object_id": "VE16",
+      "creator": "Marie-Lan Nguyen",
+      "licence": "Public domain (author dedication)",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Vetements_cardinal_Gamarelli.jpg#Licensing",
+      "width": 550,
+      "height": 741,
+      "venue": "Gammarelli clerical outfitters window, Rome, Italy",
+      "source_description": "Authentic Roman Catholic cardinal's vestments displayed at Gammarelli: mitra simplex, pectoral cross and zucchetto are separately labelled in the source. 550×741 low-resolution context photograph only, not sufficient isolated close-ups for final publication.",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vetements_cardinal_Gamarelli.jpg",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH3"
     }
   ]
 }
