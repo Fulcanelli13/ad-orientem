@@ -108,8 +108,13 @@ try{
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().benedictusHold===true);
    assert.equal((await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola.cueId)),
      "AO.SM.C0147","Delayed Benedictus barrier was not placed after Hosanna");
-   assert.equal(await page.locator("[data-schola-next]").isDisabled(),true);
    const release=page.locator("[data-schola-release]");
+   // The model updates synchronously, the actual dock control only after
+   // the next reader requestAnimationFrame. Never mistake that handoff for
+   // a permanently missing observable action.
+   await page.waitForFunction(()=>document.querySelector("[data-schola-release]")?.hidden===false,
+     null,{timeout:7000});
+   assert.equal(await page.locator("[data-schola-next]").isDisabled(),true);
    assert.equal(await release.isVisible(),true,
      "The choir's delayed Benedictus needs an actual manually observed release");
    const beforeRelease=await page.evaluate(()=>({
