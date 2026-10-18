@@ -10,7 +10,8 @@
     "sourceOwnership": "No new parallel doctrinal/canonical registry; original owner referenced by ID only",
     "publication": "All false; source claims, opponent arguments, native French and exact authorial voice need human approval",
     "dialogueMode": "concise answer, serious question or objection, reasoned response, two scoped follow-up questions",
-    "prohibition": "No public runtime, Mass reader, original owner, publication flag or narrative voice changes"
+    "prohibition": "No public runtime, Mass reader, original owner, publication flag or narrative voice changes",
+    "objectionPrecision": "All objection sentences are editorially formulated. Never quote them as a named opponent's exact words; only cite original documents after pinpoint source/context review."
   },
   "sampleSize": 8,
   "questions": [
@@ -71,7 +72,8 @@
       "unresolvedChecks": [
         "Review exact passages of Pascendi against the narrower historical-critical method; avoid imputing condemned positions to unnamed current scholars."
       ],
-      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review."
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "EDITORIAL_CHALLENGE_UNATTRIBUTED; Pascendi source cited for answer, no named opponent quotation."
     },
     {
       "questionId": "PEN-010",
@@ -137,7 +139,8 @@
         "Opposing cessationist original work/confession not collated; do not ascribe generic objection to all Protestants.",
         "Existing APOL-004 Hume miracles dossier is not a direct cessationism response."
       ],
-      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review."
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "HYPOTHETICAL_CESSATIONIST_ARGUMENT_UNATTRIBUTED; must not be identified with a denomination without original confession."
     },
     {
       "questionId": "LIT-064",
@@ -204,7 +207,8 @@
         "Distinguish drafted critique from signed cardinals' letter and subsequent evaluation.",
         "Do not conflate weakened language with denial of dogma, validity, liceity or ritual identity."
       ],
-      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review."
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "HISTORIC_OTTAVIANI_BACCI_CRITIQUE_PARAPHRASE; original 1969/1970 edition and historian attribution pending."
     },
     {
       "questionId": "PROT-025",
@@ -264,7 +268,8 @@
         "The source evidence is new to this pilot, not imported into APOL-040 canonical owner; requires owner-consented substantive integration.",
         "Specific current indulgenced acts/conditions must be confirmed against the operative Enchiridion, not generated from old indulgence formulas."
       ],
-      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review."
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "EDITORIAL_OBJECTION_TO_INDULGENCES_NOT_QUOTED_FROM_NAMED_OPPONENT."
     },
     {
       "questionId": "SAN-009",
@@ -336,7 +341,8 @@
         "Do not derive blanket authenticity or a precise universal rite from cited miracles.",
         "Original Calvin text and its translation require quote-level review before direct historical quotations."
       ],
-      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review."
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "CALVIN_RELIC_AUTHENTICITY_ARGUMENT_EDITORIAL_PARAPHRASE; quoted original translation unapproved."
     },
     {
       "questionId": "PROT-013",
@@ -415,7 +421,8 @@
         "Do not assume all non-denominational Evangelicals share Baptist positions.",
         "Existing APOL-024 lacked the multi-denomination comparison; new primary citations are editorial additions only."
       ],
-      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review."
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "BAPTIST_CONFESSION_RELIGIOUS_POSITION_SOURCE_REFERENCED; editorial question not quoted."
     },
     {
       "questionId": "MAR-017",
@@ -474,7 +481,8 @@
       "unresolvedChecks": [
         "Full patristic history of woman's ecclesial and Marian readings not collation-approved; avoid exclusive reading."
       ],
-      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review."
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "EDITORIAL_EXEGETICAL_CHALLENGE_NOT_A_NAMED_PROTESTANT_QUOTE."
     },
     {
       "questionId": "ERR-009",
@@ -528,7 +536,8 @@
         "The stage-magic distinction is a reasoned application of CCC §2117, not an explicitly named activity within the cited paragraph.",
         "Requires review of fraudulent performance and claims of real psychic powers under moral source owner."
       ],
-      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review."
+      "dialoguePolicy": "Editorial paraphrase voiced by a fictional Canon; not a historical Canon quotation. All outward publication locked until source claim/context and both-language review.",
+      "seriousObjectionAttributionStatus": "EDITORIAL_APPLICATION_CASE_NOT_A_SOURCE_QUOTATION."
     }
   ]
 }
