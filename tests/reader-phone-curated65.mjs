@@ -579,6 +579,8 @@ try{
     assert.equal(priestObservedFive.noFinalTurn,false);
     assert.equal(priestObservedFive.finalTurn,true);
     assert.equal(priestObservedFive.finalCue,"AO.SM.C0256");
+    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("LIVE"));
+    await page.waitForFunction(()=>document.querySelector("[data-ao-reader-shell]")?.dataset.mode==="LIVE");
     const guide=page.locator('[data-role="guide-button"]');
     assert.equal(await guide.count(),1,"Compatibility-only Guide control marker disappeared");
     const surface=await page.evaluate(()=>{
