@@ -2794,7 +2794,9 @@ export function createReaderDomAdapter({
     // previously extended size. This also handles Schola collapse/expansion.
     card.style.setProperty("--ao-short-cue-tail","0px");
     const cueCount=body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")?.length??0;
-    if(cueCount<2)return;
+    const readingCount=body.querySelectorAll?.('.ao-reader-paragraph:not([data-kind="RUBRIC"])')?.length??0;
+    const focusCount=Math.max(cueCount,readingCount);
+    if(focusCount<2)return;
     const viewport=Math.max(0,card.clientHeight||0);
     if(!viewport)return;
     const win=card.ownerDocument.defaultView;
@@ -2809,7 +2811,7 @@ export function createReaderDomAdapter({
     // Give those dense Ordinary cards extra end scroll *territory*,
     // without stretching prayer paragraphs or moving their text anchors.
     const closingOrdinary=/\b(?:Gloria|Credo)\b/i.test(current?.sectionTitle??"");
-    const travel=Math.min(closingOrdinary?340:240,Math.max(68,(cueCount-1)*56));
+    const travel=Math.min(closingOrdinary?340:240,Math.max(68,(focusCount-1)*56));
     const extra=Math.max(0,Math.ceil(viewport+travel-contentBottom-basePadding));
     // On naturally long Ordinary cards, extra can be zero even though the
     // source-backed penultimate doxology is swallowed by the hard last-cue
@@ -2835,7 +2837,7 @@ export function createReaderDomAdapter({
     // previously had 0-38px of movement for 3-9 distinct source cues.
     // Allocate a bounded reading runway WITHOUT stretching prayer rows.
     const actualMax=Math.max(0,card.scrollHeight-card.clientHeight);
-    const minimumTravel=Math.min(640,Math.max(72,(cueCount-1)*58));
+    const minimumTravel=Math.min(640,Math.max(72,(focusCount-1)*58));
     if(actualMax+1<minimumTravel){
       tail+=Math.ceil(minimumTravel-actualMax);
       card.style.setProperty("--ao-short-cue-tail",tail+"px");
