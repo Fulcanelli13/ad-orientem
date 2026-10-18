@@ -6,11 +6,14 @@
  * app shell. Its first verified native round-trip is ONLY Mass Explorer.
  */
 import {mountAskChurchGuide} from "./ask-church-guided-preview.js";
+import {loadOriginalCatechismReferralIndex,catechismNumber} from "./living-church-catechism-source.js";
+import {openNativeCatechismQuestion} from "./catechism-guided-reader.js";
 import {visibleMassResearchMomentLinks} from "../../previews/visible-mass-3d/photographic-published-explorer-handoff.mjs";
 
 export const LIVING_CHURCH_ASK_P2_VERSION="AO_LIVING_CHURCH_ASK_P2_REVIEW";
 const fail=code=>Object.freeze({ok:false,code});
 const supported="learn.mass_explorer";
+const catechismRoute="learn.catechism";
 const compact=source=>JSON.stringify({
   scene:source?.scene,objectId:source?.objectId,questionId:source?.questionId,
   trailId:source?.trailId,guide:source?.guide,lang:source?.lang,mode:source?.mode
@@ -23,6 +26,7 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
  if(!frame||!returnButton||survey?.schema!=="AO_ASK_CHURCH_APP_ROUTE_SURVEY_V1")
   throw Error("Original native reviewer and Ask the Church source survey required");
  let guide=null,opening=false,pending=false,suspended=null,disposed=false;
+ let catechismIndex=null;
  const enabled=()=>!disposed&&livingChurchAskReviewEnabled(win)&&frame.isConnected===true;
  function child(){
   if(!enabled())return null;
@@ -49,41 +53,65 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
      vmqStatus?.question!==data.context.questionId)return null;
   return Object.freeze({view,context:data.context,readCount:vmq?.guideStatus?.()?.readCount??null});
  }
- async function nativeOpen(targetId){
+ async function nativeOpen(targetId,{sourceRef=null}={}){
   if(!enabled())return fail("REVIEW_GATE_CLOSED");
   if(opening||pending||suspended)return fail("HANDOFF_IN_PROGRESS");
   // The original Ask objective engine owns all seven objectives and 26 paths.
   // Other destinations remain available for study but are intentionally held
   // for native-return verification, not sent to a mock router.
-  if(targetId!==supported)return fail("RETURN_CONTRACT_NOT_VERIFIED");
+  if(targetId!==supported&&targetId!==catechismRoute)
+   return fail("RETURN_CONTRACT_NOT_VERIFIED");
   const selection=original();
   if(!selection)return fail("SOURCE_OBJECT_NOT_VERIFIED");
-  const candidates=visibleMassResearchMomentLinks(selection.context.objectId,{reviewMode:true});
-  // Only sourced contextual candidate edges, not new rubric claims.
+  const candidates=targetId===supported?
+    visibleMassResearchMomentLinks(selection.context.objectId,{reviewMode:true}):[];
+  // Only researched contextual edges for Mass; Catechism is a free-standing
+  // canonical question choice, never a claimed photographic citation.
   const link=candidates.find(x=>x.destination===supported&&x.publication==="RESEARCH_CANDIDATE_NOT_RITUAL_INSTRUCTION");
-  if(!link)return fail("UNREVIEWED_OBJECT_RELATION");
+  if(targetId===supported&&!link)return fail("UNREVIEWED_OBJECT_RELATION");
+  let questionNumber=null;
+  if(targetId===catechismRoute){
+   questionNumber=catechismNumber(sourceRef);
+   if(!questionNumber)return fail("INVALID_CATECHISM_SOURCE_REF");
+   try{catechismIndex ||= await loadOriginalCatechismReferralIndex(win);}
+   catch{return fail("CATECHISM_SOURCE_UNAVAILABLE");}
+   if(!catechismIndex.hasRef(sourceRef))return fail("CATECHISM_SOURCE_UNVERIFIED");
+  }
   const route=survey.routes.find(x=>x.id===targetId);
   if(!route||route.releaseGate==="RESEARCH_ONLY"||/GATED|RETIRED|ALIAS/.test(route.routeStatus||""))
    return fail("DESTINATION_PUBLICATION_HOLD");
-  const native=selection.view.AO_MODULES;
-  if(typeof native?.open!=="function")return fail("ORIGINAL_MASS_EXPLORER_BRIDGE_UNAVAILABLE");
+  const native=targetId===supported?selection.view.AO_MODULES:win?.AO_MODULES;
+  if(typeof native?.open!=="function")return fail("CANONICAL_NATIVE_BRIDGE_UNAVAILABLE");
   opening=true;
   try{
    // Exactly the existing gated bridge in #1309; never give child AO_APP_SHELL.
    let result;
-   try{result=await native.open(supported,{momentKey:link.guideId});}
-   catch{return fail("NATIVE_OPEN_FAILED");}
+   try{
+    result=targetId===supported?
+      await native.open(supported,{momentKey:link.guideId}):
+      await native.open(catechismRoute);
+   }catch{return fail("NATIVE_OPEN_FAILED");}
    if(result!==true&&result?.ok!==true)return fail("NATIVE_OPEN_FAILED");
-   if(!enabled())return fail("REVIEW_GATE_CLOSED");
-   const owner=win?.AO_MASS_EXPLORER_V1;
-   if(owner?.status?.()?.open===false||typeof owner?.close!=="function")
+   if(targetId===catechismRoute){
+    const focused=await openNativeCatechismQuestion(win,questionNumber,selection.context.lang);
+    const owner=win?.AO_TRADITIONAL_CATECHISM;
+    const visible=win.document?.getElementById("ao-cate-root");
+    if(!focused||typeof owner?.close!=="function"||!visible||visible.hidden){
+     try{owner?.close?.();}catch{}
+     return fail("NATIVE_CATECHISM_QUESTION_NOT_VISIBLE");
+    }
+   }
+   if(!enabled()){if(targetId===catechismRoute)win?.AO_TRADITIONAL_CATECHISM?.close?.();return fail("REVIEW_GATE_CLOSED");}
+   const owner=targetId===supported?win?.AO_MASS_EXPLORER_V1:win?.AO_TRADITIONAL_CATECHISM;
+   if(typeof owner?.close!=="function"||
+      (targetId===supported&&owner?.status?.()?.open===false))
     return fail("NATIVE_RETURN_NOT_VERIFIED");
    suspended=Object.freeze({
-    targetId,momentKey:link.guideId,
+    targetId,momentKey:link?.guideId||null,sourceRef:targetId===catechismRoute?sourceRef:null,
     context:selection.context,readCount:selection.readCount
    });
    returnButton.hidden=false;
-   return Object.freeze({ok:true,surface:"learn",id:targetId});
+   return Object.freeze({ok:true,surface:"learn",id:targetId,sourceRef:suspended.sourceRef});
   }finally{opening=false;}
  }
  async function returnToSanctuary(){
@@ -91,7 +119,8 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
   if(pending||opening||!suspended)return fail("NO_ACTIVE_NATIVE_HANDOFF");
   pending=true;
   try{
-   const owner=win?.AO_MASS_EXPLORER_V1;
+   const owner=suspended.targetId===catechismRoute?
+     win?.AO_TRADITIONAL_CATECHISM:win?.AO_MASS_EXPLORER_V1;
    if(typeof owner?.close!=="function")return fail("CANONICAL_OWNER_UNAVAILABLE");
    // Do not close the native module if the underlying scene or question has
    // already drifted; retain a meaningful, retryable error instead.
@@ -99,7 +128,10 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
    if(!before||compact(before.context)!==compact(suspended.context)||
       before.readCount!==suspended.readCount)return fail("EXACT_SANCTUARY_CONTEXT_MISMATCH");
    try{await owner.close();}catch{return fail("CANONICAL_CLOSE_FAILED");}
-   if(owner?.status?.()?.open===true)return fail("CANONICAL_CLOSE_FAILED");
+   if(suspended.targetId===catechismRoute){
+    const node=win.document?.getElementById("ao-cate-root");
+    if(node&&!node.hidden)return fail("CANONICAL_CLOSE_FAILED");
+   }else if(owner?.status?.()?.open===true)return fail("CANONICAL_CLOSE_FAILED");
    const source=original();
    if(!source||compact(source.context)!==compact(suspended.context)||
       source.readCount!==suspended.readCount)return fail("EXACT_SANCTUARY_CONTEXT_MISMATCH");
@@ -143,6 +175,7 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
   suspended:Boolean(suspended),returnMoment:suspended?.momentKey??null,
   ownedObjectives:survey.objectives.length,
   branchCount:survey.objectives.reduce((n,o)=>n+o.paths.length,0),
-  nativeReturnSupported:[supported],researchAnswersPublished:false
+  nativeReturnSupported:[supported,catechismRoute],
+  catechismRequiresVerifiedOriginalRef:true,researchAnswersPublished:false
  })});
 }
