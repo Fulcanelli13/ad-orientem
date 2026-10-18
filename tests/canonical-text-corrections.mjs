@@ -45,7 +45,8 @@ for(const corpus of [low,sung]){
   assert.equal(corrected.canonicalCorrectionId,"P1-011");
   assert.deepEqual(corrected.canonicalCorrectionIds,["P1-011","RED-EN-2013-W4-01"]);
   assert.equal(unit.english.includes("and thee Father, to pray"),true);
-  assert.equal(unit.latin.includes("orare pro me"),true);
+  assert.match(unit.latin,/oráre pro me|orare pro me/u,
+    "C0023 frozen donor must have recognizable source Latin");
 }
 
 assert.throws(
