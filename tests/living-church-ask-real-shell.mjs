@@ -47,6 +47,17 @@ try{
    const child=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
    return child?.AO_VISIBLE_MASS_LIVING_CHURCH_P1?.status?.().context?.objectId==="AL01";
   },null,{timeout:30000});
+  // Original viewer pans asynchronously to a selected hotspot. Capture the
+  // settled real camera pose, not a transient scroll position from mid-pan.
+  await page.waitForFunction(()=>{
+   const child=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
+   const vp=child?.document?.querySelector("#photo-viewport");
+   if(!vp)return false;
+   const pose=[vp.scrollLeft,vp.scrollTop].join(":");
+   const prior=window.__livingPoseProbe??{last:null,stable:0};
+   window.__livingPoseProbe={last:pose,stable:prior.last===pose?prior.stable+1:0};
+   return window.__livingPoseProbe.stable>=6;
+  },null,{polling:100,timeout:12000});
   const before=await page.evaluate(()=>{
    const child=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
    return {ctx:child.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
