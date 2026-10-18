@@ -23,6 +23,7 @@ for(const q of pilot.questions){
  assert.equal(q.independentTheologicalReview,false);
  assert.equal(q.nativeFrenchApproval,false);
  assert.equal(q.originalExcerptVerified,false);
+ assert.ok(q.seriousObjectionAttributionStatus && q.seriousObjectionAttributionStatus.length>20);
  for(const part of ["answer","seriousObjection","reasonedResponse"]){
   assert.ok(nonempty(q[part].en),"missing EN "+q.questionId+" "+part);
   assert.ok(nonempty(q[part].fr),"missing FR "+q.questionId+" "+part);
