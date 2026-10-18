@@ -29,7 +29,7 @@ const css=readFileSync(new URL("../src/pray/cruciform-navigation-styles.js",impo
 assert.match(browser,/await import\("\.\/cruciform-navigation\.js"\)/,"cross must lazy load with Prayer, never at cold Home");
 assert.match(nav,/ctx\.deck\.go/,"horizontal navigation must use existing canonical card owner");
 assert.match(nav,/body\.scrollTo/,"vertical navigation must use the existing prayer scroll owner");
-assert.match(nav,/data-ao-devo-active/,"focused paragraph must come from existing deck");
+assert.match(nav,/dataset\.aoDevoActive/,"focused paragraph must come from existing deck");
 assert.doesNotMatch(nav,/src\/mass|AO_MASS|AO_READER/,"Mass reader must remain untouched");
 assert.match(css,/\.aoCrossMark/,"Latin-cross silhouette missing");
 assert.match(css,/prefers-reduced-motion/,"motion accessibility missing");
