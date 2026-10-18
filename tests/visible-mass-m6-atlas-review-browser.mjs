@@ -31,6 +31,16 @@ try{
   assert.match(await page.locator("#results").innerText(),/Altar bell/);
   assert.match(await page.locator("#results").innerText(),/Individual altar candle/);
   await page.locator("#coverage").selectOption("");
+  await page.locator("#search").fill("AL17");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.match(await page.locator("#results").innerText(),/viewer’s right \(Epistle side\)/);
+  assert.match(await page.locator("#results").innerText(),/No independent photograph or clickable hotspot/);
+  await page.locator("#search").fill("AL18");
+  assert.match(await page.locator("#results").innerText(),/viewer’s left \(Gospel side\)/);
+  await page.locator("#search").fill("AL10");
+  assert.match(await page.locator("#results").innerText(),/Gradine boundaries not individually established/);
+  assert.match(await page.locator("#results").innerText(),/rights unknown/);
+  await page.locator("#search").fill("");
   await page.locator("#mode-images").click();
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,55);
   await page.locator("#search").fill("M6B5-VE03-SEVILLE-CATHEDRAL-ALB");
