@@ -520,6 +520,77 @@ async function showPanorama(mode){
   return false;
  }
 }
+async function showM5Photo(id){
+ const token=++m5PhotoToken;
+ try{
+  if(!m5PhotoModule)m5PhotoModule=await import("./visible-mass-m5-photographs.mjs");
+  const photo=m5PhotoModule.M5_PHOTO_VIEWS[id];
+  if(!photo||photo.venue!=="NEWMAN_DUBLIN")return false;
+  if(token!==m5PhotoToken)return false;
+  m5Photo=id;state.photoMode="newman";state.view="m5-close";
+  panoramaController?.hide();
+  $("panorama-stage").hidden=true;$("photo-viewport").hidden=true;$("inspection-stage").hidden=true;$("m5-close-stage").hidden=false;
+  $("photo-caption").textContent=photo.caption+" · distinct photographed camera viewpoint";
+  $("photo-credit").textContent=photo.creator+" · "+photo.licence+" ↗";
+  $("photo-credit").href=photo.source;
+  $("photo-license").href=photo.licenceUrl;$("photo-license").textContent=photo.licence+" ↗";$("photo-transform").hidden=true;
+  $("m5-retry").hidden=true;$("m5-close-notice").textContent="Loading genuine closer photograph…";
+  syncPhotoNav();
+  let url=m5CachedUrls.get(id);
+  if(!url){
+   url=window.__AO_M5_OFFLINE_PHOTOS__?.[id];
+   if(url&&!url.startsWith("data:image/jpeg;base64,"))throw Error("Invalid bundled original");
+   if(!url){
+    const response=await fetch(m5PhotoModule.m5PhotoRequest(id));
+    if(!response.ok)throw Error("Commons photograph metadata unavailable");
+    const data=await response.json(),info=data?.query?.pages?.[0]?.imageinfo?.[0];
+    url=info?.thumburl;
+    if(!m5PhotoModule.m5OriginalPhotoURL(url))throw Error("Photograph source host not verified");
+   }
+  }
+  const image=new Image();image.decoding="async";image.crossOrigin="anonymous";
+  await new Promise((ok,fail)=>{
+   const timeout=setTimeout(()=>{image.src="";fail(Error("Closer photograph timed out"));},20000);
+   image.onload=()=>{clearTimeout(timeout);ok();};
+   image.onerror=()=>{clearTimeout(timeout);fail(Error("Original closer photograph unavailable"));};
+   image.src=url;
+  });
+  if(token!==m5PhotoToken)return false;
+  if(!image.naturalWidth||image.naturalWidth>2200)throw Error("Original close image exceeds preview size");
+  m5CachedUrls.set(id,url);
+  $("m5-close-photo").src=url;
+  $("m5-close-photo").alt=photo.caption+". Original photograph by "+photo.creator+".";
+  const pose=m5StillPoses.get(id)||{zoom:1,offsetX:0,offsetY:0};
+  setM5Zoom(pose.zoom);
+  requestAnimationFrame(()=>{$("m5-close-viewport").scrollLeft=pose.offsetX;$("m5-close-viewport").scrollTop=pose.offsetY;});
+  $("m5-close-notice").textContent="Separate original photograph by "+photo.creator+". Enlarge or pan this image, or return to Dublin 360°. No virtual walking or claim that a 1962 Mass was photographed.";
+  return true;
+ }catch(error){
+  if(token!==m5PhotoToken)return false;
+  $("m5-close-photo").removeAttribute("src");
+  $("m5-close-notice").textContent="Original image unavailable; open the photographer’s Commons source link or retry. "+String(error.message||error);
+  $("m5-retry").hidden=false;return false;
+ }
+}
+function setM5Zoom(next){
+ if(state.view!=="m5-close"||!m5Photo)return;
+ const current=m5StillPoses.get(m5Photo)||{zoom:1,offsetX:0,offsetY:0};
+ const zoom=Math.min(2.25,Math.max(1,Math.round(next*100)/100));
+ m5StillPoses.set(m5Photo,{...current,zoom});
+ $("m5-close-photo").style.width=(zoom*100)+"%";
+ $("m5-zoom-level").textContent=Math.round(zoom*100)+"%";
+}
+$("m5-close-viewport").addEventListener("scroll",()=>{
+ if(state.view==="m5-close"&&m5Photo){
+  const p=m5StillPoses.get(m5Photo)||{zoom:1};
+  m5StillPoses.set(m5Photo,{...p,offsetX:$("m5-close-viewport").scrollLeft,offsetY:$("m5-close-viewport").scrollTop});
+ }
+});
+for(const button of document.querySelectorAll("[data-m5-zoom]"))button.onclick=()=>{
+ const current=m5StillPoses.get(m5Photo)?.zoom||1;
+ setM5Zoom(button.dataset.m5Zoom==="in"?current+.25:button.dataset.m5Zoom==="out"?current-.25:1);
+};
+$("m5-retry").onclick=()=>{if(m5Photo)void showM5Photo(m5Photo);};
 function showInspection(asset){
  ++m5PhotoToken;m5Photo=null;
  state.view="inspection";
@@ -916,7 +987,8 @@ if(window.frameElement)document.body.classList.add("embedded");
 setExperience("explore");
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
- status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,studyLanguage:state.studyLang,photoMode:state.photoMode,panorama:panoramaController?.status()??null,translatedSourceCandidates:state.m3Index?.count??0,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,studyLanguage:state.studyLang,photoMode:state.photoMode,panorama:panoramaController?.status()??null,
+ m5Viewpoint:m5Photo,m5Available:!!m5PhotoModule,m5Pose:m5Photo?m5StillPoses.get(m5Photo):null,translatedSourceCandidates:state.m3Index?.count??0,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  experience:()=>state.experience,
  guideStatus:()=>state.guide?.status()??null,
  chooseTrail:id=>state.guide?.chooseTrail(id)??false,
