@@ -5,12 +5,14 @@ on:
       - feature/pius-x-documentary-voice-style-20261018
     paths:
       - data/learn/pius-x-documentary-voice-style.v1.json
+      - data/learn/pius-x-period-catholic-prose-controls.v1.json
       - docs/product/PIUS-X-DOCUMENTARY-VOICE-STYLE-V1.md
       - tests/pius-x-documentary-voice-style.mjs
       - .github/workflows/pius-x-documentary-voice-style.yml
   pull_request:
     paths:
       - data/learn/pius-x-documentary-voice-style.v1.json
+      - data/learn/pius-x-period-catholic-prose-controls.v1.json
       - docs/product/PIUS-X-DOCUMENTARY-VOICE-STYLE-V1.md
       - tests/pius-x-documentary-voice-style.mjs
       - .github/workflows/pius-x-documentary-voice-style.yml
