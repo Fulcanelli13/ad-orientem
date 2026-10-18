@@ -136,7 +136,9 @@ export function createVisibleMassReviewRuntime(win=globalThis){
        const response=await win.fetch(new URL("../../data/learn/ask-church-app-route-survey.v1.json",import.meta.url));
        if(!response.ok)throw Error("Original Ask the Church survey unavailable");
        askIntegration=mod.createLivingChurchAskIntegration(win,{
-        frame,returnButton:askReturnButton,survey:await response.json()
+        frame,returnButton:askReturnButton,survey:await response.json(),
+        onNativeOpen:()=>{node.style.visibility='hidden';},
+        onNativeReturn:()=>{node.style.visibility='';}
        });
       }
       const verdict=await askIntegration.openGuide();
@@ -159,7 +161,9 @@ export function createVisibleMassReviewRuntime(win=globalThis){
         const response=await win.fetch(new URL('../../data/learn/ask-church-app-route-survey.v1.json',import.meta.url));
         if(!response.ok)throw Error('Original Ask route registry unavailable');
         survey=await response.json();
-        askIntegration=mod.createLivingChurchAskIntegration(win,{frame,returnButton:askReturnButton,survey});
+        askIntegration=mod.createLivingChurchAskIntegration(win,{frame,returnButton:askReturnButton,survey,
+         onNativeOpen:()=>{node.style.visibility='hidden';},
+         onNativeReturn:()=>{node.style.visibility='';}});
        }
        askIntegration.hideGuide?.();
        if(!characterFolio){
