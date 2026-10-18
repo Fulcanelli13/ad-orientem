@@ -460,6 +460,27 @@ const SHELL_STYLE = `
 }
 button.ao-schola-control{cursor:pointer}
 .ao-schola-control[data-schola-slower],.ao-schola-control[data-schola-faster]{min-width:0;height:34px;font-size:16px;line-height:1;color:#d7e2d9;background:rgba(115,151,123,.14);border-color:rgba(145,181,153,.28)}
+.ao-schola-control[data-schola-previous],.ao-schola-control[data-schola-next]{
+  min-width:0;height:34px;font:500 23px/1 Georgia,serif;color:var(--ao-mass-accent-text);
+  background:rgba(255,255,255,.035);border-color:rgba(225,207,145,.18)
+}
+.ao-schola-control[data-schola-previous]:disabled,.ao-schola-control[data-schola-next]:disabled{
+  opacity:.25;cursor:default
+}
+/* Preserve the frozen 4-column donor geometry in SIMPLE and MISSAL.
+   In LIVE only, expose explicit independent phrase correction at 320px+. */
+.ao-reader-shell:not([data-mode="LIVE"]) .ao-schola-control[data-schola-previous],
+.ao-reader-shell:not([data-mode="LIVE"]) .ao-schola-control[data-schola-next]{display:none!important}
+.ao-reader-shell[data-mode="LIVE"] .ao-schola-controls{
+  grid-template-columns:38px 38px 58px 38px 38px minmax(72px,1fr);gap:5px
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-schola-speed,
+.ao-reader-shell[data-mode="LIVE"] .ao-schola-control[data-schola-pause]{min-width:0}
+@media(max-width:760px){
+  .ao-reader-shell[data-mode="LIVE"] .ao-schola-controls{
+    grid-template-columns:36px 36px 48px 36px 36px minmax(54px,1fr);gap:3px
+  }
+}
 .ao-schola-speed{display:grid;place-items:center;min-width:58px;height:34px;text-align:center;color:#c9d8cc;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.07);padding:0}
 .ao-schola-control[data-schola-pause]{justify-self:stretch;min-width:72px;height:34px;color:#aebcaf;border-color:rgba(255,255,255,.09);background:rgba(255,255,255,.03)}
 .ao-schola-control[data-schola-pause][aria-pressed="true"]{color:#e5ede7;border-color:rgba(145,181,153,.34);background:rgba(88,123,97,.22)}
@@ -1730,9 +1751,11 @@ export function buildReaderShellMarkup(prepared = {}) {
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
       <div class="ao-schola-controls" aria-label="Schola text speed">
+        <button type="button" class="ao-schola-control" data-schola-previous aria-label="Previous Schola phrase" title="Previous Schola phrase">‹</button>
         <button type="button" class="ao-schola-control" data-schola-slower aria-label="Slower Schola text">−</button>
         <span class="ao-schola-control ao-schola-speed" data-role="schola-speed" aria-label="Schola speed">0.45×</span>
         <button type="button" class="ao-schola-control" data-schola-faster aria-label="Faster Schola text">+</button>
+        <button type="button" class="ao-schola-control" data-schola-next aria-label="Next Schola phrase" title="Next Schola phrase">›</button>
         <button type="button" class="ao-schola-control" data-schola-pause aria-label="Pause Schola text" aria-pressed="false">PAUSE</button>
       </div>
     </div>
@@ -1906,6 +1929,7 @@ export function createReaderDomAdapter({
   onParameters = null,
   onCustomaryChange = null,
   onScholaAdvance = null,
+  onScholaPrevious = null,
   sections = [],
   onSectionSelect = null,
   allowPresentationModeSwitch = true,
@@ -2088,6 +2112,12 @@ export function createReaderDomAdapter({
   }
 
   function syncScholaControls(){
+    const source=current?.scholaVisible ? current.schola : null;
+    const previous=root.querySelector("[data-schola-previous]");
+    const next=root.querySelector("[data-schola-next]");
+    if(previous)previous.disabled=!source || Number(source.index)<=0;
+    if(next)next.disabled=!source || Boolean(source.complete) ||
+      Number(source.index)>=Number(source.total)-1;
     const speedNode=root.querySelector('[data-role="schola-speed"]');
     if(speedNode)speedNode.textContent=scholaSpeed.toFixed(2)+"×";
     const pause=root.querySelector('[data-schola-pause]');
@@ -2230,6 +2260,7 @@ export function createReaderDomAdapter({
   function syncScholaContent(){
     const dock=root.querySelector(".ao-schola-dock");
     if(!dock)return;
+    syncScholaControls();
     const schola=current?.scholaVisible ? current.schola : null;
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
     const changed=identity!==scholaIdentity;
@@ -2479,6 +2510,18 @@ export function createReaderDomAdapter({
         if(!scholaCollapsed)scholaHeight=scholaExpandedHeight;
         syncScholaChrome();
         ensureShortCardCueTravel();
+        return;
+      }
+      const scholaPrevious=event.target?.closest?.("[data-schola-previous]");
+      if(scholaPrevious){
+        if(!scholaPrevious.disabled && current?.scholaVisible && typeof onScholaPrevious==="function")
+          onScholaPrevious(current?.schola,current,prepared);
+        return;
+      }
+      const scholaNext=event.target?.closest?.("[data-schola-next]");
+      if(scholaNext){
+        if(!scholaNext.disabled && current?.scholaVisible && typeof onScholaAdvance==="function")
+          onScholaAdvance(current?.schola,current,prepared);
         return;
       }
       const scholaSlower=event.target?.closest?.("[data-schola-slower]");
