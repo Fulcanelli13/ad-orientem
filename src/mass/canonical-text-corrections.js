@@ -2,6 +2,36 @@
 // These are source-audit decisions, not renderer heuristics. Ritual timing/actor state is untouched.
 
 export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
+  // English editorial corrections: source-identified Red Missal (2013),
+  // user-supplied copy, PDF pages 24, 26, 28. Latin and French are untouched.
+  "AO.SM.C0110": Object.freeze({
+    id:"RED-EN-2013-001",
+    blockId:"AO.SM.B031",
+    field:"english",
+    from:"Accept, O Holy father, Almighty and Eternal God, this spotless host, which I, Your unworthy servant, offer to You",
+    to:"Accept, O holy Father, almighty and everlasting God, this spotless host, which I, Thine unworthy servant, offer unto Thee",
+  }),
+  "AO.SM.C0121": Object.freeze({
+    id:"RED-EN-2013-002",
+    blockId:"AO.SM.B036",
+    field:"english",
+    from:"May this incense blessed by You, arise before You, O Lord, and may Your mercy come down upon us.",
+    to:"May this incense which Thou hast blessed, O Lord, ascend to Thee, and may Thy mercy descend upon us.",
+  }),
+  "AO.SM.C0122": Object.freeze({
+    id:"RED-EN-2013-003",
+    blockId:"AO.SM.B036",
+    field:"english",
+    from:"Let my prayer, O Lord, like incense before You; the lifting up of my hands, like the evening sacrifice.",
+    to:"Let my prayer rise before Thee as incense, O Lord; let the lifting up of my hands be as the evening sacrifice.",
+  }),
+  "AO.SM.C0132": Object.freeze({
+    id:"RED-EN-2013-004",
+    blockId:"AO.SM.B039",
+    field:"english",
+    from:"May the Lord receive the sacrifice from thy hands, to the praise and glory of His name, to our benefit also, and that of all His holy Church.",
+    to:"May the Lord accept the Sacrifice from thy hands, to the praise and glory of His Name, for our benefit and for that of all His holy Church.",
+  }),
   "AO.SM.C0148": Object.freeze({
     id:"SRC-PARITY-001",
     blockId:"AO.SM.B046",
