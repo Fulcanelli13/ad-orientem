@@ -366,6 +366,24 @@ export async function prepareNativeReaderPreview({
     holyThursdayMandatumSource:mandatumSource,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
+  // SIMPLE and MISSAL have 30 source cards even for the very same Sung
+  // Mass whose LIVE source has 39. Eligibility must be measured against a
+  // separately constructed, source-authoritative LIVE model rather than
+  // the currently selected 30-card reading mode. This is only a read-only
+  // capability check; SIMPLE/MISSAL continue using their own presentation.
+  const liveCapabilityModel=String(model.presentationMode)==="LIVE" ? model
+    : reviewCuratedCards===true ? createMassReaderModel({
+        resolvedMass:Object.freeze({...prepared.session.resolvedMass,
+          presentationMode:"LIVE"}),
+        sectionMap:data?.sectionMap,
+        lowCorpus:data?.lowCorpus,
+        sungCorpus:data?.sungCorpus,
+        canonSourceMap:data?.canonSourceMap,
+        nuptialData:data?.nuptialData,
+        frenchOrdinary:data?.frenchOrdinary,
+        holyThursdayMandatumSource:mandatumSource,
+        vernacularLanguage:prepared?.readerPreferences?.language??"en",
+      }) : model;
   // Only explicit, independently sourced pre-Mass and post-Mass actions
   // can accompany the ordinary Sung projection. Do not infer ceremonies
   // from dates, feast names or a later requested Mass. The four Foot-of-
@@ -395,14 +413,15 @@ export async function prepareNativeReaderPreview({
       plan?.normalLastGospel===false && plan?.dismissal==="BENEDICAMUS_DOMINO");
   const curatedEligible=reviewCuratedCards===true &&
     plan?.kind==="MASS" &&
-    model.totalCards===39 &&
-    String(model.corpusFamily)==="SUNG" &&
-    String(model.presentationMode)==="LIVE" &&
+    liveCapabilityModel.totalCards===39 &&
+    String(liveCapabilityModel.corpusFamily)==="SUNG" &&
+    // Eligibility is a property of the prepared Mass, not the initial mode:
+    // most production sessions open in SIMPLE, then select LIVE via ribbon.
     compatiblePrelude && compatibleFollowing &&
     (plan?.overlayGraphs??[]).every(id=>id==="VOTIVE_PROPER");
-  const curatedOrdinary=curatedEligible
+  const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
     ? projectCuratedOrdinaryLiveCards(model):null;
-  const presentationModel=curatedEligible
+  const presentationModel=curatedOrdinary
     ? (explicitIntroitEntry
         ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
         : curatedOrdinary)
@@ -468,7 +487,8 @@ export async function prepareNativeReaderPreview({
     : null;
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
-    prepared,curatedEligible,data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
+    prepared,curatedEligible,curatedIntroitEntry:explicitIntroitEntry,
+    data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
   });
@@ -2514,7 +2534,7 @@ export async function mountNativeReaderPreview({
     sourceModel=rebuilt.sourceModel;
     // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
     // LIVE mode switches. No hidden 65-card ordinary opening can reappear.
-    readerModel=ready.curatedEligible && ready.presentationModel?.preMassHandoff==="INTROIT" &&
+    readerModel=ready.curatedEligible && ready.curatedIntroitEntry===true &&
       rebuilt.mode==="LIVE" && [65,66,67].includes(rebuilt.presentationModel.totalCards)
       ? projectCuratedIntroitEntryLiveCards(rebuilt.presentationModel)
       : rebuilt.presentationModel;
