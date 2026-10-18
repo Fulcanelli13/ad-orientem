@@ -204,6 +204,10 @@ body[data-experience=discover] .info{min-height:0}
 #panorama-retry{min-height:44px;margin:9px 0;border:1px solid #7b745d;border-radius:7px;padding:10px 15px;background:#1c2731;color:var(--text);font:12px system-ui,sans-serif}
 @media(max-width:600px){.panorama-stage{padding:6px}.photo-mode-nav{gap:4px}.photo-mode-nav button{padding:8px}}
 @media(max-width:930px){body.object-open .photo-mode-nav{display:none}}
+.other[hidden]{display:none!important} /* Original high-altar objects never become claims about other photographs */
+footer details{margin-top:4px}
+footer summary{cursor:pointer;color:var(--muted);font:12px/1.5 system-ui,sans-serif}
+footer details p{font:12px/1.55 system-ui,sans-serif;color:var(--muted);margin:12px 0 2px}
 /* M4.3 photographic visitor: portrait header prioritises the actual picture. */
 @media(max-width:600px){
  body:not(.embedded) header{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:4px 0 11px}
@@ -287,7 +291,7 @@ body[data-experience=discover] .info{min-height:0}
 </div>
 </div>
 
-<details class="other"><summary>Choose a visible object by name</summary><div class="choices" id="object-choices"></div></details>
+<details class="other" id="original-object-choices"><summary>Choose a visible object by name</summary><div class="choices" id="object-choices"></div></details>
 <details class="other" id="inspection-details"><summary>Inspect further · sourced objects and illustrations</summary><div class="choices" id="inspection-choices">Loading sourced object references…</div></details>
 </section>
 <aside class="info" id="info" aria-label="Contextual discovery and source questions" aria-live="polite">
@@ -335,7 +339,7 @@ body[data-experience=discover] .info{min-height:0}
 </div>
 </aside>
 </main>
-<footer>Research-only photographic pilot; six visually identified parent objects, not a complete model of the church. Object positions are provisional editor coordinates awaiting phone and desktop tap review. Dictionary text is read from the existing Ad Orientem G### registry. The canonical glossary, Formation and Mass reader remain unchanged. The main Brompton high-altar photograph is credited to Anthony O'Neil under <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a>. Each separate inspection photograph has its own current source, creator and licence, shown beneath the image. Historical examples do not establish the particular fittings at Brompton or the rubrics of a 1962 Mass. Photo overlays add interactive markers only; no photographer or church endorsement is implied.</footer>
+<footer><details><summary>Research scope, credits and limitations</summary><p>Research-only photographic pilot; six visually identified parent objects, not a complete model of the church. Object positions are provisional editor coordinates awaiting phone and desktop tap review. Dictionary text is read from the existing Ad Orientem G### registry. The canonical glossary, Formation and Mass reader remain unchanged. The main Brompton high-altar photograph is credited to Anthony O'Neil under <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a>. Each separate inspection photograph has its own current source, creator and licence, shown beneath the image. Historical examples do not establish the particular fittings at Brompton or the rubrics of a 1962 Mass. Photo overlays add interactive markers only; no photographer or church endorsement is implied.</p></details></footer>
 </div>
 <noscript><div class="noscript">JavaScript is required to select objects. The photograph and its source remain accessible above.</div></noscript>
 <script>
@@ -407,6 +411,8 @@ function syncPhotoNav(){
  document.body.dataset.photoMode=state.photoMode;
  $("photo-intro").textContent=PHOTO_INTROS[state.photoMode]||PHOTO_INTROS.still;
  $("show-markers").hidden=state.photoMode!=="still";
+ $("original-object-choices").hidden=state.photoMode!=="still";
+ $("inspection-details").hidden=state.photoMode!=="still";
  $("photo-sources-top").href=state.photoMode==="newman"
   ?"https://commons.wikimedia.org/wiki/File:Newman_University_Church_Interior_360x180,_Dublin,_Ireland_-_Diliff.jpg"
   :state.photoMode==="brompton"
