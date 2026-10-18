@@ -42,7 +42,7 @@ These are not to be conflated with the **132 older source-oracle comparison flag
 `src/calendar/calendar-runtime.js` prefers `calendarObservanceAlias` for source-verified display-name corrections.
 `src/calendar/export-ics.js` independently builds the French summary from `proper.nameFr || day.main.titleFr || proper.name || day.main.title`; it does not consult the same aliases. The correct on-screen `Sainte Bibiane` alias can therefore diverge from the historical raw `St. Vivian` name in an export.
 
-December 2026 full-month ICS evidence is retained in the audit artifact and must be reviewed before this issue is marked fully resolved.
+**December 2026 ICS verified:** All 31 days were independently resolved and both exports contained 31 events. On **2 December** the on-screen Calendar's certified title is **St Bibiana, Virgin and Martyr** / **Sainte Bibiane, vierge et martyre**, but the *actual* English and French ICS EVENT SUMMARY is **St. Vivian** in both languages. On **11 December**, both EN and FR exports say **St. Damasus I**, as the on-screen Calendar does, yet French remains untranslated. On **27 December**, both exports say **Sunday in the Octave of Christmas**: another independent proof that the French ICS export is English. This is now observed output, not merely inferred code risk. Audit CI evidence: https://github.com/Fulcanelli13/ad-orientem/actions/runs/39163670835 .
 
 ## Recommended prevention architecture
 
