@@ -63,6 +63,12 @@ test("Folio source adapter is fail-closed for 534 questions",async()=>{
  assert.equal(direct.ok,true);
  assert.equal(direct.originalSourcePointer.recordId,"APOL-045");
  assert.ok(direct.paragraphs.length>=4);
+ const islam=await reader.originalResearch("ISL-005",{lang:"en"});
+ assert.equal(islam.ok,true,"The 15-question Islamic supplement uses original entries[] not records[]");
+ assert.equal(islam.originalSourcePointer.recordId,"ISL-005");
+ assert.equal(islam.paragraphs.length,2);
+ assert.ok(islam.paragraphs.some(x=>x.sourceText?.includes("Qur")));
+ assert.equal(islam.publicAnswerAuthorized,false);
  assert.equal((await reader.originalResearch("LIT-064")).ok,false);
 });
 test("any missing fourth review flag blocks research fetch and publication",async()=>{
