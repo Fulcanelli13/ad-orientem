@@ -117,28 +117,37 @@ export function createLivingChurchContext({
   if(language!=="en"&&language!=="fr")return failure("UNSUPPORTED_LANGUAGE");
   state.lang=language;return success();
  }
+ function updateScenePose(pose){
+  if(!enabled())return failure("REVIEW_GATE_CLOSED");
+  if(pending||suspended)return failure("HANDOFF_IN_PROGRESS");
+  if(!state.scene||!copyPose(pose))return failure("INVALID_SCENE_POSE");
+  const proposed=Object.freeze({...state.scene,pose:copyPose(pose)});
+  if(!approved(verifyScene(proposed)))return failure("SCENE_NOT_SOURCE_VERIFIED");
+  state.scene=proposed;return success();
+ }
  async function handoff({routeId,sourceRef=null}={}){
   if(!enabled())return failure("REVIEW_GATE_CLOSED");
   if(pending||suspended)return failure("HANDOFF_IN_PROGRESS");
   if(!state.scene||!validId(routeId)||sourceRef!==null&&!validId(sourceRef))
    return failure("INVALID_DESTINATION");
   const origin=snapshot();
-  // The destination owner must check release gates, source relationship and route.
-  let permission;
-  try{permission=await authorizeDestination({routeId,sourceRef,origin});}
-  catch{return failure("DESTINATION_AUTHORITY_UNAVAILABLE");}
-  if(!approved(permission)||permission?.researchOnly===true)
-   return failure("DESTINATION_NOT_APPROVED");
-  if(!enabled())return failure("REVIEW_GATE_CLOSED");
+  // Lock before async authorization to prevent competing native transitions.
   pending=true;
   try{
-   const opened=await openDestination({routeId,sourceRef,origin});
+   let permission;
+   try{permission=await authorizeDestination({routeId,sourceRef,origin});}
+   catch{return failure("DESTINATION_AUTHORITY_UNAVAILABLE");}
+   if(!approved(permission)||permission?.researchOnly===true)
+    return failure("DESTINATION_NOT_APPROVED");
+   if(!enabled())return failure("REVIEW_GATE_CLOSED");
+   let opened;
+   try{opened=await openDestination({routeId,sourceRef,origin});}
+   catch{return failure("NATIVE_OWNER_FAILED");}
    if(!approved(opened))return failure("DESTINATION_NOT_OPEN");
    const token="LC-RETURN-"+(++nextToken);
    suspended=Object.freeze({token,routeId,origin});
    return Object.freeze({ok:true,routeId,returnToken:token});
-  }catch{return failure("NATIVE_OWNER_FAILED");}
-  finally{pending=false;}
+  }finally{pending=false;}
  }
  async function returnFromHandoff(returnToken){
   if(!enabled())return failure("REVIEW_GATE_CLOSED");
@@ -155,6 +164,6 @@ export function createLivingChurchContext({
  }
  const status=()=>Object.freeze({enabled:enabled(),pending,suspended:Boolean(suspended),
    returnToken:suspended?.token||null,context:snapshot()});
- return Object.freeze({enterScene,selectObject,selectQuestion,chooseTrail,setMode,
+ return Object.freeze({enterScene,updateScenePose,selectObject,selectQuestion,chooseTrail,setMode,
   chooseGuide,setLanguage,handoff,returnFromHandoff,snapshot,status});
 }
