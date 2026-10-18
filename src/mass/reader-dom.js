@@ -2849,7 +2849,20 @@ export function createReaderDomAdapter({
       // event, not merely proportional to the number of paragraphs; a
       // one-line response near the bottom otherwise loses its entire turn.
       const baseline=Math.min(640,Math.max(72,(focusCount-1)*58));
-      const guaranteed=Math.min(1800,Math.max(baseline,Math.ceil(requiredScroll)));
+      const first=cues[0]?.getBoundingClientRect?.();
+      const firstCenter=first
+        ? Math.max(24,first.top-cr.top+card.scrollTop+first.height/2)
+        :24;
+      // The cue-focus owner ramps its reading line from the opening cue
+      // using an offset of firstCenter + .8*scrollTop, so its early focus
+      // coordinate advances at 1.8x scroll. Short concluding responses
+      // can otherwise be bypassed by the terminal-cue edge rule before
+      // the focus line ever reaches them (Pater noster C0210).
+      const openingTravel=Math.max(0,(center-firstCenter)/1.8)+64;
+      // Long composite Simple cards can place the penultimate cue beyond
+      // 1800px; the former cap made C0199 (Per quem) unreachable.
+      const guaranteed=Math.min(3600,Math.max(baseline,
+        Math.ceil(requiredScroll+28),Math.ceil(openingTravel)));
       body.style.setProperty("--ao-min-reading-travel",guaranteed+"px");
       const availableScroll=Math.max(0,card.scrollHeight-viewport);
       closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
