@@ -75,5 +75,5 @@ export async function mountAskChurchGuide(win=globalThis,{survey=null,bridge=nul
  langBtn.addEventListener('click',()=>{if(state.opening||state.disposed)return;state.sequence++;state.preview=null;state.notice=null;core.language(core.snapshot().lang==='fr'?'en':'fr');render();});
  exit.addEventListener('click',()=>{if(state.opening||state.disposed)return;root.hidden=true;returnBtn.hidden=false;});returnBtn.addEventListener('click',()=>{returnBtn.hidden=true;root.hidden=false;render();input.focus();});
  const close=()=>{state.disposed=true;state.sequence++;root.remove();returnBtn.remove();style.remove();};
- render();return Object.freeze({close,show(){root.hidden=false;returnBtn.hidden=true;render();},reset(){if(state.opening||state.disposed)return;state.sequence++;core.reset();state.preview=null;state.notice=null;render();},state:core.snapshot,engine:core});
+ render();return Object.freeze({close,show(){root.hidden=false;returnBtn.hidden=true;render();input.focus?.({preventScroll:true});},hide(){root.hidden=true;returnBtn.hidden=true;},reset(){if(state.opening||state.disposed)return;state.sequence++;core.reset();state.preview=null;state.notice=null;render();},state:core.snapshot,engine:core});
 }
