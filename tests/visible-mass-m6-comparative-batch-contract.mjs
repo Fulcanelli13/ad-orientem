@@ -50,7 +50,7 @@ for(const html of htmls){
  const inline=html.match(/<script>window\.AO_M6_COMPARISON_BATCH=([\s\S]*?);<\/script>/);
  assert.ok(inline,"Missing inline staged source review dataset");
  assert.deepEqual(JSON.parse(inline[1]),batch,"Embedded batch must exactly match canonical staging file; no divergent metadata");
- const inline16=html.match(/<script>window\\.AO_M6_COMPARISON_BATCH16=([\\s\\S]*?);<\\/script>/);
+ const inline16=html.match(/<script>window\.AO_M6_COMPARISON_BATCH16=([\s\S]*?);<\/script>/);
  assert.ok(inline16,"Missing independent B16 inline photo data");
  assert.deepEqual(JSON.parse(inline16[1]),batch16,"Second source-owned batch differs between JSON and offline gallery");
  assert.ok(html.includes("AO_M6_COMPARATIVE"));
