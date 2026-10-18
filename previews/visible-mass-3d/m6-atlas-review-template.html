@@ -103,17 +103,22 @@ const stats=[
 $("summary").innerHTML=stats.map(([value,label])=>'<div class="stat"><strong>'+value+'</strong><small>'+esc(label)+'</small></div>').join("");
 function linkFor(x){
  const url=x?.source_url;
- return typeof url==="string"&&/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(url)?url:null;
+ if(typeof url!=="string")return null;
+ if(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(url))return url;
+ // This one publisher photo has a verified original author page and CC BY 4.0 site policy.
+ if(x?.asset_id==="M6B4-BK02-CASON-1962-MISSAL-STAND"&&url==="https://sdcason.com/1962-roman-missal-at-latin-mass-2022-virginia-usa-catholic-stock-photo/")return url;
+ return null;
 }
 function imagePreview(image){
  if(!image)return '<div class="preview"><span class="placeholder">Image required · physical object record only</span></div>';
  const url=image.review_thumbnail_url;
- const safeURL=typeof url==="string"&&/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//i.test(url)?url:null;
- const source=linkFor(image);
+ const commons=typeof url==="string"&&/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//i.test(url)?url:null;
+ const external=image.asset_id==="M6B4-BK02-CASON-1962-MISSAL-STAND"&&image.image_url==="https://sdcason.com/content/files/2022/11/DSCF1039.jpg"?image.image_url:null;
+ const safeURL=commons||external,source=linkFor(image);
  return '<div class="preview">'+
  (safeURL?'<img alt="Existing source-owned research image" loading="lazy" src="'+quoteAttr(safeURL)+'">':
  '<span class="placeholder">Original credited image<br>Load source thumbnail online; attribution below</span>'+
- (source?'<img hidden alt="Original Wikimedia Commons research candidate" data-commons-source="'+quoteAttr(source)+'">':''))+
+ (source&&source.startsWith("https://commons.wikimedia.org/")?'<img hidden alt="Original Wikimedia Commons research candidate" data-commons-source="'+quoteAttr(source)+'">':''))+
  '</div>';
 }
 function chosenAsset(obj){return obj.candidate_assets.map(ref=>imgById.get(ref.asset_id)).find(x=>x&&(x.role==="object_detail"||x.role==="alternative_detail"))||
