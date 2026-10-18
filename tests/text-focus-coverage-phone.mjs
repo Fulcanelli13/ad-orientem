@@ -170,6 +170,8 @@ try{
  }
  assert.equal(findings.mass.uncuedFocused,findings.mass.unownedText,
    "A non-rubric Proper passage did not acquire an independent reading focus");
+ assert.equal(findings.mass.cueUnreachable,0,
+   "Some LIVE Mass source passages never become focused through real scrolling");
  assert.equal(findings.mass.cardsChecked,findings.mass.cardsExpected,"Mass card traversal incomplete");
  const sevenWords=findings.prayer.routes.find(row=>row.id==="pray.seven_words");
  assert.ok(sevenWords,"Seven Last Words reader was not audited");
