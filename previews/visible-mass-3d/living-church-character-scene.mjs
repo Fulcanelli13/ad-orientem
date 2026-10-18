@@ -53,27 +53,31 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
    const b=doc.createElement("button");b.type="button";b.textContent=label;b.onclick=async()=>{
     if(target==="source-object"){close();win.AO_VISIBLE_MASS_HOTSPOT_PILOT?.select?.("AL01");return;}
     if(target==="source-mass"){
-      // Use the original P5 object-to-published-Mass-Explorer candidate.
-      // Standalone preview does not have the native app shell: fail closed.
-      if(context.status()?.context?.scene?.sceneId!=="BROMPTON_ALTAR_2019_B"){
-       el(".lc-dialogue").textContent="Return to the original Brompton altar photograph before following its source-linked Mass moment.";
+     if(state.nativePending||state.returnToken)return;
+     if(state.guide!=="canon"||!["sacrifice","roman-canon"].includes(state.id)){
+       el(".lc-dialogue").textContent="Choose the Canon's Mass explanation first.";
        return;
-      }
-      b.disabled=true;
-      el(".lc-dialogue").textContent="Checking the original Mass Explorer handoff…";
-      try{
-       const bridge=await import("./photographic-published-explorer-handoff.mjs");
-       const result=await bridge.openVisibleMassInExistingExplorer(win,{
-        objectId:"AL01",guideId:"AO.CARD.015",trigger:b,reviewMode:true,form:"SUNG"
+     }
+     state.nativePending=true;state.nativeFailure=null;b.disabled=true;
+     el(".lc-dialogue").textContent="Opening the canonical Mass Explorer at the source-linked moment…";
+     try{
+       const response=await context.handoff({
+         routeId:"learn.mass_explorer",sourceRef:"AO.CARD.015"
        });
-       if(result.ok){close();return;}
-       el(".lc-dialogue").textContent=result.reason==="PRODUCTION_EXPLORER_NOT_IN_STANDALONE_PREVIEW"?
-        "The canonical Mass Explorer opens from inside the Ad Orientem app. It is not installed in this standalone research page.":
-        "The original Mass Explorer could not be opened. The church photograph and your selected guide remain unchanged.";
-      }catch{
-       el(".lc-dialogue").textContent="The original source-owned Mass Explorer is temporarily unavailable. No substitute interpretation will be provided.";
-      }finally{b.disabled=false;}
-      return;
+       if(response?.ok&&response.returnToken){
+         state.returnToken=response.returnToken;
+         root.hidden=true;button.hidden=true;state.open=false;
+         returnBtn.hidden=false;returnBtn.focus({preventScroll:true});
+         return;
+       }
+       state.nativeFailure=response?.code||"MASS_OWNER_UNAVAILABLE";
+       el(".lc-dialogue").textContent="The canonical Mass Explorer could not be opened in this environment ["+
+          state.nativeFailure+"]. Your current Canon dialogue and church view are preserved.";
+     }catch{
+       state.nativeFailure="MASS_HANDOFF_FAILED";
+       el(".lc-dialogue").textContent="The canonical Mass Explorer could not be opened. Your Canon dialogue is preserved.";
+     }finally{state.nativePending=false;b.disabled=false;}
+     return;
     }
     if(target==="source-catechism"){
      if(state.nativePending||state.returnToken)return;
