@@ -33,7 +33,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  root.innerHTML='<div class="lc-bg"></div><div class="lc-shade"></div><header class="lc-head"><div><small>AD ORIENTEM · REVIEW ONLY</small><div><strong>The Living Church</strong></div></div><button data-close>Return to photograph</button></header><nav class="lc-guides" aria-label="Choose a guide"></nav><div class="lc-small">Original Brompton Oratory photograph<br>Scripted, non-authoritative dialogue</div><img class="lc-sprite" alt=""><div class="lc-missing" hidden role="status">The approved character portrait is not yet installed in this research branch. Its locked original must be imported; no substitute will be generated.</div><section class="lc-panel" aria-label="Visual novel dialogue"><span class="lc-name"></span><p class="lc-dialogue" aria-live="polite"></p><section class="lc-source-record" aria-label="Original source excerpt" hidden></section><p class="lc-note" hidden>Scripted educational preview; original source owners remain authoritative.</p><div class="lc-actions"></div><div class="lc-objective-door"><button type="button" data-objectives>Choose a learning objective</button></div><form class="lc-ask"><input maxlength="240" aria-label="Ask a question" placeholder="Ask about something in the church…"><button>Ask</button></form></section>';
  doc.body.append(root);
  const el=s=>root.querySelector(s),people=el(".lc-guides"),action=el(".lc-actions"),sprite=el(".lc-sprite");
- const state={id:"welcome",guide:"sacristan",question:null,history:[],open:false,returnToken:null,nativePending:false,nativeFailure:null,selectedObjective:null,sourceReadCount:0,sourceOpen:null,sourcePending:false,sourceRecord:null,sourceHistory:[]};
+ const state={id:"welcome",guide:"sacristan",question:null,history:[],open:false,returnToken:null,nativePending:false,nativeFailure:null,selectedObjective:null,sourceReadCount:0,sourceOpen:null,sourcePending:false,sourceRecord:null,sourceHistory:[],sourceEpoch:0};
  let directorPromise=null;
  const getDirector=()=>directorPromise??=(import("./living-church-objective-director.mjs")
    .then(m=>m.loadLivingChurchObjectives({language:context.status()?.context?.lang||"en"}))
@@ -43,7 +43,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
   b.onclick=handler;action.append(b);return b;
  }
  const sourcePanel=el(".lc-source-record");
- function clearSource(){sourcePanel.hidden=true;sourcePanel.replaceChildren();state.sourceOpen=null;state.sourceRecord=null;}
+ function clearSource(){state.sourceEpoch++;sourcePanel.hidden=true;sourcePanel.replaceChildren();state.sourceOpen=null;state.sourceRecord=null;}
  const safe=(tag,cls,value)=>{const e=doc.createElement(tag);if(cls)e.className=cls;if(value!==undefined)e.textContent=String(value);return e;};
  function renderSource(record){
   sourcePanel.replaceChildren();
@@ -68,9 +68,11 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  async function openSource(director,id){
   if(state.nativePending||state.returnToken||state.sourcePending)return false;
   state.sourcePending=true;
-  clearSource();el(".lc-dialogue").textContent="Retrieving the original source record…";
+  clearSource();const epoch=state.sourceEpoch;
+  el(".lc-dialogue").textContent="Retrieving the original source record…";
   try{
    const record=await director.digest(id,{lang:context.status()?.context?.lang||"en"});
+   if(epoch!==state.sourceEpoch||state.returnToken)return false;
    if(!record?.ok){
     el(".lc-dialogue").textContent="No approved source extract is available here ["+(record?.reason||"unavailable")+"]. Choose another reference.";
     addSourceActions(director);return false;
@@ -86,6 +88,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
    addSourceActions(director);
    return true;
   }catch{
+   if(epoch!==state.sourceEpoch)return false;
    el(".lc-dialogue").textContent="The original source cannot be retrieved here. No substitute explanation has been generated.";
    addSourceActions(director);return false;
   }finally{state.sourcePending=false;}
