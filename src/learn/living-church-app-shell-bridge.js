@@ -47,9 +47,7 @@ export function installLivingChurchCatechismShellBridge(win,{frame,reviewRoot,en
   const learn=win.AO_LEARN_APP_V1?.status?.();
   if(!learn?.open||learn?.child!=="learn.visible_mass")
    return fail("FORMATION_SCENE_NOT_OWNED");
-  if(typeof win.AO_MODULES?.open!=="function"||
-     typeof win.AO_TRADITIONAL_CATECHISM?.openQuestion!=="function"||
-     typeof win.AO_TRADITIONAL_CATECHISM?.close!=="function")
+  if(typeof win.AO_MODULES?.open!=="function")
    return fail("ORIGINAL_CATECHISM_UNAVAILABLE");
   if(win.document.getElementById("ao-cate-root")?.hidden===false)
    return fail("CATECHISM_ALREADY_VISIBLE");
