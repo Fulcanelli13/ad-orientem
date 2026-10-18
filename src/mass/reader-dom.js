@@ -2839,7 +2839,19 @@ export function createReaderDomAdapter({
     const actualMax=Math.max(0,card.scrollHeight-card.clientHeight);
     const minimumTravel=Math.min(640,Math.max(72,(focusCount-1)*58));
     if(actualMax+1<minimumTravel){
-      tail+=Math.ceil(minimumTravel-actualMax);
+      // scrollHeight is clamped to clientHeight when content is shorter than
+      // the viewport. Adding only (minimumTravel - actualMax) misses the
+      // invisible *empty-space deficit*: a 120px prayer inside a 450px
+      // viewport can absorb 300px of tail without scrolling at all.
+      // Measure the true last content edge plus the CURRENT CSS padding.
+      const cardRect=card.getBoundingClientRect();
+      const bodyRect=body.getBoundingClientRect();
+      const padding=Number.parseFloat(win.getComputedStyle(card).paddingBottom)||0;
+      const contentExtent=Math.max(0,
+        bodyRect.bottom-cardRect.top+(Number(card.scrollTop)||0)+padding);
+      const neededExtent=viewport+minimumTravel;
+      const deficit=Math.max(0,Math.ceil(neededExtent-contentExtent));
+      tail+=Math.max(deficit,Math.ceil(minimumTravel-actualMax));
       card.style.setProperty("--ao-short-cue-tail",tail+"px");
     }
   }
