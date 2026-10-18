@@ -93,6 +93,11 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
   try{
    const owner=win?.AO_MASS_EXPLORER_V1;
    if(typeof owner?.close!=="function")return fail("CANONICAL_OWNER_UNAVAILABLE");
+   // Do not close the native module if the underlying scene or question has
+   // already drifted; retain a meaningful, retryable error instead.
+   const before=original();
+   if(!before||compact(before.context)!==compact(suspended.context)||
+      before.readCount!==suspended.readCount)return fail("EXACT_SANCTUARY_CONTEXT_MISMATCH");
    try{await owner.close();}catch{return fail("CANONICAL_CLOSE_FAILED");}
    if(owner?.status?.()?.open===true)return fail("CANONICAL_CLOSE_FAILED");
    const source=original();
