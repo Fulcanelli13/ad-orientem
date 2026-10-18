@@ -149,6 +149,19 @@ export const ADORATION_FOLIO_CSS=String.raw`
 #aoPray435930 .aoAdorationOptionDisclosure .aoP435930Timer{
  margin:5px 0 14px;background:transparent;border:0;padding:5px 0}
 #aoPray435930 .aoAdorationVisitNote p{color:var(--muted,#aca49b);font:13px/1.55 Georgia,serif}
+/* A single quiet exit from each canonical Visit / Holy Hour prayer card.
+   It is deliberately an editorial text link, not an additional stage tile. */
+#aoPray435930 .aoP435930AdorationReader .aoAdorationQuietLink{
+ display:block;min-height:44px;margin:18px 0 4px;
+ padding:12px 1px 8px;border:0;border-top:1px solid
+ color-mix(in srgb,var(--liturgical,#c3a77e) 20%,transparent);
+ border-radius:0;background:transparent!important;box-shadow:none!important;
+ text-align:left;color:var(--muted,#b8ab9e);
+ font:italic 13px/1.45 Georgia,serif;
+}
+#aoPray435930 .aoP435930AdorationReader .aoAdorationQuietLink:focus-visible{
+ outline:2px solid var(--liturgical,#c3a77e);outline-offset:2px;
+}
 #aoPray435930 .aoAdorationOpenPrayer{
  display:grid;justify-items:center;align-content:center;gap:18px;
  min-height:310px;padding:22px 12px 35px;text-align:center}
