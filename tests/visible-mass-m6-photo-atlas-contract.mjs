@@ -101,14 +101,14 @@ for(const id of ["VE16","VE18","VE19"]){
  assert.ok(o.candidate_assets.some(x=>x.asset_id===gam.asset_id),"Shared Gammarelli original must be linked, not copied, for "+id);
 }
 assert.ok(gam.width<1000&&gam.role==="context_detail","Low-resolution Gammarelli must not claim high-res object detail");
-assert.equal(atlas.objects.filter(o=>!o.needs_photo).length,38);
-assert.equal(atlas.objects.filter(o=>o.needs_photo).length,132);
+assert.equal(atlas.objects.filter(o=>!o.needs_photo).length,41);
+assert.equal(atlas.objects.filter(o=>o.needs_photo).length,129);
 assert.equal(atlas.statistics.post_third_batch_photo_candidate_or_hotspot,38);
 assert.equal(atlas.statistics.post_third_batch_needs_photo,132);
-assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL10","AL17","AL18","BK02"]);
-assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,12);
-assert.equal(atlas.images.length,48);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,45);
+assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL10","AL17","AL18"]);
+assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,14);
+assert.equal(atlas.images.length,52);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,49);
 
 
 const batch4=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH4");
