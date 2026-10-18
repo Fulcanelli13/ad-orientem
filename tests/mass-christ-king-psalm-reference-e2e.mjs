@@ -56,7 +56,16 @@ try{
   const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
   const {assessPrintableProper,renderPrintableProperHtml}=await import("/src/calendar/print-proper.js");
   const original=day.proper?.data?.gradual??{};
-  const reader=properToReaderSlots(day.proper.data,{language:"en"});
+  const diagnostics={requestedFiles:[],cacheHits:[],referencesResolved:[],
+    languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],
+    warnings:[],errors:[]};
+  const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
+  const recovered=await recoverReaderProperOmissions(day.proper,{
+    hostResolver:globalThis.AO_RUNTIME_V8.resolver.properResolver,
+    principalCelebrationId:day.day.main.id,diagnostic:diagnostics
+  });
+  const revised=recovered.data??recovered;
+  const reader=properToReaderSlots(revised,{language:"en"});
   const printed=assessPrintableProper(day,{language:"en",massForm:"MISSA_CANTATA_SIMPLE"});
   const html=renderPrintableProperHtml(day,{language:"en",massForm:"MISSA_CANTATA_SIMPLE"});
   const text=reader.slots.GRADUAL?.data?.paragraphs?.map(x=>x.latin).join("\n")??"";
@@ -73,6 +82,11 @@ try{
    frCorrected:printed.proper?.gradual?.fr?.startsWith("Ps 71:8; 71:11"),
    frVersePreserved:printed.proper?.gradual?.fr?.slice(14)===original.fr?.slice(14),
    sourceCorrection:printed.proper?.editorialReferenceCorrections?.[0]?.id,
+   liveRecoveryStatus:revised.readerChantSourceProof?.status??null,
+   selectedChants:reader.slots.ALLELUIA_TRACT_SEQUENCE.status,
+   selectedKind:reader.slots.ALLELUIA_TRACT_SEQUENCE.data?.paragraphs?.[0]?.liturgicalGroup??null,
+   gradualOnly:reader.slots.GRADUAL.data?.paragraphs?.[0]?.latin??null,
+   recoveryWarnings:diagnostics.warnings.slice(0,3),
   };
  });
  console.log("CHRIST_KING_REFERENCE_PARITY="+JSON.stringify(result));
@@ -87,5 +101,11 @@ try{
  assert.equal(result.frCorrected,true);
  assert.equal(result.frVersePreserved,true);
  assert.equal(result.sourceCorrection,"MR62_CHRIST_KING_GRADUAL_PSALM_71_8_11");
+ assert.equal(result.liveRecoveryStatus,"SOURCE_VERIFIED_EXACT",
+  "Actual LIVE entry could not separate the named Christ King Alleluia");
+ assert.equal(result.selectedChants,"READY");
+ assert.equal(result.selectedKind,"AO.CHANT.ALLELUIA");
+ assert.ok(!result.gradualOnly.includes("Dan 7:14"),
+  "Gradual wrongly swallowed the distinct Alleluia/ Daniel verse");
  console.log("PASS Christ the King 1962 Gradual citation: reader, print, source untouched, trilingual translations retained");
 }finally{await browser?.close();await new Promise(ok=>srv.close(ok))}
