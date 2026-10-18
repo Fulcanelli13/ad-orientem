@@ -49,6 +49,16 @@ for(const corpus of [low,sung]){
     "C0023 frozen donor must have recognizable source Latin");
 }
 
+for(const corpus of [low,sung]){
+  const units=corpus.blocks.find(b=>b.Block_ID==="AO.SM.B027").units;
+  const clause=["AO.SM.C0100","AO.SM.C0101","AO.SM.C0102"]
+    .map(id=>applyCanonicalTextCorrection("AO.SM.B027",units.find(u=>u.cue_id===id)).english)
+    .join(" ");
+  assert.equal(clause,
+    "Who, together with the Father and the Son, is adored and glorified: who spoke by the Prophets.",
+    "Creed English must keep the full 1962 meaning without duplicated 'together'");
+}
+
 assert.throws(
   ()=>applyCanonicalTextCorrection("AO.SM.BAD",{cue_id:"AO.SM.C0148",latin:"Benedíctus qui venit"}),
   /block ownership changed/
