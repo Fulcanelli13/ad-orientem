@@ -134,6 +134,25 @@ try{
     report.unfocused=dense.unreachable.map(x=>x.id);
     report.denseScrollSteps=dense.scrollSweepSteps||0;
     report.denseInvalidated=dense.invalidated;
+    if(report.unfocused.length){
+     report.gapGeometry=await page.evaluate(ids=>{
+      const scroll=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+      const sr=scroll.getBoundingClientRect(), nodes=[...scroll.querySelectorAll(".ao-reader-paragraph[data-cue-id]")];
+      return ids.map(id=>{
+       const i=nodes.findIndex(n=>n.dataset.cueId===id);
+       const positions=[i-1,i,i+1].map(k=>{
+        const n=nodes[k],r=n?.getBoundingClientRect();
+        return !n||!r?null:{cue:n.dataset.cueId,text:n.textContent.trim().slice(0,95),
+         top:Math.round(r.top-sr.top+scroll.scrollTop),
+         bottom:Math.round(r.bottom-sr.top+scroll.scrollTop)};
+       });
+       return {id,index:i,neighbors:positions,maxScroll:Math.max(0,scroll.scrollHeight-scroll.clientHeight),
+        viewport:scroll.clientHeight,padding:getComputedStyle(scroll).paddingBottom};
+      });
+     },report.unfocused);
+     console.log("PARITY_GAP_GEOMETRY="+JSON.stringify({mode:test.mode,lang:test.lang,
+      card:card.title,details:report.gapGeometry}));
+    }
    }
    scenario.cards.push({index:card.i,expectedId:card.id,...report});
    scenario.visited++;
