@@ -136,7 +136,19 @@
     "post_thirteenth_batch_photo_candidate_or_hotspot": 95,
     "post_thirteenth_batch_needs_photo": 75,
     "post_thirteenth_batch_source_records": 108,
-    "post_thirteenth_batch_unique_source_urls": 105
+    "post_thirteenth_batch_unique_source_urls": 105,
+    "fourteenth_batch_new_source_records": 4,
+    "fourteenth_batch_existing_missal_image_reuses": 1,
+    "fourteenth_batch_new_qualifying_object_ids": [
+      "BK03",
+      "BK04",
+      "SE09"
+    ],
+    "fourteenth_batch_partial_ash_sources_unqualified": 1,
+    "post_fourteenth_batch_photo_candidate_or_hotspot": 98,
+    "post_fourteenth_batch_needs_photo": 72,
+    "post_fourteenth_batch_source_records": 112,
+    "post_fourteenth_batch_unique_source_urls": 109
   },
   "zones": [
     {
@@ -2580,9 +2592,16 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "EXISTING_OBJECT_PHOTO_REUSED",
+      "candidate_assets": [
+        {
+          "asset_id": "EXISTING-BK01",
+          "role": "source_owned_page_edge_detail",
+          "evidence": "SOURCE_PHOTO_EXISTS_AWAITING_VISUAL_DETAIL_ACCEPTANCE"
+        }
+      ],
+      "needs_photo": false,
+      "page_edge_reuse_note": "The original 1962 Missal Canon-page photo from BK01 shows dark tab markers along the fore-edge and several coloured fabric ribbons. Count as one shared photographic asset, not a new image. Exact individual tab/ribbon clarity and 1962-specific usages must be approved for publication."
     },
     {
       "object_id": "BK04",
@@ -2594,9 +2613,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B14-BK04-1905-FRENCH-LAY-PAROISSIEN",
+          "role": "historical_book_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK05",
@@ -3060,11 +3085,16 @@
           "asset_id": "M6B13-SE04-BALIUAG-2022-ASH-CONTAINERS-ONLY",
           "role": "partial_component_detail",
           "evidence": "PARTIAL_COMPONENT_ONLY"
+        },
+        {
+          "asset_id": "M6B14-SE04-BALIUAG-ASH-BOWL-2022-CONTEXT-UNCONFIRMED",
+          "role": "partial_component_context",
+          "evidence": "PARTIAL_COMPONENT_ONLY"
         }
       ],
       "needs_photo": true,
       "required_missing_components": [
-        "actual Ash Wednesday liturgical ash dish or vessel with ashes"
+        "A clearly sourced Catholic Ash Wednesday liturgical vessel visibly containing ashes (typical 1962 presentation preferred)"
       ]
     },
     {
@@ -3157,9 +3187,20 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B14-SE09-AACHEN-HISTORIC-ROYAL-CATHOLIC-PALL-VIEW1",
+          "role": "historical_funeral_textile_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        },
+        {
+          "asset_id": "M6B14-SE09-AACHEN-HISTORIC-ROYAL-CATHOLIC-PALL-VIEW2",
+          "role": "alternative_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE10",
@@ -5042,6 +5083,70 @@
       "source_description": "Original self-photographed Catholic national shrine Virgin Mary statue covered in numerous visible rosaries, 29 May 2024. This independently documents physical rosaries deposited at a Marian shrine; not a source for a 1962 procession, ritual, or altar object.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH13"
+    },
+    {
+      "asset_id": "M6B14-BK04-1905-FRENCH-LAY-PAROISSIEN",
+      "object_id": "BK04",
+      "role": "historical_book_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nouveau_Paroissien_Romain_(1905).jpg",
+      "creator": "Perky",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 1036,
+      "height": 830,
+      "venue": "Original privately photographed 1905 French Nouveau Paroissien Romain (historical Latin-French lay Missal / prayerbook)",
+      "source_description": "Independently licensed original photograph of a genuine pre-1962 French lay/hand prayerbook with Latin and French Mass texts, Offices and Sunday feasts. The 1905 Nouveau Paroissien Romain also includes Breviary extracts; it is NOT the 1962 Hand Missal and lacks hero-image resolution. Historical typological reference only, source photograph not published.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH14"
+    },
+    {
+      "asset_id": "M6B14-SE09-AACHEN-HISTORIC-ROYAL-CATHOLIC-PALL-VIEW1",
+      "object_id": "SE09",
+      "role": "historical_funeral_textile_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bahrtuch_%27pall%27_eines_franz%C3%B6sischen_K%C3%B6nigs,_Domschatzkammer_Aachen,_2022_(1).jpg",
+      "creator": "Kürschner",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 3994,
+      "height": 2470,
+      "venue": "Aachen Cathedral Treasury, Germany; historic black velvet funeral pall, probably France circa 1774",
+      "source_description": "Photograph of physical historic funeral pall (Bahrtuch) held in a Roman Catholic cathedral treasury; genuine black silk velvet with silver cross-bands and ermine trim; conservation display records repeated funeral use into the 19th century. This luxurious royal pall is not the typical 1962 black funeral pall, nor photographed covering a coffin at Mass. Historical object only.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH14"
+    },
+    {
+      "asset_id": "M6B14-SE09-AACHEN-HISTORIC-ROYAL-CATHOLIC-PALL-VIEW2",
+      "object_id": "SE09",
+      "role": "alternative_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bahrtuch_%27pall%27_eines_franz%C3%B6sischen_K%C3%B6nigs,_Domschatzkammer_Aachen,_2022_(2).jpg",
+      "creator": "Kürschner",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 5472,
+      "height": 3648,
+      "venue": "Aachen Cathedral Treasury, Germany; same single historic black velvet funeral pall, second viewpoint",
+      "source_description": "Second independently photographed camera view of the SAME French c.1774 black funeral pall at Aachen Cathedral Treasury. Must not be counted as a second physical textile nor as a distinct Catholic funeral rite; preserves its own original photo identity and photographer CC0 rights.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH14"
+    },
+    {
+      "asset_id": "M6B14-SE04-BALIUAG-ASH-BOWL-2022-CONTEXT-UNCONFIRMED",
+      "object_id": "SE04",
+      "role": "partial_component_context",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ash_Wednesday_2022_blessing_and_distribution_of_ashes_in_Saint_Augustine_Parish_Church_of_Baliuag_10.jpg",
+      "creator": "FBenjr123",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 5184,
+      "height": 3888,
+      "venue": "St Augustine Roman Catholic Parish Church, Baliuag, Bulacan, Philippines; Ash Wednesday liturgy, 2 March 2022",
+      "source_description": "Original source photograph of Catholic priest imposing ashes upon worshipper, with metal dish visible on credence/table surface, but the vessel's contents and its precise liturgical ash-vessel function are NOT independently identifiable from the frame; 2022 COVID-era celebration, not a 1962 ash rite. Contextual PARTIAL LEAD only; retain SE04 needs_photo and do not authorise exact ash bowl hotspot or publish images of minors without editorial privacy review.",
+      "review_status": "PARTIAL_COMPONENT_ONLY",
+      "source_index": "M6_RESEARCH_20261018_BATCH14"
     }
   ]
 }
