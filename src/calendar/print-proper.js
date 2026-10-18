@@ -2,6 +2,7 @@
 // Never represent a Proper extract as the complete Mass or Missal.
 import {calendarMassColour} from "./colour-projection.js";
 import {select1962CommemorationsForMassForm} from "../mass/1962-commemoration-form-source.js";
+import {correct1962ProperEditorialReferences} from "../mass/1962-proper-editorial-corrections.js";
 
 const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 const pair=(value,language)=>({
@@ -76,7 +77,7 @@ export function assessPrintableProper(resolved,{language="en",massForm=null}={})
   if(massForm&&Array.isArray(resolved?.day?.commemorations)&&
     resolved.day.commemorations.length>0&&selected?.status!=="CERTIFIED")
     return {ok:false,reason:"Form-specific commemoration rules not yet source-certified"};
-  const p=selected?.proper??raw;
+  const p=correct1962ProperEditorialReferences(selected?.proper??raw);
   return assessResolvedProperTextSections(p,{language});
 }
 export function renderPrintableProperHtml(resolved,{language="en",massForm=null}={}){
