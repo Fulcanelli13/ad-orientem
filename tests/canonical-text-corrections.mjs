@@ -36,6 +36,18 @@ for(const corpus of [low,sung]){
   }
 }
 
+for(const corpus of [low,sung]){
+  const unit=corpus.blocks.find(x=>x.Block_ID==="AO.SM.B007")
+    .units.find(x=>x.cue_id==="AO.SM.C0023");
+  const corrected=applyCanonicalTextCorrection("AO.SM.B007",unit);
+  assert.match(corrected.latin,/oráre pro me/u);
+  assert.match(corrected.english,/and you, Father, to pray/u);
+  assert.equal(corrected.canonicalCorrectionId,"P1-011");
+  assert.deepEqual(corrected.canonicalCorrectionIds,["P1-011","RED-EN-2013-W4-01"]);
+  assert.equal(unit.english.includes("and thee Father, to pray"),true);
+  assert.equal(unit.latin.includes("orare pro me"),true);
+}
+
 assert.throws(
   ()=>applyCanonicalTextCorrection("AO.SM.BAD",{cue_id:"AO.SM.C0148",latin:"Benedíctus qui venit"}),
   /block ownership changed/
