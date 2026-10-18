@@ -46,7 +46,10 @@ try{
   await page.waitForFunction(()=>{
     const root=document.getElementById("ao-cate-root");
     const child=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
-    return root&&!root.hidden||child?.AO_LIVING_CHURCH_P2?.status?.().nativeFailure;
+    const returnButton=document.getElementById("ao-living-church-native-return");
+    const state=child?.AO_LIVING_CHURCH_P2?.status?.();
+    return (root&&!root.hidden&&returnButton&&!returnButton.hidden&&
+      state?.nativeReturnAvailable===true)||state?.nativeFailure;
   },null,{timeout:12000});
   const diagnostic=await page.evaluate(()=>{
     const child=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
@@ -91,8 +94,17 @@ try{
   const canonBefore=await frame.locator("#lc-stage").evaluate(el=>el.ownerDocument.defaultView.AO_LIVING_CHURCH_P2.status());
   assert.equal(canonBefore.node,"sacrifice");
   await frame.locator("#lc-stage .lc-actions").getByRole("button",{name:"Mass Explorer"}).click();
-  await page.waitForFunction(()=>window.AO_MASS_EXPLORER_V1?.status?.()?.open===true,
-    null,{timeout:30000});
+  await page.waitForFunction(()=>{
+    const visible=window.AO_MASS_EXPLORER_V1?.status?.()?.open===true;
+    const returned=document.getElementById("ao-living-church-native-return");
+    const child=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
+    return (visible&&returned&&!returned.hidden&&
+       child?.AO_LIVING_CHURCH_P2?.status?.()?.nativeReturnAvailable===true)||
+       child?.AO_LIVING_CHURCH_P2?.status?.()?.nativeFailure;
+  },null,{timeout:30000});
+  const massFailure=await frame.locator("#lc-stage").evaluate(el=>
+    el.ownerDocument.defaultView.AO_LIVING_CHURCH_P2.status().nativeFailure);
+  assert.equal(massFailure,null,"Canon native Mass Explorer opening rejected");
   const currentMass=await page.evaluate(()=>({
     source:AO_LEARN_APP_V1.status().child,
     active:AO_MASS_EXPLORER_V1.status(),
