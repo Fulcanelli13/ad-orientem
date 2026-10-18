@@ -50,7 +50,7 @@ export async function probeTextFocus({
   res.outsideFocusCount=outside.length;
   res.outsideFocus=outside.slice(0,maxExamples).map(node=>({
     tag:node.tagName,className:String(node.className||"").slice(0,110),
-    text:(node.textContent||"").trim().replace(/\\s+/g," ").slice(0,105)
+    text:(node.textContent||"").trim().replace(/\s+/g," ").slice(0,105)
   }));
   res.maxScroll=Math.max(0,Math.round(scroll.scrollHeight-scroll.clientHeight));
   res.initialActive=eligible.filter(x=>active(x.node)).length;
