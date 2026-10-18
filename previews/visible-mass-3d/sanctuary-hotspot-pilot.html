@@ -428,12 +428,17 @@ function findSpot(id){
  if(other)return {id:other.object_id,g:other.glossary_id,title:other.label,match:other.glossary_match,referenceOnly:true};
  return null;
 }
-let panoramaController=null,m5PhotoModule=null,m5PhotoToken=0,m5Photo=null;
+let panoramaController=null,m5PhotoModule=null,m5ModulePromise=null,m5PhotoToken=0,m5Photo=null,m5Ready=false;
 const m5CachedUrls=new Map(),m5StillPoses=new Map();
 const m5BromptonIds=["BROMPTON_ALTAR_1","BROMPTON_ALTAR_2","BROMPTON_LADY_ALTAR","BROMPTON_SACRED_HEART"];
 const m5NewmanIds=["NEWMAN_ALTAR_1","NEWMAN_ALTAR_2","NEWMAN_ALTAR_3","NEWMAN_APSE","NEWMAN_PULPIT"];
 function m5VenueNav(){
  const root=$("m5-viewpoint-nav"),venue=state.photoMode==="newman"?"newman":"brompton";
+ if(!m5PhotoModule&&!m5ModulePromise){
+  m5ModulePromise=import("./visible-mass-m5-photographs.mjs").then(mod=>{
+   m5PhotoModule=mod;m5VenueNav();return mod;
+  }).catch(()=>null);
+ }
  root.replaceChildren();
  const entries=venue==="newman"?
   [{id:"panorama",label:"↩ Dublin · 360°"},...m5NewmanIds.map(id=>({id,label:m5PhotoModule?.M5_PHOTO_VIEWS[id]?.label||id.replaceAll("_"," ")}))]:
@@ -476,7 +481,7 @@ function syncPhotoNav(){
   b.setAttribute("aria-pressed",String(b.dataset.photoMode===state.photoMode));
 }
 function showChurch(){
- ++m5PhotoToken;m5Photo=null;
+ ++m5PhotoToken;m5Photo=null;m5Ready=false;
  state.view="church";state.photoMode="still";
  panoramaController?.hide();
  $("panorama-stage").hidden=true;
@@ -524,11 +529,12 @@ async function showPanorama(mode){
 async function showM5Photo(id){
  const token=++m5PhotoToken;
  try{
-  if(!m5PhotoModule)m5PhotoModule=await import("./visible-mass-m5-photographs.mjs");
+  if(!m5PhotoModule)m5PhotoModule=await (m5ModulePromise||import("./visible-mass-m5-photographs.mjs"));
   const photo=m5PhotoModule.M5_PHOTO_VIEWS[id];
   if(!photo||!["NEWMAN_DUBLIN","BROMPTON_ORATORY"].includes(photo.venue))return false;
   if(token!==m5PhotoToken)return false;
-  m5Photo=id;state.photoMode=photo.venue==="NEWMAN_DUBLIN"?"newman":"brompton";state.view="m5-close";
+  m5Photo=id;m5Ready=false;state.photoMode=photo.venue==="NEWMAN_DUBLIN"?"newman":"brompton";state.view="m5-close";
+  $("m5-close-photo").removeAttribute("src");
   panoramaController?.hide();
   $("panorama-stage").hidden=true;$("photo-viewport").hidden=true;$("inspection-stage").hidden=true;$("m5-close-stage").hidden=false;
   $("photo-caption").textContent=photo.caption+" · distinct photographed camera viewpoint";
@@ -559,8 +565,16 @@ async function showM5Photo(id){
   if(token!==m5PhotoToken)return false;
   if(!image.naturalWidth||image.naturalWidth>2200)throw Error("Original close image exceeds preview size");
   m5CachedUrls.set(id,url);
-  $("m5-close-photo").src=url;
-  $("m5-close-photo").alt=photo.caption+". Original photograph by "+photo.creator+".";
+  const shown=$("m5-close-photo");
+  shown.src=url;
+  shown.alt=photo.caption+". Original photograph by "+photo.creator+".";
+  // Ensure the actual on-screen image is decoded/painted before advertising a
+  // ready viewpoint. Preloading a different Image alone can leave a black frame
+  // in headless/low-power browsers even when naturalWidth is nonzero.
+  if(typeof shown.decode==="function")await shown.decode();
+  await new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok)));
+  if(token!==m5PhotoToken)return false;
+  m5Ready=true;
   const pose=m5StillPoses.get(id)||{zoom:1,offsetX:0,offsetY:0};
   setM5Zoom(pose.zoom);
   requestAnimationFrame(()=>{$("m5-close-viewport").scrollLeft=pose.offsetX;$("m5-close-viewport").scrollTop=pose.offsetY;});
@@ -568,7 +582,7 @@ async function showM5Photo(id){
   return true;
  }catch(error){
   if(token!==m5PhotoToken)return false;
-  $("m5-close-photo").removeAttribute("src");
+  m5Ready=false;$("m5-close-photo").removeAttribute("src");
   $("m5-close-notice").textContent="Original image unavailable; open the photographer’s Commons source link or retry. "+String(error.message||error);
   $("m5-retry").hidden=false;return false;
  }
@@ -593,7 +607,7 @@ for(const button of document.querySelectorAll("[data-m5-zoom]"))button.onclick=(
 };
 $("m5-retry").onclick=()=>{if(m5Photo)void showM5Photo(m5Photo);};
 function showInspection(asset){
- ++m5PhotoToken;m5Photo=null;
+ ++m5PhotoToken;m5Photo=null;m5Ready=false;
  state.view="inspection";
  panoramaController?.hide();$("panorama-stage").hidden=true;
  $("photo-viewport").hidden=true;$("m5-close-stage").hidden=true;$("inspection-stage").hidden=false;
@@ -989,7 +1003,7 @@ setExperience("explore");
 loadCanon().catch(()=>{state.loaded=true;if(state.selected)renderQuestions();});
 window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
  status:()=>({hotspots:SPOTS.length,inspections:state.inspections.length,questionOnly:state.objects.filter(o=>!SPOTS.some(s=>s.id===o.object_id)&&!state.inspections.some(a=>a.object_id===o.object_id)).length,view:state.view,selected:state.selected,question:state.question,historicalAnswerCount:(state.historyPack?.answers?.length||0)+(state.functionPack?.answers?.length||0),historicalFirstCount:state.historyPack?.answers?.length||0,functionalAnswerCount:state.functionPack?.answers?.length||0,occasionNotes:state.historyPack?.occasion_notes?.length||0,occasion:state.occasion,explanationCount:state.explanationPack?.answers?.length||0,sourceThemes:state.sourcePack?.topics?.length||0,glossaryLoaded:state.entries.size,questionsLoaded:state.questions.length,studyLanguage:state.studyLang,photoMode:state.photoMode,panorama:panoramaController?.status()??null,
- m5Viewpoint:m5Photo,m5Available:!!m5PhotoModule,m5Pose:m5Photo?m5StillPoses.get(m5Photo):null,translatedSourceCandidates:state.m3Index?.count??0,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
+ m5Viewpoint:m5Photo,m5Ready,m5Available:!!m5PhotoModule,m5Pose:m5Photo?m5StillPoses.get(m5Photo):null,translatedSourceCandidates:state.m3Index?.count??0,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  experience:()=>state.experience,
  guideStatus:()=>state.guide?.status()??null,
  chooseTrail:id=>state.guide?.chooseTrail(id)??false,
