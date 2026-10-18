@@ -18,10 +18,16 @@ export function ensureDevotionalReadingRunway(body,paragraphs,{ratio=.40}={}){
   const box=body.getBoundingClientRect();
   const last=visible.at(-1).getBoundingClientRect();
   const lastCenter=(last.top+last.bottom)/2-box.top+body.scrollTop;
-  const currentMax=Math.max(0,body.scrollHeight-viewport);
+  const lastBottom=last.bottom-box.top+body.scrollTop;
   const neededForLast=Math.max(0,lastCenter-viewport*ratio+20);
   const neededForPassages=Math.min(680,Math.max(72,(visible.length-1)*54));
-  const extra=Math.max(0,Math.ceil(Math.max(neededForLast,neededForPassages)-currentMax));
+  const targetTravel=Math.max(neededForLast,neededForPassages);
+  // scrollHeight is clamped to clientHeight for a short card. If text +
+  // existing padding has not filled the viewport, subtract that hidden
+  // deficit before asking for actual scroll movement. Merely adding
+  // targetTravel to padding can leave the second line permanently muted.
+  const requiredPadding=Math.max(basePadding,viewport+targetTravel-lastBottom);
+  const extra=Math.max(0,Math.ceil(requiredPadding-basePadding));
   if(extra)body.style.setProperty("padding-bottom",(basePadding+extra)+"px","important");
   return extra;
 }
