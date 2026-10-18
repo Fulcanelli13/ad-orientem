@@ -80,6 +80,7 @@ try{
   // collapsed until requested. Open that disclosure before asserting that
   // Four Ends can still be reached from silent Adoration.
   const guidedDisclosure=page.locator("#aoPray435930 .aoAdorationOptionDisclosure:has([data-p435930-ador-four])");
+  await guidedDisclosure.waitFor({state:"attached",timeout:5000});
   assert.equal(await guidedDisclosure.count(),1,"Optional Four Ends disclosure is missing");
   assert.equal(await guidedDisclosure.evaluate(node=>node.open),false,
     "Four Ends should remain optional, not displace silent Adoration");
