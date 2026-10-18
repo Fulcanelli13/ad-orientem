@@ -96,6 +96,11 @@ try{
   }
   const afterDrag=(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama;
   assert.notEqual(afterDrag.pose.yaw,beforeDrag.pose.yaw,"drag gesture changes fixed-position photographic yaw");
+  await page.locator('[data-pan="home"]').click();
+  const reset=(await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama;
+  assert.ok(Math.abs(reset.pose.yaw)<1e-8&&Math.abs(reset.pose.pitch)<1e-8,"face-sanctuary restores original, genuine camera heading");
+  assert.equal(reset.pose.fov,72);
+  assert.equal(await page.locator('[data-pan="home"]').getAttribute("aria-label"),"Face the sanctuary");
   assert.ok(afterDrag.frameCount>=beforeDrag.frameCount,"camera redraw remains available");
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()))?.readCount??0,beforeRead);
   const beforeResize=await page.locator("#panorama-stage canvas").evaluate(el=>el.width);
@@ -113,7 +118,7 @@ try{
   assert.equal(await page.locator("#photo-viewport").isVisible(),false);
   await page.locator('[data-photo-mode="brompton"]').click();
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.active==="BROMPTON_PANO"&&window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama.loaded);
-  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.pose.pitch,afterDrag.pose.pitch,"last finger-adjusted pose retained for original photograph");
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.pose.pitch,reset.pose.pitch,"last reset camera pose retained for original photograph");
   await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.select("AL01"));
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).view,"church","object selection uses original hotspot still");
   await page.locator("#close-card").click();
