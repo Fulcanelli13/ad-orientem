@@ -80,6 +80,7 @@ import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
 import { createRogationsReaderController, contextualRogationCard, loadRogationsReaderData } from "./reader-rogations.js";
 import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
+import { installDistinctRiteReadingFocus } from "./reader-distinct-text-focus.js";
 import { createEasterVigilReaderController, loadEasterVigilReaderData, projectEasterVigilMassModel } from "./reader-easter-vigil.js";
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
 import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
@@ -575,6 +576,7 @@ export async function mountNativeReaderPreview({
     const controller=ready.goodFridayController;
     let reader=null;
     let shownSurface=null;
+    let disposeReadingFocus=()=>{};
     let personalControls=null;
     let communionControls=null;
     let deathCueRunning=false;
@@ -974,6 +976,7 @@ export async function mountNativeReaderPreview({
     });
 
     function destroyGoodFriday(){
+      disposeReadingFocus();
       host.querySelector?.(".ao-prayer-card")?.removeEventListener?.("scroll",onGoodFridayScroll);
       host.removeEventListener?.("click",onGoodFridayAction);
       host.removeEventListener?.("click",onCommunionChoice);
@@ -990,6 +993,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17StateOwner="R28_GOOD_FRIDAY_GRAPH";
     doc.body.appendChild(root);
     reader.mount(prepared);
+    disposeReadingFocus=installDistinctRiteReadingFocus(root,{mode:prepared?.readerPreferences?.mode??"LIVE"});
     installCommunionSpeakerStyles();
     createGoodFridayControls();
     createCommunionControls();
@@ -1048,6 +1052,7 @@ export async function mountNativeReaderPreview({
     let inVigil=true;
     let currentMass=null;
     let stage="VIGIL_ACTIVE";
+    let disposeReadingFocus=()=>{};
 
     function easterVigilMoment(){
       const state=controller.project();
@@ -1141,6 +1146,7 @@ export async function mountNativeReaderPreview({
     });
 
     function destroyEasterVigil(){
+      disposeReadingFocus();
       reader.destroy?.();
       root.remove?.();
       if(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root===root){
@@ -1154,6 +1160,7 @@ export async function mountNativeReaderPreview({
     root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
     doc.body.appendChild(root);
     reader.mount(prepared);
+    disposeReadingFocus=installDistinctRiteReadingFocus(root,{mode:prepared?.readerPreferences?.mode??"LIVE"});
     showEasterVigil();
 
     const api=Object.freeze({
