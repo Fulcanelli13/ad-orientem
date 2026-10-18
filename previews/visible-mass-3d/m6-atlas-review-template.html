@@ -177,11 +177,12 @@ function objectCard(item){
 }
 function photoCard(image){
  const object=image.object_id?objectById.get(image.object_id):null;
+ const linked=Array.isArray(image.linked_object_ids)?image.linked_object_ids.filter(id=>objectById.has(id)):[];
  return '<article class="record">'+imagePreview(image)+'<div class="body">'+
  '<div class="eyebrow">'+esc(image.role)+' · '+esc(image.asset_id)+'</div>'+
  '<h2 class="heading">'+esc(object?.label||image.venue||"Church photographic viewpoint")+'</h2>'+
  '<div class="detail">'+esc(image.creator||"Creator to verify")+' · '+esc(image.licence||"Rights unknown")+
- (object?' · '+esc(object.object_id):'')+'</div>'+
+ (linked.length?' · Linked objects '+linked.map(esc).join(", "):(object?' · '+esc(object.object_id):''))+'</div>'+
  (image.source_description?'<p class="detail">'+esc(image.source_description)+'</p>':'')+
  assetLine(image)+'</div></article>';
 }
