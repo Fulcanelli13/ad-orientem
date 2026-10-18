@@ -13,9 +13,16 @@ const PHOTO_URL=new URL("../../previews/visible-mass-3d/sanctuary-hotspot-pilot.
 const EXPLORER_ROUTE="learn.mass_explorer";
 const GUIDE_PATTERN=/^AO\.CARD\.(?:010|015|024|025)$/;
 export function createVisibleMassReviewRuntime(win=globalThis){
- let returnFocus=null;
+ let returnFocus=null,askIntegration=null,askLoading=false,askReturnButton=null;
+ const askReviewEnabled=()=>{
+  const params=new URLSearchParams(win?.location?.search||"");
+  return visibleMassReviewEnabled(win)&&params.get("aoLivingChurchReview")==="1";
+ };
  const root=()=>win?.document?.getElementById?.(ROOT)??null;
  function close(){
+   if(askIntegration?.status?.()?.suspended)return false;
+   askIntegration?.close?.();askIntegration=null;
+   askReturnButton?.remove?.();askReturnButton=null;
    const node=root();
    try{if(node?.contains?.(win.document.activeElement))win.document.activeElement?.blur?.();}catch{}
    node?.remove?.();
@@ -43,6 +50,8 @@ export function createVisibleMassReviewRuntime(win=globalThis){
 #${ROOT} .vmrDisclaimer{margin:0;padding:6px 12px;color:var(--ao-text-muted,#aeb5be);font:11px/1.5 system-ui,sans-serif;text-align:center}
 #${ROOT} iframe{display:block;width:100%;min-height:0;flex:1;border:0;background:#080c12}
 #${ROOT} :is(button,iframe):focus-visible{outline:2px solid var(--liturgical,#c9ad78);outline-offset:2px}
+#aoLivingChurchReturnSanctuary{position:fixed;bottom:calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px) + 18px);right:18px;z-index:calc(var(--ao-z-global-nav,2147483300) + 4);border:1px solid #b39d79;border-radius:24px;padding:12px 16px;background:#0d1822;color:#efe4d0;font:14px Georgia,serif;box-shadow:0 4px 24px #0008;cursor:pointer}
+#aoLivingChurchReturnSanctuary[hidden]{display:none!important}
 `;
    node.append(style);
    const top=doc.createElement("header");top.className="vmrTop";
@@ -54,8 +63,12 @@ export function createVisibleMassReviewRuntime(win=globalThis){
    const kicker=doc.createElement("small");kicker.textContent="AD ORIENTEM · RESEARCH";
    const heading=doc.createElement("strong");heading.textContent="The Visible Mass";
    title.append(kicker,heading);
-   const empty=doc.createElement("span");
-   top.append(back,title,empty);
+   const askButton=doc.createElement("button");
+   askButton.type="button";askButton.textContent="?";
+   askButton.setAttribute("aria-label","Ask the Church from the selected sanctuary object");
+   askButton.title="Ask the Church";
+   if(!askReviewEnabled()){askButton.hidden=true;askButton.disabled=true;}
+   top.append(back,title,askButton);
    const disclaimer=doc.createElement("p");disclaimer.className="vmrDisclaimer";
    disclaimer.textContent="Experimental church photograph · English-only research drafts · not approved teaching or normative rubrics";
    const frame=doc.createElement("iframe");
@@ -89,6 +102,44 @@ export function createVisibleMassReviewRuntime(win=globalThis){
    });
    node.append(top,disclaimer,frame);
    doc.body.append(node);
+   if(askReviewEnabled()){
+    askReturnButton=doc.createElement("button");
+    askReturnButton.type="button";
+    askReturnButton.id="aoLivingChurchReturnSanctuary";
+    askReturnButton.textContent="Return to the church";
+    askReturnButton.setAttribute("aria-label","Return to the original church photograph");
+    askReturnButton.hidden=true;
+    askReturnButton.onclick=async()=>{
+     if(!askIntegration)return;
+     askReturnButton.disabled=true;
+     try{
+      const result=await askIntegration.returnToSanctuary();
+      if(!result.ok)disclaimer.textContent="Sanctuary return not verified: "+result.code;
+     }finally{askReturnButton.disabled=false;}
+    };
+    doc.body.append(askReturnButton);
+    askButton.onclick=async()=>{
+     if(askLoading)return;
+     askLoading=true;askButton.disabled=true;
+     try{
+      if(!askIntegration){
+       const mod=await import("./living-church-ask-integration.js");
+       const response=await win.fetch(new URL("../../data/learn/ask-church-app-route-survey.v1.json",import.meta.url));
+       if(!response.ok)throw Error("Original Ask the Church survey unavailable");
+       askIntegration=mod.createLivingChurchAskIntegration(win,{
+        frame,returnButton:askReturnButton,survey:await response.json()
+       });
+      }
+      const verdict=await askIntegration.openGuide();
+      if(!verdict.ok)disclaimer.textContent=verdict.code==="SELECT_ORIGINAL_SANCTUARY_OBJECT_FIRST"
+       ?"Select one of the original six photographed objects before starting the guide."
+       :"The research guide cannot open: "+verdict.code;
+     }catch(error){
+      disclaimer.textContent="The Living Church research connection is unavailable.";
+      win?.console?.warn?.("Ask the Church source-owner connection failed",error);
+     }finally{askLoading=false;askButton.disabled=false;}
+    };
+   }
    return node;
  }
  function open({trigger}={}){
