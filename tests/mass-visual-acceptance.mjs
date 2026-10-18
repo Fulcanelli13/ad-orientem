@@ -439,7 +439,7 @@ try{
       "preferences actions are too small to tap/read: "+JSON.stringify(audit));
     assert.ok(audit.sectionItem?.height>=44&&audit.sectionItem?.fontSize>=12,
       "section picker targets are too small: "+JSON.stringify(audit));
-    assert.equal(audit.guideKicker?.display,"none",
+    assert.ok(audit.guideKicker?.width===0&&audit.guideKicker?.height===0,
       "Guide label still takes space in the LIVE ribbon: "+JSON.stringify(audit));
     for(const name of ["scholaSlower","scholaFaster","scholaPause"]){
       assert.ok(audit[name]?.height>=44,
