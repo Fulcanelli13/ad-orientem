@@ -82,6 +82,12 @@ const CSS=`
 #aoLivingChurchCharacterFolio button:focus-visible,#aoLivingChurchCharacterFolio input:focus-visible{outline:2px solid #dfc993;outline-offset:2px}
 #aoLivingChurchCharacterFolio .lcExplore{position:absolute;right:12px;top:13px;z-index:5;pointer-events:auto;background:rgba(7,13,20,.89);color:#f0e5d3;border:1px solid #8a7453;border-radius:5px;padding:9px 12px;font:12px system-ui,sans-serif;cursor:pointer}
 @media(max-width:720px){#aoLivingChurchCharacterFolio .lcCharacters{left:8px;top:10px;right:8px;gap:4px}#aoLivingChurchCharacterFolio .lcCharacters button{font-size:11px;padding:6px;flex:1}#aoLivingChurchCharacterFolio .lcExplore{top:65px;right:8px}#aoLivingChurchCharacterFolio .lcCharacterImage{right:-13%;max-width:91vw;max-height:79%;bottom:18%}#aoLivingChurchCharacterFolio .lcFolio{left:8px;right:8px;bottom:8px;width:auto;max-height:56%;padding:12px 13px}#aoLivingChurchCharacterFolio .lcHeading{font-size:19px}#aoLivingChurchCharacterFolio .lcPrompt{font-size:15px;line-height:1.38}#aoLivingChurchCharacterFolio .lcChoices{gap:5px}#aoLivingChurchCharacterFolio .lcChoices button{font-size:11px;min-height:40px;padding:7px 10px}}
+@media(max-width:430px){
+ #aoLivingChurchCharacterFolio .lcVeil{backdrop-filter:blur(3px) brightness(.32);background:linear-gradient(0deg,rgba(6,9,14,.92),rgba(6,10,16,.34) 75%)}
+ #aoLivingChurchCharacterFolio[data-guide="pius-x"] .lcVeil{backdrop-filter:none;background:linear-gradient(0deg,rgba(6,9,14,.85),rgba(6,10,16,.16) 80%),url('/assets/living-church/backgrounds/pius-x-papal-study.webp') center/cover no-repeat}
+ #aoLivingChurchCharacterFolio .lcCharacters button{line-height:1.25}
+ #aoLivingChurchCharacterFolio .lcFolio{max-height:58%;overscroll-behavior:contain}
+}
 @media(prefers-reduced-motion:reduce){#aoLivingChurchCharacterFolio *{transition:none!important;animation:none!important}}
 `;
 function el(doc,tag,cls="",value=null){const node=doc.createElement(tag);if(cls)node.className=cls;if(value!==null)node.textContent=String(value);return node;}
@@ -196,12 +202,15 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
   }
   if(mode==="home"){
    prompt.textContent=guide==="sacristan"?words.sacristanIntro:guide==="canon"?words.understand:words.piusIntro;
-   addChoice(words.openSource,()=>{mode="questions";emotion="explaining";render();},{primary:guide==="sacristan"});
-   addChoice(words.mass,enterMoment,{primary:guide==="canon"});
+   if(guide!=="pius-x"){
+    addChoice(words.openSource,()=>{mode="questions";emotion="explaining";render();},{primary:guide==="sacristan"});
+    addChoice(words.mass,enterMoment,{primary:guide==="canon"});
+   }
    if(guide==="pius-x")addChoice(words.catechismSearch,()=>{mode="catechism";emotion="explaining";render();},{primary:true});
    addChoice(guide==="pius-x"?words.study:words.objectives,()=>beginObjectives(guide==="pius-x"?"understand":null));
    if(guide==="sacristan")addChoice(words.canon,()=>selectGuide("canon"));
    if(guide==="canon")addChoice(words.pius,()=>selectGuide("pius-x"));
+   if(guide==="pius-x")addChoice(words.canon,()=>selectGuide("canon"));
   }else if(mode==="questions"){
    prompt.textContent=words.questionIntro;
    const listed=pilot.questions.filter(q=>q.primary_object_id===c?.objectId).slice(0,12);
