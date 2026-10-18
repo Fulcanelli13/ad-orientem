@@ -117,8 +117,15 @@ try{
    return {reviewerVisibility:getComputedStyle(reviewer).visibility,
     catechismVisibility:getComputedStyle(root).visibility,
     catechismHit:root===middle||root.contains(middle),
-    middle:middle?.id||middle?.tagName};
+    middle:middle?.id||middle?.tagName,
+    middleHTML:middle?.outerHTML?.slice(0,250),
+    catechismRect:root?.getBoundingClientRect()?.toJSON?.(),
+    nativeZ:getComputedStyle(root).zIndex,
+    nativePosition:getComputedStyle(root).position,
+    nativeParent:root.parentElement?.id||root.parentElement?.className};
   });
+  await page.screenshot({path:screenshotDir+"/"+width+"-native-layer-diagnostic.png"});
+  console.log("Native layer diagnostic",width,JSON.stringify(catechismLayer));
   assert.equal(catechismLayer.reviewerVisibility,"hidden","photo must yield visual layer while original answer is open");
   assert.equal(catechismLayer.catechismVisibility,"visible","native Catechism must be visually shown");
   assert.equal(catechismLayer.catechismHit,true,"native answer must be front-most at viewport centre: "+JSON.stringify(catechismLayer));
