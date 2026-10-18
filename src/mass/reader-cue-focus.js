@@ -79,6 +79,53 @@ export function markActiveCue(container,cueId){
   }
 }
 
+/**
+ * Visual-only fallback for Proper TEXT lacking a source ceremonial cue.
+ * It deliberately never writes data-active, never creates a cue ID, and never
+ * calls the priest/faithful/cinematic source-event controller. In a mixed card
+ * the existing cue stays authoritative for ritual state; the nearest rendered
+ * text owns *only* visual brightness while that uncued passage is being read.
+ */
+export function markUncuedReadingFocus(container,{focusRatio=.39}={}){
+  const body=container?.querySelector?.('[data-role="paragraphs"]');
+  if(!body?.querySelectorAll)return null;
+  const all=[...body.querySelectorAll(".ao-reader-paragraph")];
+  const uncued=all.filter(node=>node.dataset.kind!=="RUBRIC"&&
+    !CUE_RE.test(String(node.dataset.cueId||"")));
+  if(!uncued.length){
+    delete body.dataset.aoVisualFocus;
+    return null;
+  }
+  const rect=container.getBoundingClientRect?.();
+  if(!rect)return null;
+  const scrollTop=Math.max(0,Number(container.scrollTop)||0);
+  const viewport=Math.max(1,Number(container.clientHeight)||1);
+  const candidate=all.filter(node=>node.dataset.kind!=="RUBRIC"&&
+    node.getBoundingClientRect?.()&&node.getClientRects?.().length>0&&!node.hidden);
+  if(!candidate.length)return null;
+  const nodes=candidate.map(node=>{
+    const r=node.getBoundingClientRect();
+    return {node,top:r.top-rect.top+scrollTop,bottom:r.bottom-rect.top+scrollTop};
+  });
+  const focus=scrollTop+viewport*focusRatio;
+  let selected=nodes[0],distance=Infinity;
+  if(scrollTop<=2)selected=nodes[0];
+  else if(scrollTop>=Math.max(0,Number(container.scrollHeight)-viewport-2))selected=nodes.at(-1);
+  else for(const item of nodes){
+    const d=focus<item.top?item.top-focus:focus>item.bottom?focus-item.bottom:0;
+    if(d<distance){distance=d;selected=item}
+  }
+  const focused=selected?.node;
+  const focusUncued=uncued.includes(focused);
+  for(const node of uncued){
+    const active=String(focusUncued&&node===focused);
+    if(node.dataset.readingActive!==active)node.dataset.readingActive=active;
+  }
+  if(focusUncued)body.dataset.aoVisualFocus="uncued";
+  else delete body.dataset.aoVisualFocus;
+  return focusUncued?focused:null;
+}
+
 export function installCueFocusTracker({
   container,
   onChange,
@@ -94,6 +141,7 @@ export function installCueFocusTracker({
     if(destroyed)return current;
     const next=activeCueFromScrollContainer(container,{focusRatio});
     markActiveCue(container,next);
+    markUncuedReadingFocus(container,{focusRatio});
     if(next!==current){
       const previous=current;
       current=next;
