@@ -53,7 +53,7 @@ function fixture(form="MISSA_CANTATA_INCENSE"){
   return {p,review,schola,cards:review.presentationModel.cards};
 }
 const {review,schola,cards}=fixture();
-assert.equal(review.presentationModel.totalCards,65);
+assert.equal(review.presentationModel.totalCards,64);
 const cardForCue=id=>cards.find(c=>c.paragraphs.some(p=>(p.sourceCueIds??[]).includes(id)));
 const titled=s=>cards.find(c=>c.title===s);
 const verify=(card,expected,message)=>{
@@ -83,10 +83,16 @@ state=verify(cardForCue("AO.SM.C0091"),"CREDO","first Credo Schola cue");
 assert.equal(state.schola.cueId,"AO.SM.C0091");
 verify(titled("Offertory · Invitation and Antiphon"),"OFFERTORY",
   "Offertory resolves the precise B030 Proper block");
-state=verify(titled("Sanctus"),"SANCTUS_BENEDICTUS","Sanctus");
+const whole=titled("Sanctus — Benedictus");
+assert.ok(whole,"The celebrant's Sanctus and Benedictus must share one card");
+assert.ok(whole.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0145")));
+assert.ok(whole.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0148")));
+assert.equal(cards.filter(c=>c.sourceSectionId==="AO.CARD.013").length,1,
+  "Do not split the priest's single Sanctus text into two navigable cards");
+state=verify(whole,"SANCTUS_BENEDICTUS","whole priestly Sanctus–Benedictus");
 const before=schola.next();
-state=verify(titled("Benedictus"),"SANCTUS_BENEDICTUS","Benedictus on distinct curated card");
-assert.equal(state.index,before.index,"Sanctus/Benedictus card swipe rewound the Schola");
+state=verify(whole,"SANCTUS_BENEDICTUS","same prayer card must not rewind the Schola");
+assert.equal(state.index,before.index,"In-card Sanctus focus rewound the Schola");
 state=verify(titled("Te igitur"),"SANCTUS_BENEDICTUS",
   "Schola must remain independent while the priest begins the silent Canon");
 assert.equal(state.index,before.index);
@@ -115,16 +121,16 @@ assert.equal(productionSchola.activateForCard(2).trackId,"KYRIE");
 // Solemn sung has the same source-owner behavior without assuming the
 // celebrant proclaims the Gospel or dismissal instead of their ministers.
 const solemn=fixture("SOLEMN");
-assert.equal(solemn.review.presentationModel.totalCards,65);
+assert.equal(solemn.review.presentationModel.totalCards,64);
 const solemnGloria=solemn.cards.find(c=>c.paragraphs.some(p=>
   p.sourceCueIds?.includes("AO.SM.C0055")));
 assert.equal(solemn.schola.activateForCard(solemnGloria).trackId,"GLORIA");
 
 // Low Mass has no Schola. The curated sung review is not force-projected.
 const low=fixture("LOW");
-assert.ok(low.review.presentationModel.totalCards!==65,
-  "Low Mass must not inherit a 65-card Sung-only segmentation");
+assert.ok(low.review.presentationModel.totalCards!==64,
+  "Low Mass must not inherit the curated Sung-only segmentation");
 assert.equal(low.schola.project().structuralAbsence,true);
 assert.equal(low.schola.activateForCard(solemnGloria).schola,null);
 
-console.log("Mass Schola source-aware cards PASS — 65 curated, 48 production, Solemn, Low, no false progress/rewinds.");
+console.log("Mass Schola source-aware cards PASS — 64 curated, 48 rollback, Solemn, Low, no false progress/rewinds.");
