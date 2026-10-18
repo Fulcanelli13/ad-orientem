@@ -26,8 +26,10 @@ function blocked(selected,reason){
 export function projectObservedLocalOrations({
   originalProper,selectedProper,calendarResolution,
   form,commemorationId,observedGroups=[],confirmedAtMass=false,
+  confirmedForThisCelebration=false,
 }={}){
-  if(confirmedAtMass!==true)return blocked(selectedProper,"NOT_ACTUALLY_CONFIRMED");
+  if(confirmedAtMass!==true&&confirmedForThisCelebration!==true)
+    return blocked(selectedProper,"NOT_ACTUALLY_CONFIRMED");
   if(!Array.isArray(observedGroups)||!observedGroups.length||
      new Set(observedGroups).size!==observedGroups.length||
      observedGroups.some(group=>!GROUPS.has(group)))
@@ -74,6 +76,7 @@ export function projectObservedLocalOrations({
     commemorationId:String(commemorationId),
     groupNames:Object.freeze([...observedGroups]),
     normativeDecision:decision.status,
+    confirmationKind:confirmedAtMass===true?"ACTUALLY_HEARD_AT_MASS":"EXPLICIT_PREMASS_LOCAL_REPORT",
     rubricalAuthorityUnchanged:true,
     sourcePath:raw.sourcePath,
   });
