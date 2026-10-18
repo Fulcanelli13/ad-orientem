@@ -954,6 +954,17 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.86}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.75}
+/* One visible reading focus may be a Proper verse without a ceremonial
+   cue. Keep gesture/cinematic source state entirely in data-active, while
+   giving this uncued text a separate geometry-owned brightness channel. */
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph[data-active="true"]{
+  opacity:.62;color:var(--ao-text);transform:none;text-shadow:none
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph,
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.62}
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-reading-active="true"]{
+  opacity:1!important;color:#f7f8f4;transform:translateX(2px);text-shadow:0 0 26px rgba(225,238,228,.065)
+}
 
 /* Rubrics are identifiable by their quiet inset and rule, not a repeated
    seven-pixel RUBRIC heading on every paragraph. Keep the complete source. */
@@ -2816,8 +2827,19 @@ export function createReaderDomAdapter({
         closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
       }
     }
-    const tail=Math.max(extra,closingExtra);
+    let tail=Math.max(extra,closingExtra);
     if(tail)card.style.setProperty("--ao-short-cue-tail",tail+"px");
+    // Verify actual scroll travel, rather than deriving it from content
+    // bottom/padding (which can be wrong in the curated fixed-height stage).
+    // Dense short cards such as Kyrie, Gloria doxology, Credo and Agnus Dei
+    // previously had 0-38px of movement for 3-9 distinct source cues.
+    // Allocate a bounded reading runway WITHOUT stretching prayer rows.
+    const actualMax=Math.max(0,card.scrollHeight-card.clientHeight);
+    const minimumTravel=Math.min(640,Math.max(72,(cueCount-1)*58));
+    if(actualMax+1<minimumTravel){
+      tail+=Math.ceil(minimumTravel-actualMax);
+      card.style.setProperty("--ao-short-cue-tail",tail+"px");
+    }
   }
 
   function closeFaithfulPicker(){
