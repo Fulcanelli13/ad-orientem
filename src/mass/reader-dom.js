@@ -2866,12 +2866,12 @@ export function createReaderDomAdapter({
     // Explanatory Guide belongs outside LIVE. It remains available to the
     // independent educational module, and the older Simple presentation
     // alone can display its existing button.
-    const guideButton=root.querySelector('[data-role="guide-button"]');
-    if(guideButton){
-      guideButton.hidden=mode!=="SIMPLE";
-      guideButton.disabled=mode!=="SIMPLE"||!current.guide;
-      guideButton.setAttribute("aria-hidden",String(mode!=="SIMPLE"));
-      guideButton.tabIndex=mode==="SIMPLE"?0:-1;
+    const guideControl=root.querySelector('[data-role="guide-button"]');
+    if(guideControl){
+      guideControl.hidden=mode!=="SIMPLE";
+      guideControl.disabled=mode!=="SIMPLE"||!current.guide;
+      guideControl.setAttribute("aria-hidden",String(mode!=="SIMPLE"));
+      guideControl.tabIndex=mode==="SIMPLE"?0:-1;
     }
     const guideShort=root.querySelector('[data-role="guide-short"]');
     if(guideShort){
