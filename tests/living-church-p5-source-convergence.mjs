@@ -18,7 +18,15 @@ assert.equal(pinned.layeredAdaptations.length,3);
 const ask=read("src/learn/ask-church-guided-preview.js").toString();
 assert.match(ask,/hostManagesReturn=false/);
 assert.match(ask,/hide\(\)\{root\.hidden=true;returnBtn\.hidden=true/);
-assert.match(ask,/createAskChurchObjectiveEngine/);
+assert.match(ask,/engine\|\|createAskChurchObjectiveEngine/);
+const owner=read("src/learn/living-church-ask-integration.js").toString();
+const folio=read("src/learn/living-church-character-folio.js").toString();
+assert.match(owner,/canonicalObjectiveSession=createAskChurchObjectiveEngine/);
+assert.match(owner,/engine:objectiveEngine\(\)/);
+assert.match(owner,/objectiveSessionCount:canonicalObjectiveSession\?1:0/);
+assert.match(folio,/const engine=integration\.objectiveEngine\?\.\(\)/);
+assert.doesNotMatch(folio,/createAskChurchObjectiveEngine\(/,
+ "The visual-novel folio must not own a second conversation state");
 const photo=read("previews/visible-mass-3d/sanctuary-hotspot-pilot.html").toString();
 for(const proof of [
  'm5ModulePromise=import("./visible-mass-m5-photographs.mjs")',
@@ -59,6 +67,8 @@ assert.match(review,/aoLivingChurchCharacters/);
 assert.match(review,/visibleMassReviewEnabled/);
 assert.match(review,/onNativeOpen/);
 assert.match(review,/onNativeReturn/);
+assert.match(review,/singleConversationSurface/);
+assert.match(review,/sourceSurveyPromise/);
 const cate=read("src/learn/living-church-ask-integration.js").toString();
 assert.match(cate,/catechismNumber\(sourceRef\)/);
 assert.match(cate,/EXACT_SANCTUARY_CONTEXT_MISMATCH/);
@@ -68,4 +78,4 @@ assert.ok(paths.length>=9);
 for(const name of paths)assert.equal(pinned.publicationGates[name],false,
  "Unreviewed publication gate unexpectedly marked approved: "+name);
 assert.equal(pinned.scopedReadiness.productionReady,false);
-console.log("Living Church P5 source convergence PASS: 16 exact source blob pins, all 10 M5 handoff edits, original M6 atlas 170/13/56 and 125 qualifying photo gaps, VMQ 134/4, Ask 7/26, PX 433, 15 sprites and 9 locked human release gates.");
+console.log("Living Church P5 source convergence PASS: 16 exact source blob pins, all 10 M5 handoff edits, original M6 atlas 170/13/56 and 125 qualifying photo gaps, VMQ 134/4, Ask 7/26 with one shared objective session, PX 433, 15 sprites and 9 locked human release gates.");
