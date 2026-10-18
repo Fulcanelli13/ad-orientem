@@ -45,13 +45,19 @@ const metadata=JSON.parse(await readFile(join(assetDir,"metadata.json"),"utf8"))
 const expected=[
  ["brompton360","BROMPTON_PANO","CC BY-SA 3.0"],
  ["newman360","NEWMAN_360","CC BY-SA 3.0"],
- ["brompton_still","still","CC BY-SA 2.0"]
+ ["brompton_still","still","CC BY-SA 2.0"],
+ ["newman_altar1","NEWMAN_ALTAR_1","CC BY 4.0"],
+ ["newman_altar2","NEWMAN_ALTAR_2","CC BY 4.0"],
+ ["newman_apse","NEWMAN_APSE","CC BY 4.0"],
+ ["newman_pulpit","NEWMAN_PULPIT","CC BY 4.0"]
 ];
 const photoData={};
 for(const [key,id,license] of expected){
  const info=metadata[key];
  if(!info||info.license!==license||!info.commons_page?.startsWith("https://commons.wikimedia.org/wiki/File:"))
   throw Error("Original photographer or Commons source provenance missing: "+key);
+ if(key.startsWith("newman_")&&!key.endsWith("360")&&!info.artist?.toLowerCase().includes("zairon"))
+  throw Error("Unverified independently photographed Dublin detail creator: "+key);
  const path=join(assetDir,key.endsWith("360")?key+"-review.jpg":info.file);
  const bytes=await readFile(path),source=await stat(path);
  if(source.size<80000||source.size>12_000_000||bytes[0]!==0xff||bytes[1]!==0xd8)
@@ -65,6 +71,7 @@ html=html.replace(tag,'src="'+photoData.still+'"');
 const init=`<script>
 /* Review-only: preserve source-owned canonical text and exact ID datasets. */
 window.__AO_M4_OFFLINE_PHOTOS__=${JSON.stringify({BROMPTON_PANO:photoData.BROMPTON_PANO,NEWMAN_360:photoData.NEWMAN_360})};
+window.__AO_M5_OFFLINE_PHOTOS__=${JSON.stringify({NEWMAN_ALTAR_1:photoData.NEWMAN_ALTAR_1,NEWMAN_ALTAR_2:photoData.NEWMAN_ALTAR_2,NEWMAN_APSE:photoData.NEWMAN_APSE,NEWMAN_PULPIT:photoData.NEWMAN_PULPIT})};
 const AO_M4_RESEARCH_DATA=${safe(JSON.stringify(data))};
 const AO_M4_REMOTE_FETCH=window.fetch.bind(window);
 window.fetch=(url,options)=>{
@@ -79,9 +86,10 @@ const chunk=originalHtml.slice(start,end+scriptEnd.length);
 if(!chunk.startsWith(scriptStart))throw Error("Controller IIFE not found");
 const replacement=init+"\n<script>\n"+safe(virtual.outputFiles[0].text)+"\n</script>";
 html=html.replace(chunk,replacement);
-const note='<div role="note" style="font:11px/1.5 system-ui,sans-serif;color:#abaaa5;padding:7px 12px;border-bottom:1px solid #38434c">M4 offline photographic review · genuine CC-licensed still and two panoramas embedded · research drafts only, not a public release · additional inspection references may require internet.</div>';
+const note='<div role="note" style="font:11px/1.5 system-ui,sans-serif;color:#abaaa5;padding:7px 12px;border-bottom:1px solid #38434c">M5 combined photographic review · same original high-altar still, two 360° panoramas and four source-owned close views embedded · research drafts only, not a public release · additional inspection references may require internet.</div>';
 html=html.replace('<body>','<body>\n'+note);
-const output=join(root,"dist/visible-mass/The_Visible_Mass_M4_Photographic_Review_Offline.html");
+const output=join(root,"dist/visible-mass/The_Visible_Mass_M5_Combined_Photographic_Review_Offline.html");
 await mkdir(dirname(output),{recursive:true});await writeFile(output,html,"utf8");
+await writeFile(join(dirname(output),"The_Visible_Mass_M4_Photographic_Review_Offline.html"),html,"utf8");
 console.log(JSON.stringify({output,bytes:Buffer.byteLength(html),originalPhotos:expected.map(([k])=>k),
  originalQuestions:134,sourceFiles:jsonFiles.length+3,singleFile:true,appProductionDeployment:false}));
