@@ -62,6 +62,22 @@ try{
   assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().node),"altar");
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Ask the Canon"}).click();
   assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().guide),"canon");
+  // P7 actual in-scene retrieval is against canonical READY Apostolate records,
+  // not a model-generated paraphrase or an unpublished Mass study.
+  await page.locator("#lc-stage .lc-ask input").fill("Does the Mass sacrifice Jesus again?");
+  await page.locator("#lc-stage .lc-ask button").click();
+  await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().groundedSourceId==="apostolate:AQ04");
+  assert.match(await page.locator("#lc-stage .lc-source-record").innerText(),/Calvary.*one sacrifice/);
+  assert.ok(await page.locator("#lc-stage .lc-source-record a[href^='https://']").count()>0);
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:/Why.*original explanation/}).click();
+  await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().groundedAnswerCount===2);
+  assert.match(await page.locator("#lc-stage .lc-source-record").innerText(),/Trent/);
+  await page.locator("#lc-stage .lc-ask input").fill("Why is the Roman Canon silent?");
+  await page.locator("#lc-stage .lc-ask button").click();
+  await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().groundedFailure==="NOT_SUPPORTED_BY_APPROVED_CORPUS");
+  assert.equal(await page.locator("#lc-stage .lc-source-record").isVisible(),false);
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"canon");
+
   await expectSprite("canon_explaining");
   await page.screenshot({path:resolve(output,"living-church-canon-"+viewport.width+".png")});
   // Source-owned native link has no standalone provider; do not invent a
