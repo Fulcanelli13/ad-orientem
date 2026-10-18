@@ -1,0 +1,82 @@
+/**
+ * Real DOM/scroll audit used by the Mass and Prayer browser suites.
+ * Reads existing presentation ownership only; does not adjust focus states.
+ * All coordinates are computed from the rendered scroll container.
+ */
+export async function probeTextFocus({
+  rootSelector,
+  scrollSelector,
+  paragraphSelector,
+  owner="mass",
+  label="",
+  maxExamples=35
+}){
+  const root=document.querySelector(rootSelector);
+  const scroll=root?.querySelector(scrollSelector);
+  const frame=()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+  const shown=node=>{
+    if(!node||!node.isConnected||node.closest("[hidden],[aria-hidden=true]"))return false;
+    if(!node.getClientRects().length)return false;
+    const s=getComputedStyle(node);
+    return s.display!=="none"&&s.visibility!=="hidden"&&(node.textContent||"").trim().length>0;
+  };
+  const res={label,owner,scrollRegion:!!scroll,allText:0,registered:0,
+    reached:0,unreachable:[],unowned:[],exempt:[],duplicates:0,
+    maxScroll:0,passages:[],initialActive:0,finalActive:0};
+  if(!scroll)return res;
+  const nodes=[...scroll.querySelectorAll(paragraphSelector)].filter(shown);
+  res.allText=nodes.length;
+  const validCue=/^AO\.SM\.C\d{4}$/;
+  const active=node=>owner==="mass"?node.dataset.active==="true":
+    owner==="legacy"?node.dataset.aoPrayFocus==="active":
+      node.dataset.aoDevoActive==="true";
+  const eligible=[];
+  for(let i=0;i<nodes.length;i++){
+    const node=nodes[i],id=node.dataset.cueId||node.dataset.aoDevoParagraph||String(i);
+    const entry={ordinal:i,id,kind:node.dataset.kind||null,
+      text:(node.textContent||"").trim().replace(/\s+/g," ").slice(0,105)};
+    if(owner==="mass"&&!validCue.test(node.dataset.cueId||"")){
+      (node.dataset.kind==="RUBRIC"?res.exempt:res.unowned).push(entry);
+    }else eligible.push({node,entry});
+  }
+  res.registered=eligible.length;
+  res.maxScroll=Math.max(0,Math.round(scroll.scrollHeight-scroll.clientHeight));
+  res.initialActive=eligible.filter(x=>active(x.node)).length;
+  const original=scroll.scrollTop;
+  const clamp=x=>Math.max(0,Math.min(Math.max(0,scroll.scrollHeight-scroll.clientHeight),x));
+  for(const {node,entry} of eligible){
+    let successful=active(node);
+    const rect=node.getBoundingClientRect(),box=scroll.getBoundingClientRect();
+    const middle=(rect.top+rect.bottom)/2-box.top+scroll.scrollTop;
+    const desired=middle-scroll.clientHeight*(owner==="legacy"?.43:owner==="mass"?.39:.41);
+    const max=scroll.scrollHeight-scroll.clientHeight;
+    const candidates=[desired,desired-55,desired+55,middle-scroll.clientHeight*.16,
+      middle-scroll.clientHeight*.65,0,max];
+    for(const candidate of candidates){
+      if(successful)break;
+      const next=clamp(candidate);
+      scroll.scrollTop=next;
+      scroll.dispatchEvent(new Event("scroll",{bubbles:true}));
+      await frame();
+      if(!shown(node))break;
+      successful=active(node);
+    }
+    if(successful)res.reached++;
+    else if(res.unreachable.length<maxExamples)
+      res.unreachable.push({...entry,scrollTop:Math.round(scroll.scrollTop),maxScroll:Math.round(max)});
+    if(res.passages.length<maxExamples)res.passages.push({...entry,reached:successful});
+    const simultaneously=eligible.filter(x=>active(x.node)).length;
+    if(simultaneously>1)res.duplicates=Math.max(res.duplicates,simultaneously);
+  }
+  scroll.scrollTop=clamp(original);
+  scroll.dispatchEvent(new Event("scroll",{bubbles:true}));
+  await frame();
+  res.finalActive=eligible.filter(x=>active(x.node)).length;
+  // Keep complete totals even when diagnostic examples are capped.
+  res.unownedTotal=res.unowned.length;
+  res.exemptTotal=res.exempt.length;
+  res.unreachableTotal=res.registered-res.reached;
+  res.unowned=res.unowned.slice(0,maxExamples);
+  res.exempt=res.exempt.slice(0,maxExamples);
+  return res;
+}
