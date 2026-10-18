@@ -47,9 +47,35 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
   sprite.alt=roles[guide].name+", "+row[1]+" expression";
   action.replaceChildren();
   for(const [label,target] of row[3]){
-   const b=doc.createElement("button");b.type="button";b.textContent=label;b.onclick=()=>{
+   const b=doc.createElement("button");b.type="button";b.textContent=label;b.onclick=async()=>{
     if(target==="source-object"){close();win.AO_VISIBLE_MASS_HOTSPOT_PILOT?.select?.("AL01");return;}
-    if(target==="source-mass"||target==="source-catechism"){el(".lc-dialogue").textContent="The "+(target==="source-mass"?"Mass Explorer":"original Catechism")+" is the source owner. A native verified deep link is still pending; no route will be invented.";return;}
+    if(target==="source-mass"){
+      // Use the original P5 object-to-published-Mass-Explorer candidate.
+      // Standalone preview does not have the native app shell: fail closed.
+      if(context.status()?.context?.scene?.sceneId!=="BROMPTON_ALTAR_2019_B"){
+       el(".lc-dialogue").textContent="Return to the original Brompton altar photograph before following its source-linked Mass moment.";
+       return;
+      }
+      b.disabled=true;
+      el(".lc-dialogue").textContent="Checking the original Mass Explorer handoff…";
+      try{
+       const bridge=await import("./photographic-published-explorer-handoff.mjs");
+       const result=await bridge.openVisibleMassInExistingExplorer(win,{
+        objectId:"AL01",guideId:"AO.CARD.015",trigger:b,reviewMode:true,form:"SUNG"
+       });
+       if(result.ok){close();return;}
+       el(".lc-dialogue").textContent=result.reason==="PRODUCTION_EXPLORER_NOT_IN_STANDALONE_PREVIEW"?
+        "The canonical Mass Explorer opens from inside the Ad Orientem app. It is not installed in this standalone research page.":
+        "The original Mass Explorer could not be opened. The church photograph and your selected guide remain unchanged.";
+      }catch{
+       el(".lc-dialogue").textContent="The original source-owned Mass Explorer is temporarily unavailable. No substitute interpretation will be provided.";
+      }finally{b.disabled=false;}
+      return;
+    }
+    if(target==="source-catechism"){
+     el(".lc-dialogue").textContent="The original St Pius X Catechism remains authoritative. Opening its native reader from this isolated photographic page awaits a reviewed same-origin bridge.";
+     return;
+    }
     visit(target);};action.append(b);
   }
   if(record)state.history.push({guide,id,question:state.question});
