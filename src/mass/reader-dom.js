@@ -3132,7 +3132,7 @@ export function createReaderDomAdapter({
             orationCaption.className="ao-oration-label";
             orationCaption.textContent=p.prayerRole==="ORATION_UNDER_ONE_CONCLUSION"&&
               String(p.id).endsWith(".MISSION")
-                ?(frenchReader?"Pour les Missions":"For the Missions")
+                ?(frenchReader?"Pour les Missions · même conclusion":"For the Missions · one shared conclusion")
                 :orationLabels[p.prayerRole];
             node.append(orationCaption);
           }
