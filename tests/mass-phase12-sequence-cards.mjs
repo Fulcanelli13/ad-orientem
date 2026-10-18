@@ -50,13 +50,13 @@ const make=(proper,language="en")=>{
 };
 const normal=make(bare);
 assert.equal(normal.source.totalCards,39);
-assert.equal(normal.curated.totalCards,65,"Ordinary Mass with no distinct Sequence must stay 65");
+assert.equal(normal.curated.totalCards,64,"Ordinary Mass with no Sequence has a single Sanctus–Benedictus card");
 assert.equal(normal.curated.cards.filter(c=>c.sourceSectionId==="AO.CARD.006").length,1,
   "No-source Sequence must not yield a phantom card");
 const sequenceProper={...bare,sequence:tr("Lauda Sion","Praise, O Sion","Loue, Sion")};
 for(const language of ["en","fr"]){
  const {source,prepared,curated}=make(sequenceProper,language);
- assert.equal(curated.totalCards,66,"A real separate Sequence merits another navigable card");
+ assert.equal(curated.totalCards,65,"A real separate Sequence merits another navigable card");
  const sourceChant=source.cards.find(c=>c.sectionId==="AO.CARD.006");
  const chantCards=curated.cards.filter(c=>c.sourceSectionId==="AO.CARD.006");
  assert.deepEqual(chantCards.map(c=>c.title),["Gradual · Alleluia / Tract","Sequence"]);
@@ -88,10 +88,10 @@ for(const language of ["en","fr"]){
  const switchModel=buildReaderModeModels({
    prepared,data,mode:"LIVE",reviewExpandedCards:true,
  });
- assert.equal(switchModel.presentationModel.totalCards,66);
+ assert.equal(switchModel.presentationModel.totalCards,65);
  assert.equal(switchModel.presentationModel.cards.filter(c=>c.title==="Sequence").length,1);
  console.log("PASS "+language.toUpperCase()+" sourced Sequence: independent card, source conservation, Schola and Introit/mode switch");
 }
-assert.equal(projectCuratedIntroitEntryLiveCards(normal.curated).totalCards,61,
- "Historical 61-stage post-Introit projection regressed on days with no Sequence");
-console.log("PASS conditional pre-Gospel card architecture: ordinary 65, sourced Sequence 66, no fabricated Alleluia/Tract segments");
+assert.equal(projectCuratedIntroitEntryLiveCards(normal.curated).totalCards,60,
+ "60-stage post-Introit projection regressed on days with no Sequence");
+console.log("PASS conditional pre-Gospel card architecture: ordinary 64, sourced Sequence 65, no fabricated Alleluia/Tract segments");
