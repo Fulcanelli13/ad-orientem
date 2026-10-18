@@ -18,7 +18,7 @@ try{
   await page.goto(pathToFileURL(html).href,{waitUntil:"load"});
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_M6_ATLAS?.status()?.objects===170);
   let status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());
-  assert.equal(status.zones,13);assert.equal(status.images,56);assert.equal(status.visible,170);
+  assert.equal(status.zones,13);assert.equal(status.images,67);assert.equal(status.visible,170);
   await page.screenshot({path:out+"/"+spec.id+"-object-atlas.png",fullPage:false});
   await page.locator("#zone").selectOption("AL");status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,20);
   await page.locator("#zone").selectOption("");
@@ -27,10 +27,19 @@ try{
   await page.locator("#coverage").selectOption("PROVISIONAL_ORIGINAL_STILL_HOTSPOT");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,6);
   await page.locator("#coverage").selectOption("NEW_SOURCE_PHOTO_CANDIDATE");
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,24);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,33);
   assert.match(await page.locator("#results").innerText(),/Altar bell/);
   assert.match(await page.locator("#results").innerText(),/Individual altar candle/);
   await page.locator("#coverage").selectOption("");
+  await page.locator("#search").fill("VE15");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.match(await page.locator("#results").innerText(),/No original object-specific image candidate/);
+  await page.locator("#search").fill("VE20");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.match(await page.locator("#results").innerText(),/PONTIFICAL-GLOVES-PARTIAL/);
+  assert.match(await page.locator("#results").innerText(),/PONTIFICAL-BUSKINS/);
+  assert.match(await page.locator("#results").innerText(),/PONTIFICAL-SANDALS/);
+  await page.locator("#search").fill("");
   await page.locator("#search").fill("AL17");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/viewer’s right \(Epistle side\)/);
@@ -43,7 +52,7 @@ try{
   assert.match(await page.locator("#results").innerText(),/Licensed independent gradine context photo/);
   await page.locator("#search").fill("");
   await page.locator("#mode-images").click();
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,56);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,67);
   await page.locator("#search").fill("M6B5-VE03-SEVILLE-CATHEDRAL-ALB");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/CarlosVdeHabsburgo/);
