@@ -42,6 +42,7 @@ export async function probeTextFocus({
   res.registered=eligible.length;
   res.maxScroll=Math.max(0,Math.round(scroll.scrollHeight-scroll.clientHeight));
   res.initialActive=eligible.filter(x=>active(x.node)).length;
+  const seen=new Set(eligible.filter(x=>active(x.node)).map(x=>x.entry.ordinal));
   const original=scroll.scrollTop;
   const clamp=x=>Math.max(0,Math.min(Math.max(0,scroll.scrollHeight-scroll.clientHeight),x));
   for(const {node,entry} of eligible){
@@ -61,13 +62,34 @@ export async function probeTextFocus({
       if(!shown(node))break;
       successful=active(node);
     }
-    if(successful)res.reached++;
-    else if(res.unreachable.length<maxExamples)
-      res.unreachable.push({...entry,scrollTop:Math.round(scroll.scrollTop),maxScroll:Math.round(max)});
+    if(successful)seen.add(entry.ordinal);
     if(res.passages.length<maxExamples)res.passages.push({...entry,reached:successful});
     const simultaneously=eligible.filter(x=>active(x.node)).length;
     if(simultaneously>1)res.duplicates=Math.max(res.duplicates,simultaneously);
   }
+  // Exhaustively sample narrow handoff intervals. A 39% focus line can
+  // select a short cue for only a few pixels, which a direct jump may skip.
+  // This second pass distinguishes genuinely unreachable rows from a coarse
+  // probe. It never mutates cue ownership or liturgical state itself.
+  const max=Math.max(0,scroll.scrollHeight-scroll.clientHeight);
+  if(seen.size<eligible.length&&max>0){
+    const step=Math.max(4,Math.ceil(max/320));
+    let sweepSteps=0;
+    for(let y=0;y<=max+step;y+=step){
+      scroll.scrollTop=Math.min(max,y);
+      scroll.dispatchEvent(new Event("scroll",{bubbles:true}));
+      await frame();
+      for(const item of eligible)if(active(item.node))seen.add(item.entry.ordinal);
+      sweepSteps++;
+      if(seen.size===eligible.length)break;
+    }
+    res.scrollSweepSteps=sweepSteps;
+  }
+  res.reached=seen.size;
+  res.unreachable=eligible.filter(x=>!seen.has(x.entry.ordinal))
+   .slice(0,maxExamples).map(x=>({...x.entry,
+    maxScroll:Math.round(max)}));
+  res.passages=res.passages.map(x=>({...x,reached:seen.has(x.ordinal)}));
   scroll.scrollTop=clamp(original);
   scroll.dispatchEvent(new Event("scroll",{bubbles:true}));
   await frame();
