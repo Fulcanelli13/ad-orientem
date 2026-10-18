@@ -110,6 +110,28 @@ export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
     from:"Praising I will call upon the Lord",
     to:"I will call upon the Lord and give praise",
   }),
+  // Reviewed 2013 Red Missal p.13, p.15: prayer at the foot of the altar.
+  "AO.SM.C0021": Object.freeze({
+    id:"RED-EN-2013-W3-01",
+    blockId:"AO.SM.B007",
+    field:"english",
+    from:"and to you Father, that I have sinned",
+    to:"and to you, Father, that I have sinned",
+  }),
+  "AO.SM.C0023": Object.freeze({
+    id:"RED-EN-2013-W3-02",
+    blockId:"AO.SM.B007",
+    field:"english",
+    from:"and thee Father, to pray",
+    to:"and you, Father, to pray",
+  }),
+  "AO.SM.C0039": Object.freeze({
+    id:"RED-EN-2013-W3-03",
+    blockId:"AO.SM.B012",
+    field:"english",
+    from:"whose relics are here, and of all the Saints: that thou wouldst vouchsafe to forgive me all my sins. Amen.",
+    to:"whose relics are here, and of all the Saints, that Thou wilt deign to pardon me all my sins. Amen.",
+  }),
   "AO.SM.C0110": Object.freeze({
     id:"RED-EN-2013-001",
     blockId:"AO.SM.B031",
