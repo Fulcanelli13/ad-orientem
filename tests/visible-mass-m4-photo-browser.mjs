@@ -48,7 +48,7 @@ try{
   assert.equal(await page.locator("#photo-viewport").isVisible(),false);
   assert.equal(await page.locator("#panorama-stage canvas").count(),1);
   assert.match(await page.locator("#photo-credit").innerText(),/David Iliff.*CC BY-SA 3.0/);
-  assert.match(await page.locator("#photo-intro").innerText(),/Inside Brompton Oratory.*genuine 360°/);
+  assert.match(await page.locator("#photo-intro").innerText(),/Brompton Oratory, London.*genuine 360°/);
   assert.match(await page.locator("#photo-sources-top").getAttribute("href"),/Brompton_Oratory_360x180/);
   assert.equal(await page.locator("#show-markers").isVisible(),false,"6 still-photo markers must not be offered for panoramas");
   if(spec.mobile){
