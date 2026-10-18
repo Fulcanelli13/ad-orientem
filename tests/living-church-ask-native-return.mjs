@@ -65,9 +65,11 @@ assert.equal(livingChurchAskReviewEnabled({location:{search:"?aoVisibleMassRevie
 }
 {
  const f=fixture(),api=f.api;
- for(const id of ["learn.catechism","pray.confession","apostolate:HS02","learn.church_crisis","learn.apologetics","explore.lens.shrines"]){
+ for(const id of ["pray.confession","apostolate:HS02","learn.church_crisis","learn.apologetics","explore.lens.shrines"]){
   assert.equal((await api.nativeOpen(id)).code,"RETURN_CONTRACT_NOT_VERIFIED");
  }
+ assert.equal((await api.nativeOpen("learn.catechism")).code,"INVALID_CATECHISM_SOURCE_REF",
+  "unbound Catechism objectives cannot bypass PX1912 source verification");
  assert.equal(f.openCalls.length,0,"all other existing Ask targets remain held from this source entry");
  assert.equal(api.status().ownedObjectives,7);
  assert.equal(api.status().branchCount,26);

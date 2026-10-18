@@ -1,0 +1,59 @@
+name: Living Church P4 canonical Catechism and cross-module acceptance
+
+on:
+  pull_request:
+    paths:
+      - "src/learn/living-church-catechism-source.js"
+      - "src/learn/living-church-ask-integration.js"
+      - "src/learn/living-church-character-folio.js"
+      - "src/learn/living-church-pius-study-topics.js"
+      - "tests/living-church-pius-study-topics.mjs"
+      - "tests/living-church-catechism-source.mjs"
+      - "tests/living-church-p4-native-catechism-browser.mjs"
+      - ".github/workflows/living-church-p4-catechism.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  canonical-question-native-owner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Canonical 433 question source, original app adapters and legacy regression
+        run: |
+          node --check src/learn/living-church-catechism-source.js
+          node --check src/learn/living-church-ask-integration.js
+          node --check src/learn/living-church-character-folio.js
+          node --check src/learn/living-church-pius-study-topics.js
+          node tests/living-church-pius-study-topics.mjs
+          node tests/living-church-catechism-source.mjs
+          node tests/living-church-ask-native-return.mjs
+          node tests/living-church-character-folio.mjs
+          node tests/ask-church-objective-engine.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Real native Catechism, Mass Explorer and exact return at 320/390/1280
+        run: node tests/living-church-p4-native-catechism-browser.mjs
+      - name: Preserve original P2 and P3 phone/desktop acceptance
+        run: |
+          node tests/living-church-ask-real-shell.mjs
+          node tests/living-church-character-phone.mjs
+      - name: Capture original-photo P4 visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-church-p4-canonical-catechism-review
+          path: dist/living-church/p4-review/*.png
+          if-no-files-found: warn

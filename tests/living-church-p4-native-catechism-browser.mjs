@@ -1,0 +1,246 @@
+import assert from "node:assert/strict";
+import http from "node:http";
+import {readFile,mkdir} from "node:fs/promises";
+import {resolve,sep,extname} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const types={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
+ ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
+ ".svg":"image/svg+xml",".png":"image/png",".webp":"image/webp",".woff2":"font/woff2"};
+const server=http.createServer(async(req,res)=>{
+ try{
+  const pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
+  const file=resolve(root,"."+pathname);
+  if(!file.startsWith(root+sep)){res.writeHead(403);res.end("forbidden");return;}
+  const bytes=await readFile(file);
+  res.writeHead(200,{"content-type":types[extname(file)]||"application/octet-stream","cache-control":"no-store"});
+  res.end(bytes);
+ }catch(err){res.writeHead(err.code==="ENOENT"?404:500);res.end(String(err));}
+});
+await new Promise(ok=>server.listen(0,"127.0.0.1",ok));
+const origin="http://127.0.0.1:"+server.address().port;
+const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="859"><rect width="1280" height="859" fill="#39332b"/></svg>';
+const screenshotDir=resolve(root,"dist/living-church/p4-review");
+await mkdir(screenshotDir,{recursive:true});
+let browser;
+try{
+ browser=await chromium.launch({headless:true});
+ for(const width of [320,390,1280]){
+  const ctx=await browser.newContext({viewport:{width,height:width===390?844:900},
+    hasTouch:width===390,isMobile:width===390,serviceWorkers:"block"});
+  const page=await ctx.newPage(),errors=[];
+  page.on("pageerror",e=>errors.push(e.message));
+  await page.route(/^https:\/\/(?:thumb|upload)\.wikimedia\.org\//,r=>r.fulfill({
+    status:200,contentType:"image/svg+xml",body:svg}));
+  await page.goto(origin+"/index.html?aoVisibleMassReview=1&aoLivingChurchReview=1&aoLivingChurchCharacters=1",
+    {waitUntil:"domcontentloaded",timeout:90000});
+  await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
+    null,{timeout:30000});
+  await page.evaluate(async()=>{
+   const {createVisibleMassReviewRuntime}=await import("/src/learn/visible-mass-review.js");
+   window.__LC_REVIEW=createVisibleMassReviewRuntime(window);
+   if(!window.__LC_REVIEW.open())throw Error("No original reviewer");
+  });
+  const host=page.locator("#ao-visible-mass-review-root");
+  const photo=page.frameLocator("#ao-visible-mass-review-root iframe");
+  await photo.locator('.marker[data-object="AL01"]').waitFor({timeout:30000});
+  await photo.locator('.marker[data-object="AL01"]').click();
+  await page.waitForFunction(()=>{
+   const child=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
+   return child?.AO_VISIBLE_MASS_LIVING_CHURCH_P1?.status?.().context?.objectId==="AL01";
+  },null,{timeout:30000});
+  await page.waitForFunction(()=>{
+   const c=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
+   const v=c?.document.querySelector("#photo-viewport");if(!v)return false;
+   const pos=v.scrollLeft+":"+v.scrollTop;
+   const prior=window.__lcSpritePose??{pos:null,stable:0};
+   window.__lcSpritePose={pos,stable:prior.pos===pos?prior.stable+1:0};
+   return window.__lcSpritePose.stable>=6;
+  },null,{polling:100,timeout:10000});
+  const before=await page.evaluate(()=>{
+   const child=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
+   return {context:child.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
+    guide:child.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()};
+  });
+  const launch=host.getByRole("button",{name:"Talk with the three guides"});
+  assert.equal(await launch.isVisible(),true);
+  await launch.click();
+  const stage=page.locator("#aoLivingChurchCharacterFolio");
+  await stage.waitFor({state:"visible",timeout:30000});
+  assert.equal(await stage.getAttribute("data-guide"),"sacristan");
+  const sprite=stage.locator(".lcCharacterImage");
+  const assetCheck=async name=>{
+   await page.waitForFunction(p=>{
+    const el=document.querySelector("#aoLivingChurchCharacterFolio .lcCharacterImage");
+    return !!el?.complete&&el.naturalWidth>100&&el.src.includes(p);
+   },name,{timeout:10000});
+  };
+  await assetCheck("sacristan-welcoming.webp");
+  await page.screenshot({path:screenshotDir+"/"+width+"-sacristan.png"});
+  await stage.locator('[data-persona="canon"]').click();
+  assert.equal(await stage.getAttribute("data-guide"),"canon");
+  await assetCheck("canon-welcoming.webp");
+  await page.screenshot({path:screenshotDir+"/"+width+"-canon.png"});
+  await stage.locator('[data-persona="pius-x"]').click();
+  assert.equal(await stage.getAttribute("data-guide"),"pius-x");
+  await assetCheck("pius-welcoming.webp");
+  await page.screenshot({path:screenshotDir+"/"+width+"-pius-x-study.png"});
+  assert.match(await stage.locator(".lcDisclaimer").innerText(),/Historical simulation/);
+  assert.match(await stage.locator(".lcDisclaimer").innerText(),/not his words/i);
+  await stage.getByRole("button",{name:"Catechism topics"}).click();
+  assert.ok(await stage.locator(".lcChoices button").count()>=4);
+  await stage.locator('[data-persona="pius-x"]').click();
+  await stage.getByRole("button",{name:"Find an original Catechism question"}).click();
+  const search=stage.getByRole("textbox",{name:"Objective or topic"});
+  await search.fill("What is the Church?");
+  await stage.getByRole("button",{name:"Find topic"}).click();
+  const result=stage.getByRole("button",{name:/PX1912-Q105.*What is the Church/});
+  await result.waitFor({state:"visible"});
+  const beforeCatechism=await page.evaluate(()=>{
+   const w=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
+   return {context:w.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
+    guide:w.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()};
+  });
+  await result.click();
+  await page.waitForFunction(()=>{
+   const owner=window.AO_TRADITIONAL_CATECHISM,root=document.getElementById("ao-cate-root");
+   return typeof owner?.openQuestion==="function"&&root&&!root.hidden;
+  },null,{timeout:25000});
+  assert.equal(await stage.isVisible(),false,"Pius portrait must hide while original Catechism is visible");
+  // DOM hidden=false was insufficient: the 320px screenshot exposed the
+  // sanctuary viewer visually covering the Catechism. Test actual hit layer.
+  const catechismLayer=await page.evaluate(()=>{
+   const root=document.getElementById("ao-cate-root");
+   const reviewer=document.getElementById("ao-visible-mass-review-root");
+   const middle=document.elementFromPoint(window.innerWidth/2,window.innerHeight/2);
+   return {reviewerVisibility:getComputedStyle(reviewer).visibility,
+    catechismVisibility:getComputedStyle(root).visibility,
+    catechismHit:root===middle||root.contains(middle),
+    middle:middle?.id||middle?.tagName,
+    middleHTML:middle?.outerHTML?.slice(0,250),
+    catechismRect:root?.getBoundingClientRect()?.toJSON?.(),
+    nativeZ:getComputedStyle(root).zIndex,
+    nativePosition:getComputedStyle(root).position,
+    rootClientWidth:root.clientWidth,rootScrollWidth:root.scrollWidth,
+    viewportWidth:window.innerWidth,
+    nativeParent:root.parentElement?.id||root.parentElement?.className};
+  });
+  await page.screenshot({path:screenshotDir+"/"+width+"-native-layer-diagnostic.png"});
+  console.log("Native layer diagnostic",width,JSON.stringify(catechismLayer));
+  assert.equal(catechismLayer.reviewerVisibility,"hidden","photo must yield visual layer while original answer is open");
+  assert.equal(catechismLayer.catechismVisibility,"visible","native Catechism must be visually shown");
+  assert.equal(catechismLayer.catechismHit,true,"native answer must be front-most at viewport centre: "+JSON.stringify(catechismLayer));
+  assert.ok(catechismLayer.rootScrollWidth<=catechismLayer.rootClientWidth+2,
+    "native Catechism must not clip original text sideways: "+JSON.stringify(catechismLayer));
+  const catReturn=page.locator("#aoLivingChurchReturnSanctuary");
+  await catReturn.waitFor({state:"visible",timeout:14000});
+  const catHit=await catReturn.evaluate(el=>{
+   const rect=el.getBoundingClientRect();
+   const nav=document.getElementById("ao-global-ribbon")?.getBoundingClientRect();
+   return {hit:document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2)===el,
+    overlap:nav?rect.bottom>nav.top-3:false};
+  });
+  assert.equal(catHit.hit,true,"Original Catechism overlay obstructs return at "+width);
+  assert.equal(catHit.overlap,false,"Return overlaps global ribbon at "+width);
+  await page.screenshot({path:screenshotDir+"/"+width+"-pius-x-canonical-catechism.png"});
+  await catReturn.click();
+  await stage.waitFor({state:"visible",timeout:12000});
+  const afterCatechism=await page.evaluate(()=>{
+   const w=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
+   return {context:w.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
+    guide:w.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()};
+  });
+  assert.deepEqual(afterCatechism,beforeCatechism,"original source/pose/guide/VMQ trail changed after Catechism");
+  assert.equal(await stage.getAttribute("data-guide"),"pius-x");
+  // The canonical search has restored its own parent screen. Use the actual
+  // in-folio back action rather than incorrectly assuming the home panel.
+  await stage.getByRole("button",{name:"Back to guide"}).click();
+
+  // Pius X style PR #1419 provides editorial scenarios, but the live review
+  // folio publishes ONLY original-source question links, never its C-level replies.
+  // Exercise each topic through the canonical P4 question handoff and exact return.
+  for(const item of [
+   {topic:"PX-STYL-OUR-LADY-01",ref:"PX1912-Q433",needsContext:false},
+   {topic:"PX-STYL-CHILD-CATECHISM-02",ref:"PX1912-Q342",needsContext:true},
+   {topic:"PX-STYL-TEACHING-OBJECTION-03",ref:"PX1912-Q114",needsContext:false}
+  ]){
+   await stage.getByRole("button",{name:/Three source-guided topics/}).click();
+   assert.equal(await stage.locator("[data-pius-topic]").count(),3);
+   await stage.locator('[data-pius-topic="'+item.topic+'"]').click();
+   if(item.needsContext){
+    assert.equal(await stage.locator('[data-pius-ref="'+item.ref+'"]').count(),0,
+     "First Communion source questions require the explicitly selected context");
+    await stage.locator('[data-pius-context-confirm="first-communion"]').click();
+    assert.match(await stage.locator(".lcHistoricalSourceCaution").innerText(),
+      /not today's Catholic fasting rule/);
+   }
+   assert.ok(await stage.locator('[data-pius-ref="'+item.ref+'"]').isVisible());
+   assert.match(await stage.locator(".lcDisclaimer").innerText(),/not his words/i);
+   const contextualBefore=await page.evaluate(()=>{
+    const w=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
+    return {context:w.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
+      guide:w.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()};
+   });
+   await stage.locator('[data-pius-ref="'+item.ref+'"]').click();
+   await page.waitForFunction(()=>{
+    const original=document.getElementById("ao-cate-root");
+    return original&&!original.hidden&&
+      getComputedStyle(original).visibility==="visible"&&
+      getComputedStyle(document.getElementById("ao-visible-mass-review-root")).visibility==="hidden";
+   },null,{timeout:25000});
+   assert.equal(await stage.isVisible(),false,"Original Catechism replaces topic review folio");
+   await page.locator("#aoLivingChurchReturnSanctuary").click();
+   await stage.waitFor({state:"visible",timeout:12000});
+   assert.ok(await stage.locator('[data-pius-ref="'+item.ref+'"]').isVisible(),
+     "Topic/question choice must survive original-source return");
+   const contextualAfter=await page.evaluate(()=>{
+    const w=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
+    return {context:w.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
+      guide:w.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()};
+   });
+   assert.deepEqual(contextualAfter,contextualBefore,
+     "Topic source handoff must preserve source, guide, camera and trail");
+   await stage.locator('[data-pius-back="topics"]').click();
+   assert.equal(await stage.locator("[data-pius-topic]").count(),3);
+   await stage.locator('[data-pius-back="home"]').click();
+  }
+  await stage.locator('[data-persona="canon"]').click();
+  await stage.getByRole("button",{name:"Related Mass moments"}).click();
+  await stage.getByRole("button",{name:/The Offertory.*AO.CARD.010/}).click();
+  await page.waitForFunction(()=>window.AO_MASS_EXPLORER_V1?.status?.()?.open===true,
+    null,{timeout:25000});
+  assert.equal(await stage.isVisible(),false,"portrait stage must hide behind native module");
+  const ret=page.locator("#aoLivingChurchReturnSanctuary");
+  await ret.waitFor({state:"visible",timeout:10000});
+  const hit=await ret.evaluate(el=>{
+    const r=el.getBoundingClientRect(),nav=document.querySelector("#ao-global-ribbon")?.getBoundingClientRect();
+    return {hit:document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)===el,
+      overlap:nav?r.bottom>nav.top-3:false};
+  });
+  assert.equal(hit.hit,true,"Native overlay blocks return button at "+width);
+  assert.equal(hit.overlap,false,"Return button overlaps bottom navigation");
+  await ret.click();
+  await page.waitForFunction(()=>window.AO_MASS_EXPLORER_V1?.status?.()?.open===false,
+    null,{timeout:20000});
+  await stage.waitFor({state:"visible",timeout:12000});
+  assert.equal(await stage.getAttribute("data-guide"),"canon");
+  const after=await page.evaluate(()=>{
+   const child=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
+   return {context:child.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
+    guide:child.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()};
+  });
+  assert.deepEqual(after.context,before.context===null?null:{...before.context,guide:"canon"},
+    "source photo/pose/VMQ/trail must be unchanged; chosen guide should be canon");
+  assert.deepEqual(after.guide,before.guide,"original trial read and skip state changed");
+  await page.screenshot({path:screenshotDir+"/"+width+"-canon-after-native-return.png"});
+  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+  assert.ok(overflow<=2,"horizontal document overflow at "+width+": "+overflow);
+  await stage.getByRole("button",{name:"Explore freely"}).focus();
+  await page.keyboard.press("Escape");
+  assert.equal(await stage.isVisible(),false);
+  assert.deepEqual(errors,[],"unexpected JS exceptions at "+width);
+  await ctx.close();
+  console.log("Living Church P4 real-shell PASS "+width+"px: original 433-question Pius Catechism + canonical Mass and exact photo return");
+ }
+}finally{await browser?.close();await new Promise(ok=>server.close(ok));}
