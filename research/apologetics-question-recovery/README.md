@@ -4,6 +4,18 @@
 
 One recovery workspace inside the existing Ad Orientem GitHub repository. The aim is to find questions from the actual earlier conversations and source files, **not** replace them with simplified or newly invented questions.
 
+## 18 October — Canon conversation content reconciliation (research only)
+
+**Review entrypoint:** [Canon 452 full reconciliation](CANON_452_RECONCILIATION_REPORT_20261018.md). The recovered historic question IDs are now source-preserved as candidate conversation entries for **Monsieur le Chanoine**. The character is a presentation role; original APOL, Church Crisis, Catechism, Mass and other content owners remain authoritative.
+
+- **452/452** question IDs and original excerpt wording preserved in [P1 topic concordance](CANON_HISTORICAL_452_TOPIC_CONCORDANCE_P1_20261018.v1.json); **425** have editorial *topic-only* owner candidates and **27** have no suitable current topic target. **0/452** historical source questions independently verified against full original chats, and **0** exact answers certified from this concordance.
+- [25 Protestant questions reviewed against original bilingual source-draft prose](CANON_PROTESTANT25_SOURCE_ANSWER_AUDIT_P2_20261018.v1.json): **18** directly addressed in an unpublished draft, **5** partially addressed, **2** without adequate dedicated draft answers. These are not publication approvals.
+- [198 denominational question opponent-scope screen](CANON_DENOMINATIONAL_OPPONENT_SCOPE_SCREEN_P3_20261018.v1.json): keyword-in-position evidence only, **not** primary-source or denominational correctness verification.
+- [Exact title-overlap register](CANON_HISTORICAL_CURRENT_TITLE_OVERLAP_20261018.v1.json) shows only **one** normalized exact match between 452 historical titles and 282 current GitHub titles; the original two question identities sharing one text are preserved.
+- Node contract: `node research/apologetics-question-recovery/validate-canon-reconciliation.mjs`. **Committed but not executed/certified in this connector pass.**
+
+**All existing publication gates remain closed.** Do not count 425 provisional topic links as answered questions, 282 current records as unique additional historic questions, or source excerpts as raw-transcript verified quotations. This branch adds no public Canon reader or dialogue scripts.
+
 ## Source classes — do not add or conflate
 
 | Source class | Records | Provenance / what it proves |
