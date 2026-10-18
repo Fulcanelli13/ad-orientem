@@ -108,6 +108,16 @@ More promising differentiators—in this small sample, **not statistically uniqu
 
 **Style tuning:** Start in an early-1900s Catholic register, then select the documented Pius X *situation-specific pattern*. Never treat control-author prose as authentic Pius X wording. Future Sarto letters may change the character's observed frequencies, and the content/source pipeline—not the style layer—retains authority over exact documents and teaching.
 
+## Pre-papal Sarto: informal voice attested by original-letter editions
+
+A second, separate [archival style register](../../data/learn/pius-x-prepapal-conversational-evidence.v1.json) now tracks **six individually locatable cases** drawn from Alejandro M. Dieguez's Vatican-archive edition, *Carte Pio X* (2010), as identified and discussed in his 2014 historical analysis. This is **not** a duplication of the primary historical-content pipeline: these are manner-of-expression observations only, not newly rewritten doctrine or authorised quotations.
+
+The informal letters reveal **situational humour and self-deprecation** about advancement (the promotion rumour and a friend’s proposed Roman appointment), a playful inversion between master and secretary, a colloquial image, and some documented impatience with administrative complexity. The archival scholar also identifies a **question-and-objection catechetical dialogue** between a mayor and the peasant councillor Bortolo and an episode in which Sarto promptly corrected offensive words he used while defending a threatened poor family.
+
+These observations significantly refine the earlier profile. **He was neither a permanently stern censor nor a bland kindly instructor.** He could be conversational, lively, corrective, self-deprecating and practical. The humour is **documented but not quantified**; do not auto-insert a joke in every response. Equally, the single episode of impatience is not a licence to be rude to visitors. The period Catholic register remains, while familiar correspondence supports a distinctly less ceremonious mode.
+
+Important textual boundary: scholarly discussion includes quoted fragments and archival page references, but only a **complete checked original letter** licenses a contextual historical quotation in the app. Citations to the 2010 edition at pp. 390–402, 415–416 and 432–434 identify the next original passages to consult. A described dialogue does not supply its missing lines. The style pipeline makes no claim to his recorded acoustic voice or Italian regional pronunciation.
+
 ## Blind validation and coordination with the content pipeline
 
 Use the ten question prompts in the JSON register for a **style-only** comparison. In each trial the content owner supplies the theological substance; this style owner records:
