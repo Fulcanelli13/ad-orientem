@@ -384,6 +384,8 @@ const SPOTS=[
 const $=id=>document.getElementById(id);
 const state={selected:null,question:null,showAll:false,markers:true,returnFocus:null,returnScroll:0,entries:new Map(),questions:[],objects:[],inspections:[],sourcePack:null,explanationPack:null,historyPack:null,functionPack:null,occasion:"ordinary",view:"church",photoMode:"still",returnPhotoMode:"still",loaded:false,guide:null,experience:"explore",returnExperience:"explore",studyLang:new URLSearchParams(location.search).get("lang")==="fr"?"fr":"en",m3Index:null};
 const GUIDED_OBJECTS=new Set(["AL01","AL06","AL07","AL19","SN02","SN04"]);
+let livingChurchContextP1=null;
+const syncLivingChurchP1=()=>livingChurchContextP1?.sync()??null;
 function clearGuidedPreview(){
  delete $("photo-canvas").dataset.guidePreview;
  document.querySelectorAll(".marker").forEach(b=>{delete b.dataset.guidePreview;});
@@ -512,6 +514,7 @@ async function showPanorama(mode){
   if(state.view!=="panorama"||state.photoMode!==mode)return false;
   const loaded=await panoramaController.open(sceneId);
   if(state.view==="panorama"&&state.photoMode===mode)$("panorama-retry").hidden=loaded;
+  syncLivingChurchP1();
   return loaded;
  }catch(error){
   if(state.view==="panorama"&&state.photoMode===mode){
@@ -833,8 +836,43 @@ async function guideInit(pilot){
    if(ids.length!==97)throw Error("Research answer owners unavailable");
    state.guide=mod.mountVisibleMassDialogueFolio(window,{
      graph,pilot,answerIds:ids,navigate:guideNavigate,onPreview:previewGuideObject,
-     onModeChange:mode=>{if(mode==="explore"&&state.selected)closeCard();setExperience(mode);}
+     onModeChange:mode=>{if(mode==="explore"&&state.selected)closeCard();setExperience(mode);syncLivingChurchP1();}
    });
+   // P1 is optional, hidden and fully source-owned. The public viewer does not
+   // activate a cross-module character layer or publish the 97 research answers.
+   let livingReview=new URLSearchParams(location.search).get("aoLivingChurchReview")==="1";
+   try {
+     livingReview ||= window.parent!==window &&
+       new URLSearchParams(window.parent.location.search).get("aoVisibleMassReview")==="1";
+   } catch { /* Standalone cross-origin embedding is not a review grant. */ }
+   if(livingReview){
+     try{
+       const lc=await import("./visible-mass-living-church-adapter.mjs");
+       livingChurchContextP1=lc.createVisibleMassLivingChurchAdapter({
+         pilot,graph,reviewEnabled:()=>livingReview,
+         sourceStatus:()=>({
+           view:state.view,photoMode:state.photoMode,selected:state.selected,
+           question:state.question,mode:state.experience,lang:state.studyLang,
+           trailId:state.guide?.status()?.active??null
+         }),
+         sourcePose:()=>state.view==="panorama"
+           ?panoramaController?.status()?.pose??null
+           :{x:$("photo-viewport").scrollLeft,y:$("photo-viewport").scrollTop}
+       });
+       window.AO_VISIBLE_MASS_LIVING_CHURCH_P1=livingChurchContextP1;
+       // Original event handlers remain the ONLY mutators of UI/trail/VMQ state.
+       // We sample their committed state after events, never before.
+       document.addEventListener("click",()=>queueMicrotask(syncLivingChurchP1));
+       $("photo-viewport").addEventListener("scroll",syncLivingChurchP1,{passive:true});
+       $("panorama-mount").addEventListener("pointerup",()=>queueMicrotask(syncLivingChurchP1));
+       document.addEventListener("keyup",()=>queueMicrotask(syncLivingChurchP1));
+       $("study-language").addEventListener("change",()=>queueMicrotask(syncLivingChurchP1));
+       syncLivingChurchP1();
+     }catch(error){
+       livingChurchContextP1=null;
+       console.warn("Optional Living Church context unavailable; original sanctuary remains usable",error);
+     }
+   }
  }catch(error){
    console.warn("Optional guide unavailable; free exploration remains accessible",error);
    $("guide-dock").hidden=true;
@@ -992,9 +1030,9 @@ window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
  m5Viewpoint:m5Photo,m5Available:!!m5PhotoModule,m5Pose:m5Photo?m5StillPoses.get(m5Photo):null,translatedSourceCandidates:state.m3Index?.count??0,imageFailed:$("photo-canvas").classList.contains("image-failed")}),
  experience:()=>state.experience,
  guideStatus:()=>state.guide?.status()??null,
- chooseTrail:id=>state.guide?.chooseTrail(id)??false,
- guideExplore:id=>state.guide?.explore(id)??false,
- select:id=>select(id,null)
+ chooseTrail:id=>{const ok=state.guide?.chooseTrail(id)??false;syncLivingChurchP1();return ok;},
+ guideExplore:id=>{const ok=state.guide?.explore(id)??false;syncLivingChurchP1();return ok;},
+ select:id=>{select(id,null);syncLivingChurchP1();}
 });
 })();
 </script>
