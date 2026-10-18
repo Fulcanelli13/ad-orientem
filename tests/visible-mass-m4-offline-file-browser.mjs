@@ -36,6 +36,20 @@ try{
   assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.active,"BROMPTON_PANO");
   assert.equal(await page.locator("#original-object-choices").isVisible(),false);
   await page.screenshot({path:out+"/"+spec.name+"-brompton-actual-offline.png",fullPage:true});
+  for(const [id,label] of [
+   ["BROMPTON_ALTAR_1","High altar"],["BROMPTON_ALTAR_2","High altar"],
+   ["BROMPTON_LADY_ALTAR","Lady altar"],["BROMPTON_SACRED_HEART","Sacred Heart"]]){
+   await page.locator('[data-m5-viewpoint="'+id+'"]').click();
+   await page.waitForFunction(id=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().m5Viewpoint===id&&
+    document.querySelector("#m5-close-photo").naturalWidth>1000,id,{timeout:25000});
+   assert.match(await page.locator("#photo-credit").innerText(),/AndyScott.*CC BY-SA 4.0/);
+   assert.match(await page.locator("#photo-caption").innerText(),new RegExp(label));
+   assert.equal(await page.locator("#hotspots").isVisible(),false);
+   await page.screenshot({path:out+"/"+spec.name+"-m5-"+id.toLowerCase()+"-actual-offline.png",fullPage:true});
+  }
+  await page.locator('[data-m5-viewpoint="panorama"]').click();
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().view==="panorama");
+
   await page.locator('[data-photo-mode="newman"]').click();
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.active==="NEWMAN_360"&&window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama.loaded,null,{timeout:30000});
   assert.match(await page.locator("#photo-intro").innerText(),/Newman University Church/);
@@ -43,7 +57,7 @@ try{
   // M5: same integrated visitor opens four individually sourced real close
   // photographs, never transplanted marker positions or fabricated walking.
   for(const [id,label] of [
-   ["NEWMAN_ALTAR_1","Main altar"],["NEWMAN_ALTAR_2","Main altar"],
+   ["NEWMAN_ALTAR_1","Main altar"],["NEWMAN_ALTAR_2","Main altar"],["NEWMAN_ALTAR_3","Main altar"],
    ["NEWMAN_APSE","Apse"],["NEWMAN_PULPIT","Pulpit"]]){
    await page.locator('[data-m5-viewpoint="'+id+'"]').click();
    await page.waitForFunction(id=>
@@ -77,7 +91,7 @@ try{
   assert.deepEqual(errors,[],"Offline single HTML must have no unhandled browser JS exceptions");
   assert.deepEqual(outgoing,[],"Default offline original-photo visitor must not contact remote services");
   console.log("PASS M4 genuine photographic single HTML opened from file://",spec.name,
-   JSON.stringify({questions:summary.questionsLoaded,glossary:summary.glossaryLoaded,offlinePhotographs:7}));
+   JSON.stringify({questions:summary.questionsLoaded,glossary:summary.glossaryLoaded,offlinePhotographs:12}));
   await context.close();
  }
 }finally{await browser?.close();}
