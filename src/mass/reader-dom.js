@@ -3379,7 +3379,25 @@ export function createReaderDomAdapter({
     // Recalculate scroll travel only when the paragraph card is replaced;
     // doing so during a cue-only state update would briefly clamp scrollTop
     // and prevent short cards from ever reaching their next invocation.
-    if(current.cardUpdate)ensureShortCardCueTravel();
+    if(current.cardUpdate){
+      ensureShortCardCueTravel();
+      // The fixed-height LIVE stage can settle a frame after renderMoment
+      // (rail dimensions, Schola reserve and host shell are projected in
+      // separate owners). The first measurement can therefore see a 450px
+      // viewport that is actually 712px once the stage settles. Re-measure
+      // after layout, never on ordinary scroll, so no liturgical cue is
+      // disturbed and the padding does not clamp ongoing reading.
+      const cardElement=root.querySelector(".ao-prayer-card");
+      const firstParagraph=body?.firstElementChild;
+      const win=cardElement?.ownerDocument?.defaultView;
+      const raf=win?.requestAnimationFrame?.bind(win);
+      if(raf)raf(()=>raf(()=>{
+        if(!cardElement?.isConnected||
+          root.querySelector(".ao-prayer-card")!==cardElement||
+          body?.firstElementChild!==firstParagraph)return;
+        ensureShortCardCueTravel();
+      }));
+    }
     // Never cover the missal to dramatize an Elevation. A source-first
     // 48-card elevation action often leaves genuine empty space below
     // its rubric; only use that space if measured geometry permits it.
