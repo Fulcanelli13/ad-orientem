@@ -52,7 +52,7 @@ const DEFINITIONS = [
  {objective:'prayer',branch:'family',rx:/\b(family rosary|family prayer|rosaire en famille|chapelet en famille|prier en famille)\b/},
  {objective:'prayer',branch:'adoration',rx:/\b(adoration|benediction|blessed sacrament|saint sacrement)\b/},
  {objective:'prayer',branch:'devotions',rx:/\b(novena|neuvaine|first friday|first saturday|sacred heart)\b/},
- {objective:'prayer',branch:'begin',rx:/\b(pray|prayer|priere|prier|oraison|devotion)\b/},
+ {objective:'prayer',branch:'begin',rx:/\b(pray|praying|prayers|prayer|priere|prier|priant|prions|oraison|devotion)\b/},
  {objective:'prepare',branch:'first_communion',rx:/\b(first communion|premiere communion|first holy communion)\b/},
  {objective:'prepare',branch:'baptism',rx:/\b(baptis|bapteme|godparent|parrain|marraine)\b/},
  {objective:'prepare',branch:'marriage',rx:/\b(marriage|matrimony|wedding|mariage|epoux|fiance)\b/},
