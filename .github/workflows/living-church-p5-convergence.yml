@@ -1,0 +1,91 @@
+name: Living Church P5 source convergence and no-publish acceptance
+
+on:
+  pull_request:
+    paths:
+      - "data/learn/living-church-p5-convergence-lock.v1.json"
+      - "docs/product/LIVING-CHURCH-P5-RECONCILIATION-AND-RELEASE-GATE-20261018.md"
+      - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
+      - "previews/visible-mass-3d/M6_*"
+      - "previews/visible-mass-3d/m6-atlas-review-template.html"
+      - "tests/living-church-p5-source-convergence.mjs"
+      - "tests/visible-mass-m4-*"
+      - "tests/visible-mass-m6-*"
+      - "tools/build-visible-mass-m6-atlas-review.mjs"
+      - ".github/workflows/visible-mass-m6-photographic-atlas.yml"
+      - ".github/workflows/living-church-p5-convergence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  provenance-and-scope:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Reject changes outside convergence and M6 research
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --name-only HEAD^1 HEAD | while IFS= read -r path; do
+            case "$path" in
+              .github/workflows/living-church-p5-convergence.yml|.github/workflows/visible-mass-m6-photographic-atlas.yml|data/learn/living-church-p5-convergence-lock.v1.json|docs/product/LIVING-CHURCH-P5-RECONCILIATION-AND-RELEASE-GATE-20261018.md|previews/visible-mass-3d/sanctuary-hotspot-pilot.html|previews/visible-mass-3d/M6_ATLAS_RESEARCH_STRATEGY_20261018.md|previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json|previews/visible-mass-3d/m6-atlas-review-template.html|tests/visible-mass-m4-offline-file-browser.mjs|tests/visible-mass-m4-panorama.mjs|tests/visible-mass-m6-atlas-review-browser.mjs|tests/visible-mass-m6-photo-atlas-contract.mjs|tools/build-visible-mass-m6-atlas-review.mjs|tests/living-church-p5-source-convergence.mjs)
+                ;;
+              *) echo "::error::P5 attempts out-of-scope or LIVE/Missal/Mass reader mutation: $path"; exit 1 ;;
+            esac
+          done
+      - name: Pin 16 original source owners and forbid publication
+        run: |
+          node tests/living-church-p5-source-convergence.mjs
+          node tests/visible-mass-m6-photo-atlas-contract.mjs
+          node tests/visible-mass-m4-panorama.mjs
+          node tests/ask-church-objective-engine.mjs
+          node tests/living-church-visible-mass-adapter.mjs
+          node tests/living-church-catechism-source.mjs
+          node tests/living-church-character-folio.mjs
+
+  native-real-shell-and-curation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    needs: provenance-and-scope
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install headless Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Build exact offline M6 research review from source
+        run: node tools/build-visible-mass-m6-atlas-review.mjs
+      - name: Validate source-owned offline M6 atlas (phone and desktop)
+        run: node tests/visible-mass-m6-atlas-review-browser.mjs
+      - name: Verify latest M5 original viewer plus Living Church P1-P4 native returns
+        run: |
+          node tests/living-church-visible-mass-phone.mjs
+          node tests/living-church-p4-native-catechism-browser.mjs
+          node tests/living-church-ask-real-shell.mjs
+          node tests/living-church-character-phone.mjs
+      - name: Preserve review screenshots without any publication action
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-church-p5-integrated-review-only
+          path: |
+            dist/living-church/p4-review/*.png
+            dist/living-church/p3-review/*.png
+            dist/visible-mass/m6-review-qa/*.png
+          if-no-files-found: warn
