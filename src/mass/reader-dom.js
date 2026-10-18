@@ -464,6 +464,8 @@ button.ao-schola-control{cursor:pointer}
   min-width:0;height:34px;font:500 23px/1 Georgia,serif;color:var(--ao-mass-accent-text);
   background:rgba(255,255,255,.035);border-color:rgba(225,207,145,.18)
 }
+.ao-schola-control[data-schola-release]{grid-column:1/-1;min-height:36px;font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-mass-accent-text);border-color:color-mix(in srgb,var(--ao-mass-accent) 35%,transparent);letter-spacing:.04em}
+.ao-schola-control[data-schola-release][hidden]{display:none!important}
 .ao-schola-control[data-schola-previous]:disabled,.ao-schola-control[data-schola-next]:disabled{
   opacity:.25;cursor:default
 }
@@ -1548,8 +1550,11 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     sacredMinister:projectCertifiedSolemnMinisterRubric(moment.sacredMinister),
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
-    scholaShared:sharedTextWithSchola && Boolean(textValue(schola)),
-    scholaVisible:!sharedTextWithSchola && Boolean(textValue(schola)),
+    // An unresolved sung Benedictus requires a real visible action; never
+    // suppress the control just because a *priest* paragraph contains the
+    // same words as a Schola part that has NOT yet begun.
+    scholaShared:sharedTextWithSchola && !schola?.benedictusHold && Boolean(textValue(schola)),
+    scholaVisible:(!sharedTextWithSchola || schola?.benedictusHold===true) && Boolean(textValue(schola)),
     guide,
     priestPositionIconKey:moment.priestPositionIconKey ?? null,
     priestActionIconKey:moment.priestActionIconKey ?? null,
@@ -1696,6 +1701,12 @@ export function buildReaderShellMarkup(prepared = {}) {
         <option value="true">Observed local custom — include Confiteor, Misereatur and Indulgentiam</option>
       </select></label>
       <small>Local or older custom only; not prescribed by the 1962 Missal. The opening Confiteor at the foot of the altar is unchanged.</small>
+      <label>Schola Sanctus setting<select data-reader-customary="sanctusPerformance" aria-label="Schola Sanctus and Benedictus performance">
+        <option value="UNSPECIFIED">Not sure — confirm when Benedictus begins</option>
+        <option value="GREGORIAN">Gregorian chant — continuous Sanctus and Benedictus</option>
+        <option value="POLYPHONIC">Polyphonic — Benedictus after Consecration</option>
+      </select></label>
+      <small>In the 1962 Sung Mass the priest recites the whole Sanctus. The sung Benedictus timing follows the actual choir. For polyphony, release the sung Benedictus only after the Chalice Consecration and genuflection.</small>
     </div>
     <button class="ao-mass-prefs-more" type="button" data-reader-glossary>Terms & rubrics</button><button class="ao-mass-prefs-more" type="button" data-reader-parameters>App settings</button>
   </aside>
@@ -1772,6 +1783,7 @@ export function buildReaderShellMarkup(prepared = {}) {
         <span class="ao-schola-control ao-schola-speed" data-role="schola-speed" aria-label="Schola speed">0.45×</span>
         <button type="button" class="ao-schola-control" data-schola-faster aria-label="Faster Schola text">+</button>
         <button type="button" class="ao-schola-control" data-schola-next aria-label="Next Schola phrase" title="Next Schola phrase">›</button>
+        <button type="button" class="ao-schola-control" data-schola-release hidden aria-label="Start sung Benedictus when actually heard">BEGIN SUNG BENEDICTUS</button>
         <button type="button" class="ao-schola-control" data-schola-pause aria-label="Pause Schola text" aria-pressed="false">PAUSE</button>
       </div>
     </div>
@@ -1946,6 +1958,7 @@ export function createReaderDomAdapter({
   onCustomaryChange = null,
   onScholaAdvance = null,
   onScholaPrevious = null,
+  onScholaRelease = null,
   sections = [],
   onSectionSelect = null,
   allowPresentationModeSwitch = true,
@@ -2133,7 +2146,13 @@ export function createReaderDomAdapter({
     const next=root.querySelector("[data-schola-next]");
     if(previous)previous.disabled=!source || Number(source.index)<=0;
     if(next)next.disabled=!source || Boolean(source.complete) ||
-      Number(source.index)>=Number(source.total)-1;
+      Boolean(source.benedictusHold) || Number(source.index)>=Number(source.total)-1;
+    const release=root.querySelector("[data-schola-release]");
+    if(release){
+      release.hidden=!source?.benedictusHold;
+      release.textContent=source?.sanctusPerformance==="POLYPHONIC"
+        ? "BEGIN BENEDICTUS · AFTER CHALICE" : "BEGIN BENEDICTUS · WHEN HEARD";
+    }
     const speedNode=root.querySelector('[data-role="schola-speed"]');
     if(speedNode)speedNode.textContent=scholaSpeed.toFixed(2)+"×";
     const pause=root.querySelector('[data-schola-pause]');
@@ -2477,7 +2496,7 @@ export function createReaderDomAdapter({
       const select=event.target?.closest?.("[data-reader-customary]");
       if(!select||select.disabled||!current?.customary)return;
       const kind=select.dataset.readerCustomary;
-      if(!["postureProfile","gestureProfile","localPosture","secondConfiteor"].includes(kind))return;
+      if(!["postureProfile","gestureProfile","localPosture","secondConfiteor","sanctusPerformance"].includes(kind))return;
       onCustomaryChange?.({kind,value:select.value,cueId:current.customary.cueId});
     };
     root.addEventListener?.("change",rootChangeListener);
@@ -2532,6 +2551,12 @@ export function createReaderDomAdapter({
       if(scholaPrevious){
         if(!scholaPrevious.disabled && current?.scholaVisible && typeof onScholaPrevious==="function")
           onScholaPrevious(current?.schola,current,prepared);
+        return;
+      }
+      const scholaRelease=event.target?.closest?.("[data-schola-release]");
+      if(scholaRelease){
+        if(!scholaRelease.hidden && current?.scholaVisible && typeof onScholaRelease==="function")
+          onScholaRelease(current.schola,current,prepared);
         return;
       }
       const scholaNext=event.target?.closest?.("[data-schola-next]");
@@ -2897,6 +2922,8 @@ export function createReaderDomAdapter({
       }
       const communionConfiteor=root.querySelector('[data-reader-customary="secondConfiteor"]');
       if(communionConfiteor)communionConfiteor.value=String(current.customary.secondConfiteor===true);
+      const performance=root.querySelector('[data-reader-customary="sanctusPerformance"]');
+      if(performance)performance.value=current.customary.sanctusPerformance??"UNSPECIFIED";
       const note=root.querySelector("[data-customary-cue-note]");
       if(note)note.textContent=current.customary.cueId
         ? current.customary.localPostureEditable

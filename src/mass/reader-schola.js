@@ -111,10 +111,37 @@ export function createNativeScholaController(args={}){
     if(segment.cueId)cueToTrack.set(segment.cueId,{trackId:track.id,index:track.segments.indexOf(segment)});
   }
   let activeTrackId=null,index=0,complete=false,lastSyncedCueId=null;
+  // Choir setting belongs to the actual local performance. It cannot be
+  // inferred from the Mass form, date, priest's paragraph or display timer.
+  const normalizeStyle=v=>["GREGORIAN","POLYPHONIC"].includes(v)?v:"UNSPECIFIED";
+  let sanctusPerformance=normalizeStyle(args?.prepared?.readerPreferences?.sanctusPerformance);
+  let benedictusReleased=sanctusPerformance==="GREGORIAN";
+  const isSanctus=()=>activeTrackId==="SANCTUS_BENEDICTUS";
+  const isHeld=()=>isSanctus()&&index===2&&!benedictusReleased;
+  function setSanctusPerformance(value){
+    const style=normalizeStyle(value);
+    if(style===sanctusPerformance)return state();
+    sanctusPerformance=style;
+    benedictusReleased=style==="GREGORIAN";
+    if(isSanctus()&&!benedictusReleased&&index>=3){
+      index=2;complete=false;lastSyncedCueId=null;
+    }
+    return state();
+  }
+  function releaseBenedictus(){
+    // Explicit button press AFTER independently observing the Schola begin
+    // after Chalice Consecration (or an unclassified local performance).
+    // Merely scrolling over the priest's Benedictus cannot release it.
+    if(!isSanctus()||benedictusReleased)return state();
+    benedictusReleased=true;
+    index=3;complete=false;lastSyncedCueId=null;
+    return state();
+  }
 
   function state(){
     const track=activeTrackId?byId.get(activeTrackId):null;
     const segment=track?.segments?.[index]??null;
+    const hold=isHeld();
     return Object.freeze({
       supported:true,reason:null,
       schola:segment?Object.freeze({
@@ -122,15 +149,20 @@ export function createNativeScholaController(args={}){
         latin:segment.latin,english:segment.english,
         trackId:track.id,segmentId:segment.id,cueId:segment.cueId,
         index,total:track.segments.length,complete,
+        benedictusHold:hold,sanctusPerformance,
         owner:"R17_NATIVE_SCHOLA",
       }):null,
       ownership:segment?"R17_NATIVE_SCHOLA":"R17_EXACT_SCHOLA_NONE",
       trackId:track?.id??null,index,total:track?.segments?.length??0,complete,
+      benedictusHold:hold,sanctusPerformance,
     });
   }
   function activate(trackId,{reset=true}={}){
     if(!byId.has(trackId)){activeTrackId=null;index=0;complete=false;lastSyncedCueId=null;return state()}
-    if(activeTrackId!==trackId || reset){activeTrackId=trackId;index=0;complete=false;lastSyncedCueId=null}
+    if(activeTrackId!==trackId || reset){
+      activeTrackId=trackId;index=0;complete=false;lastSyncedCueId=null;
+      if(trackId==="SANCTUS_BENEDICTUS")benedictusReleased=sanctusPerformance==="GREGORIAN";
+    }
     return state();
   }
   // All navigable cards may represent one part of an original macro.
@@ -185,6 +217,12 @@ export function createNativeScholaController(args={}){
     const id=String(cueId??"");
     const hit=cueToTrack.get(id);
     if(!hit)return state();
+    if(hit.trackId==="SANCTUS_BENEDICTUS"&&hit.index>=3&&!benedictusReleased){
+      // This source cue is the priestly prayer, NOT an observation that the
+      // Schola has begun singing the delayed polyphonic Benedictus.
+      if(isSanctus()&&index<2)index=2;
+      return state();
+    }
     // A layout refresh or unchanged cue focus must not rewind a Schola
     // segment manually advanced within its independent track.
     if(id===lastSyncedCueId && activeTrackId===hit.trackId)return state();
@@ -195,6 +233,7 @@ export function createNativeScholaController(args={}){
   function next(){
     const track=activeTrackId?byId.get(activeTrackId):null;
     if(!track)return state();
+    if(isHeld())return state(); // timer or arrow cannot invent the choir
     if(index>=track.segments.length-1){complete=true;return state()}
     index+=1;complete=false;return state();
   }
@@ -209,6 +248,7 @@ export function createNativeScholaController(args={}){
   return Object.freeze({
     schema:"ao-r17-native-schola-v1",supported:true,reason:null,
     tracks:built.tracks,project:state,activateForCard,syncCue,next,previous,finish,selectTrack,
+    setSanctusPerformance,releaseBenedictus,
     trackIds:Object.freeze(built.tracks.map(t=>t.id)),
   });
 }

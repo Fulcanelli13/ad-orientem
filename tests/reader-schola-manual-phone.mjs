@@ -83,6 +83,57 @@ try{
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.index===1);
    assert.equal(await page.locator("[data-schola-pause]").getAttribute("aria-pressed"),"true",
      "Manual Schola correction should not override user's pause");
+   // Neither a timer nor the priest's separate Benedictus cue can assert
+   // that the choir has begun its delayed sung Benedictus.
+   const selected=await page.evaluate(()=>{
+     const node=document.querySelector('[data-reader-customary="sanctusPerformance"]');
+     node.value="POLYPHONIC";
+     node.dispatchEvent(new Event("change",{bubbles:true}));
+     return {value:node.value,mode:window.__AO_PHONE_PREVIEW.getScholaState().sanctusPerformance};
+   });
+   assert.equal(selected.mode,"POLYPHONIC",JSON.stringify(selected));
+   await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const preface=api.model.cards.find(c=>c.title==="Preface");
+     const sanctus=api.model.cards.find(c=>c.title==="Sanctus");
+     const canon=api.model.cards.find(c=>c.title==="Te igitur");
+     api.showSequence(preface.sequence);
+     api.showSequence(sanctus.sequence);
+     api.showSequence(canon.sequence);
+   });
+   await page.evaluate(()=>{
+     window.__AO_PHONE_PREVIEW.nextSchola();
+     window.__AO_PHONE_PREVIEW.nextSchola();
+   });
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().benedictusHold===true);
+   assert.equal((await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola.cueId)),
+     "AO.SM.C0147","Delayed Benedictus barrier was not placed after Hosanna");
+   const release=page.locator("[data-schola-release]");
+   // The model updates synchronously, the actual dock control only after
+   // the next reader requestAnimationFrame. Never mistake that handoff for
+   // a permanently missing observable action.
+   await page.waitForFunction(()=>document.querySelector("[data-schola-release]")?.hidden===false,
+     null,{timeout:7000});
+   assert.equal(await page.locator("[data-schola-next]").isDisabled(),true);
+   assert.equal(await release.isVisible(),true,
+     "The choir's delayed Benedictus needs an actual manually observed release");
+   const beforeRelease=await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+   }));
+   await release.click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.cueId==="AO.SM.C0148");
+   const afterRelease=await page.evaluate(()=>({
+     card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+     holding:window.__AO_PHONE_PREVIEW.getScholaState().benedictusHold,
+   }));
+   assert.deepEqual({card:afterRelease.card,cue:afterRelease.cue},beforeRelease,
+     "Releasing Schola Benedictus wrongly moved the priest's Mass clock");
+   assert.equal(afterRelease.holding,false);
+   await page.waitForFunction(()=>document.querySelector("[data-schola-release]")?.hidden===true,
+     null,{timeout:7000});
+   assert.equal(await release.isVisible(),false);
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
    assert.equal(overflow,false,"Schola controls overflow narrow phone");
    assert.deepEqual(errors,[],"Runtime page errors");

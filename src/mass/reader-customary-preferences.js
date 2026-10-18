@@ -1,6 +1,6 @@
 // Local participation customs are display-only. They never rewrite the
 // 1962 rubrics, priest actions, or the Mass's canonical event sequence.
-import { resolveReaderPreferences, POSTURE_PROFILES, GESTURE_PROFILES } from "./reader-state.js";
+import { resolveReaderPreferences, POSTURE_PROFILES, GESTURE_PROFILES, SANCTUS_PERFORMANCES } from "./reader-state.js";
 
 export const MASS_CUSTOMARY_STORAGE_KEY="ao-mass-customary-v1";
 const POSTURES=new Set(["STAND","SIT","KNEEL"]);
@@ -33,6 +33,8 @@ export function readMassCustomaryPreferences(base={},storage=null){
     postureProfile:POSTURE_PROFILES.includes(saved.postureProfile)?saved.postureProfile:source.postureProfile,
     gestureProfile:GESTURE_PROFILES.includes(saved.gestureProfile)?saved.gestureProfile:source.gestureProfile,
     secondConfiteor:typeof saved.secondConfiteor==="boolean" ? saved.secondConfiteor : source.secondConfiteor===true,
+    sanctusPerformance:SANCTUS_PERFORMANCES.includes(saved.sanctusPerformance)
+      ? saved.sanctusPerformance : source.sanctusPerformance,
     localPostures:local,
   });
 }
@@ -58,6 +60,9 @@ export function updateMassCustomaryPreferences(preferences,change,storage=null){
   }else if(input.kind==="credoSitStart"){
     if(!["AO.SM.C0097","AO.SM.C0098"].includes(input.value))return preferences;
     next.credoSitStart=input.value;
+  }else if(input.kind==="sanctusPerformance"){
+    if(!SANCTUS_PERFORMANCES.includes(input.value))return preferences;
+    next.sanctusPerformance=input.value;
   }else if(input.kind==="secondConfiteor"){
     if(input.value!=="true"&&input.value!=="false")return preferences;
     next.secondConfiteor=input.value==="true";
@@ -74,6 +79,7 @@ export function updateMassCustomaryPreferences(preferences,change,storage=null){
     followPriestSeating:resolved.followPriestSeating,
     credoSitStart:resolved.credoSitStart,
     secondConfiteor:resolved.secondConfiteor,
+    sanctusPerformance:resolved.sanctusPerformance,
   }));
   return resolved;
 }
