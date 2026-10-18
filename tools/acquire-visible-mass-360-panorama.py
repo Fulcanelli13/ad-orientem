@@ -20,20 +20,38 @@ files={
 }
 out=Path("dist/visible-mass/panorama-sources");out.mkdir(parents=True,exist_ok=True)
 metadata={}
-for key,name in files.items():
- p={"action":"query","format":"json","formatversion":"2","prop":"imageinfo",
- "iiprop":"url|mime|size|extmetadata","iiurlwidth":4096 if key.endswith("360") else 1800,"titles":"File:"+name}
- url="https://commons.wikimedia.org/w/api.php?"+urlencode(p)
- for attempt in range(5):
+# Wikimedia limits repeated sequential imageinfo calls. Query all required
+# original files in two batches (pano and still), preserving exact title IDs.
+def read_batch(items,width):
+ titles="|".join("File:"+name for _,name in items)
+ url="https://commons.wikimedia.org/w/api.php?"+urlencode({
+  "action":"query","format":"json","formatversion":"2",
+  "prop":"imageinfo","iiprop":"url|mime|size|extmetadata",
+  "iiurlwidth":width,"titles":titles
+ })
+ for attempt in range(6):
   try:
-   r=S.get(url,timeout=30);r.raise_for_status()
-   data=r.json()
-   pg=data["query"]["pages"][0];info=pg["imageinfo"][0]
-   if "image" not in info.get("mime",""):raise ValueError("not image")
-   break
+   r=S.get(url,timeout=50);r.raise_for_status()
+   pages=r.json()["query"]["pages"]
+   found={p["title"].removeprefix("File:").replace("_"," ").casefold():p for p in pages}
+   result={}
+   for key,name in items:
+    pg=found.get(name.replace("_"," ").casefold())
+    if not pg or "imageinfo" not in pg:raise ValueError("Commons source title missing: "+name)
+    info=pg["imageinfo"][0]
+    if "image" not in info.get("mime",""):raise ValueError("Not an image: "+name)
+    result[key]=info
+   return result
   except Exception as e:
-   if attempt==4:raise
-   print("retry API",name,str(e)[:130],flush=True);time.sleep(3+attempt*3)
+   if attempt==5:raise
+   delay=(18*(attempt+1)) if getattr(getattr(e,"response",None),"status_code",0)==429 else 3+attempt*4
+   print("retry batch imageinfo",str(e)[:150],"sleep",delay,flush=True)
+   time.sleep(delay)
+panos=[(key,name) for key,name in files.items() if key.endswith("360")]
+stills=[(key,name) for key,name in files.items() if not key.endswith("360")]
+source_info={**read_batch(panos,4096),**read_batch(stills,1800)}
+for key,name in files.items():
+ info=source_info[key]
  image=None
  for candidate in [info.get("thumburl"),info.get("url")]:
   if not candidate:continue
@@ -44,7 +62,8 @@ for key,name in files.items():
     image=Image.open(io.BytesIO(rr.content));image.load()
     break
    except Exception as e:
-    print("retry image",key,str(e)[:170],flush=True);time.sleep(3+attempt*4)
+    delay=18*(attempt+1) if getattr(getattr(e,"response",None),"status_code",0)==429 else 3+attempt*4
+    print("retry image",key,str(e)[:170],"sleep",delay,flush=True);time.sleep(delay)
   if image is not None:break
  if image is None:raise RuntimeError("Image acquisition failed: "+key)
  image=ImageOps.exif_transpose(image).convert("RGB")
@@ -63,5 +82,5 @@ for key,name in files.items():
  "artist":val("Artist"),"license":val("LicenseShortName"),"license_url":val("LicenseUrl"),
  "width":image.width,"height":image.height,"adaptations":"Recompressed and resized for offline interactive panorama preview."}
  print("ACQUIRED",key,image.size,dest.stat().st_size,metadata[key]["license"],flush=True)
- time.sleep(0.8)
+ time.sleep(1.7)
 (out/"metadata.json").write_text(json.dumps(metadata,indent=2),encoding="utf-8")
