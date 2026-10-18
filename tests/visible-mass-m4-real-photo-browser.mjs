@@ -66,6 +66,10 @@ try{
    assert.equal(await page.locator("#photo-transform").isVisible(),true,"derived perspective attribution");
    assert.ok((await page.locator("#photo-caption").innerText()).includes(scene.venue.split(",")[0]));
    await page.locator("#panorama-stage canvas").screenshot({path:out+"/"+viewport.name+"-"+mode+"-altar-facing.png"});
+   // Human acceptance review needs actual photographed church within the complete
+   // integrated Explore / Discover / Understand interface, not a synthetic
+   // sphere or a cropped canvas. Keep labels and source credit visible.
+   await page.screenshot({path:out+"/"+viewport.name+"-"+mode+"-visitor-original-photo.png",fullPage:true});
    // Same source decoded independently. Compare pixel mapping when looking UP
    // versus DOWN; this detects a vertically flipped shader/texture upload.
    const readings=[];
