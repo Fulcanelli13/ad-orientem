@@ -153,6 +153,9 @@ try{
   });
   assert.deepEqual(afterCatechism,beforeCatechism,"original source/pose/guide/VMQ trail changed after Catechism");
   assert.equal(await stage.getAttribute("data-guide"),"pius-x");
+  // The canonical search has restored its own parent screen. Use the actual
+  // in-folio back action rather than incorrectly assuming the home panel.
+  await stage.getByRole("button",{name:"Back to guide"}).click();
 
   // Pius X style PR #1419 provides editorial scenarios, but the live review
   // folio publishes ONLY original-source question links, never its C-level replies.
