@@ -1,0 +1,45 @@
+name: Living Church P2 original Ask and sanctuary return
+
+on:
+  pull_request:
+    paths:
+      - "src/learn/ask-church-*.js"
+      - "src/learn/living-church-ask-integration.js"
+      - "src/learn/visible-mass-review.js"
+      - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
+      - "data/learn/ask-church-app-route-survey.v1.json"
+      - "tests/living-church-ask-*.mjs"
+      - ".github/workflows/living-church-ask-p2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  app-wide-objective-native-return:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Canonical source and destination tests
+        run: |
+          node --check src/learn/living-church-ask-integration.js
+          node --check src/learn/visible-mass-review.js
+          node tests/ask-church-app-route-survey.mjs
+          node tests/ask-church-objective-engine.mjs
+          node tests/ask-church-handoff-lifecycle.mjs
+          node tests/living-church-ask-native-return.mjs
+          node tests/living-church-visible-mass-adapter.mjs
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Real original app-shell and native return at phone and desktop
+        run: node tests/living-church-ask-real-shell.mjs
