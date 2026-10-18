@@ -16,10 +16,10 @@ try{
   await page.waitForFunction(()=>window.AO_M6_COMPARATIVE?.status()?.objects===170);
   const status=await page.evaluate(()=>window.AO_M6_COMPARATIVE.status());
   assert.equal(status.images,112);
-  assert.equal(status.staged,8,"Research batch is displayed without inflating the source-owned 112-record master");
-  assert.equal(status.ready_four,1,"Only the staged four-photograph chalice comparison reaches metadata target, not editorial approval");
+  assert.equal(status.staged,17,"Two staged acquisition batches must not inflate the 112-record canonical register");
+  assert.equal(status.ready_four,3,"Chalice, corporal burse and chalice veil must have at least four distinct metadata candidates; no approval implied");
   assert.equal(status.pilot,30);
-  assert.equal(status.showing,1,"Start in ready-to-compare view, not a gallery full of single or poor options");
+  assert.equal(status.showing,3,"Start with only genuinely populated comparison groups, not weak one-photo source records");
   assert.equal(status.selected,"SV01");
   assert.equal(await page.locator("#m6-source-archive").isVisible(),false,"Research archive starts hidden");
   assert.ok(status.ready_four<30,"Do not misrepresent existing sparse acquisitions as curated alternatives");
@@ -54,7 +54,17 @@ try{
   assert.equal(review.decisions.length,2);
 
   await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("LN04"));
+  assert.equal(await page.locator("#m6-best .m6-card").count(),4,"Four actual liturgical corporal burses, not viaticum carrying pouches");
+  assert.match(await page.locator("#m6-best").innerText(),/RENNES-CORPORAL-1900/);
+  assert.match(await page.locator("#m6-best").innerText(),/STGALLEN-BURSE/);
+  assert.match(await page.locator("#m6-other").innerText(),/MAASTRICHT-BURSE/,"Old multi-object photo demoted to context");
   assert.match(await page.locator("#m6-other").innerText(),/PRENDERGAST-ENSEMBLE/,"Burse/veil ensemble staged as non-comparable contextual source");
+  await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("LN05"));
+  assert.equal(await page.locator("#m6-best .m6-card").count(),4,"Four different Catholic chalice veils, including original Spanish specimen");
+  assert.match(await page.locator("#m6-best").innerText(),/POLAND-CHRIST-COLUMN/);
+  assert.match(await page.locator("#m6-other").innerText(),/ITALY-MET-LACE/,"Lace example remains historical rather than ordinary opaque 1962 veil");
+  await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("SV02"));
+  assert.match(await page.locator("#m6-other").innerText(),/SPAIN-MET-17190366/,"Historic Spanish paten must not count as modern primary candidate");
   await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("SV03"));
   assert.match(await page.locator("#m6-other").innerText(),/COLOGNE-HOST-CIBORIUM/,"Medieval ciborium stays historical reference");
   await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("VE15"));
