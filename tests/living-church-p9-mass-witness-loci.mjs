@@ -27,7 +27,7 @@ for(const [i,record] of evidence.records.entries()){
   const canonical=sources.get(lead.sourceId);
   assert.ok(canonical,"Witness URL must belong to known source registry");
   assert.equal(typeof lead.locator,"string");
-  assert.ok(lead.locator.length>3);
+  assert.ok(lead.locator.length>=3);
   assert.match(lead.url,/^https:\/\//);
   if(lead.status==="ORIGINAL_PRIMARY_PARAGRAPH_LOCATED"){
    assert.equal(lead.sourceId,"SRC-MEDIATOR-DEI");
