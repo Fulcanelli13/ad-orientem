@@ -78,15 +78,21 @@ export function moveCruciform(ctx,direction){
   if(direction==="up"||direction==="down")return moveParagraph(ctx,direction);
   return false;
 }
+function crossLabel(doc,side){
+  const fr=doc.defaultView?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||
+    String(doc.documentElement.lang||"").toLowerCase().startsWith("fr");
+  if(fr)return (side==="left"?"Croix latine gauche":"Croix latine droite")+
+    " : activer pour continuer, flèches haut/bas pour le texte, gauche/droite pour les pages";
+  return (side==="left"?"Left Latin cross":"Right Latin cross")+
+    ": activate to read next, up/down arrows for prayer text, left/right for pages";
+}
 function makeCross(doc,side){
   const button=doc.createElement("button");
   button.type="button";
   button.className="aoCrossPad";
   button.dataset.aoCrossSide=side;
   button.setAttribute("aria-keyshortcuts","ArrowUp ArrowDown ArrowLeft ArrowRight");
-  button.setAttribute("aria-label",side==="left"
-    ?"Left Latin cross: up or down reads prayer, left or right changes card"
-    :"Right Latin cross: up or down reads prayer, left or right changes card");
+  button.setAttribute("aria-label",crossLabel(doc,side));
   button.innerHTML='<svg class="aoCrossMark" aria-hidden="true" viewBox="0 0 30 46" focusable="false"><path d="M15 4 V43 M5 16 H25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
   let start=null;
   button.addEventListener("pointerdown",event=>{
@@ -133,9 +139,11 @@ function makeCross(doc,side){
     event.preventDefault();
     moveCruciform(activeContext(doc),action);
   });
-  // The button intentionally has no onclick action: pointerup handles taps,
-  // arrow keys handle keyboard input, and screen-reader users retain the
-  // existing accessible timeline controls.
+  // Native keyboard and assistive-technology button activation has no
+  // pointerup. The zero-detail click avoids duplicate activation on touch.
+  button.addEventListener("click",event=>{
+    if(event.detail===0)moveCruciform(activeContext(doc),"down");
+  });
   return button;
 }
 function reconcile(doc){
@@ -145,6 +153,9 @@ function reconcile(doc){
   if(old&&old.parentElement===ctx.root){
     old.dataset.aoCrossCard=String(ctx.deck.current()+1);
     old.dataset.aoCrossTotal=String(ctx.deck.cards());
+    old.querySelectorAll("[data-ao-cross-side]").forEach(b=>{
+      b.setAttribute("aria-label",crossLabel(doc,b.dataset.aoCrossSide));
+    });
     return;
   }
   old?.remove();
