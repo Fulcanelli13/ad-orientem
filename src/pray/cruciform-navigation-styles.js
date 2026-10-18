@@ -9,7 +9,7 @@ export const CRUCIFORM_NAVIGATION_CSS=String.raw`
  color:var(--liturgical,#c8b28a);
 }
 #aoPray435930 .aoCrossPad{
- position:absolute;bottom:max(5px,env(safe-area-inset-bottom));
+ position:absolute;bottom:calc(var(--ao-cross-bottom,8px) + env(safe-area-inset-bottom));
  width:68px;height:82px;border:0!important;border-radius:0!important;
  background:transparent!important;box-shadow:none!important;
  display:grid;place-items:center;padding:0;margin:0;cursor:pointer;
@@ -37,7 +37,7 @@ export const CRUCIFORM_NAVIGATION_CSS=String.raw`
 }
 #aoPray435930 .aoCrossPad:focus-visible .aoCrossMark{opacity:.85}
 @media(max-width:480px){
- #aoPray435930 .aoCrossPad{bottom:max(3px,env(safe-area-inset-bottom))}
+ #aoPray435930 .aoCrossPad{bottom:calc(var(--ao-cross-bottom,8px) + env(safe-area-inset-bottom))}
 }
 @media(prefers-reduced-motion:reduce){
  #aoPray435930 .aoCrossMark{transition:none!important}
