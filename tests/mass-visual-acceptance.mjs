@@ -946,6 +946,12 @@ try{
   await faithfulPicker.locator("[data-faithful-picker-close]").click();
   assert.equal(await faithfulPicker.isVisible(),false,"faithful picker did not close");
 
+  // The picker and its close action are independent user interactions that
+  // may change the 39%-focus scroll position. Re-establish the exact Gloria
+  // source cue before demanding its *priest* rail gesture.
+  const gloriaPriestCue=await focusCanonicalCue("AO.SM.C0061");
+  assert.equal(gloriaPriestCue.cue,"AO.SM.C0061");
+
   const priestBowArt=await page.evaluate(()=>{
     const root=document.getElementById("ao-r17-native-reader-preview");
     const rail=root?.querySelector('.ao-rail-right [data-channel="priest-action"]');
