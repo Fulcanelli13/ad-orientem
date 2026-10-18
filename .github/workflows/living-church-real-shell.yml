@@ -1,0 +1,42 @@
+name: Living Church real app shell Catechism
+on:
+  pull_request:
+    paths:
+      - "src/learn/living-church-app-shell-bridge.js"
+      - "src/learn/visible-mass-review.js"
+      - "previews/visible-mass-3d/living-church-catechism-native.mjs"
+      - "previews/visible-mass-3d/living-church-character-scene.mjs"
+      - "tests/living-church-real-shell-e2e.mjs"
+      - ".github/workflows/living-church-real-shell.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-native-owners:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify integration syntax
+        run: |
+          node --check src/learn/living-church-app-shell-bridge.js
+          node --check src/learn/visible-mass-review.js
+          node --check previews/visible-mass-3d/living-church-catechism-native.mjs
+          node --check tests/living-church-real-shell-e2e.mjs
+      - name: Install browser test tooling
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Run actual integrated app-shell browser acceptance
+        run: node tests/living-church-real-shell-e2e.mjs
+      - name: Preserve integrated phone and desktop screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-church-native-catechism-real-shell
+          path: artifacts/living-church-real-shell/*.png
+          if-no-files-found: warn
+          retention-days: 14
