@@ -1,6 +1,6 @@
 {
   "schema": "ao.mass.ordo-missae.red-missal.english-editorial.v1",
-  "status": "21_APPROVED_ENGLISH_CORRECTIONS_33_COLLATED_EQUIVALENT_4_INCOMPLETE_198_UNOPENED",
+  "status": "22_APPROVED_ENGLISH_CORRECTIONS_33_COLLATED_EQUIVALENT_3_PARTIAL_198_UNOPENED",
   "source": {
     "title": "Latin–English Booklet Missal for Praying the Traditional Mass",
     "publisher": "Coalition in Support of Ecclesia Dei",
@@ -332,6 +332,15 @@
       "decision": "ADOPT_BOOKLET_ORAMUS_TE_ENDING",
       "authority": "ENGLISH_EDITORIAL",
       "status": "APPROVED_THIRD_WAVE"
+    },
+    {
+      "id": "AO.SM.C0023",
+      "correctionId": "RED-EN-2013-W4-01",
+      "bookletPdfPage": 14,
+      "bookletPrintedPage": 13,
+      "decision": "REPAIR_CONFITEOR_VOCATIVE_WITH_INDEPENDENT_LATIN_SOURCE_CORRECTION",
+      "authority": "ENGLISH_EDITORIAL",
+      "status": "APPROVED_FOURTH_WAVE"
     }
   ],
   "unresolvedTranslationDecisions": [
@@ -687,15 +696,5 @@
       "note": "Red booklet abbreviates priest's Confiteor; the parallel ministers' text is not a complete verbatim witness for this cue"
     }
   ],
-  "blockedReview": [
-    {
-      "cueId": "AO.SM.C0023",
-      "status": "KNOWN_ENGLISH_DIFFERENCE_NOT_PROMOTED",
-      "reason": "Exact same cue already owns an approved Latin accent correction (P1-011). Current patch mechanism supports one field per cue; a second English patch would shadow the Latin rule. Requires multi-field-aware source-correction registry first.",
-      "bookletPdfPage": 14,
-      "proposedOriginal": "and thee Father, to pray",
-      "proposedEnglish": "and you, Father, to pray",
-      "expectedExistingLatinCorrection": "orare pro me → oráre pro me"
-    }
-  ]
+  "blockedReview": []
 }
