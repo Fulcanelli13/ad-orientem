@@ -25,6 +25,16 @@ With character review explicitly enabled, the approved Sacristan / Canon / St Pi
 
 P5's integrated browser job is reduced to the original M6 offline atlas plus **one** representative 320/390/1280px full journey (character objective, original Catechism, Mass Explorer, exact return). P1, P2, P3 and P4 continue to own their focused regressions in their respective workflows; there is no need for P5 to re-run all four full browser journeys. One owner for each test concern is preferred to repeated look-alike acceptance scripts.
 
+## Live upstream landing check — 18 October 2026
+
+The independent P3 character branch advanced after P4 was cut. P5 therefore imports **only four exact P3 source-owned files** from its reviewed `7c1869616aae8bf9b666730277dee964ca476822` snapshot: the amended three-character metadata, the Canon referral *contract*, the contract assertion and its CI workflow. This is a preservation/reconciliation step, **not a second apologetics research pipeline**.
+
+The original Canon apologetics/Formation work is owned by `Fulcanelli13/folio-core` [draft PR #36](https://github.com/Fulcanelli13/folio-core/pull/36). Its ledger references 534 historical candidate identities (519 + 15), not 534 public, answered or newly authored dialogues. Source review records zero certified historical-quotation transcripts and zero approved public Canon answers. Its own CI was not certified at the inspected `0709b2f2b43307c6ab6fef7b08bedfe07095513d` revision. The local P3/P5 Canon contract retains **no answer text** and has **no public answer route**; P5 tests explicitly block any change to these holds.
+
+Current upstream dependency state: [#1395](https://github.com/Fulcanelli13/ad-orientem/pull/1395) P0 shared context, [#1397](https://github.com/Fulcanelli13/ad-orientem/pull/1397) P1 original-photo adapter and [#1406](https://github.com/Fulcanelli13/ad-orientem/pull/1406) P4 character extension were reported *not auto-mergeable* by GitHub on 18 October; other named draft PRs reported mergeable. These are **base-branch convergence blockers**, not permission to force a merge. The original M6 research branch has newer research-only changes after P5's frozen M6 source snapshot. Leave those changes with their owner until the next agreed checkpoint.
+
+Landing conditions: source owners #1309 / #1391 / #1395 must be reviewed against current main first; #1397 must be rebased against the final owner viewer; #1404's Canon source contract must precede P4; the P2–P5 integration should then be replayed against the owner branches with its single Ask session intact. Only after this should any PR change from draft to merge-ready. No automatic downstream rebasing or research copying.
+
 ## Current acceptance matrix
 
 | Scope | Verified automated? | Required human/owner approval |
@@ -47,7 +57,7 @@ P5's integrated browser job is reduced to the original M6 offline atlas plus **o
 4. Obtain approval for historical simulation disclosure, original doctrinal verbatim transcription, retained Catechism witness and actual artwork/photograph licences. The four held VMQ question candidates and historical answers stay unpublished until source certified.
 5. Only after **all** gates clear, prepare an explicit release PR and ask for deployment authorization. This document or passing CI never authorizes release.
 
-The machine-readable lock `data/learn/living-church-p5-convergence-lock.v1.json` has 16 source blob pins, ten source-viewer patch hunks, latest fifth-batch M6 source snapshots and nine explicit false publication gates. Fail on source drift; never auto-update a source pin or silently declare approval.
+The machine-readable lock `data/learn/living-church-p5-convergence-lock.v1.json` has 20 source blob pins, ten source-viewer patch hunks, latest fifth-batch M6 source snapshots and nine explicit false publication gates. Fail on source drift; never auto-update a source pin or silently declare approval.
 
 ## Frozen owner-snapshot policy
 M6 research is continuing independently. P5 imports through fifth batch at source owner `fe9fb6de79faec7f716ec8ff975ca88ec4e152b0`, then freezes that provenance as the acceptance baseline. Changes after that commit belong to the M6 upstream pipeline and require a deliberate future reconciled update, not an automatic rewrite of reviewed P5 tests. The P5 integration work does **not** approve or publish any of the 56 atlas image/source records.
