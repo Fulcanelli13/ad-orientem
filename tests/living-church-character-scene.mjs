@@ -148,6 +148,20 @@ try{
 
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Back to subject"}).click();
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().selectedObjective),"protestant");
+  // P6: character changes retain the same reviewed objective and allow a
+  // source to be revisited without copying dialogue or typed questions.
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Consult St Pius X"}).click();
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"pius-x");
+  await page.locator("#lc-stage [data-trail]").click();
+  assert.equal(await page.locator("#lc-stage .lc-trail").isVisible(),true);
+  assert.ok(await page.locator("#lc-stage .lc-trail-list li").count()>=3);
+  assert.equal(await page.locator("#lc-stage .lc-trail").getByText("apostolate:AQ08").count(),0,
+    "conversation trail uses safe source labels, not chat content or external direct links");
+  await page.locator("#lc-stage .lc-trail").getByRole("button",{name:/Source: Question AQ08.*revisit/}).click();
+  await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().sourceOpen==="apostolate:AQ08");
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().selectedObjective),"protestant");
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"pius-x");
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Back to subject"}).click();
 
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Consult St Pius X"}).click();
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"pius-x");
@@ -155,6 +169,13 @@ try{
   await page.locator("#lc-stage .lc-ask input").fill("I want to understand the Latin Mass");
   await page.locator("#lc-stage .lc-ask button").click();
   await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().selectedObjective==="mass");
+  await page.locator("#lc-stage [data-trail]").click();
+  assert.ok((await page.locator("#lc-stage .lc-trail").innerText()).includes("earlier objective"),
+    "source from previous objective cannot be reopened without current route authorization");
+  assert.equal(await page.locator("#lc-stage .lc-trail").getByRole("button",{name:/Source: Question AQ08.*revisit/}).count(),0);
+  assert.equal((await page.locator("#lc-stage .lc-trail").innerText()).includes("I want to understand the Latin Mass"),false,
+    "do not expose typed questions in the trail");
+  await page.locator("#lc-stage [data-close-trail]").click();
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Consult Monsieur le Chanoine"}).click();
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"canon");
   await page.locator("#lc-stage [data-close]").click();
