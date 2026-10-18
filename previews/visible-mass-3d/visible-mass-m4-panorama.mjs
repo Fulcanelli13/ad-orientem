@@ -176,6 +176,12 @@ export function createM4Panorama({mount,notice,onScene}){
   onScene(scene);setNotice("Loading original photographic panorama…");
   try{
    if(!images.has(sceneId)){
+    const offlineImage=globalThis.__AO_M4_OFFLINE_PHOTOS__?.[sceneId];
+    let imageUrl;
+    if(offlineImage){
+     if(!/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(offlineImage))throw Error("Invalid locally bundled photograph");
+     imageUrl=offlineImage;
+    }else{
     const timeout=setTimeout(()=>requestController.abort(),15000);
     let response;
     try{response=await fetch(m4SourceRequest(sceneId),{signal:requestController.signal,credentials:"omit"});}
@@ -184,9 +190,10 @@ export function createM4Panorama({mount,notice,onScene}){
     const doc=await response.json(),info=doc?.query?.pages?.[0]?.imageinfo?.[0];
     // Reject an unbounded original download (13K-wide Commons photograph).
     // The API must supply a bounded thumbnail so mobile memory stays controlled.
-    const imageUrl=info?.thumburl;
+    imageUrl=info?.thumburl;
     if(!imageUrl)throw Error("Commons did not supply a bounded panorama preview");
     if(!/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//.test(imageUrl||""))throw new Error("Unverified photographic host");
+    }
     const img=new Image();img.crossOrigin="anonymous";img.decoding="async";
     await new Promise((resolve,reject)=>{
      const timeout=setTimeout(()=>{img.src="";reject(Error("Photographic image timed out"));},20000);
