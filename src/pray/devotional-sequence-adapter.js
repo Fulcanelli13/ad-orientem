@@ -141,7 +141,14 @@ export function installSequentialDevotionalReader({
   card.dataset.aoDevoIndex=String(index);
   const selectParagraphs=()=>[...body.querySelectorAll(paragraphSelector)]
     .filter(el=>!el.closest("details:not([open])"))
-    .filter(el=>!el.closest(".aoP435930VRLine")||el.classList.contains("aoP435930VRLine"));
+    .filter(el=>!el.closest(".aoP435930VRLine")||el.classList.contains("aoP435930VRLine"))
+    // Seven Words historical witness has an outer .aoP435930Text container
+    // and separately identified .aoP435930WitnessParagraph children.
+    // The container isn't a second prayer paragraph: registering both
+    // gives them overlapping focus territories and leaves some words dim.
+    .filter(el=>kind!=="sevenWords"||
+      !el.classList.contains("aoP435930Text")||
+      !el.querySelector(".aoP435930WitnessParagraph"));
   let paragraphs=selectParagraphs();
   paragraphs.forEach(p=>p.classList.add("aoDevoParagraph"));
   let last=null,frame=0,userScrolled=false;
