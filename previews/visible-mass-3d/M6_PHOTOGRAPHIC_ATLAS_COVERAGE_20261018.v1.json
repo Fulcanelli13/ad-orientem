@@ -90,7 +90,13 @@
     "ninth_batch_object_references": 4,
     "post_ninth_batch_photo_candidate_or_hotspot": 60,
     "post_ninth_batch_needs_photo": 110,
-    "post_ninth_batch_vestment_photo_candidates": 20
+    "post_ninth_batch_vestment_photo_candidates": 20,
+    "tenth_batch_new_original_photo_records": 7,
+    "tenth_batch_m5_records_reused_without_duplication": 2,
+    "tenth_batch_new_photo_covered_objects": 10,
+    "post_tenth_batch_photo_candidate_or_hotspot": 70,
+    "post_tenth_batch_needs_photo": 100,
+    "post_tenth_batch_unique_source_urls": 79
   },
   "zones": [
     {
@@ -209,9 +215,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B10-EN01-BROMPTON-FACADE-SONES",
+          "role": "exterior_context",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "EN02",
@@ -285,9 +297,20 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B10-EN06-07-09-BROMPTON-NAVE-DILIFF",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        },
+        {
+          "asset_id": "M6B10-EN06-NEWMAN-NAVE-SOUTH-ZAIRON",
+          "role": "alternative_context",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "EN07",
@@ -299,9 +322,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B10-EN06-07-09-BROMPTON-NAVE-DILIFF",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "EN08",
@@ -327,9 +356,16 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B10-EN06-07-09-BROMPTON-NAVE-DILIFF",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false,
+      "image_evidence_limit": "Aisle is contextual in a high-resolution nave photograph; pixel-level aisle boundary unverified and no click area authorised."
     },
     {
       "object_id": "EN10",
@@ -341,9 +377,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B10-EN10-VIC-CATHOLIC-PROCESSIONAL-CROSS",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "EN11",
@@ -397,9 +439,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "EXISTING_M5_PHOTO_REUSED",
+      "candidate_assets": [
+        {
+          "asset_id": "BROMPTON_LADY_ALTAR",
+          "role": "source_owned_context",
+          "evidence": "M5_SOURCE_OWNED_PHOTO_REUSE_PENDING_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV02",
@@ -487,9 +535,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B10-DV07-ST-LOUIS-BASILICA-VOTIVE-CANDLES",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV08",
@@ -2488,9 +2542,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B10-BK07-EVRON-OPEN-GRADUALE",
+          "role": "object_in_liturgical_use",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK08",
@@ -2570,9 +2630,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "EXISTING_M5_PHOTO_REUSED",
+      "candidate_assets": [
+        {
+          "asset_id": "NEWMAN_PULPIT",
+          "role": "source_owned_context",
+          "evidence": "M5_SOURCE_OWNED_PHOTO_REUSE_PENDING_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK13",
@@ -2924,9 +2990,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B10-SE10-FRIBOURG-CORPUS-CHRISTI-CANOPY",
+          "role": "object_in_liturgical_use",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE11",
@@ -4236,6 +4308,123 @@
       "source_description": "Original licensed Roman Catholic national-shrine photograph of Paschal candle near main altar in 2014. Suitable as contextual photo of the candle, not evidence of 1962 Easter Vigil rubrics; do not infer high-altar versus freestanding altar geometry from this modern sanctuary.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH9"
+    },
+    {
+      "asset_id": "M6B10-EN06-07-09-BROMPTON-NAVE-DILIFF",
+      "object_id": "EN06",
+      "linked_object_ids": [
+        "EN06",
+        "EN07",
+        "EN09"
+      ],
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Brompton_Oratory_Nave_2,_London,_UK_-_Diliff.jpg",
+      "creator": "David Iliff (Diliff)",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 8043,
+      "height": 5527,
+      "venue": "Brompton Oratory, London (authentic Roman Catholic nave)",
+      "source_description": "Original high-resolution featured photograph explicitly identified as nave of Brompton Oratory; Commons structured metadata identifies pews. Same scene supplies provisional physical context for EN06 nave, EN07 pews, and EN09 central aisle; no independently certified per-object pixel boundaries and not three separate photographs.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH10"
+    },
+    {
+      "asset_id": "M6B10-EN06-NEWMAN-NAVE-SOUTH-ZAIRON",
+      "object_id": "EN06",
+      "role": "alternative_context",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dublin_Newman_University_Church_Interior_Nave_South_1.jpg",
+      "creator": "Zairon",
+      "licence": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "width": 4579,
+      "height": 3429,
+      "venue": "Newman University Church, Dublin, Ireland",
+      "source_description": "Original photograph of Roman Catholic Newman University Church nave looking toward south nave architectural details; alternate venue, NOT an adjacent position in Brompton and not proof of 1962 Mass celebration.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH10"
+    },
+    {
+      "asset_id": "M6B10-EN01-BROMPTON-FACADE-SONES",
+      "object_id": "EN01",
+      "role": "exterior_context",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:London_Oratory_facade,_Brompton_Road_-_geograph.org.uk_-_6574411.jpg",
+      "creator": "Robin Sones",
+      "licence": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "width": 640,
+      "height": 480,
+      "venue": "London Oratory / Brompton Oratory, Brompton Road, London",
+      "source_description": "Original Geograph facade photo from Catholic Brompton Oratory, 2020. Only 640×480; exterior context and possible entry portal, NOT a clean door close-up or publication-grade high resolution. Seek better photograph for priority hero use.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH10"
+    },
+    {
+      "asset_id": "M6B10-EN10-VIC-CATHOLIC-PROCESSIONAL-CROSS",
+      "object_id": "EN10",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Processional_Cross_(MEV-Museu_d%27Art_Medieval)-WUS-00683.jpg",
+      "creator": "Wuselig (metadata photographer Rainer Halama)",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 3287,
+      "height": 4982,
+      "venue": "Museu Episcopal de Vic, Catalonia, Spain; historical processional cross circa 1600",
+      "source_description": "Documented Catholic Episcopal Museum object, silver-gilt processional cross circa 1600 photographed 2025. Genuine isolated museum object; not a procession or a typical simple 1962 processional-cross exemplar. Commons page contains CC0 photographer licence, but EXIF older CC BY-SA 4.0 tag warrants pre-publication rights reconciliation.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH10"
+    },
+    {
+      "asset_id": "M6B10-BK07-EVRON-OPEN-GRADUALE",
+      "object_id": "BK07",
+      "role": "object_in_liturgical_use",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Open_graduale_romanum.jpg",
+      "creator": "Feldbrahi",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 1086,
+      "height": 724,
+      "venue": "Community of Saint Martin, Évron, France, 2024",
+      "source_description": "Authentic open Graduale Romanum photographed during Gregorian Mass chant context (2024); Commons also labels depicted Graduale Triplex. Exact book edition and 1962-specific liturgical use not established. Moderate 1086×724 source resolution; use as provisional in-context only.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH10"
+    },
+    {
+      "asset_id": "M6B10-DV07-ST-LOUIS-BASILICA-VOTIVE-CANDLES",
+      "object_id": "DV07",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Votive_candles.jpg",
+      "creator": "Tiger Craven (Commons username Sirsanjuro)",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 5120,
+      "height": 3840,
+      "venue": "Cathedral Basilica of Saint Louis, Missouri, USA",
+      "source_description": "Original photograph of blue votive candles lit inside genuine Roman Catholic cathedral-basilica, December 2014. Candle-stand structure needs independent close view; this records candles in devotional space rather than historical 1962 Mass furnishings.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH10"
+    },
+    {
+      "asset_id": "M6B10-SE10-FRIBOURG-CORPUS-CHRISTI-CANOPY",
+      "object_id": "SE10",
+      "role": "object_in_liturgical_use",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Corpus_Christi_in_Fribourg_CH_FR_10_Confr%C3%A9rie_Saint-Sacrement_01.jpg",
+      "creator": "Martin Thurnherr",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 4752,
+      "height": 3168,
+      "venue": "Corpus Christi procession, Fribourg, Switzerland, 8 June 2023",
+      "source_description": "Authentic Catholic Corpus Christi canopy sheltering the Blessed Sacrament in modern Fribourg procession, with confraternity and former Swiss Guards. Publisher notes concelebrants; do not represent as a photograph of a 1962-procession rite. True canopy-in-use photo.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH10"
     }
   ]
 }
