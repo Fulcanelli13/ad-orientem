@@ -213,6 +213,42 @@ try{
  assert.ok(paragraphEnergy[0].opacity>paragraphEnergy[1].opacity,
   "Active V. must be brighter than its muted R.: "+JSON.stringify(paragraphEnergy));
  assert.ok(paragraphEnergy[1].opacity<1,"Upcoming Hail Mary must be muted: "+JSON.stringify(paragraphEnergy));
+ // Native cruciform pilot: two discreet Latin crosses control the
+ // original five-card Angelus deck; they must never become a new content owner.
+ await page.waitForSelector("#aoPray435930.open .aoCrossPad[data-ao-cross-side='left']",{timeout:9000});
+ const leftCross=page.locator("#aoPray435930 .aoCrossPad[data-ao-cross-side='left']");
+ const rightCross=page.locator("#aoPray435930 .aoCrossPad[data-ao-cross-side='right']");
+ assert.equal(await page.locator("#aoPray435930 .aoCrossPad").count(),2,"Exactly two mirrored Latin crosses");
+ assert.ok((await leftCross.locator("svg path").getAttribute("d")).includes("M15 4 V43"),
+   "Navigation icon must be a Latin cross, not a four-way gamepad");
+ assert.ok((await leftCross.evaluate(el=>el.getBoundingClientRect().height))>=44,"Invisible touch target too small");
+ const restOpacity=await leftCross.locator("svg").evaluate(el=>Number(getComputedStyle(el).opacity));
+ assert.ok(restOpacity<=.22,"Latin cross is too conspicuous at rest: "+restOpacity);
+ await leftCross.press("ArrowRight");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),
+   "fiat","Horizontal cross keyboard action must use original card navigation");
+ await rightCross.press("ArrowLeft");
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),
+   "announcement","Mirrored second cross must work independently");
+ await rightCross.click({position:{x:54,y:32}});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),
+   "fiat","Tapping the right arm must advance the existing deck");
+ await leftCross.click({position:{x:14,y:32}});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),
+   "announcement","Tapping the left arm must return to the original card");
+ await leftCross.press("ArrowDown");
+ await page.waitForFunction(()=>{
+   const body=document.querySelector("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll");
+   return !!body&&body.scrollTop>2;
+ },null,{timeout:5000});
+ assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),
+   "announcement","Vertical cross must not flip pages");
+ await rightCross.press("ArrowUp");
+ await page.locator("#aoPray435930 .aoDevoCard:not([hidden]) .aoDevoCardScroll").evaluate(body=>{
+   body.scrollTop=0;body.dispatchEvent(new Event("scroll",{bubbles:true}));
+ });
+ // Do not disturb the already-owned speaking roles, text translations or
+ // existing card swipes which are tested immediately below.
  // Distinct axes: diagonal/vertical motion must not advance cards;
  // deliberate horizontal touch swipe must advance exactly one named card.
  const swipe=async(dx,dy)=>{
