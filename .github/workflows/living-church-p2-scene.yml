@@ -20,6 +20,8 @@ on:
       - "tests/living-church-formation-p1-evidence.mjs"
       - "previews/visible-mass-3d/living-church-answer-verifier.mjs"
       - "tests/living-church-answer-verifier.mjs"
+      - "data/learn/living-church-p8-mass-chat-witness-review.v1.json"
+      - "tests/living-church-p8-mass-review-queue.mjs"
       - "data/learn/mass-explorer-approved-studies.v1.json"
       - "data/learn/mass-formation-approved-passages.v1.json"
       - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
@@ -49,6 +51,7 @@ jobs:
           node tests/living-church-grounded-answers.mjs
           node tests/living-church-formation-p1-evidence.mjs
           node tests/living-church-answer-verifier.mjs
+          node tests/living-church-p8-mass-review-queue.mjs
           node tests/living-church-visible-mass-adapter.mjs
       - name: Install isolated browser tooling
         run: |
