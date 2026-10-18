@@ -860,6 +860,14 @@ async function guideInit(pilot){
            :{x:$("photo-viewport").scrollLeft,y:$("photo-viewport").scrollTop}
        });
        window.AO_VISIBLE_MASS_LIVING_CHURCH_P1=livingChurchContextP1;
+       // Original event handlers remain the ONLY mutators of UI/trail/VMQ state.
+       // We sample their committed state after events, never before.
+       document.addEventListener("click",()=>queueMicrotask(syncLivingChurchP1));
+       $("photo-viewport").addEventListener("scroll",syncLivingChurchP1,{passive:true});
+       $("panorama-mount").addEventListener("pointerup",()=>queueMicrotask(syncLivingChurchP1));
+       document.addEventListener("keyup",()=>queueMicrotask(syncLivingChurchP1));
+       $("study-language").addEventListener("change",()=>queueMicrotask(syncLivingChurchP1));
+       syncLivingChurchP1();
         // P2 adds an optional visual-novel review stage. All original photo,
         // hotspot, question, trail and answer owners remain unchanged.
         try{
@@ -870,14 +878,7 @@ async function guideInit(pilot){
         }catch(sceneError){
           console.warn("Living Church P2 scene unavailable; original P1 viewer remains usable",sceneError);
         }
-       // Original event handlers remain the ONLY mutators of UI/trail/VMQ state.
-       // We sample their committed state after events, never before.
-       document.addEventListener("click",()=>queueMicrotask(syncLivingChurchP1));
-       $("photo-viewport").addEventListener("scroll",syncLivingChurchP1,{passive:true});
-       $("panorama-mount").addEventListener("pointerup",()=>queueMicrotask(syncLivingChurchP1));
-       document.addEventListener("keyup",()=>queueMicrotask(syncLivingChurchP1));
-       $("study-language").addEventListener("change",()=>queueMicrotask(syncLivingChurchP1));
-       syncLivingChurchP1();
+
      }catch(error){
        livingChurchContextP1=null;
        console.warn("Optional Living Church context unavailable; original sanctuary remains usable",error);
