@@ -109,6 +109,11 @@ export async function probeTextFocus({
     }
     res.scrollSweepSteps=sweepSteps;
   }
+  // Async source-owned readers (notably the first Seven Words Gospel
+  // and historical witness) can replace the card during the audit. Such
+  // detached DOM cannot prove a passage unreachable; flag and re-probe the
+  // stable rendered owner instead of recording a false text defect.
+  res.invalidated=!scroll.isConnected||eligible.some(x=>!x.node.isConnected);
   res.reached=seen.size;
   res.unreachable=eligible.filter(x=>!seen.has(x.entry.ordinal))
    .slice(0,maxExamples).map(x=>({...x.entry,
