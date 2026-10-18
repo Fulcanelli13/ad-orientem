@@ -1,0 +1,56 @@
+/** M4 genuine original-photo offline file:// browser gate.
+ * Unlike the hosted pilot, no local HTTP server and no Wikimedia network
+ * requests are allowed. This is review-only, not app publication approval.
+ */
+import assert from "node:assert/strict";
+import {access,mkdir} from "node:fs/promises";
+import {resolve} from "node:path";
+import {fileURLToPath,pathToFileURL} from "node:url";
+import {chromium} from "@playwright/test";
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const file=resolve(root,"dist/visible-mass/The_Visible_Mass_M4_Photographic_Review_Offline.html");
+await access(file);
+const out=resolve(root,"dist/visible-mass/m4-offline-file-qa");
+await mkdir(out,{recursive:true});
+let browser;
+try{
+ browser=await chromium.launch({headless:true});
+ for(const spec of [{name:"desktop",width:1280,height:820,mobile:false},{name:"phone",width:390,height:844,mobile:true}]){
+  const context=await browser.newContext({viewport:{width:spec.width,height:spec.height},
+   deviceScaleFactor:spec.mobile?2:1,isMobile:spec.mobile,hasTouch:spec.mobile});
+  const page=await context.newPage(),errors=[],outgoing=[];
+  page.on("pageerror",e=>errors.push(String(e)));
+  await page.route(/^https?:\/\//,route=>{outgoing.push(route.request().url());return route.abort("internetdisconnected");});
+  await page.goto(pathToFileURL(file).href,{waitUntil:"domcontentloaded"});
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT?.status().questionsLoaded===134,null,{timeout:30000});
+  const summary=await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status());
+  assert.equal(summary.questionsLoaded,134);
+  assert.equal(summary.photoMode,"still");
+  assert.ok(summary.glossaryLoaded>=100,"canonical G### owner should be included");
+  assert.equal(await page.locator("#hotspots .marker").count(),6);
+  assert.ok(await page.locator("#altar-photo").evaluate(image=>image.complete&&image.naturalWidth>=1000),
+   "Original high altar still must decode with disconnected internet");
+  assert.equal(await page.locator("#original-object-choices").isVisible(),true);
+  await page.locator('[data-photo-mode="brompton"]').click();
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.loaded===true,null,{timeout:30000});
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).panorama.active,"BROMPTON_PANO");
+  assert.equal(await page.locator("#original-object-choices").isVisible(),false);
+  await page.screenshot({path:out+"/"+spec.name+"-brompton-actual-offline.png",fullPage:true});
+  await page.locator('[data-photo-mode="newman"]').click();
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.active==="NEWMAN_360"&&window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama.loaded,null,{timeout:30000});
+  assert.match(await page.locator("#photo-intro").innerText(),/Newman University Church/);
+  await page.screenshot({path:out+"/"+spec.name+"-newman-actual-offline.png",fullPage:true});
+  await page.locator('[data-photo-mode="still"]').click();
+  assert.equal(await page.locator("#original-object-choices").isVisible(),true);
+  await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.select("AL01"));
+  assert.ok(await page.locator("#close-card").isVisible(),"exact original object accessible offline");
+  assert.ok((await page.locator("#object-card").innerText()).includes("High altar"));
+  await page.locator("#close-card").click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).photoMode,"still");
+  assert.deepEqual(errors,[],"Offline single HTML must have no unhandled browser JS exceptions");
+  assert.deepEqual(outgoing,[],"Default offline original-photo visitor must not contact remote services");
+  console.log("PASS M4 genuine photographic single HTML opened from file://",spec.name,
+   JSON.stringify({questions:summary.questionsLoaded,glossary:summary.glossaryLoaded,offlinePhotographs:3}));
+  await context.close();
+ }
+}finally{await browser?.close();}
