@@ -52,7 +52,14 @@ try{
    paragraphSelector:".ao-reader-paragraph",owner:"mass",
    label:card.i+" / "+(selected.title||card.title||card.id)
   });
-  massResults.push({i:card.i,id:card.id,title:card.title,...info});
+  const uncued=info.unownedTotal?await mass.evaluate(probeTextFocus,{
+   rootSelector:"#ao-r17-native-reader-preview",scrollSelector:".ao-prayer-card",
+   paragraphSelector:'.ao-reader-paragraph:not([data-cue-id]):not([data-kind="RUBRIC"])',
+   owner:"mass-uncued",label:card.title+" / uncued Proper text"
+  }):null;
+  massResults.push({i:card.i,id:card.id,title:card.title,...info,
+   uncuedFocus:uncued?{registered:uncued.registered,reached:uncued.reached,
+     unreachable:uncued.unreachable}:null});
  }
  findings.mass={
   presentation:"LIVE",language:"en",scenario:"ordinary sung, optional second Confiteor enabled",
@@ -62,6 +69,7 @@ try{
   cueReached:massResults.reduce((n,x)=>n+x.reached,0),
   cueUnreachable:massResults.reduce((n,x)=>n+x.unreachableTotal,0),
   unownedText:massResults.reduce((n,x)=>n+x.unownedTotal,0),
+  uncuedFocused:massResults.reduce((n,x)=>n+(x.uncuedFocus?.reached||0),0),
   rubricExempt:massResults.reduce((n,x)=>n+x.exemptTotal,0),
   noScroll:massResults.filter(x=>!x.scrollRegion).map(x=>({id:x.id,title:x.title})),
   cards:massResults,pageErrors:massErrors
@@ -161,7 +169,7 @@ try{
  await new Promise(ok=>server.close(ok));
  console.log("TEXT_FOCUS_SUMMARY="+JSON.stringify({
   massCards:findings.mass.cardsChecked,massRegistered:findings.mass.cueRegistered,
-  massReached:findings.mass.cueReached,massMissingCue:findings.mass.unownedText,
+  massReached:findings.mass.cueReached,massMissingCue:findings.mass.unownedText,massUncuedFocused:findings.mass.uncuedFocused,
   massUnreachable:findings.mass.cueUnreachable,prayRoutes:findings.prayer.routesChecked,
   needsFurtherEntry:findings.prayer.routes?.filter(x=>x.status==="needs-deeper-reader-entry").map(x=>x.id)||[],
   errors:findings.errors
