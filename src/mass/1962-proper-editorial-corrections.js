@@ -35,7 +35,26 @@ export function correct1962ProperEditorialReferences(proper){
   });
   const copyChanged=Array.isArray(proper.preGospelChants)&&
     chantCopy.some((entry,i)=>entry!==proper.preGospelChants[i]);
+  const proof=proper.readerChantSourceProof;
+  let proofCorrected=proof;
+  if(proof?.status==="SOURCE_VERIFIED_EXACT" &&
+     proof?.sourcePath===CHRIST_KING_SOURCE &&
+     Array.isArray(proof.parts) && proof.parts.length===2){
+    const first=proof.parts[0],rawLa=String(first?.lat??"");
+    if(first?.kind==="GRADUAL"&&rawLa.startsWith(INCORRECT+"\n")&&
+      /Dominábitur a mari usque ad mare/u.test(rawLa)){
+      const rawFr=String(first?.fr??"");
+      const changeFr=rawFr.startsWith(INCORRECT+"\n")&&
+        /Il dominera de la mer à la mer/u.test(rawFr);
+      proofCorrected=Object.freeze({...proof,parts:Object.freeze([
+        Object.freeze({...first,lat:CORRECT+rawLa.slice(INCORRECT.length),
+          ...(changeFr?{fr:CORRECT+rawFr.slice(INCORRECT.length)}:{})}),
+        proof.parts[1],
+      ])});
+    }
+  }
   return Object.freeze({...proper,
+    ...(proofCorrected!==proof?{readerChantSourceProof:proofCorrected}:{}),
     gradual:Object.freeze({...proper.gradual,
       lat:CORRECT+latin.slice(INCORRECT.length),
       ...(frenchCorrupt?{fr:CORRECT+french.slice(INCORRECT.length)}:{}),
