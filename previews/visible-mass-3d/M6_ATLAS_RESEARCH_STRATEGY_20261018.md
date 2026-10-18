@@ -140,3 +140,59 @@ Research-only acquisition of four original licensed photographs, credited and li
 **Publication filters:** an original photographed vestment can be culturally and historically authentic while not depicting 1962 liturgical use. VE10 must not be falsely completed by copying a dalmatic photo; VE15 must have a complete comparison of white, red, green, violet and black on proper source photographs, not a single colour or digital illustration. VE20 must include both buskins and sandals rather than silently treating gloves as a complete pontifical set. Authentic photography, rights and separately proven liturgical correctness all remain mandatory.
 
 No merge, no production integration; PR #1309 stays draft.
+
+## Extended acquisition and source-frame validation — 18 October 2026
+
+This extended pass augments the original 170 physical-object crosswalk, 13 zones, M5/P6 original-photo ownership and existing VMQ/G### IDs. It does not replace or mutate the glossary, liturgical Mass reader, Mass Explorer, or any published content. **All photographs remain research candidates awaiting visual, editorial, and rights sign-off.**
+
+### Batch 6 — nine distinct sourced photographs
+
+| Canonical subject | Original credited photograph | Legal permission | Source interpretation |
+|:--|:--|:--|:--|
+| VE10 tunicle | [Tuscany, historic Florentine `tonacella`](https://commons.wikimedia.org/wiki/File:Manifattura_fiorentina,_tonacella_di_petreto,_in_velluto_tagliato_operato_a_un_compo_e_lampasso,_1450-1500_ca.,_da_s._andrea_a_petreto,_01.jpg), Sailko | CC BY-SA 4.0 | True labeled Italian tunicella, not a substituted dalmatic or evidence of 1962 subdeacon wearing it |
+| VE20 pontifical sandals | [Pisa Cathedral museum sandals](https://commons.wikimedia.org/wiki/File:Manifattura_italiana,_sandali_pontificali,_in_pelle_rivestita_di_taffetas,_1900-50_ca.,_dal_duomo_di_pisa.jpg), Sailko | CC BY 3.0 | Authentic sandals component, different provenance from gloves and buskins |
+| VE20 pontifical buskins | [Columbus Museum of Catholic Art buskins](https://commons.wikimedia.org/wiki/File:Clerical_Shoes_and_Pontifical_Buskins_at_the_Museum_of_Catholic_Art_and_History_(Columbus,_Ohio).jpg), Maximilian775 | CC BY-SA 4.0 | Authentic buskins component; do not conflate fabric buskins and shoes |
+| SP02 bugia | [Bishop Watterson bugia](https://commons.wikimedia.org/wiki/File:Bishop_Watterson_Bugia_1_Museum_of_Catholic_Art_and_History.jpg), Maximilian775 | CC BY 4.0 | Catholic bishop's hand candle, museum specimen rather than in-use ceremonial evidence |
+| SE13 Altar of Repose | [Żebbuġ, Gozo, Holy Thursday](https://commons.wikimedia.org/wiki/File:Altar_of_repose_on_Maundy_Thursday_Żebbuġ_Gozo.jpg), Kikku33 | CC BY-SA 4.0 | Actual modern Catholic altar of repose, NOT a certified 1962 Holy Thursday ritual |
+| SC01 sacristy | [Church of the Gesuiti, Venice](https://commons.wikimedia.org/wiki/File:Interior_of_Chiesa_dei_Gesuiti_(Venice)_-_sacristy.jpg), Didier Descouens | CC BY-SA 4.0 | Authentic Catholic/Jesuit sacristy room, not a 1962 preparation scene |
+| BK10 Rituale Romanum | [Rituale Romanum](https://commons.wikimedia.org/wiki/File:Rituale_Romanum.jpg), Eaden | CC BY-SA 4.0 | Real Latin Roman Ritual book; this photo does NOT establish a 1962 edition |
+| BK08 Liber Usualis | [1954 Liber Usualis title](https://commons.wikimedia.org/wiki/File:Liber_Usualis.jpg), Der wahre Jakob | CC BY-SA 3.0 | Actual 1954 title page, not the entire bound volume; low-resolution compared to other sources |
+| SA01 baptismal font | [Église Notre-Dame-des-Blancs-Manteaux, Paris](https://commons.wikimedia.org/wiki/File:Baptismal_font_@_%C3%89glise_Notre-Dame_des_Blancs-Manteaux_@_Marais_@_Paris_(31590954501).jpg), Guilhem Vellut | CC BY 2.0 | An actual French Roman Catholic parish font, not a sacrament-in-progress photo |
+
+VE20 is now a **three-component photographic candidate**, drawing on the pre-existing [Ars Regia gloves](https://commons.wikimedia.org/wiki/File:Chirot-viola-2.jpg) and new Pisa sandals / Columbus buskins. Three distinct source owners, different institutions, varying dates: never render them as one physical matching set without explicit labels.
+
+### Batch 7 — initial reference in every zone
+
+- **EN05** [Holy-water stoup in Chiesa del Carmine, Carrara](https://commons.wikimedia.org/wiki/File:Carrara,_chiesa_del_carmine,_interno,_acquasantiera_02.jpg), Sailko, CC BY 3.0.
+- **DV06** [Stations of the Cross inside Corpus Christi Catholic Church, Covent Garden](https://commons.wikimedia.org/wiki/File:Covent_Garden,_Corpus_Christi_Catholic_Church,_Stations_of_the_Cross_(2).jpg), AndyScott, CC BY-SA 4.0.
+
+These authentic Catholic objects complete the goal of **at least one independently sourced photographic candidate in all 13 physical-object zones**. A zone with one or more candidates is NOT fully covered or publication-ready.
+
+### Verified Brompton orientation rule — two annotations, no extra photographs
+
+The original [Anthony O'Neil 2019 Brompton high-altar photograph](https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg) documents a frontal nave-facing altar view, with raw EXIF recorded as `Normal`; 4797×3219, heading 337° and photographer-position metadata 51.497181, -0.169837. In this **unmirrored original source frame** the Epistle side (AL17) is **viewer's right** and Gospel side (AL18) **viewer's left**, consistent with Roman liturgical side conventions. Both are research-only source-specific orientation annotations—not separate photo assets and not new geometric clickable hotspots. If the scene is cropped, mirrored or rotated in the published app, confirm transforms before publication. Therefore both remain `needs_photo=true` by the strict object-photograph metric, notwithstanding directional research sign-off.
+
+### Batch 8 — all five traditional vestment colours sourced separately
+
+Five original photographic candidates explicitly associated with **one** canonical composite subject VE15, with `liturgical_color` metadata and separate rights:
+
+| Colour | Original source | Photographer | Licence | Visual qualification |
+|:--|:--|:--|:--|:--|
+| White | [White/red chasuble in Catholic Église Saint-Venant-de-Paquette, Québec](https://commons.wikimedia.org/wiki/File:%C3%89glise_de_Saint-Venant-de-Paquette_-_chasuble_-_3.jpg) | Cantons-de-l'Est | CC BY-SA 4.0 | Historic Roman Catholic heritage church, but vestment includes red features and photo needs aesthetic approval |
+| Red | [Cathédrale Sainte-Marie de Lombez, red chasuble](https://commons.wikimedia.org/wiki/File:Chasuble_rouge_-_Cath%C3%A9drale_de_Lombez.jpg) | Zzabeth | CC BY-SA 3.0 | Cathedral exhibit, no Mass-in-use claim |
+| Green | [Cathédrale Sainte-Marie de Lombez, green chasuble](https://commons.wikimedia.org/wiki/File:Chasuble_vert_-_Cath%C3%A9drale_de_Lombez.jpg) | Zzabeth | CC BY-SA 3.0 | Same source venue as red, own independently photographed image |
+| Violet | [Original violet chasuble photograph](https://commons.wikimedia.org/wiki/File:Chasuble.JPG) | Eugenio Hansen, OFS | CC BY-SA 3.0 | Color and creator verified; specific Catholic venue and 1962 use not established |
+| Black | [Cathédrale Sainte-Marie de Lombez, black chasuble](https://commons.wikimedia.org/wiki/File:Chasuble_noire_-_Cath%C3%A9drale_de_Lombez.jpg) | Zzabeth | CC BY-SA 3.0 | Cathedral museum reference, not a photographed Requiem |
+
+**Avoid a false single-set photograph:** these five images come from different owners, eras and venues; preserve image-by-image provenance and comparison labels. The five-colour reference requirement is fulfilled at candidate level only. Colorimetric consistency, traditional Roman style suitability and publication rights remain unapproved.
+
+### Cumulative snapshot after batch 8
+
+- **170 canonical physical-object subjects** unchanged; **13 zones**, all with at least one photographed reference.
+- **72 separately registered source records** representing **69 unique image/source URLs**, including the twelve original M5 church photographs.
+- **56/170 physical subjects** with some licensed photographic candidate or provisional source-owned hotspot; **114/170** without either by the current photo metric.
+- **20/20 vestment subject IDs** have at least one photographed source or, for the two composite entries, all required separate photo components. The 20/20 is *coverage of research candidates*, not final appropriateness.
+- **28/30 sanctuary pilot** have reference photo/hotspot; AL17 and AL18 are directional overlay research only and remain missing under the intentionally strict photograph metric.
+- No accepted/published images, no merge, no Mass reader modifications.
+
+**Next curation gate:** prioritize inspection/rating and photographic-quality/1962 suitability of the new sources before aggressive acquisition of the other 114 gap objects, especially because some candidates have unresolved display-resolution, tradition, editor, or venue caveats. Disallow silently treating 1954 book titles, museum pieces, or modern celebrations as documentary 1962 ceremony photography.
