@@ -68,6 +68,7 @@ try{
      counts:field.map(key=>data[key]?.length??0),
      decision:data.commemorationFormDecision??null,
      print:assessPrintableProper(day,{language:"fr",massForm:form}).ok,
+     printReason:assessPrintableProper(day,{language:"fr",massForm:form}).reason??null,
      language:{},flags:[]};
     for(const language of ["en","fr"]){
      const projection=properToReaderSlots(data,{language});
@@ -129,6 +130,22 @@ try{
       formRow.flags.push("ALLELUIA_BOUNDARY: Gradual/Alleluia coalesced in source");
     summary.forms[form]=formRow;
    }
+   const sourceOwners={};
+   for(const lang of ["la","en","fr"]){
+    try{
+     const parsed=await globalThis.AO_RUNTIME_V8.resolver.properResolver.resolveSource(
+       p.sourcePath,lang,{requestedFiles:[],warnings:[],errors:[],
+        languageGaps:[],structuralInheritances:[],cacheHits:[],referencesResolved:[]});
+     const original=parsed?.map?.get("Graduale")??[];
+     sourceOwners[lang]={
+      namedOrder:(parsed?.order??[]).filter(k=>["Graduale","Alleluia","Tractus"].includes(k)),
+      gradualOriginalLines:original.slice(0,12),
+      alleluiaOriginalLines:(parsed?.map?.get("Alleluia")??[]).slice(0,8),
+     };
+    }catch(err){sourceOwners[lang]={error:String(err.message??err)}}
+   }
+   summary.sourceOwners=sourceOwners;
+   summary.readerChantSourceProof=p.readerChantSourceProof?.status??null;
    res.push(summary);
   }
   return res;
