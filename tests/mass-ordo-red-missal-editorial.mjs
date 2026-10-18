@@ -20,14 +20,14 @@ const [low,sung,french,sectionMap,manifest,corrections]=await Promise.all([
 ].map(load));
 const sections=createReaderSectionResolver(sectionMap);
 const approved=new Map(manifest.approvedCues.map(x=>[x.id,x]));
-assert.equal(approved.size,21);
+assert.equal(approved.size,22);
 const allCorrections=new Map(corrections.corrections.map(x=>[x.cueId,x]));
 const unchanged=new Set((manifest.reviewedWithoutTextChange??[]).map(x=>x.cueId));
 const partial=new Set((manifest.partiallyReviewed??[]).map(x=>x.cueId));
 const blocked=new Set((manifest.blockedReview??[]).map(x=>x.cueId));
 assert.equal(unchanged.size,33);
 assert.equal(partial.size,3);
-assert.equal(blocked.size,1);
+assert.equal(blocked.size,0);
 for(const id of unchanged)assert.ok(!approved.has(id),"Approved and unchanged must be disjoint: "+id);
 for(const id of blocked)assert.ok(!approved.has(id),"Blocked and approved must be disjoint: "+id);
 for(const id of partial)assert.ok(!approved.has(id),"Partially checked cue approved without complete witness: "+id);
@@ -57,7 +57,14 @@ for(const corpus of [low,sung]){
     assert.ok(unit.english.includes(correction.from),"Exact original English changed: "+unit.cue_id);
     assert.ok(corrected.english.includes(correction.to),"Approved Red correction missing: "+unit.cue_id);
     assert.ok(!corrected.english.includes(correction.from),"Uncorrected Red English remains: "+unit.cue_id);
-    assert.equal(corrected.latin,unit.latin,"English editorial edit modified Latin: "+unit.cue_id);
+    if(unit.cue_id==="AO.SM.C0023"){
+      assert.match(corrected.latin,/oráre pro me/u,
+        "The pre-existing Latin accent correction was shadowed by English");
+      assert.deepEqual(corrected.canonicalCorrectionIds,["P1-011","RED-EN-2013-W4-01"]);
+    }else{
+      assert.equal(corrected.latin,unit.latin,
+        "English editorial edit modified Latin: "+unit.cue_id);
+    }
    }else{
     assert.equal(corrected.english,unit.english,"Unreviewed English cue was rewritten: "+unit.cue_id);
    }
@@ -136,7 +143,7 @@ for(const row of reviewRows.SUNG){
 const output=path("artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
 await mkdir(dirname(output),{recursive:true});
 const review={schema:"ao.mass.ordo-missae.red-missal.editorial-worklist.v1",
- witness:manifest.source,status:"21_ENGLISH_CHANGES_33_REVIEWED_UNCHANGED_3_PARTIAL_1_BLOCKED_198_NOT_YET_COLLATED",
+ witness:manifest.source,status:"22_ENGLISH_CHANGES_33_REVIEWED_UNCHANGED_3_PARTIAL_0_BLOCKED_198_NOT_YET_COLLATED",
  sampleSize:256,formCount:2,approvedCount:approved.size,
  rows:reviewRows.SUNG,
  reviewedUnchanged:unchanged.size,partiallyReviewed:partial.size,
@@ -149,4 +156,4 @@ console.log("RED_MISSAL_SUMMARY="+JSON.stringify({sourceCues:256,lowCues:reviewR
  blocked:blocked.size,pending:256-approved.size-unchanged.size-partial.size-blocked.size,
  lowSungParity:"PASS",actualReaderEnglishFrench:"PASS"}));
 console.log("RED_MISSAL_ARTIFACT=artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
-console.log("PASS Red Missal editorial wave 3: 21 edits, 33 retained after visual collation, 4 documented holds, 198 unseen");
+console.log("PASS Red Missal editorial wave 4: 22 edits, 33 retained after visual collation, 3 partial, and 198 unreviewed");
