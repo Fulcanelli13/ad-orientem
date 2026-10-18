@@ -7,7 +7,7 @@ import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".js":"text/javascript; charset=utf-8",".html":"text/html; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".jpg":"image/jpeg",".woff2":"font/woff2",".webmanifest":"application/manifest+json"};
-let variant=1,failedPath=null,served=0,failedHits=0,assetHits=[];
+let variant=1,swRevision=1,failedPath=null,served=0,failedHits=0,assetHits=[];
 const server=http.createServer(async(req,res)=>{
  try{
   let pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
@@ -21,6 +21,8 @@ const server=http.createServer(async(req,res)=>{
   const file=resolve(root,"."+pathname);
   if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return}
   let body=await readFile(file);
+  if(pathname==="/sw.js"&&swRevision>1)
+   body=Buffer.from(body.toString("utf8")+"\n// worker-revision-"+swRevision+"\n");
   if(pathname==="/index.html"&&variant!==1){
     const extra='<script src="./__ao_offline_test_'+variant+'.js"></script><!-- offline-build-'+variant+' -->';
     body=Buffer.from(body.toString("utf8").replace("</body>",extra+"</body>"));
@@ -272,6 +274,25 @@ try{
    assert.deepEqual(current,{...activeRosary,playerOpen:true},
      "PWA update "+stage+" interrupted active Rosary before consent");
  };
+ // A replacement worker must take control of the existing installed-like tab,
+ // while retaining the explicit snapshot consent and current Rosary state.
+ swRevision=2;
+ const controllerChanged=await page.evaluate(async()=>{
+   if(!navigator.serviceWorker.controller)return false;
+   const takeover=new Promise(resolve=>{
+     const timeout=setTimeout(()=>resolve(false),25000);
+     navigator.serviceWorker.addEventListener("controllerchange",()=>{
+       clearTimeout(timeout);resolve(true);
+     },{once:true});
+   });
+   const reg=await navigator.serviceWorker.getRegistration();
+   await reg.update();
+   return takeover;
+ });
+ assert.equal(controllerChanged,true,"Replacement worker remained waiting behind an installed app");
+ await assertRosaryUninterrupted("service-worker takeover");
+ assert.equal((await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status)).version,original.version,
+  "Worker activation promoted a snapshot without user consent");
  // A deliberately incomplete release must NOT replace a usable version.
  variant=3;failedPath="/__ao_offline_test_3.js";
  const failed=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.check());
