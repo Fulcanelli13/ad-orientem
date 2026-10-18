@@ -1,12 +1,5 @@
 name: M6 Rapid Gallery Embedded Source Photos
 on:
-  push:
-    branches:
-      - feature/visible-mass-3d-explorer-p0
-    paths:
-      - "tools/visible-mass-m6-embed-thumbnails.py"
-      - "previews/visible-mass-3d/M6_Rapid_30_Object_Photo_Triage_20261019.html"
-      - ".github/workflows/visible-mass-m6-offline-thumbnails.yml"
   workflow_dispatch:
 permissions:
   contents: read
