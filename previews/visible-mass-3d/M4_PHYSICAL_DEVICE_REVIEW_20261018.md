@@ -1,6 +1,14 @@
 # The Visible Mass — M4 physical-device review
 18 October 2026 | PR #1309 | Research review, **not** authorised publication
 
+## M4.4 — Open the self-contained genuine-photo HTML first
+
+The **integrated** `The_Visible_Mass_M4_Photographic_Review_Offline.html` is published only as a **GitHub Actions research artifact**, not as a production deployment. Download the `The-Visible-Mass-M4-Photographic-Review-Offline` artifact from [successful original-photograph M4 run #39094002530](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39094002530), extract the HTML, and open it directly in a browser. It contains all three licensed original photographs (Brompton altar still, Brompton 360°, Dublin Newman 360°), 134 original question records, the current French study overlay, four optional guided trails and 450 canonical glossary entries. It is **not** the old `The_Visible_Mass_P0_Offline.html`.
+
+This self-contained visitor passed disconnected `file://` Chromium at 1280×820 and mobile emulation 390×844, with all three photographed images decoded, canonical 134 questions and 450 G### entries loaded, Brompton-only object list boundary intact, six high-altar markers and direct AL01 inspection functional. The actual HTML is approximately **3.4 MB**; licensed photographed pixels and data are embedded, without an external browser server. Supplemental inspection photos remain optional external linked resources and may need a connection. The user still needs to test a real Android HTML-opening application/browser and physical Windows/Edge.
+
+This offline original-photo preview does **not** package or simulate the native app's published Mass Explorer, LIVE, Simple or Missal. Its research candidate links remain dormant when the production shell is absent. Nothing is merged or approved for release.
+
 ## Open the actual integrated visitor
 
 The feature under review is **`previews/visible-mass-3d/sanctuary-hotspot-pilot.html`**, not the separate `The_Visible_Mass_P0_Offline.html` 3D-engine prototype. The latter does **not** contain this integrated sanctuary-panoramas M4 visitor. Open this document in the feature branch, not in production.
