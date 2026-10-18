@@ -11,6 +11,7 @@ export const CANON_RESEARCH_READER_VERSION="AO_CANON_ORIGINAL_RESEARCH_READER_V1
 const MAIN_INDEX="data/learn/formation-historical-answer-crosswalk-20261013.v1.json";
 const EXTRA_INDEX="data/learn/research/formation-new-15-indexed-answer-adequacy-20261014.v1.json";
 const AUDIT_INDEX="data/learn/research/formation-canon-primary-source-pinpoint-review-20261018.v1.json";
+const ERRATA_INDEX="data/learn/research/formation-canon-source-owner-errata-20261018.v1.json";
 const VALID_PATH=/^data\/learn\/[a-z0-9_./-]+\.json$/i;
 
 export function canonResearchPreviewEnabled(win=globalThis){
@@ -51,13 +52,21 @@ function safeSource(link){
  if(!url)return null;
  try{const uri=new URL(url);if(uri.protocol!=="https:")return null;return uri.href;}catch{return null;}
 }
-function originalParagraphs(record,document,language){
+function originalParagraphs(record,document,language,errata=null,witnesses={}){
  const paragraphs=record?.paragraphs||record?.sections||[];
  if(!Array.isArray(paragraphs))return [];
  const registry=new Map(Array.isArray(document.source_registry)?
   document.source_registry.map(r=>[r.id,r]):[]);
+ for(const source of errata?.sourceWitnessIds||[]){
+  if(witnesses[source])registry.set(source,witnesses[source]);
+ }
  return paragraphs.map(p=>{
-  const sourceIds=Array.isArray(p.source_ids)?p.source_ids:[];
+  const rawSourceIds=Array.isArray(p.source_ids)?p.source_ids:[];
+  const rules=(errata?.sourceIdRewrites||[]).filter(x=>x.role===p.role);
+  const sourceIds=rawSourceIds.flatMap(id=>{
+   const rewrite=rules.find(r=>r.from===id);
+   return rewrite?rewrite.to:[id];
+  });
   const inlineLinks=Array.isArray(p.source_links)?p.source_links:[];
   const links=[...sourceIds.map(s=>registry.get(s)),...inlineLinks]
    .map(s=>({id:s?.id||null,title:s?.title||s?.id||"Original source",url:safeSource(s)}))
@@ -78,11 +87,13 @@ export async function createCanonResearchReviewer(win=globalThis,{fetcher}={}){
  if(!canonResearchPreviewEnabled(win))throw Error("Canon research requires four explicit review flags");
  const request=fetcher||(typeof win.fetch==="function"?win.fetch.bind(win):null);
  if(typeof request!=="function")throw Error("Original research fetcher missing");
- const [index,delta,audit]=await Promise.all([fetchJSON(request,MAIN_INDEX),fetchJSON(request,EXTRA_INDEX),fetchJSON(request,AUDIT_INDEX)]);
+ const [index,delta,audit,errata]=await Promise.all([fetchJSON(request,MAIN_INDEX),fetchJSON(request,EXTRA_INDEX),fetchJSON(request,AUDIT_INDEX),fetchJSON(request,ERRATA_INDEX)]);
+ if(errata.schema!=="AO_CANON_SOURCE_OWNER_PINPOINT_ERRATA_V1"||errata.count!==3||errata.publication_allowed!==false)throw Error("Original source-owner errata contract changed");
+ const errataMap=new Map(errata.records.map(e=>[e.historicalId,e]));
  if(audit.schema!=="AO_FORMATION_CANON_PRIMARY_SOURCE_PINPOINT_REVIEW_V1"||audit.records?.length!==7||audit.summary?.publishedApprovalsGranted!==0)throw Error("Original source audit release contract changed");
  const auditMap=new Map(audit.records.map(x=>[x.id,x]));
  const catalog=createCanonResearchQuestionCatalog(index,delta);
- const cache=new Map([[MAIN_INDEX,index],[EXTRA_INDEX,delta],[AUDIT_INDEX,audit]]);
+ const cache=new Map([[MAIN_INDEX,index],[EXTRA_INDEX,delta],[AUDIT_INDEX,audit],[ERRATA_INDEX,errata]]);
  async function readDocument(path){
   if(!cache.has(path))cache.set(path,fetchJSON(request,path));
   try{return await cache.get(path);}catch(error){cache.delete(path);throw error;}
@@ -101,7 +112,9 @@ export async function createCanonResearchReviewer(win=globalThis,{fetcher}={}){
    try{
     const doc=await readDocument(ref.path),record=findRecord(doc,wanted);
     if(!record)continue;
-    const paragraphs=originalParagraphs(record,doc,language);
+    const correction=errataMap.get(question.questionId);
+    if(correction&&correction.originalOwnerPath!==ref.path)throw Error("Errata owner mismatch");
+    const paragraphs=originalParagraphs(record,doc,language,correction,errata.sourceWitnesses);
     if(!paragraphs.length)continue;
     // Documents and dossier source IDs remain individually attributable.
     return Object.freeze({ok:true,questionId:question.questionId,
@@ -110,6 +123,8 @@ export async function createCanonResearchReviewer(win=globalThis,{fetcher}={}){
      canonicalOwnerIds:question.canonicalOwnerIds,language,
      paragraphs:Object.freeze(paragraphs),
      editorialAudit:auditMap.has(question.questionId)?Object.freeze(auditMap.get(question.questionId)):null,
+     editorialCorrection:correction||null,
+     editorialExtraWitnesses:Object.freeze((correction?.sourceWitnessIds||[]).map(key=>errata.sourceWitnesses[key]).filter(Boolean)),
      sourceOwnerReviewOnly:true,publicAnswerAuthorized:false,
      historicVerbatimCertified:false,characterQuote:false,nativeRoute:null});
    }catch{
