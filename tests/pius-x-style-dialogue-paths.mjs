@@ -222,10 +222,10 @@ for(const scenario of cases.cases){
 assert.ok(declaredClaims.size>=18,"Dialogues must cover the claims rather than repeat one filler");
 const marian=cases.cases.find(x=>x.id==="PX-STYL-OUR-LADY-01");
 assert.match(marian.turns[0].reply.en,/Adoration belongs to God alone/);
-assert.match(marian.turns[1].reply.en,/Christ alone is its source/);
+assert.match(marian.turns[1].reply.en,/every grace we receive is owed to His merits/);
 const childScenario=cases.cases.find(x=>x.id==="PX-STYL-CHILD-CATECHISM-02");
 assert.match(childScenario.turns[0].reply.en,/need not have mastered the whole Catechism/);
-assert.match(childScenario.turns[2].reply.en,/after her First Communion/);
+assert.match(childScenario.turns[2].reply.en,/day of her First Communion/);
 assert.equal(childScenario.turns[0].register,"FAMILIAR");
 assert.ok(childScenario.turns.some(t=>t.sourceBoundReview.evidenceIds.some(x=>x.startsWith("QUAM-"))));
 const authority=cases.cases.find(x=>x.id==="PX-STYL-TEACHING-OBJECTION-03");
@@ -270,6 +270,21 @@ assert.equal(reviewed.size,cases.cases.reduce((n,c)=>n+c.turns.length,0),
  "Every draft turn must have one explicit documentary/editorial assessment");
 assert.equal(review.reviews.filter(r=>r.disposition==="REVISE_LOCALLY").length,4,
  "Track the four localized problems, rather than reauthoring all nine.");
+assert.equal(cases.editorialRevision.localVoiceReconciliation.targetedEdits,4);
+assert.equal(cases.editorialRevision.localVoiceReconciliation.unchangedTurns,5);
+assert.equal(cases.editorialRevision.localVoiceReconciliation.approved,false);
+assert.equal(cases.editorialRevision.localVoiceReconciliation.runtimeImportAllowed,false);
+const updatedTurns=cases.cases.flatMap(c=>c.turns.filter(t=>t.editorialLocalRevision));
+assert.equal(updatedTurns.length,4,"Only 4 turns may be locally revised");
+for(const t of updatedTurns){
+ assert.equal(t.editorialLocalRevision.status,"TEXT_EDITED_NOT_APPROVED");
+ assert.equal(t.editorialLocalRevision.sourceReferencesRetained,true);
+ assert.equal(t.editorialLocalRevision.historicalSpeech,false);
+ assert.equal(t.editorialLocalRevision.languageReview,"BOTH_DRAFT_UNAPPROVED");
+}
+assert.doesNotMatch(childScenario.turns[0].reply.en,/keeping her teacher well occupied/i);
+assert.doesNotMatch(childScenario.turns[2].reply.en,/lesson learnt only for the day of an examination/);
+
 assert.equal(review.reviews.find(r=>r.caseId==="PX-STYL-CHILD-CATECHISM-02"&&r.turn===1).risk,"HIGH",
  "Do not certify the invented joke from unrelated private correspondence");
 
