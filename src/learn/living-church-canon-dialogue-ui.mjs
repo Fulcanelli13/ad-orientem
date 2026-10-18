@@ -128,6 +128,21 @@ export function createCanonSourceDialogueOverlay(win=globalThis,{root,getLang=()
      a.target="_blank";a.rel="noopener noreferrer";refs.append(a);
     }
    }
+   if(rec.editorialAudit){
+    const check=put(stage,"section","crEvidence");
+    const french=getLang()==="fr";
+    put(check,"div","crKicker",french?"Vérification des sources · non approuvée":
+      "Targeted source check · NOT approved for publication");
+    put(check,"p","crScope",rec.editorialAudit.class.replace(/_/g," "));
+    put(check,"p","crCaution",french?"Une vérification supplémentaire des sources reste nécessaire.":
+      rec.editorialAudit.held);
+    const originals=put(check,"div","crNav");
+    for(const source of rec.editorialAudit.pinpoints){
+     const link=node(doc,"a","crLink",source.authority);
+     link.href=source.url;link.target="_blank";link.rel="noopener noreferrer";
+     originals.append(link);
+    }
+   }
    put(stage,"p","crScope",(paragraph+1)+" / "+rec.paragraphs.length);
    const actions=nav();
    if(paragraph>0)act(actions,t.previous,()=>{paragraph--;render();},"prev");
