@@ -4,6 +4,7 @@ import {readFile,writeFile,mkdir} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {probeTextFocus} from "./support/text-focus-probe.mjs";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/exceptional-rite-phone");
 await mkdir(output,{recursive:true});
@@ -101,6 +102,27 @@ try{
    }
    row.status="source-steps-rendered";
    assert.equal(new Set(row.steps.map(x=>x.id)).size,init.total,scenario.id+" duplicate or missed source step");
+   row.focusSamples=[];
+   const focusRecords=init.kind==="EV"?["EV-LIT1-400","EV-LIT2-600","EV-FONT-420","EV-FONT-440"]:
+     ["GF-SOP-01-K","GF-VEN-600"];
+   for(const id of focusRecords){
+    if(!row.steps.some(x=>x.id===id))continue;
+    await page.evaluate(({kind,id})=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      if(kind==="EV")api.goToEasterVigilRecord(id);
+      else api.goToGoodFridayRecord(id);
+    },{kind:init.kind,id});
+    await page.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
+    const probed=await page.evaluate(probeTextFocus,{
+      rootSelector:"#ao-r17-native-reader-preview",
+      scrollSelector:".ao-prayer-card",paragraphSelector:".ao-reader-paragraph",
+      owner:"distinct",label:scenario.id+" / "+id
+    });
+    row.focusSamples.push({id,registered:probed.registered,reached:probed.reached,
+      missing:probed.unreachable,invalidated:probed.invalidated,maxScroll:probed.maxScroll});
+    if(!probed.invalidated&&probed.unreachableTotal)throw Error(
+      scenario.id+" "+id+" skips "+probed.unreachableTotal+" of "+probed.registered+" source-lit paragraphs");
+   }
    if(init.kind==="EV"){
     assert.equal(row.steps.at(-1)?.id,"EV-MASS-700",scenario.id+" did not reach Mass handoff");
     const stage=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCompositeStage?.());
