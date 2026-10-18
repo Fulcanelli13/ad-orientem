@@ -163,4 +163,72 @@ assert.match(cases.sourceReconciliation.historicalDisciplineCaution.runtimeConst
 assert.match(cases.sourceReconciliation.editionLimitation,/NOT a certified historical English/);
 assert.ok(!JSON.stringify(cases).includes('"historicalAnswerText"'));
 
+
+/** Editorial-source constraints for the stronger nine-turn dialogue.
+ * These checks verify provenance and fail-closed publication, not theological
+ * accuracy or bilingual translation quality (both remain human review gates).
+ */
+assert.equal(cases.editorialRevision.version,"SOURCE_BOUNDED_EN_FR_V2");
+assert.equal(cases.editorialRevision.status,"EDITORIAL_DRAFT_UNRELEASED");
+assert.equal(cases.editorialRevision.sourceAccuracy,"EDITORIAL_REVIEW_REQUIRED_NOT_CERTIFIED");
+assert.equal(cases.editorialRevision.deployment,"NOT_EXPORTED_TO_PUBLIC_OR_PRODUCTION_CHARACTER");
+assert.equal(cases.editorialRevision.approvals.historicalStyle,false);
+assert.equal(cases.editorialRevision.approvals.theological,false);
+assert.equal(cases.editorialRevision.approvals.french,false);
+assert.equal(cases.editorialRevision.approvals.english,false);
+assert.equal(cases.editorialRevision.approvals.runtime,false);
+assert.equal(cases.cases.length,3);
+assert.ok(cases.editorialRevision.contemporaryDiscipline.includes("midnight Eucharistic fast"));
+const externalIds=new Map(cases.editorialEvidenceCatalog.map(x=>[x.id,x]));
+assert.equal(externalIds.size,cases.editorialEvidenceCatalog.length,"No duplicate documentary locators");
+for(const d of cases.editorialEvidenceCatalog){
+ assert.match(d.url,/^https:\/\//);
+ assert.ok(d.locator&&d.source);
+ if(d.id.startsWith("QUAM-"))
+  assert.equal(d.kind,"HISTORICAL_DECREE_ISSUED_UNDER_PIUS_X_NOT_PERSONAL_VERBATIM");
+ if(d.kind==="VATICAN_PRIMARY_TEXT")assert.match(d.url,/^https:\/\/www\.vatican\.va\//);
+}
+const evidenceIndex=new Map(witness.entries.map(q=>["PX1912-Q"+String(q.q).padStart(3,"0"),q]));
+const declaredClaims=new Set();
+for(const scenario of cases.cases){
+ for(const [index,turn] of scenario.turns.entries()){
+  const check=turn.sourceBoundReview;
+  assert.equal(check.classification,"SOURCE_BOUNDED_C_EDUCATIONAL_RECONSTRUCTION");
+  assert.equal(check.claimedHistoricalUtterance,false);
+  assert.equal(check.verbatimOriginalSourceText,false);
+  assert.equal(check.originalSourceQuoteApproval,false);
+  assert.equal(check.claimReviewStatus,"SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING");
+  assert.equal(check.languageReviewStatus,"EN_FR_EDITORIAL_APPROVAL_PENDING");
+  assert.equal(check.contentSourceOwner,"EXISTING_CATECHISM_AND_PAPAL_DOCUMENT_PIPELINE");
+  assert.equal(turn.requiresOriginalSourceForSubstance,true);
+  assert.ok(check.claimIds.length>=2,"Every reply must make a meaningful, source-indexed point");
+  assert.ok(check.evidenceIds.length>=1);
+  for(const claim of check.claimIds){assert.match(claim,/^[A-Z][A-Z0-9-]+$/);declaredClaims.add(claim);}
+  for(const id of check.evidenceIds){
+   if(id.startsWith("PX1912-"))assert.ok(evidenceIndex.has(id),"Indexed witness missing "+id);
+   else assert.ok(externalIds.has(id),"Document source pointer missing "+id);
+  }
+  for(const language of ["en","fr"]){
+   const reply=turn.reply[language];
+   assert.ok(reply.length>180 && reply.length<650,scenario.id+"/"+index+" direct explanation length");
+   assert.ok(!/^(let us (?:consult|turn to)|revenons à (?:l'|l’)?enseignement)/i.test(reply),
+     "Do not replace an answer with a redirect to source");
+   assert.ok(!/^(?:As Pope Pius X|Comme le pape Pie X) (?:said|a dit)/i.test(reply),
+     "Never attribute invented dialogue as a recorded quotation");
+  }
+ }
+}
+assert.ok(declaredClaims.size>=18,"Dialogues must cover the claims rather than repeat one filler");
+const marian=cases.cases.find(x=>x.id==="PX-STYL-OUR-LADY-01");
+assert.match(marian.turns[0].reply.en,/Adoration belongs to God alone/);
+assert.match(marian.turns[1].reply.en,/Christ alone is its source/);
+const childScenario=cases.cases.find(x=>x.id==="PX-STYL-CHILD-CATECHISM-02");
+assert.match(childScenario.turns[0].reply.en,/need not have mastered the whole Catechism/);
+assert.match(childScenario.turns[2].reply.en,/after her First Communion/);
+assert.equal(childScenario.turns[0].register,"FAMILIAR");
+assert.ok(childScenario.turns.some(t=>t.sourceBoundReview.evidenceIds.some(x=>x.startsWith("QUAM-"))));
+const authority=cases.cases.find(x=>x.id==="PX-STYL-TEACHING-OBJECTION-03");
+assert.match(authority.turns[1].reply.en,/not make every passing remark/);
+assert.ok(!authority.turns.some(t=>t.reply.en.includes("all statements by clergy are infallible")));
+
 console.log("PASS Pius X 3 bilingual x 3 exchanges in both languages, source-gated end-to-end scripted playback = 18 interactions, 9 unique style-only replies; pinned route references, original-source gate, approved sprite names, no fabricated quotations or new doctrinal corpus");
