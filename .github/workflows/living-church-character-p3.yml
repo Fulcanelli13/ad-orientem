@@ -6,11 +6,18 @@ on:
       - "assets/living-church/**"
       - "data/learn/living-church-character-assets.v1.json"
       - "data/learn/living-church-canon-formation-referral-contract.v1.json"
+      - "data/learn/formation-historical-answer-crosswalk-20261013.v1.json"
+      - "data/learn/formation-canon-migration-provenance-20261018.v1.json"
+      - "data/learn/research/formation-*.json"
+      - "src/learn/formation-canon-question-catalog.mjs"
+      - "src/learn/living-church-canon-research-reader.mjs"
+      - "src/learn/living-church-canon-dialogue-ui.mjs"
       - "src/learn/living-church-character-folio.js"
       - "src/learn/living-church-ask-integration.js"
       - "src/learn/visible-mass-review.js"
       - "tests/living-church-character-*.mjs"
       - "tests/living-church-canon-source-contract.mjs"
+      - "tests/living-church-canon-research-*.mjs"
       - ".github/workflows/living-church-character-p3.yml"
   workflow_dispatch:
 
@@ -36,6 +43,9 @@ jobs:
           node --check src/learn/visible-mass-review.js
           node tests/living-church-character-folio.mjs
           node tests/living-church-canon-source-contract.mjs
+          node --test tests/living-church-canon-research-source.mjs
+          node --check src/learn/living-church-canon-research-reader.mjs
+          node --check src/learn/living-church-canon-dialogue-ui.mjs
           node tests/living-church-ask-native-return.mjs
           node tests/living-church-visible-mass-adapter.mjs
           node tests/ask-church-objective-engine.mjs
@@ -45,7 +55,9 @@ jobs:
           npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
           npx playwright install --with-deps chromium
       - name: Actual app-shell/photographic viewer/three characters at 390 and 1280
-        run: node tests/living-church-character-phone.mjs
+        run: |
+          node tests/living-church-character-phone.mjs
+          node tests/living-church-canon-research-phone.mjs
       - name: Preserve original P2 source and return acceptance
         run: node tests/living-church-ask-real-shell.mjs
       - name: Upload 390px and 1280px character review screenshots
