@@ -59,7 +59,7 @@ try{
         navPrev:!!root?.querySelector('[data-reader-nav="previous"]'),
       };
     });
-    assert.equal(summary.count,65,"Review query param did not activate curated 65");
+    assert.equal(summary.count,64,"Legacy review flag should activate the one-card Sanctus projection");
     assert.equal(summary.canonical,39);
     assert.equal(summary.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
     assert.ok(summary.rootVisible && summary.navNext && summary.navPrev);
@@ -152,8 +152,7 @@ try{
       "Gloria · The Celebrant's Intonation",
       "Gloria · Praise and Supplication",
       "Credo · Incarnation, Passion and Resurrection",
-      "Sanctus",
-      "Benedictus",
+      "Sanctus — Benedictus",
       "Words of Consecration and Elevation · Host",
       "Words of Consecration and Elevation · Chalice",
       "Communion Antiphon",
@@ -207,8 +206,7 @@ try{
       }
       if(title==="Gloria · The Celebrant's Intonation")assert.equal(state.track,null);
       if(title==="Gloria · Praise and Supplication")assert.equal(state.track,"GLORIA");
-      if(title==="Sanctus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
-      if(title==="Benedictus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
+      if(title==="Sanctus — Benedictus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
     }
     // Walk every liturgical card in source order, not merely selected screenshots.
     // A local second Confiteor is present in source audit, but absent from
@@ -268,7 +266,7 @@ try{
       }
       return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null};
     });
-    const expectedVisible=secondConfiteor?65:64;
+    const expectedVisible=secondConfiteor?64:63;
     assert.equal(walked.visited.length,expectedVisible,
       "The optional local Confiteor must not be shown by default");
     assert.deepEqual(walked.skipped,secondConfiteor?[]:["Second Confiteor · Optional Local Custom"]);
@@ -285,7 +283,7 @@ try{
     // are resolved when source-owned cues become visible in the review.
     const resolvedIcons=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
-      const stage=api.model.cards.find(c=>c.title==="Sanctus");
+      const stage=api.model.cards.find(c=>c.title==="Sanctus — Benedictus");
       api.showSequence(stage.sequence);
       return [...document.querySelectorAll('[data-icon-slot]')].filter(el=>
         !el.hidden && el.getBoundingClientRect().width>0 &&
@@ -769,7 +767,7 @@ try{
           reset};
       },form);
       if(form==="SOLEMN"){
-        assert.equal(result.cards,65,"Solemn 65-card reviewed model regressed");
+        assert.equal(result.cards,64,"Solemn combined-Sanctus model regressed");
         assert.equal(result.scholaBefore,"GRADUAL");
         assert.equal(result.noEvidence,false);
         assert.equal(result.priestRead,true);
@@ -783,14 +781,14 @@ try{
         assert.equal(result.falseCelebrant,false,"Solemn Epistle lector became priest");
         assert.equal(result.falseGospel,false,"Solemn deacon Gospel became priest");
       }else if(form==="MISSA_CANTATA_SIMPLE"){
-        assert.equal(result.cards,65);
+        assert.equal(result.cards,64);
         assert.equal(result.lector,false);
         assert.equal(result.celebrant,true);
         assert.equal(result.priestCue,"AO.SM.C0075");
         assert.equal(result.scholaUnchanged,true);
         assert.equal(result.reset,null);
       }else{
-        assert.notEqual(result.cards,65,"Low Mass unexpectedly selected the Sung review");
+        assert.notEqual(result.cards,64,"Low Mass unexpectedly selected the Sung review");
         assert.equal(result.scholaAbsent,true);
         assert.equal(result.observes,false,
           "Low Mass accepted source-only Sung celebrant event");
@@ -799,7 +797,7 @@ try{
       await page.screenshot({path:resolve(out,"priest-dual-clock-"+form.toLowerCase()+".png")});
     }finally{await context.close()}
   }
-  console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and inline rubrics without Guide.");
+  console.log("Curated 65 phone: PASS — all 63/64 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and inline rubrics without Guide.");
 }finally{
   await browser?.close();
   await new Promise(done=>server.close(()=>done()));

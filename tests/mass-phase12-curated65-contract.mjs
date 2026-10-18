@@ -19,7 +19,9 @@ const added=Object.values(CURATED_LIVE_GROUPS).reduce((n,part)=>{
  assert.ok(part.after.every(c=>Boolean(c.block)||Number.isInteger(c.cue)),"Every cut needs exact source evidence");
  return n+part.after.length;
 },0);
-assert.equal(39+added,65,"65-card source-first LIVE product contract regressed");
+assert.equal(39+added,64,"64-card single-Sanctus source-first LIVE product contract regressed");
+assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].titles,["Sanctus — Benedictus"]);
+assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].after,[]);
 assert.ok(CURATED_LIVE_GROUPS["AO.CARD.024"].titles[0].includes("Second Confiteor"));
 assert.match(browser,/aoLiveCards=48/,"Production must retain explicit 48 rollback");
 assert.match(browser,/reviewCuratedCards:!rollback48/,"Production must request curated 65 by default");
@@ -107,4 +109,4 @@ assert.equal(certifiedLiveCanonActionOverride({
 assert.match(native,/originalPriestAction=canonLiveAction\?\?/,
  "LIVE projector must use the certified correction before the frozen cue label");
 
-console.log("PASS Phase 1/2: 39-source/65-curated product, 64-visible option, explicit 48 rollback and pre-Gospel source ownership; independently sourced Sequence navigation tested separately.");
+console.log("PASS Phase 1/2: 39-source/64-curated product, 63-visible option, explicit 48 rollback and pre-Gospel source ownership; independently sourced Sequence navigation tested separately.");

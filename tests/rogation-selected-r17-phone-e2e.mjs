@@ -199,7 +199,7 @@ try{
     return {source:api.sourceModel.totalCards,total:api.model.totalCards,
       first:api.model.cards[0].title,owner:api.model.preMassHandoff};
    });
-   assert.deepEqual(identity,{source:39,total:61,first:"Introit",owner:"INTROIT"});
+   assert.deepEqual(identity,{source:39,total:60,first:"Introit",owner:"INTROIT"});
    const title=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim();
    assert.equal(title,"Introit","Rogations must hand off directly to Introit, not foot prayers");
    const backBox=await back.boundingBox();assert.ok(backBox&&backBox.height>=44);

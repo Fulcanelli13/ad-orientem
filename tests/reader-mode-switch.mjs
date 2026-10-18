@@ -56,8 +56,8 @@ assert.equal(prepared.session.resolvedMass.presentationMode,"LIVE","mode rebuild
 // Explicit review mode uses curated liturgical turns, not one card per block.
 // The production 48-card reader is untouched.
 const expandedReview=buildReaderModeModels({prepared,data,mode:"LIVE",reviewExpandedCards:true});
-assert.equal(expandedReview.presentationModel.totalCards,65,
-  "curated LIVE should have precisely 65 cards for the standard Sung Ordinary");
+assert.equal(expandedReview.presentationModel.totalCards,64,
+  "curated LIVE should have 64 cards with one complete Sanctus–Benedictus");
 assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(expandedReview.presentationModel.sourceAuthorityModel,expandedReview.sourceModel);
 
@@ -218,7 +218,9 @@ assert.equal(cardForCue("AO.SM.C0049"),cardForCue("AO.SM.C0050"),
   "The Kyrie must not be over-segmented");
 assert.equal(cardForCue("AO.SM.C0131"),cardForCue("AO.SM.C0132"),
   "Orate fratres and Suscipiat response must share one card");
-distinct("AO.SM.C0147","AO.SM.C0148","Sanctus/Benedictus card boundary lost");
+assert.equal(cardForCue("AO.SM.C0147"),cardForCue("AO.SM.C0148"),
+  "A single priestly Sanctus–Benedictus must not force another swipe");
+assert.equal(cardForCue("AO.SM.C0147")?.title,"Sanctus — Benedictus");
 distinct("AO.SM.C0172","AO.SM.C0173","Host consecration formula must follow preparation");
 distinct("AO.SM.C0178","AO.SM.C0179","Chalice consecration formula must follow preparation");
 distinct("AO.SM.C0272","AO.SM.C0273","Et Verbum caro factum est must have its own card");

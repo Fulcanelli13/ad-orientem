@@ -239,7 +239,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
     await tapNext();
     await page.waitForFunction(()=>{
       const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
-      // The 64/65 presentation keeps AO.CARD.001 as its source owner;
+      // The 63/64 presentation keeps AO.CARD.001 as its source owner;
       // split prayer cards have independent display IDs by design.
       return (card?.sourceSectionId??card?.sectionId)==="AO.CARD.001";
     },null,{timeout:5000});
@@ -249,8 +249,8 @@ async function exerciseRealShellSpecialRite(browser,spec){
         source:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.totalCards,
         curated:document.getElementById("ao-r17-native-reader-preview")?.dataset.r17CuratedReview,
       }));
-      assert.deepEqual(readerIdentity,{total:65,source:39,curated:"true"},
-        "real-shell Asperges must return to curated 64/65 cards without changing 39 original Mass source steps");
+      assert.deepEqual(readerIdentity,{total:64,source:39,curated:"true"},
+        "real-shell Asperges must return to curated 63/64 cards without changing 39 original Mass source steps");
     }
     if(["PALM","ASH","CANDLEMAS","ROGATIONS"].includes(spec.kind)){
       assert.equal(setup.massEntry,"INTROIT",
@@ -266,13 +266,13 @@ async function exerciseRealShellSpecialRite(browser,spec){
           progress:root?.querySelector('[data-role="progress"]')?.textContent??"",
           lastGospelVisibility:api?.model?.cards?.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
       });
-      assert.equal(snapshot.total,61,spec.kind+" must remove exactly four opening display cards");
+      assert.equal(snapshot.total,60,spec.kind+" must remove exactly four opening display cards");
       assert.equal(snapshot.source,39,spec.kind+" must preserve canonical 39 source steps");
       assert.equal(snapshot.curated,"true");
       assert.equal(snapshot.first,"Introit");
       assert.equal(snapshot.handoff,"INTROIT");
       assert.equal(snapshot.suppressed?.length,4);
-      assert.match(snapshot.progress,new RegExp("1 / "+(spec.kind==="PALM"?58:60)+"$"),
+      assert.match(snapshot.progress,new RegExp("1 / "+(spec.kind==="PALM"?57:59)+"$"),
         spec.kind+" visible progress must exclude Foot cards and optional second Confiteor"+
         (spec.kind==="PALM"?" and Last Gospel":""));
       assert.equal(snapshot.lastGospelVisibility,2,
@@ -292,7 +292,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
       assert.equal(switchback.missal,"MISSAL");
       assert.equal(switchback.live,"LIVE");
       assert.equal(switchback.source,39);
-      assert.equal(switchback.model,61,
+      assert.equal(switchback.model,60,
         spec.kind+" must not reintroduce omitted Foot prayers when switching modes");
       assert.equal(switchback.first,"Introit");
       assert.equal(switchback.current,"Introit");
@@ -574,7 +574,7 @@ async function exerciseRealShellFollowingAction(browser,spec){
           optional:api.model.cards.some(c=>c.title?.startsWith("Second Confiteor")),
           lastGospelCards:api.model.cards.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
       });
-      assert.equal(audit.total,65,spec.kind+" must have curated Mass before following action");
+      assert.equal(audit.total,64,spec.kind+" must have curated Mass before following action");
       assert.equal(audit.source,39);
       assert.equal(audit.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
       assert.equal(audit.curated,"true");

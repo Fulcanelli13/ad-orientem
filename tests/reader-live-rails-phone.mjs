@@ -27,8 +27,8 @@ try{
   browser=await chromium.launch({headless:true});
   let sampledActive=0,sampledEmpty=0;
   const configurations=[
-    {name:"production64",query:"production=1",cards:65,visible:64},
-    {name:"optional65",query:"production=1&secondConfiteor=1",cards:65,visible:65},
+    {name:"production63",query:"production=1",cards:64,visible:63},
+    {name:"optional64",query:"production=1&secondConfiteor=1",cards:64,visible:64},
     {name:"rollback48",query:"production=1&aoLiveCards=48",cards:48,visible:48},
   ];
   for(const variant of configurations)for(const width of [320,360,390]){
@@ -123,7 +123,7 @@ try{
     await context.close();
   }
   assert(sampledActive>0,"No active icon cue was sampled; test did not exercise semantic labelling");
-  console.log("PASS LIVE rails 320/360/390px: production 64, optional 65 and rollback 48; inactive icons vanish, active cues remain accessible and progress denominators match.");
+  console.log("PASS LIVE rails 320/360/390px: production 63, optional 64 and rollback 48; inactive icons vanish, active cues remain accessible and progress denominators match.");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));

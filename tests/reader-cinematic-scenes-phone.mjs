@@ -174,8 +174,8 @@ try{
     await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
       null,{timeout:20000});
     const count=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards);
-    assert.equal(count,query.includes("65")?65:48);
-    // Curated 65 has a known short Credo fragment whose C0096 is not
+    assert.equal(count,query.includes("65")?64:48);
+    // Curated 64 has a known short Credo fragment whose C0096 is not
     // reachable by source-focus scrolling (no fabricated cue activation).
     // The independent 48-card source-first reader is the product acceptance
     // owner for Incarnatus until the curated layout fixes its geometry.
@@ -260,7 +260,7 @@ try{
     assert.deepEqual(errors,[],"Good Friday source graph browser errors");
     await context.close();
   }
-  console.log("PASS actual LIVE 48/65 phone cinematics: EN/FR, 320/390px, two Elevations, both Consecrations, Incarnatus, Hanc, Gospel and R28 Passion, no blackout, no stale scene, reduced motion.");
+  console.log("PASS actual LIVE 48/64 phone cinematics: EN/FR, 320/390px, two Elevations, both Consecrations, Incarnatus, Hanc, Gospel and R28 Passion, no blackout, no stale scene, reduced motion.");
 }finally{
   await browser?.close();
   await new Promise(done=>server.close(done));

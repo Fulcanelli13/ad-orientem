@@ -44,7 +44,7 @@ try{
      return {total:a.model.totalCards,cue:a.getActiveCue(),visible:
        !document.querySelector("[data-live-canon-follow-trigger]")?.hidden};
    });
-   assert.equal(initial.total,65);
+   assert.equal(initial.total,64);
    assert.equal(initial.visible,false,"Manual button must be absent outside the two elevation cues");
    // Use the reader's exact 39%-focus geometry, not merely
    // scrollIntoViewIfNeeded (a visible bottom rubric can remain unfocused).
@@ -116,7 +116,7 @@ try{
    assert.deepEqual(errors,[],"LIVE Canon manual browser errors");
   }finally{await context.close();}
  }
- console.log("PASS LIVE 65 manual Canon control: mobile 320/390 EN/FR, Host and Chalice options, independent server bell, reset, Escape, Missal/Simple hidden.");
+ console.log("PASS LIVE 64 manual Canon control: mobile 320/390 EN/FR, Host and Chalice options, independent server bell, reset, Escape, Missal/Simple hidden.");
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(()=>ok()));

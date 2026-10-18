@@ -27,14 +27,14 @@ try{
  browser=await chromium.launch({headless:true});
  await mkdir(out,{recursive:true});
  for(const option of [
-  {label:"ordinary64",query:"production=1",cards:65,visible:64,curated:"true"},
-  {label:"optional65",query:"production=1&secondConfiteor=1",cards:65,visible:65,curated:"true"},
+  {label:"ordinary63",query:"production=1",cards:64,visible:63,curated:"true"},
+  {label:"optional64",query:"production=1&secondConfiteor=1",cards:64,visible:64,curated:"true"},
   {label:"rollback48",query:"production=1&aoLiveCards=48",cards:48,visible:48,curated:"false"},
-  {label:"asperges64",query:"production=1&rite=asperges",cards:65,visible:64,curated:"true",rite:"ORDINARY"},
-  {label:"asperges65",query:"production=1&rite=asperges&secondConfiteor=1",cards:65,visible:65,curated:"true",rite:"ORDINARY"},
-  {label:"asperges64-fr",query:"production=1&rite=asperges&lang=fr",cards:65,visible:64,curated:"true",rite:"ORDINARY",lang:"fr"},
-  {label:"vidi-aquam64",query:"production=1&rite=asperges&date=2026-04-12",cards:65,visible:64,curated:"true",rite:"PASCHAL"},
-  {label:"passiontide64",query:"production=1&rite=asperges&date=2026-03-22",cards:65,visible:64,curated:"true",rite:"ORDINARY",omitGloria:true},
+  {label:"asperges63",query:"production=1&rite=asperges",cards:64,visible:63,curated:"true",rite:"ORDINARY"},
+  {label:"asperges64",query:"production=1&rite=asperges&secondConfiteor=1",cards:64,visible:64,curated:"true",rite:"ORDINARY"},
+  {label:"asperges63-fr",query:"production=1&rite=asperges&lang=fr",cards:64,visible:63,curated:"true",rite:"ORDINARY",lang:"fr"},
+  {label:"vidi-aquam63",query:"production=1&rite=asperges&date=2026-04-12",cards:64,visible:63,curated:"true",rite:"PASCHAL"},
+  {label:"passiontide63",query:"production=1&rite=asperges&date=2026-03-22",cards:64,visible:63,curated:"true",rite:"ORDINARY",omitGloria:true},
   {label:"asperges-rollback48",query:"production=1&rite=asperges&aoLiveCards=48",cards:48,visible:48,curated:"false",rite:"ORDINARY"},
  ]){
   const context=await browser.newContext({viewport:{width:390,height:844},
@@ -181,7 +181,7 @@ try{
   assert.equal(errors.length,0,option.label+": "+errors.join(" | "));
   await context.close();
  }
- console.log("PASS LIVE production: 64/65 standard, 6-record Asperges/Vidi aquam and Passiontide rite handoffs, precise priest source/card progress and reversible 48 rollback on 390px phone");
+ console.log("PASS LIVE production: 63/64 standard, 6-record Asperges/Vidi aquam and Passiontide rite handoffs, precise priest source/card progress and reversible 48 rollback on 390px phone");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));

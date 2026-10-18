@@ -1,9 +1,11 @@
 import { ORDINARY_SUNG_SOURCE_ONLY_CUES } from "./reader-source-only-cues.js";
 // Curated LIVE prayer-card presentation: one card per meaningful moment,
 // not per donor block. All source paragraphs, cue IDs and events are preserved.
-// The real production browser entry requests curated 65 by default (64 visible
-// unless the optional second Confiteor is enabled); 48 is explicit rollback.
-// The direct native fixture separately keeps its 65-card review activation.
+// Ordinary LIVE has 64 curated prayer cards (63 visible by default with
+// the optional second Confiteor omitted). `aoLiveCards=65` is a legacy
+// review activation flag, not a requirement for 65 separate prayer cards.
+// The 48-card rollback remains available.
+// Keep the direct native fixture review activation backward compatible.
 // Pre-Gospel chant subnavigation requires a source-backed follow-up.
 //
 // A "block" cut ends after the entire canonical block. A "cue" cut ends
@@ -46,8 +48,9 @@ const GROUPS=Object.freeze({
     after:[{block:"B039"}],
   }),
   "AO.CARD.013":Object.freeze({
-    titles:["Sanctus","Benedictus"],
-    after:[{cue:147}],
+    // One complete priestly prayer; Schola Benedictus timing is independent.
+    titles:["Sanctus — Benedictus"],
+    after:[],
   }),
   "AO.CANON.06":Object.freeze({
     titles:["Consecration of the Host · Preparation",
@@ -261,7 +264,7 @@ export function projectCuratedOrdinaryLiveCards(model){
   }
   const preGospelCount=result.filter(card=>card.sourceSectionId==="AO.CARD.006").length;
   if(preGospelCount<1||preGospelCount>3)throw new Error("PRE_GOSPEL_CARD_COUNT_UNSUPPORTED");
-  const expectedCards=65+(preGospelCount-1);
+  const expectedCards=64+(preGospelCount-1);
   if(result.length!==expectedCards)throw new Error(
     "Ordinary curated LIVE expected "+expectedCards+" source-backed cards; found "+result.length);
   const cards=Object.freeze(result);
@@ -301,7 +304,7 @@ export const CURATED_LIVE_GROUPS=GROUPS;
 // not renumber, synthesize or mutate their underlying canonical 39 steps.
 export function projectCuratedIntroitEntryLiveCards(curated){
   if(curated?.structureOwner!=="SOURCE_FIRST_LIVE_CURATED_65_REVIEW"||
-     ![65,66,67].includes(curated?.totalCards)||curated?.sourceModelTotalCards!==39)
+     ![64,65,66].includes(curated?.totalCards)||curated?.sourceModelTotalCards!==39)
     throw new Error("CURATED_INTROIT_ENTRY_REQUIRES_SOURCE_CURATED_65");
   const opening=curated.cards.filter(card=>card.sourceSectionId==="AO.CARD.001");
   const introit=opening.find(card=>card.title==="Introit" &&
@@ -322,7 +325,7 @@ export function projectCuratedIntroitEntryLiveCards(curated){
     }),
   })));
   const expectedVisible=curated.totalCards-omitted.length;
-  if(![61,62,63].includes(expectedVisible)||cards.length!==expectedVisible||
+  if(![60,61,62].includes(expectedVisible)||cards.length!==expectedVisible||
      cards[0].title!=="Introit")
     throw new Error("CURATED_INTROIT_ENTRY_EXPECTED_SOURCE_STEPS");
   const lookup=new Map(cards.map(c=>[c.sectionId,c]));

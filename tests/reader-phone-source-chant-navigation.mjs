@@ -86,7 +86,7 @@ try{
    };
   });
   assert.equal(result.error,undefined,JSON.stringify(result));
-  assert.equal(result.count,sequence?67:66);
+  assert.equal(result.count,sequence?66:65);
   const names=["Gradual",tract?"Tract":"Alleluia",...(sequence?["Sequence"]:[])];
   assert.deepEqual(result.cards.map(c=>c.title),names);
   assert.deepEqual(result.cards.flatMap(c=>c.paragraphIds),result.original,
