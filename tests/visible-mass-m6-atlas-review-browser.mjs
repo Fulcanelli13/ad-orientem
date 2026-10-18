@@ -36,7 +36,7 @@ try{
   const colorCard=await page.locator("#results").innerText();
   for(const color of ["WHITE","RED","GREEN","VIOLET","BLACK"])assert.ok(colorCard.includes("VE15-"+color),"Missing photo record for "+color);
   await page.locator("#search").fill("EQ08");
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,2,"Shared object photo ID legitimately matches its linked EQ07 and EQ08 records");
   assert.match(await page.locator("#results").innerText(),/THURIBLE-BOAT/);
   await page.locator("#search").fill("BK03");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
