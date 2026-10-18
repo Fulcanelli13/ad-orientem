@@ -80,6 +80,7 @@ try{
       focusEligible:eligible.length,
       focusActive:eligible.filter(x=>x.dataset.aoDistinctReadingActive==="true").length,
       dimRows:eligible.filter(x=>Number(getComputedStyle(x).opacity)<.5).length,
+      targetDimRows:eligible.filter(x=>Number(x.style.getPropertyValue("opacity"))<.5).length,
       opacityProbe:eligible.slice(0,5).map(node=>({
        active:node.dataset.aoDistinctReadingActive,
        inline:node.style.getPropertyValue("opacity"),
@@ -105,7 +106,7 @@ try{
     assert.ok(datum.viewportOverflow<=2,scenario.id+"/"+datum.id+" horizontal phone overflow");
     assert.equal(datum.focusActive,datum.focusEligible>0?1:0,
       scenario.id+"/"+datum.id+" active text focus is not unique");
-    if(datum.focusEligible>=2)assert.ok(datum.dimRows>0,
+    if(datum.focusEligible>=2)assert.ok(datum.targetDimRows>0,
       scenario.id+"/"+datum.id+" adjacent text does not mute in distinct rite: "+JSON.stringify(datum.opacityProbe));
    }
    row.status="source-steps-rendered";
@@ -121,6 +122,20 @@ try{
       else api.goToGoodFridayRecord(id);
     },{kind:init.kind,id});
     await page.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
+    // The reader animates opacity for approximately 280ms. Check actual
+    // computed contrast after settling on representative real source text,
+    // rather than racing an intermediate animation frame on every record.
+    await page.waitForTimeout(340);
+    const visual=await page.evaluate(()=>{
+      const nodes=[...document.querySelectorAll(
+       "#ao-r17-native-reader-preview [data-role='paragraphs'] .ao-reader-paragraph")]
+       .filter(x=>x.getClientRects().length&&x.dataset.kind!=="RUBRIC");
+      return {active:nodes.filter(x=>x.dataset.aoDistinctReadingActive==="true").length,
+       dim:nodes.filter(x=>Number(getComputedStyle(x).opacity)<.5).length,
+       total:nodes.length};
+    });
+    assert.equal(visual.active,1,scenario.id+"/"+id+" actual visual focus not unique");
+    if(visual.total>1)assert.ok(visual.dim>0,scenario.id+"/"+id+" opacity does not settle into muted state");
     const probed=await page.evaluate(probeTextFocus,{
       rootSelector:"#ao-r17-native-reader-preview",
       scrollSelector:".ao-prayer-card",paragraphSelector:".ao-reader-paragraph",
