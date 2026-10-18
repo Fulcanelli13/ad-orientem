@@ -970,6 +970,14 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell .ao-guide-popover{
   display:none!important;
 }
+/* Compact source-card heading, not the old large redundant title. */
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-title{
+  display:block;max-width:66ch;margin:0 auto 10px;padding:0 0 6px;
+  border-bottom:1px solid color-mix(in srgb,var(--ao-mass-accent) 22%,transparent);
+  font:500 clamp(12px,2.8vw,14px)/1.35 var(--ao-missal-display,Georgia,serif);
+  letter-spacing:.01em;color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 83%,transparent);
+  text-align:center;
+}
 /* A sourced ceremonial cue belongs directly to its original prayer row.
    The short rubric is legible without becoming a second Guide card. */
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics{
@@ -2899,7 +2907,10 @@ export function createReaderDomAdapter({
       if(note)note.textContent="Local choices apply to source-backed Mass cues.";
     }
     const titleNode=root.querySelector('[data-role="card-title"]');
-    if(titleNode)titleNode.hidden=true;
+    // The top ribbon truncates long named prayers on a phone. Keep a single,
+    // restrained in-card title in LIVE so the actual source-owned prayer name
+    // remains legible; never reintroduce a large duplicate educational panel.
+    if(titleNode)titleNode.hidden=mode!=="LIVE"||!current?.cardTitle;
     // Explanatory Guide belongs outside LIVE. It remains available to the
     // independent educational module, and the older Simple presentation
     // alone can display its existing button.
