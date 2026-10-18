@@ -153,8 +153,9 @@ function researchCue(item){
   const source=lead.additional_rights_unknown_research_url;
   const link=source==="https://www.friendsofflorence.org/projects/altar-gradine-oratory-and-tabernacle-chapel-annunziata-ss-annunziata/"?
    '<a class="source" href="'+quoteAttr(source)+'" target="_blank" rel="noopener noreferrer">Florentine historical gradine reference · rights unknown ↗</a>':'';
-  return '<div class="asset"><div class="asset-title">Contextual lead only · object still needs photograph</div>'+
-   '<p class="detail">Existing source-owned view: '+esc(lead.source_asset_id)+'. Gradine boundaries not individually established. No clickable hotspot approved.</p>'+link+'</div>';
+  const licensed=item.candidate_assets.some(x=>x.asset_id==="M6B5-AL10-ARS-SIXTE-GRADINE-ENSEMBLE");
+  return '<div class="asset"><div class="asset-title">'+(licensed?'Licensed independent gradine context photo · not a Brompton hotspot':'Contextual lead only · object still needs photograph')+'</div>'+
+   '<p class="detail">Original Brompton viewpoint: '+esc(lead.source_asset_id)+'. The exact gradine boundaries in Brompton remain unverified. No clickable hotspot approved.</p>'+link+'</div>';
  }
  return "";
 }
