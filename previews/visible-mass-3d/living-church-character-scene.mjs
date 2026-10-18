@@ -3,6 +3,7 @@
  * Content and return navigation remain owned by Visible Mass, Mass Explorer and Catechism.
  */
 import {createLivingChurchConversationTrail} from "./living-church-conversation-trail.mjs";
+import {verifyCanonAnswer} from "./living-church-answer-verifier.mjs";
 export const LIVING_CHURCH_SCENE_VERSION="AO_LIVING_CHURCH_SCENE_P2";
 const roles={
  sacristan:{name:"The Sacristan",role:"Explore the Church",stem:"sacristan"},
@@ -296,6 +297,13 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
     clearSource();state.groundedRecord=null;
     el(".lc-dialogue").textContent=record.text;
     return true;
+   }
+   const verdict=verifyCanonAnswer(record,record);
+   if(!verdict.ok){
+    state.groundedRecord=null;state.groundedFailure="SOURCE_INTEGRITY_FAILED";
+    clearSource();
+    el(".lc-dialogue").textContent="The original source record did not pass text and citation integrity checks.";
+    return false;
    }
    state.groundedRecord=record;state.groundedAnswerCount++;
    clearSource();
