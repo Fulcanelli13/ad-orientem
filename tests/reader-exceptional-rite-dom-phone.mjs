@@ -80,6 +80,14 @@ try{
       focusEligible:eligible.length,
       focusActive:eligible.filter(x=>x.dataset.aoDistinctReadingActive==="true").length,
       dimRows:eligible.filter(x=>Number(getComputedStyle(x).opacity)<.5).length,
+      opacityProbe:eligible.slice(0,5).map(node=>({
+       active:node.dataset.aoDistinctReadingActive,
+       inline:node.style.getPropertyValue("opacity"),
+       priority:node.style.getPropertyPriority("opacity"),
+       computed:getComputedStyle(node).opacity,
+       kind:node.dataset.kind,
+       className:node.className,
+      })),
       viewportOverflow:document.documentElement.scrollWidth-innerWidth,
       maxScroll:scroller?Math.max(0,scroller.scrollHeight-scroller.clientHeight):null,
       owner:root?.dataset.r17CardOwner,
@@ -98,7 +106,7 @@ try{
     assert.equal(datum.focusActive,datum.focusEligible>0?1:0,
       scenario.id+"/"+datum.id+" active text focus is not unique");
     if(datum.focusEligible>=2)assert.ok(datum.dimRows>0,
-      scenario.id+"/"+datum.id+" adjacent text does not mute in distinct rite");
+      scenario.id+"/"+datum.id+" adjacent text does not mute in distinct rite: "+JSON.stringify(datum.opacityProbe));
    }
    row.status="source-steps-rendered";
    assert.equal(new Set(row.steps.map(x=>x.id)).size,init.total,scenario.id+" duplicate or missed source step");
