@@ -26,6 +26,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Sample 24 distinct source Propers from real 2026 app resolver
         run: node tests/mass-phase1-24-random-propers-grammar.mjs
+      - name: Check adjudicated excerpts against sampled reader texts
+        run: node tests/mass-phase1-grammar-adjudications.mjs
       - name: Retain complete bilingual rendered-Propers review corpus
         if: always()
         uses: actions/upload-artifact@v4
