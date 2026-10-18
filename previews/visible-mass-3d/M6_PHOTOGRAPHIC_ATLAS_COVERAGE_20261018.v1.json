@@ -43,10 +43,15 @@
     "new_m6_total_candidate_records": 6,
     "second_batch_new_licensed_photo_candidates": 7,
     "m6_all_research_records": 13,
-    "post_second_batch_photo_candidate_or_hotspot": 32,
-    "post_second_batch_needs_photo": 138,
-    "post_second_batch_pilot_needs_photo": 4,
-    "post_second_batch_vestment_photo_candidates": 6
+    "post_second_batch_photo_candidate_or_hotspot": 30,
+    "post_second_batch_needs_photo": 140,
+    "post_second_batch_pilot_needs_photo": 6,
+    "post_second_batch_vestment_photo_candidates": 6,
+    "post_second_batch_photo_only_count_excludes_illustrations_and_unverified_leads": true,
+    "legacy_illustration_only_objects_reflagged": [
+      "LN04",
+      "LN05"
+    ]
   },
   "zones": [
     {
@@ -1303,7 +1308,7 @@
       "intended_navigation": "Z",
       "pilot_30": true,
       "pilot_photo_evidence": "NO_DIRECT_SCENE_EVIDENCE",
-      "evidence_status": "EXISTING_OBJECT_IMAGE_CANDIDATE",
+      "evidence_status": "HISTORICAL_ILLUSTRATION_ONLY_NEEDS_PHOTO",
       "candidate_assets": [
         {
           "asset_id": "EXISTING-LN04",
@@ -1311,7 +1316,7 @@
           "evidence": "EXISTING_INDEPENDENT_SOURCE_CANDIDATE_NOT_EDITORIAL_APPROVED"
         }
       ],
-      "needs_photo": false
+      "needs_photo": true
     },
     {
       "object_id": "LN05",
@@ -1323,7 +1328,7 @@
       "intended_navigation": "Z",
       "pilot_30": true,
       "pilot_photo_evidence": "NO_DIRECT_SCENE_EVIDENCE",
-      "evidence_status": "EXISTING_OBJECT_IMAGE_CANDIDATE",
+      "evidence_status": "HISTORICAL_ILLUSTRATION_ONLY_NEEDS_PHOTO",
       "candidate_assets": [
         {
           "asset_id": "EXISTING-LN05",
@@ -1331,7 +1336,7 @@
           "evidence": "EXISTING_INDEPENDENT_SOURCE_CANDIDATE_NOT_EDITORIAL_APPROVED"
         }
       ],
-      "needs_photo": false
+      "needs_photo": true
     },
     {
       "object_id": "LN06",
