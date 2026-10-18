@@ -79,7 +79,9 @@
     "post_seventh_batch_photo_candidate_or_hotspot": 55,
     "post_seventh_batch_needs_photo": 115,
     "post_seventh_batch_pilot_needs_photo": 2,
-    "all_zones_have_initial_photographic_reference": true
+    "all_zones_have_initial_photographic_reference": true,
+    "sanctuary_original_source_directional_notes_verified": 2,
+    "pilot_photo_missing_unchanged": 2
   },
   "zones": [
     {
@@ -1045,7 +1047,25 @@
         "source_rule": "https://www.newadvent.org/cathen/01356e.htm",
         "corroboration": "https://hostiamimmaculatam.substack.com/p/the-epistle-and-gospel-sides-of-the",
         "state": "RESEARCH_ONLY_DIRECTIONAL_RULE_NOT_AUTHORISED_AS_HOTSPOT",
-        "note": "Display only after confirming no flipped/mirrored photo and full central altar facing camera; do not convert an approximate half-frame into an object hotspot."
+        "note": "Display only after confirming no flipped/mirrored photo and full central altar facing camera; do not convert an approximate half-frame into an object hotspot.",
+        "source_frame_review": {
+          "method": "DIRECT_ORIGINAL_COMMONS_PHOTO_VIEW_AND_AUTHOR_EXIF_REVIEW",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg",
+          "creator": "Anthony O'Neil",
+          "photo_date": "2019-07-11",
+          "width": 4797,
+          "height": 3219,
+          "camera_location": "51.497181,-0.169837",
+          "camera_heading_degrees": 337,
+          "exif_orientation": "Normal",
+          "viewer_position": "NAVE_FACING_HIGH_ALTAR",
+          "directional_label_supported": true,
+          "independent_object_photo": false,
+          "viewport_transform_constraint": "ORIGINAL_SOURCE_FRAME_ONLY_NO_HORIZONTAL_MIRROR; revalidate labels after crop/rotate/render transforms",
+          "no_pixel_coordinates_proposed": true,
+          "approval": "RESEARCH_ONLY_NOT_RELEASE_SIGNOFF",
+          "note": "Raw photo view and EXIF consistently depict the frontal high altar from the nave. The direction of the sides is valid for this source frame; exact discrete object hotspot geometry is neither necessary nor supported."
+        }
       }
     },
     {
@@ -1068,7 +1088,25 @@
         "source_rule": "https://www.newadvent.org/cathen/01356e.htm",
         "corroboration": "https://hostiamimmaculatam.substack.com/p/the-epistle-and-gospel-sides-of-the",
         "state": "RESEARCH_ONLY_DIRECTIONAL_RULE_NOT_AUTHORISED_AS_HOTSPOT",
-        "note": "Display only after confirming no flipped/mirrored photo and full central altar facing camera; do not convert an approximate half-frame into an object hotspot."
+        "note": "Display only after confirming no flipped/mirrored photo and full central altar facing camera; do not convert an approximate half-frame into an object hotspot.",
+        "source_frame_review": {
+          "method": "DIRECT_ORIGINAL_COMMONS_PHOTO_VIEW_AND_AUTHOR_EXIF_REVIEW",
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg",
+          "creator": "Anthony O'Neil",
+          "photo_date": "2019-07-11",
+          "width": 4797,
+          "height": 3219,
+          "camera_location": "51.497181,-0.169837",
+          "camera_heading_degrees": 337,
+          "exif_orientation": "Normal",
+          "viewer_position": "NAVE_FACING_HIGH_ALTAR",
+          "directional_label_supported": true,
+          "independent_object_photo": false,
+          "viewport_transform_constraint": "ORIGINAL_SOURCE_FRAME_ONLY_NO_HORIZONTAL_MIRROR; revalidate labels after crop/rotate/render transforms",
+          "no_pixel_coordinates_proposed": true,
+          "approval": "RESEARCH_ONLY_NOT_RELEASE_SIGNOFF",
+          "note": "Raw photo view and EXIF consistently depict the frontal high altar from the nave. The direction of the sides is valid for this source frame; exact discrete object hotspot geometry is neither necessary nor supported."
+        }
       }
     },
     {
