@@ -65,10 +65,10 @@
     "post_fourth_batch_needs_photo": 129,
     "post_fourth_batch_pilot_needs_photo": 3,
     "post_fourth_batch_vestment_photo_candidates": 14,
-    "fifth_batch_new_licensed_photo_candidates": 3,
-    "post_fifth_batch_photo_candidate_or_hotspot": 44,
-    "post_fifth_batch_needs_photo": 126,
-    "post_fifth_batch_pilot_needs_photo": 3,
+    "fifth_batch_new_licensed_photo_candidates": 4,
+    "post_fifth_batch_photo_candidate_or_hotspot": 45,
+    "post_fifth_batch_needs_photo": 125,
+    "post_fifth_batch_pilot_needs_photo": 2,
     "post_fifth_batch_vestment_photo_candidates": 17
   },
   "zones": [
@@ -877,16 +877,23 @@
       "intended_navigation": "V",
       "pilot_30": true,
       "pilot_photo_evidence": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true,
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B5-AL10-ARS-SIXTE-GRADINE-ENSEMBLE",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false,
       "context_scene_lead": {
         "source_asset_id": "BROMPTON_ALTAR_1",
         "role": "possible_gradine_visible_in_source_view",
         "certainty": "NEEDS_IMAGE_SPECIFIC_VISUAL_REVIEW",
-        "note": "Use existing same-venue Brompton high-altar photograph. Cannot identify the exact gradine/candle shelf boundaries as separate object; do not create clickable hotspot or count coverage.",
+        "note": "Licensed French Catholic gradine ensemble candidate exists separately. Brompton gradine cannot yet be identified at pixel-level; contextual lead does not authorize a hotspot.",
         "additional_rights_unknown_research_url": "https://www.friendsofflorence.org/projects/altar-gradine-oratory-and-tabernacle-chapel-annunziata-ss-annunziata/",
-        "additional_rights_unknown_research_note": "Actual Florentine Catholic altar-gradine restoration documented by Friends of Florence; independent photographic rights unresolved and exact reconstructed model differs from Brompton. Discovery lead only, no candidate photo and no hotspot authorized."
+        "additional_rights_unknown_research_note": "Actual Florentine Catholic altar-gradine restoration documented by Friends of Florence; independent photographic rights unresolved and exact reconstructed model differs from Brompton. Discovery lead only, no candidate photo and no hotspot authorized.",
+        "status": "PREVIOUSLY_MISSING_LICENSED_OBJECT_PHOTO_NOW_HAS_CERTIFIED_CONTEXT_CANDIDATE"
       }
     },
     {
@@ -3709,6 +3716,24 @@
       "height": 4032,
       "venue": "10th National Eucharistic Congress, Indianapolis, USA, 2024",
       "source_description": "An original Roman Catholic photograph of seminarians and clergy in black cassocks and white surplices preparing for a Eucharistic procession. Surplices in context, no isolated specimen; not a Traditional Latin Mass or a verified 1962 procession.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH5"
+    },
+    {
+      "asset_id": "M6B5-AL10-ARS-SIXTE-GRADINE-ENSEMBLE",
+      "object_id": "AL10",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ars-sur-Formans_Basilique_Saint-Sixte_Int%C3%A9rieur_Autel_Lat%C3%A9ral_3.jpg",
+      "creator": "Zairon",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3406,
+      "height": 4557,
+      "venue": "Basilica of St Sixtus, Ars-sur-Formans, Ain, France; side altar/reliquary of the Curé d'Ars",
+      "source_description": "Original licensed photographic overview of a Catholic altar ensemble legally inventoried with a gradin d'autel by the French Ministry of Culture (Palissy PM01002646). A contextual gradine candidate in a compound altar arrangement, not an isolated shelf, not Brompton and not a certified 1962 Mass setup. Pixel-level gradine boundaries remain unreviewed.",
+      "external_object_record_url": "https://pop.culture.gouv.fr/notice/palissy/PM01002646",
+      "external_object_designation": "autel ; retable ; tabernacle ; gradin d'autel",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH5"
     }
