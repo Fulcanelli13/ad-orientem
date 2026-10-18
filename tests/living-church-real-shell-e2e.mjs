@@ -85,6 +85,38 @@ try{
   assert.deepEqual(restored.p,initial);
   assert.equal(await page.locator("#ao-cate-root").isVisible(),false);
   assert.equal(await page.evaluate(()=>AO_LEARN_APP_V1.status().child),"learn.visible_mass");
+  // The Canon must use the SAME source-owned native/return flow.
+  await frame.locator("#lc-stage .lc-guides [data-guide='canon']").click();
+  await frame.locator("#lc-stage .lc-actions").getByRole("button",{name:"Eucharistic sacrifice"}).click();
+  const canonBefore=await frame.locator("#lc-stage").evaluate(el=>el.ownerDocument.defaultView.AO_LIVING_CHURCH_P2.status());
+  assert.equal(canonBefore.node,"sacrifice");
+  await frame.locator("#lc-stage .lc-actions").getByRole("button",{name:"Mass Explorer"}).click();
+  await page.waitForFunction(()=>window.AO_MASS_EXPLORER_V1?.status?.()?.open===true,
+    null,{timeout:30000});
+  const currentMass=await page.evaluate(()=>({
+    source:AO_LEARN_APP_V1.status().child,
+    active:AO_MASS_EXPLORER_V1.status(),
+    returnButton:document.getElementById("ao-living-church-native-return")?.textContent,
+    hostVisibility:document.getElementById("ao-visible-mass-review-root")?.style.visibility
+  }));
+  assert.equal(currentMass.source,"learn.visible_mass");
+  assert.equal(currentMass.active.open,true);
+  assert.match(currentMass.returnButton,/Chanoine/);
+  assert.equal(currentMass.hostVisibility,"hidden");
+  await page.screenshot({path:resolve(screenshotDir,"mass-explorer-real-shell-"+width+".png")});
+  await page.locator("#ao-living-church-native-return").click();
+  await frame.locator("#lc-stage").waitFor({state:"visible",timeout:25000});
+  const canonAfter=await frame.locator("#lc-stage").evaluate(el=>({
+   s:el.ownerDocument.defaultView.AO_LIVING_CHURCH_P2.status(),
+   p:{x:el.ownerDocument.querySelector("#photo-viewport").scrollLeft,
+      y:el.ownerDocument.querySelector("#photo-viewport").scrollTop}
+  }));
+  assert.equal(canonAfter.s.guide,"canon");
+  assert.equal(canonAfter.s.node,"sacrifice");
+  assert.deepEqual(canonAfter.p,initial);
+  assert.equal(await page.evaluate(()=>window.AO_MASS_EXPLORER_V1?.status?.()?.open),false);
+  assert.equal(await page.evaluate(()=>AO_LEARN_APP_V1.status().child),"learn.visible_mass");
+  await page.screenshot({path:resolve(screenshotDir,"canon-restored-real-shell-"+width+".png")});
   await page.screenshot({path:resolve(screenshotDir,"restored-real-shell-"+width+".png")});
   assert.deepEqual(errors,[],"unexpected real-shell browser errors "+width);
   console.log("PASS genuine app-shell St Pius X -> canonical Catechism Q322 -> exact-return "+width);
