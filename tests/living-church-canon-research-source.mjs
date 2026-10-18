@@ -42,6 +42,17 @@ test("Folio source adapter is fail-closed for 534 questions",async()=>{
  assert.equal(reader.counts.total,534);
  assert.equal(reader.canPublish,false);
  assert.equal(reader.publicHandoff().ok,false);
+ const review=reader.getEditorialAudit("LUT-011");
+ assert.equal(review.class,"PINPOINT_SOURCE_CORRECTION_REQUIRED");
+ assert.equal(review.publicationAllowed,undefined);
+ assert.equal(review.pinpoints.length,3);
+ assert.match(review.held,/Session XIII/);
+ assert.equal(reader.getEditorialAudit("LUT-005"),null);
+ const magic=await reader.originalResearch("ERR-009",{lang:"en"});
+ assert.equal(magic.ok,true);
+ assert.equal(magic.editorialAudit.class,"PINPOINT_SOURCE_CORRECTION_REQUIRED");
+ assert.equal(magic.editorialAudit.pinpoints.length,2);
+ assert.equal(magic.publicAnswerAuthorized,false);
  const lut=await reader.originalResearch("LUT-005",{lang:"en"});
  assert.equal(lut.ok,true);
  assert.equal(lut.originalSourcePointer.recordId,"LUT-005");
