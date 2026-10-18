@@ -1,0 +1,292 @@
+{
+  "schema": "AO_FORMATION_PENTECOSTAL_8_PARTIAL_ENRICHMENTS_V1",
+  "date": "2026-10-13",
+  "status": "SOURCE_LINKED_BILINGUAL_RESEARCH_UNPUBLISHED",
+  "source_registry": [
+    {
+      "id": "AG",
+      "title": "Assemblies of God, Statement of Fundamental Truths",
+      "url": "https://ag.org/Beliefs/Statement-of-Fundamental-truths",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG-PROPH",
+      "title": "Assemblies of God, Modern-Day Prophecy (2025)",
+      "url": "https://ag.org/Beliefs/Position-Papers/Modern-Day-Prophecy",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG-HEAL",
+      "title": "Assemblies of God, Divine Healing (2010)",
+      "url": "https://ag.org/beliefs/position-papers/divine-healing",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AG-PROSP",
+      "title": "Frank Macchia, Pentecostal critique of prosperity gospel, AG journal (2015)",
+      "url": "https://enrichmentjournal.ag.org/Issues/2015/Winter-2015/The-Prosperity-Gospel-A-Biblical-Evaluation",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UPCI",
+      "title": "United Pentecostal Church International, Our Beliefs",
+      "url": "https://upci.org/our-beliefs/",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UPCI-HIST",
+      "title": "United Pentecostal Church International, denomination origin and oneness",
+      "url": "https://upci.org/about-the-upci/",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "BAP-TRI",
+      "title": "CDF, doctrinal commentary on the validity of baptismal formulas (2008)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20080201_validity-baptism-miralles_en.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC-CHAR",
+      "title": "Catechism of the Catholic Church §§799–801, charisms",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_9/paragraph_2_the_church_-_people_of_god%2C_body_of_christ%2C_temple_of_the_holy_spirit.index.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DOM",
+      "title": "CDF, Dominus Iesus (2000)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "PEN-011",
+      "original_title_candidate": "Does Catholicism teach cessationism?",
+      "owner_reuse": [
+        "APOL-004"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "pentecostal_primary_position_and_catholic_response",
+          "text": {
+            "en": "Catholic doctrine does not teach absolute cessationism. Catechism §§799–801 explicitly welcomes genuine ordinary and extraordinary charisms while requiring their discernment by the Church's pastors and their orientation to charity. Catholic approval of a possible gift is not a guarantee that every modern claim to tongues, prophecy or healing is true, nor acceptance of the Assemblies of God's universal initial-evidence doctrine.",
+            "fr": "La doctrine catholique n'enseigne pas le cessationnisme absolu. Le Catéchisme §§799–801 accueille explicitement les charismes authentiques, ordinaires ou extraordinaires, tout en exigeant leur discernement par les pasteurs et leur orientation vers la charité. Accueillir la possibilité d'un don n'authentifie pas chaque prétention contemporaine aux langues, aux prophéties ou aux guérisons et ne signifie pas accepter la doctrine des Assemblées de Dieu sur le signe initial universel."
+          },
+          "source_ids": [
+            "CCC-CHAR",
+            "AG"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "PEN-012",
+      "original_title_candidate": "So is the Catholic–Pentecostal dispute simply ‘miracles still happen’ versus ‘miracles ceased’?",
+      "owner_reuse": [
+        "APOL-004"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "pentecostal_primary_position_and_catholic_response",
+          "text": {
+            "en": "No. Catholicism and classical Pentecostalism can both affirm divine healing and living charisms, but disagree about the normative place of Spirit-baptism experiences, the sacraments, the Church's authority, Tradition and the interpretation of prophecy. An accurate debate therefore cannot pretend Catholics deny miracles or that Pentecostals merely reject medicine; it must articulate those ecclesiological and sacramental differences.",
+            "fr": "Non. Le catholicisme et le pentecôtisme classique peuvent tous deux reconnaître guérisons divines et charismes actuels, mais divergent sur la place normative du baptême dans l'Esprit, les sacrements, l'autorité ecclésiale, la Tradition et l'interprétation de la prophétie. Un vrai débat ne peut faire croire que les catholiques nient les miracles ou que les pentecôtistes refusent simplement la médecine : il doit exposer les différences ecclésiologiques et sacramentelles."
+          },
+          "source_ids": [
+            "CCC-CHAR",
+            "AG",
+            "AG-PROPH"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "PEN-013",
+      "original_title_candidate": "Does modern Pentecostal prophecy add new Scripture?",
+      "owner_reuse": [
+        "APOL-005"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "pentecostal_primary_position_and_catholic_response",
+          "text": {
+            "en": "The Assemblies of God affirms contemporary prophecy as a gift to be discerned, not a license to produce a new Bible or rewrite apostolic revelation. Its 2025 position paper places prophetic claims under communal judgment. Catholic faith more specifically teaches that the public deposit of faith is complete in Christ and apostolic witness; private revelation or charism can aid faith but cannot add new universal dogmas.",
+            "fr": "Les Assemblées de Dieu reconnaissent la prophétie contemporaine comme don à discerner, non comme autorisation de produire une nouvelle Bible ou de réécrire la révélation apostolique. Leur texte de 2025 soumet les prétentions prophétiques au jugement de la communauté. Le catholicisme enseigne plus précisément l'achèvement du dépôt public de la foi dans le Christ et le témoignage apostolique ; révélation privée ou charisme peuvent aider sans ajouter de dogmes universels."
+          },
+          "source_ids": [
+            "AG-PROPH",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "PEN-015",
+      "original_title_candidate": "Does Pentecostalism teach miraculous healing?",
+      "owner_reuse": [
+        "APOL-004"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "pentecostal_primary_position_and_catholic_response",
+          "text": {
+            "en": "Divine healing has a central place in many Pentecostal churches, including the Assemblies of God Statement of Fundamental Truths §12 and its dedicated healing paper. This conviction differs from the claim that medical treatment is forbidden or that each prayer guarantees a cure. Catholics also pray for the sick and anoint them sacramentally, though they do not equate that sacrament with a promise of immediate bodily recovery.",
+            "fr": "La guérison divine occupe une place centrale dans de nombreuses Églises pentecôtistes, notamment dans la déclaration des Assemblées de Dieu §12 et leur étude spécifique. Cette conviction ne signifie pas que les soins médicaux seraient interdits ou que toute prière garantirait la guérison. Les catholiques prient aussi pour les malades et leur donnent l'Onction sacramentelle, sans en faire la promesse d'une guérison physique immédiate."
+          },
+          "source_ids": [
+            "AG",
+            "AG-HEAL",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "PEN-018",
+      "original_title_candidate": "What is particularly problematic about prosperity theology?",
+      "owner_reuse": [
+        "APOL-003"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "pentecostal_primary_position_and_catholic_response",
+          "text": {
+            "en": "Prosperity theology becomes morally dangerous when it treats wealth and health as contractual evidence of God's favour, pressures impoverished people to donate under promises of guaranteed returns, or blames sick people for lacking faith. An Assemblies of God theological critique itself rejects the disproportionate focus on money. Catholic teaching likewise measures Christian life by truth, charity, the Cross and solidarity with the poor, not purchasing divine rewards.",
+            "fr": "La théologie de la prospérité devient moralement dangereuse lorsqu'elle fait de la richesse et de la santé des preuves contractuelles de faveur divine, pousse les pauvres à donner contre des rendements garantis ou accuse les malades de manquer de foi. Une critique théologique publiée par les Assemblées de Dieu rejette elle-même cette insistance disproportionnée sur l'argent. Le catholicisme mesure aussi la vie chrétienne à la vérité, à la charité, à la Croix et à la solidarité avec les pauvres, non à l'achat de récompenses divines."
+          },
+          "source_ids": [
+            "AG-PROSP",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "PEN-021",
+      "original_title_candidate": "Is Oneness Pentecostalism just another Pentecostal denomination?",
+      "owner_reuse": [
+        "APOL-010"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "pentecostal_primary_position_and_catholic_response",
+          "text": {
+            "en": "Oneness Pentecostalism is historically part of the Pentecostal movement, but its rejection of the three eternally distinct divine Persons is a fundamental doctrinal difference from Trinitarian Pentecostalism and Nicene Christianity. The United Pentecostal Church International explicitly identifies Oneness and Jesus-name baptism among its distinctive teachings. It would be misleading to characterize it as merely another identical form of the Assemblies of God.",
+            "fr": "Le pentecôtisme unicitaire appartient historiquement au mouvement pentecôtiste, mais son rejet des trois personnes divines éternellement distinctes constitue une divergence doctrinale fondamentale avec les pentecôtistes trinitaires et la foi de Nicée. L'Église pentecôtiste unie internationale présente explicitement l'unicité divine et le baptême au nom de Jésus parmi ses doctrines. Il serait trompeur de la décrire comme une simple variante identique des Assemblées de Dieu."
+          },
+          "source_ids": [
+            "UPCI",
+            "UPCI-HIST",
+            "AG",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "PEN-022",
+      "original_title_candidate": "Why is Oneness Pentecostal Baptism a separate apologetic problem?",
+      "owner_reuse": [
+        "APOL-010",
+        "APOL-024"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "pentecostal_primary_position_and_catholic_response",
+          "text": {
+            "en": "A Jesus-name-only baptism performed without invoking Father, Son and Holy Spirit as distinct Persons does not satisfy the Catholic sacramental form instituted in Matthew 28:19. UPCI publicly defends baptism in Jesus' name and Oneness theology; the CDF's 2008 doctrinal commentary explains why the Trinitarian invocation cannot be substituted by other formulas. Individual baptismal cases require verification of the exact words, not assumptions based solely on a congregation's label.",
+            "fr": "Un baptême célébré seulement « au nom de Jésus », sans invocation distincte du Père, du Fils et du Saint-Esprit, ne satisfait pas à la forme sacramentelle catholique fondée sur Matthieu 28,19. L'UPCI défend publiquement ce baptême et la doctrine unicitaire ; le commentaire du Saint-Office de 2008 explique pourquoi l'invocation trinitaire ne peut être remplacée par d'autres formules. Dans les cas individuels, il faut vérifier les paroles réellement employées et ne pas conclure d'après la seule étiquette de la communauté."
+          },
+          "source_ids": [
+            "UPCI",
+            "BAP-TRI",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "PEN-025",
+      "original_title_candidate": "What is the deepest Catholic–Pentecostal divide?",
+      "owner_reuse": [
+        "APOL-014",
+        "APOL-023"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "pentecostal_primary_position_and_catholic_response",
+          "text": {
+            "en": "The deepest Catholic–Pentecostal dispute is not about the possibility of gifts of the Holy Spirit. Both acknowledge the Spirit's action; the essential differences concern the sacraments as effective means of grace, the visible apostolic episcopate, Scripture and Tradition, and the authority that judges religious claims. Within Pentecostalism itself, Trinitarian and Oneness theology must be separated because their Christological and baptismal differences cannot be treated as peripheral.",
+            "fr": "Le désaccord essentiel entre catholicisme et pentecôtisme ne porte pas sur la simple possibilité des dons de l'Esprit. Les deux reconnaissent son action ; les différences centrales concernent les sacrements comme moyens efficaces de grâce, l'épiscopat apostolique visible, l'Écriture et la Tradition, ainsi que l'autorité jugeant les prétentions religieuses. Il faut en outre distinguer au sein du pentecôtisme la doctrine trinitaire de l'unicitarisme, dont les divergences christologiques et baptismales ne sont pas secondaires."
+          },
+          "source_ids": [
+            "CCC-CHAR",
+            "AG",
+            "UPCI",
+            "DOM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false,
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}
