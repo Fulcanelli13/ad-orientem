@@ -18,7 +18,7 @@ try{
   await page.goto(pathToFileURL(html).href,{waitUntil:"load"});
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_M6_ATLAS?.status()?.objects===170);
   let status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());
-  assert.equal(status.zones,13);assert.equal(status.images,35);assert.equal(status.visible,170);
+  assert.equal(status.zones,13);assert.equal(status.images,52);assert.equal(status.visible,170);
   await page.screenshot({path:out+"/"+spec.id+"-object-atlas.png",fullPage:false});
   await page.locator("#zone").selectOption("AL");status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,20);
   await page.locator("#zone").selectOption("");
@@ -27,12 +27,16 @@ try{
   await page.locator("#coverage").selectOption("PROVISIONAL_ORIGINAL_STILL_HOTSPOT");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,6);
   await page.locator("#coverage").selectOption("NEW_SOURCE_PHOTO_CANDIDATE");
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,2);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,20);
   assert.match(await page.locator("#results").innerText(),/Altar bell/);
   assert.match(await page.locator("#results").innerText(),/Individual altar candle/);
   await page.locator("#coverage").selectOption("");
   await page.locator("#mode-images").click();
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,35);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,52);
+  await page.locator("#search").fill("M6B4-BK02-CASON-1962-MISSAL-STAND");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.equal(await page.locator("a.source").first().getAttribute("href"),"https://sdcason.com/1962-roman-missal-at-latin-mass-2022-virginia-usa-catholic-stock-photo/");
+  assert.match(await page.locator("#results").innerText(),/CC BY 4.0/);
   await page.locator("#search").fill("M6-EQ06-ALTAR-BELLS-PHOTO");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   await page.locator('[data-rank="M6-EQ06-ALTAR-BELLS-PHOTO"]').selectOption("4");
