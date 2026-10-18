@@ -73,21 +73,21 @@ try{
       };
     });
     assert.equal(result.error,undefined,JSON.stringify(result));
-    assert.equal(result.model,66,"Separate source Sequence must add one, not duplicate all Proper stages");
+    assert.equal(result.model,65,"Separate source Sequence must add one, not duplicate all Proper stages");
     assert.deepEqual(result.cards.map(x=>x.blocks),[["AO.SM.B021"],["AO.SM.B022"]]);
     assert.equal(result.sourceParagraphs,result.cards.reduce((sum,x)=>sum+x.ids.length,0));
     assert.equal(result.before,"Gradual · Alleluia / Tract");
     assert.equal(result.after,"Sequence","Native phone Next must navigate to the independently sourced Sequence");
     assert.equal(result.renderedTitle,"Sequence");
     assert.equal(result.translationVisible,true,JSON.stringify(result));
-    assert.match(result.visible,new RegExp("\\/ "+(optional?66:65)+"$"),
+    assert.match(result.visible,new RegExp("\\/ "+(optional?65:64)+"$"),
       "Progress must use the actual visible, not abstract model, denominator");
     assert.equal(result.overflow,false,"Reader introduced horizontal phone overflow");
     assert.ok(result.rootWidth<=width+1);
     assert.deepEqual(errors,[],"JavaScript errors during actual conditional Sequence navigation");
     await page.screenshot({path:resolve(out,"conditional-sequence-"+width+"-"+language+(optional?"-confiteor":"")+".png"),animations:"disabled"});
     console.log("PASS conditional Sequence production phone "+width+"px "+language+
-      (optional?" optional Confiteor":"")+": 66 model / "+(optional?66:65)+" visible, real navigation and bilingual source");
+      (optional?" optional Confiteor":"")+": 65 model / "+(optional?65:64)+" visible, real navigation and bilingual source");
     await context.close();
   }
 }finally{
