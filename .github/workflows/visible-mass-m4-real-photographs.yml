@@ -8,6 +8,8 @@ on:
       - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
       - "tests/visible-mass-m4-real-photo-browser.mjs"
       - "tests/visible-mass-m4-live-network.mjs"
+      - "tests/visible-mass-m4-offline-file-browser.mjs"
+      - "tools/build-visible-mass-m4-offline.mjs"
       - "tools/acquire-visible-mass-360-panorama.py"
       - ".github/workflows/visible-mass-m4-real-photographs.yml"
   workflow_dispatch:
@@ -56,6 +58,31 @@ jobs:
         run: node tests/visible-mass-m4-real-photo-browser.mjs
       - name: Verify live Commons HTTPS delivery and browser CORS without test intercepts
         run: node tests/visible-mass-m4-live-network.mjs
+      - name: Prepare bounded licensed photographic assets for the single HTML
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          root=Path('dist/visible-mass/panorama-sources')
+          for key in ('brompton360','newman360'):
+              with Image.open(root/f'{key}.jpg') as image:
+                  image.thumbnail((2048,1024),Image.Resampling.LANCZOS)
+                  assert image.size==(2048,1024),image.size
+                  image.save(root/f'{key}-review.jpg','JPEG',quality=84,optimize=True,progressive=True)
+          PY
+      - name: Install single-file module bundler
+        run: npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0 esbuild@0.25.12
+      - name: Package single-file original-photo M4 review
+        run: node tools/build-visible-mass-m4-offline.mjs
+      - name: Browser-test desktop and phone from file:// with internet disconnected
+        run: node tests/visible-mass-m4-offline-file-browser.mjs
+      - name: Upload one-file M4 original photographic reviewer
+        uses: actions/upload-artifact@v4
+        with:
+          name: The-Visible-Mass-M4-Photographic-Review-Offline
+          path: dist/visible-mass/The_Visible_Mass_M4_Photographic_Review_Offline.html
+          retention-days: 30
+          if-no-files-found: error
       - name: Preserve original-image desktop and phone review captures
         if: always()
         uses: actions/upload-artifact@v4
@@ -64,6 +91,7 @@ jobs:
           path: |
             dist/visible-mass/m4-real-photo-qa/**
             dist/visible-mass/m4-live-delivery/**
+            dist/visible-mass/m4-offline-file-qa/**
             dist/visible-mass/panorama-sources/metadata.json
           retention-days: 30
           if-no-files-found: warn
