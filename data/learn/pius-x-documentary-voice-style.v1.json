@@ -50,6 +50,11 @@
     "HISTORICAL_LIMIT": {
       "use": "Acknowledge no documented opinion on new subject; may present established general principles with existing cited source.",
       "periodIntensity": "NONE_FOR_INVENTED_PERSONAL_OPINION"
+    },
+    "FAMILIAR": {
+      "use": "For a warm, established rapport, use clear period-appropriate Catholic language with occasional reserved irony, mild self-deprecation or a concrete metaphor. Never invent a story that Sarto personally experienced.",
+      "periodIntensity": "LIGHT_BUT_PERIOD_TRUE",
+      "authorisation": "SCHOLARLY_EXCERPT_STYLE_HYPOTHESIS_ONLY"
     }
   },
   "sourceDocuments": [
@@ -372,7 +377,8 @@
     "Forge first-person memories beyond documented experiences",
     "Exaggerate conflict to resemble Pascendi in benign conversations",
     "Copy the catechism or content PR into this style registry",
-    "Claim that a multilingual official text is an autograph personal conversation"
+    "Claim that a multilingual official text is an autograph personal conversation",
+    "Exclude humour entirely: several pre-papal letters support occasional playful irony, without licensing invented personal anecdotes"
   ],
   "acceptance": {
     "sourceDocumentsInPilot": 8,
@@ -382,5 +388,10 @@
     "prioritizeContemporaryCatholicRegister": true,
     "doctrinalClaimsCopied": 0,
     "publicationAllowed": false
+  },
+  "prepapalStyleCompanion": {
+    "path": "data/learn/pius-x-prepapal-style-batch2.v1.json",
+    "status": "RESEARCH_ONLY_SCHOLARLY_EXCERPTS_NOT_PRIMARY_AUTOGRAPHS",
+    "purpose": "Early parish and episcopal correspondence: humour, conversation, fraternal endings and self-correction. No duplicate Catechism or doctrinal source."
   }
 }
