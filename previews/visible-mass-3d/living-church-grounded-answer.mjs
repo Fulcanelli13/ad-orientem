@@ -6,6 +6,7 @@
  */
 import {createAskChurchObjectiveEngine} from "../../src/learn/ask-church-objective-engine.js";
 import {readAskChurchDigest} from "../../src/learn/ask-church-source-digest.js";
+import {loadFormationP1Evidence} from "./living-church-formation-p1-evidence.mjs";
 export const LIVING_CHURCH_GROUNDED_ANSWER_VERSION="AO_LC_P7_EXTRACTIVE_V1";
 const SURVEY_URL=new URL("../../data/learn/ask-church-app-route-survey.v1.json",import.meta.url);
 const RELEASE_URLS=[
@@ -47,6 +48,7 @@ export async function loadCanonGroundedAnswers({fetchImpl=fetch,readDigest=readA
     releases[0]?.status!=="NO_APPROVED_STUDIES"||
     releases[1]?.status!=="NO_APPROVED_PASSAGES")
   throw Error("Mass editorial release status changed; new review required");
+ const formationP1=await loadFormationP1Evidence({fetchImpl,lang:language});
  const router=createAskChurchObjectiveEngine(survey,{lang:language});
  if(!router.setObjective("practice")||!router.setBranch("eucharist"))
   throw Error("Original Ask the Church Eucharistic objective missing");
@@ -57,7 +59,11 @@ export async function loadCanonGroundedAnswers({fetchImpl=fetch,readDigest=readA
  async function answer(question,{guide="canon"}={}){
   if(guide!=="canon")return no("WRONG_GUIDE",language);
   const id=choose(question,previous);
-  if(!id||!eligible.has(id)){previous=null;return no("NOT_SUPPORTED_BY_APPROVED_CORPUS",language);}
+  if(!id||!eligible.has(id)){
+    previous=null;
+    const existing=formationP1.answer(question);
+    return existing.ok?existing:no("NOT_SUPPORTED_BY_APPROVED_CORPUS",language);
+   }
   try{
    const record=await readDigest(eligible.get(id),{lang:language,situation:"eucharist"});
    if(!record?.text||record.sourceStatus!=="READY_IN_RUNTIME_SOT"||record.owner!=="Apostolate")
@@ -83,7 +89,8 @@ export async function loadCanonGroundedAnswers({fetchImpl=fetch,readDigest=readA
  return Object.freeze({
   version:LIVING_CHURCH_GROUNDED_ANSWER_VERSION,answer,
   status:()=>Object.freeze({eligibleIds:Object.freeze([...eligible.keys()]),previousSourceId:previous?.id||null,
-    hasLLM:false,massExplorerStudiesPublished:false,massFormationPassagesPublished:false}),
+    hasLLM:false,massExplorerStudiesPublished:false,massFormationPassagesPublished:false,
+    formationP1:formationP1.audit()}),
   clear:()=>{previous=null;}
  });
 }
