@@ -78,13 +78,13 @@ const qualifyingPhoto=(o)=>o.candidate_assets.some(({asset_id})=>{
  return Boolean(asset&&asset.medium==="photograph"&&asset.licence&&asset.review_status!=="DISCOVERY_ONLY_UNVERIFIED_SOURCE_RIGHTS");
 });
 assert.ok(atlas.objects.every(o=>o.needs_photo===!qualifyingPhoto(o)),"Historical illustrations and unverified leads must not count as qualifying photographs");
-assert.equal(atlas.objects.filter(qualifyingPhoto).length,30);
-assert.equal(atlas.objects.filter(o=>o.needs_photo).length,140);
+assert.equal(atlas.objects.filter(qualifyingPhoto).length,38);
+assert.equal(atlas.objects.filter(o=>o.needs_photo).length,132);
 assert.equal(atlas.statistics.post_second_batch_photo_candidate_or_hotspot,30);
 assert.equal(atlas.statistics.post_second_batch_needs_photo,140);
-assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL10","AL17","AL18","BK02","LN04","LN05"]);
-assert.equal(atlas.images.length,42);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,39);
+assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL10","AL17","AL18","BK02"]);
+assert.equal(atlas.images.length,48);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,45);
 
 
 const batch3=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH3");
