@@ -22,6 +22,8 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: Devotional opening focus contract
+        run: node tests/devotional-focus-geometry.mjs
       - name: Audit rendered Mass and Prayer focus coverage
         run: timeout --signal=TERM --kill-after=5s 780s node tests/text-focus-coverage-phone.mjs
       - name: Preserve per-paragraph coverage and uncovered-text examples
