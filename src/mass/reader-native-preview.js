@@ -397,12 +397,13 @@ export async function prepareNativeReaderPreview({
     plan?.kind==="MASS" &&
     model.totalCards===39 &&
     String(model.corpusFamily)==="SUNG" &&
-    String(model.presentationMode)==="LIVE" &&
+    // Eligibility is a property of the prepared Mass, not the initial mode:
+    // most production sessions open in SIMPLE, then select LIVE via ribbon.
     compatiblePrelude && compatibleFollowing &&
     (plan?.overlayGraphs??[]).every(id=>id==="VOTIVE_PROPER");
-  const curatedOrdinary=curatedEligible
+  const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
     ? projectCuratedOrdinaryLiveCards(model):null;
-  const presentationModel=curatedEligible
+  const presentationModel=curatedOrdinary
     ? (explicitIntroitEntry
         ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
         : curatedOrdinary)
@@ -468,7 +469,8 @@ export async function prepareNativeReaderPreview({
     : null;
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
-    prepared,curatedEligible,data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
+    prepared,curatedEligible,curatedIntroitEntry:explicitIntroitEntry,
+    data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
   });
@@ -2514,7 +2516,7 @@ export async function mountNativeReaderPreview({
     sourceModel=rebuilt.sourceModel;
     // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
     // LIVE mode switches. No hidden 65-card ordinary opening can reappear.
-    readerModel=ready.curatedEligible && ready.presentationModel?.preMassHandoff==="INTROIT" &&
+    readerModel=ready.curatedEligible && ready.curatedIntroitEntry===true &&
       rebuilt.mode==="LIVE" && [65,66,67].includes(rebuilt.presentationModel.totalCards)
       ? projectCuratedIntroitEntryLiveCards(rebuilt.presentationModel)
       : rebuilt.presentationModel;
