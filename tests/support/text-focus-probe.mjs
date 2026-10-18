@@ -28,6 +28,7 @@ export async function probeTextFocus({
   res.allText=nodes.length;
   const validCue=/^AO\.SM\.C\d{4}$/;
   const active=node=>owner==="mass"?node.dataset.active==="true":
+    owner==="mass-uncued"?node.dataset.readingActive==="true":
     owner==="legacy"?node.dataset.aoPrayFocus==="active":
       node.dataset.aoDevoActive==="true";
   const eligible=[];
