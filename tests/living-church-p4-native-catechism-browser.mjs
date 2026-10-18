@@ -122,6 +122,8 @@ try{
     catechismRect:root?.getBoundingClientRect()?.toJSON?.(),
     nativeZ:getComputedStyle(root).zIndex,
     nativePosition:getComputedStyle(root).position,
+    rootClientWidth:root.clientWidth,rootScrollWidth:root.scrollWidth,
+    viewportWidth:window.innerWidth,
     nativeParent:root.parentElement?.id||root.parentElement?.className};
   });
   await page.screenshot({path:screenshotDir+"/"+width+"-native-layer-diagnostic.png"});
@@ -129,6 +131,8 @@ try{
   assert.equal(catechismLayer.reviewerVisibility,"hidden","photo must yield visual layer while original answer is open");
   assert.equal(catechismLayer.catechismVisibility,"visible","native Catechism must be visually shown");
   assert.equal(catechismLayer.catechismHit,true,"native answer must be front-most at viewport centre: "+JSON.stringify(catechismLayer));
+  assert.ok(catechismLayer.rootScrollWidth<=catechismLayer.rootClientWidth+2,
+    "native Catechism must not clip original text sideways: "+JSON.stringify(catechismLayer));
   const catReturn=page.locator("#aoLivingChurchReturnSanctuary");
   await catReturn.waitFor({state:"visible",timeout:14000});
   const catHit=await catReturn.evaluate(el=>{
