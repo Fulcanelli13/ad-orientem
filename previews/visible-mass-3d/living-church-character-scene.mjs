@@ -309,7 +309,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
     el(".lc-dialogue").textContent="The original "+record.owner+
       " sources appear beneath the excerpt. They are not newly generated citations.";
    });
-   addChoice("Return to the Canon",()=>visit("canon",false));
+   addChoice("Return to Mass discussion",()=>visit("sacrifice",false));
    trail.record({kind:"source",guide:"canon",
      objective:state.selectedObjective?.branch||"eucharist",sourceId:record.id});
    return true;
