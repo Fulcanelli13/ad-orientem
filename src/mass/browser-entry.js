@@ -7,12 +7,15 @@ import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
 import { mountObservedMassSourceSelector } from "./observed-mass-selector.js";
+import { mountObservedLocalOrationsPreflight } from "./observed-local-orations-preflight.js";
+import { projectObservedLocalOrations } from "./1962-observed-local-orations.js";
 import "./observed-mass-styles.js";
 import { specialMassPresentation,renderSpecialMassContext } from "./full-mass-special-presentation.js";
 import { mountSpecialMassStage } from "./reader-special-stage.js";
 import "./reader-special-stage-styles.js";
 import { mountSourceOwnedMassCatalogue } from "./full-mass-catalogue.js";
 import "./full-mass-preflight-styles.js";
+import "./observed-local-orations-styles.js";
 import { readBrowserReaderUiMode } from "./reader-gate.js";
 import { mountNativeReaderPreview } from "./reader-native-preview.js";
 import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
@@ -698,7 +701,7 @@ export function ordinaryMassPrefaceOwner(resolvedMass,{observed=false}={}){
   return resolvedMass.calendarDay?.id??null;
 }
 
-export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null}={}) {
+export function createBrowserMassController({rogationPreflight=null,fullMassPreflight=null,observedSource=null,localOrations=null}={}) {
   const api = celebrationApi();
   if (!api?.getResolvedMass) throw new Error("AO_CELEBRATION_API is not ready");
   // The observer may explicitly select the source Proper of a different
@@ -731,10 +734,11 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       });
       const rogationSelection=rogationPreflight?.selectionFor?.(resolvedMass)??null;
       const chosen=fullMassPreflight?.selectionFor?.(resolvedMass)??null;
+      const calendarResolution=runtimeState()?.resolution?.date===resolvedMass.date?
+        runtimeState().resolution:null;
       const formSelectedProper=select1962CommemorationsForMassForm({
         proper,
-        calendarResolution:runtimeState()?.resolution?.date===resolvedMass.date?
-          runtimeState().resolution:null,
+        calendarResolution,
         form:chosen?.form??options.celebrationForm,
         celebrationId:resolvedMass.celebrationId??"mass_of_day",
         isConventual:resolvedMass.conventualMass??false,
@@ -742,8 +746,25 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       });
       if(chosen?.kind==="GOOD_FRIDAY" && chosen?.explicitlyChosenForm)
         throw new Error("GOOD_FRIDAY_IS_NOT_A_MASS_FORM");
+      const localRequest=localOrations?.selectionFor?.(resolvedMass)??null;
+      let presentedProper=formSelectedProper.proper;
+      if(localRequest){
+        if(localRequest.date!==resolvedMass.date||
+           localRequest.form!==(chosen?.form??options.celebrationForm))
+          throw new Error("LOCAL_ADDITIONAL_ORATIONS_SELECTION_CHANGED");
+        const result=projectObservedLocalOrations({
+          originalProper:proper,selectedProper:formSelectedProper.proper,
+          calendarResolution,form:localRequest.form,
+          commemorationId:localRequest.commemorationId,
+          observedGroups:localRequest.observedGroups,
+          confirmedForThisCelebration:localRequest.confirmedForThisCelebration
+        });
+        if(result.status!=="OBSERVED_LOCAL_NOT_1962_NORMATIVE")
+          throw new Error("LOCAL_ADDITIONAL_ORATIONS_"+result.reason);
+        presentedProper=result.proper;
+      }
       const optional=fullMassPreflight?.composeRitesFor?.(resolvedMass,options)??null;
-      return Object.freeze({...options,proper:formSelectedProper.proper,rogationSelection,
+      return Object.freeze({...options,proper:presentedProper,rogationSelection,
         ...(optional?{
           precedingRites:optional.precedingRites,
           followingActions:optional.followingActions,
@@ -778,7 +799,7 @@ function showFailure(error, button = null) {
 export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   const shellFocusGuard=installShellFocusVisibilityGuard({doc:document,win:window});
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
-  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null };
+  const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null, localOrations: null };
 
   function tryInstall() {
     state.polls += 1;
@@ -807,6 +828,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
+         getLocalOrationSummary:()=>state.localOrations?.status?.()??null,
          getCalendarState:()=>runtimeState(),
          subscribeCalendarState:notify=>runtime()?.store?.subscribe?.(notify)??null,
          onOpenCalendar:async(date,view="day",host)=>{
@@ -824,6 +846,22 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          getDefaultReaderMode:()=>mapLegacyFollowMode(arch()?.followMode??runtimeState()?.settings?.followMode??"vox"),
          language:()=>runtimeState()?.language??"en",
        });
+      state.localOrations=mountObservedLocalOrationsPreflight({
+        doc:document,
+        getResolvedMass:()=>{
+          const base=celebrationApi().getResolvedMass();
+          return state.observedSource?.effectiveResolvedMass(base)??base;
+        },
+        getSelectedForm:()=>{
+          const base=celebrationApi().getResolvedMass();
+          return state.fullMassPreflight?.selectionFor?.(
+            state.observedSource?.effectiveResolvedMass(base)??base)?.form;
+        },
+        getCalendarResolution:()=>runtimeState()?.resolution??null,
+        subscribeCalendarState:notify=>runtime()?.store?.subscribe?.(notify)??null,
+        language:()=>runtimeState()?.language??"en",
+        mountTarget:()=>document.querySelector("[data-full-mass-reader-fieldset]"),
+      });
       state.observedSource=mountObservedMassSourceSelector({
         doc:document,
         getResolvedMass:()=>celebrationApi().getResolvedMass(),
@@ -834,7 +872,10 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
           hostResolver:runtime()?.resolver?.properResolver,
         }),
         language:()=>runtimeState()?.language??"en",
-        onSelectionChange:()=>state.fullMassPreflight?.refresh?.(),
+        onSelectionChange:()=>{
+          state.fullMassPreflight?.refresh?.();
+          state.localOrations?.refresh?.();
+        },
       });
       state.fullMassPreflight.refresh();
        state.fullMassCatalogue=mountSourceOwnedMassCatalogue({
@@ -846,6 +887,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          rogationPreflight:state.rogationPreflight,
          fullMassPreflight:state.fullMassPreflight,
          observedSource:state.observedSource,
+         localOrations:state.localOrations,
        });
       state.installed = true;
       document.documentElement.dataset.aoR17MassBridge = "ready";
@@ -900,6 +942,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
       installed: state.installed,
       rogationPreflightMounted:Boolean(state.rogationPreflight),
       observedMassSourceMounted:Boolean(state.observedSource),
+      localOrations:state.localOrations?.status?.()??null,
       observedMassSelection:state.observedSource?.status?.()??null,
        fullMassPreflight:state.fullMassPreflight?.status?.()??null,
        fullMassCatalogue:state.fullMassCatalogue?.status?.()??null,

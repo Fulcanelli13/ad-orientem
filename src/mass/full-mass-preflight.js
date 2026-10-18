@@ -62,6 +62,7 @@ export function mountFullMassPreflight({
   onBeforeCategoryChange=()=>{},
   onOpenSourceProper=()=>{},
   getSourceGate=()=>({ready:true,reason:null}),
+  getLocalOrationSummary=()=>null,
   getCalendarState=()=>null,
   subscribeCalendarState=null,
   onOpenCalendar=null,
@@ -274,7 +275,12 @@ export function mountFullMassPreflight({
     root.querySelector("[data-full-mass-celebration]").textContent=
       summary.kindLabel+(summary.actualTitle?" · "+summary.actualTitle:"");
     const sourceGate=getSourceGate();
-    root.querySelector("[data-full-mass-resolver]").textContent=!sourceGate.ready?
+    const localPreflight=getLocalOrationSummary?.()??null;
+    const localReady=localPreflight?.ready!==false;
+    root.querySelector("[data-full-mass-resolver]").textContent=!localReady?
+      l("Confirm the exact additional prayers before starting Mass.",
+        "Confirmez les prières supplémentaires exactes avant de commencer la messe.") :
+      !sourceGate.ready?
       l("Finish choosing the other Proper, or return to the Mass of the day, before starting.",
         "Terminez le choix de l’autre propre, ou revenez à la messe du jour, avant de commencer.") :
       summary.canStart?
@@ -367,10 +373,30 @@ export function mountFullMassPreflight({
       entries.push([l("Rubrical authorization","Autorisation rubricale"),
         l("Not independently verified","Non vérifiée indépendamment")]);
     }
+    const localSummary=getLocalOrationSummary?.()??null;
     if(Array.isArray(proper?.collects)){
-      const count=proper.collects.length;
-      if(count>0)entries.push([l("Collects / Secrets / Postcommunions","Collectes / Secrètes / Postcommunions"),
-        [proper.collects.length,proper.secrets?.length??0,proper.postcommunions?.length??0].join(" / ")]);
+      const counts=context.commemorationOrations?.status==="NOT_APPLIED_TO_FORM"?
+        context.commemorationOrations.counts:
+        [proper.collects.length,proper.secrets?.length??0,proper.postcommunions?.length??0];
+      if(counts?.[0]>0){
+        const effective=counts.slice();
+        if(localSummary?.confirmed){
+          for(const id of localSummary.groups??[]){
+            const index={collects:0,secrets:1,postcommunions:2}[id];
+            if(Number.isInteger(index))effective[index]++;
+          }
+        }
+        entries.push([l("Collects / Secrets / Postcommunions","Collectes / Secrètes / Postcommunions"),
+          effective.join(" / ")]);
+      }
+    }
+    if(localSummary?.groups?.length){
+      const names={collects:l("Collect","Collecte"),secrets:l("Secret","Secrète"),
+        postcommunions:l("Postcommunion","Postcommunion")};
+      entries.push([l("Local additional prayers","Prières locales supplémentaires"),
+        localSummary.groups.map(id=>names[id]??id).join(", ")+
+        (localSummary.confirmed?l(" · confirmed for this Mass"," · confirmées pour cette messe"):
+        l(" · confirmation required"," · confirmation nécessaire"))]);
     }
     for(const [label,value] of entries){
       const line=doc.createElement("p");line.className="aoFullMassReviewRow";
@@ -391,7 +417,7 @@ export function mountFullMassPreflight({
     root.dataset.aoSpecialMassVariant=presentation.variant;
     root.dataset.aoChosenMassForm=summary.form;
     root.dataset.aoChosenReaderMode=summary.readerMode;
-    root.dataset.aoProperReady=String(summary.canStart&&sourceGate.ready);
+    root.dataset.aoProperReady=String(summary.canStart&&sourceGate.ready&&localReady);
     return summary;
   }
   const onchange=()=>queueMicrotask(refresh);
