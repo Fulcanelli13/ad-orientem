@@ -29,7 +29,7 @@ function asPose(input,sceneId){
 }
 function same(a,b){return JSON.stringify(a)===JSON.stringify(b);}
 export function createVisibleMassLivingChurchAdapter({
- pilot,graph,sourceStatus,sourcePose,reviewEnabled,nativeCatechism=null
+ pilot,graph,sourceStatus,sourcePose,reviewEnabled,nativeCatechism=null,nativeMass=null
 }={}){
  if(pilot?.schema!=="AO_VISIBLE_MASS_P1_SANCTUARY_QUESTION_RECONCILIATION_V1"||
    !Array.isArray(pilot?.objects)||!Array.isArray(pilot?.questions)||
@@ -45,6 +45,7 @@ export function createVisibleMassLivingChurchAdapter({
  const trails=new Set(graph.trails.map(t=>t.id));
  const sceneAllowed=s=>Object.values(VISIBLE_MASS_LC_SCENES).includes(s.sceneId)&&
    s.photoId===s.sceneId&&asPose(s.pose,s.sceneId)!==null;
+ let activeNative=null;
  const bridge=createLivingChurchContext({
   reviewEnabled,
   verifyScene:sceneAllowed,
@@ -59,9 +60,20 @@ export function createVisibleMassLivingChurchAdapter({
   verifyGuideReferral:()=>false,
   // P1 is contextual state only. The existing P5->Mass Explorer native route
   // remains owned by the original viewer; P2 must explicitly integrate it.
-  authorizeDestination:async request=>nativeCatechism?.authorize?.(request)??false,
-  openDestination:async request=>nativeCatechism?.open?.(request)??({ok:false}),
-  restoreScene:async origin=>nativeCatechism?.restore?.(origin)??({ok:false})
+  authorizeDestination:async request=>request.routeId==="learn.mass_explorer"?
+    nativeMass?.authorize?.(request)??false:nativeCatechism?.authorize?.(request)??false,
+  openDestination:async request=>{
+   const target=request.routeId==="learn.mass_explorer"?nativeMass:nativeCatechism;
+   const result=await target?.open?.(request)??{ok:false};
+   if(result.ok)activeNative=request.routeId;
+   return result;
+  },
+  restoreScene:async origin=>{
+   const target=activeNative==="learn.mass_explorer"?nativeMass:nativeCatechism;
+   const result=await target?.restore?.(origin)??{ok:false};
+   if(result.ok)activeNative=null;
+   return result;
+  }
  });
  let supported=false;
  function sync(){
@@ -116,6 +128,7 @@ export function createVisibleMassLivingChurchAdapter({
     ...owner,context:supported&&owner.enabled?owner.context:null,
     massHandoffIntegrated:false,
     catechismHandoffReady:typeof nativeCatechism?.authorize==="function"&&nativeCatechism.status?.().nativeAvailable===true,
+    massHandoffReady:typeof nativeMass?.authorize==="function"&&nativeMass.status?.().available===true,
    answersOwnedBy:"ORIGINAL_VISIBLE_MASS_AND_CATECHISM",
     trailsOwnedBy:"ORIGINAL_VISIBLE_MASS_DIALOGUE_DIRECTOR"});
   },
