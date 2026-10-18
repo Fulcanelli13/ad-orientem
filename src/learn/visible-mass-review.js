@@ -158,20 +158,31 @@ export function createVisibleMassReviewRuntime(win=globalThis){
      }finally{askReturnButton.disabled=false;}
     };
     doc.body.append(askReturnButton);
+    // One registry fetch and one P2 session owner. Either presentation uses
+    // the same objective engine; character review shows only the folio.
+    let sourceSurveyPromise=null;
+    async function ensureAskIntegration(){
+     if(!sourceSurveyPromise){
+      sourceSurveyPromise=win.fetch(new URL("../../data/learn/ask-church-app-route-survey.v1.json",import.meta.url))
+       .then(response=>{
+        if(!response.ok)throw Error("Original Ask route registry unavailable");
+        return response.json();
+       }).catch(error=>{sourceSurveyPromise=null;throw error;});
+     }
+     const survey=await sourceSurveyPromise;
+     if(!askIntegration){
+      const mod=await import("./living-church-ask-integration.js");
+      askIntegration=mod.createLivingChurchAskIntegration(win,{
+       frame,returnButton:askReturnButton,survey,onNativeOpen,onNativeReturn
+      });
+     }
+     return survey;
+    }
     askButton.onclick=async()=>{
-     if(askLoading)return;
+     if(askLoading||characterReviewEnabled())return;
      askLoading=true;askButton.disabled=true;
      try{
-      characterFolio?.hide?.();
-      if(!askIntegration){
-       const mod=await import("./living-church-ask-integration.js");
-       const response=await win.fetch(new URL("../../data/learn/ask-church-app-route-survey.v1.json",import.meta.url));
-       if(!response.ok)throw Error("Original Ask the Church survey unavailable");
-       askIntegration=mod.createLivingChurchAskIntegration(win,{
-        frame,returnButton:askReturnButton,survey:await response.json(),
-        onNativeOpen,onNativeReturn
-       });
-      }
+      await ensureAskIntegration();
       const verdict=await askIntegration.openGuide();
       if(!verdict.ok)disclaimer.textContent=verdict.code==="SELECT_ORIGINAL_SANCTUARY_OBJECT_FIRST"
        ?"Select one of the original six photographed objects before starting the guide."
@@ -186,29 +197,17 @@ export function createVisibleMassReviewRuntime(win=globalThis){
       if(characterLoading)return;
       characterLoading=true;charactersButton.disabled=true;
       try{
-       let survey;
-       if(!askIntegration){
-        const mod=await import('./living-church-ask-integration.js');
-        const response=await win.fetch(new URL('../../data/learn/ask-church-app-route-survey.v1.json',import.meta.url));
-        if(!response.ok)throw Error('Original Ask route registry unavailable');
-        survey=await response.json();
-        askIntegration=mod.createLivingChurchAskIntegration(win,{frame,returnButton:askReturnButton,survey,
-         onNativeOpen,onNativeReturn});
-       }
-       askIntegration.hideGuide?.();
+       const survey=await ensureAskIntegration();
        if(!characterFolio){
-        if(!survey){
-         const response=await win.fetch(new URL('../../data/learn/ask-church-app-route-survey.v1.json',import.meta.url));
-         if(!response.ok)throw Error('Original Ask route registry unavailable');
-         survey=await response.json();
-        }
-        const mod=await import('./living-church-character-folio.js');
-        characterFolio=await mod.mountLivingChurchCharacterFolio(win,{host:node,frame,integration:askIntegration,survey});
-       }else if(!characterFolio.show())throw Error('Original selected photo is not source-verified');
-       disclaimer.textContent='Three-guide review · original source records only · no historical speech attributed';
+        const mod=await import("./living-church-character-folio.js");
+        characterFolio=await mod.mountLivingChurchCharacterFolio(win,{
+         host:node,frame,integration:askIntegration,survey
+        });
+       }else if(!characterFolio.show())throw Error("Original selected photo is not source-verified");
+       disclaimer.textContent="Three-guide review · original source records only · no historical speech attributed";
       }catch(error){
-       disclaimer.textContent='Select an original photograph object before opening the three guides.';
-       win?.console?.warn?.('Living Church character stage unavailable',error);
+       disclaimer.textContent="Select an original photograph object before opening the three guides.";
+       win?.console?.warn?.("Living Church character stage unavailable",error);
       }finally{characterLoading=false;charactersButton.disabled=false;}
      };
     }
