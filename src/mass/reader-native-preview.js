@@ -1287,6 +1287,7 @@ export async function mountNativeReaderPreview({
   let customStorage=null;
   try{customStorage=win.localStorage??null;}catch{}
   let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
+  ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
   let riteChoice=null;
   let palmGospelCueVisible=null;
 
@@ -1692,6 +1693,7 @@ export async function mountNativeReaderPreview({
         postureProfile:customaryPrefs.postureProfile,
         gestureProfile:customaryPrefs.gestureProfile,
         secondConfiteor:customaryPrefs.secondConfiteor,
+        sanctusPerformance:customaryPrefs.sanctusPerformance,
         localPosture:customaryPrefs.localPostures[activeCueId]??"DEFAULT",
         localGesture:customaryPrefs.localGestures?.[activeCueId]??"DEFAULT",
         followPriestSeating:customaryPrefs.followPriestSeating,
@@ -2591,6 +2593,9 @@ export async function mountNativeReaderPreview({
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onCustomaryChange:change=>{
       customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);
+      if(change?.kind==="sanctusPerformance"){
+        ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
+      }
       if(change?.kind==="secondConfiteor"){
         reader.setSections?.(sectionItems());
         // Turning the local custom off must not leave a hidden card active.
@@ -2605,6 +2610,10 @@ export async function mountNativeReaderPreview({
       const value=ready.scholaState.next();
       queue();
       return value;
+    },
+    onScholaRelease:()=>{
+      const value=ready.scholaState.releaseBenedictus?.();
+      queue();return value;
     },
     onScholaPrevious:()=>{
       const value=ready.scholaState.previous();
