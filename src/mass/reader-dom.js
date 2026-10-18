@@ -1550,8 +1550,11 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     sacredMinister:projectCertifiedSolemnMinisterRubric(moment.sacredMinister),
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
-    scholaShared:sharedTextWithSchola && Boolean(textValue(schola)),
-    scholaVisible:!sharedTextWithSchola && Boolean(textValue(schola)),
+    // An unresolved sung Benedictus requires a real visible action; never
+    // suppress the control just because a *priest* paragraph contains the
+    // same words as a Schola part that has NOT yet begun.
+    scholaShared:sharedTextWithSchola && !schola?.benedictusHold && Boolean(textValue(schola)),
+    scholaVisible:(!sharedTextWithSchola || schola?.benedictusHold===true) && Boolean(textValue(schola)),
     guide,
     priestPositionIconKey:moment.priestPositionIconKey ?? null,
     priestActionIconKey:moment.priestActionIconKey ?? null,
