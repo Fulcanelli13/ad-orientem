@@ -77,7 +77,7 @@ footer{margin:25px 0;font-size:12px;border-top:1px solid var(--line);padding-top
 <div class="m6-tools">
 <label>Scope<select id="m6-scope"><option value="pilot">30 sanctuary pilot objects</option><option value="all">All 170 objects</option></select></label>
 <label>Category<select id="m6-zone"><option value="">All categories</option></select></label>
-<label>Availability<select id="m6-availability"><option value="">All objects</option><option value="under">Under 4 eligible candidates</option><option value="multiple">2+ eligible candidates</option><option value="no-photo">Missing qualifying photo</option></select></label>
+<label>Availability<select id="m6-availability"><option value="ready" selected>Ready to compare · 4+ photos</option><option value="">All objects</option><option value="under">Under 4 eligible candidates</option><option value="multiple">2+ eligible candidates</option><option value="no-photo">Missing qualifying photo</option></select></label>
 <label>Find<input id="m6-search" type="search" placeholder="Object or canonical ID"></label>
 <button id="m6-toggle-queue" type="button">Acquisition queue</button>
 <button id="m6-import-btn" type="button">Import review JSON</button><input hidden id="m6-import-file" type="file" accept=".json,application/json">
@@ -419,7 +419,7 @@ function filtered(){return data.objects.filter(o=>{
  if($("m6-scope").value==="pilot"&&!o.pilot_30)return false;
  if($("m6-zone").value&&o.zone_id!==$("m6-zone").value)return false;
  const mode=$("m6-availability").value;
- if(mode==="under"&&shortfall(o)===0||mode==="multiple"&&viable(o).length<2||mode==="no-photo"&&!o.needs_photo)return false;
+ if(mode==="ready"&&shortfall(o)>0||mode==="under"&&shortfall(o)===0||mode==="multiple"&&viable(o).length<2||mode==="no-photo"&&!o.needs_photo)return false;
  const q=$("m6-search").value.trim().toLowerCase();
  return !q||[o.object_id,o.label,o.zone,o.canonical_glossary_id].join(" ").toLowerCase().includes(q);
 })}
