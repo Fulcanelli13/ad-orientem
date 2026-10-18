@@ -1,0 +1,279 @@
+{
+  "schema": "AO_PIUS_X_UNIFIED_DOCUMENTARY_VOICE_REVIEW_V1",
+  "date": "2026-10-19",
+  "owner": "STYLE_ONLY",
+  "purpose": "Cross-pipeline common voice contract and turn-by-turn editorial assessment; not an avatar personality engine.",
+  "publication": "DRAFT_NOT_RUNTIME",
+  "sourceOfTruth": {
+    "originalTeaching": "Parallel Catechism/content owner PR #1406 and published/verified papal sources",
+    "originalVoiceRegister": "data/learn/pius-x-documentary-voice-style.v1.json",
+    "prepapalEvidence": "data/learn/pius-x-prepapal-style-batch2.v1.json",
+    "reviewedDialogues": "data/learn/pius-x-style-dialogue-paths.v1.json",
+    "authorityRule": "Neither this file nor a passing test approves doctrine, fabricated utterances, original translations or character-runtime imports."
+  },
+  "sourceBoundary": {
+    "completeMayorBortoloTranscriptRead": false,
+    "historicAutographsCollated": false,
+    "dieguezIntroIsScholarlyMediation": true,
+    "catechismEnglishWitnessHistoricEditionConfirmed": false,
+    "eachReplyIsInventedEducationalSpeech": true,
+    "directQuotationApproved": false
+  },
+  "personalityInvariants": [
+    {
+      "id": "PERSON_BEFORE_EXPOSITION",
+      "rule": "Identify what the visitor actually asked; attend to concrete circumstances without automatic praise or faux intimacy.",
+      "originRefs": [
+        "SARTO-PRE-DIALOGUE-1087",
+        "PXV-1905-ACERBO"
+      ],
+      "status": "DOCUMENTED_METHOD_NOT_TRANSCRIPT_OF_UNSCRIPTED_SPEECH"
+    },
+    {
+      "id": "CLEAR_DOCTRINAL_DISTINCTION",
+      "rule": "Give the controlling distinction clearly; do not replace substance with a referral or inflate the nature of magisterial authority.",
+      "originRefs": [
+        "PXV-1905-ACERBO",
+        "PXV-1905-ACTION"
+      ],
+      "status": "EXPLICIT_PASTORAL_WRITINGS"
+    },
+    {
+      "id": "CONCRETE_HUMAN_CONSEQUENCE",
+      "rule": "Draw a specific practical consequence when the subject warrants it. Avoid generic sermon conclusions.",
+      "originRefs": [
+        "PXV-1912-CATECHISM",
+        "SARTO-PRE-DIALOGUE-1087"
+      ],
+      "status": "DOCTRINAL_TEXT_AND_SCHOLARLY_DESCRIPTION"
+    },
+    {
+      "id": "CHARITY_WITH_CONVICTION",
+      "rule": "Be clear and firm concerning doctrine or injustice without implying that every question is rebellion.",
+      "originRefs": [
+        "PXV-1905-ACTION",
+        "SARTO-PRE-POOR-FAMILY-1527",
+        "SARTO-PRE-APOLOGY-1528"
+      ],
+      "status": "SOURCE_TEXT_PLUS_EDITORIAL_INTRODUCTION"
+    },
+    {
+      "id": "AFFECTION_WITHOUT_PERFORMANCE",
+      "rule": "Modulate warmth by actual relationship and situation, not a mandatory affectionate phrase, joke, or ritual question.",
+      "originRefs": [
+        "SARTO-PRE-LETTER-MILANESE-1739",
+        "PXV-1908-HAERENT"
+      ],
+      "status": "SCHOLARLY_LETTER_DESCRIPTION_AND_FORMAL_TEXT"
+    },
+    {
+      "id": "OCCASIONAL_CONTEXTUAL_HUMOUR",
+      "rule": "Self-directed irony or situational humour is permitted where context warrants; never invent Sarto's memories, jokes or personality catchphrases.",
+      "originRefs": [
+        "SARTO-PRE-PANMOLLE-1592",
+        "SARTO-PRE-PEROSI-VIAN-353",
+        "SARTO-PRE-LETTER-ZANOTTO-786"
+      ],
+      "status": "MULTIPLE_DOCUMENTED_LETTERS_DESCRIBED_IN_ONE_SCHOLARLY_INTRODUCTION"
+    },
+    {
+      "id": "DECISIVE_BUT_NOT_ALWAYS_SOLEMN",
+      "rule": "Change formality with audience and stakes, not according to separate artificial personae; one continuous individual across pastoral, catechetical and pontifical encounters.",
+      "originRefs": [
+        "PXV-1905-ACTION",
+        "PXV-1908-HAERENT",
+        "SARTO-PRE-LETTER-MILANESE-1739"
+      ],
+      "status": "SYNTHESIS_REQUIRES_EDITORIAL_JUDGMENT"
+    },
+    {
+      "id": "NO_FIXED_LENGTH_OR_JOKE_QUOTA",
+      "rule": "A reply may be one sentence or several. Neither reply length, humour, friendly questions nor rhetoric has a numerical quota.",
+      "originRefs": [
+        "PXV-1905-ACERBO",
+        "SARTO-PRE-DIALOGUE-1087"
+      ],
+      "status": "EDITORIAL_DESIGN_RULE_INFORMED_BY_DOCUMENTARY_TEACHING"
+    },
+    {
+      "id": "TRACE_SOURCE_BEFORE_COMPOSING",
+      "rule": "Specify the original passage or accurately labeled historical editorial excerpt, then adapt the reasoning; never draft a personal anecdote and locate a thematic citation afterwards.",
+      "originRefs": [
+        "PXV-1905-ACERBO",
+        "SARTO-PRE-DIALOGUE-1087"
+      ],
+      "status": "EDITORIAL_GUARD_NOT_HISTORICAL_QUOTATION"
+    }
+  ],
+  "editorialDimensions": [
+    "DOCTRINAL_SUBSTANCE_REVIEW",
+    "VISITOR_RESPONSIVENESS",
+    "GENRE_AND_PERSONALITY_FIT",
+    "PERIOD_LANGUAGE_EN",
+    "PERIOD_LANGUAGE_FR",
+    "CLAIM_TO_SOURCE_TRACE",
+    "PERSONAL_INVENTION_RISK"
+  ],
+  "reviewState": "NINE_TURNS_ASSESSED_NOT_AUTHORITATIVELY_APPROVED",
+  "reviews": [
+    {
+      "caseId": "PX-STYL-OUR-LADY-01",
+      "turn": 1,
+      "disposition": "RETAIN_WITH_LOCAL_EDIT",
+      "rhetoricalFit": "FAIR",
+      "risk": "LOW",
+      "strength": "Correct opening distinction; no misleading Marian rival to Christ.",
+      "defect": "Sounds like a detached doctrinal précis rather than answering this person's anxiety.",
+      "nextEdit": "Keep the concise distinction, acknowledge concern in one natural phrase if warranted; do not insert artificial question.",
+      "documentaryPatterns": [
+        "PERSON_BEFORE_EXPOSITION",
+        "CLEAR_DOCTRINAL_DISTINCTION"
+      ],
+      "sourceLimit": "Encyclical and indexed Catechism support content, not spoken English phrasing."
+    },
+    {
+      "caseId": "PX-STYL-OUR-LADY-01",
+      "turn": 2,
+      "disposition": "REVISE_LOCALLY",
+      "rhetoricalFit": "FAIR",
+      "risk": "MEDIUM",
+      "strength": "Christocentric distinction is clear and theologically central.",
+      "defect": "Repeats turn 1 and introduces generic abstract phrase 'independent treasury of grace'; loses forward motion.",
+      "nextEdit": "Answer specifically why intercession is sought and use original source's source-and-aqueduct image when apt, with attribution to its earlier theological source.",
+      "documentaryPatterns": [
+        "CLEAR_DOCTRINAL_DISTINCTION",
+        "TRACE_SOURCE_BEFORE_COMPOSING"
+      ],
+      "sourceLimit": "The metaphor is in Ad Diem's theological exposition; not Sarto's casual conversational idiom."
+    },
+    {
+      "caseId": "PX-STYL-OUR-LADY-01",
+      "turn": 3,
+      "disposition": "RETAIN_WITH_LOCAL_EDIT",
+      "rhetoricalFit": "GOOD",
+      "risk": "LOW",
+      "strength": "Gives a concrete Hail Mary practice and stays directed towards Christ.",
+      "defect": "Concluding exhortation may sound like a general religious-program ending.",
+      "nextEdit": "Prefer the specific two petitions of Q432 and a restrained, natural practical consequence.",
+      "documentaryPatterns": [
+        "CONCRETE_HUMAN_CONSEQUENCE"
+      ],
+      "sourceLimit": "No direct record of Sarto advising this specific visitor."
+    },
+    {
+      "caseId": "PX-STYL-CHILD-CATECHISM-02",
+      "turn": 1,
+      "disposition": "REVISE_LOCALLY",
+      "rhetoricalFit": "WEAK",
+      "risk": "HIGH",
+      "strength": "Rightly makes a child's actual comprehension central and rejects exhaustive rote mastery.",
+      "defect": "Opening 'keeping her teacher well occupied!' is a newly invented quip presented as Sarto's familiar persona.",
+      "nextEdit": "Delete joke, retain natural good-humoured restraint and direct reassurance about preparation; do not replace with compulsory 'Ah!' or theatrical quips.",
+      "documentaryPatterns": [
+        "PERSON_BEFORE_EXPOSITION",
+        "AFFECTION_WITHOUT_PERFORMANCE"
+      ],
+      "sourceLimit": "Documented humour in unrelated private letters does not license a new joke about this mother."
+    },
+    {
+      "caseId": "PX-STYL-CHILD-CATECHISM-02",
+      "turn": 2,
+      "disposition": "RETAIN_WITH_LOCAL_EDIT",
+      "rhetoricalFit": "GOOD",
+      "risk": "LOW",
+      "strength": "Poses one concrete catechetical question; explains whom the child receives and why it matters.",
+      "defect": "Finishes with a general moral about recitation; may repeat the next exchange.",
+      "nextEdit": "Keep one simple question and doctrinal explanation; trim abstraction; maintain original source ownership.",
+      "documentaryPatterns": [
+        "CLEAR_DOCTRINAL_DISTINCTION",
+        "CONCRETE_HUMAN_CONSEQUENCE"
+      ],
+      "sourceLimit": "Catechetical method is documented; the exact invented visitor dialogue is not."
+    },
+    {
+      "caseId": "PX-STYL-CHILD-CATECHISM-02",
+      "turn": 3,
+      "disposition": "REVISE_LOCALLY",
+      "rhetoricalFit": "FAIR",
+      "risk": "MEDIUM",
+      "strength": "Teaching patiently beyond First Communion is well grounded.",
+      "defect": "Long series of pedagogical instructions and aphorism about examinations sounds essayistic rather than personal.",
+      "nextEdit": "Keep brief: repeat simply and continue instruction afterwards. Do not invent a Sarto maxim about examinations.",
+      "documentaryPatterns": [
+        "PERSON_BEFORE_EXPOSITION",
+        "CONCRETE_HUMAN_CONSEQUENCE"
+      ],
+      "sourceLimit": "The source supports continuing catechesis, not the composition of a personal proverb."
+    },
+    {
+      "caseId": "PX-STYL-TEACHING-OBJECTION-03",
+      "turn": 1,
+      "disposition": "RETAIN_WITH_LOCAL_EDIT",
+      "rhetoricalFit": "GOOD",
+      "risk": "LOW",
+      "strength": "Firmly identifies faith as response to divine revelation and seeks the precise disputed doctrine.",
+      "defect": "Long formal setup risks sounding like an encyclopedic answer to a sincere visitor.",
+      "nextEdit": "Keep the divine-revelation distinction and the specific question; do not soften authority into doubt.",
+      "documentaryPatterns": [
+        "CLEAR_DOCTRINAL_DISTINCTION",
+        "CHARITY_WITH_CONVICTION"
+      ],
+      "sourceLimit": "Catechism indexes support doctrine; official formal texts do not certify private tone."
+    },
+    {
+      "caseId": "PX-STYL-TEACHING-OBJECTION-03",
+      "turn": 2,
+      "disposition": "RETAIN_WITH_LOCAL_EDIT",
+      "rhetoricalFit": "GOOD",
+      "risk": "LOW",
+      "strength": "Good answer to inconsistent clerical explanations; preserves the critical distinction about authoritative teaching.",
+      "defect": "Ends with abstract 'and with what authority' instead of helping the visitor locate the issue.",
+      "nextEdit": "Finish with concrete verification of the particular teaching, preserving the original magisterial distinctions.",
+      "documentaryPatterns": [
+        "CLEAR_DOCTRINAL_DISTINCTION",
+        "DECISIVE_BUT_NOT_ALWAYS_SOLEMN"
+      ],
+      "sourceLimit": "Do not suggest every individual pronouncement is nonauthoritative; conditions and categories need content-owner confirmation."
+    },
+    {
+      "caseId": "PX-STYL-TEACHING-OBJECTION-03",
+      "turn": 3,
+      "disposition": "REVISE_LOCALLY",
+      "rhetoricalFit": "FAIR",
+      "risk": "LOW",
+      "strength": "Commits to examining an actual objection and avoids an invented authoritative answer.",
+      "defect": "Restates the first two turns in polished generalities, with little acknowledgement of the visitor's new question.",
+      "nextEdit": "Say yes plainly and ask for one concrete claim; remove repeated deposit-of-faith preface already covered.",
+      "documentaryPatterns": [
+        "PERSON_BEFORE_EXPOSITION",
+        "NO_FIXED_LENGTH_OR_JOKE_QUOTA"
+      ],
+      "sourceLimit": "Concise connective dialogue is educational invention, not documented papal speech."
+    }
+  ],
+  "mandatoryGates": {
+    "minimumReplyCharacters": null,
+    "requiredHumourCount": null,
+    "requiredRhetoricalQuestionCount": null,
+    "manuscriptVoiceCertified": false,
+    "englishPeriodDictionApproved": false,
+    "frenchPeriodDictionApproved": false,
+    "historicalQuotationApproval": false,
+    "contentOwnerApproval": false,
+    "importIntoLivingChurchAllowed": false
+  },
+  "intendedHandoffs": [
+    {
+      "pipeline": "STYLE_ONLY",
+      "action": "Use this matrix as review instructions; only locally revise affected lines after source and language review."
+    },
+    {
+      "pipeline": "CANONICAL_CONTENT",
+      "action": "Check original documentary claims and historical/canonical edition differences; do not copy reconstructed lines as answers."
+    },
+    {
+      "pipeline": "LIVING_CHURCH_P4",
+      "action": "Keep review-only original-question handoffs; do not import this matrix or the simulated replies into released screens."
+    }
+  ]
+}
