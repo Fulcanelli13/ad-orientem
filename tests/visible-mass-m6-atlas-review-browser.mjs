@@ -18,7 +18,7 @@ try{
   await page.goto(pathToFileURL(html).href,{waitUntil:"load"});
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_M6_ATLAS?.status()?.objects===170);
   let status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());
-  assert.equal(status.zones,13);assert.equal(status.images,67);assert.equal(status.visible,170);
+  assert.equal(status.zones,13);assert.equal(status.images,72);assert.equal(status.visible,170);
   await page.screenshot({path:out+"/"+spec.id+"-object-atlas.png",fullPage:false});
   await page.locator("#zone").selectOption("AL");status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,20);
   await page.locator("#zone").selectOption("");
@@ -33,7 +33,8 @@ try{
   await page.locator("#coverage").selectOption("");
   await page.locator("#search").fill("VE15");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
-  assert.match(await page.locator("#results").innerText(),/No original object-specific image candidate/);
+  const colorCard=await page.locator("#results").innerText();
+  for(const color of ["WHITE","RED","GREEN","VIOLET","BLACK"])assert.ok(colorCard.includes("VE15-"+color),"Missing photo record for "+color);
   await page.locator("#search").fill("VE20");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/PONTIFICAL-GLOVES-PARTIAL/);
@@ -52,7 +53,10 @@ try{
   assert.match(await page.locator("#results").innerText(),/Licensed independent gradine context photo/);
   await page.locator("#search").fill("");
   await page.locator("#mode-images").click();
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,67);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,72);
+  await page.locator("#search").fill("M6B8-VE15-VIOLET-EUGENIO-HANSEN");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.match(await page.locator("#results").innerText(),/Eugenio Hansen/);
   await page.locator("#search").fill("M6B5-VE03-SEVILLE-CATHEDRAL-ALB");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/CarlosVdeHabsburgo/);
