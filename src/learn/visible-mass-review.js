@@ -69,7 +69,10 @@ export function createVisibleMassReviewRuntime(win=globalThis){
    askButton.type="button";askButton.textContent="?";
    askButton.setAttribute("aria-label","Ask the Church from the selected sanctuary object");
    askButton.title="Ask the Church";
-   if(!askReviewEnabled()){askButton.hidden=true;askButton.disabled=true;}
+   // When character review is active, the visual-novel folio is the one
+   // conversational surface. The original Ask preview remains for P2-only
+   // research sessions but never runs as a competing UI here.
+   if(!askReviewEnabled()||characterReviewEnabled()){askButton.hidden=true;askButton.disabled=true;}
    const charactersButton=doc.createElement('button');
    charactersButton.type='button';charactersButton.textContent='✠';
    charactersButton.setAttribute('aria-label','Talk with the three guides');
@@ -224,7 +227,11 @@ export function createVisibleMassReviewRuntime(win=globalThis){
  }
  const status=()=>Object.freeze({installed:true,open:Boolean(root()&&!root().hidden),version:VERSION,
    researchOnly:true,publicRoute:false,originalSceneAsset:"BROMPTON_ALTAR_2019_B",
-   researchAnswersPublished:false,ownsRitualEngine:false});
+   researchAnswersPublished:false,ownsRitualEngine:false,
+   singleConversationSurface:characterReviewEnabled()?"three-character-folio":"original-ask",
+   canonicalObjectiveSessionCount:askIntegration?.status?.().objectiveSessionCount||0,
+   objective:askIntegration?.status?.().objective||null,
+   folioObjective:characterFolio?.status?.().objective||null});
  return Object.freeze({open,close,status});
 }
 export function installVisibleMassReviewModule(win=globalThis){
