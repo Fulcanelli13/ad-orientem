@@ -11,7 +11,6 @@ import "./cruciform-navigation-styles.js";
 
 export const CRUCIFORM_NAVIGATION_VERSION="angelus-cross-v1";
 const ROOT_ID="aoPray435930";
-const PAD_SIZE={width:68,height:82};
 
 export function crossDirection({dx=0,dy=0,x=34,y=41,width=68,height=82}={}){
   if(Math.max(Math.abs(dx),Math.abs(dy))>=18){
@@ -62,10 +61,12 @@ function moveParagraph(ctx,direction){
   const top=target.getBoundingClientRect().top-body.getBoundingClientRect().top+
     body.scrollTop-body.clientHeight*.41;
   const max=Math.max(0,body.scrollHeight-body.clientHeight);
-  const next=Math.max(0,Math.min(max,top));
+  const step=Math.max(66,body.clientHeight*.22);
+  const proposed=direction==="down"?Math.max(top,body.scrollTop+step):Math.min(top,body.scrollTop-step);
+  const next=Math.max(0,Math.min(max,proposed));
   if(Math.abs(next-body.scrollTop)<1)return false;
   const reduced=ctx.root.ownerDocument.defaultView?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-  body.scrollTo({top:next,behavior:reduced?"instant":"smooth"});
+  body.scrollTo({top:next,behavior:reduced?"auto":"smooth"});
   // The devotional reader's scroll listener is the sole source of lit/muted
   // and gesture-cue updates. Never assign a competing focused paragraph here.
   return true;
@@ -90,9 +91,22 @@ function makeCross(doc,side){
   let start=null;
   button.addEventListener("pointerdown",event=>{
     if(!event.isPrimary||event.button!==0)return;
-    start={id:event.pointerId,x:event.clientX,y:event.clientY};
+    const ctx=activeContext(doc);
+    const body=ctx?.host.querySelector(".aoDevoCard:not([hidden]) .aoDevoCardScroll");
+    start={id:event.pointerId,x:event.clientX,y:event.clientY,
+      scrollTop:body?.scrollTop??0,dragging:false};
     button.dataset.aoCrossPressed="true";
     try{button.setPointerCapture(event.pointerId)}catch{}
+  });
+  button.addEventListener("pointermove",event=>{
+    if(!start||event.pointerId!==start.id)return;
+    const dx=event.clientX-start.x,dy=event.clientY-start.y;
+    if(Math.abs(dy)<12||Math.abs(dy)<Math.abs(dx)*1.15)return;
+    const ctx=activeContext(doc);
+    const body=ctx?.host.querySelector(".aoDevoCard:not([hidden]) .aoDevoCardScroll");
+    if(!body)return;
+    start.dragging=true;
+    body.scrollTop=start.scrollTop-dy*1.4;
   });
   button.addEventListener("pointercancel",()=>{start=null;delete button.dataset.aoCrossPressed});
   button.addEventListener("pointerup",event=>{
@@ -101,9 +115,12 @@ function makeCross(doc,side){
     const b=button.getBoundingClientRect();
     const direction=crossDirection({dx:x-start.x,dy:y-start.y,
       x:x-b.left,y:y-b.top,width:b.width,height:b.height});
+    const dragging=start.dragging;
     start=null;delete button.dataset.aoCrossPressed;
     const ctx=activeContext(doc);
-    if(ctx&&direction)moveCruciform(ctx,direction);
+    // A vertical drag already scrolled the same canonical region; don't
+    // accidentally advance another paragraph on release.
+    if(ctx&&!dragging&&direction)moveCruciform(ctx,direction);
   });
   // Avoid also firing Prayer's delegated horizontal swipe recogniser.
   button.addEventListener("touchstart",e=>e.stopPropagation(),{passive:true});
