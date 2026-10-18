@@ -9,6 +9,8 @@ on:
       - "previews/visible-mass-3d/M6_Photo_Review_112_Sources_20261018.html"
       - "previews/visible-mass-3d/Ad_Orientem_M6_Acquired_Photo_Review_112.html"
       - "tests/visible-mass-m6-comparison-browser.mjs"
+      - "tests/visible-mass-m6-comparative-batch-contract.mjs"
+      - "previews/visible-mass-3d/M6_COMPARATIVE_P0_BATCH15_UNAPPROVED_20261018.v1.json"
       - "tests/visible-mass-m6-photo-atlas-contract.mjs"
       - "tests/visible-mass-m6-atlas-review-browser.mjs"
       - "tools/build-visible-mass-m6-atlas-review.mjs"
@@ -26,7 +28,9 @@ jobs:
         with:
           node-version: "22"
       - name: Guard 170 canonical objects, 13 zones, image provenance and draft status
-        run: node tests/visible-mass-m6-photo-atlas-contract.mjs
+        run: |
+          node tests/visible-mass-m6-photo-atlas-contract.mjs
+          node tests/visible-mass-m6-comparative-batch-contract.mjs
       - name: Build standalone research review gallery
         run: node tools/build-visible-mass-m6-atlas-review.mjs
       - name: Validate self-contained data on file origin
