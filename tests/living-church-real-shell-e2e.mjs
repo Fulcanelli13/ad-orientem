@@ -1,0 +1,80 @@
+import assert from "node:assert/strict";
+import http from "node:http";
+import {readFile,mkdir} from "node:fs/promises";
+import {resolve,extname,sep} from "node:path";
+import {fileURLToPath} from "node:url";
+import {chromium} from "@playwright/test";
+/** Real production app shell and actual native module owners, no mocked AO_* APIs. */
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const mime={".html":"text/html; charset=utf-8",".mjs":"text/javascript; charset=utf-8",
+ ".js":"text/javascript; charset=utf-8",".css":"text/css; charset=utf-8",".json":"application/json; charset=utf-8",
+ ".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".jpg":"image/jpeg",".woff2":"font/woff2"};
+const server=http.createServer(async(req,res)=>{
+ try{const location=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
+  const file=resolve(root,"."+location);if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return;}
+  const data=await readFile(file);
+  res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});res.end(data);
+ }catch(e){res.writeHead(e.code==="ENOENT"?404:500);res.end(String(e.message||e));}
+});
+await new Promise(resolveReady=>server.listen(0,"127.0.0.1",resolveReady));
+let browser;
+try{
+ browser=await chromium.launch({headless:true});
+ for(const width of [390,1280]){
+  const ctx=await browser.newContext({viewport:{width,height:width===390?844:900},
+    isMobile:width===390,hasTouch:width===390,serviceWorkers:"block",reducedMotion:"reduce"});
+  const page=await ctx.newPage(),errors=[];page.on("pageerror",e=>errors.push(String(e.message||e)));
+  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoVisibleMassReview=1",
+    {waitUntil:"domcontentloaded",timeout:90000});
+  await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:40000});
+  const opened=await page.evaluate(async()=>{
+   const owner=window.AO_LEARN_APP_V1;
+   if(!owner?.open?.())return {ok:false,at:"learn-open",status:owner?.status?.()};
+   const result=await owner.openModule("learn.visible_mass",{});
+   return {ok:result===true||result?.ok===true,at:"visible-mass",status:owner.status()};
+  });
+  assert.equal(opened.ok,true,"real Learn owner could not open Visible Mass: "+JSON.stringify(opened));
+  const frame=page.frameLocator("#ao-visible-mass-review-root iframe");
+  await frame.locator("#lc-stage-open").waitFor({state:"visible",timeout:35000});
+  const initial=await frame.locator("#photo-viewport").evaluate(el=>({x:el.scrollLeft,y:el.scrollTop}));
+  await frame.locator("#lc-stage-open").click();
+  await frame.locator("#lc-stage .lc-guides [data-guide='pius-x']").click();
+  await frame.locator("#lc-stage .lc-actions").getByRole("button",{name:"Holy Eucharist"}).click();
+  const before=await frame.locator("#lc-stage").evaluate(el=>el.ownerDocument.defaultView.AO_LIVING_CHURCH_P2.status());
+  assert.equal(before.node,"real-presence");
+  await frame.locator("#lc-stage .lc-actions").getByRole("button",{name:"Open Catechism"}).click();
+  await page.waitForFunction(()=>document.getElementById("ao-cate-root")&&!document.getElementById("ao-cate-root").hidden,
+    null,{timeout:30000});
+  const current=await page.evaluate(()=>({
+   catechism:!!document.getElementById("ao-cate-root")&&!document.getElementById("ao-cate-root").hidden,
+   original:AO_LEARN_APP_V1.status(),host:AO_VISIBLE_MASS_REVIEW_V1.status(),
+   returnVisible:!document.querySelector("#ao-living-church-native-return")?.hidden
+  }));
+  assert.equal(current.catechism,true);
+  assert.equal(current.returnVisible,true);
+  assert.equal(current.original.child,"learn.visible_mass","native Catechism must not replace the original Learn visitor");
+  const screenshotDir=resolve(root,"artifacts/living-church-real-shell");
+  await mkdir(screenshotDir,{recursive:true});
+  await page.screenshot({path:resolve(screenshotDir,"catechism-real-shell-"+width+".png")});
+  await page.locator("#ao-living-church-native-return").click();
+  await frame.locator("#lc-stage").waitFor({state:"visible",timeout:25000});
+  const restored=await frame.locator("#lc-stage").evaluate(el=>({
+    s:el.ownerDocument.defaultView.AO_LIVING_CHURCH_P2.status(),
+    p:{x:el.ownerDocument.querySelector("#photo-viewport").scrollLeft,
+       y:el.ownerDocument.querySelector("#photo-viewport").scrollTop}
+  }));
+  assert.equal(restored.s.guide,"pius-x");
+  assert.equal(restored.s.node,"real-presence");
+  assert.equal(restored.s.nativeReturnAvailable,false);
+  assert.deepEqual(restored.p,initial);
+  assert.equal(await page.locator("#ao-cate-root").isVisible(),false);
+  assert.equal(await page.evaluate(()=>AO_LEARN_APP_V1.status().child),"learn.visible_mass");
+  await page.screenshot({path:resolve(screenshotDir,"restored-real-shell-"+width+".png")});
+  assert.deepEqual(errors,[],"unexpected real-shell browser errors "+width);
+  console.log("PASS genuine app-shell St Pius X -> canonical Catechism Q322 -> exact-return "+width);
+  await ctx.close();
+ }
+}finally{
+ await browser?.close();
+ await new Promise(r=>server.close(r));
+}
