@@ -78,13 +78,13 @@ const qualifyingPhoto=(o)=>o.candidate_assets.some(({asset_id})=>{
  return Boolean(asset&&asset.medium==="photograph"&&asset.licence&&!["DISCOVERY_ONLY_UNVERIFIED_SOURCE_RIGHTS","PARTIAL_COMPONENT_ONLY"].includes(asset.review_status));
 });
 assert.ok(atlas.objects.every(o=>o.needs_photo===!qualifyingPhoto(o)),"Historical illustrations and unverified leads must not count as qualifying photographs");
-assert.equal(atlas.objects.filter(qualifyingPhoto).length,55);
-assert.equal(atlas.objects.filter(o=>o.needs_photo).length,115);
+assert.equal(atlas.objects.filter(qualifyingPhoto).length,56);
+assert.equal(atlas.objects.filter(o=>o.needs_photo).length,114);
 assert.equal(atlas.statistics.post_second_batch_photo_candidate_or_hotspot,30);
 assert.equal(atlas.statistics.post_second_batch_needs_photo,140);
 assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL17","AL18"]);
-assert.equal(atlas.images.length,67);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,64);
+assert.equal(atlas.images.length,72);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,69);
 
 
 const batch3=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH3");
@@ -101,14 +101,14 @@ for(const id of ["VE16","VE18","VE19"]){
  assert.ok(o.candidate_assets.some(x=>x.asset_id===gam.asset_id),"Shared Gammarelli original must be linked, not copied, for "+id);
 }
 assert.ok(gam.width<1000&&gam.role==="context_detail","Low-resolution Gammarelli must not claim high-res object detail");
-assert.equal(atlas.objects.filter(o=>!o.needs_photo).length,55);
-assert.equal(atlas.objects.filter(o=>o.needs_photo).length,115);
+assert.equal(atlas.objects.filter(o=>!o.needs_photo).length,56);
+assert.equal(atlas.objects.filter(o=>o.needs_photo).length,114);
 assert.equal(atlas.statistics.post_third_batch_photo_candidate_or_hotspot,38);
 assert.equal(atlas.statistics.post_third_batch_needs_photo,132);
 assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL17","AL18"]);
-assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,19);
-assert.equal(atlas.images.length,67);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,64);
+assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,20);
+assert.equal(atlas.images.length,72);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,69);
 
 
 const batch4=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH4");
@@ -136,9 +136,9 @@ for(const [id,viewerSide] of [["AL17","RIGHT"],["AL18","LEFT"]]){
 assert.equal(atlas.statistics.post_fourth_batch_photo_candidate_or_hotspot,41);
 assert.equal(atlas.statistics.post_fourth_batch_needs_photo,129);
 assert.equal(atlas.statistics.post_fourth_batch_pilot_needs_photo,3);
-assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,19);
-assert.equal(atlas.images.length,67);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,64);
+assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,20);
+assert.equal(atlas.images.length,72);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,69);
 
 
 const batch5=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH5");
@@ -155,7 +155,7 @@ assert.ok(batch5.find(x=>x.object_id==="VE11").source_description.includes("not 
 const v15=atlas.objects.find(o=>o.object_id==="VE15");
 assert.equal(v15.coverage_scope,"COMPOSITE_FIVE_COLOR_REQUIREMENT");
 assert.deepEqual(v15.required_colors_1962,["white","red","green","violet","black"]);
-assert.equal(v15.needs_photo,true);
+assert.equal(v15.needs_photo,false);
 const v10=atlas.objects.find(o=>o.object_id==="VE10");
 assert.ok(!v10.needs_photo&&v10.difference_from_dalmatic_note.includes("subdeacon"));
 const gradineSources=atlas.objects.find(o=>o.object_id==="AL10").context_scene_lead;
@@ -170,8 +170,8 @@ assert.equal(atlas.statistics.post_fifth_batch_photo_candidate_or_hotspot,45);
 assert.equal(atlas.statistics.post_fifth_batch_needs_photo,125);
 assert.equal(atlas.statistics.post_fifth_batch_pilot_needs_photo,2);
 assert.equal(atlas.statistics.post_fifth_batch_vestment_photo_candidates,17);
-assert.equal(atlas.images.length,67);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,64);
+assert.equal(atlas.images.length,72);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,69);
 
 
 const batch6=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH6");
@@ -191,14 +191,14 @@ for(const [key,asset] of Object.entries(requiredComponents)){
  assert.ok(ve20.candidate_assets.some(r=>r.asset_id===asset),"Missing source link for composite VE20 component "+key);
 }
 assert.equal(batch6.filter(x=>x.object_id==="VE20").length,2,"Do not duplicate original pontifical gloves");
-assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,19);
-assert.equal(atlas.objects.find(o=>o.object_id==="VE15").needs_photo,true,"Do not count five-colour composite as complete");
+assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,20);
+assert.equal(atlas.objects.find(o=>o.object_id==="VE15").needs_photo,false,"All five photographed colours now present");
 const orientationIDs=atlas.objects.filter(o=>["AL17","AL18"].includes(o.object_id));
 assert.ok(orientationIDs.every(o=>o.needs_photo),"Directional notes must not count as photo assets");
 assert.equal(atlas.statistics.post_sixth_batch_photo_candidate_or_hotspot,53);
 assert.equal(atlas.statistics.post_sixth_batch_needs_photo,117);
-assert.equal(atlas.images.length,67);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,64);
+assert.equal(atlas.images.length,72);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,69);
 
 
 const batch7=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH7");
@@ -213,8 +213,8 @@ for(const zone of atlas.zones){
 assert.equal(atlas.statistics.all_zones_have_initial_photographic_reference,true);
 assert.equal(atlas.statistics.post_seventh_batch_photo_candidate_or_hotspot,55);
 assert.equal(atlas.statistics.post_seventh_batch_needs_photo,115);
-assert.equal(atlas.images.length,67);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,64);
+assert.equal(atlas.images.length,72);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,69);
 assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL17","AL18"]);
 for(const id of ["AL17","AL18"]){
  const o=atlas.objects.find(x=>x.object_id===id),r=o.orientation_annotation.source_frame_review;
@@ -229,6 +229,27 @@ for(const id of ["AL17","AL18"]){
  assert.equal(o.needs_photo,true);
 }
 assert.equal(atlas.statistics.sanctuary_original_source_directional_notes_verified,2);
+
+
+const batch8=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH8");
+assert.equal(batch8.length,5);
+assert.ok(batch8.every(x=>x.object_id==="VE15"&&x.medium==="photograph"&&x.creator&&x.licence&&x.review_status==="SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"));
+const colors=["white","red","green","violet","black"];
+assert.deepEqual(batch8.map(x=>x.liturgical_color),colors);
+const colorSet=atlas.objects.find(o=>o.object_id==="VE15");
+assert.deepEqual(Object.keys(colorSet.color_set_photo_requirements.colors),colors);
+assert.equal(colorSet.color_set_photo_requirements.nature,"INDEPENDENT_PHOTOGRAPHS_NOT_MATCHING_SET");
+assert.match(colorSet.color_set_photo_requirements.limitations,/violet lacks independently established Roman Catholic venue/);
+for(const x of colors){
+ const aid=colorSet.color_set_photo_requirements.colors[x];
+ assert.ok(batch8.some(v=>v.asset_id===aid&&v.liturgical_color===x));
+ assert.ok(colorSet.candidate_assets.some(v=>v.asset_id===aid));
+}
+assert.equal(atlas.statistics.post_eighth_batch_photo_candidate_or_hotspot,56);
+assert.equal(atlas.statistics.post_eighth_batch_needs_photo,114);
+assert.equal(atlas.statistics.post_eighth_batch_vestment_photo_candidates,20);
+assert.equal(atlas.images.length,72);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,69);
 
 console.log("PASS M6 integrity",JSON.stringify({objects:170,zones:13,pilot:30,legacyImages:original.assets.length,m5Photos:m5.length+3,
  markers:6,newResearchCandidates:6,unservedExisting:147,glossaryMatches:glCounts}));
