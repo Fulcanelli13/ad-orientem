@@ -117,7 +117,7 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
   if(!source)return fail("SELECT_ORIGINAL_SANCTUARY_OBJECT_FIRST");
   if(!guide){
    guide=await mountAskChurchGuide(win,{
-    survey,lang:source.context.lang,
+    survey,lang:source.context.lang,hostManagesReturn:true,
     bridge:Object.freeze({open:nativeOpen})
    });
   }else guide.show();
