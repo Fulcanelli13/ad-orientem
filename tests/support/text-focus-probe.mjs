@@ -54,6 +54,17 @@ export async function probeTextFocus({
     text:(node.textContent||"").trim().replace(/\s+/g," ").slice(0,105)
   }));
   res.maxScroll=Math.max(0,Math.round(scroll.scrollHeight-scroll.clientHeight));
+  const sc=getComputedStyle(scroll),paraBox=scroll.querySelector('[data-role="paragraphs"]');
+  const pr=paraBox?.getBoundingClientRect(),sr=scroll.getBoundingClientRect();
+  res.geometry={
+    clientHeight:scroll.clientHeight,scrollHeight:scroll.scrollHeight,
+    paddingBottom:sc.paddingBottom,boxSizing:sc.boxSizing,
+    cssTail:sc.getPropertyValue("--ao-short-cue-tail"),
+    bodyBottom:pr&&sr?Math.round(pr.bottom-sr.top+scroll.scrollTop):null,
+    firstTop:nodes[0]?Math.round(nodes[0].getBoundingClientRect().top-sr.top+scroll.scrollTop):null,
+    lastBottom:nodes.at(-1)?Math.round(nodes.at(-1).getBoundingClientRect().bottom-sr.top+scroll.scrollTop):null,
+    scrollOverflow:sc.overflowY
+  };
   res.initialActive=eligible.filter(x=>active(x.node)).length;
   const seen=new Set(eligible.filter(x=>active(x.node)).map(x=>x.entry.ordinal));
   const original=scroll.scrollTop;
