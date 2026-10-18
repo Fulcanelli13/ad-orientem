@@ -59,6 +59,34 @@ for(const corpus of [low,sung]){
     "Creed English must keep the full 1962 meaning without duplicated 'together'");
 }
 
+// Wave 5: independently check the full prayer, not only the substitution
+// fragment. Psalm 140's final clause must express Latin verba malitiae
+// and ad excusandas excusationes in peccatis in both forms.
+for(const corpus of [low,sung]){
+  const byCue=new Map(corpus.blocks.flatMap(b=>(b.units??[]).map(u=>[u.cue_id,{blockId:b.Block_ID,unit:u}])));
+  const projected=id=>{
+    const v=byCue.get(id);
+    assert.ok(v,"Missing source cue "+id);
+    return applyCanonicalTextCorrection(v.blockId,v.unit);
+  };
+  const psalm=projected("AO.SM.C0122");
+  assert.match(psalm.latin,/verba malítiæ|verba malítiæ/u);
+  assert.match(psalm.english,/words of malice, to make excuses for sins/u);
+  assert.ok(!psalm.english.includes("deeds of wickedness"),
+    "Inherited Psalm 140 semantic mistranslation survived");
+  assert.match(psalm.english,/Let my prayer rise before Thee as incense/u);
+  const canonOpening=["AO.SM.C0150","AO.SM.C0151","AO.SM.C0152"]
+    .map(id=>projected(id).english).join(" ");
+  assert.match(canonOpening,/through Jesus Christ Thy Son, our Lord, to accept and bless these gifts/u);
+  const canonOblation=["AO.SM.C0163","AO.SM.C0164","AO.SM.C0165",
+    "AO.SM.C0166","AO.SM.C0167"].map(id=>projected(id).english).join(" ");
+  assert.match(canonOblation,/make this same offering wholly blessed, approved, ratified, reasonable and acceptable/u);
+  // English editorial ownership never modifies a frozen Latin source.
+  for(const id of ["AO.SM.C0122","AO.SM.C0150","AO.SM.C0151","AO.SM.C0163","AO.SM.C0164"]){
+    assert.equal(projected(id).latin,byCue.get(id).unit.latin);
+  }
+}
+
 assert.throws(
   ()=>applyCanonicalTextCorrection("AO.SM.BAD",{cue_id:"AO.SM.C0148",latin:"Benedíctus qui venit"}),
   /block ownership changed/
