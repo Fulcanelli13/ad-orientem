@@ -49,13 +49,20 @@ const expected=[
  ["newman_altar1","NEWMAN_ALTAR_1","CC BY 4.0"],
  ["newman_altar2","NEWMAN_ALTAR_2","CC BY 4.0"],
  ["newman_apse","NEWMAN_APSE","CC BY 4.0"],
- ["newman_pulpit","NEWMAN_PULPIT","CC BY 4.0"]
+ ["newman_pulpit","NEWMAN_PULPIT","CC BY 4.0"],
+ ["newman_altar3","NEWMAN_ALTAR_3","CC BY 4.0"],
+ ["brompton_altar1","BROMPTON_ALTAR_1","CC BY-SA 4.0"],
+ ["brompton_altar2","BROMPTON_ALTAR_2","CC BY-SA 4.0"],
+ ["brompton_lady","BROMPTON_LADY_ALTAR","CC BY-SA 4.0"],
+ ["brompton_heart","BROMPTON_SACRED_HEART","CC BY-SA 4.0"]
 ];
 const photoData={};
 for(const [key,id,license] of expected){
  const info=metadata[key];
  if(!info||info.license!==license||!info.commons_page?.startsWith("https://commons.wikimedia.org/wiki/File:"))
   throw Error("Original photographer or Commons source provenance missing: "+key);
+ if(key.startsWith("brompton_")&&key!=="brompton_still"&&!key.endsWith("360")&&!info.artist?.toLowerCase().includes("andyscott"))
+  throw Error("Unverified original P6 Brompton photograph creator: "+key);
  if(key.startsWith("newman_")&&!key.endsWith("360")&&!info.artist?.toLowerCase().includes("zairon"))
   throw Error("Unverified independently photographed Dublin detail creator: "+key);
  const path=join(assetDir,key.endsWith("360")?key+"-review.jpg":info.file);
@@ -71,7 +78,10 @@ html=html.replace(tag,'src="'+photoData.still+'"');
 const init=`<script>
 /* Review-only: preserve source-owned canonical text and exact ID datasets. */
 window.__AO_M4_OFFLINE_PHOTOS__=${JSON.stringify({BROMPTON_PANO:photoData.BROMPTON_PANO,NEWMAN_360:photoData.NEWMAN_360})};
-window.__AO_M5_OFFLINE_PHOTOS__=${JSON.stringify({NEWMAN_ALTAR_1:photoData.NEWMAN_ALTAR_1,NEWMAN_ALTAR_2:photoData.NEWMAN_ALTAR_2,NEWMAN_APSE:photoData.NEWMAN_APSE,NEWMAN_PULPIT:photoData.NEWMAN_PULPIT})};
+window.__AO_M5_OFFLINE_PHOTOS__=${JSON.stringify({NEWMAN_ALTAR_1:photoData.NEWMAN_ALTAR_1,NEWMAN_ALTAR_2:photoData.NEWMAN_ALTAR_2,NEWMAN_APSE:photoData.NEWMAN_APSE,NEWMAN_PULPIT:photoData.NEWMAN_PULPIT,
+ NEWMAN_ALTAR_3:photoData.NEWMAN_ALTAR_3,
+ BROMPTON_ALTAR_1:photoData.BROMPTON_ALTAR_1,BROMPTON_ALTAR_2:photoData.BROMPTON_ALTAR_2,
+ BROMPTON_LADY_ALTAR:photoData.BROMPTON_LADY_ALTAR,BROMPTON_SACRED_HEART:photoData.BROMPTON_SACRED_HEART})};
 const AO_M4_RESEARCH_DATA=${safe(JSON.stringify(data))};
 const AO_M4_REMOTE_FETCH=window.fetch.bind(window);
 window.fetch=(url,options)=>{
@@ -86,7 +96,7 @@ const chunk=originalHtml.slice(start,end+scriptEnd.length);
 if(!chunk.startsWith(scriptStart))throw Error("Controller IIFE not found");
 const replacement=init+"\n<script>\n"+safe(virtual.outputFiles[0].text)+"\n</script>";
 html=html.replace(chunk,replacement);
-const note='<div role="note" style="font:11px/1.5 system-ui,sans-serif;color:#abaaa5;padding:7px 12px;border-bottom:1px solid #38434c">M5 combined photographic review · same original high-altar still, two 360° panoramas and four source-owned close views embedded · research drafts only, not a public release · additional inspection references may require internet.</div>';
+const note='<div role="note" style="font:11px/1.5 system-ui,sans-serif;color:#abaaa5;padding:7px 12px;border-bottom:1px solid #38434c">M5 combined photographic review · two genuine 360° panoramas, Brompton six-object still, four Brompton close views and five independent Dublin close views embedded · research drafts only, not a public release · additional inspection references may require internet.</div>';
 html=html.replace('<body>','<body>\n'+note);
 const output=join(root,"dist/visible-mass/The_Visible_Mass_M5_Combined_Photographic_Review_Offline.html");
 await mkdir(dirname(output),{recursive:true});await writeFile(output,html,"utf8");
