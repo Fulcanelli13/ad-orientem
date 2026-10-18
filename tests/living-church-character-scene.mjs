@@ -130,9 +130,21 @@ try{
   assert.ok(await page.locator("#lc-stage .lc-source-record a[href^='https://']").count()>0,
     "original module supplied citations must render as HTTPS links");
   assert.equal(await page.locator("#lc-stage .lc-source-record a[href^='javascript:']").count(),0);
-  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Read apostolate:AQ03"}).click();
+  await page.locator("#lc-stage .lc-ask input").fill("Why?");
+  await page.locator("#lc-stage .lc-ask button").click();
+  await page.waitForFunction(()=>document.querySelector("#lc-stage .lc-source-record details")?.open===true);
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().sourceOpen),"apostolate:AQ08");
+  await page.locator("#lc-stage .lc-ask input").fill("Where are the sources?");
+  await page.locator("#lc-stage .lc-ask button").click();
+  await page.waitForFunction(()=>document.querySelector("#lc-stage .lc-dialogue")?.textContent.includes("References supplied"));
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Read Question AQ03"}).click();
   await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().sourceReadCount===2);
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().sourceOpen),"apostolate:AQ03");
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().sourceHistoryCount),2);
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Earlier references"}).click();
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Revisit Question AQ08"}).click();
+  await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().sourceOpen==="apostolate:AQ08");
+
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Back to subject"}).click();
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().selectedObjective),"protestant");
 
