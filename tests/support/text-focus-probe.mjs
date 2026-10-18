@@ -28,6 +28,7 @@ export async function probeTextFocus({
   res.allText=nodes.length;
   const validCue=/^AO\.SM\.C\d{4}$/;
   const active=node=>owner==="mass"?node.dataset.active==="true":
+    owner==="distinct"?node.dataset.aoDistinctReadingActive==="true":
     owner==="mass-uncued"?node.dataset.readingActive==="true":
     owner==="legacy"?node.dataset.aoPrayFocus==="active":
       node.dataset.aoDevoActive==="true";
@@ -36,7 +37,9 @@ export async function probeTextFocus({
     const node=nodes[i],id=node.dataset.cueId||node.dataset.aoDevoParagraph||String(i);
     const entry={ordinal:i,id,kind:node.dataset.kind||null,
       text:(node.textContent||"").trim().replace(/\s+/g," ").slice(0,105)};
-    if(owner==="mass"&&!validCue.test(node.dataset.cueId||"")){
+    if(owner==="distinct"&&node.dataset.kind==="RUBRIC"){
+      res.exempt.push(entry);
+    }else if(owner==="mass"&&!validCue.test(node.dataset.cueId||"")){
       (node.dataset.kind==="RUBRIC"?res.exempt:res.unowned).push(entry);
     }else eligible.push({node,entry});
   }
