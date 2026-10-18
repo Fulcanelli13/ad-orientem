@@ -23,7 +23,7 @@ assert.equal(catechismNumber("PX1912-Q105-other"),null);
 assert.equal(index.hasRef("PX1912-Q105"),true);
 assert.equal(index.hasRef("PX1912-Q000"),false);
 assert.throws(()=>createOriginalCatechismReferralIndex({...s,entries:s.entries.slice(0,432)}),/433-question/);
-assert.throws(()=>createOriginalCatechismReferralIndex({...s,entries:s.entries.map((x,i)=>i===0?{...x,q:105}:x)}),/Unverified/);
+assert.throws(()=>createOriginalCatechismReferralIndex({...s,entries:s.entries.map((x,i)=>i===0?{...x,q:s.entries[1].q}:x)}),/Unverified/);
 assert.throws(()=>createOriginalCatechismReferralIndex({...s,entries:s.entries.map((x,i)=>i===0?{...x,source_file_url:"javascript:alert(1)"}:x)}),/Unverified/);
 assert.equal("answer" in index.get(105),false);
 assert.equal("translation" in index.get(105),false);
