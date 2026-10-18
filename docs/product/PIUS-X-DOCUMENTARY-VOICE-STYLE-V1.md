@@ -193,3 +193,34 @@ The previously scripted three-encounter bilingual scenarios have been **substant
 6. The nine generated replies remain **draft, review-gated, runtimeImportAllowed=false**, with historical-style, doctrinal, English and French editorial approvals all false. P4 [#1406](https://github.com/Fulcanelli13/ad-orientem/pull/1406) has only source-indexed study-topic navigation; it does **not** import these reconstructed speeches. If a later review-mode scene wishes to preview such lines, require an explicit historical-simulation disclosure and a separate publication boundary.
 
 The [mechanical validator](../../tests/pius-x-style-dialogue-paths.mjs) now checks each revised turn for declared claim IDs and source locators, real existing question IDs, meaningful explanatory length, accurate historical/decree attribution labels, the Q335 warning, and release-gate invariants. A green code test establishes **registry consistency**, not theological truth or historical impersonation accuracy. Human review remains required.
+
+
+## Common one-person voice review (19 October 2026)
+
+The [unified documentary assessment](../../data/learn/pius-x-unified-documentary-voice-review.v1.json) establishes a single character across familiar, instructive and authoritative registers. It reconciles the separate St Pius X doctrine/biography pipeline and the present **style-only** work. Its nine style invariants are *editorial heuristics anchored to identified sources*, **not** authentic phrases or a machine-authorised conversational persona.
+
+### Editorial review outcome — nine V2 turns
+
+| Case | Turn 1 | Turn 2 | Turn 3 |
+| --- | --- | --- | --- |
+| Our Lady's intercession | Retain with local edit: recognise the visitor's concern | **Revise locally:** avoid repeating turn 1 and abstract "treasury" language | Retain with local edit: keep the concrete Hail Mary practice |
+| Child's First Communion | **Revise locally:** remove unverified "teacher well occupied" joke | Retain with local edit: one practical catechetical question | **Revise locally:** remove invented examination aphorism and compress instruction |
+| Church teaching authority | Retain with local edit: decisive distinction and precise question | Retain with local edit: keep magisterial/individual remark distinction | **Revise locally:** respond plainly before repeating previous doctrine |
+
+**Editorial score:** 5 retain with local edits, 4 revise locally; **zero turns approved for publication**. The V2 texts have *not* been overwritten by this assessment. Alter only an identified problem while preserving reviewed canonical substance and EN/FR correspondence.
+
+### Evidence and speech provenance
+
+- A clear, simple teaching method is a documented prescription of [*Acerbo Nimis*](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html), but it does not document a particular invented exchange.
+- [Sarto's pre-papal evidence register](../../data/learn/pius-x-prepapal-style-batch2.v1.json) records several letters described or excerpted by Dieguez. Their humour, self-correction and attention to ordinary circumstances are **contextual evidence**, not permission to fabricate a humorous first-person memory or catchphrase.
+- The complete Mayor–Bortolo dialogue, Dieguez doc. 1087 pp. 390–402, **has not been read**. Its described structure is useful, but its wording cannot be invoked as a verbatim voice witness.
+- The doctrine owner controls original Catechism substance and ecclesiastical accuracy; this voice review controls only rhetorical/genre fit. Historical French or Italian autograph-level diction has not been certified; English and French need **independent editorial review**.
+- Treat modern English translations of encyclicals as reliable access to their published teaching, **not** direct evidence of Sarto's English speaking habits. Distinguish authorial letters, official documents, prepared catechetical literature and later testimonies.
+- Every simulated statement remains newly composed educational speech, explicitly distinct from exact source quotation. Avoid implying documented motives, feelings, jokes or personal conversations.
+- Keep historical **Q335** fasting discipline distinguished from current law, and keep the native original-Catechism source owner intact.
+
+### Mechanical quality gates after reconciliation
+
+[The style test](../../tests/pius-x-style-dialogue-paths.mjs) now validates exact source references, traceable editorial reviews covering 9/9 turns, non-publication, and absence of unsupported manuscript/translation approval. **No fixed minimum dialogue length, mandatory humour count or rhetorical-question quota** is imposed. A passing automated test means the provenance structure is consistent; it **never** certifies the reconstructed wording as historically characteristic of Sarto.
+
+**Cross-pipeline handoff:** [P4 source-owned St Pius X navigation](https://github.com/Fulcanelli13/ad-orientem/pull/1406) should not import this review matrix or nine C-level dialogue replies into public runtime. Content specialists may refine claims and sources without creating a new style-owner database. The style pipeline should apply local textual edits only after reviewing the original source passage and visitor context.
