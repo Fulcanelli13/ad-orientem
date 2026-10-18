@@ -73,6 +73,9 @@ try{
    assert.equal(advanced.number.trim().startsWith("2 /"),true,"Schola counter did not follow manual correction");
    await prev.click();
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.index===0);
+   // The source controller updates synchronously; the disabled control
+   // follows at the next requestAnimationFrame reader projection.
+   await page.waitForFunction(()=>document.querySelector("[data-schola-previous]")?.disabled===true);
    assert.equal(await prev.isDisabled(),true);
    await page.locator("[data-schola-pause]").click();
    assert.equal(await page.locator("[data-schola-pause]").getAttribute("aria-pressed"),"true");
