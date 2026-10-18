@@ -1680,6 +1680,11 @@ export function buildReaderShellMarkup(prepared = {}) {
         <option value="KNEEL">Kneel</option>
       </select></label>
       <small data-customary-cue-note>Choose a source cue; fixed postures cannot be overridden.</small>
+      <label>Confiteor before Communion<select data-reader-customary="secondConfiteor" aria-label="Optional local Confiteor before Communion">
+        <option value="false">1962 Missal — omitted before Communion</option>
+        <option value="true">Observed local custom — include Confiteor, Misereatur and Indulgentiam</option>
+      </select></label>
+      <small>Local or older custom only; not prescribed by the 1962 Missal. The opening Confiteor at the foot of the altar is unchanged.</small>
     </div>
     <button class="ao-mass-prefs-more" type="button" data-reader-glossary>Terms & rubrics</button><button class="ao-mass-prefs-more" type="button" data-reader-parameters>App settings</button>
   </aside>
@@ -2461,7 +2466,7 @@ export function createReaderDomAdapter({
       const select=event.target?.closest?.("[data-reader-customary]");
       if(!select||select.disabled||!current?.customary)return;
       const kind=select.dataset.readerCustomary;
-      if(!["postureProfile","gestureProfile","localPosture"].includes(kind))return;
+      if(!["postureProfile","gestureProfile","localPosture","secondConfiteor"].includes(kind))return;
       onCustomaryChange?.({kind,value:select.value,cueId:current.customary.cueId});
     };
     root.addEventListener?.("change",rootChangeListener);
@@ -2879,6 +2884,8 @@ export function createReaderDomAdapter({
         if(select)select.value=current.customary[kind]??"DEFAULT";
         if(select&&kind==="localPosture")select.disabled=!current.customary.localPostureEditable;
       }
+      const communionConfiteor=root.querySelector('[data-reader-customary="secondConfiteor"]');
+      if(communionConfiteor)communionConfiteor.value=String(current.customary.secondConfiteor===true);
       const note=root.querySelector("[data-customary-cue-note]");
       if(note)note.textContent=current.customary.cueId
         ? current.customary.localPostureEditable
