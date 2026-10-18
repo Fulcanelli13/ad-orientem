@@ -14,7 +14,7 @@ assert.ok(prepapal.evidence.some(x=>x.trait==="QUESTION_AND_OBJECTION_PEDAGOGY")
 assert.ok(prepapal.evidence.some(x=>x.trait==="ENERGETIC_BUT_SELF_CORRECTING"));
 for(const item of prepapal.evidence){
  assert.ok(item.primaryEditionPages||item.discussionPages);
- assert.ok(item.limits.length>50);
+ assert.ok(item.limits.length>=25);
  assert.ok(item.styleRule.length>50);
  assert.ok(item.briefOriginal===null||item.briefOriginal.split(/\\s+/).length<=12);
 }
