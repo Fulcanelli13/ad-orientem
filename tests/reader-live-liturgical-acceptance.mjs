@@ -63,7 +63,9 @@ const {sourceModel,presentationModel:model}=buildReaderModeModels({
   prepared:p,data,mode:"LIVE",reviewExpandedCards:true,
 });
 assert.equal(sourceModel.totalCards,39);
-assert.equal(model.totalCards,65);
+assert.equal(model.totalCards,64);
+assert.equal(model.cards.filter(card=>card.sourceSectionId==='AO.CARD.013').length,1);
+assert.equal(model.cards.find(card=>card.sourceSectionId==='AO.CARD.013')?.title,'Sanctus — Benedictus');
 const sourceUnits=data.sungCorpus.blocks.flatMap(b=>b.units.map(u=>({
   ...u,blockId:b.Block_ID,
 })));
@@ -276,4 +278,4 @@ const low=createReaderCueStateController({
 assert.equal(low.supported,false);
 assert.equal(low.project("AO.SM.C0174").priestAction,null);
 
-console.log("Liturgical LIVE gate PASS — 280 donor records, 279 canonical cues + 1 editorial, 65 source-owned cards, all response/action/station/voice gates, conditional Communion Confiteor, double elevations, Gloria/Credo roles.");
+console.log("Liturgical LIVE gate PASS — 280 donor records, 279 canonical cues + 1 editorial, 64 source-owned cards, all response/action/station/voice gates, conditional Communion Confiteor, double elevations, Gloria/Credo roles.");
