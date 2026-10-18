@@ -51,7 +51,7 @@ try{
    const api=window.__AO_PHONE_PREVIEW;
    return {error:window.__AO_PHONE_HARNESS_ERROR??null,
     mode:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset.mode,
-    cards:(api?.model?.cards||[]).map((c,i)=>({id:c.id,title:c.title,sequence:c.sequence,i})),
+    cards:(api?.model?.cards||[]).map((c,i)=>({id:c.sectionId??c.id??null,title:c.title,sequence:c.sequence,i})),
     total:api?.model?.totalCards??0,source:api?.sourceModel?.totalCards??null};
   });
   const scenario={...test,modeRendered:state.mode,modelCards:state.total,sourceCards:state.source,
@@ -112,7 +112,7 @@ try{
     const sourceCueAfter=api.getNativeEventState?.()?.nativeCueId??shell?.dataset.r17NativeCue??null;
     const vernacular=paragraphs.map(n=>n.querySelector(".ao-line-secondary")?.textContent||"")
       .filter(Boolean).slice(0,5).join(" ").slice(0,180);
-    const matchedId=api.getCurrentCard()?.id||null;
+    const matchedId=api.getCurrentCard()?.sectionId??api.getCurrentCard()?.id??null;
     if(scroll){scroll.scrollTop=original;scroll.dispatchEvent(new Event("scroll",{bubbles:true}))}
     return {id:matchedId,title:label,paragraphs:paragraphs.length,sourceCues:idList.length,
       cuesFocused:seen.size,unfocused:idList.filter(id=>!seen.has(id)).slice(0,24),
