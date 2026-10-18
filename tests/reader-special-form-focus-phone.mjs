@@ -110,7 +110,16 @@ try{
        row.entered.push({step,...state});
        if(step>0 && state.cardId && state.cardId.startsWith("AO."))break;
        if(!state.cardId || step===9)break;
-       await page.evaluate(()=>window.__AO_PHONE_PREVIEW.next?.());
+       // The normal R17 adapter owns navigation through its actual native
+       // Next button. The debug API exposes next() only for distinct rites;
+       // calling api.next?.() here previously repeated ASP-R01 ten times.
+       const advanced=await page.evaluate(()=>{
+         const next=document.querySelector("#ao-r17-native-reader-preview [data-reader-nav='next']");
+         if(!next||next.disabled)return false;
+         next.click();
+         return true;
+       });
+       if(!advanced)break;
        await page.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
       }
      }
@@ -153,7 +162,13 @@ try{
        if(!observed.rootText)row.missing.push({card:c.title,problem:"EMPTY_READER"});
      }
      row.status=row.missing.length?"focus-or-content-review":"sampled-ordinary-focus-ok";
-     if(scenario.type==="prelude"&&!row.entered.length)row.status="prelude-not-visited";
+     if(scenario.type==="prelude"){
+       row.uniquePreludeIds=[...new Set(row.entered.map(r=>r.cardId).filter(id=>id&&!id.startsWith("AO.")))];
+       if(row.uniquePreludeIds.length<2){
+         row.status="prelude-not-visited";
+         row.missing.push("Fewer than two distinct source rite records were reached by native Next");
+       }
+     }
    }
   }catch(error){
     row.status="unsupported-or-broken-fixture";
