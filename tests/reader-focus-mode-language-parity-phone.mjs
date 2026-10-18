@@ -4,6 +4,7 @@ import {mkdir,readFile,writeFile} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {probeTextFocus} from "./support/text-focus-probe.mjs";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/text-focus-parity");
@@ -98,7 +99,7 @@ try{
     // Measure the *actual computed* text readability, not source styles.
     for(const node of paragraphs){
      const o=Number(getComputedStyle(node).opacity);
-     if(o<.42)dark.push({text:node.textContent.trim().slice(0,75),opacity:o,kind:node.dataset.kind||null});
+     if(o<(mode==="MISSAL"?.90:.42))dark.push({text:node.textContent.trim().slice(0,75),opacity:o,kind:node.dataset.kind||null});
     }
     const sourceCueBefore=api.getNativeEventState?.()?.nativeCueId??shell?.dataset.r17NativeCue??null;
     const scrollPositions=[Math.max(0,max*.19),Math.max(0,max*.76),0];
@@ -122,13 +123,25 @@ try{
       missalTwoColumn:!!shell?.querySelector(".ao-reader-shell[data-mode='MISSAL'] .ao-prayer-body"),
       error:null};
    },{sequence:card.sequence,mode:test.mode,label:card.title});
+   if(test.mode!=="MISSAL"&&report.unfocused.length){
+    const dense=await page.evaluate(probeTextFocus,{
+      rootSelector:"#ao-r17-native-reader-preview",scrollSelector:".ao-prayer-card",
+      paragraphSelector:".ao-reader-paragraph",owner:"mass",
+      label:test.mode+"/"+test.lang+" / "+card.title
+    });
+    report.quickSampleFocused=report.cuesFocused;
+    report.cuesFocused=dense.reached;
+    report.unfocused=dense.unreachable.map(x=>x.id);
+    report.denseScrollSteps=dense.scrollSweepSteps||0;
+    report.denseInvalidated=dense.invalidated;
+   }
    scenario.cards.push({index:card.i,expectedId:card.id,...report});
    scenario.visited++;
   }
   scenario.registered=scenario.cards.reduce((n,x)=>n+x.sourceCues,0);
   scenario.focused=scenario.cards.reduce((n,x)=>n+x.cuesFocused,0);
   scenario.darkParagraphs=scenario.cards.reduce((n,x)=>n+x.lowOpacityCount,0);
-  scenario.focusGaps=scenario.cards.filter(x=>x.sourceCues&&x.cuesFocused<x.sourceCues)
+  scenario.focusGaps=(test.mode==="MISSAL"?[]:scenario.cards).filter(x=>x.sourceCues&&x.cuesFocused<x.sourceCues)
     .map(x=>({index:x.index,title:x.title,sourceCues:x.sourceCues,focused:x.cuesFocused,maxScroll:x.maxScroll,unfocused:x.unfocused}));
   scenario.unpaired=scenario.cards.filter(x=>x.paragraphs>0&&!x.secondaryCount)
     .map(x=>({index:x.index,title:x.title,paragraphs:x.paragraphs}));
@@ -139,8 +152,19 @@ try{
   assert.equal(scenario.visited,scenario.modelCards,test.mode+"/"+test.lang+" skipped model cards");
   assert.equal(scenario.cardIdentityErrors.length,0,test.mode+"/"+test.lang+" card identity drift");
   assert.equal(scenario.errors.length,0,test.mode+"/"+test.lang+" JavaScript errors");
+  const kyrie=scenario.cards.find(x=>/^Kyrie/.test(x.title));
+  assert.ok(kyrie,test.mode+"/"+test.lang+" lost Kyrie card");
+  const localizedKyrie=test.lang==="fr"?"Seigneur, ayez pitié":"Lord, have mercy";
+  assert.ok(kyrie.vernacular.includes(localizedKyrie),
+    test.mode+"/"+test.lang+" did not render the expected translation");
+  if(test.mode==="MISSAL"){
+   assert.equal(scenario.darkParagraphs,0,"Missal must remain fully readable, never dimmed");
+   assert.equal(scenario.missalStateDrift.length,0,"Missal scroll must not advance ceremonial state");
+   assert.equal(scenario.cards.filter(x=>x.missalTwoColumn).length,scenario.visited,
+     "Missal lost the two-column reader on one or more cards");
+  }
   console.log("PARITY_SCENARIO="+JSON.stringify({mode:test.mode,lang:test.lang,cards:scenario.visited,
-   registered:scenario.registered,focused:scenario.focused,gaps:scenario.focusGaps.length,
+   registered:scenario.registered,focused:test.mode==="MISSAL"?"static":scenario.focused,gaps:scenario.focusGaps.length,
    dark:scenario.darkParagraphs,unpaired:scenario.unpaired.length,missalStateDrift:scenario.missalStateDrift.length}));
   await context.close();
  }
