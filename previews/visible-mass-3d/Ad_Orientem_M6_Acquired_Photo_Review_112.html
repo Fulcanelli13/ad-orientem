@@ -469,7 +469,7 @@ async function loadCommons(img){
  if(!/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//i.test(url||"")||!img.isConnected)return;
  thumbs.set(img.closest(".m6-card").dataset.photo,url);img.onload=()=>{img.hidden=false;img.previousElementSibling.hidden=true};img.src=url;
  }catch{/* Offline or remote preview unavailable; preserve attribution links. */}}
-function hydrate(){io?.disconnect();if(!("IntersectionObserver" in window))return;io=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){io.unobserve(e.target);const el=e.target;chain=chain.then(()=>new Promise(r=>setTimeout(r,250))).then(()=>loadCommons(el)).catch(()=>{})}},{rootMargin:"150px"});for(const el of $("m6-comparison-main").querySelectorAll("img[data-commons]"))io.observe(el)}
+function hydrate(){io?.disconnect();for(const picture of $("m6-comparison-main").querySelectorAll(".m6-pic img:not([data-commons])"))picture.addEventListener("error",()=>{picture.hidden=true;if(picture.previousElementSibling)picture.previousElementSibling.hidden=false},{once:true});if(!("IntersectionObserver" in window))return;io=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){io.unobserve(e.target);const el=e.target;chain=chain.then(()=>new Promise(r=>setTimeout(r,250))).then(()=>loadCommons(el)).catch(()=>{})}},{rootMargin:"150px"});for(const el of $("m6-comparison-main").querySelectorAll("img[data-commons]"))io.observe(el)}
 function modify(e){
  const t=e.target;if(!t.dataset.field)return;
  const o=pool[position],x=byId.get(t.dataset.photo);if(!o||!x||!refs(o).includes(x))return;
