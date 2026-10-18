@@ -55,6 +55,12 @@ try{
    await page.waitForFunction(()=>document.getElementById('aoAskChurchGuideV5')?.hidden===true,null,{timeout:30000});
    await page.waitForFunction(verify,null,{timeout:25000});
    assert.equal(await page.locator('#aoAskChurchReturnV5').isVisible(),true,'return control absent: '+desc);
+   const returnClearance=await page.evaluate(()=>({
+    buttonBottom:document.getElementById('aoAskChurchReturnV5').getBoundingClientRect().bottom,
+    ribbonTop:document.getElementById('ao-global-ribbon').getBoundingClientRect().top
+   }));
+   assert.ok(returnClearance.buttonBottom<=returnClearance.ribbonTop-4,
+    'return control overlaps global navigation at '+width+': '+JSON.stringify(returnClearance));
    await page.locator('#aoAskChurchReturnV5').click();
    assert.equal(await guide.isVisible(),true,'guide return failed: '+desc);
    assert.ok(await guide.locator('.ac-card').count()>=2,'context lost: '+desc);
