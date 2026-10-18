@@ -112,7 +112,24 @@
     "post_eleventh_batch_photo_candidate_or_hotspot": 79,
     "post_eleventh_batch_needs_photo": 91,
     "post_eleventh_batch_source_records": 91,
-    "post_eleventh_batch_unique_source_urls": 88
+    "post_eleventh_batch_unique_source_urls": 88,
+    "twelfth_batch_new_licensed_photos": 10,
+    "twelfth_batch_subjects": [
+      "DV02",
+      "DV03",
+      "DV04",
+      "DV09",
+      "DV12",
+      "BK06",
+      "BK13",
+      "BK14",
+      "SE11",
+      "SE12"
+    ],
+    "post_twelfth_batch_photo_candidate_or_hotspot": 89,
+    "post_twelfth_batch_needs_photo": 81,
+    "post_twelfth_batch_source_records": 101,
+    "post_twelfth_batch_unique_source_urls": 98
   },
   "zones": [
     {
@@ -475,9 +492,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-DV02-BARDSTOWN-BLESSED-VIRGIN",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV03",
@@ -489,9 +512,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-DV03-DUBLIN-ST-MARY-ST-JOSEPH",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV04",
@@ -503,9 +532,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-DV04-OHIO-ST-PETER-STATUE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV05",
@@ -597,9 +632,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-DV09-SACRE-COEUR-CHAPEL-GLASS",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV10",
@@ -639,9 +680,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-DV12-KENTUCKY-MARIAN-SHRINE",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SN01",
@@ -2556,9 +2603,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-BK06-NOTRE-DAME-PARIS-EPISTOLARY",
+          "role": "historical_book_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK07",
@@ -2690,9 +2743,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-BK13-AMIENS-CATHEDRAL-ORGAN",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK14",
@@ -2704,9 +2763,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-BK14-PARIS-NOTRE-DAME-CHOIR-STALLS",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK15",
@@ -3074,9 +3139,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-SE11-SAN-SEBASTIAN-MARIAN-BANNER",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE12",
@@ -3088,9 +3159,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B12-SE12-STRASBOURG-REQUIEM-2013",
+          "role": "object_in_liturgical_use",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE13",
@@ -4641,6 +4718,166 @@
       "source_description": "Original photographic representation of the Sacred Heart of Jesus statue in an active Roman Catholic church. Classified as a Sacred Heart devotional image in a three-dimensional statue form; not a traditional high altar furnishing or a 1962 liturgical action.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B12-DV02-BARDSTOWN-BLESSED-VIRGIN",
+      "object_id": "DV02",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Basilica_of_Saint_Joseph_Proto-Cathedral_(Bardstown,_Kentucky)_-_Blessed_Virgin_Mary_statue.jpg",
+      "creator": "Nheyob",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 2888,
+      "height": 3613,
+      "venue": "Basilica of Saint Joseph Proto-Cathedral, Bardstown, Kentucky, USA",
+      "source_description": "A standalone photographed Blessed Virgin Mary statue in a historic Roman Catholic basilica. Catholic devotional iconography and provenance established; not a Brompton original or 1962 ceremony photograph.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-DV03-DUBLIN-ST-MARY-ST-JOSEPH",
+      "object_id": "DV03",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Statue_of_Saint_Joseph.jpg",
+      "creator": "ManuRoquette",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 2976,
+      "height": 3968,
+      "venue": "St Mary's Pro-Cathedral, Dublin, Ireland",
+      "source_description": "Direct photograph of Saint Joseph's statue inside Dublin's Roman Catholic Pro-Cathedral, strongly preferred Catholic/Ireland context. No particular Mass use is implied.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-DV04-OHIO-ST-PETER-STATUE",
+      "object_id": "DV04",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Mary_Catholic_Church_(Delaware,_Ohio)_-_side_altar,_Saint_Peter_statue.jpg",
+      "creator": "Nheyob",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 2397,
+      "height": 3598,
+      "venue": "Saint Mary Roman Catholic Church, Delaware, Ohio, USA",
+      "source_description": "Direct photograph of the statue of Saint Peter in a Catholic church side-altar setting, an authentic example of a saint image. Image also includes architectural background; no TLM-specific ceremony.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-DV09-SACRE-COEUR-CHAPEL-GLASS",
+      "object_id": "DV09",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Basilique_du_Sacr%C3%A9-C%C5%93ur_chapelle_Sainte_Marguerite_Marie_stained-glass_windows_2026-01-03.jpg",
+      "creator": "Renée Kools",
+      "licence": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "width": 3000,
+      "height": 3000,
+      "venue": "Basilique du Sacré-Cœur de Montmartre, Chapel of Saint Margaret Mary, Paris, France",
+      "source_description": "High-resolution original 2026 photo of real Catholic sacred stained-glass windows, source marked Wikimedia quality image. Not an altar painting or in-use liturgy.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-DV12-KENTUCKY-MARIAN-SHRINE",
+      "object_id": "DV12",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Joseph%27s_Catholic_Church_(Central_City,_Kentucky)_-_Blessed_Virgin_Mary_shrine.jpg",
+      "creator": "Nheyob",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 3437,
+      "height": 2755,
+      "venue": "Saint Joseph's Roman Catholic Church, Central City, Kentucky, USA",
+      "source_description": "Authentic Marian devotional shrine/niche with a Blessed Virgin statue inside Catholic parish church. Context photograph, not a generic independent church architectural record.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-BK06-NOTRE-DAME-PARIS-EPISTOLARY",
+      "object_id": "BK06",
+      "role": "historical_book_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%C3%89pistolaire_du_tr%C3%A9sor_de_la_cath%C3%A9drale_Notre-Dame_de_Paris.jpg",
+      "creator": "Tangopaso",
+      "licence": "Public domain (photographer dedication)",
+      "license_url": "https://commons.wikimedia.org/wiki/File:%C3%89pistolaire_du_tr%C3%A9sor_de_la_cath%C3%A9drale_Notre-Dame_de_Paris.jpg#Licensing",
+      "width": 2112,
+      "height": 2816,
+      "venue": "Treasury of Cathédrale Notre-Dame de Paris; 1868 epistolary with Jean-Alexandre Chertier metalwork",
+      "source_description": "Original museum-object photograph of a genuine Catholic epistolary cover/volume created in 1868. Photographic rights dedicated to public domain. Historical specimen NOT a typical Epistolary in a 1962 solemn Mass.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-BK13-AMIENS-CATHEDRAL-ORGAN",
+      "object_id": "BK13",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Amiens,_cathedral_Notre-Dame,_the_pipe_organ.JPG",
+      "creator": "Dguendel",
+      "licence": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "width": 2632,
+      "height": 4115,
+      "venue": "Cathédrale Notre-Dame d'Amiens, France",
+      "source_description": "High-quality original photograph of a historic pipe organ in a genuine Roman Catholic cathedral; physical architecture only, not recorded liturgical singing nor a 1962 Mass.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-BK14-PARIS-NOTRE-DAME-CHOIR-STALLS",
+      "object_id": "BK14",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cathedrale_Notre-Dame_de_Paris_stalles_orgue_choeur.jpg",
+      "creator": "Myrabella",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 3973,
+      "height": 2393,
+      "venue": "Cathédrale Notre-Dame de Paris; pre-2019 eighteenth-century choir stalls and choir organ",
+      "source_description": "Photograph documenting historic Catholic choir stalls of Notre-Dame designed by Robert de Cotte, with choir organ in same frame. Context image with choir stalls visible; not a picture of a sung 1962 Mass.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-SE11-SAN-SEBASTIAN-MARIAN-BANNER",
+      "object_id": "SE11",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2025-01-25_-_Processional_banner_for_the_Nuestra_Se%C3%B1ora_del_Carmen_de_San_Sebasti%C3%A1n_01.jpg",
+      "creator": "EyeTrick",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3341,
+      "height": 4454,
+      "venue": "San Sebastián Basilica, Manila, Philippines; 2025 Flos Carmeli exhibition",
+      "source_description": "Physical Catholic confraternity processional banner of Our Lady of Mount Carmel on display in a basilica. Not photographed carried during a 1962 procession; image itself shows a photographed reproduction of the older Marian icon.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B12-SE12-STRASBOURG-REQUIEM-2013",
+      "object_id": "SE12",
+      "role": "object_in_liturgical_use",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Strasbourg_crypte_de_la_cath%C3%A9drale_Notre_Dame_messe_de_Requiem_2013_06.jpg",
+      "creator": "Claude TRUONG-NGOC",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 3156,
+      "height": 5016,
+      "venue": "Notre-Dame de Strasbourg cathedral crypt; Requiem in memory of Louis XVI, 19 January 2013",
+      "source_description": "Original photo is categorised as Tridentine/Requiem Mass with black chasuble in Strasbourg Catholic cathedral crypt. Candidate for black Requiem vestments in actual traditional liturgical use; detailed form and individual garment visibility still require visual curation.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH12"
     }
   ]
 }
