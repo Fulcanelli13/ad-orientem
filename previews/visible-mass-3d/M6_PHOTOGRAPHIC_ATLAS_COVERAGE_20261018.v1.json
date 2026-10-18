@@ -129,7 +129,14 @@
     "post_twelfth_batch_photo_candidate_or_hotspot": 89,
     "post_twelfth_batch_needs_photo": 81,
     "post_twelfth_batch_source_records": 101,
-    "post_twelfth_batch_unique_source_urls": 98
+    "post_twelfth_batch_unique_source_urls": 98,
+    "thirteenth_batch_new_photo_records": 6,
+    "thirteenth_batch_qualified_objects_added": 5,
+    "thirteenth_batch_partial_leads_not_counted": 1,
+    "post_thirteenth_batch_photo_candidate_or_hotspot": 94,
+    "post_thirteenth_batch_needs_photo": 76,
+    "post_thirteenth_batch_source_records": 107,
+    "post_thirteenth_batch_unique_source_urls": 104
   },
   "zones": [
     {
@@ -652,9 +659,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B13-DV10-LOURDES-EXVOTO-RAILWAY-PLAQUE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV11",
@@ -2589,9 +2602,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B13-BK05-CORTONA-SAINT-FRANCIS-EVANGELIARY",
+          "role": "historical_book_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK06",
@@ -2783,9 +2802,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B13-BK15-AACHEN-CATHEDRAL-CHOIR-LECTERN",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SA01",
@@ -3023,9 +3048,18 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "PARTIAL_COMPONENT_ONLY_STILL_NEEDS_PHOTO",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B13-SE04-BALIUAG-2022-ASH-CONTAINERS-ONLY",
+          "role": "partial_component_detail",
+          "evidence": "PARTIAL_COMPONENT_ONLY"
+        }
+      ],
+      "needs_photo": true,
+      "required_missing_components": [
+        "actual Ash Wednesday liturgical ash dish or vessel with ashes"
+      ]
     },
     {
       "object_id": "SE05",
@@ -3077,9 +3111,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B13-SE07-DREUX-1925-BNF-CATAFALQUE",
+          "role": "historical_ceremony_context",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE08",
@@ -3091,9 +3131,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B13-SE08-2008-CATHOLIC-FUNERAL-COFFIN-DISPLAY",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE09",
@@ -4878,6 +4924,102 @@
       "source_description": "Original photo is categorised as Tridentine/Requiem Mass with black chasuble in Strasbourg Catholic cathedral crypt. Candidate for black Requiem vestments in actual traditional liturgical use; detailed form and individual garment visibility still require visual curation.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH12"
+    },
+    {
+      "asset_id": "M6B13-DV10-LOURDES-EXVOTO-RAILWAY-PLAQUE",
+      "object_id": "DV10",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ex-voto_railway_accident_Lourdes.jpg",
+      "creator": "Tangopaso",
+      "licence": "Public domain, author dedication",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Ex-voto_railway_accident_Lourdes.jpg#Licensing",
+      "width": 4416,
+      "height": 3312,
+      "venue": "Basilica of the Immaculate Conception, Lourdes, France",
+      "source_description": "Original photographed ex-voto gratitude plaque from the Roman Catholic Basilica of the Immaculate Conception at Lourdes, commemorating survival of a railway accident. A real votive plaque; not evidence of a 1962 ritual or particular approved miracle.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH13"
+    },
+    {
+      "asset_id": "M6B13-SE07-DREUX-1925-BNF-CATAFALQUE",
+      "object_id": "SE07",
+      "role": "historical_ceremony_context",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dreux,_7-11-25,_obs%C3%A8ques_de_la_duchesse_de_Chartres_(le_catafalque_%C3%A0_l%27int%C3%A9rieur_de_la_chapelle_royale)_-_btv1b53155647t.jpg",
+      "creator": "Agence Rol / Bibliothèque nationale de France, Gallica btv1b53155647t",
+      "licence": "Public domain (France and United States; 1925 collective or anonymous press photograph; moral attribution retained)",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Dreux,_7-11-25,_obs%C3%A8ques_de_la_duchesse_de_Chartres_(le_catafalque_%C3%A0_l%27int%C3%A9rieur_de_la_chapelle_royale)_-_btv1b53155647t.jpg#Licensing",
+      "width": 8638,
+      "height": 6151,
+      "venue": "Chapelle royale Saint-Louis, Dreux, France; funeral of Duchess of Chartres, 7 November 1925",
+      "source_description": "Historical original Catholic chapel interior photograph expressly documented by Agence Rol and the Bibliothèque nationale de France as a catafalque at the Duchess of Chartres funeral in November 1925. Strong genuine pre-1962 Catholic catafalque reference, not a modern image and not proof of every detail of the 1962 rubrics. The subject is a cenotaph/catafalque, not to be silently conflated with a coffin-supporting bier.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH13"
+    },
+    {
+      "asset_id": "M6B13-SE08-2008-CATHOLIC-FUNERAL-COFFIN-DISPLAY",
+      "object_id": "SE08",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:CoffinDisplay.jpg",
+      "creator": "Willjay",
+      "licence": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "width": 1024,
+      "height": 768,
+      "venue": "Original Catholic funeral display photographed in 2008; exact physical venue not established",
+      "source_description": "Original photographer labels this a display of arrangement and decoration for a Roman Catholic funeral, including a coffin. The physical bier or supporting structure needs visibility review; do not claim a 1962 funeral rite, actual funeral Mass, traditional catafalque or black funeral pall from this modern staging example. Moderate 1024×768 quality.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH13"
+    },
+    {
+      "asset_id": "M6B13-BK05-CORTONA-SAINT-FRANCIS-EVANGELIARY",
+      "object_id": "BK05",
+      "role": "historical_book_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tunica,_cuscino_cucito_da_jacopa_settesoli_ed_evangeliario_di_san_francesco_d%27assisi,_donati_da_frate_elia.jpg",
+      "creator": "Sailko",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 5003,
+      "height": 1794,
+      "venue": "Chiesa di San Francesco, Cortona, Tuscany, Italy",
+      "source_description": "Original photograph of a group of historic relics explicitly including Saint Francis of Assisi's evangeliary or Gospel book, alongside his tunic and a cushion. This is a genuine Roman Catholic historical Gospel-book artifact, but NOT an isolated Book of Gospels and NOT the modern/1962 book type held by a deacon at a solemn Mass.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH13"
+    },
+    {
+      "asset_id": "M6B13-BK15-AACHEN-CATHEDRAL-CHOIR-LECTERN",
+      "object_id": "BK15",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Adlerpult_mit_Fledermaus.jpg",
+      "creator": "ACBahn",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 4160,
+      "height": 3120,
+      "venue": "Aachen Cathedral, Germany; medieval brass eagle lectern, Catholic cathedral choir",
+      "source_description": "Original photograph of authentic historical Catholic cathedral choir lectern, produced circa 1450 in Dinant with 1874 cast bat used to stabilise broken lectern. Historic eagle-shaped furniture not the ordinary compact movable choir music stand of a 1962 Mass; visual suitability and distinction from ambo require review.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH13"
+    },
+    {
+      "asset_id": "M6B13-SE04-BALIUAG-2022-ASH-CONTAINERS-ONLY",
+      "object_id": "SE04",
+      "role": "partial_component_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ashes_(Ash_Wednesday_2022_during_COVID-19_pandemic_in_the_Philippines)_03.jpg",
+      "creator": "FBenjr123",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 5184,
+      "height": 3888,
+      "venue": "St Augustine Roman Catholic Parish Church, Baliuag, Bulacan, Philippines; 2 March 2022",
+      "source_description": "Source describes ash portions in plastic take-home containers on Ash Wednesday 2022 during COVID-19 precautions, said to have been taken from a sacristy metal vessel. This does NOT demonstrate the 1962 Ash Wednesday altar ash bowl or the metal vessel itself, so SE04 remains missing a qualifying photo of ashes AND an actual liturgical vessel.",
+      "review_status": "PARTIAL_COMPONENT_ONLY",
+      "source_index": "M6_RESEARCH_20261018_BATCH13"
     }
   ]
 }
