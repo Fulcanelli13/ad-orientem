@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   CANONICAL_TEXT_CORRECTIONS,
+  getCanonicalTextCorrections,
   applyCanonicalTextCorrection,
 } from "../src/mass/canonical-text-corrections.js";
 
@@ -10,7 +11,7 @@ const low=JSON.parse(readFileSync(new URL("../data/presentation/reader-text-low.
 const sung=JSON.parse(readFileSync(new URL("../data/presentation/reader-text-sung.v1.json",import.meta.url),"utf8"));
 
 for(const row of manifest.corrections){
-  const spec=CANONICAL_TEXT_CORRECTIONS[row.cueId];
+  const spec=getCanonicalTextCorrections(row.cueId).find(rule=>rule.field===row.field);
   assert.ok(spec,row.cueId+" missing JS correction");
   assert.equal(spec.blockId,row.blockId);
   assert.equal(spec.from,row.from);
@@ -26,10 +27,10 @@ for(const corpus of [low,sung]){
     const corrected=applyCanonicalTextCorrection(row.blockId,unit);
     assert.ok(corrected[row.field].includes(row.to),corpus.form+" correction not applied at "+row.cueId);
     for(const field of ["latin","english"]){
-      if(field!==row.field)assert.equal(corrected[field],unit[field],
+      if(field!==row.field && !manifest.corrections.some(other=>other.cueId===row.cueId&&other.field===field))assert.equal(corrected[field],unit[field],
         row.cueId+": correction changed unowned "+field+" field");
     }
-    assert.equal(corrected.canonicalCorrectionId,row.id);
+    assert.ok(corrected.canonicalCorrectionIds.includes(row.id));
     const twice=applyCanonicalTextCorrection(row.blockId,corrected);
     assert.equal(twice[row.field],corrected[row.field],"correction must be idempotent");
   }
@@ -40,4 +41,4 @@ assert.throws(
   /block ownership changed/
 );
 
-console.log("canonical text corrections: PASS — "+manifest.corrections.length+" source-owned LATIN/ENGLISH cue corrections applied before runtime projection.");
+console.log("canonical text corrections: PASS — "+manifest.corrections.length+" source-owned LATIN/ENGLISH field corrections applied before runtime projection.");
