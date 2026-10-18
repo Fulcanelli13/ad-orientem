@@ -30,10 +30,59 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  returnBtn.type="button";returnBtn.hidden=true;
  returnBtn.textContent="Return to the Living Church";doc.body.append(returnBtn);
  const root=doc.createElement("section");root.id="lc-stage";root.hidden=true;root.setAttribute("aria-label","Living Church visual-novel scene");
- root.innerHTML='<div class="lc-bg"></div><div class="lc-shade"></div><header class="lc-head"><div><small>AD ORIENTEM · REVIEW ONLY</small><div><strong>The Living Church</strong></div></div><button data-close>Return to photograph</button></header><nav class="lc-guides" aria-label="Choose a guide"></nav><div class="lc-small">Original Brompton Oratory photograph<br>Scripted, non-authoritative dialogue</div><img class="lc-sprite" alt=""><div class="lc-missing" hidden role="status">The approved character portrait is not yet installed in this research branch. Its locked original must be imported; no substitute will be generated.</div><section class="lc-panel" aria-label="Visual novel dialogue"><span class="lc-name"></span><p class="lc-dialogue" aria-live="polite"></p><p class="lc-note" hidden>Scripted educational preview; original source owners remain authoritative.</p><div class="lc-actions"></div><form class="lc-ask"><input maxlength="240" aria-label="Ask a question" placeholder="Ask about something in the church…"><button>Ask</button></form></section>';
+ root.innerHTML='<div class="lc-bg"></div><div class="lc-shade"></div><header class="lc-head"><div><small>AD ORIENTEM · REVIEW ONLY</small><div><strong>The Living Church</strong></div></div><button data-close>Return to photograph</button></header><nav class="lc-guides" aria-label="Choose a guide"></nav><div class="lc-small">Original Brompton Oratory photograph<br>Scripted, non-authoritative dialogue</div><img class="lc-sprite" alt=""><div class="lc-missing" hidden role="status">The approved character portrait is not yet installed in this research branch. Its locked original must be imported; no substitute will be generated.</div><section class="lc-panel" aria-label="Visual novel dialogue"><span class="lc-name"></span><p class="lc-dialogue" aria-live="polite"></p><p class="lc-note" hidden>Scripted educational preview; original source owners remain authoritative.</p><div class="lc-actions"></div><div class="lc-objective-door"><button type="button" data-objectives>Choose a learning objective</button></div><form class="lc-ask"><input maxlength="240" aria-label="Ask a question" placeholder="Ask about something in the church…"><button>Ask</button></form></section>';
  doc.body.append(root);
  const el=s=>root.querySelector(s),people=el(".lc-guides"),action=el(".lc-actions"),sprite=el(".lc-sprite");
- const state={id:"welcome",guide:"sacristan",question:null,history:[],open:false,returnToken:null,nativePending:false,nativeFailure:null};
+ const state={id:"welcome",guide:"sacristan",question:null,history:[],open:false,returnToken:null,nativePending:false,nativeFailure:null,selectedObjective:null};
+ let directorPromise=null;
+ const getDirector=()=>directorPromise??=(import("./living-church-objective-director.mjs")
+   .then(m=>m.loadLivingChurchObjectives({language:context.status()?.context?.lang||"en"}))
+   .catch(e=>{directorPromise=null;throw e}));
+ function addChoice(label,handler){
+  const b=doc.createElement("button");b.type="button";b.textContent=label;
+  b.onclick=handler;action.append(b);return b;
+ }
+ function showObjectives(director){
+  el(".lc-dialogue").textContent="What would you like to explore? Choose an objective to see the existing Ask the Church study paths.";
+  action.replaceChildren();
+  for(const x of director.objectives())addChoice(x.title,()=>chooseObjective(director,x.id));
+  addChoice("Back to this conversation",()=>visit(state.id,false));
+ }
+ function chooseObjective(director,id){
+  const result=director.choice(id);if(!result.ok)return false;
+  showBranches(director,result.branches);return true;
+ }
+ function showBranches(director,branches){
+  el(".lc-dialogue").textContent="Which situation or subject fits your objective? These paths come from the existing Ask the Church registry.";
+  action.replaceChildren();
+  for(const x of branches)addChoice(x.title,()=>chooseBranch(director,x.id));
+  addChoice("All objectives",()=>showObjectives(director));
+ }
+ function chooseBranch(director,id){
+  const result=director.branch(id);if(!result.ok)return false;
+  presentObjective(result.selection);return true;
+ }
+ function presentObjective(selection){
+  if(!selection)return false;
+  state.selectedObjective=selection;
+  const guide=selection.guide;
+  // User must explicitly choose to switch character; the source router does not auto-open modules.
+  el(".lc-dialogue").textContent=selection.title+" — the Ask the Church registry proposes these existing modules: "+
+    (selection.sourceRoutes.join(", ")||"none currently published")+
+    ". You may consult the most relevant guide without losing this objective.";
+  action.replaceChildren();
+  addChoice("Consult "+roles[guide].name,()=>visit(guide==="sacristan"?"altar":guide==="canon"?"canon":"pius"));
+  addChoice("Other objectives",async()=>showObjectives(await getDirector()));
+  addChoice("Stay with "+roles[state.guide].name,()=>visit(state.id,false));
+  return true;
+ }
+ async function openObjectives(){
+  if(state.nativePending||state.returnToken)return false;
+  el(".lc-dialogue").textContent="Loading existing Ask the Church objectives…";
+  try{const director=await getDirector();showObjectives(director);return true;}
+  catch{el(".lc-dialogue").textContent="The original Ask the Church source registry is unavailable. The existing guides remain usable.";return false;}
+ }
+ el("[data-objectives]").onclick=()=>void openObjectives();
  for(const id of Object.keys(roles)){const b=doc.createElement("button");b.type="button";b.dataset.guide=id;b.innerHTML="<strong>"+roles[id].name+"</strong><small>"+roles[id].role+"</small>";b.onclick=()=>visit(id==="sacristan"?"welcome":id==="canon"?"canon":"pius");people.append(b);}
  function close(){root.hidden=true;button.hidden=Boolean(state.returnToken);state.open=false;}
  function open(){if(state.returnToken||!context.status().sceneSupported)return false;const img=doc.getElementById("altar-photo");if(img)el(".lc-bg").style.backgroundImage="url("+JSON.stringify(img.currentSrc||img.src)+")";root.hidden=false;button.hidden=true;state.open=true;visit(state.id,false);return true;}
@@ -111,8 +160,14 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
   if(record)state.history.push({guide,id,question:state.question});
   return true;
  }
- function ask(q){
+ async function ask(q){
   q=String(q||"").trim();if(!q)return false;state.question=q;
+  try{
+   const director=await getDirector();
+   const suggested=director.interpret(q);
+   if(suggested.kind==="path")return presentObjective(suggested.selection);
+   if(suggested.kind==="objective"){showBranches(director,suggested.branches);return true;}
+  }catch{/* The original source router may not be present in standalone/offline review. */}
   const text=q.toLowerCase();
   if(/\b(altar|chalice|crucifix|sacristy|vestment|tabernacle|church)\b/.test(text))return visit("altar");
   if(/\b(mass|canon|offertory|elevation|priest|sacrifice|ceremony)\b/.test(text))return visit("sacrifice");
@@ -137,5 +192,5 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  button.onclick=open;el("[data-close]").onclick=close;
  el(".lc-ask").onsubmit=e=>{e.preventDefault();const i=el(".lc-ask input");ask(i.value);i.value="";};
  root.addEventListener("keydown",e=>{if(e.key==="Escape"){e.stopPropagation();close();}});
- return Object.freeze({open,close,visit,ask,returnFromNative,status:()=>Object.freeze({version:LIVING_CHURCH_SCENE_VERSION,open:state.open,guide:state.guide,node:state.id,question:state.question,historyCount:state.history.length,nativeHandoffPending:state.nativePending,nativeReturnAvailable:!!state.returnToken,nativeFailure:state.nativeFailure,canonicalOwner:"EXISTING_CATECHISM_VISIBLE_MASS_AND_MASS_EXPLORER",published:false}),dispose:()=>{if(state.returnToken)throw Error("Cannot dispose active native Catechism return");button.remove();returnBtn.remove();root.remove();style.remove();}});
+ return Object.freeze({open,close,visit,ask,openObjectives,returnFromNative,status:()=>Object.freeze({version:LIVING_CHURCH_SCENE_VERSION,open:state.open,guide:state.guide,node:state.id,question:state.question,historyCount:state.history.length,selectedObjective:state.selectedObjective?.branch||null,nativeHandoffPending:state.nativePending,nativeReturnAvailable:!!state.returnToken,nativeFailure:state.nativeFailure,canonicalOwner:"EXISTING_CATECHISM_VISIBLE_MASS_AND_MASS_EXPLORER",published:false}),dispose:()=>{if(state.returnToken)throw Error("Cannot dispose active native Catechism return");button.remove();returnBtn.remove();root.remove();style.remove();}});
 }
