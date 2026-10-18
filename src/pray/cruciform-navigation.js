@@ -146,6 +146,17 @@ function makeCross(doc,side){
   });
   return button;
 }
+function positionPair(doc,pair){
+  // The global app ribbon can sit across the bottom of the phone. Place
+  // the crosses just above its actual visible bounds, not underneath its
+  // navigation buttons. No shell CSS or ownership changes are required.
+  const ribbon=doc.getElementById("ao-global-ribbon");
+  const r=ribbon?.getBoundingClientRect?.();
+  const height=doc.defaultView?.innerHeight||0;
+  const occupied=r&&r.width>0&&r.height>0&&r.bottom>=height-8&&r.top>height*.5;
+  const offset=occupied?Math.ceil(height-r.top+8):8;
+  pair.style.setProperty("--ao-cross-bottom",offset+"px");
+}
 function reconcile(doc){
   const ctx=activeContext(doc);
   const old=doc.querySelector("#"+ROOT_ID+" [data-ao-cross-pair]");
@@ -153,6 +164,7 @@ function reconcile(doc){
   if(old&&old.parentElement===ctx.root){
     old.dataset.aoCrossCard=String(ctx.deck.current()+1);
     old.dataset.aoCrossTotal=String(ctx.deck.cards());
+    positionPair(doc,old);
     old.querySelectorAll("[data-ao-cross-side]").forEach(b=>{
       b.setAttribute("aria-label",crossLabel(doc,b.dataset.aoCrossSide));
     });
@@ -166,6 +178,7 @@ function reconcile(doc){
   pair.dataset.aoCrossTotal=String(ctx.deck.cards());
   pair.append(makeCross(doc,"left"),makeCross(doc,"right"));
   ctx.root.append(pair);
+  positionPair(doc,pair);
 }
 /**
  * Installed only after the lazy Prayer owner is mounted. The observer only
@@ -192,6 +205,7 @@ export function installPrayCruciformNavigation(doc=globalThis.document){
   });
   doc.addEventListener("DOMContentLoaded",queue,{once:true});
   win?.addEventListener("pageshow",queue);
+  win?.addEventListener("resize",queue,{passive:true});
   const api=Object.freeze({version:CRUCIFORM_NAVIGATION_VERSION,bind:queue,
     move:direction=>moveCruciform(activeContext(doc),direction),
     current:()=>activeContext(doc)?.deck.current()??null});
