@@ -492,7 +492,7 @@ function showChurch(){
 }
 async function showPanorama(mode){
  if(!["brompton","newman"].includes(mode))return false;
- ++m5PhotoToken;m5Photo=null;
+ ++m5PhotoToken;m5Photo=null;m5Ready=false;
  state.photoMode=mode;state.view="panorama";
  $("panorama-stage").hidden=false;$("photo-viewport").hidden=true;$("inspection-stage").hidden=true;$("m5-close-stage").hidden=true;
  $("panorama-notice").textContent="Loading genuine 360° source photograph…";
