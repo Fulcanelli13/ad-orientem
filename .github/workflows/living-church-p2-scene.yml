@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - "previews/visible-mass-3d/living-church-character-scene.mjs"
+      - "previews/visible-mass-3d/living-church-catechism-native.mjs"
+      - "previews/visible-mass-3d/visible-mass-living-church-adapter.mjs"
+      - "tests/living-church-catechism-native.mjs"
       - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
       - "tests/living-church-character-scene.mjs"
       - "previews/visible-mass-3d/assets/living-church/**"
@@ -23,6 +26,8 @@ jobs:
         run: |
           node --check previews/visible-mass-3d/living-church-character-scene.mjs
           node --check tests/living-church-character-scene.mjs
+          node --check previews/visible-mass-3d/living-church-catechism-native.mjs
+          node tests/living-church-catechism-native.mjs
           node tests/living-church-visible-mass-adapter.mjs
       - name: Install isolated browser tooling
         run: |
