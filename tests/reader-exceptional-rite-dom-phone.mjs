@@ -148,6 +148,14 @@ try{
    }
    if(init.kind==="EV"){
     assert.equal(row.steps.at(-1)?.id,"EV-MASS-700",scenario.id+" did not reach Mass handoff");
+    // The focus sweep above deliberately jumped back into the Vigil to
+    // inspect both Litanies and Font. Restore the handoff source record
+    // before asserting transition into the projected Mass.
+    await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      api.goToEasterVigilRecord("EV-MASS-700");
+      api.next();
+    });
     const handoff=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
       const model=api?.model;
