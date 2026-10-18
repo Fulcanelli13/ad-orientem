@@ -96,3 +96,28 @@ All source URLs, photographer metadata, roles and licence links appear on the si
 **Pilot still open:** AL10 gradine, AL17 Epistle side, AL18 Gospel side, BK02 suitable Missal stand. AL17/AL18 require source-accurate altar orientation markers, not imaginary photos. BK02's Japanese historical object remains research-only and does not substitute for a typical 1962 Missal support. Remaining vestments: VE01, VE03, VE04, VE10, VE11, VE14, VE15, VE20.
 
 No change to M5 source geometry, G### concepts, VMQ questions, the Mass Explorer, LIVE/Simple/Missal, or production.
+
+## Fourth acquisition batch — 18 October 2026
+
+M6 research-only additions, all included in the same 170-object, 13-zone registry:
+
+| Object | Original source | Licence and attribution | Use restriction |
+|:--|:--|:--|:--|
+| BK02 — Missal stand or cushion | [1962 Roman Missal at Latin Mass (2022, Virginia)](https://sdcason.com/1962-roman-missal-at-latin-mass-2022-virginia-usa-catholic-stock-photo/) | Shalone Cason / The Free Catholic Gallery. Photo page claims **public domain**, but the [publisher-wide copyright policy](https://sdcason.com/copyright/) says **CC BY 4.0**. Conservatively preserve CC BY 4.0 attribution and rights discrepancy pending publication review. | A genuine 1962 altar Missal on a period-compatible metal support during a contemporary TLM; not at Brompton. Source page and raw photo URL retained separately. |
+| VE04 — Cincture | [Italian cincture c.1675–1700, Rijksmuseum BK-1966-54-F](https://commons.wikimedia.org/wiki/File:Cingel_van_koord_met_geborduurde_uiteinden,_met_een_patroon_van_een_hartschild_met_boom_en_dier,_tussen_twee_duiven,_BK-1966-54-F.jpg) | Rijksmuseum, CC0 1.0 | Museum object with exceptional embroidered ends, not a typical 1962 white priest's cincture. |
+| VE14 — Humeral veil | [Constance of Austria's humeral veil, Munich Residence](https://commons.wikimedia.org/wiki/File:Poland_Humeral_veil_of_Constance_of_Austria_(detail)_02.jpg) | Artinpl, CC0 1.0 | Historical textile detail, not demonstrated use in 1962 Benediction. |
+| VE20 — Pontifical gloves, **partial** | [Ars Regia purple pontifical gloves](https://commons.wikimedia.org/wiki/File:Chirot-viola-2.jpg) | Ars Regia / Pietro Siffi, public-domain release with Wikimedia VRT confirmation | Gloves only. Buskins and sandals remain missing; VE20 stays marked needs_photo. |
+
+**Strict progress after batch four:** 52 registered photograph/source records linked to 49 distinct original source URLs, **41/170 object IDs with a qualifying photograph or source-specific provisional hotspot** and **129/170 needing photographic coverage**. Vestments stand at 14/20 photographically referenced objects; VE20 has only a component lead and is not counted. The thirty-object sanctuary pilot has 27 subjects with reference; AL10, AL17, and AL18 remain open.
+
+### Sanctuary-source handling
+
+- **AL10:** an already registered AndyScott original Brompton high-altar still (`BROMPTON_ALTAR_1`) is retained as a possible **context-only** gradine lead. The exact raised candle shelf is not isolated and its boundaries have not been visually certified, so no new photo/hotspot or coverage credit is asserted.
+- **AL17 Epistle side** and **AL18 Gospel side:** nonclickable, source-specific orientation proposals attached to the original Anthony O'Neil Brompton altar still. From the congregation facing the high altar, **Epistle = viewer right**, **Gospel = viewer left**. The direction is corroborated by the [Catholic Encyclopedia's altar-side article](https://www.newadvent.org/cathen/01356e.htm) and by [Catholic TLM explanation](https://hostiamimmaculatam.substack.com/p/the-epistle-and-gospel-sides-of-the). No specific pixel bounding box or actionable hotspot is authorised without camera orientation and mirror-state validation.
+- These two directional overlay proposals **do not count as independent photographs**. The one original Brompton still cannot be reused as two new image assets.
+
+### Viewer and provenance implications
+
+The one non-Commons photo in this batch is a direct rights-documented independent Catholic photographer source. It is explicitly allowlisted in the reviewer and M6 contract, without relaxing the original Commons-source guarantee for all other records. The offline review file embeds atlas metadata but external photos load only when connected; offline links/attributions remain inspectable.
+
+No PR merge, liturgical assertion approval, G###/VMQ ownership mutation, or R17 reader change.
