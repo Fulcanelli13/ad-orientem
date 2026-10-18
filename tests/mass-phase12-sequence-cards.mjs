@@ -82,7 +82,7 @@ for(const language of ["en","fr"]){
  assert.equal(schola.activateForCard(chantCards[1]).trackId,"ALLELUIA_TRACT_SEQUENCE");
  assert.equal(schola.activateForCard(chantCards[0]).trackId,"GRADUAL");
  const introit=projectCuratedIntroitEntryLiveCards(curated);
- assert.equal(introit.totalCards,62);
+ assert.equal(introit.totalCards,61);
  assert.equal(introit.cards[0].title,"Introit");
  assert.equal(introit.cards.filter(c=>c.sourceSectionId==="AO.CARD.006").length,2);
  const switchModel=buildReaderModeModels({
