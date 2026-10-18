@@ -62,5 +62,16 @@ The machine-readable lock `data/learn/living-church-p5-convergence-lock.v1.json`
 ## Frozen owner-snapshot policy
 M6 research is continuing independently. P5 imports through fifth batch at source owner `fe9fb6de79faec7f716ec8ff975ca88ec4e152b0`, then freezes that provenance as the acceptance baseline. Changes after that commit belong to the M6 upstream pipeline and require a deliberate future reconciled update, not an automatic rewrite of reviewed P5 tests. The P5 integration work does **not** approve or publish any of the 56 atlas image/source records.
 
+
+## Canon and Catechism combined-source reconciliation — frozen review integration
+
+The P4 Catechism branch was reconciled through [merge commit `b2a83094`](https://github.com/Fulcanelli13/ad-orientem/commit/b2a83094ebe62be42e40ef1e288c8434fc91f982): it retains the original St Pius X 433-question native reader and the P3 **research-only** Canon editorial folio from snapshot `7603c175164f918884f749d76654c214f14aa969`. P4's original eight-file scope and its real 320/390/1280px original-return tests passed on the reconciled head. P5 then incorporated that exact P4 snapshot while preserving its **single canonical Ask objective session**.
+
+P3's independent research owner `Fulcanelli13/folio-core` PR #36 is still unmerged and its latest observed CI for source `a4b0257d9d787e8f715557deac0c930b7fd98555` failed. **Do not confuse 534 indexed historical question candidates with approved answers.** The original imported mirror comprises **27 draft Folio files** with SHA identities pinned by `data/learn/formation-canon-migration-provenance-20261018.v1.json`. P5 now checks all 27 hashes in addition to **24 original owner-file SHA pins**. This import is strictly a temporary editorial snapshot, never a new canonical public answer database.
+
+**Critical deployment blocker:** four query parameters restrict the *UI* but cannot restrict direct requests to public `/data/learn/research/*.json` paths. This draft MUST NOT be promoted, served as a public build, or automatically deployed while those unpublished Folio JSON files are statically accessible. Before release, the draft research corpus must be excluded from every publicly served build or kept behind genuine access control, with network-access verification. The lock keeps `canonUnpublishedJsonAssetsExcludedFromPublicStaticDeploy=false` and `publicStaticAccessVerifiedBlocked=false` until that has been proven; the eleven prior release gates also remain false.
+
+One Canon visual-novel folio, one original Catechism reader, one Ask objective engine. No new scripted religious answers, duplicated research or live Mass reader changes.
+
 ## Scope limitation
 This snapshot reconciles the named owner commits listed above. Upstream source branches may continue to evolve; newer commits require another comparison. A green test cannot substitute for physical-device and human historical/editorial review. P5 is **merge-review ready, not release-ready**.
