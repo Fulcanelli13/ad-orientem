@@ -860,6 +860,16 @@ async function guideInit(pilot){
            :{x:$("photo-viewport").scrollLeft,y:$("photo-viewport").scrollTop}
        });
        window.AO_VISIBLE_MASS_LIVING_CHURCH_P1=livingChurchContextP1;
+        // P2 adds an optional visual-novel review stage. All original photo,
+        // hotspot, question, trail and answer owners remain unchanged.
+        try{
+          const vn=await import("./living-church-character-scene.mjs");
+          window.AO_LIVING_CHURCH_P2=vn.mountLivingChurchVisualNovel({
+            win:window,context:livingChurchContextP1
+          });
+        }catch(sceneError){
+          console.warn("Living Church P2 scene unavailable; original P1 viewer remains usable",sceneError);
+        }
        // Original event handlers remain the ONLY mutators of UI/trail/VMQ state.
        // We sample their committed state after events, never before.
        document.addEventListener("click",()=>queueMicrotask(syncLivingChurchP1));
