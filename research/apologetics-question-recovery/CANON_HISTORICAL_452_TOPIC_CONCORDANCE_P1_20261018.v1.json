@@ -4,18 +4,19 @@
   "state": "RESEARCH_ONLY_UNAPPROVED_NOT_PUBLISHED",
   "sourceBranch": "research/apologetics-question-recovery-20261012",
   "originalHistoricals": "ORIGINAL_QUESTION_BANK_EVIDENCE.v1.json",
-  "currentCurrent": "questions.json",
   "parentP0": "CANON_CONVERSATION_CROSSWALK_P0_20261018.v1.json",
   "definitionOfCompletion": "One or more editorial topic candidates found. NOT an exact answer match, textual source verification, historical question wording verification or publication.",
   "summary": {
     "historicalQuestionStrings": 452,
     "distinctPopulatedHistoricalBanks": 25,
     "knownHistoricalBankPrefixes": 50,
-    "existingCurrentSourceRecordsCompared": 282,
     "editorialTopicCandidates": 425,
     "noSuitableCurrentOwnerSelected": 27,
     "sourceExactQuestionAnswerMatchesVerified": 0,
-    "rawHistoricalChatQuestionsVerified": 0
+    "rawHistoricalChatQuestionsVerified": 0,
+    "currentSourceRecordsInInventory": 282,
+    "directOriginalSourceRecordWordingsCompared": 0,
+    "canonicalDraftIdentifiersCrossChecked": 141
   },
   "bankSummary": {
     "AI": {
@@ -8303,5 +8304,6 @@
       "conversationPresenter": "MONSIEUR_LE_CHANOINE",
       "originalSourceOwnerUnchanged": true
     }
-  ]
+  ],
+  "currentQuestionInventory": "questions.json"
 }
