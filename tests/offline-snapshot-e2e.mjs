@@ -92,7 +92,7 @@ try{
    return {...meta,missing};
  });
  assert.deepEqual(firstSnapshot.missing,[],"First-use Prayer lazy entry modules not in completed snapshot");
- assert.ok(firstSnapshot.files<=512 && firstSnapshot.bytes<=35000000,
+ assert.ok(firstSnapshot.files<=384 && firstSnapshot.bytes<=35000000,
   "Offline Rosary change exceeded transactional bootstrap limits");
  console.log("OFFLINE_FIRST_USE_SNAPSHOT="+JSON.stringify(firstSnapshot));
  await context.setOffline(true);
@@ -168,10 +168,10 @@ try{
  await page.locator("#aoPray435930.open .aoMercyReader").waitFor({timeout:12000});
  assert.match(await page.locator("#aoPray435930.open .aoMercyPrayer").innerText(),/Au nom du Père/,
   "First-use offline Divine Mercy did not render French opening prayer");
- assert.match(await page.locator("#aoPray435930.open .aoMercyKicker").innerText(),/Prière 1 \/ 62/i,
+ assert.match(await page.locator("#aoPray435930.open [data-ao-mercy-bead-navigation] .aoMercyBeadPosition").innerText(),/Prières initiales/i,
   "First-use offline Divine Mercy lost its French prayer counter");
  await page.locator("#aoPray435930.open [data-p435930-mercy-next]").first().evaluate(el=>el.click());
- assert.match(await page.locator("#aoPray435930.open .aoMercyControls").innerText(),/2 \/ 62/,
+ assert.match(await page.locator("#aoPray435930.open .aoMercyControls span").innerText(),/Notre Père/i,
   "First-use offline Divine Mercy did not advance");
  assert.match(await page.locator("#aoPray435930.open .aoMercySource a").getAttribute("href"),
   /^https:\/\/www\.vaticannews\.va\/fr\//,
