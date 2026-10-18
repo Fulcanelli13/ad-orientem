@@ -272,7 +272,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
       assert.equal(snapshot.first,"Introit");
       assert.equal(snapshot.handoff,"INTROIT");
       assert.equal(snapshot.suppressed?.length,4);
-      assert.match(snapshot.progress,new RegExp("1 / "+(spec.kind==="PALM"?58:60)+"$"),
+      assert.match(snapshot.progress,new RegExp("1 / "+(spec.kind==="PALM"?57:59)+"$"),
         spec.kind+" visible progress must exclude Foot cards and optional second Confiteor"+
         (spec.kind==="PALM"?" and Last Gospel":""));
       assert.equal(snapshot.lastGospelVisibility,2,
