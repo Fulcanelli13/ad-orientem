@@ -1,0 +1,109 @@
+{
+  "schema": "AO_CANON_SOURCE_OWNER_PINPOINT_ERRATA_V1",
+  "created": "2026-10-18",
+  "publication_allowed": false,
+  "sourceOwnerRepository": "Fulcanelli13/folio-core",
+  "sourceOwnerPullRequest": 36,
+  "policy": "Original research answer packs remain SHA-identical; targeted contextual source overlays supplement original citations only in explicit editorial review. Never rewrite original chat IDs, question text, EN/FR theological prose or original source registry for all other questions. The existence of a verified link grants no doctrinal approval.",
+  "count": 3,
+  "sourceWitnesses": {
+    "TRENT-XIII": {
+      "id": "TRENT-XIII",
+      "title": "Council of Trent, Session XIII (1551), Chapter IV and Canon II — transubstantiation",
+      "url": "https://www.papalencyclicals.net/councils/trent/thirteenth-session.htm",
+      "verifiedSection": "Session XIII Chapter IV; Canon II",
+      "sourceCategory": "CATHOLIC_ECUMENICAL_COUNCIL_TRANSLATION"
+    },
+    "FC-VII": {
+      "id": "FC-VII",
+      "title": "Formula of Concord, Solid Declaration VII §§14,35–38 — Lutheran sacramental union",
+      "url": "https://thebookofconcord.org/formula-of-concord-solid-declaration/article-vii/",
+      "verifiedSection": "VII §§14,35–38",
+      "sourceCategory": "HISTORICAL_LUTHERAN_CONFESSION"
+    },
+    "CCC-2117": {
+      "id": "CCC-2117",
+      "title": "Catechism of the Catholic Church §2117 — magic and sorcery, distinguished from §2111 superstition",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iii_you_shall_have_no_other_gods_before_me.index.html",
+      "verifiedSection": "§2117; comparison §2111",
+      "sourceCategory": "OFFICIAL_CATHOLIC_CATECHISM"
+    },
+    "SCHREINER-2014": {
+      "id": "SCHREINER-2014",
+      "title": "Thomas R. Schreiner, Why I Am a Cessationist, 22 January 2014",
+      "url": "https://www.thegospelcoalition.org/article/cessationist/",
+      "verifiedSection": "Ephesians 2:20 apostolic foundation; 1 Corinthians 13:8–12 not demonstrative of cessation",
+      "sourceCategory": "FIRST_PERSON_CONTEMPORARY_CESSATIONIST_ARGUMENT"
+    }
+  },
+  "records": [
+    {
+      "historicalId": "LUT-011",
+      "originalOwnerPath": "data/learn/research/formation-lutheran-13-partials-20261013.v1.json",
+      "originalOwnerGitBlobSha": "2be4ae1ac77662f96a5fd6a68d972b0b51b63455",
+      "sourceIdRewrites": [
+        {
+          "role": "lutheran_confessional_claim_and_precise_catholic_comparison",
+          "from": "TRENT",
+          "to": [
+            "TRENT-XIII",
+            "FC-VII"
+          ]
+        }
+      ],
+      "sourceWitnessIds": [
+        "TRENT-XIII",
+        "FC-VII"
+      ],
+      "why": "Existing TRENT record bundles Session VI justification and Eucharist, but definition of transubstantiation belongs to Session XIII. Specific Lutheran sacramental-union source is Formula of Concord VII. Do not change other questions citing TRENT.",
+      "ownerAnswerTextChanged": false,
+      "publicAnswerAllowed": false,
+      "independentTheologyApproved": false,
+      "frenchNativeApproved": false
+    },
+    {
+      "historicalId": "ERR-009",
+      "originalOwnerPath": "data/learn/research/formation-protestant-errors-enrichment-20261013.v1.json",
+      "originalOwnerGitBlobSha": "1490bb0fdf1837d012559aa37b2879aaa85b2227",
+      "sourceIdRewrites": [
+        {
+          "role": "answer",
+          "from": "CCC-2111",
+          "to": [
+            "CCC-2117"
+          ]
+        },
+        {
+          "role": "comparison_and_evidence",
+          "from": "CCC-2111",
+          "to": [
+            "CCC-2117"
+          ]
+        }
+      ],
+      "sourceWitnessIds": [
+        "CCC-2117"
+      ],
+      "why": "CCC §2111 defines superstition generally; §2117 addresses occult magic and sorcery. Stage illusion is editorial application, not an example stated explicitly in §2117.",
+      "ownerAnswerTextChanged": false,
+      "publicAnswerAllowed": false,
+      "independentTheologyApproved": false,
+      "frenchNativeApproved": false
+    },
+    {
+      "historicalId": "PEN-010",
+      "originalOwnerPath": "data/learn/research/formation-pentecostal-17-supplement-20261013.v1.json",
+      "originalOwnerGitBlobSha": "bb8e6c709137719f0f934c66002f3250a1b19ce6",
+      "sourceIdRewrites": [],
+      "sourceWitnessIds": [
+        "SCHREINER-2014"
+      ],
+      "why": "Separate first-person cessationist writer is now identified. Schreiner argues some extraordinary revelatory gifts were foundational, while admitting 1 Corinthians 13 does not by itself prove cessation. Does not speak for all Protestants and must not be represented as Pentecostal doctrine.",
+      "ownerAnswerTextChanged": false,
+      "publicAnswerAllowed": false,
+      "independentTheologyApproved": false,
+      "frenchNativeApproved": false,
+      "editorialEvidenceOnly": true
+    }
+  ]
+}
