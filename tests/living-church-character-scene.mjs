@@ -64,6 +64,13 @@ try{
   assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().guide),"canon");
   await expectSprite("canon_explaining");
   await page.screenshot({path:resolve(output,"living-church-canon-"+viewport.width+".png")});
+  // Source-owned native link has no standalone provider; do not invent a
+  // destination or disturb original viewer context on a failed handoff.
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Mass Explorer"}).click();
+  await page.waitForFunction(()=>document.querySelector("#lc-stage .lc-dialogue")?.textContent.includes("canonical Mass Explorer"));
+  assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().guide),"canon");
+  assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().open),true);
+
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Ask St Pius X"}).click();
   assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().guide),"pius-x");
   await expectSprite("pius_explaining");
