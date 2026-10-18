@@ -7,15 +7,17 @@
  * owner is created. This review module is NOT a public Formation release.
  */
 import {visibleMassReviewEnabled,VISIBLE_MASS_REVIEW_ROUTE} from "./visible-mass-review-gate.js";
+import {installLivingChurchCatechismShellBridge} from "./living-church-app-shell-bridge.js";
 const VERSION="visible-mass-canonical-learn-review-v1";
 const ROOT="ao-visible-mass-review-root";
 const PHOTO_URL=new URL("../../previews/visible-mass-3d/sanctuary-hotspot-pilot.html",import.meta.url);
 const EXPLORER_ROUTE="learn.mass_explorer";
 const GUIDE_PATTERN=/^AO\.CARD\.(?:010|015|024|025)$/;
 export function createVisibleMassReviewRuntime(win=globalThis){
- let returnFocus=null;
+ let returnFocus=null, livingChurchNative=null;
  const root=()=>win?.document?.getElementById?.(ROOT)??null;
  function close(){
+   livingChurchNative?.dispose?.();livingChurchNative=null;
    const node=root();
    try{if(node?.contains?.(win.document.activeElement))win.document.activeElement?.blur?.();}catch{}
    node?.remove?.();
@@ -82,6 +84,11 @@ export function createVisibleMassReviewRuntime(win=globalThis){
            trigger:options.trigger
          });
        }});
+       livingChurchNative?.dispose?.();
+       livingChurchNative=installLivingChurchCatechismShellBridge(win,{
+         frame,reviewRoot:root,enabled:()=>visibleMassReviewEnabled(win)
+       });
+       child.AO_LIVING_CHURCH_CATECHISM_NATIVE_V1=livingChurchNative.api;
      }catch(error){
        disclaimer.textContent="Research-only photographic viewer · native Mass Explorer handoff unavailable in this environment";
        win?.console?.warn?.("Visible Mass same-origin research bridge unavailable",error);
