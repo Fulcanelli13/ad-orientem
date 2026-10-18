@@ -130,13 +130,13 @@
     "post_twelfth_batch_needs_photo": 81,
     "post_twelfth_batch_source_records": 101,
     "post_twelfth_batch_unique_source_urls": 98,
-    "thirteenth_batch_new_photo_records": 6,
-    "thirteenth_batch_qualified_objects_added": 5,
+    "thirteenth_batch_new_photo_records": 7,
+    "thirteenth_batch_qualified_objects_added": 6,
     "thirteenth_batch_partial_leads_not_counted": 1,
-    "post_thirteenth_batch_photo_candidate_or_hotspot": 94,
-    "post_thirteenth_batch_needs_photo": 76,
-    "post_thirteenth_batch_source_records": 107,
-    "post_thirteenth_batch_unique_source_urls": 104
+    "post_thirteenth_batch_photo_candidate_or_hotspot": 95,
+    "post_thirteenth_batch_needs_photo": 75,
+    "post_thirteenth_batch_source_records": 108,
+    "post_thirteenth_batch_unique_source_urls": 105
   },
   "zones": [
     {
@@ -679,9 +679,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B13-DV11-HOLY-HILL-MARIAN-ROSARIES",
+          "role": "object_in_devotional_shrine",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV12",
@@ -5019,6 +5025,22 @@
       "venue": "St Augustine Roman Catholic Parish Church, Baliuag, Bulacan, Philippines; 2 March 2022",
       "source_description": "Source describes ash portions in plastic take-home containers on Ash Wednesday 2022 during COVID-19 precautions, said to have been taken from a sacristy metal vessel. This does NOT demonstrate the 1962 Ash Wednesday altar ash bowl or the metal vessel itself, so SE04 remains missing a qualifying photo of ashes AND an actual liturgical vessel.",
       "review_status": "PARTIAL_COMPONENT_ONLY",
+      "source_index": "M6_RESEARCH_20261018_BATCH13"
+    },
+    {
+      "asset_id": "M6B13-DV11-HOLY-HILL-MARIAN-ROSARIES",
+      "object_id": "DV11",
+      "role": "object_in_devotional_shrine",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_statue_of_the_Virgin_Mary,_covered_in_rosaries,_at_Holy_Hill.jpg",
+      "creator": "Cmarsch",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 3072,
+      "height": 4080,
+      "venue": "Basilica and National Shrine of Mary Help of Christians, Holy Hill, Wisconsin, USA",
+      "source_description": "Original self-photographed Catholic national shrine Virgin Mary statue covered in numerous visible rosaries, 29 May 2024. This independently documents physical rosaries deposited at a Marian shrine; not a source for a 1962 procession, ritual, or altar object.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH13"
     }
   ]
