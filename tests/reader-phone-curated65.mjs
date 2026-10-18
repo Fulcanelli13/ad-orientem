@@ -623,7 +623,7 @@ try{
     });
     assert.ok(rubricEvidence.length>0,"LIVE printed no certified 1962 inline rubrics");
     assert.ok(rubricEvidence.every(x=>x.authority==="MR62_RITUS" &&
-      x.observed==="false" && x.ids.every(id=>/^AO\\.RUB\\.C\\d{4}\\.\\d{2}$/.test(id))),
+      x.observed==="false" && x.ids.every(id=>/^AO\.RUB\.C\d{4}\.\d{2}$/.test(id))),
       "LIVE rubric text lost source provenance or misrepresented an observation");
     assert.ok(rubricEvidence.some(x=>lang==="fr"?/Le prêtre/.test(x.text):/The priest/.test(x.text)),
       "LIVE rubric language does not follow the reader preference");
