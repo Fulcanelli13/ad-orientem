@@ -2942,11 +2942,15 @@ export function createReaderDomAdapter({
       applyIcon(root,"cinematic",visible && kind==="ELEVATION" ? current.priestActionIconKey : null,iconResolver);
     }
 
+    // The old Guide update used to resurrect the centre tile after each
+    // cue projection. Mass now owns only practical, source-backed rubrics.
     const guideButton=root.querySelector('[data-role="guide-button"]');
     if(guideButton){
-      guideButton.disabled=mode==="MISSAL"||!current.guide;
-      guideButton.hidden=mode==="MISSAL";
-      guideButton.title=mode==="MISSAL"?"":(current.guide?.text??"Guide");
+      guideButton.disabled=true;
+      guideButton.hidden=true;
+      guideButton.tabIndex=-1;
+      guideButton.setAttribute("aria-hidden","true");
+      guideButton.title="";
     }
     const pop=root.querySelector('[data-role="guide-popover"]');
     // Preserve an open Guide during in-card gesture, posture and Schola updates.
