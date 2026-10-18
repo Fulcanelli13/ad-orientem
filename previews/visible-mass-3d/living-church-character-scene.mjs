@@ -35,8 +35,11 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  doc.body.append(root);
  const el=s=>root.querySelector(s),people=el(".lc-guides"),action=el(".lc-actions"),sprite=el(".lc-sprite");
  const trail=createLivingChurchConversationTrail({limit:20});
- const state={id:"welcome",guide:"sacristan",question:null,history:[],open:false,returnToken:null,nativePending:false,nativeFailure:null,selectedObjective:null,sourceReadCount:0,sourceOpen:null,sourcePending:false,sourceRecord:null,sourceHistory:[],sourceEpoch:0};
- let directorPromise=null;
+ const state={id:"welcome",guide:"sacristan",question:null,history:[],open:false,returnToken:null,nativePending:false,nativeFailure:null,selectedObjective:null,sourceReadCount:0,sourceOpen:null,sourcePending:false,sourceRecord:null,sourceHistory:[],sourceEpoch:0,groundedRecord:null,groundedEpoch:0,groundedAnswerCount:0,groundedFailure:null};
+ let directorPromise=null,groundedPromise=null;
+ const getGrounded=()=>groundedPromise??=(import("./living-church-grounded-answer.mjs")
+   .then(m=>m.loadCanonGroundedAnswers({lang:context.status()?.context?.lang||"en"}))
+   .catch(e=>{groundedPromise=null;throw e}));
  const getDirector=()=>directorPromise??=(import("./living-church-objective-director.mjs")
    .then(m=>m.loadLivingChurchObjectives({language:context.status()?.context?.lang||"en"}))
    .catch(e=>{directorPromise=null;throw e}));
@@ -153,7 +156,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  }
 
  function showObjectives(director){
-  clearSource();el(".lc-dialogue").textContent="What would you like to explore? Choose an objective to see the existing Ask the Church study paths.";
+  state.groundedEpoch++;clearSource();el(".lc-dialogue").textContent="What would you like to explore? Choose an objective to see the existing Ask the Church study paths.";
   action.replaceChildren();
   for(const x of director.objectives())addChoice(x.title,()=>chooseObjective(director,x.id));
   addChoice("Back to this conversation",()=>visit(state.id,false));
@@ -163,7 +166,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
   showBranches(director,result.branches);return true;
  }
  function showBranches(director,branches){
-  clearSource();el(".lc-dialogue").textContent="Which situation or subject fits your objective? These paths come from the existing Ask the Church registry.";
+  state.groundedEpoch++;clearSource();el(".lc-dialogue").textContent="Which situation or subject fits your objective? These paths come from the existing Ask the Church registry.";
   action.replaceChildren();
   for(const x of branches)addChoice(x.title,()=>chooseBranch(director,x.id));
   addChoice("All objectives",()=>showObjectives(director));
@@ -174,7 +177,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  }
  function presentObjective(selection){
   if(!selection)return false;
-  clearSource();
+  state.groundedEpoch++;clearSource();
   state.selectedObjective=selection;
   trail.record({kind:"objective",guide:state.guide,objective:selection.branch});
   const guide=selection.guide;
@@ -202,7 +205,7 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  function close(){root.hidden=true;button.hidden=Boolean(state.returnToken);state.open=false;}
  function open(){if(state.returnToken||!context.status().sceneSupported)return false;const img=doc.getElementById("altar-photo");if(img)el(".lc-bg").style.backgroundImage="url("+JSON.stringify(img.currentSrc||img.src)+")";root.hidden=false;button.hidden=true;state.open=true;visit(state.id,false);return true;}
  function visit(id,record=true){
-  clearSource();const row=scripts[id]||scripts.unknown;const guide=row[0]||state.guide;
+  state.groundedEpoch++;clearSource();const row=scripts[id]||scripts.unknown;const guide=row[0]||state.guide;
   const result=context.chooseGuide(guide);if(!result?.ok)return false;
   state.id=id;state.guide=guide;
   people.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.guide===guide)));
@@ -279,6 +282,44 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
   }
   return true;
  }
+ async function respondFromCanon(question){
+  if(state.nativePending||state.returnToken||state.sourcePending)return false;
+  if(state.guide!=="canon")return false;
+  const epoch=++state.groundedEpoch;
+  el(".lc-dialogue").textContent="Consulting approved original teaching…";
+  try{
+   const engine=await getGrounded();
+   const record=await engine.answer(question,{guide:"canon"});
+   if(epoch!==state.groundedEpoch||state.guide!=="canon"||state.returnToken)return false;
+   state.groundedFailure=record.ok?null:record.code;
+   if(!record.ok){
+    clearSource();state.groundedRecord=null;
+    el(".lc-dialogue").textContent=record.text;
+    return true;
+   }
+   state.groundedRecord=record;state.groundedAnswerCount++;
+   clearSource();
+   renderSource({title:record.title,text:record.text,detail:"",owner:record.owner,
+    sourceStatus:record.mode,id:record.id,sources:record.citations});
+   el(".lc-dialogue").textContent="An approved "+record.owner+
+     " answer relevant to your question is reproduced below. It is not a new statement by the Canon.";
+   action.replaceChildren();
+   if(record.detailAvailable)addChoice("Why? Read the original explanation",()=>respondFromCanon("Why?"));
+   addChoice("Where are the sources?",()=>{
+    el(".lc-dialogue").textContent="The original "+record.owner+
+      " sources appear beneath the excerpt. They are not newly generated citations.";
+   });
+   addChoice("Return to the Canon",()=>visit("canon",false));
+   trail.record({kind:"source",guide:"canon",
+     objective:state.selectedObjective?.branch||"eucharist",sourceId:record.id});
+   return true;
+  }catch{
+   if(epoch!==state.groundedEpoch)return false;
+   state.groundedFailure="ORIGINAL_OWNER_UNAVAILABLE";
+   clearSource();el(".lc-dialogue").textContent="The original source could not be verified. No answer is presented.";
+   return true;
+  }
+ }
  async function ask(q){
   q=String(q||"").trim();if(!q)return false;state.question=q;
   // A follow-up works only on the source record explicitly opened by the visitor.
@@ -304,6 +345,11 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
     el(".lc-dialogue").textContent="No additional approved source extract is listed for this objective.";
     return true;
    }
+  }
+  // P7 may only answer Eucharistic questions from the two READY Apostolate
+  // records within PR1391's approved "practice/eucharist" branch.
+  if(state.guide==="canon"&&["canon","sacrifice","roman-canon"].includes(state.id)){
+   return respondFromCanon(q);
   }
   try{
    const director=await getDirector();
@@ -335,5 +381,5 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  button.onclick=open;el("[data-close]").onclick=close;
  el(".lc-ask").onsubmit=e=>{e.preventDefault();const i=el(".lc-ask input");ask(i.value);i.value="";};
  root.addEventListener("keydown",e=>{if(e.key==="Escape"){e.stopPropagation();close();}});
- return Object.freeze({open,close,visit,ask,openObjectives,returnFromNative,status:()=>Object.freeze({version:LIVING_CHURCH_SCENE_VERSION,open:state.open,guide:state.guide,node:state.id,question:state.question,historyCount:state.history.length,trailCount:trail.count(),sourceReadCount:state.sourceReadCount,sourceHistoryCount:state.sourceHistory.length,sourceOpen:state.sourceOpen,selectedObjective:state.selectedObjective?.branch||null,nativeHandoffPending:state.nativePending,nativeReturnAvailable:!!state.returnToken,nativeFailure:state.nativeFailure,canonicalOwner:"EXISTING_CATECHISM_VISIBLE_MASS_AND_MASS_EXPLORER",published:false}),dispose:()=>{trail.clear();if(state.returnToken)throw Error("Cannot dispose active native Catechism return");button.remove();returnBtn.remove();root.remove();style.remove();}});
+ return Object.freeze({open,close,visit,ask,openObjectives,returnFromNative,status:()=>Object.freeze({version:LIVING_CHURCH_SCENE_VERSION,open:state.open,guide:state.guide,node:state.id,question:state.question,historyCount:state.history.length,trailCount:trail.count(),groundedAnswerCount:state.groundedAnswerCount,groundedSourceId:state.groundedRecord?.id||null,groundedFailure:state.groundedFailure,sourceReadCount:state.sourceReadCount,sourceHistoryCount:state.sourceHistory.length,sourceOpen:state.sourceOpen,selectedObjective:state.selectedObjective?.branch||null,nativeHandoffPending:state.nativePending,nativeReturnAvailable:!!state.returnToken,nativeFailure:state.nativeFailure,canonicalOwner:"EXISTING_CATECHISM_VISIBLE_MASS_AND_MASS_EXPLORER",published:false}),dispose:()=>{trail.clear();if(state.returnToken)throw Error("Cannot dispose active native Catechism return");button.remove();returnBtn.remove();root.remove();style.remove();}});
 }
