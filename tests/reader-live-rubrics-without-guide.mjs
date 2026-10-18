@@ -49,7 +49,7 @@ assert.equal(publishedMissalRubricsForParagraph(p("new","AO.SM.C0111"),synthetic
 const markup=buildReaderShellMarkup({readerPreferences:{mode:"LIVE"},
  session:{resolvedMass:{presentationMode:"LIVE",actualCelebration:{title:"Mass"}}}});
 assert.match(markup,/data-role="guide-button" disabled hidden aria-hidden="true" tabindex="-1"/);
-assert.match(markup,/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-state-guide/);
+assert.match(markup,/\.ao-reader-shell \.ao-state-guide/);
 assert.match(markup,/\.ao-reader-shell\[data-mode="LIVE"\] \.ao-live-inline-rubrics/);
 const native=read("../src/mass/reader-native-preview.js");
 const dom=read("../src/mass/reader-dom.js");
