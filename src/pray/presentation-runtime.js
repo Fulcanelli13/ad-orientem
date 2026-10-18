@@ -229,6 +229,7 @@ function freshConfessionState(){return {stage:0,path:null,examStep:0,riteStep:0,
 let CONF=freshConfessionState();
 let BEN={step:0,divinePraises:false};
 let ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
+let adorationQuietReturn=null;
 let FF={step:0,intention:false,communion:false};
 let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0};
 let PEN={step:0,token:0};
@@ -398,7 +399,7 @@ function close({silent=false,preserve=false}={}){
   if(!preserve){
     // Privacy-sensitive preparation is memory-only and is cleared on a true close.
     CONF=freshConfessionState();
-    BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};
+    BEN={step:0,divinePraises:false};ADOR={mode:'home',visitStep:0,holyStep:0,fourStep:0,timer:null,timerEnd:0,quiet:false};adorationQuietReturn=null;
     if(!silent){FF={step:0,intention:false,communion:false};FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0}}
   }
   const ret=returnContext;returnContext=null;if(!silent&&!preserve){navStack=[];externalResume=null}if(!silent&&ret)queueMicrotask(()=>{if(ret?.surface==='apostolate')void window?.AO_APP_SHELL_V1?.navigate?.('apostolate');else window.AO_NAV_V362?.restore?.(ret)});
@@ -1481,6 +1482,29 @@ function fourSteps(){return [
  {title:L('Petition','Demande'),now:L('Present the needs of the Church, others and yourself. Keep the order broad enough that prayer does not become only self-concern.','Présentez les besoins de l’Église, des autres et les vôtres. Gardez un ordre assez large pour que la prière ne devienne pas seulement préoccupée de soi.'),prayers:[{id:'foundations_our_father'}],silence:L('After asking, leave the intentions with God.','Après avoir demandé, laissez les intentions à Dieu.')},
  {title:L('Return to silence','Revenir au silence'),now:L('The method is finished. Stop adding material and return to silent adoration.','La méthode est terminée. Cessez d’ajouter du contenu et revenez à l’adoration silencieuse.'),prayers:[],silence:L('Remain as long as is appropriate; there is no completion score.','Demeurez aussi longtemps qu’il convient ; il n’y a aucun score d’accomplissement.')}
 ]}
+function enterAdorationQuiet(){
+ const m=mount();
+ const card=m?.querySelector('.aoP435930AdorationReader .aoDevoCardScroll');
+ adorationQuietReturn={
+  mode:ADOR.mode,visitStep:ADOR.visitStep,holyStep:ADOR.holyStep,fourStep:ADOR.fourStep,
+  mountScroll:m?.scrollTop||0,cardScroll:card?.scrollTop||0
+ };
+ stopTimer();ADOR.quiet=true;render();
+}
+function exitAdorationQuiet(){
+ ADOR.quiet=false;
+ const resume=adorationQuietReturn;adorationQuietReturn=null;
+ render();
+ if(!resume)return;
+ queueMicrotask(()=>{
+  if(view!=='adoration'||ADOR.quiet||ADOR.mode!==resume.mode)return;
+  const m=mount();if(!m)return;
+  m.scrollTop=resume.mountScroll;
+  const card=m.querySelector('.aoP435930AdorationReader .aoDevoCardScroll');
+  if(card)card.scrollTop=resume.cardScroll;
+  m.querySelector('.aoAdorationQuietLink,.aoAdorationQuietEnter')?.focus?.({preventScroll:true});
+ });
+}
 function guidedStage(kind,steps,index,lastLabel){
  const st=steps[index]||steps[0];
  // The original stage/prayer arrays remain canonical; only the visual
@@ -1488,7 +1512,7 @@ function guidedStage(kind,steps,index,lastLabel){
  return `<section class="aoDevoCard" data-ao-devo-card="${kind}-${index}">
  <header class="aoDevoCardHead"><small class="aoDevoCardNumber">${index+1} / ${steps.length}</small><h2 class="aoDevoCardTitle">${esc(st.title)}</h2></header>
  <div class="aoDevoCardScroll" role="region" aria-label="${esc(st.title)}">
- ${guideNow(st.title,st.now)}${guidePrayers(st.prayers)}${guideCue(L('SILENCE / NOTICE','SILENCE / ATTENTION'),st.silence)}${st.extra||''}${st.prayers.length===0?'<button type="button" class="aoAdorationQuietEnter" data-p435930-ador-quiet-enter>'+esc(L('Remain in silence','Demeurer en silence'))+'</button>':''}
+ ${guideNow(st.title,st.now)}${guidePrayers(st.prayers)}${guideCue(L('SILENCE / NOTICE','SILENCE / ATTENTION'),st.silence)}${st.extra||''}<button type="button" class="${st.prayers.length===0?'aoAdorationQuietEnter':'aoAdorationQuietLink'}" data-p435930-ador-quiet-enter>${esc(st.prayers.length===0?L('Remain in silence','Demeurer en silence'):L('Pause in silence','Faire une pause en silence'))}</button>
  </div></section>${guideNav(kind,index,steps.length,lastLabel)}`
 }
 function renderAdoration(){
@@ -1527,9 +1551,9 @@ function renderAdoration(){
    <p class="aoAdorationChooserAfterword">${esc(L('If a public liturgical rite begins, follow the rite rather than a private guide.','Si un rite liturgique public commence, suivez le rite plutôt qu’un guide privé.'))}</p>
   </main>`;
  if(ADOR.quiet)return `${head(L('Silent Adoration','Adoration silencieuse'),L('No prescribed duration','Sans durée imposée'))}
- <main class="aoP435930Body aoP435930AdorationReader aoAdorationQuietScreen" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-quiet="true">
+ <main class="aoP435930Body aoP435930AdorationReader aoAdorationQuietScreen" role="dialog" aria-modal="true" aria-labelledby="aoAdorationQuietTitle" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-quiet="true">
  <small>${esc(L('IN SILENCE','EN SILENCE'))}</small>
- <h2>${esc(L('Remain before Christ','Demeurez devant le Christ'))}</h2>
+ <h2 id="aoAdorationQuietTitle">${esc(L('Remain before Christ','Demeurez devant le Christ'))}</h2>
  <p>${esc(L('No steps to complete. Set the phone aside and remain in prayer.','Aucune étape à accomplir. Posez le téléphone et demeurez en prière.'))}</p>
  <button type="button" class="aoAdorationQuietExit" data-p435930-ador-quiet-exit>${esc(L('Return to prayer','Revenir à la prière'))}</button></main>`;
  let content='';
@@ -2556,8 +2580,8 @@ function onClick(e){
  if(b.dataset.p435930BenStep!=null){BEN.step=+b.dataset.p435930BenStep;return render()}
  if(b.matches('[data-p435930-ben-prev]')){BEN.step=Math.max(0,BEN.step-1);return render()}
  if(b.matches('[data-p435930-ben-next]')){if(BEN.step===BEN_STAGES.length-1){setAdorationPresence('reserved');BEN={step:0,divinePraises:false};popView('home');return render()}BEN.step++;return render()}
- if(b.matches('[data-p435930-ador-quiet-enter]')){stopTimer();ADOR.quiet=true;return render()}
- if(b.matches('[data-p435930-ador-quiet-exit]')){ADOR.quiet=false;return render()}
+ if(b.matches('[data-p435930-ador-quiet-enter]'))return enterAdorationQuiet();
+ if(b.matches('[data-p435930-ador-quiet-exit]'))return exitAdorationQuiet();
  if(b.dataset.p435930AdorMode){ADOR.quiet=false;ADOR.mode=b.dataset.p435930AdorMode;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;return render()}
  if(b.matches('[data-p435930-ador-home]')){ADOR.quiet=false;ADOR.mode='home';stopTimer();return render()}
  if(b.dataset.p435930Timer)return startTimer(+b.dataset.p435930Timer);
@@ -2711,6 +2735,10 @@ document.addEventListener('keydown',e=>{
   e.preventDefault();e.stopImmediatePropagation();toggleRosaryPrayerLanguage(flip);return;
  }
  const r=document.getElementById(ROOT_ID);if(!r?.classList.contains('open'))return;
+ if(view==='adoration'&&ADOR.quiet){
+  if(e.key==='Escape'){e.preventDefault();exitAdorationQuiet();return}
+  if(e.key==='Tab'){e.preventDefault();r.querySelector('[data-p435930-ador-quiet-exit]')?.focus?.();return}
+ }
  if(e.key==='Escape'){e.preventDefault();close();return}
  if(e.key==='Tab'){const f=focusables();if(!f.length){e.preventDefault();return}const first=f[0],last=f[f.length-1],a=document.activeElement;if(e.shiftKey&&(a===first||!r.contains(a))){e.preventDefault();last.focus()}else if(!e.shiftKey&&(a===last||!r.contains(a))){e.preventDefault();first.focus()}}
 });
