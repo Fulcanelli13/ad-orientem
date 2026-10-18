@@ -1,6 +1,6 @@
 {
   "schema": "ao.mass.ordo-missae.red-missal.english-editorial.v1",
-  "status": "21_APPROVED_ENGLISH_CORRECTIONS_33_COLLATED_EQUIVALENT_4_INCOMPLETE_198_UNOPENED",
+  "status": "24_APPROVED_ENGLISH_65_COLLATED_EQUIVALENT_3_PARTIAL_164_UNREVIEWED",
   "source": {
     "title": "Latin–English Booklet Missal for Praying the Traditional Mass",
     "publisher": "Coalition in Support of Ecclesia Dei",
@@ -332,6 +332,33 @@
       "decision": "ADOPT_BOOKLET_ORAMUS_TE_ENDING",
       "authority": "ENGLISH_EDITORIAL",
       "status": "APPROVED_THIRD_WAVE"
+    },
+    {
+      "id": "AO.SM.C0023",
+      "correctionId": "RED-EN-2013-W4-01",
+      "bookletPdfPage": 14,
+      "bookletPrintedPage": 13,
+      "decision": "REPAIR_CONFITEOR_VOCATIVE_WITH_INDEPENDENT_LATIN_SOURCE_CORRECTION",
+      "authority": "ENGLISH_EDITORIAL",
+      "status": "APPROVED_FOURTH_WAVE"
+    },
+    {
+      "id": "AO.SM.C0100",
+      "correctionId": "RED-EN-2013-W4-02",
+      "bookletPdfPage": 22,
+      "bookletPrintedPage": 21,
+      "decision": "CREDO_WHO_TOGETHER_CLAUSE_PUNCTUATION",
+      "authority": "ENGLISH_GRAMMAR",
+      "status": "APPROVED_FOURTH_WAVE"
+    },
+    {
+      "id": "AO.SM.C0101",
+      "correctionId": "RED-EN-2013-W4-03",
+      "bookletPdfPage": 22,
+      "bookletPrintedPage": 21,
+      "decision": "CREDO_REMOVE_ENGLISH_DUPLICATE_TOGETHER",
+      "authority": "ENGLISH_GRAMMAR",
+      "status": "APPROVED_FOURTH_WAVE"
     }
   ],
   "unresolvedTranslationDecisions": [
@@ -665,6 +692,262 @@
       "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
       "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
       "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0053",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0054",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0055",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0056",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0057",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0058",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0059",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0060",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0061",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0062",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0063",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0064",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0065",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0066",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0067",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0068",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0069",
+      "bookletPdfPage": 18,
+      "printedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Gloria: existing English is theologically and grammatically acceptable; opening 'Glory to God in the highest' is a legitimate variant of Red's 'Glory be to God on high'.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0089",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0090",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0091",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0092",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0093",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0094",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0095",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0096",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0097",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0098",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0099",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0102",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0103",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0104",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
+    },
+    {
+      "cueId": "AO.SM.C0105",
+      "bookletPdfPage": 22,
+      "printedPage": 21,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "Creed: accepted English in exact Latin clause context; role/speaker cues and cross remain separately owned.",
+      "latinSource": "1962 Missale Romanum governs Latin; this verdict concerns English only."
     }
   ],
   "partiallyReviewed": [
@@ -687,15 +970,5 @@
       "note": "Red booklet abbreviates priest's Confiteor; the parallel ministers' text is not a complete verbatim witness for this cue"
     }
   ],
-  "blockedReview": [
-    {
-      "cueId": "AO.SM.C0023",
-      "status": "KNOWN_ENGLISH_DIFFERENCE_NOT_PROMOTED",
-      "reason": "Exact same cue already owns an approved Latin accent correction (P1-011). Current patch mechanism supports one field per cue; a second English patch would shadow the Latin rule. Requires multi-field-aware source-correction registry first.",
-      "bookletPdfPage": 14,
-      "proposedOriginal": "and thee Father, to pray",
-      "proposedEnglish": "and you, Father, to pray",
-      "expectedExistingLatinCorrection": "orare pro me → oráre pro me"
-    }
-  ]
+  "blockedReview": []
 }
