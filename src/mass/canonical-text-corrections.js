@@ -190,6 +190,35 @@ export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
   }),
 });
 
+// An additional correction on a different field may share a canonical cue.
+// Keep the original per-cue registry and its IDs stable for existing consumers.
+// The supplementary registry is source-owned, not a renderer replacement rule.
+export const CANONICAL_TEXT_ADDITIONAL_FIELD_CORRECTIONS = Object.freeze({
+  "AO.SM.C0023": Object.freeze({
+    id:"RED-EN-2013-W4-01",
+    blockId:"AO.SM.B007",
+    field:"english",
+    from:"and thee Father, to pray",
+    to:"and you, Father, to pray",
+  }),
+});
+
+export function getCanonicalTextCorrections(cueId){
+  const primary=CANONICAL_TEXT_CORRECTIONS[cueId];
+  const additional=CANONICAL_TEXT_ADDITIONAL_FIELD_CORRECTIONS[cueId];
+  if(!primary&&!additional)return Object.freeze([]);
+  const all=[primary,additional].filter(Boolean);
+  const fields=new Set();
+  for(const rule of all){
+    if(!["latin","english"].includes(rule.field))
+      throw new Error(cueId+": unowned text correction field "+rule.field);
+    if(fields.has(rule.field))
+      throw new Error(cueId+": duplicate correction owner for "+rule.field);
+    fields.add(rule.field);
+  }
+  return Object.freeze(all);
+}
+
 function replaceExactlyOnce(value, from, to, label){
   const text=String(value??"");
   if(text.includes(to) && !text.includes(from)) return text;
@@ -201,16 +230,22 @@ function replaceExactlyOnce(value, from, to, label){
 
 export function applyCanonicalTextCorrection(blockId, unit){
   if(!unit || typeof unit!=="object") throw new TypeError("Canonical text unit required");
-  const correction=CANONICAL_TEXT_CORRECTIONS[unit.cue_id];
-  if(!correction) return Object.freeze({...unit});
-  if(String(blockId)!==correction.blockId){
-    throw new Error(unit.cue_id+": correction block ownership changed");
+  const corrections=getCanonicalTextCorrections(unit.cue_id);
+  if(!corrections.length)return Object.freeze({...unit});
+  let next={...unit};
+  for(const correction of corrections){
+    if(String(blockId)!==correction.blockId)
+      throw new Error(unit.cue_id+": correction block ownership changed");
+    next[correction.field]=replaceExactlyOnce(
+      next[correction.field],correction.from,correction.to,
+      unit.cue_id+"/"+correction.field);
   }
-  const field=correction.field;
-  const corrected=replaceExactlyOnce(unit[field],correction.from,correction.to,unit.cue_id);
+  const ids=Object.freeze(corrections.map(c=>c.id));
   return Object.freeze({
-    ...unit,
-    [field]:corrected,
-    canonicalCorrectionId:correction.id,
+    ...next,
+    // Backwards-compatible ID for older source/reader consumers.
+    canonicalCorrectionId:ids[0],
+    // Precise provenance for multiple field owners on the same cue.
+    canonicalCorrectionIds:ids,
   });
 }
