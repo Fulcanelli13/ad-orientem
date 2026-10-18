@@ -6,6 +6,8 @@ on:
     paths:
       - "previews/visible-mass-3d/**"
       - "tools/build-visible-mass-standalone.mjs"
+      - "tools/serve-visible-mass-review.mjs"
+      - "tests/visible-mass-m4-review-server.mjs"
       - "tests/visible-mass-3d-contract.mjs"
       - "tests/visible-mass-sanctuary-hotspot-contract.mjs"
       - "tests/visible-mass-m4-panorama.mjs"
@@ -36,6 +38,7 @@ jobs:
           node tests/visible-mass-3d-contract.mjs
           node tests/visible-mass-sanctuary-hotspot-contract.mjs
           node tests/visible-mass-m4-panorama.mjs
+          node tests/visible-mass-m4-review-server.mjs
           node tests/visible-mass-liturgical-source-crosswalk.mjs
           node tests/visible-mass-liturgical-explanations-first20.mjs
           node tests/visible-mass-historical-symbolic-answers.mjs
