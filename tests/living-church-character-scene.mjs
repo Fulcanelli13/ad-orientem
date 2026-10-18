@@ -75,6 +75,41 @@ try{
   assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().guide),"pius-x");
   await expectSprite("pius_explaining");
   await page.screenshot({path:resolve(output,"living-church-pius-"+viewport.width+".png")});
+  // In the standalone HTML there is deliberately no native Formation owner.
+  // An unavailable app must fail closed and keep the question/guide/photo.
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Open Catechism"}).click();
+  await page.waitForFunction(()=>window.AO_LIVING_CHURCH_P2?.status().nativeFailure==="DESTINATION_NOT_APPROVED");
+  assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().guide),"pius-x");
+  assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().nativeReturnAvailable),false);
+  // Same-document injected native-owner contract test. This is NOT a real-shell
+  // deployment/browser test and must never be described as such.
+  await page.evaluate(()=>{
+    const x={installed:true,open:false,child:null};
+    window.LC_NATIVE_TEST={calls:[],state:x};
+    window.AO_MODULES={open:async()=>({ok:true})};
+    window.AO_LEARN_APP_V1={
+      status:()=>({...x}),
+      open:()=>{x.open=true;return true;},
+      openModule:async(id,opts)=>{
+        window.LC_NATIVE_TEST.calls.push({id,opts});
+        x.child=id;return true;
+      },
+      close:()=>{x.child=null;x.open=false;return true;}
+    };
+  });
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Open Catechism"}).click();
+  await page.waitForFunction(()=>window.AO_LIVING_CHURCH_P2?.status().nativeReturnAvailable===true);
+  const navigation=await page.evaluate(()=>window.LC_NATIVE_TEST.calls);
+  assert.equal(navigation.length,1);
+  assert.equal(navigation[0].id,"learn.catechism");
+  assert.equal(navigation[0].opts.catechismQuestion,322);
+  assert.equal(navigation[0].opts.returnContext.sourceRef,"PX1912-Q322");
+  assert.equal(await page.locator("#lc-catechism-return").isVisible(),true);
+  await page.locator("#lc-catechism-return").click();
+  await page.waitForFunction(()=>window.AO_LIVING_CHURCH_P2?.status().open===true);
+  assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().node),"real-presence");
+  assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().guide),"pius-x");
+  assert.equal(await page.evaluate(()=>window.LC_NATIVE_TEST.state.open),false);
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Return to Sacristan"}).click();
   assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().guide),"sacristan");
   await expectSprite("sacristan_explaining");
