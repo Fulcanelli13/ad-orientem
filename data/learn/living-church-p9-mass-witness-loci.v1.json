@@ -11,7 +11,8 @@
     "campionChapterLeads": 7,
     "oconnellUnverifiedLeads": 3,
     "fullyVerifiedClaims": 0,
-    "approvedGeneratedAnswers": 0
+    "approvedGeneratedAnswers": 0,
+    "numbered1962RubricCandidates": 1
   },
   "reviewPolicy": {
     "exactPassageProof": "REQUIRES_DIRECT_TEXTUAL_CHECK_AND_EDITOR_SIGNOFF",
@@ -382,11 +383,11 @@
       "witnessLeads": [
         {
           "sourceId": "SRC-MR62",
-          "locator": "Ritus servandus, Roman Canon recitation in low voice",
-          "anchor": null,
-          "note": "Missal precise ruby/section pending",
-          "status": "MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
-          "url": "https://archive.org/details/sp07mr62-editio-typica"
+          "locator": "Rubricae generales Missalis Romani (1962), no. 500, section I De Canone Missae et aliis usque ad postcommunionem",
+          "anchor": "Post praefationem et Sanctus dicitur Canon Missae secreto",
+          "note": "Original 1962 text OCR identifies rubric no. 500, p. xlviii in searchable copy. This directly concerns low voice; scan/edition page and the separate pedagogical interpretation still need editorial verification.",
+          "status": "NUMBERED_1962_RUBRIC_OCR_LOCATED_SCAN_UNCHECKED",
+          "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf"
         },
         {
           "sourceId": "SRC-CAMPION-1954",
