@@ -5,6 +5,7 @@ on:
       - feature/visible-mass-3d-explorer-p0
     paths:
       - "previews/visible-mass-3d/visible-mass-m4-panorama.mjs"
+      - "previews/visible-mass-3d/visible-mass-m5-photographs.mjs"
       - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
       - "tests/visible-mass-m4-real-photo-browser.mjs"
       - "tests/visible-mass-m4-live-network.mjs"
@@ -70,12 +71,34 @@ jobs:
                   assert image.size==(2048,1024),image.size
                   image.save(root/f'{key}-review.jpg','JPEG',quality=84,optimize=True,progressive=True)
           PY
+      - name: Verify separately attributed P6/M5 close photo originals
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root=Path('dist/visible-mass/panorama-sources')
+          meta=json.loads((root/'metadata.json').read_text())
+          for key in ('newman_altar1','newman_altar2','newman_apse','newman_pulpit'):
+              photo=meta[key]
+              assert photo['license']=='CC BY 4.0',(key,photo['license'])
+              assert 'zairon' in photo['artist'].lower(),(key,photo['artist'])
+              assert 'commons.wikimedia.org/wiki/File:' in photo['commons_page'],key
+              assert (root/photo['file']).stat().st_size>80_000,key
+          print('M5: all four photographic originals are separate licensed Zairon photographs')
+          PY
       - name: Install single-file module bundler
         run: npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0 esbuild@0.25.12
-      - name: Package single-file original-photo M4 review
+      - name: Package combined genuine 360° and close-photo M5 review
         run: node tools/build-visible-mass-m4-offline.mjs
       - name: Browser-test desktop and phone from file:// with internet disconnected
         run: node tests/visible-mass-m4-offline-file-browser.mjs
+      - name: Upload unified M5 original photographic visitor
+        uses: actions/upload-artifact@v4
+        with:
+          name: The-Visible-Mass-M5-Combined-Photographic-Review-Offline
+          path: dist/visible-mass/The_Visible_Mass_M5_Combined_Photographic_Review_Offline.html
+          retention-days: 30
+          if-no-files-found: error
       - name: Upload one-file M4 original photographic reviewer
         uses: actions/upload-artifact@v4
         with:
