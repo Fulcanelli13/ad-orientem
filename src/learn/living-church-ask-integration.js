@@ -111,7 +111,7 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
     context:selection.context,readCount:selection.readCount
    });
    returnButton.hidden=false;
-   return Object.freeze({ok:true,surface:"learn",id:targetId,sourceRef:suspended.sourceRef});
+   return Object.freeze({ok:true,surface:"learn",id:targetId,...(targetId===catechismRoute?{sourceRef}: {})});
   }finally{opening=false;}
  }
  async function returnToSanctuary(){
