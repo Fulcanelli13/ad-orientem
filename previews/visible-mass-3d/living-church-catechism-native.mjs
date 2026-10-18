@@ -23,6 +23,12 @@ export function createLivingChurchCatechismNativeOwner(win,{sourceStatus,sourceP
   const owner=sourceStatus();
   if(owner?.view!=="church"||owner?.photoMode!=="still")
    return fail("ORIGINAL_PHOTOGRAPH_NOT_ACTIVE");
+  const delegated=win?.AO_LIVING_CHURCH_CATECHISM_NATIVE_V1;
+  if(typeof delegated?.open==="function"&&typeof delegated?.restore==="function"&&
+     typeof delegated?.status==="function"){
+    if(ownOpened||delegated.status()?.owned===true)return fail("FORMATION_OWNER_BUSY");
+    return Object.freeze({ok:true,delegated:true});
+  }
   const learn=win?.AO_LEARN_APP_V1;
   if(!learn||typeof learn.status!=="function"||typeof learn.open!=="function"||
      typeof learn.openModule!=="function"||typeof learn.close!=="function"||
@@ -37,6 +43,16 @@ export function createLivingChurchCatechismNativeOwner(win,{sourceStatus,sourceP
   authorize:async request=>validate(request),
   async open(request){
    const verdict=validate(request);if(!verdict.ok)return verdict;
+   if(verdict.delegated){
+    const delegate=win.AO_LIVING_CHURCH_CATECHISM_NATIVE_V1;
+    try{
+     const opened=await delegate.open({routeId:request.routeId,sourceRef:request.sourceRef,
+       sceneId:request.origin.scene.sceneId,photoId:request.origin.scene.photoId});
+     if(!ok(opened))return fail(opened?.reason||"PARENT_CATECHISM_REJECTED");
+     ownOpened=true;
+     return Object.freeze({ok:true,owner:"EXISTING_APP_NATIVE_CATECHISM",question:322});
+    }catch{return fail("PARENT_CATECHISM_UNAVAILABLE");}
+   }
    const learn=win.AO_LEARN_APP_V1;
    let started=false;
    try{
@@ -61,6 +77,21 @@ export function createLivingChurchCatechismNativeOwner(win,{sourceStatus,sourceP
   },
   async restore(origin){
    if(!ownOpened)return fail("NO_OWNED_CATECHISM_HANDOFF");
+   const delegated=win?.AO_LIVING_CHURCH_CATECHISM_NATIVE_V1;
+   if(typeof delegated?.restore==="function"&&delegated.status?.()?.owned===true){
+    try{
+     const result=await delegated.restore({routeId:"learn.catechism",sourceRef:"PX1912-Q322"});
+     if(!ok(result))return fail(result?.reason||"PARENT_RETURN_FAILED");
+     ownOpened=false;
+     const recovered=await restorePose(origin.scene.pose);
+     if(!ok(recovered))return fail("SCENE_RESTORATION_FAILED");
+     const current=sourceStatus(),pose=sourcePose();
+     if(current?.view!=="church"||current?.photoMode!=="still"||
+        Math.abs(pose?.x-origin.scene.pose.x)>2||Math.abs(pose?.y-origin.scene.pose.y)>2)
+       return fail("SCENE_RESTORATION_FAILED");
+     return Object.freeze({ok:true});
+    }catch{return fail("PARENT_RETURN_FAILED");}
+   }
    const learn=win?.AO_LEARN_APP_V1;
    if(typeof learn?.close!=="function")return fail("NATIVE_FORMATION_UNAVAILABLE");
    try{
@@ -79,7 +110,8 @@ export function createLivingChurchCatechismNativeOwner(win,{sourceStatus,sourceP
    }catch{return fail("SCENE_RESTORATION_FAILED");}
   },
   status:()=>Object.freeze({version:LIVING_CHURCH_CATECHISM_HANDOFF_VERSION,
-   nativeAvailable:typeof win?.AO_LEARN_APP_V1?.openModule==="function",
+   nativeAvailable:typeof win?.AO_LEARN_APP_V1?.openModule==="function"||
+     typeof win?.AO_LIVING_CHURCH_CATECHISM_NATIVE_V1?.open==="function",
    ownsNativeSession:ownOpened})
  });
 }
