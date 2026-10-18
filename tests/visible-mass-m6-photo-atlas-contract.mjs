@@ -62,5 +62,29 @@ for(const image of atlas.images){
  assert.ok(/^https:\/\/(?:commons\.wikimedia\.org)/.test(image.source_url),"All photo records must expose a verified Commons *source page* (not merely raw image): "+image.asset_id);
  if(image.asset_id.startsWith("EXISTING-")) assert.equal(image.review_status,"LEGACY_RESEARCH_NOT_PUBLISHABLE");
 }
+
+const batch2=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH2");
+assert.equal(batch2.length,7,"Second M6 acquisition batch must remain accounted for");
+assert.deepEqual(batch2.map(x=>x.object_id).sort(),["AL13","VE02","VE05","VE06","VE07","VE08","VE09"]);
+for(const x of batch2){
+ assert.equal(x.medium,"photograph");
+ assert.ok(x.creator&&x.licence&&x.license_url&&x.source_url.startsWith("https://commons.wikimedia.org/wiki/File:"));
+ assert.equal(x.review_status,"SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL");
+ assert.ok(x.width>1000&&x.height>1000,"Candidate needs useful full-resolution source");
+}
+const photographSourceById=new Map(atlas.images.map(x=>[x.asset_id,x]));
+const qualifyingPhoto=(o)=>o.candidate_assets.some(({asset_id})=>{
+ const asset=photographSourceById.get(asset_id);
+ return Boolean(asset&&asset.medium==="photograph"&&asset.licence&&asset.review_status!=="DISCOVERY_ONLY_UNVERIFIED_SOURCE_RIGHTS");
+});
+assert.ok(atlas.objects.every(o=>o.needs_photo===!qualifyingPhoto(o)),"Historical illustrations and unverified leads must not count as qualifying photographs");
+assert.equal(atlas.objects.filter(qualifyingPhoto).length,30);
+assert.equal(atlas.objects.filter(o=>o.needs_photo).length,140);
+assert.equal(atlas.statistics.post_second_batch_photo_candidate_or_hotspot,30);
+assert.equal(atlas.statistics.post_second_batch_needs_photo,140);
+assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL10","AL17","AL18","BK02","LN04","LN05"]);
+assert.equal(atlas.images.length,42);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,39);
+
 console.log("PASS M6 integrity",JSON.stringify({objects:170,zones:13,pilot:30,legacyImages:original.assets.length,m5Photos:m5.length+3,
  markers:6,newResearchCandidates:6,unservedExisting:147,glossaryMatches:glCounts}));
