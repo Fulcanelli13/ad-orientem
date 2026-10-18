@@ -1,0 +1,48 @@
+name: M6 Rapid Gallery Embedded Source Photos
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - "tools/visible-mass-m6-embed-thumbnails.py"
+      - "previews/visible-mass-3d/M6_Rapid_30_Object_Photo_Triage_20261019.html"
+      - ".github/workflows/visible-mass-m6-offline-thumbnails.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  thumb-bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install bounded thumbnail dependencies
+        run: python -m pip install --quiet --disable-pip-version-check Pillow==11.3.0 requests==2.32.5
+      - name: Package real image pixels in standalone HTML
+        id: embed
+        run: python tools/visible-mass-m6-embed-thumbnails.py
+      - name: Confirm four opening paten thumbnails have actual decoded image bytes
+        run: |
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+          src=Path("dist/visible-mass/Ad_Orientem_M6_Rapid_30_Object_Offline_Photos.html").read_text()
+          d=json.loads(re.search(r'<script id="dataset" type="application/json">([\s\S]*?)</script>',src).group(1))
+          o=next(o for o in d["objects"] if o["object_id"]=="SV02")
+          n=sum(bool(x.get("embedded_thumbnail_data_uri")) for x in o["records"] if x["asset_id"].startswith("M6B17-") and x["role"]=="object_detail")
+          print("M6 first-screen embedded paten photos",n,"of 4; total unique images",d["thumbnail_bundle"]["number_unique_downloaded"])
+          assert n==4,"Do not publish a gallery as fixed if paten thumbnails are still invisible"
+          PY
+      - name: Deliver only verifiable real-image assets and acquisition report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: M6-Rapid-30-Offline-Images-Acquisition
+          path: |
+            dist/visible-mass/Ad_Orientem_M6_Rapid_30_Object_Offline_Photos.html
+            dist/visible-mass/M6_Embedded_Thumbnail_Acquisition.json
+          if-no-files-found: warn
+          retention-days: 30
