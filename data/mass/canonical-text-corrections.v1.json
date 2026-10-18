@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "R17_CANONICAL_TEXT_CORRECTIONS",
   "authorityRule": "Apply after frozen donor ingestion and before any reader/display composition. No correction may create ritual state.",
   "donorPolicy": "Frozen donor hashes remain unchanged; this layer records adjudicated source corrections explicitly.",
@@ -48,6 +48,55 @@
       "from": "orare pro me",
       "to": "oráre pro me",
       "impact": "TEXT_NORMALIZATION"
+    },
+    {
+      "id": "RED-EN-2013-001",
+      "blockId": "AO.SM.B031",
+      "cueId": "AO.SM.C0110",
+      "field": "english",
+      "from": "Accept, O Holy father, Almighty and Eternal God, this spotless host, which I, Your unworthy servant, offer to You",
+      "to": "Accept, O holy Father, almighty and everlasting God, this spotless host, which I, Thine unworthy servant, offer unto Thee",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p. 23, PDF p. 24",
+      "decision": "Align invocation and address with traditional Thou/Thee register; retain substantive remainder of existing translation rather than blindly replacing a full prayer.",
+      "review": "APPROVED_BY_EDITORIAL_PREFERENCE"
+    },
+    {
+      "id": "RED-EN-2013-002",
+      "blockId": "AO.SM.B036",
+      "cueId": "AO.SM.C0121",
+      "field": "english",
+      "from": "May this incense blessed by You, arise before You, O Lord, and may Your mercy come down upon us.",
+      "to": "May this incense which Thou hast blessed, O Lord, ascend to Thee, and may Thy mercy descend upon us.",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p. 25, PDF p. 26",
+      "decision": "Repair subject-verb comma and restore coherent traditional diction; follow booklet witness.",
+      "review": "VERIFIED_GRAMMAR_AND_BOOKLET"
+    },
+    {
+      "id": "RED-EN-2013-003",
+      "blockId": "AO.SM.B036",
+      "cueId": "AO.SM.C0122",
+      "field": "english",
+      "from": "Let my prayer, O Lord, like incense before You; the lifting up of my hands, like the evening sacrifice.",
+      "to": "Let my prayer rise before Thee as incense, O Lord; let the lifting up of my hands be as the evening sacrifice.",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p. 25, PDF p. 26 (poetic translation); Latin Dirigatur oratio mea verified against same booklet PDF p. 25",
+      "decision": "Restore missing finite verb and use traditional Thou register; minimal, Latin-faithful editorial adaptation rather than verbatim booklet translation.",
+      "review": "VERIFIED_GRAMMAR_WITH_BOOKLET_PARALLEL"
+    },
+    {
+      "id": "RED-EN-2013-004",
+      "blockId": "AO.SM.B039",
+      "cueId": "AO.SM.C0132",
+      "field": "english",
+      "from": "May the Lord receive the sacrifice from thy hands, to the praise and glory of His name, to our benefit also, and that of all His holy Church.",
+      "to": "May the Lord accept the Sacrifice from thy hands, to the praise and glory of His Name, for our benefit and for that of all His holy Church.",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p. 27, PDF p. 28",
+      "decision": "Prefer booklet English for Suscipiat response; preserve whole Latin, speaker/response owner, and separate priest Amen.",
+      "review": "USER_APPROVED_BOOKLET_PREFERENCE"
     }
-  ]
+  ],
+  "englishEditorialPolicy": "2013 Coalition in Support of Ecclesia Dei Red Missal is the preferred English witness for the fixed Ordo Missae, subject to controlling 1962 Latin, exact cue boundaries, independent source checks, and recorded editorial decisions. No universal string replacement and no mass-rite changes."
 }
