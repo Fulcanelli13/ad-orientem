@@ -33,6 +33,7 @@ assert.equal(follow.id,"apostolate:AQ05");
 assert.match(follow.text,/Trent/);
 for(const question of [
  "Why is the Roman Canon silent?",
+ "Why is the Mass called a sacrifice?",
  "What is the secret prayer after the Offertory?",
  "Does the Mass repeat Calvary and how does bread become Christ?",
  "I confess a very private personal sin",
@@ -43,6 +44,7 @@ for(const question of [
  assert.equal(out.ok,false,"unsupported/compound question must fail closed: "+question);
  assert.equal(out.citations.length,0);
 }
+assert.equal((await pilot.answer("Why?")).ok,false,"unsupported question must reset old grounded follow-up");
 assert.equal((await pilot.answer("How can bread become Jesus?",{guide:"pius-x"})).ok,false);
 pilot.clear();assert.equal((await pilot.answer("Why?")).ok,false);
 // Tampered or newly released editorial study manifests are NOT accepted by this pilot.
