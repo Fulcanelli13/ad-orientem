@@ -20,8 +20,28 @@ export async function loadLivingChurchObjectives({fetchImpl=fetch,language="en"}
  const engine=createAskChurchObjectiveEngine(survey,{lang:language==="fr"?"fr":"en"});
  let selected=null;
  const showBranches=()=>engine.branches().map(x=>Object.freeze({id:x.id,title:x.title,guide:guideFor(x.id)}));
- const routeTargets=()=>engine.targets().filter(x=>x.route?.releaseGate!=="RESEARCH_ONLY"&&
-    x.scenario?.publicationState!=="RESEARCH_ONLY").map(x=>x.id);
+ const approvedTargets=()=>engine.targets().filter(x=>
+    x.route?.releaseGate!=="RESEARCH_ONLY"&&
+    (!x.scenario||x.scenario.publicationState==="READY_IN_RUNTIME_SOT"));
+ const routeTargets=()=>approvedTargets().map(x=>x.id);
+ async function digest(id,{lang=engine.snapshot().lang}={}){
+  if(!selected||typeof id!=="string")return Object.freeze({ok:false,reason:"NO_ACTIVE_OBJECTIVE"});
+  const target=approvedTargets().find(x=>x.id===id);
+  if(!target||!selected.sourceRoutes.includes(id))return Object.freeze({ok:false,reason:"UNAPPROVED_SOURCE_TARGET"});
+  // PR #1391's ORIGINAL source-owning adapter, not a copied doctrinal answer.
+  const {readAskChurchDigest}=await import("../../src/learn/ask-church-source-digest.js");
+  const record=await readAskChurchDigest(target,{lang:lang==="fr"?"fr":"en",situation:selected.branch});
+  if(!record?.title||!record?.text)return Object.freeze({ok:false,reason:"NO_APPROVED_SOURCE_DIGEST"});
+  const sources=(record.sources||[]).filter(x=>{
+    try{return new URL(x.url).protocol==="https:";}catch{return false;}
+  }).map(x=>Object.freeze({label:String(x.label||"Source").slice(0,150),
+    locator:String(x.locator||"").slice(0,150),url:x.url})).slice(0,4);
+  return Object.freeze({ok:true,id,title:String(record.title).slice(0,180),
+   text:String(record.text).slice(0,1500),detail:String(record.detail||"").slice(0,2600),
+   sourceStatus:String(record.sourceStatus||"").slice(0,80),
+   owner:String(record.owner||"Original source owner").slice(0,100),
+   sources:Object.freeze(sources)});
+ }
  function choice(id){
   if(!engine.setObjective(id))return Object.freeze({ok:false,reason:"UNKNOWN_OBJECTIVE"});
   selected=null;
@@ -50,7 +70,7 @@ export async function loadLivingChurchObjectives({fetchImpl=fetch,language="en"}
   version:LIVING_CHURCH_OBJECTIVES_VERSION,
   objectives:()=>engine.objectives(),
   branches:showBranches,
-  choice,branch,interpret,
+  choice,branch,interpret,digest,
   snapshot:()=>Object.freeze({selection:selected,core:engine.snapshot()}),
   language:lang=>engine.language(lang),
   reset:()=>{engine.reset();selected=null;}
