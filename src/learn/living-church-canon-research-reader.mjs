@@ -10,6 +10,7 @@ import {createCanonResearchQuestionCatalog} from "./formation-canon-question-cat
 export const CANON_RESEARCH_READER_VERSION="AO_CANON_ORIGINAL_RESEARCH_READER_V1";
 const MAIN_INDEX="data/learn/formation-historical-answer-crosswalk-20261013.v1.json";
 const EXTRA_INDEX="data/learn/research/formation-new-15-indexed-answer-adequacy-20261014.v1.json";
+const AUDIT_INDEX="data/learn/research/formation-canon-primary-source-pinpoint-review-20261018.v1.json";
 const VALID_PATH=/^data\/learn\/[a-z0-9_./-]+\.json$/i;
 
 export function canonResearchPreviewEnabled(win=globalThis){
@@ -77,9 +78,11 @@ export async function createCanonResearchReviewer(win=globalThis,{fetcher}={}){
  if(!canonResearchPreviewEnabled(win))throw Error("Canon research requires four explicit review flags");
  const request=fetcher||(typeof win.fetch==="function"?win.fetch.bind(win):null);
  if(typeof request!=="function")throw Error("Original research fetcher missing");
- const [index,delta]=await Promise.all([fetchJSON(request,MAIN_INDEX),fetchJSON(request,EXTRA_INDEX)]);
+ const [index,delta,audit]=await Promise.all([fetchJSON(request,MAIN_INDEX),fetchJSON(request,EXTRA_INDEX),fetchJSON(request,AUDIT_INDEX)]);
+ if(audit.schema!=="AO_FORMATION_CANON_PRIMARY_SOURCE_PINPOINT_REVIEW_V1"||audit.records?.length!==7||audit.summary?.publishedApprovalsGranted!==0)throw Error("Original source audit release contract changed");
+ const auditMap=new Map(audit.records.map(x=>[x.id,x]));
  const catalog=createCanonResearchQuestionCatalog(index,delta);
- const cache=new Map([[MAIN_INDEX,index],[EXTRA_INDEX,delta]]);
+ const cache=new Map([[MAIN_INDEX,index],[EXTRA_INDEX,delta],[AUDIT_INDEX,audit]]);
  async function readDocument(path){
   if(!cache.has(path))cache.set(path,fetchJSON(request,path));
   try{return await cache.get(path);}catch(error){cache.delete(path);throw error;}
@@ -106,6 +109,7 @@ export async function createCanonResearchReviewer(win=globalThis,{fetcher}={}){
      originalSourcePointer:Object.freeze({path:ref.path,recordId:wanted}),
      canonicalOwnerIds:question.canonicalOwnerIds,language,
      paragraphs:Object.freeze(paragraphs),
+     editorialAudit:auditMap.has(question.questionId)?Object.freeze(auditMap.get(question.questionId)):null,
      sourceOwnerReviewOnly:true,publicAnswerAuthorized:false,
      historicVerbatimCertified:false,characterQuote:false,nativeRoute:null});
    }catch{
@@ -120,6 +124,7 @@ export async function createCanonResearchReviewer(win=globalThis,{fetcher}={}){
   find:(query,opts)=>catalog.find(query,opts),
   listBank:bank=>catalog.listBank(bank),
   get:id=>catalog.get(id),
+   getEditorialAudit:id=>auditMap.get(id)||null,
   originalResearch,
   canPublish:false,
   publicHandoff:()=>Object.freeze({ok:false,code:"ORIGINAL_EDITORIAL_PUBLICATION_HOLD"})
