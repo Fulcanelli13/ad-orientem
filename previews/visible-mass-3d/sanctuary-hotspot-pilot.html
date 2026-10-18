@@ -213,6 +213,7 @@ body[data-experience=discover] .info{min-height:0}
  body:not(.embedded) .topactions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:start;width:100%}
  body:not(.embedded) .topactions .occasion-control{display:flex;flex-direction:column;align-items:stretch;gap:3px;min-width:0;font-size:11px}
  body:not(.embedded) .topactions select{width:100%;max-width:none;min-height:40px;padding:7px 6px}
+ body:not(.embedded) .topactions #photo-sources-top{display:none} /* Existing scene-specific credit below the image remains accessible */
  body:not(.embedded) .topactions button,body:not(.embedded) .topactions a{min-height:34px;padding:6px 8px;font-size:11px;text-align:center}
  body:not(.embedded) .intro{font:13px/1.45 system-ui,sans-serif;margin:9px 0 10px}
  body:not(.embedded) .experience-nav{margin:8px 0 10px}
@@ -399,8 +400,8 @@ function findSpot(id){
 let panoramaController=null;
 const PHOTO_INTROS=Object.freeze({
  still:"The real high altar of Brompton Oratory, London. Select one of the six visible markers, or choose an object below the image. On narrow screens, swipe sideways to inspect the photograph.",
- brompton:"Inside Brompton Oratory, London. This is a genuine 360° photograph from one stationary viewpoint, not a Mass in progress. Drag to look around; select High altar · 6 objects to explore individually documented objects.",
- newman:"Inside Newman University Church, Dublin. Look around from a fixed photographic viewpoint. This is an independent Roman Catholic architectural visit, not evidence of a 1962 Mass; the six Brompton object markers do not apply here."
+ brompton:"Brompton Oratory, London · genuine 360° photograph from one fixed position. Drag to look around, or choose High altar · 6 objects to study the documented details.",
+ newman:"Newman University Church, Dublin · genuine fixed-viewpoint panorama. This Roman Catholic interior is not evidence of a 1962 Mass; Brompton object markers do not transfer here."
 });
 function syncPhotoNav(){
  document.body.dataset.photoMode=state.photoMode;
