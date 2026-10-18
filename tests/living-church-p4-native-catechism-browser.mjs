@@ -108,6 +108,20 @@ try{
    return typeof owner?.openQuestion==="function"&&root&&!root.hidden;
   },null,{timeout:25000});
   assert.equal(await stage.isVisible(),false,"Pius portrait must hide while original Catechism is visible");
+  // DOM hidden=false was insufficient: the 320px screenshot exposed the
+  // sanctuary viewer visually covering the Catechism. Test actual hit layer.
+  const catechismLayer=await page.evaluate(()=>{
+   const root=document.getElementById("ao-cate-root");
+   const reviewer=document.getElementById("ao-visible-mass-review-root");
+   const middle=document.elementFromPoint(window.innerWidth/2,window.innerHeight/2);
+   return {reviewerVisibility:getComputedStyle(reviewer).visibility,
+    catechismVisibility:getComputedStyle(root).visibility,
+    catechismHit:root===middle||root.contains(middle),
+    middle:middle?.id||middle?.tagName};
+  });
+  assert.equal(catechismLayer.reviewerVisibility,"hidden","photo must yield visual layer while original answer is open");
+  assert.equal(catechismLayer.catechismVisibility,"visible","native Catechism must be visually shown");
+  assert.equal(catechismLayer.catechismHit,true,"native answer must be front-most at viewport centre: "+JSON.stringify(catechismLayer));
   const catReturn=page.locator("#aoLivingChurchReturnSanctuary");
   await catReturn.waitFor({state:"visible",timeout:14000});
   const catHit=await catReturn.evaluate(el=>{
