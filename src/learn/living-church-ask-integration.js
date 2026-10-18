@@ -6,6 +6,7 @@
  * app shell. Its first verified native round-trip is ONLY Mass Explorer.
  */
 import {mountAskChurchGuide} from "./ask-church-guided-preview.js";
+import {createAskChurchObjectiveEngine} from "./ask-church-objective-engine.js";
 import {loadOriginalCatechismReferralIndex,catechismNumber} from "./living-church-catechism-source.js";
 import {openNativeCatechismQuestion} from "./catechism-guided-reader.js";
 import {visibleMassResearchMomentLinks} from "../../previews/visible-mass-3d/photographic-published-explorer-handoff.mjs";
@@ -26,7 +27,18 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
  if(!frame||!returnButton||survey?.schema!=="AO_ASK_CHURCH_APP_ROUTE_SURVEY_V1")
   throw Error("Original native reviewer and Ask the Church source survey required");
  let guide=null,opening=false,pending=false,suspended=null,disposed=false;
- let catechismIndex=null;
+ let catechismIndex=null,canonicalObjectiveSession=null;
+ // One canonical Ask session for both the original Ask presentation and the
+ // three-character folio. The underlying source-owned objective engine
+ // survives scene/character/module navigation and is closed with this host.
+ function objectiveEngine(){
+  if(disposed)throw Error("Living Church session closed");
+  if(!canonicalObjectiveSession)
+   canonicalObjectiveSession=createAskChurchObjectiveEngine(survey,{
+    lang:original()?.context?.lang||"en"
+   });
+  return canonicalObjectiveSession;
+ }
  const enabled=()=>!disposed&&livingChurchAskReviewEnabled(win)&&frame.isConnected===true;
  function child(){
   if(!enabled())return null;
@@ -157,6 +169,7 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
   if(!guide){
    guide=await mountAskChurchGuide(win,{
     survey,lang:source.context.lang,hostManagesReturn:true,
+    engine:objectiveEngine(),
     bridge:Object.freeze({open:nativeOpen})
    });
   }else guide.show();
@@ -166,14 +179,16 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
   disposed=true;
   guide?.close?.();
   guide=null;
+  canonicalObjectiveSession=null;
   returnButton.hidden=true;
   suspended=null;
  }
- return Object.freeze({openGuide,returnToSanctuary,nativeOpen,close,hideGuide:()=>guide?.hide?.(),
+ return Object.freeze({openGuide,returnToSanctuary,nativeOpen,close,objectiveEngine,hideGuide:()=>guide?.hide?.(),
   sourceContext:()=>{const source=original();return source?Object.freeze({context:source.context,readCount:source.readCount}):null;},
   status:()=>Object.freeze({
   version:LIVING_CHURCH_ASK_P2_VERSION,reviewEnabled:enabled(),
-  guideMounted:Boolean(guide),handoffPending:pending||opening,
+  guideMounted:Boolean(guide),objectiveSessionCount:canonicalObjectiveSession?1:0,
+  objective:canonicalObjectiveSession?.snapshot()||null,handoffPending:pending||opening,
   suspended:Boolean(suspended),returnMoment:suspended?.momentKey??null,
   ownedObjectives:survey.objectives.length,
   branchCount:survey.objectives.reduce((n,o)=>n+o.paths.length,0),
