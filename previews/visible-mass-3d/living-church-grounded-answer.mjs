@@ -20,7 +20,7 @@ const no=(code,lang)=>Object.freeze({ok:false,code,
   "I do not have a sufficiently approved source passage to answer that precisely here. Consult the original module or narrow the question.",
  citations:[],mode:"SOURCE_GAP"});
 const patterns=Object.freeze([
- {id:"apostolate:AQ04",rx:/\b(second sacrifice|sacrific(e|es|ing)|calvary|crucif|re.?sacrif|die again|another death|unbloody|sacrifice again|sacrifice jesus|sacrifice christ|sacrifie|calvaire|nouvelle mort|seconde mort|offrande sanglante)\b/},
+ {id:"apostolate:AQ04",rx:/\b(second sacrifice|sacrifice jesus again|sacrifice christ again|sacrifice again|repeat(ed)? sacrifice|re.?sacrific\w*|calvary|die again|another death|unbloody|calvaire|nouvelle mort|seconde mort|sacrifie.*une nouvelle fois|offrande sanglante)\b/},
  {id:"apostolate:AQ05",rx:/\b(transubstantiation|real presence|body and blood|bread (become|turn|really)|bread and wine|substance|species|truly present|really jesus|host becomes|eucharist|realite|presence reelle|substance|pain|vin|corps du christ|transsubstantiation|especes|eucharistie)\b/}
 ]);
 function choose(input,previous){
@@ -57,7 +57,7 @@ export async function loadCanonGroundedAnswers({fetchImpl=fetch,readDigest=readA
  async function answer(question,{guide="canon"}={}){
   if(guide!=="canon")return no("WRONG_GUIDE",language);
   const id=choose(question,previous);
-  if(!id||!eligible.has(id))return no("NOT_SUPPORTED_BY_APPROVED_CORPUS",language);
+  if(!id||!eligible.has(id)){previous=null;return no("NOT_SUPPORTED_BY_APPROVED_CORPUS",language);}
   try{
    const record=await readDigest(eligible.get(id),{lang:language,situation:"eucharist"});
    if(!record?.text||record.sourceStatus!=="READY_IN_RUNTIME_SOT"||record.owner!=="Apostolate")
