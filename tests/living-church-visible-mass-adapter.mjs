@@ -60,6 +60,7 @@ assert.equal(adapter.status().context.scene.sceneId,"NEWMAN_360",
  "no Brompton hotspot coordinate transfer to Newman");
 original={...original,view:"m5-close"};assert.equal(adapter.sync().code,"SCENE_NOT_IN_P1_SLICE");
 assert.equal(adapter.status().sceneSupported,false);
+assert.equal(adapter.status().context,null,"never advertise stale prior church after unsupported closer photo");
 assert.equal(adapter.chooseGuide("canon").code,"SCENE_NOT_IN_P1_SLICE");
 original={...original,view:"church",photoMode:"still",selected:null,question:null};
 pose={x:180,y:0};
@@ -69,6 +70,7 @@ assert.equal(adapter.chooseGuide("pius-x").ok,true);
 assert.equal(adapter.status().context.guide,"pius-x");
 assert.equal((await adapter.status()).massHandoffIntegrated,false);
 review=false;assert.equal(adapter.sync().code,"REVIEW_GATE_CLOSED");
+assert.equal(adapter.status().context,null,"review gate hides previously captured context");
 assert.equal(adapter.chooseGuide("canon").code,"SCENE_NOT_IN_P1_SLICE");
 assert.throws(()=>createVisibleMassLivingChurchAdapter({
  pilot:{...pilot,schema:"FABRICATED"},graph,
