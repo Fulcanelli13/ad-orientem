@@ -89,8 +89,9 @@ export async function createCanonResearchReviewer(win=globalThis,{fetcher}={}){
   if(!question)return Object.freeze({ok:false,code:"UNKNOWN_ORIGINAL_QUESTION"});
   const language=lang==="fr"?"fr":"en";
   const pointer=question.supplementPointer;
-  const candidates=pointer?[pointer,...question.canonicalOwnerPointers]:
-   question.canonicalOwnerPointers;
+  // A failed question-specific supplement must not silently fall back to a
+  // broad canonical dossier and masquerade as the original question answer.
+  const candidates=pointer?[pointer]:question.canonicalOwnerPointers;
   for(const ref of candidates){
    if(!ref?.path)continue;
    const wanted=ref.recordId||ref.id;
