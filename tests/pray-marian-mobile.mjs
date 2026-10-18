@@ -230,6 +230,11 @@ try{
  await rightCross.press("ArrowLeft");
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),
    "announcement","Mirrored second cross must work independently");
+ const crossCanReceiveTouch=await rightCross.evaluate(el=>{
+   const r=el.getBoundingClientRect();
+   return document.elementFromPoint(r.left+54,r.top+32)?.closest(".aoCrossPad")===el;
+ });
+ assert.ok(crossCanReceiveTouch,"Global app ribbon or other overlay blocks cross touch target");
  await rightCross.click({position:{x:54,y:32}});
  assert.equal(await page.locator("#aoPray435930 .aoDevoCard:not([hidden])").getAttribute("data-ao-devo-card"),
    "fiat","Tapping the right arm must advance the existing deck");
