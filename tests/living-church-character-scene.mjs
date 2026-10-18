@@ -122,6 +122,20 @@ try{
     {name:"A discussion about the Bible or Protestant objections"}).click();
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().selectedObjective),"protestant");
   assert.equal(await page.locator("#lc-stage").getByText("learn.apologetics").count(),0);
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Read the first source"}).click();
+  await page.waitForFunction(()=>window.AO_LIVING_CHURCH_P2?.status().sourceReadCount===1);
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().sourceOpen),"apostolate:AQ08");
+  assert.match(await page.locator("#lc-stage .lc-source-record").innerText(),/Scripture|Tradition/);
+  assert.equal(await page.locator("#lc-stage .lc-source-record").isVisible(),true);
+  assert.ok(await page.locator("#lc-stage .lc-source-record a[href^='https://']").count()>0,
+    "original module supplied citations must render as HTTPS links");
+  assert.equal(await page.locator("#lc-stage .lc-source-record a[href^='javascript:']").count(),0);
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Read apostolate:AQ03"}).click();
+  await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().sourceReadCount===2);
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().sourceOpen),"apostolate:AQ03");
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Back to subject"}).click();
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().selectedObjective),"protestant");
+
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Consult St Pius X"}).click();
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"pius-x");
   // Free input also follows PR #1391's canonical objective engine, not only old keywords.
