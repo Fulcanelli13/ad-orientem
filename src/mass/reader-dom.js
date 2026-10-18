@@ -954,6 +954,13 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.86}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.75}
+/* Fixed-height LIVE cards must have genuine paragraph runway, even when
+   source text is shorter than the viewport. Percentage is relative to the
+   scroller content box, not measured during transient ribbon/dock layout. */
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-card .ao-prayer-body[data-ao-reading-runway="true"]{
+  min-height:calc(100% + var(--ao-min-reading-travel,72px));
+}
+
 /* One visible reading focus may be a Proper verse without a ceremonial
    cue. Keep gesture/cinematic source state entirely in data-active, while
    giving this uncued text a separate geometry-owned brightness channel. */
@@ -2796,7 +2803,16 @@ export function createReaderDomAdapter({
     const cueCount=body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")?.length??0;
     const readingCount=body.querySelectorAll?.('.ao-reader-paragraph:not([data-kind="RUBRIC"])')?.length??0;
     const focusCount=Math.max(cueCount,readingCount);
-    if(focusCount<2)return;
+    if(focusCount<2){
+      delete body.dataset.aoReadingRunway;
+      body.style.removeProperty("--ao-min-reading-travel");
+      return;
+    }
+    // Let CSS enforce a scrollable reading region independent of a transient
+    // JS layout measurement. This does not enlarge any paragraph itself.
+    body.dataset.aoReadingRunway="true";
+    body.style.setProperty("--ao-min-reading-travel",
+      Math.min(640,Math.max(72,(focusCount-1)*58))+"px");
     const viewport=Math.max(0,card.clientHeight||0);
     if(!viewport)return;
     const win=card.ownerDocument.defaultView;
