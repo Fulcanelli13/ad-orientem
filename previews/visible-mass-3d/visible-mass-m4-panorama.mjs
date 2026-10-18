@@ -232,6 +232,11 @@ export function createM4Panorama({mount,notice,onScene}){
    return false;
   }
  }
+ function faceSanctuary(){
+  if(!active)return;
+  poses.set(active,m4PanoramaPose(active,{yaw:0,pitch:0,fov:72}));
+  schedule();
+ }
  function adjust(dyaw,dpitch,dfov){
   if(!active)return;
   const p=poses.get(active);poses.set(active,m4PanoramaPose(active,{yaw:p.yaw+dyaw,pitch:p.pitch+dpitch,fov:p.fov+dfov}));schedule();
@@ -248,7 +253,7 @@ export function createM4Panorama({mount,notice,onScene}){
   const keys={ArrowLeft:[-.12,0,0],ArrowRight:[.12,0,0],ArrowUp:[0,.1,0],ArrowDown:[0,-.1,0],"+":[0,0,-5],"-":[0,0,5]};
   if(Object.hasOwn(keys,e.key)){e.preventDefault();adjust(...keys[e.key]);}
  });
- return Object.freeze({open,adjust,status:()=>({active,pose:active?poses.get(active):null,loaded:ready,renderer:gpu?"webgl":"software",frameCount:renderCount,lastRenderMs,error:lastError,cachedScenes:images.size}),
+ return Object.freeze({open,adjust,faceSanctuary,status:()=>({active,pose:active?poses.get(active):null,loaded:ready,renderer:gpu?"webgl":"software",frameCount:renderCount,lastRenderMs,error:lastError,cachedScenes:images.size}),
   redraw:schedule,
   hide:()=>{cancelPending();active=null;ready=false;sourcePixels=null;if(frame)cancelAnimationFrame(frame);frame=0;},
   dispose:()=>{cancelPending();disposed=true;active=null;ready=false;sourcePixels=null;images.clear();window.removeEventListener("resize",resize);if(frame)cancelAnimationFrame(frame);if(resizeFrame)cancelAnimationFrame(resizeFrame);}
