@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -21,6 +21,8 @@ const server=http.createServer(async(req,res)=>{
 await new Promise(ok=>server.listen(0,"127.0.0.1",ok));
 const origin="http://127.0.0.1:"+server.address().port;
 const svg='<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="859"><rect width="1280" height="859" fill="#39332b"/></svg>';
+const screenshotDir=resolve(root,"dist/living-church/p3-review");
+await mkdir(screenshotDir,{recursive:true});
 let browser;
 try{
  browser=await chromium.launch({headless:true});
@@ -75,12 +77,15 @@ try{
    },name,{timeout:10000});
   };
   await assetCheck("sacristan-welcoming.webp");
+  await page.screenshot({path:screenshotDir+"/"+width+"-sacristan.png"});
   await stage.locator('[data-persona="canon"]').click();
   assert.equal(await stage.getAttribute("data-guide"),"canon");
   await assetCheck("canon-welcoming.webp");
+  await page.screenshot({path:screenshotDir+"/"+width+"-canon.png"});
   await stage.locator('[data-persona="pius-x"]').click();
   assert.equal(await stage.getAttribute("data-guide"),"pius-x");
   await assetCheck("pius-welcoming.webp");
+  await page.screenshot({path:screenshotDir+"/"+width+"-pius-x-study.png"});
   assert.match(await stage.locator(".lcDisclaimer").innerText(),/Historical simulation/);
   assert.match(await stage.locator(".lcDisclaimer").innerText(),/not his words/i);
   await stage.getByRole("button",{name:"Catechism topics"}).click();
@@ -114,7 +119,11 @@ try{
   assert.deepEqual(after.context,before.context===null?null:{...before.context,guide:"canon"},
     "source photo/pose/VMQ/trail must be unchanged; chosen guide should be canon");
   assert.deepEqual(after.guide,before.guide,"original trial read and skip state changed");
-  await stage.getByRole("button",{name:"Explore freely"}).click();
+  await page.screenshot({path:screenshotDir+"/"+width+"-canon-after-native-return.png"});
+  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+  assert.ok(overflow<=2,"horizontal document overflow at "+width+": "+overflow);
+  await stage.getByRole("button",{name:"Explore freely"}).focus();
+  await page.keyboard.press("Escape");
   assert.equal(await stage.isVisible(),false);
   assert.deepEqual(errors,[],"unexpected JS exceptions at "+width);
   await ctx.close();
