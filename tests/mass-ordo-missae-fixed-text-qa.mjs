@@ -85,7 +85,7 @@ const properSlots=Object.fromEntries(slots.map(x=>[x,{
 const present=[];
 for(const [corpus,form] of [[low,"LOW"],[sung,"MISSA_CANTATA_SIMPLE"]]){
  for(const lang of ["en","fr"]){
-  for(const part of ["AO.CARD.003","AO.CARD.010","AO.CARD.013","AO.CARD.014"]){
+  for(const part of ["AO.CARD.003","AO.CARD.010","AO.CARD.013","AO.CARD.017"]){
    const card=buildReaderSectionCard({corpus,section:sections.sectionById(part),
     properSlots,vernacularLanguage:lang,frenchOrdinary:french,actualForm:form});
    for(const cueId of ["AO.SM.C0053","AO.SM.C0121","AO.SM.C0122","AO.SM.C0148","AO.SM.C0194"]){
@@ -105,10 +105,16 @@ for(const row of present.filter(x=>x.cueId==="AO.SM.C0122")){
  assert.ok([row.primary,row.alternate,row.secondary].some(s=>String(s??"").includes(phrase)),
    "Audited "+row.lang+" incensation Psalm is absent from "+row.form+" active Ordinary reader");
 }
+assert.equal(present.filter(x=>x.cueId==="AO.SM.C0194").length,4,
+ "The Memento dead must be visible in both Low/Sung reader languages");
 for(const row of present.filter(x=>x.cueId==="AO.SM.C0194")){
  assert.ok([row.primary,row.alternate,row.secondary].some(s=>
    String(s??"").includes("lucis et pacis")),
    "Prior Canon Latin correction did not reach displayed card");
+}
+for(const row of present.filter(x=>x.cueId==="AO.SM.C0148")){
+ assert.ok([row.primary,row.alternate,row.secondary].some(s=>String(s??"").includes("Benedíctus ✠ qui venit")),
+ "Printed Benedictus Cross was not recovered in the actual reader card");
 }
 for(const row of present.filter(x=>x.cueId==="AO.SM.C0053")){
  assert.ok([row.primary,row.alternate,row.secondary].some(s=>
