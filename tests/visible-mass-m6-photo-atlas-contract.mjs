@@ -44,7 +44,7 @@ for(const id of six){
 const originalRefs=new Set(original.assets.map(x=>x.object_id));
 assert.equal(atlas.objects.filter(x=>!originalRefs.has(x.object_id)&&!six.includes(x.object_id)).length,147);
 const newCandidates=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_WEB");
-assert.equal(newCandidates.length,4);
+assert.equal(newCandidates.length,6);
 for(const image of newCandidates){
  assert.ok(atlas.objects.some(o=>o.object_id===image.object_id),"Research lead must attach to existing physical object");
  assert.ok(image.source_url.startsWith("https://commons.wikimedia.org/wiki/File:"));
@@ -63,4 +63,4 @@ for(const image of atlas.images){
  if(image.asset_id.startsWith("EXISTING-")) assert.equal(image.review_status,"LEGACY_RESEARCH_NOT_PUBLISHABLE");
 }
 console.log("PASS M6 integrity",JSON.stringify({objects:170,zones:13,pilot:30,legacyImages:original.assets.length,m5Photos:m5.length+3,
- markers:6,newResearchCandidates:4,unservedExisting:147,glossaryMatches:glCounts}));
+ markers:6,newResearchCandidates:6,unservedExisting:147,glossaryMatches:glCounts}));
