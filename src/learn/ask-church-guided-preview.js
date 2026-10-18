@@ -18,7 +18,7 @@ const TARGET_TITLES={
  'learn.rites.matrimony':['Marriage preparation','Préparer le Mariage']
 };
 function mk(doc,tag,cls,body){const n=doc.createElement(tag);if(cls)n.className=cls;if(body!==undefined)n.textContent=String(body);return n;}
-export async function mountAskChurchGuide(win=globalThis,{survey=null,bridge=null,lang=null}={}){
+export async function mountAskChurchGuide(win=globalThis,{survey=null,bridge=null,lang=null,hostManagesReturn=false}={}){
  const doc=win?.document;if(!doc?.body)throw new Error('Document not ready');
  const source=survey||(await(await win.fetch(SURVEY_URL.href)).json());
  const language=lang||(win?.AO_RUNTIME_V8?.store?.getState?.()?.language)||'en';
@@ -43,7 +43,7 @@ export async function mountAskChurchGuide(win=globalThis,{survey=null,bridge=nul
   let result;try{result=await navigator.open(id);}catch(e){result={ok:false,code:'RUNTIME_EXCEPTION'};}
   if(state.disposed||request!==state.sequence)return;
   state.opening=false;state.notice=null;
-  if(result?.ok){root.hidden=true;returnBtn.hidden=false;}
+  if(result?.ok){root.hidden=true;returnBtn.hidden=Boolean(hostManagesReturn);}
   else{state.notice=labels[core.snapshot().lang].failure+(result?.code?' ['+result.code+']':'');render();}
  }
  function render(){const lang=core.snapshot().lang,copy=labels[lang],snap=core.snapshot();heading.querySelector('small').textContent=copy.sub;langBtn.textContent=copy.language;restart.textContent=copy.new;returnBtn.textContent=copy.return;input.placeholder=copy.type;submit.textContent=copy.send;footer.querySelector('.ac-footnote').textContent=copy.note;
