@@ -74,6 +74,11 @@ try{
   assert.match(await page.locator("#lc-stage .lc-source-record").innerText(),/Trent/);
   await page.locator("#lc-stage .lc-ask input").fill("Why is the Roman Canon silent?");
   await page.locator("#lc-stage .lc-ask button").click();
+  await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().groundedSourceId==="MF04-C01");
+  assert.match(await page.locator("#lc-stage .lc-source-record").innerText(),/low voice/);
+  assert.match(await page.locator("#lc-stage .lc-source-record").innerText(),/Document-level reference/);
+  await page.locator("#lc-stage .lc-ask input").fill("How many acolytes are needed?");
+  await page.locator("#lc-stage .lc-ask button").click();
   await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().groundedFailure==="NOT_SUPPORTED_BY_APPROVED_CORPUS");
   assert.equal(await page.locator("#lc-stage .lc-source-record").isVisible(),false);
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"canon");
