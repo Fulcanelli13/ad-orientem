@@ -259,7 +259,7 @@ assert.equal(credoOpening.speakerRole,"PRIEST");
 assert.equal(credoOpening.displayLanguage,"LATIN");
 const silent=buildReaderSectionCard({corpus:sung,section:sections.sectionById("AO.CARD.014"),properSlots});
 const teIgitur=silent.paragraphs.find(p=>p.id==="AO.SM.C0150");
-assert.match(teIgitur.primary,/Therefore/i);
+assert.match(teIgitur.primary,/Most merciful Father, we humbly pray and beseech Thee/i);
 assert.match(teIgitur.alternate,/Te igitur/i);
 assert.equal(teIgitur.displayLanguage,"VERNACULAR");
 for(const slot of ["COLLECT_SET","EPISTLE_OR_LESSON","GOSPEL","PREFACE","POSTCOMMUNION_SET","INTROIT","GRADUAL"]){
