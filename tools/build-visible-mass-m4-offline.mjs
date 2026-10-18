@@ -21,7 +21,7 @@ const virtual=await build({stdin:{contents:inline,resolveDir:preview,sourcefile:
  // photograph reviewer. Preserve only the actual published route ID; real app
  // navigation remains explicitly unavailable without the native AO shell.
  plugins:[{name:"no-duplicate-production-module",setup(buildContext){
-  buildContext.onResolve({filter:/src\\/learn\\/mass-explorer\\.js$/},args=>({path:args.path,namespace:"m4-production-route-only"}));
+  buildContext.onResolve({filter:/mass-explorer[.]js$/},args=>({path:args.path,namespace:"m4-production-route-only"}));
   buildContext.onLoad({filter:/.*/,namespace:"m4-production-route-only"},()=>({
    contents:'export const MASS_EXPLORER_ROUTE="learn.mass_explorer";',loader:"js"}));
  }}]});
