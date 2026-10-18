@@ -61,6 +61,11 @@ try{
    }));
    assert.ok(returnClearance.buttonBottom<=returnClearance.ribbonTop-4,
     'return control overlaps global navigation at '+width+': '+JSON.stringify(returnClearance));
+   const returnHit=await page.locator('#aoAskChurchReturnV5').evaluate(el=>{
+    const rect=el.getBoundingClientRect();
+    return el===document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2);
+   });
+   assert.equal(returnHit,true,'native module obstructs return control at '+width+': '+desc);
    await page.locator('#aoAskChurchReturnV5').click();
    assert.equal(await guide.isVisible(),true,'guide return failed: '+desc);
    assert.ok(await guide.locator('.ac-card').count()>=2,'context lost: '+desc);
