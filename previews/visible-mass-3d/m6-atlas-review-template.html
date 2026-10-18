@@ -81,6 +81,14 @@ if(!data||data.objects.length!==170)throw Error("Atlas canonical source records 
 const $=id=>document.getElementById(id);
 const imgById=new Map(data.images.map(image=>[image.asset_id,image]));
 const objectById=new Map(data.objects.map(x=>[x.object_id,x]));
+// Resolve photo -> object references from the object ownership matrix.
+// In particular, M5 source photos stay single records even if reused by several subjects.
+const linkedByAsset=new Map(data.images.map(x=>[x.asset_id,[]]));
+for(const obj of data.objects)for(const ref of obj.candidate_assets){
+ const recipients=linkedByAsset.get(ref.asset_id);
+ if(recipients&&!recipients.includes(obj.object_id))recipients.push(obj.object_id);
+}
+const linkedObjectIds=image=>linkedByAsset.get(image.asset_id)||[];
 const ratings=new Map();
 let mode="objects",filterZone="",filterEvidence="",query="",pilotOnly=false;
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -89,6 +97,9 @@ const classified=x=>({
  NO_OBJECT_IMAGE_CANDIDATE:"No object image",
  PROVISIONAL_ORIGINAL_STILL_HOTSPOT:"One shared contextual image · provisional marker",
  EXISTING_OBJECT_IMAGE_CANDIDATE:"Existing inspection-photo candidate",
+ EXISTING_M5_PHOTO_REUSED:"Existing M5 source photograph · reused without duplication",
+ COMPOSITE_COMPONENT_PHOTO_CANDIDATES_UNAPPROVED:"Composite object photographed in separate parts · awaiting approval",
+ COMPOSITE_FIVE_COLOR_PHOTO_CANDIDATES_UNAPPROVED:"Five separately photographed colours · awaiting approval",
  NEW_SOURCE_PHOTO_CANDIDATE:"New sourced photograph · awaiting approval",
  RESEARCH_LEAD_ONLY:"Discovery lead only"
 }[x]||x);
@@ -98,7 +109,7 @@ const stats=[
  [data.objects.length,"physical objects"],[data.zones.length,"subject families"],
  [data.images.filter(x=>x.asset_id.startsWith("EXISTING-")).length,"existing image leads"],
  [sceneCount,"M5 original church photos"],
- [data.objects.filter(x=>x.evidence_status==="NO_OBJECT_IMAGE_CANDIDATE").length,"without image candidates"]
+ [data.objects.filter(x=>x.needs_photo).length,"still needing a qualifying photo"]
 ];
 $("summary").innerHTML=stats.map(([value,label])=>'<div class="stat"><strong>'+value+'</strong><small>'+esc(label)+'</small></div>').join("");
 function linkFor(x){
@@ -177,7 +188,7 @@ function objectCard(item){
 }
 function photoCard(image){
  const object=image.object_id?objectById.get(image.object_id):null;
- const linked=Array.isArray(image.linked_object_ids)?image.linked_object_ids.filter(id=>objectById.has(id)):[];
+ const linked=linkedObjectIds(image);
  return '<article class="record">'+imagePreview(image)+'<div class="body">'+
  '<div class="eyebrow">'+esc(image.role)+' · '+esc(image.asset_id)+'</div>'+
  '<h2 class="heading">'+esc(object?.label||image.venue||"Church photographic viewpoint")+'</h2>'+
@@ -231,9 +242,12 @@ function apply(){
   items=data.objects.filter(x=>(!filterZone||x.zone_id===filterZone)&&(!filterEvidence||x.evidence_status===filterEvidence)&&
    (!pilotOnly||x.pilot_30)&&(!q||[x.object_id,x.label,x.zone,x.canonical_glossary_id,...x.candidate_assets.map(a=>a.asset_id)].join(" ").toLowerCase().includes(q)));
  }else{
-  items=data.images.filter(x=>(!filterZone||(x.object_id&&x.object_id.startsWith(filterZone)))&&
-   (!pilotOnly||(x.object_id&&objectById.get(x.object_id)?.pilot_30))&&
-   (!q||[x.asset_id,x.creator,x.venue,x.role,x.object_id,x.source_url].join(" ").toLowerCase().includes(q)));
+  items=data.images.filter(x=>{
+   const linked=linkedObjectIds(x);
+   return (!filterZone||linked.some(id=>id.startsWith(filterZone)))&&
+    (!pilotOnly||linked.some(id=>objectById.get(id)?.pilot_30))&&
+    (!q||[x.asset_id,x.creator,x.venue,x.role,x.object_id,x.source_url,...linked].join(" ").toLowerCase().includes(q));
+  });
  }
  $("results-note").textContent=items.length+" "+(mode==="objects"?"objects":"source-image records")+" displayed · "+ratings.size+" recorded review decisions. No photos are automatically approved.";
  $("results").innerHTML=items.length?items.map(mode==="objects"?objectCard:photoCard).join(""):'<p>No records match these filters.</p>';
