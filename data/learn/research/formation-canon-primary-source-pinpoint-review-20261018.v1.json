@@ -1,0 +1,164 @@
+{
+  "schema": "AO_FORMATION_CANON_PRIMARY_SOURCE_PINPOINT_REVIEW_V1",
+  "asOf": "2026-10-18",
+  "stage": "EXTERNAL_SOURCE_POINT_CHECK_ONLY_NOT_INDEPENDENT_TEACHING_APPROVAL",
+  "originalOwner": "Folio original 519+15 crosswalk and existing original research supplement records on PR #36",
+  "method": "Targeted web verification of seven existing source-owner draft passages against the specifically cited official/confessional/religious texts; comparison is original meaning/source relevance, not an ecclesiastical imprimatur, accuracy certificate for every clause, transcript verification or French copy approval.",
+  "summary": {
+    "checkedQuestions": 7,
+    "centralClaimsSupportedWithScope": 3,
+    "pinpointCorrectionsRequired": 2,
+    "opponentOriginalEvidenceStillIncomplete": 1,
+    "comparativeContextFurtherReview": 1,
+    "publishedApprovalsGranted": 0
+  },
+  "rules": [
+    "This metadata contains no new answers and must never supersede the original Folio 519+15 Q&A source owner.",
+    "All question titles remain indexed candidates until original full raw chat transcript comparison.",
+    "Source being found on an authentic website is not synonymous with context approval of a draft answer.",
+    "EN/FR drafts remain held, original research paragraphs must not be promoted into a public build.",
+    "Public static availability of research JSON files is NOT prevented by URL query parameter review flags; formal public deployment must exclude or access-control unpublished data."
+  ],
+  "records": [
+    {
+      "id": "PROT-025",
+      "sourcePack": "data/learn/research/formation-ecclesiology-mary-scripture-32-partials-20261013.v1.json",
+      "class": "CORE_CLAIM_RELEVANCE_VERIFIED_PENDING_INDEPENDENT_REVIEW",
+      "key": "CCC-IND",
+      "pinpoints": [
+        {
+          "authority": "Catechism of the Catholic Church §1471",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/x_indulgences.index.html",
+          "why": "Defines an indulgence as remission of temporal punishment for sin already forgiven; §1472–1473 distinguish the consequences of sin"
+        }
+      ],
+      "checkedClaim": "The historical answer correctly distinguishes guilt already forgiven from temporal punishment and does not equate indulgence with buying pardon.",
+      "held": "Conditions, theological commentary, French copy and overall question-level suitability require independent source-owner review."
+    },
+    {
+      "id": "MAR-017",
+      "sourcePack": "data/learn/research/formation-ecclesiology-mary-scripture-32-partials-20261013.v1.json",
+      "class": "CORE_CLAIM_RELEVANCE_VERIFIED_PENDING_INDEPENDENT_REVIEW",
+      "key": "MD",
+      "pinpoints": [
+        {
+          "authority": "Pius XII, Munificentissimus Deus §27",
+          "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+          "why": "Mentions the woman clothed with the sun as one of several traditional scriptural figures interpreted by Scholastic Doctors"
+        },
+        {
+          "authority": "Pius XII, Munificentissimus Deus §44",
+          "url": "https://www.vatican.va/content/pius-xii/en/apost_constitutions/documents/hf_p-xii_apc_19501101_munificentissimus-deus.html",
+          "why": "Solemn definition is bodily Assumption, not exclusive Marian ownership of Revelation 12"
+        }
+      ],
+      "checkedClaim": "Revelation 12 is not a stand-alone eyewitness account of the bodily Assumption; Mary's Assumption is defined separately.",
+      "held": "Multi-layer biblical symbolism and patristic readings need specific exegetical review before public dialogue."
+    },
+    {
+      "id": "BAP-EV-010",
+      "sourcePack": "data/learn/research/formation-baptist-7-partials-20261013.v1.json",
+      "class": "CONFESSIONAL_POSITION_VERIFIED_PENDING_INDEPENDENT_REVIEW",
+      "key": "1689-BAPT",
+      "pinpoints": [
+        {
+          "authority": "Second London Baptist Confession ch.29 §2",
+          "url": "https://www.the1689confession.com/1689/chapter-29",
+          "why": "Restricts proper subjects of Baptism to persons actually professing repentance, faith and obedience"
+        },
+        {
+          "authority": "Catechism of the Catholic Church §§1250–1252",
+          "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_1/iv_who_can_receive_baptism.html",
+          "why": "States Catholic teaching on infant Baptism and gratuitous saving grace"
+        }
+      ],
+      "checkedClaim": "The specific 1689 Baptist confession's adult-profession rationale and Catholic infant-Baptism distinction are accurately represented at the central doctrinal level.",
+      "held": "Do not treat the 1689 confession as representative of every Evangelical group or current Baptist congregation."
+    },
+    {
+      "id": "LUT-011",
+      "sourcePack": "data/learn/research/formation-lutheran-13-partials-20261013.v1.json",
+      "class": "PINPOINT_SOURCE_CORRECTION_REQUIRED",
+      "key": "TRENT",
+      "pinpoints": [
+        {
+          "authority": "Augsburg Confession Article X",
+          "url": "https://bookofconcord.cph.org/en/augsburg-confession/chief_articles/article_x/",
+          "why": "Affirms Body and Blood truly present and distributed but does not itself provide the full Lutheran account of the mode of presence"
+        },
+        {
+          "authority": "Council of Trent Session XIII, ch.IV and canon II",
+          "url": "https://www.papalencyclicals.net/councils/trent/thirteenth-session.htm",
+          "why": "Defines the conversion called transubstantiation. Broad source registry entry naming Session VI/justification is insufficiently precise"
+        },
+        {
+          "authority": "Formula of Concord Solid Declaration VII",
+          "url": "https://thebookofconcord.org/formula-of-concord-solid-declaration/article-vii/",
+          "why": "Necessary additional confessional context for the specific Lutheran understanding of presence and the elements"
+        }
+      ],
+      "checkedClaim": "Correct to distinguish Lutheran true presence from Catholic transubstantiation; false to portray Lutherans as mere memorialists.",
+      "held": "Fix the source-level locator TRENT to Session XIII ch.IV/canon II, and use FC VII for the specifically Lutheran sacramental position, before source-context approval."
+    },
+    {
+      "id": "ERR-009",
+      "sourcePack": "data/learn/research/formation-protestant-errors-enrichment-20261013.v1.json",
+      "class": "PINPOINT_SOURCE_CORRECTION_REQUIRED",
+      "key": "CCC-2111",
+      "pinpoints": [
+        {
+          "authority": "Catechism §2111",
+          "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iii_you_shall_have_no_other_gods_before_me.index.html",
+          "why": "Superstition generally, not the paragraph directly defining occult magic or sorcery"
+        },
+        {
+          "authority": "Catechism §§2116–2117",
+          "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/iii_you_shall_have_no_other_gods_before_me.index.html",
+          "why": "Divination, magic and sorcery are the specific prohibition; stage illusion is a reasoned moral distinction, not explicitly named by the Catechism"
+        }
+      ],
+      "checkedClaim": "A mere card trick or stage illusion is not identical with attempting occult powers; the original draft is a reasonable contextual interpretation.",
+      "held": "Pinpoint the cited definition to §2117 rather than treating §2111 as the specific definition, and identify stage-magic application as inference rather than direct Catechism quotation."
+    },
+    {
+      "id": "PEN-010",
+      "sourcePack": "data/learn/research/formation-pentecostal-17-supplement-20261013.v1.json",
+      "class": "OPPONENT_EVIDENCE_INCOMPLETE",
+      "key": "AG-ST",
+      "pinpoints": [
+        {
+          "authority": "Assemblies of God, Statement of Fundamental Truths §§7–8",
+          "url": "https://ag.org/Beliefs/Statement-of-Fundamental-truths",
+          "why": "Affirms ongoing gifts and speaking in tongues: a continuationist Pentecostal position"
+        }
+      ],
+      "checkedClaim": "Classical Assemblies of God continuationism is documented and should not be confused with cessationism.",
+      "held": "For the precise question whether gifts ceased, a historical cessationist's actual original argument is still absent; Assemblies of God sources alone cannot certify the other party's position."
+    },
+    {
+      "id": "ISL-014",
+      "sourcePack": "data/learn/research/formation-israel-judaism-islam-30-partials-20261013.v1.json",
+      "class": "COMPARATIVE_CONTEXT_REVIEW_REQUIRED",
+      "key": "Q5116",
+      "pinpoints": [
+        {
+          "authority": "Qur'an 5:116",
+          "url": "https://corpus.quran.com/translation.jsp?chapter=5&verse=116",
+          "why": "Jesus and Mary as two deities beside God; does not explicitly identify the three Trinitarian persons"
+        },
+        {
+          "authority": "Quran.com contextual Muslim exegesis",
+          "url": "https://quran.com/5%3A116/answers/32",
+          "why": "Distinguishes critique of treating Mary as divine from critique of the Christian Trinity"
+        },
+        {
+          "authority": "Qur'an 4:171",
+          "url": "https://quran.com/4/171",
+          "why": "Separate verse addressing 'three'"
+        }
+      ],
+      "checkedClaim": "It would be unsupported to claim Qur'an 5:116 explicitly names Mary as the third Trinitarian person.",
+      "held": "Muslim exegetical diversity, Arabic translation and contextual attribution require a reviewer familiar with the sources; avoid homogenizing Islamic exegesis."
+    }
+  ]
+}

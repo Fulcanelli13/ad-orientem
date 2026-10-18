@@ -1,0 +1,363 @@
+{
+  "schema": "AO_FORMATION_EARLY_ROMAN_PRIMACY_SOURCE_ANSWER_BATCH_20261013_V1",
+  "status": "RESEARCH_ONLY_UNPUBLISHED_SOURCE_LINKED_EN_FR",
+  "date": "2026-10-13",
+  "description": "Eight EN/FR research replies from first- to fourth-century original witnesses about Rome, Peter, Irenaeus, Victor, Cyprian, Sardica and Julius; study crosswalk only, no replacement of 141 canonical answers.",
+  "source_registry": [
+    {
+      "id": "CLEMENT-COR",
+      "title": "Roman Church to Corinthians, First Epistle of Clement, chapters 1; 44; 59–63",
+      "url": "https://www.newadvent.org/fathers/1010.htm",
+      "kind": "PRIMITIVE_ROMAN_CHURCH_ORIGINAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "IGNATIUS-ROM",
+      "title": "Ignatius of Antioch, Letter to Romans, salutation and chapters 1–3",
+      "url": "https://www.newadvent.org/fathers/0107.htm",
+      "kind": "APOSTOLIC_FATHER_ORIGINAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "IRENAEUS-III3",
+      "title": "Irenaeus of Lyon, Against Heresies III.3.2–3, Roman Church, Peter and Paul, apostolic succession",
+      "url": "https://www.newadvent.org/fathers/0103303.htm",
+      "kind": "SECOND_CENTURY_CHURCH_ORIGINAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "EUSEBIUS-V",
+      "title": "Eusebius of Caesarea, Church History V.23–25, Victor and the Quartodeciman dispute",
+      "url": "https://www.newadvent.org/fathers/250105.htm",
+      "kind": "ANCIENT_CHURCH_HISTORICAL_SOURCE",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CYPRIAN-UNITY",
+      "title": "Cyprian, De unitate ecclesiae (On Unity of the Church), §§4–5",
+      "url": "https://www.newadvent.org/fathers/050701.htm",
+      "kind": "THIRD_CENTURY_ORIGINAL_TEXT_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CYPRIAN-L70",
+      "title": "Cyprian, Epistle 70 §§2–3, Petrine precedent and episcopal freedom",
+      "url": "https://www.newadvent.org/fathers/050670.htm",
+      "kind": "THIRD_CENTURY_ORIGINAL_TEXT_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "EUSEBIUS-VII",
+      "title": "Eusebius, Church History VII.2–3, Cyprian-Stephen baptism controversy",
+      "url": "https://www.newadvent.org/fathers/250107.htm",
+      "kind": "ANCIENT_CHURCH_HISTORICAL_SOURCE",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SARDICA",
+      "title": "Council of Sardica, canons 3–5 Greek/Latin variants, appeal to Roman bishop",
+      "url": "https://www.newadvent.org/fathers/3815.htm",
+      "kind": "FOURTH_CENTURY_CONCILIAR_ORIGINAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "ATHANASIUS-APOL",
+      "title": "Athanasius, Apologia Contra Arianos, Julius' letter and the Roman synod",
+      "url": "https://www.newadvent.org/fathers/28081.htm",
+      "kind": "FOURTH_CENTURY_PARTICIPANT_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "PAP-ORD-003",
+      "original_title_candidate": "Is the connection between Peter and Rome historically ancient?",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "owner_reuse": "APOL-018|APOL-019",
+      "paragraphs": [
+        {
+          "role": "direct_historical_answer",
+          "text": {
+            "en": "Evidence connecting the Roman Church with Peter is ancient, not a medieval retrojection. Irenaeus, writing in the late second century, expressly describes the Roman Church as founded and organized by Peter and Paul, then names Linus, Anacletus and Clement in its episcopal succession.",
+            "fr": "Les témoignages qui rattachent l'Église romaine à Pierre sont anciens et ne relèvent pas d'une pure projection médiévale. À la fin du IIe siècle, Irénée attribue expressément la fondation et l'organisation de l'Église de Rome à Pierre et Paul, puis énumère la succession épiscopale de Lin, Anaclet et Clément."
+          },
+          "source_ids": [
+            "IRENAEUS-III3"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_objection_and_historical_limits",
+          "text": {
+            "en": "The passage establishes a second-century public succession claim; it is not an eyewitness register from Peter's lifetime nor a complete proof, by itself, of every later papal jurisdictional formulation. The older Roman letter to Corinth supplies independent first-century evidence of Rome's active concern for a distant church, not yet a detailed account of the papal office.",
+            "fr": "Le passage atteste une tradition publique de succession au IIe siècle ; ce n'est ni un registre oculaire contemporain de Pierre ni une démonstration autonome de toutes les formulations juridictionnelles postérieures. La lettre romaine aux Corinthiens témoigne plus tôt de l'intervention de Rome auprès d'une Église éloignée, sans définir à elle seule la papauté ultérieure."
+          },
+          "source_ids": [
+            "CLEMENT-COR",
+            "IRENAEUS-III3"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Distinguish historical witness from retrospective juridical conclusions; verify text translations and exact original original-chat wording before release.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER",
+      "publication_allowed": false,
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY"
+    },
+    {
+      "id": "PAP-ORD-004",
+      "original_title_candidate": "Does Rome intervene outside its own local territory before AD 100?",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "owner_reuse": "APOL-018|APOL-019",
+      "paragraphs": [
+        {
+          "role": "direct_historical_answer",
+          "text": {
+            "en": "Yes. The Roman Church wrote to the troubled Church of Corinth near the end of the first century, urging the reinstatement of unjustly removed ministers and restoration of peace. Chapters 59 and 63 treat resistance to its admonition as a grave matter. This is a real interchurch action before AD 100 in common scholarly dating.",
+            "fr": "Oui. Vers la fin du Ier siècle, l'Église de Rome écrivit à l'Église divisée de Corinthe pour demander le rétablissement de ministres injustement déposés et le retour à la paix. Les chapitres 59 et 63 donnent à cette exhortation une portée grave. Selon la datation usuelle, il s'agit bien d'une intervention avant l'an 100."
+          },
+          "source_ids": [
+            "CLEMENT-COR"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_objection_and_historical_limits",
+          "text": {
+            "en": "The letter speaks in the name of the Roman community and does not simply identify a personal decree by Clement claiming modern universal ordinary jurisdiction. It supports the importance of Roman authority and its early exercise, while a detailed account of its legal form requires additional witnesses.",
+            "fr": "La lettre s'exprime au nom de la communauté romaine ; elle ne se présente pas comme un décret personnel de Clément définissant la juridiction universelle ordinaire au sens moderne. Elle manifeste le poids ancien de l'autorité romaine, mais sa forme juridique détaillée exige d'autres témoignages."
+          },
+          "source_ids": [
+            "CLEMENT-COR",
+            "IRENAEUS-III3"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "The usual late-first-century dating should be discussed as a scholarly estimate, not a date specified in the letter.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER",
+      "publication_allowed": false,
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER"
+    },
+    {
+      "id": "PAP-ORD-005",
+      "original_title_candidate": "Does Ignatius of Antioch treat Rome as just another local church?",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "owner_reuse": "APOL-018|APOL-019",
+      "paragraphs": [
+        {
+          "role": "direct_historical_answer",
+          "text": {
+            "en": "Ignatius of Antioch addresses the Church of Rome with unusually elevated praise in the early second century, calling it a church that 'presides' and associates its primacy with love. It would be misleading to present his Roman salutation as no different in tone from an ordinary local greeting.",
+            "fr": "Au début du IIe siècle, Ignace d'Antioche s'adresse à l'Église de Rome avec des éloges particulièrement solennels, la désignant comme une Église qui « préside » et associant cette préséance à la charité. Réduire cette salutation à une formule banale envers une simple Église locale serait trompeur."
+          },
+          "source_ids": [
+            "IGNATIUS-ROM"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_objection_and_historical_limits",
+          "text": {
+            "en": "The Greek expressions about presidency and love require philological care. Ignatius does not there set out the precise powers of Vatican I, and readers must not translate a liturgical or moral primacy automatically into a fully articulated medieval legal system. Special honour is attested; the precise kind of authority remains debated.",
+            "fr": "Les expressions grecques concernant la présidence et la charité demandent une étude philologique. Ignace n'y expose pas les pouvoirs définis à Vatican I ; on ne saurait faire automatiquement d'une préséance morale ou liturgique le système juridique médiéval. Un honneur exceptionnel est attesté, mais sa portée précise demeure discutée."
+          },
+          "source_ids": [
+            "IGNATIUS-ROM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Distinguish historical witness from retrospective juridical conclusions; verify text translations and exact original original-chat wording before release.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER",
+      "publication_allowed": false,
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER"
+    },
+    {
+      "id": "PAP-ORD-006",
+      "original_title_candidate": "What does Irenaeus mean when he says every Church must agree with Rome?",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "owner_reuse": "APOL-018|APOL-019",
+      "paragraphs": [
+        {
+          "role": "direct_historical_answer",
+          "text": {
+            "en": "Irenaeus, Against Heresies III.3.2, appeals to Rome's publicly transmitted apostolic doctrine because of its exceptional standing and lists its bishops. His Latin expression commonly rendered 'preeminent authority' (*potentiorem principalitatem*) is evidence of Rome's special status in a second-century polemic against secret gnostic teachings.",
+            "fr": "Dans Contre les hérésies III,3,2, Irénée fait appel à la doctrine apostolique publiquement transmise à Rome, en raison de sa place éminente, et dresse la liste de ses évêques. L'expression latine souvent rendue par « autorité prééminente » (*potentiorem principalitatem*) témoigne du rang singulier de Rome dans une controverse du IIe siècle contre les doctrines gnostiques secrètes."
+          },
+          "source_ids": [
+            "IRENAEUS-III3"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_objection_and_historical_limits",
+          "text": {
+            "en": "Neither the phrase 'every church must agree' nor the Latin wording may be detached from Irenaeus' argument about doctrinal continuity. Translations dispute nuances of 'convenire' and 'principalitas'; moreover the Greek original survives here only in a mediated tradition. This witness supports the Roman primacy argument but cannot alone specify every subsequent claim of immediate universal jurisdiction.",
+            "fr": "Ni « toute Église doit s'accorder » ni le vocabulaire latin ne doivent être isolés de l'argument sur la continuité doctrinale. La traduction de « convenire » et de « principalitas » est discutée ; le grec original n'est pas ici conservé dans son intégralité. Ce témoignage nourrit l'argument de la primauté romaine sans préciser à lui seul toutes les affirmations postérieures de juridiction universelle immédiate."
+          },
+          "source_ids": [
+            "IRENAEUS-III3"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Distinguish historical witness from retrospective juridical conclusions; verify text translations and exact original original-chat wording before release.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER",
+      "publication_allowed": false,
+      "crosswalk_status_at_authoring": "PARTIAL_ANSWER_ONLY"
+    },
+    {
+      "id": "PAP-ORD-007",
+      "original_title_candidate": "Did Pope Victor act as though Rome had authority beyond Italy?",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "owner_reuse": "APOL-018|APOL-019",
+      "paragraphs": [
+        {
+          "role": "direct_historical_answer",
+          "text": {
+            "en": "Yes. During the late-second-century disagreement over the date of Easter, Victor, bishop of Rome, attempted to exclude Asian Quartodeciman communities from ecclesial communion. Eusebius, Church History V.24, expressly records that action and its wider geographic scope.",
+            "fr": "Oui. Lors de la querelle pascale de la fin du IIe siècle, Victor, évêque de Rome, tenta d'exclure de la communion ecclésiale des communautés quartodécimanes d'Asie. Eusèbe (Histoire ecclésiastique V,24) rapporte expressément cette action et son extension au-delà de l'Italie."
+          },
+          "source_ids": [
+            "EUSEBIUS-V"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_objection_and_historical_limits",
+          "text": {
+            "en": "Other bishops, including Irenaeus of Lyons, reproved Victor and urged him to preserve peace rather than sever communion over divergent ancient practices. This is strong evidence that Rome acted on a wider stage, but whether the attempted sanction took full effect and what precise power other bishops recognized remain distinct historical questions.",
+            "fr": "D'autres évêques, dont Irénée de Lyon, reprirent Victor et le pressèrent de préserver la paix malgré la diversité des usages antiques. Cela montre nettement l'intervention de Rome à l'échelle de plusieurs Églises ; toutefois, l'efficacité de la sanction tentée et la compétence exacte reconnue par les autres évêques demeurent des questions distinctes."
+          },
+          "source_ids": [
+            "EUSEBIUS-V"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Distinguish historical witness from retrospective juridical conclusions; verify text translations and exact original original-chat wording before release.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER",
+      "publication_allowed": false,
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER"
+    },
+    {
+      "id": "PAP-ORD-008",
+      "original_title_candidate": "Does Cyprian simply teach modern papal monarchy?",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "owner_reuse": "APOL-018|APOL-019",
+      "paragraphs": [
+        {
+          "role": "direct_historical_answer",
+          "text": {
+            "en": "No. Cyprian's On the Unity of the Church uses Peter as a sign and foundation of episcopal unity, but insists also that the episcopate is one and shared among bishops. It cannot simply be paraphrased as an unqualified copy of modern papal monarchy.",
+            "fr": "Non. Dans L'Unité de l'Église, Cyprien voit en Pierre un signe et un fondement de l'unité épiscopale, tout en affirmant que l'épiscopat est un et partagé entre les évêques. Le texte ne peut se résumer à une reproduction sans nuance de la monarchie pontificale moderne."
+          },
+          "source_ids": [
+            "CYPRIAN-UNITY"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_objection_and_historical_limits",
+          "text": {
+            "en": "During the third-century baptism controversy he differed sharply from Stephen of Rome; one letter cites Peter's humility when corrected by Paul rather than invoking unchecked superiority. These texts do not prove that Cyprian denied every Petrine precedence: his positive unity passages and his conflict with Rome must be read together, including the disputed textual recensions.",
+            "fr": "Au cours de la controverse baptismale du IIIe siècle, il s'opposa fortement à Étienne de Rome ; une lettre invoque l'humilité de Pierre corrigé par Paul plutôt qu'une supériorité sans limite. Cela ne prouve pas que Cyprien ait nié toute préséance pétrinienne : ses passages sur l'unité et son conflit romain doivent être lus ensemble, en tenant compte des recensions textuelles discutées."
+          },
+          "source_ids": [
+            "CYPRIAN-L70",
+            "EUSEBIUS-VII",
+            "CYPRIAN-UNITY"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Distinguish historical witness from retrospective juridical conclusions; verify text translations and exact original original-chat wording before release.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER",
+      "publication_allowed": false,
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER"
+    },
+    {
+      "id": "PAP-ORD-009",
+      "original_title_candidate": "Was appeal to Rome recognized in the fourth century?",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "owner_reuse": "APOL-018|APOL-019",
+      "paragraphs": [
+        {
+          "role": "direct_historical_answer",
+          "text": {
+            "en": "Yes, fourth-century conciliar legislation recognises a specific right of recourse to Rome in certain episcopal disputes. Sardica's canons 3–5 envisage a deposed bishop's appeal to the Roman bishop, who may cause a case to be reexamined and authorize judges to hear it.",
+            "fr": "Oui, une législation conciliaire du IVe siècle reconnaît un recours particulier à Rome dans certains litiges épiscopaux. Les canons 3–5 de Sardique prévoient l'appel d'un évêque déposé à l'évêque de Rome, lequel peut faire réexaminer l'affaire et charger d'autres juges de l'instruire."
+          },
+          "source_ids": [
+            "SARDICA"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_objection_and_historical_limits",
+          "text": {
+            "en": "The council's Greek and Latin versions have differences that matter to procedure. Sardica was not Nicaea I and must not be cited as a universal Nicene canon; the provisions show a historical form of Roman appellate competence without by themselves settling its geographic reception or the later extent of papal jurisdiction.",
+            "fr": "Les versions grecque et latine présentent des variantes qui comptent pour la procédure. Sardique ne se confond pas avec Nicée I et ne doit pas être cité comme un canon universel nicéen ; ces dispositions attestent une forme historique d'appel à Rome, sans suffire à définir leur réception géographique ni toute la juridiction pontificale ultérieure."
+          },
+          "source_ids": [
+            "SARDICA"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Distinguish historical witness from retrospective juridical conclusions; verify text translations and exact original original-chat wording before release.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER",
+      "publication_allowed": false,
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER"
+    },
+    {
+      "id": "PAP-ORD-010",
+      "original_title_candidate": "Did Pope Julius exercise appellate authority in the Athanasius crisis?",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "owner_reuse": "APOL-018|APOL-019",
+      "paragraphs": [
+        {
+          "role": "direct_historical_answer",
+          "text": {
+            "en": "Yes. Athanasius' Apologia Contra Arianos preserves Pope Julius I's involvement in the episcopal disputes of the 340s. It records correspondence, Julius' proposed hearing, the Roman synod's examination of Athanasius' defence and Rome's affirmation of communion with him.",
+            "fr": "Oui. L'Apologie contre les ariens d'Athanase conserve le souvenir de l'intervention du pape Jules Ier dans les conflits épiscopaux des années 340. Elle rapporte les échanges épistolaires, la proposition d'une audience par Jules, l'examen d'Athanase au synode romain et la confirmation de la communion avec lui."
+          },
+          "source_ids": [
+            "ATHANASIUS-APOL"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_objection_and_historical_limits",
+          "text": {
+            "en": "The case proves Roman active involvement in a contested episcopal cause but should not be presented as a neat uncontested judicial trial accepted by every eastern party. The very letters show opponents refusing the Roman hearing and arguing over procedures. Compare with later Sardican appellate canons without anachronistically making one the procedural basis of the other.",
+            "fr": "Cette affaire montre l'intervention réelle de Rome dans un litige épiscopal, mais non un procès incontesté accepté par toutes les parties orientales. Les lettres témoignent du refus d'une audience romaine et d'un désaccord sur la procédure. On peut comparer cet épisode aux canons d'appel de Sardique, sans faire anachroniquement de ceux-ci le fondement de celui-là."
+          },
+          "source_ids": [
+            "ATHANASIUS-APOL",
+            "SARDICA"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Distinguish historical witness from retrospective juridical conclusions; verify text translations and exact original original-chat wording before release.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER",
+      "publication_allowed": false,
+      "crosswalk_status_at_authoring": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

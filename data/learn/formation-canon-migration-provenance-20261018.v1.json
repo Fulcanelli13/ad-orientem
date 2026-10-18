@@ -1,0 +1,127 @@
+{
+  "schema": "AO_CANON_SOURCE_MIGRATION_SHA_P3_V1",
+  "date": "2026-10-18",
+  "source": {
+    "repository": "Fulcanelli13/folio-core",
+    "draftPr": 36,
+    "ref": "research/formation-completeness-ledger-20261013",
+    "pinnedAtReadHead": "44f00c1272ce3ee40b65bab31753783ea9186915"
+  },
+  "destination": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "draftPr": 1404,
+    "ref": "feature/living-church-p3-character-folio-20261018"
+  },
+  "policy": "Unaltered original Folio source byte blobs at SAME source paths, staged only for editorial review on P3; do not create parallel prose. Retain current Folio original owner as authoritative until formal repo convergence. No publication approval.",
+  "sourceFileCount": 27,
+  "files": [
+    {
+      "path": "data/learn/research/formation-ai-6-partials-20261013.v1.json",
+      "gitBlobSha": "05b60c5919cb929ace1a12155e795f443e165440"
+    },
+    {
+      "path": "data/learn/research/formation-ai-8-supplement-20261013.v1.json",
+      "gitBlobSha": "3ecd6b347f4430ad1675e598a9f396596dbd7f56"
+    },
+    {
+      "path": "data/learn/research/formation-anglican-atheism-24-supplement-20261013.v1.json",
+      "gitBlobSha": "ff1426f869d5a60740eb96f1615528898c4377d8"
+    },
+    {
+      "path": "data/learn/research/formation-ecclesiology-mary-scripture-32-partials-20261013.v1.json",
+      "gitBlobSha": "cf155fd95b133f12e16b060b684bcf93fd35a38b"
+    },
+    {
+      "path": "data/learn/research/formation-atheism-12-partials-20261013.v1.json",
+      "gitBlobSha": "4cf6b85ab78bee01382a7280b4be5b9da82fd0cc"
+    },
+    {
+      "path": "data/learn/research/formation-baptist-18-supplement-20261013.v1.json",
+      "gitBlobSha": "0becb6bce1025f2d9ca1cc8e60674aa86a2156e6"
+    },
+    {
+      "path": "data/learn/research/formation-baptist-7-partials-20261013.v1.json",
+      "gitBlobSha": "02879f271ad2a64fd5b0875cd4964e9021cfced3"
+    },
+    {
+      "path": "data/learn/research/formation-patristics-bioethics-morals-25-partials-20261013.v1.json",
+      "gitBlobSha": "b98a89ca8bb228d546bb1fb5f1aca02d0587c4dc"
+    },
+    {
+      "path": "data/learn/research/formation-historical-supplements-batch3-20261013.v1.json",
+      "gitBlobSha": "28f03ee407dc775bbc30ccdd6a0eacd1ab81b48f"
+    },
+    {
+      "path": "data/learn/research/formation-buddhism-hinduism-20-supplement-20261013.v1.json",
+      "gitBlobSha": "2ea7320175fd0a623750b23e85d070f7753d6eaa"
+    },
+    {
+      "path": "data/learn/research/formation-buddhism-hinduism-5-partials-20261013.v1.json",
+      "gitBlobSha": "716e32572517590c7b362d6e8417c9627de8f5b3"
+    },
+    {
+      "path": "data/learn/research/formation-protestant-errors-enrichment-20261013.v1.json",
+      "gitBlobSha": "1490bb0fdf1837d012559aa37b2879aaa85b2227"
+    },
+    {
+      "path": "data/learn/research/formation-israel-judaism-islam-30-partials-20261013.v1.json",
+      "gitBlobSha": "ac9be72a39c27e0db577d215cb46fb4bed6eedb2"
+    },
+    {
+      "path": "data/learn/research/formation-islam-15-supplement-20261013.v1.json",
+      "gitBlobSha": "d6bd50ff56046038590cf4c716d1740e7e9fe5e9"
+    },
+    {
+      "path": "data/learn/research/formation-lutheran-12-supplement-20261013.v1.json",
+      "gitBlobSha": "336cbea0741b017bcce9dd90adf02e4f4a30c7b9"
+    },
+    {
+      "path": "data/learn/research/formation-lutheran-13-partials-20261013.v1.json",
+      "gitBlobSha": "2be4ae1ac77662f96a5fd6a68d972b0b51b63455"
+    },
+    {
+      "path": "data/learn/research/formation-historical-supplements-batch2-20261013.v1.json",
+      "gitBlobSha": "2d7fb5b41872ac88f0b295142529fa7245762f6d"
+    },
+    {
+      "path": "data/learn/research/formation-orthodoxy-12-supplement-20261013.v1.json",
+      "gitBlobSha": "b0a4e65da2a70ccd9faae01423d885038e5ea383"
+    },
+    {
+      "path": "data/learn/research/formation-orthodoxy-13-partials-20261013.v1.json",
+      "gitBlobSha": "9e68ef1bdc20ab4e617160e72748034cebde7b7f"
+    },
+    {
+      "path": "data/learn/research/formation-papacy-original-witnesses-20261013.v1.json",
+      "gitBlobSha": "04a3e4708f960fad718781e04180f41203dd1a9b"
+    },
+    {
+      "path": "data/learn/research/formation-pentecostal-17-supplement-20261013.v1.json",
+      "gitBlobSha": "bb8e6c709137719f0f934c66002f3250a1b19ce6"
+    },
+    {
+      "path": "data/learn/research/formation-pentecostal-8-partials-20261013.v1.json",
+      "gitBlobSha": "12531aa3c5718ec65fd32cd1ca562b63e681c7ec"
+    },
+    {
+      "path": "data/learn/research/formation-reformed-19-supplement-20261013.v1.json",
+      "gitBlobSha": "8852aea28d3203829c660bc4b7722aa9f94900b8"
+    },
+    {
+      "path": "data/learn/research/formation-restorationist-25-supplement-20261013.v1.json",
+      "gitBlobSha": "d675f587b3373c1dbf116862345bceda0be6cd5e"
+    },
+    {
+      "path": "data/learn/research/formation-wesleyan-21-supplement-20261013.v1.json",
+      "gitBlobSha": "134350dbd35469da484a98a6cd1c20a974f121d3"
+    },
+    {
+      "path": "data/learn/formation-historical-answer-crosswalk-20261013.v1.json",
+      "gitBlobSha": "6e55d43078bae00a2bda50536b9c956d4f45b3f1"
+    },
+    {
+      "path": "data/learn/research/formation-new-15-indexed-answer-adequacy-20261014.v1.json",
+      "gitBlobSha": "fc137201c713b2f4459f510dfe0af1514010ec3f"
+    }
+  ]
+}

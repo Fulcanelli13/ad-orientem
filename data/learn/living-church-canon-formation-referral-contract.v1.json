@@ -10,9 +10,16 @@
   ],
   "existingAppState": {
     "pr": "#1404 P3 stacked draft",
-    "currentlySupported": "Original photographic questions, Ask the Church objectives, source-owned Mass Explorer navigation",
+    "currentlySupported": "Original photographic questions, Ask objectives, native Mass Explorer return, and source-owned 534-question Canon research preview behind a fourth explicit review flag",
     "apologeticsQuestionAnswersAvailableInP3": false,
-    "publicLaunchApproved": false
+    "publicLaunchApproved": false,
+    "apologeticsResearchReviewAvailableInP3": true,
+    "canonSourceReader": "src/learn/living-church-canon-research-reader.mjs",
+    "canonResearchStage": "src/learn/living-church-canon-dialogue-ui.mjs",
+    "requiredResearchPreviewFlag": "aoCanonResearchReview=1",
+    "originalSourceFileMirrorCount": 27,
+    "byteIdenticalOriginalFilesVerified": 27,
+    "canonResearchBrowserQAAcceptance": "PASSED_390_AND_1280_IN_P3_CI_39128414801"
   },
   "originalResearchOwner": {
     "repo": "Fulcanelli13/folio-core",
@@ -43,21 +50,22 @@
     "meaning": "28 older-only IDs from ad-orientem PR #1101; research pointers, not approved new answer titles or 28 new full questions."
   },
   "canonIntegrationConditions": [
-    "Merge or otherwise safely reconcile Folio #36 into the actual Ad Orientem content owner with original provenance, keeping answers in one source store; never fetch private draft files in production.",
+    "The 27 original Folio source blobs have been copied byte-identically to the existing canonical paths in this P3 research draft. Formal cross-repository ownership and final merger remain pending; never fetch private draft files in public production.",
     "Retain the exact existing historical question ID, current source owner ID and original supplement ID; never substitute a new generic Canon answer.",
     "Resolve direct, partial and initially-unaddressed questions through their existing source-owned paragraphs and real source witnesses before making answers available.",
-    "Allow preview-only question browsing once an exact local source mirror/commit identity is validated, without exposing unpublished answer bodies.",
-    "Gate individual answer display by original document/context review, doctrinal/editorial approval, EN/FR parity, any applicable rights and native route acceptance.",
+    "Show original-source candidate question titles and answer paragraphs only in explicitly gated editorial review, with permanent draft-status disclosure and no attribution as speech of the historical character.",
+    "Public answer delivery remains blocked until each source paragraph has sufficient original context, doctrinal/editorial approval, EN/FR review, rights and native route acceptance.",
     "Retain Ask the Church 7-objective/26-branch router as global objective chooser; Canon is the human-readable guide for apologetics, not a second objective engine.",
     "Preserve P3 source photo/pose/object, guide selection and return state. Do not modify LIVE 65, Simple or Missal reader or bypass P3 publication locks.",
     "Do not render character speech as a historical priest quotation or imply the image itself certifies the teaching."
   ],
   "guardedRoute": {
-    "status": "BLOCKED_RESEARCH_SOURCE_NOT_CANONICALLY_IMPORTED_OR_APPROVED",
+    "status": "REVIEW_ONLY_ORIGINAL_SOURCE_MIRROR_PUBLICATION_BLOCKED",
     "publicAnswerRoute": null,
     "deepLink": null,
     "answerContentEmbedded": false,
-    "questionTitleContentEmbedded": false
+    "questionTitleContentEmbedded": false,
+    "privateReviewAnswerPath": "EXPLICIT_FOUR_FLAG_RESEARCH_PREVIEW_ONLY"
   },
   "acceptance": {
     "preserveExistingSourceRegistry": true,

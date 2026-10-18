@@ -1,0 +1,295 @@
+{
+  "schema": "AO_FORMATION_BUDDHISM_HINDUISM_PARTIAL_ENRICHMENTS_20261013_V1",
+  "date": "2026-10-13",
+  "status": "FIVE_BILINGUAL_PARTIAL_ANSWER_DRAFTS_RESEARCH_ONLY",
+  "description": "Five historically partial BUD/HIN questions supplied with two EN/FR source-linked paragraphs each; preserves canonical existing APOL owner and does not add a new dossier.",
+  "source_registry": [
+    {
+      "id": "SN56",
+      "title": "SN 56.11, Noble Eightfold Path and Four Noble Truths",
+      "url": "https://www.dhammatalks.org/suttas/SN/SN56_11.html",
+      "kind": "BUDDHIST_PRIMARY_TEXT_EN_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DHAMMAPADA",
+      "title": "Dhammapada, canonical Buddhist ethical verses",
+      "url": "https://www.dhammatalks.org/suttas/KN/Dhp/",
+      "kind": "BUDDHIST_PRIMARY_TEXT_EN_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SN22",
+      "title": "SN 22.59, no-self and aggregates",
+      "url": "https://www.dhammatalks.org/suttas/SN/SN22_59.html",
+      "kind": "BUDDHIST_PRIMARY_TEXT_EN_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CHAND-6-8-7",
+      "title": "Chāndogya Upaniṣad VI.8.7, Sanskrit and translation",
+      "url": "https://www.wisdomlib.org/hinduism/book/chandogya-upanishad-english/d/doc239302.html",
+      "kind": "HINDU_PRIMARY_TEXT_EN_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "GITA-4-7",
+      "title": "Bhagavad Gītā IV.7, divine manifestation in ages, original Sanskrit and multiple traditional commentaries",
+      "url": "https://www.gitasupersite.iitk.ac.in/srimad?choose=1&etadi=1&etassa=1&etradi=1&etsiva=1&etssa=1&field_chapter_value=4&field_nsutra_value=7&language=dv&setgb=1",
+      "kind": "HINDU_PRIMARY_TEXT_WITH_SCHOOL_COMMENTARIES",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "GITA-4-8",
+      "title": "Bhagavad Gītā IV.8, repeated divine manifestation, multiple Hindu traditional commentaries",
+      "url": "https://www.gitasupersite.iitk.ac.in/srimad?choose=1&etadi=1&etassa=1&etradi=1&etssa=1&field_chapter_value=4&field_nsutra_value=8&language=ro",
+      "kind": "HINDU_PRIMARY_TEXT_WITH_SCHOOL_COMMENTARIES",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "GITA-18-66",
+      "title": "Bhagavad Gītā XVIII.66, surrender to Krishna",
+      "url": "https://www.vidhyamitra.com/bhagavad-gita/18/66",
+      "kind": "HINDU_PRIMARY_TEXT_EN_TRANSLATIONS",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "NOSTRA",
+      "title": "Second Vatican Council, Nostra aetate §2 on Buddhism and Hinduism",
+      "url": "https://press.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+      "kind": "CATHOLIC_ORIGINAL_MAGISTERIAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "MEDIT",
+      "title": "CDF, Orationis formas §§2–3, 12–15, 1989",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19891015_meditazione-cristiana_en.html",
+      "kind": "CATHOLIC_ORIGINAL_MAGISTERIAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC-INC",
+      "title": "Catechism of the Catholic Church §§461–483, the one Incarnation and two natures",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/artcile_3.index.html",
+      "kind": "CATHOLIC_ORIGINAL_MAGISTERIAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC-INC-FR",
+      "title": "Compendium du Catéchisme §86–89, Incarnation en français",
+      "url": "https://press.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
+      "kind": "CATHOLIC_ORIGINAL_MAGISTERIAL_TEXT_FR",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "BUD-009",
+      "original_title_candidate": "Does Buddhism have serious ethics if there is no Creator?",
+      "canonical_existing_owner_ids": [
+        "APOL-047",
+        "APOL-049"
+      ],
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_question_answer",
+          "text": {
+            "en": "Yes. Buddhism teaches binding ethical precepts independently of belief in a creator God. The Noble Eightfold Path includes right speech, action and livelihood, while the Dhammapada repeatedly commends nonviolence, restraint and compassion. A non-theistic cosmology does not entail moral indifference.",
+            "fr": "Oui. Le bouddhisme enseigne des prescriptions morales indépendamment de la croyance en un Dieu créateur. Le Noble Sentier octuple comporte parole, action et moyens d'existence justes ; le Dhammapada loue la non-violence, la maîtrise de soi et la compassion. Une cosmologie non théiste n'implique pas l'indifférence morale."
+          },
+          "source_ids": [
+            "SN56",
+            "DHAMMAPADA"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_grounded_comparison",
+          "text": {
+            "en": "The traditions differ as to karma, monastic discipline and why particular conduct helps liberation. The Catholic position can acknowledge actual Buddhist virtues, as Nostra aetate §2 does, while distinguishing the Christian moral order grounded in creation and grace. Avoid the false rebuttal that Buddhism cannot have ethics because it does not confess the Trinity.",
+            "fr": "Les traditions divergent sur le karma, les règles monastiques et les raisons pour lesquelles une conduite contribue à la libération. La position catholique peut reconnaître de réelles vertus bouddhiques, comme Nostra aetate §2, tout en distinguant l'ordre moral chrétien fondé sur la création et la grâce. Il serait erroné de nier toute morale bouddhique au seul motif qu'elle ne confesse pas la Trinité."
+          },
+          "source_ids": [
+            "SN56",
+            "NOSTRA"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "review_limit": "Primary source context, Buddhist/Hindu doctrinal expertise, original historical transcript and native French review required."
+    },
+    {
+      "id": "BUD-012",
+      "original_title_candidate": "What is Christianity’s deepest disagreement with Buddhism?",
+      "canonical_existing_owner_ids": [
+        "APOL-006",
+        "APOL-047"
+      ],
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_question_answer",
+          "text": {
+            "en": "The deepest disagreement is not whether compassion or disciplined life matters; both traditions value them. Classical Buddhist soteriology diagnoses suffering through craving and ignorance and seeks its cessation with a path of liberation, while Christianity centres on the personal Creator, divine grace, the Incarnate Redeemer and resurrection of the person.",
+            "fr": "La divergence fondamentale n'est pas l'importance de la compassion ou de l'ascèse, reconnue dans les deux traditions. La sotériologie bouddhique classique explique la souffrance par la soif et l'ignorance et cherche leur cessation ; le christianisme repose sur le Créateur personnel, la grâce divine, le Rédempteur incarné et la résurrection de la personne."
+          },
+          "source_ids": [
+            "SN56",
+            "CCC-INC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_grounded_comparison",
+          "text": {
+            "en": "Nor can the Buddhist doctrines of no-self and cessation simply be translated into the Christian beatific vision. Nostra aetate §2 explicitly acknowledges Buddhist aspirations without equating them with the Gospel; disagreement must be explained without accusing Buddhist schools of denying all moral goodness.",
+            "fr": "La doctrine bouddhique du non-soi et la cessation ne peuvent pas davantage être traduites automatiquement par la vision béatifique chrétienne. Nostra aetate §2 reconnaît expressément les aspirations bouddhiques sans les confondre avec l'Évangile ; il faut exposer la divergence sans nier la bonté de toute éthique bouddhique."
+          },
+          "source_ids": [
+            "SN22",
+            "NOSTRA"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "review_limit": "Primary source context, Buddhist/Hindu doctrinal expertise, original historical transcript and native French review required."
+    },
+    {
+      "id": "HIN-004",
+      "original_title_candidate": "Is Advaita basically Christian mysticism under another vocabulary?",
+      "canonical_existing_owner_ids": [
+        "APOL-006"
+      ],
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_question_answer",
+          "text": {
+            "en": "No. Advaita Vedānta traditionally identifies the deepest self with non-dual Brahman as interpreted through Upaniṣadic teachings such as tat tvam asi (Chāndogya VI.8.7). Catholic mysticism instead describes a creature's union with God by freely given grace, without the creature becoming numerically identical with the divine essence.",
+            "fr": "Non. L'Advaita Vedānta identifie traditionnellement le soi profond au Brahman non duel, notamment en interprétant tat tvam asi (Chāndogya VI,8,7). La mystique catholique parle au contraire de l'union d'une créature à Dieu par la grâce librement donnée, sans que la créature devienne numériquement identique à l'essence divine."
+          },
+          "source_ids": [
+            "CHAND-6-8-7",
+            "MEDIT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_grounded_comparison",
+          "text": {
+            "en": "The Catholic CDF instruction Orationis formas insists that Christian prayer remains personal dialogue and communion with the Trinity, not fusion that erases God and creature. But Hindu Vedānta is not uniformly Advaita; qualified-nondualist and dualist interpretations should not be held to an Advaita claim they explicitly reject.",
+            "fr": "L'instruction Orationis formas rappelle que la prière chrétienne demeure dialogue personnel et communion avec la Trinité, non fusion qui effacerait Dieu et la créature. Le Vedānta hindou ne se réduit pourtant pas à l'Advaita : les interprétations non dualistes qualifiées et dualistes ne doivent pas être tenues pour responsables d'une thèse qu'elles contestent."
+          },
+          "source_ids": [
+            "MEDIT",
+            "CHAND-6-8-7"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "review_limit": "Primary source context, Buddhist/Hindu doctrinal expertise, original historical transcript and native French review required."
+    },
+    {
+      "id": "HIN-010",
+      "original_title_candidate": "Are Hindu avatars equivalent to the Incarnation?",
+      "canonical_existing_owner_ids": [
+        "APOL-010",
+        "APOL-006"
+      ],
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_question_answer",
+          "text": {
+            "en": "Not as an exact doctrinal equivalent. In Bhagavad Gītā IV.7–8 Krishna describes manifestation or divine appearance when righteousness declines, recurring from age to age. Catholic doctrine holds instead that the eternal Son assumed one complete human nature in the uniquely historical Incarnation of Jesus Christ, without ceasing to be God.",
+            "fr": "Pas comme équivalent doctrinal exact. Dans Bhagavad Gītā IV,7–8, Krishna évoque sa manifestation lorsque le dharma décline, revenant d'âge en âge. La doctrine catholique enseigne que le Fils éternel a assumé une nature humaine complète dans l'Incarnation historiquement unique de Jésus-Christ, sans cesser d'être Dieu."
+          },
+          "source_ids": [
+            "GITA-4-7",
+            "GITA-4-8",
+            "CCC-INC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_grounded_comparison",
+          "text": {
+            "en": "The differing Hindu interpreters discuss whether 'manifestation' and 'birth' signify divine descent and in what manner. They must be allowed to state their own view. Calling Jesus simply another recurring avatar would contradict the Catholic confession of one divine Person with two natures; calling every Hindu avatar a mere human disguise would misstate some Vaiṣṇava interpretations.",
+            "fr": "Les commentateurs hindous divergent sur le sens de « manifestation » et de « naissance » divines. Il faut restituer leur propre doctrine. Assimiler Jésus à un avatar récurrent contredit la confession catholique d'une seule Personne divine en deux natures ; faire de tout avatar une simple apparence humaine déformerait certaines interprétations vaishnava."
+          },
+          "source_ids": [
+            "GITA-4-8",
+            "CCC-INC",
+            "CCC-INC-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "review_limit": "Primary source context, Buddhist/Hindu doctrinal expertise, original historical transcript and native French review required."
+    },
+    {
+      "id": "HIN-013",
+      "original_title_candidate": "What is Christianity’s deepest disagreement with Hindu metaphysics?",
+      "canonical_existing_owner_ids": [
+        "APOL-006",
+        "APOL-047"
+      ],
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_question_answer",
+          "text": {
+            "en": "There is no one Hindu metaphysics against which Christianity has a single identical objection. In Advaita, the apparent plurality of selves is interpreted under the nonduality of Brahman; in theistic Vaiṣṇava traditions personal devotion to a supreme Lord is fundamental. Christianity instead distinguishes an uncreated triune God from created beings and holds that God redeemed humanity through the unique Incarnation.",
+            "fr": "Il n'existe pas une unique métaphysique hindoue à laquelle le christianisme répondrait par une seule objection uniforme. L'Advaita interprète la pluralité des soi à la lumière du Brahman non duel ; les traditions vaishnava théistes donnent une place fondamentale à la dévotion personnelle envers le Seigneur suprême. Le christianisme distingue au contraire le Dieu trinitaire incréé des êtres créés et confesse la Rédemption dans l'Incarnation unique."
+          },
+          "source_ids": [
+            "CHAND-6-8-7",
+            "GITA-18-66",
+            "CCC-INC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_grounded_comparison",
+          "text": {
+            "en": "Some verbal similarities—grace, knowledge, devotion, liberation—mask different accounts of the self, divine action, multiple lives and the ultimate end. Nostra aetate §2 calls Catholics to acknowledge genuine goods in Hindu teachings while professing Christ, not to treat contradictory metaphysical systems as identical revelations.",
+            "fr": "Des ressemblances verbales — grâce, connaissance, dévotion, délivrance — recouvrent des doctrines différentes du soi, de l'action divine, des renaissances et de la fin ultime. Nostra aetate §2 invite les catholiques à reconnaître de vrais biens dans les enseignements hindous tout en professant le Christ, non à présenter des métaphysiques contradictoires comme des révélations identiques."
+          },
+          "source_ids": [
+            "NOSTRA",
+            "GITA-18-66",
+            "CCC-INC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "review_limit": "Primary source context, Buddhist/Hindu doctrinal expertise, original historical transcript and native French review required."
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

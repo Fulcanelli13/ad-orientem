@@ -1,0 +1,442 @@
+{
+  "schema": "AO_FORMATION_ORTHODOXY_13_PARTIAL_ENRICHMENTS_V1",
+  "date": "2026-10-13",
+  "status": "SOURCE_LINKED_BILINGUAL_RESEARCH_NOT_APPROVED",
+  "source_registry": [
+    {
+      "id": "CH",
+      "title": "Chieti Joint Orthodox-Catholic Commission (2016)",
+      "url": "https://www.christianunity.va/content/unitacristiani/en/dialoghi/sezione-orientale/chiese-ortodosse-di-tradizione-bizantina/commissione-mista-internazionale-per-il-dialogo-teologico-tra-la/documenti-di-dialogo/testo-in-inglese1.html",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AL",
+      "title": "Alexandria Joint Orthodox-Catholic Commission (2023)",
+      "url": "https://www.christianunity.va/content/unitacristiani/fr/dialoghi/sezione-orientale/chiese-ortodosse-di-tradizione-bizantina/commissione-mista-internazionale-per-il-dialogo-teologico-tra-la/documenti-di-dialogo/document-d-alexandrie---synodalite-et-primaute-au-deuxieme-mille.html",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "FLO",
+      "title": "Council of Florence, Laetentur caeli, 1439",
+      "url": "https://www.vatican.va/content/eugenius-iv/la/documents/bulla-laetentur-caeli-6-iulii-1439.html",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "C681",
+      "title": "Sixth Ecumenical Council of Constantinople, session XIII and Honorius condemnation (translated acts)",
+      "url": "https://www.newadvent.org/fathers/3813.htm",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "OCA-C681",
+      "title": "Orthodox Church in America, Sixth Ecumenical Council",
+      "url": "https://www.oca.org/orthodoxy/the-orthodox-faith/church-history/seventh-century/the-sixth-ecumenical-council",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "OCA-FIL",
+      "title": "Orthodox Church in America, Holy Spirit and procession",
+      "url": "https://www.oca.org/orthodoxy/the-orthodox-faith/doctrine-scripture/the-symbol-of-faith/holy-spirit",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "OCA-SAC",
+      "title": "Orthodox Church in America, The Sacraments / holy mysteries",
+      "url": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-sacraments/the-sacraments",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "OCA-ORIG",
+      "title": "Orthodox Church in America, Original Sin questions",
+      "url": "https://www.oca.org/questions/teaching/original-sin",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "OCA-MARY",
+      "title": "Orthodox Church in America, Roman Catholicism in nineteenth century",
+      "url": "https://www.oca.org/orthodoxy/the-orthodox-faith/church-history/nineteenth-century/roman-catholicism",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "OCA-MARR",
+      "title": "Orthodox Church in America, Sacrament of Marriage and second marriage",
+      "url": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-sacraments/marriage",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "V1",
+      "title": "Vatican I, Pastor aeternus on primacy and infallibility",
+      "url": "https://www.papalencyclicals.net/councils/ecum20.htm",
+      "kind": "PRIMARY_OR_JOINT_ECCLESIASTICAL_EVIDENCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "ORTH-002",
+      "original_title_candidate": "Do Catholics and Orthodox share the first seven ecumenical councils?",
+      "owner_reuse": [
+        "APOL-021"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "Catholic and Byzantine Orthodox Churches receive Nicaea I (325), Constantinople I (381), Ephesus (431), Chalcedon (451), Constantinople II (553), Constantinople III (680–681) and Nicaea II (787) as ecumenical councils. That major shared inheritance includes Trinitarian, Christological and icon teaching, though later interpretation of canons and doctrinal authority differs. It is inaccurate to portray Orthodoxy as rejecting the early ecumenical tradition.",
+            "fr": "Les Églises catholique et orthodoxes byzantines reçoivent comme œcuméniques Nicée I (325), Constantinople I (381), Éphèse (431), Chalcédoine (451), Constantinople II (553), Constantinople III (680–681) et Nicée II (787). Cet héritage commun comprend la doctrine trinitaire et christologique ainsi que les images sacrées, même si l'interprétation ultérieure des canons et de l'autorité diffère. Présenter l'orthodoxie comme rejetant la tradition conciliaire ancienne serait faux."
+          },
+          "source_ids": [
+            "CH",
+            "C681",
+            "OCA-SAC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-003",
+      "original_title_candidate": "Did Rome have universal primacy in the first millennium?",
+      "owner_reuse": [
+        "APOL-018"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "The first millennium contains substantial evidence of Roman primacy: Rome occupied the first place in the canonical order, received appeals and intervened in conflicts. Chieti §§15–19 also notes that the Petrine grounding and precise prerogatives were interpreted differently in East and West. This evidence is greater than ceremonial precedence, yet whether it amounts to the universal immediate jurisdiction of Vatican I is the very point requiring argument, not assumption.",
+            "fr": "Le premier millénaire atteste une réelle primauté romaine : Rome occupe le premier rang canonique, reçoit des appels et intervient dans des conflits. Chieti §§15–19 relève cependant des interprétations différentes en Orient et en Occident du fondement pétrinien et de l'étendue exacte des prérogatives. C'est davantage qu'une priorité cérémonielle, mais y reconnaître déjà la juridiction universelle immédiate définie par Vatican I requiert une argumentation et ne se présuppose pas."
+          },
+          "source_ids": [
+            "CH",
+            "V1"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-004",
+      "original_title_candidate": "Was Roman primacy merely ceremonial honor?",
+      "owner_reuse": [
+        "APOL-018"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "Roman primacy was not merely ceremonial precedence: Chieti refers to appeals involving Rome and to decisions with practical ecclesial implications. But primacy was exercised amid synods, local churches and a patriarchal order, not according to a universally agreed constitutional manual. A Catholic argument must show how its jurisdictional claims arise from this evidence rather than equate honour and jurisdiction without proof.",
+            "fr": "La primauté romaine ne se limitait pas au cérémonial : Chieti évoque des appels à Rome et des décisions ayant des conséquences ecclésiales. Son exercice s'inscrivait toutefois dans des synodes, des Églises locales et un ordre patriarcal, non dans une constitution universellement admise. L'argument catholique doit montrer comment ses prétentions juridictionnelles découlent de ces faits, sans confondre d'emblée honneur et juridiction."
+          },
+          "source_ids": [
+            "CH",
+            "V1"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-005",
+      "original_title_candidate": "Does the first millennium straightforwardly prove Vatican I?",
+      "owner_reuse": [
+        "APOL-018",
+        "APOL-020"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "The first millennium is not a straightforward photographic copy of Pastor aeternus. Vatican I formulated immediate ordinary universal jurisdiction and infallibility under particular conditions using later juridical terms; patristic evidence supports Petrine precedence and interventions but contains contextual disputes. A defensible Catholic development argument must distinguish underlying doctrine, historical practice and progressive precision, while Orthodox critics may still challenge that development.",
+            "fr": "Le premier millénaire n'est pas une photographie directe de Pastor aeternus. Vatican I formule la juridiction ordinaire immédiate et universelle ainsi que l'infaillibilité dans certaines conditions avec des termes juridiques postérieurs ; les sources patristiques témoignent d'une préséance pétrinienne et d'interventions, mais aussi de controverses situées. Une défense catholique du développement distingue doctrine de fond, usages historiques et précisions progressives, tandis que la critique orthodoxe peut contester ce développement."
+          },
+          "source_ids": [
+            "CH",
+            "AL",
+            "V1"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-008",
+      "original_title_candidate": "Were ecumenical councils independent of Rome?",
+      "owner_reuse": [
+        "APOL-020"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "Ancient councils involved bishops and imperial convocations, extensive Eastern deliberation, doctrinal examination and later reception. Rome did not personally chair every gathering, but Roman participation, letters and assent mattered in different ways; the canons of Nicaea and Chalcedon reveal differentiated jurisdictions. It is misleading either to describe them as wholly autonomous of Roman communion or to project modern papal procedural control onto every council.",
+            "fr": "Les conciles anciens réunissaient évêques, convocations impériales, délibérations souvent orientales, examen doctrinal et réception ultérieure. Rome ne présidait pas personnellement chaque assemblée, mais sa participation, ses lettres et son accord jouaient divers rôles ; les canons de Nicée et Chalcédoine reflètent des juridictions différenciées. Il serait trompeur de les dire complètement indépendants de Rome, tout autant que d'y projeter les procédures pontificales actuelles."
+          },
+          "source_ids": [
+            "CH",
+            "AL"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-009",
+      "original_title_candidate": "Does Pope Honorius disprove papal infallibility?",
+      "owner_reuse": [
+        "APOL-020"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "Pope Honorius was indeed condemned by Constantinople III (681) in connection with the Monothelite controversy; suppressing that primary evidence is unacceptable. Vatican I's later definition concerns a pope definitively teaching universal faith and morals under strict conditions, not every personal letter or negligent act. Whether Honorius's letters met such conditions, and the differing interpretations of their doctrinal error, must be examined from the acts, rather than resolved by denial of the condemnation.",
+            "fr": "Le pape Honorius fut effectivement condamné par Constantinople III (681) dans la controverse monothélite ; supprimer ce témoignage primaire serait inacceptable. La définition ultérieure de Vatican I concerne des enseignements définitifs de foi et de mœurs adressés à l'Église universelle sous des conditions strictes, non toute lettre personnelle ni toute négligence. Il faut confronter les lettres d'Honorius à ces conditions et examiner les interprétations divergentes à partir des actes, sans nier la condamnation."
+          },
+          "source_ids": [
+            "C681",
+            "OCA-C681",
+            "V1"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-010",
+      "original_title_candidate": "What exactly is the Catholic Filioque doctrine?",
+      "owner_reuse": [
+        "APOL-010"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "Catholic Filioque doctrine holds that the Spirit proceeds eternally from Father and Son as from one principle and through one spiration, not as from two independent divine sources. Florence grounds the Son's involvement in the Father's eternal generation of the Son and interprets 'through the Son' as possible patristic expression. This must be distinguished from the temporal mission of the Spirit and from a claim that the Father ceases to be the ultimate font of Trinitarian relations.",
+            "fr": "La doctrine catholique du Filioque affirme que l'Esprit procède éternellement du Père et du Fils comme d'un seul principe et par une unique spiration, non de deux sources divines indépendantes. Florence fonde la participation du Fils dans sa génération éternelle par le Père et donne à « par le Fils » une interprétation patristique possible. Il faut la distinguer de la mission temporelle de l'Esprit et d'une négation du Père comme source première des relations trinitaires."
+          },
+          "source_ids": [
+            "FLO",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-017",
+      "original_title_candidate": "What did Florence actually define on papal primacy?",
+      "owner_reuse": [
+        "APOL-020"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "Laetentur caeli at Florence defines the Roman pontiff as successor of blessed Peter, true vicar of Christ, head of the whole Church and father and teacher of Christians; it grants full power to feed, rule and govern the universal Church according to the acts of councils and sacred canons. Orthodox reception of this 1439 agreement failed, so the Catholic doctrinal decree and Orthodox historical nonacceptance must both be represented. Do not quote its primacy definition as if subsequent agreement had endured.",
+            "fr": "Laetentur caeli à Florence définit le pontife romain comme successeur de saint Pierre, vrai vicaire du Christ, chef de toute l'Église, père et docteur des chrétiens ; il lui attribue une pleine puissance pour paître, diriger et gouverner l'Église universelle conformément aux conciles et canons. La réception orthodoxe de l'accord de 1439 échoua : il faut donc distinguer décret doctrinal catholique et non-acceptation historique orthodoxe, sans feindre une union durable."
+          },
+          "source_ids": [
+            "FLO",
+            "AL"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-019",
+      "original_title_candidate": "Do Orthodox believe nothing resembling Purgatory?",
+      "owner_reuse": [
+        "APOL-040"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "Orthodox Christians pray for the departed and speak of purification and God's mercy after death, so it is false that they have no concern resembling the Catholic motivation for prayer for souls. Many reject the specifically Latin dogmatic and juridical formulation of Purgatory, especially descriptions of penal purgatorial fire; Catholic doctrine itself need not affirm those popular images as dogma. Distinguish shared intercession from disputed explanatory models.",
+            "fr": "Les chrétiens orthodoxes prient pour les défunts et parlent de purification et de miséricorde divine après la mort ; il serait donc faux de leur refuser toute préoccupation analogue à celle de la prière catholique pour les âmes. Beaucoup rejettent les formulations proprement latines et juridiques du Purgatoire, surtout certains tableaux de feu pénal ; le dogme catholique n'impose pas toutes ces images populaires. Il faut distinguer intercession commune et modèles explicatifs contestés."
+          },
+          "source_ids": [
+            "FLO",
+            "CCC",
+            "OCA-SAC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-021",
+      "original_title_candidate": "Why do Orthodox reject the Immaculate Conception?",
+      "owner_reuse": [
+        "APOL-033"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "The Catholic Immaculate Conception (1854) teaches Mary's preservation from original sin from her first instant, by the foreseen merits of Christ; it is not a claim she had no need of redemption. Orthodox critics may affirm Mary's exceptional holiness while rejecting both unilateral Roman definition and parts of Western ancestral-sin categories. An accurate comparison must not say Orthodox Christians think Mary simply unholy or Catholics treat her as an independently divine being.",
+            "fr": "L'Immaculée Conception catholique (1854) enseigne que Marie fut préservée du péché originel dès le premier instant par les mérites anticipés du Christ ; elle n'en fait pas une personne indépendante de la Rédemption. Des orthodoxes peuvent affirmer sa sainteté exceptionnelle tout en contestant la définition romaine unilatérale et certaines catégories occidentales du péché ancestral. Il est faux de leur attribuer la croyance en une Marie simplement impure ou aux catholiques une Marie divine indépendante."
+          },
+          "source_ids": [
+            "CCC",
+            "OCA-MARY",
+            "OCA-ORIG"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-022",
+      "original_title_candidate": "Do Orthodox deny Mary's sinlessness or Dormition?",
+      "owner_reuse": [
+        "APOL-033"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "The Orthodox Church deeply venerates the Theotokos as all-holy and celebrates her Dormition; it is not the position that Mary was ordinary in sinfulness or that she disappears at death. Orthodox teaching and liturgy differ on the Latin dogmatic framing of original sin and the 1854/1950 definitions, and not all Orthodox theologians formulate Mary's personal sinlessness identically. The shared honour and real differences should both be stated.",
+            "fr": "L'Église orthodoxe vénère profondément la Théotokos comme toute-sainte et célèbre sa Dormition ; elle ne la considère pas simplement comme une pécheresse ordinaire ni comme disparue à la mort. Ses enseignements et sa liturgie divergent dans la formulation latine du péché originel et des définitions de 1854/1950, et tous les théologiens orthodoxes n'expriment pas identiquement l'absence de péché personnel de Marie. Honneur partagé et différences réelles doivent être exposés."
+          },
+          "source_ids": [
+            "OCA-MARY",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-024",
+      "original_title_candidate": "What about divorce and remarriage?",
+      "owner_reuse": [
+        "APOL-028"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "Orthodox authorities uphold marriage as an enduring sacred union yet sometimes permit a penitential second marriage following divorce under their concept of pastoral economy. The Orthodox Church in America explains such a service while maintaining the ideal of one eternal marriage. Catholic teaching holds a valid consummated sacramental marriage indissoluble while both spouses live; a declaration of nullity concerns an invalid bond from its beginning, not an ecclesiastical permission to dissolve a valid one.",
+            "fr": "Les autorités orthodoxes défendent le mariage comme union sacrée durable mais permettent parfois un second mariage pénitentiel après divorce selon l'économie pastorale. L'Église orthodoxe d'Amérique décrit ce rite tout en maintenant l'idéal d'une union unique et éternelle. Le catholicisme tient pour indissoluble le mariage sacramentel valide consommé tant que vivent les deux époux ; la déclaration de nullité constate l'absence du lien valide à l'origine, elle ne dissout pas un mariage valide."
+          },
+          "source_ids": [
+            "OCA-MARR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    },
+    {
+      "id": "ORTH-025",
+      "original_title_candidate": "Does the first millennium favor Rome or modern Orthodoxy?",
+      "owner_reuse": [
+        "APOL-018",
+        "APOL-020"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "primary_orthodox_history_and_catholic_response",
+          "text": {
+            "en": "The evidence of the first millennium supports neither slogan 'Rome invented all primacy' nor 'Vatican I was already a universally accepted ancient administrative code'. It shows Rome first in order, with interventions and appeals, within synodal structures whose interpretation East and West contested. Chieti and Alexandria explicitly seek a common reading rather than declaring victory for either side. The Catholic claim of legitimate doctrinal development must be argued; Orthodox alternative readings deserve first-hand presentation.",
+            "fr": "Le premier millénaire ne soutient ni « Rome a inventé toute primauté », ni « Vatican I était déjà un code administratif ancien unanimement reçu ». Rome était première dans l'ordre, avec interventions et appels, à l'intérieur de structures synodales dont l'interprétation restait contestée entre Orient et Occident. Chieti et Alexandrie cherchent précisément une lecture commune sans proclamer le triomphe d'un camp. Le développement doctrinal catholique demande une démonstration, et les interprétations orthodoxes une présentation directe."
+          },
+          "source_ids": [
+            "CH",
+            "AL",
+            "V1"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}
