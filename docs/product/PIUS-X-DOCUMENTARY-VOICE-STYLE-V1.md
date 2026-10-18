@@ -138,3 +138,20 @@ The presentation owner's existing `pius` entry, `pius-x` guide and `source-catec
 **What this test verifies:** a complete three-exchange bilingual structure; validated names of the five approved Pius X sprites; constrained variation in register (one contextual joke in nine replies, not a production quota); known rhetorical source IDs; explicit source/handoff restrictions and fail-closed negative gates. **What it does not verify:** editorial accuracy of every French construction, doctrinal correctness, an actual running church scene, physical Android behaviour, source quotation certification, or integration with the parallel content branch.
 
 **Release gate:** remains DRAFT / STYLE ONLY; zero new doctrinal answers, zero imported Catechism copies, zero new approved direct historical quotations, zero approved native topic handoffs. Do not merge merely because these focused mechanical tests pass.
+
+
+## Exact Catechism question-source crosswalk (19 October)
+
+The third-batch [style test fixture](../../data/learn/pius-x-style-dialogue-paths.v1.json) now records **verified question-number candidates only**, obtained directly from the existing `data/learn/ltfaith-pius-x-en-witness-index.v1.json` (Git blob `27b75ff3526196e4551d7c1f37b76d79d0b0927d`), all within the original 433-question `PX1912-QNNN` number-space. Its *modern structured English study translation* cannot be relabelled as an historically verified English edition; the French / Italian answer witnesses still require the other pipeline's source checks. We do not reproduce any copyrighted translated answer content.
+
+| Scenario | Turns and question ID candidates | Reason |
+|---|---|---|
+| Our Lady | T1: Q433, Q430; T2: Q430, Q433; T3: Q431, Q432 | Q433 explicitly raises Christ the one Mediator; Q430 asks about angelic, saintly, and Marian intercession; Q431–432 address the Hail Mary |
+| Child's First Communion | T1: Q342; T2: Q335, Q338; T3: Q338 | Q342 concerns age/dispositions; Q335 concerns making a good Communion; Q338 concerns understanding Whom one receives |
+| Challenge to Church teaching | T1: Q114, Q236; T2: Q115, Q236; T3: Q114, Q115 | Q114 names the teaching Church; Q115 concerns its non-error in revealed teaching; Q236 concerns authoritative exposition of Scripture and Tradition |
+
+**Specific historical-discipline guard:** Q335's indexed 1912 witness has a midnight Eucharistic fast. This is **not current Catholic law**, and the 1912 answer cannot be transformed unqualified into advice about current sacramental preparation. Answer selection must distinguish historical language from the church's present discipline using an independently approved current-law source owner.
+
+**Cross-branch integration finding:** Living Church P4 [#1406](https://github.com/Fulcanelli13/ad-orientem/pull/1406) already supplies `createOriginalCatechismReferralIndex` and a generalized guarded `integration.nativeOpen("learn.catechism",{sourceRef})` with exact 433-question index checking. Its existing browser suite demonstrates Q105 native return at multiple viewport widths. Earlier #1402's direct scene bridge was limited to **Q322**, but that should not be mistaken for a limitation in the separate P4 source-owner bridge. Reuse **P4** rather than introduce a new Catechism reader. None of the three new dialogue paths, their EN/FR wording, or their topic-specific native handoffs has yet been physically exercised or approved.
+
+The [focused fixture validator](../../tests/pius-x-style-dialogue-paths.mjs) now verifies the index's Git blob fingerprint, existing question references per turn, absence of copied answer texts, release-hold flags, and Q335's historical-discipline warning. Mechanical source identity is **not** theological or editorial approval. The scripts remain source-gated educational simulations; no runtime input handler or production script is changed.
