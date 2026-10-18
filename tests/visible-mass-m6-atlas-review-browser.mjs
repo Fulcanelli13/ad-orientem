@@ -18,7 +18,7 @@ try{
   await page.goto(pathToFileURL(html).href,{waitUntil:"load"});
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_M6_ATLAS?.status()?.objects===170);
   let status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());
-  assert.equal(status.zones,13);assert.equal(status.images,55);assert.equal(status.visible,170);
+  assert.equal(status.zones,13);assert.equal(status.images,56);assert.equal(status.visible,170);
   await page.screenshot({path:out+"/"+spec.id+"-object-atlas.png",fullPage:false});
   await page.locator("#zone").selectOption("AL");status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,20);
   await page.locator("#zone").selectOption("");
@@ -27,7 +27,7 @@ try{
   await page.locator("#coverage").selectOption("PROVISIONAL_ORIGINAL_STILL_HOTSPOT");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,6);
   await page.locator("#coverage").selectOption("NEW_SOURCE_PHOTO_CANDIDATE");
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,23);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,24);
   assert.match(await page.locator("#results").innerText(),/Altar bell/);
   assert.match(await page.locator("#results").innerText(),/Individual altar candle/);
   await page.locator("#coverage").selectOption("");
@@ -38,11 +38,12 @@ try{
   await page.locator("#search").fill("AL18");
   assert.match(await page.locator("#results").innerText(),/viewer’s left \(Gospel side\)/);
   await page.locator("#search").fill("AL10");
-  assert.match(await page.locator("#results").innerText(),/Gradine boundaries not individually established/);
+  assert.match(await page.locator("#results").innerText(),/exact gradine boundaries in Brompton remain unverified/i);
   assert.match(await page.locator("#results").innerText(),/rights unknown/);
+  assert.match(await page.locator("#results").innerText(),/Licensed independent gradine context photo/);
   await page.locator("#search").fill("");
   await page.locator("#mode-images").click();
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,55);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,56);
   await page.locator("#search").fill("M6B5-VE03-SEVILLE-CATHEDRAL-ALB");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/CarlosVdeHabsburgo/);
