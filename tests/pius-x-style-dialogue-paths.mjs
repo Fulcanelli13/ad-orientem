@@ -119,4 +119,48 @@ const child=cases.cases.find(x=>x.router.branch==="first_communion");
 assert.equal(editorialPlayback(child,{lang:"en",preparingForFirstCommunion:false}).blocked,
  "FIRST_COMMUNION_CONTEXT_REQUIRED");
 
+
+/**
+ * Source reconciliation: read the EXISTING index in place, do not fork or
+ * rewrite its English answers or convert question stems to attributed speech.
+ * The Git blob fingerprint protects against silent ref drift.
+ */
+const {createHash}=await import("node:crypto");
+const indexBuffer=await readFile(new URL("../data/learn/ltfaith-pius-x-en-witness-index.v1.json",import.meta.url));
+const actualBlob=createHash("sha1").update("blob "+indexBuffer.length+"\0").update(indexBuffer).digest("hex");
+const witness=JSON.parse(indexBuffer.toString("utf8"));
+assert.equal(actualBlob,cases.sourceReconciliation.indexBlobSha,"Witness must remain pinned; re-review QIDs on change");
+assert.equal(witness.version,cases.sourceReconciliation.indexVersion);
+assert.equal(witness.entries.length,433);
+assert.equal(cases.sourceReconciliation.entryCount,433);
+assert.match(cases.sourceReconciliation.evidenceGrade,/NOT_CANONICAL_ANSWER_CERTIFICATION/);
+assert.equal(cases.reviewStatus.questionNumbersMatchedInWitnessIndex,true);
+assert.equal(cases.reviewStatus.topicSpecificAnswerContentApproved,false);
+assert.equal(cases.reviewStatus.topicSpecificNativeHandoffsBrowserVerified,false);
+assert.equal(cases.sourceReconciliation.p4SourceBridge.theseThreeDialoguePathsBrowserVerified,false);
+assert.equal(cases.sourceReconciliation.p4SourceBridge.nativeRouteIsDraft,true);
+const canonicalEntries=new Map(witness.entries.map(q=>["PX1912-Q"+String(q.q).padStart(3,"0"),q]));
+const acceptedRefs={
+ "PX-STYL-OUR-LADY-01":[["PX1912-Q433","PX1912-Q430"],["PX1912-Q430","PX1912-Q433"],["PX1912-Q431","PX1912-Q432"]],
+ "PX-STYL-CHILD-CATECHISM-02":[["PX1912-Q342"],["PX1912-Q335","PX1912-Q338"],["PX1912-Q338"]],
+ "PX-STYL-TEACHING-OBJECTION-03":[["PX1912-Q114","PX1912-Q236"],["PX1912-Q115","PX1912-Q236"],["PX1912-Q114","PX1912-Q115"]]
+};
+for(const scenario of cases.cases){
+ const expected=acceptedRefs[scenario.id];
+ assert.ok(expected);
+ assert.deepEqual(scenario.turns.map(x=>x.questionCandidates),expected,"Crosswalk is curated to each turn, not arbitrary search");
+ assert.deepEqual(scenario.router.candidateQuestionRefs,[...new Set(expected.flat())]);
+ assert.equal(scenario.router.exactNativeQuestion,null,"Indexed candidate is not an approved native conversation handoff");
+ assert.match(scenario.router.sourceIndexReview,/NOT_ANSWER_CONTENT/);
+ for(const ref of scenario.router.candidateQuestionRefs){
+  const source=canonicalEntries.get(ref);
+  assert.ok(source&&source.q_stem.length>=10,ref+" missing in original witness index");
+  assert.ok(source.source_file_url.startsWith("https://github.com/"),"Question source reference must be original pinned owner");
+ }
+}
+assert.equal(cases.sourceReconciliation.historicalDisciplineCaution.sourceRef,"PX1912-Q335");
+assert.match(cases.sourceReconciliation.historicalDisciplineCaution.runtimeConstraint,/NO_UNQUALIFIED_CURRENT_PRACTICE/);
+assert.match(cases.sourceReconciliation.editionLimitation,/NOT a certified historical English/);
+assert.ok(!JSON.stringify(cases).includes('"historicalAnswerText"'));
+
 console.log("PASS Pius X 3 bilingual x 3 exchanges in both languages, source-gated end-to-end scripted playback = 18 interactions, 9 unique style-only replies; pinned route references, original-source gate, approved sprite names, no fabricated quotations or new doctrinal corpus");
