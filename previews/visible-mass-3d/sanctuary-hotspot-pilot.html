@@ -1032,6 +1032,13 @@ window.AO_VISIBLE_MASS_HOTSPOT_PILOT=Object.freeze({
  guideStatus:()=>state.guide?.status()??null,
  chooseTrail:id=>{const ok=state.guide?.chooseTrail(id)??false;syncLivingChurchP1();return ok;},
  guideExplore:id=>{const ok=state.guide?.explore(id)??false;syncLivingChurchP1();return ok;},
+ focusContext:()=>{
+  const target=state.question?$("back-to-object"):state.selected?$("object-title"):$("experience-explore");
+  if(!target||target.hidden)return false;
+  if(!target.hasAttribute("tabindex")&&target.tagName!=="BUTTON")target.setAttribute("tabindex","-1");
+  target.focus?.({preventScroll:true});
+  return document.activeElement===target;
+ },
  select:id=>{select(id,null);syncLivingChurchP1();}
 });
 })();
