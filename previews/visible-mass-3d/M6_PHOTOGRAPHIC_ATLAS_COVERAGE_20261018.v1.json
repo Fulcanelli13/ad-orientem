@@ -36,10 +36,11 @@
     "m5_scene_photographs": 12,
     "m5_details": 9,
     "object_hotspots_on_one_still": 6,
-    "first_new_licensed_photo_candidates": 2,
+    "first_new_licensed_photo_candidates": 4,
     "historical_illustration_leads": 1,
     "rights_unknown_discovery_leads": 1,
-    "no_prior_object_image_or_hotspot": 147
+    "no_prior_object_image_or_hotspot": 147,
+    "new_m6_total_candidate_records": 6
   },
   "zones": [
     {
@@ -794,6 +795,11 @@
           "asset_id": "BROMPTON_ALTAR_2019_GEOGRAPH",
           "role": "context_hotspot",
           "evidence": "SIX_PROVISIONAL_CLICK_ZONES_ON_EXACT_2019_STILL"
+        },
+        {
+          "asset_id": "M6-AL07-SALVADOR-ALTAR-CANDLESTICK",
+          "role": "alternative_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
         }
       ],
       "needs_photo": false
@@ -808,9 +814,15 @@
       "intended_navigation": "Z",
       "pilot_30": true,
       "pilot_photo_evidence": "NO_DIRECT_SCENE_EVIDENCE",
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6-AL08-DULMEN-ALTAR-CANDLES",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "AL09",
@@ -3151,6 +3163,36 @@
       "height": 4452,
       "source_description": "A historical Japanese Christian missal stand, not a typical 1962 Missal support; exact source and license must be verified.",
       "review_status": "DISCOVERY_ONLY_UNVERIFIED_SOURCE_RIGHTS",
+      "source_index": "M6_RESEARCH_20261018_WEB"
+    },
+    {
+      "asset_id": "M6-AL08-DULMEN-ALTAR-CANDLES",
+      "object_id": "AL08",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Kreuzkapelle,_Kerzen_--_2021_--_7127.jpg",
+      "creator": "Dietmar Rabich",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 6720,
+      "height": 4480,
+      "source_description": "Original Roman Catholic Holy Cross chapel (Dülmen) altar candles. Not an isolated specimen, not proof of beeswax composition, not a Brompton or 1962 Mass image.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_WEB"
+    },
+    {
+      "asset_id": "M6-AL07-SALVADOR-ALTAR-CANDLESTICK",
+      "object_id": "AL07",
+      "role": "alternative_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Igreja_do_Sant%C3%ADssimo_Sacramento_de_Sant%27Ana_Salvador_Altar_Candlestick_2019-1859.jpg",
+      "creator": "Paul R. Burley",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3501,
+      "height": 5251,
+      "source_description": "Single altar candlestick of Igreja do Santíssimo Sacramento de Sant'Ana, Salvador, Brazil. Not the Brompton candlestick arrangement and not a six-candle count certification.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_WEB"
     }
   ]
