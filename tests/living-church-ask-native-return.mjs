@@ -91,6 +91,7 @@ assert.equal(livingChurchAskReviewEnabled({location:{search:"?aoVisibleMassRevie
  assert.equal((await f.api.nativeOpen("learn.mass_explorer")).ok,true);
  f.changeContext({questionId:"VMQ-0002"});
  assert.equal((await f.api.returnToSanctuary()).code,"EXACT_SANCTUARY_CONTEXT_MISMATCH");
+ assert.equal(f.getCloses(),0,"unsafe scene drift must not close the native owner");
  assert.equal(f.returnButton.hidden,false);
  assert.equal(f.api.status().suspended,true,"no false return acknowledgement");
 }
@@ -99,6 +100,7 @@ assert.equal(livingChurchAskReviewEnabled({location:{search:"?aoVisibleMassRevie
  assert.equal((await f.api.nativeOpen("learn.mass_explorer")).ok,true);
  f.changeRead(10);
  assert.equal((await f.api.returnToSanctuary()).code,"EXACT_SANCTUARY_CONTEXT_MISMATCH");
+ assert.equal(f.getCloses(),0,"read-count drift must not dismiss the native destination");
  assert.equal(f.api.status().suspended,true);
 }
 {
