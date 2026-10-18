@@ -327,8 +327,8 @@ assert.equal(atlas.statistics.post_eleventh_batch_photo_candidate_or_hotspot,79)
 assert.equal(atlas.statistics.post_eleventh_batch_needs_photo,91);
 assert.equal(atlas.images.length,112);
 assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,109);
-assert.equal(atlas.objects.filter(o=>o.zone_id==="SE"&&!o.needs_photo).length,8);
-assert.equal(atlas.objects.filter(o=>o.zone_id==="BK"&&!o.needs_photo).length,8);
+assert.ok(atlas.objects.filter(o=>o.zone_id==="SE"&&!o.needs_photo).length>=8,"Subsequent batches may extend SE coverage beyond batch 11");
+assert.ok(atlas.objects.filter(o=>o.zone_id==="BK"&&!o.needs_photo).length>=8,"Subsequent batches may extend BK coverage beyond batch 11");
 
 
 const batch12=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH12");
@@ -351,9 +351,9 @@ assert.equal(atlas.statistics.post_twelfth_batch_photo_candidate_or_hotspot,89);
 assert.equal(atlas.statistics.post_twelfth_batch_needs_photo,81);
 assert.equal(atlas.images.length,112);
 assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,109);
-assert.equal(atlas.objects.filter(o=>o.zone_id==="DV"&&o.needs_photo).length,2);
-assert.equal(atlas.objects.filter(o=>o.zone_id==="BK"&&o.needs_photo).length,4);
-assert.equal(atlas.objects.filter(o=>o.zone_id==="SE"&&o.needs_photo).length,4);
+assert.ok(atlas.objects.filter(o=>o.zone_id==="DV"&&o.needs_photo).length<=2,"Later acquisitions must not lose batch 12 DV coverage");
+assert.ok(atlas.objects.filter(o=>o.zone_id==="BK"&&o.needs_photo).length<=4,"Later acquisitions must not lose batch 12 BK coverage");
+assert.ok(atlas.objects.filter(o=>o.zone_id==="SE"&&o.needs_photo).length<=4,"Later acquisitions must not lose batch 12 SE coverage");
 
 
 const batch13=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH13");
