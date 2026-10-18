@@ -18,7 +18,7 @@ try{
   await page.goto(pathToFileURL(html).href,{waitUntil:"load"});
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_M6_ATLAS?.status()?.objects===170);
   let status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());
-  assert.equal(status.zones,13);assert.equal(status.images,101);assert.equal(status.visible,170);
+  assert.equal(status.zones,13);assert.equal(status.images,107);assert.equal(status.visible,170);
   await page.screenshot({path:out+"/"+spec.id+"-object-atlas.png",fullPage:false});
   await page.locator("#zone").selectOption("AL");status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,20);
   await page.locator("#zone").selectOption("");
@@ -27,7 +27,7 @@ try{
   await page.locator("#coverage").selectOption("PROVISIONAL_ORIGINAL_STILL_HOTSPOT");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,6);
   await page.locator("#coverage").selectOption("NEW_SOURCE_PHOTO_CANDIDATE");
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,64);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,69);
   assert.match(await page.locator("#results").innerText(),/Altar bell/);
   assert.match(await page.locator("#results").innerText(),/Individual altar candle/);
   await page.locator("#coverage").selectOption("");
@@ -38,6 +38,10 @@ try{
   await page.locator("#search").fill("EQ08");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/THURIBLE-BOAT/);
+  await page.locator("#search").fill("SE04");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.match(await page.locator("#results").innerText(),/partial/i);
+  assert.match(await page.locator("#results").innerText(),/ASH-CONTAINERS-ONLY/);
   await page.locator("#search").fill("VE20");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/PONTIFICAL-GLOVES-PARTIAL/);
@@ -56,7 +60,7 @@ try{
   assert.match(await page.locator("#results").innerText(),/Licensed independent gradine context photo/);
   await page.locator("#search").fill("");
   await page.locator("#mode-images").click();
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,101);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,107);
   await page.locator("#search").fill("DV01");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/BROMPTON_LADY_ALTAR/);
@@ -71,6 +75,12 @@ try{
   await page.locator("#search").fill("M6B9-EQ07-EQ08-TUSCAN-THURIBLE-BOAT");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/Linked objects EQ07, EQ08/);
+  await page.locator("#search").fill("M6B13-SE07-DREUX-1925-BNF-CATAFALQUE");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.match(await page.locator("#results").innerText(),/Agence Rol/);
+  await page.locator("#search").fill("M6B13-DV10-LOURDES-EXVOTO-RAILWAY-PLAQUE");
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
+  assert.match(await page.locator("#results").innerText(),/Tangopaso/);
   await page.locator("#search").fill("M6B12-DV03-DUBLIN-ST-MARY-ST-JOSEPH");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   assert.match(await page.locator("#results").innerText(),/ManuRoquette/);
