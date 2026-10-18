@@ -9,6 +9,11 @@ on:
       - "previews/visible-mass-3d/M6_*"
       - "previews/visible-mass-3d/m6-atlas-review-template.html"
       - "tests/living-church-p5-source-convergence.mjs"
+      - "tests/living-church-p4-native-catechism-browser.mjs"
+      - "src/learn/visible-mass-review.js"
+      - "src/learn/living-church-ask-integration.js"
+      - "src/learn/living-church-character-folio.js"
+      - "src/learn/ask-church-guided-preview.js"
       - "tests/visible-mass-m4-*"
       - "tests/visible-mass-m6-*"
       - "tools/build-visible-mass-m6-atlas-review.mjs"
@@ -41,7 +46,7 @@ jobs:
           set -euo pipefail
           git diff --name-only HEAD^1 HEAD | while IFS= read -r path; do
             case "$path" in
-              .github/workflows/living-church-p5-convergence.yml|.github/workflows/visible-mass-m6-photographic-atlas.yml|data/learn/living-church-p5-convergence-lock.v1.json|docs/product/LIVING-CHURCH-P5-RECONCILIATION-AND-RELEASE-GATE-20261018.md|previews/visible-mass-3d/sanctuary-hotspot-pilot.html|previews/visible-mass-3d/M6_ATLAS_RESEARCH_STRATEGY_20261018.md|previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json|previews/visible-mass-3d/m6-atlas-review-template.html|tests/visible-mass-m4-offline-file-browser.mjs|tests/visible-mass-m4-panorama.mjs|tests/visible-mass-m6-atlas-review-browser.mjs|tests/visible-mass-m6-photo-atlas-contract.mjs|tools/build-visible-mass-m6-atlas-review.mjs|tests/living-church-p5-source-convergence.mjs)
+              .github/workflows/living-church-p5-convergence.yml|.github/workflows/visible-mass-m6-photographic-atlas.yml|data/learn/living-church-p5-convergence-lock.v1.json|docs/product/LIVING-CHURCH-P5-RECONCILIATION-AND-RELEASE-GATE-20261018.md|previews/visible-mass-3d/sanctuary-hotspot-pilot.html|previews/visible-mass-3d/M6_ATLAS_RESEARCH_STRATEGY_20261018.md|previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json|previews/visible-mass-3d/m6-atlas-review-template.html|tests/visible-mass-m4-offline-file-browser.mjs|tests/visible-mass-m4-panorama.mjs|tests/visible-mass-m6-atlas-review-browser.mjs|tests/visible-mass-m6-photo-atlas-contract.mjs|tools/build-visible-mass-m6-atlas-review.mjs|tests/living-church-p5-source-convergence.mjs|tests/living-church-p4-native-catechism-browser.mjs|src/learn/visible-mass-review.js|src/learn/living-church-ask-integration.js|src/learn/living-church-character-folio.js|src/learn/ask-church-guided-preview.js)
                 ;;
               *) echo "::error::P5 attempts out-of-scope or LIVE/Missal/Mass reader mutation: $path"; exit 1 ;;
             esac
@@ -73,12 +78,10 @@ jobs:
         run: node tools/build-visible-mass-m6-atlas-review.mjs
       - name: Validate source-owned offline M6 atlas (phone and desktop)
         run: node tests/visible-mass-m6-atlas-review-browser.mjs
-      - name: Verify latest M5 original viewer plus Living Church P1-P4 native returns
-        run: |
-          node tests/living-church-visible-mass-phone.mjs
-          node tests/living-church-p4-native-catechism-browser.mjs
-          node tests/living-church-ask-real-shell.mjs
-          node tests/living-church-character-phone.mjs
+      - name: Verify unified character conversation, Catechism, Mass and exact original-scene return
+        # P1/P2/P3 each retain their own independent source-owner CI. Avoid
+        # repeating those full browser journeys a second time in P5.
+        run: node tests/living-church-p4-native-catechism-browser.mjs
       - name: Preserve review screenshots without any publication action
         if: always()
         uses: actions/upload-artifact@v4
