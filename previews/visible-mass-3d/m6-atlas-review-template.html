@@ -138,6 +138,28 @@ function reviewLine(assetId){
  '<label>Use <select data-placement="'+quoteAttr(assetId)+'">'+
  [["","Undecided"],["primary","Primary atlas"],["secondary","Supplementary"],["historical","Historical only"],["elsewhere","Use elsewhere"],["reject","Reject"]].map(([v,t])=>'<option value="'+v+'"'+(state.placement===v?' selected':'')+'>'+t+'</option>').join("")+'</select></label></div>';
 }
+
+function researchCue(item){
+ const orientation=item.orientation_annotation;
+ if(orientation){
+  const direction=orientation.viewer_side==="LEFT"?"viewer’s left (Gospel side)":"viewer’s right (Epistle side)";
+  return '<div class="asset"><div class="asset-title">Orientation rule · awaiting photo viewpoint verification</div>'+
+   '<p class="detail">From the nave facing the high altar: '+esc(direction)+'. Original source: '+esc(orientation.source_asset_id)+'. No independent photograph or clickable hotspot has been approved.</p>'+
+   '<p class="detail">Mirror state and exact camera orientation must be checked before placing this label.</p>'+
+   '<a class="source" href="https://www.newadvent.org/cathen/01356e.htm" target="_blank" rel="noopener noreferrer">Rubrical orientation source ↗</a></div>';
+ }
+ const lead=item.context_scene_lead;
+ if(lead){
+  const source=lead.additional_rights_unknown_research_url;
+  const link=source==="https://www.friendsofflorence.org/projects/altar-gradine-oratory-and-tabernacle-chapel-annunziata-ss-annunziata/"?
+   '<a class="source" href="'+quoteAttr(source)+'" target="_blank" rel="noopener noreferrer">Florentine historical gradine reference · rights unknown ↗</a>':'';
+  const licensed=item.candidate_assets.some(x=>x.asset_id==="M6B5-AL10-ARS-SIXTE-GRADINE-ENSEMBLE");
+  return '<div class="asset"><div class="asset-title">'+(licensed?'Licensed independent gradine context photo · not a Brompton hotspot':'Contextual lead only · object still needs photograph')+'</div>'+
+   '<p class="detail">Original Brompton viewpoint: '+esc(lead.source_asset_id)+'. The exact gradine boundaries in Brompton remain unverified. No clickable hotspot approved.</p>'+link+'</div>';
+ }
+ return "";
+}
+
 function objectCard(item){
  const photo=chosenAsset(item),list=item.candidate_assets.map(ref=>imgById.get(ref.asset_id)).filter(Boolean);
  return '<article class="record">'+imagePreview(photo)+'<div class="body">'+
@@ -147,6 +169,7 @@ function objectCard(item){
  ' · Glossary '+esc(item.canonical_glossary_id||"not mapped")+' ('+esc(item.glossary_match)+')'+
  (item.pilot_30?' · sanctuary pilot':'')+'</div>'+
  (list.length?list.map(assetLine).join(""):'<p class="note">No original object-specific image candidate yet. A wide church photo must not be treated as proof that this object is visible.</p>')+
+ researchCue(item)+
  '</div></article>';
 }
 function photoCard(image){

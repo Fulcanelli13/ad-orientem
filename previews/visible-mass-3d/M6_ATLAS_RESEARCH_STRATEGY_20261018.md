@@ -121,3 +121,22 @@ M6 research-only additions, all included in the same 170-object, 13-zone registr
 The one non-Commons photo in this batch is a direct rights-documented independent Catholic photographer source. It is explicitly allowlisted in the reviewer and M6 contract, without relaxing the original Commons-source guarantee for all other records. The offline review file embeds atlas metadata but external photos load only when connected; offline links/attributions remain inspectable.
 
 No PR merge, liturgical assertion approval, G###/VMQ ownership mutation, or R17 reader change.
+
+## Fifth acquisition batch — 18 October 2026
+
+Research-only acquisition of four original licensed photographs, credited and linked to existing canonical physical-object IDs. This expands the vestment collection without creating new glossary entities or changing any published UI.
+
+| Object | Source photographer and file | Licence and size | Representational limits |
+|:--|:--|:--|:--|
+| AL10 — Altar gradine | Zairon, [St Sixtus Basilica side altar, Ars-sur-Formans](https://commons.wikimedia.org/wiki/File:Ars-sur-Formans_Basilique_Saint-Sixte_Int%C3%A9rieur_Autel_Lat%C3%A9ral_3.jpg); [French state heritage description PM01002646](https://pop.culture.gouv.fr/notice/palissy/PM01002646) | CC BY-SA 4.0, 3406×4557 | A gradine is independently identified as a part of this photographed Catholic altar ensemble; exact image component boundaries unreviewed, and **not** a Brompton hotspot. |
+| VE01 — Cassock | Ébner Vili, [Roman Catholic priest's cassock (Hungary)](https://commons.wikimedia.org/wiki/File:R%C3%B3mai_katolikus_papi_reverenda.JPG) | CC BY-SA 3.0, 3264×2448 | Genuine physical isolated garment; no 1962 Mass usage shown. |
+| VE03 — Alb | CarlosVdeHabsburgo, [Seville Cathedral chapter chasuble and alb](https://commons.wikimedia.org/wiki/File:Casulla_y_alba.jpg) | CC BY-SA 4.0, 3240×4320 | Original Spanish Catholic ceremonial garments from Corpus Christi: alb visible with chasuble, not isolated or in use. |
+| VE11 — Surplice/cotta | Maximilian775, [Catholic National Eucharistic Congress procession preparation](https://commons.wikimedia.org/wiki/File:NEC_2024_Procession_Preparation.jpg) | CC BY 4.0, 3024×4032 | Authentic Catholic choir-dress context in 2024; not an actual 1962 Mass or a clean isolated surplice specimen. |
+
+**Updated photographic candidate coverage:** 45/170 objects with a licensed photograph or a source-specific provisional hotspot, leaving 125 without a photograph. The register contains **56 source records with 53 unique original source URLs**. Vestments: 17/20 subjects have some photo reference. Remaining vestment gaps: **VE10 tunicle, VE15 complete five-colour set, VE20 pontifical gloves/buskins/sandals**, with VE20 still only partially illustrated by gloves.
+
+**Pilot now 28/30 referenced:** AL10 has a context-photo candidate in the Ars Basilica historic altar, supported by French state heritage identification of the gradine. Its exact image boundaries are not yet annotated, and nothing about it validates the Brompton altar's gradine. AL17 Epistle side and AL18 Gospel side remain nonclickable orientation-notes only and do not count as independent photos. The [Friends of Florence gradine restoration account](https://www.friendsofflorence.org/projects/altar-gradine-oratory-and-tabernacle-chapel-annunziata-ss-annunziata/) remains a separate **rights-unknown discovery lead**, not a photo for publication. No invented scene geometry or speculative clickable coordinates.
+
+**Publication filters:** an original photographed vestment can be culturally and historically authentic while not depicting 1962 liturgical use. VE10 must not be falsely completed by copying a dalmatic photo; VE15 must have a complete comparison of white, red, green, violet and black on proper source photographs, not a single colour or digital illustration. VE20 must include both buskins and sandals rather than silently treating gloves as a complete pontifical set. Authentic photography, rights and separately proven liturgical correctness all remain mandatory.
+
+No merge, no production integration; PR #1309 stays draft.
