@@ -37,10 +37,11 @@ try{
      a.setPresentationMode("LIVE");
      const cardNames=a.model.cards.map(x=>x.title);
      const mode=document.querySelector("[data-ao-reader-shell]")?.dataset.mode;
-     const current=a.getCurrentCard();
+     const target=a.model.cards.find(c=>c.title==="Words of Consecration and Elevation · Host");
+     if(target)a.showSequence(target.sequence);
+     const visibleTitle=document.querySelector('[data-role="section-title"]')?.textContent?.trim()??"";
      return {initial,after:a.model.totalCards,mode,
-       cardNames,rootCards:document.querySelector("#ao-r17-native-reader-preview")?.dataset.r17PresentationModelCards,
-       current:current?.title};
+       cardNames,visibleTitle,current:a.getCurrentCard()?.title};
    });
    assert.equal(result.mode,"LIVE");
    assert.equal(result.after,65,
@@ -50,7 +51,8 @@ try{
      "Final Blessing"]){
      assert.ok(result.cardNames.includes(title),startMode+" missing named prayer "+title);
    }
-   assert.equal(result.rootCards,"65");
+   assert.equal(result.current,"Words of Consecration and Elevation · Host");
+   assert.ok(result.visibleTitle.includes("Host"),"Visible reader title lost after LIVE switch: "+JSON.stringify(result));
    assert.deepEqual(errors,[]);
    console.log("PASS "+startMode+" -> LIVE: 65 named prayer cards, main reader synchronized");
   }finally{await ctx.close()}
