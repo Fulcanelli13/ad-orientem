@@ -110,6 +110,33 @@ export function createVisibleMassReviewRuntime(win=globalThis){
    node.append(top,disclaimer,frame);
    doc.body.append(node);
    if(askReviewEnabled()){
+    let restoreCatechismLayout=null;
+    const onNativeOpen=({routeId}={})=>{
+     if(routeId==="learn.catechism"){
+      const original=doc.getElementById("ao-cate-root");
+      if(original){
+       const inline=original.getAttribute("style");
+       restoreCatechismLayout=()=>{
+        if(inline===null)original.removeAttribute("style");
+        else original.setAttribute("style",inline);
+       };
+       // The canonical Catechism owns this DOM, but normally mounts in the
+       // document flow. Within the full-screen photographic reviewer it
+       // would remain >3,000px below the viewport. Temporary visual staging
+       // keeps its original text/controller and does NOT clone its content.
+       Object.assign(original.style,{
+        position:"fixed",inset:"0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0",
+        zIndex:"15010",overflowY:"auto",overscrollBehavior:"contain",
+        background:"#080c12",color:"#eee7dc",margin:"0",
+        width:"100%",maxWidth:"none",padding:"12px 16px 28px"
+       });
+      }
+     }
+     node.style.visibility="hidden";
+    };
+    const onNativeReturn=()=>{
+     try{restoreCatechismLayout?.();}finally{restoreCatechismLayout=null;node.style.visibility="";}
+    };
     askReturnButton=doc.createElement("button");
     askReturnButton.type="button";
     askReturnButton.id="aoLivingChurchReturnSanctuary";
@@ -137,8 +164,7 @@ export function createVisibleMassReviewRuntime(win=globalThis){
        if(!response.ok)throw Error("Original Ask the Church survey unavailable");
        askIntegration=mod.createLivingChurchAskIntegration(win,{
         frame,returnButton:askReturnButton,survey:await response.json(),
-        onNativeOpen:()=>{node.style.visibility='hidden';},
-        onNativeReturn:()=>{node.style.visibility='';}
+        onNativeOpen,onNativeReturn
        });
       }
       const verdict=await askIntegration.openGuide();
@@ -162,8 +188,7 @@ export function createVisibleMassReviewRuntime(win=globalThis){
         if(!response.ok)throw Error('Original Ask route registry unavailable');
         survey=await response.json();
         askIntegration=mod.createLivingChurchAskIntegration(win,{frame,returnButton:askReturnButton,survey,
-         onNativeOpen:()=>{node.style.visibility='hidden';},
-         onNativeReturn:()=>{node.style.visibility='';}});
+         onNativeOpen,onNativeReturn});
        }
        askIntegration.hideGuide?.();
        if(!characterFolio){
