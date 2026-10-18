@@ -1,4 +1,4 @@
-// Red Missal English editorial batch 1: 256-cue review worklist and
+// Red Missal English editorial batches 1–2: 256-cue review worklist and
 // 1962 source-to-LOW/SUNG native reader cross-surface regression.
 // This file does NOT claim to have manually collated 256 scanned passages.
 import assert from "node:assert/strict";
@@ -20,7 +20,7 @@ const [low,sung,french,sectionMap,manifest,corrections]=await Promise.all([
 ].map(load));
 const sections=createReaderSectionResolver(sectionMap);
 const approved=new Map(manifest.approvedCues.map(x=>[x.id,x]));
-assert.equal(approved.size,4);
+assert.equal(approved.size,19);
 const allCorrections=new Map(corrections.corrections.map(x=>[x.cueId,x]));
 const reviewRows={};
 const defaults=["INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
@@ -67,10 +67,15 @@ for(const corpus of [low,sung]){
   corpus.form+": fixed Ordo Missae 256 cue review coverage changed");
  assert.equal(new Set(rows.map(x=>x.cueId)).size,rows.length);
  reviewRows[corpus.form]=rows;
- // Exercise the native reader's actual source-to-presentation pipeline for
- // the amended Offertory and Orate fratres cards, in both EN/FR locales.
+ // Exercise every native reader card containing an approved cue. Keep
+ // complete end-to-end source/actor/vernacular ownership in both forms.
+ const relevantMacros=new Set(corpus.blocks.filter(b=>b.units?.some(u=>approved.has(u.cue_id)))
+  .map(b=>b.Macro_ID));
+ const seenByLang={en:new Set(),fr:new Set()};
  for(const lang of ["en","fr"]){
-  for(const cardId of ["AO.CARD.010","AO.CARD.011"]){
+  for(const macroId of relevantMacros){
+   const seq=Number(macroId.slice(-2));
+   const cardId="AO.CARD."+String(seq).padStart(3,"0");
    const card=buildReaderSectionCard({corpus,section:sections.sectionById(cardId),
     properSlots,vernacularLanguage:lang,frenchOrdinary:french,
     actualForm:corpus.form==="LOW"?"LOW":"MISSA_CANTATA_SIMPLE"});
@@ -78,6 +83,8 @@ for(const corpus of [low,sung]){
     if(!card.blocks.some(b=>b.blockId===check.get(item.id).blockId))continue;
     const p=card.paragraphs.find(x=>x.sourceCueIds?.includes(item.id));
     assert.ok(p,corpus.form+"/"+lang+": approved source cue not in reader "+item.id);
+    assert.ok(!seenByLang[lang].has(item.id),corpus.form+"/"+lang+": duplicate projected cue "+item.id);
+    seenByLang[lang].add(item.id);
     const display=[p.primary,p.alternate,p.secondary].filter(Boolean).join("\n");
     const corrected=check.get(item.id);
     if(lang==="en"){
@@ -93,6 +100,8 @@ for(const corpus of [low,sung]){
       corpus.form+" reader lost controlling Latin at "+item.id);
    }
   }
+  assert.equal(seenByLang[lang].size,approved.size,
+   corpus.form+"/"+lang+": not all 19 source English edits projected in real reader");
  }
 }
 const l=new Map(reviewRows.LOW.map(x=>[x.cueId,x]));
@@ -108,7 +117,7 @@ for(const row of reviewRows.SUNG){
 const output=path("artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
 await mkdir(dirname(output),{recursive:true});
 const review={schema:"ao.mass.ordo-missae.red-missal.editorial-worklist.v1",
- witness:manifest.source,status:"ONLY_FIRST_4_APPROVED; ALL_OTHER_CUES_PENDING",
+ witness:manifest.source,status:"19_SOURCE_CUE_ENGLISH_REVISIONS_APPROVED; 237_UNCOLLATED",
  sampleSize:256,formCount:2,approvedCount:approved.size,
  rows:reviewRows.SUNG,formParity:"LOW/SUNG checked",french:"UNCHANGED",
  openTranslationDecisions:manifest.unresolvedTranslationDecisions};
@@ -117,4 +126,4 @@ console.log("RED_MISSAL_SUMMARY="+JSON.stringify({sourceCues:256,lowCues:reviewR
  sungCues:reviewRows.SUNG.length,approved:approved.size,pending:256-approved.size,
  lowSungParity:"PASS",actualReaderEnglishFrench:"PASS"}));
 console.log("RED_MISSAL_ARTIFACT=artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
-console.log("PASS Red Missal editorial batch 1: four exact-source upgrades and 256-cue worklist");
+console.log("PASS Red Missal editorial wave 2: 19 exact-source upgrades, 237 pending, and 256-cue worklist");
