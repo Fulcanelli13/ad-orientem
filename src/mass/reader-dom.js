@@ -2510,23 +2510,9 @@ export function createReaderDomAdapter({
         syncReaderRitualHighlights(root,current?.gesture);
         return;
       }
-      const guideClose=event.target?.closest?.("[data-guide-close]");
-      if(guideClose){closeGuide();return;}
-      const guideBackdrop=event.target?.closest?.('[data-role="guide-popover"]');
-      if(guideBackdrop && event.target===guideBackdrop){closeGuide();return;}
-      const guideButton=event.target?.closest?.('[data-role="guide-button"]');
-      if(false && guideButton && !guideButton.disabled && current?.guide){
-        const pop=root.querySelector('[data-role="guide-popover"]');
-        if(pop){
-          if(pop.hidden){
-            renderGuideSheet(pop,current.guide,prepared?.readerPreferences?.language??"en");
-            pop.hidden=false;
-            pop.querySelector?.("[data-guide-close]")?.focus?.();
-          }else closeGuide();
-        }
-        onGuide?.(current.guide,current,prepared);
-        return;
-      }
+      // The Guide is no longer a Mass-reader interaction. Its separate
+      // educational corpus remains available outside the ritual player.
+      if(event.target?.closest?.('[data-role="guide-button"],[data-role="guide-popover"]'))return;
       const rubric=event.target?.closest?.('.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]');
       if(rubric){toggleRubric(rubric);return;}
     };
