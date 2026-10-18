@@ -1,0 +1,35 @@
+name: 1962 Ordo 2026 Language QA
+
+on:
+  pull_request:
+    paths:
+      - "tests/calendar-ordo-2026-language-grammar-sample.mjs"
+      - ".github/workflows/calendar-ordo-language-qa.yml"
+      - "src/calendar/**"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sample-ordo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Audit full 2026 Ordo source and 48 real EN/FR Calendar projections
+        run: node tests/calendar-ordo-2026-language-grammar-sample.mjs
+      - name: Preserve source and display audit JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ordo-2026-language-qa
+          path: artifacts/calendar-ordo-grammar/ordo-2026-year-plus-48.json
+          if-no-files-found: warn
+          retention-days: 30
