@@ -98,9 +98,10 @@ try{
    // Its source-bounded historical witness is loaded asynchronously. Do not
    // classify the opening "loading meditation" placeholder as a completed
    // devotional card whose closing cue ought to have active focus.
-   await pray.waitForFunction(()=>
-     !!document.querySelector("#aoPray435930.open .aoP435930HistoricalFocus .aoP435930WitnessParagraph"),
-     null,{timeout:18000});
+   await pray.waitForFunction(()=>Boolean(
+     document.querySelector("#aoPray435930.open .aoP435930HistoricalFocus .aoP435930WitnessParagraph")&&
+     document.querySelector("#aoPray435930.open [data-p435930-word-scripture] .aoP435930ScriptureVerse")
+   ),null,{timeout:18000});
   }
   const mount=await pray.evaluate(()=>{
     const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
@@ -134,15 +135,22 @@ try{
        card:m?.querySelector(".aoDevoCard:not([hidden])")?.dataset.aoDevoCard||String(0),
        visibleText:(m?.innerText||"").trim().length};
     });
-    let probed=null;
-    if(cards.hasDeck)probed=await pray.evaluate(probeTextFocus,{
+    const config=cards.hasDeck?{
       rootSelector:"#aoPray435930.open",scrollSelector:".aoDevoCard:not([hidden]) .aoDevoCardScroll",
       paragraphSelector:".aoDevoParagraph",owner:"devotional",label:id+" / "+cards.card
-    });
-    else if(cards.legacy)probed=await pray.evaluate(probeTextFocus,{
+    }:cards.legacy?{
       rootSelector:"#aoPray435930.open",scrollSelector:".aoP435930Mount",
       paragraphSelector:".aoP435930FluidUnit",owner:"legacy",label:id+" / "+cards.card
-    });
+    }:null;
+    let probed=config?await pray.evaluate(probeTextFocus,config):null;
+    for(let retry=0;probed?.invalidated&&retry<2;retry++){
+      await pray.waitForFunction(selector=>
+        !!document.querySelector("#aoPray435930.open "+selector),
+        config.scrollSelector,{timeout:15000});
+      await pray.waitForTimeout(250);
+      probed=await pray.evaluate(probeTextFocus,config);
+    }
+    assert.ok(!probed?.invalidated,id+" focus owner repeatedly replaced during scroll audit");
     row.cards.push({step,card:cards.card,visibleTextLength:cards.visibleText,probe:probed});
   }
   row.status=row.cards.some(x=>x.probe?.registered>0)?"sampled-focused":
