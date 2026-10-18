@@ -14,18 +14,19 @@ export function createAskChurchNativeHandoff(win=globalThis,{survey=null}={}){
   if(typeof nav!=='function')return failure('NATIVE_SHELL_UNAVAILABLE');
   try{
    if(id.startsWith('apostolate:')){
-    if(typeof win?.AO_APOSTOLATE_APP_V1?.open!=='function')return failure('APOSTOLATE_NOT_READY');
     const navigated=await nav.call(win.AO_APP_SHELL_V1,'apostolate');
     if(navigated===false||navigated?.ok===false)return failure('NAVIGATION_FAILED');
+    const owner=win?.AO_APOSTOLATE_APP_V1;
+    if(typeof owner?.open!=='function')return failure('APOSTOLATE_NOT_READY');
     const raw=id.slice('apostolate:'.length);
-    const opened=win.AO_APOSTOLATE_APP_V1.open({scenarioId:raw,practice:false});
+    const opened=owner.open({scenarioId:raw,practice:false});
     return opened===true||opened?.ok===true?success('apostolate',id):failure('APOSTOLATE_OPEN_FAILED');
    }
    if(id.startsWith('learn.')){
-    const app=win?.AO_LEARN_APP_V1;
-    if(typeof app?.openModule!=='function')return failure('LEARN_NOT_READY');
     const navigated=await nav.call(win.AO_APP_SHELL_V1,'learn');
     if(navigated===false||navigated?.ok===false)return failure('NAVIGATION_FAILED');
+    const app=win?.AO_LEARN_APP_V1;
+    if(typeof app?.openModule!=='function')return failure('LEARN_NOT_READY');
     // Navigating to Learn must be complete and visible before its native child can open.
     if(app.status?.()?.open===false)return failure('LEARN_HUB_NOT_READY');
     const opened=await app.openModule(id,{returnContext:{surface:'learn',origin:'ask-church'}});
