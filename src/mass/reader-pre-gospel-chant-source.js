@@ -38,7 +38,13 @@ function certifyWithinOneSection(proper,{sources,normalizeRows,path}){
   for(const language of LANGUAGES){
     const parsed=sources[language];
     const order=orderOf(parsed).filter(id=>Object.hasOwn(NAMES,id));
-    if(order.length!==1||order[0]!=="Graduale")return null;
+    // Christ the King source has an *alternative* Tractus for a votive
+    // Mass after Septuagesima, while the date's resolved Ordinary Proper
+    // owns Graduale+Alleluia. Do not mistake its non-selected Tractus
+    // section for the chant currently being said.
+    const kingAlternative=path==="Sancti/10-DU"&&order.length===2&&
+      order[0]==="Graduale"&&order[1]==="Tractus";
+    if(!((order.length===1&&order[0]==="Graduale")||kingAlternative))return null;
     const rows=rowsOf(parsed,"Graduale");
     if(!rows?.length)return null;
     const original=normalizeRows(rows,language);
@@ -69,6 +75,15 @@ export function certifyPreGospelChantParts(proper,{sources,normalizeRows}={}){
   const path=String(proper.sourcePath??"").trim();
   if(!path||!proper.gradual)return null;
   const baseOrder=orderOf(sources.la).filter(id=>Object.hasOwn(NAMES,id));
+  // Certified 1962 Oct feast source: the listed Tractus is an alternate
+  // votive option, not the Alleluia sung with the selected Proper.
+  // The same Graduale text must independently reconstruct the complete
+  // trilingual aggregate before this exception can certify any split.
+  const kingAlternative=path==="Sancti/10-DU"&&baseOrder.length===2&&
+    baseOrder[0]==="Graduale"&&baseOrder[1]==="Tractus"&&
+    /allel[úu]ja|allél[uú]ia|alleluia/iu.test(String(proper.gradual.lat));
+  if(kingAlternative)
+    return certifyWithinOneSection(proper,{sources,normalizeRows,path});
   // Indexed extended-lesson GradualeL... uses a separate sequence model;
   // do not compact it into the single ordinary-Mass Gradual.
   if(baseOrder.length!==2||baseOrder[0]!=="Graduale"||
