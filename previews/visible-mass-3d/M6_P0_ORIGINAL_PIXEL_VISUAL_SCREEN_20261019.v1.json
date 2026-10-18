@@ -1,0 +1,121 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_ORIGINAL_PIXEL_VISUAL_SCREEN_V1",
+  "date": "2026-10-19",
+  "scope": "Original-photo visual pre-screen, not user editorial rating nor release certification",
+  "reference_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39165797058",
+  "source_artifact_name": "M6-Original-Source-Pixel-QA-20-Photos",
+  "source_artifact_id": 12150582073,
+  "sources_requested": 20,
+  "originals_downloaded_and_visually_inspected": 3,
+  "sources_not_downloaded_or_not_visually_inspected": 17,
+  "source_limited_by": "Wikimedia Commons HTTP 429 on fourth original download (Bari 1760); all subsequent originals failed or were unavailable during first CI attempt.",
+  "screened_object_ids": [
+    "SV01"
+  ],
+  "pending_object_ids": [
+    "SV02",
+    "SV03",
+    "LN04",
+    "LN05"
+  ],
+  "publication_approved": false,
+  "ratings_assigned_by_user": 0,
+  "preserve_source_registry": true,
+  "screening_overrides": [
+    {
+      "asset_id": "M6B15-SV01-GENOA-PRE1777-DADEROT",
+      "decision": "PRE_SCREEN_REFERENCE_ONLY",
+      "reason": "Actual original-image pre-screen: a second adjacent chalice and exhibition label intrude; retain as source, but do not count as a clean standalone candidate pending a cropped derivative."
+    },
+    {
+      "asset_id": "M6B15-SV01-SEVILLE-ISABELII-CHALICE",
+      "decision": "PRE_SCREEN_REFERENCE_ONLY",
+      "reason": "Actual original-image pre-screen: low chalice/background separation, red patterned textile, and white exhibition fixture intrude; retain as historical candidate only, not a clean primary object image."
+    }
+  ],
+  "findings": [
+    {
+      "asset_id": "M6B15-SV01-GENOA-1780-DADEROT",
+      "object_id": "SV01",
+      "original_pixel_size": [
+        3283,
+        5311
+      ],
+      "source_licence_crosscheck": "Commons API LicenseShortName: CC0",
+      "screening": "RETAIN_AS_UNAPPROVED_COMPARISON",
+      "observations": [
+        "Entire single chalice visible from rim through foot, with no competing vessel in foreground",
+        "Dark upper background, pale museum plinth below and warm metal reflections; object silhouette is legible",
+        "Ornament at 100% crop is noticeably softer/noisier than original dimensions suggest; avoid enlarging extreme closeups",
+        "Valid historical object photo, not direct illustration of a 1962 celebration"
+      ],
+      "technical_flags": {
+        "mean_luminance": 112,
+        "edge_texture_heuristic": 341.35
+      },
+      "approved": false
+    },
+    {
+      "asset_id": "M6B15-SV01-GENOA-PRE1777-DADEROT",
+      "object_id": "SV01",
+      "original_pixel_size": [
+        3648,
+        5472
+      ],
+      "source_licence_crosscheck": "Commons API LicenseShortName: CC0",
+      "screening": "HOLD_FOR_SPECIMEN_SAFE_CROP_OR_REPLACEMENT",
+      "observations": [
+        "Entire main chalice photographed and generally intelligible",
+        "A second chalice intrudes prominently at the upper and right edges; visible exhibition label interrupts lower left",
+        "Museum lighting creates bright reflected patches, and rim/bowl detail becomes moderately soft at native pixels",
+        "Could return to main shortlist only after inspecting a lawful crop which fully retains the intended main chalice"
+      ],
+      "technical_flags": {
+        "mean_luminance": 113.2,
+        "edge_texture_heuristic": 181.65
+      },
+      "approved": false
+    },
+    {
+      "asset_id": "M6B15-SV01-SEVILLE-ISABELII-CHALICE",
+      "object_id": "SV01",
+      "original_pixel_size": [
+        2848,
+        4272
+      ],
+      "source_licence_crosscheck": "Commons API LicenseShortName: CC BY 2.0",
+      "screening": "HOLD_AS_HISTORICAL_CONTEXT_NOT_CLEAN_OBJECT_PRIMARY",
+      "observations": [
+        "Complete and distinct gilded chalice visible",
+        "Gold chalice photographed against similarly ochre/gold stone backdrop, lowering silhouette contrast",
+        "Red patterned museum display surface visually dominates lower half; a conspicuous white exhibition/electrical fitting appears behind the stem",
+        "The precious vessel is a valid historical reference, but photograph is not a clean generic teaching/atlas primary image",
+        "At native-pixel detail, fine ornament exhibits visible noise/softness despite respectable image dimensions"
+      ],
+      "technical_flags": {
+        "mean_luminance": 113.5,
+        "edge_texture_heuristic": 155.33
+      },
+      "approved": false
+    }
+  ],
+  "pending_manual_review": [
+    "M6B15-SV01-BARI-1760-SAILKO",
+    "SV02 (all four full-resolution originals)",
+    "SV03 (all four)",
+    "LN04 (all four)",
+    "LN05 (all four)"
+  ],
+  "next_acquisition": [
+    "Replace two SV01 weak primary-comparison slots with clean independently photographed Roman chalices, ideally on neutral/dark uncluttered backgrounds",
+    "Inspect original Bari image only after permitted source access resumes; resolution alone does not qualify",
+    "For all other four-photo metadata groups, withhold visually-audited status until original pixels are acquired",
+    "Avoid any automatic repeated requests during Wikimedia rate limiting; manual-only source workflow"
+  ],
+  "consumer_rule": "Screening overrides take precedence over old role/size-based metadata viability only in comparative reviewer. User 0–5 opinions remain separate from QA holds; an override cannot delete a source or declare an item rejected.",
+  "verified_dimensions_only_for": [
+    "M6B15-SV01-GENOA-1780-DADEROT",
+    "M6B15-SV01-GENOA-PRE1777-DADEROT",
+    "M6B15-SV01-SEVILLE-ISABELII-CHALICE"
+  ]
+}
