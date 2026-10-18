@@ -2446,8 +2446,7 @@ export async function mountNativeReaderPreview({
       // Guide/Formation is an independent educational destination. The
       // published R17 1962 event registry, not an inherited 32-card Guide,
       // supplies LIVE rubrics at the exact source cue paragraph.
-      guide:String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
-        ? null:guideForCurrent(visibleCard),
+      guide:null,
       ...state,
     });
     canonManualUI?.update();
@@ -2595,8 +2594,7 @@ export async function mountNativeReaderPreview({
       sectionTitle:current?.title ?? "",
       cardUpdate:false,
       progress:current ? visibleProgress(current) : null,
-      guide:String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
-        ? null:guideForCurrent(current),
+      guide:null,
       ...state,
     });
     canonManualUI?.update();
