@@ -3,6 +3,8 @@
  * Does not own the prayer corpus or recitation sequence. Its only responsibilities:
  * title timeline, horizontal chapter gestures, card-local vertical focus.
  */
+import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
+
 import "./devotional-card-deck-styles.js";
 
 export const SEQUENTIAL_DEVOTIONAL_SCHEMA = "dual-axis-sequential-devotional-v1";
@@ -145,6 +147,10 @@ export function installSequentialDevotionalReader({
     frame=0;
     const shown=paragraphs.filter(visible);
     if(!shown.length)return;
+    if(body.dataset.aoFocusRunway!=="1"){
+      ensureDevotionalReadingRunway(body,shown,{ratio:.40});
+      body.dataset.aoFocusRunway="1";
+    }
     const box=body.getBoundingClientRect();
     const y=box.top+box.height*.40;
     let found=0,best=Infinity;
@@ -200,8 +206,16 @@ export function installSequentialDevotionalReader({
       go(index+(dx<0?1:-1));
   },{passive:true});
   body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
+  doc.defaultView?.addEventListener("resize",()=>{
+    if(!body.isConnected)return;
+    delete body.dataset.aoFocusRunway;
+    queue();
+  },{passive:true});
   parent.addEventListener("click",event=>{
-    if(event.target?.closest?.("[data-tp381-flip]"))doc.defaultView?.queueMicrotask?.(queue);
+    if(event.target?.closest?.("[data-tp381-flip]")){
+      delete body.dataset.aoFocusRunway;
+      doc.defaultView?.queueMicrotask?.(queue);
+    }
   });
   // The canonical Scripture service inserts real psalm/Gospel verses after
   // the shell has mounted. Reconcile only source-owned DOM additions; do not
@@ -212,6 +226,7 @@ export function installSequentialDevotionalReader({
       const current=selectParagraphs();
       if(current.length===paragraphs.length&&current.every((p,i)=>p===paragraphs[i]))return;
       paragraphs=current;
+      delete body.dataset.aoFocusRunway;
       paragraphs.forEach(p=>p.classList.add("aoDevoParagraph"));
       queue();
     });
