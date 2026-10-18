@@ -48,6 +48,7 @@ try{
   await page.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
   const ui=await page.evaluate(()=>{
    const root=document.querySelector("#ao-r17-native-reader-preview");
+   const scholaEngine=window.__AO_PHONE_PREVIEW.getScholaState?.();
    const nodes=[...root.querySelectorAll(".ao-reader-paragraph")];
    const visible=el=>el&&getComputedStyle(el).display!=="none"&&
       getComputedStyle(el).visibility!=="hidden"&&el.getBoundingClientRect().height>0;
@@ -67,6 +68,10 @@ try{
     voice:root.dataset.r17OwnerPriestVoice??null,
     posture:root.dataset.r17OwnerPosture??null,
     scholaVisibility:schola?.dataset.active??null,
+    scholaEngineTrack:scholaEngine?.trackId??null,
+    scholaEngineSegment:scholaEngine?.schola?.segmentId??null,
+    scholaEngineComplete:scholaEngine?.complete??null,
+    scholaVisualText:schola?.querySelector("[data-role='schola']")?.textContent?.trim()?.slice(0,80)??null,
     scrollable:(root.querySelector(".ao-prayer-card")?.scrollHeight??0)>
       (root.querySelector(".ao-prayer-card")?.clientHeight??0)+10,
     horizOverflow:root.scrollWidth>root.clientWidth+2,
@@ -82,6 +87,8 @@ try{
  const snapshots=visible.filter(x=>/Sanctus|Benedictus|Consecration|Secret Prayer|Postcommunion|Confiteor|Introit|Alleluia|Communion Antiphon|Final Blessing/i.test(x.title))
    .map(x=>({card:x.sequence,title:x.title,paragraphs:x.paragraphCount,inline:x.inlineRubricCount,
     explicit:x.sourceRubricRows,rubricIDs:x.inlineRubricEventIds,schola:x.scholaVisibility,
+    scholaEngine:x.scholaEngineTrack,scholaSegment:x.scholaEngineSegment,
+    scholaText:x.scholaVisualText,
     titleActual:x.titleText,scrollable:x.scrollable}));
  const assessment={
   view:"production entry through phone harness",total:model.length,visible:visible.length,
