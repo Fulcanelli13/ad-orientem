@@ -52,6 +52,9 @@ try{
     commemorations:(day.day?.commemorations??[]).map(v=>({id:v.id,title:v.title,
      rank:v.rank,privileged:v.privileged,path:v.path})),
     rawCounts:field.map(key=>p[key]?.length??0),
+    sourceDiscrepancies: date==="2026-10-25" &&
+     /^Ps 71:8; 78:11/m.test(String(p.gradual?.lat??""))
+      ? ["CONFIRMED_WRONG_REFERENCE: Gradual Ps 71:8;78:11 should be Ps 71:8,11"] : [],
     raw:{gradual:p.gradual?.lat?.slice(0,300),alleluia:p.alleluia?.lat?.slice(0,260),
      preface:p.preface?.lat?.slice(0,280)},
     forms:{}};
@@ -120,6 +123,10 @@ try{
      titles:preflight.commemorations,
      counts:preflight.commemorationOrations?.counts??null,
     };
+    if(!formRow.print)formRow.flags.push("PRINT_PROPER_UNAVAILABLE");
+    if(formRow.language.en?.status.ALLELUIA_TRACT_SEQUENCE==="NOT_APPLICABLE" &&
+       /Allel[úu]ja|Allel[úu]ia/i.test(String(p.gradual?.lat??"")))
+      formRow.flags.push("ALLELUIA_BOUNDARY: Gradual/Alleluia coalesced in source");
     summary.forms[form]=formRow;
    }
    res.push(summary);
@@ -129,7 +136,7 @@ try{
  for(const row of output)console.log("MASS_CROSS_DATE_AUDIT="+JSON.stringify(row));
  const exp=[
   {date:"2026-10-11",main:/Pent20/,counts:[2,2,2]},
-  {date:"2026-10-25",main:/10-25|Christ|Regis/i,counts:[1,1,1]},
+  {date:"2026-10-25",main:/10-DU|Christ|Regis/i,counts:[1,1,1]},
   {date:"2026-11-01",main:/11-01|Omnium/i,counts:[2,2,2]},
   {date:"2026-12-04",main:/12-04|Petri/i,counts:[3,3,3]},
  ];
