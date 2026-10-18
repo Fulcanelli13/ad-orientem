@@ -30,7 +30,7 @@ async function fetchJSON(fetcher,path){
  return json;
 }
 function findRecord(document,id){
- for(const key of ["records","drafts","dossiers"]){
+ for(const key of ["records","entries","drafts","dossiers"]){
   const records=document[key];
   if(Array.isArray(records)){
    const record=records.find(r=>r.id===id||r.historical_id===id);
