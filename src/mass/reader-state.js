@@ -9,6 +9,7 @@ export const POSTURE_PROFILES = Object.freeze([
   "TRADITIONAL_WALSH",
 ]);
 export const GESTURE_PROFILES = Object.freeze(["ESSENTIAL", "GUIDED_1962", "TRADITIONAL"]);
+export const SANCTUS_PERFORMANCES = Object.freeze(["UNSPECIFIED", "GREGORIAN", "POLYPHONIC"]);
 
 export const HARDENED_CROSS_CUES = Object.freeze([
   "AO.SM.C0068","AO.SM.C0104","AO.SM.C0119","AO.SM.C0152","AO.SM.C0164",
@@ -37,6 +38,9 @@ export function resolveReaderPreferences(input = {}) {
     credoSitStart: input.credoSitStart === "AO.SM.C0098" ? "AO.SM.C0098" : "AO.SM.C0097",
     // Optional local practice, not a 1962 normative Communion rubric.
     secondConfiteor: input.secondConfiteor === true,
+    // Actual choir setting, not inferred from liturgical date or scrolling.
+    sanctusPerformance: SANCTUS_PERFORMANCES.includes(input.sanctusPerformance)
+      ? input.sanctusPerformance : "UNSPECIFIED",
   });
 }
 
