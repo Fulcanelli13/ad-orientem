@@ -3,6 +3,8 @@
  * Does not own the prayer corpus or recitation sequence. Its only responsibilities:
  * title timeline, horizontal chapter gestures, card-local vertical focus.
  */
+import {devotionalFocusIndex} from "./devotional-focus-geometry.js";
+
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 
 import "./devotional-card-deck-styles.js";
@@ -151,14 +153,7 @@ export function installSequentialDevotionalReader({
       ensureDevotionalReadingRunway(body,shown,{ratio:.40});
       body.dataset.aoFocusRunway="1";
     }
-    const box=body.getBoundingClientRect();
-    const y=box.top+box.height*.40;
-    let found=0,best=Infinity;
-    shown.forEach((p,i)=>{
-      const r=p.getBoundingClientRect();
-      const d=y<r.top?r.top-y:y>r.bottom?y-r.bottom:0;
-      if(d<best){best=d;found=i}
-    });
+    let found=devotionalFocusIndex(body,shown,{ratio:.40});
     // On initial mount the canonical bead cursor is authoritative. Moving
     // to the next bead must not be undone by the viewport focus heuristics.
     if(!userScrolled&&Number.isInteger(restoreStep)){
