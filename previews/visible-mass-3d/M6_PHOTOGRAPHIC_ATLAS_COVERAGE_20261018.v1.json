@@ -97,19 +97,22 @@
     "post_tenth_batch_photo_candidate_or_hotspot": 70,
     "post_tenth_batch_needs_photo": 100,
     "post_tenth_batch_unique_source_urls": 79,
-    "eleventh_batch_new_licensed_photos": 6,
+    "eleventh_batch_new_licensed_photos": 9,
     "eleventh_batch_subjects": [
       "BK11",
       "BK09",
       "SE02",
       "SE03",
       "SE06",
-      "SE14"
+      "SE14",
+      "SE05",
+      "DV08",
+      "DV05"
     ],
-    "post_eleventh_batch_photo_candidate_or_hotspot": 76,
-    "post_eleventh_batch_needs_photo": 94,
-    "post_eleventh_batch_source_records": 88,
-    "post_eleventh_batch_unique_source_urls": 85
+    "post_eleventh_batch_photo_candidate_or_hotspot": 79,
+    "post_eleventh_batch_needs_photo": 91,
+    "post_eleventh_batch_source_records": 91,
+    "post_eleventh_batch_unique_source_urls": 88
   },
   "zones": [
     {
@@ -514,9 +517,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-DV05-COLUMBUS-SACRED-HEART-STATUE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV06",
@@ -568,9 +577,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-DV08-SALZBURG-CATHEDRAL-RELIQUARY",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV09",
@@ -2957,9 +2972,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-SE05-STPANCRAS-VEILED-PASSIONTIDE-CROSS",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE06",
@@ -4570,6 +4591,54 @@
       "role": "object_detail",
       "medium": "photograph",
       "source_description": "Original photograph of a triangular Tenebrae hearse / Tenebrae candelabrum in Mainz Cathedral, unambiguously identified on source page. True Catholic furnishing; one image of physical object, not evidence of use in the older Tenebrae office or a 1962 Tenebrae ritual.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B11-SE05-STPANCRAS-VEILED-PASSIONTIDE-CROSS",
+      "object_id": "SE05",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St_Pancras_Ipswich_veiled_icons_and_cross.jpg",
+      "creator": "A1lbs",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3024,
+      "height": 4032,
+      "venue": "St Pancras Roman Catholic Church, Ipswich, UK; Passiontide, 5 April 2025",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_description": "Direct original licensed photograph of crucifix and icons completely covered in violet shrouds in a confirmed Roman Catholic parish church during Passiontide. 2025 custom, not certification of 1962 rubrical timing; distinguishes veiling furnishing from Good Friday cross veneration.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B11-DV08-SALZBURG-CATHEDRAL-RELIQUARY",
+      "object_id": "DV08",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Salzburg_Dom_St._Virgil_%26_Rupert_Innen_Reliquiar_1.jpg",
+      "creator": "Zairon",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 2048,
+      "height": 1536,
+      "venue": "Cathedral of Saints Virgil and Rupert, Salzburg, Austria",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_description": "Original 2006 credited Catholic-cathedral photograph of an actual reliquary; not proof of the identity/authenticity of individual relics and not tied to a 1962 Mass or a specific relic-veneration ceremony.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B11-DV05-COLUMBUS-SACRED-HEART-STATUE",
+      "object_id": "DV05",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_Catholic_Church_(Columbus,_Ohio)_-_Sacred_Heart_statue.jpg",
+      "creator": "Nheyob",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 1935,
+      "height": 3225,
+      "venue": "Sacred Heart Catholic Church, Columbus, Ohio, USA",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_description": "Original photographic representation of the Sacred Heart of Jesus statue in an active Roman Catholic church. Classified as a Sacred Heart devotional image in a three-dimensional statue form; not a traditional high altar furnishing or a 1962 liturgical action.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH11"
     }
