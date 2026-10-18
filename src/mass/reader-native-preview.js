@@ -2577,6 +2577,11 @@ export async function mountNativeReaderPreview({
       queue();
       return value;
     },
+    onScholaPrevious:()=>{
+      const value=ready.scholaState.previous();
+      queue();
+      return value;
+    },
     onSectionSelect:(sectionId)=>{
       const card=readerModel.cards.find(value=>value.sectionId===String(sectionId));
       return showCard(visibleCardAllowed(card)?card:null,{directJump:true});
