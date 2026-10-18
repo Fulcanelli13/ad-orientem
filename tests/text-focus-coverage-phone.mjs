@@ -163,6 +163,11 @@ try{
  assert.equal(findings.mass.uncuedFocused,findings.mass.unownedText,
    "A non-rubric Proper passage did not acquire an independent reading focus");
  assert.equal(findings.mass.cardsChecked,findings.mass.cardsExpected,"Mass card traversal incomplete");
+ const sevenWords=findings.prayer.routes.find(row=>row.id==="pray.seven_words");
+ assert.ok(sevenWords,"Seven Last Words reader was not audited");
+ const unresolvedWords=sevenWords.cards.reduce((n,x)=>n+(x.probe?.unreachableTotal||0),0);
+ assert.equal(unresolvedWords,0,
+   "Seven Last Words still has overlapping or unreachable witness paragraphs");
  assert.equal(findings.prayer.routesChecked,findings.prayer.routesExpected,"Prayer route traversal incomplete");
 } catch(error){
  findings.errors.push(String(error?.stack||error));
