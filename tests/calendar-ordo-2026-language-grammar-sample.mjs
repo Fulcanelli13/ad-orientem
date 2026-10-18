@@ -101,7 +101,7 @@ try{
       ["DUPLICATE_WORD_EN",/\b(?:the the|of of|and and|for for|with with)\b/iu],
       ["DUPLICATE_WORD_FR",/\b(?:de de|la la|les les|des des|dans dans)\b/iu],
       ["SUSPICIOUS_LATIN_CASE_IN_VERNACULAR",/\b(?:Damasum|Petri|Mártyrem|Martyrum|Pontificem)\b/iu],
-      ["MISSING_SPACE_EN_PUNCTUATION",/ \,/u],
+      ["MISSING_SPACE_EN_PUNCTUATION",/ ,/u],
     ]){
       const match=v.match(re);if(match)textFlags.push({...ctx,rule,excerpt:v.slice(Math.max(0,match.index-70),match.index+120)});
     }
