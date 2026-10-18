@@ -10,6 +10,8 @@ assert.deepEqual(pilot.status().eligibleIds,["apostolate:AQ05","apostolate:AQ04"
 assert.equal(pilot.status().hasLLM,false);
 assert.equal(pilot.status().massExplorerStudiesPublished,false);
 assert.equal(pilot.status().massFormationPassagesPublished,false);
+assert.equal(pilot.status().formationP1.claimCount,24);
+assert.equal(pilot.status().formationP1.stageCount,8);
 let a=await pilot.answer("Does the Mass sacrifice Jesus again?");
 assert.equal(a.ok,true);
 assert.equal(a.mode,"VERBATIM_APPROVED_SOURCE");
@@ -31,8 +33,13 @@ follow=await pilot.answer("Why?");
 assert.equal(follow.ok,true);
 assert.equal(follow.id,"apostolate:AQ05");
 assert.match(follow.text,/Trent/);
+const formation=await pilot.answer("Why is the Roman Canon silent?");
+assert.equal(formation.ok,true);
+assert.equal(formation.id,"MF04-C01");
+assert.equal(formation.mode,"EXACT_PUBLISHED_FORMATION_P1_CLAIM");
+assert.equal(formation.owner,"Formation");
+assert.ok(formation.citations.every(c=>c.locator.includes("Document-level reference")));
 for(const question of [
- "Why is the Roman Canon silent?",
  "Why is the Mass called a sacrifice?",
  "What is the secret prayer after the Offertory?",
  "Does the Mass repeat Calvary and how does bread become Christ?",
