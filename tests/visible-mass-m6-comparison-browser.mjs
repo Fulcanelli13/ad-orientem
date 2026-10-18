@@ -16,11 +16,19 @@ try{
   await page.waitForFunction(()=>window.AO_M6_COMPARATIVE?.status()?.objects===170);
   const status=await page.evaluate(()=>window.AO_M6_COMPARATIVE.status());
   assert.equal(status.images,112);
+  assert.equal(status.staged,8,"Research batch is displayed without inflating the source-owned 112-record master");
+  assert.equal(status.ready_four,1,"Only the staged four-photograph chalice comparison reaches metadata target, not editorial approval");
   assert.equal(status.pilot,30);
   assert.equal(status.showing,30);
   assert.equal(await page.locator("#m6-source-archive").isVisible(),false,"Research archive starts hidden");
   assert.ok(status.ready_four<30,"Do not misrepresent existing sparse acquisitions as curated alternatives");
 
+  assert.equal(await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("SV01")),true);
+  assert.match(await page.locator("#m6-object-head").innerText(),/Chalice/);
+  assert.equal(await page.locator("#m6-best .m6-card").count(),4,"Four distinct Western Roman Catholic chalices staged for real side-by-side choice");
+  assert.match(await page.locator("#m6-shortfall").innerText(),/4 \/ 4 potentially comparable/);
+  assert.match(await page.locator("#m6-best").innerText(),/GENOA-1780/);
+  assert.match(await page.locator("#m6-best").innerText(),/BARI-1760/);
   assert.equal(await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("EQ06")),true);
   assert.match(await page.locator("#m6-object-head").innerText(),/Altar bell/);
   assert.equal(await page.locator("#m6-best .m6-card").count(),2,"Both actual altar-bell photographs belong together");
@@ -44,6 +52,10 @@ try{
   assert.equal(review.decisions.filter(x=>x.object_id==="EQ06"&&x.rank==="1").length,1);
   assert.equal(review.decisions.length,2);
 
+  await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("LN04"));
+  assert.match(await page.locator("#m6-other").innerText(),/PRENDERGAST-ENSEMBLE/,"Burse/veil ensemble staged as non-comparable contextual source");
+  await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("SV03"));
+  assert.match(await page.locator("#m6-other").innerText(),/COLOGNE-HOST-CIBORIUM/,"Medieval ciborium stays historical reference");
   await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("VE15"));
   assert.match(await page.locator("#m6-shortfall").innerText(),/0 \/ 4 potentially comparable/,"Vestment colour variants are not interchangeable photographs");
   assert.equal(await page.locator("#m6-best .m6-card").count(),0);
