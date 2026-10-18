@@ -76,3 +76,23 @@ The earlier 147-object no-prior-reference baseline is intentionally retained as 
 
 Next acquisition: actual photographed gradine/candle shelf, 1962-compatible Missal support, burse and chalice-veil close-ups, plus a second vestment batch. Historical museum artefacts may explain what an item is but must never be passed off as a photograph of actual 1962 Mass use. Preserve separate photographer, source, licence, location and scene identity.
 
+## Third acquisition batch — 18 October 2026
+
+Six verified Commons photograph records cover eight previously missing objects: LN04 (burse), LN05 (chalice veil), VE12 (biretta), VE13 (cope), VE17 (crozier) and VE16/VE18/VE19 (mitre, pectoral cross, zucchetto). The latter three IDs share **one** small 550 × 741 Gammarelli shop-display photograph by Marie-Lan Nguyen (public-domain dedication); it is context-only and needs better close-ups. This is one photographed source, not three separate photographs.
+
+| Object IDs | Source owner / original subject | Licence | Status and limitations |
+|:--|:--|:--|:--|
+| LN04 | Kleon3, Catholic Basilica of Our Lady Maastricht burse and maniple, c. 1850 | CC BY-SA 4.0 | Real historical textiles, museum case, not 1962 in use |
+| LN05 | Hiart, 17th-century Spanish chalice veil at Honolulu Museum of Art | CC0 | Actual veil, not draped over a chalice |
+| VE12 | Patrickwooldridge, monsignor black biretta with red pom | CC BY-SA 4.0 | Specific clerical rank; not generic priest's black pom |
+| VE13 | Daderot, Clement VIII pontifical cope at Vatican Museums | CC0 | Historical artefact, not Benediction-in-use |
+| VE17 | EgorovaSvetlana, Venice-region crozier in The Met Cloisters | CC BY-SA 4.0 | Historical crozier, not actual pontifical ceremony |
+| VE16/VE18/VE19 | Marie-Lan Nguyen, Gammarelli window of cardinal vestments, Rome | Public-domain author release | One low-resolution contextual photograph, not isolated details |
+
+All source URLs, photographer metadata, roles and licence links appear on the six image records under source_index M6_RESEARCH_20261018_BATCH3. No approvals have been granted.
+
+**Strict photographic candidate coverage:** 38/170 objects, 132 still marked needs_photo; the original photo/source registry now contains 48 records on 45 unique source URLs. Of the 30 pilot subjects, 26 have a photo candidate or source-specific hotspot. Vestments have 12/20 linked photographic candidates. These are reference candidates, not approved final illustrations, and some are historical/low-resolution.
+
+**Pilot still open:** AL10 gradine, AL17 Epistle side, AL18 Gospel side, BK02 suitable Missal stand. AL17/AL18 require source-accurate altar orientation markers, not imaginary photos. BK02's Japanese historical object remains research-only and does not substitute for a typical 1962 Missal support. Remaining vestments: VE01, VE03, VE04, VE10, VE11, VE14, VE15, VE20.
+
+No change to M5 source geometry, G### concepts, VMQ questions, the Mass Explorer, LIVE/Simple/Missal, or production.
