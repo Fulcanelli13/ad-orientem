@@ -453,10 +453,50 @@ try{
     await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='"+category+"']").click();
     await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='"+category+"']",
       {state:"visible",timeout:5000});
-    assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='"+category+"'] [data-cal-month-index-date]").count()>=3,
-      "Month category has no date-linked content: "+category);
+    const index=page.locator("#ao-calendar-modular-root [data-cal-month-index='"+category+"']");
+    const dateLinks=index.locator(".aoCalMonthIndexRow [data-cal-month-index-date]");
+    assert.ok(await dateLinks.count()>=3,"Month category has no date-linked content: "+category);
+    const measures=await index.evaluate(el=>{
+      const rows=[...el.querySelectorAll(".aoCalMonthIndexRow")],actions=[...el.querySelectorAll(".aoCalMonthSaintDetail")];
+      return {
+        rowCount:rows.length,actionCount:actions.length,
+        rowHeights:rows.map(node=>node.getBoundingClientRect().height),
+        longTitles:rows.filter(node=>node.getBoundingClientRect().height>85).map(node=>{const t=node.querySelector(".aoCalMonthIndexText strong"),c=getComputedStyle(t);return {title:t.textContent,display:c.display,clamp:c.getPropertyValue("-webkit-line-clamp"),height:t.getBoundingClientRect().height,scrollHeight:t.scrollHeight,margin:c.margin,padding:c.padding,children:[...node.children].map(el=>({tag:el.tagName,cls:el.className,rect:el.getBoundingClientRect().height,style:{minHeight:getComputedStyle(el).minHeight,height:getComputedStyle(el).height,padding:getComputedStyle(el).padding,display:getComputedStyle(el).display,alignItems:getComputedStyle(el).alignItems}})),text:[...node.querySelectorAll("time,small,i")].map(el=>({t:el.textContent,h:el.getBoundingClientRect().height,margin:getComputedStyle(el).margin}))}}),
+        actionWidths:actions.map(node=>node.getBoundingClientRect().width),
+        dateOrder:rows.map(node=>node.querySelector("[data-cal-month-index-date]")?.dataset.calMonthIndexDate),
+        overflow:el.scrollWidth-el.clientWidth
+      };
+    });
+    const upperLimit=category==="practices"?125:85;
+    assert.ok(measures.rowHeights.every(h=>h>=44&&h<=upperLimit),
+      "Month records exceed "+upperLimit+"px in "+category+": "+JSON.stringify(measures));
+    assert.deepEqual(measures.dateOrder,[...measures.dateOrder].sort(),
+      "Month filters must follow one chronological source order");
+    assert.ok(measures.overflow<=1,"Month index overflows the phone: "+JSON.stringify(measures));
+    if(category==="sanctorale"){
+      assert.equal(measures.actionCount,measures.rowCount,
+        "Each observed Sanctorale day needs one compact secondary biography action");
+      assert.ok(measures.actionWidths.every(w=>w<=48),
+        "Per-day Life & sources must not occupy a second oversized card");
+    }
+    if(category==="temporale"||category==="sanctorale"){
+      const exceptions=index.locator(".aoCalMonthExceptions");
+      if(await exceptions.count()){
+        assert.equal(await exceptions.getAttribute("open"),null,
+          "Unclassified source dates should be behind an initially collapsed explanation");
+      }
+    }
   }
   await shot("02g-calendar-month-categories");
+  const monthTools=page.locator("#ao-calendar-modular-root .aoCalMonthTools");
+  assert.equal(await monthTools.count(),1,"Month export and direct-date should share one tools disclosure");
+  assert.equal(await monthTools.getAttribute("open"),null,"Month tools must start collapsed");
+  await monthTools.locator("summary").click();
+  assert.equal(await monthTools.locator("[data-cal-input]").isVisible(),true,"Date entry should open inside Month tools");
+  assert.equal(await monthTools.locator("[data-cal-export-ics]").count(),1,"Verified-only ICS export is retained");
+  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.paint());
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalMonthTools").getAttribute("open"),"",
+    "Opening Month tools must survive same-month background paint");
 
   await page.locator(todayTabs+" [data-home-calendar-today]").click();
   await page.waitForFunction(()=>document.querySelector(".homeScreen.aoTodayV2 [data-home-calendar-inline]")?.hidden===true,
