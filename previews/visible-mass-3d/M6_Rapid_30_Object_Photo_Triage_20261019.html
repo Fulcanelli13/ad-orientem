@@ -25,10 +25,11 @@ progress{width:120px;height:9px;accent-color:#bc9c73}
 [hidden]{display:none!important}
 @media(max-width:1050px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace{grid-template-columns:205px 1fr}}
 @media(max-width:680px){main{padding:9px}.workspace{display:block}.outline{display:none}.mobileJump{display:block;margin:6px 0 10px}.mobileJump select{width:100%}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.pic{height:195px}.meta{padding:7px}.meta strong{font-size:12px}h1{font-size:21px}.score button{padding:5px 6px}}
+.notice{padding:8px 11px;margin:8px 0;font-size:12px}.stats{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.stat{padding:7px 10px;flex:1 1 125px;min-width:0}.stat b{display:inline;margin-right:7px;font-size:19px}.stat span{font-size:11px}.panelHead h2{font-size:22px}.panelHead{margin-bottom:4px}.summary{margin:8px 0;padding:6px 8px}.pic{position:relative}.photo-open{position:absolute;right:7px;bottom:7px;z-index:2;max-width:95%;padding:4px 8px;background:#101722ed;border:1px solid #a88f70;border-radius:7px;text-decoration:none;font-size:11px}.photo-open:hover{background:#40382f}.gallery{margin-top:7px}h3{margin:9px 0 6px}@media(max-width:680px){.stats{display:grid;grid-template-columns:repeat(3,1fr)}.stat{padding:6px}.stat b{font-size:16px}}
 </style></head><body><main>
 <div class="top"><div><h1>M6 · Rapid photographic triage</h1><div class="sub">30-object sanctuary pilot · Source-identified photographs · Draft review only</div></div>
 <div class="actions"><button id="exp">Export decisions JSON</button><button id="impBtn">Import earlier ratings</button><input id="imp" hidden type="file" accept="application/json,.json"></div></div>
-<div class="notice">This review requires visible source photographs: <strong id="embeddedCount">open-source previews are bundled only when fetched successfully</strong>. Never rate an empty card. Start with the object, inspect its actual photographs, and score only what you have seen. Scores are <b>your own editorial choices</b>, not automatic acceptance. Original-photo QA reached 3/20 before Wikimedia rate limiting; remaining photographs need visual review. All 112 canonical sources and 26 earlier staged candidates remain untouched. The newer French-collection leads are <b>unverified discovery leads</b>, not approved photography.</div>
+<div class="notice"><strong id="embeddedCount">Source images bundled</strong> · Photographs stay visible without internet when using the offline image package. Rate only images you have inspected. 3/20 originals received full-resolution QA; all selections remain unapproved research. New B18 discovery leads still require rights checks.</div>
 <div class="stats" id="stats"></div>
 <div class="workspace">
 <aside class="outline"><h3>P0 objects · <span id="objectProgress">0/30</span> checked</h3><div id="outline"></div></aside>
@@ -94,6 +95,7 @@ function render(){
  $("summary").textContent=cand.length+"/4 metadata candidates · "+Math.max(0,4-cand.length)+" still needed · "+others.filter(x=>x.source_group==="B18_DISCOVERY").length+" new discovery leads. Neither image count nor a 0–5 score constitutes publication approval.";
  $("choices").innerHTML=cand.length?cand.map(x=>photoCard(o,x)).join(""):'<p class="note">No candidate passes the conservative metadata gate. Review the source leads below rather than selecting an arbitrary photograph.</p>';
  $("references").innerHTML=others.length?others.map(x=>photoCard(o,x)).join(""):'<p class="note">No additional source references available.</p>';
+ for(const card of document.querySelectorAll(".card")){const link=card.querySelector(".extra a");if(link){const a=document.createElement("a");a.className="photo-open";a.href=link.href;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Original & licence ↗";card.querySelector(".pic")?.appendChild(a)}}
  for(const b of document.querySelectorAll("[data-objstate]"))b.setAttribute("aria-pressed",String(objStates.get(o.object_id)===b.dataset.objstate));
  $("prev").disabled=at===0;$("next").disabled=at===objs.length-1;paintSide();
 }
