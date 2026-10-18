@@ -62,11 +62,11 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
     const alreadyListed=seenSources.has(historyKey);
     seenSources.add(historyKey);
     if(alreadyListed){li.textContent=label+" · revisited";}
-    else if(objectiveNow===entry.objective){
+    else if(objectiveNow===entry.objective&&state.selectedObjective?.sourceRoutes?.includes(entry.sourceId)){
      const b=safe("button","",label+" · revisit");
      b.type="button";b.onclick=async()=>{trailPanel.hidden=true;await openSource(await getDirector(),entry.sourceId);};
      li.append(b);
-    }else li.textContent=label+" · earlier objective";
+    }else li.textContent=label+" · source-owned; reopen through its original guide or approved objective";
    }else if(entry.kind==="guide"){
     const b=safe("button","","Guide: "+roles[entry.guide].name+" · return");
     b.type="button";b.onclick=()=>{
