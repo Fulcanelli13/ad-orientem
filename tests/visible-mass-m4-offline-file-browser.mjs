@@ -40,6 +40,33 @@ try{
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.active==="NEWMAN_360"&&window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama.loaded,null,{timeout:30000});
   assert.match(await page.locator("#photo-intro").innerText(),/Newman University Church/);
   await page.screenshot({path:out+"/"+spec.name+"-newman-actual-offline.png",fullPage:true});
+  // M5: same integrated visitor opens four individually sourced real close
+  // photographs, never transplanted marker positions or fabricated walking.
+  for(const [id,label] of [
+   ["NEWMAN_ALTAR_1","Main altar"],["NEWMAN_ALTAR_2","Main altar"],
+   ["NEWMAN_APSE","Apse"],["NEWMAN_PULPIT","Pulpit"]]){
+   await page.locator('[data-m5-viewpoint="'+id+'"]').click();
+   await page.waitForFunction(id=>
+    window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().view==="m5-close"&&
+    window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().m5Viewpoint===id&&
+    document.querySelector("#m5-close-photo").naturalWidth>1000,
+    id,{timeout:25000});
+   assert.match(await page.locator("#photo-credit").innerText(),/Zairon.*CC BY 4.0/);
+   assert.match(await page.locator("#photo-caption").innerText(),new RegExp(label));
+   assert.equal(await page.locator("#hotspots").isVisible(),false);
+   assert.equal(await page.locator("#original-object-choices").isVisible(),false);
+   await page.screenshot({path:out+"/"+spec.name+"-m5-"+id.toLowerCase()+"-actual-offline.png",fullPage:true});
+  }
+  await page.locator('[data-m5-viewpoint="NEWMAN_ALTAR_1"]').click();
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().m5Viewpoint==="NEWMAN_ALTAR_1");
+  await page.locator('[data-m5-zoom="in"]').click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).m5Pose.zoom,1.25);
+  await page.locator('[data-m5-viewpoint="NEWMAN_APSE"]').click();
+  await page.locator('[data-m5-viewpoint="NEWMAN_ALTAR_1"]').click();
+  assert.equal((await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status())).m5Pose.zoom,1.25,"each original photo retains its own zoom");
+  await page.locator('[data-m5-viewpoint="panorama"]').click();
+  await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().view==="panorama");
+  assert.equal(await page.locator("#m5-close-stage").isVisible(),false);
   await page.locator('[data-photo-mode="still"]').click();
   assert.equal(await page.locator("#original-object-choices").isVisible(),true);
   await page.evaluate(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.select("AL01"));
@@ -50,7 +77,7 @@ try{
   assert.deepEqual(errors,[],"Offline single HTML must have no unhandled browser JS exceptions");
   assert.deepEqual(outgoing,[],"Default offline original-photo visitor must not contact remote services");
   console.log("PASS M4 genuine photographic single HTML opened from file://",spec.name,
-   JSON.stringify({questions:summary.questionsLoaded,glossary:summary.glossaryLoaded,offlinePhotographs:3}));
+   JSON.stringify({questions:summary.questionsLoaded,glossary:summary.glossaryLoaded,offlinePhotographs:7}));
   await context.close();
  }
 }finally{await browser?.close();}
