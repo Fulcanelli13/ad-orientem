@@ -3,6 +3,25 @@ import {readFile} from "node:fs/promises";
 const registry=JSON.parse(await readFile(new URL("../data/learn/pius-x-documentary-voice-style.v1.json",import.meta.url),"utf8"));
 assert.equal(registry.schema,"AO_PIUS_X_DOCUMENTARY_VOICE_STYLE_V1");
 assert.equal(registry.scope,"STYLE_AND_RHETORICAL_EVIDENCE_ONLY");
+const controls=JSON.parse(await readFile(new URL("../data/learn/pius-x-period-catholic-prose-controls.v1.json",import.meta.url),"utf8"));
+assert.equal(controls.schema,"AO_PIUS_X_PERIOD_CATHOLIC_PROSE_COMPARATORS_V1");
+assert.equal(controls.scope,"RHETORICAL_CONTROL_NOT_DOCTRINE_OR_VOICE_OF_PIUS_X");
+assert.equal(controls.appliedToAvatar,false);
+assert.equal(controls.approval,false);
+assert.equal(controls.theologicalAnswersCopied,0);
+assert.equal(controls.comparisonDocs.length,2);
+const controlAuthors=new Set(controls.comparisonDocs.map(x=>x.author));
+assert.deepEqual([...controlAuthors].sort(),["Benedict XV","Leo XIII"]);
+assert.ok(controls.comparisonDocs.every(x=>x.url.startsWith("https://www.vatican.va/")));
+assert.ok(controls.periodConventionsNotEvidenceOfDistinctivePiusVoice.some(x=>x.includes("first-person plural")));
+assert.ok(controls.periodConventionsNotEvidenceOfDistinctivePiusVoice.some(x=>x.includes("Scripture")));
+assert.equal(controls.candidateSartoSignalsNeedingRepeatedInternalWitnesses.length,3);
+for(const candidate of controls.candidateSartoSignalsNeedingRepeatedInternalWitnesses){
+ assert.equal(candidate.uniqueToPius,false,"two control authors do not prove uniqueness");
+ assert.ok(candidate.piusDocuments.length>=2);
+ assert.ok(candidate.distinction.length>=50);
+}
+
 assert.equal(registry.publication,"DRAFT_NOT_RUNTIME");
 assert.equal(registry.acceptance.publicationAllowed,false);
 assert.equal(registry.acceptance.doctrinalClaimsCopied,0);
@@ -28,6 +47,10 @@ for(const d of registry.sourceDocuments){
     "Published English papal translations are not automatic personal English witnesses");
 }
 const ids=new Set(registry.sourceDocuments.map(d=>d.id));
+for(const c of controls.candidateSartoSignalsNeedingRepeatedInternalWitnesses){
+ for(const id of c.piusDocuments)assert.ok(ids.has(id),"Comparative styles must use the same genuine Pius documents");
+ assert.ok(registry.styleFeatures.some(f=>f.id===c.featureId));
+}
 for(const feature of registry.styleFeatures){
  assert.ok(feature.docIds.length>=2,"inferences need more than one distinct documentary witness");
  for(const id of feature.docIds)assert.ok(ids.has(id),feature.id+" referenced missing "+id);
@@ -50,4 +73,4 @@ for(const p of registry.blindTestPrompts){
 const raw=JSON.stringify(registry);
 assert.equal(raw.includes("answerText"),false,"no competing Catechism/answer corpus");
 assert.equal(raw.includes("voiceAudio"),false,"not an audio reconstruction");
-console.log("PASS eight documentary style sources, six cross-genre rhetorical rules, period prose controls, ten blind-test prompts and no doctrinal duplication");
+console.log("PASS eight documentary style witnesses, two comparative period controls, six rhetorical rules, ten blind tests and zero doctrinal duplication");
