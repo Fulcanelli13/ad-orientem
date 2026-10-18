@@ -150,6 +150,18 @@ try{
   "Missing cue IDs on non-rubric Mass text are reported as suspects, not automatically certified defects.",
   "Static headings, guide-only liturgical stages and folded content are not expected to become the active paragraph."
  ];
+ const shortMassCards=[
+  "Gloria · Doxology",
+  "Credo · The Father and the Son",
+  "Agnus Dei"
+ ];
+ for(const title of shortMassCards){
+  const c=findings.mass.cards.find(x=>x.title===title);
+  assert.ok(c,"Short Mass source card absent: "+title);
+  assert.ok(c.maxScroll>50,title+" has no effective scroll runway despite "+c.registered+" source cues: "+JSON.stringify(c.geometry));
+ }
+ assert.equal(findings.mass.uncuedFocused,findings.mass.unownedText,
+   "A non-rubric Proper passage did not acquire an independent reading focus");
  assert.equal(findings.mass.cardsChecked,findings.mass.cardsExpected,"Mass card traversal incomplete");
  assert.equal(findings.prayer.routesChecked,findings.prayer.routesExpected,"Prayer route traversal incomplete");
 } catch(error){
