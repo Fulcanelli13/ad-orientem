@@ -848,8 +848,22 @@ async function guideInit(pilot){
    if(livingReview){
      try{
        const lc=await import("./visible-mass-living-church-adapter.mjs");
+       const nativeCatechismModule=await import("./living-church-catechism-native.mjs");
+       const nativeCatechism=nativeCatechismModule.createLivingChurchCatechismNativeOwner(window,{
+         sourceStatus:()=>({view:state.view,photoMode:state.photoMode,
+           selected:state.selected,question:state.question,
+           trailId:state.guide?.status()?.active??null}),
+         sourcePose:()=>({x:$("photo-viewport").scrollLeft,y:$("photo-viewport").scrollTop}),
+         restorePose:async pose=>{
+           if(state.view!=="church"||state.photoMode!=="still"||!pose||
+             !Number.isFinite(pose.x)||!Number.isFinite(pose.y))return {ok:false};
+           $("photo-viewport").scrollLeft=pose.x;
+           $("photo-viewport").scrollTop=pose.y;
+           return {ok:true};
+         }
+       });
        livingChurchContextP1=lc.createVisibleMassLivingChurchAdapter({
-         pilot,graph,reviewEnabled:()=>livingReview,
+         pilot,graph,reviewEnabled:()=>livingReview,nativeCatechism,
          sourceStatus:()=>({
            view:state.view,photoMode:state.photoMode,selected:state.selected,
            question:state.question,mode:state.experience,lang:state.studyLang,
