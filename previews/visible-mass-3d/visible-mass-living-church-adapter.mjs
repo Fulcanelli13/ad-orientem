@@ -126,7 +126,7 @@ export function createVisibleMassLivingChurchAdapter({
    return Object.freeze({version:VISIBLE_MASS_LC_ADAPTER_VERSION,
     publication:"UNPUBLISHED_REVIEW_ONLY",sceneSupported:supported,
     ...owner,context:supported&&owner.enabled?owner.context:null,
-    massHandoffIntegrated:false,
+    massHandoffIntegrated:typeof nativeMass?.authorize==="function"&&nativeMass.status?.().available===true,
     catechismHandoffReady:typeof nativeCatechism?.authorize==="function"&&nativeCatechism.status?.().nativeAvailable===true,
     massHandoffReady:typeof nativeMass?.authorize==="function"&&nativeMass.status?.().available===true,
    answersOwnedBy:"ORIGINAL_VISIBLE_MASS_AND_CATECHISM",
