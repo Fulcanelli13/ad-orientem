@@ -89,6 +89,7 @@ export function createVisibleMassReviewRuntime(win=globalThis){
          frame,reviewRoot:root,enabled:()=>visibleMassReviewEnabled(win)
        });
        child.AO_LIVING_CHURCH_CATECHISM_NATIVE_V1=livingChurchNative.api;
+       child.AO_LIVING_CHURCH_MASS_NATIVE_V1=livingChurchNative.massApi;
      }catch(error){
        disclaimer.textContent="Research-only photographic viewer · native Mass Explorer handoff unavailable in this environment";
        win?.console?.warn?.("Visible Mass same-origin research bridge unavailable",error);
