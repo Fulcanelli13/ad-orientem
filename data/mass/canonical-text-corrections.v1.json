@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "status": "R17_CANONICAL_TEXT_CORRECTIONS",
   "authorityRule": "Apply after frozen donor ingestion and before any reader/display composition. No correction may create ritual state.",
   "donorPolicy": "Frozen donor hashes remain unchanged; this layer records adjudicated source corrections explicitly.",
@@ -291,6 +291,30 @@
       "review": "REVIEWED_BOOKLET_VARIANT",
       "sourceForm": "1962_LATIN_UNCHANGED",
       "publishedEnglishRights": "SELECTIVE_EDITORIAL_ADAPTATION_NOT_FULL_BOOKLET_REPUBLICATION"
+    },
+    {
+      "id": "RED-EN-2013-W3-01",
+      "blockId": "AO.SM.B007",
+      "cueId": "AO.SM.C0021",
+      "field": "english",
+      "from": "and to you Father, that I have sinned",
+      "to": "and to you, Father, that I have sinned",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), PDF p. 14 / printed p. 13",
+      "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED",
+      "decision": "Reviewed against photographed Red Missal and Latin; preserves both Low/Sung original donor texts"
+    },
+    {
+      "id": "RED-EN-2013-W3-03",
+      "blockId": "AO.SM.B012",
+      "cueId": "AO.SM.C0039",
+      "field": "english",
+      "from": "whose relics are here, and of all the Saints: that thou wouldst vouchsafe to forgive me all my sins. Amen.",
+      "to": "whose relics are here, and of all the Saints, that Thou wilt deign to pardon me all my sins. Amen.",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), PDF p. 16 / printed p. 15",
+      "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED",
+      "decision": "Reviewed against photographed Red Missal and Latin; preserves both Low/Sung original donor texts"
     }
   ],
   "englishEditorialPolicy": "2013 Red Missal preferred English baseline; 1962 printed Latin retains normative authority; reviewed exact-cue adaptations only; preserve immutable donors."

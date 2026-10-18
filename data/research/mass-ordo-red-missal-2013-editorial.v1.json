@@ -1,6 +1,6 @@
 {
   "schema": "ao.mass.ordo-missae.red-missal.english-editorial.v1",
-  "status": "19_EXACT_CUE_ENGLISH_REVISIONS_APPROVED_237_PENDING_INDEPENDENT_COLLATION",
+  "status": "21_APPROVED_ENGLISH_CORRECTIONS_33_COLLATED_EQUIVALENT_4_INCOMPLETE_198_UNOPENED",
   "source": {
     "title": "Latin–English Booklet Missal for Praying the Traditional Mass",
     "publisher": "Coalition in Support of Ecclesia Dei",
@@ -314,6 +314,24 @@
       "decision": "QUID_RETRIBUAM_ENGLISH_GRAMMAR",
       "authority": "ENGLISH_EDITORIAL",
       "status": "APPROVED_SECOND_WAVE"
+    },
+    {
+      "id": "AO.SM.C0021",
+      "correctionId": "RED-EN-2013-W3-01",
+      "bookletPdfPage": 14,
+      "bookletPrintedPage": 13,
+      "decision": "REPAIR_VOCATIVE_COMMA",
+      "authority": "ENGLISH_PUNCTUATION",
+      "status": "APPROVED_THIRD_WAVE"
+    },
+    {
+      "id": "AO.SM.C0039",
+      "correctionId": "RED-EN-2013-W3-03",
+      "bookletPdfPage": 16,
+      "bookletPrintedPage": 15,
+      "decision": "ADOPT_BOOKLET_ORAMUS_TE_ENDING",
+      "authority": "ENGLISH_EDITORIAL",
+      "status": "APPROVED_THIRD_WAVE"
     }
   ],
   "unresolvedTranslationDecisions": [
@@ -381,6 +399,303 @@
       "issue": "Kyrie object: Red Missal says 'have mercy on us'; app previously shortened to 'have mercy'.",
       "status": "BOOKLET_PREFERRED_AND_APPLIED_IN_ALL_NINE_CUES",
       "bookletPrintedPage": 15
+    }
+  ],
+  "reviewedWithoutTextChange": [
+    {
+      "cueId": "AO.SM.C0001",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0002",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0003",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0004",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0005",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0006",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0007",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0008",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0009",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0010",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0011",
+      "bookletPdfPage": 12,
+      "printedPage": 11,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0012",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0013",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0014",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0015",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0019",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0020",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0022",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0024",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0025",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0026",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0027",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0028",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0029",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0030",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0031",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0032",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0033",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0034",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0035",
+      "bookletPdfPage": 14,
+      "printedPage": 13,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0036",
+      "bookletPdfPage": 16,
+      "printedPage": 15,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0037",
+      "bookletPdfPage": 16,
+      "printedPage": 15,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    },
+    {
+      "cueId": "AO.SM.C0038",
+      "bookletPdfPage": 16,
+      "printedPage": 15,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "English fixed Order of Mass cue; visual page and source prayer compared, punctuation/style differences permitted",
+      "latinSource": "Existing canonical 1962 validation still controls; page-level English review is not Latin facsimile certification"
+    }
+  ],
+  "partiallyReviewed": [
+    {
+      "cueId": "AO.SM.C0016",
+      "status": "PRIEST_CONFITEOR_ONLY_ABBREVIATED_IN_BOOKLET",
+      "bookletPdfPage": 14,
+      "note": "Red booklet abbreviates priest's Confiteor; the parallel ministers' text is not a complete verbatim witness for this cue"
+    },
+    {
+      "cueId": "AO.SM.C0017",
+      "status": "PRIEST_CONFITEOR_ONLY_ABBREVIATED_IN_BOOKLET",
+      "bookletPdfPage": 14,
+      "note": "Red booklet abbreviates priest's Confiteor; the parallel ministers' text is not a complete verbatim witness for this cue"
+    },
+    {
+      "cueId": "AO.SM.C0018",
+      "status": "PRIEST_CONFITEOR_ONLY_ABBREVIATED_IN_BOOKLET",
+      "bookletPdfPage": 14,
+      "note": "Red booklet abbreviates priest's Confiteor; the parallel ministers' text is not a complete verbatim witness for this cue"
+    }
+  ],
+  "blockedReview": [
+    {
+      "cueId": "AO.SM.C0023",
+      "status": "KNOWN_ENGLISH_DIFFERENCE_NOT_PROMOTED",
+      "reason": "Exact same cue already owns an approved Latin accent correction (P1-011). Current patch mechanism supports one field per cue; a second English patch would shadow the Latin rule. Requires multi-field-aware source-correction registry first.",
+      "bookletPdfPage": 14,
+      "proposedOriginal": "and thee Father, to pray",
+      "proposedEnglish": "and you, Father, to pray",
+      "expectedExistingLatinCorrection": "orare pro me → oráre pro me"
     }
   ]
 }
