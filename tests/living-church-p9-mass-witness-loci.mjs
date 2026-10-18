@@ -37,7 +37,8 @@ for(const [i,record] of evidence.records.entries()){
   }else{
    assert.ok(["MISSAL_SECTION_CANDIDATE_EDITION_PAGE_UNCHECKED",
     "CHAPTER_DISCOVERY_ONLY_NOT_PAGE_ATTESTATION",
-    "OCR_EXCERPT_OR_SECTION_CANDIDATE_PAGE_UNCHECKED"].includes(lead.status));
+    "OCR_EXCERPT_OR_SECTION_CANDIDATE_PAGE_UNCHECKED",
+    "NUMBERED_1962_RUBRIC_OCR_LOCATED_SCAN_UNCHECKED"].includes(lead.status));
   }
  }
 }
@@ -45,8 +46,13 @@ const count={originalPrimaryCandidates:evidence.records.filter(r=>r.primaryParag
  missalSectionCandidates:evidence.records.filter(r=>r.witnessLeads.some(w=>w.sourceId==="SRC-MR62")).length,
  campionChapterLeads:evidence.records.filter(r=>r.witnessLeads.some(w=>w.sourceId==="SRC-CAMPION-1954")).length,
  oconnellUnverifiedLeads:evidence.records.filter(r=>r.witnessLeads.some(w=>w.sourceId==="SRC-OCONNELL-1962")).length,
- fullyVerifiedClaims:0,approvedGeneratedAnswers:0};
+ fullyVerifiedClaims:0,approvedGeneratedAnswers:0,numbered1962RubricCandidates:1};
 assert.deepEqual(evidence.coverage,count);
+const canon=evidence.records.find(r=>r.claimId==="MF04-C01").witnessLeads
+ .find(w=>w.status==="NUMBERED_1962_RUBRIC_OCR_LOCATED_SCAN_UNCHECKED");
+assert.match(canon.locator,/no\. 500/);
+assert.match(canon.anchor,/Canon Missae secreto/);
+assert.match(canon.note,/scan\/edition page/);
 assert.equal(release.newChatSynthesisAuthorized,false);
 assert.ok(release.stages.every(s=>s.exactPassageWitnessesApproved===0&&s.conversationalParaphraseApproved===false));
 assert.equal(evidence.reviewPolicy.generatedAnswer,"DENIED_UNTIL_EXPLICIT_NEW_PUBLICATION_GATES");
