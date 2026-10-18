@@ -1,0 +1,249 @@
+{
+  "schema": "ao.mass.ordo-missae.red-missal.english-editorial.v1",
+  "status": "PARTIAL_APPROVED_SOURCE_OWNED; NOT_COMPLETE_256_CUE_CERTIFICATION",
+  "source": {
+    "title": "Latin–English Booklet Missal for Praying the Traditional Mass",
+    "publisher": "Coalition in Support of Ecclesia Dei",
+    "edition": "Fourth Edition, Tenth Printing",
+    "date": "May 2013",
+    "language": "la-en",
+    "providedByUser": true,
+    "pageReference": "1-based PDF page = printed booklet page + 1 for Order of Mass"
+  },
+  "policy": {
+    "latin": "Controlling 1962 Missale Romanum. This English audit never changes Latin, rubrics, actions or Mass-form selection.",
+    "english": "Red Missal preferred English editorial baseline when the equivalent prayer is printed. Preserve legitimate translation variants pending review.",
+    "french": "Separately sourced French Ordinary; unchanged by English editorial decisions.",
+    "provenance": "User-supplied scan supports manual collation; record page, canonical cue, exact-before and after, and independent source where a Latin conflict is alleged. Do not commit entire scan or pretend OCR text is source-verified."
+  },
+  "canonicalCuesExpected": 256,
+  "formParityRequired": [
+    "LOW",
+    "SUNG"
+  ],
+  "macroBookletPrintPages": {
+    "10": [
+      22,
+      27
+    ],
+    "11": [
+      26,
+      29
+    ],
+    "12": [
+      28,
+      29
+    ],
+    "13": [
+      28,
+      29
+    ],
+    "14": [
+      30,
+      33
+    ],
+    "15": [
+      30,
+      35
+    ],
+    "16": [
+      34,
+      35
+    ],
+    "17": [
+      36,
+      37
+    ],
+    "18": [
+      38,
+      39
+    ],
+    "19": [
+      38,
+      39
+    ],
+    "20": [
+      40,
+      41
+    ],
+    "21": [
+      40,
+      41
+    ],
+    "22": [
+      40,
+      43
+    ],
+    "23": [
+      42,
+      43
+    ],
+    "24": [
+      44,
+      45
+    ],
+    "25": [
+      44,
+      45
+    ],
+    "26": [
+      44,
+      45
+    ],
+    "27": [
+      46,
+      47
+    ],
+    "28": [
+      46,
+      47
+    ],
+    "29": [
+      46,
+      47
+    ],
+    "30": [
+      48,
+      49
+    ],
+    "01": [
+      10,
+      15
+    ],
+    "02": [
+      14,
+      15
+    ],
+    "03": [
+      16,
+      17
+    ],
+    "04": [
+      16,
+      17
+    ],
+    "05": [
+      16,
+      17
+    ],
+    "06": [
+      18,
+      19
+    ],
+    "07": [
+      18,
+      19
+    ],
+    "08": [
+      18,
+      19
+    ],
+    "09": [
+      20,
+      21
+    ]
+  },
+  "approvedCues": [
+    {
+      "id": "AO.SM.C0110",
+      "correctionId": "RED-EN-2013-001",
+      "bookletPdfPage": 24,
+      "bookletPrintedPage": 23,
+      "decision": "ADAPT_BOOKLET_TRADITIONAL_REGISTER",
+      "authority": "ENGLISH_EDITORIAL",
+      "status": "APPROVED_FIRST_PASS"
+    },
+    {
+      "id": "AO.SM.C0121",
+      "correctionId": "RED-EN-2013-002",
+      "bookletPdfPage": 26,
+      "bookletPrintedPage": 25,
+      "decision": "USE_BOOKLET_TRANSLATION_FOR_CONFIRMED_ERROR",
+      "authority": "ENGLISH_GRAMMAR",
+      "status": "APPROVED_FIRST_PASS"
+    },
+    {
+      "id": "AO.SM.C0122",
+      "correctionId": "RED-EN-2013-003",
+      "bookletPdfPage": 26,
+      "bookletPrintedPage": 25,
+      "decision": "LATIN_FAITHFUL_ADAPTATION_OF_BOOKLET_FOR_MISSING_VERB",
+      "authority": "ENGLISH_GRAMMAR",
+      "status": "APPROVED_FIRST_PASS"
+    },
+    {
+      "id": "AO.SM.C0132",
+      "correctionId": "RED-EN-2013-004",
+      "bookletPdfPage": 28,
+      "bookletPrintedPage": 27,
+      "decision": "USE_BOOKLET_ENGLISH_RESPONSE",
+      "authority": "ENGLISH_TRANSLATION",
+      "status": "USER_APPROVED_DIRECTION"
+    }
+  ],
+  "unresolvedTranslationDecisions": [
+    {
+      "cueIds": [
+        "AO.SM.C0209"
+      ],
+      "issue": "Pater noster: current 'debts/debtors' is literal to Latin debita/debitoribus, booklet English uses 'trespasses'.",
+      "status": "LEGITIMATE_VARIANT_KEEP_CURRENT_PENDING_EDITORIAL_DECISION",
+      "bookletPrintedPage": 39
+    },
+    {
+      "cueIds": [
+        "AO.SM.C0044",
+        "AO.SM.C0045",
+        "AO.SM.C0046",
+        "AO.SM.C0047",
+        "AO.SM.C0048",
+        "AO.SM.C0049",
+        "AO.SM.C0050",
+        "AO.SM.C0051",
+        "AO.SM.C0052"
+      ],
+      "issue": "Kyrie: booklet 'have mercy on us'; current English 'have mercy'. Both grammatically complete, but booklet explicit object may be preferred for congregational prayer.",
+      "status": "LEGITIMATE_VARIANT_KEEP_CURRENT_PENDING_EDITORIAL_DECISION",
+      "bookletPrintedPage": 15
+    },
+    {
+      "cueIds": [
+        "AO.SM.C0053",
+        "AO.SM.C0054"
+      ],
+      "issue": "Gloria opening split in donor; active reader already composes correctly. Do not replace source with naive split Red text.",
+      "status": "PROJECTION_ALREADY_CORRECT",
+      "bookletPrintedPage": 17
+    },
+    {
+      "cueIds": [
+        "AO.SM.C0194"
+      ],
+      "issue": "Frozen Latin donor has 'lucis pacis', but existing canonical overlay restores printed 'lucis et pacis'. No new fix.",
+      "status": "ALREADY_CORRECTED",
+      "bookletPrintedPage": 37
+    },
+    {
+      "cueIds": [
+        "AO.SM.C0235",
+        "AO.SM.C0236",
+        "AO.SM.C0237",
+        "AO.SM.C0238",
+        "AO.SM.C0239",
+        "AO.SM.C0240",
+        "AO.SM.C0241"
+      ],
+      "issue": "Second Confiteor printed in 2013 booklet with explicit notice omitted in 1962 Missal; remain conditional optional local custom, never made normative.",
+      "status": "1962_FORM_VARIANT_GUARD",
+      "bookletPrintedPage": 45
+    }
+  ],
+  "reviewProtocol": [
+    "Generate complete cue worklist from frozen canonical LOW and SUNG source, not OCR alone.",
+    "Show source Latin, current English, approved English and exact Red Missal page; verified English quotation must be visually checked against the scan.",
+    "Do not mark NOT_REVIEWED cues as identical to the booklet.",
+    "Promote exact-cue English replacements only after editorial approval; never alter priest/schola lane or Latin source.",
+    "Run complete Low/Sung and EN/FR actual reader projection tests and phonetic/liturgical source guards.",
+    "Copyright: preserve bibliographic reference; do not distribute the full uploaded scan or wholesale text extraction in app/repo without rights review."
+  ]
+}
