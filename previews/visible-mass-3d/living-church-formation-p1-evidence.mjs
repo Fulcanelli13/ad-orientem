@@ -23,7 +23,7 @@ const topicRules=Object.freeze([
  {id:"MF04-C02",rx:/\b(who (does the canon|is remembered in the canon) pray for|whom does the canon|living and dead in the canon|who is commemorated in the canon|pour qui prie le canon)\b/},
  {id:"MF04-C03",rx:/\b(mementos|memento (of|for) (the )?(living|dead)|mementos? des vivants|mementos? des morts)\b/},
  {id:"MF05-C03",rx:/\b(why are the (host|chalice|species) elevated|why the elevation|meaning of the elevations|elevation of the host|sens des elevations)\b/},
- {id:"MF06-C02",rx:/\b(abel abraham (and )?melchi|why (does )?(the )?canon name abel|abel in the canon|abel abraham melchisedech)\b/},
+ {id:"MF06-C02",rx:/\b(abel abraham (and )?melchi|why (does )?(the )?(roman )?canon name abel|abel in the canon|abel abraham melchisedech)\b/},
  {id:"MF07-C01",rx:/\b(why must the priest receive|priest (must|has to) receive communion|communion obligatoire du pretre|pourquoi le pretre communie)\b/},
  {id:"MF07-C02",rx:/\b(must the faithful receive communion|do i have to receive communion|must everyone receive communion|can you attend mass without communion|faut.il communier a la messe)\b/},
  {id:"MF08-C01",rx:/\b(postcommunion prayer|postcommunion thanksgiving|prayer after communion|action de graces apres la communion)\b/}
