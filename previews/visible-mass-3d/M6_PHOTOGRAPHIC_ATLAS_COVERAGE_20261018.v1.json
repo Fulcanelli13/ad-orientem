@@ -64,7 +64,12 @@
     "post_fourth_batch_photo_candidate_or_hotspot": 41,
     "post_fourth_batch_needs_photo": 129,
     "post_fourth_batch_pilot_needs_photo": 3,
-    "post_fourth_batch_vestment_photo_candidates": 14
+    "post_fourth_batch_vestment_photo_candidates": 14,
+    "fifth_batch_new_licensed_photo_candidates": 3,
+    "post_fifth_batch_photo_candidate_or_hotspot": 44,
+    "post_fifth_batch_needs_photo": 126,
+    "post_fifth_batch_pilot_needs_photo": 3,
+    "post_fifth_batch_vestment_photo_candidates": 17
   },
   "zones": [
     {
@@ -879,7 +884,9 @@
         "source_asset_id": "BROMPTON_ALTAR_1",
         "role": "possible_gradine_visible_in_source_view",
         "certainty": "NEEDS_IMAGE_SPECIFIC_VISUAL_REVIEW",
-        "note": "Use existing same-venue Brompton high-altar photograph. Cannot identify the exact gradine/candle shelf boundaries as separate object; do not create clickable hotspot or count coverage."
+        "note": "Use existing same-venue Brompton high-altar photograph. Cannot identify the exact gradine/candle shelf boundaries as separate object; do not create clickable hotspot or count coverage.",
+        "additional_rights_unknown_research_url": "https://www.friendsofflorence.org/projects/altar-gradine-oratory-and-tabernacle-chapel-annunziata-ss-annunziata/",
+        "additional_rights_unknown_research_note": "Actual Florentine Catholic altar-gradine restoration documented by Friends of Florence; independent photographic rights unresolved and exact reconstructed model differs from Brompton. Discovery lead only, no candidate photo and no hotspot authorized."
       }
     },
     {
@@ -1824,9 +1831,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B5-VE01-HUNGARIAN-ROMAN-CATHOLIC-CASSOCK",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE02",
@@ -1858,9 +1871,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B5-VE03-SEVILLE-CATHEDRAL-ALB",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE04",
@@ -1994,7 +2013,8 @@
       "pilot_photo_evidence": null,
       "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
       "candidate_assets": [],
-      "needs_photo": true
+      "needs_photo": true,
+      "difference_from_dalmatic_note": "Tunicle/tunicella is closely related to the dalmatic but must be shown as subdeacon's attire or identified museum tunicle, not merely copied from the deacon's dalmatic record."
     },
     {
       "object_id": "VE11",
@@ -2006,9 +2026,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B5-VE11-INDIANAPOLIS-CATHOLIC-SURPLICES",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE12",
@@ -2082,7 +2108,16 @@
       "pilot_photo_evidence": null,
       "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
       "candidate_assets": [],
-      "needs_photo": true
+      "needs_photo": true,
+      "required_colors_1962": [
+        "white",
+        "red",
+        "green",
+        "violet",
+        "black"
+      ],
+      "coverage_scope": "COMPOSITE_FIVE_COLOR_REQUIREMENT",
+      "coverage_note": "Do not mark complete from single colour, a digital schematic, or improperly conflated modern colour selection. Source separate 1962-valid fabric photographs and present as a controlled five-variant set."
     },
     {
       "object_id": "VE16",
@@ -3628,6 +3663,54 @@
       "source_description": "Real modern photograph of pontifical gloves, confirmed free licensing by rights-holder VRT ticket. Only one part of composite VE20; no buskins or episcopal sandals are pictured, so VE20 must remain photographic-gap-open.",
       "review_status": "PARTIAL_COMPONENT_ONLY",
       "source_index": "M6_RESEARCH_20261018_BATCH4"
+    },
+    {
+      "asset_id": "M6B5-VE01-HUNGARIAN-ROMAN-CATHOLIC-CASSOCK",
+      "object_id": "VE01",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:R%C3%B3mai_katolikus_papi_reverenda.JPG",
+      "creator": "Ébner Vili",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 3264,
+      "height": 2448,
+      "venue": "Roman Catholic clerical cassock photographed in Hungary",
+      "source_description": "Independently photographed Roman Catholic priest's black cassock, identified explicitly as such by the original Commons photographer. Isolated garment, not a photograph of 1962 Mass use.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH5"
+    },
+    {
+      "asset_id": "M6B5-VE03-SEVILLE-CATHEDRAL-ALB",
+      "object_id": "VE03",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Casulla_y_alba.jpg",
+      "creator": "CarlosVdeHabsburgo",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3240,
+      "height": 4320,
+      "venue": "Seville Cathedral chapter vestments, Spain; historical embroidered chasuble and alb for Corpus Christi",
+      "source_description": "Original Catholic cathedral vestment photograph showing an alb alongside a richly embroidered chasuble. The alb is photographed in a set, not isolated or vested on a celebrant, and cannot establish a 1962 ceremonial arrangement.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH5"
+    },
+    {
+      "asset_id": "M6B5-VE11-INDIANAPOLIS-CATHOLIC-SURPLICES",
+      "object_id": "VE11",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:NEC_2024_Procession_Preparation.jpg",
+      "creator": "Maximilian775",
+      "licence": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "width": 3024,
+      "height": 4032,
+      "venue": "10th National Eucharistic Congress, Indianapolis, USA, 2024",
+      "source_description": "An original Roman Catholic photograph of seminarians and clergy in black cassocks and white surplices preparing for a Eucharistic procession. Surplices in context, no isolated specimen; not a Traditional Latin Mass or a verified 1962 procession.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH5"
     }
   ]
 }
