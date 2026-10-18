@@ -11,6 +11,8 @@ on:
       - "src/learn/ask-church-source-digest.js"
       - "data/learn/ask-church-app-route-survey.v1.json"
       - "tests/living-church-ask-objectives.mjs"
+      - "previews/visible-mass-3d/living-church-conversation-trail.mjs"
+      - "tests/living-church-conversation-trail.mjs"
       - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
       - "tests/living-church-character-scene.mjs"
       - "previews/visible-mass-3d/assets/living-church/**"
@@ -34,6 +36,7 @@ jobs:
           node --check previews/visible-mass-3d/living-church-catechism-native.mjs
           node tests/living-church-catechism-native.mjs
           node tests/living-church-ask-objectives.mjs
+          node tests/living-church-conversation-trail.mjs
           node tests/living-church-visible-mass-adapter.mjs
       - name: Install isolated browser tooling
         run: |
