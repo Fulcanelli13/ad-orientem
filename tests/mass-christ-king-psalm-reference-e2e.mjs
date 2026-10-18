@@ -16,6 +16,11 @@ assert.ok(fixed.gradual!==fixture.gradual);
 assert.equal(fixed.gradual.lat.replace("Ps 71:8; 71:11","Ps 71:8; 78:11"),fixture.gradual.lat);
 assert.equal(fixed.gradual.en,fixture.gradual.en);
 assert.equal(fixed.gradual.fr,fixture.gradual.fr);
+const frenchSample={...fixture,gradual:{...fixture.gradual,
+ fr:"Ps 71:8; 78:11\nIl dominera de la mer à la mer.\nEt tous les rois de la terre l’adoreront."}};
+const frenchFixed=correct1962ProperEditorialReferences(frenchSample);
+assert.equal(frenchFixed.gradual.fr.replace("Ps 71:8; 71:11","Ps 71:8; 78:11"),frenchSample.gradual.fr);
+assert.equal(frenchFixed.gradual.fr.startsWith("Ps 71:8; 71:11"),true);
 assert.equal(fixed.gradual.lat.startsWith("Ps 71:8; 71:11"),true);
 assert.equal(correct1962ProperEditorialReferences(fixed),fixed,"correction must be idempotent");
 assert.equal(correct1962ProperEditorialReferences({...fixture,sourcePath:"Tempora/Pent21-0"}).gradual.lat,
@@ -65,7 +70,8 @@ try{
    htmlOriginalPresent:html.includes("Ps 71:8; 78:11"),
    htmlCorrectedPresent:html.includes("Ps 71:8; 71:11"),
    enPreserved:printed.proper?.gradual?.en===original.en,
-   frPreserved:printed.proper?.gradual?.fr===original.fr,
+   frCorrected:printed.proper?.gradual?.fr?.startsWith("Ps 71:8; 71:11"),
+   frVersePreserved:printed.proper?.gradual?.fr?.slice(14)===original.fr?.slice(14),
    sourceCorrection:printed.proper?.editorialReferenceCorrections?.[0]?.id,
   };
  });
@@ -78,7 +84,8 @@ try{
  assert.equal(result.htmlOriginalPresent,false);
  assert.equal(result.htmlCorrectedPresent,true);
  assert.equal(result.enPreserved,true);
- assert.equal(result.frPreserved,true);
+ assert.equal(result.frCorrected,true);
+ assert.equal(result.frVersePreserved,true);
  assert.equal(result.sourceCorrection,"MR62_CHRIST_KING_GRADUAL_PSALM_71_8_11");
  console.log("PASS Christ the King 1962 Gradual citation: reader, print, source untouched, trilingual translations retained");
 }finally{await browser?.close();await new Promise(ok=>srv.close(ok))}
