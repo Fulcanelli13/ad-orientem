@@ -17,6 +17,8 @@ on:
       - "src/learn/visible-mass-review.js"
       - "tests/living-church-character-*.mjs"
       - "tests/living-church-canon-source-contract.mjs"
+      - "tests/canon-private-deployment-gate.mjs"
+      - "tools/build-web-preview.mjs"
       - "tests/living-church-canon-research-*.mjs"
       - ".github/workflows/living-church-character-p3.yml"
   workflow_dispatch:
@@ -51,6 +53,10 @@ jobs:
           node tests/living-church-visible-mass-adapter.mjs
           node tests/ask-church-objective-engine.mjs
           node tests/visible-mass-guided-folio.mjs
+      - name: Verify public Vercel build excludes unpublished Canon source JSON
+        run: |
+          node tools/build-web-preview.mjs
+          node tests/canon-private-deployment-gate.mjs
       - name: Install headless Chromium
         run: |
           npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
