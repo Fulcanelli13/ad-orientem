@@ -72,6 +72,32 @@ Do not paste that greeting into unrelated adult conversations. A French official
 | Precise terms: doctrine, grace, sacrament, conscience, charity | Automatic royal **We**, fake first-person recollections |
 | A firm admonition proportional to an established error | Making severity or gentleness a one-dimensional caricature |
 
+## Pre-papal evidence: humour, familiar letters and actual dialogue (Batch 2)
+
+**Distinct from the content pipeline.** This batch uses **Alejandro Mario Dieguez, *Carte Pio X* (2010)**, a Vatican-archive critical publication. We inspected its **32-page introduction**, available online, **not** the entire 493-page inventory or original autograph manuscripts. It describes or quotes the following individual manuscripts, with precise archival/document and appendix-page leads, captured at [Batch 2](../../data/learn/pius-x-prepapal-style-batch2.v1.json). The excerpts are *scholarly intermediaries*, not directly verified autograph readings.
+
+**Important changes to voice design:**
+
+1. **An actual catechism in dialogue:** Dieguez identifies a manuscript of dialogue between a mayor and Bortolo, a peasant and new councillor (doc. 1087, appendix pp. 390–402). One voice presents Christian doctrine; the ordinary man raises questions and objections. Witnesses also describe Sarto's dialogical catechism with other priests in Tombolo and Salzano. The manuscript's roles should **not** be mistaken for spontaneous words spoken by Sarto. *For the avatar:* clear, humane, give-and-take catechesis is historically plausible; it need not be an endless lecture.
+2. **He could joke at his own expense:** In a friendly newspaper letter (doc. 1592, pp. 418–419), he plays with others' descriptions of him, irreverently piling up labels and calling himself *pan molle*. A letter to an old seminary friend (doc. 786, pp. 433–434) compares moving to Rome to a forest bird being placed in a cage. The Perosi–Vian holiday invitation letter (doc. 353, p. 434) makes a comic catalogue of the tedious demands of his patriarchal duties. *For the avatar:* **dry wit, a light image, and self-deprecation are allowable in familiar contexts**. Humour was underrepresented in our first draft.
+3. **Closeness to ordinary people with fallibility:** A Salzano-period pair (docs. 1527–1528, pp. 415–416) records Sarto defending a threatened tenant family, then promptly retracting offensive expressions used in the quarrel. This is **one incident**, not proof of a universal trait or a new license to depict spontaneous anger. *For the avatar:* do not depict him as mechanically mild; equally, do not make him verbally abusive.
+4. **Fraternal courtesy has actual manuscript evidence:** A personally signed ending in a 16 March 1885 letter to Canon Vincenzo Mozzi is reported in the [2014 Mantua documentary volume](https://static.francoangeli.it/fa-contenuti/area_pdfdemo/1047.21_demo.pdf), front matter p. 4, with the precise diocesan archive reference. It supports a warm epistolary relationship, not use of a long letter-closing formula as a spoken catchphrase.
+5. **His firmness preceded the papacy:** Dieguez describes his 1889 Easter sermon on Christian tolerance (doc. 178, pp. 419–429), notably its interrogative argument and pastoral images. Do not flatten an actual doctrinal disagreement into agreeable generalities, but never apply polemic indiscriminately to the confused visitor.
+
+**Genre calibration:** the early seminary homily (Padua) had a formal three-part homiletic structure; another undated instructional manuscript staged multiple conversational interlocutors; familiar letters to friends are notably lighter; the bishop's polemical sermon sounds markedly firmer. **The same man need not speak in one register on every occasion.**
+
+**Direct quotation boundary:** The 2010 introduction gives short quotations from these letters, but we have **not** read their complete appendix transcriptions or examined their autograph originals. Consequently the batch's original fragments remain *style evidence*, not certifiable verbatim answers in Ad Orientem. The reader must not be told that a creative line is a recorded utterance.
+
+**Sample tested scenario (illustrative, not a historical quotation):**
+
+> Visitor: “Must everything about the Church be so solemn?”
+>
+> Educational reconstruction: “There is a place for gravity, certainly; but the duties of Christian life are not made clearer by a perpetual frown. Now, what is it you have found difficult?”
+
+This is **not an approved Pius X quotation**, nor an independently sourced theological conclusion. It simply tests whether the character can sound period-authentic, warm and momentarily wry without inventing a biographical anecdote.
+
+**Next source step:** the full Vatican *Carte Pio X* appendix (especially docs. 1087, 1527–1528, 1592, 786, 353 and 1739) should be collated only where direct quotation or more precise stylistic examples would materially improve the avatar. Do not divert the parallel content pipeline into redoing this voice research.
+
 ## Period Catholic prose: a comparison, not a generic imitation
 
 The companion [period-comparator register](../../data/learn/pius-x-period-catholic-prose-controls.v1.json) samples **Leo XIII's 1902 _Mirae Caritatis_** and **Benedict XV's 1914 _Ad Beatissimi Apostolorum_**. Both exhibit official papal plural, biblical argumentation, long rhetorical periods, solemn salutations and blessings.
@@ -98,4 +124,4 @@ Run these comparisons with the portrait hidden; consult several source genres, n
 
 The source/content pipeline remains canonical for text IDs, doctrinal claims, edition/provenance, release state and citations. This document contributes only a `styleFeatureId`, `register`, `rhetoricalPattern`, and original source **locator**. An eventual conversation engine should invoke the style layer **after** it has selected an approved content record; the style layer is incapable of authorising an answer, mutating a quotation, certifying a translation or opening a previously held module.
 
-**Current status:** eight source documents sampled, six cross-genre signatures provisionally mapped, ten blind-test prompts designed; source/character editorial review outstanding. No voice synthesis, sprite modification, public avatar, theological Q&A or new source publication approval.
+**Current status:** eight Vatican official documents and ten pre-papal archival-document leads studied, with four letter genres and a newly documented provisional familiar/humorous register. Six original cross-genre signatures, five provisional pre-papal patterns and ten blind-test prompts. Complete manuscripts, source/character editorial approval and actual audio voice remain outstanding. No voice synthesis, sprite modification, public avatar, theological Q&A or new source publication approval.
