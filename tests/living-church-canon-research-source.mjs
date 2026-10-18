@@ -43,7 +43,7 @@ test("Folio source adapter is fail-closed for 534 questions",async()=>{
  assert.equal(reader.canPublish,false);
  assert.equal(reader.publicHandoff().ok,false);
  const review=reader.getEditorialAudit("LUT-011");
- assert.equal(review.class,"PINPOINT_SOURCE_CORRECTION_REQUIRED");
+ assert.equal(review.class,"PINPOINT_CORRECTED_IN_SOURCE_OWNER_ERRATA_PENDING_APPROVAL");
  assert.equal(review.publicationAllowed,undefined);
  assert.equal(review.pinpoints.length,3);
  assert.match(review.held,/Session XIII/);
@@ -60,7 +60,7 @@ test("Folio source adapter is fail-closed for 534 questions",async()=>{
  assert.equal(reader.getEditorialAudit("LUT-005"),null);
  const magic=await reader.originalResearch("ERR-009",{lang:"en"});
  assert.equal(magic.ok,true);
- assert.equal(magic.editorialAudit.class,"PINPOINT_SOURCE_CORRECTION_REQUIRED");
+ assert.equal(magic.editorialAudit.class,"PINPOINT_CORRECTED_IN_SOURCE_OWNER_ERRATA_PENDING_APPROVAL");
  assert.equal(magic.editorialAudit.pinpoints.length,2);
  assert.deepEqual(magic.paragraphs[0].sourceIds,["CCC-2117"]);
  assert.deepEqual(magic.paragraphs[1].sourceIds,["CCC-2117"]);
