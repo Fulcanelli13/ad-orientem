@@ -1,0 +1,32 @@
+name: Special Mass reading focus matrix
+on:
+  pull_request:
+    paths:
+      - "tests/reader-special-form-focus-phone.mjs"
+      - "tests/fixtures/reader-phone-harness.html"
+      - ".github/workflows/special-form-focus.yml"
+      - "src/mass/**"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  special-form-focus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Inspect special rites and Mass forms in real phone reader
+        run: timeout --signal=TERM --kill-after=5s 750s node tests/reader-special-form-focus-phone.mjs
+      - name: Preserve special focus coverage and explicitly unsupported scenarios
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: special-form-focus-matrix
+          path: artifacts/special-mass-focus/
+          if-no-files-found: warn
+          retention-days: 30
