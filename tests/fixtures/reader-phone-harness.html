@@ -69,12 +69,13 @@ const withPalm=rite==="palm";
 const withAsh=rite==="ash";
 const withCandlemas=rite==="candlemas";
 const withGoodFriday=rite==="good-friday";
+const withEasterVigil=rite==="easter-vigil";
 const precedingRites=withAsperges?["ASPERGES"]:withPalm?["PALM"]:withAsh?["ASH"]:withCandlemas?["CANDLEMAS"]:[];
 const requestedForm=String(params.get("form")??"MISSA_CANTATA_INCENSE").toUpperCase();
 const fixtureRequiem=params.get("requiem")==="1";
 const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
 if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
-const fixtureDate=params.get("date")||(withGoodFriday?"2026-04-03":"2026-10-04");
+const fixtureDate=params.get("date")||(withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
 if(!/^20[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$/.test(fixtureDate))throw new Error("Invalid test fixture date");
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
@@ -82,10 +83,12 @@ const resolvedMass={
   form:requestedForm,
   presentationMode:mode,
   actualCelebration:withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
+    withEasterVigil?{id:"easter-vigil",type:"CALENDAR",title:"Easter Vigil"}:
     withCandlemas?{id:"purificatio-bmv",type:"CALENDAR",title:"Purification of Our Lady"}:
     fixtureRequiem?{id:"requiem",type:"REQUIEM",title:"Requiem"}:
     {id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
   calendarCelebration:withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
+    withEasterVigil?{id:"easter-vigil",type:"CALENDAR",title:"Easter Vigil"}:
     withCandlemas?{id:"purificatio-bmv",type:"CALENDAR",title:"Purification of Our Lady"}:
     {id:"Tempora/Pent18-0",type:"CALENDAR",title:"Sunday"},
   explicitlySelectedCelebration:params.get("print")!=="1",
@@ -93,14 +96,16 @@ const resolvedMass={
   overlays:fixtureRequiem?["REQUIEM"]:(params.get("print")==="1"?[]:["VOTIVE_PROPER"]),
   precedingRites,
   followingActions:[],
-  distinctRite:withGoodFriday?"GOOD_FRIDAY":null,
-  provenance:{seasonalMode:null},
+  distinctRite:withGoodFriday?"GOOD_FRIDAY":withEasterVigil?"EASTER_VIGIL":null,
+  provenance:{seasonalMode:null,
+    ...(withEasterVigil?{easterVigil:{fontMode:String(params.get("font")||"IN_CHURCH").toUpperCase(),
+      baptismPresent:params.get("baptism")==="1"}}:{})},
 };
 const prepared={
   schema:"ao-mass-entry-prepared-v1",
   session:{
     resolvedMass,
-    plan:(withGoodFriday||withCandlemas||requestedForm==="SOLEMN"||requestedForm==="LOW")
+    plan:(withGoodFriday||withEasterVigil||withCandlemas||requestedForm==="SOLEMN"||requestedForm==="LOW")
       ? compileMassPlan(resolvedMass)
       : {
       kind:"MASS",

@@ -1,0 +1,42 @@
+name: Exceptional rite source focus
+on:
+  pull_request:
+    paths:
+      - "tests/reader-exceptional-rite-source-matrix.mjs"
+      - "tests/reader-exceptional-rite-dom-phone.mjs"
+      - "tests/fixtures/reader-phone-harness.html"
+      - ".github/workflows/exceptional-rite-focus.yml"
+      - "src/mass/reader-good-friday.js"
+      - "src/mass/reader-easter-vigil.js"
+      - "src/mass/reader-corpus-christi.js"
+      - "src/mass/reader-requiem-absolution.js"
+      - "data/mass/special-days-*.json"
+      - "data/presentation/reader-{good-friday,easter-vigil,corpus-christi,requiem-absolution}*.json"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-branches:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Exercise all source-owned branches and visual-cue attribution
+        run: node tests/reader-exceptional-rite-source-matrix.mjs
+      - name: Traverse real Good Friday and Easter Vigil phone reader records
+        run: timeout --signal=TERM --kill-after=5s 650s node tests/reader-exceptional-rite-dom-phone.mjs
+      - name: Preserve per-record branch coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exceptional-rite-source-focus
+          path: |
+            artifacts/exceptional-rite-focus/
+            artifacts/exceptional-rite-phone/
+          retention-days: 30
+          if-no-files-found: warn
