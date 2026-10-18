@@ -85,7 +85,12 @@
     "eighth_batch_new_color_photo_records": 5,
     "post_eighth_batch_photo_candidate_or_hotspot": 56,
     "post_eighth_batch_needs_photo": 114,
-    "post_eighth_batch_vestment_photo_candidates": 20
+    "post_eighth_batch_vestment_photo_candidates": 20,
+    "ninth_batch_photo_records": 3,
+    "ninth_batch_object_references": 4,
+    "post_ninth_batch_photo_candidate_or_hotspot": 60,
+    "post_ninth_batch_needs_photo": 110,
+    "post_ninth_batch_vestment_photo_candidates": 20
   },
   "zones": [
     {
@@ -1622,9 +1627,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B9-EQ07-EQ08-TUSCAN-THURIBLE-BOAT",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "EQ08",
@@ -1636,9 +1647,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B9-EQ07-EQ08-TUSCAN-THURIBLE-BOAT",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "EQ09",
@@ -2671,9 +2688,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B9-SA05-PALERMO-JESUIT-CONFESSIONAL",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SA06",
@@ -2769,9 +2792,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B9-SE01-APARECIDA-CATHOLIC-PASCHAL-CANDLE",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE02",
@@ -4155,6 +4184,58 @@
       "source_description": "Original photograph of black chasuble in same French Catholic cathedral as red and green variants, available for research comparison of Latin-Rite colors, not a 1962 Requiem use photograph.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH8"
+    },
+    {
+      "asset_id": "M6B9-EQ07-EQ08-TUSCAN-THURIBLE-BOAT",
+      "object_id": "EQ07",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bottega_toscana,_turibolo_e_navicella_in_argento,_1750-75_ca.,_da_s._agostino_a_castiglion_f.no.jpg",
+      "creator": "Sailko",
+      "licence": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "width": 3174,
+      "height": 3022,
+      "venue": "Museo Diocesano, Castiglion Fiorentino, Tuscany, Italy",
+      "source_description": "Authentic Roman Catholic diocesan-museum silver thurible and incense boat originally from the Augustinian church of Saint Augustine. One shared real photograph covers both objects, without claiming they were used together in a 1962 Mass.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH9",
+      "linked_object_ids": [
+        "EQ07",
+        "EQ08"
+      ]
+    },
+    {
+      "asset_id": "M6B9-SA05-PALERMO-JESUIT-CONFESSIONAL",
+      "object_id": "SA05",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ChiesaGesu_Confessional.JPG",
+      "creator": "Erik den yngre",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 2560,
+      "height": 2208,
+      "venue": "Church of the Gesù (Casa Professa), Palermo, Sicily, Italy",
+      "source_description": "Original photograph of a confessional within the Roman Catholic Jesuit church of the Gesù in Palermo. Confessional in original architectural setting, no sacramental participants or 1962 rite depicted.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH9"
+    },
+    {
+      "asset_id": "M6B9-SE01-APARECIDA-CATHOLIC-PASCHAL-CANDLE",
+      "object_id": "SE01",
+      "role": "context_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Paschal_candle_-_Main_altar_-_Basilica_of_Aparecida_-_Aparecida_2014.jpg",
+      "creator": "José Luiz Bernardes Ribeiro (Jbribeiro1)",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 1676,
+      "height": 2556,
+      "venue": "Basilica of the National Shrine of Our Lady of Aparecida, São Paulo, Brazil",
+      "source_description": "Original licensed Roman Catholic national-shrine photograph of Paschal candle near main altar in 2014. Suitable as contextual photo of the candle, not evidence of 1962 Easter Vigil rubrics; do not infer high-altar versus freestanding altar geometry from this modern sanctuary.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH9"
     }
   ]
 }
