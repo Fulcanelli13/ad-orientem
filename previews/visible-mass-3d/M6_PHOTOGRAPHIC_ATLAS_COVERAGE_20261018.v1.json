@@ -74,7 +74,12 @@
     "sixth_batch_newly_referenced_objects": 8,
     "post_sixth_batch_photo_candidate_or_hotspot": 53,
     "post_sixth_batch_needs_photo": 117,
-    "post_sixth_batch_vestment_photo_candidates": 19
+    "post_sixth_batch_vestment_photo_candidates": 19,
+    "seventh_batch_photo_records": 2,
+    "post_seventh_batch_photo_candidate_or_hotspot": 55,
+    "post_seventh_batch_needs_photo": 115,
+    "post_seventh_batch_pilot_needs_photo": 2,
+    "all_zones_have_initial_photographic_reference": true
   },
   "zones": [
     {
@@ -249,9 +254,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B7-EN05-CARRARA-CATHOLIC-HOLY-WATER-STOUP",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "EN06",
@@ -445,9 +456,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B7-DV06-LONDON-CORPUS-CHRISTI-STATIONS",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "DV07",
@@ -3941,6 +3958,38 @@
       "medium": "photograph",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B7-EN05-CARRARA-CATHOLIC-HOLY-WATER-STOUP",
+      "object_id": "EN05",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Carrara,_chiesa_del_carmine,_interno,_acquasantiera_02.jpg",
+      "creator": "Sailko",
+      "licence": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "width": 2296,
+      "height": 3692,
+      "venue": "Chiesa del Carmine, Carrara, Tuscany, Italy",
+      "source_description": "Original independently licensed photograph of a marble holy-water stoup within an actual Roman Catholic church. Not photographed being used or at Brompton.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH7"
+    },
+    {
+      "asset_id": "M6B7-DV06-LONDON-CORPUS-CHRISTI-STATIONS",
+      "object_id": "DV06",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Covent_Garden,_Corpus_Christi_Catholic_Church,_Stations_of_the_Cross_(2).jpg",
+      "creator": "AndyScott",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3500,
+      "height": 2036,
+      "venue": "Corpus Christi Roman Catholic Church, Covent Garden, London; Stations of the Cross by Arthur Fleischmann",
+      "source_description": "Authored source photograph of a genuine Roman Catholic church's Stations of the Cross artwork. It demonstrates the physical devotional furnishing, not evidence of use during a 1962 Mass or a depiction of all fourteen stations.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH7"
     }
   ]
 }
