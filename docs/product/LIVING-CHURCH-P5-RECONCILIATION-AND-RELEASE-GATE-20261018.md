@@ -10,12 +10,12 @@ P0 #1395 through P4 #1406 were tested on the stacked branch, but **NONE is merge
 
 | Source owner | Exact reviewed source snapshot | Reconciliation | Limits |
 | --- | --- | --- | --- |
-| Visible Mass #1309 | `1685bb951b3189d549b3372fbd2afd7c5d8b6518` | Applied all ten post-P1 M5 image/360 loading differences in the **original** `sanctuary-hotspot-pilot.html`, retaining P1 context and VMQ trail director. Copied nine source-owned M6 assets and updated M4 regression tests **by original Git blob SHA**. | M6 remains research only. No invented hotspots or object photographs. |
+| Visible Mass #1309 | `fe9fb6de79faec7f716ec8ff975ca88ec4e152b0` (M5 10-hunk baseline from `1685bb9`) | Applied all ten post-P1 M5 image/360 loading differences in the **original** `sanctuary-hotspot-pilot.html`, retaining P1 context and VMQ trail director. Copied nine source-owned M6 assets and updated M4 regression tests **by original Git blob SHA**. | M6 remains research only. No invented hotspots or object photographs. |
 | P0 shared context #1395 | `c9cc400144c657cf8726545117469cf04adfd791` | Shared context file is **byte-identical** to source Git blob `19fb33d1aa0924b4aca31a02a5390a5b512779cd`. | Single original registry; no secondary answer store. |
 | Ask the Church #1391 | `374e34f9032665c315e5eda95e99c71784978e39` | Objective engine, native handoff, digest and route survey are **byte-identical**. Original guided preview has three explicit host integration changes only (hide, focus, one managed return button). | All 7 objectives and 26 paths retained; external routes remain held without exact return. |
 | P4 Catechism #1406 | `04a2caffbec08cc6185a56085340643304ec4b07` | 433 verified English source question titles and native original answer handoff preserved. | Unverified French translations are not invented or published. |
 
-Original M6 atlas state in the reconciled owner snapshot: **170 objects in 13 zones**, **52 research image/source records** (mixed types and roles), **41 objects with a photo candidate or exact hotspot**, **129 still needing a qualifying photograph**, including **3 of the 30 sanctuary pilot objects**. These are research records, not publication-approved images; six Brompton hotspots belong to a *single* original photograph. A historical illustration or a reference image from another venue is not proof that an object appears in a given sanctuary.
+Original M6 atlas state in the reconciled owner snapshot: **170 objects in 13 zones**, **56 research image/source records** (mixed types and roles), **45 objects with a photo candidate or exact hotspot**, **125 still needing a qualifying photograph**, including **2 of the 30 sanctuary pilot objects**. These are research records, not publication-approved images; six Brompton hotspots belong to a *single* original photograph. A historical illustration or a reference image from another venue is not proof that an object appears in a given sanctuary.
 
 ## Current acceptance matrix
 
@@ -39,7 +39,10 @@ Original M6 atlas state in the reconciled owner snapshot: **170 objects in 13 zo
 4. Obtain approval for historical simulation disclosure, original doctrinal verbatim transcription, retained Catechism witness and actual artwork/photograph licences. The four held VMQ question candidates and historical answers stay unpublished until source certified.
 5. Only after **all** gates clear, prepare an explicit release PR and ask for deployment authorization. This document or passing CI never authorizes release.
 
-The machine-readable lock `data/learn/living-church-p5-convergence-lock.v1.json` has 16 source blob pins, ten source-viewer patch hunks and nine explicit false publication gates. Fail on source drift; never auto-update a source pin or silently declare approval.
+The machine-readable lock `data/learn/living-church-p5-convergence-lock.v1.json` has 16 source blob pins, ten source-viewer patch hunks, latest fifth-batch M6 source snapshots and nine explicit false publication gates. Fail on source drift; never auto-update a source pin or silently declare approval.
+
+## Frozen owner-snapshot policy
+M6 research is continuing independently. P5 imports through fifth batch at source owner `fe9fb6de79faec7f716ec8ff975ca88ec4e152b0`, then freezes that provenance as the acceptance baseline. Changes after that commit belong to the M6 upstream pipeline and require a deliberate future reconciled update, not an automatic rewrite of reviewed P5 tests. The P5 integration work does **not** approve or publish any of the 56 atlas image/source records.
 
 ## Scope limitation
 This snapshot reconciles the named owner commits listed above. Upstream source branches may continue to evolve; newer commits require another comparison. A green test cannot substitute for physical-device and human historical/editorial review. P5 is **merge-review ready, not release-ready**.
