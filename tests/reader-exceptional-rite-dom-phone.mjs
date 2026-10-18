@@ -148,8 +148,18 @@ try{
    }
    if(init.kind==="EV"){
     assert.equal(row.steps.at(-1)?.id,"EV-MASS-700",scenario.id+" did not reach Mass handoff");
-    const stage=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCompositeStage?.());
-    assert.equal(stage,"MASS_ACTIVE",scenario.id+" Mass handoff failed");
+    const handoff=await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const model=api?.model;
+      return {stage:api?.getCompositeStage?.(),last:api?.getEasterVigilState?.()?.step?.recordId,
+       index:api?.getEasterVigilState?.()?.index,
+       atEnd:api?.getEasterVigilState?.()?.atEnd,
+       handoff:api?.getEasterVigilState?.()?.handoffToMass,
+       projectedCards:model?.cards?.length,first:model?.cardBySequence?.(1)?.sectionId||null,
+       owner:document.getElementById("ao-r17-native-reader-preview")?.dataset.r17CardOwner};
+    });
+    row.handoff=handoff;
+    assert.equal(handoff.stage,"MASS_ACTIVE",scenario.id+" Mass handoff failed: "+JSON.stringify(handoff));
    }
    assert.deepEqual(errors,[],scenario.id+" browser errors");
   }catch(error){
