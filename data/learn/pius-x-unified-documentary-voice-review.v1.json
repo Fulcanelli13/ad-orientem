@@ -114,7 +114,7 @@
     "CLAIM_TO_SOURCE_TRACE",
     "PERSONAL_INVENTION_RISK"
   ],
-  "reviewState": "NINE_TURNS_ASSESSED_NOT_AUTHORITATIVELY_APPROVED",
+  "reviewState": "NINE_TURNS_ASSESSED_FOUR_LOCAL_EDITS_APPLIED_ZERO_APPROVED",
   "reviews": [
     {
       "caseId": "PX-STYL-OUR-LADY-01",
@@ -129,7 +129,9 @@
         "PERSON_BEFORE_EXPOSITION",
         "CLEAR_DOCTRINAL_DISTINCTION"
       ],
-      "sourceLimit": "Encyclical and indexed Catechism support content, not spoken English phrasing."
+      "sourceLimit": "Encyclical and indexed Catechism support content, not spoken English phrasing.",
+      "implementation": "ORIGINAL_V2_RETAINED_PENDING_MINOR_EDITORIAL_EDIT",
+      "historicalAndDoctrinalApproval": false
     },
     {
       "caseId": "PX-STYL-OUR-LADY-01",
@@ -144,7 +146,9 @@
         "CLEAR_DOCTRINAL_DISTINCTION",
         "TRACE_SOURCE_BEFORE_COMPOSING"
       ],
-      "sourceLimit": "The metaphor is in Ad Diem's theological exposition; not Sarto's casual conversational idiom."
+      "sourceLimit": "The metaphor is in Ad Diem's theological exposition; not Sarto's casual conversational idiom.",
+      "implementation": "LOCAL_EN_FR_TEXT_EDIT_APPLIED_PENDING_HUMAN_REVIEW",
+      "historicalAndDoctrinalApproval": false
     },
     {
       "caseId": "PX-STYL-OUR-LADY-01",
@@ -158,7 +162,9 @@
       "documentaryPatterns": [
         "CONCRETE_HUMAN_CONSEQUENCE"
       ],
-      "sourceLimit": "No direct record of Sarto advising this specific visitor."
+      "sourceLimit": "No direct record of Sarto advising this specific visitor.",
+      "implementation": "ORIGINAL_V2_RETAINED_PENDING_MINOR_EDITORIAL_EDIT",
+      "historicalAndDoctrinalApproval": false
     },
     {
       "caseId": "PX-STYL-CHILD-CATECHISM-02",
@@ -173,7 +179,9 @@
         "PERSON_BEFORE_EXPOSITION",
         "AFFECTION_WITHOUT_PERFORMANCE"
       ],
-      "sourceLimit": "Documented humour in unrelated private letters does not license a new joke about this mother."
+      "sourceLimit": "Documented humour in unrelated private letters does not license a new joke about this mother.",
+      "implementation": "LOCAL_EN_FR_TEXT_EDIT_APPLIED_PENDING_HUMAN_REVIEW",
+      "historicalAndDoctrinalApproval": false
     },
     {
       "caseId": "PX-STYL-CHILD-CATECHISM-02",
@@ -188,7 +196,9 @@
         "CLEAR_DOCTRINAL_DISTINCTION",
         "CONCRETE_HUMAN_CONSEQUENCE"
       ],
-      "sourceLimit": "Catechetical method is documented; the exact invented visitor dialogue is not."
+      "sourceLimit": "Catechetical method is documented; the exact invented visitor dialogue is not.",
+      "implementation": "ORIGINAL_V2_RETAINED_PENDING_MINOR_EDITORIAL_EDIT",
+      "historicalAndDoctrinalApproval": false
     },
     {
       "caseId": "PX-STYL-CHILD-CATECHISM-02",
@@ -203,7 +213,9 @@
         "PERSON_BEFORE_EXPOSITION",
         "CONCRETE_HUMAN_CONSEQUENCE"
       ],
-      "sourceLimit": "The source supports continuing catechesis, not the composition of a personal proverb."
+      "sourceLimit": "The source supports continuing catechesis, not the composition of a personal proverb.",
+      "implementation": "LOCAL_EN_FR_TEXT_EDIT_APPLIED_PENDING_HUMAN_REVIEW",
+      "historicalAndDoctrinalApproval": false
     },
     {
       "caseId": "PX-STYL-TEACHING-OBJECTION-03",
@@ -218,7 +230,9 @@
         "CLEAR_DOCTRINAL_DISTINCTION",
         "CHARITY_WITH_CONVICTION"
       ],
-      "sourceLimit": "Catechism indexes support doctrine; official formal texts do not certify private tone."
+      "sourceLimit": "Catechism indexes support doctrine; official formal texts do not certify private tone.",
+      "implementation": "ORIGINAL_V2_RETAINED_PENDING_MINOR_EDITORIAL_EDIT",
+      "historicalAndDoctrinalApproval": false
     },
     {
       "caseId": "PX-STYL-TEACHING-OBJECTION-03",
@@ -233,7 +247,9 @@
         "CLEAR_DOCTRINAL_DISTINCTION",
         "DECISIVE_BUT_NOT_ALWAYS_SOLEMN"
       ],
-      "sourceLimit": "Do not suggest every individual pronouncement is nonauthoritative; conditions and categories need content-owner confirmation."
+      "sourceLimit": "Do not suggest every individual pronouncement is nonauthoritative; conditions and categories need content-owner confirmation.",
+      "implementation": "ORIGINAL_V2_RETAINED_PENDING_MINOR_EDITORIAL_EDIT",
+      "historicalAndDoctrinalApproval": false
     },
     {
       "caseId": "PX-STYL-TEACHING-OBJECTION-03",
@@ -248,7 +264,9 @@
         "PERSON_BEFORE_EXPOSITION",
         "NO_FIXED_LENGTH_OR_JOKE_QUOTA"
       ],
-      "sourceLimit": "Concise connective dialogue is educational invention, not documented papal speech."
+      "sourceLimit": "Concise connective dialogue is educational invention, not documented papal speech.",
+      "implementation": "LOCAL_EN_FR_TEXT_EDIT_APPLIED_PENDING_HUMAN_REVIEW",
+      "historicalAndDoctrinalApproval": false
     }
   ],
   "mandatoryGates": {
@@ -275,5 +293,12 @@
       "pipeline": "LIVING_CHURCH_P4",
       "action": "Keep review-only original-question handoffs; do not import this matrix or the simulated replies into released screens."
     }
+  ],
+  "currentDraft": "VOICE_V2_1_DOC_EVIDENCE_20261019",
+  "releaseReviewNeeded": [
+    "Independent English and French philological review",
+    "Full witness verification for historical correspondence where possible",
+    "Original-content-owner theological approval",
+    "Visual and conversational in-app review only after clearance"
   ]
 }
