@@ -73,6 +73,22 @@ try{
  assert.equal(await page.locator(sel+" .aoAdorationVisitNote").evaluate(x=>x.open),false,
   "Editorial visit background must not precede prayer");
  await page.screenshot({path:resolve(captures,"visit-390.png"),animations:"disabled"});
+ // Silence must be possible even in stages containing several canonical prayers.
+ const visitScroll=page.locator(sel+" .aoDevoCardScroll");
+ assert.equal(await page.locator(sel+" .aoAdorationQuietLink").count(),1,"Visit stage needs quiet link");
+ await visitScroll.evaluate(el=>{el.scrollTop=65});
+ const beforePause=await visitScroll.evaluate(el=>el.scrollTop);
+ await page.locator(sel+" .aoAdorationQuietLink").evaluate(el=>el.click());
+ assert.equal(await page.locator(sel+'[data-ao-adoration-quiet="true"]').count(),1);
+ assert.equal(await page.locator(sel+'[data-ao-adoration-quiet="true"]').getAttribute("aria-modal"),"true");
+ assert.equal(await page.locator(sel+" .aoAdorationQuietExit").evaluate(el=>document.activeElement===el),true);
+ await page.keyboard.press("Tab");
+ assert.equal(await page.locator(sel+" .aoAdorationQuietExit").evaluate(el=>document.activeElement===el),true,"Silence traps keyboard focus");
+ await page.keyboard.press("Escape");
+ assert.equal((await snapshot()).index,0,"Escape should return to selected Visit step");
+ assert.equal(await page.locator("#aoPray435930.open").count(),1);
+ assert.ok(Math.abs(await visitScroll.evaluate(el=>el.scrollTop)-beforePause)<=2,"Scroll position lost on quiet return");
+ await page.screenshot({path:resolve(captures,"visit-after-silent-pause-390.png"),animations:"disabled"});
  const swipe=async(dx,dy)=>page.locator(sel+" .aoDevoCardScroll").evaluate((el,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:15,target:el,clientX:x,clientY:y});
   el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(225,335)],changedTouches:[t(225,335)]}));
