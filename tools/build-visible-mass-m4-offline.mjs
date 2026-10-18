@@ -16,7 +16,15 @@ if(!originalHtml.includes(scriptStart)||!originalHtml.includes(scriptEnd))throw 
 const start=originalHtml.indexOf(scriptStart),end=originalHtml.lastIndexOf(scriptEnd);
 const inline=originalHtml.slice(start+"<script>".length,end+scriptEnd.indexOf("</script>"));
 const virtual=await build({stdin:{contents:inline,resolveDir:preview,sourcefile:"m4-visitor-inline.js",loader:"js"},
- bundle:true,format:"iife",platform:"browser",target:"es2020",write:false,logLevel:"warning"});
+ bundle:true,format:"iife",platform:"browser",target:"es2020",write:false,logLevel:"warning",
+ // The production Mass Explorer runtime has no ownership inside a standalone
+ // photograph reviewer. Preserve only the actual published route ID; real app
+ // navigation remains explicitly unavailable without the native AO shell.
+ plugins:[{name:"no-duplicate-production-module",setup(buildContext){
+  buildContext.onResolve({filter:/src\\/learn\\/mass-explorer\\.js$/},args=>({path:args.path,namespace:"m4-production-route-only"}));
+  buildContext.onLoad({filter:/.*/,namespace:"m4-production-route-only"},()=>({
+   contents:'export const MASS_EXPLORER_ROUTE="learn.mass_explorer";',loader:"js"}));
+ }}]});
 if(virtual.outputFiles.length!==1)throw Error("Expected exactly one bundled visitor script");
 const safe=str=>str.replace(/<\/script/gi,"<\\/script").replace(/<!--/g,"<\\!--");
 const jsonFiles=[
