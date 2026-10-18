@@ -11,7 +11,7 @@ function doc(path){
 const errors=[],refs={unresolved:[],notHttps:[],empty:[]},sets={};
 function validate(path,id){
  const pack=doc(path);
- const entries=[...(pack.records||[]),...(pack.drafts||[]),...(pack.dossiers||[])];
+ const entries=[...(pack.records||[]),...(pack.entries||[]),...(pack.drafts||[]),...(pack.dossiers||[])];
  const matches=entries.filter(e=>(e.id||e.historical_id)===id);
  if(matches.length!==1){errors.push({id,path,error:"not_exactly_one_record",count:matches.length});return;}
  const item=matches[0],paragraphs=item.paragraphs||item.sections||[];
