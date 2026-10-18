@@ -41,14 +41,20 @@ label{color:var(--sub)}#search{flex:1;min-width:150px}#zone{max-width:230px}
 .review-controls label{font-size:11px}
 footer{margin:25px 0;font-size:12px;border-top:1px solid var(--line);padding-top:16px;color:var(--sub)}
 @media(max-width:580px){.wrap{padding:12px}.summary .stat{min-width:calc(50% - 8px)}h1{font-size:24px}.controls{top:0}.controls button{flex:1 0 auto}.review{grid-template-columns:1fr}.preview{height:190px}#zone,#coverage{flex:1;max-width:none}#search{flex-basis:100%}}
+.preview{height:246px;cursor:zoom-in}.preview:hover{outline:1px solid #bda982;outline-offset:-1px}
+.review-controls{display:block}.review-controls label{display:block;margin:8px 0}.review-controls select{max-width:none;width:100%}
+.review-controls textarea{display:block;width:100%;min-height:66px;background:#111b26;color:#e7e0d5;border:1px solid #526173;border-radius:6px;padding:8px;resize:vertical;font:12px/1.5 system-ui}
+.import-control{display:inline-flex;padding:10px;border:1px solid #526173;border-radius:6px;cursor:pointer;min-height:40px}
+#review-status{max-width:140px}
+@media(max-width:580px){.preview{height:255px}#review-status{max-width:unset;flex:1 1 auto}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
 <div class="kicker">Ad Orientem · The Visible Mass · M6 Research</div>
-<h1>Photographic Atlas</h1>
-<p>One canonical object checklist, authenticated photographic sources and a review queue. This is a research and curation tool, not a published liturgical guide.</p>
+<h1>Photographic Atlas · Image Review</h1>
+<p>Rate every source image from 0–5, decide where it belongs in Ad Orientem, and leave notes for curation. This is a research and curation tool, not a published liturgical guide.</p>
 <p>Photographs are from individual credited collections; they do not establish the fittings of another church or what happened at a particular 1962 Mass. Preview thumbnails load from Wikimedia Commons only when online. All inventory records remain available offline.</p>
 </header>
 <section class="summary" id="summary" aria-label="Atlas coverage statistics"></section>
@@ -66,7 +72,10 @@ footer{margin:25px 0;font-size:12px;border-top:1px solid var(--line);padding-top
 </select>
 <input id="search" aria-label="Search object, source or original ID" placeholder="Search objects, photography, IDs…" type="search">
 <label><input type="checkbox" id="pilot"> 30-object pilot</label>
-<button type="button" id="export">Export review decisions</button>
+<label><input type="checkbox" id="only-new" checked> Newly acquired M6</label>
+<label>Review <select id="review-status"><option value="">All</option><option value="unreviewed">Unreviewed</option><option value="reviewed">Reviewed</option><option value="primary">Primary picks</option><option value="elsewhere">Elsewhere</option><option value="reject">Rejected</option></select></label>
+<label class="import-control" for="import-review">Import ratings <input hidden id="import-review" type="file" accept=".json,application/json"></label>
+<button type="button" id="export">Export ratings JSON</button>
 </nav>
 <p id="results-note" role="status"></p>
 <main id="results" class="review" aria-live="off"></main>
@@ -90,7 +99,11 @@ for(const obj of data.objects)for(const ref of obj.candidate_assets){
 }
 const linkedObjectIds=image=>linkedByAsset.get(image.asset_id)||[];
 const ratings=new Map();
-let mode="objects",filterZone="",filterEvidence="",query="",pilotOnly=false;
+const SAVE_KEY="AO_M6_112_Source_Review_V1";
+try{const saved=JSON.parse(localStorage.getItem(SAVE_KEY)||"[]");if(Array.isArray(saved))for(const [id,r] of saved){if(imgById.has(id))ratings.set(id,r)}}catch{}
+function store(){try{localStorage.setItem(SAVE_KEY,JSON.stringify([...ratings.entries()]));return true}catch{return false}}
+let mode="images",filterZone="",filterEvidence="",query="",pilotOnly=false,onlyNew=true,reviewFilter="";
+
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const quoteAttr=s=>esc(s);
 const classified=x=>({
@@ -145,11 +158,11 @@ function assetLine(image){
  reviewLine(image.asset_id)+'</div>';
 }
 function reviewLine(assetId){
- const state=ratings.get(assetId)||{rating:"",placement:""};
+ const state=ratings.get(assetId)||{rating:"",placement:"",notes:""};
  return '<div class="review-controls"><label>Quality <select data-rank="'+quoteAttr(assetId)+'">'+
  ['','0','1','2','3','4','5'].map(v=>'<option value="'+v+'"'+(state.rating===v?' selected':'')+'>'+(v===''?'Not rated':v+' / 5')+'</option>').join("")+'</select></label>'+
  '<label>Use <select data-placement="'+quoteAttr(assetId)+'">'+
- [["","Undecided"],["primary","Primary atlas"],["secondary","Supplementary"],["historical","Historical only"],["elsewhere","Use elsewhere"],["reject","Reject"]].map(([v,t])=>'<option value="'+v+'"'+(state.placement===v?' selected':'')+'>'+t+'</option>').join("")+'</select></label></div>';
+ [["","Undecided"],["primary","Perfect for theme"],["secondary","Suitable in this module"],["historical","Historical context"],["elsewhere","Suitable elsewhere"],["reject","Reject"]].map(([v,t])=>'<option value="'+v+'"'+(state.placement===v?' selected':'')+'>'+t+'</option>').join("")+'</select></label><label>Notes<textarea data-notes="'+quoteAttr(assetId)+'" placeholder="Composition, authenticity, rights, better place…">'+esc(state.notes||"")+'</textarea></label></div>';
 }
 
 function researchCue(item){
@@ -251,25 +264,44 @@ function apply(){
    const linked=linkedObjectIds(x);
    return (!filterZone||linked.some(id=>id.startsWith(filterZone)))&&
     (!pilotOnly||linked.some(id=>objectById.get(id)?.pilot_30))&&
-    (!q||[x.asset_id,x.creator,x.venue,x.role,x.object_id,x.source_url,...linked].join(" ").toLowerCase().includes(q));
+    (!q||[x.asset_id,x.creator,x.venue,x.role,x.object_id,x.source_url,...linked].join(" ").toLowerCase().includes(q))&&
+   (!onlyNew||String(x.source_index||"").startsWith("M6_RESEARCH_"))&&
+   (!reviewFilter||(reviewFilter==="reviewed"?ratings.has(x.asset_id):reviewFilter==="unreviewed"?!ratings.has(x.asset_id):ratings.get(x.asset_id)?.placement===reviewFilter));
   });
  }
  $("results-note").textContent=items.length+" "+(mode==="objects"?"objects":"source-image records")+" displayed · "+ratings.size+" recorded review decisions. No photos are automatically approved.";
  $("results").innerHTML=items.length?items.map(mode==="objects"?objectCard:photoCard).join(""):'<p>No records match these filters.</p>';
  hydratePreviews();
 }
-function saveRating(id,key,value){const current=ratings.get(id)||{rating:"",placement:""};const next={...current,[key]:value};if(!next.rating&&!next.placement)ratings.delete(id);else ratings.set(id,next);$("results-note").textContent=$("results-note").textContent.replace(/\d+ recorded review decisions/,ratings.size+" recorded review decisions");}
+function saveRating(id,key,value){
+ const current=ratings.get(id)||{rating:"",placement:"",notes:""};
+ const next={...current,[key]:value};
+ if(!next.rating&&!next.placement&&!String(next.notes||"").trim())ratings.delete(id);else ratings.set(id,next);
+ store();
+ $("results-note").textContent=$("results-note").textContent.replace(/\d+ recorded review decisions/,ratings.size+" recorded review decisions");
+}
 $("results").addEventListener("change",e=>{
  const el=e.target;if(!(el instanceof HTMLSelectElement))return;
  if(el.dataset.rank)saveRating(el.dataset.rank,"rating",el.value);
  if(el.dataset.placement)saveRating(el.dataset.placement,"placement",el.value);
 });
+$("results").addEventListener("input",e=>{const el=e.target;if(el.matches("textarea[data-notes]"))saveRating(el.dataset.notes,"notes",el.value)});
 $("mode-objects").onclick=()=>{mode="objects";apply();};
 $("mode-images").onclick=()=>{mode="images";apply();};
 $("zone").onchange=e=>{filterZone=e.target.value;apply();};
 $("coverage").onchange=e=>{filterEvidence=e.target.value;apply();};
 $("search").oninput=e=>{query=e.target.value;apply();};
 $("pilot").onchange=e=>{pilotOnly=e.target.checked;apply();};
+$("only-new").onchange=e=>{onlyNew=e.target.checked;apply();};
+$("review-status").onchange=e=>{reviewFilter=e.target.value;apply();};
+$("import-review").onchange=async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{const imported=JSON.parse(await file.text());if(!Array.isArray(imported.decisions))throw Error("Not a photo ratings export");
+ let n=0;for(const d of imported.decisions)if(imgById.has(d.asset_id)){ratings.set(d.asset_id,{rating:String(d.rating??""),placement:String(d.placement||""),notes:String(d.notes||"")});n++}
+ store();apply();alert(n+" image decisions imported. Export JSON again after review.");
+ }catch(err){alert("Could not import: "+err.message)}
+ e.target.value="";
+};
 function exportReview(){
  const out={schema:"AO_VISIBLE_MASS_M6_PHOTOGRAPHIC_REVIEW_V1",source_version:data.version,exported_at:new Date().toISOString(),
   disclaimer:"Editorial review notes only; no canonical object, source or publication status changed.",
