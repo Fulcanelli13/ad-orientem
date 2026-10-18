@@ -18,7 +18,7 @@ try{
   await page.goto(pathToFileURL(html).href,{waitUntil:"load"});
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_M6_ATLAS?.status()?.objects===170);
   let status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());
-  assert.equal(status.zones,13);assert.equal(status.images,33);assert.equal(status.visible,170);
+  assert.equal(status.zones,13);assert.equal(status.images,35);assert.equal(status.visible,170);
   await page.screenshot({path:out+"/"+spec.id+"-object-atlas.png",fullPage:false});
   await page.locator("#zone").selectOption("AL");status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,20);
   await page.locator("#zone").selectOption("");
@@ -31,7 +31,7 @@ try{
   assert.match(await page.locator("#results").innerText(),/Altar bell/);
   await page.locator("#coverage").selectOption("");
   await page.locator("#mode-images").click();
-  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,33);
+  status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,35);
   await page.locator("#search").fill("M6-EQ06-ALTAR-BELLS-PHOTO");
   status=await page.evaluate(()=>window.AO_VISIBLE_MASS_M6_ATLAS.status());assert.equal(status.visible,1);
   await page.locator('[data-rank="M6-EQ06-ALTAR-BELLS-PHOTO"]').selectOption("4");
