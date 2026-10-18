@@ -78,13 +78,19 @@ jobs:
           import json
           root=Path('dist/visible-mass/panorama-sources')
           meta=json.loads((root/'metadata.json').read_text())
-          for key in ('newman_altar1','newman_altar2','newman_apse','newman_pulpit'):
+          for key in ('newman_altar1','newman_altar2','newman_altar3','newman_apse','newman_pulpit'):
               photo=meta[key]
               assert photo['license']=='CC BY 4.0',(key,photo['license'])
               assert 'zairon' in photo['artist'].lower(),(key,photo['artist'])
               assert 'commons.wikimedia.org/wiki/File:' in photo['commons_page'],key
               assert (root/photo['file']).stat().st_size>80_000,key
-          print('M5: all four photographic originals are separate licensed Zairon photographs')
+          for key in ('brompton_altar1','brompton_altar2','brompton_lady','brompton_heart'):
+              photo=meta[key]
+              assert photo['license']=='CC BY-SA 4.0',(key,photo['license'])
+              assert 'andyscott' in photo['artist'].lower(),(key,photo['artist'])
+              assert 'commons.wikimedia.org/wiki/File:' in photo['commons_page'],key
+              assert (root/photo['file']).stat().st_size>80_000,key
+          print('M5: nine restored close photographs have independent Commons authorship and licence')
           PY
       - name: Install single-file module bundler
         run: npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0 esbuild@0.25.12
