@@ -1,0 +1,392 @@
+{
+  "schema": "AO_FORMATION_HISTORICAL_SUPPLEMENTS_BATCH2_20261013_V1",
+  "status": "RESEARCH_ONLY_UNPUBLISHED_SOURCE_LINKED_EN_FR",
+  "date": "2026-10-13",
+  "description": "Nine substantive answers to individually identified gaps in original historical question banks, reusing existing canonical owners and primary texts rather than creating new route cards.",
+  "source_registry": [
+    {
+      "id": "POLY-17-18",
+      "title": "Martyrdom of Polycarp, chapters 17–18 (ancient Smyrna Church witness)",
+      "url": "https://www.newadvent.org/fathers/0102.htm",
+      "locator": "Chapters 17–18: Christ alone adored; martyrs loved, bones gathered and anniversary commemorated",
+      "kind": "EARLY_CHRISTIAN_ORIGINAL",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "NICEA787-DEF",
+      "title": "Second Council of Nicaea, definition of the holy images",
+      "url": "https://www.newadvent.org/fathers/3819.htm",
+      "locator": "The Definition (787): honourable veneration, kisses, images and prototype, latreia to God alone",
+      "kind": "ECUMENICAL_CONCILIAR_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC-1471-79",
+      "title": "Catechism of the Catholic Church §§1471–1479",
+      "url": "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4/x_indulgences.index.html",
+      "locator": "§§1471–1479: temporal punishment, treasury of Church, communion of saints, indulgences",
+      "kind": "MAGISTERIAL_CATECHESIS",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "PAULVI-IND-EN",
+      "title": "Paul VI, Indulgentiarum doctrina (1967), English original promulgation",
+      "url": "https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html",
+      "locator": "Historical treatment §§4–7 and Norms 1–5; old days/years discontinued",
+      "kind": "PAPAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "PAULVI-IND-FR",
+      "title": "Paul VI, Indulgentiarum doctrina (1967), French official translation",
+      "url": "https://www.vatican.va/content/paul-vi/fr/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html",
+      "locator": "§§4–7 et Normes 1–5; suppression des jours/années",
+      "kind": "PAPAL_FRENCH_OFFICIAL",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT-25-IND",
+      "title": "Council of Trent, Session XXV, Decree on Indulgences",
+      "url": "https://www.ewtn.com/catholicism/library/twentyfifth-session-of-the-council-of-trent-1492",
+      "locator": "4 December 1563: retain indulgences while abolishing all evil traffic",
+      "kind": "ECUMENICAL_COUNCIL_PRIMARY_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CE-IND-1910",
+      "title": "Catholic Encyclopedia, Indulgences (1910)",
+      "url": "https://www.newadvent.org/cathen/07783a.htm",
+      "locator": "Section on former number of days or years and canonical penance equivalence, not years spent in Purgatory",
+      "kind": "HISTORICAL_THEOLOGICAL_REFERENCE",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "ATH-FEST39",
+      "title": "St Athanasius, Festal Letter 39 (367)",
+      "url": "https://www.newadvent.org/fathers/2806039.htm",
+      "locator": "§§4–7 biblical canon: 27 NT books; distinct books read for instruction",
+      "kind": "PATRISTIC_PRIMARY_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "IREN-III22",
+      "title": "St Irenaeus, Against Heresies III.22.4",
+      "url": "https://www.newadvent.org/fathers/0103322.htm",
+      "locator": "III.22.4: Mary the Virgin as obedient new Eve in salvation history",
+      "kind": "PATRISTIC_PRIMARY_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "SAN-007",
+      "original_title_candidate": "Did early Christians distinguish Christ from martyrs, or did they simply begin worshipping martyrs?",
+      "authoritative_owner": "APOL-035|APOL-036|APOL-037|APOL-040",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Church of Smyrna explicitly distinguished adoration of Jesus Christ from the honour given to martyrs. Martyrdom of Polycarp 17 says that Christians adore Christ as Son of God, while loving the martyrs as disciples who followed him. It is therefore inaccurate to claim that all early honour for martyrs was simply the worship of additional gods.",
+            "fr": "L'Église de Smyrne distinguait expressément l'adoration de Jésus-Christ de l'honneur rendu aux martyrs. Le Martyre de Polycarpe, au chapitre 17, affirme que les chrétiens adorent le Christ, Fils de Dieu, tandis qu'ils aiment les martyrs comme ses disciples. Présenter tout honneur ancien des martyrs comme l'adoration de divinités supplémentaires est donc inexact."
+          },
+          "source_ids": [
+            "POLY-17-18"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "The same letter, chapter 18, records collecting Polycarp's bones and gathering to commemorate his martyrdom. This is strong pre-Constantinian evidence of memorial veneration; it does not demonstrate that every later form of invocation, image devotion or relic authentication had already been elaborated in that century.",
+            "fr": "Le chapitre 18 rapporte aussi la conservation des ossements de Polycarpe et les réunions destinées à commémorer son martyre. Il s'agit d'un témoignage préconstantinien solide de vénération mémorielle, non d'une preuve que toutes les formes ultérieures d'invocation, de dévotion aux images ou d'authentification des reliques existaient déjà sous leur forme développée."
+          },
+          "source_ids": [
+            "POLY-17-18"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Ancient Smyrna letter is original Christian witness and interested party, not a census of all early communities.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    },
+    {
+      "id": "SAN-008",
+      "original_title_candidate": "Is the cult of saints a post-Constantinian invention?",
+      "authoritative_owner": "APOL-035|APOL-036|APOL-037|APOL-040",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No. Martyrdom of Polycarp, written about a second-century martyr and transmitted as a communal account, records honour for a martyr, collection of his remains and annual remembrance. These practices predate Constantine's fourth-century patronage of Christianity and directly refute the claim that all martyr veneration was suddenly invented by imperial decree.",
+            "fr": "Non. Le Martyre de Polycarpe, qui concerne un martyr du IIe siècle et se présente comme le témoignage de sa communauté, décrit l'honneur rendu à celui-ci, le recueil de ses restes et sa commémoration annuelle. Ces pratiques sont antérieures au soutien impérial de Constantin au IVe siècle : il est donc faux de dire que toute vénération des martyrs fut créée d'un seul coup par décret impérial."
+          },
+          "source_ids": [
+            "POLY-17-18"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "Pre-Constantinian commemoration does not automatically prove that every later invocation of saints or the complete medieval calendar was already in place. The honest historical distinction is between an established early nucleus and later development in public cult and disciplinary forms.",
+            "fr": "Cette commémoration ancienne ne démontre pas que chaque invocation postérieure des saints ou tout le calendrier médiéval existait déjà. Il faut distinguer un noyau historique attesté avant Constantin de l'évolution ultérieure du culte public et de ses règles disciplinaires."
+          },
+          "source_ids": [
+            "POLY-17-18"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Use pre-Constantinian dated letter carefully; later liturgical development requires independent chronology.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    },
+    {
+      "id": "SAN-010",
+      "original_title_candidate": "Are relics really attested in the primitive Church?",
+      "authoritative_owner": "APOL-035|APOL-036|APOL-037|APOL-040",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Yes. Martyrdom of Polycarp 18 says that Christians gathered his bones after the burning of his body, kept them in a suitable place and intended to assemble there for the anniversary of his martyrdom. This is concrete primitive Christian practice, not merely a biblical analogy drawn from Elisha or Paul.",
+            "fr": "Oui. Le Martyre de Polycarpe, chapitre 18, rapporte que les chrétiens recueillirent ses ossements après la crémation, les déposèrent dans un lieu approprié et comptaient s'y réunir pour l'anniversaire de son martyre. Il s'agit d'un usage chrétien primitif concret, et non d'une simple analogie biblique tirée d'Élisée ou de saint Paul."
+          },
+          "source_ids": [
+            "POLY-17-18"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "Chapter 17 expressly denies adoring the martyr in the way Christ is adored. Relic veneration must therefore not be confused with treating bones as divine or automatically authenticating the later identity of every object claimed to be a relic.",
+            "fr": "Le chapitre 17 refuse expressément d'adorer le martyr comme le Christ est adoré. La vénération des reliques ne consiste donc pas à diviniser des ossements et ne garantit pas automatiquement l'authenticité de tout objet plus tard présenté comme une relique."
+          },
+          "source_ids": [
+            "POLY-17-18"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Primary narrative confirms practice at Smyrna, not universal geographic spread.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    },
+    {
+      "id": "SAN-013",
+      "original_title_candidate": "What exactly did Nicaea II teach about images?",
+      "authoritative_owner": "APOL-035|APOL-036|APOL-037|APOL-040",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Second Council of Nicaea (787) upheld the placing and honourable veneration of sacred images of Christ, Mary, angels and saints. Its definition distinguishes respectful veneration—including gestures such as kissing an image—from latreia, the adoration belonging to the divine nature alone. The honour paid to an image passes to the person it represents; no board or pigment becomes a god.",
+            "fr": "Le deuxième concile de Nicée (787) affirma la légitimité de placer et de vénérer honorablement les images du Christ, de Marie, des anges et des saints. Sa définition distingue la vénération respectueuse, qui peut comprendre le baiser donné à une image, de la latrie, l'adoration due à la seule nature divine. L'honneur rendu à l'image se rapporte à la personne représentée : le bois et les pigments ne deviennent pas des dieux."
+          },
+          "source_ids": [
+            "NICEA787-DEF"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "The council's doctrinal argument is rooted in the Incarnation and the Christian rejection of idols. This is stronger and more precise than claiming either that every artistic image is sacred or that devotional gestures are permissible regardless of the intention with which they are performed.",
+            "fr": "Le raisonnement du concile repose sur l'Incarnation et sur le rejet chrétien des idoles. Cette doctrine est plus précise que l'affirmation selon laquelle toute représentation serait sacrée, ou selon laquelle tous les gestes de dévotion seraient légitimes quelles que soient les intentions qui les accompagnent."
+          },
+          "source_ids": [
+            "NICEA787-DEF"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Use council's Definition rather than polemical session remarks; exact Greek terminology requires philological review.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    },
+    {
+      "id": "SAN-023",
+      "original_title_candidate": "What exactly is an indulgence?",
+      "authoritative_owner": "APOL-035|APOL-036|APOL-037|APOL-040",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "An indulgence is the remission before God, through the Church's ministry, of temporal punishment still due for sins whose guilt has already been forgiven. It presupposes conversion and proper disposition; it is not absolution, permission to commit sin or a way to buy forgiveness. The Church distinguishes partial indulgences from plenary ones.",
+            "fr": "Une indulgence est la remise devant Dieu, par le ministère de l'Église, de la peine temporelle qui demeure pour des péchés dont la faute a déjà été pardonnée. Elle présuppose la conversion et les dispositions requises : ce n'est ni l'absolution, ni une permission de pécher, ni l'achat du pardon. L'Église distingue les indulgences partielles et plénières."
+          },
+          "source_ids": [
+            "CCC-1471-79",
+            "PAULVI-IND-EN",
+            "PAULVI-IND-FR"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "Paul VI's Indulgentiarum doctrina sets out the distinction and the conditions for plenary indulgences, including the prescribed work, sacramental confession, Communion, prayer for the Pope's intentions and freedom from attachment to sin. Those conditions and the distinction between guilt and temporal punishment must not be silently omitted from a practical explanation.",
+            "fr": "La constitution Indulgentiarum doctrina de Paul VI expose cette distinction et les conditions de l'indulgence plénière : l'œuvre prescrite, la confession sacramentelle, la Communion, la prière aux intentions du Souverain Pontife et le détachement du péché. Il ne faut omettre ni ces conditions, ni la distinction entre faute et peine temporelle."
+          },
+          "source_ids": [
+            "PAULVI-IND-EN",
+            "PAULVI-IND-FR",
+            "CCC-1471-79"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "The exposition uses pre- and postconciliar doctrinal continuity but does not claim identical historical disciplinary rules across centuries.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    },
+    {
+      "id": "SAN-024",
+      "original_title_candidate": "What is the ‘treasury of the Church’? Is it a bank account of excess merits?",
+      "authoritative_owner": "APOL-035|APOL-036|APOL-037|APOL-040",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The 'treasury of the Church' is not financial wealth or a stockpile of transferable cash-like credits. Catechism §§1476–1477 identifies it chiefly with the inexhaustible merits of Jesus Christ and with the prayers and good works of the Blessed Virgin and the saints, whose efficacy depends entirely on his redemption. It expresses the communion of saints under Christ as Head.",
+            "fr": "Le « trésor de l'Église » n'est ni une réserve financière ni un compte de crédits spirituels assimilables à de l'argent. Le Catéchisme (§§1476–1477) le rapporte d'abord aux mérites inépuisables de Jésus-Christ, auxquels sont unies les prières et les bonnes œuvres de la Vierge Marie et des saints, dont l'efficacité dépend entièrement de sa Rédemption. Il exprime la communion des saints sous le Christ, leur Chef."
+          },
+          "source_ids": [
+            "CCC-1471-79"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "The Church applies these spiritual goods ministerially when granting indulgences; the authority claimed is sacramental and ecclesial, not a personal property right over someone else's salvation. The doctrine does not permit treating Christ's forgiveness as a commodity or replacing repentance with an external transaction.",
+            "fr": "L'Église applique ministériellement ces biens spirituels lorsqu'elle accorde des indulgences ; l'autorité ainsi revendiquée est ecclésiale, non un droit de propriété sur le salut d'autrui. Cette doctrine ne permet ni de vendre le pardon du Christ ni de substituer une opération extérieure au repentir."
+          },
+          "source_ids": [
+            "CCC-1471-79",
+            "PAULVI-IND-EN",
+            "PAULVI-IND-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Avoid unsourced economic metaphors beyond rejecting literal commercial treasury.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    },
+    {
+      "id": "SAN-025",
+      "original_title_candidate": "Did indulgences involve genuine abuses, and what did ‘300 days’ mean?",
+      "authoritative_owner": "APOL-035|APOL-036|APOL-037|APOL-040",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Yes. Trent's decree on indulgences (Session XXV, 1563) expressly acknowledges abuses and orders the abolition of illicit financial profit connected with their acquisition. Historically, saying that such abuses existed is not the same as asserting that indulgences were doctrinally defined as payment for the forgiveness of future sins.",
+            "fr": "Oui. Le décret du concile de Trente sur les indulgences (XXVe session, 1563) reconnaît explicitement les abus et ordonne la suppression des profits illicites liés à leur obtention. Reconnaître ces abus historiques ne signifie pas que l'Église ait défini l'indulgence comme un paiement permettant le pardon de fautes futures."
+          },
+          "source_ids": [
+            "TRENT-25-IND",
+            "PAULVI-IND-EN"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "In older practice, an indulgence of '300 days' meant remission analogous to that associated with a defined number of days of ancient canonical penance; it was not a promise of 300 fewer calendar days in Purgatory. The historical Catholic Encyclopedia explains the convention, and Paul VI abolished the specification of days and years for partial indulgences in 1967.",
+            "fr": "Dans l'ancienne discipline, une indulgence de « 300 jours » indiquait une remise comparable à celle qu'aurait procurée un nombre de jours déterminé de pénitence canonique ancienne : ce n'était pas la promesse de retrancher 300 jours calendaires du Purgatoire. L'ancienne Catholic Encyclopedia explique cette convention, et Paul VI a supprimé en 1967 l'indication de jours et d'années pour les indulgences partielles."
+          },
+          "source_ids": [
+            "CE-IND-1910",
+            "PAULVI-IND-EN",
+            "PAULVI-IND-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Historical Council of Trent reception, abuses and conventions covered; separate detailed Reformation economic history not certified.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    },
+    {
+      "id": "SCR-013",
+      "original_title_candidate": "Did Athanasius have the present New Testament?",
+      "authoritative_owner": "APOL-013",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "In his 39th Festal Letter (AD 367), Athanasius lists the same twenty-seven New Testament books received in the present Catholic canon: the four Gospels, Acts, the Catholic Epistles, fourteen Pauline letters as he counts them including Hebrews, and Revelation. This is a datable fourth-century primary witness to the full twenty-seven-book collection, not a sixteenth-century invention.",
+            "fr": "Dans sa trente-neuvième Lettre festale (367), saint Athanase énumère les vingt-sept livres du Nouveau Testament reçus dans le canon catholique actuel : les quatre Évangiles, les Actes, les épîtres catholiques, quatorze épîtres pauliniennes en comptant l'épître aux Hébreux, et l'Apocalypse. Il s'agit d'un témoignage primaire datable du IVe siècle, et non d'une invention du XVIe siècle."
+          },
+          "source_ids": [
+            "ATH-FEST39"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "One must not infer from this letter that all churches always agreed on every biblical book. Athanasius distinguishes canonical books from other ecclesiastically useful writings, and his Old Testament arrangements are not identical to every later Catholic list. The primary document thus supports an early full NT list while also illustrating a historically developing canonical consensus.",
+            "fr": "Ce document ne prouve pas que toutes les Églises se soient toujours accordées sur tous les livres bibliques. Athanase distingue les livres canoniques d'autres écrits utiles à l'instruction chrétienne, et son organisation de l'Ancien Testament n'est pas identique à toutes les listes catholiques ultérieures. Il témoigne à la fois d'une liste complète ancienne du Nouveau Testament et de la maturation historique du consensus canonique."
+          },
+          "source_ids": [
+            "ATH-FEST39"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "No claim that letter alone constitutes universal conciliar canonical definition.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    },
+    {
+      "id": "MAR-008",
+      "original_title_candidate": "Does Irenaeus already teach every later Marian dogma?",
+      "authoritative_owner": "APOL-032|APOL-033",
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No. Irenaeus, Against Heresies III.22.4, gives a striking second-century comparison between Eve's disobedience and Mary's faithful consent: Mary's obedience has a real place in the history of salvation through her Son. That is important early Marian theology, but the text is not a fully articulated definition of the Immaculate Conception (1854) or Assumption (1950).",
+            "fr": "Non. Dans Contre les hérésies III,22,4, saint Irénée établit au IIe siècle un parallèle remarquable entre la désobéissance d'Ève et le consentement fidèle de Marie : l'obéissance de la Vierge a sa place dans l'histoire du salut accomplie par son Fils. Il s'agit d'une théologie mariale ancienne importante, mais non d'une définition déjà pleinement élaborée de l'Immaculée Conception (1854) ou de l'Assomption (1950)."
+          },
+          "source_ids": [
+            "IREN-III22"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "evidence_and_distinctions",
+          "text": {
+            "en": "The correct historical claim is development from genuine early Christological and Marian motifs, not that every later formula can be read verbatim in an early Father. The Irenaean passage must be interpreted as a witness to Mary's place in Christ's redemptive work, without making her an independent redeemer.",
+            "fr": "La juste conclusion historique est celle d'un développement à partir de motifs christologiques et marials anciens, non la présence littérale de toutes les formules ultérieures chez un Père de l'Église. Le passage d'Irénée témoigne de la place de Marie dans l'œuvre rédemptrice du Christ, sans faire d'elle une rédemptrice indépendante."
+          },
+          "source_ids": [
+            "IREN-III22"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Need distinction of early textual evidence from full doctrinal legitimacy, no unsupported backward projection.",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR_NOT_NEW_NAVIGATION_DOSSIER"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

@@ -1,0 +1,304 @@
+{
+  "schema": "AO_FORMATION_BAPTIST_EVANGELICAL_PARTIAL7_ENFR_V1",
+  "date": "2026-10-13",
+  "status": "RESEARCH_ONLY_SEVEN_SOURCE_LINKED_BILINGUAL_PARTIAL_ENRICHMENTS",
+  "description": "Seven question-specific Baptist source-based enrichments to existing partial Catholic answers, not a new canonical dossier or public release.",
+  "source_registry": [
+    {
+      "id": "BFM",
+      "title": "Southern Baptist Convention, Baptist Faith and Message 2000 incl 2023 Article VI amendment",
+      "url": "https://bfm.sbc.net/bfm2000/",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "1689-BAPT",
+      "title": "Second London Baptist Confession 1689 chapter XXIX on believer baptism",
+      "url": "https://www.the1689confession.com/1689/chapter-29",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "1689-LORD",
+      "title": "Second London Baptist Confession 1689 chapter XXX on spiritual communion",
+      "url": "https://www.the1689confession.com/1689/chapter-30",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of Catholic Church, sacraments of initiation, ecclesiology and Orders",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT",
+      "title": "Council of Trent primary conciliar texts, justification and Holy Orders",
+      "url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "BAP-EV-008",
+      "original_title_candidate": "Do Baptists teach justification by faith alone?",
+      "status": "BILINGUAL_PARTIAL_CANONICAL_ANSWER_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "original_baptist_position",
+          "text": {
+            "en": "The Baptist Faith and Message IV treats justification as a gracious acquittal of sinners who repent and believe in Christ. This is a Baptist doctrine of faith rather than human works earning acceptance.",
+            "fr": "L'article IV de la confession baptiste du Sud traite la justification comme acquittement gratuit des pécheurs qui se repentent et croient au Christ. Elle n'attribue pas à des œuvres humaines le mérite de la grâce première."
+          },
+          "source_ids": [
+            "BFM"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "catholic_reply_and_boundary",
+          "text": {
+            "en": "The Council of Trent also denies works can earn initial grace, while professing interior renewal in justification. Catholic rebuttal must identify that distinction rather than claiming Baptists reject every good deed.",
+            "fr": "Trente nie également que les œuvres méritent la première grâce, tout en confessant le renouvellement intérieur dans la justification. La réfutation catholique doit porter sur cette différence, non prêter aux baptistes le rejet de toute bonne œuvre."
+          },
+          "source_ids": [
+            "TRENT",
+            "BFM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "canonical_navigation_action": "REUSE_EXISTING_CANONICAL_OWNER_WITH_NEW_ANCHOR_NOT_NEW_PUBLIC_DOSSIER",
+      "canonical_existing_owner_ids": [
+        "APOL-038"
+      ]
+    },
+    {
+      "id": "BAP-EV-009",
+      "original_title_candidate": "Do Baptists reject good works?",
+      "status": "BILINGUAL_PARTIAL_CANONICAL_ANSWER_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "original_baptist_position",
+          "text": {
+            "en": "Baptist Faith and Message IV calls sanctification a process of moral and spiritual maturity; it does not deny the obligation of works following faith.",
+            "fr": "La confession baptiste du Sud IV appelle sanctification une croissance morale et spirituelle ; elle ne nie pas l'obligation d'accomplir des œuvres suivant la foi."
+          },
+          "source_ids": [
+            "BFM"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "catholic_reply_and_boundary",
+          "text": {
+            "en": "The dispute with the Catholic decree on justification concerns the nature of infused righteousness and the role of grace-enabled acts, not whether Christian charity can exist.",
+            "fr": "Le débat avec le décret catholique sur la justification concerne la justice infuse et les actes accomplis par la grâce, non la possibilité même de charité chrétienne."
+          },
+          "source_ids": [
+            "TRENT",
+            "BFM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "canonical_navigation_action": "REUSE_EXISTING_CANONICAL_OWNER_WITH_NEW_ANCHOR_NOT_NEW_PUBLIC_DOSSIER",
+      "canonical_existing_owner_ids": [
+        "APOL-038"
+      ]
+    },
+    {
+      "id": "BAP-EV-010",
+      "original_title_candidate": "Why do Baptists reject infant Baptism?",
+      "status": "BILINGUAL_PARTIAL_CANONICAL_ANSWER_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "original_baptist_position",
+          "text": {
+            "en": "The 1689 Baptist Confession chapter 29 limits Baptism to persons actually professing repentance and faith. Infants cannot supply this testimony, so Baptists reject infant Baptism as contrary to their understanding of its instituted meaning.",
+            "fr": "La confession baptiste de 1689, chapitre 29, réserve le baptême à ceux qui professent repentir et foi. Le nourrisson ne peut donner ce témoignage, d'où le refus baptiste de son baptême."
+          },
+          "source_ids": [
+            "1689-BAPT",
+            "BFM"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "catholic_reply_and_boundary",
+          "text": {
+            "en": "The Catholic Church treats sacramental rebirth as gratuitous grace that infants may receive within the faith of the Church and with parents' obligation to raise them Christian. Both sides affirm Christ instituted Baptism.",
+            "fr": "L'Église catholique voit dans la nouvelle naissance sacramentelle un don reçu même par les nourrissons dans la foi de l'Église, avec obligation éducative des parents. Les deux traditions confessent que le Christ institua le baptême."
+          },
+          "source_ids": [
+            "CCC",
+            "1689-BAPT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "canonical_navigation_action": "REUSE_EXISTING_CANONICAL_OWNER_WITH_NEW_ANCHOR_NOT_NEW_PUBLIC_DOSSIER",
+      "canonical_existing_owner_ids": [
+        "APOL-024"
+      ]
+    },
+    {
+      "id": "BAP-EV-013",
+      "original_title_candidate": "What is the Catholic–Baptist infant-Baptism dispute really about?",
+      "status": "BILINGUAL_PARTIAL_CANONICAL_ANSWER_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "original_baptist_position",
+          "text": {
+            "en": "The real Catholic–Baptist dispute is whether Baptism gives divine regeneration and may be conferred before personal profession, or marks a preceding conscious conversion. Baptist Faith and Message VII identifies a believer's immersion as obedient symbolism.",
+            "fr": "Le véritable différend est de savoir si le baptême opère la régénération et peut précéder la profession personnelle ou s'il signifie une conversion consciente préalable. L'article VII baptiste parle de l'immersion du croyant comme signe d'obéissance."
+          },
+          "source_ids": [
+            "BFM",
+            "1689-BAPT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "catholic_reply_and_boundary",
+          "text": {
+            "en": "Catholic teaching affirms the child may receive incorporation and the Holy Spirit's grace without earning them by mature understanding; the Baptist objection must still be met biblically and historically, not dismissed.",
+            "fr": "La doctrine catholique affirme que l'enfant peut recevoir incorporation et grâce de l'Esprit sans mérite intellectuel préalable ; l'objection baptiste requiert néanmoins une réponse biblique et historique, non un simple rejet."
+          },
+          "source_ids": [
+            "CCC",
+            "BFM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "canonical_navigation_action": "REUSE_EXISTING_CANONICAL_OWNER_WITH_NEW_ANCHOR_NOT_NEW_PUBLIC_DOSSIER",
+      "canonical_existing_owner_ids": [
+        "APOL-024"
+      ]
+    },
+    {
+      "id": "BAP-EV-017",
+      "original_title_candidate": "Do Baptists have priests?",
+      "status": "BILINGUAL_PARTIAL_CANONICAL_ANSWER_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "original_baptist_position",
+          "text": {
+            "en": "The Southern Baptist church confession amended in 2023 names pastors/elders/overseers and deacons; it does not claim an ordained sacrificial priesthood for Eucharistic offering in the Catholic sense.",
+            "fr": "La confession baptiste du Sud modifiée en 2023 nomme pasteurs/anciens/surveillants et diacres, non un sacerdoce ordonné offrant le sacrifice eucharistique au sens catholique."
+          },
+          "source_ids": [
+            "BFM"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "catholic_reply_and_boundary",
+          "text": {
+            "en": "Catholics distinguish the common priesthood of the baptized and ministerial Holy Orders; this is not the claim Baptists lack any ordained pastor or pastoral responsibilities.",
+            "fr": "Les catholiques distinguent le sacerdoce commun des baptisés et le sacrement de l'Ordre ; cela ne signifie pas que les baptistes n'auraient aucun pasteur ou aucune responsabilité pastorale."
+          },
+          "source_ids": [
+            "TRENT",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "canonical_navigation_action": "REUSE_EXISTING_CANONICAL_OWNER_WITH_NEW_ANCHOR_NOT_NEW_PUBLIC_DOSSIER",
+      "canonical_existing_owner_ids": [
+        "APOL-029"
+      ]
+    },
+    {
+      "id": "BAP-EV-020",
+      "original_title_candidate": "What authority does Scripture have?",
+      "status": "BILINGUAL_PARTIAL_CANONICAL_ANSWER_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "original_baptist_position",
+          "text": {
+            "en": "Baptist Faith and Message I professes the Bible divinely inspired, God's revelation and the normative authority in Christian faith. This is not a position of religious indifference toward the text.",
+            "fr": "La confession baptiste du Sud I professe que la Bible est inspirée, révélation de Dieu et autorité normative de la foi chrétienne. Elle n'exprime aucune indifférence envers l'Écriture."
+          },
+          "source_ids": [
+            "BFM"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "catholic_reply_and_boundary",
+          "text": {
+            "en": "Catholic theology also upholds biblical inspiration, but reads Scripture in one apostolic deposit with Tradition and an authentic Magisterium; this difference raises the question of how the canon and binding exegesis are established.",
+            "fr": "La théologie catholique reçoit aussi l'inspiration biblique, mais lit l'Écriture dans l'unique dépôt apostolique avec Tradition et magistère authentique ; la controverse concerne notamment canon et interprétation obligatoire."
+          },
+          "source_ids": [
+            "CCC",
+            "BFM"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "canonical_navigation_action": "REUSE_EXISTING_CANONICAL_OWNER_WITH_NEW_ANCHOR_NOT_NEW_PUBLIC_DOSSIER",
+      "canonical_existing_owner_ids": [
+        "APOL-014"
+      ]
+    },
+    {
+      "id": "BAP-EV-025",
+      "original_title_candidate": "What is the deepest Catholic–Baptist/evangelical divide?",
+      "status": "BILINGUAL_PARTIAL_CANONICAL_ANSWER_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "original_baptist_position",
+          "text": {
+            "en": "Historic Baptists stress the primacy of Scripture, believers' Baptism and local congregational autonomy; the Baptist Faith and Message distinguishes two ordinances from the Catholic seven sacraments. These are substantive ecclesial differences, not denial of Christ.",
+            "fr": "Les baptistes historiques mettent l'accent sur la primauté de l'Écriture, le baptême des croyants et l'autonomie locale ; la confession baptiste du Sud distingue deux ordonnances des sept sacrements catholiques. Ce sont des divergences ecclésiologiques réelles, non un refus du Christ."
+          },
+          "source_ids": [
+            "BFM"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "catholic_reply_and_boundary",
+          "text": {
+            "en": "The Catholic case joins apostolic succession, a teaching office and effective sacramental signs in the visible Church. Shared evangelical confession of Jesus, grace and Scripture should be acknowledged before debating these precise differences.",
+            "fr": "La position catholique joint succession apostolique, magistère et signes sacramentels efficaces dans l'Église visible. Il faut reconnaître la foi commune en Jésus, la grâce et l'Écriture avant d'examiner les différences précises."
+          },
+          "source_ids": [
+            "CCC",
+            "TRENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "publication_allowed": false,
+      "classification_remains": "PARTIAL_ANSWER_ONLY",
+      "canonical_navigation_action": "REUSE_EXISTING_CANONICAL_OWNER_WITH_NEW_ANCHOR_NOT_NEW_PUBLIC_DOSSIER",
+      "canonical_existing_owner_ids": [
+        "APOL-014",
+        "APOL-024"
+      ]
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

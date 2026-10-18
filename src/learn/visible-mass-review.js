@@ -13,14 +13,16 @@ const PHOTO_URL=new URL("../../previews/visible-mass-3d/sanctuary-hotspot-pilot.
 const EXPLORER_ROUTE="learn.mass_explorer";
 const GUIDE_PATTERN=/^AO\.CARD\.(?:010|015|024|025)$/;
 export function createVisibleMassReviewRuntime(win=globalThis){
- let returnFocus=null,askIntegration=null,askLoading=false,askReturnButton=null;
+ let returnFocus=null,askIntegration=null,askLoading=false,askReturnButton=null,characterFolio=null,characterLoading=false;
  const askReviewEnabled=()=>{
   const params=new URLSearchParams(win?.location?.search||"");
   return visibleMassReviewEnabled(win)&&params.get("aoLivingChurchReview")==="1";
  };
+ const characterReviewEnabled=()=>askReviewEnabled()&&new URLSearchParams(win?.location?.search||'').get('aoLivingChurchCharacters')==='1';
  const root=()=>win?.document?.getElementById?.(ROOT)??null;
  function close(){
    if(askIntegration?.status?.()?.suspended)return false;
+   characterFolio?.close?.();characterFolio=null;
    askIntegration?.close?.();askIntegration=null;
    askReturnButton?.remove?.();askReturnButton=null;
    const node=root();
@@ -44,7 +46,7 @@ export function createVisibleMassReviewRuntime(win=globalThis){
    style.textContent=`
 #${ROOT}{position:fixed;inset:0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0;z-index:14960;display:flex;flex-direction:column;background:var(--ao-bg-canvas,#080c12);color:var(--ao-text-primary,#e9e4d9);font-family:var(--ao-font-body,Georgia,serif)}
 #${ROOT}[hidden]{display:none!important}#${ROOT} *{box-sizing:border-box}
-#${ROOT} .vmrTop{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:10px;align-items:center;padding:calc(7px + var(--safe-top,0px)) 12px 9px;background:var(--ao-bg-canvas,#080c12);border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.15))}
+#${ROOT} .vmrTop{display:grid;grid-template-columns:44px minmax(0,1fr) 44px 44px;gap:10px;align-items:center;padding:calc(7px + var(--safe-top,0px)) 12px 9px;background:var(--ao-bg-canvas,#080c12);border-bottom:1px solid var(--ao-rule,rgba(255,255,255,.15))}
 #${ROOT} .vmrTop button{width:44px;height:44px;border:1px solid var(--ao-rule,rgba(255,255,255,.18));border-radius:50%;background:var(--ao-surface-1,#101821);color:inherit;font:20px/1 Georgia,serif}
 #${ROOT} .vmrHeading{text-align:center;min-width:0}#${ROOT} .vmrHeading small{display:block;color:var(--liturgical,#c9ad78);font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.11em}#${ROOT} .vmrHeading strong{font:600 16px/1.25 Georgia,serif}
 #${ROOT} .vmrDisclaimer{margin:0;padding:6px 12px;color:var(--ao-text-muted,#aeb5be);font:11px/1.5 system-ui,sans-serif;text-align:center}
@@ -68,7 +70,12 @@ export function createVisibleMassReviewRuntime(win=globalThis){
    askButton.setAttribute("aria-label","Ask the Church from the selected sanctuary object");
    askButton.title="Ask the Church";
    if(!askReviewEnabled()){askButton.hidden=true;askButton.disabled=true;}
-   top.append(back,title,askButton);
+   const charactersButton=doc.createElement('button');
+   charactersButton.type='button';charactersButton.textContent='✠';
+   charactersButton.setAttribute('aria-label','Talk with the three guides');
+   charactersButton.title='The Sacristan · Monsieur le Chanoine · St Pius X';
+   if(!characterReviewEnabled()){charactersButton.hidden=true;charactersButton.disabled=true;}
+   top.append(back,title,charactersButton,askButton);
    const disclaimer=doc.createElement("p");disclaimer.className="vmrDisclaimer";
    disclaimer.textContent="Experimental church photograph · English-only research drafts · not approved teaching or normative rubrics";
    const frame=doc.createElement("iframe");
@@ -115,6 +122,7 @@ export function createVisibleMassReviewRuntime(win=globalThis){
      try{
       const result=await askIntegration.returnToSanctuary();
       if(!result.ok)disclaimer.textContent="Sanctuary return not verified: "+result.code;
+      else characterFolio?.show?.();
      }finally{askReturnButton.disabled=false;}
     };
     doc.body.append(askReturnButton);
@@ -122,6 +130,7 @@ export function createVisibleMassReviewRuntime(win=globalThis){
      if(askLoading)return;
      askLoading=true;askButton.disabled=true;
      try{
+      characterFolio?.hide?.();
       if(!askIntegration){
        const mod=await import("./living-church-ask-integration.js");
        const response=await win.fetch(new URL("../../data/learn/ask-church-app-route-survey.v1.json",import.meta.url));
@@ -139,6 +148,36 @@ export function createVisibleMassReviewRuntime(win=globalThis){
       win?.console?.warn?.("Ask the Church source-owner connection failed",error);
      }finally{askLoading=false;askButton.disabled=false;}
     };
+    if(characterReviewEnabled()){
+     charactersButton.onclick=async()=>{
+      if(characterLoading)return;
+      characterLoading=true;charactersButton.disabled=true;
+      try{
+       let survey;
+       if(!askIntegration){
+        const mod=await import('./living-church-ask-integration.js');
+        const response=await win.fetch(new URL('../../data/learn/ask-church-app-route-survey.v1.json',import.meta.url));
+        if(!response.ok)throw Error('Original Ask route registry unavailable');
+        survey=await response.json();
+        askIntegration=mod.createLivingChurchAskIntegration(win,{frame,returnButton:askReturnButton,survey});
+       }
+       askIntegration.hideGuide?.();
+       if(!characterFolio){
+        if(!survey){
+         const response=await win.fetch(new URL('../../data/learn/ask-church-app-route-survey.v1.json',import.meta.url));
+         if(!response.ok)throw Error('Original Ask route registry unavailable');
+         survey=await response.json();
+        }
+        const mod=await import('./living-church-character-folio.js');
+        characterFolio=await mod.mountLivingChurchCharacterFolio(win,{host:node,frame,integration:askIntegration,survey});
+       }else if(!characterFolio.show())throw Error('Original selected photo is not source-verified');
+       disclaimer.textContent='Three-guide review · original source records only · no historical speech attributed';
+      }catch(error){
+       disclaimer.textContent='Select an original photograph object before opening the three guides.';
+       win?.console?.warn?.('Living Church character stage unavailable',error);
+      }finally{characterLoading=false;charactersButton.disabled=false;}
+     };
+    }
    }
    return node;
  }

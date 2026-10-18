@@ -1,0 +1,76 @@
+name: Living Church P3 original character-stage acceptance
+
+on:
+  pull_request:
+    paths:
+      - "assets/living-church/**"
+      - "data/learn/living-church-character-assets.v1.json"
+      - "data/learn/living-church-canon-formation-referral-contract.v1.json"
+      - "data/learn/formation-historical-answer-crosswalk-20261013.v1.json"
+      - "data/learn/formation-canon-migration-provenance-20261018.v1.json"
+      - "data/learn/research/formation-*.json"
+      - "src/learn/formation-canon-question-catalog.mjs"
+      - "src/learn/living-church-canon-research-reader.mjs"
+      - "src/learn/living-church-canon-dialogue-ui.mjs"
+      - "src/learn/living-church-character-folio.js"
+      - "src/learn/living-church-ask-integration.js"
+      - "src/learn/visible-mass-review.js"
+      - "tests/living-church-character-*.mjs"
+      - "tests/living-church-canon-source-contract.mjs"
+      - "tests/canon-private-deployment-gate.mjs"
+      - "tools/build-web-preview.mjs"
+      - "tests/living-church-canon-research-*.mjs"
+      - ".github/workflows/living-church-character-p3.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  approved-sprites-and-original-owners:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax and approved sprite bank/source tests
+        run: |
+          node --check src/learn/living-church-character-folio.js
+          node --check src/learn/visible-mass-review.js
+          node tests/living-church-character-folio.mjs
+          node tests/living-church-canon-source-contract.mjs
+          node --test tests/living-church-canon-research-source.mjs
+          node tests/living-church-canon-all-original-answer-coverage.mjs
+          node --check src/learn/living-church-canon-research-reader.mjs
+          node --check src/learn/living-church-canon-dialogue-ui.mjs
+          node tests/living-church-ask-native-return.mjs
+          node tests/living-church-visible-mass-adapter.mjs
+          node tests/ask-church-objective-engine.mjs
+          node tests/visible-mass-guided-folio.mjs
+      - name: Verify public Vercel build excludes unpublished Canon source JSON
+        run: |
+          node tools/build-web-preview.mjs
+          node tests/canon-private-deployment-gate.mjs
+      - name: Install headless Chromium
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Actual app-shell/photographic viewer/three characters at 390 and 1280
+        run: |
+          node tests/living-church-character-phone.mjs
+          node tests/living-church-canon-research-phone.mjs
+      - name: Preserve original P2 source and return acceptance
+        run: node tests/living-church-ask-real-shell.mjs
+      - name: Upload 390px and 1280px character review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-church-p3-character-review
+          path: dist/living-church/p3-review/*.png
+          if-no-files-found: warn

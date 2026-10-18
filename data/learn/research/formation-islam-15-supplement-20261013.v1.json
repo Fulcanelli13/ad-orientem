@@ -1,0 +1,668 @@
+{
+  "schema": "AO_FORMATION_ISLAM_SUPPLEMENT_20261013_V1",
+  "status": "RESEARCH_ONLY_EDITORIAL_BILINGUAL_DRAFT_NO_APP_ROUTE",
+  "date": "2026-10-13",
+  "owner": "APOL-046",
+  "source_registry": [
+    {
+      "id": "Q2-23",
+      "title": "Qur'an 2:23, challenge to produce a comparable surah",
+      "url": "https://legacy.quran.com/2/23",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "Q54-1",
+      "title": "Qur'an 54:1–2, moon narrative",
+      "url": "https://legacy.quran.com/54/1-3",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "BU3868",
+      "title": "Sahih al-Bukhari 3868, moon miracle report",
+      "url": "https://sunnah.com/bukhari/63/93",
+      "type": "MUSLIM_HADITH_WITNESS",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "BU4987",
+      "title": "Sahih al-Bukhari 4987, Uthman's recension and differences in recitation",
+      "url": "https://sunnah.com/bukhari/66/9",
+      "type": "MUSLIM_HADITH_WITNESS",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "CORPUS",
+      "title": "Corpus Coranicum research on manuscripts and qira'at",
+      "url": "https://corpuscoranicum.de/en/about/research",
+      "type": "ACADEMIC_MANUSCRIPT_VARIANTS",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "BIRM",
+      "title": "University of Birmingham Quran manuscript FAQ",
+      "url": "https://www.birmingham.ac.uk/facilities/cadbury/birmingham-quran-mingana-collection/birmingham-quran/faqs",
+      "type": "ACADEMIC_COLLECTION_ORIGINAL",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "Q5-47",
+      "title": "Qur'an 5:47–48, Gospel and previous revelation",
+      "url": "https://legacy.quran.com/5/47-95",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "Q2-75",
+      "title": "Qur'an 2:75, disputed textual distortion",
+      "url": "https://legacy.quran.com/2/75",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "Q5-13",
+      "title": "Qur'an 5:13–15, distortion and concealment claims",
+      "url": "https://legacy.quran.com/5/13-19",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "SINAI",
+      "title": "Codex Sinaiticus Project, fourth-century Greek Christian Bible",
+      "url": "https://codexsinaiticus.org/en/codex/",
+      "type": "MANUSCRIPT_PRIMARY_EVIDENCE",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "Q2-106",
+      "title": "Qur'an 2:106, abrogation verse",
+      "url": "https://legacy.quran.com/2/106",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "Q2-256",
+      "title": "Qur'an 2:256, religious non-compulsion",
+      "url": "https://legacy.quran.com/02/256",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "DIF2015",
+      "title": "Egypt Dar al-Ifta, freedom to change religion (2015)",
+      "url": "https://www.dar-alifta.org/en/fatwa/details/8002/can-a-person-who-is-a-muslim-choose-a-religion-other-than-islam",
+      "type": "CONTEMPORARY_MUSLIM_INTERPRETER",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "B6922",
+      "title": "Sahih al-Bukhari 6922, apostasy legal narration",
+      "url": "https://sunnah.com/bukhari/88/5",
+      "type": "MUSLIM_HADITH_WITNESS",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "DIF2013",
+      "title": "Egypt Dar al-Ifta, apostasy/treason distinction (2013)",
+      "url": "https://www.dar-alifta.org/en/fatwa/details/6592/what-is-the-status-of-the-apostates-in-a-muslim-country",
+      "type": "CONTEMPORARY_MUSLIM_INTERPRETER",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "Q4-34",
+      "title": "Qur'an 4:34, husband-wife authority and dispute",
+      "url": "https://legacy.quran.com/4/34/",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "B5133",
+      "title": "Sahih al-Bukhari 5133, age of Aisha in marriage narration",
+      "url": "https://sunnah.com/bukhari/67/69",
+      "type": "MUSLIM_HADITH_WITNESS",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    },
+    {
+      "id": "Q33-50",
+      "title": "Qur'an 33:50, Muhammad's particular marriage permissions",
+      "url": "https://legacy.quran.com/33/50",
+      "type": "MUSLIM_PRIMARY_TEXT",
+      "verified_page_located_20261013": true,
+      "claim_by_claim_approved": false
+    }
+  ],
+  "authoring_rules": [
+    "Each paragraph has traceable original sources, source ids and bilingual content. Sources establish their specific texts or scholarly apparatus, not automatically the truth of every interpretive conclusion.",
+    "Muslim primary positions are represented from Qur'an or hadith, not invented quotations. Academic textual conclusions remain provisional pending specialist review.",
+    "No new canonical dossiers; these are supplementary answers to historical numbered questions. No publication, theological signoff or raw original conversation certification.",
+    "Do not turn criticism of a text or legal tradition into broad assertions about Muslim people."
+  ],
+  "entries": [
+    {
+      "id": "ISL-005",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Qur'an itself challenges doubters to compose a surah comparable to it (2:23). In Muslim apologetics, its linguistic excellence and inimitability are advanced as a sign of revelation. That is an identifiable argument, not a claim invented by Christian critics.",
+            "fr": "Le Coran met les sceptiques au défi de produire une sourate comparable (2,23). Dans l'apologétique musulmane, l'excellence de sa langue et son caractère inimitable sont invoqués comme signes de révélation. Il s'agit d'un argument réel, non d'une objection inventée par des chrétiens."
+          },
+          "source_ids": [
+            "Q2-23"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The premise that a text is extraordinarily eloquent cannot, on its own, establish that its source is divine. An argument must specify how comparability is judged, by whom, and why the judgment excludes exceptional human composition. The Christian question of a prophet's credibility must also consider historical testimony and whether his claims can be reconciled with the established apostolic confession of Christ.",
+            "fr": "Même une éloquence extraordinaire ne démontre pas, à elle seule, l'origine divine d'un texte. Il faut préciser les critères de comparaison, l'autorité compétente pour les appliquer et la raison d'exclure une composition humaine exceptionnelle. La crédibilité d'un prophète doit aussi être confrontée aux témoignages historiques et à la foi apostolique reçue sur le Christ."
+          },
+          "source_ids": [
+            "Q2-23"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Requires original classical Muslim inimitability theory and independent Arabic-language literary expertise for fuller debate."
+    },
+    {
+      "id": "ISL-006",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The Islamic textual tradition reports signs besides the Qur'an. Qur'an 54:1–2 speaks of the moon's splitting, and Sahih al-Bukhari 3868 explicitly interprets it as a miracle shown at Muhammad's request. Therefore the claim that Islamic sources report no miracles beyond the literary Qur'an is factually incorrect.",
+            "fr": "La tradition islamique rapporte d'autres signes que le Coran. Le Coran 54,1-2 évoque la lune fendue, et Sahih al-Bukhari 3868 présente explicitement cet événement comme un miracle accompli à la demande de témoins. Affirmer que les sources islamiques ne racontent aucun autre miracle est donc inexact."
+          },
+          "source_ids": [
+            "Q54-1",
+            "BU3868"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "A narrated miracle and independent historical confirmation are different standards of evidence. The account should be assessed by its textual history, transmission and external corroboration, not dismissed merely because it is Muslim, and not declared an established astronomical event merely because a hadith records it.",
+            "fr": "Le récit d'un miracle et sa confirmation historique indépendante correspondent à deux degrés de preuve. Le texte doit être étudié selon son histoire, sa transmission et ses éventuelles corroborations extérieures : il ne faut ni l'écarter parce qu'il est musulman, ni tenir l'événement astronomique pour démontré du seul fait de sa présence dans un hadith."
+          },
+          "source_ids": [
+            "BU3868",
+            "Q54-1"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Further independent historical astronomy and hadith chain analysis required."
+    },
+    {
+      "id": "ISL-007",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Early Qur'anic textual transmission is substantial but not accurately described as a history with no editorial decisions or variants. Sahih al-Bukhari 4987 recounts differences of recitation and a standardization of written copies under Uthman; manuscript studies likewise document orthographic and reading variation. A claim of complete letter-for-letter invariance in every early witness is therefore stronger than the evidence justifies.",
+            "fr": "La transmission ancienne du Coran est abondamment attestée, mais elle ne peut être décrite comme exempte de décisions éditoriales ou de variantes. Sahih al-Bukhari 4987 évoque des divergences de récitation et l'uniformisation de copies sous Uthman ; les travaux sur les manuscrits attestent également des variantes orthographiques et de lecture. La thèse d'une invariance absolue, lettre par lettre, de tous les témoins anciens dépasse les données."
+          },
+          "source_ids": [
+            "BU4987",
+            "CORPUS"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "This does not prove that the whole Qur'anic message is a late fabrication. Many early manuscripts broadly correspond to the later standard text. The accurate conclusion is more limited: distinguish remarkable textual continuity from the separate, falsifiable claim that no variants or standardizing interventions ever existed.",
+            "fr": "Cela ne prouve pas que le message coranique soit une fabrication tardive : nombre de manuscrits anciens correspondent largement au texte normalisé ultérieur. Il faut distinguer une continuité textuelle importante de l'affirmation distincte, et vérifiable, qu'aucune variante ni intervention de normalisation n'aurait jamais existé."
+          },
+          "source_ids": [
+            "CORPUS",
+            "BIRM"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Do not turn evidence of variants into blanket disproof of Islamic belief."
+    },
+    {
+      "id": "ISL-008",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No. In a report preserved by Sahih al-Bukhari, a disagreement over recitation prompted Uthman to commission copies from earlier collected materials, distribute them and order other textual materials destroyed. Whatever one thinks of the religious legitimacy of that decision, the narrative explicitly describes a process of collection, copying and standardization.",
+            "fr": "Non. Un récit conservé dans Sahih al-Bukhari rapporte que des divergences de récitation conduisirent Uthman à faire copier des matériaux plus anciens, à diffuser les exemplaires retenus et à ordonner la destruction des autres. Quel que soit le jugement religieux porté sur l'opération, ce témoignage décrit expressément une collecte, une mise par écrit et une normalisation."
+          },
+          "source_ids": [
+            "BU4987"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Textual variants, graphic spellings, oral recitation differences and editorial selection are not interchangeable categories. Nor does the existence of an editorial process imply arbitrary invention of the entire text. The evidence must be examined at the level of individual readings and manuscripts.",
+            "fr": "Variantes de texte, graphies, divergences de récitation et choix éditoriaux ne sont pas des catégories interchangeables. L'existence d'un travail de normalisation n'implique pas non plus l'invention arbitraire du texte entier. Les témoignages doivent être confrontés lecture par lecture et manuscrit par manuscrit."
+          },
+          "source_ids": [
+            "CORPUS",
+            "BU4987"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Source report can show its own transmission account but not independently verify every historical detail."
+    },
+    {
+      "id": "ISL-009",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Early Qur'anic manuscripts and later notices of variant readings show that transmission was not limited to one entirely unvarying printed spelling. The Corpus Coranicum project compares manuscript witnesses, including the Sana'a palimpsest, and documented reading variants. It supplies evidence for investigating early textual variation rather than assuming it away.",
+            "fr": "Les manuscrits coraniques anciens et les traditions de lectures divergentes montrent que la transmission ne se réduit pas à l'orthographe uniforme d'une édition imprimée. Le programme Corpus Coranicum compare les témoins manuscrits, dont le palimpseste de Sanaa, ainsi que les variantes de lecture attestées. Il fournit des données pour étudier ces différences au lieu de les présupposer inexistantes."
+          },
+          "source_ids": [
+            "CORPUS"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Whether a particular reading is specifically pre-Uthmanic requires individual manuscript dating and a demonstrated relationship to the standard consonantal text. A lower-text variant alone cannot safely be assigned to a named Companion codex or used to reconstruct a lost complete rival Qur'an.",
+            "fr": "Attribuer une lecture particulière à une tradition antérieure à Uthman exige la datation du manuscrit et l'étude de ses rapports avec le texte consonantique normalisé. Une variante du texte inférieur d'un palimpseste ne suffit pas, à elle seule, à l'attribuer au codex d'un compagnon nommé ou à reconstruire un Coran concurrent complet."
+          },
+          "source_ids": [
+            "CORPUS"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Requires detailed Sana'a palimpsest and provenance assessment before any named non-Uthmanic reconstruction."
+    },
+    {
+      "id": "ISL-010",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No. The canonical reading traditions (qira'at) are not reducible to differences in punctuation or typography. Historical Arabic manuscripts sometimes omit later vowel and letter-distinguishing marks, while the learned reading traditions also record pronounced and sometimes morphologically or semantically significant alternatives. These are a recognized subject of Muslim textual scholarship.",
+            "fr": "Non. Les traditions de lecture (qira'at) ne se réduisent pas à la ponctuation ou à la typographie. Les premiers manuscrits arabes ne comportent pas toujours les signes vocaliques et les points diacritiques ajoutés plus tard ; les traditions savantes connaissent aussi des lectures dont les différences peuvent porter sur la prononciation, la morphologie et parfois le sens."
+          },
+          "source_ids": [
+            "CORPUS"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Differences must be classified one verse at a time: some are merely phonetic, some grammatical, and some affect lexical interpretation. Neither 'every reading is identical in meaning' nor 'every variant changes Islamic doctrine' is a defensible universal summary.",
+            "fr": "Il faut classer les différences verset par verset : certaines sont phonétiques, d'autres grammaticales, d'autres modifient l'interprétation lexicale. Dire que toutes les lectures auraient exactement le même sens, ou qu'elles changeraient toutes la doctrine musulmane, serait également abusif."
+          },
+          "source_ids": [
+            "CORPUS"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "A verse-level table of the canonical readings is required before naming high-impact examples."
+    },
+    {
+      "id": "ISL-011",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Yes. Qur'an 5:47 directs the people of the Gospel to judge according to what God revealed in it, while 5:48 presents the Qur'an as confirming previous Scripture and exercising a criterion over it. The Qur'an therefore does not present itself as revelation emerging in complete isolation from the Torah and the Gospel.",
+            "fr": "Oui. Le Coran 5,47 invite les gens de l'Évangile à juger selon ce que Dieu y a révélé ; le verset 5,48 présente le Coran comme confirmant les Écritures antérieures et exerçant une fonction de discernement à leur égard. Le Coran ne se présente donc pas comme une révélation totalement étrangère à la Torah et à l'Évangile."
+          },
+          "source_ids": [
+            "Q5-47"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Affirming earlier revelation does not establish that the Qur'an endorses every later Christian interpretation of it. The Christian argument should compare specific texts and doctrines—especially the Incarnation, Crucifixion and Resurrection—rather than claiming a blanket Qur'anic approval of the whole Christian creed.",
+            "fr": "Reconnaître des révélations antérieures ne signifie pas que le Coran approuve toutes les interprétations chrétiennes ultérieures. Le débat chrétien doit comparer des textes et des doctrines précises, surtout l'Incarnation, la Crucifixion et la Résurrection, sans prétendre que le Coran ratifie globalement toute la foi chrétienne."
+          },
+          "source_ids": [
+            "Q5-47"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Do not collapse Injil as portrayed in the Quran into an unexamined identification with every NT writing."
+    },
+    {
+      "id": "ISL-012",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "No unqualified claim of the total destruction of every biblical text follows straightforwardly from the Qur'anic verses most often cited for distortion. Qur'an 2:75 accuses a party of knowingly distorting divine words; 5:13 likewise refers to displacement of words and forgotten obligations. The same surah nevertheless tells the people of the Gospel to judge by what was revealed in it (5:47). The scope of the charge has to be argued, not assumed.",
+            "fr": "Non. Les versets coraniques invoqués au sujet de la falsification ne démontrent pas, à eux seuls, que tous les textes bibliques auraient été détruits ou corrompus sans reste. Le Coran 2,75 accuse une partie de personnes d'altérer consciemment des paroles divines ; 5,13 évoque des déplacements de mots et des devoirs oubliés. Pourtant, 5,47 demande encore aux gens de l'Évangile de juger selon la révélation qu'il contient. La portée de l'accusation doit donc être démontrée."
+          },
+          "source_ids": [
+            "Q2-75",
+            "Q5-13",
+            "Q5-47"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "Muslim interpreters have differed over whether the fault concerns textual alteration, erroneous interpretation, concealment, or several of these. A sound historical dispute identifies the particular passage and the dateable witnesses; it does not infer from a general polemic that every surviving biblical manuscript became worthless before Muhammad.",
+            "fr": "Les interprètes musulmans ont discuté de la nature de l'altération : modification du texte, interprétation erronée, dissimulation, ou combinaison de ces éléments. Une controverse historique rigoureuse indique le passage précis et les témoins datables, au lieu de déduire d'une polémique générale que tous les manuscrits bibliques étaient devenus inutilisables avant Mahomet."
+          },
+          "source_ids": [
+            "Q2-75",
+            "Q5-13",
+            "SINAI"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Classical Muslim tafsir divergence requires targeted original Arabic confirmation."
+    },
+    {
+      "id": "ISL-013",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Christians can appeal to biblical manuscripts predating Muhammad. Codex Sinaiticus is a fourth-century Greek Bible containing the complete New Testament and substantial Old Testament material. Its existence rules out the claim that the surviving text of Christian Scripture was first invented after the rise of Islam. The manuscript also records real corrections and variants, so this argument should never be overstated as proof of zero textual change.",
+            "fr": "Les chrétiens peuvent invoquer des manuscrits bibliques antérieurs à Mahomet. Le Codex Sinaiticus, manuscrit grec du IVe siècle, contient le Nouveau Testament complet ainsi qu'une partie importante de l'Ancien Testament. Il exclut que le texte chrétien transmis ait été inventé seulement après l'apparition de l'islam. Le manuscrit présente aussi des corrections et des variantes : il ne démontre pas une absence absolue de changements de copistes."
+          },
+          "source_ids": [
+            "SINAI"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The relevant test is whether a disputed passage or doctrine appears in securely pre-Islamic witnesses, not whether every modern printed verse matches one fourth-century codex letter for letter. A particular allegation of corruption requires a particular text, manuscript comparison and plausible historical mechanism.",
+            "fr": "La question décisive est de savoir si un passage ou une doctrine contestée figure dans des témoins sûrement antérieurs à l'islam, non si chaque verset d'une édition moderne reproduit exactement chaque lettre d'un codex du IVe siècle. Une accusation précise de corruption exige un texte identifié, une comparaison manuscrite et un mécanisme historique plausible."
+          },
+          "source_ids": [
+            "SINAI",
+            "Q5-47"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Requires verse-level pre-Islamic witness collation for specific challenges; not general biblical textual infallibility proof."
+    },
+    {
+      "id": "ISL-019",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Naskh (abrogation) is the Islamic exegetical discussion of a ruling or recited passage being superseded by another. Qur'an 2:106 refers to the replacement or forgetting of a verse and to God's provision of another. Scholars dispute the scope and precise cases: some interpret it chiefly as supersession of legal rulings, while others draw distinctions involving recitation or earlier revelations.",
+            "fr": "Le naskh (abrogation) désigne, dans l'exégèse islamique, la question du remplacement d'une prescription ou d'un passage récité par un autre. Le Coran 2,106 évoque l'abrogation ou l'oubli d'un verset suivi de son remplacement. Les savants discutent de l'étendue du principe : certains l'appliquent surtout aux prescriptions juridiques, d'autres distinguent la récitation et les révélations antérieures."
+          },
+          "source_ids": [
+            "Q2-106"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The presence of a doctrine of abrogation does not prove that all apparent contradictions are explained by later verses, or that any convenient disliked verse has been erased. One must identify the original chronology and the interpretation advanced by named Muslim scholars before arguing that a particular command was superseded.",
+            "fr": "L'existence du concept d'abrogation ne prouve ni que toutes les tensions textuelles se résolvent par une priorité chronologique, ni que tout verset gênant aurait disparu. Il faut établir l'ordre des textes et la position d'exégètes musulmans identifiés avant de soutenir qu'une prescription particulière a été remplacée."
+          },
+          "source_ids": [
+            "Q2-106"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Must obtain full original classical tafsir evidence and named schools for specific naskh claims."
+    },
+    {
+      "id": "ISL-020",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Qur'an 2:256 explicitly denies compulsion in religion. That verse is real and must not be suppressed. It does not by itself settle every disputed question of conversion, apostasy, public law and coercion in later Islamic jurisprudence; the legal tradition and contemporary Muslim authorities have debated the scope of civil or penal consequences.",
+            "fr": "Le Coran 2,256 exclut explicitement la contrainte en religion : ce verset doit être reconnu sans restriction artificielle. Il ne résout pas à lui seul toutes les questions débattues sur la conversion, l'apostasie et les sanctions publiques dans la jurisprudence islamique. Le droit traditionnel et les autorités musulmanes contemporaines ont discuté de la portée de cette liberté."
+          },
+          "source_ids": [
+            "Q2-256",
+            "DIF2015"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "documented_muslim_argument_or_historical_witness",
+          "text": {
+            "en": "Egypt's Dar al-Ifta, in a published 2015 ruling, argues that changing religious conviction alone should not draw a worldly penalty, while distinguishing cases of public conduct it interprets as threats to society. This is a documented modern Muslim legal view, not a statement that all classical schools or contemporary states follow it.",
+            "fr": "Dans un avis publié en 2015, Dar al-Ifta d'Égypte soutient que le simple changement de conviction ne doit pas entraîner de sanction terrestre, tout en distinguant des comportements publics qu'il estime menaçants pour la société. Il s'agit d'une position juridique musulmane contemporaine documentée, et non d'une règle universellement adoptée dans toutes les écoles ou tous les États."
+          },
+          "source_ids": [
+            "DIF2015",
+            "Q2-256"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Need classical law school comparison and precise distinction between freedom of belief and civic restrictions."
+    },
+    {
+      "id": "ISL-021",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "The existence of classical apostasy penalties is not an invention of anti-Islamic polemics. Sahih al-Bukhari 6922 transmits an instruction prescribing killing someone who abandons Islam, while also distinguishing capital punishment from burning. This is a significant historical Muslim hadith witness; interpretations of its legal scope have differed.",
+            "fr": "Les peines classiques contre l'apostasie ne sont pas une invention de polémistes hostiles à l'islam. Sahih al-Bukhari 6922 transmet une instruction prescrivant la mise à mort d'une personne qui abandonne l'islam, tout en distinguant cette peine de la mort par le feu. C'est un témoignage important de la tradition musulmane, dont la portée juridique a fait l'objet d'interprétations diverses."
+          },
+          "source_ids": [
+            "B6922"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "documented_muslim_argument_or_historical_witness",
+          "text": {
+            "en": "Egypt's Dar al-Ifta explains in an official ruling that the prescribed penalty is connected to treason and not a mere private change of belief. That modern legal argument must be reported on its own terms, without either dismissing the hadith as fictitious or pretending that every jurist interprets it identically.",
+            "fr": "Dans un avis officiel, Dar al-Ifta d'Égypte rattache la sanction prévue au cas de haute trahison et non au simple changement de conviction privée. Cet argument moderne doit être présenté loyalement, sans nier l'existence du hadith ni supposer que tous les juristes musulmans en ont toujours donné la même interprétation."
+          },
+          "source_ids": [
+            "DIF2013",
+            "B6922"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Classical juristic consensus, dissent and contemporary national practice not yet collated; do not equate text with every Muslim person's view."
+    },
+    {
+      "id": "ISL-022",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Qur'an 4:34 is not a harmless verse about generic mutual respect alone. A widely used English translation includes a staged disciplinary sequence that ends with a verb translated as striking. This language requires direct examination rather than pretending that difficult renderings are a fabrication of critics.",
+            "fr": "Le Coran 4,34 ne se limite pas à une exhortation générale au respect mutuel. Une traduction anglaise couramment diffusée présente une séquence de mesures disciplinaires dont le dernier verbe est traduit par un geste de frappe. Il faut étudier honnêtement ce passage difficile au lieu de faire comme s'il s'agissait d'une invention de ses critiques."
+          },
+          "source_ids": [
+            "Q4-34"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The verse does not warrant the claim that every Muslim husband is violent or that all Muslim interpreters agree on the degree, limits or even precise reading of that verb. Classical and modern interpretations need to be compared openly. A Catholic ethical appraisal cannot treat domestic violence as legitimate simply because an ancient text has been invoked to support it.",
+            "fr": "Ce verset ne permet pas de prétendre que tous les maris musulmans seraient violents ou que tous les commentateurs musulmans s'accorderaient sur le sens et les limites du verbe contesté. Les interprétations anciennes et modernes doivent être confrontées explicitement. La morale catholique ne peut justifier la violence conjugale au seul motif qu'un texte ancien est invoqué pour la défendre."
+          },
+          "source_ids": [
+            "Q4-34"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Requires direct classical tafsir and identified modern Muslim reformist perspectives before final comparison; Catholic magisterial source on domestic violence to be supplied for final wording."
+    },
+    {
+      "id": "ISL-023",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "In a report attributed to Aisha in Sahih al-Bukhari 5133, the marriage contract is placed at age six and consummation at age nine. This is a primary hadith witness to a traditional Islamic account. It is not an independent birth certificate, and debates about the transmission and dating of the report require historical source criticism.",
+            "fr": "Selon un récit attribué à Aïcha dans Sahih al-Bukhari 5133, le contrat de mariage aurait été conclu à six ans et la consommation à neuf ans. Il s'agit d'un témoignage majeur sur la version traditionnelle musulmane, mais non d'un acte de naissance indépendant. La transmission et la datation de ce récit doivent faire l'objet d'une critique historique précise."
+          },
+          "source_ids": [
+            "B5133"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "A fair discussion separates what the respected hadith actually records, whether the ages can be independently corroborated, and the moral evaluation of child marriage. The dignity, safety and consent of children must not be dismissed by appeals to a text's religious status. Nor can this single report be used to impute one uniform present-day practice to Muslims worldwide.",
+            "fr": "Une analyse loyale distingue ce que rapporte précisément le hadith, la possibilité d'en corroborer indépendamment la chronologie et le jugement moral sur le mariage des enfants. La dignité, la sécurité et le consentement des mineurs ne peuvent être écartés par l'autorité religieuse attribuée à un récit. Celui-ci ne permet pas non plus d'imputer une pratique actuelle uniforme à tous les musulmans."
+          },
+          "source_ids": [
+            "B5133"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Needs independent modern historiographical analysis; source reporting is not independent age verification."
+    },
+    {
+      "id": "ISL-024",
+      "owner": "APOL-046",
+      "disposition": "ENRICH_EXISTING_CANONICAL_DOSSIER_NOT_NEW_NAVIGATION_QUESTION",
+      "status": "BILINGUAL_SUBSTANTIVE_DRAFT_NOT_PUBLICATION_APPROVED",
+      "paragraphs": [
+        {
+          "role": "answer",
+          "text": {
+            "en": "Yes. Qur'an 33:50 explicitly describes marriage permissions specific to Muhammad, including a provision for a believing woman offering herself to the Prophet; the verse contrasts these permissions with rules binding other believers. The argument rests on the Quranic text itself, not on an invented accusation about Muslims.",
+            "fr": "Oui. Le Coran 33,50 énumère des permissions matrimoniales particulières à Mahomet, notamment la possibilité qu'une croyante s'offre au Prophète ; le texte distingue ces dispositions de celles applicables aux autres fidèles. Cette particularité est attestée par le verset lui-même et ne constitue pas une accusation inventée contre les musulmans."
+          },
+          "source_ids": [
+            "Q33-50"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        },
+        {
+          "role": "critical_response",
+          "text": {
+            "en": "The passage establishes that exceptions exist, but evaluating their historical exercise or a claim of divine warrant calls for its exegetical context and the surrounding marriage regulations. Merely observing an exception is not yet a conclusive ethical argument about every marriage associated with Muhammad.",
+            "fr": "Le passage établit l'existence d'exceptions, mais l'étude de leur application historique et de leur justification divine exige le contexte exégétique ainsi que les autres règles matrimoniales. La simple constatation d'une exception ne suffit pas, à elle seule, pour conclure sur le statut moral de chaque mariage attribué à Mahomet."
+          },
+          "source_ids": [
+            "Q33-50"
+          ],
+          "source_passage_context_approved": false,
+          "french_native_editor_approved": false
+        }
+      ],
+      "editorial_caveat": "Other marriage-related Quran verses and named traditional exegetes required for complete historical/contextual review."
+    }
+  ]
+}

@@ -1,0 +1,1086 @@
+{
+  "schema": "AO_FORMATION_ANGLICAN_ATHEISM_RESEARCH_SUPPLEMENT_V1",
+  "date": "2026-10-13",
+  "status": "24_TWO_PARAGRAPH_BILINGUAL_ANG_ATH_RESEARCH_DRAFTS_UNPUBLISHED",
+  "description": "17 Anglican and 7 atheism-specific answers for exact existing historically indexed questions. Each question retains its original ID. Authentic Anglican formularies and opposing philosophical arguments are presented before comparison; no new canonical dossier owner inferred. Added a second paragraph for each of 24 items, with exact original confessional and philosophical distinctions.",
+  "source_registry": [
+    {
+      "id": "ART39",
+      "title": "Church of England, Thirty-Nine Articles (especially VI, XI–XII, XIX–XXII, XXV–XXVIII, XXXI, XXXVI–XXXVII)",
+      "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer/articles-religion",
+      "kind": "ANGLICAN_PRIMARY_FORMULARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "ORD",
+      "title": "Church of England, Book of Common Prayer Ordinal",
+      "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer/form-and-manner-making-ordaining",
+      "kind": "ANGLICAN_PRIMARY_RITUAL",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "QUAD",
+      "title": "Anglican Communion, Chicago–Lambeth Quadrilateral",
+      "url": "https://www.anglicancommunion.org/the-chicago-lambeth-quadrilateral/",
+      "kind": "ANGLICAN_ECUMENICAL_FORMULARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CANON",
+      "title": "Church of England, Canons Section A",
+      "url": "https://www.churchofengland.org/about/leadership-and-governance/legal-services/canons-church-england/section",
+      "kind": "ANGLICAN_CANON_LAW",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "ANGLICAN",
+      "title": "Anglican Communion Office, What Anglicans Believe",
+      "url": "https://www.anglicancommunion.org/what-anglicans-believe/",
+      "kind": "OFFICIAL_ANGLICAN_PRESENTATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AC",
+      "title": "Leo XIII, Apostolicae curae (1896)",
+      "url": "https://www.vatican.va/content/leo-xiii/la/apost_letters/documents/litterae-apostolicae-apostolicae-curae-13-septembris-1896.html",
+      "kind": "CATHOLIC_PAPAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SAEPIUS",
+      "title": "Archbishops of Canterbury and York, Saepius Officio (1897)",
+      "url": "https://anglicanhistory.org/orders/saepius.pdf",
+      "kind": "ANGLICAN_PRIMARY_REPLY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "ORDINARIATE",
+      "title": "Benedict XVI, Anglicanorum coetibus (2009)",
+      "url": "https://www.vatican.va/content/benedict-xvi/en/apost_constitutions/documents/hf_ben-xvi_apc_20091104_anglicanorum-coetibus.html",
+      "kind": "CATHOLIC_OFFICIAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT",
+      "title": "Council of Trent, decrees on sacraments and justification",
+      "url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "kind": "CATHOLIC_CONCILIAR_TEXT_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "kind": "CATHOLIC_OFFICIAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AQU2",
+      "title": "Thomas Aquinas, Summa Theologiae I q.2, a.3",
+      "url": "https://www.newadvent.org/summa/1002.htm",
+      "kind": "CATHOLIC_PRIMARY_PHILOSOPHY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AQU6",
+      "title": "Thomas Aquinas, Summa Theologiae I q.6",
+      "url": "https://www.newadvent.org/summa/1006.htm",
+      "kind": "CATHOLIC_PRIMARY_PHILOSOPHY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AQU75",
+      "title": "Thomas Aquinas, Summa Theologiae I q.75",
+      "url": "https://www.newadvent.org/summa/1075.htm",
+      "kind": "CATHOLIC_PRIMARY_PHILOSOPHY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "HUMG",
+      "title": "Pius XII, Humani generis §§36–37",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+      "kind": "CATHOLIC_OFFICIAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEPQM",
+      "title": "Stanford Encyclopedia of Philosophy, Quantum Mechanics",
+      "url": "https://plato.stanford.edu/entries/qm/",
+      "kind": "ACADEMIC_BACKGROUND",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEPFINE",
+      "title": "Stanford Encyclopedia of Philosophy, Fine-Tuning (2026 revision)",
+      "url": "https://plato.stanford.edu/entries/fine-tuning/",
+      "kind": "ACADEMIC_BACKGROUND",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEPCON",
+      "title": "Stanford Encyclopedia of Philosophy, Consciousness",
+      "url": "https://plato.stanford.edu/entries/consciousness/",
+      "kind": "ACADEMIC_BACKGROUND",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEPEPI",
+      "title": "Stanford Encyclopedia of Philosophy, Evolutionary Epistemology",
+      "url": "https://plato.stanford.edu/entries/epistemology-evolutionary/",
+      "kind": "ACADEMIC_BACKGROUND",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEPENV",
+      "title": "Stanford Encyclopedia of Philosophy, Evolutionary Approaches to Religion (2026)",
+      "url": "https://plato.stanford.edu/entries/religion-evolutionary/",
+      "kind": "ACADEMIC_BACKGROUND",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEPHID",
+      "title": "Stanford Encyclopedia of Philosophy, Hiddenness of God",
+      "url": "https://plato.stanford.edu/entries/divine-hiddenness/",
+      "kind": "ACADEMIC_BACKGROUND",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "EUTH",
+      "title": "Plato, Euthyphro 10a, original dialogue in translation",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0170%3Atext%3DEuthyph.%3Asection%3D10a",
+      "kind": "PHILOSOPHICAL_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "BCP",
+      "title": "Church of England, Book of Common Prayer (including infant Baptism service)",
+      "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer",
+      "kind": "ANGLICAN_PRIMARY_RITUAL",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "NEWMAN90",
+      "title": "John Henry Newman, Tract 90, first-hand Anglo-Catholic interpretation of the Articles",
+      "url": "https://www.newmanreader.org/works/viamedia/volume2/tract90/index.html",
+      "kind": "PRIMARY_ANGLICAN_ORIGINAL",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "COE-ASSENT",
+      "title": "Church of England modern Declaration of Assent and historic formularies",
+      "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/common-worship/ministry/common-worship-ordination",
+      "kind": "CONTEMPORARY_ANGLICAN_PRIMARY_RULE",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "COE-COMMON",
+      "title": "Church of England, historical and contemporary Prayer Book/liturgy authorization",
+      "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/where-liturgy-comes",
+      "kind": "CONTEMPORARY_ANGLICAN_PRIMARY_GUIDANCE",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "ANG-001",
+      "original_title_candidate": "What exactly is ‘Anglican doctrine’?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Historic Anglican doctrine is located especially in the Thirty-Nine Articles, the Book of Common Prayer and its Ordinal, alongside the creeds; the Church of England's canons still recognize these formularies. Modern Anglican Communion churches are self-governing, however, so one must distinguish historic Anglican standards from the actual teaching of a particular province. It is not one universally uniform catechism.",
+            "fr": "La doctrine anglicane historique se trouve notamment dans les Trente-Neuf Articles, le Livre de la prière commune, son Ordinal et les symboles de foi. Les canons de l'Église d'Angleterre reconnaissent encore ces formulaires. Cependant, les Églises de la Communion anglicane se gouvernent elles-mêmes : il faut distinguer ces normes historiques de l'enseignement actuel de telle province ; il n'existe pas un catéchisme universellement uniforme."
+          },
+          "source_ids": [
+            "ART39",
+            "CANON",
+            "ANGLICAN"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Canon A5 identifies Scripture, the Fathers and councils, the Thirty-Nine Articles, the Prayer Book and Ordinal. Since different Anglican provinces govern themselves, a comparison with Catholic teaching must identify whether it concerns the historic Church of England, a present canon or a specific Anglican communion province.",
+            "fr": "Le canon A5 cite l'Écriture, les Pères et conciles, les Trente-Neuf Articles, le Livre de prière et l'Ordinal. Les provinces anglicanes étant autonomes, toute comparaison avec la doctrine catholique doit préciser s'il s'agit de l'Angleterre historique, d'une norme actuelle ou d'une province particulière."
+          },
+          "source_ids": [
+            "CANON",
+            "ANGLICAN",
+            "COE-ASSENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-003",
+      "original_title_candidate": "Is Anglicanism simply Calvinism with bishops?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Calling Anglicanism 'Calvinism with bishops' captures some Reformation-era influences but fails as a definition. The Articles include Protestant teaching on justification and predestination, spiritual participation in the Eucharist, and ministerial authority; the Ordinal retains bishops, priests and deacons. Anglican traditions also include explicitly Anglo-Catholic and evangelical currents, making a single continental-Reformed label misleading.",
+            "fr": "Qualifier l'anglicanisme de « calvinisme avec des évêques » évoque certaines influences de la Réforme mais ne le définit pas. Les Articles abordent justification, prédestination, participation spirituelle à l'Eucharistie et autorité ministérielle ; l'Ordinal conserve évêques, prêtres et diacres. Des courants anglo-catholiques et évangéliques coexistent : l'étiquette d'une seule confession réformée continentale serait trompeuse."
+          },
+          "source_ids": [
+            "ART39",
+            "ORD",
+            "ANGLICAN"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Articles XVII and XXVIII discuss predestination and spiritual reception of Christ, while the Ordinal retains episcopal structures. One cannot infer that every Anglican school adopts Calvin's entire theology from these points; doctrinal disagreements among Reformed and Anglo-Catholic interpretations must be represented from their actual texts.",
+            "fr": "Les articles XVII et XXVIII abordent prédestination et communion spirituelle, alors que l'Ordinal conserve l'épiscopat. On ne peut en déduire que toutes les écoles anglicanes adoptent toute la théologie de Calvin ; les divergences entre lectures réformées et anglo-catholiques se vérifient dans leurs textes."
+          },
+          "source_ids": [
+            "ART39",
+            "ORD",
+            "ANGLICAN"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-004",
+      "original_title_candidate": "What do the Articles teach about justification?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Article XI teaches that persons are accounted righteous before God for Christ's merits through faith, not through their own works or deserving; it recommends the Homily of Justification for fuller exposition. The crucial Catholic disagreement is not whether grace is primary, but how justification relates to inward sanctification and imparted righteousness, as taught by Trent.",
+            "fr": "L'article XI enseigne que les hommes sont tenus pour justes devant Dieu grâce aux mérites du Christ, par la foi, non par leurs propres œuvres ou mérites ; il renvoie à l'homélie sur la justification. Le désaccord catholique décisif ne porte pas sur la primauté de la grâce, mais sur le rapport entre justification, sanctification intérieure et justice reçue, tel que le définit Trente."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Article XII expressly praises good works as fruits of faith, so the disagreement with Trent cannot be framed as an Anglican assertion that morality is irrelevant. The difference concerns how believers are made or reckoned righteous through Christ's grace, a point on which Catholic and Anglican terminology needs careful comparison.",
+            "fr": "L'article XII loue expressément les œuvres comme fruits de la foi : le désaccord avec Trente n'est pas une prétendue indifférence anglicane à la morale. Il concerne la manière dont la grâce du Christ rend ou tient le croyant pour juste, ce qui exige une comparaison précise des notions."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-005",
+      "original_title_candidate": "Is Anglican ‘faith alone’ antinomian?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Historic Anglican 'faith alone' does not mean that believers may disregard moral law. Article XII says good works follow justification and spring from true and living faith, though they cannot remove sins or withstand God's judgment as independent merits. Catholic criticism must therefore challenge the precise account of justification, not accuse the Thirty-Nine Articles of teaching deliberate lawlessness.",
+            "fr": "La « foi seule » anglicane historique ne signifie pas que le croyant puisse mépriser la loi morale. L'article XII fait des bonnes œuvres la suite de la justification et le fruit d'une foi véritable et vivante, sans leur attribuer le pouvoir autonome d'effacer les péchés. La critique catholique doit donc discuter la justification elle-même, non imputer aux Articles la permission du désordre moral."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "The strongest historical Anglican claim joins Articles XI and XII: justification is gratuitous, and living faith necessarily bears works. Trent, too, denies self-redemption without grace but describes justifying renewal differently. The debate must address imputation, sanctification and the causal relation of faith and works rather than invent license for sin.",
+            "fr": "La position anglicane historique unit les articles XI et XII : la justification est gratuite et la foi vivante produit nécessairement des œuvres. Trente refuse aussi l'autosauvetage sans grâce, tout en concevant autrement la sanctification. Le débat porte sur imputation, transformation et rapport entre foi et œuvres, non sur une permission de pécher."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-006",
+      "original_title_candidate": "What authority does Scripture have?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Article VI treats Holy Scripture as containing all things necessary to salvation: doctrine not read therein or proved thereby cannot be required as an article of faith. The Article lists canonical books and assigns a different instructional use to other ancient books. This is a historically specific Anglican sufficiency claim, not denial that creeds, clergy or common prayer have any teaching role.",
+            "fr": "L'article VI affirme que l'Écriture contient tout ce qui est nécessaire au salut : une doctrine qu'on ne peut y lire ou en démontrer ne doit pas être imposée comme article de foi. Il énumère les livres canoniques et réserve un autre usage instructif à certains livres anciens. Cette thèse anglicane de suffisance ne supprime pas le rôle des symboles de foi, du clergé et de la prière commune."
+          },
+          "source_ids": [
+            "ART39",
+            "QUAD"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Article VIII receives the three creeds, while Article XX recognizes Church authority bounded by Scripture. Historic Anglicanism therefore differs from a private-reader-only theory of faith. The Catholic answer appeals to apostolic Tradition and the living teaching office without asserting that the Church may override or contradict inspired Scripture.",
+            "fr": "L'article VIII reçoit les trois Credo, et l'article XX reconnaît une autorité ecclésiale limitée par l'Écriture. L'anglicanisme historique n'est donc pas le culte de la seule lecture privée. La réponse catholique se fonde sur la Tradition apostolique et le magistère vivant, sans prétendre que l'Église pourrait contredire l'Écriture inspirée."
+          },
+          "source_ids": [
+            "ART39",
+            "QUAD",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-007",
+      "original_title_candidate": "Does Anglicanism deny all Church authority?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "No. Article XX expressly grants the Church authority to decree rites and ceremonies and authority in controversies of faith, but denies power to decree or interpret anything contrary to the written Word. The substantive dispute with Catholicism concerns the nature and limits of the Church's binding teaching authority, not whether church authority exists at all.",
+            "fr": "Non. L'article XX attribue expressément à l'Église le pouvoir d'établir rites et cérémonies et une autorité dans les controverses de foi, mais lui refuse celui de prescrire ou d'interpréter quelque chose contre la Parole écrite. Le litige avec le catholicisme concerne la nature et les limites de l'autorité doctrinale obligatoire, non l'existence de toute autorité ecclésiastique."
+          },
+          "source_ids": [
+            "ART39",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Article XIX defines the visible Church and acknowledges that particular churches can err; Article XX nonetheless attributes authority in faith controversies to the Church. Catholic disagreement is about the scope of doctrinal authority, not whether Anglicans possess institutions, bishops or any corporate responsibility for teaching.",
+            "fr": "L'article XIX définit l'Église visible et admet que des Églises particulières puissent errer ; l'article XX reconnaît néanmoins une autorité doctrinale ecclésiale. Le désaccord catholique porte sur la portée de cette autorité, non sur l'existence de communautés, évêques ou responsabilités collectives anglicanes."
+          },
+          "source_ids": [
+            "ART39",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-008",
+      "original_title_candidate": "Does Anglicanism believe councils can err?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Yes. Article XXI says general councils may err even in things pertaining to God because they are gatherings of human beings, and their decrees cannot be imposed as necessary to salvation unless grounded in Scripture. This differs from Catholic teaching about the definitive authority of an ecumenical council legitimately united with the Roman Pontiff in defining faith and morals.",
+            "fr": "Oui. L'article XXI enseigne que les conciles généraux peuvent errer, même sur des questions touchant à Dieu, et que leurs décrets ne s'imposent pas comme nécessaires au salut sans fondement scripturaire. Cela diffère de la doctrine catholique de l'autorité définitive d'un concile œcuménique légitimement uni au pontife romain lorsqu'il définit la foi et les mœurs."
+          },
+          "source_ids": [
+            "ART39",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Article XXI's critique of general councils is not a claim that every episcopal gathering is useless: its criterion is whether decrees can be demonstrated from Holy Scripture. Catholics distinguish local synods, fallible conciliar acts and definitive ecumenical teaching; equating all three would caricature both sides.",
+            "fr": "La critique des conciles généraux à l'article XXI ne signifie pas que toute réunion épiscopale soit inutile : le critère porte sur la preuve scripturaire des décrets. Les catholiques distinguent synodes locaux, actes non définitifs et enseignement œcuménique définitif ; leur confusion déformerait les deux positions."
+          },
+          "source_ids": [
+            "ART39",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-009",
+      "original_title_candidate": "How many sacraments does historic Anglicanism recognize?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Article XXV distinguishes two sacraments ordained by Christ in the Gospel—Baptism and the Lord's Supper—from Confirmation, Penance, Orders, Matrimony and Extreme Unction, the five 'commonly called sacraments' which it says lack the same nature as Gospel sacraments. That is not the Catholic seven-sacrament doctrine, even though Anglicans may retain corresponding rites.",
+            "fr": "L'article XXV distingue deux sacrements institués par le Christ dans l'Évangile — Baptême et Cène — de Confirmation, Pénitence, Ordre, Mariage et Extrême-Onction, cinq rites « communément appelés sacrements » auxquels il refuse la même nature sacramentelle. Ce n'est pas la doctrine catholique des sept sacrements, bien que les anglicans puissent conserver des rites correspondants."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Article XXV names five other rites commonly called sacraments without treating them as Gospel sacraments of the same nature as Baptism and the Lord's Supper. Therefore 'only two Gospel sacraments' cannot be simplified to 'Anglicans lack marriage, anointing or ordination services'.",
+            "fr": "L'article XXV nomme cinq autres rites couramment appelés sacrements, sans leur reconnaître la même nature que le Baptême et la Cène. « Deux sacrements évangéliques » ne signifie donc pas que les anglicans seraient dépourvus de mariage, d'onction ou d'ordination."
+          },
+          "source_ids": [
+            "ART39",
+            "BCP"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-010",
+      "original_title_candidate": "Are Anglican sacraments merely symbols?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "No. Article XXV explicitly calls the Gospel sacraments effective signs of grace, not merely badges of belonging. Nevertheless, its two-sacrament classification and the specific interpretation of Eucharistic presence differ from Catholic sacramental theology. It is therefore inaccurate to label all historical Anglican sacramental doctrine bare symbolism.",
+            "fr": "Non. L'article XXV appelle explicitement les sacrements de l'Évangile des signes efficaces de la grâce, non de simples insignes d'appartenance. Pourtant, la classification en deux sacrements et l'interprétation de la présence eucharistique diffèrent de la théologie catholique. Réduire toute sacramentologie anglicane historique à un pur symbolisme serait inexact."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Baptism as regeneration in Article XXVII and the Lord's Supper as participation in Christ in Article XXVIII are stronger claims than an empty reminder. Yet historic Anglican interpretation of spiritual reception and the Catholic definition of substantial Eucharistic presence differ; sacramental efficacy is not defined identically merely by sharing the word 'grace'.",
+            "fr": "Le baptême régénérateur de l'article XXVII et la participation au Christ de l'article XXVIII dépassent le simple souvenir vide. Pourtant, la réception spirituelle anglicane et la présence substantielle catholique divergent ; l'emploi commun du mot « grâce » ne rend pas leurs conceptions sacramentelles identiques."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-011",
+      "original_title_candidate": "Does Anglicanism teach baptismal regeneration?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Yes. Article XXVII describes Baptism as a sign of regeneration or new birth and an instrument by which rightful recipients are grafted into the Church, with forgiveness and adoption signified and sealed. Anglican traditions dispute how precisely this grace relates to faith and reception; the historic formulary cannot simply be read as denying baptismal regeneration.",
+            "fr": "Oui. L'article XXVII présente le Baptême comme signe de régénération ou nouvelle naissance et comme instrument par lequel ses bénéficiaires sont incorporés à l'Église ; pardon et adoption y sont signifiés et scellés. Les interprétations anglicanes de l'action de la grâce et de la foi varient, mais le formulaire historique ne nie pas simplement la régénération baptismale."
+          },
+          "source_ids": [
+            "ART39"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "The baptismal text explicitly speaks of rightly receiving the sacrament. It therefore cannot be used to infer that historic Anglicanism regarded every ceremony as mechanically effective without faith or disposition; compare its claims about grace with Catholic Baptism and the theology of worthy reception.",
+            "fr": "Le texte baptismal précise la réception convenable du sacrement. Il ne permet donc pas d'attribuer à l'anglicanisme historique une efficacité mécanique de toute cérémonie indépendamment de la foi ou des dispositions ; il faut confronter ses propos sur la grâce à la doctrine catholique du baptême."
+          },
+          "source_ids": [
+            "ART39",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-012",
+      "original_title_candidate": "Do Anglicans baptize infants?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Yes. Article XXVII expressly requires retention of the Baptism of young children as consonant with Christ's institution, and the Book of Common Prayer contains baptismal services for infants. The Baptist restriction of baptism to professing believers therefore must not be imported into historic Anglican doctrine.",
+            "fr": "Oui. L'article XXVII prescrit expressément de conserver le Baptême des petits enfants comme conforme à l'institution du Christ, et le Livre de la prière commune prévoit des offices de baptême des enfants. Il ne faut donc pas attribuer à l'anglicanisme historique la restriction baptiste aux seuls croyants faisant profession personnelle."
+          },
+          "source_ids": [
+            "ART39",
+            "BCP"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "The Prayer Book contains a distinct infant-baptism service, matching Article XXVII's explicit retention of infant baptism. This is decisive evidence that the dispute between Catholics and Baptists about baptizing children must not be projected uniformly onto Protestant Anglican history.",
+            "fr": "Le Livre de la prière commune contient un rite spécifique du baptême des enfants, conformément à l'article XXVII. Cette concordance interdit de projeter sur l'histoire anglicane le différend entre catholiques et baptistes au sujet du baptême des petits enfants."
+          },
+          "source_ids": [
+            "BCP",
+            "ART39"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-013",
+      "original_title_candidate": "Does Anglicanism teach the Real Presence?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Article XXVIII rejects a merely social meal: worthy believers partake of Christ's Body and Blood, received 'after an heavenly and spiritual manner' through faith. That is a genuine Eucharistic claim, but it does not affirm the Catholic doctrine of substantial presence under the appearances following transubstantiation. Modern Anglican schools interpret the precise mode differently.",
+            "fr": "L'article XXVIII ne décrit pas un simple repas social : les fidèles dignement disposés participent au Corps et au Sang du Christ d'une manière « céleste et spirituelle », par la foi. C'est une véritable affirmation eucharistique, sans être la doctrine catholique de la présence substantielle après transsubstantiation. Les courants anglicans contemporains en donnent diverses interprétations."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Article XXVIII says that faithful communicants partake of Christ, but locates reception in a heavenly and spiritual manner and through faith. Trent teaches substantial presence after consecration. Respecting both original texts prevents the double error of equating Anglican faith-reception automatically with transubstantiation or calling it pure symbolism.",
+            "fr": "Selon l'article XXVIII, les fidèles participent au Christ d'une manière céleste et spirituelle par la foi. Trente enseigne la présence substantielle après la consécration. Lire les deux textes prévient la double erreur de confondre cette réception anglicane avec la transsubstantiation ou de la réduire à un pur symbole."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-014",
+      "original_title_candidate": "Does historic Anglicanism accept transubstantiation?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "No. Article XXVIII explicitly rejects transubstantiation as contrary to its reading of Scripture and to the nature of a sacrament, while retaining spiritual reception of Christ. Catholic teaching at Trent affirms a real change of the substance of bread and wine into Christ's Body and Blood. Distinguishing these opposing assertions is more accurate than saying Anglicans do not believe in any presence.",
+            "fr": "Non. L'article XXVIII rejette explicitement la transsubstantiation comme contraire à son interprétation de l'Écriture et à la nature du sacrement, tout en affirmant la réception spirituelle du Christ. Trente affirme le changement réel de la substance du pain et du vin au Corps et au Sang du Christ. Il faut distinguer ces affirmations opposées plutôt que prétendre que les anglicans n'admettent aucune présence."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "The Article's rejection of transubstantiation must be acknowledged; Anglo-Catholic interpreters such as Newman later explored Catholic-compatible readings of Anglican formularies. Their very arguments prove that historical text and later ecclesial interpretations require different labels in this debate.",
+            "fr": "Il faut reconnaître le rejet explicite de la transsubstantiation par l'article, tandis que des anglo-catholiques comme Newman proposèrent ensuite des lectures des formulaires plus compatibles avec Rome. Leur démarche montre précisément la nécessité de distinguer texte historique et interprétations ecclésiales ultérieures."
+          },
+          "source_ids": [
+            "ART39",
+            "NEWMAN90",
+            "TRENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-015",
+      "original_title_candidate": "Does historic Anglicanism accept the Catholic sacrifice of the Mass?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Historic Article XXXI emphasizes the one sufficient oblation of Christ on the Cross and condemns 'sacrifices of Masses' as understood in its Reformation polemic. Trent equally denies repetition of Christ's death but affirms that the same one sacrifice is made sacramentally present and applied in the Mass. The disagreement is over sacrificial representation and the ordained priesthood, not whether the Cross was sufficient.",
+            "fr": "L'article XXXI insiste sur l'unique oblation suffisante du Christ sur la Croix et condamne les « sacrifices des messes » dans sa polémique réformatrice. Trente nie lui aussi que la mort du Christ soit répétée, mais affirme que l'unique sacrifice devient sacramentellement présent et s'applique dans la messe. Le différend porte sur cette représentation sacramentelle et le sacerdoce, non sur la suffisance de la Croix."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "The historic polemical term 'sacrifices of Masses' should be compared with Trent's exact account: the Mass sacramentally makes present Christ's one oblation rather than adding another death. Merely saying 'Anglicans deny sacrifice' hides the distinction between Eucharistic thanksgiving and the specific Catholic doctrine they rejected.",
+            "fr": "L'expression polémique « sacrifices des messes » doit être rapprochée de l'enseignement précis de Trente : la Messe rend sacramentellement présent l'unique sacrifice du Christ, sans ajouter une nouvelle mort. Dire seulement « les anglicans nient tout sacrifice » masque la distinction entre action de grâce eucharistique et doctrine catholique contestée."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-016",
+      "original_title_candidate": "What does Anglicanism teach about Purgatory, indulgences, relics and saintly invocation?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Article XXII rejects what it calls the Roman doctrine of Purgatory, pardons, veneration of images and relics, and invocation of saints, judging it inconsistent with Scripture. That is the historic formularly's polemical position, not a neutral account of Catholic practice; some later Anglo-Catholic communities adopted devotions resembling Catholic practice. Any debate should contrast original Anglican wording with actual Catholic definitions.",
+            "fr": "L'article XXII rejette ce qu'il appelle la doctrine romaine du Purgatoire, des pardons, du culte des images et reliques et de l'invocation des saints, qu'il juge contraire à l'Écriture. Il s'agit d'une position polémique du formulaire historique, non d'une description neutre des pratiques catholiques ; certains milieux anglo-catholiques ont ensuite adopté des dévotions proches. Le débat doit comparer les textes originaux aux définitions catholiques réelles."
+          },
+          "source_ids": [
+            "ART39",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Trent defends prayer for the dead, saintly intercession and legitimate veneration and also condemns exploitation or superstition. Article XXII rejects these doctrines in a sixteenth-century polemic. Some later Anglo-Catholics reinterpret Catholic practices positively; this cannot erase what Article XXII originally says.",
+            "fr": "Trente défend la prière pour les défunts, l'intercession des saints et la vénération légitime tout en condamnant exploitation et superstition. L'article XXII rejette ces doctrines dans la polémique du XVIe siècle. Les lectures positives de certains anglo-catholiques ultérieurs n'effacent pas le texte originel."
+          },
+          "source_ids": [
+            "ART39",
+            "TRENT",
+            "NEWMAN90"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-022",
+      "original_title_candidate": "What is Anglo-Catholicism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Anglo-Catholicism is a current within Anglicanism that stresses continuity with the historic catholic Church, sacramental and liturgical life, episcopacy and often practices resembling Roman Catholic devotion. It is not automatically full communion with Rome or agreement with every Catholic dogma. Benedict XVI's provision for ordinariates permits former Anglican groups to retain approved elements of this patrimony upon entering Catholic communion.",
+            "fr": "L'anglo-catholicisme est un courant anglican soulignant la continuité avec l'Église catholique historique, la vie sacramentelle et liturgique, l'épiscopat et souvent des dévotions proches des usages romains. Il n'équivaut ni à la pleine communion avec Rome ni à l'adhésion à tous les dogmes catholiques. Les ordinariats prévus par Benoît XVI conservent certains éléments approuvés de ce patrimoine après entrée dans la communion catholique."
+          },
+          "source_ids": [
+            "ANGLICAN",
+            "ORDINARIATE"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Newman's Tract 90 (1841) is first-hand evidence of an Anglo-Catholic attempt to read the historic Articles compatibly with Catholic tradition. It is not proof that every Anglican accepted this interpretation or that a liturgical resemblance resolves the separate Catholic judgment on Anglican ordinations.",
+            "fr": "Le Tract 90 de Newman (1841) témoigne directement d'une tentative anglo-catholique de lire les Articles historiques conformément à la tradition catholique. Il ne prouve ni l'adhésion de tous les anglicans à cette lecture ni que les ressemblances liturgiques résolvent la question catholique distincte des ordinations anglicanes."
+          },
+          "source_ids": [
+            "NEWMAN90",
+            "AC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ANG-023",
+      "original_title_candidate": "Does modern Anglicanism still simply follow the literal polemical sense of all Thirty-Nine Articles?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Not uniformly. The Church of England continues to recognize the Thirty-Nine Articles in its canons, yet contemporary Anglicanism encompasses self-governing provinces and differing evangelical, broad-church and Anglo-Catholic interpretations. It would be equally inaccurate to announce that every modern Anglican subscribes to the Articles' original polemical sense or that the Articles have disappeared from Anglican identity.",
+            "fr": "Pas uniformément. L'Église d'Angleterre reconnaît encore les Trente-Neuf Articles dans ses canons, mais l'anglicanisme contemporain comprend des provinces autonomes et des interprétations évangéliques, larges et anglo-catholiques. Il serait tout aussi inexact de supposer que chaque anglican actuel accepte le sens polémique historique de chaque article que de prétendre que les Articles ont disparu de son identité."
+          },
+          "source_ids": [
+            "CANON",
+            "ART39",
+            "ANGLICAN"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "The present Church of England's Declaration of Assent refers to the historic formularies as witnesses to the faith rather than requiring a new literal subscription to every sixteenth-century polemical formulation. The Anglican Communion is also provincially autonomous. Therefore state explicitly when comparing a 1571 text with today's province or rite.",
+            "fr": "La Déclaration d'assentiment actuelle présente les anciens formulaires comme témoins de la foi plutôt que d'exiger une nouvelle souscription littérale à chaque formule polémique du XVIe siècle. La Communion anglicane est en outre autonome par province. Une comparaison doit donc identifier le texte de 1571 et la province ou le rite actuel."
+          },
+          "source_ids": [
+            "COE-ASSENT",
+            "ANGLICAN",
+            "ART39"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ATH-008",
+      "original_title_candidate": "Do quantum events refute causality?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Quantum indeterminacy in a physical model does not logically refute every sense of causality. A probabilistic transition may lack a deterministically sufficient preceding physical state, while metaphysical questions about the existence and dependence of the quantum system remain distinct. Aquinas's First and Second Ways should be assessed on their actual premises, not conflated with Newtonian determinism.",
+            "fr": "L'indétermination quantique dans un modèle physique ne réfute pas logiquement toute notion de causalité. Une transition probabiliste peut ne pas avoir d'état physique antérieur déterminant entièrement son résultat, tandis que la dépendance ontologique du système quantique demeure une autre question. Il faut juger les deux premières voies de saint Thomas sur leurs prémisses réelles, non les confondre avec le déterminisme newtonien."
+          },
+          "source_ids": [
+            "SEPQM",
+            "AQU2"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "The competing accounts are real: some interpretations of quantum mechanics are indeterministic, others preserve determinism, and all require mathematical physical description. Aquinas' metaphysical distinction between contingent causes and a sustaining first cause is not refuted simply because measurement outcomes are probabilistic; neither does quantum theory independently prove God.",
+            "fr": "Les interprétations de la mécanique quantique divergent : certaines admettent l'indétermination, d'autres conservent le déterminisme, toutes reposant sur une description mathématique physique. La distinction thomiste entre causes contingentes et cause première ne s'effondre pas parce que des résultats sont probabilistes ; la mécanique quantique ne prouve pas davantage Dieu."
+          },
+          "source_ids": [
+            "SEPQM",
+            "AQU2"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ATH-009",
+      "original_title_candidate": "Does cosmic fine-tuning prove God?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Cosmological fine-tuning highlights sensitivity of life-permitting conditions to physical constants and initial conditions. Design is one possible philosophical explanation, alongside chance, future physical theories and multiverse proposals; reliable probabilities across possible universes are themselves contested. Therefore fine-tuning may contribute to a cumulative argument but does not mathematically demonstrate God or establish specifically Christian revelation.",
+            "fr": "Le réglage fin cosmologique désigne la sensibilité des conditions favorables à la vie aux constantes physiques et conditions initiales. Un dessein est une explication philosophique possible, à côté du hasard, de théories physiques futures ou de scénarios multivers ; les probabilités entre univers possibles font elles-mêmes débat. L'argument peut participer à un faisceau de raisons, non démontrer mathématiquement Dieu ni la Révélation chrétienne."
+          },
+          "source_ids": [
+            "SEPFINE",
+            "AQU2"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "A fine-tuning argument must specify its probability measure and range of alternative conditions; without them it cannot supply a numerical likelihood of design. Proposed responses include deeper physical necessity, selection effects and multiverse hypotheses, none of which automatically settles the existence of God. A Catholic argument should acknowledge these live alternatives.",
+            "fr": "L'argument d'ajustement fin doit préciser une mesure de probabilité et l'éventail des conditions alternatives ; sans cela, il ne fournit aucune probabilité numérique démontrée d'un dessein. On lui oppose notamment nécessité physique, effets de sélection et multivers, sans qu'aucune option décide automatiquement de l'existence de Dieu. La défense catholique doit exposer ces alternatives."
+          },
+          "source_ids": [
+            "SEPFINE",
+            "AQU2"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ATH-015",
+      "original_title_candidate": "Does consciousness challenge materialism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Consciousness raises real philosophical questions about subjective experience, intentionality and how mental states relate to physical processes. Materialists propose several serious accounts, so a present explanatory gap does not by itself prove an immaterial soul. Thomistic philosophy instead argues from the nature of intellectual acts and the human person for a spiritual principle; that argument needs independent philosophical defence.",
+            "fr": "La conscience soulève des questions réelles sur l'expérience subjective, l'intentionnalité et les rapports entre états mentaux et processus physiques. Les matérialistes proposent plusieurs explications sérieuses : une lacune scientifique actuelle ne prouve pas à elle seule l'âme immatérielle. La philosophie thomiste argumente plutôt à partir des actes intellectuels et de la personne pour un principe spirituel, qu'il faut défendre philosophiquement."
+          },
+          "source_ids": [
+            "SEPCON",
+            "AQU75"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Materialist theorists propose neural explanations of awareness, while anti-reductionists question whether first-person experience or intentional meaning is thereby captured. This is an open philosophical debate; Aquinas' argument for intellectual activity is a distinct metaphysical case, not an experimentally demonstrated denial of brain dependence.",
+            "fr": "Les matérialistes avancent des explications neuronales de la conscience ; les anti-réductionnistes demandent si l'expérience subjective et l'intentionnalité s'y laissent épuiser. Le débat est philosophique et ouvert ; l'argument thomiste sur l'intellect est métaphysique, non une réfutation expérimentale de la dépendance cérébrale."
+          },
+          "source_ids": [
+            "SEPCON",
+            "AQU75"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ATH-016",
+      "original_title_candidate": "Does evolution make human reason unreliable?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "An evolutionary account of reasoning does not automatically show reason to be unreliable: successful navigation of the world often rewards broadly accurate cognition. Plantinga's evolutionary argument against naturalism instead raises a conditional epistemic challenge about the probability of reliable faculties under unguided evolution and naturalism; critics contest its probability and its assumptions. The disagreement does not amount to a settled scientific disproof of naturalism.",
+            "fr": "Une explication évolutionniste de la raison n'établit pas automatiquement sa non-fiabilité : une cognition relativement juste peut favoriser l'adaptation. L'argument évolutionniste de Plantinga contre le naturalisme pose plutôt une difficulté épistémique conditionnelle sur la probabilité de facultés fiables sous évolution non guidée et naturalisme ; ses prémisses probabilistes sont contestées. Ce débat ne constitue pas une réfutation scientifique définitivement établie du naturalisme."
+          },
+          "source_ids": [
+            "SEPENV",
+            "SEPEPI"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "One evolutionary objection suggests cognition evolved for fitness rather than truth; another notes that accurate perception itself often promotes survival. Neither claim licenses the automatic inference that all reasoning is unreliable, which would undermine the reasoning behind the objection itself. Distinguish a local bias from universal defeat of knowledge.",
+            "fr": "Une objection évolutionniste soutient que la cognition fut sélectionnée pour l'adaptation plutôt que la vérité ; une réponse souligne que des perceptions exactes favorisent souvent la survie. Aucune ne permet de conclure automatiquement à l'absence générale de fiabilité rationnelle, ce qui ruinerait aussi l'argument lui-même. Il faut distinguer biais particuliers et négation universelle du savoir."
+          },
+          "source_ids": [
+            "SEPEPI",
+            "SEPENV"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ATH-018",
+      "original_title_candidate": "What about the Euthyphro dilemma: is something good because God commands it?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "The Euthyphro dilemma asks whether the good is good because God commands it, risking arbitrariness, or God commands it because it is independently good, seemingly limiting divine sovereignty. Classical Thomism replies that God is good essentially, not by obeying an external standard or inventing arbitrary values; created goods participate in divine goodness. This is a substantive metaphysical position, not a one-sentence logical escape from every objection.",
+            "fr": "Le dilemme d'Euthyphron demande si le bien est bon parce que Dieu l'ordonne, au risque de l'arbitraire, ou si Dieu l'ordonne parce qu'il est bon indépendamment de lui, semblant limiter sa souveraineté. Le thomisme classique répond que Dieu est le Bien par essence, sans norme extérieure ni volonté arbitraire ; les biens créés participent de sa bonté. Cette réponse exige une défense métaphysique, non une simple pirouette logique."
+          },
+          "source_ids": [
+            "EUTH",
+            "AQU6"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Aquinas holds that goodness is not an arbitrary external command but belongs to God's own good nature, while created things possess goodness insofar as they participate in being. This differs from saying God obeys an independently superior moral law. Yet Euthyphro still challenges the Catholic philosopher to explain how particular divine commands and human moral knowledge relate.",
+            "fr": "Thomas d'Aquin ne fait pas de la bonté un décret arbitraire extérieur : elle appartient à la nature bonne de Dieu, tandis que les créatures participent à l'être et au bien. Dieu n'obéirait pas ainsi à une loi morale supérieure indépendante. Cependant, l'Euthyphron oblige encore le philosophe catholique à articuler commandements divins et connaissance humaine de la morale."
+          },
+          "source_ids": [
+            "EUTH",
+            "AQU6"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ATH-022",
+      "original_title_candidate": "Why would a loving God remain hidden from sincere seekers?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "Divine hiddenness is a serious argument: why would a perfectly loving personal God permit sincere, nonresistant people to lack belief necessary for a conscious relationship? Some theistic replies appeal to freedom, gradual formation, indirect relationship or reasons unknown to us, but none should presume every unbeliever secretly resists God. Catholic teaching affirms God's universal salvific will while distinguishing imperfect human access to revelation from proof of divine absence.",
+            "fr": "La « discrétion » ou occultation de Dieu soulève une objection sérieuse : pourquoi un Dieu personnel parfaitement aimant laisserait-il des personnes sincères, sans résistance volontaire, manquer de la croyance nécessaire à une relation consciente ? Des réponses invoquent liberté, maturation, relation indirecte ou motifs inconnus ; aucune ne doit accuser a priori tout incroyant de refus caché. La doctrine catholique affirme la volonté salvifique universelle de Dieu sans confondre difficulté d'accès à la révélation et preuve de son absence."
+          },
+          "source_ids": [
+            "SEPHID",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "The hiddenness objection concerns genuinely nonresistant nonbelievers, not merely those who refuse a known revelation. Catholic appeals to freedom, conscience and imperfect knowledge may offer possible explanations but do not establish why any particular sincere seeker lacks belief. Avoid presuming insincerity or declaring an individual condemned.",
+            "fr": "L'objection de la cachéité divine vise les incroyants réellement non résistants, non ceux qui rejetteraient délibérément une révélation connue. Liberté, conscience et connaissance imparfaite peuvent éclairer le débat catholique sans expliquer avec certitude chaque cas. Il faut éviter de présumer l'insincérité d'une personne ou de prononcer sa condamnation."
+          },
+          "source_ids": [
+            "SEPHID",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    },
+    {
+      "id": "ATH-025",
+      "original_title_candidate": "If religion can be explained evolutionarily, has it been debunked?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "doctrinal_claim_opposition_and_critical_comparison",
+          "text": {
+            "en": "An evolutionary or cognitive explanation of why people form religious beliefs does not, by itself, establish those beliefs false: this would confuse a belief's causal origin with its truth. But a well-supported account showing that a given belief-forming process systematically ignores relevant evidence could undermine its warrant. Religious claims must therefore still be assessed through independent historical, philosophical and experiential arguments rather than defended or dismissed solely on origin.",
+            "fr": "Une explication évolutionniste ou cognitive de la formation des croyances religieuses n'établit pas à elle seule leur fausseté : ce serait confondre genèse causale et vérité. Cependant, démontrer qu'un processus de croyance ignore systématiquement les preuves pertinentes pourrait affaiblir sa justification. Il faut donc examiner les affirmations religieuses par des arguments historiques, philosophiques et expérientiels indépendants, non les accepter ou les rejeter du seul fait de leur origine."
+          },
+          "source_ids": [
+            "SEPENV",
+            "SEPEPI"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "original_position_rebuttal_and_evidence_limit",
+          "text": {
+            "en": "Showing that a belief has evolutionary or cultural causes is a genetic explanation, not automatically a refutation of its truth. A genuine debunking argument must show that those causes systematically bypass truth-tracking evidence. The same standard applies to religious and nonreligious convictions, and empirical origins alone cannot resolve their metaphysical truth.",
+            "fr": "Établir qu'une croyance possède des causes évolutives ou culturelles relève de son explication génétique, non de sa réfutation automatique. Un argument de démystification doit montrer que ces causes évitent systématiquement les preuves sensibles à la vérité. Le critère vaut pour croyances religieuses et non religieuses ; leur origine empirique ne règle pas à elle seule leur vérité métaphysique."
+          },
+          "source_ids": [
+            "SEPENV",
+            "SEPEPI"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage locators, primary source context, opponent and Catholic theological accuracy, translation, historical original-question wording and publication rights require independent assessment. Second sourced paragraph added for source-context comparison; no final approval.",
+      "canonical_navigation_action": "RECONCILE_WITH_EXISTING_CANONICAL_OWNER_NO_NEW_PUBLIC_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NOT_APPROVED"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

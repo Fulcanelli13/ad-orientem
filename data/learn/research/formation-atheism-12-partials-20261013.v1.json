@@ -1,0 +1,379 @@
+{
+  "schema": "AO_FORMATION_ATHEISM_12_PARTIALS_V1",
+  "date": "2026-10-13",
+  "status": "BILINGUAL_RESEARCH_NOT_APPROVED",
+  "source_registry": [
+    {
+      "id": "AQU2",
+      "title": "Thomas Aquinas, Summa theologiae I q.2 a.3, the Five Ways",
+      "url": "https://www.newadvent.org/summa/1002.htm",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC36",
+      "title": "Catechism §§36–38, God knowable by reason and obstacles to certainty",
+      "url": "https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_one/iii_the_knowledge_of_god_according_to_the_church.index.html",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "HG",
+      "title": "Pius XII, Humani generis §§36–37",
+      "url": "https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEP-EVIL",
+      "title": "Stanford Encyclopedia of Philosophy, Problem of Evil",
+      "url": "https://plato.stanford.edu/entries/evil/",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEP-ATHE",
+      "title": "Stanford Encyclopedia of Philosophy, Atheism and Agnosticism",
+      "url": "https://plato.stanford.edu/entries/atheism-agnosticism/",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEP-TELE",
+      "title": "Stanford Encyclopedia of Philosophy, Teleological Arguments for God's Existence",
+      "url": "https://plato.stanford.edu/entries/teleological-arguments/",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AQU94",
+      "title": "Thomas Aquinas, Summa theologiae I-II q.94, natural law",
+      "url": "https://www.newadvent.org/summa/2094.htm",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SEP-SCI",
+      "title": "Stanford Encyclopedia of Philosophy, Scientific Method",
+      "url": "https://plato.stanford.edu/entries/scientific-method/",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "ATH-001",
+      "original_title_candidate": "What are atheism, agnosticism, naturalism and materialism?",
+      "owner_reuse": [
+        "APOL-049"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Atheism is typically lack of belief in or denial of God; agnosticism concerns whether God's existence can be known; philosophical naturalism argues reality is exhausted by nature; materialism makes matter or physical reality fundamental. These positions overlap but are not synonyms: a person can be agnostic without affirming physicalism, or reject religion while defending objective ethics. Catholic debate must identify the opponent's actual thesis.",
+            "fr": "L'athéisme est ordinairement l'absence ou le refus de croyance en Dieu ; l'agnosticisme porte sur la possibilité de connaître son existence ; le naturalisme philosophique tient la nature pour le tout du réel ; le matérialisme fait de la matière ou du physique le fondement. Ces positions se recoupent sans être synonymes : on peut être agnostique sans être physicaliste ou non croyant tout en défendant une morale objective. Le débat catholique doit identifier la thèse réellement soutenue."
+          },
+          "source_ids": [
+            "SEP-ATHE",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-003",
+      "original_title_candidate": "Does ‘proof of God’ mean mathematical demonstration compelling every reasonable person?",
+      "owner_reuse": [
+        "APOL-001"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Catholic claims of demonstrability do not imply a mathematical theorem that removes every psychological or intellectual obstacle to assent. Thomistic arguments start from disputed metaphysical principles such as act, potency and causal dependence; their logical force depends on those premises. The Catechism §§36–38 distinguishes reason's capacity in principle from practical difficulties in knowing God. Respectable disagreement over an argument is not proof that reason is incapable of natural theology.",
+            "fr": "Les démonstrations catholiques ne sont pas des théorèmes mathématiques supprimant tout obstacle psychologique ou intellectuel. Les voies thomistes partent de principes métaphysiques discutés, tels qu'acte, puissance et dépendance causale ; leur portée logique dépend de ces prémisses. Le Catéchisme §§36–38 distingue capacité de principe de la raison et difficultés concrètes de la connaissance de Dieu. La contestation d'un argument ne rend pas pour autant toute théologie naturelle impossible."
+          },
+          "source_ids": [
+            "AQU2",
+            "CCC36"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-004",
+      "original_title_candidate": "What is Aquinas actually arguing in the Five Ways?",
+      "owner_reuse": [
+        "APOL-001"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Aquinas gives five distinct metaphysical ways in Summa I, q.2, a.3: from motion as actualization of potency, ordered efficient causes, contingent beings requiring a necessary foundation, degrees of perfection, and purposive ordering in nature. These are not simply five versions of 'everything had a first moment', nor do they directly prove all doctrines of the Trinity. Each requires separate assessment of its reasoning.",
+            "fr": "Saint Thomas expose cinq voies distinctes dans la Somme I, q.2, a.3 : à partir du mouvement comme passage de puissance à acte, des causes efficientes ordonnées, des êtres contingents qui requièrent un fondement nécessaire, des degrés de perfection et de l'ordre finalisé de la nature. Ce ne sont pas cinq variantes de « tout a commencé à un premier instant » ni des preuves immédiates de la Trinité. Il faut examiner séparément chaque raisonnement."
+          },
+          "source_ids": [
+            "AQU2",
+            "CCC36"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-005",
+      "original_title_candidate": "Who created God?",
+      "owner_reuse": [
+        "APOL-001"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Aquinas does not claim that everything whatever needs a creator; his causal arguments concern dependent, changing or contingent realities. God, as a nondependent necessary source of being, is not treated as one more created item in the series. The proper challenge is whether such a necessary being has been demonstrated, not the verbal demand to apply a premise Aquinas never states ('every being has a cause') to God.",
+            "fr": "Saint Thomas n'affirme pas que tout être sans exception doit avoir un créateur ; ses raisonnements portent sur les réalités dépendantes, changeantes ou contingentes. Dieu, comme source nécessaire et non dépendante de l'être, n'est pas un élément créé de la série. L'objection pertinente est de demander si un tel être nécessaire est réellement démontré, non d'appliquer à Dieu la prémisse « tout être a une cause », que Thomas n'énonce pas."
+          },
+          "source_ids": [
+            "AQU2"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-006",
+      "original_title_candidate": "Could an eternal universe remove the need for God?",
+      "owner_reuse": [
+        "APOL-001"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Even if the physical cosmos had no temporal first moment, a Thomistic argument from ongoing dependence could still ask why contingent or actualizing realities exist at all. The Five Ways do not all assume a scientifically dated cosmic beginning. Conversely, a philosophical first cause is not established merely by asserting that an infinite temporal past is impossible; the metaphysical premises must be defended.",
+            "fr": "Même si le cosmos physique ne possédait aucun premier instant, une voie thomiste fondée sur la dépendance actuelle demanderait pourquoi les réalités contingentes ou actualisées existent. Les cinq voies ne présupposent pas toutes un commencement cosmique scientifiquement daté. Inversement, affirmer seulement l'impossibilité d'un passé temporel infini ne démontre pas encore une cause première : les prémisses métaphysiques exigent leur justification."
+          },
+          "source_ids": [
+            "AQU2",
+            "CCC36"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-007",
+      "original_title_candidate": "Does the Big Bang prove creation by God?",
+      "owner_reuse": [
+        "APOL-001"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Big Bang cosmology models the hot early expansion of our observable universe; it does not by itself demonstrate creation ex nihilo by a personal God or determine what, if anything, preceded the modeled epoch. Catholic creation means the dependence of all finite being on God, distinct from a particular physical chronology. It is therefore equally wrong to turn the Big Bang into a ready-made proof of Genesis or to claim that cosmology has disproved metaphysical creation.",
+            "fr": "La cosmologie du Big Bang décrit l'expansion de l'univers observable depuis un état initial chaud ; elle ne démontre pas à elle seule la création ex nihilo par un Dieu personnel, ni ne décide de ce qui précède éventuellement l'époque modélisée. Pour le catholicisme, la création signifie dépendance de tout être fini envers Dieu, distincte d'une chronologie physique déterminée. Il serait faux aussi bien de présenter le Big Bang comme preuve immédiate de la Genèse que de croire que la cosmologie réfute la création métaphysique."
+          },
+          "source_ids": [
+            "CCC36",
+            "AQU2"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-010",
+      "original_title_candidate": "Did Darwin destroy the argument from design?",
+      "owner_reuse": [
+        "APOL-001",
+        "APOL-002"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Darwinian natural selection undermines simple analogies from biological complexity to a humanlike designer assembling organs, since cumulative natural processes can generate adaptation. It does not on its own answer the distinct metaphysical question of why ordered natural causes and intelligible laws exist. Catholic doctrine permits serious study of biological evolution while affirming immediate creation of spiritual souls (Humani generis §36). A sound apologetic argument must not exploit scientific ignorance.",
+            "fr": "La sélection naturelle darwinienne affaiblit les analogies simplistes entre complexité biologique et artisan assemblant des organes : des processus naturels cumulatifs peuvent produire des adaptations. Elle ne répond pas à elle seule à la question métaphysique de l'existence des causes naturelles ordonnées et des lois intelligibles. La doctrine catholique permet l'étude sérieuse de l'évolution tout en affirmant la création immédiate des âmes spirituelles (Humani generis §36). Une apologétique solide ne doit pas exploiter les lacunes scientifiques."
+          },
+          "source_ids": [
+            "SEP-TELE",
+            "HG",
+            "AQU2"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-013",
+      "original_title_candidate": "Has science disproved God?",
+      "owner_reuse": [
+        "APOL-001",
+        "APOL-056"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Experimental science has explained many phenomena once attributed to direct supernatural intervention, but its success within measurable natural processes does not by itself prove that nothing beyond nature exists. The existence of God, as conceived in classical natural theology, is not a rival laboratory hypothesis. That distinction protects metaphysical reasoning but also prevents believers from labelling every scientifically unexplained event a miracle.",
+            "fr": "Les sciences expérimentales ont expliqué bien des phénomènes autrefois attribués à des interventions surnaturelles directes, mais leur succès dans l'étude des processus naturels mesurables ne prouve pas, par lui-même, qu'aucune réalité ne dépasse la nature. Le Dieu de la théologie naturelle classique n'est pas une hypothèse de laboratoire rivale. Cette distinction protège la métaphysique sans autoriser le croyant à qualifier de miracle chaque phénomène encore inexpliqué."
+          },
+          "source_ids": [
+            "SEP-SCI",
+            "CCC36"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-014",
+      "original_title_candidate": "What is scientism?",
+      "owner_reuse": [
+        "APOL-001"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Scientism is the philosophical claim that empirical science is the sole—or sole reliable—source of genuine knowledge, not the legitimate practice of science itself. Such a claim is controversial because logical, mathematical, ethical and metaphysical propositions are not simply laboratory results. Catholic thought can welcome rigorous science while denying an unargued exclusion of nonempirical rational inquiry.",
+            "fr": "Le scientisme est la thèse philosophique selon laquelle la science empirique serait la seule — ou la seule fiable — source de véritable connaissance, non la pratique légitime des sciences. Cette thèse est contestable, car les propositions logiques, mathématiques, éthiques et métaphysiques ne sont pas de simples résultats expérimentaux. La pensée catholique accueille les sciences rigoureuses sans exclure arbitrairement la recherche rationnelle non empirique."
+          },
+          "source_ids": [
+            "SEP-SCI",
+            "CCC36"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-017",
+      "original_title_candidate": "Does objective morality require God?",
+      "owner_reuse": [
+        "APOL-050",
+        "APOL-049"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "The question is not whether atheists can behave well—they plainly can—or whether a religious command is required to recognize a moral duty. A Thomistic natural-law argument holds objective human goods intelligible to reason and ultimately grounded in the created order and its divine source. Secular moral realists propose competing accounts of objectivity without God. One must assess the grounding arguments rather than infer God's existence immediately from the fact that some acts are wrong.",
+            "fr": "La question n'est pas de savoir si les athées peuvent bien agir — ils le peuvent manifestement — ou s'il faut un ordre religieux pour reconnaître un devoir moral. Le droit naturel thomiste tient certains biens humains pour intelligibles à la raison et ultimement fondés sur l'ordre créé et son auteur. Des réalistes moraux laïques proposent d'autres fondements de l'objectivité sans Dieu. Il faut examiner ces arguments, non déduire immédiatement l'existence de Dieu du seul fait que certaines actions sont mauvaises."
+          },
+          "source_ids": [
+            "AQU94",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-019",
+      "original_title_candidate": "Does evil logically disprove an omnipotent, good God?",
+      "owner_reuse": [
+        "APOL-003"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "A logical argument from evil must show that the existence of any evil is strictly incompatible with a God who is all-good and all-powerful. The mere occurrence of suffering is not a formal contradiction if there is a possible morally sufficient reason for its permission; a possible defense does not, however, establish that a specific tragedy was justified. The evidential problem—why there is so much seemingly gratuitous suffering—is distinct and remains serious.",
+            "fr": "Un argument logique du mal doit démontrer que l'existence d'un mal quelconque est strictement incompatible avec un Dieu infiniment bon et tout-puissant. La souffrance ne constitue pas une contradiction formelle s'il est possible que Dieu ait une raison moralement suffisante de la permettre ; une défense possible ne prouve pourtant pas qu'une tragédie déterminée était justifiée. Le problème probatoire — pourquoi tant de souffrance apparemment gratuite — est distinct et demeure sérieux."
+          },
+          "source_ids": [
+            "SEP-EVIL",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    },
+    {
+      "id": "ATH-021",
+      "original_title_candidate": "Does free will solve the problem of evil?",
+      "owner_reuse": [
+        "APOL-003"
+      ],
+      "status": "BILINGUAL_RESEARCH_ENRICHMENT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "precise_philosophical_argument_objection_and_catholic_response",
+          "text": {
+            "en": "Free will can explain the possibility of moral evils caused by responsible creatures, but it does not by itself explain earthquakes, genetic disease, predation or animal suffering before humans. Christian providence and the hope of redemption extend beyond free-will defense, yet do not license attributing every tragedy to a victim's sin. A responsible Catholic response must distinguish moral from natural evil and retain the limits of proposed theodicies.",
+            "fr": "Le libre arbitre peut expliquer la possibilité de maux moraux imputables aux créatures responsables, mais ne suffit pas à expliquer séismes, maladies génétiques, prédation et souffrance animale avant l'homme. La providence chrétienne et l'espérance de rédemption dépassent cette défense sans autoriser à attribuer chaque tragédie au péché de sa victime. La réponse catholique distingue mal moral et mal naturel, en reconnaissant les limites de toute théodicée."
+          },
+          "source_ids": [
+            "SEP-EVIL",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "REUSE_EXISTING_OWNER_WITH_QUESTION_ANCHOR",
+      "publication_allowed": false
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

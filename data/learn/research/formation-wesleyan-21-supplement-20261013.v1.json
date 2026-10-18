@@ -1,0 +1,579 @@
+{
+  "schema": "AO_FORMATION_WESLEYAN_21_RESEARCH_V1",
+  "date": "2026-10-13",
+  "status": "SOURCE_LINKED_BILINGUAL_DRAFT_NOT_APPROVED",
+  "source_registry": [
+    {
+      "id": "UMC-ART",
+      "title": "United Methodist Church, Articles of Religion",
+      "url": "https://www.umc.org/en/content/articles-of-religion",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-CONF",
+      "title": "United Methodist Church, Evangelical United Brethren Confession of Faith",
+      "url": "https://www.umc.org/en/content/confession-of-faith",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-GRACE",
+      "title": "United Methodist Church, Wesleyan Means of Grace",
+      "url": "https://www.umc.org/en/content/the-wesleyan-means-of-grace",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-BAPT",
+      "title": "United Methodist Church, By Water and the Spirit",
+      "url": "https://www.umc.org/en/content/by-water-and-the-spirit-a-united-methodist-understanding-of-baptism",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-HOLY",
+      "title": "United Methodist Church, This Holy Mystery: Holy Communion",
+      "url": "https://www.umc.org/-/media/umc-media/2013/12/19/01/24/this-holy-mystery-communion.pdf",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-QUAD",
+      "title": "United Methodist Church, Wesleyan Quadrilateral",
+      "url": "https://www.umc.org/en/content/glossary-wesleyan-quadrilateral-the",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-PERF",
+      "title": "Methodist Church of Great Britain, Christian Perfection",
+      "url": "https://www.methodist.org.uk/exploring-faith/answers-to-questions/what-do-christians-believe/what-is-christian-perfection/",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-HIST",
+      "title": "United Methodist Church, Foundational Documents",
+      "url": "https://www.umc.org/en/content/foundational-documents",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-WIT",
+      "title": "United Methodist Church, Holy Spirit at Work",
+      "url": "https://www.umc.org/en/content/the-holy-spirit-at-work-in-your-life",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-GRACE3",
+      "title": "United Methodist Church, Prevenient, Justifying and Sanctifying Grace",
+      "url": "https://www.umc.org/en/content/what-we-believe-what-it-means-to-be-united-methodist",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UMC-COM",
+      "title": "United Methodist Church, Wesley's Constant Communion",
+      "url": "https://www.umc.org/content/wesleys-take-the-web-constant-communion",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "WES-001",
+      "original_title_candidate": "What is Methodism historically?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Methodism began in the eighteenth-century Anglican revival led especially by John and Charles Wesley, combining evangelical preaching, disciplined small groups, prayer, works of mercy and regular Communion. It later formed several autonomous churches; its classical distinctive is sanctification understood as growth in holy love.",
+            "fr": "Le méthodisme naquit dans le réveil anglican du XVIIIe siècle autour de John et Charles Wesley, unissant prédication évangélique, petits groupes disciplinés, prière, œuvres de miséricorde et communion fréquente. Il donna ensuite plusieurs Églises autonomes ; son accent classique est la sanctification comme croissance dans l'amour saint."
+          },
+          "source_ids": [
+            "UMC-HIST",
+            "UMC-GRACE"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-002",
+      "original_title_candidate": "Is ‘Methodist’ synonymous with the United Methodist Church?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "No. The United Methodist Church is one denomination among several Methodist and Wesleyan bodies worldwide, including the Methodist Church of Great Britain and holiness-related traditions. Its present discipline should not be projected onto every historic Methodist community.",
+            "fr": "Non. L'Église méthodiste unie n'est qu'une dénomination parmi plusieurs communautés méthodistes ou wesleyennes, dont l'Église méthodiste britannique et les traditions de sainteté. Sa discipline actuelle ne représente pas automatiquement toute la tradition méthodiste historique."
+          },
+          "source_ids": [
+            "UMC-HIST",
+            "UMC-PERF"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-003",
+      "original_title_candidate": "Is Wesleyan theology Calvinist?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Classic Wesleyan theology is generally Arminian rather than Calvinist in its treatment of universal grace and the possibility of resisting it. This does not mean that Wesley denied original sin or taught that unaided human effort saves; his thought emphasizes prior divine grace.",
+            "fr": "La théologie wesleyenne classique est généralement arminienne plutôt que calviniste sur l'universalité de la grâce et la possibilité de lui résister. Wesley ne nie pas pour autant le péché originel et n'enseigne pas le salut par les seuls efforts humains : il insiste sur la grâce divine préalable."
+          },
+          "source_ids": [
+            "UMC-GRACE3",
+            "UMC-ART"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-004",
+      "original_title_candidate": "Does Wesleyanism therefore teach that man saves himself by free will?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "No. Wesleyan freedom to respond to the Gospel is itself made possible by prevenient grace, God's initiative before human merit or decision. Therefore describing it as simple self-salvation by autonomous free will misrepresents a central Methodist distinction.",
+            "fr": "Non. La liberté de répondre à l'Évangile est elle-même rendue possible par la grâce prévenante, initiative de Dieu précédant décision et mérite humains. La présenter comme un autosalut par un libre arbitre autonome déforme donc une distinction centrale du méthodisme."
+          },
+          "source_ids": [
+            "UMC-GRACE3",
+            "UMC-BAPT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-005",
+      "original_title_candidate": "What is prevenient grace?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Prevenient grace is the unearned action of God preceding conscious conversion, awakening and enabling a person to turn to God. In Wesleyan teaching it is universal in scope, while saving response is not coerced. Catholic theology also insists grace comes first but develops a different theological account of cooperation.",
+            "fr": "La grâce prévenante est l'action gratuite de Dieu avant la conversion consciente, éveillant l'homme et le rendant capable de se tourner vers lui. Elle est largement offerte dans le wesleyanisme sans contraindre la réponse. Le catholicisme affirme également la priorité de la grâce selon une autre synthèse de la coopération."
+          },
+          "source_ids": [
+            "UMC-GRACE3",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-006",
+      "original_title_candidate": "Is Wesleyan grace resistible?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Classical Wesleyanism holds that grace can be resisted: God calls and assists without turning human response into a compelled act. This is unlike strict Reformed effectual calling, though both accounts affirm that no sinner initiates salvation independently of God.",
+            "fr": "Le wesleyanisme classique estime que l'on peut résister à la grâce : Dieu appelle et aide sans transformer la réponse humaine en contrainte. Cela diffère de l'appel efficace réformé strict, tout en conservant dans les deux cas l'impossibilité de commencer le salut sans Dieu."
+          },
+          "source_ids": [
+            "UMC-GRACE3",
+            "UMC-ART"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-010",
+      "original_title_candidate": "Can a justified Christian lose salvation?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Methodist teaching traditionally recognizes the possibility of falling from grace through later sin and unbelief, while offering renewed repentance and pardon. This differs from the classical Reformed guarantee of the elect's final perseverance; Catholic doctrine likewise teaches that grave sin can destroy sanctifying grace.",
+            "fr": "La tradition méthodiste admet la possibilité de déchoir de la grâce par le péché ou l'incrédulité ultérieurs, tout en proposant un repentir et un pardon renouvelés. Elle se distingue ainsi de la garantie réformée classique de persévérance finale ; le catholicisme enseigne également que le péché grave peut détruire la grâce sanctifiante."
+          },
+          "source_ids": [
+            "UMC-ART",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-011",
+      "original_title_candidate": "What is Wesley’s ‘witness of the Spirit’?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Wesley's 'witness of the Spirit' means an inward assurance of God's filial love and forgiveness, associated with Romans 8 and distinct from merely repeating words of conversion. Wesley also looked to the fruits of faith, hope and charity, so private consolation is not an infallible guarantee of final salvation.",
+            "fr": "Le « témoignage de l'Esprit » chez Wesley désigne une assurance intérieure de l'amour filial de Dieu et du pardon, liée à Romains 8 et distincte de la simple récitation d'une formule. Wesley examinait aussi les fruits de foi, d'espérance et de charité ; une consolation privée n'est pas une garantie infaillible du salut final."
+          },
+          "source_ids": [
+            "UMC-WIT",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-012",
+      "original_title_candidate": "What is sanctification in Wesleyanism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Wesleyan sanctification is God's gracious work transforming the believer after conversion toward holy love and actual works of mercy. It is neither mere outward moral polish nor the assertion that justification has no interior consequences.",
+            "fr": "La sanctification wesleyenne est l'œuvre de la grâce transformant le fidèle après la conversion vers l'amour saint et les œuvres réelles de miséricorde. Elle n'est ni une simple amélioration extérieure des mœurs ni l'affirmation que la justification n'a aucune conséquence intérieure."
+          },
+          "source_ids": [
+            "UMC-CONF",
+            "UMC-GRACE"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-013",
+      "original_title_candidate": "What is ‘entire sanctification’ or Christian perfection?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Entire sanctification or Christian perfection is described in Methodist doctrine as a heart made whole in love for God and neighbor, potentially received in this life. It is not the same as metaphysical perfection or divine impeccability, and different Wesleyan bodies describe the experience differently.",
+            "fr": "La sanctification entière ou perfection chrétienne est décrite dans la doctrine méthodiste comme un cœur entièrement orienté vers l'amour de Dieu et du prochain, pouvant être reçu ici-bas. Ce n'est ni la perfection métaphysique ni l'impeccabilité divine ; les communautés wesleyennes en décrivent diversement l'expérience."
+          },
+          "source_ids": [
+            "UMC-CONF",
+            "UMC-PERF"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-014",
+      "original_title_candidate": "Does Christian perfection mean being incapable of sin, error or ignorance?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "No. The Methodist Confession of Faith expressly says entire sanctification does not remove human infirmity, ignorance, mistakes or the possibility of further sin. Accusing Wesleyan perfectionism of necessarily claiming omniscience or sinlessness beyond temptation misstates the actual confession.",
+            "fr": "Non. La Confession de foi méthodiste précise que la sanctification entière ne supprime ni infirmité, ni ignorance, ni erreur, ni possibilité de pécher de nouveau. Accuser cette doctrine d'impliquer nécessairement omniscience ou impeccabilité face à toute tentation contredit le texte confessionnel."
+          },
+          "source_ids": [
+            "UMC-CONF"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-015",
+      "original_title_candidate": "Do all Methodists understand entire sanctification identically?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "No. Historic Wesleyan holiness churches and contemporary Methodist bodies vary over whether entire sanctification is understood as a distinct crisis experience, gradual growth or perfect love described without one common formula. A denominational standard must be named before assessing a particular account.",
+            "fr": "Non. Les Églises de sainteté wesleyennes et les communautés méthodistes contemporaines divergent : la sanctification entière peut être conçue comme expérience distincte, croissance progressive ou amour parfait sans formule commune. Il faut identifier le texte confessionnel propre avant de juger une doctrine précise."
+          },
+          "source_ids": [
+            "UMC-CONF",
+            "UMC-PERF"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-016",
+      "original_title_candidate": "What are the ‘means of grace’?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Wesley's means of grace are practices through which God nurtures faith: Scripture, prayer, fasting, Communion and other works of piety and mercy. They are not attempts to earn the first grace by human achievement. The theological difference with Catholicism concerns the sacramental economy and authoritative Church ministry.",
+            "fr": "Les moyens de grâce chez Wesley comprennent Écriture, prière, jeûne, communion et œuvres de piété et de miséricorde par lesquels Dieu nourrit la foi. Ils ne visent pas à acheter la grâce première par l'effort humain. Le désaccord catholique porte sur l'économie sacramentelle et le ministère ecclésial institué."
+          },
+          "source_ids": [
+            "UMC-GRACE",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-017",
+      "original_title_candidate": "Did Wesley encourage frequent Communion?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Yes. Wesley urged frequent reception of the Lord's Supper in his sermon on constant Communion, treating it as spiritual nourishment and a means of grace. Methodist practice may differ in frequency, but weekly or frequent Communion is not alien to its foundations.",
+            "fr": "Oui. Wesley exhortait à recevoir fréquemment la Cène dans son sermon sur la communion constante, nourriture spirituelle et moyen de grâce. Les pratiques méthodistes varient aujourd'hui, mais la communion hebdomadaire ou fréquente n'est pas étrangère à ses origines."
+          },
+          "source_ids": [
+            "UMC-COM",
+            "UMC-GRACE"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-018",
+      "original_title_candidate": "How many sacraments does historic Methodism recognize?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Historic Methodism recognizes two Gospel sacraments, Baptism and the Lord's Supper, as in its Articles of Religion. This differs from the Catholic seven-sacrament definition, despite retaining other significant rites and ministerial practices.",
+            "fr": "Le méthodisme historique reconnaît deux sacrements évangéliques, Baptême et Cène, selon ses Articles de religion. Cela diffère de la définition catholique des sept sacrements, même si d'autres rites importants et ministères subsistent."
+          },
+          "source_ids": [
+            "UMC-ART",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-019",
+      "original_title_candidate": "Do Methodists baptize infants?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Yes. Methodists historically baptize infants as well as adult converts; the United Methodist baptismal statement grounds infant Baptism in grace preceding conscious faith and participation in the covenant community. It should not be confused with Baptist believer-only Baptism.",
+            "fr": "Oui. Les méthodistes baptisent historiquement les enfants comme les adultes convertis ; la déclaration méthodiste unie fonde le baptême des petits enfants sur la grâce précédant la foi consciente et leur participation à la communauté de l'alliance. Il ne faut pas confondre cette doctrine avec le baptisme des seuls croyants professants."
+          },
+          "source_ids": [
+            "UMC-BAPT"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-020",
+      "original_title_candidate": "Does Methodist Baptism mean exactly what Catholic Baptism means?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "A Methodist baptism performed with water and the Trinitarian formula is generally recognized as valid by the Catholic Church, so validity must be distinguished from differences in the theological interpretation of regeneration and ecclesial membership. Saying the rites mean exactly the same thing would overlook those differences.",
+            "fr": "Un baptême méthodiste célébré avec l'eau et la formule trinitaire est généralement reconnu comme valide par l'Église catholique. Il faut donc distinguer la validité du sacrement des interprétations divergentes de la régénération et de l'appartenance ecclésiale. Dire que les rites signifient exactement la même chose ignorerait ces divergences."
+          },
+          "source_ids": [
+            "UMC-BAPT",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-021",
+      "original_title_candidate": "Is Methodist Communion simply a symbolic memorial?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Methodist Communion is not necessarily merely symbolic remembrance. The United Methodist statement This Holy Mystery understands Eucharist as a means of grace and real communion with the risen Lord while rejecting Catholic transubstantiation. Methodist practice can vary, but a bare-memorialist caricature is inaccurate.",
+            "fr": "La Cène méthodiste n'est pas nécessairement un pur souvenir symbolique. La déclaration méthodiste unie This Holy Mystery y voit un moyen de grâce et une communion réelle avec le Seigneur ressuscité, sans adopter la transsubstantiation catholique. Les pratiques varient, mais un mémorialisme nu en donne une caricature."
+          },
+          "source_ids": [
+            "UMC-HOLY",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-022",
+      "original_title_candidate": "Does Methodism accept transubstantiation or Eucharistic adoration?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Historic Methodist Articles reject transubstantiation, and Methodist Communion does not prescribe Catholic Eucharistic adoration of Christ substantially present under the species. This does not mean the Eucharist is unimportant or that God cannot truly strengthen believers through it.",
+            "fr": "Les Articles méthodistes historiques rejettent la transsubstantiation, et la Cène méthodiste ne prescrit pas l'adoration eucharistique catholique du Christ substantiellement présent sous les espèces. Cela ne signifie ni que l'Eucharistie est insignifiante ni que Dieu ne fortifie pas réellement les croyants par elle."
+          },
+          "source_ids": [
+            "UMC-ART",
+            "UMC-HOLY",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-023",
+      "original_title_candidate": "Does Methodism accept the Catholic sacrifice of the Mass, Purgatory and invocation of saints?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "Historic Methodist Articles reject the Roman doctrines of Purgatory, invocation of saints and the sacrifice of Masses as they were polemically described during the Reformation. Catholic doctrine must be stated from Trent and the Catechism rather than accepted in that polemical description; both sides affirm the uniqueness of Christ's sacrifice.",
+            "fr": "Les Articles méthodistes historiques rejettent les doctrines romaines du Purgatoire, de l'invocation des saints et des sacrifices des messes telles que la Réforme les décrivait polémique­ment. La doctrine catholique doit être établie d'après Trente et le Catéchisme, non d'après cette description polémique ; les deux camps professent l'unicité du sacrifice du Christ."
+          },
+          "source_ids": [
+            "UMC-ART",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    },
+    {
+      "id": "WES-024",
+      "original_title_candidate": "What is the ‘Wesleyan Quadrilateral’?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "wesleyan_primary_doctrine_and_catholic_comparison",
+          "text": {
+            "en": "The Wesleyan Quadrilateral names Scripture, tradition, reason and experience as resources for Christian discernment, with Scripture primary in United Methodist teaching. Wesley did not himself create this four-sided technical formula; it is a later explanatory framework, not a claim of four equal and infallible authorities.",
+            "fr": "Le quadrilatère wesleyen désigne Écriture, tradition, raison et expérience comme ressources du discernement chrétien, l'Écriture gardant la primauté chez les méthodistes unis. Wesley n'a pas lui-même forgé cette formule technique à quatre côtés : c'est un cadre explicatif postérieur, non quatre autorités également infaillibles."
+          },
+          "source_ids": [
+            "UMC-QUAD",
+            "UMC-HIST"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Sources and French not independently certified; not for publication."
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

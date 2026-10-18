@@ -1,0 +1,1486 @@
+{
+  "schema": "AO_FORMATION_15_NEW_HISTORICAL_TITLES_ANSWER_ADEQUACY_V1",
+  "date": "2026-10-14",
+  "status": "EDITORIAL_ASSESSMENT_PLUS_RESEARCH_DRAFTS_NOT_APPROVED",
+  "provenance": "15 additional October 7 indexed historical title candidates, not byte-certified as original conversation",
+  "current_crosswalk_519_path": "data/learn/formation-historical-answer-crosswalk-20261013.v1.json",
+  "current_crosswalk_519_blob_sha": "6e55d43078bae00a2bda50536b9c956d4f45b3f1",
+  "new_15_indexed_title_delta_path": "research/apologetics-question-recovery/CONVERSATION_QUESTION_DELTA_20261014.v2.json",
+  "new_15_indexed_title_delta_blob_sha": "9d766164eca17d1f6b5cfe949cf93aa7b383128a",
+  "checks": "2 existing direct canonical answers, 4 partial cases and 9 question-specific gaps. Draft 13 only; do not duplicate direct APOL-020 answers.",
+  "counts": {
+    "direct": 2,
+    "partial": 4,
+    "question_specific_gap": 9,
+    "bilingual_research_drafts": 13,
+    "bilingual_paragraphs": 26
+  },
+  "original_title_count_in_frozen_crosswalk": 519,
+  "extra_provisional_title_candidates": 15,
+  "total_indexed_candidate_titles": 534,
+  "expected_open_title_positions_remaining": 80,
+  "canonical_owner_source_of_truth_unchanged": true,
+  "legacy_crosswalk_519_unchanged": true,
+  "this_batch_independent_original_source_certifications": 0,
+  "this_batch_independent_theological_certifications": 0,
+  "this_batch_independent_native_french_certifications": 0,
+  "publication_allowed": false,
+  "source_registry": [
+    {
+      "id": "CHAL",
+      "title": "Council of Chalcedon 451: dogmatic acts and canon 28",
+      "url": "https://www.newadvent.org/fathers/3811.htm",
+      "role": "PRIMARY_CONCILIAR_TRANSLATION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "LEO104",
+      "title": "Pope Leo I, Letter 104 to Emperor Marcian on Anatolius",
+      "url": "https://www.newadvent.org/fathers/3604104.htm",
+      "role": "PRIMARY_PAPAL_LETTER_TRANSLATION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "GREG18",
+      "title": "Gregory I, Letter V.18 to John of Constantinople",
+      "url": "https://www.newadvent.org/fathers/360205018.htm",
+      "role": "PRIMARY_PAPAL_LETTER_TRANSLATION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "GREG43",
+      "title": "Gregory I, Letter V.43 to Eulogius and Anastasius",
+      "url": "https://www.newadvent.org/fathers/360205043.htm",
+      "role": "PRIMARY_PAPAL_LETTER_TRANSLATION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "V1",
+      "title": "First Vatican Council, Pastor aeternus chapters III–IV, Latin",
+      "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "role": "MAGISTERIAL_ORIGINAL_LATIN",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "LG",
+      "title": "Second Vatican Council, Lumen gentium §§22–27",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html",
+      "role": "MAGISTERIAL_OFFICIAL_TRANSLATION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "C681",
+      "title": "Third Council of Constantinople 680–681, session XIII against Honorius",
+      "url": "https://www.newadvent.org/fathers/3813.htm",
+      "role": "PRIMARY_CONCILIAR_TRANSLATION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "LIB",
+      "title": "Catholic Encyclopedia, Pope Liberius",
+      "url": "https://www.newadvent.org/cathen/09217a.htm",
+      "role": "SECONDARY_HISTORICAL_REFERENCE",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "VIGACT",
+      "title": "Richard Price (trans.), The Acts of the Council of Constantinople of 553, edition contents: Vigilius' First and Second Constituta",
+      "url": "https://www.jstor.org/stable/jj.38238630",
+      "role": "ACADEMIC_EDITION_CONTENTS_OR_SNIPPETS_NOT_COMPLETE_TRANSLATED_CONSTITUTA",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false,
+      "direct_original_passage_read_in_full": false,
+      "editorial_limitation": "The edition's table of contents/abstracts are not a primary text inspection. Do not certify source-context on the strength of preview."
+    },
+    {
+      "id": "VIG",
+      "title": "Catholic Encyclopedia, Pope Vigilius",
+      "url": "https://www.newadvent.org/cathen/15427b.htm",
+      "role": "SECONDARY_HISTORICAL_REFERENCE",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "FORM",
+      "title": "Catholic Encyclopedia, Pope Formosus",
+      "url": "https://www.newadvent.org/cathen/06139b.htm",
+      "role": "SECONDARY_HISTORICAL_REFERENCE",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "STEP",
+      "title": "Catholic Encyclopedia, Pope Stephen VI",
+      "url": "https://www.newadvent.org/cathen/14289d.htm",
+      "role": "SECONDARY_HISTORICAL_REFERENCE",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "ACT1534",
+      "title": "English Parliament, Act of Supremacy 1534 text",
+      "url": "https://en.wikisource.org/wiki/Act_of_Supremacy_1534",
+      "role": "PRIMARY_STATUTE_TRANSCRIPTION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "ART37",
+      "title": "Church of England, Thirty-Nine Articles, Article XXXVII",
+      "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer/articles-religion",
+      "role": "PRIMARY_ANGLICAN_SELF_DESCRIPTION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "MIR",
+      "title": "Gregory XVI, Mirari vos (1832), translated full text",
+      "url": "https://www.papalencyclicals.net/greg16/g16mirar.htm",
+      "role": "PRIMARY_PAPAL_DOCUMENT_TRANSLATION",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "QUA",
+      "title": "Pius IX, Quanta cura and Syllabus (1864), Latin",
+      "url": "https://www.vatican.va/content/pius-ix/en/documents/encyclica-quanta-cura-8-decembris-1864.html",
+      "role": "PRIMARY_PAPAL_DOCUMENT_LATIN",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "LIBCAT",
+      "title": "Catholic Encyclopedia, Liberalism: Catholic liberalism historical types",
+      "url": "https://www.newadvent.org/cathen/09212a.htm",
+      "role": "SECONDARY_HISTORICAL_CATEGORY_POSITIONED_CATHOLIC",
+      "url_found_in_public_source_retrieval": true,
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "THEODORET-LIB",
+      "title": "Theodoret, Ecclesiastical History II.13–14: Liberius resists Constantius and is exiled; positive late-fourth/fifth-century tradition",
+      "url": "https://www.newadvent.org/fathers/27022.htm",
+      "role": "LATE_ANTIQUE_HISTORICAL_AUTHOR_PARTICIPANT_ACCOUNTS_REPRODUCED_IN_TRANSLATION",
+      "locator": "Book II, chapters 13–14",
+      "verified_against_page_at_editorial_source_level": true,
+      "interpretive_limit": "Theodoret's favorable account does not independently prove the authenticity or contents of every later alleged letter of Liberius.",
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "SOZOMEN-LIB",
+      "title": "Sozomen, Ecclesiastical History IV.11,15: Roman exile and disputed Sirmian accommodation",
+      "url": "https://www.newadvent.org/fathers/26024.htm",
+      "role": "LATE_ANTIQUE_HISTORICAL_AUTHOR_TRANSLATED",
+      "locator": "Book IV, chapters 11 and 15",
+      "verified_against_page_at_editorial_source_level": true,
+      "interpretive_limit": "Sozomen describes assent in a complicated context, not an ex cathedra universal papal definition; identify the actual formula rather than just describing Liberius as Arian.",
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "CONST553",
+      "title": "Second Council of Constantinople (553): introductory chronology and council sessions, Vigilius and the Three Chapters",
+      "url": "https://www.papalencyclicals.net/councils/ecum05.htm",
+      "role": "ECUMENICAL_COUNCIL_SOURCE_TRANSLATION_WITH_MODERN_EDITORIAL_INTRODUCTION",
+      "locator": "Introduction on first Constitutum May 14, 553; second February 23, 554; synodal session VIII",
+      "verified_against_page_at_editorial_source_level": true,
+      "interpretive_limit": "The dates of Vigilius' two Constituta occur in the scholarly editorial introduction, not in a complete facsimile of both original Constituta on this page; do not misclassify editorial introduction as a primary pope-issued text.",
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "HON-SERGIUS",
+      "title": "Honorius I, Letter to Sergius (Scripta fraternitatis; Patrologia Latina 80), Latin original transmission",
+      "url": "https://la.wikisource.org/wiki/Epistolae_(Honorius_I)",
+      "role": "LATIN_TRANSLATED_TRANSMITTED_PAPAL_CORRESPONDENCE_VIA_MIGNE_TRANSCRIPTION",
+      "passage": "Epistola IV paragraphs beginning 'Unde et unam voluntatem fatemur' and Epistola V on suppressed one/two energies terminology",
+      "direct_transcribed_Latin_text_editorially_inspected": true,
+      "transmission_limit": "Migne 1850 transcription, not a collated critical Latin-Greek manuscript edition. Check Greek council acts and philology separately.",
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "SCH-HON",
+      "title": "Philip Schaff, Creeds of Christendom I, chapter on Honorius and papal infallibility, Protestant critical interpretation",
+      "url": "https://ccel.org/ccel/schaff/creeds1/creeds1.vi.xiii.html",
+      "role": "NAMED_NON_CATHOLIC_HISTORIAN_EXPLICIT_OPPOSITION_TEXT",
+      "passage": "Schaff's case treats letters as ex cathedra in opposition to Vatican I",
+      "direct_transcribed_Latin_text_editorially_inspected": false,
+      "transmission_limit": "Nineteenth-century historian's argument, not a universal Protestant magisterial statement or a council act.",
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    },
+    {
+      "id": "CE-HON",
+      "title": "Catholic Encyclopedia, Pope Honorius I, section 'The Reply of Honorius' and 'In What Sense was Honorius Condemned'",
+      "url": "https://www.newadvent.org/cathen/07452b.htm",
+      "role": "NAMED_CATHOLIC_HISTORICAL_THEOLOGICAL_INTERPRETATION",
+      "passage": "Argues the official replies neither condemned nor universally defined a creed; explicitly acknowledges the troubling formula and conciliar condemnation",
+      "direct_transcribed_Latin_text_editorially_inspected": false,
+      "transmission_limit": "Early twentieth-century retrospective defence is not an original 634 or 681 act.",
+      "original_language_context_independently_approved": false,
+      "doctrinal_interpretation_approved": false,
+      "native_french_approved": false
+    }
+  ],
+  "rows": [
+    {
+      "historical_id": "PAP-ORD-011",
+      "bank": "PAP-ORD",
+      "title_candidate": "Does Chalcedon support Roman doctrinal authority?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-018",
+        "APOL-019"
+      ],
+      "review_status": "PARTIAL_ANSWER_ONLY",
+      "review_reason": "Existing primacy/succession answers cover Petrine principle, not Chalcedon's actual reception of Leo's doctrinal letter.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-011",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-012",
+      "bank": "PAP-ORD",
+      "title_candidate": "Does Chalcedon canon 28 create a problem for Catholic claims?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-018"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "No named treatment of Chalcedon canon 28 and Roman protest.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-012",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-013",
+      "bank": "PAP-ORD",
+      "title_candidate": "Did Gregory the Great reject the idea of papal primacy because he rejected “universal bishop”?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-018"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "No original Gregorian Letter V.18 evidence.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-013",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-014",
+      "bank": "PAP-ORD",
+      "title_candidate": "So what exactly was Gregory rejecting?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-018"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "No distinction of 'universal bishop' title and pastoral primacy in Gregory's own context.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-014",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-015",
+      "bank": "PAP-ORD",
+      "title_candidate": "What does Vatican I actually mean by universal jurisdiction?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-018",
+        "APOL-020"
+      ],
+      "review_status": "PARTIAL_ANSWER_ONLY",
+      "review_reason": "Primacy and infallibility exist, but Pastor aeternus chapter III on immediate jurisdiction not directly unpacked.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-015",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-016",
+      "bank": "PAP-ORD",
+      "title_candidate": "Does “immediate” papal jurisdiction mean every bishop is merely a Vatican branch manager?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-018",
+        "APOL-019"
+      ],
+      "review_status": "PARTIAL_ANSWER_ONLY",
+      "review_reason": "Shared pastoral office addressed but Vatican I chapter III/Lumen gentium §27 episcopal jurisdiction not directly compared.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-016",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-017",
+      "bank": "PAP-ORD",
+      "title_candidate": "What exactly is papal infallibility?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-020"
+      ],
+      "review_status": "DIRECT_ANSWER_PRESENT",
+      "review_reason": "APOL-020 answer precisely states Vatican I chapter IV ex cathedra conditions, subject, binding act and limits.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": null,
+      "supplement_status": "REUSE_CANONICAL_APOL_020_NO_DUPLICATE",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-018",
+      "bank": "PAP-ORD",
+      "title_candidate": "Is papal infallibility the same as impeccability or inspiration?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-020"
+      ],
+      "review_status": "DIRECT_ANSWER_PRESENT",
+      "review_reason": "APOL-020 answer explicitly distinguishes infallibility from impeccability, inspiration and defective governance.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": null,
+      "supplement_status": "REUSE_CANONICAL_APOL_020_NO_DUPLICATE",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-019",
+      "bank": "PAP-ORD",
+      "title_candidate": "Does Pope Honorius refute Vatican I?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-020"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "No original 681 council Honorius condemnation or Vatican I doctrinal-level analysis in the canonical answer.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-019",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-020",
+      "bank": "PAP-ORD",
+      "title_candidate": "Was Honorius merely “misunderstood” and entirely innocent?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-020"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "No direct, non-exculpatory treatment of Honorius' original condemned correspondence.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-020",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-021",
+      "bank": "PAP-ORD",
+      "title_candidate": "What about Pope Liberius during the Arian crisis?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-020"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "No specific Liberius, exile, Athanasius or ambiguous creed material.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-021",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-022",
+      "bank": "PAP-ORD",
+      "title_candidate": "What about Pope Vigilius and the Three Chapters?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-020"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "No first/second Vigilius Constitutum or Three Chapters chronology.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-022",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-023",
+      "bank": "PAP-ORD",
+      "title_candidate": "What does the Cadaver Synod/Formosus affair prove?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-017",
+        "APOL-020"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "No specific Cadaver Synod/Formosus historical evidence.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "PAP-ORD-023",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "ANG-024",
+      "bank": "ANG",
+      "title_candidate": "What did the English Reformation mean by royal supremacy?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "APOL-022"
+      ],
+      "review_status": "NO_SPECIFIC_ANSWER_IN_REVIEWED_OWNER",
+      "review_reason": "Anglican Orders are covered, but English royal supremacy and Anglican Article XXXVII are not.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "ANG-024",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "ERR-023",
+      "bank": "ERR",
+      "title_candidate": "What is ‘Liberal Catholicism’?",
+      "question_witness": "20261014_PRIOR_ASSISTANT_INDEXED_EXCERPT",
+      "raw_original_question_verified": false,
+      "raw_original_answer_recovered": false,
+      "claim_by_claim_source_approved": false,
+      "answer_owner_ids": [
+        "CR-DOC-04"
+      ],
+      "review_status": "PARTIAL_ANSWER_ONLY",
+      "review_reason": "Religious liberty controversy is treated, but Lamennais and historically differentiated Liberal Catholicism are not.",
+      "review_scope": "Existing canonical APOL/CR four-section source-first dossiers compared with exact question-specific historical/professional source evidence.",
+      "answer_supplement_id": "ERR-023",
+      "supplement_status": "NEW_EN_FR_SOURCE_CITED_RESEARCH_DRAFT_NOT_APPROVED",
+      "canonical_owner_explanation": "Source-first APOL/CR dossier remains source of truth; historical question is only a link/anchor, not a new dossier.",
+      "independent_doctrinal_approval": false,
+      "native_french_approval": false,
+      "original_text_verified_by_independent_reviewer": false,
+      "publication_allowed": false
+    }
+  ],
+  "drafts": [
+    {
+      "historical_id": "PAP-ORD-011",
+      "title_candidate": "Does Chalcedon support Roman doctrinal authority?",
+      "owner_reuse": [
+        "APOL-018",
+        "APOL-019"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "Chalcedon (451) is significant evidence for the authority Rome's doctrinal intervention enjoyed: its bishops examined Leo I's Tome while defining the one Christ in two natures. Their reception testifies to recognition of a Roman doctrinal voice; it does not by itself settle every later question about the pope's ordinary jurisdiction or the exact legal mechanics of Roman confirmation.",
+            "fr": "Chalcédoine (451) témoigne du poids de l'intervention doctrinale de Rome : les évêques examinèrent le Tome de Léon Ier lors de la définition du Christ unique en deux natures. Cette réception manifeste la reconnaissance d'une voix doctrinale romaine ; elle ne tranche pas à elle seule toute question postérieure sur la juridiction ordinaire du pape ou les modalités juridiques de la confirmation romaine."
+          },
+          "source_ids": [
+            "CHAL"
+          ],
+          "source_links": [
+            {
+              "id": "CHAL",
+              "url": "https://www.newadvent.org/fathers/3811.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "An Orthodox historian can point out that the council tested Leo's teaching against Cyril and the inherited faith, rather than treating every Roman sentence as self-authenticating. Catholics can accept that conciliar testing while arguing for a special Petrine responsibility. Both the actual acts and the later Catholic primacy definition must be read; neither should be silently substituted for the other.",
+            "fr": "Un historien orthodoxe peut observer que le concile confronta l'enseignement de Léon à celui de Cyrille et à la foi reçue, sans tenir toute parole romaine pour automatiquement garantie. Le catholique peut admettre cet examen conciliaire tout en affirmant une charge pétrinienne particulière. Il faut lire les actes et la définition catholique ultérieure sans les confondre."
+          },
+          "source_ids": [
+            "CHAL",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "CHAL",
+              "url": "https://www.newadvent.org/fathers/3811.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Collate the exact council acclamations and their historical text form; separate doctrinal reception from 1870 jurisdiction.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-012",
+      "title_candidate": "Does Chalcedon canon 28 create a problem for Catholic claims?",
+      "owner_reuse": [
+        "APOL-018"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "Yes, canon 28 poses a substantial historical question for a simplified account of primacy. It justifies Constantinople's privileges by its imperial rank and assigns it second place after old Rome; Rome's legates protested and Leo I objected to its innovation. The disputed text concerns ecclesiastical ranking and consecration jurisdiction, not a replacement of Chalcedon's dogmatic definition.",
+            "fr": "Oui, le canon 28 soulève une difficulté historique sérieuse pour une conception simplifiée de la primauté. Il motive les privilèges de Constantinople par son rang impérial et lui attribue la seconde place après l'ancienne Rome ; les légats romains protestèrent et Léon Ier contesta l'innovation. Le texte litigieux concerne le rang des sièges et certaines compétences de consécration, non le remplacement de la définition dogmatique de Chalcédoine."
+          },
+          "source_ids": [
+            "CHAL",
+            "LEO104"
+          ],
+          "source_links": [
+            {
+              "id": "CHAL",
+              "url": "https://www.newadvent.org/fathers/3811.htm"
+            },
+            {
+              "id": "LEO104",
+              "url": "https://www.newadvent.org/fathers/3604104.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "A serious Eastern reading sees in the canon evidence that patriarchal precedence was understood politically and canonically. Leo's letter insists that apostolic foundation and inherited canons cannot be displaced merely by imperial greatness. The respective claims remain historically contested; Catholic polemic cannot pretend the council never passed canon 28, nor Eastern polemic that Leo accepted it.",
+            "fr": "Une lecture orientale sérieuse y voit la preuve que les préséances patriarcales s'expliquaient par des critères politiques et canoniques. Léon soutient que la fondation apostolique et les canons reçus ne peuvent être écartés pour la seule grandeur impériale. Le différend historique demeure ; il serait inexact de nier l'adoption du canon ou de prétendre que Léon l'accepta."
+          },
+          "source_ids": [
+            "CHAL",
+            "LEO104"
+          ],
+          "source_links": [
+            {
+              "id": "CHAL",
+              "url": "https://www.newadvent.org/fathers/3811.htm"
+            },
+            {
+              "id": "LEO104",
+              "url": "https://www.newadvent.org/fathers/3604104.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Check conciliar session 16, papal legates' protest, Leo's response and historical canon reception separately.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-013",
+      "title_candidate": "Did Gregory the Great reject the idea of papal primacy because he rejected “universal bishop”?",
+      "owner_reuse": [
+        "APOL-018"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "Gregory the Great forcefully rejected the title 'universal bishop' as used by John of Constantinople. His Letter V.18 fears that one bishop's assertion of singular rank could diminish his brothers' true episcopal dignity. It is therefore inaccurate to quote Gregory as an uncomplicated endorsement of later centralized administrative language; his objection to that title is real.",
+            "fr": "Grégoire le Grand rejeta vigoureusement le titre d'« évêque universel » revendiqué par Jean de Constantinople. Dans la lettre V,18, il redoute qu'un rang singulier ainsi revendiqué ne diminue la véritable dignité épiscopale des autres évêques. Il serait donc inexact de citer Grégoire comme partisan sans réserve de toutes les formulations administratives centralisées ultérieures : son objection à ce titre est réelle."
+          },
+          "source_ids": [
+            "GREG18"
+          ],
+          "source_links": [
+            {
+              "id": "GREG18",
+              "url": "https://www.newadvent.org/fathers/360205018.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "The same Gregory invokes Roman intervention under his predecessor and Peter's authority in Letter V.43. The historical interpretive challenge is to relate those positive Roman claims to his anti-monopolistic language without erasing either. Catholic teaching later expressed in Pastor aeternus needs a genuine argument of continuity, not an assertion that Gregory's objection never happened.",
+            "fr": "Le même Grégoire invoque, dans la lettre V,43, l'intervention de Rome sous son prédécesseur et l'autorité de Pierre. La difficulté est de rapprocher ces revendications romaines du refus d'un titre monopolisateur sans effacer aucune des deux. La continuité avec Pastor aeternus demande une véritable argumentation, non la négation de l'objection de Grégoire."
+          },
+          "source_ids": [
+            "GREG43",
+            "GREG18",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "GREG43",
+              "url": "https://www.newadvent.org/fathers/360205043.htm"
+            },
+            {
+              "id": "GREG18",
+              "url": "https://www.newadvent.org/fathers/360205018.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Compare Gregory's technical title objection, its Greek context and later jurisdictional propositions sentence by sentence.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-014",
+      "title_candidate": "So what exactly was Gregory rejecting?",
+      "owner_reuse": [
+        "APOL-018"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "Gregory's immediate target was a title that could suggest one bishop alone possessed the full episcopal office, leaving other bishops diminished. He expressly insists on their share in Christ's one body and rejects self-exaltation; he also acknowledges the special dignity of the Apostolic See. The term 'universal' in that polemic cannot automatically be treated as semantically identical to 'universal jurisdiction' in a much later council.",
+            "fr": "La cible immédiate de Grégoire était un titre qui pouvait suggérer qu'un évêque possédait seul la plénitude de l'épiscopat et rabaissait ses confrères. Il affirme leur place dans l'unique Corps du Christ, réprouve l'orgueil et reconnaît aussi la dignité particulière du Siège apostolique. Le mot « universel » dans cette controverse ne peut être tenu sans examen pour synonyme de « juridiction universelle » au sens d'un concile beaucoup plus tardif."
+          },
+          "source_ids": [
+            "GREG18",
+            "GREG43"
+          ],
+          "source_links": [
+            {
+              "id": "GREG18",
+              "url": "https://www.newadvent.org/fathers/360205018.htm"
+            },
+            {
+              "id": "GREG43",
+              "url": "https://www.newadvent.org/fathers/360205043.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "Calling Gregory simply a modern papalist is anachronistic; so is concluding solely from his refusal of a title that he denied every Roman prerogative. A credible comparison must test his positive acts and language against Pastor aeternus and Lumen gentium rather than choose one fragment of his correspondence.",
+            "fr": "Faire de Grégoire un partisan de toutes les conceptions actuelles de la papauté est anachronique ; déduire de son refus d'un titre le rejet de toute prérogative romaine l'est également. Une comparaison valable doit confronter ses actes et ses propos à Pastor aeternus et à Lumen gentium au lieu de choisir une phrase isolée."
+          },
+          "source_ids": [
+            "GREG18",
+            "GREG43",
+            "V1",
+            "LG"
+          ],
+          "source_links": [
+            {
+              "id": "GREG18",
+              "url": "https://www.newadvent.org/fathers/360205018.htm"
+            },
+            {
+              "id": "GREG43",
+              "url": "https://www.newadvent.org/fathers/360205043.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            },
+            {
+              "id": "LG",
+              "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Full letter context and chronology required; avoid false semantic equivalence.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-015",
+      "title_candidate": "What does Vatican I actually mean by universal jurisdiction?",
+      "owner_reuse": [
+        "APOL-018",
+        "APOL-020"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "Pastor aeternus chapter III teaches that the Roman Pontiff holds supreme ordinary and immediate jurisdiction over the whole Church, including questions of discipline and governance, not only faith and morals. 'Ordinary' concerns the power attached to the office; 'immediate' means it is not merely a delegated appellate authority that can act only through other bishops. Chapter IV defines a different matter: the specific conditions for an infallible judgment of faith or morals.",
+            "fr": "Le chapitre III de Pastor aeternus enseigne que le pontife romain détient une juridiction suprême, ordinaire et immédiate sur toute l'Église, y compris en matière de discipline et de gouvernement, non seulement de foi et de mœurs. « Ordinaire » renvoie au pouvoir attaché à l'office ; « immédiate » signifie qu'il ne s'agit pas seulement d'une délégation ou d'un appel exercé exclusivement par l'entremise d'autres évêques. Le chapitre IV porte sur un objet distinct : les conditions d'un jugement infaillible."
+          },
+          "source_ids": [
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "Universal jurisdiction is not identical to the proposition that every papal act is infallible, impeccable or pastorally wise. Nor does it abolish proper episcopal jurisdiction: the same constitution says that bishops remain true pastors, a teaching further explicated by Lumen gentium §27. Readers should not confuse the legal extent of a competence with the prudence of each exercise.",
+            "fr": "La juridiction universelle ne signifie pas que tout acte pontifical soit infaillible, irréprochable ou prudent. Elle ne supprime pas non plus la juridiction propre des évêques : la même constitution les tient pour de véritables pasteurs, point explicité par Lumen gentium §27. Il faut distinguer l'étendue juridique d'une compétence de la prudence de chacun de ses exercices."
+          },
+          "source_ids": [
+            "V1",
+            "LG"
+          ],
+          "source_links": [
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            },
+            {
+              "id": "LG",
+              "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Verify ordinary/immediate legal terms in authentic Latin and distinguish chapter III from IV.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-016",
+      "title_candidate": "Does “immediate” papal jurisdiction mean every bishop is merely a Vatican branch manager?",
+      "owner_reuse": [
+        "APOL-018",
+        "APOL-019"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "No. Vatican I chapter III expressly preserves the bishops' real and ordinary jurisdiction in their own churches. Lumen gentium §27 states still more clearly that bishops govern as vicars of Christ, not as mere vicars of the Roman Pontiff; their power is proper, ordinary and immediate, subject to legitimate regulation by supreme authority. Catholic ecclesiology does not reduce a diocesan bishop to a branch manager of Rome.",
+            "fr": "Non. Le chapitre III de Vatican I maintient expressément la juridiction réelle et ordinaire des évêques dans leurs propres Églises. Lumen gentium §27 précise qu'ils gouvernent comme vicaires du Christ, et non comme de simples vicaires du pontife romain ; leur pouvoir est propre, ordinaire et immédiat, dans les limites légitimes fixées par l'autorité suprême. L'ecclésiologie catholique ne fait pas d'un évêque diocésain un simple directeur d'agence romaine."
+          },
+          "source_ids": [
+            "V1",
+            "LG"
+          ],
+          "source_links": [
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            },
+            {
+              "id": "LG",
+              "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "The objection still matters in practice: an expansive use of central intervention can threaten the effective responsibility of local pastors even when the constitutional distinction is formally maintained. Historical and canonical analysis must separate what Vatican I defines from particular ways papal governance was exercised, and evaluate those practices honestly.",
+            "fr": "L'objection reste pertinente dans la pratique : une intervention centrale très étendue peut affaiblir la responsabilité effective des pasteurs locaux même si la distinction juridique demeure. L'analyse doit séparer ce que Vatican I définit de la manière dont le gouvernement pontifical s'est exercé dans des cas particuliers, et juger ces pratiques sans complaisance."
+          },
+          "source_ids": [
+            "V1",
+            "LG"
+          ],
+          "source_links": [
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            },
+            {
+              "id": "LG",
+              "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "No invented denial of papal jurisdiction; examine actual local/supreme powers, not rhetoric alone.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-019",
+      "title_candidate": "Does Pope Honorius refute Vatican I?",
+      "owner_reuse": [
+        "APOL-020"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "The Third Council of Constantinople (680–681) did condemn Pope Honorius by name in session XIII, and this is a serious historical test for papal infallibility, not a spurious accusation. His earlier official reply to Sergius contains the Latin expression 'unam voluntatem fatemur' ('we confess one will') concerning Christ. The council judged his letters contrary to apostolic teaching and anathematized him. A Catholic defence cannot erase either the actual phrase or the council's censure; it must ask whether that particular communication met the later, narrowly defined conditions for a definitive universal papal judgment.",
+            "fr": "Le troisième concile de Constantinople (680–681) condamna effectivement le pape Honorius par son nom à la session XIII : c'est une difficulté historique sérieuse pour la doctrine de l'infaillibilité pontificale, non une accusation inventée. Sa réponse officielle antérieure à Sergius contient l'expression latine « unam voluntatem fatemur » (« nous confessons une seule volonté ») à propos du Christ. Le concile jugea ses lettres contraires à la doctrine apostolique et l'anathématisa. Une défense catholique ne peut effacer ni la formule ni la condamnation ; elle doit examiner si cette communication réunissait les conditions précises, définies ultérieurement, d'un jugement pontifical universel et définitif."
+          },
+          "source_ids": [
+            "HON-SERGIUS",
+            "C681",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "HON-SERGIUS",
+              "url": "https://la.wikisource.org/wiki/Epistolae_(Honorius_I)"
+            },
+            {
+              "id": "C681",
+              "url": "https://www.newadvent.org/fathers/3813.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "Philip Schaff argued that the official letters amount to a doctrinal papal error incompatible with later infallibility claims. The Catholic Encyclopedia instead concedes the damaging formula and condemnation but distinguishes a papal reply discouraging contested terminology from an ex cathedra act binding the whole Church. These are genuinely different historical-theological interpretations. The original correspondence and Pastor aeternus IV must decide the question by text and authority, not by suppressing Schaff's objection or assuming the Catholic conclusion in advance.",
+            "fr": "L'historien protestant Philip Schaff estima que ces lettres officielles constituaient une erreur doctrinale pontificale incompatible avec l'infaillibilité proclamée plus tard. La Catholic Encyclopedia reconnaît au contraire la formule problématique et la condamnation, mais distingue une réponse papale déconseillant des expressions litigieuses d'une définition ex cathedra imposée à toute l'Église. Il s'agit d'interprétations historiographiques et théologiques réellement opposées. Il faut confronter les lettres à Pastor aeternus IV, sans escamoter l'objection de Schaff ni supposer d'avance que la défense catholique est démontrée."
+          },
+          "source_ids": [
+            "HON-SERGIUS",
+            "SCH-HON",
+            "CE-HON",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "HON-SERGIUS",
+              "url": "https://la.wikisource.org/wiki/Epistolae_(Honorius_I)"
+            },
+            {
+              "id": "SCH-HON",
+              "url": "https://ccel.org/ccel/schaff/creeds1/creeds1.vi.xiii.html"
+            },
+            {
+              "id": "CE-HON",
+              "url": "https://www.newadvent.org/cathen/07452b.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Read original Honorius epistle, Council 681 session XIII and two genuinely competing historical interpretations; Migne text is not a critical bilingual Greek-Latin edition; native French and independent doctrinal review still open.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-020",
+      "title_candidate": "Was Honorius merely “misunderstood” and entirely innocent?",
+      "owner_reuse": [
+        "APOL-020"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "No. Honorius was not merely misunderstood and wholly innocent: session XIII of Constantinople III explicitly says his letters followed and confirmed Sergius' condemned teaching, and it anathematizes him personally. The surviving Latin letter contains 'unam voluntatem fatemur' while also explaining this in relation to Christ's unfallen human nature and urging avoidance of both one-operation and two-operation language. Those surrounding sentences matter for understanding intention, but they do not turn the council's condemnation into a fiction.",
+            "fr": "Non. On ne peut présenter Honorius comme simplement mal compris et entièrement innocent : la session XIII de Constantinople III affirme expressément que ses lettres suivirent et confirmèrent l'enseignement condamné de Sergius, et l'anathématise personnellement. Sa lettre latine conservée emploie « unam voluntatem fatemur », tout en reliant l'argument à la nature humaine du Christ non corrompue par le péché et en recommandant d'éviter aussi bien « une opération » que « deux opérations ». Ce contexte est important pour comprendre son intention, mais il ne rend pas fictive la condamnation du concile."
+          },
+          "source_ids": [
+            "C681",
+            "HON-SERGIUS"
+          ],
+          "source_links": [
+            {
+              "id": "C681",
+              "url": "https://www.newadvent.org/fathers/3813.htm"
+            },
+            {
+              "id": "HON-SERGIUS",
+              "url": "https://la.wikisource.org/wiki/Epistolae_(Honorius_I)"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "Schaff's critical account argues that the one-will assertion constituted formal papal doctrinal error; the Catholic Encyclopedia's detailed contrary analysis admits the problematic wording but disputes that the letter was a universal binding definition. These opposing evaluations must be presented beside the original texts. One may argue that the ex cathedra criterion was absent without portraying the disputed letter as impeccable or denying the reality of an official episcopal misjudgment.",
+            "fr": "L'analyse critique de Schaff soutient que l'affirmation d'une seule volonté fut une erreur doctrinale pontificale formelle ; l'étude contraire de la Catholic Encyclopedia admet la formule problématique, mais conteste que cette lettre ait constitué une définition obligatoire destinée à l'Église universelle. Les deux jugements doivent être présentés en regard des sources. On peut soutenir que la condition ex cathedra n'était pas remplie sans pour autant déclarer la lettre irréprochable ou nier la réalité d'une faute dans un acte épiscopal officiel."
+          },
+          "source_ids": [
+            "SCH-HON",
+            "CE-HON",
+            "HON-SERGIUS",
+            "C681",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "SCH-HON",
+              "url": "https://ccel.org/ccel/schaff/creeds1/creeds1.vi.xiii.html"
+            },
+            {
+              "id": "CE-HON",
+              "url": "https://www.newadvent.org/cathen/07452b.htm"
+            },
+            {
+              "id": "HON-SERGIUS",
+              "url": "https://la.wikisource.org/wiki/Epistolae_(Honorius_I)"
+            },
+            {
+              "id": "C681",
+              "url": "https://www.newadvent.org/fathers/3813.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Read original Honorius epistle, Council 681 session XIII and two genuinely competing historical interpretations; Migne text is not a critical bilingual Greek-Latin edition; native French and independent doctrinal review still open.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-021",
+      "title_candidate": "What about Pope Liberius during the Arian crisis?",
+      "owner_reuse": [
+        "APOL-020"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "Liberius opposed the imperial attempt to condemn Athanasius and was exiled by Constantius II. Theodoret (Ecclesiastical History II.13–14) records his refusal to abandon Athanasius and depicts his eventual return favorably. Sozomen (IV.11,15) also describes the exile, but reports that Liberius later assented to a formula assembled under the emperor's influence at Sirmium. These ancient witnesses must be compared, not flattened into either a wholly unblemished hero or a proven author of an ex cathedra Arian definition.",
+            "fr": "Libère refusa d'abord la tentative impériale de condamner Athanase et fut exilé par Constance II. Théodoret (Histoire ecclésiastique II, 13–14) relate son refus d'abandonner Athanase et présente favorablement son retour. Sozomène (IV, 11 et 15) rapporte également l'exil, mais affirme que Libère adhéra ensuite à une formule élaborée sous l'influence de l'entourage impérial à Sirmium. Il faut confronter ces témoignages anciens, sans faire du pape soit un héros absolument irréprochable, soit l'auteur démontré d'une définition arienne ex cathedra."
+          },
+          "source_ids": [
+            "THEODORET-LIB",
+            "SOZOMEN-LIB"
+          ],
+          "source_links": [
+            {
+              "id": "THEODORET-LIB",
+              "url": "https://www.newadvent.org/fathers/27022.htm"
+            },
+            {
+              "id": "SOZOMEN-LIB",
+              "url": "https://www.newadvent.org/fathers/26024.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "Sozomen's report is an important historical challenge, not evidence to suppress; his narrative also records an anti-Anomoean position, which requires identifying the actual creed and its meaning before calling it an outright denial of Christ's divinity. Theodoret's contrary emphasis and the contested authenticity of other attributed letters mean that the details remain disputed. Even a proven concession under pressure would have to be assessed under Vatican I's specific criteria for a definitive universal papal teaching.",
+            "fr": "Le récit de Sozomène constitue une difficulté historique sérieuse, non un témoignage à écarter. Il relate aussi une position opposée aux anoméens : il faut donc identifier la formule réellement souscrite et son sens avant d'y voir une négation pure et simple de la divinité du Christ. La présentation différente de Théodoret et l'authenticité discutée d'autres lettres attribuées à Libère rendent les détails controversés. Même une concession établie sous pression devrait être appréciée selon les conditions précises, définies à Vatican I, d'un enseignement pontifical définitif et universel."
+          },
+          "source_ids": [
+            "SOZOMEN-LIB",
+            "THEODORET-LIB",
+            "LIB",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "SOZOMEN-LIB",
+              "url": "https://www.newadvent.org/fathers/26024.htm"
+            },
+            {
+              "id": "THEODORET-LIB",
+              "url": "https://www.newadvent.org/fathers/27022.htm"
+            },
+            {
+              "id": "LIB",
+              "url": "https://www.newadvent.org/cathen/09217a.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Direct ancient witnesses now located and compared at editorial passage level; no independent Greek/Latin textual collation, critical manuscript establishment, native-French certification or theological approval.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-022",
+      "title_candidate": "What about Pope Vigilius and the Three Chapters?",
+      "owner_reuse": [
+        "APOL-020"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "The Three Chapters crisis exposed a real and costly change in Pope Vigilius' position under Justinian. In his first Constitutum of 14 May 553 he rejected specified teachings of Theodore of Mopsuestia but resisted condemning the persons or texts of the remaining disputed figures in the manner sought by the council. After the council's condemnation and imperial pressure, he accepted its judgment in a letter to Patriarch Eutychius in December 553, then issued his second Constitutum on 23 February 554. The council's own proceedings and the edition's dated summaries provide a firmer chronology than a generic claim that a pope simply reversed himself on dogma.",
+            "fr": "La crise des Trois Chapitres révèle un véritable changement de position du pape Vigile sous la pression de Justinien. Dans son premier Constitutum du 14 mai 553, il rejeta des enseignements précis de Théodore de Mopsueste mais refusa la condamnation des personnes ou textes des autres figures contestées dans les termes demandés par le concile. Après la condamnation conciliaire et les pressions impériales, il accepta le jugement dans une lettre au patriarche Eutychius en décembre 553, puis publia un second Constitutum le 23 février 554. Les actes du concile et la chronologie donnée par l'édition permettent une lecture plus sûre qu'une affirmation générale selon laquelle un pape aurait simplement renversé un dogme."
+          },
+          "source_ids": [
+            "CONST553",
+            "VIGACT",
+            "VIG"
+          ],
+          "source_links": [
+            {
+              "id": "CONST553",
+              "url": "https://www.papalencyclicals.net/councils/ecum05.htm"
+            },
+            {
+              "id": "VIGACT",
+              "url": "https://www.jstor.org/stable/jj.38238630"
+            },
+            {
+              "id": "VIG",
+              "url": "https://www.newadvent.org/cathen/15427b.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "The objection remains substantial: a pope's resistance, suspension from the diptychs and eventual acceptance demand explanation. Yet the first and second Constituta must be distinguished by their concrete objects, the status of accused authors, and the dogmatic authority claimed in each text. The online council edition transmits proceedings, while the scholarly catalogue provides summaries, not both complete papal documents. On present evidence it would be premature either to certify two contradictory ex cathedra definitions or to pretend the episode was harmonious.",
+            "fr": "L'objection reste sérieuse : la résistance d'un pape, la radiation de son nom des diptyques et son acceptation ultérieure demandent une explication. Mais les deux Constituta doivent être distingués selon leur objet concret, le statut des auteurs incriminés et l'autorité doctrinale revendiquée par chaque document. L'édition en ligne transmet les actes conciliaires, tandis que la notice de l'édition critique résume les textes sans fournir ici l'intégralité des deux constitutions pontificales. Il serait donc prématuré de certifier deux définitions ex cathedra contradictoires, comme de prétendre que l'épisode fut sans conflit."
+          },
+          "source_ids": [
+            "CONST553",
+            "VIGACT",
+            "VIG",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "CONST553",
+              "url": "https://www.papalencyclicals.net/councils/ecum05.htm"
+            },
+            {
+              "id": "VIGACT",
+              "url": "https://www.jstor.org/stable/jj.38238630"
+            },
+            {
+              "id": "VIG",
+              "url": "https://www.newadvent.org/cathen/15427b.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "The Council of 553 text and scholarly edition index attest the detailed sequence, but both constituta still require independent full original-text collation; never treat catalogue as primary quote.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "PAP-ORD-023",
+      "title_candidate": "What does the Cadaver Synod/Formosus affair prove?",
+      "owner_reuse": [
+        "APOL-017",
+        "APOL-020"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "The Cadaver Synod of 897, ordered under Stephen VI, subjected the corpse of Pope Formosus to a posthumous trial and purported to annul his acts and ordinations. It is a documented example of scandalous papal governance and political conflict. The affair is no reason to conceal clerical wrongdoing, but historical accusations about ordinations must be distinguished from the Church's sacramental doctrine of valid Orders.",
+            "fr": "Le Synode du Cadavre, en 897, organisé sous Étienne VI, soumit le corps du pape Formose à un procès posthume et prétendit annuler ses actes et ses ordinations. C'est un cas documenté de gouvernement pontifical scandaleux et de conflit politique. Il serait injustifiable de dissimuler de tels actes ; mais les accusations portées alors contre les ordinations doivent être distinguées de la doctrine sacramentelle sur la validité de l'Ordre."
+          },
+          "source_ids": [
+            "FORM",
+            "STEP"
+          ],
+          "source_links": [
+            {
+              "id": "FORM",
+              "url": "https://www.newadvent.org/cathen/06139b.htm"
+            },
+            {
+              "id": "STEP",
+              "url": "https://www.newadvent.org/cathen/14289d.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "A pope's shocking abuse of power is a serious objection to naive assurances that every papal judgment is upright. It does not automatically satisfy the conditions of a universally binding definition of faith or morals in Pastor aeternus. Historical sources used here are later syntheses; the early witnesses to this event require separate corroboration before any primary-text claim is certified.",
+            "fr": "L'abus manifeste du pouvoir pontifical réfute la présentation naïve selon laquelle tout jugement d'un pape serait juste. Il ne remplit pas automatiquement les conditions d'une définition universelle en matière de foi ou de mœurs selon Pastor aeternus. Les sources actuellement citées sont des synthèses tardives ; les témoignages les plus anciens sur l'événement doivent être contrôlés avant toute certification de source primaire."
+          },
+          "source_ids": [
+            "FORM",
+            "STEP",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "FORM",
+              "url": "https://www.newadvent.org/cathen/06139b.htm"
+            },
+            {
+              "id": "STEP",
+              "url": "https://www.newadvent.org/cathen/14289d.htm"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Historical narrative based on secondary entries, not critical edition of contemporary accounts.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "ANG-024",
+      "title_candidate": "What did the English Reformation mean by royal supremacy?",
+      "owner_reuse": [
+        "APOL-022"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "The Act of Supremacy of 1534 declared Henry VIII supreme head on earth of the Church of England and placed wide ecclesiastical jurisdiction under the Crown. Later Anglican formularies, especially Article XXXVII, describe the monarch's chief government in ecclesiastical and civil causes while explicitly denying that the sovereign personally ministers the Word or sacraments. Those formulations belong to distinct historical settings and must not be collapsed into the claim that the monarch became a sacramental bishop.",
+            "fr": "L'Acte de suprématie de 1534 déclara Henri VIII chef suprême sur terre de l'Église d'Angleterre et rattacha d'importantes compétences ecclésiastiques à la Couronne. Les formulaires anglicans ultérieurs, notamment l'article XXXVII, attribuent au souverain la direction supérieure dans les affaires ecclésiastiques et civiles, tout en niant qu'il administre personnellement la Parole ou les sacrements. Ces formules relèvent de contextes différents et ne signifient pas que le monarque devint évêque sacramentel."
+          },
+          "source_ids": [
+            "ACT1534",
+            "ART37"
+          ],
+          "source_links": [
+            {
+              "id": "ACT1534",
+              "url": "https://en.wikisource.org/wiki/Act_of_Supremacy_1534"
+            },
+            {
+              "id": "ART37",
+              "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer/articles-religion"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "The Catholic objection concerns state control of the Church and rejection of the Roman Pontiff's jurisdiction, not a claim that Anglican royal supremacy requires a sovereign to celebrate Mass. An Anglican defence invokes national ecclesiastical autonomy and the article's limits on sacramental ministry. A fair answer must compare the actual original statute with the later Anglican self-description and the Catholic understanding of universal primacy.",
+            "fr": "L'objection catholique porte sur la mainmise de l'État sur l'Église et sur le rejet de la juridiction du pontife romain, non sur une supposée obligation pour le souverain de célébrer la messe. La défense anglicane invoque l'autonomie ecclésiastique nationale et les limites posées par l'article aux fonctions sacramentelles. Il faut confronter la loi initiale, les formulaires anglicans ultérieurs et la conception catholique de la primauté."
+          },
+          "source_ids": [
+            "ACT1534",
+            "ART37",
+            "V1"
+          ],
+          "source_links": [
+            {
+              "id": "ACT1534",
+              "url": "https://en.wikisource.org/wiki/Act_of_Supremacy_1534"
+            },
+            {
+              "id": "ART37",
+              "url": "https://www.churchofengland.org/prayer-and-worship/worship-texts-and-resources/book-common-prayer/articles-religion"
+            },
+            {
+              "id": "V1",
+              "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Historical 1534 Supreme Head and later Supreme Governor titles must not be conflated.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    },
+    {
+      "historical_id": "ERR-023",
+      "title_candidate": "What is ‘Liberal Catholicism’?",
+      "owner_reuse": [
+        "CR-DOC-04"
+      ],
+      "status": "UNPUBLISHED_BILINGUAL_RESEARCH_DRAFT",
+      "paragraphs": [
+        {
+          "role": "source_grounded_short_answer",
+          "text": {
+            "en": "'Liberal Catholicism' is a historical family of nineteenth-century Catholic movements, not a precise synonym for every modern Catholic who supports civil liberties. Lamennais and his associates around L'Avenir sought a new relation between Catholicism and modern political freedom. Gregory XVI's Mirari vos (1832) challenged propositions associated with this movement, and later papal texts condemned specific religious-indifferentist or naturalist claims. Exact doctrines must be named rather than a whole political label treated as one heresy.",
+            "fr": "Le « catholicisme libéral » désigne plusieurs courants catholiques du XIXe siècle, non tout catholique contemporain favorable aux libertés civiles. Lamennais et ses collaborateurs autour de L'Avenir voulurent renouveler les rapports entre catholicisme et liberté politique. Mirari vos (1832) de Grégoire XVI combattit des propositions liées à ce mouvement ; des textes pontificaux ultérieurs condamnèrent des thèses précises d'indifférentisme religieux ou de naturalisme. Il faut nommer les propositions plutôt que traiter une étiquette politique entière comme une hérésie unique."
+          },
+          "source_ids": [
+            "LIBCAT",
+            "MIR",
+            "QUA"
+          ],
+          "source_links": [
+            {
+              "id": "LIBCAT",
+              "url": "https://www.newadvent.org/cathen/09212a.htm"
+            },
+            {
+              "id": "MIR",
+              "url": "https://www.papalencyclicals.net/greg16/g16mirar.htm"
+            },
+            {
+              "id": "QUA",
+              "url": "https://www.vatican.va/content/pius-ix/en/documents/encyclica-quanta-cura-8-decembris-1864.html"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        },
+        {
+          "role": "real_objection_and_limits",
+          "text": {
+            "en": "A traditional Catholic criticism can argue, from Mirari vos and Quanta cura, that civil society may not proclaim religious error morally equivalent to truth. A historian must still distinguish liberal political tactics, demands for the Church's independence from the State, theological indifferentism and individual authors such as Lamennais, Lacordaire or Montalembert. Neither every constitutional liberty nor every nineteenth-century Liberal Catholic is thereby proved formally heretical.",
+            "fr": "Une critique catholique traditionnelle peut soutenir, avec Mirari vos et Quanta cura, que la société civile ne saurait déclarer l'erreur religieuse moralement équivalente à la vérité. Mais l'historien doit distinguer les tactiques politiques libérales, la défense de l'indépendance de l'Église face à l'État, l'indifférentisme théologique et les positions de Lamennais, Lacordaire ou Montalembert. On ne démontre pas ainsi que toute liberté constitutionnelle ni tout catholique libéral de l'époque soit formellement hérétique."
+          },
+          "source_ids": [
+            "MIR",
+            "QUA",
+            "LIBCAT"
+          ],
+          "source_links": [
+            {
+              "id": "MIR",
+              "url": "https://www.papalencyclicals.net/greg16/g16mirar.htm"
+            },
+            {
+              "id": "QUA",
+              "url": "https://www.vatican.va/content/pius-ix/en/documents/encyclica-quanta-cura-8-decembris-1864.html"
+            },
+            {
+              "id": "LIBCAT",
+              "url": "https://www.newadvent.org/cathen/09212a.htm"
+            }
+          ],
+          "original_language_context_certified": false,
+          "doctrinal_review_approved": false,
+          "native_french_review_approved": false
+        }
+      ],
+      "review_issue": "Substantive debate: distinguish condemned propositional doctrines, historical movement and competing political strategies.",
+      "canonical_navigation_action": "REUSE_OWNER_AND_ADD_QUESTION_ANCHOR_NO_DUPLICATE_DOSSIER",
+      "publication_allowed": false
+    }
+  ],
+  "source_registry_count": 23,
+  "research_pass_note": "Oct 14 primary-witness pass: ancient Theodoret versus Sozomen narratives integrated for Liberius, Council 553 proceedings and scholarly chronology integrated for Vigilius. Unverified transcript titles and independent approval gates unchanged. Further Honorius original 'unam voluntatem' correspondence and named opposing Schaff versus Catholic Encyclopedia interpretations collated for PAP-ORD-019/020."
+}

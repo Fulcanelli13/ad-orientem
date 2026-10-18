@@ -1,0 +1,905 @@
+{
+  "schema": "AO_FORMATION_BUDDHISM_HINDUISM_RESEARCH_SUPPLEMENT_V1",
+  "date": "2026-10-13",
+  "status": "20_BILINGUAL_TWO_PARAGRAPH_QUESTION_SPECIFIC_RESEARCH_DRAFTS_NOT_CERTIFIED",
+  "description": "20 previously missing Buddhist/Hindu indexed historical questions. The five partially covered questions remain distinct and are not falsely counted here. This is non-public research enrichment, not a doctrinal release or a new canonical dossier bank. Expanded with 20 second source-backed EN/FR paragraphs and precise Buddhist, Upanishadic, Gita and French magisterial passage references; no new historical question IDs.",
+  "source_registry": [
+    {
+      "id": "SN56",
+      "title": "Dhammacakkappavattana Sutta, SN 56.11",
+      "url": "https://www.dhammatalks.org/suttas/SN/SN56_11.html",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SN22",
+      "title": "Anatta-lakkhana Sutta, SN 22.59",
+      "url": "https://www.dhammatalks.org/suttas/SN/SN22_59.html",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "SN12",
+      "title": "Dependent origination, SN 12.2",
+      "url": "https://www.dhammatalks.org/suttas/SN/SN12_2.html",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DH",
+      "title": "Dhammapada",
+      "url": "https://www.dhammatalks.org/suttas/KN/Dhp/",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "MN72",
+      "title": "Aggivacchagotta Sutta, MN 72",
+      "url": "https://www.dhammatalks.org/suttas/MN/MN72.html",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "HEART",
+      "title": "Heart Sutra (Mahayana)",
+      "url": "https://84000.co/translation/toh21",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "LOTUS",
+      "title": "Lotus Sutra (Mahayana)",
+      "url": "https://www.bdkamerica.org/product/the-lotus-sutra-revised-second-edition/",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "GITA",
+      "title": "Bhagavad Gita, chapters 2, 3, 4, 9, 12, 18 (older landing URL redirects; use individual verse sources GITA-4-13 / GITA-18-66 for critical claims)",
+      "url": "https://www.gitasupersite.iitk.ac.in/srimad",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "UPAN",
+      "title": "Chandogya Upanishad 6.8–16 (original book URL intermittently inaccessible; precise VI.8.7 source supplied separately)",
+      "url": "https://www.sacred-texts.com/hin/sbe01/sbe01102.htm",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "BRIH",
+      "title": "Brihadaranyaka Upanishad",
+      "url": "https://www.sacred-texts.com/hin/sbe15/index.htm",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "YOGA",
+      "title": "Patanjali, Yoga Sutras",
+      "url": "https://www.sacred-texts.com/hin/yogasutr.htm",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AQUINAS",
+      "title": "Thomas Aquinas, Summa Theologiae I q.75; I-II q.110",
+      "url": "https://www.newadvent.org/summa/1075.htm",
+      "kind": "CATHOLIC_THEOLOGICAL_SOURCE",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church (creation, person, resurrection, salvation)",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "kind": "CATHOLIC_OFFICIAL_TEXT",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "MEDIT",
+      "title": "CDF, Some Aspects of Christian Meditation (1989)",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19891015_meditazione-cristiana_en.html",
+      "kind": "CATHOLIC_OFFICIAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "NT",
+      "title": "New Testament, John 1; 1 Corinthians 15; Hebrews 9",
+      "url": "https://www.vatican.va/archive/ENG0839/_INDEX.HTM",
+      "kind": "TRADITION_PRIMARY_TEXT_OR_TRANSLATION",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "NOSTRA",
+      "title": "Vatican II, Nostra aetate §2",
+      "url": "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html",
+      "kind": "CATHOLIC_OFFICIAL_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "GITA-4-13",
+      "title": "Bhagavad Gītā IV.13, Sanskrit text and Swami Sivananda commentary",
+      "url": "https://bhagavadgita.com/chapter/4/verse/13",
+      "kind": "HINDU_PRIMARY_TEXT_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "GITA-18-66",
+      "title": "Bhagavad Gītā XVIII.66, surrender to Krishna, multiple attributed translations",
+      "url": "https://www.vidhyamitra.com/bhagavad-gita/18/66",
+      "kind": "HINDU_PRIMARY_TEXT_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CHAND-6-8-7",
+      "title": "Chāndogya Upaniṣad VI.8.7, Sanskrit and translation; tat tvam asi",
+      "url": "https://www.wisdomlib.org/hinduism/book/chandogya-upanishad-english/d/doc239302.html",
+      "kind": "HINDU_PRIMARY_TEXT_TRANSLATION",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "MEDIT-FR",
+      "title": "CDF, Lettre sur quelques aspects de la méditation chrétienne, 15 Oct 1989",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19891015_meditazione-cristiana_fr.html",
+      "kind": "CATHOLIC_ORIGINAL_FR_TEXT",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "THER-MAH",
+      "title": "Bhikkhu Bodhi, Arahants, Bodhisattvas and Buddhas, documented Theravāda/Mahāyāna contrast",
+      "url": "https://find.dhamma.gift/accesstoinsight.org/lib/authors/bodhi/arahantsbodhisattvas.html",
+      "kind": "BUDDHIST_SCHOLARLY_TRADITIONAL_COMMENTARY",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "BUD-001",
+      "original_title_candidate": "Is Buddhism simply atheism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Buddhism is normally non-theistic concerning a supreme creator, not simply a denial of everything supernatural: early texts describe devas, rebirth and multiple realms, while treating gods as impermanent and not ultimate refuge. It therefore cannot be reduced either to Western atheism or to Christian theism.",
+            "fr": "Le bouddhisme ne postule généralement pas de Dieu créateur suprême, sans nier pour autant tout ordre surnaturel : les textes anciens évoquent devas, renaissances et divers mondes, tandis que les dieux restent impermanents et ne constituent pas le refuge ultime. Il ne se réduit donc ni à l'athéisme occidental ni au théisme chrétien."
+          },
+          "source_ids": [
+            "SN56",
+            "DH",
+            "NOSTRA"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The earliest Pāli account of the Four Truths explicitly describes gods and Brahmā-worlds yet declares awakening beyond their powers. Theological non-theism is therefore different from materialism, and later Buddhist traditions also differ in their devotional use of celestial figures.",
+            "fr": "Le discours ancien des Quatre Vérités parle expressément de dieux et des mondes de Brahmā, tout en plaçant l'éveil au-delà de leur pouvoir. Le non-théisme doctrinal se distingue donc du matérialisme ; les traditions bouddhiques divergent aussi dans leur dévotion envers les êtres célestes."
+          },
+          "source_ids": [
+            "SN56",
+            "NOSTRA"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-002",
+      "original_title_candidate": "What are the Four Noble Truths?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "The four truths describe dukkha (the unsatisfactory character of conditioned life), its arising through craving, its cessation, and the Noble Eightfold Path leading to cessation. Dukkha is wider than physical pain; the path groups right understanding, intention, speech, action, livelihood, effort, mindfulness and concentration.",
+            "fr": "Les quatre vérités décrivent dukkha (le caractère insatisfaisant de l'existence conditionnée), son origine dans la soif, sa cessation et le Noble Sentier octuple. Dukkha dépasse la douleur physique ; le chemin réunit compréhension, intention, parole, action, moyens d'existence, effort, attention et concentration justes."
+          },
+          "source_ids": [
+            "SN56"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "SN 56.11 prescribes a distinct task for each truth: fully understand suffering, abandon craving, realize its cessation and cultivate the path. This matters because the doctrine is an ethical and contemplative program, not merely a pessimistic declaration that life is pain.",
+            "fr": "SN 56.11 prescrit une tâche pour chaque vérité : comprendre pleinement la souffrance, abandonner la soif, réaliser sa cessation et cultiver la voie. Il s'agit d'un programme moral et contemplatif, non d'une simple proclamation pessimiste selon laquelle toute vie serait douleur."
+          },
+          "source_ids": [
+            "SN56"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-003",
+      "original_title_candidate": "What does ‘no-self’ actually mean?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Anattā denies that the changing five aggregates—form, feeling, perception, mental formations and consciousness—constitute a permanent, autonomous self. It does not mean that conventional persons do not act or suffer, nor should it be flattened into the claim that absolutely nothing exists.",
+            "fr": "Anattā nie que les cinq agrégats changeants — forme, sensation, perception, formations mentales et conscience — constituent un moi permanent et autonome. Cette doctrine ne nie pas que les personnes conventionnelles agissent et souffrent ; elle ne signifie pas simplement que rien n'existe."
+          },
+          "source_ids": [
+            "SN22"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "SN 22.59 asks whether each aggregate, being changing and not fully controllable, can reasonably be regarded as 'mine' or 'my self'. It does not establish that Buddhist thinkers have only one shared metaphysical model of identity: the careful claim is about non-identification with conditioned aggregates.",
+            "fr": "SN 22.59 demande si chaque agrégat, changeant et échappant à notre maîtrise, peut être considéré comme « mien » ou « mon moi ». On ne doit pas en déduire que toutes les écoles bouddhiques professent une métaphysique unique de l'identité : l'argument porte sur le refus de s'identifier aux agrégats conditionnés."
+          },
+          "source_ids": [
+            "SN22"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-004",
+      "original_title_candidate": "How can rebirth happen if there is no soul?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Classical Buddhist explanations describe rebirth as causal continuity conditioned by craving, karma and ignorance, without transmigration of an eternal ātman. The later life is not numerically the same immutable soul, but neither is it wholly causally disconnected. Catholics instead affirm one earthly life, personal immortality and resurrection.",
+            "fr": "Les explications bouddhiques classiques présentent la renaissance comme continuité causale conditionnée par la soif, le karma et l'ignorance, sans migration d'un ātman éternel. La vie ultérieure n'est pas une âme immuable numériquement identique, mais elle n'est pas sans lien causal. Le catholicisme affirme plutôt une seule vie terrestre, l'immortalité personnelle et la résurrection."
+          },
+          "source_ids": [
+            "SN12",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "SN 12.2 traces links from ignorance to formation, consciousness, craving and rebirth; it does not insert a created or immortal soul into that chain. This addresses causal continuity internally but does not, by itself, resolve the Christian question of the enduring personal subject of moral acts.",
+            "fr": "SN 12.2 relie ignorance, formations, conscience, soif et naissance sans faire intervenir une âme créée ou immortelle dans la chaîne causale. Cette explication fournit une continuité interne, sans résoudre pour autant l'objection chrétienne portant sur la permanence du sujet personnel responsable."
+          },
+          "source_ids": [
+            "SN12",
+            "AQUINAS",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-005",
+      "original_title_candidate": "Is traditional Buddhist rebirth merely a metaphor?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "In traditional Buddhist cosmology, rebirth is ordinarily taught as an actual succession of lives, not merely a metaphor for psychological change. Modern metaphorical readings exist, but they must not be projected back as the uniform classical meaning.",
+            "fr": "Dans la cosmologie bouddhique traditionnelle, la renaissance désigne normalement une succession réelle d'existences, non seulement une métaphore de la transformation psychologique. Des interprétations métaphoriques modernes existent, sans pouvoir être présentées comme le sens classique universel."
+          },
+          "source_ids": [
+            "SN12",
+            "DH"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "In SN 56.11 the Buddha says awakening ends further birth; this presupposes that renewed birth is a real doctrinal problem. Modern psychological reinterpretations deserve fair attribution to their proponents but cannot replace the sutta's original religious claim without argument.",
+            "fr": "Dans SN 56.11, le Bouddha dit que l'éveil met fin aux naissances ultérieures : les renaissances sont donc un problème doctrinal réel. Les lectures psychologiques modernes peuvent être exposées selon leurs auteurs, mais elles ne remplacent pas sans justification la portée religieuse ancienne du discours."
+          },
+          "source_ids": [
+            "SN56",
+            "SN12"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-006",
+      "original_title_candidate": "What is nirvāṇa?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Nirvāṇa (Pali nibbāna) is the cessation of craving, ignorance and the conditions of suffering and renewed birth; it is not merely tranquillity or an ordinary heavenly place. Buddhist schools disagree over its positive description, so calling it simple annihilation misrepresents classical accounts.",
+            "fr": "Le nirvāṇa (pali nibbāna) est l'extinction de la soif, de l'ignorance et des conditions de la souffrance et des renaissances ; ce n'est ni une simple tranquillité ni un ciel ordinaire. Les écoles divergent sur sa description positive ; l'assimiler à un simple anéantissement déforme la doctrine classique."
+          },
+          "source_ids": [
+            "SN56",
+            "MN72"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "MN 72 refuses to describe the liberated Tathāgata after death with simple alternatives of existence or nonexistence; the fire simile illustrates the limitation of those questions. It would misrepresent this text to present nirvāṇa as ordinary annihilation of a material organism.",
+            "fr": "MN 72 refuse de décrire le Tathāgata libéré après la mort par une simple alternative entre existence et inexistence ; l'image du feu fait ressortir les limites de ces questions. Assimiler le nirvāṇa à l'anéantissement ordinaire d'un organisme matériel déforme ce texte."
+          },
+          "source_ids": [
+            "MN72"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-007",
+      "original_title_candidate": "What is ‘emptiness’?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "In Mahāyāna thought, śūnyatā means that phenomena lack independent intrinsic existence because they arise dependently. It is not a straightforward assertion that nothing exists; it challenges the reification of persons and things. Catholic metaphysics can acknowledge dependence without thereby accepting the full Madhyamaka analysis of substance.",
+            "fr": "Dans le Mahāyāna, śūnyatā signifie que les phénomènes n'ont pas d'existence intrinsèque indépendante puisqu'ils apparaissent en dépendance. Ce n'est pas l'affirmation sommaire que rien n'existe. La métaphysique catholique peut reconnaître la dépendance des êtres sans adopter toute l'analyse madhyamaka de la substance."
+          },
+          "source_ids": [
+            "HEART",
+            "AQUINAS"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The Heart Sūtra links the emptiness of form with emptiness of the five aggregates, rather than arguing that moral action is meaningless. Dependent origination in SN 12.2 also explains why phenomena and suffering arise conditionally. A Catholic comparison must separately address created substance and contingency, not equate śūnyatā with nihilism.",
+            "fr": "Le Sūtra du Cœur lie la vacuité de la forme à celle des cinq agrégats, sans affirmer que l'action morale n'a plus de sens. SN 12.2 explique aussi l'apparition conditionnée des phénomènes et de la souffrance. Une comparaison catholique doit traiter séparément la substance créée et la contingence, sans identifier śūnyatā au nihilisme."
+          },
+          "source_ids": [
+            "HEART",
+            "SN12",
+            "AQUINAS"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-008",
+      "original_title_candidate": "Are Theravāda and Mahāyāna basically identical?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Theravāda and Mahāyāna share central Buddhist themes, including impermanence, suffering and liberation, but differ in authoritative textual corpora, the ideal of the bodhisattva and the roles attributed to celestial Buddhas and bodhisattvas. Neither is internally uniform, and Mahāyāna should not be described as simply rejecting early teaching.",
+            "fr": "Theravāda et Mahāyāna partagent notamment impermanence, souffrance et délivrance, mais diffèrent par leurs corpus scripturaires, la place de l'idéal du bodhisattva et le rôle attribué aux bouddhas et bodhisattvas célestes. Aucune tradition n'est uniforme, et le Mahāyāna ne se réduit pas à un rejet des enseignements anciens."
+          },
+          "source_ids": [
+            "SN56",
+            "LOTUS"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The Mahāyāna Lotus Sūtra develops expansive teaching about bodhisattvas and Buddha's saving activity, unlike the earlier formulation of the Four Truths in SN 56.11. This is a real contrast of textual traditions, though both have complex internal histories; neither a single sutta nor a single Mahāyāna book represents every Buddhist school.",
+            "fr": "Le Sūtra du Lotus développe l'enseignement sur les bodhisattvas et l'activité salvatrice du Bouddha d'une autre manière que l'exposé des Quatre Vérités dans SN 56.11. La différence des corpus est réelle, mais leurs histoires sont complexes : un sutta ou un unique livre mahāyāna ne représente pas toutes les écoles."
+          },
+          "source_ids": [
+            "LOTUS",
+            "SN56",
+            "THER-MAH"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-010",
+      "original_title_candidate": "What is the Christian philosophical objection to *anātman*?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "The Christian objection is not that Buddhists deny egotism, a denial Christians can welcome, but that the strong denial of an enduring personal spiritual subject conflicts with the Christian account of the rational soul, moral identity beyond death and bodily resurrection. Care is required: Buddhist critiques target a particular conception of permanent self, not necessarily every Christian claim about personhood.",
+            "fr": "L'objection chrétienne ne porte pas sur la critique de l'égoïsme, que le chrétien peut partager, mais sur la négation forte d'un sujet spirituel personnel durable, incompatible avec la doctrine chrétienne de l'âme rationnelle, de l'identité après la mort et de la résurrection du corps. Il faut toutefois préciser que la critique bouddhique vise une conception déterminée du moi permanent."
+          },
+          "source_ids": [
+            "SN22",
+            "AQUINAS",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "SN 22.59 denies 'self' of each changeable aggregate; Thomas Aquinas, by contrast, argues that the intellective principle subsists and that the person is ordered to bodily resurrection. This is a philosophical disagreement over subject and persistence, not a licence to portray Buddhists as denying all moral responsibility.",
+            "fr": "SN 22.59 nie l'identification du « soi » à chaque agrégat changeant ; Thomas d'Aquin soutient au contraire la subsistance du principe intellectif et l'orientation de la personne vers la résurrection corporelle. Le désaccord porte sur le sujet et sa permanence, non sur l'existence d'une responsabilité morale chez les bouddhistes."
+          },
+          "source_ids": [
+            "SN22",
+            "AQUINAS",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "BUD-011",
+      "original_title_candidate": "Is Buddhist meditation interchangeable with Christian contemplation?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Certain practices may share attentional disciplines, but Buddhist meditation and Christian contemplation are not interchangeable spiritual ends. Christian prayer addresses the personal Triune God through Christ in grace; Buddhist meditations are embedded in differing accounts of liberation, non-self and awakening. Techniques must be assessed separately from their doctrinal interpretations.",
+            "fr": "Certaines pratiques partagent des exercices d'attention, mais méditation bouddhique et contemplation chrétienne n'ont pas une fin spirituelle interchangeable. La prière chrétienne s'adresse au Dieu personnel trinitaire par le Christ et dans la grâce ; les méditations bouddhiques s'inscrivent dans d'autres conceptions de la délivrance et de l'éveil. Il faut distinguer technique et interprétation doctrinale."
+          },
+          "source_ids": [
+            "SN56",
+            "MEDIT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The 1989 CDF letter explicitly says Christian prayer is a personal exchange with the Triune God and warns against confusing psychophysical states with grace. It also permits serious discernment of methods rather than assuming every bodily technique is a separate religion; compare the full text, not isolated prohibitions.",
+            "fr": "La lettre de la CDF de 1989 présente la prière chrétienne comme rencontre personnelle avec le Dieu trinitaire et met en garde contre la confusion des états psychophysiques avec la grâce. Elle demande aussi un discernement concret des méthodes, sans faire de toute technique corporelle une religion autonome ; le texte entier doit être lu."
+          },
+          "source_ids": [
+            "MEDIT",
+            "MEDIT-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-001",
+      "original_title_candidate": "Is Hinduism simply polytheism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Hinduism includes traditions with worship of many deities, devotion to one supreme personal deity, qualified nondualism and strict nondual readings of ultimate reality. The word 'polytheism' describes some devotional forms but is an inadequate universal classification. Arguments must identify the particular school or text.",
+            "fr": "L'hindouisme comprend des traditions vénérant plusieurs divinités, d'autres vouées à une divinité personnelle suprême, ainsi que des lectures non dualistes ou de non-dualité qualifiée de la réalité ultime. Le mot « polythéisme » décrit certains cultes, non l'ensemble de ces traditions. Chaque comparaison doit nommer l'école ou le texte précis."
+          },
+          "source_ids": [
+            "GITA",
+            "UPAN"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The Bhagavad Gītā presents Krishna as a speaker demanding personal surrender (XVIII.66), while Chāndogya Upaniṣad VI.8.7 links the deepest self with ultimate reality. These witnesses do not offer a single easy count of gods: Hindu pluralism and Vedānta theology must be compared as distinct doctrines.",
+            "fr": "Dans la Bhagavad Gītā, Krishna demande qu'on s'abandonne personnellement à lui (XVIII,66), tandis que la Chāndogya Upaniṣad VI,8,7 relie le soi profond à la réalité ultime. Ces témoins ne donnent pas un simple décompte des dieux : pluralité des cultes et théologie du Vedānta doivent être étudiées distinctement."
+          },
+          "source_ids": [
+            "GITA-18-66",
+            "CHAND-6-8-7"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-002",
+      "original_title_candidate": "What is Brahman?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Brahman is the ultimate reality in several Upanishadic and Vedānta traditions, but its interpretation differs: Advaita treats it as ultimately nondual and without limiting attributes, whereas other Vedānta schools understand the supreme reality personally and distinguish souls from God in different ways. It must not be equated without qualification with the Christian Creator.",
+            "fr": "Brahman désigne la réalité ultime dans plusieurs Upanishads et écoles du Vedānta, mais son interprétation varie : l'Advaita le comprend ultimement comme non duel et sans attributs limitatifs, tandis que d'autres écoles conçoivent personnellement la réalité suprême et distinguent autrement âmes et Dieu. On ne peut l'identifier sans réserve au Créateur chrétien."
+          },
+          "source_ids": [
+            "UPAN",
+            "BRIH",
+            "GITA"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "In Chāndogya VI.8.7, the formula tat tvam asi addresses Śvetaketu and has been read as identity in Advaita or differently by qualified-nondualist commentators. This contested interpretation must not be presented as though every Hindu school denied a distinction between God and creature.",
+            "fr": "Dans Chāndogya VI,8,7, la formule tat tvam asi s'adresse à Śvetaketu ; l'Advaita la lit comme identité, mais les commentaires de non-dualité qualifiée l'interprètent autrement. Il serait inexact d'affirmer que toute école hindoue nie la distinction entre Dieu et la créature."
+          },
+          "source_ids": [
+            "CHAND-6-8-7"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-003",
+      "original_title_candidate": "What is *ātman*?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Ātman denotes the self or deepest spiritual principle, especially in Upanishadic discourse. Some texts relate or identify it with Brahman; dualist traditions understand individual selves differently. Unlike Buddhist anattā, it affirms a lasting spiritual principle, yet no single Hindu account equals the Catholic doctrine of the created rational soul.",
+            "fr": "Ātman désigne le soi ou principe spirituel profond, notamment dans les Upanishads. Certains textes le rapprochent ou l'identifient à Brahman ; les traditions dualistes conçoivent autrement les âmes individuelles. Contrairement à l'anattā bouddhique, il affirme un principe durable, sans correspondre uniformément à l'âme rationnelle créée de la doctrine catholique."
+          },
+          "source_ids": [
+            "UPAN",
+            "GITA",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The Upaniṣadic phrase 'that thou art' is not merely a statement about psychological confidence: it concerns the relation between the inmost self and fundamental reality. Its interpretations vary, whereas Catholic anthropology affirms a soul created by God, distinct from him and ordered to the resurrection.",
+            "fr": "La formule upanishadique « tu es cela » ne vise pas la seule confiance psychologique : elle concerne le rapport entre le soi profond et la réalité fondamentale. Ses interprétations varient, tandis que l'anthropologie catholique affirme l'âme créée par Dieu, distincte de lui et ordonnée à la résurrection."
+          },
+          "source_ids": [
+            "CHAND-6-8-7",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-005",
+      "original_title_candidate": "Is all Hinduism impersonal?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "No. Personalist Vaiṣṇava traditions worship Viṣṇu or Krishna as supreme Lord, and many Śaiva and Śākta traditions understand the ultimate as personally accessible. Their theology still differs from Christian Trinitarian monotheism and must not be collapsed into an impersonal Advaita model.",
+            "fr": "Non. Des traditions vaishnava personnalistes adorent Vishnou ou Krishna comme Seigneur suprême ; de nombreuses traditions shivaïtes et shakta conçoivent aussi l'ultime comme accessible personnellement. Leur théologie n'est pas pour autant le monothéisme trinitaire chrétien et ne se laisse pas réduire à l'Advaita impersonnel."
+          },
+          "source_ids": [
+            "GITA"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "Krishna's first-person promise of liberation in Bhagavad Gītā XVIII.66 is a concrete counterexample to the claim that all Hindu piety aims at an impersonal absolute. It does not make the personal Lord of Vaiṣṇavism identical in revealed nature to the Christian Trinity.",
+            "fr": "La promesse de délivrance adressée par Krishna à la première personne dans Bhagavad Gītā XVIII,66 contredit concrètement l'affirmation que toute piété hindoue aurait pour but un absolu impersonnel. Elle n'identifie pas pour autant le Seigneur vaishnava à la Trinité chrétienne."
+          },
+          "source_ids": [
+            "GITA-18-66",
+            "NOSTRA"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-006",
+      "original_title_candidate": "Is there a Hindu view relatively close to monotheism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Yes. Some Vaiṣṇava schools profess exclusive devotion to a single supreme personal Lord, with other divine beings dependent upon him. Such commitments provide a closer point of comparison with monotheism than impersonalist readings, but doctrinal differences remain over creation, divine manifestation, the Trinity and the Incarnation.",
+            "fr": "Oui. Certaines écoles vaishnava professent la dévotion exclusive à un Seigneur personnel suprême dont les autres êtres divins dépendent. Cela offre un point de comparaison plus proche du monothéisme que certaines lectures impersonnalistes, sans effacer les différences sur la création, les manifestations divines, la Trinité et l'Incarnation."
+          },
+          "source_ids": [
+            "GITA",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "Theistic Vaiṣṇava devotion can speak of one supreme Lord, grace and surrender; the Gītā XVIII.66 provides a clear passage. Theological comparison still has to distinguish cosmological relations among deities and the Christian confession of one divine nature in three Persons; verbal 'one God' resemblance is insufficient.",
+            "fr": "La dévotion vaishnava théiste peut parler d'un Seigneur suprême, de grâce et d'abandon ; Gītā XVIII,66 en est un passage net. La comparaison doit encore distinguer les rapports entre divinités et la confession chrétienne d'une nature divine en trois Personnes ; le seul vocabulaire d'un « Dieu unique » ne suffit pas."
+          },
+          "source_ids": [
+            "GITA-18-66",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-007",
+      "original_title_candidate": "What are karma and reincarnation?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Karma concerns the moral consequences of intentional action across lives; saṃsāra is the cycle of birth and death from which liberation is sought. Hindu schools differ about the continuity of the individual self and how divine grace affects karmic bondage. This differs from Christian judgment after a single earthly life and resurrection.",
+            "fr": "Le karma concerne les conséquences morales de l'action intentionnelle à travers les vies ; le saṃsāra est le cycle des naissances et des morts dont on cherche la délivrance. Les écoles hindoues divergent sur la permanence du soi et l'action de la grâce divine. Cette conception diffère du jugement chrétien après une seule vie terrestre et de la résurrection."
+          },
+          "source_ids": [
+            "GITA",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The Gītā presents liberation as a religious answer to the chain of actions and births, while XVIII.66 invites surrender rather than mechanical self-salvation. Do not define all Hindu interpretations of karma as a blind impersonal mechanism; different schools debate how divine action and moral responsibility interact.",
+            "fr": "La Gītā propose la délivrance comme réponse à l'enchaînement des actes et des naissances, mais XVIII,66 invite à l'abandon plutôt qu'à une autosuffisance mécanique. Toutes les lectures hindoues du karma ne le traitent pas comme un mécanisme aveugle ; les écoles débattent du rapport entre action divine et responsabilité morale."
+          },
+          "source_ids": [
+            "GITA-18-66",
+            "GITA"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-008",
+      "original_title_candidate": "What is *mokṣa*?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Mokṣa is liberation from saṃsāra and karmic bondage, but descriptions vary: realization of nondual Brahman, enduring communion with a personal Lord, or distinct forms of freed existence. It should not be equated indiscriminately either with annihilation or the Christian beatific vision.",
+            "fr": "Mokṣa est la délivrance du saṃsāra et de l'enchaînement karmique ; selon les écoles, elle peut être comprise comme réalisation du Brahman non duel, communion durable avec un Seigneur personnel ou autres états de liberté. Elle ne doit être assimilée sans distinction ni à l'anéantissement ni à la vision béatifique chrétienne."
+          },
+          "source_ids": [
+            "GITA",
+            "UPAN",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "In Gītā XVIII.66, surrender to a personal Lord is associated with liberation from wrongdoing. In Chāndogya VI.8.7, liberation is connected in later Vedānta readings with knowledge of the deepest self. These are not identical philosophical pathways, and neither can be mechanically equated with Christian beatitude.",
+            "fr": "Dans la Gītā XVIII,66, l'abandon à un Seigneur personnel est lié à la délivrance du péché. Dans Chāndogya VI,8,7, des lectures postérieures du Vedānta rapportent la délivrance à la connaissance du soi profond. Il ne s'agit pas de voies philosophiques identiques, ni d'équivalents mécaniques de la béatitude chrétienne."
+          },
+          "source_ids": [
+            "GITA-18-66",
+            "CHAND-6-8-7",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-009",
+      "original_title_candidate": "Is salvation by knowledge or devotion?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "The Bhagavad Gītā discusses paths of knowledge (jñāna), action (karma-yoga) and devotion (bhakti), often integrating rather than simply opposing them. Schools weight these differently; some emphasize the Lord's grace and surrender. Catholic salvation also involves grace and love, but depends on Christ's redemptive work rather than cycles of rebirth or realization of ātman.",
+            "fr": "La Bhagavad Gītā présente des voies de connaissance (jñāna), d'action (karma-yoga) et de dévotion (bhakti), souvent articulées plutôt qu'opposées. Les écoles les hiérarchisent différemment ; certaines soulignent la grâce du Seigneur et l'abandon confiant. Le salut catholique repose sur l'œuvre rédemptrice du Christ, et non sur les renaissances ou la réalisation de l'ātman."
+          },
+          "source_ids": [
+            "GITA",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The Gītā does not set knowledge, action and devotion in an absolute three-way exclusion: the invitation to abandon oneself to Krishna in XVIII.66 follows extended discourse on disciplined action and understanding. Scholarly comparison must specify the school before declaring 'knowledge' or 'devotion' the sole Hindu answer.",
+            "fr": "La Gītā n'oppose pas connaissance, action et dévotion comme trois voies absolument exclusives : l'appel à s'abandonner à Krishna en XVIII,66 vient après un long enseignement sur l'action disciplinée et la connaissance. Toute comparaison doit préciser l'école avant d'ériger la « connaissance » ou la « dévotion » en réponse hindoue unique."
+          },
+          "source_ids": [
+            "GITA",
+            "GITA-18-66"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-011",
+      "original_title_candidate": "Does Hinduism teach caste as divinely ordered?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Some Hindu sources link the four varṇas to cosmic or divine order (compare Bhagavad Gītā 4.13), but social caste (including thousands of jāti communities) has a complex history and cannot be inferred directly from one verse. Interpretations range from hereditary hierarchy to emphasis on qualities and work; critique must distinguish scripture, later law codes, and lived social discrimination.",
+            "fr": "Certains textes hindous rattachent les quatre varṇa à un ordre cosmique ou divin (cf. Bhagavad Gītā 4,13), mais les castes sociales, comprenant de nombreux jāti, ont une histoire complexe qu'un seul verset n'explique pas. Les interprétations oscillent entre hiérarchie héréditaire et accent sur qualités et fonctions ; il faut distinguer Écriture, codes juridiques ultérieurs et discrimination vécue."
+          },
+          "source_ids": [
+            "GITA",
+            "CCC"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "Bhagavad Gītā IV.13 speaks explicitly of Krishna creating the four varṇas in relation to qualities and actions. It neither supplies a demographic history of jāti communities nor conclusively settles later disputes about inherited caste. To assess discrimination one needs social-historical evidence in addition to exegeting this verse.",
+            "fr": "Bhagavad Gītā IV,13 attribue explicitement à Krishna l'institution des quatre varṇa selon les qualités et les actes. Ce verset ne retrace ni l'histoire démographique des jāti ni toutes les controverses ultérieures sur l'hérédité des castes. Pour juger des discriminations, il faut des preuves historiques en plus de son exégèse."
+          },
+          "source_ids": [
+            "GITA-4-13"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    },
+    {
+      "id": "HIN-012",
+      "original_title_candidate": "Is yoga just stretching?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "source_grounded_direct_answer_and_comparison",
+          "text": {
+            "en": "Yoga can refer to spiritual disciplines of concentration, ethical restraint, meditation and liberation, not merely physical exercise; Patañjali's Yoga Sūtras make that plain. Modern posture-only exercise is distinguishable from explicit devotional or metaphysical practice. Catholic discernment should assess the actual practice, its claims and intention rather than declare every stretch religious worship.",
+            "fr": "Le yoga peut désigner des disciplines spirituelles de concentration, de maîtrise morale, de méditation et de délivrance, non simplement des exercices corporels, comme l'indiquent les Yoga Sūtras de Patañjali. Une gymnastique moderne limitée aux postures se distingue d'une pratique dévotionnelle ou métaphysique. Le discernement catholique doit examiner la pratique réelle, ses prétentions et son intention."
+          },
+          "source_ids": [
+            "YOGA",
+            "MEDIT"
+          ],
+          "review_approved": false
+        },
+        {
+          "role": "source_context_and_distinction",
+          "text": {
+            "en": "The Yoga Sūtras describe an eight-limbed discipline including ethical restraints, postures, breath control, concentration and meditation; they should not be collapsed into a fitness routine. Yet a nondevotional stretching class should be evaluated by its actual content rather than presumed to enact the Yoga Sūtras' whole metaphysics.",
+            "fr": "Les Yoga Sūtras décrivent une discipline à huit membres comprenant retenues morales, postures, contrôle du souffle, concentration et méditation : ce n'est pas un simple programme de gymnastique. Mais un cours d'étirements non dévotionnel doit être jugé sur son contenu réel, non présumé pratiquer toute la métaphysique des Yoga Sūtras."
+          },
+          "source_ids": [
+            "YOGA",
+            "MEDIT",
+            "MEDIT-FR"
+          ],
+          "review_approved": false
+        }
+      ],
+      "review_limit": "Passage context, first-hand doctrinal representation, Catholic theology, French, source link and original-chat wording require independent certification. These two paragraphs are not a formal opponent-led debate; specific classical school differences and translations remain subject to expert review.",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_NAVIGATION_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "owner_mapping_status": "UNRESOLVED_NO_PUBLICATION"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}

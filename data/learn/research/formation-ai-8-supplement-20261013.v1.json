@@ -1,0 +1,229 @@
+{
+  "schema": "AO_FORMATION_AI_ETHICS_8_RESEARCH_V1",
+  "date": "2026-10-13",
+  "status": "BILINGUAL_RESEARCH_8_QUESTION_SPECIFIC_DRAFTS_NOT_APPROVED",
+  "source_registry": [
+    {
+      "id": "AN-EN",
+      "title": "DDF/Dicastery for Culture and Education, Antiqua et nova (2025), English",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250128_antiqua-et-nova_en.html",
+      "kind": "OFFICIAL_CATHOLIC_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "AN-FR",
+      "title": "DDF/Dicastère pour la Culture et l'Éducation, Antiqua et nova (2025), français",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250128_antiqua-et-nova_fr.html",
+      "kind": "OFFICIAL_CATHOLIC_PRIMARY",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church, morality, truth and human dignity",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "kind": "OFFICIAL_CATHOLIC_PRIMARY",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "AI-004",
+      "original_title_candidate": "Is using ChatGPT or another AI for school, study or work morally wrong?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_official_moral_norms_and_application",
+          "text": {
+            "en": "Using generative AI for school, study or employment is not intrinsically wrong. The decisive moral questions are whether its use involves deception, breaches legitimate academic or employer rules, substitutes automated output for work one is obliged to perform, or harms another's rights. Antiqua et nova §§80–84 warns that outsourcing thought can impair intellectual development; AI may assist learning when the human remains responsible.",
+            "fr": "Employer une IA générative à l'école, dans les études ou au travail n'est pas intrinsèquement mauvais. Il faut vérifier s'il y a tromperie, violation des règles légitimes de l'établissement ou de l'employeur, substitution à un travail personnel exigé ou atteinte aux droits d'autrui. Antiqua et nova §§80–84 avertit que déléguer la réflexion peut nuire à la formation intellectuelle ; l'IA peut aider à apprendre si l'homme garde la responsabilité."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Authoritative note read and citations registered, but individual claim-context, moral-theology and French signoff pending."
+    },
+    {
+      "id": "AI-005",
+      "original_title_candidate": "Is making an AI deepfake or fake image always harmless because “it isn't real”?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_official_moral_norms_and_application",
+          "text": {
+            "en": "A deepfake is not harmless merely because its pixels are artificial. Nonconsensual intimate simulations, impersonation, fraud and defamatory fabrications can cause genuine harm to persons and trust; Antiqua et nova §§85–89 explicitly addresses this. A clearly labelled consensual parody is ethically different from deception or humiliation, so the judgment must distinguish consent, truthfulness, context and foreseeable harm.",
+            "fr": "Un hypertrucage (« deepfake ») n'est pas innocent parce que ses pixels sont artificiels. Une représentation intime non consentie, une usurpation d'identité, une fraude ou une fabrication diffamatoire peuvent porter un préjudice réel aux personnes et à la confiance ; Antiqua et nova §§85–89 en traite expressément. Une parodie consentie et clairement annoncée diffère d'une tromperie ou d'une humiliation : il faut juger consentement, véracité, contexte et conséquences prévisibles."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Authoritative note read and citations registered, but individual claim-context, moral-theology and French signoff pending."
+    },
+    {
+      "id": "AI-006",
+      "original_title_candidate": "Do I have a duty to check AI-generated information before spreading it?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_official_moral_norms_and_application",
+          "text": {
+            "en": "Yes, the duty to avoid bearing false witness applies to material amplified by AI. Because language models may produce plausible errors and fabricate citations, users who disseminate claims, especially about people's reputations, medicine, law or faith, must verify them proportionately to their seriousness. Antiqua et nova §§85–89 assigns producers and users a duty of diligence rather than accepting a generated answer as evidence.",
+            "fr": "Oui, l'obligation de ne pas porter de faux témoignage s'étend aux contenus amplifiés par l'IA. Les modèles pouvant inventer des faits et références plausibles, ceux qui diffusent leurs affirmations, surtout sur la réputation, la médecine, le droit ou la foi, doivent les vérifier proportionnellement à leur gravité. Antiqua et nova §§85–89 impose cette diligence aux producteurs et utilisateurs : une réponse générée n'est pas en soi une preuve."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Authoritative note read and citations registered, but individual claim-context, moral-theology and French signoff pending."
+    },
+    {
+      "id": "AI-007",
+      "original_title_candidate": "Can an AI be my friend, girlfriend, boyfriend, therapist or spiritual companion?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_official_moral_norms_and_application",
+          "text": {
+            "en": "An AI assistant may provide conversation, exercises, information and useful emotional support, but cannot replace the reciprocal duties of a friend, spouse, qualified therapist or priest. In Antiqua et nova's discussion of relationships (§§58–63), anthropomorphic design may simulate empathy without human communion. Mental-health crises require qualified human help; sacramental confession and spiritual direction are not functions that software can perform.",
+            "fr": "Un assistant IA peut offrir conversation, exercices, informations et soutien ponctuel, mais non remplacer la réciprocité d'un ami, d'un conjoint, d'un thérapeute compétent ou d'un prêtre. Antiqua et nova, sur les relations (§§58–63), avertit qu'une conception anthropomorphique peut simuler l'empathie sans communion humaine. Les crises psychiques appellent une aide humaine qualifiée ; un logiciel n'administre ni la confession sacramentelle ni une direction spirituelle véritable."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Authoritative note read and citations registered, but individual claim-context, moral-theology and French signoff pending."
+    },
+    {
+      "id": "AI-008",
+      "original_title_candidate": "Is there something morally wrong with becoming emotionally attached to an AI?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_official_moral_norms_and_application",
+          "text": {
+            "en": "Affection toward an apparently responsive system is not automatically a grave sin. The moral concern arises when the attachment fosters isolation, sexual exploitation, manipulation, unhealthy dependence, or neglect of real duties and relationships. Antiqua et nova distinguishes simulated personal responsiveness from mutual human encounter; discernment should assess the person's actual conduct and vulnerability rather than condemn every harmless interaction.",
+            "fr": "L'affection envers un système paraissant réceptif n'est pas automatiquement un péché grave. Le problème moral apparaît lorsque l'attachement favorise isolement, exploitation sexuelle, manipulation, dépendance malsaine ou négligence des devoirs et relations réels. Antiqua et nova distingue la simulation de réciprocité personnelle de la rencontre humaine ; le discernement juge les conduites et vulnérabilités concrètes, non chaque interaction anodine."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Authoritative note read and citations registered, but individual claim-context, moral-theology and French signoff pending."
+    },
+    {
+      "id": "AI-010",
+      "original_title_candidate": "Can AI make medical decisions instead of doctors?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_official_moral_norms_and_application",
+          "text": {
+            "en": "AI can assist diagnosis, triage and medical research but should not simply displace qualified clinical judgment or informed patient consent. Antiqua et nova §§71–76 emphasizes human dignity, vulnerability, confidentiality and patient–clinician relationships; algorithmic bias, errors and lack of explainability require oversight. Responsibility remains with the people and institutions deploying the system.",
+            "fr": "L'IA peut aider au diagnostic, au triage et à la recherche médicale mais ne doit pas simplement remplacer le jugement clinique qualifié ni le consentement éclairé du patient. Antiqua et nova §§71–76 souligne dignité, vulnérabilité, confidentialité et relation soignant–patient ; biais, erreurs et opacité des algorithmes exigent une surveillance. La responsabilité demeure celle des personnes et institutions qui déploient ces outils."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Authoritative note read and citations registered, but individual claim-context, moral-theology and French signoff pending."
+    },
+    {
+      "id": "AI-011",
+      "original_title_candidate": "Is AI surveillance morally neutral?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_official_moral_norms_and_application",
+          "text": {
+            "en": "AI surveillance is not morally neutral: its legitimacy depends on a proportionate purpose, lawful authority, necessity, safeguards and respect for privacy and human dignity. Antiqua et nova §§90–94 warns against indiscriminate collection and intrusive monitoring; effectiveness in detecting patterns cannot itself justify coercive tracking or discrimination.",
+            "fr": "La surveillance par IA n'est pas moralement neutre : sa légitimité dépend d'une fin proportionnée, d'une autorité légitime, de la nécessité, de garanties et du respect de la vie privée et de la dignité. Antiqua et nova §§90–94 met en garde contre la collecte indifférenciée et le contrôle intrusif ; l'efficacité technique ne justifie pas à elle seule le pistage coercitif ou la discrimination."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Authoritative note read and citations registered, but individual claim-context, moral-theology and French signoff pending."
+    },
+    {
+      "id": "AI-012",
+      "original_title_candidate": "Can AI decide who should be killed in war?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "direct_answer_official_moral_norms_and_application",
+          "text": {
+            "en": "No machine should be entrusted with final, unaccountable decisions to take human life. Antiqua et nova §§99–103 treats lethal autonomous weapons as a grave ethical danger and insists on human responsibility, discrimination and proportionality in conflict. AI may support analysis, but accountability and concrete judgments affecting life cannot be transferred to an algorithm.",
+            "fr": "Aucune machine ne doit recevoir le pouvoir final et irresponsable de décider de tuer. Antiqua et nova §§99–103 voit dans les armes létales autonomes un grave danger éthique et insiste sur la responsabilité humaine, la discrimination et la proportionnalité dans les conflits. L'IA peut aider à analyser des données, mais ni la responsabilité ni les jugements concrets concernant des vies ne se délèguent à un algorithme."
+          },
+          "source_ids": [
+            "AN-EN",
+            "AN-FR",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "review_limit": "Authoritative note read and citations registered, but individual claim-context, moral-theology and French signoff pending."
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}
