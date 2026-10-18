@@ -40,6 +40,18 @@ export async function probeTextFocus({
     }else eligible.push({node,entry});
   }
   res.registered=eligible.length;
+  // Content still visible outside the reading-focus controller must not be
+  // mistaken for certified coverage. It may be intentional explanatory prose;
+  // review rather than auto-promote it into the prayer engine.
+  const candidates=owner==="mass"?[]:[...scroll.querySelectorAll("p,li,.aoP435930PrayerProse,.aoTP381TextParagraph")];
+  const outside=candidates.filter(shown).filter(node=>
+    !node.closest(paragraphSelector)&&!nodes.some(registered=>registered.contains(node)))
+    .filter(node=>(node.textContent||"").trim().length>=18);
+  res.outsideFocusCount=outside.length;
+  res.outsideFocus=outside.slice(0,maxExamples).map(node=>({
+    tag:node.tagName,className:String(node.className||"").slice(0,110),
+    text:(node.textContent||"").trim().replace(/\\s+/g," ").slice(0,105)
+  }));
   res.maxScroll=Math.max(0,Math.round(scroll.scrollHeight-scroll.clientHeight));
   res.initialActive=eligible.filter(x=>active(x.node)).length;
   const seen=new Set(eligible.filter(x=>active(x.node)).map(x=>x.entry.ordinal));
