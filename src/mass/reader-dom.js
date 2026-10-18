@@ -452,7 +452,7 @@ const SHELL_STYLE = `
 .ao-schola-meta{display:grid;grid-template-columns:1fr;gap:8px;margin-top:8px;min-height:0}
 .ao-schola-progress{grid-row:1;width:100%;height:2px;max-width:none;min-width:0;background:rgba(255,255,255,.07);overflow:hidden;border-radius:99px;opacity:.76}
 .ao-schola-progress>span{display:block;height:100%;width:0;background:var(--ao-mass-accent);transition:none}
-.ao-schola-controls{grid-row:2;width:100%;display:grid;grid-template-columns:38px 58px 38px minmax(72px,1fr);gap:6px;align-items:center;opacity:1;pointer-events:auto;overflow:visible}
+.ao-schola-controls{grid-row:2;width:100%;display:grid;grid-template-columns:38px 38px 58px 38px 38px minmax(72px,1fr);gap:5px;align-items:center;opacity:1;pointer-events:auto;overflow:visible}
 .ao-schola-control{
   appearance:none;border:1px solid rgba(255,255,255,.065);background:rgba(255,255,255,.025);color:#9eada2;
   border-radius:7px;min-height:26px;padding:4px 7px;
@@ -460,6 +460,13 @@ const SHELL_STYLE = `
 }
 button.ao-schola-control{cursor:pointer}
 .ao-schola-control[data-schola-slower],.ao-schola-control[data-schola-faster]{min-width:0;height:34px;font-size:16px;line-height:1;color:#d7e2d9;background:rgba(115,151,123,.14);border-color:rgba(145,181,153,.28)}
+.ao-schola-control[data-schola-previous],.ao-schola-control[data-schola-next]{
+  min-width:0;height:34px;font:500 23px/1 Georgia,serif;color:var(--ao-mass-accent-text);
+  background:rgba(255,255,255,.035);border-color:rgba(225,207,145,.18)
+}
+.ao-schola-control[data-schola-previous]:disabled,.ao-schola-control[data-schola-next]:disabled{
+  opacity:.25;cursor:default
+}
 .ao-schola-speed{display:grid;place-items:center;min-width:58px;height:34px;text-align:center;color:#c9d8cc;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.07);padding:0}
 .ao-schola-control[data-schola-pause]{justify-self:stretch;min-width:72px;height:34px;color:#aebcaf;border-color:rgba(255,255,255,.09);background:rgba(255,255,255,.03)}
 .ao-schola-control[data-schola-pause][aria-pressed="true"]{color:#e5ede7;border-color:rgba(145,181,153,.34);background:rgba(88,123,97,.22)}
@@ -728,7 +735,7 @@ button.ao-schola-control{cursor:pointer}
   .ao-schola-main{height:44px;margin-top:4px}
   .ao-schola-dock [data-role="schola"]{font-size:14px}.ao-schola-translation{font-size:12px;padding:7px 8px}
   .ao-schola-meta{gap:8px;margin-top:8px}
-  .ao-schola-controls{grid-template-columns:36px 54px 36px minmax(66px,1fr);gap:5px}
+  .ao-schola-controls{grid-template-columns:34px 34px 50px 34px 34px minmax(60px,1fr);gap:4px}
   .ao-schola-control{min-height:28px;padding:4px 6px;font-size:7px}
   .ao-schola-speed{min-width:54px;padding:0}
   .ao-schola-title{padding-right:62px;gap:6px}
@@ -767,7 +774,7 @@ button.ao-schola-control{cursor:pointer}
   .ao-schola-title{min-height:32px}
   .ao-schola-kicker{font-size:10px}
   .ao-schola-page{font-size:10px}
-  .ao-schola-controls{grid-template-columns:44px 54px 44px minmax(72px,1fr);gap:5px}
+  .ao-schola-controls{grid-template-columns:36px 36px 48px 36px 36px minmax(54px,1fr);gap:3px}
   .ao-schola-control{min-height:44px;padding:7px 6px;font-size:11px;line-height:1.2;letter-spacing:.03em}
   .ao-schola-control[data-schola-slower],.ao-schola-control[data-schola-faster]{height:44px;font-size:19px}
   .ao-schola-speed{height:44px}
@@ -1730,9 +1737,11 @@ export function buildReaderShellMarkup(prepared = {}) {
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
       <div class="ao-schola-controls" aria-label="Schola text speed">
+        <button type="button" class="ao-schola-control" data-schola-previous aria-label="Previous Schola phrase" title="Previous Schola phrase">‹</button>
         <button type="button" class="ao-schola-control" data-schola-slower aria-label="Slower Schola text">−</button>
         <span class="ao-schola-control ao-schola-speed" data-role="schola-speed" aria-label="Schola speed">0.45×</span>
         <button type="button" class="ao-schola-control" data-schola-faster aria-label="Faster Schola text">+</button>
+        <button type="button" class="ao-schola-control" data-schola-next aria-label="Next Schola phrase" title="Next Schola phrase">›</button>
         <button type="button" class="ao-schola-control" data-schola-pause aria-label="Pause Schola text" aria-pressed="false">PAUSE</button>
       </div>
     </div>
@@ -1906,6 +1915,7 @@ export function createReaderDomAdapter({
   onParameters = null,
   onCustomaryChange = null,
   onScholaAdvance = null,
+  onScholaPrevious = null,
   sections = [],
   onSectionSelect = null,
   allowPresentationModeSwitch = true,
@@ -2088,6 +2098,12 @@ export function createReaderDomAdapter({
   }
 
   function syncScholaControls(){
+    const source=current?.scholaVisible ? current.schola : null;
+    const previous=root.querySelector("[data-schola-previous]");
+    const next=root.querySelector("[data-schola-next]");
+    if(previous)previous.disabled=!source || Number(source.index)<=0;
+    if(next)next.disabled=!source || Boolean(source.complete) ||
+      Number(source.index)>=Number(source.total)-1;
     const speedNode=root.querySelector('[data-role="schola-speed"]');
     if(speedNode)speedNode.textContent=scholaSpeed.toFixed(2)+"×";
     const pause=root.querySelector('[data-schola-pause]');
@@ -2230,6 +2246,7 @@ export function createReaderDomAdapter({
   function syncScholaContent(){
     const dock=root.querySelector(".ao-schola-dock");
     if(!dock)return;
+    syncScholaControls();
     const schola=current?.scholaVisible ? current.schola : null;
     const identity=schola ? [schola.trackId,schola.segmentId,schola.cueId].filter(Boolean).join("|") : null;
     const changed=identity!==scholaIdentity;
@@ -2479,6 +2496,18 @@ export function createReaderDomAdapter({
         if(!scholaCollapsed)scholaHeight=scholaExpandedHeight;
         syncScholaChrome();
         ensureShortCardCueTravel();
+        return;
+      }
+      const scholaPrevious=event.target?.closest?.("[data-schola-previous]");
+      if(scholaPrevious){
+        if(!scholaPrevious.disabled && current?.scholaVisible && typeof onScholaPrevious==="function")
+          onScholaPrevious(current?.schola,current,prepared);
+        return;
+      }
+      const scholaNext=event.target?.closest?.("[data-schola-next]");
+      if(scholaNext){
+        if(!scholaNext.disabled && current?.scholaVisible && typeof onScholaAdvance==="function")
+          onScholaAdvance(current?.schola,current,prepared);
         return;
       }
       const scholaSlower=event.target?.closest?.("[data-schola-slower]");
