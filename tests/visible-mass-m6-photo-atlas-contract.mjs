@@ -86,5 +86,29 @@ assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.obj
 assert.equal(atlas.images.length,42);
 assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,39);
 
+
+const batch3=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH3");
+assert.equal(batch3.length,6,"Third M6 acquisition batch must remain accounted for");
+assert.deepEqual(batch3.map(x=>x.object_id).sort(),["LN04","LN05","VE12","VE13","VE16","VE17"]);
+for(const x of batch3){
+ assert.equal(x.medium,"photograph");
+ assert.ok(x.creator&&x.licence&&x.license_url&&x.source_url.startsWith("https://commons.wikimedia.org/wiki/File:"));
+ assert.equal(x.review_status,"SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL");
+}
+const gam=atlas.images.find(x=>x.asset_id==="M6B3-VE16-18-19-GAMMARELLI-INSIGNIA-CONTEXT");
+for(const id of ["VE16","VE18","VE19"]){
+ const o=atlas.objects.find(x=>x.object_id===id);
+ assert.ok(o.candidate_assets.some(x=>x.asset_id===gam.asset_id),"Shared Gammarelli original must be linked, not copied, for "+id);
+}
+assert.ok(gam.width<1000&&gam.role==="context_detail","Low-resolution Gammarelli must not claim high-res object detail");
+assert.equal(atlas.objects.filter(o=>!o.needs_photo).length,38);
+assert.equal(atlas.objects.filter(o=>o.needs_photo).length,132);
+assert.equal(atlas.statistics.post_third_batch_photo_candidate_or_hotspot,38);
+assert.equal(atlas.statistics.post_third_batch_needs_photo,132);
+assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL10","AL17","AL18","BK02"]);
+assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,12);
+assert.equal(atlas.images.length,48);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,45);
+
 console.log("PASS M6 integrity",JSON.stringify({objects:170,zones:13,pilot:30,legacyImages:original.assets.length,m5Photos:m5.length+3,
  markers:6,newResearchCandidates:6,unservedExisting:147,glossaryMatches:glCounts}));
