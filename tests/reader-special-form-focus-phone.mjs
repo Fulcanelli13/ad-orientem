@@ -97,6 +97,9 @@ try{
        const state=await page.evaluate(()=>{
         const api=window.__AO_PHONE_PREVIEW;
         const card=api.getCurrentCard?.();
+        const srcState=api.getAspergesState?.()??api.getPalmState?.()??
+          api.getAshState?.()??api.getCandlemasState?.()??null;
+        const sourceCard=srcState?.card??null;
         const root=document.querySelector("#ao-r17-native-reader-preview");
         const paragraphs=[...root?.querySelectorAll?.(".ao-prayer-card .ao-reader-paragraph")??[]]
           .filter(node=>node.getClientRects().length);
@@ -104,6 +107,9 @@ try{
           title:card?.title??null,
           role:root?.dataset.r17CardOwner??null,
           riteRecord:root?.dataset.r17NativeRiteRecord??null,
+          sourceParagraphs:sourceCard?.paragraphs?.length??null,
+          sourceHandoff:sourceCard?.handoff??srcState?.handoff??null,
+          sourceId:sourceCard?.id??null,
           visible:paragraphs.length,nonempty:paragraphs.filter(x=>x.textContent.trim()).length,
           rootText:(root?.querySelector(".ao-prayer-body")?.textContent||"").trim().slice(0,110)};
        });
@@ -163,6 +169,15 @@ try{
      }
      row.status=row.missing.length?"focus-or-content-review":"sampled-ordinary-focus-ok";
      if(scenario.type==="prelude"){
+       const specialRows=row.entered.filter(x=>x.cardId&&!x.cardId.startsWith("AO."));
+       row.emptySourceStates=specialRows.filter(x=>x.sourceParagraphs===0&&x.nonempty===0)
+         .map(x=>({id:x.cardId,handoff:x.sourceHandoff}));
+       row.renderingDefects=specialRows.filter(x=>x.sourceParagraphs>0&&x.nonempty===0)
+         .map(x=>({id:x.cardId,expected:x.sourceParagraphs}));
+       if(row.renderingDefects.length){
+         row.status="focus-or-content-review";
+         row.missing.push({problem:"SOURCE_TEXT_RENDERED_EMPTY",records:row.renderingDefects});
+       }
        row.uniquePreludeIds=[...new Set(row.entered.map(r=>r.cardId).filter(id=>id&&!id.startsWith("AO.")))];
        if(row.uniquePreludeIds.length<2){
          row.status="prelude-not-visited";
