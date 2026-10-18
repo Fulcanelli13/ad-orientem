@@ -131,6 +131,8 @@ try{
    assert.deepEqual({card:afterRelease.card,cue:afterRelease.cue},beforeRelease,
      "Releasing Schola Benedictus wrongly moved the priest's Mass clock");
    assert.equal(afterRelease.holding,false);
+   await page.waitForFunction(()=>document.querySelector("[data-schola-release]")?.hidden===true,
+     null,{timeout:7000});
    assert.equal(await release.isVisible(),false);
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
    assert.equal(overflow,false,"Schola controls overflow narrow phone");
