@@ -17,9 +17,12 @@ try{
   const status=await page.evaluate(()=>window.AO_M6_COMPARATIVE.status());
   assert.equal(status.images,112);
   assert.equal(status.staged,26,"Three staged acquisition batches must not inflate the 112-record canonical register");
-  assert.equal(status.ready_four,5,"Chalice, corporal burse, chalice veil, paten, and ciborium have four metadata candidates; no editorial approval implied");
+  assert.equal(status.ready_four,4,"Two visually held chalice photos no longer count as clean four-photo options; 4 groups remain metadata-filled");
   assert.equal(status.pilot,30);
-  assert.equal(status.showing,5,"Show only five filled same-object comparisons, not single-photo source records");
+  assert.equal(status.showing,4,"Only fully metadata-qualified object groups appear on initial ready-only filter");
+  assert.equal(status.original_qa_inspected,3);
+  assert.equal(status.original_qa_screening_holds,2);
+  assert.match(await page.locator("#m6-comparison").innerText(),/3\/20 inspected/);
   assert.equal(status.selected,"SV02","Prioritize new paten comparison on initial open");
   assert.equal(await page.locator("#m6-source-archive").isVisible(),false,"Research archive starts hidden");
   assert.ok(status.ready_four<30,"Do not misrepresent existing sparse acquisitions as curated alternatives");
@@ -36,8 +39,11 @@ try{
   assert.doesNotMatch(await page.locator("#m6-best").innerText(),/MORLOT/,"Mislabeled Notre-Dame source actually depicts altar cruets");
   assert.equal(await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("SV01")),true);
   assert.match(await page.locator("#m6-object-head").innerText(),/Chalice/);
-  assert.equal(await page.locator("#m6-best .m6-card").count(),4,"Four distinct Western Roman Catholic chalices staged for real side-by-side choice");
-  assert.match(await page.locator("#m6-shortfall").innerText(),/4 \/ 4 potentially comparable/);
+  assert.equal(await page.locator("#m6-best .m6-card").count(),2,"Two visually unsuitable chalice photos are no longer presented as clean interchangeable shortlist");
+  assert.match(await page.locator("#m6-shortfall").innerText(),/2 \/ 4 potentially comparable/);
+  assert.match(await page.locator("#m6-other").innerText(),/GENOA-PRE1777/);
+  assert.match(await page.locator("#m6-other").innerText(),/SEVILLE-ISABELII/);
+  assert.match(await page.locator("#m6-other").innerText(),/Original pixels examined/);
   assert.match(await page.locator("#m6-best").innerText(),/GENOA-1780/);
   assert.match(await page.locator("#m6-best").innerText(),/BARI-1760/);
   assert.equal(await page.evaluate(()=>window.AO_M6_COMPARATIVE.jump("EQ06")),true);
@@ -51,6 +57,8 @@ try{
   let review=await page.evaluate(()=>window.AO_M6_COMPARATIVE.exportReview());
   assert.equal(review.schema,"AO_VISIBLE_MASS_M6_COMPARISON_REVIEW_V1");
   assert.equal(review.release_approval,false);
+  assert.equal(review.original_pixels_inspected,3);
+  assert.equal(review.source_fetch_rate_limited,true);
   assert.equal(review.decisions.length,1);
   assert.deepEqual(review.decisions[0].object_id,"EQ06");
   assert.equal(review.decisions[0].rating,"4");
