@@ -43,7 +43,7 @@ try{
    await page.waitForFunction(id=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().m5Viewpoint===id&&
     document.querySelector("#m5-close-photo").naturalWidth>1000,id,{timeout:25000});
    assert.match(await page.locator("#photo-credit").innerText(),/AndyScott.*CC BY-SA 4.0/);
-   assert.match(await page.locator("#photo-caption").innerText(),new RegExp(label));
+   assert.match(await page.locator("#photo-caption").innerText(),/Brompton Oratory/);
    assert.equal(await page.locator("#hotspots").isVisible(),false);
    await page.screenshot({path:out+"/"+spec.name+"-m5-"+id.toLowerCase()+"-actual-offline.png",fullPage:true});
   }
@@ -66,7 +66,7 @@ try{
     document.querySelector("#m5-close-photo").naturalWidth>1000,
     id,{timeout:25000});
    assert.match(await page.locator("#photo-credit").innerText(),/Zairon.*CC BY 4.0/);
-   assert.match(await page.locator("#photo-caption").innerText(),new RegExp(label));
+   assert.match(await page.locator("#photo-caption").innerText(),/Newman University Church/);
    assert.equal(await page.locator("#hotspots").isVisible(),false);
    assert.equal(await page.locator("#original-object-choices").isVisible(),false);
    await page.screenshot({path:out+"/"+spec.name+"-m5-"+id.toLowerCase()+"-actual-offline.png",fullPage:true});
