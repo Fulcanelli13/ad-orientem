@@ -109,9 +109,11 @@ function imagePreview(image){
  if(!image)return '<div class="preview"><span class="placeholder">Image required · physical object record only</span></div>';
  const url=image.review_thumbnail_url;
  const safeURL=typeof url==="string"&&/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//i.test(url)?url:null;
+ const source=linkFor(image);
  return '<div class="preview">'+
  (safeURL?'<img alt="Existing source-owned research image" loading="lazy" src="'+quoteAttr(safeURL)+'">':
- '<span class="placeholder">Original credited image<br>Open the source or load preview online</span>')+
+ '<span class="placeholder">Original credited image<br>Load source thumbnail online; attribution below</span>'+
+ (source?'<img hidden alt="Original Wikimedia Commons research candidate" data-commons-source="'+quoteAttr(source)+'">':''))+
  '</div>';
 }
 function chosenAsset(obj){return obj.candidate_assets.map(ref=>imgById.get(ref.asset_id)).find(x=>x&&(x.role==="object_detail"||x.role==="alternative_detail"))||
@@ -152,6 +154,41 @@ function photoCard(image){
  (image.source_description?'<p class="detail">'+esc(image.source_description)+'</p>':'')+
  assetLine(image)+'</div></article>';
 }
+/* Optional online previews are fetched from the exact source page's Commons
+ * imageinfo record; this never changes the offline atlas or source ownership.
+ * Observe only visible images and serialize requests to avoid Commons 429s.
+ */
+let previewObserver=null,previewChain=Promise.resolve();
+async function resolveCommonsPreview(el){
+ if(!el.isConnected)return;
+ try{
+  const page=new URL(el.dataset.commonsSource);
+  if(page.origin!=="https://commons.wikimedia.org"||!page.pathname.startsWith("/wiki/File:"))return;
+  const title=decodeURIComponent(page.pathname.slice("/wiki/".length)).replace(/_/g," ");
+  if(!title.startsWith("File:"))return;
+  const api=new URL("https://commons.wikimedia.org/w/api.php");
+  api.search=new URLSearchParams({action:"query",format:"json",formatversion:"2",prop:"imageinfo",iiprop:"url|mime",iiurlwidth:"580",titles:title,origin:"*"}).toString();
+  const response=await fetch(api,{credentials:"omit"});
+  if(!response.ok)return;
+  const info=(await response.json())?.query?.pages?.[0]?.imageinfo?.[0];
+  const url=info?.thumburl;
+  if(!/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\//i.test(url||""))return;
+  el.onload=()=>{if(el.isConnected){el.hidden=false;el.parentElement.querySelector(".placeholder")?.remove();}};
+  el.onerror=()=>{el.removeAttribute("src");};
+  el.src=url;
+ }catch{/* Offline preview failure does not affect object navigation or source links. */}
+}
+function hydratePreviews(){
+ previewObserver?.disconnect();
+ if(!("IntersectionObserver" in window))return;
+ previewObserver=new IntersectionObserver(entries=>{
+  for(const entry of entries)if(entry.isIntersecting){
+   const el=entry.target;previewObserver.unobserve(el);
+   previewChain=previewChain.then(()=>new Promise(done=>setTimeout(done,350))).then(()=>resolveCommonsPreview(el)).catch(()=>{});
+  }
+ },{rootMargin:"180px"});
+ for(const img of $("results").querySelectorAll("img[data-commons-source]"))previewObserver.observe(img);
+}
 function apply(){
  const q=query.trim().toLowerCase();
  $("mode-objects").setAttribute("aria-pressed",String(mode==="objects"));
@@ -168,6 +205,7 @@ function apply(){
  }
  $("results-note").textContent=items.length+" "+(mode==="objects"?"objects":"source-image records")+" displayed · "+ratings.size+" recorded review decisions. No photos are automatically approved.";
  $("results").innerHTML=items.length?items.map(mode==="objects"?objectCard:photoCard).join(""):'<p>No records match these filters.</p>';
+ hydratePreviews();
 }
 function saveRating(id,key,value){const current=ratings.get(id)||{rating:"",placement:""};const next={...current,[key]:value};if(!next.rating&&!next.placement)ratings.delete(id);else ratings.set(id,next);$("results-note").textContent=$("results-note").textContent.replace(/\d+ recorded review decisions/,ratings.size+" recorded review decisions");}
 $("results").addEventListener("change",e=>{
