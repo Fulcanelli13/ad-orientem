@@ -76,12 +76,15 @@ try{
   source.cardSequence),true,"Observed local Confiteor remains hidden after preference toggle");
  assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.title),
   "Second Confiteor · Optional Local Custom");
- const visibleName=await page.locator(".ao-prayer-title").first().evaluate(el=>({
-  text:el.textContent.trim(),hidden:el.hidden,display:getComputedStyle(el).display
+ const visibleName=await page.locator('[data-role="section-title"]').first().evaluate(el=>({
+  text:el.textContent.trim(),whiteSpace:getComputedStyle(el).whiteSpace,
+  display:getComputedStyle(el).display
  }));
  assert.equal(visibleName.text,"Second Confiteor · Optional Local Custom");
- assert.equal(visibleName.hidden,false,"Named LIVE prayer hidden from the faithful");
- assert.notEqual(visibleName.display,"none");
+ assert.equal(visibleName.whiteSpace,"normal",
+  "Named LIVE prayer must wrap rather than truncate in the top ribbon");
+ assert.equal(await page.locator(".ao-prayer-title").first().isVisible(),false,
+  "LIVE must not duplicate the top ribbon prayer heading inside the card");
  const rendered=await page.locator(".ao-prayer-body").first().innerText();
  assert.match(rendered,/I confess to Almighty God/);
  assert.match(rendered,/May Almighty God have mercy upon you/);
