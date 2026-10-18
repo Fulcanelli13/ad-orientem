@@ -29,7 +29,7 @@
       "questionId": null,
       "originalTextCopied": false
     },
-    "scopeLimit": "Native Living Church Catechism handoff is only verified for PX1912-Q322, not these three topics; therefore NO topic-specific native deep-link or live scene dialogue is claimed."
+    "scopeLimit": "P2 scene #1402's directly tested Catechism handoff is PX1912-Q322 only. P4 source-owner #1406 separately has generic indexed-question native navigation and browser-tested Q105. None of the three new dialogues or their question choices has been browser-tested and editorially certified."
   },
   "fidelityPolicy": {
     "historicalQuotationsAllowed": false,
@@ -48,7 +48,14 @@
         "branch": "ideas",
         "requiredTarget": "learn.catechism",
         "exactNativeQuestion": null,
-        "sourceStatus": "ROUTE_DECLARED_ONLY"
+        "sourceStatus": "ROUTE_DECLARED_ONLY",
+        "sourceIndexReview": "CANDIDATE_QUESTION_NUMBERS_AND_STEMS_VERIFIED_NOT_ANSWER_CONTENT",
+        "candidateQuestionRefs": [
+          "PX1912-Q433",
+          "PX1912-Q430",
+          "PX1912-Q431",
+          "PX1912-Q432"
+        ]
       },
       "styleSourceIds": [
         "PXV-1905-ACERBO"
@@ -74,7 +81,11 @@
           "register": "PASTORAL",
           "sprite": "pius_explaining",
           "rhetoricalPattern": "DISTINGUISH_BEFORE_EXPLAINING",
-          "requiresOriginalSourceForSubstance": true
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q433",
+            "PX1912-Q430"
+          ]
         },
         {
           "no": 2,
@@ -89,7 +100,11 @@
           "register": "CATECHETICAL",
           "sprite": "pius_thoughtful",
           "rhetoricalPattern": "FOLLOW_ACTUAL_OBJECTION",
-          "requiresOriginalSourceForSubstance": true
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q430",
+            "PX1912-Q433"
+          ]
         },
         {
           "no": 3,
@@ -104,7 +119,11 @@
           "register": "PASTORAL",
           "sprite": "pius_welcoming",
           "rhetoricalPattern": "PRACTICAL_NEXT_STEP",
-          "requiresOriginalSourceForSubstance": true
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q431",
+            "PX1912-Q432"
+          ]
         }
       ]
     },
@@ -117,7 +136,13 @@
         "requiredTarget": "learn.catechism",
         "exactNativeQuestion": null,
         "sourceStatus": "ROUTE_DECLARED_ONLY",
-        "routeUseLimit": "ONLY_WHEN_CHILD_PREPARING_FOR_FIRST_COMMUNION"
+        "routeUseLimit": "ONLY_WHEN_CHILD_PREPARING_FOR_FIRST_COMMUNION",
+        "sourceIndexReview": "CANDIDATE_QUESTION_NUMBERS_AND_STEMS_VERIFIED_NOT_ANSWER_CONTENT",
+        "candidateQuestionRefs": [
+          "PX1912-Q342",
+          "PX1912-Q335",
+          "PX1912-Q338"
+        ]
       },
       "styleSourceIds": [
         "PXV-1905-ACERBO",
@@ -143,7 +168,10 @@
           "register": "FAMILIAR",
           "sprite": "pius_welcoming",
           "rhetoricalPattern": "SPARSE_SITUATIONAL_WIT",
-          "requiresOriginalSourceForSubstance": false
+          "requiresOriginalSourceForSubstance": false,
+          "questionCandidates": [
+            "PX1912-Q342"
+          ]
         },
         {
           "no": 2,
@@ -158,7 +186,11 @@
           "register": "CATECHETICAL",
           "sprite": "pius_explaining",
           "rhetoricalPattern": "CONCRETE_CATECHETICAL_DISTINCTION",
-          "requiresOriginalSourceForSubstance": true
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q335",
+            "PX1912-Q338"
+          ]
         },
         {
           "no": 3,
@@ -173,7 +205,10 @@
           "register": "PASTORAL",
           "sprite": "pius_thoughtful",
           "rhetoricalPattern": "PRACTICAL_PASTORAL_GUIDANCE",
-          "requiresOriginalSourceForSubstance": true
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q338"
+          ]
         }
       ]
     },
@@ -185,7 +220,13 @@
         "branch": "critic",
         "requiredTarget": "learn.catechism",
         "exactNativeQuestion": null,
-        "sourceStatus": "ROUTE_DECLARED_ONLY"
+        "sourceStatus": "ROUTE_DECLARED_ONLY",
+        "sourceIndexReview": "CANDIDATE_QUESTION_NUMBERS_AND_STEMS_VERIFIED_NOT_ANSWER_CONTENT",
+        "candidateQuestionRefs": [
+          "PX1912-Q114",
+          "PX1912-Q236",
+          "PX1912-Q115"
+        ]
       },
       "styleSourceIds": [
         "PXV-1905-ACTION",
@@ -210,7 +251,11 @@
           "register": "DOCTRINAL_CORRECTION",
           "sprite": "pius_explaining",
           "rhetoricalPattern": "DISTINCTION_WITHOUT_HOSTILITY",
-          "requiresOriginalSourceForSubstance": true
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q114",
+            "PX1912-Q236"
+          ]
         },
         {
           "no": 2,
@@ -225,7 +270,11 @@
           "register": "CATECHETICAL",
           "sprite": "pius_grave",
           "rhetoricalPattern": "ESTABLISH_THE_TEXT",
-          "requiresOriginalSourceForSubstance": true
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q115",
+            "PX1912-Q236"
+          ]
         },
         {
           "no": 3,
@@ -240,7 +289,11 @@
           "register": "PASTORAL",
           "sprite": "pius_thoughtful",
           "rhetoricalPattern": "RETURN_TO_VISITOR",
-          "requiresOriginalSourceForSubstance": true
+          "requiresOriginalSourceForSubstance": true,
+          "questionCandidates": [
+            "PX1912-Q114",
+            "PX1912-Q115"
+          ]
         }
       ]
     }
@@ -278,6 +331,38 @@
     "threeExchangeSequences": 3,
     "constructedHistoricalQuotations": 0,
     "publishedTheologicalAnswers": 0,
-    "approvedTopicHandoffs": 0
+    "approvedTopicHandoffs": 0,
+    "questionNumbersMatchedInWitnessIndex": true,
+    "topicSpecificAnswerContentApproved": false,
+    "topicSpecificNativeHandoffsBrowserVerified": false
+  },
+  "sourceReconciliation": {
+    "date": "2026-10-19",
+    "indexOwner": "LTF_PIUS_X_EN_WITNESS_INDEX",
+    "indexPath": "data/learn/ltfaith-pius-x-en-witness-index.v1.json",
+    "indexBlobSha": "27b75ff3526196e4551d7c1f37b76d79d0b0927d",
+    "indexVersion": "LTF_PIUS_X_EN_SOURCE_WITNESS_INDEX_V1",
+    "entryCount": 433,
+    "evidenceGrade": "NUMBER_AND_QUESTION_STEM_VERIFIED_ONLY_NOT_CANONICAL_ANSWER_CERTIFICATION",
+    "editionLimitation": "English witness is a modern structured study translation aligned to 1912 shorter Catechism, NOT a certified historical English-language edition. No original answer passage copied.",
+    "originalLanguageLimitation": "1912 Italian and 1913 French witness answer-level collation is not established by this source index. Do not call the bilingual reconstructed replies original words.",
+    "contentOwner": "ORIGINAL_CATECHISM_433_QUESTION_READER_AND_EDITORIAL_SOURCE_PIPELINE",
+    "selectedReferences": "STANDALONE_INDEX_CANDIDATES_NOT_APPROVED_DOCTRINAL_REPLY_OR_EN_FR_PARAPHRASE",
+    "p4SourceBridge": {
+      "branch": "feature/living-church-p4-catechism-source-return-20261018",
+      "pr": 1406,
+      "sourcePath": "src/learn/living-church-catechism-source.js",
+      "integrationPath": "src/learn/living-church-ask-integration.js",
+      "sourceIndexedNavigation": "nativeOpen('learn.catechism',{sourceRef:'PX1912-QNNN'}) checks canonical 433 index and opens existing catechism owner",
+      "browserVerifiedPreviously": "PX1912-Q105 at phone+desktop on P4 browser suite",
+      "theseThreeDialoguePathsBrowserVerified": false,
+      "nativeRouteIsDraft": true
+    },
+    "historicalDisciplineCaution": {
+      "sourceRef": "PX1912-Q335",
+      "reason": "The 1912 Catechism answer includes a midnight Eucharistic fast. This is historical discipline and must never be labelled the current Catholic fasting rule.",
+      "runtimeConstraint": "NO_UNQUALIFIED_CURRENT_PRACTICE_SUMMARY_FROM_HISTORICAL_TEXT"
+    },
+    "releaseGate": "EXACT_QUESTION_IDS_VERIFIED_IN_INDEX; CONTENT_EDITORIAL_AND_LIVE_DIALOGUE_APPROVAL_PENDING"
   }
 }
