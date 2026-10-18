@@ -46,7 +46,8 @@ test("Folio source adapter is fail-closed for 534 questions",async()=>{
  assert.equal(review.class,"PINPOINT_CORRECTED_IN_SOURCE_OWNER_ERRATA_PENDING_APPROVAL");
  assert.equal(review.publicationAllowed,undefined);
  assert.equal(review.pinpoints.length,3);
- assert.match(review.held,/Session XIII/);
+ assert.match(review.pinpoints.map(p=>p.authority).join(" "),/Session XIII/);
+ assert.match(review.held,/original-source citation errata/i);
  const corrected=await reader.originalResearch("LUT-011",{lang:"en"});
  assert.equal(corrected.ok,true);
  assert.equal(corrected.editorialCorrection.originalOwnerGitBlobSha,"2be4ae1ac77662f96a5fd6a68d972b0b51b63455");
