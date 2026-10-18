@@ -57,7 +57,14 @@
     "post_third_batch_photo_candidate_or_hotspot": 38,
     "post_third_batch_needs_photo": 132,
     "post_third_batch_pilot_needs_photo": 4,
-    "post_third_batch_vestment_photo_candidates": 12
+    "post_third_batch_vestment_photo_candidates": 12,
+    "fourth_batch_photo_records": 4,
+    "fourth_batch_qualifying_photo_subjects": 3,
+    "fourth_batch_partial_component_subjects": 1,
+    "post_fourth_batch_photo_candidate_or_hotspot": 41,
+    "post_fourth_batch_needs_photo": 129,
+    "post_fourth_batch_pilot_needs_photo": 3,
+    "post_fourth_batch_vestment_photo_candidates": 14
   },
   "zones": [
     {
@@ -867,7 +874,13 @@
       "pilot_photo_evidence": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
       "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
       "candidate_assets": [],
-      "needs_photo": true
+      "needs_photo": true,
+      "context_scene_lead": {
+        "source_asset_id": "BROMPTON_ALTAR_1",
+        "role": "possible_gradine_visible_in_source_view",
+        "certainty": "NEEDS_IMAGE_SPECIFIC_VISUAL_REVIEW",
+        "note": "Use existing same-venue Brompton high-altar photograph. Cannot identify the exact gradine/candle shelf boundaries as separate object; do not create clickable hotspot or count coverage."
+      }
     },
     {
       "object_id": "AL11",
@@ -988,7 +1001,16 @@
       "pilot_photo_evidence": "NO_DIRECT_SCENE_EVIDENCE",
       "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
       "candidate_assets": [],
-      "needs_photo": true
+      "needs_photo": true,
+      "orientation_annotation": {
+        "source_asset_id": "BROMPTON_ALTAR_2019_GEOGRAPH",
+        "camera_view": "CONGREGATION_FACING_HIGH_ALTAR_FROM_NAVE",
+        "viewer_side": "RIGHT",
+        "source_rule": "https://www.newadvent.org/cathen/01356e.htm",
+        "corroboration": "https://hostiamimmaculatam.substack.com/p/the-epistle-and-gospel-sides-of-the",
+        "state": "RESEARCH_ONLY_DIRECTIONAL_RULE_NOT_AUTHORISED_AS_HOTSPOT",
+        "note": "Display only after confirming no flipped/mirrored photo and full central altar facing camera; do not convert an approximate half-frame into an object hotspot."
+      }
     },
     {
       "object_id": "AL18",
@@ -1002,7 +1024,16 @@
       "pilot_photo_evidence": "NO_DIRECT_SCENE_EVIDENCE",
       "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
       "candidate_assets": [],
-      "needs_photo": true
+      "needs_photo": true,
+      "orientation_annotation": {
+        "source_asset_id": "BROMPTON_ALTAR_2019_GEOGRAPH",
+        "camera_view": "CONGREGATION_FACING_HIGH_ALTAR_FROM_NAVE",
+        "viewer_side": "LEFT",
+        "source_rule": "https://www.newadvent.org/cathen/01356e.htm",
+        "corroboration": "https://hostiamimmaculatam.substack.com/p/the-epistle-and-gospel-sides-of-the",
+        "state": "RESEARCH_ONLY_DIRECTIONAL_RULE_NOT_AUTHORISED_AS_HOTSPOT",
+        "note": "Display only after confirming no flipped/mirrored photo and full central altar facing camera; do not convert an approximate half-frame into an object hotspot."
+      }
     },
     {
       "object_id": "AL19",
@@ -1841,9 +1872,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B4-VE04-RIJKSMUSEUM-ITALIAN-CINCTURE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE05",
@@ -2023,9 +2060,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B4-VE14-MUNICH-CONSTANCE-HUMERAL-VEIL",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "VE15",
@@ -2131,9 +2174,19 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "PARTIAL_COMPONENT_ONLY_STILL_NEEDS_PHOTO",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B4-VE20-ARSR-PONTIFICAL-GLOVES-PARTIAL",
+          "role": "partial_component_detail",
+          "evidence": "PARTIAL_COMPONENT_ONLY"
+        }
+      ],
+      "needs_photo": true,
+      "required_missing_components": [
+        "pontifical buskins",
+        "pontifical sandals"
+      ]
     },
     {
       "object_id": "BK01",
@@ -2165,15 +2218,20 @@
       "intended_navigation": "V",
       "pilot_30": true,
       "pilot_photo_evidence": "CONTEXT_ONLY_NOT_INDIVIDUALLY_IDENTIFIED",
-      "evidence_status": "RESEARCH_LEAD_ONLY",
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
       "candidate_assets": [
         {
           "asset_id": "M6-BK02-JAPANESE-MISSAL-STAND-PROSPECT",
           "role": "historical_reference",
           "evidence": "DISCOVERY_ONLY_UNVERIFIED_SOURCE_RIGHTS"
+        },
+        {
+          "asset_id": "M6B4-BK02-CASON-1962-MISSAL-STAND",
+          "role": "object_in_liturgical_use",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
         }
       ],
-      "needs_photo": true
+      "needs_photo": false
     },
     {
       "object_id": "BK03",
@@ -3506,6 +3564,70 @@
       "source_url": "https://commons.wikimedia.org/wiki/File:Vetements_cardinal_Gamarelli.jpg",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH3"
+    },
+    {
+      "asset_id": "M6B4-BK02-CASON-1962-MISSAL-STAND",
+      "object_id": "BK02",
+      "role": "object_in_liturgical_use",
+      "medium": "photograph",
+      "source_url": "https://sdcason.com/1962-roman-missal-at-latin-mass-2022-virginia-usa-catholic-stock-photo/",
+      "image_url": "https://sdcason.com/content/files/2022/11/DSCF1039.jpg",
+      "creator": "Shalone Cason / The Free Catholic Gallery",
+      "licence": "CC BY 4.0 (site-wide policy; individual page also states public domain)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "rights_evidence_url": "https://sdcason.com/copyright/",
+      "venue": "Traditional Latin Mass, Virginia, USA, 2022",
+      "source_description": "Clearly depicted open 1962 altar Missal on an ornate gilded liturgical bookrest, original photographer credited by publisher. Individual photo page asserts public domain, while site's global terms require CC BY 4.0. Apply attribution and independently resolve the discrepancy before release. This is not Brompton.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH4"
+    },
+    {
+      "asset_id": "M6B4-VE04-RIJKSMUSEUM-ITALIAN-CINCTURE",
+      "object_id": "VE04",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cingel_van_koord_met_geborduurde_uiteinden,_met_een_patroon_van_een_hartschild_met_boom_en_dier,_tussen_twee_duiven,_BK-1966-54-F.jpg",
+      "creator": "Rijksmuseum",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 5710,
+      "height": 7618,
+      "venue": "Rijksmuseum, Amsterdam; Italian ecclesiastical cincture, ca. 1675–1700, BK-1966-54-F",
+      "source_description": "Museum photograph of an Italian liturgical rope cincture with embroidered ends from a Catholic ecclesiastical embroidery set. Historical vestment, not a plain representative priest's girdle or 1962 in-use photograph.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH4"
+    },
+    {
+      "asset_id": "M6B4-VE14-MUNICH-CONSTANCE-HUMERAL-VEIL",
+      "object_id": "VE14",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Poland_Humeral_veil_of_Constance_of_Austria_(detail)_02.jpg",
+      "creator": "Artinpl",
+      "licence": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width": 3064,
+      "height": 3840,
+      "venue": "Munich Residence, Germany; Constance of Austria historical humeral veil, c.1620",
+      "source_description": "Original photograph of a museum-labelled historical humeral veil. Luxurious historic textile and close-up detail; does not depict how a traditional 1962 priest or deacon wears a veil at Benediction.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH4"
+    },
+    {
+      "asset_id": "M6B4-VE20-ARSR-PONTIFICAL-GLOVES-PARTIAL",
+      "object_id": "VE20",
+      "role": "partial_component_detail",
+      "medium": "photograph",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chirot-viola-2.jpg",
+      "creator": "Ars Regia; design Pietro Siffi",
+      "licence": "Public domain (rights holder confirmed via Wikimedia VRT)",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Chirot-viola-2.jpg#Licensing",
+      "width": 800,
+      "height": 832,
+      "venue": "Ars Regia Italian Roman Catholic vestment maker; purple pontifical gloves",
+      "source_description": "Real modern photograph of pontifical gloves, confirmed free licensing by rights-holder VRT ticket. Only one part of composite VE20; no buskins or episcopal sandals are pictured, so VE20 must remain photographic-gap-open.",
+      "review_status": "PARTIAL_COMPONENT_ONLY",
+      "source_index": "M6_RESEARCH_20261018_BATCH4"
     }
   ]
 }
