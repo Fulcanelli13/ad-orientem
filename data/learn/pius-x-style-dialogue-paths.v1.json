@@ -1,0 +1,283 @@
+{
+  "schema": "AO_PIUS_X_STYLE_DIALOGUE_PATHS_V1",
+  "created": "2026-10-19",
+  "owner": "STYLE_ONLY_REVIEW",
+  "publication": "DRAFT_NOT_RUNTIME",
+  "runtimeImportAllowed": false,
+  "purpose": "Three fully sequenced bilingual three-exchange editorial tests. Each Pius X response is a modern educational reconstruction, NOT a historically uttered quotation or canonical Catechism answer.",
+  "externalOwners": {
+    "routeSurvey": {
+      "repo": "Fulcanelli13/ad-orientem",
+      "branch": "feature/living-church-p2-visual-novel-review-20261018",
+      "path": "data/learn/ask-church-app-route-survey.v1.json",
+      "blobSha": "af787cb864b6fc60f9df9c85537b1e798da7b400"
+    },
+    "objectiveEngine": {
+      "branch": "feature/living-church-p2-visual-novel-review-20261018",
+      "path": "src/learn/ask-church-objective-engine.js"
+    },
+    "characterScene": {
+      "branch": "feature/living-church-p2-visual-novel-review-20261018",
+      "path": "previews/visible-mass-3d/living-church-character-scene.mjs",
+      "existingCharacter": "pius-x",
+      "existingNode": "pius",
+      "existingAction": "source-catechism"
+    },
+    "catechism": {
+      "id": "learn.catechism",
+      "owner": "EXISTING_FORMATION_AND_CATECHISM_PIPELINE",
+      "questionId": null,
+      "originalTextCopied": false
+    },
+    "scopeLimit": "Native Living Church Catechism handoff is only verified for PX1912-Q322, not these three topics; therefore NO topic-specific native deep-link or live scene dialogue is claimed."
+  },
+  "fidelityPolicy": {
+    "historicalQuotationsAllowed": false,
+    "allGeneratedDialogue": "C_EDUCATIONAL_RECONSTRUCTION",
+    "reconstructionDisclosed": true,
+    "substantiveAnswers": "MUST_RESOLVE_FROM_AUTHORITATIVE_CONTENT_OWNER_BEFORE_RUNTIME",
+    "sourceOwnerMayBlock": true,
+    "refuseToFabricateAutobiography": true
+  },
+  "cases": [
+    {
+      "id": "PX-STYL-OUR-LADY-01",
+      "topic": "Marian intercession",
+      "router": {
+        "objective": "explore",
+        "branch": "ideas",
+        "requiredTarget": "learn.catechism",
+        "exactNativeQuestion": null,
+        "sourceStatus": "ROUTE_DECLARED_ONLY"
+      },
+      "styleSourceIds": [
+        "PXV-1905-ACERBO"
+      ],
+      "historicalContextIds": [
+        "SARTO-PRE-DIALOGUE-1087"
+      ],
+      "openingScene": "pius",
+      "directHistoricalSource": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "directHistoricalSourceUse": "SUGGESTED_CONTENT_OWNER_WITNESS_NOT_YET_COLLATED_OR_AUTHORIZED_HERE",
+      "testMode": "STYLE_ONLY_SOURCE_SLOT_PENDING",
+      "turns": [
+        {
+          "no": 1,
+          "visitor": {
+            "en": "Does praying to Our Lady take something away from Our Lord?",
+            "fr": "Prier la Sainte Vierge n'enlève-t-il rien à Notre-Seigneur ?"
+          },
+          "reply": {
+            "en": "We must first distinguish the honour offered to the saints from the worship due to God. Would you begin with that distinction?",
+            "fr": "Il faut d'abord distinguer l'honneur rendu aux saints du culte dû à Dieu. Voulez-vous commencer par cette distinction ?"
+          },
+          "register": "PASTORAL",
+          "sprite": "pius_explaining",
+          "rhetoricalPattern": "DISTINGUISH_BEFORE_EXPLAINING",
+          "requiresOriginalSourceForSubstance": true
+        },
+        {
+          "no": 2,
+          "visitor": {
+            "en": "Then why ask for Mary's intercession at all?",
+            "fr": "Pourquoi donc demander l'intercession de Marie ?"
+          },
+          "reply": {
+            "en": "That is precisely the point to examine. Let us turn to the teaching itself, rather than suppose an answer from mere sentiment.",
+            "fr": "C'est précisément ce qu'il faut examiner. Revenons à l'enseignement de l'Église, plutôt que de nous contenter d'un sentiment."
+          },
+          "register": "CATECHETICAL",
+          "sprite": "pius_thoughtful",
+          "rhetoricalPattern": "FOLLOW_ACTUAL_OBJECTION",
+          "requiresOriginalSourceForSubstance": true
+        },
+        {
+          "no": 3,
+          "visitor": {
+            "en": "How ought I to put that teaching into practice?",
+            "fr": "Comment mettre cet enseignement en pratique ?"
+          },
+          "reply": {
+            "en": "When we have understood what the Church teaches, we can consider a suitable prayer. Do you wish to read the original teaching first?",
+            "fr": "Une fois compris ce que l'Église enseigne, nous pourrons examiner une prière qui lui convienne. Voulez-vous d'abord lire le texte original ?"
+          },
+          "register": "PASTORAL",
+          "sprite": "pius_welcoming",
+          "rhetoricalPattern": "PRACTICAL_NEXT_STEP",
+          "requiresOriginalSourceForSubstance": true
+        }
+      ]
+    },
+    {
+      "id": "PX-STYL-CHILD-CATECHISM-02",
+      "topic": "Children learning the Catechism",
+      "router": {
+        "objective": "prepare",
+        "branch": "first_communion",
+        "requiredTarget": "learn.catechism",
+        "exactNativeQuestion": null,
+        "sourceStatus": "ROUTE_DECLARED_ONLY",
+        "routeUseLimit": "ONLY_WHEN_CHILD_PREPARING_FOR_FIRST_COMMUNION"
+      },
+      "styleSourceIds": [
+        "PXV-1905-ACERBO",
+        "PXV-1912-CATECHISM"
+      ],
+      "historicalContextIds": [
+        "SARTO-PRE-DIALOGUE-1087",
+        "SARTO-PRE-PEROSI-VIAN-353"
+      ],
+      "openingScene": "pius",
+      "testMode": "STYLE_ONLY_SOURCE_SLOT_PENDING",
+      "turns": [
+        {
+          "no": 1,
+          "visitor": {
+            "en": "My daughter is preparing for First Communion, but her questions never end.",
+            "fr": "Ma fille se prépare à la Première Communion, mais ses questions n'en finissent pas."
+          },
+          "reply": {
+            "en": "Then she is keeping her teacher well occupied! Tell me which question has detained you today.",
+            "fr": "Voilà donc une élève qui ne laisse guère de repos à son maître ! Dites-moi quelle question vous a retenus aujourd'hui."
+          },
+          "register": "FAMILIAR",
+          "sprite": "pius_welcoming",
+          "rhetoricalPattern": "SPARSE_SITUATIONAL_WIT",
+          "requiresOriginalSourceForSubstance": false
+        },
+        {
+          "no": 2,
+          "visitor": {
+            "en": "She recites the words, but does not seem to grasp their meaning.",
+            "fr": "Elle récite les paroles, mais ne semble pas en saisir le sens."
+          },
+          "reply": {
+            "en": "There is a difference between repeating a formula and understanding it. Let us take one question and see how it is explained in the Catechism.",
+            "fr": "Il y a une différence entre réciter une formule et la comprendre. Prenons une seule question et voyons comment le Catéchisme l'explique."
+          },
+          "register": "CATECHETICAL",
+          "sprite": "pius_explaining",
+          "rhetoricalPattern": "CONCRETE_CATECHETICAL_DISTINCTION",
+          "requiresOriginalSourceForSubstance": true
+        },
+        {
+          "no": 3,
+          "visitor": {
+            "en": "And if she forgets it tomorrow?",
+            "fr": "Et si elle l'a oublié demain ?"
+          },
+          "reply": {
+            "en": "Then return patiently to the same question. We should seek sound understanding, not merely the appearance of a lesson completed.",
+            "fr": "Reprenez alors patiemment la même question. Il faut rechercher une véritable intelligence de la leçon, non la seule apparence d'une leçon achevée."
+          },
+          "register": "PASTORAL",
+          "sprite": "pius_thoughtful",
+          "rhetoricalPattern": "PRACTICAL_PASTORAL_GUIDANCE",
+          "requiresOriginalSourceForSubstance": true
+        }
+      ]
+    },
+    {
+      "id": "PX-STYL-TEACHING-OBJECTION-03",
+      "topic": "Disagreement with Church teaching",
+      "router": {
+        "objective": "defend",
+        "branch": "critic",
+        "requiredTarget": "learn.catechism",
+        "exactNativeQuestion": null,
+        "sourceStatus": "ROUTE_DECLARED_ONLY"
+      },
+      "styleSourceIds": [
+        "PXV-1905-ACTION",
+        "PXV-1905-ACERBO"
+      ],
+      "historicalContextIds": [
+        "SARTO-PRE-HOMILY-178"
+      ],
+      "openingScene": "pius",
+      "testMode": "STYLE_ONLY_SOURCE_SLOT_PENDING",
+      "turns": [
+        {
+          "no": 1,
+          "visitor": {
+            "en": "Must I accept a teaching merely because the Church says so?",
+            "fr": "Dois-je accepter un enseignement seulement parce que l'Église l'affirme ?"
+          },
+          "reply": {
+            "en": "It is one thing to ask for an explanation; it is another to dismiss a teaching before understanding it. Which doctrine troubles you?",
+            "fr": "C'est une chose de demander une explication ; c'en est une autre de rejeter un enseignement avant de l'avoir compris. Quelle doctrine vous cause difficulté ?"
+          },
+          "register": "DOCTRINAL_CORRECTION",
+          "sprite": "pius_explaining",
+          "rhetoricalPattern": "DISTINCTION_WITHOUT_HOSTILITY",
+          "requiresOriginalSourceForSubstance": true
+        },
+        {
+          "no": 2,
+          "visitor": {
+            "en": "I have heard it taught in different ways. How can I know what it says?",
+            "fr": "On me l'a présentée de diverses manières. Comment savoir ce qu'elle enseigne ?"
+          },
+          "reply": {
+            "en": "We should state the teaching accurately before disputing about it. Let us consult the Church's own text rather than a second-hand description.",
+            "fr": "Il faut exposer exactement cet enseignement avant de le discuter. Consultons le texte même de l'Église, et non une explication rapportée de seconde main."
+          },
+          "register": "CATECHETICAL",
+          "sprite": "pius_grave",
+          "rhetoricalPattern": "ESTABLISH_THE_TEXT",
+          "requiresOriginalSourceForSubstance": true
+        },
+        {
+          "no": 3,
+          "visitor": {
+            "en": "Will you answer my objection once we have read it?",
+            "fr": "Répondrez-vous à mon objection après notre lecture ?"
+          },
+          "reply": {
+            "en": "Certainly. Then we shall know exactly where the difficulty lies, and what the authoritative text does—or does not—settle.",
+            "fr": "Assurément. Nous saurons alors où se trouve précisément la difficulté, et ce que le texte autorisé permet, ou ne permet pas, de conclure."
+          },
+          "register": "PASTORAL",
+          "sprite": "pius_thoughtful",
+          "rhetoricalPattern": "RETURN_TO_VISITOR",
+          "requiresOriginalSourceForSubstance": true
+        }
+      ]
+    }
+  ],
+  "negativeGates": [
+    {
+      "case": "FALSE_DIRECT_QUOTATION",
+      "mustBlock": true
+    },
+    {
+      "case": "CONSTRUCT_CATECHISM_ANSWER_FROM_STYLE",
+      "mustBlock": true
+    },
+    {
+      "case": "INVENT_PAPAL_PERSONAL_MEMORY",
+      "mustBlock": true
+    },
+    {
+      "case": "ASSUME_NATIVE_DEEP_LINK_FROM_SURVEY_ONLY",
+      "mustBlock": true
+    },
+    {
+      "case": "ENTER_CRISES_OR_APOLOGETICS_HELD_ROUTES",
+      "mustBlock": true
+    },
+    {
+      "case": "ROUTE_CHILD_STUDY_TO_FIRST_COMMUNION_WITHOUT_FIRST_COMMUNION_CONTEXT",
+      "mustBlock": true
+    }
+  ],
+  "reviewStatus": {
+    "runtimeWired": false,
+    "editoriallyApproved": false,
+    "bilingualEditorialReview": false,
+    "threeExchangeSequences": 3,
+    "constructedHistoricalQuotations": 0,
+    "publishedTheologicalAnswers": 0,
+    "approvedTopicHandoffs": 0
+  }
+}
