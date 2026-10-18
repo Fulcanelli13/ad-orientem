@@ -2,6 +2,23 @@ import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 const registry=JSON.parse(await readFile(new URL("../data/learn/pius-x-documentary-voice-style.v1.json",import.meta.url),"utf8"));
 assert.equal(registry.schema,"AO_PIUS_X_DOCUMENTARY_VOICE_STYLE_V1");
+const prepapal=JSON.parse(await readFile(new URL("../data/learn/pius-x-prepapal-conversational-evidence.v1.json",import.meta.url),"utf8"));
+assert.equal(prepapal.schema,"AO_PIUS_X_PREPAPAL_CONVERSATIONAL_STYLE_V1");
+assert.equal(prepapal.sourceOwner,"STYLE_ONLY");
+assert.equal(prepapal.evidence.length,6);
+assert.equal(prepapal.release.newDoctrinalStatementsApproved,false);
+assert.equal(prepapal.release.historicalSpeechReenactmentApproved,false);
+assert.equal(prepapal.conclusions.humour,"EVIDENCED_IN_INFORMAL_DOCUMENTS_OCCASIONAL_NOT_AUTO_INSERTED");
+assert.ok(prepapal.evidence.some(x=>x.trait==="SELF_DEPRECATING_HUMOUR"));
+assert.ok(prepapal.evidence.some(x=>x.trait==="QUESTION_AND_OBJECTION_PEDAGOGY"));
+assert.ok(prepapal.evidence.some(x=>x.trait==="ENERGETIC_BUT_SELF_CORRECTING"));
+for(const item of prepapal.evidence){
+ assert.ok(item.primaryEditionPages||item.discussionPages);
+ assert.ok(item.limits.length>50);
+ assert.ok(item.styleRule.length>50);
+ assert.ok(item.briefOriginal===null||item.briefOriginal.split(/\\s+/).length<=12);
+}
+
 assert.equal(registry.scope,"STYLE_AND_RHETORICAL_EVIDENCE_ONLY");
 const controls=JSON.parse(await readFile(new URL("../data/learn/pius-x-period-catholic-prose-controls.v1.json",import.meta.url),"utf8"));
 assert.equal(controls.schema,"AO_PIUS_X_PERIOD_CATHOLIC_PROSE_COMPARATORS_V1");
