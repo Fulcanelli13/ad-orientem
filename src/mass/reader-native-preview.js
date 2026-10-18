@@ -1691,6 +1691,7 @@ export async function mountNativeReaderPreview({
       customary:Object.freeze({
         postureProfile:customaryPrefs.postureProfile,
         gestureProfile:customaryPrefs.gestureProfile,
+        secondConfiteor:customaryPrefs.secondConfiteor,
         localPosture:customaryPrefs.localPostures[activeCueId]??"DEFAULT",
         localGesture:customaryPrefs.localGestures?.[activeCueId]??"DEFAULT",
         followPriestSeating:customaryPrefs.followPriestSeating,
@@ -2292,7 +2293,7 @@ export async function mountNativeReaderPreview({
       (card.blocks??[]).some(block=>block.blockId==="AO.SM.B077") &&
       (card.blocks??[]).every(block=>["AO.SM.B077","AO.SM.B078","AO.SM.B079"].includes(block.blockId));
     if(isOptionalCommunionConfiteor &&
-       prepared?.readerPreferences?.secondConfiteor!==true)return false;
+       customaryPrefs.secondConfiteor!==true)return false;
     if(prepared?.session?.plan?.normalLastGospel===false && isLastGospelCard(card))return false;
     return Boolean(planAwareCard(card));
   }
@@ -2590,6 +2591,14 @@ export async function mountNativeReaderPreview({
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onCustomaryChange:change=>{
       customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);
+      if(change?.kind==="secondConfiteor"){
+        reader.setSections?.(sectionItems());
+        // Turning the local custom off must not leave a hidden card active.
+        if(current && !visibleCardAllowed(current)){
+          const next=nextVisibleCard(current,"next")??nextVisibleCard(current,"previous");
+          if(next){showCard(next,{directJump:true});return;}
+        }
+      }
       queue();
     },
     onScholaAdvance:()=>{

@@ -970,6 +970,17 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell .ao-guide-popover{
   display:none!important;
 }
+/* The sole source-owned prayer title belongs in the top ribbon.
+   Allow two-line names on phone rather than truncating to unnamed-looking
+   'Words of...' fragments or adding another heading to the prayer card. */
+.ao-reader-shell[data-mode="LIVE"] .ao-section-jump{
+  white-space:normal;text-overflow:clip;overflow:hidden;
+  font-size:clamp(12px,2.8vw,15px);line-height:1.16;
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-section-jump [data-role="section-title"]{
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  white-space:normal;overflow:hidden;text-overflow:clip;overflow-wrap:break-word;
+}
 /* A sourced ceremonial cue belongs directly to its original prayer row.
    The short rubric is legible without becoming a second Guide card. */
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics{
@@ -1680,6 +1691,11 @@ export function buildReaderShellMarkup(prepared = {}) {
         <option value="KNEEL">Kneel</option>
       </select></label>
       <small data-customary-cue-note>Choose a source cue; fixed postures cannot be overridden.</small>
+      <label>Confiteor before Communion<select data-reader-customary="secondConfiteor" aria-label="Optional local Confiteor before Communion">
+        <option value="false">1962 Missal — omitted before Communion</option>
+        <option value="true">Observed local custom — include Confiteor, Misereatur and Indulgentiam</option>
+      </select></label>
+      <small>Local or older custom only; not prescribed by the 1962 Missal. The opening Confiteor at the foot of the altar is unchanged.</small>
     </div>
     <button class="ao-mass-prefs-more" type="button" data-reader-glossary>Terms & rubrics</button><button class="ao-mass-prefs-more" type="button" data-reader-parameters>App settings</button>
   </aside>
@@ -2461,7 +2477,7 @@ export function createReaderDomAdapter({
       const select=event.target?.closest?.("[data-reader-customary]");
       if(!select||select.disabled||!current?.customary)return;
       const kind=select.dataset.readerCustomary;
-      if(!["postureProfile","gestureProfile","localPosture"].includes(kind))return;
+      if(!["postureProfile","gestureProfile","localPosture","secondConfiteor"].includes(kind))return;
       onCustomaryChange?.({kind,value:select.value,cueId:current.customary.cueId});
     };
     root.addEventListener?.("change",rootChangeListener);
@@ -2879,6 +2895,8 @@ export function createReaderDomAdapter({
         if(select)select.value=current.customary[kind]??"DEFAULT";
         if(select&&kind==="localPosture")select.disabled=!current.customary.localPostureEditable;
       }
+      const communionConfiteor=root.querySelector('[data-reader-customary="secondConfiteor"]');
+      if(communionConfiteor)communionConfiteor.value=String(current.customary.secondConfiteor===true);
       const note=root.querySelector("[data-customary-cue-note]");
       if(note)note.textContent=current.customary.cueId
         ? current.customary.localPostureEditable
@@ -2892,6 +2910,8 @@ export function createReaderDomAdapter({
       if(note)note.textContent="Local choices apply to source-backed Mass cues.";
     }
     const titleNode=root.querySelector('[data-role="card-title"]');
+    // One prayer name on one surface: use the legible top-ribbon heading.
+    // Never duplicate the same name as a large in-card heading.
     if(titleNode)titleNode.hidden=true;
     // Explanatory Guide belongs outside LIVE. It remains available to the
     // independent educational module, and the older Simple presentation
@@ -3112,7 +3132,7 @@ export function createReaderDomAdapter({
             orationCaption.className="ao-oration-label";
             orationCaption.textContent=p.prayerRole==="ORATION_UNDER_ONE_CONCLUSION"&&
               String(p.id).endsWith(".MISSION")
-                ?(frenchReader?"Pour les Missions":"For the Missions")
+                ?(frenchReader?"Pour les Missions · même conclusion":"For the Missions · one shared conclusion")
                 :orationLabels[p.prayerRole];
             node.append(orationCaption);
           }

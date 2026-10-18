@@ -35,6 +35,8 @@ export function resolveReaderPreferences(input = {}) {
     localGestures: Object.freeze({ ...(input.localGestures ?? {}) }),
     followPriestSeating: input.followPriestSeating !== false,
     credoSitStart: input.credoSitStart === "AO.SM.C0098" ? "AO.SM.C0098" : "AO.SM.C0097",
+    // Optional local practice, not a 1962 normative Communion rubric.
+    secondConfiteor: input.secondConfiteor === true,
   });
 }
 
