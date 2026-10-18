@@ -93,6 +93,32 @@ try{
     const entry=extract(r);
     (sampleDates.includes(date)?sampled:supplement).push(entry);
   }
+  // Real month export comparison: the download is a different Ordo surface.
+  // Inspect 31 actual December 2026 resolutions, never synthetic rows.
+  const december=[];
+  for(let day=1;day<=31;day++){
+    const date="2026-12-"+String(day).padStart(2,"0");
+    try{december.push(await resolver.resolveDay(date))}
+    catch(error){unresolved.push({date,error:"ICS: "+String(error.message??error)})}
+  }
+  const icsEvidence={month:"2026-12",resolved:december.length};
+  if(december.length===31){
+    for(const language of ["en","fr"]){
+      try{
+        const ics=serialize1962CalendarMonth("2026-12",december,{
+          language,now:new Date("2026-10-18T00:00:00Z")});
+        const unfolded=ics.replace(/\r\n /g,"").replace(/\r\n/g,"\n");
+        const events=unfolded.split("BEGIN:VEVENT").slice(1);
+        const byDate={};
+        for(const date of ["2026-12-02","2026-12-11","2026-12-27"]){
+          const compact=date.replaceAll("-","");
+          const event=events.find(x=>x.includes("DTSTART;VALUE=DATE:"+compact+"\n"));
+          byDate[date]=event?.match(/^SUMMARY:(.*)$/m)?.[1]??null;
+        }
+        icsEvidence[language]={eventCount:events.length,dates:byDate};
+      }catch(error){icsEvidence[language]={error:String(error.message??error)}}
+    }
+  }
   const textFlags=[],scan=(value,ctx)=>{
     const v=String(value??"");
     for(const [rule,re] of [
@@ -145,7 +171,7 @@ try{
     year:2026,sourceOrdo,sourceDayCount:sourceOrdo.length,seed:"AO-ORDO-GRAMMAR-2026-10-18-V1",
     selection:"2 Sunday + 2 non-Sunday random dates per month; 48 sampled dates + 9 known-risk sentinel days",
     sampled,supplement,exceptions,unresolved,flags:textFlags,frenchFallbackCandidates:fallback,
-    exportSamples};
+    exportSamples,icsEvidence};
  });
  assert.equal(findings.sourceDayCount,365,"Incomplete 2026 Ordo source");
  assert.equal(findings.sampled.length,48,"Expected 48 sampled resolved Ordo days");
@@ -161,6 +187,8 @@ try{
    sampledDaysWithUntranslatedFrenchCommemorations:findings.sampled.filter(x=>x.en.commemorations.length&&JSON.stringify(x.en.commemorations)===JSON.stringify(x.fr.commemorations)).length,
    allResolvedSameENFRHeadings:allResolved.filter(x=>x.en.visible===x.fr.visible).length,
    allResolvedProperNameFrEqualsEnglish:allResolved.filter(x=>x.properName&&x.properName===x.properNameFr).length,
+   decemberIcsFrenchTitle:findings.icsEvidence?.fr?.dates?.['2026-12-02']??null,
+   decemberIcsEnglishTitle:findings.icsEvidence?.en?.dates?.['2026-12-02']??null,
    
    exceptionDates:findings.supplement.length,unresolved:findings.unresolved.length,
    sourceOrdoFlags:findings.flags.filter(x=>x.surface==="SOURCE_ORDO"||x.surface==="SOURCE_COMMEMORATION").length,
@@ -169,6 +197,7 @@ try{
  await mkdir(dirname(output),{recursive:true});
  await writeFile(output,JSON.stringify({...findings,totals},null,2)+"\n");
  console.log("ORDO_QA_TOTALS="+JSON.stringify(totals));
+ console.log("ORDO_QA_ICS="+JSON.stringify(findings.icsEvidence));
  for(const x of findings.sampled.concat(findings.supplement))
    console.log("ORDO_QA_ROW="+JSON.stringify({date:x.date,mainId:x.mainId,sourcePath:x.sourcePath,
     en:x.en.visible,fr:x.fr.visible,frOrigin:x.fr.origin,
