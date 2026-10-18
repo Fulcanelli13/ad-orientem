@@ -21,9 +21,18 @@ The exact fifteen WebP sprite exports from the approved character package are no
 
 ## Known limits / next steps
 
-1. Review the committed locked sprite proportions, dialog spacing and the genuine Brompton photograph on real devices; the CI photography stub cannot certify appearance.
-2. The Canon's Mass Explorer button now delegates to the existing P5 published-Mass-Explorer adapter, with exact research link AL01 → AO.CARD.015 and safe standalone failure. The original St Pius X Catechism handoff and exact native return still require an approved bridge through #1391; do not claim they work.
+1. Review locked sprite proportions, dialogue spacing and the genuine Brompton photograph on real devices. A separate best-effort real-photo capture workflow has been added; network-dependent screenshots (even when available) still need human visual acceptance.
+2. The Canon's Mass Explorer button delegates to the source-owned P5 adapter (research contextual edge AL01 → AO.CARD.015; standalone failure stays safe). **St Pius X Question 322** now has a *review-only same-document* native bridge using the original `AO_LEARN_APP_V1.openModule("learn.catechism",{catechismQuestion:322})` and the already-established P0 token-and-return contract. The question number is verified against `data/learn/ltfaith-pius-x-en-witness-index.v1.json`; no Catechism answers were copied.
+   - Native handoff is authorised only for canonical `PX1912-Q322`, the approved Brompton photo scene, guide `pius-x`, an idle same-document Formation owner and the active review flag.
+   - Return closes only the Catechism session opened by this bridge, restores the original photograph scroll/camera pose, retains the selected guide and dialogue node, and returns focus.
+   - Standalone photography pages **cannot** silently access parent-frame native modules; they report unavailability. Current 390px/1280px Chromium E2E uses an injected source-owner contract to test opening and return. **Real-shell Catechism opening, dismissal and complete navigation in the integrated app remain unverified**, pending coordination with #1391. Do not claim otherwise.
 3. Check P1 source authority/scene restriction, French editorial gating, dialogue source language, normal browser/phone flows, and accessible text/contrast.
 4. Do not merge until upstream stacked PR dependencies and editorial publication gates are satisfied.
 
 The LIVE, SIMPLE and MISSAL Mass reader, rubrics, source prayer texts and Schola are unmodified.
+
+## P3 cross-owner tests and visual review
+
+- `tests/living-church-catechism-native.mjs` checks the exact Q322 witness, anti-impersonation/source scope, double-opening guard, owned native closing, exact pose restoration and standalone refusal.
+- `tests/living-church-character-scene.mjs` checks the same-document injected native-owner contract plus original standalone refusal at 390px and 1280px; it does **not** substitute for a full live Formation shell test.
+- `tests/living-church-real-photo-visual.mjs` runs a separate network-dependent original-photo screenshot review, expressly not a release gate or proof of editorial acceptance.
