@@ -68,7 +68,7 @@ try{
    output.forms[form]=entry;
   }
   const all=Object.values(r.proper?.data??{}).filter(x=>x&&typeof x==="object");
-  output.ps113=all.map(x=>JSON.stringify(x)).filter(s=>/113\s*[:.,]\s*1|[ée]xitu|Æg[yý]pt/i.test(s)).map(s=>s.slice(0,500)).slice(0,5);
+  output.ps113=Object.fromEntries(["lat","en","fr"].map(k=>[k,String(r.proper?.data?.gradual?.[k]??"")]));
   return output;
  });
  console.log("MASS_OCT18_FIELD_DIAGNOSTIC="+JSON.stringify(result));
