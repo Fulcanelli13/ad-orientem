@@ -93,7 +93,12 @@ expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matc
 expect(html.includes("opacity:.84"),"donor forward near-focus level no longer matches the final executable donor");
 expect(html.includes("opacity:.67"),"donor backward near-focus level no longer matches the final executable donor");
 expect(html.includes(".ao-state-kicker{font:700 7px/1"),"YOU / PRIEST state labels lost v1.79-v1.80 typography");
-expect(html.includes('class="ao-guide-copy"><small>GUIDE</small>'),"GUIDE centre cell is missing from the state ribbon");
+expect(html.includes('disabled hidden aria-hidden="true" tabindex="-1" aria-label="Explanatory Guide removed from Mass reader"'),
+  "The LIVE Guide tile remains focusable or visible despite removal");
+expect(html.includes('.ao-reader-shell .ao-state-guide,'),
+  "LIVE must suppress the explanatory Guide layout");
+expect(html.includes('.ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics'),
+  "LIVE certified rubrics lost their restrained in-text presentation");
 expect(html.includes('[data-channel="gesture"][data-active="false"]'),"inactive gesture rail no longer disappears like the final donor");
 expect(html.includes('[data-channel="posture-change"][data-active="false"]'),
   "duplicate posture-change icon does not disappear when inactive");
@@ -616,4 +621,4 @@ const missingRich=createDonorRichMaskLoader(async()=>{throw new Error("offline")
 expect(await missingRich("unreachable.svg").promise===null,
   "offline rich master must permit visible SVG transport fallback");
 
-console.log("Reader DOM contract PASS: v1.80 Home/section/preferences ribbon, contextual glossary action, YOU/Guide/Priest state ribbon, semantic rails, Schola stream shell, and native mode switching.");
+console.log("Reader DOM contract PASS: Home/section/preferences ribbon, YOU/Priest LIVE state ribbon, source-owned inline rubrics, semantic rails, Schola stream shell, and native mode switching.");

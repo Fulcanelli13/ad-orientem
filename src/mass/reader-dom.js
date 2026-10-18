@@ -939,6 +939,35 @@ button.ao-schola-control{cursor:pointer}
   font-size:.78rem;line-height:1.5;font-weight:500
 }
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]::before{display:none}
+/* LIVE is an operational Mass companion, never an explanatory Guide.
+   Keep the original posture/position ribbon; remove its centre Guide tile. */
+.ao-reader-shell[data-mode="LIVE"] .ao-state-ribbon,
+.ao-reader-shell[data-mode="SIMPLE"] .ao-state-ribbon{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+}
+.ao-reader-shell .ao-state-guide,
+.ao-reader-shell .ao-guide-popover{
+  display:none!important;
+}
+/* A sourced ceremonial cue belongs directly to its original prayer row.
+   The short rubric is legible without becoming a second Guide card. */
+.ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics{
+  display:block;max-width:66ch;margin:5px 0 3px;padding:3px 0 3px 9px;
+  border-left:1px solid color-mix(in srgb,var(--ao-mass-accent) 46%,transparent);
+  color:color-mix(in srgb,var(--ao-text-primary,#e8e2d5) 76%,transparent);
+  font:italic 400 clamp(11px,1.04vw,13px)/1.38 var(--ao-missal-face,Georgia,serif);
+  text-align:left;letter-spacing:0;
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action{
+  display:block;margin:1px 0;
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph:not([data-active="true"])
+  .ao-live-inline-rubrics{opacity:.63}
+.ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
+  summary{cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
+.ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
+  p{margin:5px 0;font:italic 400 12px/1.45 var(--ao-missal-face,Georgia,serif)}
+
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.73}
 
 /* Keep full-sized edge targets, but let prayer text rather than arrows own
@@ -1370,7 +1399,10 @@ export function projectCertifiedSolemnMinisterRubric(value){
 export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
   const momentTitle=String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "");
-  const latinProminent=/Consecration of (?:the )?(?:Sacred )?(?:Host|Chalice)/i.test(momentTitle);
+  // Both curated 65-card words/elevation titles are distinct from the
+  // preparation cards. Consecratory Latin must remain prominent in both.
+  const latinProminent=/Consecration of (?:the )?(?:Sacred )?(?:Host|Chalice)/i.test(momentTitle) ||
+    /^Words of Consecration and Elevation\s*[·–—-]\s*(?:Host|Chalice)$/i.test(momentTitle);
   const paragraphs = Array.isArray(moment.paragraphs) ? moment.paragraphs.map((p, index) => {
     if (typeof p === "string") return Object.freeze({id:String(index),kind:"TEXT",primary:p,secondary:null,alternate:null,replaceOnToggle:false,active:false});
     let kind=String(p.kind ?? (p.response ? "RESPONSE" : "TEXT")).toUpperCase();
@@ -1380,7 +1412,10 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     let replaceOnToggle=p.replaceOnToggle === true && p.alternate != null;
     const rubric=/^\s*\[[\s\S]+\]\s*$/.test(primary);
     if(rubric)kind="RUBRIC";
-    if(latinProminent && alternate && kind!=="RUBRIC"){
+    // A sung-source paragraph may ALREADY have Latin in primary, with its
+    // vernacular in alternate. Never reverse that source-owned order.
+    if(latinProminent && alternate && kind!=="RUBRIC" &&
+       String(p.displayLanguage??"").toUpperCase()!=="LATIN"){
       secondary=primary;
       primary=alternate;
       alternate=null;
@@ -1588,7 +1623,7 @@ export function buildReaderShellMarkup(prepared = {}) {
       <span class="ao-icon-mask ao-missal-gesture-icon" data-icon-slot="faithful-gesture-top" hidden aria-hidden="true"></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span><span class="ao-missal-state-detail" data-role="missal-faithful-gesture" hidden></span></span>
     </div>
-    <button class="ao-state-guide" type="button" data-role="guide-button" disabled ${mode==="MISSAL" ? 'hidden aria-hidden="true" tabindex="-1"' : ""} aria-label="Open Guide and rubrics">
+    <button class="ao-state-guide" type="button" data-role="guide-button" disabled hidden aria-hidden="true" tabindex="-1" aria-label="Explanatory Guide removed from Mass reader">
       <span class="ao-guide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.75h10.5A2.5 2.5 0 0 1 18 7.25v12H7.5A2.5 2.5 0 0 1 5 16.75z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h6.5M8 11h6.5M8 14h4.5" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/></svg></span>
       <span class="ao-guide-copy"><small>GUIDE</small><b class="ao-guide-short" data-role="guide-short">RUBRICS</b></span>
     </button>
@@ -1922,6 +1957,15 @@ export function createReaderDomAdapter({
       for(const button of root.querySelectorAll?.("[data-reader-mode]")??[]){
         button.setAttribute("aria-pressed",String(button.dataset.readerMode===mode));
       }
+      const button=root.querySelector('[data-role="guide-button"]');
+      const pop=root.querySelector('[data-role="guide-popover"]');
+      if(button){
+        button.hidden=true;
+        button.disabled=true;
+        button.tabIndex=-1;
+        button.setAttribute("aria-hidden","true");
+      }
+      if(pop){pop.hidden=true;pop.replaceChildren?.();}
       syncRailVisibility(root);
     };
     mode=requested;
@@ -2466,23 +2510,9 @@ export function createReaderDomAdapter({
         syncReaderRitualHighlights(root,current?.gesture);
         return;
       }
-      const guideClose=event.target?.closest?.("[data-guide-close]");
-      if(guideClose){closeGuide();return;}
-      const guideBackdrop=event.target?.closest?.('[data-role="guide-popover"]');
-      if(guideBackdrop && event.target===guideBackdrop){closeGuide();return;}
-      const guideButton=event.target?.closest?.('[data-role="guide-button"]');
-      if(guideButton && !guideButton.disabled && current?.guide){
-        const pop=root.querySelector('[data-role="guide-popover"]');
-        if(pop){
-          if(pop.hidden){
-            renderGuideSheet(pop,current.guide,prepared?.readerPreferences?.language??"en");
-            pop.hidden=false;
-            pop.querySelector?.("[data-guide-close]")?.focus?.();
-          }else closeGuide();
-        }
-        onGuide?.(current.guide,current,prepared);
-        return;
-      }
+      // The Guide is no longer a Mass-reader interaction. Its separate
+      // educational corpus remains available outside the ritual player.
+      if(event.target?.closest?.('[data-role="guide-button"],[data-role="guide-popover"]'))return;
       const rubric=event.target?.closest?.('.ao-reader-paragraph[data-kind="RUBRIC"][data-rubric-expandable="true"]');
       if(rubric){toggleRubric(rubric);return;}
     };
@@ -2820,9 +2850,19 @@ export function createReaderDomAdapter({
     }
     const titleNode=root.querySelector('[data-role="card-title"]');
     if(titleNode)titleNode.hidden=true;
+    // Explanatory Guide belongs outside LIVE. It remains available to the
+    // independent educational module, and the older Simple presentation
+    // alone can display its existing button.
+    const guideControl=root.querySelector('[data-role="guide-button"]');
+    if(guideControl){
+      guideControl.hidden=true;
+      guideControl.disabled=true;
+      guideControl.setAttribute("aria-hidden","true");
+      guideControl.tabIndex=-1;
+    }
     const guideShort=root.querySelector('[data-role="guide-short"]');
     if(guideShort){
-      guideShort.hidden=false;
+      guideShort.hidden=true;
       guideShort.textContent=current.guide?.moment ? "OPEN" : "RUBRICS";
     }
 
@@ -2902,11 +2942,15 @@ export function createReaderDomAdapter({
       applyIcon(root,"cinematic",visible && kind==="ELEVATION" ? current.priestActionIconKey : null,iconResolver);
     }
 
+    // The old Guide update used to resurrect the centre tile after each
+    // cue projection. Mass now owns only practical, source-backed rubrics.
     const guideButton=root.querySelector('[data-role="guide-button"]');
     if(guideButton){
-      guideButton.disabled=mode==="MISSAL"||!current.guide;
-      guideButton.hidden=mode==="MISSAL";
-      guideButton.title=mode==="MISSAL"?"":(current.guide?.text??"Guide");
+      guideButton.disabled=true;
+      guideButton.hidden=true;
+      guideButton.tabIndex=-1;
+      guideButton.setAttribute("aria-hidden","true");
+      guideButton.title="";
     }
     const pop=root.querySelector('[data-role="guide-popover"]');
     // Preserve an open Guide during in-card gesture, posture and Schola updates.
@@ -2914,8 +2958,10 @@ export function createReaderDomAdapter({
     if(pop && current.cardUpdate){pop.hidden=true;pop.replaceChildren?.();}
 
     const shell=root.querySelector("[data-ao-reader-shell]");
-    if(shell && current.cardUpdate)shell.dataset.canonInline=String(
-      mode!=="MISSAL" && current.paragraphs.some(p=>p.publishedCanonRubrics?.length>0));
+    // Inline rubrics must not replace LIVE's persistent YOU/PRIEST ribbon
+    // with a source-banner or collapse the two rails. Source provenance is
+    // retained on each inline action, never as an extra toolbar.
+    if(shell && current.cardUpdate)shell.dataset.canonInline="false";
     const body=root.querySelector('[data-role="paragraphs"]');
     if(body && current.cardUpdate){
       body.replaceChildren();
@@ -3131,26 +3177,26 @@ export function createReaderDomAdapter({
             decorateLiturgicalSpeaker(secondary,parallel);
             node.append(secondary);
           }
-          const inlineRubrics=mode==="MISSAL"
+          const inlineRubrics=mode==="MISSAL"||mode==="LIVE"
             ? p.publishedMissalRubrics : p.publishedCanonRubrics;
           // Existing bracketed directions are already rubrics in the
           // Missal's source text. Never print a second paraphrase below them.
-          const alreadyPrintedRubric=mode==="MISSAL" &&
+          const alreadyPrintedRubric=(mode==="MISSAL"||mode==="LIVE") &&
             (p.kind==="RUBRIC" || /^\s*\[/.test(String(p.primary??"")));
           // Exact source-printed rubric wins. The only exception is a
           // separately approved persistent priest state: not another action.
-          const shortRubrics=mode==="MISSAL"&&alreadyPrintedRubric
+          const shortRubrics=alreadyPrintedRubric
             ? inlineRubrics.filter(event=>event.kind==="STATE")
             : inlineRubrics;
           if(shortRubrics?.length){
             const note=doc.createElement(mode==="MISSAL"?"div":"span");
-            note.className=mode==="MISSAL"
-              ?"ao-missal-inline-rubrics":"ao-canon-inline-rubrics";
+            note.className=mode==="MISSAL"?"ao-missal-inline-rubrics"
+              : mode==="LIVE"?"ao-live-inline-rubrics":"ao-canon-inline-rubrics";
             note.dataset.sourceAuthority="MR62_RITUS";
             note.dataset.observedNow="false";
             const actions=doc.createElement(mode==="MISSAL"?"div":"span");
             actions.className="ao-canon-inline-actions";
-            if(mode==="MISSAL"){
+            if(mode==="MISSAL"||mode==="LIVE"){
               for(const event of shortRubrics){
                 // Only two separately approved persistent states exist.
                 // A full C0174.06 paragraph would overwhelm the Consecration;
@@ -3170,7 +3216,7 @@ export function createReaderDomAdapter({
                       :"The priest releases his joined fingers after the ablutions.")
                     : event.displayText;
                 const text=doc.createElement("span");
-                text.className="ao-missal-rubric-action";
+                text.className=mode==="LIVE"?"ao-live-rubric-action":"ao-missal-rubric-action";
                 text.dataset.rubricId=event.id;
                 text.dataset.sourceCueId=event.sourceCueId;
                 text.textContent=short;
