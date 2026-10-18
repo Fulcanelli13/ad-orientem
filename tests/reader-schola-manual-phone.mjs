@@ -35,14 +35,17 @@ try{
    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",{},{timeout:25000});
    const chosen=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
-     const c=api.model.cards.find(card=>card.paragraphs.some(p=>
-       (p.sourceCueIds??[]).includes("AO.SM.C0055")));
-     if(!c)return {error:"GLORIA_SOURCE_CARD_MISSING"};
-     api.showSequence(c.sequence);
-     return {card:c.title,sequence:c.sequence};
+     const sanctus=api.model.cards.find(card=>card.title==="Sanctus");
+     const canon=api.model.cards.find(card=>card.title==="Te igitur");
+     if(!sanctus||!canon)return {error:"SANCTUS_OR_CANON_CARD_MISSING"};
+     // The Schola continues independently into the priest's silent Canon,
+     // where its dock is rightly visible rather than duplicated in the text.
+     api.showSequence(sanctus.sequence);
+     api.showSequence(canon.sequence);
+     return {card:canon.title,sequence:canon.sequence};
    });
    assert.equal(chosen.error,undefined,JSON.stringify(chosen));
-   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="GLORIA");
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="SANCTUS_BENEDICTUS");
    const dock=page.locator(".ao-schola-dock");
    await dock.waitFor({state:"visible"});
    const prev=page.locator("[data-schola-previous]");
