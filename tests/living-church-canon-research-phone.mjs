@@ -49,6 +49,18 @@ try{
    const c=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
    return c?.AO_VISIBLE_MASS_LIVING_CHURCH_P1?.status?.().context?.objectId==="AL01";
   },null,{timeout:30000});
+  // The photographic viewer animates marker focus asynchronously.
+  // Sample the original pose only when its source-owned movement has settled.
+  await page.waitForFunction(()=>{
+   const c=document.querySelector("#ao-visible-mass-review-root iframe")?.contentWindow;
+   const pose=c?.AO_VISIBLE_MASS_LIVING_CHURCH_P1?.status?.().context?.scene?.pose;
+   if(!pose)return false;
+   const current=pose.x+","+pose.y,now=performance.now();
+   if(window.__canonPoseProbe?.current!==current){
+    window.__canonPoseProbe={current,changed:now};return false;
+   }
+   return now-window.__canonPoseProbe.changed>500;
+  },null,{polling:100,timeout:20000});
   const original=await page.evaluate(()=>{
    const c=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
    return c.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context;
