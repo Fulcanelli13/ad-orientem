@@ -75,7 +75,7 @@ window.fetch=(url,options)=>{
   :AO_M4_REMOTE_FETCH(url,options);
 };
 </script>`;
-const chunk=html.slice(start,end+scriptEnd.length);
+const chunk=originalHtml.slice(start,end+scriptEnd.length);
 if(!chunk.startsWith(scriptStart))throw Error("Controller IIFE not found");
 const replacement=init+"\n<script>\n"+safe(virtual.outputFiles[0].text)+"\n</script>";
 html=html.replace(chunk,replacement);
