@@ -153,6 +153,55 @@ try{
   });
   assert.deepEqual(afterCatechism,beforeCatechism,"original source/pose/guide/VMQ trail changed after Catechism");
   assert.equal(await stage.getAttribute("data-guide"),"pius-x");
+
+  // Pius X style PR #1419 provides editorial scenarios, but the live review
+  // folio publishes ONLY original-source question links, never its C-level replies.
+  // Exercise each topic through the canonical P4 question handoff and exact return.
+  for(const item of [
+   {topic:"PX-STYL-OUR-LADY-01",ref:"PX1912-Q433",needsContext:false},
+   {topic:"PX-STYL-CHILD-CATECHISM-02",ref:"PX1912-Q342",needsContext:true},
+   {topic:"PX-STYL-TEACHING-OBJECTION-03",ref:"PX1912-Q114",needsContext:false}
+  ]){
+   await stage.getByRole("button",{name:/Three source-guided topics/}).click();
+   assert.equal(await stage.locator("[data-pius-topic]").count(),3);
+   await stage.locator('[data-pius-topic="'+item.topic+'"]').click();
+   if(item.needsContext){
+    assert.equal(await stage.locator('[data-pius-ref="'+item.ref+'"]').count(),0,
+     "First Communion source questions require the explicitly selected context");
+    await stage.locator('[data-pius-context-confirm="first-communion"]').click();
+    assert.match(await stage.locator(".lcHistoricalSourceCaution").innerText(),
+      /not today's Catholic fasting rule/);
+   }
+   assert.ok(await stage.locator('[data-pius-ref="'+item.ref+'"]').isVisible());
+   assert.match(await stage.locator(".lcDisclaimer").innerText(),/not his words/i);
+   const contextualBefore=await page.evaluate(()=>{
+    const w=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
+    return {context:w.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
+      guide:w.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()};
+   });
+   await stage.locator('[data-pius-ref="'+item.ref+'"]').click();
+   await page.waitForFunction(()=>{
+    const original=document.getElementById("ao-cate-root");
+    return original&&!original.hidden&&
+      getComputedStyle(original).visibility==="visible"&&
+      getComputedStyle(document.getElementById("ao-visible-mass-review-root")).visibility==="hidden";
+   },null,{timeout:25000});
+   assert.equal(await stage.isVisible(),false,"Original Catechism replaces topic review folio");
+   await page.locator("#aoLivingChurchReturnSanctuary").click();
+   await stage.waitFor({state:"visible",timeout:12000});
+   assert.ok(await stage.locator('[data-pius-ref="'+item.ref+'"]').isVisible(),
+     "Topic/question choice must survive original-source return");
+   const contextualAfter=await page.evaluate(()=>{
+    const w=document.querySelector("#ao-visible-mass-review-root iframe").contentWindow;
+    return {context:w.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context,
+      guide:w.AO_VISIBLE_MASS_HOTSPOT_PILOT.guideStatus()};
+   });
+   assert.deepEqual(contextualAfter,contextualBefore,
+     "Topic source handoff must preserve source, guide, camera and trail");
+   await stage.locator('[data-pius-back="topics"]').click();
+   assert.equal(await stage.locator("[data-pius-topic]").count(),3);
+   await stage.locator('[data-pius-back="home"]').click();
+  }
   await stage.locator('[data-persona="canon"]').click();
   await stage.getByRole("button",{name:"Related Mass moments"}).click();
   await stage.getByRole("button",{name:/The Offertory.*AO.CARD.010/}).click();
