@@ -52,3 +52,17 @@ The LIVE, SIMPLE and MISSAL Mass reader, rubrics, source prayer texts and Schola
 - `tests/living-church-ask-objectives.mjs` checks original objective/branch identities, French/English, guide selection and unpublished apologetics/crisis exclusion. `tests/living-church-character-scene.mjs` verifies actual objective selections/referrals and free objective text in Chromium.
 
 **Limits:** This remains a draft with review URL flags. The #1391 objective UI is not merged as a second independent chatbot; its editorial digest and 8 real-shell destination tests stay in PR #1391. Physical phones, SSO preview visual acceptance, accessibility audit, broader guide handoffs and upstream branch convergence remain required. No public launch, LIVE/SIMPLE/MISSAL edits, or certification of new apologetics answer content.
+
+## P5 — Source-backed dialogue, not generated answers
+
+- The three-character scene imports the **unchanged canonical PR #1391 `src/learn/ask-church-source-digest.js`** (blob `acfc57cee099cb3402c8b5ae6ae066ca0ab136eb`) alongside the already unchanged objective engine and route survey. It is **one original source owner**, not a duplicate Mass/Catechism/Apostolate registry.
+- A visitor chooses an objective and branch in the original seven-family/26-branch routing engine; source selection is constrained to the currently chosen path and its publication gates. A dossier in hold/research-only status is not accessible through a guessed route.
+- The scene reads the existing Apostolate `READY` answer/explanation and linked source references, or the Formation/Confession introductory description **as separately labelled metadata**. Links must be HTTPS; no fabricated citations, theological prose, Q&A records or purported speech of St Pius X.
+- A restrained in-scene source panel displays the original record, owner, publication status, extended explanation on demand, and references supplied by the underlying module. Visitors may advance to another approved record, return to the objective, and revisit earlier source IDs held only in bounded **in-memory** history (last 12; no persistent user chat log).
+- Narrow deterministic follow-ups `Why?`, `Where are the sources?`, and `Next/another reference` operate strictly on the already-open approved record. These **are not** a generative chatbot: arbitrary theological follow-up answers, citations and free-form reasoning require a separate audited retrieval/answer layer.
+- Late source fetch results are discarded if the user changes guide or objective during loading; no stale material leaks into another speaker's scene.
+- The 390px/1280px browser test opens canonical `apostolate:AQ08`, checks original excerpt and HTTPS citations, expands the explanation via `Why?`, follows source provenance, reads `AQ03`, and revisits an earlier record; the source unit test also rejects a held/research-only route and unauthorized cross-objective request.
+
+### Still outside P5
+
+Live unscripted bot conversations, broad arbitrary apologetics retrieval, historical role impersonation, source-certification expansion, full Ask the Church V7 native destinations and final production/physical-device approval are **not implemented by this review stage**. The original Apostolate and other canonical owners remain authoritative. Do not merge solely because the scripted source-reader/browser tests pass.
