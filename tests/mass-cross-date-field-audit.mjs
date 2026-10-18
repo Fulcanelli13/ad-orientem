@@ -146,6 +146,28 @@ try{
    }
    summary.sourceOwners=sourceOwners;
    summary.readerChantSourceProof=p.readerChantSourceProof?.status??null;
+   // Reader entry runs a separate recovery pass. A plain calendar resolve
+   // not carrying a proof is not evidence that LIVE lacks one.
+   const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
+   const diagnostics={requestedFiles:[],cacheHits:[],referencesResolved:[],
+     languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],
+     warnings:[],errors:[]};
+   const recovered=await recoverReaderProperOmissions(day.proper,{
+     hostResolver:globalThis.AO_RUNTIME_V8.resolver.properResolver,
+     principalCelebrationId:day.day.main.id,
+     diagnostic:diagnostics
+   });
+   const after=recovered?.data??recovered;
+   const rslots=properToReaderSlots(after,{language:"en"});
+   summary.liveEntryRecovery={
+     status:after?.readerChantSourceProof?.status??null,
+     sourceMode:after?.readerChantSourceProof?.sourceMode??null,
+     parts:after?.readerChantSourceProof?.parts?.map(x=>({
+       kind:x.kind,source:x.sourceRef,latin:x.lat?.slice(0,100)}))??[],
+     gradual:rslots.slots.GRADUAL.status,
+     following:rslots.slots.ALLELUIA_TRACT_SEQUENCE.status,
+     warnings:diagnostics.warnings.slice(0,6),
+   };
    res.push(summary);
   }
   return res;
