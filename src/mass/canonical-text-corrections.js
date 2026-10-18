@@ -118,13 +118,6 @@ export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
     from:"and to you Father, that I have sinned",
     to:"and to you, Father, that I have sinned",
   }),
-  "AO.SM.C0023": Object.freeze({
-    id:"RED-EN-2013-W3-02",
-    blockId:"AO.SM.B007",
-    field:"english",
-    from:"and thee Father, to pray",
-    to:"and you, Father, to pray",
-  }),
   "AO.SM.C0039": Object.freeze({
     id:"RED-EN-2013-W3-03",
     blockId:"AO.SM.B012",
