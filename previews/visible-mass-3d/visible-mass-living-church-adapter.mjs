@@ -11,7 +11,6 @@ export const VISIBLE_MASS_LC_SIX_OBJECTS=Object.freeze([
  "AL01","AL06","AL07","AL19","SN02","SN04"
 ]);
 const allowedObjects=new Set(VISIBLE_MASS_LC_SIX_OBJECTS);
-const own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
 function sceneFromOwner(status){
  if(status?.view==="church"&&status.photoMode==="still")return VISIBLE_MASS_LC_SCENES.still;
  if(status?.view==="panorama"&&["brompton","newman"].includes(status.photoMode))
@@ -32,7 +31,7 @@ function same(a,b){return JSON.stringify(a)===JSON.stringify(b);}
 export function createVisibleMassLivingChurchAdapter({
  pilot,graph,sourceStatus,sourcePose,reviewEnabled
 }={}){
- if(pilot?.schema!=="AO_VISIBLE_MASS_SANCTUARY_PILOT_QUESTIONS_V1"||
+ if(pilot?.schema!=="AO_VISIBLE_MASS_P1_SANCTUARY_QUESTION_RECONCILIATION_V1"||
    !Array.isArray(pilot?.objects)||!Array.isArray(pilot?.questions)||
    !Array.isArray(graph?.trails)||graph.trails.length!==4||
    graph.exactPhotoBinding!==VISIBLE_MASS_LC_SCENES.still||
