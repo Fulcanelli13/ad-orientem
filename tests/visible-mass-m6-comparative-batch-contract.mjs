@@ -5,11 +5,12 @@ import {fileURLToPath} from "node:url";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const base="previews/visible-mass-3d/";
 const file=p=>readFile(resolve(root,base+p),"utf8");
-const [master,batch,batch16,batch17,...htmls]=await Promise.all([
+const [master,batch,batch16,batch17,qa,...htmls]=await Promise.all([
  file("M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json").then(JSON.parse),
  file("M6_COMPARATIVE_P0_BATCH15_UNAPPROVED_20261018.v1.json").then(JSON.parse),
  file("M6_COMPARATIVE_P0_BATCH16_UNAPPROVED_20261019.v1.json").then(JSON.parse),
  file("M6_COMPARATIVE_P0_BATCH17_UNAPPROVED_20261019.v1.json").then(JSON.parse),
+ file("M6_P0_ORIGINAL_PIXEL_VISUAL_SCREEN_20261019.v1.json").then(JSON.parse),
  file("M6_Photo_Review_112_Sources_20261018.html"),
  file("Ad_Orientem_M6_Acquired_Photo_Review_112.html")
 ]);
@@ -67,6 +68,16 @@ assert.ok(batch17.excluded.some(x=>x.reason==="VIATICUM_VESSEL_NOT_TYPICAL_CIBOR
 assert.ok(batch17.excluded.some(x=>x.reason==="EVANGELICAL_CHURCH_NOT_ROMAN_CATHOLIC"));
 assert.equal(batch17.publication_approved,false);
 
+assert.equal(qa.schema,"AO_VISIBLE_MASS_M6_ORIGINAL_PIXEL_VISUAL_SCREEN_V1");
+assert.equal(qa.originals_downloaded_and_visually_inspected,3);
+assert.equal(qa.sources_not_downloaded_or_not_visually_inspected,17);
+assert.equal(qa.findings.length,3);
+assert.equal(qa.screening_overrides.length,2);
+assert.ok(qa.findings.every(x=>x.approved===false&&x.original_pixel_size.length===2));
+assert.ok(qa.screening_overrides.every(x=>qa.findings.some(y=>y.asset_id===x.asset_id)));
+assert.ok(qa.screening_overrides.every(x=>batch.records.some(y=>y.asset_id===x.asset_id)));
+assert.equal(qa.publication_approved,false);
+assert.equal(qa.ratings_assigned_by_user,0);
 assert.equal(htmls[0],htmls[1],"Portable and legacy review HTML must remain identical");
 for(const html of htmls){
  const inline=html.match(/<script>window\.AO_M6_COMPARISON_BATCH=([\s\S]*?);<\/script>/);
@@ -78,7 +89,10 @@ for(const html of htmls){
  const inline17=html.match(/<script>window\.AO_M6_COMPARISON_BATCH17=([\s\S]*?);<\/script>/);
  assert.ok(inline17,"Missing independent B17 inline photo data");
  assert.deepEqual(JSON.parse(inline17[1]),batch17,"Third source-owned batch differs between JSON and offline gallery");
+ const inlineQa=html.match(/<script>window\.AO_M6_ORIGINAL_PIXEL_QA=([\s\S]*?);<\/script>/);
+ assert.ok(inlineQa,"Missing original-image QA payload");
+ assert.deepEqual(JSON.parse(inlineQa[1]),qa,"Gallery QA findings differ from photo-source evidence");
  assert.ok(html.includes("AO_M6_COMPARATIVE"));
  assert.ok(html.includes("UNAPPROVED STAGED LEAD"));
 }
-console.log("PASS M6 B15+B16+B17 source integrity",JSON.stringify({canonical:112,staged:26,objects:170,metadataComparableGroups:5,patens:4,ciboria:4,published:false}));
+console.log("PASS M6 B15+B16+B17 source integrity",JSON.stringify({canonical:112,staged:26,objects:170,metadataComparableGroupsAfterVisualHolds:4,inspectedOriginals:3,visualHolds:2,patens:4,ciboria:4,published:false}));
