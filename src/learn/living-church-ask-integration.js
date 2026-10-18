@@ -135,7 +135,9 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
   returnButton.hidden=true;
   suspended=null;
  }
- return Object.freeze({openGuide,returnToSanctuary,nativeOpen,close,status:()=>Object.freeze({
+ return Object.freeze({openGuide,returnToSanctuary,nativeOpen,close,
+  sourceContext:()=>{const source=original();return source?Object.freeze({context:source.context,readCount:source.readCount}):null;},
+  status:()=>Object.freeze({
   version:LIVING_CHURCH_ASK_P2_VERSION,reviewEnabled:enabled(),
   guideMounted:Boolean(guide),handoffPending:pending||opening,
   suspended:Boolean(suspended),returnMoment:suspended?.momentKey??null,
