@@ -192,7 +192,10 @@ async function useSnapshot(version,clientId=null){
  await broadcast("ACTIVE_VERSION",{version});
  return {ok:true,version};
 }
-self.addEventListener("install",event=>event.waitUntil(VERCEL_WEB_PREVIEW?self.skipWaiting():Promise.resolve()));
+// A replacement worker must take control of an installed app even while its old
+// window remains open. Activation does NOT promote snapshots or reload a reader;
+// the existing active version remains pinned until explicit user consent.
+self.addEventListener("install",event=>event.waitUntil(self.skipWaiting()));
 self.addEventListener("activate",event=>{
  event.waitUntil((async()=>{
   await self.clients.claim();
