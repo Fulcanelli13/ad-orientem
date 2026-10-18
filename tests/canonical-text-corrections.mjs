@@ -24,10 +24,14 @@ for(const corpus of [low,sung]){
     const unit=(block.units??[]).find(u=>u.cue_id===row.cueId);
     assert.ok(unit,corpus.form+" missing "+row.cueId);
     const corrected=applyCanonicalTextCorrection(row.blockId,unit);
-    assert.ok(corrected.latin.includes(row.to),corpus.form+" correction not applied at "+row.cueId);
+    assert.ok(corrected[row.field].includes(row.to),corpus.form+" correction not applied at "+row.cueId);
+    for(const field of ["latin","english"]){
+      if(field!==row.field)assert.equal(corrected[field],unit[field],
+        row.cueId+": correction changed unowned "+field+" field");
+    }
     assert.equal(corrected.canonicalCorrectionId,row.id);
     const twice=applyCanonicalTextCorrection(row.blockId,corrected);
-    assert.equal(twice.latin,corrected.latin,"correction must be idempotent");
+    assert.equal(twice[row.field],corrected[row.field],"correction must be idempotent");
   }
 }
 
@@ -36,4 +40,4 @@ assert.throws(
   /block ownership changed/
 );
 
-console.log("canonical text corrections: PASS — 5 reconciled cue corrections applied before runtime projection.");
+console.log("canonical text corrections: PASS — "+manifest.corrections.length+" source-owned LATIN/ENGLISH cue corrections applied before runtime projection.");
