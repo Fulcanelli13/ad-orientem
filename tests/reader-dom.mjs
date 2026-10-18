@@ -93,9 +93,9 @@ expect(html.includes("opacity:.43"),"donor desktop focus baseline no longer matc
 expect(html.includes("opacity:.84"),"donor forward near-focus level no longer matches the final executable donor");
 expect(html.includes("opacity:.67"),"donor backward near-focus level no longer matches the final executable donor");
 expect(html.includes(".ao-state-kicker{font:700 7px/1"),"YOU / PRIEST state labels lost v1.79-v1.80 typography");
-expect(html.includes('disabled hidden aria-hidden="true" tabindex="-1" aria-label="Open explanatory Guide"'),
+expect(html.includes('disabled hidden aria-hidden="true" tabindex="-1" aria-label="Explanatory Guide removed from Mass reader"'),
   "The LIVE Guide tile remains focusable or visible despite removal");
-expect(html.includes('.ao-reader-shell[data-mode="LIVE"] .ao-state-guide,'),
+expect(html.includes('.ao-reader-shell .ao-state-guide,'),
   "LIVE must suppress the explanatory Guide layout");
 expect(html.includes('.ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics'),
   "LIVE certified rubrics lost their restrained in-text presentation");
