@@ -862,8 +862,20 @@ async function guideInit(pilot){
            return {ok:true};
          }
        });
+       const nativeMassModule=await import("./living-church-mass-native.mjs");
+       const nativeMass=nativeMassModule.createLivingChurchMassNativeOwner(window,{
+         sourceStatus:()=>({view:state.view,photoMode:state.photoMode}),
+         sourcePose:()=>({x:$("photo-viewport").scrollLeft,y:$("photo-viewport").scrollTop}),
+         restorePose:async pose=>{
+           if(state.view!=="church"||state.photoMode!=="still"||!pose||
+              !Number.isFinite(pose.x)||!Number.isFinite(pose.y))return {ok:false};
+           $("photo-viewport").scrollLeft=pose.x;
+           $("photo-viewport").scrollTop=pose.y;
+           return {ok:true};
+         }
+       });
        livingChurchContextP1=lc.createVisibleMassLivingChurchAdapter({
-         pilot,graph,reviewEnabled:()=>livingReview,nativeCatechism,
+         pilot,graph,reviewEnabled:()=>livingReview,nativeCatechism,nativeMass,
          sourceStatus:()=>({
            view:state.view,photoMode:state.photoMode,selected:state.selected,
            question:state.question,mode:state.experience,lang:state.studyLang,
