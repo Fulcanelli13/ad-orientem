@@ -1,0 +1,490 @@
+{
+  "schema": "AO_FORMATION_REFORMED_19_RESEARCH_V1",
+  "date": "2026-10-13",
+  "status": "SOURCE_LINKED_BILINGUAL_DRAFT_NOT_APPROVED",
+  "source_registry": [
+    {
+      "id": "WCF",
+      "title": "Westminster Confession of Faith (1646), chapters 3, 7–11, 17–18, 25, 27–30",
+      "url": "https://wts.edu/wcf",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "DORT",
+      "title": "Canons of Dort, five heads of doctrine",
+      "url": "https://www.crcna.org/welcome/beliefs/confessions/canons-dort",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "HEID",
+      "title": "Heidelberg Catechism (1563), Baptism and Lord's Supper",
+      "url": "https://www.crcna.org/welcome/beliefs/confessions/heidelberg-catechism",
+      "url_verified_in_retrieval": true,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "CCC",
+      "title": "Catechism of the Catholic Church",
+      "url": "https://www.vatican.va/archive/ENG0015/_INDEX.HTM",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    },
+    {
+      "id": "TRENT",
+      "title": "Council of Trent, decrees and canons",
+      "url": "https://www.papalencyclicals.net/councils/trent.htm",
+      "url_verified_in_retrieval": false,
+      "claim_level_theological_approval": false
+    }
+  ],
+  "records": [
+    {
+      "id": "REF-004",
+      "original_title_candidate": "Is Calvinist salvation simply “God chooses people randomly”?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Reformed election is not a random lottery: Westminster III presents God's eternal decree as free and unchangeable, directed to divine glory rather than based on foreseen merit. Catholic criticism concerns the theological compatibility of this decree with real freedom and the universal offer of saving grace.",
+            "fr": "L'élection réformée n'est pas une loterie : Westminster III présente le décret divin éternel comme libre et immuable, ordonné à la gloire divine plutôt que fondé sur des mérites prévus. La critique catholique porte sur sa compatibilité avec la liberté réelle et l'offre universelle de la grâce salvifique."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-005",
+      "original_title_candidate": "What is unconditional election?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Unconditional election means that God chooses those to be saved without making their foreseen faith or good works the cause of his choice. Westminster III and Dort I describe this election as gracious, not earned. Catholic predestination likewise starts from grace, but its doctrinal synthesis differs.",
+            "fr": "L'élection inconditionnelle signifie que Dieu choisit les sauvés sans faire de leur foi ou de leurs œuvres prévues la cause de son choix. Westminster III et Dordrecht I présentent ce choix comme gratuit et non mérité. La prédestination catholique vient elle aussi de la grâce, selon une synthèse doctrinale distincte."
+          },
+          "source_ids": [
+            "WCF",
+            "DORT",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-006",
+      "original_title_candidate": "Does Westminster teach reprobation as well as election?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Westminster III explicitly teaches both election to life and foreordination of others to death. It must not be silently recast as teaching only foreknowledge or election; Catholic theology rejects any account making God the positive author of sin.",
+            "fr": "Westminster III enseigne expressément à la fois l'élection à la vie et la préordination d'autres à la mort. On ne peut réduire cette confession à une simple prescience ou à la seule élection ; la théologie catholique refuse de faire de Dieu l'auteur positif du péché."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-007",
+      "original_title_candidate": "Is this the same as saying God positively causes sin in the damned?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Although Westminster teaches reprobation, its chapter III also expressly denies that God is the author of sin or that divine providence violates creaturely willing. The philosophical controversy concerns how these affirmations cohere under an exhaustive decree; attributing to the confession the simple proposition that God commits the sinner's sins is inaccurate.",
+            "fr": "Bien que Westminster enseigne la réprobation, son chapitre III nie expressément que Dieu soit l'auteur du péché ou que la providence abolisse la volonté créée. La controverse concerne la cohérence de ces affirmations avec un décret exhaustif ; attribuer à cette confession l'idée simple que Dieu commet le péché du damné serait inexact."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-008",
+      "original_title_candidate": "What does “total depravity” really mean?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Total depravity means sin affects all dimensions of fallen human nature and renders humans unable to convert themselves savingly. Dort III/IV nevertheless acknowledges remaining natural knowledge and ordinary civic goods; it does not mean each unbeliever commits the worst possible crimes.",
+            "fr": "La dépravation totale signifie que le péché atteint toutes les dimensions de la nature déchue et rend l'homme incapable de se convertir au salut par ses seules forces. Dordrecht III/IV reconnaît néanmoins des connaissances naturelles et certains biens civiques ; cela ne signifie pas que chaque incroyant commet les pires crimes possibles."
+          },
+          "source_ids": [
+            "DORT",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-009",
+      "original_title_candidate": "What is “irresistible grace”?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "What is often called irresistible grace refers to effectual divine calling: the Holy Spirit inwardly changes the elect so they truly come to faith. Reformed texts describe renewed willing rather than being dragged mechanically against all volition. Catholic accounts of grace and resistible cooperation differ, and the labels alone do not settle the debate.",
+            "fr": "La grâce dite irrésistible renvoie à l'appel efficace : l'Esprit Saint transforme intérieurement les élus pour qu'ils viennent réellement à la foi. Les confessions réformées décrivent une volonté renouvelée et non une contrainte mécanique. La théologie catholique articule autrement grâce et coopération ; les étiquettes ne tranchent pas le débat."
+          },
+          "source_ids": [
+            "DORT",
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-010",
+      "original_title_candidate": "Is Calvinism fatalism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Calvinism is not simply fatalism: Westminster III affirms the reality of secondary causes and the creature's willing even while professing an exhaustive eternal decree. Whether this is sufficient for genuine moral freedom is a serious philosophical and theological dispute, not something resolved by applying the word 'fate'.",
+            "fr": "Le calvinisme n'est pas simplement un fatalisme : Westminster III affirme la réalité des causes secondes et de la volonté créée tout en professant un décret éternel exhaustif. Savoir si cela suffit à la véritable liberté morale est une difficulté philosophique et théologique sérieuse, non résolue par le mot « destin ». "
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-011",
+      "original_title_candidate": "What is “limited atonement”?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Limited atonement in classic Reformed theology concerns Christ's saving intention and effective redemption of the elect, not a lack of intrinsic worth in his sacrifice. Dort II strongly affirms that Christ's death is more than sufficient for the sins of the whole world while giving a particular account of its saving efficacy.",
+            "fr": "L'expiation limitée dans le réformisme classique concerne l'intention salvifique et la rédemption efficace des élus, non une insuffisance intrinsèque du sacrifice du Christ. Dordrecht II affirme avec force que sa mort suffit surabondamment pour les péchés du monde entier tout en définissant autrement son efficacité salvifique."
+          },
+          "source_ids": [
+            "DORT",
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-012",
+      "original_title_candidate": "So does Reformed theology say Christ’s death is insufficient for non-elect persons?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "No. The Canons of Dort II.3 describe Christ's sacrifice as infinite in value and more than sufficient to atone for the whole world. The Reformed dispute concerns for whom it was intended efficaciously to secure salvation, whereas Catholic teaching confesses Christ died for all.",
+            "fr": "Non. Dordrecht II,3 qualifie le sacrifice du Christ de valeur infinie et plus que suffisant pour expier les péchés du monde entier. Le différend réformé porte sur ceux pour qui il a été efficacement voulu comme source du salut, tandis que la doctrine catholique confesse que le Christ est mort pour tous."
+          },
+          "source_ids": [
+            "DORT",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-013",
+      "original_title_candidate": "What is perseverance of the saints?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Perseverance of the saints means God preserves those truly regenerated so that they finally remain in grace. Dort V takes their grave falls seriously but says God restores his elect; it is not a guarantee based on a temporary emotional profession. Catholic theology affirms the need for perseverance but recognizes a real possibility of losing sanctifying grace.",
+            "fr": "La persévérance des saints signifie que Dieu garde les véritables régénérés jusqu'au salut final. Dordrecht V reconnaît leurs graves chutes mais enseigne leur restauration ; ce n'est pas une assurance fondée sur une émotion passagère. Le catholicisme affirme la nécessité de persévérer et la possibilité réelle de perdre la grâce sanctifiante."
+          },
+          "source_ids": [
+            "DORT",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-015",
+      "original_title_candidate": "Is Reformed assurance identical to “once saved, always saved” evangelicalism?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Reformed assurance depends on Christ's promises, the Spirit's witness and signs of genuine grace, not merely the verbal claim 'I was saved once'. Westminster XVIII recognizes that true believers can struggle with assurance. The Catholic challenge concerns the ordinary limits of certainty about one's own final perseverance.",
+            "fr": "L'assurance réformée s'appuie sur les promesses du Christ, le témoignage de l'Esprit et les signes de la grâce réelle, non sur le simple « j'ai été sauvé ». Westminster XVIII reconnaît les difficultés de vrais fidèles à parvenir à l'assurance. Le débat catholique concerne les limites ordinaires de la certitude sur sa propre persévérance finale."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-016",
+      "original_title_candidate": "What is Reformed covenant theology?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Westminster VII organizes biblical history around covenantal dealings, especially works and grace, with Christ as mediator of the covenant of grace. This is not identical to dispensational separation of Israel and the Church; Catholic covenant theology likewise reads the two Testaments through Christ but within a different sacramental and ecclesial framework.",
+            "fr": "Westminster VII organise l'histoire biblique en alliances, principalement celles des œuvres et de la grâce, dont le Christ est médiateur. Cette structure n'est pas le séparatisme dispensationaliste entre Israël et Église ; la théologie catholique lit aussi les deux Testaments à la lumière du Christ mais dans un cadre ecclésial et sacramentel différent."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-017",
+      "original_title_candidate": "Why do Reformed churches baptize infants?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Reformed infant Baptism is grounded in a covenantal understanding of believers' children: Westminster XXVIII expressly permits baptizing infants with a believing parent. It must not be confused with Baptist believer-only Baptism. Catholicism also baptizes infants but grounds the sacrament in a different account of regeneration and sacramental grace.",
+            "fr": "Le Baptême réformé des enfants repose sur l'alliance comprenant la descendance des croyants : Westminster XXVIII admet expressément leur baptême. Il ne faut pas confondre cette doctrine avec le baptême baptiste des seuls croyants professants. Le catholicisme baptise aussi les enfants, selon une autre conception de la régénération et de la grâce sacramentelle."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-018",
+      "original_title_candidate": "Do Reformed churches teach baptismal regeneration in the Catholic/Lutheran sense?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Westminster XXVIII does not identify the moment of water administration with a universally automatic moment of regeneration; it teaches that sacramental grace is conferred by the Spirit according to God's will and time. This differs both from mere symbolism and from particular Catholic and Lutheran accounts of baptismal efficacy.",
+            "fr": "Westminster XXVIII n'identifie pas automatiquement l'administration de l'eau au moment universel de la régénération ; la confession attribue la grâce au Saint-Esprit selon la volonté et le temps de Dieu. Cela diffère à la fois du symbolisme pur et des formulations particulières catholiques et luthériennes sur l'efficacité baptismale."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-019",
+      "original_title_candidate": "Is the Reformed Lord’s Supper only symbolic?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Classical Reformed teaching of the Lord's Supper is not simply bare recollection: Westminster XXIX and Heidelberg 75–79 teach a real spiritual nourishment of believers in Christ through faith. They reject physical conversion of the elements and Catholic transubstantiation. The nature of spiritual presence should be represented in its own terms.",
+            "fr": "La doctrine réformée classique de la Cène n'est pas un simple souvenir : Westminster XXIX et Heidelberg 75–79 enseignent une véritable nourriture spirituelle des croyants dans le Christ par la foi. Ils rejettent la conversion physique des espèces et la transsubstantiation catholique. Cette présence spirituelle doit être exposée dans ses propres termes."
+          },
+          "source_ids": [
+            "WCF",
+            "HEID",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-020",
+      "original_title_candidate": "How is that different from Lutheran Real Presence?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Reformed eucharistic theology locates reception of Christ through the Spirit by faith without Lutheran affirmation that his Body and Blood are truly distributed with the elements. Lutheranism maintains a distinctive real sacramental presence; neither view should be simplified as mere Zwinglian memorialism.",
+            "fr": "La théologie eucharistique réformée situe la réception du Christ dans l'Esprit et par la foi, sans affirmer avec les luthériens que son Corps et son Sang sont véritablement distribués avec les espèces. Le luthéranisme maintient une présence sacramentelle propre ; aucune des deux doctrines ne se réduit au mémorialisme zwinglien."
+          },
+          "source_ids": [
+            "WCF",
+            "HEID"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-022",
+      "original_title_candidate": "How many sacraments does Reformed theology recognize?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "The Heidelberg Catechism Q68 and Westminster XXVII recognize two sacraments instituted by Christ in the New Testament: Baptism and the Lord's Supper. Unlike the Catholic enumeration of seven sacraments, other Christian rites are not classified as sacraments in this system.",
+            "fr": "Le Catéchisme de Heidelberg, question 68, et Westminster XXVII reconnaissent deux sacrements institués par le Christ dans le Nouveau Testament : Baptême et Cène. Contrairement au catholicisme, qui en définit sept, les autres rites chrétiens ne sont pas classés comme sacrements dans ce système."
+          },
+          "source_ids": [
+            "HEID",
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-023",
+      "original_title_candidate": "What is Reformed church government?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Presbyterian Reformed government commonly uses assemblies of elders, presbyteries and synods, not bishops in Catholic apostolic succession. Other Reformed churches may be congregational, so 'Reformed' does not identify one universal polity. The Catholic comparison must distinguish valid Orders from merely institutional continuity.",
+            "fr": "Le gouvernement réformé presbytérien s'organise généralement autour d'anciens, de consistoires et de synodes, sans épiscopat en succession apostolique catholique. D'autres Églises réformées sont congrégationalistes ; « réformé » ne désigne donc pas une structure universelle unique. La comparaison catholique distingue Ordre valide et continuité institutionnelle."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    },
+    {
+      "id": "REF-024",
+      "original_title_candidate": "What does classical Reformed theology say about the pope?",
+      "authoritative_owner": null,
+      "status": "BILINGUAL_RESEARCH_ANSWER_DRAFT_NOT_APPROVED",
+      "paragraphs": [
+        {
+          "role": "reformed_primary_claim_and_catholic_comparison",
+          "text": {
+            "en": "Original Westminster XXV.6 polemically identifies the pope with the Antichrist; contemporary Reformed denominations vary in retaining or interpreting that claim. One must quote the historical article and distinguish it from present official positions rather than presume every modern Reformed Christian repeats the original assertion.",
+            "fr": "Le texte historique de Westminster XXV,6 identifie polémique­ment le pape à l'Antéchrist ; les confessions réformées contemporaines divergent sur sa conservation ou son interprétation. Il faut citer l'article ancien et distinguer les positions officielles actuelles, non attribuer cette affirmation à tout chrétien réformé moderne."
+          },
+          "source_ids": [
+            "WCF",
+            "CCC"
+          ],
+          "review_approved": false
+        }
+      ],
+      "question_provenance": "CONVERSATION_INDEX_TITLE_CANDIDATE_NOT_RAW_CHAT_VERIFIED",
+      "canonical_navigation_action": "RECONCILE_EXISTING_OWNER_NOT_NEW_DOSSIER",
+      "review_limit": "Historical primary wording, original-context, theology and native French not independently certified"
+    }
+  ],
+  "publication_allowed": false,
+  "original_chats_verbatim_certified": false,
+  "source_context_independently_certified": false,
+  "french_native_theology_approved": false
+}
