@@ -52,7 +52,14 @@ try{
    paragraphSelector:".ao-reader-paragraph",owner:"mass",
    label:card.i+" / "+(selected.title||card.title||card.id)
   });
-  massResults.push({i:card.i,id:card.id,title:card.title,...info});
+  const uncued=info.unownedTotal?await mass.evaluate(probeTextFocus,{
+   rootSelector:"#ao-r17-native-reader-preview",scrollSelector:".ao-prayer-card",
+   paragraphSelector:'.ao-reader-paragraph:not([data-cue-id]):not([data-kind="RUBRIC"])',
+   owner:"mass-uncued",label:card.title+" / uncued Proper text"
+  }):null;
+  massResults.push({i:card.i,id:card.id,title:card.title,...info,
+   uncuedFocus:uncued?{registered:uncued.registered,reached:uncued.reached,
+     unreachable:uncued.unreachable}:null});
  }
  findings.mass={
   presentation:"LIVE",language:"en",scenario:"ordinary sung, optional second Confiteor enabled",
@@ -62,6 +69,7 @@ try{
   cueReached:massResults.reduce((n,x)=>n+x.reached,0),
   cueUnreachable:massResults.reduce((n,x)=>n+x.unreachableTotal,0),
   unownedText:massResults.reduce((n,x)=>n+x.unownedTotal,0),
+  uncuedFocused:massResults.reduce((n,x)=>n+(x.uncuedFocus?.reached||0),0),
   rubricExempt:massResults.reduce((n,x)=>n+x.exemptTotal,0),
   noScroll:massResults.filter(x=>!x.scrollRegion).map(x=>({id:x.id,title:x.title})),
   cards:massResults,pageErrors:massErrors
@@ -86,6 +94,15 @@ try{
     catch(e){return {ok:false,error:String(e)}}
   },id);
   await pray.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
+  if(id==="pray.seven_words"){
+   // Its source-bounded historical witness is loaded asynchronously. Do not
+   // classify the opening "loading meditation" placeholder as a completed
+   // devotional card whose closing cue ought to have active focus.
+   await pray.waitForFunction(()=>Boolean(
+     document.querySelector("#aoPray435930.open .aoP435930HistoricalFocus .aoP435930WitnessParagraph")&&
+     document.querySelector("#aoPray435930.open [data-p435930-word-scripture] .aoP435930ScriptureVerse")
+   ),null,{timeout:18000});
+  }
   const mount=await pray.evaluate(()=>{
     const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
     return {view:m?.dataset.aoPrayView||null,route:m?.dataset.aoTraditionalPrayRoute||null,
@@ -118,15 +135,22 @@ try{
        card:m?.querySelector(".aoDevoCard:not([hidden])")?.dataset.aoDevoCard||String(0),
        visibleText:(m?.innerText||"").trim().length};
     });
-    let probed=null;
-    if(cards.hasDeck)probed=await pray.evaluate(probeTextFocus,{
+    const config=cards.hasDeck?{
       rootSelector:"#aoPray435930.open",scrollSelector:".aoDevoCard:not([hidden]) .aoDevoCardScroll",
       paragraphSelector:".aoDevoParagraph",owner:"devotional",label:id+" / "+cards.card
-    });
-    else if(cards.legacy)probed=await pray.evaluate(probeTextFocus,{
+    }:cards.legacy?{
       rootSelector:"#aoPray435930.open",scrollSelector:".aoP435930Mount",
       paragraphSelector:".aoP435930FluidUnit",owner:"legacy",label:id+" / "+cards.card
-    });
+    }:null;
+    let probed=config?await pray.evaluate(probeTextFocus,config):null;
+    for(let retry=0;probed?.invalidated&&retry<2;retry++){
+      await pray.waitForFunction(selector=>
+        !!document.querySelector("#aoPray435930.open "+selector),
+        config.scrollSelector,{timeout:15000});
+      await pray.waitForTimeout(250);
+      probed=await pray.evaluate(probeTextFocus,config);
+    }
+    assert.ok(!probed?.invalidated,id+" focus owner repeatedly replaced during scroll audit");
     row.cards.push({step,card:cards.card,visibleTextLength:cards.visibleText,probe:probed});
   }
   row.status=row.cards.some(x=>x.probe?.registered>0)?"sampled-focused":
@@ -142,7 +166,26 @@ try{
   "Missing cue IDs on non-rubric Mass text are reported as suspects, not automatically certified defects.",
   "Static headings, guide-only liturgical stages and folded content are not expected to become the active paragraph."
  ];
+ const shortMassCards=[
+  "Gloria · Doxology",
+  "Credo · The Father and the Son",
+  "Agnus Dei"
+ ];
+ for(const title of shortMassCards){
+  const c=findings.mass.cards.find(x=>x.title===title);
+  assert.ok(c,"Short Mass source card absent: "+title);
+  assert.ok(c.maxScroll>50,title+" has no effective scroll runway despite "+c.registered+" source cues: "+JSON.stringify(c.geometry));
+ }
+ assert.equal(findings.mass.uncuedFocused,findings.mass.unownedText,
+   "A non-rubric Proper passage did not acquire an independent reading focus");
+ assert.equal(findings.mass.cueUnreachable,0,
+   "Some LIVE Mass source passages never become focused through real scrolling");
  assert.equal(findings.mass.cardsChecked,findings.mass.cardsExpected,"Mass card traversal incomplete");
+ const sevenWords=findings.prayer.routes.find(row=>row.id==="pray.seven_words");
+ assert.ok(sevenWords,"Seven Last Words reader was not audited");
+ const unresolvedWords=sevenWords.cards.reduce((n,x)=>n+(x.probe?.unreachableTotal||0),0);
+ assert.equal(unresolvedWords,0,
+   "Seven Last Words still has overlapping or unreachable witness paragraphs");
  assert.equal(findings.prayer.routesChecked,findings.prayer.routesExpected,"Prayer route traversal incomplete");
 } catch(error){
  findings.errors.push(String(error?.stack||error));
@@ -161,7 +204,7 @@ try{
  await new Promise(ok=>server.close(ok));
  console.log("TEXT_FOCUS_SUMMARY="+JSON.stringify({
   massCards:findings.mass.cardsChecked,massRegistered:findings.mass.cueRegistered,
-  massReached:findings.mass.cueReached,massMissingCue:findings.mass.unownedText,
+  massReached:findings.mass.cueReached,massMissingCue:findings.mass.unownedText,massUncuedFocused:findings.mass.uncuedFocused,
   massUnreachable:findings.mass.cueUnreachable,prayRoutes:findings.prayer.routesChecked,
   needsFurtherEntry:findings.prayer.routes?.filter(x=>x.status==="needs-deeper-reader-entry").map(x=>x.id)||[],
   errors:findings.errors

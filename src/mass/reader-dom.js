@@ -954,6 +954,24 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"]{opacity:1}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.86}
 .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.75}
+/* Fixed-height LIVE cards must have genuine paragraph runway, even when
+   source text is shorter than the viewport. Percentage is relative to the
+   scroller content box, not measured during transient ribbon/dock layout. */
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-card .ao-prayer-body[data-ao-reading-runway="true"]{
+  min-height:calc(100% + var(--ao-min-reading-travel,72px));
+}
+
+/* One visible reading focus may be a Proper verse without a ceremonial
+   cue. Keep gesture/cinematic source state entirely in data-active, while
+   giving this uncued text a separate geometry-owned brightness channel. */
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph[data-active="true"]{
+  opacity:.62;color:var(--ao-text);transform:none;text-shadow:none
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph,
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"] .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]){opacity:.62}
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-reading-active="true"]{
+  opacity:1!important;color:#f7f8f4;transform:translateX(2px);text-shadow:0 0 26px rgba(225,238,228,.065)
+}
 
 /* Rubrics are identifiable by their quiet inset and rule, not a repeated
    seven-pixel RUBRIC heading on every paragraph. Keep the complete source. */
@@ -2783,7 +2801,18 @@ export function createReaderDomAdapter({
     // previously extended size. This also handles Schola collapse/expansion.
     card.style.setProperty("--ao-short-cue-tail","0px");
     const cueCount=body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")?.length??0;
-    if(cueCount<2)return;
+    const readingCount=body.querySelectorAll?.('.ao-reader-paragraph:not([data-kind="RUBRIC"])')?.length??0;
+    const focusCount=Math.max(cueCount,readingCount);
+    if(focusCount<2){
+      delete body.dataset.aoReadingRunway;
+      body.style.removeProperty("--ao-min-reading-travel");
+      return;
+    }
+    // Let CSS enforce a scrollable reading region independent of a transient
+    // JS layout measurement. This does not enlarge any paragraph itself.
+    body.dataset.aoReadingRunway="true";
+    body.style.setProperty("--ao-min-reading-travel",
+      Math.min(640,Math.max(72,(focusCount-1)*58))+"px");
     const viewport=Math.max(0,card.clientHeight||0);
     if(!viewport)return;
     const win=card.ownerDocument.defaultView;
@@ -2798,26 +2827,58 @@ export function createReaderDomAdapter({
     // Give those dense Ordinary cards extra end scroll *territory*,
     // without stretching prayer paragraphs or moving their text anchors.
     const closingOrdinary=/\b(?:Gloria|Credo)\b/i.test(current?.sectionTitle??"");
-    const travel=Math.min(closingOrdinary?340:240,Math.max(68,(cueCount-1)*56));
+    const travel=Math.min(closingOrdinary?340:240,Math.max(68,(focusCount-1)*56));
     const extra=Math.max(0,Math.ceil(viewport+travel-contentBottom-basePadding));
     // On naturally long Ordinary cards, extra can be zero even though the
     // source-backed penultimate doxology is swallowed by the hard last-cue
     // scroll edge. Reserve precisely enough additional scroll to place
     // that cue on the 39% focus line *before* the final-cue edge zone.
     let closingExtra=0;
-    if(closingOrdinary){
-      const cues=[...(body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
-      const penultimate=cues.at(-2);
-      if(penultimate){
-        const cr=card.getBoundingClientRect(),pr=penultimate.getBoundingClientRect();
-        const center=pr.top-cr.top+card.scrollTop+pr.height/2;
-        const requiredScroll=center-viewport*.39+24;
-        const availableScroll=Math.max(0,card.scrollHeight-viewport);
-        closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
-      }
+    // The penultimate cue must have reading territory BEFORE the hard
+    // final-cue edge guard. This applies to the Confiteor, altar ascent,
+    // responses and Offertory as well as the Gloria/Credo doxologies.
+    // Only the source cue's geometric position determines the tail.
+    const cues=[...(body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
+    const penultimate=cues.at(-2);
+    if(penultimate){
+      const cr=card.getBoundingClientRect(),pr=penultimate.getBoundingClientRect();
+      const center=pr.top-cr.top+card.scrollTop+pr.height/2;
+      const requiredScroll=center-viewport*.39+24;
+      // CSS min-height provides real scroll travel relative to the settled
+      // viewport. Make that travel large enough to center the penultimate
+      // event, not merely proportional to the number of paragraphs; a
+      // one-line response near the bottom otherwise loses its entire turn.
+      const baseline=Math.min(640,Math.max(72,(focusCount-1)*58));
+      const guaranteed=Math.min(1800,Math.max(baseline,Math.ceil(requiredScroll)));
+      body.style.setProperty("--ao-min-reading-travel",guaranteed+"px");
+      const availableScroll=Math.max(0,card.scrollHeight-viewport);
+      closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
     }
-    const tail=Math.max(extra,closingExtra);
+    let tail=Math.max(extra,closingExtra);
     if(tail)card.style.setProperty("--ao-short-cue-tail",tail+"px");
+    // Verify actual scroll travel, rather than deriving it from content
+    // bottom/padding (which can be wrong in the curated fixed-height stage).
+    // Dense short cards such as Kyrie, Gloria doxology, Credo and Agnus Dei
+    // previously had 0-38px of movement for 3-9 distinct source cues.
+    // Allocate a bounded reading runway WITHOUT stretching prayer rows.
+    const actualMax=Math.max(0,card.scrollHeight-card.clientHeight);
+    const minimumTravel=Math.min(640,Math.max(72,(focusCount-1)*58));
+    if(actualMax+1<minimumTravel){
+      // scrollHeight is clamped to clientHeight when content is shorter than
+      // the viewport. Adding only (minimumTravel - actualMax) misses the
+      // invisible *empty-space deficit*: a 120px prayer inside a 450px
+      // viewport can absorb 300px of tail without scrolling at all.
+      // Measure the true last content edge plus the CURRENT CSS padding.
+      const cardRect=card.getBoundingClientRect();
+      const bodyRect=body.getBoundingClientRect();
+      const padding=Number.parseFloat(win.getComputedStyle(card).paddingBottom)||0;
+      const contentExtent=Math.max(0,
+        bodyRect.bottom-cardRect.top+(Number(card.scrollTop)||0)+padding);
+      const neededExtent=viewport+minimumTravel;
+      const deficit=Math.max(0,Math.ceil(neededExtent-contentExtent));
+      tail+=Math.max(deficit,Math.ceil(minimumTravel-actualMax));
+      card.style.setProperty("--ao-short-cue-tail",tail+"px");
+    }
   }
 
   function closeFaithfulPicker(){
@@ -3343,7 +3404,25 @@ export function createReaderDomAdapter({
     // Recalculate scroll travel only when the paragraph card is replaced;
     // doing so during a cue-only state update would briefly clamp scrollTop
     // and prevent short cards from ever reaching their next invocation.
-    if(current.cardUpdate)ensureShortCardCueTravel();
+    if(current.cardUpdate){
+      ensureShortCardCueTravel();
+      // The fixed-height LIVE stage can settle a frame after renderMoment
+      // (rail dimensions, Schola reserve and host shell are projected in
+      // separate owners). The first measurement can therefore see a 450px
+      // viewport that is actually 712px once the stage settles. Re-measure
+      // after layout, never on ordinary scroll, so no liturgical cue is
+      // disturbed and the padding does not clamp ongoing reading.
+      const cardElement=root.querySelector(".ao-prayer-card");
+      const firstParagraph=body?.firstElementChild;
+      const win=cardElement?.ownerDocument?.defaultView;
+      const raf=win?.requestAnimationFrame?.bind(win);
+      if(raf)raf(()=>raf(()=>{
+        if(!cardElement?.isConnected||
+          root.querySelector(".ao-prayer-card")!==cardElement||
+          body?.firstElementChild!==firstParagraph)return;
+        ensureShortCardCueTravel();
+      }));
+    }
     // Never cover the missal to dramatize an Elevation. A source-first
     // 48-card elevation action often leaves genuine empty space below
     // its rubric; only use that space if measured geometry permits it.

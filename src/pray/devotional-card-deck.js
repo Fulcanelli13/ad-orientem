@@ -3,6 +3,10 @@
  * many vertically scrollable lit/muted paragraphs. Presentation only.
  * Canonical PRAY owner remains responsible for all texts and form selection.
  */
+import {devotionalFocusIndex} from "./devotional-focus-geometry.js";
+
+import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
+
 import "./devotional-card-deck-styles.js";
 import {angelusCommunalParts,stripGloriaRepetition} from "./angelus-folio-recitation.js";
 export const DEVOTIONAL_CARD_SCHEMA="dual-axis-devotional-cards-v1";
@@ -190,15 +194,11 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   if(!visible(body))return;
   const all=[...body.querySelectorAll(".aoDevoParagraph")].filter(visible);
   if(!all.length)return;
-  const r=body.getBoundingClientRect(),y=r.top+r.height*.41;
-  let active=0,best=Infinity;
-  all.forEach((p,i)=>{
-   const rect=p.getBoundingClientRect();
-   const distance=y<rect.top?rect.top-y:y>rect.bottom?y-rect.bottom:0;
-   if(distance<best){active=i;best=distance}
-  });
-  // Opening a card starts with its opening sentence, not paragraph two.
-  if(body.scrollTop<2)active=0;
+  if(body.dataset.aoFocusRunway!=="1"){
+   ensureDevotionalReadingRunway(body,all,{ratio:.41});
+   body.dataset.aoFocusRunway="1";
+  }
+  const active=devotionalFocusIndex(body,all,{ratio:.41});
   all.forEach((p,i)=>{
    const strength=i===active?"1":Math.abs(i-active)===1?".56":".30";
    p.style.setProperty("--ao-devo-focus",strength);
@@ -245,15 +245,21 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
    go(index+(dx<0?1:-1));
  },{passive:true});
  host.addEventListener("click",e=>{
-  if(e.target.closest("[data-p435930-card-flip]"))
+  if(e.target.closest("[data-p435930-card-flip]")){
+   const currentBody=cards[index]?.querySelector(".aoDevoCardScroll");
+   if(currentBody)delete currentBody.dataset.aoFocusRunway;
    queueMicrotask(queue);
+  }
   const b=e.target.closest("[data-ao-devo-jump],[data-ao-devo-move]");
   if(!b)return;e.preventDefault();e.stopPropagation();
   if(b.dataset.aoDevoJump!==undefined)go(+b.dataset.aoDevoJump);
   else go(index+Number(b.dataset.aoDevoMove||0));
  });
  cards.forEach(card=>card.querySelector(".aoDevoCardScroll")?.addEventListener("scroll",queue,{passive:true}));
- doc.defaultView?.addEventListener("resize",queue,{passive:true});
+ doc.defaultView?.addEventListener("resize",()=>{
+  cards.forEach(c=>{const body=c.querySelector(".aoDevoCardScroll");if(body)delete body.dataset.aoFocusRunway});
+  queue();
+ },{passive:true});
  go(initialIndex,{initial:true});
  const api=Object.freeze({schema:DEVOTIONAL_CARD_SCHEMA,plan,current:()=>index,go,cards:()=>cards.length,sync:queue});
  host.__aoDevotionalDeck=api;

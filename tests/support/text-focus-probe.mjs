@@ -28,6 +28,7 @@ export async function probeTextFocus({
   res.allText=nodes.length;
   const validCue=/^AO\.SM\.C\d{4}$/;
   const active=node=>owner==="mass"?node.dataset.active==="true":
+    owner==="mass-uncued"?node.dataset.readingActive==="true":
     owner==="legacy"?node.dataset.aoPrayFocus==="active":
       node.dataset.aoDevoActive==="true";
   const eligible=[];
@@ -53,6 +54,17 @@ export async function probeTextFocus({
     text:(node.textContent||"").trim().replace(/\s+/g," ").slice(0,105)
   }));
   res.maxScroll=Math.max(0,Math.round(scroll.scrollHeight-scroll.clientHeight));
+  const sc=getComputedStyle(scroll),paraBox=scroll.querySelector('[data-role="paragraphs"]');
+  const pr=paraBox?.getBoundingClientRect(),sr=scroll.getBoundingClientRect();
+  res.geometry={
+    clientHeight:scroll.clientHeight,scrollHeight:scroll.scrollHeight,
+    paddingBottom:sc.paddingBottom,boxSizing:sc.boxSizing,
+    cssTail:sc.getPropertyValue("--ao-short-cue-tail"),
+    bodyBottom:pr&&sr?Math.round(pr.bottom-sr.top+scroll.scrollTop):null,
+    firstTop:nodes[0]?Math.round(nodes[0].getBoundingClientRect().top-sr.top+scroll.scrollTop):null,
+    lastBottom:nodes.at(-1)?Math.round(nodes.at(-1).getBoundingClientRect().bottom-sr.top+scroll.scrollTop):null,
+    scrollOverflow:sc.overflowY
+  };
   res.initialActive=eligible.filter(x=>active(x.node)).length;
   const seen=new Set(eligible.filter(x=>active(x.node)).map(x=>x.entry.ordinal));
   const original=scroll.scrollTop;
@@ -97,6 +109,11 @@ export async function probeTextFocus({
     }
     res.scrollSweepSteps=sweepSteps;
   }
+  // Async source-owned readers (notably the first Seven Words Gospel
+  // and historical witness) can replace the card during the audit. Such
+  // detached DOM cannot prove a passage unreachable; flag and re-probe the
+  // stable rendered owner instead of recording a false text defect.
+  res.invalidated=!scroll.isConnected||eligible.some(x=>!x.node.isConnected);
   res.reached=seen.size;
   res.unreachable=eligible.filter(x=>!seen.has(x.entry.ordinal))
    .slice(0,maxExamples).map(x=>({...x.entry,

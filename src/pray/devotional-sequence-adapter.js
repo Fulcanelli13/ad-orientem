@@ -3,6 +3,10 @@
  * Does not own the prayer corpus or recitation sequence. Its only responsibilities:
  * title timeline, horizontal chapter gestures, card-local vertical focus.
  */
+import {devotionalFocusIndex} from "./devotional-focus-geometry.js";
+
+import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
+
 import "./devotional-card-deck-styles.js";
 
 export const SEQUENTIAL_DEVOTIONAL_SCHEMA = "dual-axis-sequential-devotional-v1";
@@ -137,7 +141,14 @@ export function installSequentialDevotionalReader({
   card.dataset.aoDevoIndex=String(index);
   const selectParagraphs=()=>[...body.querySelectorAll(paragraphSelector)]
     .filter(el=>!el.closest("details:not([open])"))
-    .filter(el=>!el.closest(".aoP435930VRLine")||el.classList.contains("aoP435930VRLine"));
+    .filter(el=>!el.closest(".aoP435930VRLine")||el.classList.contains("aoP435930VRLine"))
+    // Seven Words historical witness has an outer .aoP435930Text container
+    // and separately identified .aoP435930WitnessParagraph children.
+    // The container isn't a second prayer paragraph: registering both
+    // gives them overlapping focus territories and leaves some words dim.
+    .filter(el=>kind!=="sevenWords"||
+      !el.classList.contains("aoP435930Text")||
+      !el.querySelector(".aoP435930WitnessParagraph"));
   let paragraphs=selectParagraphs();
   paragraphs.forEach(p=>p.classList.add("aoDevoParagraph"));
   let last=null,frame=0,userScrolled=false;
@@ -145,14 +156,11 @@ export function installSequentialDevotionalReader({
     frame=0;
     const shown=paragraphs.filter(visible);
     if(!shown.length)return;
-    const box=body.getBoundingClientRect();
-    const y=box.top+box.height*.40;
-    let found=0,best=Infinity;
-    shown.forEach((p,i)=>{
-      const r=p.getBoundingClientRect();
-      const d=y<r.top?r.top-y:y>r.bottom?y-r.bottom:0;
-      if(d<best){best=d;found=i}
-    });
+    if(body.dataset.aoFocusRunway!=="1"){
+      ensureDevotionalReadingRunway(body,shown,{ratio:.40});
+      body.dataset.aoFocusRunway="1";
+    }
+    let found=devotionalFocusIndex(body,shown,{ratio:.40});
     // On initial mount the canonical bead cursor is authoritative. Moving
     // to the next bead must not be undone by the viewport focus heuristics.
     if(!userScrolled&&Number.isInteger(restoreStep)){
@@ -200,8 +208,16 @@ export function installSequentialDevotionalReader({
       go(index+(dx<0?1:-1));
   },{passive:true});
   body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
+  doc.defaultView?.addEventListener("resize",()=>{
+    if(!body.isConnected)return;
+    delete body.dataset.aoFocusRunway;
+    queue();
+  },{passive:true});
   parent.addEventListener("click",event=>{
-    if(event.target?.closest?.("[data-tp381-flip]"))doc.defaultView?.queueMicrotask?.(queue);
+    if(event.target?.closest?.("[data-tp381-flip]")){
+      delete body.dataset.aoFocusRunway;
+      doc.defaultView?.queueMicrotask?.(queue);
+    }
   });
   // The canonical Scripture service inserts real psalm/Gospel verses after
   // the shell has mounted. Reconcile only source-owned DOM additions; do not
@@ -212,6 +228,7 @@ export function installSequentialDevotionalReader({
       const current=selectParagraphs();
       if(current.length===paragraphs.length&&current.every((p,i)=>p===paragraphs[i]))return;
       paragraphs=current;
+      delete body.dataset.aoFocusRunway;
       paragraphs.forEach(p=>p.classList.add("aoDevoParagraph"));
       queue();
     });

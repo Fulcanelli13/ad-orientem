@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { pickActiveCue, markActiveCue } from "../src/mass/reader-cue-focus.js";
+import { pickActiveCue, markActiveCue, markUncuedReadingFocus } from "../src/mass/reader-cue-focus.js";
 
 const items=[
   {cueId:"AO.SM.C0001",top:0,bottom:34},
@@ -56,4 +56,27 @@ markActiveCue(simulated,"AO.SM.C0001");
 assert.equal(writes.length,1,"unchanged focus state rewrote live DOM attributes");
 markActiveCue(simulated,"AO.SM.C0002");
 assert.deepEqual(writes,[["AO.SM.C0001","active","true"],["AO.SM.C0001","active","false"],["AO.SM.C0002","active","true"]]);
+// A Proper TEXT does not acquire a fabricated source cue. It has a separate
+// visual reading state, while the liturgical cue and priest action are intact.
+let top=80;
+const makeRow=(y,id)=>({
+  dataset:id?{kind:"TEXT",cueId:id,active:"true"}:{kind:"TEXT"},
+  getClientRects:()=>[{}],
+  getBoundingClientRect:()=>({top:y-top,bottom:y+38-top}),
+  hidden:false
+});
+const cueRow=makeRow(0,"AO.SM.C0001"),properRow=makeRow(115,null);
+const body={dataset:{},querySelectorAll:()=>[cueRow,properRow]};
+const scroll={scrollTop:top,scrollHeight:300,clientHeight:100,
+  querySelector:()=>body,getBoundingClientRect:()=>({top:0})};
+assert.equal(markUncuedReadingFocus(scroll),properRow);
+assert.equal(properRow.dataset.readingActive,"true");
+assert.equal(body.dataset.aoVisualFocus,"uncued");
+assert.equal(properRow.dataset.cueId,undefined,"Proper must never receive invented ceremonial cue");
+assert.equal(cueRow.dataset.active,"true","Priest/faithful source cue must remain unchanged");
+top=0;scroll.scrollTop=0;
+markUncuedReadingFocus(scroll);
+assert.equal(properRow.dataset.readingActive,"false");
+assert.equal(body.dataset.aoVisualFocus,undefined);
+
 console.log("reader cue focus: PASS — 39% focus zone and no redundant DOM mutations.");
