@@ -5,6 +5,22 @@ export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
   // English editorial corrections: source-identified Red Missal (2013),
   // user-supplied copy, PDF pages 24, 26, 28. Latin and French are untouched.
   // Red Missal 2013 preferred English, second editorial wave.
+  // Red Missal 2013, printed p.21: remove Creed English duplicate
+  // "together" across adjacent source cues, while keeping Latin simul.
+  "AO.SM.C0100": Object.freeze({
+    id:"RED-EN-2013-W4-02",
+    blockId:"AO.SM.B027",
+    field:"english",
+    from:"Who together with the Father and the Son",
+    to:"Who, together with the Father and the Son,",
+  }),
+  "AO.SM.C0101": Object.freeze({
+    id:"RED-EN-2013-W4-03",
+    blockId:"AO.SM.B027",
+    field:"english",
+    from:"is together adored",
+    to:"is adored",
+  }),
   "AO.SM.C0044": Object.freeze({
     id:"RED-EN-2013-W2-01",
     blockId:"AO.SM.B015",
