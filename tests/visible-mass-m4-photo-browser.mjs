@@ -51,6 +51,9 @@ try{
   assert.match(await page.locator("#photo-intro").innerText(),/Brompton Oratory, London.*genuine 360°/);
   assert.match(await page.locator("#photo-sources-top").getAttribute("href"),/Brompton_Oratory_360x180/);
   assert.equal(await page.locator("#show-markers").isVisible(),false,"6 still-photo markers must not be offered for panoramas");
+  assert.equal(await page.locator("#original-object-choices").isVisible(),false,"Brompton-specific object list must not overlay panorama");
+  assert.equal(await page.locator("#inspection-details").isVisible(),false,"separate Brompton inspection references must not imply panorama provenance");
+  assert.equal(await page.locator("footer details").getAttribute("open"),null,"research disclaimer stays available but unobtrusive");
   if(spec.mobile){
    const geometry=await page.evaluate(()=>({
     headerHeight:document.querySelector("header").getBoundingClientRect().height,
@@ -115,6 +118,8 @@ try{
   assert.match(await page.locator("#photo-caption").innerText(),/separate Catholic church, not a 1962 Mass record/);
   assert.match(await page.locator("#photo-intro").innerText(),/Newman University Church, Dublin.*not evidence of a 1962 Mass/);
   assert.match(await page.locator("#photo-sources-top").getAttribute("href"),/Newman_University_Church_Interior_360x180/);
+  assert.equal(await page.locator("#original-object-choices").isVisible(),false);
+  assert.equal(await page.locator("#inspection-details").isVisible(),false);
   assert.equal(await page.locator("#photo-viewport").isVisible(),false);
   await page.locator('[data-photo-mode="brompton"]').click();
   await page.waitForFunction(()=>window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama?.active==="BROMPTON_PANO"&&window.AO_VISIBLE_MASS_HOTSPOT_PILOT.status().panorama.loaded);
@@ -128,6 +133,8 @@ try{
   await page.locator('[data-photo-mode="still"]').click();
   assert.match(await page.locator("#photo-intro").innerText(),/real high altar of Brompton Oratory.*six visible markers/);
   assert.equal(await page.locator("#show-markers").isVisible(),true);
+  assert.equal(await page.locator("#original-object-choices").isVisible(),true);
+  assert.equal(await page.locator("#inspection-details").isVisible(),true);
   assert.match(await page.locator("#photo-sources-top").getAttribute("href"),/Category:Brompton_Oratory/);
   assert.equal(await page.locator("#panorama-stage").isVisible(),false);
   assert.equal(await page.locator("#hotspots .marker").count(),6);
