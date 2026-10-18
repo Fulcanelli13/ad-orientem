@@ -55,7 +55,7 @@ assert.equal(characters.chars.length,3);
 assert.equal(characters.emotions.length,5);
 const review=read("src/learn/visible-mass-review.js").toString();
 assert.match(review,/aoLivingChurchCharacters/);
-assert.match(review,/reviewEnabled/);
+assert.match(review,/visibleMassReviewEnabled/);
 assert.match(review,/onNativeOpen/);
 assert.match(review,/onNativeReturn/);
 const cate=read("src/learn/living-church-ask-integration.js").toString();
