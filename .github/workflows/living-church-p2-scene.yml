@@ -5,6 +5,7 @@ on:
       - "previews/visible-mass-3d/living-church-character-scene.mjs"
       - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
       - "tests/living-church-character-scene.mjs"
+      - "previews/visible-mass-3d/assets/living-church/**"
       - ".github/workflows/living-church-p2-scene.yml"
   workflow_dispatch:
 permissions:
@@ -29,3 +30,11 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Test review-only scene at phone and desktop sizes
         run: node tests/living-church-character-scene.mjs
+      - name: Preserve visual review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-church-p2-phone-desktop-sprites
+          path: artifacts/living-church-p2/*.png
+          if-no-files-found: warn
+          retention-days: 14
