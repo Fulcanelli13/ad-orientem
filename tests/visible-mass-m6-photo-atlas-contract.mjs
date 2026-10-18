@@ -59,7 +59,7 @@ const zonal=atlas.zones.reduce((sum,x)=>sum+x.total,0);assert.equal(zonal,170);
 const glCounts=atlas.objects.reduce((a,x)=>(a[x.glossary_match]=(a[x.glossary_match]||0)+1,a),{});
 assert.deepEqual(glCounts,{R:86,M:21,D:63},"Do not upgrade related or missing glossary matches");
 for(const image of atlas.images){
- assert.ok(/^https:\/\/(?:commons\.wikimedia\.org)/.test(image.source_url),"All photo records must expose a verified Commons *source page* (not merely raw image): "+image.asset_id);
+ assert.ok(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(image.source_url)||image.asset_id==="M6B4-BK02-CASON-1962-MISSAL-STAND"&&image.source_url==="https://sdcason.com/1962-roman-missal-at-latin-mass-2022-virginia-usa-catholic-stock-photo/","Every record must have an authorised original source PAGE: "+image.asset_id);
  if(image.asset_id.startsWith("EXISTING-")) assert.equal(image.review_status,"LEGACY_RESEARCH_NOT_PUBLISHABLE");
 }
 
@@ -75,16 +75,16 @@ for(const x of batch2){
 const photographSourceById=new Map(atlas.images.map(x=>[x.asset_id,x]));
 const qualifyingPhoto=(o)=>o.candidate_assets.some(({asset_id})=>{
  const asset=photographSourceById.get(asset_id);
- return Boolean(asset&&asset.medium==="photograph"&&asset.licence&&asset.review_status!=="DISCOVERY_ONLY_UNVERIFIED_SOURCE_RIGHTS");
+ return Boolean(asset&&asset.medium==="photograph"&&asset.licence&&!["DISCOVERY_ONLY_UNVERIFIED_SOURCE_RIGHTS","PARTIAL_COMPONENT_ONLY"].includes(asset.review_status));
 });
 assert.ok(atlas.objects.every(o=>o.needs_photo===!qualifyingPhoto(o)),"Historical illustrations and unverified leads must not count as qualifying photographs");
-assert.equal(atlas.objects.filter(qualifyingPhoto).length,38);
-assert.equal(atlas.objects.filter(o=>o.needs_photo).length,132);
+assert.equal(atlas.objects.filter(qualifyingPhoto).length,41);
+assert.equal(atlas.objects.filter(o=>o.needs_photo).length,129);
 assert.equal(atlas.statistics.post_second_batch_photo_candidate_or_hotspot,30);
 assert.equal(atlas.statistics.post_second_batch_needs_photo,140);
-assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL10","AL17","AL18","BK02"]);
-assert.equal(atlas.images.length,48);
-assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,45);
+assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.object_id).sort(),["AL10","AL17","AL18"]);
+assert.equal(atlas.images.length,52);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,49);
 
 
 const batch3=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH3");
@@ -109,6 +109,36 @@ assert.deepEqual(atlas.objects.filter(o=>o.pilot_30&&o.needs_photo).map(o=>o.obj
 assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,12);
 assert.equal(atlas.images.length,48);
 assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,45);
+
+
+const batch4=atlas.images.filter(x=>x.source_index==="M6_RESEARCH_20261018_BATCH4");
+assert.equal(batch4.length,4);
+assert.deepEqual(batch4.map(x=>x.object_id).sort(),["BK02","VE04","VE14","VE20"]);
+const cason=batch4.find(x=>x.object_id==="BK02");
+assert.equal(cason.licence.startsWith("CC BY 4.0"),true);
+assert.equal(cason.rights_evidence_url,"https://sdcason.com/copyright/");
+assert.equal(cason.review_status,"SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL");
+assert.ok(cason.source_description.includes("public domain")&&cason.source_description.includes("CC BY 4.0"),
+  "Preserve the photographer-site rights conflict; use more restrictive attribution");
+const ve20=atlas.objects.find(x=>x.object_id==="VE20");
+assert.ok(ve20.needs_photo);
+assert.ok(ve20.required_missing_components.includes("pontifical buskins"));
+assert.ok(ve20.required_missing_components.includes("pontifical sandals"));
+assert.equal(batch4.find(x=>x.object_id==="VE20").review_status,"PARTIAL_COMPONENT_ONLY");
+const gradine=atlas.objects.find(x=>x.object_id==="AL10");
+assert.ok(gradine.needs_photo&&gradine.context_scene_lead?.source_asset_id==="BROMPTON_ALTAR_1");
+for(const [id,viewerSide] of [["AL17","RIGHT"],["AL18","LEFT"]]){
+ const o=atlas.objects.find(x=>x.object_id===id);
+ assert.ok(o.needs_photo&&o.orientation_annotation.source_asset_id==="BROMPTON_ALTAR_2019_GEOGRAPH");
+ assert.equal(o.orientation_annotation.viewer_side,viewerSide);
+ assert.equal(o.orientation_annotation.state,"RESEARCH_ONLY_DIRECTIONAL_RULE_NOT_AUTHORISED_AS_HOTSPOT");
+}
+assert.equal(atlas.statistics.post_fourth_batch_photo_candidate_or_hotspot,41);
+assert.equal(atlas.statistics.post_fourth_batch_needs_photo,129);
+assert.equal(atlas.statistics.post_fourth_batch_pilot_needs_photo,3);
+assert.equal(atlas.objects.filter(o=>o.zone_id==="VE"&&!o.needs_photo).length,14);
+assert.equal(atlas.images.length,52);
+assert.equal(new Set(atlas.images.map(x=>x.source_url)).size,49);
 
 console.log("PASS M6 integrity",JSON.stringify({objects:170,zones:13,pilot:30,legacyImages:original.assets.length,m5Photos:m5.length+3,
  markers:6,newResearchCandidates:6,unservedExisting:147,glossaryMatches:glCounts}));
