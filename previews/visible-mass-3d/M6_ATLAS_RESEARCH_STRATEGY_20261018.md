@@ -196,3 +196,19 @@ Five original photographic candidates explicitly associated with **one** canonic
 - No accepted/published images, no merge, no Mass reader modifications.
 
 **Next curation gate:** prioritize inspection/rating and photographic-quality/1962 suitability of the new sources before aggressive acquisition of the other 114 gap objects, especially because some candidates have unresolved display-resolution, tradition, editor, or venue caveats. Disallow silently treating 1954 book titles, museum pieces, or modern celebrations as documentary 1962 ceremony photography.
+
+## Ninth acquisition batch and next release gates — 18 October 2026
+
+Three research-only original Roman Catholic source photographs add *four* canonical object references; object count does not equal distinct photo count.
+
+- **EQ07 thurible and EQ08 incense boat:** [1750–75 silver thurible and incense boat, Museo Diocesano Castiglion Fiorentino](https://commons.wikimedia.org/wiki/File:Bottega_toscana,_turibolo_e_navicella_in_argento,_1750-75_ca.,_da_s._agostino_a_castiglion_f.no.jpg), by Sailko, CC BY 3.0, 3174×3022. **One image, linked to both existing IDs;** not claimed as a photo taken during Mass or as items at Brompton.
+- **SA05 confessional:** [Chiesa del Gesù (Casa Professa), Palermo](https://commons.wikimedia.org/wiki/File:ChiesaGesu_Confessional.JPG), by Erik den yngre, CC BY-SA 3.0, 2560×2208. Authentic Roman Catholic Jesuit church confessional in situ, no penitents or liturgical event.
+- **SE01 Paschal candle:** [National Shrine Basilica of Aparecida, Brazil](https://commons.wikimedia.org/wiki/File:Paschal_candle_-_Main_altar_-_Basilica_of_Aparecida_-_Aparecida_2014.jpg), by José Luiz Bernardes Ribeiro, CC BY-SA 3.0, 1676×2556. Actual Roman Catholic modern Paschal candle, **not** evidence of the 1962 Easter Vigil nor a suitable source for reconstructing a traditional high altar.
+
+**Cumulative after batch nine:** **75 registered records on 72 distinct original URLs**, 170 subjects / 13 zones, **60/170 with some photographic reference or source-owned hotspot**, 110 still requiring a photo, and 20/20 vestment subjects with provisional photographic coverage. The 30-object pilot still has 28 photo references plus two source-verified directional annotations that deliberately do **not** count as extra photographs. Zero photographic sources are editorially approved or published.
+
+### Acquisition-versus-approval distinction
+
+Further broad acquisitions should not hide the remaining quality debt. Required editorial decisions for each candidate: subject visibility (0–5), object-versus-context-versus-use role, Catholic institutional authenticity, exact photographer and file page, licence and derivative obligations, historic version versus authentic 1962 practice, clear original image dimensions, and placement (primary / supplementary / historical / elsewhere / reject). A record can support a canonical object while remaining inappropriate for the main instructional gallery. A 20/20 vestment **candidate** tally does not mean 20 adequate final selected photographs.
+
+PR #1309 remains a draft and must not publish or merge without physical-device review, offline gallery acceptance, and all artwork-source/licensing checks. Mass Explorer, G###, VMQ and the LIVE/Simple/Missal reader remain unchanged.
