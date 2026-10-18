@@ -128,7 +128,9 @@ export function createVisibleMassReviewRuntime(win=globalThis){
         position:"fixed",inset:"0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0",
         zIndex:"15010",overflowY:"auto",overscrollBehavior:"contain",
         background:"#080c12",color:"#eee7dc",margin:"0",
-        width:"100%",maxWidth:"none",padding:"12px 16px 28px"
+        boxSizing:"border-box",width:"auto",maxWidth:"100%",
+        overflowX:"hidden",overflowWrap:"break-word",lineHeight:"1.5",
+        padding:"clamp(12px,2vw,24px) clamp(12px,3vw,36px) 28px"
        });
       }
      }
