@@ -11,20 +11,18 @@
 - Responsive phone presentation and reduced-motion preference support.
 - A Playwright regression at 390px and 1280px is staged in `tests/living-church-character-scene.mjs`.
 
-## Approved assets — still need to land as files
+## Approved assets — installed and hash-locked
 
-The working local review prototype and its separate ZIP pack contain image assets already approved by the user. This PR's JavaScript expects them at `previews/visible-mass-3d/assets/living-church/` with the following naming pattern:
+The exact fifteen WebP sprite exports from the approved character package are now committed under `previews/visible-mass-3d/assets/living-church/`. `manifest.json` records their original character provenance, per-file SHA-256 and natural image dimensions. The P2 browser regression checks all 15 byte hashes and that each on-screen selected sprite loads and decodes in Chromium.
 
-- `sacristan_{neutral,welcoming,explaining,thoughtful,grave}.webp`, derived from user-approved uploaded `image(20261018-043420).png` and same-face emotion variations.
-- `canon_{neutral,welcoming,explaining,thoughtful,grave}.webp`, from the locked young-Lefebvre-inspired expression set. Keep that face; **not** a new generated Canon.
-- `pius_{neutral,welcoming,explaining,thoughtful,grave}.webp`, from the approved five-image St Pius X ZIP.
+**Casting preservation:** the Sacristan matches user-selected `image(20261018-043420).png` (aged approximately 80); the Canon uses the locked younger-Lefebvre-inspired face (fictional dialogue guide), not a substitute portrait; St Pius X uses the original approved five-emotion pack. Generated dramatic poses are not authentic historical photographic expressions.
 
-The asset paths intentionally fail visibly and do **not** silently substitute a different generated face. Do not call this visual QA-complete until actual assets are committed and in-browser screenshots have been accepted.
+**Image QA:** [P2 CI](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39117131037) produced six 390px / 1280px screenshots with correctly loaded sprites. Those screenshots use a flat neutral photography fixture to ensure deterministic testing; they do **not** establish the finished photographic atmosphere, which needs additional review using the original Brompton image and verified licence.
 
 ## Known limits / next steps
 
-1. Add original approved sprite assets, inspect their transparency and consistent face/costume at both widths, then re-run visual tests.
-2. Integrate source-verified original Catechism question IDs and Mass Explorer native handoffs via the #1391 destination owner. The present buttons explain those source-ownership limits instead of claiming navigation.
+1. Review the committed locked sprite proportions, dialog spacing and the genuine Brompton photograph on real devices; the CI photography stub cannot certify appearance.
+2. The Canon's Mass Explorer button now delegates to the existing P5 published-Mass-Explorer adapter, with exact research link AL01 → AO.CARD.015 and safe standalone failure. The original St Pius X Catechism handoff and exact native return still require an approved bridge through #1391; do not claim they work.
 3. Check P1 source authority/scene restriction, French editorial gating, dialogue source language, normal browser/phone flows, and accessible text/contrast.
 4. Do not merge until upstream stacked PR dependencies and editorial publication gates are satisfied.
 
