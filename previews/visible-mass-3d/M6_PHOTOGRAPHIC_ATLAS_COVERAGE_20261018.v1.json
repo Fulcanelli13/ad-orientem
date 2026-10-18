@@ -69,7 +69,12 @@
     "post_fifth_batch_photo_candidate_or_hotspot": 45,
     "post_fifth_batch_needs_photo": 125,
     "post_fifth_batch_pilot_needs_photo": 2,
-    "post_fifth_batch_vestment_photo_candidates": 17
+    "post_fifth_batch_vestment_photo_candidates": 17,
+    "sixth_batch_photo_records": 9,
+    "sixth_batch_newly_referenced_objects": 8,
+    "post_sixth_batch_photo_candidate_or_hotspot": 53,
+    "post_sixth_batch_needs_photo": 117,
+    "post_sixth_batch_vestment_photo_candidates": 19
   },
   "zones": [
     {
@@ -1698,9 +1703,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B6-SC01-GESUITI-VENICE-SACRISTY",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SC02",
@@ -2018,9 +2029,15 @@
       "intended_navigation": "Z",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true,
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B6-VE10-PETRETO-FLORENTINE-TUNICELLA",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false,
       "difference_from_dalmatic_note": "Tunicle/tunicella is closely related to the dalmatic but must be shown as subdeacon's attire or identified museum tunicle, not merely copied from the deacon's dalmatic record."
     },
     {
@@ -2216,19 +2233,35 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "PARTIAL_COMPONENT_ONLY_STILL_NEEDS_PHOTO",
+      "evidence_status": "COMPOSITE_COMPONENT_PHOTO_CANDIDATES_UNAPPROVED",
       "candidate_assets": [
         {
           "asset_id": "M6B4-VE20-ARSR-PONTIFICAL-GLOVES-PARTIAL",
           "role": "partial_component_detail",
           "evidence": "PARTIAL_COMPONENT_ONLY"
+        },
+        {
+          "asset_id": "M6B6-VE20-PISA-PONTIFICAL-SANDALS",
+          "role": "component_photo",
+          "evidence": "COMPONENT_OF_PONTIFICAL_GROUP_PENDING_SEPARATE_VISUAL_REVIEW"
+        },
+        {
+          "asset_id": "M6B6-VE20-COLUMBUS-PONTIFICAL-BUSKINS",
+          "role": "component_photo",
+          "evidence": "COMPONENT_OF_PONTIFICAL_GROUP_PENDING_SEPARATE_VISUAL_REVIEW"
         }
       ],
-      "needs_photo": true,
-      "required_missing_components": [
-        "pontifical buskins",
-        "pontifical sandals"
-      ]
+      "needs_photo": false,
+      "required_missing_components": [],
+      "composite_photo_requirements": {
+        "components": {
+          "gloves": "M6B4-VE20-ARSR-PONTIFICAL-GLOVES-PARTIAL",
+          "buskins": "M6B6-VE20-COLUMBUS-PONTIFICAL-BUSKINS",
+          "sandals": "M6B6-VE20-PISA-PONTIFICAL-SANDALS"
+        },
+        "photographic_completeness": "THREE_COMPONENT_REFERENCES_PRESENT_NOT_EDITORIALLY_APPROVED",
+        "licence_and_use_caveat": "Three different original venues and eras; do not construct a supposed single historical ensemble; each is independently credited."
+      }
     },
     {
       "object_id": "BK01",
@@ -2355,9 +2388,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B6-BK08-1954-LIBER-USUALIS-TITLE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK09",
@@ -2383,9 +2422,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B6-BK10-EADEN-RITUALE-ROMANUM",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK11",
@@ -2467,9 +2512,15 @@
       "intended_navigation": "V",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B6-SA01-PARIS-CATHOLIC-BAPTISMAL-FONT",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SA02",
@@ -2789,9 +2840,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B6-SE13-MALTA-ALTAR-OF-REPOSE",
+          "role": "context_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE14",
@@ -2831,9 +2888,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B6-SP02-WATTERSON-BUGIA-COLUMBUS",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SP03",
@@ -3736,6 +3799,148 @@
       "external_object_designation": "autel ; retable ; tabernacle ; gradin d'autel",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH5"
+    },
+    {
+      "asset_id": "M6B6-VE10-PETRETO-FLORENTINE-TUNICELLA",
+      "object_id": "VE10",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Manifattura_fiorentina,_tonacella_di_petreto,_in_velluto_tagliato_operato_a_un_compo_e_lampasso,_1450-1500_ca.,_da_s._andrea_a_petreto,_01.jpg",
+      "creator": "Sailko",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3384,
+      "height": 3592,
+      "venue": "Museo della Pieve di San Giuliano, Castiglion Fiorentino, Tuscany, Italy",
+      "source_description": "Historic Italian tunicella/tonacella (circa 1450–1500), photographed at a Catholic diocesan museum. Object is explicitly described as tunicella, not inferred from generic dalmatic. Historical comparison only, not a 1962 subdeacon wearing a tunicle.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B6-VE20-PISA-PONTIFICAL-SANDALS",
+      "object_id": "VE20",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Manifattura_italiana,_sandali_pontificali,_in_pelle_rivestita_di_taffetas,_1900-50_ca.,_dal_duomo_di_pisa.jpg",
+      "creator": "Sailko",
+      "licence": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "width": 2088,
+      "height": 1890,
+      "venue": "Museo dell'Opera del Duomo, Pisa, Italy",
+      "source_description": "A pair of authentic Roman Catholic pontifical sandals dated circa 1900–1950 from the Cathedral of Pisa. Sandals component of VE20, not buskins, and not photographed on bishop in use.",
+      "role": "component_photo",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B6-VE20-COLUMBUS-PONTIFICAL-BUSKINS",
+      "object_id": "VE20",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Clerical_Shoes_and_Pontifical_Buskins_at_the_Museum_of_Catholic_Art_and_History_(Columbus,_Ohio).jpg",
+      "creator": "Maximilian775",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3024,
+      "height": 4032,
+      "venue": "Museum of Catholic Art and History, Columbus, Ohio, USA",
+      "source_description": "Museum photograph expressly identifies pontifical buskins, alongside other clerical footwear. Buskins are stockings, distinct from pontifical sandals or shoes. Components now separately evidenced with existing verified gloves record; photo still requires visual suitability rating.",
+      "role": "component_photo",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B6-SP02-WATTERSON-BUGIA-COLUMBUS",
+      "object_id": "SP02",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bishop_Watterson_Bugia_1_Museum_of_Catholic_Art_and_History.jpg",
+      "creator": "Maximilian775",
+      "licence": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "width": 4032,
+      "height": 3024,
+      "venue": "Museum of Catholic Art and History, Columbus, Ohio; Bishop John Watterson's bugia",
+      "source_description": "Genuine Catholic bishop's hand-held liturgical candlestick (bugia) photographed as a museum object. Not a pontifical ceremony or statement of 1962 rubrics.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B6-SE13-MALTA-ALTAR-OF-REPOSE",
+      "object_id": "SE13",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Altar_of_repose_on_Maundy_Thursday_Żebbuġ_Gozo.jpg",
+      "creator": "Kikku33",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3462,
+      "height": 5191,
+      "venue": "Parish Church, Żebbuġ, Gozo, Malta, Maundy Thursday 2024",
+      "source_description": "Actual Roman Catholic altar of repose in a parish church. Contemporary photographed arrangement, not certified as a 1962 Holy Thursday rite and not a Brompton view.",
+      "role": "context_detail",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B6-SC01-GESUITI-VENICE-SACRISTY",
+      "object_id": "SC01",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_Chiesa_dei_Gesuiti_(Venice)_-_sacristy.jpg",
+      "creator": "Didier Descouens",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 6458,
+      "height": 5929,
+      "venue": "Church of Santa Maria Assunta (I Gesuiti), Venice, Italy",
+      "source_description": "Authentic preserved sacristy interior in a Roman Catholic Jesuit church. Gives spatial/architectural context only; does not illustrate a sacristan setting up an altar or claim 1962 liturgical use.",
+      "role": "context_detail",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B6-BK10-EADEN-RITUALE-ROMANUM",
+      "object_id": "BK10",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rituale_Romanum.jpg",
+      "creator": "Eaden",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3264,
+      "height": 2448,
+      "venue": "Photographed Latin Rituale Romanum liturgical book",
+      "source_description": "Direct source photograph of a Rituale Romanum; publication year and consistency with the 1962 typical edition not established. Do not claim it is the 1962 Rituale.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B6-BK08-1954-LIBER-USUALIS-TITLE",
+      "object_id": "BK08",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Liber_Usualis.jpg",
+      "creator": "Der wahre Jakob",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 915,
+      "height": 1392,
+      "venue": "Photograph of interior title page, Liber Usualis 1954",
+      "source_description": "Genuine interior title page from a 1954 Liber Usualis; 915×1392 low-detail image, not an isolated whole bound volume. Rights include selectable CC BY-SA 3.0/GFDL; preserve chosen CC share-alike terms.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
+    },
+    {
+      "asset_id": "M6B6-SA01-PARIS-CATHOLIC-BAPTISMAL-FONT",
+      "object_id": "SA01",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Baptismal_font_@_Église_Notre-Dame_des_Blancs-Manteaux_@_Marais_@_Paris_(31590954501).jpg",
+      "creator": "Guilhem Vellut",
+      "licence": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "venue": "Église Notre-Dame-des-Blancs-Manteaux, Paris, France",
+      "source_description": "Original photographer's image of an actual baptismal font inside a Roman Catholic parish church in Paris. Architectural/photo context, not a 1962 baptism in progress.",
+      "role": "object_detail",
+      "medium": "photograph",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH6"
     }
   ]
 }
