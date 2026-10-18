@@ -38,7 +38,9 @@ assert.match(folio,/AO_VISIBLE_MASS_HOTSPOT_PILOT/);
 assert.match(folio,/Historical simulation/);
 assert.match(folio,/not his words/i);
 assert.doesNotMatch(folio,/createChatCompletion|openai\.chat|generateTheologicalAnswer/);
-assert.match(folio,/createAskChurchObjectiveEngine/);
+assert.match(folio,/integration\.objectiveEngine\?\.\(\)/);
+assert.doesNotMatch(folio,/createAskChurchObjectiveEngine\(/,
+ "Only the host owns the objective conversation; the character folio must not duplicate it");
 assert.match(folio,/aria-pressed/);
 const reviewer=readFileSync("src/learn/visible-mass-review.js","utf8");
 assert.match(reviewer,/aoLivingChurchCharacters/);
