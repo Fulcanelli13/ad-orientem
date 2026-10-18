@@ -430,13 +430,14 @@ function findSpot(id){
 }
 let panoramaController=null,m5PhotoModule=null,m5PhotoToken=0,m5Photo=null;
 const m5CachedUrls=new Map(),m5StillPoses=new Map();
-const m5PhotoIds=["NEWMAN_ALTAR_1","NEWMAN_ALTAR_2","NEWMAN_APSE","NEWMAN_PULPIT"];
+const m5BromptonIds=["BROMPTON_ALTAR_1","BROMPTON_ALTAR_2","BROMPTON_LADY_ALTAR","BROMPTON_SACRED_HEART"];
+const m5NewmanIds=["NEWMAN_ALTAR_1","NEWMAN_ALTAR_2","NEWMAN_ALTAR_3","NEWMAN_APSE","NEWMAN_PULPIT"];
 function m5VenueNav(){
  const root=$("m5-viewpoint-nav"),venue=state.photoMode==="newman"?"newman":"brompton";
  root.replaceChildren();
  const entries=venue==="newman"?
-  [{id:"panorama",label:"↩ Dublin · 360°"},...m5PhotoIds.map(id=>({id,label:m5PhotoModule?.M5_PHOTO_VIEWS[id]?.label||id.replaceAll("_"," ")}))]:
-  [{id:"panorama",label:"↩ Brompton · 360°"},{id:"altar",label:"High altar · 6 objects"}];
+  [{id:"panorama",label:"↩ Dublin · 360°"},...m5NewmanIds.map(id=>({id,label:m5PhotoModule?.M5_PHOTO_VIEWS[id]?.label||id.replaceAll("_"," ")}))]:
+  [{id:"panorama",label:"↩ Brompton · 360°"},{id:"altar",label:"High altar · 6 objects"},...m5BromptonIds.map(id=>({id,label:m5PhotoModule?.M5_PHOTO_VIEWS[id]?.label||id.replaceAll("_"," ")}))];
  for(const entry of entries){
   const button=document.createElement("button");button.type="button";button.textContent=entry.label;
   button.dataset.m5Viewpoint=entry.id;
@@ -525,9 +526,9 @@ async function showM5Photo(id){
  try{
   if(!m5PhotoModule)m5PhotoModule=await import("./visible-mass-m5-photographs.mjs");
   const photo=m5PhotoModule.M5_PHOTO_VIEWS[id];
-  if(!photo||photo.venue!=="NEWMAN_DUBLIN")return false;
+  if(!photo||!["NEWMAN_DUBLIN","BROMPTON_ORATORY"].includes(photo.venue))return false;
   if(token!==m5PhotoToken)return false;
-  m5Photo=id;state.photoMode="newman";state.view="m5-close";
+  m5Photo=id;state.photoMode=photo.venue==="NEWMAN_DUBLIN"?"newman":"brompton";state.view="m5-close";
   panoramaController?.hide();
   $("panorama-stage").hidden=true;$("photo-viewport").hidden=true;$("inspection-stage").hidden=true;$("m5-close-stage").hidden=false;
   $("photo-caption").textContent=photo.caption+" · distinct photographed camera viewpoint";
@@ -563,7 +564,7 @@ async function showM5Photo(id){
   const pose=m5StillPoses.get(id)||{zoom:1,offsetX:0,offsetY:0};
   setM5Zoom(pose.zoom);
   requestAnimationFrame(()=>{$("m5-close-viewport").scrollLeft=pose.offsetX;$("m5-close-viewport").scrollTop=pose.offsetY;});
-  $("m5-close-notice").textContent="Separate original photograph by "+photo.creator+". Enlarge or pan this image, or return to Dublin 360°. No virtual walking or claim that a 1962 Mass was photographed.";
+  $("m5-close-notice").textContent="Separate original photograph by "+photo.creator+". Enlarge or pan this image, or return to the same church’s 360° viewpoint. No virtual walking or claim that a 1962 Mass was photographed.";
   return true;
  }catch(error){
   if(token!==m5PhotoToken)return false;
