@@ -2844,6 +2844,13 @@ export function createReaderDomAdapter({
       const cr=card.getBoundingClientRect(),pr=penultimate.getBoundingClientRect();
       const center=pr.top-cr.top+card.scrollTop+pr.height/2;
       const requiredScroll=center-viewport*.39+24;
+      // CSS min-height provides real scroll travel relative to the settled
+      // viewport. Make that travel large enough to center the penultimate
+      // event, not merely proportional to the number of paragraphs; a
+      // one-line response near the bottom otherwise loses its entire turn.
+      const baseline=Math.min(640,Math.max(72,(focusCount-1)*58));
+      const guaranteed=Math.min(1800,Math.max(baseline,Math.ceil(requiredScroll)));
+      body.style.setProperty("--ao-min-reading-travel",guaranteed+"px");
       const availableScroll=Math.max(0,card.scrollHeight-viewport);
       closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
     }
