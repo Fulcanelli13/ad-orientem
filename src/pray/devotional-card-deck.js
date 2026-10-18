@@ -200,7 +200,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   }
   const active=devotionalFocusIndex(body,all,{ratio:.41});
   all.forEach((p,i)=>{
-   const strength=i===active?"1":Math.abs(i-active)===1?".56":".30";
+   const strength=i===active?"1":Math.abs(i-active)===1?".38":".18";
    p.style.setProperty("--ao-devo-focus",strength);
    // Legacy Angelus styles contain important whole-unit opacity declarations.
    // The shared card paragraph controller is the single active focus owner.
