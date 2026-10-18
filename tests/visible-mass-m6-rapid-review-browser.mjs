@@ -1,0 +1,57 @@
+import assert from "node:assert/strict";
+import {resolve} from "node:path";
+import {fileURLToPath,pathToFileURL} from "node:url";
+import {chromium} from "@playwright/test";
+import {readFile} from "node:fs/promises";
+const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const htmlPath=resolve(root,"previews/visible-mass-3d/M6_Rapid_30_Object_Photo_Triage_20261019.html");
+const html=await readFile(htmlPath,"utf8"),m=html.match(/<script id="dataset" type="application\/json">([\s\S]*?)<\/script>/);
+assert.ok(m,"Rapid review must package its source records offline");const data=JSON.parse(m[1]);
+assert.equal(data.objects.length,30);
+assert.equal(data.immutable_master_image_count,112);
+assert.equal(data.stage18,14);
+assert.equal(data.qa.inspected,3);
+assert.equal(data.objects.find(x=>x.object_id==="AL16").records.filter(x=>x.source_group==="B18_DISCOVERY").length,3);
+assert.equal(data.objects.find(x=>x.object_id==="SV01").records.filter(x=>x.source_group==="B18_DISCOVERY").length,4);
+assert.equal(data.objects.find(x=>x.object_id==="BK02").records.filter(x=>x.source_group==="B18_DISCOVERY").length,1);
+const browser=await chromium.launch({headless:true});
+try {
+for(const viewport of [{name:"desktop",width:1280,height:820},{name:"mobile",width:390,height:844}]){
+ const ctx=await browser.newContext({viewport:{width:viewport.width,height:viewport.height},isMobile:viewport.name==="mobile",hasTouch:viewport.name==="mobile",acceptDownloads:true});
+ const page=await ctx.newPage(),errors=[];page.on("pageerror",e=>errors.push(String(e)));
+ await page.route(/^https?:\/\//,route=>route.abort("internetdisconnected"));
+ await page.goto(pathToFileURL(htmlPath).href,{waitUntil:"load"});
+ const status=await page.evaluate(()=>window.AO_M6_RAPID?.status());
+ assert.equal(status.pilot,30);assert.equal(status.ready_groups,4);assert.equal(status.staged_discovery,14);
+ assert.equal(status.original_inspected,3);assert.equal(status.selected,"SV02");
+ assert.equal(await page.locator("#choices .card").count(),4);
+ assert.equal(await page.locator("#outline .quick").count(),30);
+ const card=page.locator("#choices .card").first();
+ await card.locator('[data-rate="5"]').click();
+ assert.equal(await page.evaluate(()=>window.AO_M6_RAPID.status().photo_reviews),1);
+ assert.equal(await page.locator("#choices .card").first().locator('[data-rate="5"]').getAttribute("aria-pressed"),"true");
+ await page.locator("#choices .card").first().locator('[data-placement]').selectOption("primary");
+ await page.locator("#choices .card").nth(1).locator('[data-placement]').selectOption("primary");
+ let exported=await page.evaluate(()=>window.AO_M6_RAPID.exportData());
+ assert.equal(exported.release_approval,false);
+ assert.equal(exported.decisions.length,2);
+ assert.equal(exported.decisions.filter(x=>x.placement==="primary").length,1,"One primary per object");
+ assert.equal(exported.decisions.filter(x=>x.placement==="secondary").length,1);
+ assert.equal(await page.evaluate(()=>window.AO_M6_RAPID.select("SV01")),true);
+ assert.equal(await page.locator("#choices .card").count(),2,"Original pixel holds remove two compromised chalices");
+ assert.equal(await page.locator("#references .card").count(),7,"Two QA holds, four discovery leads, one legacy source");
+ assert.match(await page.locator("#references").innerText(),/rights pending/i);
+ assert.equal(await page.evaluate(()=>window.AO_M6_RAPID.select("AL16")),true);
+ assert.equal(await page.locator("#choices .card").count(),0);
+ assert.equal(await page.locator("#references .card").count(),4,"Three altar-card components plus existing context/photo; not four independent sets");
+ await page.locator('[data-objstate="needs_more"]').click();
+ exported=await page.evaluate(()=>window.AO_M6_RAPID.exportData());
+ assert.ok(exported.object_actions.some(x=>x.object_id==="AL16"&&x.decision==="needs_more"));
+ const imported=await page.evaluate(d=>window.AO_M6_RAPID.importData(d),exported);
+ assert.equal(imported,2);
+ assert.equal(await page.evaluate(()=>window.AO_M6_RAPID.status().objects_marked),1);
+ assert.deepEqual(errors,[],viewport.name+" file-origin page has no JS errors");
+ console.log("PASS M6 rapid pilot",viewport.name,JSON.stringify({objects:status.pilot,ready:status.ready_groups,discovery:status.staged_discovery,ratings:2,objectFlags:1}));
+ await ctx.close();
+}
+}finally{await browser.close()}
