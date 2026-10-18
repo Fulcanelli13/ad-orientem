@@ -127,6 +127,7 @@ try{
   assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().sourceOpen),"apostolate:AQ08");
   assert.match(await page.locator("#lc-stage .lc-source-record").innerText(),/Scripture|Tradition/);
   assert.equal(await page.locator("#lc-stage .lc-source-record").isVisible(),true);
+  await page.screenshot({path:resolve(output,"living-church-source-AQ08-"+viewport.width+".png")});
   assert.ok(await page.locator("#lc-stage .lc-source-record a[href^='https://']").count()>0,
     "original module supplied citations must render as HTTPS links");
   assert.equal(await page.locator("#lc-stage .lc-source-record a[href^='javascript:']").count(),0);
