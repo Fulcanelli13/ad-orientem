@@ -19,7 +19,8 @@ try{
   assert.equal(status.staged,8,"Research batch is displayed without inflating the source-owned 112-record master");
   assert.equal(status.ready_four,1,"Only the staged four-photograph chalice comparison reaches metadata target, not editorial approval");
   assert.equal(status.pilot,30);
-  assert.equal(status.showing,30);
+  assert.equal(status.showing,1,"Start in ready-to-compare view, not a gallery full of single or poor options");
+  assert.equal(status.selected,"SV01");
   assert.equal(await page.locator("#m6-source-archive").isVisible(),false,"Research archive starts hidden");
   assert.ok(status.ready_four<30,"Do not misrepresent existing sparse acquisitions as curated alternatives");
 
