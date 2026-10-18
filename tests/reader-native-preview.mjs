@@ -85,8 +85,8 @@ const curatedReady=await prepareNativeReaderPreview({
 });
 assert.equal(curatedReady.curatedEligible,true);
 assert.equal(curatedReady.model.totalCards,39);
-assert.equal(curatedReady.presentationModel.totalCards,65,
-  "the real native preview must opt into 65 curated LIVE prayer cards");
+assert.equal(curatedReady.presentationModel.totalCards,64,
+  "the real native preview must show one combined Sanctus–Benedictus");
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
 const previewIntroit=curatedReady.presentationModel.cards.find(c=>
@@ -130,8 +130,8 @@ assert.equal(aspergesCuratedAttempt.curatedEligible,true,
   "an independently sourced Asperges must be allowed to precede curated Sung LIVE");
 assert.equal(aspergesCuratedAttempt.model.totalCards,39,
   "Asperges cannot alter canonical Mass source ownership");
-assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,65,
-  "Asperges must hand off to the same 65-card curated projection");
+assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,64,
+  "Asperges must hand off to the same combined-Sanctus projection");
 assert.equal(aspergesCuratedAttempt.presentationModel.cards[0].title,
   "At the Foot of the Altar · Opening and Psalm 42",
   "Asperges must neither flatten into nor omit the opening prayer cards");
@@ -689,7 +689,7 @@ for(const [followingAction,loaded,controllerKey,firstId,policy] of [
   const curated=await prepareNativeReaderPreview(args);
   assert.equal(curated.curatedEligible,true,followingAction+" curated gate");
   assert.equal(curated.model.totalCards,39);
-  assert.equal(curated.presentationModel.totalCards,65);
+  assert.equal(curated.presentationModel.totalCards,64);
   assert.equal(curated.presentationModel.cards[0].title,
     "At the Foot of the Altar · Opening and Psalm 42");
   assert.equal(curated[controllerKey].project().card.id,firstId);
