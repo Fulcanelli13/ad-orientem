@@ -277,19 +277,24 @@ try{
  // A replacement worker must take control of the existing installed-like tab,
  // while retaining the explicit snapshot consent and current Rosary state.
  swRevision=2;
- const controllerChanged=await page.evaluate(async()=>{
-   if(!navigator.serviceWorker.controller)return false;
+ const takeoverResult=await page.evaluate(async()=>{
+   if(!navigator.serviceWorker.controller)return {changed:false,error:"NO_CONTROLLER"};
+   let changed=false;
    const takeover=new Promise(resolve=>{
-     const timeout=setTimeout(()=>resolve(false),25000);
+     const timeout=setTimeout(()=>resolve(false),20000);
      navigator.serviceWorker.addEventListener("controllerchange",()=>{
-       clearTimeout(timeout);resolve(true);
+       changed=true;clearTimeout(timeout);resolve(true);
      },{once:true});
    });
    const reg=await navigator.serviceWorker.getRegistration();
+   const prior={active:reg.active?.state,waiting:reg.waiting?.state,script:reg.active?.scriptURL};
    await reg.update();
-   return takeover;
+   await takeover;
+   return {changed,prior,active:reg.active?.state,waiting:reg.waiting?.state,
+     installing:reg.installing?.state,controller:navigator.serviceWorker.controller?.state};
  });
- assert.equal(controllerChanged,true,"Replacement worker remained waiting behind an installed app");
+ console.log("OFFLINE_WORKER_UPGRADE_DIAGNOSTIC="+JSON.stringify({swRevision,takeoverResult}));
+ assert.equal(takeoverResult.changed,true,"Replacement worker remained waiting behind an installed app");
  await assertRosaryUninterrupted("service-worker takeover");
  assert.equal((await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status)).version,original.version,
   "Worker activation promoted a snapshot without user consent");
