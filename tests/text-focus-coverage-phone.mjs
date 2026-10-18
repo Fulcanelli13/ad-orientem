@@ -94,6 +94,14 @@ try{
     catch(e){return {ok:false,error:String(e)}}
   },id);
   await pray.evaluate(()=>new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok))));
+  if(id==="pray.seven_words"){
+   // Its source-bounded historical witness is loaded asynchronously. Do not
+   // classify the opening "loading meditation" placeholder as a completed
+   // devotional card whose closing cue ought to have active focus.
+   await pray.waitForFunction(()=>
+     !!document.querySelector("#aoPray435930.open .aoP435930HistoricalFocus .aoP435930WitnessParagraph"),
+     null,{timeout:18000});
+  }
   const mount=await pray.evaluate(()=>{
     const m=document.querySelector("#aoPray435930.open .aoP435930Mount");
     return {view:m?.dataset.aoPrayView||null,route:m?.dataset.aoTraditionalPrayRoute||null,
