@@ -77,9 +77,9 @@ try{
  assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.title),
   "Second Confiteor · Optional Local Custom");
  const rendered=await page.locator(".ao-prayer-body").first().innerText();
- assert.match(rendered,/Confíteor Deo omnipoténti/);
- assert.match(rendered,/Misereátur vestri/);
- assert.match(rendered,/Indulgéntiam/);
+ assert.match(rendered,/I confess to Almighty God/);
+ assert.match(rendered,/May Almighty God have mercy upon you/);
+ assert.match(rendered,/grant us pardon/);
  const afterChoice=await page.evaluate(()=>({
   custom:JSON.parse(localStorage.getItem("ao-mass-customary-v1")||"{}"),
   visible:document.querySelector('[data-reader-customary="secondConfiteor"]')?.value
