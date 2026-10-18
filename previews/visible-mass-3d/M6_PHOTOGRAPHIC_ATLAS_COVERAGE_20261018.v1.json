@@ -96,7 +96,20 @@
     "tenth_batch_new_photo_covered_objects": 10,
     "post_tenth_batch_photo_candidate_or_hotspot": 70,
     "post_tenth_batch_needs_photo": 100,
-    "post_tenth_batch_unique_source_urls": 79
+    "post_tenth_batch_unique_source_urls": 79,
+    "eleventh_batch_new_licensed_photos": 6,
+    "eleventh_batch_subjects": [
+      "BK11",
+      "BK09",
+      "SE02",
+      "SE03",
+      "SE06",
+      "SE14"
+    ],
+    "post_eleventh_batch_photo_candidate_or_hotspot": 76,
+    "post_eleventh_batch_needs_photo": 94,
+    "post_eleventh_batch_source_records": 88,
+    "post_eleventh_batch_unique_source_urls": 85
   },
   "zones": [
     {
@@ -2582,9 +2595,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-BK09-EVORA-ROMAN-ANTIPHONARY-1748",
+          "role": "historical_book_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK10",
@@ -2616,9 +2635,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-BK11-1961-PONTIFICALE-ROMANUM",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "BK12",
@@ -2878,9 +2903,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-SE02-IPSWICH-CANDLEMAS-CANDLES",
+          "role": "object_in_liturgical_use",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE03",
@@ -2892,9 +2923,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-SE03-RABAT-MALTA-PALM-PROCESSION",
+          "role": "object_in_liturgical_use",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE04",
@@ -2934,9 +2971,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-SE06-PHILIPPINES-GOOD-FRIDAY-CROSS",
+          "role": "object_in_devotional_use",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SE07",
@@ -3058,9 +3101,15 @@
       "intended_navigation": "S",
       "pilot_30": false,
       "pilot_photo_evidence": null,
-      "evidence_status": "NO_OBJECT_IMAGE_CANDIDATE",
-      "candidate_assets": [],
-      "needs_photo": true
+      "evidence_status": "NEW_SOURCE_PHOTO_CANDIDATE",
+      "candidate_assets": [
+        {
+          "asset_id": "M6B11-SE14-MAINZ-TENEBRAE-HEARSE",
+          "role": "object_detail",
+          "evidence": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL"
+        }
+      ],
+      "needs_photo": false
     },
     {
       "object_id": "SP01",
@@ -4425,6 +4474,104 @@
       "source_description": "Authentic Catholic Corpus Christi canopy sheltering the Blessed Sacrament in modern Fribourg procession, with confraternity and former Swiss Guards. Publisher notes concelebrants; do not represent as a photograph of a 1962-procession rite. True canopy-in-use photo.",
       "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
       "source_index": "M6_RESEARCH_20261018_BATCH10"
+    },
+    {
+      "asset_id": "M6B11-BK11-1961-PONTIFICALE-ROMANUM",
+      "object_id": "BK11",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1961_Pontificale_Romanum.jpg",
+      "creator": "Darth Stabro",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3024,
+      "height": 4032,
+      "venue": "Archbishop Ireland Memorial Library, Saint Paul Seminary, St Paul, Minnesota, USA",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_description": "Original photograph of the title page of an actual 1961 Pontificale Romanum, from Catholic seminary library collection. Strong period-matched pre-1962 Roman Pontifical primary source; only title page, not full book or evidence of a pontifical ceremony.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B11-BK09-EVORA-ROMAN-ANTIPHONARY-1748",
+      "object_id": "BK09",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antiphonarium_Romanum_1748.jpg",
+      "creator": "Georges Jansoone (Commons post-processing Micheletb)",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 600,
+      "height": 590,
+      "venue": "Church of Saint Francis, Évora, Portugal; photographed historical Roman antiphonary",
+      "role": "historical_book_detail",
+      "medium": "photograph",
+      "source_description": "Original 2006 photographed Antiphonarium Romanum of 1748 in a historic Roman Catholic church. Very low source resolution (600×590) and not a 1962 Antiphonale Romanum edition. Historical supplement only; inadequate as hero art.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B11-SE02-IPSWICH-CANDLEMAS-CANDLES",
+      "object_id": "SE02",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Blessings_of_the_Candles_at_Candlemas.jpg",
+      "creator": "JASpencer",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 2048,
+      "height": 1536,
+      "venue": "Saint Pancras Roman Catholic Church, Ipswich, England; Candlemas 2 February 2014",
+      "role": "object_in_liturgical_use",
+      "medium": "photograph",
+      "source_description": "Original 2014 Candlemas candle blessing at a positively confirmed Roman Catholic parish church in Ipswich. Does NOT establish 1962 Candlemas rite, candle blessing rubrics or typical traditional ceremonial arrangement; confirm candle visibility in crop before publication.",
+      "venue_verification_url": "https://www.stpancraschurch.org.uk/",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B11-SE03-RABAT-MALTA-PALM-PROCESSION",
+      "object_id": "SE03",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Palm_Sunday_Procession.jpg",
+      "creator": "Godwin Borg",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3456,
+      "height": 4839,
+      "venue": "Rabat, Malta; Confraternity of the Blessed Sacrament, Palm Sunday 13 April 2025",
+      "role": "object_in_liturgical_use",
+      "medium": "photograph",
+      "source_description": "Photographic evidence of an actual Catholic Palm Sunday procession in Malta, context for palms only if individual blessed palm fronds are visible in reviewer crop. Modern 2025 ceremony, not an authenticated 1962 Palm Sunday procession or blessing.",
+      "review_visibility_requirement": "PALM_FRONDS_MUST_BE_DIRECTLY_VISIBLE_TO_COUNT_AS_PRIMARY_PHOTO",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B11-SE06-PHILIPPINES-GOOD-FRIDAY-CROSS",
+      "object_id": "SE06",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Cross_on_Good_Friday.jpg",
+      "creator": "Victor D. Kintanar (uploaded by Vidlisiw)",
+      "licence": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width": 3872,
+      "height": 2592,
+      "venue": "Philippines; lay Catholic Good Friday veneration of Holy Cross, photo taken 22 April 2011",
+      "role": "object_in_devotional_use",
+      "medium": "photograph",
+      "source_description": "Original Catholic Good Friday cross-veneration photograph, showing faithful kissing the cross after Stations of the Cross. The photograph is expressly a local devotion, NOT proof of the 1962 Solemn Liturgical Action on Good Friday; protect people's privacy and do not conflate rites.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
+    },
+    {
+      "asset_id": "M6B11-SE14-MAINZ-TENEBRAE-HEARSE",
+      "object_id": "SE14",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Domtriangel1.jpg",
+      "creator": "Bhuck",
+      "licence": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width": 1864,
+      "height": 3710,
+      "venue": "Mainz Cathedral, Germany (Roman Catholic); triangular Tenebrae candelabrum, 2009",
+      "role": "object_detail",
+      "medium": "photograph",
+      "source_description": "Original photograph of a triangular Tenebrae hearse / Tenebrae candelabrum in Mainz Cathedral, unambiguously identified on source page. True Catholic furnishing; one image of physical object, not evidence of use in the older Tenebrae office or a 1962 Tenebrae ritual.",
+      "review_status": "SOURCE_RIGHTS_IDENTIFIED_AWAITING_EDITORIAL_APPROVAL",
+      "source_index": "M6_RESEARCH_20261018_BATCH11"
     }
   ]
 }
