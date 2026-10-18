@@ -20,6 +20,18 @@
     "livingChurchP4": {
       "pr": 1406,
       "sha": "04a2caffbec08cc6185a56085340643304ec4b07"
+    },
+    "characterStage": {
+      "pr": 1404,
+      "sha": "7c1869616aae8bf9b666730277dee964ca476822",
+      "snapshotIncludes": "CANON_FOLIO_FORMATION_SOURCE_REFERRAL_CONTRACT_NO_PUBLIC_ANSWERS"
+    },
+    "formationResearch": {
+      "repo": "Fulcanelli13/folio-core",
+      "pr": 36,
+      "sha": "0709b2f2b43307c6ab6fef7b08bedfe07095513d",
+      "state": "DRAFT_UNMERGED_CI_NOT_CERTIFIED",
+      "neverAutoCopyResearchAnswers": true
     }
   },
   "verifiedOwnerBlobs": [
@@ -102,6 +114,26 @@
       "path": "tools/build-visible-mass-m6-atlas-review.mjs",
       "gitBlobSha": "0e107e190d0dc6fbba48cbdaeb602a9e4c7738c9",
       "owner": "M6"
+    },
+    {
+      "path": ".github/workflows/living-church-character-p3.yml",
+      "gitBlobSha": "1eddb78d7ba78d50a6b4bd1fbbc5739f80f9340f",
+      "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
+    },
+    {
+      "path": "data/learn/living-church-canon-formation-referral-contract.v1.json",
+      "gitBlobSha": "81f579b442816a01d5c9ed913840c186e7e02747",
+      "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
+    },
+    {
+      "path": "data/learn/living-church-character-assets.v1.json",
+      "gitBlobSha": "80d7a69bfffe341abc32bcf5e26b4152c614241d",
+      "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
+    },
+    {
+      "path": "tests/living-church-canon-source-contract.mjs",
+      "gitBlobSha": "38cb9e67927c84c27f09e2d8be5211de5f2884fc",
+      "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
     }
   ],
   "layeredAdaptations": [
@@ -131,7 +163,9 @@
     "actualAndroidPhysicalDeviceAcceptance": false,
     "physical320pxTouchAndVoiceOverAcceptance": false,
     "fullP0P4MainBranchConvergenceApproved": false,
-    "massReaderParityCertifiedForMerge": false
+    "massReaderParityCertifiedForMerge": false,
+    "canonFolioFormationAnswersImportedAndReviewed": false,
+    "canonResearchSourceCIAndCanonicalOwnershipVerified": false
   },
   "scopedReadiness": {
     "sourceOwnerReconciled": true,
@@ -169,6 +203,11 @@
     {
       "pr": 1406,
       "state": "DRAFT_NOT_MERGED"
+    },
+    {
+      "repo": "Fulcanelli13/folio-core",
+      "pr": 36,
+      "state": "DRAFT_CI_UNVERIFIED_534_HISTORICAL_CANDIDATES_ZERO_PUBLIC_APPROVALS"
     }
   ]
 }
