@@ -44,6 +44,7 @@ jobs:
           node tests/living-church-character-folio.mjs
           node tests/living-church-canon-source-contract.mjs
           node --test tests/living-church-canon-research-source.mjs
+          node tests/living-church-canon-all-original-answer-coverage.mjs
           node --check src/learn/living-church-canon-research-reader.mjs
           node --check src/learn/living-church-canon-dialogue-ui.mjs
           node tests/living-church-ask-native-return.mjs
