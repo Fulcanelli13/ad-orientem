@@ -166,8 +166,12 @@ assert.equal(selectedPreflightMassProperProjection(exceptional).owner,"EXPLICIT_
 const english=assessResolvedProperTextSections(ctx.proper,{language:"en"});
 assert.equal(english.ok,true);
 const printedGate=readFileSync(new URL("../src/calendar/print-proper.js",import.meta.url),"utf8");
-assert.match(printedGate,/return assessResolvedProperTextSections\(p,\{language\}\)/,
- "The printable Calendar Proper must continue reusing the same bilingual source gate");
+assert.match(printedGate,/const audit=assessResolvedProperTextSections\(p,\{language\}\)/,
+ "Print must still reuse the exact bilingual source-validation gate");
+assert.match(printedGate,/if\(!audit\.ok\)return audit/,
+ "Source-incomplete Proper must be rejected before display editing");
+assert.match(printedGate,/project1962Pent21AlleluiaDisplayRows\(/,
+ "Editor may only adjust validated display rows after the source gate");
 const bridge=readFileSync(new URL("../src/mass/browser-entry.js",import.meta.url),"utf8");
 assert.match(bridge,/selectedStudyProper: \(\) =>/);
 assert.doesNotMatch(bridge,/massExplorerMomentHtml|selectedPreflightMassProperProjection/);
