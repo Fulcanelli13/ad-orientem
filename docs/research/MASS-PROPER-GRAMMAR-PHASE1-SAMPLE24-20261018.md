@@ -1,6 +1,6 @@
 # Mass Proper Phase 1 — reproducible grammar sample (18 October 2026)
 
-**Status: FIRST-PASS FINDINGS, NO PRODUCTION TEXT CHANGES.**
+**Status: SECOND-PASS TARGETED ADJUDICATION, NO PRODUCTION TEXT CHANGES. Full 540-paragraph editorial certification remains open.**
 Audit PR: #1418; source checkout: `edfbe1bb9b4695f73773a3444c7b46fd4652275f`.
 Full machine record: CI artifact `phase1-24-propers-en-fr-audit` in the Phase 1 Grammar Sample workflow; retained for 30 days. The repeatable sampler is `tests/mass-phase1-24-random-propers-grammar.mjs`.
 
@@ -76,3 +76,47 @@ These ten **issue groups** affect at least eight distinct sampled Propers; `P1-0
 6. **Final manual linguistic certification remains open** for the long reading passages; first-pass findings are reproducible from the retained JSON.
 
 No source, Calendar, rite or production Mass text modified in this audit.
+
+
+## Second-pass grammatical adjudication — 18 specific findings / 11 Propers
+
+Added a **machine-readable exact-source register**: `data/research/mass-proper-grammar-phase1-adjudications-20261018.v1.json`. The pre-existing P1-01–P1-10 IDs remain stable. The second pass adds the following additional defects in the *actual sampled reader texts* (not synthetic examples):
+
+| ID | Sample / exact slot | Language | Defective reader wording | Adjudication |
+| --- | --- | --- | --- | --- |
+| P1-11 | 9 Jan, Epiphany Secret | FR | `Jetez une regard bienveillant` | `un regard`. Appears in final print as well; corroborating FSSPX French proper uses the correct masculine article. |
+| P1-12 | 23 Feb, St Peter Damian commemoration Secret | EN | `holy Petri thy Bishop` | Latin genitive noun form leaked into vernacular: `holy Peter thy Bishop`. Exact defective English survives on Missale Meum. |
+| P1-13 | 14 Apr, St Justin Secret | EN | `these our offerings thy wondrous mystery of which thy holy martyr Justin ... defended` | Syntactically malformed translation of Latin `quorum mirabile mysterium`. Provisional minimal `these our offerings, whose wondrous mystery thy holy martyr Justin ... defended`; verify against original source before publication. |
+| P1-14 | 14 Apr, martyr commemoration Secret | EN | `may losen the bonds of our sins` | `loosen` (transcription typo); identical defective wording exists in Missale Meum. |
+| P1-15 | 14 Apr, martyr commemoration Secret | EN | `the gist of thy mercy` | `the gifts of thy mercy`; the Latin is `dona`, and the existing FR has `les dons de votre miséricorde`. Same error in Missale Meum. |
+| P1-16 | 14 Apr, martyr commemoration Postcommunion | FR | `qu’en celebrant cette fête` | Missing accent: `célébrant`. |
+| P1-17 | 14 Apr, martyr commemoration Postcommunion | EN | `thy  saving grace` | Duplicate space; typographic only. |
+| P1-18 | 23 Feb, Gospel, Matt 25:44 | EN | `Then they also will and say` | Spurious conjunction: `Then they also will say`; defective words also appear in the upstream Missale Meum passage. |
+
+**Reconciled register totals:** **18 specific issue groups**, affecting **11 / 24** distinct sampled source Propers. **16** of these are grammatical, orthographic or translation-text defects; **1** is a separate Latin source-identity contradiction (P1-10); **1** is a simple typographic double-space. The 39 French guillemet-spacing occurrences across eight Propers are tracked **separately as a batch**, not miscounted as 39 grammatical errors. The 18-group count deliberately treats the two probable OCR corruptions in P1-01 as one localized sentence defect, while P1-14 and P1-15 are distinct word corruptions with different corrections.
+
+### Source origin assessment
+
+- **10/18** defective strings are **reproduced in existing third-party Proper publications**; this confirms that they were not invented by the final Ad Orientem card renderer, but **does not** establish the direction of copying, the exact pinned source revision, or independence of the third-party witness.
+- **2/18** are present in both native-reader and printable-Proper representations, so the defect is already present at or before their shared source/normalization layer; distinguishing remote source from host-normalizer still requires the pinned source byte comparison.
+- **5/18** have a verified linguistic defect but no established upstream byte match; source/host vs projection remains to be determined.
+- **1/18 — St Damasus I, 11 December —** is **directly contradicted by a reproduction of the Latin 1962 Roman Missal**: the sample and Missale Meum describe Damasus as `Mártyrem`, but the 1962 calendar calls him `Papa et Confessor` and the contemporary proper's Collect has `per beatum Damasum ... Summum Pontificem`, **without** `Mártyrem`. The preceding 10 December St Melchiades Proper *does* say `Martyrem tuum atque Summum Pontificem`, suggesting a source-template contamination; this is an inference requiring further provenance tracing, not proof of how the corruption occurred. **Do not silently patch the Latin in the grammar-audit PR.**
+
+These are **confirmed positive findings in a reproducible stratified random sample**, **not** a measured complete grammar-error prevalence. One sampled Proper with an issue does not tell us what fraction of all its words or fields are wrong.
+
+### Source witnesses used for adjudication
+
+- Independent printed-1962 confirmation of St Damasus **non-martyr** Collect: [11 Dec printed 1962 missal-aligned sheet](https://extraordinaryform.org/masses/1211StDamasusPope2ndM20.pdf), with the [1962 Latin Missal OCR search witness](https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf).
+- Comparison for Epiphany Secret: [FSSPX day 9 Jan](https://ordo.fsspx.org/day/2026-01-09).
+- Defective upstream exact strings for the Peter Damian English Secret and Gospel: [Missale Meum 23 Feb](https://www.missalemeum.com/en/widgets/propers/2026-02-23?theme=light).
+- Defective source witness for St Justin / martyrs' Secrets: [Missale Meum 14 Apr](https://www.missalemeum.com/en/calendar/2026-04-14).
+- French Epistle of Jonah 3:10: [independent Vigouroux text](https://scriptura.fsspx.org/vigouroux/jon/3) gives `il vit qu’ils étaient revenus`; [third-party Proper text](https://tridentine.org/missa/2026-03-23?lang=Francais) repeats the app's `II ... étalent` corruption.
+- Source-reproduced 2 Oct Angel guardians postcommunion error: [ICRSP original-day French Proper](https://icrspfrance.fr/textes-de-la-messe.php?d=2026-10-02).
+- 11 Oct Postcommunion imperative error repeated in [Laudemus](https://www.laudemus.org/?date=2026-10-11&mass_type=low&v=1029).
+
+### Gate and next actions
+
+1. **Phase 1**: Final full-sample expert/manual examination remains open for 540 paragraphs, particularly extended Epistles and Gospels. Additional actual errors may be discovered. The adjudications above are independently checkable positive findings.
+2. **Origin trace**: Compare the exact pinned upstream source files/revisions with host-resolved `lat/en/fr` and final reader slot data; assign origin `SOURCE_IMPORT`, `HOST_NORMALIZER`, or `READER_PROJECTION` only with that evidence.
+3. **Phase 2**: Only after collating the complete review should each accepted minimal correction be promoted through a separate source-owned, dated, reversible change with printed Proper and reader parity checks.
+4. **No production text was changed.** All eighteen candidate issues remain publicly visible until a separate fix is reviewed and deployed.
