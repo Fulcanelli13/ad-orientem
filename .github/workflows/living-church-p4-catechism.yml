@@ -6,6 +6,8 @@ on:
       - "src/learn/living-church-catechism-source.js"
       - "src/learn/living-church-ask-integration.js"
       - "src/learn/living-church-character-folio.js"
+      - "src/learn/living-church-pius-study-topics.js"
+      - "tests/living-church-pius-study-topics.mjs"
       - "tests/living-church-catechism-source.mjs"
       - "tests/living-church-p4-native-catechism-browser.mjs"
       - ".github/workflows/living-church-p4-catechism.yml"
@@ -32,6 +34,8 @@ jobs:
           node --check src/learn/living-church-catechism-source.js
           node --check src/learn/living-church-ask-integration.js
           node --check src/learn/living-church-character-folio.js
+          node --check src/learn/living-church-pius-study-topics.js
+          node tests/living-church-pius-study-topics.mjs
           node tests/living-church-catechism-source.mjs
           node tests/living-church-ask-native-return.mjs
           node tests/living-church-character-folio.mjs
