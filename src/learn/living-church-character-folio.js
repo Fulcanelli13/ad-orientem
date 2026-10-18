@@ -4,7 +4,7 @@
  * No independent doctrinal answers, invented rubrics, free-form AI replies or
  * duplication of the original Visible Mass/Ask/Catechism owners.
  */
-import {createAskChurchObjectiveEngine} from "./ask-church-objective-engine.js";
+// Objective routing is owned once by the P2 host, not this sprite presentation.
 import {loadOriginalCatechismReferralIndex} from "./living-church-catechism-source.js";
 import {visibleMassResearchMomentLinks} from "../../previews/visible-mass-3d/photographic-published-explorer-handoff.mjs";
 export const LIVING_CHURCH_FOLIO_VERSION="AO_LIVING_CHURCH_P3_FOLIO_V1";
@@ -124,7 +124,8 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
  input.type="text";input.setAttribute("aria-label","Objective or topic");submit.type="submit";form.append(input,submit);
  panel.append(kicker,heading,status,prompt,disclosure,choices,form,notice);
  root.append(veil,image,nav,closeButton,panel);host.append(root);
- const engine=createAskChurchObjectiveEngine(survey,{lang:base.context.lang});
+ const engine=integration.objectiveEngine?.();
+ if(!engine?.snapshot||!engine?.interpret||!engine?.targets)throw Error("Canonical Ask objective session missing");
  let guide="sacristan",emotion="welcoming",mode="home",closed=false,message="",catechismQuery="",openingNative=false;
  const objects=new Map(pilot.objects.map(x=>[x.object_id,x]));
  const questions=new Map(pilot.questions.map(x=>[x.id,x]));
@@ -175,7 +176,7 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
  }
  function beginObjectives(objective=null){
   mode="objectives";
-  if(objective)engine.setObjective(objective);
+  if(objective&&engine.snapshot().objective!==objective)engine.setObjective(objective);
   emotion="explaining";message="";render();
  }
  function render(){
