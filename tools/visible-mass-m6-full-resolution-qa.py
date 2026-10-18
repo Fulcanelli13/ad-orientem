@@ -159,7 +159,16 @@ def main():
     session.headers.update(HEADERS)
     metrics=[]
     file_by_id={}
+    stopped_for_rate_limit=False
     for idx,(asset_id,record) in enumerate(unique.items(),1):
+        if stopped_for_rate_limit:
+            result={"asset_id":asset_id,"object_ids":record.get("object_ids"),"source_url":record["source_url"],
+                    "status":"NOT_ATTEMPTED_AFTER_SOURCE_RATE_LIMIT",
+                    "publication_approved":False,"visual_editorial_approval":False,
+                    "reason":"Earlier Wikimedia 429; no more Commons requests issued during this job"}
+            metrics.append(result)
+            print("PHOTO_QA "+json.dumps({"i":idx,"id":asset_id,"status":result["status"]}),flush=True)
+            continue
         info_url, commons=commons_info(record,session)
         urls=list(dict.fromkeys([u for u in [info_url,backup_url(record)] if u]))
         result={"asset_id":asset_id,"object_ids":record.get("object_ids"),"source_url":record["source_url"],
@@ -188,11 +197,15 @@ def main():
                 break
             except (requests.RequestException, ValueError, OSError, UnidentifiedImageError, Image.DecompressionBombError) as e:
                 problems.append(str(e)[:180])
+                if "429" in str(e) or "Too many requests" in str(e):
+                    stopped_for_rate_limit=True
+                    result["status"]="WIKIMEDIA_SOURCE_RATE_LIMIT_NO_IMMEDIATE_RETRY"
+                    break
         if problems: result["fetch_attempt_errors"]=problems
         metrics.append(result)
         print("PHOTO_QA "+json.dumps({"i":idx,"id":asset_id,"status":result["status"],"actual":result.get("original_pixel_size"),
                                       "heuristic":result.get("image_quality_heuristics"),"errors":problems},ensure_ascii=False),flush=True)
-        time.sleep(.25)
+        time.sleep(2.0)  # Conservative source request pacing, never loop into repeated HTTP 429
     sheets=[make_sheet(oid,picks[oid],file_by_id) for oid in IDS]
     # No automated score: both editorial suitability and sharpness at 100% remain human decisions.
     results={"schema":"AO_VISIBLE_MASS_M6_ORIGINAL_IMAGE_QUALITY_EVIDENCE_V1","original_sources":20,
@@ -207,7 +220,7 @@ def main():
     (OUT/"manifest.html").write_text(build_html(picks,metrics,sheets,file_by_id),encoding="utf-8")
     print("M6_SOURCE_QA_SUMMARY "+json.dumps({k:results[k] for k in ["original_sources","downloaded","failed","publication_approved"]}))
     if len(file_by_id)<20:
-        print("INCOMPLETE_SOURCE_ACQUISITION: preserving contact sheets and failure evidence; do not claim full original-photo review",file=sys.stderr)
+        print("INCOMPLETE_SOURCE_ACQUISITION: preserve samples; if rate-limited, STOP and wait for source availability, never bulk retry",file=sys.stderr)
 
 def build_html(picks, metrics, sheets, downloaded):
     lookup={r["asset_id"]:r for r in metrics}
