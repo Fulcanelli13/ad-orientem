@@ -37,8 +37,9 @@ assert.equal(m6.schema,"AO_VISIBLE_MASS_M6_PHOTOGRAPHIC_ATLAS_COVERAGE_V1");
 assert.equal(m6.status,"RESEARCH_ONLY_NOT_PUBLICATION_APPROVED");
 assert.equal(m6.objects.length,170);
 assert.equal(m6.zones.length,13);
-assert.equal(m6.images.length,52);
-assert.equal(m6.statistics.post_fourth_batch_needs_photo,129);
+assert.equal(m6.images.length,56);
+assert.equal(m6.statistics.post_fifth_batch_needs_photo,125);
+assert.equal(m6.statistics.post_fifth_batch_photo_candidate_or_hotspot,45);
 const pilot=json("previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json");
 const trails=json("previews/visible-mass-3d/GUIDED_TRAIL_GRAPH_RESEARCH_20261018.v1.json");
 const objectives=json("data/learn/ask-church-app-route-survey.v1.json");
@@ -67,4 +68,4 @@ assert.ok(paths.length>=9);
 for(const name of paths)assert.equal(pinned.publicationGates[name],false,
  "Unreviewed publication gate unexpectedly marked approved: "+name);
 assert.equal(pinned.scopedReadiness.productionReady,false);
-console.log("Living Church P5 source convergence PASS: 16 exact source blob pins, all 10 M5 handoff edits, original M6 atlas 170/13/52, VMQ 134/4, Ask 7/26, PX 433, 15 sprites and 9 locked human release gates.");
+console.log("Living Church P5 source convergence PASS: 16 exact source blob pins, all 10 M5 handoff edits, original M6 atlas 170/13/56 and 125 qualifying photo gaps, VMQ 134/4, Ask 7/26, PX 433, 15 sprites and 9 locked human release gates.");
