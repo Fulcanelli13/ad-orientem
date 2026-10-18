@@ -278,6 +278,9 @@ export function renderSettingsToString(win=globalThis,{route="/settings",live=fa
         L("App version · not the Git commit","Version de l’app · non le commit Git"),
         '<span class="aoSetBadge" data-settings-app-version>'+esc(vm.version)+'</span>')+
       infoRow(L("Offline snapshot","Copie hors ligne"),offlineLabel,snapshotLabel)+
+      (offline?.error?infoRow(L("Last update error","Dernière erreur de mise à jour"),
+        L("Diagnostic code; saved data is retained","Code de diagnostic ; les données restent conservées"),
+        '<span class="aoSetBadge" data-settings-update-error>'+esc(String(offline.error).slice(0,220))+'</span>'):"")+
       updateButtons+
       (vm.canonicalHost?"":infoRow(L("Documented install site","Site d’installation documenté"),
         L("A separate site — not an update to this installation","Un site distinct — pas une mise à jour de cette installation"),
