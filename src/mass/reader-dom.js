@@ -941,11 +941,12 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]::before{display:none}
 /* LIVE is an operational Mass companion, never an explanatory Guide.
    Keep the original posture/position ribbon; remove its centre Guide tile. */
-.ao-reader-shell[data-mode="LIVE"] .ao-state-ribbon{
+.ao-reader-shell[data-mode="LIVE"] .ao-state-ribbon,
+.ao-reader-shell[data-mode="SIMPLE"] .ao-state-ribbon{
   grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
 }
-.ao-reader-shell[data-mode="LIVE"] .ao-state-guide,
-.ao-reader-shell[data-mode="LIVE"] .ao-guide-popover{
+.ao-reader-shell .ao-state-guide,
+.ao-reader-shell .ao-guide-popover{
   display:none!important;
 }
 /* A sourced ceremonial cue belongs directly to its original prayer row.
@@ -1622,7 +1623,7 @@ export function buildReaderShellMarkup(prepared = {}) {
       <span class="ao-icon-mask ao-missal-gesture-icon" data-icon-slot="faithful-gesture-top" hidden aria-hidden="true"></span>
       <span class="ao-state-copy"><span class="ao-state-kicker">YOU</span><span class="ao-state-label" data-role="posture">—</span><span class="ao-missal-state-detail" data-role="missal-faithful-gesture" hidden></span></span>
     </div>
-    <button class="ao-state-guide" type="button" data-role="guide-button" disabled ${mode!=="SIMPLE" ? 'hidden aria-hidden="true" tabindex="-1"' : ""} aria-label="Open explanatory Guide">
+    <button class="ao-state-guide" type="button" data-role="guide-button" disabled hidden aria-hidden="true" tabindex="-1" aria-label="Explanatory Guide removed from Mass reader">
       <span class="ao-guide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.75h10.5A2.5 2.5 0 0 1 18 7.25v12H7.5A2.5 2.5 0 0 1 5 16.75z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 8h6.5M8 11h6.5M8 14h4.5" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round"/></svg></span>
       <span class="ao-guide-copy"><small>GUIDE</small><b class="ao-guide-short" data-role="guide-short">RUBRICS</b></span>
     </button>
@@ -1959,10 +1960,10 @@ export function createReaderDomAdapter({
       const button=root.querySelector('[data-role="guide-button"]');
       const pop=root.querySelector('[data-role="guide-popover"]');
       if(button){
-        button.hidden=mode!=="SIMPLE";
-        button.disabled=mode!=="SIMPLE";
-        button.tabIndex=mode==="SIMPLE"?0:-1;
-        button.setAttribute("aria-hidden",String(mode!=="SIMPLE"));
+        button.hidden=true;
+        button.disabled=true;
+        button.tabIndex=-1;
+        button.setAttribute("aria-hidden","true");
       }
       if(pop){pop.hidden=true;pop.replaceChildren?.();}
       syncRailVisibility(root);
@@ -2514,7 +2515,7 @@ export function createReaderDomAdapter({
       const guideBackdrop=event.target?.closest?.('[data-role="guide-popover"]');
       if(guideBackdrop && event.target===guideBackdrop){closeGuide();return;}
       const guideButton=event.target?.closest?.('[data-role="guide-button"]');
-      if(mode==="SIMPLE" && guideButton && !guideButton.disabled && current?.guide){
+      if(false && guideButton && !guideButton.disabled && current?.guide){
         const pop=root.querySelector('[data-role="guide-popover"]');
         if(pop){
           if(pop.hidden){
@@ -2868,14 +2869,14 @@ export function createReaderDomAdapter({
     // alone can display its existing button.
     const guideControl=root.querySelector('[data-role="guide-button"]');
     if(guideControl){
-      guideControl.hidden=mode!=="SIMPLE";
-      guideControl.disabled=mode!=="SIMPLE"||!current.guide;
-      guideControl.setAttribute("aria-hidden",String(mode!=="SIMPLE"));
-      guideControl.tabIndex=mode==="SIMPLE"?0:-1;
+      guideControl.hidden=true;
+      guideControl.disabled=true;
+      guideControl.setAttribute("aria-hidden","true");
+      guideControl.tabIndex=-1;
     }
     const guideShort=root.querySelector('[data-role="guide-short"]');
     if(guideShort){
-      guideShort.hidden=mode!=="SIMPLE";
+      guideShort.hidden=true;
       guideShort.textContent=current.guide?.moment ? "OPEN" : "RUBRICS";
     }
 
