@@ -208,6 +208,19 @@ body[data-experience=discover] .info{min-height:0}
 footer details{margin-top:4px}
 footer summary{cursor:pointer;color:var(--muted);font:12px/1.5 system-ui,sans-serif}
 footer details p{font:12px/1.55 system-ui,sans-serif;color:var(--muted);margin:12px 0 2px}
+/* M5: source-scoped close photographic viewpoint navigation. */
+.m5-viewpoints{display:flex;gap:7px;margin:2px 0 9px;overflow-x:auto;scrollbar-width:thin;padding-bottom:3px}
+.m5-viewpoints[hidden],.m5-close-stage[hidden]{display:none!important}
+.m5-viewpoints button{flex:0 0 auto;min-height:42px;padding:8px 11px;border:1px solid #45525e;border-radius:7px;background:#111922;color:var(--muted);font:12px system-ui,sans-serif}
+.m5-viewpoints button[aria-pressed=true]{color:var(--gold);border-color:var(--gold);background:#292b2b}
+.m5-close-stage{background:#080d13;padding:8px;min-height:230px}
+.m5-close-viewport{height:min(62dvh,600px);overflow:auto;overscroll-behavior:contain;touch-action:pan-x pan-y;text-align:center}
+.m5-close-viewport img{display:block;width:100%;height:auto;max-width:none;margin:0 auto}
+.m5-close-actions{display:flex;align-items:center;gap:7px;margin:7px 0}
+.m5-close-actions button,#m5-retry{min-width:44px;min-height:44px;border:1px solid #4b5762;color:var(--text);background:#17202a;border-radius:6px;padding:8px;font:14px system-ui,sans-serif}
+#m5-zoom-level{font:12px system-ui,sans-serif;color:var(--muted)}
+#m5-close-notice{font:11px/1.5 system-ui,sans-serif;color:var(--muted);margin:7px 2px}
+@media(max-width:600px){.m5-viewpoints button{font-size:11px;min-height:42px}.m5-close-viewport{height:min(55dvh,460px)}}
 /* M4.3 photographic visitor: portrait header prioritises the actual picture. */
 @media(max-width:600px){
  body:not(.embedded) header{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:4px 0 11px}
@@ -256,6 +269,7 @@ footer details p{font:12px/1.55 system-ui,sans-serif;color:var(--muted);margin:1
 <button type="button" data-photo-mode="brompton" aria-pressed="false">Brompton · 360°</button>
 <button type="button" data-photo-mode="newman" aria-pressed="false">Dublin · 360°</button>
 </div>
+<nav id="m5-viewpoint-nav" class="m5-viewpoints" aria-label="Closer photographic viewpoints" hidden></nav>
 <div class="photo-shell">
 <div class="panorama-stage" id="panorama-stage" hidden tabindex="0" role="region" aria-label="Genuine fixed-position 360-degree photographic interior">
 <div id="panorama-mount" aria-live="off"></div>
@@ -277,6 +291,19 @@ footer details p{font:12px/1.55 system-ui,sans-serif;color:var(--muted);margin:1
 <div class="photo-failed" role="status">The source photograph could not load. You can still select objects using the list below, or <a href="https://commons.wikimedia.org/wiki/File:The_High_Altar_-_geograph.org.uk_-_6213275.jpg" target="_blank" rel="noopener">open the original photograph</a>.</div>
 <div id="hotspots"></div>
 </div>
+</div>
+<div class="m5-close-stage" id="m5-close-stage" hidden>
+<div class="m5-close-viewport" id="m5-close-viewport" tabindex="0" aria-label="Pan the original close photograph">
+<img id="m5-close-photo" alt="" decoding="async">
+</div>
+<div class="m5-close-actions" role="group" aria-label="Adjust close photograph">
+<button type="button" data-m5-zoom="in" aria-label="Enlarge photograph">+</button>
+<button type="button" data-m5-zoom="out" aria-label="Reduce photograph">−</button>
+<button type="button" data-m5-zoom="reset" aria-label="Reset photograph">↺</button>
+<span id="m5-zoom-level">100%</span>
+</div>
+<p id="m5-close-notice" role="status">This is a distinct original photograph, not simulated walking.</p>
+<button type="button" id="m5-retry" hidden>Retry photograph</button>
 </div>
 <div class="inspection-stage" id="inspection-stage" hidden>
 <div class="inspection-nav"><button type="button" id="return-to-church">← Return to Brompton</button><span id="inspection-type">Separate reference photograph</span></div>
