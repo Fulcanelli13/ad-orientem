@@ -19,18 +19,20 @@
     },
     "livingChurchP4": {
       "pr": 1406,
-      "sha": "04a2caffbec08cc6185a56085340643304ec4b07"
+      "sha": "b2a83094ebe62be42e40ef1e288c8434fc91f982",
+      "snapshotIncludes": "CANON_EDITORIAL_READER_AND_PIUS_CANONICAL_CATECHISM_TWO_PARENT_RECONCILIATION"
     },
     "characterStage": {
       "pr": 1404,
-      "sha": "7c1869616aae8bf9b666730277dee964ca476822",
-      "snapshotIncludes": "CANON_FOLIO_FORMATION_SOURCE_REFERRAL_CONTRACT_NO_PUBLIC_ANSWERS"
+      "sha": "7603c175164f918884f749d76654c214f14aa969",
+      "snapshotIncludes": "CANON_FOLIO_SOURCE_MIRROR_27_RESEARCH_FILES_FOUR_FLAG_ONLY_NOT_RELEASE_APPROVED"
     },
     "formationResearch": {
       "repo": "Fulcanelli13/folio-core",
       "pr": 36,
-      "sha": "0709b2f2b43307c6ab6fef7b08bedfe07095513d",
-      "state": "DRAFT_UNMERGED_CI_NOT_CERTIFIED",
+      "sha": "a4b0257d9d787e8f715557deac0c930b7fd98555",
+      "p3MirrorOwnerSnapshot": "44f00c1272ce3ee40b65bab31753783ea9186915",
+      "state": "DRAFT_UNMERGED_SOURCE_CI_FAILED_ZERO_PUBLIC_APPROVALS",
       "neverAutoCopyResearchAnswers": true
     }
   },
@@ -117,12 +119,12 @@
     },
     {
       "path": ".github/workflows/living-church-character-p3.yml",
-      "gitBlobSha": "1eddb78d7ba78d50a6b4bd1fbbc5739f80f9340f",
+      "gitBlobSha": "85b7e2799e36c9d1dd8eda7f26af38b230595524",
       "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
     },
     {
       "path": "data/learn/living-church-canon-formation-referral-contract.v1.json",
-      "gitBlobSha": "81f579b442816a01d5c9ed913840c186e7e02747",
+      "gitBlobSha": "3bd6e8592c20f3652069646a7ca6d0e527f36345",
       "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
     },
     {
@@ -132,8 +134,28 @@
     },
     {
       "path": "tests/living-church-canon-source-contract.mjs",
-      "gitBlobSha": "38cb9e67927c84c27f09e2d8be5211de5f2884fc",
+      "gitBlobSha": "3da52f526df197e79acb57a9813b3e7285884e4b",
       "owner": "P3_CANON_FORMATION_SOURCE_CONTRACT_EXACT"
+    },
+    {
+      "path": "data/learn/formation-canon-migration-provenance-20261018.v1.json",
+      "gitBlobSha": "b6e37ed0f0865423dd95d1f86213be2d30a97843",
+      "owner": "P3_FOLIO_DRAFT_RESEARCH_MIRROR_EXACT_NO_PUBLIC_APPROVAL"
+    },
+    {
+      "path": "src/learn/formation-canon-question-catalog.mjs",
+      "gitBlobSha": "4db5ecb4739f7ad56594e8cfba3e5ef58bc267f2",
+      "owner": "P3_FOLIO_DRAFT_RESEARCH_MIRROR_EXACT_NO_PUBLIC_APPROVAL"
+    },
+    {
+      "path": "src/learn/living-church-canon-research-reader.mjs",
+      "gitBlobSha": "bac553139ff4939e9d4d0a103a20d205ac8926c4",
+      "owner": "P3_FOLIO_DRAFT_RESEARCH_MIRROR_EXACT_NO_PUBLIC_APPROVAL"
+    },
+    {
+      "path": "src/learn/living-church-canon-dialogue-ui.mjs",
+      "gitBlobSha": "7f0385d2cdb78ef347d306aab987d1571459ef66",
+      "owner": "P3_FOLIO_DRAFT_RESEARCH_MIRROR_EXACT_NO_PUBLIC_APPROVAL"
     }
   ],
   "layeredAdaptations": [
@@ -165,7 +187,9 @@
     "fullP0P4MainBranchConvergenceApproved": false,
     "massReaderParityCertifiedForMerge": false,
     "canonFolioFormationAnswersImportedAndReviewed": false,
-    "canonResearchSourceCIAndCanonicalOwnershipVerified": false
+    "canonResearchSourceCIAndCanonicalOwnershipVerified": false,
+    "canonUnpublishedJsonAssetsExcludedFromPublicStaticDeploy": false,
+    "originalFolioSourceEditorialSignoff": false
   },
   "scopedReadiness": {
     "sourceOwnerReconciled": true,
@@ -209,5 +233,12 @@
       "pr": 36,
       "state": "DRAFT_CI_UNVERIFIED_534_HISTORICAL_CANDIDATES_ZERO_PUBLIC_APPROVALS"
     }
-  ]
+  ],
+  "sourceMirror": {
+    "migrationManifest": "data/learn/formation-canon-migration-provenance-20261018.v1.json",
+    "draftSourceFileCount": 27,
+    "publicStaticAccessVerifiedBlocked": false,
+    "exactOriginalGitBlobsRequired": true,
+    "publishableAnswerCount": 0
+  }
 }
