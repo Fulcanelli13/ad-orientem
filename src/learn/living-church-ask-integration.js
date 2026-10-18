@@ -22,7 +22,7 @@ export function livingChurchAskReviewEnabled(win=globalThis){
  const p=new URLSearchParams(win?.location?.search||"");
  return p.get("aoVisibleMassReview")==="1"&&p.get("aoLivingChurchReview")==="1";
 }
-export function createLivingChurchAskIntegration(win=globalThis,{frame,returnButton,survey}={}){
+export function createLivingChurchAskIntegration(win=globalThis,{frame,returnButton,survey,onNativeOpen=()=>{},onNativeReturn=()=>{}}={}){
  if(!frame||!returnButton||survey?.schema!=="AO_ASK_CHURCH_APP_ROUTE_SURVEY_V1")
   throw Error("Original native reviewer and Ask the Church source survey required");
  let guide=null,opening=false,pending=false,suspended=null,disposed=false;
@@ -110,6 +110,7 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
     targetId,momentKey:link?.guideId||null,sourceRef:targetId===catechismRoute?sourceRef:null,
     context:selection.context,readCount:selection.readCount
    });
+   try{onNativeOpen({routeId:targetId,sourceRef:suspended.sourceRef});}catch{}
    returnButton.hidden=false;
    return Object.freeze({ok:true,surface:"learn",id:targetId,...(targetId===catechismRoute?{sourceRef}: {})});
   }finally{opening=false;}
@@ -142,6 +143,7 @@ export function createLivingChurchAskIntegration(win=globalThis,{frame,returnBut
    source.view.AO_VISIBLE_MASS_HOTSPOT_PILOT?.focusContext?.();
    try{frame.focus?.({preventScroll:true});}catch{}
    suspended=null;
+   try{onNativeReturn({routeId:owner===win?.AO_TRADITIONAL_CATECHISM?catechismRoute:supported});}catch{}
    return Object.freeze({ok:true,scenePreserved:true});
   }finally{pending=false;}
  }
