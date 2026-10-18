@@ -1,5 +1,6 @@
 import {validatedPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {correct1962ProperEditorialReferences} from "./1962-proper-editorial-corrections.js";
+import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "./1962-ps113-alleluia-editorial.js";
 import {inspect1962PrefaceSelection} from "./1962-preface-decision.js";
 const REQUIRED_SLOTS = Object.freeze([
   "INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
@@ -296,11 +297,27 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
       })})
     :chantSlot;
 
-  const missing=REQUIRED_SLOTS.filter(slot=>!["READY","NOT_APPLICABLE"].includes(slots[slot].status));
+  // Source proof and all frozen source text were validated ABOVE. Apply
+  // the one authorised English readability improvement only to output rows.
+  const presented={...slots};
+  let editorialApplied=false;
+  for(const id of ["GRADUAL","ALLELUIA_TRACT_SEQUENCE"]){
+    const entry=slots[id];
+    if(entry?.status!=="READY")continue;
+    const rows=project1962Pent21AlleluiaDisplayRows(
+      proper,entry.data.paragraphs,{language:locale});
+    if(rows===entry.data.paragraphs)continue;
+    editorialApplied=true;
+    presented[id]=Object.freeze({...entry,
+      data:Object.freeze({...entry.data,paragraphs:rows})});
+  }
+  const missing=REQUIRED_SLOTS.filter(slot=>!["READY","NOT_APPLICABLE"].includes(presented[slot].status));
   return Object.freeze({
     schema:"ao-reader-proper-slots-v1",
     sourcePath:proper.sourcePath??null,
-    slots:Object.freeze(slots),
+    ...(editorialApplied?{displayTranslationCorrections:
+      Object.freeze([PS113_PENT21_ENGLISH_EDITORIAL])}:{}),
+    slots:Object.freeze(presented),
     missing:Object.freeze(missing),
     ready:missing.length===0,
   });

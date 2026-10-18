@@ -3,6 +3,7 @@
 import {calendarMassColour} from "./colour-projection.js";
 import {select1962CommemorationsForMassForm} from "../mass/1962-commemoration-form-source.js";
 import {correct1962ProperEditorialReferences} from "../mass/1962-proper-editorial-corrections.js";
+import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "../mass/1962-ps113-alleluia-editorial.js";
 
 const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 const pair=(value,language)=>({
@@ -78,7 +79,14 @@ export function assessPrintableProper(resolved,{language="en",massForm=null}={})
     resolved.day.commemorations.length>0&&selected?.status!=="CERTIFIED")
     return {ok:false,reason:"Form-specific commemoration rules not yet source-certified"};
   const p=correct1962ProperEditorialReferences(selected?.proper??raw);
-  return assessResolvedProperTextSections(p,{language});
+  const audit=assessResolvedProperTextSections(p,{language});
+  if(!audit.ok)return audit;
+  const sections=project1962Pent21AlleluiaDisplayRows(
+    p,audit.sections,{language});
+  return sections===audit.sections?audit:{
+    ...audit,sections,displayTranslationCorrections:
+      Object.freeze([PS113_PENT21_ENGLISH_EDITORIAL]),
+  };
 }
 export function renderPrintableProperHtml(resolved,{language="en",massForm=null}={}){
   const audit=assessPrintableProper(resolved,{language,massForm});
