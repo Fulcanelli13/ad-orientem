@@ -326,6 +326,30 @@
       "impact": "ENGLISH_EDITORIAL_ONLY",
       "reference": "2013 Red Missal, printed page 13 (PDF page 14)",
       "decision": "Repair English vocative while retaining the pre-existing Latin accent source correction."
+    },
+    {
+      "id": "RED-EN-2013-W4-02",
+      "blockId": "AO.SM.B027",
+      "cueId": "AO.SM.C0100",
+      "field": "english",
+      "from": "Who together with the Father and the Son",
+      "to": "Who, together with the Father and the Son,",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p.21 / PDF p.22",
+      "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED",
+      "decision": "Restore natural clause punctuation and remove English repetition, preserving Latin simul adoratur and source cue IDs."
+    },
+    {
+      "id": "RED-EN-2013-W4-03",
+      "blockId": "AO.SM.B027",
+      "cueId": "AO.SM.C0101",
+      "field": "english",
+      "from": "is together adored",
+      "to": "is adored",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p.21 / PDF p.22",
+      "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED",
+      "decision": "Restore natural clause punctuation and remove English repetition, preserving Latin simul adoratur and source cue IDs."
     }
   ],
   "englishEditorialPolicy": "2013 Red Missal preferred English baseline; 1962 printed Latin retains normative authority; reviewed exact-cue adaptations only; preserve immutable donors."
