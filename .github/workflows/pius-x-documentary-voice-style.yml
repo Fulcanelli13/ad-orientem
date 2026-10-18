@@ -6,6 +6,8 @@ on:
     paths:
       - data/learn/pius-x-documentary-voice-style.v1.json
       - data/learn/pius-x-period-catholic-prose-controls.v1.json
+      - data/learn/pius-x-prepapal-style-batch2.v1.json
+      - tests/pius-x-prepapal-style-batch2.mjs
       - docs/product/PIUS-X-DOCUMENTARY-VOICE-STYLE-V1.md
       - tests/pius-x-documentary-voice-style.mjs
       - .github/workflows/pius-x-documentary-voice-style.yml
@@ -13,6 +15,8 @@ on:
     paths:
       - data/learn/pius-x-documentary-voice-style.v1.json
       - data/learn/pius-x-period-catholic-prose-controls.v1.json
+      - data/learn/pius-x-prepapal-style-batch2.v1.json
+      - tests/pius-x-prepapal-style-batch2.mjs
       - docs/product/PIUS-X-DOCUMENTARY-VOICE-STYLE-V1.md
       - tests/pius-x-documentary-voice-style.mjs
       - .github/workflows/pius-x-documentary-voice-style.yml
@@ -27,4 +31,6 @@ jobs:
         with:
           node-version: '22'
       - name: Validate documentary style without any answer-owner changes
-        run: node tests/pius-x-documentary-voice-style.mjs
+        run: |
+          node tests/pius-x-documentary-voice-style.mjs
+          node tests/pius-x-prepapal-style-batch2.mjs
