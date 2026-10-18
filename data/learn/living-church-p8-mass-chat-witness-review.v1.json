@@ -1,0 +1,142 @@
+{
+  "schema": "AO_LIVING_CHURCH_MASS_CHAT_WITNESS_REVIEW_V1",
+  "date": "2026-10-18",
+  "sourceOfTruth": "data/learn/mass-formation-campion.v1.json",
+  "claimOwner": "src/learn/mass-formation.js",
+  "purpose": "Editorial review queue for passage-level witnesses and permission to compose fresh chat explanations. NOT a source of doctrinal text.",
+  "publication": "RESEARCH_REVIEW_ONLY",
+  "newChatSynthesisAuthorized": false,
+  "studyReleaseManifest": "data/learn/mass-explorer-approved-studies.v1.json",
+  "passageReleaseManifest": "data/learn/mass-formation-approved-passages.v1.json",
+  "existingFormationP1ClaimCount": 24,
+  "reviewRubric": [
+    "Compare complete original claimed sentence with the actual cited witness, not merely a source index",
+    "Record exact section/page/edition with source type and the relevant 1962 rubric or doctrinal scope",
+    "Separate normative liturgical directions from explanatory catechesis and local custom",
+    "Verify bilingual claims and whether a paraphrase is doctrinally faithful",
+    "Document editorial and rights approval before allowing any new generative paraphrase",
+    "Do not modify the LIVE/SIMPLE/MISSAL reader and do not promote an unapproved research draft"
+  ],
+  "stages": [
+    {
+      "id": "MF01",
+      "claimIds": [
+        "MF01-C01",
+        "MF01-C02",
+        "MF01-C03"
+      ],
+      "publicationOfExistingClaim": "FORMATION_P1_SOURCE_BACKED",
+      "sourceWitnessLevel": "DOCUMENT_REFERENCES_ONLY",
+      "exactPassageWitnessesApproved": 0,
+      "conversationalParaphraseApproved": false,
+      "reviewer": null,
+      "reviewedOn": null,
+      "nextAction": "Collate precise original source loci and bilingual claims, then request editorial sign-off"
+    },
+    {
+      "id": "MF02",
+      "claimIds": [
+        "MF02-C01",
+        "MF02-C02",
+        "MF02-C03"
+      ],
+      "publicationOfExistingClaim": "FORMATION_P1_SOURCE_BACKED",
+      "sourceWitnessLevel": "DOCUMENT_REFERENCES_ONLY",
+      "exactPassageWitnessesApproved": 0,
+      "conversationalParaphraseApproved": false,
+      "reviewer": null,
+      "reviewedOn": null,
+      "nextAction": "Collate precise original source loci and bilingual claims, then request editorial sign-off"
+    },
+    {
+      "id": "MF03",
+      "claimIds": [
+        "MF03-C01",
+        "MF03-C02",
+        "MF03-C03"
+      ],
+      "publicationOfExistingClaim": "FORMATION_P1_SOURCE_BACKED",
+      "sourceWitnessLevel": "DOCUMENT_REFERENCES_ONLY",
+      "exactPassageWitnessesApproved": 0,
+      "conversationalParaphraseApproved": false,
+      "reviewer": null,
+      "reviewedOn": null,
+      "nextAction": "Collate precise original source loci and bilingual claims, then request editorial sign-off"
+    },
+    {
+      "id": "MF04",
+      "claimIds": [
+        "MF04-C01",
+        "MF04-C02",
+        "MF04-C03"
+      ],
+      "publicationOfExistingClaim": "FORMATION_P1_SOURCE_BACKED",
+      "sourceWitnessLevel": "DOCUMENT_REFERENCES_ONLY",
+      "exactPassageWitnessesApproved": 0,
+      "conversationalParaphraseApproved": false,
+      "reviewer": null,
+      "reviewedOn": null,
+      "nextAction": "Collate precise original source loci and bilingual claims, then request editorial sign-off"
+    },
+    {
+      "id": "MF05",
+      "claimIds": [
+        "MF05-C01",
+        "MF05-C02",
+        "MF05-C03"
+      ],
+      "publicationOfExistingClaim": "FORMATION_P1_SOURCE_BACKED",
+      "sourceWitnessLevel": "DOCUMENT_REFERENCES_ONLY",
+      "exactPassageWitnessesApproved": 0,
+      "conversationalParaphraseApproved": false,
+      "reviewer": null,
+      "reviewedOn": null,
+      "nextAction": "Collate precise original source loci and bilingual claims, then request editorial sign-off"
+    },
+    {
+      "id": "MF06",
+      "claimIds": [
+        "MF06-C01",
+        "MF06-C02",
+        "MF06-C03"
+      ],
+      "publicationOfExistingClaim": "FORMATION_P1_SOURCE_BACKED",
+      "sourceWitnessLevel": "DOCUMENT_REFERENCES_ONLY",
+      "exactPassageWitnessesApproved": 0,
+      "conversationalParaphraseApproved": false,
+      "reviewer": null,
+      "reviewedOn": null,
+      "nextAction": "Collate precise original source loci and bilingual claims, then request editorial sign-off"
+    },
+    {
+      "id": "MF07",
+      "claimIds": [
+        "MF07-C01",
+        "MF07-C02",
+        "MF07-C03"
+      ],
+      "publicationOfExistingClaim": "FORMATION_P1_SOURCE_BACKED",
+      "sourceWitnessLevel": "DOCUMENT_REFERENCES_ONLY",
+      "exactPassageWitnessesApproved": 0,
+      "conversationalParaphraseApproved": false,
+      "reviewer": null,
+      "reviewedOn": null,
+      "nextAction": "Collate precise original source loci and bilingual claims, then request editorial sign-off"
+    },
+    {
+      "id": "MF08",
+      "claimIds": [
+        "MF08-C01",
+        "MF08-C02",
+        "MF08-C03"
+      ],
+      "publicationOfExistingClaim": "FORMATION_P1_SOURCE_BACKED",
+      "sourceWitnessLevel": "DOCUMENT_REFERENCES_ONLY",
+      "exactPassageWitnessesApproved": 0,
+      "conversationalParaphraseApproved": false,
+      "reviewer": null,
+      "reviewedOn": null,
+      "nextAction": "Collate precise original source loci and bilingual claims, then request editorial sign-off"
+    }
+  ]
+}
