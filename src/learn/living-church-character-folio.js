@@ -5,6 +5,7 @@
  * duplication of the original Visible Mass/Ask/Catechism owners.
  */
 import {createAskChurchObjectiveEngine} from "./ask-church-objective-engine.js";
+import {loadOriginalCatechismReferralIndex} from "./living-church-catechism-source.js";
 import {visibleMassResearchMomentLinks} from "../../previews/visible-mass-3d/photographic-published-explorer-handoff.mjs";
 export const LIVING_CHURCH_FOLIO_VERSION="AO_LIVING_CHURCH_P3_FOLIO_V1";
 const BANK_URL=new URL("../../data/learn/living-church-character-assets.v1.json",import.meta.url);
@@ -30,7 +31,8 @@ const copy={
   noLinks:"No certified object-to-moment relationship is available here.",
   return:"Return to the photograph",piusSource:"PX1912 · 433 original Catechism questions",
   sourceQuestion:"Open original question",new:"Change objective",unsupported:"Source owner rejected the request",
-  topic:"Choose a more specific objective",shown:"Original source · research review only"
+  topic:"Choose a more specific objective",shown:"Original source · research review only",
+  catechismSearch:"Find an original Catechism question",catechismFind:"Original 1912 Catechism: select a question to read its canonical answer in Ad Orientem. English question titles are retained verbatim from the witness index.",catechismNoResult:"No matching question in the original 433-question index.",catechismSearching:"Search the original English question titles…",catechismOpen:"Read original answer",catechismReview:"Not a historical conversation: each answer is opened in the existing St Pius X Catechism reader."
  },
  fr:{
   label:"L’Église vivante",status:"Aperçu documentaire · non publié",guide:"Choisir un guide",
@@ -50,7 +52,8 @@ const copy={
   noLinks:"Aucune relation source-vers-moment n’est confirmée ici.",
   return:"Revenir à la photographie",piusSource:"PX1912 · 433 questions originales",
   sourceQuestion:"Ouvrir la question originale",new:"Changer d’objectif",unsupported:"La source a refusé la requête",
-  topic:"Précisez votre objectif",shown:"Source originale · recherche non publiée"
+  topic:"Précisez votre objectif",shown:"Source originale · recherche non publiée",
+  catechismSearch:"Chercher une question du Catéchisme original",catechismFind:"Catéchisme original de 1912 : choisissez une question pour consulter sa réponse dans Ad Orientem. Les titres anglais sont conservés tels qu’ils figurent dans l’index de référence.",catechismNoResult:"Aucune question trouvée dans l’index original des 433 questions.",catechismSearching:"Rechercher parmi les titres anglais d’origine…",catechismOpen:"Lire la réponse originale",catechismReview:"Il ne s’agit pas d’une conversation historique : la réponse est ouverte dans le Catéchisme existant."
  }
 };
 const CSS=`
@@ -89,8 +92,8 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
  const base=integration.sourceContext?.();
  if(!base?.context?.objectId||base.context.scene?.sceneId!=="BROMPTON_ALTAR_2019_B")
   throw Error("Select an original source-owned altar object first");
- const [bankResponse,pilotResponse]=await Promise.all([
-  win.fetch(BANK_URL.href),win.fetch(PILOT_URL.href)]);
+ const [bankResponse,pilotResponse,catechismIndex]=await Promise.all([
+  win.fetch(BANK_URL.href),win.fetch(PILOT_URL.href),loadOriginalCatechismReferralIndex(win)]);
  if(!bankResponse.ok||!pilotResponse.ok)throw Error("Original sprite or VMQ registry missing");
  const [bank,pilot]=await Promise.all([bankResponse.json(),pilotResponse.json()]);
  if(bank?.schema!=="AO_LIVING_CHURCH_P3_SPRITE_BANK_V1"||
@@ -116,7 +119,7 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
  panel.append(kicker,heading,status,prompt,disclosure,choices,form,notice);
  root.append(veil,image,nav,closeButton,panel);host.append(root);
  const engine=createAskChurchObjectiveEngine(survey,{lang:base.context.lang});
- let guide="sacristan",emotion="welcoming",mode="home",closed=false,message="";
+ let guide="sacristan",emotion="welcoming",mode="home",closed=false,message="",catechismQuery="",openingNative=false;
  const objects=new Map(pilot.objects.map(x=>[x.object_id,x]));
  const questions=new Map(pilot.questions.map(x=>[x.id,x]));
  const snapshot=()=>integration.sourceContext?.()?.context||null;
@@ -148,6 +151,15 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
   if(ok){hide();return true;}
   message=L().fallback;emotion="thoughtful";render();return false;
  }
+ async function openCatechismQuestion(question){
+  if(closed||openingNative||guide!=="pius-x"||!catechismIndex.hasRef(question?.ref))return;
+  openingNative=true;emotion="thoughtful";message="";render();
+  try{
+   const outcome=await integration.nativeOpen("learn.catechism",{sourceRef:question.ref});
+   if(outcome?.ok){hide();return;}
+   message=L().fallback+" ["+id(outcome?.code)+"]";emotion="grave";
+  }finally{openingNative=false;render();}
+ }
  async function openMass(){
   if(closed)return;
   emotion="thoughtful";message="";render();
@@ -174,6 +186,7 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
   closeButton.textContent=words.close;
   input.placeholder=words.placeholder;submit.textContent=words.submit;
   form.hidden=mode==="questions"||mode==="moments";
+  input.placeholder=mode==="catechism"?words.catechismSearching:words.placeholder;
   choices.replaceChildren();
   for(const item of bank.chars){
    let b=nav.querySelector('[data-persona="'+item.id+'"]');
@@ -185,13 +198,22 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
    prompt.textContent=guide==="sacristan"?words.sacristanIntro:guide==="canon"?words.understand:words.piusIntro;
    addChoice(words.openSource,()=>{mode="questions";emotion="explaining";render();},{primary:guide==="sacristan"});
    addChoice(words.mass,enterMoment,{primary:guide==="canon"});
-   addChoice(guide==="pius-x"?words.study:words.objectives,()=>beginObjectives(guide==="pius-x"?"understand":null),{primary:guide==="pius-x"});
+   if(guide==="pius-x")addChoice(words.catechismSearch,()=>{mode="catechism";emotion="explaining";render();},{primary:true});
+   addChoice(guide==="pius-x"?words.study:words.objectives,()=>beginObjectives(guide==="pius-x"?"understand":null));
    if(guide==="sacristan")addChoice(words.canon,()=>selectGuide("canon"));
    if(guide==="canon")addChoice(words.pius,()=>selectGuide("pius-x"));
   }else if(mode==="questions"){
    prompt.textContent=words.questionIntro;
    const listed=pilot.questions.filter(q=>q.primary_object_id===c?.objectId).slice(0,12);
    for(const q of listed)addChoice((q.question?.[lang]||q.question?.en||q.id)+" · "+q.id,()=>showOriginalQuestion(q.id));
+   addChoice(words.back,()=>{mode="home";render();});
+  }else if(mode==="catechism"){
+   prompt.textContent=words.catechismFind;
+   disclosure.textContent=words.piusDisclosure+" "+words.catechismReview;
+   const matching=catechismQuery?catechismIndex.search(catechismQuery,{limit:12}):[];
+   if(catechismQuery&&!matching.length)addChoice(words.catechismNoResult,()=>{}, {disabled:true});
+   for(const item of matching)addChoice(item.ref+" · "+item.stem,
+    ()=>{void openCatechismQuestion(item);},{primary:true,disabled:openingNative});
    addChoice(words.back,()=>{mode="home";render();});
   }else if(mode==="moments"){
    prompt.textContent=words.understand;
@@ -237,6 +259,9 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
  form.addEventListener("submit",e=>{
   e.preventDefault();const v=input.value.trim();input.value="";
   if(!v)return;
+  if(mode==="catechism"){
+   catechismQuery=v;emotion="explaining";message="";render();return;
+  }
   const result=engine.interpret(v);
   if(result.kind==="clarify"){message=words().fallback;emotion="thoughtful";}
   else{mode="objectives";emotion="explaining";message="";}
@@ -248,7 +273,9 @@ export async function mountLivingChurchCharacterFolio(win=globalThis,{host,frame
   status:()=>Object.freeze({version:LIVING_CHURCH_FOLIO_VERSION,
    open:!root.hidden&&!closed,guide,emotion,mode,
    objective:engine.snapshot(),sourceObject:current()?.objectId||null,
-   questionCount:questions.size,assetReady:!image.hidden&&Boolean(image.src),
+   questionCount:questions.size,catechismQuestionCount:catechismIndex.status().count,
+   catechismSearchResultCount:mode==="catechism"?catechismIndex.search(catechismQuery).length:null,
+   assetReady:!image.hidden&&Boolean(image.src),
    publication:"REVIEW_ONLY_NOT_HISTORICAL_SPEECH",nativeHandoff:"P2_SOURCE_GATED"})
  });
 }
