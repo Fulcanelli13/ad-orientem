@@ -9,7 +9,8 @@ files={
 "newman360":"Newman University Church Interior 360x180, Dublin, Ireland - Diliff.jpg",
 "newman_altar1":"Dublin Newman University Church Interior Choir Main Altar 1.jpg",
 "newman_altar2":"Dublin Newman University Church Interior Choir Main Altar 2.jpg",
-"newman_apse":"Dublin Newman University Church Interior Choir Apse 1.jpg"
+"newman_apse":"Dublin Newman University Church Interior Choir Apse 1.jpg",
+"brompton_still":"The High Altar - geograph.org.uk - 6213275.jpg"
 }
 out=Path("dist/visible-mass/panorama-sources");out.mkdir(parents=True,exist_ok=True)
 metadata={}
