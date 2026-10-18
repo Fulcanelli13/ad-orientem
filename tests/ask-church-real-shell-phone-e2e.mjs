@@ -44,7 +44,7 @@ try{
   assert.equal(await guide.isVisible(),true,'guide not mounted into live shell');
 
   async function pathFromText(userMessage,cardContains){
-   await guide.getByRole('button',{name:/Start again|Recommencer/}).click();
+   await guide.getByRole('button',{name:'Start a new objective'}).click();
    await input.fill(userMessage);
    await guide.locator('button[type=submit]').click();
    await guide.locator('.ac-card').filter({hasText:cardContains}).first().waitFor();
@@ -76,7 +76,7 @@ try{
   await pathFromText('I want to begin praying','Spiritual Life');
   await openCard('Spiritual Life',()=>globalThis.AO_SPIRITUAL_LIFE_V1?.status?.()?.open===true,'Spiritual Life');
 
-  await guide.getByRole('button',{name:'Start again'}).click();
+  await guide.getByRole('button',{name:'Start a new objective'}).click();
   await guide.getByRole('button',{name:'Français'}).click();
   assert.ok(await guide.locator('.ac-bubble').first().innerText().then(s=>s.includes('Bienvenue')),'French copy absent');
   await guide.getByRole('button',{name:'English'}).click();
