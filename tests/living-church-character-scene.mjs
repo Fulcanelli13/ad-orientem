@@ -115,6 +115,21 @@ try{
   await expectSprite("sacristan_explaining");
   const scene=await page.evaluate(()=>window.AO_VISIBLE_MASS_LIVING_CHURCH_P1.status().context.scene);
   assert.deepEqual(scene,original,"guide switches must retain original photograph and camera pose");
+  // Integrate the ORIGINAL Ask the Church seven-family objective director.
+  await page.locator("#lc-stage [data-objectives]").click();
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Defend the faith"}).click();
+  await page.locator("#lc-stage .lc-actions").getByRole("button",
+    {name:"A discussion about the Bible or Protestant objections"}).click();
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().selectedObjective),"protestant");
+  assert.equal(await page.locator("#lc-stage").getByText("learn.apologetics").count(),0);
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Consult St Pius X"}).click();
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"pius-x");
+  // Free input also follows PR #1391's canonical objective engine, not only old keywords.
+  await page.locator("#lc-stage .lc-ask input").fill("I want to understand the Latin Mass");
+  await page.locator("#lc-stage .lc-ask button").click();
+  await page.waitForFunction(()=>AO_LIVING_CHURCH_P2.status().selectedObjective==="mass");
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Consult Monsieur le Chanoine"}).click();
+  assert.equal(await page.evaluate(()=>AO_LIVING_CHURCH_P2.status().guide),"canon");
   await page.locator("#lc-stage [data-close]").click();
   assert.equal(await page.evaluate(()=>window.AO_LIVING_CHURCH_P2.status().open),false);
   assert.equal(await page.locator("#photo-canvas").count(),1);
