@@ -627,6 +627,28 @@ try{
       "LIVE rubric text lost source provenance or misrepresented an observation");
     assert.ok(rubricEvidence.some(x=>lang==="fr"?/Le prêtre/.test(x.text):/The priest/.test(x.text)),
       "LIVE rubric language does not follow the reader preference");
+    // Preserve direct visual evidence for human acceptance of the actual
+    // 65-card Host/Chalice rubrics, not only the earlier generic Credo shot.
+    if(width<=390){
+      for(const [name,cueId] of [
+        ["host","AO.SM.C0174"],["chalice","AO.SM.C0181"],
+      ]){
+        const selected=await page.evaluate(id=>{
+          const api=window.__AO_PHONE_PREVIEW;
+          const card=api.model.cards.find(c=>c.paragraphs.some(p=>
+            (p.sourceCueIds??[]).includes(id)));
+          if(!card)return null;
+          api.showSequence(card.sequence);
+          return card.title;
+        },cueId);
+        assert.ok(selected,"Source-owned curated elevation card absent: "+cueId);
+        await page.evaluate(()=>new Promise(resolve=>
+          requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+        await page.screenshot({path:resolve(out,
+          "live-65-inline-"+name+"-"+lang+"-"+width+".png"),
+          fullPage:false,animations:"disabled"});
+      }
+    }
     await page.screenshot({path:resolve(out,lang+"-"+width+(secondConfiteor?"-with-local-confiteor":"")+"-credo.png"),fullPage:false});
     assert.deepEqual(errors,[],"Curated mobile browser JS errors");
     await context.close();
