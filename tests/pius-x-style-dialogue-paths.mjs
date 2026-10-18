@@ -4,6 +4,7 @@ const load=async path=>JSON.parse(await readFile(new URL(path,import.meta.url),"
 const cases=await load("../data/learn/pius-x-style-dialogue-paths.v1.json");
 const voices=await load("../data/learn/pius-x-documentary-voice-style.v1.json");
 const pre=await load("../data/learn/pius-x-prepapal-style-batch2.v1.json");
+const review=await load("../data/learn/pius-x-unified-documentary-voice-review.v1.json");
 assert.equal(cases.schema,"AO_PIUS_X_STYLE_DIALOGUE_PATHS_V1");
 assert.equal(cases.owner,"STYLE_ONLY_REVIEW");
 assert.equal(cases.publication,"DRAFT_NOT_RUNTIME");
@@ -56,7 +57,7 @@ for(const scenario of cases.cases){
   assert.ok(availableSprites.has(t.sprite),"Approved sprite only");
   for(const lang of ["en","fr"]){
    assert.ok(t.visitor[lang].length>=20,"Missing visitor prompt");
-   assert.ok(t.reply[lang].length>=65,"Reply too short");
+   assert.ok(t.reply[lang].trim().length>0,"Missing drafted reply; no arbitrary prose-length minimum");
    assert.ok(!/\[(?:source|quote|TODO|citation)\]/i.test(t.reply[lang]),"No unfilled display placeholders");
   }
   assert.equal(t.requiresOriginalSourceForSubstance===true||t.requiresOriginalSourceForSubstance===false,true);
@@ -64,7 +65,7 @@ for(const scenario of cases.cases){
  }
 }
 assert.equal(totalTurns,9);
-assert.equal(humour,1,"One mild joke across nine replies; not a humour quota for production");
+assert.ok(Number.isInteger(humour),"Humour is tracked, never required by quota");
 assert.equal(cases.reviewStatus.constructedHistoricalQuotations,0);
 assert.equal(cases.reviewStatus.publishedTheologicalAnswers,0);
 const gates=new Set(cases.negativeGates.filter(x=>x.mustBlock).map(x=>x.case));
@@ -210,7 +211,7 @@ for(const scenario of cases.cases){
   }
   for(const language of ["en","fr"]){
    const reply=turn.reply[language];
-   assert.ok(reply.length>180 && reply.length<650,scenario.id+"/"+index+" direct explanation length");
+   assert.ok(reply.trim().length>0,scenario.id+"/"+index+" missing editorial draft");
    assert.ok(!/^(let us (?:consult|turn to)|revenons à (?:l'|l’)?enseignement)/i.test(reply),
      "Do not replace an answer with a redirect to source");
    assert.ok(!/^(?:As Pope Pius X|Comme le pape Pie X) (?:said|a dit)/i.test(reply),
@@ -230,5 +231,46 @@ assert.ok(childScenario.turns.some(t=>t.sourceBoundReview.evidenceIds.some(x=>x.
 const authority=cases.cases.find(x=>x.id==="PX-STYL-TEACHING-OBJECTION-03");
 assert.match(authority.turns[1].reply.en,/not make every passing remark/);
 assert.ok(!authority.turns.some(t=>t.reply.en.includes("all statements by clergy are infallible")));
+
+
+// The common cross-pipeline contract is documentary REVIEW, never approval.
+assert.equal(review.schema,"AO_PIUS_X_UNIFIED_DOCUMENTARY_VOICE_REVIEW_V1");
+assert.equal(review.publication,"DRAFT_NOT_RUNTIME");
+assert.equal(review.mandatoryGates.minimumReplyCharacters,null);
+assert.equal(review.mandatoryGates.requiredHumourCount,null);
+assert.equal(review.mandatoryGates.requiredRhetoricalQuestionCount,null);
+assert.equal(review.mandatoryGates.manuscriptVoiceCertified,false);
+assert.equal(review.mandatoryGates.contentOwnerApproval,false);
+assert.equal(review.mandatoryGates.importIntoLivingChurchAllowed,false);
+assert.equal(review.sourceBoundary.completeMayorBortoloTranscriptRead,false);
+assert.equal(review.sourceBoundary.historicAutographsCollated,false);
+const availableSources=new Set([...voices.sourceDocuments.map(x=>x.id),...pre.documentedItems.map(x=>x.id)]);
+const featureIds=new Set(review.personalityInvariants.map(x=>x.id));
+assert.equal(featureIds.size,review.personalityInvariants.length,"Unique documentary personality rules");
+assert.ok(review.personalityInvariants.length>=8);
+for(const rule of review.personalityInvariants){
+ assert.ok(rule.rule.length>35&&rule.status&&rule.originRefs.length>0,rule.id);
+ for(const src of rule.originRefs)assert.ok(availableSources.has(src),"Unregistered documentary source "+src);
+}
+const knownCases=new Map(cases.cases.map(c=>[c.id,c]));
+const reviewed=new Set();
+for(const r of review.reviews){
+ const scenario=knownCases.get(r.caseId);
+ assert.ok(scenario,"Unknown scenario under review "+r.caseId);
+ assert.ok(scenario.turns.some(t=>t.no===r.turn),"No reviewed turn "+r.caseId+" #"+r.turn);
+ const k=r.caseId+"-"+r.turn;
+ assert.ok(!reviewed.has(k),"Duplicate voice assessment: "+k);reviewed.add(k);
+ assert.ok(["RETAIN_WITH_LOCAL_EDIT","REVISE_LOCALLY","HOLD_FOR_SOURCE"].includes(r.disposition));
+ assert.ok(["GOOD","FAIR","WEAK"].includes(r.rhetoricalFit));
+ assert.ok(["LOW","MEDIUM","HIGH"].includes(r.risk));
+ assert.ok(r.strength&&r.defect&&r.nextEdit&&r.sourceLimit);
+ for(const p of r.documentaryPatterns)assert.ok(featureIds.has(p),"Unknown personality pattern "+p);
+}
+assert.equal(reviewed.size,cases.cases.reduce((n,c)=>n+c.turns.length,0),
+ "Every draft turn must have one explicit documentary/editorial assessment");
+assert.equal(review.reviews.filter(r=>r.disposition==="REVISE_LOCALLY").length,4,
+ "Track the four localized problems, rather than reauthoring all nine.");
+assert.equal(review.reviews.find(r=>r.caseId==="PX-STYL-CHILD-CATECHISM-02"&&r.turn===1).risk,"HIGH",
+ "Do not certify the invented joke from unrelated private correspondence");
 
 console.log("PASS Pius X 3 bilingual x 3 exchanges in both languages, source-gated end-to-end scripted playback = 18 interactions, 9 unique style-only replies; pinned route references, original-source gate, approved sprite names, no fabricated quotations or new doctrinal corpus");
