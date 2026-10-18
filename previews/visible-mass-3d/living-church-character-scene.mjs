@@ -123,7 +123,9 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
      const outcome=await context.returnFromHandoff(token);
      if(!outcome?.ok){state.nativeFailure=outcome?.code||"SCENE_RESTORATION_FAILED";return false;}
      state.returnToken=null;state.nativeFailure=null;returnBtn.hidden=true;
-     return open();
+     const reopened=open();
+     if(reopened)el(".lc-actions button")?.focus?.({preventScroll:true});
+     return reopened;
    }catch{state.nativeFailure="SCENE_RESTORATION_FAILED";return false;}
    finally{state.nativePending=false;returnBtn.disabled=false;}
  }
@@ -131,5 +133,5 @@ export function mountLivingChurchVisualNovel({win=window,context,assetBase="./as
  button.onclick=open;el("[data-close]").onclick=close;
  el(".lc-ask").onsubmit=e=>{e.preventDefault();const i=el(".lc-ask input");ask(i.value);i.value="";};
  root.addEventListener("keydown",e=>{if(e.key==="Escape"){e.stopPropagation();close();}});
- return Object.freeze({open,close,visit,ask,status:()=>Object.freeze({version:LIVING_CHURCH_SCENE_VERSION,open:state.open,guide:state.guide,node:state.id,question:state.question,historyCount:state.history.length,nativeHandoffPending:state.nativePending,nativeReturnAvailable:!!state.returnToken,nativeFailure:state.nativeFailure,canonicalOwner:"EXISTING_CATECHISM_VISIBLE_MASS_AND_MASS_EXPLORER",published:false}),dispose:()=>{if(state.returnToken)throw Error("Cannot dispose active native Catechism return");button.remove();returnBtn.remove();root.remove();style.remove();}});
+ return Object.freeze({open,close,visit,ask,returnFromNative,status:()=>Object.freeze({version:LIVING_CHURCH_SCENE_VERSION,open:state.open,guide:state.guide,node:state.id,question:state.question,historyCount:state.history.length,nativeHandoffPending:state.nativePending,nativeReturnAvailable:!!state.returnToken,nativeFailure:state.nativeFailure,canonicalOwner:"EXISTING_CATECHISM_VISIBLE_MASS_AND_MASS_EXPLORER",published:false}),dispose:()=>{if(state.returnToken)throw Error("Cannot dispose active native Catechism return");button.remove();returnBtn.remove();root.remove();style.remove();}});
 }
