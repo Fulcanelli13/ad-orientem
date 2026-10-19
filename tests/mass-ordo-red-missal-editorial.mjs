@@ -25,12 +25,23 @@ const allCorrections=new Map(corrections.corrections.map(x=>[x.cueId,x]));
 const unchanged=new Set((manifest.reviewedWithoutTextChange??[]).map(x=>x.cueId));
 const partial=new Set((manifest.partiallyReviewed??[]).map(x=>x.cueId));
 const blocked=new Set((manifest.blockedReview??[]).map(x=>x.cueId));
+const ceremonial=new Set((manifest.ceremonialOutOfEnglishScope??[]).map(x=>x.cueId));
+const sourceHolds=new Set((manifest.sourceHolds??[]).map(x=>x.cueId));
 assert.equal(unchanged.size,202);
 assert.equal(partial.size,3);
 assert.equal(blocked.size,0);
+assert.equal(ceremonial.size,15);
+assert.equal(sourceHolds.size,4);
 for(const id of unchanged)assert.ok(!approved.has(id),"Approved and unchanged must be disjoint: "+id);
 for(const id of blocked)assert.ok(!approved.has(id),"Blocked and approved must be disjoint: "+id);
 for(const id of partial)assert.ok(!approved.has(id),"Partially checked cue approved without complete witness: "+id);
+const categories=[new Set(approved.keys()),unchanged,partial,blocked,ceremonial,sourceHolds];
+const allIds=new Set();
+for(const category of categories)for(const id of category){
+ assert.ok(!allIds.has(id),"Contradictory editorial status "+id);
+ allIds.add(id);
+}
+assert.equal(allIds.size,256,"Some canonical English cue has no editorial category");
 
 const reviewRows={};
 const defaults=["INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
@@ -82,7 +93,9 @@ for(const corpus of [low,sung]){
     status:a?.status??(unchanged.has(unit.cue_id)?"VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE":
       blocked.has(unit.cue_id)?"REVIEWED_BLOCKED_BY_MULTI_FIELD_CORRECTION":
       partial.has(unit.cue_id)?"PARTIAL_WITNESS_PRIEST_ABBREVIATED":
-      "NOT_YET_INDEPENDENTLY_COLLATED"),
+      ceremonial.has(unit.cue_id)?"CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION":
+      sourceHolds.has(unit.cue_id)?"SOURCE_WITNESS_HOLD":
+      "UNCLASSIFIED"),
     approvedBookletPdfPage:a?.bookletPdfPage??null,
     correctionId:a?.correctionId??null};
    rows.push(row);
@@ -143,17 +156,18 @@ for(const row of reviewRows.SUNG){
 const output=path("artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
 await mkdir(dirname(output),{recursive:true});
 const review={schema:"ao.mass.ordo-missae.red-missal.editorial-worklist.v1",
- witness:manifest.source,status:"32_ENGLISH_CHANGES_202_REVIEWED_UNCHANGED_3_PARTIAL_0_BLOCKED_19_NOT_YET_COLLATED",
+ witness:manifest.source,status:"32_APPROVED_202_RETAINED_3_PARTIAL_15_CEREMONIAL_4_SOURCE_HOLDS",
  sampleSize:256,formCount:2,approvedCount:approved.size,
  rows:reviewRows.SUNG,
  reviewedUnchanged:unchanged.size,partiallyReviewed:partial.size,
- blockedByCorrectionLayer:blocked.size,notYetCollated:256-approved.size-unchanged.size-partial.size-blocked.size,
+ blockedByCorrectionLayer:blocked.size,ceremonialNonPrayer:ceremonial.size,
+ sourceHolds:sourceHolds.size,notYetCollated:sourceHolds.size,
  formParity:"LOW/SUNG checked",french:"UNCHANGED",
  openTranslationDecisions:manifest.unresolvedTranslationDecisions};
 await writeFile(output,JSON.stringify(review,null,2)+"\n");
 console.log("RED_MISSAL_SUMMARY="+JSON.stringify({sourceCues:256,lowCues:reviewRows.LOW.length,
  sungCues:reviewRows.SUNG.length,approved:approved.size,reviewedUnchanged:unchanged.size,partiallyReviewed:partial.size,
- blocked:blocked.size,pending:256-approved.size-unchanged.size-partial.size-blocked.size,
+ blocked:blocked.size,ceremonialNonPrayer:ceremonial.size,sourceHolds:sourceHolds.size,pending:sourceHolds.size,
  lowSungParity:"PASS",actualReaderEnglishFrench:"PASS"}));
 console.log("RED_MISSAL_ARTIFACT=artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
-console.log("PASS Red Missal editorial wave 7: 32 English edits, 202 retained, 3 partial Confiteor, 19 remaining separately scoped");
+console.log("PASS Red Missal editorial wave 7: 234 source-English decisions, 15 ceremonial-only cues, 3 partial, 4 source holds; all 256 categorized");
