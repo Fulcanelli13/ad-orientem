@@ -99,24 +99,25 @@ try{
    // The same saint appears in Home's observance summary, using the
    // *same shared read model* and without creating another Mass entry.
    await page.locator(".aoTodayV2Tabs [data-home-calendar-today]").click();
-   await page.waitForSelector(".homeScreen.aoTodayV2 .aoTodayV2Honoured .aoTodayV2ObservedRow",
+   await page.waitForSelector(".homeScreen.aoTodayV2 .aoTodayV2CalendarGlance .aoTodayV2ObservedRow",
      {state:"visible",timeout:25000});
    const homeMetrics=await page.evaluate(()=>{
      const screen=document.querySelector(".homeScreen.aoTodayV2");
-     const rows=[...screen.querySelectorAll(".aoTodayV2Honoured .aoTodayV2ObservedRow")];
+     const rows=[...screen.querySelectorAll(".aoTodayV2CalendarGlance .aoTodayV2ObservedRow")];
      return {titles:rows.map(x=>x.textContent.trim()),
+       massCaveat:screen.querySelector(".aoTodayV2GlanceCaveat")?.textContent?.trim()||"",
        buttons:screen.querySelectorAll("[data-home-mass-entry],[data-resume-mass]").length,
        overflow:document.documentElement.scrollWidth-innerWidth,
        readModelRequests:performance.getEntriesByType("resource")
          .filter(x=>x.name.includes("living-sanctoral-read-model.v1.json")).length};
    });
    assert.ok(homeMetrics.titles.some(x=>/Newman/.test(x)),"Home omitted vetted Newman modern-date reference");
-   assert.ok(homeMetrics.titles.some(x=>/The prescribed 1962 Mass remains unchanged/.test(x)),"Home confused modern saint with 1962 Mass");
+   assert.ok(/The prescribed 1962 Mass remains unchanged/.test(homeMetrics.massCaveat),"Home confused modern saint with 1962 Mass");
    assert.equal(homeMetrics.buttons,1,"Home must have one Mass entry");
    assert.ok(homeMetrics.overflow<=1,"Home honour rows overflow phone width");
    assert.equal(requests.filter(x=>x.status===200).length,1,"Home and Calendar must share one dataset request");
    await page.screenshot({path:resolve(output,"home-observances-newman-"+width+".png"),fullPage:false,animations:"disabled"});
-   await page.locator('.aoTodayV2Honoured [data-home-calendar-view="day"]').first().click();
+   await page.locator('.aoTodayV2CalendarGlance [data-home-calendar-view="day"]').first().click();
    await host.waitFor({state:"visible",timeout:40000});
    const historic=await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2025-10-09"));
    assert.equal(historic,true);

@@ -82,7 +82,8 @@ assert.match(en,/Gospel of the Mass/);
 assert.match(en,/aoTodayV2Frontispiece/);
 assert.match(en,/aoTodayV2PrayNow/);
 assert.match(en,/aoTodayV2ReadReflect/);
-assert.match(en,/aoTodayV2Approaching/);
+assert.match(en,/aoTodayV2CalendarGlance/,"Approved C includes one grouped calendar summary");
+assert.doesNotMatch(en,/class="aoTodayV2Approaching"|class="aoTodayV2Context"/,"Retired duplicated calendar panels must not render");
 assert.match(en,/Life &amp; sources|About this celebration|Calendar day &amp; sources/,
   "The Read & reflect entry must explain its destination instead of repeating the hero title");
 assert.doesNotMatch(en,/COMING SOON/,"Homepage must not duplicate upcoming celebrations in its season bar");
@@ -106,7 +107,7 @@ assert.match(fr,/Autour de la Messe/);
 assert.match(fr,/Évangile de la messe/);
 assert.match(fr,/Prier maintenant/);
 assert.match(fr,/Lire et méditer/);
-assert.match(fr,/À venir/);
+assert.match(fr,/Aperçu du calendrier/,"French Calendar at a glance card must be rendered");
 assert.match(fr,/Vie et sources|À propos de cette célébration|Jour du calendrier et sources/);
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);

@@ -81,10 +81,11 @@ export function renderTodayV2Sections(model,vm){
     :txt("Available when the Proper resolves","Disponible après résolution du Propre"));
   const cateTitle=daily?.title||txt("Daily Catechism","Catéchisme quotidien");
   const cateDetail=daily?.description||txt("Saint Pius X catechism","Catéchisme de saint Pie X");
+
+  // Version C: one Home-owned calendar summary; source ownership remains
+  // with the 1962 resolver and the separately reviewed later-calendar data.
   const historical=(model.historicalCommemorations||[]).map(c=>
-    '<button type="button" class="aoTodayV2ObservedRow" data-home-calendar data-home-calendar-view="day"><span><small>'+
-    esc(txt("1962 Mass commemoration","Commémoraison à la messe de 1962"))+'</small><strong>'+
-    esc(c.name)+'</strong></span><span class="aoTodayV2Arrow" aria-hidden="true">›</span></button>'
+    `<button type="button" class="aoTodayV2ObservedRow" data-home-calendar data-home-calendar-view="day"><strong>${esc(c.name)}</strong><span aria-hidden="true">›</span></button>`
   ).join("");
   const contemporary=(model.modernHonours||[]).map(c=>{
     const dateScope=c.dateAuthorityStatus==="DATE_ATTESTED_JURISDICTION_NOT_ESTABLISHED"
@@ -92,30 +93,27 @@ export function renderTodayV2Sections(model,vm){
       :c.dateAuthorityStatus==="UNIVERSAL_GENERAL_ROMAN"
         ?txt("Modern Roman calendar","Calendrier romain actuel")
         :txt("Particular calendar reference","Référence de calendrier particulier");
-    return '<button type="button" class="aoTodayV2ObservedRow" data-home-calendar data-home-calendar-view="day"><span><small>'+
-      esc(dateScope)+'</small><strong>'+esc(c.title)+'</strong><em>'+
-      esc(txt("The prescribed 1962 Mass remains unchanged","La messe prescrite de 1962 reste inchangée"))+
-      '</em></span><span class="aoTodayV2Arrow" aria-hidden="true">›</span></button>';
+    return `<button type="button" class="aoTodayV2ObservedRow" data-home-calendar data-home-calendar-view="day"><span><strong>${esc(c.title)}</strong><small>${esc(dateScope)}</small></span><span aria-hidden="true">›</span></button>`;
   }).join("");
-  const honouredSection=historical||contemporary?
-    '<section class="aoTodayV2Honoured" aria-label="'+esc(txt("Also observed today","Également honorés aujourd'hui"))+
-    '"><div class="aoTodayV2HonouredHeading"><small>'+
-    esc(txt("IN THE CHURCH TODAY","DANS L'ÉGLISE AUJOURD'HUI"))+'</small><h2>'+
-    esc(txt("Also honoured today","Également honorés aujourd'hui"))+
-    '</h2></div>'+historical+contemporary+'</section>':"";
+  const calendarHonours=historical
+    ?`<div class="aoTodayV2GlanceHonours"><div class="aoTodayV2GlanceCategory">${esc(txt("1962 Mass commemoration","Commémoraison à la messe de 1962"))}</div>${historical}</div>`:"";
+  const calendarLater=contemporary
+    ?`<div class="aoTodayV2GlanceHonours"><div class="aoTodayV2GlanceCategory">${esc(txt("Later calendar","Calendrier ultérieur"))}</div>${contemporary}<p class="aoTodayV2GlanceCaveat">${esc(txt("The prescribed 1962 Mass remains unchanged","La messe prescrite de 1962 reste inchangée"))}</p></div>`:"";
   const row=(title,subtitle,attributes)=>'<button type="button" class="aoTodayV2EditorialRow" '+attributes+'><span><strong>'+esc(title)+'</strong><small>'+esc(subtitle)+'</small></span><span class="aoTodayV2Arrow" aria-hidden="true">›</span></button>';
-  const monthLink='data-home-calendar data-home-calendar-view="picker"';
-  const yearLink='data-home-calendar data-home-calendar-view="year"';
+
   const calendarDates=upcoming.map(rowData=>{
     const name=language==="fr" ? rowData.fr : rowData.en;
-    return '<button type="button" class="aoTodayV2Event" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(rowData.date)+'"><span class="aoTodayV2EventDate">'+esc(dateDisplay(rowData.date,language))+'</span><span><strong>'+esc(name)+'</strong><small>'+esc(txt("Calendar date · verify observance in Calendar","Date du calendrier · vérifier la célébration dans le calendrier"))+'</small></span><span aria-hidden="true">›</span></button>';
+    return `<button type="button" class="aoTodayV2Event" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="${esc(rowData.date)}" aria-label="${esc(dateDisplay(rowData.date,language)+" · "+name)}"><span class="aoTodayV2EventDate">${esc(dateDisplay(rowData.date,language))}</span><strong>${esc(name)}</strong></button>`;
   }).join("");
-  return `<div class="aoTodayV2Context">
-    <button type="button" ${yearLink}><small>${esc(txt("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><strong>${esc(language==="fr"?period.fr:period.en)}</strong><span aria-hidden="true">›</span></button>
-  </div>
-  ${honouredSection}
+  const glanceNote=txt("Upcoming calendar dates · confirm actual 1962 observance in Calendar","Dates à venir · vérifier la célébration effective de 1962 dans le calendrier");
+  return `<section class="aoTodayV2CalendarGlance" aria-label="${esc(txt("Calendar at a glance","Aperçu du calendrier"))}">
+    <h2>${esc(txt("Calendar at a glance","Aperçu du calendrier"))}</h2>
+    ${calendarHonours}${calendarLater}
+    <div class="aoTodayV2GlanceEvents">${calendarDates||'<p class="aoTodayV2GlanceEmpty">'+esc(txt("See dates in Calendar","Consulter les dates dans le calendrier"))+'</p>'}</div>
+    <p class="aoTodayV2GlanceNote">${esc(glanceNote)}</p>
+  </section>
   <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
-    <section class="aoTodayV2Zone aoTodayV2PrayNow"><div class="aoTodayV2SectionHead"><div><small>${esc(txt("IN YOUR DAY","DANS VOTRE JOURNÉE"))}</small><h2>${esc(txt("Pray now","Prier maintenant"))}</h2></div><button type="button" data-home-cu-route="pray.library">${esc(txt("All prayers","Toutes les prières"))} →</button></div>
+    <section class="aoTodayV2Zone aoTodayV2PrayNow"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Pray now","Prier maintenant"))}</h2></div><button type="button" data-home-cu-route="pray.library">${esc(txt("All prayers","Toutes les prières"))} →</button></div>
       <div class="aoTodayV2PrayerFeature"><div class="aoTodayV2PrayerGlyph" aria-hidden="true"></div><div><small>${esc(featureRole)}</small><strong>${esc(featureName)}</strong><span>${esc(featureDetail)}</span></div><button type="button" ${featureAttrs}>${esc(txt("Pray","Prier"))}</button></div>
       <div class="aoTodayV2PrayerShortcuts">
         <button type="button" data-home-cu-route="pray.rosary">${esc(txt("Rosary","Rosaire"))}</button>
@@ -123,14 +121,11 @@ export function renderTodayV2Sections(model,vm){
         <button type="button" data-home-cu-route="pray.adoration">${esc(txt("Adoration","Adoration"))}</button>
       </div>
     </section>
-    <section class="aoTodayV2Zone aoTodayV2ReadReflect"><div class="aoTodayV2SectionHead"><div><small>${esc(txt("DISCOVER THE DAY","DÉCOUVRIR CE JOUR"))}</small><h2>${esc(txt("Read & reflect","Lire et méditer"))}</h2></div></div>
+    <section class="aoTodayV2Zone aoTodayV2ReadReflect"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Read & reflect","Lire et méditer"))}</h2></div></div>
       ${row(saintTitle,saintDetail,'data-home-calendar data-home-calendar-view="day"')}
       ${row(txt("The Gospel of the Mass","Évangile de la messe"),gospelDetail,'data-action="gospel"')}
       ${row(cateTitle,cateDetail,'data-home-daily-catechism')}
       ${row(txt("Sacred Scripture","Sainte Écriture"),txt("Read the traditional Catholic Bible","Lire la Bible catholique traditionnelle"),'data-home-scripture')}
-    </section>
-    <section class="aoTodayV2Zone aoTodayV2Approaching"><div class="aoTodayV2SectionHead"><div><small>${esc(txt("THE COMING DAYS","LES PROCHAINS JOURS"))}</small><h2>${esc(txt("Coming next","À venir"))}</h2></div><button type="button" ${monthLink}>${esc(txt("Full calendar","Calendrier complet"))} →</button></div>
-      <div class="aoTodayV2Upcoming">${calendarDates||'<p>'+esc(txt("Browse the full calendar","Consulter le calendrier complet"))+'</p>'}</div>
     </section>
   </div>`;
 }

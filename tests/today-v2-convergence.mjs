@@ -26,7 +26,7 @@ assert.equal(buildTodayV2Sections({...state,resolution:{...state.resolution,date
   "Explicit date mismatch must suppress stale observed feast");
 assert.deepEqual(projection.upcoming.map(x=>x.date),["2026-10-25","2026-11-01"]);
 const html=renderTodayV2Sections(projection,vm);
-for(const cls of ["aoTodayV2Context","aoTodayV2PrayNow","aoTodayV2ReadReflect","aoTodayV2Approaching"]){
+for(const cls of ["aoTodayV2CalendarGlance","aoTodayV2PrayNow","aoTodayV2ReadReflect"]){
   assert.match(html,new RegExp(cls),"Missing uploaded frontispiece's "+cls+" component");
 }
 for(const route of ["pray.angelus_regina","pray.rosary","pray.confession","pray.adoration"])
@@ -34,24 +34,21 @@ for(const route of ["pray.angelus_regina","pray.rosary","pray.confession","pray.
 assert.match(html,/data-home-daily-catechism/);
 assert.match(html,/data-home-scripture/);
 assert.match(html,/data-action="gospel"/);
-assert.match(html,/data-home-calendar-view="year"/);
-assert.match(html,/data-home-calendar-view="picker"/);
+assert.doesNotMatch(html,/data-home-calendar-view="year"/,"Liturgical season year link belongs only in the hero");
+assert.doesNotMatch(html,/data-home-calendar-view="picker"/,"Month tab replaces duplicate Coming next CTA");
 assert.match(html,/data-home-calendar-date="2026-10-25"/);
 assert.match(html,/data-home-calendar-date="2026-11-01"/);
-assert.match(html,/Life &amp; sources/,"Observed saint must open context rather than repeat the hero title");
-assert.doesNotMatch(html,/Saint Francis Borgia/,"Do not repeat the principal saint's name below the hero");
-assert.equal((html.match(/data-home-calendar-view="year"/g)||[]).length,1,"One liturgical season Year entry");
-assert.equal((html.match(/data-home-calendar-view="picker"/g)||[]).length,1,"Only the Coming next section links to Month");
-assert.equal((html.match(/class="aoTodayV2Context"/g)||[]).length,1);
-assert.doesNotMatch(html,/COMING SOON/,"Upcoming celebrations must not be repeated in the season bar");
-assert.match(html,/Coming next/,"Preserve the upcoming list and its date-specific navigation");
-assert.match(html,/Calendar date · verify observance in Calendar/,
-  "Future candidates must not be described as resolved liturgical Masses");
+assert.match(html,/Life &amp; sources/,"Observed saint opens context without repeating feast identity");
+assert.doesNotMatch(html,/Saint Francis Borgia/,"Do not repeat principal saint below the hero");
+assert.equal((html.match(/class="aoTodayV2CalendarGlance"/g)||[]).length,1,"One compact Calendar at a glance panel");
+assert.doesNotMatch(html,/aoTodayV2Context|aoTodayV2Approaching|Coming next|Full calendar/,"No duplicate season or upcoming panels");
+assert.match(html,/Upcoming calendar dates · confirm actual 1962 observance in Calendar/);
 assert.doesNotMatch(html,/data-home-shortcut="/,
   "Unbound home-shortcut attributes would produce inert buttons");
 assert.equal((html.match(/class="aoTodayV2PrayerFeature"/g)||[]).length,1);
 assert.equal((html.match(/class="aoTodayV2PrayerShortcuts"/g)||[]).length,1);
 assert.equal((html.match(/class="aoTodayV2Event"/g)||[]).length,2);
+assert.equal((html.match(/class="aoTodayV2GlanceEvents"/g)||[]).length,1);
 const offDate=buildTodayV2Sections({...state,resolution:{status:"failed"}},vm,{visible:false});
 const unknownHtml=renderTodayV2Sections(offDate,vm);
 assert.doesNotMatch(unknownHtml,/Saint Francis Borgia/);
@@ -67,10 +64,10 @@ const frvm={...vm,language:"fr"};
 const frHtml=renderTodayV2Sections(buildTodayV2Sections({...state,language:"fr"},frvm,sample),frvm);
 assert.match(frHtml,/Prier maintenant/);
 assert.match(frHtml,/Lire et méditer/);
-assert.match(frHtml,/Calendrier/);
+assert.match(frHtml,/calendrier/i);
 assert.match(frHtml,/Vie et sources/,"The saint link must be bilingual");
-assert.doesNotMatch(frHtml,/COMING SOON|À VENIR<\/small>/,"French context must not duplicate the upcoming list");
-assert.match(frHtml,/À venir/);
+assert.doesNotMatch(frHtml,/COMING SOON|<h2>À venir<\/h2>/,"French Home has no second Coming next heading");
+assert.match(frHtml,/Dates à venir/);
 assert.match(frHtml,/25 oct./i);
 const primary=renderHomeToString(state,{AO_PHASE1_ART:{homeMarkup(){return ""}}});
 assert.match(primary,/aoTodayV2NoArt/,"No approved artwork must preserve a source-safe visual fallback");
@@ -78,7 +75,8 @@ assert.match(primary,/data-home-mass-entry/,"Idle Home must open canonical Mass"
 assert.equal((primary.match(/data-home-mass-entry/g)||[]).length,1);
 assert.equal((primary.match(/aoTodayV2PrayNow/g)||[]).length,1);
 assert.equal((primary.match(/class="aoTodayV2Event"/g)||[]).length,2,"Upcoming leads must be date-specific");
-assert.equal((primary.match(/class="aoTodayV2Context"/g)||[]).length,1,"Only one season bar should remain");
+assert.equal((primary.match(/class="aoTodayV2SeasonMicro"/g)||[]).length,1,"Liturgical season belongs once in hero");
+assert.equal((primary.match(/class="aoTodayV2CalendarGlance"/g)||[]).length,1,"Only one Calendar at a glance card");
 assert.doesNotMatch(primary,/class="contentCard gospelCard/);
 assert.doesNotMatch(primary,/class="contentCard findCard/);
 assert.doesNotMatch(primary,/aoHomeComingUp/);
