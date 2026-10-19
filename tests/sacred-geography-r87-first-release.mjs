@@ -49,7 +49,7 @@ for(const row of release.published_new) {
  if(p.geo.geocoding_source==="OSM"){
    assert.match(p.geo.source_ref,/^osm:(?:way|node):[0-9]+$/);
    assert.ok(p.geo.attribution.includes("OpenStreetMap"));
-   assert.equal(row.geo_source_url,"https://www.openstreetmap.org/"+p.geo.source_ref.replaceAll(":","/"));
+   assert.equal(row.geo_source_url,"https://www.openstreetmap.org/"+p.geo.source_ref.replace(/^osm:/,"").replace(":","/"));
  }else{
    assert.equal(p.geo.geocoding_source,"OFFICIAL_SOURCE");
    assert.ok(row.geo_source_url.startsWith("https://www.katolsk.no/"));
