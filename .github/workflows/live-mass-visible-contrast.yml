@@ -1,0 +1,39 @@
+name: LIVE Mass visible contrast
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-dom.js"
+      - "src/mass/reader-cue-focus.js"
+      - "tests/reader-live-visual-focus-production-phone.mjs"
+      - ".github/workflows/live-mass-visible-contrast.yml"
+  push:
+    branches: [main]
+    paths:
+      - "src/mass/reader-dom.js"
+      - "src/mass/reader-cue-focus.js"
+      - "tests/reader-live-visual-focus-production-phone.mjs"
+      - ".github/workflows/live-mass-visible-contrast.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  computed-live-focus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Assert visible computed opacity and active transfer in production LIVE reader
+        run: node tests/reader-live-visual-focus-production-phone.mjs
+      - name: Preserve real production opacity samples
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-mass-visible-contrast
+          path: artifacts/live-mass-visual-focus/
+          retention-days: 30
+          if-no-files-found: warn
