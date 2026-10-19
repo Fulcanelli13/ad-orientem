@@ -2522,10 +2522,6 @@ function onClick(e){
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-hour'))return setTenebrae(TEN.day,b.dataset.p435930TenebraeHour);
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-face')){TEN.face=TEN.face==='latin'?'vernacular':'latin';return render()}
  if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-retry')){TEN.error=null;TEN.model=null;return render()}
- if(view==='tenebrae'&&b.hasAttribute('data-p435930-tenebrae-move')){
-  TEN.step=Math.max(0,Math.min((TEN.model?.steps?.length??1)-1,TEN.step+(b.dataset.p435930TenebraeMove==='next'?1:-1)));
-  return render();
- }
  if(b.dataset.p435930Family){familyId=b.dataset.p435930Family;view='family';navStack=[];return render()}
  if(b.dataset.p435930RetryExternal){
   const holder=b.closest?.('[data-p435930-family-open-error]');
@@ -2754,6 +2750,18 @@ document.addEventListener('keydown',e=>{
   horizontalStep(e.key==='ArrowRight'?1:-1);
   // The programme re-renders on a stage change; keep keyboard reading focus.
   queueMicrotask(()=>r.querySelector('.aoP435930Body')?.focus?.({preventScroll:true}));
+  return;
+ }
+ // The Tenebrae stage owner is already horizontalStep; this is only a
+ // keyboard fallback for the swipe-first source reader, not a second cursor.
+ if(view==='tenebrae'&&TEN.model&&
+    (e.key==='ArrowRight'||e.key==='ArrowLeft')&&
+    !e.altKey&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&
+    r.contains(e.target)&&e.target.closest('.aoTenebReading')&&
+    !e.target.closest('button,a,input,textarea,select,summary,[contenteditable]')){
+  e.preventDefault();
+  horizontalStep(e.key==='ArrowRight'?1:-1);
+  queueMicrotask(()=>r.querySelector('.aoTenebReading')?.focus?.({preventScroll:true}));
   return;
  }
  if(e.key==='Escape'){e.preventDefault();close();return}
