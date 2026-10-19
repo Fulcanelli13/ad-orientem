@@ -48,7 +48,12 @@ try{
     null,{timeout:60000});
    const map=page.locator("#ao-find-modular-root .aoHeritageSurface .aoFindMap");
    await map.waitFor({state:"visible"});
-   await page.waitForTimeout(2200);
+   // A canvas exists before MapLibre has loaded tiles or the GeoJSON cluster
+   // source. An image taken in that state is NOT visual acceptance.
+   await page.waitForFunction(()=>document.querySelector(
+     "#ao-find-modular-root .aoHeritageSurface [data-find-map]"
+   )?.dataset?.aoMapState==="ready",null,{timeout:45000});
+   await page.waitForTimeout(650);
    const measures=await page.evaluate(()=>{
     const map=document.querySelector("#ao-find-modular-root .aoHeritageSurface .aoFindMap");
     const r=map?.getBoundingClientRect(),root=document.querySelector("#ao-find-modular-root");
@@ -61,6 +66,7 @@ try{
    assert.ok(measures.mapWidth>=(mobile?280:600),"Map is too narrow at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.mapHeight>=300,"Map is too short at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.documentOverflow<=1,"Document overflow at "+width+": "+JSON.stringify(measures));
+   assert.equal(measures.status,"ready","Cannot certify an empty/loading basemap at "+width);
    await page.screenshot({path:resolve(out,"explore-"+width+"-overview.png"),fullPage:false});
 
    const search=page.locator("#ao-find-modular-root .aoHeritageSurface [data-find-query]");
@@ -73,15 +79,50 @@ try{
    await page.locator("#ao-find-modular-root .aoHeritagePreview button[data-find-close-place]").click();
    await search.fill("");
 
+   // Test-only hook: preserve production map ownership while allowing a
+   // geographic close-up of real, source-backed institutional emblems.
+   const patched=await page.evaluate(()=>{
+     const module=globalThis.AO_FIND_MAPLIBRE_MODULE;
+     if(!module?.Map)return false;
+     globalThis.AO_FIND_MAPLIBRE_MODULE={...module,Map:new Proxy(module.Map,{
+       construct(Target,args,newTarget){
+         const instance=Reflect.construct(Target,args,newTarget);
+         globalThis.__AO_EXPLORE_VISUAL_REVIEW_MAP=instance;
+         return instance;
+       },
+     })};
+     return true;
+   });
+   assert.equal(patched,true,"MapLibre module missing for emblem close-up");
+
    const mass=page.locator("#ao-find-modular-root .aoHeritageMassShortcut");
    await mass.click();
    await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().lens==="tlm",null,{timeout:15000});
    const mapButton=page.locator('#ao-find-modular-root [data-find-filter="view"][data-find-filter-value="map"]');
    if(await mapButton.count())await mapButton.click();
    await page.locator('#ao-find-modular-root [data-find-map]').waitFor({state:"visible",timeout:15000});
-   await page.waitForTimeout(2400);
+   await page.waitForFunction(()=>document.querySelector(
+     "#ao-find-modular-root [data-find-map]"
+   )?.dataset?.aoMapState==="ready",null,{timeout:45000});
+   await page.waitForTimeout(650);
    await page.screenshot({path:resolve(out,"explore-"+width+"-mass-emblems.png"),fullPage:false});
-   captures.push({width,...measures,errors,massScreenshot:true});
+   const closer=await page.evaluate(()=>{
+     const map=globalThis.__AO_EXPLORE_VISUAL_REVIEW_MAP;
+     if(!map?.jumpTo)return {ready:false};
+     map.jumpTo({center:[2.3522,48.8566],zoom:13.3});
+     return {ready:true,zoom:map.getZoom()};
+   });
+   assert.ok(closer.ready,"Zoomable institute map unavailable");
+   await page.waitForTimeout(1200);
+   const emblemReview=await page.evaluate(()=>{
+     const map=globalThis.__AO_EXPLORE_VISUAL_REVIEW_MAP;
+     return {pointCount:map.queryRenderedFeatures?.({layers:["ao-explore-points"]})?.length??0,
+       emblemLayer:Boolean(map.getLayer?.("ao-explore-institution-emblems")),
+       clusterCount:map.queryRenderedFeatures?.({layers:["ao-explore-clusters"]})?.length??0};
+   });
+   await page.screenshot({path:resolve(out,"explore-"+width+"-mass-emblems-closeup.png"),fullPage:false});
+   captures.push({width,...measures,errors,massScreenshot:true,
+     closeup:emblemReview});
    assert.equal(errors.length,0,"Explore JS runtime errors at "+width+": "+errors.join(" | "));
   }finally{await context.close();}
  }
