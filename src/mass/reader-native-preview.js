@@ -2108,7 +2108,8 @@ export async function mountNativeReaderPreview({
         posture,gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
         riteMusic:riteMusicAt(kind==="CORPUS_CHRISTI_PROCESSION"?"CORPUS_CHRISTI":kind,
           card.id??card.recordId,
-          kind==="REQUIEM_ABSOLUTION" && state.burialProcession===true
+          kind==="REQUIEM_ABSOLUTION" &&
+            ready.prepared?.session?.resolvedMass?.provenance?.requiemAbsolution?.burialProcession===true
             ? "OPTIONAL_BURIAL_FOLLOWING_ACTION" : null),
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
       }),
