@@ -1,0 +1,508 @@
+{
+  "schema": "AO_SPX_1905_BATCH6_PART_V1",
+  "part": "E",
+  "created": "2026-10-19",
+  "status": "BILINGUAL_DRAFT_SOURCE_Q_LOCATED_NOT_APPROVED",
+  "records": [
+    {
+      "id": "SPX-1905-V-957",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q957",
+        "companionQuestionId": "PX1905-Q958",
+        "section": "SIN_AND_MORAL_LIFE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Is venial sin harmless because it is not mortal?",
+            "fr": "Le péché véniel est-il sans dommage parce qu'il n'est pas mortel ?"
+          },
+          "response": {
+            "en": "No. The Catechism says it still offends God and inflicts genuine harm on the spiritual life.",
+            "fr": "Non. Le Catéchisme enseigne qu'il offense encore Dieu et cause un dommage réel à la vie spirituelle."
+          },
+          "supports": [
+            "PX1905-Q957"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What harm does it specifically describe?",
+            "fr": "Quels dommages décrit-il précisément ?"
+          },
+          "response": {
+            "en": "It weakens charity, disposes us toward graver sin and incurs temporal punishment.",
+            "fr": "Il affaiblit la charité, dispose à des péchés plus graves et entraîne des peines temporelles."
+          },
+          "supports": [
+            "PX1905-Q958"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-958",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q958",
+        "companionQuestionId": "PX1905-Q957",
+        "section": "SIN_AND_MORAL_LIFE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How can repeated lesser sins harm spiritual life?",
+            "fr": "Comment des péchés légers répétés peuvent-ils nuire à la vie spirituelle ?"
+          },
+          "response": {
+            "en": "The Catechism warns that venial sin can cool charity and dispose us toward mortal sin; this is a warning about tendencies, not an automatic prediction of a person's future.",
+            "fr": "Le Catéchisme avertit que le péché véniel peut refroidir la charité et disposer au péché mortel ; c'est un avertissement sur les tendances, non une prédiction automatique sur une personne."
+          },
+          "supports": [
+            "PX1905-Q958"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does its lesser gravity make it negligible?",
+            "fr": "Sa moindre gravité permet-elle de le négliger ?"
+          },
+          "response": {
+            "en": "No. The Catechism says it remains an offence against God.",
+            "fr": "Non. Le Catéchisme enseigne qu'il demeure une offense envers Dieu."
+          },
+          "supports": [
+            "PX1905-Q957"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-959",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q959",
+        "companionQuestionId": "PX1905-Q961",
+        "section": "CAPITAL_VICES_AND_SERIOUS_SINS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How does a vice differ from one bad action?",
+            "fr": "Comment un vice diffère-t-il d'un acte mauvais isolé ?"
+          },
+          "response": {
+            "en": "A vice is a settled bad disposition formed by repeated wrongdoing, making a person inclined to avoid good and do evil. This distinguishes a habit from an isolated act.",
+            "fr": "Un vice est une mauvaise disposition durable formée par la répétition des fautes, inclinant à fuir le bien et à faire le mal. Il diffère ainsi d'un acte isolé."
+          },
+          "supports": [
+            "PX1905-Q959"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Which vices does the Catechism call capital?",
+            "fr": "Quels vices le Catéchisme appelle-t-il capitaux ?"
+          },
+          "response": {
+            "en": "It lists pride, avarice, lust, anger, gluttony, envy and sloth.",
+            "fr": "Il énumère l'orgueil, l'avarice, la luxure, la colère, la gourmandise, l'envie et l'acédie."
+          },
+          "supports": [
+            "PX1905-Q961"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-961",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q961",
+        "companionQuestionId": "PX1905-Q963",
+        "section": "CAPITAL_VICES_AND_SERIOUS_SINS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What are the seven capital vices?",
+            "fr": "Quels sont les sept vices capitaux ?"
+          },
+          "response": {
+            "en": "Pride, avarice, lust, anger, gluttony, envy and sloth. The name 'capital' refers to their role in giving rise to other wrongs, not to a ranking of individual people.",
+            "fr": "L'orgueil, l'avarice, la luxure, la colère, la gourmandise, l'envie et l'acédie. Le nom « capital » désigne leur rôle de source d'autres fautes, non un classement des personnes."
+          },
+          "supports": [
+            "PX1905-Q961"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why are these vices described as capital?",
+            "fr": "Pourquoi ces vices sont-ils dits capitaux ?"
+          },
+          "response": {
+            "en": "Because they are sources and causes of many other vices and sins.",
+            "fr": "Parce qu'ils sont les sources et les causes de nombreux autres vices et péchés."
+          },
+          "supports": [
+            "PX1905-Q963"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-962",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q962",
+        "companionQuestionId": "PX1905-Q961",
+        "section": "CAPITAL_VICES_AND_SERIOUS_SINS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How can the capital vices be resisted?",
+            "fr": "Comment peut-on combattre les vices capitaux ?"
+          },
+          "response": {
+            "en": "The Catechism pairs them with opposing virtues: humility against pride, generosity against avarice, chastity against lust, patience against anger, abstinence against gluttony, fraternal love against envy, and diligence and fervour against sloth.",
+            "fr": "Le Catéchisme leur oppose les vertus : l'humilité à l'orgueil, la générosité à l'avarice, la chasteté à la luxure, la patience à la colère, l'abstinence à la gourmandise, l'amour fraternel à l'envie, et la diligence et la ferveur à l'acédie."
+          },
+          "supports": [
+            "PX1905-Q962"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Which seven habits is this discipline meant to counter?",
+            "fr": "Contre quelles sept habitudes cette discipline est-elle dirigée ?"
+          },
+          "response": {
+            "en": "The seven capital vices enumerated by the Catechism.",
+            "fr": "Contre les sept vices capitaux énumérés par le Catéchisme."
+          },
+          "supports": [
+            "PX1905-Q961"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-963",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q963",
+        "companionQuestionId": "PX1905-Q962",
+        "section": "CAPITAL_VICES_AND_SERIOUS_SINS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why are some vices called 'capital'?",
+            "fr": "Pourquoi certains vices sont-ils dits « capitaux » ?"
+          },
+          "response": {
+            "en": "The title comes from their tendency to generate further vices and sins. It is about moral causation, not the claim that all such acts have equal gravity.",
+            "fr": "Ce terme vient de leur tendance à engendrer d'autres vices et péchés. Il exprime une causalité morale, non l'idée que tous ces actes aient la même gravité."
+          },
+          "supports": [
+            "PX1905-Q963"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What does the Catechism propose against them?",
+            "fr": "Que propose le Catéchisme pour les combattre ?"
+          },
+          "response": {
+            "en": "Cultivating the corresponding opposite virtues.",
+            "fr": "Cultiver les vertus correspondantes qui leur sont contraires."
+          },
+          "supports": [
+            "PX1905-Q962"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-964",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q964",
+        "companionQuestionId": "PX1905-Q965",
+        "section": "CAPITAL_VICES_AND_SERIOUS_SINS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What six sins does the longer Catechism group under 'against the Holy Ghost'?",
+            "fr": "Quels six péchés le grand Catéchisme classe-t-il « contre le Saint-Esprit » ?"
+          },
+          "response": {
+            "en": "Its historical list is despair of salvation, presumption of salvation without merit, resisting known truth, envying another's spiritual grace, obstinacy in sin and final impenitence. This is a doctrinal classification, not a diagnosis of anyone's spiritual state.",
+            "fr": "Sa liste historique est le désespoir du salut, la présomption de se sauver sans mérite, la résistance à la vérité connue, l'envie de la grâce spirituelle d'autrui, l'obstination dans le péché et l'impénitence finale. C'est une classification doctrinale, non un diagnostic de l'état spirituel de quiconque."
+          },
+          "supports": [
+            "PX1905-Q964"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What feature unites the category in this Catechism?",
+            "fr": "Quel trait rassemble cette catégorie dans ce Catéchisme ?"
+          },
+          "response": {
+            "en": "It describes sins committed through deliberate malice in opposition to the goodness attributed to the Holy Ghost.",
+            "fr": "Il décrit des péchés commis par malice délibérée, en opposition à la bonté attribuée au Saint-Esprit."
+          },
+          "supports": [
+            "PX1905-Q965"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-965",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q965",
+        "companionQuestionId": "PX1905-Q964",
+        "section": "CAPITAL_VICES_AND_SERIOUS_SINS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why are certain sins described as especially against the Holy Ghost?",
+            "fr": "Pourquoi certains péchés sont-ils dits particulièrement contre le Saint-Esprit ?"
+          },
+          "response": {
+            "en": "The Catechism relates them to deliberate malice, which contradicts the goodness specially attributed to the Holy Ghost. The term is not grounds for declaring another person unforgivable.",
+            "fr": "Le Catéchisme les rattache à la malice délibérée, contraire à la bonté spécialement attribuée au Saint-Esprit. Cette expression n'autorise pas à déclarer une autre personne impardonnable."
+          },
+          "supports": [
+            "PX1905-Q965"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Which forms does its traditional classification include?",
+            "fr": "Quelles formes sa classification traditionnelle comprend-elle ?"
+          },
+          "response": {
+            "en": "It lists despair, presumption, resisting known truth, envy of another's grace, obstinacy and final impenitence.",
+            "fr": "Elle comprend le désespoir, la présomption, la résistance à la vérité connue, l'envie de la grâce d'autrui, l'obstination et l'impénitence finale."
+          },
+          "supports": [
+            "PX1905-Q964"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-966",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q966",
+        "companionQuestionId": "PX1905-Q967",
+        "section": "CAPITAL_VICES_AND_SERIOUS_SINS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Which wrongs does the 1905 Catechism describe as 'crying to heaven'?",
+            "fr": "Quelles fautes le Catéchisme de 1905 décrit-il comme « criant vers le ciel » ?"
+          },
+          "response": {
+            "en": "It lists deliberate killing, sexual wrongdoing it describes as contrary to the order of nature, oppression of the poor, and withholding workers' wages. These are its historical theological categories, not individualized verdicts.",
+            "fr": "Il cite le meurtre volontaire, un péché sexuel qu'il qualifie de contraire à l'ordre de la nature, l'oppression des pauvres et la fraude sur le salaire des travailleurs. Ce sont ses catégories théologiques historiques, non des verdicts individuels."
+          },
+          "supports": [
+            "PX1905-Q966"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why does it use this solemn expression?",
+            "fr": "Pourquoi emploie-t-il cette expression solennelle ?"
+          },
+          "response": {
+            "en": "It emphasizes the gravity and evident injustice of these actions, which it says call for divine judgment.",
+            "fr": "Elle souligne la gravité et l'injustice manifeste de ces actes, que le texte dit appeler le jugement de Dieu."
+          },
+          "supports": [
+            "PX1905-Q967"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-V-967",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q967",
+        "companionQuestionId": "PX1905-Q966",
+        "section": "CAPITAL_VICES_AND_SERIOUS_SINS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH_DIALOGUE",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the Catechism say some sins 'cry to heaven'?",
+            "fr": "Pourquoi le Catéchisme dit-il que certains péchés « crient vers le ciel » ?"
+          },
+          "response": {
+            "en": "It uses the biblical expression for grave, manifest injustice and describes those offences as provoking especially severe divine judgment. It does not provide grounds for judging a particular individual's ultimate fate.",
+            "fr": "Il emploie l'expression biblique pour des injustices graves et manifestes, décrivant ces fautes comme appelant un jugement divin particulièrement sévère. Il ne permet pas de prononcer le sort ultime d'une personne."
+          },
+          "supports": [
+            "PX1905-Q967"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Which offences does this historical list name?",
+            "fr": "Quelles offenses figure-t-il dans cette liste historique ?"
+          },
+          "response": {
+            "en": "Deliberate homicide, a historical category of sexual wrongdoing, oppression of the poor and the defrauding of workers' wages.",
+            "fr": "Le meurtre volontaire, une catégorie historique de péché sexuel, l'oppression des pauvres et la fraude envers les salaires des travailleurs."
+          },
+          "supports": [
+            "PX1905-Q966"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    }
+  ]
+}
