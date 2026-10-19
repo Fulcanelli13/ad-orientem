@@ -47,6 +47,13 @@ try{
    await page.locator("#aoPray435930 [data-p435930-rosary-begin]").click();
    const player=page.locator("#aoPrayerBookRoot.open");
    await player.locator(".aoP435930RosaryBar").waitFor({state:"attached",timeout:15000});
+   // Methods Begin opens the canonical Rosary preparation surface.
+   // Its Today button starts the actual bead player; do not count the
+   // preparation step as a source bead or attempt to open active settings.
+   await player.locator("[data-lab-rosary-today]").click();
+   await player.locator(".aoRosaryActiveOptions").waitFor({state:"visible",timeout:15000});
+   await page.waitForFunction(()=>window.AO_ROSARY_V381?.steps?.()?.length>0,
+     null,{timeout:12000});
    if(depth==="guided"){
     const opts=player.locator(".aoRosaryActiveOptions");
     await opts.locator(":scope > summary").click();
