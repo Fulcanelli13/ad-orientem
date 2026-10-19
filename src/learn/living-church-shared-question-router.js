@@ -40,7 +40,7 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
     ||!Array.isArray(historicalPointers.records)))
   throw Error("Unverified historical source-pointer registry");
  const byHistoricalRef=new Map((historicalPointers?.records||[]).map(p=>{
-  if(!/^SPX-PILOT-\\d{2}$/.test(p.id)||!/^https:\/\//.test(p.originalDocumentUrl)
+  if(!/^SPX-PILOT-\d{2}$/.test(p.id)||!/^https:\/\//.test(p.originalDocumentUrl)
    ||!p.sourceLocator||p.approvedReply!==false||!p.witnessClassification
    ||p.sourceAttestation!=="PASSAGE_SCREEN_ONLY_NOT_ORIGINAL_FACSIMILE_COLLATED")
    throw Error("Invalid original historical source pointer "+p.id);
