@@ -63,8 +63,16 @@ for(const [engineName,engine] of Object.entries({
  ]){
   const r=engine.match(question,{language,currentCharacter:"pius-x"});
   assert.equal(r.kind,"no_coverage",engineName+": held case "+question);
-  assert.equal(r.reason,"TOPIC_SOURCE_GAP");
-  assert.equal(r.topicId,topic(num));
+  // The newer global safety screen intentionally takes precedence over a
+  // narrower historical topic-gap lookup for individualized moral verdicts.
+  if(num===12){
+   assert.equal(r.reason,"UNSUPPORTED_PERSONAL_SPIRITUAL_VERDICT");
+   assert.equal(r.topicId,undefined);
+   assert.equal(r.documentNavigation,undefined);
+  }else{
+   assert.equal(r.reason,"TOPIC_SOURCE_GAP");
+   assert.equal(r.topicId,topic(num));
+  }
   assert.equal(r.answerText,null);
  }
  // Construction without the historical pointer registry must never disguise
