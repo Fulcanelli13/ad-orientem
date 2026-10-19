@@ -97,6 +97,23 @@ assert.ok(devotionalUx.groupCapable.includes("pray.stations"));
 assert.ok(devotionalUx.swipeCapable.includes("programme.first_saturday"));
 
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
+const litanyModule=runtime.slice(runtime.indexOf("function renderLitany()"),runtime.indexOf("async function ensureSevenWords()"));
+const sevenWordsModule=runtime.slice(runtime.indexOf("function renderSevenWords()"),runtime.indexOf("const FORTY_STAGES="));
+for(const [owner,module,final] of [
+ ["litany",litanyModule,"data-p435930-lit-done"],
+ ["sevenWords",sevenWordsModule,"data-p435930-word-done"]
+]){
+ assert.match(module,/sourcedDevotionalCard/,"Sourced card owner lost for "+owner);
+ assert.match(module,/aoP435930FinalExit/,"Final exit must use shared liturgical card grammar: "+owner);
+ assert.ok(module.includes(final),"The source-owned final action was discarded: "+owner);
+ assert.doesNotMatch(module,/data-p435930-(?:lit|word)-(?:prev|next)/,"Obsolete routine page arrows remain: "+owner);
+}
+assert.match(runtime,/kind:owner,chapters:stages,activeIndex:step/,"Shared chapter adapter lost the existing cursor");
+assert.match(runtime,/timelineLabel:owner==='penitential'/,"Historical reader still needs one progress bar");
+assert.doesNotMatch(runtime,/data-p435930-lit-(?:next|prev)|data-p435930-word-(?:next|prev)/);
+assert.match(litanyModule,/if\(LIT.error\)return/,"Unverified Litany source must fail closed");
+assert.match(sevenWordsModule,/SEVEN.error/,"Unavailable Seven Words witness must not be fabricated");
+
 const guidedNav=runtime.slice(runtime.indexOf("function guideNav("),runtime.indexOf("function visitSteps("));
 const confessionRender=runtime.slice(runtime.indexOf("function renderConfession()"),runtime.indexOf("const BEN_STAGES=",runtime.indexOf("function renderConfession()")));
 const adorationStage=runtime.slice(runtime.indexOf("function guidedStage("),runtime.indexOf("function renderAdoration()",runtime.indexOf("function guidedStage(")));
