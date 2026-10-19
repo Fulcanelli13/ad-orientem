@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { pickActiveCue, markActiveCue, markUncuedReadingFocus } from "../src/mass/reader-cue-focus.js";
+import { pickActiveCue, pickReadingParagraph, markActiveCue, markUncuedReadingFocus } from "../src/mass/reader-cue-focus.js";
 
 const items=[
   {cueId:"AO.SM.C0001",top:0,bottom:34},
@@ -73,10 +73,46 @@ assert.equal(markUncuedReadingFocus(scroll),properRow);
 assert.equal(properRow.dataset.readingActive,"true");
 assert.equal(body.dataset.aoVisualFocus,"uncued");
 assert.equal(properRow.dataset.cueId,undefined,"Proper must never receive invented ceremonial cue");
+assert.equal(properRow.dataset.readingPosition,"current");
+assert.equal(cueRow.dataset.readingPosition,"previous");
+assert.equal(cueRow.dataset.readingActive,"false",
+  "The source cue may remain ceremonially active without lighting the wrong text");
+
 assert.equal(cueRow.dataset.active,"true","Priest/faithful source cue must remain unchanged");
 top=0;scroll.scrollTop=0;
 markUncuedReadingFocus(scroll);
 assert.equal(properRow.dataset.readingActive,"false");
 assert.equal(body.dataset.aoVisualFocus,undefined);
+assert.equal(cueRow.dataset.readingActive,"true","Cued text must receive visual reading focus");
+assert.equal(cueRow.dataset.readingPosition,"current");
+assert.equal(properRow.dataset.readingPosition,"next");
+
+
+// Every visible paragraph, whether cued or uncued, gets sequential reading
+// territory during a slow finger scroll. This is distinct from ceremonial
+// source-cue ownership and does not invent event IDs.
+const readingItems=[
+  {top:24,bottom:92,id:"source-prayer"},
+  {top:108,bottom:137,id:"proper"},
+  {top:146,bottom:160,id:"short-response"},
+  {top:171,bottom:220,id:"long-prayer"},
+  {top:245,bottom:330,id:"last-paragraph"},
+];
+let previous=-1;
+const reached=[];
+for(let y=0;y<=570;y++){
+  const selected=pickReadingParagraph({
+    scrollTop:y,clientHeight:130,scrollHeight:700,items:readingItems
+  });
+  const index=readingItems.indexOf(selected);
+  assert.ok(index>=0,"A nonempty reading card lost visual focus");
+  assert.ok(index>=previous&&index<=previous+1,
+    "Slow continuous scrolling skipped or reversed a paragraph at scrollTop "+y);
+  if(index!==previous)reached.push(selected.id);
+  previous=index;
+}
+assert.deepEqual(reached,readingItems.map(x=>x.id),
+ "Every paragraph must illuminate once in canonical source order");
+assert.equal(pickReadingParagraph({items:[]}),null);
 
 console.log("reader cue focus: PASS — 39% focus zone and no redundant DOM mutations.");

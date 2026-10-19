@@ -375,8 +375,12 @@ try{
   }
 
   assert.ok(hierarchy.activeOpacity>=.95,"active prayer lost primary visual focus: "+JSON.stringify(hierarchy));
-  assert.ok(hierarchy.inactiveOpacity>=.59&&hierarchy.inactiveOpacity<=.7,
-    "surrounding prayer text is unreadably dim or overwhelms active text: "+JSON.stringify(hierarchy));
+  // The old 60–70% resting-text rule predated the LIVE reading-focus
+  // hierarchy. This sample is a distant inactive paragraph, not the next
+  // paragraph; adjacent reading text is verified by the production phone
+  // contrast suite at 65% next / 55% previous.
+  assert.ok(hierarchy.inactiveOpacity>=.29&&hierarchy.inactiveOpacity<=.41,
+    "distant LIVE prayer text is outside the gentler 32% resting floor: "+JSON.stringify(hierarchy));
   assert.ok(hierarchy.nextOpacity>=.2&&hierarchy.nextOpacity<=.35,
     "resting card arrow distracts from prayer focus: "+JSON.stringify(hierarchy));
   assert.ok(hierarchy.nextHeight>=44&&hierarchy.previousHeight>=44,
