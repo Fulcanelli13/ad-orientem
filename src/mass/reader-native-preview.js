@@ -63,6 +63,7 @@ import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gl
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic, resolveCanonStageBellCinematic } from "./reader-transients.js";
 import {projectHolyThursdayBell,projectEasterVigilGloriaBell} from "./reader-triduum-bells.js";
+import {projectLowMassCommunionWarning} from "./reader-low-communion-bell.js";
 import { projectPriestQuietOffertory } from "./reader-offertory-quiet.js";
 import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
@@ -1603,9 +1604,18 @@ export async function mountNativeReaderPreview({
       expectedCinematic:partCinematic??transient.cinematic,
       observedCanon,
     });
+    const lowCommunionWarning=projectLowMassCommunionWarning({
+      form,activeCueId,
+      conditions:[...(resolvedMass?.conditions??[]),
+        ...(ready.prepared?.session?.conditions??[])],
+      canonicalTransient:transientProjection,
+      transitionPending:transientGuard.pending===true,
+    });
+    const communionBell=lowCommunionWarning.bell??canonBellStage.bell;
+    const communionCinematic=lowCommunionWarning.cinematic??canonBellStage.cinematic;
     const triduumBell=projectHolyThursdayBell({
       resolvedMass,cueId:activeCueId,
-      expectedBell:canonBellStage.bell,expectedCinematic:canonBellStage.cinematic,
+      expectedBell:communionBell,expectedCinematic:communionCinematic,
     });
     const bell=triduumBell.bell;
     const cinematic=triduumBell.cinematic;
@@ -1710,10 +1720,14 @@ export async function mountNativeReaderPreview({
       response:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.response,
       bell:triduumBell.applies && (triduumBell.suppressed || activeCueId==="AO.SM.C0053")
         ? triduumBell.owner
+        : lowCommunionWarning.bell
+          ? lowCommunionWarning.owner
         : canonBellStage.observationOverrides ? canonBellStage.bellOwner
         : transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : transientProjection.ownership.bell,
       cinematic:triduumBell.applies && activeCueId==="AO.SM.C0053"
         ? triduumBell.owner
+        : lowCommunionWarning.cinematic
+          ? lowCommunionWarning.owner
         : canonBellStage.observationOverrides
         ? canonBellStage.cinematicOwner
         : partCinematic ? partCinematic.owner
@@ -1799,6 +1813,7 @@ export async function mountNativeReaderPreview({
       canonStageSoundPhaseOwner:canonBellStage.phaseOwner,
       triduumBellOwner:triduumBell.owner,
       triduumBellSuppressed:triduumBell.suppressed,
+      lowCommunionBellStatus:lowCommunionWarning.status??null,
       priestVoice,
       priestQuietOffertory,
       schola:visibleSchola,
