@@ -1,7 +1,7 @@
 {
   "schema": "AO_MAGISTERIUM_SOURCE_PASSAGE_PILOT_V1",
   "created": "2026-10-19",
-  "status": "LATIN_WITNESS_B3_LOCATORS_ONLY_NO_APPROVED_TEXT",
+  "status": "B4_RECONCILED_CANDIDATE_INDEX_NO_PUBLISHED_TEXT",
   "doctrineRegistry": "data/learn/magisterium-ultra-master-doctrines.v1.json",
   "documentRegistry": "data/learn/magisterium-ultra-master-documents.v1.json",
   "sourceHierarchy": [
@@ -48,8 +48,11 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_IV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P002",
@@ -102,8 +105,11 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P003",
@@ -148,8 +154,11 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P004",
@@ -187,9 +196,12 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "editorialScopeNote": "Former broad locator retained; distinct chapter and canon locators record finer passage boundaries.",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P005",
@@ -241,8 +253,11 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P006",
@@ -273,8 +288,11 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "witnessGranularity": "OFFICIAL_VATICAN_CHAPTER_LOCATOR_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P007",
@@ -319,8 +337,11 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://corpus-ineffabilis.org/corpus/",
+      "witnessGranularity": "NUMBERED_DIGITAL_CORPUS_LINES_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P008",
@@ -358,8 +379,11 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P009",
@@ -381,7 +405,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/666-sessio-iv-recipitur-vulgata-editio-bibliae-praescribiturque-lat/?idCode=1.1",
@@ -399,7 +423,10 @@
         }
       ],
       "editorialScopeNote": "Different decree from Session IV's book-and-traditions list; do not conflate historical Vulgate decree with modern publication policy",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_IV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P010",
@@ -421,7 +448,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/391-sessio-iv-recipiuntur-libris-sacris-et-de-traditionibus-recipiendis-lat/?idCode=1.4",
@@ -439,7 +466,10 @@
         }
       ],
       "editorialScopeNote": "Separate scriptural book enumeration from the opening Tradition teaching",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_IV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P011",
@@ -461,7 +491,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -486,7 +516,10 @@
         }
       ],
       "editorialScopeNote": "Latin paragraph at site 6; online concordance marks legacy 876b",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P012",
@@ -508,7 +541,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -533,7 +566,10 @@
         }
       ],
       "editorialScopeNote": "Chapter V adoration; distinguished from canon VI",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P013",
@@ -555,7 +591,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -580,7 +616,10 @@
         }
       ],
       "editorialScopeNote": "Canon against denying the substantial conversion",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P014",
@@ -603,7 +642,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -628,7 +667,10 @@
         }
       ],
       "editorialScopeNote": "Canon on whole Christ under each species and part",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P015",
@@ -651,7 +693,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -676,7 +718,10 @@
         }
       ],
       "editorialScopeNote": "Normative doctrinal defence of adoration/processions; not a 1962 Corpus Christi choreography rubric",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P016",
@@ -699,7 +744,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
@@ -724,7 +769,10 @@
         }
       ],
       "editorialScopeNote": "Historical doctrinal defence of the Roman Canon; not text-level approval of today's reader",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P017",
@@ -738,8 +786,8 @@
       "verifiedLanguage": "en",
       "crosswalkCandidate": {
         "modernNumber": 1746,
-        "oldNumber": null,
-        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+        "oldNumber": 943,
+        "sourceEvidence": "https://sensusfidelium.com/the-sources-of-catholic-dogma-the-denzinger/"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
@@ -747,7 +795,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
@@ -769,10 +817,21 @@
           "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
           "checkedScope": "Online numbered excerpt candidate 1746; online pairing only, precise edition not identified",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://sensusfidelium.com/the-sources-of-catholic-dogma-the-denzinger/",
+          "language": "en",
+          "witnessType": "HISTORICAL_DENZINGER_TRANSLATION_CONTENTS",
+          "checkedScope": "Printed historical Dz 943 belongs to Trent XXII chapter V; no rights cleared",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Rationale for ceremonial signs; exact rules must come from the 1962 rubrics; removed unsupported Dz 943 pairing: digitized index shows no legacy number alongside 1746",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "editorialScopeNote": "Rationale for ceremonial signs; exact rules must come from the 1962 rubrics | B4 correction: modern-style 1746 / historical Dz 943 corroborated by historical compiled source; one online transcription omits the legacy index, so print-edition certification remains pending.",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "onlineIndexDiscrepancy": "One digital Latin transcription displays 1746 but omits legacy 943; separate historic English edition/table includes Dz 943.",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P018",
@@ -784,17 +843,17 @@
       "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
       "verifiedLanguage": "en",
       "crosswalkCandidate": {
-        "modernNumber": null,
-        "oldNumber": null,
-        "sourceEvidence": null
+        "modernNumber": 1751,
+        "oldNumber": 948,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
-      "exactCrosswalkStatus": "UNLOCATED",
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
@@ -809,10 +868,22 @@
           "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
           "checkedScope": "1738 printed-edition transcription: Session XXII, canon I: true and proper sacrifice; not critical-edition certified",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_NUMBERED_DENZINGER_TRANSCRIPTION",
+          "checkedScope": "Modern-style 1751 / historical Dz 948; precise printed edition still unconfirmed",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Canon I distinct from chapter I",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "editorialScopeNote": "Canon I distinct from chapter I | B4: Session XXII canon I — true and proper sacrifice",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonIssueTag": "TRUE_AND_PROPER_MASS_SACRIFICE",
+      "canonNumber": 1,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P019",
@@ -824,17 +895,17 @@
       "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
       "verifiedLanguage": "en",
       "crosswalkCandidate": {
-        "modernNumber": null,
-        "oldNumber": null,
-        "sourceEvidence": null
+        "modernNumber": 1753,
+        "oldNumber": 950,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
-      "exactCrosswalkStatus": "UNLOCATED",
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
@@ -849,10 +920,22 @@
           "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
           "checkedScope": "1738 printed-edition transcription: Session XXII, canon III: propitiatory for living and dead; not critical-edition certified",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_NUMBERED_DENZINGER_TRANSCRIPTION",
+          "checkedScope": "Modern-style 1753 / historical Dz 950; precise printed edition still unconfirmed",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Canon III distinct from chapter II; no Denzinger assignment without locating entry",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "editorialScopeNote": "Canon III distinct from chapter II; no Denzinger assignment without locating entry | B4: Session XXII canon III — propitiatory offering for living and deceased",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonIssueTag": "PROPITIATORY_LIVING_AND_DEAD",
+      "canonNumber": 3,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P020",
@@ -874,7 +957,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
@@ -892,7 +975,10 @@
         }
       ],
       "editorialScopeNote": "Form ('I absolve thee') and contrition/confession/satisfaction treated separately",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P021",
@@ -914,7 +1000,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
@@ -932,7 +1018,10 @@
         }
       ],
       "editorialScopeNote": "Distinguish perfect contrition plus sacramental desire from attrition",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P022",
@@ -954,7 +1043,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
@@ -972,7 +1061,10 @@
         }
       ],
       "editorialScopeNote": "Sacramental judicial absolution is not merely announcing forgiveness",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P023",
@@ -984,17 +1076,17 @@
       "verifiedSourceUrl": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
       "verifiedLanguage": "en",
       "crosswalkCandidate": {
-        "modernNumber": null,
-        "oldNumber": null,
-        "sourceEvidence": null
+        "modernNumber": 1709,
+        "oldNumber": 919,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
-      "exactCrosswalkStatus": "UNLOCATED",
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
@@ -1009,10 +1101,22 @@
           "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
           "checkedScope": "1738 printed-edition transcription: Session XIV, canon IX, sacramental absolution as judicial act; not critical-edition certified",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_NUMBERED_DENZINGER_TRANSCRIPTION",
+          "checkedScope": "Modern-style 1709 / historical Dz 919; precise printed edition still unconfirmed",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Canon IX directly addresses absolution",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "editorialScopeNote": "Canon IX directly addresses absolution | B4: Session XIV canon IX — judicial absolution (not merely declaration of forgiveness)",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonIssueTag": "ABSOLUTION_JUDICIAL_ACT",
+      "canonNumber": 9,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P024",
@@ -1034,7 +1138,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
@@ -1045,7 +1149,10 @@
         }
       ],
       "editorialScopeNote": "Primacy/jurisdiction distinct from Chapter IV's conditions of infallible teaching",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "witnessGranularity": "OFFICIAL_VATICAN_CHAPTER_LOCATOR_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P025",
@@ -1067,7 +1174,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
@@ -1078,7 +1185,10 @@
         }
       ],
       "editorialScopeNote": "Read the complete chapter and distinguish infallibility from every papal remark",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "witnessGranularity": "OFFICIAL_VATICAN_CHAPTER_LOCATOR_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P026",
@@ -1100,7 +1210,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceWitnesses": [
         {
           "url": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
@@ -1118,7 +1228,10 @@
         }
       ],
       "editorialScopeNote": "Historical rationale precedes the definition; Italian Vatican translation, not original Latin",
-      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "canonicalLatinWitnessLocator": "https://corpus-ineffabilis.org/corpus/",
+      "witnessGranularity": "NUMBERED_DIGITAL_CORPUS_LINES_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P027",
@@ -1140,7 +1253,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1152,7 +1265,10 @@
         }
       ],
       "editorialScopeNote": "John 20:22–23 and post-baptismal sin; distinct from chapter II.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P028",
@@ -1175,7 +1291,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1187,7 +1303,10 @@
         }
       ],
       "editorialScopeNote": "Distinct fruits; forgiveness of sins after Baptism, sacramental tribunal.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P029",
@@ -1209,7 +1328,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1221,7 +1340,10 @@
         }
       ],
       "editorialScopeNote": "List of mortal sins and why secret confession is not a modern invention; historical context required.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P030",
@@ -1243,7 +1365,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1255,7 +1377,10 @@
         }
       ],
       "editorialScopeNote": "Historical jurisdiction and reserved cases; never infer current faculties from 1551.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P031",
@@ -1277,7 +1402,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1289,7 +1414,10 @@
         }
       ],
       "editorialScopeNote": "Temporal punishment and satisfaction distinct from absolution; preserve Catholic distinction.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P032",
@@ -1311,7 +1439,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1330,7 +1458,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "PENANCE_REAL_SACRAMENT",
+      "canonNumber": 1,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P033",
@@ -1353,7 +1486,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1372,7 +1505,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "PENANCE_DISTINCT_FROM_BAPTISM",
+      "canonNumber": 2,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P034",
@@ -1394,7 +1532,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1413,7 +1551,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "JOHN_20_FORGIVE_RETAIN",
+      "canonNumber": 3,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P035",
@@ -1435,7 +1578,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1454,7 +1597,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "THREE_PENITENT_ACTS",
+      "canonNumber": 4,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P036",
@@ -1476,7 +1624,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1495,7 +1643,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "GENUINE_CONTRITION",
+      "canonNumber": 5,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P037",
@@ -1517,7 +1670,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1536,7 +1689,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "SACRAMENTAL_PRIVATE_CONFESSION",
+      "canonNumber": 6,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P038",
@@ -1558,7 +1716,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1577,7 +1735,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "MORTAL_SINS_INTEGRITY_CONFESSION",
+      "canonNumber": 7,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P039",
@@ -1599,7 +1762,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1618,7 +1781,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "ANNUAL_CONFESSION_HISTORICAL_DISCIPLINE",
+      "canonNumber": 8,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P040",
@@ -1640,7 +1808,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1659,7 +1827,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "PRIESTLY_MINISTRY_ABSOLUTION",
+      "canonNumber": 10,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P041",
@@ -1681,7 +1854,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1700,7 +1873,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "RESERVED_CASES_HISTORICAL_JURISDICTION",
+      "canonNumber": 11,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P042",
@@ -1722,7 +1900,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1741,7 +1919,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "TEMPORAL_PUNISHMENT_NOT_ALWAYS_REMOVED",
+      "canonNumber": 12,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P043",
@@ -1763,7 +1946,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1782,7 +1965,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "SATISFACTION_IN_CHRIST",
+      "canonNumber": 13,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P044",
@@ -1804,7 +1992,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1823,7 +2011,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "PERSONAL_PENITENTIAL_SATISFACTION",
+      "canonNumber": 14,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P045",
@@ -1845,7 +2038,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1864,7 +2057,12 @@
         }
       ],
       "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "KEYS_BIND_AND_LOOSE",
+      "canonNumber": 15,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XIV",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P046",
@@ -1887,7 +2085,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1906,7 +2104,10 @@
         }
       ],
       "editorialScopeNote": "Sacrifice offered to God, not to saints; intercession distinct.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P047",
@@ -1928,7 +2129,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1947,7 +2148,10 @@
         }
       ],
       "editorialScopeNote": "Does not assert faithful should never communicate; explicitly states council's desire they do.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P048",
@@ -1970,7 +2174,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -1989,7 +2193,10 @@
         }
       ],
       "editorialScopeNote": "Historical theological rationale; not standalone 1962 ceremonial timing rubric.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P049",
@@ -2011,7 +2218,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2030,7 +2237,10 @@
         }
       ],
       "editorialScopeNote": "Historical disciplinary prescription; do not present as current universal law.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P050",
@@ -2052,7 +2262,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2071,7 +2281,12 @@
         }
       ],
       "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "APOSTLES_TO_OFFER_SACRIFICE",
+      "canonNumber": 2,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P051",
@@ -2093,7 +2308,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2112,7 +2327,12 @@
         }
       ],
       "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "MASS_DOES_NOT_DIMINISH_CROSS",
+      "canonNumber": 4,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P052",
@@ -2135,7 +2355,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2154,7 +2374,12 @@
         }
       ],
       "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "MASSES_IN_HONOR_OF_SAINTS",
+      "canonNumber": 5,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P053",
@@ -2176,7 +2401,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2195,7 +2420,12 @@
         }
       ],
       "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "ROMAN_CANON_FREE_FROM_ERRORS",
+      "canonNumber": 6,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P054",
@@ -2218,7 +2448,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2237,7 +2467,12 @@
         }
       ],
       "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "CEREMONIAL_SIGNS_AND_VESTMENTS",
+      "canonNumber": 7,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P055",
@@ -2259,7 +2494,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2278,7 +2513,12 @@
         }
       ],
       "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "PRIEST_ONLY_SACRAMENTAL_COMMUNION",
+      "canonNumber": 8,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P056",
@@ -2301,7 +2541,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2320,7 +2560,12 @@
         }
       ],
       "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonIssueTag": "LOW_VOICE_VERNACULAR_ONLY_WATER_MIXTURE",
+      "canonNumber": 9,
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P057",
@@ -2342,7 +2587,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2354,7 +2599,10 @@
         }
       ],
       "editorialScopeNote": "Opening theological rationale, not dogmatic defining formula; paragraph line tracking not historically authoritative.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://corpus-ineffabilis.org/corpus/",
+      "witnessGranularity": "NUMBERED_DIGITAL_CORPUS_LINES_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P058",
@@ -2376,7 +2624,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2388,7 +2636,10 @@
         }
       ],
       "editorialScopeNote": "Consultation is historical evidence of discernment, not equivalent to defined proposition.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://corpus-ineffabilis.org/corpus/",
+      "witnessGranularity": "NUMBERED_DIGITAL_CORPUS_LINES_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P059",
@@ -2410,7 +2661,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2422,7 +2673,10 @@
         }
       ],
       "editorialScopeNote": "Historical sanctions and exhortation distinct from the formal definition; current-law applicability not assumed.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://corpus-ineffabilis.org/corpus/",
+      "witnessGranularity": "NUMBERED_DIGITAL_CORPUS_LINES_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P060",
@@ -2444,7 +2698,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2463,7 +2717,10 @@
         }
       ],
       "editorialScopeNote": "Distinct argument inside chapter I; Denzinger online boundary 1742.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     },
     {
       "passageId": "MG-P061",
@@ -2486,7 +2743,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION",
       "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
       "sourceWitnesses": [
         {
@@ -2505,21 +2762,29 @@
         }
       ],
       "editorialScopeNote": "Relevant to Requiem Mass theology; no assertion about precise Requiem rubrics.",
-      "bridgeOwnersCandidateOnly": []
+      "bridgeOwnersCandidateOnly": [],
+      "canonicalLatinWitnessLocator": "https://la.wikisource.org/wiki/Concilium_Tridentinum#SESSIO_XXII",
+      "witnessGranularity": "SESSION_AND_UNIT_LABEL_LOCATED_NOT_CRITICALLY_COLLATED",
+      "canonContext": "NOT_A_STANDALONE_EXPANDED_THEOLOGICAL_ANSWER"
     }
   ],
   "publicationAllowed": false,
   "metrics": {
     "pilotPassageLocators": 61,
-    "exactModernNumberCandidates": 41,
+    "exactModernNumberCandidates": 44,
     "authoritativeFullOriginalPassagesCertified": 0,
     "translationsRightsCleared": 0,
     "originalLatinLocatorChecks": 61,
     "additionalLocatorRecords": 53,
     "b3AddedLocatorRecords": 35,
-    "publicationReadyRecords": 0
+    "publicationReadyRecords": 0,
+    "b4RepairedCrosswalkPairs": 4,
+    "b4CanonRecordsAudited": 24,
+    "b4PassageTopicEdgesChecked": 75,
+    "b4UnmatchedPassageTopicEdges": 0,
+    "b4CanonicalUnitLocators": 61
   },
-  "researchBatch": "2026-10-19-B3",
+  "researchBatch": "2026-10-19-B4",
   "publishedQuoteCount": 0,
   "editionVerifiedCrosswalks": 0,
   "sourceMethodology": {
@@ -2539,6 +2804,9 @@
     },
     "digitalTextRights": "NOT_CLEARED",
     "authoritativeSourceQuoteGate": "CLOSED",
-    "modernLawInference": "PROHIBITED"
+    "modernLawInference": "PROHIBITED",
+    "crosswalkIndexReview": "Online concordance pairs verified against online transcriptions only; print edition and Denzinger editorial version not certified.",
+    "overlapPolicy": "Subsections and canons can overlap with earlier broad chapter locators; keep separate research records for defensible research questions, not duplicated visitor-facing passages.",
+    "witnessLevelClarification": "All 61 have a Latin source link identifying a document/session or chapter. This does not assert exact paragraph-level print collation, textual variants, or translation rights."
   }
 }
