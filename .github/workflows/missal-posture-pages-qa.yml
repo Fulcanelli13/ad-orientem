@@ -33,6 +33,8 @@ on:
       - "tests/rogations-ten-collects-historical-parallel.mjs"
       - "tests/rogations-psalm69-suffrages-historical-crosswalk.mjs"
       - "tests/rogation-187-vernacular-owner-census.mjs"
+      - "tests/rogation-112-invocation-historical-parity.mjs"
+      - "data/mass/rogation-112-invocations-historical-en-fr-crosswalk.v1.json"
       - "data/mass/rogation-187-vernacular-owner-census.v1.json"
       - "data/mass/rogation-psalm69-suffrages-historical-crosswalk.v1.json"
       - "data/mass/rogation-ten-collects-historical-parallel.v1.json"
@@ -85,6 +87,8 @@ jobs:
         run: node tests/rogations-psalm69-suffrages-historical-crosswalk.mjs
       - name: Validate 187 Rogation source-owner identities and full bilingual witness coverage ledger
         run: node tests/rogation-187-vernacular-owner-census.mjs
+      - name: Check 112 historical Litany invocations and edition-qualified EN FR omissions
+        run: node tests/rogation-112-invocation-historical-parity.mjs
       - name: Index existing PRAY litany and Scripture owner candidates without retranslating
         run: node tests/annexed-secondary-existing-owners.mjs
       - name: Compare provisional annex English/French wording against existing Ordinary owners
