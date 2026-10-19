@@ -300,5 +300,95 @@
     "Full witness verification for historical correspondence where possible",
     "Original-content-owner theological approval",
     "Visual and conversational in-app review only after clearance"
-  ]
+  ],
+  "userRatedMinimalVoiceCalibration": {
+    "date": "2026-10-19",
+    "origin": "User rated six in-chat source-vs-reconstruction comparisons; explicit complaint about unsourced filler.",
+    "baselineScores": {
+      "Q433": 3,
+      "Q325": 3,
+      "Q363": 2,
+      "Q116": 3,
+      "Q206": 3,
+      "Q85": 3
+    },
+    "baselineMean": 2.8333333333333335,
+    "status": "EDITORIAL_SOURCE_FIRST_REWRITE_ONLY_NOT_RUNTIME",
+    "sourceRule": "Do not require warmth, explanation or conclusion. Each claim in the reconstructed answer must map to a named source QID or be marked as a strictly necessary inference to address a visitor's actual difficulty.",
+    "testCorpus": [
+      {
+        "qid": "PX1912-Q433",
+        "additionalQids": [],
+        "score": 3,
+        "visitor": "Isn't Christ enough? Why ask Our Lady to intercede?",
+        "revised": "Christ is the one Mediator. His merits are so great that through them alone Our Lady and the saints have received the power of intercession. When you ask for their prayers, you rely upon His merits.",
+        "evidence": "Q433 explicitly says His merits, and His merits alone, impart Mary's and the saints' power of intercession.",
+        "addition": "Final second-person inference is a minimal application to the visitor's exact question.",
+        "removedPadding": "No generic adoration preface, reassurance, duplicate denial or devotional practice unrelated to this objection."
+      },
+      {
+        "qid": "PX1912-Q325",
+        "additionalQids": [
+          "PX1912-Q329"
+        ],
+        "score": 3,
+        "visitor": "But the Host still looks like bread.",
+        "revised": "The appearances of bread remain. But after the consecration the Host is truly the Body of Our Lord Jesus Christ.",
+        "evidence": "Q329 explicitly says the appearances remain; Q325 identifies the Host after consecration as the true Body of Christ.",
+        "addition": "None beyond English linkage and the visitor's visual objection.",
+        "removedPadding": "No elaboration about pretending, senses, or faith-vs-vision rhetoric absent from these two sources."
+      },
+      {
+        "qid": "PX1912-Q363",
+        "additionalQids": [],
+        "score": 2,
+        "visitor": "I am ashamed of my sins. Is that perfect contrition?",
+        "revised": "Shame alone is not perfect contrition. Perfect contrition is sorrow because our sins offend God, our infinitely good Father, and have caused the Passion and Death of Our Lord.",
+        "evidence": "Q363 defines perfect contrition by sorrow at offence against God and the Passion/Death of Christ.",
+        "addition": "'Shame alone' is a necessary contrast with the specific visitor's self-description, not a separate catechetical definition.",
+        "removedPadding": "No invented instruction to ask for grace, motivational pivot or essay on conscience."
+      },
+      {
+        "qid": "PX1912-Q116",
+        "additionalQids": [],
+        "score": 3,
+        "visitor": "Does the Church teach that the Pope can never be mistaken?",
+        "revised": "The Pope is infallible when, as Pastor and Teacher of all Christians, he defines doctrine concerning faith or morals. That does not mean that every judgment or remark he makes is free from error.",
+        "evidence": "Q116 expressly confines the infallibility formula to the Pope acting as Pastor and Teacher of all Christians while defining faith/morals.",
+        "addition": "The final distinction between defined doctrine and every remark is a reasonable necessary inference from the word 'when', not direct wording from Q116.",
+        "removedPadding": "No opening 'we must be precise', no closing general exhortation."
+      },
+      {
+        "qid": "PX1912-Q206",
+        "additionalQids": [
+          "PX1912-Q207"
+        ],
+        "score": 3,
+        "visitor": "If what I say about someone is true, how can it be wrong?",
+        "revised": "What is true may nevertheless injure your neighbour's good name unjustly. The Eighth Commandment forbids detraction as well as falsehood; truth must be spoken at the proper time and place.",
+        "evidence": "Q206 prohibits unjust harm to a person's reputation, detraction and falsehood; Q207 commands telling the truth at the proper time and place.",
+        "addition": "The first sentence directly applies the two source propositions to the objection.",
+        "removedPadding": "No unsupported rules about listener's right to know or imagined cases of preventing injustice."
+      },
+      {
+        "qid": "PX1912-Q85",
+        "additionalQids": [],
+        "score": 3,
+        "visitor": "Does Christ's poverty mean I shouldn't seek a better living for my family?",
+        "revised": "Christ chose poverty to teach us humility and not to place our happiness in riches, honours or worldly pleasures. That does not forbid an honest livelihood for your family.",
+        "evidence": "Q85 identifies humility and not locating happiness in riches/honours/pleasures as Christ's lesson.",
+        "addition": "Family livelihood sentence is a modest pastoral inference answering the visitor; it is not present in Q85 and is pending a separate source if published.",
+        "removedPadding": "No generic encouragement, personal closing maxim or redundant moral summary."
+      }
+    ],
+    "approval": {
+      "userReRated": false,
+      "doctrinal": false,
+      "historical": false,
+      "english": false,
+      "french": false,
+      "runtime": false
+    },
+    "disallowedAutomatedInference": "Do not infer historical fidelity from brevity alone; each new line still needs source ownership and sentence-level verification."
+  }
 }
