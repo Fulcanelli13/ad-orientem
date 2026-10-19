@@ -308,6 +308,22 @@ assert.ok(collationIds.has("ADIEM-IT-1904"));
 assert.ok(collationIds.has("ADIEM-FR-1904"));
 assert.ok(collationIds.has("QUAM-1910-LA-DH"));
 assert.ok(collationIds.has("PIUS1912-IT-LETTER"));
+assert.ok(collationIds.has("PX1912-IT-STRUCT"));
+assert.ok(collationIds.has("PX1912-IT-SECOND-INDEPENDENT"));
+assert.equal(collation.editorialApproval.targetedItalian1912TranscriptionAligned,true);
+assert.equal(collation.editorialApproval.italian1912ContemporaneousPrintChecked,false);
+assert.equal(collation.targetedItalianTranscription.questions.length,15);
+assert.equal(collation.targetedItalianTranscription.claimedContemporaneousPrintedEditionChecked,false);
+assert.equal(collation.targetedItalianTranscription.claimOfSartoPrivateSpeech,false);
+assert.equal(collation.targetedItalianTranscription.questions.filter(q=>q.doubleWitness).length,10);
+const italianSourceIds=new Set(collation.targetedItalianTranscription.questions.map(q=>q.q));
+assert.equal(italianSourceIds.size,15);
+for(const q of collation.targetedItalianTranscription.questions){
+ assert.ok(witness.entries.find(x=>x.q===q.q),"Original Italian sample must be indexed by real QID");
+ assert.match(q.p,/^(orazione|credo-chiesa|legge-virtu|sacramento-eucaristia)\.md$/);
+ assert.ok(q.anchor.length>=17);
+}
+
 const hazards=new Set(collation.criticalDiscrepancies.map(h=>h.id));
 for(const id of ["ADIEM-ITALIAN-NEGATION-OMISSION","QUAM-Q342-SCOPE","Q335-OLD-FAST","EARLY_IT_CAT_NOT_COLLATED"]){
  assert.ok(hazards.has(id),"Missing original-language/source-age hazard "+id);
