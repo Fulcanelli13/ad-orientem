@@ -11,9 +11,13 @@ assert.equal(data.objects.length,30);
 assert.equal(data.immutable_master_image_count,112);
 assert.equal(data.stage18,14);
 assert.equal(data.qa.inspected,3);
-assert.equal(data.objects.find(x=>x.object_id==="AL16").records.filter(x=>x.source_group==="B18_DISCOVERY").length,3);
-assert.equal(data.objects.find(x=>x.object_id==="SV01").records.filter(x=>x.source_group==="B18_DISCOVERY").length,4);
-assert.equal(data.objects.find(x=>x.object_id==="BK02").records.filter(x=>x.source_group==="B18_DISCOVERY").length,1);
+assert.equal(data.stage18_rights_verified,14);
+assert.equal(data.assistant_recommendations.filter(x=>x.preferred_asset_id).length,6);
+assert.equal(new Set(data.objects.flatMap(o=>o.records.filter(x=>x.source_group==="B18_SOURCE_VERIFIED").map(x=>x.asset_id))).size,14);
+assert.ok(data.objects.flatMap(o=>o.records.filter(x=>x.source_group==="B18_SOURCE_VERIFIED")).every(x=>x.creator==="Pierre Poschadel"&&x.licence==="CC BY-SA 4.0"&&x.rights_verified));
+assert.equal(data.objects.find(x=>x.object_id==="AL16").records.filter(x=>x.source_group==="B18_SOURCE_VERIFIED").length,3);
+assert.equal(data.objects.find(x=>x.object_id==="SV01").records.filter(x=>x.source_group==="B18_SOURCE_VERIFIED").length,4);
+assert.equal(data.objects.find(x=>x.object_id==="BK02").records.filter(x=>x.source_group==="B18_SOURCE_VERIFIED").length,1);
 const browser=await chromium.launch({headless:true});
 try {
 for(const viewport of [{name:"desktop",width:1280,height:820},{name:"mobile",width:390,height:844}]){
@@ -22,9 +26,11 @@ for(const viewport of [{name:"desktop",width:1280,height:820},{name:"mobile",wid
  await page.route(/^https?:\/\//,route=>route.abort("internetdisconnected"));
  await page.goto(pathToFileURL(htmlPath).href,{waitUntil:"load"});
  const status=await page.evaluate(()=>window.AO_M6_RAPID?.status());
- assert.equal(status.pilot,30);assert.equal(status.ready_groups,4);assert.equal(status.staged_discovery,14);
- assert.equal(status.original_inspected,3);assert.equal(status.selected,"SV02");
- assert.equal(await page.locator("#choices .card").count(),4);
+ assert.equal(status.pilot,30);assert.equal(status.ready_groups,5);assert.equal(status.staged_discovery,14);
+ assert.equal(status.original_inspected,3);assert.equal(status.selected,"SV01");
+ assert.equal(await page.locator("#choices .card").count(),6);
+ assert.match(await page.locator("#choices .card").first().innerText(),/FIRST CHOICE/);
+ assert.match(await page.locator("#choices .card").first().innerText(),/BIAIS-RONDELET/);
  assert.equal(await page.locator("#outline .quick").count(),30);
  const card=page.locator("#choices .card").first();
  await card.locator('[data-rate="5"]').click();
@@ -38,9 +44,12 @@ for(const viewport of [{name:"desktop",width:1280,height:820},{name:"mobile",wid
  assert.equal(exported.decisions.filter(x=>x.placement==="primary").length,1,"One primary per object");
  assert.equal(exported.decisions.filter(x=>x.placement==="secondary").length,1);
  assert.equal(await page.evaluate(()=>window.AO_M6_RAPID.select("SV01")),true);
- assert.equal(await page.locator("#choices .card").count(),2,"Original pixel holds remove two compromised chalices");
- assert.equal(await page.locator("#references .card").count(),7,"Two QA holds, four discovery leads, one legacy source");
- assert.match(await page.locator("#references").innerText(),/rights pending/i);
+ assert.equal(await page.locator("#choices .card").count(),6,"Four rights-verified B18 chalices join 2 available B15 sources");
+ assert.equal(await page.locator("#references .card").count(),3,"Two image-quality holds plus a combined legacy chalice/paten scene");
+ assert.match(await page.locator("#references").innerText(),/original photo inspected/i);
+ assert.equal(await page.evaluate(()=>window.AO_M6_RAPID.select("LN03")),true);
+ assert.equal(await page.locator("#choices .card").count(),3,"Three unique authenticated chalice palls, not one item photographed three times");
+ assert.match(await page.locator("#choices .card").first().innerText(),/FIRST CHOICE/);
  assert.equal(await page.evaluate(()=>window.AO_M6_RAPID.select("AL16")),true);
  assert.equal(await page.locator("#choices .card").count(),0);
  assert.equal(await page.locator("#references .card").count(),4,"Three altar-card components plus existing context/photo; not four independent sets");
@@ -51,7 +60,7 @@ for(const viewport of [{name:"desktop",width:1280,height:820},{name:"mobile",wid
  assert.equal(imported,2);
  assert.equal(await page.evaluate(()=>window.AO_M6_RAPID.status().objects_marked),1);
  assert.deepEqual(errors,[],viewport.name+" file-origin page has no JS errors");
- console.log("PASS M6 rapid pilot",viewport.name,JSON.stringify({objects:status.pilot,ready:status.ready_groups,discovery:status.staged_discovery,ratings:2,objectFlags:1}));
+ console.log("PASS M6 rapid pilot",viewport.name,JSON.stringify({objects:status.pilot,ready:status.ready_groups,rights_verified:14,assistant_choices:6,ratings:2,objectFlags:1}));
  await ctx.close();
 }
 }finally{await browser.close()}
