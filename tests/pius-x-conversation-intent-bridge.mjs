@@ -411,3 +411,82 @@ assert.equal(answerabilityPilot.records.find(x=>x.case_id==='SPX-PILOT-11').avat
 assert.equal(answerabilityPilot.records.find(x=>x.case_id==='SPX-PILOT-12').screen_disposition,
  'HOLD_INDIVIDUAL_DIAGNOSIS');
 console.log('Pius X 12-case research answerability pilot: 10 bounded paraphrases, 2 restricted; 0 certified visitor answers');
+
+
+// Guarded 12-case conversational paraphrase and follow-up corpus. This is a
+// hand-annotated gold fixture, NOT an execution of the separate #1443 router.
+const conversationalGold=JSON.parse(readFileSync(
+  'data/learn/research/pius-x-12case-paraphrases-followups-20261019.v1.json','utf8'));
+assert.equal(conversationalGold.schema,'AO_PIUS_X_TWELVE_CASE_PARAPHRASE_FOLLOWUP_GOLD_TEST_V1');
+assert.equal(conversationalGold.status,'MANUAL_EDITORIAL_GOLD_FIXTURE_ROUTER_NOT_EXERCISED');
+assert.equal(conversationalGold.records.length,12);
+assert.deepEqual(conversationalGold.records.map(x=>x.pilot_case_id),
+  answerabilityPilot.records.map(x=>x.case_id));
+assert.deepEqual(conversationalGold.records.map(x=>x.seed_id),
+  answerabilityPilot.records.map(x=>x.requested_family_id));
+assert.equal(conversationalGold.counts.alternate_phrasings,36);
+assert.equal(conversationalGold.counts.followups,12);
+assert.equal(conversationalGold.counts.total_test_utterances,48);
+assert.equal(conversationalGold.counts.actual_shared_router_executions,0);
+assert.equal(conversationalGold.counts.certified_answer_turns,0);
+assert.equal(conversationalGold.counts.voice_approved_turns,0);
+assert.equal(conversationalGold.counts.explicit_adversarial_or_risk_variant_count,16);
+assert.equal(conversationalGold.shared_question_router_owner,undefined); // not a second interpreter
+const utteranceIds=new Set();
+const risky=new Set([
+ 'CORRECT_UNATTESTED_FORMAL_REFUSAL','CORRECT_FALSE_PROHIBITION',
+ 'DO_NOT_JUDGE_PERSONAL_CULPABILITY','CORRECT_PERIOD_ADVICE_AS_NONBINDING',
+ 'CORRECT_FALSE_DOCTRINAL_EQUIVALENCE','GUARD_INDIVIDUAL_LABEL',
+ 'CONTEXTUALIZE_HISTORICAL_DISCIPLINE','REJECT_CLERGY_TO_LAITY_DIAGNOSIS',
+ 'CORRECT_ISSUER_AND_FIXED_AGE','BLOCK_UNATTESTED_INTERIOR_MEMORY',
+ 'BLOCK_UNATTESTED_PRIVATE_DIALOGUE','DO_NOT_DIAGNOSE_PERSONAL_SPIRITUAL_STATE',
+ 'DO_NOT_DIAGNOSE_PERSONAL_CULPABILITY','DO_NOT_CLAIM_DIVINE_VERDICT']);
+let countedRisk=0;
+for(let i=0;i<conversationalGold.records.length;i++){
+ const row=conversationalGold.records[i],pilot=answerabilityPilot.records[i];
+ assert.equal(row.domain,pilot.domain);
+ assert.equal(row.source_witness_type,pilot.source_evidence[0].witness_type);
+ assert.equal(row.alternatives.length,3);
+ assert.equal(row.approved_for_runtime,false);
+ assert.equal(row.historically_certified_voice,false);
+ assert.equal(row.voice_sample.status,'EDITORIAL_SAMPLE_NOT_VERBATIM');
+ assert.equal(row.voice_sample.historical_style_assessment,
+   'PLAUSIBLE_RESTRAINED_CATHOLIC_PROSE_NEEDS_INDEPENDENT_VOICE_REVIEW');
+ assert.ok(row.voice_sample.text.length>35);
+ assert.ok(row.voice_sample.hard_boundary.length>50);
+ for(let v=0;v<3;v++){
+   const q=row.alternatives[v],id=pilot.case_id+'-V'+(v+1);
+   assert.equal(q.utterance_id,id);
+   assert.equal(q.language,'en');
+   assert.equal(q.role,'USER');
+   assert.ok(q.text.length>30);
+   assert.equal(q.expected_research_family_id,pilot.requested_family_id);
+   assert.equal(q.evidence_url,pilot.source_evidence[0].url);
+   assert.equal(q.evidence_locus,pilot.source_evidence[0].section_or_question);
+   assert.equal(q.editorial_ground_truth,'MANUALLY_ANNOTATED_EXPECTATION_NOT_MEASURED_ROUTER_ACCURACY');
+   assert.equal(q.actual_production_router_result,
+     'NOT_RUN_SHARED_ROUTER_PR1443_HAS_DIFFERENT_OWNER_AND_NO_SPX_EXPANSION');
+   assert.ok(!utteranceIds.has(id),'duplicate utterance test '+id);
+   utteranceIds.add(id);
+   if(risky.has(q.expected_behavior)) countedRisk++;
+ }
+ const follow=row.followup,id=pilot.case_id+'-F1';
+ assert.equal(follow.utterance_id,id);
+ assert.equal(follow.role,'USER');
+ assert.equal(follow.language,'en');
+ assert.ok(follow.text.length>15&&follow.supported_followup_nucleus.length>75);
+ assert.equal(follow.context.previous_case_id,pilot.case_id);
+ assert.equal(follow.context.previous_research_family_id,pilot.requested_family_id);
+ assert.ok(/^https:\/\/(www\.)?/.test(follow.source_url));
+ assert.ok(!utteranceIds.has(id),'duplicate followup ID '+id);
+ utteranceIds.add(id);
+ assert.equal(follow.actual_production_router_result,
+   'NOT_RUN_SHARED_ROUTER_PR1443_HAS_DIFFERENT_OWNER_AND_NO_SPX_EXPANSION');
+}
+assert.equal(countedRisk,conversationalGold.counts.explicit_adversarial_or_risk_variant_count);
+assert.equal(utteranceIds.size,48);
+assert.equal(conversationalGold.records.find(x=>x.pilot_case_id==='SPX-PILOT-09').synonymous_existing_family_id,'SPX-014');
+assert.equal(conversationalGold.records.find(x=>x.pilot_case_id==='SPX-PILOT-10').followup.expected_behavior,'SOURCE_SUPPORTED_DICASTERY_NOT_PAPAL_QUOTE');
+assert.equal(conversationalGold.records.find(x=>x.pilot_case_id==='SPX-PILOT-11').followup.expected_behavior,'THIRD_PERSON_HISTORICAL_FALLBACK');
+assert.equal(conversationalGold.records.find(x=>x.pilot_case_id==='SPX-PILOT-12').followup.expected_behavior,'PASTORAL_GENERAL_FALLBACK_NOT_PERSONAL_DIAGNOSIS');
+console.log('Pius X conversation fixture: 36 variants + 12 followups source-bound, 16 risk probes, 0 runtime tests or approved answers');
