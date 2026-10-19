@@ -85,12 +85,29 @@ try{
      "Month categories are unreadable or too small: "+JSON.stringify(metrics.tabs));
    assert.ok(metrics.nav.length===3&&metrics.nav.every(x=>x.height>=44&&x.font>=13),
      "Previous/Today/Next controls too small: "+JSON.stringify(metrics.nav));
+   assert.equal(await cal.locator(".aoCalHybridOverview").count(),1,
+     "The main Month view must integrate both principal observances and devotional practices");
+   assert.equal(await cal.locator(".aoCalHybridMajorSection").count(),1,
+     "Major celebrations must be included within the main calendar");
+   assert.equal(await cal.locator(".aoCalHybridPracticesSection").count(),1,
+     "Practices and novena starts must be included within the main calendar");
+   const monthPracticeMarks=await cal.locator(".aoCalV2MonthGrid .hasPractice").count();
+   assert.ok(Number.isInteger(monthPracticeMarks),"Practice markers must not disturb 42-day grid");
    assert.ok(metrics.gridTop<width*2,"Calendar grid pushed below the useful phone fold");
    assert.ok(metrics.overflow<=1,"Calendar caused global horizontal overflow: "+metrics.overflow);
    assert.ok(metrics.tabScrollWidth>=metrics.tabWidth,
      "Calendar horizontal month rail has invalid scroll geometry");
    await page.screenshot({path:resolve(output,"calendar-month-"+lang+"-"+width+".png"),
      fullPage:false,animations:"disabled"});
+   await cal.locator('[data-cal-month-view="temporale"]').click();
+   await cal.locator('[data-cal-month-index="temporale"]').waitFor({state:"visible",timeout:25000});
+   assert.equal(await cal.locator(".aoCalMonthTimelineSurface").count(),1,
+     "Temporale must use the approved vertical chronology");
+   const unclassifiedDisclosure=cal.locator(".aoCalMonthUnclassified");
+   if(await unclassifiedDisclosure.count())
+     assert.equal(await unclassifiedDisclosure.getAttribute("open"),null,
+       "Unclassified source identities must be disclosed, not promoted as observed Temporale");
+   await cal.locator('[data-cal-month-view="calendar"]').click();
    const practices=cal.locator('[data-cal-month-view="practices"]');
    await practices.click();
    assert.equal(await practices.getAttribute("aria-current"),"page",

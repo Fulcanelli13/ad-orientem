@@ -231,6 +231,36 @@ function monthIndexEntries(monthId,view){
   if(view==="sanctorale")return entries.filter(x=>x.cycle==="sanctorale");
   return entries;
 }
+
+/* Month hybrid: observed major feasts and independent traditional practices
+   share the Calendar overview without being represented as the same authority. */
+function monthHybridOverview(monthId,selected){
+  const principal=monthIndexEntries(monthId,"major"),practices=monthIndexEntries(monthId,"practices");
+  const majorStatus=monthIndexResolutionState(monthId,"major");
+  const majorCards=principal.map((item,i)=>
+    `<button type="button" class="aoCalHybridMajor${i<2?" featured":""}" data-cal-month-index-date="${esc(item.date)}" style="--month-accent:${esc(item.accent)}">
+      <span class="aoCalHybridDate">${esc(displayDate(item.date))}</span>
+      <span class="aoCalHybridTitle">${esc(item.title)}</span>
+      <small>${esc([item.rank,item.colour].filter(Boolean).join(" · "))}</small>
+    </button>`).join("");
+  const practiceCards=practices.map(item=>
+    `<button type="button" class="aoCalHybridPractice" data-cal-month-index-date="${esc(item.date)}">
+      <time>${esc(displayDate(item.date))}</time><span><strong>${esc(item.title)}</strong>${item.summary?`<small>${esc(item.summary)}</small>`:""}</span>
+      <span aria-hidden="true">›</span>
+    </button>`).join("");
+  return `<div class="aoCalHybridOverview" aria-label="${esc(L("Month overview","Aperçu du mois"))}">
+    <section class="aoCalHybridSection aoCalHybridMajorSection">
+      <div class="aoCalHybridHeading"><h3>${esc(L("Principal celebrations","Célébrations principales"))}</h3><span>${esc(L("Observed Roman calendar · 1962","Calendrier romain observé · 1962"))}</span></div>
+      ${majorStatus==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some observed days could not be resolved.","Certains jours observés n'ont pas pu être résolus."))}</p>`:""}
+      <div class="aoCalHybridMajors">${majorCards||`<p class="aoCalHybridEmpty">${esc(majorStatus==="loading"?L("Resolving this month’s celebrations…","Résolution des célébrations du mois…"):L("No resolved principal celebrations.","Aucune célébration principale résolue."))}</p>`}</div>
+    </section>
+    <section class="aoCalHybridSection aoCalHybridPracticesSection">
+      <div class="aoCalHybridHeading"><h3>${esc(L("Practices & novenas","Pratiques et neuvaines"))}</h3><span>${esc(L("Devotional calendar · not additional 1962 Masses","Calendrier de dévotion · non des messes de 1962 supplémentaires"))}</span></div>
+      <div class="aoCalHybridPractices">${practiceCards||`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`}</div>
+    </section>
+  </div>`;
+}
+
 function monthIndexTabs(){
   const tabs=[
     ["calendar",L("Calendar","Calendrier")],
@@ -262,6 +292,37 @@ function monthIndexList(monthId,selected,view){
       :view==="sanctorale"
         ?L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.")
         :L("Traditional devotions and novena starts for dates in this month.","Dévotions traditionnelles et débuts de neuvaines aux dates de ce mois.");
+
+  if(view==="temporale"){
+    const entries=rows.map(x=>`<li class="aoCalMonthTimeEntry${x.sunday?" sunday":""}" style="--month-accent:${esc(x.accent)}">
+      <button type="button" data-cal-month-index-date="${esc(x.date)}" class="aoCalMonthTimeButton">
+        <time datetime="${esc(x.date)}">${esc(displayDate(x.date))}</time>
+        <span><strong>${esc(x.title)}</strong><small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small></span>
+        <span aria-hidden="true">›</span>
+      </button>
+    </li>`).join("");
+    const unclassified=unknownRows.length?`<details class="aoCalMonthUnclassified"><summary>${esc(L("Unclassified days · "+unknownRows.length,"Jours non classés · "+unknownRows.length))}</summary>
+      <p>${esc(L("These resolved days have not been classified as Temporale or Sanctorale by their source identity.","L'identité des sources ne permet pas de classer ces jours résolus comme temporal ou sanctoral."))}</p>
+      ${unknownRows.map(x=>`<button type="button" data-cal-month-index-date="${esc(x.date)}">${esc(displayDate(x.date))} · ${esc(x.title)}</button>`).join("")}
+    </details>`:"";
+    return `<section class="aoCalMonthIndex aoCalMonthTimelineSurface" data-cal-month-index="temporale">
+      <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
+      ${status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
+      ${entries?`<ol class="aoCalMonthTimeline">${entries}</ol>`:`<div class="aoCalMonthEmpty">${esc(status==="loading"?L("Resolving the month…","Résolution du mois…"):L("No confirmed Temporale days in this month.","Aucun jour confirmé du temporal ce mois."))}</div>`}
+      ${unclassified}
+    </section>`;
+  }
+  if(view==="major"){
+    const cards=rows.map((x,i)=>`<button type="button" data-cal-month-index-date="${esc(x.date)}" class="aoCalHybridMajor${i<2?" featured":""}" style="--month-accent:${esc(x.accent)}">
+      <span class="aoCalHybridDate">${esc(displayDate(x.date))}</span><span class="aoCalHybridTitle">${esc(x.title)}</span>
+      <small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small>
+    </button>`).join("");
+    return `<section class="aoCalMonthIndex aoCalMonthMajorEditorial" data-cal-month-index="major">
+      <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
+      ${status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
+      <div class="aoCalHybridMajors">${cards||`<div class="aoCalMonthEmpty">${esc(status==="loading"?L("Resolving this month…","Résolution du mois…"):L("No resolved principal celebrations.","Aucune célébration principale résolue."))}</div>`}</div>
+    </section>`;
+  }
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
     ${rows.length&&status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
@@ -295,7 +356,7 @@ function hydrateMonthCell(id){
   cell.classList.toggle("sunday",data.sunday);
   cell.classList.toggle("major",Boolean(data.name)&&data.ready);
   cell.classList.toggle("projected",data.projected);
-  cell.setAttribute("aria-label",data.aria);
+  cell.setAttribute("aria-label",data.aria+(cell.classList.contains("hasPractice")?" · "+L("Traditional practice","Pratique traditionnelle"):""));
   const name=cell.querySelector?.(".aoCalMonthName");if(name)name.textContent=data.name;
 }
 function weekLabel(id){const ids=weekIds(id);return `${displayDate(ids[0])} – ${displayDate(ids[6])}`}
@@ -865,12 +926,13 @@ function pickerSurface(selected){
   const [yy,mm]=pickerMonthId.split("-").map(Number),first=new Date(yy,mm-1,1,12),days=monthGridIds(pickerMonthId),today=iso(new Date()),loc=fr()?"fr-FR":"en-GB";
   const status=monthStatus.get(pickerMonthId),ready=monthVerified(pickerMonthId),attempted=monthReady(pickerMonthId),done=status?.done??days.filter(x=>weekCache.has(x)).length,errors=days.filter(x=>weekCache.has(x)&&(!weekCache.get(x)?.day||weekCache.get(x)?.status==="failed")).length,exportReady=Boolean(exportableMonthRows(pickerMonthId));
   const retryable=days.filter(id=>weekCache.has(id)&&(!weekCache.get(id)?.day||weekCache.get(id)?.status==="failed")).length;
+  const practiceDates=new Set(calendarPracticeMonthEntries(pickerMonthId,{fr:fr()}).map(x=>x.date));
   const calendarGrid=`<div class="aoCalV2Weekdays">${Array.from({length:7},(_,i)=>{const d=new Date(2026,7,2+i,12);return `<span>${esc(d.toLocaleDateString(loc,{weekday:"short"}))}</span>`}).join("")}</div>
     <div class="aoCalV2MonthGrid" data-month-ready="${ready?"true":"false"}">${days.map(id=>{
-      const d=dateOf(id),outside=d.getMonth()!==mm-1,data=monthCellData(id);
-      return `<button type="button" data-cal-pick-date="${id}" data-ready="${data.ready?"1":"0"}" data-rank-tier="${data.tier}" class="${outside?"outside":""} ${id===selected?"selected":""} ${id===today?"today":""} ${data.sunday?"sunday":""} ${data.projected?"projected":""} ${data.name&&data.ready?"major":""}" style="--month-accent:${esc(data.accent)}" aria-label="${esc(data.aria)}"><span class="aoCalMonthTop"><b>${d.getDate()}</b><i data-cal-liturgical-marker aria-hidden="true"></i></span><span class="aoCalMonthName">${esc(data.name)}</span></button>`;
+      const d=dateOf(id),outside=d.getMonth()!==mm-1,data=monthCellData(id),hasPractice=practiceDates.has(id);
+      return `<button type="button" data-cal-pick-date="${id}" data-ready="${data.ready?"1":"0"}" data-rank-tier="${data.tier}" class="${outside?"outside":""} ${id===selected?"selected":""} ${id===today?"today":""} ${data.sunday?"sunday":""} ${data.projected?"projected":""} ${data.name&&data.ready?"major":""} ${hasPractice?"hasPractice":""}" style="--month-accent:${esc(data.accent)}" aria-label="${esc(data.aria+(hasPractice?" · "+L("Traditional practice","Pratique traditionnelle"):""))}"><span class="aoCalMonthTop"><b>${d.getDate()}</b><span class="aoCalMonthIndicators"><i data-cal-liturgical-marker aria-hidden="true"></i>${hasPractice?'<span class="aoCalMonthPracticeMark" aria-hidden="true"></span>':""}</span></span><span class="aoCalMonthName">${esc(data.name)}</span></button>`;
     }).join("")}</div>`;
-  const projection=calendarMonthView==="calendar"?calendarGrid:monthIndexList(pickerMonthId,selected,calendarMonthView);
+  const projection=calendarMonthView==="calendar"?calendarGrid+monthHybridOverview(pickerMonthId,selected):monthIndexList(pickerMonthId,selected,calendarMonthView);
   return `<section class="aoCalV2Picker">
     <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL MONTH","MOIS LITURGIQUE"))}</small><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2></div>
     <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1" aria-label="${esc(L("Previous month","Mois précédent"))}">${assetIcon("ao-ui-previous")}<span class="aoCalMonthNavLong">${esc(L("Previous month","Mois précédent"))}</span><span class="aoCalMonthNavShort">${esc(L("Previous","Précédent"))}</span></button><button type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button><button type="button" data-cal-month-shift="1" aria-label="${esc(L("Next month","Mois suivant"))}"><span class="aoCalMonthNavLong">${esc(L("Next month","Mois suivant"))}</span><span class="aoCalMonthNavShort">${esc(L("Next","Suivant"))}</span>${assetIcon("ao-ui-next")}</button></div>
@@ -897,6 +959,60 @@ function bodyMarkup(){
 function calendarAuditCss(){
  return `.aoCalDaySources{margin:12px 0 6px;color:#b4b2ae;font:400 14px/1.55 var(--ao-font-ui,system-ui,sans-serif)}.aoCalDaySources summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:#dfd5c6;text-decoration:underline;text-decoration-color:rgba(225,210,180,.35);text-underline-offset:3px}.aoCalDaySources[open]{padding:4px 0 12px}.aoCalDaySources p{margin:9px 0}.aoCalDaySources a{display:block;color:#d9d0bb;text-decoration:underline;min-height:44px;padding:8px 0;overflow-wrap:anywhere}.aoCalSourceWitness code{white-space:normal;overflow-wrap:anywhere}.aoCalExactRubrics{margin:12px 0 8px;padding:12px 14px;border:1px solid var(--ao-rule,rgba(226,214,190,.18));border-radius:10px;background:var(--ao-surface-1,rgba(16,24,33,.75))}.aoCalExactRubrics h3{margin:0 0 8px;font:600 14px/1.35 var(--ao-font-ui,system-ui,sans-serif)}.aoCalExactRubrics ul{margin:0;padding-left:18px}.aoCalExactRubrics li{margin-bottom:8px}.aoCalExactRubrics li p{margin:0 0 5px}.aoCalExactRubrics>p{font-size:12px;line-height:1.5}.aoCalV2Retry{margin:8px 0 14px}.aoCalDaySources summary:focus-visible,.aoCalDaySources a:focus-visible,[data-cal-month-retry]:focus-visible,[data-cal-day-retry]:focus-visible,[data-cal-next-major-retry]:focus-visible{outline:2px solid #decaa0;outline-offset:3px}`;
 }
+function hybridMonthCss(){return `
+/* Approved hybrid month composition: no changes to Year wheel. */
+.aoCalHybridOverview{display:grid;gap:24px;margin:22px 0}
+.aoCalHybridSection{padding-top:15px;border-top:1px solid rgba(227,212,187,.15)}
+.aoCalHybridHeading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 13px}
+.aoCalHybridHeading h3{font-size:22px;font-weight:400;margin:0}
+.aoCalHybridHeading span{font:400 13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#92979a;text-align:right}
+.aoCalHybridMajors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#ao-calendar-modular-root .aoCalHybridMajor{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;min-width:0;min-height:76px;padding:11px 13px!important;border-radius:9px!important;text-align:left!important;border:1px solid rgba(226,211,184,.12)!important;border-left:2px solid color-mix(in srgb,var(--month-accent,#647d6c) 75%,#b7a580)!important;background:linear-gradient(145deg,color-mix(in srgb,var(--month-accent,#647d6c) 8%,#0b1119),#0c131b)!important}
+#ao-calendar-modular-root .aoCalHybridMajor.featured{min-height:116px!important}
+.aoCalHybridDate{font:500 13px/1.25 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#baa883}
+.aoCalHybridTitle{font:500 17px/1.24 var(--ao-font-display,"EB Garamond",Georgia,serif);overflow-wrap:break-word}
+.aoCalHybridMajor.featured .aoCalHybridTitle{font-size:22px;line-height:1.17}
+.aoCalHybridMajor small{font:400 13px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#91989b}
+.aoCalHybridPractices{display:grid}
+#ao-calendar-modular-root .aoCalHybridPractice{display:grid;grid-template-columns:79px minmax(0,1fr) 15px;gap:10px;align-items:center;min-width:0;min-height:54px;padding:9px 3px!important;text-align:left!important;border:0!important;border-top:1px solid rgba(227,212,187,.1)!important;border-radius:0!important;background:transparent!important}
+.aoCalHybridPractice time{font:500 13px/1.25 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#baa883;white-space:nowrap}
+.aoCalHybridPractice strong{display:block;font:500 17px/1.23 var(--ao-font-display,"EB Garamond",Georgia,serif);overflow-wrap:break-word}
+.aoCalHybridPractice small{display:block;margin-top:3px;font:400 13px/1.35 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#91989b}
+.aoCalHybridPractice>span:last-child{color:#baa883}
+.aoCalHybridEmpty{grid-column:1/-1;margin:5px 0;padding:9px 0;color:#9a9da0;font:400 14px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
+.aoCalMonthIndicators{display:flex;align-items:center;gap:3px}
+.aoCalV2MonthGrid button.hasPractice .aoCalMonthPracticeMark{display:block;flex:0 0 auto;width:6px;height:6px;border:1px solid #cbb689;border-radius:50%}
+.aoCalMonthTimeline{list-style:none;margin:12px 0 0 9px;padding:0 0 0 20px;border-left:1px solid rgba(202,182,145,.3)}
+.aoCalMonthTimeEntry{position:relative;margin:0;padding:0 0 5px}
+.aoCalMonthTimeEntry:before{content:"";position:absolute;top:24px;left:-25px;width:8px;height:8px;border-radius:50%;background:var(--month-accent,#819384);box-shadow:0 0 0 4px #080c12}
+.aoCalMonthTimeEntry.sunday:before{width:11px;height:11px;left:-26.5px;background:#c6b38b}
+#ao-calendar-modular-root .aoCalMonthTimeButton{display:grid;grid-template-columns:86px minmax(0,1fr) 14px;gap:10px;align-items:center;width:100%;min-height:64px;padding:10px 4px!important;border:0!important;border-radius:0!important;border-bottom:1px solid rgba(227,212,187,.08)!important;background:transparent!important;text-align:left!important}
+.aoCalMonthTimeButton time{font:500 13px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#baa883;white-space:nowrap}
+.aoCalMonthTimeButton strong{display:block;font:500 17px/1.2 var(--ao-font-display,"EB Garamond",Georgia,serif);overflow-wrap:break-word}
+.aoCalMonthTimeButton small{display:block;margin-top:4px;font:400 13px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#92989a}
+.aoCalMonthTimeButton>span:last-child{color:#baa883}
+.aoCalMonthUnclassified{margin:17px 0;padding:9px 0;border-top:1px solid rgba(227,212,187,.14);color:#a3a2a0}
+.aoCalMonthUnclassified summary{cursor:pointer;min-height:44px;padding:12px 2px;font:400 14px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
+.aoCalMonthUnclassified p{font:400 14px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#90989b}
+#ao-calendar-modular-root .aoCalMonthUnclassified button{display:block;width:100%;min-height:44px;padding:10px 0!important;border:0!important;border-bottom:1px solid rgba(227,212,187,.1)!important;border-radius:0!important;background:transparent!important;text-align:left!important}
+
+/* Sanctorale defaults to the restrained register while the user-chosen
+   hybrid leaves its exact aesthetic open; no source identities are modified. */
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexList{gap:0}
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexRow{border-bottom:1px solid rgba(227,212,187,.09)}
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexDay{min-height:55px!important;padding:8px 3px!important;border:0!important;border-radius:0!important;background:transparent!important;grid-template-columns:75px minmax(0,1fr) 7px!important}
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexDay:before{width:2px;opacity:.6}
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthSaintDetail{align-self:center;min-height:44px;min-width:92px;border:0;border-radius:0;background:transparent;color:#bba987}
+@media(max-width:560px){
+ .aoCalHybridHeading{display:block}
+ .aoCalHybridHeading span{display:block;text-align:left;margin-top:5px}
+ .aoCalHybridMajors{grid-template-columns:1fr}
+ #ao-calendar-modular-root .aoCalHybridMajor.featured{min-height:93px!important}
+ .aoCalHybridMajor.featured .aoCalHybridTitle{font-size:20px}
+ #ao-calendar-modular-root .aoCalHybridPractice{grid-template-columns:67px minmax(0,1fr) 12px;gap:7px}
+ #ao-calendar-modular-root .aoCalMonthTimeButton{grid-template-columns:73px minmax(0,1fr) 12px;gap:8px}
+}
+`;}
 function css(){
   return `#${ROOT_ID}{position:fixed;inset:0 0 calc(var(--ao-global-ribbon-h,68px) + var(--safe-bottom,0px)) 0;z-index:var(--ao-z-surface,2147481800);background:radial-gradient(circle at 50% -10%,rgba(126,103,69,.11),transparent 34%),var(--ao-bg-canvas,#080c12);color:var(--ao-text-primary,#e9e4d9);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;font-family:var(--ao-font-body,var(--font-body,Georgia,serif))}#${ROOT_ID} *{box-sizing:border-box}#${ROOT_ID} h1,#${ROOT_ID} h2,#${ROOT_ID} h3{font-family:var(--ao-font-display,var(--font-display,Georgia,serif))}.aoCalV2MonthExport{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;margin:10px 0;padding:2px 0}.aoCalV2MonthExport .aoCalV2TextLink{margin:0}.aoCalV2MonthExport button:disabled{opacity:.45;cursor:default}.aoCalV2MonthExport small{font-size:.75rem;color:var(--ao-text-muted,#a6a198)}.aoCalV2MonthExport [data-cal-export-error]{width:100%;margin:0;color:var(--ao-text-muted,#a6a198);font-size:.75rem}.aoCalV2MonthExport [data-cal-export-error]:empty{display:none}.aoCalModTop{position:sticky;top:0;z-index:4;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px;padding:calc(8px + var(--safe-top,0px)) var(--ao-page-gutter,14px) 8px;background:linear-gradient(180deg,rgba(8,12,18,.985),rgba(8,12,18,.91));backdrop-filter:blur(var(--ao-topbar-blur,16px));border-bottom:1px solid var(--ao-rule,rgba(226,214,190,.1))}.aoCalModTop h1{margin:0;font-size:17px;font-weight:500;letter-spacing:.025em;text-align:center}.aoCalModTop>span{width:44px;height:44px}.aoCalModTop button,#${ROOT_ID} section button,#${ROOT_ID} details button{min-height:44px;border:1px solid rgba(232,221,201,.13);border-radius:999px;background:rgba(16,24,33,.76);color:#e9e4d9;padding:8px 12px}.aoCalModTop button{width:44px;height:44px;padding:0}.aoCalModBody{width:min(760px,100%);margin:0 auto;padding:8px 14px 48px}.aoCalSacredTime{display:grid;grid-template-columns:180px minmax(0,1fr);gap:22px;align-items:center;padding:24px 4px 28px;position:relative}.aoCalSacredTime:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ao-cal-liturgical) 62%,transparent),transparent)}.aoCalYearWheel{width:168px;aspect-ratio:1;position:relative;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at center,#0b1118 0 47%,transparent 48%),conic-gradient(from -90deg,color-mix(in srgb,var(--ao-cal-liturgical) 54%,#202934) 0 var(--ao-cal-year-angle),rgba(255,255,255,.065) var(--ao-cal-year-angle) 360deg);box-shadow:inset 0 0 0 1px rgba(235,225,208,.1),0 18px 50px rgba(0,0,0,.2)}.aoCalYearWheel:before{content:"";position:absolute;inset:12px;border-radius:50%;border:1px solid rgba(235,225,208,.1)}.aoCalYearTicks{position:absolute;inset:2px;border-radius:50%;background:repeating-conic-gradient(from -90deg,rgba(238,227,207,.44) 0 1deg,transparent 1deg 30deg);mask:radial-gradient(transparent 0 88%,#000 89% 100%)}.aoCalYearMarker{position:absolute;inset:0;transform:rotate(var(--ao-cal-year-angle));pointer-events:none}.aoCalYearMarker:before{content:"";position:absolute;left:50%;top:-3px;width:8px;height:8px;border-radius:50%;transform:translateX(-50%);background:#e8decc;box-shadow:0 0 0 4px color-mix(in srgb,var(--ao-cal-liturgical) 40%,transparent),0 0 18px color-mix(in srgb,var(--ao-cal-liturgical) 70%,transparent)}.aoCalYearCore{position:relative;z-index:1;width:96px;text-align:center;display:grid;gap:1px}.aoCalYearCore small{font:600 var(--ao-type-ui-xs,11px)/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.1em;text-transform:uppercase;color:#aaa18f;white-space:normal;overflow-wrap:anywhere}.aoCalYearCore strong{font-size:40px;font-weight:400;line-height:1;color:#f0e8da;margin-top:4px}.aoCalYearCore span{font-size:11px;color:#a9afb5;text-transform:capitalize}.aoCalIdentity{min-width:0}.aoCalKicker,.aoCalSectionHead small{display:block;font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.14em;text-transform:uppercase;color:color-mix(in srgb,var(--ao-cal-liturgical) 75%,#b9b1a2)}.aoCalIdentity h2{font-size:31px;line-height:1.08;font-weight:400;margin:8px 0 12px;letter-spacing:-.02em}.aoCalIdentityMeta{display:flex;flex-wrap:wrap;gap:0;color:#b9b2a7}.aoCalIdentityMeta span{font-size:12px}.aoCalIdentityMeta span+span:before{content:"·";padding:0 7px;color:#68717a}.aoCalSourceLine{display:flex;gap:7px;align-items:center;margin-top:13px;color:#777f87;font:600 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase}.aoCalSourceLine span.ok{color:#91a994}.aoCalSourceLine span.warn{color:#b19074}.aoCalWeekSection,.aoCalCommemorations{padding:18px 0;border-bottom:1px solid rgba(235,225,208,.085)}.aoCalSectionHead{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:12px}.aoCalSectionHead h3{font-size:19px;font-weight:400;margin:3px 0 0}.aoCalTodayQuiet{border:0!important;background:transparent!important;color:#b9b1a2!important;padding:4px 0!important;min-height:var(--ao-control-h,44px)!important}.aoCalModRail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(126px,1fr);gap:7px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px 1px 7px}.aoCalModRail::-webkit-scrollbar{display:none}.aoCalObservance{scroll-snap-align:center!important;display:grid!important;grid-template-columns:34px minmax(0,1fr)!important;gap:9px!important;align-items:center!important;min-height:70px!important;border-radius:12px!important;text-align:left!important;padding:9px!important;background:linear-gradient(160deg,color-mix(in srgb,var(--ao-cal-liturgical) 7%,#0e161f),#0c131b)!important;position:relative;overflow:hidden}.aoCalObservance:before{content:"";position:absolute;inset:0 auto 0 0;width:2px;background:color-mix(in srgb,var(--ao-cal-liturgical) 72%,#8f7d5e);opacity:.55}.aoCalObservance.active{border-color:color-mix(in srgb,var(--ao-cal-liturgical) 68%,#d8cbaa)!important;box-shadow:0 0 0 1px color-mix(in srgb,var(--ao-cal-liturgical) 24%,transparent) inset}.aoCalObsDate{text-align:center;border-right:1px solid rgba(235,225,208,.08);padding-right:7px}.aoCalObsDate small,.aoCalObsDate b{display:block}.aoCalObsDate small{font:650 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;color:#858d95}.aoCalObsDate b{font-size:19px;font-weight:400;margin-top:4px}.aoCalObsText{min-width:0}.aoCalObsText strong{display:block;font-size:12px;font-weight:500;line-height:1.16;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.aoCalObsText small{display:block;margin-top:5px;color:#838b92;font:500 var(--ao-type-ui-xs,11px)/1.1 var(--ao-font-ui,system-ui,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.aoCalModWeekNav{display:flex;justify-content:space-between;gap:8px;margin-top:4px}.aoCalModWeekNav button{min-height:var(--ao-control-h,44px)!important;border:0!important;background:transparent!important;color:#999f9f!important;padding:5px 1px!important}.aoCalModWeekNav .aoCalAssetIcon{font-size:.8em}.aoCalModList{display:grid;gap:0}.aoCalModList article{display:grid;grid-template-columns:8px 1fr;gap:10px;align-items:center;padding:11px 2px;border-top:1px solid rgba(235,225,208,.07)}.aoCalModList article:first-child{border-top:0}.aoCalModList article span{width:5px;height:5px;border-radius:50%;background:var(--ao-cal-liturgical,#8f7d5e);opacity:.72}.aoCalModList article strong{font-size:13px;font-weight:400}.aoCalNavigate{margin:18px 0 8px;border-top:1px solid rgba(235,225,208,.08);padding-top:14px}.aoCalNavigate summary{cursor:pointer;list-style:none;color:#858d95;font:650 var(--ao-type-ui-xs,11px)/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase}.aoCalNavigate summary::-webkit-details-marker{display:none}.aoCalModJump{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}.aoCalModJump input{min-height:44px;border:1px solid rgba(235,225,208,.13);border-radius:10px;background:#0d141c;color:#e9e4d9;padding:8px 10px}.aoCalModJump .primary{border-color:rgba(205,179,119,.36)!important}.aoCalModError{min-height:20px;margin-top:7px;font-size:12px;color:#d2aa7b}.aoCalModEmpty{padding:50px 8px;text-align:center}.aoCalModEmpty small{font:650 var(--ao-type-ui-xs,11px)/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.14em;color:#858d95}.aoCalModEmpty h2{font-size:34px;font-weight:400}.aoCalModEmpty p{color:#9da5aa;line-height:1.5}@media(max-width:560px){.aoCalModBody{padding:2px 12px 36px}.aoCalSacredTime{grid-template-columns:138px minmax(0,1fr);gap:14px;padding:18px 0 22px}.aoCalYearWheel{width:132px}.aoCalYearWheel:before{inset:10px}.aoCalYearCore{width:76px}.aoCalYearCore strong{font-size:34px}.aoCalYearCore span{font-size:var(--ao-type-ui-xs,11px)}.aoCalIdentity h2{font-size:24px}.aoCalIdentityMeta span{font-size:11px}.aoCalSourceLine{gap:5px;font-size:var(--ao-type-ui-xs,11px)}.aoCalModRail{grid-auto-columns:132px;margin-right:-12px;padding-right:12px}.aoCalSectionHead{margin-bottom:9px}.aoCalWeekSection,.aoCalCommemorations{padding:15px 0}.aoCalModTop{grid-template-columns:44px 1fr 44px}.aoCalModTop button,.aoCalModTop>span{width:44px;height:44px}}
 .aoCalModBody{width:min(var(--ao-content-max,760px),100%);padding:0 var(--ao-page-gutter,14px) 60px}#ao-calendar-modular-root[data-ao-calendar-view="year"] .aoCalModBody{width:min(var(--ao-content-wide,980px),100%)}
@@ -972,6 +1088,7 @@ function css(){
 ${liturgicalClockCss}
 #${ROOT_ID} .aoClock{--bg:var(--ao-bg-canvas,#080c12);--text:var(--ao-text-primary,#e9e4d9);--muted:var(--ao-text-muted,#a6a198);--liturgical:var(--ao-liturgical-accent,#c7ae6d);--liturgical-border:var(--ao-rule,rgba(226,214,190,.15))}
 #${ROOT_ID} .aoClock+.aoCalV2YearHero{margin-top:24px;padding-top:18px;border-top:1px solid var(--ao-rule,rgba(226,214,190,.15))}
+${hybridMonthCss()}
 ${yearJourneyCss}
 #${ROOT_ID}[data-ao-calendar-embedded="true"]{position:relative!important;inset:auto!important;z-index:auto!important;width:100%;height:auto;max-height:none;min-height:0;overflow:visible!important;background:transparent;box-shadow:none}
 #${ROOT_ID}[data-ao-calendar-embedded="true"] .aoCalModTop{position:relative;top:auto;padding:8px}

@@ -130,7 +130,7 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2SeasonMicro{
  display:flex;gap:7px;align-items:center;justify-content:center;
  width:max-content;max-width:100%;margin:0 auto 6px;padding:5px 9px;
- min-height:44px;border:0;background:transparent;
+ min-height:46px;border:0;background:transparent;
  color:var(--text-muted,#c9c0ac);font:500 15px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif);
  text-align:center;
 }
