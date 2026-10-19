@@ -110,7 +110,7 @@ const probes=[
   },
   {
     "q": "Tell me about the prayer at the beginning of Mass.",
-    "k": "no_coverage",
+    "k": "clarify",
     "t": null,
     "l": "en"
   },
