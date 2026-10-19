@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -391,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "ORATE_FRATRES_PREFACE_SANCTUS_CANON_OPENING_C0130_PLUS",
+  "nextReview": "BANK_SURVEY_BATCH02_16_PRIEST_POSITIONS_ACTIONS",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -679,6 +679,43 @@
       "priorUse": "PRIEST_ACTION_PROFOUND_BOW_CONFITEOR",
       "caution": "Head bow and profound bow remain distinct rubrical gestures. Do not modify ritual data or override action ownership. No runtime activation in this draft.",
       "commentOverridesDropdownHold": true
+    }
+  ],
+  "assetBankSurveys": [
+    {
+      "id": "AO.ICONBANK.SURVEY.B01",
+      "label": "Frozen V4 bank — posture, gesture, reader and sound cues",
+      "status": "REVIEWED_PARTIAL",
+      "recordedDate": "2026-10-19",
+      "decisions": [
+        {
+          "letter": "F",
+          "label": "Profound bow",
+          "bankId": "v4-profound",
+          "file": "assets/active/mass-v46/profound_bow.svg",
+          "action": "REPURPOSE_TO_GENERAL_BOW",
+          "userInstruction": "Use F as bow, we don't need to distinguish profound bow from bow",
+          "notes": "Visual assignment only; preserve source-owned distinctions in liturgical gesture data. Prior icon E bow has not been rejected."
+        },
+        {
+          "letter": "K",
+          "label": "You / faithful",
+          "bankId": "v4-you",
+          "action": "REJECT_ASSET",
+          "userInstruction": "Reject K",
+          "notes": "No automatic replacement and no removal of source files."
+        },
+        {
+          "letter": "N",
+          "label": "Priest silent",
+          "bankId": "v4-silent",
+          "action": "REJECT_ASSET",
+          "userInstruction": "Reject N",
+          "notes": "Actor/voice cue remains valid and may be rendered as text or replaced later; do not equate all past `priest_silent` assets by name until exact bank identity is resolved."
+        }
+      ],
+      "untouched": "All remaining Batch 1 icons retain prior decisions; L and P remain unreviewed",
+      "runtimeMutationAllowed": false
     }
   ]
 }
