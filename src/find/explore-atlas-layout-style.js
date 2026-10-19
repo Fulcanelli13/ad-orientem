@@ -180,13 +180,15 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
    overflow:hidden;font-size:13px;line-height:1.4
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritageSaints,
- .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceTags,
- .aoHeritageSurface .aoHeritagePreview .aoHeritageFeastLink{display:none}
+ .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceTags{display:none}
+ .aoHeritageSurface .aoHeritagePreview .aoHeritageFeastLink{
+   grid-column:1/-1;grid-row:6;min-height:44px;line-height:1.3;padding-block:9px
+ }
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePreviewActions{
    grid-column:1/-1;grid-row:5;margin-top:6px
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePreviewActions>*{
-   min-height:42px;padding:8px 11px
+   min-height:44px;padding:9px 11px
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePrecision{grid-column:1/-1;font-size:10px;margin:0}
 }
