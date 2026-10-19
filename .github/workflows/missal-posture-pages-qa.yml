@@ -28,6 +28,8 @@ on:
       - "tests/annexed-draft-translation-collisions.mjs"
       - "tests/annexed-secondary-existing-owners.mjs"
       - "tests/rogations-litany-112-source-owners.mjs"
+      - "tests/rogations-printed-witness-holds.mjs"
+      - "data/mass/rogation-1961-print-witness-holds.v1.json"
       - "tools/mass/reconcile-rogation-litany-1962.mjs"
       - "tools/mass/reconcile-annexed-text-owners.mjs"
       - "tools/mass/reconcile-annexed-translation-collisions.mjs"
@@ -65,6 +67,8 @@ jobs:
         run: node tests/annexed-text-owner-reconciliation.mjs
       - name: Lock all 112 Rogation Litany invocations and governing 1962 non-doubling rule
         run: node tests/rogations-litany-112-source-owners.mjs
+      - name: Verify printed Rogations witness discrepancies remain explicit 1962 source holds
+        run: node tests/rogations-printed-witness-holds.mjs
       - name: Index existing PRAY litany and Scripture owner candidates without retranslating
         run: node tests/annexed-secondary-existing-owners.mjs
       - name: Compare provisional annex English/French wording against existing Ordinary owners
