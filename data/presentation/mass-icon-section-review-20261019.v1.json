@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -391,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "BANK_SURVEY_BATCH06_16",
+  "nextReview": "BANK_SURVEY_BATCH07_16",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -955,6 +955,74 @@
         }
       ],
       "unmentionedPolicy": "All other Batch 5 icons retain their previous status; no approval inferred",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B06",
+      "label": "Four special rites and remaining Mass donor variants",
+      "recordedDate": "2026-10-19",
+      "status": "PARTIALLY_REVIEWED_WITH_RESERVE_ASSETS",
+      "userStatement": "E is host elevation. F could be used as bow to altar. A,B,C,G,H are not bad per se; keep in bank but do not use, there are much better alternatives.",
+      "decisions": [
+        {
+          "letter": "A",
+          "key": "ea_ash_wednesday_imposition",
+          "semantic": "SPECIAL_RITE_ASH_WEDNESDAY",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "B",
+          "key": "ea_candlemas_distribution",
+          "semantic": "SPECIAL_RITE_CANDLEMAS",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "C",
+          "key": "ea_good_friday_veneration",
+          "semantic": "SPECIAL_RITE_GOOD_FRIDAY",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "E",
+          "key": "chalice_elevation",
+          "semantic": "HOST_ELEVATION",
+          "decision": "REPURPOSE_AS_HOST_ELEVATION",
+          "exactUserIntent": "E is host elevation",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "F",
+          "key": "priest_profound_bow_rich",
+          "semantic": "PRIEST_BOW_TO_ALTAR",
+          "decision": "PROPOSE_ALTAR_BOW_USE",
+          "exactUserIntent": "F could be used as bow to altar",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "G",
+          "key": "priest_communion_rich",
+          "semantic": "LEGACY_COMMUNION_SCENE",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "H",
+          "key": "gospel",
+          "semantic": "MISSAL_READER_ALTERNATIVE",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        }
+      ],
+      "untouched": "D and I–P retain their prior states; no new approvals. This does not overturn previously explicit user rejections of other physical artworks.",
+      "note": "V4 donor key chalice_elevation was previously identified as an image depicting the Host, not the chalice. F donor formerly suggested for altar kissing is now a proposed altar-bow visual; ritual action must remain separately identified.",
       "runtimeMutationAllowed": false
     }
   ]
