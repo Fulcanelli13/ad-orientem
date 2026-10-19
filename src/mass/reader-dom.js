@@ -2968,6 +2968,31 @@ export function createReaderDomAdapter({
       const row=current?.paragraphCues?.[node.dataset.faithfulRowId];
       if(!row)continue;
       node.dataset.faithfulPosture=row.posture;
+      // Inline faithful gesture art is optional. A rejected head-bow starts
+      // with no button, but a later local choice such as SIGN_OF_CROSS must
+      // create its own button without rebuilding the source prayer paragraph.
+      // Resetting to an iconless default removes it again rather than leaving
+      // an empty pictogram. The persistent posture button always remains.
+      const icons=node.querySelector(".ao-faithful-paragraph-icons");
+      if(icons){
+        let gestureButton=icons.querySelector('[data-faithful-field="gesture"]');
+        if(row.gestureIconKey && !gestureButton){
+          const doc=root.ownerDocument;
+          gestureButton=doc.createElement("button");
+          gestureButton.type="button";
+          gestureButton.className="ao-faithful-icon-edit";
+          gestureButton.dataset.faithfulIconOpen=node.dataset.faithfulRowId;
+          gestureButton.dataset.faithfulField="gesture";
+          gestureButton.setAttribute("aria-label","Customize my gesture at "+row.cueId);
+          const art=doc.createElement("span");
+          art.className="ao-icon-mask";
+          art.dataset.faithfulIconField="gesture";
+          gestureButton.append(art);
+          icons.append(gestureButton);
+        }else if(!row.gestureIconKey && gestureButton){
+          gestureButton.remove();
+        }
+      }
       for(const button of node.querySelectorAll?.('[data-faithful-icon-open]')??[]){
         const field=button.dataset.faithfulField;
         const key=field==="gesture"?row.gestureIconKey:row.postureIconKey;
