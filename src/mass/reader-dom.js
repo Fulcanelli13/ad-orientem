@@ -1067,6 +1067,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-rite-choice[hidden]{display:none}
 .ao-rite-choice-label{font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em}
 .ao-rite-choice-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ao-rite-psalm-choice .ao-rite-choice-actions{grid-template-columns:repeat(3,minmax(0,1fr))}
 .ao-rite-choice button{
   appearance:none;border:1px solid rgba(185,203,188,.16);border-radius:8px;
   min-height:44px;padding:7px 5px;background:rgba(255,255,255,.025);color:#c1cbc2;
