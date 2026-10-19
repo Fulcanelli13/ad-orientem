@@ -85,6 +85,10 @@ r=match("what is the small square over the chalice");
 assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"sacristan");assert.equal(r.topicId,"objects.pall");
 assert.equal(r.requiresAcceptance,true);assert.equal(r.sourceRefs[0].ref,"G189");
 assert.equal(router.acceptHandoff(r,{accept:false}).kind,"stay");
+assert.equal(router.acceptHandoff({...r,targetCharacter:"canon"},{accept:true}).kind,"invalid_handoff");
+assert.equal(router.acceptHandoff({...r,sourceRefs:[{owner:"GLOSSARY_CONCEPTS_SOT_V1",ref:"G999",evidence:"SOURCE_BACKED_GLOSSARY"}]},{accept:true}).kind,"invalid_handoff");
+assert.equal(router.acceptHandoff({...r,topicId:"mass.altar_reverence"},{accept:true}).kind,"invalid_handoff");
+
 const transfer=router.acceptHandoff(r,{accept:true});
 assert.equal(transfer.kind,"handoff_context");
 assert.equal(transfer.fromCharacter,"pius-x");assert.equal(transfer.toCharacter,"sacristan");
