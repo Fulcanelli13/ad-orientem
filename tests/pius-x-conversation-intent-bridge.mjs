@@ -431,7 +431,7 @@ assert.equal(conversationalGold.counts.actual_shared_router_executions,0);
 assert.equal(conversationalGold.counts.certified_answer_turns,0);
 assert.equal(conversationalGold.counts.voice_approved_turns,0);
 assert.equal(conversationalGold.counts.explicit_adversarial_or_risk_variant_count,16);
-assert.equal(conversationalGold.shared_question_router_owner,undefined); // not a second interpreter
+assert.match(conversationalGold.shared_question_router_owner,/PR #1443: separate source-navigation-only Living Church router/); // existing owner, not a second interpreter
 const utteranceIds=new Set();
 const risky=new Set([
  'CORRECT_UNATTESTED_FORMAL_REFUSAL','CORRECT_FALSE_PROHIBITION',
