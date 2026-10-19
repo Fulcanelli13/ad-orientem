@@ -447,12 +447,15 @@ function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
     let html='<section class="aoFindFilters aoExploreTlmFilters" aria-label="'+esc(L(vm.language,"Mass venue filters","Filtres des lieux de messe"))+'">';
+    if(vm.view==="map")html+='<details class="aoAtlasTlmExtra"><summary>'+esc(L(vm.language,"Filters","Filtres"))+'</summary>';
     html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"Show","Afficher"))+'</span>';
     html+=pill("directoryGroup","ALL",L(vm.language,"All locations","Tous les lieux"),f.directoryGroup);
     html+=pill("directoryGroup","ROME",L(vm.language,"Rome-grouped listings","Fiches classées Rome"),f.directoryGroup);
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
-    html+='</div><div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
+    html+='</div>';
+    if(vm.view==="map")html+='</details>';
+    html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
     for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"]){
       const emblem=massInstitutionEmblem(id);
