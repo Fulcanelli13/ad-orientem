@@ -1,3 +1,5 @@
+import {auditMissalPageIntegrity} from "./reader-missal-integrity.js";
+
 // Posture-aware MISSAL pagination is a presentation-only overlay.
 // Source cue timing comes exclusively from the existing R17 posture controller.
 // A card swipe does not itself assert an observed congregation movement.
@@ -35,10 +37,23 @@ function transitionAt(paragraph,cueState,preferences){
 
 function slicedBlocks(card,start,end){
   const out=[];
-  for(const block of card.blocks??[]){
+  const all=card.blocks??[];
+  for(let i=0;i<all.length;i++){
+    const block=all[i];
     const at=block.firstParagraphIndex,count=block.paragraphCount??0;
     if(at==null||count===0){
-      if(start===0)out.push(block);
+      // Zero-text ritual blocks remain source-owned metadata. Keep each with
+      // the correct preceding visible paragraph, rather than attaching every
+      // omitted block to the first card and silently reordering ownership.
+      let anchor=0;
+      for(let j=i-1;j>=0;j--){
+        const previous=all[j];
+        if(previous.firstParagraphIndex!=null&&previous.paragraphCount>0){
+          anchor=previous.firstParagraphIndex+previous.paragraphCount-1;
+          break;
+        }
+      }
+      if(anchor>=start&&anchor<end)out.push(block);
       continue;
     }
     const from=Math.max(start,at),until=Math.min(end,at+count);
@@ -54,7 +69,8 @@ function slicedBlocks(card,start,end){
 
 function splitCard(card,cueState,preferences,postureRegistry){
   const paragraphs=card.paragraphs??[];
-  if(paragraphs.length===0)return [{...card,postureEntry:null}];
+  if(paragraphs.length===0)return [{...card,postureEntry:null,
+    posturePageSourceCardId:card.sectionId}];
   const boundaries=new Map();
   for(let i=0;i<paragraphs.length;i++){
     const entry=transitionAt(paragraphs[i],cueState,preferences);
@@ -82,7 +98,8 @@ function splitCard(card,cueState,preferences,postureRegistry){
     .filter(([index])=>index>0)
     .sort(([a],[b])=>a-b)
     .map(([index,entry])=>({index,entry}));
-  if(!cuts.length)return [{...card,postureEntry:atStart}];
+  if(!cuts.length)return [{...card,postureEntry:atStart,
+    posturePageSourceCardId:card.sectionId}];
   const positions=[{index:0,entry:atStart},...cuts,{index:paragraphs.length,entry:null}];
   const pieces=[];
   for(let i=0;i<positions.length-1;i++){
@@ -92,7 +109,9 @@ function splitCard(card,cueState,preferences,postureRegistry){
     pieces.push(Object.freeze({
       ...card,
       sectionId:String(card.sectionId)+part,
-      title:i===0?card.title:String(card.title)+" · continued",
+      posturePageSourceCardId:card.sectionId,
+      title:i===0?card.title:String(card.title)+
+        (String(preferences?.language??"en").toLowerCase().startsWith("fr")?" · suite":" · continued"),
       paragraphs:Object.freeze(paragraphs.slice(start,end)),
       blocks:slicedBlocks(card,start,end),
       sourceParagraphStart:start,sourceParagraphEnd:end,
@@ -126,7 +145,7 @@ export function projectPostureAwareMissalCards(model,{cueState=null,preferences=
     const card=byId.get(String(id));
     return card?final[card.sequence-1+delta]??null:null;
   };
-  return Object.freeze({
+  const result=Object.freeze({
     ...model,
     schema:"ao-mass-reader-presentation-model-v1",
     structureOwner:"CANONICAL_MISSAL_POSTURE_AWARE_PRAYER_PAGES",
@@ -138,4 +157,6 @@ export function projectPostureAwareMissalCards(model,{cueState=null,preferences=
     cardForEvent:undefined,
     posturePageProjection:true,
   });
+  auditMissalPageIntegrity(model,result);
+  return result;
 }
