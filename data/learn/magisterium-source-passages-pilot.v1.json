@@ -1,7 +1,7 @@
 {
   "schema": "AO_MAGISTERIUM_SOURCE_PASSAGE_PILOT_V1",
   "created": "2026-10-19",
-  "status": "PASSAGE_LOCATORS_ONLY_NO_TEXT_COPIED",
+  "status": "PASSAGE_LOCATORS_EXPANDED_NO_TEXT_COPIED",
   "doctrineRegistry": "data/learn/magisterium-ultra-master-doctrines.v1.json",
   "documentRegistry": "data/learn/magisterium-ultra-master-documents.v1.json",
   "sourceHierarchy": [
@@ -30,7 +30,18 @@
       "primaryLatinChecked": true,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
-      "publicationPermission": "NOT_CLEARED"
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/391-sessio-iv-recipiuntur-libris-sacris-et-de-traditionibus-recipiendis-lat/?idCode=1.4",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Session IV first decree, opening",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
     },
     {
       "passageId": "MG-P002",
@@ -40,18 +51,36 @@
         "TRANSUBSTANTIATION",
         "EUCHARIST_REAL_PRESENCE"
       ],
-      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
-      "verifiedLanguage": "en",
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+      "verifiedLanguage": "la",
       "crosswalkCandidate": {
         "modernNumber": 1642,
         "oldNumber": null,
-        "sourceEvidence": "https://d3scmnh0khw7n8.cloudfront.net/wp-content/uploads/2022/08/13144254/SH-EMofHC-Guidelines.pdf"
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
-      "publicationPermission": "NOT_CLEARED"
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Chapter IV conversion and term transsubstantiation",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.clerus.org/bibliaclerusonline/en/dxa.htm",
+          "language": "en",
+          "witnessType": "EDITORIAL_TRANSLATION_INDEX",
+          "checkedScope": "Online entry 1642 / printed Dz 877; not edition certification",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
     },
     {
       "passageId": "MG-P003",
@@ -60,18 +89,29 @@
       "doctrineIds": [
         "EUCHARIST_REAL_PRESENCE"
       ],
-      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
-      "verifiedLanguage": "en",
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+      "verifiedLanguage": "la",
       "crosswalkCandidate": {
         "modernNumber": 1651,
         "oldNumber": null,
-        "sourceEvidence": "https://d3scmnh0khw7n8.cloudfront.net/wp-content/uploads/2022/08/13144254/SH-EMofHC-Guidelines.pdf"
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
-      "publicationPermission": "NOT_CLEARED"
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Canon I on real, substantial presence",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
     },
     {
       "passageId": "MG-P004",
@@ -80,7 +120,7 @@
       "doctrineIds": [
         "PENANCE_ABSOLUTION"
       ],
-      "verifiedSourceUrl": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+      "verifiedSourceUrl": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
       "verifiedLanguage": "en",
       "crosswalkCandidate": {
         "modernNumber": null,
@@ -91,7 +131,18 @@
       "primaryLatinChecked": false,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
-      "publicationPermission": "NOT_CLEARED"
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Session XIV introduction and chapter II",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
     },
     {
       "passageId": "MG-P005",
@@ -105,13 +156,31 @@
       "crosswalkCandidate": {
         "modernNumber": 1743,
         "oldNumber": 940,
-        "sourceEvidence": "https://rkdocumenten.nl/denzinger/"
+        "sourceEvidence": "https://www.clerus.org/bibliaclerusonline/en/dxc.htm"
       },
       "textCopied": false,
       "primaryLatinChecked": false,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
-      "publicationPermission": "NOT_CLEARED"
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Session XXII chapter II",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.clerus.org/bibliaclerusonline/en/dxc.htm",
+          "language": "en",
+          "witnessType": "EDITORIAL_TRANSLATION_INDEX",
+          "checkedScope": "Online entry 1743 / Dz 940; not edition certification",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
     },
     {
       "passageId": "MG-P006",
@@ -131,7 +200,18 @@
       "primaryLatinChecked": true,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
-      "publicationPermission": "NOT_CLEARED"
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+          "language": "la",
+          "witnessType": "OFFICIAL_VATICAN_LATIN",
+          "checkedScope": "Chapter IV final defining formula",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
     },
     {
       "passageId": "MG-P007",
@@ -151,7 +231,25 @@
       "primaryLatinChecked": false,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
-      "publicationPermission": "NOT_CLEARED"
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
+          "language": "it",
+          "witnessType": "OFFICIAL_VATICAN_ITALIAN_TRANSLATION",
+          "checkedScope": "Definition section",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.papalencyclicals.net/pius09/p9ineff.htm",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_DEFINITION_FOOTNOTE",
+          "checkedScope": "Definition-only note 29; not complete Latin edition",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
     },
     {
       "passageId": "MG-P008",
@@ -171,14 +269,610 @@
       "primaryLatinChecked": false,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
-      "publicationPermission": "NOT_CLEARED"
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceWitnesses": [
+        {
+          "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Session XXII chapter I",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+    },
+    {
+      "passageId": "MG-P009",
+      "documentId": "TRENT-IV-1546",
+      "localLocator": "Session IV, second decree: Vulgate authenticity and scriptural interpretation",
+      "doctrineIds": [
+        "SCRIPTURE_CANON"
+      ],
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/666-sessio-iv-recipitur-vulgata-editio-bibliae-praescribiturque-lat/?idCode=1.1",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/666-sessio-iv-recipitur-vulgata-editio-bibliae-praescribiturque-lat/?idCode=1.1",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Different decree from Session IV's book-and-traditions list; do not conflate historical Vulgate decree with modern publication policy",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Different decree from Session IV's book-and-traditions list; do not conflate historical Vulgate decree with modern publication policy"
+    },
+    {
+      "passageId": "MG-P010",
+      "documentId": "TRENT-IV-1546",
+      "localLocator": "Session IV, first decree: books of the Old Testament, paragraph 2",
+      "doctrineIds": [
+        "SCRIPTURE_CANON"
+      ],
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/391-sessio-iv-recipiuntur-libris-sacris-et-de-traditionibus-recipiendis-lat/?idCode=1.4",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1502,
+        "oldNumber": 784,
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/391-sessio-iv-recipiuntur-libris-sacris-et-de-traditionibus-recipiendis-lat/?idCode=1.4"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/391-sessio-iv-recipiuntur-libris-sacris-et-de-traditionibus-recipiendis-lat/?idCode=1.4",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Separate scriptural book enumeration from the opening Tradition teaching",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate scriptural book enumeration from the opening Tradition teaching"
+    },
+    {
+      "passageId": "MG-P011",
+      "documentId": "TRENT-XIII-1551",
+      "localLocator": "Session XIII, chapter III, Real Presence before use of the sacrament",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE"
+      ],
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1640,
+        "oldNumber": null,
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Latin paragraph at site 6; online concordance marks legacy 876b",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Latin paragraph at site 6; online concordance marks legacy 876b"
+    },
+    {
+      "passageId": "MG-P012",
+      "documentId": "TRENT-XIII-1551",
+      "localLocator": "Session XIII, chapter V, adoration due to the Eucharist",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE"
+      ],
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1643,
+        "oldNumber": 878,
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Chapter V adoration; distinguished from canon VI",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Chapter V adoration; distinguished from canon VI"
+    },
+    {
+      "passageId": "MG-P013",
+      "documentId": "TRENT-XIII-1551",
+      "localLocator": "Session XIII, canon II on the conversion of the substances",
+      "doctrineIds": [
+        "TRANSUBSTANTIATION"
+      ],
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1652,
+        "oldNumber": 884,
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Canon against denying the substantial conversion",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon against denying the substantial conversion"
+    },
+    {
+      "passageId": "MG-P014",
+      "documentId": "TRENT-XIII-1551",
+      "localLocator": "Session XIII, canon III on whole Christ under either species",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE",
+        "COMMUNION_UNDER_SPECIES"
+      ],
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1653,
+        "oldNumber": 885,
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Canon on whole Christ under each species and part",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon on whole Christ under each species and part"
+    },
+    {
+      "passageId": "MG-P015",
+      "documentId": "TRENT-XIII-1551",
+      "localLocator": "Session XIII, canon VI on adoration and Eucharistic processions",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1656,
+        "oldNumber": 888,
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
+          "language": "la",
+          "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
+          "checkedScope": "Normative doctrinal defence of adoration/processions; not a 1962 Corpus Christi choreography rubric",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Normative doctrinal defence of adoration/processions; not a 1962 Corpus Christi choreography rubric"
+    },
+    {
+      "passageId": "MG-P016",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, chapter IV, the Canon of the Mass",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": 1745,
+        "oldNumber": 942,
+        "sourceEvidence": "https://www.clerus.org/bibliaclerusonline/en/dxc.htm"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Historical doctrinal defence of the Roman Canon; not text-level approval of today's reader",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Historical doctrinal defence of the Roman Canon; not text-level approval of today's reader"
+    },
+    {
+      "passageId": "MG-P017",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, chapter V, sacred ceremonies, vestments, signs and audible versus silent speech",
+      "doctrineIds": [
+        "LITURGY_PRINCIPLES",
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": 1746,
+        "oldNumber": 943,
+        "sourceEvidence": "https://www.clerus.org/bibliaclerusonline/en/dxc.htm"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Rationale for ceremonial signs; exact rules must come from the 1962 rubrics",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Rationale for ceremonial signs; exact rules must come from the 1962 rubrics"
+    },
+    {
+      "passageId": "MG-P018",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon I: true and proper sacrifice",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Canon I distinct from chapter I",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon I distinct from chapter I"
+    },
+    {
+      "passageId": "MG-P019",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon III: propitiatory for living and dead",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Canon III distinct from chapter II; no Denzinger assignment without locating entry",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon III distinct from chapter II; no Denzinger assignment without locating entry"
+    },
+    {
+      "passageId": "MG-P020",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, chapter III, form of absolution and acts of the penitent",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Form ('I absolve thee') and contrition/confession/satisfaction treated separately",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Form ('I absolve thee') and contrition/confession/satisfaction treated separately"
+    },
+    {
+      "passageId": "MG-P021",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, chapter IV, contrition and attrition",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Distinguish perfect contrition plus sacramental desire from attrition",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Distinguish perfect contrition plus sacramental desire from attrition"
+    },
+    {
+      "passageId": "MG-P022",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, chapter VI, minister of penance and absolution",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Sacramental judicial absolution is not merely announcing forgiveness",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Sacramental judicial absolution is not merely announcing forgiveness"
+    },
+    {
+      "passageId": "MG-P023",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon IX, sacramental absolution as judicial act",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+          "language": "en",
+          "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
+          "checkedScope": "Canon IX directly addresses absolution",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon IX directly addresses absolution"
+    },
+    {
+      "passageId": "MG-P024",
+      "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+      "localLocator": "Chapter III, supreme and immediate jurisdiction of Roman Pontiff",
+      "doctrineIds": [
+        "PAPAL_PRIMACY"
+      ],
+      "verifiedSourceUrl": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+          "language": "la",
+          "witnessType": "OFFICIAL_VATICAN_LATIN",
+          "checkedScope": "Primacy/jurisdiction distinct from Chapter IV's conditions of infallible teaching",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Primacy/jurisdiction distinct from Chapter IV's conditions of infallible teaching"
+    },
+    {
+      "passageId": "MG-P025",
+      "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+      "localLocator": "Chapter IV, scope and limitations preceding the final ex cathedra definition",
+      "doctrineIds": [
+        "PAPAL_INFALLIBILITY"
+      ],
+      "verifiedSourceUrl": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+          "language": "la",
+          "witnessType": "OFFICIAL_VATICAN_LATIN",
+          "checkedScope": "Read the complete chapter and distinguish infallibility from every papal remark",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Read the complete chapter and distinguish infallibility from every papal remark"
+    },
+    {
+      "passageId": "MG-P026",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "localLocator": "Preparatory explanation and episcopal consultation preceding dogmatic formula",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "verifiedSourceUrl": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
+      "verifiedLanguage": "it",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceWitnesses": [
+        {
+          "url": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
+          "language": "it",
+          "witnessType": "OFFICIAL_VATICAN_ITALIAN_TRANSLATION",
+          "checkedScope": "Historical rationale precedes the definition; Italian Vatican translation, not original Latin",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Historical rationale precedes the definition; Italian Vatican translation, not original Latin"
     }
   ],
   "publicationAllowed": false,
   "metrics": {
-    "pilotPassageLocators": 8,
-    "exactModernNumberCandidates": 6,
+    "pilotPassageLocators": 26,
+    "exactModernNumberCandidates": 14,
     "authoritativeFullOriginalPassagesCertified": 0,
-    "translationsRightsCleared": 0
-  }
+    "translationsRightsCleared": 0,
+    "originalLatinLocatorChecks": 13,
+    "additionalLocatorRecords": 18
+  },
+  "researchBatch": "2026-10-19-B2",
+  "publishedQuoteCount": 0,
+  "editionVerifiedCrosswalks": 0
 }
