@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {specialRiteNextPosture,showSpecialRiteMissalPostureHint}
+import {specialRiteNextPosture,showSpecialRiteMissalPostureHint,specialRiteVernacular}
   from "../src/mass/reader-special-missal-pages.js";
 
 const card=(id,posture,actorScope="ALL_FAITHFUL",extra={})=>
@@ -60,5 +60,19 @@ assert.equal(showSpecialRiteMissalPostureHint(host,null,{language:"fr"}),false);
 assert.equal("nextPosture" in attrs,false);
 assert.equal(button["aria-label"],"Page suivante");
 assert.equal(showSpecialRiteMissalPostureHint(null,null),false);
+
+// French Missal cannot mislabel an English donor as vernacular French.
+const translated={
+  latin:"Orémus.",vernacular:"Let us pray.",english:"Let us pray.",
+  french:"Prions.",
+};
+assert.equal(specialRiteVernacular(translated,{language:"en"}),"Let us pray.");
+assert.equal(specialRiteVernacular(translated,{language:"fr"}),"Prions.");
+assert.equal(specialRiteVernacular({
+  latin:"Orémus.",english:"Let us pray.",
+},{language:"fr"}),null,
+  "French mode must fail closed instead of silently showing English as French");
+assert.equal(specialRiteVernacular({latin:"Orémus."},{language:"en"}),null,
+  "Latin-only ceremonial source cannot invent a translation");
 
 console.log("PASS special rite Missal stage cues: exact actor scope, personal/procession opt-in, localized manual page boundary");
