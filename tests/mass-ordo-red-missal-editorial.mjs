@@ -210,8 +210,10 @@ for(const lang of ["en","fr"]){
   const p=card.paragraphs.find(x=>x.sourceCueIds?.includes(cueId));
   assert.ok(p,"Appointed incensation must include "+cueId+"/"+lang);
   const text=[p.primary,p.alternate,p.secondary].filter(Boolean).join("\n");
-  assert.ok(text.includes(allCorrections.get(cueId).to),
-   "Corrected Red Missal incense English missing "+cueId+"/"+lang);
+  const comparison=lang==="en"?allCorrections.get(cueId).to:
+    french.byCue[cueId];
+  assert.ok(text.includes(comparison),
+   "Appointed incense line missing its "+lang+" version "+cueId);
   assert.ok(text.includes(reviewRows.SUNG.find(x=>x.cueId===cueId).existingLatin),
    "Source Latin missing from appointed incense prayer "+cueId+"/"+lang);
  }
