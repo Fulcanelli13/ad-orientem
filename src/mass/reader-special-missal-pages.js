@@ -70,7 +70,7 @@ function freezePages(groups,sourceRows,stageId){
   if(flat.length!==sourceRows.length ||
     flat.some((row,i)=>row!==sourceRows[i]))
     throw new Error("SPECIAL_MISSAL_SOURCE_PARITY:"+stageId);
-  if(groups.some(x=>!x.length))throw new Error("SPECIAL_MISSAL_EMPTY_PAGE:"+stageId);
+  if(sourceRows.length&&groups.some(x=>!x.length))throw new Error("SPECIAL_MISSAL_EMPTY_PAGE:"+stageId);
   return Object.freeze(groups.map((group,i)=>Object.freeze({
     stageId,index:i,total:groups.length,
     rows:Object.freeze([...group]),
