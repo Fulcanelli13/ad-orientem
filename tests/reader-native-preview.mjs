@@ -122,6 +122,18 @@ const aspergesReady=await prepareNativeReaderPreview({
   prepared:aspergesPrepared,presentationData:data,eventData,cueRegistries,guideData,aspergesData
 });
 assert.ok(aspergesReady.aspergesController,"native preview lost certified Asperges controller");
+const musicRegistry=load("../data/research/mass-special-rite-music-events-20261019.v1.json");
+const musicReady=await prepareNativeReaderPreview({
+  prepared:aspergesPrepared,presentationData:data,eventData,cueRegistries,guideData,aspergesData,
+  riteMusicData:musicRegistry,
+});
+assert.equal(musicReady.riteMusicRegistry.schema,"ao-mass-special-rite-music-events-v1");
+assert.equal(musicReady.riteMusicSources.ASPERGES.schema,"ao-r20-asperges-payload-v1");
+assert.equal(musicReady.aspergesController.project().formulaState.formula,"ORDINARY");
+assert.equal(musicReady.model.totalCards,39,
+  "The special music authority must not create new Mass source cards");
+assert.equal(musicReady.presentationModel.totalCards,48,
+  "The indexed music authority must not change the 48-card rollback");
 const aspergesCuratedAttempt=await prepareNativeReaderPreview({
   prepared:aspergesPrepared,reviewCuratedCards:true,
   presentationData:data,eventData,cueRegistries,guideData,aspergesData,
