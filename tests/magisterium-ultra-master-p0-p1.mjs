@@ -74,12 +74,12 @@ for(const subject of doctrines.records){
   else throw Error("Unexpected owner "+link.owner);
  }
 }
-assert.equal(links,101);
+assert.equal(links,106);
 assert.equal(apolCount,53);
 assert.equal(crCount,10);
 assert.equal(doctrines.metrics.originalPassageCertifications,0);
 assert.equal(passages.records.length,61);
-assert.equal(passages.records.filter(x=>x.crosswalkCandidate.modernNumber).length,41);
+assert.equal(passages.records.filter(x=>x.crosswalkCandidate.modernNumber).length,44);
 const passageIds=new Set();
 for(const p of passages.records){
  assert.ok(!passageIds.has(p.passageId));passageIds.add(p.passageId);
@@ -88,7 +88,13 @@ for(const p of passages.records){
  assert.ok(/^https:\/\//.test(p.verifiedSourceUrl));
  assert.equal(p.textCopied,false);
  assert.equal(p.publisherFacingApproved,false);
- assert.equal(p.sourceTextVerificationLevel,"LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED");
+ assert.equal(p.sourceTextVerificationLevel,"LATIN_UNIT_LOCATOR_NOT_TEXT_COLLATION");
+ assert.ok(p.canonicalLatinWitnessLocator?.startsWith("https://"));
+ assert.ok(p.witnessGranularity?.includes("NOT_CRITICALLY_COLLATED"));
+ for(const doctrineId of p.doctrineIds){
+  const doctrine=doctrines.records.find(d=>d.id===doctrineId);
+  assert.ok(doctrine.documentCandidates.some(link=>link.documentId===p.documentId),`Orphan passage-doctrine edge: ${p.passageId} ${doctrineId}`);
+ }
  assert.equal(p.primaryLatinChecked,true);
  assert.equal(p.publisherFacingApproved,false);
  assert.ok(p.sourceWitnesses.length>0);
@@ -104,12 +110,26 @@ for(const p of passages.records){
 assert.equal(passages.metrics.authoritativeFullOriginalPassagesCertified,0);
 assert.equal(passages.editionVerifiedCrosswalks,0);
 assert.equal(passages.metrics.additionalLocatorRecords,53);
+assert.equal(passages.metrics.b4CanonRecordsAudited,24);
+assert.equal(passages.metrics.b4PassageTopicEdgesChecked,75);
+assert.equal(passages.metrics.b4UnmatchedPassageTopicEdges,0);
+assert.equal(passages.metrics.b4RepairedCrosswalkPairs,4);
+assert.equal(doctrines.metrics.topicToDocumentCandidates,106);
+assert.equal(doctrines.metrics.b4AddedDocumentCandidatePairs,5);
 assert.equal(passages.metrics.b3AddedLocatorRecords,35);
 assert.equal(passages.metrics.publicationReadyRecords,0);
 assert.equal(passages.sourceMethodology.authoritativeSourceQuoteGate,"CLOSED");
+assert.deepEqual([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],passages.records.filter(p=>p.documentId==="TRENT-XIV-1551"&&p.canonNumber).map(p=>p.canonNumber).sort((a,b)=>a-b));
+assert.deepEqual([1,2,3,4,5,6,7,8,9],passages.records.filter(p=>p.documentId==="TRENT-XXII-1562"&&p.canonNumber).map(p=>p.canonNumber).sort((a,b)=>a-b));
+for(const [id,n,o] of [["MG-P017",1746,943],["MG-P023",1709,919],["MG-P018",1751,948],["MG-P019",1753,950]]){
+ const p=passages.records.find(x=>x.passageId===id);
+ assert.deepEqual([p.crosswalkCandidate.modernNumber,p.crosswalkCandidate.oldNumber],[n,o],id);
+ assert.equal(p.exactCrosswalkStatus,"CANDIDATE_NEEDS_EDITION_CONFIRMATION");
+}
+assert.ok(passages.records.every(x=>x.publisherFacingApproved===false&&!x.theologicalClaimCertified));
 assert.equal(passages.metrics.originalLatinLocatorChecks,passages.records.filter(x=>x.primaryLatinChecked).length);
 // An example of why document authorship cannot be inferred from pontifical approval:
 assert.equal(docs.records.find(x=>x.id==="QUAM-SINGULARI-1910").documentForm,"congregational_decree");
 assert.match(docs.records.find(x=>x.id==="QUAM-SINGULARI-1910").issuer,/Sacred Congregation/);
 assert.equal(docs.records.find(x=>x.id==="SACRA-TRIDENTINA-SYNODUS-1905").documentForm,"congregational_decree");
-console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 101 provisional links; 61 nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
+console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 106 provisional links; 61 nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
