@@ -2,6 +2,7 @@ import "./source-transport-compat.js";
 import "./offline-boot.js";
 import "./release-identity.js";
 import { installAppDesignSystem } from "./design-system.js";
+import { installTypographyTrial } from "./typography-trial.js";
 import { installAppLiturgicalTheme } from "./liturgical-theme.js";
 import { createScrollTapGuard } from "./scroll-tap-guard.js";
 import { installDateFormat } from "./date-format.js";
@@ -29,6 +30,8 @@ import {
 
 export const VERSION = "final-app-shell-owner-v3";
 installAppDesignSystem(globalThis);
+// No production typography change: this only activates with a preview URL flag.
+installTypographyTrial(globalThis);
 installDateFormat(globalThis);
 installContextualStudyBridge(globalThis);
 
