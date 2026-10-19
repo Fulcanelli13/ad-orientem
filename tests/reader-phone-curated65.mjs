@@ -55,14 +55,14 @@ try{
         rootVisible:!!root && root.getBoundingClientRect().width>0,
         shellWidth:shell?.getBoundingClientRect().width??0,
         overflow:document.documentElement.scrollWidth>innerWidth+1,
-        navNext:!!root?.querySelector('[data-reader-nav="next"]'),
-        navPrev:!!root?.querySelector('[data-reader-nav="previous"]'),
+        swipeFirst:!root?.querySelector('[data-reader-nav]'),
+        keyboard:root?.querySelector(".ao-prayer-card")?.getAttribute("aria-keyshortcuts"),
       };
     });
     assert.equal(summary.count,64,"Legacy review flag should activate the one-card Sanctus projection");
     assert.equal(summary.canonical,39);
     assert.equal(summary.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
-    assert.ok(summary.rootVisible && summary.navNext && summary.navPrev);
+    assert.ok(summary.rootVisible && summary.swipeFirst && summary.keyboard==="ArrowLeft ArrowRight");
     assert.ok(summary.shellWidth<=width+1,"Phone viewport horizontal overflow");
     assert.equal(summary.overflow,false,"Curated Mass caused document horizontal scroll");
     assert.ok(summary.headings.includes("Gloria · The Celebrant's Intonation"));
@@ -262,7 +262,8 @@ try{
         const pre=api.model.cards[optional.sequence-2];
         const post=api.model.cards[optional.sequence];
         api.showSequence(pre.sequence);
-        document.querySelector('[data-reader-nav="next"]')?.click();
+        document.querySelector(".ao-prayer-card")?.dispatchEvent(new KeyboardEvent("keydown",{
+           key:"ArrowRight",bubbles:true,cancelable:true}));
         const after=api.getCurrentCard()?.sectionId;
         if(after!==post.sectionId && after!==optional.sectionId){
           defects.push("next from Communion Confiteor boundary navigates incorrectly");
