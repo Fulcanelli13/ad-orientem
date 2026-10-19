@@ -590,7 +590,7 @@ try{
   assert.ok(stationRails.bodyWidth>=360,"Stations semantic rails reserved horizontal reading width");
   await shot("03b-pray-stations-rail");
 
-  await page.locator("#aoPray435930 [data-p435930-station-next]").click();
+  await page.locator("#aoPray435930 [data-p435930-station-step='1']").click();
   await page.waitForSelector("#ao-cinema-transition.aoCinemaTransitionOn",{state:"visible",timeout:2000});
   await page.waitForFunction(()=>/II\s*\/\s*XIV/.test(document.querySelector("#aoPray435930 .aoP435930SemanticRail.right small")?.textContent??""),null,{timeout:3000});
   const stationFx=await page.evaluate(()=>({
