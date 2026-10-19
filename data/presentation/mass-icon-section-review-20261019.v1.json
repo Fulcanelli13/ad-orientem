@@ -1,0 +1,64 @@
+{
+  "schema": "ao-mass-icon-section-review-v1",
+  "version": "1.0.0",
+  "decisionDate": "2026-10-19",
+  "reviewedSection": {
+    "id": "AO.SM.M01",
+    "label": "Opening prayers at the foot of the altar",
+    "reviewScope": "opening station, In nomine Patris and faithful entering/opening posture",
+    "cueIds": [
+      "AO.SM.C0001"
+    ],
+    "status": "SECTION_1A_REVIEWED"
+  },
+  "authority": {
+    "reviewer": "user",
+    "statement": "Mass icon review — Section 1, opening prayers: A Priest at foot: reject; B Priest Sign of Cross: new; C Standing and D Kneeling: retain previously approved variants. Comments: None.",
+    "priestRubrics": "data/mass/gesture-matrix.v1.json",
+    "faithfulPostures": "data/presentation/reader-postures.v1.json",
+    "previousAssets": "assets/active/mass-v46/",
+    "currentRuntimeUnaffected": true
+  },
+  "decisions": [
+    {
+      "slot": "PRIEST_POSITION_FOOT_CENTER",
+      "semanticCueId": "AO.SM.C0001",
+      "candidate": "assets/active/mass-v46/priest_foot.svg",
+      "decision": "REJECT_FOR_SLOT",
+      "scope": "slot-specific only; do not delete donor artwork or globally reject other repurposing",
+      "comments": null
+    },
+    {
+      "slot": "PRIEST_ACTION_SIGN_OF_CROSS",
+      "semanticCueId": "AO.SM.C0001",
+      "candidate": "ao_sign_of_cross.svg",
+      "sourceArchive": "ad_orientem_21_individual_icons.zip/ad_orientem_21_icons/svg/ao_sign_of_cross.svg",
+      "sha256": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "scope": "priest action at opening Sign of Cross",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW",
+      "comments": null
+    },
+    {
+      "slot": "FAITHFUL_POSTURE_STAND",
+      "candidate": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "decision": "RETAIN_PREVIOUS_APPROVAL",
+      "condition": "entrance/procession where posture profile calls for standing",
+      "comments": null
+    },
+    {
+      "slot": "FAITHFUL_POSTURE_KNEEL",
+      "candidate": "assets/approved/live-posture/ao-reviewed-kneel.svg",
+      "decision": "RETAIN_PREVIOUS_APPROVAL",
+      "condition": "opening prayers where selected customary/posture profile calls for kneeling",
+      "comments": null
+    }
+  ],
+  "rules": [
+    "Art approval and semantic cue assignment remain separate from production activation.",
+    "No modification to source-owned rubrics, posture rules, text, audio cues, or 1962 form applicability.",
+    "Do not replace frozen v4.6 master icons.",
+    "If a previously rejected physical image can serve another function, propose it there separately."
+  ],
+  "nextReview": "CONFITEOR_AT_FOOT_OF_ALTAR"
+}
