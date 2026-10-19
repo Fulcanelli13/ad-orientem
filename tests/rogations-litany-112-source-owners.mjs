@@ -41,7 +41,7 @@ assert.equal(m.summary.ordinaryCueCandidateOccurrences+
 assert.equal(m.summary.withNeitherOfTwoOwners+
   m.summary.withAnyKnownExactOwner,m.items.length);
 assert.equal(m.summary.editorialTranslationGaps,null);
-assert.equal(Object.values(m.summary.reviewQueues).reduce((a,b)=>a+b,0),186,
+assert.equal(Object.values(m.summary.reviewQueues).reduce((a,b)=>a+b,0),187,
   "Every Rogation row must be routed to exactly one ownership review queue");
 assert.equal(Object.values(m.summary.unlinkedReviewQueues).reduce((a,b)=>a+b,0),150,
   "Formula-aware triage may not relabel unowned rows as translated");
@@ -62,17 +62,22 @@ assert.ok(m.items.every((x,i)=>x.uniqueInvocationSourceOwner.endsWith(
 assert.ok(m.supplementalSourceRows.every(x=>x.reviewQueue),
   "Source-owned Psalms, suffrages, and collects need specific next review queues");
 
-assert.equal(m.summary.completeSourceRows,186,
-  "Complete Rogation canonical Latin source contains 186 native reader rows");
-assert.equal(m.supplementalSourceRows.length,74);
+assert.equal(m.summary.completeSourceRows,187,
+  "Source-owned Oremus is a real invitation before ten complete collects");
+assert.equal(m.supplementalSourceRows.length,75);
 assert.equal(m.summary.fullSourceOrdinaryMatches,21);
 assert.equal(m.summary.fullSourcePrayMatchesWithoutOrdinary,15);
+assert.equal(m.summary.fullSourceOrdinaryMatches,22,
+  "Source-owned Rogation collect invitation shares the approved Ordinary Oremus");
+assert.ok(m.supplementalSourceRows.some(x=>x.rowId==="ROG-R05-OR" &&
+  x.ordinaryCueIds.includes("AO.SM.C0036")),
+  "Do not create a second translation of Oremus");
 assert.equal(m.summary.fullSourceUnlinked,150,
   "Unlinked Latin is a source ownership worklist, not a missing translation list");
 assert.deepEqual(m.summary.supplementalBreakdown,{
   EXSURGE_OPENING:4,PRE_PROCESSION_DIALOGUE:18,
   POST_LITANY_PATERNOSTER:3,PSALM_69:8,
-  POST_LITANY_SUFFRAGES:24,TEN_CONCLUDING_COLLECTS:10,
+  POST_LITANY_SUFFRAGES:24,COLLECT_INVITATION:1,TEN_CONCLUDING_COLLECTS:10,
   FINAL_DIALOGUE:7,
 });
 assert.ok(m.items[0].prayPrayerIds.includes("litany_loreto_1962"),
@@ -101,11 +106,11 @@ assert.deepEqual(
 assert.equal(built.cards[2].processionBeginsAt,"Sancta Maria");
 const supplementalReader=built.cards.filter(card=>card.id!=="ROG-R03")
   .flatMap(card=>card.paragraphs);
-assert.equal(supplementalReader.length,74);
+assert.equal(supplementalReader.length,75);
 assert.deepEqual(m.supplementalSourceRows.map(x=>x.rowId),
   supplementalReader.map(x=>x.id),
   "The other 74 source leaves must keep exact native 1962 row positions");
-for(let i=0;i<74;i++){
+for(let i=0;i<75;i++){
   const indexed=m.supplementalSourceRows[i];
   const sourcePath=indexed.sourceLocator.split("#")[1];
   const latin=sourcePath.split(".").reduce((v,key)=>v?.[key],source);
@@ -120,7 +125,7 @@ for(let i=0;i<74;i++){
 assert.equal(m.supplementalSourceRows.filter(x=>
   x.family==="TEN_CONCLUDING_COLLECTS").length,10);
 assert.deepEqual(m.summary.additionalRogationPrayerRows,{
-  opening:4,beforeProcession:18,psalm69:8,suffrages:24,orations:10,final:7,
+  opening:4,beforeProcession:18,psalm69:8,suffrages:24,collectInvitation:1,orations:10,final:7,
 });
 console.log("PASS 112 Rogation Litany source-owned identities, six liturgical section boundaries, 1962 non-doubling precedence, named saint parity, source order, no copied text.");
 console.log(JSON.stringify(m.summary));
