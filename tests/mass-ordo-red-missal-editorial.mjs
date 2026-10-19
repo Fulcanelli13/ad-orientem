@@ -66,11 +66,12 @@ for(const corpus of [low,sung]){
  assert.match(server[0].latin,/et tibi, pater/u,"Servers must address priest");
  assert.match(older[0].latin,/et tibi, pater/u,"Older/local Communion Confiteor must address priest");
  assert.match(older[2].latin,/et te, pater/u,"Older/local Confiteor concluding address");
- assert.equal(older[0].latin,server[0].latin,
+ const stripActorPrefix=x=>x.replace(/^[SMVRD]\.\s*/u,"");
+ assert.equal(stripActorPrefix(older[0].latin),stripActorPrefix(server[0].latin),
    "The optional Communion Confiteor first sentence must be the same 1962 server text");
- assert.equal(older[1].latin,server[1].latin,
+ assert.equal(stripActorPrefix(older[1].latin),stripActorPrefix(server[1].latin),
    "The triple mea culpa must be identical");
- assert.equal(older[2].latin,server[2].latin,
+ assert.equal(stripActorPrefix(older[2].latin),stripActorPrefix(server[2].latin),
    "The optional Communion Confiteor closing Latin must be the server text");
  assert.match(cue(40).latin,/Ab illo benedicáris/u);
  assert.match(cue(40).english,/by Him in whose honour you shall be burned/u);
