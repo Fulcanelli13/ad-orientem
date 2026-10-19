@@ -34,6 +34,7 @@ export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPo
   throw Error("Source-constrained symbolic concept registry required");
  const legacy=createSharedQuestionRouter(catalog,{historicalPointers});
  const byId=new Map(catalog.topics.map(t=>[t.id,t]));
+ const byHistoricalRef=new Map((historicalPointers?.records||[]).map(x=>[x.id,x]));
  const issuedDecisions=new WeakMap();
  const remember=result=>{
   if(!result||!["source_navigation","offer_handoff"].includes(result.kind))return result;
@@ -187,9 +188,14 @@ export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPo
    ||base.reason==="TOPIC_SOURCE_GAP"
    ||base.reason==="HISTORICAL_SOURCE_POINTER_NOT_RESOLVED"
    ||base.reason==="UNSUPPORTED_PERSONAL_SPIRITUAL_VERDICT"
+   ||base.reason==="LAY_MASS_PRAYER_SOURCE_NOT_IDENTIFIED"
+   ||base.reason==="POST_RECEPTION_SCOPE_UNSPECIFIED"
+   ||base.reason==="HISTORICAL_SCOPE_OWNER_NOT_INDEXED"
+   ||base.reason==="EXPLICIT_TOPIC_SOURCE_SCOPE_CONFLICT"
    ||base.matchEvidence?.basis==="EXACT_VARIANT"
    ||base.matchEvidence?.basis==="EXPLICIT_REFORMULATION_CHOICE"
    ||base.matchEvidence?.basis==="CONTEXT_FOLLOW_UP_RULE"
+   ||base.matchEvidence?.basis==="DOCUMENTARY_LITURGICAL_SCOPE"
    ||base.matchEvidence?.basis==="DOCUMENTARY_ANCHORED"
    ||base.matchEvidence?.basis==="DOCUMENTARY_CONFIRMED_FOLLOWUP")
    return remember(base);
@@ -232,18 +238,28 @@ export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPo
  function confirmSourceNavigation(proposal,{confirmQuestion=false}={}){
   const decision=issued(proposal);
   const topic=byId.get(decision?.topicId);
+  const historical=topic?.category==="pius_historical_source_navigation";
+  const historicRef=historical?topic.sourceRefs.find(x=>x.owner==="PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1"):null;
+  const original=historicRef&&byHistoricalRef.get(historicRef.ref);
+  const expectedRoute=historical?"historical.external_document":catalog.owners[topic?.character]?.navigateTo;
   if(!decision||decision.kind!=="source_navigation"||!topic
    ||topic.coverage!=="SOURCE_NAVIGATION_ONLY"||!topic.sourceRefs.length
    ||topic.character!==proposal.character
    ||JSON.stringify(proposal.sourceRefs)!==JSON.stringify(topic.sourceRefs)
-   ||proposal.navigationRoute!==catalog.owners[topic.character].navigateTo)
+   ||proposal.navigationRoute!==expectedRoute
+   ||(historical&&(!original||proposal.documentNavigation?.sourceRef!==original.id
+     ||proposal.documentNavigation?.url!==original.originalDocumentUrl
+     ||proposal.documentNavigation?.sourceLocator!==original.sourceLocator
+     ||proposal.documentNavigation?.witnessClassification!==original.witnessClassification
+     ||JSON.stringify(proposal.documentNavigation)!==JSON.stringify(decision.original.documentNavigation))))
    return {kind:"invalid_navigation",reason:"UNVERIFIED_OR_FORGED_SOURCE_REFERENCE",answerText:null};
   if(decision.needsConfirmation&&!confirmQuestion)
    return {kind:"needs_question_confirmation",topicId:topic.id,
     originalQuestion:proposal.originalQuestion,answerText:null};
   return {kind:"confirmed_source_navigation",topicId:topic.id,
    character:topic.character,originalQuestion:proposal.originalQuestion,
-   navigationRoute:catalog.owners[topic.character].navigateTo,
+   navigationRoute:expectedRoute,
+   ...(historical?{documentNavigation:{...decision.original.documentNavigation}}:{}),
    sourceRefs:topic.sourceRefs.map(x=>({...x})),
    approvedReply:false,answerText:null,reviewOnly:true};
  }
