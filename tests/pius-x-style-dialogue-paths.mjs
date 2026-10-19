@@ -5,6 +5,7 @@ const cases=await load("../data/learn/pius-x-style-dialogue-paths.v1.json");
 const voices=await load("../data/learn/pius-x-documentary-voice-style.v1.json");
 const pre=await load("../data/learn/pius-x-prepapal-style-batch2.v1.json");
 const review=await load("../data/learn/pius-x-unified-documentary-voice-review.v1.json");
+const collation=await load("../data/learn/pius-x-original-language-collation.v1.json");
 assert.equal(cases.schema,"AO_PIUS_X_STYLE_DIALOGUE_PATHS_V1");
 assert.equal(cases.owner,"STYLE_ONLY_REVIEW");
 assert.equal(cases.publication,"DRAFT_NOT_RUNTIME");
@@ -143,7 +144,7 @@ assert.equal(cases.sourceReconciliation.p4SourceBridge.nativeRouteIsDraft,true);
 const canonicalEntries=new Map(witness.entries.map(q=>["PX1912-Q"+String(q.q).padStart(3,"0"),q]));
 const acceptedRefs={
  "PX-STYL-OUR-LADY-01":[["PX1912-Q433","PX1912-Q430"],["PX1912-Q430","PX1912-Q433"],["PX1912-Q431","PX1912-Q432"]],
- "PX-STYL-CHILD-CATECHISM-02":[["PX1912-Q342"],["PX1912-Q335","PX1912-Q338"],["PX1912-Q338"]],
+ "PX-STYL-CHILD-CATECHISM-02":[["PX1912-Q342"],["PX1912-Q325","PX1912-Q338"],["PX1912-Q338"]],
  "PX-STYL-TEACHING-OBJECTION-03":[["PX1912-Q114","PX1912-Q236"],["PX1912-Q115","PX1912-Q236"],["PX1912-Q114","PX1912-Q115"]]
 };
 for(const scenario of cases.cases){
@@ -287,5 +288,53 @@ assert.doesNotMatch(childScenario.turns[2].reply.en,/lesson learnt only for the 
 
 assert.equal(review.reviews.find(r=>r.caseId==="PX-STYL-CHILD-CATECHISM-02"&&r.turn===1).risk,"HIGH",
  "Do not certify the invented joke from unrelated private correspondence");
+
+
+// Original-language cross-checks are an editorial audit, not automatic source approval.
+assert.equal(collation.schema,"AO_PIUS_X_VOICE_SOURCE_COLLATION_V1");
+assert.equal(collation.publication,"DRAFT_NOT_RUNTIME");
+assert.equal(collation.editorialApproval.runtimeImportAllowed,false);
+assert.equal(collation.editorialApproval.originalItalian1912QuestionAnswersChecked,false);
+assert.equal(collation.editorialApproval.latinMarianMeaningChecked,true);
+assert.equal(collation.editorialApproval.latinQuamRulesChecked,true);
+assert.equal(collation.editorialApproval.italianOnlineMarianWordingSuspicious,true);
+assert.equal(collation.editorialApproval.theologicalReviewerSignedOff,false);
+assert.equal(collation.editorialApproval.inventedReplyFRApproved,false);
+assert.equal(collation.editorialApproval.inventedReplyENApproved,false);
+const collationIds=new Set(collation.witnesses.map(w=>w.id));
+assert.equal(collationIds.size,collation.witnesses.length);
+assert.ok(collationIds.has("ADIEM-LA-1904"));
+assert.ok(collationIds.has("ADIEM-IT-1904"));
+assert.ok(collationIds.has("ADIEM-FR-1904"));
+assert.ok(collationIds.has("QUAM-1910-LA-DH"));
+assert.ok(collationIds.has("PIUS1912-IT-LETTER"));
+const hazards=new Set(collation.criticalDiscrepancies.map(h=>h.id));
+for(const id of ["ADIEM-ITALIAN-NEGATION-OMISSION","QUAM-Q342-SCOPE","Q335-OLD-FAST","EARLY_IT_CAT_NOT_COLLATED"]){
+ assert.ok(hazards.has(id),"Missing original-language/source-age hazard "+id);
+}
+const marianNegation=collation.criticalDiscrepancies.find(h=>h.id==="ADIEM-ITALIAN-NEGATION-OMISSION");
+assert.equal(marianNegation.releaseGate,"NEVER_DERIVE_CONTRARY_DOCTRINE_FROM_ITALIAN_ONLY");
+assert.match(marianNegation.latinText,/abesse profecto plurimum/);
+assert.match(marianNegation.frenchText,/Il s'en faut donc grandement/);
+assert.match(marianNegation.italianOnlineText,/dobbiamo attribuire/);
+const collatedTurns=new Set();
+for(const item of collation.turnReviews){
+ const scenario=knownCases.get(item.caseId);
+ assert.ok(scenario?.turns.some(t=>t.no===item.turn),"Invalid collation turn");
+ const key=item.caseId+":"+item.turn;
+ assert.ok(!collatedTurns.has(key),"Duplicate source check: "+key);
+ collatedTurns.add(key);
+ assert.ok(item.sourceVerdict&&item.originalSynthesis&&item.requiredAction);
+ for(const w of item.verifiedWitnessIds)assert.ok(collationIds.has(w),"Unknown collated source "+w);
+}
+assert.equal(collatedTurns.size,9,"Source critical review must cover every reply");
+assert.equal(cases.sourceReconciliation.collationReviewPath,"data/learn/pius-x-original-language-collation.v1.json");
+assert.match(cases.sourceReconciliation.translationHazard,/Latin negation/);
+const communionTurn=cases.cases.find(c=>c.id==="PX-STYL-CHILD-CATECHISM-02").turns[1];
+assert.ok(communionTurn.questionCandidates.includes("PX1912-Q325"));
+assert.ok(!communionTurn.questionCandidates.includes("PX1912-Q335"));
+assert.ok(communionTurn.sourceBoundReview.evidenceIds.includes("PX1912-Q325"));
+assert.ok(!communionTurn.sourceBoundReview.evidenceIds.includes("PX1912-Q335"));
+assert.equal(communionTurn.sourceBoundReview.sourceCriticalUpdate.contentOwnerApproval,false);
 
 console.log("PASS Pius X 3 bilingual x 3 exchanges in both languages, source-gated end-to-end scripted playback = 18 interactions, 9 unique style-only replies; pinned route references, original-source gate, approved sprite names, no fabricated quotations or new doctrinal corpus");
