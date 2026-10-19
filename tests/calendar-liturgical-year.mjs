@@ -368,7 +368,7 @@ assert.match(browser,/import \{ observedCycle \} from "\.\/observed-cycle\.js"/,
 assert.doesNotMatch(browser,/const temporal=\//,"Calendar must not classify by translated title regex");
 assert.match(browser,/data-cal-unclassified/,"Unknown cycle must be disclosed, not silently categorized");
 assert.doesNotMatch(browser, /majorForDate\(/, "Month may not classify observed feasts from an independent candidate table");
-assert.match(browser, /const name=r&&\(tier>0/, "Month labels must come from resolved days only");
+assert.match(browser, /const name=r\?titleOf\(r\):\(preview\?\.title\?\?""\)/, "Month names must come from fresh resolver data or a completed, source-derived cached preview");
 assert.match(browser, /nextResolvedMajorCelebration\(selected\)/, "Upcoming major dates must be verified by the daily resolver");
 assert.match(browser, /await resolveOne\(date\)/, "Upcoming date must be checked against the observed Mass");
 assert.match(browser, /nextMajorResults\.set\(selected,found/, "Upcoming result must retain verified day resolution");
