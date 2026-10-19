@@ -173,7 +173,7 @@ export function exploreMapFeatures(items){
         ...(typeof item.atlas_label==="string"&&item.atlas_label.trim()&&item.atlas_label_basis==="existing_settlement_anchor"
          ?{atlas_label:item.atlas_label.trim()}:{}),
         precision:String(g.precision??"unknown"),
-        approximate:Boolean(g.approximate),
+        approximate:Boolean(g.approximate||g.indicative_only),
         indicative_only:Boolean(g.indicative_only),
         provider_group:item?.lens==="tlm"?massMapProviderGroup(item?.community_id):"OTHER",
       },
@@ -405,7 +405,7 @@ export async function mountExploreMap(container,items,{
       cluster:true,clusterMaxZoom:12,clusterRadius:52,
       clusterProperties:exploreClusterProperties()});
     const clusterBadgeReady=registerExploreClusterBadge(map,win);
-    const categoryEmblemsReady=registerExploreCategoryMedallions(map,win);
+    const categoryEmblemsReady=!styleOverride&&registerExploreCategoryMedallions(map,win);
     // The ~50px cluster hit surface and scalable circular bubble are separate.
     map.addLayer({id:prefix+"-cluster-halo",type:"circle",source:sourceId,filter:["has","point_count"],
       paint:{"circle-radius":25,"circle-color":"#10212C",
@@ -433,12 +433,26 @@ export async function mountExploreMap(container,items,{
     }
     // Every physical location gets one large ivory bubble. The circle
     // preserves a large hit target when a symbol image is unavailable.
-    map.addLayer({id:prefix+"-points",type:"circle",source:sourceId,filter:["!",["has","point_count"]],
-      paint:{"circle-radius":22,
-        "circle-color":["case",["get","approximate"],"#D4D8D2","#EBE2D1"],
-        "circle-opacity":["case",["get","approximate"],0.78,0.97],
-        "circle-stroke-width":2,
-        "circle-stroke-color":["case",["get","approximate"],"#82928B","#B99C6B"]}});
+    const pointPaint=styleOverride?{
+      // The Bible Atlas is a separate map owner: settlement anchors are not
+      // silently represented as churches or shrines.
+      "circle-radius":["case",["get","approximate"],6,
+        ["==",["get","lens"],"heritage"],
+        ["match",["get","place_type"],"cathedral",11,"basilica",10,"shrine",9,8],8],
+      "circle-color":["case",["==",["get","lens"],"heritage"],HERITAGE_POINT_COLOR,POINT_COLOR],
+      "circle-opacity":["case",["get","approximate"],0.65,0.97],
+      "circle-stroke-width":["case",["get","approximate"],1.6,2.2],
+      "circle-stroke-color":["case",["==",["get","lens"],"tlm"],POINT_COLOR,
+        ["case",["get","approximate"],"#17212d","#f0e7d4"]]
+    }:{
+      "circle-radius":22,
+      "circle-color":["case",["get","approximate"],"#D4D8D2","#EBE2D1"],
+      "circle-opacity":["case",["get","approximate"],0.78,0.97],
+      "circle-stroke-width":2,
+      "circle-stroke-color":["case",["get","approximate"],"#82928B","#B99C6B"]
+    };
+    map.addLayer({id:prefix+"-points",type:"circle",source:sourceId,
+      filter:["!",["has","point_count"]],paint:pointPaint});
     const categoryLayer=prefix+"-category-medallions";
     if(categoryEmblemsReady){
       map.addLayer({id:categoryLayer,type:"symbol",source:sourceId,
@@ -448,6 +462,20 @@ export async function mountExploreMap(container,items,{
           ["case",["get","approximate"],"-indicative",""]],
           "icon-size":1,"icon-allow-overlap":true,"icon-ignore-placement":true}});
     }
+    // Selected place gets an understated halo outside the emblem itself.
+    // It never creates a second point or changes the shared Place ID.
+    const selectedLayer=prefix+"-selected-point";
+    if(!styleOverride)map.addLayer({id:selectedLayer,type:"circle",source:sourceId,
+      filter:["all",["!",["has","point_count"]],["==",["get","item_id"],"__none__"]],
+      paint:{"circle-radius":27,"circle-color":"#000000","circle-opacity":0,
+        "circle-stroke-color":"#D6BA82","circle-stroke-width":3,
+        "circle-stroke-opacity":0.78}});
+    const selectMapPlace=id=>{
+      if(!styleOverride&&map.getLayer?.(selectedLayer))
+        map.setFilter(selectedLayer,["all",["!",["has","point_count"]],
+          ["==",["get","item_id"],String(id)]]);
+      onSelect(id);
+    };
     // Editorial hierarchy is derived only from canonical physical site type.
     // This does not assert ecclesiastical prominence or authenticated status.
     // Labels emerge only after zooming into an area; collisions stay hidden.
@@ -511,8 +539,8 @@ export async function mountExploreMap(container,items,{
       const choices=exploreDistinctPointChoices(nearby?.length?nearby:event.features);
       if(explorePlaceChoicePopup({win,map,maplibre,
         coordinates:event.lngLat??event.features?.[0]?.geometry?.coordinates,
-        choices,onSelect}))return;
-      onSelect(id);
+        choices,onSelect:selectMapPlace}))return;
+      selectMapPlace(id);
     });
     map.on("click",prefix+"-clusters",async event=>{
       const feature=event.features?.[0],clusterId=feature?.properties?.cluster_id,
@@ -540,8 +568,8 @@ export async function mountExploreMap(container,items,{
           return exploreDistinctPointChoices(await source.getClusterLeaves(clusterId,page.limit,page.offset));
         };
         if(!explorePlaceChoicePopup({win,map,maplibre,coordinates:coords,
-          choices,total,fetchMore,initialOffset:first.nextOffset,onSelect})
-          &&choices.length===1)onSelect(choices[0].item_id);
+          choices,total,fetchMore,initialOffset:first.nextOffset,onSelect:selectMapPlace})
+          &&choices.length===1)selectMapPlace(choices[0].item_id);
       }catch(error){
         // Keep the map interactive when a provider's cluster API is unavailable.
         console.warn("Explore cluster selection failed",error);
