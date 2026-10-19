@@ -307,6 +307,22 @@ export function buildReaderSectionCard({
       }));
       continue;
     }
+    // XIII.1 omits the final blessing completely at a Requiem.
+    // Placeat, altar kiss and Last Gospel remain in their original order.
+    if(block.Block_ID==="AO.SM.B092"&&
+       ["AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266"]
+         .every(id=>omittedOrdinaryCues.includes(id))){
+      const expected=["AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266"];
+      if(block.units?.length!==expected.length||
+         block.units.some((u,i)=>u.cue_id!==expected[i]))
+        throw new Error("REQUIEM_FINAL_BLESSING_SOURCE_IDENTITY_MISMATCH");
+      blockMeta.push(Object.freeze({
+        blockId:block.Block_ID,title:block.Title,properSlot:block.Proper_Slot,
+        stateOnly:false,firstParagraphIndex:null,paragraphCount:0,
+        omittedByRite:"RITUS_XIII_1_REQUIEM",
+      }));
+      continue;
+    }
     // XIII.1 omits the complete FIRST peace-prayer block at Requiem Masses.
     // Retain its non-rendered block metadata for original Missal section
     // ownership; never invent a blank prayer or renumber the other two.
