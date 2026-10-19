@@ -51,6 +51,9 @@ function assess(engine){
    if(res.kind==="offer_handoff"){
     assert.equal(res.requiresAcceptance,true);
     assert.equal(engine.acceptHandoff(res,{accept:true}).kind,"needs_question_confirmation");
+    assert.equal(engine.acceptHandoff({...res,requiresQuestionConfirmation:false},{accept:true}).kind,"invalid_handoff");
+    assert.equal(engine.acceptHandoff({...res},{accept:true}).kind,"invalid_handoff");
+
     assert.equal(engine.acceptHandoff(res,{accept:false}).kind,"stay");
    }
   }
@@ -100,6 +103,9 @@ const inferred=fixture.cases.map(c=>hybrid.match(c.question,{
 })).find(x=>x.kind==="source_navigation"&&x.requiresQuestionConfirmation===true);
 assert.ok(inferred,"Must test at least one inferred navigation");
 assert.equal(hybrid.confirmSourceNavigation(inferred).kind,"needs_question_confirmation");
+assert.equal(hybrid.confirmSourceNavigation({...inferred,requiresQuestionConfirmation:false}).kind,"invalid_navigation");
+assert.equal(hybrid.confirmSourceNavigation({...inferred}).kind,"invalid_navigation");
+
 const confirmed=hybrid.confirmSourceNavigation(inferred,{confirmQuestion:true});
 assert.equal(confirmed.kind,"confirmed_source_navigation");
 assert.equal(confirmed.topicId,inferred.topicId);
