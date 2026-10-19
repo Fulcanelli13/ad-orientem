@@ -4,6 +4,7 @@ import {createSharedQuestionRouter,SHARED_QUESTION_ROUTER_VERSION} from "../src/
 
 const j=async path=>JSON.parse(await readFile(new URL("../"+path,import.meta.url),"utf8"));
 const registry=await j("data/learn/living-church-shared-question-routing-pilot.v1.json");
+const historicalPointers=await j("data/learn/living-church-pius-x-historical-passage-pointers.v1.json");
 const en=await j("data/learn/ltfaith-pius-x-en-witness-index.v1.json");
 const it=await j("data/learn/ltfaith-pius-x-it-witness-index.v1.json");
 const gloss=[...(await j("data/glossary/concepts-001-150.v1.json")).entries,
@@ -22,7 +23,7 @@ const byEN=new Map(en.entries.map(x=>[x.q,x]));
 const byIT=new Map(it.entries.map(x=>[x.q,x]));
 assert.equal(registry.schema,"AO_LIVING_CHURCH_SHARED_QUESTION_ROUTING_PILOT_V1");
 assert.equal(registry.state,"RESEARCH_ONLY_NOT_IN_APP");
-assert.equal(registry.pilotLimits.topics,172);
+assert.equal(registry.pilotLimits.topics,184);
 assert.equal(registry.pilotLimits.approvedConversationalAnswers,0);
 assert.equal(registry.policy.canGenerateNewDoctrinalAnswer,false);
 assert.equal(registry.policy.canGeneratePastoralConclusion,false);
@@ -30,19 +31,19 @@ assert.equal(registry.policy.answerTextIncluded,false);
 assert.equal(registry.policy.historicalSpeechClaim,false);
 assert.equal(registry.policy.explicitUserAcceptanceRequired,true);
 assert.equal(registry.pilotLimits.maxTransfersPerQuestion,1);
-assert.equal(registry.topics.length,172);
-assert.equal(registry.pilotLimits.sourceNavigableTopics,84);
+assert.equal(registry.topics.length,184);
+assert.equal(registry.pilotLimits.sourceNavigableTopics,94);
 assert.equal(registry.pilotLimits.newGuideMomentsIndexed,18);
 assert.equal(registry.pilotLimits.totalCanonGuideTopics,28);
 assert.equal(registry.topics.filter(t=>t.category==="canon_guide_existing_moment").length,18);
 assert.equal(registry.pilotLimits.apologeticsDossiersIndexed,60);
 assert.equal(registry.pilotLimits.researchOnlyUnpublishedAnswerCount,85);
 assert.equal(registry.pilotLimits.retrievalQualityCertified,false);
-assert.equal(registry.pilotLimits.sourceGapTopics,88);
+assert.equal(registry.pilotLimits.sourceGapTopics,90);
 assert.equal(registry.policy.referralRequiresExactRelevantSource,true);
 assert.equal(registry.policy.genericRouteIsNotEvidence,true);
 assert.deepEqual(Object.fromEntries(["pius-x","canon","sacristan"].map(k=>[k,registry.topics.filter(x=>x.character===k).length])),
- {"pius-x":21,canon:116,sacristan:35});
+ {"pius-x":33,canon:116,sacristan:35});
 const topics=new Set();
 for(const topic of registry.topics){
  assert.ok(!topics.has(topic.id),"duplicate "+topic.id);topics.add(topic.id);
@@ -73,6 +74,14 @@ for(const topic of registry.topics){
    assert.match(source.ref,/^AO\.CARD\.\d{3}$/);
    assert.ok(guide.entries[source.ref]?.moment,"Guide moment unavailable "+source.ref);
    assert.equal(source.evidence,"PUBLISHED_SUNG_GUIDE_TOPIC_VERIFIED");
+  }else if(source.owner==="PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1"){
+   const pointer=historicalPointers.records.find(x=>x.id===source.ref);
+   assert.ok(pointer,"Historical passage pointer absent: "+source.ref);
+   assert.equal(source.evidence,"PASSAGE_LOCATOR_RESEARCH_ONLY");
+   assert.match(pointer.originalDocumentUrl,/^https:\/\//);
+   assert.ok(pointer.sourceLocator.length>=14);
+   assert.equal(pointer.approvedReply,false);
+   assert.equal(pointer.researchSource,historicalPointers.researchOwner.fixture);
   }else throw Error("Unrecognised source owner "+source.owner);
  }
 }
@@ -115,7 +124,7 @@ for(const t of canonCrisis){
 for(const a of registry.ambiguities)for(const id of a.candidates)assert.ok(topics.has(id));
 const router=createSharedQuestionRouter(registry);
 assert.equal(router.version,SHARED_QUESTION_ROUTER_VERSION);
-assert.equal(router.topicCount,172);
+assert.equal(router.topicCount,184);
 const match=(q,options={})=>router.match(q,options);
 let r=match("Why does the priest raise the Host?");
 assert.equal(r.kind,"clarify");assert.equal(r.ambiguityId,"host_raised");
@@ -243,4 +252,19 @@ assert.throws(()=>createSharedQuestionRouter(clone),/Topic falsely claims eviden
 for(const c of ["pius-x","canon","sacristan"]){
  const src=router.listTopics({character:c});assert.ok(src.length>0);assert.ok(src.every(x=>x.approvedReply===false&&!x.answerText));
 }
-console.log("PASS Living Church shared routing: 172 topics, 84 source navigations, 88 held topics; 28 Canon Guide moment links, 60 unpublished apologetics and 25 Church Crisis studies held");
+console.log("PASS Living Church shared routing: 184 topics, 84 source navigations, 88 held topics; 28 Canon Guide moment links, 60 unpublished apologetics and 25 Church Crisis studies held");
+
+
+assert.equal(historicalPointers.schema,"AO_LIVING_CHURCH_PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1");
+assert.equal(historicalPointers.records.length,10);
+const newPius=registry.topics.filter(t=>t.id.startsWith("pius.historical_spx_pilot_"));
+assert.equal(newPius.length,12);
+assert.equal(newPius.filter(t=>t.coverage==="SOURCE_NAVIGATION_ONLY").length,10);
+assert.equal(newPius.filter(t=>t.coverage==="SOURCE_GAP").length,2);
+assert.deepEqual(newPius.map(t=>t.id),Array.from({length:12},(_,i)=>"pius.historical_spx_pilot_"+String(i+1).padStart(2,"0")));
+for(const t of newPius){
+ assert.equal(t.approvedReply,false);
+ assert.equal(t.sourceBridgeOwner,"PR1458_EXTERNAL_DOCUMENTARY_POINTERS_RESEARCH_ONLY");
+ if(t.coverage==="SOURCE_GAP")assert.equal(t.sourceRefs.length,0);
+ else assert.equal(t.sourceRefs[0].ref,"SPX-PILOT-"+t.id.slice(-2));
+}
