@@ -336,3 +336,24 @@ assert.equal(snapshot.cross_cohort_links.strong_same_intent_candidates_without_m
 assert.equal(snapshot.certified_unique_answerable_intentions,null);
 assert.equal(snapshot.certified_historically_attributed_visitor_replies,0);
 console.log('Pius X bounded 112-topic evidence dashboard: 79 direct, 19 partial, 9 biography-only, 5 related; no answerability certification');
+
+
+const sameIntentJoins=JSON.parse(readFileSync('data/learn/research/pius-x-two-cross-family-intent-joins-20261019.v1.json','utf8'));
+assert.equal(sameIntentJoins.status,'RESEARCH_INTENT_EQUIVALENCE_REVIEWED_NO_CANONICAL_RECORD_MERGE');
+assert.equal(sameIntentJoins.adjudicated_pairs.length,2);
+assert.deepEqual(sameIntentJoins.adjudicated_pairs.map(r=>[r.expansion_id,r.existing_family_id]),
+ [['SPX-EXP-035','SPX-053'],['SPX-EXP-045','SPX-014']]);
+assert.equal(sameIntentJoins.counts.research_same_user_intents,2);
+assert.equal(sameIntentJoins.counts.logical_intent_units_within_these_four_seeds,2);
+assert.equal(sameIntentJoins.counts.all_112_unique_intentions_count,null);
+assert.equal(sameIntentJoins.counts.published_visitor_answers,0);
+for(const pair of sameIntentJoins.adjudicated_pairs){
+ assert.ok(familySet.has(pair.existing_family_id));
+ assert.ok(expansion.records.some(r=>r.id===pair.expansion_id));
+ assert.equal(pair.relation,'SAME_USER_INTENT_FOR_ROUTING_RESEARCH');
+ assert.equal(pair.source_witnesses_retained,true);
+ assert.equal(pair.published_answer_approved,false);
+ assert.equal(pair.runtime_routes_merged,false);
+ assert.ok(pair.evidence.every(e=>/^https:\/\//.test(e.url)&&e.locator));
+}
+console.log('Pius X two research-only same-intent relationships reviewed; no runtime merge');
