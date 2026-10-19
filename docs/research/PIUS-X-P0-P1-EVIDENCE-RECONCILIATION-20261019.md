@@ -77,6 +77,41 @@ The scope is **witness contamination / posthumous modification, not proof that a
 The original P1 topical crosswalk suggested PX1912-Q269–271 for *actual grace versus sanctifying grace*. The Italian questions actually distinguish *sanctifying* from *sacramental* grace. This is recorded as a **mismatched doctrinal distinction**, not a partial direct answer. Consult a correctly located original source before promoting SPX-057.
 
 
+
+## Targeted earlier-source and Vatican cross-check (P1 source wave)
+
+File: `data/learn/research/pius-x-p1-original-source-support-wave1-20261019.v1.json`.
+
+**25 source anchors** have been individually located against the museum's full Salzano transcription, museum's longer Catechism and official Vatican web texts: **20 direct question/topic support** and **5 partial support**. This is `PASSAGE_FOUND_TOPIC_MATCHED`, *not* `HISTORICALLY_CERTIFIED_ANSWER`, `COLLATED_AUTOGRAPH` or a unique-intent count.
+
+All 10 SPX families initially flagged `NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES` in the 1912 shorter index now have an external source anchor:
+- **8 direct**: SPX-003 (1905 longer Q669, Rosary at Mass), SPX-004 (1903 sacred-music motu proprio), SPX-010 (Salzano Peter/Judas Q198–200), SPX-012 (*Acerbo nimis*, adult catechesis), SPX-023 (Salzano spiritual Communion Q476–481; also 1905 longer Q668), SPX-024 (Salzano Viaticum Q493–497), SPX-030 (*Iucunda sane*, prayer together with action), SPX-045 (*Ad diem illum* §21, Mary at Calvary).
+- **2 partial**: SPX-011 (the encyclical teaches religious instruction and patient charity, but does not diagnose an individual visitor's loss of belief); SPX-038 (1905 longer Q925 provides reverent fear of offending God, but does not complete a whole pastoral exchange about divine love).
+
+**Important SPX-057 correction:** The 1912 short Q269–271 concern sanctifying and *sacramental* grace. The 1905 **longer** Catechism Q527–533 explicitly distinguishes sanctifying/actual grace and supports the original SPX-057 question. Link to correct original source, **do not rename 1912 Q271**.
+
+Additional strong manuscript arguments:
+- Salzano Q543 distinguishes thoughts arising unbidden from willing consent (SPX-008).
+- Salzano Q506–508 prescribes silent thanksgiving and prayer after Communion (SPX-006).
+- Salzano Q570–577 defines effective resolution by concrete means; a verdict on the sincerity of a specific penitential act is **not** in this source (SPX-007).
+- Salzano Q549 recommends an evening conscience examination (SPX-036).
+- Salzano Q300–301 explicitly joins love of God and neighbour to observing the commandments (SPX-043).
+- *Haerent animo* §§16–24 teaches priestly meditation and spiritual reading; **do not** universalise the Pope's judgment of negligent clergy as a verdict on a layperson's spiritual dryness (SPX-033).
+
+### Salzano editorial locator integrity
+
+A separate hold `data/learn/research/pius-x-salzano-editorial-numbering-hold-20261019.v1.json` records that:
+- The museum itself says Sarto **did not number his manuscript questions**; sequential numerals were editorially supplied.
+- The posted transcript repeats 321 where 322 is expected, and prints 406 in the Confirmation series where 446 is expected.
+- The museum page interweaves manuscript catechetical answers, Sarto's handwritten marginal instructions and later editorial commentary.
+
+Therefore, do not parse the Salzano transcript into the app by raw printed number alone; retain surrounding sequence and manuscript context until facsimile verification. The count of **577 is an editorial question sequence**, not 577 independently author-numbered items.
+
+### Sufficient research does not equal published dialogue
+
+The new source wave makes the first family cohort stronger, but no visitor answer is represented as independent theological certification or certified first-person Sarto wording. It should feed the existing dialogue/retrieval owners **only after review**. The genuine total unique-answerable-intent count remains **unknown**: existing 433 question locators, 64 topic-family seeds, 29 digital direct matches and these additional sources have *not yet been semantically joined into a final set*.
+
+
 ## P1 reviewed-intent workflow
 
 1. **Resolve exact 1912 source text first.** The English index stores short stems; use the canonical text owner and Italian section file before comparing question semantics. Never merge Qs solely on matching first six words.
