@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { ACTION_CINEMATIC_BINDINGS, BELL_CUE_BINDINGS, createReaderTransientController, partTransitionCinematic, validateReaderTransientBindings } from "../src/mass/reader-transients.js";
+import { ACTION_CINEMATIC_BINDINGS, BELL_CUE_BINDINGS, BELL_SOURCE_WINDOWS, createReaderTransientController, partTransitionCinematic, validateReaderTransientBindings } from "../src/mass/reader-transients.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const events=["../data/mass/mc-events-01.v1.json","../data/mass/mc-events-02.v1.json","../data/mass/mc-events-03.v1.json","../data/mass/mc-events-04.v1.json","../data/mass/mc-events-05.v1.json","../data/mass/mc-events-06.v1.json"].flatMap(path=>load(path).events);
@@ -14,6 +14,28 @@ assert.deepEqual(audit.actionCinematicCueIds,["AO.SM.C0204","AO.SM.C0242","AO.SM
 
 const controller=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]}}}});
 assert.equal(controller.supported,true);
+// Source-clock landmarks are not sound detection. At Sung Mass the choir
+// can be singing Sanctus at a different instant from the priest's recitation.
+assert.deepEqual(Object.keys(BELL_SOURCE_WINDOWS),audit.cueIds);
+for(const binding of BELL_CUE_BINDINGS){
+ const bell=controller.project(binding.cueId).bell;
+ assert.equal(bell?.sourceTiming,BELL_SOURCE_WINDOWS[binding.cueId]);
+ assert.equal(bell?.status,"EXPECTED_NOT_OBSERVED");
+ assert.equal(bell?.notAnObservation,true);
+ assert.equal(bell?.observedNow,false);
+ assert.equal(bell?.actuallyHeard,"UNKNOWN");
+ assert.equal(controller.project(binding.cueId).cinematic?.observedNow,false);
+}
+assert.equal(BELL_SOURCE_WINDOWS["AO.SM.C0145"].sourceClock,"SCHOLA_PUBLIC");
+assert.equal(BELL_SOURCE_WINDOWS["AO.SM.C0145"].rubricalWindow,"PRIEST_RECITES_SANCTUS");
+assert.equal(BELL_SOURCE_WINDOWS["AO.SM.C0161"].rubricalWindow,"SHORTLY_BEFORE_CONSECRATION");
+assert.equal(BELL_SOURCE_WINDOWS["AO.SM.C0161"].timingPrecision,
+ "COMMON_ANCHOR_NOT_MANDATED_EXACT_WORD");
+assert.equal(BELL_SOURCE_WINDOWS["AO.SM.C0225"].rubricalWindow,"SHORTLY_BEFORE_FAITHFUL_COMMUNION");
+assert.equal(BELL_SOURCE_WINDOWS["AO.SM.C0225"].timingPrecision,
+ "APPROXIMATE_SOURCE_TEXT_LANDMARK");
+assert.equal(controller.project("AO.SM.C0225").bell.detail,"Before Communion of the faithful");
+assert.equal(controller.project("AO.SM.C0225").cinematic.subtitle,"BEFORE COMMUNION OF THE FAITHFUL");
 assert.equal(controller.project("AO.SM.C0145").bell.canonicalEventIds[0],"MC-SAN-020");
 assert.equal(controller.project("AO.SM.C0161").bell.canonicalEventIds[0],"MC-CAN-070");
 assert.deepEqual(controller.project("AO.SM.C0174").bell.canonicalEventIds,["MC-CNS-030","MC-CNS-040"]);
