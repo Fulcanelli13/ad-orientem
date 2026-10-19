@@ -92,7 +92,9 @@ try{
       viewportOverflow:document.documentElement.scrollWidth-innerWidth,
       maxScroll:scroller?Math.max(0,scroller.scrollHeight-scroller.clientHeight):null,
       owner:root?.dataset.r17CardOwner,
-      currentStage:api.getCompositeStage?.()||null};
+      currentStage:api.getCompositeStage?.()||null,
+      musicLabel:root?.querySelector('[data-role="rite-music"]')?.textContent?.trim()??"",
+      musicVisible:root?.querySelector('[data-role="rite-music"]')?.hidden===false};
      api.next();
      await new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok)));
      return r;
@@ -103,6 +105,25 @@ try{
       scenario.id+"/"+datum.id+" empty source card");
     assert.ok(datum.domText>0,scenario.id+"/"+datum.id+" source card rendered blank");
     assert.ok(datum.visibleRows>0,scenario.id+"/"+datum.id+" no visible DOM prayer paragraph");
+    const expectedMusic=({
+      "GF-LESS-110":"SCHOLA",
+      "GF-X-521":"SUNG RESPONSES",
+      "GF-VEN-600":"SCHOLA",
+      "EV-LUM-110":"SUNG RESPONSES",
+      "EV-LIT1-400":"LITURGICAL CHANT",
+    })[datum.id];
+    if(expectedMusic){
+      assert.equal(datum.musicVisible,true,scenario.id+"/"+datum.id+" source-linked music hidden");
+      assert.equal(datum.musicLabel,"EXPECTED · "+expectedMusic);
+    }
+    if(["GF-PASS-320","GF-END-910","EV-MASS-700","EV-REN-540"].includes(datum.id))
+      assert.equal(datum.musicVisible,false,scenario.id+"/"+datum.id+" leaked a musical indicator into silence");
+    if(datum.id==="EV-FONT-450"){
+      assert.equal(datum.musicVisible,scenario.id==="easter-vigil-font",
+        scenario.id+" mislabelled the branch-specific Sicut cervus or silent return");
+    }
+    if(datum.id==="EV-FONT-440" && scenario.id==="easter-vigil-baptism")
+      assert.equal(datum.musicVisible,true,"Separate baptistery Sicut cervus source indicator missing");
     assert.ok(datum.viewportOverflow<=2,scenario.id+"/"+datum.id+" horizontal phone overflow");
     assert.equal(datum.focusActive,datum.focusEligible>0?1:0,
       scenario.id+"/"+datum.id+" active text focus is not unique");
