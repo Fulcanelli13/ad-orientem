@@ -2,7 +2,7 @@
 // Source cue timing comes exclusively from the existing R17 posture controller.
 // A card swipe does not itself assert an observed congregation movement.
 const SUSTAINED=new Set(["STAND","SIT","KNEEL"]);
-const CUE=/^AO\\.SM\\.C\\d{4}$/;
+const CUE=/^AO\.SM\.C\d{4}$/;
 
 function transitionAt(paragraph,cueState,preferences){
   if(!cueState?.supported)return null;
