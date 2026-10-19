@@ -131,7 +131,7 @@ export function buildSecondaryReconciliation(){
       exactPrayerLineMatches:matches.length,
       afterOrdinaryAndPrayerUnmatched:unresolved.length,
       scriptureCandidates:scriptureCandidates.length,
-      confirmedMissingTranslations:0,
+      confirmedMissingTranslations:null,
       missingTranslationStatus:"NOT_YET_ASSESSED",
     },
     breakdown,prayerLineMatches:matches,scriptureCandidates,
