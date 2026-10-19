@@ -73,16 +73,22 @@ try{
     const scroll=root.querySelector(".ao-prayer-card");
     const rows=[...scroll.querySelectorAll(".ao-prayer-body .ao-reader-paragraph")]
       .filter(x=>x.getClientRects().length&&x.dataset.kind!=="RUBRIC");
-    const active=rows.filter(x=>x.dataset.active==="true"||x.dataset.readingActive==="true");
+    // Visual reading focus is independent from the source ceremonial cue.
+    // A source cue may remain active while a Proper paragraph is lit.
+    const active=rows.filter(x=>x.dataset.readingActive==="true");
     const a=active[0],aIndex=rows.indexOf(a);
     return {cardId:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId,
       maxScroll:scroll.scrollHeight-scroll.clientHeight,
       scrollTop:scroll.scrollTop,eligible:rows.length,active:active.length,
       activeIndex:aIndex,activeCue:a?.dataset.cueId||null,
       activeOpacity:a?Number(getComputedStyle(a).opacity):null,
-      farOpacities:rows.filter((x,i)=>Math.abs(i-aIndex)>1).map(x=>Number(getComputedStyle(x).opacity)),
-      neighbors:rows.filter((x,i)=>Math.abs(i-aIndex)===1)
+      farOpacities:rows.filter(x=>x.dataset.readingPosition==="distant")
         .map(x=>Number(getComputedStyle(x).opacity)),
+      nextOpacities:rows.filter(x=>x.dataset.readingPosition==="next")
+        .map(x=>Number(getComputedStyle(x).opacity)),
+      previousOpacities:rows.filter(x=>x.dataset.readingPosition==="previous")
+        .map(x=>Number(getComputedStyle(x).opacity)),
+      unclassified:rows.filter(x=>!["current","next","previous","distant"].includes(x.dataset.readingPosition)).length,
       focusMarker:root.dataset.r17NativeCue,
       visualFocus:scroll.querySelector("[data-role='paragraphs']")?.dataset.aoVisualFocus||null,
       physicalOverflow:document.documentElement.scrollWidth-innerWidth};
@@ -92,18 +98,25 @@ try{
    assert.ok(data.maxScroll>80,spec.lang+"/"+card.title+" cannot scroll between passages");
    assert.equal(data.active,1,spec.lang+"/"+card.title+" no unique focused paragraph");
    assert.ok(data.activeOpacity>=.94,spec.lang+"/"+card.title+" active paragraph not illuminated: "+JSON.stringify(data));
-   assert.ok(data.farOpacities.length>=1&&Math.max(...data.farOpacities)<=.30,
-      spec.lang+"/"+card.title+" distant text not actually muted: "+JSON.stringify(data));
-   assert.ok(data.neighbors.length>=1&&Math.max(...data.neighbors)<=.52,
-      spec.lang+"/"+card.title+" neighbour text not actually muted: "+JSON.stringify(data));
+   assert.equal(data.unclassified,0,
+      spec.lang+"/"+card.title+" visible text missing its shared reading focus classification");
+   assert.ok(data.farOpacities.length>=1&&
+      Math.min(...data.farOpacities)>=.29&&Math.max(...data.farOpacities)<=.41,
+      spec.lang+"/"+card.title+" distant text outside gentle muted floor: "+JSON.stringify(data));
+   assert.ok(data.nextOpacities.every(x=>x>=.58&&x<=.72),
+      spec.lang+"/"+card.title+" next paragraph not softly anticipated: "+JSON.stringify(data));
+   assert.ok(data.previousOpacities.every(x=>x>=.48&&x<=.62),
+      spec.lang+"/"+card.title+" prior paragraph not softly muted: "+JSON.stringify(data));
+   assert.ok(data.nextOpacities.length+data.previousOpacities.length>=1,
+      spec.lang+"/"+card.title+" missing adjacent reading paragraph");
    assert.ok(data.physicalOverflow<=2,spec.lang+"/"+card.title+" document horizontal overflow");
    return data;
   };
   for(const card of cards.slice(0,3)){
     const opening=await sample(card,0);
     const later=await sample(card,.70);
-    assert.notEqual(later.activeCue,opening.activeCue,
-      spec.lang+"/"+card.title+" scroll did not transfer LIVE illuminated text");
+    assert.notEqual(later.activeIndex,opening.activeIndex,
+      spec.lang+"/"+card.title+" scroll did not transfer visual reading focus");
   }
   assert.deepEqual(errors,[],spec.lang+" browser errors");
   findings.cases.push({...spec,curated:initial.curated,total:initial.modelCards,samples});
