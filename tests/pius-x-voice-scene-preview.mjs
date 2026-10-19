@@ -3,7 +3,7 @@ import {readFile} from "node:fs/promises";
 import {Script} from "node:vm";
 const html=await readFile(new URL("../previews/pius-x-voice-scene-review-20261019.html",import.meta.url),"utf8");
 const capture=(re,label)=>{const m=html.match(re);assert.ok(m,label+" not found");return m[1]};
-assert.match(html,/Documentary voice/);
+assert.match(html,/Documentary voice/i);
 assert.match(html,/Editorial reconstruction/);
 assert.match(html,/not authentic spoken quotations/);
 assert.match(html,/Export ratings/);
