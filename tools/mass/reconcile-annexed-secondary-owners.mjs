@@ -118,7 +118,7 @@ export function buildSecondaryReconciliation(){
     },
     sourceLimitations:{
       prayers:"48 trilingual or partly trilingual prayer entries; the prayer inventory reports 0 fully source-certified prayers as of 2026-10-09. A Latin line match does NOT confer 1962-liturgical approval.",
-      litany:"The existing Litany reader points to different 1883 English and 1862 French historical witnesses, not collated to the 1962 Litany and not the complete post-Litany Psalm/orations.",
+      litany:"The existing PRAY Litany reader stops at Our Father and does not render its appendix. Its 1883 English and 1862 French source editions DO continue through Psalm 69, suffrages and ten complete collects, now inventoried as historical EN/FR owner candidates; none is 1962 edition-certified, print-collated or approved for automatic substitution.",
       scripture:"DR-Challoner EN, Crampon FR, CPDV EN restored witness texts are UNCOLLATED_SOURCE_WITNESS and have no corresponding certified Latin in these packs. Scripture references are candidates, not Latin-source or verse-aligned matches.",
       variant:"Rogation Mass Proper has its own published trilingual owner; it must not be conflated with 112 procession invocations.",
       release:"No prayer or Scripture text is promoted by this exact-match inventory. First resolve effective canonical wording, role, rites and rights.",
