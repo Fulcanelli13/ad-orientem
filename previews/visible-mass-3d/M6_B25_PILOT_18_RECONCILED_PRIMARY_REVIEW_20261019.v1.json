@@ -1,0 +1,486 @@
+{
+  "schema": "AO_M6_B25_PILOT_SELECTION_TYPOLOGY_AND_RIGHTS_V1",
+  "date": "2026-10-19",
+  "status": "CURATORIAL_RESEARCH_AND_PHOTO_PRIORITY_ONLY_NOT_FINAL_EDITORIAL_SELECTION",
+  "source_owner": "Fulcanelli13/ad-orientem PR #1309 feature/visible-mass-3d-explorer-p0",
+  "input_files": [
+    "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v4.json",
+    "previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json",
+    "previews/visible-mass-3d/M6_B21_BULK_GAP_RESEARCH_20261019.v1.json",
+    "previews/visible-mass-3d/M6_B22_BULK_RIGHTS_AND_TYPOLOGY_20261019.v1.json",
+    "previews/visible-mass-3d/M6_B23_HIGH_VOLUME_SOURCE_MINING_20261019.v1.json",
+    "previews/visible-mass-3d/M6_B24_FULL_UNTARGETED_GAP_SWEEP_20261019.v1.json"
+  ],
+  "policy": "30 catalogue pilot topics are 28 distinct photographic requirements plus 2 directional annotation exceptions AL17 AL18. A source-context view does not automatically satisfy isolated-hero criterion. One final photograph per real object or deliberately defined set; historical exceptions labelled. Exact file rights independent of publication approval and full-size QA.",
+  "baseline": {
+    "pilot_topics": 30,
+    "previous_provisional_heroes": 12,
+    "unresolved_pilot_entries": 18,
+    "unresolved_physical_photo_targets": 16,
+    "annotation_exceptions": 2,
+    "confirmed_new_single_hero_assignments": 0,
+    "publication_approval_events": 0
+  },
+  "research": {
+    "records_examined": 18,
+    "referenced_source_links": 21,
+    "distinct_source_urls": 18,
+    "by_photo_rights": {
+      "CC_BY_SA_4_0_FILE_PAGE_CHECKED": 12,
+      "CC_BY_SA_3_0_FILE_PAGE_CHECKED": 1,
+      "CC0_1_0_SOURCE_RIGHTS_FROM_B22": 3,
+      "EXACT_PHOTO_RIGHTS_UNRESOLVED": 3,
+      "CC_BY_2_5_FILE_PAGE_CHECKED": 1,
+      "EXISTING_SOURCE_RECORD_RIGHTS_NOT_REAUDITED": 1
+    },
+    "recommend_photo_full_resolution_check_next": [
+      "SN05",
+      "AL01",
+      "AL03",
+      "AL07",
+      "EQ01",
+      "EQ06"
+    ],
+    "best_near_term": [
+      "EQ01",
+      "EQ06",
+      "AL03",
+      "SN02",
+      "SN05",
+      "AL01",
+      "AL07"
+    ],
+    "publication_readiness_note": "No photo nominated to public app, no upstream user approval. Contextual photographs are not equivalent to strict neutral studio objects."
+  },
+  "rights_delivery_note": "CC BY-SA derivative reuse requires appropriate credit and license on redistributed crop, not just photo attribution. For CC0 no attribution demanded by license but source trace required by editorial policy.",
+  "unresolved_entries": [
+    {
+      "object_id": "SN02",
+      "label": "Communion rail",
+      "glossary_id": "G186",
+      "original_source_refs": [
+        "BROMPTON_ALTAR_2019_GEOGRAPH"
+      ],
+      "mode": "ARCHITECTURAL_IN_SITU",
+      "priority": 1,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_Rail_2019-0157.jpg",
+        "role": "SINGLE_NAMED_RAIL_SUBJECT",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "HIGH_RES_CONTEXT",
+        "comment": "Catholic altar rail 6240×4160; camera deliberately names rail; confirm whole silhouette and cropping without inventing free-standing furniture.",
+        "photographer": "Paul R. Burley",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Saint_Ann_Catholic_Church_(Hamilton,_Ohio)_-_interior,_Communion_rail.jpg",
+          "role": "EXISTING_B22_CONTEXT",
+          "rights": "CC_BY_SA_3_0_FILE_PAGE_CHECKED",
+          "fit": "REFERENCE_ONLY",
+          "comment": "Catholic rail but whole sanctuary background; do not mix setting provenance.",
+          "photographer": "Nheyob",
+          "pixel_qa": "NOT_RECORDED_B25"
+        }
+      ],
+      "decision": "REVIEW_SINGLE_PHOTO_AS_IN_SITU_ARCHITECTURE_NOT_STUDIO_HERO"
+    },
+    {
+      "object_id": "SN04",
+      "label": "Sanctuary steps",
+      "glossary_id": "G181",
+      "original_source_refs": [
+        "BROMPTON_ALTAR_2019_GEOGRAPH"
+      ],
+      "mode": "ARCHITECTURAL_IN_SITU",
+      "priority": 2,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_2019-0167.jpg",
+        "role": "ALTAR_SCENE_POSSIBLE_STEPS",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "DETAIL_NOT_YET_CONFIRMED",
+        "comment": "High-resolution actual Catholic altar scene; inspect lower altar platform to verify true sanctuary steps; never promote from page title alone.",
+        "photographer": "Paul R. Burley",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "DO_NOT_ASSIGN_HERO_UNTIL_STEPS_VISIBLY_CONFIRMED"
+    },
+    {
+      "object_id": "SN05",
+      "label": "Sanctuary lamp",
+      "glossary_id": "G218",
+      "original_source_refs": [
+        "EXISTING-SN05"
+      ],
+      "mode": "HANGING_LAMP_IN_SITU",
+      "priority": 1,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_Lamp_2019-0090.jpg",
+        "role": "NAMED_IN_SITU_LAMP_PORTRAIT",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "SOURCE_MATCH_HIGH_RES",
+        "comment": "Actual Catholic sanctuary lamp, full-resolution 4160×6240. Need visually verify red-glass vessel complete and not engulfed by ornament/background; ISO8000, noise caution.",
+        "photographer": "Paul R. Burley",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_Lamp_2019-0109.jpg",
+          "role": "PRIVATE_SAME_OBJECT_ALT_VIEW",
+          "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+          "fit": "REFERENCE_ONLY",
+          "comment": "Same photographer and venue; compare only if 0090 fails.",
+          "photographer": "Paul R. Burley",
+          "pixel_qa": "NOT_RECORDED_B25"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Sanctuary_Lamp,_designed_by_A.W.N._Pugin,_manufactured_by_J._Hardman_%26_Co.,_c._1855,_gilt_brass_-_Huntington_Art_Museum_-_San_Marino,_CA_-_DSC01810.jpg",
+          "role": "EXISTING_B22_HISTORICAL",
+          "rights": "CC0_1_0_SOURCE_RIGHTS_FROM_B22",
+          "fit": "HISTORICAL_NOT_REPRESENTATIVE",
+          "comment": "Non-red lamp with museum background; do not publish as typical red sanctuary lamp.",
+          "photographer": "Daderot",
+          "pixel_qa": "NOT_RECORDED_B25"
+        }
+      ],
+      "decision": "PREFERRED_LICENSED_IN_SITU_SOURCE_NEEDS_PIXEL_AND_ISOLATION_CHECK"
+    },
+    {
+      "object_id": "SN07",
+      "label": "Credence table",
+      "glossary_id": "G184",
+      "original_source_refs": [
+        "EXISTING-SN07"
+      ],
+      "mode": "CREDENCE_TABLE_IN_SITU",
+      "priority": 2,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:St._Nikolaus_Germete_Kredenz_(1).jpg",
+        "role": "IN_USE_CREDENCE_TABLE",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "TYPE_AND_CATHOLIC_USE_AUTHENTIC",
+        "comment": "Table bears vessels, not standalone object; useful supporting photo, but one-object hero must isolate table or use justified architecture exception.",
+        "photographer": "MF-Warburg",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "NOT_STANDALONE_HERO_KEEP_CONTEXT"
+    },
+    {
+      "object_id": "AL01",
+      "label": "High altar",
+      "glossary_id": "G404",
+      "original_source_refs": [
+        "BROMPTON_ALTAR_2019_GEOGRAPH"
+      ],
+      "mode": "ALTAR_ARCHITECTURAL_SCENE",
+      "priority": 1,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Castelnau-d'Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+        "role": "DOCUMENTED_CATHOLIC_HIGH_ALTAR",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "HIGH_RES_FULL_ALTAR_SCENE",
+        "comment": "2017 church St Martin; altar dated 1848 and six 19th-century gilded candlesticks; full image 7360×4912, Commons valued-image. Exact complete altar framing and freestanding-table absence must be inspected.",
+        "photographer": "Didier Descouens",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_2019-0167.jpg",
+          "role": "CATHOLIC_HIGH_ALTAR_CONTEXT",
+          "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+          "fit": "REFERENCE_ONLY",
+          "comment": "Alternate Brazilian documented Catholic altar from coherent source series.",
+          "photographer": "Paul R. Burley",
+          "pixel_qa": "NOT_RECORDED_B25"
+        }
+      ],
+      "decision": "BEST_RESEARCH_LEAD_FOR_CATHOLIC_HIGH_ALTAR_SCENE"
+    },
+    {
+      "object_id": "AL03",
+      "label": "Tabernacle",
+      "glossary_id": "G080",
+      "original_source_refs": [
+        "EXISTING-AL03"
+      ],
+      "mode": "TABERNACLE_IN_SITU",
+      "priority": 1,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Tabernacle_2019-0168.jpg",
+        "role": "NAMED_CATHOLIC_TABERNACLE",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "SINGLE_SUBJECT_PHOTO_HIGH_RES",
+        "comment": "Actual tabernacle from Catholic basilica, 4888×3910; camera aimed at tabernacle; verify complete form and background; not necessarily altar-integrated.",
+        "photographer": "Paul R. Burley",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "PROMISING_SINGLE_SUBJECT_PHOTO_PENDING_PIXEL_QA"
+    },
+    {
+      "object_id": "AL07",
+      "label": "Six altar candlesticks",
+      "glossary_id": "G079",
+      "original_source_refs": [
+        "BROMPTON_ALTAR_2019_GEOGRAPH",
+        "M6-AL07-SALVADOR-ALTAR-CANDLESTICK"
+      ],
+      "mode": "DEFINED_SIX_MATCHING_CANDLESTICKS_SET",
+      "priority": 1,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Castelnau-d'Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+        "role": "SIX_CANDLESTICKS_ON_ONE_ALTAR",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "ENTIRE_MATCHED_SET_PRESENT_WITH_ALTAR",
+        "comment": "French inventory description explicitly counts six gilded-bronze candlesticks and altar crucifix. Not isolated as six-object hero; could use rights-compliant annotated crop if all six retained and no false separation.",
+        "photographer": "Didier Descouens",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "TRUSTWORTHY_SET_CONTEXT_NOT_YET_SINGLE_SET_HERO"
+    },
+    {
+      "object_id": "AL08",
+      "label": "Individual altar candle",
+      "glossary_id": "G079",
+      "original_source_refs": [
+        "M6-AL08-DULMEN-ALTAR-CANDLES"
+      ],
+      "mode": "ISOLATED_CANDLE_OR_CANDLE_ON_HOLDER",
+      "priority": 2,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_Candlestick_2019-0081.jpg",
+        "role": "ALTAR_CANDLE_AND_HOLDER_DETAIL",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "CATHOLIC_CANDELABRA_CLOSEUP",
+        "comment": "Photo 3229×4844; contains candlestick and candle, so do not automatically call solitary altar candle. Consider explicit in-use inset rather than hero.",
+        "photographer": "Paul R. Burley",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "PILOT_TYPE_HOLD_SINGLE_CANDLE_MISSING"
+    },
+    {
+      "object_id": "AL10",
+      "label": "Altar gradine / candle shelf",
+      "glossary_id": "G079",
+      "original_source_refs": [
+        "M6B5-AL10-ARS-SIXTE-GRADINE-ENSEMBLE"
+      ],
+      "mode": "GRADINE_PERMANENT_ALTAR_ARCHITECTURE",
+      "priority": 1,
+      "candidate": {
+        "url": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=233665&methode=consulter&type=bien",
+        "role": "ISOLATED_HISTORICAL_GRADINE",
+        "rights": "EXACT_PHOTO_RIGHTS_UNRESOLVED",
+        "fit": "EXACT_OBJECT_BUT_PHOTO_NOT_CLEARED",
+        "comment": "Québec Augustinian heritage gradine accession 2013.1066; institutional reuse terms unresolved; six views may include incomplete-object photos.",
+        "photographer": "Repository Québec",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "OBJECT_STRONG_BUT_NO_PUBLICATION_RIGHTS"
+    },
+    {
+      "object_id": "AL13",
+      "label": "Altar linen coverings",
+      "glossary_id": "G079",
+      "original_source_refs": [
+        "M6-AL13-1948-DICTIONARY-ILLUSTRATION",
+        "M6B2-AL13-MET-GENOA-ALTAR-CLOTH"
+      ],
+      "mode": "THREE_ALTAR_LINENS",
+      "priority": 2,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Altar_cloth_MET_47412.jpg",
+        "role": "HISTORICAL_ALTAR_CLOTH_DETAIL",
+        "rights": "CC0_1_0_SOURCE_RIGHTS_FROM_B22",
+        "fit": "OBJECT_MUSEUM_TEXTILE_ONLY",
+        "comment": "Venetian altar cloth bobbin lace (Met 20.186.372), 2785×745 but photo identified explicitly as a DETAIL, not all three full Mass altar linens.",
+        "photographer": "The Met Open Access",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "KEEP_MUSEUM_DETAIL_NO_THREE_LINEN_HERO"
+    },
+    {
+      "object_id": "AL17",
+      "label": "Epistle side of altar",
+      "glossary_id": "G077",
+      "original_source_refs": [],
+      "mode": "ANNOTATION_OVER_AUTHENTIC_ALTAR",
+      "priority": 1,
+      "candidate": null,
+      "other": [],
+      "decision": "NO_INDEPENDENT_PHOTO_REQUIRED_EPITLE_SIDE_DIRECTIONAL_ANNOTATION",
+      "annotation": "Epistle side: priest's RIGHT when facing altar; photo coordinate requires altar orientation, not viewer's assumed left/right."
+    },
+    {
+      "object_id": "AL18",
+      "label": "Gospel side of altar",
+      "glossary_id": "G078",
+      "original_source_refs": [],
+      "mode": "ANNOTATION_OVER_AUTHENTIC_ALTAR",
+      "priority": 1,
+      "candidate": null,
+      "other": [],
+      "decision": "NO_INDEPENDENT_PHOTO_REQUIRED_GOSPEL_SIDE_DIRECTIONAL_ANNOTATION",
+      "annotation": "Gospel side: priest's LEFT when facing altar; preserve precise physical altar orientation."
+    },
+    {
+      "object_id": "AL19",
+      "label": "Retable / reredos",
+      "glossary_id": "G418",
+      "original_source_refs": [
+        "BROMPTON_ALTAR_2019_GEOGRAPH"
+      ],
+      "mode": "ARCHITECTURAL_RETABLE_OR_REREDOS",
+      "priority": 2,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Castelnau-d'Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+        "role": "ALTAR_ENTIRE_CONTEXT",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "OBJECT_TYPOLOGY_NOT_CONFIRMED",
+        "comment": "A high altar scene does not automatically establish an independent retable/reredos; check integral architectural superstructure and crop separately.",
+        "photographer": "Didier Descouens",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "DO_NOT_PROMOTE_SAME_CONTEXT_TO_INDEPENDENT_RETABLE"
+    },
+    {
+      "object_id": "EQ01",
+      "label": "Wine cruet",
+      "glossary_id": "G193",
+      "original_source_refs": [
+        "EXISTING-EQ01"
+      ],
+      "mode": "SINGLE_LABELED_MASS_WINE_CRUET",
+      "priority": 1,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:WLA_vanda_Cruet_for_the_Mass.jpg",
+        "role": "SINGLE_MASS_CRUET_MARKED_V",
+        "rights": "CC_BY_2_5_FILE_PAGE_CHECKED",
+        "fit": "EXACT_CATHOLIC_VESSEL_STRONG",
+        "comment": "Victoria and Albert collection 472-1879, c.1540; V on lid suggests vinum, photographer VeronikaB 3000×4000. Historical inference not absolute proof of original service; label cautiously.",
+        "photographer": "VeronikaB",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "PREFERRED_LICENSED_WINE_CRUET_PHOTO_PENDING_PIXEL_QA"
+    },
+    {
+      "object_id": "EQ02",
+      "label": "Water cruet",
+      "glossary_id": "G193",
+      "original_source_refs": [
+        "EXISTING-EQ02"
+      ],
+      "mode": "SINGLE_LABELED_MASS_WATER_CRUET",
+      "priority": 1,
+      "candidate": {
+        "url": "https://dia.org/collection/pair-cruets-and-tray/24645",
+        "role": "PART_OF_A_V_INSCRIBED_CRUET_PAIR",
+        "rights": "EXACT_PHOTO_RIGHTS_UNRESOLVED",
+        "fit": "CORRECTLY_IDENTIFIED_WATER_COMPONENT",
+        "comment": "Detroit Institute accession 53.320, Laurent Amiot c.1825; A aqua and V vinum on separate matching vessels, includes tray. Photo rights not individually verified, crop water vessel needed.",
+        "photographer": "Detroit Institute of Arts",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "RIGHTS_HOLD_PAIRED_IMAGE_CANNOT_BE_SPLIT_SILENTLY"
+    },
+    {
+      "object_id": "EQ06",
+      "label": "Altar bell",
+      "glossary_id": null,
+      "original_source_refs": [
+        "M6-EQ06-ALTAR-BELLS-PHOTO",
+        "M6-EQ06-ALTAR-BELL-ALTERNATE"
+      ],
+      "mode": "SINGLE_ALTAR_BELL",
+      "priority": 1,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Carcassonne_-_%C3%89glise_Saint-Vincent_-_Tr%C3%A9sor_25.jpg",
+        "role": "SINGLE_FRENCH_CATHOLIC_ALTAR_BELL",
+        "rights": "CC_BY_SA_4_0_FILE_PAGE_CHECKED",
+        "fit": "EXACT_ONE_OBJECT_PHOTO",
+        "comment": "French Catholic church treasury, nineteenth-century altar bell, photographer Tylwyth Eldar; 4000×6000. Check background/glare and complete form before assignment.",
+        "photographer": "Tylwyth Eldar",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "PROMISING_STANDALONE_PILOT_BELL_NEEDS_PIXEL_QA"
+    },
+    {
+      "object_id": "BK01",
+      "label": "Roman Missal on altar",
+      "glossary_id": "G214",
+      "original_source_refs": [
+        "EXISTING-BK01"
+      ],
+      "mode": "1962_ROMAN_MISSAL_IN_USE",
+      "priority": 2,
+      "candidate": {
+        "url": "https://github.com/Fulcanelli13/ad-orientem/blob/feature/visible-mass-3d-explorer-p0/previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json",
+        "role": "EXISTING_BK01_1962_MISSAL_SOURCE",
+        "rights": "EXISTING_SOURCE_RECORD_RIGHTS_NOT_REAUDITED",
+        "fit": "EXISTING_SOURCE_NOT_PIXEL_REAUDITED",
+        "comment": "The existing pilot source is a genuine Roman Missal Canon-page photo with ribbons, not necessarily an entire book on altar; source ID EXISTING-BK01 must be resolved to original image rights before a hero assignment.",
+        "photographer": null,
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [],
+      "decision": "RESTORE_SOURCE_ASSET_RESOLUTION_NOT_A_NEW_DISCOVERY"
+    },
+    {
+      "object_id": "BK02",
+      "label": "Missal stand or cushion",
+      "glossary_id": "G215",
+      "original_source_refs": [
+        "M6-BK02-JAPANESE-MISSAL-STAND-PROSPECT",
+        "M6B4-BK02-CASON-1962-MISSAL-STAND"
+      ],
+      "mode": "ISOLATED_CATHOLIC_MISSAL_STAND",
+      "priority": 1,
+      "candidate": {
+        "url": "https://commons.wikimedia.org/wiki/File:Missal_stand,_Japan,_late_1500s_to_early_1600s_AD,_lacquered_wood,_mother-of-pearl,_gold_-_Peabody_Essex_Museum_-_DSC07672.jpg",
+        "role": "GENUINE_CATHOLIC_MISSAL_STAND",
+        "rights": "CC0_1_0_SOURCE_RIGHTS_FROM_B22",
+        "fit": "OBJECT_MATCH_HISTORICAL_NOT_TYPICAL",
+        "comment": "Original single-object Japanese Jesuit/Nanban-style Catholic Missal stand (Peabody Essex Museum); Daderot CC0 independent museum photograph. Complete object against museum rather than neutral white; uncommon 1962 Roman parish type.",
+        "photographer": "Daderot",
+        "pixel_qa": "NOT_RECORDED_B25"
+      },
+      "other": [
+        {
+          "url": "https://collections.lacma.org/object/259589",
+          "role": "LACMA_GUATEMALA_ATRIL",
+          "rights": "EXACT_PHOTO_RIGHTS_UNRESOLVED",
+          "fit": "BETTER_ISOLATION_BUT_UNCLEARED",
+          "comment": "18th-century Catholic stand white background; LACMA credits modern photo while Rawpixel asserts public domain. Publication hold remains.",
+          "photographer": null,
+          "pixel_qa": "NOT_RECORDED_B25"
+        }
+      ],
+      "decision": "LICENSED_HISTORICAL_BACKUP_NO_PREFERRED_1962_HERO"
+    }
+  ],
+  "blocked_before_publication": [
+    "SN05: red glass + complete suspended lamp framing verified at pixels",
+    "AL07: exactly SIX candlesticks and no misleading crop",
+    "AL10: gradine photo permission",
+    "AL13: three separate linen coverings or correct defined set",
+    "EQ02: truly identified standalone water cruet with licensed image",
+    "BK01: original physical 1962 Missal source photo metadata and entire book",
+    "BK02: representative Missal stand rights and view",
+    "AL17 AL18 annotations only not physical photos"
+  ],
+  "source_registry_unchanged": true,
+  "pilot_hero_selection_unchanged": true,
+  "mass_reader_untouched": true,
+  "approved": false,
+  "published": false
+}
