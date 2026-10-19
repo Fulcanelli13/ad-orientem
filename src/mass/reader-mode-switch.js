@@ -49,6 +49,9 @@ function sourceSectionId(card){
 
 function cardHasCue(card,cueId){
   if(!cueId)return false;
+  // Exact R17 BLOCK_START posture anchors may precede substituted Proper
+  // paragraphs, so the source cue is not repeated in their displayed text.
+  if(card?.postureEntry?.cueId===cueId)return true;
   return (card?.paragraphs??[]).some(paragraph=>
     (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(cueId))
   );
