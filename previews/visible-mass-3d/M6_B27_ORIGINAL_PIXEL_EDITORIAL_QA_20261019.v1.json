@@ -1,0 +1,107 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_B27_ORIGINAL_PIXEL_EDITORIAL_QA_V1",
+  "date": "2026-10-19",
+  "status": "THREE_EXACT_SOURCE_ORIGINAL_FILES_MANUALLY_VISUALLY_SCREENED_NOT_PUBLICATION_APPROVED",
+  "evidence_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39227271648",
+  "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39227271648/artifacts/12174227862",
+  "artifact_id": 12174227862,
+  "source_count": 7,
+  "acquired": 3,
+  "not_acquired": [
+    {
+      "object_id": "SN02",
+      "source": "Saint Ann Catholic Church communion rail",
+      "status": "WIKIMEDIA_429_NO_RETRY"
+    },
+    {
+      "object_id": "BK01",
+      "source": "MK777 1962 Roman Missal",
+      "status": "SKIPPED_AFTER_429"
+    },
+    {
+      "object_id": "BK02",
+      "source": "Peabody Essex Catholic missal stand",
+      "status": "SKIPPED_AFTER_429"
+    },
+    {
+      "object_id": "AL19",
+      "source": "Doulaincourt Catholic retable",
+      "status": "SKIPPED_AFTER_429"
+    }
+  ],
+  "rate_limited": true,
+  "original_image_records": [
+    {
+      "asset_ref": "SN05-01",
+      "object_id": "SN05",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sanctuary_lamp.jpg",
+      "license": "CC0 1.0",
+      "photographer": "HenryPho17",
+      "rights": "EXACT_FILE_COMMONS_PUBLIC_DOMAIN",
+      "original_px": [
+        2268,
+        4032
+      ],
+      "sha256": "ea7e70dc9de40677dcac9049d85088a47bdc661c82bdd7fe2558ac715715edd2",
+      "visual": "Full hanging lamp in architecture; slim red transparent vessel occupies small fraction of long-frame. Lantern and chains visible but wall/ceiling dominates. Original zoom was inspected.",
+      "decision": "KEEP_CONTEXT_ONLY_NOT_PRIMARY_SINGLE_OBJECT_HERO"
+    },
+    {
+      "asset_ref": "SN05-02",
+      "object_id": "SN05",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sanctuary_lamp,_Christ_the_King_Catholic_Church,_Auckland.jpg",
+      "license": "CC BY 4.0",
+      "photographer": "Bjankuloski06 (Bojan Jankuloski)",
+      "rights": "EXACT_FILE_COMMONS_CC_BY_4",
+      "original_px": [
+        2722,
+        4083
+      ],
+      "sha256": "1370944b3f6b80b6b4766d9379506aef284dde45b880165b9fb18cbd591b52bc",
+      "visual": "One complete Roman Catholic sanctuary lamp, red cylindrical glass containing visible flame, cross finial, gilded holder, white mounting case. Isolated in a pale marble wall with no second object; image sharp with some hard reflections on red glass. The support is wall-mounted, NOT traditional suspended chain.",
+      "decision": "ASSISTANT_PROVISIONAL_SINGLE_OBJECT_SUITABLE_WITH_WALL_MOUNTED_FORM_EXPLICIT",
+      "selected_asset_id": "M6B27-SN05-AUCKLAND-RED-CATHOLIC-LAMP",
+      "licence_requirements": "Credit Bojan Jankuloski (Bjankuloski06), CC BY 4.0, original Commons URL, and identify crop/adaptation if applicable.",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "asset_ref": "AL03-03",
+      "object_id": "AL03",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St._Comgall's_church_tabernacle.jpg",
+      "license": "CC0 1.0",
+      "photographer": "HenryPho17",
+      "rights": "EXACT_FILE_COMMONS_PUBLIC_DOMAIN",
+      "original_px": [
+        2268,
+        4032
+      ],
+      "sha256": "691bba78750434f308b4964d8073cd9352d86c276369a6d65ca6f7e1ece0bd10",
+      "visual": "Gold-domed Catholic tabernacle with cross-marked front door, complete and unobscured. Central framing originally includes two candle holders, flowers, and front marble altar. Cropping to a ~815x1720 portrait still leaves partial candle objects at the edges; technically visually legible but strict isolation criterion fails.",
+      "decision": "STRONG_TABERNACLE_CONTEXT_AND_DETAIL_RESEARCH_ONLY_NOT_ONE_OBJECT_HERO",
+      "crop_reviewed_px": [
+        730,
+        1020,
+        1545,
+        2740
+      ],
+      "publication_approved": false,
+      "user_approved": false
+    }
+  ],
+  "decisions": {
+    "new_provisional_heroes": [
+      "SN05"
+    ],
+    "other_14_physical_hero_targets_still_unfilled": true,
+    "annotation_exceptions": [
+      "AL17",
+      "AL18"
+    ],
+    "previous_provisional_count": 13,
+    "new_provisional_count": 14,
+    "changed_canonical_source_registry": false,
+    "changed_Mass_readers": false,
+    "publication_approved": false
+  }
+}
