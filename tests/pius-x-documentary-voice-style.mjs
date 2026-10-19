@@ -95,20 +95,29 @@ const calibr=registry.userCalibration20261019;
 assert.equal(calibr.mean,17/6);
 assert.equal(calibr.scores.length,6);
 assert.deepEqual(calibr.scores.map(x=>x.rating),[3,3,2,3,3,3]);
-assert.equal(calibr.replacementRule,"SOURCE_FIRST_MINIMAL_INTERVENTION");
+assert.equal(calibr.replacementRule,"SOURCE_LOCKED_SUBSTANCE_WITH_DOCUMENTED_CONVERSATIONAL_VOICE");
+assert.equal(calibr.contentInferenceAllowed,false);
+assert.equal(calibr.stylisticConnectivesAllowed,true);
+assert.equal(calibr.stylisticConnectivesRequireSemanticNeutrality,true);
+assert.equal(calibr.unattributedNewPastoralAdviceAllowed,false);
+assert.equal(calibr.originalPastoralTextAllowed,true);
+assert.equal(calibr.notPrescribingTelegraphicStyle,true);
 assert.equal(calibr.additionsMustShowSource,true);
 assert.equal(calibr.published,false);
 assert.equal(calibr.historicalSpeechVerified,false);
 assert.equal(calibr.canonicalContentModified,false);
 assert.equal(calibr.beforeAfterRegisterRewrite,true);
 assert.equal(calibr.modifiedRegisters.length,4);
-assert.match(registry.registers.CATECHETICAL.use,/no default lesson, analogy, exhortation or conclusion/);
-assert.match(registry.registers.PASTORAL.use,/OPTIONAL/);
+assert.match(registry.registers.CATECHETICAL.use,/Light conversational links are permitted/);
+assert.match(registry.registers.PASTORAL.use,/does NOT authorize editorial pastoral advice/);
 for(const f of registry.styleFeatures.filter(x=>["EFFICIENT_CATECHESIS","CHRISTIAN_ENCOURAGEMENT","SOBRIETY_AND_PRECISION"].includes(x.id))){
  assert.match(f.rule,/source|Source|SOURCE|cited/,f.id+" must gate editorial expansions");
 }
 const humanCalibr=JSON.parse(await readFile(new URL("../data/learn/pius-x-unified-documentary-voice-review.v1.json",import.meta.url),"utf8")).userRatedMinimalVoiceCalibration;
-assert.equal(humanCalibr.status,"EDITORIAL_SOURCE_FIRST_REWRITE_ONLY_NOT_RUNTIME");
+assert.equal(humanCalibr.status,"SOURCE_LOCKED_REVISED_5_SOURCE_SUPPORTED_1_HELD_FOR_ADDITIONAL_SOURCE");
+assert.equal(humanCalibr.contentInferenceAllowed,false);
+assert.equal(humanCalibr.stylisticConnectivesAllowed,true);
+assert.deepEqual(humanCalibr.calibrationStatus,{reviewed:6,sourceLocked:5,heldForSource:1,previousScoresPreserved:true,published:0});
 assert.equal(humanCalibr.baselineMean,17/6);
 assert.equal(humanCalibr.testCorpus.length,6);
 assert.deepEqual(humanCalibr.testCorpus.map(x=>x.qid),["PX1912-Q433","PX1912-Q325","PX1912-Q363","PX1912-Q116","PX1912-Q206","PX1912-Q85"]);
@@ -116,8 +125,19 @@ for(const c of humanCalibr.testCorpus){
  assert.ok(c.visitor&&c.revised&&c.evidence&&c.addition&&c.removedPadding);
  assert.ok(c.revised.length>50);
  assert.ok(c.evidence.includes("Q"));
+ assert.equal(c.reviewedForSemanticAdditions,true);
+ assert.equal(c.approved,false);
+ assert.ok(c.sourceLoci.includes(c.qid));
+ assert.ok(c.connectiveClassification.length>30);
+ assert.match(c.addition,/No editorial pastoral advice or AI conclusion/);
 }
 for(const flag of ["userReRated","doctrinal","historical","english","french","runtime"])assert.equal(humanCalibr.approval[flag],false);
-assert.ok(humanCalibr.testCorpus.find(c=>c.qid==="PX1912-Q85").addition.includes("not present in Q85"));
+const livelihood=humanCalibr.testCorpus.find(c=>c.qid==="PX1912-Q85");
+assert.equal(livelihood.contentDecision,"HOLD_PERSONAL_LIVELIHOOD_NOT_ANSWERED");
+assert.ok(humanCalibr.sourceGapsHeld.some(x=>x.includes("PX1912-Q85")));
+assert.ok(!livelihood.revised.includes("That does not forbid an honest livelihood"));
+assert.ok(!humanCalibr.testCorpus.find(c=>c.qid==="PX1912-Q116").revised.includes("every judgment or remark"));
+assert.equal(humanCalibr.testCorpus.filter(x=>x.contentDecision==="SOURCE_PROPOSITION_ONLY").length,5);
+assert.equal(humanCalibr.testCorpus.filter(x=>x.contentDecision==="HOLD_PERSONAL_LIVELIHOOD_NOT_ANSWERED").length,1);
 
 console.log("PASS eight documentary style witnesses, two comparative period controls, six rhetorical rules, ten blind tests and zero doctrinal duplication");
