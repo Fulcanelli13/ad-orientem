@@ -179,6 +179,29 @@ export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
     from:"Body and Blood of thy Son,",
     to:"Body and Blood of Thy Son",
   }),
+  // Red Missal 2013 printed p.49: Last Gospel English punctuation
+  // and grammatical relative clause, preserving the genuflection cue.
+  "AO.SM.C0272": Object.freeze({
+    id:"RED-EN-2013-W7-01",
+    blockId:"AO.SM.B095",
+    field:"english",
+    from:"There was a man sent from God, whose name was John. This man came for a witness, to give testimony of the light,\nthat all men might believe through him. He was not the light, but was to give testimony of the light. That was the true light,\nwhich enlighteneth every man that cometh into this world. He was in the world, and the world was made by Him, and the world knew Him not.\nHe came unto His own, and His own received Him not. But as many as received Him, He gave them power to be made the sons of God,\nto them that believe in His name: who are born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.",
+    to:"There was a man sent from God, whose name was John. This man came for a witness, to give testimony of the light,\nthat all men might believe through him. He was not the light, but was to give testimony of the light. That was the true light,\nwhich enlighteneth every man that cometh into this world. He was in the world, and the world was made by Him, and the world knew Him not.\nHe came unto His own, and His own received Him not. But as many as received Him, to them He gave power to become the sons of God;\nto them that believe in His name: who are born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.",
+  }),
+  "AO.SM.C0273": Object.freeze({
+    id:"RED-EN-2013-W7-02",
+    blockId:"AO.SM.B095",
+    field:"english",
+    from:"AND THE WORD WAS MADE FLESH.",
+    to:"AND THE WORD WAS MADE FLESH,",
+  }),
+  "AO.SM.C0274": Object.freeze({
+    id:"RED-EN-2013-W7-03",
+    blockId:"AO.SM.B095",
+    field:"english",
+    from:"And dwelt among us; and we saw his glory, the glory as of the Only-begotten of the Father, full of grace and truth.",
+    to:"and dwelt among us, and we saw His glory, the glory as of the Only-begotten of the Father, full of grace and truth.",
+  }),
   "AO.SM.C0110": Object.freeze({
     id:"RED-EN-2013-001",
     blockId:"AO.SM.B031",
