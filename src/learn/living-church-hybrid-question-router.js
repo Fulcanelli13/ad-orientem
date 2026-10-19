@@ -186,6 +186,7 @@ export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPo
    ||(base.kind==="no_coverage"&&catalog.blockedPatterns.some(x=>x.id===base.reason))
    ||base.reason==="TOPIC_SOURCE_GAP"
    ||base.reason==="HISTORICAL_SOURCE_POINTER_NOT_RESOLVED"
+   ||base.reason==="UNSUPPORTED_PERSONAL_SPIRITUAL_VERDICT"
    ||base.matchEvidence?.basis==="EXACT_VARIANT"
    ||base.matchEvidence?.basis==="EXPLICIT_REFORMULATION_CHOICE"
    ||base.matchEvidence?.basis==="CONTEXT_FOLLOW_UP_RULE"
