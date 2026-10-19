@@ -318,3 +318,14 @@ The evidence buckets are exclusive research dispositions, but **79 is not an app
 6. No runtime publication, three-guide character changes, voice approval or new ownership registry is authorized by this screen.
 
 The next useful deliverable is a **proof-of-answerability sample** with explicit user-question variants, exact source paragraphs, version/period qualifiers, restricted first-person attribution, and an independent acceptance decision. It will give a *real* denominator for that sample and permit a cautious pilot, instead of adding more unverified question ideas.
+
+
+### First two cross-cohort same-intent adjudications
+
+Research file: `data/learn/research/pius-x-two-cross-family-intent-joins-20261019.v1.json`.
+
+Two especially strong parallels have now been **reviewed as the same user intention, for research-level retrieval grouping only**:
+- **SPX-053 ↔ SPX-EXP-035**: Recognising the visible Church founded by Christ via the four marks, with 1905 Q155–162 and the digitally transcribed 1912 Q107–111 retained as separate witnesses.
+- **SPX-014 ↔ SPX-EXP-045**: Why busy priestly ministry cannot replace meditation, anchored directly to *Haerent animo* §§15–20.
+
+This is the first confirmed small semantic sample: **four different research prompts represent two user intentions**. It is **not** a claim that all 112 prompts have been deduplicated to 110 intentions; all other within- and cross-corpus overlaps are still unadjudicated. No canonical SPX IDs, source answers, visitor routing, or runtime text were changed.
