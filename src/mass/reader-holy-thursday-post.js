@@ -1,3 +1,6 @@
+import {makeEucharisticHymnRows}
+  from "./reader-eucharistic-hymn-text.js";
+
 // R27 native Holy Thursday post-Mass reader.
 // Owns only the explicit HOLY_THURSDAY_POST following-action surface.
 // Mass ending deltas remain plan-owned and the recovered HT_POST graph owns state.
@@ -25,7 +28,7 @@ export function buildHolyThursdayPostPayload({graph,payload}={}){
       id:"HT-R01",title:"Translation of the Blessed Sacrament",
       sourceRecordIds:freeze(["HT-TRN-010"]),
       actorScope:"ALL_FAITHFUL",posture:"KNEEL",
-      paragraphs:freeze(payload.pangeLingua.map((x,i)=>row("HT-R01-"+String(i+1),"TEXT",x,"HT-TRN-010"))),
+      paragraphs:makeEucharisticHymnRows(payload.pangeLingua,{prefix:"HT-R01-",sourceRecordId:"HT-TRN-010"}),
       guide:"Kneel as the Blessed Sacrament passes. Pange lingua accompanies the translation to the altar of repose."
     }),
     freeze({
@@ -43,7 +46,7 @@ export function buildHolyThursdayPostPayload({graph,payload}={}){
       id:"HT-R03",title:"At the Altar of Repose",
       sourceRecordIds:freeze(["HT-TRN-030"]),
       actorScope:"ALL_FAITHFUL",posture:"KNEEL",
-      paragraphs:freeze(payload.tantumErgo.map((x,i)=>row("HT-R03-"+String(i+1),"TEXT",x,"HT-TRN-030"))),
+      paragraphs:makeEucharisticHymnRows(payload.tantumErgo,{prefix:"HT-R03-",sourceRecordId:"HT-TRN-030",startStanza:4}),
       guide:"At the altar of repose, kneel while Tantum ergo and Genitori are sung."
     }),
     freeze({
