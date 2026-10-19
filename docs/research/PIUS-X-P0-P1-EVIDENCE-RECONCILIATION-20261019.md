@@ -329,3 +329,33 @@ Two especially strong parallels have now been **reviewed as the same user intent
 - **SPX-014 ↔ SPX-EXP-045**: Why busy priestly ministry cannot replace meditation, anchored directly to *Haerent animo* §§15–20.
 
 This is the first confirmed small semantic sample: **four different research prompts represent two user intentions**. It is **not** a claim that all 112 prompts have been deduplicated to 110 intentions; all other within- and cross-corpus overlaps are still unadjudicated. No canonical SPX IDs, source answers, visitor routing, or runtime text were changed.
+
+
+## Pilot proof of answerability — 12 representative visitor questions
+
+Research file: `data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json`.
+
+The first proof-of-answerability **purposive**, *nonrepresentative* twelve-case review goes beyond document-level source links. Each case now has a real visitor question, a narrow historically readable question/section locus, the issuer/witness class, a source-close working answer nucleus, a prohibited-inference statement, a follow-up, and an explicit historical-voice restriction.
+
+| Editorial research disposition | Cases | Meaning |
+| --- | ---: | --- |
+| `PASS_CONSTRAINED` | **10** | Direct source locus supports a bounded answer nucleus if source, period and attribution constraints are respected |
+| `HOLD_FIRST_PERSON_TESTIMONY` | **1** | A childhood-poverty question requests private feelings absent from secondary family biography; only factual third-person history survives the gate |
+| `HOLD_INDIVIDUAL_DIAGNOSIS` | **1** | *Haerent animo* can explain neglect of priestly meditation but not diagnose a visitor's dry prayer or conscience |
+| Visitor answers historically voiced / independently certified by this work | **0** | None published |
+
+Representative lessons:
+1. **E supremi §§1–4 (personal election):** Pius X's own papal writing explicitly reports tears, reluctance and eventual submission; this is an unusually strong basis for a tightly controlled *first-person paraphrase*, not invented conclave anecdotes.
+2. **1905 Q669 (Rosary during Mass):** contrary to a potentially misleading shortcut, the text positively allows the Rosary if one tries to follow the sacrificial action. An unconditional prohibition fails the source.
+3. **Salzano Q543 (bad thought):** the transcript distinguishes an unbidden thought from pleasurable/deliberate consent. A faithful reply should not pronounce on an individual's guilt.
+4. **1905 Q527–533 (kinds of grace):** grace sanctifying versus actual is explicit; 1912 short Q269–271 on sacramental grace is the *wrong* same-intent mapping.
+5. **Tra le sollecitudini §§1–5:** chant is preferred for holiness, artistry and universality; the document also endorses suitable polyphony.
+6. **Pascendi §39:** 'synthesis of all heresies' is an assessment of a presented system, not a free-standing license to label contemporary people.
+7. **Acerbo nimis §24:** adults require simple but carefully prepared catechetical teaching in addition to homilies.
+8. **Haerent animo §§15–20:** priestly prayer cannot be substituted by busyness; maintain the *priest-specific* scope.
+9. **Quam singulari (1910), rules 1–4:** proper First Communion preparation depends on use of reason and discernment, not a rigid birthday. This text was issued by the Sacred Congregation for the Discipline of the Sacraments *with papal approval*, **not authored as Pius X's first-person papal speech**.
+10. **Museo Sarto family history:** the family was poor but not the poorest in Riese; feelings and memories cannot be supplied by the biographer's third-person narrative.
+
+This is **10 supported question-specific research nuclei within this chosen sample**, *not a 10/12 representative answerability rate*, not 10 certified voice-ready conversations, and not an estimate of total distinct intentions across the corpus. No new canonical registry was created, no 1962 Mass engine was modified and nothing was published to the avatar.
+
+**Next gate:** have an independent reviewer assess the ten proposed answer nuclei, their source/edition wording, and the permitted 1900s Catholic narrative voice; then test three adjacent natural-language variants and one follow-up for every passing case. The two blocked cases should use historically honest fallback rather than fabricated personal memories or pastoral diagnosis.
