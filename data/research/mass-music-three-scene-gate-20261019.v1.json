@@ -1,0 +1,490 @@
+{
+  "schema": "ao-live-music-three-scene-research-v1",
+  "status": "RESEARCH_DESIGN_ONLY",
+  "date": "2026-10-19",
+  "canonicalCueMutation": false,
+  "readerCardMutation": false,
+  "canonMusicSource": "https://adoremus.org/1958/09/instruction-on-sacred-music/",
+  "authorityParagraphs": [
+    "25",
+    "27a",
+    "27b",
+    "27d",
+    "27e",
+    "27f"
+  ],
+  "constraints": [
+    "MUSIC_EXPECTED_IS_NOT_ACTUAL_PERFORMANCE",
+    "NO_MUSIC_PROGRESS_FROM_SCROLL_POSITION",
+    "NO_MUSIC_PROGRESS_FROM_TEXT_ANIMATION_TIMER",
+    "NO_NAVIGATIONAL_CARD_CHANGE_FROM_MUSIC_PROGRESS",
+    "PRESERVE_EXISTING_CURATED_AND_FROZEN_48_CARD_IDENTITIES",
+    "NO_DUPLICATE_CENTRAL_SCHOLA_TEXT_WHEN_SHARED",
+    "ORGAN_STATE_INDEPENDENT_AND_PERMISSION_GATED",
+    "SPEAKER_AND_CEREMONIAL_CUE_OWNERSHIP_UNCHANGED",
+    "NO_MUSIC_DURING_CONSECRATION",
+    "SOURCE_FIRST_CANON14_INCLUDES_B061_NOT_A_NEW_SYNTHETIC_CARD"
+  ],
+  "statuses": [
+    "NOT_APPLICABLE",
+    "EXPECTED",
+    "OBSERVED_SINGING",
+    "OBSERVED_FINISHED",
+    "UNKNOWN",
+    "BOUNDARY_EXPIRED",
+    "SILENCE_REQUIRED"
+  ],
+  "scenes": [
+    {
+      "id": "MUS.SCENE.INTROIT_KYRIE",
+      "name": "Entrance · Introit · Kyrie",
+      "kind": "PARALLEL_TO_SHARED",
+      "authority": [
+        "27a",
+        "25b",
+        "25c"
+      ],
+      "steps": [
+        {
+          "id": "ENTRANCE",
+          "display": "PARALLEL_MUSIC",
+          "sourceBlockIds": [
+            "AO.SM.B014"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0042"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.001"
+          ],
+          "choir": "INTROIT",
+          "choirAction": "MAKE_EXPECTED_AT_ACTUAL_PROCESSIONAL_ENTRANCE_ONLY",
+          "organ": "UNOBSERVED_OPTIONAL_IF_ALLOWED",
+          "center": "PRIEST_CARD_INDEPENDENT",
+          "note": "B014 is the displayed Proper, not a certified entrance time; a pre-Mass rite may hand off directly to Introit"
+        },
+        {
+          "id": "AT_FOOT",
+          "display": "PARALLEL_MUSIC",
+          "sourceBlockIds": [
+            "AO.SM.B010"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0036"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.001"
+          ],
+          "choir": "INTROIT",
+          "choirAction": "NO_AUTO_PROGRESS_OR_RESTART",
+          "organ": "NO_AUTO_STATUS",
+          "center": "PRAYERS_AND_RUBRICS",
+          "note": "Music may already have ended while priest preparation continues; never assume overlap or completion"
+        },
+        {
+          "id": "INTROIT_VISIBLE",
+          "display": "PARALLEL_MUSIC",
+          "sourceBlockIds": [
+            "AO.SM.B014"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0043"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.001"
+          ],
+          "choir": "INTROIT",
+          "choirAction": "REFERENCE_PROPER_TEXT_NOT_SOUNDING_CLAIM",
+          "organ": "NO_AUTO_STATUS",
+          "center": "PROPER_INTROIT",
+          "note": "If music observed as complete, dock must not reactivate on entering printed Introit card"
+        },
+        {
+          "id": "KYRIE_BEGIN",
+          "display": "SHARED_CHANT",
+          "sourceBlockIds": [
+            "AO.SM.B015"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0044"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.002"
+          ],
+          "choir": "KYRIE",
+          "choirAction": "EXPECTED_UNTIL_HEARD_NOT_AUTO_STARTED",
+          "organ": "NO_AUTO_STATUS",
+          "center": "NINEFOLD_KYRIE",
+          "note": "Schola/people may sing; do not duplicate the identical Latin in dock"
+        },
+        {
+          "id": "KYRIE_LAST",
+          "display": "SHARED_CHANT",
+          "sourceBlockIds": [
+            "AO.SM.B015"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0052"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.002"
+          ],
+          "choir": "KYRIE",
+          "choirAction": "SOUND_COMPLETION_REQUIRES_OBSERVATION",
+          "organ": "NO_AUTO_STATUS",
+          "center": "LAST_KYRIE",
+          "note": "End of animation is never evidence of choir completion"
+        }
+      ],
+      "invariants": [
+        "PRECEDING_ASPERGES_VIDI_AQUAM_STAYS_SEPARATE_RITE",
+        "B014_DOES_NOT_AUTOMATICALLY_START_CHOIR",
+        "C0044_DOES_NOT_MARK_CHOIR_ALREADY_SINGING",
+        "STOP_OF_INTROIT_MUST_NOT_REWIND_TO_B014"
+      ]
+    },
+    {
+      "id": "MUS.SCENE.OFFERTORY_SECRET",
+      "name": "Offertory · Orate fratres · Secret",
+      "kind": "PARALLEL_TO_DIALOGUE",
+      "authority": [
+        "27b",
+        "16b"
+      ],
+      "steps": [
+        {
+          "id": "OFFERTORY_INVITATION",
+          "display": "DIALOGUE",
+          "sourceBlockIds": [
+            "AO.SM.B029"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0108"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.010"
+          ],
+          "choir": "OFFERTORY",
+          "choirAction": "EXPECTED_AFTER_PUBLIC_OREMUS_NO_SOUND_ASSUMPTION",
+          "organ": "INSTRUMENTAL_OPTION_ONLY_IF_PERMITTED",
+          "center": "OREMUS_LATIN_VERNACULAR",
+          "note": "Priest invitation and choir Proper have distinct performers"
+        },
+        {
+          "id": "OFFERTORY_PROPER",
+          "display": "PARALLEL_MUSIC",
+          "sourceBlockIds": [
+            "AO.SM.B030"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0109"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.010"
+          ],
+          "choir": "OFFERTORY",
+          "choirAction": "SHOW_PROPER_TEXT_CAN_CONTINUE_WITH_VERSES_OR_MOTET",
+          "organ": "POSSIBLE_NOT_ASSUMED",
+          "center": "OFFERTORY_ANTIPHON_AND_PRIEST_ACTION",
+          "note": "Printed block belongs to source model; singing may extend beyond it"
+        },
+        {
+          "id": "PREPARATION",
+          "display": "PARALLEL_MUSIC",
+          "sourceBlockIds": [
+            "AO.SM.B031",
+            "AO.SM.B033",
+            "AO.SM.B035"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0110",
+            "AO.SM.C0114",
+            "AO.SM.C0118"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.010"
+          ],
+          "choir": "OFFERTORY",
+          "choirAction": "HOLD_CURRENT_OBSERVATION_THROUGH_CARD_SWIPES",
+          "organ": "OPTIONAL_IF_PERMITTED",
+          "center": "PRIEST_OFFERTORY_PRAYERS",
+          "note": "Do not add new cards for chant verses"
+        },
+        {
+          "id": "INCENSATION_AND_LAVABO",
+          "display": "PARALLEL_MUSIC",
+          "sourceBlockIds": [
+            "AO.SM.B036",
+            "AO.SM.B037",
+            "AO.SM.B038"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0124",
+            "AO.SM.C0125",
+            "AO.SM.C0128"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.010"
+          ],
+          "choir": "OFFERTORY",
+          "choirAction": "KEEP_CHANT_INDEPENDENT_IF_OBSERVED",
+          "organ": "OPTIONAL_IF_PERMITTED",
+          "center": "RUBRICS_AND_PRIEST_PRAYERS",
+          "note": "Incensation omitted in unincensed/requiem-conditioned forms; do not fabricate it"
+        },
+        {
+          "id": "ORATE_FRATRES",
+          "display": "DIALOGUE_OVER_POSSIBLE_MUSIC",
+          "sourceBlockIds": [
+            "AO.SM.B039"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0130",
+            "AO.SM.C0132"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.011"
+          ],
+          "choir": "OFFERTORY",
+          "choirAction": "DO_NOT_INFER_TRACK_END_FROM_ORATE",
+          "organ": "NO_ACCOMPANIMENT_OF_LITURGICAL_DIALOGUE",
+          "center": "ORATE_FRATRES_AND_SUSCIPIAT",
+          "note": "Music may have ended already; priest/minister exchange remains source-owned"
+        },
+        {
+          "id": "SECRET_PRIVATE",
+          "display": "PARALLEL_MUSIC_UNTIL_CONCLUSION",
+          "sourceBlockIds": [
+            "AO.SM.B040"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0134"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.011"
+          ],
+          "choir": "OFFERTORY",
+          "choirAction": "ENDING_WINDOW_NO_LATER_THAN_SECRET_CONCLUSION",
+          "organ": "MUST_YIELD_BEFORE_NEXT_SUNG_DIALOGUE",
+          "center": "SECRET_PRAYER",
+          "note": "1958 §27b disallows continuing beyond Secret; do not equate opening of Secret with certified completion"
+        },
+        {
+          "id": "SECRET_CONCLUSION",
+          "display": "DIALOGUE",
+          "sourceBlockIds": [
+            "AO.SM.B041"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0135",
+            "AO.SM.C0136"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.011"
+          ],
+          "choir": "OFFERTORY",
+          "choirAction": "BOUNDARY_EXPIRED_IF_NOT_CONFIRMED_FINISHED",
+          "organ": "NO_MUSIC_OVER_PRIEST_CONCLUSION",
+          "center": "PER_OMNIA_AND_AMEN",
+          "note": "Expiration suppresses false active display but must NOT claim the choir was heard finishing"
+        }
+      ],
+      "invariants": [
+        "FIVE_CURATED_OFFERTORY_CARDS_KEEP_EXISTING_CUTS",
+        "B030_IS_NOT_AN_AUTOMATIC_END_OF_MUSIC",
+        "C0135_IS_HARD_NEXT_DIALOGUE_BOUNDARY",
+        "NO_AUTO_RESTART_ON_REVISIT_TO_B030"
+      ]
+    },
+    {
+      "id": "MUS.SCENE.SANCTUS_CONSECRATION",
+      "name": "Preface · Sanctus · Consecrations · Canon",
+      "kind": "SHARED_TO_PARALLEL_TO_SILENCE_TO_OPTIONAL_PARALLEL",
+      "authority": [
+        "27d",
+        "27e",
+        "27f"
+      ],
+      "steps": [
+        {
+          "id": "PREFACE",
+          "display": "PRIEST_CHANT_DIALOGUE",
+          "sourceBlockIds": [
+            "AO.SM.B045"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0144"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.012"
+          ],
+          "choir": "SANCTUS_BENEDICTUS",
+          "choirAction": "NOT_YET_ACTIVE",
+          "organ": "NO_ACCOMPANIMENT_OF_PRIEST_CHANT",
+          "center": "PREFACE",
+          "note": "Choir waits until the preface ends"
+        },
+        {
+          "id": "SANCTUS_OPENING",
+          "display": "SHARED_CHANT",
+          "sourceBlockIds": [
+            "AO.SM.B046"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0145",
+            "AO.SM.C0147"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.013"
+          ],
+          "choir": "SANCTUS_BENEDICTUS",
+          "choirAction": "EXPECTED_UNTIL_OBSERVED",
+          "organ": "SEPARATE_IF_PERMITTED",
+          "center": "SANCTUS_THROUGH_HOSANNA",
+          "note": "Single source prayer card; do not split it into two synthetic card identities"
+        },
+        {
+          "id": "GREGORIAN_BENEDICTUS",
+          "display": "SHARED_CHANT",
+          "condition": "GREGORIAN_SETTING",
+          "sourceBlockIds": [
+            "AO.SM.B046"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0148",
+            "AO.SM.C0149"
+          ],
+          "cardSourceSections": [
+            "AO.CARD.013"
+          ],
+          "choir": "SANCTUS_BENEDICTUS",
+          "choirAction": "CONTINUE_WITHOUT_BREAK_EXPECT_FINISH_BEFORE_CONSECRATION",
+          "organ": "NO_AUTO_STATUS",
+          "center": "SAME_SANCTUS_CARD",
+          "note": "Do not present a second Benedictus instance after Consecration"
+        },
+        {
+          "id": "POLYPHONIC_HOLD",
+          "display": "PARALLEL_STATUS",
+          "condition": "POLYPHONIC_SETTING",
+          "sourceBlockIds": [
+            "AO.SM.B047"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0150"
+          ],
+          "cardSourceSections": [
+            "AO.CANON.01"
+          ],
+          "choir": "SANCTUS_BENEDICTUS",
+          "choirAction": "BENEDICTUS_NOT_YET_RELEASED",
+          "organ": "UNKNOWN_OR_RESTRICTED",
+          "center": "TE_IGITUR",
+          "note": "A priest prayer/canon card may continue while the Schola part is held; scrolling is not a release"
+        },
+        {
+          "id": "CONSECRATION_HOST",
+          "display": "SILENCE_REQUIRED",
+          "sourceBlockIds": [
+            "AO.SM.B052"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0173",
+            "AO.SM.C0174"
+          ],
+          "cardSourceSections": [
+            "AO.CANON.06"
+          ],
+          "choir": "NONE",
+          "choirAction": "SUPPRESS_ALL_SOUNDING_STATES_DURING_CONSECRATION",
+          "organ": "FORBIDDEN",
+          "center": "HOST_WORDS_AND_ELEVATION",
+          "note": "Mandatory stop of singing/instruments, not a new progress step"
+        },
+        {
+          "id": "CONSECRATION_CHALICE",
+          "display": "SILENCE_REQUIRED",
+          "sourceBlockIds": [
+            "AO.SM.B053"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0179",
+            "AO.SM.C0181"
+          ],
+          "cardSourceSections": [
+            "AO.CANON.07"
+          ],
+          "choir": "NONE",
+          "choirAction": "SUPPRESS_ALL_SOUNDING_STATES_DURING_CONSECRATION",
+          "organ": "FORBIDDEN",
+          "center": "CHALICE_WORDS_AND_ELEVATION",
+          "note": "Do not release polyphonic Benedictus until after this actual liturgical boundary"
+        },
+        {
+          "id": "POST_CHALICE",
+          "display": "PARALLEL_MUSIC_IF_HEARD",
+          "condition": "POLYPHONIC_SETTING",
+          "sourceBlockIds": [
+            "AO.SM.B054"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0182"
+          ],
+          "cardSourceSections": [
+            "AO.CANON.08"
+          ],
+          "choir": "SANCTUS_BENEDICTUS",
+          "choirAction": "CAN_RELEASE_DELAYED_BENEDICTUS_ON_EXPLICIT_OBSERVATION",
+          "organ": "NO_UNOBSERVED_SOLO",
+          "center": "UNDE_ET_MEMORES",
+          "note": "Benedictus after Consecration, not after the priest's printed Benedictus paragraph"
+        },
+        {
+          "id": "LATER_CANON",
+          "display": "SILENCE_RECOMMENDED_IF_NO_BENEDICTUS",
+          "sourceBlockIds": [
+            "AO.SM.B060"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0204"
+          ],
+          "cardSourceSections": [
+            "AO.CANON.14"
+          ],
+          "choir": "SANCTUS_BENEDICTUS",
+          "choirAction": "NO_RESTART_IF_ALREADY_FINISHED",
+          "organ": "NO_AUTOMATIC_SOLO",
+          "center": "PER_IPSUM",
+          "note": "Silence after Consecration recommended unless delayed Benedictus; no inferred progress from card swipes"
+        },
+        {
+          "id": "CANON_CONCLUSION",
+          "display": "PRIEST_CHANT_DIALOGUE",
+          "sourceBlockIds": [
+            "AO.SM.B061"
+          ],
+          "sourceCueIds": [
+            "AO.SM.C0206",
+            "AO.SM.C0207"
+          ],
+          "cardSourceSections": [
+            "AO.CANON.14"
+          ],
+          "choir": "NONE",
+          "choirAction": "EXPIRE_UNRESOLVED_BENEDICTUS_WITHOUT_CLAIMING_HEARD_FINISH",
+          "organ": "NO_UNOBSERVED_SOLO",
+          "center": "PER_OMNIA_AND_AMEN",
+          "note": "The source-first canonical Canon.14 contains B060 and the B061 public conclusion; the 30-card witness groups the same event into AO.CARD.018. Do not duplicate the Amen."
+        }
+      ],
+      "invariants": [
+        "ONE_SANCTUS_B046_PRAYER_CARD",
+        "GREGORIAN_BENEDICTUS_WITHOUT_BREAK",
+        "POLYPHONIC_BENEDICTUS_OBSERVED_ONLY_AFTER_C0181",
+        "NO_SINGING_OR_ORGAN_DURING_C0173_TO_C0181",
+        "DO_NOT_FORCE_GREGORIAN_FINISH_FROM_TIMER",
+        "C0206_CLOSES_STALE_MUSIC_SCENE"
+      ]
+    }
+  ]
+}
