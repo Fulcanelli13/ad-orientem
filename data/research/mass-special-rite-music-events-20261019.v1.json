@@ -15,6 +15,14 @@
     {
       "url": "https://lms.org.uk/scholas-guide-sung-mass",
       "topic": "Asperges/Introit handoff"
+    },
+    {
+      "url": "https://1962ordo.today/day/feria-vi-in-parasceve-2-2/",
+      "topic": "1962 Good Friday chant/ceremony source witness"
+    },
+    {
+      "url": "https://longbeachchant.com/chant/tlm/tlmcal/good-friday-1962-missal/",
+      "topic": "Good Friday chants by liturgical moment"
     }
   ],
   "policy": {
@@ -22,7 +30,10 @@
     "choirScrollIndependent": true,
     "organIndependent": true,
     "noSyntheticChant": true,
-    "specialHandoffOnlyOnActualRite": true
+    "specialHandoffOnlyOnActualRite": true,
+    "goodFridayPassionDeathSilence": true,
+    "easterVigilBranchSpecificFontChant": true,
+    "prophecyScriptureNotChant": true
   },
   "rites": [
     {
@@ -426,6 +437,369 @@
           "observed": false,
           "musicStatus": "EXPECTED_NOT_OBSERVED",
           "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    },
+    {
+      "id": "GOOD_FRIDAY",
+      "sourceFile": "data/presentation/reader-good-friday.v1.json",
+      "lifecycle": "DISTINCT_RITE",
+      "events": [
+        {
+          "id": "AO.MUS.GF.DOMINE",
+          "stageId": "GF-LESS-110",
+          "kind": "TRACT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "firstLesson.responsory"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Responsory following first lesson; not the lesson"
+        },
+        {
+          "id": "AO.MUS.GF.ERIPE",
+          "stageId": "GF-LESS-210",
+          "kind": "TRACT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "secondLesson.responsory"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Responsory following second lesson; not the lesson"
+        },
+        {
+          "id": "AO.MUS.GF.PASSION_BEFORE",
+          "stageId": "GF-PASS-310",
+          "kind": "CHANTED_PASSION",
+          "performers": "PASSION_MINISTERS",
+          "sourcePaths": [
+            "passion.preDeath"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Sung Passion, excluding the death pause"
+        },
+        {
+          "id": "AO.MUS.GF.PASSION_AFTER",
+          "stageId": "GF-PASS-330",
+          "kind": "CHANTED_PASSION",
+          "performers": "PASSION_MINISTERS",
+          "sourcePaths": [
+            "passion.postDeath"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Sung Passion after the death pause"
+        },
+        {
+          "id": "AO.MUS.GF.ECCE_1",
+          "stageId": "GF-X-521",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "cross.unveiling.versicle",
+            "cross.unveiling.response"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Ecce lignum / Venite adoremus at unveiling 1"
+        },
+        {
+          "id": "AO.MUS.GF.ECCE_2",
+          "stageId": "GF-X-522",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "cross.unveiling.versicle",
+            "cross.unveiling.response"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Ecce lignum / Venite adoremus at unveiling 2"
+        },
+        {
+          "id": "AO.MUS.GF.ECCE_3",
+          "stageId": "GF-X-523",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "cross.unveiling.versicle",
+            "cross.unveiling.response"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Ecce lignum / Venite adoremus at unveiling 3"
+        },
+        {
+          "id": "AO.MUS.GF.IMPROPERIA",
+          "stageId": "GF-VEN-600",
+          "kind": "CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "cross.improperia"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Improperia during veneration, not a personal-action timer"
+        },
+        {
+          "id": "AO.MUS.GF.CRUCEM",
+          "stageId": "GF-VEN-600",
+          "kind": "ANTIPHON_PSALM",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "cross.crucemTuam"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Crucem tuam during veneration"
+        },
+        {
+          "id": "AO.MUS.GF.CRUX",
+          "stageId": "GF-VEN-600",
+          "kind": "HYMN",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "cross.cruxFidelis"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Crux fidelis during veneration"
+        },
+        {
+          "id": "AO.MUS.GF.RETURN",
+          "stageId": "GF-COM-810",
+          "kind": "PROCESSIONAL_ANTIPHON",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "cross.returnAntiphons"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Antiphons at the Blessed Sacrament return"
+        }
+      ]
+    },
+    {
+      "id": "EASTER_VIGIL",
+      "sourceFile": "data/presentation/reader-easter-vigil.v1.json",
+      "lifecycle": "COMPOSITE_DISTINCT_RITE",
+      "supplementalSourceFile": "data/presentation/reader-easter-vigil-prophecies.v1.json",
+      "events": [
+        {
+          "id": "AO.MUS.EV.LUMEN_1",
+          "stageId": "EV-LUM-110",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "donor.lumenChristi.lat"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Lumen Christi / Deo gratias station 1"
+        },
+        {
+          "id": "AO.MUS.EV.LUMEN_2",
+          "stageId": "EV-LUM-120",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "donor.lumenChristi.lat"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Lumen Christi / Deo gratias station 2"
+        },
+        {
+          "id": "AO.MUS.EV.LUMEN_3",
+          "stageId": "EV-LUM-130",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "donor.lumenChristi.lat"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Lumen Christi / Deo gratias station 3"
+        },
+        {
+          "id": "AO.MUS.EV.EXSULTET_OPEN",
+          "stageId": "EV-EXS-200",
+          "kind": "PRAECONIUM",
+          "performers": "DEACON_OR_CANTOR",
+          "sourcePaths": [
+            "donor.exsultet.lat"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Easter Proclamation, beginning"
+        },
+        {
+          "id": "AO.MUS.EV.EXSULTET_CONT",
+          "stageId": "EV-EXS-210",
+          "kind": "PRAECONIUM",
+          "performers": "DEACON_OR_CANTOR",
+          "sourcePaths": [
+            "donor.exsultet.lat"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Easter Proclamation, continuation"
+        },
+        {
+          "id": "AO.MUS.EV.CANTICLE_2",
+          "stageId": "EV-LESS-02-READ",
+          "kind": "CANTICLE",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "prophecyCanticles.1.canticle.latin"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Canticle after prophecy 2; not the Scripture reading"
+        },
+        {
+          "id": "AO.MUS.EV.CANTICLE_3",
+          "stageId": "EV-LESS-03-READ",
+          "kind": "CANTICLE",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "prophecyCanticles.2.canticle.latin"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Canticle after prophecy 3; not the Scripture reading"
+        },
+        {
+          "id": "AO.MUS.EV.CANTICLE_4",
+          "stageId": "EV-LESS-04-READ",
+          "kind": "CANTICLE",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "prophecyCanticles.3.canticle.latin"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Canticle after prophecy 4; not the Scripture reading"
+        },
+        {
+          "id": "AO.MUS.EV.LITANY_I",
+          "stageId": "EV-LIT1-400",
+          "kind": "LITANY",
+          "performers": "CANTORS_AND_RESPONDENTS",
+          "sourcePaths": [
+            "bridge.litanyI.lat"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "First part of the Litany"
+        },
+        {
+          "id": "AO.MUS.EV.SICUT_IN_CHURCH",
+          "stageId": "EV-FONT-450",
+          "kind": "PROCESSIONAL_CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "font1962.procession.chant"
+          ],
+          "condition": "FONT_MODE=IN_CHURCH",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Sicut cervus on font procession, in-church font branch"
+        },
+        {
+          "id": "AO.MUS.EV.SICUT_BAPTISTERY",
+          "stageId": "EV-FONT-440",
+          "kind": "PROCESSIONAL_CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "font1962.procession.chant"
+          ],
+          "condition": "FONT_MODE=SEPARATE_BAPTISTERY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Sicut cervus while approaching separate baptistery"
+        },
+        {
+          "id": "AO.MUS.EV.LITANY_II",
+          "stageId": "EV-LIT2-600",
+          "kind": "LITANY",
+          "performers": "CANTORS_AND_RESPONDENTS",
+          "sourcePaths": [
+            "bridge.litanyII.lat"
+          ],
+          "condition": "ANY",
+          "endBoundary": "NATIVE_RITE_STAGE_ONLY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE",
+          "segmentScope": "Second part of the Litany"
         }
       ]
     }
