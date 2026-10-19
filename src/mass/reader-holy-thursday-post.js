@@ -89,7 +89,8 @@ export function buildHolyThursdayPostPayload({graph,payload,clericsPresent=null}
 }
 
 export function createHolyThursdayPostReaderController(args={}){
-  const built=buildHolyThursdayPostPayload(args);
+  let clericsPresent=args.clericsPresent??null;
+  let built=buildHolyThursdayPostPayload({...args,clericsPresent});
   let index=0;
   let joiningState="WAITING";
   function state(){
@@ -109,6 +110,15 @@ export function createHolyThursdayPostReaderController(args={}){
   function next(){index=Math.min(index+1,built.cards.length-1);return state()}
   function previous(){index=Math.max(0,index-1);return state()}
   function goTo(cardId){const hit=built.cards.findIndex(x=>x.id===String(cardId));if(hit>=0)index=hit;return state()}
+  function setClericsPresent(value){
+    if(value!==null && typeof value!=="boolean")
+      throw new Error("HOLY_THURSDAY_CLERICS_FLAG_MUST_BE_EXPLICIT_BOOLEAN_OR_UNKNOWN");
+    if(value!==clericsPresent){
+      clericsPresent=value;
+      built=buildHolyThursdayPostPayload({...args,clericsPresent});
+    }
+    return state();
+  }
   function setJoiningState(value){
     const next=String(value??"").toUpperCase();
     if(!["WAITING","JOINING","NOT_JOINING"].includes(next))throw new Error("Unsupported Holy Thursday joining state: "+value);
@@ -116,7 +126,7 @@ export function createHolyThursdayPostReaderController(args={}){
   }
   return freeze({
     schema:"ao-r27-holy-thursday-post-reader-controller-v1",supported:true,cards:built.cards,
-    project:state,next,previous,goTo,setJoiningState
+    project:state,next,previous,goTo,setJoiningState,setClericsPresent
   });
 }
 
