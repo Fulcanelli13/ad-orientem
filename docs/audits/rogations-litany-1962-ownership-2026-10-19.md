@@ -399,3 +399,120 @@ still without an exact owner from those two families**). Do not
 subtract 32 from the 150: the 32-row historical evidence is not
 equivalent to 32 newly approved owner identities.
 
+
+## 10. Consolidated 187-row EN/FR source ownership census
+
+The final opening, introductory and concluding rows have now been
+reconciled to the same original-source IDs as the Psalm/suffrages and
+ten collects. The canonical native reader still has **187 original
+Latin rows**, with no new translations or event graph changes.
+
+The complete auditable index is
+`data/mass/rogation-187-vernacular-owner-census.v1.json`,
+checked against the real native reader, prior 112-invocation owner index,
+existing LOW/SUNG Ordinary and PRAY registries by
+`tests/rogation-187-vernacular-owner-census.mjs`.
+
+### Actual exact Latin ownership, with NO translation approvals implied
+
+| Native stage | Source rows | Exact Ordinary Latin matches | Additional exact PRAY Latin matches | No exact match to those two corpora |
+| --- | ---: | ---: | ---: | ---: |
+| ROG-R01 · `Exsurge Domine` opening | 4 | 0 | 1 | 3 |
+| ROG-R02 · cantors' Litany dialogue | 18 | 6 | 4 | 8 |
+| ROG-R03 · 112 processional invocations | 112 | 4 | 7 | 101 |
+| ROG-R04 · post-Litany Pater, Psalm and suffrages | 35 | 6 | 3 | 26 |
+| ROG-R05 · ten collects and ending | 18 | 6 | 0 | 12 |
+| **Total** | **187** | **22** | **15** | **150** |
+
+This ledger is now reconciled at the level of **every** native
+`ROG-Rxx` ID and original Latin JSON path. Within the 150 rows
+without exact Ordinary/PRAY matches, source-review work divides into:
+
+| Priority / next work | Count | Meaning |
+| --- | ---: | --- |
+| EN/FR historical passage or position found | **46** | Specific parallel line, verse, or historically compressed role-pair exists; 1962 edition / scan / rights / wording review outstanding |
+| Historical Litany of the Saints family found, but not each invocation individually certified | **101** | Existing 1883 EN and 1862 FR Litanies are only *family witnesses*; numbered saints, additional petitions and exact role wording still require ordered alignment |
+| Source-specific chant/Scripture translation witness to locate | **3** | Opening `Exsurge Domine` antiphon twice + `Deus auribus nostris` Psalm 43(44) incipit; **two distinct Latin text groups**. Neither the 1883 nor 1862 historical penitential Litany publishes this Rogation opening |
+| **Total without exact corpus owner** | **150** | **Not a count of missing translations** |
+
+The other **37** original rows match canonical Ordinary (22) or
+PRAY (15) Latin exactly; approved effective EN/FR wording, textual
+edition, ritual speaker and sound remain separate release gates.
+These **37 + 46 + 101 + 3** are disjoint *review priorities*,
+not 187 approved bilingual prayers. This mapping contains no newly
+translated body passages.
+
+### The remaining 32 opening and ending source rows
+
+- **ROG-R01 (4)**: complete `Gloria Patri` has the existing
+  `foundations_glory_be` trilingual PRAY candidate. The repeated
+  `Exsurge Domine` antiphon occurs at **two distinct source positions**
+  but is **one distinct text to research**; the intervening `Deus
+  auribus nostris` is a Psalm 43(44) verse *fragment*, not a complete
+  lection. Search the **right Psalter recension and exact verse**
+  before commissioning any translation. The historical 1883/1862
+  penitential-Litany witnesses start at another antiphon and cannot
+  supply this processional opening.
+- **ROG-R02 (18)**: six existing Ordinary Kyrie/Christe matches;
+  four `Christe audi/exaudi nos` pairs have exact PRAY Latin
+  candidate lines. The four invocations of the Divine Persons/Trinity
+  and four `Miserere nobis` responses are **eight separate ceremonial
+  reader rows** although the 1883 EN and 1862 FR historical Litanies
+  print each invocation **with its response on one line**. Record
+  shared wording by Latin formula, not by inventing separate
+  vernacular verses or doubling the 1962 Litany.
+- **ROG-R04-PN/V/R (3)**: English 1883 explicitly includes silent
+  `Our Father`, `lead us not`, `deliver us`, and the existing
+  Ordinary `AO.SM.C0210` matches `Sed libera nos a malo`.
+  French 1862 abbreviates the Our Father and does not print the
+  following V/R as independent rows at this stage. Its *absence
+  from this historical page is not evidence against the 1962 rite*.
+  Preserve `ROG-R04-PN` silent voice (already source-corrected).
+- **ROG-R05-F1…F7 (7)**: the opening and three further `Amen`
+  responses have Ordinary owners, as do `Dóminus vobíscum` /
+  `Et cum spíritu tuo` on F2/F3. The historical EN/FR appendix
+  has the closing Amen, `Exaudiat nos` and `Et fidelium animae`
+  responses, but **neither witness prints the final `Dominus /
+  Et cum` pair at the same position**. English 1883 adds an
+  `O Lord, hear my prayer` pair after the collects that belongs
+  in the 1962 Rogations donor *earlier*, before `Oremus`.
+  Do not duplicate or move that V/R to the end.
+
+### Known Litany edition differences requiring special handling
+
+**Do not automatically adopt either 19th-century Litany for the 1962
+112-invocation procession.** The 1883 English and 1862 French texts
+differ from the original Latin source. Specific investigations are
+recorded for:
+
+- `ROG-R03-10`: Saint Joseph present in the 1883 English and
+  1961 chant photograph, absent in the 1862 French edition.
+- `ROG-R03-74`, `ROG-R03-75`: earthquake and
+  plague/famine/war petitions in the donor but **absent from both**
+  19th-century historical transcriptions.
+- `ROG-R03-81`: French prose omits the Cross/Passion petition
+  although its **1862 Latin** side includes it.
+- `ROG-R03-96`: return those in error to Church unity / bring
+  unbelievers to the Gospel is absent in the 1883/1862 witnesses.
+- `ROG-R03-15` and `ROG-R03-18`: two apostles named Saint James
+  share the same Latin text but retain distinct source and
+  ceremony-order identities.
+
+### Release / translation-gap decision
+
+**Zero new EN/FR translations have been written in this audit.**
+The number of **genuinely missing translations is still UNKNOWN**,
+not 150 or 101 or three. A finished gap count requires:
+(i) correct 1962 Latin and ritual-performance certification;
+(ii) edition/print-page and rights collation of 1883/1862 witnesses;
+(iii) *ordered* verse/invocation alignment for all 112 Litany rows;
+(iv) one targeted Psalter/chant-source lookup for the opening;
+(v) selected EN/FR **effective existing canonical owner wording**
+and resolved historical variants; and only then
+(vi) a row-by-row list of 1962 prayers genuinely without a
+qualified existing English/French counterpart.
+
+No new text was copied, no 48-card Mass LIVE/reader graph replaced,
+no doubled Litany, and no independent translation of the Rogation
+Mass Proper introduced. Draft PR #1441 remains a review environment
+until the editorial and acceptance gates pass.
