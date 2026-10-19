@@ -215,11 +215,15 @@ export function projectSpecialRiteReadingPages(stageId,paragraphs,{mode="MISSAL"
     if(rows.length%2!==0)return freezePages([rows],rows,id);
     groups=batchGroups(Array.from({length:rows.length/2},(_,i)=>rows.slice(i*2,i*2+2)),12);
   }else if(id==="ROG-R05"){
-    // Ten separately sourced concluding prayers; never split any oration.
+    // Source-owned Oremus belongs immediately before the ten entire collects,
+    // not after them or as a separate invented ceremony event.
+    const before=rows[0]?.id==="ROG-R05-OR"?rows.slice(0,1):[];
     const prayers=rows.filter(row=>/^ROG-R05-O\d+$/.test(asId(row)));
-    const after=rows.slice(prayers.length);
+    const after=rows.slice(before.length+prayers.length);
     if(prayers.length<2)return freezePages([rows],rows,id);
-    groups=[...batchGroups(prayers.map(p=>[p]),2),...(after.length?[after]:[])];
+    const prayerPages=batchGroups(prayers.map(p=>[p]),2);
+    if(before.length)prayerPages[0]=[...before,...prayerPages[0]];
+    groups=[...prayerPages,...(after.length?[after]:[])];
   }else if(/^EV-LESS-0[1-4]-READ$/.test(id)){
     // Prophecies already have source-owned Latin Scripture paragraphs.
     // Group up to three at a time, and place the appointed canticle after
