@@ -2680,6 +2680,10 @@ export async function mountNativeReaderPreview({
 
     current=anchored;
     reader?.setSections?.(sectionItems());
+    // The special-rite cursor tracks the displayed reader mode, not the
+    // initial launch mode. Reopen current rite source event at page one
+    // without advancing ceremony or fabricating a new source paragraph.
+    ritePageCursor.setMode(rebuilt.mode);
 
     clearEventCinematic({resetCue:true});
     armPartCinematic(null);
@@ -2700,7 +2704,16 @@ export async function mountNativeReaderPreview({
     root.dataset.r17SourceModelCards=String(sourceModel.totalCards);
     root.dataset.r17PresentationModelCards=String(readerModel.totalCards);
 
-    if(!(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)){
+    if(inAsperges)showAsperges();
+    else if(inPalm)showPalm();
+    else if(inAsh)showAsh();
+    else if(inCandlemas)showCandlemas();
+    else if(inRogations)showRogations();
+    else if(inRequiemAbsolution)showRequiemAbsolution();
+    else if(inCorpusChristi)showCorpusChristi();
+    else if(inHolyThursdayPost)showHolyThursdayPost();
+    else if(inGenericProcession)showGenericProcession();
+    else if(!inLifecycle){
       showCard(current);
       // A two-column Missal changes page geometry, not source/cue identity.
       if(cueStillPresent){
