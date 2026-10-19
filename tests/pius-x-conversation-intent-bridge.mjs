@@ -286,7 +286,13 @@ for(const rec of expandedPassages.records){
  assert.equal(rec.question_en,raw.question_en);
  assert.equal(rec.domain,raw.domain);
  assert.ok(/^https:\/\//.test(rec.verified_source_url));
- assert.equal(rec.verified_source_url,raw.suggested_document.url);
+ if(rec.id==='SPX-EXP-004') {
+   assert.equal(rec.original_document_lead_url,raw.suggested_document.url);
+   assert.equal(rec.verified_source_url,'https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/');
+   assert.ok(rec.source_refinement_reason);
+ } else {
+   assert.equal(rec.verified_source_url,raw.suggested_document.url);
+ }
  assert.ok(rec.section_or_question_locator && rec.source_locus_summary);
  assert.ok(['BIOGRAPHY_FACTS_ONLY','PRIMARY_DIRECT','PRIMARY_PARTIAL'].includes(rec.passage_support_screen));
  const biography=rec.passage_support_screen==='BIOGRAPHY_FACTS_ONLY';
