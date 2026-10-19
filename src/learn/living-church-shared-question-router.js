@@ -3,7 +3,7 @@
  * Can return topic navigation, clarification, or a proposed character transfer.
  * Never returns an AI-authored historical answer.
  */
-import {historicalFocusCandidates,validateHistoricalFocus} from "./living-church-historical-focus.js";
+import {historicalFocusCandidates,historicalConfirmedContinuation,validateHistoricalFocus} from "./living-church-historical-focus.js";
 export const SHARED_QUESTION_ROUTER_VERSION="AO_LIVING_CHURCH_ROUTER_PILOT_V1";
 
 const accents=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -164,6 +164,14 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
     "De quelle question historique parlez-vous ?":"Which historical subject did you mean?",
    options:focused.slice(0,catalog.pilotLimits.maxClarifications).map(t=>present(t,lang)),
    answerText:null,approvedReply:false});
+  // A previous *confirmed* topic can license a narrow documentary follow-up.
+  // Merely attaching a previous lexical guess may not influence source ownership.
+  if(focused.length===0&&opts.context?.confirmedActiveTopicId){
+   const previous=byId.get(opts.context.confirmedActiveTopicId);
+   if(previous?.character===current&&historicalConfirmedContinuation(input,previous,lang))
+    return resolve(previous,input,{...fixed,
+     matchEvidence:frozen({basis:"DOCUMENTARY_CONFIRMED_FOLLOWUP",score:null})});
+  }
   const candidates=catalog.topics.map(t=>({t,score:similarity(input,phrases(t.questionVariants,lang))}))
    .sort((a,b)=>b.score-a.score);
   const [first,second]=candidates;
