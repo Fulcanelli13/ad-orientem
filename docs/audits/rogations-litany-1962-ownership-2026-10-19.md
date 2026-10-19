@@ -576,14 +576,13 @@ located outside the Litany + 101 historical Litany family only +
 1962 bilingual translation by this audit.** The 150 rows without
 exact Ordinary/PRAY ownership remain 150 in the source index; a
 historical line alignment must never be subtracted as if it were
-a canonical approved EN/FR owner. Across those 150, **142** have
-both EN/FR historic candidates (46 non-Litany + 96 Litany),
-**2** have only EN, and **6** have neither these sources
-(3 Litany + 3 opening). This is **a candidate-witness distribution,
-not 142 certified texts**, and it still requires actual 1962
-print, textual and rights checks. (Some of the 46 other historic
-rows have known local omissions/abbreviations and are not all
-simple fully bilingual clauses; use the per-row exception flags.)
+a canonical approved EN/FR owner. The 96 Litany rows in the 101-row non-exact subset
+were individually aligned to **both** 1883 English and 1862 French
+historical passages; the 2 English-only and 3 neither-witness
+cases remain explicit. The 46 historically located non-Litany
+rows have differing local EN/FR completeness and abbreviations
+and must **not** all be counted as complete bilingual parallels.
+Do not conflate source presence and approval; see each row's flags.
 
 The remaining bottleneck is now **targeted edition collation and
 approval** rather than indefinite translation discovery:
@@ -593,3 +592,74 @@ in complete source order, resolve rights and transcription variants,
 and select the effective approved wording per existing owner.
 The 1962 general rubric's non-doubling rule and six native
 ceremony stages remain unchanged.
+
+
+## 12. More relevant full-rite witnesses found — source discovery effectively complete, publication not certified
+
+A targeted search for the five nineteenth-century Litany omissions
+identified two **later, much closer-to-rite source candidates**.
+
+**Latin–French processional witness:** [Saint-Clément Ottawa,
+*Litanies majeures — La procession et la Messe*,
+hosted 2020](https://stclement-ottawa.org/wp-content/uploads/2020/04/Litanie-majeure-Procession-et-Messe.pdf),
+eight-page bilingual booklet, visually checked at PDF pages 1, 3
+and 4, and text-checked across the entire Latin/French Litany.
+It explicitly includes the missing Saint Joseph
+(`ROG-R03-10`), earthquake (`ROG-R03-74`),
+pestilence/famine/war (`ROG-R03-75`), Cross/Passion
+(`ROG-R03-81`) and errant/unbelievers petition
+(`ROG-R03-96`) **in matching Latin/French columns**.
+All **112 original Litany invocation subjects and response formulas**
+have French parallel candidates, compared to 107
+visible in the older Corneille French prose. The booklet additionally
+prints the opening `Exsurge Domine` antiphon and Psalm 43(44) incipit,
+the silent `Pater noster`, Psalm 69, 24 suffrages,
+`Oremus`, ten orations and their final responses. Its opening
+`Gloria Patri` is abbreviated but an entire Gloria appears
+later and the existing PRAY trilingual prayer is an exact Latin match.
+
+**English Ritual witness:** [Philip T. Weller,
+*The Roman Ritual*, complete edition (1964),
+EWTN Part I](https://www.ewtn.com/catholicism/library/roman-ritual-part-i-11882)
+and [Part II, procession on Saint Mark and the Rogation
+days](https://www.ewtn.com/catholicism/library/roman-ritual-part-2-11883).
+Part I, rendered lines 5146–5326, contains the **full Litany,
+all 112 subjects including the three absent from 1883 English,
+the Pater noster, Psalm 69, suffrages and all ten orations
+plus conclusions**. Part II, lines 3748–3761, supplies English
+for the **repeated `Exsurge` and the original `Deus auribus`
+Psalm fragment**. The Weller edition says it uses the **1952
+`Rituale Romanum` editio typica with subsequent adjustments**;
+it is not automatically a 1962 Missal imprimatur for every ritual
+boundary. It retains older conditional invocation-repetition
+instructions that **must not override 1962 General Rubrics §82**.
+
+| Stage | More complete existing EN source | More complete FR source |
+| --- | --- | --- |
+| ROG-R01 · antiphon, fragment, doxology | Weller 1964, Part II 3748–3761 | Ottawa PDF p. 1; complete Gloria candidate from PRAY |
+| ROG-R02 · cantors' opening | Weller Part I 5146–5178 | Ottawa PDF p. 1; role/response comparison against Corneille required |
+| ROG-R03 · 112 invocations | Weller Part I 5179–5223 | Ottawa PDF pp. 1–5 |
+| ROG-R04 · silent Pater, Psalm, suffrages | Weller Part I 5223–5295 | Ottawa PDF pp. 5–6 |
+| ROG-R05 · ten prayers, dialogue, ending | Weller Part I 5298–5326 | Ottawa PDF pp. 6–7 |
+
+**Source-only owner matrix now includes a locator for each of 112
+Litany rows** in these later editions, alongside the old EN/FR
+historical positions. The 187-row aggregate also records
+later-source coverage by stage, including the previously
+outstanding **two distinct processional-opening Latin passages**.
+This is a *source discovery milestone*: we have located
+an English and French candidate for **every Litany invocation**
+and the entire rite's text families. It is **not evidence of 187
+independently 1962-certified bilingual texts**.
+
+**Critical licensing limit:** Weller's text explicitly carries
+**copyright © 1964 Philip T. Weller**. The Ottawa booklet's
+French translation has **no software reproduction licence
+established** in this audit. Neither may be copied wholesale into
+Ad Orientem merely because it is accessible on the web. Only
+bibliographic source locators and coverage/variant metadata were
+committed; **zero licensed/approved bilingual strings promoted**.
+The prior 187/22/15/150 exact Latin ownership count is unchanged.
+The genuine translation-*composition* backlog may be much smaller
+than previously assumed, but its release-certified value remains
+unknown until edition/source collation, permission and editorial choice.
