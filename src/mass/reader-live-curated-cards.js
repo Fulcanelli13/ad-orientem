@@ -1,4 +1,10 @@
 import { ORDINARY_SUNG_SOURCE_ONLY_CUES } from "./reader-source-only-cues.js";
+/** Display-only title. Never rename, split or omit the Benedictus text. */
+export function visibleMassCardTitle(card){
+  const source=String(card?.sourceSectionId??card?.sectionId??"");
+  return source==="AO.CARD.013" ? "Sanctus" : String(card?.title??"");
+}
+
 // Curated LIVE prayer-card presentation: one card per meaningful moment,
 // not per donor block. All source paragraphs, cue IDs and events are preserved.
 // Ordinary LIVE has 64 curated prayer cards (63 visible by default with
@@ -49,7 +55,7 @@ const GROUPS=Object.freeze({
   }),
   "AO.CARD.013":Object.freeze({
     // One complete priestly prayer; Schola Benedictus timing is independent.
-    titles:["Sanctus — Benedictus"],
+    titles:["Sanctus"],
     after:[],
   }),
   "AO.CANON.06":Object.freeze({
