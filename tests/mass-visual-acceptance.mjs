@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { captureTypographyTriptych } from "./typography-trial-capture.mjs";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/visual-acceptance");
@@ -609,6 +610,16 @@ try{
 
   await page.waitForFunction(()=>document.querySelector("#ao-r17-native-reader-preview [data-role='cinematic']")?.hidden===true,null,{timeout:5000});
   await page.screenshot({path:resolve(out,"06-mass-live-opening.png"),fullPage:false});
+  // Same settled LIVE screen, typeFACE A/B only. Ritual rails and cues unchanged.
+  await captureTypographyTriptych(page,{
+    name:"mass-live",out,scope:"#ao-r17-native-reader-preview",
+    selectors:[
+      ["section","#ao-r17-native-reader-preview [data-role='section-jump']"],
+      ["prayer","#ao-r17-native-reader-preview .ao-reader-paragraph"],
+      ["ribbon","#ao-r17-native-reader-preview [data-reader-nav='next']"],
+    ],
+  });
+
 
   await page.locator("#ao-r17-native-reader-preview [data-role='section-jump']").click();
   const hostSection=page.locator("#ao-r17-native-reader-preview [data-reader-section]").filter({hasText:/Consecration.*Host/i}).first();
