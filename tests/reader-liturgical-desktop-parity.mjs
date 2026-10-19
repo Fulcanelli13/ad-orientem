@@ -39,7 +39,7 @@ try{
    {name:"good-friday",rite:"good-friday"},
    {name:"easter-vigil",rite:"easter-vigil"}
  ];
- let baseline=null;
+ const baselines=Object.create(null);
  for(const spec of ceremonies){
   for(const mode of ["LIVE","MISSAL"]){
    const page=await context.newPage(),errors=[];
@@ -93,9 +93,9 @@ try{
       assert.ok(sample.opacity>=.8,
        spec.name+" uncued source rows rendered illegibly: "+sample.opacity);
    }
-   if(spec.name==="mass")baseline=sample.font;
-   else if(baseline&&["asperges","palm","ash","candlemas"].includes(spec.name)){
-     assert.equal(sample.font,baseline,spec.name+" deviates from Mass text family");
+   if(spec.name==="mass")baselines[mode]=sample.font;
+   else if(baselines[mode]&&["asperges","palm","ash","candlemas"].includes(spec.name)){
+     assert.equal(sample.font,baselines[mode],spec.name+" deviates from Mass "+mode+" text family");
    }
    assert.deepEqual(errors,[],spec.name+"/"+mode+" emitted browser exceptions");
    report.readers.push({name:spec.name,mode,...sample});
