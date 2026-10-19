@@ -174,6 +174,17 @@ const postureAware=buildReaderModeModels({
 });
 const sourcePages=ordinary.presentationModel.cards;
 const posturalPages=postureAware.presentationModel.cards;
+console.log("R17 Missal diagnostic",JSON.stringify({
+ sourcePages:sourcePages.length,posturalPages:posturalPages.length,
+ c6:realCueState.project("AO.SM.C0106").posture,
+ c6transition:realCueState.project("AO.SM.C0106").postureTransition,
+ c9:realCueState.project("AO.SM.C0109").posture,
+ c9transition:realCueState.project("AO.SM.C0109").postureTransition,
+ offertory:sourcePages.filter(card=>card.sourceSectionId==="AO.CARD.010")
+  .map(card=>({id:card.sectionId,rows:card.paragraphs
+    .filter(row=>(row.sourceCueIds??[]).some(id=>["AO.SM.C0106","AO.SM.C0109"].includes(id)))
+    .map(row=>({id:row.id,cues:row.sourceCueIds}))})),
+}));
 assert.ok(posturalPages.length>sourcePages.length,
   "Real Sung posture registry produced no additional Missal page boundaries");
 assert.deepEqual(posturalPages.flatMap(card=>card.paragraphs),
