@@ -1,0 +1,71 @@
+{
+  "schema": "AO_LC_PIUS_X_DOCTRINAL_CONCEPT_FIRST_EXECUTION_V1",
+  "date": "2026-10-19",
+  "state": "FIRST_EXECUTION_FROZEN_ASSISTANT_EDITORIAL_CHALLENGE_LOCAL_REPO_JS_NOT_CI",
+  "commitAtEvaluation": "eaf5ec40d411b6fb28956529153ae7daf42948eb",
+  "fixture": "data/learn/living-church-pius-x-doctrinal-concept-frozen-46.v1.json",
+  "method": "Source modules fetched at exact PR #1443 head and evaluated in an isolated JavaScript function environment; first time this frozen assistant-authored test was run. NOT independent end-user traffic, doctrinal accuracy, or GitHub Actions.",
+  "shared": {
+    "documentedCorrect": 27,
+    "documentedSafeUnresolved": 1,
+    "documentedWrong": 0,
+    "negativeSafe": 8,
+    "negativeWrongSpecific": 4,
+    "confirmedFollowupCorrect": 0,
+    "confirmedFollowupSafeUnresolved": 6,
+    "inspectedPrevious60": {
+      "correctOriginalDocument": 36,
+      "safeUnresolved": 4,
+      "wrong": 0,
+      "heldSafe": 8,
+      "heldUnsafe": 0,
+      "outsideSafe": 12
+    }
+  },
+  "hybrid": {
+    "documentedCorrect": 27,
+    "documentedSafeUnresolved": 1,
+    "documentedWrong": 0,
+    "negativeSafe": 8,
+    "negativeWrongSpecific": 4,
+    "confirmedFollowupCorrect": 0,
+    "confirmedFollowupSafeUnresolved": 6,
+    "inspectedPrevious60": {
+      "correctOriginalDocument": 36,
+      "safeUnresolved": 4,
+      "wrong": 0,
+      "heldSafe": 8,
+      "heldUnsafe": 0,
+      "outsideSafe": 12
+    }
+  },
+  "wrongSpecificNegativeCases": [
+    {
+      "id": "SPX-CONCEPT-031",
+      "fault": "A personal claim about present individual loss of habitual grace incorrectly routed to general theology of grace."
+    },
+    {
+      "id": "SPX-CONCEPT-035",
+      "fault": "Current parish choir director enforcement/application incorrectly routed to Pius X historical sacred-music reform."
+    },
+    {
+      "id": "SPX-CONCEPT-038",
+      "fault": "Whether 1903 music decree is currently universal law incorrectly routed to historical decree."
+    },
+    {
+      "id": "SPX-CONCEPT-040",
+      "fault": "General homily mentioning Eucharist and age of reason incorrectly routed to first-Communion decrees."
+    }
+  ],
+  "limitations": [
+    "Fresh refers to assistant-authored untouched phrases, not external human assessment.",
+    "The previously frozen 60-question set is now inspected regression data.",
+    "Any corrections after observing these four failures are regression development, not a fresh validation.",
+    "Context retrieval must not reassign a source based on sparse continuation cues; six of six new continuations safely abstained."
+  ],
+  "release": {
+    "historicalAnswerApproved": false,
+    "independentAccuracy": false,
+    "safetyThresholdMet": false
+  }
+}
