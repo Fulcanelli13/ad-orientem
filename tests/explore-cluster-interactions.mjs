@@ -49,6 +49,12 @@ assert.equal(distinct[0].provider_group,"DIOCESAN");
 assert.equal(distinct[0].approximate,true);
 assert.equal(distinct[1].provider_group,"ICKSP");
 assert.equal(distinct[1].approximate,false);
+const indicative=exploreMapFeatures([{
+  item_id:"shrine:indicative",lens:"shrines",title:"Indicative site",map_publishable:true,
+  geo:{lat:14,lng:57,indicative_only:true,approximate:false},
+}]);
+assert.equal(indicative[0].properties.approximate,true,
+  "Indicative sites must use dashed / muted medallion treatment");
 const sprites=new Map();
 let arcs=0;
 const ctx={
@@ -91,10 +97,13 @@ assert.equal(exploreCategoryMedallionExpression()[0],"match");
 const runtimeSource=readFileSync(new URL("../src/find/map-runtime.js",import.meta.url),"utf8");
 assert.match(runtimeSource,/clusterProperties:exploreClusterProperties\(\)/);
 assert.match(runtimeSource,/clusterBadgeReady=registerExploreClusterBadge/);
-assert.match(runtimeSource,/categoryEmblemsReady=registerExploreCategoryMedallions/);
+assert.match(runtimeSource,/categoryEmblemsReady=!styleOverride&&registerExploreCategoryMedallions/,
+  "Bible Atlas settlement pins cannot impersonate sacred-place category badges");
 assert.match(runtimeSource,/categoryLayer=prefix\+"-category-medallions"/);
 assert.match(runtimeSource,/icon-image.*concat/);
 assert.doesNotMatch(runtimeSource,/hexagonal/,"No legacy hexagonal marker treatment");
+assert.match(runtimeSource,/selectedLayer=prefix\+"-selected-point"/,
+  "Selection halo must preserve source pin identity");
 assert.match(runtimeSource,/getClusterLeaves\(clusterId,page.limit,page.offset\)/);
 assert.doesNotMatch(runtimeSource,/getClusterLeaves\?\.\(clusterId,500,0\)/);
 console.log("PASS circular Explore clusters, source-owned category medallions, institute logos and paged selection");
