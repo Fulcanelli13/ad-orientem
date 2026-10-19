@@ -2777,7 +2777,7 @@ export async function mountNativeReaderPreview({
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
-      sectionTitle:current?.title ?? "",
+      sectionTitle:current ? visibleMassCardTitle(current) : "",
       cardUpdate:false,
       progress:current ? visibleProgress(current) : null,
       guide:null,
