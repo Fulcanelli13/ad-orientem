@@ -946,6 +946,14 @@ try{
   assert.match(await page.evaluate(()=>localStorage.getItem("ao-mass-customary-v1")??""),/AO.SM.C0061/,
     "faithful paragraph icon customization was not saved");
   await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("DEFAULT");
+  // Default head-bow has no approved artwork: remove a user-inserted gesture
+  // pictogram, but do not discard source cue, paragraph, or posture control.
+  await page.waitForFunction(()=>
+    !document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='gesture']"),
+    null,{timeout:7000});
+  assert.equal(await page.locator(
+    "#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='posture']").count(),1,
+    "resetting a rejected bow depiction removed the essential faithful posture button");
   await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("DEFAULT");
   await faithfulPicker.locator("[data-faithful-picker-close]").click();
   assert.equal(await faithfulPicker.isVisible(),false,"faithful picker did not close");
