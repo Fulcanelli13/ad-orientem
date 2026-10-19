@@ -1,0 +1,40 @@
+name: Sacred Geography R87 first canonical release
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+    paths:
+      - 'data/geography/**'
+      - 'data/shrines/source-registry.v1.json'
+      - 'src/find/geography-contracts.js'
+      - 'src/find/shrines-contracts.js'
+      - 'tests/sacred-geography-r87-first-release.mjs'
+      - '.github/workflows/sacred-geography-r87-first-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  r87-canonical-sites:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: New physical sites, original source and coordinate contract
+        run: node tests/sacred-geography-r87-first-release.mjs
+      - name: Geography and Shrine registry integrity
+        run: |
+          node tests/explore-geography-contracts.mjs
+          node tests/shrines-pilgrimages-contracts.mjs
+      - name: Earlier sacred-geography wave regression
+        run: |
+          node tests/sacred-geography-r72-world-anchors.mjs
+          node tests/sacred-geography-r74-essential-sites.mjs
+          node tests/sacred-geography-r75-essential-sites.mjs
+          node tests/sacred-geography-r76-essential-sites.mjs
+          node tests/sacred-geography-r77-essential-sites.mjs
+          node tests/sacred-geography-r78-identity-adjudication.mjs
+          node tests/sacred-geography-r79-major-church-sites.mjs
