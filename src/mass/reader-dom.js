@@ -1033,6 +1033,21 @@ button.ao-schola-control{cursor:pointer}
   opacity:1!important;color:#f7f8f4;transform:translateX(2px);text-shadow:0 0 26px rgba(225,238,228,.065)
 }
 
+/* A native annexed rite may carry text without an independently tracked
+   paragraph-focus event. The ordinary LIVE 18% opacity must never make its
+   whole prayer unreadable. This alters appearance only, not cue ownership. */
+#ao-r17-native-reader-preview[data-r17-state-owner$="_NATIVE"]
+  .ao-reader-shell[data-mode="LIVE"]
+  .ao-prayer-body:not(:has(.ao-reader-paragraph[data-reading-active="true"]))
+  .ao-reader-paragraph{
+    opacity:.94;color:#e7e9e4;text-shadow:none;transform:none
+  }
+#ao-r17-native-reader-preview[data-r17-state-owner$="_NATIVE"]
+  .ao-reader-shell[data-mode="LIVE"]
+  .ao-prayer-body:not(:has(.ao-reader-paragraph[data-reading-active="true"]))
+  .ao-reader-paragraph[data-kind="RUBRIC"]{opacity:.85}
+
+
 /* Rubrics are identifiable by their quiet inset and rule, not a repeated
    seven-pixel RUBRIC heading on every paragraph. Keep the complete source. */
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]{
