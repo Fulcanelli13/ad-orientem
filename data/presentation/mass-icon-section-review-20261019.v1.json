@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -391,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "BANK_SURVEY_BATCH04_16",
+  "nextReview": "BANK_SURVEY_BATCH06_16",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -901,6 +901,60 @@
         }
       ],
       "unmentionedPolicy": "Every other Batch 3 image retains its previous state, without new approval or rejection. C and M are preferred artwork in place of D/K respectively, not new global rubrical permissions.",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B05",
+      "label": "Special rites, Communion and remaining bank icons",
+      "status": "REVIEWED_PARTIAL",
+      "recordedDate": "2026-10-19",
+      "userStatement": "Reject A, B, C, D. N is not low voice, its actually priest talking out loud... O is really looking low resolution next...",
+      "decisions": [
+        {
+          "letter": "A",
+          "key": "ea_palm_sunday_distribution",
+          "sha256": "332d2192d7dc05a96e2eea3692a00e96c97ab78313788032e3c039d77aa0689e",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "B",
+          "key": "ea_holy_thursday_mandatum",
+          "sha256": "533d0e025f78abafa3724fe0644c9e865de30bd5a5d727b251f0c7c7021ecdc5",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "C",
+          "key": "ea_corpus_christi_procession",
+          "sha256": "80c0e8c0fbd4bdbe8a370e8872d8f64a657964a01c613be1ddf2974441cd7651",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "D",
+          "key": "ea_requiem_absolution",
+          "sha256": "de66f57d6643b719f6ed81786a884478241e698fd949077c6873436353fe97f0",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "N",
+          "key": "low",
+          "source": "v4css",
+          "sha256": "f3e08e9a206346149baa19c31d94afb1f5fa7217c4b33e0d8cebc5814c1e55e1",
+          "decision": "REPURPOSE_AS_AUDIBLE_PRIEST_SPEECH",
+          "userComment": "N is not low voice, its actually priest talking out loud",
+          "semantic": "PRIEST_AUDIBLE",
+          "note": "Do not use for quiet/silent prayer; unrelated Batch 1 'Priest silent' remains rejected. Asset must not control voice timing."
+        },
+        {
+          "letter": "O",
+          "key": "info",
+          "source": "v4css",
+          "sha256": "1d0a4ae2ed6065e7a36957f1b2e133e54ce9ade342aec6bd2edd4a256ff68126",
+          "decision": "REDESIGN_FOR_RESOLUTION",
+          "userComment": "O is really looking low resolution",
+          "note": "Existing control remains available pending higher-quality vector; do not treat as an approved replacement."
+        }
+      ],
+      "unmentionedPolicy": "All other Batch 5 icons retain their previous status; no approval inferred",
       "runtimeMutationAllowed": false
     }
   ]
