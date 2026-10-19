@@ -11,12 +11,15 @@ const gloss=[...(await j("data/glossary/concepts-001-150.v1.json")).entries,
  ...(await j("data/glossary/concepts-301-450.v1.json")).entries];
 const byGloss=new Map(gloss.map(x=>[x.id,x]));
 const guide=await j("data/presentation/guide-registry.v1.json");
+const apol=await j("data/learn/apologetics-canonical.v1.json");
+const apolIds=new Set(apol.dossiers.map(x=>x.id));
+assert.equal(apol.status,"FROZEN_TARGET_NOT_YET_PUBLISHED");
 assert.equal(guide.status,"RECOVERED_CONTINUITY_CERTIFIED");
 const byEN=new Map(en.entries.map(x=>[x.q,x]));
 const byIT=new Map(it.entries.map(x=>[x.q,x]));
 assert.equal(registry.schema,"AO_LIVING_CHURCH_SHARED_QUESTION_ROUTING_PILOT_V1");
 assert.equal(registry.state,"RESEARCH_ONLY_NOT_IN_APP");
-assert.equal(registry.pilotLimits.topics,33);
+assert.equal(registry.pilotLimits.topics,106);
 assert.equal(registry.pilotLimits.approvedConversationalAnswers,0);
 assert.equal(registry.policy.canGenerateNewDoctrinalAnswer,false);
 assert.equal(registry.policy.canGeneratePastoralConclusion,false);
@@ -24,19 +27,25 @@ assert.equal(registry.policy.answerTextIncluded,false);
 assert.equal(registry.policy.historicalSpeechClaim,false);
 assert.equal(registry.policy.explicitUserAcceptanceRequired,true);
 assert.equal(registry.pilotLimits.maxTransfersPerQuestion,1);
-assert.equal(registry.topics.length,33);
-assert.equal(registry.pilotLimits.sourceNavigableTopics,30);
-assert.equal(registry.pilotLimits.sourceGapTopics,3);
+assert.equal(registry.topics.length,106);
+assert.equal(registry.pilotLimits.sourceNavigableTopics,66);
+assert.equal(registry.pilotLimits.apologeticsDossiersIndexed,37);
+assert.equal(registry.pilotLimits.researchOnlyUnpublishedAnswerCount,37);
+assert.equal(registry.pilotLimits.retrievalQualityCertified,false);
+assert.equal(registry.pilotLimits.sourceGapTopics,40);
 assert.equal(registry.policy.referralRequiresExactRelevantSource,true);
 assert.equal(registry.policy.genericRouteIsNotEvidence,true);
 assert.deepEqual(Object.fromEntries(["pius-x","canon","sacristan"].map(k=>[k,registry.topics.filter(x=>x.character===k).length])),
- {"pius-x":13,canon:7,sacristan:13});
+ {"pius-x":21,canon:50,sacristan:35});
 const topics=new Set();
 for(const topic of registry.topics){
  assert.ok(!topics.has(topic.id),"duplicate "+topic.id);topics.add(topic.id);
  assert.equal(topic.approvedReply,false);
  assert.ok(["SOURCE_NAVIGATION_ONLY","SOURCE_GAP"].includes(topic.coverage));
- if(topic.coverage==="SOURCE_GAP"){assert.equal(topic.sourceRefs.length,0);assert.ok(topic.sourceGapReason.length>50);}
+ if(topic.coverage==="SOURCE_GAP"){
+  assert.equal(topic.sourceRefs.length,0);assert.ok(topic.sourceGapReason.length>50);
+  for(const research of topic.researchRefs||[]){assert.equal(research.owner,"APOLOGETICS_CANONICAL_V1");assert.ok(apolIds.has(research.ref));}
+ }
  else assert.ok(topic.sourceRefs.length>0);
  for(const language of ["en","fr"]){
   assert.ok(topic.title[language]);
@@ -60,7 +69,7 @@ for(const topic of registry.topics){
 for(const a of registry.ambiguities)for(const id of a.candidates)assert.ok(topics.has(id));
 const router=createSharedQuestionRouter(registry);
 assert.equal(router.version,SHARED_QUESTION_ROUTER_VERSION);
-assert.equal(router.topicCount,33);
+assert.equal(router.topicCount,106);
 const match=(q,options={})=>router.match(q,options);
 let r=match("Why does the priest raise the Host?");
 assert.equal(r.kind,"clarify");assert.equal(r.ambiguityId,"host_raised");
@@ -111,6 +120,30 @@ r=match("is it wrong to seek more money for my family");
 assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"family_livelihood_from_Q85");
 r=match("what is the current eucharistic fast");
 assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"unverified_modern_law");
+
+const newer=[
+ ["what is a thurible",{currentCharacter:"pius-x"},"offer_handoff","objects.glossary_g194","sacristan"],
+ ["qu'est-ce qu'un encensoir",{language:"fr",currentCharacter:"sacristan"},"source_navigation","objects.glossary_g194","sacristan"],
+ ["what is a chasuble",{currentCharacter:"sacristan"},"source_navigation","objects.glossary_g200","sacristan"],
+ ["how must we pray",{currentCharacter:"pius-x"},"source_navigation","pius.catechism_q418","pius-x"],
+ ["what is a miracle",{currentCharacter:"pius-x"},"source_navigation","pius.catechism_q87","pius-x"],
+ ["what is the agnus dei at mass",{currentCharacter:"sacristan"},"offer_handoff","mass.agnus_dei","canon"],
+ ["what is the last gospel at mass",{currentCharacter:"canon"},"source_navigation","mass.last_gospel","canon"],
+ ["does god exist",{currentCharacter:"canon"},"no_coverage","canon.apologetics_apol_001",null],
+ ["is sola scriptura biblical or historically credible",{currentCharacter:"canon"},"no_coverage","canon.apologetics_apol_014",null],
+ ["la fin justifie-t-elle les moyens",{language:"fr",currentCharacter:"canon"},"no_coverage","canon.apologetics_apol_052",null]
+];
+for(const [question,options,kind,topicId,target] of newer){
+ const x=match(question,options);
+ assert.equal(x.kind,kind,question+" incorrect result: "+JSON.stringify(x));
+ assert.equal(x.topicId,topicId,question+" wrong topic");
+ if(target&&kind==="offer_handoff")assert.equal(x.targetCharacter,target);
+ if(kind==="no_coverage")assert.equal(x.reason,"TOPIC_SOURCE_GAP");
+ assert.equal(x.answerText,null);
+}
+r=match("is sola scriptura biblical or historically credible",{currentCharacter:"pius-x"});
+assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"TOPIC_SOURCE_GAP");
+
 r=match("How do I install WiFi drivers on Linux?");
 assert.equal(r.kind,"no_coverage");
 assert.equal(r.answerText,null);
@@ -121,4 +154,4 @@ assert.throws(()=>createSharedQuestionRouter(clone),/Topic falsely claims eviden
 for(const c of ["pius-x","canon","sacristan"]){
  const src=router.listTopics({character:c});assert.ok(src.length>0);assert.ok(src.every(x=>x.approvedReply===false&&!x.answerText));
 }
-console.log("PASS Living Church shared routing: 33 topics, 30 original-source navigations, 3 held Canon gaps, bilingual clarification/referral, loop and editorial-answer gates");
+console.log("PASS Living Church shared routing: 106 topics, 66 source navigations, 40 held topics (37 Canon apologetics), bilingual clarification, handoff and zero AI answers");
