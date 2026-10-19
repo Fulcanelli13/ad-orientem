@@ -27,6 +27,7 @@ on:
       - 'tests/pius-x-conversation-intent-bridge.mjs'
       - 'tests/pius-x-pr1443-router-integration-diagnostic.mjs'
       - 'tests/pius-x-pr1443-184topic-bridge-acceptance.mjs'
+      - 'tests/pius-x-pr1443-source-aware-48-regression.mjs'
       - 'tools/formation/extract-pius-x-1905-crosswalk.py'
       - 'tools/formation/extract-pius-x-feasts-salzano.py'
       - '.github/workflows/pius-x-conversation-evidence-bridge.yml'
@@ -163,5 +164,43 @@ jobs:
         with:
           name: pius-x-pr1443-184topic-heldout-48-results
           path: research-out/pius-x-pr1443-184topic-heldout-48.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  shared-router-source-aware-48-regression:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pin exact router-owner source-aware branch commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin 'f5bdf04a7f2e88cadebf959def6333308be2138d'
+          test "$(git rev-parse FETCH_HEAD)" = "f5bdf04a7f2e88cadebf959def6333308be2138d" || exit 1
+          for file in \
+            src/learn/living-church-shared-question-router.js \
+            src/learn/living-church-hybrid-question-router.js \
+            src/learn/living-church-historical-focus.js \
+            data/learn/living-church-shared-question-routing-pilot.v1.json \
+            data/learn/living-church-symbolic-concepts.v1.json \
+            data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+          do
+            dest="research-out/pr1443-router-source-aware/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Regress 48 original questions against source-aware retrieval
+        run: node tests/pius-x-pr1443-source-aware-48-regression.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-source-aware-48-regression
+          path: research-out/pius-x-pr1443-source-aware-heldout-48.v1.json
           if-no-files-found: warn
           retention-days: 30
