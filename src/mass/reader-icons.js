@@ -19,20 +19,22 @@ export const R17_ICON_KEYS=Object.freeze({
     RISE:"stand",
   }),
   priestPosition:Object.freeze({
-    // 2026-10-10 user-selected original v1.80 artwork for named stations.
+    // 2026-10-19 icon review supersedes the earlier side assignments:
+    // the donor artwork named epistle visually depicts the Gospel side,
+    // and vice versa. Preserve file identities; correct semantic use only.
     // Priest position remains independent of the transient priest action.
     FOOT_CENTER:"priest_foot",
     ALTAR_STEPS_ASCENDING:"priest_ascending_rich",
     ALTAR_CENTER:"priest_centre_rich",
-    ALTAR_EPISTLE_MISSAL:"priest_epistle_rich",
-    ALTAR_EPISTLE_SIDE:"priest_epistle_rich",
-    ALTAR_FRONT_EPISTLE_HALF:"priest_epistle_rich",
-    ALTAR_GOSPEL_MISSAL:"priest_gospel_rich",
-    ALTAR_GOSPEL_SIDE:"priest_gospel_rich",
-    ALTAR_FRONT_GOSPEL_HALF:"priest_gospel_rich",
+    ALTAR_EPISTLE_MISSAL:"priest_gospel_rich",
+    ALTAR_EPISTLE_SIDE:"priest_gospel_rich",
+    ALTAR_FRONT_EPISTLE_HALF:"priest_gospel_rich",
+    ALTAR_GOSPEL_MISSAL:"priest_epistle_rich",
+    ALTAR_GOSPEL_SIDE:"priest_epistle_rich",
+    ALTAR_FRONT_GOSPEL_HALF:"priest_epistle_rich",
     ALTAR_BACK_ROUTE:"priest_centre_rich",
     SEDILIA:"priest_sedilia_rich",
-    COMMUNION_RAIL:"priest_rail_after_rich",
+    COMMUNION_RAIL:null,
     PREACHING_PLACE:"priest_ambo_rich",
     ROUTE_CONTROLLED:"priest_centre_rich",
     PRIEST_TRACK_ASYNC:"priest_centre_rich",
@@ -138,6 +140,32 @@ const ACTION_ICON_KEYS=Object.freeze({
   "UNCOVERS CHALICE":"canon",
 });
 
+// Reviewed render decisions override earlier v1.80 proposed icon assignments.
+// A null choice hides inaccurate artwork, NOT its source-owned ceremonial cue.
+// Never alter the Mass texts, timing, station, actor, or source identifiers here.
+const R17_REVIEW_20261019_ACTION_OVERRIDES=Object.freeze({
+  "ELEVATES CHALICE":"priest_elevate_chalice_rich",
+  "GIVES COMMUNION":"priest_rail_after_rich",
+  "INCENSES PEOPLE":null, // incense of congregation belongs to the minister
+  "RECEIVES INCENSE":null, // candidate reused an inappropriate priest-incensing icon
+  "RECEIVES HOST":null,    // old 'communion' = fraction = commingling image
+  "RECEIVES CHALICE":null, // old 'chalice_elevation' actually depicts the Host
+  "BREAKS HOST":null,
+  "PLACES PARTICLE":null,
+});
+const R17_REVIEW_20261019_UNASSIGNED_ART=new Set([
+  "priest_communion_rich","priest_rail_rich",
+  "communion","fraction","commingling","chalice_elevation",
+]);
+
+function reviewedPriestActionArt(key){
+  // The physical donor art is kept; semantic Gospel/Epistle ownership flips.
+  if(key==="priest_epistle_rich")return "priest_gospel_rich";
+  if(key==="priest_gospel_rich")return "priest_epistle_rich";
+  // No unreviewed substitute from a different ceremony.
+  return R17_REVIEW_20261019_UNASSIGNED_ART.has(key)?null:key;
+}
+
 function token(value){
   return String(value??"").trim().toUpperCase().replace(/[ -]+/g,"_");
 }
@@ -148,10 +176,13 @@ function priestActionKey(action){
   if(action?.owner==="GESTURE_MATRIX_SOT"&&!action.iconKey)return null;
   const direct=String(action?.iconKey??"").trim();
   const label=String(action?.label??action?.action??action?.value??"").trim().toUpperCase();
+  // Explicit 19 October decisions take precedence over source-owned icon
+  // *presentation*, but never over the source-owned action/gesture itself.
+  if(Object.prototype.hasOwnProperty.call(R17_REVIEW_20261019_ACTION_OVERRIDES,label))
+    return R17_REVIEW_20261019_ACTION_OVERRIDES[label];
   // Exact source-owned Host elevation; do not alter "OFFERS HOST".
   if((label==="ELEVATES HOST"||label==="SHOWS SACRED HOST") && direct==="priest_elevate_host_rich")return "priest_elevation";
-  if(direct)return direct;
-  return ACTION_ICON_KEYS[label]??null;
+  return reviewedPriestActionArt(direct || ACTION_ICON_KEYS[label] || null);
 }
 
 function voiceIconKey(value){
