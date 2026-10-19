@@ -124,4 +124,78 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2 button:focus-visible{outline:2px solid var(--liturgical,#c6b692);outline-offset:3px}
 @media(min-width:700px){.aoTodayV2Mass{padding:12px 30px 20px!important}.aoTodayV2Below{max-width:750px;margin:auto}}
 @media(max-width:370px){.aoTodayV2Below{padding-inline:13px}.aoTodayV2Context{padding-inline:12px}.aoTodayV2Context button{padding-inline:3px;gap:7px}.aoTodayV2Context strong{font-size:15px;overflow-wrap:normal;word-break:normal}.aoTodayV2PrayerFeature{grid-template-columns:31px minmax(0,1fr) auto;gap:8px;padding-inline:8px}.aoTodayV2PrayerGlyph{width:31px;height:31px}.aoTodayV2PrayerFeature strong{font-size:17px}}
+
+/* Approved Home C: one summary panel for 1962 commemorations, separately
+   reviewed later-calendar honours, and two candidate upcoming dates. */
+.aoTodayV2SeasonMicro{
+ display:flex;gap:7px;align-items:center;justify-content:center;
+ width:max-content;max-width:100%;margin:0 auto 6px;padding:5px 9px;
+ min-height:32px;border:0;background:transparent;
+ color:var(--text-muted,#c9c0ac);font:500 15px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif);
+ text-align:center;
+}
+.aoTodayV2SeasonMicro span{font-size:18px;color:var(--liturgical,#b8a176)}
+.aoTodayV2CalendarGlance{
+ max-width:750px;margin:14px auto 4px;background:var(--surface-1,#111921);
+ border:1px solid var(--border,rgba(235,235,235,.14));border-radius:9px;overflow:hidden;
+}
+.aoTodayV2CalendarGlance>h2{
+ font:400 23px/1.2 var(--ao-font-display,"EB Garamond",Georgia,serif);
+ margin:0;padding:13px 14px 8px;color:var(--text,#eee9df);
+}
+.aoTodayV2GlanceHonours{
+ padding:10px 14px 12px;border-bottom:1px solid var(--border,rgba(235,235,235,.10));
+}
+.aoTodayV2GlanceCategory{
+ color:var(--liturgical,#ccb48c);font:600 13px/1.35 var(--ao-font-ui,"EB Garamond",Georgia,serif);
+ letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;
+}
+.aoTodayV2CalendarGlance .aoTodayV2ObservedRow{
+ width:100%;min-height:44px;padding:7px 0;
+ border:0;border-bottom:1px solid var(--border,rgba(235,235,235,.08));
+ display:flex;align-items:center;justify-content:space-between;
+ gap:8px;text-align:left;color:var(--text,#eee9df);background:transparent;
+}
+.aoTodayV2CalendarGlance .aoTodayV2ObservedRow:last-of-type{border-bottom:0}
+.aoTodayV2CalendarGlance .aoTodayV2ObservedRow strong{
+ font:400 18px/1.25 var(--ao-font-display,"EB Garamond",Georgia,serif);
+ overflow-wrap:break-word;
+}
+.aoTodayV2CalendarGlance .aoTodayV2ObservedRow small{
+ display:block;margin-top:3px;color:var(--text-muted,#a9a8a0);
+ font:400 13px/1.35 var(--ao-font-ui,"EB Garamond",Georgia,serif);
+}
+.aoTodayV2CalendarGlance .aoTodayV2ObservedRow>span:last-child{
+ flex:0 0 auto;color:var(--liturgical,#b8a176);
+}
+.aoTodayV2GlanceCaveat,.aoTodayV2GlanceNote{
+ color:var(--text-muted,#adaea9);font:400 13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);
+}
+.aoTodayV2GlanceCaveat{margin:6px 0 0}
+.aoTodayV2GlanceEvents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.aoTodayV2CalendarGlance .aoTodayV2Event{
+ display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+ gap:4px;min-width:0;min-height:78px;padding:11px 13px;
+ border:0;border-right:1px solid var(--border,rgba(235,235,235,.10));
+ border-bottom:0;color:var(--text,#eee9df);background:transparent;text-align:left;
+}
+.aoTodayV2CalendarGlance .aoTodayV2Event:last-of-type{border-right:0}
+.aoTodayV2CalendarGlance .aoTodayV2EventDate{
+ font:500 13px/1.25 var(--ao-font-ui,"EB Garamond",Georgia,serif);
+ color:var(--liturgical,#c6b692);
+}
+.aoTodayV2CalendarGlance .aoTodayV2Event strong{
+ font:400 17px/1.2 var(--ao-font-display,"EB Garamond",Georgia,serif);
+ overflow-wrap:normal;word-break:normal;hyphens:none;
+}
+.aoTodayV2GlanceEmpty{grid-column:1/-1;padding:12px;margin:0;color:var(--text-muted,#adaea9)}
+.aoTodayV2GlanceNote{margin:0;padding:7px 14px 12px;border-top:1px solid var(--border,rgba(235,235,235,.08))}
+@media(max-width:699px){
+ .aoTodayV2CalendarGlance{margin:14px 15px 4px}
+}
+@media(max-width:370px){
+ .aoTodayV2CalendarGlance{margin-inline:10px}
+ .aoTodayV2CalendarGlance .aoTodayV2Event{padding-inline:9px}
+ .aoTodayV2CalendarGlance .aoTodayV2Event strong{font-size:16px}
+}
 `;
