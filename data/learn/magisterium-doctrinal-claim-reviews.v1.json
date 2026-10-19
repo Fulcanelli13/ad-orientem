@@ -1,7 +1,7 @@
 {
   "schema": "AO_MAGISTERIUM_DOCTRINAL_CLAIM_REVIEW_V1",
   "created": "2026-10-19",
-  "status": "INTERNAL_SOURCE_SCOPED_EDITORIAL_PARAPHRASES_NOT_PUBLICATION_READY",
+  "status": "B6_COMPLETE_EDITORIAL_DISPOSITION_NOT_THEOLOGICALLY_CERTIFIED",
   "sourceRegistry": "data/learn/magisterium-source-passages-pilot.v1.json",
   "documentRegistry": "data/learn/magisterium-ultra-master-documents.v1.json",
   "doctrineRegistry": "data/learn/magisterium-ultra-master-doctrines.v1.json",
@@ -16,21 +16,23 @@
     "notVisitorFacing": true
   },
   "metrics": {
-    "reviewedClaims": 54,
-    "distinctLinkedPassages": 54,
+    "reviewedClaims": 59,
+    "distinctLinkedPassages": 59,
     "totalSourcePassageLocators": 61,
-    "remainingPassagesWithoutEditorialClaim": 7,
+    "remainingPassagesWithoutEditorialClaim": 0,
     "sourceScopedCanons": 28,
     "genreCounts": {
       "CONCILIAR_CANON_CONDEMNING_PROPOSITION": 28,
-      "CONCILIAR_DOCTRINAL_EXPOSITION": 19,
-      "HISTORICAL_DISCIPLINARY_OR_EXPLANATORY_CONTEXT": 3,
-      "NON_DEFINING_ARGUMENT_OR_BACKGROUND": 2,
+      "CONCILIAR_DOCTRINAL_EXPOSITION": 22,
+      "HISTORICAL_DISCIPLINARY_OR_EXPLANATORY_CONTEXT": 4,
+      "NON_DEFINING_ARGUMENT_OR_BACKGROUND": 3,
       "SOLEMN_DEFINITION_FORMULA": 2
     },
     "rightsCleared": 0,
     "doctrinallyCertified": 0,
-    "publiclyUsable": 0
+    "publiclyUsable": 0,
+    "nonStandalonePassageAliases": 2,
+    "allPassagesDispositioned": 61
   },
   "records": [
     {
@@ -1665,15 +1667,194 @@
       "doctrinallyCertified": false,
       "publiclyUsable": false,
       "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM"
+    },
+    {
+      "claimId": "MGC-P008",
+      "passageId": "MG-P008",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Trent describes Christ, priest according to the order of Melchizedek, instituting a visible Eucharistic sacrifice at the Last Supper which represents the single bloody sacrifice of the Cross and applies its fruits.",
+      "interpretationGuard": "This is not an independent second sacrifice; the chapter's Malachi argument is retained separately at MG-P060.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, doctrine on the Sacrifice of the Mass, chapter I",
+        "webEvidenceRange": "Session XXII, chapter I, Latin lines 894–899",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P060",
+        "MG-P005"
+      ],
+      "sourceBoundaryChecked": true
+    },
+    {
+      "claimId": "MGC-P057",
+      "passageId": "MG-P057",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "passageGenre": "NON_DEFINING_ARGUMENT_OR_BACKGROUND",
+      "editorialProposition": "The opening of Ineffabilis Deus frames Mary's extraordinary preservation within God's redemptive design, Christ's Incarnation, and divine election of his Mother.",
+      "interpretationGuard": "The introductory theological rationale must not be confused with the formally defining proposition in lines 221–223, recorded at MG-P007.",
+      "sourceWitness": {
+        "url": "https://corpus-ineffabilis.org/corpus/",
+        "documentUnit": "Original Latin lines 1–9 — opening theological reasoning on Mary's preservation",
+        "webEvidenceRange": "Ineffabilis Deus, corpus lines 1–9, opening providential argument",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "context",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P007"
+      ],
+      "sourceBoundaryChecked": true
+    },
+    {
+      "claimId": "MGC-P059",
+      "passageId": "MG-P059",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "passageGenre": "HISTORICAL_DISCIPLINARY_OR_EXPLANATORY_CONTEXT",
+      "editorialProposition": "Immediately after defining the Immaculate Conception, Pius IX warns against dissent and refers to ecclesiastical penalties for externally manifesting opposition.",
+      "interpretationGuard": "The defined doctrine ends at line 223; the legal and disciplinary consequences described in 1854 require separate historical and current-law analysis.",
+      "sourceWitness": {
+        "url": "https://corpus-ineffabilis.org/corpus/",
+        "documentUnit": "Original Latin lines 224–228 — reception warning after the definition",
+        "webEvidenceRange": "Ineffabilis Deus, corpus lines 224–228, post-definition warning and historical penalties",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "history",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "REQUIRED",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P007"
+      ],
+      "sourceBoundaryChecked": true
+    },
+    {
+      "claimId": "MGC-P060",
+      "passageId": "MG-P060",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Trent interprets Malachi's pure offering and the Old Testament sacrificial figures as witnesses and prefigurations fulfilled by the Eucharistic sacrifice.",
+      "interpretationGuard": "The typological appeal is part of chapter I's broader argument at MG-P008 and should not be presented as the entire defined doctrine of the Mass.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter I, concluding Old Testament typological argument (Malachi 1:11)",
+        "webEvidenceRange": "Session XXII, chapter I, Latin lines 898–899, Malachi 1:11 and Old Testament figures",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P008"
+      ],
+      "sourceBoundaryChecked": true
+    },
+    {
+      "claimId": "MGC-P061",
+      "passageId": "MG-P061",
+      "documentId": "TRENT-XXII-1562",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "PURGATORY"
+      ],
+      "passageGenre": "CONCILIAR_DOCTRINAL_EXPOSITION",
+      "editorialProposition": "Trent explicitly teaches that the sacrifice of the Mass is offered for living faithful and also for those deceased in Christ who are not yet fully purified.",
+      "interpretationGuard": "This is a distinct clause within the larger propitiatory-sacrifice chapter MG-P005; it does not prescribe a particular Requiem ceremony or prove every aspect of Purgatory in isolation.",
+      "sourceWitness": {
+        "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+        "documentUnit": "Session XXII, chapter II, concluding sacrifice for the departed",
+        "webEvidenceRange": "Session XXII, chapter II, Latin line 903, living and dead",
+        "witnessStatus": "READ_AT_PASSAGE_OR_UNIT_SCOPE_NOT_PRINT_COLLATED"
+      },
+      "classification": {
+        "provisionalMode": "teaching",
+        "magisterialNote": "NOT_THEOLOGICALLY_ADJUDICATED",
+        "temporalLawReview": "NOT_APPLICABLE_AT_THIS_STAGE",
+        "genreVerification": "EDITORIAL_CLASSIFICATION"
+      },
+      "reviewStatus": "SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY",
+      "exactOriginalQuote": null,
+      "translation": null,
+      "rightsCleared": false,
+      "doctrinallyCertified": false,
+      "publiclyUsable": false,
+      "characterVoiceAttribution": "NEVER_INFER_FROM_MAGISTERIUM",
+      "b6ContextLinks": [
+        "MG-P005"
+      ],
+      "sourceBoundaryChecked": true
     }
   ],
-  "notYetScopedPassageIds": [
-    "MG-P004",
-    "MG-P008",
-    "MG-P057",
-    "MG-P058",
-    "MG-P059",
-    "MG-P060",
-    "MG-P061"
-  ]
+  "notYetScopedPassageIds": [],
+  "nonStandalonePassageAliases": [
+    {
+      "passageId": "MG-P004",
+      "canonicalPassageId": "MG-P028",
+      "kind": "OVERLAPPING_BROAD_INTRO_AND_CHAPTER",
+      "detail": "Session XIV introductory heading is historical framing; the doctrinal chapter II claim is already scoped at P028. Do not generate a second doctrinal summary."
+    },
+    {
+      "passageId": "MG-P058",
+      "canonicalPassageId": "MG-P026",
+      "kind": "DUPLICATE_CONSULTATION_SCOPE",
+      "detail": "Lines 200–215 fall within the same pre-definition episcopal-consultation scope already summarized in P026. Preserve locator for source reading, not second talking point."
+    }
+  ],
+  "researchBatch": "2026-10-19-B6"
 }
