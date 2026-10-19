@@ -63,7 +63,8 @@ try{
       prayerText:now?.innerText?.slice(0,200),
       cardTitle:card?.querySelector(".aoDevoCardTitle")?.textContent?.trim(),
       cardScroll:reader?getComputedStyle(reader).overflowY:null,
-      originalNav:r?.querySelectorAll("[data-p435930-station-next]").length,
+      legacyNav:r?.querySelectorAll("[data-p435930-station-next],[data-p435930-station-prev]").length,
+       progress:r?.closest("#aoPray435930")?.querySelector(".aoP435930StationRail.aoDevoSequenceTimeline .aoDevoProgress")?.getAttribute("aria-valuenow"),
       source:r?.querySelectorAll(".aoP435930Source a[href^='https://']").length||0,
       step:r?.querySelector(".aoP435930GuideNow small")?.textContent||""};
    });
@@ -71,8 +72,8 @@ try{
     "Stations should begin with one collapsed choice and the original prayer: "+JSON.stringify(stDetails));
    assert.equal(stDetails.count,1);
    assert.ok(stDetails.summaryHeight>=44&&stDetails.prayerText?.length>20&&
-     stDetails.cardTitle?.length>5&&stDetails.cardScroll==="auto"&&stDetails.originalNav===1,
-    "Station named card, local scroll, prayer or previous/next unavailable");
+     stDetails.cardTitle?.length>5&&stDetails.cardScroll==="auto"&&stDetails.legacyNav===0&&stDetails.progress==="1",
+    "Station named card, local scroll, prayer and positional progress unavailable");
    assert.equal(await page.locator("#aoPray435930.open .aoP435930Stations [data-ao-recitation-control]").count(),0,
      "Global coherence is duplicating the canonical Stations recitation choice");
    await checkDoc("Stations opening");
@@ -99,7 +100,8 @@ try{
    assert.equal(await page.locator("#aoPray435930.open .aoP435930GuideNow").innerText(),firstBefore,
     "Preferences unexpectedly advanced Station or replaced prayer");
    await st.locator(":scope > summary").click();
-   await page.locator("#aoPray435930.open [data-p435930-station-next]").click();
+   await page.locator("#aoPray435930.open [data-p435930-station-step='1']").click();
+    assert.equal(await page.locator("#aoPray435930.open .aoP435930StationRail.aoDevoSequenceTimeline .aoDevoProgress").getAttribute("aria-valuenow"),"2");
    assert.match(await page.locator("#aoPray435930.open .aoP435930GuideNow").innerText(),/Station 2 of 14/i);
    assert.equal(await st.locator("[data-p435930-seg='group']").getAttribute("aria-pressed"),"true",
     "Preferences lost when moving between Stations");

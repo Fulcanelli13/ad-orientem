@@ -97,6 +97,31 @@ assert.ok(devotionalUx.groupCapable.includes("pray.stations"));
 assert.ok(devotionalUx.swipeCapable.includes("programme.first_saturday"));
 
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
+
+const sharedProgressCss=readFileSync("src/pray/devotional-card-deck-styles.js","utf8");
+const stationsFn=runtime.slice(runtime.indexOf("function renderStations()"),runtime.indexOf("// Shared visual structure only.",runtime.indexOf("function renderStations()")));
+const psalmsFn=runtime.slice(runtime.indexOf("function renderPenitential()"),runtime.indexOf("// The downloaded pages",runtime.indexOf("function renderPenitential()")));
+const fortyFn=runtime.slice(runtime.indexOf("function renderFortyHours()"),runtime.indexOf("function setTenebrae(",runtime.indexOf("function renderFortyHours()")));
+const stationRail=runtime.slice(runtime.indexOf("function stationRail("),runtime.indexOf("function stationsFx("));
+const sequenceAdapter=readFileSync("src/pray/devotional-sequence-adapter.js","utf8");
+assert.match(stationRail,/data-p435930-station-step/,"Stations must preserve their native I–XIV jump rail");
+assert.match(runtime,/kind:'stations',chapters,activeIndex:STATIONS\.step/,
+ "Stations chapter adapter must follow the one canonical step");
+assert.ok(sequenceAdapter.includes("updateDevotionalProgress(timeline,{index,total:chapters.length"),
+ "Stations progress must be owned by the chapter adapter, not a second rail");
+assert.match(sharedProgressCss,/aoDevoProgressFill/,"Shared progress visual missing");
+assert.doesNotMatch(stationRail,/aoP435930StationNavShell/,
+ "Stations must not render duplicate progress tracks");
+assert.match(stationsFn,/data-p435930-station-finish/,"Keep the XIV-station final return");
+assert.match(stationsFn,/tabindex="0"/,"Stations require keyboard-focusable prayer text");
+assert.doesNotMatch(stationsFn,/data-p435930-station-(?:prev|next)/,"Stations still use redundant page arrows");
+assert.doesNotMatch(psalmsFn,/data-p435930-pen-(?:prev|next)/,"Penitential Psalms still use redundant page arrows");
+assert.match(psalmsFn,/data-p435930-pen-litany/,"Preserve Litany of the Saints handoff");
+assert.doesNotMatch(fortyFn,/data-p435930-forty-(?:prev|next)/,"Forty Hours still uses redundant page arrows");
+assert.match(fortyFn,/data-p435930-forty-done/,"Preserve Forty Hours explicit finish");
+assert.match(runtime,/installSequentialDevotionalReader/,"Finite guides lost shared card reader");
+assert.match(runtime,/view==='stations'&&[\s\S]*?e\.key==='ArrowRight'/,"Station keyboard swipe fallback missing");
+
 assert.match(runtime,/installSequentialDevotionalReader/,"Stations/Mercy are not connected to the shared reader");
 assert.match(runtime,/data-ao-mercy-deck="chapters-v1"/,"Divine Mercy still uses isolated bead-only pages");
 assert.match(runtime,/data-ao-devo-card="station-\$\{i\+1\}"/,"Stations are not title-bearing prayer cards");

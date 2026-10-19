@@ -55,7 +55,7 @@ try{
  await page.waitForSelector(timeline,{timeout:14000});
  let s=await snapshot();assert.deepEqual({owner:s.owner,chapters:s.chapters,index:s.index,current:s.current,overflow:s.overflow},
   {owner:"penitential",chapters:7,index:0,current:1,overflow:"auto"});
- assert.equal(s.nav,"none","Legacy Psalm navigation duplicates shared timeline");
+ assert.equal(s.nav,null,"Legacy Psalm navigation must be removed, not merely hidden");
  assert.equal(await page.locator(rootSel+" [data-p435930-pen-scripture]").count(),1,
   "Canonical Catholic Bible source loader is missing");
  await page.screenshot({path:resolve(captures,"penitential-390.png"),animations:"disabled"});
@@ -63,7 +63,7 @@ try{
  await swipe(-170,3);assert.equal((await snapshot()).index,1,"Psalm swipe must advance one chapter");
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  s=await snapshot();assert.equal(s.index,6);assert.equal(s.final,"true");
- assert.notEqual(s.nav,"none","Original final Litany handoff is missing");
+ assert.ok(s.nav&&s.nav!=="none","Original final Litany handoff is missing");
  assert.equal(await page.locator(rootSel+" [data-p435930-pen-litany]").count(),1);
  await page.locator(rootSel+" [data-p435930-pen-litany]").tap();
  await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="litany");
@@ -123,7 +123,7 @@ try{
   "Benediction public-rite handoff missing");
  await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
  assert.equal((await snapshot()).final,"true");
- assert.notEqual((await snapshot()).nav,"none","Forty Hours final manual return missing");
+ assert.ok((await snapshot()).nav&&((await snapshot()).nav!=="none"),"Forty Hours final manual return missing");
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
   "Small phone prayer reader overflows");

@@ -29,8 +29,20 @@ for(const item of audit.routes){
  if(item.evidence_file){
   assert.ok(existsSync(item.evidence_file),item.evidence_file+" missing");
   const source=readFileSync(item.evidence_file,"utf8");
-  for(const anchor of [item.information_anchor,item.walkthrough_anchor].filter(Boolean))
-   assert.ok(source.includes(anchor),item.id+" missing guide evidence "+anchor);
+  for(const anchor of [item.information_anchor,item.walkthrough_anchor].filter(Boolean)){
+   // This dated content census preserves the source marker observed at the
+   // time of the audit. A later source-owned Stations chapter controller
+   // retired the Next button; reconcile this one migration explicitly
+   // rather than rewriting historical evidence or reinstating dead chrome.
+   const stationsNavigationMigrated=item.id==="pray.stations"&&
+    anchor==="data-p435930-station-next"&&
+    source.includes("data-p435930-station-step")&&
+    source.includes("kind:'stations',chapters,activeIndex:STATIONS.step")&&
+    source.includes("data-p435930-station-finish")&&
+    !source.includes("data-p435930-station-next");
+   assert.ok(source.includes(anchor)||stationsNavigationMigrated,
+    item.id+" missing guide evidence "+anchor);
+  }
  }
 }
 const active=audit.routes.filter(x=>!["HUB","ALIAS_OR_RETIRED","GATED_CONTENT"].includes(x.requirement));

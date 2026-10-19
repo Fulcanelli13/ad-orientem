@@ -191,7 +191,7 @@ try{
     await stationsOptions.locator(":scope > summary").click();
   await page.locator("#aoPray435930 [data-p435930-seg='simple']").click();
   assert.equal(await page.locator("#aoPray435930 .aoP435930StationConsider").count(),0,"Simple Stations still show guided consideration");
-  await page.locator("#aoPray435930 [data-p435930-station-next]").click();
+  await page.locator("#aoPray435930 [data-p435930-station-step='1']").click();
   await page.waitForFunction(()=>document.querySelector("#aoPray435930 [data-p435930-station-step='1']")?.getAttribute("aria-current")==="step",null,{timeout:5000});
   const stationTwo=await page.locator("#aoP435930Title").textContent();
   assert.ok(stationTwo&&stationTwo.trim().length>5,"Second Station title is blank");

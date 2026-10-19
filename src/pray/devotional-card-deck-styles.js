@@ -34,6 +34,25 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930ProgrammeExit{
  grid-template-columns:minmax(0,1fr)!important;
 }
+/* Stations inherit their one positional progress track from the shared chapter adapter. */
+/* The legacy StageRail flex!important must not displace the adapter's one progress row. */
+#aoPray435930 .aoP435930StageRail.aoP435930StationRail.aoDevoSequenceTimeline{
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+ gap:5px!important;align-items:center!important;
+}
+#aoPray435930 .aoP435930StationRail.aoDevoSequenceTimeline>.aoDevoStops{
+ min-width:0!important;width:100%;overflow-x:auto;
+}
+#aoPray435930 .aoP435930StationRail.aoDevoSequenceTimeline>.aoDevoProgress{
+ width:100%;margin:0;grid-column:1/-1;
+}
+
+#aoPray435930 .aoP435930FinalExit{
+ grid-template-columns:minmax(0,1fr)!important;
+}
+#aoPray435930 .aoP435930Stations .aoDevoCardScroll:focus-visible{
+ outline:2px solid var(--liturgical,#c8b28a);outline-offset:2px;
+}
 #aoPray435930 .aoDevoStop{scroll-snap-align:center;display:grid;gap:2px;flex:0 0 max(112px,42%);padding:8px 9px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;color:var(--muted,#aeb2b8);background:var(--surface-1,#141a20);text-align:left;min-height:48px}
 #aoPray435930 .aoDevoStop.active{border-color:var(--liturgical,#d8bd7d);color:var(--text,#f1e7d7);background:color-mix(in srgb,var(--liturgical,#d8bd7d) 9%,var(--surface-1,#141a20))}
 #aoPray435930 .aoDevoStopNumber{font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.12em}
