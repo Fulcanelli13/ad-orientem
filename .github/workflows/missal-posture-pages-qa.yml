@@ -13,6 +13,7 @@ on:
       - "tests/reader-missal-posture-pages.mjs"
       - "tests/reader-special-missal-pages.mjs"
       - "tests/reader-special-missal-subpages.mjs"
+      - "tests/reader-special-missal-subpages-phone.mjs"
       - "tests/reader-prayer-over-people.mjs"
       - "tests/reader-easter-vigil.mjs"
       - "tests/reader-mode-switch.mjs"
@@ -44,3 +45,18 @@ jobs:
         run: node tests/reader-model.mjs
       - name: Verify cue/posture ownership invariants
         run: node tests/reader-cue-state.mjs
+
+  special-rite-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install browser test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Audit sourced special-rite Missal subpages on mobile
+        run: node tests/reader-special-missal-subpages-phone.mjs
