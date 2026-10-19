@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -64,6 +64,14 @@ try{
    assert.equal(await progress.count(),1,"One shared Tenebrae progress track");
    assert.equal(await progress.getAttribute("aria-valuenow"),"1");
    assert.equal(await progress.getAttribute("aria-valuemax"),hour==="MATINS"?"32":"10");
+   if(day===0){
+     const shotDir=resolve(root,"artifacts/tenebrae-reader-parity");
+     await mkdir(shotDir,{recursive:true});
+     await page.locator('#aoPray435930 .aoTenebBody').screenshot({
+       path:resolve(shotDir,hour.toLowerCase()+"-390px.png"),
+       animations:"disabled",
+     });
+   }
    assert.equal(await page.locator('#aoPray435930 [data-p435930-tenebrae-move]').count(),0,
       "No redundant Previous/Next buttons");
    const reading=page.locator('#aoPray435930 .aoTenebReading');
