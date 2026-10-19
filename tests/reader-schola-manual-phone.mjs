@@ -110,7 +110,7 @@ try{
    assert.equal(sharedAdvance,"Kyrie","Shared Schola manual correction moved the main Mass card");
    const chosen=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
-     const sanctus=api.model.cards.find(card=>card.title==="Sanctus — Benedictus");
+     const sanctus=api.model.cards.find(card=>card.title==="Sanctus");
      const canon=api.model.cards.find(card=>card.title==="Te igitur");
      if(!sanctus||!canon)return {error:"SANCTUS_OR_CANON_CARD_MISSING"};
      // The Schola continues independently into the priest's silent Canon,
@@ -170,7 +170,7 @@ try{
    await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
      const preface=api.model.cards.find(c=>c.title==="Preface");
-     const sanctus=api.model.cards.find(c=>c.title==="Sanctus — Benedictus");
+     const sanctus=api.model.cards.find(c=>c.title==="Sanctus");
      const canon=api.model.cards.find(c=>c.title==="Te igitur");
      api.showSequence(preface.sequence);
      api.showSequence(sanctus.sequence);
