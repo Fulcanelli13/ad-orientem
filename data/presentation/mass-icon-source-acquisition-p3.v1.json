@@ -1,0 +1,61 @@
+{
+  "schema": "ao-mass-source-acquisition-v1",
+  "date": "2026-10-19",
+  "purpose": "Acquire verified originals for research; never publish or activate unapproved Mass icons.",
+  "originals": [
+    {
+      "id": "RIJKSMUSEUM_LECLERC_1661_PLATE29",
+      "class": "HISTORICAL_ILLUSTRATION",
+      "title": "Quand le P. communie",
+      "artist": "Sébastien Leclerc I",
+      "year": 1661,
+      "objectId": "RP-P-OB-69.179",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg",
+      "sourceFileURL": "https://upload.wikimedia.org/wikipedia/commons/0/09/Priester_met_twee_misdienaars_voor_een_altaar%2C_RP-P-OB-69.179.jpg",
+      "holdingInstitution": "Rijksmuseum",
+      "institutionURL": "https://id.rijksmuseum.nl/200217641",
+      "rights": "CC0_1_0",
+      "rightsEvidence": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg",
+      "imageFilename": "Leclerc_1661_RP-P-OB-69.179_CC0.jpg",
+      "expectedWidth": 657,
+      "expectedHeight": 1045,
+      "minimumBytes": 100000,
+      "maximumBytes": 500000,
+      "format": "image/jpeg",
+      "visualWitness": "PRIEST_OWN_COMMUNION_CONTEXT_ONLY",
+      "approvedForGeneration": false,
+      "approvedForRuntime": false,
+      "exactHostGestureVerified": false,
+      "exactChaliceGestureVerified": false
+    }
+  ],
+  "licensingResearch": [
+    {
+      "id": "CTH49809",
+      "label": "Priest drinks the Most Precious Blood of Jesus",
+      "artist": "Carlos Sierra",
+      "provider": "Cathopic",
+      "sourcePage": "https://cathopic.com/photo/49809-priest-drinks-the-most-precious-blood-of-jesus/",
+      "licenseTerms": "https://cathopic.com/legal/license/",
+      "rights": "COPYRIGHT_INDIVIDUAL_LICENSE_REQUIRED",
+      "sourceImageLocallyAcquired": false,
+      "exact1962RightChaliceLeftPatenVerified": false,
+      "neverAutoDownload": true
+    },
+    {
+      "id": "CTH43758",
+      "label": "Priest receiving communion at Mass",
+      "artist": "Carlos Gaviria",
+      "provider": "Cathopic",
+      "sourcePage": "https://cathopic.com/photo/43758-priest-receiving-communion-at-mass/",
+      "licenseTerms": "https://cathopic.com/legal/license/",
+      "rights": "COPYRIGHT_INDIVIDUAL_LICENSE_REQUIRED",
+      "sourceImageLocallyAcquired": false,
+      "tradition1962Verified": false,
+      "hostConsumptionVisibleVerified": false,
+      "neverAutoDownload": true
+    }
+  ],
+  "publicationGate": "Do not add source as approved icon or upload original binaries to production. Source hash and visual verification do not substitute for 1962 rubric verification, matching approved icon family, and explicit user approval.",
+  "ephemeralArtifactPath": "artifacts/mass-original-research/"
+}
