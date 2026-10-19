@@ -94,7 +94,11 @@ try{
       owner:root?.dataset.r17CardOwner,
       currentStage:api.getCompositeStage?.()||null,
       musicLabel:root?.querySelector('[data-role="rite-music"]')?.textContent?.trim()??"",
-      musicVisible:root?.querySelector('[data-role="rite-music"]')?.hidden===false};
+      musicVisible:root?.querySelector('[data-role="rite-music"]')?.hidden===false,
+      organLabel:root?.querySelector('[data-role="organ-permission"]')?.textContent?.trim()??"",
+      organVisible:root?.querySelector('[data-role="organ-permission"]')?.hidden===false,
+      organNorm:root?.querySelector('[data-role="organ-permission"]')?.dataset.organNorm??null,
+      organObserved:root?.querySelector('[data-role="organ-permission"]')?.dataset.organObserved??null};
      api.next();
      await new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok)));
      return r;
@@ -105,6 +109,10 @@ try{
       scenario.id+"/"+datum.id+" empty source card");
     assert.ok(datum.domText>0,scenario.id+"/"+datum.id+" source card rendered blank");
     assert.ok(datum.visibleRows>0,scenario.id+"/"+datum.id+" no visible DOM prayer paragraph");
+    assert.equal(datum.organVisible,true,scenario.id+"/"+datum.id+" 1958 norm not presented");
+    assert.equal(datum.organNorm,"SILENT",scenario.id+"/"+datum.id+" violated pre-Gloria Triduum silence");
+    assert.equal(datum.organObserved,"UNKNOWN",scenario.id+"/"+datum.id+" invented actual organ performance");
+    assert.equal(datum.organLabel,"1958 RULE · ORGAN SILENT");
     const expectedMusic=({
       "GF-LESS-110":"SCHOLA",
       "GF-X-521":"SUNG RESPONSES",
