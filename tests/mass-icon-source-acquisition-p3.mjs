@@ -27,6 +27,17 @@ assert.equal(original.verifiedBinary.artifactId,12179522591);
 assert.equal(original.verifiedBinary.status,"BITWISE_VERIFIED_RESEARCH_ARTIFACT_NOT_PRODUCTION_ORIGINAL");
 const [restrictedChalice,restrictedOther]=index.licensingResearch;
 assert.deepEqual([restrictedChalice.id,restrictedOther.id],["CTH49809","CTH43758"]);
+assert.equal(restrictedChalice.actualChaliceDrinkingVisible,true,
+  "visually documented chalice-drinking candidate was lost");
+assert.equal(restrictedChalice.leftPatenUnderChaliceVerified,false,
+  "source preview does not confirm left-hand paten under chalice");
+assert.equal(restrictedChalice.disposition,"PRIORITY_RIGHTS_LICENSE_AND_FULL_ORIGINAL_IMAGE_REVIEW");
+assert.equal(restrictedOther.disposition,"EXCLUDE_FROM_1962_HOST_ICON_SOURCE_SHORTLIST");
+assert.equal(restrictedOther.exactHostActionVerified,false);
+assert.equal(restrictedOther.acquireForProduction,false);
+assert.equal(prov.candidates.find(x=>x.id==="EA.PRIEST_COMMUNION_CHALICE")
+  .researchLeads.find(x=>x.id==="CTH49809").visualPreviewInspection.releaseApproved,false);
+
 assert.ok(index.licensingResearch.every(x=>x.rights==="COPYRIGHT_INDIVIDUAL_LICENSE_REQUIRED" && x.neverAutoDownload===true && x.sourceImageLocallyAcquired===false));
 assert.ok(prov.candidates.every(x=>x.originalPictures.length===0 && x.asset===null));
 assert.ok(!existsSync("assets/generated/mass-icons/Leclerc_1661_RP-P-OB-69.179_CC0.jpg"),
