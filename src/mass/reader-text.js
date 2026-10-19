@@ -268,6 +268,23 @@ export function buildReaderSectionCard({
   const paragraphs=[];
   const blockMeta=[];
   for(const block of blocks){
+    // XIII.2 suppresses the whole initial-incensation block at a
+    // Requiem. Offertory incensation is independently permitted and
+    // must remain available for the selected incensed form.
+    if(block.Block_ID==="AO.SM.B013" &&
+       omittedOrdinaryCues.includes("AO.SM.C0040") &&
+       omittedOrdinaryCues.includes("AO.SM.C0041")){
+      if(block.units?.length!==2 ||
+         block.units[0]?.cue_id!=="AO.SM.C0040" ||
+         block.units[1]?.cue_id!=="AO.SM.C0041")
+        throw new Error("REQUIEM_ENTRANCE_INCENSATION_SOURCE_IDENTITY_MISMATCH");
+      blockMeta.push(Object.freeze({
+        blockId:block.Block_ID,title:block.Title,properSlot:block.Proper_Slot,
+        stateOnly:false,firstParagraphIndex:null,paragraphCount:0,
+        omittedByRite:"RITUS_XIII_2_REQUIEM",
+      }));
+      continue;
+    }
     // XIII.1 omits the complete FIRST peace-prayer block at Requiem Masses.
     // Retain its non-rendered block metadata for original Missal section
     // ownership; never invent a blank prayer or renumber the other two.
