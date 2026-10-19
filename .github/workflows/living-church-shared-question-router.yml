@@ -5,6 +5,7 @@ on:
       - feature/living-church-shared-question-routing-20261019
     paths:
       - data/learn/living-church-shared-question-routing-pilot.v1.json
+      - data/learn/living-church-pius-x-historical-passage-pointers.v1.json
       - src/learn/living-church-shared-question-router.js
       - src/learn/living-church-hybrid-question-router.js
       - src/learn/living-church-embedding-candidate-router.js
@@ -22,6 +23,7 @@ on:
   pull_request:
     paths:
       - data/learn/living-church-shared-question-routing-pilot.v1.json
+      - data/learn/living-church-pius-x-historical-passage-pointers.v1.json
       - src/learn/living-church-shared-question-router.js
       - src/learn/living-church-hybrid-question-router.js
       - src/learn/living-church-embedding-candidate-router.js
