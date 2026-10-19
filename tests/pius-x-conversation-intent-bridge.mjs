@@ -219,3 +219,56 @@ for(const id of ['SPX-028','SPX-044']){
 assert.deepEqual(coverage.records.filter(x=>x.evidence_tier==='RELATED_OR_UNRESOLVED').map(x=>x.id),
  ['SPX-039','SPX-040','SPX-042','SPX-046','SPX-050']);
 console.log('Pius X initial 64-family evidence screen: 48 direct passage matches, 11 partial, 5 related-only; 0 answers certified');
+
+
+// Research-only exact-question review and expansion of topical coverage.
+const exactWordedPairs=JSON.parse(readFileSync('data/learn/research/pius-x-26-exact-pairs-reviewed-20261019.v1.json','utf8'));
+assert.equal(exactWordedPairs.status,'RESEARCH_PROVISIONAL_NO_SEMANTIC_MERGE');
+assert.equal(exactWordedPairs.records.length,26);
+assert.equal(exactWordedPairs.counts.question_pairs_reviewed,26);
+assert.equal(exactWordedPairs.counts.provisional_same_question_intentions,26);
+assert.equal(exactWordedPairs.counts.approved_semantic_merges,0);
+assert.equal(exactWordedPairs.counts.certified_visitor_answers,0);
+const longNumbers=[25,35,152,192,226,227,228,229,230,231,513,522,537,539,553,554,615,628,697,743,800,801,906,946,948,949];
+const shortNumbers=[44,57,112,113,125,126,127,128,129,130,250,286,271,272,291,292,333,335,359,373,388,389,243,137,139,140];
+assert.deepEqual(exactWordedPairs.records.map(x=>x.long_qid),longNumbers.map(n=>'PX1905-Q'+String(n).padStart(3,'0')));
+assert.deepEqual(exactWordedPairs.records.map(x=>x.short_qid),shortNumbers.map(n=>'PX1912-Q'+String(n).padStart(3,'0')));
+assert.equal(new Set(exactWordedPairs.records.map(x=>x.long_qid)).size,26);
+assert.equal(new Set(exactWordedPairs.records.map(x=>x.short_qid)).size,26);
+for (const pair of exactWordedPairs.records){
+ assert.equal(pair.question_wording_relation,'IDENTICAL_NORMALIZED_ITALIAN_QUESTION');
+ assert.equal(pair.research_intent_assessment,'SAME_INTENT_RESEARCH_SCREEN');
+ assert.equal(pair.evidence_checked,'BOTH_FULL_QUESTION_AND_ANSWER_PASSAGES_REVIEWED');
+ assert.ok(pair.answer_witness_relation&&pair.rationale);
+ assert.ok(pair.long_source_url.startsWith('https://www.museosanpiox.it/'));
+ assert.ok(pair.short_digital_witness_url.startsWith('https://github.com/gustavo-depaula/ember/'));
+ assert.equal(pair.approved_semantic_merge,false);
+ assert.equal(pair.edition_print_collated,false);
+ assert.equal(pair.certified_for_first_person_dialogue,false);
+}
+assert.equal(exactWordedPairs.records.filter(x=>x.answer_witness_relation==='IDENTICAL_NORMALIZED_ANSWER').length,1);
+assert.equal(exactWordedPairs.records.find(x=>x.long_qid==='PX1905-Q628').answer_witness_relation,'HISTORICAL_DISCIPLINE_HOLD');
+assert.equal(exactWordedPairs.records.find(x=>x.long_qid==='PX1905-Q537').answer_witness_relation,'SACRAMENTAL_VS_ACTUAL_GRACE_SCOPE_LOCK');
+assert.deepEqual(exactWordedPairs.critical_false_duplicate.source_qids,['PX1905-Q915','PX1905-Q922']);
+assert.equal(exactWordedPairs.critical_false_duplicate.classification,'DIFFERENT_THEOLOGICAL_INTENT_DO_NOT_MERGE');
+
+const expansion=JSON.parse(readFileSync('data/learn/research/pius-x-conversation-expansion-48-20261019.v1.json','utf8'));
+assert.equal(expansion.status,'PROVISIONAL_NEW_SEEDS_NO_ANSWER_APPROVAL_OR_DEDUP');
+assert.equal(expansion.records.length,48);
+assert.deepEqual(expansion.records.map(x=>x.id),Array.from({length:48},(_,i)=>'SPX-EXP-'+String(i+1).padStart(3,'0')));
+assert.equal(expansion.counts.raw_research_idea_worklist_total,112);
+assert.equal(expansion.counts.verified_new_distinct_intents,null);
+assert.equal(expansion.counts.certified_answers,0);
+for(const [domain,total] of Object.entries(expansion.counts.by_domain)){
+ assert.equal(expansion.records.filter(x=>x.domain===domain).length,total);
+}
+for(const seed of expansion.records){
+ assert.ok(seed.question_en&&/^https:\/\//.test(seed.suggested_document.url));
+ assert.equal(seed.source_state,'DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION');
+ assert.equal(seed.intent_state,'NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP');
+ assert.equal(seed.approved_distinct_intent,false);
+ assert.equal(seed.doctrinal_reviewed,false);
+ assert.equal(seed.certified_historical_first_person,false);
+ assert.equal(seed.visitor_dialogue_published,false);
+}
+console.log('Pius X 26 cross-edition research comparisons and 48 expanded idea seeds verified; zero answer approvals');
