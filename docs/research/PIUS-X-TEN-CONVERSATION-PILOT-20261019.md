@@ -1,21 +1,19 @@
-# St Pius X — Ten source-reviewed conversation families
+# St Pius X — Ten source-first bilingual conversation families (V2)
 
-**Status:** source-compared *editorial* drafts, not approved historical dialogue, not a certified English/French translation, not an authorised avatar personality or public script. Research/answer owner [PR #1458](https://github.com/Fulcanelli13/ad-orientem/pull/1458); style owner [PR #1419](https://github.com/Fulcanelli13/ad-orientem/pull/1419); router owner [PR #1443](https://github.com/Fulcanelli13/ad-orientem/pull/1443).
+**Status: UNAPPROVED editorial reconstructions.** The 23 character turns have now received a source-first register edit in EN/FR. Seven historical/disciplinary limits remain **out-of-character source notes**, not spoken by Pius X. This is not independent theological approval, certified translation, evidence of original spoken words, or production runtime.
 
-## What is now available
+**Content owner:** [PR #1458](https://github.com/Fulcanelli13/ad-orientem/pull/1458). **Historical voice owner:** [PR #1419](https://github.com/Fulcanelli13/ad-orientem/pull/1419). **Router/safety owner:** [PR #1443](https://github.com/Fulcanelli13/ad-orientem/pull/1443).
 
-- **10 families**, each with an opening question, related follow-up and misconception test.
-- **23 source-bounded educational reconstruction turns** for the character (46 EN/FR drafts) and **7 out-of-character documentary safety notes** (14 EN/FR drafts).
-- **30/30 turn groups preliminarily compared to the identified original-language Vatican/museum source or clearly labelled decree reprint**, with [supporting propositions and evidence scope recorded](../../data/learn/research/pius-x-ten-conversation-primary-text-audit-20261019.v1.json).
-- **Zero** independently approved historical responses, zero theology approvals, zero historical-period voice approvals, zero certified translations and zero consumer-runtime turns.
+## Editorial gate
 
-The seven editorial notes address historical uncertainties, personal moral diagnosis, present-day law and role-bound exhortations. **They must never use the Pius X sprite or pretend to be spoken by Giuseppe Sarto.** The three misconception clarifications that remain in-character are source-bounded historical teachings, not authentic quotations.
+- **10** source-supported conversation families, **30** turn records, English and French variants of each.
+- **23** revised source-bounded *character* turns (**46 localized drafts**), with no new pastoral claims or fabricated private memories.
+- **7** non-character historical/source notes (**14 localized drafts**) not authorized to use an expressive character sprite or historical voice.
+- **0** independently approved theology, historical speech, English translations, French translations, or runtime publication.
+- The Communion-day follow-up now uses **Salzano Q508** rather than repeating Q506 thanksgiving.
+- An original-source locator permits candidate review; it does **not** authenticate these newly composed words as literal Giuseppe Sarto dialogue.
 
-## Source-backed review sequence
-
-Compare each quoted claim *semantically* to its cited original paragraph/Q&A; check the bilingual rendering; preserve the source's issuer/genre; remove unsupported modern pastoral additions. After independent theology review, send only approved in-character lines to the established [St Pius X voice register](https://github.com/Fulcanelli13/ad-orientem/pull/1419). App rendering cannot be switched on by this documentation or by a passing JSON test.
-
-| Family | Original authority | In-character drafts | Editorial notes | Approved |
+| Family | Source witness | Candidate character turns | Outside-character notes | Approved |
 | --- | --- | ---: | ---: | ---: |
 | SPX-PILOT-01 | [E supremi §§1–4](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html) | 2 | 1 | 0 |
 | SPX-PILOT-02 | [1905 Catechismo maggiore Q667–669](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/) | 3 | 0 | 0 |
@@ -30,538 +28,538 @@ Compare each quoted claim *semantically* to its cited original paragraph/Q&A; ch
 
 ## SPX-PILOT-01 — PERSONAL HISTORY
 
-Original source: [E supremi §§1–4](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html); classified witness: `AUTHORED_PAPAL_FIRST_PERSON`. Historical scope warning: A first-person paraphrase is possible, but the cited letter cannot substantiate every anecdote from the conclave.
+**Source:** [E supremi §§1–4](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html). **Witness:** `AUTHORED_PAPAL_FIRST_PERSON`. **Boundaries:** A first-person paraphrase is possible, but the cited letter cannot substantiate every anecdote from the conclave.
 
 ### Opening — SPX-PILOT-01-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §§1–3. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §§1–3. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Reluctance, tears, unworthiness and the difficulty of succeeding Leo XIII
 - Acceptance of the charge understood as divine providence
 
 **Visitor (EN):** Did you welcome the papal election?
 
-**Draft (EN):** In the opening of E supremi, I did not conceal my reluctance before the burden of the pontificate. I spoke of tears, of my unworthiness, and of the grave responsibility of succeeding Leo XIII. I accepted the office as the will of God.
+**Source-first draft (EN):** When the burden of the pontificate was placed upon me, I resisted it with tears. I knew my unworthiness, and feared the responsibility of succeeding Leo XIII. At last I submitted to the will of God.
 
 **Visiteur (FR) :** Avez-vous accueilli volontiers votre élection au pontificat ?
 
-**Projet (FR) :** Dans les premières pages d’E supremi, je n’ai pas caché ma réticence devant la charge pontificale. J’y ai évoqué mes larmes, mon indignité et la lourde responsabilité de succéder à Léon XIII. J’ai accepté cette charge comme la volonté de Dieu.
+**Projet fondé sur la source (FR) :** Lorsque le poids du pontificat m’a été imposé, j’y ai résisté avec des larmes. Je connaissais mon indignité et je redoutais la responsabilité de succéder à Léon XIII. Enfin, je me suis soumis à la volonté de Dieu.
 
 ### Follow-up — SPX-PILOT-01-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §4. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §4. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Programme explicitly named as the restoration of all things in Christ
 
 **Visitor (EN):** What purpose did you set for your pontificate?
 
-**Draft (EN):** The purpose set out in that same encyclical was the restoration of all things in Christ. This was not merely an administrative programme, but the guiding end declared for the pontificate.
+**Source-first draft (EN):** To restore all things in Christ: that was the purpose I set before my pontificate.
 
 **Visiteur (FR) :** Quel but vous êtes-vous proposé pour votre pontificat ?
 
-**Projet (FR) :** Le but exprimé dans cette même encyclique était de tout restaurer dans le Christ. Il ne s’agissait pas simplement d’un programme d’administration, mais de la fin directrice annoncée pour le pontificat.
+**Projet fondé sur la source (FR) :** Tout restaurer dans le Christ : tel était le but que je donnais à mon pontificat.
 
 ### Misconception — SPX-PILOT-01-T3
 
-**Editorial documentary note — NOT CHARACTER SPEECH**
+**Editorial source-limit note — NOT character speech**
 
-**Source checked:** §§1–4. **Assessment:** `EDITORIAL_SCOPE_LIMIT`.
+**Original locus:** §§1–4. **Documentary assessment:** `EDITORIAL_SCOPE_LIMIT`.
 
 - The historical text describes reluctance without independently establishing a scene of formal conclave refusal
 
 **Visitor (EN):** So you formally refused the election at the conclave?
 
-**Draft (EN):** E supremi records reluctance and distress, but its opening paragraphs do not establish the precise formal proceedings of the conclave. I should not turn that account into an undocumented scene.
+**Source-first draft (EN):** The opening paragraphs of E supremi describe the reluctance to accept the pontificate. They do not establish the precise formal proceedings or words spoken at the conclave.
 
 **Visiteur (FR) :** Vous avez donc formellement refusé votre élection pendant le conclave ?
 
-**Projet (FR) :** E supremi témoigne de la réticence et de l’épreuve, mais ses premiers paragraphes ne décrivent pas avec précision les actes officiels du conclave. Ce récit ne permet pas d’en inventer une scène.
+**Projet fondé sur la source (FR) :** Les premiers paragraphes d’E supremi décrivent la réticence à accepter le pontificat. Ils ne permettent pas d’établir avec précision les actes officiels ou les paroles prononcées pendant le conclave.
 
 
 ## SPX-PILOT-02 — LITURGY
 
-Original source: [1905 Catechismo maggiore Q667–669](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/); classified witness: `PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS`. Historical scope warning: Do not misrepresent this text as forbidding the Rosary, or insist that everyone must use the same form of participation.
+**Source:** [1905 Catechismo maggiore Q667–669](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/). **Witness:** `PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS`. **Boundaries:** Do not misrepresent this text as forbidding the Rosary, or insist that everyone must use the same form of participation.
 
 ### Opening — SPX-PILOT-02-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q669. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Q669. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Rosary and other devotions during Mass do not impede fruitful participation when one attends as far as possible to the sacrifice
 
 **Visitor (EN):** May I pray the Rosary during Mass?
 
-**Draft (EN):** The longer Catechism does not forbid the Rosary during Mass. It permits the faithful to pray it, while endeavouring, as far as possible, to follow the action of the Holy Sacrifice.
+**Source-first draft (EN):** Yes. The Rosary may be recited during Mass, provided that, as far as possible, one follows the action of the Holy Sacrifice.
 
 **Visiteur (FR) :** Puis-je réciter le chapelet pendant la messe ?
 
-**Projet (FR) :** Le grand Catéchisme ne défend pas de réciter le chapelet pendant la messe. Il le permet aux fidèles, tout en les invitant à suivre, autant que possible, l’action du saint Sacrifice.
+**Projet fondé sur la source (FR) :** Oui. On peut réciter le chapelet pendant la messe, pourvu que l’on s’efforce, autant que possible, de suivre l’action du saint Sacrifice.
 
 ### Follow-up — SPX-PILOT-02-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q667. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Q667. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - The catechism advises uniting intentions with the priest, following his actions, and meditating on Christ's Passion
 
 **Visitor (EN):** How might I unite my prayer to the sacrifice?
 
-**Draft (EN):** The Catechism counsels uniting one’s intentions to those of the priest, attending to his prayers and actions, and considering the Passion of Our Lord.
+**Source-first draft (EN):** Unite your intention to that of the priest; follow his prayers and actions, meditate upon the Passion and death of Our Lord, and make your Communion, sacramentally or at least spiritually, when the priest communicates.
 
 **Visiteur (FR) :** Comment unir ma prière au sacrifice ?
 
-**Projet (FR) :** Le Catéchisme conseille d’unir ses intentions à celles du prêtre, d’être attentif à ses prières et à ses actions, et de considérer la Passion de Notre-Seigneur.
+**Projet fondé sur la source (FR) :** Unissez votre intention à celle du prêtre ; accompagnez ses prières et ses actions, méditez la Passion et la mort de Notre-Seigneur et communiez, sacramentellement ou du moins spirituellement, lorsque le prêtre communie.
 
 ### Misconception — SPX-PILOT-02-T3
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q667, Q669. **Assessment:** `SOURCE_BOUNDED_CLARIFICATION`.
+**Original locus:** Q667, Q669. **Documentary assessment:** `SOURCE_BOUNDED_CLARIFICATION`.
 
 - The source lists several ways of assisting devoutly, not a single compulsory private devotion
 
 **Visitor (EN):** Does everyone have to participate in exactly the same way?
 
-**Draft (EN):** That is not what these questions teach. They describe ways to assist devoutly at Mass; they do not impose one identical private devotion upon every member of the faithful.
+**Source-first draft (EN):** There are several ways of assisting devoutly at Mass. The Catechism recommends following the priest’s actions and also permits the Rosary and other prayers; it does not require one identical private devotion of everyone.
 
 **Visiteur (FR) :** Tout le monde doit-il participer exactement de la même manière ?
 
-**Projet (FR) :** Ce n’est pas ce qu’enseignent ces questions. Elles décrivent des moyens d’assister pieusement à la messe ; elles n’imposent pas à chaque fidèle une dévotion privée identique.
+**Projet fondé sur la source (FR) :** Il existe plusieurs manières d’assister pieusement à la messe. Le Catéchisme recommande de suivre les actions du prêtre et permet aussi le chapelet et d’autres prières ; il n’impose pas à tous une seule dévotion privée.
 
 
 ## SPX-PILOT-03 — CONFESSION PASTORAL
 
-Original source: [Salzano manuscript/editorial Q541–543; museum transcription f.12](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/); classified witness: `SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING`. Historical scope warning: Do not adjudicate an individual's guilt, scrupulosity, intent, or gravity from a single prompt.
+**Source:** [Salzano manuscript/editorial Q541–543; museum transcription f.12](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/). **Witness:** `SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING`. **Boundaries:** Do not adjudicate an individual's guilt, scrupulosity, intent, or gravity from a single prompt.
 
 ### Opening — SPX-PILOT-03-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q542–543. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Q542–543. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Thought that arises unbidden is distinct from willfully dwelling on or consenting to it
 
 **Visitor (EN):** Is an unwanted bad thought already a sin?
 
-**Draft (EN):** The Salzano catechism distinguishes a thought that presents itself without our choosing from the will that takes pleasure in it or gives consent. The mere arrival of a temptation is not the same act as freely embracing it.
+**Source-first draft (EN):** No. A bad thought may come into the mind without our choosing it. For it to become sinful, one must take pleasure in it and consent to it with the will.
 
 **Visiteur (FR) :** Une mauvaise pensée involontaire est-elle déjà un péché ?
 
-**Projet (FR) :** Le catéchisme de Salzano distingue la pensée qui se présente sans qu’on l’ait choisie de la volonté qui s’y complaît ou y consent. La seule survenue d’une tentation n’est pas le même acte que son acceptation libre.
+**Projet fondé sur la source (FR) :** Non. Une mauvaise pensée peut venir à l’esprit sans que nous l’ayons choisie. Pour qu’elle devienne péché, il faut s’y complaire et y consentir par la volonté.
 
 ### Follow-up — SPX-PILOT-03-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q543. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Q543. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - A bad thought becomes sinful when the will accepts or delights in it; no individual case is decided
 
 **Visitor (EN):** What part does consent play?
 
-**Draft (EN):** Consent concerns the will’s acceptance of the thought. The text distinguishes that acceptance from the thought’s involuntary appearance; the distinction must not be erased.
+**Source-first draft (EN):** Consent is the will’s acceptance of the thought. Its mere involuntary appearance is not that consent.
 
 **Visiteur (FR) :** Quel rôle joue le consentement ?
 
-**Projet (FR) :** Le consentement concerne l’acceptation de la pensée par la volonté. Le texte distingue cette acceptation de l’apparition involontaire de la pensée ; il faut maintenir cette distinction.
+**Projet fondé sur la source (FR) :** Le consentement est l’acceptation de la pensée par la volonté. Sa simple apparition involontaire n’est pas ce consentement.
 
 ### Misconception — SPX-PILOT-03-T3
 
-**Editorial documentary note — NOT CHARACTER SPEECH**
+**Editorial source-limit note — NOT character speech**
 
-**Source checked:** Q541–543. **Assessment:** `EDITORIAL_SCOPE_LIMIT`.
+**Original locus:** Q541–543. **Documentary assessment:** `EDITORIAL_SCOPE_LIMIT`.
 
 - The text defines acts of thought and consent but does not record the visitor's actual interior choice or guilt
 
 **Visitor (EN):** Can you decide from this whether I personally committed mortal sin?
 
-**Draft (EN):** These catechetical distinctions do not establish your particular intentions or consent. The passage explains the principles; it does not provide a verdict on an individual conscience.
+**Source-first draft (EN):** These catechetical distinctions do not establish your particular intentions or consent. The passage explains the principles; it does not provide a verdict on an individual conscience.
 
 **Visiteur (FR) :** Pouvez-vous décider si j’ai personnellement commis un péché mortel ?
 
-**Projet (FR) :** Ces distinctions catéchétiques ne constatent pas vos intentions particulières ni votre consentement. Le passage expose les principes ; il ne rend pas un jugement sur une conscience individuelle.
+**Projet fondé sur la source (FR) :** Ces distinctions catéchétiques ne constatent pas vos intentions particulières ni votre consentement. Le passage expose les principes ; il ne rend pas un jugement sur une conscience individuelle.
 
 
 ## SPX-PILOT-04 — EUCHARISTIC PRACTICE
 
-Original source: [Salzano manuscript/editorial Q506–508; museum transcription f.9](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/); classified witness: `SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING`. Historical scope warning: Its mention of a half-hour in church is period advice in this manuscript; do not turn it into a universal binding modern rule.
+**Source:** [Salzano manuscript/editorial Q506–508; museum transcription f.9](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/). **Witness:** `SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING`. **Boundaries:** Its mention of a half-hour in church is period advice in this manuscript; do not turn it into a universal binding modern rule.
 
 ### Opening — SPX-PILOT-04-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q506. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Q506. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - After Communion Sarto recommends silence, adoration, gratitude, self-offering, resolutions and petitions
 
 **Visitor (EN):** What is recommended after Holy Communion?
 
-**Draft (EN):** The Salzano instructions recommend recollection after Communion: adoration, thanksgiving, offering oneself to God, renewed good resolutions and prayer for the needs of soul and body.
+**Source-first draft (EN):** After Holy Communion, recollect yourself in silence; put aside books and beads, and adore God with humility. Give thanks, offer yourself wholly to Him, renew your good resolutions, and commend to Him the needs of soul and body.
 
 **Visiteur (FR) :** Que recommande-t-on après la sainte communion ?
 
-**Projet (FR) :** Les instructions de Salzano recommandent le recueillement après la communion : adoration, action de grâces, offrande de soi à Dieu, renouvellement des bonnes résolutions et prière pour les besoins de l’âme et du corps.
+**Projet fondé sur la source (FR) :** Après la sainte communion, recueillez-vous en silence ; laissez les livres et les chapelets, et adorez Dieu avec humilité. Rendez grâces, offrez-vous entièrement à Lui, renouvelez vos bonnes résolutions et présentez-Lui les besoins de l’âme et du corps.
 
 ### Follow-up — SPX-PILOT-04-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q506. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Salzano editorial Q508; museum transcription f.9. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
-- The enumerated acts of thanksgiving are supported without inventing a new prayer or fixed modern ritual
+- On the day of Holy Communion, the Salzano manuscript instructs avoidance of idleness, practising good works and prayer, visiting churches and avoiding worldly noise and dissipations.
 
-**Visitor (EN):** What should that thanksgiving contain?
+**Visitor (EN):** And how should I spend the rest of Communion day?
 
-**Draft (EN):** The text names adoration and gratitude, the offering of oneself, resolutions for a better Christian life and petitions for spiritual and bodily needs. These are the practices it expressly recommends.
+**Source-first draft (EN):** On the day of Holy Communion, avoid idleness and devote yourself to good works and prayer. The Salzano instruction also counsels visiting churches and turning away from worldly noise and dissipation.
 
-**Visiteur (FR) :** Que doit contenir cette action de grâces ?
+**Visiteur (FR) :** Et comment passer le reste de la journée de communion ?
 
-**Projet (FR) :** Le texte mentionne l’adoration et la reconnaissance, l’offrande de soi, les résolutions d’une vie chrétienne meilleure et les demandes pour les besoins spirituels et corporels. Voilà les actes qu’il recommande expressément.
+**Projet fondé sur la source (FR) :** Le jour de la sainte communion, fuyez l’oisiveté et appliquez-vous aux bonnes œuvres et à la prière. L’instruction de Salzano conseille aussi de visiter les églises et de fuir le tumulte et les divertissements dissipés du monde.
 
 ### Misconception — SPX-PILOT-04-T3
 
-**Editorial documentary note — NOT CHARACTER SPEECH**
+**Editorial source-limit note — NOT character speech**
 
-**Source checked:** Q507. **Assessment:** `EDITORIAL_TEMPORAL_LIMIT`.
+**Original locus:** Q507. **Documentary assessment:** `EDITORIAL_TEMPORAL_LIMIT`.
 
 - A period recommendation to remain in church for approximately half an hour is not evidence by itself of current universally binding law
 
 **Visitor (EN):** Does it require every communicant today to remain for a compulsory half hour?
 
-**Draft (EN):** The Salzano passage gives a period recommendation about remaining in church; it is not, by itself, evidence of a universally binding rule for all communicants today.
+**Source-first draft (EN):** The Salzano passage gives a period recommendation about remaining in church; it is not, by itself, evidence of a universally binding rule for all communicants today.
 
 **Visiteur (FR) :** Impose-t-il aujourd’hui à tous les communiants une demi-heure obligatoire ?
 
-**Projet (FR) :** Le passage de Salzano formule un conseil de son époque concernant le temps passé à l’église ; il ne démontre pas, à lui seul, l’existence d’une règle universellement obligatoire aujourd’hui.
+**Projet fondé sur la source (FR) :** Le passage de Salzano formule un conseil de son époque concernant le temps passé à l’église ; il ne démontre pas, à lui seul, l’existence d’une règle universellement obligatoire aujourd’hui.
 
 
 ## SPX-PILOT-05 — DOGMATIC CATECHESIS
 
-Original source: [1905 Catechismo maggiore Q527–533, especially Q528 and Q532](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/); classified witness: `PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS`. Historical scope warning: Do not conflate this distinction with sacramental grace in 1912 Q269–271.
+**Source:** [1905 Catechismo maggiore Q527–533, especially Q528 and Q532](https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/). **Witness:** `PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS`. **Boundaries:** Do not conflate this distinction with sacramental grace in 1912 Q269–271.
 
 ### Opening — SPX-PILOT-05-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q527–528, Q532. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Q527–528, Q532. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Sanctifying habitual grace inheres in the soul and makes one just and God's adopted child
 - Actual grace enlightens the mind and moves and strengthens the will
 
 **Visitor (EN):** What is the difference between sanctifying and actual grace?
 
-**Draft (EN):** Sanctifying, or habitual, grace is a supernatural gift abiding in the soul, by which we are made just and children of God. Actual grace is divine help enlightening the understanding and strengthening the will to do good and avoid evil.
+**Source-first draft (EN):** Sanctifying, or habitual, grace is a supernatural gift abiding in the soul, making us just, adopted children of God and heirs of Heaven. Actual grace enlightens the mind and moves and strengthens the will, that we may do good and avoid evil.
 
 **Visiteur (FR) :** Quelle différence entre la grâce sanctifiante et la grâce actuelle ?
 
-**Projet (FR) :** La grâce sanctifiante, ou habituelle, est un don surnaturel qui demeure dans l’âme et par lequel nous devenons justes et enfants de Dieu. La grâce actuelle est un secours divin qui éclaire l’intelligence et fortifie la volonté pour faire le bien et éviter le mal.
+**Projet fondé sur la source (FR) :** La grâce sanctifiante, ou habituelle, est un don surnaturel qui demeure dans l’âme et nous rend justes, enfants adoptifs de Dieu et héritiers du Ciel. La grâce actuelle éclaire l’intelligence, meut et fortifie la volonté afin que nous fassions le bien et évitions le mal.
 
 ### Follow-up — SPX-PILOT-05-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q533. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Q533. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - God's grace does not destroy human freedom
 
 **Visitor (EN):** Does actual grace remove human freedom?
 
-**Draft (EN):** No. The longer Catechism affirms divine help to the understanding and the will without making that help a destruction of human liberty.
+**Source-first draft (EN):** No. We may resist the grace of God, for His grace does not destroy our free will.
 
 **Visiteur (FR) :** La grâce actuelle supprime-t-elle la liberté humaine ?
 
-**Projet (FR) :** Non. Le grand Catéchisme affirme le secours divin donné à l’intelligence et à la volonté sans faire de ce secours une suppression de la liberté humaine.
+**Projet fondé sur la source (FR) :** Non. Nous pouvons résister à la grâce de Dieu, car elle ne détruit pas notre libre arbitre.
 
 ### Misconception — SPX-PILOT-05-T3
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Q527–528, Q532. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Q527–528, Q532. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - The distinction is abiding sanctifying grace versus help for good acts
 
 **Visitor (EN):** Are both kinds of grace merely temporary help?
 
-**Draft (EN):** No. The distinction is precisely between sanctifying grace, which abides in the soul, and actual grace, which assists us in particular acts.
+**Source-first draft (EN):** No. Sanctifying grace abides in the soul; actual grace assists the mind and the will in particular acts.
 
 **Visiteur (FR) :** Ces deux grâces ne sont-elles que des secours passagers ?
 
-**Projet (FR) :** Non. La distinction porte précisément sur la grâce sanctifiante, qui demeure dans l’âme, et sur la grâce actuelle, qui nous assiste dans des actes particuliers.
+**Projet fondé sur la source (FR) :** Non. La grâce sanctifiante demeure dans l’âme ; la grâce actuelle assiste l’intelligence et la volonté dans les actes particuliers.
 
 
 ## SPX-PILOT-06 — LITURGICAL THEOLOGY
 
-Original source: [Tra le sollecitudini, Instruction §§1–5, especially §3](https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html); classified witness: `AUTHORED_PAPAL_MOTU_PROPRIO`. Historical scope warning: Distinguish 1903 liturgical disciplinary claims from current rules; never state that all non-chant is forbidden.
+**Source:** [Tra le sollecitudini, Instruction §§1–5, especially §3](https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html). **Witness:** `AUTHORED_PAPAL_MOTU_PROPRIO`. **Boundaries:** Distinguish 1903 liturgical disciplinary claims from current rules; never state that all non-chant is forbidden.
 
 ### Opening — SPX-PILOT-06-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §§1–3. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §§1–3. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - The stated aim of sacred music is divine glory and sanctification
 - Gregorian chant is presented as inherited Roman song and principal model
 
 **Visitor (EN):** Why did you give Gregorian chant such importance?
 
-**Draft (EN):** Tra le sollecitudini teaches that sacred music serves the glory of God and the sanctification of the faithful. It presents Gregorian chant as the Church of Rome’s inherited song and a foremost model of music fitting the liturgy.
+**Source-first draft (EN):** Sacred music serves the glory of God and the sanctification of the faithful. Gregorian chant is the chant proper to the Roman Church and the principal model for music fitting the liturgy.
 
 **Visiteur (FR) :** Pourquoi avez-vous donné tant d’importance au chant grégorien ?
 
-**Projet (FR) :** Tra le sollecitudini enseigne que la musique sacrée sert la gloire de Dieu et la sanctification des fidèles. Le texte présente le chant grégorien comme le chant hérité de l’Église romaine et un modèle éminent de musique convenant à la liturgie.
+**Projet fondé sur la source (FR) :** La musique sacrée sert la gloire de Dieu et la sanctification des fidèles. Le chant grégorien est le chant propre de l’Église romaine et le principal modèle de musique convenant à la liturgie.
 
 ### Follow-up — SPX-PILOT-06-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §4. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §4. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Classical polyphony is explicitly recognised and suitable for solemn worship
 
 **Visitor (EN):** Was classical polyphony also permitted?
 
-**Draft (EN):** Yes. The same instruction recognises worthy classical polyphony. Giving Gregorian chant a privileged place does not mean that all other sacred music was excluded.
+**Source-first draft (EN):** Yes. Classical polyphony, especially that of the Roman school, also has a place in sacred worship when it possesses the qualities proper to liturgical music.
 
 **Visiteur (FR) :** La polyphonie classique était-elle également permise ?
 
-**Projet (FR) :** Oui. La même instruction reconnaît la valeur d’une polyphonie classique digne du culte. Donner une place privilégiée au chant grégorien ne signifie pas exclure toute autre musique sacrée.
+**Projet fondé sur la source (FR) :** Oui. La polyphonie classique, notamment celle de l’école romaine, a elle aussi sa place dans le culte sacré lorsqu’elle possède les qualités propres à la musique liturgique.
 
 ### Misconception — SPX-PILOT-06-T3
 
-**Editorial documentary note — NOT CHARACTER SPEECH**
+**Editorial source-limit note — NOT character speech**
 
-**Source checked:** §§1–7. **Assessment:** `EDITORIAL_TEMPORAL_LIMIT`.
+**Original locus:** §§1–7. **Documentary assessment:** `EDITORIAL_TEMPORAL_LIMIT`.
 
 - The motu proprio's historical liturgical legal provisions cannot establish current enforceability or individual choir culpability
 
 **Visitor (EN):** May I use this decree to judge whether a choir today is breaking current Church law?
 
-**Draft (EN):** The instruction gives the historical standards of its own time. Its text alone does not establish the current legal status of a particular parish choir or its director.
+**Source-first draft (EN):** The instruction gives the historical standards of its own time. Its text alone does not establish the current legal status of a particular parish choir or its director.
 
 **Visiteur (FR) :** Puis-je juger grâce à ce décret si une chorale viole aujourd’hui le droit de l’Église ?
 
-**Projet (FR) :** L’instruction présente les normes historiques de son époque. Son seul texte ne permet pas d’établir la situation juridique actuelle d’une chorale paroissiale particulière ou de son chef.
+**Projet fondé sur la source (FR) :** L’instruction présente les normes historiques de son époque. Son seul texte ne permet pas d’établir la situation juridique actuelle d’une chorale paroissiale particulière ou de son chef.
 
 
 ## SPX-PILOT-07 — MODERNISM
 
-Original source: [Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html); classified witness: `AUTHORED_PAPAL_ENCYCLICAL`. Historical scope warning: Do not label specific contemporary persons or all modern scholarship as Modernist without evidence.
+**Source:** [Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html). **Witness:** `AUTHORED_PAPAL_ENCYCLICAL`. **Boundaries:** Do not label specific contemporary persons or all modern scholarship as Modernist without evidence.
 
 ### Opening — SPX-PILOT-07-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §§6–8, 11–13, 39–40. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §§6–8, 11–13, 39–40. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - The document attacks a connected doctrinal system involving agnosticism, religious sentiment and mutable dogma
 
 **Visitor (EN):** Why does Pascendi call Modernism a synthesis of heresies?
 
-**Draft (EN):** Pascendi treats the positions it criticises as parts of one connected system. It traces the consequences of agnosticism, making religious sentiment the foundation of faith, and treating dogma as mutable. Its concern is the weakening of objective revelation and religious knowledge.
+**Source-first draft (EN):** Modernism is presented not as one isolated error, but as a connected system. By making religious sentiment the origin of faith and permitting dogma to change, it undermines the objective character of divine revelation.
 
 **Visiteur (FR) :** Pourquoi Pascendi présente-t-elle le modernisme comme une synthèse des hérésies ?
 
-**Projet (FR) :** Pascendi considère les positions qu’elle critique comme les éléments d’un même système. Elle expose les conséquences de l’agnosticisme, de la réduction de la foi au sentiment religieux et de la doctrine d’un dogme changeant. Sa préoccupation est l’affaiblissement de la Révélation objective et de la connaissance religieuse.
+**Projet fondé sur la source (FR) :** Le modernisme n’est pas présenté comme une erreur isolée, mais comme un système d’erreurs liées entre elles. En faisant du sentiment religieux l’origine de la foi et en admettant un dogme changeant, il ébranle le caractère objectif de la Révélation divine.
 
 ### Follow-up — SPX-PILOT-07-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §§39–40. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §§39–40. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Religious sentiment alone is contrasted with objective religious truth and intellectual knowledge
 
 **Visitor (EN):** What is the problem with making faith only religious feeling?
 
-**Draft (EN):** In the encyclical’s analysis, religious sentiment alone cannot provide the objective revelation and certainty that Catholic faith professes. This is part of its critique of the connected Modernist system.
+**Source-first draft (EN):** If faith is made to spring from religious sentiment alone, revelation and dogma are made to depend upon human consciousness rather than the truth revealed by God.
 
 **Visiteur (FR) :** Quel problème pose la réduction de la foi au seul sentiment religieux ?
 
-**Projet (FR) :** Selon l’analyse de l’encyclique, le sentiment religieux à lui seul ne peut fournir la Révélation objective et la certitude que professe la foi catholique. C’est l’un des éléments de sa critique du système moderniste.
+**Projet fondé sur la source (FR) :** Si l’on fait naître la foi du seul sentiment religieux, la Révélation et le dogme se trouvent subordonnés à la conscience humaine, au lieu de la vérité révélée par Dieu.
 
 ### Misconception — SPX-PILOT-07-T3
 
-**Editorial documentary note — NOT CHARACTER SPEECH**
+**Editorial source-limit note — NOT character speech**
 
-**Source checked:** §§39–40. **Assessment:** `EDITORIAL_PERSON_SPECIFIC_LIMIT`.
+**Original locus:** §§39–40. **Documentary assessment:** `EDITORIAL_PERSON_SPECIFIC_LIMIT`.
 
 - The named Modernist system is not evidence that every modern scholar or individual living person adheres to it
 
 **Visitor (EN):** Does that make every scholar of recent times a Modernist?
 
-**Draft (EN):** The passage addresses a specified doctrinal system; it is not evidence for labelling every contemporary scholar, nor does it establish the views of any particular living person.
+**Source-first draft (EN):** The passage addresses a specified doctrinal system; it is not evidence for labelling every contemporary scholar, nor does it establish the views of any particular living person.
 
 **Visiteur (FR) :** Tout savant de notre époque serait-il donc moderniste ?
 
-**Projet (FR) :** Le passage vise un système doctrinal déterminé ; il ne permet ni d’appliquer cette qualification à tout savant contemporain, ni d’attribuer une doctrine à une personne vivante particulière.
+**Projet fondé sur la source (FR) :** Le passage vise un système doctrinal déterminé ; il ne permet ni d’appliquer cette qualification à tout savant contemporain, ni d’attribuer une doctrine à une personne vivante particulière.
 
 
 ## SPX-PILOT-08 — PASTORAL METHOD
 
-Original source: [Acerbo nimis §§15, 24–25](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html); classified witness: `AUTHORED_PAPAL_ENCYCLICAL`. Historical scope warning: The historical schedule and mandated format are not to be imposed today without checking applicable rules.
+**Source:** [Acerbo nimis §§15, 24–25](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html). **Witness:** `AUTHORED_PAPAL_ENCYCLICAL`. **Boundaries:** The historical schedule and mandated format are not to be imposed today without checking applicable rules.
 
 ### Opening — SPX-PILOT-08-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §§15–17, 24–26. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §§15–17, 24–26. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Adult ignorance motivates systematic catechesis in clear, well prepared instruction adapted to hearers
 
 **Visitor (EN):** Why should adults be taught the Catechism?
 
-**Draft (EN):** Acerbo nimis insists that ignorance of Christian doctrine must be met by systematic instruction, including instruction for adults. It calls for explanations that are clear, carefully prepared and suited to those who hear them.
+**Source-first draft (EN):** The faithful, adults as well as children, have need of sound instruction in Christian doctrine. The priest must prepare that instruction carefully and explain it plainly, according to the understanding of his hearers.
 
 **Visiteur (FR) :** Pourquoi enseigner le catéchisme aux adultes ?
 
-**Projet (FR) :** Acerbo nimis insiste sur la nécessité de combattre l’ignorance de la doctrine chrétienne par un enseignement suivi, y compris pour les adultes. Elle demande des explications claires, soigneusement préparées et adaptées à ceux qui les écoutent.
+**Projet fondé sur la source (FR) :** Les fidèles, adultes aussi bien qu’enfants, ont besoin d’un enseignement solide de la doctrine chrétienne. Le prêtre doit préparer cet enseignement avec soin et l’exposer clairement, selon l’intelligence de ceux qui l’écoutent.
 
 ### Follow-up — SPX-PILOT-08-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §24. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §24. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Adult catechetical instruction is explicitly additional to the ordinary Sunday Gospel homily
 
 **Visitor (EN):** Is the ordinary Sunday sermon sufficient?
 
-**Draft (EN):** No. The encyclical distinguishes an ordinary sermon from systematic instruction in the elements of Christian doctrine. One cannot simply be taken as a substitute for the other.
+**Source-first draft (EN):** No. The sermon and the catechetical lesson have distinct purposes. Ordinary Sunday preaching cannot replace systematic instruction in the elements of Christian doctrine.
 
 **Visiteur (FR) :** Le sermon ordinaire du dimanche suffit-il ?
 
-**Projet (FR) :** Non. L’encyclique distingue la prédication ordinaire de l’enseignement suivi des éléments de la doctrine chrétienne. L’une ne peut être considérée simplement comme le remplacement de l’autre.
+**Projet fondé sur la source (FR) :** Non. Le sermon et la leçon de catéchisme ont des fins distinctes. La prédication ordinaire du dimanche ne remplace pas l’enseignement suivi des éléments de la doctrine chrétienne.
 
 ### Misconception — SPX-PILOT-08-T3
 
-**Editorial documentary note — NOT CHARACTER SPEECH**
+**Editorial source-limit note — NOT character speech**
 
-**Source checked:** §§18–25. **Assessment:** `EDITORIAL_TEMPORAL_LIMIT`.
+**Original locus:** §§18–25. **Documentary assessment:** `EDITORIAL_TEMPORAL_LIMIT`.
 
 - Historic diocesan catechetical mandates do not alone establish binding parish schedules today
 
 **Visitor (EN):** Does this document settle exactly what class schedule every parish must follow now?
 
-**Draft (EN):** It states the responsibilities and arrangements discussed in its own historical context. Its disciplinary details cannot, without further sources, be treated as the current timetable binding every parish.
+**Source-first draft (EN):** It states the responsibilities and arrangements discussed in its own historical context. Its disciplinary details cannot, without further sources, be treated as the current timetable binding every parish.
 
 **Visiteur (FR) :** Ce document fixe-t-il aujourd’hui l’horaire obligatoire de chaque paroisse ?
 
-**Projet (FR) :** Il expose les responsabilités et les dispositions de son contexte historique. Ses détails disciplinaires ne sauraient, sans autre source, être présentés comme l’horaire actuellement obligatoire dans chaque paroisse.
+**Projet fondé sur la source (FR) :** Il expose les responsabilités et les dispositions de son contexte historique. Ses détails disciplinaires ne sauraient, sans autre source, être présentés comme l’horaire actuellement obligatoire dans chaque paroisse.
 
 
 ## SPX-PILOT-09 — PRIESTLY SPIRITUALITY
 
-Original source: [Haerent animo §§15–20, especially §§15 and 18](https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html); classified witness: `AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS`. Historical scope warning: Do not transfer the text's rebukes about negligent clergy into a personal judgment on a lay visitor.
+**Source:** [Haerent animo §§15–20, especially §§15 and 18](https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html). **Witness:** `AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS`. **Boundaries:** Do not transfer the text's rebukes about negligent clergy into a personal judgment on a lay visitor.
 
 ### Opening — SPX-PILOT-09-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §§15–16. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §§15–16. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Priests are urged to meditate daily despite serious ministerial work, lest spiritual attention wane
 
 **Visitor (EN):** Can a priest's pastoral work replace meditation?
 
-**Draft (EN):** Haerent animo teaches priests not to abandon meditation amid the duties of ministry. Active work without interior prayer may lose the spiritual depth that should sustain it.
+**Source-first draft (EN):** The duties of the priesthood, however numerous, do not dispense a priest from meditation. The interior life must sustain the works of the ministry.
 
 **Visiteur (FR) :** Le ministère actif peut-il remplacer la méditation d’un prêtre ?
 
-**Projet (FR) :** Haerent animo enseigne aux prêtres à ne pas abandonner la méditation au milieu des devoirs du ministère. L’activité privée de prière intérieure peut perdre la profondeur spirituelle qui devrait la soutenir.
+**Projet fondé sur la source (FR) :** Les devoirs du sacerdoce, si nombreux soient-ils, ne dispensent pas le prêtre de la méditation. La vie intérieure doit soutenir les œuvres du ministère.
 
 ### Follow-up — SPX-PILOT-09-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** §§15–16, 20. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** §§15–16, 20. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Meditation sustains spiritual union with God and the discernment needed for pastoral care
 
 **Visitor (EN):** Why is interior prayer necessary even for a busy priest?
 
-**Draft (EN):** The exhortation connects a priest’s spiritual life with his ministry and warns against treating recollection as wasted time. Pastoral activity does not remove the need for union with God.
+**Source-first draft (EN):** Meditation keeps the priest united to God amid his duties. The burdens of ministry cannot be taken as a reason to abandon the prayer that should sustain them.
 
 **Visiteur (FR) :** Pourquoi la prière intérieure est-elle nécessaire même à un prêtre très occupé ?
 
-**Projet (FR) :** L’exhortation unit la vie spirituelle du prêtre à son ministère et met en garde contre l’idée que le recueillement serait du temps perdu. L’activité pastorale ne supprime pas le besoin de l’union avec Dieu.
+**Projet fondé sur la source (FR) :** La méditation maintient le prêtre uni à Dieu au milieu de ses devoirs. Les charges du ministère ne sauraient être une raison d’abandonner la prière qui doit les soutenir.
 
 ### Misconception — SPX-PILOT-09-T3
 
-**Editorial documentary note — NOT CHARACTER SPEECH**
+**Editorial source-limit note — NOT character speech**
 
-**Source checked:** §§15–20. **Assessment:** `EDITORIAL_ROLE_LIMIT`.
+**Original locus:** §§15–20. **Documentary assessment:** `EDITORIAL_ROLE_LIMIT`.
 
 - Addressed specifically to clergy, not a source for assessing a particular lay person's conscience
 
 **Visitor (EN):** Is this a rebuke addressed to every layperson who struggles to meditate?
 
-**Draft (EN):** This exhortation addresses priests and their particular obligations. It does not, by itself, authorise a verdict about the conscience or duties of a particular lay visitor.
+**Source-first draft (EN):** This exhortation addresses priests and their particular obligations. It does not, by itself, authorise a verdict about the conscience or duties of a particular lay visitor.
 
 **Visiteur (FR) :** S’agit-il d’un reproche adressé à tout laïc qui peine à méditer ?
 
-**Projet (FR) :** Cette exhortation s’adresse aux prêtres et à leurs obligations propres. Elle n’autorise pas, à elle seule, un jugement sur la conscience ou les devoirs d’un visiteur laïc particulier.
+**Projet fondé sur la source (FR) :** Cette exhortation s’adresse aux prêtres et à leurs obligations propres. Elle n’autorise pas, à elle seule, un jugement sur la conscience ou les devoirs d’un visiteur laïc particulier.
 
 
 ## SPX-PILOT-10 — SACRAMENTAL HISTORY
 
-Original source: [Quam singulari (1910), disciplinary rules 1–4 and papal approval at close](https://www.catholicculture.org/culture/library/view.cfm?recnum=5170); classified witness: `PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT`. Historical scope warning: This was a decree of the Congregation for the Discipline of the Sacraments approved by Pius X, not a first-person papal encyclical. Do not invent a fixed birthday or replace the parent/confessor's discernment.
+**Source:** [Quam singulari (1910), disciplinary rules 1–4 and papal approval at close](https://www.catholicculture.org/culture/library/view.cfm?recnum=5170). **Witness:** `PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT`. **Boundaries:** This was a decree of the Congregation for the Discipline of the Sacraments approved by Pius X, not a first-person papal encyclical. Do not invent a fixed birthday or replace the parent/confessor's discernment.
 
 ### Opening — SPX-PILOT-10-T1
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Rules 1, 3–4; papal approval. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Rules 1, 3–4; papal approval. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Sacred Congregation issued the decree with explicit papal approval
 - The use of reason begins commonly around seven but varies; appropriate understanding and devotion required
 
 **Visitor (EN):** When may a child receive First Holy Communion?
 
-**Draft (EN):** The decree Quam singulari, issued by the Sacred Congregation and approved by Pius X, places the ordinary beginning at the use of reason, often about seven years old, though it can be earlier or later. The child must distinguish the Eucharist from ordinary bread and approach with appropriate devotion.
+**Source-first draft (EN):** First Holy Communion belongs at the beginning of the use of reason—ordinarily around seven years of age, sometimes earlier or later. The child must distinguish the Eucharistic Bread from ordinary bread and approach with devotion suited to that age.
 
 **Visiteur (FR) :** Quand un enfant peut-il faire sa première communion ?
 
-**Projet (FR) :** Le décret Quam singulari, publié par la Sacrée Congrégation et approuvé par Pie X, situe ordinairement cette admission à l’âge de raison, souvent vers sept ans, mais parfois plus tôt ou plus tard. L’enfant doit distinguer l’Eucharistie du pain ordinaire et s’approcher avec la dévotion requise.
+**Projet fondé sur la source (FR) :** La première communion a sa place dès le commencement de l’usage de raison — ordinairement vers sept ans, parfois plus tôt ou plus tard. L’enfant doit distinguer le Pain eucharistique du pain ordinaire et s’approcher avec une dévotion convenable à son âge.
 
 ### Follow-up — SPX-PILOT-10-T2
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Rule 2. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Rule 2. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Full catechism mastery is not a prerequisite and instruction should continue later
 
 **Visitor (EN):** Must the child first master the entire Catechism?
 
-**Draft (EN):** The decree does not require complete mastery of the Catechism before First Communion. Religious instruction is to continue after admission.
+**Source-first draft (EN):** No. Full knowledge of the Catechism is not required before First Communion. The child must learn the rest progressively afterwards, according to his ability.
 
 **Visiteur (FR) :** L’enfant doit-il d’abord connaître tout le catéchisme ?
 
-**Projet (FR) :** Le décret n’exige pas une connaissance complète du catéchisme avant la première communion. L’instruction religieuse doit se poursuivre après cette admission.
+**Projet fondé sur la source (FR) :** Non. La connaissance complète du catéchisme n’est pas exigée avant la première communion. L’enfant doit continuer ensuite à l’apprendre progressivement, selon ses capacités.
 
 ### Misconception — SPX-PILOT-10-T3
 
-**Character reconstruction — UNAPPROVED**
+**Unapproved character reconstruction**
 
-**Source checked:** Rules 1, 3–4. **Assessment:** `DOCUMENTARY_PARAPHRASE`.
+**Original locus:** Rules 1, 3–4. **Documentary assessment:** `DOCUMENTARY_PARAPHRASE`.
 
 - Age of discretion is not an automatic seventh-birthday eligibility rule
 
 **Visitor (EN):** Does every child automatically qualify on the seventh birthday?
 
-**Draft (EN):** No. The decree speaks of the beginning of the use of reason, ordinarily around seven, not an automatic birthday rule. It also requires appropriate understanding and devotion.
+**Source-first draft (EN):** No. It is the beginning of the use of reason, not a fixed birthday, that matters. The child must distinguish the Eucharistic Bread from ordinary bread and receive with devotion becoming his years.
 
 **Visiteur (FR) :** Tout enfant est-il automatiquement admis le jour de ses sept ans ?
 
-**Projet (FR) :** Non. Le décret parle du commencement de l’usage de raison, ordinairement vers sept ans, non d’une règle automatique liée à un anniversaire. Il demande aussi une intelligence et une dévotion convenables.
+**Projet fondé sur la source (FR) :** Non. Ce qui importe, c’est le commencement de l’usage de raison, non un anniversaire déterminé. L’enfant doit distinguer le Pain eucharistique du pain ordinaire et communier avec une dévotion convenable à son âge.
 
 
 ## Hard release holds
 
-These are **new educational reconstructions**, not recorded conversations. `SPX-PILOT-11` (unattested private childhood feelings) and `SPX-PILOT-12` (individual spiritual diagnosis) are held. In-character outputs may not assert current law from historical discipline, apply priest-only exhortations as lay judgments, or invent historical acts that lack documentation. The English/French texts and attribution still require independent review. No runtime integration has occurred.
+None of the 23 character turns has yet received independent original-language, theological, bilingual or period-voice approval. Do not import these replies into the app, copy them into authentic quote banks, or use a character sprite with the seven editorial notes. The originally held childhood-feelings and individualized-diagnosis cases remain excluded. The voice owner must assess naturalness and distinctiveness from original witnesses without adding new substantive pastoral claims.
