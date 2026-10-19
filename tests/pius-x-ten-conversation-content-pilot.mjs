@@ -4,7 +4,7 @@ const load=p=>JSON.parse(readFileSync(p,"utf8"));
 const evidence=load("data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json");
 const pilot=load("data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json");
 assert.equal(pilot.schema,"AO_PIUS_X_CONTENT_OWNED_TEN_CONVERSATION_PILOT_V1");
-assert.equal(pilot.status,"SOURCE_REVIEWED_EDITORIAL_DRAFT_MIXED_CHARACTER_AND_NOTES_NOT_CERTIFIED");
+assert.equal(pilot.status,"SOURCE_FIRST_VOICE_EDIT_V2_PILOT_UNAPPROVED");
 assert.equal(pilot.totals.topics,10);
 assert.equal(pilot.totals.localizedResponseDrafts,60);
 assert.equal(pilot.totals.approvedAnswers,0);
@@ -13,6 +13,11 @@ assert.equal(pilot.totals.outOfCharacterEditorialNotes,7);
 assert.equal(pilot.totals.bilingualAvatarResponseDrafts,46);
 assert.equal(pilot.totals.bilingualEditorialNoteDrafts,14);
 assert.equal(pilot.totals.independentHistoricalCertifications,0);
+assert.equal(pilot.voiceReviewState.editedCharacterTurns,23);
+assert.equal(pilot.voiceReviewState.editorialNotesExcluded,7);
+assert.equal(pilot.voiceReviewState.authenticSpeechCertified,false);
+assert.equal(pilot.voiceReviewState.englishApproved,false);
+assert.equal(pilot.voiceReviewState.frenchApproved,false);
 const originalAudit=load("data/learn/research/pius-x-ten-conversation-primary-text-audit-20261019.v1.json");
 assert.equal(originalAudit.schema,"AO_PIUS_X_TEN_PILOT_PRELIMINARY_ORIGINAL_TEXT_CLAIM_AUDIT_V1");
 assert.equal(originalAudit.records.length,30);
@@ -46,7 +51,9 @@ for(const e of pilot.episodes){
   const t=e.turns[i];
   assert.equal(t.id,e.id+"-T"+(i+1));
   assert.equal(t.sourceRef,e.id);
-  assert.equal(t.citationLabel,e.sourceScope);
+  if(t.id==="SPX-PILOT-04-T2")
+   assert.equal(t.citationLabel,"Salzano manuscript Q508 (not Q506)");
+  else assert.equal(t.citationLabel,e.sourceScope);
   assert.equal(t.editorialApproval,false);
   assert.equal(t.visitorRelease,false);
   assert.equal(t.sourceCheckedForSubstantiveClaims,false);
@@ -59,6 +66,11 @@ for(const e of pilot.episodes){
   assert.equal(audit.independentTheologicalApproval,false);
   assert.equal(audit.responseLanguageCheck,"EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED");
   assert.ok(audit.sourceSupportedPropositions.length>=1);
+  if(t.id==="SPX-PILOT-04-T2"){
+   assert.match(audit.sourceLocus,/Q508/);
+   assert.match(t.language.en.visitor,/rest of Communion day/);
+   assert.match(t.language.fr.response,/oisiveté/);
+  }
   const isEditorial=audit.assessment.startsWith("EDITORIAL");
   assert.equal(t.avatarLineAllowed,!isEditorial);
   assert.equal(t.speaker,isEditorial?"DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X":"PIUS_X_EDUCATIONAL_RECONSTRUCTION");
@@ -68,6 +80,8 @@ for(const e of pilot.episodes){
     "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH");
   assert.equal(t.sourceLanguageTranslationApproval,false);
   assert.equal(t.periodVoiceApproval,false);
+  assert.equal(t.voiceEditReview,
+    isEditorial?"EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE":"SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED");
   assert.equal(t.continuationOf,i===0?null:e.id+"-T1");
   for(const lang of ["en","fr"]){
    assert.ok(t.language[lang].visitor.length>=20,"Question too short "+t.id);
