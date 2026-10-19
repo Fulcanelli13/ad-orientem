@@ -1,0 +1,122 @@
+{
+  "schema": "AO_PIUS_X_HISTORICAL_SOURCE_QUESTION_CENSUS_V1",
+  "date": "2026-10-19",
+  "issue": "https://github.com/Fulcanelli13/ad-orientem/issues/1457",
+  "status": "HISTORICAL_QUESTION_REFERENCE_COUNT_AUDIT_NOT_DISTINCT_INTENT_COUNT",
+  "source_collection_counts": {
+    "catechismo_maggiore_1905": {
+      "numbered_questions": 993,
+      "verified_sequential_ranges": [
+        {
+          "name": "Preliminary",
+          "from": 1,
+          "to": 14,
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/lezione-preliminare/",
+          "numbered_question_count": 14,
+          "range_verified_from_museum_section_pages": true
+        },
+        {
+          "name": "Creed",
+          "from": 15,
+          "to": 252,
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+          "numbered_question_count": 238,
+          "range_verified_from_museum_section_pages": true
+        },
+        {
+          "name": "Prayer",
+          "from": 253,
+          "to": 341,
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-seconda-dellorazione/",
+          "numbered_question_count": 89,
+          "range_verified_from_museum_section_pages": true
+        },
+        {
+          "name": "Commandments",
+          "from": 342,
+          "to": 516,
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-terza-dei-comandamenti-di-dio-e-della-chiesa/",
+          "numbered_question_count": 175,
+          "range_verified_from_museum_section_pages": true
+        },
+        {
+          "name": "Sacraments",
+          "from": 517,
+          "to": 855,
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+          "numbered_question_count": 339,
+          "range_verified_from_museum_section_pages": true
+        },
+        {
+          "name": "Virtues and Christian life",
+          "from": 856,
+          "to": 993,
+          "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+          "numbered_question_count": 138,
+          "range_verified_from_museum_section_pages": true
+        }
+      ],
+      "historical_origin": "Pius X prescribed an already regionally approved text with slight modifications, not personally authored all 993 questions",
+      "machine_extracted_full_qas": 0,
+      "source_class": "PAPALLY_APPROVED_CATECHETICAL_TEXT",
+      "crosswalk_to_1912_complete": false
+    },
+    "instruction_on_feasts": {
+      "numbered_questions": 219,
+      "quantity_evidence": "Edizioni San Paolo description 2014 printed Catechismo maggiore with Istruzione sulle Feste",
+      "numbered_range_verified_individually": false,
+      "source_url": "https://www.edizionisanpaolo.it/religione_1/teologia-e-filosofia/i-compendi/libro/catechismo-maggiore.aspx",
+      "museum_index": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/",
+      "source_class": "PAPALLY_APPROVED_CATECHETICAL_FEAST_INSTRUCTION"
+    },
+    "shorter_catechism_1912": {
+      "numbered_questions": 433,
+      "sections_matched": 21,
+      "full_italian_digital_question_texts_parsed": 433,
+      "distinct_normalized_full_question_fingerprints": 433,
+      "identical_question_text_groups": 0,
+      "authenticated_unmodified_1912_print": false,
+      "editorial_1929_marriage_anachronism_hold": true,
+      "source_owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+      "exact_question_text_fingerprint_ledger_parts": [
+        "data/learn/research/pius-x-1912-digital-question-fingerprints-part1-20261019.v1.json",
+        "data/learn/research/pius-x-1912-digital-question-fingerprints-part2-20261019.v1.json"
+      ]
+    },
+    "salzano_manuscript": {
+      "editorial_question_labels": 577,
+      "manuscript_question_numbered_by_sarto": false,
+      "manual_collation_of_all_577": false,
+      "source_url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "editorial_numbering_holds": true
+    }
+  },
+  "reference_sum_all_four": 2222,
+  "separately_preserved_conversation_family_seeds": 64,
+  "if_count_all_historical_references_and_topic_seeds_before_dedup": 2286,
+  "previously_screened_1912_family_classifications": {
+    "DIRECT_CATECHISM_QUESTION": 29,
+    "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES": 10,
+    "RELATED_DOCTRINE_NOT_SAME_QUESTION": 16,
+    "PARTIAL_ANSWER_TO_BROADER_QUESTION": 8,
+    "MISMATCHED_DOCTRINAL_DISTINCTION": 1
+  },
+  "strict_distinct_question_intents_verified": null,
+  "provisional_1912_plus_spx_topic_units_if_all_29_direct_families_collapse_and_remaining_35_add_distinct": 468,
+  "conditional_count_explanation": "433 + (64 - 29) = 468; this is a bookkeeping hypothesis ONLY if 433 original questions are distinct user intents, all 29 DIRECT family titles collapse exactly into one existing intent, and the other 35 each add one independent intent. None of these 3 assumptions has been certified.",
+  "scope_caveats": [
+    "Not 2,222 independent user questions; edition overlap very substantial",
+    "433 unique normalized texts does NOT establish 433 semantically distinct intents",
+    "An identical formula can answer many questions; different wordings may ask the same thing",
+    "Questions with original or approved historical text are not necessarily certified Pius X first-person avatar answers",
+    "Do not import later updated annex prayers as personally written by Pius X",
+    "Authorship and publication gate remains in distinct existing source owners"
+  ],
+  "next_counting_priority": [
+    "Deduplicate 993 long 1905 questions against 433 short 1912 and 577 Salzano",
+    "Individually inspect and count the 219 feast questions, then crosswalk thematic overlap",
+    "Review newly unique 1905 topics absent from 1912 (e.g. unanswered prayer, practical spirituality)",
+    "Extract new noncatechetical intents from personally authored papal writings",
+    "Publish a tested unique-intent count ONLY after reviewed source-text joins"
+  ]
+}
