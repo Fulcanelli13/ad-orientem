@@ -1,0 +1,345 @@
+{
+  "schema": "AO_SPX_BILINGUAL_DOCTRINAL_CONCEPT_PROBE_V1",
+  "date": "2026-10-19",
+  "status": "FROZEN_BEFORE_THEOLOGICAL_CONCEPT_RETRIEVAL_IMPLEMENTATION",
+  "provenance": "Assistant-authored fresh editorial paraphrases, not independent user traffic or source text.",
+  "scoring": {
+    "documented": "Exact original source pointer OR safe abstention, with separate correct/abstention/wrong-source counts.",
+    "unsupported": "No spurious original-document URL. Historical personal judgments and future law not inferred.",
+    "followup": "Only carry a source after explicit visitor-confirmed topic context; do not claim improved conversational capability for mere proposed-topic context."
+  },
+  "counts": {
+    "documented": 28,
+    "negative": 12,
+    "followups": 6,
+    "total": 46,
+    "english": 20,
+    "french": 20
+  },
+  "primary": [
+    {
+      "id": "SPX-CONCEPT-001",
+      "language": "en",
+      "question": "What burden of office did Giuseppe Sarto describe at the beginning of his pontificate?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-01"
+    },
+    {
+      "id": "SPX-CONCEPT-002",
+      "language": "en",
+      "question": "Did the new successor of Leo XIII feel adequate to the supreme pastoral charge?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-01"
+    },
+    {
+      "id": "SPX-CONCEPT-003",
+      "language": "fr",
+      "question": "Comment le successeur de Léon XIII décrit-il le poids de sa nouvelle charge ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-01"
+    },
+    {
+      "id": "SPX-CONCEPT-004",
+      "language": "fr",
+      "question": "Dans ses premiers écrits, Giuseppe Sarto éprouve-t-il de l'appréhension devant le pontificat ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-01"
+    },
+    {
+      "id": "SPX-CONCEPT-005",
+      "language": "en",
+      "question": "Does a sinful suggestion count against me before the will embraces it?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-03"
+    },
+    {
+      "id": "SPX-CONCEPT-006",
+      "language": "en",
+      "question": "Can the mind reject an evil impulse without becoming responsible for it?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-03"
+    },
+    {
+      "id": "SPX-CONCEPT-007",
+      "language": "fr",
+      "question": "Une suggestion mauvaise devient-elle faute avant l'adhésion de la volonté ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-03"
+    },
+    {
+      "id": "SPX-CONCEPT-008",
+      "language": "fr",
+      "question": "Quelle différence entre subir une mauvaise idée et l'accepter librement ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-03"
+    },
+    {
+      "id": "SPX-CONCEPT-009",
+      "language": "en",
+      "question": "How does a passing supernatural impulse differ from the permanent life of God in a soul?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-05"
+    },
+    {
+      "id": "SPX-CONCEPT-010",
+      "language": "en",
+      "question": "Can divine assistance move human freedom rather than abolish it?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-05"
+    },
+    {
+      "id": "SPX-CONCEPT-011",
+      "language": "fr",
+      "question": "Le secours divin pour agir est-il identique à la vie surnaturelle demeurant dans l'âme ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-05"
+    },
+    {
+      "id": "SPX-CONCEPT-012",
+      "language": "fr",
+      "question": "Comment le secours de Dieu respecte-t-il le libre arbitre ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-05"
+    },
+    {
+      "id": "SPX-CONCEPT-013",
+      "language": "en",
+      "question": "What place was given to traditional plainchant in Pius X's musical reform?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-06"
+    },
+    {
+      "id": "SPX-CONCEPT-014",
+      "language": "en",
+      "question": "Could several vocal parts be used reverently in Catholic church music?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-06"
+    },
+    {
+      "id": "SPX-CONCEPT-015",
+      "language": "fr",
+      "question": "Quelle place les mélodies liturgiques traditionnelles tenaient-elles dans la réforme musicale du pape ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-06"
+    },
+    {
+      "id": "SPX-CONCEPT-016",
+      "language": "fr",
+      "question": "Le chant à plusieurs voix était-il nécessairement interdit dans les offices catholiques ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-06"
+    },
+    {
+      "id": "SPX-CONCEPT-017",
+      "language": "en",
+      "question": "Why did the encyclical criticize replacing revealed dogma with subjective experience?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-07"
+    },
+    {
+      "id": "SPX-CONCEPT-018",
+      "language": "en",
+      "question": "Did the Pope see the new theological errors as isolated or as a connected system?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-07"
+    },
+    {
+      "id": "SPX-CONCEPT-019",
+      "language": "fr",
+      "question": "Pourquoi l'encyclique reproche-t-elle aux novateurs de réduire la foi à une expérience intime ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-07"
+    },
+    {
+      "id": "SPX-CONCEPT-020",
+      "language": "fr",
+      "question": "Les erreurs doctrinales dénoncées dans Pascendi formaient-elles un ensemble cohérent ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-07"
+    },
+    {
+      "id": "SPX-CONCEPT-021",
+      "language": "en",
+      "question": "Why was formal religious instruction still needed among grown Catholics?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-08"
+    },
+    {
+      "id": "SPX-CONCEPT-022",
+      "language": "en",
+      "question": "Would occasional preaching alone teach the ordinary faithful the truths of religion?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-08"
+    },
+    {
+      "id": "SPX-CONCEPT-023",
+      "language": "fr",
+      "question": "Les grandes personnes devaient-elles apprendre la doctrine chrétienne au-delà du sermon dominical ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-08"
+    },
+    {
+      "id": "SPX-CONCEPT-024",
+      "language": "fr",
+      "question": "Comment transmettre les rudiments de la foi à des paroissiens déjà adultes ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-08"
+    },
+    {
+      "id": "SPX-CONCEPT-025",
+      "language": "en",
+      "question": "May a child approach the holy table as soon as basic understanding dawns?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-10"
+    },
+    {
+      "id": "SPX-CONCEPT-026",
+      "language": "en",
+      "question": "Must a young communicant master every catechism lesson before receiving the Eucharist for the first time?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-10"
+    },
+    {
+      "id": "SPX-CONCEPT-027",
+      "language": "fr",
+      "question": "Le discernement d'un enfant suffit-il pour être admis à sa première eucharistie ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-10"
+    },
+    {
+      "id": "SPX-CONCEPT-028",
+      "language": "fr",
+      "question": "Un jeune fidèle doit-il réciter tout son catéchisme avant sa première réception du sacrement ?",
+      "kind": "DOCUMENTED",
+      "expected_source_id": "SPX-PILOT-10"
+    },
+    {
+      "id": "SPX-CONCEPT-029",
+      "language": "en",
+      "question": "What exactly did Sarto personally say to his mother during his first night as Pope?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-030",
+      "language": "fr",
+      "question": "Quelles paroles exactes Sarto prononça-t-il en privé devant sa mère au Vatican ?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-031",
+      "language": "en",
+      "question": "Did your recent distractions mean that you no longer possess habitual grace?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-032",
+      "language": "fr",
+      "question": "Puis-je savoir si j'ai perdu la grâce à cause de mes distractions ?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-033",
+      "language": "en",
+      "question": "Is every unhappy thought proof that my soul is damned?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-034",
+      "language": "fr",
+      "question": "Si je ressens des tentations, cela prouve-t-il que je suis en péché mortel ?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-035",
+      "language": "en",
+      "question": "Which choir director in my parish is currently using forbidden music?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-036",
+      "language": "fr",
+      "question": "La chorale actuelle de ma paroisse enfreint-elle aujourd'hui la loi de l'Église ?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-037",
+      "language": "en",
+      "question": "Was it acceptable for every Catholic in 2026 to follow the 1905 fasting rule?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-038",
+      "language": "fr",
+      "question": "Les décrets de 1903 sont-ils la loi universelle actuelle sur la musique de messe ?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-039",
+      "language": "en",
+      "question": "Does an adult parishioner need a sacramental certificate before attending language class?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    },
+    {
+      "id": "SPX-CONCEPT-040",
+      "language": "fr",
+      "question": "Une homélie ordinaire sur l'Eucharistie parle-t-elle de l'âge de raison ?",
+      "kind": "UNSUPPORTED_OR_DIFFERENT_SCOPE",
+      "expected_source_id": null
+    }
+  ],
+  "followups": [
+    {
+      "id": "SPX-CONCEPT-F1",
+      "source_id": "SPX-PILOT-05",
+      "language": "en",
+      "question": "Does this help force the will to act?",
+      "kind": "CONFIRMED_FOLLOWUP"
+    },
+    {
+      "id": "SPX-CONCEPT-F2",
+      "source_id": "SPX-PILOT-03",
+      "language": "fr",
+      "question": "Et si je repousse intérieurement la suggestion ?",
+      "kind": "CONFIRMED_FOLLOWUP"
+    },
+    {
+      "id": "SPX-CONCEPT-F3",
+      "source_id": "SPX-PILOT-07",
+      "language": "en",
+      "question": "Why are these errors presented as one system?",
+      "kind": "CONFIRMED_FOLLOWUP"
+    },
+    {
+      "id": "SPX-CONCEPT-F4",
+      "source_id": "SPX-PILOT-08",
+      "language": "fr",
+      "question": "Le sermon dominical suffisait-il à cette formation ?",
+      "kind": "CONFIRMED_FOLLOWUP"
+    },
+    {
+      "id": "SPX-CONCEPT-F5",
+      "source_id": "SPX-PILOT-06",
+      "language": "fr",
+      "question": "Et les compositions à plusieurs voix ?",
+      "kind": "CONFIRMED_FOLLOWUP"
+    },
+    {
+      "id": "SPX-CONCEPT-F6",
+      "source_id": "SPX-PILOT-10",
+      "language": "en",
+      "question": "Must the child already know everything?",
+      "kind": "CONFIRMED_FOLLOWUP"
+    }
+  ]
+}
