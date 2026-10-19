@@ -75,8 +75,13 @@ for(const [engineName,engine] of Object.entries(engines)){
   }
   // Follow-up uses the actual preceding topic returned by this same router.
   const follow=group.followup;
-  const actual=engine.match(follow.text,{language:'en',currentCharacter:'pius-x',
-    context:{activeTopicId:before.topicId||null}});
+  // The user may confirm a topic only if the source actually matches the pilot.
+  const confirmedBefore=before.kind==='source_navigation'&&before.topicId===intended
+    &&before.documentNavigation?.sourceRef===group.pilot_case_id;
+  const context=confirmedBefore?
+    {activeTopicId:intended,confirmedActiveTopicId:intended}:
+    {activeTopicId:before.topicId||null};
+  const actual=engine.match(follow.text,{language:'en',currentCharacter:'pius-x',context});
   assert.equal(actual.answerText,null);assert.notEqual(actual.kind,'handoff_context');
   rows.push({id:follow.utterance_id,question:follow.text,caseId:group.pilot_case_id,type:'FOLLOW_UP',
    precedingTopic:before.topicId||null,precedingDecision:before.kind,precedingDocumentConfirmedForSimulation:confirmedBefore,
