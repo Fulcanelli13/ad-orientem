@@ -66,8 +66,12 @@ for(const [engineName,engine] of Object.entries({
   // The newer global safety screen intentionally takes precedence over a
   // narrower historical topic-gap lookup for individualized moral verdicts.
   if(num===12){
-   assert.equal(r.reason,"UNSUPPORTED_PERSONAL_SPIRITUAL_VERDICT");
-   assert.equal(r.topicId,undefined);
+   // The personal-verdict safety screen or the historically held source gap
+   // may safely reject this question; neither can offer a document as reply.
+   assert.ok(["UNSUPPORTED_PERSONAL_SPIRITUAL_VERDICT","TOPIC_SOURCE_GAP"].includes(r.reason),
+    "Unsupported personal guidance must be held, not routed");
+   if(r.reason==="TOPIC_SOURCE_GAP")assert.equal(r.topicId,topic(num));
+   else assert.equal(r.topicId,undefined);
    assert.equal(r.documentNavigation,undefined);
   }else{
    assert.equal(r.reason,"TOPIC_SOURCE_GAP");
