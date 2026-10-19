@@ -78,8 +78,8 @@ assert.equal(links,101);
 assert.equal(apolCount,53);
 assert.equal(crCount,10);
 assert.equal(doctrines.metrics.originalPassageCertifications,0);
-assert.equal(passages.records.length,8);
-assert.equal(passages.records.filter(x=>x.crosswalkCandidate.modernNumber).length,6);
+assert.equal(passages.records.length,26);
+assert.equal(passages.records.filter(x=>x.crosswalkCandidate.modernNumber).length,14);
 const passageIds=new Set();
 for(const p of passages.records){
  assert.ok(!passageIds.has(p.passageId));passageIds.add(p.passageId);
@@ -87,6 +87,10 @@ for(const p of passages.records){
  assert.ok(p.doctrineIds.length&&p.doctrineIds.every(id=>subjectIds.has(id)));
  assert.ok(/^https:\/\//.test(p.verifiedSourceUrl));
  assert.equal(p.textCopied,false);
+ assert.equal(p.publisherFacingApproved,false);
+ assert.equal(p.sourceTextVerificationLevel,"LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED");
+ assert.ok(p.sourceWitnesses.length>0);
+ for(const w of p.sourceWitnesses){assert.match(w.url,/^https:\/\//);assert.equal(w.editionAndRightsStatus,"NOT_CERTIFIED_FOR_REPRODUCTION");}
  assert.equal(p.teologicalClaimCertified,undefined);
  assert.equal(p.theologicalClaimCertified,false);
  assert.equal(p.publicationPermission,"NOT_CLEARED");
@@ -96,8 +100,11 @@ for(const p of passages.records){
  }
 }
 assert.equal(passages.metrics.authoritativeFullOriginalPassagesCertified,0);
+assert.equal(passages.editionVerifiedCrosswalks,0);
+assert.equal(passages.metrics.additionalLocatorRecords,18);
+assert.equal(passages.metrics.originalLatinLocatorChecks,passages.records.filter(x=>x.primaryLatinChecked).length);
 // An example of why document authorship cannot be inferred from pontifical approval:
 assert.equal(docs.records.find(x=>x.id==="QUAM-SINGULARI-1910").documentForm,"congregational_decree");
 assert.match(docs.records.find(x=>x.id==="QUAM-SINGULARI-1910").issuer,/Sacred Congregation/);
 assert.equal(docs.records.find(x=>x.id==="SACRA-TRIDENTINA-SYNODUS-1905").documentForm,"congregational_decree");
-console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 101 provisional links; eight nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
+console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 101 provisional links; 26 nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
