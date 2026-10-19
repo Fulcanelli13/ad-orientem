@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-artwork-canonical-reconciliation-v1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "generatedDate": "2026-10-20",
   "scope": "Mass-specific V4.6 donor bank, Mass-relevant core bank roles, modern 19 October candidate studies, reviewed/posture SVGs; excludes unrelated UI/module art",
   "releaseStatus": "RESEARCH_REVIEW_ONLY_NOT_LIVE",
@@ -33,8 +33,8 @@
     "finalComparisonIcons": 16,
     "legacyPermanentlyRejected": 16,
     "byStatus": {
-      "APPROVED_VISUAL": 52,
-      "UNREVIEWED": 39,
+      "APPROVED_VISUAL": 54,
+      "UNREVIEWED": 37,
       "REPURPOSED_OR_PROPOSED": 13,
       "RESERVE_ONLY": 8,
       "REJECTED": 15,
@@ -3548,7 +3548,8 @@
       ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
-        "SECTION_CUE_REVIEW"
+        "SECTION_CUE_REVIEW",
+        "USER_ACCEPTANCE_20261019"
       ],
       "semanticUses": [],
       "flags": [
@@ -3561,9 +3562,15 @@
           "slot": "PRIEST_ACTION_SIGN_OF_CROSS",
           "scope": "CUE_SPECIFIC",
           "cueId": "AO.SM.C0001"
+        },
+        {
+          "phase": "USER_ACCEPTANCE_20261019",
+          "decision": "ACCEPT_VISUAL_MATCH",
+          "slot": "PRIEST_ACTION_SIGN_OF_CROSS",
+          "comment": "Accepted by user in the Opening Prayers review; exact SVG stored on PR #1485."
         }
       ],
-      "status": "UNREVIEWED"
+      "status": "APPROVED_VISUAL"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_blessing",
@@ -3961,14 +3968,23 @@
         "assets/approved/mass-priest-communion/ea_priest_communion_host.svg"
       ],
       "sourceArchive": "PR #1460 approved Mass Communion pair",
-      "sourceDecisionRefs": [],
+      "sourceDecisionRefs": [
+        "USER_ACCEPTANCE_20261019"
+      ],
       "semanticUses": [],
       "flags": [
         "EXISTS_ONLY_IN_UNMERGED_PR_1460",
         "DECISION_NOT_RECONCILED_YET"
       ],
-      "auditTrail": [],
-      "status": "UNREVIEWED"
+      "auditTrail": [
+        {
+          "phase": "USER_ACCEPTANCE_20261019",
+          "decision": "ACCEPT_VISUAL_MATCH",
+          "slot": "PRIEST_COMMUNION_HOST",
+          "comment": "Accepted with the chalice Communion pair; exact SVG retained in unmerged PR #1460."
+        }
+      ],
+      "status": "APPROVED_VISUAL"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ea_priest_communion_chalice",
@@ -4655,5 +4671,8 @@
     "Several modern SVG masters remain only in chat/archive, not checked into GitHub for runtime.",
     "PR #1485 remains a draft registry proposal, not a production release.",
     "CI/browser regression and palette/phone validations have not been rerun for these registry data changes."
+  ],
+  "notes": [
+    "Corrected explicit prior approvals for priest opening Sign of Cross and Host Communion which automatic matching missed."
   ]
 }
