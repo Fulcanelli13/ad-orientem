@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { ACTION_CINEMATIC_BINDINGS, BELL_CUE_BINDINGS, createReaderTransientController, partTransitionCinematic, validateReaderTransientBindings } from "../src/mass/reader-transients.js";
+import { ACTION_CINEMATIC_BINDINGS, BELL_CUE_BINDINGS, CANON_ELEVATION_BELL_PHASES, createReaderTransientController, partTransitionCinematic, resolveCanonStageBellCinematic, validateReaderTransientBindings } from "../src/mass/reader-transients.js";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const events=["../data/mass/mc-events-01.v1.json","../data/mass/mc-events-02.v1.json","../data/mass/mc-events-03.v1.json","../data/mass/mc-events-04.v1.json","../data/mass/mc-events-05.v1.json","../data/mass/mc-events-06.v1.json"].flatMap(path=>load(path).events);
@@ -18,6 +18,64 @@ assert.equal(controller.project("AO.SM.C0145").bell.canonicalEventIds[0],"MC-SAN
 assert.equal(controller.project("AO.SM.C0161").bell.canonicalEventIds[0],"MC-CAN-070");
 assert.deepEqual(controller.project("AO.SM.C0174").bell.canonicalEventIds,["MC-CNS-030","MC-CNS-040"]);
 assert.equal(controller.project("AO.SM.C0174").cinematic.kind,"ELEVATION");
+assert.deepEqual(CANON_ELEVATION_BELL_PHASES["AO.SM.C0174"].map(x=>x.canonicalEventId),
+ ["MC-CNS-030","MC-CNS-040","MC-CNS-040"]);
+assert.deepEqual(CANON_ELEVATION_BELL_PHASES["AO.SM.C0181"].map(x=>x.canonicalEventId),
+ ["MC-CNS-100","MC-CNS-110","MC-CNS-110"]);
+for(const [cueId,phases] of Object.entries(CANON_ELEVATION_BELL_PHASES)){
+ assert.deepEqual(phases.map(x=>x.moment),
+ ["FIRST_GENUFLECTION","ELEVATION","SECOND_GENUFLECTION"]);
+ assert.deepEqual(phases.map(x=>x.status),
+ ["CONDITIONAL_THREE_RING_PATTERN","PRESCRIBED_ELEVATION_WINDOW",
+  "CONDITIONAL_THREE_RING_PATTERN_DISTRIBUTION"]);
+ assert.ok(phases[2].additionalCanonicalSoundEvent===false,
+  "Customary final genuflection ringing must reuse the existing sound event");
+ assert.equal(phases[2].canonicalEventId,phases[1].canonicalEventId,
+  "Three distributed strikes are not four canonical sound-event records");
+ assert.equal(controller.project(cueId).bell.phases,phases,
+   "The source-backed opportunity map must preserve separate genuflection/elevation sound records");
+}
+const expected=controller.project("AO.SM.C0174");
+const before=resolveCanonStageBellCinematic({cueId:"AO.SM.C0174",
+ expectedBell:expected.bell,expectedCinematic:expected.cinematic});
+assert.equal(before.observationOverrides,false);
+assert.equal(before.bell.canonicalEventIds.length,2);
+const observedGenuflection={cueId:"AO.SM.C0174",
+ status:"INDEPENDENT_CANON_STAGE_OBSERVED",observedNow:true,
+ priestAction:{id:"AO.RUB.C0174.01"},bell:null,cinematic:null};
+const first=resolveCanonStageBellCinematic({cueId:"AO.SM.C0174",
+ expectedBell:expected.bell,expectedCinematic:expected.cinematic,
+ observedCanon:observedGenuflection});
+assert.equal(first.observationOverrides,true);
+assert.equal(first.bell,null,"First genuflection cannot claim a server bell");
+assert.equal(first.cinematic,null,"First genuflection cannot animate a Host elevation");
+assert.equal(first.bellOwner,"EXPLICIT_CANON_STAGE_NO_BELL_OBSERVED");
+const raised=resolveCanonStageBellCinematic({cueId:"AO.SM.C0174",
+ expectedBell:expected.bell,expectedCinematic:expected.cinematic,
+ observedCanon:{...observedGenuflection,
+   priestAction:{id:"AO.RUB.C0174.02"},
+   cinematic:{cueId:"AO.SM.C0174",kind:"ELEVATION"}}});
+assert.equal(raised.bell,null,"Observed priest elevation cannot invent simultaneous ringing");
+assert.equal(raised.cinematic.kind,"ELEVATION");
+const ring=resolveCanonStageBellCinematic({cueId:"AO.SM.C0174",
+ expectedBell:expected.bell,expectedCinematic:expected.cinematic,
+ observedCanon:{...observedGenuflection,
+  bell:{cueId:"AO.SM.C0174",id:"AO.RUB.C0174.03"}}});
+assert.equal(ring.bell.id,"AO.RUB.C0174.03",
+  "Only the independently witnessed server bell may appear as observed");
+const settled=resolveCanonStageBellCinematic({cueId:"AO.SM.C0174",
+ expectedBell:expected.bell,expectedCinematic:expected.cinematic,
+ observedCanon:{...observedGenuflection,observedNow:false,status:"NO_ACTIVE_CANON_STAGE"}});
+assert.equal(settled.bell,null,"Bell cannot reappear when a witnessed Canon stage expires");
+assert.equal(settled.cinematic,null,"Elevation focus must expire independently");
+const mismatch=resolveCanonStageBellCinematic({cueId:"AO.SM.C0181",
+ expectedBell:controller.project("AO.SM.C0181").bell,
+ expectedCinematic:controller.project("AO.SM.C0181").cinematic,
+ observedCanon:observedGenuflection});
+assert.equal(mismatch.observationOverrides,false,
+ "A Host observation cannot alter the Chalice source cue");
+assert.equal(controller.project("AO.SM.C0173").bell,null,"Host words must remain bell-free");
+assert.equal(controller.project("AO.SM.C0180").bell,null,"Chalice words must remain bell-free");
 assert.deepEqual(controller.project("AO.SM.C0181").bell.canonicalEventIds,["MC-CNS-100","MC-CNS-110"]);
 assert.equal(controller.project("AO.SM.C0225").bell.canonicalEventIds[0],"MC-COM-185");
 assert.equal(controller.project("AO.SM.C0225").cinematic.kind,"BELL");

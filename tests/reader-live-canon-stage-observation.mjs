@@ -121,8 +121,10 @@ assert.match(native,/observeCanonCeremonyStage,\s*\/\/|observeCanonCeremonyStage
 assert.match(native,/getObservedCanonCeremonyStage/);
 assert.match(native,/clearObservedCanonCeremonyStage/);
 assert.match(native,/observedCanon\?\.priestAction\?\?/);
-assert.match(native,/observedCanon\?\.bell\?\?/);
-assert.match(native,/observedCanon\?\.cinematic\?\?/);
+assert.match(native,/resolveCanonStageBellCinematic\(/);
+assert.match(native,/const bell=canonBellStage\.bell;/);
+assert.match(native,/canonStageBellOverride:canonBellStage\.observationOverrides/);
+assert.match(native,/const cinematic=canonBellStage\.cinematic;/);
 assert.match(native,/clearCanonObservation\(\)/);
 assert.match(native,/current\?\.curatedPresentationReview===true/);
 assert.match(native,/form!=="LIVE"/);

@@ -85,15 +85,39 @@ try{
    assert.equal(await menu.isVisible(),true);
    assert.equal(await page.locator("[data-canon-observe]").count(),5);
    assert.equal(await page.locator("[data-canon-observe='AO.RUB.C0174.02']").isEnabled(),true);
+   // A textual cue offers an EXPECTED bell. Recording the first genuflection
+   // must suppress that inference: no bell has been independently heard and
+   // the priest has not yet performed the elevation.
+   await page.locator("[data-canon-observe='AO.RUB.C0174.01']").click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.canonStageBellOverride===true &&
+     window.__AO_PHONE_PREVIEW.getNativeEventState()?.priestAction?.id==="AO.RUB.C0174.01");
+   const firstStage=await page.evaluate(()=>({
+     bell:window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell,
+     cinematic:window.__AO_PHONE_PREVIEW.getNativeEventState()?.cinematic,
+     bellHidden:document.querySelector('.ao-rail-right [data-channel="bell"]')?.dataset.active,
+   }));
+   assert.equal(firstStage.bell,null,"First genuflection displayed a bell that was not observed");
+   assert.equal(firstStage.cinematic,null,"First genuflection animated the Host elevation");
+   assert.equal(firstStage.bellHidden,"false","Bell icon lingered at genuflection");
    await page.locator("[data-canon-observe='AO.RUB.C0174.02']").click();
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getObservedCanonCeremonyStage()?.lastPriestEventId==="AO.RUB.C0174.02");
    assert.equal(await page.locator("[data-canon-observe='AO.RUB.C0174.01']").isDisabled(),true);
    // Recording a priest elevation cannot create an observed SERVER bell.
    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getObservedCanonCeremonyStage()?.lastServerEventId),null);
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.cinematic?.sourceRubricEventId==="AO.RUB.C0174.02");
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell),null,
+     "Observed priest elevation must not infer a heard bell");
    await page.locator("[data-canon-observe='AO.RUB.C0174.03']").click();
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getObservedCanonCeremonyStage()?.lastServerEventId==="AO.RUB.C0174.03");
    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getObservedCanonCeremonyStage()?.lastPriestEventId),
       "AO.RUB.C0174.02","Server bell advanced priest stage");
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell?.id==="AO.RUB.C0174.03");
+   await page.locator("[data-canon-observe='AO.RUB.C0174.04']").click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.priestAction?.id==="AO.RUB.C0174.04");
+   assert.equal(await page.evaluate(()=>({
+     icon:document.querySelector('.ao-rail-right [data-channel="bell"]')?.dataset.active,
+     source:window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell,
+   }).icon),"false","Prior audible bell stayed visible when Host replaced");
    await page.locator("[data-canon-follow-reset]").click();
    assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getObservedCanonCeremonyStage()?.lastPriestEventId),null);
    assert.equal(await page.locator("[data-canon-observe='AO.RUB.C0174.01']").isEnabled(),true);

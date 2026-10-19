@@ -1653,6 +1653,10 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     attention:moment.attention ?? null,
     attentionIconKey:moment.attentionIconKey ?? null,
     bell:moment.bell ?? null,
+    // A witnessed Canon substage takes priority over the generic source cue.
+    // If the stage is the genuflection or the priest's elevation without a
+    // separately witnessed server bell, do not retain the old bell hold.
+    canonStageBellOverride:moment.canonStageBellOverride===true,
     cinematic:moment.cinematic ?? null,
     cinematicScene:moment.cinematicScene ?? null,
     priestPosition:persist(moment.priestPosition, previous.priestPosition),
@@ -2193,6 +2197,14 @@ export function createReaderDomAdapter({
   }
 
   function displayBell(nextBell){
+    // A separately witnessed Canon stage is not a new bell observation.
+    // Clear any prior bell hold immediately on genuflection/replacement,
+    // even though the underlying C0174/C0181 textual cue has not changed.
+    if(current?.canonStageBellOverride===true && !nextBell){
+      heldBell=null;bellHoldUntil=0;
+      if(bellHoldTimer){clearTimeout(bellHoldTimer);bellHoldTimer=0;}
+      return null;
+    }
     // Never carry a bell icon across a changed source cue. A bell may
     // have a visual hold, but that hold is NOT evidence it was heard.
     if(heldBell && current?.nativeCueId!==undefined &&
