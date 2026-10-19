@@ -75,6 +75,27 @@ for(const [name,engine] of Object.entries(engines)){
   categories,priorWrongSourceRegressionsCorrected:3,answersGenerated:0}));
 }
 
+// The official Postcommunion is already indexed to the Canon's published
+// Guide moment, and must never be replaced by personal thanksgiving.
+for(const engine of Object.values(engines)){
+ for(const [language,question] of [
+  ["en","What is the Postcommunion prayer?"],
+  ["fr","Que signifie l'oraison de postcommunion ?"],
+  ["en","What liturgical prayer is said by the priest after Communion at Mass?"]
+ ]){
+  const result=engine.match(question,{language,currentCharacter:"canon"});
+  assert.equal(result.kind,"source_navigation",question+": "+result.kind);
+  assert.equal(result.topicId,"mass.postcommunion");
+  assert.deepEqual(result.sourceRefs.map(x=>x.ref),["AO.CARD.027"]);
+  assert.equal(result.answerText,null);
+ }
+ const handoff=engine.match("What is the Postcommunion prayer?",{
+   language:"en",currentCharacter:"pius-x"});
+ assert.equal(handoff.kind,"offer_handoff");
+ assert.equal(handoff.targetCharacter,"canon");
+ assert.equal(handoff.requiresAcceptance,true);
+ assert.deepEqual(handoff.sourceRefs.map(x=>x.ref),["AO.CARD.027"]);
+}
 // The hybrid's explicit confirmation must navigate to the ORIGINAL document,
 // never to a generic Catechism page, and reject forged URL payloads.
 const proposed=hybrid.match("May I recite the Rosary at Mass as a faithful member?",
