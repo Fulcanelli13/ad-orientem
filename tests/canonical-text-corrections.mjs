@@ -87,6 +87,25 @@ for(const corpus of [low,sung]){
   }
 }
 
+// Wave 6: the actual Roman Canon grammar must remain complete when
+// the Supplices te rogamus source cues are concatenated in reader order.
+for(const corpus of [low,sung]){
+  const block=corpus.blocks.find(b=>b.Block_ID==="AO.SM.B056");
+  assert.ok(block,"Missing fixed Supplices block");
+  const byId=new Map(block.units.map(x=>[x.cue_id,x]));
+  const get=id=>applyCanonicalTextCorrection("AO.SM.B056",byId.get(id));
+  const grammaticalClause=["AO.SM.C0188","AO.SM.C0189","AO.SM.C0190"]
+    .map(id=>get(id).english).join(" ");
+  assert.match(grammaticalClause,/Body and Blood of Thy Son may be filled with every heavenly blessing and grace/u);
+  assert.ok(!grammaticalClause.includes("Son, may be filled"),
+    "Illegal comma separating Canon dependent subject from predicate");
+  const corrected=get("AO.SM.C0189");
+  assert.equal(corrected.latin,byId.get("AO.SM.C0189").latin,
+    "Editorial English must not change the two Canon consecration cross cues");
+  assert.match(corrected.latin,/Cor ✠ pus, et Sán ✠ guinem/u);
+  assert.equal(corrected.canonicalCorrectionId,"RED-EN-2013-W6-01");
+}
+
 assert.throws(
   ()=>applyCanonicalTextCorrection("AO.SM.BAD",{cue_id:"AO.SM.C0148",latin:"Benedíctus qui venit"}),
   /block ownership changed/
