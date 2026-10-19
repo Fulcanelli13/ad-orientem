@@ -1,0 +1,166 @@
+{
+  "schema": "ao-mass-icon-generation-provenance-v1",
+  "version": "2026-10-19-source-first-lock",
+  "governingPrinciple": "Do not generate any Mass icon until an actual source photograph or historical drawing of the exact action is recorded and the visual rules of the user-approved icon family are identified. Accuracy and harmony outrank coverage.",
+  "baseline": {
+    "bank": "Frozen v1.80 / v4.6 Mass bank plus individually accepted 2026-10-19 review decisions",
+    "originalDonorAssets": "assets/active/mass-v46/",
+    "reviewedPostureAssets": "assets/approved/live-posture/",
+    "referenceMasters": [
+      {
+        "key": "priest_elevate_chalice_rich",
+        "role": "Celebrant silhouette, chalice geometry and composition",
+        "review": "ACCEPT"
+      },
+      {
+        "key": "priest_rail_after_rich",
+        "role": "Celebrant clothing, gesture readability and approved detail level",
+        "review": "ACCEPT"
+      },
+      {
+        "key": "priest_incense_altar_rich",
+        "role": "Ceremonial family proportions and visual weight",
+        "review": "ACCEPT"
+      }
+    ],
+    "minimumComparisonPx": [
+      32,
+      48
+    ],
+    "additionalComparisonPx": [
+      24,
+      64
+    ],
+    "requirements": [
+      "Compare against actual approved donor art, not generated previews or an invented generic sacred-art style.",
+      "Match person anatomy, vestments, pose, viewpoint, composition, edges/stroke, contour, crop, tonal values and optical weight.",
+      "Keep essential object and hand placement clear at 32 and 48 pixels; do not shrink a complicated full church illustration into an icon.",
+      "Do not invent decor, ornate borders, additional candles, colorways or text labels absent from the approved family.",
+      "New visual assets must never overwrite the frozen source icon bank.",
+      "For monochrome UI masks, use true silhouettes or validated scalable vector with runtime theming; don't merely wrap a multicolour painting in SVG."
+    ]
+  },
+  "evidenceRequirements": {
+    "originalPicture": {
+      "required": true,
+      "allowedKinds": [
+        "PHOTOGRAPH",
+        "HISTORICAL_ILLUSTRATION",
+        "DOCUMENTED_DRAWING"
+      ],
+      "fields": [
+        "imageOriginalPath",
+        "sha256",
+        "sourcePageUrl",
+        "sourceImageUrl",
+        "titleOrDescription",
+        "photographerOrArtist",
+        "creatorAttributionStatus",
+        "publisherOrHoldingInstitution",
+        "depictsExactAction",
+        "imageLicenseStatus",
+        "licenseEvidenceUrl"
+      ],
+      "fileRoot": "assets/references/mass-icon-originals/",
+      "rule": "An original image showing the actual ritual action is mandatory; a generated image, search thumbnail, artist prompt or rubric text is not an original picture. Preserve a documented copy and checksum of each original image. Unknown authorship requires explicit attribution status, never an invented name.",
+      "rights": "Before transforming or reproducing any source picture, require documented clearance, suitable license or permission; image visibility is not publishing permission."
+    },
+    "rubricWitness": {
+      "required": true,
+      "canonical": "Missale Romanum 1962, Ritus servandus in celebratione Missae",
+      "url": "https://1962ordo.today/1962-rubrics/",
+      "section": "X — The Lord's Prayer and everything else up to the end of Communion",
+      "rule": "Independently check actor, liturgical action, posture, both hands, vessels, objects, positions and timing. A photograph alone cannot certify 1962 accuracy."
+    },
+    "visualAcceptance": {
+      "required": true,
+      "criteria": [
+        "anatomy",
+        "vestments",
+        "handPlacement",
+        "rubricalObjectHandling",
+        "silhouette32px",
+        "silhouette48px",
+        "bankFamilyConsistency",
+        "actorAndMomentDistinctness"
+      ],
+      "decisionStates": [
+        "PENDING",
+        "REJECTED",
+        "APPROVED"
+      ],
+      "approver": "USER",
+      "rule": "Side-by-side comparison with named, accepted Mass icon masters is required; no internal auto-approval."
+    }
+  },
+  "candidates": [
+    {
+      "id": "EA.PRIEST_COMMUNION_HOST",
+      "cueId": "AO.SM.C0232",
+      "targetAction": "RECEIVES HOST",
+      "status": "BLOCKED_SOURCE_IMAGE_REQUIRED",
+      "originalPictures": [],
+      "rubricalReference": {
+        "section": "X.4",
+        "url": "https://1962ordo.today/1962-rubrics/",
+        "observations": [
+          "Celebrant holds both halves of the Sacred Host and the paten during the preparatory action.",
+          "Celebrant bows and rests his elbows on the altar to receive both halves.",
+          "This is the celebrant's own Communion at the altar, never distribution to a communicant."
+        ]
+      },
+      "matchApprovedKeys": [
+        "priest_elevate_chalice_rich",
+        "priest_rail_after_rich",
+        "priest_incense_altar_rich"
+      ],
+      "userApproval": "PENDING",
+      "familyReview": "PENDING",
+      "asset": null,
+      "note": "Find and verify a real photograph or original documented drawing depicting the priest's own Communion before producing a new icon. Do not use imagery of the priest giving Communion."
+    },
+    {
+      "id": "EA.PRIEST_COMMUNION_CHALICE",
+      "cueId": "AO.SM.C0234",
+      "targetAction": "RECEIVES CHALICE",
+      "status": "BLOCKED_SOURCE_IMAGE_REQUIRED",
+      "originalPictures": [],
+      "rubricalReference": {
+        "section": "X.5",
+        "url": "https://1962ordo.today/1962-rubrics/",
+        "observations": [
+          "After signing himself with the chalice, celebrant holds the chalice with the right hand.",
+          "The paten is held underneath the chalice in his left hand.",
+          "Celebrant consumes the Precious Blood at the altar; this is not the chalice elevation."
+        ]
+      },
+      "matchApprovedKeys": [
+        "priest_elevate_chalice_rich",
+        "priest_rail_after_rich",
+        "priest_incense_altar_rich"
+      ],
+      "userApproval": "PENDING",
+      "familyReview": "PENDING",
+      "asset": null,
+      "note": "Find and verify a real photograph or original documented drawing depicting the celebrant drinking from the chalice while supporting it with the paten."
+    }
+  ],
+  "excludedConcepts": [
+    {
+      "id": "GENERATED_STUDY_20261019_A",
+      "state": "UNSOURCED_CONCEPT_ONLY",
+      "sourceOriginal": null,
+      "releaseEligible": false,
+      "reason": "Generated from description without a specific authenticated original picture; not approved and not part of the frozen icon family."
+    },
+    {
+      "id": "GENERATED_STUDY_20261019_B",
+      "state": "UNSOURCED_CONCEPT_ONLY",
+      "sourceOriginal": null,
+      "releaseEligible": false,
+      "reason": "Second illustrative mockup also lacked an authenticated original picture and approved-family comparison; not a production reference."
+    }
+  ],
+  "releaseRule": "A generated Mass image cannot receive a reader icon key, appear in an approved asset overlay or be merged as production art unless its source originals, source rights, 1962 rubrical details, selected approved donor comparison, pixel-size proof and user approval are all independently satisfied.",
+  "plannedDestination": "assets/generated/mass-icons/"
+}
