@@ -27,7 +27,7 @@ def main() -> int:
     args = parser.parse_args()
     root = args.repo_root.resolve()
     manifest = json.loads((root / MANIFEST).read_text("utf-8"))
-    if manifest["status"] != "ARCHIVE_RECOVERED_VERIFIED_LOCALLY_NOT_YET_IN_GITHUB":
+    if manifest["status"] not in {"ARCHIVE_RECOVERED_VERIFIED_LOCALLY_NOT_YET_IN_GITHUB", "STAGED_VERIFIED_IN_PR_1485"}:
         raise ValueError("Unexpected manifest lifecycle; review before proceeding")
     entries = manifest["entries"]
     if len(entries) != 13:
