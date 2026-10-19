@@ -267,3 +267,25 @@ The benchmark supplies **three explicitly composed EN/FR educational examples** 
 Important editorial change: examples are now drawn from **different personal situations** rather than forcing a catechism formula into every encounter. Do not transfer an 1892 condolence manner mechanically to Church controversies, nor a 1908 papal correction to an anxious child. The differences are contextual reactions of **one** person, not three disconnected artificial personalities.
 
 The authentic early catechetical Mayor–Bortolo document 1087 remains identified in Dieguez, *Carte Pio X*, pp. 390–402, but its full text is still unavailable to this review. The letter-source excerpts likewise remain incomplete, so the benchmark cannot certify exact spontaneous Italian syntax or a statistical fingerprint of his speech.
+
+
+## Expanded Sarto correspondence and eight source-first contrasts (19 October, batch 9)
+
+**Historical source improvement:** The archival review now includes [eleven individually locatable personal/secretariat witnesses](../../data/learn/pius-x-personal-correspondence-evidence.v2.json), mostly Sarto's own drafts and documented marginalia, in addition to the previous [three personal scenarios](../../data/learn/pius-x-personal-voice-benchmark.v1.json). Especially valuable is Sergio M. Pagano's [research on the *Segretariola*](https://parrocchiariesepiox.it/san-pio-x/opinioni-e-news-pio-x/505-gli-inediti-sulla-segretariola-di-pio-x), which reproduces extracts with archive box, protocol and date references from the *Archivio particolare di Pio X*. A separate [1886 letter in Capuchin convent custody](https://www.parrocchiariesepiox.it/san-pio-x/opinioni-e-news-pio-x/314-san-pio-x-e-i-cappuccini-veneti) attests lightly teasing a friend, then requesting prayers. Historical parish sources also reproduce [an earlier vocational caution involving his nephew](https://parrocchiariesepiox.it/san-pio-x?id=9&start=40&view=category) and a [1880 self-assessing letter](https://www.parrocchiariesepiox.it/san-pio-x/opinioni-e-news-pio-x/550-profezie-e-profeti-nella-vita-di-san-pio-x).
+
+**A foundational source distinction:** Sarto sometimes **wrote the draft with his own hand but grammatically in the secretary's third-person voice**, then directed that it be dispatched with Bressan's signature. The original autograph composition, public signer, narrated speaker and final dispatched text must be distinct metadata fields. Neither every Bressan-signed dispatch nor every published Vatican letter is a transparent transcript of what Sarto casually said in person.
+
+**Unexpected anti-hagiographic finding:** In a documented 15 August 1908 reply, he rejected fabricated or unverified edifying anecdotes, including the claim that he went barefoot to school *in order to spare his parents' expense*. This is a hard negative gate for biographical avatar dialogue. The fact that a story flatters him cannot substitute for documentary testimony.
+
+The new [eight EN/FR contrastive evaluation scenarios](../../data/learn/pius-x-personal-voice-contrastive-eval.v1.json) deliberately cover uncertain childhood memories, vocational discernment, parochial rumours, friendly teasing, procedural access, flattering fiction, disputed authorship and immoderate correspondence. Each has a source-specific rationale, a plausible educational response, a **negative counterexample to avoid** and an explicitly unapproved grading state. Example outcomes to look for:
+
+- **Personal life question:** Does the persona resist repeating an undocumented barefoot-childhood story, even when it sounds touching?
+- **Child and vocation:** Does it balance genuine encouragement with the difficult question of discerning a true priestly calling?
+- **A worried acquaintance:** Does it offer sober practical counsel rather than an invented affectionate formula?
+- **A familiar friend:** Can it occasionally show light humour and still request prayers without making humour obligatory?
+- **Source scholarship:** Does it distinguish the Pope's own handwritten draft from a secretary's signature instead of inventing one-to-one authorship?
+- **A long distressed memorial:** Does private impatience *not* turn into insulting an ordinary visitor?
+
+The fixture test only checks source records, example completeness, archival limits, attribution boundaries and the fact that **no example or French/English turn is approved**. It never judges whether dialogue is historically authentic through arbitrary word-count or numerical personality scores. Existing nine topic dialogues and P4's canonical Catechism reader are deliberately untouched.
+
+**Outstanding:** original manuscripts have not been inspected; the complete Mayor–Bortolo dialogue is still not available; much of the supporting wording is reproduced by scholars, not collated from autograph photographs. Full or authoritative modern French/English renditions remain pending. No release or runtime import is permitted.
