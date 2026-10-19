@@ -77,8 +77,7 @@ const req=load("../data/presentation/reader-requiem-absolution.v1.json");
 assert.equal(resolveRiteMusicScene({registry:reg,riteId:"REQUIEM_ABSOLUTION",stageId:"ABS-R05",
   sourcePayload:req}).status,"REQUIRES_CONTEXT");
 assert.equal(resolveRiteMusicScene({registry:reg,riteId:"GENERIC_PROCESSION",stageId:"PROC-R02",
-  sourcePayload:load("../data/presentation/reader-generic-procession.v1.json"),
-  condition:"FEAST_SPECIFIC_SOURCE_REQUIRED"}).status,"NOT_SPECIFIED");
+  sourcePayload:load("../data/presentation/reader-generic-procession.v1.json")}).status,"NOT_SPECIFIED");
 assert.equal(resolveRiteMusicScene({registry:reg,riteId:"NON_EXISTENT",stageId:"x"}).status,"UNAVAILABLE");
 const policy=(args)=>resolve1962OrganPermission(args);
 const status=(args,x)=>assert.equal(policy(args).status,x,JSON.stringify(args));
