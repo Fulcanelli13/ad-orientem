@@ -100,3 +100,40 @@ advertise those as completed.
 
 No merge or release should be inferred from unit tests alone; actual
 phone parity and all required workflows must finish successfully.
+
+
+## Intra-stage reading pages — follow-up implementation
+
+A dedicated display cursor now divides source-owned long ceremony stages *without*
+moving their event controller on ordinary page turns. Backward navigation
+reopens the preceding stage at its final display page. Only active in MISSAL.
+
+**Supported, exact source rows:**
+- Candlemas five blessing orations: introductory V/R and five separate
+  Orémus / complete oration / Amen pages.
+- Ash Wednesday four blessing orations: introduction and four prayers.
+- Rogations: long procession Litany in source-ordered response pairs;
+  concluding ten orations in complete two-prayer page groups. The brief
+  initial Litany remains one page if it fits.
+- Easter Vigil first and second Litanies: twelve intact V/R pairs per page
+  (the 92-line first Litany has four pages).
+- Easter Vigil blessing of baptismal water, in-church or at separate
+  baptistery: source-segment pages, each 1962 prayer/action segment intact.
+
+**Not segmented by guesswork:** the single-row donor Exsultet; Good Friday
+Passion death, Flectamus/Levate and personal veneration; other stages without
+audited source subdivisions. New-fire blessing remains one source-owned
+ceremonial stage. The 390px Chromium acceptance checks actual Candlemas,
+Ash and Easter Vigil page navigation and verifies the original event record
+does not change during an internal page turn.
+
+### Additional P0 language integrity
+
+The recovered Easter Vigil donor's `fr` value for the blessing of the new
+fire, Paschal candle preparation, full Exsultet and Lauds is a *short
+editorial description or excerpt*, not a translation of the full Latin
+source. These strings are now retained solely as metadata under
+`frenchEditorialSummary`; `french` remains null until fully sourced.
+Real reviewed trilingual 1962 baptismal-font prayers, Litanies and
+responses keep their proper French translations. English donor text is
+unchanged. No missing French words have been invented.
