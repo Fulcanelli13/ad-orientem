@@ -612,10 +612,11 @@
     "Resolve existing Mass Explorer canonical AO.CARD and AO.SM.B IDs from approved guide registry before any integration.",
     "Independent theological authority adjudication, printed-edition concordance, and translation licensing remain outstanding.",
     "B7: 28 full Q/A read in modern English plus Italian online transcription; 1912 print facsimile and translation rights pending; no personal authorship inference.",
-    "B8: No original Lefebvre sermon transcription file identified in this PR's recorded repository tree snapshot or PR 1443 question-router files. Only source-owned authenticated sermon IDs can unlock Chanoine bridge."
+    "B8: No original Lefebvre sermon transcription file identified in this PR's recorded repository tree snapshot or PR 1443 question-router files. Only source-owned authenticated sermon IDs can unlock Chanoine bridge.",
+    "B9: Six directly attributable sermon transcriptions linked as source leads; reconcile with parallel Chanoine homily registry before creating an original sermon ID or approving character speech."
   ],
   "catechismFullAnswerCrosswalk": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
-  "researchBatch": "2026-10-19-B8",
+  "researchBatch": "2026-10-19-B9",
   "b8CharacterSermonSourceGate": {
     "subject": "Monsieur le Chanoine — source-owned sermons, not Mass Roman Canon",
     "repository": "Fulcanelli13/ad-orientem",
@@ -636,5 +637,13 @@
     "frenchPrintVerifiedQAsInBridge": 5,
     "original1912ItalianFacsimileVerifiedQAs": 0,
     "characterVoicePermission": false
+  },
+  "b9ChanoinePrimaryWebWitnesses": {
+    "file": "data/learn/magisterium-chanoine-external-sermon-leads.v1.json",
+    "externallyDatedSeromsWithTranscripts": 6,
+    "canonicalHomilyRegistryIdsVerified": 0,
+    "fullAudioCollations": 0,
+    "approvedFirstPersonDialogue": 0,
+    "status": "EXTERNAL_URL_WITNESSES_FOUND_AWAITING_UPSTREAM_CANONICAL_HOMILY_OWNER_MATCH"
   }
 }
