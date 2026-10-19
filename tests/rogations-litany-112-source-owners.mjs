@@ -65,7 +65,7 @@ assert.ok(m.supplementalSourceRows.every(x=>x.reviewQueue),
 assert.equal(m.summary.completeSourceRows,187,
   "Source-owned Oremus is a real invitation before ten complete collects");
 assert.equal(m.supplementalSourceRows.length,75);
-assert.equal(m.summary.fullSourceOrdinaryMatches,21);
+assert.equal(m.summary.fullSourceOrdinaryMatches,22);
 assert.equal(m.summary.fullSourcePrayMatchesWithoutOrdinary,15);
 assert.equal(m.summary.fullSourceOrdinaryMatches,22,
   "Source-owned Rogation collect invitation shares the approved Ordinary Oremus");
@@ -109,7 +109,7 @@ const supplementalReader=built.cards.filter(card=>card.id!=="ROG-R03")
 assert.equal(supplementalReader.length,75);
 assert.deepEqual(m.supplementalSourceRows.map(x=>x.rowId),
   supplementalReader.map(x=>x.id),
-  "The other 74 source leaves must keep exact native 1962 row positions");
+  "The other 75 source leaves must keep exact native liturgical row positions");
 for(let i=0;i<75;i++){
   const indexed=m.supplementalSourceRows[i];
   const sourcePath=indexed.sourceLocator.split("#")[1];
