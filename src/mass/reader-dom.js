@@ -440,6 +440,16 @@ const SHELL_STYLE = `
   text-transform:uppercase;opacity:.52
 }
 .ao-organ-rule-note[hidden]{display:none!important}
+/* One cue-owned priestly-quiet notice, distinct from the audible Schola. */
+.ao-offertory-quiet-note{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  margin:1px auto 11px;max-width:40em;
+  font:500 10px/1.55 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.075em;color:var(--ao-mass-accent-text);
+  text-transform:uppercase;opacity:.87
+}
+.ao-offertory-quiet-note[hidden]{display:none!important}
+.ao-offertory-quiet-note .ao-icon-mask{width:18px;height:18px;flex:0 0 18px}
 .ao-schola-dock[data-active="false"]{display:none}
 /* Retain the manually collapsed SHOW handle between audible Schola cues. */
 .ao-schola-dock[data-active="false"][data-collapsed="true"]{display:block}
@@ -1604,6 +1614,9 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
   const organPermission=Object.prototype.hasOwnProperty.call(moment,"organPermission")
     ? (moment.organPermission??null)
     : moment.cardUpdate===false ? (previous.organPermission??null) : null;
+  const priestQuietOffertory=Object.prototype.hasOwnProperty.call(moment,"priestQuietOffertory")
+    ? (moment.priestQuietOffertory??null)
+    : moment.cardUpdate===false ? (previous.priestQuietOffertory??null) : null;
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
   const sharedScholaControls=moment.sharedScholaControls===true ||
     (moment.cardUpdate===false && previous.sharedScholaControls===true);
@@ -1648,6 +1661,12 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     schola,
     riteMusic,
     organPermission,
+    priestQuietOffertory,
+    // Undefined means a caller did not supply a live source clock.
+    // Explicit null means the native source cue was cleared on card change.
+    nativeCueId:Object.prototype.hasOwnProperty.call(moment,"nativeCueId")
+      ? (moment.nativeCueId??null)
+      : moment.cardUpdate===false ? previous.nativeCueId : undefined,
     // An unresolved sung Benedictus requires a real visible action; never
     // suppress the control just because a *priest* paragraph contains the
     // same words as a Schola part that has NOT yet begun.
@@ -1859,6 +1878,7 @@ export function buildReaderShellMarkup(prepared = {}) {
         <h1 class="ao-prayer-title" data-role="card-title">${section}</h1>
         <p class="ao-rite-music-note" data-role="rite-music" hidden aria-live="off"></p>
         <p class="ao-organ-rule-note" data-role="organ-permission" hidden aria-live="off"></p>
+        <p class="ao-offertory-quiet-note" data-role="priest-quiet-offertory" hidden aria-live="off"><span class="ao-icon-mask" data-icon-slot="priest-quiet-offertory" hidden aria-hidden="true"></span><span data-role="priest-quiet-offertory-label"></span></p>
         <div class="ao-prayer-body" data-role="paragraphs"></div>
       </article>
     </main>
@@ -2172,6 +2192,15 @@ export function createReaderDomAdapter({
   }
 
   function displayBell(nextBell){
+    // Never carry a bell icon across a changed source cue. A bell may
+    // have a visual hold, but that hold is NOT evidence it was heard.
+    if(heldBell && current?.nativeCueId!==undefined &&
+      heldBell.cueId!==current.nativeCueId){
+      heldBell=null;bellHoldUntil=0;
+      if(bellHoldTimer){clearTimeout(bellHoldTimer);bellHoldTimer=0;}
+    }
+    if(nextBell && current?.nativeCueId!==undefined &&
+      nextBell.cueId!==current.nativeCueId)return null;
     if(nextBell){
       heldBell=nextBell;
       const hold=Math.max(0,Number(nextBell.presentationHoldMs)||0);
@@ -3104,6 +3133,18 @@ export function createReaderDomAdapter({
       organNote.setAttribute?.("aria-label",norm
         ? norm.label+". "+norm.description : "Organ norm unavailable");
     }
+    const quietNote=root.querySelector('[data-role="priest-quiet-offertory"]');
+    if(quietNote){
+      const quiet=current.priestQuietOffertory?.sourceOwner==="SUNG_CORPUS_PRIEST_PRIVATE" &&
+        current.priestQuietOffertory?.cueId===current.nativeCueId &&
+        current.priestQuietOffertory?.notAnObservation===true
+          ? current.priestQuietOffertory:null;
+      quietNote.hidden=!quiet;
+      setText(root,"priest-quiet-offertory-label",quiet?.label??"");
+      quietNote.dataset.sourceCueId=quiet?.cueId??"";
+      quietNote.setAttribute?.("aria-label",quiet ? quiet.description : "No private Offertory cue");
+      applyIcon(root,"priest-quiet-offertory",quiet?.iconKey??null,iconResolver);
+    }
     setText(root,"progress",current.progress);
     setText(root,"priest-position",textValue(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition));
     setText(root,"priest-action",textValue(current.priestAction));
@@ -3245,7 +3286,12 @@ export function createReaderDomAdapter({
       cinematic.dataset.kind=kind;
       setText(root,"cinematic-title",visible ? current.cinematic.title : null);
       setText(root,"cinematic-sub",visible ? current.cinematic.subtitle : null);
-      applyIcon(root,"cinematic",visible && kind==="ELEVATION" ? current.priestActionIconKey : null,iconResolver);
+      // Bell cinematics use the APPROVED bell asset, never the default
+      // decorative cross. They belong only to an exact native sound cue.
+      applyIcon(root,"cinematic",visible && kind==="BELL" ? "bells" :
+        visible && kind==="ELEVATION" ? current.priestActionIconKey : null,iconResolver);
+      const fallback=cinematic.querySelector?.(".ao-cinematic-fallback");
+      if(fallback)fallback.hidden=visible && (kind==="BELL"||kind==="ELEVATION");
     }
 
     // The old Guide update used to resurrect the centre tile after each
