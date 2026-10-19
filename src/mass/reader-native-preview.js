@@ -61,7 +61,7 @@ import { createNativeScholaController } from "./reader-schola.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
-import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
+import { createReaderTransientController, partTransitionCinematic, resolveCanonStageBellCinematic } from "./reader-transients.js";
 import { projectPriestQuietOffertory } from "./reader-offertory-quiet.js";
 import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
@@ -1587,8 +1587,16 @@ export async function mountNativeReaderPreview({
     });
     const gesture=focusedFaithful ? focusedFaithful.gesture : transient.gesture;
     const response=transient.response;
-    const bell=observedCanon?.bell??transient.bell;
-    const cinematic=observedCanon?.cinematic??partCinematic??transient.cinematic;
+    // The combined source cue covers five distinct published rubric actions.
+    // After any explicit Canon observation, source focus must not invent a
+    // simultaneous elevation bell or animate the next ceremonial stage.
+    const canonBellStage=resolveCanonStageBellCinematic({
+      cueId:activeCueId,expectedBell:transient.bell,
+      expectedCinematic:partCinematic??transient.cinematic,
+      observedCanon,
+    });
+    const bell=canonBellStage.bell;
+    const cinematic=canonBellStage.cinematic;
     const priestPosition=observedPriest?.priestPosition ??
       (focusedFaithful?.conditionalSedilia
       ? Object.freeze({station:"SEDILIA",label:"AT SEDILIA",
@@ -1688,19 +1696,16 @@ export async function mountNativeReaderPreview({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
       response:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.response,
-      bell:observedCanon?.bell ? "INDEPENDENT_CANON_SERVER_OBSERVATION" :
-        transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : transientProjection.ownership.bell,
-      cinematic:observedCanon?.cinematic
-        ? "INDEPENDENT_CANON_PRIEST_OBSERVATION"
-        : partCinematic
-        ? partCinematic.owner
-        : transientGuard.pending
-          ? "V1_83_CARD_TRANSITION_CLEARED"
-          : eventCinematic
-            ? transientProjection.ownership.cinematic
-            : transientProjection.cinematic
-              ? "R17_CUE_CINEMATIC_CONSUMED"
-              : transientProjection.ownership.cinematic,
+      bell:canonBellStage.observationOverrides
+        ? canonBellStage.bellOwner
+        : transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : transientProjection.ownership.bell,
+      cinematic:canonBellStage.observationOverrides
+        ? canonBellStage.cinematicOwner
+        : partCinematic ? partCinematic.owner
+        : transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED"
+        : eventCinematic ? transientProjection.ownership.cinematic
+        : transientProjection.cinematic ? "R17_CUE_CINEMATIC_CONSUMED"
+        : transientProjection.ownership.cinematic,
       posture:focusedFaithful ? focusedFaithful.source : postureResolved.owner,
       schola:scholaProjection.ownership,
       priestEntrance:priestEntrance.sourceOwner,
@@ -1730,7 +1735,8 @@ export async function mountNativeReaderPreview({
       mode:readerModel?.presentationMode,
       cueId:activeCueId,
       cueNative,
-      cinematic:observedCanon?.cinematic??transient.cinematic,
+      cinematic:canonBellStage.observationOverrides
+        ? canonBellStage.cinematic : transient.cinematic,
       faithfulGesture:focusedFaithful?.gesture??null,
       priestAction,
       priestPosition,
@@ -1774,6 +1780,8 @@ export async function mountNativeReaderPreview({
       bell,
       cinematic,
       cinematicScene,
+      canonStageBellOverride:canonBellStage.observationOverrides,
+      canonStageSoundPhaseOwner:canonBellStage.phaseOwner,
       priestVoice,
       priestQuietOffertory,
       schola:visibleSchola,
