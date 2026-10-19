@@ -35,8 +35,9 @@ assert.equal(restrictedChalice.disposition,"PRIORITY_RIGHTS_LICENSE_AND_FULL_ORI
 assert.equal(restrictedOther.disposition,"EXCLUDE_FROM_1962_HOST_ICON_SOURCE_SHORTLIST");
 assert.equal(restrictedOther.exactHostActionVerified,false);
 assert.equal(restrictedOther.acquireForProduction,false);
-assert.equal(prov.candidates.find(x=>x.id==="EA.PRIEST_COMMUNION_CHALICE")
-  .researchLeads.find(x=>x.id==="CTH49809").visualPreviewInspection.releaseApproved,false);
+assert.equal(prov.discoveryReview.leads.find(x=>x.id==="CTH49809")
+  .visualPreviewInspection.releaseApproved,false,
+  "a preview without full original and rights must not be approved");
 
 assert.ok(index.licensingResearch.every(x=>x.rights==="COPYRIGHT_INDIVIDUAL_LICENSE_REQUIRED" && x.neverAutoDownload===true && x.sourceImageLocallyAcquired===false));
 assert.ok(prov.candidates.every(x=>x.originalPictures.length===0 && x.asset===null));
