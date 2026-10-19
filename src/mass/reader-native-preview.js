@@ -2129,7 +2129,8 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(
+      projected.state.card?.id??projected.state.card?.recordId,projected.moment));
     previewNextRiteStage(projected.state.card,
       controller.cards?.[projected.state.index+1]??null,{
         participating:projected.state.processionParticipant===true ||
@@ -2194,16 +2195,19 @@ export async function mountNativeReaderPreview({
       return showGenericProcession();
     }
     if(inHolyThursdayPost && ready.holyThursdayPostController){
+      if(ritePageCursor.turn("previous"))return showHolyThursdayPost();
       const state=ready.holyThursdayPostController.project();
       if(!state.atStart)ready.holyThursdayPostController.previous();
       return showHolyThursdayPost();
     }
     if(inCorpusChristi && ready.corpusChristiController){
+      if(ritePageCursor.turn("previous"))return showCorpusChristi();
       const state=ready.corpusChristiController.project();
       if(!state.atStart)ready.corpusChristiController.previous();
       return showCorpusChristi();
     }
     if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      if(ritePageCursor.turn("previous"))return showRequiemAbsolution();
       const state=ready.requiemAbsolutionController.project();
       if(!state.atStart)ready.requiemAbsolutionController.previous();
       return showRequiemAbsolution();
@@ -2275,18 +2279,21 @@ export async function mountNativeReaderPreview({
       return showGenericProcession();
     }
     if(inHolyThursdayPost && ready.holyThursdayPostController){
+      if(ritePageCursor.turn("next"))return showHolyThursdayPost();
       const state=ready.holyThursdayPostController.project();
       if(state.atEnd){inHolyThursdayPost=false;return completeFollowingAction();}
       ready.holyThursdayPostController.next();
       return showHolyThursdayPost();
     }
     if(inCorpusChristi && ready.corpusChristiController){
+      if(ritePageCursor.turn("next"))return showCorpusChristi();
       const state=ready.corpusChristiController.project();
       if(state.atEnd){inCorpusChristi=false;return completeFollowingAction();}
       ready.corpusChristiController.next();
       return showCorpusChristi();
     }
     if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      if(ritePageCursor.turn("next"))return showRequiemAbsolution();
       const state=ready.requiemAbsolutionController.project();
       if(state.atEnd){inRequiemAbsolution=false;return completeFollowingAction();}
       ready.requiemAbsolutionController.next();
