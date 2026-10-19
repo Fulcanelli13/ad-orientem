@@ -5,6 +5,8 @@ export const DEVOTIONAL_UX_RULES=Object.freeze({
   bodilyCues:"Modules with real bodily choreography may expose animated posture, gesture or action rails; uncertain local customs must not be invented.",
   groupMode:"Where the source supports communal recitation, Individual / Group presentation is first-class and V./R. ownership remains explicit.",
   mobileAxes:"Vertical movement scrolls the current text; deliberate horizontal swipes move between adjacent cards or stages.",
+  navigationControls:"Use gestures and a direct-jump chapter timeline; avoid Previous/Next arrows unless a specific ritual action requires one. Support keyboard card changes.",
+  progress:"Every finite multi-card devotional reader shows subtle positional progress, never a gamified completion score. Open-ended prayer is not automatically completed.",
   back:"Back returns to the immediate parent screen while preserving in-session module state.",
   home:"Every module page exposes a separate Home action; Home is never an alias for Back.",
   state:"Opening Guide, a nested prayer or a handoff must not silently destroy the parent module state.",
