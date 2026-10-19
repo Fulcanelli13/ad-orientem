@@ -36,7 +36,9 @@ export function auditGeneratedMassIconCandidate(candidate,{registry,sourceIntegr
       blockers.push(prefix+"DOES_NOT_DEPICT_ACTUAL_RITUAL_ACTION");
     if(!RIGHTS.has(p?.imageLicenseStatus)||!validUrl(p?.licenseEvidenceUrl))
       blockers.push(prefix+"RIGHTS_NOT_CLEARED");
-    if(sourceIntegrity[p?.imageOriginalPath]!==p?.sha256)
+    if(!pathIn(p?.imageOriginalPath,SOURCE_ROOT)||
+        !sha256.test(p?.sha256??"")||
+        sourceIntegrity[p?.imageOriginalPath]!==p?.sha256)
       blockers.push(prefix+"SOURCE_FILE_NOT_VERIFIED");
   }
   if(!nonblank(candidate?.rubricalReference?.section)||
