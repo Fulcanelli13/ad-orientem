@@ -663,3 +663,103 @@ The prior 187/22/15/150 exact Latin ownership count is unchanged.
 The genuine translation-*composition* backlog may be much smaller
 than previously assumed, but its release-certified value remains
 unknown until edition/source collation, permission and editorial choice.
+
+
+## 13. Editorial release decision (source rights and 1962 controls, not more discovery)
+
+A bounded **187-row release decision register** now exists at
+`data/mass/rogation-editorial-release-gate.v1.json`, enforced by
+`tests/rogation-editorial-release-gate.mjs` in Missal CI. It takes
+the place of an indefinitely growing translation-source hunt and
+does not pretend that editorial approval has already occurred.
+
+| Current release path | Original Latin rows | Decision |
+| --- | ---: | --- |
+| Internal canonical Ordinary/PRAY Latin formula candidate | **37** | Verify effective EN/FR, owning source and role/voice for reuse; one canonical wording, no new translation |
+| Original 1883 EN / 1862 FR historical editions for source comparison | **142** | Print, edition and target-country rights checks; **not 142 fully equivalent or legally approved bilingual strings** |
+| Processional opening antiphon twice + Psalm 43(44) incipit | **3** | Existing later EN/FR witnesses found, but rights not cleared; seek approved Psalter/chant wording or commission a narrowly bounded original translation |
+| Five 1962-form Litany invocation variants absent from one/both old editions | **5** | Check approved edition-specific translation or request permission; only if none usable author an original translation. Do not use Weller/Ottawa verbatim without permission |
+| **Total** | **187** | **Not one translation automatically approved** |
+
+The 3 opening rows comprise only **2 distinct Latin text passages**;
+the 5 exception rows have some EN historical counterparts. Counts are
+a **priority/risk allocation**, not a count of sentences requiring
+original composition. The number of independently licensed or approved
+translations remains unestablished, not zero. The 187-row total, 22
+Ordinary plus 15 additional PRAY matches, 112 Litany invocations
+and original ceremony graph are unchanged.
+
+### Exact opening-Litany segmentation requires a 1962 decision
+
+The authoritative text-owner passage is **`ROG-R02-1…10`**.
+We now have the following concrete differences in *presented*
+invocations/response turns:
+
+- The photographed earlier *Liber Usualis* p. 835
+  prints `Kyrie–Christe–Kyrie` and `Christe audi nos /
+  Christe exaudi nos` on the chant staff; the printed note to
+  double invocations conflicts with **1962 Rubricae generales §82**.
+- The [Saint-Clément Ottawa 2020 processional booklet
+  p. 1](https://stclement-ottawa.org/wp-content/uploads/2020/04/Litanie-majeure-Procession-et-Messe.pdf)
+  has three opening `Kyrie/Christe` lines and the four Divine
+  invocations with their `miserere nobis` response *on each
+  line*, **but does not have the four separately repeated
+  introductory `Christe audi / exaudi` source rows** found
+  in this donor. The same formulas occur later at the Litany
+  conclusion, which is not the same performance position.
+- [Philip T. Weller's English *Roman Ritual* 1964
+  Part I](https://www.ewtn.com/catholicism/library/roman-ritual-part-i-11882)
+  renders six `Kyrie` caller/answer lines, a **two-line**
+  `Christ, hear us / Christ, graciously hear us` exchange,
+  and four invocation/response pairs. The current Ad Orientem
+  donor splits the opening into **18 source rows**:
+  six Kyrie, **four** Christ audi/exaudi (two copies of
+  each Latin formula), and eight Divine invocations/responses.
+  The three sources therefore are **not independently
+  presentation-row identical**.
+
+**Do not automatically delete, double or merge** any canonical
+R02 row to imitate a later print. First determine the precise
+1962 source form and whether the mismatch is merely
+speaker/response segmentation or genuinely duplicated text.
+Until then the edition and ceremony-source approval remains blocked.
+
+### Copyright and safe source-selection route
+
+The 1883 [Patrick F. Moran original scan](https://en.wikisource.org/wiki/File:The_Catholic_prayer_book.djvu)
+is expressly marked public-domain **in the United States** by
+Wikimedia Commons. It is a promising original-English donor,
+but its historic omissions and edition variants still need
+source-by-source review; United States public-domain labeling
+is not an automatically worldwide app-reuse clearance.
+
+The 1862 Pierre Corneille French prose (Marty-Laveaux edition)
+is an older public-domain **candidate**, with original scan
+and chosen wording to be checked, including transcription
+mistakes and seventeenth-century prose differences. Do not
+confuse source availability with full 1962 text conformity.
+
+Weller prints **Copyright 1964 Philip T. Weller** and
+explicitly credits use of Confraternity Bible passages by license;
+**its English is reference only**, unless rights are granted.
+The French–Latin Ottawa 2020 booklet is accessible, but
+**no licence to redistribute its French in a worldwide
+app has been demonstrated**. Both can be compared
+for edition/semantic equivalence without copying into
+production.
+
+**Release gates:** (1) resolve complete 1962 Latin including
+ROG-R02's 10 ambiguous intro slots and the prior three
+print-variant holds, (2) individually approve effective
+internal EN/FR for 37 exact formulas, (3) facsimile/edition/
+country-rights-check the older sources, (4) source-own the
+five exceptional invocations, (5) resolve the original
+antiphon, Psalms, suffrages, ten collects and conclusions,
+(6) test approved EN/FR within the unchanged
+reader/controller and its phone-based interaction.
+All six are **BLOCKED**; the repository may pass
+structural CI while editorial publication remains blocked.
+
+**No release, no automatically granted permission,
+no manufactured translation gap count, no change
+to 187 canonical source leaves or the LIVE Mass architecture.**
