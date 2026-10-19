@@ -18,8 +18,9 @@ const server=http.createServer(async(req,res)=>{
  try{
   const path=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname));
   if(path!==root&&!path.startsWith(root+sep)){res.writeHead(403);return res.end("Forbidden")}
+  const bytes=await readFile(path);
   res.writeHead(200,{"content-type":mime[extname(path)]||"application/octet-stream","cache-control":"no-store"});
-  res.end(await readFile(path));
+  res.end(bytes);
  }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message||e))}
 });
 await new Promise((ok,reject)=>{server.once("error",reject);server.listen(0,"127.0.0.1",ok)});
