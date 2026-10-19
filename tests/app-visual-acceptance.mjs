@@ -1206,7 +1206,8 @@ try{
     return {
       ...audit,
       recitationButtons:document.querySelectorAll("#aoPray435930 [data-p435930-global-recitation]").length,
-      prayerTitle:document.querySelector("#aoPray435930 .aoP435930LibraryReader .aoDevoCardTitle")?.textContent?.trim()??"",
+      prayerTitle:document.querySelector("#aoPray435930 .aoP435930Head h1")?.textContent?.trim()??"",
+      duplicateHeadings:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoCardHead,.aoP435930LibraryReader .aoDevoCardTitle").length,
       libraryCards:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoCard").length,
       titleStops:document.querySelectorAll("#aoPray435930 .aoP435930LibraryReader .aoDevoStop").length,
       latinHidden:latin?.hidden??null,
@@ -1222,9 +1223,10 @@ try{
   assert.ok(prayReader.fluidUnits>0,"PRAY reader lost fluid focus units");
   assert.equal(prayReader.readerContract,"fluid-v1");
   assert.equal(prayReader.libraryCards,1,"Prayer Library no longer presents a single named prayer card");
-  assert.equal(prayReader.titleStops,1,"Prayer Library lost its named card timeline");
+  assert.equal(prayReader.titleStops,0,"A single prayer must not render an empty one-of-one chapter timeline");
+  assert.equal(prayReader.duplicateHeadings,0,"A single prayer must use the existing page H1, not a repeated card title");
   assert.equal(prayReader.activeFocus,1,"PRAY card reader does not expose exactly one active paragraph");
-  assert.ok(prayReader.prayerTitle.length>0,"PRAY prayer title is blank");
+  assert.ok(prayReader.prayerTitle.length>0,"PRAY single page H1 title is blank");
   assert.notEqual(prayReader.latinHidden,prayReader.vernHidden,"PRAY translation pair does not expose exactly one visible language");
   assert.equal(prayReader.legacyOpen,false,"legacy Prayer Book reopened inside prayer reading");
   await shot("03b-pray-library-prayer");
