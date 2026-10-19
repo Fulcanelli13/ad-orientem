@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {dailyHorizonState,monthlyDevotionalRegister} from "../src/pray/quiet-devotional-progression.js";
+import {devotionalProgressMarkup} from "../src/pray/devotional-progress.js";
 import {MORNING_PRAYER_SEQUENCE_V381,EVENING_PRAYER_SEQUENCE_V381} from "../src/pray/traditional-pray-data.js";
 
 assert.equal(MORNING_PRAYER_SEQUENCE_V381.length,11);
@@ -63,4 +64,26 @@ assert.ok(programme.includes('data-p435930-ff-save'));
 assert.ok(programme.includes('data-p435930-fs-save'));
 assert.ok(css.includes("prefers-reduced-motion:reduce"));
 assert.ok(css.includes('data-ao-traditional-dual-axis="daily"'));
+const english=devotionalProgressMarkup({index:1,total:5,language:"en",unit:"stage"});
+const french=devotionalProgressMarkup({index:5,total:6,language:"fr",unit:"stage"});
+assert.match(english,/aria-valuenow="2"/);
+assert.match(english,/aria-valuemax="5"/);
+assert.match(english,/Stage 2 of 5/);
+assert.match(english,/--ao-devo-progress:40%/);
+assert.match(french,/Étape 6 sur 6/);
+assert.match(french,/--ao-devo-progress:100%/);
+assert.equal(devotionalProgressMarkup({total:0}),"");
+const navStart=programme.indexOf("function programmeNav(");
+const navEnd=programme.indexOf("function programmeSummary(",navStart);
+assert.ok(navStart>=0&&navEnd>navStart,"First devotion stage-navigation owner missing");
+const programmeNavOwner=programme.slice(navStart,navEnd);
+assert.ok(!programmeNavOwner.includes("-prev")&&!programmeNavOwner.includes("-next"),
+ "First Friday/Saturday should use swipe or stage rail, not Prev/Next");
+assert.ok(programmeNavOwner.includes("data-p435930-program-home"),"Preserve explicit final exit");
+assert.ok(programme.includes("devotionalProgressMarkup({index:step,total:items.length"),
+ "First Friday/Saturday progress must be bound to the exact current stage");
+assert.ok(programme.includes("view==='firstFriday'||view==='firstSaturday'"),
+ "Both programmes must accept keyboard card navigation");
+const programmeStyles=readFileSync("src/pray/devotional-card-deck-styles.js","utf8");
+assert.match(programmeStyles,/aoP435930ProgrammeNavShell/,"Stage progress must remain visible with its navigation rail");
 console.log("PASS quiet devotion: 11/13 canonical cards, painterly five-phase horizon, 9/5 opt-in monthly register, real record boundaries");
