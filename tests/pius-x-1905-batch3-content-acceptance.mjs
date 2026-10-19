@@ -10,6 +10,8 @@ const batch2=load(path+"pius-x-batch2-production-index-20261019.v1.json");
 const old2=new Set(batch2.entries.map(x=>x.id));
 const pilot=load(path+"pius-x-ten-conversation-content-pilot-20261019.v1.json");
 const oldPilot=new Set(pilot.episodes.map(x=>x.id));
+const research=load(path+"pius-x-p0-p1-intent-evidence-bridge-20261019.v1.json");
+const unproducedIdeas=new Set(research.provisional_mined_families.map(x=>x.id));
 const url="https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-seconda-dellorazione/";
 assert.equal(manifest.schema,"AO_SPX_1905_LONG_CATECHISM_BATCH3_PRODUCTION_V1");
 assert.equal(manifest.status,"FIFTY_DRAFT_FAMILIES_NO_INDEPENDENT_APPROVAL");
@@ -69,14 +71,19 @@ assert.equal(manifest.counts.approvals,0);
 assert.equal(manifest.counts.published,0);
 assert.equal(manifest.counts.certifiedDistinctIntents,0);
 assert.equal(manifest.possibleOverlapsWithinBatch.length,23);
-assert.equal(manifest.possibleOverlapsWithPriorBatches.length,10);
+assert.equal(manifest.possibleOverlapsWithPriorBatchesOrResearch.length,10);
+assert.equal(manifest.counts.priorWavePotentialOverlapRefs,8);
+assert.equal(manifest.counts.existingResearchSeedOverlapRefs,2);
 for(const o of manifest.possibleOverlapsWithinBatch){
  assert.ok(o.ids.length===2&&o.ids.every(id=>ids.has(id)));
  assert.equal(o.duplicateConfirmed,false);
 }
-for(const o of manifest.possibleOverlapsWithPriorBatches){
+for(const o of manifest.possibleOverlapsWithPriorBatchesOrResearch){
  assert.ok(ids.has(o.newId));
- assert.ok(old1.has(o.previousId)||old2.has(o.previousId)||oldPilot.has(o.previousId));
+ const produced=old1.has(o.previousId)||old2.has(o.previousId)||oldPilot.has(o.previousId);
+ const researchOnly=unproducedIdeas.has(o.previousId)&&!produced;
+ assert.ok(produced||researchOnly,"Unresolved overlap referent "+o.previousId);
+ assert.equal(o.previousScope,produced?"PRIOR_BATCH_OR_PILOT_DRAFT":"SOURCE_RESEARCH_SEED_NOT_DRAFTED");
  assert.equal(o.status,"POTENTIAL_OVERLAP_NOT_CONFIRMED");
 }
 console.log("PASS SPX_1905_BATCH3 "+JSON.stringify({...totals,newExactLongCatechismAnchorIds:questions.size,sourceWitness:"1905_MUSEUM_PRAYER_253_341",overlapCandidates:33,certified:0,publicRuntime:0}));
