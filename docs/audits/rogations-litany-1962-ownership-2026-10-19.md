@@ -35,8 +35,8 @@ Mass Proper is a separate textual owner and ceremony from the Litany.**
 ## 2. Source-level inventory and identity preservation
 
 The existing reader has **186 original Latin source rows** across
-six native ceremonial cards (the seventh section is Mass handoff with
-no liturgical text). These are **one source corpus**, without copied
+five text-bearing native ceremonial cards, followed by a sixth card
+for Mass handoff with no liturgical text. These are **one source corpus**, without copied
 words in this audit:
 
 | Native stage | Source leaf count | Content / responsibility |
@@ -105,10 +105,9 @@ source text.
 The dedicated acceptance gate
 `tests/rogations-litany-112-source-owners.mjs` checks all 186 original
 Latin source strings against the native reader, stage ownership and
-source order. It preserves the two James positions, seven separate
-source segments (6 printed Litany group families and accompanying
-Psalm, suffrages and collects), non-doubling rule, and separate Mass
-handoff.
+source order. It preserves the two James positions, six Litany invocation groups,
+the additional Psalm, suffrages and ten collects, the non-doubling
+rule, and the separate Mass handoff.
 
 ## 4. Next gate: remaining archival collation, not translation
 
