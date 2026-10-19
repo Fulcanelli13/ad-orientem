@@ -1,6 +1,6 @@
 {
   "schema": "ao.mass.ordo-missae.red-missal.english-editorial.v1",
-  "status": "29_APPROVED_ENGLISH_151_REVIEWED_EQUIVALENT_3_PARTIAL_73_UNREVIEWED",
+  "status": "32_APPROVED_ENGLISH_202_REVIEWED_EQUIVALENT_3_PARTIAL_19_UNREVIEWED",
   "source": {
     "title": "Latin–English Booklet Missal for Praying the Traditional Mass",
     "publisher": "Coalition in Support of Ecclesia Dei",
@@ -404,6 +404,33 @@
       "decision": "REMOVE_SUBJECT_VERB_COMMA_IN_SUPPLICES",
       "authority": "ENGLISH_GRAMMAR",
       "status": "APPROVED_SIXTH_WAVE"
+    },
+    {
+      "id": "AO.SM.C0272",
+      "correctionId": "RED-EN-2013-W7-01",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "decision": "MORE_FAITHFUL_JOHN_1_12_DID_EIS_POTESTATEM",
+      "authority": "ENGLISH_EDITORIAL",
+      "status": "APPROVED_SEVENTH_WAVE"
+    },
+    {
+      "id": "AO.SM.C0273",
+      "correctionId": "RED-EN-2013-W7-02",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "decision": "KEEP_FLESH_GENOUFLECT_CUE_BUT_RESTORE_COMMA",
+      "authority": "ENGLISH_EDITORIAL",
+      "status": "APPROVED_SEVENTH_WAVE"
+    },
+    {
+      "id": "AO.SM.C0274",
+      "correctionId": "RED-EN-2013-W7-03",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "decision": "CONTINUOUS_LAST_GOSPEL_CLAUSE_AFTER_GENUFLECTION",
+      "authority": "ENGLISH_EDITORIAL",
+      "status": "APPROVED_SEVENTH_WAVE"
     }
   ],
   "unresolvedTranslationDecisions": [
@@ -1859,6 +1886,414 @@
       "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
       "scope": "Wave 6 fixed Ordo Missae, Latin/English comparison of printed Canon and Communion prayers. English accurately conveys the same Latin prayer; differences are stylistic or punctuation-level.",
       "latinSource": "Missale Romanum 1962 is controlling; Red Missal used as preferred English witness, not an independent authority for rubrics."
+    },
+    {
+      "cueId": "AO.SM.C0070",
+      "bookletPdfPage": 18,
+      "bookletPrintedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PRE_COLLECT_RESPONSES — English opening dialogue reviewed against Red booklet Collect sequence; separate variable Collect Proper excluded.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0071",
+      "bookletPdfPage": 18,
+      "bookletPrintedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PRE_COLLECT_RESPONSES — English opening dialogue reviewed against Red booklet Collect sequence; separate variable Collect Proper excluded.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0072",
+      "bookletPdfPage": 18,
+      "bookletPrintedPage": 17,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PRE_COLLECT_RESPONSES — English opening dialogue reviewed against Red booklet Collect sequence; separate variable Collect Proper excluded.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0079",
+      "bookletPdfPage": 20,
+      "bookletPrintedPage": 19,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "GOSPEL_PREPARATION — Munda cor meum and Gospel invitation/source text reviewed directly; variable Gospel reading remains outside fixed Ordinary.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0080",
+      "bookletPdfPage": 20,
+      "bookletPrintedPage": 19,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "GOSPEL_PREPARATION — Munda cor meum and Gospel invitation/source text reviewed directly; variable Gospel reading remains outside fixed Ordinary.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0082",
+      "bookletPdfPage": 20,
+      "bookletPrintedPage": 19,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "GOSPEL_PREPARATION — Munda cor meum and Gospel invitation/source text reviewed directly; variable Gospel reading remains outside fixed Ordinary.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0083",
+      "bookletPdfPage": 20,
+      "bookletPrintedPage": 19,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "GOSPEL_PREPARATION — Munda cor meum and Gospel invitation/source text reviewed directly; variable Gospel reading remains outside fixed Ordinary.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0084",
+      "bookletPdfPage": 20,
+      "bookletPrintedPage": 19,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "GOSPEL_PREPARATION — Munda cor meum and Gospel invitation/source text reviewed directly; variable Gospel reading remains outside fixed Ordinary.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0085",
+      "bookletPdfPage": 20,
+      "bookletPrintedPage": 19,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "GOSPEL_PREPARATION — Munda cor meum and Gospel invitation/source text reviewed directly; variable Gospel reading remains outside fixed Ordinary.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0135",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0136",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0137",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0138",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0139",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0140",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0141",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0142",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0143",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0145",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0146",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0147",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0148",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0149",
+      "bookletPdfPage": 30,
+      "bookletPrintedPage": 29,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "PREFACE_DIALOGUE_AND_SANCTUS — Red booklet printed p29: traditional Preface responses and Sanctus/Benedictus; preserve sanctioned 1962 Latin crosses and no duplicate Benedictus card.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0238",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "OPTIONAL_LOCAL_COMMUNION_RESPONSES — English response collated on booklet printed p45. 2013 source explicitly states the preceding second Confiteor is omitted in the 1962 Missal; these words stay conditional local/older variant, not normative.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0239",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "OPTIONAL_LOCAL_COMMUNION_RESPONSES — English response collated on booklet printed p45. 2013 source explicitly states the preceding second Confiteor is omitted in the 1962 Missal; these words stay conditional local/older variant, not normative.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0240",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "OPTIONAL_LOCAL_COMMUNION_RESPONSES — English response collated on booklet printed p45. 2013 source explicitly states the preceding second Confiteor is omitted in the 1962 Missal; these words stay conditional local/older variant, not normative.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0241",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "OPTIONAL_LOCAL_COMMUNION_RESPONSES — English response collated on booklet printed p45. 2013 source explicitly states the preceding second Confiteor is omitted in the 1962 Missal; these words stay conditional local/older variant, not normative.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0242",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "FAITHFUL_COMMUNION_ABLUTIONS — Priest's/faithful Communion prayers and ablutions compared against printed English p45. Existing translation faithful; triple Domine non sum dignus repetitions remain exact.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0243",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "FAITHFUL_COMMUNION_ABLUTIONS — Priest's/faithful Communion prayers and ablutions compared against printed English p45. Existing translation faithful; triple Domine non sum dignus repetitions remain exact.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0244",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "FAITHFUL_COMMUNION_ABLUTIONS — Priest's/faithful Communion prayers and ablutions compared against printed English p45. Existing translation faithful; triple Domine non sum dignus repetitions remain exact.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0245",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "FAITHFUL_COMMUNION_ABLUTIONS — Priest's/faithful Communion prayers and ablutions compared against printed English p45. Existing translation faithful; triple Domine non sum dignus repetitions remain exact.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0246",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "FAITHFUL_COMMUNION_ABLUTIONS — Priest's/faithful Communion prayers and ablutions compared against printed English p45. Existing translation faithful; triple Domine non sum dignus repetitions remain exact.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0247",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "FAITHFUL_COMMUNION_ABLUTIONS — Priest's/faithful Communion prayers and ablutions compared against printed English p45. Existing translation faithful; triple Domine non sum dignus repetitions remain exact.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0248",
+      "bookletPdfPage": 46,
+      "bookletPrintedPage": 45,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "FAITHFUL_COMMUNION_ABLUTIONS — Priest's/faithful Communion prayers and ablutions compared against printed English p45. Existing translation faithful; triple Domine non sum dignus repetitions remain exact.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0251",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0252",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0253",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0257",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0258",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0259",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0260",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0261",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0264",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0265",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0266",
+      "bookletPdfPage": 48,
+      "bookletPrintedPage": 47,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "DISMISSAL_FINAL_BLESSING — Red printed p47. Existing English is faithful; Mass form-specific dismissal and blessing remains governed by 1962 rubrics. Placeat tibi's 'propitiation' is directly supported by Latin propitiabile.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0267",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "LAST_GOSPEL — Red printed p49. Gospel preface, Johannine text and Deo gratias reviewed; retained appropriate translated text. Last Gospel kneel word and its adjacent cue are source-corrected separately.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0268",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "LAST_GOSPEL — Red printed p49. Gospel preface, Johannine text and Deo gratias reviewed; retained appropriate translated text. Last Gospel kneel word and its adjacent cue are source-corrected separately.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0269",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "LAST_GOSPEL — Red printed p49. Gospel preface, Johannine text and Deo gratias reviewed; retained appropriate translated text. Last Gospel kneel word and its adjacent cue are source-corrected separately.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0270",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "LAST_GOSPEL — Red printed p49. Gospel preface, Johannine text and Deo gratias reviewed; retained appropriate translated text. Last Gospel kneel word and its adjacent cue are source-corrected separately.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0271",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "LAST_GOSPEL — Red printed p49. Gospel preface, Johannine text and Deo gratias reviewed; retained appropriate translated text. Last Gospel kneel word and its adjacent cue are source-corrected separately.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
+    },
+    {
+      "cueId": "AO.SM.C0275",
+      "bookletPdfPage": 50,
+      "bookletPrintedPage": 49,
+      "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
+      "scope": "LAST_GOSPEL — Red printed p49. Gospel preface, Johannine text and Deo gratias reviewed; retained appropriate translated text. Last Gospel kneel word and its adjacent cue are source-corrected separately.",
+      "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
     }
   ],
   "partiallyReviewed": [
@@ -1976,5 +2411,68 @@
       "Roman Canon Latin overlay corrected independently"
     ],
     "reviewScope": "Source-specific English editorial reading, not formal total Latin/facsimile or Android field certification"
+  },
+  "wave7": {
+    "source": "Red Missal 2013 scanned pages 18, 20, 30, 46, 48, 50, Latin of Last Gospel checked against page 49",
+    "newCorrections": [
+      "AO.SM.C0272",
+      "AO.SM.C0273",
+      "AO.SM.C0274"
+    ],
+    "newlyRetained": [
+      "AO.SM.C0070",
+      "AO.SM.C0071",
+      "AO.SM.C0072",
+      "AO.SM.C0079",
+      "AO.SM.C0080",
+      "AO.SM.C0082",
+      "AO.SM.C0083",
+      "AO.SM.C0084",
+      "AO.SM.C0085",
+      "AO.SM.C0135",
+      "AO.SM.C0136",
+      "AO.SM.C0137",
+      "AO.SM.C0138",
+      "AO.SM.C0139",
+      "AO.SM.C0140",
+      "AO.SM.C0141",
+      "AO.SM.C0142",
+      "AO.SM.C0143",
+      "AO.SM.C0145",
+      "AO.SM.C0146",
+      "AO.SM.C0147",
+      "AO.SM.C0148",
+      "AO.SM.C0149",
+      "AO.SM.C0238",
+      "AO.SM.C0239",
+      "AO.SM.C0240",
+      "AO.SM.C0241",
+      "AO.SM.C0242",
+      "AO.SM.C0243",
+      "AO.SM.C0244",
+      "AO.SM.C0245",
+      "AO.SM.C0246",
+      "AO.SM.C0247",
+      "AO.SM.C0248",
+      "AO.SM.C0251",
+      "AO.SM.C0252",
+      "AO.SM.C0253",
+      "AO.SM.C0257",
+      "AO.SM.C0258",
+      "AO.SM.C0259",
+      "AO.SM.C0260",
+      "AO.SM.C0261",
+      "AO.SM.C0264",
+      "AO.SM.C0265",
+      "AO.SM.C0266",
+      "AO.SM.C0267",
+      "AO.SM.C0268",
+      "AO.SM.C0269",
+      "AO.SM.C0270",
+      "AO.SM.C0271",
+      "AO.SM.C0275"
+    ],
+    "unresolvedScope": "Ceremonial-only cues cannot be certified by English text collation; Ab illo benedicaris not witnessed clearly in booklet; second optional Confiteor requires separate historical source coverage.",
+    "preserved1962Policy": "The 2013 booklet explicitly states the second Confiteor before Communion is omitted in the 1962 Missal; never make this normative."
   }
 }
