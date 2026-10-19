@@ -11,7 +11,7 @@ import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { projectPostureAwareMissalCards } from "./reader-missal-posture-pages.js";
-import {specialRiteNextPosture,showSpecialRiteMissalPostureHint,specialRiteVernacular} from "./reader-special-missal-pages.js";
+import {specialRiteNextPosture,showSpecialRiteMissalPostureHint,specialRiteVernacular,createSpecialRiteMissalPageCursor} from "./reader-special-missal-pages.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -567,10 +567,28 @@ export async function mountNativeReaderPreview({
   root.style.cssText="position:fixed;inset:0;z-index:2147483100;background:#080c12;";
   const host=doc.createElement("div");
   host.style.cssText="position:absolute;inset:0;";
+  const ritePageCursor=createSpecialRiteMissalPageCursor({
+    mode:prepared?.readerPreferences?.mode??"LIVE",
+  });
+  // A reading subpage is not another ceremony event. The existing rite
+  // controller advances only after its final display page was explicitly read.
+  function presentationRitePage(stageId,moment){
+    const page=ritePageCursor.project(stageId,moment?.paragraphs??[]);
+    if(!page.isExtraPage)return moment;
+    return Object.freeze({...moment,
+      id:String(moment.id)+".PAGE."+String(page.pageIndex+1),
+      paragraphs:page.paragraphs,cardUpdate:true,
+      progress:String(moment.progress??"")+" · "+
+        (String(prepared?.readerPreferences?.language??"en").startsWith("fr")?"Page ":"Page ")+
+        String(page.pageIndex+1)+" / "+String(page.totalPages),
+    });
+  }
   function previewNextRiteStage(currentStage,nextStage,{participating=false}={}){
     const language=prepared?.readerPreferences?.language??"en";
+    const active=ritePageCursor.snapshot();
+    const beforeFinalPage=active.pageIndex+1<active.totalPages;
     const hint=specialRiteNextPosture({
-      current:currentStage,next:nextStage,
+      current:currentStage,next:beforeFinalPage?null:nextStage,
       mode:host.querySelector?.("[data-ao-reader-shell]")?.dataset.mode??
         prepared?.readerPreferences?.mode??"LIVE",
       participating,language,
