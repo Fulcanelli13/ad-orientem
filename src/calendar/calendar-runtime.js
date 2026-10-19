@@ -375,6 +375,7 @@ function hydrateMonthCell(id){
   const data=monthCellData(id);
   cell.style.setProperty("--month-accent",data.accent);
   cell.dataset.ready=data.ready?"1":"0";
+  cell.dataset.preview=data.preview?"1":"0";
   cell.dataset.rankTier=String(data.tier);
   cell.dataset.cycle=data.cycle;
   cell.classList.toggle("sunday",data.sunday);
