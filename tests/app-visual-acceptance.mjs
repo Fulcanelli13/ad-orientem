@@ -260,6 +260,14 @@ try{
     upcoming:document.querySelectorAll('.homeScreen .aoTodayV2Tabs [data-home-calendar-view="picker"]').length,
     upcomingDates:document.querySelectorAll('.homeScreen .aoTodayV2CalendarGlance [data-home-calendar-date]').length,
     contextHeight:document.querySelector(".homeScreen .aoTodayV2SeasonMicro")?.getBoundingClientRect().height??0,
+    seasonControlStyle:(()=>{
+      const el=document.querySelector(".homeScreen .aoTodayV2SeasonMicro");
+      if(!el)return null;
+      const st=getComputedStyle(el),parent=getComputedStyle(el.parentElement);
+      return {height:st.height,minHeight:st.minHeight,display:st.display,visibility:st.visibility,
+        transform:st.transform,zoom:st.zoom,parentDisplay:parent.display,parentTransform:parent.transform,
+        rect:el.getBoundingClientRect().toJSON(),clientRects:el.getClientRects().length};
+    })(),
     horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-document.documentElement.clientWidth),
     massEntry:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
     obsoleteYearWheel:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
@@ -276,7 +284,7 @@ try{
   assert.equal(homeParity.year,1,"The season link must still open the canonical Liturgical Year");
   assert.equal(homeParity.upcoming,1,"The header Month tab replaces redundant Coming next CTA");
   assert.ok(homeParity.upcomingDates>=1,"Upcoming dates must preserve Calendar Day entry");
-  assert.ok(homeParity.contextHeight>=44,"The compact season control must meet the 44px touch target");
+  assert.ok(homeParity.contextHeight>=44,"The compact season control must meet the 44px touch target: "+JSON.stringify(homeParity.seasonControlStyle));
   assert.ok(homeParity.horizontalOverflow<=1,"Home decluttering introduced horizontal overflow");
   assert.equal(homeParity.massEntry,1,"Home does not expose a canonical Follow Mass entry");
   assert.equal(homeParity.obsoleteYearWheel,0,"Calendar dashboard leaked onto Home");
