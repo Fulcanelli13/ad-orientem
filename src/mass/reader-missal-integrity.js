@@ -89,3 +89,26 @@ export function auditMissalPageIntegrity(original,presented){
     textWitnessOwner:"UNMODIFIED_ORIGINAL_PARAGRAPH_REFERENCES",
     originalSourceAuthority:original.sourceAuthorityModel??null});
 }
+
+/** Source 30-card Mass → prayer-granular Missal must be text-identical,
+ * including optional Proper insertions that have no ordinary B-block. */
+export function auditMissalGranularityIntegrity(source,presentation){
+  if(!Array.isArray(source?.cards)||!Array.isArray(presentation?.cards))
+    throw new TypeError("Canonical source and Missal presentation required");
+  const original=source.cards.flatMap(rows);
+  const displayed=presentation.cards.flatMap(rows);
+  if(original.length!==displayed.length)
+    fail("GRANULAR_SOURCE_PARAGRAPH_COUNT:"+original.length+":"+displayed.length);
+  for(let i=0;i<original.length;i++){
+    if(original[i]!==displayed[i])fail("GRANULAR_PARAGRAPH_LOST_OR_REORDERED:"+i+":"+original[i]?.id);
+  }
+  const blocksFromSource=source.cards.flatMap(blocks).map(b=>b.blockId);
+  const blocksFromMissal=presentation.cards.flatMap(blocks).map(b=>b.blockId);
+  if(JSON.stringify(blocksFromSource)!==JSON.stringify(blocksFromMissal))
+    fail("GRANULAR_BLOCK_MISSING_DUPLICATED_OR_REORDERED");
+  const idSet=new Set(presentation.cards.map(c=>String(c.sectionId)));
+  if(idSet.size!==presentation.cards.length)fail("GRANULAR_DUPLICATE_NAV_IDS");
+  return Object.freeze({verified:true,canonicalCards:source.cards.length,
+    missalPages:presentation.cards.length,paragraphs:original.length,
+    sourceBlocks:blocksFromSource.length});
+}
