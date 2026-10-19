@@ -20,8 +20,8 @@ assert.equal(new Set(geography.places.map(x=>x.place_id)).size,geography.places.
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,sources.sources.length);
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrineCorpus,sources:sources.sources,places:geography.places}).pass,true);
-assert.equal(heritage.place_crosswalk.length,261);
-assert.deepEqual(new Set(geography.places.slice(0,261).map(p=>p.place_id)),new Set(heritage.place_crosswalk.map(r=>r.place_id)),"R87 may add new sites but must preserve all 261 original identities");
+assert.equal(heritage.place_crosswalk.length,294);
+assert.deepEqual(new Set(geography.places.map(p=>p.place_id)),new Set(heritage.place_crosswalk.map(r=>r.place_id)),"R87 must extend independent review crosswalk without removing old Places");
 const siteById = new Map(geography.places.map(p=>[p.place_id,p]));
 const sourceById = new Map(sources.sources.map(s=>[s.id,s]));
 for(const row of release.published_new) {
