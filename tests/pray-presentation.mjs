@@ -97,6 +97,17 @@ assert.ok(devotionalUx.groupCapable.includes("pray.stations"));
 assert.ok(devotionalUx.swipeCapable.includes("programme.first_saturday"));
 
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
+const singleLibrary=runtime.slice(runtime.indexOf("function renderLibrary()"),runtime.indexOf("function renderStations()",runtime.indexOf("function renderLibrary()")));
+const directPrayer=runtime.slice(runtime.indexOf("function renderPrayerOnly("),runtime.indexOf("let prayerReturnView=",runtime.indexOf("function renderPrayerOnly(")));
+const libraryFocus=runtime.slice(runtime.indexOf("function installLibraryParagraphFocus("),runtime.indexOf("function render(){",runtime.indexOf("function installLibraryParagraphFocus(")));
+assert.ok(singleLibrary.includes('data-ao-library-card="single"'),"Prayer Library lost single-card identity");
+assert.ok(directPrayer.includes('data-ao-library-card="single"'),"Direct prayer lost single-card identity");
+assert.ok(!singleLibrary.includes('class="aoDevoCardHead"'),"Prayer Library repeats the primary page title");
+assert.ok(!directPrayer.includes('class="aoDevoCardHead"'),"Direct prayer repeats its page title");
+assert.ok(libraryFocus.includes('chapters:[{id,title}]'),"Source-owned library reading-focus adapter removed");
+assert.ok(libraryFocus.includes('?.remove()'),"One-card progress timeline must be discarded");
+assert.ok(libraryFocus.includes('MutationObserver'),"Bilingual prayer focus updates must remain");
+
 const litanyModule=runtime.slice(runtime.indexOf("function renderLitany()"),runtime.indexOf("async function ensureSevenWords()"));
 const sevenWordsModule=runtime.slice(runtime.indexOf("function renderSevenWords()"),runtime.indexOf("const FORTY_STAGES="));
 for(const [owner,module,final] of [
