@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-artwork-canonical-reconciliation-v1",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "generatedDate": "2026-10-20",
   "scope": "Mass-specific V4.6 donor bank, Mass-relevant core bank roles, modern 19 October candidate studies, reviewed/posture SVGs; excludes unrelated UI/module art",
   "releaseStatus": "RESEARCH_REVIEW_ONLY_NOT_LIVE",
@@ -44,7 +44,7 @@
       "REPURPOSE_UNASSIGNED": 2
     },
     "records": 135,
-    "missingRepoArtworks": 31,
+    "missingRepoArtworks": 18,
     "distinctPhysicalContentStatus": "ONLY VERIFIED GIT BLOB DEDUP; modern archive hashes unconfirmed"
   },
   "artworks": [
@@ -3306,10 +3306,12 @@
       "id": "AO.ICON.STUDY.20261019.ao_elevation_chalice",
       "family": "modern-20261019",
       "key": "ao_elevation_chalice",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "32afba18d3527b9930e1219b30d92efed48a1949",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_elevation_chalice.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08",
@@ -3317,8 +3319,7 @@
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3339,7 +3340,8 @@
           "scope": "ARTWORK_PRESERVATION_ONLY"
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "b0916c29748ca983200424db968cc5b9110a3ed2bcf610be8a3a4f7976f28d08"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_adoration",
@@ -3373,10 +3375,12 @@
       "id": "AO.ICON.STUDY.20261019.ao_incensation",
       "family": "modern-20261019",
       "key": "ao_incensation",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "0228ef13b6c89a8e9933a81046b839677b09d783",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_incensation.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08",
@@ -3384,8 +3388,7 @@
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3406,7 +3409,8 @@
           "scope": "ARTWORK_PRESERVATION_ONLY"
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "5c8f30bffad11e645816c82154a92e8b5cc54b5a94c3c62e2921a11251ff34f6"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_read",
@@ -3442,10 +3446,12 @@
       "id": "AO.ICON.STUDY.20261019.ao_pray_audible",
       "family": "modern-20261019",
       "key": "ao_pray_audible",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "0edd6ef41032d7a784f4ee4cd8dfc66e25535c2a",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_pray_audible.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08",
@@ -3453,8 +3459,7 @@
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3475,24 +3480,26 @@
           "scope": "ARTWORK_PRESERVATION_ONLY"
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_pray_silent",
       "family": "modern-20261019",
       "key": "ao_pray_silent",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "e994a091f4fee988040648183cf92a14a6c0db10",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_pray_silent.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3505,24 +3512,26 @@
           "secondary": false
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_chant",
       "family": "modern-20261019",
       "key": "ao_chant",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "2f188f5cbb8c4b6c67245c567a4b76b587c78e69",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_chant.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.FINAL_COMPARISON.01"
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3534,7 +3543,8 @@
           "scope": "ARTWORK_PRESERVATION_ONLY"
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "e2247df3cdddf4abbebc5f334ae42eb35a7deb072ef4d863ca715c6b956f1980"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_sign_of_cross",
@@ -3576,10 +3586,12 @@
       "id": "AO.ICON.STUDY.20261019.ao_blessing",
       "family": "modern-20261019",
       "key": "ao_blessing",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "0a894499e8411d47f5d48393828e92625dcb13d6",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_blessing.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08",
@@ -3587,8 +3599,7 @@
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3609,7 +3620,8 @@
           "scope": "ARTWORK_PRESERVATION_ONLY"
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "7b9666029a140671ff254325f527cb251e8d381e01601ab47de446a963c38953"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_communion_give_host",
@@ -3705,10 +3717,12 @@
       "id": "AO.ICON.STUDY.20261019.ao_drink_chalice",
       "family": "modern-20261019",
       "key": "ao_drink_chalice",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "d9e276ffc9509d73b08cb7603a47aacf6f160b11",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_drink_chalice.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08",
@@ -3716,8 +3730,7 @@
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3738,24 +3751,26 @@
           "scope": "ARTWORK_PRESERVATION_ONLY"
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "91b7c5ca554826cd81f75afca2572a6e43a22c12cb6c0ce25b6b37d8d42d245a"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_purify_fingers",
       "family": "modern-20261019",
       "key": "ao_purify_fingers",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "7b4f109c0aa6c798f25997c59eb09985c1846e0f",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_purify_fingers.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3768,24 +3783,26 @@
           "secondary": false
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_purify_chalice",
       "family": "modern-20261019",
       "key": "ao_purify_chalice",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "04a925d0c0cd1032f2f71d48244be758fb39d95d",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_purify_chalice.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3798,24 +3815,26 @@
           "secondary": false
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_place_on_altar",
       "family": "modern-20261019",
       "key": "ao_place_on_altar",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "12d9c820e6aee46b6bd2a4ca61bead3901de9fd8",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_place_on_altar.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3828,7 +3847,8 @@
           "secondary": false
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "38ad2c6f3cb317052b58116435def64664d6e206b5e1572828ab215733e62db4"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_at_epistle_side",
@@ -3894,10 +3914,12 @@
       "id": "AO.ICON.STUDY.20261019.ao_at_altar_centre",
       "family": "modern-20261019",
       "key": "ao_at_altar_centre",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "19e4aa658230b8dcd56b7f8929b4bc0b09101265",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ao_at_altar_centre.svg"
+      ],
       "sourceArchive": "ad_orientem_21_individual_icons.zip",
       "sourceDecisionRefs": [
         "SECTION_CUE_REVIEW",
@@ -3905,8 +3927,7 @@
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -3925,7 +3946,8 @@
           "scope": "ARTWORK_PRESERVATION_ONLY"
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "c3a91d2b1c2fdaf89a39a656b1bbe6526f8cc7c85987e07dccf841b4ce319213"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_turn_to_people",
@@ -4020,18 +4042,19 @@
       "id": "AO.ICON.STUDY.20261019.ea_priest_fraction_host",
       "family": "modern-20261019",
       "key": "ea_priest_fraction_host",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "3bae0970175772666efa423c04454c71b79aef34",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ea_priest_fraction_host.svg"
+      ],
       "sourceArchive": "2026-10-19 batch 2 SVG studies",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -4044,24 +4067,26 @@
           "secondary": false
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ea_priest_commingling",
       "family": "modern-20261019",
       "key": "ea_priest_commingling",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
-      "paths": [],
+      "repoContentSha": "8c583ec2433948872fb623cc01ed7dde4959b1f1",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/recovered-20261020/ea_priest_commingling.svg"
+      ],
       "sourceArchive": "2026-10-19 batch 2 SVG studies",
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
       "semanticUses": [],
       "flags": [
-        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
-        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
       "auditTrail": [
         {
@@ -4074,7 +4099,8 @@
           "secondary": false
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "sourceSha256": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa"
     },
     {
       "id": "AO.ICON.STUDY.20261019.ea_priest_purifies_fingers",
@@ -4673,6 +4699,7 @@
     "CI/browser regression and palette/phone validations have not been rerun for these registry data changes."
   ],
   "notes": [
-    "Corrected explicit prior approvals for priest opening Sign of Cross and Host Communion which automatic matching missed."
+    "Corrected explicit prior approvals for priest opening Sign of Cross and Host Communion which automatic matching missed.",
+    "Thirteen 19 October accepted modern SVG masters are now verified by exact Git blob SHA and staged under assets/review/mass-icon-candidates/recovered-20261020/."
   ]
 }
