@@ -341,10 +341,10 @@ assert.doesNotMatch(browser, /L\("Year index","Repères"\)/, "redundant Year Ind
 assert.doesNotMatch(browser, /function indexSurface\(/, "obsolete Year Index implementation remains active");
 assert.match(browser, /MONTH_INDEX_VIEWS=new Set\(\["calendar","major","temporale","sanctorale","practices"\]\)/, "Month did not retain Calendar/Major/Temporale/Sanctorale/Practices projections");
 assert.match(browser, /data-cal-month-view/, "Month secondary navigation is missing");
-assert.match(browser, /\["practices",L\("Practices","Pratiques"\)\]/, "Month Practices tab disappeared");
+assert.match(browser, /\["calendar",L\("All","Tout"\)\]/, "Unified Month All filter missing");
 assert.match(browser, /calendarPracticeMonthEntries/, "Month Practices stopped consuming shared Calendar Intelligence");
 assert.match(browser, /function monthIndexEntries\(monthId,view\)/, "Month index projections are missing");
-assert.match(browser, /if\(next==="index"\).*calendarMonthView="major"/, "legacy Year Index route no longer redirects to Month\/Major");
+assert.match(browser, /if\(next==="index"\).*calendarMonthView="calendar"/, "Legacy Year Index route must redirect to unified Month");
 assert.match(browser, /function monthGridIds\(monthId\)/, "Calendar lost its 42-cell month geometry");
 assert.match(browser, /function prepareMonth\(monthId,\{concurrency=3/, "Calendar month preload lost its bounded resolver concurrency");
 assert.match(browser, /data-cal-liturgical-marker/, "Calendar month cells lost semantic liturgical markers");
