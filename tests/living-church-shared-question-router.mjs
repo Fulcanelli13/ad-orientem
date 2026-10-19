@@ -73,7 +73,7 @@ for(const topic of registry.topics){
   }else throw Error("Unrecognised source owner "+source.owner);
  }
 }
-assert.equal(registry.pilotLimits.curatedTopicRelationships,47);
+assert.equal(registry.pilotLimits.curatedTopicRelationships,77);
 assert.equal(registry.pilotLimits.relationshipsAreDoctrinalImplications,false);
 assert.equal(registry.policy.relatedTopicDoesNotAuthoriseNewClaim,true);
 let relationCount=0;
@@ -85,7 +85,12 @@ for(const t of registry.topics){
   relationCount++;
  }
 }
-assert.equal(relationCount,47);
+assert.equal(relationCount,77);
+for(const topic of registry.topics.filter(t=>t.category==="canon_church_crisis_unpublished")){
+ assert.equal(topic.sourceRefs.length,0);
+ assert.equal(topic.coverage,"SOURCE_GAP");
+ for(const rel of topic.relatedTopics||[])assert.equal(rel.publication,"RELATIONSHIP_RESEARCH_ONLY");
+}
 for(const t of registry.topics.filter(t=>t.category==="canon_apologetics_unpublished")){
  assert.equal(t.coverage,"SOURCE_GAP");
  assert.equal(t.sourceRefs.length,0);
