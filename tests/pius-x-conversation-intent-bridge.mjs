@@ -58,4 +58,35 @@ for (const row of topicReview.records) {
 assert.equal(hits, topicReview.counts.with_possible_short_catechism_topic_overlap);
 assert.equal(topicReview.counts.approved_same_intent_merges, 0);
 
+
+const first24 = JSON.parse(readFileSync('data/learn/research/pius-x-p1-first24-italian-text-review-20261019.v1.json','utf8'));
+const next40 = JSON.parse(readFileSync('data/learn/research/pius-x-p1-next40-italian-text-review-20261019.v1.json','utf8'));
+const editionHold = JSON.parse(readFileSync('data/learn/research/pius-x-1912-catechism-edition-discrepancy-hold-20261019.v1.json','utf8'));
+const directReviews = [...first24.records,...next40.records];
+assert.equal(first24.records.length,24);
+assert.equal(next40.records.length,40);
+assert.deepEqual(directReviews.map(x=>x.id),seeds.map(x=>x.id), 'every existing SPX seed retains an ordered review');
+const classifications = new Map();
+for (const row of directReviews) {
+  const candidateIds = row.candidate_references.map(x=>x.qid);
+  assert.ok(candidateIds.every(q=>known.has(q)), 'full-text review must link only existing short Catechism identities');
+  assert.equal(candidateIds.length, new Set(candidateIds).size);
+  assert.equal(row.classification_is_provisional ?? row.provisional, true);
+  assert.equal(row.published_answer_approved ?? row.answered_for_visitors, false);
+  assert.equal(row.original_print_facsimile_collated ?? row.facsimile_1912_verified, false);
+  classifications.set(row.classification,(classifications.get(row.classification)||0)+1);
+}
+assert.deepEqual(Object.fromEntries([...classifications].sort()), {
+  DIRECT_CATECHISM_QUESTION:29,
+  MISMATCHED_DOCTRINAL_DISTINCTION:1,
+  NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES:10,
+  PARTIAL_ANSWER_TO_BROADER_QUESTION:8,
+  RELATED_DOCTRINE_NOT_SAME_QUESTION:16
+});
+assert.equal(next40.records.find(x=>x.id==='SPX-057').classification, 'MISMATCHED_DOCTRINAL_DISTINCTION');
+assert.equal(editionHold.status,'HOLD_SOURCE_WITNESS_REQUIRES_EDITION_COLLATION');
+assert.ok(editionHold.confirmed_text_questions.some(x=>x.qid==='PX1912-Q409'));
+assert.ok(editionHold.confirmed_text_questions.some(x=>x.qid==='PX1912-Q410'));
+assert.equal(editionHold.independent_source_review_required,true);
+
 console.log('Pius X P0/P1 research-only bridge: 433 canonical QIDs, 64 provisional seeds, no content approval');
