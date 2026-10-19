@@ -1,0 +1,1138 @@
+{
+  "schema": "AO_LIVING_CHURCH_SHARED_QUESTION_ROUTING_PILOT_V1",
+  "created": "2026-10-19",
+  "state": "RESEARCH_ONLY_NOT_IN_APP",
+  "sourceOfTruth": "Existing 433-question Catechism / Mass Explorer / Glossary; no duplicated answers",
+  "owners": {
+    "pius-x": {
+      "name": "St Pius X",
+      "expertise": "His approved Catechism, encyclicals, sermons and documented writings",
+      "navigateTo": "learn.catechism",
+      "sourceOwner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+      "releaseGate": "CURRENT_P4_REFERENCES_ONLY"
+    },
+    "canon": {
+      "name": "Monsieur le Chanoine",
+      "expertise": "Mass ceremonial meaning, theology and apologetics",
+      "navigateTo": "learn.mass_explorer",
+      "sourceOwner": "MASS_EXPLORER_PUBLISHED_GUIDE",
+      "releaseGate": "RESEARCH_NAVIGATION_ONLY"
+    },
+    "sacristan": {
+      "name": "The Sacristan",
+      "expertise": "Physical liturgical objects and sanctuary preparation",
+      "navigateTo": "learn.glossary",
+      "sourceOwner": "GLOSSARY_CONCEPTS_SOT_V1",
+      "releaseGate": "ORIGINAL_GLOSSARY_ONLY"
+    }
+  },
+  "topics": [
+    {
+      "id": "faith.real_presence",
+      "character": "pius-x",
+      "title": {
+        "en": "The Real Presence",
+        "fr": "Présence réelle"
+      },
+      "questionVariants": {
+        "en": [
+          "what happens to the bread at mass",
+          "is the host really jesus",
+          "what is the host after consecration",
+          "does bread remain after consecration"
+        ],
+        "fr": [
+          "que devient le pain à la messe",
+          "l'hostie est-elle vraiment jésus",
+          "que devient l'hostie après la consécration"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q325",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q329",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "faith.whole_christ",
+      "character": "pius-x",
+      "title": {
+        "en": "The whole Christ under either species",
+        "fr": "Le Christ tout entier sous chaque espèce"
+      },
+      "questionVariants": {
+        "en": [
+          "is the blood of christ present in the host",
+          "is jesus whole in the host",
+          "body and blood under one species"
+        ],
+        "fr": [
+          "le sang du christ est-il présent dans l'hostie",
+          "le christ est-il tout entier sous une espèce"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q331",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "sacraments.communion_disposition",
+      "character": "pius-x",
+      "title": {
+        "en": "Disposition for Holy Communion",
+        "fr": "Dispositions pour la communion"
+      },
+      "questionVariants": {
+        "en": [
+          "how should i prepare to receive communion",
+          "what disposition should i have for communion",
+          "how should i approach the eucharist"
+        ],
+        "fr": [
+          "comment se préparer à la communion",
+          "avec quelles dispositions recevoir l'eucharistie"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q338",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "mary.intercession",
+      "character": "pius-x",
+      "title": {
+        "en": "Our Lady and the saints' intercession",
+        "fr": "Intercession de Notre-Dame et des saints"
+      },
+      "questionVariants": {
+        "en": [
+          "why ask our lady to pray for us",
+          "why pray to mary if christ is enough",
+          "why do catholics ask saints for prayers"
+        ],
+        "fr": [
+          "pourquoi invoquer la sainte vierge",
+          "pourquoi prier marie si le christ suffit",
+          "pourquoi invoquer les saints"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q430",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q433",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "church.papal_infallibility",
+      "character": "pius-x",
+      "title": {
+        "en": "Papal infallibility",
+        "fr": "Infaillibilité pontificale"
+      },
+      "questionVariants": {
+        "en": [
+          "can the pope make mistakes",
+          "when is the pope infallible",
+          "is everything the pope says infallible"
+        ],
+        "fr": [
+          "le pape peut-il se tromper",
+          "quand le pape est-il infaillible",
+          "toutes les paroles du pape sont-elles infaillibles"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q116",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "faith.definition",
+      "character": "pius-x",
+      "title": {
+        "en": "The theological virtue of faith",
+        "fr": "La vertu théologale de foi"
+      },
+      "questionVariants": {
+        "en": [
+          "what is faith",
+          "why do catholics believe what god has revealed",
+          "what does the catechism mean by faith"
+        ],
+        "fr": [
+          "qu'est-ce que la foi",
+          "pourquoi croyons-nous ce que dieu révèle"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q232",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "church.tradition",
+      "character": "pius-x",
+      "title": {
+        "en": "Apostolic Tradition",
+        "fr": "La Tradition apostolique"
+      },
+      "questionVariants": {
+        "en": [
+          "what is sacred tradition",
+          "what is tradition in the church",
+          "why is tradition important"
+        ],
+        "fr": [
+          "qu'est-ce que la tradition",
+          "quelle est la tradition de l'église"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q235",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "penance.contrition",
+      "character": "pius-x",
+      "title": {
+        "en": "Perfect contrition",
+        "fr": "Contrition parfaite"
+      },
+      "questionVariants": {
+        "en": [
+          "what is perfect contrition",
+          "what makes sorrow for sins perfect",
+          "is shame the same as contrition"
+        ],
+        "fr": [
+          "qu'est-ce que la contrition parfaite",
+          "la honte est-elle la contrition",
+          "pourquoi regretter ses péchés"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q363",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "penance.examination",
+      "character": "pius-x",
+      "title": {
+        "en": "Examination of conscience",
+        "fr": "Examen de conscience"
+      },
+      "questionVariants": {
+        "en": [
+          "how do i examine my conscience",
+          "what should i examine before confession",
+          "what is an examination of conscience"
+        ],
+        "fr": [
+          "comment faire son examen de conscience",
+          "que faut-il examiner avant la confession"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q359",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "penance.confession",
+      "character": "pius-x",
+      "title": {
+        "en": "Sacrament of Penance",
+        "fr": "Sacrement de pénitence"
+      },
+      "questionVariants": {
+        "en": [
+          "what is confession",
+          "what is the sacrament of penance",
+          "why confess sins"
+        ],
+        "fr": [
+          "qu'est-ce que la confession",
+          "qu'est-ce que le sacrement de pénitence"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q355",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "morals.occasions_of_sin",
+      "character": "pius-x",
+      "title": {
+        "en": "Occasions of sin",
+        "fr": "Occasions de péché"
+      },
+      "questionVariants": {
+        "en": [
+          "must i avoid occasions of sin",
+          "why avoid occasions of sin",
+          "is it necessary to flee temptation"
+        ],
+        "fr": [
+          "faut-il fuir les occasions de péché",
+          "dois-je éviter les occasions de péché"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q371",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "morals.reputation",
+      "character": "pius-x",
+      "title": {
+        "en": "Truth and another person's reputation",
+        "fr": "Vérité et réputation du prochain"
+      },
+      "questionVariants": {
+        "en": [
+          "can gossip be sinful even if it is true",
+          "what is detraction",
+          "when is speaking the truth wrong"
+        ],
+        "fr": [
+          "est-ce de la médisance si c'est vrai",
+          "qu'est-ce que la médisance",
+          "peut-on nuire à la réputation en disant la vérité"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q206",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q207",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "christ.poverty",
+      "character": "pius-x",
+      "title": {
+        "en": "Why Christ embraced poverty",
+        "fr": "Pourquoi le Christ choisit la pauvreté"
+      },
+      "questionVariants": {
+        "en": [
+          "why did jesus choose to be poor",
+          "why was christ poor",
+          "what does christ's poverty teach"
+        ],
+        "fr": [
+          "pourquoi jésus voulut-il être pauvre",
+          "que nous enseigne la pauvreté du christ"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1",
+          "ref": "PX1912-Q085",
+          "evidence": "QUESTION_LOCATOR_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "limitations": [
+        "DOES_NOT_ANSWER_FAMILY_LIVELIHOOD_PERMISSION"
+      ]
+    },
+    {
+      "id": "mass.elevation",
+      "character": "canon",
+      "title": {
+        "en": "The elevation of the consecrated Host",
+        "fr": "L'élévation de la sainte Hostie"
+      },
+      "questionVariants": {
+        "en": [
+          "why is the host elevated",
+          "why does the priest show us the consecrated host",
+          "why is the host lifted after consecration"
+        ],
+        "fr": [
+          "pourquoi le prêtre élève-t-il l'hostie",
+          "pourquoi montre-t-on l'hostie consacrée"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
+          "ref": "learn.mass_explorer",
+          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "mass.altar_reverence",
+      "character": "canon",
+      "title": {
+        "en": "Reverence shown to the altar",
+        "fr": "La révérence envers l'autel"
+      },
+      "questionVariants": {
+        "en": [
+          "why does the priest kiss the altar",
+          "why kiss the altar",
+          "what does the altar kiss mean"
+        ],
+        "fr": [
+          "pourquoi le prêtre baise-t-il l'autel",
+          "que signifie le baiser de l'autel"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
+          "ref": "learn.mass_explorer",
+          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "mass.colors_meaning",
+      "character": "canon",
+      "title": {
+        "en": "Meaning of liturgical colours",
+        "fr": "Signification des couleurs liturgiques"
+      },
+      "questionVariants": {
+        "en": [
+          "what do liturgical colours mean",
+          "why does the church use different liturgical colours",
+          "what do the colours signify at mass"
+        ],
+        "fr": [
+          "que signifient les couleurs liturgiques",
+          "pourquoi différentes couleurs à la messe"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
+          "ref": "learn.mass_explorer",
+          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "mass.gestures_meaning",
+      "character": "canon",
+      "title": {
+        "en": "Meaning of the Mass gestures",
+        "fr": "Sens des gestes liturgiques"
+      },
+      "questionVariants": {
+        "en": [
+          "why does the priest make these gestures",
+          "why does the priest genuflect",
+          "what is the meaning of genuflection at mass"
+        ],
+        "fr": [
+          "pourquoi le prêtre fait-il ces gestes",
+          "pourquoi le prêtre fait-il la génuflexion"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
+          "ref": "learn.mass_explorer",
+          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "mass.roman_canon",
+      "character": "canon",
+      "title": {
+        "en": "The Roman Canon",
+        "fr": "Le Canon romain"
+      },
+      "questionVariants": {
+        "en": [
+          "what is the roman canon",
+          "why is the canon silent",
+          "why does the priest pray the canon quietly"
+        ],
+        "fr": [
+          "qu'est-ce que le canon romain",
+          "pourquoi le canon est-il dit à voix basse"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
+          "ref": "learn.mass_explorer",
+          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "mass.offertory",
+      "character": "canon",
+      "title": {
+        "en": "The Offertory",
+        "fr": "L'offertoire"
+      },
+      "questionVariants": {
+        "en": [
+          "what happens at the offertory",
+          "what is the offertory for",
+          "why are bread and wine offered"
+        ],
+        "fr": [
+          "que se passe-t-il à l'offertoire",
+          "pourquoi offrir le pain et le vin"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
+          "ref": "learn.mass_explorer",
+          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "mass.gospel_ceremony",
+      "character": "canon",
+      "title": {
+        "en": "The Gospel at Mass",
+        "fr": "L'Évangile à la messe"
+      },
+      "questionVariants": {
+        "en": [
+          "why do we stand for the gospel",
+          "why does the priest move for the gospel",
+          "what happens at the gospel"
+        ],
+        "fr": [
+          "pourquoi se lève-t-on à l'évangile",
+          "que se passe-t-il à l'évangile"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
+          "ref": "learn.mass_explorer",
+          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
+    },
+    {
+      "id": "objects.pall",
+      "character": "sacristan",
+      "title": {
+        "en": "The chalice pall",
+        "fr": "La pale du calice"
+      },
+      "questionVariants": {
+        "en": [
+          "what is the square on top of the chalice",
+          "what is the small square over the chalice",
+          "what is a pall",
+          "why put the pall on the chalice"
+        ],
+        "fr": [
+          "qu'est-ce que la pale",
+          "quel carré couvre le calice",
+          "à quoi sert la pale sur le calice"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G189",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "LN03"
+      ]
+    },
+    {
+      "id": "objects.chalice",
+      "character": "sacristan",
+      "title": {
+        "en": "The chalice",
+        "fr": "Le calice"
+      },
+      "questionVariants": {
+        "en": [
+          "what is a chalice",
+          "what does the chalice hold",
+          "show me the chalice"
+        ],
+        "fr": [
+          "qu'est-ce qu'un calice",
+          "à quoi sert le calice"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G190",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "SV01"
+      ]
+    },
+    {
+      "id": "objects.paten",
+      "character": "sacristan",
+      "title": {
+        "en": "The paten",
+        "fr": "La patène"
+      },
+      "questionVariants": {
+        "en": [
+          "what is the paten",
+          "what is the small plate under the host",
+          "show me a paten"
+        ],
+        "fr": [
+          "qu'est-ce que la patène",
+          "à quoi sert la patène"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G191",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "SV02"
+      ]
+    },
+    {
+      "id": "objects.ciborium",
+      "character": "sacristan",
+      "title": {
+        "en": "The ciborium",
+        "fr": "Le ciboire"
+      },
+      "questionVariants": {
+        "en": [
+          "what is a ciborium",
+          "where are consecrated hosts kept in a vessel",
+          "show me the ciborium"
+        ],
+        "fr": [
+          "qu'est-ce qu'un ciboire",
+          "à quoi sert le ciboire"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G192",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "SV03"
+      ]
+    },
+    {
+      "id": "objects.cruets",
+      "character": "sacristan",
+      "title": {
+        "en": "Water and wine cruets",
+        "fr": "Les burettes"
+      },
+      "questionVariants": {
+        "en": [
+          "what are the small wine and water bottles",
+          "what are cruets",
+          "why are there two little bottles at the altar"
+        ],
+        "fr": [
+          "qu'est-ce que les burettes",
+          "à quoi servent les burettes"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G193",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "EQ01",
+        "EQ02"
+      ]
+    },
+    {
+      "id": "objects.tabernacle",
+      "character": "sacristan",
+      "title": {
+        "en": "The tabernacle",
+        "fr": "Le tabernacle"
+      },
+      "questionVariants": {
+        "en": [
+          "what is the tabernacle",
+          "where is the blessed sacrament reserved",
+          "what is kept inside the tabernacle"
+        ],
+        "fr": [
+          "qu'est-ce que le tabernacle",
+          "où conserve-t-on le saint sacrement"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G080",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "AL03"
+      ]
+    },
+    {
+      "id": "objects.sanctuary_lamp",
+      "character": "sacristan",
+      "title": {
+        "en": "The sanctuary lamp",
+        "fr": "La lampe du sanctuaire"
+      },
+      "questionVariants": {
+        "en": [
+          "what is the red lamp near the altar",
+          "why is the sanctuary lamp burning",
+          "what is the sanctuary lamp"
+        ],
+        "fr": [
+          "qu'est-ce que la lampe du sanctuaire",
+          "pourquoi cette lampe brûle-t-elle près de l'autel"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G218",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "SN05"
+      ]
+    },
+    {
+      "id": "objects.missal_stand",
+      "character": "sacristan",
+      "title": {
+        "en": "The Missal stand",
+        "fr": "Le pupitre du missel"
+      },
+      "questionVariants": {
+        "en": [
+          "what supports the missal",
+          "what is the missal stand",
+          "why is the missal on a sloping stand"
+        ],
+        "fr": [
+          "qu'est-ce que le pupitre du missel",
+          "sur quoi repose le missel"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G215",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "BK02"
+      ]
+    },
+    {
+      "id": "objects.altar_cards",
+      "character": "sacristan",
+      "title": {
+        "en": "The altar cards",
+        "fr": "Les cartons d'autel"
+      },
+      "questionVariants": {
+        "en": [
+          "what are the three altar cards",
+          "why are there cards on the altar",
+          "what are altar cards"
+        ],
+        "fr": [
+          "que sont les cartons d'autel",
+          "pourquoi y a-t-il trois cartons sur l'autel"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G213",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "AL16"
+      ]
+    },
+    {
+      "id": "objects.communion_rail",
+      "character": "sacristan",
+      "title": {
+        "en": "The Communion rail",
+        "fr": "La table de communion"
+      },
+      "questionVariants": {
+        "en": [
+          "what is the rail in front of the altar",
+          "what is the communion rail",
+          "why is there a rail at the sanctuary"
+        ],
+        "fr": [
+          "qu'est-ce que la table de communion",
+          "pourquoi une balustrade au sanctuaire"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G186",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "SN02"
+      ]
+    },
+    {
+      "id": "objects.corporal",
+      "character": "sacristan",
+      "title": {
+        "en": "The corporal",
+        "fr": "Le corporal"
+      },
+      "questionVariants": {
+        "en": [
+          "what is the white cloth under the chalice",
+          "what is the corporal",
+          "where are the sacred vessels placed on the altar"
+        ],
+        "fr": [
+          "qu'est-ce que le corporal",
+          "à quoi sert le corporal"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G187",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "LN01"
+      ]
+    },
+    {
+      "id": "objects.purificator",
+      "character": "sacristan",
+      "title": {
+        "en": "The purificator",
+        "fr": "Le purificatoire"
+      },
+      "questionVariants": {
+        "en": [
+          "what cloth is used to wipe the chalice",
+          "what is the purificator",
+          "show me the purificator"
+        ],
+        "fr": [
+          "qu'est-ce que le purificatoire",
+          "quel linge sert à purifier le calice"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G188",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "objectIds": [
+        "LN02"
+      ]
+    }
+  ],
+  "ambiguities": [
+    {
+      "id": "host_raised",
+      "phrases": {
+        "en": [
+          "why does the priest raise the host",
+          "why lift the host",
+          "why is the host raised"
+        ],
+        "fr": [
+          "pourquoi le prêtre lève l'hostie",
+          "pourquoi élève-t-on l'hostie"
+        ]
+      },
+      "candidates": [
+        "faith.real_presence",
+        "mass.elevation"
+      ],
+      "intro": {
+        "en": "Do you mean the consecration, or the elevation shown to the faithful?",
+        "fr": "Parlez-vous de la consécration ou de l'élévation présentée aux fidèles ?"
+      }
+    },
+    {
+      "id": "different_colours",
+      "phrases": {
+        "en": [
+          "why does the priest wear different colours",
+          "why do priests wear different colors",
+          "why different vestment colours"
+        ],
+        "fr": [
+          "pourquoi le prêtre porte-t-il des couleurs différentes",
+          "pourquoi différentes couleurs sur les vêtements du prêtre"
+        ]
+      },
+      "candidates": [
+        "objects.chalice",
+        "mass.colors_meaning"
+      ],
+      "displayOptions": {
+        "en": [
+          "Which vestments or their physical appearance?",
+          "What the colours mean in the liturgical calendar?"
+        ],
+        "fr": [
+          "Quels ornements ou leur apparence matérielle ?",
+          "Que signifient les couleurs de l'année liturgique ?"
+        ]
+      },
+      "intro": {
+        "en": "Are you asking about the vestments themselves, or the meaning of their colours?",
+        "fr": "Parlez-vous des ornements ou de la signification de leurs couleurs ?"
+      }
+    },
+    {
+      "id": "unidentified_gesture",
+      "phrases": {
+        "en": [
+          "what does that gesture mean",
+          "why did he do that gesture"
+        ],
+        "fr": [
+          "que signifie ce geste",
+          "pourquoi a-t-il fait ce geste"
+        ]
+      },
+      "candidates": [],
+      "needsContext": true,
+      "intro": {
+        "en": "Which gesture or moment of Mass do you mean?",
+        "fr": "De quel geste ou moment de la Messe parlez-vous ?"
+      }
+    }
+  ],
+  "blockedPatterns": [
+    {
+      "id": "family_livelihood_from_Q85",
+      "phrases": {
+        "en": [
+          "is it wrong to seek more money for my family",
+          "may i seek a better livelihood for my family",
+          "should i feel guilty for wanting a better livelihood"
+        ],
+        "fr": [
+          "est-ce mal de vouloir mieux gagner ma vie pour ma famille",
+          "puis-je améliorer le revenu de ma famille"
+        ]
+      },
+      "sourceRef": "PX1912-Q085",
+      "reason": "Q85 concerns why Christ embraced poverty, not a practical judgment on a family's income.",
+      "status": "SOURCE_GAP"
+    },
+    {
+      "id": "unverified_modern_law",
+      "phrases": {
+        "en": [
+          "what is the current eucharistic fast",
+          "what is today's fasting rule for communion"
+        ],
+        "fr": [
+          "quel est le jeûne eucharistique actuel"
+        ]
+      },
+      "sourceRef": "PX1912-Q335",
+      "reason": "Historical catechism fasting rules cannot be presented as current canon law.",
+      "status": "TEMPORAL_SOURCE_GAP"
+    }
+  ],
+  "pilotLimits": {
+    "topics": 32,
+    "approvedConversationalAnswers": 0,
+    "embeddingSearch": false,
+    "deterministicKeywordVariantMatching": true,
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "maxClarifications": 3,
+    "maxTransfersPerQuestion": 1,
+    "semanticModelPlannedButNotEnabled": true
+  },
+  "externalDependencies": [
+    {
+      "pr": 1406,
+      "owner": "Living Church P4 original 433-question native referral",
+      "status": "DRAFT_NOT_MERGED"
+    },
+    {
+      "pr": 1419,
+      "owner": "St Pius X documentary voice and editorials",
+      "status": "DRAFT_NOT_MERGED"
+    }
+  ],
+  "policy": {
+    "canGenerateNewDoctrinalAnswer": false,
+    "canGeneratePastoralConclusion": false,
+    "answerTextIncluded": false,
+    "canDisplayOriginalLinkedSource": true,
+    "canSuggestReformulation": true,
+    "canSuggestReferral": true,
+    "explicitUserAcceptanceRequired": true,
+    "cannotHandoffWithoutDestinationEvidence": true,
+    "stopOnNoCoverage": true,
+    "noLoop": true,
+    "referralDialogueMayBeEditorial": false,
+    "historicalSpeechClaim": false
+  }
+}
