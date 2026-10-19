@@ -178,7 +178,7 @@ r=match("what is the roman canon",{currentCharacter:"sacristan"});
 assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");
 assert.equal(r.targetRoute,"learn.mass_explorer");assert.equal(r.sourceRefs[0].ref,"AO.CARD.014");
 for(const [q,ref] of [
- ["when is the kyrie sung at mass","AO.CARD.002"],
+ ["who sings the kyrie at mass","AO.CARD.002"],
  ["what is the collect prayer at mass","AO.CARD.004"],
  ["what is the epistle at mass","AO.CARD.005"],
  ["when is the sermon preached","AO.CARD.008"],
