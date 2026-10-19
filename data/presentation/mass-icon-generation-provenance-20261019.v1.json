@@ -130,6 +130,36 @@
           "disposition": "RESEARCH_ONLY_NOT_TRANSFORMABLE",
           "whyNotEligible": "Morgan requires reproduction permission and restricts cropped/altered use. 1962 rubrics must independently govern posture and exact hands. No local original picture has been licensed, verified, or recorded.",
           "excerptDescription": "Medieval miniature shows priest inclined over altar taking Host to his mouth; provides actual historical pictorial precedent but not certified 1962 hand placement."
+        },
+        {
+          "type": "HISTORICAL_ILLUSTRATION",
+          "id": "LANSLOTS_1897_ILLUSTRATED_MASS",
+          "subject": "PRIEST_COMMUNION_HOST_OR_CHALICE_UNVERIFIED",
+          "artist": "D. I. Lanslots (author; illustrator not yet independently identified)",
+          "title": "Illustrated explanation of the prayers and ceremonies of the Mass",
+          "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf",
+          "repository": "Library of Congress through Internet Archive / Wikimedia Commons",
+          "copyright": "PUBLIC_DOMAIN_US_PRE_1931",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf",
+          "imagePageStatus": "NOT_YET_INSPECTED",
+          "path": null,
+          "sha256": null,
+          "disposition": "RESEARCH_LEAD_NOT_SOURCE_OR_PRODUCTION",
+          "next": "Inspect 404 scanned pages around the book's Communion chapter; identify page/plate and check whether any image really depicts priest consuming Host/chalice; only then record a specific picture."
+        },
+        {
+          "type": "HISTORICAL_ILLUSTRATION",
+          "id": "LASANCE_1936_MISSAL_PAGE_790",
+          "subject": "PRIEST_COMMUNION_HOST_UNVERIFIED",
+          "title": "The Priest Receives Communion",
+          "sourcePageUrl": "https://www.romanmissal.org/read-mass-with-the-priest",
+          "publication": "Rev. F. X. Lasance, The New Roman Missal, Benziger Brothers, 1936",
+          "copyright": "1936_WORK_UNCLEARED",
+          "imagePageStatus": "IMAGE_NOT_VERIFIED",
+          "path": null,
+          "sha256": null,
+          "disposition": "RESEARCH_LEAD_NOT_SOURCE_OR_PRODUCTION",
+          "next": "Locate original page 790, verify image and creator; assess rights independently; do not treat online colourization as public-domain original."
         }
       ]
     },
@@ -169,6 +199,23 @@
           "disposition": "RESEARCH_ONLY_NOT_TRANSFORMABLE",
           "whyNotEligible": "Morgan requires reproduction permission and restricts cropped/altered use. 1962 rubrics must independently govern posture and exact hands. No local original picture has been licensed, verified, or recorded.",
           "excerptDescription": "Medieval miniature shows priest drinking chalice with left hand, whereas 1962 Ritus servandus X.5 requires the chalice in the right and paten beneath in the left; cannot be copied literally."
+        },
+        {
+          "type": "PHOTOGRAPH",
+          "id": "CTH49809",
+          "subject": "PRIEST_COMMUNION_CHALICE",
+          "artist": "Carlos Sierra",
+          "title": "Priest drinks the Most Precious Blood of Jesus",
+          "sourcePageUrl": "https://cathopic.com/photo/49809-priest-drinks-the-most-precious-blood-of-jesus/",
+          "creatorPage": "https://cathopic.com/@carlossierra/",
+          "licenseUrl": "https://cathopic.com/legal/license/",
+          "rightStatus": "INDIVIDUAL_LICENSE_REQUIRED",
+          "actionStatus": "POSSIBLE_EXACT_ACTION_VISUAL_CONFIRMATION_REQUIRED",
+          "firstPersonNote": "Photographer identifies his speciality as Traditional Latin Mass; page tags confirm TLM but do not document exact hand placement or publish high-res photograph without download.",
+          "path": null,
+          "sha256": null,
+          "disposition": "RESEARCH_LEAD_NOT_SOURCE_OR_PRODUCTION",
+          "next": "Obtain legitimate licensed copy, retain exact image and checksum, verify right hand on chalice and left hand with paten beneath, then compare with user-approved icon family."
         }
       ]
     }
@@ -190,5 +237,66 @@
     }
   ],
   "releaseRule": "A generated Mass image cannot receive a reader icon key, appear in an approved asset overlay or be merged as production art unless its source originals, source rights, 1962 rubrical details, selected approved donor comparison, pixel-size proof and user approval are all independently satisfied.",
-  "plannedDestination": "assets/generated/mass-icons/"
+  "plannedDestination": "assets/generated/mass-icons/",
+  "discoveryReview": {
+    "date": "2026-10-19",
+    "sourceSelection": "TRUE_ORIGINAL_FIRST",
+    "leads": [
+      {
+        "type": "PHOTOGRAPH",
+        "id": "CTH49809",
+        "subject": "PRIEST_COMMUNION_CHALICE",
+        "artist": "Carlos Sierra",
+        "title": "Priest drinks the Most Precious Blood of Jesus",
+        "sourcePageUrl": "https://cathopic.com/photo/49809-priest-drinks-the-most-precious-blood-of-jesus/",
+        "creatorPage": "https://cathopic.com/@carlossierra/",
+        "licenseUrl": "https://cathopic.com/legal/license/",
+        "rightStatus": "INDIVIDUAL_LICENSE_REQUIRED",
+        "actionStatus": "POSSIBLE_EXACT_ACTION_VISUAL_CONFIRMATION_REQUIRED",
+        "firstPersonNote": "Photographer identifies his speciality as Traditional Latin Mass; page tags confirm TLM but do not document exact hand placement or publish high-res photograph without download.",
+        "path": null,
+        "sha256": null,
+        "disposition": "RESEARCH_LEAD_NOT_SOURCE_OR_PRODUCTION",
+        "next": "Obtain legitimate licensed copy, retain exact image and checksum, verify right hand on chalice and left hand with paten beneath, then compare with user-approved icon family."
+      },
+      {
+        "type": "HISTORICAL_ILLUSTRATION",
+        "id": "LANSLOTS_1897_ILLUSTRATED_MASS",
+        "subject": "PRIEST_COMMUNION_HOST_OR_CHALICE_UNVERIFIED",
+        "artist": "D. I. Lanslots (author; illustrator not yet independently identified)",
+        "title": "Illustrated explanation of the prayers and ceremonies of the Mass",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf",
+        "repository": "Library of Congress through Internet Archive / Wikimedia Commons",
+        "copyright": "PUBLIC_DOMAIN_US_PRE_1931",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf",
+        "imagePageStatus": "NOT_YET_INSPECTED",
+        "path": null,
+        "sha256": null,
+        "disposition": "RESEARCH_LEAD_NOT_SOURCE_OR_PRODUCTION",
+        "next": "Inspect 404 scanned pages around the book's Communion chapter; identify page/plate and check whether any image really depicts priest consuming Host/chalice; only then record a specific picture."
+      },
+      {
+        "type": "HISTORICAL_ILLUSTRATION",
+        "id": "LASANCE_1936_MISSAL_PAGE_790",
+        "subject": "PRIEST_COMMUNION_HOST_UNVERIFIED",
+        "title": "The Priest Receives Communion",
+        "sourcePageUrl": "https://www.romanmissal.org/read-mass-with-the-priest",
+        "publication": "Rev. F. X. Lasance, The New Roman Missal, Benziger Brothers, 1936",
+        "copyright": "1936_WORK_UNCLEARED",
+        "imagePageStatus": "IMAGE_NOT_VERIFIED",
+        "path": null,
+        "sha256": null,
+        "disposition": "RESEARCH_LEAD_NOT_SOURCE_OR_PRODUCTION",
+        "next": "Locate original page 790, verify image and creator; assess rights independently; do not treat online colourization as public-domain original."
+      }
+    ],
+    "blacklistReasons": [
+      "No user-visible source photo/drawing",
+      "Depicts host elevation instead of priest consumption",
+      "Depicts distribution to lay communicants instead of priest communion",
+      "Chalice in unsupported hand rather than 1962 rubrical handling",
+      "Source photo missing production/editorial redistribution license",
+      "Icon visually divergent from approved v4 bank"
+    ]
+  }
 }
