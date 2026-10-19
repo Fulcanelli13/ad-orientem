@@ -51,6 +51,7 @@ const original=normalizeReaderMoment({
 assert.equal(original.schola,null);
 assert.equal(original.riteMusic.eventIds[0],"AO.MUS.ASP.ME");
 assert.equal(normalizeReaderMoment({id:"ASP-R02",cardUpdate:false,schola:null},original).riteMusic.eventIds[0],
+  "AO.MUS.ASP.ME",
   "A posture update in the same ceremony must not erase music metadata");
 const handoff=normalizeReaderMoment({
   id:"AO.CARD.001",sectionTitle:"Mass",cardUpdate:true,schola:null
