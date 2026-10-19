@@ -41,6 +41,27 @@ assert.equal(m.summary.ordinaryCueCandidateOccurrences+
 assert.equal(m.summary.withNeitherOfTwoOwners+
   m.summary.withAnyKnownExactOwner,m.items.length);
 assert.equal(m.summary.editorialTranslationGaps,null);
+assert.equal(Object.values(m.summary.reviewQueues).reduce((a,b)=>a+b,0),186,
+  "Every Rogation row must be routed to exactly one ownership review queue");
+assert.equal(Object.values(m.summary.unlinkedReviewQueues).reduce((a,b)=>a+b,0),150,
+  "Formula-aware triage may not relabel unowned rows as translated");
+assert.equal(m.summary.invocationResponseFormulaCounts.ORA_PRO_NOBIS,46);
+assert.equal(m.summary.invocationResponseFormulaCounts.ORATE_PRO_NOBIS,16);
+assert.equal(m.summary.invocationResponseFormulaCounts.INTERCEDITE_PRO_NOBIS,1);
+assert.equal(m.summary.invocationResponseFormulaCounts.LIBERA_NOS_DOMINE,21);
+assert.equal(m.summary.invocationResponseFormulaCounts.TE_ROGAMUS_AUDI_NOS,18);
+assert.equal(m.summary.linkedResponseOwnerCounts["ROG-LIT-FORMULA-ORA-PRO-NOBIS"],46);
+assert.equal(m.items[14].responseFormulaOwnerId,m.items[17].responseFormulaOwnerId,
+  "Identical invocation response wording is reusable, but saint identities remain distinct");
+assert.notEqual(m.items[14].uniqueInvocationSourceOwner,m.items[17].uniqueInvocationSourceOwner);
+assert.ok(m.items.every((x,i)=>x.uniqueInvocationSourceOwner.endsWith(
+  "processionLitany."+i) && x.formulaReuseStatus===
+  "REVIEW_ONLY_NO_VERNACULAR_COMPOSITION" && x.reviewQueue &&
+  (!x.responseFormulaOwnerId || x.responseFormulaOwnerId.startsWith("ROG-LIT-FORMULA-"))),
+  "An invocation retains a unique source owner and a separate response-formula candidate");
+assert.ok(m.supplementalSourceRows.every(x=>x.reviewQueue),
+  "Source-owned Psalms, suffrages, and collects need specific next review queues");
+
 assert.equal(m.summary.completeSourceRows,186,
   "Complete Rogation canonical Latin source contains 186 native reader rows");
 assert.equal(m.supplementalSourceRows.length,74);
