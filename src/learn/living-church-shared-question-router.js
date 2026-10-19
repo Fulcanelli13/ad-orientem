@@ -29,7 +29,7 @@ function similarity(user,variants){
 }
 function present(topic,lang){
  return frozen({topicId:topic.id,character:topic.character,title:topic.title[lang]||topic.title.en,
-  sourceRefs:topic.sourceRefs.map(x=>frozen({...x})),coverage:topic.coverage,
+  sourceRefs:topic.sourceRefs.map(x=>frozen({...x})),coverage:topic.coverage,sourceGapReason:topic.sourceGapReason||null,
   approvedReply:false,answerText:null});
 }
 export function createSharedQuestionRouter(catalog){
@@ -38,10 +38,14 @@ export function createSharedQuestionRouter(catalog){
   ||catalog.policy?.canGeneratePastoralConclusion!==false)throw Error("Verified source-only question router registry required");
  const ids=new Set();
  for(const t of catalog.topics){
-  if(!t.id||ids.has(t.id)||!catalog.owners[t.character]||!Array.isArray(t.sourceRefs)||!t.sourceRefs.length
-  ||t.approvedReply!==false||t.coverage!=="SOURCE_NAVIGATION_ONLY"
+  if(!t.id||ids.has(t.id)||!catalog.owners[t.character]||!Array.isArray(t.sourceRefs)
+  ||t.approvedReply!==false||!["SOURCE_NAVIGATION_ONLY","SOURCE_GAP"].includes(t.coverage)
   ||!t.questionVariants?.en?.length||!t.questionVariants?.fr?.length)
    throw Error("Unsafe question topic "+t.id);
+  if(t.coverage==="SOURCE_NAVIGATION_ONLY"&&!t.sourceRefs.length)
+   throw Error("Topic falsely claims evidence "+t.id);
+  if(t.coverage==="SOURCE_GAP"&&(t.sourceRefs.length||!t.sourceGapReason))
+   throw Error("Source gap must not claim a verified passage "+t.id);
   if(t.sourceRefs.some(s=>!s.owner||!s.ref||!s.evidence))throw Error("Unattributed source "+t.id);
   ids.add(t.id);
  }
@@ -56,6 +60,10 @@ export function createSharedQuestionRouter(catalog){
   const lang=opts.language==="fr"?"fr":"en";
   const history=opts.history||{visitedCharacters:[current],handoffCount:0};
   const payload=present(topic,lang);
+  if(topic.coverage==="SOURCE_GAP")
+   return frozen({kind:"no_coverage",reason:"TOPIC_SOURCE_GAP",topic:payload,
+    topicId:topic.id,originalQuestion:opts.originalQuestion||input,
+    sourceGap:topic.sourceGapReason,answerText:null,approvedReply:false});
   const common={topicId:topic.id,language:lang,originalQuestion:opts.originalQuestion||input,
    sourceRefs:payload.sourceRefs,approvedReply:false,answerText:null,
    explanation:"Research navigation only. No character answer is authored."};
