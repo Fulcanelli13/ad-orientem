@@ -119,6 +119,11 @@ assert.equal(noCommunion.project("AO.SM.C0225").ownership.bell,"R17_CONDITION_FA
 const low=createReaderTransientController({events,prepared:{session:{resolvedMass:{form:"LOW",conditions:["FAITHFUL_COMMUNICANTS_PRESENT"]},plan:{blessingAllowed:true}}}});
 assert.equal(low.supported,true);
 assert.equal(low.project("AO.SM.C0145").bell.canonicalEventIds[0],"MC-SAN-020");
+assert.equal(low.project("AO.SM.C0145").bell.sourceTiming.sourceClock,"PUBLIC_TEXT",
+  "Low Mass Sanctus bell must follow the priest's Sanctus, not an absent Schola");
+assert.equal(low.project("AO.SM.C0145").bell.sourceTiming.form,"LOW");
+assert.equal(controller.project("AO.SM.C0145").bell.sourceTiming.sourceClock,"SCHOLA_PUBLIC",
+  "Sung source landmark must remain the choir's text, distinct from priest timing");
 assert.equal(low.project("AO.SM.C0161").bell.canonicalEventIds[0],"MC-CAN-070");
 assert.equal(low.project("AO.SM.C0174").cinematic.kind,"ELEVATION");
 assert.equal(low.project("AO.SM.C0181").cinematic.kind,"ELEVATION");
