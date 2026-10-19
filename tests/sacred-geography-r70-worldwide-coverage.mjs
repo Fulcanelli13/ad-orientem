@@ -10,7 +10,7 @@ assert.equal(q.rows.length,750);
 assert.equal(new Set(q.rows.map(x=>x.candidate_id)).size,750);
 assert.equal(q.counts.candidates,750);
 assert.equal(q.counts.explicit_promoted+q.counts.text_hint_review+q.counts.unmatched,750);
-assert.equal(q.counts.published_places,g.places.length);
+assert.equal(q.counts.published_places,261,"R70 historical coverage snapshot must remain at its historical baseline");
 assert.equal(q.counts.published_shrines,s.shrines.length);
 assert.equal(q.counts.published_pilgrimages,s.pilgrimages.length);
 const ids=new Set(g.places.map(x=>x.place_id));

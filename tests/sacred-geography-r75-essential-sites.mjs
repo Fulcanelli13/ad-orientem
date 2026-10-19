@@ -15,7 +15,7 @@ const h=read("data/explore/heritage-place-reconciliation.review.v1.json");
 const m=read("data/geography/research/sacred-geography-r75-essential-sites.v1.json");
 assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R75_ESSENTIAL_SITES_V1");
 assert.deepEqual([m.published_new.length,m.existing_confirmed.length,m.held.length],[4,4,2]);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[261,257,240,449]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[294,257,240,515]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(r.candidates.length,750);
@@ -24,7 +24,7 @@ assert.deepEqual([r.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,r.summ
 assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched,q.counts.essential_remaining],[164,6,580,6]);
 const pBy=new Map(g.places.map(x=>[x.place_id,x])),shBy=new Map(s.shrines.map(x=>[x.shrine_id,x])),piBy=new Map(s.pilgrimages.map(x=>[x.pilgrimage_id,x]));
 const srcBy=new Map(sources.sources.map(x=>[x.id,x]));
-assert.equal(pBy.size,261,"Duplicate physical sites");
+assert.equal(pBy.size,g.places.length,"Duplicate physical sites");
 assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,257);
 assert.equal(new Set(s.shrines.map(x=>g.places.find(p=>p.place_id===x.place_id)?.address.country_code)).size,69);
 const projected=projectExploreDataset({directory:{records:[],communities:[]},geography:g,shrines:{...s,sources:sources.sources},sacredPhenomena:ph,customs:{customs:[],attestations:[],sources:[]},novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},media:{approved:[],gallery:[]}});
@@ -53,7 +53,7 @@ for(const entry of m.existing_confirmed){
 }
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0248")?.status,"UNMATCHED");
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0746")?.status,"TEXT_HINT_REVIEW");
-assert.equal(h.place_crosswalk.length,261);
+assert.equal(h.place_crosswalk.length,294);
 assert.equal(exploreMapFeatures(projected.byLens.shrines).length,257);
 assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,240);
 console.log("PASS R75: four sourced physical pilgrimage Places, four canonical research reuses and 750 research candidates intact");

@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 261,
+    "places": 294,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 2,
+    "places_without_direct_claim": 35,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -29,8 +29,41 @@
     "dangling_place_references": [],
     "dangling_pilgrimage_shrine_references": [],
     "places_without_direct_claim": [
+      "place:AE:st-joseph-cathedral-abu-dhabi",
+      "place:BH:our-lady-arabia-cathedral-awali",
       "place:DE:kevelaer-kerzenkapelle",
-      "place:GB:holywell-st-winefride-church"
+      "place:DK:st-ansgar-cathedral-copenhagen",
+      "place:EC:basilica-voto-nacional-quito",
+      "place:EE:saints-peter-paul-cathedral-tallinn",
+      "place:ES:covadonga-basilica",
+      "place:ES:covadonga-santa-cueva",
+      "place:FI:st-henry-cathedral-helsinki",
+      "place:GB:holywell-st-winefride-church",
+      "place:GE:assumption-catholic-cathedral-tbilisi",
+      "place:HK:immaculate-conception-cathedral-hong-kong",
+      "place:ID:jakarta-cathedral",
+      "place:IN:mount-mary-basilica-bandra",
+      "place:IN:santhome-cathedral-basilica-chennai",
+      "place:IN:st-thomas-mount-shrine-chennai",
+      "place:IS:christ-king-cathedral-reykjavik",
+      "place:JP:oura-cathedral-nagasaki",
+      "place:JP:st-mary-cathedral-tokyo",
+      "place:JP:urakami-cathedral-nagasaki",
+      "place:KE:holy-family-cathedral-basilica-nairobi",
+      "place:KR:jeoldusan-martyrs-shrine-seoul",
+      "place:KZ:our-lady-fatima-cathedral-karaganda",
+      "place:LK:st-lucia-cathedral-colombo",
+      "place:MN:saints-peter-paul-cathedral-ulaanbaatar",
+      "place:MU:saint-louis-cathedral-port-louis",
+      "place:NO:st-olav-cathedral-oslo",
+      "place:NO:st-olav-cathedral-trondheim",
+      "place:NO:var-frue-cathedral-tromso",
+      "place:PH:manila-cathedral-intramuros",
+      "place:PH:quiapo-national-shrine-jesus-nazareno",
+      "place:PH:santo-nino-tondo-minor-basilica",
+      "place:QA:our-lady-rosary-church-doha",
+      "place:SE:st-eric-cathedral-stockholm",
+      "place:US:baltimore-basilica-assumption"
     ],
     "customs_without_exact_place": [
       {
@@ -143,6 +176,12 @@
     "Places with null latitude/longitude are pending coordinates, not false claims that a known coordinate lacks attribution."
   ],
   "place_crosswalk": [
+    {
+      "place_id": "place:AE:st-joseph-cathedral-abu-dhabi",
+      "display_name": "St Joseph's Catholic Cathedral — Abu Dhabi",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
     {
       "place_id": "place:AR:alta-gracia-lourdes-sanctuary",
       "display_name": "Santuario Nuestra Señora de Lourdes, Alta Gracia",
@@ -305,6 +344,12 @@
           "novena-place:corpus_christi:liege"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BH:our-lady-arabia-cathedral-awali",
+      "display_name": "Our Lady of Arabia Cathedral — Awali",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -876,6 +921,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:DK:st-ansgar-cathedral-copenhagen",
+      "display_name": "St Ansgar Catholic Cathedral — Copenhagen",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:DO:higuey-altagracia-basilica",
       "display_name": "Basílica Catedral Nuestra Señora de la Altagracia — Higüey",
       "record_ids": {
@@ -896,6 +947,18 @@
           "shrine:DZ:basilica-of-notre-dame-dafrique-algiers"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:EC:basilica-voto-nacional-quito",
+      "display_name": "Basílica del Voto Nacional — Quito",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:EE:saints-peter-paul-cathedral-tallinn",
+      "display_name": "Saints Peter and Paul Catholic Cathedral — Tallinn",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -975,6 +1038,18 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:ES:covadonga-basilica",
+      "display_name": "Basílica de Santa María la Real de Covadonga",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:covadonga-santa-cueva",
+      "display_name": "Santa Cueva de Covadonga — Marian Holy Cave",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
       "display_name": "Real Monasterio de Santa María de Guadalupe",
       "record_ids": {
@@ -1024,6 +1099,12 @@
           "relic:ES:lignum-crucis-liebana"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FI:st-henry-cathedral-helsinki",
+      "display_name": "St Henry Catholic Cathedral — Helsinki",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -1896,6 +1977,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:GE:assumption-catholic-cathedral-tbilisi",
+      "display_name": "Cathedral of the Assumption of the Virgin Mary — Tbilisi",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
       "display_name": "St Peter's Cathedral Basilica, Kumasi",
       "record_ids": {
@@ -1932,6 +2019,12 @@
           "pilgrimage:GT:esquipulas-black-christ-basilica-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:HK:immaculate-conception-cathedral-hong-kong",
+      "display_name": "Cathedral of the Immaculate Conception — Hong Kong",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -1994,6 +2087,12 @@
           "relic:HU:st-stephen-basilica-budapest"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ID:jakarta-cathedral",
+      "display_name": "Jakarta Catholic Cathedral — Our Lady of the Assumption",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2189,6 +2288,30 @@
           "shrine:IN:basilica-of-our-lady-of-lourdes-poondi"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IN:mount-mary-basilica-bandra",
+      "display_name": "Basilica of Our Lady of the Mount — Bandra",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IN:santhome-cathedral-basilica-chennai",
+      "display_name": "Santhome Cathedral Basilica — Shrine of St Thomas",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IN:st-thomas-mount-shrine-chennai",
+      "display_name": "St Thomas Mount National Shrine Basilica — Chennai",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IS:christ-king-cathedral-reykjavik",
+      "display_name": "Christ the King Cathedral — Reykjavík",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2856,6 +2979,42 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:JP:oura-cathedral-nagasaki",
+      "display_name": "Ōura Cathedral — Twenty-Six Martyrs Basilica",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:JP:st-mary-cathedral-tokyo",
+      "display_name": "St Mary's Catholic Cathedral — Tokyo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:JP:urakami-cathedral-nagasaki",
+      "display_name": "Urakami Catholic Cathedral — Nagasaki",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:KE:holy-family-cathedral-basilica-nairobi",
+      "display_name": "Holy Family Cathedral Basilica — Nairobi",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:KR:jeoldusan-martyrs-shrine-seoul",
+      "display_name": "Jeoldusan Korean Martyrs' Shrine — Seoul",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:KZ:our-lady-fatima-cathedral-karaganda",
+      "display_name": "Cathedral of Our Lady of Fatima — Karaganda",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:LB:monastery-saint-maron-annaya",
       "display_name": "Monastery of Saint Maron — Annaya",
       "record_ids": {
@@ -2909,6 +3068,12 @@
           "shrine:LK:shrine-of-our-lady-of-madhu"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LK:st-lucia-cathedral-colombo",
+      "display_name": "St Lucia's Cathedral — Colombo",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3003,6 +3168,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:MN:saints-peter-paul-cathedral-ulaanbaatar",
+      "display_name": "Saints Peter and Paul Catholic Cathedral — Ulaanbaatar",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
       "display_name": "National Shrine of Our Lady of Ta' Pinu",
       "record_ids": {
@@ -3027,6 +3198,12 @@
           "route:MU:pere-laval-saint-louis"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MU:saint-louis-cathedral-port-louis",
+      "display_name": "Cathédrale Saint-Louis — Port-Louis",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3194,6 +3371,24 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:NO:st-olav-cathedral-oslo",
+      "display_name": "St Olav Catholic Cathedral — Oslo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NO:st-olav-cathedral-trondheim",
+      "display_name": "St Olav Catholic Cathedral — Trondheim",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NO:var-frue-cathedral-tromso",
+      "display_name": "Our Lady's Catholic Cathedral — Tromsø",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:NZ:pukekaraka-otaki",
       "display_name": "Hāto Mere / St Mary's Pukekaraka",
       "record_ids": {
@@ -3255,6 +3450,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PH:manila-cathedral-intramuros",
+      "display_name": "Manila Cathedral Basilica — Immaculate Conception",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
       "display_name": "National Shrine of Our Lady of Fatima, Valenzuela",
       "record_ids": {
@@ -3302,6 +3503,18 @@
           "shrine:PH:padre-pio-shrine-santo-tomas-batangas"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:quiapo-national-shrine-jesus-nazareno",
+      "display_name": "Minor Basilica and National Shrine of Jesus Nazareno — Quiapo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:santo-nino-tondo-minor-basilica",
+      "display_name": "Minor Basilica of Santo Niño de Tondo",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3555,6 +3768,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:QA:our-lady-rosary-church-doha",
+      "display_name": "Our Lady of the Rosary Catholic Church — Doha",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:RW:sanctuaire-kibeho",
       "display_name": "Sanctuaire Notre-Dame des Douleurs de Kibeho",
       "record_ids": {
@@ -3568,6 +3787,12 @@
           "apparition:RW:kibeho"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:SE:st-eric-cathedral-stockholm",
+      "display_name": "St Eric Catholic Cathedral — Stockholm",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3720,6 +3945,12 @@
           "route:US:lake-george-auriesville-restoration"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:baltimore-basilica-assumption",
+      "display_name": "Basilica of the National Shrine of the Assumption — Baltimore",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
