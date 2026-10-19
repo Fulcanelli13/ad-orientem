@@ -112,6 +112,17 @@ for(const engine of [
     "A merely proposed historical route must not become confirmed context");
  }
 }
+// A layperson's private prayer at Mass is not a question about a priest's
+// mental prayer. Do not infer Haerent animo merely from "priest" + "prayer".
+for(const engine of [
+ createSharedQuestionRouter(catalog,{historicalPointers:pointer}),
+ createHybridQuestionRouter(catalog,concepts,{historicalPointers:pointer})
+]){
+ const out=engine.match("May I say private prayers while the priest celebrates Mass?",
+   {language:"en",currentCharacter:"pius-x"});
+ assert.notEqual(out.topicId,topic(9),"Lay assistance at Mass must never be sent to priestly meditation");
+ assert.equal(out.answerText,null);
+}
 // Reject unsigned, tampered, or non-original source metadata.
 assert.throws(()=>createSharedQuestionRouter(catalog,{historicalPointers:{
  ...pointer,records:pointer.records.map((x,i)=>i===0?{...x,originalDocumentUrl:"javascript:alert(1)"}:x)
