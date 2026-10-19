@@ -85,3 +85,31 @@ The 10 added English/French matching tests now check representative new source n
 **Remaining qualification:** some question variants are hand-curated navigation strings and need realistic user-question testing before claiming high recognition accuracy. French translations of *search phrases* may be used for routing, but neither French historical response text nor original-language Pius X content has been editorially approved by this module. The 37 apologetics dossiers require their own content pipeline; do not treat their mapping into a shared index as completing apologetics research.
 
 **This pilot remains isolated from runtime**, and neither the 433 canonical Catechism answers nor the Canon's original writings or the source glossary are overwritten.
+
+
+## Expansion pass 3 — complete apologetics intake, selected Church Crisis topics, question-retrieval reliability
+
+**Corpus intake**: original navigational IDs now cover **154 topic candidates** — 21 for St Pius X, 98 for the Canon, and 35 for the Sacristan. Of these, **66** navigate only to known original sources; **88** have no cleared conversational source and remain unavailable for auto-answer or automatic referral. The gap count comprises the entire **60** `APOL-001…060` Canon apologetics dossiers, **25** selected Church Crisis `CR-...` dossiers, and **3** Canon ceremonial questions awaiting an exact relevant original passage. These research lists are categorically **not theological answers**; merely locating one does not certify its arguments, provenance or perspective. French question formulations are editorial search strings, not historical quotations.
+
+The linked topic network now contains **77 source-neutral relationships** (30 new in this pass): e.g. APOL-015 ↔ original Pius X Tradition; APOL-020 ↔ Pius X papal infallibility; CR-DOC-02 ↔ APOL-021 on doctrinal development; CR-LIT-06 ↔ original Offertory and Canon Guide moments. Such links signify **research proximity**, not doctrinal conclusions, agreement or authority to merge two unfinished arguments.
+
+### Question-quality checks and identified limits
+
+A 51-question hand-curated EN/FR calibration set initially scored **37/51 (72.5%)** against expected routing outcomes. After adding editorial question variants and disambiguation rules, **51/51** matched the *calibrated set*. This is a development regression, **not an independent success rate**.
+
+A separate 30-question diagnostic set initially matched **12/30**, including five **wrong specific-topic selections** (for example, sanctuary lamp → ciborium; Immaculate Heart → Marian intercession; a priest's post-consecration genuflection → Real Presence). These are important errors even though the router still generated no answers. Specific semantic guardrails and additional navigation variants brought this *same inspected diagnostic set* to **26/30** with **zero wrong specific-topic selections**. Because the fixes were informed by this set, that later result is also *no longer an independent holdout score*. Record the initial 12/30 and the remaining unknowns openly. In particular, some legitimate questions phrased quite differently from the indexed prompts still fail to retrieve a source; low lexical confidence should produce clarification or noncoverage, **not an improvised answer**.
+
+The routing module now labels how it arrived at a proposed selection:
+
+- `EXACT_VARIANT` — the original user phrase matches a curated question variant after normalisation; no additional interpretation confirmation required for **source navigation** (still never a character reply).
+- `EXPLICIT_REFORMULATION_CHOICE` — visitor selected an offered interpretation; the selection itself confirms the intended topic.
+- `LEXICAL_RANKED` — a nonliteral overlap suggests a topic but `requiresQuestionConfirmation:true` signals that any future UI must ask before treating the suggestion as the user's choice.
+- `CONTEXT_FOLLOW_UP_RULE` — rule-matched follow-up based on existing topic context; also flagged for confirmation because context can be misleading.
+  
+Any **character handoff** independently requires explicit acceptance and an exact matched original-source destination; these two confirmations serve different purposes. No runtime UI is yet connected.
+
+### Next technical gate
+
+Do **not** treat a deterministic bag-of-words matcher as semantic search. To reach production quality, test on a third untouched sample of ordinary first-visit questions, realistic French rephrasings and multiple-topic questions. Add a semantic retrieval/reranking component only after the source registry is mature and with a conservative reject/clarify margin. Final answer composition belongs to the later source-fidelity and dialogue review phases, not this routing pilot.
+
+**All active modules remain draft/research-only.** Neither PR #1406's original Catechism reader nor PR #1419's Sarto voice model nor the LIVE/Simple/Missal Mass engine was modified.
