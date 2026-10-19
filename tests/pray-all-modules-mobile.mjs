@@ -585,6 +585,54 @@ try{
    }
    await page.locator("#aoPray435930.open [data-p435930-lib-back]").tap({timeout:9000});
  }
+ // Divine Mercy has two nested cursors: swipe changes one of seven/eight
+ // prayer chapters; the visible beads and paragraph focus select individual
+ // canonical prayer events. No separate Previous/Next control may compete.
+ assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.divine_mercy",{returnContext:null})),true);
+ const mercy="#aoPray435930.open .aoMercyReader";
+ const beadNav=page.locator(mercy+" [data-ao-mercy-bead-navigation]");
+ const progress=page.locator(mercy+" .aoMercyBeadNavigation > .aoDevoProgress");
+ await beadNav.waitFor({state:"visible"});
+ assert.equal(await progress.count(),1,"Divine Mercy needs exactly one visible prayer-position progress");
+ assert.equal(await progress.getAttribute("aria-valuemin"),"0");
+ assert.equal(await progress.getAttribute("aria-valuemax"),"62");
+ assert.equal(await progress.getAttribute("aria-valuenow"),"1");
+ assert.equal(await page.locator(mercy+" [data-p435930-mercy-prev],[data-p435930-mercy-next],"+mercy+" .aoMercyControls").count(),0,
+   "Divine Mercy retains duplicated bead Previous/Next chrome");
+ const phase=page.locator(mercy+" [data-p435930-mercy-jump='4']");
+ await phase.tap(); // Source index 4: first decade's large bead.
+ assert.equal(await progress.getAttribute("aria-valuenow"),"5");
+ assert.equal(await beadNav.getAttribute("data-mercy-decade"),"1");
+ assert.equal(await beadNav.getAttribute("data-mercy-bead"),"0");
+ assert.equal(await page.locator(mercy+" .aoMercyBeadButton").count(),11);
+ await page.locator(mercy+" [data-p435930-mercy-jump='10']").tap();
+ assert.equal(await progress.getAttribute("aria-valuenow"),"11");
+ assert.equal(await beadNav.getAttribute("data-mercy-bead"),"6",
+   "Direct bead choice must retain canonical index, not invent a new cursor");
+ const mercyScroll=page.locator(mercy+" .aoDevoCardScroll");
+ await mercyScroll.evaluate(el=>{
+  const t=(x,y)=>new Touch({identifier:48,target:el,clientX:x,clientY:y});
+  el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(246,350)],changedTouches:[t(246,350)]}));
+  el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(240,198)]}));
+ });
+ assert.equal(await progress.getAttribute("aria-valuenow"),"11",
+   "Vertical gesture must not advance a bead or decade by itself");
+ await mercyScroll.evaluate(el=>{
+  const t=(x,y)=>new Touch({identifier:49,target:el,clientX:x,clientY:y});
+  el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[t(246,350)],changedTouches:[t(246,350)]}));
+  el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[t(90,354)]}));
+ });
+ assert.equal(await page.locator(mercy+" [data-ao-devo-card]").getAttribute("data-ao-devo-card"),"decade-2",
+  "Horizontal gesture must move one chapter, not one bead");
+ assert.equal(await progress.getAttribute("aria-valuenow"),"16",
+  "Chapter swipe must restore the source-owned start bead and its progress");
+ await page.locator(mercy+" [data-ao-mercy-options] summary").tap();
+ await page.locator(mercy+" [data-p435930-mercy-closing]").tap();
+ assert.equal(await progress.getAttribute("aria-valuemax"),"63",
+  "Optional published closing prayer must adjust canonical denominator");
+ assert.equal(await progress.getAttribute("aria-valuenow"),"16",
+  "Optional ending must not reset user's position");
+
  assert.deepEqual(errors.filter(x=>/presentation-runtime|rosary-scripture|TypeError|ReferenceError/i.test(x)),[],
    "PRAY threw runtime errors: "+errors.join(" | "));
  console.log("PASS PRAY full mobile routes "+routes.length+"/16 and Prayer Library 48/48 readable/source-labelled");
