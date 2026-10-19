@@ -1,0 +1,76 @@
+{
+  "schema": "ao-mass-original-art-source-witness-v1",
+  "version": "2026-10-19-p3-schumacher-s01",
+  "title": "Kněžské přijímání / Priest Communion",
+  "artist": "Philipp Schumacher (1866–1940)",
+  "year": 1920,
+  "originalPrintedSource": {
+    "book": "Katholisches Religionsbüchlein für die unteren Klassen der Volksschule",
+    "author": "Wilhelm Pichler",
+    "publisher": "Österreichischer Schulbücherverlag",
+    "publicationCity": "Vienna",
+    "page": 97
+  },
+  "repository": {
+    "institution": "Wikimedia Commons",
+    "filePageUrl": "https://commons.wikimedia.org/wiki/File:Komunii%C4%9Do_(Schumacher,_Katholisches_Religionsb%C3%BCchlein)_001.jpg",
+    "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Komunii%C4%9Do_%28Schumacher%2C_Katholisches_Religionsb%C3%BCchlein%29_001.jpg",
+    "displayedImageSize": [
+      1265,
+      964
+    ],
+    "originalBytesReported": 939529,
+    "repositorySHA1": "3073f3c53d38c007a821d3fe1c3dc3fe8d103436",
+    "repositorySHA1Basis": "Wikimedia Commons page structured metadata; SHA-1 is NOT an independently verified original-file SHA-256.",
+    "localSHA256": null,
+    "localFile": null,
+    "rights": "PUBLIC_DOMAIN_MARK_1_0_AND_PD_SCAN",
+    "rightsURL": "https://commons.wikimedia.org/wiki/File:Komunii%C4%9Do_(Schumacher,_Katholisches_Religionsb%C3%BCchlein)_001.jpg",
+    "rightsDetails": "Author died 1940; edition printed 1920; Commons describes its reproduction as a mechanical scan of a public-domain original and identifies the work public-domain in countries with term <=life+80, and in US pre-1931.",
+    "rightsAssessment": "PUBLISHED_FILE_DOCUMENTED_PUBLIC_DOMAIN"
+  },
+  "visualInspection": {
+    "method": "Full-resolution (1265 x 964) image displayed by web media viewer on 2026-10-19; no original bytes downloaded into working container.",
+    "reviewState": "VIEWED_SOURCE_PHOTO_ORIGINAL_NOT_FILE_VERIFIED",
+    "depicts": "Historically attested illustration of Roman Catholic priest bent toward altar with hands together raised near his mouth, chalice present on altar, acolyte kneeling nearby and congregation behind rail.",
+    "priestAtAltar": true,
+    "chaliceOnAltar": true,
+    "headBowedTowardAltar": true,
+    "raisedHandsNearMouth": true,
+    "consumptionOfHostUnambiguous": false,
+    "visibilityOfTwoHostHalves": false,
+    "elbowsRestOnAltarDemonstrably": false,
+    "drinkingFromChalice": false,
+    "rightHandHoldsChalice": false,
+    "leftHandSupportsPaten": false,
+    "priestFaceOrientation": "RIGHT_TOWARD_TRADITIONAL_HIGH_ALTAR",
+    "excludedMisuses": [
+      "Do not represent this as the chalice Communion moment.",
+      "Do not infer the Host is physically visible, divided, or consumed in this image.",
+      "Do not infer precise Ritus Servandus X.4 elbow placement from indistinct drawing.",
+      "Do not substitute this 1920 source drawing for the user-approved bank style."
+    ]
+  },
+  "harmonization": {
+    "status": "NOT_YET_COMPARED_TO_APPROVED_FAMILY",
+    "masters": [
+      "priest_elevate_chalice_rich",
+      "priest_rail_after_rich",
+      "priest_incense_altar_rich"
+    ],
+    "notes": "Source has high-detail pen hatching and full church setting; any icon would require licensed PD-source-derived simplified accurate drawing matching approved priest icons, with proof at 32 and 48 px.",
+    "generationAuthorized": false,
+    "userApproval": "PENDING"
+  },
+  "verdict": {
+    "sourceOriginalExists": true,
+    "sourcePictureVisuallyInspected": true,
+    "publicDomainClaimVerifiedFromRepository": true,
+    "fileBytesDownloaded": false,
+    "fileSHA256Verified": false,
+    "depictsExact1962HostReceivingGesture": "PARTIAL_UNCERTAIN",
+    "depictsExact1962ChaliceReceivingGesture": false,
+    "productionEligible": false,
+    "next": "Obtain source bytes with checksum; seek photo/drawing in which Host, hands and elbows are unequivocal; independently source chalice Communion. Only then create approved-family-consistent icon concept."
+  }
+}
