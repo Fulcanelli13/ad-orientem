@@ -180,16 +180,17 @@ try{
    assert.equal(result.starts,0,"Legacy reader was incorrectly started");
    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ROG-R01",
     null,{timeout:10000});
-   const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
-   const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
+   assert.equal(await page.locator("#ao-r17-native-reader-preview [data-reader-nav]").count(),0);
+   const navigate=async direction=>{
+    await page.locator("#ao-r17-native-reader-preview .ao-prayer-card").focus();
+    await page.keyboard.press(direction==="previous"?"ArrowLeft":"ArrowRight");
+   };
    for(let i=1;i<6;i++){
-    const box=await next.boundingBox();assert.ok(box&&box.height>=44);
-    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+    await navigate("next");
     await page.waitForFunction(id=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id===id,
       "ROG-R0"+(i+1),{timeout:5000});
    }
-   const handoffBox=await next.boundingBox();assert.ok(handoffBox&&handoffBox.height>=44);
-   await page.touchscreen.tap(handoffBox.x+handoffBox.width/2,handoffBox.y+handoffBox.height/2);
+   await navigate("next");
    await page.waitForFunction(()=>{
     const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
     return (c?.sourceSectionId??c?.sectionId)==="AO.CARD.001";
@@ -202,8 +203,7 @@ try{
    assert.deepEqual(identity,{source:39,total:60,first:"Introit",owner:"INTROIT"});
    const title=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim();
    assert.equal(title,"Introit","Rogations must hand off directly to Introit, not foot prayers");
-   const backBox=await back.boundingBox();assert.ok(backBox&&backBox.height>=44);
-   await page.touchscreen.tap(backBox.x+backBox.width/2,backBox.y+backBox.height/2);
+   await navigate("previous");
    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ROG-R06",
     null,{timeout:5000});
    // Preserve one gesture per curated display card, but validate the
@@ -217,8 +217,7 @@ try{
    for(const source of expected){
      let found=false;
      for(let attempt=0;attempt<12;attempt++){
-       const box=await next.boundingBox();assert.ok(box&&box.height>=44);
-       await next.tap({timeout:5000});
+       await navigate("next");
        await page.waitForTimeout(120);
        const state=await page.evaluate(()=>{
          const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
