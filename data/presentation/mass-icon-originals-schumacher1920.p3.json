@@ -49,7 +49,11 @@
       "Do not infer the Host is physically visible, divided, or consumed in this image.",
       "Do not infer precise Ritus Servandus X.4 elbow placement from indistinct drawing.",
       "Do not substitute this 1920 source drawing for the user-approved bank style."
-    ]
+    ],
+    "possibleExactMoment": "POST_HOST_CONSUMPTION_PRAYER_OR_MEDITATION",
+    "rubricalWitness": "Ritus servandus X.4: after consuming both halves, priest rises, joins thumbs and index fingers, puts hands joined before face, pauses in meditation. Drawing's hands-joined-before-face resembles this, but does not prove chronology from visual alone.",
+    "rubricalWitnessUrl": "https://1962ordo.today/1962-rubrics/",
+    "actionSpecificHostSourceApproved": false
   },
   "harmonization": {
     "status": "NOT_YET_COMPARED_TO_APPROVED_FAMILY",
@@ -58,7 +62,7 @@
       "priest_rail_after_rich",
       "priest_incense_altar_rich"
     ],
-    "notes": "Source has high-detail pen hatching and full church setting; any icon would require licensed PD-source-derived simplified accurate drawing matching approved priest icons, with proof at 32 and 48 px.",
+    "notes": "Source has high-detail pen hatching and full church setting; any icon would require licensed PD-source-derived simplified accurate drawing matching approved priest icons, with proof at 32 and 48 px. Head-and-hands before face appear more consistent with the pause after consuming than with Host visibly in mouth: avoid deceptive icon substitution.",
     "generationAuthorized": false,
     "userApproval": "PENDING"
   },
@@ -68,9 +72,9 @@
     "publicDomainClaimVerifiedFromRepository": true,
     "fileBytesDownloaded": false,
     "fileSHA256Verified": false,
-    "depictsExact1962HostReceivingGesture": "PARTIAL_UNCERTAIN",
+    "depictsExact1962HostReceivingGesture": "NOT_CONFIRMED_POSSIBLE_POST_CONSUMPTION_MEDITATION",
     "depictsExact1962ChaliceReceivingGesture": false,
     "productionEligible": false,
-    "next": "Obtain source bytes with checksum; seek photo/drawing in which Host, hands and elbows are unequivocal; independently source chalice Communion. Only then create approved-family-consistent icon concept."
+    "next": "Treat as post-Host Communion contextual illustration; do not adapt to a CONSUMES HOST icon without a genuinely visible original of the two Host halves at the mouth and elbows on altar. Need separate exact chalice source and actual file hash."
   }
 }
