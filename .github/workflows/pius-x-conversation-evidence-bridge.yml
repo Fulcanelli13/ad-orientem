@@ -1,0 +1,21 @@
+name: Pius X source-to-question evidence bridge
+on:
+  pull_request:
+    paths:
+      - 'data/learn/research/pius-x-p0-p1-intent-evidence-bridge-20261019.v1.json'
+      - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
+      - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
+      - 'tests/pius-x-conversation-intent-bridge.mjs'
+      - '.github/workflows/pius-x-conversation-evidence-bridge.yml'
+  workflow_dispatch:
+jobs:
+  research-bridge-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/pius-x-conversation-intent-bridge.mjs
