@@ -1429,6 +1429,8 @@ export async function mountNativeReaderPreview({
     if(!psalmClericsChoice)return;
     const eligible=kind==="HOLY_THURSDAY_POST"&&state?.card?.id==="HT-R05";
     psalmClericsChoice.hidden=!eligible;
+    const stage=psalmClericsChoice.closest(".ao-reader-stage");
+    if(stage)stage.dataset.riteChoice=String(eligible||!riteChoice?.hidden);
     if(!eligible)return;
     const selected=state.clericsPresent===null?"unknown":state.clericsPresent?"yes":"no";
     for(const button of psalmClericsChoice.querySelectorAll("[data-psalm-clerics]"))
