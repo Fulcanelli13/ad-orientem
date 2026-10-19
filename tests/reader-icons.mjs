@@ -52,7 +52,7 @@ keys=iconKeysForReaderState({
 });
 assert.equal(keys.responseIconKey,"response");
 assert.equal(keys.priestVoiceIconKey,"priest_silent");
-assert.equal(keys.priestPositionIconKey,"priest_gospel_rich");
+assert.equal(keys.priestPositionIconKey,"priest_epistle_rich","Oct 19 review: physical Gospel-side art is the former epistle file");
 assert.equal(keys.priestActionIconKey,"priest_elevation","user-selected original v1.80 Host elevation artwork is not wired");
 assert.equal(keys.scholaIconKey,"schola");
 
@@ -157,18 +157,18 @@ for(const [group,path] of Object.entries(reviewed.selected)){
 const approvedPosition={
   ALTAR_STEPS_ASCENDING:"priest_ascending_rich",
   ALTAR_CENTER:"priest_centre_rich",
-  ALTAR_EPISTLE_MISSAL:"priest_epistle_rich",
-  ALTAR_EPISTLE_SIDE:"priest_epistle_rich",
-  ALTAR_GOSPEL_MISSAL:"priest_gospel_rich",
-  ALTAR_GOSPEL_SIDE:"priest_gospel_rich",
+  ALTAR_EPISTLE_MISSAL:"priest_gospel_rich",
+  ALTAR_EPISTLE_SIDE:"priest_gospel_rich",
+  ALTAR_GOSPEL_MISSAL:"priest_epistle_rich",
+  ALTAR_GOSPEL_SIDE:"priest_epistle_rich",
   SEDILIA:"priest_sedilia_rich",
-  COMMUNION_RAIL:"priest_rail_after_rich",
+  COMMUNION_RAIL:null, // Giving Communion artwork is an action, not an idle position
   PREACHING_PLACE:"priest_ambo_rich",
   PROCESSION_ROUTE:"priest_procession_rich",
 };
 for(const [station,wanted] of Object.entries(approvedPosition)){
   assert.equal(iconKeysForReaderState({priestPosition:{station}}).priestPositionIconKey,wanted,
-    station+" did not render the approved v1.80 Mass art");
+    station+" did not render the reviewed 19 October 2026 Mass art");
 }
 assert.equal(iconKeysForReaderState({priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,"priest_foot",
   "unresolved foot-of-altar must not be marked as user-approved");
@@ -195,4 +195,73 @@ for(const key of ["stand","sit","cross","priest_genuflect"]){
   assert.ok(!R17_DONOR_PNG_ICON_KEYS.includes(key),key+" is an original vector, not PNG");
 }
 
-console.log("reader icons: PASS — user-reviewed v1.80 position/action artwork and cue ownership.");
+// Latest user review (19 Oct 2026) supersedes contradictory 10 Oct art labels.
+// The actual source cue and rubric must survive even when art fails closed.
+for(const station of ["ALTAR_EPISTLE_MISSAL","ALTAR_EPISTLE_SIDE","ALTAR_FRONT_EPISTLE_HALF"]){
+  assert.equal(iconKeysForReaderState({priestPosition:{station}}).priestPositionIconKey,
+    "priest_gospel_rich","Epistle station used artwork now assigned to Gospel");
+}
+for(const station of ["ALTAR_GOSPEL_MISSAL","ALTAR_GOSPEL_SIDE","ALTAR_FRONT_GOSPEL_HALF"]){
+  assert.equal(iconKeysForReaderState({priestPosition:{station}}).priestPositionIconKey,
+    "priest_epistle_rich","Gospel station used artwork now assigned to Epistle");
+}
+for(const [label,want] of [
+  ["READS EPISTLE","priest_gospel_rich"],
+  ["GOES TO EPISTLE SIDE","priest_gospel_rich"],
+  ["PROCLAIMS GOSPEL","priest_epistle_rich"],
+  ["GOES TO GOSPEL SIDE","priest_epistle_rich"],
+  ["GIVES COMMUNION","priest_rail_after_rich"],
+  ["ELEVATES CHALICE","priest_elevate_chalice_rich"],
+  ["ELEVATES HOST","priest_elevation"],
+  ["OFFERS HOST","priest_elevate_host_rich"],
+  ["INCENSES PEOPLE",null],
+  ["RECEIVES INCENSE",null],
+  ["RECEIVES HOST",null],
+  ["RECEIVES CHALICE",null],
+  ["BREAKS HOST",null],
+  ["PLACES PARTICLE",null],
+]){
+  assert.equal(iconKeysForReaderState({priestAction:{label}}).priestActionIconKey,
+    want,label+" projected a misleading or reversed icon");
+}
+for(const [label,iconKey,want] of [
+  ["READS EPISTLE","priest_epistle_rich","priest_gospel_rich"],
+  ["PROCLAIMS GOSPEL","priest_gospel_rich","priest_epistle_rich"],
+  ["ELEVATES CHALICE","chalice_elevation","priest_elevate_chalice_rich"],
+  ["GIVES COMMUNION","priest_communion_rich","priest_rail_after_rich"],
+  ["BREAKS HOST","fraction",null],
+  ["RECEIVES CHALICE","chalice_elevation",null],
+  ["INCENSES PEOPLE","priest_incense_people_rich",null],
+]){
+  assert.equal(iconKeysForReaderState({priestAction:{
+    label,iconKey,owner:"R17_V180_PRIEST_ACTION_SOURCE",
+  }}).priestActionIconKey,want,
+  label+" direct donor icon bypassed reviewed semantic mapping");
+}
+assert.equal(iconKeysForReaderState({
+  priestAction:{label:"CUSTOMARY EXTRA",owner:"GESTURE_MATRIX_SOT",iconKey:null},
+}).priestActionIconKey,null,"unapproved icon was inferred for a source-owned gesture");
+assert.equal(iconKeysForReaderState({
+  priestPosition:{station:"COMMUNION_RAIL"},
+  priestAction:{label:"GIVES COMMUNION"},
+}).priestPositionIconKey,null,"Communion distribution art reused as idle position");
+assert.equal(iconKeysForReaderState({
+  priestPosition:{station:"COMMUNION_RAIL"},
+  priestAction:{label:"GIVES COMMUNION"},
+}).priestActionIconKey,"priest_rail_after_rich");
+assert.deepEqual(
+  readFileSync(new URL("../assets/active/mass-v46/chalice_elevation.svg",import.meta.url)),
+  readFileSync(new URL("../assets/active/mass-v46/priest_elevation.svg",import.meta.url)),
+  "Donor collision changed without review — recorded Host duplication must remain visible");
+assert.deepEqual(
+  readFileSync(new URL("../assets/active/mass-v46/fraction.svg",import.meta.url)),
+  readFileSync(new URL("../assets/active/mass-v46/commingling.svg",import.meta.url)),
+  "Donor collision changed without review — do not silently alter original masters");
+const liveRenderer=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
+assert.match(liveRenderer,
+  /setChannel\(root,"priest-action",current\.priestAction\)/,
+  "source-owned priest action was suppressed solely because its art is unapproved");
+assert.match(liveRenderer,
+  /setText\(root,"priest-action",textValue\(current\.priestAction\)\)/,
+  "withholding unapproved action art must not erase the priest's source action");
+console.log("reader icons: PASS — reviewed 19 Oct P0 semantic repairs, donor and cue ownership.");
