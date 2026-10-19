@@ -62,6 +62,7 @@ import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic, resolveCanonStageBellCinematic } from "./reader-transients.js";
+import {projectHolyThursdayBell,projectEasterVigilGloriaBell} from "./reader-triduum-bells.js";
 import { projectPriestQuietOffertory } from "./reader-offertory-quiet.js";
 import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
@@ -1137,7 +1138,8 @@ export async function mountNativeReaderPreview({
       inVigil=true;
       stage="VIGIL_ACTIVE";
       const moment=easterVigilMoment();
-      if(moment)reader.renderMoment(moment);
+      if(moment)reader.renderMoment({...moment,bell:null,cinematic:null});
+      root.dataset.r17OwnerBell="R33_EASTER_VIGIL_PRE_GLORIA_SILENCE";
       root.dataset.r17NativeRiteRecord=controller.project().step?.recordId??"none";
       root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
       root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
@@ -1149,7 +1151,12 @@ export async function mountNativeReaderPreview({
       inVigil=false;
       stage="MASS_ACTIVE";
       currentMass=card;
+      const vigilGloriaBell=projectEasterVigilGloriaBell({
+        distinctRite:ready.distinctRite,massStarted:true,card,
+      });
       reader.renderMoment({
+        bell:vigilGloriaBell.bell,
+        cinematic:vigilGloriaBell.cinematic,
         id:card.sectionId,
         sectionTitle:card.title,
         cardTitle:card.title,
@@ -1162,6 +1169,7 @@ export async function mountNativeReaderPreview({
         guide:null,
       });
       root.dataset.r17NativeRiteRecord="MASS:"+card.sectionId;
+      root.dataset.r17OwnerBell=vigilGloriaBell.owner;
       root.dataset.r17CardOwner="R33_EASTER_VIGIL_MASS_PROJECTION";
       root.dataset.r17StateOwner="R33_EASTER_VIGIL_MASS";
       return card;
@@ -1595,8 +1603,12 @@ export async function mountNativeReaderPreview({
       expectedCinematic:partCinematic??transient.cinematic,
       observedCanon,
     });
-    const bell=canonBellStage.bell;
-    const cinematic=canonBellStage.cinematic;
+    const triduumBell=projectHolyThursdayBell({
+      resolvedMass,cueId:activeCueId,
+      expectedBell:canonBellStage.bell,expectedCinematic:canonBellStage.cinematic,
+    });
+    const bell=triduumBell.bell;
+    const cinematic=triduumBell.cinematic;
     const priestPosition=observedPriest?.priestPosition ??
       (focusedFaithful?.conditionalSedilia
       ? Object.freeze({station:"SEDILIA",label:"AT SEDILIA",
@@ -1696,10 +1708,13 @@ export async function mountNativeReaderPreview({
       ...owned.ownership,
       gesture:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.gesture,
       response:transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : owned.ownership.response,
-      bell:canonBellStage.observationOverrides
-        ? canonBellStage.bellOwner
+      bell:triduumBell.applies && (triduumBell.suppressed || activeCueId==="AO.SM.C0053")
+        ? triduumBell.owner
+        : canonBellStage.observationOverrides ? canonBellStage.bellOwner
         : transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED" : transientProjection.ownership.bell,
-      cinematic:canonBellStage.observationOverrides
+      cinematic:triduumBell.applies && activeCueId==="AO.SM.C0053"
+        ? triduumBell.owner
+        : canonBellStage.observationOverrides
         ? canonBellStage.cinematicOwner
         : partCinematic ? partCinematic.owner
         : transientGuard.pending ? "V1_83_CARD_TRANSITION_CLEARED"
@@ -1782,6 +1797,8 @@ export async function mountNativeReaderPreview({
       cinematicScene,
       canonStageBellOverride:canonBellStage.observationOverrides,
       canonStageSoundPhaseOwner:canonBellStage.phaseOwner,
+      triduumBellOwner:triduumBell.owner,
+      triduumBellSuppressed:triduumBell.suppressed,
       priestVoice,
       priestQuietOffertory,
       schola:visibleSchola,
