@@ -1,4 +1,5 @@
 import "./loading-director.mjs";
+import "./typography-trial-contract.mjs";
 import assert from "node:assert/strict";
 import "./liturgical-speaker-typography.mjs";
 import "./guide-coverage-two-function-audit.mjs";
