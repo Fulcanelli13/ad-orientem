@@ -18,10 +18,12 @@
   "metrics": {
     "bridgeTopicGroups": 7,
     "uniqueApolOwnerIds": 8,
-    "uniquePiusQuestionIds": 8,
+    "uniquePiusQuestionIds": 28,
     "groupPassageJoins": 27,
     "massExplorerCandidateContexts": 4,
-    "approvedPublishedLinks": 0
+    "approvedPublishedLinks": 0,
+    "b7BilingualFullAnswerReviews": 28,
+    "b7OriginalItalianPrintedCollations": 0
   },
   "bridges": [
     {
@@ -39,7 +41,11 @@
         "APOL-013",
         "APOL-015"
       ],
-      "pius": [],
+      "pius": [
+        "PX1912-Q233",
+        "PX1912-Q234",
+        "PX1912-Q235"
+      ],
       "nuance": "Canon of books and unwritten apostolic Tradition are distinct; APOL-012 concerns inspiration, not the book list.",
       "sourceEvidenceIds": [
         "MGC-P001",
@@ -57,6 +63,30 @@
           "ref": "APOL-015",
           "originalTitle": "What is Apostolic Tradition, and why is it authoritative?",
           "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q233",
+          "originalQuestionStem": "Where is preserved that which God",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q234",
+          "originalQuestionStem": "What is Sacred Scripture?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "CONTEXT_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q235",
+          "originalQuestionStem": "What is Tradition?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
         }
       ],
       "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
@@ -85,7 +115,9 @@
         "PX1912-Q325",
         "PX1912-Q329",
         "PX1912-Q330",
-        "PX1912-Q331"
+        "PX1912-Q331",
+        "PX1912-Q328",
+        "PX1912-Q332"
       ],
       "nuance": "Substance and species must remain distinct; this bridge does not supply sacramental mechanics or reinterpret the Consecration text.",
       "sourceEvidenceIds": [
@@ -106,25 +138,49 @@
           "owner": "LTF_PIUS_X_CATECHISM_INDEX",
           "ref": "PX1912-Q325",
           "originalQuestionStem": "After the consecration, what is the",
-          "status": "INDEX_FINGERPRINT_ONLY_NOT_FULL_TEXT_VERIFIED"
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
         },
         {
           "owner": "LTF_PIUS_X_CATECHISM_INDEX",
           "ref": "PX1912-Q329",
           "originalQuestionStem": "After the consecration, is there nothing",
-          "status": "INDEX_FINGERPRINT_ONLY_NOT_FULL_TEXT_VERIFIED"
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
         },
         {
           "owner": "LTF_PIUS_X_CATECHISM_INDEX",
           "ref": "PX1912-Q330",
           "originalQuestionStem": "What are the species or appearances?",
-          "status": "INDEX_FINGERPRINT_ONLY_NOT_FULL_TEXT_VERIFIED"
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "CONTEXT_ONLY"
         },
         {
           "owner": "LTF_PIUS_X_CATECHISM_INDEX",
           "ref": "PX1912-Q331",
           "originalQuestionStem": "Under the appearances of bread is",
-          "status": "INDEX_FINGERPRINT_ONLY_NOT_FULL_TEXT_VERIFIED"
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q328",
+          "originalQuestionStem": "When do the bread and the",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q332",
+          "originalQuestionStem": "When the host is broken into",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
         }
       ],
       "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
@@ -152,7 +208,15 @@
       "pius": [
         "PX1912-Q355",
         "PX1912-Q359",
-        "PX1912-Q363"
+        "PX1912-Q363",
+        "PX1912-Q356",
+        "PX1912-Q362",
+        "PX1912-Q364",
+        "PX1912-Q365",
+        "PX1912-Q366",
+        "PX1912-Q372",
+        "PX1912-Q380",
+        "PX1912-Q381"
       ],
       "nuance": "Q359 is examination of conscience; Q363 concerns perfect contrition, whereas MG-P021 also discusses imperfect attrition. Do not equate the two.",
       "sourceEvidenceIds": [
@@ -174,19 +238,89 @@
           "owner": "LTF_PIUS_X_CATECHISM_INDEX",
           "ref": "PX1912-Q355",
           "originalQuestionStem": "What is Penance?",
-          "status": "INDEX_FINGERPRINT_ONLY_NOT_FULL_TEXT_VERIFIED"
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
         },
         {
           "owner": "LTF_PIUS_X_CATECHISM_INDEX",
           "ref": "PX1912-Q359",
           "originalQuestionStem": "How is the examination of conscience",
-          "status": "INDEX_FINGERPRINT_ONLY_NOT_FULL_TEXT_VERIFIED"
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "PASTORAL_METHOD_ONLY"
         },
         {
           "owner": "LTF_PIUS_X_CATECHISM_INDEX",
           "ref": "PX1912-Q363",
           "originalQuestionStem": "What is perfect sorrow, or contrition?",
-          "status": "INDEX_FINGERPRINT_ONLY_NOT_FULL_TEXT_VERIFIED"
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "CONTRAST_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q356",
+          "originalQuestionStem": "When was the sacrament of Penance",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q362",
+          "originalQuestionStem": "How many kinds of sorrow are",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q364",
+          "originalQuestionStem": "Why is contrition perfect sorrow?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q365",
+          "originalQuestionStem": "What is imperfect sorrow, or attrition?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q366",
+          "originalQuestionStem": "Why is attrition imperfect sorrow?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q372",
+          "originalQuestionStem": "What is confession?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q380",
+          "originalQuestionStem": "What is absolution?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q381",
+          "originalQuestionStem": "When sins are forgiven by absolution,",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
         }
       ],
       "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
@@ -226,7 +360,9 @@
           "owner": "LTF_PIUS_X_CATECHISM_INDEX",
           "ref": "PX1912-Q116",
           "originalQuestionStem": "Can the Pope, by himself, err",
-          "status": "INDEX_FINGERPRINT_ONLY_NOT_FULL_TEXT_VERIFIED"
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
         }
       ],
       "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
@@ -252,7 +388,15 @@
       "apol": [
         "APOL-031"
       ],
-      "pius": [],
+      "pius": [
+        "PX1912-Q321",
+        "PX1912-Q346",
+        "PX1912-Q348",
+        "PX1912-Q349",
+        "PX1912-Q350",
+        "PX1912-Q351",
+        "PX1912-Q352"
+      ],
       "nuance": "Visible sacrifice of one Cross, living/dead applications, Malachi typology, and qualified priest-only Communion must retain distinct scopes.",
       "sourceEvidenceIds": [
         "MGC-P008",
@@ -269,6 +413,62 @@
           "ref": "APOL-031",
           "originalTitle": "Is the Mass really a sacrifice—and does it re-sacrifice Christ?",
           "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q321",
+          "originalQuestionStem": "Why did Jesus Christ institute the",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q346",
+          "originalQuestionStem": "Is the Eucharist only a sacrament?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q348",
+          "originalQuestionStem": "What is the Holy Mass?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q349",
+          "originalQuestionStem": "Is the sacrifice of the Mass",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q350",
+          "originalQuestionStem": "What difference is there between the",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q351",
+          "originalQuestionStem": "For what ends is the Mass",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q352",
+          "originalQuestionStem": "Is the Mass not also offered",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
         }
       ],
       "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
@@ -408,9 +608,11 @@
     }
   ],
   "outstanding": [
-    "Verify each referenced Catechism Q's full original answer in the character-owned primary corpus; index stem alone is insufficient.",
     "Verify Canon's precise own-voice sermon source before authoring any answer or first-person statement.",
     "Resolve existing Mass Explorer canonical AO.CARD and AO.SM.B IDs from approved guide registry before any integration.",
-    "Independent theological authority adjudication, printed-edition concordance, and translation licensing remain outstanding."
-  ]
+    "Independent theological authority adjudication, printed-edition concordance, and translation licensing remain outstanding.",
+    "B7: 28 full Q/A read in modern English plus Italian online transcription; 1912 print facsimile and translation rights pending; no personal authorship inference."
+  ],
+  "catechismFullAnswerCrosswalk": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+  "researchBatch": "2026-10-19-B7"
 }
