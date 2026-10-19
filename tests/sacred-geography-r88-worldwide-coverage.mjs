@@ -1,0 +1,26 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const load=p=>JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8'));
+const c=load('data/geography/research/sacred-geography-r88-country-category-coverage.v1.json');
+const main=load('data/geography/seed-registry.v1.json').places;
+const r87=load('data/geography/research/sacred-geography-r87-first-canonical-release.v1.json');
+const types=['shrine','basilica','cathedral','pilgrimage_destination','monastery','convent','church','chapel'];
+assert.equal(c.schema,'AO_SACRED_GEOGRAPHY_R88_COUNTRY_CATEGORY_COVERAGE_V1');
+assert.equal(c.countries.length,250);
+assert.equal(new Set(c.countries.map(x=>x.iso_code)).size,250);
+assert(c.countries.some(x=>x.iso_code==='XK'));
+const sum=f=>c.countries.reduce((n,x)=>n+f(x),0);
+for(const x of c.countries){assert.match(x.iso_code,/^[A-Z]{2}$/);assert.equal(x.country_category_completeness,'NOT_ASSESSED');assert.equal(types.reduce((n,k)=>n+x.published_place_types[k],0),x.published_places,x.iso_code);const q=x.r70_research_candidates+x.r80_research_mentions+x.r81_research_mentions+x.r82_research_mentions;assert.equal(x.coverage_group,x.published_places?'PUBLISHED_PRESENCE_DEPTH_UNASSESSED':q?'RESEARCH_PRESENT_NO_PUBLISHED_PLACE':'NO_RECORD_IN_SCOPED_SOURCE_COHORTS');}
+assert.equal(sum(x=>x.published_places),294);
+assert.equal(sum(x=>+(x.published_places>0)),87);
+assert.equal(sum(x=>+(x.coverage_group==='RESEARCH_PRESENT_NO_PUBLISHED_PLACE')),80);
+assert.equal(sum(x=>+(x.coverage_group==='NO_RECORD_IN_SCOPED_SOURCE_COHORTS')),83);
+assert.equal(sum(x=>x.r70_research_candidates),750);
+assert.equal(sum(x=>x.r80_research_mentions+x.r81_research_mentions+x.r82_research_mentions),187);
+assert.equal(sum(x=>x.provisional_tlm_venue_records),1879);
+assert.equal(sum(x=>x.r87_new_published_places),33);
+for(const type of types)assert.equal(sum(x=>x.published_place_types[type]),c.summary.place_type_totals[type]);
+assert.equal(c.country_aliases.DY.iso,'BJ');assert.equal(c.country_aliases.HV.iso,'BF');
+assert.equal(r87.published_new.length,33);assert(main.length>=294);
+for(const x of r87.published_new)assert(main.some(p=>p.place_id===x.place_id),'R87 Place lost: '+x.place_id);
+console.log('R88 country matrix: 250 jurisdictions, 294 snapshot Places in 87, 80 research-only, 83 without scoped source records.');
