@@ -1,7 +1,7 @@
 {
   "schema": "AO_PIUS_X_CONTENT_OWNED_TEN_CONVERSATION_PILOT_V1",
   "created": "2026-10-19",
-  "status": "COMPLETE_BILINGUAL_EDITORIAL_DRAFT_NOT_INDEPENDENTLY_CERTIFIED",
+  "status": "SOURCE_REVIEWED_EDITORIAL_DRAFT_MIXED_CHARACTER_AND_NOTES_NOT_CERTIFIED",
   "scope": "Ten content-owned, source-bounded educational conversation paths (main question, document-scoped follow-up, misconception correction), not a published chatbot script or a replacement for separate voice review.",
   "sourceOfTruth": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
   "voiceContract": "PR #1419 controls historical register, authentic quotation boundaries and revised anti-padding style calibration; this content bank cannot approve itself.",
@@ -13,7 +13,12 @@
     "bilingualResponsePairs": 30,
     "localizedResponseDrafts": 60,
     "approvedAnswers": 0,
-    "reviewedInApp": 0
+    "reviewedInApp": 0,
+    "avatarConversationTurns": 23,
+    "outOfCharacterEditorialNotes": 7,
+    "bilingualAvatarResponseDrafts": 46,
+    "bilingualEditorialNoteDrafts": 14,
+    "independentHistoricalCertifications": 0
   },
   "globalReleaseGates": {
     "documentarySentenceLevelReview": false,
@@ -30,7 +35,8 @@
     "Any visitor continuation is a prewritten editorial path, not a model improvising from a source locator.",
     "The decree Quam singulari is attributed to its Congregation and papal approval; not relabelled as a first-person Pius X encyclical.",
     "Under source-hold conditions (pilot 11, 12), no generated historical first-person reply should be produced.",
-    "No textual reuse of originals beyond short document titles; all EN/FR prose is newly written educational reconstruction, not a certified translation."
+    "No textual reuse of originals beyond short document titles; all EN/FR prose is newly written educational reconstruction, not a certified translation.",
+    "Out-of-character temporal or historical provenance disclaimers are editor-only source notes, never simulated papal utterances."
   ],
   "episodes": [
     {
@@ -76,7 +82,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-01-T2",
@@ -99,12 +110,17 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-01-T1"
+          "continuationOf": "SPX-PILOT-01-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-01-T3",
           "intent": "misconception_correction",
-          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
           "language": {
             "en": {
               "visitor": "So you formally refused the election at the conclave?",
@@ -115,16 +131,27 @@
               "response": "E supremi témoigne de la réticence et de l’épreuve, mais ses premiers paragraphes ne décrivent pas avec précision les actes officiels du conclave. Ce récit ne permet pas d’en inventer une scène."
             }
           },
-          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
           "sourceRef": "SPX-PILOT-01",
           "citationLabel": "E supremi §§1–4",
           "sourceCheckedForSubstantiveClaims": false,
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-01-T1"
+          "continuationOf": "SPX-PILOT-01-T1",
+          "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+          "spriteSuggestion": null,
+          "avatarLineAllowed": false,
+          "editorialReason": "Do not fabricate dialogue about conclave's unrecorded procedural acts.",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 2,
+      "sourceEditorialNotes": 1,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-02",
@@ -169,7 +196,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-02-T2",
@@ -192,7 +224,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-02-T1"
+          "continuationOf": "SPX-PILOT-02-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-02-T3",
@@ -215,9 +252,18 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-02-T1"
+          "continuationOf": "SPX-PILOT-02-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 3,
+      "sourceEditorialNotes": 0,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-03",
@@ -262,7 +308,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-03-T2",
@@ -285,12 +336,17 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-03-T1"
+          "continuationOf": "SPX-PILOT-03-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-03-T3",
           "intent": "misconception_correction",
-          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
           "language": {
             "en": {
               "visitor": "Can you decide from this whether I personally committed mortal sin?",
@@ -301,16 +357,27 @@
               "response": "Ces distinctions catéchétiques ne constatent pas vos intentions particulières ni votre consentement. Le passage expose les principes ; il ne rend pas un jugement sur une conscience individuelle."
             }
           },
-          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
           "sourceRef": "SPX-PILOT-03",
           "citationLabel": "Salzano manuscript/editorial Q541–543; museum transcription f.12",
           "sourceCheckedForSubstantiveClaims": false,
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-03-T1"
+          "continuationOf": "SPX-PILOT-03-T1",
+          "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+          "spriteSuggestion": null,
+          "avatarLineAllowed": false,
+          "editorialReason": "An historical definition is not a conscience or culpability diagnosis.",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 2,
+      "sourceEditorialNotes": 1,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-04",
@@ -355,7 +422,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-04-T2",
@@ -378,12 +450,17 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-04-T1"
+          "continuationOf": "SPX-PILOT-04-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-04-T3",
           "intent": "misconception_correction",
-          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
           "language": {
             "en": {
               "visitor": "Does it require every communicant today to remain for a compulsory half hour?",
@@ -394,16 +471,27 @@
               "response": "Le passage de Salzano formule un conseil de son époque concernant le temps passé à l’église ; il ne démontre pas, à lui seul, l’existence d’une règle universellement obligatoire aujourd’hui."
             }
           },
-          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
           "sourceRef": "SPX-PILOT-04",
           "citationLabel": "Salzano manuscript/editorial Q506–508; museum transcription f.9",
           "sourceCheckedForSubstantiveClaims": false,
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-04-T1"
+          "continuationOf": "SPX-PILOT-04-T1",
+          "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+          "spriteSuggestion": null,
+          "avatarLineAllowed": false,
+          "editorialReason": "A local period custom does not establish today's binding Eucharistic discipline.",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 2,
+      "sourceEditorialNotes": 1,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-05",
@@ -448,7 +536,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-05-T2",
@@ -471,7 +564,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-05-T1"
+          "continuationOf": "SPX-PILOT-05-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-05-T3",
@@ -494,9 +592,18 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-05-T1"
+          "continuationOf": "SPX-PILOT-05-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 3,
+      "sourceEditorialNotes": 0,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-06",
@@ -541,7 +648,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-06-T2",
@@ -564,12 +676,17 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-06-T1"
+          "continuationOf": "SPX-PILOT-06-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-06-T3",
           "intent": "misconception_correction",
-          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
           "language": {
             "en": {
               "visitor": "May I use this decree to judge whether a choir today is breaking current Church law?",
@@ -580,16 +697,27 @@
               "response": "L’instruction présente les normes historiques de son époque. Son seul texte ne permet pas d’établir la situation juridique actuelle d’une chorale paroissiale particulière ou de son chef."
             }
           },
-          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
           "sourceRef": "SPX-PILOT-06",
           "citationLabel": "Tra le sollecitudini, Instruction §§1–5, especially §3",
           "sourceCheckedForSubstantiveClaims": false,
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-06-T1"
+          "continuationOf": "SPX-PILOT-06-T1",
+          "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+          "spriteSuggestion": null,
+          "avatarLineAllowed": false,
+          "editorialReason": "Historic motu proprio is not evidence of present law or the guilt of living choir directors.",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 2,
+      "sourceEditorialNotes": 1,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-07",
@@ -634,7 +762,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-07-T2",
@@ -657,12 +790,17 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-07-T1"
+          "continuationOf": "SPX-PILOT-07-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-07-T3",
           "intent": "misconception_correction",
-          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
           "language": {
             "en": {
               "visitor": "Does that make every scholar of recent times a Modernist?",
@@ -673,16 +811,27 @@
               "response": "Le passage vise un système doctrinal déterminé ; il ne permet ni d’appliquer cette qualification à tout savant contemporain, ni d’attribuer une doctrine à une personne vivante particulière."
             }
           },
-          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
           "sourceRef": "SPX-PILOT-07",
           "citationLabel": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
           "sourceCheckedForSubstantiveClaims": false,
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-07-T1"
+          "continuationOf": "SPX-PILOT-07-T1",
+          "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+          "spriteSuggestion": null,
+          "avatarLineAllowed": false,
+          "editorialReason": "The historic doctrinal analysis cannot establish beliefs of contemporary named persons.",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 2,
+      "sourceEditorialNotes": 1,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-08",
@@ -727,7 +876,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-08-T2",
@@ -750,12 +904,17 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-08-T1"
+          "continuationOf": "SPX-PILOT-08-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-08-T3",
           "intent": "misconception_correction",
-          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
           "language": {
             "en": {
               "visitor": "Does this document settle exactly what class schedule every parish must follow now?",
@@ -766,16 +925,27 @@
               "response": "Il expose les responsabilités et les dispositions de son contexte historique. Ses détails disciplinaires ne sauraient, sans autre source, être présentés comme l’horaire actuellement obligatoire dans chaque paroisse."
             }
           },
-          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
           "sourceRef": "SPX-PILOT-08",
           "citationLabel": "Acerbo nimis §§15, 24–25",
           "sourceCheckedForSubstantiveClaims": false,
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-08-T1"
+          "continuationOf": "SPX-PILOT-08-T1",
+          "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+          "spriteSuggestion": null,
+          "avatarLineAllowed": false,
+          "editorialReason": "The 1905 parish teaching timetable must not be misapplied as current universal law.",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 2,
+      "sourceEditorialNotes": 1,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-09",
@@ -820,7 +990,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-09-T2",
@@ -843,12 +1018,17 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-09-T1"
+          "continuationOf": "SPX-PILOT-09-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-09-T3",
           "intent": "misconception_correction",
-          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
           "language": {
             "en": {
               "visitor": "Is this a rebuke addressed to every layperson who struggles to meditate?",
@@ -859,16 +1039,27 @@
               "response": "Cette exhortation s’adresse aux prêtres et à leurs obligations propres. Elle n’autorise pas, à elle seule, un jugement sur la conscience ou les devoirs d’un visiteur laïc particulier."
             }
           },
-          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
           "sourceRef": "SPX-PILOT-09",
           "citationLabel": "Haerent animo §§15–20, especially §§15 and 18",
           "sourceCheckedForSubstantiveClaims": false,
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-09-T1"
+          "continuationOf": "SPX-PILOT-09-T1",
+          "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+          "spriteSuggestion": null,
+          "avatarLineAllowed": false,
+          "editorialReason": "A priest-specific exhortation cannot judge an individual lay visitor's interior condition.",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 2,
+      "sourceEditorialNotes": 1,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     },
     {
       "id": "SPX-PILOT-10",
@@ -913,7 +1104,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": null
+          "continuationOf": null,
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-10-T2",
@@ -936,7 +1132,12 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-10-T1"
+          "continuationOf": "SPX-PILOT-10-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         },
         {
           "id": "SPX-PILOT-10-T3",
@@ -959,9 +1160,18 @@
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
           "visitorRelease": false,
-          "continuationOf": "SPX-PILOT-10-T1"
+          "continuationOf": "SPX-PILOT-10-T1",
+          "avatarLineAllowed": true,
+          "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+          "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+          "sourceLanguageTranslationApproval": false,
+          "periodVoiceApproval": false
         }
-      ]
+      ],
+      "dialogueDrafts": 3,
+      "sourceEditorialNotes": 0,
+      "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+      "independentHistoricalCertification": false
     }
   ]
 }
