@@ -32,8 +32,10 @@ try{
  assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true);
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.tenebrae",{returnContext:null})),true);
+ await page.waitForFunction(()=>document.getElementById("ao-tenebrae-shared-reader-v1")?.sheet?.cssRules?.length>0,
+   null,{timeout:15000});
  assert.equal(await page.locator("#ao-tenebrae-shared-reader-v1").count(),1,
-  "Production Tenebrae should load the shared liturgical reader stylesheet");
+  "Tenebrae module should load the shared liturgical reader stylesheet once");
  for(let day=0;day<3;day++){
   if(day)await page.locator('#aoPray435930 [data-p435930-tenebrae-day="'+day+'"]').click();
   for(const hour of ["MATINS","LAUDS"]){
