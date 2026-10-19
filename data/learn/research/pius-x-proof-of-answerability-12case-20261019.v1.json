@@ -13,7 +13,7 @@
     "global_distinct_answerable_questions_estimate": null
   },
   "record_owner": "Existing SPX-001–064 / SPX-EXP-001–048 remain canonical research seed owners. This file is a read-only audit of case pointers, not a new source owner.",
-  "source_note": "Source passages cross-checked against official Vatican texts and Museo San Pio X; Quam singulari consulted in an attributed decree reprint. Edition-specific print facsimile collation is not claimed.",
+  "source_note": "Source passages cross-checked against official Vatican texts and Museo San Pio X; Quam singulari consulted in an attributed decree reprint. Edition-specific print facsimile collation is not claimed. Passage verification includes secondary scholarly biography and a decree reprint, not exclusively primary papal texts.",
   "render_guidance": {
     "historical_persona": "Any future visitor answer may sound appropriately early twentieth-century Catholic, but must be transparent paraphrase: do not invent quoted sentences or internal memories.",
     "papal_text": "Primary papal authored documents support his documented teaching; stylized first-person not necessarily faithful verbatim.",
@@ -33,7 +33,7 @@
           "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
           "section_or_question": "E supremi §§1–4",
           "witness_type": "AUTHORED_PAPAL_FIRST_PERSON",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -49,7 +49,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-02",
@@ -61,7 +62,7 @@
           "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
           "section_or_question": "1905 Catechismo maggiore Q667–669",
           "witness_type": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -77,7 +78,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-03",
@@ -88,8 +90,8 @@
         {
           "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
           "section_or_question": "Salzano manuscript/editorial Q541–543; museum transcription f.12",
-          "witness_type": "SARTo_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
-          "verified_primary_passage": true
+          "witness_type": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -105,7 +107,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-04",
@@ -116,8 +119,8 @@
         {
           "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
           "section_or_question": "Salzano manuscript/editorial Q506–508; museum transcription f.9",
-          "witness_type": "SARTo_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
-          "verified_primary_passage": true
+          "witness_type": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -133,7 +136,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-05",
@@ -145,7 +149,7 @@
           "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
           "section_or_question": "1905 Catechismo maggiore Q527–533, especially Q528 and Q532",
           "witness_type": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -161,7 +165,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-06",
@@ -173,7 +178,7 @@
           "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
           "section_or_question": "Tra le sollecitudini, Instruction §§1–5, especially §3",
           "witness_type": "AUTHORED_PAPAL_MOTU_PROPRIO",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -189,7 +194,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-07",
@@ -201,7 +207,7 @@
           "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
           "section_or_question": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
           "witness_type": "AUTHORED_PAPAL_ENCYCLICAL",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -217,7 +223,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-08",
@@ -229,7 +236,7 @@
           "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
           "section_or_question": "Acerbo nimis §§15, 24–25",
           "witness_type": "AUTHORED_PAPAL_ENCYCLICAL",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -245,7 +252,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-09",
@@ -257,7 +265,7 @@
           "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
           "section_or_question": "Haerent animo §§15–20, especially §§15 and 18",
           "witness_type": "AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -273,7 +281,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-10",
@@ -285,7 +294,7 @@
           "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
           "section_or_question": "Quam singulari (1910), disciplinary rules 1–4 and papal approval at close",
           "witness_type": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "PASS_CONSTRAINED",
@@ -301,7 +310,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "EXACT_SOURCE_PASSAGE_SUFFICIENT_FOR_BOUNDED_ANSWER_NUCLEUS"
     },
     {
       "case_id": "SPX-PILOT-11",
@@ -313,7 +323,7 @@
           "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
           "section_or_question": "Museo San Pio X, I Sarto dal Quattrocento all'Ottocento, family and early education",
           "witness_type": "SECONDARY_HISTORICAL_BIOGRAPHY",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "HOLD_FIRST_PERSON_TESTIMONY",
@@ -329,7 +339,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "SOURCE_LIMIT_PREVENTS_REQUESTED_PERSONALIZED_OR_FIRST_PERSON_ANSWER"
     },
     {
       "case_id": "SPX-PILOT-12",
@@ -341,7 +352,7 @@
           "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
           "section_or_question": "Haerent animo §§15–19 (addressed to priests)",
           "witness_type": "AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS",
-          "verified_primary_passage": true
+          "passage_verified_in_identified_witness": true
         }
       ],
       "screen_disposition": "HOLD_INDIVIDUAL_DIAGNOSIS",
@@ -357,7 +368,8 @@
         "original_edition_facsimile_checked": false,
         "visitor_runtime_enabled": false
       },
-      "not_a_verbatim_pius_x_quote": true
+      "not_a_verbatim_pius_x_quote": true,
+      "review_outcome_basis": "SOURCE_LIMIT_PREVENTS_REQUESTED_PERSONALIZED_OR_FIRST_PERSON_ANSWER"
     }
   ]
 }
