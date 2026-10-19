@@ -1,0 +1,519 @@
+{
+  "schema": "AO_SPX_1905_BATCH13_PART_V1",
+  "part": "B",
+  "created": "2026-10-20",
+  "status": "RESEARCH_DRAFT_NOT_APPROVED",
+  "followupPolicy": "SAME_SOURCE_QUESTION_SECOND_VISITOR_INTENT",
+  "records": [
+    {
+      "id": "SPX-1905-P-777",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q777",
+        "originalQuestionItalian": "Il penitente è obbligato ad accettare la penitenza ingiuntagli dal confessore?",
+        "relatedQuestionId": "PX1905-Q778",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What if I cannot perform the penance assigned in Confession?",
+            "fr": "Que faire si je ne peux pas accomplir la pénitence imposée en confession ?"
+          },
+          "response": {
+            "en": "The Catechism says to accept it when possible; if you cannot perform it, explain this honestly and ask the confessor to assign another.",
+            "fr": "Le Catéchisme dit de l'accepter lorsqu'elle est possible ; si vous ne pouvez pas l'accomplir, expliquez-le honnêtement et demandez au confesseur une autre pénitence."
+          },
+          "supports": [
+            "PX1905-Q777"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Must I silently agree to something genuinely impossible?",
+            "fr": "Dois-je accepter en silence une pénitence réellement impossible ?"
+          },
+          "response": {
+            "en": "No. The text explicitly invites you to tell the priest about the difficulty.",
+            "fr": "Non. Le texte vous invite expressément à signaler la difficulté au prêtre."
+          },
+          "supports": [
+            "PX1905-Q777"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-778",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q778",
+        "originalQuestionItalian": "Quando si deve fare la penitenza?",
+        "relatedQuestionId": "PX1905-Q779",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "When should assigned penance be performed?",
+            "fr": "Quand faut-il accomplir la pénitence imposée ?"
+          },
+          "response": {
+            "en": "If the priest gives no specified time, the Catechism recommends performing it as soon as possible, seeking to do it in the state of grace.",
+            "fr": "Si le prêtre n'indique pas de moment précis, le Catéchisme recommande de l'accomplir dès que possible, en cherchant à la faire dans l'état de grâce."
+          },
+          "supports": [
+            "PX1905-Q778"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Should I deliberately postpone it without reason?",
+            "fr": "Dois-je la reporter volontairement sans raison ?"
+          },
+          "response": {
+            "en": "The instruction favors prompt fulfillment instead of needless delay.",
+            "fr": "L'instruction préfère un accomplissement prompt à un report inutile."
+          },
+          "supports": [
+            "PX1905-Q778"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-779",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q779",
+        "originalQuestionItalian": "Come si deve fare la penitenza?",
+        "relatedQuestionId": "PX1905-Q780",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How should sacramental penance be carried out?",
+            "fr": "Comment accomplir la pénitence sacramentelle ?"
+          },
+          "response": {
+            "en": "The Catechism says to fulfill it completely and devoutly.",
+            "fr": "Le Catéchisme dit de l'accomplir entièrement et avec dévotion."
+          },
+          "supports": [
+            "PX1905-Q779"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does that require inventing extra tasks beyond those assigned?",
+            "fr": "Faut-il inventer des tâches supplémentaires à celles qui sont imposées ?"
+          },
+          "response": {
+            "en": "The answer concerns carrying out the assigned work, not imposing new burdens on oneself.",
+            "fr": "La réponse concerne l'accomplissement de l'œuvre prescrite, non le fait de s'imposer de nouvelles charges."
+          },
+          "supports": [
+            "PX1905-Q779"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-780",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q780",
+        "originalQuestionItalian": "Perché nella confessione s’ingiunge la penitenza?",
+        "relatedQuestionId": "PX1905-Q781",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why is a penance imposed even after absolution?",
+            "fr": "Pourquoi une pénitence est-elle imposée même après l'absolution ?"
+          },
+          "response": {
+            "en": "The Catechism teaches that absolution remits guilt and eternal punishment, while some temporal punishment may ordinarily remain. The assigned penance is part of sacramental satisfaction.",
+            "fr": "Le Catéchisme enseigne que l'absolution remet la faute et la peine éternelle, tandis qu'une peine temporelle peut ordinairement demeurer. La pénitence imposée participe à la satisfaction sacramentelle."
+          },
+          "supports": [
+            "PX1905-Q780"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does remaining temporal punishment mean the sin was not forgiven?",
+            "fr": "La peine temporelle restante signifie-t-elle que le péché n'a pas été pardonné ?"
+          },
+          "response": {
+            "en": "No. The Catechism distinguishes forgiven guilt from temporal consequences.",
+            "fr": "Non. Le Catéchisme distingue la faute pardonnée de ses conséquences temporelles."
+          },
+          "supports": [
+            "PX1905-Q780"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-781",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q781",
+        "originalQuestionItalian": "Per qual ragione ha voluto il Signore nel sacramento del Battesimo rimettere tutta la pena dovuta ai peccati e non nel sacramento della Penitenza?",
+        "relatedQuestionId": "PX1905-Q782",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the Catechism contrast Baptism with Penance regarding punishment?",
+            "fr": "Pourquoi le Catéchisme oppose-t-il le Baptême à la Pénitence quant aux peines ?"
+          },
+          "response": {
+            "en": "It teaches that Baptism remits all punishment due to sins, whereas Penance normally leaves temporal satisfaction, partly as a restraint against future sin after Baptism.",
+            "fr": "Il enseigne que le Baptême remet toutes les peines dues aux péchés, tandis que la Pénitence laisse ordinairement une satisfaction temporelle, notamment pour détourner de rechutes après le Baptême."
+          },
+          "supports": [
+            "PX1905-Q781"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is this meant to deny the mercy of sacramental Confession?",
+            "fr": "Cela revient-il à nier la miséricorde de la confession sacramentelle ?"
+          },
+          "response": {
+            "en": "No. The same section explicitly teaches the forgiveness given in absolution.",
+            "fr": "Non. La même section enseigne expressément le pardon donné par l'absolution."
+          },
+          "supports": [
+            "PX1905-Q781"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-782",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q782",
+        "originalQuestionItalian": "Possiamo noi soddisfare da noi stessi a Dio?",
+        "relatedQuestionId": "PX1905-Q783",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Can we make satisfaction to God without Christ?",
+            "fr": "Pouvons-nous satisfaire à Dieu sans le Christ ?"
+          },
+          "response": {
+            "en": "The Catechism says we cannot do so by our own power alone; the merits of Christ's Passion and death give value to our good actions.",
+            "fr": "Le Catéchisme dit que nous ne le pouvons pas par nos seules forces ; les mérites de la Passion et de la mort du Christ donnent leur valeur à nos bonnes actions."
+          },
+          "supports": [
+            "PX1905-Q782"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does Christian penance compete with Christ's sacrifice?",
+            "fr": "La pénitence chrétienne concurrence-t-elle le sacrifice du Christ ?"
+          },
+          "response": {
+            "en": "No. Its worth comes through union with Him, not independently of His redemption.",
+            "fr": "Non. Sa valeur provient de l'union avec Lui, non d'une rédemption indépendante."
+          },
+          "supports": [
+            "PX1905-Q782"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-783",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q783",
+        "originalQuestionItalian": "La penitenza che dà il confessore basta essa sempre a cancellare la pena che rimane dovuta ai peccati?",
+        "relatedQuestionId": "PX1905-Q784",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Is assigned penance always the whole of Christian penitence?",
+            "fr": "La pénitence imposée constitue-t-elle toujours toute la pénitence chrétienne ?"
+          },
+          "response": {
+            "en": "The Catechism says that an assigned penance does not ordinarily exhaust all temporal satisfaction; it commends further voluntary works. These should remain prudent and compatible with health and duties.",
+            "fr": "Le Catéchisme dit que la pénitence imposée n'épuise pas ordinairement toute satisfaction temporelle ; il recommande d'autres bonnes œuvres volontaires. Elles doivent rester prudentes et compatibles avec la santé et les devoirs."
+          },
+          "supports": [
+            "PX1905-Q783"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Must those additional works involve severe deprivation?",
+            "fr": "Ces œuvres supplémentaires doivent-elles comporter de dures privations ?"
+          },
+          "response": {
+            "en": "No. The following questions include prayer and works of mercy alongside fasting or mortification.",
+            "fr": "Non. Les questions suivantes mentionnent la prière et les œuvres de miséricorde avec le jeûne ou la mortification."
+          },
+          "supports": [
+            "PX1905-Q783"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-784",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q784",
+        "originalQuestionItalian": "Quali sono le opere di penitenza?",
+        "relatedQuestionId": "PX1905-Q785",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What three kinds of penitential works does the Catechism name?",
+            "fr": "Quelles trois sortes d'œuvres de pénitence le Catéchisme nomme-t-il ?"
+          },
+          "response": {
+            "en": "Prayer, fasting and almsgiving.",
+            "fr": "La prière, le jeûne et l'aumône."
+          },
+          "supports": [
+            "PX1905-Q784"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does penance include helping other people?",
+            "fr": "La pénitence comprend-elle l'aide apportée à autrui ?"
+          },
+          "response": {
+            "en": "Yes. Almsgiving encompasses works of mercy.",
+            "fr": "Oui. L'aumône englobe les œuvres de miséricorde."
+          },
+          "supports": [
+            "PX1905-Q784"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-785",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q785",
+        "originalQuestionItalian": "Che cosa intendete per preghiera?",
+        "relatedQuestionId": "PX1905-Q786",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What counts as prayer among penitential works?",
+            "fr": "Qu'est-ce qui compte comme prière parmi les œuvres de pénitence ?"
+          },
+          "response": {
+            "en": "The Catechism includes every kind of exercise of piety in this category.",
+            "fr": "Le Catéchisme inclut dans cette catégorie toutes sortes d'exercices de piété."
+          },
+          "supports": [
+            "PX1905-Q785"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is penitential prayer limited to one specific formula?",
+            "fr": "La prière pénitentielle se limite-t-elle à une formule déterminée ?"
+          },
+          "response": {
+            "en": "No. The text's definition is deliberately broad.",
+            "fr": "Non. La définition du texte est volontairement large."
+          },
+          "supports": [
+            "PX1905-Q785"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-786",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q786",
+        "originalQuestionItalian": "Che cosa s’intende per digiuno?",
+        "relatedQuestionId": "PX1905-Q787",
+        "section": "PENANCE_TEMPORAL_SATISFACTION",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does the Catechism include under fasting as penance?",
+            "fr": "Que comprend le Catéchisme sous le jeûne comme pénitence ?"
+          },
+          "response": {
+            "en": "It uses fasting broadly to refer to forms of mortification, rather than defining a detailed universal food rule in this answer.",
+            "fr": "Il emploie le jeûne au sens large pour désigner les formes de mortification, sans définir ici une règle alimentaire universelle détaillée."
+          },
+          "supports": [
+            "PX1905-Q786"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does that authorize dangerous fasting?",
+            "fr": "Cela autorise-t-il un jeûne dangereux ?"
+          },
+          "response": {
+            "en": "No. This is a broad historical category; penitential practices must respect health and legitimate responsibilities.",
+            "fr": "Non. C'est une catégorie historique générale ; les pratiques pénitentielles doivent respecter la santé et les responsabilités légitimes."
+          },
+          "supports": [
+            "PX1905-Q786"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ]
+}
