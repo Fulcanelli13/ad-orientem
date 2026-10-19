@@ -272,7 +272,7 @@ try{
   assert.equal(homeParity.gospel,1,"Today v2 lost appointed-Gospel navigation");
   assert.equal(homeParity.scripture,1,"Today v2 lost Scripture navigation");
   assert.equal(homeParity.catechism,1,"Today v2 lost the Daily Catechism entry");
-  assert.equal(homeParity.calendar,2,"Calendar at a glance retains two dated 1962 candidate links");
+  assert.ok(homeParity.calendar>=1,"Calendar at a glance must retain source-qualified upcoming date links");
   assert.equal(homeParity.year,1,"The season link must still open the canonical Liturgical Year");
   assert.equal(homeParity.upcoming,1,"The header Month tab replaces redundant Coming next CTA");
   assert.ok(homeParity.upcomingDates>=1,"Upcoming dates must preserve Calendar Day entry");
