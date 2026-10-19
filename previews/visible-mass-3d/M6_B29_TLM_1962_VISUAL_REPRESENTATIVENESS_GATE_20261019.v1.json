@@ -1,0 +1,274 @@
+{
+  "schema": "AO_M6_B29_TLM_1962_REPRESENTATIVE_VISUAL_GATE_V1",
+  "date": "2026-10-19",
+  "status": "CURATORIAL_TLM_TYPICALITY_REVIEW_OVERLAY_NOT_UNILATERAL_IMAGE_REJECTION",
+  "precedence": "Apply to B28 v8 provisional research picks BEFORE proposing atlas primary; rubrical accuracy and physical relevance precede aesthetics and licensing.",
+  "inputs": [
+    "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v8.json",
+    "previews/visible-mass-3d/M6_B28_ORIGINAL_PIXEL_VISUAL_QA_20261019.v1.json"
+  ],
+  "rubrical_sources": [
+    {
+      "name": "1962 General Rubrics of the Roman Missal, §§525–529",
+      "url": "https://www.scribd.com/document/339426884/Rubrics-of-the-Roman-Brievary-and-Missal-1962",
+      "use": "Altar, three linens, crucifix, candlesticks, altar cards, missal stand/cushion, cruets on credence."
+    },
+    {
+      "name": "Ritus servandus in celebratione Missae",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "use": "Priest places the Missal on its stand on the Epistle side; ceremonial function must align with photograph."
+    },
+    {
+      "name": "John B. O'Connell, The Celebration of Mass (1962), material requisites",
+      "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
+      "use": "Preconciliar ceremonial handbook for usual functional requirements, not one canonical mandatory artistic style."
+    }
+  ],
+  "ranking": [
+    "1 EXACT_1962_LATIN_ROMAN_LITURGICAL_FUNCTION",
+    "2 REPRESENTATIVE_TLM_OBJECT_AND_CONFIGURATION",
+    "3 ARCHITECTURAL_SETTING_CORRECT_HIGH_ALTAR_AND_NO_MISLEADING_POSTCONCILIAR_ADDITION",
+    "4 OBJECT_COMPLETENESS_AND_VISUAL_CLARITY",
+    "5 EXACT_PHOTOGRAPH_REUSE_RIGHTS_AND_SOURCE_PROVENANCE",
+    "6 PERIOD_AESTHETIC_CONSISTENCY_AND_PHOTOGRAPHIC_FINISH"
+  ],
+  "critical_logic": "An eligible museum object may be an authentic historical specimen without being the primary exemplar for a layman's view of the 1962 Traditional Latin Mass. CC0 photographic copyright never compensates for historical/type mismatch. Different legitimate parish practices do not become illicit because one illustration is preferred.",
+  "counts": {
+    "research_provisional_photos": 17,
+    "flagged_for_more_representative_TLM_alternative": 7,
+    "conditional_current_fit_subjects": 10,
+    "publication_approved": 0,
+    "user_approved": 0,
+    "canonical_registry_untouched": true
+  },
+  "source_references_for_comparison_only": [
+    {
+      "object_ids": [
+        "EQ01",
+        "EQ02"
+      ],
+      "url": "https://espritdelaliturgie.org/2021/04/26/preparation-du-sanctuaire-pour-une-messe-messe-lue-forme-extraordinaire-du-rite-romain/",
+      "note": "Contemporary extraordinary-form preparation photo illustrates ordinary clear glass cruets with tray; image-level publication permission not granted. Reference only."
+    },
+    {
+      "object_ids": [
+        "SN05"
+      ],
+      "url": "https://www.sklepdewocjonalia.com.pl/blog/historia-i-tradycja/historia-lampki-wiecznej",
+      "note": "Hanging red-glass sanctuary lamp shape reference. Commercial image rights unverified; never directly import."
+    }
+  ],
+  "audited_provisional_candidates": [
+    {
+      "object_id": "SN05",
+      "label": "Sanctuary lamp",
+      "current_asset_id": "M6B27-SN05-AUCKLAND-RED-CATHOLIC-LAMP",
+      "typology_gate": "REPLACE_PREFERRED_TLM",
+      "why": "Wall-mounted Auckland sanctuary lamp is valid Catholic but a suspended sanctuary lamp with red glass beside a traditional tabernacle is more immediately representative.",
+      "preferred_1962_reference_form": "Hanging three-chain lamp with red vessel; Roman Catholic traditional altar; isolated or sharply focused complete lamp; exact source photograph rights.",
+      "disposition": "Keep current photo only as wall-mounted contemporary variant; don't label it usual hanging form.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL01",
+      "label": "High altar",
+      "current_asset_id": "M6B28-AL01-CASTELNAU-1848-HIGH-ALTAR",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Actual complete French high altar without a modern forward table; an architecturally coherent in-situ view is appropriate.",
+      "preferred_1962_reference_form": "Reconfirm altar and associated furnishings and liturgical arrangement under visual acceptance.",
+      "disposition": "Keep provisional architecture primary.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL03",
+      "label": "Tabernacle",
+      "current_asset_id": "M6B28-AL03-AUCKLAND-GOLD-TABERNACLE",
+      "typology_gate": "REPLACE_PREFERRED_TLM",
+      "why": "Unveiled Auckland tabernacle is clear, but modern cylindrical presentation is not the best visual anchor for a traditional fixed high altar.",
+      "preferred_1962_reference_form": "Eucharistic tabernacle visibly integrated with Roman Catholic high altar and central door, identifiable without detached forward altar table.",
+      "disposition": "Keep Auckland as legitimate contemporary variant; no false claim that the 1962 rites forbid this form.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL06",
+      "label": "Altar crucifix",
+      "current_asset_id": "M6B20-AL06-MET-ALTAR-CRUCIFIX",
+      "typology_gate": "REPLACE_PREFERRED_TLM",
+      "why": "Nineteenth-century rock crystal/silver altar crucifix is authentic, but a typical recognizable standing corpus crucifix better explains usual parish furnishing.",
+      "preferred_1962_reference_form": "Complete freestanding traditional Catholic crucifix with corpus, balanced upright base, appropriate for altar.",
+      "disposition": "Retain ornate museum specimen in historical gallery, not mandatory first illustration.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL14",
+      "label": "Consecrated altar stone",
+      "current_asset_id": "EXISTING-AL14",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Consecrated altar stone and relic cavity have a direct traditional-rite teaching role.",
+      "preferred_1962_reference_form": "Verify five crosses, real relic cavity/seal at 100% pixel and explanatory context.",
+      "disposition": "Keep conditional pending precise visual proof.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL16",
+      "label": "Three altar cards",
+      "current_asset_id": "B19-AL16-LIVORNO-ENSEMBLE",
+      "typology_gate": "REPLACE_PREFERRED_TLM",
+      "why": "Historically authentic ornate Livorno silver altar-card set is less typical than standard three-card Mass arrangement.",
+      "preferred_1962_reference_form": "Real central card and two side cards in customary arrangement, clear lettering, traditional Roman Mass provenance.",
+      "disposition": "Keep ornate ensemble as alternate decorative type only.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "SV01",
+      "label": "Chalice",
+      "current_asset_id": "M6B18-CLERMONT-CHALICE-BIAIS-RONDELET",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Recognizable Catholic chalice; historical metalwork may represent proper form.",
+      "preferred_1962_reference_form": "Review bowl, stem, foot, material and source rights; avoid misleading unusual forms.",
+      "disposition": "Keep provisional conditional.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "SV02",
+      "label": "Paten",
+      "current_asset_id": "M6B17-SV02-CLERMONT-STSAMSON-19C20C",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "A paten alone meets object function and conventional TLM presentation.",
+      "preferred_1962_reference_form": "Ensure correct Eucharistic chalice paten, not communion plate.",
+      "disposition": "Keep provisional conditional.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "SV03",
+      "label": "Ciborium",
+      "current_asset_id": "EXISTING-SV03",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Covered ciborium is liturgically appropriate.",
+      "preferred_1962_reference_form": "Improve grayscale image if superior colour conventional example is found.",
+      "disposition": "Keep provisional conditional.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "SV13",
+      "label": "Communion paten / plate",
+      "current_asset_id": "EXISTING-SV13",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Handled communion plate fits traditional practice.",
+      "preferred_1962_reference_form": "Check shape and handle in actual photographic context.",
+      "disposition": "Keep provisional conditional.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "LN01",
+      "label": "Corporal",
+      "current_asset_id": "B19-LN01-CORPORAL-GERMETE-1",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Catholic corporal is correctly identified.",
+      "preferred_1962_reference_form": "Prefer plain square white linen as most legible archetype if equivalent rights-clear source exists.",
+      "disposition": "Keep conditional; don't assume decorative weave prohibited.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "LN02",
+      "label": "Purificator",
+      "current_asset_id": "B19-LN02-PURIFICATOR-CIESZYN-3",
+      "typology_gate": "REPLACE_PREFERRED_TLM",
+      "why": "Multicolour-embroidered purificator is an example, but plain white linen with modest central red cross is a clearer ordinary teaching archetype.",
+      "preferred_1962_reference_form": "A complete clean white purificator clearly identified by Catholic sacristy or liturgical source; small cross if present, folded/use view.",
+      "disposition": "Do not assert that multicolour embroidery is illicit; difference is representativeness.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "LN03",
+      "label": "Pall for chalice",
+      "current_asset_id": "M6B18-ABBEVILLE-PALL-IHS",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Square chalice pall with IHS is an acceptable specimen.",
+      "preferred_1962_reference_form": "Ensure stiff chalice pall, not loose linen covering.",
+      "disposition": "Keep conditional.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "LN04",
+      "label": "Burse",
+      "current_asset_id": "M6B16-LN04-COOPER-HEWITT-19C",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Burse is proper Roman chalice-dressing component.",
+      "preferred_1962_reference_form": "Check orientation, folded shape, vestment-matching character; distinguish from pyx pouch.",
+      "disposition": "Keep conditional.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "LN05",
+      "label": "Chalice veil",
+      "current_asset_id": "M6B16-LN05-POLAND-CHRIST-COLUMN",
+      "typology_gate": "CONDITIONAL_TLM_FIT",
+      "why": "Full chalice veil is appropriately identified.",
+      "preferred_1962_reference_form": "Prefer arranged-over-the-chalice in-use context as a complementary image, not necessarily replacement.",
+      "disposition": "Keep conditional.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ02",
+      "label": "Water cruet",
+      "current_asset_id": "M6B27-EQ02-KRAKOW-GOTHIC-WATER-CRUET",
+      "typology_gate": "REPLACE_PREFERRED_TLM",
+      "why": "c.1500 Gothic gold cruet is exact Catholic Mass water vessel but highly exceptional relative to ordinary modern TLM altar service.",
+      "preferred_1962_reference_form": "Clear identified water cruet, preferably small transparent glass with matching wine cruet, A/aqua mark or documented content, in a 1962-useful pair.",
+      "disposition": "Keep historic Kraków image in historical museum supplement with its date; never call it typical 1962.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ06",
+      "label": "Altar bell",
+      "current_asset_id": "M6B26-EQ06-CARCASSONNE-SINGLE-BELL",
+      "typology_gate": "REPLACE_PREFERRED_TLM",
+      "why": "Carcassonne nineteenth-century enameled altar bell is valid but ornate museum specimen, and background less useful than a familiar server handbell.",
+      "preferred_1962_reference_form": "Common Roman Catholic single handbell or small altar-bell group typical of Low Mass, shown singly/defined set with suitable attribution.",
+      "disposition": "Keep Carcassonne in historical sacred metalwork; the 1962 form need not be this precise design.",
+      "photo_licence_status": "KEEP_ORIGINAL_PHOTO_RIGHTS_RECORD",
+      "publication_approved": false,
+      "user_approved": false
+    }
+  ],
+  "rules": {
+    "TLM_canonical_photo_approval_requires_typology_gate": true,
+    "unapproved_photo_downgrade_does_not_delete_source": true,
+    "all_historical_valid_sources_remain_in_research": true,
+    "source_files_or_liturgical_readers_mutated": false,
+    "previous_v8_selection_unchanged": true
+  }
+}
