@@ -364,7 +364,9 @@ export function buildReaderSectionCard({
     schema:"ao-reader-section-card-v1",
     sectionId:section.sectionId,
     sequence:section.sequence,
-    title:section.name,
+    title:blockMeta.some(b=>b.blockId==="AO.SM.B092"&&
+      b.omittedByRite==="RITUS_XIII_1_REQUIEM")
+      ?"Placeat tibi, sancta Trinitas":section.name,
     part:section.part,
     rubricKey:section.rubricKey,
     macroId:mid,
