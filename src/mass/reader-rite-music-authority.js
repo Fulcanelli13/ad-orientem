@@ -47,8 +47,13 @@ export function resolve1962OrganPermission({
     return verdict("PERMITTED_NOT_OBSERVED","HOLY_THURSDAY_GLORIA_OR_CHRISM_EXCEPTION",["83b","84"]);
   if(service==="BENEDICTION")
     return verdict("PERMITTED_NOT_OBSERVED","BENEDICTION_EXCEPTION_NO_OBSERVATION",["81"]);
-  const seasonalBan=RESTRICTED_SEASONS.has(liturgicalSeason)||Boolean(requiem)||Boolean(septEmberFerial);
-  if(seasonalBan && exceptionalFeastConfirmed)
+  // The Easter Vigil Gloria is the explicit §81b/§84 endpoint of the
+  // Lenten instrumental prohibition; otherwise the season label alone
+  // would incorrectly keep the organ silent for the Paschal Mass.
+  const lentenRestriction=RESTRICTED_SEASONS.has(liturgicalSeason) &&
+    !(triduum && easterVigilGloriaReached);
+  const seasonalBan=lentenRestriction||Boolean(requiem)||Boolean(septEmberFerial);
+  if(seasonalBan && exceptionalFeastConfirmed && !requiem)
     return verdict("PERMITTED_NOT_OBSERVED","VERIFIED_EXCEPTION_FEAST_OR_EXTRAORDINARY_SOLEMNITY",["83a"]);
   if(seasonalBan){
     if(use==="ACCOMPANY_CHANT"&&["MASS","VESPERS"].includes(service))
