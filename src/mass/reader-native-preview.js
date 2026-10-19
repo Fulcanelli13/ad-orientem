@@ -22,6 +22,14 @@ import { withLiveReadingSections } from "./reader-live-reading-sections.js";
 // The certified Good Friday state graph carries nine kneel/rise formula
 // pairs and three Cross-unveiling silent adoration intervals. Their spoken
 // formula cues are recognized ONLY by exact source-owned paragraph IDs.
+// Distinct-rite witnesses are not uniformly bilingual. Do not
+// substitute English for unavailable French in a shared Missal view.
+export function distinctRiteSelectedVernacular(row,{language="en"}={}){
+  const french=String(language).toLowerCase().startsWith("fr");
+  const text=french?row?.french:(row?.vernacular??row?.english);
+  return typeof text==="string"&&text.trim()?text:null;
+}
+
 export function goodFridayFormulaAtFocus({scrollTop=0,clientHeight=0,items=[]}={}){
   const y=Math.max(0,Number(scrollTop)||0),height=Math.max(0,Number(clientHeight)||0);
   if(y<=8 || !height)return null;
@@ -921,7 +929,9 @@ export async function mountNativeReaderPreview({
           id:row.id,
           kind:row.kind,
           primary:row.latin,
-          secondary:row.vernacular??row.english??null,
+          secondary:distinctRiteSelectedVernacular(row,{
+            language:prepared?.readerPreferences?.language??"en",
+          }),
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
@@ -1017,7 +1027,19 @@ export async function mountNativeReaderPreview({
     reader=createReaderDomAdapter({
       root:host,
       iconResolver,
-      allowPresentationModeSwitch:false,
+      allowPresentationModeSwitch:true,
+      onPresentationModeChange:nextMode=>{
+        const top=host.querySelector?.(".ao-prayer-card")?.scrollTop??0;
+        disposeReadingFocus();
+        disposeReadingFocus=()=>{};
+        shownSurface=null;
+        showGoodFriday();
+        const scroller=host.querySelector?.(".ao-prayer-card");
+        if(scroller)scroller.scrollTop=Math.min(top,
+          Math.max(0,scroller.scrollHeight-scroller.clientHeight));
+        disposeReadingFocus=installDistinctRiteReadingFocus(root,{mode:nextMode});
+        root.dataset.r17PresentationMode=nextMode;
+      },
       onPrevious:()=>moveGoodFriday("previous"),
       onNext:()=>moveGoodFriday("next"),
     });
@@ -1115,7 +1137,9 @@ export async function mountNativeReaderPreview({
           id:row.id,
           kind:row.kind,
           primary:row.latin,
-          secondary:row.vernacular??row.english??null,
+          secondary:distinctRiteSelectedVernacular(row,{
+            language:prepared?.readerPreferences?.language??"en",
+          }),
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Easter Vigil",
@@ -1133,11 +1157,11 @@ export async function mountNativeReaderPreview({
       });
     }
 
-    function showEasterVigil(){
+    function showEasterVigil({forceCardUpdate=false}={}){
       inVigil=true;
       stage="VIGIL_ACTIVE";
       const moment=easterVigilMoment();
-      if(moment)reader.renderMoment(moment);
+      if(moment)reader.renderMoment(forceCardUpdate?{...moment,cardUpdate:true}:moment);
       root.dataset.r17NativeRiteRecord=controller.project().step?.recordId??"none";
       root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
       root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
@@ -1198,7 +1222,19 @@ export async function mountNativeReaderPreview({
     reader=createReaderDomAdapter({
       root:host,
       iconResolver,
-      allowPresentationModeSwitch:false,
+      allowPresentationModeSwitch:true,
+      onPresentationModeChange:nextMode=>{
+        const top=host.querySelector?.(".ao-prayer-card")?.scrollTop??0;
+        disposeReadingFocus();
+        disposeReadingFocus=()=>{};
+        if(inVigil)showEasterVigil({forceCardUpdate:true});
+        else showVigilMass(currentMass);
+        const scroller=host.querySelector?.(".ao-prayer-card");
+        if(scroller)scroller.scrollTop=Math.min(top,
+          Math.max(0,scroller.scrollHeight-scroller.clientHeight));
+        disposeReadingFocus=installDistinctRiteReadingFocus(root,{mode:nextMode});
+        root.dataset.r17PresentationMode=nextMode;
+      },
       onPrevious:()=>moveEasterVigil("previous"),
       onNext:()=>moveEasterVigil("next"),
     });
