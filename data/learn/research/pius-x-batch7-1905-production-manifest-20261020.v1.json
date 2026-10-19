@@ -1,0 +1,1589 @@
+{
+  "schema": "AO_SPX_1905_BATCH7_PRODUCTION_V1",
+  "created": "2026-10-20",
+  "status": "FIFTY_SOURCE_LOCATED_BILINGUAL_DOCUMENTARY_DRAFTS_NOT_CERTIFIED",
+  "witnessSplit": {
+    "catechism": {
+      "edition": "1905 longer Catechism",
+      "section": "Part V, Chapters VII–VIII",
+      "printedNumberRange": [
+        968,
+        993
+      ],
+      "draftFamilies": 26,
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "status": "LAST_NUMBERED_SECTION_REACHED_NOT_FULL_993_CONVERSATIONS_MINED"
+    },
+    "feasts": {
+      "edition": "1905 Instruction on Feasts of Our Lord, Blessed Virgin and Saints",
+      "section": "Part I Chapters I–IV",
+      "topics": [
+        "Advent",
+        "Christmas",
+        "Circumcision",
+        "Epiphany"
+      ],
+      "questionOrdinances": {
+        "P1-C01": 3,
+        "P1-C02": 8,
+        "P1-C03": 8,
+        "P1-C04": 5
+      },
+      "draftFamilies": 24,
+      "sourceUrls": [
+        "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_I",
+        "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+        "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+        "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_IV"
+      ],
+      "status": "EDITORIAL_CHAPTER_ORDINALS_NOT_PRINTED_GLOBAL_NUMBERS",
+      "otherExistingPipeline": "Earlier historical-extraction stream; must reconcile, not count as newly discovered text"
+    }
+  },
+  "files": [
+    "data/learn/research/pius-x-batch7-lastthings-a-20261020.v1.json",
+    "data/learn/research/pius-x-batch7-lastthings-b-20261020.v1.json",
+    "data/learn/research/pius-x-batch7-lastthings-c-20261020.v1.json",
+    "data/learn/research/pius-x-batch7-feasts-d-20261020.v1.json",
+    "data/learn/research/pius-x-batch7-feasts-e-20261020.v1.json",
+    "data/learn/research/pius-x-batch7-feasts-f-20261020.v1.json"
+  ],
+  "readableFile": "docs/research/PIUS-X-BATCH-7-CONVERSATIONS-20261020.md",
+  "items": [
+    {
+      "id": "SPX-1905-V-968",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q968",
+      "companionQuestionId": "PX1905-Q969",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What are the Four Last Things?",
+        "fr": "Que sont les quatre fins dernières ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-969",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q969",
+      "companionQuestionId": "PX1905-Q970",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "Which four realities are called the Last Things?",
+        "fr": "Quelles sont les quatre fins dernières ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-970",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q970",
+      "companionQuestionId": "PX1905-Q971",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "Why are death, judgment, hell and heaven called the Last Things?",
+        "fr": "Pourquoi la mort, le jugement, l'enfer et le paradis sont-ils dits fins dernières ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-971",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q971",
+      "companionQuestionId": "PX1905-Q972",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "Is thinking about death and judgment only for the dying?",
+        "fr": "La pensée de la mort et du jugement est-elle réservée aux mourants ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-972",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q972",
+      "companionQuestionId": "PX1905-Q973",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "How should a Christian begin the morning?",
+        "fr": "Comment un chrétien devrait-il commencer sa matinée ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-973",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q973",
+      "companionQuestionId": "PX1905-Q974",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "Can getting dressed be part of a Christian morning discipline?",
+        "fr": "L'habillage peut-il faire partie d'une discipline chrétienne matinale ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-974",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q974",
+      "companionQuestionId": "PX1905-Q975",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What does the 1905 Catechism propose for morning prayers?",
+        "fr": "Quelles prières du matin le Catéchisme de 1905 propose-t-il ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-975",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q975",
+      "companionQuestionId": "PX1905-Q974",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What daily practices does the Catechism especially recommend?",
+        "fr": "Quelles pratiques quotidiennes le Catéchisme recommande-t-il spécialement ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-976",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q976",
+      "companionQuestionId": "PX1905-Q977",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "How should a Catholic begin work?",
+        "fr": "Comment un catholique devrait-il commencer son travail ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-977",
+      "part": "A",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q977",
+      "companionQuestionId": "PX1905-Q976",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "Can ordinary work have a spiritual purpose?",
+        "fr": "Le travail ordinaire peut-il avoir une fin spirituelle ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-978",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q978",
+      "companionQuestionId": "PX1905-Q979",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "Why say grace before eating?",
+        "fr": "Pourquoi bénir le repas avant de manger ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-979",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q979",
+      "companionQuestionId": "PX1905-Q978",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What does the Catechism recommend after a meal?",
+        "fr": "Que recommande le Catéchisme après un repas ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-980",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q980",
+      "companionQuestionId": "PX1905-Q986",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What should a Christian do when tempted?",
+        "fr": "Que devrait faire un chrétien dans la tentation ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-981",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q981",
+      "companionQuestionId": "PX1905-Q984",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "If I become aware that I have sinned, what does this historical instruction recommend?",
+        "fr": "Si je prends conscience d'une faute, que recommande cette instruction historique ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-982",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q982",
+      "companionQuestionId": "PX1905-Q991",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What was recommended when an elevation or Benediction bell was heard outside church?",
+        "fr": "Que conseillait-on lorsqu'on entendait hors de l'église une cloche d'élévation ou de bénédiction ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-983",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q983",
+      "companionQuestionId": "PX1905-Q986",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What prayer does the 1905 Catechism associate with the ringing of the Angelus?",
+        "fr": "Quelle prière le Catéchisme de 1905 associe-t-il à la sonnerie de l'Angélus ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-984",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q984",
+      "companionQuestionId": "PX1905-Q985",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What does traditional evening prayer include?",
+        "fr": "Que comprend la prière traditionnelle du soir ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-985",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q985",
+      "companionQuestionId": "PX1905-Q984",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "How does the Catechism suggest ending the day?",
+        "fr": "Comment le Catéchisme suggère-t-il de terminer la journée ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-986",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q986",
+      "companionQuestionId": "PX1905-Q987",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What is an ejaculatory prayer?",
+        "fr": "Qu'est-ce qu'une oraison jaculatoire ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-987",
+      "part": "B",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q987",
+      "companionQuestionId": "PX1905-Q988",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "Which short prayers does the Catechism propose for daily use?",
+        "fr": "Quelles courtes prières le Catéchisme propose-t-il pour la journée ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-988",
+      "part": "C",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q988",
+      "companionQuestionId": "PX1905-Q986",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "Can I pray while walking or working?",
+        "fr": "Puis-je prier en marchant ou en travaillant ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-989",
+      "part": "C",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q989",
+      "companionQuestionId": "PX1905-Q990",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What practice does the Catechism recommend alongside short daily prayers?",
+        "fr": "Quelle pratique le Catéchisme recommande-t-il à côté des courtes prières quotidiennes ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-990",
+      "part": "C",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q990",
+      "companionQuestionId": "PX1905-Q989",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What does 'mortification' mean in this Catechism?",
+        "fr": "Que signifie « mortification » dans ce Catéchisme ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-991",
+      "part": "C",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q991",
+      "companionQuestionId": "PX1905-Q982",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What does this historical instruction advise when the Eucharist is brought to a sick person?",
+        "fr": "Que conseille cette instruction historique lorsque l'Eucharistie est portée à un malade ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-992",
+      "part": "C",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q992",
+      "companionQuestionId": "PX1905-Q993",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "How might a Christian pray for someone near death?",
+        "fr": "Comment un chrétien peut-il prier pour une personne à l'agonie ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-V-993",
+      "part": "C",
+      "witness": "1905_LONG_CATECHISM",
+      "questionId": "PX1905-Q993",
+      "companionQuestionId": "PX1905-Q992",
+      "originalPrintedQuestionNumber": true,
+      "topic": {
+        "en": "What prayer does the Catechism recommend on hearing of a death?",
+        "fr": "Quelle prière le Catéchisme recommande-t-il à l'annonce d'un décès ?"
+      },
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C01-Q01",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C01-Q01",
+      "companionQuestionId": "PX1905-F-P1-C01-Q02",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Why is the season before Christmas called Advent?",
+        "fr": "Pourquoi appelle-t-on Avent le temps qui précède Noël ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_I",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C01-Q02",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C01-Q02",
+      "companionQuestionId": "PX1905-F-P1-C01-Q03",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "What four subjects does the Church propose for Advent meditation?",
+        "fr": "Quels quatre sujets l'Église propose-t-elle à méditer durant l'Avent ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_I",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C01-Q03",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C01-Q03",
+      "companionQuestionId": "PX1905-F-P1-C01-Q02",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "How should a Christian prepare spiritually during Advent?",
+        "fr": "Comment un chrétien devrait-il se préparer spirituellement durant l'Avent ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_I",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C02-Q01",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C02-Q01",
+      "companionQuestionId": "PX1905-F-P1-C02-Q02",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "What does the feast of Christmas commemorate?",
+        "fr": "Que commémore la fête de Noël ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C02-Q02",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C02-Q02",
+      "companionQuestionId": "PX1905-F-P1-C02-Q04",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Why does the 1905 text describe three Christmas Masses?",
+        "fr": "Pourquoi le texte de 1905 parle-t-il de trois messes de Noël ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C02-Q03",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C02-Q03",
+      "companionQuestionId": "PX1905-F-P1-C02-Q01",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Why were divine offices held during Christmas night?",
+        "fr": "Pourquoi célébrait-on les offices divins pendant la nuit de Noël ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C02-Q04",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C02-Q04",
+      "companionQuestionId": "PX1905-F-P1-C02-Q05",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "What do the three traditional Christmas Masses teach?",
+        "fr": "Qu'enseignent les trois messes traditionnelles de Noël ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C02-Q05",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C02-Q05",
+      "companionQuestionId": "PX1905-F-P1-C02-Q06",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Why does the Church place the mysteries of the three Christmas Masses before us?",
+        "fr": "Pourquoi l'Église nous présente-t-elle les mystères des trois messes de Noël ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C02-Q06",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C02-Q06",
+      "companionQuestionId": "PX1905-F-P1-C02-Q05",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "What spiritual lesson does Christ's humble birth give?",
+        "fr": "Quelle leçon spirituelle donne l'humble naissance du Christ ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C02-Q07",
+      "part": "D",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C02-Q07",
+      "companionQuestionId": "PX1905-F-P1-C02-Q08",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Did the 1905 Catechism say Catholics had to attend all three Christmas Masses?",
+        "fr": "Le Catéchisme de 1905 imposait-il d'assister aux trois messes de Noël ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C02-Q08",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C02-Q08",
+      "companionQuestionId": "PX1905-F-P1-C02-Q07",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "How did the 1905 instruction suggest celebrating Christmas well?",
+        "fr": "Comment l'instruction de 1905 proposait-elle de bien célébrer Noël ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_II",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C03-Q01",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C03-Q01",
+      "companionQuestionId": "PX1905-F-P1-C03-Q02",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "What did the traditional feast of the Circumcision commemorate?",
+        "fr": "Que commémorait la fête traditionnelle de la Circoncision ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C03-Q02",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C03-Q02",
+      "companionQuestionId": "PX1905-F-P1-C03-Q03",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "What was circumcision's role in the Old Covenant?",
+        "fr": "Quel était le rôle de la circoncision dans l'Ancienne Alliance ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C03-Q03",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C03-Q03",
+      "companionQuestionId": "PX1905-F-P1-C03-Q04",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Was Jesus personally bound by the law of circumcision?",
+        "fr": "Jésus était-Il personnellement tenu par la loi de la circoncision ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C03-Q04",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C03-Q04",
+      "companionQuestionId": "PX1905-F-P1-C03-Q05",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Why did Christ undergo circumcision if He was not obliged?",
+        "fr": "Pourquoi le Christ a-t-Il subi la circoncision sans y être obligé ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C03-Q05",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C03-Q05",
+      "companionQuestionId": "PX1905-F-P1-C03-Q06",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "When does the instruction say the name Jesus was given?",
+        "fr": "Quand l'instruction dit-elle que le nom de Jésus fut donné ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C03-Q06",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C03-Q06",
+      "companionQuestionId": "PX1905-F-P1-C03-Q07",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "What does the name Jesus mean?",
+        "fr": "Que signifie le nom Jésus ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C03-Q07",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C03-Q07",
+      "companionQuestionId": "PX1905-F-P1-C03-Q06",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Why should the holy name of Jesus be revered?",
+        "fr": "Pourquoi doit-on révérer le saint nom de Jésus ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C03-Q08",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C03-Q08",
+      "companionQuestionId": "PX1905-F-P1-C03-Q07",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "How did the old feast of the Circumcision invite the faithful to begin the year?",
+        "fr": "Comment l'ancienne fête de la Circoncision invitait-elle les fidèles à commencer l'année ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_III",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C04-Q01",
+      "part": "E",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C04-Q01",
+      "companionQuestionId": "PX1905-F-P1-C04-Q02",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Which three mysteries does the old instruction associate with Epiphany?",
+        "fr": "Quels trois mystères l'ancienne instruction associe-t-elle à l'Épiphanie ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_IV",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C04-Q02",
+      "part": "F",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C04-Q02",
+      "companionQuestionId": "PX1905-F-P1-C04-Q01",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Why is the feast called Epiphany?",
+        "fr": "Pourquoi appelle-t-on cette fête Épiphanie ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_IV",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C04-Q03",
+      "part": "F",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C04-Q03",
+      "companionQuestionId": "PX1905-F-P1-C04-Q04",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Who were the Magi, according to this historical instruction?",
+        "fr": "Qui étaient les Mages selon cette instruction historique ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_IV",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C04-Q04",
+      "part": "F",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C04-Q04",
+      "companionQuestionId": "PX1905-F-P1-C04-Q05",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Why did the Magi travel to find Jesus?",
+        "fr": "Pourquoi les Mages voyagèrent-ils pour trouver Jésus ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_IV",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-F-P1-C04-Q05",
+      "part": "F",
+      "witness": "1905_INSTRUCTION_ON_FEASTS",
+      "questionId": "PX1905-F-P1-C04-Q05",
+      "companionQuestionId": "PX1905-F-P1-C04-Q06",
+      "originalPrintedQuestionNumber": false,
+      "topic": {
+        "en": "Where did the Magi come to adore Jesus?",
+        "fr": "Où les Mages vinrent-ils adorer Jésus ?"
+      },
+      "sourceUrl": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Istruzione_sopra_le_feste_del_Signore_della_B._Vergine_e_dei_Santi/Parte_prima/Capo_IV",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ],
+  "counts": {
+    "families": 50,
+    "turns": 100,
+    "localizedDraftAnswers": 200,
+    "distinctHistoricalCatechismOpeningQuestionNumbers": 26,
+    "distinctFeastEditorialOpeningOrdinals": 24,
+    "distinctOpeningSourceLocators": 50,
+    "relatedCompanionQuestionLinks": 49,
+    "semanticReviewClusters": 9,
+    "certifiedDistinctIntents": 0,
+    "independentlyApproved": 0,
+    "voiceApproved": 0,
+    "published": 0
+  },
+  "withinBatchRelatedPairs": [
+    {
+      "ids": [
+        "SPX-1905-V-968",
+        "SPX-1905-V-969"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-969",
+        "SPX-1905-V-970"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-970",
+        "SPX-1905-V-971"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-971",
+        "SPX-1905-V-972"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-972",
+        "SPX-1905-V-973"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-973",
+        "SPX-1905-V-974"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-974",
+        "SPX-1905-V-975"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-975",
+        "SPX-1905-V-974"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-976",
+        "SPX-1905-V-977"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-977",
+        "SPX-1905-V-976"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-978",
+        "SPX-1905-V-979"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-979",
+        "SPX-1905-V-978"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-980",
+        "SPX-1905-V-986"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-981",
+        "SPX-1905-V-984"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-982",
+        "SPX-1905-V-991"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-983",
+        "SPX-1905-V-986"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-984",
+        "SPX-1905-V-985"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-985",
+        "SPX-1905-V-984"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-986",
+        "SPX-1905-V-987"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-987",
+        "SPX-1905-V-988"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-988",
+        "SPX-1905-V-986"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-989",
+        "SPX-1905-V-990"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-990",
+        "SPX-1905-V-989"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-991",
+        "SPX-1905-V-982"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-992",
+        "SPX-1905-V-993"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-V-993",
+        "SPX-1905-V-992"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C01-Q01",
+        "SPX-1905-F-P1-C01-Q02"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C01-Q02",
+        "SPX-1905-F-P1-C01-Q03"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C01-Q03",
+        "SPX-1905-F-P1-C01-Q02"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C02-Q01",
+        "SPX-1905-F-P1-C02-Q02"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C02-Q02",
+        "SPX-1905-F-P1-C02-Q04"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C02-Q03",
+        "SPX-1905-F-P1-C02-Q01"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C02-Q04",
+        "SPX-1905-F-P1-C02-Q05"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C02-Q05",
+        "SPX-1905-F-P1-C02-Q06"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C02-Q06",
+        "SPX-1905-F-P1-C02-Q05"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C02-Q07",
+        "SPX-1905-F-P1-C02-Q08"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C02-Q08",
+        "SPX-1905-F-P1-C02-Q07"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C03-Q01",
+        "SPX-1905-F-P1-C03-Q02"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C03-Q02",
+        "SPX-1905-F-P1-C03-Q03"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C03-Q03",
+        "SPX-1905-F-P1-C03-Q04"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C03-Q04",
+        "SPX-1905-F-P1-C03-Q05"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C03-Q05",
+        "SPX-1905-F-P1-C03-Q06"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C03-Q06",
+        "SPX-1905-F-P1-C03-Q07"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C03-Q07",
+        "SPX-1905-F-P1-C03-Q06"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C03-Q08",
+        "SPX-1905-F-P1-C03-Q07"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C04-Q01",
+        "SPX-1905-F-P1-C04-Q02"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C04-Q02",
+        "SPX-1905-F-P1-C04-Q01"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C04-Q03",
+        "SPX-1905-F-P1-C04-Q04"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    },
+    {
+      "ids": [
+        "SPX-1905-F-P1-C04-Q04",
+        "SPX-1905-F-P1-C04-Q05"
+      ],
+      "kind": "COMPANION_SOURCE_REUSED_AUDIT_SEMANTIC_INTENT_BEFORE_MERGE",
+      "approvedMerge": false
+    }
+  ],
+  "semanticReviewClusters": [
+    {
+      "topic": "Last Things, mortality and daily recollection",
+      "ids": [
+        "SPX-1905-V-968",
+        "SPX-1905-V-969",
+        "SPX-1905-V-970",
+        "SPX-1905-V-971"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    },
+    {
+      "topic": "Morning prayers and offering of day",
+      "ids": [
+        "SPX-1905-V-972",
+        "SPX-1905-V-973",
+        "SPX-1905-V-974",
+        "SPX-1905-V-975"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    },
+    {
+      "topic": "Everyday prayer in activity",
+      "ids": [
+        "SPX-1905-V-976",
+        "SPX-1905-V-977",
+        "SPX-1905-V-986",
+        "SPX-1905-V-987",
+        "SPX-1905-V-988"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    },
+    {
+      "topic": "Evening review and death preparation",
+      "ids": [
+        "SPX-1905-V-984",
+        "SPX-1905-V-985",
+        "SPX-1905-V-992",
+        "SPX-1905-V-993"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    },
+    {
+      "topic": "Eucharistic adoration in historical custom",
+      "ids": [
+        "SPX-1905-V-975",
+        "SPX-1905-V-982",
+        "SPX-1905-V-991"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    },
+    {
+      "topic": "Advent teaching and penitential preparation",
+      "ids": [
+        "SPX-1905-F-P1-C01-Q01",
+        "SPX-1905-F-P1-C01-Q02",
+        "SPX-1905-F-P1-C01-Q03"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    },
+    {
+      "topic": "Christmas three Masses and observance",
+      "ids": [
+        "SPX-1905-F-P1-C02-Q02",
+        "SPX-1905-F-P1-C02-Q04",
+        "SPX-1905-F-P1-C02-Q05",
+        "SPX-1905-F-P1-C02-Q07",
+        "SPX-1905-F-P1-C02-Q08"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    },
+    {
+      "topic": "Holy Name in Circumcision instruction",
+      "ids": [
+        "SPX-1905-F-P1-C03-Q05",
+        "SPX-1905-F-P1-C03-Q06",
+        "SPX-1905-F-P1-C03-Q07",
+        "SPX-1905-F-P1-C03-Q08"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    },
+    {
+      "topic": "Epiphany and the Magi's journey",
+      "ids": [
+        "SPX-1905-F-P1-C04-Q01",
+        "SPX-1905-F-P1-C04-Q02",
+        "SPX-1905-F-P1-C04-Q03",
+        "SPX-1905-F-P1-C04-Q04",
+        "SPX-1905-F-P1-C04-Q05"
+      ],
+      "kind": "SIMILAR_INTENT_NEEDS_RECONCILIATION",
+      "merged": false
+    }
+  ],
+  "priorWaveOverlapPolicy": "Crosswalk all with Batches 1–6, pilot and preexisting Feast Instruction extraction before stating new unique intents. Crosswalk not certified.",
+  "numberingHold": "Batch 6 unresolved duplicate printed Q950/Q960 is not silently repaired by this subsequent Q968–993 tranche.",
+  "policy": [
+    "No fabricated Catechism Q994 or later. Numbered longer Catechism ends at Q993.",
+    "Feast Instruction uses editorial per-chapter ordinal locators, clearly separate from original global printed questions.",
+    "All new EN/FR answers are educational documentary paraphrases, not verified sentence-level translations nor Pius X authenticated personal utterances.",
+    "Historical feasts, fasting, devotional habits and 1905 obligations must not be represented as timeless current law.",
+    "Moral and confessional discussion must not diagnose culpability or encourage compulsive self-examination.",
+    "Do not duplicate upstream Feast Instruction source extraction; this is adapted conversation layer only.",
+    "All release flags false; no router, sprites or production edits."
+  ],
+  "reviewPriority": [
+    "Check original Italian question and answer for every family; digital witness not fully collated with 1905 print.",
+    "Check early Christmas/January liturgical references against 1962 calendar and identify only period-specific teaching in visitor interface.",
+    "Crosswalk Advent/Christmas/Circumcision/Epiphany materials against already-mined Feast Instruction question records and earlier avatar families.",
+    "Avoid excessive near-duplicate conversations with same teaching, especially Christmas three Masses and Holy Name.",
+    "Review Q981 spiritual direction language for people with scruples; avoid interpreting doubt as proof of mortal sin.",
+    "Review Feast source editorial locator convention against upstream canonical IDs before merge."
+  ],
+  "pipelineOwners": {
+    "sourceAndConversation": "PR #1458",
+    "historicalVoice": "PR #1419",
+    "routerSafety": "PR #1443",
+    "visualNovelPreview": "PR #1402"
+  }
+}
