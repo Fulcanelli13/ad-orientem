@@ -78,10 +78,21 @@ try{
  const ready=await page.locator(timeline).count()>0;
  if(ready){
   s=await snapshot();assert.equal(s.owner,"litany");
+   assert.equal(s.nav,null,"No duplicate Litany Previous/Next controls");
+   assert.equal(await page.locator(rootSel+" [data-p435930-lit-prev],[data-p435930-lit-next]").count(),0);
+   const litProgress=page.locator(timeline+" .aoDevoProgress");
+   assert.equal(await litProgress.getAttribute("aria-valuenow"),"1");
+   assert.equal(await litProgress.getAttribute("aria-valuemax"),String(s.chapters));
   assert.ok(s.chapters>=2&&s.paragraphs>=2,"Historical Litany invocation lines are not focusable");
   const invocation=await page.locator(rootSel+" .aoP435930LitanyLine").allTextContents();
   assert.ok(invocation.length>2&&invocation.some(t=>/Lord|Saint|Mary|Seigneur|Sainte/.test(t)));
   await swipe(-160,4);assert.equal((await snapshot()).index,1,"Litany swipe did not advance one verified section");
+   assert.equal(await litProgress.getAttribute("aria-valuenow"),"2");
+   await page.locator(timeline+" [data-ao-devo-chapter='"+(s.chapters-1)+"']").tap();
+   assert.equal((await snapshot()).final,"true");
+   assert.equal(await litProgress.getAttribute("aria-valuenow"),String(s.chapters));
+   assert.equal(await page.locator(rootSel+" [data-p435930-lit-done]").count(),1,
+    "Litany source-end must retain the explicit final handoff");
   await page.screenshot({path:resolve(captures,"litany-390-source.png"),animations:"disabled"});
  }else{
   const hold=await page.locator("#aoPray435930.open").innerText();
@@ -94,15 +105,22 @@ try{
  await page.waitForSelector(timeline,{timeout:12000});
  s=await snapshot();assert.deepEqual({owner:s.owner,chapters:s.chapters,index:s.index},
   {owner:"sevenWords",chapters:7,index:0});
+  assert.equal(s.nav,null,"No duplicate Seven Words Previous/Next controls");
+  assert.equal(await page.locator(rootSel+" [data-p435930-word-prev],[data-p435930-word-next]").count(),0);
+  const wordProgress=page.locator(timeline+" .aoDevoProgress");
+  assert.equal(await wordProgress.getAttribute("aria-valuenow"),"1");
+  assert.equal(await wordProgress.getAttribute("aria-valuemax"),"7");
  assert.match(await page.locator(rootSel+" .aoDevoCardHead").innerText(),/Father, forgive them|Père, pardonne/);
  assert.equal(await page.locator(rootSel+" [data-p435930-word-scripture]").count(),1);
  assert.equal(await page.locator(rootSel+" .aoP435930HistoricalFocus").count()<=1,true,
   "Historical witness must not duplicate Gospel in multiple cards");
  await page.screenshot({path:resolve(captures,"seven-words-390.png"),animations:"disabled"});
  await swipe(-170,4);assert.equal((await snapshot()).index,1);
+  assert.equal(await wordProgress.getAttribute("aria-valuenow"),"2");
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  assert.equal((await snapshot()).final,"true");
  assert.equal(await page.locator(rootSel+" [data-p435930-word-done]").count(),1);
+  assert.equal(await wordProgress.getAttribute("aria-valuenow"),"7");
  await open("pray.forty_hours");
  await page.waitForSelector(timeline,{timeout:12000});
  s=await snapshot();assert.deepEqual({owner:s.owner,chapters:s.chapters,index:s.index},
