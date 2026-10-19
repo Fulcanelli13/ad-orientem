@@ -4,6 +4,8 @@ import {buildRogationsPayload} from "../src/mass/reader-rogations.js";
 import {buildRogationsLitanyOwnershipMatrix} from "../tools/mass/reconcile-rogation-litany-1962.mjs";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const census=read("../data/mass/rogation-187-vernacular-owner-census.v1.json");
+const invocations=read("../data/mass/rogation-112-invocations-historical-en-fr-crosswalk.v1.json");
+const historic=new Map(invocations.rows.map(x=>[x.rowId,x]));
 const source=read("../data/presentation/reader-rogations.v1.json");
 const graph=read("../data/mass/special-days-extension.v1.3.json").graphs.ROG;
 const reader=buildRogationsPayload({graph,payload:source});
@@ -15,7 +17,7 @@ assert.equal(reader.petitionsDuplicated,false);
 assert.equal(reader.cards[2].paragraphs.length,112);
 assert.equal(reader.cards[5].handoff,"INTROIT");
 assert.equal(census.schema,"ao-rogation-187-vernacular-owner-census-v1");
-assert.equal(census.status,"187_SOURCE_ROWS_MAPPED_NOT_PUBLICATION_CERTIFIED");
+assert.equal(census.status,"187_SOURCE_ROWS_OWNER_AND_HISTORICAL_PARALLEL_INDEXED_NOT_PUBLICATION_CERTIFIED");
 assert.equal(census.rows.length,187);
 assert.equal(renderRows.length,187);
 assert.equal(new Set(census.rows.map(x=>x.rowId)).size,187);
@@ -28,11 +30,18 @@ assert.equal(summary.additionalExactPRAYLatin,15);
 assert.equal(summary.withoutExactLatinOwner,150);
 assert.deepEqual(summary.classification,{
  exactCorpusCandidate:37,
- historicalRowOrPositionCandidate:46,
- historicalLitanyFamilyNotRowApproved:101,
+ historicalOutsideLitanyPositionCandidate:46,
+ historicalLitanyEnglishFrenchLineMappedUnapproved:96,
+ historicalLitanyEnglishOnlyFrenchOmitted:2,
+ historicalLitanyNeitherHistoricWitness:3,
  sourceSpecificScriptureChantSearch:3
 });
 assert.equal(summary.confirmedGenuinelyMissingTranslations,null);
+assert.equal(census.historicalLitanyLineAlignment.totalNativeInvocations,112);
+assert.equal(census.historicalLitanyLineAlignment.bothHistoricalEnglishFrench,107);
+assert.deepEqual(census.historicalLitanyLineAlignment.correspondingUnlinkedCorpusOwnerRows,{
+  bothHistorical:96,englishOnly:2,neither:3
+});
 assert.equal(summary.editoriallyApprovedEN,0);
 assert.equal(summary.editoriallyApprovedFR,0);
 assert.equal(summary.source1962FullyPrintCollated,false);
@@ -51,12 +60,29 @@ for(let i=0;i<census.rows.length;i++){
    "Ordinary candidate IDs differ from existing source owner matrix "+row.rowId);
  assert.deepEqual(row.prayIds,index.prayPrayerIds,
    "PRAY candidate IDs differ from existing source owner matrix "+row.rowId);
+ if(row.stage==="ROG-R03"){
+   const h=historic.get(row.rowId);
+   assert.ok(h,"Every Litany row must now have an explicit witness-position record");
+   assert.equal(row.historicalParallelRef,
+     "data/mass/rogation-112-invocations-historical-en-fr-crosswalk.v1.json#"+row.rowId);
+   if(!row.ordinaryCueIds.length&&!row.prayIds.length){
+     const type={
+       HISTORICAL_EN_FR_PARALLEL:"HISTORICAL_LITANY_LINE_EN_FR_MAPPED_UNAPPROVED",
+       HISTORICAL_EN_ONLY:"HISTORICAL_LITANY_EN_ONLY_FR_VARIANT",
+       NO_EN_FR_HISTORICAL_PARALLEL:"HISTORICAL_LITANY_NEITHER_EDITION_SOURCE_GAP"
+     }[h.historicalPairStatus];
+     assert.equal(row.triage,type,"Historical source coverage must stay in sync across the two canonical files");
+   }
+ }
  assert.equal(row.publication,"REVIEW_PENDING_NOT_PROMOTED");
  assert.equal(Object.hasOwn(row,"latin"),false);
  assert.equal(Object.hasOwn(row,"english"),false);
  assert.equal(Object.hasOwn(row,"french"),false);
  assert.ok(["EXACT_OWNER_CANDIDATE","HISTORICAL_ROW_OR_POSITION_EN_FR_REVIEW",
- "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE","HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+ "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+ "HISTORICAL_LITANY_LINE_EN_FR_MAPPED_UNAPPROVED",
+ "HISTORICAL_LITANY_EN_ONLY_FR_VARIANT",
+ "HISTORICAL_LITANY_NEITHER_EDITION_SOURCE_GAP",
  "HISTORICAL_POST_LITANY_DIALOGUE","HISTORICAL_PSALM_VERSE",
  "HISTORICAL_SUFFRAGES","HISTORICAL_COLLECT_INVITATION",
  "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR","HISTORICAL_EN_FR_FINAL_DIALOGUE",
@@ -83,4 +109,4 @@ assert.equal(census.rows.find(x=>x.rowId==="ROG-R05-F3").ordinaryCueIds.includes
 assert.ok(census.rows.filter(x=>x.triage==="SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH")
   .every(x=>x.stage==="ROG-R01"&&x.rowId!=="ROG-R01-G"));
 assert.ok(census.releaseRequirements.some(x=>x.includes("never conflate")));
-console.log("PASS Rogations 187-row source owner census, native parity, 37 exact candidates, 46 historical passages, 101 unaligned Litany invocations and three Scripture/chant search rows; no invented translation gaps.");
+console.log("PASS Rogations 187-row source ownership census, 96 EN/FR mapped Litany candidates, 2 EN-only and 3 in neither historical edition, 37 exact corpus candidates; no invented translation gaps.");
