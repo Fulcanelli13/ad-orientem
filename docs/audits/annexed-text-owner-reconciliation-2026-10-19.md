@@ -139,3 +139,50 @@ not the generated comparison report, remain canonical.
 **Release status:** PR #1441 remains draft and unmerged. The latest
 source-specific translation additions are not promoted to the
 canonical Ultra Master by passing CI.
+
+## Second-pass audit: PRAY prayer owners, historical Litanies and Scripture editions
+
+The follow-up owner search **does not translate anything**. It reads
+`src/pray/canonical-data.js`, the actual trilingual PRAY corpus, and
+compares normalized **complete Latin source lines** against the 259
+annex source leaves that did not match the fixed Ordinary. The script
+`tools/mass/reconcile-annexed-secondary-owners.mjs --write` produces
+`artifacts/annexed-second-pass-existing-owners.json` and records
+stable prayer IDs and source locations, **not another duplicate copy of
+Latin or vernacular text**.
+
+The 48 PRAY prayers have potentially reusable Latin, English and French
+prayer material, but
+`data/pray/prayer-source-certification-inventory.v3.json` explicitly
+reports **0 fully source-certified prayer records**. An exact Latin
+line match—such as the Rogation litany's `Sancta Maria, ora pro nobis`
+against the already-owned Litany of Loreto—therefore establishes a
+**candidate**, not approval to substitute Marian litany content for
+the 1962 Litany of the Saints.
+
+The standalone `src/pray/litany-source.js` has **1883 English** and
+**1862 French** historical witnesses, differently scoped and
+**not collated against the 1962 ritual**. Its source boundary stops
+before the following `Pater noster`/Psalm 69/orations. These witnesses
+may support historical research but cannot automatically supply the
+entire 1962 procession.
+
+The Scripture candidate audit names the actual restored witnesses:
+Douay–Rheims Challoner (English), Crampon 1923 (French) and CPDV 2009
+(English). All are expressly `UNCOLLATED_SOURCE_WITNESS` in
+`data/scripture/witness/README.md`, with no matching certified Latin
+source in those witness packs. It flags the **Pian Psalter Psalm 21**
+on Holy Thursday, **Psalm 69** in Rogations, **Luke 2 Nunc dimittis**
+in Candlemas, and other selected psalm incipits for edition/numbering
+and segment-boundary comparison—not wholesale Scripture reuse.
+
+**Release rule:** the audit never assigns `MISSING_TRANSLATION`
+on failure to match. Its residual count remains a **worklist of
+unverified owners**, and its Scripture candidates remain **reference
+hypotheses** until original Latin recension, verse mapping, full prayer
+extent and published translation permissions have been reconciled.
+The source-only `tests/annexed-secondary-existing-owners.mjs` is in
+the focused PR gate.
+
+No new translations, new rite actions, gesture cues, or Mass reader
+card replacements are authorized by this pass.
