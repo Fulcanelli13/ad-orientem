@@ -66,6 +66,25 @@ for(const topic of registry.topics){
   }else throw Error("Unrecognised source owner "+source.owner);
  }
 }
+assert.equal(registry.pilotLimits.curatedTopicRelationships,47);
+assert.equal(registry.pilotLimits.relationshipsAreDoctrinalImplications,false);
+assert.equal(registry.policy.relatedTopicDoesNotAuthoriseNewClaim,true);
+let relationCount=0;
+for(const t of registry.topics){
+ for(const link of t.relatedTopics||[]){
+  assert.ok(topics.has(link.id),"dangling related topic "+link.id);
+  assert.notEqual(t.id,link.id);
+  assert.equal(link.publication,"RELATIONSHIP_RESEARCH_ONLY");
+  relationCount++;
+ }
+}
+assert.equal(relationCount,47);
+for(const t of registry.topics.filter(t=>t.category==="canon_apologetics_unpublished")){
+ assert.equal(t.coverage,"SOURCE_GAP");
+ assert.equal(t.sourceRefs.length,0);
+ assert.equal(t.researchRefs.length,1);
+ assert.ok(apolIds.has(t.researchRefs[0].ref));
+}
 for(const a of registry.ambiguities)for(const id of a.candidates)assert.ok(topics.has(id));
 const router=createSharedQuestionRouter(registry);
 assert.equal(router.version,SHARED_QUESTION_ROUTER_VERSION);
@@ -85,6 +104,9 @@ assert.equal(r.kind,"clarify");assert.equal(r.requiresContext,true);assert.equal
 r=match("what happens to the bread at mass");
 assert.equal(r.kind,"source_navigation");assert.equal(r.character,"pius-x");assert.equal(r.topicId,"faith.real_presence");
 assert.deepEqual(r.sourceRefs.map(x=>x.ref),["PX1912-Q325","PX1912-Q329"]);assert.equal(r.answerText,null);
+assert.ok(r.topic.relatedTopics.some(x=>x.id==="mass.elevation"));
+assert.ok(r.topic.relatedTopics.every(x=>x.publication==="RELATIONSHIP_RESEARCH_ONLY"));
+assert.equal(r.topic.approvedReply,false);
 r=match("can the pope make mistakes");assert.equal(r.topicId,"church.papal_infallibility");
 r=match("how do i examine my conscience");assert.equal(r.topicId,"penance.examination");
 r=match("Pourquoi invoquer la Sainte Vierge ?",{language:"fr"});assert.equal(r.topicId,"mary.intercession");
