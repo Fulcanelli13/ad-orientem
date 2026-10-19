@@ -150,6 +150,12 @@ assert.equal(r.kind,"offer_handoff");
 assert.equal(r.topicId,"objects.pall");
 assert.equal(r.requiresQuestionConfirmation,true);
 assert.equal(r.matchEvidence.basis,"LEXICAL_RANKED");
+assert.equal(router.acceptHandoff(r,{accept:true}).kind,"needs_question_confirmation");
+const explicitlyConfirmed=router.acceptHandoff(r,{accept:true,confirmQuestion:true});
+assert.equal(explicitlyConfirmed.kind,"handoff_context");
+assert.equal(explicitlyConfirmed.toCharacter,"sacristan");
+assert.equal(explicitlyConfirmed.answerText,null);
+
 r=match("what is the small square over the chalice");
 
 assert.equal(router.acceptHandoff(r,{accept:false}).kind,"stay");
