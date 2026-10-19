@@ -1,15 +1,30 @@
 // Non-owning shared devotional card layout, loaded after legacy PRAY CSS.
 export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoDevoDeck{display:block!important;width:100%;min-width:0;gap:0!important}
-#aoPray435930 .aoDevoTimeline{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:5px;align-items:center;min-height:58px;padding:6px 2px;background:var(--bg,#080c12);border-block:1px solid var(--border,rgba(255,255,255,.12));position:sticky;top:74px;z-index:16}
+#aoPray435930 .aoDevoTimeline{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;align-items:center;min-height:58px;padding:6px 2px;background:var(--bg,#080c12);border-block:1px solid var(--border,rgba(255,255,255,.12));position:sticky;top:74px;z-index:16}
 #aoPray435930 .aoDevoStops{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain;scroll-snap-type:x proximity}
 #aoPray435930 .aoDevoStops::-webkit-scrollbar{display:none}
+/* A quiet, continuous bar reports position without implying devotional merit. */
+#aoPray435930 .aoDevoProgress,
+#aoPrayerBookRoot.open .aoDevoProgress{
+ display:block;grid-column:1/-1;position:relative;box-sizing:border-box;
+ width:100%;height:3px;min-height:3px;overflow:hidden;border-radius:2px;
+ background:var(--border,rgba(255,255,255,.14));pointer-events:none;
+}
+#aoPray435930 .aoDevoProgressFill,
+#aoPrayerBookRoot.open .aoDevoProgressFill{
+ display:block;width:var(--ao-devo-progress,0%);height:100%;
+ background:var(--liturgical,#c8b28a);opacity:.85;
+ transition:width .2s ease;
+}
+@media(prefers-reduced-motion:reduce){
+ #aoPray435930 .aoDevoProgressFill,
+ #aoPrayerBookRoot.open .aoDevoProgressFill{transition:none}
+}
 #aoPray435930 .aoDevoStop{scroll-snap-align:center;display:grid;gap:2px;flex:0 0 max(112px,42%);padding:8px 9px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;color:var(--muted,#aeb2b8);background:var(--surface-1,#141a20);text-align:left;min-height:48px}
 #aoPray435930 .aoDevoStop.active{border-color:var(--liturgical,#d8bd7d);color:var(--text,#f1e7d7);background:color-mix(in srgb,var(--liturgical,#d8bd7d) 9%,var(--surface-1,#141a20))}
 #aoPray435930 .aoDevoStopNumber{font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.12em}
 #aoPray435930 .aoDevoStopTitle{font:500 12px/1.25 Georgia,serif}
-#aoPray435930 .aoDevoNavArrow{min-width:42px;min-height:46px;color:var(--text,#f1e7d7);background:transparent;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:8px;font:22px/1 Georgia,serif}
-#aoPray435930 .aoDevoNavArrow:disabled{opacity:.23}
 #aoPray435930 .aoDevoCardViewport{min-width:0;width:100%}
 #aoPray435930 .aoDevoCard[hidden]{display:none!important}
 #aoPray435930 .aoDevoCard{display:flex;flex-direction:column;min-width:0;animation:aoDevoCardEnter .24s ease both}
@@ -31,7 +46,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoDevoCardScroll [data-face-v][hidden],#aoPray435930 .aoDevoCardScroll [data-face-la][hidden]{display:none!important}
 
 /* Shared Stations/Mercy reader: the prayer text scrolls, never the title rail. */
-#aoPray435930 .aoDevoSequenceTimeline{display:grid!important;grid-template-columns:44px minmax(0,1fr) 44px!important;gap:5px!important;align-items:center;max-width:100%;width:100%;min-width:0;overflow:visible!important;position:sticky;top:74px;z-index:19;background:var(--bg,#080c12);padding:5px 2px!important;border-block:1px solid var(--border,rgba(255,255,255,.14))}
+#aoPray435930 .aoDevoSequenceTimeline{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:5px!important;align-items:center;max-width:100%;width:100%;min-width:0;overflow:visible!important;position:sticky;top:74px;z-index:19;background:var(--bg,#080c12);padding:5px 2px!important;border-block:1px solid var(--border,rgba(255,255,255,.14))}
 #aoPray435930 .aoDevoSequenceTimeline .aoDevoStops{min-width:0;display:flex!important;overflow-x:auto!important;max-width:100%;padding:0!important}
 #aoPray435930 .aoDevoSequenceTimeline .aoDevoStop{flex:0 0 max(116px,42%)!important;min-height:54px;max-width:none;margin:0!important;display:grid!important;align-content:center}
 #aoPray435930 .aoDevoSequenceTimeline .aoDevoStopTitle{font:500 12px/1.22 Georgia,serif;white-space:normal}
@@ -328,20 +343,14 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 }
 #aoPray435930 .aoFolioReader .aoDevoTimeline{
  display:grid!important;
- grid-template-columns:44px minmax(0,1fr) 44px!important;
- min-height:48px!important;max-height:52px!important;
+ grid-template-columns:minmax(0,1fr)!important;
+ min-height:52px!important;max-height:none!important;
  gap:3px!important;padding:1px 3px!important;
  top:56px!important;border-block:0 1px solid var(--border,rgba(255,255,255,.14))!important;
 }
 #aoPray435930 .aoFolioReader .aoDevoStops{
  min-width:0!important;gap:4px!important;
  align-items:center!important;justify-content:safe center;
-}
-#aoPray435930 .aoFolioReader .aoDevoNavArrow{
- min-width:44px!important;min-height:44px!important;
- height:44px!important;padding:0!important;
- border:0!important;border-radius:9px!important;
- font:20px/1 Georgia,serif!important;
 }
 #aoPray435930 .aoFolioReader .aoDevoStop{
  display:flex!important;align-items:center!important;justify-content:center!important;
