@@ -259,8 +259,8 @@ assert.deepEqual(
   "Donor collision changed without review — do not silently alter original masters");
 const liveRenderer=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 assert.match(liveRenderer,
-  /current\.priestActionIconKey\s*\?\s*current\.priestAction\s*:\s*null/,
-  "icon-less reviewed actions still occupy empty priest-action rail space");
+  /setChannel\(root,"priest-action",current\.priestAction\)/,
+  "source-owned priest action was suppressed solely because its art is unapproved");
 assert.match(liveRenderer,
   /setText\(root,"priest-action",textValue\(current\.priestAction\)\)/,
   "withholding unapproved action art must not erase the priest's source action");
