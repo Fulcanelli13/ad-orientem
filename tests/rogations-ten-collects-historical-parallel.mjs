@@ -1,0 +1,63 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {buildRogationsPayload} from "../src/mass/reader-rogations.js";
+const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
+const map=read("../data/mass/rogation-ten-collects-historical-parallel.v1.json");
+const source=read("../data/presentation/reader-rogations.v1.json");
+const graph=read("../data/mass/special-days-extension.v1.3.json").graphs.ROG;
+const built=buildRogationsPayload({graph,payload:source});
+const collects=built.cards.find(x=>x.id==="ROG-R05").paragraphs
+ .filter(x=>/^ROG-R05-O\d+$/.test(x.id));
+assert.equal(map.status,"ALL_TEN_EN_FR_HISTORICAL_POSITIONS_IDENTIFIED_UNAPPROVED");
+assert.equal(map.entries.length,10);
+assert.equal(map.count.canonicalLatinCollects,10);
+assert.equal(map.count.englishHistoricalSegmentsLocated,10);
+assert.equal(map.count.frenchHistoricalSegmentsLocated,10);
+assert.equal(map.count.pairedBySequenceAndSubject,10);
+assert.equal(map.count.independently1962LatinCertified,0);
+assert.equal(map.count.approvedEnglishTranslations,0);
+assert.equal(map.count.approvedFrenchTranslations,0);
+assert.equal(map.count.confirmedNewTranslationsNeeded,0);
+assert.equal(collects.length,10);
+assert.equal(built.cards.length,6);
+assert.equal(built.petitionsDuplicated,false);
+assert.equal(built.cards.find(x=>x.id==="ROG-R03").paragraphs.length,112);
+assert.equal(built.cards.find(x=>x.id==="ROG-R05").paragraphs.length,18);
+assert.equal(built.cards.find(x=>x.id==="ROG-R05").paragraphs[0].id,"ROG-R05-OR");
+assert.equal(new Set(map.entries.map(x=>x.rowId)).size,10);
+for(let i=0;i<10;i++){
+ const c=map.entries[i],owner=collects[i];
+ assert.equal(c.rowId,"ROG-R05-O"+(i+1));
+ assert.equal(c.latinSourcePath,"postLitany.orations."+i);
+ assert.ok(source.postLitany.orations[i].startsWith(c.latinIncipit),
+  "Canonical Latin incipit drift for "+c.rowId);
+ assert.equal(owner.id,c.rowId);
+ assert.equal(owner.sourceRecordId,"ROG-END-010");
+ assert.equal(owner.latin,source.postLitany.orations[i]);
+ assert.equal(c.english.ordinal,i+1);
+ assert.equal(c.french.ordinal,i+1);
+ assert.ok(c.english.sourceUrl.includes("oldid=12282621"));
+ assert.ok(c.french.sourceUrl.endsWith("/309"));
+ assert.ok(c.french.parallelLatinUrl.endsWith("/308"));
+ assert.equal(c.french.printPage,295);
+ assert.equal(c.french.parallelLatinPrintPage,294);
+ assert.ok(Number.isInteger(c.english.transcriptionLine));
+ assert.ok(Number.isInteger(c.french.transcriptionLine));
+ assert.ok(Number.isInteger(c.french.parallelLatinTranscriptionLine));
+ assert.equal(c.pairingStatus,"SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE");
+ assert.equal(c.contentAdoptionStatus,"BLOCKED_EDITION_AND_RIGHTS_COLLATION");
+ assert.equal(c.editorDecision,"FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION");
+ assert.ok(!Object.hasOwn(c,"latin")&&!Object.hasOwn(c,"englishText")&&!Object.hasOwn(c,"frenchText"),
+  "Historical source mapping must not become another translation owner");
+}
+const papal=map.entries[4];
+assert.ok(papal.englishVariantFlags.includes("EN_PAPAL_PLACEHOLDER_AND_TITLE_ORDER"));
+assert.ok(papal.frenchLatinOrEditionFlags.includes("HISTORICAL_PONTIFICI_NOSTRO_CORROBORATES_DONOR"));
+assert.match(collects[4].latin,/Pontifici nostro N\\./);
+assert.ok(map.entries[7].englishVariantFlags.some(x=>x.includes("TWO_SEXES")));
+assert.ok(map.entries[8].englishVariantFlags.some(x=>x.includes("HISTORICAL_PREVENT")));
+assert.ok(map.entries[9].englishVariantFlags.includes("EN_ETC_ABBREVIATED_CLOSING_FORMULA"));
+assert.ok(map.entries[9].frenchLatinOrEditionFlags.includes("FR_LATIN_MISERIS_VS_DONOR_MISERERIS"));
+assert.equal(map.sources.english.printFacsimileCheck,"PENDING_ORIGINAL_SCAN");
+assert.ok(map.sources.french.printFacsimileCheck.includes("NOT_INDEPENDENTLY_SIGNED_OFF"));
+console.log("PASS 10 Rogation collects paired to dated historical English/French source loci; editorial and facsimile gates remain closed.");
