@@ -414,13 +414,7 @@
           "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
         }
       ],
-      "existingOwners": [
-        {
-          "owner": "APOLOGETICS_CANONICAL_V1",
-          "ref": "APOL-038",
-          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
-        }
-      ],
+      "existingOwners": [],
       "historicalClaimReview": "PENDING",
       "allPassagesVerified": false
     },
@@ -467,11 +461,6 @@
           "owner": "APOLOGETICS_CANONICAL_V1",
           "ref": "APOL-043",
           "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
-        },
-        {
-          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
-          "ref": "PX1912-Q240",
-          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
         }
       ],
       "historicalClaimReview": "PENDING",
@@ -625,11 +614,6 @@
           "owner": "APOLOGETICS_CANONICAL_V1",
           "ref": "APOL-023",
           "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
-        },
-        {
-          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
-          "ref": "PX1912-Q251",
-          "relationship": "CATECHISM_QUESTION_REFERENCE_ONLY"
         }
       ],
       "historicalClaimReview": "PENDING",
@@ -1079,11 +1063,6 @@
       ],
       "existingOwners": [
         {
-          "owner": "APOLOGETICS_CANONICAL_V1",
-          "ref": "APOL-048",
-          "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_ANSWER_APPROVAL"
-        },
-        {
           "owner": "CHURCH_CRISIS_CANONICAL_V1",
           "ref": "CR-DOC-04",
           "relationship": "RESEARCH_TOPIC_OVERLAP_NOT_CONCLUSION"
@@ -1291,7 +1270,7 @@
       "allPassagesVerified": false
     },
     {
-      "id": "SCRIPTURE_MASS_REFORM",
+      "id": "ROMAN_MASS_REFORM_HISTORY",
       "title": "Historical development of the Roman Mass",
       "family": "liturgy-discipline",
       "documentCandidates": [
@@ -1375,7 +1354,7 @@
   "metrics": {
     "doctrineTopics": 51,
     "topicToDocumentCandidates": 101,
-    "indexedApologeticsLinks": 55,
+    "indexedApologeticsLinks": 53,
     "indexedChurchCrisisLinks": 10,
     "originalPassageCertifications": 0
   },
@@ -1386,5 +1365,12 @@
     "chronologicalLayersMustBeVisible": true,
     "magisterialAuthorityIsPassageSpecific": true,
     "publishable": false
-  }
+  },
+  "reviewNotes": [
+    "PX1912-Q251 concerns evangelical counsels, not the seven sacraments; do not link.",
+    "PX1912-Q240 concerns charity, not a direct catechism entry on predestination; do not link.",
+    "APOL-038 centres justification/salvation, not specifically the definition of Original Sin; separate topic.",
+    "APOL-048 concerns religious pluralism, not the legal/doctrinal question of religious liberty; do not link.",
+    "All remaining relationships are provisional topical joins, not assertion-level provenance."
+  ]
 }
