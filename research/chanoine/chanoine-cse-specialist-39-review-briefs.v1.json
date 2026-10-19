@@ -1,12 +1,13 @@
 {
   "schema": "AO_CHANOINE_CSE_SPECIALIST_39_CASE_REVIEW_BRIEFS_V1",
   "date": "2026-10-20",
-  "status": "CASE_BY_CASE_EDITORIAL_RISK_SCREEN_NOT_CLINICAL_OR_THEOLOGICAL_CERTIFICATION",
+  "status": "39_CASE_EDITORIAL_RISK_SCREEN_WITH_3_PRECISION_REPAIRS_APPLIED_PENDING_REVIEW",
   "method": "Each record identifies a specific claim boundary, threat model and source anchor from the public-eligible 147-dialogue composite. These are review instructions, not clinical diagnosis or doctrinal sign-off.",
   "coverage": {
     "specialist": 39,
-    "precisionIssues": 3,
-    "allBilingualFields": true
+    "precisionIssues": 0,
+    "allBilingualFields": true,
+    "precisionRepairsApplied": 3
   },
   "records": [
     {
@@ -121,10 +122,12 @@
       "followup_en_present": true,
       "followup_fr_present": true,
       "needs_additional_source_precision_edit": true,
-      "review_disposition": "NEEDS_QUALIFIED_REVIEW",
+      "review_disposition": "DRAFT_CORRECTED_PENDING_QUALIFIED_REVIEW",
       "source_certified": false,
       "safeguarding_approved": false,
-      "publication_approved": false
+      "publication_approved": false,
+      "draft_precision_repair_applied_unreviewed": true,
+      "repair_trace": "chanoine-cse-specialist-precision-repairs-3.v1.json#CSE050"
     },
     {
       "source_question_id": "CSE054",
@@ -298,10 +301,12 @@
       "followup_en_present": true,
       "followup_fr_present": true,
       "needs_additional_source_precision_edit": true,
-      "review_disposition": "NEEDS_QUALIFIED_REVIEW",
+      "review_disposition": "DRAFT_CORRECTED_PENDING_QUALIFIED_REVIEW",
       "source_certified": false,
       "safeguarding_approved": false,
-      "publication_approved": false
+      "publication_approved": false,
+      "draft_precision_repair_applied_unreviewed": true,
+      "repair_trace": "chanoine-cse-specialist-precision-repairs-3.v1.json#CSE097"
     },
     {
       "source_question_id": "CSE100",
@@ -389,10 +394,12 @@
       "followup_en_present": true,
       "followup_fr_present": true,
       "needs_additional_source_precision_edit": true,
-      "review_disposition": "NEEDS_QUALIFIED_REVIEW",
+      "review_disposition": "DRAFT_CORRECTED_PENDING_QUALIFIED_REVIEW",
       "source_certified": false,
       "safeguarding_approved": false,
-      "publication_approved": false
+      "publication_approved": false,
+      "draft_precision_repair_applied_unreviewed": true,
+      "repair_trace": "chanoine-cse-specialist-precision-repairs-3.v1.json#CSE108"
     },
     {
       "source_question_id": "CSE110",
