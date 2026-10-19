@@ -46,6 +46,37 @@ The companion file `data/learn/research/pius-x-p1-short-catechism-topical-review
 
 This screening does **not** reduce the denominator from 497 to 443: overlapping *topics* can still contain genuinely distinct pastoral questions, and 433 numbered Catechism questions are not guaranteed to be 433 distinct user intents.
 
+
+## Full digital-source review: all 64 SPX research families
+
+The two reviewed extracts, `pius-x-p1-first24-italian-text-review-20261019.v1.json` and `pius-x-p1-next40-italian-text-review-20261019.v1.json`, document a **64/64 manual comparison** of the initial topic crosswalk against the complete Italian question and answer text of the digital source (pinned transcription commit `65d10046...`). This is **not** collation against an authentic 1912 printed facsimile, nor independent doctrinal or visitor dialogue certification.
+
+| Classification | Number | Meaning |
+| --- | ---: | --- |
+| `DIRECT_CATECHISM_QUESTION` | 29 | Relevant complete Q&A directly addresses the substantive question |
+| `PARTIAL_ANSWER_TO_BROADER_QUESTION` | 8 | Q&A supports part, but additional historical/pastoral evidence needed |
+| `RELATED_DOCTRINE_NOT_SAME_QUESTION` | 16 | Useful background but not the same user intention |
+| `NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES` | 10 | No direct candidate in the bounded stem-based list; not a global absence claim |
+| `MISMATCHED_DOCTRINAL_DISTINCTION` | 1 | SPX-057 incorrectly mapped *actual* grace to Q269–271 on *sacramental* grace |
+
+**Do not subtract 29 from 497 to announce an exact distinct-intent total.** A short Catechism question that directly addresses an SPX topic may still cover only one route through a larger pastorally distinct conversation family. Full semantic joins require adjudication; they have not been merged.
+
+### Critical edition-integrity hold: historical anachronism in an alleged 1912 witness
+
+Pinned Italian digital file `sacramento-matrimonio.md` contains Q409 and Q410 asserting that Catholic marriage has civil legal effects in Italy through state recognition/registration. The 11 February **1929 Lateran Concordat**, Article 34, established that recognition, and the prior Italian law did **not** confer these effects on a purely canonical marriage. The wording therefore cannot be unchanged original Pius X-era 1912 text. Q411 contains related time-sensitive disciplinary language and is also held.
+
+- Digital witness: https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-matrimonio.md
+- Vatican 1929 agreement, Article 34: https://www.vatican.va/roman_curia/secretariat_state/archivio/documents/rc_seg-st_19290211_patti-lateranensi_it.html
+- Italian legal history: https://www.treccani.it/enciclopedia/patti-lateranensi_%28Diritto-on-line%29/
+- Review hold: `data/learn/research/pius-x-1912-catechism-edition-discrepancy-hold-20261019.v1.json`
+
+The scope is **witness contamination / posthumous modification, not proof that all 433 digital question texts are false**. Retain numerical identity and useful study locators; block claims of exact 1912 wording until edition-specific print comparison. SPX-028 and SPX-044 must avoid anachronistic civil marriage descriptions.
+
+### Another corrected attribution: SPX-057
+
+The original P1 topical crosswalk suggested PX1912-Q269–271 for *actual grace versus sanctifying grace*. The Italian questions actually distinguish *sanctifying* from *sacramental* grace. This is recorded as a **mismatched doctrinal distinction**, not a partial direct answer. Consult a correctly located original source before promoting SPX-057.
+
+
 ## P1 reviewed-intent workflow
 
 1. **Resolve exact 1912 source text first.** The English index stores short stems; use the canonical text owner and Italian section file before comparing question semantics. Never merge Qs solely on matching first six words.
