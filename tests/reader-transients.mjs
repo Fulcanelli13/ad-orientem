@@ -19,13 +19,19 @@ assert.equal(controller.project("AO.SM.C0161").bell.canonicalEventIds[0],"MC-CAN
 assert.deepEqual(controller.project("AO.SM.C0174").bell.canonicalEventIds,["MC-CNS-030","MC-CNS-040"]);
 assert.equal(controller.project("AO.SM.C0174").cinematic.kind,"ELEVATION");
 assert.deepEqual(CANON_ELEVATION_BELL_PHASES["AO.SM.C0174"].map(x=>x.canonicalEventId),
- ["MC-CNS-030","MC-CNS-040"]);
+ ["MC-CNS-030","MC-CNS-040","MC-CNS-040"]);
 assert.deepEqual(CANON_ELEVATION_BELL_PHASES["AO.SM.C0181"].map(x=>x.canonicalEventId),
- ["MC-CNS-100","MC-CNS-110"]);
+ ["MC-CNS-100","MC-CNS-110","MC-CNS-110"]);
 for(const [cueId,phases] of Object.entries(CANON_ELEVATION_BELL_PHASES)){
- assert.deepEqual(phases.map(x=>x.moment),["FIRST_GENUFLECTION","ELEVATION"]);
+ assert.deepEqual(phases.map(x=>x.moment),
+ ["FIRST_GENUFLECTION","ELEVATION","SECOND_GENUFLECTION"]);
  assert.deepEqual(phases.map(x=>x.status),
- ["CONDITIONAL_THREE_RING_PATTERN","PRESCRIBED_ELEVATION_WINDOW"]);
+ ["CONDITIONAL_THREE_RING_PATTERN","PRESCRIBED_ELEVATION_WINDOW",
+  "CONDITIONAL_THREE_RING_PATTERN_DISTRIBUTION"]);
+ assert.ok(phases[2].additionalCanonicalSoundEvent===false,
+  "Customary final genuflection ringing must reuse the existing sound event");
+ assert.equal(phases[2].canonicalEventId,phases[1].canonicalEventId,
+  "Three distributed strikes are not four canonical sound-event records");
  assert.equal(controller.project(cueId).bell.phases,phases,
    "The source-backed opportunity map must preserve separate genuflection/elevation sound records");
 }
