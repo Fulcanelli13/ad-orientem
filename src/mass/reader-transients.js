@@ -293,7 +293,12 @@ export function createReaderTransientController({events,prepared}={}){
         label:binding.label,detail:binding.detail,cueId:id,
         canonicalEventIds:binding.canonicalEventIds,
         soundEvents:Object.freeze(soundEvents),
-        sourceTiming:BELL_SOURCE_WINDOWS[id],
+        sourceTiming:form==="LOW" && id==="AO.SM.C0145"
+          ? Object.freeze({...BELL_SOURCE_WINDOWS[id],
+              sourceClock:"PUBLIC_TEXT",
+              reason:"LOW_MASS_SANCTUS_IS_PRIEST_TEXT_NOT_SCHOLA",
+              form:"LOW"})
+          : BELL_SOURCE_WINDOWS[id],
         status:"EXPECTED_NOT_OBSERVED",
         observedNow:false,actuallyHeard:"UNKNOWN",notAnObservation:true,
         phases:CANON_ELEVATION_BELL_PHASES[id]??null,
