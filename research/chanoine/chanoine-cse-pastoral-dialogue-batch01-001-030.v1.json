@@ -301,8 +301,8 @@
       "source_seed_conversation_id": "CHA-CSE-CSE014",
       "source_main_verbatim_location": "research/chanoine/chanoine-cse-source-conversation-seeds.v1.json#records[main_question_id=CSE014]",
       "editorial_main_answer": {
-        "en": "We must be precise about what has changed. Language, penalties, pastoral disciplines and the treatment of new circumstances can develop. But that is not the same as saying that every moral principle is a historical fashion. Christ, the Apostles and the older catechisms must each be read accurately before we claim a reversal.",
-        "fr": "Il faut préciser ce qui a changé. Le langage, les peines, les disciplines pastorales et l’examen de circonstances nouvelles peuvent évoluer. Cela ne signifie pas que tout principe moral soit une mode historique. Il faut lire exactement le Christ, les Apôtres et les anciens catéchismes avant de parler d’un renversement."
+        "en": "Yes, some things have changed: language, canonical penalties, pastoral discipline and how new situations are addressed. But we must not mistake every development for a reversal of moral teaching. Our Lord speaks against adultery and lust and upholds marriage; Saint Paul condemns fornication; the Roman Catechism teaches on the Sixth Commandment; and Pius XI explicitly rejects adultery, divorce and deliberate contraception. Let us compare particular propositions and their authority rather than judge by slogans.",
+        "fr": "Oui, certaines choses ont changé : le langage, les peines canoniques, la discipline pastorale et la manière d'aborder des situations nouvelles. Mais ne prenons pas tout développement pour un renversement de la doctrine morale. Notre-Seigneur condamne l'adultère et la luxure et défend le mariage ; saint Paul condamne la fornication ; le Catéchisme romain enseigne le sixième commandement ; et Pie XI rejette explicitement l'adultère, le divorce et la contraception volontaire. Comparons les propositions particulières et leur autorité plutôt que de juger par slogans."
       },
       "editorial_followup": null,
       "existing_source_debate_followup": true,
@@ -310,7 +310,9 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "editorial_status": "UNREVIEWED_DRAFT_NOT_FOR_PUBLICATION"
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE014"
     },
     {
       "source_question_id": "CSE015",
