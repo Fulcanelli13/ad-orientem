@@ -278,3 +278,43 @@ This makes **112 raw research conversation ideas** (64 old + 48 added). **It is 
 4. Separately add audience-specific follow-up paths, pastoral caution, and historical attribution for those intents that have substantial evidence. Do not publish new dialogue or change the existing conversation runtime until the release gate.
 
 The metrics that matter are **distinct conversational intentions grounded by specific evidence**, followed by answer sufficiency, doctrinal review, and historically responsible voice. Counting documents or question labels is only the research input.
+
+
+## 48-question historical-passage screen and bounded answerability census
+
+Read-only research registries:
+- `data/learn/research/pius-x-expansion-48-passage-review-20261019.v1.json`
+- `data/learn/research/pius-x-112-cohort-coverage-baseline-20261019.v1.json`
+
+The 48-question expansion is **now screened against historically located source passages**, rather than left at document-title-only citation. The result is **31 direct papal/catechism passage matches, 8 partial passage matches and 9 cases grounded only in third-person biography**. These are evidence-screen classifications, *not* 31 / 39 certified conversations or 9 authentic autobiographical answers. Every record carries a source URL, narrower locator, evidence scope, authorial-witness type, and explicit non-publication flags.
+
+The nine biographical prompts (SPX-EXP-001–009) are supported by Casa Museo Pio X / Museo San Pio X scholarship about family, school, Tombolo, Salzano, diocesan posts, Mantua and Venice, but **none establishes the Pope's first-person interior memory**. In contrast, SPX-EXP-010 (reluctance at papal election) has Pius X's own self-description in *E supremi* §§1–2. The Museo's family study describes a poor family but **not among Riese's very poorest**; this is more precise than a generic extreme-poverty narrative and should govern later phrasing.
+
+The initial review flags **17 possible overlap/follow-up links** to earlier SPX-001–064 seeds. Only **two** are currently strong research **same-intent candidates**, not authorized merges:
+- SPX-EXP-035 ↔ SPX-053: identifying the visible Church of Christ, the four marks.
+- SPX-EXP-045 ↔ SPX-014: need for priestly meditation despite busy ministry.
+
+Other flagged pairs cover neighbouring questions on Catholic Action, Gregorian chant, faith and Church crises, First Communion versus adult catechesis, and correcting errors charitably; **related is not identical**.
+
+### Combined, still bounded first-two-cohort baseline
+
+| Evidence classification across the 112 research ideas | Count |
+| --- | ---: |
+| Direct passage indicated by the reviewed sources | **79** |
+| Partial passage indicated | **19** |
+| Related source material, without a direct or partial match (from first 64) | **5** |
+| Secondary biographical evidence, not autobiographical testimony | **9** |
+| **Total raw topic seeds** | **112** |
+
+The evidence buckets are exclusive research dispositions, but **79 is not an approved answer count**. The 64 older seeds and 48 newer prompts are not representative of all possible questions; there is still unreviewed overlapping intent within and between historical catechisms, primary encyclicals, and biography. Therefore the **certified distinct answerable-intent total remains `null`**; **0 visitor replies have been certified by this research work**.
+
+#### Specific limitations and next actionable research
+
+1. Source-based human review and controlled clustering must resolve at least the two strong duplicate candidates before a first audited number of distinct question *intentions* can be published for this bounded subset.
+2. *Quam singulari* (1910), a Sacred Congregation decree approved by Pius X, is a better companion to *Acerbo nimis* for SPX-EXP-042's specific First-Communion preparation and age-of-discretion question. Treat it as an approved dicasterial text, **not a papal first-person anecdote**, and reconcile the historical/current disciplinary scope.
+3. For biographical questions seeking personal motives, acquire authorial letters, verified personal words, or high-confidence contemporaneous testimony; do not fill the gaps with a fictional interior monologue.
+4. For doctrinal development, *Pascendi* provides a negative critique of modernist change in dogma but not a full positive theology of valid development; do not overscore SPX-EXP-014 / 034 as complete.
+5. For lay reactions to supposed doctrinal error, *Pascendi* primarily legislates bishops and formation. Do not present it as an unqualified instruction for a lay visitor to denounce identified modern clergy.
+6. No runtime publication, three-guide character changes, voice approval or new ownership registry is authorized by this screen.
+
+The next useful deliverable is a **proof-of-answerability sample** with explicit user-question variants, exact source paragraphs, version/period qualifiers, restricted first-person attribution, and an independent acceptance decision. It will give a *real* denominator for that sample and permit a cautious pilot, instead of adding more unverified question ideas.
