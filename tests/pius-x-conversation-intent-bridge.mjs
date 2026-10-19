@@ -363,3 +363,51 @@ for(const pair of sameIntentJoins.adjudicated_pairs){
  assert.ok(pair.evidence.every(e=>/^https:\/\//.test(e.url)&&e.locator));
 }
 console.log('Pius X two research-only same-intent relationships reviewed; no runtime merge');
+
+
+// Twelve-case proof-of-answerability pilot: source-close nuclei, not approved replies.
+const answerabilityPilot=JSON.parse(readFileSync(
+  'data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json','utf8'));
+assert.equal(answerabilityPilot.schema,'AO_PIUS_X_PROOF_OF_ANSWERABILITY_PILOT_V1');
+assert.equal(answerabilityPilot.status,'RESEARCH_ONLY_EDITORIAL_CANDIDATE_NOT_APP_CONTENT');
+assert.equal(answerabilityPilot.records.length,12);
+assert.deepEqual(answerabilityPilot.records.map(r=>r.case_id),
+  Array.from({length:12},(_,i)=>'SPX-PILOT-'+String(i+1).padStart(2,'0')));
+assert.equal(answerabilityPilot.counts.PASS_CONSTRAINED,10);
+assert.equal(answerabilityPilot.counts.HOLD_FIRST_PERSON_TESTIMONY,1);
+assert.equal(answerabilityPilot.counts.HOLD_INDIVIDUAL_DIAGNOSIS,1);
+assert.equal(answerabilityPilot.counts.certified_visitor_answers,0);
+assert.equal(answerabilityPilot.counts.global_distinct_answerable_questions_estimate,null);
+const expectedSeedIds=['SPX-EXP-010','SPX-003','SPX-008','SPX-006','SPX-057','SPX-004',
+ 'SPX-EXP-018','SPX-EXP-043','SPX-EXP-045','SPX-EXP-042','SPX-EXP-001','SPX-033'];
+assert.deepEqual(answerabilityPilot.records.map(r=>r.requested_family_id),expectedSeedIds);
+const validSeeds=new Set([...seeds.map(s=>s.id),...expansion.records.map(s=>s.id)]);
+const verdicts=new Map();
+for(const row of answerabilityPilot.records){
+ assert.ok(validSeeds.has(row.requested_family_id));
+ assert.equal(row.source_evidence.length,1);
+ const witness=row.source_evidence[0];
+ assert.ok(/^https:\/\//.test(witness.url));
+ assert.ok(witness.section_or_question.length>=8);
+ assert.equal(witness.passage_verified_in_identified_witness,true);
+ assert.ok(witness.witness_type.length>10);
+ assert.ok(row.source_close_answer_nucleus_for_editorial_review.length>125);
+ assert.ok(row.prohibited_inference_or_discipline.length>35);
+ assert.ok(row.plausible_followup.length>10);
+ assert.equal(row.not_a_verbatim_pius_x_quote,true);
+ assert.equal(row.release_checklist.historical_claims_located,true);
+ assert.equal(row.release_checklist.question_scope_supported,row.screen_disposition==='PASS_CONSTRAINED');
+ for(const k of ['human_theological_approval','period_voice_approval',
+   'original_edition_facsimile_checked','visitor_runtime_enabled']){
+   assert.equal(row.release_checklist[k],false);
+ }
+ verdicts.set(row.screen_disposition,(verdicts.get(row.screen_disposition)||0)+1);
+}
+for(const [key,count] of verdicts)assert.equal(answerabilityPilot.counts[key],count);
+assert.equal(answerabilityPilot.records.find(x=>x.case_id==='SPX-PILOT-10').source_evidence[0].witness_type,
+ 'PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT');
+assert.equal(answerabilityPilot.records.find(x=>x.case_id==='SPX-PILOT-11').avatar_rendering_constraint,
+ 'THIRD_PERSON_BIOGRAPHY_ONLY');
+assert.equal(answerabilityPilot.records.find(x=>x.case_id==='SPX-PILOT-12').screen_disposition,
+ 'HOLD_INDIVIDUAL_DIAGNOSIS');
+console.log('Pius X 12-case research answerability pilot: 10 bounded paraphrases, 2 restricted; 0 certified visitor answers');
