@@ -189,6 +189,7 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
    ||!canonical.sourceRefs.length
    ||proposal.targetRoute!==(canonical.category==="pius_historical_source_navigation"?
     "historical.external_document":catalog.owners[proposal.targetCharacter].navigateTo)
+   ||(canonical.category==="pius_historical_source_navigation"&&JSON.stringify(proposal.documentNavigation)!==JSON.stringify(historicalDoc(canonical)))
    ||JSON.stringify(proposal.sourceRefs)!==JSON.stringify(canonical.sourceRefs))
    return frozen({kind:"invalid_handoff",reason:"UNVERIFIED_DESTINATION_OR_FORGED_REFERRAL"});
   if(!accept)return frozen({kind:"stay",character:proposal.fromCharacter,answerText:null});
