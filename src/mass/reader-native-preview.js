@@ -2095,6 +2095,7 @@ export async function mountNativeReaderPreview({
     if(!config)throw new Error("Unknown following-action reader "+kind);
     const rows=kind==="GENERIC_PROCESSION" ? [] : (card.paragraphs??[]).map(row=>Object.freeze({
       id:row.id,kind:row.kind,primary:row.latin,
+      secondary:specialRiteVernacular(row,{language:prepared?.readerPreferences?.language??"en"}),
       sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
     }));
     let posture=null;
