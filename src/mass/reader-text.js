@@ -28,6 +28,25 @@ function macroId(sequence){
 // example, prayers may be spoken. Only these source-owned public prayers
 // are explicitly chanted in the certified sung form, in addition to all
 // SCHOLA_PUBLIC units. Ordinary Versicles/Responses keep their own policy.
+// Source-identified *public invitations* are navigational calls to the
+// faithful, not long private prayers. Render Latin first with the exact
+// existing EN/FR translation directly beneath. Never infer a new liturgical
+// event or apply this policy to every PUBLIC_TEXT clock (Psalm, Canon, etc.).
+// The other public versicles and responses already have their own bilingual
+// source-speaker policy, including C0036 (first Orémus).
+export const LIVE_LATIN_FIRST_INVITATION_CUES=Object.freeze([
+  "AO.SM.C0072", // Orémus before the Collect
+  "AO.SM.C0108", // Orémus at the Offertory
+  "AO.SM.C0208", // Orémus / Præceptis salutaribus
+  "AO.SM.C0253", // Orémus before Postcommunion
+  "AO.SM.C0084", // Gospel introduction: Sequentia sancti Evangelii
+  "AO.SM.C0130", // Orate, fratres
+  "AO.SM.C0135", // Per omnia saecula saeculorum before Preface
+  "AO.SM.C0242", // Ecce Agnus Dei before Communion
+  "AO.SM.C0269", // Last Gospel proclamation
+]);
+const LIVE_INVITATION_SET=new Set(LIVE_LATIN_FIRST_INVITATION_CUES);
+
 const SUNG_PUBLIC_PRAYER_BLOCKS=new Set([
   "AO.SM.B016", // Gloria intonation
   "AO.SM.B027", // Credo intonation
@@ -170,7 +189,8 @@ function ordinaryParagraphs(block,{language="en",frenchOrdinary=null,ordinaryVar
       ...p,
       speakerRole:agreed?speakers[0].role:"MIXED_OR_UNRESOLVED",
       speakerEvidence:agreed?speakers.map(x=>x.evidence).join(";"):"MULTIPLE_OR_MISSING",
-      displayLanguage:isSung?"LATIN":isPrivate?"VERNACULAR":null,
+      displayLanguage:cues.length===1&&LIVE_INVITATION_SET.has(cues[0])
+        ?"LATIN_CUE":isSung?"LATIN":isPrivate?"VERNACULAR":null,
     });
   }));
 }

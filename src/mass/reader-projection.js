@@ -46,6 +46,24 @@ export function projectResolvedReaderText(resolvedText){
     const policy=dialogueLanguagePolicy(p.kind);
     // Exact source-clock/display ownership wins over the generic dialogue
     // fallback: sung prayers Latin, private/Proper text vernacular.
+    if(p.displayLanguage==="LATIN_CUE"){
+      if(!p.latin||!p.vernacular)throw new Error(
+        "Latin and vernacular required for source-owned public invitation "+p.id
+      );
+      // These are live instructions to the congregation. Unlike a
+      // replace-on-tap prayer, both source languages must remain visible
+      // at the same time. Cues, clock and event ownership are untouched.
+      return Object.freeze({
+        id:String(p.id??index),kind:p.kind,
+        primary:String(p.latin),secondary:String(p.vernacular),
+        alternate:null,replaceOnToggle:false,
+        active:p.active,speakerRole:p.speakerRole,speakerEvidence:p.speakerEvidence,
+        liturgicalGroup:p.liturgicalGroup,prayerRole:p.prayerRole,
+        sourcePath:p.sourcePath,sourceAnchorCueId:p.sourceAnchorCueId,
+        sourceCueIds:p.sourceCueIds,
+        displayLanguage:"LATIN",languageOwner:"SOURCE_PUBLIC_LIVE_INVITATION",
+      });
+    }
     if(p.displayLanguage==="LATIN"){
       if(!p.latin)throw new Error("Sung Latin text required for "+p.id);
       return Object.freeze({

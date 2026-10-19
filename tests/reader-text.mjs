@@ -5,6 +5,7 @@ import {
   validateReaderTextCorpus,
   selectReaderTextCorpus,
   buildReaderSectionCard,
+  LIVE_LATIN_FIRST_INVITATION_CUES,
 } from "../src/mass/reader-text.js";
 import { properToReaderSlots } from "../src/mass/proper-reader-slots.js";
 
@@ -305,3 +306,40 @@ for(const corpus of [low,sung]){
 }
 
 console.log("reader text corpus: PASS — verified donors, Proper fail-closed, all 30 Low/Sung cards nonblank.");
+
+// Public priest invitations are LIVE participation cues, not generic private
+// text. Audit the entire 30-macro Ordinary in both source families and both
+// languages; ensure no cue loses its paragraph or becomes tap-to-replace.
+const frenchForInvitations=load("../data/presentation/reader-french-ordinary.v1.json");
+const requiredOremus=[
+  "AO.SM.C0036","AO.SM.C0072","AO.SM.C0108","AO.SM.C0208","AO.SM.C0253"
+];
+for(const corpus of [low,sung]){
+  for(const language of ["en","fr"]){
+    const all=sections.sections.flatMap(section=>
+      buildReaderSectionCard({
+        corpus,section,properSlots,vernacularLanguage:language,
+        frenchOrdinary:frenchForInvitations,
+      }).paragraphs);
+    for(const id of [...requiredOremus,...LIVE_LATIN_FIRST_INVITATION_CUES]){
+      const matches=all.filter(p=>p.sourceCueIds?.includes(id));
+      assert.equal(matches.length,1,corpus.form+"/"+language+" missing or repeated live invitation "+id);
+      const paragraph=matches[0];
+      assert.ok(paragraph.primary&&paragraph.secondary,
+        corpus.form+"/"+language+" public cue must expose both text faces "+id);
+      assert.equal(paragraph.alternate,null,id+" must not hide translation behind tap");
+      assert.equal(paragraph.replaceOnToggle,false,id+" must keep vernacular visibly underneath");
+      if(requiredOremus.includes(id)){
+        assert.match(paragraph.primary,/Orémus\./u,
+          corpus.form+"/"+language+" Oremus is not Latin-first "+id);
+        assert.match(paragraph.secondary,language==="fr"?/Prions/u:/Let us pray/u,
+          corpus.form+"/"+language+" Oremus lacks vernacular undertext "+id);
+      }
+    }
+    // Private Canon text remains vernacular-first, while sung Gloria keeps
+    // its existing Latin replace-in-place style; this policy is NOT global.
+    const privateCanon=all.find(p=>p.sourceCueIds?.includes("AO.SM.C0150"));
+    assert.ok(privateCanon&&privateCanon.primary&&privateCanon.alternate,
+      "Private Canon must retain its former language policy");
+  }
+}
