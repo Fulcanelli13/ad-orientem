@@ -45,7 +45,7 @@ try{
  let state=await snapshot();
  assert.deepEqual({step:state.step,card:state.card,index:state.index,stops:state.stops,current:state.current,overflow:state.overflow},
  {step:0,card:"exposition",index:0,stops:7,current:1,overflow:"auto"});
- assert.equal(state.nav,"none","Competing legacy Next navigation is still displayed");
+ assert.equal(state.nav,null,"Routine Benediction navigation must not render beside the source-owned timeline");
  const cardText=await page.locator(rootSel+" .aoDevoCardScroll").innerText();
  assert.match(cardText,/Exposition|O Salutaris/i,"Source-owned exposition prayer is missing");
  const guide=page.locator(rootSel+" [data-ao-benediction-guide]");
@@ -120,8 +120,9 @@ try{
  assert.ok(after.length>before.length,"Canonical Divine Praises prayer did not appear on explicit selection");
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  state=await snapshot();assert.equal(state.card,"reposition");
- assert.notEqual(state.nav,"none","Finish action is missing after Reposition");
- assert.equal(await page.locator(rootSel+" [data-p435930-ben-prev]").isVisible(),false,
+ assert.ok(state.nav&&state.nav!=="none","Finish action is missing after Reposition");
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-finish]").count(),1,"Reposition has one explicit finish action");
+ assert.equal(await page.locator(rootSel+" [data-p435930-ben-prev],[data-p435930-ben-next]").count(),0,
   "Duplicated legacy Previous reappeared alongside canonical timeline");
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
