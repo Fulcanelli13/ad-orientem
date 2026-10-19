@@ -40,7 +40,20 @@ for(const item of audit.routes){
     source.includes("kind:'stations',chapters,activeIndex:STATIONS.step")&&
     source.includes("data-p435930-station-finish")&&
     !source.includes("data-p435930-station-next");
-   assert.ok(source.includes(anchor)||stationsNavigationMigrated,
+   const finalStageMigrations={
+    "pray.benediction":{from:"data-p435930-ben-next",to:"data-p435930-ben-finish",kind:"ben"},
+    "pray.adoration":{from:"data-p435930-visit-next",to:"data-p435930-visit-finish",kind:"visit"},
+    "pray.visit_blessed_sacrament":{from:"data-p435930-visit-next",to:"data-p435930-visit-finish",kind:"visit"}
+   };
+   const migrated=finalStageMigrations[item.id];
+   const finalOnly=migrated&&anchor===migrated.from&&
+    source.includes(migrated.to)&&
+    (migrated.kind==="ben"
+     ?source.includes("guideNav('ben',i")
+     :source.includes("guidedStage('visit',steps")&&source.includes("guideNav(kind,index,steps.length"))&&
+    source.includes("installSequentialDevotionalReader({")&&
+    !source.includes(migrated.from);
+   assert.ok(source.includes(anchor)||stationsNavigationMigrated||finalOnly,
     item.id+" missing guide evidence "+anchor);
   }
  }
