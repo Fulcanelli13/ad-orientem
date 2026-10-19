@@ -1,8 +1,8 @@
 {
   "schema": "AO_PIUS_X_TEN_PILOT_PRELIMINARY_ORIGINAL_TEXT_CLAIM_AUDIT_V1",
   "date": "2026-10-19",
-  "status": "EDITORIAL_PRIMARY_TEXT_COMPARISON_COMPLETE_NOT_INDEPENDENT_CERTIFICATION",
-  "methodology": "Each of 30 content turns compared by proposition against source text available on the Vatican's published historical document pages, Museo San Pio X's 1905/Salzano digital transcriptions, or the translated Quam singulari reprint. No facsimile-level autographic collation or bilingual native-editor certification. Negative boundary sentences are metadata decisions, not attributed as spoken by St Pius X.",
+  "status": "SOURCE_FIRST_DIALOGUE_V2_PROPOSITION_RECONCILIATION_NO_INDEPENDENT_CERTIFICATION",
+  "methodology": "Each of 30 content turns compared by proposition against source text available on the Vatican's published historical document pages, Museo San Pio X's 1905/Salzano digital transcriptions, or the translated Quam singulari reprint. No facsimile-level autographic collation or bilingual native-editor certification. Negative boundary sentences are metadata decisions, not attributed as spoken by St Pius X. Post-audit source-first voice editing of all 23 character drafts made no new original-language quotation claim; retargeted Communion-day follow-up explicitly to Q508.",
   "evidenceSources": [
     "The Holy See: E supremi §§1–4",
     "Museo San Pio X: 1905 catechism Q527–533 and Q667–669",
@@ -22,7 +22,9 @@
     "independentlyApprovedByTheologian": 0,
     "voiceCertified": 0,
     "translationCertified": 0,
-    "runtimeApproved": 0
+    "runtimeApproved": 0,
+    "sourceFirstVoiceEditedTurns": 23,
+    "approvedCharacterTexts": 0
   },
   "releaseRules": [
     "No new claim outside the named primary passage is silently upgraded to a papal assertion.",
@@ -227,11 +229,11 @@
       "turnId": "SPX-PILOT-04-T2",
       "sourceRef": "SPX-PILOT-04",
       "sourceDocumentUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
-      "sourceLocus": "Q506",
+      "sourceLocus": "Salzano editorial Q508; museum transcription f.9",
       "sourceWitnessClass": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
       "originalTextCompared": "YES_IDENTIFIED_DIGITAL_SOURCE_TEXT_NOT_FACSIMILE_COLLATION",
       "sourceSupportedPropositions": [
-        "The enumerated acts of thanksgiving are supported without inventing a new prayer or fixed modern ritual"
+        "On the day of Holy Communion, the Salzano manuscript instructs avoidance of idleness, practising good works and prayer, visiting churches and avoiding worldly noise and dissipations."
       ],
       "assessment": "DOCUMENTARY_PARAPHRASE",
       "responseLanguageCheck": "EN_AND_FR_SAME_SUBSTANTIVE_POSITION_PRELIMINARILY_COMPARED",
@@ -239,7 +241,7 @@
       "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
       "independentTheologicalApproval": false,
       "independentVoiceApproval": false,
-      "correctiveAction": "SOURCE_BOUNDED_DRAFT_RETAIN_PENDING_EDITORIAL_APPROVAL",
+      "correctiveAction": "RETARGETED_FROM_REPETITIVE_Q506_THANKSGIVING_TO_DISTINCT_Q508_COMMUNION_DAY_INSTRUCTION; AWAIT_INDEPENDENT_SOURCE_AND_TRANSLATION_APPROVAL",
       "sourceAttributionCaveat": "Sarto Salzano transcription with editorial question numbering, not a published autographic English/French dialogue"
     },
     {
