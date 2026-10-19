@@ -30,7 +30,12 @@ assert.equal(sch.visualInspection.leftHandSupportsPaten,false);
 assert.equal(sch.harmonization.generationAuthorized,false);
 assert.equal(sch.harmonization.userApproval,"PENDING");
 assert.equal(sch.verdict.productionEligible,false);
-assert.equal(sch.verdict.depictsExact1962HostReceivingGesture,"PARTIAL_UNCERTAIN");
+assert.equal(sch.verdict.depictsExact1962HostReceivingGesture,
+ "NOT_CONFIRMED_POSSIBLE_POST_CONSUMPTION_MEDITATION");
+assert.equal(sch.visualInspection.possibleExactMoment,"POST_HOST_CONSUMPTION_PRAYER_OR_MEDITATION");
+assert.equal(sch.visualInspection.actionSpecificHostSourceApproved,false);
+assert.match(sch.visualInspection.rubricalWitness,/joins? .*hands.*before face|hands joined before face/i);
+assert.equal(sch.visualInspection.drinkingFromChalice,false);
 assert.equal(sch.verdict.depictsExact1962ChaliceReceivingGesture,false);
 assert.equal(prov.discoveryReview.schumacher1920SourceIndex,
  "data/presentation/mass-icon-originals-schumacher1920.p3.json");
