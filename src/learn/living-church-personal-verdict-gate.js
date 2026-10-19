@@ -13,6 +13,11 @@ const fold=v=>String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/\s+/g," ").trim();
 
 function english(text){
+ // Historical moral teaching cannot certify another living person's guilt.
+ const thirdPartyCase=/\b(can i declare|may i declare|can i accuse|may i accuse|can i judge|may i judge|can i condemn|may i condemn)\b/.test(text)
+  &&/\b(person|personnel|musician|director|singer|neighbor|neighbour|priest|someone|friend|parishioner)\b/.test(text)
+  &&/\b(mortal sin|grave sin|damned|guilty|heretic|culpable|lost grace)\b/.test(text);
+ if(thirdPartyCase)return true;
  // Second-person autobiographical assessments are still individual
  // spiritual diagnoses, not an invitation to retrieve doctrinal definitions.
  const secondPersonCase=/\b(did your|does your|do your|has your|have your|were your)\b/.test(text)
