@@ -1,3 +1,20 @@
+## Update — actual CC0 Leclerc Communion image located and viewed
+
+**The earlier statement that the Leclerc image itself had not been viewed is now superseded.** The actual scan of plate 29 has been located on Wikimedia Commons:
+
+- https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg
+- 1661 Sébastien Leclerc, `RP-P-OB-69.179`, engraved caption `Quand le P. communie`.
+- Current losslessly cropped Commons original **657 × 1045 pixels**, labelled **CC0 1.0**. Wikimedia file history offers an earlier 2024 **1686 × 1843** uncropped museum-scan rendition.
+- Museum: https://id.rijksmuseum.nl/200217641, identifies original as public domain.
+- **Actually visually inspected:** celebrant bends towards the altar, his head and hands near his mouth; a chalice visibly remains on the altar, a server kneels and another stands. This corresponds to the printed Communion *context*.
+- **What is still not visible enough:** two Host halves, exact finger positions, and whether both elbows rest on the altar. **Not the chalice Communion:** the priest is not lifting the chalice to drink, and the paten is not visible under a chalice in the left hand. It must not be assigned to `RECEIVES CHALICE`.
+- **Technical outstanding:** actual image pixels were viewed through the media service, but copying the binary to the working container failed, so no original bytes or locally computed SHA-256 are stored; the provenance release gate remains blocked.
+- **Approved-family outstanding:** the print's detailed ink style and expansive scene are **not** the Ad Orientem accepted priest icon family. No icon has been drawn or approved from it.
+
+**Conclusion:** the real historical source and its digitized CC0 image are now identified; this solves an important provenance and rights question. It does **not** solve the exact Host/chalice hand-and-vessel pictograms or permit production release.
+
+---
+
 # P3 Source acquisition — Leclerc’s original 1661 Mass illustrations
 
 ## Verified
@@ -10,9 +27,9 @@ The **Rijksmuseum's own object catalogue** confirms that the original print `RP-
 
 The series also contains documented separate etchings of the Offertory (13), Canon (19), Host elevation (21), Fraction (26), breast strike at Agnus Dei (28), priest Communion (29), ablutions (30), and Postcommunion (31). These are distinct scenes: **an ablution is not the priest consuming from the chalice**, the elevation is **not** consuming the Host, and Fraction remains text-only under P2. Do not substitute their art for plate 29 merely to fill an illustration gap.
 
-## Not yet verified
+## Still not verified for production
 
-**Neither action-specific icon has an acquired original image.** Museum object existence and its public-domain designation are necessary but not sufficient. The rendering system must not assume the picture shows the exact moment, hand pose, divided Host, chalice or paten. The downloadable photograph/scan of this **exact print** has yet to be retrieved, its checksum recorded and its details visually inspected.
+Although the **exact print is now visually inspected through the Commons image**, no binary has been archived locally and the exact divided Host, elbows, chalice and paten positions remain uncertified. Consequently neither action-specific icon has a locally verified original image plus complete rubrical evidence. A visually inspected original must not be confused with approved source for either essential action.
 
 The 1661 artwork is historical iconographic evidence, **not** an independent source of 1962 rubrical detail: when the original and `Ritus servandus` X.4–5 differ, the latter governs Ad Orientem's UI.
 
