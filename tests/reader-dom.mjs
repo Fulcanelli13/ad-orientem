@@ -533,7 +533,11 @@ const scholaRoot={
   addEventListener(type,fn){listeners.set(type,fn);},
   removeEventListener(type,fn){if(listeners.get(type)===fn)listeners.delete(type);},
 };
-const scholaAdapter=createReaderDomAdapter({root:scholaRoot});
+let tickerAutoAdvances=0;
+const scholaAdapter=createReaderDomAdapter({
+  root:scholaRoot,
+  onScholaAdvance:()=>{tickerAutoAdvances+=1;},
+});
 scholaAdapter.mount(prepared);
 scholaAdapter.renderMoment({
   id:"SCHOLA",sectionTitle:"Credo",cardUpdate:false,
@@ -548,6 +552,10 @@ listeners.get("click")({target:{closest(selector){return selector==='[data-schol
 expect(scholaAnim.playbackRate>1,"changing Schola speed while paused did not retime existing animation");
 expect(scholaAnim.currentTime===time,"Schola speed adjustment reset the current reading position");
 expect(animationsStarted===1,"Schola speed adjustment unnecessarily restarted the current phrase");
+// The animation clock is visual only. Even after the animation finishes,
+// real choir progression must NOT be asserted.
+scholaAnim.onfinish?.();
+expect(tickerAutoAdvances===0,"Schola animation falsely advanced an unobserved choir phrase");
 scholaAdapter.destroy();
 
 // Preserve donor baseline, then apply a legible, operable mobile-only layer.
@@ -559,7 +567,7 @@ expect(html.includes(".ao-schola-control{min-height:44px"),
   "Schola tempo buttons reverted to undersized touch targets");
 expect(html.includes(".ao-guide-short{display:none}"),
   "mobile GUIDE cell regained unreadable redundant microcopy");
-expect(readerDomSource.includes('scholaCollapsed ? 44 : scholaHeight'),
+expect(readerDomSource.includes('dock.dataset.shared==="true" && !scholaManuallyResized ? 132 : scholaHeight'),
   "collapsed Schola height and reader controls are out of sync");
 
 expect(html.includes("Compact phones: keep the 48px transient cue rails"),
