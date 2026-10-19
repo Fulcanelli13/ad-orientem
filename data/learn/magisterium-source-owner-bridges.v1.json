@@ -611,8 +611,30 @@
     "Verify Canon's precise own-voice sermon source before authoring any answer or first-person statement.",
     "Resolve existing Mass Explorer canonical AO.CARD and AO.SM.B IDs from approved guide registry before any integration.",
     "Independent theological authority adjudication, printed-edition concordance, and translation licensing remain outstanding.",
-    "B7: 28 full Q/A read in modern English plus Italian online transcription; 1912 print facsimile and translation rights pending; no personal authorship inference."
+    "B7: 28 full Q/A read in modern English plus Italian online transcription; 1912 print facsimile and translation rights pending; no personal authorship inference.",
+    "B8: No original Lefebvre sermon transcription file identified in this PR's recorded repository tree snapshot or PR 1443 question-router files. Only source-owned authenticated sermon IDs can unlock Chanoine bridge."
   ],
   "catechismFullAnswerCrosswalk": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
-  "researchBatch": "2026-10-19-B7"
+  "researchBatch": "2026-10-19-B8",
+  "b8CharacterSermonSourceGate": {
+    "subject": "Monsieur le Chanoine — source-owned sermons, not Mass Roman Canon",
+    "repository": "Fulcanelli13/ad-orientem",
+    "branchExamined": "research/magisterium-ultra-master-p0-p1-20261019",
+    "headShaAudited": "bfea91c370e13af50e0bd2710ab410540e190c04",
+    "treeUrl": "https://api.github.com/repos/Fulcanelli13/ad-orientem/git/trees/bfea91c370e13af50e0bd2710ab410540e190c04?recursive=1",
+    "treeContainsStandaloneLefebvreSermonTranscripts": false,
+    "companionPRChecked": 1443,
+    "companionPRPurpose": "Living Church three-character source referral and question routing, not original sermon corpus",
+    "verifiedSermonPassagesInThisBranch": 0,
+    "approvedFirstPersonChanoineResponses": 0,
+    "status": "UPSTREAM_HOMILY_PIPELINE_ORIGINAL_TRANSCRIPTS_NOT_PRESENT_IN_THIS_REPOSITORY_SNAPSHOT",
+    "dependency": "Require explicit authenticated sermon source IDs and quotations from the parallel source-owned Chanoine research branch before Magisterium links become character speech."
+  },
+  "b8CatechismPrintReview": {
+    "canonicalQaCrosswalk": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+    "alreadyExistingFrenchPrintSourceRegistry": "data/learn/ltfaith-pius-x-1913-french-print-page-evidence.v1.json",
+    "frenchPrintVerifiedQAsInBridge": 5,
+    "original1912ItalianFacsimileVerifiedQAs": 0,
+    "characterVoicePermission": false
+  }
 }
