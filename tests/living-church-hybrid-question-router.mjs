@@ -71,7 +71,7 @@ console.log("HYBRID_COMPARISON "+JSON.stringify({
  data:"existing 52-question frozen assistant-authored test (not independent user sample)",
  before:before.tally,after:after.tally,notAnAccuracyClaim:true
 }));
-for(const miss of after.misses)console.log("HYBRID_MISS "+JSON.stringify(miss));
+for(const miss of after.misses)console.log("HYBRID_MISS "+JSON.stringify({...miss,ranked:hybrid.rank(miss.question,{language:fixture.cases.find(c=>c.question===miss.question)?.language||"en"}).slice(0,3).map(x=>({topicId:x.t.id,score:x.score,lex:x.lex,semantic:x.semantic,concepts:x.concepts}))}));
 assert.equal(before.tally.correct+before.tally.safeUnresolved+before.tally.wrongSpecific+before.tally.other,52);
 assert.equal(after.tally.correct+after.tally.safeUnresolved+after.tally.wrongSpecific+after.tally.other,52);
 // No arbitrary publication-quality threshold; results are diagnostic.
