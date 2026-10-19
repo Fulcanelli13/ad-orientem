@@ -11,6 +11,7 @@ import { calendarPaletteColour, yearDailyProjection, yearSeasonGradient } from "
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
 import { assessPrintableProper, renderPrintableProperHtml } from "./print-proper.js";
 import { observedCycle } from "./observed-cycle.js";
+import { readMonthPreview, writeMonthPreview } from "./month-preview-cache.js";
 import {calendarScriptureContexts} from "./scripture-handoff.js";
 import {matchingSelectedCalendarScriptureObject} from "./selected-scripture-objects.js";
 import { calendarObservanceAlias } from "./observance-title.js";
@@ -45,6 +46,26 @@ const weekCache=new Map(),dayLoads=new Map(),weekLoads=new Map(),weekStatus=new 
 let foregroundWeek="",navEpoch=0,monthEpoch=0;
 let selectedScriptureReturn=null; // Ephemeral reciprocal-source journey only.
 let yearColourLoad=null,clockSelection=null;
+const MONTH_PREVIEW_REVISION="2026-10-20-canonical-resolver-r1";
+const monthPreviewMemory=new Map();
+const previewStorage=()=>{try{return globalThis.localStorage??null}catch{return null}};
+function monthPreviewFor(monthId){
+  const lang=fr()?"fr":"en",key=monthId+"|"+lang;
+  if(!monthPreviewMemory.has(key))monthPreviewMemory.set(key,readMonthPreview(previewStorage(),monthId,lang,MONTH_PREVIEW_REVISION)||new Map());
+  return monthPreviewMemory.get(key);
+}
+function saveResolvedMonthPreview(monthId){
+  if(!monthVerified(monthId))return false;
+  const rows=monthGridIds(monthId).map(date=>{
+    const raw=weekCache.get(date),tier=rankTier(raw,date);
+    return {date,title:titleOf(raw),rank:rankOf(raw),colour:colourOf(raw),tier,
+      cycle:observedCycle(raw),accent:liturgicalAccent(raw),commemorationCount:commemorations(raw).length};
+  });
+  if(!rows.every(x=>x.title))return false;
+  const lang=fr()?"fr":"en",ok=writeMonthPreview(previewStorage(),monthId,lang,MONTH_PREVIEW_REVISION,rows);
+  if(ok)monthPreviewMemory.set(monthId+"|"+lang,new Map(rows.map(x=>[x.date,x])));
+  return ok;
+}
 const CALENDAR_VIEWS=new Set(["day","year","picker"]);
 const MONTH_INDEX_VIEWS=new Set(["calendar","temporale","sanctorale"]);
 const legacyMonthView=view=>view==="major"||view==="practices"?"calendar":view;
@@ -162,16 +183,15 @@ function rankTier(r,id){
 }
 function monthCellData(id){
   const raw=weekCache.get(id),r=raw?.status!=="failed"&&raw?.day?raw:null;
-  const sunday=dateOf(id).getDay()===0,tier=rankTier(r,id),cycle=r?observedCycle(r):"unknown";
-  // Every source-resolved principal feast is represented, not just I/II-class
-  // days and Sundays. The cycle is metadata for the viewer's filter, never
-  // a source for inventing another observed Mass.
-  const name=r?titleOf(r):"",accent=r?liturgicalAccent(r):"#59626c";
-  const rank=r?rankOf(r):"",colour=r?colourOf(r):"";
-  const commemorationCount=r?commemorations(r).length:0;
-  const aria=[displayDate(id),name,r?null:L("Loading day","Chargement du jour"),rank,colour,
+  const preview=r?null:monthPreviewFor(pickerMonthId).get(id);
+  const sunday=dateOf(id).getDay()===0,tier=r?rankTier(r,id):(preview?.tier??0);
+  const cycle=r?observedCycle(r):(preview?.cycle??"unknown");
+  const name=r?titleOf(r):(preview?.title??""),accent=r?liturgicalAccent(r):(preview?.accent??"#59626c");
+  const rank=r?rankOf(r):(preview?.rank??""),colour=r?colourOf(r):(preview?.colour??"");
+  const commemorationCount=r?commemorations(r).length:(preview?.commemorationCount??0);
+  const aria=[displayDate(id),name,r?null:preview?L("From saved month overview; checking day","D'après le mois enregistré ; vérification en cours"):L("Loading day","Chargement du jour"),rank,colour,
     commemorationCount?L("Commemorations: ","Commémoraisons : ")+commemorationCount:null].filter(Boolean).join(" · ");
-  return {r,sunday,tier,cycle,name,projected:false,accent,rank,colour,commemorationCount,aria,ready:!!r};
+  return {r,sunday,tier,cycle,name,projected:false,accent,rank,colour,commemorationCount,aria,ready:!!r,preview:!!preview};
 }
 
 function monthDateIds(monthId){
@@ -421,6 +441,7 @@ async function prepareMonth(monthId,{concurrency=3,token=monthEpoch}={}){
     .finally(()=>monthLoads.delete(key));
   monthLoads.set(key,p);
   const result=await p;
+  if(monthVerified(key))saveResolvedMonthPreview(key);
   if(token===monthEpoch&&calendarView==="picker"&&pickerMonthId===key)paint();
   return result;
 }
@@ -939,7 +960,7 @@ function pickerSurface(selected){
   const calendarGrid=`<div class="aoCalV2Weekdays">${Array.from({length:7},(_,i)=>{const d=new Date(2026,7,2+i,12);return `<span>${esc(d.toLocaleDateString(loc,{weekday:"short"}))}</span>`}).join("")}</div>
     <div class="aoCalV2MonthGrid" data-cal-month-filter="${calendarMonthView}" data-month-ready="${ready?"true":"false"}">${days.map(id=>{
       const d=dateOf(id),outside=d.getMonth()!==mm-1,data=monthCellData(id),hasPractice=practiceDates.has(id);
-      return `<button type="button" data-cal-pick-date="${id}" data-ready="${data.ready?"1":"0"}" data-rank-tier="${data.tier}" data-cycle="${esc(data.cycle)}" class="${outside?"outside":""} ${id===selected?"selected":""} ${id===today?"today":""} ${data.sunday?"sunday":""} ${data.projected?"projected":""} ${data.tier>0&&data.tier<=2?"major":""} ${hasPractice?"hasPractice":""}" style="--month-accent:${esc(data.accent)}" aria-label="${esc(data.aria+(hasPractice?" · "+L("Traditional practice","Pratique traditionnelle"):""))}"><span class="aoCalMonthTop"><b>${d.getDate()}</b><span class="aoCalMonthIndicators"><i data-cal-liturgical-marker aria-hidden="true"></i>${hasPractice?'<span class="aoCalMonthPracticeMark" aria-hidden="true"></span>':""}</span></span><span class="aoCalMonthName">${esc(data.name)}</span>${data.commemorationCount?`<span class="aoCalMonthCommemorations" aria-hidden="true">+${data.commemorationCount}</span>`:""}</button>`;
+      return `<button type="button" data-cal-pick-date="${id}" data-ready="${data.ready?"1":"0"}" data-rank-tier="${data.tier}" data-cycle="${esc(data.cycle)}" data-preview="${data.preview?"1":"0"}" class="${outside?"outside":""} ${id===selected?"selected":""} ${id===today?"today":""} ${data.sunday?"sunday":""} ${data.projected?"projected":""} ${data.tier>0&&data.tier<=2?"major":""} ${hasPractice?"hasPractice":""}" style="--month-accent:${esc(data.accent)}" aria-label="${esc(data.aria+(hasPractice?" · "+L("Traditional practice","Pratique traditionnelle"):""))}"><span class="aoCalMonthTop"><b>${d.getDate()}</b><span class="aoCalMonthIndicators"><i data-cal-liturgical-marker aria-hidden="true"></i>${hasPractice?'<span class="aoCalMonthPracticeMark" aria-hidden="true"></span>':""}</span></span><span class="aoCalMonthName">${esc(data.name)}</span>${data.commemorationCount?`<span class="aoCalMonthCommemorations" aria-hidden="true">+${data.commemorationCount}</span>`:""}</button>`;
     }).join("")}</div>`;
   const projection=calendarGrid+monthHybridOverview(pickerMonthId,selected);
   return `<section class="aoCalV2Picker">
