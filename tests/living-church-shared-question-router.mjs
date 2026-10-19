@@ -98,7 +98,6 @@ assert.deepEqual(transfer.history.visitedCharacters,["pius-x","sacristan"]);
 assert.equal(transfer.answerText,null);
 assert.equal(router.acceptHandoff(r,{accept:true,history:transfer.history}).kind,"no_coverage");
 r=match("why does the priest kiss the altar",{currentCharacter:"sacristan"});
-assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");
 assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"TOPIC_SOURCE_GAP");
 assert.equal(r.topicId,"mass.altar_reverence");
 r=match("what is the roman canon",{currentCharacter:"sacristan"});
