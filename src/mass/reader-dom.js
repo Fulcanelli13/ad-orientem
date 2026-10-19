@@ -138,7 +138,7 @@ const SHELL_STYLE = `
   -webkit-mask-image:none!important;mask-image:none!important;
   filter:brightness(0) saturate(100%) invert(94%) sepia(9%) saturate(263%) hue-rotate(353deg) brightness(104%) contrast(91%)
 }
-.ao-progress-track{position:absolute;z-index:13;left:0;right:0;top:120px;height:3px;background:rgba(255,255,255,.07)}
+.ao-progress-track{position:absolute;z-index:13;left:0;right:0;top:120px;height:2px;background:rgba(255,255,255,.05)}
 .ao-progress-track>span{display:block;height:100%;width:0;background:var(--ao-mass-accent);transition:width .18s linear}
 
 .ao-section-menu{
