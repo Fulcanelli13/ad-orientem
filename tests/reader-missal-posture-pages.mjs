@@ -89,7 +89,7 @@ assert.equal(strict.cards[0].nextPosture.advisory,false);
 // A gesture without a persistent R17 postureTransition is never a new card.
 const never=projectPostureAwareMissalCards(model,{cueState:{
   supported:true,project:()=>({supported:true,postureTransition:false,posture:{
-    persistent:true,value:"KNEEL"}})},
+    persistent:true,value:"KNEEL"}}),
 }});
 assert.equal(never.totalCards,2,"An ordinary bow/genuflection must not split Mass");
 assert.equal(projectPostureAwareMissalCards(model,{cueState:{supported:false}}),model,
