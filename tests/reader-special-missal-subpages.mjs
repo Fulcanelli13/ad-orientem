@@ -84,9 +84,8 @@ const exsEnglish=exsSource.map(row=>({
 const exsPages=projectSpecialRiteReadingPages("EV-EXS-200",exsEnglish);
 assert.equal(exsPages.length,12,
   "Exsultet should follow the twelve paired Latin/English source passages");
-assert.equal(exsPages.map(p=>p.rows[0].primary).slice(0,2).join(" "),
-  exsEnglish[0].primary.split(" Quaprópter astántes")[0]+" Quaprópter astántes"+
-  exsEnglish[0].primary.split(" Quaprópter astántes")[1],
+const exsIntro=exsEnglish[0].primary.split("\n\n")[0];
+assert.equal(exsPages.slice(0,2).map(p=>p.rows[0].primary).join(" "),exsIntro,
   "Introductory Exsultet paragraphs must rejoin with no altered Latin");
 const latParts=exsPages.map(p=>p.rows[0].primary);
 const englishParts=exsPages.map(p=>p.rows[0].secondary);
