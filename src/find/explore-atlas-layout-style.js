@@ -403,4 +403,29 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend{left:9px;bottom:9px}
 }
 
+/* Selected Traditional Mass venues inherit the same contextual folio behaviour
+   as sacred places; no route, image or factual content is synthesized. */
+@media(min-width:800px){
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindSheetBackdrop{
+   pointer-events:none;background:transparent;justify-content:flex-end;align-items:flex-start;
+   padding:72px 18px 20px;box-sizing:border-box;
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreQuickPreview{
+   pointer-events:auto;width:min(360px,33vw);max-width:360px;
+   height:auto;max-height:calc(100dvh - 92px);margin:0;
+   padding:18px;border-radius:13px;border:1px solid rgba(201,175,128,.36);
+   background:#101922f8;box-shadow:0 20px 40px #000a;
+ }
+}
+@media(max-width:799px){
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindSheetBackdrop{
+   background:rgba(3,8,14,.16);align-items:flex-end;
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreQuickPreview{
+   max-height:min(40dvh,345px);
+   overflow-y:auto;padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+   border-radius:18px 18px 0 0;background:#101923f8;
+ }
+}
+
 `;
