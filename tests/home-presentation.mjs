@@ -107,7 +107,7 @@ assert.match(fr,/Autour de la Messe/);
 assert.match(fr,/Évangile de la messe/);
 assert.match(fr,/Prier maintenant/);
 assert.match(fr,/Lire et méditer/);
-assert.match(fr,/À venir/);
+assert.match(fr,/Aperçu du calendrier/,"French Calendar at a glance card must be rendered");
 assert.match(fr,/Vie et sources|À propos de cette célébration|Jour du calendrier et sources/);
 assert.match(fr,/Traduction du Propre incomplète/);
 assert.match(fr,/Formulaire 2\/2/);
