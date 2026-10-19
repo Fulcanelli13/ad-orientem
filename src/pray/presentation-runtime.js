@@ -2013,7 +2013,7 @@ function renderLitany(){
  return `${head(L('Litany of the Saints','Litanies des saints'),L('Call · response · guided in sections','Invocation · réponse · guidées par sections'))}
  <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-devotional-owner="litany" data-ao-devotional-final="${final}">
  ${card}
- <div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-lit-prev ${LIT.step===0?'disabled':''}>${esc(L('Previous section','Section précédente'))}</button>${final?`<button type="button" class="aoP435930Primary" data-p435930-lit-done>${esc(L('Finish litany','Terminer les litanies'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-lit-next>${esc(L('Continue','Continuer'))}</button>`}</div>
+ ${final?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-lit-done>${esc(L('Finish litany','Terminer les litanies'))}</button></div>`:''}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Recitation and reading guide','Mode de récitation et guide'))}</summary>
  ${nav(L('Recitation','Récitation'),[['individual','Individual','Individuel'],['group','Group','Groupe']],S.rosary.recitation)}${devotionalGuide('litany')}</details>
  ${litanySourceDisclosure()}</main>`;
@@ -2054,7 +2054,7 @@ function renderSevenWords(){
  return `${head(L('Seven Words of Our Lord','Sept Paroles de Notre-Seigneur'),L('Gospel word · historical meditation · silence','Parole évangélique · méditation historique · silence'))}
  <main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-devotional-owner="sevenWords" data-ao-devotional-final="${i===6}">
  ${card}
- <div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-word-prev ${i===0?'disabled':''}>${esc(L('Previous Word','Parole précédente'))}</button>${i===6?`<button type="button" class="aoP435930Primary" data-p435930-word-done>${esc(L('Finish devotion','Terminer la dévotion'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-word-next>${esc(L('Next Word','Parole suivante'))}</button>`}</div>
+ ${i===6?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-word-done>${esc(L('Finish devotion','Terminer la dévotion'))}</button></div>`:''}
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Historical meditation guide','Guide de la méditation historique'))}</summary>${devotionalGuide('sevenWords')}</details>
  ${devotionalSource('Baltimore Manual · The Devotion of the Seven Words upon the Cross',L('English historical meditation witness; Gospel text supplied separately by the Scripture service. Concluding prayers follow the Seventh Word in the source.','Témoin anglais de la méditation ; le texte évangélique est fourni séparément par le service biblique. Des prières finales suivent la septième Parole dans la source.'),'sevenWords')}${appendix}</main>`;
 }
@@ -2625,12 +2625,8 @@ function onClick(e){
  if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
  if(b.matches('[data-p435930-lit-retry]')){LIT.error='';LIT.sections=null;LIT.step=0;return render()}
- if(b.matches('[data-p435930-lit-prev]')){LIT.step=Math.max(0,LIT.step-1);return render()}
- if(b.matches('[data-p435930-lit-next]')){LIT.step=Math.min((LIT.sections?.length||1)-1,LIT.step+1);return render()}
  if(b.matches('[data-p435930-lit-done]')){if(navStack.at(-1)==='penitential'){navStack.pop();popView('home')}else popView('home');return render()}
  if(b.dataset.p435930WordStep!=null){SEVEN.step=Math.max(0,Math.min(6,+b.dataset.p435930WordStep));return render()}
- if(b.matches('[data-p435930-word-prev]')){SEVEN.step=Math.max(0,SEVEN.step-1);return render()}
- if(b.matches('[data-p435930-word-next]')){SEVEN.step=Math.min(6,SEVEN.step+1);return render()}
  if(b.matches('[data-p435930-word-done]')){popView('home');return render()}
  if(b.dataset.p435930FortyStep!=null){FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,+b.dataset.p435930FortyStep));return render()}
  if(b.matches('[data-p435930-forty-done]')){FORTY.step=0;return backToParent()}
