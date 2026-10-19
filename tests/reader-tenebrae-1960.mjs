@@ -65,6 +65,17 @@ for(let day=0;day<3;day++){
   assert.ok(html.includes('aoTenebGuideIntro'));
   assert.ok(html.includes('data-p435930-tenebrae-jump="'+(hour==="MATINS"?20:7)+'"'));
   assert.ok(html.includes("aoTenebContext"),"Guided passage notes visible");
+  assert.ok(html.includes('role="progressbar"'),"Tenebrae stage progress is always visible");
+  assert.ok(html.includes('aria-valuenow="1"'),"First stage uses source-owned position");
+  assert.ok(html.includes('aria-valuemax="'+model.steps.length+'"'));
+  assert.ok(html.includes('aria-valuetext="'+(day===1?"Étape 1 sur ":"Stage 1 of ")+model.steps.length+'"'));
+  assert.ok(html.includes('class="aoTenebStageNav"'),"Jump links and progress share a sticky rail");
+  assert.ok(html.includes('tabindex="0" role="region"'),"Keyboard reading region missing");
+  assert.ok(!html.includes('data-p435930-tenebrae-move'),"Do not show Previous/Next actions");
+  assert.ok(!html.includes('aoTenebFooter'),"Obsolete duplicated step count remains");
+  const last=renderTenebraeBody({day,hour,index:model.steps.length-1,data:model,french:day===1});
+  assert.ok(last.includes('aria-valuenow="'+model.steps.length+'"'));
+  assert.ok(last.includes('--ao-devo-progress:100%'),"Final position indicator inaccurate");
   const simple=renderTenebraeBody({day,hour,index:0,data:model,guided:false});
   assert.ok(simple.includes('data-tenebrae-mode="simple"'));
   assert.ok(!simple.includes('class="aoTenebContext"'),"Simple mode must not interrupt prayer text");
