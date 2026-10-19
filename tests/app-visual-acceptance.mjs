@@ -178,14 +178,16 @@ try{
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
     todayV2Sections:document.querySelectorAll(".aoTodayV2Below .aoTodayV2Zone").length,
-    todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2Below [data-home-calendar]").length,
+    todayV2Glance:document.querySelectorAll(".aoTodayV2CalendarGlance").length,
+    todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2CalendarGlance [data-home-calendar]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===3 && homeAudit.todayV2CalendarLinks>=1,
-    "canonical Today v2 must render three sections and its Calendar handoffs: "+JSON.stringify(homeAudit));
+  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===2 &&
+    homeAudit.todayV2Glance===1 && homeAudit.todayV2CalendarLinks>=1,
+    "Approved C must render two lower sections, one Calendar at a glance panel and working Calendar links: "+JSON.stringify(homeAudit));
   assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
