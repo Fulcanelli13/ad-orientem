@@ -4,12 +4,8 @@
 const SUSTAINED=new Set(["STAND","SIT","KNEEL"]);
 const CUE=/^AO\.SM\.C\d{4}$/;
 
-function transitionAt(paragraph,cueState,preferences){
-  if(!cueState?.supported)return null;
-  const ids=(paragraph?.sourceCueIds??[]).map(String).filter(id=>CUE.test(id));
-  // Never split inside one bilingual paragraph containing multiple cue IDs.
-  if(ids.length!==1)return null;
-  const cueId=ids[0];
+function transitionForCue(cueId,cueState,preferences){
+  if(!cueState?.supported || !CUE.test(String(cueId)))return null;
   if(String(preferences?.postureProfile??"").toUpperCase()==="MY_LOCAL"){
     // Exact user-authored cue choices may create a page; unconfigured local
     // changes and ambiguous section-wide overrides must not be invented.
@@ -28,6 +24,13 @@ function transitionAt(paragraph,cueState,preferences){
     owner:"R17_SUNG_SOURCE_POSTURE_TRANSITION",
     advisory:String(preferences?.postureProfile??"FOLLOW_CONGREGATION").toUpperCase()==="FOLLOW_CONGREGATION",
   });
+}
+
+function transitionAt(paragraph,cueState,preferences){
+  const ids=(paragraph?.sourceCueIds??[]).map(String).filter(id=>CUE.test(id));
+  // Never split inside one bilingual paragraph containing multiple cue IDs.
+  if(ids.length!==1)return null;
+  return transitionForCue(ids[0],cueState,preferences);
 }
 
 function slicedBlocks(card,start,end){
@@ -49,16 +52,36 @@ function slicedBlocks(card,start,end){
   return Object.freeze(out);
 }
 
-function splitCard(card,cueState,preferences){
+function splitCard(card,cueState,preferences,postureRegistry){
   const paragraphs=card.paragraphs??[];
   if(paragraphs.length===0)return [{...card,postureEntry:null}];
-  const boundaries=[];
+  const boundaries=new Map();
   for(let i=0;i<paragraphs.length;i++){
     const entry=transitionAt(paragraphs[i],cueState,preferences);
-    if(entry)boundaries.push({index:i,entry});
+    if(entry)boundaries.set(i,entry);
   }
-  const atStart=boundaries.find(b=>b.index===0)?.entry??null;
-  const cuts=boundaries.filter(b=>b.index>0);
+  // Some 1962 source cues precede substituted Proper text (e.g. B030).
+  // Only a registered BLOCK_START with an exact source cue may place a
+  // boundary at that block's actual first rendered paragraph. No text search,
+  // no relative paragraph or time estimates, and no VISIBLE_STATE anchors.
+  for(const block of card.blocks??[]){
+    const at=block.firstParagraphIndex;
+    if(!Number.isInteger(at)||at<0||at>=paragraphs.length)continue;
+    for(const anchor of postureRegistry?.items??[]){
+      if(anchor.anchorType!=="BLOCK_START"||anchor.anchorRef!==block.blockId||
+         !CUE.test(String(anchor.cueId??"")))continue;
+      const entry=transitionForCue(anchor.cueId,cueState,preferences);
+      if(entry && (entry.owner==="MY_LOCAL_EXACT_CUE_POSTURE" ||
+         entry.sourcePostureId===anchor.id) && !boundaries.has(at)){
+        boundaries.set(at,entry);
+      }
+    }
+  }
+  const atStart=boundaries.get(0)??null;
+  const cuts=[...boundaries.entries()]
+    .filter(([index])=>index>0)
+    .sort(([a],[b])=>a-b)
+    .map(([index,entry])=>({index,entry}));
   if(!cuts.length)return [{...card,postureEntry:atStart}];
   const positions=[{index:0,entry:atStart},...cuts,{index:paragraphs.length,entry:null}];
   const pieces=[];
@@ -88,11 +111,11 @@ function splitCard(card,cueState,preferences){
  * canonical block owner. Brief gestures and unresolved observational anchors
  * can never create a page. No clock advance and no LIVE card mutation.
  */
-export function projectPostureAwareMissalCards(model,{cueState=null,preferences=null}={}){
+export function projectPostureAwareMissalCards(model,{cueState=null,preferences=null,postureRegistry=null}={}){
   if(!model||!Array.isArray(model.cards))throw new TypeError("MISSAL model required");
   if(String(model.presentationMode??"").toUpperCase()!=="MISSAL"||
      !cueState?.supported)return model;
-  const pieces=model.cards.flatMap(card=>splitCard(card,cueState,preferences));
+  const pieces=model.cards.flatMap(card=>splitCard(card,cueState,preferences,postureRegistry));
   // The next physical posture is an advisory reading cue, not an observed
   // event. The user controls when to turn each bilingual page.
   const final=Object.freeze(pieces.map((card,i)=>Object.freeze({
