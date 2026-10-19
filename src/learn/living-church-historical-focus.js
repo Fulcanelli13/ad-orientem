@@ -16,12 +16,25 @@ export function historicalFocusCandidates(question,topics,language="en"){
      &&group.some(term=>hasPhrase(query,fold(term))));
   });
 }
+
+export function historicalConfirmedContinuation(question,topic,language="en"){
+ const lang=language==="fr"?"fr":"en",n=fold(question);
+ const terms=topic?.historicalIntent?.contextContinuation?.[lang];
+ if(!n||!Array.isArray(terms)||terms.length<2)return false;
+ // A contextual cue can continue an explicitly confirmed source, but cannot
+ // bootstrap an unconfirmed lexical guess into an authoritative document link.
+ return terms.some(term=>hasPhrase(n,fold(term)));
+}
 export function validateHistoricalFocus(topics){
  for(const topic of topics.filter(t=>t.historicalIntent)){
   if(!topic.id.startsWith("pius.historical_spx_pilot_")||
     topic.historicalIntent.status!=="DOCUMENTARY_TOPIC_ANCHORS_RESEARCH_ONLY")
     throw Error("Historical anchor ownership violation: "+topic.id);
   for(const lang of ["en","fr"]){
+   const continuation=topic.historicalIntent.contextContinuation?.[lang];
+   if(!Array.isArray(continuation)||continuation.length<2
+      ||continuation.some(x=>typeof x!=="string"||!fold(x)))
+    throw Error("Missing historically defined conversation continuations for "+topic.id+"/"+lang);
    const facets=topic.historicalIntent.facets?.[lang];
    if(!Array.isArray(facets)||facets.length<2||facets.length>3||
        facets.some(g=>!Array.isArray(g)||!g.length||g.some(x=>typeof x!=="string"||!fold(x))))
