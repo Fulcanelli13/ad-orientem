@@ -87,6 +87,36 @@ assert.equal(accepted.kind,"handoff_context");
 assert.equal(accepted.navigationRoute,"historical.external_document");
 assert.equal(accepted.documentNavigation.url,originalMap.get("SPX-PILOT-05").originalDocumentUrl);
 assert.equal(accepted.answerText,null);
+
+for(const engine of [
+ createSharedQuestionRouter(catalog,{historicalPointers:pointer}),
+ createHybridQuestionRouter(catalog,concepts,{historicalPointers:pointer})
+]){
+ for(const [question,num] of [
+  ["What was your mission after accepting the office?",1],
+  ["How can I unite myself to the sacrifice?",2],
+  ["Is Palestrina's polyphony suitable?",6]
+ ]){
+  const intended=topic(num);
+  const result=engine.match(question,{currentCharacter:"pius-x",
+    context:{confirmedActiveTopicId:intended}});
+  assert.equal(result.kind,"source_navigation");
+  assert.equal(result.topicId,intended);
+  assert.equal(result.matchEvidence.basis,"DOCUMENTARY_CONFIRMED_FOLLOWUP");
+  assert.equal(result.requiresQuestionConfirmation,true);
+  assert.equal(result.documentNavigation.url,originalMap.get("SPX-PILOT-"+String(num).padStart(2,"0")).originalDocumentUrl);
+  assert.equal(result.answerText,null);
+  const unconfirmed=engine.match(question,{currentCharacter:"pius-x",
+    context:{activeTopicId:intended}});
+  assert.notEqual(unconfirmed.matchEvidence?.basis,"DOCUMENTARY_CONFIRMED_FOLLOWUP",
+    "A merely proposed historical route must not become confirmed context");
+ }
+}
+// Reject unsigned, tampered, or non-original source metadata.
+assert.throws(()=>createSharedQuestionRouter(catalog,{historicalPointers:{
+ ...pointer,records:pointer.records.map((x,i)=>i===0?{...x,originalDocumentUrl:"javascript:alert(1)"}:x)
+}}),/Invalid original historical source pointer/);
+
 // Explicitly demonstrate unrelated common-doctrine questions do not impersonate a
 // historical papal document solely because a generic term appeared.
 for(const question of ["what is ordinary sin","where should i pray","can i see the eucharist"]){
