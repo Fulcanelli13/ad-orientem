@@ -90,4 +90,34 @@ for(const p of registry.blindTestPrompts){
 const raw=JSON.stringify(registry);
 assert.equal(raw.includes("answerText"),false,"no competing Catechism/answer corpus");
 assert.equal(raw.includes("voiceAudio"),false,"not an audio reconstruction");
+
+const calibr=registry.userCalibration20261019;
+assert.equal(calibr.mean,17/6);
+assert.equal(calibr.scores.length,6);
+assert.deepEqual(calibr.scores.map(x=>x.rating),[3,3,2,3,3,3]);
+assert.equal(calibr.replacementRule,"SOURCE_FIRST_MINIMAL_INTERVENTION");
+assert.equal(calibr.additionsMustShowSource,true);
+assert.equal(calibr.published,false);
+assert.equal(calibr.historicalSpeechVerified,false);
+assert.equal(calibr.canonicalContentModified,false);
+assert.equal(calibr.beforeAfterRegisterRewrite,true);
+assert.equal(calibr.modifiedRegisters.length,4);
+assert.match(registry.registers.CATECHETICAL.use,/no default lesson, analogy, exhortation or conclusion/);
+assert.match(registry.registers.PASTORAL.use,/OPTIONAL/);
+for(const f of registry.styleFeatures.filter(x=>["EFFICIENT_CATECHESIS","CHRISTIAN_ENCOURAGEMENT","SOBRIETY_AND_PRECISION"].includes(x.id))){
+ assert.match(f.rule,/source|Source|SOURCE|cited/,f.id+" must gate editorial expansions");
+}
+const humanCalibr=JSON.parse(await readFile(new URL("../data/learn/pius-x-unified-documentary-voice-review.v1.json",import.meta.url),"utf8")).userRatedMinimalVoiceCalibration;
+assert.equal(humanCalibr.status,"EDITORIAL_SOURCE_FIRST_REWRITE_ONLY_NOT_RUNTIME");
+assert.equal(humanCalibr.baselineMean,17/6);
+assert.equal(humanCalibr.testCorpus.length,6);
+assert.deepEqual(humanCalibr.testCorpus.map(x=>x.qid),["PX1912-Q433","PX1912-Q325","PX1912-Q363","PX1912-Q116","PX1912-Q206","PX1912-Q85"]);
+for(const c of humanCalibr.testCorpus){
+ assert.ok(c.visitor&&c.revised&&c.evidence&&c.addition&&c.removedPadding);
+ assert.ok(c.revised.length>50);
+ assert.ok(c.evidence.includes("Q"));
+}
+for(const flag of ["userReRated","doctrinal","historical","english","french","runtime"])assert.equal(humanCalibr.approval[flag],false);
+assert.ok(humanCalibr.testCorpus.find(c=>c.qid==="PX1912-Q85").addition.includes("not present in Q85"));
+
 console.log("PASS eight documentary style witnesses, two comparative period controls, six rhetorical rules, ten blind tests and zero doctrinal duplication");
