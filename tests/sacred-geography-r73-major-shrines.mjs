@@ -16,7 +16,7 @@ const h=read("data/explore/heritage-place-reconciliation.review.v1.json");
 assert.equal(manifest.schema,"AO_SACRED_GEOGRAPHY_R73_MAJOR_SHRINES_V1");
 assert.equal(manifest.sites.length,9);
 assert.equal(manifest.existing_confirmed.length,12);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[261,257,240,449]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[294,257,240,515]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(h.place_crosswalk.length,261);
