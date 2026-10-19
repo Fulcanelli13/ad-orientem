@@ -113,7 +113,7 @@ assert.equal(formerlyUnmatched.filter(id=>wave.records.find(r=>r.id===id).conten
 const actualGrace=wave.records.find(x=>x.id==='SPX-057');
 assert.match(actualGrace.source_locator,/1905 longer Catechism Q527/);
 assert.match(actualGrace.evidence_summary,/actual grace/);
-assert.equal(salzanoHold.status,'LOCATOR_CROSSCHECK_REQUIRED_BEFORE_MACHINE_IMPORT');
+assert.equal(salzanoHold.state,'LOCATOR_CROSSCHECK_REQUIRED_BEFORE_MACHINE_IMPORT');
 assert.equal(salzanoHold.observed_anomalies.length,2);
 assert.ok(salzanoHold.observed_anomalies.some(x=>x.likely_intended==='322'));
 assert.ok(salzanoHold.observed_anomalies.some(x=>x.likely_intended==='446'));
