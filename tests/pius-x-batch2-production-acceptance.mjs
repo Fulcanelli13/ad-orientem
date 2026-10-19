@@ -41,7 +41,8 @@ for(const entry of index.entries){
  assert.equal(entry.approval.runtime,false);
  assert.equal(entry.editorial,"DRAFT_NOT_APPROVED");
  assert.equal(entry.speaker,record.speaker);
- assert.equal(entry.title.fr,record.opening.fr);
+ assert.equal(entry.title.fr,record.opening.question.fr);
+ assert.equal(entry.title.en,record.opening.question.en);
  assert.ok(/^https:\/\/(?:www\.vatican\.va|www\.museosanpiox\.it|www\.papapiox\.it)\//.test(entry.source.url),
   "Bad historical source host "+entry.id);
  assert.ok(entry.source.locus.length>4&&entry.source.studyProposition.length>32);
@@ -70,16 +71,16 @@ for(const entry of index.entries){
   assert.equal(record.speaker,"SOURCE_SCOPE_EDITORIAL_EXPLANATION_NOT_AUTHENTIC_PIUS_X_SPEECH");
   assert.ok(record.claimScope,"Restricted original source without scope hold "+entry.id);
  }
- assert.ok(record.opening.en.length>=95&&record.opening.fr.length>=95,entry.id+" incomplete opening");
+ assert.ok(record.opening.question.en.length>=20&&record.opening.question.fr.length>=20,entry.id+" incomplete opening question");
+ assert.ok(record.opening.response.en.length>=95&&record.opening.response.fr.length>=95,entry.id+" incomplete opening response");
  assert.ok(record.followup.question.en.length>=18&&record.followup.question.fr.length>=18);
  assert.ok(record.followup.response.en.length>=90&&record.followup.response.fr.length>=90,entry.id+" incomplete followup");
  for(const lang of ["en","fr"]){
-  assert.ok(!/[“”]/.test(record.opening[lang]+record.followup.response[lang]),"No unattributed original quoted lines");
+  assert.ok(!/[“”]/.test(record.opening.response[lang]+record.followup.response[lang]),"No unattributed original quoted lines");
  }
- if(biography){} // biography-specific assertions use the source tier above
  if(record.speaker==="THIRD_PERSON_DOCUMENTARY_NARRATOR_NOT_PIUS_X"){
   assert.equal(/\b(I remember|I felt|I intended|my childhood|my mother)\b/i.test(
-   record.opening.en+" "+record.followup.response.en),false,entry.id+": invented private memory");
+   record.opening.response.en+" "+record.followup.response.en),false,entry.id+": invented private memory");
  }
  turns+=2;answers+=4;
 }
