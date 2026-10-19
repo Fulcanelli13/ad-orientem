@@ -272,3 +272,49 @@ for(const seed of expansion.records){
  assert.equal(seed.visitor_dialogue_published,false);
 }
 console.log('Pius X 26 cross-edition research comparisons and 48 expanded idea seeds verified; zero answer approvals');
+
+
+const expandedPassages=JSON.parse(readFileSync('data/learn/research/pius-x-expansion-48-passage-review-20261019.v1.json','utf8'));
+assert.equal(expandedPassages.schema,'AO_PIUS_X_EXPANDED_48_PASSAGE_SCREEN_V1');
+assert.equal(expandedPassages.status,'RESEARCH_PASSAGE_SCREEN_NOT_PUBLISHED_DIALOGUE');
+assert.equal(expandedPassages.records.length,48);
+assert.deepEqual(expandedPassages.records.map(x=>x.id),expansion.records.map(x=>x.id));
+const screens=new Map();
+const reviewedOriginal=new Map(expansion.records.map(x=>[x.id,x]));
+for(const rec of expandedPassages.records){
+ const raw=reviewedOriginal.get(rec.id);
+ assert.equal(rec.question_en,raw.question_en);
+ assert.equal(rec.domain,raw.domain);
+ assert.ok(/^https:\/\//.test(rec.verified_source_url));
+ assert.equal(rec.verified_source_url,raw.suggested_document.url);
+ assert.ok(rec.section_or_question_locator && rec.source_locus_summary);
+ assert.ok(['BIOGRAPHY_FACTS_ONLY','PRIMARY_DIRECT','PRIMARY_PARTIAL'].includes(rec.passage_support_screen));
+ const biography=rec.passage_support_screen==='BIOGRAPHY_FACTS_ONLY';
+ assert.equal(rec.source_witness_class==='SECONDARY_BIOGRAPHY',biography);
+ assert.equal(rec.first_person_attribution_eligibility==='NO_FIRST_PERSON_MEMORY_PROVEN',biography);
+ assert.equal(rec.source_passage_found,true);
+ for(const k of ['complete_answer_approved','semantic_merge_approved','voice_approved','runtime_published']) assert.equal(rec[k],false);
+ if(rec.existing_family_overlap) {
+   assert.ok(familySet.has(rec.existing_family_overlap.id));
+   assert.equal(rec.overlap_review_status,'PROVISIONAL_NOT_MERGED');
+ } else {
+   assert.equal(rec.overlap_review_status,'NONE_IDENTIFIED_WITHIN_INITIAL_64_NOT_FULL_CORPUS');
+ }
+ screens.set(rec.passage_support_screen,(screens.get(rec.passage_support_screen)||0)+1);
+}
+assert.equal(screens.get('BIOGRAPHY_FACTS_ONLY'),9);
+assert.equal(screens.get('PRIMARY_DIRECT'),31);
+assert.equal(screens.get('PRIMARY_PARTIAL'),8);
+for(const [tier,count] of screens)assert.equal(expandedPassages.counts[tier],count);
+assert.equal(expandedPassages.counts.provisional_same_intent_links,2);
+assert.equal(expandedPassages.counts.initial_64_overlaps_or_followups_flagged,17);
+assert.equal(expandedPassages.counts.distinct_new_user_intents_verified,null);
+assert.equal(expandedPassages.counts.verified_complete_avatar_answers,0);
+assert.deepEqual(
+  expandedPassages.records.filter(x=>x.existing_family_overlap?.relation==='SAME_INTENT_REVIEW_CANDIDATE')
+      .map(x=>[x.id,x.existing_family_overlap.id]),
+  [['SPX-EXP-035','SPX-053'],['SPX-EXP-045','SPX-014']]
+);
+assert.equal(expandedPassages.records.find(x=>x.id==='SPX-EXP-010').passage_support_screen,'PRIMARY_DIRECT');
+assert.equal(expandedPassages.records.find(x=>x.id==='SPX-EXP-042').passage_support_screen,'PRIMARY_PARTIAL');
+console.log('Pius X passage review: 31 direct primary, 8 partial primary, 9 third-person biography; 0 answers certified');
