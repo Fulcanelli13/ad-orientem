@@ -1,0 +1,33 @@
+name: Rosary full bead focus
+on:
+  pull_request:
+    paths:
+      - "tests/rosary-full-bead-focus-phone.mjs"
+      - ".github/workflows/rosary-full-bead-focus.yml"
+      - "src/pray/rosary-active-card.js"
+      - "src/pray/rosary-card-chapters.js"
+      - "src/pray/devotional-card-deck-styles.js"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  canonical-bead-focus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 19
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Test every canonical bead and visible reading focus in Simple and Guided
+        run: timeout --signal=TERM --kill-after=5s 950s node tests/rosary-full-bead-focus-phone.mjs
+      - name: Preserve bead-by-bead focus ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rosary-full-bead-focus
+          path: artifacts/rosary-full-bead-focus/
+          retention-days: 30
+          if-no-files-found: warn
