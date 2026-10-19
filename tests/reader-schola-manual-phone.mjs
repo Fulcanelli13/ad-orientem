@@ -200,6 +200,11 @@ try{
    assert.equal(await page.locator("[data-schola-next]").isDisabled(),true);
    assert.equal(await release.isVisible(),true,
      "The choir's delayed Benedictus needs an actual manually observed release");
+   // A direct Canon card jump may finish settling its source cue on the
+   // next animation frame. Establish the priest's cue before comparing it
+   // across an independent Schola release, avoiding a null→C0182 race.
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0182",
+     null,{timeout:7000});
    const beforeRelease=await page.evaluate(()=>({
      card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
      cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
