@@ -22,6 +22,7 @@ function verifiedOrdinaryContext(resolvedMass){
   if(!requiem&&!season)return null;
   return {
     season,requiem,
+    triduum:declared?.verified===true && declared?.triduum===true,
     septEmberFerial:declared?.verified===true && declared?.septEmberFerial===true,
     exceptionalFeastConfirmed:declared?.verified===true &&
       declared?.exceptionalFeastConfirmed===true,
@@ -72,6 +73,24 @@ export function project1962ReaderOrganNote({
       scope:stageId,reason:"Sacred Triduum: complete instrumental silence (§84)"
     });
   }
+  if(riteId==="HOLY_THURSDAY_POST"){
+    if(!/^HT-R/.test(String(stageId??"")))return null;
+    return verdictFor({season:"LENT",triduum:true},{
+      scope:stageId,reason:"Holy Thursday after the Gloria; Triduum silence (§84)"
+    });
+  }
+  if(riteId==="REQUIEM_ABSOLUTION"){
+    if(!/^ABS-R/.test(String(stageId??"")))return null;
+    return verdictFor({requiem:true,office:"OTHER"},{
+      scope:stageId,reason:"Office of the Dead outside Mass or Vespers (§81)"
+    });
+  }
+  if(riteId==="CORPUS_CHRISTI_PROCESSION"){
+    if(!["CORPUS-R04","CORPUS-R05"].includes(String(stageId??"")))return null;
+    return verdictFor({office:"BENEDICTION",season:"ORDINARY"},{
+      scope:stageId,reason:"Benediction of the Blessed Sacrament exception (§81)"
+    });
+  }
   if(riteId==="EASTER_VIGIL"){
     if(!/^EV-/.test(String(stageId??"")))return null;
     return verdictFor({season:"LENT",triduum:true},{
@@ -98,9 +117,21 @@ export function project1962ReaderOrganNote({
   }
   if(riteId!=null)return null;
   if(!massCard)return null;
+  // The two canonical Consecration prayer blocks own this universal silent
+  // moment independently of the calendar, organ, reader form or season.
+  if((massCard.blocks??[]).some(block=>
+    ["AO.SM.B052","AO.SM.B053"].includes(block.blockId))){
+    return verdictFor({moment:"CONSECRATION"},{
+      scope:massCard.sectionId,
+      reason:"During the Consecration instrumental music ceases (§27e)",
+    });
+  }
   const context=verifiedOrdinaryContext(resolvedMass);
   if(!context)return null;
-  return verdictFor(context,{
+  const ownedGloria=(massCard.sourceSectionId??massCard.sectionId)==="AO.CARD.003";
+  const holyThursdayGloria=context.triduum===true &&
+    resolvedMass?.provenance?.organ1962?.holyThursdayMass===true && ownedGloria;
+  return verdictFor({...context,holyThursdayGloria},{
     scope:massCard.sectionId,
     reason:context.requiem
       ? "Office or Mass of the Dead; solo organ is prohibited, subject to chant-support rules"
