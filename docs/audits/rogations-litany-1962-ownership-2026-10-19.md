@@ -34,7 +34,7 @@ Mass Proper is a separate textual owner and ceremony from the Litany.**
 
 ## 2. Source-level inventory and identity preservation
 
-The existing reader has **186 original Latin source rows** across
+The existing reader has **187 original Latin source rows** across
 five text-bearing native ceremonial cards, followed by a sixth card
 for Mass handoff with no liturgical text. These are **one source corpus**, without copied
 words in this audit:
@@ -45,9 +45,9 @@ words in this audit:
 | ROG-R02 | 18 | Kneeling cantors' opening Litany dialogue |
 | ROG-R03 | 112 | Processional Litany, begins at `Sancta Maria`; exactly one invocation at each source slot |
 | ROG-R04 | 35 | `Pater noster` (1), V/R (2), Psalm 69 (8), suffrages (24) |
-| ROG-R05 | 17 | Ten complete concluding orations plus seven final dialogue/response slots |
+| ROG-R05 | 18 | One source-owned `Oremus`, ten concluding orations and seven final dialogue/response slots |
 | ROG-R06 | 0 | Only source handoff to Mass Introit, no duplicated Foot-of-Altar Ordinary |
-| **Total** | **186** | **Original Latin source preserved, no novel prayer texts** |
+| **Total** | **187** | **Original Latin source preserved, no novel prayer texts** |
 
 Within the **112** Litany invocations, the order is now mechanically
 indexed as:
@@ -82,13 +82,13 @@ The new read-only command
 
 generates `artifacts/rogations-litany-112-source-ownership.json`.
 Despite the filename (from the original 112-invocation scope), the
-document indexes **all 186 canonical Rogation reader rows**, with
+document indexes **all 187 canonical Rogation reader rows**, with
 owner IDs, section/response families, source positions, already
 matched Ordinary and PRAY-owner candidate IDs, and the 1962-versus-
 older chant directive conflict. It **does not store, write or promote
 new Latin/English/French passages**.
 
-The prior cross-source audit established **21** Latin occurrences
+The updated cross-source audit identifies **22** Latin occurrences
 already present in Ordinary cue records, **15** further Latin
 occurrences matched to existing PRAY texts, and **150** without an exact
 match to either of those two owner families. The latter figure is a
@@ -103,7 +103,7 @@ existing-witness candidates, not the same rite or complete original
 source text.
 
 The dedicated acceptance gate
-`tests/rogations-litany-112-source-owners.mjs` checks all 186 original
+`tests/rogations-litany-112-source-owners.mjs` checks all 187 original
 Latin source strings against the native reader, stage ownership and
 source order. It preserves the two James positions, six Litany invocation groups,
 the additional Psalm, suffrages and ten collects, the non-doubling
@@ -131,7 +131,7 @@ payload and no English/French fragment is assembled from the template.
 In particular the two `Sancte Jacobe` rows may share a response owner
 but must never share source positions or ceremonial events.
 
-The registry now assigns all 186 rows to specific **next review queues**
+The registry now assigns all 187 rows to specific **next review queues**
 instead of reporting the 150 unlinked items as an undifferentiated
 translation backlog: Litany formula plus unique invocation, untemplated
 Litany wording, Psalm/Exsurge recension and verse boundaries, ten
@@ -139,7 +139,7 @@ concluding collects, and the remaining rite dialogues/suffrages.
 Exact Ordinary and PRAY matches remain separate candidate queues.
 The generated summary distinguishes these queues **without subtracting
 any rows from the 150 that still need full witness collation**.
-The new test asserts 186 routed source identities and exactly 150
+The new test asserts 187 routed source identities and exactly 150
 non-exact-owner candidates. CI checks audit structure and immutability;
 it is not a 1962 facsimile or EN/FR editorial sign-off.
 
@@ -151,18 +151,18 @@ has now been **visually inspected** against the current Rogations donor
 and its native reader projection. The evidence and print-page source
 ranges are machine-recorded in
 `data/mass/rogation-1961-print-witness-holds.v1.json`.
-The six pages account for where the existing 186 donor text rows appear
+The six pages account for where the existing 187 donor text rows appear
 (4 opening, 18 introductory Litany, 112 invocations, 35 Psalm/suffrages,
 17 concluding rows). This is **targeted source collation**, not a
-word-by-word certified 1962 facsimile for all 186 rows.
+word-by-word certified 1962 facsimile for all 187 rows.
 
-**Three concrete holds in the existing source/reader:**
+**Three defects documented against the original 186-row donor and corrected on this draft (subject to final 1962 editorial verification):**
 
 | ID | Source row and photographed page | Discrepancy | Next editorial decision |
 | --- | --- | --- | --- |
-| 01 | ROG-R04-S24 → ROG-R05-O1; 1961 p. 840 | The printed audible **`Orémus.`** before the ten collects is **absent** as a Rogations Latin source/reader row. Existing `Oremus pro...` suffrages do not replace this independent cue. | Confirm 1962 source and restore one ceremony-owned cue, never an Ordinary Mass event. |
-| 02 | ROG-R04-PN; 1961 p. 839 | Print directs **`Pater noster, in silence.`**; current source has just `Pater noster.`, and its reader row has no silent-voice metadata. | Collate the governing rubric and set the precise voice/reader cue, without assuming all other `Pater noster` are silent. |
-| 03 | ROG-R05-O5; 1961 p. 840 | Photographed fifth collect reads `Pontifici nostro N.`; donor reads `Pontifici N.`. An independent [Latin Litany witness](https://la.wikisource.org/wiki/Litaniae_Sanctorum) also says `nostro`, but [a historical public Rogations account](https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1355) omits it. | **Edition-bound textual choice**: do not silently repair to the 1961 chant book. |
+| 01 | ROG-R04-S24 → ROG-R05-O1; 1961 p. 840 | The original donor omitted **`Orémus.`** before the ten collects. It is now restored as `ROG-R05-OR`, owned by `ROG-END-010` and referencing existing Ordinary text owner `AO.SM.C0036`. | Implemented on draft; certify against complete 1962 witness before promotion. |
+| 02 | ROG-R04-PN; 1961 p. 839 | Print directs **`Pater noster, in silence.`**; the original row had no silent-voice metadata; the reader now sets `voice: SILENT` and explains this in the stage guide. | Implemented for `ROG-R04-PN` only; verify edition-specific performance before release. |
+| 03 | ROG-R05-O5; 1961 p. 840 | Photographed fifth collect reads `Pontifici nostro N.`; donor formerly read `Pontifici N.` and now reads `Pontifici nostro N.`. An independent [Latin Litany witness](https://la.wikisource.org/wiki/Litaniae_Sanctorum) also says `nostro`, but [a historical public Rogations account](https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1355) omits it. | Corrected against the photographed chant witness and independent 1962-rite compilation; full 1962 printed edition certification still held. |
 
 **One segmentation observation, not a textual omission:** the
 photographed p. 839 numbers `Gloria Patri` and `Sicut erat`
@@ -173,7 +173,7 @@ Treat this as a page/readability boundary question, not as missing Latin.
 The focused **new test**
 `tests/rogations-printed-witness-holds.mjs`
 pins the exact printed-page / native-source scope, requires all three
-holds to remain traceable, checks all 186 original source rows
+holds to remain traceable, checks all 187 original source rows
 are still in their native six stages, and forbids claiming completed
 1962 edition or English/French source certification. The focused test is
 included in `missal-posture-pages-qa.yml`.
@@ -189,7 +189,7 @@ justified by them.
 
 
 
-1. **Resolve the three photographed 1961-to-1962 holds** (independent `Orémus`, silent `Pater noster`, `Pontifici [nostro] N.`) using the correct 1962 procession authority; then collate the complete 1962 printed Litany and appended Psalm,
+1. **Verify the three implemented draft corrections** (independent `Orémus`, silent `Pater noster`, `Pontifici nostro N.`) against the full 1962 procession edition before release; then collate the complete 1962 printed Litany and appended Psalm,
    suffrages and ten collects against the current Latin source, beyond
    the selected Liber Usualis inspected pages. Record literal
    discrepancies and real omissions by source location, not by a
@@ -209,3 +209,28 @@ justified by them.
 **Current state:** PR #1441 remains draft/unmerged and all new draft
 editorial translation material remains provisional. No Litany text or
 performance state was changed in this reconciliation pass.
+
+## 6. Implementation after the printed witness (draft only)
+
+One additional Latin source-owned cue has been restored without creating
+another Mass event: `postLitany.oremus` → `ROG-R05-OR` before the first
+collect, voice `AUDIBLE`, speaker `CELEBRANT`, reusing Ordinary wording
+candidate `AO.SM.C0036`. `ROG-R04-PN` has a silence cue, and the fifth
+collect now reads `Pontifici nostro N.` as in the photographed 1961 print
+and independently in the `Psalterium Romanum iuxta ritum 1962`
+([compiled witness](https://ccregis.org/psalter_lt.pdf)).
+
+The resulting **eight-annex source census is 320 leaves: 61 exact
+Ordinary matches, 17 additional PRAY matches, 242 requiring further
+source review**. Within Rogations there are **187 original source rows:
+22 Ordinary matches, 15 additional PRAY matches and 150 unmatched to only
+those two owner families**. The former 319/60 and 186/21 numbers in
+historical audit passages refer to the pre-repair donor. The 112 Litany
+invocations, two distinct St James slots, 1962 non-doubling rule, six
+ceremony events and Introit handoff remain unchanged. The newly restored
+`Oremus` must not be translated again: its effective approved wording is
+resolved through the existing Ordinary cue authority.
+
+CI tests for text-source ownership, rite-page projection and printed
+witness holds were updated. **Source certification of the full 1962
+edition, vernacular collation and physical visual acceptance remain open**.
