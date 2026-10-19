@@ -1,0 +1,230 @@
+/* Tenebrae shares the Mass reader's restrained liturgical presentation,
+   not its Mass event machine. Source/gesture/cue ownership remains Office-only. */
+#aoPray435930 .aoTenebBody[data-ao-liturgical-reader="tenebrae"]{
+  --ao-teneb-paper:#101720;
+  --ao-teneb-ink:#f0eadf;
+  --ao-teneb-secondary:#acaeae;
+  --ao-teneb-line:rgba(220,214,192,.16);
+  --ao-teneb-active:#bba77a;
+  color:var(--ao-teneb-ink);
+  background:#080c12;
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+  overflow-x:clip;
+}
+#aoPray435930 .aoTenebReaderRibbon{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px clamp(12px,3vw,24px);
+  background:linear-gradient(180deg,#10161e,#0b1119);
+  border-bottom:1px solid var(--ao-teneb-line);
+}
+#aoPray435930 .aoTenebReaderRibbon .aoTenebIntro{
+  min-width:0;
+  flex:1 1 auto;
+  margin:0;
+  padding:0;
+  text-align:left;
+  background:none;
+  border:0;
+}
+#aoPray435930 .aoTenebReaderRibbon .aoTenebIntro small{
+  display:block;
+  font:500 9px/1.5 system-ui,sans-serif;
+  letter-spacing:.17em;
+  color:var(--ao-teneb-active);
+}
+#aoPray435930 .aoTenebReaderRibbon .aoTenebIntro h2{
+  font:500 clamp(19px,3vw,25px)/1.22 "Cinzel","Cormorant Garamond",Georgia,serif;
+  letter-spacing:.035em;
+  margin:3px 0 1px;
+  color:var(--ao-teneb-ink);
+}
+#aoPray435930 .aoTenebReaderRibbon .aoTenebIntro p{
+  margin:0;
+  color:var(--ao-teneb-secondary);
+  font:400 11px/1.5 system-ui,sans-serif;
+}
+#aoPray435930 .aoTenebLanguageSwitch{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:40px;
+  padding:8px 12px;
+  background:rgba(255,255,255,.035);
+  color:var(--ao-teneb-ink);
+  border:1px solid var(--ao-teneb-line);
+  border-radius:9px;
+  font:500 12px/1.2 system-ui,sans-serif;
+}
+#aoPray435930 .aoTenebLanguageSwitch[aria-pressed="true"]{
+  border-color:rgba(187,167,122,.58);
+  color:#f7e9cd;
+}
+#aoPray435930 .aoTenebReaderControls{
+  padding:9px clamp(12px,3vw,24px) 2px;
+  display:grid;
+  gap:9px;
+  max-width:100%;
+  box-sizing:border-box;
+}
+#aoPray435930 .aoTenebReaderControls .aoTenebDays{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:5px;
+  margin:0;
+  min-width:0;
+  width:100%;
+}
+#aoPray435930 .aoTenebReaderControls .aoTenebDay{
+  min-width:0;
+  padding:9px 4px;
+  font:500 11px/1.25 system-ui,sans-serif;
+  border:1px solid var(--ao-teneb-line);
+  border-radius:7px;
+  color:var(--ao-teneb-secondary);
+  background:rgba(255,255,255,.02);
+  white-space:normal;
+}
+#aoPray435930 .aoTenebReaderControls .aoTenebDay[aria-pressed="true"],
+#aoPray435930 .aoTenebReaderOptions button[aria-pressed="true"]{
+  color:var(--ao-teneb-ink);
+  background:rgba(187,167,122,.1);
+  border-color:rgba(187,167,122,.5);
+}
+#aoPray435930 .aoTenebReaderOptions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  min-width:0;
+}
+#aoPray435930 .aoTenebReaderOptions .aoTenebHours,
+#aoPray435930 .aoTenebReaderOptions .aoTenebMode{
+  min-width:0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:5px;
+  padding:0;
+  margin:0;
+}
+#aoPray435930 .aoTenebReaderOptions button{
+  min-width:0;
+  min-height:36px;
+  padding:7px 5px;
+  border:1px solid var(--ao-teneb-line);
+  border-radius:7px;
+  font:500 11px/1.3 system-ui,sans-serif;
+  color:var(--ao-teneb-secondary);
+  background:rgba(255,255,255,.02);
+}
+#aoPray435930 .aoTenebStageNav{
+  position:sticky;
+  top:0;
+  z-index:4;
+  padding:9px clamp(12px,3vw,24px) 11px;
+  background:rgba(8,12,18,.96);
+  border-bottom:1px solid var(--ao-teneb-line);
+  backdrop-filter:blur(12px);
+}
+#aoPray435930 .aoTenebStageNav .aoTenebJump{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  overflow-x:auto;
+  max-width:100%;
+  scrollbar-width:none;
+  margin:0 0 8px;
+}
+#aoPray435930 .aoTenebStageNav .aoTenebJump button{
+  flex:0 0 auto;
+  border:0;
+  border-bottom:1px solid transparent;
+  border-radius:0;
+  padding:5px 7px;
+  white-space:nowrap;
+  color:var(--ao-teneb-secondary);
+  background:none;
+  font:500 11px/1.3 system-ui,sans-serif;
+}
+#aoPray435930 .aoTenebStageNav .aoTenebJump button[aria-current="step"]{
+  color:var(--ao-teneb-ink);
+  border-bottom-color:var(--ao-teneb-active);
+}
+#aoPray435930 .aoTenebStageNav .aoDevoProgress{
+  height:3px;
+  background:rgba(255,255,255,.09);
+  border-radius:2px;
+  overflow:hidden;
+  margin:0;
+}
+#aoPray435930 .aoTenebStageNav .aoDevoProgressFill{
+  background:var(--ao-teneb-active);
+}
+#aoPray435930 .aoTenebBody .aoTenebReading{
+  box-sizing:border-box;
+  width:min(100%,880px);
+  max-width:100%;
+  margin:12px auto 14px;
+  border:1px solid var(--ao-teneb-line);
+  border-radius:12px;
+  background:var(--ao-teneb-paper);
+  color:var(--ao-teneb-ink);
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+  touch-action:pan-y;
+  overscroll-behavior-x:contain;
+}
+#aoPray435930 .aoTenebReadingTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--ao-teneb-line);
+  color:var(--ao-teneb-secondary);
+  font:500 11px/1.5 system-ui,sans-serif;
+  letter-spacing:.055em;
+}
+#aoPray435930 .aoTenebReadingTop .aoTenebReadingCount{
+  font-variant-numeric:tabular-nums;
+  letter-spacing:0;
+}
+#aoPray435930 .aoTenebReading h3{
+  margin:16px 0 12px;
+  font:500 clamp(19px,2.6vw,27px)/1.3 "Cormorant Garamond",Georgia,serif;
+  color:var(--ao-teneb-ink);
+  text-align:center;
+}
+#aoPray435930 .aoTenebReading .aoTenebPrayer{
+  color:var(--ao-teneb-ink);
+  font:400 clamp(18px,2vw,22px)/1.68 "Cormorant Garamond",Georgia,serif;
+  overflow-wrap:anywhere;
+}
+#aoPray435930 .aoTenebBody .aoTenebContext{
+  color:var(--ao-teneb-secondary);
+  border-left:2px solid rgba(187,167,122,.45);
+}
+#aoPray435930 .aoTenebLanguageSwitch:focus-visible,
+#aoPray435930 .aoTenebBody button:focus-visible,
+#aoPray435930 .aoTenebReading:focus-visible{
+  outline:2px solid var(--ao-teneb-active);
+  outline-offset:2px;
+}
+@media(max-width:560px){
+  #aoPray435930 .aoTenebReaderRibbon{padding:11px 12px;gap:8px}
+  #aoPray435930 .aoTenebReaderRibbon .aoTenebIntro h2{font-size:19px}
+  #aoPray435930 .aoTenebReaderRibbon .aoTenebIntro p{font-size:10px}
+  #aoPray435930 .aoTenebLanguageSwitch{min-height:38px;padding:7px 9px;font-size:11px}
+  #aoPray435930 .aoTenebReaderControls{padding:8px 10px 2px;gap:7px}
+  #aoPray435930 .aoTenebStageNav{padding:6px 10px 9px}
+  #aoPray435930 .aoTenebBody .aoTenebReading{width:calc(100% - 18px);margin:8px auto 12px;border-radius:10px}
+  #aoPray435930 .aoTenebReading h3{font-size:21px}
+  #aoPray435930 .aoTenebReading .aoTenebPrayer{font-size:19px;line-height:1.62}
+}
+@media(prefers-reduced-motion:reduce){
+  #aoPray435930 .aoTenebBody *{scroll-behavior:auto!important}
+}
