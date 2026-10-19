@@ -4,9 +4,9 @@ const report=buildSecondaryReconciliation();
 const {summary:s}=report;
 assert.equal(report.schema,"ao-annexed-second-pass-existing-owner-v1");
 assert.equal(report.status,"READ_ONLY_CANDIDATE_INDEX_NO_TEXT_COPY_NO_TRANSLATION");
-assert.equal(s.firstPassScanned,319,
+assert.equal(s.firstPassScanned,320,
   "First-pass scope changed; recollate the reconciliation counts");
-assert.equal(s.firstPassOrdinaryMatches,60);
+assert.equal(s.firstPassOrdinaryMatches,61);
 assert.equal(s.firstPassWithoutOrdinaryMatch,259);
 assert.ok(report.prayerCorpus.prayers>=48);
 assert.equal(report.existingInventoryCounts.fullyCertified,0,
