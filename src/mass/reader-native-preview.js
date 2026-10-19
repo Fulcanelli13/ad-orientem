@@ -1794,6 +1794,8 @@ export async function mountNativeReaderPreview({
       id:row.id,
       kind:row.kind,
       primary:row.latin,
+      secondary:specialRiteVernacular(row,{language:prepared?.readerPreferences?.language??"en"}),
+      speakerRole:row.speaker??null,
       sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
     }));
     // Three R20 action/transition cards legitimately have no spoken prayer.
@@ -1832,7 +1834,7 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(projected.state.card?.id,projected.moment));
     previewNextRiteStage(projected.state.card,
       ready.aspergesController.cards[projected.state.index+1]??null);
     root.dataset.r17NativeEvent="asperges";
@@ -2232,6 +2234,7 @@ export async function mountNativeReaderPreview({
       return showAsh();
     }
     if(inAsperges && ready.aspergesController){
+      if(ritePageCursor.turn("previous"))return showAsperges();
       const state=ready.aspergesController.project();
       if(!state.atStart)ready.aspergesController.previous();
       return showAsperges();
@@ -2331,6 +2334,7 @@ export async function mountNativeReaderPreview({
       return showAsh();
     }
     if(inAsperges && ready.aspergesController){
+      if(ritePageCursor.turn("next"))return showAsperges();
       const state=ready.aspergesController.project();
       if(state.atEnd){
         inAsperges=false;
