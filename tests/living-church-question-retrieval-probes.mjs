@@ -200,8 +200,8 @@ const probes=[
   },
   {
     "q": "Can doctrine develop without contradiction?",
-    "k": "no_coverage",
-    "t": "canon.church_crisis_cr_doc_02",
+    "k": "clarify",
+    "t": null,
     "l": "en"
   },
   {
@@ -248,7 +248,7 @@ const probes=[
   },
   {
     "q": "Quels sont les ornements liturgiques ?",
-    "k": "source_navigation",
+    "k": "offer_handoff",
     "t": "objects.vestments",
     "l": "fr"
   },
