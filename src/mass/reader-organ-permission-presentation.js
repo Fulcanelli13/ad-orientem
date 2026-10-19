@@ -8,6 +8,26 @@ const SEASONS=new Set([
   "QUINQUAGESIMA","CHRISTMAS","EPIPHANY","EASTER","PENTECOST","ORDINARY"
 ]);
 
+// 1958 §29: entire ordinary source cards lying inside the printed restricted
+// windows. Partial-boundary cards are deliberately excluded: AO.CARD.001
+// (arrival at altar), .011 (first versicles), .024 (second Confiteor), and
+// .029 (blessing). A static Missal page is not a priest-action observation.
+const LOW_MASS_FULL_CARD_WINDOWS=freeze({
+  "AO.CARD.002":"ARRIVAL_TO_OFFERTORY","AO.CARD.003":"ARRIVAL_TO_OFFERTORY",
+  "AO.CARD.004":"ARRIVAL_TO_OFFERTORY","AO.CARD.005":"ARRIVAL_TO_OFFERTORY",
+  "AO.CARD.006":"ARRIVAL_TO_OFFERTORY","AO.CARD.007":"ARRIVAL_TO_OFFERTORY",
+  "AO.CARD.008":"ARRIVAL_TO_OFFERTORY","AO.CARD.009":"ARRIVAL_TO_OFFERTORY",
+  "AO.CARD.012":"PREFACE_TO_SANCTUS","AO.CARD.013":"PREFACE_TO_SANCTUS",
+  "AO.CARD.015":"CONSECRATION_TO_PATERNOSTER",
+  "AO.CARD.016":"CONSECRATION_TO_PATERNOSTER",
+  "AO.CARD.017":"CONSECRATION_TO_PATERNOSTER",
+  "AO.CARD.018":"CONSECRATION_TO_PATERNOSTER",
+  "AO.CARD.019":"PATERNOSTER_TO_AGNUS",
+  "AO.CARD.020":"PATERNOSTER_TO_AGNUS",
+  "AO.CARD.021":"PATERNOSTER_TO_AGNUS",
+  "AO.CARD.027":"POSTCOMMUNION",
+});
+
 function verifiedOrdinaryContext(resolvedMass){
   // Low Mass has additional §29 positional restrictions. Do not project the
   // sung-Mass permissions onto its card spans without that separate model.
@@ -121,6 +141,27 @@ export function project1962ReaderOrganNote({
   }
   if(riteId!=null)return null;
   if(!massCard)return null;
+  // §29 is not a blanket claim that every Low Mass has instrumental
+  // music or that every local custom is interfering. Only an independently
+  // verified 1962 plan may activate the relevant §29 conditional case.
+  // The source section map determines whole-card silence boundaries;
+  // incomplete mixed cards remain unlabelled until a word-level source cue
+  // resolves their exact start or end.
+  if(resolvedMass?.form==="LOW"){
+    const sourceSection=massCard.sourceSectionId??massCard.sectionId;
+    const window=LOW_MASS_FULL_CARD_WINDOWS[sourceSection]??null;
+    const prov=resolvedMass?.provenance?.organ1962;
+    const applicable=prov?.verified===true &&
+      prov?.source==="LITURGICAL_PLAN_1962" &&
+      prov?.lowMassInterferingInstrumentalCustom===true;
+    if(window && applicable)return verdictFor({
+      lowMassCustomRelevant:true,lowMassRestrictedInterval:true,
+    },{
+      scope:sourceSection,
+      reason:"1958 §29 Low Mass instrumental restriction: "+window.replaceAll("_"," ").toLowerCase()+
+        "; only for the independently verified local context",
+    });
+  }
   // The two canonical Consecration prayer blocks own this universal silent
   // moment independently of the calendar, organ, reader form or season.
   if((massCard.blocks??[]).some(block=>
