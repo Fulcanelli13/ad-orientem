@@ -1,0 +1,967 @@
+{
+  "schema": "AO_PIUS_X_CONTENT_OWNED_TEN_CONVERSATION_PILOT_V1",
+  "created": "2026-10-19",
+  "status": "COMPLETE_BILINGUAL_EDITORIAL_DRAFT_NOT_INDEPENDENTLY_CERTIFIED",
+  "scope": "Ten content-owned, source-bounded educational conversation paths (main question, document-scoped follow-up, misconception correction), not a published chatbot script or a replacement for separate voice review.",
+  "sourceOfTruth": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+  "voiceContract": "PR #1419 controls historical register, authentic quotation boundaries and revised anti-padding style calibration; this content bank cannot approve itself.",
+  "routingOwner": "PR #1443 controls original-document lookup, source confirmation, handoffs and safety holds; these dialogue scripts do NOT override a no_coverage result.",
+  "presentationOwner": "Existing Living Church visual-novel character assets; sprite suggestions are not runtime changes.",
+  "totals": {
+    "topics": 10,
+    "turnsPerTopic": 3,
+    "bilingualResponsePairs": 30,
+    "localizedResponseDrafts": 60,
+    "approvedAnswers": 0,
+    "reviewedInApp": 0
+  },
+  "globalReleaseGates": {
+    "documentarySentenceLevelReview": false,
+    "humanTheologyApproval": false,
+    "sourceGenreAndSignerApproval": false,
+    "independentTranslationApproval": false,
+    "voiceStyleApproval": false,
+    "appWiring": false,
+    "publication": false
+  },
+  "sourcePolicy": [
+    "Original source propositions are permitted only where supported by the case record and exact original passage, never treated as recorded spoken phrases.",
+    "No invented private memory, current Church law, diagnosis of personal guilt, or imputed opinion of an individual.",
+    "Any visitor continuation is a prewritten editorial path, not a model improvising from a source locator.",
+    "The decree Quam singulari is attributed to its Congregation and papal approval; not relabelled as a first-person Pius X encyclical.",
+    "Under source-hold conditions (pilot 11, 12), no generated historical first-person reply should be produced.",
+    "No textual reuse of originals beyond short document titles; all EN/FR prose is newly written educational reconstruction, not a certified translation."
+  ],
+  "episodes": [
+    {
+      "id": "SPX-PILOT-01",
+      "caseId": "SPX-PILOT-01",
+      "domain": "PERSONAL_HISTORY",
+      "sourceScope": "E supremi §§1–4",
+      "sourceAttribution": "AUTHORED_PAPAL_FIRST_PERSON",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "thoughtful",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "A first-person paraphrase is possible, but the cited letter cannot substantiate every anecdote from the conclave.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-01-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Did you welcome the papal election?",
+              "response": "In the opening of E supremi, I did not conceal my reluctance before the burden of the pontificate. I spoke of tears, of my unworthiness, and of the grave responsibility of succeeding Leo XIII. I accepted the office as the will of God."
+            },
+            "fr": {
+              "visitor": "Avez-vous accueilli volontiers votre élection au pontificat ?",
+              "response": "Dans les premières pages d’E supremi, je n’ai pas caché ma réticence devant la charge pontificale. J’y ai évoqué mes larmes, mon indignité et la lourde responsabilité de succéder à Léon XIII. J’ai accepté cette charge comme la volonté de Dieu."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-01",
+          "citationLabel": "E supremi §§1–4",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-01-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "What purpose did you set for your pontificate?",
+              "response": "The purpose set out in that same encyclical was the restoration of all things in Christ. This was not merely an administrative programme, but the guiding end declared for the pontificate."
+            },
+            "fr": {
+              "visitor": "Quel but vous êtes-vous proposé pour votre pontificat ?",
+              "response": "Le but exprimé dans cette même encyclique était de tout restaurer dans le Christ. Il ne s’agissait pas simplement d’un programme d’administration, mais de la fin directrice annoncée pour le pontificat."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-01",
+          "citationLabel": "E supremi §§1–4",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-01-T1"
+        },
+        {
+          "id": "SPX-PILOT-01-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "So you formally refused the election at the conclave?",
+              "response": "E supremi records reluctance and distress, but its opening paragraphs do not establish the precise formal proceedings of the conclave. I should not turn that account into an undocumented scene."
+            },
+            "fr": {
+              "visitor": "Vous avez donc formellement refusé votre élection pendant le conclave ?",
+              "response": "E supremi témoigne de la réticence et de l’épreuve, mais ses premiers paragraphes ne décrivent pas avec précision les actes officiels du conclave. Ce récit ne permet pas d’en inventer une scène."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-01",
+          "citationLabel": "E supremi §§1–4",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-01-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-02",
+      "caseId": "SPX-PILOT-02",
+      "domain": "LITURGY",
+      "sourceScope": "1905 Catechismo maggiore Q667–669",
+      "sourceAttribution": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "explaining",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "Do not misrepresent this text as forbidding the Rosary, or insist that everyone must use the same form of participation.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-02-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "May I pray the Rosary during Mass?",
+              "response": "The longer Catechism does not forbid the Rosary during Mass. It permits the faithful to pray it, while endeavouring, as far as possible, to follow the action of the Holy Sacrifice."
+            },
+            "fr": {
+              "visitor": "Puis-je réciter le chapelet pendant la messe ?",
+              "response": "Le grand Catéchisme ne défend pas de réciter le chapelet pendant la messe. Il le permet aux fidèles, tout en les invitant à suivre, autant que possible, l’action du saint Sacrifice."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-02",
+          "citationLabel": "1905 Catechismo maggiore Q667–669",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-02-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "How might I unite my prayer to the sacrifice?",
+              "response": "The Catechism counsels uniting one’s intentions to those of the priest, attending to his prayers and actions, and considering the Passion of Our Lord."
+            },
+            "fr": {
+              "visitor": "Comment unir ma prière au sacrifice ?",
+              "response": "Le Catéchisme conseille d’unir ses intentions à celles du prêtre, d’être attentif à ses prières et à ses actions, et de considérer la Passion de Notre-Seigneur."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-02",
+          "citationLabel": "1905 Catechismo maggiore Q667–669",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-02-T1"
+        },
+        {
+          "id": "SPX-PILOT-02-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Does everyone have to participate in exactly the same way?",
+              "response": "That is not what these questions teach. They describe ways to assist devoutly at Mass; they do not impose one identical private devotion upon every member of the faithful."
+            },
+            "fr": {
+              "visitor": "Tout le monde doit-il participer exactement de la même manière ?",
+              "response": "Ce n’est pas ce qu’enseignent ces questions. Elles décrivent des moyens d’assister pieusement à la messe ; elles n’imposent pas à chaque fidèle une dévotion privée identique."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-02",
+          "citationLabel": "1905 Catechismo maggiore Q667–669",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-02-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-03",
+      "caseId": "SPX-PILOT-03",
+      "domain": "CONFESSION_PASTORAL",
+      "sourceScope": "Salzano manuscript/editorial Q541–543; museum transcription f.12",
+      "sourceAttribution": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "explaining",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "Do not adjudicate an individual's guilt, scrupulosity, intent, or gravity from a single prompt.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-03-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Is an unwanted bad thought already a sin?",
+              "response": "The Salzano catechism distinguishes a thought that presents itself without our choosing from the will that takes pleasure in it or gives consent. The mere arrival of a temptation is not the same act as freely embracing it."
+            },
+            "fr": {
+              "visitor": "Une mauvaise pensée involontaire est-elle déjà un péché ?",
+              "response": "Le catéchisme de Salzano distingue la pensée qui se présente sans qu’on l’ait choisie de la volonté qui s’y complaît ou y consent. La seule survenue d’une tentation n’est pas le même acte que son acceptation libre."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-03",
+          "citationLabel": "Salzano manuscript/editorial Q541–543; museum transcription f.12",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-03-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "What part does consent play?",
+              "response": "Consent concerns the will’s acceptance of the thought. The text distinguishes that acceptance from the thought’s involuntary appearance; the distinction must not be erased."
+            },
+            "fr": {
+              "visitor": "Quel rôle joue le consentement ?",
+              "response": "Le consentement concerne l’acceptation de la pensée par la volonté. Le texte distingue cette acceptation de l’apparition involontaire de la pensée ; il faut maintenir cette distinction."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-03",
+          "citationLabel": "Salzano manuscript/editorial Q541–543; museum transcription f.12",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-03-T1"
+        },
+        {
+          "id": "SPX-PILOT-03-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Can you decide from this whether I personally committed mortal sin?",
+              "response": "These catechetical distinctions do not establish your particular intentions or consent. The passage explains the principles; it does not provide a verdict on an individual conscience."
+            },
+            "fr": {
+              "visitor": "Pouvez-vous décider si j’ai personnellement commis un péché mortel ?",
+              "response": "Ces distinctions catéchétiques ne constatent pas vos intentions particulières ni votre consentement. Le passage expose les principes ; il ne rend pas un jugement sur une conscience individuelle."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-03",
+          "citationLabel": "Salzano manuscript/editorial Q541–543; museum transcription f.12",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-03-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-04",
+      "caseId": "SPX-PILOT-04",
+      "domain": "EUCHARISTIC_PRACTICE",
+      "sourceScope": "Salzano manuscript/editorial Q506–508; museum transcription f.9",
+      "sourceAttribution": "SARTO_CATECHETICAL_MANUSCRIPT_EDITORIAL_NUMBERING",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "welcoming",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "Its mention of a half-hour in church is period advice in this manuscript; do not turn it into a universal binding modern rule.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-04-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "What is recommended after Holy Communion?",
+              "response": "The Salzano instructions recommend recollection after Communion: adoration, thanksgiving, offering oneself to God, renewed good resolutions and prayer for the needs of soul and body."
+            },
+            "fr": {
+              "visitor": "Que recommande-t-on après la sainte communion ?",
+              "response": "Les instructions de Salzano recommandent le recueillement après la communion : adoration, action de grâces, offrande de soi à Dieu, renouvellement des bonnes résolutions et prière pour les besoins de l’âme et du corps."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-04",
+          "citationLabel": "Salzano manuscript/editorial Q506–508; museum transcription f.9",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-04-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "What should that thanksgiving contain?",
+              "response": "The text names adoration and gratitude, the offering of oneself, resolutions for a better Christian life and petitions for spiritual and bodily needs. These are the practices it expressly recommends."
+            },
+            "fr": {
+              "visitor": "Que doit contenir cette action de grâces ?",
+              "response": "Le texte mentionne l’adoration et la reconnaissance, l’offrande de soi, les résolutions d’une vie chrétienne meilleure et les demandes pour les besoins spirituels et corporels. Voilà les actes qu’il recommande expressément."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-04",
+          "citationLabel": "Salzano manuscript/editorial Q506–508; museum transcription f.9",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-04-T1"
+        },
+        {
+          "id": "SPX-PILOT-04-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Does it require every communicant today to remain for a compulsory half hour?",
+              "response": "The Salzano passage gives a period recommendation about remaining in church; it is not, by itself, evidence of a universally binding rule for all communicants today."
+            },
+            "fr": {
+              "visitor": "Impose-t-il aujourd’hui à tous les communiants une demi-heure obligatoire ?",
+              "response": "Le passage de Salzano formule un conseil de son époque concernant le temps passé à l’église ; il ne démontre pas, à lui seul, l’existence d’une règle universellement obligatoire aujourd’hui."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-04",
+          "citationLabel": "Salzano manuscript/editorial Q506–508; museum transcription f.9",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-04-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-05",
+      "caseId": "SPX-PILOT-05",
+      "domain": "DOGMATIC_CATECHESIS",
+      "sourceScope": "1905 Catechismo maggiore Q527–533, especially Q528 and Q532",
+      "sourceAttribution": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "explaining",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "Do not conflate this distinction with sacramental grace in 1912 Q269–271.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-05-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "What is the difference between sanctifying and actual grace?",
+              "response": "Sanctifying, or habitual, grace is a supernatural gift abiding in the soul, by which we are made just and children of God. Actual grace is divine help enlightening the understanding and strengthening the will to do good and avoid evil."
+            },
+            "fr": {
+              "visitor": "Quelle différence entre la grâce sanctifiante et la grâce actuelle ?",
+              "response": "La grâce sanctifiante, ou habituelle, est un don surnaturel qui demeure dans l’âme et par lequel nous devenons justes et enfants de Dieu. La grâce actuelle est un secours divin qui éclaire l’intelligence et fortifie la volonté pour faire le bien et éviter le mal."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-05",
+          "citationLabel": "1905 Catechismo maggiore Q527–533, especially Q528 and Q532",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-05-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Does actual grace remove human freedom?",
+              "response": "No. The longer Catechism affirms divine help to the understanding and the will without making that help a destruction of human liberty."
+            },
+            "fr": {
+              "visitor": "La grâce actuelle supprime-t-elle la liberté humaine ?",
+              "response": "Non. Le grand Catéchisme affirme le secours divin donné à l’intelligence et à la volonté sans faire de ce secours une suppression de la liberté humaine."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-05",
+          "citationLabel": "1905 Catechismo maggiore Q527–533, especially Q528 and Q532",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-05-T1"
+        },
+        {
+          "id": "SPX-PILOT-05-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Are both kinds of grace merely temporary help?",
+              "response": "No. The distinction is precisely between sanctifying grace, which abides in the soul, and actual grace, which assists us in particular acts."
+            },
+            "fr": {
+              "visitor": "Ces deux grâces ne sont-elles que des secours passagers ?",
+              "response": "Non. La distinction porte précisément sur la grâce sanctifiante, qui demeure dans l’âme, et sur la grâce actuelle, qui nous assiste dans des actes particuliers."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-05",
+          "citationLabel": "1905 Catechismo maggiore Q527–533, especially Q528 and Q532",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-05-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-06",
+      "caseId": "SPX-PILOT-06",
+      "domain": "LITURGICAL_THEOLOGY",
+      "sourceScope": "Tra le sollecitudini, Instruction §§1–5, especially §3",
+      "sourceAttribution": "AUTHORED_PAPAL_MOTU_PROPRIO",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "explaining",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "Distinguish 1903 liturgical disciplinary claims from current rules; never state that all non-chant is forbidden.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-06-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Why did you give Gregorian chant such importance?",
+              "response": "Tra le sollecitudini teaches that sacred music serves the glory of God and the sanctification of the faithful. It presents Gregorian chant as the Church of Rome’s inherited song and a foremost model of music fitting the liturgy."
+            },
+            "fr": {
+              "visitor": "Pourquoi avez-vous donné tant d’importance au chant grégorien ?",
+              "response": "Tra le sollecitudini enseigne que la musique sacrée sert la gloire de Dieu et la sanctification des fidèles. Le texte présente le chant grégorien comme le chant hérité de l’Église romaine et un modèle éminent de musique convenant à la liturgie."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-06",
+          "citationLabel": "Tra le sollecitudini, Instruction §§1–5, especially §3",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-06-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Was classical polyphony also permitted?",
+              "response": "Yes. The same instruction recognises worthy classical polyphony. Giving Gregorian chant a privileged place does not mean that all other sacred music was excluded."
+            },
+            "fr": {
+              "visitor": "La polyphonie classique était-elle également permise ?",
+              "response": "Oui. La même instruction reconnaît la valeur d’une polyphonie classique digne du culte. Donner une place privilégiée au chant grégorien ne signifie pas exclure toute autre musique sacrée."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-06",
+          "citationLabel": "Tra le sollecitudini, Instruction §§1–5, especially §3",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-06-T1"
+        },
+        {
+          "id": "SPX-PILOT-06-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "May I use this decree to judge whether a choir today is breaking current Church law?",
+              "response": "The instruction gives the historical standards of its own time. Its text alone does not establish the current legal status of a particular parish choir or its director."
+            },
+            "fr": {
+              "visitor": "Puis-je juger grâce à ce décret si une chorale viole aujourd’hui le droit de l’Église ?",
+              "response": "L’instruction présente les normes historiques de son époque. Son seul texte ne permet pas d’établir la situation juridique actuelle d’une chorale paroissiale particulière ou de son chef."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-06",
+          "citationLabel": "Tra le sollecitudini, Instruction §§1–5, especially §3",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-06-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-07",
+      "caseId": "SPX-PILOT-07",
+      "domain": "MODERNISM",
+      "sourceScope": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+      "sourceAttribution": "AUTHORED_PAPAL_ENCYCLICAL",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "grave",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "Do not label specific contemporary persons or all modern scholarship as Modernist without evidence.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-07-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Why does Pascendi call Modernism a synthesis of heresies?",
+              "response": "Pascendi treats the positions it criticises as parts of one connected system. It traces the consequences of agnosticism, making religious sentiment the foundation of faith, and treating dogma as mutable. Its concern is the weakening of objective revelation and religious knowledge."
+            },
+            "fr": {
+              "visitor": "Pourquoi Pascendi présente-t-elle le modernisme comme une synthèse des hérésies ?",
+              "response": "Pascendi considère les positions qu’elle critique comme les éléments d’un même système. Elle expose les conséquences de l’agnosticisme, de la réduction de la foi au sentiment religieux et de la doctrine d’un dogme changeant. Sa préoccupation est l’affaiblissement de la Révélation objective et de la connaissance religieuse."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-07",
+          "citationLabel": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-07-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "What is the problem with making faith only religious feeling?",
+              "response": "In the encyclical’s analysis, religious sentiment alone cannot provide the objective revelation and certainty that Catholic faith professes. This is part of its critique of the connected Modernist system."
+            },
+            "fr": {
+              "visitor": "Quel problème pose la réduction de la foi au seul sentiment religieux ?",
+              "response": "Selon l’analyse de l’encyclique, le sentiment religieux à lui seul ne peut fournir la Révélation objective et la certitude que professe la foi catholique. C’est l’un des éléments de sa critique du système moderniste."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-07",
+          "citationLabel": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-07-T1"
+        },
+        {
+          "id": "SPX-PILOT-07-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Does that make every scholar of recent times a Modernist?",
+              "response": "The passage addresses a specified doctrinal system; it is not evidence for labelling every contemporary scholar, nor does it establish the views of any particular living person."
+            },
+            "fr": {
+              "visitor": "Tout savant de notre époque serait-il donc moderniste ?",
+              "response": "Le passage vise un système doctrinal déterminé ; il ne permet ni d’appliquer cette qualification à tout savant contemporain, ni d’attribuer une doctrine à une personne vivante particulière."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-07",
+          "citationLabel": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-07-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-08",
+      "caseId": "SPX-PILOT-08",
+      "domain": "PASTORAL_METHOD",
+      "sourceScope": "Acerbo nimis §§15, 24–25",
+      "sourceAttribution": "AUTHORED_PAPAL_ENCYCLICAL",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "explaining",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "The historical schedule and mandated format are not to be imposed today without checking applicable rules.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-08-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Why should adults be taught the Catechism?",
+              "response": "Acerbo nimis insists that ignorance of Christian doctrine must be met by systematic instruction, including instruction for adults. It calls for explanations that are clear, carefully prepared and suited to those who hear them."
+            },
+            "fr": {
+              "visitor": "Pourquoi enseigner le catéchisme aux adultes ?",
+              "response": "Acerbo nimis insiste sur la nécessité de combattre l’ignorance de la doctrine chrétienne par un enseignement suivi, y compris pour les adultes. Elle demande des explications claires, soigneusement préparées et adaptées à ceux qui les écoutent."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-08",
+          "citationLabel": "Acerbo nimis §§15, 24–25",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-08-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Is the ordinary Sunday sermon sufficient?",
+              "response": "No. The encyclical distinguishes an ordinary sermon from systematic instruction in the elements of Christian doctrine. One cannot simply be taken as a substitute for the other."
+            },
+            "fr": {
+              "visitor": "Le sermon ordinaire du dimanche suffit-il ?",
+              "response": "Non. L’encyclique distingue la prédication ordinaire de l’enseignement suivi des éléments de la doctrine chrétienne. L’une ne peut être considérée simplement comme le remplacement de l’autre."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-08",
+          "citationLabel": "Acerbo nimis §§15, 24–25",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-08-T1"
+        },
+        {
+          "id": "SPX-PILOT-08-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Does this document settle exactly what class schedule every parish must follow now?",
+              "response": "It states the responsibilities and arrangements discussed in its own historical context. Its disciplinary details cannot, without further sources, be treated as the current timetable binding every parish."
+            },
+            "fr": {
+              "visitor": "Ce document fixe-t-il aujourd’hui l’horaire obligatoire de chaque paroisse ?",
+              "response": "Il expose les responsabilités et les dispositions de son contexte historique. Ses détails disciplinaires ne sauraient, sans autre source, être présentés comme l’horaire actuellement obligatoire dans chaque paroisse."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-08",
+          "citationLabel": "Acerbo nimis §§15, 24–25",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-08-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-09",
+      "caseId": "SPX-PILOT-09",
+      "domain": "PRIESTLY_SPIRITUALITY",
+      "sourceScope": "Haerent animo §§15–20, especially §§15 and 18",
+      "sourceAttribution": "AUTHORED_PAPAL_APOSTOLIC_EXHORTATION_TO_PRIESTS",
+      "sourceUrl": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "thoughtful",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "Do not transfer the text's rebukes about negligent clergy into a personal judgment on a lay visitor.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-09-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Can a priest's pastoral work replace meditation?",
+              "response": "Haerent animo teaches priests not to abandon meditation amid the duties of ministry. Active work without interior prayer may lose the spiritual depth that should sustain it."
+            },
+            "fr": {
+              "visitor": "Le ministère actif peut-il remplacer la méditation d’un prêtre ?",
+              "response": "Haerent animo enseigne aux prêtres à ne pas abandonner la méditation au milieu des devoirs du ministère. L’activité privée de prière intérieure peut perdre la profondeur spirituelle qui devrait la soutenir."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-09",
+          "citationLabel": "Haerent animo §§15–20, especially §§15 and 18",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-09-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Why is interior prayer necessary even for a busy priest?",
+              "response": "The exhortation connects a priest’s spiritual life with his ministry and warns against treating recollection as wasted time. Pastoral activity does not remove the need for union with God."
+            },
+            "fr": {
+              "visitor": "Pourquoi la prière intérieure est-elle nécessaire même à un prêtre très occupé ?",
+              "response": "L’exhortation unit la vie spirituelle du prêtre à son ministère et met en garde contre l’idée que le recueillement serait du temps perdu. L’activité pastorale ne supprime pas le besoin de l’union avec Dieu."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-09",
+          "citationLabel": "Haerent animo §§15–20, especially §§15 and 18",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-09-T1"
+        },
+        {
+          "id": "SPX-PILOT-09-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Is this a rebuke addressed to every layperson who struggles to meditate?",
+              "response": "This exhortation addresses priests and their particular obligations. It does not, by itself, authorise a verdict about the conscience or duties of a particular lay visitor."
+            },
+            "fr": {
+              "visitor": "S’agit-il d’un reproche adressé à tout laïc qui peine à méditer ?",
+              "response": "Cette exhortation s’adresse aux prêtres et à leurs obligations propres. Elle n’autorise pas, à elle seule, un jugement sur la conscience ou les devoirs d’un visiteur laïc particulier."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-09",
+          "citationLabel": "Haerent animo §§15–20, especially §§15 and 18",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-09-T1"
+        }
+      ]
+    },
+    {
+      "id": "SPX-PILOT-10",
+      "caseId": "SPX-PILOT-10",
+      "domain": "SACRAMENTAL_HISTORY",
+      "sourceScope": "Quam singulari (1910), disciplinary rules 1–4 and papal approval at close",
+      "sourceAttribution": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT",
+      "sourceUrl": "https://www.catholicculture.org/culture/library/view.cfm?recnum=5170",
+      "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+      "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+      "spriteSuggestion": "welcoming",
+      "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+      "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+      "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+      "translationReview": {
+        "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+        "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+      },
+      "renderedByApp": false,
+      "publishable": false,
+      "prohibitedInference": "This was a decree of the Congregation for the Discipline of the Sacraments approved by Pius X, not a first-person papal encyclical. Do not invent a fixed birthday or replace the parent/confessor's discernment.",
+      "turns": [
+        {
+          "id": "SPX-PILOT-10-T1",
+          "intent": "opening",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "When may a child receive First Holy Communion?",
+              "response": "The decree Quam singulari, issued by the Sacred Congregation and approved by Pius X, places the ordinary beginning at the use of reason, often about seven years old, though it can be earlier or later. The child must distinguish the Eucharist from ordinary bread and approach with appropriate devotion."
+            },
+            "fr": {
+              "visitor": "Quand un enfant peut-il faire sa première communion ?",
+              "response": "Le décret Quam singulari, publié par la Sacrée Congrégation et approuvé par Pie X, situe ordinairement cette admission à l’âge de raison, souvent vers sept ans, mais parfois plus tôt ou plus tard. L’enfant doit distinguer l’Eucharistie du pain ordinaire et s’approcher avec la dévotion requise."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-10",
+          "citationLabel": "Quam singulari (1910), disciplinary rules 1–4 and papal approval at close",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": null
+        },
+        {
+          "id": "SPX-PILOT-10-T2",
+          "intent": "source_followup",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Must the child first master the entire Catechism?",
+              "response": "The decree does not require complete mastery of the Catechism before First Communion. Religious instruction is to continue after admission."
+            },
+            "fr": {
+              "visitor": "L’enfant doit-il d’abord connaître tout le catéchisme ?",
+              "response": "Le décret n’exige pas une connaissance complète du catéchisme avant la première communion. L’instruction religieuse doit se poursuivre après cette admission."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-10",
+          "citationLabel": "Quam singulari (1910), disciplinary rules 1–4 and papal approval at close",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-10-T1"
+        },
+        {
+          "id": "SPX-PILOT-10-T3",
+          "intent": "misconception_correction",
+          "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+          "language": {
+            "en": {
+              "visitor": "Does every child automatically qualify on the seventh birthday?",
+              "response": "No. The decree speaks of the beginning of the use of reason, ordinarily around seven, not an automatic birthday rule. It also requires appropriate understanding and devotion."
+            },
+            "fr": {
+              "visitor": "Tout enfant est-il automatiquement admis le jour de ses sept ans ?",
+              "response": "Non. Le décret parle du commencement de l’usage de raison, ordinairement vers sept ans, non d’une règle automatique liée à un anniversaire. Il demande aussi une intelligence et une dévotion convenables."
+            }
+          },
+          "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+          "sourceRef": "SPX-PILOT-10",
+          "citationLabel": "Quam singulari (1910), disciplinary rules 1–4 and papal approval at close",
+          "sourceCheckedForSubstantiveClaims": false,
+          "unsupportedNewPastoralAdviceAllowed": false,
+          "editorialApproval": false,
+          "visitorRelease": false,
+          "continuationOf": "SPX-PILOT-10-T1"
+        }
+      ]
+    }
+  ]
+}
