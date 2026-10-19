@@ -12,7 +12,7 @@ const R={
  rosary:/\b(rosary|chaplet|decades?|rosaire|chapelet)\b/,
  mass:/\b(mass|messe|missa|holy sacrifice|divine sacrifice|sacrifice de la messe|sacrifice|liturg(?:y|ie)|celebran(?:t|ts)|celebrat(?:e|es|ed|ing|ion)|celebr(?:e|er|ait|ant|ent|ation)|officie|officiait)\b/,
  clergy:/\b(priest|priests|clergy|pretre|pretres|celebrant|celebrants|pastor|pasteur|cure|ministre)\b/,
- lay:/\b(lay|laity|laypeople|layperson|worshippers?|congregants?|congregation|faithful|people|parishioners?|fidele|fideles|laic|laics|paroissien|paroissiens|assistance|j|i|me|my|moi|je)\b/,
+ lay:/\b(lay|laity|laypeople|layperson|worshippers?|congregants?|congregation|faithful|people|parishioners?|fidele|fideles|laic|laics|paroissien|paroissiens|assistance)\b/,
  prayer:/\b(think|thinking|attention|reflection|reflect|participat(?:e|ion|ing)|pray|prayer|prayers|praying|meditat(?:e|es|ion|ing)|mental prayer|contemplation|prie|prier|priere|prieres|medit(?:e|er|ation)|oraison|recit(?:e|er|ation)|chapelet|rosaire)\b/,
  reception:/\b(receiv(?:e|es|ed|ing)|reception|received|recevoir|recu|recue|recevant|communie|communier)\b/,
  eucharist:/\b(communion|host|hostie|eucharist|eucharistie|blessed sacrament|corps du christ|body of christ|corps de notre seigneur|sainte table)\b/,
@@ -25,7 +25,8 @@ export function scopeLiturgicalQuestion(question,{language="en"}={}){
  const q=normalise(question);
  if(!q)return null;
  const rosary=seen(q,R.rosary),mass=seen(q,R.mass);
- const lay=seen(q,R.lay),prayer=seen(q,R.prayer),clergy=seen(q,R.clergy);
+ const firstPersonAct=/\b(may i|can i pray|can i say|i pray|my own prayers|my prayer during|je prie|puis je prier|mes prieres pendant)\b/.test(q);
+ const lay=seen(q,R.lay)||firstPersonAct,prayer=seen(q,R.prayer),clergy=seen(q,R.clergy);
  // The priest mentioned as celebrant is not necessarily the person whose
  // prayer or meditation is in question; grammatical lay subject takes priority.
  if(rosary&&mass&&!seen(q,/\b(priest s own rosary|priest himself recites|pretre lui meme recite)\b/))
