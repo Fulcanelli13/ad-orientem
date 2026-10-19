@@ -197,6 +197,27 @@ try{
   const massTitle=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim();
   assert.equal(massTitle,"Kyrie");
 
+  const organLocator=page.locator("#ao-r17-native-reader-preview [data-role='organ-permission']");
+  assert.equal(await organLocator.getAttribute("data-organ-norm"),"SILENT",
+    "Easter Vigil Kyrie must retain the pre-Gloria instrumental ban");
+  assert.equal(await organLocator.getAttribute("data-organ-observed"),"UNKNOWN",
+    "Organ permission must never assert observed sound");
+  const gloriaSequence=await page.evaluate(()=>{
+    const model=globalThis.AO_R17_NATIVE_READER_PREVIEW.model;
+    const gloria=model.cards.find(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.003");
+    return gloria?.sequence??null;
+  });
+  assert.ok(Number.isInteger(gloriaSequence),"Source-owned Gloria is required for the 1958 boundary");
+  await page.evaluate(seq=>
+    globalThis.AO_R17_NATIVE_READER_PREVIEW.showVigilMassSequence(seq),gloriaSequence);
+  assert.equal(await organLocator.getAttribute("data-organ-norm"),"PERMITTED",
+    "1958 organ ban should end at the Easter Vigil Gloria card");
+  assert.match(await organLocator.textContent(),/ORGAN PERMITTED/);
+  assert.equal(await organLocator.getAttribute("data-organ-observed"),"UNKNOWN");
+  await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.showVigilMassSequence(1));
+  assert.equal(await organLocator.getAttribute("data-organ-norm"),"SILENT",
+    "Earlier source card must not inherit later Gloria permission");
+
   const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
   const backBox=await back.boundingBox();
   assert.ok(backBox&&backBox.height>=44);
