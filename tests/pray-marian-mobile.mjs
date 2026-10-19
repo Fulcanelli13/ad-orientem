@@ -67,13 +67,16 @@ try{
  await page.waitForSelector("#aoPray435930 .aoMercyReader .aoDevoCard[data-ao-devo-card='opening']");
  await page.emulateMedia({reducedMotion:"no-preference"});
 
- assert.equal(await page.locator("#aoPray435930 .aoMercyControls button").count(),2);
+ assert.equal(await page.locator("#aoPray435930 .aoMercyControls,[data-p435930-mercy-prev],[data-p435930-mercy-next]").count(),0);
+ const mercyProgress=page.locator("#aoPray435930 [data-ao-mercy-bead-navigation] > .aoDevoProgress");
+ assert.equal(await mercyProgress.getAttribute("aria-valuemax"),"62");
+ assert.equal(await mercyProgress.getAttribute("aria-valuenow"),"1");
  assert.match(await page.locator("#aoPray435930 .aoMercyPrayer").innerText(),/Au nom du Père|In the name of the Father/);
  assert.equal(await page.locator("#aoPray435930 [data-ao-mercy-bead-navigation]").getAttribute("data-mercy-phase"),"opening");
- assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Sign of (?:the )?Cross|Signe de croix/i);
+ assert.match(await page.locator("#aoPray435930 .aoMercyBeadPosition").innerText(),/Sign of (?:the )?Cross|Signe de croix/i);
  assert.equal(await page.locator("#aoPray435930 .aoMercyKicker").count(),0,"No redundant numbered chapter kicker");
- await page.locator("#aoPray435930 [data-p435930-mercy-next]").evaluate(x=>x.click());
- assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Our Father|Notre Père/);
+ assert.match(await page.locator("#aoPray435930 [data-ao-mercy-step='1']").innerText(),/Our Father|Notre Père/,
+  "The next opening prayer must be reachable by vertical reading");
  const mercyOptions=page.locator("#aoPray435930.open [data-ao-mercy-options]");
  assert.equal(await mercyOptions.count(),1,"Canonical Divine Mercy options disclosure missing");
  assert.equal(await mercyOptions.evaluate(x=>x.open),false,"Optional settings should start collapsed");
@@ -81,7 +84,8 @@ try{
  await mercyOptions.locator(":scope > summary").click();
  assert.equal(await mercyOptions.evaluate(x=>x.open),true,"Mercy options did not respond to touch");
  await page.locator("#aoPray435930 [data-p435930-mercy-closing]").evaluate(x=>x.click());
- assert.match(await page.locator("#aoPray435930 .aoMercyControls").innerText(),/Our Father|Notre Père/);
+ assert.equal(await mercyProgress.getAttribute("aria-valuemax"),"63",
+  "Optional conclusion adds one published prayer without inventing beads");
  assert.equal(await page.locator("#aoPray435930 .aoMercyOptions button").count(),2);
  assert.equal(await mercyOptions.evaluate(x=>x.open),true,"Optional controls collapsed after repaint");
  assert.equal(await mercyOptions.locator("[data-p435930-mercy-closing]").getAttribute("aria-pressed"),"true");
