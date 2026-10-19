@@ -12,7 +12,7 @@ const hybrid=createHybridQuestionRouter(catalog,semantic);
 assert.equal(hybrid.version,HYBRID_QUESTION_RETRIEVAL_VERSION);
 assert.equal(hybrid.status,"RESEARCH_ONLY_NO_EMBEDDINGS");
 assert.equal(hybrid.topicCount,172);
-assert.equal(hybrid.conceptCount,38);
+assert.equal(hybrid.conceptCount,40);
 assert.equal(catalog.policy.canGenerateNewDoctrinalAnswer,false);
 assert.equal(catalog.pilotLimits.approvedConversationalAnswers,0);
 assert.equal(fixture.cases.length,52);
