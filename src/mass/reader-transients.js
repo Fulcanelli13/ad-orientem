@@ -14,6 +14,72 @@ export const BELL_CUE_BINDINGS=Object.freeze([
   Object.freeze({cueId:"AO.SM.C0225",label:"COMMUNION WARNING",detail:"Shortly after Agnus Dei",canonicalEventIds:Object.freeze(["MC-COM-185"])}),
 ]);
 
+// Published 1962 Canon source has five *rubric stages* in each of two
+// combined textual action cues. These records explain where the two canonical
+// sound events belong; they never manufacture new AO.SM.C#### cues or
+// claim that any bell was heard. The genuflection stroke is conditional on
+// the locally selected three-ring ceremonial pattern.
+export const CANON_ELEVATION_BELL_PHASES=Object.freeze({
+  "AO.SM.C0174":Object.freeze([
+    Object.freeze({moment:"FIRST_GENUFLECTION",canonicalEventId:"MC-CNS-030",
+      rubricEventId:"AO.RUB.C0174.01",status:"CONDITIONAL_THREE_RING_PATTERN"}),
+    Object.freeze({moment:"ELEVATION",canonicalEventId:"MC-CNS-040",
+      rubricEventId:"AO.RUB.C0174.02",status:"PRESCRIBED_ELEVATION_WINDOW"}),
+    Object.freeze({moment:"SECOND_GENUFLECTION",canonicalEventId:"MC-CNS-040",
+      rubricEventId:"AO.RUB.C0174.05",
+      status:"CONDITIONAL_THREE_RING_PATTERN_DISTRIBUTION",
+      additionalCanonicalSoundEvent:false}),
+  ]),
+  "AO.SM.C0181":Object.freeze([
+    Object.freeze({moment:"FIRST_GENUFLECTION",canonicalEventId:"MC-CNS-100",
+      rubricEventId:"AO.RUB.C0181.01",status:"CONDITIONAL_THREE_RING_PATTERN"}),
+    Object.freeze({moment:"ELEVATION",canonicalEventId:"MC-CNS-110",
+      rubricEventId:"AO.RUB.C0181.02",status:"PRESCRIBED_ELEVATION_WINDOW"}),
+    Object.freeze({moment:"SECOND_GENUFLECTION",canonicalEventId:"MC-CNS-110",
+      rubricEventId:"AO.RUB.C0181.05",
+      status:"CONDITIONAL_THREE_RING_PATTERN_DISTRIBUTION",
+      additionalCanonicalSoundEvent:false}),
+  ]),
+});
+
+/**
+ * The 64/65-card reader's single C0174/C0181 prayer cue cannot tell when the
+ * priest genuflects, elevates, or a server rings. Explicit published Canon
+ * stage observations own both channels once begun; a null observed bell
+ * MUST NOT fall back to the generic expected ring at the same cue.
+ * A settled observation continues owning the cue until Reset/next cue.
+ */
+export function resolveCanonStageBellCinematic({
+  cueId=null,expectedBell=null,expectedCinematic=null,
+  observedCanon=null,
+}={}){
+  const exact=String(cueId??"");
+  const eligible=Object.hasOwn(CANON_ELEVATION_BELL_PHASES,exact);
+  const matches=eligible && observedCanon?.cueId===exact &&
+    ["INDEPENDENT_CANON_STAGE_OBSERVED","NO_ACTIVE_CANON_STAGE"].includes(
+      String(observedCanon?.status??""));
+  if(!matches)return Object.freeze({
+    bell:expectedBell,cinematic:expectedCinematic,
+    bellOwner:expectedBell?.owner??"R17_EXACT_CUE_NONE",
+    cinematicOwner:expectedCinematic?.owner??"R17_EXACT_CUE_NONE",
+    phaseOwner:"EXPECTED_SOURCE_CUE_NOT_SOUND_DETECTION",
+    observationOverrides:false,
+  });
+  const observedNow=observedCanon?.observedNow===true;
+  return Object.freeze({
+    bell:observedNow ? observedCanon.bell??null : null,
+    cinematic:observedNow ? observedCanon.cinematic??null : null,
+    bellOwner:observedNow && observedCanon.bell
+      ? "INDEPENDENT_CANON_SERVER_OBSERVATION"
+      : "EXPLICIT_CANON_STAGE_NO_BELL_OBSERVED",
+    cinematicOwner:observedNow && observedCanon.cinematic
+      ? "INDEPENDENT_CANON_PRIEST_OBSERVATION"
+      : "EXPLICIT_CANON_STAGE_NO_ELEVATION_OBSERVED",
+    phaseOwner:"PUBLISHED_CANON_RUBRIC_STAGE_EXPLICIT_OBSERVATION",
+    observationOverrides:true,
+  });
+}
+
 const CINEMATIC_BY_CUE=Object.freeze({
   "AO.SM.C0145":Object.freeze({kind:"BELL",title:"SANCTUS BELL",subtitle:"SANCTUS",durationMs:1350}),
   "AO.SM.C0161":Object.freeze({kind:"BELL",title:"WARNING BELL",subtitle:"BEFORE CONSECRATION",durationMs:1350}),
@@ -76,6 +142,29 @@ export function validateReaderTransientBindings(events){
       if(!event)throw new Error(binding.cueId+": missing canonical bell event "+eventId);
       if(!altarBellEvents(event).length)throw new Error(eventId+": recovered bell binding lacks canonical ALTAR_BELL sound event");
       canonicalEventIds.add(eventId);
+    }
+  }
+  // The Canon's two action cues compress first genuflection and elevation.
+  // Bind distinct sound records to the published (already existing) R17
+  // substage IDs without assigning any sound to the Consecration formula.
+  for(const [cueId,phases] of Object.entries(CANON_ELEVATION_BELL_PHASES)){
+    const binding=BELL_CUE_BINDINGS.find(item=>item.cueId===cueId);
+    if(!binding||phases.length!==3 ||
+      binding.canonicalEventIds[0]!==phases[0].canonicalEventId ||
+      binding.canonicalEventIds[1]!==phases[1].canonicalEventId ||
+      phases[2].canonicalEventId!==phases[1].canonicalEventId ||
+      phases[2].additionalCanonicalSoundEvent!==false)
+      throw Error("Canon bell phase mapping differs from certified sound events: "+cueId);
+    for(const phase of phases){
+      const event=index.get(phase.canonicalEventId);
+      const sound=event&&altarBellEvents(event)[0];
+      if(!sound || (phase.moment==="FIRST_GENUFLECTION" &&
+        sound.legal_status!=="CEREMONIAL_IMPLEMENTATION_IF_THREE_RING_PATTERN") ||
+        (phase.moment==="ELEVATION" && sound.legal_status!=="PRESCRIBED") ||
+        (phase.moment==="SECOND_GENUFLECTION" &&
+          (!sound.permitted_patterns?.includes("THREE_RINGS") ||
+           phase.status!=="CONDITIONAL_THREE_RING_PATTERN_DISTRIBUTION")))
+        throw Error("Canon bell phase authority differs: "+phase.canonicalEventId);
     }
   }
   const actionEventIds=new Set();
@@ -164,6 +253,7 @@ export function createReaderTransientController({events,prepared}={}){
         label:binding.label,detail:binding.detail,cueId:id,
         canonicalEventIds:binding.canonicalEventIds,
         soundEvents:Object.freeze(soundEvents),
+        phases:CANON_ELEVATION_BELL_PHASES[id]??null,
         presentationHoldMs:presentationSpec?.kind==="ELEVATION" ? 3600 : (presentationSpec?.durationMs??0),
         transient:true,owner:"R17_RECOVERED_CUE_CANONICAL_SOUND_EVENT",
       });
