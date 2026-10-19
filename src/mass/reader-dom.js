@@ -426,6 +426,13 @@ const SHELL_STYLE = `
   padding:11px 16px 13px;border:1px solid color-mix(in srgb,var(--ao-mass-accent) 38%,transparent);border-radius:16px;
   background:var(--ao-mass-panel);box-shadow:0 15px 46px rgba(0,0,0,.34);color:#f0f1eb;overflow:hidden
 }
+.ao-rite-music-note{
+  display:block;margin:0 auto 9px;max-width:38em;text-align:center;
+  font:600 9px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.12em;color:var(--ao-mass-accent-text);
+  text-transform:uppercase;opacity:.78
+}
+.ao-rite-music-note[hidden]{display:none!important}
 .ao-schola-dock[data-active="false"]{display:none}
 /* Retain the manually collapsed SHOW handle between audible Schola cues. */
 .ao-schola-dock[data-active="false"][data-collapsed="true"]{display:block}
@@ -1579,6 +1586,10 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
   }) : (previous.paragraphs ?? Object.freeze([]));
 
   const schola = persist(moment.schola, previous.schola);
+  // Special-rite musical metadata is separate from the ordinary Schola
+  // performance clock. It never supplies lyrics, tempo, or inferred sound.
+  const riteMusic=moment.cardUpdate===false
+    ? (previous.riteMusic??null) : (moment.riteMusic??null);
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
   const sharedScholaControls=moment.sharedScholaControls===true ||
     (moment.cardUpdate===false && previous.sharedScholaControls===true);
@@ -1621,6 +1632,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     sacredMinister:projectCertifiedSolemnMinisterRubric(moment.sacredMinister),
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
+    riteMusic,
     // An unresolved sung Benedictus requires a real visible action; never
     // suppress the control just because a *priest* paragraph contains the
     // same words as a Schola part that has NOT yet begun.
@@ -1830,6 +1842,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <main class="ao-card-viewport">
       <article class="ao-prayer-card" data-role="card" tabindex="0">
         <h1 class="ao-prayer-title" data-role="card-title">${section}</h1>
+        <p class="ao-rite-music-note" data-role="rite-music" hidden aria-live="off"></p>
         <div class="ao-prayer-body" data-role="paragraphs"></div>
       </article>
     </main>
@@ -3052,6 +3065,17 @@ export function createReaderDomAdapter({
       if(active)button.setAttribute("aria-current","true");else button.removeAttribute?.("aria-current");
     }
     setText(root,"card-title",current.cardTitle);
+    const musicNote=root.querySelector('[data-role="rite-music"]');
+    if(musicNote){
+      const metadata=current.riteMusic?.musicStatus==="EXPECTED_NOT_OBSERVED"
+        ? current.riteMusic : null;
+      musicNote.hidden=!metadata;
+      musicNote.textContent=metadata?.label??"";
+      musicNote.dataset.musicOwner=metadata?.sourceOwner??"NONE";
+      musicNote.dataset.musicEventIds=metadata?.eventIds?.join(" ")??"";
+      musicNote.setAttribute?.("aria-label",metadata
+        ? metadata.label+". "+metadata.description : "No indexed music event");
+    }
     setText(root,"progress",current.progress);
     setText(root,"priest-position",textValue(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition));
     setText(root,"priest-action",textValue(current.priestAction));
