@@ -18,17 +18,18 @@ function verifiedOrdinaryContext(resolvedMass){
   // The product does not yet guarantee a universally source-owned season
   // field. Trust only an explicitly verified 1962 plan field, never date/title.
   const declared=resolvedMass?.provenance?.organ1962;
-  const season=declared?.verified===true &&
-    declared?.source==="LITURGICAL_PLAN_1962" &&
+  const verified=declared?.verified===true &&
+    declared?.source==="LITURGICAL_PLAN_1962";
+  const season=verified &&
     SEASONS.has(String(declared.season??"").toUpperCase())
     ? String(declared.season).toUpperCase() : null;
   if(!requiem&&!season)return null;
   return {
     season,requiem,
-    triduum:declared?.verified===true && declared?.triduum===true,
-    septEmberFerial:declared?.verified===true && declared?.septEmberFerial===true,
-    exceptionalFeastConfirmed:declared?.verified===true &&
-      declared?.exceptionalFeastConfirmed===true,
+    triduum:verified && declared.triduum===true,
+    septEmberFerial:verified && declared.septEmberFerial===true,
+    exceptionalFeastConfirmed:verified &&
+      declared.exceptionalFeastConfirmed===true,
   };
 }
 
