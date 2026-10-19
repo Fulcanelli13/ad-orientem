@@ -292,6 +292,37 @@ function monthIndexList(monthId,selected,view){
       :view==="sanctorale"
         ?L("Observed saints and fixed-cycle celebrations for this month.","Saints et célébrations du cycle fixe effectivement observés ce mois.")
         :L("Traditional devotions and novena starts for dates in this month.","Dévotions traditionnelles et débuts de neuvaines aux dates de ce mois.");
+
+  if(view==="temporale"){
+    const entries=rows.map(x=>`<li class="aoCalMonthTimeEntry${x.sunday?" sunday":""}" style="--month-accent:${esc(x.accent)}">
+      <button type="button" data-cal-month-index-date="${esc(x.date)}" class="aoCalMonthTimeButton">
+        <time datetime="${esc(x.date)}">${esc(displayDate(x.date))}</time>
+        <span><strong>${esc(x.title)}</strong><small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small></span>
+        <span aria-hidden="true">›</span>
+      </button>
+    </li>`).join("");
+    const unclassified=unknownRows.length?`<details class="aoCalMonthUnclassified"><summary>${esc(L("Unclassified days · "+unknownRows.length,"Jours non classés · "+unknownRows.length))}</summary>
+      <p>${esc(L("These resolved days have not been classified as Temporale or Sanctorale by their source identity.","L'identité des sources ne permet pas de classer ces jours résolus comme temporal ou sanctoral."))}</p>
+      ${unknownRows.map(x=>`<button type="button" data-cal-month-index-date="${esc(x.date)}">${esc(displayDate(x.date))} · ${esc(x.title)}</button>`).join("")}
+    </details>`:"";
+    return `<section class="aoCalMonthIndex aoCalMonthTimelineSurface" data-cal-month-index="temporale">
+      <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
+      ${status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
+      ${entries?`<ol class="aoCalMonthTimeline">${entries}</ol>`:`<div class="aoCalMonthEmpty">${esc(status==="loading"?L("Resolving the month…","Résolution du mois…"):L("No confirmed Temporale days in this month.","Aucun jour confirmé du temporal ce mois."))}</div>`}
+      ${unclassified}
+    </section>`;
+  }
+  if(view==="major"){
+    const cards=rows.map((x,i)=>`<button type="button" data-cal-month-index-date="${esc(x.date)}" class="aoCalHybridMajor${i<2?" featured":""}" style="--month-accent:${esc(x.accent)}">
+      <span class="aoCalHybridDate">${esc(displayDate(x.date))}</span><span class="aoCalHybridTitle">${esc(x.title)}</span>
+      <small>${esc([x.rank,x.colour].filter(Boolean).join(" · "))}</small>
+    </button>`).join("");
+    return `<section class="aoCalMonthIndex aoCalMonthMajorEditorial" data-cal-month-index="major">
+      <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
+      ${status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
+      <div class="aoCalHybridMajors">${cards||`<div class="aoCalMonthEmpty">${esc(status==="loading"?L("Resolving this month…","Résolution du mois…"):L("No resolved principal celebrations.","Aucune célébration principale résolue."))}</div>`}</div>
+    </section>`;
+  }
   return `<section class="aoCalMonthIndex" data-cal-month-index="${view}">
     <div class="aoCalMonthIndexHead"><small>${esc(label.toUpperCase())}</small><p>${esc(explanation)}</p></div>
     ${rows.length&&status==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some liturgical days are unavailable; this list is incomplete.","Certains jours liturgiques sont indisponibles ; cette liste est incomplète."))}</p>`:""}
