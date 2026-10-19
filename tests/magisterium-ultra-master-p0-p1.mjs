@@ -201,4 +201,54 @@ for(const b of bridges.massExplorerContextCandidates){
  assert.equal(b.approvedForUI,false);
  for(const p of b.evidence)assert.ok(claimPassageIds.has(p));
 }
+
+const b7qa=await read("data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json");
+assert.equal(b7qa.schema,"AO_MAGISTERIUM_PIUS_X_1912_QA_CROSSWALK_V1");
+assert.equal(b7qa.records.length,28);
+assert.equal(b7qa.metrics.previousQuestions,8);
+assert.equal(b7qa.metrics.addedQuestions,20);
+assert.equal(b7qa.metrics.directPairs,24);
+assert.equal(b7qa.metrics.contextOnlyPairs,4);
+assert.equal(b7qa.metrics.originalPrintCollated,0);
+assert.equal(b7qa.metrics.published,0);
+const qidSet=new Set(),reviewMap=new Map();
+for(const q of b7qa.records){
+ assert.ok(!qidSet.has(q.questionId));qidSet.add(q.questionId);
+ assert.ok(qids.has(q.questionId),q.questionId);
+ assert.equal(q.questionId,"PX1912-Q"+String(q.questionNumber).padStart(3,"0"));
+ assert.ok(q.englishWitnessUrl.startsWith("https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/"));
+ assert.ok(q.italianWitnessUrl.startsWith("https://"));
+ assert.ok(idMap.has(q.passageId),q.passageId);
+ assert.equal(q.printOriginalCollated,false);
+ assert.equal(q.englishRightsCleared,false);
+ assert.equal(q.publiclyUsable,false);
+ reviewMap.set(q.questionId,q);
+}
+const b7Pius=new Set(bridges.bridges.flatMap(g=>g.pius));
+assert.equal(b7Pius.size,28);
+assert.deepEqual([...b7Pius].sort(),[...qidSet].sort());
+assert.equal(bridges.metrics.uniquePiusQuestionIds,28);
+assert.equal(bridges.metrics.b7BilingualFullAnswerReviews,28);
+assert.equal(bridges.metrics.approvedPublishedLinks,0);
+for(const g of bridges.bridges)for(const ref of g.pius){
+ const row=reviewMap.get(ref);assert.ok(row);
+ assert.equal(row.group,g.id);
+ const owner=g.originalOwnerRefs.find(o=>o.owner==="LTF_PIUS_X_CATECHISM_INDEX"&&o.ref===ref);
+ assert.equal(owner.status,"FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED");
+ assert.equal(owner.precision,row.precision);
+}
+assert.equal(reviewMap.get("PX1912-Q355").italianNumberIssue!==null,true);
+assert.equal(reviewMap.get("PX1912-Q359").precision,"PASTORAL_METHOD_ONLY");
+assert.equal(reviewMap.get("PX1912-Q363").precision,"CONTRAST_ONLY");
+const editions=await read("data/learn/magisterium-denzinger-edition-bibliography.v1.json");
+assert.equal(editions.schema,"AO_MAGISTERIUM_DENZINGER_EDITION_BIBLIOGRAPHY_V1");
+assert.equal(editions.editions.length,4);
+assert.equal(editions.metrics.printedEntryNumbersChecked,0);
+assert.equal(editions.metrics.approvedCrosswalks,0);
+for(const edition of editions.editions){
+ assert.ok(edition.url.startsWith("https://"));
+ assert.equal(edition.editionEntryConcordanceChecked,false);
+ assert.equal(edition.rightsCleared,false);
+}
+
 console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 106 provisional links; 61 nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
