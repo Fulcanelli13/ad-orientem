@@ -69,12 +69,12 @@ for(let i=1;i<=4;i++){
   const original=source(vigil,id).paragraphs;
   const pages=projectSpecialRiteReadingPages(id,original);
   assert.deepEqual(pages.flatMap(p=>p.rows),original,id+" source was mutated");
-  assert.ok(pages.slice(0,-1).every(p=>p.rows.every(row=>/-T\\d+$/.test(row.id))),
+  assert.ok(pages.slice(0,-1).every(p=>p.rows.every(row=>/-T\d+$/.test(row.id))),
     id+" prophecy paragraphs mixed with the canticle");
   if(i>1){
     const last=pages.at(-1).rows;
     assert.match(last[0].id,/-CIT$/);
-    assert.ok(last.slice(1).every(row=>/-CANT\\d+$/.test(row.id)));
+    assert.ok(last.slice(1).every(row=>/-CANT\d+$/.test(row.id)));
   }
 }
 const exsSource=source(vigil,"EV-EXS-200").paragraphs;
