@@ -71,10 +71,23 @@ for(const scene of gate.scenes){
       assert.ok(blocks.has(id),scene.id+"/"+step.id+" unknown block "+id);
       for(const presentation of [canonical.presentationModel,review.presentationModel]){
         const matches=presentation.cards.filter(card=>
-          step.cardSourceSections.includes(card.sourceSectionId??card.sectionId) &&
           (card.blocks??[]).some(block=>block.blockId===id));
         assert.ok(matches.length>0,
           scene.id+"/"+step.id+": "+presentation.totalCards+"-card model missing "+id);
+        // Canon cards carry their own 14-stage source-map identity; some
+        // reader projections also retain the legacy 30-card parent identity.
+        // Verify that identity against the canonical Canon map rather than
+        // assuming all presentations expose the same sourceSectionId field.
+        const canonIds=step.cardSourceSections.filter(x=>x.startsWith("AO.CANON."));
+        if(canonIds.length){
+          assert.ok(data.canonSourceMap.segments.some(seg=>
+            canonIds.includes(seg.id)&&seg.blockIds.includes(id)),
+            scene.id+"/"+step.id+": Canon map does not own "+id);
+        }else{
+          assert.ok(matches.some(card=>step.cardSourceSections.some(s=>
+            s===card.sourceSectionId||s===card.sectionId)),
+            scene.id+"/"+step.id+": ordinary section owner mismatch "+id);
+        }
       }
     }
     for(const cueId of step.sourceCueIds){
