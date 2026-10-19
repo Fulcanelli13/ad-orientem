@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -391,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "BANK_SURVEY_BATCH02_16_PRIEST_POSITIONS_ACTIONS",
+  "nextReview": "BANK_SURVEY_B02_REPLACEMENT_ALTERNATIVES_FOR_B_D_H_I_J",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -715,6 +715,71 @@
         }
       ],
       "untouched": "All remaining Batch 1 icons retain prior decisions; L and P remain unreviewed",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B02",
+      "label": "Frozen V4 and 19 Oct priest positions/actions — 16 images",
+      "status": "PARTIAL_WITH_REPLACEMENT_REQUESTS",
+      "recordedDate": "2026-10-19",
+      "userStatement": "Reject A, C. B, D, H, I, J needs to be replaced.. next batch show me their alternatives",
+      "decisions": [
+        {
+          "letter": "A",
+          "candidate": "steps",
+          "assetOrigin": "FROZEN_V4",
+          "label": "Ascending steps",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "C",
+          "candidate": "altar",
+          "assetOrigin": "FROZEN_V4",
+          "label": "At altar",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "B",
+          "candidate": "rail",
+          "label": "Communion rail",
+          "assetOrigin": "FROZEN_V4",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        },
+        {
+          "letter": "D",
+          "candidate": "people",
+          "label": "Facing people",
+          "assetOrigin": "FROZEN_V4",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        },
+        {
+          "letter": "H",
+          "candidate": "ao_at_epistle_side",
+          "label": "At Epistle side",
+          "assetOrigin": "19_OCT_SVG",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        },
+        {
+          "letter": "I",
+          "candidate": "ao_at_gospel_side",
+          "label": "At Gospel side",
+          "assetOrigin": "19_OCT_SVG",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        },
+        {
+          "letter": "J",
+          "candidate": "ao_read",
+          "label": "Reads missal",
+          "assetOrigin": "19_OCT_SVG",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        }
+      ],
+      "unmentionedPolicy": "All other Batch 2 candidates remain at their preceding approval or held state; silence does not constitute approval.",
       "runtimeMutationAllowed": false
     }
   ]
