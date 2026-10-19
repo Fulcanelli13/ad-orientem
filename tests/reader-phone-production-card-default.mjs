@@ -53,7 +53,7 @@ try{
     curator:node?.dataset.r17CuratedReview,
     title:app?.getCurrentCard?.()?.title,
     progress:node?.querySelector('[data-role="progress"]')?.textContent??"",
-    navOpacity:parseFloat(getComputedStyle(node.querySelector('[data-reader-nav="next"]')).opacity),
+    navCount:node?.querySelectorAll('[data-reader-nav]').length??null,
     progressOpacity:parseFloat(getComputedStyle(node.querySelector('[data-role="progress"]')).opacity),
     overflow:document.documentElement.scrollWidth>innerWidth+1};
   });
@@ -62,7 +62,7 @@ try{
   assert.equal(result.model,option.cards,option.label);
   assert.equal(result.curator,option.curated,option.label);
   if(option.curated==="true"||option.rite){
-    assert.ok(result.navOpacity>=.59,option.label+" touch arrows must be discoverable in low light");
+    assert.equal(result.navCount,0,option.label+" should not render obsolete navigation arrows");
     assert.ok(result.progressOpacity>=.79,option.label+" card counter must remain legible in low light");
   }
   if(option.rite){
@@ -96,8 +96,13 @@ try{
       animations:"disabled"});
     const traversed=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW,seen=[],errors=[];
-      const next=document.querySelector('[data-reader-nav="next"]');
-      if(!next)throw new Error("R20 next navigation absent");
+      const move=dir=>{
+        const card=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+        if(!card)throw new Error("R20 reading card absent");
+        card.dispatchEvent(new KeyboardEvent("keydown",{
+          key:dir==="previous"?"ArrowLeft":"ArrowRight",bubbles:true,cancelable:true,
+        }));
+      };
       for(let n=0;n<20;n++){
         const a=api.getAspergesState(),special=api.getNativeEventState()?.specialRite;
         if(special!=="ASPERGES")break;
@@ -112,7 +117,7 @@ try{
           errors.push("invented source cue on action-only stage "+a.card?.id);
         seen.push({record:a.card?.id,sourceRecords:a.card?.sourceRecordIds??[],
           formula:a.formulaState.formula,guideOnly:onlyGuide});
-        next.click();
+        move("next");
       }
       const after={title:api.getCurrentCard()?.title,progress:
         document.querySelector('[data-role="progress"]')?.textContent||"",
@@ -141,9 +146,13 @@ try{
     // Return to the actual preceding rite and back without losing the card model.
     const roundtrip=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
-      document.querySelector('[data-reader-nav="previous"]').click();
+      const move=dir=>document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card")
+        ?.dispatchEvent(new KeyboardEvent("keydown",{
+          key:dir==="previous"?"ArrowLeft":"ArrowRight",bubbles:true,cancelable:true,
+        }));
+      move("previous");
       const returned={id:api.getCurrentCard()?.id,rite:api.getNativeEventState()?.specialRite};
-      document.querySelector('[data-reader-nav="next"]').click();
+      move("next");
       return {returned,title:api.getCurrentCard()?.title,
         progress:document.querySelector('[data-role="progress"]')?.textContent??""};
     });
