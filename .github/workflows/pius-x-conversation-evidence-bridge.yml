@@ -181,8 +181,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git fetch --no-tags --depth=1 origin 'f5bdf04a7f2e88cadebf959def6333308be2138d'
-          test "$(git rev-parse FETCH_HEAD)" = "f5bdf04a7f2e88cadebf959def6333308be2138d" || exit 1
+          git fetch --no-tags --depth=1 origin '66a0dbd041e7f3f8c8b57f317c5c21286fa8287d'
+          test "$(git rev-parse FETCH_HEAD)" = "66a0dbd041e7f3f8c8b57f317c5c21286fa8287d" || exit 1
           for file in \
             src/learn/living-church-shared-question-router.js \
             src/learn/living-church-hybrid-question-router.js \
