@@ -6,6 +6,7 @@
 import {historicalFocusCandidates,historicalConfirmedContinuation,validateHistoricalFocus} from "./living-church-historical-focus.js";
 import {screenPersonalSpiritualVerdict} from "./living-church-personal-verdict-gate.js";
 import {scopeLiturgicalQuestion} from "./living-church-liturgical-source-scope.js";
+import {piusSourceConceptCandidates,validatePiusSourceConceptRegistry} from "./living-church-pius-x-source-concepts.js";
 export const SHARED_QUESTION_ROUTER_VERSION="AO_LIVING_CHURCH_ROUTER_PILOT_V1";
 
 const accents=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -36,7 +37,7 @@ function present(topic,lang){
   relatedTopics:(topic.relatedTopics||[]).map(x=>frozen({...x})),
   approvedReply:false,answerText:null});
 }
-export function createSharedQuestionRouter(catalog,{historicalPointers=null}={}){
+export function createSharedQuestionRouter(catalog,{historicalPointers=null,sourceConceptRegistry=null}={}){
  if(historicalPointers&&(historicalPointers.schema!=="AO_LIVING_CHURCH_PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1"
     ||historicalPointers.status!=="RESEARCH_ONLY_LINKED_HISTORICAL_DOCUMENT_LOCATORS_NOT_APPROVED_REPLIES"
     ||!Array.isArray(historicalPointers.records)))
@@ -66,6 +67,7 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
   ids.add(t.id);
  }
  validateHistoricalFocus(catalog.topics);
+ if(sourceConceptRegistry)validatePiusSourceConceptRegistry(sourceConceptRegistry,catalog);
  const byId=new Map(catalog.topics.map(t=>[t.id,t]));
  const historicalDoc=topic=>{
   if(topic.category!=="pius_historical_source_navigation")return null;
@@ -207,6 +209,27 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
     "De quelle question historique parlez-vous ?":"Which historical subject did you mean?",
    options:focused.slice(0,catalog.pilotLimits.maxClarifications).map(t=>present(t,lang)),
    answerText:null,approvedReply:false});
+
+  // Only source-owned concepts can nominate the historically exact passage.
+  // This cannot run ahead of personal-verdict and liturgical role/moment gates.
+  // Multiple plausible historical passages require explicit clarification.
+  const conceptHits=piusSourceConceptCandidates(input,sourceConceptRegistry,{language:lang});
+  if(conceptHits.length===1){
+   const hit=conceptHits[0],topic=byId.get(hit.topicId);
+   if(!topic||!topic.sourceRefs.some(r=>r.owner==="PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1"
+     &&r.ref===hit.sourceRef))
+    return frozen({kind:"no_coverage",reason:"UNVERIFIED_CONCEPT_SOURCE_OWNER",
+     originalQuestion:input,approvedReply:false,answerText:null});
+   return resolve(topic,input,{...fixed,matchEvidence:frozen({
+    basis:"DOCUMENTARY_TWO_FACET_CONCEPT",concept:hit.concept,score:null})});
+  }
+  if(conceptHits.length>1)return frozen({kind:"clarify",
+   reason:"MULTIPLE_VERIFIED_HISTORICAL_CONCEPTS",originalQuestion:input,
+   language:lang,clarification:lang==="fr"?
+    "À quelle question doctrinale faites-vous référence ?":"Which doctrinal question do you mean?",
+   options:conceptHits.slice(0,catalog.pilotLimits.maxClarifications)
+     .map(hit=>present(byId.get(hit.topicId),lang)),
+   approvedReply:false,answerText:null});
   // A previous *confirmed* topic can license a narrow documentary follow-up.
   // Merely attaching a previous lexical guess may not influence source ownership.
   if(focused.length===0&&opts.context?.confirmedActiveTopicId){
