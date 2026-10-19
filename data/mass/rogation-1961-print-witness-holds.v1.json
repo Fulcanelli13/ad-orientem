@@ -1,7 +1,7 @@
 {
   "schema": "AO_ROGATION_1961_PRINT_WITNESS_HOLDS_V1",
   "version": "2026-10-19",
-  "status": "TARGETED_PRINT_WITNESS_RECONCILIATION_PENDING_1962_EDITION",
+  "status": "THREE_TARGETED_DEFECTS_PATCHED_PENDING_COMPLETE_1962_PRINT_CERTIFICATION",
   "authority": {
     "rubric": "Missale Romanum 1962, Rubricae generales 82-90",
     "rubricUrl": "https://la.wikisource.org/wiki/Missale_Romanum_1962",
@@ -83,8 +83,8 @@
     },
     {
       "stage": "ROG-R05",
-      "sourceLeafCount": 17,
-      "first": "ROG-R05-O1",
+      "sourceLeafCount": 18,
+      "first": "ROG-R05-OR",
       "last": "ROG-R05-F7",
       "printedPageStart": 840,
       "printedPageEnd": 840
@@ -110,9 +110,16 @@
       "beforeSourceRowId": "ROG-R05-O1",
       "printLocator": "p. 840, 'Orémus.' immediately after Dominus vobiscum / Et cum spiritu tuo, before the first collect",
       "printedLatin": "Oremus.",
-      "donorDisposition": "MISSING_IN_SOURCE_ROWS",
+      "donorDisposition": "RESTORED_IN_CANONICAL_SOURCE_AND_READER_R05_INVITATION",
       "expectedAction": "Check 1962 procession authority, add one source-owned Oremus cue at correct ceremony boundary without changing native six-event graph.",
-      "releaseDisposition": "BLOCKED_FOR_ACTUAL_RITE_TEXT_COMPLETENESS"
+      "releaseDisposition": "BLOCKED_UNTIL_COMPLETE_1962_RITE_SOURCE_CERTIFICATION",
+      "implementation": {
+        "status": "APPLIED_IN_DRAFT_AWAITING_1962_EDITION_CERTIFICATION",
+        "sourcePath": "postLitany.oremus",
+        "readerRow": "ROG-R05-OR",
+        "sharedOrdinaryCue": "AO.SM.C0036",
+        "sourceRecordId": "ROG-END-010"
+      }
     },
     {
       "id": "ROG-1961-PRINT-HOLD-02",
@@ -124,9 +131,16 @@
       "printLocator": "p. 839, 'Pater noster, in silence.'",
       "printedLatin": "Pater noster.",
       "witnessInstruction": "in silence",
-      "donorDisposition": "TEXT_PRESENT_BUT_VOICE_ROLE_METADATA_UNEXPRESSED",
+      "donorDisposition": "SILENT_VOICE_METADATA_NOW_PRESENT",
       "expectedAction": "Resolve rubrical applicability to 1962 and mark this Pater noster as silent, without changing other Pater noster recitations.",
-      "releaseDisposition": "BLOCKED_FOR_ACCURATE_VOICE_CUE"
+      "releaseDisposition": "BLOCKED_UNTIL_COMPLETE_1962_RITE_SOURCE_CERTIFICATION",
+      "implementation": {
+        "status": "APPLIED_IN_DRAFT_AWAITING_1962_EDITION_CERTIFICATION",
+        "sourcePath": "postLitany.pater",
+        "readerRow": "ROG-R04-PN",
+        "voice": "SILENT",
+        "proseGuide": "Updated 1961 witness-specific stage guide"
+      }
     },
     {
       "id": "ROG-1961-PRINT-HOLD-03",
@@ -140,9 +154,18 @@
       "donorLatinFragment": "Pontifici N.",
       "independentSecondaryWitness": "https://la.wikisource.org/wiki/Litaniae_Sanctorum",
       "conflictingSecondaryWitness": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1355",
-      "donorDisposition": "TEXT_DIFFERS_FROM_PHOTOGRAPHED_WITNESS; SECONDARY_EDITIONS_NOT_UNANIMOUS",
+      "donorDisposition": "PRINT_WITNESS_PONTIFICI_NOSTRO_NOW_MATCHES_DONOR",
       "expectedAction": "Adjudicate against edition-qualified 1962 procession source, do not blindly insert or delete 'nostro'.",
-      "releaseDisposition": "BLOCKED_FOR_EDITION_DECISION"
+      "releaseDisposition": "BLOCKED_UNTIL_COMPLETE_1962_RITE_SOURCE_CERTIFICATION",
+      "implementation": {
+        "status": "APPLIED_IN_DRAFT_AWAITING_1962_EDITION_CERTIFICATION",
+        "sourcePath": "postLitany.orations.4",
+        "readerRow": "ROG-R05-O5",
+        "amendedLatinFragment": "Pontifici nostro N.",
+        "previouslyRead": "Pontifici N.",
+        "other1962RiteComparison": "https://ccregis.org/psalter_lt.pdf",
+        "caveat": "This is a 1962-rite compilation and 1961 printed chant corroboration, not a page-certified 1962 Missal facsimile."
+      }
     }
   ],
   "observations": [
@@ -163,7 +186,7 @@
     }
   ],
   "summary": {
-    "sourceRows": 186,
+    "sourceRows": 187,
     "litanyInvocations": 112,
     "printedPagesInspected": 6,
     "openDiscrepancies": 3,
@@ -171,6 +194,8 @@
     "knownTranslationGaps": null,
     "sourceRowsCertifiedAgainst1962Print": null,
     "publicationAllowed": false,
-    "next": "Resolve three specific print holds with correct 1962 authority, then collate full Latin and edition-bound EN/FR witnesses; no fresh translation before canonical-owner search."
+    "next": "Review complete 1962 edition before publication; exact Latin source, roles, and all EN/FR remain otherwise unapproved, PR stays draft.",
+    "implementedPrepublicationCorrections": 3,
+    "releaseSourceCertificationHolds": 3
   }
 }
