@@ -221,3 +221,20 @@ The four wrong-specific shared-router routes were: Pope's policy follow-up `E su
 This is a **source-owner reconciliation and executable routing baseline**, not a passed semantic-retrieval release threshold. Never add the 48 held-out text variants into the router catalog merely to obtain higher test scores. Improve query understanding with independent negative/compound French and English probes, robust intent anchoring and minimum source-scope similarity while preserving all existing source/answer safety gates. Future source navigation must actually resolve the source pointer to its historical URL through the owner's bridge; `learn.catechism` is not itself the original encyclical or Salzano document.
 
 PR #1443 continues to own routing, PR #1458 continues to own question-level historical source research. Neither PR changes the published avatar or the existing Mass reader.
+
+
+## Source-aware historical-document navigation and confirmed continuations
+
+The shared and symbolic-hybrid question routers now use one common **source-aware historical intent gate** for the twelve PR #1458 St Pius X questions. No new interpreter or answer-generation system was created.
+
+- Historical source-navigation topics carry **two independent bilingual facets** identifying both the historical subject and the requested doctrinal/pastoral scope. Matching an isolated word such as “priest”, “sin” or “prayer” is insufficient. The facts and identifiers remain owned by original historical document records.
+- A history-specific match carries `navigationRoute:"historical.external_document"` and `documentNavigation:{url,sourceLocator,witnessClassification,sourceRef,approvedReply:false}`; the URL is taken exclusively from the original pointer registry. Without this registry, the system returns `HISTORICAL_SOURCE_POINTER_NOT_RESOLVED`, not the general Catechism screen.
+- A textual match normally **requires question confirmation**. Historical contextual follow-ups may inherit the source only with `context.confirmedActiveTopicId` and a matching documentary continuation cue. Merely returning a guessed topic as `activeTopicId` does **not** confirm it.
+- A held personal-life or spiritual-diagnosis case continues to return `TOPIC_SOURCE_GAP` and no speech. Cross-character transfers still need explicit visitor acceptance and confirmed question intent; altered historical URLs are rejected.
+- A historical source topic proposed by generic lexical similarity without independently matching the source scope will **abstain**, except exact catalog-authored variants. The clergy-meditation topic requires mental/interior-prayer language instead of treating incidental “priest + prayer” as sufficient.
+
+The [router-owner CI](https://github.com/Fulcanelli13/ad-orientem/pull/1443) tests fifteen additional bilingual documentary source queries, four held personal-answer questions, source URL integrity, three confirmed-context follow-ups, unconfirmed-context non-escalation and forged URL rejection. All are research tests, not live avatar rendering.
+
+**Repeated earlier English diagnostic (48 utterances, not independent):** pinned source-aware router comparison in [PR #1458](https://github.com/Fulcanelli13/ad-orientem/pull/1458) reported **25/48 correct exact historical source navigation, 15 safe unresolved, 8 held and 0 wrong-source** for the shared router; **26/48 correct, 14 safe unresolved, 8 held and 0 wrong-source** for the hybrid router. This is a regression on already-inspected queries, **not a general recall or accuracy estimate**, and the confirmed-context simulation differs from the earlier unconfirmed follow-up evaluation.
+
+The source bridge is now precise enough for further integration work, but still **research-only**: the app must explicitly consume `documentNavigation.url` before users can open the original page from the visual novel. The fact that a document opens does not authorize a historically voiced answer, theological approval, or application of historical disciplinary rules as present-day law.
