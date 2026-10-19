@@ -3,10 +3,11 @@ const STYLE_ID="ao-app-design-system";
 
 const CSS=`
 :root{
-  --ao-font-display:var(--font-display,Georgia,"Times New Roman",serif);
-  --ao-font-body:var(--font-body,Georgia,"Times New Roman",serif);
+  --ao-font-display:var(--font-liturgical,"EB Garamond",Georgia,serif);
+  --ao-font-brand:var(--font-display,"Cinzel",Georgia,serif);
+  --ao-font-body:var(--font-liturgical,"EB Garamond",Georgia,serif);
   --ao-font-liturgical:var(--font-liturgical,var(--font-body,Georgia,"Times New Roman",serif));
-  --ao-font-ui:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ao-font-ui:var(--font-liturgical,"EB Garamond",Georgia,serif);
 
   --ao-bg-canvas:var(--bg,#080c12);
   --ao-surface-1:var(--surface-1,#101821);
@@ -30,12 +31,14 @@ const CSS=`
   --ao-topbar-blur:16px;
 
   /* Shared UI type scale. Do not create new micro-sizes in feature CSS. */
-  --ao-type-ui-xs:11px;
-  --ao-type-ui-sm:12px;
-  --ao-type-ui:14px;
-  --ao-type-body:16px;
-  --ao-type-prayer:clamp(16px,2.4vw,20px);
-  --ao-type-prose:16px;
+  --ao-type-ui-xs:13px;
+  --ao-type-ui-sm:14px;
+  --ao-type-ui:16px;
+  --ao-type-body:18px;
+  --ao-type-prayer:clamp(20px,5.65vw,24px);
+  --ao-type-prose:18px;
+  --ao-type-action-primary:17px;
+  --ao-type-action-secondary:16px;
   --ao-type-speaker-weight:650;
 
   /*
@@ -190,6 +193,57 @@ const CSS=`
 .aoSourceDisclosure a{
   color:var(--ao-liturgical-accent);
   text-underline-offset:2px;
+}
+
+
+/*
+ * Approved app-wide A2 hybrid action grammar:
+ * primary actions use EB Garamond small caps; secondary actions stay quiet.
+ * Ordinary display roles use EB Garamond. Cinzel remains the brand font.
+ * No font-variant or text-transform rule is applied to liturgical text.
+ */
+:where(.homeScreen,#ao-calendar-modular-root,#ao-learn-modular-root,
+  #ao-settings-modular-root,#ao-find-modular-root,#aoPray435930,
+  #aoPrayerBookRoot,#ao-scripture-overlay,.aoScriptureLibrary,
+  .aoHeritageSurface,.aoApostolateSurface,.aoApostolateRoot,
+  .prepareScreen,.thanksgivingScreen,.ao-reader-shell,#ao-global-ribbon)
+  :is(button,[role="button"],input,select,textarea){
+  font-family:var(--ao-font-ui)!important;
+}
+:where(.homeScreen,#ao-calendar-modular-root,#ao-learn-modular-root,
+  #ao-settings-modular-root,#ao-find-modular-root,#aoPray435930,
+  #aoPrayerBookRoot,#ao-scripture-overlay,.aoScriptureLibrary,
+  .aoHeritageSurface,.aoApostolateSurface,.aoApostolateRoot,
+  .prepareScreen,.thanksgivingScreen)
+  :is(button.primary,button.aoTodayV2PrimaryMass,button.aoCalV2Primary,
+    button.aoRosaryBegin,button.aoApostolatePrimary,
+    button.aoHeritagePrayAction,button[data-ao-primary],
+    button[data-action-priority="primary"]){
+  font-family:var(--ao-font-ui)!important;
+  font-size:var(--ao-type-action-primary)!important;
+  font-weight:600!important;
+  font-variant-caps:small-caps;
+  letter-spacing:.04em;
+  line-height:1.3;
+}
+:where(.homeScreen,#ao-calendar-modular-root,#ao-learn-modular-root,
+  #ao-settings-modular-root,#ao-find-modular-root,#aoPray435930,
+  #aoPrayerBookRoot,#ao-scripture-overlay,.aoScriptureLibrary,
+  .aoHeritageSurface,.aoApostolateSurface,.aoApostolateRoot,
+  .prepareScreen,.thanksgivingScreen)
+  :is(.aoTodayV2SecondaryMass button,.aoApostolateActions button,
+    .aoCalPracticeActions button,.aoHeritagePreviewActions button){
+  font-family:var(--ao-font-ui)!important;
+  font-size:var(--ao-type-action-secondary)!important;
+  font-weight:400!important;
+  font-variant-caps:normal;
+  letter-spacing:0;
+  line-height:1.4;
+}
+:where(.homeScreen,#ao-global-ribbon) .brandName,
+:where(.homeScreen,#ao-global-ribbon) .aoBrandName,
+.aoBrandWordmark{
+  font-family:var(--ao-font-brand)!important;
 }
 
 @media(max-width:560px){
