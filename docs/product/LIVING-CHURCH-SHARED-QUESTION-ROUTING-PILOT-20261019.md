@@ -172,3 +172,29 @@ The hybrid adapter never imports new historical character replies. All inferred 
 `confirmSourceNavigation(result, {confirmQuestion:true})` is available as an **explicit opt-in contract** for future UI wiring. It checks the entire claimed `sourceRefs` array and route against the original source-owned topic; forged or uncovered destinations fail. Without user confirmation, an inferred source-navigation candidate returns `needs_question_confirmation` rather than opening anything. A correctly matched exact phrase is eligible for navigation without an *additional* interpretation prompt, though it remains a source link, **never a licence to fabricate an avatar answer**.
 
 **Not connected**: no user-facing UI, image/sprite staging, character-runtime response synthesizer, or P4 source corpus has been modified here. Independent test and source-content approvals still block production use.
+
+
+## Expansion pass 6 — real-model embedding contract and independently labelled evaluation gate (19 October)
+
+**A genuine embedding model is NOT packaged, downloaded, invoked or represented as tested.** This pass introduces an explicit provider contract rather than rebranding symbolic matching as embeddings.
+
+### Embedding provider boundary
+
+- `src/learn/living-church-embedding-candidate-router.js`: an **asynchronous optional adapter** to a model-provided bilingual vector index and query encoder. Both are mandatory before embedding ranking is enabled.
+- The index must declare `AO_LIVING_CHURCH_EMBEDDING_INDEX_V1`, **the exact current catalogue signature**, an immutable model ID/revision, dimensions, language coverage `en/fr`, device/remote execution mode, complete per-language normalized vectors for all **172 source-owned topic IDs**, and `answersIncluded:false`, `approvedReply:false`. Refuse malformed/stale/partial indexes. Catalogue signature uses FNV32 for accidental version drift, **not cryptographic authenticity**.
+- The model provider must return the identical model ID, immutable revision, requested language and a unit-normalised finite vector of the declared dimension; otherwise the module does not use its result.
+- Preferred future execution: **on-device/offline**. When provider execution is `remote`, the adapter refuses to send the visitor's question unless `consentRemoteTransfer:true` was supplied. This cannot replace platform-level legal/privacy authorisation.
+- Retrieval is conservative: trial top-similarity threshold and runner-up separation are **engineering placeholders**, not empirical calibration. A tie triggers clarification; unsupported source ownership remains a hard `no_coverage`. Inferred source navigation and character referrals require independent **question-confirmation** and **handoff-consent** checks. The previous symbolic-only route remains a visible fallback when model/index are unavailable.
+- `tests/living-church-embedding-candidate-router.mjs` creates a **172-dimensional one-hot synthetic test fixture** for all 172 topics in both languages solely to exercise validation, matching contracts, tie/abstain, unavailable model, old-index refusal, source-gap and consent checks. Synthetic vectors are not evidence of understanding language or accuracy. They do not correspond to any trained multilingual model and **are never shipped as genuine embeddings**.
+
+### Consent-respecting evaluation design
+
+- `src/learn/living-church-evaluation-gate.js` defines an opt-in private evaluation intake and metric counter. This is **not** a harvested question dataset, nor a scored accuracy report.
+- Each actual record requires a voluntarily submitted, **data-minimised/redacted** visitor question; EN or FR language; explicit permission for private research; **two distinct independent annotators**; and an adjudicated action/acceptable topic IDs. The script checks duplicate identifiers, common accidental personal contact details, source/question-variant train/test leakage, existence of referenced source-owned topic IDs, and incompatible labels.
+- A public quality claim is gated on at least **25 independently annotated questions per language** (50 total), appropriate provenance and consent, and no detected schema issues. These counts are **a floor, not a statistical sufficiency guarantee**; real-world testing must include adversarial false positives, unanswered questions, changing law and referral-privacy tests. Actual visitor questions are **not to be committed to GitHub**.
+- The two small examples in `tests/living-church-evaluation-gate.mjs` are labelled `SYNTHETIC_TEST_ONLY`; passing the test demonstrates schema safeguards, **not independently measured performance**.
+- To test a candidate actual embedding model, first supply the exact model-index bundle via an explicitly approved source and **private** question evaluation set, then run both models on the same adjudicated cases, reporting true/false routing, abstention, clarification and ungrounded referrals separately. Do not tune the model to the test set and then call it independent.
+
+### Remaining production locks
+
+The shared topic registry continues to have 172 records, **84 source-navigation-only and 88 held source gaps**. No source corpus, catechism, Living Church avatar character voice, dialogue, Mass reader or artistic assets are modified. This branch/PR remains **draft and disconnected from runtime**. A trained, licensed local-capable multilingual model, its complete topic-vector index, independent human-annotated EN/FR questions, controlled privacy design and full claim-by-claim answer provenance (after content gathering) are still outstanding.
