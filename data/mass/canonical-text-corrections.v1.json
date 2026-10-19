@@ -1,5 +1,5 @@
 {
-  "version": "1.5.0",
+  "version": "1.6.0",
   "status": "R17_CANONICAL_TEXT_CORRECTIONS",
   "authorityRule": "Apply after frozen donor ingestion and before any reader/display composition. No correction may create ritual state.",
   "donorPolicy": "Frozen donor hashes remain unchanged; this layer records adjudicated source corrections explicitly.",
@@ -398,6 +398,18 @@
       "reference": "2013 Coalition in Support of Ecclesia Dei Red Missal photographed PDF p.34 / printed p.33",
       "review": "VISUALLY_COLLATED_LATIN_FAITHFUL_REDDER_ADAPTATION",
       "decision": "Revise Quam oblationem into natural English based on Red Missal, retain all essential Latin terms and existing crosses."
+    },
+    {
+      "id": "RED-EN-2013-W6-01",
+      "blockId": "AO.SM.B056",
+      "cueId": "AO.SM.C0189",
+      "field": "english",
+      "from": "Body and Blood of thy Son,",
+      "to": "Body and Blood of Thy Son",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei Latin–English Booklet Missal (2013), scanned PDF page 38, printed page 37, Supplices te rogamus.",
+      "decision": "Remove comma wrongly separating dependent subject clause from 'may be filled' in the contiguous C0188–C0190 English sentence; align capitalization with traditional booklet; Latin crosses unchanged.",
+      "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED"
     }
   ],
   "englishEditorialPolicy": "2013 Red Missal preferred English baseline; 1962 printed Latin retains normative authority; reviewed exact-cue adaptations only; preserve immutable donors."
