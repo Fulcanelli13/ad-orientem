@@ -145,7 +145,8 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview}={
   html+='<div class="aoFindBody aoHeritageBody" data-find-view="map" data-explore-lens="heritage"><div class="aoFindMap" data-find-map><div class="aoFindMapFallback"><strong>'+L(vm.language,"Sacred places","Lieux sacrés")+'</strong><span>'+(vm.items.length?L(vm.language,"Loading documented places…","Chargement des lieux documentés…"):L(vm.language,"No places match. Change the search or category.","Aucun lieu trouvé. Modifiez le thème ou la recherche."))+'</span></div></div>';
   if(!arr(vm.nearby).length)html+='<button type="button" class="aoHeritageNearby" data-heritage-nearby aria-label="'+L(vm.language,"Find documented places near me","Trouver des lieux documentés près de moi")+'">'+L(vm.language,"Near me","Près de moi")+'</button>';
   html+='<button type="button" class="aoHeritageWorldReset" data-heritage-world aria-label="'+L(vm.language,"Show all places on the world map","Afficher tous les lieux sur la carte du monde")+'">'+L(vm.language,"World view","Vue du monde")+'</button>';
-  if(searching)html+=searchMatches(vm);
+  // Hide search suggestions when an editorial place folio is open.
+  if(searching&&!vm.selectedPlace&&!vm.selected)html+=searchMatches(vm);
   else if(arr(vm.nearby).length)html+=nearbyPanel(vm);
   else html+='<p class="aoHeritageMapHint">'+L(vm.language,"Tap a marker to discover a place","Touchez un repère pour découvrir le lieu")+'</p>';
   const customs=arr(vm.customCards);
