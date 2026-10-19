@@ -31,7 +31,16 @@ are presentation only. User swipes cannot advance a ceremony clock.
    and translation, metadata and cue IDs. Tests also check B-block counts,
    order, navigation identities, source-to-page offsets and manual turns.
 
-4. **Propers with a separate BLOCK_START posture had no text cue on
+4. **Holy Week French source selection used English in French mode.**
+   The native Good Friday/Easter Vigil stage adapter picked
+   `row.vernacular` (English) even where the Easter Vigil source contained
+   `row.french`. **Fixed** with an explicit language-selected witness:
+   English prefers recorded English; French uses recorded French and
+   otherwise leaves the translation absent rather than mislabeling English.
+   Distinct-rite speaker roles are retained with each paragraph.
+   Tested against all real 1962 Easter Vigil font-blessing source lines.
+
+5. **Propers with a separate BLOCK_START posture had no text cue on
    their first displayed line.** The posture cue at B030 was invisible to
    page navigation because the dynamic Proper's replacement paragraph
    contains no original C0109 ID. **Fixed** by using only the exact
