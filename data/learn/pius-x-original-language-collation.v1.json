@@ -110,6 +110,31 @@
       ],
       "checked": true,
       "sourceTypeNote": "Modern English translation/transcription of originally Italian Catechism; not original Italian source collation or proof of Pius X's personal spoken diction."
+    },
+    {
+      "id": "PX1912-IT-STRUCT",
+      "type": "ITALIAN_1912_CATECHISM_MODERN_NUMBERED_TRANSCRIPTION",
+      "url": "https://github.com/gustavo-depaula/ember/tree/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it",
+      "checked": true,
+      "locators": [
+        "Q114–116 credo-chiesa.md",
+        "Q232/Q235–236 legge-virtu.md",
+        "Q325/Q329/Q335/Q338/Q342 sacramento-eucaristia.md",
+        "Q430–433 orazione.md"
+      ],
+      "sourceTypeNote": "Pinned modern Italian transcription of 1912 Catechism, not a facsimile of 1912 print. The 15 listed Italian questions and answer passages were individually checked by number and compared with the existing modern English source for substance."
+    },
+    {
+      "id": "PX1912-IT-SECOND-INDEPENDENT",
+      "type": "INDEPENDENT_ITALIAN_CATECHISM_WEB_TRANSCRIPTION",
+      "url": "https://www.linuxpac.it/catechismo-della-dottrina-cristiana-1912-detto-di-san-pio-x",
+      "checked": true,
+      "locators": [
+        "Q114–116 Chiesa Cattolica chapter",
+        "Q232/Q235/Q236 Virtù chapter",
+        "Q430–433 Orazione chapter"
+      ],
+      "sourceTypeNote": "Independent publisher corroborates Italian text and question numbering for 10 documented questions from the sample. Eucharist chapter not fully inspected from this host during this pass; do not overclaim double-source verification."
     }
   ],
   "criticalDiscrepancies": [
@@ -158,7 +183,7 @@
         "PX1912-EN-STRUCT",
         "PIUS1912-IT-LETTER"
       ],
-      "verdict": "Pius X personally examined and approved the shortened Roman Catechism in his letter. This does not establish the modern English answer wording as his private spoken language, nor certify the exact original Italian questions.",
+      "verdict": "Selected 15 Italian catechism questions now located in a pinned Italian transcription; 10 independently cross-checked with a second Italian website. The 1912 printed edition/facsimile remains uninspected; authorial diction still not directly attributable to Pius X.",
       "releaseGate": "ITALIAN_QUESTION_BY_QUESTION_COLLATION_STILL_NEEDED"
     }
   ],
@@ -170,7 +195,8 @@
       "verifiedWitnessIds": [
         "ADIEM-LA-1904",
         "ADIEM-FR-1904",
-        "PX1912-EN-STRUCT"
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "Latin confirms grace-production is divine alone and Marian intercession does not compete with Christ; distinction adoration vs veneration also needs explicit catechetical source if presented as an exact quotation.",
       "requiredAction": "Keep simulated prose clearly unquoted; disallow discrepant Italian positive grace-production reading."
@@ -182,7 +208,8 @@
       "verifiedWitnessIds": [
         "ADIEM-LA-1904",
         "ADIEM-FR-1904",
-        "PX1912-EN-STRUCT"
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "Christ is the source, Mary intercedes through Christ's merits; original Latin specifically attributes to Bernard the aqueduct metaphor.",
       "requiredAction": "Anchor to Latin and note incompatible web-Italian phrase; do not suggest Mary independently produces grace."
@@ -193,7 +220,8 @@
       "sourceVerdict": "SUBSTANCE_SUPPORTED_WITH_EDITORIAL_CONNECTIVE",
       "verifiedWitnessIds": [
         "ADIEM-LA-1904",
-        "PX1912-EN-STRUCT"
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "The Hail Mary seeks Mary's intercession in life and death; directing Marian devotion toward Christ is supported by the encyclical's purpose.",
       "requiredAction": "Practical advice is composed, not papal reported speech."
@@ -206,7 +234,8 @@
         "QUAM-1910-LA-DH",
         "QUAM-1910-EN",
         "PIUS1912-IT-LETTER",
-        "PX1912-EN-STRUCT"
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "DH 3531: complete Christian doctrinal knowledge is not required before First Communion; DH 3532: child understands necessary mysteries in proportion to capacity and distinguishes Eucharistic bread from common bread.",
       "requiredAction": "Make Quam Singulari DH 3531–3532 primary; Q342 only supplementary; ensure context concerns readiness, not general relaxed standards."
@@ -218,7 +247,8 @@
       "verifiedWitnessIds": [
         "QUAM-1910-LA-DH",
         "ACERBO-LA-1905",
-        "PX1912-EN-STRUCT"
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "Catechism Q325 directly states consecrated Host is true Body of Christ; Q338 addresses faith and reverence; Quam Singulari explains a child's discernment.",
       "requiredAction": "Cite Q325 for real presence. Q335 unnecessary here and carries historic midnight-fasting rule; keep it out of the main evidence IDs."
@@ -229,7 +259,8 @@
       "sourceVerdict": "SUBSTANCE_SUPPORTED",
       "verifiedWitnessIds": [
         "QUAM-1910-LA-DH",
-        "ACERBO-LA-1905"
+        "ACERBO-LA-1905",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "Quam Singulari DH 3531 explicitly mandates continuing instruction and gradual acquisition of full Catechism afterwards; catechist instructed to teach accessibly.",
       "requiredAction": "Keep short; preserve 'after First Communion' temporal distinction."
@@ -239,7 +270,8 @@
       "turn": 1,
       "sourceVerdict": "MODERN_ENGLISH_CATECHISM_ONLY_FOR_PRECISE_QUOTATION",
       "verifiedWitnessIds": [
-        "PX1912-EN-STRUCT"
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "Q232 identifies the authority of divine revelation; Q114 and Q236 explain Church as entrusted teaching authority.",
       "requiredAction": "Original 1912 Italian exact phrase not collated: doctrinally plausible paraphrase only, not a verified Sarto direct expression."
@@ -249,7 +281,8 @@
       "turn": 2,
       "sourceVerdict": "MODERN_ENGLISH_CATECHISM_ONLY_FOR_PRECISE_QUOTATION",
       "verifiedWitnessIds": [
-        "PX1912-EN-STRUCT"
+        "PX1912-EN-STRUCT",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "Q114–116 distinguish Church's teaching office and conditions of infallibility; application to casual remarks by individual priests is a reasonable inference, not verbatim Q114–116.",
       "requiredAction": "Do not equate all individual episcopal or papal utterances with nonauthoritative opinions; broader magisterial nuances require content-owner judgment."
@@ -260,7 +293,8 @@
       "sourceVerdict": "EDUCATIONAL_TRANSITION_NOT_HISTORICALLY_ATTESTED_SPEECH",
       "verifiedWitnessIds": [
         "PX1912-EN-STRUCT",
-        "ACERBO-LA-1905"
+        "ACERBO-LA-1905",
+        "PX1912-IT-STRUCT"
       ],
       "originalSynthesis": "Request for a precise proposition supports catechetical method rather than claiming authentic recorded Sarto words.",
       "requiredAction": "Keep quote attribution false; no scripted answer to unspecified personal doctrinal controversy."
@@ -277,6 +311,109 @@
     "theologicalReviewerSignedOff": false,
     "styleReviewerSignedOff": false,
     "runtimeImportAllowed": false,
-    "sourcesMayBeQuotedVerbatimInCharacter": false
+    "sourcesMayBeQuotedVerbatimInCharacter": false,
+    "targetedItalian1912TranscriptionAligned": true,
+    "italian1912ContemporaneousPrintChecked": false
+  },
+  "targetedItalianTranscription": {
+    "status": "SELECTED_15_QUESTION_ITALIAN_TRANSCRIPTION_CONTENT_REVIEWED",
+    "questions": [
+      {
+        "q": 114,
+        "p": "credo-chiesa.md",
+        "anchor": "Il Papa e i Vescovi uniti con lui costituiscono la Chiesa docente",
+        "doubleWitness": true
+      },
+      {
+        "q": 115,
+        "p": "credo-chiesa.md",
+        "anchor": "la Chiesa docente ... è infallibile",
+        "doubleWitness": true
+      },
+      {
+        "q": 116,
+        "p": "credo-chiesa.md",
+        "anchor": "quando da Pastore e Maestro di tutti i cristiani",
+        "doubleWitness": true
+      },
+      {
+        "q": 232,
+        "p": "legge-virtu.md",
+        "anchor": "per cui crediamo, sull'autorità di Dio",
+        "doubleWitness": true
+      },
+      {
+        "q": 235,
+        "p": "legge-virtu.md",
+        "anchor": "l'insegnamento di Gesù Cristo e degli Apostoli, fatto a viva voce",
+        "doubleWitness": true
+      },
+      {
+        "q": 236,
+        "p": "legge-virtu.md",
+        "anchor": "Dio affidò il deposito della Fede",
+        "doubleWitness": true
+      },
+      {
+        "q": 325,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "l'ostia è il vero Corpo del Nostro Signor Gesù Cristo",
+        "doubleWitness": false
+      },
+      {
+        "q": 329,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "ne restano solamente le specie o apparenze, senza la sostanza",
+        "doubleWitness": false
+      },
+      {
+        "q": 335,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "essere digiuno dalla mezzanotte",
+        "doubleWitness": false
+      },
+      {
+        "q": 338,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "accostarsi a Nostro Signor Gesù Cristo nell'Eucaristia",
+        "doubleWitness": false
+      },
+      {
+        "q": 342,
+        "p": "sacramento-eucaristia.md",
+        "anchor": "l'obbligo della comunione pasquale",
+        "doubleWitness": false
+      },
+      {
+        "q": 430,
+        "p": "orazione.md",
+        "anchor": "Madre di Dio e piena di grazia",
+        "doubleWitness": true
+      },
+      {
+        "q": 431,
+        "p": "orazione.md",
+        "anchor": "invochiamo la Madonna specialmente con l'Ave Maria",
+        "doubleWitness": true
+      },
+      {
+        "q": 432,
+        "p": "orazione.md",
+        "anchor": "materna intercessione per noi in vita e in morte",
+        "doubleWitness": true
+      },
+      {
+        "q": 433,
+        "p": "orazione.md",
+        "anchor": "per essi, e solo per essi",
+        "doubleWitness": true
+      }
+    ],
+    "primaryUrlTemplate": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/{file}",
+    "independentSecondaryUrl": "https://www.linuxpac.it/catechismo-della-dottrina-cristiana-1912-detto-di-san-pio-x",
+    "comparedWithExistingEnglishIndex": true,
+    "claimedContemporaneousPrintedEditionChecked": false,
+    "claimOfSartoPrivateSpeech": false,
+    "editorialScope": "Original Italian *textual transcription* alignment for targeted question numbers, not printed archetype or Sarto's personally composed sentence wording."
   }
 }
