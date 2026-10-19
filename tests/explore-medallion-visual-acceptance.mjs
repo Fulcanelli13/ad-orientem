@@ -138,6 +138,22 @@ try{
      "#ao-find-modular-root [data-find-map]"
    )?.dataset?.aoMapState==="ready",null,{timeout:45000});
    await page.waitForTimeout(650);
+   const massLayout=await page.evaluate(()=>{
+    const root=document.querySelector(".aoExploreSurface:has(.aoExploreTlmFilters)");
+    const map=root?.querySelector(".aoFindBody[data-find-view=map] .aoFindMap")?.getBoundingClientRect();
+    const search=root?.querySelector(".aoTlmToolbar")?.getBoundingClientRect();
+    const institutions=root?.querySelector(".aoTlmProviderStrip")?.getBoundingClientRect();
+    const drawer=root?.querySelector(".aoAtlasTlmExtra summary");
+    return {mapHeight:map?.height??0,mapTop:map?.top??0,
+     searchBottom:search?.bottom??0,logosBottom:institutions?.bottom??0,
+     hasSourceFilterDrawer:Boolean(drawer)};
+   });
+   assert.ok(massLayout.mapHeight>=(mobile?729:810),
+     "Mass map must use same immersive full-stage composition as Sacred Atlas "+JSON.stringify(massLayout));
+   assert.ok(massLayout.mapTop<massLayout.searchBottom&&massLayout.mapTop<massLayout.logosBottom,
+     "Mass search and logos must float OVER the map, not in stacked bars "+JSON.stringify(massLayout));
+   assert.ok(massLayout.hasSourceFilterDrawer,
+     "Existing source-affiliation/grouping filters must be accessible");
    await page.screenshot({path:resolve(out,"explore-"+width+"-mass-emblems.png"),fullPage:false});
    const closer=await page.evaluate(()=>{
      const map=globalThis.__AO_EXPLORE_VISUAL_REVIEW_MAP;
