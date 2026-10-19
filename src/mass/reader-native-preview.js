@@ -10,6 +10,7 @@ import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards } 
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
+import { projectPostureAwareMissalCards } from "./reader-missal-posture-pages.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -1294,6 +1295,10 @@ export async function mountNativeReaderPreview({
   let customStorage=null;
   try{customStorage=win.localStorage??null;}catch{}
   let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
+  if(String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL")
+    readerModel=projectPostureAwareMissalCards(readerModel,{
+      cueState:ready.cueState,preferences:customaryPrefs,
+    });
   ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
   let riteChoice=null;
   let palmGospelCueVisible=null;
@@ -2500,6 +2505,24 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
+    // Page-edge anticipation is advisory. A swipe never executes the cue.
+    const nextButton=host.querySelector?.('.ao-reader-nav button[data-reader-nav="next"]');
+    if(nextButton){
+      const incoming=String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
+        ? nextVisibleCard(card,"next")?.postureEntry:null;
+      const french=String(customaryPrefs?.language??prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr");
+      const label=incoming?({STAND:french?"Debout":"Stand",SIT:french?"Assis":"Sit",KNEEL:french?"À genoux":"Kneel"})[incoming.value]:null;
+      if(label){
+        const advisory=incoming.advisory?(french?" (selon l’usage)":" (customary)"):"";
+        nextButton.dataset.nextPosture=label;
+        nextButton.title=(french?"Page suivante · ":"Next page · ")+label+advisory;
+        nextButton.setAttribute("aria-label",nextButton.title);
+      }else{
+        delete nextButton.dataset.nextPosture;
+        nextButton.title="";
+        nextButton.setAttribute("aria-label",french?"Page suivante":"Next page");
+      }
+    }
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll){
       scroll.scrollTop=0;
@@ -2546,6 +2569,7 @@ export async function mountNativeReaderPreview({
       data:ready.data,
       mode:nextMode,
       reviewExpandedCards:ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
+      postureCueState:ready.cueState,posturePreferences:customaryPrefs,
     });
     sourceModel=rebuilt.sourceModel;
     // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
@@ -2606,6 +2630,10 @@ export async function mountNativeReaderPreview({
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onCustomaryChange:change=>{
       customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);
+      // Profile changes rebuild Missal pages only; the canonical clock is unchanged.
+      if(["postureProfile","localPosture"].includes(change?.kind) && reader.getMode()==="MISSAL"){
+        switchPresentationMode("MISSAL");return;
+      }
       if(change?.kind==="sanctusPerformance"){
         ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
       }
