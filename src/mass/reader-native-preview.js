@@ -11,7 +11,7 @@ import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { projectPostureAwareMissalCards } from "./reader-missal-posture-pages.js";
-import {specialRiteNextPosture,showSpecialRiteMissalPostureHint} from "./reader-special-missal-pages.js";
+import {specialRiteNextPosture,showSpecialRiteMissalPostureHint,specialRiteVernacular} from "./reader-special-missal-pages.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -893,7 +893,9 @@ export async function mountNativeReaderPreview({
           id:row.id,
           kind:row.kind,
           primary:row.latin,
-          secondary:row.vernacular??row.english??null,
+          secondary:specialRiteVernacular(row,{language:prepared?.readerPreferences?.language??"en"}),
+          speakerRole:row.speaker??null,
+          speakerEvidence:row.speaker?"SOURCE_OWNED_DISTINCT_RITE":null,
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
@@ -1083,7 +1085,9 @@ export async function mountNativeReaderPreview({
           id:row.id,
           kind:row.kind,
           primary:row.latin,
-          secondary:row.vernacular??row.english??null,
+          secondary:specialRiteVernacular(row,{language:prepared?.readerPreferences?.language??"en"}),
+          speakerRole:row.speaker??null,
+          speakerEvidence:row.speaker?"SOURCE_OWNED_DISTINCT_RITE":null,
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Easter Vigil",
