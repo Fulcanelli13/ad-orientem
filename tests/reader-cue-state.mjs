@@ -77,6 +77,17 @@ for(const requiemSelect of [
   assert.equal(row.priestPosition,null);
   assert.equal(row.priestVoice,null);
  }
+ for(const id of ["AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266"]){
+  const omitted=req.project(id);
+  assert.equal(omitted.reason,"RITUS_XIII_1_REQUIEM_FINAL_BLESSING_OMITTED");
+  assert.equal(omitted.priestAction,null);
+  assert.equal(omitted.gesture,null);
+  assert.equal(omitted.priestPosition,null);
+ }
+ assert.ok(req.project("AO.SM.C0262").reason!== "RITUS_XIII_1_REQUIEM_FINAL_BLESSING_OMITTED",
+   "Omitted final blessing also hid Placeat altar kiss");
+ assert.ok(req.project("AO.SM.C0269").reason!== "RITUS_XIII_1_REQUIEM_FINAL_BLESSING_OMITTED",
+   "Omitted final blessing also hid Last Gospel");
  assert.equal(req.project("AO.SM.C0124").priestAction?.label,"RECEIVES INCENSE",
   "Omitting initial Requiem incensation must not cancel permitted Offertory");
 }
