@@ -318,3 +318,21 @@ assert.deepEqual(
 assert.equal(expandedPassages.records.find(x=>x.id==='SPX-EXP-010').passage_support_screen,'PRIMARY_DIRECT');
 assert.equal(expandedPassages.records.find(x=>x.id==='SPX-EXP-042').passage_support_screen,'PRIMARY_PARTIAL');
 console.log('Pius X passage review: 31 direct primary, 8 partial primary, 9 third-person biography; 0 answers certified');
+
+
+const snapshot=JSON.parse(readFileSync('data/learn/research/pius-x-112-cohort-coverage-baseline-20261019.v1.json','utf8'));
+assert.equal(snapshot.schema,'AO_PIUS_X_112_IDEA_EVIDENCE_PROGRESS_SNAPSHOT_V1');
+assert.equal(snapshot.status,'RESEARCH_SCOPED_SCREEN_ONLY_NOT_TOTAL_ANSWERABLE_QUESTIONS');
+assert.equal(snapshot.cohort_totals.original_64,coverage.records.length);
+assert.equal(snapshot.cohort_totals.expansion_48,expandedPassages.records.length);
+assert.equal(snapshot.cohort_totals.all_topic_idea_seeds,coverage.records.length+expandedPassages.records.length);
+assert.equal(snapshot.evidence_buckets.direct_passage_indicated,coverage.summary.DIRECT_PASSAGE_ANCHOR+expandedPassages.counts.PRIMARY_DIRECT);
+assert.equal(snapshot.evidence_buckets.partial_passage_indicated,coverage.summary.PARTIAL_PASSAGE_ANCHOR+expandedPassages.counts.PRIMARY_PARTIAL);
+assert.equal(snapshot.evidence_buckets.related_only_initial64,coverage.summary.RELATED_OR_UNRESOLVED);
+assert.equal(snapshot.evidence_buckets.secondary_biographical_context_only_expansion48,expandedPassages.counts.BIOGRAPHY_FACTS_ONLY);
+assert.equal(Object.values(snapshot.evidence_buckets).reduce((a,b)=>a+b,0),112);
+assert.equal(snapshot.cross_cohort_links.potential_overlaps_or_followups,expandedPassages.counts.initial_64_overlaps_or_followups_flagged);
+assert.equal(snapshot.cross_cohort_links.strong_same_intent_candidates_without_merge.length,2);
+assert.equal(snapshot.certified_unique_answerable_intentions,null);
+assert.equal(snapshot.certified_historically_attributed_visitor_replies,0);
+console.log('Pius X bounded 112-topic evidence dashboard: 79 direct, 19 partial, 9 biography-only, 5 related; no answerability certification');
