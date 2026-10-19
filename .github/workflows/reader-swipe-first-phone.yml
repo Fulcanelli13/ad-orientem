@@ -1,0 +1,27 @@
+name: Swipe-first reader phone acceptance
+
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-dom.js"
+      - "tests/reader-phone-acceptance.mjs"
+      - "tests/reader-swipe-first-phone.mjs"
+      - "package.json"
+      - ".github/workflows/reader-swipe-first-phone.yml"
+  workflow_dispatch:
+
+jobs:
+  swipe-first-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Mass and annexed rites swipe-only navigation on 320 and 390px
+        run: npm run test:swipe-first-phone
+      - name: Full reader phone interaction regression with keyboard replacing old edge taps
+        run: node tests/reader-phone-acceptance.mjs
