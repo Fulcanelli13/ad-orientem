@@ -8,8 +8,13 @@ import {normalizeReaderMoment,buildReaderShellMarkup} from "../src/mass/reader-d
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const events=[1,2,3,4,5,6].flatMap(i=>load("../data/mass/mc-events-0"+i+".v1.json").events);
-const sourceCues=new Map(sung.blocks.flatMap(b=>(b.units??[]).map(u=>[u.cue_id,u])));
-assert.equal(sourceCues.size,279,"All source cues must remain in the canonical Sung donor");
+const units=sung.blocks.flatMap(b=>b.units??[]);
+const sourceCues=new Map(units.filter(u=>/^AO\.SM\.C\d{4}$/.test(String(u.cue_id)))
+  .map(u=>[u.cue_id,u]));
+assert.equal(sourceCues.size,279,"The canonical Sung cue family must remain 279 exact AO.SM.C#### IDs");
+assert.deepEqual(units.filter(u=>!/^AO\.SM\.C\d{4}$/.test(String(u.cue_id)))
+  .map(u=>u.cue_id),["AO.SM.B096.SYN"],
+  "The one synthetic source-only block unit is not an audible/gesture cue");
 
 // A complete audit of the recovered altar-bell family: 7 canonical event
 // sound records, attached to exactly 5 presentation cue points, not 7
