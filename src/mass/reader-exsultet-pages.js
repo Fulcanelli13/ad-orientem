@@ -15,7 +15,12 @@ const incipits=freeze([
 function fail(why){throw new Error("EXSULTET_SOURCE_ALIGNMENT:"+why)}
 export function projectExsultetSourceParagraphs(source){
   const latin=String(source?.primary??source?.latin??"");
-  const english=source?.secondary??source?.english??source?.vernacular??null;
+  // Explicitly absent French must remain absent. The source object may
+  // also retain historical English fields, but those are not a translation
+  // of the language actually selected in the Missal.
+  const english=source && Object.hasOwn(source,"secondary")
+    ? source.secondary
+    : (source?.english??source?.vernacular??null);
   const latinGroups=latin.split("\n\n");
   if(latinGroups.length!==11)fail("LATIN_PARAGRAPH_COUNT");
   if(!latinGroups[0].includes(LATIN_INTRO_SPLIT))fail("INTRO_PRAYER_BOUNDARY");
