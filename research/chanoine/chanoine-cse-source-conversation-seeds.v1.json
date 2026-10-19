@@ -12,10 +12,16 @@
     "dialogue_turns": 205,
     "expanded_debate_archives": 55,
     "questions_without_debate_followup": 95,
-    "source_archived_or_nonpublic_ids": [],
+    "source_archived_or_nonpublic_ids": [
+      "CSE055",
+      "CSE056",
+      "CSE058"
+    ],
     "first_party_lefebvre_claim_verified": 0,
     "publication_approved": 0,
-    "claim_certified": 0
+    "claim_certified": 0,
+    "source_public_reader_count": 147,
+    "source_editorial_archive_count": 3
   },
   "source_families": {
     "questions": [
@@ -39,7 +45,8 @@
     "Check sensitive cases for charity, absence of coercion, support of victims, pastoral discretion and age-appropriate context",
     "Check actual semantic pairing of each source debate follow-up to base Q&A before use",
     "Do not overwrite existing sexual ethics Q&A or debate files",
-    "The Chanoine persona must be edited and validated before integration"
+    "The Chanoine persona must be edited and validated before integration",
+    "Keep CSE055, CSE056, CSE058 editorially archived with their existing redirects; catalog source publication state alone is insufficient."
   ],
   "records": [
     {
@@ -96,7 +103,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE002",
@@ -152,7 +167,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE003",
@@ -208,7 +231,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE004",
@@ -263,7 +294,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE005",
@@ -315,7 +354,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE006",
@@ -421,7 +468,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE007",
@@ -523,7 +578,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE008",
@@ -625,7 +688,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE009",
@@ -681,7 +752,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE010",
@@ -775,7 +854,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE011",
@@ -834,7 +921,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE012",
@@ -932,7 +1027,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE013",
@@ -1027,7 +1130,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE014",
@@ -1137,7 +1248,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE015",
@@ -1189,7 +1308,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE016",
@@ -1295,7 +1422,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE017",
@@ -1354,7 +1489,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE018",
@@ -1445,7 +1588,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE019",
@@ -1508,7 +1659,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE020",
@@ -1614,7 +1773,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE021",
@@ -1712,7 +1879,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE022",
@@ -1768,7 +1943,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE023",
@@ -1824,7 +2007,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE024",
@@ -1880,7 +2071,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE025",
@@ -1936,7 +2135,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE026",
@@ -1999,7 +2206,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE027",
@@ -2059,7 +2274,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE028",
@@ -2122,7 +2345,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE029",
@@ -2220,7 +2451,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE030",
@@ -2279,7 +2518,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE031",
@@ -2385,7 +2632,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE032",
@@ -2441,7 +2696,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE033",
@@ -2496,7 +2759,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE034",
@@ -2548,7 +2819,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE035",
@@ -2643,7 +2922,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE036",
@@ -2702,7 +2989,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE037",
@@ -2758,7 +3053,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE038",
@@ -2864,7 +3167,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE039",
@@ -2966,7 +3277,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE040",
@@ -3076,7 +3395,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE041",
@@ -3132,7 +3459,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE042",
@@ -3184,7 +3519,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE043",
@@ -3290,7 +3633,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE044",
@@ -3392,7 +3743,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE045",
@@ -3498,7 +3857,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE046",
@@ -3553,7 +3920,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE047",
@@ -3609,7 +3984,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE048",
@@ -3665,7 +4048,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE049",
@@ -3771,7 +4162,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE050",
@@ -3877,7 +4276,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE051",
@@ -3972,7 +4379,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE052",
@@ -4035,7 +4450,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE053",
@@ -4094,7 +4517,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE054",
@@ -4200,7 +4631,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE055",
@@ -4295,14 +4734,23 @@
         "NOT_AUTHOR_ORIGINATION_CREDIT_SOURCE_DERIVED",
         "PERSONA_VOICE_CONVERSION_PENDING",
         "ALL_DIALOGUE_CLAIMS_REQUIRE_PRIMARY_SOURCE_REVIEW",
-        "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW"
+        "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW",
+        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC"
       ],
       "source_qa_english_preserved_exact": true,
       "source_qa_french_preserved_exact": true,
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": "CSE057"
+      },
+      "visibility_status": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE056",
@@ -4397,14 +4845,23 @@
         "NOT_AUTHOR_ORIGINATION_CREDIT_SOURCE_DERIVED",
         "PERSONA_VOICE_CONVERSION_PENDING",
         "ALL_DIALOGUE_CLAIMS_REQUIRE_PRIMARY_SOURCE_REVIEW",
-        "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW"
+        "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW",
+        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC"
       ],
       "source_qa_english_preserved_exact": true,
       "source_qa_french_preserved_exact": true,
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": "CSE051"
+      },
+      "visibility_status": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE057",
@@ -4463,7 +4920,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE058",
@@ -4558,14 +5023,23 @@
         "NOT_AUTHOR_ORIGINATION_CREDIT_SOURCE_DERIVED",
         "PERSONA_VOICE_CONVERSION_PENDING",
         "ALL_DIALOGUE_CLAIMS_REQUIRE_PRIMARY_SOURCE_REVIEW",
-        "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW"
+        "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW",
+        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC"
       ],
       "source_qa_english_preserved_exact": true,
       "source_qa_french_preserved_exact": true,
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": "CSE057"
+      },
+      "visibility_status": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE059",
@@ -4621,7 +5095,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE060",
@@ -4681,7 +5163,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE061",
@@ -4787,7 +5277,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE062",
@@ -4846,7 +5344,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE063",
@@ -4948,7 +5454,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE064",
@@ -5043,7 +5557,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE065",
@@ -5099,7 +5621,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE066",
@@ -5155,7 +5685,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE067",
@@ -5211,7 +5749,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE068",
@@ -5278,7 +5824,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE069",
@@ -5334,7 +5888,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE070",
@@ -5440,7 +6002,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE071",
@@ -5546,7 +6116,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE072",
@@ -5605,7 +6183,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE073",
@@ -5661,7 +6247,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE074",
@@ -5763,7 +6357,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE075",
@@ -5819,7 +6421,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE076",
@@ -5921,7 +6531,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE077",
@@ -5978,7 +6596,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE078",
@@ -6035,7 +6661,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE079",
@@ -6091,7 +6725,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE080",
@@ -6147,7 +6789,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE081",
@@ -6203,7 +6853,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE082",
@@ -6262,7 +6920,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE083",
@@ -6364,7 +7030,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE084",
@@ -6466,7 +7140,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE085",
@@ -6522,7 +7204,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE086",
@@ -6578,7 +7268,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE087",
@@ -6680,7 +7378,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE088",
@@ -6775,7 +7481,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE089",
@@ -6867,7 +7581,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE090",
@@ -6923,7 +7645,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE091",
@@ -6980,7 +7710,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE092",
@@ -7033,7 +7771,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE093",
@@ -7125,7 +7871,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE094",
@@ -7224,7 +7978,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE095",
@@ -7319,7 +8081,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE096",
@@ -7415,7 +8185,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE097",
@@ -7468,7 +8246,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE098",
@@ -7525,7 +8311,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE099",
@@ -7582,7 +8376,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE100",
@@ -7639,7 +8441,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE101",
@@ -7742,7 +8552,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE102",
@@ -7799,7 +8617,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE103",
@@ -7856,7 +8682,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE104",
@@ -7956,7 +8790,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE105",
@@ -8009,7 +8851,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE106",
@@ -8062,7 +8912,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE107",
@@ -8122,7 +8980,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE108",
@@ -8182,7 +9048,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE109",
@@ -8239,7 +9113,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE110",
@@ -8292,7 +9174,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE111",
@@ -8348,7 +9238,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE112",
@@ -8446,7 +9344,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE113",
@@ -8506,7 +9412,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE114",
@@ -8562,7 +9476,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE115",
@@ -8618,7 +9540,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE116",
@@ -8670,7 +9600,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE117",
@@ -8765,7 +9703,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE118",
@@ -8821,7 +9767,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE119",
@@ -8885,7 +9839,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE120",
@@ -8941,7 +9903,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE121",
@@ -8997,7 +9967,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE122",
@@ -9049,7 +10027,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE123",
@@ -9147,7 +10133,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE124",
@@ -9249,7 +10243,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE125",
@@ -9359,7 +10361,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE126",
@@ -9416,7 +10426,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE127",
@@ -9477,7 +10495,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE128",
@@ -9533,7 +10559,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE129",
@@ -9590,7 +10624,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE130",
@@ -9651,7 +10693,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE131",
@@ -9715,7 +10765,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE132",
@@ -9771,7 +10829,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE133",
@@ -9835,7 +10901,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE134",
@@ -9891,7 +10965,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE135",
@@ -9947,7 +11029,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE136",
@@ -10007,7 +11097,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE137",
@@ -10070,7 +11168,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE138",
@@ -10126,7 +11232,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE139",
@@ -10186,7 +11300,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE140",
@@ -10246,7 +11368,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE141",
@@ -10348,7 +11478,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE142",
@@ -10450,7 +11588,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE143",
@@ -10545,7 +11691,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE144",
@@ -10604,7 +11758,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE145",
@@ -10706,7 +11868,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE146",
@@ -10762,7 +11932,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE147",
@@ -10818,7 +11996,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE148",
@@ -10874,7 +12060,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE149",
@@ -10984,7 +12178,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     },
     {
       "conversation_id": "CHA-CSE-CSE150",
@@ -11044,7 +12246,15 @@
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "publication_approved": false,
-      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED"
+      "status": "INTERNAL_EDITORIAL_DRAFT_NOT_SHIPPED",
+      "visibility_authority": {
+        "registry": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "access": "PUBLIC_READER",
+        "original_status": "CANONICAL_BILINGUAL_QA",
+        "redirect": null
+      },
+      "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
+      "eligible_for_chanoine_publication": false
     }
   ]
 }
