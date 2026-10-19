@@ -995,6 +995,14 @@ function hybridMonthCss(){return `
 .aoCalMonthUnclassified summary{cursor:pointer;min-height:44px;padding:12px 2px;font:400 14px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
 .aoCalMonthUnclassified p{font:400 14px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#90989b}
 #ao-calendar-modular-root .aoCalMonthUnclassified button{display:block;width:100%;min-height:44px;padding:10px 0!important;border:0!important;border-bottom:1px solid rgba(227,212,187,.1)!important;border-radius:0!important;background:transparent!important;text-align:left!important}
+
+/* Sanctorale defaults to the restrained register while the user-chosen
+   hybrid leaves its exact aesthetic open; no source identities are modified. */
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexList{gap:0}
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexRow{border-bottom:1px solid rgba(227,212,187,.09)}
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexDay{min-height:55px!important;padding:8px 3px!important;border:0!important;border-radius:0!important;background:transparent!important;grid-template-columns:75px minmax(0,1fr) 7px!important}
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexDay:before{width:2px;opacity:.6}
+#ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthSaintDetail{align-self:center;min-height:44px;min-width:92px;border:0;border-radius:0;background:transparent;color:#bba987}
 @media(max-width:560px){
  .aoCalHybridHeading{display:block}
  .aoCalHybridHeading span{display:block;text-align:left;margin-top:5px}
