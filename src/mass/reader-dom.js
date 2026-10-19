@@ -552,6 +552,7 @@ button.ao-schola-control{cursor:pointer}
   font:700 7px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase
 }
 
+.ao-reader-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .ao-reader-nav{position:absolute;z-index:10;inset:0;pointer-events:none}
 .ao-reader-nav button{
   position:absolute;top:52%;width:44px;height:44px;border:0;border-radius:999px;
@@ -1884,7 +1885,8 @@ export function buildReaderShellMarkup(prepared = {}) {
     </aside>
 
     <main class="ao-card-viewport">
-      <article class="ao-prayer-card" data-role="card" tabindex="0">
+      <span id="ao-reader-navigation-instructions" class="ao-reader-sr-only">Swipe sideways or use the left and right arrow keys to change liturgical cards. Scroll vertically to read. Use the section title to jump to a section.</span>
+      <article class="ao-prayer-card" data-role="card" tabindex="0" aria-keyshortcuts="ArrowLeft ArrowRight" aria-describedby="ao-reader-navigation-instructions">
         <h1 class="ao-prayer-title" data-role="card-title">${section}</h1>
         <p class="ao-rite-music-note" data-role="rite-music" hidden aria-live="off"></p>
         <p class="ao-organ-rule-note" data-role="organ-permission" hidden aria-live="off"></p>
@@ -1925,11 +1927,9 @@ export function buildReaderShellMarkup(prepared = {}) {
     <div class="ao-cinematic-inner"><div class="ao-cinematic-mark"><span class="ao-icon-mask ao-cinematic-icon" data-icon-slot="cinematic" hidden></span><span class="ao-cinematic-fallback" aria-hidden="true">✠</span></div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
   </div>
 
-  <nav class="ao-reader-nav" aria-label="Prayer card navigation">
-    <button type="button" data-reader-nav="previous" aria-label="Previous Mass card">‹</button>
-    <span class="ao-reader-progress" data-role="progress">—</span>
-    <button type="button" data-reader-nav="next" aria-label="Next Mass card">›</button>
-  </nav>
+  <div class="ao-reader-nav" aria-label="Liturgical card position">
+    <span class="ao-reader-progress" data-role="progress" aria-live="off">—</span>
+  </div>
   <aside class="ao-guide-popover" data-role="guide-popover" hidden></aside>
 </section>`;
 }
@@ -2124,8 +2124,6 @@ export function createReaderDomAdapter({
   let scholaFallbackTimer=0;
   let scholaTickerIdentity=null;
   let scholaTickerFinishedIdentity=null;
-  let suppressNavClickUntil=0;
-  let suppressNavClickDirection=null;
   let suppressModeClickUntil=0;
   let swipeStart=null;
   let wheelIntent={dir:0,amount:0,last:0};
@@ -2735,16 +2733,6 @@ export function createReaderDomAdapter({
         toggleScholaTranslation();
         return;
       }
-      const nav=event.target?.closest?.("[data-reader-nav]");
-      if(nav && Date.now()<suppressNavClickUntil && nav.dataset.readerNav===suppressNavClickDirection){return;}
-      if(nav?.dataset.readerNav==="previous"){
-        navigateBy(-1,"click");
-        return;
-      }
-      if(nav?.dataset.readerNav==="next"){
-        navigateBy(1,"click");
-        return;
-      }
       if(event.target?.closest?.('[data-rubric-source-link="true"]'))return;
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
       if(translatable && mode!=="MISSAL"){
@@ -2760,24 +2748,6 @@ export function createReaderDomAdapter({
       if(rubric){toggleRubric(rubric);return;}
     };
     root.addEventListener?.("click",rootClickListener);
-    // The donor edge arrows are real phone controls. Own touch navigation on
-    // pointerdown: Playwright/Chromium and physical touchscreens both dispatch
-    // this before the compatibility click, so the latter can be suppressed
-    // deterministically without risking a lost touchend after card repaint.
-    for(const navButton of root.querySelectorAll?.("[data-reader-nav]") ?? []){
-      navButton.addEventListener?.("pointerdown",event=>{
-        if(event.pointerType!=="touch")return;
-        event.preventDefault?.();
-        event.stopPropagation?.();
-        suppressNavClickUntil=Date.now()+650;
-        suppressNavClickDirection=navButton.dataset.readerNav??null;
-        if(navButton.dataset.readerNav==="previous"){
-          navigateBy(-1,"pointer");
-        }else if(navButton.dataset.readerNav==="next"){
-          navigateBy(1,"pointer");
-        }
-      });
-    }
     const scrollCard=activeScrollCard();
     if(scrollCard?.addEventListener){
       scrollCard.addEventListener("scroll",()=>{
@@ -2859,8 +2829,8 @@ export function createReaderDomAdapter({
       else if(key==="ArrowLeft"){event.preventDefault?.();navigateBy(-1,"keyboard");}
     };
     root.addEventListener?.("keydown",rootKeydownListener);
-    // v1.80 Mass-preferences mode controls own touch on pointerdown for the
-    // same reason as the edge arrows: a physical tap must commit the switch
+    // The Mass-preferences mode controls own touch on pointerdown: a physical
+    // tap must commit the switch
     // even while the reader rebuilds beneath the preferences sheet.
     for(const modeButton of root.querySelectorAll?.("[data-reader-mode]") ?? []){
       modeButton.addEventListener?.("pointerdown",event=>{
