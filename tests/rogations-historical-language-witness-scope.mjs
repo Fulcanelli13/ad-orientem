@@ -20,7 +20,7 @@ assert.deepEqual(dossier.historicalWitneses.map(x=>[x.year,x.language]),[
   [1883,"en"],[1862,"fr"]
 ]);
 for(const source of dossier.historicalWitneses){
-  assert.match(source.exactRevision,/oldid=\\d+/);
+  assert.match(source.exactRevision,/oldid=\d+/);
   assert.match(source.release,/NEVER_AUTO_IMPORT/);
   assert.equal(source.scope.orations.count,10);
   assert.equal(source.scope.orations.present,true);
