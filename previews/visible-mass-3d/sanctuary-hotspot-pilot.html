@@ -898,8 +898,22 @@ async function guideInit(pilot){
         // hotspot, question, trail and answer owners remain unchanged.
         try{
           const vn=await import("./living-church-character-scene.mjs");
+          // Only an explicit editorial review URL reads the separate Formation
+          // owner's immutable draft JSON. A normal Living Church session
+          // never fetches or exposes this unapproved dialogue.
+          let piusReviewScript=null;
+          if(new URLSearchParams(location.search).get("aoPiusDraftReview")==="1"){
+            try{
+              const pinnedSource="https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/0b4de3b50d1cfb88ecfe30038dae493e6d2eeb13/data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json";
+              const response=await fetch(pinnedSource,{cache:"no-store",signal:AbortSignal.timeout(7000)});
+              if(!response.ok)throw Error("Source owner's pinned draft unavailable");
+              piusReviewScript=await response.json();
+            }catch(error){
+              console.warn("Optional Pius X editorial source bundle unavailable; original visual novel remains unchanged",error);
+            }
+          }
           window.AO_LIVING_CHURCH_P2=vn.mountLivingChurchVisualNovel({
-            win:window,context:livingChurchContextP1
+            win:window,context:livingChurchContextP1,piusReviewScript
           });
         }catch(sceneError){
           console.warn("Living Church P2 scene unavailable; original P1 viewer remains usable",sceneError);
