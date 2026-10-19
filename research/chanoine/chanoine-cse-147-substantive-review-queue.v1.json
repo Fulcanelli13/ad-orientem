@@ -3,8 +3,8 @@
   "date": "2026-10-20",
   "source": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
   "repair_proposals": "research/chanoine/chanoine-cse-semantic-repair-proposals-12.v1.json",
-  "status": "RESEARCH_ONLY_AUTOMATED_TRIAGE_WITH_12_DOCUMENTED_SOURCE_SEMANTIC_REVIEWS",
-  "method": "Deterministic fields, known topic flags and length ratios. Ratio is not proof of drift. Twelve explicit source comparisons have drafted repair proposals. All other records remain unapproved and require independent substantive review.",
+  "status": "RESEARCH_ONLY_AUTOMATED_TRIAGE_WITH_15_APPLIED_UNREVIEWED_SOURCE_FIDELITY_EDITS",
+  "method": "Deterministic structural checks and known topic flags. Length ratios are not proof of drift. Fifteen case-specific bilingual source-fidelity edits have been applied to upstream and composite as UNREVIEWED drafts. All 147 remain uncertified.",
   "counts": {
     "total": 147,
     "lanes": {
@@ -19,7 +19,7 @@
       "P1_MANDATORY_SOURCE_REPAIR": 4,
       "P2_COMPRESSION_CHECK": 3
     },
-    "documented_repairs": 12,
+    "documented_repairs": 15,
     "sourceDebates": 52,
     "newObjections": 95,
     "allBilingual": true,
@@ -1241,13 +1241,14 @@
         "LBM"
       ],
       "has_bilingual_fields": true,
-      "proposal_present": false,
-      "spot_check_status": "AUTOMATED_TRIAGE_NOT_CERTIFIED",
+      "proposal_present": true,
+      "spot_check_status": "DOCUMENTED_SOURCE_COMPARISON_WITH_APPLIED_UNREVIEWED_SPECIALIST_PRECISION_EDIT",
       "publication_approved": false,
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "safeguarding_approved": false,
-      "english_french_reviewed": false
+      "english_french_reviewed": false,
+      "repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE050"
     },
     {
       "id": "CSE051",
@@ -2310,13 +2311,14 @@
         "DI2024"
       ],
       "has_bilingual_fields": true,
-      "proposal_present": false,
-      "spot_check_status": "AUTOMATED_TRIAGE_NOT_CERTIFIED",
+      "proposal_present": true,
+      "spot_check_status": "DOCUMENTED_SOURCE_COMPARISON_WITH_APPLIED_UNREVIEWED_SPECIALIST_PRECISION_EDIT",
       "publication_approved": false,
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "safeguarding_approved": false,
-      "english_french_reviewed": false
+      "english_french_reviewed": false,
+      "repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE097"
     },
     {
       "id": "CSE098",
@@ -2575,13 +2577,14 @@
         "ST18"
       ],
       "has_bilingual_fields": true,
-      "proposal_present": false,
-      "spot_check_status": "AUTOMATED_TRIAGE_NOT_CERTIFIED",
+      "proposal_present": true,
+      "spot_check_status": "DOCUMENTED_SOURCE_COMPARISON_WITH_APPLIED_UNREVIEWED_SPECIALIST_PRECISION_EDIT",
       "publication_approved": false,
       "claim_level_certified": false,
       "persona_voice_approved": false,
       "safeguarding_approved": false,
-      "english_french_reviewed": false
+      "english_french_reviewed": false,
+      "repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE108"
     },
     {
       "id": "CSE109",
@@ -3612,5 +3615,6 @@
       "safeguarding_approved": false,
       "english_french_reviewed": false
     }
-  ]
+  ],
+  "repair_proposals_addendum": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json"
 }
