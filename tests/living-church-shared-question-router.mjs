@@ -1,0 +1,106 @@
+import assert from "node:assert/strict";
+import {readFile} from "node:fs/promises";
+import {createSharedQuestionRouter,SHARED_QUESTION_ROUTER_VERSION} from "../src/learn/living-church-shared-question-router.js";
+
+const j=async path=>JSON.parse(await readFile(new URL("../"+path,import.meta.url),"utf8"));
+const registry=await j("data/learn/living-church-shared-question-routing-pilot.v1.json");
+const en=await j("data/learn/ltfaith-pius-x-en-witness-index.v1.json");
+const it=await j("data/learn/ltfaith-pius-x-it-witness-index.v1.json");
+const gloss=[...(await j("data/glossary/concepts-001-150.v1.json")).entries,
+ ...(await j("data/glossary/concepts-151-300.v1.json")).entries,
+ ...(await j("data/glossary/concepts-301-450.v1.json")).entries];
+const byGloss=new Map(gloss.map(x=>[x.id,x]));
+const byEN=new Map(en.entries.map(x=>[x.q,x]));
+const byIT=new Map(it.entries.map(x=>[x.q,x]));
+assert.equal(registry.schema,"AO_LIVING_CHURCH_SHARED_QUESTION_ROUTING_PILOT_V1");
+assert.equal(registry.state,"RESEARCH_ONLY_NOT_IN_APP");
+assert.equal(registry.pilotLimits.topics,33);
+assert.equal(registry.pilotLimits.approvedConversationalAnswers,0);
+assert.equal(registry.policy.canGenerateNewDoctrinalAnswer,false);
+assert.equal(registry.policy.canGeneratePastoralConclusion,false);
+assert.equal(registry.policy.answerTextIncluded,false);
+assert.equal(registry.policy.historicalSpeechClaim,false);
+assert.equal(registry.policy.explicitUserAcceptanceRequired,true);
+assert.equal(registry.pilotLimits.maxTransfersPerQuestion,1);
+assert.equal(registry.topics.length,33);
+assert.deepEqual(Object.fromEntries(["pius-x","canon","sacristan"].map(k=>[k,registry.topics.filter(x=>x.character===k).length])),
+ {"pius-x":13,canon:7,sacristan:13});
+const topics=new Set();
+for(const topic of registry.topics){
+ assert.ok(!topics.has(topic.id),"duplicate "+topic.id);topics.add(topic.id);
+ assert.equal(topic.approvedReply,false);
+ assert.equal(topic.coverage,"SOURCE_NAVIGATION_ONLY");
+ for(const language of ["en","fr"]){
+  assert.ok(topic.title[language]);
+  assert.ok(topic.questionVariants[language].length>=2);
+ }
+ for(const source of topic.sourceRefs){
+  if(source.owner==="LTF_PIUS_X_ITALIAN_WITNESS_INDEX_V1"){
+   assert.match(source.ref,/^PX1912-Q\d{3}$/);
+   const n=Number(source.ref.slice(-3));
+   assert.ok(byEN.has(n)&&byIT.has(n),source.ref+" not indexed in both witnesses");
+  }else if(source.owner==="GLOSSARY_CONCEPTS_SOT_V1"){
+   const t=byGloss.get(source.ref);
+   assert.equal(t?.definition_status,"SOURCE_BACKED",source.ref+" lacks linked glossary definition");
+  }else if(source.owner==="MASS_EXPLORER_PUBLISHED_GUIDE"){
+   assert.equal(source.ref,"learn.mass_explorer");
+   assert.equal(source.evidence,"EXISTING_GUIDE_NAVIGATION_ONLY");
+  }else throw Error("Unrecognised source owner "+source.owner);
+ }
+}
+for(const a of registry.ambiguities)for(const id of a.candidates)assert.ok(topics.has(id));
+const router=createSharedQuestionRouter(registry);
+assert.equal(router.version,SHARED_QUESTION_ROUTER_VERSION);
+assert.equal(router.topicCount,33);
+const match=(q,options={})=>router.match(q,options);
+let r=match("Why does the priest raise the Host?");
+assert.equal(r.kind,"clarify");assert.equal(r.ambiguityId,"host_raised");
+assert.deepEqual(r.options.map(x=>x.topicId),["faith.real_presence","mass.elevation"]);
+assert.equal(r.answerText,null);
+r=match("Why does the priest wear different colours?");
+assert.equal(r.kind,"clarify");assert.equal(r.ambiguityId,"different_colours");
+assert.deepEqual(r.options.map(x=>x.topicId),["objects.vestments","mass.colors_meaning"]);
+r=match("What does that gesture mean?");
+assert.equal(r.kind,"clarify");assert.equal(r.requiresContext,true);assert.equal(r.options.length,0);
+r=match("what happens to the bread at mass");
+assert.equal(r.kind,"source_navigation");assert.equal(r.character,"pius-x");assert.equal(r.topicId,"faith.real_presence");
+assert.deepEqual(r.sourceRefs.map(x=>x.ref),["PX1912-Q325","PX1912-Q329"]);assert.equal(r.answerText,null);
+r=match("can the pope make mistakes");assert.equal(r.topicId,"church.papal_infallibility");
+r=match("how do i examine my conscience");assert.equal(r.topicId,"penance.examination");
+r=match("Pourquoi invoquer la Sainte Vierge ?",{language:"fr"});assert.equal(r.topicId,"mary.intercession");
+r=match("Que sont les ornements sacerdotaux ?",{language:"fr",currentCharacter:"sacristan"});
+assert.equal(r.topicId,"objects.vestments");assert.equal(r.kind,"source_navigation");
+r=match("what is the small square over the chalice");
+assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"sacristan");assert.equal(r.topicId,"objects.pall");
+assert.equal(r.requiresAcceptance,true);assert.equal(r.sourceRefs[0].ref,"G189");
+assert.equal(router.acceptHandoff(r,{accept:false}).kind,"stay");
+const transfer=router.acceptHandoff(r,{accept:true});
+assert.equal(transfer.kind,"handoff_context");
+assert.equal(transfer.fromCharacter,"pius-x");assert.equal(transfer.toCharacter,"sacristan");
+assert.equal(transfer.originalQuestion,"what is the small square over the chalice");
+assert.equal(transfer.history.handoffCount,1);
+assert.deepEqual(transfer.history.visitedCharacters,["pius-x","sacristan"]);
+assert.equal(transfer.answerText,null);
+assert.equal(router.acceptHandoff(r,{accept:true,history:transfer.history}).kind,"no_coverage");
+r=match("why does the priest kiss the altar",{currentCharacter:"sacristan"});
+assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");
+assert.equal(r.targetRoute,"learn.mass_explorer");
+r=match("what about his Blood?",{context:{activeTopicId:"faith.real_presence"}});
+assert.equal(r.kind,"source_navigation");assert.equal(r.topicId,"faith.whole_christ");
+r=match("why does the priest raise the Host?",{chosenTopicId:"mass.elevation"});
+assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");
+r=match("is it wrong to seek more money for my family");
+assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"family_livelihood_from_Q85");
+r=match("what is the current eucharistic fast");
+assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"unverified_modern_law");
+r=match("How do I install WiFi drivers on Linux?");
+assert.equal(r.kind,"no_coverage");
+assert.equal(r.answerText,null);
+assert.throws(()=>match("what is a pall",{currentCharacter:"invalid"}),/Unknown character/);
+assert.throws(()=>match("what is a pall",{chosenTopicId:"invented"}),/Unrecognised chosen topic/);
+const clone=structuredClone(registry);clone.topics[0].sourceRefs=[];
+assert.throws(()=>createSharedQuestionRouter(clone),/Unsafe question topic/);
+for(const c of ["pius-x","canon","sacristan"]){
+ const src=router.listTopics({character:c});assert.ok(src.length>0);assert.ok(src.every(x=>x.approvedReply===false&&!x.answerText));
+}
+console.log("PASS Living Church shared routing: 33 source-indexed topics, bilingual matching, 3 clarification cases, 2 source gaps, explicit transfer, no loops and no invented answer");
