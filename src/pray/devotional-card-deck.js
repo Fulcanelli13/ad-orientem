@@ -8,6 +8,7 @@ import {devotionalFocusIndex} from "./devotional-focus-geometry.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 
 import "./devotional-card-deck-styles.js";
+import {updateDevotionalProgress} from "./devotional-progress.js";
 import {angelusCommunalParts,stripGloriaRepetition} from "./angelus-folio-recitation.js";
 export const DEVOTIONAL_CARD_SCHEMA="dual-axis-devotional-cards-v1";
 const DATA={
@@ -137,12 +138,6 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
  if(parts&&(parts.v.length!==3||parts.l.length!==3))return null;
  const timeline=create(doc,"nav","aoDevoTimeline");
  timeline.setAttribute("aria-label",language==="fr"?"Chronologie des prières":"Prayer timeline");
- const previous=create(doc,"button","aoDevoNavArrow","←");
- previous.type="button";previous.dataset.aoDevoMove="-1";
- previous.setAttribute("aria-label",language==="fr"?"Carte précédente":"Previous card");
- const next=create(doc,"button","aoDevoNavArrow","→");
- next.type="button";next.dataset.aoDevoMove="1";
- next.setAttribute("aria-label",language==="fr"?"Carte suivante":"Next card");
  const stops=create(doc,"div","aoDevoStops"),viewport=create(doc,"div","aoDevoCardViewport");
  const cards=[];
  plan.forEach((entry,i)=>{
@@ -171,6 +166,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   }
   const body=create(doc,"div","aoDevoCardScroll");body.dataset.aoDevoScroll="";
   body.setAttribute("role","region");body.setAttribute("aria-label",entry.title);
+  body.tabIndex=0; // Keyboard users can focus the scroll region and switch cards.
   entry.unitIndices.forEach(j=>body.append(units[j]));
   if(form==="angelus"&&entry.id==="collect"&&parts){
    APPENDIX.forEach(([id,en,titleFr,latin,appendixIndex])=>{
@@ -184,7 +180,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   collectParagraphs(body,entry.id);
   card.append(header,body);viewport.append(card);cards.push(card);
  });
- timeline.append(previous,stops,next);
+ timeline.append(stops);
  host.replaceChildren(timeline,viewport);host.dataset.aoDevotionalDeck="v1";
  host.classList.add("aoDevoDeck");
  originalAppendix?.remove();
@@ -224,7 +220,7 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
    x.classList.toggle("active",i===index);
    x.setAttribute("aria-current",i===index?"step":"false");
   });
-  previous.disabled=index===0;next.disabled=index===plan.length-1;
+  updateDevotionalProgress(timeline,{index,total:plan.length,language});
   // Keep timeline item visible without scrolling the vertical Prayer mount.
   const button=stops.children[index],rail=stops;
   rail.scrollLeft=Math.max(0,button.offsetLeft-rail.offsetLeft-(rail.clientWidth-button.clientWidth)/2);
@@ -232,28 +228,45 @@ export function installAngelusCardDeck({mount,form="angelus",language="en",
   if(!initial)onCardChange(plan[index],index);
   return true;
  }
- let touch=null;
+ let touch=null,lastHorizontalSwipe=0;
  host.addEventListener("touchstart",e=>{
-  if(e.touches.length!==1||e.target.closest("button,a,input,summary")){touch=null;return}
+  if(e.touches.length!==1||e.target.closest(".aoDevoTimeline,a,input,textarea,select,summary,[contenteditable],[data-ao-devo-no-swipe],button:not([data-p435930-card-flip])")){
+   touch=null;return;
+  }
   touch={x:e.touches[0].clientX,y:e.touches[0].clientY,at:Date.now()};
  },{passive:true});
+ host.addEventListener("touchcancel",()=>{touch=null},{passive:true});
  host.addEventListener("touchend",e=>{
-  if(!touch)return;
+  if(!touch||e.changedTouches.length!==1)return;
   const dx=e.changedTouches[0].clientX-touch.x,dy=e.changedTouches[0].clientY-touch.y;
   const elapsed=Date.now()-touch.at;touch=null;
-  if(elapsed<=1300&&Math.abs(dx)>=72&&Math.abs(dx)>Math.abs(dy)*1.35)
+  if(elapsed<=1300&&Math.abs(dx)>=72&&Math.abs(dx)>Math.abs(dy)*1.35){
+   lastHorizontalSwipe=Date.now();
    go(index+(dx<0?1:-1));
+  }
  },{passive:true});
+ // Text faces are language-flip buttons. A horizontal swipe over their text
+ // changes cards, never accidentally flips the language on synthetic click.
+ host.addEventListener("click",e=>{
+  if(Date.now()-lastHorizontalSwipe<450&&e.target.closest("[data-p435930-card-flip]")){
+   e.preventDefault();e.stopImmediatePropagation();
+  }
+ },true);
+ host.addEventListener("keydown",e=>{
+  if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||!["ArrowLeft","ArrowRight"].includes(e.key)||
+   e.target.closest("button,a,input,textarea,select,summary,[contenteditable]"))return;
+  e.preventDefault();
+  go(index+(e.key==="ArrowRight"?1:-1));
+ });
  host.addEventListener("click",e=>{
   if(e.target.closest("[data-p435930-card-flip]")){
    const currentBody=cards[index]?.querySelector(".aoDevoCardScroll");
    if(currentBody)delete currentBody.dataset.aoFocusRunway;
    queueMicrotask(queue);
   }
-  const b=e.target.closest("[data-ao-devo-jump],[data-ao-devo-move]");
+  const b=e.target.closest("[data-ao-devo-jump]");
   if(!b)return;e.preventDefault();e.stopPropagation();
-  if(b.dataset.aoDevoJump!==undefined)go(+b.dataset.aoDevoJump);
-  else go(index+Number(b.dataset.aoDevoMove||0));
+  go(+b.dataset.aoDevoJump);
  });
  cards.forEach(card=>card.querySelector(".aoDevoCardScroll")?.addEventListener("scroll",queue,{passive:true}));
  doc.defaultView?.addEventListener("resize",()=>{

@@ -26,8 +26,6 @@ export function ensurePrayReader({win=globalThis}={}){
     await import("./novena-runtime.js");
     await import("./traditional-pray-runtime.js");
     await import("./focus-installer.js");
-    // Non-owning mirrored Latin-cross controls for the Angelus/Regina cards.
-    await import("./cruciform-navigation.js");
     // All of these modules install via their original production side-effects.
     // Preserve their original API globals instead of introducing a new owner.
     const coherence=win?.AO_PRAY_COHERENCE_V435930;
