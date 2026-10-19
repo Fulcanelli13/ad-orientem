@@ -25,12 +25,19 @@ export function resolve1962OrganPermission({
   season=null,requiem=false,septEmberFerial=false,
   triduum=false,holyThursdayChrism=false,
   holyThursdayGloria=false,easterVigilGloriaReached=false,
-  exceptionalFeastConfirmed=false
+  exceptionalFeastConfirmed=false,lowMassCustomRelevant=false,
+  lowMassRestrictedInterval=false
 }={}){
   const use=String(kind).toUpperCase();
   const action=String(moment).toUpperCase();
   const service=String(office).toUpperCase();
   const liturgicalSeason=String(season??"").toUpperCase();
+  // §29 is conditional on an interfering instrumental custom at Low Mass.
+  // The caller must independently certify that context *and* the stage
+  // boundary. Neither the calendar date nor an ordinary 1962 Mass card
+  // alone satisfies this condition.
+  if(lowMassCustomRelevant===true && lowMassRestrictedInterval===true)
+    return verdict("FORBIDDEN","CERTIFIED_LOW_MASS_RESTRICTED_INTERVAL",["29"]);
   if(!["SOLO","ACCOMPANY_CHANT","OTHER_INSTRUMENTS"].includes(use))
     return verdict("REQUIRES_CONTEXT","UNKNOWN_INSTRUMENTAL_USE",["60–69"]);
   if(["PRIEST_CHANT","PRIEST_RESPONSE"].includes(action))
