@@ -184,24 +184,39 @@ try{
         assert.equal(await stage(),"ABS-R01");
         await click();
         assert.equal(await stage(),"ABS-R02");
+        assert.equal(await rows(),2);
+        assert.equal(await page.locator(".ao-line-secondary").count(),2,
+          "Non intres and Amen do not have French side-by-side Missal text");
         await click();
         assert.equal(await stage(),"ABS-R03");
         assert.equal(await rows(),3);
+        assert.equal(await page.locator(".ao-line-secondary").count(),3,
+          "Libera me is missing French responsory and first two verses");
+        assert.match(await page.locator(".ao-line-secondary").first().innerText(),
+          /Délivrez-moi, Seigneur/);
         await click();
         assert.equal(await stage(),"ABS-R03",
           "A Libera me Missal reading page advanced the Requiem source event");
         assert.equal(await rows(),4);
+        assert.equal(await page.locator(".ao-line-secondary").count(),4,
+          "Libera me final repeated responsory has no French translation");
         await click();
         assert.equal(await stage(),"ABS-R04");
         assert.equal(await rows(),4,"Kyrie and Pater noster source text missing");
+        assert.equal(await page.locator(".ao-line-secondary").count(),4,
+          "Requiem Kyrie/Pater lack English/French parallel source lines");
         for(const expectedRows of [6,4,2]){
           await click();
           assert.equal(await stage(),"ABS-R04");
           assert.equal(await rows(),expectedRows,
             "Requiem absolution dialogue section was cut or repeated");
+          assert.equal(await page.locator(".ao-line-secondary").count(),expectedRows,
+            "A Requiem conditional V/R or oration lacks source-indexed French");
         }
         await click();
         assert.equal(await stage(),"ABS-R05");
+        assert.equal(await page.locator(".ao-line-secondary").count(),2,
+          "In paradisum and Chorus angelorum require two complete parallel French rows");
         assert.notEqual(await page.evaluate(()=>
           window.__AO_PHONE_PREVIEW.getRequiemAbsolutionState().posture),
           "PROCESSIONAL","Burial flag must not silently enroll the lay participant");
