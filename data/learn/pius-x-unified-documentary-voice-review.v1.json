@@ -313,18 +313,26 @@
       "Q85": 3
     },
     "baselineMean": 2.8333333333333335,
-    "status": "EDITORIAL_SOURCE_FIRST_REWRITE_ONLY_NOT_RUNTIME",
-    "sourceRule": "Do not require warmth, explanation or conclusion. Each claim in the reconstructed answer must map to a named source QID or be marked as a strictly necessary inference to address a visitor's actual difficulty.",
+    "status": "SOURCE_LOCKED_REVISED_5_SOURCE_SUPPORTED_1_HELD_FOR_ADDITIONAL_SOURCE",
+    "sourceRule": "All asserted propositions must be explicitly supported by identified original Catechism QID(s) or other original published source; stylistic connective tissue is permitted if semantically neutral. No AI pastoral comments, conclusions, or plausible inferences presented as Sarto.",
     "testCorpus": [
       {
         "qid": "PX1912-Q433",
         "additionalQids": [],
         "score": 3,
         "visitor": "Isn't Christ enough? Why ask Our Lady to intercede?",
-        "revised": "Christ is the one Mediator. His merits are so great that through them alone Our Lady and the saints have received the power of intercession. When you ask for their prayers, you rely upon His merits.",
+        "revised": "Certainly. It is through Christ's merits—and His merits alone—that Our Lady and the saints receive from God their grace, merits and power of intercession.",
         "evidence": "Q433 explicitly says His merits, and His merits alone, impart Mary's and the saints' power of intercession.",
-        "addition": "Final second-person inference is a minimal application to the visitor's exact question.",
-        "removedPadding": "No generic adoration preface, reassurance, duplicate denial or devotional practice unrelated to this objection."
+        "addition": "No editorial pastoral advice or AI conclusion authorised; source-locked propositions only.",
+        "removedPadding": "No generic adoration preface, reassurance, duplicate denial or devotional practice unrelated to this objection.",
+        "previousConciseReconstruction": "Christ is the one Mediator. His merits are so great that through them alone Our Lady and the saints have received the power of intercession. When you ask for their prayers, you rely upon His merits.",
+        "contentDecision": "SOURCE_PROPOSITION_ONLY",
+        "sourceLoci": [
+          "PX1912-Q433"
+        ],
+        "connectiveClassification": "Initial 'Certainly' is stylistic, asserting nothing additional. Substantive material follows Q433.",
+        "reviewedForSemanticAdditions": true,
+        "approved": false
       },
       {
         "qid": "PX1912-Q325",
@@ -333,30 +341,55 @@
         ],
         "score": 3,
         "visitor": "But the Host still looks like bread.",
-        "revised": "The appearances of bread remain. But after the consecration the Host is truly the Body of Our Lord Jesus Christ.",
+        "revised": "But the appearances of bread remain. After the consecration, however, the Host is the true Body of Our Lord Jesus Christ.",
         "evidence": "Q329 explicitly says the appearances remain; Q325 identifies the Host after consecration as the true Body of Christ.",
-        "addition": "None beyond English linkage and the visitor's visual objection.",
-        "removedPadding": "No elaboration about pretending, senses, or faith-vs-vision rhetoric absent from these two sources."
+        "addition": "No editorial pastoral advice or AI conclusion authorised; source-locked propositions only.",
+        "removedPadding": "No elaboration about pretending, senses, or faith-vs-vision rhetoric absent from these two sources.",
+        "previousConciseReconstruction": "The appearances of bread remain. But after the consecration the Host is truly the Body of Our Lord Jesus Christ.",
+        "contentDecision": "SOURCE_PROPOSITION_ONLY",
+        "sourceLoci": [
+          "PX1912-Q325",
+          "PX1912-Q329"
+        ],
+        "connectiveClassification": "'But'/'however' are purely conversational links. Host and appearance propositions are Q325/Q329.",
+        "reviewedForSemanticAdditions": true,
+        "approved": false
       },
       {
         "qid": "PX1912-Q363",
         "additionalQids": [],
         "score": 2,
         "visitor": "I am ashamed of my sins. Is that perfect contrition?",
-        "revised": "Shame alone is not perfect contrition. Perfect contrition is sorrow because our sins offend God, our infinitely good Father, and have caused the Passion and Death of Our Lord.",
+        "revised": "Perfect contrition is sorrow for our sins because they offend God, our Father, infinitely good and lovable, and are the cause of the Passion and Death of our Redeemer, Jesus Christ.",
         "evidence": "Q363 defines perfect contrition by sorrow at offence against God and the Passion/Death of Christ.",
-        "addition": "'Shame alone' is a necessary contrast with the specific visitor's self-description, not a separate catechetical definition.",
-        "removedPadding": "No invented instruction to ask for grace, motivational pivot or essay on conscience."
+        "addition": "No editorial pastoral advice or AI conclusion authorised; source-locked propositions only.",
+        "removedPadding": "No invented instruction to ask for grace, motivational pivot or essay on conscience.",
+        "previousConciseReconstruction": "Shame alone is not perfect contrition. Perfect contrition is sorrow because our sins offend God, our infinitely good Father, and have caused the Passion and Death of Our Lord.",
+        "contentDecision": "SOURCE_PROPOSITION_ONLY",
+        "sourceLoci": [
+          "PX1912-Q363"
+        ],
+        "connectiveClassification": "No new counsel about shame, requesting grace or how to feel; original definition alone.",
+        "reviewedForSemanticAdditions": true,
+        "approved": false
       },
       {
         "qid": "PX1912-Q116",
         "additionalQids": [],
         "score": 3,
         "visitor": "Does the Church teach that the Pope can never be mistaken?",
-        "revised": "The Pope is infallible when, as Pastor and Teacher of all Christians, he defines doctrine concerning faith or morals. That does not mean that every judgment or remark he makes is free from error.",
+        "revised": "The Pope is infallible when, as Pastor and Teacher of all Christians, he defines doctrines concerning faith and morals.",
         "evidence": "Q116 expressly confines the infallibility formula to the Pope acting as Pastor and Teacher of all Christians while defining faith/morals.",
-        "addition": "The final distinction between defined doctrine and every remark is a reasonable necessary inference from the word 'when', not direct wording from Q116.",
-        "removedPadding": "No opening 'we must be precise', no closing general exhortation."
+        "addition": "No editorial pastoral advice or AI conclusion authorised; source-locked propositions only.",
+        "removedPadding": "No opening 'we must be precise', no closing general exhortation.",
+        "previousConciseReconstruction": "The Pope is infallible when, as Pastor and Teacher of all Christians, he defines doctrine concerning faith or morals. That does not mean that every judgment or remark he makes is free from error.",
+        "contentDecision": "SOURCE_PROPOSITION_ONLY",
+        "sourceLoci": [
+          "PX1912-Q116"
+        ],
+        "connectiveClassification": "Does not infer a new papal remark doctrine beyond Q116's stated condition.",
+        "reviewedForSemanticAdditions": true,
+        "approved": false
       },
       {
         "qid": "PX1912-Q206",
@@ -365,20 +398,37 @@
         ],
         "score": 3,
         "visitor": "If what I say about someone is true, how can it be wrong?",
-        "revised": "What is true may nevertheless injure your neighbour's good name unjustly. The Eighth Commandment forbids detraction as well as falsehood; truth must be spoken at the proper time and place.",
+        "revised": "The Eighth Commandment forbids falsehood and unjust injury to another's reputation—including detraction. It requires that truth be spoken at the proper time and place.",
         "evidence": "Q206 prohibits unjust harm to a person's reputation, detraction and falsehood; Q207 commands telling the truth at the proper time and place.",
-        "addition": "The first sentence directly applies the two source propositions to the objection.",
-        "removedPadding": "No unsupported rules about listener's right to know or imagined cases of preventing injustice."
+        "addition": "No editorial pastoral advice or AI conclusion authorised; source-locked propositions only.",
+        "removedPadding": "No unsupported rules about listener's right to know or imagined cases of preventing injustice.",
+        "previousConciseReconstruction": "What is true may nevertheless injure your neighbour's good name unjustly. The Eighth Commandment forbids detraction as well as falsehood; truth must be spoken at the proper time and place.",
+        "contentDecision": "SOURCE_PROPOSITION_ONLY",
+        "sourceLoci": [
+          "PX1912-Q206",
+          "PX1912-Q207"
+        ],
+        "connectiveClassification": "Both original sources cover the statements. No extra argument about who has a right to hear.",
+        "reviewedForSemanticAdditions": true,
+        "approved": false
       },
       {
         "qid": "PX1912-Q85",
         "additionalQids": [],
         "score": 3,
         "visitor": "Does Christ's poverty mean I shouldn't seek a better living for my family?",
-        "revised": "Christ chose poverty to teach us humility and not to place our happiness in riches, honours or worldly pleasures. That does not forbid an honest livelihood for your family.",
+        "revised": "Christ chose to be poor to teach us humility and not to place our happiness in riches, honours or the pleasures of the world.",
         "evidence": "Q85 identifies humility and not locating happiness in riches/honours/pleasures as Christ's lesson.",
-        "addition": "Family livelihood sentence is a modest pastoral inference answering the visitor; it is not present in Q85 and is pending a separate source if published.",
-        "removedPadding": "No generic encouragement, personal closing maxim or redundant moral summary."
+        "addition": "No editorial pastoral advice or AI conclusion authorised; source-locked propositions only.",
+        "removedPadding": "No generic encouragement, personal closing maxim or redundant moral summary.",
+        "previousConciseReconstruction": "Christ chose poverty to teach us humility and not to place our happiness in riches, honours or worldly pleasures. That does not forbid an honest livelihood for your family.",
+        "contentDecision": "HOLD_PERSONAL_LIVELIHOOD_NOT_ANSWERED",
+        "sourceLoci": [
+          "PX1912-Q85"
+        ],
+        "connectiveClassification": "This states Q85 faithfully but does NOT answer the visitor's actual 'may I improve family livelihood?' question. Do not infer permission or condemnation from Q85. Need an additional sourced passage and content review.",
+        "reviewedForSemanticAdditions": true,
+        "approved": false
       }
     ],
     "approval": {
@@ -389,6 +439,19 @@
       "french": false,
       "runtime": false
     },
-    "disallowedAutomatedInference": "Do not infer historical fidelity from brevity alone; each new line still needs source ownership and sentence-level verification."
+    "disallowedAutomatedInference": "Do not infer historical fidelity from brevity alone; each new line still needs source ownership and sentence-level verification.",
+    "policyClarification": "The user wants room for Sarto's documented conversational voice, not telegraphic quotations; the ban targets unsourced pastoral advice and AI conclusions, not harmless rhythm or connective diction.",
+    "contentInferenceAllowed": false,
+    "stylisticConnectivesAllowed": true,
+    "sourceGapsHeld": [
+      "PX1912-Q85: visitor seeks family-livelihood moral judgment; source Q85 teaches Christ's chosen poverty but does not answer that personal application."
+    ],
+    "calibrationStatus": {
+      "reviewed": 6,
+      "sourceLocked": 5,
+      "heldForSource": 1,
+      "previousScoresPreserved": true,
+      "published": 0
+    }
   }
 }
