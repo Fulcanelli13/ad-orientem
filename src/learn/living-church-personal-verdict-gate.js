@@ -9,7 +9,7 @@
  * It never produces theological or pastoral answers.
  */
 const fold=v=>String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
- .toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9' ]+/g," ")
+ .toLowerCase().replace(/[’‘']/g," ").replace(/[^a-z0-9 ]+/g," ")
  .replace(/\s+/g," ").trim();
 
 function english(text){
@@ -19,7 +19,7 @@ function english(text){
  // just because the visitor also says that they are learning.
  const inquiry=/\b(have i|did i|am i|was i|has god|did god|does my|do my|is my|was my|can you (?:tell|determine|judge|assess|decide|know|diagnose|conclude)|could you (?:tell|determine|judge|assess|decide|diagnose|conclude)|tell me whether|tell me if|are you (?:sure|certain)|does (?:it|this|that) (?:prove|show|mean))\b/.test(text);
  if(!inquiry)return false;
- const verdict=/\b(sanctifying grace|state of grace|lost (?:my |the )?grace|forfeited grace|mortal sin|grave sin|committed sin|sin(?:ned)?|damned|damnation|saved|salvation|culpable|guilty|guilt|forgiven|forgave|abandoned|invalid|validity|valid confession|consented|consent to|spiritual state|condition of my soul|offended god)\b/.test(text);
+ const verdict=/\b(sanctifying grace|state of grace|lost (?:my |the )?grace|forfeited grace|mortal sin|grave sin|committed sin|sin(?:ned)?|damned|damnation|saved|salvation|culpable|guilty|guilt|forgiven|forgave|abandoned|invalid|validity|valid confession|consented|consent to|spiritual state|condition of my soul|offended god|personally lost it)\b/.test(text);
  return verdict;
 }
 function french(text){
