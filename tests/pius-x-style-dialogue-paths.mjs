@@ -7,6 +7,8 @@ const pre=await load("../data/learn/pius-x-prepapal-style-batch2.v1.json");
 const review=await load("../data/learn/pius-x-unified-documentary-voice-review.v1.json");
 const collation=await load("../data/learn/pius-x-original-language-collation.v1.json");
 const personalBench=await load("../data/learn/pius-x-personal-voice-benchmark.v1.json");
+const personalWit=await load("../data/learn/pius-x-personal-correspondence-evidence.v2.json");
+const contrast=await load("../data/learn/pius-x-personal-voice-contrastive-eval.v1.json");
 assert.equal(cases.schema,"AO_PIUS_X_STYLE_DIALOGUE_PATHS_V1");
 assert.equal(cases.owner,"STYLE_ONLY_REVIEW");
 assert.equal(cases.publication,"DRAFT_NOT_RUNTIME");
@@ -401,5 +403,62 @@ for(const b of personalBench.benchmarks){
 }
 assert.match(personalBench.benchmarks[1].reply.en,/May God console you in your grief/);
 assert.doesNotMatch(personalBench.benchmarks[2].reply.en,/Why cover it\?/);
+
+
+/** Expanded personal source controls: documentary excerpts and manual, non-automated voice comparisons. */
+assert.equal(personalWit.schema,"AO_PIUS_X_PERSONAL_VOICE_PRIMARY_EXCERPT_BATCH_V2");
+assert.equal(personalWit.publication,"RESEARCH_ONLY_NOT_RUNTIME");
+assert.equal(personalWit.runtimeImportAllowed,false);
+assert.equal(personalWit.witnesses.length,11);
+assert.equal(personalWit.approval.originalManuscriptsFullyRead,false);
+assert.equal(personalWit.approval.philologicalPeriodItalianCertified,false);
+assert.equal(personalWit.approval.runtimeAllowed,false);
+const letterMap=new Map(personalWit.witnesses.map(w=>[w.id,w]));
+assert.equal(letterMap.size,11,"Every source ID unique");
+for(const w of personalWit.witnesses){
+ assert.match(w.url,/^https:\/\//);
+ assert.ok(w.genre&&w.access&&w.archive&&w.date);
+ assert.ok(w.evidence.length>=50);
+ assert.ok(w.rule&&w.caution);
+ assert.ok(w.locator.length>25);
+ assert.ok(!/FULL_AUTOGRAPH_TRANSCRIBED_AND_COLLATION_VERIFIED/.test(w.access));
+}
+assert.equal(contrast.schema,"AO_PIUS_X_PERSONAL_VOICE_CONTRASTIVE_EVAL_V1");
+assert.equal(contrast.publication,"DRAFT_NOT_RUNTIME");
+assert.equal(contrast.runtimeImportAllowed,false);
+assert.equal(contrast.reviewPolicy.historicalSpeechClaim,false);
+assert.equal(contrast.reviewPolicy.noLengthQuota,true);
+assert.equal(contrast.reviewPolicy.noHumourQuota,true);
+assert.equal(contrast.reviewPolicy.noQuestionQuota,true);
+assert.equal(contrast.reviewPolicy.canImportToRuntime,false);
+assert.equal(contrast.reviewPolicy.automaticTestOnlyValidatesProvenanceAndGates,true);
+// Assert on the actual documented key, not a subjectively assigned "authenticity score".
+assert.equal(contrast.cases.length,8);
+assert.equal(contrast.aggregate.approvalCount,0);
+assert.equal(contrast.aggregate.automaticallyRated,false);
+assert.equal(contrast.rubric.length,6);
+const seenPersonalPrompts=new Set();
+for(const c of contrast.cases){
+ assert.ok(c.id&&c.sourceIds.length>=1);
+ assert.ok(!seenPersonalPrompts.has(c.id),"Duplicate personal voice test "+c.id); seenPersonalPrompts.add(c.id);
+ assert.equal(c.grade,"MANUAL_REVIEW_PENDING");
+ for(const k of ["historical","theology","english","french","runtime"])assert.equal(c.approval[k],false);
+ for(const id of c.sourceIds)assert.ok(letterMap.has(id),"Nonexistent personal historical witness "+id);
+ assert.ok(c.historicalBasis.length>=60);
+ assert.ok(c.constructed.length>=30&&c.disallowed.length>=2);
+ assert.ok(c.failureContrast.length>=30);
+ for(const lang of ["en","fr"]){
+  assert.ok(c.visitor[lang].trim()&&c.response[lang].trim());
+  assert.ok(!/^In (?:the year|my childhood)/i.test(c.response[lang])||c.id==="PXC-01-MYTH");
+ }
+}
+const legendCase=contrast.cases.find(x=>x.id==="PXC-01-MYTH");
+assert.ok(legendCase.sourceIds.includes("PIUS-1908-REFUTE-CHILDHOOD-MYTH"));
+assert.match(legendCase.response.en,/ought not to be presented as certain/);
+assert.doesNotMatch(legendCase.response.en,/save (?:my|their) parents' money/);
+const secretariatCase=contrast.cases.find(x=>x.id==="PXC-07-SECRETARIAT");
+assert.ok(secretariatCase.disallowed.some(x=>x.includes("Bressan")));
+assert.equal(contrast.aggregate.sourceWitnessesTouched,
+ new Set(contrast.cases.flatMap(x=>x.sourceIds)).size);
 
 console.log("PASS Pius X 3 bilingual x 3 exchanges in both languages, source-gated end-to-end scripted playback = 18 interactions, 9 unique style-only replies; pinned route references, original-source gate, approved sprite names, no fabricated quotations or new doctrinal corpus");
