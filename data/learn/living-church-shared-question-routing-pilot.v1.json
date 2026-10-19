@@ -436,8 +436,8 @@
       "sourceRefs": [
         {
           "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
-          "ref": "learn.mass_explorer",
-          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+          "ref": "AO.CARD.015",
+          "evidence": "PUBLISHED_SUNG_GUIDE_TOPIC_VERIFIED"
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
@@ -461,15 +461,10 @@
           "que signifie le baiser de l'autel"
         ]
       },
-      "sourceRefs": [
-        {
-          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
-          "ref": "learn.mass_explorer",
-          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
-        }
-      ],
-      "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "sourceRefs": [],
+      "coverage": "SOURCE_GAP",
+      "approvedReply": false,
+      "sourceGapReason": "The original published opening Guide covers approaching the altar but does not explain the meaning of kissing it; more specific approved sources needed."
     },
     {
       "id": "mass.colors_meaning",
@@ -489,15 +484,10 @@
           "pourquoi différentes couleurs à la messe"
         ]
       },
-      "sourceRefs": [
-        {
-          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
-          "ref": "learn.mass_explorer",
-          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
-        }
-      ],
-      "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "sourceRefs": [],
+      "coverage": "SOURCE_GAP",
+      "approvedReply": false,
+      "sourceGapReason": "The original published Guide does not independently establish an approved commentary about the liturgical calendar's colours; source relationship pending."
     },
     {
       "id": "mass.gestures_meaning",
@@ -517,15 +507,10 @@
           "pourquoi le prêtre fait-il la génuflexion"
         ]
       },
-      "sourceRefs": [
-        {
-          "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
-          "ref": "learn.mass_explorer",
-          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
-        }
-      ],
-      "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "sourceRefs": [],
+      "coverage": "SOURCE_GAP",
+      "approvedReply": false,
+      "sourceGapReason": "No single verified Guide moment supports an unconstrained explanation of unspecified priestly gestures; requires a selected moment or more specific source."
     },
     {
       "id": "mass.roman_canon",
@@ -548,8 +533,8 @@
       "sourceRefs": [
         {
           "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
-          "ref": "learn.mass_explorer",
-          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+          "ref": "AO.CARD.014",
+          "evidence": "PUBLISHED_SUNG_GUIDE_TOPIC_VERIFIED"
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
@@ -576,8 +561,8 @@
       "sourceRefs": [
         {
           "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
-          "ref": "learn.mass_explorer",
-          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+          "ref": "AO.CARD.010",
+          "evidence": "PUBLISHED_SUNG_GUIDE_TOPIC_VERIFIED"
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
@@ -604,8 +589,8 @@
       "sourceRefs": [
         {
           "owner": "MASS_EXPLORER_PUBLISHED_GUIDE",
-          "ref": "learn.mass_explorer",
-          "evidence": "EXISTING_GUIDE_NAVIGATION_ONLY"
+          "ref": "AO.CARD.007",
+          "evidence": "PUBLISHED_SUNG_GUIDE_TOPIC_VERIFIED"
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
@@ -1136,7 +1121,9 @@
     ],
     "maxClarifications": 3,
     "maxTransfersPerQuestion": 1,
-    "semanticModelPlannedButNotEnabled": true
+    "semanticModelPlannedButNotEnabled": true,
+    "sourceNavigableTopics": 30,
+    "sourceGapTopics": 3
   },
   "externalDependencies": [
     {
@@ -1162,6 +1149,8 @@
     "stopOnNoCoverage": true,
     "noLoop": true,
     "referralDialogueMayBeEditorial": false,
-    "historicalSpeechClaim": false
+    "historicalSpeechClaim": false,
+    "referralRequiresExactRelevantSource": true,
+    "genericRouteIsNotEvidence": true
   }
 }
