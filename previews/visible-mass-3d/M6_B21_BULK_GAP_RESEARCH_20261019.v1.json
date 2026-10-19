@@ -1,0 +1,178 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_B21_BULK_GAP_RESEARCH_V1",
+  "date": "2026-10-19",
+  "status": "RESEARCH_ONLY_NOT_CANONICAL_NOT_PUBLICATION_APPROVED",
+  "provenance": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "source_branch": "feature/visible-mass-3d-explorer-p0",
+    "source_registry": "previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json",
+    "source_pilot": "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v4.json",
+    "source_stand_rights_hold": "previews/visible-mass-3d/M6_B20_MISSAL_STAND_PHOTO_RIGHTS_HOLD_20261019.v1.json",
+    "canonical_records_unchanged": true
+  },
+  "baseline": {
+    "object_count": 170,
+    "source_image_records": 112,
+    "objects_with_any_photo_or_hotspot_candidate": 98,
+    "needs_photo": 72,
+    "pilot_objects": 30,
+    "pilot_provisional_single_hero": 12,
+    "pilot_without_provisional_single_hero": 18,
+    "disclaimer": "Any-photo baseline is not publication-ready coverage; 12 provisional pilot heroes remain unapproved. These B21 leads do not change counts."
+  },
+  "policy": "One image of exact physical object (or defined set) only; plain neutral background; correct historic Latin Catholic usage; verify image-level rights and full-size framing; no release without human QA.",
+  "new_gap_subject_leads": [
+    {
+      "object_id": "SV09",
+      "object": "Monstrance",
+      "source": "https://www.metmuseum.org/art/collection/search/197090",
+      "accession": "32.100.231a, b",
+      "identity": "Silver-gilt sunburst monstrance, attributed to Diego de Atienza, Lima, 1646–49; Mercedarian commission for a Spanish parish.",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "visual": "PREVIEW_SCREENED_COMPLETE_ISOLATED_LIGHT_GREY",
+      "priority": "TOP_CANDIDATE",
+      "caveat": "Expensive historic sunburst exemplar, not necessarily representative of a humble 1962 parish; original pixel check and curator acceptance required."
+    },
+    {
+      "object_id": "SV08",
+      "object": "Pyx",
+      "source": "https://www.metmuseum.org/art/collection/search/463002",
+      "accession": "07.199.2a, b",
+      "identity": "Spanish silver pyx, late 15th–early 16th c.; Met explicitly identifies reserved consecrated Host use.",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "visual": "SOURCE_HAS_MULTIPLE_STUDIO_IMAGES_ORIGINAL_QA_PENDING",
+      "priority": "OBJECT_AND_RIGHTS_MATCH",
+      "caveat": "Historic larger pyx, do not use for SA11 home-Communion pyx-and-case unless matched case is actually photographed."
+    },
+    {
+      "object_id": "AL12",
+      "object": "Altar frontal / antependium",
+      "source": "https://www.metmuseum.org/art/collection/search/461387",
+      "accession": "1975.1.1905",
+      "identity": "Spanish or Portuguese late-17th/early-18th-century ecclesiastical antependium in silk, metal and linen.",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "visual": "PREVIEW_SCREENED_SHOWS_TEXTILE_DETAIL; COMPLETE_SILHOUETTE_NOT_YET_CONFIRMED",
+      "priority": "SOURCE_IDENTIFIED_VISUAL_HOLD",
+      "caveat": "Do not adopt if original photograph crops portions of the complete textile. Met 462800 visually shows full object but British pre-Reformation provenance needs separate historical QA."
+    },
+    {
+      "object_id": "SC03",
+      "object": "Vestment press / sacristy cabinet",
+      "source": "https://www.metmuseum.org/art/collection/search/193333",
+      "accession": "16.154.12",
+      "identity": "Italian Tuscan sacristy cupboard, walnut, ca. 1490–1500.",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "visual": "PREVIEW_SCREENED_BLACK_WHITE_NEUTRAL_BUT_FRAMING_CHECK_REQUIRED",
+      "priority": "OBJECT_AND_RIGHTS_MATCH",
+      "caveat": "Historic cupboard, grayscale reproduction; prefer a colour isolated complete press if found."
+    },
+    {
+      "object_id": "SA04",
+      "object": "Holy-oil stocks",
+      "source": "https://www.metmuseum.org/art/collection/search/189078",
+      "accession": "06.748",
+      "identity": "Probably Flemish pewter chrismatory/oil-stock, 17th century.",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "visual": "MUSEUM_IMAGE_PRESENT_FULL_RES_VISUAL_CHECK_PENDING",
+      "priority": "OBJECT_AND_RIGHTS_MATCH",
+      "caveat": "Historic single combined vessel; 201835 is museum-catalogued Chrismatory (?) only, so do not automatically prefer it due to the attribution question mark."
+    },
+    {
+      "object_id": "SP01",
+      "object": "Pax-brede / instrument of peace",
+      "source": "https://www.metmuseum.org/art/collection/search/197046",
+      "accession": "32.100.168",
+      "identity": "Italian Roman gilt bronze liturgical pax showing Risen Christ appearing to Apostles, probably Guglielmo della Porta, 1566–77.",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "visual": "PREVIEW_SCREENED_SINGLE_OBJECT_BLACK_BACKDROP",
+      "priority": "TOP_CANDIDATE",
+      "caveat": "Historically documented Roman-rite ceremonial object; differentiate from modern sign of peace and do not imply normally employed at every 1962 Mass."
+    },
+    {
+      "object_id": "SC09",
+      "object": "Holy oils cabinet / ambry",
+      "source": "https://commons.wikimedia.org/wiki/File:Ancignano,_chiesa_di_San_Pancrazio_-_Armadietto_degli_oli.jpg",
+      "identity": "Actual holy-oil ambry in Roman Catholic San Pancrazio, Ancignano, Veneto, photographed 2025.",
+      "photographer": "Syrio",
+      "rights": "CC_BY_SA_4_0_AUTHOR_SELF_LICENSED",
+      "source_size_px": [
+        2638,
+        3517
+      ],
+      "visual": "IN_SITU_OBJECT_COVERAGE_CANDIDATE; NOT_NEUTRAL_STUDIO",
+      "priority": "IN_SITU_CONTEXT_ONLY_UNTIL_FRAMING_REVIEW",
+      "caveat": "Architecture is part of in-situ wall-mounted ambry; crop cannot imply free-standing object. Attribution and share-alike required."
+    }
+  ],
+  "other_verified_research": [
+    {
+      "object_ids": [
+        "BK02"
+      ],
+      "source": "https://www.metmuseum.org/art/collection/search/467709",
+      "identity": "15th-century Spanish walnut folding lectern (Met 41.100.136).",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "status": "TYPOLOGY_HOLD",
+      "reason": "Object museum-classified lectern, not a confirmed Roman Catholic altar Missal stand. Do not supersede LACMA BK02 hold merely on resemblance."
+    },
+    {
+      "object_ids": [
+        "EQ10",
+        "EQ11"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Seau_%C3%A0_eau_b%C3%A9nite_et_goupillon_(Louvre,_MR_556).jpg",
+      "identity": "Catholic holy-water bucket with aspergillum shown together.",
+      "status": "CONTEXT_PHOTO_ONLY",
+      "reason": "Two separately catalogued objects in one photograph violate single-object hero rule, even with image rights recorded."
+    },
+    {
+      "object_ids": [
+        "SN05"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Sanctuary_Lamp,_designed_by_A.W.N._Pugin,_manufactured_by_J._Hardman_%26_Co.,_c._1855,_gilt_brass_-_Huntington_Art_Museum_-_San_Marino,_CA_-_DSC01810.jpg",
+      "identity": "A.W.N. Pugin / J. Hardman hanging sanctuary lamp, photographed by Daderot at the Huntington.",
+      "rights": "WIKIMEDIA_PHOTOGRAPHER_PUBLIC_DOMAIN_DECLARATION_VERIFY_EXACT_FILE",
+      "status": "REFERENCE_FALLBACK_ONLY",
+      "reason": "Museum environment and no familiar red glass; not a satisfactory SN05 primary."
+    }
+  ],
+  "carry_forward_holds": [
+    {
+      "id": "BK02",
+      "reason": "LACMA image photorights conflict with Rawpixel assertion; no eligible primary published."
+    },
+    {
+      "id": "AL10",
+      "reason": "No isolated, explicitly reusable gradine photograph validated; Québec heritage candidate reproduction not cleared."
+    },
+    {
+      "id": "VE10",
+      "reason": "Existing atlas contains candidate coverage, but tunicle must be independently checked; avoid generic dalmatic substitution."
+    },
+    {
+      "id": "SE04",
+      "reason": "Ashes plus ash vessel still lacks qualified solitary vessel photograph."
+    },
+    {
+      "id": "SN05",
+      "reason": "No representative red sanctuary lamp isolated with clear image rights."
+    },
+    {
+      "id": "EQ01/EQ02",
+      "reason": "A paired wine/water cruet photograph cannot identify each without documented A/V designation."
+    },
+    {
+      "id": "AL07",
+      "reason": "One historical candlestick is not photographic evidence of defined six-matching-candlesticks set."
+    },
+    {
+      "id": "AL17/AL18",
+      "reason": "Epistle and Gospel sides are spatial annotations, not independent collectible objects."
+    }
+  ],
+  "released": false,
+  "user_approved": false,
+  "publication_approved": false,
+  "asset_downloads_made": false,
+  "canonical_registry_updated": false
+}
