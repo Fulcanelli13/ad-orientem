@@ -92,7 +92,7 @@
     "test:reader-ember-lessons": "node tests/reader-ember-lessons.mjs",
     "test:reader-ember-browser": "node tests/reader-ember-browser.mjs",
     "test:reader-nuptial": "node tests/reader-nuptial.mjs",
-    "test:reader-easter-vigil": "node tests/reader-easter-vigil.mjs",
+    "test:reader-easter-vigil": "node tests/reader-easter-vigil.mjs && node tests/mass-triduum-bell-transitions.mjs",
     "test:app-shell-final": "node tests/app-shell-final-e2e.mjs",
     "test:app-shell-nuptial": "node tests/app-shell-nuptial-e2e.mjs",
     "test:app-shell-easter-vigil": "node tests/app-shell-easter-vigil-e2e.mjs",
