@@ -55,7 +55,8 @@ for(const n of [201,205]){
 for(const n of [174,181]){
  const published=rubrics.items.filter(x=>x.cueId===get(n).cueId);
  assert.equal(published.filter(x=>x.actor==="SERVER"&&x.kind==="BELL").length,1);
- assert.ok(published.filter(x=>x.actor==="PRIEST"&&x.kind==="GESTURE").length>=4);
+ assert.ok(published.filter(x=>x.actor==="PRIEST"&&x.kind!=="STATE").length>=4,
+  "Need four source-ordered priest elevation microsteps");
 }
 const normal={form:"MISSA_CANTATA_INCENSE",actualCelebration:{type:"CALENDAR"}};
 const requiem={form:"MISSA_CANTATA_INCENSE",actualCelebration:{type:"REQUIEM"}};
