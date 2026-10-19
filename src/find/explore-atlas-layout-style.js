@@ -209,4 +209,168 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb img{width:83px}
  .aoHeritageSurface .aoHeritagePreview .aoHeritageCardHeading{padding-right:34px}
 }
+/* Traditional Mass uses the SAME immersive atlas grammar, not a separate
+   stacked blue/cyan directory. Only layout changes: affiliation, category,
+   provenance, and source search remain owned by the existing filter engine. */
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]){
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  height:100dvh;max-width:none;margin:0;padding:0;overflow:hidden;background:#080c12;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindHeader{
+  z-index:14;position:relative;top:0;flex:none;box-sizing:border-box;
+  height:58px;min-height:58px;padding:6px 12px;
+  background:#080d15f5;border-bottom:1px solid rgba(205,180,132,.2);
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindHeader h1{
+  font:500 19px/1.12 var(--ao-font-display,Georgia,serif);
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindHeader>span{display:none}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreSectionNav{
+  position:absolute;z-index:15;top:66px;right:10px;
+  border:0;margin:0;padding:0;display:block;width:auto;background:transparent;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreSectionNav>span{display:none}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreSectionSwitcher>summary{
+  height:43px;min-height:43px;padding:8px 12px;background:#0d1b27ed;
+  border:1px solid rgba(205,180,132,.32);border-radius:9px;
+  font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmToolbar{
+  position:absolute;top:66px;left:12px;right:145px;
+  width:auto;min-width:0;z-index:13;display:flex!important;
+  align-items:center;gap:8px;grid-template-columns:none;
+  padding:0;background:transparent;border:0;box-shadow:none;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmToolbar .aoFindSearch{
+  flex:1;min-width:0;padding:0
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmToolbar .aoFindSearch input{
+  width:100%;height:43px;min-height:43px;padding:8px 11px;
+  border:1px solid rgba(205,180,132,.35);border-radius:9px;
+  background:#0b1723f4;color:#f2e5cd;
+  font:400 13px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmToolbar .aoFindViewTabs{
+  flex:none;margin:0;padding:0;gap:4px;display:flex
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmToolbar .aoFindViewTabs button{
+  height:43px;min-width:44px;min-height:43px;padding:6px 9px;
+  font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif);
+  border:1px solid rgba(205,180,132,.28);border-radius:8px;
+  background:#0b1723ec;color:#e8dcc2;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmToolbar .aoFindViewTabs button.active{
+  background:#d1b784;border-color:#d1b784;color:#101b27;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoExploreTlmFilters{
+  position:absolute;z-index:12;left:12px;right:12px;top:120px;
+  min-height:44px;max-height:94px;padding:0!important;margin:0;
+  border:0;overflow:visible;background:transparent;
+}
+/* The primary institute emblems remain present as filters. Grouping modes
+   and unverified-source disclaimers move into the explicit filter disclosure. */
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreTlmFilters>.aoExploreQuickFilters{
+  display:none
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip{
+  display:flex;align-items:center;gap:6px;min-width:0;padding:0;
+  background:none;border:0;max-width:min(760px,100%);
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip>.aoExploreFilterLabel{
+  display:none
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip .aoFindAffiliations{
+  min-width:0;display:flex;gap:6px;overflow-x:auto;flex-wrap:nowrap;
+  padding:0;scrollbar-width:none;overscroll-behavior-x:contain
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip .aoFindAffiliations button{
+  flex:none;min-height:40px;padding:5px 10px;border-radius:999px;
+  background:#0c1925ed;border:1px solid rgba(205,180,132,.28);
+  color:#e9dfcc;font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif)
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip .aoFindAffiliations button.active{
+  background:#d2b986;color:#0d1921;border-color:#d2b986
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip .aoFindAffiliations img{
+  width:24px;height:24px;object-fit:contain;filter:none;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoPreliminaryDirectoryNotice{
+  position:absolute;right:0;top:48px;z-index:12;
+  max-width:360px;background:#0b1925eb;border:1px solid rgba(205,180,132,.24);
+  border-radius:8px;box-shadow:0 8px 25px #0008;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoPreliminaryDirectoryNotice summary{
+  min-height:34px;font:500 10px var(--ao-font-ui,system-ui,sans-serif);
+  color:#c8b793;padding:7px 10px;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindResultMeta{
+  position:absolute;z-index:9;right:18px;bottom:72px;
+  padding:6px 10px;border:1px solid rgba(205,180,132,.19);
+  border-radius:8px;background:#0b1720d8;
+  font:500 11px var(--ao-font-ui,system-ui,sans-serif);color:#c6baa3;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindResultMeta strong{
+  font:500 13px var(--ao-font-body,Georgia,serif);
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindBody[data-find-view=map]{
+  position:relative;flex:1;min-height:0;margin:0;padding:0!important;overflow:hidden;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindBody[data-find-view=map]>.aoFindMap{
+  position:absolute;inset:0;width:100%;height:100%!important;
+  margin:0!important;min-height:0!important;border:0!important;border-radius:0!important;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreMapReset{
+  top:130px;left:14px;width:44px;height:44px;padding:0;
+  border-radius:50%;font-size:0;background:#0c1824ed;
+  border:1px solid rgba(205,180,132,.34)
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreMapReset:before{
+  content:"◎";font:27px/1 Georgia,serif;color:#d9c390
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend{
+  position:absolute;bottom:18px;left:14px;z-index:8;max-width:min(500px,80%);
+  margin:0;padding:5px;max-height:42px;overflow:hidden;
+  background:#0b1924e8;border:1px solid rgba(205,180,132,.22);
+  border-radius:9px;box-shadow:0 8px 24px #0007;
+}
+/* The full logo legend and credits remain in the DOM for explicit source
+   checking and future disclosure; avoid duplicated large badges by default. */
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend>span[data-group],
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend>small,
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapEmblemCredits{
+  display:none;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindExternalSource{
+  display:none;
+}
+@media(max-width:600px){
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindHeader{
+   height:54px;min-height:54px;padding:6px 8px;grid-template-columns:44px minmax(0,1fr) 44px
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindHeader small{display:none}
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindHeader h1{font-size:17px}
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreSectionNav{top:64px;right:9px}
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreSectionSwitcher>summary{
+   font-size:0;min-width:44px;min-height:44px;width:44px;padding:0
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreSectionSwitcher>summary:before{
+   content:"⋯";font:24px Georgia,serif;letter-spacing:1px;color:#e9d7b8
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmToolbar{
+   top:64px;left:9px;right:64px;gap:5px;
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmToolbar .aoFindViewTabs button{
+   padding:4px 6px;font-size:11px;min-width:37px;
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoExploreTlmFilters{
+   left:9px;right:9px;top:120px;
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip .aoFindAffiliations button{
+   min-height:40px;font-size:10px;padding:6px 8px
+ }
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip .aoFindAffiliations img{width:22px;height:22px}
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoFindResultMeta{right:9px;bottom:65px}
+ .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend{left:9px;bottom:9px}
+}
+
 `;
