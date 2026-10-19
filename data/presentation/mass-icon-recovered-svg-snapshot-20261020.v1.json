@@ -1,0 +1,127 @@
+{
+  "schema": "ao-mass-modern-svg-recovery-manifest-v1",
+  "date": "2026-10-20",
+  "status": "ARCHIVE_RECOVERED_VERIFIED_LOCALLY_NOT_YET_IN_GITHUB",
+  "sourceArchives": [
+    "ad_orientem_21_individual_icons.zip",
+    "ad_orientem_priest_actions_batch_2_drafts.zip"
+  ],
+  "reviewPrinciples": [
+    "Only 19 October approved for potential active use are included.",
+    "Previously rejected and reserve-only modern icons are excluded.",
+    "All entries have UTF-8 parseable SVG root, contain currentColor, and do not embed raster image or external fetch.",
+    "Geometry/rubrical suitability still requires separate QA, especially at small sizes.",
+    "The zipped bytes are in the conversation downloadable artifact; a GitHub connector commit of the SVG source bytes has not yet occurred."
+  ],
+  "expectedDestination": "assets/review/mass-icon-candidates/recovered-20261020/",
+  "entries": [
+    {
+      "name": "ao_at_altar_centre.svg",
+      "sha256": "c3a91d2b1c2fdaf89a39a656b1bbe6526f8cc7c85987e07dccf841b4ce319213",
+      "bytes": 5053,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_blessing.svg",
+      "sha256": "7b9666029a140671ff254325f527cb251e8d381e01601ab47de446a963c38953",
+      "bytes": 6098,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_chant.svg",
+      "sha256": "e2247df3cdddf4abbebc5f334ae42eb35a7deb072ef4d863ca715c6b956f1980",
+      "bytes": 9564,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_drink_chalice.svg",
+      "sha256": "91b7c5ca554826cd81f75afca2572a6e43a22c12cb6c0ce25b6b37d8d42d245a",
+      "bytes": 8103,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_elevation_chalice.svg",
+      "sha256": "b0916c29748ca983200424db968cc5b9110a3ed2bcf610be8a3a4f7976f28d08",
+      "bytes": 7216,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_incensation.svg",
+      "sha256": "5c8f30bffad11e645816c82154a92e8b5cc54b5a94c3c62e2921a11251ff34f6",
+      "bytes": 9023,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_place_on_altar.svg",
+      "sha256": "38ad2c6f3cb317052b58116435def64664d6e206b5e1572828ab215733e62db4",
+      "bytes": 8660,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_pray_audible.svg",
+      "sha256": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "bytes": 7686,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_pray_silent.svg",
+      "sha256": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
+      "bytes": 7422,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_purify_chalice.svg",
+      "sha256": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0",
+      "bytes": 8581,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ao_purify_fingers.svg",
+      "sha256": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
+      "bytes": 9174,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_21_individual_icons.zip"
+    },
+    {
+      "name": "ea_priest_commingling.svg",
+      "sha256": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa",
+      "bytes": 2536,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_priest_actions_batch_2_drafts.zip"
+    },
+    {
+      "name": "ea_priest_fraction_host.svg",
+      "sha256": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5",
+      "bytes": 2885,
+      "editorialStatus": "ACCEPTED_FOR_POTENTIAL_USE",
+      "stagedInGithub": false,
+      "archive": "ad_orientem_priest_actions_batch_2_drafts.zip"
+    }
+  ],
+  "totals": {
+    "recoveredApprovedSvgMasters": 13,
+    "byteCount": 92001
+  }
+}
