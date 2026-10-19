@@ -1153,6 +1153,7 @@ export async function mountNativeReaderPreview({
 
     function moveEasterVigil(direction){
       if(inVigil){
+        if(ritePageCursor.turn(direction))return showEasterVigil();
         const state=controller.project();
         if(direction==="next"){
           if(state.atEnd && state.handoffToMass){
@@ -1220,7 +1221,7 @@ export async function mountNativeReaderPreview({
       getCompositeStage:()=>stage,
       next:()=>moveEasterVigil("next"),
       previous:()=>moveEasterVigil("previous"),
-      goToEasterVigilRecord:id=>{controller.goToRecord(id);return showEasterVigil();},
+      goToEasterVigilRecord:id=>{ritePageCursor.clear();controller.goToRecord(id);return showEasterVigil();},
       showVigilMassSequence:sequence=>showVigilMass(model.cardBySequence(sequence)),
       destroy:destroyEasterVigil,
     });
@@ -2195,21 +2196,25 @@ export async function mountNativeReaderPreview({
     }
     if(inLifecycle)return ready.lifecycleRuntime.snapshot();
     if(inRogations && ready.rogationsController){
+      if(ritePageCursor.turn("previous"))return showRogations();
       const state=ready.rogationsController.project();
       if(!state.atStart)ready.rogationsController.previous();
       return showRogations();
     }
     if(inCandlemas && ready.candlemasController){
+      if(ritePageCursor.turn("previous"))return showCandlemas();
       const state=ready.candlemasController.project();
       if(!state.atStart)ready.candlemasController.previous();
       return showCandlemas();
     }
     if(inPalm && ready.palmController){
+      if(ritePageCursor.turn("previous"))return showPalm();
       const state=ready.palmController.project();
       if(!state.atStart)ready.palmController.previous();
       return showPalm();
     }
     if(inAsh && ready.ashController){
+      if(ritePageCursor.turn("previous"))return showAsh();
       const state=ready.ashController.project();
       if(!state.atStart)ready.ashController.previous();
       return showAsh();
@@ -2274,6 +2279,7 @@ export async function mountNativeReaderPreview({
     }
     if(inLifecycle)return lifecycleState(ready.lifecycleRuntime.advance());
     if(inRogations && ready.rogationsController){
+      if(ritePageCursor.turn("next"))return showRogations();
       const state=ready.rogationsController.project();
       if(state.atEnd){
         inRogations=false;
@@ -2283,6 +2289,7 @@ export async function mountNativeReaderPreview({
       return showRogations();
     }
     if(inCandlemas && ready.candlemasController){
+      if(ritePageCursor.turn("next"))return showCandlemas();
       const state=ready.candlemasController.project();
       if(state.atEnd){
         inCandlemas=false;
@@ -2292,6 +2299,7 @@ export async function mountNativeReaderPreview({
       return showCandlemas();
     }
     if(inPalm && ready.palmController){
+      if(ritePageCursor.turn("next"))return showPalm();
       const state=ready.palmController.project();
       if(state.atEnd){
         inPalm=false;
@@ -2301,6 +2309,7 @@ export async function mountNativeReaderPreview({
       return showPalm();
     }
     if(inAsh && ready.ashController){
+      if(ritePageCursor.turn("next"))return showAsh();
       const state=ready.ashController.project();
       if(state.atEnd){
         inAsh=false;
