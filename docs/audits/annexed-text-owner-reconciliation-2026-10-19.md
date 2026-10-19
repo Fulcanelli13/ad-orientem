@@ -85,6 +85,33 @@ Asperges, Palm, Ash, Candlemas, Rogations, Requiem and Corpus Ordinary
 text-reuse candidates, the shared Eucharistic hymn, the separate
 Rogation Mass Proper, and explicit rejection of false gap estimates.
 
+**First completed source-only count from the running regression:** 319
+annex source leaves were examined; 60 matched the normalized Latin of an
+existing Ordinary cue (17 distinct Latin formulas); 20 groups of
+identical Latin span more than one annex. The other **259 are NOT
+declared untranslated**. All counts are from the audit's current
+explicit eight-rite scope, not a worldwide source-completeness claim.
+
+To inspect actual English/French wording ownership, the second
+read-only command
+
+`node tools/mass/reconcile-annexed-translation-collisions.mjs --write`
+
+generates `artifacts/annexed-draft-translation-collisions.json`.
+It compares currently rendered draft annex text rows against frozen
+SUNG English and pinned 256-cue French Ordinary. It reports exact
+source cue references, identical wording, missing draft vernacular
+where the canonical Ordinary already has it, and *editorial wording
+collisions*, with **no copied liturgical passages**. The frozen
+English comparison is a first collision detector; final selection must
+apply the approved **effective English correction layer** and review
+speaker/role before a canonical link is approved.
+
+`tests/annexed-draft-translation-collisions.mjs` is also gated in CI,
+including the Requiem draft `Et cum spiritu tuo` English inconsistency.
+No such flag licenses automatic replacement of any text, gesture or
+ceremony stage.
+
 This index remains **derived**. The existing source and cue owners,
 not the generated comparison report, remain canonical.
 
