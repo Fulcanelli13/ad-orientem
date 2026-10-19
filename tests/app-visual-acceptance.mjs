@@ -449,6 +449,30 @@ try{
   assert.ok(inlineMonth.overflow<=1,"Month clips its grid on a 390px phone");
   assert.equal(inlineMonth.active,"page","Today did not identify the Month tab");
   await shot("02d-calendar-month");
+  // UX-01 forensic capture: this is Today's embedded Calendar, not the
+  // standalone Calendar's .aoCalV2Tabs. Full-page sticky compositing can
+  // exaggerate tab/row overlap, so gather independent viewport geometry.
+  const calendarMonthGeometry=await page.evaluate(()=>{
+    const homeTabs=document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs");
+    const standaloneTabs=document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs");
+    const grid=document.querySelector("#ao-calendar-modular-root .aoCalV2MonthGrid");
+    const root=document.querySelector("#ao-calendar-modular-root");
+    const bounds=el=>{
+      const r=el?.getBoundingClientRect();
+      return r?{top:Math.round(r.top),bottom:Math.round(r.bottom),height:Math.round(r.height)}:null;
+    };
+    const hit=[...(grid?.querySelectorAll("[data-cal-pick-date]")||[])]
+      .map(node=>({node,rect:node.getBoundingClientRect()}))
+      .find(x=>x.rect.top>Math.max(homeTabs?.getBoundingClientRect()?.bottom||0,80)&&x.rect.bottom<innerHeight-30);
+    const element=hit&&document.elementFromPoint(hit.rect.left+hit.rect.width/2,hit.rect.top+hit.rect.height/2);
+    return {embeddedHome:true,homeTabs:bounds(homeTabs),standaloneTabs:bounds(standaloneTabs),
+      grid:bounds(grid),calendarScroll:root?.scrollTop||0,
+      dateHitTest:hit?Boolean(element===hit.node||hit.node.contains(element)):null,
+      visibleDate:hit?.node.dataset.calPickDate||null,viewport:innerHeight};
+  });
+  console.log("UX01_TODAY_EMBEDDED_MONTH_GEOMETRY="+JSON.stringify(calendarMonthGeometry));
+  await page.screenshot({path:resolve(out,"02d-calendar-month-viewport.png"),fullPage:false});
+
   for(const category of ["major","temporale","sanctorale","practices"]){
     await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='"+category+"']").click();
     await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='"+category+"']",
@@ -1494,6 +1518,33 @@ try{
     if(guideDisclosure.cards>0)assert.equal(guideDisclosure.open,1,route+" should expose exactly one guide section by default");
 
     await shot(name);
+    if(route==="learn.serve_mass.responses"){
+      const drill="#ao-learn-traditional-root .aoLearnTradTrainer";
+      const progress=page.locator(drill+" .aoLearnTradProgress");
+      assert.equal(await progress.count(),1,"Low Mass drill should show exactly one positional progress track");
+      assert.equal(await progress.getAttribute("aria-valuemax"),"15");
+      assert.equal(await progress.getAttribute("aria-valuenow"),"1");
+      assert.equal(await page.locator(drill+" .aoLearnTradNav").count(),0,"Legacy full-width Next/Previous strip was not retired");
+      const arrow=page.locator(drill+" [data-ao-tradlearn-trainer='next']");
+      const box=await arrow.boundingBox();
+      assert.ok(box?.height>=44&&box?.width>=44,"Compact training arrows must keep mobile hit targets");
+      await arrow.evaluate(x=>x.click());
+      assert.equal(await progress.getAttribute("aria-valuenow"),"2","Next response must update the source-owned cursor");
+      await page.locator(drill+" [data-ao-tradlearn-reveal]").evaluate(x=>x.click());
+      assert.equal(await page.locator(drill+" .aoLearnTradAnswer").count(),1,"Reveal Response was lost");
+      await page.locator(drill).evaluate(el=>{
+        const touch=(x,y)=>new Touch({identifier:71,target:el,clientX:x,clientY:y});
+        el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[touch(248,345)],changedTouches:[touch(248,345)]}));
+        el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[touch(78,350)]}));
+      });
+      assert.equal(await progress.getAttribute("aria-valuenow"),"3","Horizontal swipe must advance exactly one trainer response");
+      assert.equal(await page.locator(drill+" .aoLearnTradAnswer").count(),0,"Swiping to a new response must hide its answer");
+      await page.locator(drill).focus();
+      await page.keyboard.press("ArrowLeft");
+      assert.equal(await progress.getAttribute("aria-valuenow"),"2","Keyboard left arrow must return one source-owned response");
+      await page.keyboard.press("ArrowRight");
+      assert.equal(await progress.getAttribute("aria-valuenow"),"3","Keyboard right arrow must advance one source-owned response");
+    }
     await page.locator("#ao-learn-traditional-root [data-ao-tradlearn-back]").click();
     await page.waitForFunction(()=>!document.getElementById("ao-learn-traditional-root")&&globalThis.AO_LEARN_APP_V1?.status?.().child===null,null,{timeout:5000});
     await page.waitForSelector("#ao-learn-modular-root",{state:"visible",timeout:5000});

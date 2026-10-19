@@ -72,6 +72,19 @@ const matrimonyStart=runtime.indexOf("function matrimony(win){");
 const matrimonyEnd=runtime.indexOf("\nfunction ",matrimonyStart+20);
 const matrimonySection=runtime.slice(matrimonyStart,matrimonyEnd);
 
+
+const trainerStart=runtime.indexOf("function trainer(win,state){");
+const trainerEnd=runtime.indexOf("\nfunction scapular(win)",trainerStart);
+const responseTrainer=runtime.slice(trainerStart,trainerEnd);
+assert.ok(responseTrainer.includes("LOW_MASS_RESPONSES_V381[state.trainerIndex]"),"Response trainer lost original text cursor");
+assert.ok(responseTrainer.includes('role="progressbar"'),"The response trainer needs one subtle positional progress track");
+assert.ok(responseTrainer.includes("aria-valuenow"),"Position track lost accessibility metadata");
+assert.ok(responseTrainer.includes("aoLearnTradStepRail"),"Response trainer must use compact inline 44px navigation");
+assert.ok(!responseTrainer.includes("aoLearnTradNav"),"Duplicate legacy full-width Previous/Next row remains");
+assert.ok(responseTrainer.includes("data-ao-tradlearn-reveal"),"Explicit Reveal Response learning action disappeared");
+assert.ok(runtime.includes("onTrainerTouchStart")&&runtime.includes("onTrainerTouchEnd"),"The trainer must support horizontal swipe independent of vertical page scroll");
+assert.ok(runtime.includes("onTrainerKey")&&runtime.includes('"ArrowLeft","ArrowRight"'),"Keyboard card navigation disappeared");
+assert.ok(runtime.includes("state.trainerReveal=false;render();"),"Navigation must rehide the next response for rehearsal");
 assert.match(runtime,/priestCeremonialExposed:false/,"lay-only scope guard disappeared");
 assert.match(runtime,/WHAT YOU MAY SEE IN THE TRADITIONAL CEREMONY/,"Matrimony lost its lay-facing traditional ceremony map");
 assert.match(runtime,/one ring or two/,"Matrimony no longer warns that ring customs vary");
