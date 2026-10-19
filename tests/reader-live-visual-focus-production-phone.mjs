@@ -60,11 +60,11 @@ try{
    await page.evaluate(async ({seq,at})=>{
      const api=window.__AO_PHONE_PREVIEW;
      api.showSequence(seq);
-     await frame();
+     await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
      const scroll=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
      scroll.scrollTop=(scroll.scrollHeight-scroll.clientHeight)*at;
      scroll.dispatchEvent(new Event("scroll",{bubbles:true}));
-     await frame();
+     await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
    },{seq:card.seq,at});
    // The app animates opacity for 280ms: compare computed values at rest.
    await page.waitForTimeout(370);
