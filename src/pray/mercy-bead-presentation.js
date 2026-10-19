@@ -3,6 +3,7 @@
  * Text, prayer sequence, swipe and persistence remain owned by the reader.
  */
 import {mercyBeadNavigationModel} from "./mercy-bead-navigation.js";
+import {devotionalProgressMarkup} from "./devotional-progress.js";
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 export function mercyBeadNavHTML(steps,index,{french=false}={}){
  const m=mercyBeadNavigationModel(steps,index,{french});
@@ -28,7 +29,7 @@ export function mercyBeadNavHTML(steps,index,{french=false}={}){
   '" data-mercy-decade="'+(m.activeDecade??"")+'" data-mercy-bead="'+(m.currentBead??"")+
   '" aria-label="'+esc(tr("Chaplet bead navigation","Navigation des grains du chapelet"))+'">'+
   phases+'<div class="aoMercyBeadPosition"><span>'+esc(m.caption)+'</span><small>'+esc(m.shortName)+'</small></div>'+
-  beads+'</nav>';
+  beads+devotionalProgressMarkup({index,total:steps.length,language:french?"fr":"en",unit:"prayer"})+'</nav>';
 }
 export function updateMercyBeadNav(root,steps,index,{french=false}={}){
  const nav=root?.querySelector("[data-ao-mercy-bead-navigation]");
@@ -37,6 +38,16 @@ export function updateMercyBeadNav(root,steps,index,{french=false}={}){
  nav.dataset.mercyPhase=m.phase;
  nav.dataset.mercyDecade=String(m.activeDecade??"");
  nav.dataset.mercyBead=String(m.currentBead??"");
+ // Position only: scrolling to a bead must never certify that it was prayed.
+ const progress=nav.querySelector(":scope > .aoDevoProgress");
+ if(progress){
+  progress.style.setProperty("--ao-devo-progress",((index+1)/steps.length*100)+"%");
+  progress.setAttribute("aria-valuemax",String(steps.length));
+  progress.setAttribute("aria-valuenow",String(index+1));
+  progress.setAttribute("aria-valuetext",french?
+   "Prière "+(index+1)+" sur "+steps.length:"Prayer "+(index+1)+" of "+steps.length);
+ }
+
  const heading=nav.querySelector(".aoMercyBeadPosition>span");
  const small=nav.querySelector(".aoMercyBeadPosition>small");
  if(heading)heading.textContent=m.caption;

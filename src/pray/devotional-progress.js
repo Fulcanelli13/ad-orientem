@@ -35,11 +35,11 @@ export function updateDevotionalProgress(timeline,{index=0,total=0,language="en"
 export function devotionalProgressMarkup({index=0,total=0,language="en",unit="card"}={}){
  if(!Number.isInteger(total)||total<1)return "";
  const current=Math.max(0,Math.min(total-1,Number(index)||0));
- const fr=language==="fr",stage=unit==="stage";
- const label=fr?(stage?"Progression des étapes":"Progression des cartes"):
-  (stage?"Stage progress":"Card progress");
- const valueText=fr?(stage?"Étape ":"Carte ")+(current+1)+" sur "+total:
-  (stage?"Stage ":"Card ")+(current+1)+" of "+total;
+ const fr=language==="fr",stage=unit==="stage",prayer=unit==="prayer";
+ const label=fr?(prayer?"Position dans la prière":stage?"Progression des étapes":"Progression des cartes"):
+  (prayer?"Prayer position":stage?"Stage progress":"Card progress");
+ const valueText=fr?(prayer?"Prière ":stage?"Étape ":"Carte ")+(current+1)+" sur "+total:
+  (prayer?"Prayer ":stage?"Stage ":"Card ")+(current+1)+" of "+total;
  const percent=(current+1)/total*100;
  return '<div class="aoDevoProgress" role="progressbar" aria-label="'+label+
   '" aria-valuemin="0" aria-valuemax="'+total+'" aria-valuenow="'+(current+1)+
