@@ -7,6 +7,7 @@ import {historicalFocusCandidates,historicalConfirmedContinuation,validateHistor
 import {screenPersonalSpiritualVerdict} from "./living-church-personal-verdict-gate.js";
 import {scopeLiturgicalQuestion} from "./living-church-liturgical-source-scope.js";
 import {piusSourceConceptCandidates,validatePiusSourceConceptRegistry} from "./living-church-pius-x-source-concepts.js";
+import {screenContemporaryChurchDiscipline} from "./living-church-contemporary-discipline-scope.js";
 export const SHARED_QUESTION_ROUTER_VERSION="AO_LIVING_CHURCH_ROUTER_PILOT_V1";
 
 const accents=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -151,6 +152,11 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null,sour
   if(personalVerdict)return frozen({kind:"no_coverage",
    reason:personalVerdict.reason,scope:personalVerdict.scope,
    sourceGap:personalVerdict.sourceGap,originalQuestion:input,
+   approvedReply:false,answerText:null});
+  const contemporaryDiscipline=screenContemporaryChurchDiscipline(input,{language:lang});
+  if(contemporaryDiscipline)return frozen({kind:"no_coverage",
+   reason:contemporaryDiscipline.reason,scope:contemporaryDiscipline.scope,
+   sourceGap:contemporaryDiscipline.sourceGap,originalQuestion:input,
    approvedReply:false,answerText:null});
   const fixed={...opts,currentCharacter:current,language:lang};
   // A specific Mass/reception question cannot be claimed by an unrelated
