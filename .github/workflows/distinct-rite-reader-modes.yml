@@ -22,3 +22,10 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Verify shared modes and exact Good Friday and Easter Vigil source ownership
         run: npm run test:distinct-rite-modes-phone
+      - name: Save Good Friday and Easter Vigil reader mode screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: distinct-rite-reader-visual
+          path: artifacts/distinct-reader-review/*.png
+          if-no-files-found: ignore
