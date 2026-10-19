@@ -114,6 +114,46 @@ export function buildRogationsLitanyOwnershipMatrix(){
   // notwithstanding the supplied Liber's older English chant rubric.
   // The preceding singers' opening Kyrie/response belongs to another
   // ceremonial portion and cannot be expanded into duplicate 112 items.
+  // Every additional Latin source leaf is indexed by the existing native
+  // paragraph ID. The Litany is not the Psalm, suffrages or ten collects.
+  // Index only. Text remains exclusively with the donor payload.
+  const extra=[];
+  const keep=(rowId,sourcePath,sourceRecordId,family)=>{
+    const canonical=base.ordinaryReuseCandidates.find(x=>
+      x.rite==="ROGATIONS_PROCESSION"&&x.path===sourcePath);
+    const prayer=second.prayerLineMatches.find(x=>
+      x.rite==="ROGATIONS_PROCESSION"&&x.path===sourcePath);
+    const ordinaryCueIds=canonical?[...new Set(canonical.cues.map(c=>c.id))]:[];
+    const prayPrayerIds=prayer?[...new Set(prayer.sources.map(s=>s.prayerId))]:[];
+    extra.push({
+      rowId,sourceRecordId,sourceLocator:ROGATION_SOURCE+"#"+sourcePath,
+      family,ordinaryCueIds,prayPrayerIds,
+      decision:ordinaryCueIds.length?"CANDIDATE_CANONICAL_ORDINARY_WORDING":
+        prayPrayerIds.length?"CANDIDATE_PRAY_WORDING_CHECK_EDITION":
+        "UNRESOLVED_OTHER_SOURCE_FAMILIES_NOT_MISSING_TRANSLATION",
+      draftTranslationPromotion:"BLOCKED_PENDING_OWNERSHIP_REVIEW",
+    });
+  };
+  const index=(prefix,length,pathPrefix,sourceRecordId,family,selector=i=>i)=>
+    Array.from({length},(_,i)=>keep(prefix+(i+1),pathPrefix+selector(i),sourceRecordId,family));
+  keep("ROG-R01-A1","opening.antiphon","ROG-LIT-010","EXSURGE_OPENING");
+  keep("ROG-R01-P","opening.psalm","ROG-LIT-010","EXSURGE_OPENING");
+  keep("ROG-R01-G","opening.gloria","ROG-LIT-010","EXSURGE_OPENING");
+  keep("ROG-R01-A2","opening.repeat","ROG-LIT-010","EXSURGE_OPENING");
+  index("ROG-R02-",18,"litanyBeforeProcession.", "ROG-LIT-020","PRE_PROCESSION_DIALOGUE",i=>i+".1");
+  keep("ROG-R04-PN","postLitany.pater","ROG-PS-010","POST_LITANY_PATERNOSTER");
+  keep("ROG-R04-V","postLitany.versicle","ROG-PS-010","POST_LITANY_PATERNOSTER");
+  keep("ROG-R04-R","postLitany.response","ROG-PS-010","POST_LITANY_PATERNOSTER");
+  index("ROG-R04-PS",8,"postLitany.psalm69.","ROG-PS-010","PSALM_69");
+  index("ROG-R04-S",24,"postLitany.suffrages.","ROG-PS-010","POST_LITANY_SUFFRAGES",i=>i+".1");
+  index("ROG-R05-O",10,"postLitany.orations.","ROG-END-010","TEN_CONCLUDING_COLLECTS");
+  index("ROG-R05-F",7,"postLitany.final.","ROG-END-010","FINAL_DIALOGUE",i=>i+".1");
+  if(extra.length!==74)throw Error("ROGATION_ADDITIONAL_74_SOURCE_ROWS_CHANGED");
+  if(new Set([...items.map(x=>x.rowId),...extra.map(x=>x.rowId)]).size!==186)
+    throw Error("ROGATION_186_UNIQUE_READER_IDS_CHANGED");
+  const supplementalSummary=Object.fromEntries(
+    [...new Set(extra.map(x=>x.family))].map(kind=>[
+      kind,extra.filter(x=>x.family===kind).length]));
   const otherRows={
     opening:Object.keys(data.opening??{}).length,
     beforeProcession:data.litanyBeforeProcession?.length??0,
@@ -159,10 +199,17 @@ export function buildRogationsLitanyOwnershipMatrix(){
       withNeitherOfTwoOwners:items.filter(x=>!x.ordinaryCueIds.length&&!x.prayPrayerIds.length).length,
       sameLiteralButDistinctSaintPositions:collisions.map(x=>x.rowId),
       additionalRogationPrayerRows:otherRows,
+      supplementalBreakdown:supplementalSummary,
+      completeSourceRows:items.length+extra.length,
+      fullSourceOrdinaryMatches:[...items,...extra].filter(x=>x.ordinaryCueIds.length).length,
+      fullSourcePrayMatchesWithoutOrdinary:[...items,...extra].filter(x=>
+        !x.ordinaryCueIds.length&&x.prayPrayerIds.length).length,
+      fullSourceUnlinked:[...items,...extra].filter(x=>
+        !x.ordinaryCueIds.length&&!x.prayPrayerIds.length).length,
       editorialTranslationGaps:null,
       unresolvedReason:"Exact-match corpus ownership is not an exhaustive source comparison.",
     },
-    items,
+    items,supplementalSourceRows:extra,
   };
 }
 const called=process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url);
