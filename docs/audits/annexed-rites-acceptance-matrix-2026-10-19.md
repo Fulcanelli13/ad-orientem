@@ -18,8 +18,8 @@
 | Candlemas | CND, R24 | Latin 5 orations, distribution, procession, candle state | Not available in source-built pages | Five whole orations separated | Blessing/reception and procession only from source; INTROIT | Bilingual gap |
 | Rogations/Greater Litanies | ROG, R25 | Latin prayers and complete, undoubled Litany | Not available in source-built pages | Complete V/R pairs and concluding orations | Conditional walking vs public supplications; INTROIT | Bilingual gap |
 | Requiem Absolution | ABS, R26 | Latin, with optional body/catafalque and burial hymn branch | Not available in source-built pages | Libera me refrain/responses; Kyrie/Pater, paired intercessions and whole oration/Amen on separate reading pages | Only if following action explicitly selected; burial hymn depends on actual body and procession | Bilingual and branch phone gap |
-| Corpus Christi | CORPUS, R27 | Latin Pange lingua, Tantum ergo, Benediction | Not available in source-built pages | *Pange lingua* on two two-stanza pages; Benediction V/R and Orémus/prayer/Amen independently | Explicit following action, omitted final blessing/Last Gospel plan; procession opt-in | Bilingual and page-gap |
-| Holy Thursday translation | HT_POST, R31 | Latin Pange lingua, Tantum ergo, altar stripping | Not available in source-built pages | *Pange lingua* split by complete stanzas; 13 Psalm 21 source lines grouped with antiphon only at opening and close | Movement only for joining participants; to post-Mass lifecycle | Bilingual and page-gap |
+| Corpus Christi | CORPUS, R27 | Source-pinned Latin Pange lingua, Tantum ergo, Benediction | **11/11** rows have original editorial EN/FR alongside unchanged Latin; not certified 1962 printed translations | *Pange lingua* on two two-stanza pages; Benediction V/R and Orémus/prayer/Amen independently | Explicit following action, omitted final blessing/Last Gospel plan; procession opt-in | Editorial approval and visual acceptance pending |
+| Holy Thursday translation | HT_POST, R31 | Source-pinned Latin Pange lingua, Tantum ergo, altar stripping | **6/21** rows have original editorial EN/FR hymn stanzas; **15** Psalm 21/antiphon rows remain Latin-only | *Pange lingua* split by complete stanzas; 13 Psalm 21 source lines grouped with antiphon only at opening and close | Movement only for joining participants; to post-Mass lifecycle | Full Psalm 21 EN/FR and visual acceptance pending |
 | Generic following procession | PROC, R29 | **Structural-only**, deliberately no feast-specific prayers | **None** until dedicated profile supplied | Structural stages only | Cannot infer procession from feast/date; participant opt-in, then lifecycle | Not full text-ready |
 | Good Friday (distinct rite) | GF, R28 | Source-pinned Latin Passion, solemn prayers, veneration and Communion | Separate editorial layer; incomplete | Fixed ceremony stage and formula/Passion ownership | Exact Flectamus/Levate, Passion-death pause, personal cross/Communion | Bilingual and full phone parity gap |
 | Easter Vigil (distinct composite) | EV, R33 (38 records) | New fire, candle, Lumen Christi, Exsultet, 4 prophecies, Litanies, font blessing, Vigil Mass | Some trilingual source rows; **Exsultet/new fire/candle/Lauds FR only editorial summary and excluded** | 12 Exsultet pages; four prophecy groups with canticles following; Litanies; 17 font segments | Source graph and separate FONT/BAPTISM branches; explicit handoff to Vigil Mass | Full FR and conditional baptism rite still incomplete |
@@ -106,3 +106,44 @@ explicit `secondary: null` for a French Exsultet. It is now
 **fail-closed:** an explicitly absent vernacular column stays absent.
 This is checked by the source integrity gate as well as the French phone
 display acceptance.
+
+## Shared Eucharistic hymn and Benediction translation pass — 19 October
+
+The two real canonical Latin source payloads continue to own **all** of
+their text and their distinct ceremonial-event records. A single source-
+identified translation register at
+`src/mass/reader-eucharistic-hymn-text.js` supplies **six** stanza-
+matched, original Ad Orientem editorial EN/FR readings of
+`Pange lingua` (including `Tantum ergo` and `Genitori`).
+The 1962 Latin source row remains byte-for-byte unchanged.
+
+- Latin/French [Societas Laudis](https://www.societaslaudis.org/fr/hy_Pange_lingua_gloriosi/),
+  French crosscheck [Opus Dei Eucharistic adoration](https://opusdei.org/fr/prayers/section/?section1=154&section2=33),
+  Latin/English crosscheck [Gustavo Munhon](https://gustavomunhon.com/en/prayers/pange-lingua-sing-my-tongue).
+- Source-owned Corpus Benediction V/R and `Deus, qui nobis sub
+  Sacraménto` collect are paired with original EN/FR readings,
+  crosschecked against the [MSM French Benediction source](https://www.msm-france.com/cenacles/chants-et-prieres/).
+- Translation provenance is **AO original, source-crosschecked
+  editorial**. It is expressly **not** represented as the text of an
+  approved 1962 bilingual Missal or a licensed modern hymn setting.
+  Original lyrics were not copied from the modern witnesses.
+- Corpus Christi: **11/11** Latin liturgical rows now have matching
+  EN/FR source-indexed text. The conditional procession/event timeline
+  is unchanged. Source and phone QA verify no English fallback in
+  French mode.
+- Holy Thursday: only the **six** hymn stanzas share these translations.
+  The **15 source rows** of Psalm 21 and its opening/closing antiphon
+  during the stripping of the altars remain **Latin-only**.
+  The display leaves the opposite column empty rather than inventing
+  psalm readings.
+- Tests: `tests/reader-eucharistic-hymn-text.mjs` compares both donor
+  payloads stanza-by-stanza, checks every Latin row against its original,
+  checks source event IDs, editorial translation status, exact Corpus
+  prayer-source preservation, and rejects misaligned hymn stanzas.
+  The annex coverage matrix rejects unsourced Psalm translations.
+  A 390px French phone test verifies translated Corpus processional
+  hymn, Tantum ergo, and Benediction prayer through real stage navigation.
+
+Remaining acceptance is substantive editorial and visual review. A
+translation becoming available does **not** certify all rite rubrics,
+chant variations, historical facsimile accuracy, or publication rights.
