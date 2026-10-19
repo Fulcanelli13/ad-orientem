@@ -13,7 +13,7 @@ function modeResolvedMass(prepared,mode){
   });
 }
 
-export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=false,postureCueState=null,posturePreferences=null}={}){
+export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=false,postureCueState=null,posturePreferences=null,postureRegistry=null}={}){
   if(!prepared?.session?.resolvedMass)throw new TypeError("Prepared Mass session required");
   if(!data?.sectionMap||!data?.lowCorpus||!data?.sungCorpus)throw new TypeError("Reader presentation data required");
   const normalized=normalizePresentationMode(mode);
@@ -37,6 +37,7 @@ export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=fa
     presentationModel:normalized==="MISSAL" && postureCueState
       ? projectPostureAwareMissalCards(presentationModel,{
           cueState:postureCueState,preferences:posturePreferences??prepared?.readerPreferences,
+          postureRegistry,
         })
       : presentationModel,
   });
