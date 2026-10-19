@@ -1408,9 +1408,14 @@ function renderConfession(){
   </section>`;
  }
  const lastCard=CONF.stage===3&&CONF.afterStep===confessionAfterCards().length-1;
- const navigation=`<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-conf-prev ${CONF.stage===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>
- <button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):L('Continue','Continuer'))}</button></div>`;
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}${guideRail(stages,CONF.stage,'conf')}<main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+ const stageBoundary=CONF.stage===0||(cardSequence&&cardIndex===cardSequence.length-1);
+ // A step button is warranted at a section boundary, not within an
+ // examination/rehearsal card deck. Stage 2 -> After remains an explicit
+ // user action; traversing the app must never imply sacramental absolution.
+ const navigation=stageBoundary?`<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-conf-next ${CONF.stage===0&&!path?'disabled aria-disabled="true"':''}>${esc(lastCard?L('Finish · clear and return','Terminer · effacer et revenir'):CONF.stage===2?L('After Confession · when ready','Après la confession · lorsque vous êtes prêt'):CONF.stage===0?L('Begin examination','Commencer l’examen'):L('Continue to next section','Passer à la section suivante'))}</button></div>`:'';
+ const sectionRail=guideRail(stages,CONF.stage,'conf');
+ const initialProgress=CONF.stage===0?devotionalProgressMarkup({index:0,total:stages.length,language:lang(),unit:'stage'}):'';
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${sectionRail}${initialProgress}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${body}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
@@ -1456,7 +1461,10 @@ function guideNow(title,action,note=''){
 function guideCue(label,text){return text?`<section class="aoP435930GuideCue"><small>${esc(label)}</small><p>${esc(text)}</p></section>`:''}
 function guidePrayers(items){return items?.length?`<div class="aoP435930GuidePrayers">${items.map(x=>prayerBlock(x.id,{kicker:x.kicker||L('Pray','Prier')})).join('')}</div>`:''}
 function guideNav(kind,index,total,lastLabel){
- return `<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-${kind}-prev ${index===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button><button type="button" class="aoP435930Primary" data-p435930-${kind}-next>${esc(index===total-1?(lastLabel||L('Finish','Terminer')):L('Continue','Continuer'))}</button></div>`
+ // Source owner advances via swipe/chapter select. The only explicit
+ // action is finishing a finite devotion or following a completed public rite.
+ if(index!==total-1)return '';
+ return `<div class="aoP435930GuideNav aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-${kind}-finish>${esc(lastLabel||L('Finish','Terminer'))}</button></div>`
 }
 function visitSteps(){return [
  {title:L('Recollect','Se recueillir'),now:L('Become still before the tabernacle. Settle your posture according to the place and local custom, then make the Sign of the Cross.','Restez immobile devant le tabernacle. Prenez la posture qui convient au lieu et à la coutume locale, puis faites le signe de la Croix.'),prayers:[{id:'foundations_sign_of_cross'}],silence:L('Let the movement of arriving end before you begin speaking.','Laissez s’achever le mouvement de l’arrivée avant de commencer à parler.')},
@@ -2554,13 +2562,6 @@ function onClick(e){
    CONF.examStep=0;CONF.riteStep=0;CONF.afterStep=0;
    return render();
  }
- if(b.matches('[data-p435930-conf-prev]')){
-   if(CONF.stage===1&&CONF.examStep>0)CONF.examStep--;
-   else if(CONF.stage===2&&CONF.riteStep>0)CONF.riteStep--;
-   else if(CONF.stage===3&&CONF.afterStep>0)CONF.afterStep--;
-   else CONF.stage=Math.max(0,CONF.stage-1);
-   return render();
- }
  if(b.matches('[data-p435930-conf-next]')){
    if(!CONF.path)return;
    if(CONF.stage===1){
@@ -2580,8 +2581,9 @@ function onClick(e){
  }
  if(b.matches('[data-p435930-conf-clear]')){CONF=freshConfessionState();return render()}
  if(b.dataset.p435930BenStep!=null){BEN.step=+b.dataset.p435930BenStep;return render()}
- if(b.matches('[data-p435930-ben-prev]')){BEN.step=Math.max(0,BEN.step-1);return render()}
- if(b.matches('[data-p435930-ben-next]')){if(BEN.step===BEN_STAGES.length-1){setAdorationPresence('reserved');BEN={step:0,divinePraises:false};popView('home');return render()}BEN.step++;return render()}
+ if(b.matches('[data-p435930-ben-finish]')&&BEN.step===BEN_STAGES.length-1){
+  setAdorationPresence('reserved');BEN={step:0,divinePraises:false};popView('home');return render()
+ }
  if(b.matches('[data-p435930-ador-quiet-enter]'))return enterAdorationQuiet();
  if(b.matches('[data-p435930-ador-quiet-exit]'))return exitAdorationQuiet();
  if(b.dataset.p435930AdorMode){ADOR.quiet=false;ADOR.mode=b.dataset.p435930AdorMode;if(ADOR.mode==='visit')ADOR.visitStep=0;if(ADOR.mode==='holy')ADOR.holyStep=0;if(ADOR.mode==='four')ADOR.fourStep=0;return render()}
@@ -2593,12 +2595,12 @@ function onClick(e){
  if(b.dataset.p435930HolyStep!=null){ADOR.holyStep=+b.dataset.p435930HolyStep;return render()}
  if(b.dataset.p435930VisitStep!=null){ADOR.visitStep=+b.dataset.p435930VisitStep;return render()}
  if(b.dataset.p435930FourStep!=null){ADOR.fourStep=+b.dataset.p435930FourStep;return render()}
- if(b.matches('[data-p435930-visit-prev]')){ADOR.visitStep=Math.max(0,ADOR.visitStep-1);return render()}
- if(b.matches('[data-p435930-visit-next]')){if(ADOR.visitStep>=visitSteps().length-1){ADOR.visitStep=0;ADOR.mode='home'}else ADOR.visitStep++;return render()}
- if(b.matches('[data-p435930-holy-prev]')){ADOR.holyStep=Math.max(0,ADOR.holyStep-1);return render()}
- if(b.matches('[data-p435930-holy-next]')){if(ADOR.holyStep>=holySteps().length-1){ADOR.holyStep=0;ADOR.mode='home'}else ADOR.holyStep++;return render()}
- if(b.matches('[data-p435930-four-prev]')){ADOR.fourStep=Math.max(0,ADOR.fourStep-1);return render()}
- if(b.matches('[data-p435930-four-next]')){if(ADOR.fourStep>=fourSteps().length-1){ADOR.fourStep=0;ADOR.mode='open'}else ADOR.fourStep++;return render()}
+ if(b.matches('[data-p435930-visit-finish]')&&ADOR.visitStep===visitSteps().length-1){ADOR.visitStep=0;ADOR.mode='home';return render()}
+
+ if(b.matches('[data-p435930-holy-finish]')&&ADOR.holyStep===holySteps().length-1){ADOR.holyStep=0;ADOR.mode='home';return render()}
+
+ if(b.matches('[data-p435930-four-finish]')&&ADOR.fourStep===fourSteps().length-1){ADOR.fourStep=0;ADOR.mode='open';return render()}
+
  if(b.matches('[data-p435930-go-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930OpenPrayer)return openPrayerOnly(b.dataset.p435930OpenPrayer);
  if(b.matches('[data-p435930-prayer-return]')){view=prayerReturnView||'library';return render()}
