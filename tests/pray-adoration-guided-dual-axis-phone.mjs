@@ -43,7 +43,7 @@ try{
  let v=await snapshot();
  assert.deepEqual({mode:v.mode,card:v.card,stops:v.stops,current:v.current,overflow:v.overflow},
   {mode:"visit",card:"visit-0",stops:7,current:1,overflow:"auto"});
- assert.equal(v.nav,"none","Old Previous/Next navigation duplicates the seven-stage timeline");
+ assert.equal(v.nav,null,"Routine Adoration actions must be removed beside the chapter timeline");
  assert.ok(v.active>=1,"Visit has no illuminated prayer or direction paragraph");
  const reverence=page.locator("body > .aoDevotionalActionCinematic");
  await reverence.waitFor({state:"visible",timeout:4500});
@@ -100,8 +100,9 @@ try{
  assert.equal((await snapshot()).index,1,"Horizontal swipe must advance exactly one named card");
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  v=await snapshot();assert.equal(v.index,6);assert.equal(v.final,"true");
- assert.notEqual(v.nav,"none","Last Visit card must keep Finish, not trap the faithful");
- await page.locator(sel+" [data-p435930-visit-next]").tap();
+ assert.ok(v.nav&&v.nav!=="none","Last Visit card must keep Finish, not trap the faithful");
+ assert.equal(await page.locator(sel+" [data-p435930-visit-prev],[data-p435930-visit-next]").count(),0);
+ await page.locator(sel+" [data-p435930-visit-finish]").tap();
  assert.equal(await page.locator("#aoPray435930.open .aoP435930BigGrid").count(),1,
   "Finishing Visit did not restore the Adoration mode chooser");
  assert.equal(await page.locator(timeline).count(),0);
@@ -174,6 +175,11 @@ try{
  assert.match(await page.locator(sel+" .aoDevoCard").innerText(),/Optional Agony decade/i);
  assert.equal(await page.locator(sel+" [data-p435930-go-rosary]").count(),1,
   "Optional Rosary handoff was lost from the Holy Hour");
+ await page.locator(timeline+" [data-ao-devo-chapter='7']").tap();
+ assert.equal((await snapshot()).final,"true");
+ assert.equal(await page.locator(sel+" [data-p435930-holy-finish]").count(),1);
+ assert.equal(await page.locator(sel+" [data-p435930-holy-next],[data-p435930-holy-prev]").count(),0);
+
  await page.locator("#aoPray435930.open [data-p435930-ador-home]").tap();
  await page.locator("#aoPray435930.open .aoAdorationMethodsDisclosure > summary").tap();
  await page.locator("#aoPray435930.open [data-p435930-ador-mode='four']").tap();
@@ -182,6 +188,8 @@ try{
  assert.match(await page.locator(sel+" .aoDevoCard").innerText(),/Adoration/i);
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  assert.equal((await snapshot()).final,"true");
+ assert.equal(await page.locator(sel+" [data-p435930-four-finish]").count(),1);
+ assert.equal(await page.locator(sel+" [data-p435930-four-next],[data-p435930-four-prev]").count(),0);
  assert.equal(await page.locator(sel+" [data-p435930-ador-quiet-enter]").count(),1,"Final silence needs a direct stillness doorway");
  await page.locator(sel+" [data-p435930-ador-quiet-enter]").tap();
  assert.equal(await page.locator(sel+'[data-ao-adoration-quiet="true"]').count(),1);
