@@ -198,3 +198,26 @@ The hybrid adapter never imports new historical character replies. All inferred 
 ### Remaining production locks
 
 The shared topic registry continues to have 172 records, **84 source-navigation-only and 88 held source gaps**. No source corpus, catechism, Living Church avatar character voice, dialogue, Mass reader or artistic assets are modified. This branch/PR remains **draft and disconnected from runtime**. A trained, licensed local-capable multilingual model, its complete topic-vector index, independent human-annotated EN/FR questions, controlled privacy design and full claim-by-claim answer provenance (after content gathering) are still outstanding.
+
+
+## St Pius X original-document source bridge — research-only addition
+
+The existing shared router now indexes **184 source-only topics** (previously 172): **33 Pius X, 116 Chanoine, 35 Sacristan**. The added twelve Pius X records have **ten historically located source-navigation pointers** and **two explicit source gaps** for invented childhood personal memories and attempted diagnosis of a lay visitor's dry prayer.
+
+The ten new pointers live in `data/learn/living-church-pius-x-historical-passage-pointers.v1.json` and refer to original documentary witnesses: Pius X's `E supremi`, `Pascendi`, `Acerbo nimis`, `Haerent animo`, `Tra le sollecitudini`, the long 1905 Catechism, Salzano manuscript transcriptions, and the 1910 dicastery decree `Quam singulari`. They are **URL-and-section locators only**, not copied sources or approved replies; first-person quotation is NOT authorized for third-party biographies, catechism answers or the dicastery decree. The source-scoped question evidence remains owned in draft [St Pius X research PR #1458](https://github.com/Fulcanelli13/ad-orientem/pull/1458).
+
+**Cross-branch frozen evaluation:** [CI run 39267811444](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39267811444) ran the 36 previously authored alternative phrasings and 12 contextual follow-ups against this 184-topic catalog and the existing shared and symbolic-hybrid routers. Source-specific routing is still weak:
+
+| Outcome among 48 hand-authored probes | Shared router | Hybrid router |
+| --- | ---: | ---: |
+| Exact intended source-navigation reference | **9** | **1** |
+| Safe unresolved `no_coverage` | **27** | **39** |
+| Safe no-coverage for two held personal-answer cases | **8** | **8** |
+| Wrong-specific source-navigation proposal | **4** | **0** |
+| Produced answer text | **0** | **0** |
+
+The four wrong-specific shared-router routes were: Pope's policy follow-up `E supremi` → Modernism `Pascendi`, Rosary-at-Mass → generic prayer, temptation vs consent → generic sin, thanksgiving after Communion → Real Presence. All inferred navigations still demand user question confirmation; no avatar reply was fabricated.
+
+This is a **source-owner reconciliation and executable routing baseline**, not a passed semantic-retrieval release threshold. Never add the 48 held-out text variants into the router catalog merely to obtain higher test scores. Improve query understanding with independent negative/compound French and English probes, robust intent anchoring and minimum source-scope similarity while preserving all existing source/answer safety gates. Future source navigation must actually resolve the source pointer to its historical URL through the owner's bridge; `learn.catechism` is not itself the original encyclical or Salzano document.
+
+PR #1443 continues to own routing, PR #1458 continues to own question-level historical source research. Neither PR changes the published avatar or the existing Mass reader.
