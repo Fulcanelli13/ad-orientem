@@ -1,0 +1,40 @@
+name: Visible Mass M6 B26 source original pixel QA (research only)
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - tools/visible-mass-m6-b26-original-qa.py
+      - .github/workflows/visible-mass-m6-b26-original-qa.yml
+      - previews/visible-mass-3d/M6_B26_PILOT_IMAGE_VISUAL_QA_20261019.v1.json
+  pull_request:
+    paths:
+      - tools/visible-mass-m6-b26-original-qa.py
+      - .github/workflows/visible-mass-m6-b26-original-qa.yml
+      - previews/visible-mass-3d/M6_B26_PILOT_IMAGE_VISUAL_QA_20261019.v1.json
+permissions:
+  contents: read
+jobs:
+  original-photo-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Python source syntax check
+        run: python -m py_compile tools/visible-mass-m6-b26-original-qa.py
+      - name: Install research image requirements
+        run: python -m pip install --disable-pip-version-check --quiet Pillow==11.3.0 requests==2.32.5
+      - name: Retrieve six source original images with exact provenance, stop on 429
+        run: python tools/visible-mass-m6-b26-original-qa.py
+      - name: Publish private review artifact (not app media)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: M6-B26-Pilot-Original-Pixel-QA-6-Source-Files
+          path: dist/visible-mass/m6-b26-original-qa/
+          if-no-files-found: warn
+          retention-days: 30
