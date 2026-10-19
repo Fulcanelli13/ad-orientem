@@ -74,5 +74,34 @@ for(const [name,engine] of Object.entries(engines)){
  console.log("LITURGICAL_SCOPE "+JSON.stringify({engine:name,total:fixture.cases.length,
   categories,priorWrongSourceRegressionsCorrected:3,answersGenerated:0}));
 }
+
+// The hybrid's explicit confirmation must navigate to the ORIGINAL document,
+// never to a generic Catechism page, and reject forged URL payloads.
+const proposed=hybrid.match("May I recite the Rosary at Mass as a faithful member?",
+ {language:"en",currentCharacter:"pius-x"});
+assert.equal(proposed.kind,"source_navigation");
+assert.equal(proposed.documentNavigation?.sourceRef,"SPX-PILOT-02");
+assert.equal(proposed.requiresQuestionConfirmation,true);
+assert.equal(hybrid.confirmSourceNavigation(proposed).kind,"needs_question_confirmation");
+const confirmed=hybrid.confirmSourceNavigation(proposed,{confirmQuestion:true});
+assert.equal(confirmed.kind,"confirmed_source_navigation");
+assert.equal(confirmed.navigationRoute,"historical.external_document");
+assert.equal(confirmed.documentNavigation.sourceRef,"SPX-PILOT-02");
+assert.equal(confirmed.documentNavigation.url,
+ pointers.records.find(x=>x.id==="SPX-PILOT-02").originalDocumentUrl);
+assert.equal(confirmed.answerText,null);
+const forged={...proposed,documentNavigation:{...proposed.documentNavigation,
+ url:"https://example.invalid/irrelevant"}};
+assert.equal(hybrid.confirmSourceNavigation(forged,{confirmQuestion:true}).kind,
+ "invalid_navigation");
+// A user-provided unrelated topic is not permission to override the intended
+// Mass source by calling a selected Catechism topic first.
+for(const engine of Object.values(engines)){
+ const mismatch=engine.match("May the faithful recite the Rosary at Mass?",{
+  language:"en",currentCharacter:"pius-x",
+  chosenTopicId:"pius.historical_spx_pilot_09"});
+ assert.equal(mismatch.kind,"no_coverage");
+ assert.equal(mismatch.reason,"EXPLICIT_TOPIC_SOURCE_SCOPE_CONFLICT");
+}
 assert.equal(scopeLiturgicalQuestion("What does the tabernacle contain?",{language:"en"}),null);
 console.log("PASS historic lay/priest, moment-of-reception, negative examples and strict document source");
