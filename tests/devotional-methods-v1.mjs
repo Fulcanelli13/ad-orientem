@@ -88,8 +88,9 @@ assert.equal(Object.keys(ROSARY_METHODS).length,6);
 assert.throws(()=>rosaryPlan({decades:10}));
 assert.throws(()=>rosaryPlan({method:"made-up"}));
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
-for(const a of ["pray.divine_mercy","renderMercy()","data-p435930-mercy-next","data-p435930-mercy-prev","data-p435930-mercy-closing","data-p435930-mercy-guide","data-p435930-mercy-open","data-p435930-rosary-methods","renderRosaryMethods()"])
+for(const a of ["pray.divine_mercy","renderMercy()","data-p435930-mercy-jump","updateMercyBeadNav(m,steps,i","data-p435930-mercy-closing","data-p435930-mercy-guide","data-p435930-mercy-open","data-p435930-rosary-methods","renderRosaryMethods()"])
  assert.ok(runtime.includes(a),"Missing native chaplet integration: "+a);
+assert.doesNotMatch(runtime,/data-p435930-mercy-(?:next|prev)/,"Routine Divine Mercy arrows must not duplicate direct bead selection");
 assert.match(runtime,/else if\(id==='pray\.rosary'\)/,"Original Rosary canonical route must survive");
 assert.match(runtime,/launchRosaryPlayer/,"Original Rosary must retain donor");
 for(const marker of ["data-p435930-rosary-begin","function launchFifteenRosary()","ROSARY_FIFTEEN.active","api.setMysterySet?.(set)","nextSteps.findIndex","nextSteps.findLastIndex"]){
