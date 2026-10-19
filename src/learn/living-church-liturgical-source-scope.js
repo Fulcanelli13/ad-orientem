@@ -37,9 +37,8 @@ export function scopeLiturgicalQuestion(question,{language="en"}={}){
  const officialPostcommunion=seen(q,/\b(postcommunion|post communion|oraison de postcommunion)\b/)
   ||(clergy&&seen(q,/\b(liturgical prayer|oraison liturgique|prayer said by the priest|priere dite par le pretre)\b/)
    &&seen(q,/\b(after communion|apres la communion|following communion)\b/));
- if(officialPostcommunion)return Object.freeze({kind:"ABSTAIN",
-  reason:"LITURGICAL_POSTCOMMUNION_NOT_PRIVATE_THANKSGIVING",
-  scope:"OFFICIAL_MASS_ORATION_REQUIRES_DISTINCT_SOURCE"});
+ if(officialPostcommunion)return Object.freeze({kind:"EXISTING_TOPIC_OWNER",
+  topicId:"mass.postcommunion",scope:"PRIEST_LITURGICAL_ORATION_NOT_PRIVATE_THANKSGIVING"});
  const afterReception=seen(q,R.after)&&seen(q,R.reception)&&eucharist;
  if(afterReception&&!seen(q,R.priestPostcommunion)&&!seen(q,R.ontology)){
   if(seen(q,R.inward))
