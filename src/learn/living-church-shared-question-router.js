@@ -127,13 +127,13 @@ export function createSharedQuestionRouter(catalog){
   const [first,second]=candidates;
   if(!first||first.score<.41)
    return frozen({kind:"no_coverage",reason:"NO_RELEVANT_SOURCE_MATCH",originalQuestion:input,answerText:null,approvedReply:false});
-  if(second?.score>.53&&first.score-second.score<.1){
+  const literal=phrases(first.t.questionVariants,lang).some(v=>norm(v)===norm(input));
+  if((!literal||second?.score===1)&&second?.score>.53&&first.score-second.score<.1){
    const options=candidates.filter(x=>x.score>.53).slice(0,catalog.pilotLimits.maxClarifications).map(x=>present(x.t,lang));
    return frozen({kind:"clarify",reason:"CLOSE_TOPICS",originalQuestion:input,language:lang,
     clarification:lang==="fr"?"Quelle question voulez-vous poser ?":"Which of these questions did you mean?",
     options,answerText:null,approvedReply:false});
   }
-  const literal=phrases(first.t.questionVariants,lang).some(v=>norm(v)===norm(input));
   return resolve(first.t,input,{...fixed,matchEvidence:frozen({
    basis:literal?"EXACT_VARIANT":"LEXICAL_RANKED",
    score:Number(first.score.toFixed(3))})});
