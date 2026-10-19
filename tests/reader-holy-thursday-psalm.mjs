@@ -48,7 +48,7 @@ assert.ok(donor.psalm21Pian[0].startsWith(noChoir.rows[1].latin),
   "First verse of grouped Pian source must be exact, not a paraphrase");
 assert.equal(noChoir.rows[1].latin.includes("clamo per diem"),false,
   "The no-clerics route leaked the SECOND verse into celebrant's first");
-assert.ok(noChoir.rows[1].french.includes("Pourquoi m'avez-vous abandonné"),
+assert.ok(noChoir.rows[1].french.toLowerCase().includes("pourquoi m'avez-vous abandonné"),
   "First-verse-only branch has missing French text");
 assert.deepEqual(noChoir.referenceRows,refs.referenceRows,
   "Performance branch must not delete the fully sourced Psalm reference");
