@@ -35,7 +35,7 @@ for(const rite of reg.rites){
   const payload=load("../"+rite.sourceFile);
   const result=owner.build({graph:graph[owner.graph],payload,
     bodyPresent:true,burialProcession:true});
-  const cards=result.cards??result.readerSurfaces??[];
+  const cards=result.cards??result.surfaces??result.readerSurfaces??[];
   assert.ok(cards.length>0,rite.id+" native card payload absent");
   const byId=new Map(cards.map(card=>[card.id,card]));
   for(const e of rite.events){
