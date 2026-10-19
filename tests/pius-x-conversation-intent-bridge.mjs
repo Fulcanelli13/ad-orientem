@@ -152,4 +152,22 @@ assert.equal(census.separately_preserved_conversation_family_seeds,64);
 assert.equal(census.strict_distinct_question_intents_verified,null);
 assert.equal(census.provisional_1912_plus_spx_topic_units_if_all_29_direct_families_collapse_and_remaining_35_add_distinct,468);
 
+
+const calibrations = JSON.parse(readFileSync('data/learn/research/pius-x-1905-1912-calibration-crosswalk-20261019.v1.json','utf8'));
+assert.equal(calibrations.records.length,6);
+assert.equal(calibrations.counts.sampled_pairs,6);
+assert.equal(calibrations.counts.same_intent_candidates,2);
+assert.equal(calibrations.counts.approved_semantic_merges,0);
+const relations = new Map();
+for(const v of calibrations.records){
+  assert.ok(/^PX1905-Q\d{3}$/.test(v.long_1905));
+  assert.ok(/^https:\/\//.test(v.long_source_url));
+  assert.ok(v.short_1912.every(q=>known.has(q)), 'calibration QID must exist');
+  assert.equal(v.dedup_approved,false);
+  relations.set(v.long_1905,v.relation);
+}
+assert.equal(relations.get('PX1905-Q527'),'RELATED_NOT_SAME_DISTINCTION');
+assert.equal(relations.get('PX1905-Q855'),'EDITION_DATE_CONFLICT_NO_AUTOMERGE');
+assert.equal(relations.get('PX1905-Q669'),'NOT_FOUND_IN_REVIEWED_SHORT_EUCHARIST_SECTION');
+
 console.log('Pius X P0/P1 research-only bridge: 433 canonical QIDs, 64 provisional seeds, no content approval');
