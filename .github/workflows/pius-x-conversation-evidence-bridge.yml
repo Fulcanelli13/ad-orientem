@@ -17,6 +17,7 @@ on:
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
       - 'tests/pius-x-conversation-intent-bridge.mjs'
       - 'tools/formation/extract-pius-x-1905-crosswalk.py'
+      - 'tools/formation/extract-pius-x-feasts-salzano.py'
       - '.github/workflows/pius-x-conversation-evidence-bridge.yml'
   workflow_dispatch:
 jobs:
@@ -50,5 +51,27 @@ jobs:
         with:
           name: pius-x-1905-to-1912-research-candidates
           path: research-out/*.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  feast-and-salzano-locator-census:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Parser self-test
+        run: python tools/formation/extract-pius-x-feasts-salzano.py --selftest
+      - name: Index feast chapters and editor-numbered Salzano witnesses
+        run: python tools/formation/extract-pius-x-feasts-salzano.py --out research-out/pius-x-feasts-salzano-locators.v1.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-feasts-salzano-source-locators
+          path: research-out/pius-x-feasts-salzano-locators.v1.json
           if-no-files-found: warn
           retention-days: 30
