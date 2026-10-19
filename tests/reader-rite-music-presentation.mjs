@@ -141,6 +141,41 @@ assert.equal(organ({massCard:massCards[1],resolvedMass:holyThursday}).status,"PE
   "Holy Thursday exception must belong to Gloria only");
 assert.equal(organ({massCard:massCards[2],resolvedMass:holyThursday}).status,"SILENT",
   "Holy Thursday organ continued past the Gloria exception");
+// §29 concerns independently verified interfering local customs, not
+// the mere date or the fact that a low Mass is being offered.
+const lowCtx={
+  form:"LOW",overlays:[],provenance:{organ1962:{
+    source:"LITURGICAL_PLAN_1962",verified:true,
+    lowMassInterferingInstrumentalCustom:true,
+  }},
+};
+const lowCard=(id)=>({sectionId:id,blocks:[]});
+for(const n of [2,3,4,5,6,7,8,9,12,13,15,16,17,18,19,20,21,27]){
+  const card=lowCard("AO.CARD."+String(n).padStart(3,"0"));
+  const policy=organ({massCard:card,resolvedMass:lowCtx});
+  assert.equal(policy?.status,"SILENT",
+    "Missing §29 complete-card prohibition: "+card.sectionId);
+  assert.equal(policy?.actuallyPlaying,"UNKNOWN");
+  assert.ok(policy.authority.includes("29"));
+}
+for(const n of [1,10,11,14,22,23,24,25,26,28,29,30]){
+  const card=lowCard("AO.CARD."+String(n).padStart(3,"0"));
+  assert.equal(organ({massCard:card,resolvedMass:lowCtx}),null,
+    "Mixed or unrestricted §29 card cannot be labelled without exact source interval: "+card.sectionId);
+}
+assert.equal(organ({massCard:lowCard("AO.CARD.002"),resolvedMass:{
+  ...lowCtx,provenance:{organ1962:{...lowCtx.provenance.organ1962,
+    lowMassInterferingInstrumentalCustom:false}},
+}}),null,"An unverified or absent local interference custom cannot activate §29 badge");
+assert.equal(organ({massCard:lowCard("AO.CARD.012"),resolvedMass:{
+  ...lowCtx,provenance:{organ1962:{...lowCtx.provenance.organ1962,source:"UNVERIFIED"}},
+}}),null,"Wrong owner must fail closed on Low Mass");
+assert.equal(organ({massCard:{...lowCard("AO.CARD.LIVE.12"),
+  sourceSectionId:"AO.CARD.012"},resolvedMass:lowCtx}).status,"SILENT",
+  "Curated source section identity must survive §29 mapping");
+assert.equal(organ({massCard:lowCard("AO.CARD.015"),resolvedMass:{
+  ...lowCtx,provenance:null,
+}}),null,"Only explicitly source-owned Consecration block or certified §29 range may imply full silence");
 const requiem={overlays:["REQUIEM"],provenance:null};
 assert.equal(organ({massCard:massCards[1],resolvedMass:requiem}).status,"ACCOMPANIMENT_ONLY");
 assert.equal(organ({massCard:massCards[1],resolvedMass:{...requiem,form:"LOW"}}),null,
