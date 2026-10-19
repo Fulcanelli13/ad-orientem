@@ -128,6 +128,8 @@ assert.equal(r.kind,"clarify");assert.equal(r.requiresContext,true);assert.equal
 r=match("what happens to the bread at mass");
 assert.equal(r.kind,"source_navigation");assert.equal(r.character,"pius-x");assert.equal(r.topicId,"faith.real_presence");
 assert.deepEqual(r.sourceRefs.map(x=>x.ref),["PX1912-Q325","PX1912-Q329"]);assert.equal(r.answerText,null);
+assert.equal(r.requiresQuestionConfirmation,false);
+assert.equal(r.matchEvidence.basis,"EXACT_VARIANT");
 assert.ok(r.topic.relatedTopics.some(x=>x.id==="mass.elevation"));
 assert.ok(r.topic.relatedTopics.every(x=>x.publication==="RELATIONSHIP_RESEARCH_ONLY"));
 assert.equal(r.topic.approvedReply,false);
@@ -139,6 +141,14 @@ assert.equal(r.topicId,"objects.vestments");assert.equal(r.kind,"source_navigati
 r=match("what is the small square over the chalice");
 assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"sacristan");assert.equal(r.topicId,"objects.pall");
 assert.equal(r.requiresAcceptance,true);assert.equal(r.sourceRefs[0].ref,"G189");
+assert.equal(r.requiresQuestionConfirmation,false);
+r=match("What's that hard square thing on the chalice?");
+assert.equal(r.kind,"offer_handoff");
+assert.equal(r.topicId,"objects.pall");
+assert.equal(r.requiresQuestionConfirmation,true);
+assert.equal(r.matchEvidence.basis,"LEXICAL_RANKED");
+r=match("what is the small square over the chalice");
+
 assert.equal(router.acceptHandoff(r,{accept:false}).kind,"stay");
 assert.equal(router.acceptHandoff({...r,targetCharacter:"canon"},{accept:true}).kind,"invalid_handoff");
 assert.equal(router.acceptHandoff({...r,sourceRefs:[{owner:"GLOSSARY_CONCEPTS_SOT_V1",ref:"G999",evidence:"SOURCE_BACKED_GLOSSARY"}]},{accept:true}).kind,"invalid_handoff");
@@ -162,6 +172,8 @@ r=match("what about his Blood?",{context:{activeTopicId:"faith.real_presence"}})
 assert.equal(r.kind,"source_navigation");assert.equal(r.topicId,"faith.whole_christ");
 r=match("why does the priest raise the Host?",{chosenTopicId:"mass.elevation"});
 assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");assert.equal(r.sourceRefs[0].ref,"AO.CARD.015");
+assert.equal(r.requiresQuestionConfirmation,false);
+assert.equal(r.matchEvidence.basis,"EXPLICIT_REFORMULATION_CHOICE");
 r=match("is it wrong to seek more money for my family");
 assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"family_livelihood_from_Q85");
 r=match("what is the current eucharistic fast");
