@@ -80,50 +80,79 @@ export function markActiveCue(container,cueId){
 }
 
 /**
- * Visual-only fallback for Proper TEXT lacking a source ceremonial cue.
- * It deliberately never writes data-active, never creates a cue ID, and never
- * calls the priest/faithful/cinematic source-event controller. In a mixed card
- * the existing cue stays authoritative for ritual state; the nearest rendered
- * text owns *only* visual brightness while that uncued passage is being read.
+ * Reader illumination is independent of source-event focus.
+ * Every visible prayer paragraph (including uncued Propers) participates
+ * in the SAME visual ordering. Only the ceremonial tracker writes data-active
+ * or advances priest/faithful events.
+ *
+ * At the first scroll position the opening paragraph retains ownership.
+ * Thereafter the reading line approaches 39% viewport depth gradually;
+ * this avoids jumping past short opening responses on the first finger swipe.
+ */
+export function pickReadingParagraph({
+  scrollTop=0,clientHeight=0,scrollHeight=0,items=[],focusRatio=.39
+}={}){
+  const usable=(items??[]).filter(item=>
+    Number.isFinite(item?.top)&&Number.isFinite(item?.bottom)&&item.bottom>=item.top);
+  if(!usable.length)return null;
+  const top=Math.max(0,Number(scrollTop)||0);
+  const viewport=Math.max(1,Number(clientHeight)||1);
+  const extent=Math.max(viewport,Number(scrollHeight)||viewport);
+  if(top<=2)return usable[0];
+  if(top>=Math.max(0,extent-viewport-2))return usable[usable.length-1];
+
+  const ratio=Math.min(.7,Math.max(.3,Number(focusRatio)||.39));
+  const steadyOffset=viewport*ratio;
+  const firstCenter=Math.max(24,(usable[0].top+usable[0].bottom)/2);
+  const offset=Math.min(steadyOffset,Math.max(24,firstCenter+top*.8));
+  const focus=top+offset;
+  let selected=usable[0],bestDistance=Infinity;
+  for(const item of usable){
+    // A long prayer remains lit while the reading line is within it.
+    if(focus>=item.top&&focus<=item.bottom)return item;
+    const center=(item.top+item.bottom)/2;
+    const distance=Math.abs(center-focus);
+    if(distance<bestDistance){selected=item;bestDistance=distance}
+  }
+  return selected;
+}
+
+/**
+ * Maintains exactly one visual reading focus across cued AND uncued text.
+ * Retains the established return contract for uncued Proper inspection.
+ * No invented cue IDs; data-active/source state remains untouched.
  */
 export function markUncuedReadingFocus(container,{focusRatio=.39}={}){
   const body=container?.querySelector?.('[data-role="paragraphs"]');
   if(!body?.querySelectorAll)return null;
   const all=[...body.querySelectorAll(".ao-reader-paragraph")];
-  const uncued=all.filter(node=>node.dataset.kind!=="RUBRIC"&&
-    !CUE_RE.test(String(node.dataset.cueId||"")));
-  if(!uncued.length){
+  const candidate=all.filter(node=>node.dataset.kind!=="RUBRIC"&&
+    node.getBoundingClientRect?.()&&node.getClientRects?.().length>0&&!node.hidden);
+  if(!candidate.length){
+    for(const node of all)if(node.dataset.readingActive==="true")node.dataset.readingActive="false";
     delete body.dataset.aoVisualFocus;
     return null;
   }
   const rect=container.getBoundingClientRect?.();
   if(!rect)return null;
-  const scrollTop=Math.max(0,Number(container.scrollTop)||0);
-  const viewport=Math.max(1,Number(container.clientHeight)||1);
-  const candidate=all.filter(node=>node.dataset.kind!=="RUBRIC"&&
-    node.getBoundingClientRect?.()&&node.getClientRects?.().length>0&&!node.hidden);
-  if(!candidate.length)return null;
+  const top=Math.max(0,Number(container.scrollTop)||0);
   const nodes=candidate.map(node=>{
     const r=node.getBoundingClientRect();
-    return {node,top:r.top-rect.top+scrollTop,bottom:r.bottom-rect.top+scrollTop};
+    return {node,top:r.top-rect.top+top,bottom:r.bottom-rect.top+top};
   });
-  const focus=scrollTop+viewport*focusRatio;
-  let selected=nodes[0],distance=Infinity;
-  if(scrollTop<=2)selected=nodes[0];
-  else if(scrollTop>=Math.max(0,Number(container.scrollHeight)-viewport-2))selected=nodes.at(-1);
-  else for(const item of nodes){
-    const d=focus<item.top?item.top-focus:focus>item.bottom?focus-item.bottom:0;
-    if(d<distance){distance=d;selected=item}
-  }
-  const focused=selected?.node;
-  const focusUncued=uncued.includes(focused);
-  for(const node of uncued){
-    const active=String(focusUncued&&node===focused);
+  const selected=pickReadingParagraph({
+    scrollTop:top,clientHeight:Number(container.clientHeight)||0,
+    scrollHeight:Number(container.scrollHeight)||0,items:nodes,focusRatio
+  });
+  const focused=selected?.node??null;
+  for(const node of all){
+    const active=String(node===focused);
     if(node.dataset.readingActive!==active)node.dataset.readingActive=active;
   }
-  if(focusUncued)body.dataset.aoVisualFocus="uncued";
+  const uncued=Boolean(focused&&!CUE_RE.test(String(focused.dataset.cueId||"")));
+  if(uncued)body.dataset.aoVisualFocus="uncued";
   else delete body.dataset.aoVisualFocus;
-  return focusUncued?focused:null;
+  return uncued?focused:null;
 }
 
 export function installCueFocusTracker({
