@@ -17,7 +17,7 @@
 | Ash Wednesday | ASH, R23 | Latin blessing/distribution and four orations | Not available in source-built pages | Four whole orations separated | Recipient cue personal; INTROIT | Bilingual gap |
 | Candlemas | CND, R24 | Latin 5 orations, distribution, procession, candle state | Not available in source-built pages | Five whole orations separated | Blessing/reception and procession only from source; INTROIT | Bilingual gap |
 | Rogations/Greater Litanies | ROG, R25 | Latin prayers and complete, undoubled Litany | Not available in source-built pages | Complete V/R pairs and concluding orations | Conditional walking vs public supplications; INTROIT | Bilingual gap |
-| Requiem Absolution | ABS, R26 | Latin, with optional body/catafalque and burial hymn branch | Not available in source-built pages | Libera me refrain/responses; Kyrie/Pater, paired intercessions and whole oration/Amen on separate reading pages | Only if following action explicitly selected; burial hymn depends on actual body and procession | Bilingual and branch phone gap |
+| Requiem Absolution | ABS, R26 | Latin source with explicit body-present/absent oration, conditional burial hymn | **27/27** text rows have original fingerprint-locked editorial EN/FR in body+burial route; alternate no-body oration separately aligned | Libera me refrain/responses; Kyrie/Pater, paired intercessions and whole oration/Amen on separate reading pages | Only if following action explicitly selected; burial hymn depends on actual body and procession | Four conditional source branches, full editorial language and 390px acceptance tests added; editorial signoff pending |
 | Corpus Christi | CORPUS, R27 | Source-pinned Latin Pange lingua, Tantum ergo, Benediction | **11/11** rows have original editorial EN/FR alongside unchanged Latin; not certified 1962 printed translations | *Pange lingua* on two two-stanza pages; Benediction V/R and Orémus/prayer/Amen independently | Explicit following action, omitted final blessing/Last Gospel plan; procession opt-in | Editorial approval and visual acceptance pending |
 | Holy Thursday translation | HT_POST, R31 | Source-pinned Latin Pange lingua, Tantum ergo and altar stripping | **21/21 reference rows** have original source-locked editorial EN/FR; actual Psalm recitation extent conditional | Six hymn stanzas, 13 Psalm verse-groups + two antiphons; first-verse-only branch if no clerics | Movement only for joining; clerics present continue Psalm until altars stripped, otherwise celebrant first verse only | Rubrical branch and editorial visual acceptance pending |
 | Generic following procession | PROC, R29 | **Structural-only**, deliberately no feast-specific prayers | **None** until dedicated profile supplied | Structural stages only | Cannot infer procession from feast/date; participant opt-in, then lifecycle | Not full text-ready |
@@ -195,3 +195,45 @@ native reader and Latin/French alignment.
 All source and translation acceptance here remains subject to
 a final editorial and visual review. This correction must not be
 described as a complete ready-for-store Holy Thursday rite.
+
+## Requiem Absolution bilingual source pass — 19 October
+
+The native Requiem following-action reader is now bilingual across all
+of its **27 displayed text rows** in the body-present/burial-procession
+route, with the **alternate no-body collect separately translated**
+rather than reusing the wrong oration.
+
+- The donor's **Latin remains in**
+  `data/presentation/reader-requiem-absolution.v1.json`;
+  `src/mass/reader-requiem-text.js` owns original editorial EN/FR only.
+  **Each of the 28 distinct Latin source variants** (27 rows plus the
+  alternate oration) has an independent source fingerprint. The repeated
+  `Libera me` refrain correctly shares a translation, while each
+  distinct response remains in place.
+- The English text was checked against historical
+  [1909 bilingual funeral service](https://en.wikisource.org/wiki/The_Service_of_High_Mass_for_the_Dead_on_the_Day_of_Burial)
+  and the English [1962 funeral proper](https://propria.org/wp-content/uploads/2021/07/propers-for-funeral-mass-mass-for-the-dead-on-the-day-of-death-or-burial-for-a-lay-person.pdf);
+  French responsory and processional wording checked against
+  [Absoute](https://fr.wikipedia.org/wiki/Absoute) and
+  [In Paradisum text](https://inparadisum.fr/textes-et-traductions/).
+  These are **original Ad Orientem editorial translations**, not
+  claims of official 1962 vernacular approval or verbatim reproduction.
+- The complete `Non intres` prayer, seven responsorial `Libera me`
+  lines, three Kyrie invocations, silent `Pater noster`, five V/R
+  pairs, both distinct `Deus cui proprium` / `Absolve` orations,
+  `Amen`, and the two departure antiphons `In paradisum` and
+  `Chorus angelorum` have individually paired EN/FR readings.
+- The four meaningful controller cases remain unchanged:
+  body + burial (27 rows); body but no burial (25 rows);
+  no body with or without burial requested (23 rows, no funeral-
+  procession antiphon). The **burial route is never inferred** from a
+  Requiem date, and personal walking posture still requires consent.
+- New `tests/reader-requiem-bilingual.mjs` source-fingerprint guard,
+  full four-way conditional test and original Mass event/cursor guard.
+  Source coverage now fails if any Requiem Latin row lacks aligned
+  EN/FR, and 390px French phone acceptance verifies prayer pages,
+  responses and departure antiphons.
+
+Source-provenance and personal-action review is still required. Requiem
+Absoute is a *separate following action* and its integration does
+not imply that every Requiem Mass concludes with one.
