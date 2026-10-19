@@ -198,3 +198,81 @@ assert.equal(postureAware.sourceModel.totalCards,30);
 assert.equal(postureAware.sourceModel,postureAware.presentationModel.sourceAuthorityModel,
   "Posture-aware pages altered canonical 30-card source authority");
 console.log("PASS real Sung Missal: STAND to SIT Offertory boundary; canonical texts/cards untouched");
+
+// Regression: a canonical Lenten Prayer over the People is appended OUTSIDE
+// frozen B-block offsets. Reconstructing only B-blocks used to delete it from
+// Missal Mode, even though the canonical source still contained the prayers.
+import {projectGranularMissalCards} from "../src/mass/reader-missal-granularity.js";
+import {auditMissalGranularityIntegrity} from "../src/mass/reader-missal-integrity.js";
+const rawLent={
+  presentationMode:"MISSAL",cards:[{
+    sectionId:"AO.CARD.027",sequence:1,title:"Postcommunion",
+    paragraphs:[
+      row("base-p1",["AO.SM.C0251"]),
+      row("base-p2",["AO.SM.C0252"]),
+      row("base-p3",["AO.SM.C0253"]),
+      row("R17.POP.010.INVITATION",[]),
+      row("R17.POP.010.BODY",[]),
+      row("R17.POP.010.CONCLUSION",[]),
+      row("R17.POP.010.AMEN",[]),
+    ],
+    blocks:[
+      {blockId:"AO.SM.B086",firstParagraphIndex:0,paragraphCount:1},
+      {blockId:"AO.SM.B087",firstParagraphIndex:1,paragraphCount:1},
+      {blockId:"AO.SM.B088",firstParagraphIndex:2,paragraphCount:1},
+    ],
+    prayerOverPeople:{sourceRef:"Missale Romanum 1962 / Lenten feria"},
+  }],
+};
+const lentBook=projectGranularMissalCards(rawLent);
+const insertedPage=lentBook.cards.find(card=>card.sourceOwnedInsertion==="PRAYER_OVER_PEOPLE");
+assert.ok(insertedPage,"Lenten Prayer over the People lost in Missal granularity");
+assert.equal(insertedPage.paragraphs.length,4);
+assert.equal(insertedPage.sectionId,"AO.MISSAL.027.3");
+assert.deepEqual(insertedPage.paragraphs.map(x=>x.id),[
+  "R17.POP.010.INVITATION","R17.POP.010.BODY",
+  "R17.POP.010.CONCLUSION","R17.POP.010.AMEN",
+]);
+assert.equal(auditMissalGranularityIntegrity(rawLent,lentBook).verified,true);
+const lintCue=projectPostureAwareMissalCards(lentBook,{cueState,preferences:{
+  postureProfile:"FOLLOW_CONGREGATION"},
+});
+assert.deepEqual(lintCue.cards.flatMap(card=>card.paragraphs),
+  rawLent.cards.flatMap(card=>card.paragraphs),
+  "Posture layering must not erase the restored Lenten oration");
+console.log("PASS Lenten source insertion: all four Prayer-over-People paragraphs retained");
+
+// Verify source → Mass Missal → posture page preservation for ordinary,
+// Requiem, Low/Sung/Solemn, and Nuptial variations of the *same* resolved
+// canonical corpus. Low must never inherit unsupported Sung posture events.
+for(const [form,overlays] of [
+  ["LOW",[]],
+  ["LOW",["REQUIEM"]],
+  ["MISSA_CANTATA_SIMPLE",[]],
+  ["MISSA_CANTATA_SIMPLE",["REQUIEM"]],
+  ["MISSA_CANTATA_INCENSE",[]],
+  ["MISSA_CANTATA_INCENSE",["REQUIEM"]],
+  ["SOLEMN",[]],
+  ["SOLEMN",["REQUIEM"]],
+  ["MISSA_CANTATA_INCENSE",["NUPTIAL"]],
+]){
+  const sample={...prepared,session:{...prepared.session,
+    resolvedMass:{...prepared.session.resolvedMass,form,
+      overlays,actualCelebration:{id:"audit",type:overlays.includes("REQUIEM")?"REQUIEM":"CALENDAR"}},
+  }};
+  const normal=buildReaderModeModels({prepared:sample,data:realData,mode:"MISSAL"});
+  const activeCue=form==="LOW"?{supported:false}:createReaderCueStateController({
+    registries,sungCorpus:realData.sungCorpus,prepared:sample,
+  });
+  const segmented=buildReaderModeModels({prepared:sample,data:realData,mode:"MISSAL",
+    postureCueState:activeCue,postureRegistry:registries.postures});
+  assert.deepEqual(segmented.presentationModel.cards.flatMap(card=>card.paragraphs),
+    normal.sourceModel.cards.flatMap(card=>card.paragraphs),
+    form+" "+overlays.join(",")+" text/rubric/translation changed in Missal");
+  assert.deepEqual(segmented.presentationModel.cards.flatMap(card=>card.blocks.map(b=>b.blockId)),
+    normal.sourceModel.cards.flatMap(card=>card.blocks.map(b=>b.blockId)),
+    form+" "+overlays.join(",")+" lost/duplicated a source block");
+  assert.equal(segmented.sourceModel.cards.length,normal.sourceModel.cards.length,
+    "Page splitting changed canonical source card count");
+}
+console.log("PASS 9 special Mass variants: exact source paragraphs and prayer block parity");
