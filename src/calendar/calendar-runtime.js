@@ -190,7 +190,7 @@ function monthCellData(id){
   const rank=r?rankOf(r):(preview?.rank??""),colour=r?colourOf(r):(preview?.colour??"");
   const commemorationCount=r?commemorations(r).length:(preview?.commemorationCount??0);
   const aria=[displayDate(id),name,r?null:preview?L("From saved month overview; checking day","D'après le mois enregistré ; vérification en cours"):L("Loading day","Chargement du jour"),rank,colour,
-    commemorationCount?L("Commemorations: ","Commémoraisons : ")+commemorationCount:null].filter(Boolean).join(" · ");
+    commemorationCount?L("Commemorations: ","Commémorations : ")+commemorationCount:null].filter(Boolean).join(" · ");
   return {r,sunday,tier,cycle,name,projected:false,accent,rank,colour,commemorationCount,aria,ready:!!r,preview:!!preview};
 }
 
