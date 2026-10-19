@@ -5,6 +5,7 @@ import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
+import {updateDevotionalProgress} from "./devotional-progress.js";
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
@@ -1278,6 +1279,7 @@ function installRosaryNamedTimeline(r){
   b.classList.toggle("active",i===selected);
   b.setAttribute("aria-current",i===selected?"step":"false");
  });
+ updateDevotionalProgress(timeline,{index:selected,total:chapters.length,language:lang()});
  const options=shell.querySelector(":scope > .aoRosaryActiveOptions");
  const head=shell.querySelector(":scope > .lab-view-head");
  const after=options||shell.querySelector(":scope > .aoRosaryFaithfulRail")||head;
