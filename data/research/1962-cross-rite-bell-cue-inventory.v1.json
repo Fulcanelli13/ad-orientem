@@ -363,7 +363,7 @@
     }
   ],
   "gaps": [
-    "Low Mass conditional communion warning MC-COM-185 is UNAVAILABLE_UNCERTIFIED in current graph even though historical rubric permits the signal: adjudicate against 1962 Low Mass authority rather than hard-coding absence.",
+    "Low Mass historical source versus current certification requires adjudication: MC-COM-185.forms.LOW is UNAVAILABLE_UNCERTIFIED; LOW profile excludes E60 and explicitly forbids treating the celebrant's old Domine non sum dignus bell as the Communion warning. The graph's exclusions are not proof that 1962 rubrics prohibit all Low Mass warning customs.",
     "Holy Thursday Gloria is not yet a separately owned native bell event; link the actual liturgical celebration to the sound silence transition before display.",
     "Easter Vigil overlay contains CHURCH_BELLS_AT_GLORIA under legacy MC-0013; reconcile to current native Gloria, not a guessed cue.",
     "Benediction blessing bell belongs to distinct Benediction rite, not a shared Mass card or Schola track; identify native blessing action before activation.",
@@ -371,5 +371,15 @@
     "Corpus Christi and other Eucharistic processions need explicit source and location custom confirmation before adding a separate processional bell.",
     "Requiem Mass source inheritance and Low/Sung/Solemn branches need runtime parity; absolution after Mass is not a second Consecration.",
     "Test when Blessed Sacrament exposed during parallel Low Mass as a distinct traditional rubrical exception before generalizing."
-  ]
+  ],
+  "lowMassSourceProfile": "data/mass/low-mass-profile.v1.json",
+  "lowMassValidation": {
+    "sourceClockAtSanctus": "PUBLIC_TEXT",
+    "canonCueIds": "SHARED_WITH_SUNG_CORPUS",
+    "faithfulCommunionWarningGraphEvent": "MC-COM-185_UNAVAILABLE_UNCERTIFIED",
+    "profileExcludedSourceMoment": "E60",
+    "legacyPriestDomineNonSumDignusBellAsCommunionWarning": "FORBIDDEN",
+    "assessment": "NOT_RUBRICALLY_DECIDED_BY_GRAPH_UNAVAILABILITY",
+    "policy": "DO_NOT_IMPORT_SOURCE_MOMENT_E60_OR_REPRESENT_C0229_TO_C0231_AS_NEW_BELL_WITHOUT_ADJUDICATION"
+  }
 }
