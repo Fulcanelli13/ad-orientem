@@ -29,7 +29,7 @@ export async function probeTextFocus({
   const validCue=/^AO\.SM\.C\d{4}$/;
   const active=node=>owner==="mass"?node.dataset.active==="true":
     owner==="distinct"?node.dataset.aoDistinctReadingActive==="true":
-    owner==="mass-uncued"?node.dataset.readingActive==="true":
+    owner==="mass-uncued"||owner==="mass-reading"?node.dataset.readingActive==="true":
     owner==="legacy"?node.dataset.aoPrayFocus==="active":
       node.dataset.aoDevoActive==="true";
   const eligible=[];
@@ -37,7 +37,7 @@ export async function probeTextFocus({
     const node=nodes[i],id=node.dataset.cueId||node.dataset.aoDevoParagraph||String(i);
     const entry={ordinal:i,id,kind:node.dataset.kind||null,
       text:(node.textContent||"").trim().replace(/\s+/g," ").slice(0,105)};
-    if(owner==="distinct"&&node.dataset.kind==="RUBRIC"){
+    if((owner==="distinct"||owner==="mass-reading")&&node.dataset.kind==="RUBRIC"){
       res.exempt.push(entry);
     }else if(owner==="mass"&&!validCue.test(node.dataset.cueId||"")){
       (node.dataset.kind==="RUBRIC"?res.exempt:res.unowned).push(entry);
@@ -76,7 +76,7 @@ export async function probeTextFocus({
     let successful=active(node);
     const rect=node.getBoundingClientRect(),box=scroll.getBoundingClientRect();
     const middle=(rect.top+rect.bottom)/2-box.top+scroll.scrollTop;
-    const desired=middle-scroll.clientHeight*(owner==="legacy"?.43:owner==="mass"?.39:.41);
+    const desired=middle-scroll.clientHeight*(owner==="legacy"?.43:["mass","mass-reading"].includes(owner)?.39:.41);
     const max=scroll.scrollHeight-scroll.clientHeight;
     const candidates=[desired,desired-55,desired+55,middle-scroll.clientHeight*.16,
       middle-scroll.clientHeight*.65,0,max];
