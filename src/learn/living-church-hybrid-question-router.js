@@ -55,6 +55,26 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
   const total=docs.length;
   idf[lang]=new Map([...counts].map(([k,n])=>[k,Math.log(1+(total-n+.5)/(n+.5))]));
  }
+ // Interpretation features are general structural cues, not source assertions.
+ const cues=input=>{
+  const n=fold(input);
+  return {
+   humanRole:/\b(who|which person|man|person|fellow|qui|quel ministre|qui est)\b/.test(n),
+   ceremonialAction:/\b(raise|raises|raised|lift|lifts|lifting|elevate|elevation|bow|bows|kneel|kneels|genuflect|sing|sings|chant|chante|chante-t-il|eleve|soule?ve|s agenouille)\b/.test(n),
+   offeringAction:/\b(offer|offers|offering|offertoire|offertory|offre|offrent)\b/.test(n),
+   personOrObject:/\b(what is|what does|what are|which object|qu est ce|quel objet|quelle chose)\b/.test(n),
+   presenceClaim:/\b(christ|jesus|christ himself|j esus|jesus christ|symbol|symbole)\b/.test(n),
+   secondAction:/\b(second time|second elevation|raised again|deuxieme fois|seconde fois|second lifting)\b/.test(n),
+   beforeSanctus:/\b(before|avant)\b.*\b(sanctus)\b/.test(n),
+   incensory:/\b(incense|encens|thurible|encensoir)\b/.test(n),
+   lamps:/\b(lamp|light|candle|lampe|lumiere)\b/.test(n),
+   altarObject:/\b(chalice|calice|paten|patene|host|hostie)\b/.test(n),
+   liturgyContext:/\b(mass|messe|altar|autel|priest|pretre|canon|consecration)\b/.test(n),
+   personalMoral:/\b(is that a sin|is it a sin|is it wrong if|if i|should i|am i allowed|est ce un peche|est ce mal si)\b/.test(n),
+   uncertainRealWorld:/\b(today|right now|this week|aujourd hui|maintenant)\b/.test(n),
+   raw:n
+  };
+ };
  const lexical=(input,t,lang)=>{
   const q=unique(words(input));if(!q.length)return 0;
   const corpusWeights=idf[lang];
@@ -88,6 +108,7 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
  };
  function rank(question,{language="en",context={}}={}){
   const lang=language==="fr"?"fr":"en", hits=semantic(question,lang);
+  const intent=cues(question);
   const previous=byId.get(context?.activeTopicId);
   return catalog.topics.map(t=>{
    const lex=lexical(question,t,lang);
@@ -104,11 +125,41 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
    const supplement=Math.min(.13,.065*Math.max(0,used.length-1));
    sem=Math.min(1,sem+supplement);
    const contextBoost=previous?.relatedTopics?.some(x=>x.id===t.id)? .04:0;
-   // Do not automatically prefer a source-backed record to a research-gap record:
-   // the uncovered topic must remain visible as a gap.
-   const score=Math.min(1,.52*lex+.45*sem+contextBoost);
+   let frame=0;
+   // Lexical similarity alone cannot distinguish object, ritual, role and doctrine.
+   // The frame influences *navigation*, never authorises answer text.
+   const object=t.id.startsWith("objects.");
+   const ritual=t.id.startsWith("mass.");
+   const role=t.id==="objects.glossary_g221";
+   if(intent.humanRole&&intent.incensory){
+    if(role)frame+=.24;
+    else if(object)frame-=.13;
+   }
+   if(intent.ceremonialAction&&intent.liturgyContext){
+    if(ritual)frame+=.08;
+    if(object)frame-=.12;
+   }
+   if(intent.offeringAction&&ritual)frame+=.07;
+   if(intent.presenceClaim&&intent.altarObject){
+    if(t.id==="faith.whole_christ")frame+=.22;
+    if(object)frame-=.18;
+   }
+   if(intent.secondAction){
+    if(t.id==="mass.minor_elevation")frame+=.28;
+    if(object)frame-=.10;
+   }
+   if(intent.beforeSanctus){
+    if(t.id==="mass.preface")frame+=.27;
+    if(t.id==="mass.sanctus")frame-=.20;
+   }
+   if(intent.lamps&&t.id==="objects.sanctuary_lamp")frame+=.16;
+   if(intent.lamps&&t.id==="objects.tabernacle")frame-=.11;
+   // Preserve unknown personal moral judgments as gaps rather than inventing applications.
+   if(intent.personalMoral&&t.id==="pius.catechism_q135")frame-=.20;
+   // Do not automatically prefer a source-backed record to a research-gap record.
+   const score=Math.max(0,Math.min(1,.52*lex+.45*sem+contextBoost+frame));
    return {t,score:round(score),lex:round(lex),semantic:round(sem),
-    concepts:used,covered:t.coverage==="SOURCE_NAVIGATION_ONLY"};
+    frame:round(frame),concepts:used,covered:t.coverage==="SOURCE_NAVIGATION_ONLY"};
   }).sort((a,b)=>b.score-a.score||a.t.id.localeCompare(b.t.id));
  }
  function match(question,opts={}){
@@ -119,10 +170,16 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
    ||base.matchEvidence?.basis==="EXPLICIT_REFORMULATION_CHOICE"
    ||base.matchEvidence?.basis==="CONTEXT_FOLLOW_UP_RULE")
    return base;
+  const intent=cues(question);
+  if(intent.personalMoral&&/\b(is that a sin|is it a sin|est ce un peche)\b/.test(intent.raw))
+   return {kind:"no_coverage",reason:"UNSUPPORTED_PERSONAL_MORAL_APPLICATION",
+    originalQuestion:question,approvedReply:false,answerText:null,
+    model:HYBRID_QUESTION_RETRIEVAL_VERSION};
   const ranked=rank(question,{language:lang,context:opts.context});
   const [first,second]=ranked;
   // Avoid a false confident route when only an incidental word matched.
-  if(!first||first.score<.31||first.lex<.12&&first.semantic<.35)
+  if(!first||first.score<.31||(first.lex<.12&&first.semantic<.35)
+   ||(first.semantic===0&&first.lex<.82))
    return {kind:"no_coverage",reason:"HYBRID_INSUFFICIENT_EVIDENCE",
     originalQuestion:question,approvedReply:false,answerText:null,
     model:HYBRID_QUESTION_RETRIEVAL_VERSION};
