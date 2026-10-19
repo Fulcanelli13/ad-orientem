@@ -25,6 +25,7 @@ on:
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
       - 'tests/pius-x-conversation-intent-bridge.mjs'
       - 'tests/pius-x-pr1443-router-integration-diagnostic.mjs'
+      - 'tests/pius-x-pr1443-184topic-bridge-acceptance.mjs'
       - 'tools/formation/extract-pius-x-1905-crosswalk.py'
       - 'tools/formation/extract-pius-x-feasts-salzano.py'
       - '.github/workflows/pius-x-conversation-evidence-bridge.yml'
@@ -121,5 +122,45 @@ jobs:
         with:
           name: pius-x-pr1443-48-router-diagnostic
           path: research-out/pius-x-pr1443-48-router-diagnostic.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  shared-router-pr1443-historical-bridge-acceptance:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Stage approved research-only historical navigation bridge from router owner
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin 'refs/pull/1443/head'
+          test "$(git rev-parse FETCH_HEAD)" = "854325df75671882d378b510fcc1af33fc30ba65" || {
+            echo 'PR #1443 changed; reconcile and repin this acceptance test' >&2
+            exit 1
+          }
+          for file in \
+            src/learn/living-church-shared-question-router.js \
+            src/learn/living-church-hybrid-question-router.js \
+            data/learn/living-church-shared-question-routing-pilot.v1.json \
+            data/learn/living-church-symbolic-concepts.v1.json \
+            data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+          do
+            dest="research-out/pr1443-router-new/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Measure held-out question routing and source-identity safety
+        run: node tests/pius-x-pr1443-184topic-bridge-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-pr1443-184topic-heldout-48-results
+          path: research-out/pius-x-pr1443-184topic-heldout-48.v1.json
           if-no-files-found: warn
           retention-days: 30
