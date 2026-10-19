@@ -12,7 +12,7 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureEnglishSwitch{display:flex;align-items:center;gap:6px;margin:10px 0 13px}
  .aoScriptureLibrary .aoScriptureEnglishSwitch button{flex:1;min-height:44px;padding:9px 12px;border:1px solid #665b48;border-radius:8px;background:transparent;color:#cfc3ac;font:600 13px/1.25 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
  .aoScriptureLibrary .aoScriptureEnglishSwitch button[aria-pressed="true"]{border-color:#b79c6a;background:rgba(175,142,89,.16);color:#f5e7c4}
- .aoScriptureEditorialMine{display:inline-block;color:#c5b48f;font:12px/1.6 var(--ao-font-ui,"EB Garamond",Georgia,serif);margin:8px 0 15px;text-decoration:underline;text-underline-offset:3px}
+ .aoScriptureEditorialMine{display:inline-block;color:#c5b48f;font:13px/1.6 var(--ao-font-ui,"EB Garamond",Georgia,serif);margin:8px 0 15px;text-decoration:underline;text-underline-offset:3px}
  .aoScriptureEditorialMine:focus-visible{outline:2px solid #e1cc99;outline-offset:2px}
  .aoScriptureLibrary button,.aoScriptureLibrary select,.aoScriptureLibrary input{font:inherit;color:#efe8d9;background:#1a2330;border:1px solid #786b56;border-radius:8px;padding:8px 12px;max-width:100%}
  .aoScriptureLibrary button{cursor:pointer}
@@ -24,7 +24,7 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureRelatedIntro{font:13px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#bdb4a1;margin:0 0 5px}
  .aoScriptureRelatedObject{display:grid;gap:3px;padding:11px 13px;background:#16202b;border-left:2px solid #a28b5e;border-radius:2px 7px 7px 2px}
  .aoScriptureRelatedObject strong{font:500 15px/1.4 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);color:#f1e5c7}
- .aoScriptureRelatedReference{font:12px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#c3b79b}
+ .aoScriptureRelatedReference{font:13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#c3b79b}
  .aoScriptureRelatedExplanation{font:13px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#e0d9ca;margin:0}
  .aoScriptureRelatedObject button,.aoScriptureLibrary [data-scripture-related-back]{min-height:48px;box-sizing:border-box}
  .aoScriptureRelatedObject button{justify-self:start;font:13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);margin-top:4px}
@@ -35,7 +35,7 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureReading{margin:20px 0;border-top:1px solid #524b3e;border-bottom:1px solid #524b3e;padding:12px 0}
  .aoScriptureReading h3{font-size:20px;font-weight:400}
  .aoScriptureText{font-size:19px;line-height:1.9;min-height:75px}
- .aoScriptureVerseNumber{font:12px var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#c3ae83}
+ .aoScriptureVerseNumber{font:13px var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#c3ae83}
  .aoScriptureActions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
  .aoScriptureSearch{margin:20px 0}
  .aoScriptureSearch input{width:100%}
@@ -69,7 +69,7 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureText .aoScriptureVerse{margin:0 0 .7em}
  .aoScriptureVerseNumber{display:inline-block;min-width:2em;vertical-align:baseline;opacity:.82}
  .aoScriptureActions{border-top:1px solid rgba(205,182,135,.16);padding-top:12px}
- .aoScriptureLibrary .aoScriptureActions button{padding:7px 10px;background:transparent;border-color:rgba(205,182,135,.32);font:500 12px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
+ .aoScriptureLibrary .aoScriptureActions button{padding:7px 10px;background:transparent;border-color:rgba(205,182,135,.32);font:500 13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
  .aoScriptureBrowse,.aoScriptureSearch,.aoScriptureBookmarks,.aoScriptureRosary{padding:10px 0;border-bottom:1px solid rgba(205,182,135,.17);margin:0}
  .aoScriptureLibrary .aoScriptureBrowse summary,.aoScriptureLibrary .aoScriptureSearch summary,.aoScriptureLibrary .aoScriptureBookmarks summary,.aoScriptureLibrary .aoScriptureRosary summary{color:#cfc2ac;font:500 14px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif);padding:7px 0}
  .aoScriptureNav{grid-template-columns:repeat(3,minmax(0,1fr));margin:12px 0}
@@ -77,7 +77,7 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureContextCommentary h3{font-size:20px;font-weight:400;line-height:1.3;color:#f0dfbc;margin:2px 0 11px}
  .aoScriptureContextCommentary .aoScriptureCommentaryParagraph{margin:18px 0}
  .aoScriptureCommentaryParagraph strong{font-weight:600;color:#e7d3a4}
- .aoScriptureContextCommentary .aoScriptureCommentaryDisclosure{font:12px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#a9a08e;margin:8px 0}
+ .aoScriptureContextCommentary .aoScriptureCommentaryDisclosure{font:13px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#a9a08e;margin:8px 0}
  .aoScriptureContextCommentary a{display:inline-block;margin-top:14px;font:500 13px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
  .aoScriptureCatenaPericope{border-top:1px solid rgba(205,182,135,.24);padding:14px 0 18px}
  .aoScriptureCatenaHeading{font:500 14px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#dbcca9;margin:0 0 12px}
@@ -103,20 +103,20 @@ export function installScriptureStyles(doc=globalThis.document){
  }
  /* Quiet, text-first edition chrome shared by Mass, Rosary, Formation and Atlas. */
  .aoScriptureHeader{gap:7px;align-items:center;position:sticky;top:0;z-index:3;background:#0e151d;padding:7px 0;border-bottom:1px solid rgba(205,182,135,.14)}
- .aoScriptureHeader h2{font:600 11px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif);letter-spacing:.12em;text-transform:uppercase;color:#bbae96;margin:0 auto 0 0}
- .aoScriptureLibrary .aoScriptureEditionFlip{flex:0 1 auto;min-width:116px;min-height:44px;border:0;border-radius:6px;background:transparent;font:600 12px/1.2 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#dbc79d;padding:9px 6px;white-space:nowrap}
+ .aoScriptureHeader h2{font:600 13px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif);letter-spacing:.12em;text-transform:uppercase;color:#bbae96;margin:0 auto 0 0}
+ .aoScriptureLibrary .aoScriptureEditionFlip{flex:0 1 auto;min-width:116px;min-height:44px;border:0;border-radius:6px;background:transparent;font:600 13px/1.2 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#dbc79d;padding:9px 6px;white-space:nowrap}
  .aoScriptureLibrary [data-scripture-close]{width:44px;height:44px;flex:0 0 44px;border:0;border-radius:50%;padding:0;background:transparent;color:#d6cbb6;font:300 30px/1 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
  .aoScriptureContextBar{padding:4px 0 0;margin:0}
- .aoScriptureContextTitle{margin:0 0 6px;font:500 11px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#b6a990}
+ .aoScriptureContextTitle{margin:0 0 6px;font:500 13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#b6a990}
  .aoScriptureContextControls{display:flex;gap:5px;padding:2px 0;border-bottom:1px solid rgba(205,182,135,.16)}
- .aoScriptureLibrary .aoScriptureContextControls button{flex:1;min-height:44px;border:0;border-bottom:1px solid transparent;border-radius:0;background:transparent;padding:10px 4px;font:500 12px/1.25 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#b5ad9d}
+ .aoScriptureLibrary .aoScriptureContextControls button{flex:1;min-height:44px;border:0;border-bottom:1px solid transparent;border-radius:0;background:transparent;padding:10px 4px;font:500 13px/1.25 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#b5ad9d}
  .aoScriptureLibrary .aoScriptureContextControls button[aria-pressed="true"]{border:0;border-bottom:2px solid #b49b70;background:transparent;color:#eddec4}
  .aoScriptureReading{margin:0 0 7px;padding:8px 0 11px}
  .aoScriptureReading h3{font:400 clamp(21px,3.4vw,26px)/1.4 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);margin:6px 0 12px}
  .aoScriptureWitnessDetails{margin:9px 0 0;color:#a9a18e;border:0}
- .aoScriptureLibrary .aoScriptureWitnessDetails>summary{min-height:44px;display:flex;align-items:center;font:500 11px/1.35 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#b5aa94;cursor:pointer}
+ .aoScriptureLibrary .aoScriptureWitnessDetails>summary{min-height:44px;display:flex;align-items:center;font:500 13px/1.35 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#b5aa94;cursor:pointer}
  .aoScriptureWitnessDetails p{margin:3px 0 8px}
- .aoScriptureLibrary .aoScriptureReferenceWarning>summary{min-height:44px;display:flex;align-items:center;color:#bdb196;font:500 12px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
+ .aoScriptureLibrary .aoScriptureReferenceWarning>summary{min-height:44px;display:flex;align-items:center;color:#bdb196;font:500 13px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
  .aoScriptureLibrary .aoScriptureReferenceWarning>p{margin:0 0 10px}
  .aoScriptureActions{margin:7px 0 3px;padding-top:7px;gap:4px}
  .aoScriptureLibrary .aoScriptureActions button{min-height:44px;border:0;border-radius:6px;background:transparent;color:#c8b99c;padding:7px 9px;text-decoration:underline;text-decoration-color:rgba(197,168,119,.34);text-underline-offset:3px}
@@ -145,7 +145,7 @@ export function installScriptureContextStyles(doc=globalThis.document){
  .aoP435930ScriptureOrigin small{color:var(--muted,rgba(228,223,213,.70));font:500 max(12px,.75rem)/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif);max-width:38rem}
  .aoMassScriptureStudy{display:grid;gap:3px;margin:8px 0 0;padding-top:8px;border-top:1px solid rgba(206,182,128,.2)}
  .aoMassScriptureStudy[hidden],.aoMassScriptureStudy [hidden]{display:none!important}
- .aoMassScriptureStudyStatus{display:block;padding:3px 7px;color:#c9c3b5;font:500 12px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
+ .aoMassScriptureStudyStatus{display:block;padding:3px 7px;color:#c9c3b5;font:500 13px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
  .aoScriptureContextError{display:inline-block;margin:6px;color:var(--ao-text-primary,#ece6d6);font:13px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
  @media(prefers-reduced-motion:reduce){.aoScriptureContextCapsule{transition:none!important}}
  `;
