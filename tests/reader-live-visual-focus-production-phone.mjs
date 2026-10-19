@@ -124,6 +124,7 @@ try{
   // reading rows across the actual 64-card production LIVE presentation.
   // Source cue/ribbon state is explicitly not the oracle for visual focus.
   const readingAudit=[];
+  const structuralAudit={sectionBreaks:0,invitationRows:0,invitationCueIds:[]};
   if(spec.isMobile&&spec.lang==="en"){
     for(const item of initial.named){
       const present=await page.evaluate(async sequence=>{
@@ -140,6 +141,34 @@ try{
         label:item.title
       });
       if(!probe.registered)continue;
+      const structure=await page.evaluate(()=>{
+        const root=document.querySelector("#ao-r17-native-reader-preview");
+        const rows=[...root.querySelectorAll(".ao-prayer-body .ao-reader-paragraph")]
+          .filter(el=>el.getClientRects().length&&el.dataset.kind!=="RUBRIC");
+        const breaks=rows.filter(el=>el.dataset.sectionBoundary);
+        const invitations=rows.filter(el=>el.dataset.liveInvitation==="true");
+        const invalid=breaks.filter(el=>{
+          const mt=Number.parseFloat(getComputedStyle(el).marginTop)||0;
+          return mt<17||!el.dataset.sourceBlockId;
+        }).map(el=>({id:el.dataset.paragraphId,source:el.dataset.sourceBlockId,
+          margin:getComputedStyle(el).marginTop}));
+        const invalidInvitations=invitations.filter(el=>{
+          const latin=el.querySelector(".ao-line-primary")?.textContent?.trim()||"";
+          const vern=el.querySelector(".ao-line-secondary")?.textContent?.trim()||"";
+          const style=el.querySelector(".ao-line-secondary");
+          return !latin||!vern||!style||getComputedStyle(style).display==="none"||
+            el.dataset.translateToggle==="true";
+        }).map(el=>el.dataset.paragraphId);
+        return {breakCount:breaks.length,invitationIds:invitations.map(el=>el.dataset.cueId),
+          invalid,invalidInvitations};
+      });
+      assert.deepEqual(structure.invalid,[],
+        item.title+" section whitespace not aligned to a source-bound prayer");
+      assert.deepEqual(structure.invalidInvitations,[],
+        item.title+" public Latin invocation lost visible vernacular underneath");
+      structuralAudit.sectionBreaks+=structure.breakCount;
+      structuralAudit.invitationRows+=structure.invitationIds.length;
+      structuralAudit.invitationCueIds.push(...structure.invitationIds);
       readingAudit.push({
         title:item.title,registered:probe.registered,reached:probe.reached,
         skipped:probe.unreachableTotal,duplicates:probe.duplicates
@@ -152,9 +181,15 @@ try{
     }
     assert.ok(readingAudit.length>=55,
       "Production LIVE paragraph audit did not cover the expected cards");
+    assert.ok(structuralAudit.sectionBreaks>=5,
+      "No genuine source-block prayer gaps rendered in production LIVE");
+    for(const cue of ["AO.SM.C0072","AO.SM.C0108","AO.SM.C0208","AO.SM.C0253"]){
+      assert.ok(structuralAudit.invitationCueIds.includes(cue),
+        "Public Oremus not visibly bilingual in actual LIVE DOM: "+cue);
+    }
   }
   assert.deepEqual(errors,[],spec.lang+" browser errors");
-  findings.cases.push({...spec,curated:initial.curated,total:initial.modelCards,samples,readingAudit});
+  findings.cases.push({...spec,curated:initial.curated,total:initial.modelCards,samples,readingAudit,structuralAudit});
   console.log("LIVE_VISUAL_FOCUS="+JSON.stringify({viewport:spec.width,lang:spec.lang,
     curated:initial.curated,cards:cards.length,checks:samples.length,
     minInactive:Math.min(...samples.flatMap(x=>x.farOpacities)),
