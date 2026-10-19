@@ -41,6 +41,19 @@ assert.equal(m.summary.ordinaryCueCandidateOccurrences+
 assert.equal(m.summary.withNeitherOfTwoOwners+
   m.summary.withAnyKnownExactOwner,m.items.length);
 assert.equal(m.summary.editorialTranslationGaps,null);
+assert.equal(m.summary.completeSourceRows,186,
+  "Complete Rogation canonical Latin source contains 186 native reader rows");
+assert.equal(m.supplementalSourceRows.length,74);
+assert.equal(m.summary.fullSourceOrdinaryMatches,21);
+assert.equal(m.summary.fullSourcePrayMatchesWithoutOrdinary,15);
+assert.equal(m.summary.fullSourceUnlinked,150,
+  "Unlinked Latin is a source ownership worklist, not a missing translation list");
+assert.deepEqual(m.summary.supplementalBreakdown,{
+  EXSURGE_OPENING:4,PRE_PROCESSION_DIALOGUE:18,
+  POST_LITANY_PATERNOSTER:3,PSALM_69:8,
+  POST_LITANY_SUFFRAGES:24,TEN_CONCLUDING_COLLECTS:10,
+  FINAL_DIALOGUE:7,
+});
 assert.ok(m.items[0].prayPrayerIds.includes("litany_loreto_1962"),
   "Sancta Maria shared Latin must be recognized without importing Loreto's different prayer");
 assert.ok(m.items[104].prayPrayerIds.includes("adoration_litany_blessed_sacrament"),
@@ -65,8 +78,28 @@ assert.deepEqual(
   built.cards[2].paragraphs.map(x=>x.id),
   m.items.map(x=>x.rowId),"Every owner index must align to production 1962 reader ID");
 assert.equal(built.cards[2].processionBeginsAt,"Sancta Maria");
+const supplementalReader=built.cards.filter(card=>card.id!=="ROG-R03")
+  .flatMap(card=>card.paragraphs);
+assert.equal(supplementalReader.length,74);
+assert.deepEqual(m.supplementalSourceRows.map(x=>x.rowId),
+  supplementalReader.map(x=>x.id),
+  "The other 74 source leaves must keep exact native 1962 row positions");
+for(let i=0;i<74;i++){
+  const indexed=m.supplementalSourceRows[i];
+  const sourcePath=indexed.sourceLocator.split("#")[1];
+  const latin=sourcePath.split(".").reduce((v,key)=>v?.[key],source);
+  assert.equal(latin,supplementalReader[i].latin,
+    "Rogation secondary source Latin/order drift at "+indexed.rowId);
+  assert.equal(indexed.sourceRecordId,supplementalReader[i].sourceRecordId,
+    "Rogation original ceremony source event ownership drift");
+  assert.ok(!Object.hasOwn(indexed,"latin")&&!Object.hasOwn(indexed,"english")&&
+    !Object.hasOwn(indexed,"french"),
+    "Rogation owner matrix must never become a translated prayer corpus");
+}
+assert.equal(m.supplementalSourceRows.filter(x=>
+  x.family==="TEN_CONCLUDING_COLLECTS").length,10);
 assert.deepEqual(m.summary.additionalRogationPrayerRows,{
   opening:4,beforeProcession:18,psalm69:8,suffrages:24,orations:10,final:7,
 });
-console.log("PASS 112 Rogation Litany source-owned identities, seven liturgical family boundaries, 1962 non-doubling precedence, named saint parity, source order, no copied text.");
+console.log("PASS 112 Rogation Litany source-owned identities, six liturgical section boundaries, 1962 non-doubling precedence, named saint parity, source order, no copied text.");
 console.log(JSON.stringify(m.summary));
