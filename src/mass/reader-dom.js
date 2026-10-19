@@ -3066,10 +3066,9 @@ export function createReaderDomAdapter({
     const postureRail=root.querySelector('.ao-rail-left [data-channel="posture"]');
     if(postureRail)postureRail.dataset.change=String(postureChangeVisible);
     setChannel(root,"attention",current.attention);
-    // A priest action can be source-certain while its image is unapproved.
-    // Keep the source action and text; do not show an empty icon-only rail.
-    setChannel(root,"priest-action",
-      current.priestActionIconKey ? current.priestAction : null);
+    // Keep priest-action semantics on the rail even when reviewed artwork is
+    // withheld. Phone cinematic and accessible cue owners depend on it.
+    setChannel(root,"priest-action",current.priestAction);
     setChannel(root,"sacred-minister",mode==="LIVE"?current.sacredMinister:null);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
