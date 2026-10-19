@@ -1,4 +1,4 @@
-// Red Missal English editorial batches 1–7: 256-cue review worklist and
+// Red Missal English editorial batches 1–8: 256-cue review worklist and
 // 1962 source-to-LOW/SUNG native reader cross-surface regression.
 // This file does NOT claim to have manually collated 256 scanned passages.
 import assert from "node:assert/strict";
@@ -22,16 +22,26 @@ const sections=createReaderSectionResolver(sectionMap);
 const approved=new Map(manifest.approvedCues.map(x=>[x.id,x]));
 assert.equal(approved.size,32);
 const allCorrections=new Map(corrections.corrections.map(x=>[x.cueId,x]));
-const unchanged=new Set((manifest.reviewedWithoutTextChange??[]).map(x=>x.cueId));
+const unchangedRows=new Map((manifest.reviewedWithoutTextChange??[]).map(x=>[x.cueId,x]));
+const unchanged=new Set(unchangedRows.keys());
 const partial=new Set((manifest.partiallyReviewed??[]).map(x=>x.cueId));
 const blocked=new Set((manifest.blockedReview??[]).map(x=>x.cueId));
 const ceremonial=new Set((manifest.ceremonialOutOfEnglishScope??[]).map(x=>x.cueId));
 const sourceHolds=new Set((manifest.sourceHolds??[]).map(x=>x.cueId));
-assert.equal(unchanged.size,202);
-assert.equal(partial.size,3);
+assert.equal(unchanged.size,209);
+assert.equal(partial.size,0);
 assert.equal(blocked.size,0);
 assert.equal(ceremonial.size,15);
-assert.equal(sourceHolds.size,4);
+assert.equal(sourceHolds.size,0);
+const independent=new Map((manifest.independentWitnessClosure??[]).map(x=>[x.cueId,x]));
+assert.equal(independent.size,7,"All seven historical source holds must have independent witnesses");
+for(const [id,w] of independent){
+ assert.ok(unchanged.has(id),"Independently resolved cue must be reviewed/retained: "+id);
+ assert.equal(w.status,"SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE");
+ assert.ok(w.sources.length>=2,"Need at least two independent references for "+id);
+ assert.ok(w.sources.every(url=>url.startsWith("https://")));
+}
+
 for(const id of unchanged)assert.ok(!approved.has(id),"Approved and unchanged must be disjoint: "+id);
 for(const id of blocked)assert.ok(!approved.has(id),"Blocked and approved must be disjoint: "+id);
 for(const id of partial)assert.ok(!approved.has(id),"Partially checked cue approved without complete witness: "+id);
@@ -42,6 +52,36 @@ for(const category of categories)for(const id of category){
  allIds.add(id);
 }
 assert.equal(allIds.size,256,"Some canonical English cue has no editorial category");
+
+// Field-specific source closure: source language and role have stronger
+// authority than superficial agreement with a scanned Red booklet page.
+for(const corpus of [low,sung]){
+ const all=new Map(corpus.blocks.flatMap(b=>(b.units??[]).map(u=>[u.cue_id,u])));
+ const cue=n=>all.get("AO.SM.C"+String(n).padStart(4,"0"));
+ const priest=[16,17,18].map(cue),server=[21,22,23].map(cue);
+ const older=[235,236,237].map(cue);
+ for(const u of [...priest,...older])assert.ok(u?.latin&&u?.english,"Missing Confiteor source");
+ assert.match(priest[0].latin,/et vobis, fratres/u,"Priest must address brethren");
+ assert.match(priest[2].latin,/et vos, fratres/u,"Priest's closing address must be brethren");
+ assert.match(server[0].latin,/et tibi, pater/u,"Servers must address priest");
+ assert.match(older[0].latin,/et tibi, pater/u,"Older/local Communion Confiteor must address priest");
+ assert.match(older[2].latin,/et te, pater/u,"Older/local Confiteor concluding address");
+ assert.equal(older[0].latin,server[0].latin,
+   "The optional Communion Confiteor first sentence must be the same 1962 server text");
+ assert.equal(older[1].latin,server[1].latin,
+   "The triple mea culpa must be identical");
+ assert.equal(older[2].latin,server[2].latin,
+   "The optional Communion Confiteor closing Latin must be the server text");
+ assert.match(cue(40).latin,/Ab illo benedicáris/u);
+ assert.match(cue(40).english,/by Him in whose honour you shall be burned/u);
+ // These seven source-verification outcomes require no donor or production rewrites.
+ for(const id of independent.keys()){
+   const raw=all.get(id);
+   const block=corpus.blocks.find(b=>b.units?.some(u=>u.cue_id===id));
+   assert.equal(applyCanonicalTextCorrection(block.Block_ID,raw).english,raw.english,
+     "Independent source acceptance must not rewrite English "+id);
+ }
+}
 
 const reviewRows={};
 const defaults=["INTROIT","COLLECT_SET","EPISTLE_OR_LESSON","GRADUAL",
@@ -90,7 +130,7 @@ for(const corpus of [low,sung]){
     macroId:block.Macro_ID,bookletPrintedPageRange:range,
     existingLatin:corrected.latin,originalEnglish:unit.english,
     approvedEnglish:corrected.english,originalFrench:french.byCue[unit.cue_id],
-    status:a?.status??(unchanged.has(unit.cue_id)?"VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE":
+    status:a?.status??(unchanged.has(unit.cue_id)?unchangedRows.get(unit.cue_id).status:
       blocked.has(unit.cue_id)?"REVIEWED_BLOCKED_BY_MULTI_FIELD_CORRECTION":
       partial.has(unit.cue_id)?"PARTIAL_WITNESS_PRIEST_ABBREVIATED":
       ceremonial.has(unit.cue_id)?"CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION":
@@ -156,10 +196,10 @@ for(const row of reviewRows.SUNG){
 const output=path("artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
 await mkdir(dirname(output),{recursive:true});
 const review={schema:"ao.mass.ordo-missae.red-missal.editorial-worklist.v1",
- witness:manifest.source,status:"32_APPROVED_202_RETAINED_3_PARTIAL_15_CEREMONIAL_4_SOURCE_HOLDS",
+ witness:manifest.source,status:"32_APPROVED_209_RETAINED_0_PARTIAL_15_CEREMONIAL_0_SOURCE_HOLDS",
  sampleSize:256,formCount:2,approvedCount:approved.size,
  rows:reviewRows.SUNG,
- reviewedUnchanged:unchanged.size,partiallyReviewed:partial.size,
+ reviewedUnchanged:unchanged.size,independentWitnessAccepted:independent.size,partiallyReviewed:partial.size,
  blockedByCorrectionLayer:blocked.size,ceremonialNonPrayer:ceremonial.size,
  sourceHolds:sourceHolds.size,notYetCollated:sourceHolds.size,
  formParity:"LOW/SUNG checked",french:"UNCHANGED",
@@ -167,7 +207,7 @@ const review={schema:"ao.mass.ordo-missae.red-missal.editorial-worklist.v1",
 await writeFile(output,JSON.stringify(review,null,2)+"\n");
 console.log("RED_MISSAL_SUMMARY="+JSON.stringify({sourceCues:256,lowCues:reviewRows.LOW.length,
  sungCues:reviewRows.SUNG.length,approved:approved.size,reviewedUnchanged:unchanged.size,partiallyReviewed:partial.size,
- blocked:blocked.size,ceremonialNonPrayer:ceremonial.size,sourceHolds:sourceHolds.size,pending:sourceHolds.size,
+ blocked:blocked.size,independentWitnessAccepted:independent.size,ceremonialNonPrayer:ceremonial.size,sourceHolds:sourceHolds.size,pending:sourceHolds.size,
  lowSungParity:"PASS",actualReaderEnglishFrench:"PASS"}));
 console.log("RED_MISSAL_ARTIFACT=artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
-console.log("PASS Red Missal editorial wave 7: 234 source-English decisions, 15 ceremonial-only cues, 3 partial, 4 source holds; all 256 categorized");
+console.log("PASS Red Missal editorial wave 8: all 241 spoken text cues source-reviewed; 15 ceremonial cues separately scoped");
