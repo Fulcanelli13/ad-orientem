@@ -107,7 +107,7 @@ export function createEmbeddingCandidateRouter({catalog,conceptRegistry,index=nu
    ||prior.matchEvidence?.basis==="CONTEXT_FOLLOW_UP_RULE"
    ||prior.reason==="UNSUPPORTED_PERSONAL_MORAL_APPLICATION"
    ||catalog.blockedPatterns.some(x=>x.id===prior.reason))
-   return register(prior,prior,prior.requiresQuestionConfirmation===true);
+   return register({...prior,embeddingStatus:active?"BASELINE_PROTECTED_OR_EXACT":reason},prior,prior.requiresQuestionConfirmation===true);
   const ranked=await rank(question,{language:opts.language,consentRemoteTransfer:opts.consentRemoteTransfer});
   if(ranked.kind!=="ranked")return fallback(question,opts,ranked.reason);
   const [top,runner]=ranked.results;
