@@ -138,7 +138,7 @@ export function createSharedQuestionRouter(catalog){
    basis:literal?"EXACT_VARIANT":"LEXICAL_RANKED",
    score:Number(first.score.toFixed(3))})});
  }
- function acceptHandoff(proposal,{accept=false,history={}}={}){
+ function acceptHandoff(proposal,{accept=false,confirmQuestion=false,history={}}={}){
   const canonical=byId.get(proposal?.topicId);
   if(proposal?.kind!=="offer_handoff"||proposal.requiresAcceptance!==true
    ||!ownerKeys.includes(proposal.targetCharacter)||!canonical
@@ -149,6 +149,10 @@ export function createSharedQuestionRouter(catalog){
    ||JSON.stringify(proposal.sourceRefs)!==JSON.stringify(canonical.sourceRefs))
    return frozen({kind:"invalid_handoff",reason:"UNVERIFIED_DESTINATION_OR_FORGED_REFERRAL"});
   if(!accept)return frozen({kind:"stay",character:proposal.fromCharacter,answerText:null});
+  if(proposal.requiresQuestionConfirmation===true&&!confirmQuestion)
+   return frozen({kind:"needs_question_confirmation",reason:"LEXICAL_MATCH_NOT_CONFIRMED",
+    topicId:canonical.id,originalQuestion:proposal.originalQuestion,
+    optionLabel:proposal.topic?.title||canonical.title.en,answerText:null});
   const seen=[...new Set([...(history.visitedCharacters||[]),proposal.fromCharacter,proposal.targetCharacter])];
   if((history.handoffCount||0)>=catalog.pilotLimits.maxTransfersPerQuestion
    ||(history.visitedCharacters||[]).includes(proposal.targetCharacter))
