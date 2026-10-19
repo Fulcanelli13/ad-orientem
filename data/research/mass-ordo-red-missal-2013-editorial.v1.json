@@ -1,6 +1,6 @@
 {
   "schema": "ao.mass.ordo-missae.red-missal.english-editorial.v1",
-  "status": "32_APPROVED_ENGLISH_202_REVIEWED_EQUIVALENT_3_PARTIAL_19_UNREVIEWED",
+  "status": "32_APPROVED_202_RETAINED_3_PARTIAL_15_CEREMONIAL_4_TEXT_SOURCE_HOLDS",
   "source": {
     "title": "Latin–English Booklet Missal for Praying the Traditional Mass",
     "publisher": "Coalition in Support of Ecclesia Dei",
@@ -2473,6 +2473,112 @@
       "AO.SM.C0275"
     ],
     "unresolvedScope": "Ceremonial-only cues cannot be certified by English text collation; Ab illo benedicaris not witnessed clearly in booklet; second optional Confiteor requires separate historical source coverage.",
-    "preserved1962Policy": "The 2013 booklet explicitly states the second Confiteor before Communion is omitted in the 1962 Missal; never make this normative."
-  }
+    "preserved1962Policy": "The 2013 booklet explicitly states the second Confiteor before Communion is omitted in the 1962 Missal; never make this normative.",
+    "sourceScope": {
+      "prayerCuesReviewedAndDecided": 234,
+      "nonPrayerCeremonialCues": 15,
+      "prayerSourceHolds": 4,
+      "abridgedPrayerWitnesses": 3,
+      "allFixedCueIDsAccountedFor": 256
+    }
+  },
+  "ceremonialOutOfEnglishScope": [
+    {
+      "cueId": "AO.SM.C0041",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0081",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0111",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0115",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0117",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0124",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0129",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0155",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0193",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0262",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    },
+    {
+      "cueId": "AO.SM.C0263",
+      "status": "CEREMONIAL_STAGE_DIRECTION_NOT_PRAYER_TRANSLATION",
+      "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
+    }
+  ],
+  "sourceHolds": [
+    {
+      "cueId": "AO.SM.C0040",
+      "status": "SOLEMN_INCENSATION_TEXT_NEEDS_DIFFERENT_PRINTED_WITNESS",
+      "reason": "Prayer Ab illo benedicaris lacks a complete matching printed witness in this booklet; defer source translation decision."
+    },
+    {
+      "cueId": "AO.SM.C0235",
+      "status": "OLDER_OPTIONAL_COMMUNION_CONFITEOR_NOT_NORMATIVE_1962",
+      "reason": "Booklet p45 sends reader to an earlier Confiteor and expressly notes this additional Communion Confiteor is omitted in the 1962 Missal. Text should be checked under local/older celebration option, never promoted into default."
+    },
+    {
+      "cueId": "AO.SM.C0236",
+      "status": "OLDER_OPTIONAL_COMMUNION_CONFITEOR_NOT_NORMATIVE_1962",
+      "reason": "Booklet p45 sends reader to an earlier Confiteor and expressly notes this additional Communion Confiteor is omitted in the 1962 Missal. Text should be checked under local/older celebration option, never promoted into default."
+    },
+    {
+      "cueId": "AO.SM.C0237",
+      "status": "OLDER_OPTIONAL_COMMUNION_CONFITEOR_NOT_NORMATIVE_1962",
+      "reason": "Booklet p45 sends reader to an earlier Confiteor and expressly notes this additional Communion Confiteor is omitted in the 1962 Missal. Text should be checked under local/older celebration option, never promoted into default."
+    }
+  ]
 }
