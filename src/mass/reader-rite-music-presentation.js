@@ -15,7 +15,9 @@ export function projectRiteMusicBadge({registry,riteId,stageId,sourcePayload,con
   return Object.freeze({
     schema:"ao-special-rite-music-card-v1",category,
     label:"EXPECTED · "+category,
-    description:"Expected from the rite source, not heard or timed",
+    description:events.some(e=>e.segmentScope)
+      ? "Expected only for "+events.map(e=>e.segmentScope).filter(Boolean).join("; ")+". Not heard or timed."
+      : "Expected from the rite source, not heard or timed",
     eventIds:Object.freeze(events.map(e=>e.id)),
     performers:Object.freeze(events.map(e=>e.performers)),
     riteId,stageId,sourceOwner:"EXISTING_NATIVE_RITE",
