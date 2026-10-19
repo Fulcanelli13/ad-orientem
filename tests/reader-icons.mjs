@@ -1,4 +1,5 @@
 import { R17_DONOR_PNG_ICON_KEYS } from "../src/mass/reader-icon-bank.js";
+import { R17_REVIEWED_POSTURE_ASSETS } from "../src/mass/reader-reviewed-posture-assets.js";
 import { extractDonorRichMaskUri } from "../src/mass/reader-dom.js";
 import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
@@ -12,6 +13,22 @@ import {
   auditHostIconBank,
 } from "../src/mass/reader-icons.js";
 
+// All newly approved presentation assets are real files and do not extend
+// the frozen 67-master donor contract.
+for(const [name,url] of Object.entries(R17_REVIEWED_POSTURE_ASSETS)){
+  assert.ok(url.startsWith("file:"),"approved browser asset not bundled: "+name);
+  const file=readFileSync(new URL(url));
+  assert.ok(file.length>100,"approved posture image missing: "+name);
+  assert.ok(!R17_FROZEN_ACTIVE_ICON_KEYS.includes(name),
+    "reviewed posture alias leaked into 67 exact donor masters");
+  if(name!=="review_posture_sit"&&name!=="review_faithful_bow"){
+    const svg=String(file);
+    assert.match(svg,/<svg[^>]*viewBox="[\d ]+"/,
+      "approved normalized SVG has malformed viewBox: "+name);
+    assert.doesNotMatch(svg,/\sviewbox=/,
+      "frozen bank's malformed lowercase viewbox was copied: "+name);
+  }
+}
 const required=auditHostIconBank({}).required;
 const bank=Object.fromEntries(required.map(key=>[key,"data:image/svg+xml;base64,"+Buffer.from("<svg/>").toString("base64")]));
 const audit=auditHostIconBank(bank);
