@@ -4,6 +4,9 @@ import {MASS_CLUSTER_GROUPS,CLUSTER_PAGE_SIZE,exploreClusterProperties,
   exploreClusterMajorityExpression,clusterPageBounds} from "../src/find/cluster-presentation.js";
 import {registerExploreClusterBadge,exploreDistinctPointChoices,exploreMapFeatures}
   from "../src/find/map-runtime.js";
+import {EXPLORE_MEDALLION_KINDS,registerExploreCategoryMedallions,
+  exploreCategoryMedallionKind,exploreCategoryMedallionExpression,
+  EXPLORE_MEDALLION_ID_PREFIX} from "../src/find/explore-map-medallions.js";
 const props=exploreClusterProperties();
 assert.deepEqual(Object.keys(props).sort(),MASS_CLUSTER_GROUPS.map(x=>"mass_"+x.toLowerCase()).sort());
 for(const group of MASS_CLUSTER_GROUPS){
@@ -47,9 +50,10 @@ assert.equal(distinct[0].approximate,true);
 assert.equal(distinct[1].provider_group,"ICKSP");
 assert.equal(distinct[1].approximate,false);
 const sprites=new Map();
+let arcs=0;
 const ctx={
   clearRect(){},beginPath(){},moveTo(){},lineTo(){},quadraticCurveTo(){},closePath(){},
-  fill(){},stroke(){},fillRect(){},
+  arc(){arcs++},setLineDash(){},fill(){},stroke(){},fillRect(){},
   getImageData(x,y,w,h){return {width:w,height:h}},
   set fillStyle(v){},set strokeStyle(v){},set lineWidth(v){},
 };
@@ -65,11 +69,32 @@ for(const group of ["DIOCESAN","FSSP","ICKSP","SSPX","IBP","OTHER","MIXED","PLAC
   assert.ok(badge,"Required source-derived badge missing for "+group);
   assert.equal(badge.options.pixelRatio,2);
 }
-assert.equal(sprites.size,8,"Every known group and mixed/heritage fallback must have its own colour");
+assert.equal(sprites.size,8,"Every source-supported cluster kind has a circular badge");
+assert.ok(arcs>=8,"Cluster designs must draw circles, not hexagons");
 assert.equal(registerExploreClusterBadge({},{}),false,"Non-browser tests must degrade gracefully");
+assert.equal(registerExploreCategoryMedallions(map,{document}),true);
+assert.equal(sprites.size,8+EXPLORE_MEDALLION_KINDS.length*2,
+  "Every category must render exact and indicative bubble sprites");
+for(const kind of EXPLORE_MEDALLION_KINDS){
+  for(const suffix of ["","-indicative"]){
+    const entry=sprites.get(EXPLORE_MEDALLION_ID_PREFIX+kind+suffix);
+    assert.ok(entry,kind+" missing "+(suffix||"exact")+" emblem");
+    assert.equal(entry.options.pixelRatio,2);
+  }
+}
+assert.equal(registerExploreCategoryMedallions({},{}),false);
+assert.equal(exploreCategoryMedallionKind({lens:"heritage",heritage_primary:"shrines"}),"SHRINE");
+assert.equal(exploreCategoryMedallionKind({lens:"relics"}),"RELIC");
+assert.equal(exploreCategoryMedallionKind({lens:"tlm"}),"CHURCH");
+assert.equal(exploreCategoryMedallionKind({lens:"heritage",heritage_primary:"traditions"}),"TRADITION");
+assert.equal(exploreCategoryMedallionExpression()[0],"match");
 const runtimeSource=readFileSync(new URL("../src/find/map-runtime.js",import.meta.url),"utf8");
 assert.match(runtimeSource,/clusterProperties:exploreClusterProperties\(\)/);
 assert.match(runtimeSource,/clusterBadgeReady=registerExploreClusterBadge/);
+assert.match(runtimeSource,/categoryEmblemsReady=registerExploreCategoryMedallions/);
+assert.match(runtimeSource,/categoryLayer=prefix\+"-category-medallions"/);
+assert.match(runtimeSource,/icon-image.*concat/);
+assert.doesNotMatch(runtimeSource,/hexagonal/,"No legacy hexagonal marker treatment");
 assert.match(runtimeSource,/getClusterLeaves\(clusterId,page.limit,page.offset\)/);
 assert.doesNotMatch(runtimeSource,/getClusterLeaves\?\.\(clusterId,500,0\)/);
-console.log("PASS Explore badges, cluster affiliation summaries and complete paged selection");
+console.log("PASS circular Explore clusters, source-owned category medallions, institute logos and paged selection");
