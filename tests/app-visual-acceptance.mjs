@@ -178,14 +178,16 @@ try{
     fallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     todayV2:document.querySelectorAll(".aoTodayV2Below[data-ao-home-enricher-owner]").length,
     todayV2Sections:document.querySelectorAll(".aoTodayV2Below .aoTodayV2Zone").length,
-    todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2Below [data-home-calendar]").length,
+    todayV2Glance:document.querySelectorAll(".aoTodayV2CalendarGlance").length,
+    todayV2CalendarLinks:document.querySelectorAll(".aoTodayV2CalendarGlance [data-home-calendar]").length,
     presentationFx:globalThis.AO_APP_SHELL_V1?.status?.().presentationFx??null,
   }));
   assert.equal(homeAudit.release,"43.59.30");
   assert.equal(homeAudit.releaseAuthority,"AO_APP_SHELL_V1");
   assert.equal(homeAudit.suppressed,"false");
-  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===3 && homeAudit.todayV2CalendarLinks>=1,
-    "canonical Today v2 must render three sections and its Calendar handoffs: "+JSON.stringify(homeAudit));
+  assert.ok(homeAudit.todayV2===1 && homeAudit.todayV2Sections===2 &&
+    homeAudit.todayV2Glance===1 && homeAudit.todayV2CalendarLinks>=1,
+    "Approved C must render two lower sections, one Calendar at a glance panel and working Calendar links: "+JSON.stringify(homeAudit));
   assert.equal(homeAudit.canonicalIcons,0,"obsolete Coming Up icons should not be injected into Today v2");
   assert.equal(homeAudit.fallbackIcons,0,"Home Coming Up fell back to placeholder artwork");
   assert.equal(homeAudit.presentationFx?.installed,true,"modular presentation FX bridge is not installed");
@@ -246,33 +248,33 @@ try{
   // Today v2 is the production Home owner. The old v43 celebration/Coming Up
   // classes were retired; certify the rendered editorial sections and entry points.
   const homeParity=await page.evaluate(()=>({
-    context:document.querySelectorAll(".homeScreen .aoTodayV2Context").length,
+    context:document.querySelectorAll(".homeScreen .aoTodayV2SeasonMicro").length,
     sections:document.querySelectorAll(".homeScreen .aoTodayV2Below .aoTodayV2Zone").length,
     prayerFeature:document.querySelectorAll(".homeScreen .aoTodayV2PrayerFeature [data-home-cu-route]").length,
     prayerShortcuts:document.querySelectorAll(".homeScreen .aoTodayV2PrayerShortcuts [data-home-cu-route]").length,
     gospel:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-action='gospel']").length,
     scripture:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-scripture]").length,
     catechism:document.querySelectorAll(".homeScreen .aoTodayV2ReadReflect [data-home-daily-catechism]").length,
-    calendar:document.querySelectorAll(".homeScreen .aoTodayV2Context [data-home-calendar]").length,
-    year:document.querySelectorAll('.homeScreen .aoTodayV2Context [data-home-calendar-view="year"]').length,
-    upcoming:document.querySelectorAll('.homeScreen .aoTodayV2Approaching [data-home-calendar-view="picker"]').length,
-    upcomingDates:document.querySelectorAll('.homeScreen .aoTodayV2Approaching [data-home-calendar-date]').length,
-    contextHeight:document.querySelector(".homeScreen .aoTodayV2Context button")?.getBoundingClientRect().height??0,
+    calendar:document.querySelectorAll(".homeScreen .aoTodayV2CalendarGlance [data-home-calendar-date]").length,
+    year:document.querySelectorAll('.homeScreen .aoTodayV2SeasonMicro[data-home-calendar-view="year"]').length,
+    upcoming:document.querySelectorAll('.homeScreen .aoTodayV2Tabs [data-home-calendar-view="picker"]').length,
+    upcomingDates:document.querySelectorAll('.homeScreen .aoTodayV2CalendarGlance [data-home-calendar-date]').length,
+    contextHeight:document.querySelector(".homeScreen .aoTodayV2SeasonMicro")?.getBoundingClientRect().height??0,
     horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-document.documentElement.clientWidth),
     massEntry:document.querySelectorAll(".homeScreen [data-home-mass-entry]").length,
     obsoleteYearWheel:document.querySelectorAll(".homeScreen .aoCalYearWheel").length,
     unresolvedArt:document.querySelectorAll(".homeScreen .aoSaintArtCard .aoSaintArtPlaceholder").length,
   }));
-  assert.equal(homeParity.context,1,"Today v2 lost its single liturgical-day context");
-  assert.equal(homeParity.sections,3,"Today v2 must provide Pray, Read/Reflect and Approaching");
+  assert.equal(homeParity.context,1,"Today v2 lost its hero liturgical-season link");
+  assert.equal(homeParity.sections,2,"Version C keeps Pray and Read/Reflect below one calendar summary");
   assert.equal(homeParity.prayerFeature,1,"Today v2 lost its featured prayer entry");
   assert.equal(homeParity.prayerShortcuts,3,"Today v2 lost the three prayer shortcuts");
   assert.equal(homeParity.gospel,1,"Today v2 lost appointed-Gospel navigation");
   assert.equal(homeParity.scripture,1,"Today v2 lost Scripture navigation");
   assert.equal(homeParity.catechism,1,"Today v2 lost the Daily Catechism entry");
-  assert.equal(homeParity.calendar,1,"Today v2 must keep one contextual Liturgical Time entry");
+  assert.ok(homeParity.calendar>=1,"Calendar at a glance must retain source-qualified upcoming date links");
   assert.equal(homeParity.year,1,"The season link must still open the canonical Liturgical Year");
-  assert.equal(homeParity.upcoming,1,"One Coming next section must still reach Calendar Month");
+  assert.equal(homeParity.upcoming,1,"The header Month tab replaces redundant Coming next CTA");
   assert.ok(homeParity.upcomingDates>=1,"Upcoming dates must preserve Calendar Day entry");
   assert.ok(homeParity.contextHeight>=44,"The compact season control must meet the 44px touch target");
   assert.ok(homeParity.horizontalOverflow<=1,"Home decluttering introduced horizontal overflow");
