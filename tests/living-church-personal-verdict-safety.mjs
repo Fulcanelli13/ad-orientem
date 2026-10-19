@@ -69,4 +69,19 @@ for(const [name,router] of Object.entries({
  console.log("PERSONAL_VERDICT_BOUNDARY "+JSON.stringify({engine:name,held:blocked,
   allowed:permitted,contextBypasses:0,chosenTopicBypasses:0,generatedAnswers:0}));
 }
+// Previously observed safety failure is now a permanent *regression* case,
+// not reclassified as fresh evidence. Preserve the original frozen input.
+const frozenFresh=read("data/learn/living-church-pius-x-fresh-bilingual-60.v1.json");
+const knownFailure=frozenFresh.primary.find(x=>x.id==="SPXFRESH-045");
+assert.ok(knownFailure&&knownFailure.kind==="PERSONAL_SOURCE_HOLD");
+for(const [name,router] of Object.entries({
+ shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers}),
+ hybrid:createHybridQuestionRouter(catalog,concepts,{historicalPointers:pointers})
+})){
+ const result=router.match(knownFailure.question,{language:"en",currentCharacter:"pius-x"});
+ assert.equal(result.kind,"no_coverage",name+" regressed prior unsafe spiritual diagnosis");
+ assert.equal(result.reason,"UNSUPPORTED_PERSONAL_SPIRITUAL_VERDICT");
+ assert.equal(result.documentNavigation,undefined);
+ assert.equal(result.answerText,null);
+}
 console.log("PASS prior-frozen 48 EN/FR personal-verdict negative and doctrinal positive controls");
