@@ -160,12 +160,18 @@ against the already-owned Litany of Loreto—therefore establishes a
 **candidate**, not approval to substitute Marian litany content for
 the 1962 Litany of the Saints.
 
-The standalone `src/pray/litany-source.js` has **1883 English** and
-**1862 French** historical witnesses, differently scoped and
-**not collated against the 1962 ritual**. Its source boundary stops
-before the following `Pater noster`/Psalm 69/orations. These witnesses
-may support historical research but cannot automatically supply the
-entire 1962 procession.
+The standalone `src/pray/litany-source.js` points to **1883 English**
+and **1862 French** independent historical editions, neither certified
+against the 1962 ritual. **The PRAY reader's intentional `extractLitanyProper`
+boundary stops before the appended `Pater noster`/Psalm 69/orations;
+the source editions DO NOT stop there.** Both complete web transcriptions
+include the appendix through Psalm 69, suffrages and all **ten concluding
+collects** (1883 English prose; 1862 French prose, with an independent
+poetic Psalm rendering). These are significant existing **vernacular
+witness candidates**, not automatic approved 1962 translations.
+See `data/mass/rogation-historical-language-witnesses.v1.json`.
+Earlier assertions that the underlying sources lacked the appendix
+must not be carried into translation-gap estimates.
 
 The Scripture candidate audit names the actual restored witnesses:
 Douay–Rheims Challoner (English), Crampon 1923 (French) and CPDV 2009
@@ -244,3 +250,23 @@ Rogations: 187 source rows = 22 exact Ordinary + 15 additional PRAY +
 invocations remain unchanged. No EN/FR was composed, and no release claim
 follows from this repair. The printed discrepancy registry and updated
 reader/source tests are in this same PR.
+
+## Further source discovery: ten Rogations concluding collects already exist in EN/FR historical witnesses
+
+The original English 1883 and French Corneille 1862 **web source pages**
+contain translations beyond the deliberately bounded PRAY Litany proper:
+Psalm LXIX, suffrages, ten complete concluding collects and final prayers.
+The Latin and French 1862 section prints ten original Latin collects first,
+then the corresponding ten French prose readings; the 1883 English section
+prints ten consecutive English prayers. This is not a newly authored
+translation. Edition variants, transcription anomalies, 1962 rite differences
+and reuse permissions remain review holds. The historic page content is
+**not imported, copied into the reader or counted as an approved translation**.
+
+These witnesses now have a machine-readable provenance/scope registry and
+regression gate in PR #1441. The pre-existing eight-annex exact-match count
+**320 / 61 Ordinary / 17 PRAY / 242 further owner review** is unchanged:
+discovering a historical translation does not prove the source matches the
+1962 edition or authorize its reuse. The ten Rogation collects specifically
+should not enter any new-translation queue without completing this direct
+EN/FR collation.
