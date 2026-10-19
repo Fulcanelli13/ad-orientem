@@ -1,0 +1,518 @@
+{
+  "schema": "AO_SPX_1905_BATCH9_PART_V1",
+  "part": "B",
+  "created": "2026-10-20",
+  "status": "BILINGUAL_DOCUMENTARY_DRAFT_NOT_APPROVED",
+  "records": [
+    {
+      "id": "SPX-1905-S-577",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q577",
+        "originalQuestionItalian": "Che cosa è il sacramento della Cresima?",
+        "companionQuestionId": "PX1905-Q578",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is the sacrament of Confirmation?",
+            "fr": "Qu'est-ce que le sacrement de confirmation ?"
+          },
+          "response": {
+            "en": "Confirmation gives the Holy Ghost, impresses the character of a soldier of Jesus Christ and brings the Christian to greater maturity in the faith, in the Catechism's traditional formulation.",
+            "fr": "La confirmation donne le Saint-Esprit, imprime le caractère de soldat de Jésus-Christ et conduit le chrétien à une plus grande maturité dans la foi, selon la formule traditionnelle du Catéchisme."
+          },
+          "supports": [
+            "PX1905-Q577"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why is it called Confirmation?",
+            "fr": "Pourquoi l'appelle-t-on confirmation ?"
+          },
+          "response": {
+            "en": "Because it confirms faith and perfects the virtues and gifts first received in Baptism.",
+            "fr": "Parce qu'elle affermit la foi et perfectionne les vertus et les dons reçus d'abord au baptême."
+          },
+          "supports": [
+            "PX1905-Q578"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-578",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q578",
+        "originalQuestionItalian": "In qual maniera il sacramento della Cresima ci fa perfetti cristiani?",
+        "companionQuestionId": "PX1905-Q579",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How does Confirmation perfect the Christian life?",
+            "fr": "Comment la confirmation perfectionne-t-elle la vie chrétienne ?"
+          },
+          "response": {
+            "en": "It strengthens the baptized person in faith and perfects the virtues and gifts already received in Baptism; 'perfect' here concerns sacramental strengthening, not an absence of faults.",
+            "fr": "Elle affermit le baptisé dans la foi et perfectionne les vertus et les dons déjà reçus au baptême ; « parfait » désigne ici l'affermissement sacramentel, non une absence de défauts."
+          },
+          "supports": [
+            "PX1905-Q578"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What are the gifts associated with Confirmation?",
+            "fr": "Quels dons sont associés à la confirmation ?"
+          },
+          "response": {
+            "en": "Wisdom, understanding, counsel, fortitude, knowledge, piety and fear of God.",
+            "fr": "La sagesse, l'intelligence, le conseil, la force, la science, la piété et la crainte de Dieu."
+          },
+          "supports": [
+            "PX1905-Q579"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-579",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q579",
+        "originalQuestionItalian": "Quali sono i doni dello Spirito Santo, che si ricevono nella Cresima?",
+        "companionQuestionId": "PX1905-Q580",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Which seven gifts does Confirmation strengthen?",
+            "fr": "Quels sont les sept dons que la confirmation affermit ?"
+          },
+          "response": {
+            "en": "The Catechism names wisdom, understanding, counsel, fortitude, knowledge, piety and fear of God.",
+            "fr": "Le Catéchisme nomme la sagesse, l'intelligence, le conseil, la force, la science, la piété et la crainte de Dieu."
+          },
+          "supports": [
+            "PX1905-Q579"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What outward sign does the historical text describe?",
+            "fr": "Quel signe extérieur le texte historique décrit-il ?"
+          },
+          "response": {
+            "en": "The bishop's laying on of hands and anointing of the forehead with sacred chrism.",
+            "fr": "L'imposition des mains par l'évêque et l'onction du front avec le saint chrême."
+          },
+          "supports": [
+            "PX1905-Q580"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-580",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q580",
+        "originalQuestionItalian": "Qual’è la materia di questo sacramento?",
+        "companionQuestionId": "PX1905-Q581",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What matter does the 1905 Catechism describe for Confirmation?",
+            "fr": "Quelle matière le Catéchisme de 1905 décrit-il pour la confirmation ?"
+          },
+          "response": {
+            "en": "It names the bishop's imposition of hands and an anointing on the baptized person's forehead with sacred chrism. The precise ritual and validity questions must be assessed in their historical context.",
+            "fr": "Il nomme l'imposition des mains par l'évêque et l'onction du front du baptisé avec le saint chrême. Les questions précises de rite et de validité doivent être examinées dans leur contexte historique."
+          },
+          "supports": [
+            "PX1905-Q580"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What is sacred chrism?",
+            "fr": "Qu'est-ce que le saint chrême ?"
+          },
+          "response": {
+            "en": "Oil mixed with balsam, consecrated by the bishop on Holy Thursday according to this account.",
+            "fr": "De l'huile mêlée de baume, consacrée par l'évêque le Jeudi saint selon cet exposé."
+          },
+          "supports": [
+            "PX1905-Q581"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-581",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q581",
+        "originalQuestionItalian": "Che cosa è il sacro Crisma?",
+        "companionQuestionId": "PX1905-Q582",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is the sacred chrism used in Confirmation?",
+            "fr": "Qu'est-ce que le saint chrême employé à la confirmation ?"
+          },
+          "response": {
+            "en": "The Catechism describes it as oil mixed with balsam and consecrated by the bishop on Holy Thursday.",
+            "fr": "Le Catéchisme le décrit comme de l'huile mêlée de baume et consacrée par l'évêque le Jeudi saint."
+          },
+          "supports": [
+            "PX1905-Q581"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What meanings do oil and balsam convey?",
+            "fr": "Quelles significations portent l'huile et le baume ?"
+          },
+          "response": {
+            "en": "The oil signifies strengthening grace, while the fragrance and preserving quality of balsam recall virtue and protection from vice.",
+            "fr": "L'huile signifie la grâce qui fortifie, tandis que le parfum et la qualité conservatrice du baume rappellent les vertus et la protection contre le vice."
+          },
+          "supports": [
+            "PX1905-Q582"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-582",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q582",
+        "originalQuestionItalian": "Che cosa significano l’ olio e il balsamo in questo sacramento?",
+        "companionQuestionId": "PX1905-Q583",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What do oil and balsam symbolize in Confirmation?",
+            "fr": "Que symbolisent l'huile et le baume dans la confirmation ?"
+          },
+          "response": {
+            "en": "Oil suggests grace spreading through and strengthening the soul; balsam, through its fragrance and preserving property, evokes good Christian example and resistance to vice.",
+            "fr": "L'huile évoque la grâce qui se répand dans l'âme et la fortifie ; le baume, par son parfum et sa propriété conservatrice, évoque le bon exemple chrétien et la résistance au vice."
+          },
+          "supports": [
+            "PX1905-Q582"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does the historical Catechism prescribe words for the rite?",
+            "fr": "Le Catéchisme historique donne-t-il des paroles pour le rite ?"
+          },
+          "response": {
+            "en": "Yes. It records the traditional formula by which the bishop signs with the Cross and confirms with chrism in the name of the Trinity.",
+            "fr": "Oui. Il rapporte la formule traditionnelle par laquelle l'évêque marque du signe de la Croix et confirme avec le chrême au nom de la Trinité."
+          },
+          "supports": [
+            "PX1905-Q583"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-583",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q583",
+        "originalQuestionItalian": "Qual’è la forma del sacramento della Cresima?",
+        "companionQuestionId": "PX1905-Q584",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What formula does the 1905 text give for Confirmation?",
+            "fr": "Quelle formule le texte de 1905 donne-t-il pour la confirmation ?"
+          },
+          "response": {
+            "en": "It gives the traditional formula of signing with the Cross and confirming with the chrism of salvation in the name of Father, Son and Holy Ghost. This is a historical description, not a universal liturgical prescription today.",
+            "fr": "Il donne la formule traditionnelle du signe de la Croix et de la confirmation avec le chrême du salut au nom du Père, du Fils et du Saint-Esprit. C'est une description historique, non une prescription liturgique universelle actuelle."
+          },
+          "supports": [
+            "PX1905-Q583"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Who is the ordinary minister in this account?",
+            "fr": "Qui est le ministre ordinaire dans cet exposé ?"
+          },
+          "response": {
+            "en": "The bishop.",
+            "fr": "L'évêque."
+          },
+          "supports": [
+            "PX1905-Q584"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-584",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q584",
+        "originalQuestionItalian": "Chi è il ministro del sacramento della Cresima?",
+        "companionQuestionId": "PX1905-Q585",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Who ordinarily confers Confirmation in the 1905 Catechism?",
+            "fr": "Qui confère ordinairement la confirmation dans le Catéchisme de 1905 ?"
+          },
+          "response": {
+            "en": "It names the bishop as the ordinary minister. This reflects its historical Latin-rite teaching; present-day discipline and faculties should be checked separately.",
+            "fr": "Il nomme l'évêque ministre ordinaire. Cela reflète l'enseignement latin de son époque ; la discipline et les facultés actuelles doivent être vérifiées séparément."
+          },
+          "supports": [
+            "PX1905-Q584"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What ceremony does the Catechism then describe?",
+            "fr": "Quelle cérémonie le Catéchisme décrit-il ensuite ?"
+          },
+          "response": {
+            "en": "Prayer with extended hands, anointing of the forehead with chrism, a light touch on the cheek and solemn blessing.",
+            "fr": "La prière avec imposition des mains, l'onction du front avec le chrême, un léger geste sur la joue et la bénédiction solennelle."
+          },
+          "supports": [
+            "PX1905-Q585"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-585",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q585",
+        "originalQuestionItalian": "Con qual rito il Vescovo amministra la Cresima?",
+        "companionQuestionId": "PX1905-Q586",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What did a Confirmation ceremony look like in the 1905 account?",
+            "fr": "Comment se déroulait la cérémonie de confirmation selon l'exposé de 1905 ?"
+          },
+          "response": {
+            "en": "The bishop first prayed with hands extended, then anointed the forehead in the shape of the Cross while speaking the sacramental form, gave a light touch to the cheek with a greeting of peace, and blessed the group. The description is period-specific.",
+            "fr": "L'évêque priait d'abord les mains étendues, puis oignait le front en forme de Croix en prononçant la formule, touchait légèrement la joue avec une salutation de paix et bénissait l'assemblée. Cette description est propre à cette époque."
+          },
+          "supports": [
+            "PX1905-Q585"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why anoint the forehead?",
+            "fr": "Pourquoi faire l'onction sur le front ?"
+          },
+          "response": {
+            "en": "It reminds the confirmed Christian not to be ashamed of professing the faith or afraid of its opponents.",
+            "fr": "Elle rappelle au confirmé qu'il ne doit pas rougir de professer la foi ni craindre ses adversaires."
+          },
+          "supports": [
+            "PX1905-Q586"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-S-586",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q586",
+        "originalQuestionItalian": "Perché si fa l’unzione sulla fronte?",
+        "companionQuestionId": "PX1905-Q587",
+        "section": "CONFIRMATION_NATURE_AND_RITE",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_DIGITAL_ITALIAN_NOT_PRINT_FACSIMILE_COLLATED",
+        "attribution": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTICATED_PERSONAL_PAPAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why was the forehead anointed in Confirmation?",
+            "fr": "Pourquoi oignait-on le front lors de la confirmation ?"
+          },
+          "response": {
+            "en": "The Catechism points to the forehead as a place where fear or embarrassment shows; anointing there signifies courage openly to profess the Christian name.",
+            "fr": "Le Catéchisme désigne le front comme le lieu où se manifeste la peur ou la honte ; l'onction y signifie le courage de professer ouvertement le nom chrétien."
+          },
+          "supports": [
+            "PX1905-Q586"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What did the slight touch on the cheek signify?",
+            "fr": "Que signifiait le léger geste sur la joue ?"
+          },
+          "response": {
+            "en": "Readiness to endure affronts and suffering for faith in Jesus Christ.",
+            "fr": "La disponibilité à supporter les affronts et les souffrances pour la foi en Jésus-Christ."
+          },
+          "supports": [
+            "PX1905-Q587"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ]
+}
