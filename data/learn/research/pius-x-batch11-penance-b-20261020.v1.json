@@ -1,0 +1,519 @@
+{
+  "schema": "AO_SPX_1905_BATCH11_PART_V1",
+  "part": "B",
+  "created": "2026-10-20",
+  "status": "BILINGUAL_DOCUMENTARY_DRAFT_NOT_APPROVED",
+  "followupPolicy": "SOURCE_SAME_QUESTION_DISTINCT_PASTORAL_INTENT",
+  "records": [
+    {
+      "id": "SPX-1905-P-677",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q677",
+        "originalQuestionItalian": "Qual’è la materia del sacramento della Penitenza?",
+        "relatedQuestionId": "PX1905-Q678",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does the Catechism mean by the matter of Penance?",
+            "fr": "Qu'entend le Catéchisme par la matière de la Pénitence ?"
+          },
+          "response": {
+            "en": "It distinguishes remote matter—the sins committed after Baptism—from proximate matter—the penitent's acts of contrition, confession and satisfaction.",
+            "fr": "Il distingue la matière éloignée — les péchés commis après le Baptême — de la matière prochaine — les actes du pénitent : contrition, confession et satisfaction."
+          },
+          "supports": [
+            "PX1905-Q677"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Are the penitent's own acts relevant to the sacrament?",
+            "fr": "Les actes du pénitent comptent-ils dans ce sacrement ?"
+          },
+          "response": {
+            "en": "Yes. The Catechism specifically includes sorrow, confessing sins and accepting satisfaction among its constituent elements.",
+            "fr": "Oui. Le Catéchisme inclut expressément le regret, l'aveu des péchés et l'acceptation de la satisfaction parmi ses éléments constitutifs."
+          },
+          "supports": [
+            "PX1905-Q677"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-678",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q678",
+        "originalQuestionItalian": "Qual’è la forma del sacramento della Penitenza?",
+        "relatedQuestionId": "PX1905-Q679",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is the sacramental form of Penance?",
+            "fr": "Quelle est la forme sacramentelle de la Pénitence ?"
+          },
+          "response": {
+            "en": "The Catechism identifies the priest's words of absolution: 'I absolve you from your sins.' This is a catechetical summary, not an instruction to improvise a sacramental rite.",
+            "fr": "Le Catéchisme identifie les paroles d'absolution du prêtre : « Je vous absous de vos péchés ». C'est un résumé catéchétique, non une instruction pour improviser un rite sacramentel."
+          },
+          "supports": [
+            "PX1905-Q678"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "May anyone say those words and give sacramental absolution?",
+            "fr": "N'importe qui peut-il prononcer ces paroles et donner l'absolution sacramentelle ?"
+          },
+          "response": {
+            "en": "No. The text separately requires a duly authorized priest as minister.",
+            "fr": "Non. Le texte requiert par ailleurs un prêtre dûment autorisé comme ministre."
+          },
+          "supports": [
+            "PX1905-Q678"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-679",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q679",
+        "originalQuestionItalian": "Chi è il ministro del sacramento della Penitenza?",
+        "relatedQuestionId": "PX1905-Q680",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Who administers the Sacrament of Penance?",
+            "fr": "Qui administre le sacrement de Pénitence ?"
+          },
+          "response": {
+            "en": "The Catechism identifies a priest approved by the bishop to hear confessions.",
+            "fr": "Le Catéchisme désigne un prêtre approuvé par l'évêque pour entendre les confessions."
+          },
+          "supports": [
+            "PX1905-Q679"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why is authorization mentioned?",
+            "fr": "Pourquoi cette autorisation est-elle mentionnée ?"
+          },
+          "response": {
+            "en": "Because sacramental absolution is not exercised merely through personal willingness; the priest must also possess the authority required by the Church.",
+            "fr": "Parce que l'absolution sacramentelle ne dépend pas de la seule volonté personnelle ; le prêtre doit aussi posséder l'autorité requise par l'Église."
+          },
+          "supports": [
+            "PX1905-Q679"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-680",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q680",
+        "originalQuestionItalian": "Perché avete detto che il sacerdote deve essere approvato dal Vescovo?",
+        "relatedQuestionId": "PX1905-Q681",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the 1905 text require a priest to be approved to hear confessions?",
+            "fr": "Pourquoi le texte de 1905 exige-t-il qu'un prêtre soit approuvé pour confesser ?"
+          },
+          "response": {
+            "en": "It distinguishes the priestly power of Orders from jurisdiction or the faculty to judge and absolve, which the text describes as coming through episcopal authorization. Applicable current faculties require separate verification.",
+            "fr": "Il distingue le pouvoir sacerdotal de l'Ordre de la juridiction ou faculté de juger et d'absoudre, que le texte décrit comme reçue de l'autorisation épiscopale. Les facultés actuellement applicables doivent être vérifiées séparément."
+          },
+          "supports": [
+            "PX1905-Q680"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is ordination alone sufficient in the text's account?",
+            "fr": "L'ordination suffit-elle, selon ce texte ?"
+          },
+          "response": {
+            "en": "No. It says valid administration also calls for the requisite jurisdiction, according to its historical terminology.",
+            "fr": "Non. Il dit que l'administration valide demande aussi la juridiction requise, selon sa terminologie historique."
+          },
+          "supports": [
+            "PX1905-Q680"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-681",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q681",
+        "originalQuestionItalian": "Quante sono le parli del sacramento della Penitenza?",
+        "relatedQuestionId": "PX1905-Q682",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What are the parts of the Sacrament of Penance?",
+            "fr": "Quelles sont les parties du sacrement de Pénitence ?"
+          },
+          "response": {
+            "en": "The Catechism names the penitent's contrition, confession and satisfaction, and the priest's absolution.",
+            "fr": "Le Catéchisme nomme la contrition, la confession et la satisfaction du pénitent, ainsi que l'absolution du prêtre."
+          },
+          "supports": [
+            "PX1905-Q681"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does the priest do everything while the penitent remains passive?",
+            "fr": "Le prêtre fait-il tout tandis que le pénitent demeure passif ?"
+          },
+          "response": {
+            "en": "No. The penitent's repentance, confession and penance are expressly part of the sacramental account.",
+            "fr": "Non. Le repentir, l'aveu et la pénitence du fidèle font expressément partie de l'exposé sacramentel."
+          },
+          "supports": [
+            "PX1905-Q681"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-682",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q682",
+        "originalQuestionItalian": "Che cosa é la contrizione, ossia il dolore dei peccati?",
+        "relatedQuestionId": "PX1905-Q683",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does contrition mean?",
+            "fr": "Que signifie la contrition ?"
+          },
+          "response": {
+            "en": "It is sorrow of soul that rejects sins already committed and includes a resolve not to commit them again.",
+            "fr": "C'est une douleur de l'âme qui rejette les péchés commis et comprend la résolution de ne plus les commettre."
+          },
+          "supports": [
+            "PX1905-Q682"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Must it involve a resolve to change?",
+            "fr": "Doit-elle comprendre la volonté de changer ?"
+          },
+          "response": {
+            "en": "Yes. The source joins sorrow for past wrongdoing to the purpose of avoiding it in the future.",
+            "fr": "Oui. La source unit le regret des fautes passées à la résolution de les éviter à l'avenir."
+          },
+          "supports": [
+            "PX1905-Q682"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-683",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q683",
+        "originalQuestionItalian": "Che cosa vuoi dire questa parola contrizione?",
+        "relatedQuestionId": "PX1905-Q684",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does the word 'contrition' literally suggest?",
+            "fr": "Que suggère littéralement le mot « contrition » ?"
+          },
+          "response": {
+            "en": "The Catechism explains it through the image of something hard being broken or crushed, like stone reduced to powder.",
+            "fr": "Le Catéchisme l'explique par l'image d'une chose dure brisée ou broyée, comme une pierre réduite en poudre."
+          },
+          "supports": [
+            "PX1905-Q683"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is that description about physical injury?",
+            "fr": "Cette description concerne-t-elle une blessure corporelle ?"
+          },
+          "response": {
+            "en": "No. It is a metaphor for the heart's repentance, not a call for physical pain or self-punishment.",
+            "fr": "Non. Il s'agit d'une métaphore du repentir du cœur, non d'un appel à la douleur physique ou à l'autopunition."
+          },
+          "supports": [
+            "PX1905-Q683"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-684",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q684",
+        "originalQuestionItalian": "Perché si dà il nome di contrizione al dolore dei peccati?",
+        "relatedQuestionId": "PX1905-Q685",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why is sorrow for sin called contrition?",
+            "fr": "Pourquoi le regret des péchés s'appelle-t-il contrition ?"
+          },
+          "response": {
+            "en": "The word pictures the hardness of a sinner's heart yielding and breaking before the wrong of having offended God.",
+            "fr": "Ce mot figure la dureté du cœur du pécheur qui cède et se brise à la pensée d'avoir offensé Dieu."
+          },
+          "supports": [
+            "PX1905-Q684"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "What is meant by a broken heart here?",
+            "fr": "Que signifie ici un cœur brisé ?"
+          },
+          "response": {
+            "en": "The source means a softened and repentant will, not literal harm or overwhelming despair.",
+            "fr": "La source vise une volonté adoucie et repentante, non une blessure réelle ou un désespoir écrasant."
+          },
+          "supports": [
+            "PX1905-Q684"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-685",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q685",
+        "originalQuestionItalian": "In che consiste la confessione dei peccati?",
+        "relatedQuestionId": "PX1905-Q686",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What does confession of sins consist of?",
+            "fr": "En quoi consiste la confession des péchés ?"
+          },
+          "response": {
+            "en": "It is a distinct statement of one's sins to a confessor, in order to receive absolution and the assigned penance.",
+            "fr": "C'est un aveu distinct de ses péchés au confesseur, afin de recevoir l'absolution et la pénitence imposée."
+          },
+          "supports": [
+            "PX1905-Q685"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is it the same as a general story about my life?",
+            "fr": "Est-ce la même chose qu'un récit général de ma vie ?"
+          },
+          "response": {
+            "en": "No. The Catechism emphasizes acknowledging one's sins; other details serve that purpose when relevant.",
+            "fr": "Non. Le Catéchisme insiste sur l'aveu de ses péchés ; les autres détails n'y servent que s'ils sont pertinents."
+          },
+          "supports": [
+            "PX1905-Q685"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    },
+    {
+      "id": "SPX-1905-P-686",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q686",
+        "originalQuestionItalian": "Perché la confessione si chiama accusa?",
+        "relatedQuestionId": "PX1905-Q687",
+        "section": "PENANCE_MATTER_FORM_AND_PARTS",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "textWitness": "MUSEO_SAN_PIO_X_HTML_NOT_PRINT_FACSIMILE_COLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTHENTIC_PERSONAL_SPEECH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why is confession called an accusation of oneself?",
+            "fr": "Pourquoi appelle-t-on la confession une accusation de soi-même ?"
+          },
+          "response": {
+            "en": "It is meant to be a sincere and sorrowful acknowledgment of wrongs, not an indifferent recital of events.",
+            "fr": "Elle doit être un aveu sincère et contrit des fautes, non un récit indifférent des événements."
+          },
+          "supports": [
+            "PX1905-Q686"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does this mean humiliating or degrading oneself?",
+            "fr": "Cela signifie-t-il qu'il faut s'humilier au point de se dégrader ?"
+          },
+          "response": {
+            "en": "The text calls for truthful acknowledgment of responsibility; it does not ask for abuse or theatrical self-condemnation.",
+            "fr": "Le texte demande de reconnaître honnêtement sa responsabilité ; il ne demande ni maltraitance ni condamnation théâtrale de soi."
+          },
+          "supports": [
+            "PX1905-Q686"
+          ]
+        }
+      ],
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE",
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      }
+    }
+  ]
+}
