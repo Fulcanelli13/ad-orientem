@@ -124,6 +124,17 @@
       "visual": "MUSEUM_INDIVIDUAL_OBJECT_PAGE_ORIGINAL_IMAGE_QA_PENDING",
       "priority": "OBJECT_AND_RIGHTS_MATCH",
       "caveat": "The two companion artifacts MUST NOT be combined in one hero photograph; each has its own museum page with its own image."
+    },
+    {
+      "object_id": "AL04",
+      "object": "Tabernacle door and ornament",
+      "source": "https://www.metmuseum.org/art/collection/search/193636",
+      "accession": "17.190.839",
+      "identity": "Fire-gilt bronze tabernacle door portraying the Risen Christ; Italy, Florence or Rome, mid-17th century; cast by Pietro Paolo Nardi per museum attribution.",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "visual": "PREVIEW_SCREENED_SINGLE_DOOR_ISOLATED_NEUTRAL_GREY",
+      "priority": "TOP_CANDIDATE",
+      "caveat": "Door alone, NOT complete Eucharistic tabernacle AL03. Museum record takes precedence over older Commons label attributing it to the sixteenth century."
     }
   ],
   "other_verified_research": [
@@ -176,6 +187,16 @@
       "rights": "PUBLIC_IMAGE_REUSE_NOT_ESTABLISHED",
       "status": "RIGHTS_HOLD",
       "reason": "Excellent correct isolated object lead with photography rights not yet confirmed; no asset import."
+    },
+    {
+      "object_ids": [
+        "AL03"
+      ],
+      "source": "https://www.metmuseum.org/art/collection/search/464604",
+      "identity": "French enamelled Eucharistic tabernacle of Cherves, c. 1220–1230.",
+      "rights": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_CC0",
+      "status": "CONTEXT_HISTORICAL_ONLY",
+      "reason": "Medieval hinged cupboard for Eucharistic reservation, not representative of familiar freestanding/altar-integrated 1962 Roman-rite tabernacle."
     }
   ],
   "carry_forward_holds": [
