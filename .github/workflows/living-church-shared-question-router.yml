@@ -9,6 +9,8 @@ on:
       - tests/living-church-shared-question-router.mjs
       - tests/living-church-question-retrieval-probes.mjs
       - tests/living-church-routing-holdout.mjs
+      - tests/living-church-fresh-question-probes.mjs
+      - data/learn/living-church-fresh-question-probes.v1.json
       - .github/workflows/living-church-shared-question-router.yml
   pull_request:
     paths:
@@ -17,6 +19,8 @@ on:
       - tests/living-church-shared-question-router.mjs
       - tests/living-church-question-retrieval-probes.mjs
       - tests/living-church-routing-holdout.mjs
+      - tests/living-church-fresh-question-probes.mjs
+      - data/learn/living-church-fresh-question-probes.v1.json
       - .github/workflows/living-church-shared-question-router.yml
 permissions:
   contents: read
@@ -34,3 +38,4 @@ jobs:
           node tests/living-church-shared-question-router.mjs
           node tests/living-church-question-retrieval-probes.mjs
           node tests/living-church-routing-holdout.mjs
+          node tests/living-church-fresh-question-probes.mjs
