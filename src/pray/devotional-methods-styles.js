@@ -5,9 +5,7 @@ const css=`
 #aoPray435930 .aoMercyReader h2{font:400 1.2rem Georgia,serif}
 #aoPray435930 .aoMercyHelp{padding:14px 0;border-top:1px solid rgba(205,185,150,.2);font-style:italic;color:var(--ao-muted,#cbbfb2)}
 #aoPray435930 .aoMercyNote{color:var(--ao-muted,#cbbfb2)}
-#aoPray435930 .aoMercyControls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:25px 0}
-#aoPray435930 .aoMercyControls button,#aoPray435930 .aoMercyOptions button,#aoPray435930 .aoMercyMethod button{min-height:44px;padding:10px 14px;color:inherit;border:1px solid rgba(205,185,150,.38);background:rgba(190,174,149,.07);border-radius:6px}
-#aoPray435930 .aoMercyControls button:disabled{opacity:.35}
+#aoPray435930 .aoMercyOptions button,#aoPray435930 .aoMercyMethod button{min-height:44px;padding:10px 14px;color:inherit;border:1px solid rgba(205,185,150,.38);background:rgba(190,174,149,.07);border-radius:6px}
 #aoPray435930 .aoMercyOptions{display:flex;flex-wrap:wrap;gap:8px}
 /* Settings stay subordinate to the canonical prayer/verse reading card. */
 #aoPray435930 .aoMercyOptional{margin:12px 0 5px;border:1px solid rgba(205,185,150,.24);border-radius:10px;background:rgba(190,174,149,.035)}
@@ -98,8 +96,15 @@ const css=`
 #aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoDevoCardNumber,
 #aoPray435930 .aoMercyReader[data-ao-mercy-bead-reader] .aoDevoSequenceTimeline{display:none!important}
 #aoPray435930 .aoMercyBeadNavigation{
- display:grid;gap:7px;padding:0 3px 11px;margin:0 0 8px;
+ position:sticky;top:74px;z-index:16;
+ display:grid;gap:7px;padding:8px 3px 11px;margin:0 0 8px;
+ background:var(--bg,#080c12);
  border-bottom:1px solid color-mix(in srgb,var(--liturgical,#b9a17d) 25%,transparent)
+}
+/* A single visible bar follows canonical prayer events, not another
+   invented chapter cursor or an estimate of recited prayers. */
+#aoPray435930 .aoMercyBeadNavigation>.aoDevoProgress{
+ width:100%;margin:2px 0 0;grid-column:1/-1;
 }
 #aoPray435930 .aoMercyPhases{display:flex;align-items:center;justify-content:space-between;gap:2px;min-width:0}
 #aoPray435930 .aoMercyPhaseLink{
