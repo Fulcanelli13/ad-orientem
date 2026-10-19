@@ -51,7 +51,7 @@ for(const topic of registry.topics){
    const t=byGloss.get(source.ref);
    assert.equal(t?.definition_status,"SOURCE_BACKED",source.ref+" lacks linked glossary definition");
   }else if(source.owner==="MASS_EXPLORER_PUBLISHED_GUIDE"){
-   assert.match(source.ref,/^AO\\.CARD\\.\\d{3}$/);
+   assert.match(source.ref,/^AO\.CARD\.\d{3}$/);
    assert.ok(guide.entries[source.ref]?.moment,"Guide moment unavailable "+source.ref);
    assert.equal(source.evidence,"PUBLISHED_SUNG_GUIDE_TOPIC_VERIFIED");
   }else throw Error("Unrecognised source owner "+source.owner);
