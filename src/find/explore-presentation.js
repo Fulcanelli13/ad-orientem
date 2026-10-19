@@ -629,14 +629,14 @@ export function renderExploreToString(vm){
     )+'</span></div></div>';
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
     if(vm.lens==="tlm"&&vm.mapped){
-      html+='<div class="aoMapLegend" role="note" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'">'
+      html+='<details class="aoMapLegend" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'"><summary>'+esc(L(vm.language,"Map symbols","Symboles de la carte"))+'</summary>'
         +'<span class="aoMapLegendLabel">'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"Source affiliation","Affiliation selon les sources"):L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
         +massLegendItem("FSSP","FSSP")+massLegendItem("ICKSP","ICKSP")
         +massLegendItem("SSPX","SSPX")+massLegendItem("IBP","IBP")
         +massLegendItem("DIOCESAN",L(vm.language,"Diocesan","Diocésain"))
         +massLegendItem("OTHER",L(vm.language,"Other / unknown","Autre / inconnu"))
         +'<small>'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"All pins provisional; exact entrances and Mass times are not verified.","Tous les repères sont provisoires ; entrées exactes et horaires des messes non vérifiés."):L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
-        +massEmblemCredits(vm.language)+'</div>';
+        +massEmblemCredits(vm.language)+'</details>';
     }
   }else if(vm.items.length){
     const visible=vm.items.slice(0,vm.displayLimit);
