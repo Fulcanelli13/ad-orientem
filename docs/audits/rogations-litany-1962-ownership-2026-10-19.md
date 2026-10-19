@@ -109,6 +109,40 @@ source order. It preserves the two James positions, six Litany invocation groups
 the additional Psalm, suffrages and ten collects, the non-doubling
 rule, and the separate Mass handoff.
 
+### Formula-aware ownership triage — no new text (follow-up)
+
+The 112 complete invocations are not 112 independent *response translations*.
+Their repeated Latin ending can be indexed without deriving, replacing, or
+retranslating the distinctive saint name/petition in the same source row:
+
+| Invocation category | Latin response family | Occurrences |
+| --- | --- | ---: |
+| Individual saint | `ora pro nobis` | 46 |
+| Plural saints | `orate pro nobis` | 16 |
+| All saints | `intercedite pro nobis` | 1 |
+| Deliverances | `libera nos, Domine` | 21 |
+| Supplications | `te rogamus, audi nos` | 18 |
+
+Each row now has **two intentionally separate identities**: its unchanged
+`uniqueInvocationSourceOwner` and, when the suffix is recognized, a
+`responseFormulaOwnerId`. The second is **only a wording-review
+candidate**: the full Latin sentence remains in the original 1962 rite
+payload and no English/French fragment is assembled from the template.
+In particular the two `Sancte Jacobe` rows may share a response owner
+but must never share source positions or ceremonial events.
+
+The registry now assigns all 186 rows to specific **next review queues**
+instead of reporting the 150 unlinked items as an undifferentiated
+translation backlog: Litany formula plus unique invocation, untemplated
+Litany wording, Psalm/Exsurge recension and verse boundaries, ten
+concluding collects, and the remaining rite dialogues/suffrages.
+Exact Ordinary and PRAY matches remain separate candidate queues.
+The generated summary distinguishes these queues **without subtracting
+any rows from the 150 that still need full witness collation**.
+The new test asserts 186 routed source identities and exactly 150
+non-exact-owner candidates. CI checks audit structure and immutability;
+it is not a 1962 facsimile or EN/FR editorial sign-off.
+
 ## 4. Next gate: remaining archival collation, not translation
 
 1. Collate the complete 1962 printed Litany and appended Psalm,
