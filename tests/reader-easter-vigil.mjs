@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import "./easter-vigil-prophecies-source.mjs";
 import {readFileSync} from "node:fs";
 import {createEasterVigilReaderController,buildEasterVigilReader,projectEasterVigilMassModel} from "../src/mass/reader-easter-vigil.js";
+import {projectEasterVigilGloriaBell} from "../src/mass/reader-triduum-bells.js";
 import {createMassReaderModel} from "../src/mass/reader-model.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
@@ -149,6 +150,15 @@ const vigilMass=projectEasterVigilMassModel(base,payload);
 assert.equal(vigilMass.structureOwner,"EASTER_VIGIL_COMPOSITE_MASS");
 assert.equal(vigilMass.cardBySequence(1).sourceSequence,2);
 assert.equal(vigilMass.cardBySequence(1).title,"Kyrie");
+const sourceGloria=vigilMass.cards.find(card=>(card.paragraphs??[]).some(p=>
+ (p.sourceCueIds??[]).includes("AO.SM.C0053")));
+assert.ok(sourceGloria,"Vigil Mass must retain the real Gloria intonation source cue");
+const actualGloriaBell=projectEasterVigilGloriaBell({
+ distinctRite:"EASTER_VIGIL",massStarted:true,card:sourceGloria});
+assert.equal(actualGloriaBell.bell?.cueId,"AO.SM.C0053");
+assert.equal(actualGloriaBell.bell?.status,"EXPECTED_NOT_OBSERVED");
+assert.equal(projectEasterVigilGloriaBell({
+ distinctRite:"EASTER_VIGIL",massStarted:false,card:sourceGloria}).bell,null);
 assert.ok(!vigilMass.cards.some(x=>(x.sourceSequence??x.sequence)===21),"Agnus Dei leaked into Vigil Mass");
 assert.ok(!vigilMass.cards.some(x=>(x.sourceSequence??x.sequence)===30),"Last Gospel leaked into Vigil Mass");
 assert.equal(vigilMass.cardForEvent("MC-COM-150"),null,"peace prayer leaked into Vigil Mass");
