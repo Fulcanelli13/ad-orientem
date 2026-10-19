@@ -2146,6 +2146,9 @@ export async function mountNativeReaderPreview({
           kind==="REQUIEM_ABSOLUTION" &&
             ready.prepared?.session?.resolvedMass?.provenance?.requiemAbsolution?.burialProcession===true
             ? "OPTIONAL_BURIAL_FOLLOWING_ACTION" : null),
+        organPermission:project1962ReaderOrganNote({
+          riteId:kind,stageId:card.id??card.recordId,
+        }),
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
       }),
     });
