@@ -5,6 +5,7 @@
  */
 import {historicalFocusCandidates,historicalConfirmedContinuation,validateHistoricalFocus} from "./living-church-historical-focus.js";
 import {screenPersonalSpiritualVerdict} from "./living-church-personal-verdict-gate.js";
+import {scopeLiturgicalQuestion} from "./living-church-liturgical-source-scope.js";
 export const SHARED_QUESTION_ROUTER_VERSION="AO_LIVING_CHURCH_ROUTER_PILOT_V1";
 
 const accents=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -150,9 +151,29 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
    sourceGap:personalVerdict.sourceGap,originalQuestion:input,
    approvedReply:false,answerText:null});
   const fixed={...opts,currentCharacter:current,language:lang};
+  // A specific Mass/reception question cannot be claimed by an unrelated
+  // clergy exhortation, altar object, or general Eucharistic definition.
+  const liturgicalScope=scopeLiturgicalQuestion(input,{language:lang});
+  if(liturgicalScope?.kind==="ABSTAIN")return frozen({kind:"no_coverage",
+   reason:liturgicalScope.reason,scope:liturgicalScope.scope,
+   originalQuestion:input,answerText:null,approvedReply:false});
+
   for(const rule of blocked)if(phrases(rule.phrases,lang).some(p=>similarity(input,[p])>.91))
     return frozen({kind:"no_coverage",reason:rule.id,sourceGap:rule.reason,originalQuestion:input,
       reference:rule.sourceRef,answerText:null,approvedReply:false});
+
+  if(liturgicalScope?.kind==="SOURCE_OWNER"){
+   const topic=catalog.topics.find(t=>t.sourceRefs.some(r=>
+     r.owner==="PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1"&&r.ref===liturgicalScope.sourceId));
+   if(!topic||topic.character!=="pius-x")return frozen({kind:"no_coverage",
+    reason:"HISTORICAL_SCOPE_OWNER_NOT_INDEXED",originalQuestion:input,
+    approvedReply:false,answerText:null});
+   if(opts.chosenTopicId&&opts.chosenTopicId!==topic.id)return frozen({kind:"no_coverage",
+    reason:"EXPLICIT_TOPIC_SOURCE_SCOPE_CONFLICT",originalQuestion:input,
+    approvedReply:false,answerText:null});
+   return resolve(topic,input,{...fixed,matchEvidence:frozen({
+    basis:"DOCUMENTARY_LITURGICAL_SCOPE",scope:liturgicalScope.scope,score:null})});
+  }
   if(opts.chosenTopicId){
    const chosen=byId.get(opts.chosenTopicId);if(!chosen)throw Error("Unrecognised chosen topic");
    return resolve(chosen,input,{...fixed,matchEvidence:frozen({basis:"EXPLICIT_REFORMULATION_CHOICE",score:1})});
