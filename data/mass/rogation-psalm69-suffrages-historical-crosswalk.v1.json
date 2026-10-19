@@ -1,0 +1,814 @@
+{
+  "schema": "AO_ROGATION_PSALM69_SUFFRAGES_HISTORICAL_OWNER_MAP_V1",
+  "date": "2026-10-19",
+  "status": "SOURCE_WITNESS_PARALLELS_NO_PRODUCTION_TRANSLATION_PROMOTION",
+  "sourceOwner": "data/presentation/reader-rogations.v1.json",
+  "scope": {
+    "stage": "ROG-R04",
+    "canonicalRows": 35,
+    "targetedRows": 32,
+    "additionalUntouched": [
+      "ROG-R04-PN",
+      "ROG-R04-V",
+      "ROG-R04-R"
+    ],
+    "psalmRows": 8,
+    "suffrageRows": 24,
+    "psalterNumbering": "PSALM_LXIX_VULGATE_69_MODERN_HEBREW_70",
+    "important": "Seven substantive verses and one complete Latin doxology are present in the canonical source; external EN/FR doxologies are abbreviated"
+  },
+  "englishEdition": {
+    "work": "The Catholic Prayer Book and Manual of Meditations (1883)",
+    "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+    "transcriptionOldid": 12282621,
+    "psalmRenderedLines": [
+      338,
+      339,
+      340
+    ],
+    "suffrageRenderedLines": [
+      341,
+      342
+    ],
+    "sourcePresentation": "SEVEN_VERSES_IN_ONE_RUN_ON_PARAGRAPH_DOXOLOGY_ABBREVIATED"
+  },
+  "frenchEdition": {
+    "work": "Corneille, Oeuvres, ed. Marty-Laveaux, tome IX (1862)",
+    "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+    "transcriptionOldid": 14794744,
+    "prosePsalmRenderedLines": [
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019,
+      1020,
+      1021
+    ],
+    "latinSuffragesRenderedLines": [
+      1022,
+      1043
+    ],
+    "frenchSuffragesRenderedLines": [
+      1077,
+      1098
+    ],
+    "sourcePresentation": "SEVEN_FR_LATIN_PARALLEL_PROSE_VERSES_PLUS_ABBREVIATED_GLORIA_AND_SEPARATE_POETIC_PARAPHRASE",
+    "historicLatinTranscriptionCaveat": "Fortifudinis is an apparent error; preserve donor fortitudinis pending original scan check"
+  },
+  "summary": {
+    "psalmSubstantiveVersesWithEnFrCandidates": 7,
+    "psalmDoxologyAbbreviatedInHistoricalEnFr": 1,
+    "doxologyExactLatinPRAYCandidate": 1,
+    "suffrageEnFrHistoricalPairs": 22,
+    "suffrageMissingFromBothHistoricalAtThisPoint": 2,
+    "suffrageAlreadyOwnedOrdinaryFormulaCandidates": 2,
+    "analyzedLatinRows": 32,
+    "fullyApprovedEnglishRows": 0,
+    "fullyApprovedFrenchRows": 0,
+    "additionalCertifiedExactOrdinaryOrPRAYMatches": 0,
+    "confirmedNewTranslationsNeeded": 0
+  },
+  "exceptions": [
+    {
+      "row": "ROG-R04-PS1",
+      "reason": "1883 EN initial imperative is rendered as 'Incline unto my aid' and may need a more exact 1962-edition-qualified witness."
+    },
+    {
+      "row": "ROG-R04-PS8",
+      "reason": "Historical EN/FR abbreviate Gloria/Sicut erat. Existing complete PRAY foundations_glory_be matches the canonical Latin, but is not thereby 1962 procession-certified."
+    },
+    {
+      "rows": [
+        "ROG-R04-S23",
+        "ROG-R04-S24"
+      ],
+      "reason": "Dóminus vobíscum / Et cum spíritu tuo are source-owned in the Rogations reader but omitted between suffrages and collects in both historic source pages. They already have Ordinary candidate cues C0034/C0035. Do not delete or retranslate."
+    },
+    {
+      "row": "ROG-R04-S3",
+      "reason": "Historical 1862 Latin transcription has 'fortifudinis' against source donor 'fortitudinis'; no Latin change permitted from historical typo."
+    }
+  ],
+  "psalm": [
+    {
+      "rowId": "ROG-R04-PS1",
+      "sourcePath": "postLitany.psalm69.0",
+      "latinIncipit": "Deus, in adjutorium meum intende",
+      "translationStatus": "HISTORICAL_PARALLEL_IDENTIFIED_NOT_APPROVED",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 339,
+        "sourceUnit": "ONE_CONTINUOUS_PROSE_PSALM_ORDERED_VERSE_1",
+        "complete": true
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLines": [
+          1012
+        ],
+        "sourceUnit": "PARALLEL_LATIN_FRENCH_PROSE_VERSE_1",
+        "complete": true,
+        "poeticalParaphraseNotApproved": true
+      },
+      "approvedVernacularOwner": null,
+      "reviewFlags": [
+        "EN_1883_FIRST_LINE_IDIOM_INCLINE_UNTO_MY_AID_CHECK_SEMANTIC_EQUIVALENCE"
+      ]
+    },
+    {
+      "rowId": "ROG-R04-PS2",
+      "sourcePath": "postLitany.psalm69.1",
+      "latinIncipit": "Confundantur et revereantur",
+      "translationStatus": "HISTORICAL_PARALLEL_IDENTIFIED_NOT_APPROVED",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 339,
+        "sourceUnit": "ONE_CONTINUOUS_PROSE_PSALM_ORDERED_VERSE_2",
+        "complete": true
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLines": [
+          1013
+        ],
+        "sourceUnit": "PARALLEL_LATIN_FRENCH_PROSE_VERSE_2",
+        "complete": true,
+        "poeticalParaphraseNotApproved": true
+      },
+      "approvedVernacularOwner": null
+    },
+    {
+      "rowId": "ROG-R04-PS3",
+      "sourcePath": "postLitany.psalm69.2",
+      "latinIncipit": "Avertantur retrorsum et erubescant",
+      "translationStatus": "HISTORICAL_PARALLEL_IDENTIFIED_NOT_APPROVED",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 339,
+        "sourceUnit": "ONE_CONTINUOUS_PROSE_PSALM_ORDERED_VERSE_3",
+        "complete": true
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLines": [
+          1014
+        ],
+        "sourceUnit": "PARALLEL_LATIN_FRENCH_PROSE_VERSE_3",
+        "complete": true,
+        "poeticalParaphraseNotApproved": true
+      },
+      "approvedVernacularOwner": null
+    },
+    {
+      "rowId": "ROG-R04-PS4",
+      "sourcePath": "postLitany.psalm69.3",
+      "latinIncipit": "Avertantur statim erubescentes",
+      "translationStatus": "HISTORICAL_PARALLEL_IDENTIFIED_NOT_APPROVED",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 339,
+        "sourceUnit": "ONE_CONTINUOUS_PROSE_PSALM_ORDERED_VERSE_4",
+        "complete": true
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLines": [
+          1015
+        ],
+        "sourceUnit": "PARALLEL_LATIN_FRENCH_PROSE_VERSE_4",
+        "complete": true,
+        "poeticalParaphraseNotApproved": true
+      },
+      "approvedVernacularOwner": null
+    },
+    {
+      "rowId": "ROG-R04-PS5",
+      "sourcePath": "postLitany.psalm69.4",
+      "latinIncipit": "Exsultent et laetentur in te",
+      "translationStatus": "HISTORICAL_PARALLEL_IDENTIFIED_NOT_APPROVED",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 339,
+        "sourceUnit": "ONE_CONTINUOUS_PROSE_PSALM_ORDERED_VERSE_5",
+        "complete": true
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLines": [
+          1016
+        ],
+        "sourceUnit": "PARALLEL_LATIN_FRENCH_PROSE_VERSE_5",
+        "complete": true,
+        "poeticalParaphraseNotApproved": true
+      },
+      "approvedVernacularOwner": null
+    },
+    {
+      "rowId": "ROG-R04-PS6",
+      "sourcePath": "postLitany.psalm69.5",
+      "latinIncipit": "Ego vero egenus et pauper sum",
+      "translationStatus": "HISTORICAL_PARALLEL_IDENTIFIED_NOT_APPROVED",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 339,
+        "sourceUnit": "ONE_CONTINUOUS_PROSE_PSALM_ORDERED_VERSE_6",
+        "complete": true
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLines": [
+          1017
+        ],
+        "sourceUnit": "PARALLEL_LATIN_FRENCH_PROSE_VERSE_6",
+        "complete": true,
+        "poeticalParaphraseNotApproved": true
+      },
+      "approvedVernacularOwner": null
+    },
+    {
+      "rowId": "ROG-R04-PS7",
+      "sourcePath": "postLitany.psalm69.6",
+      "latinIncipit": "Adjutor meus et liberator meus es tu",
+      "translationStatus": "HISTORICAL_PARALLEL_IDENTIFIED_NOT_APPROVED",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 339,
+        "sourceUnit": "ONE_CONTINUOUS_PROSE_PSALM_ORDERED_VERSE_7",
+        "complete": true
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLines": [
+          1018
+        ],
+        "sourceUnit": "PARALLEL_LATIN_FRENCH_PROSE_VERSE_7",
+        "complete": true,
+        "poeticalParaphraseNotApproved": true
+      },
+      "approvedVernacularOwner": null
+    },
+    {
+      "rowId": "ROG-R04-PS8",
+      "sourcePath": "postLitany.psalm69.7",
+      "latinIncipit": "Gloria Patri, et Filio",
+      "translationStatus": "HISTORICAL_DOXOLOGY_ABBREVIATED",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 340,
+        "sourceUnit": "ABBREVIATED_GLORY_BE",
+        "complete": false
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLines": [
+          1019,
+          1020,
+          1021
+        ],
+        "sourceUnit": "ABBREVIATED_PROSE_DOXOLOGY",
+        "complete": false,
+        "poeticalParaphraseNotApproved": true
+      },
+      "approvedVernacularOwner": null,
+      "sharedPrayOwnerCandidate": "foundations_glory_be",
+      "exactNormalizedLatinWithPRAY": true,
+      "reviewFlags": [
+        "EN_1883_DOXOLOGY_ETC_ABBREVIATED",
+        "FR_1862_SICUT_ERAT_ETC_ABBREVIATED",
+        "USE_WHOLE_TRILINGUAL_PRAY_CANDIDATE_ONLY_AFTER_EDITION_AND_CERTIFICATION"
+      ]
+    }
+  ],
+  "suffrages": [
+    {
+      "rowId": "ROG-R04-S1",
+      "sourcePath": "postLitany.suffrages.0.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_1_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1077,
+        "originalLatinLine": 1022,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_1"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S2",
+      "sourcePath": "postLitany.suffrages.1.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_2_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1078,
+        "originalLatinLine": 1023,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_2"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S3",
+      "sourcePath": "postLitany.suffrages.2.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_3_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1079,
+        "originalLatinLine": 1024,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_3"
+      },
+      "reviewFlags": [
+        "FR_LATIN_TRANSCRIPTION_FORTIFUDINIS_SUSPECT"
+      ],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S4",
+      "sourcePath": "postLitany.suffrages.3.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_4_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1080,
+        "originalLatinLine": 1025,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_4"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S5",
+      "sourcePath": "postLitany.suffrages.4.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_5_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1081,
+        "originalLatinLine": 1026,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_5"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S6",
+      "sourcePath": "postLitany.suffrages.5.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_6_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1082,
+        "originalLatinLine": 1027,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_6"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S7",
+      "sourcePath": "postLitany.suffrages.6.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_7_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1083,
+        "originalLatinLine": 1028,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_7"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S8",
+      "sourcePath": "postLitany.suffrages.7.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_8_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1084,
+        "originalLatinLine": 1029,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_8"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S9",
+      "sourcePath": "postLitany.suffrages.8.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_9_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1085,
+        "originalLatinLine": 1030,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_9"
+      },
+      "reviewFlags": [
+        "HISTORICAL_PAPAL_TITLE_SCOPE_COMPARED_TO_CANONICAL_NOSTRO"
+      ],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S10",
+      "sourcePath": "postLitany.suffrages.9.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 341,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_10_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1086,
+        "originalLatinLine": 1031,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_10"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S11",
+      "sourcePath": "postLitany.suffrages.10.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_11_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1087,
+        "originalLatinLine": 1032,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_11"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S12",
+      "sourcePath": "postLitany.suffrages.11.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_12_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1088,
+        "originalLatinLine": 1033,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_12"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S13",
+      "sourcePath": "postLitany.suffrages.12.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_13_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1089,
+        "originalLatinLine": 1034,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_13"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S14",
+      "sourcePath": "postLitany.suffrages.13.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_14_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1090,
+        "originalLatinLine": 1035,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_14"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S15",
+      "sourcePath": "postLitany.suffrages.14.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_15_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1091,
+        "originalLatinLine": 1036,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_15"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S16",
+      "sourcePath": "postLitany.suffrages.15.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_16_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1092,
+        "originalLatinLine": 1037,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_16"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S17",
+      "sourcePath": "postLitany.suffrages.16.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_17_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1093,
+        "originalLatinLine": 1038,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_17"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S18",
+      "sourcePath": "postLitany.suffrages.17.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_18_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1094,
+        "originalLatinLine": 1039,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_18"
+      },
+      "reviewFlags": [
+        "EN_1883_ABSENT_BRETHREN_RESPONSE_HAS_R_COMMA_TYPO"
+      ],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S19",
+      "sourcePath": "postLitany.suffrages.18.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_19_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1095,
+        "originalLatinLine": 1040,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_19"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S20",
+      "sourcePath": "postLitany.suffrages.19.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_20_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1096,
+        "originalLatinLine": 1041,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_20"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S21",
+      "sourcePath": "postLitany.suffrages.20.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_21_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1097,
+        "originalLatinLine": 1042,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_21"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S22",
+      "sourcePath": "postLitany.suffrages.21.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "EN_FR_POSITION_AND_ROLE_ALIGNED_PENDING_EDITION",
+      "englishWitness": {
+        "sourceId": "EN-1883",
+        "url": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "renderedLine": 342,
+        "sourceUnit": "SUFFRAGE_RESPONSE_SEQUENCE_22_IN_RUN_ON_PARAGRAPH"
+      },
+      "frenchWitness": {
+        "sourceId": "FR-1862",
+        "url": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+        "renderedLine": 1098,
+        "originalLatinLine": 1043,
+        "sourceUnit": "SUFFRAGE_ROLE_SEQUENCE_22"
+      },
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S23",
+      "sourcePath": "postLitany.suffrages.22.1",
+      "sourceKind": "VERSICLE",
+      "historicalPairing": "ABSENT_AT_THIS_HISTORICAL_POSITION",
+      "englishWitness": null,
+      "frenchWitness": null,
+      "canonicalOrdinaryCueCandidate": "AO.SM.C0034",
+      "historicalAbsenceMeaning": "HISTORICAL_WITNESS_MISSING_AT_THIS_STAGE_NOT_CANONICAL_LATIN_ABSENT",
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    },
+    {
+      "rowId": "ROG-R04-S24",
+      "sourcePath": "postLitany.suffrages.23.1",
+      "sourceKind": "RESPONSE",
+      "historicalPairing": "ABSENT_AT_THIS_HISTORICAL_POSITION",
+      "englishWitness": null,
+      "frenchWitness": null,
+      "canonicalOrdinaryCueCandidate": "AO.SM.C0035",
+      "historicalAbsenceMeaning": "HISTORICAL_WITNESS_MISSING_AT_THIS_STAGE_NOT_CANONICAL_LATIN_ABSENT",
+      "reviewFlags": [],
+      "translationAdoption": "BLOCKED_PENDING_CONTEXT_EDITION_RIGHTS"
+    }
+  ],
+  "publication": {
+    "en": false,
+    "fr": false,
+    "canonLatinUntouched": true,
+    "speakerAndCeremonyTimingUntouched": true,
+    "rightsReviewRequired": true,
+    "printFacsimileCollationRequired": true,
+    "psalterEditionVerseBoundariesRequired": true,
+    "sourceLanguageTranslationCopied": false
+  },
+  "priorOwnerCensus": {
+    "rogationLatinRows": 187,
+    "ordinaryExactMatch": 22,
+    "prayAdditionalExactMatch": 15,
+    "otherOwnerCandidates": 150
+  },
+  "next": "Use existing PRAY doxology and Ordinary V/R wording candidates after certification, then collate historical English/French prose per source row; no new translations or route changes"
+}
