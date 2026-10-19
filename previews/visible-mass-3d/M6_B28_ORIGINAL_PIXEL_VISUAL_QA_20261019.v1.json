@@ -1,0 +1,124 @@
+{
+  "schema": "AO_M6_B28_ORIGINAL_IMAGE_HUMAN_VISUAL_QA_V1",
+  "date": "2026-10-19",
+  "status": "NATIVE_ORIGINAL_IMAGE_VISUAL_REVIEW_NOT_USER_OR_PUBLICATION_APPROVAL",
+  "acquisition_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39230009467",
+  "acquisition_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39230009467/artifacts/12176473014",
+  "original_files_requested": 8,
+  "original_files_downloaded": 3,
+  "others_not_downloaded_due_to_429": 5,
+  "original_images": [
+    {
+      "object_id": "AL03",
+      "asset_id": "M6B28-AL03-AUCKLAND-GOLD-TABERNACLE",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tabernacle,_Christ_the_King_Catholic_Church,_Auckland.jpg",
+      "photographer": "Bjankuloski06 / Bojan Jankuloski",
+      "copyright_photo": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "dimensions": [
+        5347,
+        3565
+      ],
+      "sha256": "a15ed2d703e6a670542f4c5acb52030da7fc39f9961b20ce4838089caddcc57a",
+      "viewer_qa": "Gold cylindrical Roman Catholic tabernacle with domed crown, small cross, complete recognizable front door, Chi-Rho relief, solid base. High clarity at original pixels; pale marble background. Cropping out floral arrangement on left and lamp edge at upper right can isolate the subject without altering its identity.",
+      "suitable_typology": true,
+      "architecture": "WALL_MOUNTED_ALTAR_TABERNACLE_IN_SITU",
+      "crop_guidance": "Optional modest rectangular framing from the 5347×3565 original preserving cross and entire foot; crop decorative flowers left and unrelated object at upper right; publish only with CC BY 4.0 creator / licence / modification notice.",
+      "editorial_decision": "ASSISTANT_PROVISIONAL_PRIMARY_AL03",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL19",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Neuville-sur-Authou_retable.jpg",
+      "photographer": "Stanzilla",
+      "copyright_photo": "CC0 1.0",
+      "dimensions": [
+        1928,
+        1921
+      ],
+      "sha256": "873a3fc43853c5d593c1ac6b2da1b242d2ec7cbbc568df7497b49744f98e989c",
+      "viewer_qa": "True French Notre-Dame main-altar retable with substantial Annunciation painting, columns, Saints and ornamental surround. Entire altarpiece and altar furniture occupy nearly the whole photograph; dim interior/exposure and distracting additional small altar candlesticks. Good historical explanation image, but not high enough quality for primary atlas portrait.",
+      "editorial_decision": "KEEP_LICENSED_CONTEXT_ONLY_EDITORIAL_HOLD",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SN02",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Ann_Catholic_Church_(Hamilton,_Ohio)_-_interior,_Communion_rail.jpg",
+      "photographer": "Nheyob",
+      "copyright_photo": "CC BY-SA 3.0",
+      "dimensions": [
+        4288,
+        2848
+      ],
+      "sha256": "d54d6391cb8437edff5535aec4e9fb253bcf6875e0f2575d189781b3f19745e9",
+      "viewer_qa": "Full clearly identifiable metal Communion rail with grape motifs, central panels, and stone step; sharp subject but modern freestanding altar table and opened liturgical book plainly visible behind it, which conflicts with Ad Orientem's single authentic high-altar setting standard.",
+      "editorial_decision": "KEEP_CONTEXT_ONLY_REJECT_PRIMARY_TRADITIONAL_RAIL_SCENE",
+      "user_approved": false,
+      "publication_approved": false
+    }
+  ],
+  "reused_previous_original": {
+    "object_id": "AL01",
+    "asset_id": "M6B28-AL01-CASTELNAU-1848-HIGH-ALTAR",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Castelnau-d%27Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+    "photographer": "Didier Descouens",
+    "copyright_photo": "CC BY-SA 4.0",
+    "dimensions": [
+      7360,
+      4912
+    ],
+    "sha256": "fe615df3bedb617e1e9d24c69174e3c713dc0a30a686dbef70b60ff199d4444d",
+    "source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39225455724/artifacts/12173950684",
+    "viewer_qa": "One complete 1848 Roman Catholic high altar in natural architectural setting: fixed rearward altarpiece and tabernacle, no added freestanding forward altar table, exactly six matching altar candlesticks visible three to either side, appropriate historic sanctuary furnishing. Photo sharp at 100%; paintings and statues are physically part of rear architectural setting. A high altar cannot be isolated from its integral church background as if it were a movable vessel.",
+    "editorial_decision": "ASSISTANT_PROVISIONAL_PRIMARY_AL01_AS_ARCHITECTURAL_EXCEPTION_NOT_PORTABLE_ONE_OBJECT",
+    "user_approved": false,
+    "publication_approved": false
+  },
+  "deferred": [
+    {
+      "object_id": "SN07",
+      "status": "WIKIMEDIA_429_NO_ORIGINAL",
+      "notes": "Judgefloro Philippine Catholic credence not yet visually inspected."
+    },
+    {
+      "object_id": "BK01",
+      "status": "SKIPPED_AFTER_429",
+      "notes": "MK777 1962 Missal original not downloaded; prior 2008 photograph remains a research lead only."
+    },
+    {
+      "object_id": "AL10",
+      "status": "SKIPPED_AFTER_429",
+      "notes": "Candé altar-gradine/tabernacle ensemble unverified."
+    },
+    {
+      "object_id": "BK02",
+      "status": "SKIPPED_AFTER_429",
+      "notes": "Japanese Missal stand remains exotic historical fallback, not typical 1962."
+    },
+    {
+      "object_id": "SN04",
+      "status": "SKIPPED_AFTER_429",
+      "notes": "Sanctuary step source not inspected."
+    }
+  ],
+  "reconciled_counts": {
+    "pilot_topics": 30,
+    "previous_assistant_provisional": 15,
+    "new_assistant_provisional_added": [
+      "AL03",
+      "AL01"
+    ],
+    "new_assistant_provisional_total": 17,
+    "still_unfilled_total": 13,
+    "still_missing_physical_photographs": 11,
+    "annotation_exceptions": 2,
+    "published_images_added": 0
+  },
+  "policy": "Architectural subjects may be depicted in complete isolated in-situ composition rather than portable white-background studio image. A near-whole altar with physically integral ornamentation is one architectural subject; a modern forward altar behind a rail disqualifies that photograph from the primary traditional setting. No other exceptions inferred.",
+  "canonical_source_catalogue_changed": false,
+  "Mass_readers_changed": false,
+  "user_approved": false,
+  "publication_approved": false
+}
