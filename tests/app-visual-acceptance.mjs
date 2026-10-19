@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
+import { captureTypographyTriptych } from "./typography-trial-capture.mjs";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/visual-acceptance");
@@ -294,6 +295,31 @@ try{
   assert.equal(designBaseline.gutter,"12px","390px phone does not resolve canonical gutter");
   assert.equal(designBaseline.controlHeight,"44px","canonical touch-control height drifted");
   await shot("01-home");
+  await captureTypographyTriptych(page,{
+    name:"today",out,scope:".homeScreen",
+    selectors:[
+      ["title",".homeScreen.aoTodayV2 .aoTodayV2Frontispiece h1"],
+      ["heading",".homeScreen .aoTodayV2ReadReflect h2"],
+      ["body",".homeScreen.aoTodayV2 .aoTodayV2Mass"],
+      ["nav","#ao-global-ribbon button"],
+    ],
+  });
+  // Scripture is a separate true full-screen owner: open and close it
+  // before Mass preflight so this is a real reading-page comparison.
+  const scriptureLauncher=page.locator(".homeScreen [data-home-scripture]").first();
+  await scriptureLauncher.evaluate(button=>button.click());
+  await page.locator("#ao-scripture-overlay").waitFor({state:"visible",timeout:16000});
+  await captureTypographyTriptych(page,{
+    name:"scripture",out,scope:"#ao-scripture-overlay",
+    selectors:[
+      ["header","#ao-scripture-overlay .aoScriptureHeader h2"],
+      ["prose","#ao-scripture-overlay .aoScriptureLibrary"],
+      ["control","#ao-scripture-overlay button"],
+    ],
+  });
+  await page.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1?.close?.());
+  await page.locator("#ao-scripture-overlay").waitFor({state:"hidden",timeout:12000});
+
 
   await page.waitForFunction(()=>typeof globalThis.AO_CELEBRATION_API?.openPreflight==="function",null,{timeout:10000});
   await page.locator("[data-home-mass-entry]").click();
@@ -1230,6 +1256,15 @@ try{
   assert.notEqual(prayReader.latinHidden,prayReader.vernHidden,"PRAY translation pair does not expose exactly one visible language");
   assert.equal(prayReader.legacyOpen,false,"legacy Prayer Book reopened inside prayer reading");
   await shot("03b-pray-library-prayer");
+  await captureTypographyTriptych(page,{
+    name:"prayer",out,scope:"#aoPray435930 .aoP435930LibraryReader",
+    selectors:[
+      ["title","#aoPray435930 .aoP435930Head h1"],
+      ["prayer","#aoPray435930 .aoP435930LibraryReader .aoP435930Text"],
+      ["metadata","#aoPray435930 .aoP435930LibraryReader .aoP435930Source"],
+    ],
+  });
+
 
   // Later approved donor surfaces: completed bilingual V4 Novenas plus the v38.1 traditional PRAY modules.
   await page.evaluate(()=>globalThis.AO_PRAY_V435930?.open?.("pray.novenas",{returnContext:null}));
