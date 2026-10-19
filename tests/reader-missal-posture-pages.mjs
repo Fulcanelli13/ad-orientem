@@ -190,6 +190,10 @@ assert.notEqual(find(posturalPages,c6),findBlock(posturalPages,"AO.SM.B030"),
   "Sourced B030 STAND to SIT transition failed to create a book page");
 assert.equal(find(posturalPages,c6)?.nextPosture?.value,"SIT");
 assert.equal(findBlock(posturalPages,"AO.SM.B030")?.postureEntry?.cueId,c9);
+assert.equal(findReaderModeAnchorCard(postureAware.presentationModel,{
+  cueId:c9,sourceSectionId:"AO.CARD.010",
+})?.sectionId,findBlock(posturalPages,"AO.SM.B030")?.sectionId,
+  "LIVE to Missal navigation should land on the registered Proper posture page");
 assert.equal(postureAware.sourceModel.totalCards,30);
 assert.equal(postureAware.sourceModel,postureAware.presentationModel.sourceAuthorityModel,
   "Posture-aware pages altered canonical 30-card source authority");
