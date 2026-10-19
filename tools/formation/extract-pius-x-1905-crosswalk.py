@@ -101,9 +101,32 @@ def extract_long(raw, slug, first, last):
             answer = section[answer_mark.end():].strip()
         else:
             answer = ""
+        printed_number = int(m.group(1))
+        position_number = first + i
+        numbering_hold = None
+        if printed_number != position_number:
+            # One corroborated museum-transcription misprint: after 959 the
+            # question "Che differenza v'è tra peccato e vizio?" is printed
+            # as a second 950, followed by 961. Another digital witness
+            # labels the same question 960. Keep both numbers in the audit.
+            supported = (
+                slug == "parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/"
+                and printed_number == 950 and position_number == 960
+                and norm(question) == norm("Che differenza v’è tra peccato e vizio?")
+                and i > 0 and int(qmarks[i-1].group(1)) == 959
+                and i + 1 < len(qmarks) and int(qmarks[i+1].group(1)) == 961
+            )
+            if not supported:
+                raise ValueError(
+                    f"Unexpected source numbering in {slug}: position {position_number}, "
+                    f"printed {printed_number}, question {question[:80]!r}"
+                )
+            numbering_hold = "MUSEUM_SECOND_Q950_POSITIONALLY_IDENTIFIED_AS_Q960"
         records.append({
-          "id": f"PX1905-Q{int(m.group(1)):03d}",
-          "n": int(m.group(1)),
+          "id": f"PX1905-Q{position_number:03d}",
+          "n": position_number,
+          "printed_number": printed_number,
+          "numbering_hold": numbering_hold,
           "section": slug,
           "question": re.sub(r"\s+"," ",question).strip(),
           "answer": re.sub(r"\s+"," ",answer).strip(),
@@ -194,8 +217,15 @@ def run(out):
                 "long_without_lexical_candidate":sum(not x["candidate_same_topic_qids"] for x in crosswalk),
                 "exact_normalized_full_question_collisions_within_long":len(long)-len({norm(x["question"]) for x in long}),
                 "approved_semantic_merges":0},
+      "numbering_holds":[{"id":r["id"],"printed_number":r["printed_number"],
+                          "positionally_assigned_number":r["n"],"hold":r["numbering_hold"],
+                          "museum_url":MUSEUM+r["section"],
+                          "cross_witness_url":"https://www.lampadaaimieipassi.it/webgmf/blog/index.php?idArticolo=20181121151751&idp=CCC_Pio_X"}
+                         for r in long if r["numbering_hold"]],
       "long_question_manifest":[{"id":r["id"],"section":r["section"],"question_sha256":digest(r["question"]),
-                                "answer_sha256":digest(r["answer"]),"question_chars":len(r["question"]),"answer_chars":len(r["answer"])} for r in long],
+                                "answer_sha256":digest(r["answer"]),"question_chars":len(r["question"]),
+                                "answer_chars":len(r["answer"]),"printed_number":r["printed_number"],
+                                "numbering_hold":r["numbering_hold"]} for r in long],
       "crosswalk":crosswalk,
       "restrictions":["Score is lexical candidate, not theological same-intent judgment",
                       "Q-number authenticity is tied to museum HTML, not collated 1905 first-print scan",
@@ -216,6 +246,23 @@ def selftest():
     assert digest("PÉrchè Dio?")==digest("perche Dio")
     pairs=candidate_links([{"id":"PX1905-Q001","question":"Che cosa è la fede?"}],a)
     assert len(pairs)==1
+    # Reproduce the second printed Q950 at sequential position Q960.
+    slug="parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/"
+    fixture="".join(
+        f"<p>{950 if n==960 else n} D. "
+        f"{'Che differenza v’è tra peccato e vizio?' if n==960 else 'Domanda di prova?'}</p>"
+        f"<p>R. Risposta.</p>"
+        for n in range(950,962)
+    )
+    recovered=extract_long(fixture,slug,950,961)
+    assert len(recovered)==12 and recovered[10]["id"]=="PX1905-Q960"
+    assert recovered[10]["printed_number"]==950 and recovered[10]["numbering_hold"]
+    try:
+        extract_long(fixture.replace("Che differenza v’è tra peccato e vizio?", "Testo diverso?"),slug,950,961)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("Unapproved transcription correction must fail closed")
     print("Pius X historical research extractor selftest OK")
 
 
