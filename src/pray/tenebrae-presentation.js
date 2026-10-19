@@ -3,6 +3,18 @@ import {devotionalProgressMarkup} from "./devotional-progress.js";
 import {tenebraeGuideCopy,TENEBRAE_GUIDE_LINKS} from "./tenebrae-guides.js";
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const nl=x=>esc(x).replace(/\n/g,"<br>");
+// The startup HTML is a certified thin shell. The Office module installs
+// its scoped presentation style on first render instead of modifying it.
+function ensureTenebraeReaderStyles(){
+ const doc=globalThis.document;
+ if(!doc?.createElement||!doc?.head)return;
+ if(doc.getElementById("ao-tenebrae-shared-reader-v1"))return;
+ const link=doc.createElement("link");
+ link.id="ao-tenebrae-shared-reader-v1";
+ link.rel="stylesheet";
+ link.href=new URL("./tenebrae-shared-reader.css",import.meta.url).href;
+ doc.head.append(link);
+}
 function label(en,fr,locale){return locale==="fr"?fr:en}
 function stepTitle(step,locale){
  const id=String(step?.id??""),n=step?.metadata?.psalm??null;
@@ -20,6 +32,7 @@ function stepTitle(step,locale){
  return id;
 }
 export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular",french=false,data=null,loading=false,error=null,guided=true}={}){
+ ensureTenebraeReaderStyles();
  const loc=french?"fr":"en",L=(en,fr)=>label(en,fr,loc),steps=data?.steps??[];
  const current=steps[index]??null;
  const guide=tenebraeGuideCopy({day,hour,step:current,french});
