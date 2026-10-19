@@ -2420,7 +2420,8 @@ export async function mountNativeReaderPreview({
     if((changed || !activeCueId) && String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"){
       const firstSourceCue=(visibleCard.paragraphs??[])
         .flatMap(paragraph=>paragraph.sourceCueIds??[])
-        .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)))??null;
+        .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)))??
+        visibleCard.postureEntry?.cueId??null;
       activeCueId=firstSourceCue;
       if(firstSourceCue)transientGuard.resolveCue(firstSourceCue);
     }
@@ -2435,7 +2436,8 @@ export async function mountNativeReaderPreview({
         ? (()=>{
           const first=(visibleCard.paragraphs??[])
             .flatMap(row=>row.sourceCueIds??[])
-            .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
+            .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)))??
+            visibleCard.postureEntry?.cueId??null;
           const sourced=first&&ready.cueState.supported
             ? ready.cueState.project(first):null;
           if(!sourced?.supported)return null;
@@ -2591,8 +2593,11 @@ export async function mountNativeReaderPreview({
     armPartCinematic(null);
     transientGuard.begin();
 
-    const cueStillPresent=Boolean(desiredCue && (current.paragraphs??[]).some(paragraph=>
-      (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(desiredCue))
+    const cueStillPresent=Boolean(desiredCue && (
+      current.postureEntry?.cueId===desiredCue ||
+      (current.paragraphs??[]).some(paragraph=>
+        (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(desiredCue))
+      )
     ));
     observedPriestEvent=null;
     activeCueId=cueStillPresent ? desiredCue : null;
