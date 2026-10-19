@@ -1,7 +1,7 @@
 {
   "schema": "AO_MAGISTERIUM_DENZINGER_EDITION_BIBLIOGRAPHY_V1",
   "date": "2026-10-19",
-  "status": "BIBLIOGRAPHY_ONLY_NONE_PAGE_ENTRY_COLLATED",
+  "status": "B8_HISTORICAL_SCAN_AND_EDITION_BIBLIOGRAPHY_ONLY_NO_ENTRY_COLLATION",
   "editions": [
     {
       "id": "DH43_DE_2010",
@@ -38,12 +38,55 @@
       "url": "https://catalogue.bnf.fr/ark:/12148/cb366932231",
       "editionEntryConcordanceChecked": false,
       "rightsCleared": false
+    },
+    {
+      "id": "DZ_1900_LATIN_PRINT",
+      "year": 1900,
+      "label": "Printed Latin Enchiridion, Würzburg, Stahel; facsimile (506 page)",
+      "isbn": null,
+      "url": "https://commons.wikimedia.org/wiki/File:Enchiridion_symbolorum_et_definitionum_-_quae_de_rebus_fidei_et_morum_a_conciliis_oecumenicis_et_summis_pontificibus_emanarunt_(IA_enchiridionsymbo00denz_0).pdf",
+      "printedVolumeDigitized": true,
+      "volumeProof": "Commons catalogue identifies date/publisher; Commons scan preview page 1 inspected; no passage pages collation",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false,
+      "earliestPossibleEntries": "Historical material issued through 1900; cannot index later 1905-1962 statements."
+    },
+    {
+      "id": "DZ29_1955_RAHNER",
+      "year": 1955,
+      "label": "29th edition edited by Karl Rahner, Herder, 787 pages",
+      "isbn": null,
+      "url": "https://books.google.com/books/about/Enchiridion_symbolorum.html?id=lP66gc5F1cgC",
+      "printedVolumeDigitized": false,
+      "volumeProof": "Google Books bibliographic metadata, limited preview; no numbered entry read from actual volume",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false
+    },
+    {
+      "id": "DZ30_1954_RAHNER",
+      "year": 1954,
+      "label": "30th edition revised by Karl Rahner, Herder, original of Deferrari English translation",
+      "isbn": null,
+      "url": "https://biblia.com/api/plugins/embeddedpreview?historybuttons=false&layout=minimal&navigationbox=false&resourceName=LLS%3ASRCCATDOGMA&sharebutton=false",
+      "printedVolumeDigitized": false,
+      "volumeProof": "Deferrari translator prefatory provenance identifies 1954 Herder 30th edition; English translation copyright 1957",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false
     }
   ],
   "onlineCandidates": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
   "metrics": {
-    "bibliographicEditions": 4,
+    "bibliographicEditions": 7,
     "printedEntryNumbersChecked": 0,
-    "approvedCrosswalks": 0
-  }
+    "approvedCrosswalks": 0,
+    "scannedHistoricalLatinVolumesLocated": 1,
+    "editionVerifiedConcordances": 0
+  },
+  "sourceHierarchyNotes": [
+    "1900 Latin print facsimile and 1913 French Catechism print are *different works*, never crosswire.",
+    "A printed original Latin Denzinger facsimile is edition evidence, not an independent magisterial source document.",
+    "The 1954 thirty-edition primary book and 1957 English derivative are separately licensed; bibliographic identity alone does not authorize reproduction.",
+    "Candidate DS/DH-style numbers from unversioned online sources cannot be certified as DH43 or DH45.",
+    "The 1900 scan cannot contain later Vatican-era declarations (1912 onward)."
+  ]
 }
