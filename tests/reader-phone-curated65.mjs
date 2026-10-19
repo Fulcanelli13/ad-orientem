@@ -152,7 +152,7 @@ try{
       "Gloria · The Celebrant's Intonation",
       "Gloria · Praise and Supplication",
       "Credo · Incarnation, Passion and Resurrection",
-      "Sanctus — Benedictus",
+      "Sanctus",
       "Words of Consecration and Elevation · Host",
       "Words of Consecration and Elevation · Chalice",
       "Communion Antiphon",
@@ -210,7 +210,7 @@ try{
       }
       if(title==="Gloria · The Celebrant's Intonation")assert.equal(state.track,null);
       if(title==="Gloria · Praise and Supplication")assert.equal(state.track,"GLORIA");
-      if(title==="Sanctus — Benedictus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
+      if(title==="Sanctus")assert.equal(state.track,"SANCTUS_BENEDICTUS");
     }
     // Walk every liturgical card in source order, not merely selected screenshots.
     // A local second Confiteor is present in source audit, but absent from
@@ -287,7 +287,7 @@ try{
     // are resolved when source-owned cues become visible in the review.
     const resolvedIcons=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
-      const stage=api.model.cards.find(c=>c.title==="Sanctus — Benedictus");
+      const stage=api.model.cards.find(c=>c.title==="Sanctus");
       api.showSequence(stage.sequence);
       return [...document.querySelectorAll('[data-icon-slot]')].filter(el=>
         !el.hidden && el.getBoundingClientRect().width>0 &&
