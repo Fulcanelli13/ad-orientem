@@ -13,6 +13,12 @@ const fold=v=>String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/\s+/g," ").trim();
 
 function english(text){
+ // Second-person autobiographical assessments are still individual
+ // spiritual diagnoses, not an invitation to retrieve doctrinal definitions.
+ const secondPersonCase=/\b(did your|does your|do your|has your|have your|were your)\b/.test(text)
+  &&/\b(distract|tempt|prayer|confession|soul|thought|fault|conscience)\b/.test(text)
+  &&/\b(grace|salvation|mortal|guilty|guilt|sin|damnation|forgiven|abandoned|possess)\b/.test(text);
+ if(secondPersonCase)return true;
  const personal=/\b(i|i'm|i've|me|my|mine|myself)\b/.test(text);
  if(!personal)return false;
  // A demand for the *definition* of grace does not become a personal verdict
