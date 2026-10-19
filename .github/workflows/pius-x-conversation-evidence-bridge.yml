@@ -11,6 +11,8 @@ on:
       - 'data/learn/research/pius-x-two-cross-family-intent-joins-20261019.v1.json'
       - 'data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json'
       - 'data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json'
+      - 'data/learn/research/pius-x-batch50-part-*.v1.json'
+      - 'data/learn/research/pius-x-batch50-production-manifest-20261019.v1.json'
       - 'docs/research/PIUS-X-TEN-CONVERSATION-PILOT-20261019.md'
       - 'data/learn/research/pius-x-12case-paraphrases-followups-20261019.v1.json'
       - 'data/learn/research/pius-x-pr1443-184topic-bridge-measured-outcome-20261019.v1.json'
@@ -29,6 +31,7 @@ on:
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
       - 'tests/pius-x-conversation-intent-bridge.mjs'
       - 'tests/pius-x-ten-conversation-content-pilot.mjs'
+      - 'tests/pius-x-batch50-content-acceptance.mjs'
       - 'tests/pius-x-pr1443-router-integration-diagnostic.mjs'
       - 'tests/pius-x-pr1443-184topic-bridge-acceptance.mjs'
       - 'tests/pius-x-pr1443-source-aware-48-regression.mjs'
@@ -48,6 +51,7 @@ jobs:
           node-version: '22'
       - run: node tests/pius-x-conversation-intent-bridge.mjs
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
+      - run: node tests/pius-x-batch50-content-acceptance.mjs
 
   long-1905-index-extraction:
     runs-on: ubuntu-latest
