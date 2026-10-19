@@ -1,7 +1,7 @@
 {
   "schema": "AO_MAGISTERIUM_DENZINGER_EDITION_BIBLIOGRAPHY_V1",
   "date": "2026-10-19",
-  "status": "B8_HISTORICAL_SCAN_AND_EDITION_BIBLIOGRAPHY_ONLY_NO_ENTRY_COLLATION",
+  "status": "B9_NAMED_1911_EDITION_OCR_CHECKS_NO_FACSIMILE_OR_MODERN_DH_CERTIFICATION",
   "editions": [
     {
       "id": "DH43_DE_2010",
@@ -72,15 +72,30 @@
       "volumeProof": "Deferrari translator prefatory provenance identifies 1954 Herder 30th edition; English translation copyright 1957",
       "editionEntryConcordanceChecked": false,
       "rightsCleared": false
+    },
+    {
+      "id": "DZ11_BANNWART_1911",
+      "year": 1911,
+      "label": "Editio undecima — Clemens Bannwart SJ, Herder (Friburgi Brisgoviae)",
+      "isbn": null,
+      "url": "https://openlibrary.org/books/OL24756683M/Enchiridion_symbolorum_definitionum_et_declarationum_de_rebus_fidei_et_morum",
+      "editionIdentityVerifiedByTitlePageOCR": true,
+      "digitizedFacsimileUrl": "https://archive.org/details/enchiridionsymbo00denz",
+      "ocrUrl": "https://archive.org/stream/enchiridionsymbo00denz/enchiridionsymbo00denz_djvu.txt",
+      "editionEntryConcordanceChecked": false,
+      "entryOcrLeadsFile": "data/learn/magisterium-denzinger-1911-ocr-entry-review.v1.json",
+      "individualPrintedPageImagesCollated": 0,
+      "rightsCleared": false
     }
   ],
   "onlineCandidates": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
   "metrics": {
-    "bibliographicEditions": 7,
+    "bibliographicEditions": 8,
     "printedEntryNumbersChecked": 0,
     "approvedCrosswalks": 0,
     "scannedHistoricalLatinVolumesLocated": 1,
-    "editionVerifiedConcordances": 0
+    "editionVerifiedConcordances": 0,
+    "namedEditionLegacyNumberOcrLeads": 13
   },
   "sourceHierarchyNotes": [
     "1900 Latin print facsimile and 1913 French Catechism print are *different works*, never crosswire.",
