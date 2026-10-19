@@ -4,6 +4,7 @@ import {readFile,writeFile,mkdir} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {probeTextFocus} from "./support/text-focus-probe.mjs";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/live-mass-visual-focus");
@@ -118,8 +119,42 @@ try{
     assert.notEqual(later.activeIndex,opening.activeIndex,
       spec.lang+"/"+card.title+" scroll did not transfer visual reading focus");
   }
+  // The older cue-only focus coverage passed while users still reported
+  // skipped Proper and short-response paragraphs. Audit *all* rendered
+  // reading rows across the actual 64-card production LIVE presentation.
+  // Source cue/ribbon state is explicitly not the oracle for visual focus.
+  const readingAudit=[];
+  if(spec.isMobile&&spec.lang==="en"){
+    for(const item of initial.named){
+      const present=await page.evaluate(async sequence=>{
+        const card=window.__AO_PHONE_PREVIEW?.showSequence(sequence);
+        await new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+        return !!card;
+      },item.seq);
+      if(!present)continue; // source-owned omitted/state-only steps
+      const probe=await page.evaluate(probeTextFocus,{
+        rootSelector:"#ao-r17-native-reader-preview",
+        scrollSelector:".ao-prayer-card",
+        paragraphSelector:".ao-reader-paragraph",
+        owner:"mass-reading",
+        label:item.title
+      });
+      if(!probe.registered)continue;
+      readingAudit.push({
+        title:item.title,registered:probe.registered,reached:probe.reached,
+        skipped:probe.unreachableTotal,duplicates:probe.duplicates
+      });
+      assert.equal(probe.duplicates,0,
+        "More than one visual paragraph simultaneously active: "+item.title);
+      assert.equal(probe.unreachableTotal,0,
+        "Visually skipped LIVE paragraphs in "+item.title+": "+
+          JSON.stringify(probe.unreachable));
+    }
+    assert.ok(readingAudit.length>=55,
+      "Production LIVE paragraph audit did not cover the expected cards");
+  }
   assert.deepEqual(errors,[],spec.lang+" browser errors");
-  findings.cases.push({...spec,curated:initial.curated,total:initial.modelCards,samples});
+  findings.cases.push({...spec,curated:initial.curated,total:initial.modelCards,samples,readingAudit});
   console.log("LIVE_VISUAL_FOCUS="+JSON.stringify({viewport:spec.width,lang:spec.lang,
     curated:initial.curated,cards:cards.length,checks:samples.length,
     minInactive:Math.min(...samples.flatMap(x=>x.farOpacities)),
