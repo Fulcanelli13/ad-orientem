@@ -631,6 +631,16 @@
         {
           "documentId": "TRENT-VII-1547",
           "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XIV-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P028",
+            "MG-P033"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
         }
       ],
       "existingOwners": [
@@ -799,6 +809,16 @@
         {
           "documentId": "TRENT-XXV-1563",
           "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XXII-1562",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P046",
+            "MG-P052"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
         }
       ],
       "existingOwners": [
@@ -862,6 +882,15 @@
         {
           "documentId": "TRENT-XXV-1563",
           "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XXII-1562",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P061"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
         }
       ],
       "existingOwners": [
@@ -1155,6 +1184,29 @@
         {
           "documentId": "VATICAN-II-SACROSANCTUM-1963",
           "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE"
+        },
+        {
+          "documentId": "TRENT-XIII-1551",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P015"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
+        },
+        {
+          "documentId": "TRENT-XXII-1562",
+          "linkStatus": "TOPIC_RELATIONSHIP_PROPOSED_UNVERIFIED_PASSAGE",
+          "relationType": "PASSAGE_LEVEL_SECONDARY_CONTEXT_PROPOSED",
+          "basisPassageIds": [
+            "MG-P016",
+            "MG-P017",
+            "MG-P048",
+            "MG-P049",
+            "MG-P054",
+            "MG-P056"
+          ],
+          "scopeNote": "Passage-level context only; no source-text certification, doctrinal authority decision, or user-facing answer authorization."
         }
       ],
       "existingOwners": [
@@ -1353,10 +1405,12 @@
   ],
   "metrics": {
     "doctrineTopics": 51,
-    "topicToDocumentCandidates": 101,
+    "topicToDocumentCandidates": 106,
     "indexedApologeticsLinks": 53,
     "indexedChurchCrisisLinks": 10,
-    "originalPassageCertifications": 0
+    "originalPassageCertifications": 0,
+    "b4ReconciledPassageTopicEdges": 12,
+    "b4AddedDocumentCandidatePairs": 5
   },
   "policy": {
     "noDuplicatedAnswers": true,
@@ -1371,6 +1425,7 @@
     "PX1912-Q240 concerns charity, not a direct catechism entry on predestination; do not link.",
     "APOL-038 centres justification/salvation, not specifically the definition of Original Sin; separate topic.",
     "APOL-048 concerns religious pluralism, not the legal/doctrinal question of religious liberty; do not link.",
-    "All remaining relationships are provisional topical joins, not assertion-level provenance."
+    "All remaining relationships are provisional topical joins, not assertion-level provenance.",
+    "B4: five proposed document-topic contextual joins reconcile 12 previously orphaned passage-topic edges. Topic-level inclusion must not be mistaken for claim, quotation, or character-voice certification."
   ]
 }
