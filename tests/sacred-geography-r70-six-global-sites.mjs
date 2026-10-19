@@ -68,7 +68,7 @@ const dataset={directory:{records:[],communities:[]},
 };
 const proj=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,proj,{today:"2026-10-11"});
-assert.equal(profiles.length,g.places.length);
+assert.equal(profiles.length,geo.places.length);
 assert.equal(exploreMapFeatures(proj.byLens.shrines).length,257);
 for(const row of newSites){
  const profile=profiles.find(p=>p.place_id===row.id);
