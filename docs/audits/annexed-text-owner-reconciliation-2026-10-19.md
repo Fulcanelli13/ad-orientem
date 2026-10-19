@@ -1,0 +1,114 @@
+# Mass annex text ownership — reconciliation before any further translations
+
+**19 October 2026 · PR #1441 · audit / not a release certificate**
+
+## Decision
+
+**STOP authoring translations for annexes until existing liturgical owners have been reconciled.**
+The previous work conflated "no `english` / `french` property on a particular annex reader row"
+with "no translation exists in Ad Orientem". These are not equivalent.
+None of the new editorial translations in this draft PR is automatically approved for
+canonical adoption. This reconciliation is an **index of sources, not another text corpus**.
+
+The source-to-reader policy already exists at
+`data/mass/source-reconciliation-gates.v1.json`. This audit follows it and
+does not replace the existing source of truth.
+
+## Existing text owners, with separation of concerns
+
+| Owner | Actual scope | Release / reuse rule |
+| --- | --- | --- |
+| `data/presentation/reader-text-sung.v1.json` and `reader-text-low.v1.json` | Latin and English fixed Mass Ordinary with stable `AO.SM.C####` cue IDs | Preserve canonical cue identity and the approved canonical-text-corrections overlay. Do **not** create a second translation of identical short prayers |
+| `data/presentation/reader-french-ordinary.v1.json` | French translation keyed to **256 Ordinary cues**, pinned to Divinum Officium | Reuse source-owned wording where Latin and speaker/context match; no copy into another authority |
+| `docs/research/MASS-RED-MISSAL-ENGLISH-SEVEN-SOURCE-HOLDS-CLOSURE-20261019.md` and existing English correction registry | The independent English editorial collation of the fixed 1962 Ordo | **241/241 genuine Ordinary text cues adjudicated** (209 retained, 32 amended; remaining 15 non-text cues). Do not start another red-Missal collation |
+| `data/mass/rogation-proper-trilingual.v1.json` | **Mass Proper** of the Greater/Minor Litanies, EN/FR reviewed, Latin checked against Vatican 1962 printed pp. 347–349 | The proper is already bilingual. It is **not** the separate pre-Mass/extra-Mass Rogation procession or Litany |
+| `data/presentation/reader-{asperges,palm,ash,candlemas,rogations,requiem-absolution,corpus-christi,holy-thursday-post}.v1.json` | Annexed-rite original Latin and ceremony-specific stages | The original Latin and 1962/ceremonial event IDs remain with each original owner; do not transplant Mass Ordinary speaker/cue timing |
+| `src/mass/reader-eucharistic-hymn-text.js` **(draft PR only)** | Existing single provisional editorial EN/FR hymn reused for Corpus Christi and Holy Thursday | Shared Latin is demonstrably the same hymn; any acceptance must reference one approved stanza owner, not create two translations |
+| `src/mass/reader-requiem-text.js` and `reader-holy-thursday-psalm.js` **(draft PR only)** | Provisional editorial translations newly composed on this branch | **HOLD FOR COLLATION** against existing translations, Scripture witnesses and wording policy. Passing a fingerprint or mobile test is not an editorial approval |
+| `data/scripture/witness/*` and the canonical Scripture-source modules | Scripture languages and alternate editions | Candidate verse-level reuse only after confirming **book, chapter, Latin recension/psalter and exact segment boundaries**; not interchangeable with Pian Psalter by superficial wording |
+
+## Direct, independently observed duplicate Latin passages
+
+These are **exact normalized Latin** matches, not merely similar themes.
+The read-only reconciler prints **every** source location and matching cue.
+
+| Rite sources found with repeated text | Canonical Ordinary cue | Required decision |
+| --- | --- | --- |
+| Asperges: `Ostende nobis`, `Et salutare tuum`, `Domine exaudi`, `Et clamor`, `Dominus vobiscum`, `Et cum spiritu tuo` | C0030–C0035 | Reuse the already reviewed EN/FR where the same formula is actually pronounced. Do not import the Foot-of-Altar gesture or stage |
+| Palm, Ash, Candlemas: `Dominus vobiscum`, `Et cum spiritu tuo`, `Oremus` (as present) | C0034–C0036 | Shared translation candidate; ceremony timing and speaker local to that rite |
+| Requiem: repeated `Kyrie/Christe`, `Domine exaudi`, `Et clamor`, `Dominus vobiscum`, `Et cum spiritu tuo`, `Amen` | C0044/C0047, C0032–C0035, C0020 | The new draft has some wording differences from the canonical English/French. Review **once**; the owner is not the newly written Requiem file |
+| Rogation procession: repeated Kyrie, `Agnus Dei`, `Domine exaudi`, `Et clamor`, and several responses | C0044/C0047, C0222, C0032–C0033 etc. | Large single Litany should be mapped against the existing Litany/prayer and cue owners before declaring a translation gap |
+| Corpus Christi Benediction: `Oremus` | C0036 | An existing Ordinary formula, not a novel translation task |
+| Corpus Christi and Holy Thursday: all six `Pange lingua` / `Tantum ergo` stanzas | Shared hymn owner; not ordinary cues | Already **one** provisional translation registry in the draft PR. Collate once, then reference this owner from both rite controllers |
+| Palm and Candlemas: `Procedamus in pace` | Shared annex formula, separate processions | Reuse content only; never combine the procession graph or participation/action state |
+
+**Example of why this matters:** the Requiem draft uses a modern English
+"And with your spirit" while the reviewed Ordinary corpus supplies
+"And with thy spirit" for the identical Latin `Et cum spíritu tuo`.
+Likewise, some French formulations differ slightly. These are
+**wording-owner collisions**, not evidence that another translation is needed.
+
+The Ordinary English itself has an effective pre-reader correction
+layer: before selecting a reusable translation, resolve the **effective
+approved text**, not merely the frozen LOW or SUNG donor's original English.
+
+## Scope distinctions the automated comparison must preserve
+
+- **No exact Ordinary match does not mean missing translation.** It means
+  only that one source family did not contain the exact normalized Latin.
+- **Same Latin does not transfer actions.** E.g. `Gloria tibi` and
+  Gospel-cross cues depend on liturgical context, not shared typography.
+- **Rogation procession ≠ Rogation Mass Proper.** The printed, published
+  three-language Mass Proper cannot be miscounted as a translated
+  112-invocation procession litany.
+- **Holy Thursday Psalm 21** uses a **Pian Psalter** Latin witness; do
+  not claim a Vulgate, Crampon or Douay verse is the same reading without
+  chapter/verse and recension comparison. Clerics present/absent controls
+  how much is prayed, independently of having the whole source text.
+- The user's 2013 Red Missal English witness has already undergone
+  an independent source-specific review in another PR. It must not be
+  rediscovered or copied in this annex pipeline.
+- Provisional text passed the browser tests, but that only certifies
+  **rendering and alignment**, not final editorial text provenance.
+
+## Source-preserving machine audit
+
+Run `node tools/mass/reconcile-annexed-text-owners.mjs --write`
+to generate `artifacts/annexed-text-owner-reconciliation.json`
+from the repository's **existing** 1962 data. It writes no translations.
+The report contains eight rite scopes, Latin source paths, matching
+Ordinary cue IDs, repeated Latin across different rites, and unmatched
+Latin with **no fabricated missing-translation count**.
+
+The CI guard `tests/annexed-text-owner-reconciliation.mjs` checks
+Asperges, Palm, Ash, Candlemas, Rogations, Requiem and Corpus Ordinary
+text-reuse candidates, the shared Eucharistic hymn, the separate
+Rogation Mass Proper, and explicit rejection of false gap estimates.
+
+This index remains **derived**. The existing source and cue owners,
+not the generated comparison report, remain canonical.
+
+## Priority order after this reconciliation
+
+1. **Exact source-to-cue ownership map** of every current annex row:
+   reuse / collision requiring one editorial choice / unique genuine
+   annex text / conditional or variant source.
+2. **Effective wording collation** against existing Ordinary, existing
+   Scripture/prayer library and existing Rogation Proper, not source-file
+   `english` flags. Do not translate anything during this step.
+3. **Remove duplicate wording owners** only after recorded editorial
+   decisions. Point the two ritual presentations to the same text ID
+   while leaving each ceremony's events, posture and participation
+   separate. Prefer the approved registry, not whichever new copy
+   happens to have a complete-looking language column.
+4. **Only genuinely absent** text, established after full source search,
+   may enter a new translation queue; each entry must identify the
+   Latin witness, textual scope, prior search results, translation
+   authority, required editorial review and release permission.
+5. **Reader acceptance** is a separate gate: exact Mass/annex event
+   order, 48-card LIVE invariance, mobile focus, season, page turns,
+   gestures, clergy/lay participation, Schola and post-Mass handoffs.
+
+**Release status:** PR #1441 remains draft and unmerged. The latest
+source-specific translation additions are not promoted to the
+canonical Ultra Master by passing CI.
