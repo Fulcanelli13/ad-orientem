@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {projectRiteMusicBadge,loadRiteMusicRegistry} from "../src/mass/reader-rite-music-presentation.js";
 import {normalizeReaderMoment,buildReaderShellMarkup} from "../src/mass/reader-dom.js";
+import {project1962ReaderOrganNote} from "../src/mass/reader-organ-permission-presentation.js";
 import {EASTER_VIGIL_PROPHECY_READINGS} from "../src/mass/reader-easter-vigil-prophecy-index.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
@@ -81,6 +82,86 @@ assert.equal(handoff.riteMusic,null,"Mass handoff retained stale prelude music l
 const markup=buildReaderShellMarkup({session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE"}}});
 assert.ok(markup.includes('data-role="rite-music" hidden'),
   "Visible rite-music label should be hidden by default");
+assert.ok(markup.includes('data-role="organ-permission" hidden'),
+  "Organ permission is not a live instrument monitor");
+
+const organ=(args)=>project1962ReaderOrganNote(args);
+for(const id of ["GF-OPEN-010","GF-LESS-110","GF-PASS-320","GF-VEN-600","GF-END-910"]){
+  const note=organ({riteId:"GOOD_FRIDAY",stageId:id});
+  assert.equal(note.status,"SILENT",id+" lost the complete Triduum ban");
+  assert.equal(note.solo,"FORBIDDEN");
+  assert.equal(note.accompaniment,"FORBIDDEN");
+  assert.equal(note.actuallyPlaying,"UNKNOWN");
+  assert.equal(note.notAnObservation,true);
+}
+assert.equal(organ({riteId:"GOOD_FRIDAY",stageId:"AO.CARD.003"}),null,
+  "Good Friday organ rule leaked into ordinary Mass");
+for(const id of ["EV-LUM-110","EV-EXS-200","EV-LESS-02-READ","EV-LIT2-600","EV-MASS-700"]){
+  assert.equal(organ({riteId:"EASTER_VIGIL",stageId:id}).status,"SILENT");
+}
+const massCards=[
+  {sectionId:"AO.CARD.002",sequence:1,title:"Kyrie"},
+  {sectionId:"AO.CARD.003",sequence:2,title:"Gloria"},
+  {sectionId:"AO.CARD.004",sequence:3,title:"Collect"},
+].map(Object.freeze);
+const vigilModel=Object.freeze({easterVigil:true,cards:Object.freeze(massCards)});
+assert.equal(organ({riteId:"EASTER_VIGIL_MASS",massCard:massCards[0],massModel:vigilModel}).status,"SILENT");
+for(const card of massCards.slice(1)){
+  const norm=organ({riteId:"EASTER_VIGIL_MASS",massCard:card,massModel:vigilModel});
+  assert.equal(norm.status,"PERMITTED","Gloria is the exact 1958 end boundary");
+  assert.equal(norm.actuallyPlaying,"UNKNOWN");
+}
+assert.equal(organ({riteId:"EASTER_VIGIL_MASS",massCard:massCards[0],
+  massModel:{...vigilModel,easterVigil:false}}),null,
+  "Uncertified Easter Mass projection cannot imply an organ permission");
+assert.equal(organ({riteId:"EASTER_VIGIL_MASS",massCard:massCards[1],
+  massModel:{easterVigil:true,cards:[massCards[1]]}})?.status,"PERMITTED");
+assert.equal(organ({riteId:"EASTER_VIGIL_MASS",massCard:massCards[0],
+  massModel:{easterVigil:true,cards:[massCards[0]]}}),null,
+  "Missing source-owned Gloria boundary must fail closed");
+assert.equal(organ({riteId:"HOLY_THURSDAY_POST",stageId:"HT-R05"}).status,"SILENT");
+assert.equal(organ({riteId:"REQUIEM_ABSOLUTION",stageId:"ABS-R03"}).status,"SILENT");
+assert.equal(organ({riteId:"CORPUS_CHRISTI_PROCESSION",stageId:"CORPUS-R02"}),null,
+  "Generic processional organ status requires evidence");
+assert.equal(organ({riteId:"CORPUS_CHRISTI_PROCESSION",stageId:"CORPUS-R05"}).status,"PERMITTED",
+  "Benediction retains its distinct 1958 instrument exception");
+assert.equal(organ({riteId:"GENERIC_PROCESSION",stageId:"PROC-R02"}),null);
+assert.equal(organ({massCard:{sectionId:"AO.CANON.02",
+  blocks:[{blockId:"AO.SM.B052"}]}}).status,"SILENT",
+  "Universal Consecration silence must not depend on calendar guessing");
+assert.equal(organ({massCard:{sectionId:"AO.CANON.04",
+  blocks:[{blockId:"AO.SM.B053"}]}}).status,"SILENT");
+const holyThursday={overlays:[],provenance:{organ1962:{
+  verified:true,source:"LITURGICAL_PLAN_1962",season:"LENT",
+  triduum:true,holyThursdayMass:true,
+}}};
+assert.equal(organ({massCard:massCards[0],resolvedMass:holyThursday}).status,"PERMITTED",
+  "Holy Thursday organ exception begins at the opening Mass, not the Gloria");
+assert.equal(organ({massCard:massCards[1],resolvedMass:holyThursday}).status,"PERMITTED",
+  "Holy Thursday exception must belong to Gloria only");
+assert.equal(organ({massCard:massCards[2],resolvedMass:holyThursday}).status,"SILENT",
+  "Holy Thursday organ continued past the Gloria exception");
+const requiem={overlays:["REQUIEM"],provenance:null};
+assert.equal(organ({massCard:massCards[1],resolvedMass:requiem}).status,"ACCOMPANIMENT_ONLY");
+assert.equal(organ({massCard:massCards[1],resolvedMass:{...requiem,form:"LOW"}}),null,
+  "Low Mass §29 restrictions need separate source-position decisions");
+assert.equal(organ({massCard:massCards[1],resolvedMass:{overlays:[]}}),null,
+  "Civil date and card title cannot imply a liturgical season");
+const verified={overlays:[],provenance:{organ1962:{
+  verified:true,source:"LITURGICAL_PLAN_1962",season:"ADVENT",
+}}};
+assert.equal(organ({massCard:massCards[1],resolvedMass:verified}).status,"ACCOMPANIMENT_ONLY");
+assert.equal(organ({massCard:massCards[1],resolvedMass:{
+  ...verified,provenance:{organ1962:{...verified.provenance.organ1962,verified:false}},
+}}),null);
+const normalized=normalizeReaderMoment({
+  id:"GF-LESS-110",cardUpdate:true,organPermission:organ({riteId:"GOOD_FRIDAY",stageId:"GF-LESS-110"}),
+});
+assert.equal(normalized.organPermission.status,"SILENT");
+assert.equal(normalizeReaderMoment({id:"GF-PASS-320",cardUpdate:false,organPermission:null},normalized).organPermission,null,
+  "Explicitly absent organ context must clear without swapping the source card");
+assert.equal(normalizeReaderMoment({id:"AO.CARD.002",cardUpdate:true},normalized).organPermission,null,
+  "Reader must drop old rite organ norm on a Mass handoff");
 
 // Loader consumes the actual already-indexed research registry. Strictly
 // refuse corrupt schemas; a missing fetch may never synthesize a chant.

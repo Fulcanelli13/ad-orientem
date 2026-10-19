@@ -77,6 +77,7 @@ import { createObservedChalicePreparationController } from "./reader-priest-chal
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
 import { projectRiteMusicBadge, loadRiteMusicRegistry } from "./reader-rite-music-presentation.js";
+import { project1962ReaderOrganNote } from "./reader-organ-permission-presentation.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
@@ -927,6 +928,9 @@ export async function mountNativeReaderPreview({
           registry:ready.riteMusicRegistry,riteId:"GOOD_FRIDAY",
           stageId:step.recordId,sourcePayload:ready.riteMusicSource,
         }),
+        organPermission:project1962ReaderOrganNote({
+          riteId:"GOOD_FRIDAY",stageId:step.recordId,
+        }),
         posture:sourcePosture ? Object.freeze({label:sourcePosture}) : null,
         postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[sourcePosture]??null,
         cinematicScene:projectGoodFridayDeathScene({
@@ -1119,6 +1123,9 @@ export async function mountNativeReaderPreview({
           stageId:step.recordId,sourcePayload:ready.riteMusicSource,
           condition:ready.riteMusicCondition,
         }),
+        organPermission:project1962ReaderOrganNote({
+          riteId:"EASTER_VIGIL",stageId:step.recordId,
+        }),
         posture:state.posture ? Object.freeze({label:state.posture}) : null,
         gesture:state.action ? Object.freeze({label:state.action}) : null,
         guide:null,
@@ -1148,6 +1155,9 @@ export async function mountNativeReaderPreview({
         cardUpdate:true,
         paragraphs:card.paragraphs,
         progress:String(card.sequence)+" / "+String(model.totalCards)+" · Easter Vigil Mass",
+        organPermission:project1962ReaderOrganNote({
+          riteId:"EASTER_VIGIL_MASS",massCard:card,massModel:model,
+        }),
         guide:null,
       });
       root.dataset.r17NativeRiteRecord="MASS:"+card.sectionId;
@@ -2136,6 +2146,9 @@ export async function mountNativeReaderPreview({
           kind==="REQUIEM_ABSOLUTION" &&
             ready.prepared?.session?.resolvedMass?.provenance?.requiemAbsolution?.burialProcession===true
             ? "OPTIONAL_BURIAL_FOLLOWING_ACTION" : null),
+        organPermission:project1962ReaderOrganNote({
+          riteId:kind,stageId:card.id??card.recordId,
+        }),
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
       }),
     });
@@ -2761,6 +2774,9 @@ export async function mountNativeReaderPreview({
       progress:current ? visibleProgress(current) : null,
       guide:null,
       ...state,
+      organPermission:project1962ReaderOrganNote({
+        massCard:current,resolvedMass:prepared?.session?.resolvedMass,
+      }),
     });
     canonManualUI?.update();
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";

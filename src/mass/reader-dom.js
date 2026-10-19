@@ -433,6 +433,13 @@ const SHELL_STYLE = `
   text-transform:uppercase;opacity:.78
 }
 .ao-rite-music-note[hidden]{display:none!important}
+.ao-organ-rule-note{
+  display:block;margin:-2px auto 9px;max-width:44em;text-align:center;
+  font:500 9px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.085em;color:var(--ao-mass-accent-text);
+  text-transform:uppercase;opacity:.52
+}
+.ao-organ-rule-note[hidden]{display:none!important}
 .ao-schola-dock[data-active="false"]{display:none}
 /* Retain the manually collapsed SHOW handle between audible Schola cues. */
 .ao-schola-dock[data-active="false"][data-collapsed="true"]{display:block}
@@ -1594,6 +1601,9 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
   const riteMusic=Object.prototype.hasOwnProperty.call(moment,"riteMusic")
     ? (moment.riteMusic??null)
     : moment.cardUpdate===false ? (previous.riteMusic??null) : null;
+  const organPermission=Object.prototype.hasOwnProperty.call(moment,"organPermission")
+    ? (moment.organPermission??null)
+    : moment.cardUpdate===false ? (previous.organPermission??null) : null;
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
   const sharedScholaControls=moment.sharedScholaControls===true ||
     (moment.cardUpdate===false && previous.sharedScholaControls===true);
@@ -1637,6 +1647,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     priestVoice:persist(moment.priestVoice, previous.priestVoice),
     schola,
     riteMusic,
+    organPermission,
     // An unresolved sung Benedictus requires a real visible action; never
     // suppress the control just because a *priest* paragraph contains the
     // same words as a Schola part that has NOT yet begun.
@@ -1847,6 +1858,7 @@ export function buildReaderShellMarkup(prepared = {}) {
       <article class="ao-prayer-card" data-role="card" tabindex="0">
         <h1 class="ao-prayer-title" data-role="card-title">${section}</h1>
         <p class="ao-rite-music-note" data-role="rite-music" hidden aria-live="off"></p>
+        <p class="ao-organ-rule-note" data-role="organ-permission" hidden aria-live="off"></p>
         <div class="ao-prayer-body" data-role="paragraphs"></div>
       </article>
     </main>
@@ -3079,6 +3091,18 @@ export function createReaderDomAdapter({
       musicNote.dataset.musicEventIds=metadata?.eventIds?.join(" ")??"";
       musicNote.setAttribute?.("aria-label",metadata
         ? metadata.label+". "+metadata.description : "No indexed music event");
+    }
+    const organNote=root.querySelector('[data-role="organ-permission"]');
+    if(organNote){
+      const norm=current.organPermission?.notAnObservation===true &&
+        current.organPermission?.actuallyPlaying==="UNKNOWN"
+        ? current.organPermission : null;
+      organNote.hidden=!norm;
+      organNote.textContent=norm?.label??"";
+      organNote.dataset.organNorm=norm?.status??"UNRESOLVED";
+      organNote.dataset.organObserved="UNKNOWN";
+      organNote.setAttribute?.("aria-label",norm
+        ? norm.label+". "+norm.description : "Organ norm unavailable");
     }
     setText(root,"progress",current.progress);
     setText(root,"priest-position",textValue(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition));
