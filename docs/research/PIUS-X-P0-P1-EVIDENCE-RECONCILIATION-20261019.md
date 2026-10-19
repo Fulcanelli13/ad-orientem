@@ -402,3 +402,24 @@ The three source-navigation false positives are exact:
 All three erroneous inferred choices still **required user confirmation** and produced `answerText:null`. The hybrid's 48 abstentions are safer, but should not be presented as **48 correct answers** or a standalone accuracy percentage: none of the 12 precise SPX research family owners has yet been added as an authorized source-navigation entry in the 172-topic PR #1443 catalog. This is a *targeted assistant-authored regression sample*, not representative live visitor questions.
 
 **Action for the separate router owner:** The findings have been shared directly on [PR #1443](https://github.com/Fulcanelli13/ad-orientem/pull/1443). That pipeline must import only **source-navigation pointers** to verified 1905/Salzano/encyclical/dicastery owners, never historical answer text into the router, and must preserve explicit confirmation and no-coverage treatment. Repeat the pinned 48-test suite when new SPX source owners become navigable. Human doctrinal and voice sign-off stays a separate gate.
+
+
+## Actual historical-source-bridge integration result — 184-topic catalog
+
+The shared Living Church router owner [PR #1443](https://github.com/Fulcanelli13/ad-orientem/pull/1443) now has a research-only extension from **172 to 184 topics**: ten specific St Pius X historical-source pointer records and two explicit source gaps (unattested childhood feelings and individualized prayer-dryness diagnosis). No answer text or authoritative source corpus was copied into the router.
+
+The source bridge points to historical-document URLs and edition-specific loci; **it does not yet make the actual documents available as in-app pages**. Original documents must ultimately resolve via their provenance links, rather than the generic `learn.catechism` route.
+
+The original **48 untouched editorial probes** were executed against the new catalog in [CI run 39267811444](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39267811444); the per-utterance JSON is in artifact `pius-x-pr1443-184topic-heldout-48-results`. The machine-readable summary is `data/learn/research/pius-x-pr1443-184topic-bridge-measured-outcome-20261019.v1.json`.
+
+| Outcome | Shared lexical router | Hybrid router |
+| --- | ---: | ---: |
+| **Correct precise source route** | **9** | **1** |
+| Safe unresolved `no_coverage` | 27 | 39 |
+| Safe held personal-answer cases | 8 | 8 |
+| **Wrong specific source proposed** | **4** | **0** |
+| Historical / pastoral answer generated | 0 | 0 |
+
+A newly observed cross-topic error is `SPX-PILOT-01-F1`: the Pope's programme after his election (`E supremi`) misroutes to the Modernism topic (`Pascendi`). Three previously known errors also persist: generic prayer instead of the Rosary-at-Mass locus; generic sin instead of Sarto's teaching on temptation versus consent; Real Presence instead of post-Communion thanksgiving. All wrong inferred source navigations still require confirmation.
+
+This **fails source-retrieval acceptance** despite new coverage. The 48 probes are editor-authored, not representative visitors; the catalog was *not* fitted to the 48 evaluation utterances. Do not add those phrases as question variants to inflate the score. The correct subsequent step is source-aware question interpretation with an independent EN/FR holdout set and an explicit `correct source / abstention / wrong source` measurement. Do not infer that 9 successful source links means nine certified St Pius X answers.
