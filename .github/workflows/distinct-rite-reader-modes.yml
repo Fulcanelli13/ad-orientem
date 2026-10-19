@@ -1,0 +1,24 @@
+name: Distinct-rite shared reader modes
+
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-native-preview.js"
+      - "tests/reader-distinct-mode-parity-phone.mjs"
+      - "package.json"
+      - ".github/workflows/distinct-rite-reader-modes.yml"
+  workflow_dispatch:
+
+jobs:
+  distinct-rite-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify shared modes and exact Good Friday and Easter Vigil source ownership
+        run: npm run test:distinct-rite-modes-phone
