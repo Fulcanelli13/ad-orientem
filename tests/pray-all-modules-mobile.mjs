@@ -354,7 +354,7 @@ try{
 
  // Swipe-first finite guides must not reintroduce button-controlled page travel.
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations",{returnContext:null}));
- const stationProgress=page.locator("#aoPray435930.open .aoP435930StationNavShell .aoDevoProgress");
+ const stationProgress=page.locator("#aoPray435930.open .aoP435930StationRail.aoDevoSequenceTimeline .aoDevoProgress");
  assert.equal(await stationProgress.count(),1,"Stations require one shared progress track");
  assert.equal(await stationProgress.getAttribute("aria-valuenow"),"1");
  assert.equal(await stationProgress.getAttribute("aria-valuemax"),"14");
