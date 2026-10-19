@@ -4,19 +4,20 @@
 
 export const R17_ICON_KEYS=Object.freeze({
   posture:Object.freeze({
-    STAND:"stand",SIT:"sit",KNEEL:"kneel",GENUFLECT:"genuflect",
+    STAND:"review_posture_stand",SIT:"review_posture_sit",
+    KNEEL:"review_posture_kneel",GENUFLECT:"review_posture_genuflect",
   }),
   gesture:Object.freeze({
     SIGN_OF_CROSS:"cross",
     GOSPEL_CROSSES:"gospel_crosses",
     THREE_GOSPEL_CROSSES:"gospel_crosses",
     BREAST_STRIKE:"breast_strike",
-    HEAD_BOW:"head_bow",
+    HEAD_BOW:null, // Both head-bow variants rejected in the 19 October review.
     PROFOUND_BOW:"profound_bow",
-    BOW:"bow",
-    GENUFLECT:"genuflect",
+    BOW:"review_faithful_bow", // Priest bow retains v1.80 "bow".
+    GENUFLECT:"review_posture_genuflect",
     HANDS_JOINED:"hands_joined",
-    RISE:"stand",
+    RISE:"review_posture_stand",
   }),
   priestPosition:Object.freeze({
     // 2026-10-19 icon review supersedes the earlier side assignments:
@@ -140,10 +141,31 @@ const ACTION_ICON_KEYS=Object.freeze({
   "UNCOVERS CHALICE":"canon",
 });
 
+const R17_REVIEWED_FAITHFUL_ART=Object.freeze({
+  stand:"review_posture_stand",
+  sit:"review_posture_sit",
+  kneel:"review_posture_kneel",
+  genuflect:"review_posture_genuflect",
+  bow:"review_faithful_bow",
+  head_bow:null,
+});
+function reviewedFaithfulArt(key){
+  return Object.prototype.hasOwnProperty.call(R17_REVIEWED_FAITHFUL_ART,key)
+    ? R17_REVIEWED_FAITHFUL_ART[key] : key;
+}
+
 // Reviewed render decisions override earlier v1.80 proposed icon assignments.
 // A null choice hides inaccurate artwork, NOT its source-owned ceremonial cue.
 // Never alter the Mass texts, timing, station, actor, or source identifiers here.
 const R17_REVIEW_20261019_ACTION_OVERRIDES=Object.freeze({
+  // The priest's head/profound bows have no approved exact images.
+  "BOWS HEAD":null,
+  "BOWS SLIGHTLY":"bow", // old v1.80 user-repurposed priest bow
+  "BOWS FOR SANCTUS":"bow",
+  "BOWS OVER THE ALTAR":null,
+  "BOWS PROFOUNDLY":null,
+  "PROFOUND BOW":null,
+  "GENUFLECTS":null,
   "ELEVATES CHALICE":"priest_elevate_chalice_rich",
   "GIVES COMMUNION":"priest_rail_after_rich",
   "INCENSES PEOPLE":null, // incense of congregation belongs to the minister
@@ -156,6 +178,7 @@ const R17_REVIEW_20261019_ACTION_OVERRIDES=Object.freeze({
 const R17_REVIEW_20261019_UNASSIGNED_ART=new Set([
   "priest_communion_rich","priest_rail_rich",
   "communion","fraction","commingling","chalice_elevation",
+  "priest_profound_bow_rich","head_bow","priest_genuflect",
 ]);
 
 function reviewedPriestActionArt(key){
@@ -208,19 +231,19 @@ function gestureKey(gesture){
   if(!gesture)return null;
   // Do not turn an explicitly pending/customary source gesture into a
   // universal instruction by guessing from its label's words.
-  if(gesture.owner==="GESTURE_MATRIX_SOT")return gesture.iconKey??null;
+  if(gesture.owner==="GESTURE_MATRIX_SOT")return reviewedFaithfulArt(gesture.iconKey??null);
   const direct=token(gesture.type??gesture.value);
   if(R17_ICON_KEYS.gesture[direct])return R17_ICON_KEYS.gesture[direct];
   const raw=String(gesture.action??gesture.label??"").toLowerCase();
-  if(/^rise$|\brise\b/.test(raw))return "stand";
+  if(/^rise$|\brise\b/.test(raw))return "review_posture_stand";
   if(/forehead.*lips.*breast|three.*cross/.test(raw))return "gospel_crosses";
   if(/sign of (the )?cross|cross oneself/.test(raw))return "cross";
   if(/strike.*breast|breast strike/.test(raw))return "breast_strike";
-  if(/genuflect/.test(raw))return "genuflect";
+  if(/genuflect/.test(raw))return "review_posture_genuflect";
   if(/profound.*bow/.test(raw))return "profound_bow";
-  if(/bow.*head|head.*bow/.test(raw))return "head_bow";
+  if(/bow.*head|head.*bow/.test(raw))return null;
   if(/hands joined/.test(raw))return "hands_joined";
-  if(/bow/.test(raw))return "bow";
+  if(/bow/.test(raw))return "review_faithful_bow";
   return null;
 }
 
