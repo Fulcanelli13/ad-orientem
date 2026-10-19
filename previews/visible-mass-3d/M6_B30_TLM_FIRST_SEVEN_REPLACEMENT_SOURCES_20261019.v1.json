@@ -1,0 +1,394 @@
+{
+  "schema": "AO_M6_B30_TLM_FIRST_SEVEN_FLAGGED_REPLACEMENT_SOURCE_PASS_V1",
+  "date": "2026-10-19",
+  "state": "BULK_PHOTOGRAPH_SOURCE_RESEARCH_NOT_A_APPROVED_SELECTION",
+  "supersedes_policy": "M6_B29_TLM_1962_VISUAL_REPRESENTATIVENESS_GATE_20261019.v1.json",
+  "baseline_pilot": "M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v8.json",
+  "priority": "Typical use at a 1962 Roman-rite Mass comes before photographer's aesthetics, historical rarity and license convenience. Rights remain a separate mandatory gate.",
+  "counts": {
+    "source_rows": 27,
+    "object_groups": 7,
+    "by_group": {
+      "SN05": 4,
+      "AL03": 3,
+      "AL06": 4,
+      "AL16": 6,
+      "LN02": 3,
+      "EQ02": 3,
+      "EQ06": 4
+    },
+    "number_current_provisionals": 17,
+    "number_flagged_for_more_typical_alt": 7,
+    "pilot_selection_changes": 0,
+    "publication_approvals": 0
+  },
+  "source_rows": [
+    {
+      "object_id": "SN05",
+      "title": "St Comgall's Catholic hanging sanctuary lamp",
+      "url": "https://commons.wikimedia.org/wiki/File:Sanctuary_lamp.jpg",
+      "creator": "HenryPho17",
+      "license": "CC0 1.0",
+      "typology_fit": "Historically recognisable hanging chain lamp; red vessel small in full image",
+      "qa_state": "B27_NATIVE_PIXEL_SCREENED_SUBJECT_TOO_SMALL",
+      "photo_role": "CONTEXT_ALTERNATIVE_ONLY",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "SN05",
+      "title": "St Anne Salvador Catholic hanging sanctuary lamp",
+      "url": "https://commons.wikimedia.org/wiki/File:Igreja_do_Santíssimo_Sacramento_de_Sant'Ana_Salvador_Sanctuary_Lamp_2019-1866.jpg",
+      "creator": "Paul R. Burley",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Genuine Catholic hanging fixture, red-glass visibility uncertain",
+      "qa_state": "WEB_METADATA_SCREENED_PIXEL_QA_REQUIRED",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "SN05",
+      "title": "Louisville cathedral tabernacle and red lamp",
+      "url": "https://commons.wikimedia.org/wiki/File:Tabernacle,_Cathedral_of_the_Assumption,_Louisville.jpg",
+      "creator": "Joestn",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Red lamp and Catholic Eucharistic setting, not isolated hanging fixture",
+      "qa_state": "CONTEXT_ONLY_NOT_OBJECT_HERO",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "SN05",
+      "title": "Pugin/Hardman c1855 lamp",
+      "url": "https://commons.wikimedia.org/wiki/File:Sanctuary_Lamp,_designed_by_A.W.N._Pugin,_manufactured_by_J._Hardman_&_Co.,_c._1855,_gilt_brass_-_Huntington_Art_Museum_-_San_Marino,_CA_-_DSC01810.jpg",
+      "creator": "Daderot",
+      "license": "CC0 1.0",
+      "typology_fit": "Genuine historic hanging Catholic design, not clearly red-glass practical archetype",
+      "qa_state": "EXISTING_HISTORICAL_FALLBACK_NO_DUPLICATE_PRIMARY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL03",
+      "title": "Basilique du Sacré-Cœur gilt tabernacle with angels 2026",
+      "url": "https://commons.wikimedia.org/wiki/File:Basilique_du_Sacré-Cœur_tabernacle_with_golden_angels_-_detail_2026-01-03-1.jpg",
+      "creator": "Renée Kools",
+      "license": "CC BY 4.0",
+      "typology_fit": "Documented traditional high-altar tabernacle detail from Paris Catholic basilica",
+      "qa_state": "PROMISING_2026_3900x5200_ORIGINAL_PENDING_PIXEL_REVIEW",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL03",
+      "title": "Tabernacle of historic Oloron Sainte-Croix high altar",
+      "url": "https://commons.wikimedia.org/wiki/File:Oloron_Sainte_Marie-Église_Sainte-Croix-_Tabernacle_de_l'ancien_maître-autel_-20211125.jpg",
+      "creator": "Exact source photographer verify",
+      "license": "EXACT_FILE_LICENCE_HOLD",
+      "typology_fit": "Catholic 1708 gilt wood tabernacle historically documented, removed from original main altar, must mark historic",
+      "qa_state": "PHOTO_RIGHTS_AND_ISOLATION_CHECK_PENDING",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL03",
+      "title": "Venice Chiesa dei Gesuiti high altar tabernacle",
+      "url": "https://commons.wikimedia.org/wiki/File:Interior_of_Chiesa_dei_Gesuiti_(Venice)_-_High_altar_-_Tabernacle_by_Jacopo_Antonio_Pozzo.jpg",
+      "creator": "Exact source photographer verify",
+      "license": "EXACT_FILE_LICENCE_HOLD",
+      "typology_fit": "True Jesuit Catholic high altar, visually rich context versus object isolation",
+      "qa_state": "BACKGROUND_COMPLEXITY_HOLD",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL06",
+      "title": "St Michael's Remuera altar crucifix",
+      "url": "https://commons.wikimedia.org/wiki/File:Altar_crucifix,_St_Michael's,_Remuera.jpg",
+      "creator": "Bojan Jankuloski / Bjankuloski06",
+      "license": "CC BY 4.0",
+      "typology_fit": "Actual Catholic parish altar crucifix; not necessarily a freestanding altar-foot crucifix",
+      "qa_state": "WEB_SOURCE_RIGHTS_VERIFIED_NEEDS_ORIGINAL_VISUAL_TYPING",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL06",
+      "title": "St Joseph's Takapuna altar crucifix",
+      "url": "https://commons.wikimedia.org/wiki/File:Altar_crucifix,_St_Joseph's,_Takapuna.jpg",
+      "creator": "Bojan Jankuloski / Bjankuloski06",
+      "license": "CC BY 4.0",
+      "typology_fit": "Recognisable Catholic parish altar crucifix if full corpus and base clear",
+      "qa_state": "WEB_SOURCE_RIGHTS_VERIFIED_NEEDS_ORIGINAL_VISUAL_TYPING",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL06",
+      "title": "San Pablo Latin-rite Cathedral altar crucifix image 1",
+      "url": "https://commons.wikimedia.org/wiki/File:Altar_crucifix_at_the_San_Pablo_Cathedral_1.jpg",
+      "creator": "Ramon FVelasquez",
+      "license": "CC BY-SA 3.0",
+      "typology_fit": "Actual Latin-rite Catholic cathedral altar crucifix, visual suitability pending",
+      "qa_state": "WEB_SOURCE_RIGHTS_VERIFIED_NEEDS_ORIGINAL_VISUAL_TYPING",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL06",
+      "title": "San Pablo Latin-rite Cathedral altar crucifix image 2",
+      "url": "https://commons.wikimedia.org/wiki/File:Altar_crucifix_at_the_San_Pablo_Cathedral_2.jpg",
+      "creator": "Ramon FVelasquez",
+      "license": "CC BY-SA 3.0",
+      "typology_fit": "Same physical object from another angle likely; don't count as new object",
+      "qa_state": "ALTERNATE_ANGLE_ONLY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL16",
+      "title": "Benzinger altar central card",
+      "url": "https://commons.wikimedia.org/wiki/File:Benzinger_altar_card_center_HD.jpg",
+      "creator": "Sanji1986",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Typical text-dense Latin Roman central Mass card, but single central not whole three-card set",
+      "qa_state": "CENTER_COMPONENT_NOT_PRIMARY_THREE_CARD_SET",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL16",
+      "title": "Sacra central",
+      "url": "https://commons.wikimedia.org/wiki/File:Sacracentral.jpg",
+      "creator": "Sanji1986",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Latin centre card for Canon/Ordinary; could join two separate matching cards only if provenance verified",
+      "qa_state": "MATCHING_TRIO_HYPOTHESIS_ONLY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL16",
+      "title": "Sacra Epistle side",
+      "url": "https://commons.wikimedia.org/wiki/File:Sacraepistola.jpg",
+      "creator": "Sanji1986",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Left/right names require priest-facing orientation verification; altar-card side text includes water infusion and Lavabo",
+      "qa_state": "MATCHING_TRIO_HYPOTHESIS_ONLY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL16",
+      "title": "Sacra Gospel side",
+      "url": "https://commons.wikimedia.org/wiki/File:Sacraevangelio.jpg",
+      "creator": "Sanji1986",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Last Gospel prologue card in coherent series by source photographer, but three separate photographs",
+      "qa_state": "MATCHING_TRIO_HYPOTHESIS_ONLY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL16",
+      "title": "Livorno museum 1800–1850 altar-card set",
+      "url": "https://commons.wikimedia.org/wiki/File:Livorno,_museo_di_santa_giulia,_cartegloria_del_1800-50_ca.jpg",
+      "creator": "Sailko",
+      "license": "CC BY 3.0",
+      "typology_fit": "Single photograph of nineteenth-century altar-card ensemble; ordinary appearance unverified at pixels",
+      "qa_state": "ONE_ENSEMBLE_SOURCE_QA_PRIORITY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "AL16",
+      "title": "Bavarian Catholic Saint Martin altar card",
+      "url": "https://commons.wikimedia.org/wiki/File:Hirschling-Kirche-Sankt-Martin-Kanontafel.jpg",
+      "creator": "Elcom.stadler",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Proper Roman Latin altar card documented, but only a single central one in use",
+      "qa_state": "SECONDARY_IN_USE_SOURCE",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "LN02",
+      "title": "Catholic purificator Cieszyn variant 1",
+      "url": "https://commons.wikimedia.org/wiki/File:Purificator_Cieszyn_Poland.JPG",
+      "creator": "Abraham",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Known Catholic purificator photographed alone; inspect embroidery simplicity and folded shape",
+      "qa_state": "EXACT_SOURCE_RIGHTS_VERIFIED_PREVIOUS_SERIES",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "LN02",
+      "title": "Catholic purificator Cieszyn variant 2",
+      "url": "https://commons.wikimedia.org/wiki/File:Purificator_2_Cieszyn_Poland.JPG",
+      "creator": "Abraham",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Same photographer/inventory, independently photographed variant; inspect simple linen profile",
+      "qa_state": "EXACT_SOURCE_RIGHTS_VERIFIED_PREVIOUS_SERIES",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "LN02",
+      "title": "Catholic purificator Cieszyn variant 3 (existing hero)",
+      "url": "https://commons.wikimedia.org/wiki/File:Purificator_3_Cieszyn_Poland.JPG",
+      "creator": "Abraham",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Current photo correct object but multi-colour embroidery; replacement only if more representative after visual QA",
+      "qa_state": "EXISTING_HERO_DO_NOT_RECOUNT",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ02",
+      "title": "Ordinary clear glass paired cruets at Extraordinary Form Low Mass",
+      "url": "https://espritdelaliturgie.org/2021/04/26/preparation-du-sanctuaire-pour-une-messe-messe-lue-forme-extraordinaire-du-rite-romain/",
+      "creator": "Esprit de la Liturgie page photographer unresolved",
+      "license": "RIGHTS_UNCLEARED",
+      "typology_fit": "Direct reference for familiar form; original external photo not cleared; do not import",
+      "qa_state": "TLM_TYPE_REFERENCE_ONLY_NO_PUBLICATION",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ02",
+      "title": "Holy water and wine for Mass, glass set",
+      "url": "https://commons.wikimedia.org/wiki/File:Holy_water_and_wine_for_Mass.jpg",
+      "creator": "Wilfredor",
+      "license": "CC0 1.0",
+      "typology_fit": "Photographer labels Mass water and wine; check if image is goblets rather than actual liturgical cruets",
+      "qa_state": "CONDITIONAL_EXACT_TYPE_QA_PRIORITY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ02",
+      "title": "Kraków historical water cruet, 1500",
+      "url": "https://commons.wikimedia.org/wiki/File:Kraków_Late_gothic_water_cruet.jpg",
+      "creator": "Artinpl",
+      "license": "CC0 1.0",
+      "typology_fit": "Authentic but highly ornate and unrepresentative of common 1962 glass cruet",
+      "qa_state": "CURRENT_HISTORICAL_HERO_NOT_TLM_FIRST",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ06",
+      "title": "Longford St Mel's Catholic cathedral altar bell",
+      "url": "https://commons.wikimedia.org/wiki/File:Longford_St._Mel's_Cathedral_Altar_Bells_2019_08_23.jpg",
+      "creator": "Andreas F. Borchert",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Familiar multi-bell Catholic altar set, complete distinct object photographed in situ",
+      "qa_state": "B26_PREVIEW_SCREENED_NEEDS_TYPE_CHECK",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ06",
+      "title": "Altar bells from Gniezno Catholic Archdiocesan Museum",
+      "url": "https://commons.wikimedia.org/wiki/File:Museum_of_Archdiocese_in_Gniezno_-_zestaw_Ledóchowskiego_01.JPG",
+      "creator": "File page author verify",
+      "license": "RIGHTS_VERIFY_EXACT_FILE",
+      "typology_fit": "Actual Catholic church liturgical bell set (context museum), exact number/form not confirmed",
+      "qa_state": "NEW_MUSEUM_SOURCE_RESEARCH_ONLY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ06",
+      "title": "Carcassonne 19c enamelled altar bell",
+      "url": "https://commons.wikimedia.org/wiki/File:Carcassonne_-_Église_Saint-Vincent_-_Trésor_25.jpg",
+      "creator": "Tylwyth Eldar",
+      "license": "CC BY-SA 4.0",
+      "typology_fit": "Correct historic one bell but overly ornate museum archetype",
+      "qa_state": "CURRENT_HISTORICAL_HERO_NOT_TLM_FIRST",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    },
+    {
+      "object_id": "EQ06",
+      "title": "Spanish historic altar bell ensemble display",
+      "url": "https://commons.wikimedia.org/wiki/File:Campanilleros_Sto_Domingo_Calzada_17.jpg",
+      "creator": "Commons source photographer verify",
+      "license": "RIGHTS_VERIFY_EXACT_FILE",
+      "typology_fit": "Catholic liturgical bells? original contextual photo may be a set of servers, not object-only",
+      "qa_state": "DISCOVERY_ONLY",
+      "photo_role": "RESEARCH_CANDIDATE",
+      "publication_approved": false,
+      "user_approved": false
+    }
+  ],
+  "original_pixel_qa_queue": [
+    {
+      "object_id": "AL16",
+      "url": "https://commons.wikimedia.org/wiki/File:Livorno,_museo_di_santa_giulia,_cartegloria_del_1800-50_ca.jpg",
+      "reason": "One genuinely photographed altar-card ensemble"
+    },
+    {
+      "object_id": "AL06",
+      "url": "https://commons.wikimedia.org/wiki/File:Altar_crucifix,_St_Michael's,_Remuera.jpg",
+      "reason": "Physically Catholic parish crucifix versus elaborate museum silver rock crystal"
+    },
+    {
+      "object_id": "EQ02",
+      "url": "https://commons.wikimedia.org/wiki/File:Holy_water_and_wine_for_Mass.jpg",
+      "reason": "CC0 glass Mass water and wine photo; exact vessel typing must be visually checked"
+    },
+    {
+      "object_id": "EQ06",
+      "url": "https://commons.wikimedia.org/wiki/File:Longford_St._Mel's_Cathedral_Altar_Bells_2019_08_23.jpg",
+      "reason": "Recognisable Catholic Mass bell shape in situ"
+    },
+    {
+      "object_id": "LN02",
+      "url": "https://commons.wikimedia.org/wiki/File:Purificator_2_Cieszyn_Poland.JPG",
+      "reason": "More typical clear white linen shape?"
+    },
+    {
+      "object_id": "AL03",
+      "url": "https://commons.wikimedia.org/wiki/File:Basilique_du_Sacré-Cœur_tabernacle_with_golden_angels_-_detail_2026-01-03-1.jpg",
+      "reason": "French Catholic monumental tabernacle detail, still requires exact framing and rite check"
+    }
+  ],
+  "special_notices": [
+    "One center card plus two separately photographed side cards, even from same user, is NOT one intact trio photograph.",
+    "CC0 images may still depict inappropriate physical forms: reject goblets mislabelled cruets or wall crucifixes mislabelled altar crosses.",
+    "Previously approved photos are NOT silently replaced. All 17 assistant-selected objects remain research-only.",
+    "CC BY-SA cropped derivatives trigger share-alike and attribution obligations; separate source photo rights must pass.",
+    "No new fantasy image generation; photos must correspond to real Catholic original photographed source."
+  ],
+  "canonical_object_source_records_changed": false,
+  "app_mass_reader_changed": false,
+  "user_approved": false,
+  "publication_approved": false
+}
