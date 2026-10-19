@@ -51,7 +51,7 @@ assert.equal(pilgrimages.get(lv.pilgrimage_id)?.destination_shrine_id,lv.shrine_
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0673")?.name,"National Marian Shrine of Our Lady of La Vang");
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0746")?.status,"TEXT_HINT_REVIEW");
 assert.equal(places.get("place:NZ:st-peter-chanel-russell").geo.indicative_only,true);
-assert.equal(h.place_crosswalk.length,261);
+assert.equal(h.place_crosswalk.length,294);
 assert.equal(exploreMapFeatures(projected.byLens.shrines).length,257);
 assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,240);
 console.log("PASS R74: 14 essential dispositions, Rigaud, La Vang and no new revelation/relic claims");
