@@ -46,7 +46,11 @@ function skipKey(key){
 function collectStrings(value,path="",found=[]){
   if(typeof value==="string"){
     const latin=value.trim();
-    if(latin.length>=4 && !/^https?:\/\//i.test(latin) && normalizeLatin(latin).length>=4)
+    // Source dialogue arrays are [speaker kind, Latin]. The first element
+    // is metadata, NOT a spoken Latin text line.
+    if(latin.length>=4 && !/^https?:\/\//i.test(latin) &&
+      !/^(VERSICLE|RESPONSE|TEXT|PRAYER|ANTIPHON|CHANT|SCHOLA)$/.test(latin) &&
+      normalizeLatin(latin).length>=4)
       found.push({path,latin});
   }else if(Array.isArray(value)){
     for(let i=0;i<value.length;i++)collectStrings(value[i],path+"."+i,found);
