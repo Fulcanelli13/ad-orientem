@@ -171,3 +171,51 @@ assert.equal(relations.get('PX1905-Q855'),'EDITION_DATE_CONFLICT_NO_AUTOMERGE');
 assert.equal(relations.get('PX1905-Q669'),'NOT_FOUND_IN_REVIEWED_SHORT_EUCHARIST_SECTION');
 
 console.log('Pius X P0/P1 research-only bridge: 433 canonical QIDs, 64 provisional seeds, no content approval');
+
+
+// First 64-family conversation evidence coverage; source matching is NOT answer approval.
+const coverage = JSON.parse(readFileSync('data/learn/research/pius-x-64-family-evidence-screen-20261019.v1.json','utf8'));
+assert.equal(coverage.schema,'AO_PIUS_X_INITIAL_64_CONVERSATION_FAMILY_EVIDENCE_SCREEN_V1');
+assert.equal(coverage.status,'RESEARCH_ONLY_COVERAGE_NOT_ANSWER_APPROVAL');
+assert.equal(coverage.records.length,64);
+assert.deepEqual(coverage.records.map(x=>x.id),seeds.map(x=>x.id));
+const sourceReviews=new Map(directReviews.map(x=>[x.id,x]));
+const sourcesBySeed=new Map();
+for(const row of wave.records){
+  if(!sourcesBySeed.has(row.id))sourcesBySeed.set(row.id,[]);
+  sourcesBySeed.get(row.id).push(row);
+}
+const tiers=new Map();
+for(const row of coverage.records){
+  const review=sourceReviews.get(row.id);
+  const historical=sourcesBySeed.get(row.id)||[];
+  assert.equal(row.first_cohort_source_id,row.id);
+  assert.equal(row.short_digital_review_classification,review.classification);
+  assert.deepEqual(row.short_candidate_qids,[...new Set(review.candidate_references.map(x=>x.qid))]);
+  assert.deepEqual(row.additional_source_anchors.map(x=>x.locator),historical.map(x=>x.source_locator));
+  assert.deepEqual(row.additional_source_anchors.map(x=>x.content_match),historical.map(x=>x.content_match));
+  const direct=review.classification==='DIRECT_CATECHISM_QUESTION'||
+      historical.some(x=>x.content_match==='DIRECT');
+  const partial=review.classification==='PARTIAL_ANSWER_TO_BROADER_QUESTION'||
+      historical.some(x=>x.content_match==='PARTIAL');
+  const expected=direct?'DIRECT_PASSAGE_ANCHOR':partial?'PARTIAL_PASSAGE_ANCHOR':'RELATED_OR_UNRESOLVED';
+  assert.equal(row.evidence_tier,expected);
+  assert.equal(row.semantically_deduplicated,false);
+  assert.equal(row.complete_visitor_answer_certified,false);
+  assert.equal(row.historical_first_person_voice_certified,false);
+  tiers.set(expected,(tiers.get(expected)||0)+1);
+}
+for(const tier of ['DIRECT_PASSAGE_ANCHOR','PARTIAL_PASSAGE_ANCHOR','RELATED_OR_UNRESOLVED']){
+ assert.equal(coverage.summary[tier],tiers.get(tier)||0);
+}
+assert.deepEqual([tiers.get('DIRECT_PASSAGE_ANCHOR'),tiers.get('PARTIAL_PASSAGE_ANCHOR'),tiers.get('RELATED_OR_UNRESOLVED')],[48,11,5]);
+assert.equal(coverage.summary.initial_families,64);
+assert.equal(coverage.summary.approved_distinct_conversation_intents,0);
+assert.equal(coverage.summary.certified_visitor_answers_in_this_screen,0);
+assert.ok(coverage.records.find(x=>x.id==='SPX-057').edition_holds.length>0,'actual/sacramental grace confusion must stay held');
+for(const id of ['SPX-028','SPX-044']){
+ assert.ok(coverage.records.find(x=>x.id===id).edition_holds.length>0,'civil marriage witness caveat retained');
+}
+assert.deepEqual(coverage.records.filter(x=>x.evidence_tier==='RELATED_OR_UNRESOLVED').map(x=>x.id),
+ ['SPX-039','SPX-040','SPX-042','SPX-046','SPX-050']);
+console.log('Pius X initial 64-family evidence screen: 48 direct passage matches, 11 partial, 5 related-only; 0 answers certified');
