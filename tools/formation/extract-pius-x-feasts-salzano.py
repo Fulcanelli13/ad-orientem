@@ -21,7 +21,7 @@ FEASTS = [(part, chap) for part, n in ((1,14),(2,12)) for chap in range(1,n+1)]
 ROMAN = ("", "I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV")
 FEAST_Q = re.compile(r"(?m)^\s*D\.\s*([^\n]+)")
 FEAST_R = re.compile(r"(?m)^\s*R\.\s*",re.I)
-SALZANO_Q = re.compile(r"(?m)^\s*(\d{1,3})\s*[–—-]\s*([^\n]+)")
+SALZANO_Q = re.compile(r"(?m)^\s*(\d{1,3})\s*(?:\[[^\]\n]{1,32}\]\s*)?(?:[–—-]\s*)?([^\n]+)")
 
 def clean(raw):
     h=PageText();h.feed(raw)
@@ -42,6 +42,9 @@ def parse_feast(text, part, chap, url):
     return records
 
 def parse_salzano(text):
+    # The museum transcription joins the printed editorial 405 to the preceding answer.
+    # Recover that printed heading explicitly without renumbering or guessing prose.
+    text=re.sub(r"(?<=\w)(405\s*[–—-])",r"\n\1",text)
     qs=list(SALZANO_Q.finditer(text))
     return [{"id":f"PX-SALZANO-EDITORIAL-POS{i+1:03}",
              "editorial_printed_number":int(m.group(1)),
