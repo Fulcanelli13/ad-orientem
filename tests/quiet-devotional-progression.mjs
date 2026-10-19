@@ -77,12 +77,12 @@ const navStart=programme.indexOf("function programmeNav(");
 const navEnd=programme.indexOf("function programmeSummary(",navStart);
 assert.ok(navStart>=0&&navEnd>navStart,"First devotion stage-navigation owner missing");
 const programmeNavOwner=programme.slice(navStart,navEnd);
-assert.doesNotMatch(programmeNavOwner,/data-p435930-\\$\\{kind\\}-(?:prev|next)/,
+assert.ok(!programmeNavOwner.includes("-prev")&&!programmeNavOwner.includes("-next"),
  "First Friday/Saturday should use swipe or stage rail, not Prev/Next");
-assert.match(programmeNavOwner,/data-p435930-program-home/,"Preserve explicit final exit");
-assert.match(programme,/devotionalProgressMarkup\\(\\{index:step,total:items.length/,
+assert.ok(programmeNavOwner.includes("data-p435930-program-home"),"Preserve explicit final exit");
+assert.ok(programme.includes("devotionalProgressMarkup({index:step,total:items.length"),
  "First Friday/Saturday progress must be bound to the exact current stage");
-assert.match(programme,/view==='firstFriday'\\|\\|view==='firstSaturday'/,
+assert.ok(programme.includes("view==='firstFriday'||view==='firstSaturday'"),
  "Both programmes must accept keyboard card navigation");
 const programmeStyles=readFileSync("src/pray/devotional-card-deck-styles.js","utf8");
 assert.match(programmeStyles,/aoP435930ProgrammeNavShell/,"Stage progress must remain visible with its navigation rail");
