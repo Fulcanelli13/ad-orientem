@@ -12,6 +12,7 @@ on:
       - "src/mass/reader-dom.js"
       - "tests/reader-missal-posture-pages.mjs"
       - "tests/reader-special-missal-pages.mjs"
+      - "tests/reader-prayer-over-people.mjs"
       - "tests/reader-mode-switch.mjs"
       - ".github/workflows/missal-posture-pages-qa.yml"
   workflow_dispatch:
@@ -27,6 +28,8 @@ jobs:
           node-version: 22
       - name: Verify sourced posture page boundaries and bilingual preservation
         run: node tests/reader-missal-posture-pages.mjs
+      - name: Verify real Lenten Prayer over the People survives Mass Missal
+        run: node tests/reader-prayer-over-people.mjs
       - name: Verify source-owned special-rite page cues
         run: node tests/reader-special-missal-pages.mjs
       - name: Verify canonical mode-switch and card anchors unchanged
