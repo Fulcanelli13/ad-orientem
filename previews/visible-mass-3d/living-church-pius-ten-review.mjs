@@ -4,7 +4,7 @@
  * the Formation content owner. No publication or authoritative reply state.
  */
 const POSES=new Set(["neutral","welcoming","explaining","thoughtful","grave"]);
-const URI=x=>{try{const u=new URL(x);return u.protocol==="https:"?u.href:null;}catch{return null;}};
+const URI=x=>typeof x==="string"&&/^https:\/\/(?:www\.vatican\.va|www\.museosanpiox\.it|www\.catholicculture\.org)\//.test(x)&&!/[<>"'\s]/.test(x)?x:null;
 const refuse=x=>{throw Error("St Pius X editorial dialogue bundle refused: "+x);};
 export function createPiusXTenEditorialReview(bundle){
  if(bundle?.schema!=="AO_PIUS_X_CONTENT_OWNED_TEN_CONVERSATION_PILOT_V1"
