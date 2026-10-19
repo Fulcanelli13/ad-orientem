@@ -1,7 +1,7 @@
 {
   "schema": "ao-rogation-112-invocation-historical-english-french-alignment-v1",
   "date": "2026-10-19",
-  "status": "112_HISTORICAL_ORDER_MAPPED_NO_1962_TRANSLATION_CERTIFICATION",
+  "status": "112_HISTORICAL_AND_LATER_RITUAL_PARALLELS_FOUND_EDITORIAL_RIGHTS_RELEASE_BLOCKED",
   "provenance": {
     "latin": "data/presentation/reader-rogations.v1.json#processionLitany",
     "existingOwner": "data/mass/rogation-187-vernacular-owner-census.v1.json",
@@ -18,7 +18,40 @@
       "literalCopy": false
     },
     "frenchCrossPassionLatinSeparateLine": 847,
-    "caution": "Wikisource rendered-line locators and print editions have not been facsimile-collated to 1962. Order-and-subject candidate alignment is not a guarantee of literal wording or redistribution rights."
+    "caution": "Wikisource rendered-line locators and print editions have not been facsimile-collated to 1962. Order-and-subject candidate alignment is not a guarantee of literal wording or redistribution rights.",
+    "additionalCandidateWitnesses": {
+      "french": {
+        "id": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+        "url": "https://stclement-ottawa.org/wp-content/uploads/2020/04/Litanie-majeure-Procession-et-Messe.pdf",
+        "scope": "In Litaniis Maioribus ad Processionem / Litanies Majeures la Procession, pp 1–8, litany pp 1–5",
+        "latinFrenchParallel": true,
+        "visiblePageCheck": "PDF pages 0, 2, 3 examined against photographed render; text and source array confirm full 112, no independent publisher permissions",
+        "authorityLimit": "Hosted 2020 French-language booklet; not a certified 1962 typical Missal or an established licensed software translation.",
+        "rights": "NO_AUTOMATIC_REPRODUCTION_PERMISSION"
+      },
+      "english": {
+        "id": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+        "url": "https://www.ewtn.com/catholicism/library/roman-ritual-part-i-11882",
+        "processionOpeningUrl": "https://www.ewtn.com/catholicism/library/roman-ritual-part-2-11883",
+        "edition": "The Roman Ritual: Complete Edition, Philip T. Weller, 1964, Imprimatur Sep 1 1964; 1952 Editio Typica with subsequent adjustments",
+        "lineRanges": {
+          "litany": [
+            5146,
+            5223
+          ],
+          "appendix": [
+            5223,
+            5326
+          ],
+          "rogationsOpening": [
+            3748,
+            3761
+          ]
+        },
+        "scopeLimit": "1964 Rituale English parallels corroborated for all 112 1962-Donor invocations, but source includes older/conditional repetition directives; 1962 Rubricae generales §82 non-duplicatur overrides.",
+        "rights": "COPYRIGHT_1964_PHILIP_T_WELLER_DO_NOT_COPY_INTO_PUBLIC_APP"
+      }
+    }
   },
   "summary": {
     "totalSourceInvocations": 112,
@@ -41,7 +74,29 @@
     "sourceRowsApprovedEn": 0,
     "sourceRowsApprovedFr": 0,
     "confirmedNewEnglishTranslationsNeeded": null,
-    "confirmedNewFrenchTranslationsNeeded": null
+    "confirmedNewFrenchTranslationsNeeded": null,
+    "additionalLaterWitnessStatus": {
+      "frenchBilingualProcessionTextCandidates": 112,
+      "englishRitualLitanyTextCandidates": 112,
+      "noEnglishSourceCandidateFound": 0,
+      "noFrenchSourceCandidateFound": 0,
+      "fullyApprovedBothLanguages": 0,
+      "completeEditionToEditionVerifiedParity": false,
+      "firstHistoricalOmissionsBackfilled": {
+        "french": [
+          "ROG-R03-10",
+          "ROG-R03-74",
+          "ROG-R03-75",
+          "ROG-R03-81",
+          "ROG-R03-96"
+        ],
+        "english": [
+          "ROG-R03-74",
+          "ROG-R03-75",
+          "ROG-R03-96"
+        ]
+      }
+    }
   },
   "exceptionRows": [
     {
@@ -109,6 +164,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 0,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -135,6 +210,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -161,6 +256,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -187,6 +302,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -213,6 +348,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -239,6 +394,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -265,6 +440,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -291,6 +486,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -317,6 +532,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -343,6 +578,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": true,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -369,6 +624,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -395,6 +670,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -421,6 +716,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -447,6 +762,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -475,6 +810,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -503,6 +858,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -529,6 +904,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -557,6 +952,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -583,6 +998,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -609,6 +1044,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -635,6 +1090,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -663,6 +1138,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -691,6 +1186,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -717,6 +1232,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -743,6 +1278,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -769,6 +1324,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -795,6 +1370,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -821,6 +1416,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -847,6 +1462,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -873,6 +1508,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -899,6 +1554,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -925,6 +1600,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -951,6 +1646,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -977,6 +1692,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1003,6 +1738,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1031,6 +1786,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1057,6 +1832,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1083,6 +1878,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1109,6 +1924,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1135,6 +1970,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 1,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1161,6 +2016,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1187,6 +2062,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1213,6 +2108,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1239,6 +2154,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1265,6 +2200,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1291,6 +2246,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1319,6 +2294,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1347,6 +2342,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1373,6 +2388,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1399,6 +2434,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1425,6 +2480,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1451,6 +2526,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1479,6 +2574,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1507,6 +2622,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1533,6 +2668,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1559,6 +2714,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1585,6 +2760,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1611,6 +2806,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1637,6 +2852,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1663,6 +2898,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1689,6 +2944,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1717,6 +2992,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5179,
+            "lineEnd": 5181,
+            "locator": "COMPRESSED_63_SAINT_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1743,6 +3038,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5182,
+            "lineEnd": 5184,
+            "locator": "ALL_SAINTS_WITH_ITS_OWN_RESPONSE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1769,6 +3084,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5186,
+            "lineEnd": 5192,
+            "locator": "TWO_PROPITIUS_PAIRS"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1795,6 +3130,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5186,
+            "lineEnd": 5192,
+            "locator": "TWO_PROPITIUS_PAIRS"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1821,6 +3176,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1847,6 +3222,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1873,6 +3268,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1899,6 +3314,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1925,6 +3360,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1951,6 +3406,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -1977,6 +3452,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2003,6 +3498,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2027,6 +3542,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": true,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": true,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2051,6 +3586,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": true,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5194,
+            "lineEnd": 5194,
+            "locator": "COMPRESSED_DELIVERANCE_SEQUENCE_FIRST_PART"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": true,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2077,6 +3632,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5197,
+            "lineEnd": 5197,
+            "locator": "EVERLASTING_DEATH"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2103,6 +3678,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2129,6 +3724,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2155,6 +3770,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2181,6 +3816,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2209,6 +3864,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 2,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": true,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2235,6 +3910,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2261,6 +3956,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2287,6 +4002,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2313,6 +4048,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2339,6 +4094,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5199,
+            "lineEnd": 5199,
+            "locator": "MYSTERIES_TO_DAY_OF_JUDGMENT"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2365,6 +4140,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5201,
+            "lineEnd": 5201,
+            "locator": "PECCATORES_INTRO"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2391,6 +4186,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2417,6 +4232,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2443,6 +4278,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2469,6 +4324,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2495,6 +4370,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2521,6 +4416,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2547,6 +4462,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2573,6 +4508,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2597,6 +4552,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": true,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": true,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2623,6 +4598,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2649,6 +4644,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2677,6 +4692,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2703,6 +4738,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2729,6 +4784,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2755,6 +4830,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2781,6 +4876,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2807,6 +4922,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5202,
+            "lineEnd": 5202,
+            "locator": "COMPRESSED_TE_ROGAMUS_SEQUENCE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2833,6 +4968,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5203,
+            "lineEnd": 5205,
+            "locator": "FIRST_AGNUS_DEI"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2859,6 +5014,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5207,
+            "lineEnd": 5209,
+            "locator": "SECOND_AGNUS_DEI"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2885,6 +5060,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 3,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5211,
+            "lineEnd": 5213,
+            "locator": "THIRD_AGNUS_DEI"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2911,6 +5106,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 4,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5215,
+            "lineEnd": 5215,
+            "locator": "CHRISTE_AUDI"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2937,6 +5152,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 4,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5217,
+            "lineEnd": 5217,
+            "locator": "CHRISTE_EXAUDI"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2963,6 +5198,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 4,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5219,
+            "lineEnd": 5219,
+            "locator": "KYRIE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -2989,6 +5244,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 4,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5221,
+            "lineEnd": 5221,
+            "locator": "CHRISTE_ELEISON"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     },
     {
@@ -3015,6 +5290,26 @@
       "translationApproved": {
         "en": false,
         "fr": false
+      },
+      "additionalQualifiedCandidateWitnesses": {
+        "french": {
+          "sourceId": "SAINT_CLEMENT_OTTAWA_BILINGUAL_MAJOR_LITANY_2020",
+          "pdfPageZeroBased": 4,
+          "state": "LATIN_FRENCH_SIDE_BY_SIDE_ROW_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "NOT_ESTABLISHED"
+        },
+        "english": {
+          "sourceId": "WELLER_ROMAN_RITUAL_1964_ENGLISH",
+          "sectionLines": {
+            "lineStart": 5223,
+            "lineEnd": 5223,
+            "locator": "LAST_KYRIE"
+          },
+          "state": "ORDERED_GROUP_PARALLEL_CANDIDATE_NOT_APPROVED",
+          "historicalAbsenceBackfilled": false,
+          "distributionRights": "COPYRIGHT_1964_NO_REUSE_PERMISSION"
+        }
       }
     }
   ]
