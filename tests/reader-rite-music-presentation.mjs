@@ -2,12 +2,17 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {projectRiteMusicBadge,loadRiteMusicRegistry} from "../src/mass/reader-rite-music-presentation.js";
 import {normalizeReaderMoment,buildReaderShellMarkup} from "../src/mass/reader-dom.js";
+import {EASTER_VIGIL_PROPHECY_READINGS} from "../src/mass/reader-easter-vigil-prophecy-index.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const registry=load("../data/research/mass-special-rite-music-events-20261019.v1.json");
-assert.equal(registry.rites.length,8);
-assert.equal(registry.rites.reduce((n,x)=>n+x.events.length,0),24);
-const data=new Map(registry.rites.map(r=>[r.id,load("../"+r.sourceFile)]));
+assert.equal(registry.rites.length,10);
+assert.equal(registry.rites.reduce((n,x)=>n+x.events.length,0),47);
+const data=new Map(registry.rites.map(r=>[r.id,
+  r.id==="EASTER_VIGIL" ? {
+    ...load("../"+r.sourceFile),prophecyCanticles:EASTER_VIGIL_PROPHECY_READINGS,
+  } : load("../"+r.sourceFile)
+]));
 const project=(riteId,stageId,condition)=>projectRiteMusicBadge({
   registry,riteId,stageId,sourcePayload:data.get(riteId),condition,
 });
@@ -40,6 +45,17 @@ assert.equal(project("REQUIEM_ABSOLUTION","ABS-R05"),null,
   "In paradisum must not be inferred without explicit following burial procession");
 assert.equal(project("NON_EXISTENT","ASP-R02"),null);
 assert.deepEqual(project("ASPERGES","ASP-R02","ORDINARY"),asp);
+assert.equal(project("GOOD_FRIDAY","GF-PASS-320"),null,"The Passion death pause must never suggest audible music");
+assert.equal(project("GOOD_FRIDAY","GF-LESS-110").category,"SCHOLA");
+assert.match(project("GOOD_FRIDAY","GF-LESS-110").description,/Responsory following first lesson/);
+assert.equal(project("GOOD_FRIDAY","GF-X-521").category,"SUNG RESPONSES");
+assert.equal(project("EASTER_VIGIL","EV-FONT-450","FONT_MODE=SEPARATE_BAPTISTERY"),null,
+  "Return from a separate baptistery is silent");
+assert.ok(project("EASTER_VIGIL","EV-FONT-450","FONT_MODE=IN_CHURCH"));
+assert.ok(project("EASTER_VIGIL","EV-FONT-440","FONT_MODE=SEPARATE_BAPTISTERY"));
+assert.equal(project("EASTER_VIGIL","EV-FONT-440","FONT_MODE=IN_CHURCH"),null);
+assert.equal(project("EASTER_VIGIL","EV-MASS-700","FONT_MODE=IN_CHURCH"),null,
+  "Easter Mass must use the independent Ordinary Schola, not a rite badge");
 
 // The existing Mass reader has one central Latin surface. A music badge
 // is an informative prelude scene, not a real-time heard performance or rail.
@@ -53,6 +69,11 @@ assert.equal(original.riteMusic.eventIds[0],"AO.MUS.ASP.ME");
 assert.equal(normalizeReaderMoment({id:"ASP-R02",cardUpdate:false,schola:null},original).riteMusic.eventIds[0],
   "AO.MUS.ASP.ME",
   "A posture update in the same ceremony must not erase music metadata");
+const explicitSilence=normalizeReaderMoment({
+  id:"GF-PASS-320",cardUpdate:false,riteMusic:null,
+},original);
+assert.equal(explicitSilence.riteMusic,null,
+  "Explicit silent distinct-rite stage must clear music despite unchanged text");
 const handoff=normalizeReaderMoment({
   id:"AO.CARD.001",sectionTitle:"Mass",cardUpdate:true,schola:null
 },original);
@@ -70,4 +91,4 @@ await assert.rejects(()=>loadRiteMusicRegistry({fetchImpl:async()=>({
 })}),/RITE_MUSIC_REGISTRY_SCHEMA_MISMATCH/);
 await assert.rejects(()=>loadRiteMusicRegistry({fetchImpl:async()=>({ok:false})}),
   /RITE_MUSIC_REGISTRY_UNAVAILABLE/);
-console.log("Special rite music-card bridge PASS: 24 indexed events, mutually exclusive Asperges, no imagined music, source text and Schola clocks unchanged");
+console.log("Special rite music-card bridge PASS: 47 indexed events, Good Friday death and Easter Vigil font branches, no imagined music, source text and Schola clocks unchanged");
