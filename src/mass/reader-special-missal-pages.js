@@ -63,6 +63,9 @@ export function specialRiteVernacular(row,{language="en"}={}){
 // remain intact until each source has a certified prayer subdivision.
 const GROUPED_RITES=new Set([
   "ASP-R04","CND-R01","ASH-R01","ROG-R02","ROG-R03","ROG-R05",
+  "PALM-R01","PALM-R04","PALM-R06",
+  "ABS-R03","ABS-R04","CORPUS-R02","CORPUS-R05",
+  "HT-R01","HT-R05",
   "EV-LIT1-400","EV-LIT2-600","EV-FONT-420","EV-FONT-440","EV-EXS-200",
   "EV-LESS-01-READ","EV-LESS-02-READ","EV-LESS-03-READ","EV-LESS-04-READ"
 ]);
@@ -121,7 +124,56 @@ export function projectSpecialRiteReadingPages(stageId,paragraphs,{mode="MISSAL"
     })));
   }
   let groups=null;
-  if(id==="ASP-R04"){
+  if(id==="PALM-R01"){
+    // Spoken antiphon and V/R, followed by the complete blessing collect.
+    if(rows.length!==7 || rows[3].id!=="PALM-R01-04" ||
+      rows.at(-1).id!=="PALM-R01-07")
+      throw new Error("PALM_BLESSING_SOURCE_ROWS_CHANGED");
+    groups=[rows.slice(0,3),rows.slice(3)];
+  }else if(id==="PALM-R04"){
+    // Processional cue dialogue remains together, followed by Gloria laus.
+    if(rows.length!==3 || rows[2].id!=="PALM-R04-03")
+      throw new Error("PALM_PROCESSION_SOURCE_ROWS_CHANGED");
+    groups=[rows.slice(0,2),rows.slice(2)];
+  }else if(id==="PALM-R06"){
+    // V/R must not be detached from their counterpart.
+    if(rows.length!==6 || rows[2].id!=="PALM-R06-03")
+      throw new Error("PALM_CONCLUSION_SOURCE_ROWS_CHANGED");
+    groups=[rows.slice(0,2),rows.slice(2)];
+  }else if(id==="CORPUS-R02"||id==="HT-R01"){
+    // Four source-owned Pange lingua stanzas, no alterations to the chant.
+    if(rows.length!==4 || rows.some((row,i)=>asId(row)!==
+      (id==="CORPUS-R02"?"CORPUS-R02-":"HT-R01-")+String(i+1)))
+      throw new Error("PANGE_LINGUA_FOUR_STANZAS_CHANGED:"+id);
+    groups=[rows.slice(0,2),rows.slice(2)];
+  }else if(id==="CORPUS-R05"){
+    // Eucharistic Benediction: spoken V/R, then Orémus / collect / Amen.
+    if(rows.length!==5 || rows[2].id!=="CORPUS-R05-O" ||
+      rows[4].id!=="CORPUS-R05-A")
+      throw new Error("CORPUS_BENEDICTION_SOURCE_ROWS_CHANGED");
+    groups=[rows.slice(0,2),rows.slice(2)];
+  }else if(id==="HT-R05"){
+    // Psalm 21 is already 13 individual source rows. Keep each verse
+    // intact; the opening and repeated antiphon occur exactly once.
+    if(rows.length!==15 || rows[0].id!=="HT-R05-A1" ||
+      rows.at(-1).id!=="HT-R05-A2" ||
+      rows.slice(1,-1).some((row,i)=>row.id!=="HT-R05-P"+String(i+1)))
+      throw new Error("HOLY_THURSDAY_STRIPPING_SOURCE_ORDER_CHANGED");
+    groups=[rows.slice(0,4),rows.slice(4,8),rows.slice(8,12),rows.slice(12)];
+  }else if(id==="ABS-R03"){
+    // Libera me initial response + V/R pairing; one invocation never
+    // shares a page boundary without its associated response.
+    if(rows.length!==7 || rows.some((row,i)=>row.id!=="ABS-R03-"+String(i+1)))
+      throw new Error("REQUIEM_LIBERA_ME_SOURCE_ROWS_CHANGED");
+    groups=[rows.slice(0,3),rows.slice(3)];
+  }else if(id==="ABS-R04"){
+    // Kyrie/Christe/Kyrie + silent Pater, then the five complete paired
+    // versicles, then the entire collect with response. No lay gesture.
+    if(rows.length!==16 || rows[3].id!=="ABS-R04-PN" ||
+      rows[14].id!=="ABS-R04-O" || rows[15].id!=="ABS-R04-A")
+      throw new Error("REQUIEM_ABSOLUTION_SOURCE_ROWS_CHANGED");
+    groups=[rows.slice(0,4),rows.slice(4,10),rows.slice(10,14),rows.slice(14)];
+  }else if(id==="ASP-R04"){
     // Three exact celebrant/congregation dialogue pairs, then the intact
     // Orémus + concluding collect + Amen. No duplicate or synthetic prayer.
     if(rows.length!==9 ||
