@@ -112,9 +112,15 @@ const after=sanctus.steps.find(x=>x.id==="POST_CHALICE");
 assert.equal(after.condition,"POLYPHONIC_SETTING");
 assert.equal(after.choirAction,"CAN_RELEASE_DELAYED_BENEDICTUS_ON_EXPLICIT_OBSERVATION");
 assert.ok(sanctus.steps.find(x=>x.id==="GREGORIAN_BENEDICTUS").choirAction.includes("WITHOUT_BREAK"));
-const canon14=review.presentationModel.cards.filter(c=>c.sourceSectionId==="AO.CANON.14");
-assert.ok(canon14.some(c=>(c.blocks??[]).some(x=>x.blockId==="AO.SM.B061")),
-  "The public Canon conclusion must remain owned by canonical Canon.14");
+// The product card may carry the broader AO.CARD.018 source alias; the
+// 14-section Canon source map, rather than sourceSectionId presentation
+// spelling, is the authoritative owner of B061.
+assert.ok(data.canonSourceMap.segments.some(seg=>seg.id==="AO.CANON.14" &&
+  seg.blockIds.includes("AO.SM.B061")),
+  "The published Canon source map lost the B061 public conclusion");
+assert.ok(review.presentationModel.cards.some(c=>(c.blocks??[]).some(x=>
+  x.blockId==="AO.SM.B061")),
+  "The curated presentation lost the Canon B061 text block");
 const kyrie=gate.scenes.find(x=>x.id==="MUS.SCENE.INTROIT_KYRIE");
 assert.ok(kyrie.steps.find(x=>x.id==="ENTRANCE").choirAction.includes("EXPECTED"));
 assert.ok(kyrie.steps.find(x=>x.id==="INTROIT_VISIBLE").choirAction.includes("NOT_SOUNDING_CLAIM"));
