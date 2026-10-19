@@ -57,13 +57,21 @@ try{
    const measures=await page.evaluate(()=>{
     const map=document.querySelector("#ao-find-modular-root .aoHeritageSurface .aoFindMap");
     const r=map?.getBoundingClientRect(),root=document.querySelector("#ao-find-modular-root");
+    const search=document.querySelector(".aoHeritageSurface .aoHeritageTools")?.getBoundingClientRect();
+    const categories=document.querySelector(".aoHeritageSurface .aoHeritageCategories")?.getBoundingClientRect();
     return {mapWidth:Math.round(r?.width||0),mapHeight:Math.round(r?.height||0),
+     mapTop:Math.round(r?.top||0),searchBottom:Math.round(search?.bottom||0),
+     categoriesBottom:Math.round(categories?.bottom||0),
      documentOverflow:Math.round(document.documentElement.scrollWidth-innerWidth),
      canvas:Boolean(map?.querySelector("canvas.maplibregl-canvas")),
      status:map?.dataset?.aoMapState||null,
      rootOverflow:root?Math.round(root.scrollWidth-root.clientWidth):null};
    });
    assert.ok(measures.mapWidth>=(mobile?280:600),"Map is too narrow at "+width+": "+JSON.stringify(measures));
+   assert.ok(measures.mapHeight>=(mobile?729:810),
+     "A immersive map must use nearly all remaining viewport height "+JSON.stringify(measures));
+   assert.ok(measures.mapTop<measures.searchBottom&&measures.mapTop<measures.categoriesBottom,
+     "A search/categories must FLOAT OVER the map, not push it down "+JSON.stringify(measures));
    assert.ok(measures.mapHeight>=300,"Map is too short at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.documentOverflow<=1,"Document overflow at "+width+": "+JSON.stringify(measures));
    assert.equal(measures.status,"ready","Cannot certify an empty/loading basemap at "+width);
@@ -75,6 +83,31 @@ try{
    await result.waitFor({state:"visible",timeout:15000});
    await result.click();
    await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible",timeout:10000});
+   assert.equal(await page.locator("#ao-find-modular-root .aoHeritageSearchResults").count(),0,
+     "C selected Place cannot leave search results obscuring the map");
+   const folio=await page.evaluate(()=>{
+    const sheet=document.querySelector(".aoHeritageSurface .aoHeritagePreview");
+    const photo=sheet?.querySelector(".aoHeritagePlaceThumb");
+    const title=sheet?.querySelector(".aoHeritageCardTitle");
+    const frame=sheet?.getBoundingClientRect(),art=photo?.getBoundingClientRect(),
+      heading=title?.getBoundingClientRect();
+    return {left:frame?.left,width:frame?.width,height:frame?.height,
+      photoLeft:art?.left,photoWidth:art?.width,titleLeft:heading?.left,
+      actionHeights:[...(sheet?.querySelectorAll("button,a")||[])]
+       .filter(el=>getComputedStyle(el).display!=="none")
+       .map(el=>el.getBoundingClientRect().height)};
+   });
+   assert.ok(folio.actionHeights.every(h=>h>=44),
+     "C place folio must preserve 44px touch targets "+JSON.stringify(folio));
+   if(mobile){
+    assert.ok(folio.height<422,"C mobile folio must preserve map visibility "+JSON.stringify(folio));
+    assert.ok(folio.photoWidth>=70&&folio.photoLeft<folio.titleLeft,
+      "C mobile requires left-hand photograph, right-hand text "+JSON.stringify(folio));
+   }else{
+    assert.ok(folio.left>0.65*width,"C desktop folio must dock right "+JSON.stringify(folio));
+    assert.ok(folio.photoWidth>=0.7*folio.width,
+      "C desktop artwork must span most of the folio "+JSON.stringify(folio));
+   }
    await page.screenshot({path:resolve(out,"explore-"+width+"-selected-place.png"),fullPage:false});
    await page.locator("#ao-find-modular-root .aoHeritagePreview button[data-find-close-place]").click();
    await search.fill("");
