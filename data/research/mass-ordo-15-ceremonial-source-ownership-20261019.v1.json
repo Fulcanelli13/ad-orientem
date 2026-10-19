@@ -1,0 +1,419 @@
+{
+  "schema": "ao-mass-15-ceremonial-source-owner-audit-v1",
+  "version": "1.0.0",
+  "asOf": "2026-10-19",
+  "authority": "MISSALE_ROMANUM_1962_RITUS_SERVANDUS",
+  "role": "READ_ONLY_OWNER_RECONCILIATION_AND_THREE_SOURCE_BACKED_FORM_FIXES",
+  "normative1962": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+  "invariants": {
+    "latinTextMutation": false,
+    "englishTextMutation": false,
+    "frenchTextMutation": false,
+    "donorMutation": false,
+    "cardStructureMutation": false,
+    "scriptedObservationalTimelineAllowed": false,
+    "faithfulPostureFromPriestAction": false,
+    "requiemEntranceIncenseOmitted": true,
+    "requiemOffertoryIncenseStillPermitted": true,
+    "requiemFinalBlessingOmitted": true
+  },
+  "entries": [
+    {
+      "cueId": "AO.SM.C0041",
+      "title": "First altar incensation",
+      "status": "FORM_GATED",
+      "gate": "RITUS_XIII_2_REQUIEM; 1962_FORM_NO_INCENSE",
+      "review": "Requiem omits Introit incensation; non-incensed forms omit the entire B013 block. Do not disable Offertory incense.",
+      "registeredEvidence": [
+        {
+          "family": "priestAction",
+          "ids": [
+            "INCENSES ALTAR"
+          ]
+        },
+        {
+          "family": "priestPosition",
+          "ids": [
+            "ROUTE_CONTROLLED"
+          ]
+        },
+        {
+          "family": "ritusResearch",
+          "ids": [
+            "B01-043",
+            "B01-044"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0081",
+      "title": "Move to Gospel-side Missal",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "TWO_STATION_ROUTE_ALREADY_MODELED",
+      "review": "C0081 is the departure route; C0082 separately owns the arrival at the Gospel Missal. No duplicate movement.",
+      "registeredEvidence": [
+        {
+          "family": "priestPosition",
+          "ids": [
+            "ALTAR_CENTER"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0111",
+      "title": "Paten cross and host placement",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "PUBLISHED_RUBRICS_3_MICROSTEPS",
+      "review": "Source rubric events describe three distinct priest steps. Their page positions are NOT observed timestamps.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0111.01",
+            "AO.RUB.C0111.02",
+            "AO.RUB.C0111.03"
+          ]
+        },
+        {
+          "family": "priestAction",
+          "ids": [
+            "SIGNS WITH PATEN"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0111.01"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0115",
+      "title": "Chalice cross and placement",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "PUBLISHED_RUBRICS_3_MICROSTEPS_SOLEMN_ACTOR_GATE",
+      "review": "Covering the chalice is withheld as priest-only in Solemn Mass where the deacon may own the action.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0115.01",
+            "AO.RUB.C0115.02",
+            "AO.RUB.C0115.03"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0115.01"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0117",
+      "title": "Veni sanctificator gestures",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "PUBLISHED_RUBRICS_2_MICROSTEPS",
+      "review": "Eyes/hands raised then hands joined. No new faithful posture.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0117.01",
+            "AO.RUB.C0117.02"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0117.01",
+            "GM.P.C0117.02"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0124",
+      "title": "Offertory incense of participants",
+      "status": "FORM_GATED",
+      "gate": "RITUS_XIII_2_REQUIEM_CELEBRANT_ONLY",
+      "review": "At Requiem, the offerings and altar can be incensed at Offertory but only the celebrant is incensed afterward; do not tell the user clergy/people are incensed.",
+      "registeredEvidence": [
+        {
+          "family": "priestAction",
+          "ids": [
+            "RECEIVES INCENSE"
+          ]
+        },
+        {
+          "family": "priestPosition",
+          "ids": [
+            "ALTAR_EPISTLE_SIDE"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0129",
+      "title": "Altar kiss before Orate fratres",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "EXISTING_GESTURE_AND_PRIEST_ACTION",
+      "review": "Existing priest gesture/action owns altar kiss, no extra trigger.",
+      "registeredEvidence": [
+        {
+          "family": "priestAction",
+          "ids": [
+            "KISSES ALTAR"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0129.01"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0155",
+      "title": "Silent Memento of living",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "CANON_PUBLISHED_SILENT_RUBRIC",
+      "review": "Silent commemoration is not a voiced prayer. Source rubric approved as explanatory, not a precisely observed event.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0155.01"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0155.01"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "title": "First elevation of Sacred Host",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "PUBLISHED_1962_FIVE_ACTION_SEQUENCE_AND_FINGER_STATE",
+      "review": "Genuflect-elevate-replace-genuflect; bell belongs to server and varies locally. Preserve finger discipline and separate priest/congregation state.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0174.01",
+            "AO.RUB.C0174.02",
+            "AO.RUB.C0174.03",
+            "AO.RUB.C0174.04",
+            "AO.RUB.C0174.05",
+            "AO.RUB.C0174.06"
+          ]
+        },
+        {
+          "family": "priestAction",
+          "ids": [
+            "ELEVATES HOST"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0174.01",
+            "GM.P.C0174.02",
+            "GM.P.C0174.03",
+            "GM.F.C0174.01"
+          ]
+        },
+        {
+          "family": "ritusResearch",
+          "ids": [
+            "B01-021",
+            "B01-022",
+            "B01-023",
+            "B01-024",
+            "B01-025"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "title": "Elevation of Precious Blood",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "PUBLISHED_1962_FIVE_ACTION_SEQUENCE_SOLEMN_ACTOR_GATE",
+      "review": "Genuflect-elevate-replace-cover-genuflect; Solemn covering can belong to deacon, so composite priest label withheld; bell server-owned.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0181.01",
+            "AO.RUB.C0181.02",
+            "AO.RUB.C0181.03",
+            "AO.RUB.C0181.04",
+            "AO.RUB.C0181.05"
+          ]
+        },
+        {
+          "family": "priestAction",
+          "ids": [
+            "ELEVATES CHALICE"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0181.01",
+            "GM.P.C0181.02",
+            "GM.P.C0181.03"
+          ]
+        },
+        {
+          "family": "ritusResearch",
+          "ids": [
+            "B01-026",
+            "B01-027",
+            "B01-028",
+            "B01-029",
+            "B01-030"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0193",
+      "title": "Silent Memento of dead",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "CANON_PUBLISHED_SILENT_RUBRIC",
+      "review": "Silent prayer may be visually identified but cannot be promoted to an audible cue.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0193.01"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0193.01"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "title": "Per ipsum preparation",
+      "status": "PARTIAL_OBSERVATION_REQUIRED",
+      "gate": "PRIEST_GENUFLECTION_ONLY_RECORDED",
+      "review": "Source describes uncovering chalice/taking Sacred Host; current significant-action lane only certifies GENUFLECTS. Additional physical microsteps need independent role/timing approval.",
+      "registeredEvidence": [
+        {
+          "family": "priestAction",
+          "ids": [
+            "GENUFLECTS"
+          ]
+        }
+      ],
+      "independentSelectionRequired": true
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "title": "Per ipsum completion",
+      "status": "PARTIAL_OBSERVATION_REQUIRED",
+      "gate": "PRIEST_GENUFLECTION_ONLY_RECORDED",
+      "review": "Source describes replacement/covering/genuflection; current lane only certifies GENUFLECTS. Do not invent automatic action timing for other microsteps.",
+      "registeredEvidence": [
+        {
+          "family": "priestAction",
+          "ids": [
+            "GENUFLECTS"
+          ]
+        }
+      ],
+      "independentSelectionRequired": true
+    },
+    {
+      "cueId": "AO.SM.C0262",
+      "title": "Placeat altar kiss",
+      "status": "EXISTING_SOURCE_OWNER",
+      "gate": "PUBLISHED_RUBRICS_2_MICROSTEPS_REQUIEM_RETAINS",
+      "review": "The Placeat and altar kiss remain in Requiem. The following final blessing does not.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0262.01",
+            "AO.RUB.C0262.02"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0262.01"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    },
+    {
+      "cueId": "AO.SM.C0263",
+      "title": "Final blessing preparation",
+      "status": "FORM_GATED",
+      "gate": "RITUS_XIII_1_REQUIEM_FINAL_BLESSING_OMITTED",
+      "review": "Do not show blessing preparations or blessing words/gesture at Requiem; Last Gospel follows.",
+      "registeredEvidence": [
+        {
+          "family": "publishedRubric",
+          "ids": [
+            "AO.RUB.C0263.01",
+            "AO.RUB.C0263.02",
+            "AO.RUB.C0263.03"
+          ]
+        },
+        {
+          "family": "priestPosition",
+          "ids": [
+            "ALTAR_CENTER"
+          ]
+        },
+        {
+          "family": "gestureMatrix",
+          "ids": [
+            "GM.P.C0263.01",
+            "GM.P.C0263.02",
+            "GM.P.C0263.03"
+          ]
+        }
+      ],
+      "independentSelectionRequired": false
+    }
+  ],
+  "summary": {
+    "total": 15,
+    "formFixed": 3,
+    "existingSourceOwned": 10,
+    "partialObservationHold": 2,
+    "reviewedSourceCueCount": 15,
+    "uncertifiedPhysicalObservations": 15
+  },
+  "ownership": "Use existing 1962 rubric event registry, original gesture matrix, and form-state; do not create new event IDs or auto-trigger from bracketed source text."
+}
