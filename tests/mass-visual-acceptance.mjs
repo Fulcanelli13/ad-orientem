@@ -917,7 +917,7 @@ try{
   assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
-  assert.equal(gloriaBow.gestureIconHidden,false,"Gloria bow lost its canonical gesture icon");
+  assert.equal(gloriaBow.gestureIconHidden,true,"rejected Gloria head-bow art returned to faithful rail");
   const faithfulGloriaIcons=await page.evaluate(()=>{
     const r=document.querySelector("#ao-r17-native-reader-preview");
     const rows=[...r.querySelectorAll(".ao-reader-paragraph[data-faithful-row-id]")];
@@ -926,7 +926,7 @@ try{
   });
   assert.ok(faithfulGloriaIcons.count>=1 && faithfulGloriaIcons.eachHasPosture,
     "each visible Gloria paragraph requires its own faithful posture icon");
-  assert.equal(faithfulGloriaIcons.current,false,"Gloria bow missing from faithful paragraph itself");
+  assert.notEqual(faithfulGloriaIcons.current,false,"rejected head-bow art returned inside faithful paragraph");
   // An actual tap on the faithful pictogram, not the priest icon, owns
   // the local posture/gesture picker. Saving must not rebuild the card.
   const gloriaInline=page.locator(
@@ -946,6 +946,14 @@ try{
   assert.match(await page.evaluate(()=>localStorage.getItem("ao-mass-customary-v1")??""),/AO.SM.C0061/,
     "faithful paragraph icon customization was not saved");
   await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("DEFAULT");
+  // Default head-bow has no approved artwork: remove a user-inserted gesture
+  // pictogram, but do not discard source cue, paragraph, or posture control.
+  await page.waitForFunction(()=>
+    !document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='gesture']"),
+    null,{timeout:7000});
+  assert.equal(await page.locator(
+    "#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='posture']").count(),1,
+    "resetting a rejected bow depiction removed the essential faithful posture button");
   await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("DEFAULT");
   await faithfulPicker.locator("[data-faithful-picker-close]").click();
   assert.equal(await faithfulPicker.isVisible(),false,"faithful picker did not close");
@@ -964,8 +972,8 @@ try{
       image:art?.style.backgroundImage??"",mask:art?.style.maskImage??""};
   });
   assert.equal(priestBowArt.active,"true","Gloria source priest bow action is missing from the rail");
-  assert.equal(priestBowArt.hidden,false,
-    "matrix BOWS HEAD incorrectly overrode the correctly bound rubric head_bow artwork");
+  assert.equal(priestBowArt.hidden,true,
+    "rejected priest BOWS HEAD image returned although exact source action remains");
   assert.equal(gloriaBow.scholaSharedActive,"true","shared Gloria text lost the v1.76 right-rail Schola indicator");
   assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
   assert.equal(gloriaBow.scholaDockActive,"false","shared Gloria text duplicated itself in the Schola dock");
