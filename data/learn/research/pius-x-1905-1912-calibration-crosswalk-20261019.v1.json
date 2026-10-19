@@ -1,0 +1,91 @@
+{
+  "schema": "AO_PIUS_X_1905_1912_CROSS_EDITION_CALIBRATION_V1",
+  "date": "2026-10-19",
+  "status": "SIX_EXPLICIT_SOURCE_TEXT_COMPARISONS_NOT_FULL_CORPUS_DEDUP",
+  "owner_issue": 1457,
+  "method": "Six spot-reviewed complete Italian question/answer loci from museum 1905 source and pinned modern 1912-short transcription. No same-intent merge approved automatically and no original 1912 facsimile collation.",
+  "records": [
+    {
+      "review_id": "CROSS-001",
+      "long_1905": "PX1905-Q254",
+      "short_1912": [
+        "PX1912-Q414"
+      ],
+      "long_source_url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-seconda-dellorazione/",
+      "short_section": "orazione.md",
+      "relation": "SAME_QUESTION_INTENT_CANDIDATE",
+      "rationale": "Both ask directly what prayer is; answers define raising mind/soul to God for adoration, thanks and petition.",
+      "dedup_approved": false
+    },
+    {
+      "review_id": "CROSS-002",
+      "long_1905": "PX1905-Q262",
+      "short_1912": [
+        "PX1912-Q422"
+      ],
+      "long_source_url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-seconda-dellorazione/",
+      "short_section": "orazione.md",
+      "relation": "SAME_QUESTION_INTENT_CANDIDATE",
+      "rationale": "Both directly ask why our prayers are not always heard and explain that requests may be spiritually unsuitable or made improperly.",
+      "dedup_approved": false
+    },
+    {
+      "review_id": "CROSS-003",
+      "long_1905": "PX1905-Q527",
+      "short_1912": [
+        "PX1912-Q269",
+        "PX1912-Q270",
+        "PX1912-Q271"
+      ],
+      "long_source_url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "short_section": "sacramenti-in-generale.md",
+      "relation": "RELATED_NOT_SAME_DISTINCTION",
+      "rationale": "1905 Q527 distinguishes sanctifying/habitual from actual grace. The 1912 short questions distinguish sanctifying from sacramental grace, not actual grace.",
+      "dedup_approved": false
+    },
+    {
+      "review_id": "CROSS-004",
+      "long_1905": "PX1905-Q669",
+      "short_1912": [],
+      "long_source_url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "short_section": "sacramento-eucaristia.md",
+      "relation": "NOT_FOUND_IN_REVIEWED_SHORT_EUCHARIST_SECTION",
+      "rationale": "1905 directly asks if Rosary or other prayers impede fruitful participation at Mass; no equivalent direct question was located in short Eucharist Q316–354. This is not a proof of absence from every other text.",
+      "dedup_approved": false
+    },
+    {
+      "review_id": "CROSS-005",
+      "long_1905": "PX1905-Q984",
+      "short_1912": [
+        "PX1912-Q359"
+      ],
+      "long_source_url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/",
+      "short_section": "sacramento-penitenza.md",
+      "relation": "RELATED_BUT_DISTINCT_PRACTICAL_CONTEXT",
+      "rationale": "1905 Q984 explicitly advises an evening examination of conscience; short Q359 describes an examination prior to Confession, a related but different context.",
+      "dedup_approved": false
+    },
+    {
+      "review_id": "CROSS-006",
+      "long_1905": "PX1905-Q855",
+      "short_1912": [
+        "PX1912-Q409",
+        "PX1912-Q410"
+      ],
+      "long_source_url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "short_section": "sacramento-matrimonio.md",
+      "relation": "EDITION_DATE_CONFLICT_NO_AUTOMERGE",
+      "rationale": "1905 Q855 describes separately contracting civil marriage to secure civil legal effects. The later digital short Q409–410 instead state canonical marriage receives civil effects through registration; that regime reflects 1929 Concordat. Not a contradiction attributable to Pius X himself.",
+      "dedup_approved": false
+    }
+  ],
+  "counts": {
+    "sampled_pairs": 6,
+    "same_intent_candidates": 2,
+    "related_not_identical": 2,
+    "long_1905_only_in_screened_section": 1,
+    "edition_date_conflict": 1,
+    "approved_semantic_merges": 0
+  },
+  "source_caveat": "Longer 1905 material is papally prescribed regional Catechism, not necessarily Sarto-autograph; short digital Q409–410 contaminated by post-1929 revision."
+}
