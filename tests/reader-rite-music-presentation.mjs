@@ -135,13 +135,16 @@ const holyThursday={overlays:[],provenance:{organ1962:{
   verified:true,source:"LITURGICAL_PLAN_1962",season:"LENT",
   triduum:true,holyThursdayMass:true,
 }}};
-assert.equal(organ({massCard:massCards[0],resolvedMass:holyThursday}).status,"SILENT");
+assert.equal(organ({massCard:massCards[0],resolvedMass:holyThursday}).status,"PERMITTED",
+  "Holy Thursday organ exception begins at the opening Mass, not the Gloria");
 assert.equal(organ({massCard:massCards[1],resolvedMass:holyThursday}).status,"PERMITTED",
   "Holy Thursday exception must belong to Gloria only");
 assert.equal(organ({massCard:massCards[2],resolvedMass:holyThursday}).status,"SILENT",
   "Holy Thursday organ continued past the Gloria exception");
 const requiem={overlays:["REQUIEM"],provenance:null};
 assert.equal(organ({massCard:massCards[1],resolvedMass:requiem}).status,"ACCOMPANIMENT_ONLY");
+assert.equal(organ({massCard:massCards[1],resolvedMass:{...requiem,form:"LOW"}}),null,
+  "Low Mass §29 restrictions need separate source-position decisions");
 assert.equal(organ({massCard:massCards[1],resolvedMass:{overlays:[]}}),null,
   "Civil date and card title cannot imply a liturgical season");
 const verified={overlays:[],provenance:{organ1962:{
