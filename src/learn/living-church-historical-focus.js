@@ -4,7 +4,7 @@
  * user test utterances. A single generic word cannot authorize a source.
  */
 const fold=text=>String(text??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
- .toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9' ]+/g," ").replace(/\s+/g," ").trim();
+ .toLowerCase().replace(/[’‘']/g," ").replace(/[^a-z0-9 ]+/g," ").replace(/\s+/g," ").trim();
 const hasPhrase=(hay,needle)=>hay===needle||(" "+hay+" ").includes(" "+needle+" ");
 export function historicalFocusCandidates(question,topics,language="en"){
  const lang=language==="fr"?"fr":"en",query=fold(question);
