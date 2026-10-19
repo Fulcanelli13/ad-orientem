@@ -30,3 +30,17 @@ The 1661 artwork is historical iconographic evidence, **not** an independent sou
 `npm run test:mass-icon-source` now includes `tests/mass-icon-originals-leclerc1661.mjs`. It validates all eight distinct institution-sourced catalogue records and specifically prohibits a museum catalogue-only record being promoted into `originalPictures`, `APPROVED_FOR_PRODUCTION`, or a reader icon.
 
 This source is complementary to the restricted Romanitas 1944 photo series, Carlos Sierra's Cathopic photograph, the in-copyright 1934 Subercaseaux lithograph, and the uncertain 1897 Lanslots book. It is a substantial improvement in provenance and rights evidence **but not yet a finished or visually audited picture**.
+
+## Second original image (full illustration inspected): Schumacher, 1920
+
+A distinctly stronger, **actually viewed** original is Philipp Schumacher's *Kněžské přijímání* (Priest Communion), published in Wilhelm Pichler's *Katholisches Religionsbüchlein für die unteren Klassen der Volksschule* (Vienna: Österreichischer Schulbücherverlag, 1920), **page 97**. Wikimedia Commons stores the 1,265 × 964 scan and describes the artist, source and **public-domain / mechanical scan** terms:
+
+- Original scan and legal rationale: https://commons.wikimedia.org/wiki/File:Komunii%C4%9Do_(Schumacher,_Katholisches_Religionsb%C3%BCchlein)_001.jpg
+- Original-image metadata and pictorial inspection: `data/presentation/mass-icon-originals-schumacher1920.p3.json`
+- Commons' SHA-1 checksum `3073f3c53d38c007a821d3fe1c3dc3fe8d103436` is **catalogue metadata**, not a locally computed SHA-256.
+
+The image was viewed at source resolution in web media display. It visibly shows a priest inclined over the traditional altar, with hands together at his mouth, chalice on the altar, altar server kneeling, and congregation beyond the rail. However **the divided Host itself is indistinct**, and exact contact of priest's elbows with the altar is not firmly visible. It **does not show drinking from the chalice** or the 1962-required left-hand paten support. Thus it is a **public-domain partial Host evidence witness**, never suitable as the celebrant's chalice-reception picture.
+
+The original-file download into the working container failed; its bytes and SHA-256 are therefore **not yet verified**. It has **not been added to `originalPictures`** and still fails release gating. A mere source image with an appropriate subject is insufficient where key objects and gestures are visually unclear.
+
+**Priority now:** acquire original bytes; then find a visually precise Host-consumption close-up or documentary photograph for X.4, and a **distinct authentic original of priest drinking from chalice with the paten in the left hand** for X.5. Regardless of the medium, derivative icons must match the approved rich-priest family—not the illustrated book's hatching style.
