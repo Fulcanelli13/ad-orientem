@@ -135,10 +135,10 @@ assert.equal(docs.records.find(x=>x.id==="SACRA-TRIDENTINA-SYNODUS-1905").docume
 
 const claimReviews=await read("data/learn/magisterium-doctrinal-claim-reviews.v1.json");
 assert.equal(claimReviews.schema,"AO_MAGISTERIUM_DOCTRINAL_CLAIM_REVIEW_V1");
-assert.equal(claimReviews.metrics.reviewedClaims,54);
+assert.equal(claimReviews.metrics.reviewedClaims,59);
 assert.equal(claimReviews.metrics.sourceScopedCanons,28);
 assert.equal(claimReviews.metrics.totalSourcePassageLocators,61);
-assert.equal(claimReviews.metrics.remainingPassagesWithoutEditorialClaim,7);
+assert.equal(claimReviews.metrics.remainingPassagesWithoutEditorialClaim,0);
 assert.equal(claimReviews.rules.notVisitorFacing,true);
 const idMap=new Map(passages.records.map(p=>[p.passageId,p]));
 const claimPassageIds=new Set();
@@ -161,11 +161,44 @@ for(const c of claimReviews.records){
  assert.ok(c.interpretationGuard.length>25);
  assert.ok(c.classification.magisterialNote==="NOT_THEOLOGICALLY_ADJUDICATED");
 }
-assert.deepEqual(
- claimReviews.notYetScopedPassageIds,
- passages.records.filter(p=>!claimPassageIds.has(p.passageId)).map(p=>p.passageId)
-);
+assert.deepEqual(claimReviews.notYetScopedPassageIds,[]);
+assert.equal(claimReviews.nonStandalonePassageAliases.length,2);
+assert.equal(claimReviews.metrics.allPassagesDispositioned,61);
+const aliases=new Set();
+for(const a of claimReviews.nonStandalonePassageAliases){
+ assert.ok(!claimPassageIds.has(a.passageId),"Nonstandalone alias must not also be a claim");
+ assert.ok(claimPassageIds.has(a.canonicalPassageId),"Alias must point to canonical claim");
+ assert.ok(!aliases.has(a.passageId));aliases.add(a.passageId);
+}
+assert.equal(claimPassageIds.size+aliases.size,passages.records.length);
+for(const p of passages.records){
+ assert.ok(claimPassageIds.has(p.passageId)||aliases.has(p.passageId));
+ assert.equal(p.b6Disposition,claimPassageIds.has(p.passageId)?"INTERNAL_CLAIM_EDITORIAL_NOT_CERTIFIED":"NON_STANDALONE_SOURCE_ALIAS");
+ assert.equal(p.publisherFacingApproved,false);
+}
 assert.equal(claimReviews.records.filter(c=>c.passageGenre==="SOLEMN_DEFINITION_FORMULA").length,2);
 assert.ok(claimReviews.records.filter(c=>c.classification.temporalLawReview==="REQUIRED").length>=3);
 
+
+const bridges=await read("data/learn/magisterium-source-owner-bridges.v1.json");
+assert.equal(bridges.schema,"AO_MAGISTERIUM_SOURCE_OWNER_BRIDGES_V1");
+assert.equal(bridges.metrics.bridgeTopicGroups,7);
+assert.equal(bridges.metrics.massExplorerCandidateContexts,4);
+assert.equal(bridges.metrics.approvedPublishedLinks,0);
+assert.equal(bridges.bridgeRules.noConjecturalMassCardIds,true);
+for(const b of bridges.bridges){
+ assert.equal(b.approvedForCharacterAnswer,false);
+ assert.equal(b.approvedForUI,false);
+ for(const pid of b.passages)assert.ok(claimPassageIds.has(pid));
+ for(const link of b.originalOwnerRefs){
+   if(link.owner==="APOLOGETICS_CANONICAL_V1")assert.ok(apolIds.has(link.ref));
+   else if(link.owner==="LTF_PIUS_X_CATECHISM_INDEX")assert.ok(qids.has(link.ref));
+   else throw Error("Unrecognized source-owned character bridge");
+ }
+}
+for(const b of bridges.massExplorerContextCandidates){
+ assert.equal(b.specificCardId,null);
+ assert.equal(b.approvedForUI,false);
+ for(const p of b.evidence)assert.ok(claimPassageIds.has(p));
+}
 console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 106 provisional links; 61 nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
