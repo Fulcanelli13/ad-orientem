@@ -1,3 +1,6 @@
+import {makeEucharisticHymnRows,makeCorpusBenedictionRow}
+  from "./reader-eucharistic-hymn-text.js";
+
 // R26 native Corpus Christi procession / Benediction following-action reader.
 // Mass ending deltas remain plan-owned. This controller begins only when the
 // explicit CORPUS_CHRISTI_PROCESSION following action is active.
@@ -37,7 +40,7 @@ export function buildCorpusChristiProcessionPayload({graph,payload}={}){
       actorScope:"ALL_FAITHFUL",posture:"LOCAL_OR_INHERIT",
       objectState:"BLESSED_SACRAMENT_IN_PROCESSION",
       triggerState:"MONSTRANCE_PLACED_IN_CELEBRANT_HANDS",
-      paragraphs:freeze(payload.pangeLingua.map((x,i)=>row("CORPUS-R02-"+String(i+1),"TEXT",x,"CORPUS-EXP-010"))),
+      paragraphs:makeEucharisticHymnRows(payload.pangeLingua,{prefix:"CORPUS-R02-",sourceRecordId:"CORPUS-EXP-010"}),
       guide:"Begin Pange lingua when the monstrance is actually placed in the celebrant's hands; do not infer this from the calendar or a timer."
     }),
     freeze({
@@ -53,7 +56,7 @@ export function buildCorpusChristiProcessionPayload({graph,payload}={}){
       actorScope:"ALL_FAITHFUL",posture:"LOCAL_REVERENT",
       objectState:"BLESSED_SACRAMENT_EXPOSED_AT_ALTAR",
       triggerState:"BLESSED_SACRAMENT_REPLACED_ON_ALTAR",
-      paragraphs:freeze(payload.tantumErgo.map((x,i)=>row("CORPUS-R04-"+String(i+1),"TEXT",x,"CORPUS-RET-010"))),
+      paragraphs:makeEucharisticHymnRows(payload.tantumErgo,{prefix:"CORPUS-R04-",sourceRecordId:"CORPUS-RET-010",startStanza:4}),
       guide:"Begin Tantum ergo when the Blessed Sacrament has actually been replaced on the altar."
     }),
     freeze({
@@ -62,11 +65,11 @@ export function buildCorpusChristiProcessionPayload({graph,payload}={}){
       actorScope:"ALL_FAITHFUL",posture:"LOCAL_REVERENT",
       objectState:"BLESSED_SACRAMENT_EXPOSED_AT_ALTAR",
       paragraphs:freeze([
-        row("CORPUS-R05-V","VERSICLE",payload.benediction?.versicle,"CORPUS-BEN-010"),
-        row("CORPUS-R05-R","RESPONSE",payload.benediction?.response,"CORPUS-BEN-010"),
-        row("CORPUS-R05-O","TEXT",payload.benediction?.oremus,"CORPUS-BEN-010"),
-        row("CORPUS-R05-P","TEXT",payload.benediction?.prayer,"CORPUS-BEN-010"),
-        row("CORPUS-R05-A","RESPONSE",payload.benediction?.amen,"CORPUS-BEN-010"),
+        makeCorpusBenedictionRow("V",payload.benediction?.versicle,{kind:"VERSICLE"}),
+        makeCorpusBenedictionRow("R",payload.benediction?.response,{kind:"RESPONSE"}),
+        makeCorpusBenedictionRow("O",payload.benediction?.oremus,{kind:"VERSICLE"}),
+        makeCorpusBenedictionRow("P",payload.benediction?.prayer,{kind:"TEXT"}),
+        makeCorpusBenedictionRow("A",payload.benediction?.amen,{kind:"RESPONSE"}),
       ])
     }),
     freeze({
