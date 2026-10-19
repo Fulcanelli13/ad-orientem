@@ -13,13 +13,13 @@
 | Celebration/annex | Canonical source | Latin & stages | EN/FR | Missal internal pages | Activation/handoff | Release disposition |
 |---|---|---|---|---|---|---|
 | Asperges / Vidi aquam | ASP (6 records), R20 | Full seasonal antiphon, psalm, Gloria policy, repetitions, 3 V/R, **Orémus**, collect, Amen | **Crosschecked editorial EN/FR** in all 13 ordinary (or 12 Passiontide) source rows; independent facsimile collation remains | Two internal pages for versicles and collect; chant retained in order | Only if preceding rite selected, to FOOT_CLUSTER; personal cross on actual sprinkling, no minister kneeling imposed | Automated phone gate, seasonal tests and editorial signoff required |
-| Palm Sunday | PALM, R22 | Latin blessing, distribution, Gospel, procession and return | Not available in source-built pages | Existing stage pages; long sections await certified internal subdivisions | Participant state explicit; INTROIT with prescribed opening/Last Gospel variations | Bilingual and visual gaps |
+| Palm Sunday | PALM, R22 | Latin blessing, distribution, Gospel, procession and return | Not available in source-built pages | Blessing prayer isolated from dialogue, procession cue and *Gloria laus* separately, conclusion V/R retained before concluding prayer; the long Gospel remains one sourced row | Participant state explicit; INTROIT with prescribed opening/Last Gospel variations | Bilingual and visual gaps |
 | Ash Wednesday | ASH, R23 | Latin blessing/distribution and four orations | Not available in source-built pages | Four whole orations separated | Recipient cue personal; INTROIT | Bilingual gap |
 | Candlemas | CND, R24 | Latin 5 orations, distribution, procession, candle state | Not available in source-built pages | Five whole orations separated | Blessing/reception and procession only from source; INTROIT | Bilingual gap |
 | Rogations/Greater Litanies | ROG, R25 | Latin prayers and complete, undoubled Litany | Not available in source-built pages | Complete V/R pairs and concluding orations | Conditional walking vs public supplications; INTROIT | Bilingual gap |
-| Requiem Absolution | ABS, R26 | Latin, with optional body/catafalque and burial hymn branch | Not available in source-built pages | Source ceremonial stages | Only if following action explicitly selected; burial hymn depends on actual body and procession | Bilingual and branch phone gap |
-| Corpus Christi | CORPUS, R27 | Latin Pange lingua, Tantum ergo, Benediction | Not available in source-built pages | Source ceremonial stages | Explicit following action, omitted final blessing/Last Gospel plan; procession opt-in | Bilingual and page-gap |
-| Holy Thursday translation | HT_POST, R31 | Latin Pange lingua, Tantum ergo, altar stripping | Not available in source-built pages | Source ceremonial stages | Movement only for joining participants; to post-Mass lifecycle | Bilingual and page-gap |
+| Requiem Absolution | ABS, R26 | Latin, with optional body/catafalque and burial hymn branch | Not available in source-built pages | Libera me refrain/responses; Kyrie/Pater, paired intercessions and whole oration/Amen on separate reading pages | Only if following action explicitly selected; burial hymn depends on actual body and procession | Bilingual and branch phone gap |
+| Corpus Christi | CORPUS, R27 | Latin Pange lingua, Tantum ergo, Benediction | Not available in source-built pages | *Pange lingua* on two two-stanza pages; Benediction V/R and Orémus/prayer/Amen independently | Explicit following action, omitted final blessing/Last Gospel plan; procession opt-in | Bilingual and page-gap |
+| Holy Thursday translation | HT_POST, R31 | Latin Pange lingua, Tantum ergo, altar stripping | Not available in source-built pages | *Pange lingua* split by complete stanzas; 13 Psalm 21 source lines grouped with antiphon only at opening and close | Movement only for joining participants; to post-Mass lifecycle | Bilingual and page-gap |
 | Generic following procession | PROC, R29 | **Structural-only**, deliberately no feast-specific prayers | **None** until dedicated profile supplied | Structural stages only | Cannot infer procession from feast/date; participant opt-in, then lifecycle | Not full text-ready |
 | Good Friday (distinct rite) | GF, R28 | Source-pinned Latin Passion, solemn prayers, veneration and Communion | Separate editorial layer; incomplete | Fixed ceremony stage and formula/Passion ownership | Exact Flectamus/Levate, Passion-death pause, personal cross/Communion | Bilingual and full phone parity gap |
 | Easter Vigil (distinct composite) | EV, R33 (38 records) | New fire, candle, Lumen Christi, Exsultet, 4 prophecies, Litanies, font blessing, Vigil Mass | Some trilingual source rows; **Exsultet/new fire/candle/Lauds FR only editorial summary and excluded** | 12 Exsultet pages; four prophecy groups with canticles following; Litanies; 17 font segments | Source graph and separate FONT/BAPTISM branches; explicit handoff to Vigil Mass | Full FR and conditional baptism rite still incomplete |
@@ -70,3 +70,39 @@ checks continue for Ash, Candlemas and Easter Vigil.
 This matrix is the authoritative *current known coverage ledger* only;
 do not promote an annex from structural to bilingual complete without
 real source rows and acceptance tests.
+
+## Next batch: display pages for Palm, Requiem, Corpus Christi and Holy Thursday
+
+Source-only pages are now divided without altering ceremonial stage IDs:
+- **Palm** blessing antiphon and dialogue precede the complete collect;
+  processional `Procedamus` response precedes the intact `Gloria laus`;
+  concluding dialogue precedes the complete final oration.
+- **Requiem Absolution** `Libera me` refrain and invocation-response
+  pairs are divided in source order; the silent `Pater noster`, five
+  concluding V/R pairs and oration/`Amen` are kept in exact source groups.
+  Conditional `In paradisum` is not automatically activated by a
+  Requiem Mass without the selected funeral/burial following action.
+- **Corpus Christi** `Pange lingua` is presented two whole stanzas at a
+  time. Benediction dialogue and `Orémus` / `Deus, qui nobis` / `Amen`
+  are separate Missal reading pages. The underlying placement/return of the
+  monstrance remains explicitly observed/source-owned.
+- **Holy Thursday** the four `Pange lingua` stanzas occupy two reading
+  pages; the existing 13 source lines of Psalm 21 during stripping of the
+  altars are paginated without truncating any stanza or repeating the
+  opening/closing antiphon.
+
+All changes are **display-only** and preserve the source graph, action
+timing, personal participation branches and canonical LIVE/SIMPLE modes.
+Tests now exercise exact paragraph object identity, stage event ownership
+and backward reopening of the previous stage's final page for 23
+source groups. The 390px browser suite has added actual Corpus/Requiem
+page turns and conditional procession checks. Latin-only remains
+Latin-only: this is not yet a complete certified bilingual annexed Missal.
+
+### A real regression caught and corrected
+
+An earlier projector tried to fall back to `row.english` despite an
+explicit `secondary: null` for a French Exsultet. It is now
+**fail-closed:** an explicitly absent vernacular column stays absent.
+This is checked by the source integrity gate as well as the French phone
+display acceptance.
