@@ -171,20 +171,10 @@ const realCueState=createReaderCueStateController({
 const ordinary=buildReaderModeModels({prepared,data:realData,mode:"MISSAL"});
 const postureAware=buildReaderModeModels({
   prepared,data:realData,mode:"MISSAL",postureCueState:realCueState,
+  postureRegistry:registries.postures,
 });
 const sourcePages=ordinary.presentationModel.cards;
 const posturalPages=postureAware.presentationModel.cards;
-console.log("R17 Missal diagnostic",JSON.stringify({
- sourcePages:sourcePages.length,posturalPages:posturalPages.length,
- c6:realCueState.project("AO.SM.C0106").posture,
- c6transition:realCueState.project("AO.SM.C0106").postureTransition,
- c9:realCueState.project("AO.SM.C0109").posture,
- c9transition:realCueState.project("AO.SM.C0109").postureTransition,
- offertory:sourcePages.filter(card=>card.sourceSectionId==="AO.CARD.010")
-  .map(card=>({id:card.sectionId,rows:card.paragraphs
-    .filter(row=>(row.sourceCueIds??[]).some(id=>["AO.SM.C0106","AO.SM.C0109"].includes(id)))
-    .map(row=>({id:row.id,cues:row.sourceCueIds}))})),
-}));
 assert.ok(posturalPages.length>sourcePages.length,
   "Real Sung posture registry produced no additional Missal page boundaries");
 assert.deepEqual(posturalPages.flatMap(card=>card.paragraphs),
@@ -193,12 +183,13 @@ assert.deepEqual(posturalPages.flatMap(card=>card.paragraphs),
 const find=(cards,cueId)=>cards.find(card=>card.paragraphs.some(row=>
   (row.sourceCueIds??[]).includes(cueId)));
 const c6="AO.SM.C0106",c9="AO.SM.C0109";
-assert.equal(find(sourcePages,c6),find(sourcePages,c9),
-  "The expected original Offertory greeting/chant page changed");
-assert.notEqual(find(posturalPages,c6),find(posturalPages,c9),
-  "STAND to SIT at Offertory chant failed to create a Missal page");
+const findBlock=(cards,id)=>cards.find(card=>card.blocks.some(b=>b.blockId===id));
+assert.equal(find(sourcePages,c6),findBlock(sourcePages,"AO.SM.B030"),
+  "Original Offertory greeting and Proper chant should share a book page");
+assert.notEqual(find(posturalPages,c6),findBlock(posturalPages,"AO.SM.B030"),
+  "Sourced B030 STAND to SIT transition failed to create a book page");
 assert.equal(find(posturalPages,c6)?.nextPosture?.value,"SIT");
-assert.equal(find(posturalPages,c9)?.postureEntry?.cueId,c9);
+assert.equal(findBlock(posturalPages,"AO.SM.B030")?.postureEntry?.cueId,c9);
 assert.equal(postureAware.sourceModel.totalCards,30);
 assert.equal(postureAware.sourceModel,postureAware.presentationModel.sourceAuthorityModel,
   "Posture-aware pages altered canonical 30-card source authority");
