@@ -11,6 +11,8 @@ const source=read("../data/presentation/reader-rogations.v1.json");
 const graphs=read("../data/mass/special-days-extension.v1.3.json").graphs;
 const rendered=buildRogationsPayload({graph:graphs.ROG,payload:source});
 assert.equal(audit.summary.publicationAllowed,false);
+assert.equal(audit.summary.implementedPrepublicationCorrections,3);
+assert.equal(audit.summary.releaseSourceCertificationHolds,3);
 assert.equal(audit.summary.confirmed1962EditionWordingReplacements,0);
 assert.equal(audit.summary.sourceRowsCertifiedAgainst1962Print,null);
 assert.equal(audit.summary.knownTranslationGaps,null);
@@ -20,9 +22,9 @@ assert.ok(audit.authority.cantionalWitness.scope.includes("NOT_SUPREME_1962"));
 assert.deepEqual(audit.authority.cantionalWitness.printedPages,[835,836,837,838,839,840]);
 assert.deepEqual(audit.sourcePageMap.map(x=>[x.stage,x.sourceLeafCount]),[
  ["ROG-R01",4],["ROG-R02",18],["ROG-R03",112],
- ["ROG-R04",35],["ROG-R05",17],["ROG-R06",0]
+ ["ROG-R04",35],["ROG-R05",18],["ROG-R06",0]
 ]);
-assert.equal(audit.sourcePageMap.reduce((sum,x)=>sum+x.sourceLeafCount,0),186);
+assert.equal(audit.sourcePageMap.reduce((sum,x)=>sum+x.sourceLeafCount,0),187);
 assert.deepEqual(audit.sourcePageMap[2].sourceIndexPageRanges.map(x=>[
  x.indexStart,x.indexEnd,x.page]),[[0,37,836],[38,89,837],[90,111,838]]);
 assert.equal(rendered.cards.length,6);
@@ -51,12 +53,19 @@ assert.equal(audit.summary.openDiscrepancies,holds.length);
 // a free-floating cue into LIVE or a duplicate event.
 const firstCollect=rendered.cards[4].paragraphs[0];
 const lastSuffrage=rendered.cards[3].paragraphs.at(-1);
-assert.equal(firstCollect.id,"ROG-R05-O1");
+assert.equal(firstCollect.id,"ROG-R05-OR");
+assert.equal(rendered.cards[4].paragraphs[1].id,"ROG-R05-O1");
+assert.equal(firstCollect.kind,"VERSICLE");
+assert.equal(firstCollect.speaker,"CELEBRANT");
+assert.equal(firstCollect.voice,"AUDIBLE");
+assert.equal(firstCollect.canonicalWordingCandidate,"AO.SM.C0036");
 assert.equal(lastSuffrage.id,"ROG-R04-S24");
 assert.equal(holds[0].printedLatin,"Oremus.");
-assert.equal(holds[0].donorDisposition,"MISSING_IN_SOURCE_ROWS");
-assert.equal(rendered.cards.flatMap(x=>x.paragraphs).some(x=>
- x.latin?.trim().toLowerCase()==="oremus."),false);
+assert.equal(holds[0].donorDisposition,"RESTORED_IN_CANONICAL_SOURCE_AND_READER_R05_INVITATION");
+assert.equal(firstCollect.latin,"Oremus.");
+assert.equal(source.postLitany.oremus,"Oremus.");
+assert.equal(rendered.cards.flatMap(x=>x.paragraphs).filter(x=>
+ x.latin?.trim().toLowerCase()==="oremus.").length,1);
 
 // p. 839: Pater noster in silence is currently just an undifferentiated
 // TEXT row; only an edition-qualified decision may set voice ownership.
@@ -64,19 +73,25 @@ const pater=rendered.cards[3].paragraphs[0];
 assert.equal(pater.id,"ROG-R04-PN");
 assert.equal(pater.latin,"Pater noster.");
 assert.equal(pater.kind,"TEXT");
-assert.equal(Object.hasOwn(pater,"voice"),false);
+assert.equal(pater.voice,"SILENT");
+assert.equal(pater.voiceSource,"1961_LIBER_USUALIS_P839");
+assert.equal(pater.spokenVersicleFollows,"ROG-R04-V");
+assert.match(rendered.cards[3].guide,/silently/);
 assert.equal(holds[1].witnessInstruction,"in silence");
 
 // p. 840 printed fifth collect adds 'nostro'; a different online edition
 // lacks it, so this is an adjudication task, not automatic emendation.
-const collect5=rendered.cards[4].paragraphs[4];
+const collect5=rendered.cards[4].paragraphs[5];
 assert.equal(collect5.id,"ROG-R05-O5");
 assert.equal(collect5.latin,source.postLitany.orations[4]);
-assert.match(collect5.latin,/Pontifici N\./);
-assert.doesNotMatch(collect5.latin,/Pontifici nostro N\./);
+assert.match(collect5.latin,/Pontifici nostro N\./);
+assert.doesNotMatch(collect5.latin,/miserere famulo tuo Pontifici N\./);
 assert.equal(holds[2].printedLatinFragment,"Pontifici nostro N.");
 assert.equal(holds[2].donorLatinFragment,"Pontifici N.");
 assert.ok(holds[2].conflictingSecondaryWitness);
+assert.equal(holds[2].implementation.amendedLatinFragment,"Pontifici nostro N.");
+assert.ok(holds.every(x=>
+ x.implementation?.status==="APPLIED_IN_DRAFT_AWAITING_1962_EDITION_CERTIFICATION"));
 
 // The witness's two printed Gloria lines are *already* one donor
 // psalm row; this cannot be counted as omitted text.
@@ -85,4 +100,4 @@ assert.match(dox,/Gloria Patri/);
 assert.match(dox,/sicut erat in principio/);
 assert.equal(audit.observations[0].status,"TEXT_PRESENT_DIFFERENT_SEGMENTATION_NOT_MISSING_TRANSLATION");
 assert.equal(audit.observations[1].status,"RESOLVED_1962_RUBRIC_TAKES_PRECEDENCE");
-console.log("PASS Rogation photographed 1961 witness page map; three precise 1962-adjudication holds; no silent source or reader changes.");
+console.log("PASS Rogations printed source corrections: source-owned Oremus, silent Pater, papal collect wording; source certification still held.");
