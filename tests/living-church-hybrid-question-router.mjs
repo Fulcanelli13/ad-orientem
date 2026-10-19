@@ -87,4 +87,26 @@ for(const [q,lang] of [
  assert.equal(out.approvedReply||false,false);
  if(out.kind==="offer_handoff")assert.equal(out.requiresAcceptance,true);
 }
+
+const exact=hybrid.match("what happens to the bread at mass",{language:"en",currentCharacter:"pius-x"});
+assert.equal(exact.kind,"source_navigation");
+assert.equal(exact.matchEvidence.basis,"EXACT_VARIANT");
+const exactNavigation=hybrid.confirmSourceNavigation(exact);
+assert.equal(exactNavigation.kind,"confirmed_source_navigation");
+assert.equal(exactNavigation.approvedReply,false);
+assert.equal(exactNavigation.answerText,null);
+const inferred=fixture.cases.map(c=>hybrid.match(c.question,{
+ language:c.language,currentCharacter:c.character
+})).find(x=>x.kind==="source_navigation"&&x.requiresQuestionConfirmation===true);
+assert.ok(inferred,"Must test at least one inferred navigation");
+assert.equal(hybrid.confirmSourceNavigation(inferred).kind,"needs_question_confirmation");
+const confirmed=hybrid.confirmSourceNavigation(inferred,{confirmQuestion:true});
+assert.equal(confirmed.kind,"confirmed_source_navigation");
+assert.equal(confirmed.topicId,inferred.topicId);
+assert.equal(confirmed.answerText,null);
+assert.equal(hybrid.confirmSourceNavigation({...inferred,sourceRefs:[]},{confirmQuestion:true}).kind,"invalid_navigation");
+assert.equal(hybrid.confirmSourceNavigation({
+ ...inferred,topicId:"canon.apologetics_apol_030"
+},{confirmQuestion:true}).kind,"invalid_navigation");
+
 console.log("PASS review-only hybrid semantic-proxy validation and nonpublication gates");
