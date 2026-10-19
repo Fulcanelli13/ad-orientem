@@ -60,6 +60,10 @@ assert.equal(cue("AO.SM.C0061").gesture,null,"user cannot disable customary gest
 prefs=updateMassCustomaryPreferences(prefs,{kind:"localGesture",cueId:"AO.SM.C0061",value:"DEFAULT"},storage);
 assert.equal(cue("AO.SM.C0061").gestureIconKey,null,"default head-bow art was rejected; no artificial replacement");
 assert.ok(cue("AO.SM.C0061").gesture,"default gesture cue must survive icon rejection");
+prefs=updateMassCustomaryPreferences(prefs,{kind:"localGesture",cueId:"AO.SM.C0061",value:"KNEEL"},storage);
+assert.equal(cue("AO.SM.C0061").gestureIconKey,"review_posture_kneel",
+  "Gloria/Credo special KNEEL gesture ignored user-reviewed posture art");
+prefs=updateMassCustomaryPreferences(prefs,{kind:"localGesture",cueId:"AO.SM.C0061",value:"DEFAULT"},storage);
 assert.equal(updateMassCustomaryPreferences(prefs,{kind:"localGesture",cueId:"bad",value:"GENUFLECT"},storage),prefs);
 const markup=buildReaderShellMarkup({readerPreferences:{mode:"LIVE"},
   session:{resolvedMass:{actualCelebration:{title:"Mass"}}}});
