@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -391,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "BANK_SURVEY_BATCH03_16",
+  "nextReview": "BANK_SURVEY_BATCH04_16",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -851,6 +851,56 @@
         "An exact priest-facing-people position remains unresolved.",
         "A distinctive priest-reading-Missal-at-altar action remains unresolved."
       ],
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B03",
+      "label": "Priest gestures, movements, elevation and ablutions — bank candidates A–P",
+      "status": "REVIEWED_PARTIAL",
+      "recordedDate": "2026-10-19",
+      "userStatement": "Reject E. Use C instead D. Use M instead of K... Maybe we should replace L. O is on hold...",
+      "decisions": [
+        {
+          "letter": "E",
+          "asset": "assets/active/mass-v46/priest_return_altar_rich.svg",
+          "label": "Turns back to altar",
+          "decision": "REJECT_ARTWORK",
+          "note": "Exclude this depiction from future matching; no deletion of the original file."
+        },
+        {
+          "letter": "D",
+          "asset": "assets/active/mass-v46/priest_sedilia_rising_rich.svg",
+          "label": "Rising from sedilia",
+          "decision": "REPLACE_BY_C",
+          "replacementLetter": "C",
+          "replacementAsset": "assets/active/mass-v46/priest_sedilia_rich.svg",
+          "note": "User prefers seated-priest depiction C in place of D. It does not depict the act of rising; when the motion matters, explain it with words and preserve the ceremonial state."
+        },
+        {
+          "letter": "K",
+          "asset": "assets/active/mass-v46/priest_elevate_host_rich.svg",
+          "label": "Host presentation",
+          "decision": "REPLACE_BY_M",
+          "replacementLetter": "M",
+          "replacementAsset": "assets/active/mass-v46/priest_elevation.svg",
+          "note": "User prefers Host-elevation icon M. Do not silently equate the distinct Offertory presentation of the unconsecrated Host with elevation of the consecrated Host or change the liturgical cue engine."
+        },
+        {
+          "letter": "L",
+          "asset": "assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+          "label": "Elevates chalice",
+          "decision": "POSSIBLE_REPLACEMENT",
+          "note": "User said 'Maybe we should replace L.' It remains available pending comparison; not rejected."
+        },
+        {
+          "letter": "O",
+          "asset": "assets/active/mass-v46/lavabo.svg",
+          "label": "Lavabo / handwashing",
+          "decision": "HOLD",
+          "note": "No approval/rejection or repurposing inferred."
+        }
+      ],
+      "unmentionedPolicy": "Every other Batch 3 image retains its previous state, without new approval or rejection. C and M are preferred artwork in place of D/K respectively, not new global rubrical permissions.",
       "runtimeMutationAllowed": false
     }
   ]
