@@ -231,6 +231,36 @@ function monthIndexEntries(monthId,view){
   if(view==="sanctorale")return entries.filter(x=>x.cycle==="sanctorale");
   return entries;
 }
+
+/* Month hybrid: observed major feasts and independent traditional practices
+   share the Calendar overview without being represented as the same authority. */
+function monthHybridOverview(monthId,selected){
+  const principal=monthIndexEntries(monthId,"major"),practices=monthIndexEntries(monthId,"practices");
+  const majorStatus=monthIndexResolutionState(monthId,"major");
+  const majorCards=principal.map((item,i)=>
+    `<button type="button" class="aoCalHybridMajor${i<2?" featured":""}" data-cal-month-index-date="${esc(item.date)}" style="--month-accent:${esc(item.accent)}">
+      <span class="aoCalHybridDate">${esc(displayDate(item.date))}</span>
+      <span class="aoCalHybridTitle">${esc(item.title)}</span>
+      <small>${esc([item.rank,item.colour].filter(Boolean).join(" · "))}</small>
+    </button>`).join("");
+  const practiceCards=practices.map(item=>
+    `<button type="button" class="aoCalHybridPractice" data-cal-month-index-date="${esc(item.date)}">
+      <time>${esc(displayDate(item.date))}</time><span><strong>${esc(item.title)}</strong>${item.summary?`<small>${esc(item.summary)}</small>`:""}</span>
+      <span aria-hidden="true">›</span>
+    </button>`).join("");
+  return `<div class="aoCalHybridOverview" aria-label="${esc(L("Month overview","Aperçu du mois"))}">
+    <section class="aoCalHybridSection aoCalHybridMajorSection">
+      <div class="aoCalHybridHeading"><h3>${esc(L("Principal celebrations","Célébrations principales"))}</h3><span>${esc(L("Observed Roman calendar · 1962","Calendrier romain observé · 1962"))}</span></div>
+      ${majorStatus==="partial"?`<p class="aoCalMonthCoverage" role="status">${esc(L("Some observed days could not be resolved.","Certains jours observés n'ont pas pu être résolus."))}</p>`:""}
+      <div class="aoCalHybridMajors">${majorCards||`<p class="aoCalHybridEmpty">${esc(majorStatus==="loading"?L("Resolving this month’s celebrations…","Résolution des célébrations du mois…"):L("No resolved principal celebrations.","Aucune célébration principale résolue."))}</p>`}</div>
+    </section>
+    <section class="aoCalHybridSection aoCalHybridPracticesSection">
+      <div class="aoCalHybridHeading"><h3>${esc(L("Practices & novenas","Pratiques et neuvaines"))}</h3><span>${esc(L("Devotional calendar · not additional 1962 Masses","Calendrier de dévotion · non des messes de 1962 supplémentaires"))}</span></div>
+      <div class="aoCalHybridPractices">${practiceCards||`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`}</div>
+    </section>
+  </div>`;
+}
+
 function monthIndexTabs(){
   const tabs=[
     ["calendar",L("Calendar","Calendrier")],
@@ -870,7 +900,7 @@ function pickerSurface(selected){
       const d=dateOf(id),outside=d.getMonth()!==mm-1,data=monthCellData(id);
       return `<button type="button" data-cal-pick-date="${id}" data-ready="${data.ready?"1":"0"}" data-rank-tier="${data.tier}" class="${outside?"outside":""} ${id===selected?"selected":""} ${id===today?"today":""} ${data.sunday?"sunday":""} ${data.projected?"projected":""} ${data.name&&data.ready?"major":""}" style="--month-accent:${esc(data.accent)}" aria-label="${esc(data.aria)}"><span class="aoCalMonthTop"><b>${d.getDate()}</b><i data-cal-liturgical-marker aria-hidden="true"></i></span><span class="aoCalMonthName">${esc(data.name)}</span></button>`;
     }).join("")}</div>`;
-  const projection=calendarMonthView==="calendar"?calendarGrid:monthIndexList(pickerMonthId,selected,calendarMonthView);
+  const projection=calendarMonthView==="calendar"?calendarGrid+monthHybridOverview(pickerMonthId,selected):monthIndexList(pickerMonthId,selected,calendarMonthView);
   return `<section class="aoCalV2Picker">
     <div class="aoCalV2YearHeading"><small>${esc(L("LITURGICAL MONTH","MOIS LITURGIQUE"))}</small><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2></div>
     <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1" aria-label="${esc(L("Previous month","Mois précédent"))}">${assetIcon("ao-ui-previous")}<span class="aoCalMonthNavLong">${esc(L("Previous month","Mois précédent"))}</span><span class="aoCalMonthNavShort">${esc(L("Previous","Précédent"))}</span></button><button type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button><button type="button" data-cal-month-shift="1" aria-label="${esc(L("Next month","Mois suivant"))}"><span class="aoCalMonthNavLong">${esc(L("Next month","Mois suivant"))}</span><span class="aoCalMonthNavShort">${esc(L("Next","Suivant"))}</span>${assetIcon("ao-ui-next")}</button></div>
