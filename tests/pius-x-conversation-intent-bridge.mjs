@@ -43,4 +43,19 @@ assert.equal(bridge.counts.published_answer_count,0);
 assert.equal(bridge.status,'RESEARCH_ONLY_NOT_APP_CONTENT');
 assert.equal(own.italian_original_1912_print_collated,false);
 assert.equal(own.english_is_historical_translation,false);
+
+const topicReview = JSON.parse(readFileSync('data/learn/research/pius-x-p1-short-catechism-topical-review-20261019.v1.json','utf8'));
+assert.equal(topicReview.records.length, 64);
+assert.deepEqual(topicReview.records.map(x=>x.spx_family_id), seeds.map(x=>x.id));
+const known = new Set(own.questionRefs);
+let hits = 0;
+for (const row of topicReview.records) {
+  assert.equal(row.same_intent_approved, false);
+  assert.equal(row.answer_sufficiency, 'NOT_ASSESSED');
+  assert.ok(row.possible_same_topic_qids.every(q=>known.has(q)));
+  if (row.possible_same_topic_qids.length) hits++;
+}
+assert.equal(hits, topicReview.counts.with_possible_short_catechism_topic_overlap);
+assert.equal(topicReview.counts.approved_same_intent_merges, 0);
+
 console.log('Pius X P0/P1 research-only bridge: 433 canonical QIDs, 64 provisional seeds, no content approval');
