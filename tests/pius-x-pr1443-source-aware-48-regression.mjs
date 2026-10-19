@@ -94,6 +94,13 @@ for(const [engineName,engine] of Object.entries(engines)){
    disposition:disposition(actual,intended,held)});
  }
  assert.equal(rows.length,48);
+ // This is a fixed REGRESSION gate, not a representative accuracy threshold.
+ assert.equal(rows.filter(x=>x.disposition==='WRONG_SPECIFIC_SOURCE_ROUTE').length,0,
+  engineName+' offered an incorrect original-document owner');
+ assert.equal(rows.filter(x=>x.disposition==='SAFE_HELD_ANSWER_GAP').length,8,
+  engineName+' must retain the two unsupported personal/diagnostic cases');
+ assert.ok(rows.filter(x=>x.disposition==='CORRECT_SPECIFIC_SOURCE_NAVIGATION').length>=20,
+  engineName+' lost previously demonstrated documentary routing');
  const correct=rows.filter(x=>x.disposition==='CORRECT_SPECIFIC_SOURCE_NAVIGATION');
  for(const x of correct)assert.ok(x.observedSourceRefs.includes(x.caseId),
   'False-positive "correct" navigation missing original historical source pointer');
