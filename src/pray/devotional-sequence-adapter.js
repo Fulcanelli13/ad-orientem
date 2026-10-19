@@ -8,6 +8,7 @@ import {devotionalFocusIndex} from "./devotional-focus-geometry.js";
 import {ensureDevotionalReadingRunway} from "./devotional-reading-runway.js";
 
 import "./devotional-card-deck-styles.js";
+import {updateDevotionalProgress} from "./devotional-progress.js";
 
 export const SEQUENTIAL_DEVOTIONAL_SCHEMA = "dual-axis-sequential-devotional-v1";
 
@@ -81,6 +82,7 @@ export function installSequentialDevotionalReader({
   if(!doc||!card||!body||!Array.isArray(chapters)||!chapters.length)return null;
   if(!["stations","mercy","novena","library","daily","examen","benediction","adoration","confession","penitential","litany","sevenWords","fortyHours","meals","holyName","sacredHeart","communion","hymns","goodDeath","dyingCompanion"].includes(kind))throw new RangeError("Unexpected sequence owner");
   const index=Math.max(0,Math.min(chapters.length-1,Number(activeIndex)||0));
+  body.tabIndex=0; // Vertical text scroll and horizontal card keys share one region.
   const parent=kind==="stations"?mount.querySelector(".aoP435930StationRail"):
     kind==="mercy"?mount.querySelector(".aoMercyReader"):
     kind==="novena"?mount.querySelector(".aoN1Reader"):
@@ -122,14 +124,8 @@ export function installSequentialDevotionalReader({
   timeline.dataset.aoDevotionalDeck=SEQUENTIAL_DEVOTIONAL_SCHEMA;
   timeline.setAttribute("aria-label",timelineLabel||(kind==="stations"?"Station timeline":"Prayer timeline"));
   const stops=timeline.querySelector(".aoDevoStops");
-  const prev=make(doc,"button","aoDevoNavArrow","←");
-  const next=make(doc,"button","aoDevoNavArrow","→");
-  for(const [b,d] of [[prev,-1],[next,1]]){
-    b.type="button";b.dataset.aoDevoSequenceMove=String(d);
-    b.setAttribute("aria-label",d<0?"Previous prayer card":"Next prayer card");
-  }
-  timeline.prepend(prev);timeline.append(next);
-  prev.disabled=index===0;next.disabled=index===chapters.length-1;
+  updateDevotionalProgress(timeline,{index,total:chapters.length,
+    language:doc.documentElement?.lang?.toLowerCase().startsWith("fr")?"fr":"en"});
   [...stops.children].forEach((b,i)=>{
     b.classList.toggle("active",i===index);
     b.setAttribute("aria-current",i===index?"step":"false");
@@ -187,25 +183,37 @@ export function installSequentialDevotionalReader({
     return true;
   }
   timeline.addEventListener("click",e=>{
-    const b=e.target.closest("[data-ao-devo-sequence-move],[data-ao-devo-chapter]");
+    const b=e.target.closest("[data-ao-devo-chapter]");
     if(!b)return;
     e.preventDefault();e.stopPropagation();
-    if(b.dataset.aoDevoChapter!==undefined)go(Number(b.dataset.aoDevoChapter));
-    else go(index+Number(b.dataset.aoDevoSequenceMove));
+    go(Number(b.dataset.aoDevoChapter));
   });
-  let touch=null;
+  body.addEventListener("keydown",e=>{
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||!["ArrowLeft","ArrowRight"].includes(e.key)||
+      e.target.closest("button,a,input,textarea,select,summary,[contenteditable]"))return;
+    e.preventDefault();
+    go(index+(e.key==="ArrowRight"?1:-1));
+  });
+  let touch=null,lastHorizontalSwipe=0;
   body.addEventListener("touchstart",e=>{
-    if(e.touches.length!==1||e.target.closest("button,a,input,summary")){touch=null;return}
+    if(e.touches.length!==1||e.target.closest("a,input,textarea,select,summary,[contenteditable],[data-ao-devo-no-swipe],button:not([data-p435930-card-flip]):not([data-tp381-flip])")){touch=null;return}
     touch={x:e.touches[0].clientX,y:e.touches[0].clientY,at:Date.now()};
   },{passive:true});
+  body.addEventListener("click",e=>{
+    if(Date.now()-lastHorizontalSwipe<450&&e.target.closest("[data-p435930-card-flip],[data-tp381-flip]")){
+      e.preventDefault();e.stopImmediatePropagation();
+    }
+  },true);
   body.addEventListener("touchcancel",()=>{touch=null},{passive:true});
   body.addEventListener("touchend",e=>{
     if(!touch)return;
     const dx=e.changedTouches[0].clientX-touch.x;
     const dy=e.changedTouches[0].clientY-touch.y;
     const ms=Date.now()-touch.at;touch=null;
-    if(ms<=1300&&Math.abs(dx)>=72&&Math.abs(dx)>Math.abs(dy)*1.35)
+    if(ms<=1300&&Math.abs(dx)>=72&&Math.abs(dx)>Math.abs(dy)*1.35){
+      lastHorizontalSwipe=Date.now();
       go(index+(dx<0?1:-1));
+    }
   },{passive:true});
   body.addEventListener("scroll",()=>{userScrolled=true;queue()},{passive:true});
   doc.defaultView?.addEventListener("resize",()=>{
