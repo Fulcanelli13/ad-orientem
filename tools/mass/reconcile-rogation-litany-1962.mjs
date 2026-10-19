@@ -186,11 +186,12 @@ export function buildRogationsLitanyOwnershipMatrix(){
   keep("ROG-R04-R","postLitany.response","ROG-PS-010","POST_LITANY_PATERNOSTER");
   index("ROG-R04-PS",8,"postLitany.psalm69.","ROG-PS-010","PSALM_69");
   index("ROG-R04-S",24,"postLitany.suffrages.","ROG-PS-010","POST_LITANY_SUFFRAGES",i=>i+".1");
+  keep("ROG-R05-OR","postLitany.oremus","ROG-END-010","COLLECT_INVITATION");
   index("ROG-R05-O",10,"postLitany.orations.","ROG-END-010","TEN_CONCLUDING_COLLECTS");
   index("ROG-R05-F",7,"postLitany.final.","ROG-END-010","FINAL_DIALOGUE",i=>i+".1");
-  if(extra.length!==74)throw Error("ROGATION_ADDITIONAL_74_SOURCE_ROWS_CHANGED");
-  if(new Set([...items.map(x=>x.rowId),...extra.map(x=>x.rowId)]).size!==186)
-    throw Error("ROGATION_186_UNIQUE_READER_IDS_CHANGED");
+  if(extra.length!==75)throw Error("ROGATION_ADDITIONAL_75_SOURCE_ROWS_CHANGED");
+  if(new Set([...items.map(x=>x.rowId),...extra.map(x=>x.rowId)]).size!==187)
+    throw Error("ROGATION_187_UNIQUE_READER_IDS_CHANGED");
   const supplementalSummary=Object.fromEntries(
     [...new Set(extra.map(x=>x.family))].map(kind=>[
       kind,extra.filter(x=>x.family===kind).length]));
@@ -199,6 +200,7 @@ export function buildRogationsLitanyOwnershipMatrix(){
     beforeProcession:data.litanyBeforeProcession?.length??0,
     psalm69:data.postLitany?.psalm69?.length??0,
     suffrages:data.postLitany?.suffrages?.length??0,
+    collectInvitation:typeof data.postLitany?.oremus==="string"?1:0,
     orations:data.postLitany?.orations?.length??0,
     final:data.postLitany?.final?.length??0,
   };
