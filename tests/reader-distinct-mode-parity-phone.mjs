@@ -60,11 +60,19 @@ try{
     assert.ok(before.stage,rite+" must have an exact rite record");
     assert.equal(before.mode,"LIVE");
     assert.equal(await page.locator("[data-ao-reader-shell]").getAttribute("data-mode"),"LIVE");
-    for(const mode of ["MISSAL","SIMPLE","LIVE"]){
+    async function chooseMode(mode){
+      // The Mass mode ribbon lives inside the shared parameters panel.
+      await page.locator("[data-reader-preferences]").click();
+      await page.waitForFunction(()=>
+        document.querySelector('[data-role="mass-preferences"]')?.dataset?.open==="true");
       const button=page.locator('[data-reader-mode="'+mode+'"]');
       assert.equal(await button.count(),1,rite+" missing shared "+mode+" mode selector");
       assert.equal(await button.isDisabled(),false,rite+" mode selector is locked");
       await button.click();
+      await page.locator("[data-reader-preferences-close]").click();
+    }
+    for(const mode of ["MISSAL","SIMPLE","LIVE"]){
+      await chooseMode(mode);
       const after=await snapshot();
       assert.equal(after.mode,mode);
       assert.equal(await page.locator("[data-ao-reader-shell]").getAttribute("data-mode"),mode);
@@ -86,7 +94,7 @@ try{
       const atMass=await snapshot();
       assert.equal(atMass.composite,"MASS_ACTIVE");
       for(const mode of ["MISSAL","SIMPLE","LIVE"]){
-        await page.locator('[data-reader-mode="'+mode+'"]').click();
+        await chooseMode(mode);
         const after=await snapshot();
         assert.equal(after.mode,mode);
         assert.equal(after.composite,"MASS_ACTIVE","Mode switch cannot re-enter Vigil before Mass");
