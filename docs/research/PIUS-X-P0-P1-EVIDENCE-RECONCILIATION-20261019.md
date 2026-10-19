@@ -359,3 +359,24 @@ Representative lessons:
 This is **10 supported question-specific research nuclei within this chosen sample**, *not a 10/12 representative answerability rate*, not 10 certified voice-ready conversations, and not an estimate of total distinct intentions across the corpus. No new canonical registry was created, no 1962 Mass engine was modified and nothing was published to the avatar.
 
 **Next gate:** have an independent reviewer assess the ten proposed answer nuclei, their source/edition wording, and the permitted 1900s Catholic narrative voice; then test three adjacent natural-language variants and one follow-up for every passing case. The two blocked cases should use historically honest fallback rather than fabricated personal memories or pastoral diagnosis.
+
+
+## Conversational robustness pilot: 36 paraphrases and 12 contextual follow-ups
+
+Machine-readable, research-only gold fixture:
+`data/learn/research/pius-x-12case-paraphrases-followups-20261019.v1.json`.
+
+The twelve proof-of-answerability cases now have **three alternative English visitor phrasings and one contextual follow-up each (48 utterances)**, with manually reviewed expected seed IDs, evidence loci, source restrictions, sample restrained Catholic prose, and explicit unapproved flags. **Sixteen alternate phrasings specifically test unsafe premises or overreach**: a supposed formal rejection of election, imagined prohibition of the Rosary at Mass, individualized judgment of mortal sin, mandatory half-hour thanksgiving, confusion of actual and sacramental grace, suppression of polyphony, calling living persons heretics, imposing historical schedules as current law, misattributing `Quam singulari` to a first-person Pius X text, invented childhood feelings and personal diagnoses of spiritual dryness.
+
+For natural follow-up contexts, three cases require particular restrictions:
+- **After-Communion thanksgiving prayer** may be an editorial devotional composition; it must *not* masquerade as Sarto's verbatim prayer.
+- **Adult catechetical lesson order** is not exhaustively provided by `Acerbo nimis`; any proposed detailed curriculum needs its own source.
+- **Lay visitor's prayer dryness** may receive gentle general encouragement, but a priest-directed passage from `Haerent animo` cannot establish the individual's fault or spiritual state.
+
+A historical-voice sample accompanies each pilot case. These samples are deliberately **not certified as Pope Pius X's words**, and are not a new answer bank. The test suite checks the expected source and attribution boundaries as well as corpus identity.
+
+**Important operational limit:** draft [#1443](https://github.com/Fulcanelli13/ad-orientem/pull/1443) owns the shared question interpreter; its current tested catalog does not include these new research-only St Pius X conversation families. Therefore **0 of these 48 were executed against the actual shared router**, and there is *no claimed routing accuracy, historical-voice approval, or independent evaluation score*. The fixture is a prospective gold test set for future integration through the existing router, not a competing interpreter.
+
+### Next review gate
+
+Apply the prospective cases to #1443 only once its topic/source-owner bridge can reference the existing SPX research IDs without generating answers. Record observed route `source_navigation`, `clarify` or `no_coverage`, alongside expected choices and unsupported overreach. After that, assess documentary voice separately from doctrinal and pastoral content; require reviewer approval before any case becomes visitor-visible. Resist further inflating source collection or research idea counts before this acceptance gate.
