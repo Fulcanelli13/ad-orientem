@@ -225,13 +225,13 @@ try{
   "First-use Stations should open at the first station");
  assert.ok((await stationRoot.locator(".aoP435930Stations").innerText()).length>150,
   "Offline Stations returned an empty prayer");
- await stationRoot.locator("[data-p435930-station-next]").first().evaluate(x=>x.click());
+ await stationRoot.locator("[data-p435930-station-step='1']").first().evaluate(x=>x.click());
  await page.waitForFunction(()=>document.querySelector("#aoPray435930.open [data-p435930-station-step='1'][aria-current='step']"),null,{timeout:12000});
- await stationRoot.locator("[data-p435930-station-prev]").first().evaluate(x=>x.click());
+ await stationRoot.locator("[data-p435930-station-step='0']").first().evaluate(x=>x.click());
  await page.waitForFunction(()=>document.querySelector("#aoPray435930.open [data-p435930-station-step='0'][aria-current='step']"),null,{timeout:12000});
  assert.ok(await stationRoot.locator("details.aoP435930Source a.aoP435930SourceLink").count(),
   "Offline Stations omitted the original historical witness link");
- console.log("PASS first-use offline French fourteen Stations and forward/back navigation");
+ console.log("PASS first-use offline French fourteen Stations and direct station navigation");
  // Restore the baseline language before the existing Rosary-update test.
  await page.evaluate(()=>globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"en"}));
  await context.setOffline(false);
