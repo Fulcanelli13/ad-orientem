@@ -55,10 +55,12 @@ try{
   const noPageOverflow=await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1);
   assert.equal(noPageOverflow,true,"reader causes horizontal page overflow");
 
-  for(const selector of ['[data-reader-nav="previous"]','[data-reader-nav="next"]']){
-    const box=await page.locator(selector).boundingBox();
-    assert.ok(box && box.height>=44,selector+" touch target is under 44px high");
-  }
+  assert.equal(await page.locator("[data-reader-nav]").count(),0,
+    "Routine previous/next edge arrows must not return in the Mass or special-rite reader");
+  assert.equal(await page.locator(".ao-prayer-card").getAttribute("aria-keyshortcuts"),
+    "ArrowLeft ArrowRight","Keyboard access must remain discoverable without visible edge arrows");
+  assert.equal(await page.locator("#ao-reader-navigation-instructions").count(),1,
+    "Accessible swipe and keyboard directions should remain available");
 
   // The former Guide overlay is no longer part of LIVE Mass. The central
   // space belongs to persistent YOU/PRIEST states and source rubrics remain
@@ -88,58 +90,22 @@ try{
     primary
   );
 
+  async function navigateKey(target,direction="next"){
+    const card=target.locator(".ao-prayer-card");
+    await card.focus();
+    await target.keyboard.press(direction==="next"?"ArrowRight":"ArrowLeft");
+  }
   const cardId=()=>page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId);
   const initialCard=await cardId();
-  const nextButton=page.locator('[data-reader-nav="next"]');
-  box=await nextButton.boundingBox();
-  await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+  await navigateKey(page,"next");
   await page.waitForFunction(previous=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId!==previous,initialCard);
   const afterNext=await cardId();
-  assert.notEqual(afterNext,initialCard,"Next touch did not change cards");
-  // v1.80 donor part-transition cinema deliberately owns the transition interval.
-  // Test the next deliberate tap only after that interval has completed.
+  assert.notEqual(afterNext,initialCard,"Keyboard right did not advance a card");
   await page.waitForFunction(()=>document.querySelector('[data-role="cinematic"]')?.hidden===true,null,{timeout:5000});
-  const backButton=page.locator('[data-reader-nav="previous"]');
-  box=await backButton.boundingBox();
-  const backHit=await page.evaluate(({x,y})=>{
-    const target=document.elementFromPoint(x,y);
-    return {
-      tag:target?.tagName??null,
-      cls:target?.className??null,
-      nav:target?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,
-      cinematicHidden:document.querySelector('[data-role="cinematic"]')?.hidden??null,
-      current:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
-    };
-  },{x:box.x+box.width/2,y:box.y+box.height/2});
-  await page.evaluate(()=>{
-    window.__AO_BACK_EVENTS=[];
-    for(const type of ["pointerdown","touchstart","touchend","click"]){
-      document.addEventListener(type,event=>{
-        const t=event.target;
-        window.__AO_BACK_EVENTS.push({
-          type,
-          tag:t?.tagName??null,
-          nav:t?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,
-          cls:typeof t?.className==="string"?t.className:null,
-        });
-      },{capture:true,once:false});
-    }
-  });
-  await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-  await page.waitForTimeout(350);
-  const afterBack=await cardId();
-  const navDiag=await page.evaluate(({x,y})=>{
-    const root=document.querySelector("[data-ao-reader-shell]")?.parentElement;
-    const post=document.elementFromPoint(x,y);
-    return {
-      input:root?.dataset.aoLastNavInput??null,
-      result:root?.dataset.aoLastNavResult??null,
-      events:window.__AO_BACK_EVENTS??[],
-      postHit:{tag:post?.tagName??null,nav:post?.closest?.("[data-reader-nav]")?.dataset?.readerNav??null,cls:post?.className??null},
-    };
-  },{x:box.x+box.width/2,y:box.y+box.height/2});
-  assert.equal(afterBack,initialCard,
-    "Back touch did not restore initial card: "+JSON.stringify({initialCard,afterNext,afterBack,backHit,navDiag}));
+  await navigateKey(page,"previous");
+  await page.waitForFunction(expected=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId===expected,initialCard);
+  assert.equal(await cardId(),initialCard,"Keyboard left did not return to the same source card");
+  await page.waitForFunction(()=>document.querySelector('[data-role="cinematic"]')?.hidden===true,null,{timeout:5000});
 
   // v1.80 two-axis contract: vertical touch remains native prayer scrolling;
   // a deliberate horizontal swipe owns card navigation.
@@ -297,8 +263,7 @@ try{
   assert.deepEqual(switched,{mode:"LIVE",card:"AO.CANON.06",cue:"AO.SM.C0174",product:48,source:39,progress:"21 / 48"},
     "MISSAL -> LIVE did not restore the exact 48-step Host elevation surface");
 
-  box=await nextButton.boundingBox();
-  await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+  await navigateKey(page,"next");
   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.07");
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell??null),null,
     "Host bell transient leaked into Chalice Consecration card");
@@ -330,14 +295,11 @@ try{
   await french.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
   assert.equal(await french.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id),"ASP-R01",
     "French Holy Rosary field path fell out of native reader before Asperges");
-  const frenchNext=french.locator('[data-reader-nav="next"]');
   for(const expected of ["ASP-R02","ASP-R03","ASP-R04","ASP-R05"]){
-    const hit=await frenchNext.boundingBox();
-    await french.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+    await navigateKey(french,"next");
     await french.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard().id===id,expected);
   }
-  let frenchHit=await frenchNext.boundingBox();
-  await french.touchscreen.tap(frenchHit.x+frenchHit.width/2,frenchHit.y+frenchHit.height/2);
+  await navigateKey(french,"next");
   await french.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
   const frenchBody=await french.locator('[data-role="paragraphs"]').textContent();
   assert.match(frenchBody,/Réjouissons-nous ensemble dans le Seigneur/,
@@ -372,10 +334,8 @@ try{
     assert.ok(fits.shell && fits.shell.x>=-0.5 && fits.shell.right<=fits.shell.w+0.5,
       viewportSpec.width+"px reader shell does not fit viewport");
 
-    for(const selector of ['[data-reader-nav="previous"]','[data-reader-nav="next"]']){
-      const target=await p.locator(selector).boundingBox();
-      assert.ok(target && target.height>=44,viewportSpec.width+"px "+selector+" touch target is under 44px");
-    }
+    assert.equal(await p.locator("[data-reader-nav]").count(),0,
+      viewportSpec.width+"px reader must not show routine previous/next arrows");
 
     const translate=p.locator('[data-translate-toggle="true"]').first();
     assert.ok(await translate.count(),viewportSpec.width+"px missing translation toggle");
@@ -388,9 +348,7 @@ try{
     },before);
 
     const initial=await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId);
-    const next=p.locator('[data-reader-nav="next"]');
-    const nbox=await next.boundingBox();
-    await p.touchscreen.tap(nbox.x+nbox.width/2,nbox.y+nbox.height/2);
+    await navigateKey(p,"next");
     await p.waitForFunction(previous=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId!==previous,initial);
 
     await p.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
@@ -416,10 +374,8 @@ try{
   assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().formulaState.formula),"ORDINARY",
     "4 October field session selected Vidi aquam instead of Asperges me");
 
-  const aspNext=asp.locator('[data-reader-nav="next"]');
   for(const expected of ["ASP-R02","ASP-R03"]){
-    const hit=await aspNext.boundingBox();
-    await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+    await navigateKey(asp,"next");
     await asp.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard().id===id,expected);
   }
   assert.equal(await asp.locator('[data-role="gesture"]').textContent(),"—",
@@ -427,21 +383,17 @@ try{
   await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.markActuallySprinkled());
   await asp.waitForFunction(()=>document.querySelector('[data-role="gesture"]')?.textContent?.includes("MAKE_FULL_SIGN_OF_CROSS"));
   for(const expected of ["ASP-R04","ASP-R05"]){
-    const hit=await aspNext.boundingBox();
-    await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+    await navigateKey(asp,"next");
     await asp.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard().id===id,expected);
   }
-  let hit=await aspNext.boundingBox();
-  await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+  await navigateKey(asp,"next");
   await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
   assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 48/,
     "Asperges did not hand off to the first 48-step LIVE product card");
   assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),39,
     "Asperges handoff replaced the certified 39-step source model");
 
-  const aspBack=asp.locator('[data-reader-nav="previous"]');
-  hit=await aspBack.boundingBox();
-  await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
+  await navigateKey(asp,"previous");
   await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id==="ASP-R05");
   assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().handoff),"FOOT_CLUSTER",
     "Back from Mass did not restore the Asperges handoff card");
@@ -459,27 +411,27 @@ try{
     await p.goto("http://127.0.0.1:4173/tests/fixtures/reader-phone-harness.html?rite="+kind.toLowerCase(),{waitUntil:"networkidle"});
     await p.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
     assert.equal(await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id),firstId,kind+" lost first-card ownership");
-    const next=p.locator('[data-reader-nav="next"]');
-    while((await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id))!==recipientCardId){
-      const b=await next.boundingBox();
-      await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
-      await p.waitForTimeout(80);
+    for(let attempts=0;attempts<12&&
+        (await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id))!==recipientCardId;
+        attempts++){
+      await navigateKey(p,"next");
     }
+    assert.equal(await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id),
+      recipientCardId,kind+" did not reach recipient card");
     if(kind==="PALM")await p.evaluate(state=>window.__AO_PHONE_PREVIEW.setPalmRecipientState(state),receiveState);
     else await p.evaluate(state=>window.__AO_PHONE_PREVIEW.setAshRecipientState(state),receiveState);
     await p.waitForFunction(()=>document.querySelector('[data-role="posture"]')?.textContent?.includes("KNEEL"));
-    while((await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id))!==handoffId){
-      const b=await next.boundingBox();
-      await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
-      await p.waitForTimeout(80);
+    for(let attempts=0;attempts<14&&
+        (await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id))!==handoffId;
+        attempts++){
+      await navigateKey(p,"next");
     }
-    let b=await next.boundingBox();
-    await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+    assert.equal(await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().id),
+      handoffId,kind+" did not reach handoff card");
+    await navigateKey(p,"next");
     await p.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
     assert.equal(await p.locator('[data-role="card-title"]').textContent(),"Introit",kind+" handoff leaked preparatory prayers");
-    const back=p.locator('[data-reader-nav="previous"]');
-    b=await back.boundingBox();
-    await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+    await navigateKey(p,"previous");
     await p.waitForFunction(id=>window.__AO_PHONE_PREVIEW.getCurrentCard().id===id,handoffId);
     await ctx.close();
   }
