@@ -1,6 +1,7 @@
 // Shared non-Mass cinematic owner. It never determines prayer text, day,
  // custom, posture or the ceremonial occurrence of an external public rite.
 import {resolveCanonicalAssetUrl} from "../assets/asset-registry.js";
+import {R17_FROZEN_ACTIVE_ICON_ASSETS} from "../mass/reader-icon-bank.js";
 import "./devotional-action-cinematic-styles.js";
 export const DEVOTIONAL_ACTION_CINEMATIC_VERSION="devotional-action-v1";
 const norm=v=>String(v??"").trim();
@@ -20,9 +21,22 @@ export function resolveDevotionalActionScene({
   if(view==="benediction"){
     // A user-selected stage is not independent observation of the blessing.
     if(benedictionStage!=="blessing")return null;
-    return fixed("BENEDICTION.BLESSING","SOLEMN_ACTION","ao-live-blessing","Benedictio",
+    return Object.freeze({...fixed(
+      "BENEDICTION.BLESSING","SOLEMN_ACTION","ao-live-blessing","Benedictio",
       "Attend to the Eucharistic blessing","Recueillez-vous pour la Bénédiction eucharistique",
-      "BENEDICTION.PUBLIC_STAGE.BLESSING");
+      "BENEDICTION.PUBLIC_STAGE.BLESSING"),
+      // A bell is customarily rung during the blessing with the monstrance;
+      // user-driven stage selection DOES NOT mean the bell has been heard.
+      auditoryCue:Object.freeze({
+        id:"BENEDICTION.BLESSING.BELL",
+        instrument:"ALTAR_BELL",source:"TRADITIONAL_ROMAN_BENEDICTION",
+        sourceCue:"BENEDICTION.PUBLIC_STAGE.BLESSING",
+        rubricalWindow:"BLESSING_WITH_MONSTRANCE",
+        status:"EXPECTED_NOT_OBSERVED",observedNow:false,
+        actuallyHeard:"UNKNOWN",pattern:"NOT_INFERRED",
+        iconKey:"bells",owner:"BENEDICTION_RITE_NOT_ORDINARY_MASS",
+      }),
+    });
   }
   if(view==="adoration"){
     if(adorationMode==="visit" && visitStep===0)return fixed(
@@ -128,6 +142,23 @@ export function createDevotionalActionCinematic(win=globalThis){
     }
     if(scene.latin)inner.append(make(doc,"p","aoDevotionalActionLatin",scene.latin));
     inner.append(make(doc,"h2","aoDevotionalActionTitle",scene.labels[language==="fr"?"fr":"en"]));
+    if(scene.id==="BENEDICTION.BLESSING" &&
+       scene.auditoryCue?.id==="BENEDICTION.BLESSING.BELL" &&
+       scene.auditoryCue?.status==="EXPECTED_NOT_OBSERVED"){
+      const note=make(doc,"p","aoDevotionalActionBellCue");
+      note.dataset.aoBellStatus="EXPECTED_NOT_OBSERVED";
+      note.dataset.aoBellRite="BENEDICTION";
+      const icon=make(doc,"span","aoDevotionalActionBellIcon");
+      const url=R17_FROZEN_ACTIVE_ICON_ASSETS[scene.auditoryCue.iconKey];
+      if(url){icon.style.maskImage='url("'+url.replaceAll('"','%22')+'")';
+        icon.style.webkitMaskImage=icon.style.maskImage;}
+      else icon.hidden=true;
+      icon.setAttribute("aria-hidden","true");
+      note.append(icon,make(doc,"span","",language==="fr"
+        ?"Clochette · peut sonner pendant la bénédiction"
+        :"Altar bell · may ring during the blessing"));
+      inner.append(note);
+    }
     const button=make(doc,"button","aoDevotionalActionContinue",language==="fr"?"Continuer la prière":"Continue prayer");
     button.type="button";
     button.addEventListener("click",dismiss);
