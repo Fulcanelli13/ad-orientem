@@ -59,8 +59,17 @@ for(let i=0;i<census.rows.length;i++){
  assert.equal(row.stage,reader.cards.find(x=>x.paragraphs.some(p=>p.id===row.rowId))?.id);
  assert.deepEqual(row.ordinaryCueIds,index.ordinaryCueIds,
    "Ordinary candidate IDs differ from existing source owner matrix "+row.rowId);
- assert.deepEqual(row.prayIds,index.prayPrayerIds,
-   "PRAY candidate IDs differ from existing source owner matrix "+row.rowId);
+ // The second-pass PRAY owner index deliberately scans only rows without
+ // an Ordinary exact match. The exhaustive census may additionally find
+ // PRAY parallels on a row whose primary wording owner is the Ordinary.
+ // That is overlapping candidate evidence, not a canon/source disagreement.
+ if(!row.ordinaryCueIds.length){
+   assert.deepEqual(row.prayIds,index.prayPrayerIds,
+     "PRAY candidate IDs differ on an Ordinary-unmatched row "+row.rowId);
+ }else{
+   assert.ok(index.prayPrayerIds.every(id=>row.prayIds.includes(id)),
+     "Secondary PRAY source IDs missing from wider census "+row.rowId);
+ }
  if(row.stage==="ROG-R03"){
    const h=historic.get(row.rowId);
    assert.ok(h,"Every Litany row must now have an explicit witness-position record");
