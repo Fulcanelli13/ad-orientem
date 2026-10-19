@@ -100,7 +100,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git fetch --no-tags --depth=1 origin 'refs/pull/1443/head'
+          git fetch --no-tags --depth=1 origin 'b4dd46743d641bfaa6076c6bb2fd8641c47077b6'
           test "$(git rev-parse FETCH_HEAD)" = "b4dd46743d641bfaa6076c6bb2fd8641c47077b6" || {
             echo 'PR #1443 moved; reconcile and repin its reviewed router before rerunning' >&2
             exit 1
