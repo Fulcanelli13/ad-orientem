@@ -7,12 +7,14 @@ on:
       - data/learn/living-church-shared-question-routing-pilot.v1.json
       - src/learn/living-church-shared-question-router.js
       - tests/living-church-shared-question-router.mjs
+      - tests/living-church-question-retrieval-probes.mjs
       - .github/workflows/living-church-shared-question-router.yml
   pull_request:
     paths:
       - data/learn/living-church-shared-question-routing-pilot.v1.json
       - src/learn/living-church-shared-question-router.js
       - tests/living-church-shared-question-router.mjs
+      - tests/living-church-question-retrieval-probes.mjs
       - .github/workflows/living-church-shared-question-router.yml
 permissions:
   contents: read
@@ -28,3 +30,4 @@ jobs:
         run: |
           node --check src/learn/living-church-shared-question-router.js
           node tests/living-church-shared-question-router.mjs
+          node tests/living-church-question-retrieval-probes.mjs
