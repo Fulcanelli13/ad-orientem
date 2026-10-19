@@ -22,12 +22,13 @@ await new Promise((ok,reject)=>{server.once("error",reject);server.listen(4397,"
 let browser;
 try{
   browser=await chromium.launch({headless:true});
-  for(const rite of ["asperges","candlemas","ash","easter-vigil","corpus","requiem"]){
+  for(const rite of ["asperges","candlemas","ash","easter-vigil","corpus","requiem","holy-thursday"]){
     const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
     const page=await context.newPage();
     const errors=[];page.on("pageerror",error=>errors.push(error.message));
     const condition=rite==="corpus"?"following=corpus&date=2027-05-27&form=SOLEMN":
       rite==="requiem"?"following=requiem&body=1&burial=1&date=2026-11-02&form=SOLEMN":
+      rite==="holy-thursday"?"following=holy-thursday&date=2027-03-25&form=SOLEMN":
       "rite="+rite;
     const url="http://127.0.0.1:4397/tests/fixtures/reader-phone-harness.html?mode=MISSAL&lang=fr&"+condition;
     await page.goto(url,{waitUntil:"domcontentloaded",timeout:90000});
@@ -209,6 +210,76 @@ try{
         assert.equal(await rows(),2,
           "Back navigation must reopen final Requiem absolution prayer");
       }
+    }else if(rite==="holy-thursday"){
+      const started=await page.evaluate(()=>{
+        const p=window.__AO_PHONE_PREVIEW;
+        let end=null;
+        for(const card of [...p.model.cards].reverse()){
+          if(p.showSequence(card.sequence)){end=card.sectionId;break}
+        }
+        return {end,source:!!p.getHolyThursdayPostState()};
+      });
+      assert.ok(started.end&&started.source,"Holy Thursday conditional annex not mounted");
+      await click();
+      const stage=async()=>page.evaluate(()=>window.__AO_PHONE_PREVIEW.getHolyThursdayPostState().card.id);
+      assert.equal(await stage(),"HT-R01");
+      assert.equal(await rows(),2,"Holy Thursday Pange lingua opening stanzas not paginated");
+      assert.equal(await page.locator(".ao-line-secondary").count(),2,
+        "Holy Thursday first two hymn stanzas lack French");
+      await click();
+      assert.equal(await stage(),"HT-R01","Pange lingua page turn advanced ceremony");
+      await click();
+      assert.equal(await stage(),"HT-R02");
+      await click();
+      assert.equal(await stage(),"HT-R03");
+      assert.equal(await page.locator(".ao-line-secondary").count(),2,
+        "Holy Thursday Tantum ergo/Genitori not bilingual");
+      await click();
+      assert.equal(await stage(),"HT-R04");
+      await click();
+      assert.equal(await stage(),"HT-R05");
+      assert.equal(await rows(),4);
+      assert.equal(await page.locator(".ao-line-secondary").count(),4,
+        "Whole Psalm reference opening paragraph lacked French");
+      const unknown=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getHolyThursdayPostState());
+      assert.equal(unknown.clericsPresent,null);
+      assert.equal(unknown.psalmPerformance,"CLERICS_UNRESOLVED_FULL_PSALM_REFERENCE_ONLY");
+      const choices=page.locator('[data-role="rite-psalm-choice"]');
+      assert.equal(await choices.isVisible(),true,
+        "Cannot choose the 1962 rubric's conditional clerics-present branch");
+      await choices.locator('button[data-psalm-clerics="no"]').click();
+      assert.equal(await stage(),"HT-R05","Changing clerics option moved source event");
+      const short=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getHolyThursdayPostState());
+      assert.equal(short.clericsPresent,false);
+      assert.equal(short.psalmPerformance,"CELEBRANT_FIRST_VERSE_ONLY_NO_CLERICS");
+      assert.equal(short.card.psalmReferenceRows.length,15);
+      assert.equal(await rows(),3,"No-clerics recitation exceeds first verse");
+      assert.equal(await page.locator(".ao-line-secondary").count(),3);
+      const firstVerse=await page.locator('.ao-reader-paragraph[data-paragraph-id="HT-R05-P1-FIRSTVERSE"]').innerText();
+      assert.match(firstVerse,/quare me dereliquísti/);
+      assert.doesNotMatch(firstVerse,/clamo per diem/,
+        "Rubric first verse improperly contains the next biblical verse");
+      await choices.locator('button[data-psalm-clerics="yes"]').click();
+      assert.equal(await stage(),"HT-R05");
+      assert.equal((await page.evaluate(()=>
+        window.__AO_PHONE_PREVIEW.getHolyThursdayPostState())).psalmPerformance,
+        "CLERICS_RECITE_UNTIL_STRIPPING_COMPLETE");
+      assert.equal(await rows(),4);
+      for(let i=0;i<3;i++){
+        await click();
+        assert.equal(await stage(),"HT-R05",
+          "Full Psalm Missal page turn advanced Holy Thursday stage");
+      }
+      assert.equal(await rows(),3);
+      assert.equal(await page.locator(".ao-line-secondary").count(),3,
+        "Final Psalm and repeated antiphon French missing");
+      await choices.locator('button[data-psalm-clerics="no"]').click();
+      assert.equal(await rows(),3);
+      await click();
+      assert.equal(await stage(),"HT-R06");
+      assert.equal((await page.evaluate(()=>
+        window.__AO_PHONE_PREVIEW.getHolyThursdayPostState())).handoff,
+        "POST_MASS_LIFECYCLE");
     }else{
       const prophecy=await page.evaluate(()=>{
         window.__AO_PHONE_PREVIEW.goToEasterVigilRecord("EV-LESS-01-READ");
@@ -287,5 +358,5 @@ try{
     assert.equal(errors.length,0,rite+" generated a browser exception: "+errors.join(";"));
     await context.close();
   }
-  console.log("PASS 390px six-rite Missal browser: Asperges, Ash, Candlemas, Corpus, Requiem, Vigil source/page parity");
+  console.log("PASS 390px seven-rite Missal browser incl Holy Thursday conditional Psalm 21 and French source parity");
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
