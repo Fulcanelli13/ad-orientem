@@ -35,6 +35,18 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  grid-template-columns:minmax(0,1fr)!important;
 }
 /* Stations inherit their one positional progress track from the shared chapter adapter. */
+/* The legacy StageRail flex!important must not displace the adapter's one progress row. */
+#aoPray435930 .aoP435930StageRail.aoP435930StationRail.aoDevoSequenceTimeline{
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+ gap:5px!important;align-items:center!important;
+}
+#aoPray435930 .aoP435930StationRail.aoDevoSequenceTimeline>.aoDevoStops{
+ min-width:0!important;width:100%;overflow-x:auto;
+}
+#aoPray435930 .aoP435930StationRail.aoDevoSequenceTimeline>.aoDevoProgress{
+ width:100%;margin:0;grid-column:1/-1;
+}
+
 #aoPray435930 .aoP435930FinalExit{
  grid-template-columns:minmax(0,1fr)!important;
 }
