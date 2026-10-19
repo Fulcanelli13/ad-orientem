@@ -21,7 +21,9 @@ for(const item of series.plates){
  assert.equal(item.actualImageViewed,item.plate===29,
    "only exact plate 29 original may be marked visually inspected");
  assert.equal(item.originalImagePath,null,"unverified original was added to storage");
- assert.equal(item.sha256,null,"unchecked image was assigned a fake SHA-256 digest");
+ assert.equal(item.sha256,item.plate===29
+  ?"968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf":null,
+  "source SHA256 is certified only for actual acquired plate 29");
  assert.equal(item.handPlacementVerified,false,"1661 image was assumed to meet 1962 rubrics");
  assert.equal(item.matches1962Rubrics,null);
  assert.equal(item.approvedBankArtComparison,false);
@@ -46,7 +48,10 @@ assert.equal(communion.visualInspection.chaliceInPriestRightHand,false);
 assert.equal(communion.visualInspection.patenInLeftHandClearlyVisible,false);
 assert.equal(communion.visualInspection.witnessForHostAction,"POSE_CONTEXT_SUPPORT_ONLY_NOT_EXACT_1962_CONSUMPTION");
 assert.equal(communion.visualInspection.witnessForChaliceAction,"NOT_A_CHALICE_DRINKING_WITNESS");
-assert.equal(communion.imageBytesLocallyVerified,false);
+assert.equal(communion.imageBytesLocallyVerified,true);
+assert.equal(communion.verificationProof.bytes,167545);
+assert.equal(communion.verificationProof.artifactId,12179522591);
+assert.equal(communion.verificationProof.status,"BITWISE_VERIFIED_RESEARCH_ARTIFACT_NOT_PRODUCTION_ORIGINAL");
 assert.equal(series.plates.find(x=>x.plate===30).target,"ABLUTIONS",
  "Ablutions plate was misidentified as receiving the chalice");
 assert.equal(series.plates.find(x=>x.plate===21).target,"ELEVATES_HOST",
@@ -61,7 +66,8 @@ for(const candidate of provenance.candidates){
  assert.equal(lead.rightsStatus,"CC0_COMMONS_PHOTOGRAPH_PUBLIC_DOMAIN_RIJKSMUSEUM_ORIGINAL");
  assert.equal(lead.pictureVisuallyInspected,true);
  assert.equal(lead.exactHostVsChaliceState,"COMMUNION_CONTEXT_INCLINED_PRIEST_CHALICE_ON_ALTAR_HOST_UNCLEAR_NO_CHALICE_DRINKING");
- assert.equal(lead.sourceImagesRetrieved,0);
+ assert.equal(lead.sourceImagesRetrieved,1);
+ assert.equal(lead.sourceAcquisitionProof.artifactId,12179522591);
  assert.equal(lead.approvedFamilyComparison,"NOT_STARTED");
  assert.deepEqual(candidate.originalPictures,[],
    "research lead wrongly promoted to a verified original without source image");

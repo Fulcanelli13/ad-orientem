@@ -1,0 +1,32 @@
+name: P3 CC0 original source acquisition
+on:
+  pull_request:
+    paths:
+      - "data/presentation/mass-icon-source-acquisition-p3.v1.json"
+      - "scripts/acquire-mass-icon-originals.mjs"
+      - ".github/workflows/mass-icon-original-source-capture.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-originals-capture:
+    name: source-originals-capture
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch CC0 original, verify pixels and compute SHA256
+        run: node scripts/acquire-mass-icon-originals.mjs
+      - name: Archive original + source evidence (not production app assets)
+        uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: mass-original-leclerc-1661-p3
+          path: artifacts/mass-original-research/
+          if-no-files-found: error
+          retention-days: 90

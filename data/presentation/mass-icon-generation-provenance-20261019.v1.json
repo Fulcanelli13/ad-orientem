@@ -120,6 +120,15 @@
       "note": "Find and verify a real photograph or original documented drawing depicting the priest's own Communion before producing a new icon. Do not use imagery of the priest giving Communion.",
       "researchLeads": [
         {
+          "id": "CTH43758",
+          "sourcePage": "https://cathopic.com/photo/43758-priest-receiving-communion-at-mass/",
+          "artist": "Carlos Gaviria",
+          "licenseState": "COPYRIGHT_INDIVIDUAL_LICENSE_REQUIRED",
+          "disposition": "EXCLUDE_FROM_1962_HOST_ICON_SOURCE_SHORTLIST",
+          "visualEvidence": "Watermarked 640px Cathopic image viewed 2026-10-19: bald bearded celebrant in blue vesture bends toward his fingers over the chalice; 1962 Roman liturgical setting, two Host halves and elbows-on-altar are not established.",
+          "doNotDownload": true
+        },
+        {
           "id": "SCHUMACHER_1920_PRIEST_COMMUNION_P97",
           "priority": 1,
           "type": "HISTORICAL_ILLUSTRATION",
@@ -150,7 +159,7 @@
           "type": "HISTORICAL_ILLUSTRATION",
           "title": "Quand le P. communie",
           "imageOriginalPath": null,
-          "sha256": null,
+          "sha256": "968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf",
           "artist": "Sébastien Leclerc I",
           "catalogueNumber": "RP-P-OB-69.179",
           "published": 1661,
@@ -164,16 +173,31 @@
           "exactHostVsChaliceState": "COMMUNION_CONTEXT_INCLINED_PRIEST_CHALICE_ON_ALTAR_HOST_UNCLEAR_NO_CHALICE_DRINKING",
           "rubricalHandPlacementStatus": "PARTIAL_POSE_ONLY_NOT_VERIFIED_X4_OR_X5",
           "approvedFamilyComparison": "NOT_STARTED",
-          "sourceImagesRetrieved": 0,
+          "sourceImagesRetrieved": 1,
           "provenanceSeries": "data/presentation/mass-icon-originals-leclerc1661.p3.json",
-          "disposition": "REAL_CC0_ORIGINAL_SCENE_VISUALLY_INSPECTED_BUT_ACTION_DETAILS_NOT_CERTIFIED",
+          "disposition": "VERIFIED_CC0_ORIGINAL_BYTES_ONLY_1962_HOST_CHALICE_GESTURE_NOT_CERTIFIED",
           "next": "Preserve source-image bytes plus locally computed SHA256 when download is available; current visible scan demonstrates Communion context but not divided Host or chalice-drinking/paten. Find clearer independent exact-action picture for each icon.",
           "cc0CommonsSource": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg",
           "actualFileURL": "https://upload.wikimedia.org/wikipedia/commons/0/09/Priester_met_twee_misdienaars_voor_een_altaar%2C_RP-P-OB-69.179.jpg",
           "fileDimensions": [
             657,
             1045
-          ]
+          ],
+          "sourceAcquisitionProof": {
+            "sha256": "968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf",
+            "sha1": null,
+            "bytes": 167545,
+            "width": 657,
+            "height": 1045,
+            "artifactId": 12179522591,
+            "artifactUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39236948788/artifacts/12179522591",
+            "runId": 39236948788,
+            "verifiedIn": "GitHub Actions Node 22 source capture and independently extracted original image in analysis runtime",
+            "date": "2026-10-19",
+            "status": "BITWISE_VERIFIED_RESEARCH_ARTIFACT_NOT_PRODUCTION_ORIGINAL",
+            "permanence": "TEMPORARY_90_DAY_ARTIFACT"
+          },
+          "binaryDownloadedIntoRuntime": true
         },
         {
           "type": "HISTORICAL_PHOTOGRAPH_SERIES",
@@ -271,7 +295,7 @@
           "type": "HISTORICAL_ILLUSTRATION",
           "title": "Quand le P. communie",
           "imageOriginalPath": null,
-          "sha256": null,
+          "sha256": "968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf",
           "artist": "Sébastien Leclerc I",
           "catalogueNumber": "RP-P-OB-69.179",
           "published": 1661,
@@ -285,16 +309,31 @@
           "exactHostVsChaliceState": "COMMUNION_CONTEXT_INCLINED_PRIEST_CHALICE_ON_ALTAR_HOST_UNCLEAR_NO_CHALICE_DRINKING",
           "rubricalHandPlacementStatus": "PARTIAL_POSE_ONLY_NOT_VERIFIED_X4_OR_X5",
           "approvedFamilyComparison": "NOT_STARTED",
-          "sourceImagesRetrieved": 0,
+          "sourceImagesRetrieved": 1,
           "provenanceSeries": "data/presentation/mass-icon-originals-leclerc1661.p3.json",
-          "disposition": "REAL_CC0_ORIGINAL_SCENE_VISUALLY_INSPECTED_BUT_ACTION_DETAILS_NOT_CERTIFIED",
+          "disposition": "VERIFIED_CC0_ORIGINAL_BYTES_ONLY_1962_HOST_CHALICE_GESTURE_NOT_CERTIFIED",
           "next": "Preserve source-image bytes plus locally computed SHA256 when download is available; current visible scan demonstrates Communion context but not divided Host or chalice-drinking/paten. Find clearer independent exact-action picture for each icon.",
           "cc0CommonsSource": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg",
           "actualFileURL": "https://upload.wikimedia.org/wikipedia/commons/0/09/Priester_met_twee_misdienaars_voor_een_altaar%2C_RP-P-OB-69.179.jpg",
           "fileDimensions": [
             657,
             1045
-          ]
+          ],
+          "sourceAcquisitionProof": {
+            "sha256": "968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf",
+            "sha1": null,
+            "bytes": 167545,
+            "width": 657,
+            "height": 1045,
+            "artifactId": 12179522591,
+            "artifactUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39236948788/artifacts/12179522591",
+            "runId": 39236948788,
+            "verifiedIn": "GitHub Actions Node 22 source capture and independently extracted original image in analysis runtime",
+            "date": "2026-10-19",
+            "status": "BITWISE_VERIFIED_RESEARCH_ARTIFACT_NOT_PRODUCTION_ORIGINAL",
+            "permanence": "TEMPORARY_90_DAY_ARTIFACT"
+          },
+          "binaryDownloadedIntoRuntime": true
         },
         {
           "type": "HISTORICAL_PHOTOGRAPH_SERIES",
@@ -402,7 +441,7 @@
         "type": "HISTORICAL_ILLUSTRATION",
         "title": "Quand le P. communie",
         "imageOriginalPath": null,
-        "sha256": null,
+        "sha256": "968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf",
         "artist": "Sébastien Leclerc I",
         "catalogueNumber": "RP-P-OB-69.179",
         "published": 1661,
@@ -416,16 +455,31 @@
         "exactHostVsChaliceState": "COMMUNION_CONTEXT_INCLINED_PRIEST_CHALICE_ON_ALTAR_HOST_UNCLEAR_NO_CHALICE_DRINKING",
         "rubricalHandPlacementStatus": "PARTIAL_POSE_ONLY_NOT_VERIFIED_X4_OR_X5",
         "approvedFamilyComparison": "NOT_STARTED",
-        "sourceImagesRetrieved": 0,
+        "sourceImagesRetrieved": 1,
         "provenanceSeries": "data/presentation/mass-icon-originals-leclerc1661.p3.json",
-        "disposition": "REAL_CC0_ORIGINAL_SCENE_VISUALLY_INSPECTED_BUT_ACTION_DETAILS_NOT_CERTIFIED",
+        "disposition": "VERIFIED_CC0_ORIGINAL_BYTES_ONLY_1962_HOST_CHALICE_GESTURE_NOT_CERTIFIED",
         "next": "Preserve source-image bytes plus locally computed SHA256 when download is available; current visible scan demonstrates Communion context but not divided Host or chalice-drinking/paten. Find clearer independent exact-action picture for each icon.",
         "cc0CommonsSource": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg",
         "actualFileURL": "https://upload.wikimedia.org/wikipedia/commons/0/09/Priester_met_twee_misdienaars_voor_een_altaar%2C_RP-P-OB-69.179.jpg",
         "fileDimensions": [
           657,
           1045
-        ]
+        ],
+        "sourceAcquisitionProof": {
+          "sha256": "968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf",
+          "sha1": null,
+          "bytes": 167545,
+          "width": 657,
+          "height": 1045,
+          "artifactId": 12179522591,
+          "artifactUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39236948788/artifacts/12179522591",
+          "runId": 39236948788,
+          "verifiedIn": "GitHub Actions Node 22 source capture and independently extracted original image in analysis runtime",
+          "date": "2026-10-19",
+          "status": "BITWISE_VERIFIED_RESEARCH_ARTIFACT_NOT_PRODUCTION_ORIGINAL",
+          "permanence": "TEMPORARY_90_DAY_ARTIFACT"
+        },
+        "binaryDownloadedIntoRuntime": true
       },
       {
         "type": "HISTORICAL_PHOTOGRAPH_SERIES",
@@ -463,7 +517,17 @@
         "path": null,
         "sha256": null,
         "disposition": "RESEARCH_LEAD_NOT_SOURCE_OR_PRODUCTION",
-        "next": "Obtain legitimate licensed copy, retain exact image and checksum, verify right hand on chalice and left hand with paten beneath, then compare with user-approved icon family."
+        "next": "Obtain legitimate licensed copy, retain exact image and checksum, verify right hand on chalice and left hand with paten beneath, then compare with user-approved icon family.",
+        "visualPreviewInspection": {
+          "date": "2026-10-19",
+          "evidence": "Watermarked 640px Cathopic image viewed 2026-10-19: celebrant in traditional Roman vestments physically drinks from a chalice at an altar; hand holding vessel evident, but paten beneath chalice in left hand is not sufficiently visible from this angle.",
+          "sourcePage": "https://cathopic.com/photo/49809-priest-drinks-the-most-precious-blood-of-jesus/",
+          "fullImageRightsAcquired": false,
+          "riteSpecificity": "TAGGED_TRADITIONAL_LATIN_MASS_AND_VISUALLY_CONSISTENT",
+          "chaliceDrinkingVisible": true,
+          "leftPatenSupportVerified": false,
+          "releaseApproved": false
+        }
       },
       {
         "type": "HISTORICAL_ILLUSTRATION",
