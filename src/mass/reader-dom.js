@@ -583,6 +583,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-cinematic-mark{font:400 1.35rem/1 var(--ao-font-display,Georgia,serif);color:var(--ao-warm);display:grid;place-items:center}
 .ao-cinematic-icon{display:block;width:68%;height:68%;color:#efe9d2}
 .ao-cinematic-fallback{display:block}
+.ao-cinematic-fallback[hidden]{display:none!important}
 .ao-cinematic-title{font:400 clamp(1.2rem,4vw,2rem)/1.15 var(--ao-font-display,Georgia,"Times New Roman",serif);letter-spacing:.08em;color:#f0f1e9}
 .ao-cinematic-sub{font:600 .63rem/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.11em;color:#89928a}
 .ao-cinematic[data-kind="ELEVATION"]{
