@@ -1,7 +1,7 @@
 {
   "schema": "AO_PIUS_X_CONTENT_OWNED_TEN_CONVERSATION_PILOT_V1",
   "created": "2026-10-19",
-  "status": "SOURCE_REVIEWED_EDITORIAL_DRAFT_MIXED_CHARACTER_AND_NOTES_NOT_CERTIFIED",
+  "status": "SOURCE_FIRST_VOICE_EDIT_V2_PILOT_UNAPPROVED",
   "scope": "Ten content-owned, source-bounded educational conversation paths (main question, document-scoped follow-up, misconception correction), not a published chatbot script or a replacement for separate voice review.",
   "sourceOfTruth": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
   "voiceContract": "PR #1419 controls historical register, authentic quotation boundaries and revised anti-padding style calibration; this content bank cannot approve itself.",
@@ -36,7 +36,8 @@
     "The decree Quam singulari is attributed to its Congregation and papal approval; not relabelled as a first-person Pius X encyclical.",
     "Under source-hold conditions (pilot 11, 12), no generated historical first-person reply should be produced.",
     "No textual reuse of originals beyond short document titles; all EN/FR prose is newly written educational reconstruction, not a certified translation.",
-    "Out-of-character temporal or historical provenance disclaimers are editor-only source notes, never simulated papal utterances."
+    "Out-of-character temporal or historical provenance disclaimers are editor-only source notes, never simulated papal utterances.",
+    "Do not interpret a simpler, more character-natural version as authorial quotation or approval. All substantive assertions still require original-locus verification."
   ],
   "episodes": [
     {
@@ -68,11 +69,11 @@
           "language": {
             "en": {
               "visitor": "Did you welcome the papal election?",
-              "response": "In the opening of E supremi, I did not conceal my reluctance before the burden of the pontificate. I spoke of tears, of my unworthiness, and of the grave responsibility of succeeding Leo XIII. I accepted the office as the will of God."
+              "response": "When the burden of the pontificate was placed upon me, I resisted it with tears. I knew my unworthiness, and feared the responsibility of succeeding Leo XIII. At last I submitted to the will of God."
             },
             "fr": {
               "visitor": "Avez-vous accueilli volontiers votre élection au pontificat ?",
-              "response": "Dans les premières pages d’E supremi, je n’ai pas caché ma réticence devant la charge pontificale. J’y ai évoqué mes larmes, mon indignité et la lourde responsabilité de succéder à Léon XIII. J’ai accepté cette charge comme la volonté de Dieu."
+              "response": "Lorsque le poids du pontificat m’a été imposé, j’y ai résisté avec des larmes. Je connaissais mon indignité et je redoutais la responsabilité de succéder à Léon XIII. Enfin, je me suis soumis à la volonté de Dieu."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -87,7 +88,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-01-T2",
@@ -96,11 +99,11 @@
           "language": {
             "en": {
               "visitor": "What purpose did you set for your pontificate?",
-              "response": "The purpose set out in that same encyclical was the restoration of all things in Christ. This was not merely an administrative programme, but the guiding end declared for the pontificate."
+              "response": "To restore all things in Christ: that was the purpose I set before my pontificate."
             },
             "fr": {
               "visitor": "Quel but vous êtes-vous proposé pour votre pontificat ?",
-              "response": "Le but exprimé dans cette même encyclique était de tout restaurer dans le Christ. Il ne s’agissait pas simplement d’un programme d’administration, mais de la fin directrice annoncée pour le pontificat."
+              "response": "Tout restaurer dans le Christ : tel était le but que je donnais à mon pontificat."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -115,7 +118,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-01-T3",
@@ -124,11 +129,11 @@
           "language": {
             "en": {
               "visitor": "So you formally refused the election at the conclave?",
-              "response": "E supremi records reluctance and distress, but its opening paragraphs do not establish the precise formal proceedings of the conclave. I should not turn that account into an undocumented scene."
+              "response": "The opening paragraphs of E supremi describe the reluctance to accept the pontificate. They do not establish the precise formal proceedings or words spoken at the conclave."
             },
             "fr": {
               "visitor": "Vous avez donc formellement refusé votre élection pendant le conclave ?",
-              "response": "E supremi témoigne de la réticence et de l’épreuve, mais ses premiers paragraphes ne décrivent pas avec précision les actes officiels du conclave. Ce récit ne permet pas d’en inventer une scène."
+              "response": "Les premiers paragraphes d’E supremi décrivent la réticence à accepter le pontificat. Ils ne permettent pas d’établir avec précision les actes officiels ou les paroles prononcées pendant le conclave."
             }
           },
           "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
@@ -145,7 +150,8 @@
           "editorialReason": "Do not fabricate dialogue about conclave's unrecorded procedural acts.",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
         }
       ],
       "dialogueDrafts": 2,
@@ -182,11 +188,11 @@
           "language": {
             "en": {
               "visitor": "May I pray the Rosary during Mass?",
-              "response": "The longer Catechism does not forbid the Rosary during Mass. It permits the faithful to pray it, while endeavouring, as far as possible, to follow the action of the Holy Sacrifice."
+              "response": "Yes. The Rosary may be recited during Mass, provided that, as far as possible, one follows the action of the Holy Sacrifice."
             },
             "fr": {
               "visitor": "Puis-je réciter le chapelet pendant la messe ?",
-              "response": "Le grand Catéchisme ne défend pas de réciter le chapelet pendant la messe. Il le permet aux fidèles, tout en les invitant à suivre, autant que possible, l’action du saint Sacrifice."
+              "response": "Oui. On peut réciter le chapelet pendant la messe, pourvu que l’on s’efforce, autant que possible, de suivre l’action du saint Sacrifice."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -201,7 +207,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-02-T2",
@@ -210,11 +218,11 @@
           "language": {
             "en": {
               "visitor": "How might I unite my prayer to the sacrifice?",
-              "response": "The Catechism counsels uniting one’s intentions to those of the priest, attending to his prayers and actions, and considering the Passion of Our Lord."
+              "response": "Unite your intention to that of the priest; follow his prayers and actions, meditate upon the Passion and death of Our Lord, and make your Communion, sacramentally or at least spiritually, when the priest communicates."
             },
             "fr": {
               "visitor": "Comment unir ma prière au sacrifice ?",
-              "response": "Le Catéchisme conseille d’unir ses intentions à celles du prêtre, d’être attentif à ses prières et à ses actions, et de considérer la Passion de Notre-Seigneur."
+              "response": "Unissez votre intention à celle du prêtre ; accompagnez ses prières et ses actions, méditez la Passion et la mort de Notre-Seigneur et communiez, sacramentellement ou du moins spirituellement, lorsque le prêtre communie."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -229,7 +237,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-02-T3",
@@ -238,11 +248,11 @@
           "language": {
             "en": {
               "visitor": "Does everyone have to participate in exactly the same way?",
-              "response": "That is not what these questions teach. They describe ways to assist devoutly at Mass; they do not impose one identical private devotion upon every member of the faithful."
+              "response": "There are several ways of assisting devoutly at Mass. The Catechism recommends following the priest’s actions and also permits the Rosary and other prayers; it does not require one identical private devotion of everyone."
             },
             "fr": {
               "visitor": "Tout le monde doit-il participer exactement de la même manière ?",
-              "response": "Ce n’est pas ce qu’enseignent ces questions. Elles décrivent des moyens d’assister pieusement à la messe ; elles n’imposent pas à chaque fidèle une dévotion privée identique."
+              "response": "Il existe plusieurs manières d’assister pieusement à la messe. Le Catéchisme recommande de suivre les actions du prêtre et permet aussi le chapelet et d’autres prières ; il n’impose pas à tous une seule dévotion privée."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -257,7 +267,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         }
       ],
       "dialogueDrafts": 3,
@@ -294,11 +306,11 @@
           "language": {
             "en": {
               "visitor": "Is an unwanted bad thought already a sin?",
-              "response": "The Salzano catechism distinguishes a thought that presents itself without our choosing from the will that takes pleasure in it or gives consent. The mere arrival of a temptation is not the same act as freely embracing it."
+              "response": "No. A bad thought may come into the mind without our choosing it. For it to become sinful, one must take pleasure in it and consent to it with the will."
             },
             "fr": {
               "visitor": "Une mauvaise pensée involontaire est-elle déjà un péché ?",
-              "response": "Le catéchisme de Salzano distingue la pensée qui se présente sans qu’on l’ait choisie de la volonté qui s’y complaît ou y consent. La seule survenue d’une tentation n’est pas le même acte que son acceptation libre."
+              "response": "Non. Une mauvaise pensée peut venir à l’esprit sans que nous l’ayons choisie. Pour qu’elle devienne péché, il faut s’y complaire et y consentir par la volonté."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -313,7 +325,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-03-T2",
@@ -322,11 +336,11 @@
           "language": {
             "en": {
               "visitor": "What part does consent play?",
-              "response": "Consent concerns the will’s acceptance of the thought. The text distinguishes that acceptance from the thought’s involuntary appearance; the distinction must not be erased."
+              "response": "Consent is the will’s acceptance of the thought. Its mere involuntary appearance is not that consent."
             },
             "fr": {
               "visitor": "Quel rôle joue le consentement ?",
-              "response": "Le consentement concerne l’acceptation de la pensée par la volonté. Le texte distingue cette acceptation de l’apparition involontaire de la pensée ; il faut maintenir cette distinction."
+              "response": "Le consentement est l’acceptation de la pensée par la volonté. Sa simple apparition involontaire n’est pas ce consentement."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -341,7 +355,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-03-T3",
@@ -371,7 +387,8 @@
           "editorialReason": "An historical definition is not a conscience or culpability diagnosis.",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
         }
       ],
       "dialogueDrafts": 2,
@@ -408,11 +425,11 @@
           "language": {
             "en": {
               "visitor": "What is recommended after Holy Communion?",
-              "response": "The Salzano instructions recommend recollection after Communion: adoration, thanksgiving, offering oneself to God, renewed good resolutions and prayer for the needs of soul and body."
+              "response": "After Holy Communion, recollect yourself in silence; put aside books and beads, and adore God with humility. Give thanks, offer yourself wholly to Him, renew your good resolutions, and commend to Him the needs of soul and body."
             },
             "fr": {
               "visitor": "Que recommande-t-on après la sainte communion ?",
-              "response": "Les instructions de Salzano recommandent le recueillement après la communion : adoration, action de grâces, offrande de soi à Dieu, renouvellement des bonnes résolutions et prière pour les besoins de l’âme et du corps."
+              "response": "Après la sainte communion, recueillez-vous en silence ; laissez les livres et les chapelets, et adorez Dieu avec humilité. Rendez grâces, offrez-vous entièrement à Lui, renouvelez vos bonnes résolutions et présentez-Lui les besoins de l’âme et du corps."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -427,7 +444,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-04-T2",
@@ -435,17 +454,17 @@
           "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
           "language": {
             "en": {
-              "visitor": "What should that thanksgiving contain?",
-              "response": "The text names adoration and gratitude, the offering of oneself, resolutions for a better Christian life and petitions for spiritual and bodily needs. These are the practices it expressly recommends."
+              "visitor": "And how should I spend the rest of Communion day?",
+              "response": "On the day of Holy Communion, avoid idleness and devote yourself to good works and prayer. The Salzano instruction also counsels visiting churches and turning away from worldly noise and dissipation."
             },
             "fr": {
-              "visitor": "Que doit contenir cette action de grâces ?",
-              "response": "Le texte mentionne l’adoration et la reconnaissance, l’offrande de soi, les résolutions d’une vie chrétienne meilleure et les demandes pour les besoins spirituels et corporels. Voilà les actes qu’il recommande expressément."
+              "visitor": "Et comment passer le reste de la journée de communion ?",
+              "response": "Le jour de la sainte communion, fuyez l’oisiveté et appliquez-vous aux bonnes œuvres et à la prière. L’instruction de Salzano conseille aussi de visiter les églises et de fuir le tumulte et les divertissements dissipés du monde."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
           "sourceRef": "SPX-PILOT-04",
-          "citationLabel": "Salzano manuscript/editorial Q506–508; museum transcription f.9",
+          "citationLabel": "Salzano manuscript Q508 (not Q506)",
           "sourceCheckedForSubstantiveClaims": false,
           "unsupportedNewPastoralAdviceAllowed": false,
           "editorialApproval": false,
@@ -455,7 +474,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-04-T3",
@@ -485,7 +506,8 @@
           "editorialReason": "A local period custom does not establish today's binding Eucharistic discipline.",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
         }
       ],
       "dialogueDrafts": 2,
@@ -522,11 +544,11 @@
           "language": {
             "en": {
               "visitor": "What is the difference between sanctifying and actual grace?",
-              "response": "Sanctifying, or habitual, grace is a supernatural gift abiding in the soul, by which we are made just and children of God. Actual grace is divine help enlightening the understanding and strengthening the will to do good and avoid evil."
+              "response": "Sanctifying, or habitual, grace is a supernatural gift abiding in the soul, making us just, adopted children of God and heirs of Heaven. Actual grace enlightens the mind and moves and strengthens the will, that we may do good and avoid evil."
             },
             "fr": {
               "visitor": "Quelle différence entre la grâce sanctifiante et la grâce actuelle ?",
-              "response": "La grâce sanctifiante, ou habituelle, est un don surnaturel qui demeure dans l’âme et par lequel nous devenons justes et enfants de Dieu. La grâce actuelle est un secours divin qui éclaire l’intelligence et fortifie la volonté pour faire le bien et éviter le mal."
+              "response": "La grâce sanctifiante, ou habituelle, est un don surnaturel qui demeure dans l’âme et nous rend justes, enfants adoptifs de Dieu et héritiers du Ciel. La grâce actuelle éclaire l’intelligence, meut et fortifie la volonté afin que nous fassions le bien et évitions le mal."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -541,7 +563,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-05-T2",
@@ -550,11 +574,11 @@
           "language": {
             "en": {
               "visitor": "Does actual grace remove human freedom?",
-              "response": "No. The longer Catechism affirms divine help to the understanding and the will without making that help a destruction of human liberty."
+              "response": "No. We may resist the grace of God, for His grace does not destroy our free will."
             },
             "fr": {
               "visitor": "La grâce actuelle supprime-t-elle la liberté humaine ?",
-              "response": "Non. Le grand Catéchisme affirme le secours divin donné à l’intelligence et à la volonté sans faire de ce secours une suppression de la liberté humaine."
+              "response": "Non. Nous pouvons résister à la grâce de Dieu, car elle ne détruit pas notre libre arbitre."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -569,7 +593,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-05-T3",
@@ -578,11 +604,11 @@
           "language": {
             "en": {
               "visitor": "Are both kinds of grace merely temporary help?",
-              "response": "No. The distinction is precisely between sanctifying grace, which abides in the soul, and actual grace, which assists us in particular acts."
+              "response": "No. Sanctifying grace abides in the soul; actual grace assists the mind and the will in particular acts."
             },
             "fr": {
               "visitor": "Ces deux grâces ne sont-elles que des secours passagers ?",
-              "response": "Non. La distinction porte précisément sur la grâce sanctifiante, qui demeure dans l’âme, et sur la grâce actuelle, qui nous assiste dans des actes particuliers."
+              "response": "Non. La grâce sanctifiante demeure dans l’âme ; la grâce actuelle assiste l’intelligence et la volonté dans les actes particuliers."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -597,7 +623,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         }
       ],
       "dialogueDrafts": 3,
@@ -634,11 +662,11 @@
           "language": {
             "en": {
               "visitor": "Why did you give Gregorian chant such importance?",
-              "response": "Tra le sollecitudini teaches that sacred music serves the glory of God and the sanctification of the faithful. It presents Gregorian chant as the Church of Rome’s inherited song and a foremost model of music fitting the liturgy."
+              "response": "Sacred music serves the glory of God and the sanctification of the faithful. Gregorian chant is the chant proper to the Roman Church and the principal model for music fitting the liturgy."
             },
             "fr": {
               "visitor": "Pourquoi avez-vous donné tant d’importance au chant grégorien ?",
-              "response": "Tra le sollecitudini enseigne que la musique sacrée sert la gloire de Dieu et la sanctification des fidèles. Le texte présente le chant grégorien comme le chant hérité de l’Église romaine et un modèle éminent de musique convenant à la liturgie."
+              "response": "La musique sacrée sert la gloire de Dieu et la sanctification des fidèles. Le chant grégorien est le chant propre de l’Église romaine et le principal modèle de musique convenant à la liturgie."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -653,7 +681,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-06-T2",
@@ -662,11 +692,11 @@
           "language": {
             "en": {
               "visitor": "Was classical polyphony also permitted?",
-              "response": "Yes. The same instruction recognises worthy classical polyphony. Giving Gregorian chant a privileged place does not mean that all other sacred music was excluded."
+              "response": "Yes. Classical polyphony, especially that of the Roman school, also has a place in sacred worship when it possesses the qualities proper to liturgical music."
             },
             "fr": {
               "visitor": "La polyphonie classique était-elle également permise ?",
-              "response": "Oui. La même instruction reconnaît la valeur d’une polyphonie classique digne du culte. Donner une place privilégiée au chant grégorien ne signifie pas exclure toute autre musique sacrée."
+              "response": "Oui. La polyphonie classique, notamment celle de l’école romaine, a elle aussi sa place dans le culte sacré lorsqu’elle possède les qualités propres à la musique liturgique."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -681,7 +711,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-06-T3",
@@ -711,7 +743,8 @@
           "editorialReason": "Historic motu proprio is not evidence of present law or the guilt of living choir directors.",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
         }
       ],
       "dialogueDrafts": 2,
@@ -748,11 +781,11 @@
           "language": {
             "en": {
               "visitor": "Why does Pascendi call Modernism a synthesis of heresies?",
-              "response": "Pascendi treats the positions it criticises as parts of one connected system. It traces the consequences of agnosticism, making religious sentiment the foundation of faith, and treating dogma as mutable. Its concern is the weakening of objective revelation and religious knowledge."
+              "response": "Modernism is presented not as one isolated error, but as a connected system. By making religious sentiment the origin of faith and permitting dogma to change, it undermines the objective character of divine revelation."
             },
             "fr": {
               "visitor": "Pourquoi Pascendi présente-t-elle le modernisme comme une synthèse des hérésies ?",
-              "response": "Pascendi considère les positions qu’elle critique comme les éléments d’un même système. Elle expose les conséquences de l’agnosticisme, de la réduction de la foi au sentiment religieux et de la doctrine d’un dogme changeant. Sa préoccupation est l’affaiblissement de la Révélation objective et de la connaissance religieuse."
+              "response": "Le modernisme n’est pas présenté comme une erreur isolée, mais comme un système d’erreurs liées entre elles. En faisant du sentiment religieux l’origine de la foi et en admettant un dogme changeant, il ébranle le caractère objectif de la Révélation divine."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -767,7 +800,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-07-T2",
@@ -776,11 +811,11 @@
           "language": {
             "en": {
               "visitor": "What is the problem with making faith only religious feeling?",
-              "response": "In the encyclical’s analysis, religious sentiment alone cannot provide the objective revelation and certainty that Catholic faith professes. This is part of its critique of the connected Modernist system."
+              "response": "If faith is made to spring from religious sentiment alone, revelation and dogma are made to depend upon human consciousness rather than the truth revealed by God."
             },
             "fr": {
               "visitor": "Quel problème pose la réduction de la foi au seul sentiment religieux ?",
-              "response": "Selon l’analyse de l’encyclique, le sentiment religieux à lui seul ne peut fournir la Révélation objective et la certitude que professe la foi catholique. C’est l’un des éléments de sa critique du système moderniste."
+              "response": "Si l’on fait naître la foi du seul sentiment religieux, la Révélation et le dogme se trouvent subordonnés à la conscience humaine, au lieu de la vérité révélée par Dieu."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -795,7 +830,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-07-T3",
@@ -825,7 +862,8 @@
           "editorialReason": "The historic doctrinal analysis cannot establish beliefs of contemporary named persons.",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
         }
       ],
       "dialogueDrafts": 2,
@@ -862,11 +900,11 @@
           "language": {
             "en": {
               "visitor": "Why should adults be taught the Catechism?",
-              "response": "Acerbo nimis insists that ignorance of Christian doctrine must be met by systematic instruction, including instruction for adults. It calls for explanations that are clear, carefully prepared and suited to those who hear them."
+              "response": "The faithful, adults as well as children, have need of sound instruction in Christian doctrine. The priest must prepare that instruction carefully and explain it plainly, according to the understanding of his hearers."
             },
             "fr": {
               "visitor": "Pourquoi enseigner le catéchisme aux adultes ?",
-              "response": "Acerbo nimis insiste sur la nécessité de combattre l’ignorance de la doctrine chrétienne par un enseignement suivi, y compris pour les adultes. Elle demande des explications claires, soigneusement préparées et adaptées à ceux qui les écoutent."
+              "response": "Les fidèles, adultes aussi bien qu’enfants, ont besoin d’un enseignement solide de la doctrine chrétienne. Le prêtre doit préparer cet enseignement avec soin et l’exposer clairement, selon l’intelligence de ceux qui l’écoutent."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -881,7 +919,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-08-T2",
@@ -890,11 +930,11 @@
           "language": {
             "en": {
               "visitor": "Is the ordinary Sunday sermon sufficient?",
-              "response": "No. The encyclical distinguishes an ordinary sermon from systematic instruction in the elements of Christian doctrine. One cannot simply be taken as a substitute for the other."
+              "response": "No. The sermon and the catechetical lesson have distinct purposes. Ordinary Sunday preaching cannot replace systematic instruction in the elements of Christian doctrine."
             },
             "fr": {
               "visitor": "Le sermon ordinaire du dimanche suffit-il ?",
-              "response": "Non. L’encyclique distingue la prédication ordinaire de l’enseignement suivi des éléments de la doctrine chrétienne. L’une ne peut être considérée simplement comme le remplacement de l’autre."
+              "response": "Non. Le sermon et la leçon de catéchisme ont des fins distinctes. La prédication ordinaire du dimanche ne remplace pas l’enseignement suivi des éléments de la doctrine chrétienne."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -909,7 +949,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-08-T3",
@@ -939,7 +981,8 @@
           "editorialReason": "The 1905 parish teaching timetable must not be misapplied as current universal law.",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
         }
       ],
       "dialogueDrafts": 2,
@@ -976,11 +1019,11 @@
           "language": {
             "en": {
               "visitor": "Can a priest's pastoral work replace meditation?",
-              "response": "Haerent animo teaches priests not to abandon meditation amid the duties of ministry. Active work without interior prayer may lose the spiritual depth that should sustain it."
+              "response": "The duties of the priesthood, however numerous, do not dispense a priest from meditation. The interior life must sustain the works of the ministry."
             },
             "fr": {
               "visitor": "Le ministère actif peut-il remplacer la méditation d’un prêtre ?",
-              "response": "Haerent animo enseigne aux prêtres à ne pas abandonner la méditation au milieu des devoirs du ministère. L’activité privée de prière intérieure peut perdre la profondeur spirituelle qui devrait la soutenir."
+              "response": "Les devoirs du sacerdoce, si nombreux soient-ils, ne dispensent pas le prêtre de la méditation. La vie intérieure doit soutenir les œuvres du ministère."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -995,7 +1038,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-09-T2",
@@ -1004,11 +1049,11 @@
           "language": {
             "en": {
               "visitor": "Why is interior prayer necessary even for a busy priest?",
-              "response": "The exhortation connects a priest’s spiritual life with his ministry and warns against treating recollection as wasted time. Pastoral activity does not remove the need for union with God."
+              "response": "Meditation keeps the priest united to God amid his duties. The burdens of ministry cannot be taken as a reason to abandon the prayer that should sustain them."
             },
             "fr": {
               "visitor": "Pourquoi la prière intérieure est-elle nécessaire même à un prêtre très occupé ?",
-              "response": "L’exhortation unit la vie spirituelle du prêtre à son ministère et met en garde contre l’idée que le recueillement serait du temps perdu. L’activité pastorale ne supprime pas le besoin de l’union avec Dieu."
+              "response": "La méditation maintient le prêtre uni à Dieu au milieu de ses devoirs. Les charges du ministère ne sauraient être une raison d’abandonner la prière qui doit les soutenir."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -1023,7 +1068,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-09-T3",
@@ -1053,7 +1100,8 @@
           "editorialReason": "A priest-specific exhortation cannot judge an individual lay visitor's interior condition.",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
         }
       ],
       "dialogueDrafts": 2,
@@ -1090,11 +1138,11 @@
           "language": {
             "en": {
               "visitor": "When may a child receive First Holy Communion?",
-              "response": "The decree Quam singulari, issued by the Sacred Congregation and approved by Pius X, places the ordinary beginning at the use of reason, often about seven years old, though it can be earlier or later. The child must distinguish the Eucharist from ordinary bread and approach with appropriate devotion."
+              "response": "First Holy Communion belongs at the beginning of the use of reason—ordinarily around seven years of age, sometimes earlier or later. The child must distinguish the Eucharistic Bread from ordinary bread and approach with devotion suited to that age."
             },
             "fr": {
               "visitor": "Quand un enfant peut-il faire sa première communion ?",
-              "response": "Le décret Quam singulari, publié par la Sacrée Congrégation et approuvé par Pie X, situe ordinairement cette admission à l’âge de raison, souvent vers sept ans, mais parfois plus tôt ou plus tard. L’enfant doit distinguer l’Eucharistie du pain ordinaire et s’approcher avec la dévotion requise."
+              "response": "La première communion a sa place dès le commencement de l’usage de raison — ordinairement vers sept ans, parfois plus tôt ou plus tard. L’enfant doit distinguer le Pain eucharistique du pain ordinaire et s’approcher avec une dévotion convenable à son âge."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -1109,7 +1157,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-10-T2",
@@ -1118,11 +1168,11 @@
           "language": {
             "en": {
               "visitor": "Must the child first master the entire Catechism?",
-              "response": "The decree does not require complete mastery of the Catechism before First Communion. Religious instruction is to continue after admission."
+              "response": "No. Full knowledge of the Catechism is not required before First Communion. The child must learn the rest progressively afterwards, according to his ability."
             },
             "fr": {
               "visitor": "L’enfant doit-il d’abord connaître tout le catéchisme ?",
-              "response": "Le décret n’exige pas une connaissance complète du catéchisme avant la première communion. L’instruction religieuse doit se poursuivre après cette admission."
+              "response": "Non. La connaissance complète du catéchisme n’est pas exigée avant la première communion. L’enfant doit continuer ensuite à l’apprendre progressivement, selon ses capacités."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -1137,7 +1187,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         },
         {
           "id": "SPX-PILOT-10-T3",
@@ -1146,11 +1198,11 @@
           "language": {
             "en": {
               "visitor": "Does every child automatically qualify on the seventh birthday?",
-              "response": "No. The decree speaks of the beginning of the use of reason, ordinarily around seven, not an automatic birthday rule. It also requires appropriate understanding and devotion."
+              "response": "No. It is the beginning of the use of reason, not a fixed birthday, that matters. The child must distinguish the Eucharistic Bread from ordinary bread and receive with devotion becoming his years."
             },
             "fr": {
               "visitor": "Tout enfant est-il automatiquement admis le jour de ses sept ans ?",
-              "response": "Non. Le décret parle du commencement de l’usage de raison, ordinairement vers sept ans, non d’une règle automatique liée à un anniversaire. Il demande aussi une intelligence et une dévotion convenables."
+              "response": "Non. Ce qui importe, c’est le commencement de l’usage de raison, non un anniversaire déterminé. L’enfant doit distinguer le Pain eucharistique du pain ordinaire et communier avec une dévotion convenable à son âge."
             }
           },
           "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
@@ -1165,7 +1217,9 @@
           "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
           "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
           "sourceLanguageTranslationApproval": false,
-          "periodVoiceApproval": false
+          "periodVoiceApproval": false,
+          "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+          "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
         }
       ],
       "dialogueDrafts": 3,
@@ -1173,5 +1227,15 @@
       "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
       "independentHistoricalCertification": false
     }
-  ]
+  ],
+  "voiceReviewState": {
+    "editedCharacterTurns": 23,
+    "untouchedApprovedVoiceTurns": 0,
+    "editorialNotesExcluded": 7,
+    "provenance": "Content owner drafted voice-appropriate paraphrases under the existing PR #1419 source-first contract; this is NOT the independent voice-owner's acceptance.",
+    "authenticSpeechCertified": false,
+    "englishApproved": false,
+    "frenchApproved": false,
+    "independentTheologicalApproval": false
+  }
 }
