@@ -145,9 +145,14 @@ export function markUncuedReadingFocus(container,{focusRatio=.39}={}){
     scrollHeight:Number(container.scrollHeight)||0,items:nodes,focusRatio
   });
   const focused=selected?.node??null;
+  const selectedIndex=candidate.indexOf(focused);
   for(const node of all){
-    const active=String(node===focused);
+    const index=candidate.indexOf(node);
+    const position=index<0?"rubric":index===selectedIndex?"current":
+      index===selectedIndex+1?"next":index===selectedIndex-1?"previous":"distant";
+    const active=String(position==="current");
     if(node.dataset.readingActive!==active)node.dataset.readingActive=active;
+    if(node.dataset.readingPosition!==position)node.dataset.readingPosition=position;
   }
   const uncued=Boolean(focused&&!CUE_RE.test(String(focused.dataset.cueId||"")));
   if(uncued)body.dataset.aoVisualFocus="uncued";
