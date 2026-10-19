@@ -262,7 +262,7 @@
         {
           "id": "AO.MUS.ROG.POST_LITANY",
           "stageId": "ROG-R04",
-          "kind": "CHANT_AND_PRAYER",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
           "performers": "CELEBRANT_AND_RESPONDENTS",
           "sourcePaths": [
             "postLitany"
@@ -421,7 +421,7 @@
           "kind": "SOURCE_HOLD",
           "performers": "UNRESOLVED",
           "sourcePaths": [],
-          "condition": "FEAST_SPECIFIC_SOURCE_REQUIRED",
+          "condition": "ANY",
           "endBoundary": "DO_NOT_INVENT_GENERIC_CHANT",
           "observed": false,
           "musicStatus": "EXPECTED_NOT_OBSERVED",
