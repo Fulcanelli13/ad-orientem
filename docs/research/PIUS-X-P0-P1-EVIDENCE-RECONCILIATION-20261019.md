@@ -112,6 +112,41 @@ Therefore, do not parse the Salzano transcript into the app by raw printed numbe
 The new source wave makes the first family cohort stronger, but no visitor answer is represented as independent theological certification or certified first-person Sarto wording. It should feed the existing dialogue/retrieval owners **only after review**. The genuine total unique-answerable-intent count remains **unknown**: existing 433 question locators, 64 topic-family seeds, 29 digital direct matches and these additional sources have *not yet been semantically joined into a final set*.
 
 
+
+## Expanded historical question census (same PR; not a visitor-answer count)
+
+Full evidence ledger: `data/learn/research/pius-x-source-question-census-20261019.v1.json`.
+
+| Source collection | Count | Evidentiary standing |
+| --- | ---: | --- |
+| 1905 *Compendio / Catechismo Maggiore* | **993** | Six continuous numbered ranges manually confirmed against museum webpages: preliminary 1–14; Creed 15–252; prayer 253–341; commandments 342–516; sacraments 517–855; virtues/practice 856–993. All **993 Q&A not yet machine extracted**. |
+| Separate *Istruzione sopra le feste* | **219** | Publisher Edizioni San Paolo expressly identifies 219 questions; individual range and historical edition still **not parsed/collated**. |
+| 1912 short *Catechismo della dottrina cristiana* digital witness | **433** | All **21 section files / 433 full Italian question headings parsed**; every original index QID found; **433 distinct normalized question-text fingerprints** (0 identical full-question groups). Modern transcription contaminated by post-1929 marriage provisions; original 1912 print still unavailable. |
+| Salzano manuscript transcription | **577** | Editor-assigned Q labels over Sarto's unnumbered manuscript; duplicate/erroneous labels held, not original manuscript numbering. |
+| **Raw numbered question references** | **2,222** | Addition of different corpora before any cross-edition deduplication; **not** independent answerable intentions. |
+
+Plus **64 SPX conversation-topic family seeds** from the research discussion (=2,286 references if mechanically added). Of these, **29 families** have direct counterpart questions in the *short* Catechism, **8** have partial counterparts, **16** related-but-distinct topics, **10** no direct short-index candidate and **1** incorrect *short* edition source link corrected using the longer Catechism. The 10 initially absent from the short index now have alternate source anchors in the external source wave.
+
+**Conditional arithmetic, not a verified headline:** if each short Catechism question were a distinct intent, all 29 direct SPX families collapsed into an existing intent, and each other SPX family added a distinct new intent, the initial short+research worklist would contain `433 + (64 - 29) = 468` conceptual units. Those three assumptions have not been authenticated; do not present **468** as an achieved total or a lower bound.
+
+### Exact-text audit and remaining semantic uncertainty
+
+The pinned Italian digital transcriptions covering all 21 sections were read mechanically to extract the **full question line** for every short QID. The question was normalized (case, accents, whitespace and punctuation) and marked by a 64-bit **noncryptographic** fingerprint; no full question or answer prose is copied. Identical full-question fingerprint groups = **0**. This resolves the previous ambiguity of eight collisions in six-word English study stems: those were truncated-stem false collisions, not identical entire questions.
+
+However, zero identical textual questions **does not** prove zero semantically duplicate questions. *Why pray?* and *Is prayer necessary?* may be close intents even when worded differently. Nor does all 993 of the longer Catechism necessarily provide 993 new unique conversations. The cross-edition 993×433 relationship, 219 feasts and 577 Salzano links must be analyzed using complete source evidence.
+
+### Historical editorial cautions
+
+Pius X's 1905 promulgation letter says he adopted a **previously regionally approved catechetical text with slight modifications**; authorship must not be presented as if he personally composed all 993 dialogues (museum `Lezione preliminare`, 14 June 1905). The museum website also includes **1967 updated prayer/formula appendices**, which must not be attributed to Pius X.
+
+Reference witnesses:
+- <https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/>
+- <https://www.edizionisanpaolo.it/religione_1/teologia-e-filosofia/i-compendi/libro/catechismo-maggiore.aspx> (993 + 219)
+- <https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/>
+
+**Next measurable gate:** extract exact 1905 question identities, audit 219 feast questions, then make evidence-reviewed same-intent joins to the 1912 short question IDs. Only after that can we estimate the number of genuinely distinct *source-backed* visitor questions rather than raw historical references.
+
+
 ## P1 reviewed-intent workflow
 
 1. **Resolve exact 1912 source text first.** The English index stores short stems; use the canonical text owner and Italian section file before comparing question semantics. Never merge Qs solely on matching first six words.
