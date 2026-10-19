@@ -35,6 +35,34 @@ export function isRequiemEntranceIncensationOmitted(cueId,prepared,conditions=nu
     && isExplicitRequiemMass(prepared,conditions);
 }
 
+// Ritus servandus XIII.1: after Placeat and the altar kiss, the
+// final blessing is OMITTED and the Last Gospel follows directly.
+const OMITTED_REQUIEM_FINAL_BLESSING_CUES=Object.freeze([
+ "AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266",
+]);
+export function requiemFinalBlessingOmittedCuesForResolvedMass(resolvedMass){
+ return isExplicitRequiemMass({session:{resolvedMass}})
+   ? OMITTED_REQUIEM_FINAL_BLESSING_CUES : Object.freeze([]);
+}
+export function isRequiemFinalBlessingOmitted(cueId,prepared,conditions=null){
+ return OMITTED_REQUIEM_FINAL_BLESSING_CUES.includes(String(cueId??""))
+   && isExplicitRequiemMass(prepared,conditions);
+}
+
+// Ritus servandus XIII.2: at an incensed Requiem Offertory ONLY the
+// celebrant receives incense after the oblations and altar are incensed.
+// Do not present the ordinary 'clergy and people are incensed' direction.
+// This does not alter the underlying Canonical Latin prayer source.
+export function requiemOffertoryIncensationVariantsForResolvedMass(resolvedMass){
+ return isExplicitRequiemMass({session:{resolvedMass}})
+  ? Object.freeze({"AO.SM.C0124":Object.freeze({
+      lat:"[ONLY THE CELEBRANT IS INCENSED]",
+      en:"[Only the celebrant is incensed]",
+      fr:"[Seul le célébrant est encensé]",
+    })})
+  : null;
+}
+
 // Ritus servandus X.4 / XIII.1: at a Mass for the dead the celebrant does
 // not strike his breast at the three Agnus Dei invocations. Do not project
 // optional faithful strike prompts from the ordinary rite either.
