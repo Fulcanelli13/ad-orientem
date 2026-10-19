@@ -414,7 +414,9 @@ export function createTraditionalLearnRuntime(win=globalThis){
       e.target.closest?.("button,a,input,select,textarea,summary")||
       e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||
       !["ArrowLeft","ArrowRight"].includes(e.key))return;
-    e.preventDefault();advanceTrainer(e.key==="ArrowRight"?1:-1);
+    e.preventDefault();
+    if(advanceTrainer(e.key==="ArrowRight"?1:-1))
+      root()?.querySelector(".aoLearnTradTrainer")?.focus?.({preventScroll:true});
   }
   function onClick(e){
     const b=e.target?.closest?.("button,[data-ao-tradlearn-flip]");if(!b)return;
