@@ -1,0 +1,435 @@
+{
+  "schema": "ao-mass-icon-necessity-policy-v1",
+  "version": "2026-10-19-p2",
+  "authority": {
+    "review": "Ad_Orientem_Icon_Review_2026-10-19.json",
+    "postureReviewDecisionCount": 110,
+    "owner": "PRESENTATION_ONLY",
+    "status": "P2_EDITORIAL_PROPOSAL_NOT_AUTO_APPLIED",
+    "principle": "Only essential state/action icons require exact approved artwork; selective images need a concrete information benefit; rubric-only actions remain fully expressed in rubrics without images."
+  },
+  "tiers": {
+    "ESSENTIAL": "Precise recognizable image necessary for fast reading of a state or principal Mass moment. If absent, prioritize generating reviewed replacement.",
+    "SELECTIVE": "Illustrate only where it adds meaning not already carried by the ribbon, text, rubrics or adjacent icon. No automatic generation.",
+    "RUBRIC_ONLY": "The correct liturgical rubric/text is sufficient. Do not generate a picture to increase coverage."
+  },
+  "rules": [
+    "The Mass cue remains source-owned; neither the presence nor absence of artwork triggers an action, posture, movement or music event.",
+    "A rejected or repurposed donor is not an accurate illustration until the new subject is identified and approved.",
+    "The same information must have one visible owner: current position vs transient action, posture vs gesture, bell vs Schola.",
+    "Keep priest/faithful/server/deacon/thurifer actors separate. Never assign priest artwork to a minister action.",
+    "No automatically invented station during asynchronous or route-controlled priest movement.",
+    "A missing essential image becomes a generation candidate; a missing rubric-only image is intentionally complete.",
+    "User-approved visual style and faithful liturgical reference must precede generation; generated art is not production-approved.",
+    "No generic animation or attention badge solely to indicate progress through the Mass."
+  ],
+  "priestActions": [
+    {
+      "label": "PROFOUND BOW",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Ordinary priest bow; retain exact rubrical wording without a dedicated graphic."
+    },
+    {
+      "label": "STRIKES BREAST",
+      "treatment": "SELECTIVE",
+      "reason": "Use only at liturgically prominent or user-participation moments; eight repetitions do not justify eight visual beats."
+    },
+    {
+      "label": "ASCENDS ALTAR",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Priest station change and rubric already carry the movement."
+    },
+    {
+      "label": "KISSES ALTAR",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Retain the action rubric; accepted altar-kiss art may remain in the library for a genuinely illustrative context."
+    },
+    {
+      "label": "BLESSES INCENSE",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "A short ceremonial explanation is sufficient."
+    },
+    {
+      "label": "INCENSES ALTAR",
+      "treatment": "SELECTIVE",
+      "reason": "A distinctive solemn ceremonial moment; icon only if correct form and celebrant are explicit."
+    },
+    {
+      "label": "INTONES GLORIA",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Voice/Schola phase and prayer text own the event."
+    },
+    {
+      "label": "TURNS TO PEOPLE",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Priest facing state is owned by the station rail; do not repeat it as an action picture."
+    },
+    {
+      "label": "TURNS TO MISSAL",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Movement is legible in station transition and rubric."
+    },
+    {
+      "label": "READS EPISTLE",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Distinct Epistle-side station is essential, not a duplicate reading-action picture."
+    },
+    {
+      "label": "SIGNS BOOK",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Explain priest's three Gospel signs in the rubric; faithful gesture has separate scope."
+    },
+    {
+      "label": "PROCLAIMS GOSPEL",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Distinct Gospel-side station is essential, not a duplicate proclamation picture."
+    },
+    {
+      "label": "KISSES GOSPEL",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Text rubric conveys this brief gesture."
+    },
+    {
+      "label": "INTONES CREDO",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Voice/Schola phase and prayer text own the event."
+    },
+    {
+      "label": "GENUFLECTS",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Many celebrant genuflections: preserve exact cues without showing the faithful genuflection image."
+    },
+    {
+      "label": "OFFERS HOST",
+      "treatment": "SELECTIVE",
+      "reason": "Offertory object is meaningful and approved distinct offering art exists."
+    },
+    {
+      "label": "SIGNS WITH PATEN",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Detailed gesture explained directly in rubrics."
+    },
+    {
+      "label": "OFFERS CHALICE",
+      "treatment": "SELECTIVE",
+      "reason": "Offertory object is meaningful and a candidate pictogram exists."
+    },
+    {
+      "label": "RECEIVES INCENSE",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Minister-owned incensation context must not be represented as priest incensing people."
+    },
+    {
+      "label": "WASHES / PURIFIES",
+      "treatment": "SELECTIVE",
+      "reason": "Lavabo can be illustrated, but post-Communion ablutions should not reuse unrelated Lavabo imagery."
+    },
+    {
+      "label": "TURNS TO ALTAR",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Priest facing/station state and rubric suffice."
+    },
+    {
+      "label": "THREE CROSSES",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "No extra cross icon at every Canon sign."
+    },
+    {
+      "label": "SIGNS HOST",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Precise Canon gesture explained in the rubric."
+    },
+    {
+      "label": "SIGNS CHALICE",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Precise Canon gesture explained in the rubric."
+    },
+    {
+      "label": "ELEVATES HOST",
+      "treatment": "ESSENTIAL",
+      "reason": "Major Consecration moment; artistically distinct elevated Host required."
+    },
+    {
+      "label": "ELEVATES CHALICE",
+      "treatment": "ESSENTIAL",
+      "reason": "Major Consecration moment; separate approved chalice elevation."
+    },
+    {
+      "label": "SIGNS HIMSELF",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Brief ritual gesture, distinct from the faithful's Sign of Cross cue."
+    },
+    {
+      "label": "MINOR ELEVATION",
+      "treatment": "SELECTIVE",
+      "reason": "Major concluding Canon gesture, but do not substitute generic Canon artwork absent accurate art."
+    },
+    {
+      "label": "BREAKS HOST",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Fraction is clearly narrated by rubrics; wrong shared image must stay hidden."
+    },
+    {
+      "label": "PLACES PARTICLE",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Commingling is clearly narrated by rubrics; wrong shared image must stay hidden."
+    },
+    {
+      "label": "RECEIVES HOST",
+      "treatment": "ESSENTIAL",
+      "reason": "Celebrant's Communion must be distinguishable from distribution to the faithful."
+    },
+    {
+      "label": "RECEIVES CHALICE",
+      "treatment": "ESSENTIAL",
+      "reason": "Celebrant's Communion from chalice needs distinct truthful representation."
+    },
+    {
+      "label": "SHOWS SACRED HOST",
+      "treatment": "ESSENTIAL",
+      "reason": "Ecce Agnus Dei display is not identical to the Consecration elevation."
+    },
+    {
+      "label": "GIVES COMMUNION",
+      "treatment": "ESSENTIAL",
+      "reason": "Distinct distribution to faithful at the Communion rail."
+    },
+    {
+      "label": "BLESSES PEOPLE",
+      "treatment": "SELECTIVE",
+      "reason": "Significant conclusion where exact gesture is helpful, depending on selected rite and blessing omission."
+    }
+  ],
+  "priestStations": [
+    {
+      "station": "FOOT_CENTER",
+      "treatment": "ESSENTIAL",
+      "reason": "The foot of the altar is a distinct celebrant location; existing v4 artwork was marked for unspecified repurpose."
+    },
+    {
+      "station": "ALTAR_STEPS_ASCENDING",
+      "treatment": "SELECTIVE",
+      "reason": "Movement bridge; use existing reviewed art without creating further variants."
+    },
+    {
+      "station": "ALTAR_CENTER",
+      "treatment": "ESSENTIAL",
+      "reason": "The priest's primary altar station; exact illustration needs explicit semantic sign-off."
+    },
+    {
+      "station": "ROUTE_CONTROLLED",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Transition path is not one uniquely depictable physical location."
+    },
+    {
+      "station": "ALTAR_EPISTLE_MISSAL",
+      "treatment": "ESSENTIAL",
+      "reason": "Epistle-side location must be distinguished unambiguously."
+    },
+    {
+      "station": "SEDILIA",
+      "treatment": "ESSENTIAL",
+      "reason": "Sitting priest station is significant and approved artwork exists."
+    },
+    {
+      "station": "PRIEST_TRACK_ASYNC",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Unobserved/asynchronous position must not be guessed from a generic icon."
+    },
+    {
+      "station": "ALTAR_GOSPEL_MISSAL",
+      "treatment": "ESSENTIAL",
+      "reason": "Gospel-side location must be distinguished unambiguously."
+    },
+    {
+      "station": "ALTAR_EPISTLE_SIDE",
+      "treatment": "ESSENTIAL",
+      "reason": "Epistle-side position for movement and censing."
+    },
+    {
+      "station": "COMMUNION_RAIL",
+      "treatment": "SELECTIVE",
+      "reason": "Text-only location unless actual distribution is observed; do not use giving-Communion icon as an idle position."
+    }
+  ],
+  "faithfulPostureStates": [
+    {
+      "value": "STAND",
+      "treatment": "ESSENTIAL",
+      "preferredArt": "review_posture_stand"
+    },
+    {
+      "value": "SIT",
+      "treatment": "ESSENTIAL",
+      "preferredArt": "review_posture_sit"
+    },
+    {
+      "value": "KNEEL",
+      "treatment": "ESSENTIAL",
+      "preferredArt": "review_posture_kneel"
+    },
+    {
+      "value": "GENUFLECT",
+      "treatment": "ESSENTIAL",
+      "preferredArt": "review_posture_genuflect"
+    }
+  ],
+  "faithfulGestureGuidance": [
+    {
+      "gesture": "HEAD_BOW",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Both old alternatives rejected; readable cue is preferable to guessing pictogram."
+    },
+    {
+      "gesture": "PROFOUND_BOW",
+      "treatment": "SELECTIVE",
+      "reason": "Use reviewed faithful posture art at explicit significant liturgical cue only."
+    },
+    {
+      "gesture": "GOSPEL_CROSSES",
+      "treatment": "ESSENTIAL",
+      "reason": "Three small crosses on forehead/lips/breast must be distinguished from the full Sign of the Cross."
+    },
+    {
+      "gesture": "BREAST_STRIKE",
+      "treatment": "SELECTIVE",
+      "reason": "Illustrate the faithful participation cue at exact source words, not every priest action."
+    },
+    {
+      "gesture": "SIGN_OF_CROSS",
+      "treatment": "SELECTIVE",
+      "reason": "Useful action cue when faithful participation is expected; should not share art with three Gospel crosses."
+    }
+  ],
+  "exceptions": [
+    {
+      "cueId": "AO.SM.C0247",
+      "label": "WASHES / PURIFIES",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Post-Communion finger discipline explained by the rubric; special reference image separately approved."
+    },
+    {
+      "cueId": "AO.SM.C0248",
+      "label": "WASHES / PURIFIES",
+      "treatment": "RUBRIC_ONLY",
+      "reason": "Ablutions continuation, not a second visual ceremony."
+    }
+  ],
+  "essentialArtInventory": [
+    {
+      "id": "EA.HOST_ELEVATION",
+      "owner": "PRIEST_ACTION",
+      "cueId": "AO.SM.C0174",
+      "label": "ELEVATES HOST",
+      "status": "SUBJECT_VALID_REVIEW_CONTEXT",
+      "art": "priest_elevation",
+      "next": "Verify elevation not reused for Ecce Agnus Dei"
+    },
+    {
+      "id": "EA.CHALICE_ELEVATION",
+      "owner": "PRIEST_ACTION",
+      "cueId": "AO.SM.C0181",
+      "label": "ELEVATES CHALICE",
+      "status": "APPROVED",
+      "art": "priest_elevate_chalice_rich",
+      "next": "Keep existing approved icon"
+    },
+    {
+      "id": "EA.PRIEST_COMMUNION_HOST",
+      "owner": "PRIEST_ACTION",
+      "cueId": "AO.SM.C0232",
+      "label": "RECEIVES HOST",
+      "status": "GENERATE",
+      "art": null,
+      "next": "Depict celebrant consuming Sacred Host, not distributing at rail"
+    },
+    {
+      "id": "EA.PRIEST_COMMUNION_CHALICE",
+      "owner": "PRIEST_ACTION",
+      "cueId": "AO.SM.C0234",
+      "label": "RECEIVES CHALICE",
+      "status": "GENERATE",
+      "art": null,
+      "next": "Depict celebrant receiving from chalice, not elevation"
+    },
+    {
+      "id": "EA.ECCE_AGNUS_DEI",
+      "owner": "PRIEST_ACTION",
+      "cueId": "AO.SM.C0242",
+      "label": "SHOWS SACRED HOST",
+      "status": "NEEDS_DISTINCT_ART",
+      "art": null,
+      "next": "Check whether approved Host elevation can be distinguished before creating new illustration"
+    },
+    {
+      "id": "EA.DISTRIBUTES_COMMUNION",
+      "owner": "PRIEST_ACTION",
+      "cueId": "AO.SM.C0246",
+      "label": "GIVES COMMUNION",
+      "status": "APPROVED",
+      "art": "priest_rail_after_rich",
+      "next": "Keep existing approved icon"
+    },
+    {
+      "id": "ES.FOOT_ALTAR",
+      "owner": "PRIEST_STATION",
+      "station": "FOOT_CENTER",
+      "status": "ASSESS_OR_GENERATE",
+      "art": null,
+      "next": "Existing priest_foot was repurposed without target; find approved exact station view"
+    },
+    {
+      "id": "ES.ALTAR_CENTER",
+      "owner": "PRIEST_STATION",
+      "station": "ALTAR_CENTER",
+      "status": "ASSESS_OR_GENERATE",
+      "art": null,
+      "next": "Old priest_centre_rich marked repurpose without target; seek exact art"
+    },
+    {
+      "id": "ES.EPISTLE",
+      "owner": "PRIEST_STATION",
+      "station": "ALTAR_EPISTLE_MISSAL",
+      "status": "USER_REPURPOSED",
+      "art": "priest_gospel_rich",
+      "next": "Keep corrected physical side after visual regression"
+    },
+    {
+      "id": "ES.GOSPEL",
+      "owner": "PRIEST_STATION",
+      "station": "ALTAR_GOSPEL_MISSAL",
+      "status": "USER_REPURPOSED",
+      "art": "priest_epistle_rich",
+      "next": "Keep corrected physical side after visual regression"
+    },
+    {
+      "id": "EG.THREE_GOSPEL_CROSSES",
+      "owner": "FAITHFUL_GESTURE",
+      "gesture": "GOSPEL_CROSSES",
+      "status": "NEEDS_DISTINCT_ART",
+      "art": null,
+      "next": "A dedicated triple-cross pictogram, not the existing ordinary-cross duplicate"
+    }
+  ],
+  "generationPolicy": {
+    "immediateCandidates": [
+      "EA.PRIEST_COMMUNION_HOST",
+      "EA.PRIEST_COMMUNION_CHALICE"
+    ],
+    "firstVerifyBeforeGeneration": [
+      "ES.FOOT_ALTAR",
+      "ES.ALTAR_CENTER",
+      "EA.ECCE_AGNUS_DEI",
+      "EG.THREE_GOSPEL_CROSSES"
+    ],
+    "excludedByRubric": [
+      "HEAD_BOW",
+      "PROFOUND BOW",
+      "BREAKS HOST",
+      "PLACES PARTICLE",
+      "TURNS TO MISSAL",
+      "KISSES ALTAR"
+    ],
+    "productionGate": "Artwork must be visibly accurate, review-approved, actor-specific and distinct from existing cues before activation."
+  }
+}
