@@ -22,6 +22,14 @@ import { withLiveReadingSections } from "./reader-live-reading-sections.js";
 // The certified Good Friday state graph carries nine kneel/rise formula
 // pairs and three Cross-unveiling silent adoration intervals. Their spoken
 // formula cues are recognized ONLY by exact source-owned paragraph IDs.
+// Distinct-rite witnesses are not uniformly bilingual. Never display an
+// English fallback as if it were French in the shared Missal reader.
+export function distinctRiteSelectedVernacular(row,{language="en"}={}){
+  const french=String(language).toLowerCase().startsWith("fr");
+  const text=french?row?.french:(row?.vernacular??row?.english);
+  return typeof text==="string"&&text.trim()?text:null;
+}
+
 export function goodFridayFormulaAtFocus({scrollTop=0,clientHeight=0,items=[]}={}){
   const y=Math.max(0,Number(scrollTop)||0),height=Math.max(0,Number(clientHeight)||0);
   if(y<=8 || !height)return null;
@@ -920,7 +928,9 @@ export async function mountNativeReaderPreview({
           id:row.id,
           kind:row.kind,
           primary:row.latin,
-          secondary:row.vernacular??row.english??null,
+          secondary:distinctRiteSelectedVernacular(row,{
+            language:prepared?.readerPreferences?.language??"en",
+          }),
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
@@ -1016,7 +1026,21 @@ export async function mountNativeReaderPreview({
     reader=createReaderDomAdapter({
       root:host,
       iconResolver,
-      allowPresentationModeSwitch:false,
+      allowPresentationModeSwitch:true,
+      onPresentationModeChange:nextMode=>{
+        // Mode changes are purely visual. Preserve source record, action
+        // clock, scroll position and the source-owned death/formula cues.
+        const oldScroll=host.querySelector?.(".ao-prayer-card");
+        const top=oldScroll?.scrollTop??0;
+        disposeReadingFocus();
+        disposeReadingFocus=()=>{};
+        shownSurface=null; // Rebuild the bilingual/Missal paragraph geometry.
+        showGoodFriday();
+        const scroll=host.querySelector?.(".ao-prayer-card");
+        if(scroll)scroll.scrollTop=Math.min(top,Math.max(0,scroll.scrollHeight-scroll.clientHeight));
+        disposeReadingFocus=installDistinctRiteReadingFocus(root,{mode:nextMode});
+        root.dataset.r17PresentationMode=nextMode;
+      },
       onPrevious:()=>moveGoodFriday("previous"),
       onNext:()=>moveGoodFriday("next"),
     });
@@ -1114,7 +1138,9 @@ export async function mountNativeReaderPreview({
           id:row.id,
           kind:row.kind,
           primary:row.latin,
-          secondary:row.vernacular??row.english??null,
+          secondary:distinctRiteSelectedVernacular(row,{
+            language:prepared?.readerPreferences?.language??"en",
+          }),
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Easter Vigil",
@@ -1197,7 +1223,21 @@ export async function mountNativeReaderPreview({
     reader=createReaderDomAdapter({
       root:host,
       iconResolver,
-      allowPresentationModeSwitch:false,
+      allowPresentationModeSwitch:true,
+      onPresentationModeChange:nextMode=>{
+        const oldScroll=host.querySelector?.(".ao-prayer-card");
+        const top=oldScroll?.scrollTop??0;
+        disposeReadingFocus();
+        disposeReadingFocus=()=>{};
+        // Preserve the original stage (Vigil vs projected Vigil Mass)
+        // and its exact reader/source position on every mode change.
+        if(inVigil)showEasterVigil();
+        else showVigilMass(currentMass);
+        const scroll=host.querySelector?.(".ao-prayer-card");
+        if(scroll)scroll.scrollTop=Math.min(top,Math.max(0,scroll.scrollHeight-scroll.clientHeight));
+        disposeReadingFocus=installDistinctRiteReadingFocus(root,{mode:nextMode});
+        root.dataset.r17PresentationMode=nextMode;
+      },
       onPrevious:()=>moveEasterVigil("previous"),
       onNext:()=>moveEasterVigil("next"),
     });
