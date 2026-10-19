@@ -34,16 +34,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930ProgrammeExit{
  grid-template-columns:minmax(0,1fr)!important;
 }
-/* Stations retain their historical I–XIV jump rail; the bar reports its one source cursor. */
-#aoPray435930 .aoP435930StationNavShell{
- position:sticky;top:79px;z-index:21;background:var(--bg,#080c12);
-}
-#aoPray435930 .aoP435930StationNavShell .aoP435930StationRail{
- position:relative!important;top:auto!important;z-index:auto!important;
-}
-#aoPray435930 .aoP435930StationNavShell>.aoDevoProgress{
- width:calc(100% - 28px);margin:0 14px 4px;
-}
+/* Stations inherit their one positional progress track from the shared chapter adapter. */
 #aoPray435930 .aoP435930FinalExit{
  grid-template-columns:minmax(0,1fr)!important;
 }
