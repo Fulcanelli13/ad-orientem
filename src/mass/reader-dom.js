@@ -1069,38 +1069,36 @@ button.ao-schola-control{cursor:pointer}
   .ao-reader-paragraph,.ao-rail-item,.ao-reader-nav button{transition:none!important}.ao-prayer-card[data-card-arrival]{animation:none!important}
   .ao-cinematic[data-kind="ELEVATION"] .ao-cinematic-inner,.ao-rail-item[data-channel="bell"][data-major="true"] .ao-bell-icon{animation:none!important}
 }
-/* Production curated 64/65-card LIVE reader: match the user-approved
-   100/38/18 contrast, not the obsolete 100/91/81 override. */
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph{opacity:.18}
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"])
-  .ao-reader-paragraph{opacity:.18}
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"])
-  .ao-reader-paragraph[data-active="true"]{opacity:1}
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
-  .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.38}
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.30}
+/* LIVE reading illumination. The current prayer is fully legible; the
+   following prayer remains readable in anticipation, the previous paragraph
+   recedes gently, and distant text never falls below 32% opacity.
+   Position is assigned to EVERY readable paragraph by one shared geometry
+   tracker. Ceremonial data-active only drives source-owned liturgical state. */
+#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph{
+  opacity:.32
+}
+#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
+  .ao-reader-paragraph[data-active="true"]:not([data-reading-position="current"]){
+  opacity:.32;color:var(--ao-text);transform:none;text-shadow:none
+}
+#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
+  .ao-reader-paragraph[data-reading-position="distant"]{opacity:.32}
+#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
+  .ao-reader-paragraph[data-reading-position="rubric"]{opacity:.40}
+#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
+  .ao-reader-paragraph[data-reading-position="previous"]{opacity:.55}
+#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
+  .ao-reader-paragraph[data-reading-position="next"]{opacity:.65}
+#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
+  .ao-reader-paragraph[data-reading-position="current"]{
+  opacity:1;color:#f7f8f4;transform:translateX(1px);
+  text-shadow:0 0 26px rgba(225,238,228,.04)
+}
+/* Preserve a visible floor for instructions that do not participate in
+   reading focus, without giving them false source-event ownership. */
+#ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
+  .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-reading-position="current"]){opacity:.40}
 
-/* Real LIVE reading contrast: 100/38/18 (active/adjacent/distant).
-   Source cue ownership is unchanged; uncued Propers have their own visual
-   marker, which supersedes a different currently source-active cue. */
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"]:has(.ao-reader-paragraph[data-active="true"])
-  .ao-reader-paragraph[data-active="true"]:not([data-reading-active="true"]){
-  opacity:.18;color:var(--ao-text);transform:none;text-shadow:none
-}
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"]
-  .ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph:not([data-reading-active="true"]),
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"]
-  .ao-reader-paragraph:has(+ .ao-reader-paragraph[data-active="true"]):not([data-reading-active="true"]){
-  opacity:.18
-}
 /* The persistent Schola panel may be resized/hidden, but it must not lie
    across prayer rows in the visual scroll window. Reserve real viewport
    space instead of only adding invisible content after the last paragraph. */
