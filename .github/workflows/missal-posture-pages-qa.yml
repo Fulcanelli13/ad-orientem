@@ -30,6 +30,8 @@ on:
       - "tests/rogations-litany-112-source-owners.mjs"
       - "tests/rogations-printed-witness-holds.mjs"
       - "tests/rogations-historical-language-witness-scope.mjs"
+      - "tests/rogations-ten-collects-historical-parallel.mjs"
+      - "data/mass/rogation-ten-collects-historical-parallel.v1.json"
       - "data/mass/rogation-historical-language-witnesses.v1.json"
       - "data/mass/rogation-1961-print-witness-holds.v1.json"
       - "tools/mass/reconcile-rogation-litany-1962.mjs"
@@ -73,6 +75,8 @@ jobs:
         run: node tests/rogations-printed-witness-holds.mjs
       - name: Check existing historical English and French post-Litany prayer witness coverage
         run: node tests/rogations-historical-language-witness-scope.mjs
+      - name: Validate ten collect Latin to historical English and French source positions
+        run: node tests/rogations-ten-collects-historical-parallel.mjs
       - name: Index existing PRAY litany and Scripture owner candidates without retranslating
         run: node tests/annexed-secondary-existing-owners.mjs
       - name: Compare provisional annex English/French wording against existing Ordinary owners
