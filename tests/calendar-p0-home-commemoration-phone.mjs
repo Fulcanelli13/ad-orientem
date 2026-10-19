@@ -82,12 +82,12 @@ try{
     assert.ok(fromCalendar.every(v=>v.trim()&&!/^(sancti|tempora|commune):/.test(v)),
       "Calendar exposes raw source ID on "+date+": "+JSON.stringify(fromCalendar));
     await page.locator(".aoTodayV2Tabs [data-home-calendar-today]").click();
-    await page.waitForSelector(".homeScreen.aoTodayV2 .aoTodayV2Honoured .aoTodayV2ObservedRow",
+    await page.waitForSelector(".homeScreen.aoTodayV2 .aoTodayV2CalendarGlance .aoTodayV2ObservedRow",
       {state:"visible",timeout:30000});
-    const fromHome=await page.locator(
-      ".homeScreen.aoTodayV2 .aoTodayV2Honoured .aoTodayV2ObservedRow"
-      ).evaluateAll(rows=>rows.filter(x=>x.textContent.includes("1962 Mass commemoration"))
-       .map(x=>x.querySelector("strong")?.textContent.trim()).filter(Boolean));
+    const fromHome=await page.locator(".homeScreen.aoTodayV2 .aoTodayV2CalendarGlance .aoTodayV2GlanceHonours").evaluateAll(groups=>{
+      const historical=groups.find(group=>group.querySelector(".aoTodayV2GlanceCategory")?.textContent?.includes("1962 Mass commemoration"));
+      return [...(historical?.querySelectorAll(".aoTodayV2ObservedRow strong")||[])].map(x=>x.textContent.trim()).filter(Boolean);
+    });
     assert.deepEqual(fromHome,fromCalendar.map(s=>s.trim()),
       "Home and Calendar disagree on actual observed 1962 commemorations for "+date);
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
@@ -98,7 +98,7 @@ try{
     if(width===320&&date==="2026-01-14"){
       // The retired Coming Soon tile no longer owns the next feast.
       // Check the single canonical Coming next date list at the same 320px width.
-      const candidates=page.locator(".aoTodayV2Approaching .aoTodayV2Event strong");
+      const candidates=page.locator(".aoTodayV2CalendarGlance .aoTodayV2Event strong");
       assert.ok(await candidates.count()>0,"The one upcoming list must remain accessible on a historical day");
       const longWord=await candidates.first().evaluate(el=>{
         const range=document.createRange(),target=el.firstChild;
