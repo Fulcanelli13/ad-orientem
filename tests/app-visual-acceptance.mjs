@@ -449,6 +449,30 @@ try{
   assert.ok(inlineMonth.overflow<=1,"Month clips its grid on a 390px phone");
   assert.equal(inlineMonth.active,"page","Today did not identify the Month tab");
   await shot("02d-calendar-month");
+  // UX-01 forensic capture: this is Today's embedded Calendar, not the
+  // standalone Calendar's .aoCalV2Tabs. Full-page sticky compositing can
+  // exaggerate tab/row overlap, so gather independent viewport geometry.
+  const calendarMonthGeometry=await page.evaluate(()=>{
+    const homeTabs=document.querySelector(".homeScreen.aoTodayV2 .aoTodayV2Tabs");
+    const standaloneTabs=document.querySelector("#ao-calendar-modular-root .aoCalV2Tabs");
+    const grid=document.querySelector("#ao-calendar-modular-root .aoCalV2MonthGrid");
+    const root=document.querySelector("#ao-calendar-modular-root");
+    const bounds=el=>{
+      const r=el?.getBoundingClientRect();
+      return r?{top:Math.round(r.top),bottom:Math.round(r.bottom),height:Math.round(r.height)}:null;
+    };
+    const hit=[...(grid?.querySelectorAll("[data-cal-pick-date]")||[])]
+      .map(node=>({node,rect:node.getBoundingClientRect()}))
+      .find(x=>x.rect.top>Math.max(homeTabs?.getBoundingClientRect()?.bottom||0,80)&&x.rect.bottom<innerHeight-30);
+    const element=hit&&document.elementFromPoint(hit.rect.left+hit.rect.width/2,hit.rect.top+hit.rect.height/2);
+    return {embeddedHome:true,homeTabs:bounds(homeTabs),standaloneTabs:bounds(standaloneTabs),
+      grid:bounds(grid),calendarScroll:root?.scrollTop||0,
+      dateHitTest:hit?Boolean(element===hit.node||hit.node.contains(element)):null,
+      visibleDate:hit?.node.dataset.calPickDate||null,viewport:innerHeight};
+  });
+  console.log("UX01_TODAY_EMBEDDED_MONTH_GEOMETRY="+JSON.stringify(calendarMonthGeometry));
+  await page.screenshot({path:resolve(out,"02d-calendar-month-viewport.png"),fullPage:false});
+
   for(const category of ["major","temporale","sanctorale","practices"]){
     await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='"+category+"']").click();
     await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='"+category+"']",
