@@ -1087,6 +1087,7 @@ export async function mountNativeReaderPreview({
     let inVigil=true;
     let currentMass=null;
     let stage="VIGIL_ACTIVE";
+    let lastRenderedVigilPageId=null;
     let disposeReadingFocus=()=>{};
 
     function easterVigilMoment(){
@@ -1120,7 +1121,18 @@ export async function mountNativeReaderPreview({
       stage="VIGIL_ACTIVE";
       const source=controller.project();
       const moment=easterVigilMoment();
-      if(moment)reader.renderMoment(presentationRitePage(source.step?.recordId??"none",moment));
+      const displayed=moment?presentationRitePage(source.step?.recordId??"none",moment):null;
+      if(displayed){
+        reader.renderMoment(displayed);
+        // A new reading page must start at its first prayer, even if the
+        // preceding page was scrolled to its final line. Re-rendering a
+        // posture-only state on the SAME original surface preserves focus.
+        if(displayed.cardUpdate!==false && displayed.id!==lastRenderedVigilPageId){
+          const scroll=host.querySelector?.(".ao-prayer-card");
+          if(scroll)scroll.scrollTop=0;
+        }
+        lastRenderedVigilPageId=displayed.id;
+      }
       const nextStep=controller.built.steps[source.index+1]??null;
       previewNextRiteStage(source.step,
         nextStep?.surfaceKey!==source.step?.surfaceKey?nextStep:null);
