@@ -170,6 +170,15 @@ export const CANONICAL_TEXT_CORRECTIONS = Object.freeze({
     from:"make blessed, approved, ratified, reasonable and acceptable:",
     to:"wholly blessed, approved, ratified, reasonable and acceptable:",
   }),
+  // Red Missal 2013 PDF p. 38 (printed p. 37): the Supplices te
+  // rogamus English sentence must not separate subject from its verb.
+  "AO.SM.C0189": Object.freeze({
+    id:"RED-EN-2013-W6-01",
+    blockId:"AO.SM.B056",
+    field:"english",
+    from:"Body and Blood of thy Son,",
+    to:"Body and Blood of Thy Son",
+  }),
   "AO.SM.C0110": Object.freeze({
     id:"RED-EN-2013-001",
     blockId:"AO.SM.B031",
