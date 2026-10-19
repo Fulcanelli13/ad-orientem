@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -80,6 +80,120 @@
       "decision": "RETAIN_PREVIOUS_APPROVAL",
       "scope": "three strikes at mea culpa in the ministers' Confiteor, with applicable customary profile",
       "comments": null
+    },
+    {
+      "slot": "PRIEST_ASCENDS_ALTAR",
+      "semanticCueId": "AO.SM.C0037",
+      "cueRange": null,
+      "candidate": "priest_ascending_altar_steps.png",
+      "candidateId": "B",
+      "mediaType": "RASTER_STUDY",
+      "decision": "SELECTED_VISUAL_STUDY",
+      "condition": null,
+      "notes": "Do not relabel as vector; requires exact approved master before production",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_ALTAR_CENTRE",
+      "semanticCueId": "AO.SM.C0038",
+      "cueRange": null,
+      "candidate": "ao_at_altar_centre.svg",
+      "candidateId": "D",
+      "mediaType": "SVG_19OCT",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "condition": null,
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_BOW_OVER_ALTAR",
+      "semanticCueId": "AO.SM.C0038",
+      "cueRange": null,
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "HOLD",
+      "condition": null,
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_KISSES_ALTAR",
+      "semanticCueId": "AO.SM.C0039",
+      "cueRange": null,
+      "candidate": "priest_kissing_altar_silhouette.png",
+      "candidateId": "F",
+      "mediaType": "RASTER_STUDY",
+      "decision": "SELECTED_VISUAL_STUDY",
+      "condition": null,
+      "notes": "Do not relabel as vector; maintain distinct bow and altar-kiss cues",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_BLESSES_INCENSE",
+      "semanticCueId": "AO.SM.C0040",
+      "cueRange": null,
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "HOLD",
+      "condition": "INCENSE_ENABLED",
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_INCENSES_ALTAR",
+      "semanticCueId": "AO.SM.C0041",
+      "cueRange": null,
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "SEARCH_EXISTING_ASSET_BANK",
+      "condition": "INCENSE_ENABLED",
+      "notes": "Do not select K or substitute arbitrary illustration",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_POSITION_EPISTLE_SIDE",
+      "semanticCueId": "AO.SM.C0042",
+      "cueRange": null,
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "HOLD",
+      "condition": null,
+      "notes": "Protect reviewed Epistle/Gospel visual-semantic reversal",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_READS_INTROIT",
+      "semanticCueId": null,
+      "cueRange": [
+        "AO.SM.C0042",
+        "AO.SM.C0043"
+      ],
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "HOLD",
+      "condition": null,
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "SCHOLA_CHANTS_INTROIT_KYRIE",
+      "semanticCueId": null,
+      "cueRange": [
+        "AO.SM.C0042",
+        "AO.SM.C0052"
+      ],
+      "candidate": "assets/active/mass-v46/schola.svg",
+      "candidateId": "R",
+      "mediaType": "FROZEN_BANK",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "condition": null,
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
     }
   ],
   "rules": [
@@ -88,7 +202,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "MISEREATUR_INDULGENTIAM_AND_ASCENT",
+  "nextReview": "GLORIA_COLLECT_EPISTLE_PRE_GOSPEL",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -111,7 +225,89 @@
       ],
       "status": "SECTION_2_REVIEWED",
       "userStatement": "Priest profound bow: accept-A; Priest breast strike: reuse; Comments: None."
+    },
+    {
+      "id": "AO.SM.M01.ENDING_TO_M02",
+      "label": "After Confiteor through Kyrie",
+      "cueRange": [
+        "AO.SM.C0024",
+        "AO.SM.C0052"
+      ],
+      "status": "BATCH_3_REVIEWED_PARTIAL",
+      "userStatement": "Selections: {\"ascent\":\"B\",\"centre\":\"D\",\"bow\":\"hold\",\"kiss\":\"F\",\"bless\":\"hold\",\"incense\":\"search\",\"epistle\":\"hold\",\"reading\":\"hold\",\"schola\":\"R\"}; Comments: None",
+      "choices": [
+        {
+          "slot": "PRIEST_ASCENDS_ALTAR",
+          "cueId": "AO.SM.C0037",
+          "candidateId": "B",
+          "candidate": "priest_ascending_altar_steps.png",
+          "kind": "RASTER_STUDY",
+          "decision": "SELECTED_VISUAL_STUDY",
+          "notes": "Do not relabel as vector; requires exact approved master before production"
+        },
+        {
+          "slot": "PRIEST_ALTAR_CENTRE",
+          "cueId": "AO.SM.C0038",
+          "candidateId": "D",
+          "candidate": "ao_at_altar_centre.svg",
+          "kind": "SVG_19OCT",
+          "decision": "ACCEPT_VISUAL_MATCH"
+        },
+        {
+          "slot": "PRIEST_BOW_OVER_ALTAR",
+          "cueId": "AO.SM.C0038",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_KISSES_ALTAR",
+          "cueId": "AO.SM.C0039",
+          "candidateId": "F",
+          "candidate": "priest_kissing_altar_silhouette.png",
+          "kind": "RASTER_STUDY",
+          "decision": "SELECTED_VISUAL_STUDY",
+          "notes": "Do not relabel as vector; maintain distinct bow and altar-kiss cues"
+        },
+        {
+          "slot": "PRIEST_BLESSES_INCENSE",
+          "cueId": "AO.SM.C0040",
+          "decision": "HOLD",
+          "condition": "INCENSE_ENABLED"
+        },
+        {
+          "slot": "PRIEST_INCENSES_ALTAR",
+          "cueId": "AO.SM.C0041",
+          "decision": "SEARCH_EXISTING_ASSET_BANK",
+          "condition": "INCENSE_ENABLED",
+          "notes": "Do not select K or substitute arbitrary illustration"
+        },
+        {
+          "slot": "PRIEST_POSITION_EPISTLE_SIDE",
+          "cueId": "AO.SM.C0042",
+          "decision": "HOLD",
+          "notes": "Protect reviewed Epistle/Gospel visual-semantic reversal"
+        },
+        {
+          "slot": "PRIEST_READS_INTROIT",
+          "cueRange": [
+            "AO.SM.C0042",
+            "AO.SM.C0043"
+          ],
+          "decision": "HOLD"
+        },
+        {
+          "slot": "SCHOLA_CHANTS_INTROIT_KYRIE",
+          "cueRange": [
+            "AO.SM.C0042",
+            "AO.SM.C0052"
+          ],
+          "candidateId": "R",
+          "candidate": "assets/active/mass-v46/schola.svg",
+          "kind": "FROZEN_BANK",
+          "decision": "ACCEPT_VISUAL_MATCH"
+        }
+      ]
     }
   ],
-  "lastDecisionDate": "2026-10-19"
+  "lastDecisionDate": "2026-10-19",
+  "reviewedSectionStatus": "IN_PROGRESS"
 }
