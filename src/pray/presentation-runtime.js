@@ -5,7 +5,7 @@ import {libraryGuideForPrayer} from "./library-context.js";
 import "./presentation-styles.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
-import {updateDevotionalProgress} from "./devotional-progress.js";
+import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-progress.js";
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {installSequentialDevotionalReader,mercyChapters} from "./devotional-sequence-adapter.js";
@@ -1660,11 +1660,15 @@ function devotionalMonthSummary(kind,records,tracking,selectedDate){
  </details>`;
 }
 function programmeRail(kind,step,items){
- return `<div class="aoP435930StageRail aoP435930ProgrammeRail">${items.map((x,i)=>`<button type="button" class="${i===step?'active':''}" ${i===step?'aria-current="step"':''} data-p435930-${kind}-stage="${i}"><span>${i+1}</span><b>${esc(L(x[0],x[1]))}</b></button>`).join('')}</div>`
+ // The canonical FF/FS stage is the only cursor. Do not equate position with
+ // a recorded First Friday/Saturday, or invent an independent progress owner.
+ return `<div class="aoP435930ProgrammeNavShell"><nav class="aoP435930StageRail aoP435930ProgrammeRail" aria-label="${esc(L('Devotional stages','Étapes de la dévotion'))}">${items.map((x,i)=>`<button type="button" class="${i===step?'active':''}" ${i===step?'aria-current="step"':''} data-p435930-${kind}-stage="${i}"><span>${i+1}</span><b>${esc(L(x[0],x[1]))}</b></button>`).join('')}</nav>${devotionalProgressMarkup({index:step,total:items.length,language:lang(),unit:'stage'})}</div>`
 }
 function programmeNav(kind,step,total,lastLabel){
- const final=step===total-1;
- return `<div class="aoP435930GuideNav"><button type="button" class="aoP435930Secondary" data-p435930-${kind}-prev ${step===0?'disabled':''}>${esc(L('Previous','Précédent'))}</button>${final?`<button type="button" class="aoP435930Primary" data-p435930-program-home>${esc(lastLabel||L('Done · back to PRAY','Terminé · retour à PRIER'))}</button>`:`<button type="button" class="aoP435930Primary" data-p435930-${kind}-next>${esc(L('Continue','Continuer'))}</button>`}</div>`
+ // Stages are selected with the rail, horizontal swipe or keyboard arrows.
+ // Only the explicit final return is a button; record/save actions stay separate.
+ if(step!==total-1)return '';
+ return `<div class="aoP435930GuideNav aoP435930ProgrammeExit"><button type="button" class="aoP435930Primary" data-p435930-program-home>${esc(lastLabel||L('Done · back to PRAY','Terminé · retour à PRIER'))}</button></div>`;
 }
 function programmeSummary(rows){return `<div class="aoP435930ProgrammeSummary">${rows.map(r=>`<div class="${r[1]?'done':''}"><span>${r[1]?'✓':'○'}</span><b>${esc(r[0])}</b>${r[2]?`<small>${esc(r[2])}</small>`:''}</div>`).join('')}</div>`}
 const FF_STAGES=[['Intention','Intention'],['Prepare','Préparer'],['Mass & Communion','Messe & Communion'],['Reparation','Réparation'],['Finish','Terminer']];
@@ -1687,7 +1691,7 @@ function firstFridayStage(date,valid){
 }
 function renderFirstFriday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,5),records=S.firstFriday.records,tracking=!!S.firstFriday.tracking;
- return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">
+ return `${head(L('Nine First Fridays','Neuf premiers vendredis'),L('Guided Sacred Heart reparation','Réparation guidée au Sacré-Cœur'))}${programmeRail('ff',FF.step,FF_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" tabindex="0" aria-label="${esc(L('First Friday stage content','Contenu de l’étape du premier vendredi'))}">
   <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Friday','Premier vendredi'):tracking?L('Not the First Friday · guide available, recording disabled','Ce n’est pas le premier vendredi · guide disponible, enregistrement désactivé'):L('Not the First Friday · you may still preview the guide','Ce n’est pas le premier vendredi · vous pouvez quand même consulter le guide'))}</span></section>
   ${devotionalMonthSummary('friday',records,tracking,date)}
   ${firstFridayStage(date,valid)}
@@ -1709,7 +1713,7 @@ function firstSaturdayStage(date,valid){
 }
 function renderFirstSaturday(){
  const date=selectedDateKey(),valid=isFirstWeekday(date,6),records=S.firstSaturday.records,tracking=!!S.firstSaturday.tracking;
- return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}">
+ return `${head(L('Five First Saturdays','Cinq premiers samedis'),L('Guided reparation to the Immaculate Heart','Réparation guidée au Cœur Immaculé'))}${programmeRail('fs',FS.step,FS_STAGES)}<main class="aoP435930Body ${tracking?'aoTrackingOn':'aoTrackingOff'}" tabindex="0" aria-label="${esc(L('First Saturday stage content','Contenu de l’étape du premier samedi'))}">
   <section class="aoP435930Date ${valid?'valid':'invalid'}"><small>${esc(L('Selected date','Date sélectionnée'))}</small><b>${esc(fmtDate(date))}</b><span>${esc(valid?L('First Saturday','Premier samedi'):tracking?L('Not the First Saturday · guide available, recording disabled','Ce n’est pas le premier samedi · guide disponible, enregistrement désactivé'):L('Not the First Saturday · you may still preview the guide','Ce n’est pas le premier samedi · vous pouvez quand même consulter le guide'))}</span></section>
   ${devotionalMonthSummary('saturday',records,tracking,date)}
   ${firstSaturdayStage(date,valid)}
@@ -2740,6 +2744,17 @@ document.addEventListener('keydown',e=>{
  if(view==='adoration'&&ADOR.quiet){
   if(e.key==='Escape'){e.preventDefault();exitAdorationQuiet();return}
   if(e.key==='Tab'){e.preventDefault();r.querySelector('[data-p435930-ador-quiet-exit]')?.focus?.();return}
+ }
+ if((view==='firstFriday'||view==='firstSaturday')&&
+   (e.key==='ArrowRight'||e.key==='ArrowLeft')&&
+   !e.altKey&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&
+   r.contains(e.target)&&e.target.closest('.aoP435930Body')&&
+   !e.target.closest('button,a,input,textarea,select,summary,[contenteditable]')){
+  e.preventDefault();
+  horizontalStep(e.key==='ArrowRight'?1:-1);
+  // The programme re-renders on a stage change; keep keyboard reading focus.
+  queueMicrotask(()=>r.querySelector('.aoP435930Body')?.focus?.({preventScroll:true}));
+  return;
  }
  if(e.key==='Escape'){e.preventDefault();close();return}
  if(e.key==='Tab'){const f=focusables();if(!f.length){e.preventDefault();return}const first=f[0],last=f[f.length-1],a=document.activeElement;if(e.shiftKey&&(a===first||!r.contains(a))){e.preventDefault();last.focus()}else if(!e.shiftKey&&(a===last||!r.contains(a))){e.preventDefault();first.focus()}}
