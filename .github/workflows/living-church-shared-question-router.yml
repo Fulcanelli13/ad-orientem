@@ -7,6 +7,8 @@ on:
       - data/learn/living-church-shared-question-routing-pilot.v1.json
       - src/learn/living-church-shared-question-router.js
       - src/learn/living-church-hybrid-question-router.js
+      - src/learn/living-church-embedding-candidate-router.js
+      - tests/living-church-embedding-candidate-router.mjs
       - data/learn/living-church-symbolic-concepts.v1.json
       - tests/living-church-hybrid-question-router.mjs
       - tests/living-church-shared-question-router.mjs
@@ -20,6 +22,8 @@ on:
       - data/learn/living-church-shared-question-routing-pilot.v1.json
       - src/learn/living-church-shared-question-router.js
       - src/learn/living-church-hybrid-question-router.js
+      - src/learn/living-church-embedding-candidate-router.js
+      - tests/living-church-embedding-candidate-router.mjs
       - data/learn/living-church-symbolic-concepts.v1.json
       - tests/living-church-hybrid-question-router.mjs
       - tests/living-church-shared-question-router.mjs
@@ -42,8 +46,10 @@ jobs:
         run: |
           node --check src/learn/living-church-shared-question-router.js
           node --check src/learn/living-church-hybrid-question-router.js
+          node --check src/learn/living-church-embedding-candidate-router.js
           node tests/living-church-shared-question-router.mjs
           node tests/living-church-question-retrieval-probes.mjs
           node tests/living-church-routing-holdout.mjs
           node tests/living-church-fresh-question-probes.mjs
           node tests/living-church-hybrid-question-router.mjs
+          node tests/living-church-embedding-candidate-router.mjs
