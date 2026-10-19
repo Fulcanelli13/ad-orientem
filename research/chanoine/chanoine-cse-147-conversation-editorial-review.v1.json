@@ -22,7 +22,7 @@
     "argument_compression_flags": 0,
     "review_approved": 0,
     "issues": [],
-    "semantic_repairs_applied_as_unreviewed_drafts": 12
+    "semantic_repairs_applied_as_unreviewed_drafts": 15
   },
   "records": [
     {
@@ -2855,8 +2855,8 @@
         "fr": "L'échec irrémédiable de la vie commune ne dissout pas en soi le mariage. Si un lien valide subsiste, le divorce civil ne confère pas la liberté de se remarier (CIC, can. 1085). Nullité et dissolution exceptionnellement permise de certains liens non consommés ou non sacramentels sont distinctes."
       },
       "pastoral_main_answer_draft": {
-        "en": "The breakdown of a household is painful and may warrant separation or a civil remedy. But where a valid marriage bond still exists, civil divorce does not itself confer freedom to remarry. A declaration of nullity asks whether a true marriage was ever contracted; that is a different question from whether it later failed.",
-        "fr": "L’échec d’un foyer est douloureux et peut justifier une séparation ou une mesure civile. Mais tant qu’un mariage valide subsiste, le divorce civil ne rend pas libre de se remarier. La déclaration de nullité cherche à savoir si un véritable mariage fut contracté ; c’est une autre question que son échec ultérieur."
+        "en": "The failure of a household may be deeply painful, and separation or a civil remedy can be justified. But if a valid prior marriage bond subsists, civil divorce does not in itself make either spouse free to marry again (canon 1085). A declaration of nullity asks whether a valid bond ever arose; it is not the dissolution of a marriage found to have been valid. Canon law also recognises certain narrowly defined dissolutions, including some non-consummated or non-sacramental bonds. These questions require an actual canonical examination, not an assumption based only on how badly the marriage has failed.",
+        "fr": "L'échec d'un foyer peut être profondément douloureux, et une séparation ou un recours civil peut être justifié. Mais tant qu'un mariage antérieur valide subsiste, le divorce civil ne rend pas en lui-même les époux libres de contracter une nouvelle union (canon 1085). Une déclaration de nullité demande si un lien valide a jamais existé ; elle ne dissout pas un mariage reconnu valide. Le droit canon admet aussi, dans des conditions étroites, la dissolution de certains liens non consommés ou non sacramentels. Ces questions exigent un véritable examen canonique, et non une supposition fondée sur l'échec de la vie commune."
       },
       "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
       "visitor_followup_question": {
@@ -2896,7 +2896,8 @@
       },
       "specialist_review_flag": "CANONICAL_AND_THEOLOGICAL_REVIEW",
       "review_attention": [
-        "CANONICAL_AND_THEOLOGICAL_REVIEW"
+        "CANONICAL_AND_THEOLOGICAL_REVIEW",
+        "SPECIALIST_PRECISION_REPAIR_APPLIED_UNREVIEWED"
       ],
       "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
       "publication_approved": false,
@@ -2905,7 +2906,8 @@
       "safeguarding_approved": false,
       "english_french_reviewed": false,
       "source_semantic_alignment_approved": false,
-      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "semantic_repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE050"
     },
     {
       "source_question_id": "CSE051",
@@ -5374,8 +5376,8 @@
         "fr": "Dignitas Infinita (§60) distingue expressément les interventions de changement de sexe, au sens de ce texte, des soins destinés à résoudre des anomalies génitales présentes à la naissance ou apparues ensuite. Ces soins requièrent une évaluation clinique et morale individualisée ; ni le diagnostic d'un développement atypique ni cette distinction ne tranchent automatiquement toute intervention."
       },
       "pastoral_main_answer_draft": {
-        "en": "A person born with atypical sexual development deserves good medicine and full human dignity, not a polemical label. The Church distinguishes care for bodily abnormalities from interventions with a different purpose, but that distinction alone cannot decide the merits of a particular operation. Clinical and ethical judgment must address the actual facts.",
-        "fr": "Une personne née avec un développement sexuel atypique mérite de bons soins et le plein respect de sa dignité, non une étiquette polémique. L’Église distingue le soin d’anomalies corporelles d’interventions poursuivant une autre fin, mais cette distinction ne juge pas à elle seule chaque opération. L’avis clinique et moral doit partir des faits."
+        "en": "A person with atypical sexual development deserves full dignity, competent medicine and careful attention to individual circumstances. Dignitas Infinita §60 distinguishes the sex-change interventions it discusses from appropriate medical treatment of genital abnormalities present at birth or developed later. It does not give a licence to perform any operation simply because a diagnosis exists. The actual clinical condition, benefits, risks, consent and ethical considerations must be assessed by qualified professionals, without pressure or ridicule.",
+        "fr": "Une personne présentant un développement sexuel atypique mérite une entière dignité, des soins compétents et une attention aux circonstances particulières. Dignitas Infinita, au §60, distingue les interventions de changement de sexe dont elle traite du soin médical approprié d'anomalies génitales présentes à la naissance ou apparues plus tard. Elle n'autorise pas n'importe quelle opération du seul fait d'un diagnostic. L'état clinique réel, les bénéfices, les risques, le consentement et les questions éthiques doivent être examinés par des professionnels qualifiés, sans pression ni moquerie."
       },
       "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
       "visitor_followup_question": {
@@ -5400,7 +5402,8 @@
       },
       "specialist_review_flag": "CLINICAL_REVIEW",
       "review_attention": [
-        "CLINICAL_REVIEW"
+        "CLINICAL_REVIEW",
+        "SPECIALIST_PRECISION_REPAIR_APPLIED_UNREVIEWED"
       ],
       "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
       "publication_approved": false,
@@ -5409,7 +5412,8 @@
       "safeguarding_approved": false,
       "english_french_reviewed": false,
       "source_semantic_alignment_approved": false,
-      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "semantic_repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE097"
     },
     {
       "source_question_id": "CSE098",
@@ -5982,8 +5986,8 @@
         "fr": "Une fin diagnostique légitime ne justifie pas tout moyen de recueil de prélèvements reproductifs. Persona Humana (§9) donne la norme générale concernant la masturbation, mais ni ce texte ni Donum Vitae ne proposent une liste exhaustive des méthodes modernes autorisées. Les cas particuliers exigent une analyse morale compétente de la finalité clinique et du moyen choisi."
       },
       "pastoral_main_answer_draft": {
-        "en": "A legitimate diagnostic purpose does not settle every question about how a specimen is obtained. The means, not only the clinical objective, require moral examination. Because contemporary methods differ, the physician and a competent moral adviser should identify the precise procedure; one should not invent a universal permission from an old general rule.",
-        "fr": "Une fin diagnostique légitime ne tranche pas toute question sur la manière d’obtenir un prélèvement. Les moyens, et non seulement l’objectif clinique, demandent un examen moral. Puisque les méthodes actuelles diffèrent, le médecin et un conseiller moral compétent doivent préciser le procédé ; on ne doit pas tirer une permission universelle d’une ancienne règle générale."
+        "en": "A legitimate medical diagnosis does not make every means of obtaining a reproductive specimen morally equivalent. Persona Humana §9 states the Church's general moral teaching regarding deliberate masturbation; neither that declaration nor Donum Vitae gives a complete ruling on every modern laboratory collection technique. We should ask the clinician what is actually proposed and, where the moral question remains, seek competent Catholic ethical advice. A priest should not invent an approved list or give unsafe clinical instructions.",
+        "fr": "Une fin médicale légitime ne rend pas moralement équivalents tous les moyens d'obtenir un prélèvement reproductif. Persona Humana, au §9, expose l'enseignement moral général de l'Église sur la masturbation volontaire ; ni cette déclaration ni Donum Vitae ne fournit une décision complète sur toutes les techniques modernes de prélèvement en laboratoire. Il faut demander au clinicien quel procédé est réellement proposé et, si la question morale demeure, solliciter un avis éthique catholique compétent. Un prêtre ne doit inventer ni liste de procédés approuvés ni prescriptions cliniques dangereuses."
       },
       "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
       "visitor_followup_question": {
@@ -6016,7 +6020,8 @@
       },
       "specialist_review_flag": "CLINICAL_REVIEW",
       "review_attention": [
-        "CLINICAL_REVIEW"
+        "CLINICAL_REVIEW",
+        "SPECIALIST_PRECISION_REPAIR_APPLIED_UNREVIEWED"
       ],
       "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
       "publication_approved": false,
@@ -6025,7 +6030,8 @@
       "safeguarding_approved": false,
       "english_french_reviewed": false,
       "source_semantic_alignment_approved": false,
-      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "semantic_repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE108"
     },
     {
       "source_question_id": "CSE109",
