@@ -57,9 +57,10 @@ assert.deepEqual(projectSpecialRiteReadingPages("CORPUS-R05",prayers)
   .flatMap(page=>page.rows),prayers,"Benediction text/presentation lost a source row");
 assert.equal(holy.find(c=>c.id==="HT-R05").paragraphs.length,15);
 assert.ok(holy.find(c=>c.id==="HT-R05").paragraphs.every(row=>
-  !specialRiteVernacular(row,{language:"en"})&&
-  !specialRiteVernacular(row,{language:"fr"})),
-  "Uncertified psalm translation leaked into Holy Thursday's bilingual Missal");
+  specialRiteVernacular(row,{language:"en"})&&
+  specialRiteVernacular(row,{language:"fr"})&&
+  row.sourceStatus?.includes("EDITORIAL")),
+  "Holy Thursday Psalm 21 editorial translations are not complete or were misattributed");
 const wrong=[...coSource.pangeLingua];wrong[1]=wrong[0];
 assert.throws(()=>makeEucharisticHymnRows(wrong,{prefix:"X-",sourceRecordId:"CORPUS-EXP-010"}),
   /EUCHARISTIC_HYMN_LATIN_INCORRECT_STANZA/);
