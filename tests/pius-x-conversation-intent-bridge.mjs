@@ -89,4 +89,33 @@ assert.ok(editionHold.confirmed_text_questions.some(x=>x.qid==='PX1912-Q409'));
 assert.ok(editionHold.confirmed_text_questions.some(x=>x.qid==='PX1912-Q410'));
 assert.equal(editionHold.independent_source_review_required,true);
 
+
+const wave = JSON.parse(readFileSync('data/learn/research/pius-x-p1-original-source-support-wave1-20261019.v1.json','utf8'));
+const salzanoHold = JSON.parse(readFileSync('data/learn/research/pius-x-salzano-editorial-numbering-hold-20261019.v1.json','utf8'));
+assert.equal(wave.records.length,25);
+assert.equal(wave.counts.reviewed_family_source_anchors,25);
+assert.equal(wave.counts.DIRECT,20);
+assert.equal(wave.counts.PARTIAL,5);
+const familySet = new Set(seeds.map(x=>x.id));
+assert.equal(new Set(wave.records.map(x=>x.id)).size,25);
+for(const rec of wave.records){
+ assert.ok(familySet.has(rec.id), 'support must refer to established research families');
+ assert.ok(rec.source_locator && /^https:\/\//.test(rec.source_url));
+ assert.ok(['DIRECT','PARTIAL'].includes(rec.content_match));
+ assert.equal(rec.original_print_facsimile_collated,false);
+ assert.equal(rec.authorial_voice_approved,false);
+ assert.equal(rec.answer_doctrinally_certified,false);
+ assert.equal(rec.published_in_app,false);
+}
+const formerlyUnmatched=['SPX-003','SPX-004','SPX-010','SPX-011','SPX-012','SPX-023','SPX-024','SPX-030','SPX-038','SPX-045'];
+for(const id of formerlyUnmatched)assert.ok(wave.records.some(x=>x.id===id),'missing previously unmatched source '+id);
+assert.equal(formerlyUnmatched.filter(id=>wave.records.find(r=>r.id===id).content_match==='DIRECT').length,8);
+const actualGrace=wave.records.find(x=>x.id==='SPX-057');
+assert.match(actualGrace.source_locator,/1905 longer Catechism Q527/);
+assert.match(actualGrace.evidence_summary,/actual grace/);
+assert.equal(salzanoHold.status,'LOCATOR_CROSSCHECK_REQUIRED_BEFORE_MACHINE_IMPORT');
+assert.equal(salzanoHold.observed_anomalies.length,2);
+assert.ok(salzanoHold.observed_anomalies.some(x=>x.likely_intended==='322'));
+assert.ok(salzanoHold.observed_anomalies.some(x=>x.likely_intended==='446'));
+
 console.log('Pius X P0/P1 research-only bridge: 433 canonical QIDs, 64 provisional seeds, no content approval');
