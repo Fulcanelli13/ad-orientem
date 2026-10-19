@@ -64,7 +64,7 @@ try{
       cardTitle:card?.querySelector(".aoDevoCardTitle")?.textContent?.trim(),
       cardScroll:reader?getComputedStyle(reader).overflowY:null,
       legacyNav:r?.querySelectorAll("[data-p435930-station-next],[data-p435930-station-prev]").length,
-       progress:r?.closest("#aoPray435930")?.querySelector(".aoP435930StationNavShell .aoDevoProgress")?.getAttribute("aria-valuenow"),
+       progress:r?.closest("#aoPray435930")?.querySelector(".aoP435930StationRail.aoDevoSequenceTimeline .aoDevoProgress")?.getAttribute("aria-valuenow"),
       source:r?.querySelectorAll(".aoP435930Source a[href^='https://']").length||0,
       step:r?.querySelector(".aoP435930GuideNow small")?.textContent||""};
    });
@@ -101,7 +101,7 @@ try{
     "Preferences unexpectedly advanced Station or replaced prayer");
    await st.locator(":scope > summary").click();
    await page.locator("#aoPray435930.open [data-p435930-station-step='1']").click();
-    assert.equal(await page.locator("#aoPray435930.open .aoP435930StationNavShell .aoDevoProgress").getAttribute("aria-valuenow"),"2");
+    assert.equal(await page.locator("#aoPray435930.open .aoP435930StationRail.aoDevoSequenceTimeline .aoDevoProgress").getAttribute("aria-valuenow"),"2");
    assert.match(await page.locator("#aoPray435930.open .aoP435930GuideNow").innerText(),/Station 2 of 14/i);
    assert.equal(await st.locator("[data-p435930-seg='group']").getAttribute("aria-pressed"),"true",
     "Preferences lost when moving between Stations");
