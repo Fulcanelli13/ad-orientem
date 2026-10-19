@@ -85,6 +85,32 @@ try{
    await clickable.click({force:true});
    assert.equal(await clickable.locator(".ao-line-primary").innerText(),before,"A Missal column was replaced on tap");
   }
+  // A real source-owned standing-to-sitting transition within Offertory
+  // must now turn a page. Users control the turn; scrolling never fires a rite.
+  const pageStart=await page.evaluate(()=>{
+    const preview=window.__AO_PHONE_PREVIEW;
+    preview.showSection("AO.MISSAL.010.1");
+    return preview.getCurrentCard()?.sectionId;
+  });
+  assert.equal(pageStart,"AO.MISSAL.010.1","Missing source Offertory opening page");
+  const nextPosture=await page.locator('.ao-reader-nav button[data-reader-nav="next"]')
+    .getAttribute("data-next-posture");
+  assert.equal(nextPosture,lang==="fr"?"Assis":"Sit",
+    "Missal page-turn arrow did not anticipate the sourced sitting posture");
+  const beforePageScroll=await page.evaluate(()=>{
+    const preview=window.__AO_PHONE_PREVIEW;
+    const scroller=document.querySelector(".ao-prayer-card");
+    if(scroller)scroller.scrollTop=100;
+    return preview.getCurrentCard()?.sectionId;
+  });
+  assert.equal(beforePageScroll,"AO.MISSAL.010.1",
+    "Missal page must never advance automatically on vertical scroll");
+  await page.locator('.ao-reader-nav button[data-reader-nav="next"]').click({force:true});
+  assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId),
+    "AO.MISSAL.010.1.p2",
+    "Posture turn did not open the next source-owned bilingual Missal page");
+  assert.ok(await page.locator('.ao-reader-paragraph[data-missal-paired="true"]').count()>0,
+    "Posture page turn lost synchronized Latin and vernacular text");
   // Real Missal navigation: the source-owned B032 heading is an ordinary
   // practical rubric, not an invented priest action fired on page entry.
   const chalice=await page.evaluate(()=>{
