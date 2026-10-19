@@ -380,3 +380,25 @@ A historical-voice sample accompanies each pilot case. These samples are deliber
 ### Next review gate
 
 Apply the prospective cases to #1443 only once its topic/source-owner bridge can reference the existing SPX research IDs without generating answers. Record observed route `source_navigation`, `clarify` or `no_coverage`, alongside expected choices and unsupported overreach. After that, assess documentary voice separately from doctrinal and pastoral content; require reviewer approval before any case becomes visitor-visible. Resist further inflating source collection or research idea counts before this acceptance gate.
+
+
+## Executed shared-router integration gate (PR #1443 pinned, 19 October)
+
+The planned actual test is now **completed** (not merely prepared): [Actions run 39264387257](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39264387257). The workflow fetched the exact shared-router head `b4dd46743d641bfaa6076c6bb2fd8641c47077b6`, staged only the existing shared/hybrid router and original topic/concept registries, and ran the **36 paraphrases and 12 contextual follow-ups** from PR #1458 without modifying PR #1443 or creating another interpreter. Reusable machine-readable conclusions are in `data/learn/research/pius-x-pr1443-shared-router-observed-result-20261019.v1.json`; the full per-utterance trace is in the GitHub Actions artifact `pius-x-pr1443-48-router-diagnostic` (30-day retention).
+
+| Observed outcome | Shared lexical router | Symbolic hybrid router |
+| --- | ---: | ---: |
+| Safe `no_coverage` abstentions | **45** | **48** |
+| Unconfirmed source-navigation proposals **without an adequate precise source** | **3** | **0** |
+| Clarifications / handoffs | **0** | **0** |
+| Generated replies or unapproved character switches | **0** | **0** |
+| **Total utterances** | **48** | **48** |
+
+The three source-navigation false positives are exact:
+- `SPX-PILOT-02-V3` — alleged Rosary prohibition at Mass routed to generic 1912 Q418 on prayer rather than 1905 Q667–669.
+- `SPX-PILOT-03-V2` — “Is a temptation itself already a sin?” routed to a general sin definition 1912 Q135 rather than Salzano Q541–543 on involuntary thought and consent.
+- `SPX-PILOT-04-V2` — after-Communion recollection routed to 1912 Q325/Q329 on the Real Presence rather than Salzano Q506–508 on thanksgiving.
+
+All three erroneous inferred choices still **required user confirmation** and produced `answerText:null`. The hybrid's 48 abstentions are safer, but should not be presented as **48 correct answers** or a standalone accuracy percentage: none of the 12 precise SPX research family owners has yet been added as an authorized source-navigation entry in the 172-topic PR #1443 catalog. This is a *targeted assistant-authored regression sample*, not representative live visitor questions.
+
+**Action for the separate router owner:** The findings have been shared directly on [PR #1443](https://github.com/Fulcanelli13/ad-orientem/pull/1443). That pipeline must import only **source-navigation pointers** to verified 1905/Salzano/encyclical/dicastery owners, never historical answer text into the router, and must preserve explicit confirmation and no-coverage treatment. Repeat the pinned 48-test suite when new SPX source owners become navigable. Human doctrinal and voice sign-off stays a separate gate.
