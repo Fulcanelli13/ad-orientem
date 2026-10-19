@@ -356,11 +356,17 @@ function hydrateMonthCell(id){
   cell.style.setProperty("--month-accent",data.accent);
   cell.dataset.ready=data.ready?"1":"0";
   cell.dataset.rankTier=String(data.tier);
+  cell.dataset.cycle=data.cycle;
   cell.classList.toggle("sunday",data.sunday);
-  cell.classList.toggle("major",Boolean(data.name)&&data.ready);
+  cell.classList.toggle("major",data.tier>0&&data.tier<=2);
   cell.classList.toggle("projected",data.projected);
   cell.setAttribute("aria-label",data.aria+(cell.classList.contains("hasPractice")?" · "+L("Traditional practice","Pratique traditionnelle"):""));
   const name=cell.querySelector?.(".aoCalMonthName");if(name)name.textContent=data.name;
+  let mark=cell.querySelector?.(".aoCalMonthCommemorations");
+  if(data.commemorationCount){
+    if(!mark){mark=globalThis.document?.createElement?.("span");if(mark){mark.className="aoCalMonthCommemorations";mark.setAttribute("aria-hidden","true");cell.append(mark)}}
+    if(mark)mark.textContent="+"+data.commemorationCount;
+  }else mark?.remove?.();
 }
 function weekLabel(id){const ids=weekIds(id);return `${displayDate(ids[0])} – ${displayDate(ids[6])}`}
 function seedCurrent(){const s=state(),r=s?.resolution;if(s&&!s.resolving&&r?.date===s.selectedDate&&!weekCache.has(s.selectedDate))weekCache.set(s.selectedDate,r)}
@@ -1245,6 +1251,17 @@ function setMonthView(view,{openMonth=true}={}){
   if(openMonth)calendarView="picker";
   if(!root()){requestedView=openMonth?"picker":requestedView;requestedMonthView=next;return true}
   if(calendarView==="picker"&&!pickerMonthId)pickerMonthId=(state()?.selectedDate||iso(new Date())).slice(0,7);
+  // Filtering never destroys the grid, its 42 dates, or the user's scroll.
+  const grid=root()?.querySelector?.(".aoCalV2MonthGrid");
+  if(calendarView==="picker"&&grid){
+    grid.dataset.calMonthFilter=calendarMonthView;
+    root()?.querySelectorAll?.("[data-cal-month-view]")?.forEach(button=>{
+      const active=button.dataset.calMonthView===calendarMonthView;
+      button.classList.toggle("active",active);
+      if(active)button.setAttribute("aria-current","page");else button.removeAttribute("aria-current");
+    });
+    return true;
+  }
   root()?.scrollTo?.({top:0,left:0,behavior:"auto"});
   paint();
   if(calendarView==="picker")requestPickerMonth();
