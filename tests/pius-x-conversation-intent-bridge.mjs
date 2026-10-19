@@ -118,4 +118,38 @@ assert.equal(salzanoHold.observed_anomalies.length,2);
 assert.ok(salzanoHold.observed_anomalies.some(x=>x.likely_intended==='322'));
 assert.ok(salzanoHold.observed_anomalies.some(x=>x.likely_intended==='446'));
 
+
+const census = JSON.parse(readFileSync('data/learn/research/pius-x-source-question-census-20261019.v1.json','utf8'));
+const part1 = JSON.parse(readFileSync('data/learn/research/pius-x-1912-digital-question-fingerprints-part1-20261019.v1.json','utf8'));
+const part2 = JSON.parse(readFileSync('data/learn/research/pius-x-1912-digital-question-fingerprints-part2-20261019.v1.json','utf8'));
+const fingerprints = [...part1.entries,...part2.entries];
+assert.equal(part1.sections.length+part2.sections.length,21);
+assert.equal(fingerprints.length,433);
+assert.equal(new Set(fingerprints.map(r=>r.qid)).size,433);
+assert.equal(new Set(fingerprints.map(r=>r.fingerprint)).size,433);
+assert.deepEqual(fingerprints.map(r=>r.qid).sort(),own.questionRefs.slice().sort());
+for(const section of [...part1.sections,...part2.sections]){
+  assert.equal(section.expected,section.matched);
+  assert.deepEqual(section.missing,[]);
+  assert.deepEqual(section.extra,[]);
+}
+const collections = census.source_collection_counts;
+assert.equal(collections.catechismo_maggiore_1905.numbered_questions,993);
+const ordered = collections.catechismo_maggiore_1905.verified_sequential_ranges;
+assert.equal(ordered.length,6);
+assert.equal(ordered[0].from,1);
+assert.equal(ordered.at(-1).to,993);
+for(let i=1;i<ordered.length;i++)assert.equal(ordered[i].from,ordered[i-1].to+1);
+assert.equal(ordered.reduce((sum,r)=>sum+r.numbered_question_count,0),993);
+assert.equal(collections.instruction_on_feasts.numbered_questions,219);
+assert.equal(collections.instruction_on_feasts.numbered_range_verified_individually,false);
+assert.equal(collections.shorter_catechism_1912.distinct_normalized_full_question_fingerprints,433);
+assert.equal(collections.shorter_catechism_1912.authenticated_unmodified_1912_print,false);
+assert.equal(collections.salzano_manuscript.editorial_question_labels,577);
+assert.equal(collections.salzano_manuscript.manuscript_question_numbered_by_sarto,false);
+assert.equal(census.reference_sum_all_four,2222);
+assert.equal(census.separately_preserved_conversation_family_seeds,64);
+assert.equal(census.strict_distinct_question_intents_verified,null);
+assert.equal(census.provisional_1912_plus_spx_topic_units_if_all_29_direct_families_collapse_and_remaining_35_add_distinct,468);
+
 console.log('Pius X P0/P1 research-only bridge: 433 canonical QIDs, 64 provisional seeds, no content approval');
