@@ -70,13 +70,12 @@ for(const [name,graphKey,file,builder,controller,options,expectedCount,handoff] 
     if(name==="ASPERGES")assert.equal(
       projectSpecialRiteReadingPages("ASP-R04",cards[3].paragraphs).length,2);
   }else if(name==="HOLY_THURSDAY_POST"){
-    assert.equal(frRows,6,"Holy Thursday Pange lingua / Tantum ergo six stanzas lack French");
-    assert.equal(enRows,6,"Holy Thursday Pange lingua / Tantum ergo six stanzas lack English");
+    assert.equal(frRows,sourceRows,"Holy Thursday editorial Psalm and antiphon French incomplete");
+    assert.equal(enRows,sourceRows,"Holy Thursday editorial Psalm and antiphon English incomplete");
     assert.equal(sourceRows,21,"Holy Thursday Psalm 21 source rows changed");
-    assert.ok(cards.find(c=>c.id==="HT-R05").paragraphs.every(row=>
-      !specialRiteVernacular(row,{language:"en"})&&
-      !specialRiteVernacular(row,{language:"fr"})),
-      "Do not fabricate Psalm 21 translations from the independently sourced hymn");
+    assert.equal(cards.find(c=>c.id==="HT-R05").psalmPerformance,
+      "CLERICS_UNRESOLVED_FULL_PSALM_REFERENCE_ONLY",
+      "Unknown attendance must never be asserted as full audible Psalm");
   }else{
     assert.equal(frRows,0,name+" appears to have unsourced French text");
     assert.equal(enRows,0,name+" appears to have unsourced English text");
