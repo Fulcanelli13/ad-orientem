@@ -37,6 +37,20 @@ body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionTitle{
   font:400 clamp(23px,5.3vw,33px)/1.3 var(--font-display,Georgia,serif);
   color:#e5d7ba;margin:0;text-wrap:balance
 }
+
+/* One existing frozen bell asset, no second overlay or artificial chime.
+   This is an expected ceremonial signal, not a sound-detection indicator. */
+body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionBellCue{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  margin:8px auto 18px;color:rgba(218,209,181,.78);
+  font-size:clamp(11px,2.9vw,13px);letter-spacing:.025em;text-align:center
+}
+body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionBellIcon{
+  display:inline-block;width:23px;height:23px;flex:0 0 23px;
+  background:currentColor;mask-size:contain;mask-position:center;mask-repeat:no-repeat;
+  -webkit-mask-size:contain;-webkit-mask-position:center;-webkit-mask-repeat:no-repeat
+}
+body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionBellIcon[hidden]{display:none}
 body.aoP435930Open > .aoDevotionalActionCinematic .aoDevotionalActionContinue{
   margin:18px 0 0;min-width:175px;min-height:49px;padding:11px 22px;
   border-radius:999px;border:1px solid rgba(208,187,147,.35);

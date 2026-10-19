@@ -89,6 +89,20 @@ try{
  assert.notEqual(presentation.innerAnimation,"none","The sacred action should still have a restrained content entrance");
  assert.ok(presentation.width>=presentation.screen-60,"Benediction cinematic is a tiny badge, not a prominent action");
  assert.match(presentation.message,/blessing|Bénédiction/i);
+ const auditory=await blessing.evaluate(el=>{
+  const n=el.querySelector(".aoDevotionalActionBellCue");
+  const icon=n?.querySelector(".aoDevotionalActionBellIcon");
+  return {status:n?.dataset.aoBellStatus,rite:n?.dataset.aoBellRite,
+    text:n?.innerText??"",iconVisible:Boolean(icon&&!icon.hidden),
+    assetMask:icon?.style.maskImage??""};
+ });
+ assert.equal(auditory.status,"EXPECTED_NOT_OBSERVED",
+   "Navigating to blessing is not an observation of a ringing bell");
+ assert.equal(auditory.rite,"BENEDICTION");
+ assert.match(auditory.text,/bell|Clochette/i);
+ assert.equal(auditory.iconVisible,true,"Approved Mass bell SVG not reused in Benediction");
+ assert.match(auditory.assetMask,/bells\.svg/,
+   "Benediction uses an unapproved substitute icon");
  // The global ribbon and independent semantic rails must be covered by the
  // modal at the top and bottom of the actual viewport, not merely the sheet.
  const modal=await blessing.evaluate(el=>{

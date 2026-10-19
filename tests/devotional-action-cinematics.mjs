@@ -18,6 +18,13 @@ assert.equal(ben.id,"BENEDICTION.BLESSING");
 assert.equal(ben.kind,"SOLEMN_ACTION");
 assert.ok(getCanonicalAsset(ben.assetId));
 assert.equal(ben.observedNow,false);
+assert.equal(ben.auditoryCue.id,"BENEDICTION.BLESSING.BELL");
+assert.equal(ben.auditoryCue.instrument,"ALTAR_BELL");
+assert.equal(ben.auditoryCue.rubricalWindow,"BLESSING_WITH_MONSTRANCE");
+assert.equal(ben.auditoryCue.status,"EXPECTED_NOT_OBSERVED");
+assert.equal(ben.auditoryCue.observedNow,false);
+assert.equal(ben.auditoryCue.actuallyHeard,"UNKNOWN");
+assert.equal(ben.auditoryCue.pattern,"NOT_INFERRED");
 for(const stage of ["exposition","adoration","hymn","prayer","praises","reposition",null]){
  assert.equal(scene({view:"benediction",benedictionStage:stage}),null);
 }
