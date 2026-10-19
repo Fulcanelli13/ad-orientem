@@ -11,6 +11,8 @@ on:
       - "src/mass/reader-corpus-christi.js"
       - "src/mass/reader-holy-thursday-post.js"
       - "src/mass/reader-holy-thursday-psalm.js"
+      - "src/mass/reader-requiem-text.js"
+      - "src/mass/reader-requiem-absolution.js"
       - "data/presentation/reader-asperges.v1.json"
       - "src/mass/reader-exsultet-pages.js"
       - "src/mass/reader-missal-granularity.js"
@@ -24,6 +26,7 @@ on:
       - "tests/reader-annexed-rites-acceptance.mjs"
       - "tests/reader-eucharistic-hymn-text.mjs"
       - "tests/reader-holy-thursday-psalm.mjs"
+      - "tests/reader-requiem-bilingual.mjs"
       - "tests/fixtures/reader-phone-harness.html"
       - "tests/reader-special-missal-subpages-phone.mjs"
       - "tests/reader-prayer-over-people.mjs"
@@ -49,6 +52,8 @@ jobs:
         run: node tests/reader-annexed-rites-acceptance.mjs
       - name: Verify shared source-owned Eucharistic hymn and Corpus Benediction editorial translations
         run: node tests/reader-eucharistic-hymn-text.mjs
+      - name: Verify all conditional Requiem Absolution English/French source rows
+        run: node tests/reader-requiem-bilingual.mjs
       - name: Verify Holy Thursday bilingual Psalm and clerics/no-clerics 1962 branch
         run: node tests/reader-holy-thursday-psalm.mjs
       - name: Verify complete Asperges and Vidi aquam 1962 bilingual seasonal text
