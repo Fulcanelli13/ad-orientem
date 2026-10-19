@@ -122,12 +122,19 @@ export function createSharedQuestionRouter(catalog){
   return resolve(first.t,input,fixed);
  }
  function acceptHandoff(proposal,{accept=false,history={}}={}){
+  const canonical=byId.get(proposal?.topicId);
   if(proposal?.kind!=="offer_handoff"||proposal.requiresAcceptance!==true
-   ||!ownerKeys.includes(proposal.targetCharacter)||!byId.has(proposal.topicId))
-   return frozen({kind:"invalid_handoff",reason:"NO_VALID_REFERRAL"});
+   ||!ownerKeys.includes(proposal.targetCharacter)||!canonical
+   ||canonical.coverage!=="SOURCE_NAVIGATION_ONLY"
+   ||canonical.character!==proposal.targetCharacter
+   ||!canonical.sourceRefs.length
+   ||proposal.targetRoute!==catalog.owners[proposal.targetCharacter].navigateTo
+   ||JSON.stringify(proposal.sourceRefs)!==JSON.stringify(canonical.sourceRefs))
+   return frozen({kind:"invalid_handoff",reason:"UNVERIFIED_DESTINATION_OR_FORGED_REFERRAL"});
   if(!accept)return frozen({kind:"stay",character:proposal.fromCharacter,answerText:null});
   const seen=[...new Set([...(history.visitedCharacters||[]),proposal.fromCharacter,proposal.targetCharacter])];
-  if((history.handoffCount||0)>=catalog.pilotLimits.maxTransfersPerQuestion)
+  if((history.handoffCount||0)>=catalog.pilotLimits.maxTransfersPerQuestion
+   ||(history.visitedCharacters||[]).includes(proposal.targetCharacter))
    return frozen({kind:"no_coverage",reason:"REFERRAL_LOOP_OR_TRANSFER_LIMIT",answerText:null});
   return frozen({kind:"handoff_context",reviewOnly:true,approvedReply:false,answerText:null,
    originalQuestion:proposal.originalQuestion,language:proposal.language,topicId:proposal.topicId,
