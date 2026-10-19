@@ -46,7 +46,8 @@
     "Check actual semantic pairing of each source debate follow-up to base Q&A before use",
     "Do not overwrite existing sexual ethics Q&A or debate files",
     "The Chanoine persona must be edited and validated before integration",
-    "Keep CSE055, CSE056, CSE058 editorially archived with their existing redirects; catalog source publication state alone is insufficient."
+    "Keep CSE055, CSE056, CSE058 editorially archived with their existing redirects; catalog source publication state alone is insufficient.",
+    "Source catalog PUBLIC_QA_REPORTED is not an authorization to surface archived CSE055, CSE056 or CSE058; effective_access controls discoverability."
   ],
   "records": [
     {
@@ -111,7 +112,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE002",
@@ -175,7 +183,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE003",
@@ -239,7 +254,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE004",
@@ -302,7 +324,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE005",
@@ -362,7 +391,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE006",
@@ -476,7 +512,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE007",
@@ -586,7 +629,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE008",
@@ -696,7 +746,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE009",
@@ -760,7 +817,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE010",
@@ -862,7 +926,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE011",
@@ -929,7 +1000,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE012",
@@ -1035,7 +1113,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE013",
@@ -1138,7 +1223,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE014",
@@ -1256,7 +1348,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE015",
@@ -1316,7 +1415,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE016",
@@ -1430,7 +1536,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE017",
@@ -1497,7 +1610,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE018",
@@ -1596,7 +1716,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE019",
@@ -1667,7 +1794,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE020",
@@ -1781,7 +1915,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE021",
@@ -1887,7 +2028,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE022",
@@ -1951,7 +2099,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE023",
@@ -2015,7 +2170,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE024",
@@ -2079,7 +2241,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE025",
@@ -2143,7 +2312,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE026",
@@ -2214,7 +2390,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE027",
@@ -2282,7 +2465,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE028",
@@ -2353,7 +2543,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE029",
@@ -2459,7 +2656,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE030",
@@ -2526,7 +2730,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE031",
@@ -2640,7 +2851,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE032",
@@ -2704,7 +2922,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE033",
@@ -2767,7 +2992,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE034",
@@ -2827,7 +3059,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE035",
@@ -2930,7 +3169,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE036",
@@ -2997,7 +3243,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE037",
@@ -3061,7 +3314,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE038",
@@ -3175,7 +3435,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE039",
@@ -3285,7 +3552,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE040",
@@ -3403,7 +3677,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE041",
@@ -3467,7 +3748,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE042",
@@ -3527,7 +3815,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE043",
@@ -3641,7 +3936,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE044",
@@ -3751,7 +4053,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE045",
@@ -3865,7 +4174,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE046",
@@ -3928,7 +4244,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE047",
@@ -3992,7 +4315,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE048",
@@ -4056,7 +4386,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE049",
@@ -4170,7 +4507,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE050",
@@ -4284,7 +4628,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE051",
@@ -4387,7 +4738,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE052",
@@ -4458,7 +4816,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE053",
@@ -4525,7 +4890,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE054",
@@ -4639,7 +5011,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE055",
@@ -4735,7 +5114,8 @@
         "PERSONA_VOICE_CONVERSION_PENDING",
         "ALL_DIALOGUE_CLAIMS_REQUIRE_PRIMARY_SOURCE_REVIEW",
         "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW",
-        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC"
+        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC",
+        "ARCHIVED_SOURCE_MUST_NOT_APPEAR_IN_VISITOR_OR_APP_BROWSE"
       ],
       "source_qa_english_preserved_exact": true,
       "source_qa_french_preserved_exact": true,
@@ -4750,7 +5130,14 @@
         "redirect": "CSE057"
       },
       "visibility_status": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+        "public_route": null,
+        "editorial_archive_redirect": "CSE057",
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE056",
@@ -4846,7 +5233,8 @@
         "PERSONA_VOICE_CONVERSION_PENDING",
         "ALL_DIALOGUE_CLAIMS_REQUIRE_PRIMARY_SOURCE_REVIEW",
         "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW",
-        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC"
+        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC",
+        "ARCHIVED_SOURCE_MUST_NOT_APPEAR_IN_VISITOR_OR_APP_BROWSE"
       ],
       "source_qa_english_preserved_exact": true,
       "source_qa_french_preserved_exact": true,
@@ -4861,7 +5249,14 @@
         "redirect": "CSE051"
       },
       "visibility_status": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+        "public_route": null,
+        "editorial_archive_redirect": "CSE051",
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE057",
@@ -4928,7 +5323,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE058",
@@ -5024,7 +5426,8 @@
         "PERSONA_VOICE_CONVERSION_PENDING",
         "ALL_DIALOGUE_CLAIMS_REQUIRE_PRIMARY_SOURCE_REVIEW",
         "DEBATE_SEQUENCE_AND_SPEAKER_VOICE_REQUIRE_REVIEW",
-        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC"
+        "PRESERVE_ARCHIVED_SOURCE_NONPUBLIC",
+        "ARCHIVED_SOURCE_MUST_NOT_APPEAR_IN_VISITOR_OR_APP_BROWSE"
       ],
       "source_qa_english_preserved_exact": true,
       "source_qa_french_preserved_exact": true,
@@ -5039,7 +5442,14 @@
         "redirect": "CSE057"
       },
       "visibility_status": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "EDITORIAL_ARCHIVE_WITH_REDIRECT",
+        "public_route": null,
+        "editorial_archive_redirect": "CSE057",
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE059",
@@ -5103,7 +5513,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE060",
@@ -5171,7 +5588,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE061",
@@ -5285,7 +5709,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE062",
@@ -5352,7 +5783,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE063",
@@ -5462,7 +5900,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE064",
@@ -5565,7 +6010,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE065",
@@ -5629,7 +6081,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE066",
@@ -5693,7 +6152,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE067",
@@ -5757,7 +6223,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE068",
@@ -5832,7 +6305,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE069",
@@ -5896,7 +6376,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE070",
@@ -6010,7 +6497,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE071",
@@ -6124,7 +6618,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE072",
@@ -6191,7 +6692,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE073",
@@ -6255,7 +6763,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE074",
@@ -6365,7 +6880,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE075",
@@ -6429,7 +6951,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE076",
@@ -6539,7 +7068,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE077",
@@ -6604,7 +7140,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE078",
@@ -6669,7 +7212,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE079",
@@ -6733,7 +7283,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE080",
@@ -6797,7 +7354,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE081",
@@ -6861,7 +7425,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE082",
@@ -6928,7 +7499,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE083",
@@ -7038,7 +7616,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE084",
@@ -7148,7 +7733,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE085",
@@ -7212,7 +7804,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE086",
@@ -7276,7 +7875,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE087",
@@ -7386,7 +7992,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE088",
@@ -7489,7 +8102,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE089",
@@ -7589,7 +8209,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE090",
@@ -7653,7 +8280,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE091",
@@ -7718,7 +8352,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE092",
@@ -7779,7 +8420,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE093",
@@ -7879,7 +8527,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE094",
@@ -7986,7 +8641,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE095",
@@ -8089,7 +8751,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE096",
@@ -8193,7 +8862,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE097",
@@ -8254,7 +8930,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE098",
@@ -8319,7 +9002,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE099",
@@ -8384,7 +9074,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE100",
@@ -8449,7 +9146,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE101",
@@ -8560,7 +9264,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE102",
@@ -8625,7 +9336,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE103",
@@ -8690,7 +9408,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE104",
@@ -8798,7 +9523,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE105",
@@ -8859,7 +9591,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE106",
@@ -8920,7 +9659,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE107",
@@ -8988,7 +9734,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE108",
@@ -9056,7 +9809,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE109",
@@ -9121,7 +9881,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE110",
@@ -9182,7 +9949,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE111",
@@ -9246,7 +10020,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE112",
@@ -9352,7 +10133,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE113",
@@ -9420,7 +10208,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE114",
@@ -9484,7 +10279,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE115",
@@ -9548,7 +10350,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE116",
@@ -9608,7 +10417,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE117",
@@ -9711,7 +10527,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE118",
@@ -9775,7 +10598,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE119",
@@ -9847,7 +10677,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE120",
@@ -9911,7 +10748,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE121",
@@ -9975,7 +10819,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE122",
@@ -10035,7 +10886,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE123",
@@ -10141,7 +10999,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE124",
@@ -10251,7 +11116,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE125",
@@ -10369,7 +11241,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE126",
@@ -10434,7 +11313,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE127",
@@ -10503,7 +11389,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE128",
@@ -10567,7 +11460,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE129",
@@ -10632,7 +11532,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE130",
@@ -10701,7 +11608,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE131",
@@ -10773,7 +11687,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE132",
@@ -10837,7 +11758,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE133",
@@ -10909,7 +11837,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE134",
@@ -10973,7 +11908,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE135",
@@ -11037,7 +11979,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE136",
@@ -11105,7 +12054,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE137",
@@ -11176,7 +12132,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE138",
@@ -11240,7 +12203,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE139",
@@ -11308,7 +12278,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE140",
@@ -11376,7 +12353,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE141",
@@ -11486,7 +12470,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE142",
@@ -11596,7 +12587,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE143",
@@ -11699,7 +12697,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE144",
@@ -11766,7 +12771,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE145",
@@ -11876,7 +12888,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE146",
@@ -11940,7 +12959,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE147",
@@ -12004,7 +13030,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE148",
@@ -12068,7 +13101,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE149",
@@ -12186,7 +13226,14 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     },
     {
       "conversation_id": "CHA-CSE-CSE150",
@@ -12254,7 +13301,35 @@
         "redirect": null
       },
       "visibility_status": "PUBLIC_READER_SOURCE_ONLY_NOT_CHANOINE_APPROVED",
-      "eligible_for_chanoine_publication": false
+      "eligible_for_chanoine_publication": false,
+      "source_access": {
+        "authority": "data/learn/formation-qa-recovery-visibility.v1.json",
+        "effective_access": "PUBLIC_READER",
+        "public_route": "learn.sexual_ethics",
+        "editorial_archive_redirect": null,
+        "source_index_original_status": "CANONICAL_BILINGUAL_QA"
+      }
     }
-  ]
+  ],
+  "source_access_resolution": {
+    "canonical_visibility_index": "data/learn/formation-qa-recovery-visibility.v1.json",
+    "precedence": "effective_access from forensic visibility index overrides broad source catalog PUBLIC_QA_REPORTED flags",
+    "status": "SOURCE_VISIBILITY_GATES_APPLIED_NOT_PUBLICATION_APPROVED",
+    "public_reader_count": 147,
+    "editorial_archive_count": 3,
+    "editorial_archive_redirects": [
+      {
+        "id": "CSE055",
+        "redirect": "CSE057"
+      },
+      {
+        "id": "CSE056",
+        "redirect": "CSE051"
+      },
+      {
+        "id": "CSE058",
+        "redirect": "CSE057"
+      }
+    ]
+  }
 }
