@@ -516,3 +516,80 @@ No new text was copied, no 48-card Mass LIVE/reader graph replaced,
 no doubled Litany, and no independent translation of the Rogation
 Mass Proper introduced. Draft PR #1441 remains a review environment
 until the editorial and acceptance gates pass.
+
+## 11. All 112 Litany invocations aligned by historical line (19 October)
+
+The previous review category **101 Litany rows with only a family-level
+historical witness** has now been resolved into **112 original row-ID to
+historical line-position records**. This is alignment work, not a
+translation pass: no English or French prayer bodies were imported.
+The resulting source-only record is
+`data/mass/rogation-112-invocations-historical-en-fr-crosswalk.v1.json`;
+`tests/rogation-112-invocation-historical-parity.mjs` gates the exact
+native source IDs, witness line positions and variant/disposition checks.
+It is included in focused Missal CI.
+
+| Historical counterpart for native 112 Litany invocations | All 112 | Subset of 101 without exact Ordinary/PRAY Latin owner |
+| --- | ---: | ---: |
+| Historical **1883 English + 1862 French** by order/subject | **107** | **96** |
+| **1883 English only** | **2** | **2** |
+| In **neither** of those historical translations | **3** | **3** |
+| **Total** | **112** | **101** |
+
+The English-only entries are **`ROG-R03-10` Saint Joseph** (French
+1862 Litany omits him) and **`ROG-R03-81` Cross/Passion** (the
+French edition's Latin line has `Per crucem et passionem tuam` at
+rendered line 847, but its French prose omits that entire line; the
+editorial note itself records an omitted translation). English does
+include both. The **three absent from both historical editions** are
+`ROG-R03-74` earthquake scourge, `ROG-R03-75` plague/famine/war,
+and `ROG-R03-96` Church unity and Gospel enlightenment. These
+do **not** become missing new translations merely because they are
+absent from two 19th-century witnesses; search complete 1962-rite
+bilingual Missal/Ritual witnesses first.
+
+Also verified and retained: `ROG-R03-15` and `ROG-R03-18` remain
+distinct Saint James source identities even though they share the
+Latin invocation; historical English has Saint James at distinct
+rendered lines 161 and 167 and French at 908 and 911. The 1883 English
+St Simon/Thaddeus invocations share one physical rendered line,
+but source row IDs are **not** merged. The 1862 French transcription
+has suspect `Saint Jean, riez pour nous` (at historical St John),
+and the benefactors petition also has spelling defects;
+none is silently corrected in canonical source text.
+
+**Consolidated ledger update.** The older **37 exact + 46 historically
+located outside the Litany + 101 historical Litany family only +
+3 source-specific opening** classification is now superseded by:
+
+| Publication-review evidence tier | Original Latin rows |
+| --- | ---: |
+| Exact Ordinary or PRAY **Latin candidate** | **37** |
+| Historical EN/FR segments elsewhere in Rogations (not exact corpus) | **46** |
+| Previously unmatched Litany with historical EN/FR both mapped | **96** |
+| Previously unmatched Litany with 1883 EN only | **2** |
+| Previously unmatched Litany absent from both 19th-century editions | **3** |
+| Opening processional antiphon / Psalm fragment source search | **3** |
+| **Total (distinct original Latin rows)** | **187** |
+
+**None of the 187 Latin rows has been newly certified as a published
+1962 bilingual translation by this audit.** The 150 rows without
+exact Ordinary/PRAY ownership remain 150 in the source index; a
+historical line alignment must never be subtracted as if it were
+a canonical approved EN/FR owner. Across those 150, **142** have
+both EN/FR historic candidates (46 non-Litany + 96 Litany),
+**2** have only EN, and **6** have neither these sources
+(3 Litany + 3 opening). This is **a candidate-witness distribution,
+not 142 certified texts**, and it still requires actual 1962
+print, textual and rights checks. (Some of the 46 other historic
+rows have known local omissions/abbreviations and are not all
+simple fully bilingual clauses; use the per-row exception flags.)
+
+The remaining bottleneck is now **targeted edition collation and
+approval** rather than indefinite translation discovery:
+first seek correct 1962-rite English/French originals for the five
+Litany exceptions; then collate the 107 shared historical pairs
+in complete source order, resolve rights and transcription variants,
+and select the effective approved wording per existing owner.
+The 1962 general rubric's non-doubling rule and six native
+ceremony stages remain unchanged.
