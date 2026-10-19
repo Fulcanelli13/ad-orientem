@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -194,6 +194,104 @@
       "condition": null,
       "notes": null,
       "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_INTONES_GLORIA",
+      "cueId": "AO.SM.C0053",
+      "candidateId": "B",
+      "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "notes": "Use new 19 October chant depiction for priest intoning Gloria.",
+      "semanticCueId": "AO.SM.C0053",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_HEAD_BOWS_GLORIA",
+      "cueRange": [
+        "AO.SM.C0058",
+        "AO.SM.C0067"
+      ],
+      "decision": "HOLD_IN_SELECTOR_WITH_USER_COMMENT",
+      "notes": "Explicit user comment: O (adoration) should be used whenever priest bows the head. O is same approved `ao_adoration.svg` previously selected for profound bow at C0016. Record broad reuse intention, not normative equivalence of profound/body/head bow or automatic runtime remapping.",
+      "semanticCueId": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "FAITHFUL_HEAD_OR_BODY_BOW_GLORIA",
+      "cueRange": [
+        "AO.SM.C0055",
+        "AO.SM.C0067"
+      ],
+      "candidate": "review_faithful_bow",
+      "decision": "REUSE_PREVIOUSLY_APPROVED",
+      "notes": "Scoped to the existing faithful customary profile; do not infer universal obligation.",
+      "semanticCueId": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_TURNS_TOWARD_PEOPLE_COLLECT",
+      "cueId": "AO.SM.C0070",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0070",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_COLLECT_HANDS_EXTENDED",
+      "cueId": "AO.SM.C0072",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0072",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_POSITION_EPISTLE_FOR_LESSON",
+      "cueId": "AO.SM.C0075",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0075",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "EPISTLE_READING_ACTION",
+      "cueId": "AO.SM.C0075",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0075",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_MUNDA_COR_MEUM_BOW",
+      "cueId": "AO.SM.C0079",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0079",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_GOSPEL_SIDE_POSITION",
+      "cueId": "AO.SM.C0082",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0082",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_PROCLAIMS_GOSPEL",
+      "cueId": "AO.SM.C0086",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0086",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_KISSES_GOSPEL_BOOK",
+      "cueId": "AO.SM.C0088",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0088",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
     }
   ],
   "rules": [
@@ -202,7 +300,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "GLORIA_COLLECT_EPISTLE_PRE_GOSPEL",
+  "nextReview": "CREDO_AND_OPENING_OFFERTORY_C0089_TO_C0129",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -306,8 +404,101 @@
           "decision": "ACCEPT_VISUAL_MATCH"
         }
       ]
+    },
+    {
+      "id": "AO.SM.M03_TO_M07.GLORIA_TO_GOSPEL",
+      "label": "Gloria through Gospel",
+      "cueRange": [
+        "AO.SM.C0053",
+        "AO.SM.C0088"
+      ],
+      "status": "BATCH_4_REVIEWED_PARTIAL",
+      "userStatement": "Decisions: {\"gloria\":\"B\",\"priestBow\":\"hold\",\"faithfulBow\":\"reuse\",\"turn\":\"hold\",\"collect\":\"hold\",\"epistle\":\"hold\",\"reading\":\"hold\",\"munda\":\"hold\",\"gospelSide\":\"hold\",\"gospelRead\":\"hold\",\"gospelKiss\":\"hold\"}. Comments: O (adoration) should be used whenever priest bows the head",
+      "choices": [
+        {
+          "slot": "PRIEST_INTONES_GLORIA",
+          "cueId": "AO.SM.C0053",
+          "candidateId": "B",
+          "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
+          "decision": "ACCEPT_VISUAL_MATCH",
+          "notes": "Use new 19 October chant depiction for priest intoning Gloria."
+        },
+        {
+          "slot": "PRIEST_HEAD_BOWS_GLORIA",
+          "cueRange": [
+            "AO.SM.C0058",
+            "AO.SM.C0067"
+          ],
+          "decision": "HOLD_IN_SELECTOR_WITH_USER_COMMENT",
+          "notes": "Explicit user comment: O (adoration) should be used whenever priest bows the head. O is same approved `ao_adoration.svg` previously selected for profound bow at C0016. Record broad reuse intention, not normative equivalence of profound/body/head bow or automatic runtime remapping."
+        },
+        {
+          "slot": "FAITHFUL_HEAD_OR_BODY_BOW_GLORIA",
+          "cueRange": [
+            "AO.SM.C0055",
+            "AO.SM.C0067"
+          ],
+          "candidate": "review_faithful_bow",
+          "decision": "REUSE_PREVIOUSLY_APPROVED",
+          "notes": "Scoped to the existing faithful customary profile; do not infer universal obligation."
+        },
+        {
+          "slot": "PRIEST_TURNS_TOWARD_PEOPLE_COLLECT",
+          "cueId": "AO.SM.C0070",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_COLLECT_HANDS_EXTENDED",
+          "cueId": "AO.SM.C0072",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_POSITION_EPISTLE_FOR_LESSON",
+          "cueId": "AO.SM.C0075",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "EPISTLE_READING_ACTION",
+          "cueId": "AO.SM.C0075",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_MUNDA_COR_MEUM_BOW",
+          "cueId": "AO.SM.C0079",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_GOSPEL_SIDE_POSITION",
+          "cueId": "AO.SM.C0082",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_PROCLAIMS_GOSPEL",
+          "cueId": "AO.SM.C0086",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_KISSES_GOSPEL_BOOK",
+          "cueId": "AO.SM.C0088",
+          "decision": "HOLD"
+        }
+      ]
     }
   ],
   "lastDecisionDate": "2026-10-19",
-  "reviewedSectionStatus": "IN_PROGRESS"
+  "reviewedSectionStatus": "IN_PROGRESS",
+  "userArtworkPreferences": [
+    {
+      "id": "AO.ICON.19OCT.PRIEST_HEAD_BOW_ADORATION_REUSE",
+      "actor": "PRIEST",
+      "gesture": "HEAD_BOW",
+      "asset": "assets/review/mass-icon-candidates/ao-adoration-20261019.svg",
+      "sourceReviewCandidate": "O",
+      "decision": "USER_EXPLICIT_REUSE_PREFERENCE",
+      "instruction": "O (adoration) should be used whenever priest bows the head",
+      "priorUse": "PRIEST_ACTION_PROFOUND_BOW_CONFITEOR",
+      "caution": "Head bow and profound bow remain distinct rubrical gestures. Do not modify ritual data or override action ownership. No runtime activation in this draft.",
+      "commentOverridesDropdownHold": true
+    }
+  ]
 }
