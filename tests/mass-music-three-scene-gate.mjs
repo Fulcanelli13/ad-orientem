@@ -59,7 +59,7 @@ assert.ok(gate.constraints.includes("NO_MUSIC_PROGRESS_FROM_TEXT_ANIMATION_TIMER
 const blocks=new Map(data.sungCorpus.blocks.map(b=>[b.Block_ID,b]));
 const sources=new Map(data.sungCorpus.blocks.flatMap(b=>
   (b.units??[]).map(u=>[u.cue_id,{cue:u,blockId:b.Block_ID}])));
-assert.equal([...sources.keys()].filter(x=>/^AO\\.SM\\.C\\d{4}$/.test(x)).length,279);
+assert.equal([...sources.keys()].filter(x=>/^AO[.]SM[.]C[0-9]{4}$/.test(x)).length,279);
 for(const scene of gate.scenes){
   assert.ok(scene.authority?.length>0,scene.id+": missing norm");
   assert.ok(scene.steps?.length>0,scene.id+": no stages");
