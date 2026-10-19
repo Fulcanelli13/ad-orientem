@@ -61,7 +61,7 @@ for (const item of merged) {
   assert(src.source_access.effective_access === "PUBLIC_READER", id + ": access failure");
   if (src.exchanges.length > 1) {
     sourceDebates++;
-    assert(item.second_turn_origin === "SOURCE_DEBATE_FOLLOWUP", id + ": source objection type mismatched");
+    assert(item.second_turn_origin === "EXISTING_SOURCE_OBJECTION", id + ": source objection type mismatched");
     assert(eq(item.visitor_followup_question, src.exchanges[1].visitor), id + ": source objection altered");
     assert(eq(item.original_source_followup_reply, src.exchanges[1].chanoine), id + ": source debate reply altered");
   } else {
