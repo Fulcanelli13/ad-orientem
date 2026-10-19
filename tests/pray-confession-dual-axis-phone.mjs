@@ -55,7 +55,7 @@ try{
  assert.deepEqual({stage:st.stage,id:st.id,stops:st.stops,index:st.index,current:st.current,overflow:st.overflow},
  {stage:1,id:"quick-commandments-1",stops:5,index:0,current:1,overflow:"auto"});
  assert.ok(st.questions>=3&&st.active>=1,"Original examination questions are not focusable paragraphs");
- assert.equal(st.nav,"none","Hidden legacy navigation is still visible");
+ assert.equal(st.nav,null,"Interior Confession cards must not render extra Previous/Next controls");
  assert.equal(await page.locator(sel+" [data-p435930-since]").count(),0,"Time estimate must not follow user into examination");
  await page.screenshot({path:resolve(captures,"regular-exam-390.png"),animations:"disabled"});
  const swipe=async(dx,dy)=>page.locator(sel+" .aoDevoCardScroll").evaluate((node,{dx,dy})=>{
@@ -69,10 +69,14 @@ try{
  assert.equal((await state()).index,1,"Horizontal gesture did not move exactly one card");
  await page.locator(timeline+" [data-ao-devo-chapter='4']").tap();
  st=await state();assert.equal(st.id,"ready");assert.equal(st.final,"true");
- assert.notEqual(st.nav,"none","Final examination card must allow explicit transition");
+ assert.ok(st.nav&&st.nav!=="none","Final examination card must allow explicit transition");
+ assert.equal(await page.locator(sel+" [data-p435930-conf-prev]").count(),0);
+ assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),1);
  await page.locator(sel+" [data-p435930-conf-next]").tap();
  st=await state();assert.equal(st.stage,2);assert.equal(st.stops,3);assert.equal(st.id,"at-priest");
  assert.match(await page.locator(sel+" .aoDevoCardScroll").innerText(),/phone away/i);
+ assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),0,
+  "Before entering rehearsal starts as a swipe-only card");
  await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
  assert.equal((await state()).id,"contrition-penance");
  await page.locator(sel+" [data-p435930-conf-next]").tap();
@@ -80,6 +84,8 @@ try{
  await page.locator(timeline+" [data-ao-devo-chapter='2']").tap();
  st=await state();assert.equal(st.id,"amendment");assert.equal(st.final,"true");
  assert.equal(await page.locator(sel+" [data-p435930-conf-clear]").count(),1);
+ assert.equal(await page.locator(sel+" [data-p435930-conf-next]").count(),1,
+  "Final action must clear session preparation only on explicit exit");
  assert.equal(await page.locator(sel+" .aoP435930ConfSources a[href^='https://www.vatican.va']").count(),2,
  "Catholic doctrinal hyperlinks were discarded");
  await page.setViewportSize({width:320,height:720});

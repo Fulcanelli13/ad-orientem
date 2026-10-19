@@ -97,6 +97,25 @@ assert.ok(devotionalUx.groupCapable.includes("pray.stations"));
 assert.ok(devotionalUx.swipeCapable.includes("programme.first_saturday"));
 
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
+const guidedNav=runtime.slice(runtime.indexOf("function guideNav("),runtime.indexOf("function visitSteps("));
+const confessionRender=runtime.slice(runtime.indexOf("function renderConfession()"),runtime.indexOf("const BEN_STAGES=",runtime.indexOf("function renderConfession()")));
+const adorationStage=runtime.slice(runtime.indexOf("function guidedStage("),runtime.indexOf("function renderAdoration()",runtime.indexOf("function guidedStage(")));
+assert.ok(guidedNav.includes("if(index!==total-1)return ''"),"Guided Prayer stages must navigate by swipe, not routine buttons");
+assert.ok(guidedNav.includes("data-p435930-${kind}-finish"),"Retain genuine final devotional action");
+assert.ok(!guidedNav.includes("data-p435930-${kind}-prev")&&!guidedNav.includes("data-p435930-${kind}-next"),"Old guided Previous/Next buttons remain");
+assert.ok(adorationStage.includes("guideNav(kind,index,steps.length,lastLabel)"),"Adoration source stages lost their explicit final exit");
+assert.ok(confessionRender.includes("stageBoundary=CONF.stage===0"),"Confession entry action must depend on selected path");
+assert.ok(confessionRender.includes("cardIndex===cardSequence.length-1"),"Confession section transition must require the final preparation card");
+assert.ok(confessionRender.includes("After Confession · when ready"),"Confession must not assert sacramental absolution");
+assert.ok(confessionRender.includes("devotionalProgressMarkup({index:0,total:stages.length"),"Confession chooser needs an accessible stage progress track");
+assert.ok(!confessionRender.includes("data-p435930-conf-prev"),"Confession still has a routine previous button");
+for(const id of ["visit","holy","four","ben"]){
+ assert.ok(runtime.includes("data-p435930-"+id+"-finish"),"Missing explicit final action for "+id);
+ assert.ok(!runtime.includes("data-p435930-"+id+"-prev"),"Obsolete previous action remains for "+id);
+}
+assert.ok(runtime.includes("data-p435930-conf-clear")&&runtime.includes("freshConfessionState()"),"Confession privacy clear must remain intact");
+
+
 
 const sharedProgressCss=readFileSync("src/pray/devotional-card-deck-styles.js","utf8");
 const stationsFn=runtime.slice(runtime.indexOf("function renderStations()"),runtime.indexOf("// Shared visual structure only.",runtime.indexOf("function renderStations()")));

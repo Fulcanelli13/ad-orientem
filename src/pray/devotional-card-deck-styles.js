@@ -53,6 +53,17 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930Stations .aoDevoCardScroll:focus-visible{
  outline:2px solid var(--liturgical,#c8b28a);outline-offset:2px;
 }
+/* Confession chooser uses the source-owned four-stage rail. Only its
+   entry screen needs the stage indicator; subsequent cards own one track. */
+#aoPray435930 .aoP435930ConfNavShell{
+ position:sticky;top:79px;z-index:20;background:var(--bg,#080c12);
+}
+#aoPray435930 .aoP435930ConfNavShell .aoP435930GuideRail{
+ position:relative!important;top:auto!important;
+}
+#aoPray435930 .aoP435930ConfNavShell>.aoDevoProgress{
+ width:calc(100% - 28px);margin:0 14px 4px;
+}
 #aoPray435930 .aoDevoStop{scroll-snap-align:center;display:grid;gap:2px;flex:0 0 max(112px,42%);padding:8px 9px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;color:var(--muted,#aeb2b8);background:var(--surface-1,#141a20);text-align:left;min-height:48px}
 #aoPray435930 .aoDevoStop.active{border-color:var(--liturgical,#d8bd7d);color:var(--text,#f1e7d7);background:color-mix(in srgb,var(--liturgical,#d8bd7d) 9%,var(--surface-1,#141a20))}
 #aoPray435930 .aoDevoStopNumber{font:600 10px/1.2 system-ui,sans-serif;letter-spacing:.12em}
