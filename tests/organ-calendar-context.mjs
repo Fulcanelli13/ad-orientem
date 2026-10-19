@@ -13,7 +13,7 @@ const context=(date,change={})=>verifiedOrganContextFrom1962Calendar({
 });
 const cases=[
   ["2026-01-06","EPIPHANY","PERMITTED"],
-  ["2026-01-25","SEPTUAGESIMA","PERMITTED"],
+  ["2026-02-01","SEPTUAGESIMA","PERMITTED"],
   ["2026-02-18","LENT","ACCOMPANIMENT_ONLY"],
   ["2026-03-22","PASSIONTIDE","ACCOMPANIMENT_ONLY"],
   ["2026-04-05","EASTER","PERMITTED"],
