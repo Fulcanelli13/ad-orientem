@@ -3265,7 +3265,22 @@ export function createReaderDomAdapter({
     if(actionBadge){actionBadge.dataset.active=String(actionActive);actionBadge.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));}
     if(actionRail)actionRail.dataset.major=String(Boolean(actionActive&&majorCue.has(activeCue)));
     const bellRail=root.querySelector('[data-channel="bell"]');
-    if(bellRail)bellRail.dataset.major=String(Boolean(visibleBell&&majorCue.has(visibleBell.cueId??activeCue)));
+    if(bellRail){
+      bellRail.dataset.major=String(Boolean(visibleBell&&majorCue.has(visibleBell.cueId??activeCue)));
+      // A focused source paragraph is never a microphone recording.
+      // Separately witnessed Canon server bells have their own state owner.
+      const witnessed=visibleBell?.observedNow===true &&
+        visibleBell?.owner==="INDEPENDENT_CANON_SERVER_OBSERVATION";
+      bellRail.dataset.soundState=visibleBell
+        ? (witnessed?"EXPLICITLY_OBSERVED":"EXPECTED_NOT_OBSERVED") : "NONE";
+      bellRail.dataset.timingPrecision=visibleBell?.sourceTiming?.timingPrecision??"UNRESOLVED";
+      if(visibleBell){
+        const aria=(witnessed?"Observed server bell: ":"Expected altar-bell moment, not detected: ")+
+          [textValue(visibleBell),visibleBell.detail].filter(Boolean).join(" · ");
+        bellRail.setAttribute("aria-label",aria);
+        bellRail.title=aria;
+      }
+    }
 
     const sceneId=String(current.cinematicScene?.id??"NONE");
     const sceneShell=root.querySelector("[data-ao-reader-shell]");
