@@ -42,6 +42,16 @@ for(const item of docs.records){
   assert.equal(source.editorialStatus,"RESEARCH_LINK_ONLY_UNAPPROVED");
  }
 }
+const sourcePacks=[...new Set(docs.records.flatMap(x=>x.existingResearchReferences.map(r=>r.sourcePack)))];
+const sourceRowsByPath=new Map();
+for(const path of sourcePacks){
+ const pack=await read(path);
+ assert.ok(Array.isArray(pack.source_registry),path);
+ sourceRowsByPath.set(path,new Set(pack.source_registry.map(x=>x.id)));
+}
+for(const entry of docs.records)for(const ref of entry.existingResearchReferences)
+ assert.ok(sourceRowsByPath.get(ref.sourcePack).has(ref.sourceId),
+  "Unresolved original repository source: "+entry.id+" "+ref.sourcePack+" "+ref.sourceId);
 const apolIds=new Set(apol.dossiers.map(x=>x.id));
 const crisisIds=new Set(crisis.dossiers.map(x=>x.id));
 const qids=new Set(pius.entries.map(x=>"PX1912-Q"+String(x.q).padStart(3,"0")));
