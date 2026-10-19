@@ -123,6 +123,8 @@ try{
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="SANCTUS_BENEDICTUS");
    const dock=page.locator(".ao-schola-dock");
    await dock.waitFor({state:"visible"});
+   assert.equal((await dock.locator(".ao-schola-kicker").textContent())?.trim(),"SANCTUS",
+     "The independent Schola track must be displayed simply as Sanctus");
    const prev=page.locator("[data-schola-previous]");
    const next=page.locator("[data-schola-next]");
    assert.equal(await prev.count(),1);
