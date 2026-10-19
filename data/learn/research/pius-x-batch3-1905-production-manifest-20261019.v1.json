@@ -1028,10 +1028,11 @@
     "distinctLong1905QuestionAnchors": 50,
     "sourceRange": 89,
     "withinBatchPotentialOverlapClusters": 23,
-    "priorWavePotentialOverlapRefs": 10,
+    "priorWavePotentialOverlapRefs": 8,
     "approvals": 0,
     "published": 0,
-    "certifiedDistinctIntents": 0
+    "certifiedDistinctIntents": 0,
+    "existingResearchSeedOverlapRefs": 2
   },
   "possibleOverlapsWithinBatch": [
     {
@@ -1242,69 +1243,7 @@
       "review": "JOIN_OR_SEPARATE_PENDING_SEMANTIC_REVIEW"
     }
   ],
-  "possibleOverlapsWithPriorBatches": [
-    {
-      "newId": "SPX-1905-P-269",
-      "previousId": "SPX-033",
-      "relation": "prayer distractions and mechanical prayer",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-305",
-      "previousId": "SPX-018",
-      "relation": "property justice in Lord's Prayer and restitution",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-309",
-      "previousId": "SPX-031",
-      "relation": "asking forgiveness and forgiving one's enemy",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-314",
-      "previousId": "SPX-008",
-      "relation": "involuntary temptation is not consent",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-314",
-      "previousId": "SPX-PILOT-03",
-      "relation": "temptation and moral consent",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-335",
-      "previousId": "SPX-013",
-      "relation": "Marian intercession",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-338",
-      "previousId": "SPX-003",
-      "relation": "Rosary devotion versus permission during Mass",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-340",
-      "previousId": "SPX-013",
-      "relation": "intercession of saints and Mary",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-258",
-      "previousId": "SPX-EXP-039",
-      "relation": "Church public prayer",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    },
-    {
-      "newId": "SPX-1905-P-273",
-      "previousId": "SPX-033",
-      "relation": "perseverance and recollection in prayer",
-      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED"
-    }
-  ],
-  "sourceReviewMethod": "All fifty exact Q-number anchors and companion topic propositions checked against the online Italian prayer section; each bilingual response is a newly authored nonliteral paraphrase. No full translation collation or independent native-language/theological approval.",
+  "sourceReviewMethod": "All fifty exact Q-number anchors and companion topic propositions checked against the online Italian prayer section; each bilingual response is a newly authored nonliteral paraphrase. No full translation collation or independent native-language/theological approval. Two overlap references are to unproduced research ideas SPX-033 and SPX-031, not prior draft families; do not count them as produced.",
   "reviewQueue": [
     "Preserve edition provenance and printed text numbering without silently merging 1912 short Catechism.",
     "Verify EN and FR propositions against each precise Italian Q&A in a dedicated independent editorial pass.",
@@ -1315,5 +1254,77 @@
   "owner": "PR #1458",
   "voiceOwner": "PR #1419",
   "routerOwner": "PR #1443",
-  "visualReviewOwner": "PR #1402"
+  "visualReviewOwner": "PR #1402",
+  "possibleOverlapsWithPriorBatchesOrResearch": [
+    {
+      "newId": "SPX-1905-P-269",
+      "previousId": "SPX-033",
+      "relation": "prayer distractions and mechanical prayer",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "SOURCE_RESEARCH_SEED_NOT_DRAFTED"
+    },
+    {
+      "newId": "SPX-1905-P-305",
+      "previousId": "SPX-018",
+      "relation": "property justice in Lord's Prayer and restitution",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "PRIOR_BATCH_OR_PILOT_DRAFT"
+    },
+    {
+      "newId": "SPX-1905-P-309",
+      "previousId": "SPX-031",
+      "relation": "asking forgiveness and forgiving one's enemy",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "SOURCE_RESEARCH_SEED_NOT_DRAFTED"
+    },
+    {
+      "newId": "SPX-1905-P-314",
+      "previousId": "SPX-008",
+      "relation": "involuntary temptation is not consent",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "PRIOR_BATCH_OR_PILOT_DRAFT"
+    },
+    {
+      "newId": "SPX-1905-P-314",
+      "previousId": "SPX-PILOT-03",
+      "relation": "temptation and moral consent",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "PRIOR_BATCH_OR_PILOT_DRAFT"
+    },
+    {
+      "newId": "SPX-1905-P-335",
+      "previousId": "SPX-013",
+      "relation": "Marian intercession",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "PRIOR_BATCH_OR_PILOT_DRAFT"
+    },
+    {
+      "newId": "SPX-1905-P-338",
+      "previousId": "SPX-003",
+      "relation": "Rosary devotion versus permission during Mass",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "PRIOR_BATCH_OR_PILOT_DRAFT"
+    },
+    {
+      "newId": "SPX-1905-P-340",
+      "previousId": "SPX-013",
+      "relation": "intercession of saints and Mary",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "PRIOR_BATCH_OR_PILOT_DRAFT"
+    },
+    {
+      "newId": "SPX-1905-P-258",
+      "previousId": "SPX-EXP-039",
+      "relation": "Church public prayer",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "PRIOR_BATCH_OR_PILOT_DRAFT"
+    },
+    {
+      "newId": "SPX-1905-P-273",
+      "previousId": "SPX-033",
+      "relation": "perseverance and recollection in prayer",
+      "status": "POTENTIAL_OVERLAP_NOT_CONFIRMED",
+      "previousScope": "SOURCE_RESEARCH_SEED_NOT_DRAFTED"
+    }
+  ]
 }
