@@ -3,6 +3,7 @@
  * Can return topic navigation, clarification, or a proposed character transfer.
  * Never returns an AI-authored historical answer.
  */
+import {historicalFocusCandidates,validateHistoricalFocus} from "./living-church-historical-focus.js";
 export const SHARED_QUESTION_ROUTER_VERSION="AO_LIVING_CHURCH_ROUTER_PILOT_V1";
 
 const accents=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -33,7 +34,19 @@ function present(topic,lang){
   relatedTopics:(topic.relatedTopics||[]).map(x=>frozen({...x})),
   approvedReply:false,answerText:null});
 }
-export function createSharedQuestionRouter(catalog){
+export function createSharedQuestionRouter(catalog,{historicalPointers=null}={}){
+ if(historicalPointers&&(historicalPointers.schema!=="AO_LIVING_CHURCH_PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1"
+    ||historicalPointers.status!=="RESEARCH_ONLY_LINKED_HISTORICAL_DOCUMENT_LOCATORS_NOT_APPROVED_REPLIES"
+    ||!Array.isArray(historicalPointers.records)))
+  throw Error("Unverified historical source-pointer registry");
+ const byHistoricalRef=new Map((historicalPointers?.records||[]).map(p=>{
+  if(!/^SPX-PILOT-\\d{2}$/.test(p.id)||!/^https:\/\//.test(p.originalDocumentUrl)
+   ||!p.sourceLocator||p.approvedReply!==false||!p.witnessClassification
+   ||p.sourceAttestation!=="PASSAGE_SCREEN_ONLY_NOT_ORIGINAL_FACSIMILE_COLLATED")
+   throw Error("Invalid original historical source pointer "+p.id);
+  return [p.id,p];
+ }));
+ if(byHistoricalRef.size!==(historicalPointers?.records.length||0))throw Error("Duplicate historical source pointer");
  if(catalog?.schema!=="AO_LIVING_CHURCH_SHARED_QUESTION_ROUTING_PILOT_V1"||!Array.isArray(catalog.topics)
   ||catalog.topics.length<10||catalog.policy?.canGenerateNewDoctrinalAnswer!==false
   ||catalog.policy?.canGeneratePastoralConclusion!==false)throw Error("Verified source-only question router registry required");
@@ -50,7 +63,18 @@ export function createSharedQuestionRouter(catalog){
   if(t.sourceRefs.some(s=>!s.owner||!s.ref||!s.evidence))throw Error("Unattributed source "+t.id);
   ids.add(t.id);
  }
+ validateHistoricalFocus(catalog.topics);
  const byId=new Map(catalog.topics.map(t=>[t.id,t]));
+ const historicalDoc=topic=>{
+  if(topic.category!=="pius_historical_source_navigation")return null;
+  const ref=topic.sourceRefs.find(x=>x.owner==="PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1");
+  const item=ref&&byHistoricalRef.get(ref.ref);
+  if(!item)return null;
+  return frozen({url:item.originalDocumentUrl,sourceLocator:item.sourceLocator,
+    researchSourceId:item.sourceResearchId,witnessClassification:item.witnessClassification,
+    sourceRef:item.id,externalDocument:true,approvedReply:false});
+ };
+
  for(const topic of catalog.topics){
   const links=new Set();
   for(const link of topic.relatedTopics||[]){
@@ -71,6 +95,12 @@ export function createSharedQuestionRouter(catalog){
   const lang=opts.language==="fr"?"fr":"en";
   const history=opts.history||{visitedCharacters:[current],handoffCount:0};
   const payload=present(topic,lang);
+  const originalDocument=historicalDoc(topic);
+  // The generic Catechism route is never a substitute for an original document.
+  if(topic.category==="pius_historical_source_navigation"&&!originalDocument)
+   return frozen({kind:"no_coverage",reason:"HISTORICAL_SOURCE_POINTER_NOT_RESOLVED",
+    topicId:topic.id,originalQuestion:opts.originalQuestion||input,
+    approvedReply:false,answerText:null});
   const evidence=opts.matchEvidence||frozen({basis:"NOT_CLASSIFIED",score:null});
   const needsConfirmation=!["EXACT_VARIANT","EXPLICIT_REFORMULATION_CHOICE"].includes(evidence.basis);
   if(topic.coverage==="SOURCE_GAP")
@@ -78,17 +108,20 @@ export function createSharedQuestionRouter(catalog){
     topicId:topic.id,originalQuestion:opts.originalQuestion||input,
     sourceGap:topic.sourceGapReason,answerText:null,approvedReply:false});
   const common={topicId:topic.id,language:lang,originalQuestion:opts.originalQuestion||input,
-   sourceRefs:payload.sourceRefs,approvedReply:false,answerText:null,
+   sourceRefs:payload.sourceRefs,...(originalDocument?{documentNavigation:originalDocument}:{}),
+   approvedReply:false,answerText:null,
    matchEvidence:evidence,requiresQuestionConfirmation:needsConfirmation,
    explanation:"Research navigation only. No character answer is authored."};
   if(topic.character===current)
-   return frozen({kind:"source_navigation",character:current,navigationRoute:catalog.owners[current].navigateTo,
+   return frozen({kind:"source_navigation",character:current,
+     navigationRoute:originalDocument?"historical.external_document":catalog.owners[current].navigateTo,
      topic:payload,...common});
   const visited=history.visitedCharacters||[current];
   if((history.handoffCount||0)>=catalog.pilotLimits.maxTransfersPerQuestion||visited.includes(topic.character))
    return frozen({kind:"no_coverage",reason:"REFERRAL_LOOP_OR_TRANSFER_LIMIT",topic:payload, ...common});
   return frozen({kind:"offer_handoff",fromCharacter:current,targetCharacter:topic.character,
-    targetRoute:catalog.owners[topic.character].navigateTo,topic:payload,requiresAcceptance:true,
+    targetRoute:originalDocument?"historical.external_document":catalog.owners[topic.character].navigateTo,
+    topic:payload,requiresAcceptance:true,
     transferAction:"REVIEW_ONLY_NOT_EXECUTED", ...common});
  }
  function clarify(rule,input,lang,opts){
@@ -122,6 +155,15 @@ export function createSharedQuestionRouter(catalog){
   for(const rule of catalog.ambiguities){
    if(phrases(rule.phrases,lang).some(p=>similarity(input,[p])>.91))return clarify(rule,input,lang,fixed);
   }
+  // Historical source topics require corroborating facets, not generic prayer/sin matches.
+  const focused=historicalFocusCandidates(input,catalog.topics,lang);
+  if(focused.length===1)return resolve(focused[0],input,{...fixed,
+   matchEvidence:frozen({basis:"DOCUMENTARY_ANCHORED",score:null})});
+  if(focused.length>1)return frozen({kind:"clarify",reason:"MULTIPLE_DOCUMENTARY_FOCI",
+   originalQuestion:input,language:lang,clarification:lang==="fr"?
+    "De quelle question historique parlez-vous ?":"Which historical subject did you mean?",
+   options:focused.slice(0,catalog.pilotLimits.maxClarifications).map(t=>present(t,lang)),
+   answerText:null,approvedReply:false});
   const candidates=catalog.topics.map(t=>({t,score:similarity(input,phrases(t.questionVariants,lang))}))
    .sort((a,b)=>b.score-a.score);
   const [first,second]=candidates;
@@ -145,7 +187,8 @@ export function createSharedQuestionRouter(catalog){
    ||canonical.coverage!=="SOURCE_NAVIGATION_ONLY"
    ||canonical.character!==proposal.targetCharacter
    ||!canonical.sourceRefs.length
-   ||proposal.targetRoute!==catalog.owners[proposal.targetCharacter].navigateTo
+   ||proposal.targetRoute!==(canonical.category==="pius_historical_source_navigation"?
+    "historical.external_document":catalog.owners[proposal.targetCharacter].navigateTo)
    ||JSON.stringify(proposal.sourceRefs)!==JSON.stringify(canonical.sourceRefs))
    return frozen({kind:"invalid_handoff",reason:"UNVERIFIED_DESTINATION_OR_FORGED_REFERRAL"});
   if(!accept)return frozen({kind:"stay",character:proposal.fromCharacter,answerText:null});
@@ -161,6 +204,7 @@ export function createSharedQuestionRouter(catalog){
    originalQuestion:proposal.originalQuestion,language:proposal.language,topicId:proposal.topicId,
    fromCharacter:proposal.fromCharacter,toCharacter:proposal.targetCharacter,
    sourceRefs:proposal.sourceRefs,navigationRoute:proposal.targetRoute,
+   ...(proposal.documentNavigation?{documentNavigation:proposal.documentNavigation}:{}),
    history:frozen({visitedCharacters:seen,handoffCount:(history.handoffCount||0)+1})});
  }
  return frozen({version:SHARED_QUESTION_ROUTER_VERSION,status:"RESEARCH_ONLY",
