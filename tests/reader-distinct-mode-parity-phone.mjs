@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -81,6 +81,14 @@ try{
       assert.equal(after.composite,before.composite,rite+" crossed Vigil→Mass boundary through mode toggle");
       assert.equal(after.progression,before.progression,rite+" lost the source stage progression");
       assert.ok(await page.locator(".ao-reader-paragraph").count()>0);
+      if(lang==="fr"){
+        const dir=resolve(root,"artifacts/distinct-reader-review");
+        await mkdir(dir,{recursive:true});
+        await page.locator("[data-ao-reader-shell]").screenshot({
+          path:resolve(dir,rite+"-"+mode.toLowerCase()+"-390px.png"),
+          animations:"disabled",
+        });
+      }
       if(mode==="MISSAL"){
         assert.equal(await page.locator("#ao-r17-native-reader-preview").getAttribute("data-ao-distinct-reading-focus"),null,
           "Missal should not retain LIVE focus opacity after changing mode");
@@ -100,6 +108,14 @@ try{
         assert.equal(after.composite,"MASS_ACTIVE","Mode switch cannot re-enter Vigil before Mass");
         assert.equal(after.source,atMass.source);
         assert.equal(after.progression,atMass.progression);
+        if(lang==="fr"){
+          const dir=resolve(root,"artifacts/distinct-reader-review");
+          await mkdir(dir,{recursive:true});
+          await page.locator("[data-ao-reader-shell]").screenshot({
+            path:resolve(dir,"easter-vigil-mass-"+mode.toLowerCase()+"-390px.png"),
+            animations:"disabled",
+          });
+        }
       }
     }
     assert.deepEqual(errors,[],rite+" emitted page errors");
