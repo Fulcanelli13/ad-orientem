@@ -30,6 +30,7 @@ function similarity(user,variants){
 function present(topic,lang){
  return frozen({topicId:topic.id,character:topic.character,title:topic.title[lang]||topic.title.en,
   sourceRefs:topic.sourceRefs.map(x=>frozen({...x})),coverage:topic.coverage,sourceGapReason:topic.sourceGapReason||null,
+  relatedTopics:(topic.relatedTopics||[]).map(x=>frozen({...x})),
   approvedReply:false,answerText:null});
 }
 export function createSharedQuestionRouter(catalog){
@@ -50,6 +51,16 @@ export function createSharedQuestionRouter(catalog){
   ids.add(t.id);
  }
  const byId=new Map(catalog.topics.map(t=>[t.id,t]));
+ for(const topic of catalog.topics){
+  const links=new Set();
+  for(const link of topic.relatedTopics||[]){
+   if(!byId.has(link.id)||link.id===topic.id||links.has(link.id)
+     ||link.publication!=="RELATIONSHIP_RESEARCH_ONLY"||!link.relation)
+     throw Error("Unverified topic relationship "+topic.id+" -> "+link.id);
+   links.add(link.id);
+  }
+ }
+
  for(const rule of catalog.ambiguities){
   for(const id of rule.candidates)if(!byId.has(id))throw Error("Unknown ambiguity option "+id);
  }
