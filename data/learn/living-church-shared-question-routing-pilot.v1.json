@@ -60,7 +60,29 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "faith.whole_christ",
+          "relation": "FOLLOW_UP",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "mass.elevation",
+          "relation": "RITUAL_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "pius.catechism_q330",
+          "relation": "DEFINITION",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "objects.tabernacle",
+          "relation": "OBJECT_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "faith.whole_christ",
@@ -88,7 +110,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "faith.real_presence",
+          "relation": "DOCTRINAL_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "sacraments.communion_disposition",
@@ -116,7 +145,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "penance.examination",
+          "relation": "PREPARATION",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "mary.intercession",
@@ -150,7 +186,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "canon.apologetics_apol_036",
+          "relation": "DISTINCT_QUESTION",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "church.papal_infallibility",
@@ -179,7 +222,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "canon.apologetics_apol_021",
+          "relation": "DISTINCT_QUESTION",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "faith.definition",
@@ -235,7 +285,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "canon.apologetics_apol_014",
+          "relation": "OBJECTION_RESEARCH_ONLY",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "penance.contrition",
@@ -264,7 +321,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "penance.confession",
+          "relation": "SACRAMENT_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "penance.examination",
@@ -292,7 +356,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "penance.confession",
+          "relation": "PREPARATION",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "penance.confession",
@@ -382,7 +453,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "canon.apologetics_apol_051",
+          "relation": "CONSCIENCE_RESEARCH_ONLY",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "christ.poverty",
@@ -413,6 +491,13 @@
       "approvedReply": false,
       "limitations": [
         "DOES_NOT_ANSWER_FAMILY_LIVELIHOOD_PERMISSION"
+      ],
+      "relatedTopics": [
+        {
+          "id": "canon.apologetics_apol_052",
+          "relation": "MORAL_REASONING_RESEARCH_ONLY",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
       ]
     },
     {
@@ -441,7 +526,19 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "faith.real_presence",
+          "relation": "DOCTRINAL_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "mass.minor_elevation",
+          "relation": "DISTINCT_CEREMONY",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "mass.altar_reverence",
@@ -487,7 +584,14 @@
       "sourceRefs": [],
       "coverage": "SOURCE_GAP",
       "approvedReply": false,
-      "sourceGapReason": "The original published Guide does not independently establish an approved commentary about the liturgical calendar's colours; source relationship pending."
+      "sourceGapReason": "The original published Guide does not independently establish an approved commentary about the liturgical calendar's colours; source relationship pending.",
+      "relatedTopics": [
+        {
+          "id": "objects.vestments",
+          "relation": "RELATED_PHYSICAL_TOPIC",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "mass.gestures_meaning",
@@ -538,7 +642,14 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "mass.minor_elevation",
+          "relation": "RITUAL_SEQUENCE",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "mass.offertory",
@@ -566,7 +677,19 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "objects.chalice",
+          "relation": "OBJECT_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "objects.cruets",
+          "relation": "OBJECT_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "mass.gospel_ceremony",
@@ -594,7 +717,19 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "mass.last_gospel",
+          "relation": "DISTINCT_CEREMONY",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "objects.glossary_g229",
+          "relation": "PROCESSIONAL_OBJECT_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "objects.pall",
@@ -658,6 +793,23 @@
       "approvedReply": false,
       "objectIds": [
         "SV01"
+      ],
+      "relatedTopics": [
+        {
+          "id": "objects.pall",
+          "relation": "RELATED_OBJECT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "objects.paten",
+          "relation": "RELATED_OBJECT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "objects.cruets",
+          "relation": "RELATED_OBJECT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
       ]
     },
     {
@@ -783,6 +935,13 @@
       "approvedReply": false,
       "objectIds": [
         "AL03"
+      ],
+      "relatedTopics": [
+        {
+          "id": "objects.sanctuary_lamp",
+          "relation": "RELATED_OBJECT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
       ]
     },
     {
@@ -907,6 +1066,13 @@
       "approvedReply": false,
       "objectIds": [
         "SN02"
+      ],
+      "relatedTopics": [
+        {
+          "id": "mass.agnus_dei",
+          "relation": "RITUAL_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
       ]
     },
     {
@@ -998,7 +1164,24 @@
         }
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
-      "approvedReply": false
+      "approvedReply": false,
+      "relatedTopics": [
+        {
+          "id": "objects.glossary_g200",
+          "relation": "COMPONENT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "objects.glossary_g201",
+          "relation": "COMPONENT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "objects.glossary_g199",
+          "relation": "COMPONENT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "objects.glossary_g182",
@@ -1110,7 +1293,19 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "sacristan_glossary_expansion"
+      "category": "sacristan_glossary_expansion",
+      "relatedTopics": [
+        {
+          "id": "objects.glossary_g195",
+          "relation": "RELATED_OBJECT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        },
+        {
+          "id": "objects.glossary_g231",
+          "relation": "RELATED_OBJECT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "objects.glossary_g195",
@@ -1250,7 +1445,14 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "sacristan_glossary_expansion"
+      "category": "sacristan_glossary_expansion",
+      "relatedTopics": [
+        {
+          "id": "objects.vestments",
+          "relation": "CATEGORY",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "objects.glossary_g201",
@@ -1614,7 +1816,14 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "sacristan_glossary_expansion"
+      "category": "sacristan_glossary_expansion",
+      "relatedTopics": [
+        {
+          "id": "faith.real_presence",
+          "relation": "DOCTRINAL_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "pius.catechism_q105",
@@ -1642,7 +1851,14 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "pius_catechism_expansion"
+      "category": "pius_catechism_expansion",
+      "relatedTopics": [
+        {
+          "id": "canon.apologetics_apol_016",
+          "relation": "ECCLESIOLOGY_RESEARCH_ONLY",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "pius.catechism_q87",
@@ -1670,7 +1886,14 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "pius_catechism_expansion"
+      "category": "pius_catechism_expansion",
+      "relatedTopics": [
+        {
+          "id": "canon.apologetics_apol_004",
+          "relation": "OBJECTION_RESEARCH_ONLY",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "pius.catechism_q135",
@@ -1726,7 +1949,14 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "pius_catechism_expansion"
+      "category": "pius_catechism_expansion",
+      "relatedTopics": [
+        {
+          "id": "morals.reputation",
+          "relation": "MORAL_RELATED",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "pius.catechism_q294",
@@ -1894,7 +2124,14 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "canonical_mass_moments"
+      "category": "canonical_mass_moments",
+      "relatedTopics": [
+        {
+          "id": "mass.roman_canon",
+          "relation": "RITUAL_SEQUENCE",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "mass.pater_noster",
@@ -1922,7 +2159,14 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "canonical_mass_moments"
+      "category": "canonical_mass_moments",
+      "relatedTopics": [
+        {
+          "id": "mass.agnus_dei",
+          "relation": "RITUAL_SEQUENCE",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "mass.agnus_dei",
@@ -1950,7 +2194,14 @@
       ],
       "coverage": "SOURCE_NAVIGATION_ONLY",
       "approvedReply": false,
-      "category": "canonical_mass_moments"
+      "category": "canonical_mass_moments",
+      "relatedTopics": [
+        {
+          "id": "sacraments.communion_disposition",
+          "relation": "RELATED_PREPARATION",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "mass.last_gospel",
@@ -2096,7 +2347,14 @@
       "coverage": "SOURCE_GAP",
       "sourceGapReason": "Existing canonical apologetics dossier is an unpublished research target, not an approved source for a conversational answer. Retrieve and certify specific original passages before routing visitors.",
       "approvedReply": false,
-      "category": "canon_apologetics_unpublished"
+      "category": "canon_apologetics_unpublished",
+      "relatedTopics": [
+        {
+          "id": "canon.apologetics_apol_001",
+          "relation": "RELATED_OBJECTION",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "canon.apologetics_apol_004",
@@ -2276,7 +2534,14 @@
       "coverage": "SOURCE_GAP",
       "sourceGapReason": "Existing canonical apologetics dossier is an unpublished research target, not an approved source for a conversational answer. Retrieve and certify specific original passages before routing visitors.",
       "approvedReply": false,
-      "category": "canon_apologetics_unpublished"
+      "category": "canon_apologetics_unpublished",
+      "relatedTopics": [
+        {
+          "id": "pius.catechism_q87",
+          "relation": "DOCTRINAL_BASELINE",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "canon.apologetics_apol_010",
@@ -2396,7 +2661,14 @@
       "coverage": "SOURCE_GAP",
       "sourceGapReason": "Existing canonical apologetics dossier is an unpublished research target, not an approved source for a conversational answer. Retrieve and certify specific original passages before routing visitors.",
       "approvedReply": false,
-      "category": "canon_apologetics_unpublished"
+      "category": "canon_apologetics_unpublished",
+      "relatedTopics": [
+        {
+          "id": "church.tradition",
+          "relation": "DOCTRINAL_BASELINE",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "canon.apologetics_apol_016",
@@ -2486,7 +2758,14 @@
       "coverage": "SOURCE_GAP",
       "sourceGapReason": "Existing canonical apologetics dossier is an unpublished research target, not an approved source for a conversational answer. Retrieve and certify specific original passages before routing visitors.",
       "approvedReply": false,
-      "category": "canon_apologetics_unpublished"
+      "category": "canon_apologetics_unpublished",
+      "relatedTopics": [
+        {
+          "id": "church.papal_infallibility",
+          "relation": "DISTINCT_QUESTION",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "canon.apologetics_apol_019",
@@ -2606,7 +2885,14 @@
       "coverage": "SOURCE_GAP",
       "sourceGapReason": "Existing canonical apologetics dossier is an unpublished research target, not an approved source for a conversational answer. Retrieve and certify specific original passages before routing visitors.",
       "approvedReply": false,
-      "category": "canon_apologetics_unpublished"
+      "category": "canon_apologetics_unpublished",
+      "relatedTopics": [
+        {
+          "id": "penance.confession",
+          "relation": "SACRAMENT_EXAMPLE",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "canon.apologetics_apol_024",
@@ -2756,7 +3042,14 @@
       "coverage": "SOURCE_GAP",
       "sourceGapReason": "Existing canonical apologetics dossier is an unpublished research target, not an approved source for a conversational answer. Retrieve and certify specific original passages before routing visitors.",
       "approvedReply": false,
-      "category": "canon_apologetics_unpublished"
+      "category": "canon_apologetics_unpublished",
+      "relatedTopics": [
+        {
+          "id": "mass.offertory",
+          "relation": "RITUAL_CONTEXT",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "canon.apologetics_apol_033",
@@ -2906,7 +3199,14 @@
       "coverage": "SOURCE_GAP",
       "sourceGapReason": "Existing canonical apologetics dossier is an unpublished research target, not an approved source for a conversational answer. Retrieve and certify specific original passages before routing visitors.",
       "approvedReply": false,
-      "category": "canon_apologetics_unpublished"
+      "category": "canon_apologetics_unpublished",
+      "relatedTopics": [
+        {
+          "id": "penance.contrition",
+          "relation": "DISTINCT_TOPIC",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "canon.apologetics_apol_041",
@@ -2966,7 +3266,14 @@
       "coverage": "SOURCE_GAP",
       "sourceGapReason": "Existing canonical apologetics dossier is an unpublished research target, not an approved source for a conversational answer. Retrieve and certify specific original passages before routing visitors.",
       "approvedReply": false,
-      "category": "canon_apologetics_unpublished"
+      "category": "canon_apologetics_unpublished",
+      "relatedTopics": [
+        {
+          "id": "morals.reputation",
+          "relation": "MORAL_BASELINE",
+          "publication": "RELATIONSHIP_RESEARCH_ONLY"
+        }
+      ]
     },
     {
       "id": "canon.apologetics_apol_052",
@@ -3245,7 +3552,9 @@
     "apologeticsDossiersIndexed": 37,
     "researchOnlyUnpublishedAnswerCount": 37,
     "retrievalQualityCertified": false,
-    "expansionStatus": "SECOND_BATCH_RESEARCH_INDEXED_NOT_DIALOGUE_APPROVED"
+    "expansionStatus": "SECOND_BATCH_RESEARCH_INDEXED_NOT_DIALOGUE_APPROVED",
+    "curatedTopicRelationships": 47,
+    "relationshipsAreDoctrinalImplications": false
   },
   "externalDependencies": [
     {
@@ -3278,6 +3587,7 @@
     "referralDialogueMayBeEditorial": false,
     "historicalSpeechClaim": false,
     "referralRequiresExactRelevantSource": true,
-    "genericRouteIsNotEvidence": true
+    "genericRouteIsNotEvidence": true,
+    "relatedTopicDoesNotAuthoriseNewClaim": true
   }
 }
