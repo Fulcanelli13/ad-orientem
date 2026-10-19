@@ -153,13 +153,22 @@ export function projectSpecialRiteReadingPages(stageId,paragraphs,{mode="MISSAL"
       throw new Error("CORPUS_BENEDICTION_SOURCE_ROWS_CHANGED");
     groups=[rows.slice(0,2),rows.slice(2)];
   }else if(id==="HT-R05"){
-    // Psalm 21 is already 13 individual source rows. Keep each verse
-    // intact; the opening and repeated antiphon occur exactly once.
-    if(rows.length!==15 || rows[0].id!=="HT-R05-A1" ||
-      rows.at(-1).id!=="HT-R05-A2" ||
-      rows.slice(1,-1).some((row,i)=>row.id!=="HT-R05-P"+String(i+1)))
-      throw new Error("HOLY_THURSDAY_STRIPPING_SOURCE_ORDER_CHANGED");
-    groups=[rows.slice(0,4),rows.slice(4,8),rows.slice(8,12),rows.slice(12)];
+    // 1962 Missal: with clerics, they continue Psalm 21 only until altar
+    // stripping is finished. WITHOUT clerics only the first Psalm verse
+    // follows the antiphon; note the donor's first row merges several
+    // verses, so this is an explicitly subdivided source-owned first verse.
+    if(rows.length===3 && rows[0].id==="HT-R05-A1" &&
+      rows[1].id==="HT-R05-P1-FIRSTVERSE" && rows[2].id==="HT-R05-A2"){
+      groups=[rows];
+    }else{
+      // The original complete source reference is still available when
+      // the performance branch is unknown or clerics are present.
+      if(rows.length!==15 || rows[0].id!=="HT-R05-A1" ||
+        rows.at(-1).id!=="HT-R05-A2" ||
+        rows.slice(1,-1).some((row,i)=>row.id!=="HT-R05-P"+String(i+1)))
+        throw new Error("HOLY_THURSDAY_STRIPPING_SOURCE_ORDER_CHANGED");
+      groups=[rows.slice(0,4),rows.slice(4,8),rows.slice(8,12),rows.slice(12)];
+    }
   }else if(id==="ABS-R03"){
     // Libera me initial response + V/R pairing; one invocation never
     // shares a page boundary without its associated response.
