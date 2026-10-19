@@ -55,3 +55,33 @@ The transfer contract also checks that the offered destination, original referen
 - **Source-fidelity review** follows completed topic collection, prior to publishing or running open-ended AI answers.
 
 **Coverage gate correction:** An apparent character expert without a specific matching original source is *not* available for automatic referral. In particular, a question about why the priest kisses the altar is a held source gap in this pilot; an opening-Mass Guide reference that merely describes approaching the altar cannot be used as a justification for that specific explanation. Asking why liturgical colours vary similarly routes to a disambiguation with the Canon option shown as source-pending, not answer-ready.
+
+
+## Expansion pass 2 — existing topics mined, not invented (19 October)
+
+The shared registry now contains **106 English/French topic candidates**, up from the 33-topic pilot. Source ownership distribution: **21 St Pius X**, **50 Canon**, **35 Sacristan**.
+
+| New material | New topics | Authority |
+|---|---:|---|
+| Additional original Catechism questions | 8 | Specific Q numbers matched to both 433-question English and Italian witness *indexes*; these indexes remain witness locators, not facsimile certification |
+| Existing sanctuary-object and vestment concepts | 22 | Existing `G###` glossary records with `SOURCE_BACKED` definitions |
+| Additional Mass moments | 6 | Exact published original `AO.CARD.###` Sung Guide moments |
+| Canon apologetics question families | 37 | `APOL-###` IDs already in `apologetics-canonical.v1.json`, currently **FROZEN_TARGET_NOT_YET_PUBLISHED** |
+
+Thus **66 topic records** are eligible only for *source navigation*, not original-speech simulation. **40 topics** are *explicit source gaps*: 37 unpublished apologetics dossiers and 3 Canon ceremonial questions without an exact matching approved Guide explanation.
+
+The 37 canonical apologetics questions are useful for recognising what visitors may want to ask. The record carries a `researchRefs` pointer to the existing `APOL-###` dossier and `sourceRefs: []`. **The mere existence of a research dossier never authorises referral or an answer**. The original Canon researcher must identify and approve actual source passages before `SOURCE_NAVIGATION_ONLY` can be granted.
+
+**47 source-neutral relationships** now connect original topic records through roles such as `DOCTRINAL_CONTEXT`, `RELATED_OBJECT`, `RITUAL_SEQUENCE`, `DISTINCT_CEREMONY`, and `OBJECTION_RESEARCH_ONLY`. They are research crosslinks, not logical inferences from several texts, not prewritten replies, and not licences to combine unsupported pastoral conclusions. All destinations and relationship statuses are checked in the router. Examples:
+
+- Real Presence → Q331 whole Christ; original Q330 species; related Mass elevation; relevant tabernacle concept.
+- Mass elevation → specifically *differentiate* minor elevation; link to the original published Guide moment and the Catechism's Real Presence teaching.
+- Sacred vestments → already source-backed chasuble, stole and dalmatic glossary concepts.
+- Apostolic Tradition → **unpublished** Canon `APOL-014` sola Scriptura objection (not an approved Canon answer).
+- Consecration / Roman Canon → original Sung Guide moments and their ritual neighbours, without new historical text.
+
+The 10 added English/French matching tests now check representative new source navigations, held apologetics topics and cross-character handoff cases. The focused CI validates original question IDs, glossary definition states, precise Guide moments, legitimate 47 crosslinks, 2 historical source-gap guards, explicit acceptance and referral-loop refusal. These are deterministic baseline tests, **not semantic matching certification**.
+
+**Remaining qualification:** some question variants are hand-curated navigation strings and need realistic user-question testing before claiming high recognition accuracy. French translations of *search phrases* may be used for routing, but neither French historical response text nor original-language Pius X content has been editorially approved by this module. The 37 apologetics dossiers require their own content pipeline; do not treat their mapping into a shared index as completing apologetics research.
+
+**This pilot remains isolated from runtime**, and neither the 433 canonical Catechism answers nor the Canon's original writings or the source glossary are overwritten.
