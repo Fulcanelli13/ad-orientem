@@ -4,6 +4,7 @@
  * Never returns an AI-authored historical answer.
  */
 import {historicalFocusCandidates,historicalConfirmedContinuation,validateHistoricalFocus} from "./living-church-historical-focus.js";
+import {screenPersonalSpiritualVerdict} from "./living-church-personal-verdict-gate.js";
 export const SHARED_QUESTION_ROUTER_VERSION="AO_LIVING_CHURCH_ROUTER_PILOT_V1";
 
 const accents=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -141,6 +142,13 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
   const current=opts.currentCharacter||"pius-x";
   if(!ownerKeys.includes(current))throw Error("Unknown character "+current);
   if(!input)return frozen({kind:"clarify",reason:"EMPTY_QUESTION",clarification:lang==="fr"?"Quelle est votre question ?":"What would you like to ask?",options:[],answerText:null});
+  // This must precede caller-specified topic IDs, prior confirmed history,
+  // and both lexical/semantic retrieval: none may authorize an individual verdict.
+  const personalVerdict=screenPersonalSpiritualVerdict(input,{language:lang});
+  if(personalVerdict)return frozen({kind:"no_coverage",
+   reason:personalVerdict.reason,scope:personalVerdict.scope,
+   sourceGap:personalVerdict.sourceGap,originalQuestion:input,
+   approvedReply:false,answerText:null});
   const fixed={...opts,currentCharacter:current,language:lang};
   for(const rule of blocked)if(phrases(rule.phrases,lang).some(p=>similarity(input,[p])>.91))
     return frozen({kind:"no_coverage",reason:rule.id,sourceGap:rule.reason,originalQuestion:input,
