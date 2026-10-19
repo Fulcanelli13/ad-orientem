@@ -51,8 +51,9 @@ try{
    const root=document.querySelector("#ao-r17-native-reader-preview");
    const cards=api.model.cards.filter(c=>c.sourceSectionId==="AO.CARD.006");
    const actions=[];
-   const next=()=>root.querySelector('[data-reader-nav="next"]')?.click();
-   if(!next)return {error:"Next button absent"};
+   const next=()=>root.querySelector(".ao-prayer-card")?.dispatchEvent(
+     new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true,cancelable:true}));
+   if(!root.querySelector(".ao-prayer-card"))return {error:"Source reader card absent"};
    api.showSequence(cards[0].sequence);
    const snapshot=()=>{
     const toggle=root.querySelector(".ao-schola-toggle")?.getBoundingClientRect();
@@ -92,7 +93,7 @@ try{
   assert.deepEqual(result.cards.flatMap(c=>c.paragraphIds),result.original,
    "Source paragraphs were lost during card navigation");
   assert.deepEqual(result.actions.map(a=>a.title),names,
-   "Physical next button did not navigate distinct source chants");
+   "Actual keyboard navigation did not reach distinct source chants");
   assert.deepEqual(result.actions.map(a=>a.header),names);
   assert.deepEqual(result.actions.map(a=>a.scholaHeaderText),names.map(x=>x.toUpperCase()),
    "The Schola should label only the actual source-owned chant");
