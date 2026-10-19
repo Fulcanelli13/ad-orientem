@@ -126,3 +126,26 @@ The weak performance is significant even though all answers remain `null`: misna
 **No model capability claim:** the current variant-overlap matcher cannot reliably identify unseen nuanced user questions. The next serious production prerequisite is a separately evaluated hybrid semantic/keyword retrieval and reranking gate, with conservative abstention, exact source-ID checks, bilingual context tests, and human-reviewed source-to-claim approval *after* the corpus is gathered. The fresh test remains diagnostic even when newer code changes its outputs. The approved editorial goal is to make the three characters converse from their authentic sources, not simply direct users into a glossary or the original Missal forever.
 
 Review ownership: this branch / PR #1443 owns only router scaffolding; Pius X source-aware style is PR #1419, P4 original Catechism / character folio is PR #1406. These parallel pipelines are not overwritten.
+
+
+## Expansion pass 5 — hybrid lexical + symbolic concept retrieval prototype (19 October)
+
+**Files**: `data/learn/living-church-symbolic-concepts.v1.json` contains a bilingual editorial mapping of **40 subject concepts** to *existing topic IDs only*. `src/learn/living-church-hybrid-question-router.js` adds an **opt-in**, review-only alternative to the unchanged deterministic router. `tests/living-church-hybrid-question-router.mjs` evaluates both against the frozen 52-question diagnostic set and exercises the source/privacy/confirmation gates.
+
+### Implementation precision
+
+The term **semantic** here means **symbolic subject-concept and intent-frame matching**, **not** neural embeddings, language-model similarity, NLI, or a production semantic search service. The hybrid method combines:
+- A lightweight weighted lexical similarity score, using each topic's original bilingual search variants and per-language corpus IDF;
+- Editorial bilingual synonym/concept matches with explicit topic IDs and no independently authored teaching;
+- Source-neutral interpretation frames (person-vs-object, ceremonial action, temporal sequence, doctrinal presence and recognised personal moral applications), which affect *where to navigate*, never *what historical characters say*;
+- Conservative ambiguity / source-gap rejection using the unchanged canonical resolver and original source ownership.
+
+The hybrid component does **not** replace the P4 source-of-truth. A proposed topic is not an approved answer. All results retain `answerText:null`; `approvedReply:false`; and inferred matches have `matchEvidence.basis:"SYMBOLIC_HYBRID_RANKED"`, `usesEmbeddings:false`, and `requiresQuestionConfirmation:true`. A suggested handoff still separately requires a source-checked destination and explicit visitor consent. The interpreter cannot silently switch characters. The original router remains the default; merely adding this module does **not** wire any LIVE or visual-novel screen to it.
+
+### Evaluation discipline
+
+The existing 52-question set was frozen **before** this prototype was proposed in this branch, but its questions and intended topic IDs have now been inspected in the engineering process. It is assistant-authored, includes at least two questionable answer keys (a question about the priest's book was labelled with an unrelated chasuble ID, and a question about episcopal versus papal fallibility was over-specific), and is not independently sampled from visitor traffic. Numbers obtained from it are **engineering diagnostics**, not production performance metrics. Additional tuning on its failures invalidates any later claim that this fixture is untouched or independent.
+
+The first implementation reported **19 intended topics / 23 unresolved / 10 wrong specific** for the legacy matcher, versus **25 intended / 19 unresolved / 8 wrong specific** for the symbolic hybrid. That preliminary comparison is limited by the imperfect labels and the narrow, assistant-written sample; the second-round intent-frame score, once CI confirms it, must be recorded separately without replacing the baseline.
+
+**Production gate remains closed.** Before runtime introduction: complete topical source coverage; have domain specialists review intended question labels; collect a genuinely independent English/French first-visit evaluation set; use actual semantic embeddings or another validated model for broad paraphrase recognition; test objection/pastoral/temporal-law edge cases and high-risk false positives; retain original-source ownership and handoff consent; and complete answer-to-source fidelity verification only after topic mining is mature.
