@@ -215,3 +215,32 @@ for its derived, source-only owner report. Its regression gate
 `tests/rogations-litany-112-source-owners.mjs` checks exact
 reader/source Latin alignment, ID/card ownership and the non-doubling
 rule, not translation release.
+
+## 19 October — source-certified-ritual correction candidates applied in draft
+
+After the initial **319 annex leaves / 60 Ordinary exact matches** and
+**186 Rogations rows / 21 Ordinary matches** audit baseline, examination of
+the photographed 1961 Solesmes *Liber Usualis* (printed pp. 839–840)
+identified three high-confidence omissions/variants. A separate
+1962-rite Psalter compilation corroborates the papal collect. Three
+**provisional source-level corrections are now implemented in PR #1441**:
+
+1. Restore the previously absent independent `Oremus.` at
+   `postLitany.oremus`, after the last suffrage and before the ten orations.
+   The presentation ID `ROG-R05-OR` retains `ROG-END-010` ceremony ownership
+   and references the existing Ordinary wording candidate `AO.SM.C0036`;
+   no second translation may be made of the formula.
+2. Mark the existing `ROG-R04-PN` (and only this row) as `voice: SILENT`
+   with a clear guide. The original source incipit is unchanged.
+3. Correct the fifth Rogation collect's papal petition from
+   `Pontifici N.` to `Pontifici nostro N.`, as in the photographed chant
+   and an independent 1962-rite compilation; the full authoritative
+   1962 edition's word-by-word collation remains required for release.
+
+**New reproducible totals:** 320 annex leaves; 61 Ordinary Latin matches,
+17 further PRAY Latin matches, **242 still not exactly matched**. Within
+Rogations: 187 source rows = 22 exact Ordinary + 15 additional PRAY +
+150 still requiring fuller collation. The 112 processional Litany
+invocations remain unchanged. No EN/FR was composed, and no release claim
+follows from this repair. The printed discrepancy registry and updated
+reader/source tests are in this same PR.
