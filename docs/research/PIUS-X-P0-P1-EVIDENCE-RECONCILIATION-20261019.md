@@ -135,6 +135,23 @@ The pinned Italian digital transcriptions covering all 21 sections were read mec
 
 However, zero identical textual questions **does not** prove zero semantically duplicate questions. *Why pray?* and *Is prayer necessary?* may be close intents even when worded differently. Nor does all 993 of the longer Catechism necessarily provide 993 new unique conversations. The cross-edition 993×433 relationship, 219 feasts and 577 Salzano links must be analyzed using complete source evidence.
 
+
+### First six cross-edition semantic calibration cases
+
+The evidence file `data/learn/research/pius-x-1905-1912-calibration-crosswalk-20261019.v1.json` records six **individual Italian question-and-answer comparisons** between the 1905 longer Catechism and the later digitally transcribed 1912 shorter question index:
+
+| 1905 QID | 1912 short counterpart | Relationship |
+| --- | --- | --- |
+| PX1905-Q254, what prayer is | PX1912-Q414 | Same-intent candidate: definition of prayer |
+| PX1905-Q262, why prayers are not heard | PX1912-Q422 | Same-intent candidate; **do not falsely report unanswered prayer as absent from the short Catechism** |
+| PX1905-Q527, sanctifying versus actual grace | PX1912-Q269–271 | Related, **not** same distinction: short text concerns sacramental grace |
+| PX1905-Q669, Rosary during Mass | None in screened 1912 Eucharist section Q316–354 | 1905 expansion with independent practical question |
+| PX1905-Q984, evening examination | PX1912-Q359 | Related, different situation: evening habit versus preparation for Confession |
+| PX1905-Q855, civil marriage in pre-Concordat Italy | Digital PX1912-Q409–410 | **Historical 1929 edition conflict**, never merge as if both were original Pius X teaching |
+
+These six cases are **calibration**, not representative random sampling; they do not license extrapolating an overlap percentage to all 993 questions. Two are strong same-intent candidates; **zero merges formally approved** in this PR pending print-edition and semantic sign-off.
+
+
 ### Historical editorial cautions
 
 Pius X's 1905 promulgation letter says he adopted a **previously regionally approved catechetical text with slight modifications**; authorship must not be presented as if he personally composed all 993 dialogues (museum `Lezione preliminare`, 14 June 1905). The museum website also includes **1967 updated prayer/formula appendices**, which must not be attributed to Pius X.
