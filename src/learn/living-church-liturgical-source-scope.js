@@ -13,10 +13,10 @@ const R={
  mass:/\b(mass|messe|missa|holy sacrifice|divine sacrifice|sacrifice de la messe|sacrifice|liturg(?:y|ie)|celebran(?:t|ts)|celebrat(?:e|es|ed|ing|ion)|celebr(?:e|er|ait|ant|ent|ation)|officie|officiait)\b/,
  clergy:/\b(priest|priests|clergy|pretre|pretres|celebrant|celebrants|pastor|pasteur|cure|ministre)\b/,
  lay:/\b(lay|laity|laypeople|layperson|worshippers?|congregants?|congregation|faithful|people|parishioners?|fidele|fideles|laic|laics|paroissien|paroissiens|assistance|j|i|me|my|moi|je)\b/,
- prayer:/\b(pray|prayer|prayers|praying|meditat(?:e|es|ion|ing)|mental prayer|contemplation|prie|prier|priere|prieres|medit(?:e|er|ation)|oraison|recit(?:e|er|ation)|chapelet|rosaire)\b/,
+ prayer:/\b(think|thinking|attention|reflection|reflect|participat(?:e|ion|ing)|pray|prayer|prayers|praying|meditat(?:e|es|ion|ing)|mental prayer|contemplation|prie|prier|priere|prieres|medit(?:e|er|ation)|oraison|recit(?:e|er|ation)|chapelet|rosaire)\b/,
  reception:/\b(receiv(?:e|es|ed|ing)|reception|received|recevoir|recu|recue|recevant|communie|communier)\b/,
  eucharist:/\b(communion|host|hostie|eucharist|eucharistie|blessed sacrament|corps du christ|body of christ|corps de notre seigneur|sainte table)\b/,
- after:/\b(after|following|once|afterwards|ensuite|apres|aussitot apres|apres avoir|following reception|once i)\b/,
+ after:/\b(after|follow|follows|following|once|afterwards|ensuite|apres|aussitot apres|apres avoir|following reception|once i)\b/,
  inward:/\b(thanksgiving|thank|thanks|gratitude|quiet|silence|silent|recollection|recollected|adoration|devotion|attitude|interior|inward|acts|prayer|prayers|pray|remercier|remerciement|remercions|graces|action de graces|recueillement|silencieuse|silencieux|silence|adoration|attitude|prier|priere|oraison|faire)\b/,
  priestPostcommunion:/\b(postcommunion|post communion prayer|postcommunion prayer|collect after communion|oraison de postcommunion|priest says|pretre recite|pretre dit)\b/,
  ontology:/\b(real presence|presence reelle|tabernacle|sacred vessel|symbol of jesus|substance|substance du christ|transubstantiation)\b/
@@ -32,6 +32,14 @@ export function scopeLiturgicalQuestion(question,{language="en"}={}){
   return Object.freeze({kind:"SOURCE_OWNER",sourceId:"SPX-PILOT-02",
    scope:"LAY_ROSARY_DURING_MASS",language});
  const eucharist=seen(q,R.eucharist);
+ // The priest's *Postcommunion* is a liturgical oration, NOT a lay
+ // communicant's private thanksgiving or Sarto's Salzano instruction.
+ const officialPostcommunion=seen(q,/\b(postcommunion|post communion|oraison de postcommunion)\b/)
+  ||(clergy&&seen(q,/\b(liturgical prayer|oraison liturgique|prayer said by the priest|priere dite par le pretre)\b/)
+   &&seen(q,/\b(after communion|apres la communion|following communion)\b/));
+ if(officialPostcommunion)return Object.freeze({kind:"ABSTAIN",
+  reason:"LITURGICAL_POSTCOMMUNION_NOT_PRIVATE_THANKSGIVING",
+  scope:"OFFICIAL_MASS_ORATION_REQUIRES_DISTINCT_SOURCE"});
  const afterReception=seen(q,R.after)&&seen(q,R.reception)&&eucharist;
  if(afterReception&&!seen(q,R.priestPostcommunion)&&!seen(q,R.ontology)){
   if(seen(q,R.inward))
