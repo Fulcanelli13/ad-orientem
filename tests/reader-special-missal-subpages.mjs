@@ -32,6 +32,10 @@ const scenarios=[
   ["EV-LIT2-600",source(vigil,"EV-LIT2-600").paragraphs,2],
   ["EV-FONT-420",source(vigil,"EV-FONT-420").paragraphs,2],
   ["EV-FONT-440",source(separated,"EV-FONT-440").paragraphs,2],
+  ["EV-LESS-01-READ",source(vigil,"EV-LESS-01-READ").paragraphs,5],
+  ["EV-LESS-02-READ",source(vigil,"EV-LESS-02-READ").paragraphs,2],
+  ["EV-LESS-03-READ",source(vigil,"EV-LESS-03-READ").paragraphs,2],
+  ["EV-LESS-04-READ",source(vigil,"EV-LESS-04-READ").paragraphs,2],
 ];
 for(const [id,rows,min] of scenarios){
   const pages=projectSpecialRiteReadingPages(id,rows);
@@ -58,6 +62,21 @@ assert.equal(ashes.length,5,"Four blessing orations must each stay whole");
 const litany=projectSpecialRiteReadingPages("EV-LIT1-400",source(vigil,"EV-LIT1-400").paragraphs);
 assert.equal(litany.length,4,"Forty-six pairs of first Litany source lines require four pages");
 assert.ok(litany.every(p=>p.rows.length%2===0),"Litany call and response separated");
+// Verify the 1962 order: the entire Scripture lesson precedes its canticle;
+// a shorter Missal page may NEVER detach or reorder a liturgical canticle.
+for(let i=1;i<=4;i++){
+  const id="EV-LESS-"+String(i).padStart(2,"0")+"-READ";
+  const original=source(vigil,id).paragraphs;
+  const pages=projectSpecialRiteReadingPages(id,original);
+  assert.deepEqual(pages.flatMap(p=>p.rows),original,id+" source was mutated");
+  assert.ok(pages.slice(0,-1).every(p=>p.rows.every(row=>/-T\\d+$/.test(row.id))),
+    id+" prophecy paragraphs mixed with the canticle");
+  if(i>1){
+    const last=pages.at(-1).rows;
+    assert.match(last[0].id,/-CIT$/);
+    assert.ok(last.slice(1).every(row=>/-CANT\\d+$/.test(row.id)));
+  }
+}
 const exsSource=source(vigil,"EV-EXS-200").paragraphs;
 const exsEnglish=exsSource.map(row=>({
   ...row,primary:row.latin,secondary:row.english,
@@ -111,4 +130,4 @@ assert.equal(cursor.project("CND-R01",first).pageIndex,0);
 const live=createSpecialRiteMissalPageCursor({mode:"LIVE"});
 assert.equal(live.project("CND-R01",first).totalPages,1);
 assert.equal(live.turn("next"),false);
-console.log("PASS nine real special-rite source groups; every canonical row survives and stage controller never advances inside a page");
+console.log("PASS thirteen real special-rite source groups; every canonical row survives and stage controller never advances inside a page");
