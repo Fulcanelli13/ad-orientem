@@ -63,6 +63,17 @@ try{
   const initial=await state();
   assert.ok(initial.source,rite+" must begin with source-owned prelude");
   assert.equal(initial.mode,"LIVE");
+  // The original annexed rite is not always assigned a paragraph-level
+  // observer cue. Such a page must remain legible, not globally dim to 18%.
+  const contrast=await page.evaluate(()=>{
+    const body=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-body");
+    const rows=[...(body?.querySelectorAll(".ao-reader-paragraph")??[])];
+    return {active:rows.filter(x=>x.dataset.readingActive==="true").length,
+      paragraphs:rows.length,
+      opacity:rows.length?Number.parseFloat(getComputedStyle(rows[0]).opacity):null};
+  });
+  if(contrast.paragraphs>0 && contrast.active===0)
+    assert.ok(contrast.opacity>=.8,rite+" lacks an observed focus cue but all text is dim: "+JSON.stringify(contrast));
   assert.equal(initial.barHidden,false,rite+" missing shared progress bar");
   const progress=parseReaderProgress(initial.progress);
   assert.ok(progress,rite+" missing bounded stage progress");
