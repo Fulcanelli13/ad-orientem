@@ -184,6 +184,12 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
     clarification:lang==="fr"?"Quelle question voulez-vous poser ?":"Which of these questions did you mean?",
     options,answerText:null,approvedReply:false});
   }
+  // A historical passage is never inferred from a merely nearby topical
+  // question. The two documentary facets above or an exact authored variant
+  // are required. This guards against priest/prayer versus lay Mass prayer.
+  if(first.t.historicalIntent&&!literal)return frozen({kind:"no_coverage",
+   reason:"HISTORICAL_SOURCE_SCOPE_UNCORROBORATED",originalQuestion:input,
+   answerText:null,approvedReply:false});
   return resolve(first.t,input,{...fixed,matchEvidence:frozen({
    basis:literal?"EXACT_VARIANT":"LEXICAL_RANKED",
    score:Number(first.score.toFixed(3))})});
