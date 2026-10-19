@@ -132,4 +132,40 @@ assert.equal(passages.metrics.originalLatinLocatorChecks,passages.records.filter
 assert.equal(docs.records.find(x=>x.id==="QUAM-SINGULARI-1910").documentForm,"congregational_decree");
 assert.match(docs.records.find(x=>x.id==="QUAM-SINGULARI-1910").issuer,/Sacred Congregation/);
 assert.equal(docs.records.find(x=>x.id==="SACRA-TRIDENTINA-SYNODUS-1905").documentForm,"congregational_decree");
+
+const claimReviews=await read("data/learn/magisterium-doctrinal-claim-reviews.v1.json");
+assert.equal(claimReviews.schema,"AO_MAGISTERIUM_DOCTRINAL_CLAIM_REVIEW_V1");
+assert.equal(claimReviews.metrics.reviewedClaims,54);
+assert.equal(claimReviews.metrics.sourceScopedCanons,28);
+assert.equal(claimReviews.metrics.totalSourcePassageLocators,61);
+assert.equal(claimReviews.metrics.remainingPassagesWithoutEditorialClaim,7);
+assert.equal(claimReviews.rules.notVisitorFacing,true);
+const idMap=new Map(passages.records.map(p=>[p.passageId,p]));
+const claimPassageIds=new Set();
+for(const c of claimReviews.records){
+ assert.ok(!claimPassageIds.has(c.passageId),"duplicate scoped claim "+c.passageId);
+ claimPassageIds.add(c.passageId);
+ const p=idMap.get(c.passageId);
+ assert.ok(p,"unknown passage in review "+c.passageId);
+ assert.equal(c.documentId,p.documentId);
+ assert.deepEqual(c.doctrineIds,p.doctrineIds);
+ assert.ok(c.sourceWitness.url.startsWith("https://"));
+ assert.equal(c.reviewStatus,"SOURCE_SCOPE_EDITORIAL_REVIEW_ONLY");
+ assert.equal(c.rightsCleared,false);
+ assert.equal(c.doctrinallyCertified,false);
+ assert.equal(c.publiclyUsable,false);
+ assert.equal(c.translation,null);
+ assert.equal(c.exactOriginalQuote,null);
+ assert.equal(c.characterVoiceAttribution,"NEVER_INFER_FROM_MAGISTERIUM");
+ assert.ok(c.editorialProposition.length>30);
+ assert.ok(c.interpretationGuard.length>25);
+ assert.ok(c.classification.magisterialNote==="NOT_THEOLOGICALLY_ADJUDICATED");
+}
+assert.deepEqual(
+ claimReviews.notYetScopedPassageIds,
+ passages.records.filter(p=>!claimPassageIds.has(p.passageId)).map(p=>p.passageId)
+);
+assert.equal(claimReviews.records.filter(c=>c.passageGenre==="SOLEMN_DEFINITION_FORMULA").length,2);
+assert.ok(claimReviews.records.filter(c=>c.classification.temporalLawReview==="REQUIRED").length>=3);
+
 console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 106 provisional links; 61 nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
