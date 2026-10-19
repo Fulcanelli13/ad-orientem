@@ -46,7 +46,18 @@ function css(){
 .aoLearnTradCard{margin:0;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));border-radius:0;background:transparent}.aoLearnTradCard>summary{min-height:var(--ao-control-h,44px);display:flex;align-items:center;gap:10px;padding:11px 0;cursor:pointer;list-style:none}.aoLearnTradCard>summary::-webkit-details-marker{display:none}.aoLearnTradCard>summary::after{content:"+";margin-left:auto;color:var(--muted,rgba(238,233,223,.55));font:500 1.1rem/1 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnTradCard[open]>summary::after{content:"−"}.aoLearnTradCardTitle{color:var(--liturgical,#c7ae6d);font:650 var(--ao-type-ui-sm,12px)/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.055em;text-transform:uppercase}.aoLearnTradCardBody{padding:0 0 14px}.aoLearnTradCard h3{margin:0 0 5px;color:var(--liturgical,#c7ae6d);font:600 .78rem/1.2 var(--font-display,Georgia,serif);letter-spacing:.055em;text-transform:uppercase}.aoLearnTradCard p{margin:5px 0;color:var(--muted,rgba(238,233,223,.72));line-height:1.48}.aoLearnTradActions{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.aoLearnTradActions button,.aoLearnTradBtn{display:inline-flex;align-items:center;min-height:var(--ao-control-h,44px);padding:8px 10px;border:1px solid var(--border,rgba(255,255,255,.16));border-radius:9px;background:var(--surface-1,#102235);color:inherit;font:600 .76rem/1.2 var(--font-display,system-ui)}.aoLearnTradActions button.primary,.aoLearnTradBtn.primary{border-color:var(--liturgical-border,rgba(199,174,109,.4));background:var(--liturgical-soft,rgba(199,174,109,.13))}
 .aoLearnTradSource{margin-top:10px;padding:0;border:0;font:400 max(13px,.8125rem)/1.55 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}.aoLearnTradSource summary{cursor:pointer;min-height:var(--ao-control-h,44px);display:flex;align-items:center;color:var(--muted,rgba(238,233,223,.66));font:500 var(--ao-type-ui-sm,12px)/1.35 var(--ao-font-ui,system-ui,sans-serif)}.aoLearnTradSource a{color:var(--liturgical,#c7ae6d)}
 .aoLearnTradCompare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.aoLearnTradCompare article{padding:12px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:12px;background:var(--surface-1,#102235)}.aoLearnTradCompare h3{margin:0 0 7px;font:600 1rem/1.2 var(--font-display,Georgia,serif)}.aoLearnTradCompare p{margin:0;color:var(--muted,rgba(238,233,223,.72));line-height:1.5}
-.aoLearnTradTrainer{padding:12px 0;display:block}.aoLearnTradCue{color:var(--liturgical,#c7ae6d);font:600 .66rem/1.2 var(--font-display,serif);letter-spacing:.08em;text-transform:uppercase}.aoLearnTradPrompt{font:400 1.02rem/1.55 var(--font-liturgical,Georgia,serif);margin:8px 0 13px}.aoLearnTradAnswer{display:block;padding:9px 12px;border-left:2px solid var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07));margin:8px 0 12px}.aoLearnTradAnswer strong{display:block;font:600 1.05rem/1.55 var(--font-liturgical,Georgia,serif)}.aoLearnTradAnswer span{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}.aoLearnTradNav{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}.aoLearnTradNav button{min-height:var(--ao-control-h,44px);border:1px solid var(--border,rgba(255,255,255,.16));border-radius:10px;background:var(--surface-1,#102235);color:inherit}
+.aoLearnTradTrainer{padding:12px 0;display:block}.aoLearnTradCue{color:var(--liturgical,#c7ae6d);font:600 .66rem/1.2 var(--font-display,serif);letter-spacing:.08em;text-transform:uppercase}.aoLearnTradPrompt{font:400 1.02rem/1.55 var(--font-liturgical,Georgia,serif);margin:8px 0 13px}.aoLearnTradAnswer{display:block;padding:9px 12px;border-left:2px solid var(--liturgical,#c7ae6d);background:var(--liturgical-soft,rgba(199,174,109,.07));margin:8px 0 12px}.aoLearnTradAnswer strong{display:block;font:600 1.05rem/1.55 var(--font-liturgical,Georgia,serif)}.aoLearnTradAnswer span{display:block;color:var(--muted);font-size:.8rem;margin-top:6px}/* Deliberately compact response navigation: source-owned practice position,
+   44px icon targets, vertical content scroll and horizontal card gestures. */
+.aoLearnTradTrainer{touch-action:pan-y;outline-offset:4px}
+.aoLearnTradStepRail{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:14px;margin:0 0 22px}
+.aoLearnTradStepRail>button{width:44px;height:44px;min-height:44px;border:1px solid var(--ao-rule,rgba(255,255,255,.16));border-radius:999px;background:var(--ao-surface-1,#101821);color:var(--ao-text-primary,#e9e4d9);font:500 20px/1 var(--ao-font-ui,system-ui,sans-serif)}
+.aoLearnTradStepRail>button[disabled]{opacity:.3}
+.aoLearnTradPosition{display:grid;gap:8px;min-width:0;text-align:center}
+.aoLearnTradPosition>small{font:550 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#9ba5b1);letter-spacing:.09em}
+.aoLearnTradProgress{width:100%;height:3px;overflow:hidden;border-radius:3px;background:var(--ao-rule,rgba(255,255,255,.14))}
+.aoLearnTradProgressFill{display:block;width:var(--ao-trainer-position,0%);height:100%;background:var(--ao-liturgical-accent,var(--liturgical,#c9ad78))}
+.aoLearnTradTrainer:focus-visible{outline:2px solid var(--ao-liturgical-accent,var(--liturgical,#c9ad78))}
+@media(prefers-reduced-motion:reduce){.aoLearnTradProgressFill{transition:none}}
 .aoLearnTradPrayer{padding:14px 0;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));border-radius:0;background:transparent}.aoLearnTradPrayer h2{margin:0 0 12px;font:600 1.2rem/1.2 var(--font-display,Georgia,serif)}.aoLearnTradPrayer button{width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:400 1.02rem/1.7 var(--font-liturgical,Georgia,serif)}.aoLearnTradPrayerText{font:400 1.02rem/1.7 var(--font-liturgical,Georgia,serif)}
 .aoLearnTradSeasonList{display:grid;gap:0;border-top:1px solid var(--border,rgba(255,255,255,.13));margin:12px 0}.aoLearnTradSeason{width:100%;min-height:0;padding:13px 2px;border:0;border-bottom:1px solid var(--border,rgba(255,255,255,.13));border-radius:0;background:transparent;color:inherit;text-align:left;display:grid;gap:4px}.aoLearnTradSeason b{font:600 .98rem/1.2 var(--font-display,Georgia,serif)}.aoLearnTradSeason small{color:var(--liturgical,#c7ae6d);font-size:.69rem}.aoLearnTradSeason span{color:var(--muted);font-size:.82rem;line-height:1.4}
 @media(max-width:520px){.aoLearnTradTop{grid-template-columns:44px minmax(0,1fr) 44px}.aoLearnTradCompare{grid-template-columns:1fr}.aoLearnTradWrap{padding-left:13px;padding-right:13px}}
@@ -270,11 +281,30 @@ function speakerText(value){
 }
 function trainer(win,state){
   const x=LOW_MASS_RESPONSES_V381[state.trainerIndex]||LOW_MASS_RESPONSES_V381[0];
+  const total=LOW_MASS_RESPONSES_V381.length,index=state.trainerIndex;
+  // A rehearsal is a finite learning deck, not a scored spiritual practice.
+  // Its position follows the same source-owned card index as the responses.
+  const track=`<div class="aoLearnTradProgress" role="progressbar"
+    aria-label="${esc(L(win,"Response position","Position de la réponse"))}"
+    aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${index+1}"
+    aria-valuetext="${esc(L(win,"Response ","Réponse ")+(index+1)+L(win," of "," sur ")+total)}"
+    style="--ao-trainer-position:${((index+1)/total*100).toFixed(3)}%">
+    <span class="aoLearnTradProgressFill" aria-hidden="true"></span></div>`;
+  const rail=`<nav class="aoLearnTradStepRail" aria-label="${esc(L(win,"Response navigation","Navigation des réponses"))}">
+    <button type="button" data-ao-tradlearn-trainer="prev" aria-label="${esc(L(win,"Previous response","Réponse précédente"))}" ${index===0?"disabled":""}>←</button>
+    <div class="aoLearnTradPosition"><small>${index+1} / ${total}</small>${track}</div>
+    <button type="button" data-ao-tradlearn-trainer="next" aria-label="${esc(L(win,"Next response","Réponse suivante"))}" ${index===total-1?"disabled":""}>→</button>
+   </nav>`;
   return shell(win,
     L(win,"Serve Low Mass","Servir la Messe basse"),
     L(win,"Practice the common minister responses from the same certified 1962 Mass text already used by the Mass follower. This trains the words; it does not invent altar-server choreography.","Entraînez-vous aux réponses courantes du servant à partir du même texte certifié de la Messe de 1962 utilisé par le suivi de Messe. Ceci entraîne les paroles ; aucune chorégraphie de servant n’est inventée."),
     L(win,"1962 Mass · exact response text","Messe de 1962 · texte exact des réponses"),
-    `<section class="aoLearnTradTrainer"><div class="aoLearnTradCue">${esc(L(win,x.cue,x.cueFr))} · ${state.trainerIndex+1} / ${LOW_MASS_RESPONSES_V381.length}</div><div class="aoLearnTradPrompt">${speakerText(L(win,x.prompt,x.promptFr))}</div>${state.trainerReveal?`<div class="aoLearnTradAnswer"><strong>${speakerText(x.lat)}</strong><span>${speakerText(isFr(win)?x.fr:x.en)}</span></div>`:`<div class="aoLearnTradActions"><button type="button" class="primary" data-ao-tradlearn-reveal>${esc(L(win,"Reveal response","Afficher la réponse"))}</button></div>`}<div class="aoLearnTradNav"><button type="button" data-ao-tradlearn-trainer="prev" ${state.trainerIndex===0?"disabled":""}>← ${esc(L(win,"Previous","Précédent"))}</button><button type="button" data-ao-tradlearn-trainer="next" ${state.trainerIndex===LOW_MASS_RESPONSES_V381.length-1?"disabled":""}>${esc(L(win,"Next","Suivant"))} →</button></div></section>`+
+    `<section class="aoLearnTradTrainer" tabindex="0" role="region"
+      aria-label="${esc(L(win,"Low Mass response practice","Exercice des réponses de la Messe basse"))}">${rail}
+      <div class="aoLearnTradCue">${esc(L(win,x.cue,x.cueFr))}</div>
+      <div class="aoLearnTradPrompt">${speakerText(L(win,x.prompt,x.promptFr))}</div>
+      ${state.trainerReveal?`<div class="aoLearnTradAnswer"><strong>${speakerText(x.lat)}</strong><span>${speakerText(isFr(win)?x.fr:x.en)}</span></div>`:`<div class="aoLearnTradActions"><button type="button" class="primary" data-ao-tradlearn-reveal>${esc(L(win,"Reveal response","Afficher la réponse"))}</button></div>`}
+    </section>`+
     source(win,"Baltimore Manual · Manner of Serving Mass",TRADITIONAL_LEARN_SOURCES_V381.baltimore)
   );
 }
@@ -307,7 +337,12 @@ export function createTraditionalLearnRuntime(win=globalThis){
     const doc=win?.document;if(!doc?.body)return null;
     let node=root();if(node)return node;
     node=doc.createElement("section");node.id=TRADITIONAL_LEARN_ROOT_ID;node.dataset.aoTraditionalLearnOwner=TRADITIONAL_LEARN_VERSION;node.setAttribute("role","region");
-    node.addEventListener("click",onClick);doc.body.append(node);return node;
+    node.addEventListener("click",onClick);
+    node.addEventListener("touchstart",onTrainerTouchStart,{passive:true});
+    node.addEventListener("touchend",onTrainerTouchEnd,{passive:true});
+    node.addEventListener("touchcancel",()=>{trainerTouch=null},{passive:true});
+    node.addEventListener("keydown",onTrainerKey);
+    doc.body.append(node);return node;
   }
   function render(){
     const node=ensureRoot();if(!node||!state.route)return false;
@@ -353,6 +388,34 @@ export function createTraditionalLearnRuntime(win=globalThis){
     close();
     try{return (await win?.AO_APP_SHELL_V1?.navigate?.("mass"))??true}catch{return false}
   }
+  const advanceTrainer=delta=>{
+    if(state.route!=="learn.serve_mass.responses"||state.screen!=="module")return false;
+    const next=Math.max(0,Math.min(LOW_MASS_RESPONSES_V381.length-1,state.trainerIndex+delta));
+    if(next===state.trainerIndex)return false;
+    state.trainerIndex=next;state.trainerReveal=false;render();return true;
+  };
+  let trainerTouch=null;
+  function onTrainerTouchStart(e){
+    const target=e.target?.closest?.(".aoLearnTradTrainer");
+    if(!target||e.touches?.length!==1||e.target.closest?.("button,a,input,select,textarea,summary")){
+      trainerTouch=null;return;
+    }
+    trainerTouch={x:e.touches[0].clientX,y:e.touches[0].clientY};
+  }
+  function onTrainerTouchEnd(e){
+    const start=trainerTouch;trainerTouch=null;
+    const t=e.changedTouches?.[0];if(!start||!t)return;
+    const dx=t.clientX-start.x,dy=t.clientY-start.y;
+    if(Math.abs(dx)<72||Math.abs(dx)<Math.abs(dy)*1.35)return;
+    advanceTrainer(dx<0?1:-1);
+  }
+  function onTrainerKey(e){
+    if(!e.target?.closest?.(".aoLearnTradTrainer")||
+      e.target.closest?.("button,a,input,select,textarea,summary")||
+      e.altKey||e.ctrlKey||e.metaKey||e.shiftKey||
+      !["ArrowLeft","ArrowRight"].includes(e.key))return;
+    e.preventDefault();advanceTrainer(e.key==="ArrowRight"?1:-1);
+  }
   function onClick(e){
     const b=e.target?.closest?.("button,[data-ao-tradlearn-flip]");if(!b)return;
     if(b.matches("[data-ao-tradlearn-back]")){
@@ -372,7 +435,7 @@ export function createTraditionalLearnRuntime(win=globalThis){
     if(b.matches("[data-ao-tradlearn-mass]")){e.preventDefault();void massHandoff();return}
     if(b.matches("[data-ao-tradlearn-nuptial]")){e.preventDefault();nuptial();return}
     if(b.matches("[data-ao-tradlearn-reveal]")){e.preventDefault();state.trainerReveal=true;render();return}
-    if(b.dataset.aoTradlearnTrainer){e.preventDefault();const delta=b.dataset.aoTradlearnTrainer==="next"?1:-1;state.trainerIndex=Math.max(0,Math.min(LOW_MASS_RESPONSES_V381.length-1,state.trainerIndex+delta));state.trainerReveal=false;render()}
+    if(b.dataset.aoTradlearnTrainer){e.preventDefault();advanceTrainer(b.dataset.aoTradlearnTrainer==="next"?1:-1)}
   }
   function status(){return Object.freeze({version:TRADITIONAL_LEARN_VERSION,installed:true,open:Boolean(root()),route:state.route,screen:state.screen,responseCards:LOW_MASS_RESPONSES_V381.length,priestCeremonialExposed:false})}
   return Object.freeze({version:TRADITIONAL_LEARN_VERSION,open,close,status,render});
