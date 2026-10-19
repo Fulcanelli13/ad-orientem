@@ -24,6 +24,7 @@ on:
       - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
       - 'tests/pius-x-conversation-intent-bridge.mjs'
+      - 'tests/pius-x-pr1443-router-integration-diagnostic.mjs'
       - 'tools/formation/extract-pius-x-1905-crosswalk.py'
       - 'tools/formation/extract-pius-x-feasts-salzano.py'
       - '.github/workflows/pius-x-conversation-evidence-bridge.yml'
@@ -81,5 +82,44 @@ jobs:
         with:
           name: pius-x-feasts-salzano-source-locators
           path: research-out/pius-x-feasts-salzano-locators.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  shared-router-pr1443-integration-diagnostic:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Stage exact pinned PR 1443 router (read-only; no duplicate catalog)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin 'refs/pull/1443/head'
+          test "$(git rev-parse FETCH_HEAD)" = "b4dd46743d641bfaa6076c6bb2fd8641c47077b6" || {
+            echo 'PR #1443 moved; reconcile and repin its reviewed router before rerunning' >&2
+            exit 1
+          }
+          for file in \
+            src/learn/living-church-shared-question-router.js \
+            src/learn/living-church-hybrid-question-router.js \
+            data/learn/living-church-shared-question-routing-pilot.v1.json \
+            data/learn/living-church-symbolic-concepts.v1.json
+          do
+            dest="research-out/pr1443-router/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Execute 48 authored SPX utterances against both real router implementations
+        run: node tests/pius-x-pr1443-router-integration-diagnostic.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-pr1443-48-router-diagnostic
+          path: research-out/pius-x-pr1443-48-router-diagnostic.v1.json
           if-no-files-found: warn
           retention-days: 30
