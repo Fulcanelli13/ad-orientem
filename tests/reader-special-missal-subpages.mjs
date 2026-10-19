@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {projectSpecialRiteReadingPages,createSpecialRiteMissalPageCursor}
   from "../src/mass/reader-special-missal-pages.js";
+import {buildAspergesPayload} from "../src/mass/reader-asperges.js";
 import {buildCandlemasPayload} from "../src/mass/reader-candlemas.js";
 import {buildAshPayload} from "../src/mass/reader-ash.js";
 import {buildRogationsPayload} from "../src/mass/reader-rogations.js";
@@ -10,6 +11,7 @@ import {buildEasterVigilReader} from "../src/mass/reader-easter-vigil.js";
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const ext=load("../data/mass/special-days-extension.v1.3.json").graphs;
 const core=load("../data/mass/special-days-core.v1.1.json").graphs;
+const asp=buildAspergesPayload({graph:ext.ASP,payload:load("../data/presentation/reader-asperges.v1.json")}).cards;
 const cand=buildCandlemasPayload({
   graph:ext.CND,payload:load("../data/presentation/reader-candlemas.v1.json")}).cards;
 const ash=buildAshPayload({
@@ -23,6 +25,7 @@ const separated=buildEasterVigilReader({
   graph:core.EV,payload:evSource,fontMode:"SEPARATE_BAPTISTERY",baptismPresent:false}).steps;
 const source=(collection,id)=>collection.find(c=>c.id===id||c.recordId===id);
 const scenarios=[
+  ["ASP-R04",source(asp,"ASP-R04").paragraphs,2],
   ["CND-R01",source(cand,"CND-R01").paragraphs,6],
   ["ASH-R01",source(ash,"ASH-R01").paragraphs,5],
   ["ROG-R02",source(rog,"ROG-R02").paragraphs,1],
@@ -49,6 +52,22 @@ for(const [id,rows,min] of scenarios){
   assert.equal(projectSpecialRiteReadingPages(id,rows,{mode:"SIMPLE"}).length,1,
     id+" split SIMPLE ritual events");
 }
+const aspRows=source(asp,"ASP-R04").paragraphs;
+const aspPages=projectSpecialRiteReadingPages("ASP-R04",aspRows);
+assert.equal(aspPages.length,2);
+assert.deepEqual(aspPages.map(p=>p.rows.length),[6,3],
+  "Three paired versicles must precede the whole Oremus, collect and Amen");
+assert.equal(aspPages[1].rows[0].latin,"Orémus.");
+assert.deepEqual(aspPages.flatMap(p=>p.rows),aspRows,
+  "Asperges collector discarded source rows during page projection");
+const aspCursor=createSpecialRiteMissalPageCursor();
+assert.equal(aspCursor.project("ASP-R04",aspRows).pageIndex,0);
+assert.equal(aspCursor.turn("next"),true);
+assert.equal(aspCursor.project("ASP-R04",aspRows).pageIndex,1);
+assert.equal(aspCursor.turn("next"),false);
+assert.equal(aspCursor.project("ASP-R05",source(asp,"ASP-R05").paragraphs).pageIndex,0);
+assert.equal(aspCursor.turn("previous"),false);
+assert.equal(aspCursor.project("ASP-R04",aspRows).pageIndex,1);
 const candles=projectSpecialRiteReadingPages("CND-R01",source(cand,"CND-R01").paragraphs);
 assert.equal(candles.length,6,"Five Candlemas orations require five separate prayer pages");
 for(const page of candles.slice(1)){
@@ -129,4 +148,4 @@ assert.equal(cursor.project("CND-R01",first).pageIndex,0);
 const live=createSpecialRiteMissalPageCursor({mode:"LIVE"});
 assert.equal(live.project("CND-R01",first).totalPages,1);
 assert.equal(live.turn("next"),false);
-console.log("PASS thirteen real special-rite source groups; every canonical row survives and stage controller never advances inside a page");
+console.log("PASS fourteen real special-rite source groups; every canonical row survives and stage controller never advances inside a page");
