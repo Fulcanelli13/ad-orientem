@@ -281,3 +281,24 @@ This is deliberately narrower than prohibiting questions containing the words *s
 The `data/learn/living-church-personal-verdict-boundary-48.v1.json` editorial fixture was committed before the implementation: **24 personal-verdict refusals and 24 permitted general-topic questions, balanced English/French**. `tests/living-church-personal-verdict-safety.mjs` asserts the gate's boundary in isolation and for both real routers, including attempts to bypass it with `chosenTopicId`, a confirmed historical conversation topic or a cross-character destination. The formerly unsafe `SPXFRESH-045` is now a named *regression* case, not new evaluation data.
 
 **Scope:** this safety intervention does not fix French conceptual retrieval, the precision of post-Communion source routing, or the low positive document-recall score from the 60-question diagnostic. That first-run diagnostic remains frozen and its future repeats count only as regressions. No visitor replies, historical first-person claims or doctrine were published by these changes.
+
+
+## Liturgical role-and-moment source differentiation — regression
+
+A distinct research-only `src/learn/living-church-liturgical-source-scope.js` now preserves source-owner boundaries that were exposed by the earlier bilingual first-run probes. It does not generate source language or answer the visitor.
+
+The router distinguishes four different authorities:
+- **Lay Rosary during Mass:** original long 1905 Catechism `SPX-PILOT-02` rather than a priest's interior devotion.
+- **The communicant's thanksgiving after reception:** Salzano editorial source `SPX-PILOT-04` rather than theology of the Real Presence or tabernacle architecture.
+- **Priestly mental prayer:** `SPX-PILOT-09`, under `Haerent animo`, and only where the subject is the priest's own devotion.
+- **The priest's official Mass Postcommunion oration:** the **existing** Canon/Mass Guide authority `mass.postcommunion` at `AO.CARD.027`, not Salzano. The question is handed off only with explicit visitor acceptance when asked from another character.
+
+This distinction uses combinations of **subject, ritual time, sacramental reception and intended devotional action** in English and French, rather than mapping isolated shared words such as “priest”, “meditation”, “Communion”, or “prayer” to an arbitrary record. French apostrophes are recognized as word boundaries. If a layperson asks about generic mental prayer during Mass without an adequately identified historical passage, the router safely abstains. An exact historical URL is returned only from the pinned pointer registry, confirmation remains necessary, and altered document destinations are rejected.
+
+**Tests:** `data/learn/living-church-pius-x-liturgical-scope-26.v1.json` is a 26-case source-scope contrast fixture frozen before the first scope implementation; `tests/living-church-liturgical-source-scope.mjs` checks those cases in both real router engines, three previously observed wrong-source errors as **regressions**, direct original-link confirmation, forged-URL rejection and the Canon's published `AO.CARD.027` ownership.
+
+The [recorded isolated execution](https://github.com/Fulcanelli13/ad-orientem/blob/feature/living-church-shared-question-routing-20261019/data/learn/living-church-pius-x-liturgical-scope-result-20261019.v1.json) of the checked-in JavaScript passed **26/26 scope contrasts** in each router. Repeating the already-inspected 60-question English/French sample now yields, identically for both engines: **17/40 exact historical source matches, 23/40 safe unresolved, zero wrong historical source proposals; 8/8 held personal-answer questions refused; and 12/12 outside-source questions safely unresolved**. Of the 17 exact historical-source matches, ten are English and seven French. This is **developer regression performance**, not independent visitor accuracy, and no answer is certified.
+
+The earlier diagnostic recorded 10/40 exact historical matches, 28/40 safe unresolved and two wrong-source proposals for each engine. Its first-run record remains immutable. Separate safety work already corrected a personal-spiritual-judgment misroute and was not undone by the liturgical source correction.
+
+**Remaining product blocker:** 23/40 historically source-indexed visitor intents remain unresolved. The next stage is broader bilingual concept retrieval, not repeated synonym insertion into these evaluation fixtures. App visual-novel source openers and historically voiced replies are still not published.
