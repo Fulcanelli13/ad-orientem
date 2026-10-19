@@ -68,7 +68,13 @@ try{
     return null;
    });
    assert.ok(terminal,spec.id+" has no visible final ordinary-Mass card");
-   await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+   assert.equal(await page.locator("#ao-r17-native-reader-preview [data-reader-nav]").count(),0,
+     "Following-action rites must share the arrow-free Mass reader");
+   const advance=async()=>{
+     await page.locator("#ao-r17-native-reader-preview .ao-prayer-card").focus();
+     await page.keyboard.press("ArrowRight");
+   };
+   await advance();
    await page.waitForFunction(owner=>{
     const state=window.__AO_PHONE_PREVIEW?.getNativeEventState?.();
     return state?.specialRite===owner;
@@ -129,7 +135,7 @@ try{
         assert.notEqual((await capture()).personalPosture,"PROCESSIONAL");
       }
     }
-    await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+    await advance();
     await record("CORPUS-R05");
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setCorpusChristiSacramentalState("BENEDICTION_COMPLETE"));
     await record("CORPUS-R06");
@@ -144,11 +150,11 @@ try{
         await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setRequiemBurialParticipant(false));
         assert.notEqual((await capture()).personalPosture,"PROCESSIONAL");
       }
-      if(!current.atEnd)await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+      if(!current.atEnd)await advance();
     }
    }
    assert.deepEqual(row.states.map(s=>s.cardId),spec.expected);
-   await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+   await advance();
    const after=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getLifecycleState?.()||null);
    row.lifecycle=after;
    assert.ok(after&&!row.states.map(s=>s.cardId).includes(after?.card?.id),
