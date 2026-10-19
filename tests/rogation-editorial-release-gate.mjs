@@ -67,7 +67,7 @@ assert.equal(gate.mustNot.doubleRogationInvocations,true);
 assert.equal(gate.mustNot.modifyNativeCeremonyGraphForSourceComparison,true);
 assert.equal(gate.authorities.english1964.reproductionAllowed,false);
 assert.equal(gate.authorities.governing1962Rubric.nonDoubling,true);
-assert.equal(gate.authorities.english1964.litanyIntro.includes("2 Christe"));
-assert.equal(gate.authorities.frenchContemporary.initialLitanies.includes("0 introductory Christe"));
+assert.ok(gate.authorities.english1964.litanyIntro.includes("2 Christe"));
+assert.ok(gate.authorities.frenchContemporary.initialLitanies.includes("0 introductory Christe"));
 console.log("PASS: 187-row Rogations release gate, 37 internal formula candidates, 142 19c historical editorial candidates, 5 edition variants and 3 opening references; no unauthorized EN/FR promotion.");
 
