@@ -55,3 +55,133 @@ export function specialRiteVernacular(row,{language="en"}={}){
   const source=french?(row?.french??row?.fr):(row?.vernacular??row?.english??row?.en);
   return typeof source==="string"&&source.trim()?source:null;
 }
+
+
+// Explicitly sourced prayer/response group boundaries. All other stages
+// remain intact until each source has a certified prayer subdivision.
+const GROUPED_RITES=new Set([
+  "CND-R01","ASH-R01","ROG-R02","ROG-R03","ROG-R05",
+  "EV-LIT1-400","EV-LIT2-600","EV-FONT-420","EV-FONT-440"
+]);
+function isCardGroup(id){return /^(?:CND-R01|ASH-R01|ROG-R02|ROG-R03|ROG-R05)$/.test(id)}
+function asId(row){return String(row?.id??"")}
+function freezePages(groups,sourceRows,stageId){
+  const flat=groups.flat();
+  if(flat.length!==sourceRows.length ||
+    flat.some((row,i)=>row!==sourceRows[i]))
+    throw new Error("SPECIAL_MISSAL_SOURCE_PARITY:"+stageId);
+  if(groups.some(x=>!x.length))throw new Error("SPECIAL_MISSAL_EMPTY_PAGE:"+stageId);
+  return Object.freeze(groups.map((group,i)=>Object.freeze({
+    stageId,index:i,total:groups.length,
+    rows:Object.freeze([...group]),
+    sourceIds:Object.freeze(group.map(row=>asId(row))),
+    firstSourceId:asId(group[0]),lastSourceId:asId(group.at(-1)),
+    displayOnly:true,
+  })));
+}
+function consecutiveGroups(rows,getGroup){
+  const groups=[];
+  let previous=null;
+  for(let i=0;i<rows.length;i++){
+    const id=getGroup(rows[i],i);
+    if(id!==previous)groups.push([]);
+    groups.at(-1).push(rows[i]);previous=id;
+  }
+  return groups;
+}
+function batchGroups(groups,maxCount){
+  const pages=[];
+  for(let i=0;i<groups.length;i+=maxCount)pages.push(groups.slice(i,i+maxCount).flat());
+  return pages;
+}
+
+/** Split only already-delimited *source rows*, never a word, prayer body,
+ * response pair, baptism formula, or original source event. The row arrays
+ * must flatten back to exact original object references in the same order.
+ */
+export function projectSpecialRiteReadingPages(stageId,paragraphs,{mode="MISSAL"}={}){
+  const rows=Array.isArray(paragraphs)?paragraphs:[];
+  const id=String(stageId??"");
+  if(String(mode).toUpperCase()!=="MISSAL" || !GROUPED_RITES.has(id) || !rows.length)
+    return freezePages([rows],rows,id);
+  let groups=null;
+  if(id==="CND-R01"||id==="ASH-R01"){
+    // Introductory antiphon/versicles, then each complete Orémus + prayer
+    // + Amen. Each of the five Candlemas/four Ash orations stays whole.
+    const head=rows.findIndex(row=>/-O(?:\d+)-INTRO$/.test(asId(row)));
+    if(head<1)return freezePages([rows],rows,id);
+    groups=[rows.slice(0,head)];
+    const remaining=rows.slice(head);
+    const prayerGroups=consecutiveGroups(remaining,(row,index)=>{
+      const match=asId(row).match(/-O(\d+)(?:-INTRO|-AMEN)?$/);
+      return match?match[1]:"TAIL_"+index;
+    });
+    groups.push(...prayerGroups);
+  }else if(id==="ROG-R02"||id==="EV-LIT1-400"||id==="EV-LIT2-600"){
+    // V/R source-line pairs are indivisible; 12 pairs per reading page.
+    if(rows.length%2!==0)return freezePages([rows],rows,id);
+    groups=batchGroups(Array.from({length:rows.length/2},(_,i)=>rows.slice(i*2,i*2+2)),12);
+  }else if(id==="ROG-R03"){
+    // The existing procession litany is sequential source invocations,
+    // not a single prose prayer: pairs are preserved within 24-line pages.
+    if(rows.length%2!==0)return freezePages([rows],rows,id);
+    groups=batchGroups(Array.from({length:rows.length/2},(_,i)=>rows.slice(i*2,i*2+2)),12);
+  }else if(id==="ROG-R05"){
+    // Ten separately sourced concluding prayers; never split any oration.
+    const prayers=rows.filter(row=>/^ROG-R05-O\d+$/.test(asId(row)));
+    const after=rows.slice(prayers.length);
+    if(prayers.length<2)return freezePages([rows],rows,id);
+    groups=[...batchGroups(prayers.map(p=>[p]),2),...(after.length?[after]:[])];
+  }else if(id==="EV-FONT-420"||id==="EV-FONT-440"){
+    // The 17 distinct 1962 font-blessing segments remain whole even if
+    // one source segment contains a very long multi-line prayer.
+    const paragraphsBySource=consecutiveGroups(rows,(row,i)=>{
+      const source=asId(row);
+      const m=source.match(/^(EV-FONT-B07-.+)-(\d+)$/);
+      return m?m[1]:"SOURCE_"+i;
+    });
+    groups=paragraphsBySource;
+  }
+  if(!groups||groups.length<2)return freezePages([rows],rows,id);
+  return freezePages(groups,rows,id);
+}
+
+/** A reading cursor INSIDE one stage. The returned true means the arrow
+ * was consumed within that stage: the underlying rite/event index must NOT
+ * advance. Previous at stage entry will reopen the prior stage's last page.
+ */
+export function createSpecialRiteMissalPageCursor({mode="MISSAL"}={}){
+  let stageId=null,active=null,pageIndex=0,enterFrom="next";
+  function project(id,sourceRows){
+    const key=String(id??"");
+    const reset=stageId!==key;
+    if(reset){
+      stageId=key;
+      active=projectSpecialRiteReadingPages(key,sourceRows,{mode});
+      pageIndex=enterFrom==="previous"?active.length-1:0;
+      enterFrom="next";
+    }else if(!active || active.flatMap(p=>p.rows).length!==(sourceRows??[]).length){
+      active=projectSpecialRiteReadingPages(key,sourceRows,{mode});
+      pageIndex=Math.min(pageIndex,active.length-1);
+    }
+    const page=active[pageIndex];
+    return Object.freeze({
+      stageId:key,pageIndex,totalPages:active.length,
+      sourceRowCount:(sourceRows??[]).length,
+      paragraphs:page.rows,
+      hasPreviousPage:pageIndex>0,hasNextPage:pageIndex<active.length-1,
+      isExtraPage:active.length>1,
+      firstSourceId:page.firstSourceId,lastSourceId:page.lastSourceId,
+      displayOnly:true,
+    });
+  }
+  function turn(direction){
+    if(direction==="next"&&pageIndex<(active?.length??1)-1){pageIndex++;return true}
+    if(direction==="previous"&&pageIndex>0){pageIndex--;return true}
+    enterFrom=direction==="previous"?"previous":"next";
+    return false;
+  }
+  function clear(){stageId=null;active=null;pageIndex=0;enterFrom="next";}
+  return Object.freeze({project,turn,clear,
+    snapshot:()=>Object.freeze({stageId,pageIndex,totalPages:active?.length??0})});
+}
