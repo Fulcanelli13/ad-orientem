@@ -71,7 +71,7 @@ assert.equal(ambiguous.reason,"EMBEDDING_AMBIGUOUS");
 assert.equal(ambiguous.options.length,2);
 assert.ok(ambiguous.options.every(x=>x.answerText===null));
 assert.equal(router.acceptHandoff(ambiguous,{accept:true}).kind,"invalid_handoff");
-emitted=Array.from({length:N},(_,i)=>i===topics.indexOf("objects.pall")?.6:.8*(i===topics.indexOf("objects.chalice")?1:0));
+emitted=Array.from({length:N},()=>1/Math.sqrt(N));
 const weak=await router.match(q);
 assert.equal(weak.kind,"no_coverage");
 assert.equal(weak.reason,"EMBEDDING_LOW_SIMILARITY");
