@@ -25,7 +25,9 @@ on:
       - "tests/reader-asperges.mjs"
       - "tests/reader-annexed-rites-acceptance.mjs"
       - "tests/annexed-text-owner-reconciliation.mjs"
+      - "tests/annexed-draft-translation-collisions.mjs"
       - "tools/mass/reconcile-annexed-text-owners.mjs"
+      - "tools/mass/reconcile-annexed-translation-collisions.mjs"
       - "tests/reader-eucharistic-hymn-text.mjs"
       - "tests/reader-holy-thursday-psalm.mjs"
       - "tests/reader-requiem-bilingual.mjs"
@@ -56,6 +58,8 @@ jobs:
         run: node tests/reader-eucharistic-hymn-text.mjs
       - name: Reconcile annexed texts against existing canonical English/French owners before duplicate translation
         run: node tests/annexed-text-owner-reconciliation.mjs
+      - name: Compare provisional annex English/French wording against existing Ordinary owners
+        run: node tests/annexed-draft-translation-collisions.mjs
       - name: Verify all conditional Requiem Absolution English/French source rows
         run: node tests/reader-requiem-bilingual.mjs
       - name: Verify Holy Thursday bilingual Psalm and clerics/no-clerics 1962 branch
