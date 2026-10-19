@@ -143,6 +143,17 @@ try{
         assert.equal(await rows(),2,"Pange lingua last two stanzas not printed");
         assert.equal(await page.locator(".ao-line-secondary").count(),2,
           "Second Corpus Christi hymn page silently fell back to Latin only");
+        await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("LIVE"));
+        assert.equal(await stage(),"CORPUS-R02",
+          "Switching to LIVE unexpectedly advanced the Eucharistic procession");
+        assert.equal(await rows(),4,
+          "LIVE must display the intact four-stanza hymn source");
+        await page.evaluate(()=>window.__AO_PHONE_PREVIEW.setPresentationMode("MISSAL"));
+        assert.equal(await stage(),"CORPUS-R02");
+        assert.equal(await rows(),2,
+          "Returning to MISSAL did not reconstruct the initial hymn subpage");
+        await click();
+        assert.equal(await stage(),"CORPUS-R02");
         await click();
         assert.equal(await stage(),"CORPUS-R03");
         assert.notEqual(await page.evaluate(()=>
