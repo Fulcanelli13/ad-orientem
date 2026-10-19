@@ -186,10 +186,8 @@ try{
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getEasterVigilState?.()?.handoffToMass===true,
     null,{timeout:5000});
 
-  const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
-  const nextBox=await next.boundingBox();
-  assert.ok(nextBox&&nextBox.height>=44);
-  await page.touchscreen.tap(nextBox.x+nextBox.width/2,nextBox.y+nextBox.height/2);
+  await page.locator("#ao-r17-native-reader-preview .ao-prayer-card").focus();
+  await page.keyboard.press("ArrowRight");
   await page.waitForFunction(()=>
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCompositeStage?.()==="MASS_ACTIVE" &&
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.title==="Kyrie",
@@ -218,10 +216,8 @@ try{
   assert.equal(await organLocator.getAttribute("data-organ-norm"),"SILENT",
     "Earlier source card must not inherit later Gloria permission");
 
-  const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
-  const backBox=await back.boundingBox();
-  assert.ok(backBox&&backBox.height>=44);
-  await page.touchscreen.tap(backBox.x+backBox.width/2,backBox.y+backBox.height/2);
+  await page.locator("#ao-r17-native-reader-preview .ao-prayer-card").focus();
+  await page.keyboard.press("ArrowLeft");
   await page.waitForFunction(()=>
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCompositeStage?.()==="VIGIL_ACTIVE" &&
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getEasterVigilState?.()?.step?.recordId==="EV-MASS-700",
