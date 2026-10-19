@@ -11,7 +11,7 @@ export const BELL_CUE_BINDINGS=Object.freeze([
   Object.freeze({cueId:"AO.SM.C0161",label:"WARNING BELL",detail:"Before Consecration",canonicalEventIds:Object.freeze(["MC-CAN-070"])}),
   Object.freeze({cueId:"AO.SM.C0174",label:"ELEVATION BELL",detail:"Sacred Host",canonicalEventIds:Object.freeze(["MC-CNS-030","MC-CNS-040"])}),
   Object.freeze({cueId:"AO.SM.C0181",label:"ELEVATION BELL",detail:"Precious Blood",canonicalEventIds:Object.freeze(["MC-CNS-100","MC-CNS-110"])}),
-  Object.freeze({cueId:"AO.SM.C0225",label:"COMMUNION WARNING",detail:"Shortly after Agnus Dei",canonicalEventIds:Object.freeze(["MC-COM-185"])}),
+  Object.freeze({cueId:"AO.SM.C0225",label:"COMMUNION WARNING",detail:"Before Communion of the faithful",canonicalEventIds:Object.freeze(["MC-COM-185"])}),
 ]);
 
 // Published 1962 Canon source has five *rubric stages* in each of two
@@ -80,12 +80,50 @@ export function resolveCanonStageBellCinematic({
   });
 }
 
+// The five SOURCE TEXT landmarks are not equivalent to a verified sound
+// timestamp. A Sung Sanctus cue is SCHOLA_PUBLIC, while the Sanctus altar
+// bell accompanies the priest's recitation; the two can be asynchronous.
+// Similarly the 1962 rubrics give a warning window before the Consecration
+// and shortly before Communion, not a universal word-by-word timestamp.
+export const BELL_SOURCE_WINDOWS=Object.freeze({
+  "AO.SM.C0145":Object.freeze({
+    sourceClock:"SCHOLA_PUBLIC",rubricalWindow:"PRIEST_RECITES_SANCTUS",
+    timingPrecision:"APPROXIMATE_SOURCE_TEXT_LANDMARK",
+    reason:"PRIEST_SANCTUS_MAY_DIFFER_FROM_SCHOLA_SINGING",
+    witness:"RITUS_SERVANDUS_VII_8__SUNG_CHANT_INDEPENDENT",
+  }),
+  "AO.SM.C0161":Object.freeze({
+    sourceClock:"PRIEST_PRIVATE",rubricalWindow:"SHORTLY_BEFORE_CONSECRATION",
+    timingPrecision:"COMMON_ANCHOR_NOT_MANDATED_EXACT_WORD",
+    reason:"HANC_IGITUR_IS_USUAL_GESTURE_NOT_REQUIRED_BELL_WORD",
+    witness:"RITUS_SERVANDUS_VIII_6",
+  }),
+  "AO.SM.C0174":Object.freeze({
+    sourceClock:"PRIEST_ACTION",rubricalWindow:"HOST_GENUFLECTION_ELEVATION_SEQUENCE",
+    timingPrecision:"COMBINED_ACTION_CUE_NEEDS_STAGE_OBSERVATION",
+    reason:"C0174_CONTAINS_BOTH_GENUFLECTIONS_AND_ELEVATION",
+    witness:"RITUS_SERVANDUS_VIII_6",
+  }),
+  "AO.SM.C0181":Object.freeze({
+    sourceClock:"PRIEST_ACTION",rubricalWindow:"CHALICE_GENUFLECTION_ELEVATION_SEQUENCE",
+    timingPrecision:"COMBINED_ACTION_CUE_NEEDS_STAGE_OBSERVATION",
+    reason:"C0181_CONTAINS_BOTH_GENUFLECTIONS_AND_ELEVATION",
+    witness:"RITUS_SERVANDUS_VIII_6",
+  }),
+  "AO.SM.C0225":Object.freeze({
+    sourceClock:"PRIEST_PRIVATE",rubricalWindow:"SHORTLY_BEFORE_FAITHFUL_COMMUNION",
+    timingPrecision:"APPROXIMATE_SOURCE_TEXT_LANDMARK",
+    reason:"DOMINE_NON_SUM_DIGNUS_PATTERN_CUSTOMARY_NOT_UNIVERSAL",
+    witness:"RITUS_SERVANDUS_X_6",
+  }),
+});
+
 const CINEMATIC_BY_CUE=Object.freeze({
   "AO.SM.C0145":Object.freeze({kind:"BELL",title:"SANCTUS BELL",subtitle:"SANCTUS",durationMs:1350}),
   "AO.SM.C0161":Object.freeze({kind:"BELL",title:"WARNING BELL",subtitle:"BEFORE CONSECRATION",durationMs:1350}),
   "AO.SM.C0174":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"SACRED HOST",durationMs:3450}),
   "AO.SM.C0181":Object.freeze({kind:"ELEVATION",title:"ELEVATION",subtitle:"PRECIOUS BLOOD",durationMs:3450}),
-  "AO.SM.C0225":Object.freeze({kind:"BELL",title:"COMMUNION WARNING",subtitle:"SHORTLY AFTER AGNUS DEI",durationMs:1350}),
+  "AO.SM.C0225":Object.freeze({kind:"BELL",title:"COMMUNION WARNING",subtitle:"BEFORE COMMUNION OF THE FAITHFUL",durationMs:1350}),
 });
 
 export const ACTION_CINEMATIC_BINDINGS=Object.freeze([
@@ -136,6 +174,8 @@ export function validateReaderTransientBindings(events){
   const index=eventIndex(events);
   const canonicalEventIds=new Set();
   for(const binding of BELL_CUE_BINDINGS){
+    if(!Object.hasOwn(BELL_SOURCE_WINDOWS,binding.cueId))
+      throw Error("Unverified source timing for bell cue "+binding.cueId);
     if(!/^AO\.SM\.C\d{4}$/.test(binding.cueId))throw new Error("Invalid recovered bell cue "+binding.cueId);
     for(const eventId of binding.canonicalEventIds){
       const event=index.get(eventId);
@@ -253,6 +293,9 @@ export function createReaderTransientController({events,prepared}={}){
         label:binding.label,detail:binding.detail,cueId:id,
         canonicalEventIds:binding.canonicalEventIds,
         soundEvents:Object.freeze(soundEvents),
+        sourceTiming:BELL_SOURCE_WINDOWS[id],
+        status:"EXPECTED_NOT_OBSERVED",
+        observedNow:false,actuallyHeard:"UNKNOWN",notAnObservation:true,
         phases:CANON_ELEVATION_BELL_PHASES[id]??null,
         presentationHoldMs:presentationSpec?.kind==="ELEVATION" ? 3600 : (presentationSpec?.durationMs??0),
         transient:true,owner:"R17_RECOVERED_CUE_CANONICAL_SOUND_EVENT",
@@ -264,6 +307,8 @@ export function createReaderTransientController({events,prepared}={}){
         transient:true,
         owner:spec.kind==="ELEVATION" ? "R17_EXACT_ELEVATION_CINEMATIC" : "R17_EXACT_BELL_CINEMATIC",
         canonicalAuthority:false,
+        observedNow:false,notAnObservation:true,
+        timingPrecision:BELL_SOURCE_WINDOWS[id]?.timingPrecision??"UNVERIFIED",
       }) : null;
       cinematicOwner=bellCinematic?.owner??"R17_EXACT_CUE_NONE";
     }
