@@ -97,6 +97,10 @@ for(const gap of ["SPX-PILOT-11","SPX-PILOT-12"]){
 const firstPersonOnly=pilot.episodes.filter(e=>e.turns.some(t=>/\bI\b/.test(t.language.en.response))).map(x=>x.id);
 assert.deepEqual(firstPersonOnly,["SPX-PILOT-01"],"First-person biographical claims must be limited to documented E supremi context");
 const decree=pilot.episodes.find(e=>e.id==="SPX-PILOT-10");
-assert.match(decree.turns[0].language.en.response,/Congregation.*approved by Pius X/);
-assert.match(decree.turns[0].language.fr.response,/Congrégation.*approuvé par Pie X/);
+assert.equal(decree.sourceAttribution,"PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT");
+assert.match(decree.turns[0].language.en.response,/beginning of the use of reason/);
+assert.match(decree.turns[0].language.fr.response,/commencement de l’usage de raison/);
+assert.doesNotMatch(decree.turns[0].language.en.response,/I issued|I wrote|my encyclical/);
+assert.doesNotMatch(decree.turns[0].language.fr.response,/j.ai écrit|mon encyclique/);
+assert.equal(decree.voiceOwnerReview,"PR_1419_STYLE_ONLY_UNREVIEWED");
 console.log("PASS ten Pius X content-owned bilingual conversation drafts, 30 turns/60 localised replies, exact source pointers and zero publication approvals");
