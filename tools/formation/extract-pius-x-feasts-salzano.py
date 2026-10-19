@@ -45,7 +45,16 @@ def parse_salzano(text):
     # The museum transcription joins the printed editorial 405 to the preceding answer.
     # Recover that printed heading explicitly without renumbering or guessing prose.
     text=re.sub(r"(?<=\w)(405\s*[–—-])",r"\n\1",text)
-    qs=list(SALZANO_Q.finditer(text))
+    raw=list(SALZANO_Q.finditer(text))
+    # A later stray "1 –" in page furniture/editorial material is not part of
+    # the continuous 1..577 editorial sequence; hold and exclude only that
+    # demonstrably out-of-order second occurrence of 1.
+    qs=[]
+    for m in raw:
+        number=int(m.group(1))
+        if number==1 and qs and int(qs[-1].group(1))>10:
+            continue
+        qs.append(m)
     return [{"id":f"PX-SALZANO-EDITORIAL-POS{i+1:03}",
              "editorial_printed_number":int(m.group(1)),
              "question_sha256":digest(m.group(2)),
