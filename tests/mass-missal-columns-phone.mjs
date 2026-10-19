@@ -109,6 +109,12 @@ try{
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId),
     "AO.MISSAL.010.1.p2",
     "Posture turn did not open the next source-owned bilingual Missal page");
+  const newPageState=await page.evaluate(()=>({
+    active:window.__AO_PHONE_PREVIEW.getActiveCue(),
+    posture:window.__AO_PHONE_PREVIEW.getCueState()?.posture?.value,
+  }));
+  assert.deepEqual(newPageState,{active:"AO.SM.C0109",posture:"SIT"},
+    "Opening a Proper-led posture page lost the R17 cue or displayed posture");
   assert.ok(await page.locator('.ao-reader-paragraph[data-missal-paired="true"]').count()>0,
     "Posture page turn lost synchronized Latin and vernacular text");
   // Real Missal navigation: the source-owned B032 heading is an ordinary
