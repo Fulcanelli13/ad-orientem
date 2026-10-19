@@ -1,0 +1,29 @@
+name: Visible Mass M6 B28 provisional object QA contract
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - tests/visible-mass-m6-single-hero-b28-contract.mjs
+      - previews/visible-mass-3d/M6_B28_ORIGINAL_PIXEL_VISUAL_QA_20261019.v1.json
+      - previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v8.json
+      - .github/workflows/visible-mass-m6-b28-contract.yml
+  pull_request:
+    paths:
+      - tests/visible-mass-m6-single-hero-b28-contract.mjs
+      - previews/visible-mass-3d/M6_B28_ORIGINAL_PIXEL_VISUAL_QA_20261019.v1.json
+      - previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v8.json
+      - .github/workflows/visible-mass-m6-b28-contract.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/visible-mass-m6-single-hero-b28-contract.mjs
