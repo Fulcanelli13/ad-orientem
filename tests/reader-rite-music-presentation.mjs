@@ -119,6 +119,27 @@ assert.equal(organ({riteId:"EASTER_VIGIL_MASS",massCard:massCards[1],
 assert.equal(organ({riteId:"EASTER_VIGIL_MASS",massCard:massCards[0],
   massModel:{easterVigil:true,cards:[massCards[0]]}}),null,
   "Missing source-owned Gloria boundary must fail closed");
+assert.equal(organ({riteId:"HOLY_THURSDAY_POST",stageId:"HT-R05"}).status,"SILENT");
+assert.equal(organ({riteId:"REQUIEM_ABSOLUTION",stageId:"ABS-R03"}).status,"SILENT");
+assert.equal(organ({riteId:"CORPUS_CHRISTI_PROCESSION",stageId:"CORPUS-R02"}),null,
+  "Generic processional organ status requires evidence");
+assert.equal(organ({riteId:"CORPUS_CHRISTI_PROCESSION",stageId:"CORPUS-R05"}).status,"PERMITTED",
+  "Benediction retains its distinct 1958 instrument exception");
+assert.equal(organ({riteId:"GENERIC_PROCESSION",stageId:"PROC-R02"}),null);
+assert.equal(organ({massCard:{sectionId:"AO.CANON.02",
+  blocks:[{blockId:"AO.SM.B052"}]}}).status,"SILENT",
+  "Universal Consecration silence must not depend on calendar guessing");
+assert.equal(organ({massCard:{sectionId:"AO.CANON.04",
+  blocks:[{blockId:"AO.SM.B053"}]}}).status,"SILENT");
+const holyThursday={overlays:[],provenance:{organ1962:{
+  verified:true,source:"LITURGICAL_PLAN_1962",season:"LENT",
+  triduum:true,holyThursdayMass:true,
+}}};
+assert.equal(organ({massCard:massCards[0],resolvedMass:holyThursday}).status,"SILENT");
+assert.equal(organ({massCard:massCards[1],resolvedMass:holyThursday}).status,"PERMITTED",
+  "Holy Thursday exception must belong to Gloria only");
+assert.equal(organ({massCard:massCards[2],resolvedMass:holyThursday}).status,"SILENT",
+  "Holy Thursday organ continued past the Gloria exception");
 const requiem={overlays:["REQUIEM"],provenance:null};
 assert.equal(organ({massCard:massCards[1],resolvedMass:requiem}).status,"ACCOMPANIMENT_ONLY");
 assert.equal(organ({massCard:massCards[1],resolvedMass:{overlays:[]}}),null,
