@@ -226,6 +226,16 @@ const SHELL_STYLE = `
 }
 .ao-prayer-title[hidden]{display:none}
 .ao-prayer-body{max-width:790px;margin:0 auto;display:flex;flex-direction:column;gap:4px}
+/* Deliberate pause between distinct source prayers, not between lines of
+   one prayer. Keep real text untouched so focus and icon cues remain tied
+   to their exact source paragraphs; add only section-level whitespace. */
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
+  .ao-reader-paragraph[data-section-boundary="SOURCE_BLOCK"]{margin-block-start:18px}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
+  .ao-reader-paragraph[data-section-boundary="ORATION_GROUP"]{margin-block-start:22px}
+.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-live-invitation="true"]
+  .ao-line-secondary{display:block;margin-top:2px;font-style:italic}
+
 .ao-reader-paragraph{
   position:relative;margin:0 0 2px;padding:2px 0;border-radius:6px;
   font:400 clamp(1.18rem,2.45vw,1.68rem)/1.69 var(--ao-font-liturgical,Georgia,"Times New Roman",serif);
@@ -1498,6 +1508,9 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       speakerEvidence:p.speakerEvidence??null,
       liturgicalGroup:p.liturgicalGroup??null,
       prayerRole:p.prayerRole??null,
+      languageOwner:p.languageOwner??null,
+      sourceBlockId:p.sourceBlockId??null,
+      sectionBoundaryBefore:p.sectionBoundaryBefore??null,
       sourcePath:p.sourcePath??null,
       sourceAnchorCueId:p.sourceAnchorCueId??null,
       sourceCueIds:Object.freeze([...(p.sourceCueIds ?? (p.id ? [p.id] : []))].map(String)),
@@ -3203,6 +3216,10 @@ export function createReaderDomAdapter({
           if(p.speakerRole)node.dataset.speakerRole=p.speakerRole;
           if(p.liturgicalGroup)node.dataset.liturgicalGroup=p.liturgicalGroup;
           if(p.prayerRole)node.dataset.prayerRole=p.prayerRole;
+          if(p.sourceBlockId)node.dataset.sourceBlockId=p.sourceBlockId;
+          if(p.sectionBoundaryBefore)node.dataset.sectionBoundary=p.sectionBoundaryBefore;
+          if(p.languageOwner==="SOURCE_PUBLIC_LIVE_INVITATION")
+            node.dataset.liveInvitation="true";
           if(p.sourceAnchorCueId)node.dataset.sourceAnchorCueId=p.sourceAnchorCueId;
           if([p.primary,p.secondary,p.alternate].some(value=>String(value??"").includes("\n")))
             node.dataset.chantPhrased="true";
