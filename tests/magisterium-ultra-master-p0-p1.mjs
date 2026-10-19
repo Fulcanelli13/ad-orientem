@@ -242,7 +242,7 @@ assert.equal(reviewMap.get("PX1912-Q359").precision,"PASTORAL_METHOD_ONLY");
 assert.equal(reviewMap.get("PX1912-Q363").precision,"CONTRAST_ONLY");
 const editions=await read("data/learn/magisterium-denzinger-edition-bibliography.v1.json");
 assert.equal(editions.schema,"AO_MAGISTERIUM_DENZINGER_EDITION_BIBLIOGRAPHY_V1");
-assert.equal(editions.editions.length,7);
+assert.equal(editions.editions.length,8);
 assert.equal(editions.metrics.printedEntryNumbersChecked,0);
 assert.equal(editions.metrics.approvedCrosswalks,0);
 for(const edition of editions.editions){
@@ -284,7 +284,7 @@ for(const q of b7qa.records){
  assert.equal(q.printOriginalCollated,false);
  assert.equal(q.publiclyUsable,false);
 }
-assert.equal(editions.metrics.bibliographicEditions,7);
+assert.equal(editions.metrics.bibliographicEditions,8);
 assert.equal(editions.metrics.scannedHistoricalLatinVolumesLocated,1);
 assert.equal(editions.metrics.editionVerifiedConcordances,0);
 const year1900=editions.editions.find(x=>x.id==="DZ_1900_LATIN_PRINT");
@@ -294,5 +294,56 @@ assert.equal(bridges.b8CharacterSermonSourceGate.verifiedSermonPassagesInThisBra
 assert.equal(bridges.b8CharacterSermonSourceGate.approvedFirstPersonChanoineResponses,0);
 assert.equal(bridges.b8CatechismPrintReview.frenchPrintVerifiedQAsInBridge,5);
 assert.equal(bridges.b8CatechismPrintReview.original1912ItalianFacsimileVerifiedQAs,0);
+
+
+const legacy1911=await read("data/learn/magisterium-denzinger-1911-ocr-entry-review.v1.json");
+assert.equal(legacy1911.schema,"AO_MAGISTERIUM_1911_DENZINGER_OCR_ENTRY_LEADS_V1");
+assert.equal(legacy1911.metrics.named1911OcrMatches,13);
+assert.equal(legacy1911.metrics.photographicPrintPageNumberCertifications,0);
+assert.equal(legacy1911.metrics.DSDHModernEditionCertifications,0);
+assert.equal(legacy1911.metrics.readyForPublicUse,0);
+assert.equal(legacy1911.records.length,13);
+const legIds=new Set(),legNums=new Set();
+for(const r of legacy1911.records){
+ assert.ok(!legIds.has(r.passageId));legIds.add(r.passageId);
+ assert.ok(!legNums.has(r.legacyDzNumber));legNums.add(r.legacyDzNumber);
+ assert.equal(idMap.get(r.passageId)?.crosswalkCandidate?.oldNumber,r.legacyDzNumber);
+ assert.equal(r.editionId,"DZ11_BANNWART_1911");
+ assert.match(r.sourceOcrUrl,/^https:\/\/archive.org\/stream\/enchiridionsymbo00denz\//);
+ assert.equal(r.legacyEntryNumberAndTopicObservedInOCR,true);
+ assert.equal(r.printedPageImageExamined,false);
+ assert.equal(r.facsimileNumberCertified,false);
+ assert.equal(r.modernDSDHNumberCertified,false);
+ assert.equal(r.publicationApproved,false);
+}
+assert.equal(editions.metrics.namedEditionLegacyNumberOcrLeads,13);
+assert.ok(editions.editions.some(e=>e.id==="DZ11_BANNWART_1911"));
+assert.equal(editions.metrics.printedEntryNumbersChecked,0);
+assert.equal(passages.editionVerifiedCrosswalks,0);
+const homilyLeads=await read("data/learn/magisterium-chanoine-external-sermon-leads.v1.json");
+assert.equal(homilyLeads.schema,"AO_MAGISTERIUM_CHANOINE_EXTERNAL_SERMON_LEADS_V1");
+assert.equal(homilyLeads.metrics.externalAttributedSermonPagesReviewed,6);
+assert.equal(homilyLeads.metrics.provisionalMagisteriumPassageRelations,12);
+assert.equal(homilyLeads.metrics.certifiedHomilyBankIds,0);
+assert.equal(homilyLeads.metrics.approvedCharacterDialogues,0);
+assert.equal(homilyLeads.metrics.publishedLinks,0);
+assert.equal(homilyLeads.policy.noQuotedSermonTextStored,true);
+const sermonUrls=new Set();
+for(const s of homilyLeads.records){
+ assert.ok(s.sourceUrl.startsWith("https://laportelatine.org/"));
+ assert.ok(!sermonUrls.has(s.sourceUrl));sermonUrls.add(s.sourceUrl);
+ assert.equal(s.originalHomilyBankCanonicalId,null);
+ assert.equal(s.sourceTextCopied,false);
+ assert.equal(s.approvedFirstPersonSpeech,false);
+ assert.equal(s.sourceRightsClearance,"NOT_CLEARED");
+ assert.ok(s.provisionalMatches.length>0);
+ for(const link of s.provisionalMatches){
+  assert.ok(idMap.has(link.passageId),link.passageId);
+  assert.equal(link.published,false);
+ }
+}
+assert.equal(bridges.b9ChanoinePrimaryWebWitnesses.externallyDatedSeromsWithTranscripts,6);
+assert.equal(bridges.b9ChanoinePrimaryWebWitnesses.canonicalHomilyRegistryIdsVerified,0);
+assert.equal(bridges.b9ChanoinePrimaryWebWitnesses.approvedFirstPersonDialogue,0);
 
 console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 106 provisional links; 61 nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
