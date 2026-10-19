@@ -69,6 +69,8 @@ assert.deepEqual(requiemFinalBlessingOmittedCuesForResolvedMass(requiem),
  ["AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266"]);
 const variant=requiemOffertoryIncensationVariantsForResolvedMass(requiem);
 assert.match(variant["AO.SM.C0124"].en,/Only the celebrant is incensed/);
+assert.equal(variant["AO.SM.C0124"].lat,"[Incensatur solus celebrans]",
+ "1962 Requiem Latin rubric must not display English placeholder text");
 assert.ok(!requiemOffertoryIncensationVariantsForResolvedMass(normal));
 assert.equal(reg.invariants.latinTextMutation,false);
 assert.equal(reg.invariants.englishTextMutation,false);
