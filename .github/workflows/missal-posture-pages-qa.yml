@@ -13,6 +13,7 @@ on:
       - "tests/reader-missal-posture-pages.mjs"
       - "tests/reader-special-missal-pages.mjs"
       - "tests/reader-prayer-over-people.mjs"
+      - "tests/reader-easter-vigil.mjs"
       - "tests/reader-mode-switch.mjs"
       - ".github/workflows/missal-posture-pages-qa.yml"
   workflow_dispatch:
@@ -30,6 +31,8 @@ jobs:
         run: node tests/reader-missal-posture-pages.mjs
       - name: Verify real Lenten Prayer over the People survives Mass Missal
         run: node tests/reader-prayer-over-people.mjs
+      - name: Verify Easter Vigil real French/English source-line ownership
+        run: node tests/reader-easter-vigil.mjs
       - name: Verify source-owned special-rite page cues
         run: node tests/reader-special-missal-pages.mjs
       - name: Verify canonical mode-switch and card anchors unchanged
