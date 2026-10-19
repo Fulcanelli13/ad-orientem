@@ -302,3 +302,33 @@ The [recorded isolated execution](https://github.com/Fulcanelli13/ad-orientem/bl
 The earlier diagnostic recorded 10/40 exact historical matches, 28/40 safe unresolved and two wrong-source proposals for each engine. Its first-run record remains immutable. Separate safety work already corrected a personal-spiritual-judgment misroute and was not undone by the liturgical source correction.
 
 **Remaining product blocker:** 23/40 historically source-indexed visitor intents remain unresolved. The next stage is broader bilingual concept retrieval, not repeated synonym insertion into these evaluation fixtures. App visual-novel source openers and historically voiced replies are still not published.
+
+
+## Source-owned bilingual doctrinal concept navigation — first run and guarded regression
+
+The router now has a **seven-family St Pius X bilingual doctrinal concept index** in `data/learn/living-church-pius-x-source-concept-facets.v1.json`, with a single reusable parser in `src/learn/living-church-pius-x-source-concepts.js`. It covers historical papal-election testimony (`E supremi`), temptation versus consent (Salzano), actual and sanctifying grace (1905 long Catechism), sacred music (`Tra le sollecitudini`), Modernism (`Pascendi`), adult religious instruction (`Acerbo nimis`), and child First Communion (`Quam singulari`).
+
+This is **constrained concept-to-source navigation**, not embeddings, a generative semantic model, doctrinal synthesis or historical character speech. Each nominated topic must match two independent bilingual facets and must resolve to an original historical passage already authorized by the St Pius X research pipeline. Ambiguous multi-document matches request clarification; no source is synthesized or copied.
+
+The first execution of the **previously frozen, assistant-authored 46-item challenge** (`data/learn/living-church-pius-x-doctrinal-concept-frozen-46.v1.json`, including six contextual follow-ups) found **27/28 correct historical document pointers**, **1/28 safe abstention** and **zero wrong historical documents** for both engines, but **four of the 12 negative-scope probes were incorrectly assigned a document**. That observation was preserved in `data/learn/living-church-pius-x-concept-first-run-20261019.v1.json` *before* correction; it is not representative user accuracy.
+
+The four negative failures led to **general scope boundaries** rather than question-phrase insertion: no subjective assessment of a living person's grace; no pronouncement that a church musician committed mortal sin; no conclusion that a historic 1903 decree is current universal law; and no assignment to the First Communion decree without a child/first-reception subject. These are enforced before the optional concept matcher and preserved by the hybrid router.
+
+**Repeated, now-inspected regression** measured in isolated execution of the checked-in router code:
+
+| Measure | Shared | Hybrid |
+| --- | ---: | ---: |
+| Correct source among 28 doctrinal questions | **27** | **27** |
+| Safe unresolved among 28 doctrinal questions | 1 | 1 |
+| Wrong historical source | **0** | **0** |
+| Negative-scope questions safely refused | **12/12** | **12/12** |
+| Six explicitly confirmed follow-ups routed correctly | **0/6** | **0/6** |
+| Safe unresolved follow-ups | 6 | 6 |
+| Previously inspected 40 historical intents (of earlier 60) correctly routed | **36** | **36** |
+| Previously inspected 40 historical intents safely unresolved | 4 | 4 |
+| Earlier 8 personal-answer holds | **8/8** | **8/8** |
+| Earlier 12 out-of-scope declines | **12/12** | **12/12** |
+
+All these numbers are *editorial/regression fixtures*, not real visitors, publication readiness or certified doctrinal answer counts. The 48 bilingual personal-verdict contrasts and 26 bilingual liturgical-role contrasts also passed in isolated execution. The older shared-router Mass Guide regression additionally ensures that conversational “tell me” does not misclassify the speaker as a lay participant offering private prayer. The GitHub Actions workflow is configured to execute the complete test and archive detailed output; CI must be verified separately.
+
+A historical source pointer still requires visitor interpretation confirmation. Missing source URLs fail closed; user-forged document links and source-family ownership changes are rejected. **No approved historical answers have been generated or released.** Remaining priorities: context-aware follow-ups with legitimate explicit consent and independent bilingual human-authored evaluation, then historical prose approval through PR #1458.
