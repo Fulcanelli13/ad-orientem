@@ -17,6 +17,7 @@ import { GLORIA_CREDO_FAITHFUL_GESTURES, isGloriaCredoGestureSourceCue, resolveF
 import { loadReaderCueRegistries } from "./reader-cue-state.js";
 import { loadReaderFormStateData, createReaderFormCueStateController } from "./reader-form-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
+import { withLiveReadingSections } from "./reader-live-reading-sections.js";
 
 // The certified Good Friday state graph carries nine kneel/rise formula
 // pairs and three Cross-unveiling silent adoration intervals. Their spoken
@@ -2456,7 +2457,8 @@ export async function mountNativeReaderPreview({
               resolvedMass:ready.prepared?.session?.resolvedMass??null,
             })
           : [],
-      paragraphs:String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
+      paragraphs:withLiveReadingSections(visibleCard,
+        String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
         ? withCertifiedSolemnMissalMinisters(
           withPublishedMissalParagraphRubrics(
             visibleCard.paragraphs,ready.data?.rubricEvents??null,{
@@ -2477,7 +2479,7 @@ export async function mountNativeReaderPreview({
           : withPublishedCanonParagraphRubrics(
               visibleCard.paragraphs,ready.data?.rubricEvents??null,{
                 form:ready.prepared?.session?.resolvedMass?.form,
-              }),
+              })),
       progress:visibleProgress(visibleCard),
       // Guide/Formation is an independent educational destination. The
       // published R17 1962 event registry, not an inherited 32-card Guide,
