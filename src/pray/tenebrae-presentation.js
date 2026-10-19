@@ -1,4 +1,5 @@
 import {TENEBRAE_DAY_NAMES} from "./tenebrae-1960.js";
+import {devotionalProgressMarkup} from "./devotional-progress.js";
 import {tenebraeGuideCopy,TENEBRAE_GUIDE_LINKS} from "./tenebrae-guides.js";
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const nl=x=>esc(x).replace(/\n/g,"<br>");
@@ -31,24 +32,20 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
  const jumps=hour==="MATINS"
   ?[[0,L("Nocturn I","Ier nocturne")],[10,L("Nocturn II","IIe nocturne")],[20,L("Nocturn III","IIIe nocturne")],[30,L("Final prayers","Prières finales")]]
   :[[0,L("Psalms","Psaumes")],[6,"Benedictus"],[7,"Christus factus est"],[8,L("Final prayers","Prières finales")]];
- const jumpMarkup=steps.length?'<nav class="aoTenebJump" aria-label="'+esc(L("Jump to a part of the Office","Aller à une partie de l’Office"))+'">'+
-  jumps.map(([start,name],i)=>'<button type="button" data-p435930-tenebrae-jump="'+start+'" class="'+(index>=start&&(i===jumps.length-1||index<jumps[i+1][0])?"active":"")+'" aria-current="'+(index>=start&&(i===jumps.length-1||index<jumps[i+1][0])?"step":"false")+'">'+esc(name)+'</button>').join("")+'</nav>':'';
+ const jumpMarkup=steps.length?'<div class="aoTenebStageNav"><nav class="aoTenebJump" aria-label="'+esc(L("Jump to a part of the Office","Aller à une partie de l’Office"))+'">'+
+  jumps.map(([start,name],i)=>'<button type="button" data-p435930-tenebrae-jump="'+start+'" class="'+(index>=start&&(i===jumps.length-1||index<jumps[i+1][0])?"active":"")+'" aria-current="'+(index>=start&&(i===jumps.length-1||index<jumps[i+1][0])?"step":"false")+'">'+esc(name)+'</button>').join("")+'</nav>'+
+  devotionalProgressMarkup({index,total:steps.length,language:loc,unit:"stage"})+'</div>':'';
  const context=guided&&current&&guide.detail?
   '<aside class="aoTenebContext" aria-label="'+esc(L("Explanation of this passage","Explication de ce passage"))+'"><strong>'+esc(guide.title)+'</strong><p>'+esc(guide.detail)+'</p></aside>':'';
  let material="";
  if(error)material='<div class="aoTenebEmpty" role="alert"><p>'+esc(L("The local Office text could not be verified.","Le texte local de l’Office n’a pas pu être vérifié."))+'</p><button type="button" data-p435930-tenebrae-retry>'+esc(L("Retry","Réessayer"))+'</button></div>';
  else if(!current)material='<div class="aoTenebEmpty" role="status">'+esc(L("Preparing the source texts…","Préparation des textes sources…"))+'</div>';
  else{
-  const progress=(index+1)+" / "+steps.length;
-  material='<article class="aoTenebReading" data-tenebrae-section="'+esc(current.id)+'">'+
-   '<div class="aoTenebReadingTop"><span>'+esc(hour==="MATINS"?L("Matins","Matines"):L("Lauds","Laudes"))+' · '+esc(progress)+'</span>'+
+  material='<article class="aoTenebReading" tabindex="0" role="region" aria-label="'+esc(stepTitle(current,loc))+'" data-tenebrae-section="'+esc(current.id)+'">'+
+   '<div class="aoTenebReadingTop"><span>'+esc(hour==="MATINS"?L("Matins","Matines"):L("Lauds","Laudes"))+'</span>'+
    '<button type="button" data-p435930-tenebrae-face aria-label="'+esc(L("Switch Latin and translation","Passer du latin à la traduction"))+'">'+esc(face==="latin"?L("English","Français"):"Latin")+' ↔</button></div>'+
    '<h3>'+esc(stepTitle(current,loc))+'</h3>'+context+
-   '<div class="aoTenebPrayer" lang="'+(face==="latin"?"la":loc)+'">'+nl(face==="latin"?current.latin:current[loc])+'</div>'+
-   '<div class="aoTenebFooter">'+
-   '<button type="button" data-p435930-tenebrae-move="previous" '+(index===0?"disabled":"")+' aria-label="'+esc(L("Previous text","Texte précédent"))+'">← '+esc(L("Previous","Précédent"))+'</button>'+
-   '<span>'+esc(progress)+'</span>'+
-   '<button type="button" data-p435930-tenebrae-move="next" '+(index>=steps.length-1?"disabled":"")+' aria-label="'+esc(L("Next text","Texte suivant"))+'">'+esc(L("Next","Suivant"))+' →</button></div></article>';
+   '<div class="aoTenebPrayer" lang="'+(face==="latin"?"la":loc)+'">'+nl(face==="latin"?current.latin:current[loc])+'</div></article>';
  }
  const edition=L(
   "Matins may, for good reason, be anticipated after 2 PM on the previous day. Lauds belongs to the morning (1960 rubrics §§144–145). The earlier fifteen-candle ceremony is not imposed here.",
