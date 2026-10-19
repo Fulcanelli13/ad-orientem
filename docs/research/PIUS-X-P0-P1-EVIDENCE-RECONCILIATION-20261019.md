@@ -189,3 +189,39 @@ This is a *source-check queue*, not a claim that every passage has been freshly 
 ## Release gate
 
 No new public dialogue, production source owner, app runtime, character assets, theology approval, or source text copy is introduced. Independent source, doctrinal, historical and translation reviews remain open.
+
+
+## First 64-family conversation coverage screen (19 October, verified against source-review registries)
+
+The research-only ledger `data/learn/research/pius-x-64-family-evidence-screen-20261019.v1.json` derives an evidence tier for **each of the 64 pre-existing SPX family seeds** by joining the two full Italian 1912 digital review registries with the 25 checked 1905/Salzano/Vatican anchors. It neither imports prose into the avatar nor modifies question owners.
+
+| Screened source-match tier | Families | Definition |
+| --- | ---: | --- |
+| `DIRECT_PASSAGE_ANCHOR` | **48** | A reviewer located at least one passage directly addressing the topic in the historical/digital research witnesses |
+| `PARTIAL_PASSAGE_ANCHOR` | **11** | At least one partial passage, but no direct match found in these reviewed witnesses |
+| `RELATED_OR_UNRESOLVED` | **5** | Related doctrine found, but no direct or partial passage identified in the bounded research |
+| Total first research family cohort | **64** | Not a complete universe of potential visitor questions |
+| Complete, historically voiced and doctrinally approved visitor answers | **0 approved by this screen** | Research-screen evidence is not dialogue sign-off |
+
+The five remaining source-gap families are:
+- **SPX-039** — How does the Holy Ghost help difficult decisions?
+- **SPX-040** — Is meekness the same as weakness?
+- **SPX-042** — What makes a Christian peacemaker?
+- **SPX-046** — What does poverty of spirit mean?
+- **SPX-050** — Why did Apostles struggle to believe the Resurrection?
+
+The 11 partially grounded families are SPX-007, 011, 019, 020, 025, 031, 033, 037, 038, 047 and 061.
+
+**Release holds retained:** SPX-028/044 are edition-sensitive for the 1912 civil-marriage interpolation; SPX-057 must use the genuine 1905 actual/sanctifying-grace locus rather than the superficially similar 1912 sacramental-grace locus. None of the 48 directly matched families is deemed fully answered or voiced on the strength of this statistic.
+
+**Corpus scope warning:** the 64 seeds are doctrinal/pastoral examples, not a representative sample of all Pope Pius X conversations. They do not adequately survey his childhood, vocation, parish years, personal life, papal administration, Modernism dispute, Church-state conflicts, historiography, or extended apologetical debates. The **number of different visitor questions that St Pius X can answer remains unknown**.
+
+### Next adjudication queue and stop conditions
+
+The successful 1905 machine crosswalk recovered all **993** Q&A positions, produced **561** questions with at least one lexical 1912 candidate and **432** without lexical candidates. Of the 561, **145** reach a top-candidate lexical similarity of 0.70 or more; **83** reach 0.90 or more. These thresholds prioritize human comparison only; they do not certify sameness. The algorithm discards some short common words, so a 1.0 lexical score can still conceal a different question/answer.
+
+Review the high-score pairs **with the complete Italian question and answer in both editions** and record `SAME_INTENT`, `NARROWER`, `BROADER`, `RELATED_DISTINCT`, `FOLLOW_UP`, or `REJECTED_FALSE_MATCH`. Preserve chronology-sensitive divergences. A same-intent classification is not permission to erase one edition's source witness. Once a substantive stratified sample is adjudicated, prioritize the 432 without lexical candidates and unrepresented pastoral/historical domains, rather than spending all time polishing near-duplicates.
+
+A separate extension must bring Feast and Salzano textual content into those same **semantic** review contracts. The 218/219 feast discrepancy remains held; Salzano has 577 verified positional locators but its numbering is editorial. Neither can be treated as already semantically deduplicated.
+
+The governing progress indicator is **reviewed distinct user intentions with a usable historical evidence chain**, followed separately by complete-answer and voice approvals — never simply the sum of historical QIDs.
