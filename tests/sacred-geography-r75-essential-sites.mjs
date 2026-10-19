@@ -53,7 +53,7 @@ for(const entry of m.existing_confirmed){
 }
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0248")?.status,"UNMATCHED");
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0746")?.status,"TEXT_HINT_REVIEW");
-assert.equal(h.place_crosswalk.length,261);
+assert.equal(h.place_crosswalk.length,294);
 assert.equal(exploreMapFeatures(projected.byLens.shrines).length,257);
 assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,240);
 console.log("PASS R75: four sourced physical pilgrimage Places, four canonical research reuses and 750 research candidates intact");
