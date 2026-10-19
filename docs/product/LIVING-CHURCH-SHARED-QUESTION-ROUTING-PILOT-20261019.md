@@ -149,3 +149,26 @@ The existing 52-question set was frozen **before** this prototype was proposed i
 The first implementation reported **19 intended topics / 23 unresolved / 10 wrong specific** for the legacy matcher, versus **25 intended / 19 unresolved / 8 wrong specific** for the symbolic hybrid. That preliminary comparison is limited by the imperfect labels and the narrow, assistant-written sample; the second-round intent-frame score, once CI confirms it, must be recorded separately without replacing the baseline.
 
 **Production gate remains closed.** Before runtime introduction: complete topical source coverage; have domain specialists review intended question labels; collect a genuinely independent English/French first-visit evaluation set; use actual semantic embeddings or another validated model for broad paraphrase recognition; test objection/pastoral/temporal-law edge cases and high-risk false positives; retain original-source ownership and handoff consent; and complete answer-to-source fidelity verification only after topic mining is mature.
+
+
+### Pass 5 measured second iteration and consent gate
+
+A second symbolic-context pass (40 concepts) adds generic **question frames** for a person versus an object, a ceremonial action versus a physical vessel, offering at Mass, consecutive ritual moments, a Eucharistic doctrinal question and personal moral applications. Frames are intentionally small and inspectable; they **do not contain doctrinal conclusions**. For example, a question about the priest *raising* the chalice must not be sent directly to the definition of a chalice merely because the object is named. A visitor asking whether their own conduct is sinful must not be answered by opening the general definition of sin as though it determined their case.
+
+The CI comparison on the **same already-inspected 52-question assistant-written fixture** currently reports:
+
+| Route outcome | Legacy lexical matcher | Symbolic hybrid, initial | Symbolic hybrid, second iteration |
+|---|---:|---:|---:|
+| Intended topic or appropriate reformulation | 19 | 25 | **27** |
+| Unresolved / safe refusal | 23 | 19 | **25** |
+| Wrong specific-topic selections | 10 | 8 | **0** |
+
+This demonstrates **zero wrong selections only for this particular inspected, non-independent fixture**. It absolutely does **not** establish production precision, recall or suitability for an uncontrolled user population. The higher refusal count is a deliberate conservative choice pending proper intent recognition. The fixture contains questionable expectations and no verified independent distribution.
+
+### Source-navigation consent
+
+The hybrid adapter never imports new historical character replies. All inferred candidates carry `requiresQuestionConfirmation:true`; all proposed character transfers independently require `requiresAcceptance:true`.
+
+`confirmSourceNavigation(result, {confirmQuestion:true})` is available as an **explicit opt-in contract** for future UI wiring. It checks the entire claimed `sourceRefs` array and route against the original source-owned topic; forged or uncovered destinations fail. Without user confirmation, an inferred source-navigation candidate returns `needs_question_confirmation` rather than opening anything. A correctly matched exact phrase is eligible for navigation without an *additional* interpretation prompt, though it remains a source link, **never a licence to fabricate an avatar answer**.
+
+**Not connected**: no user-facing UI, image/sprite staging, character-runtime response synthesizer, or P4 source corpus has been modified here. Independent test and source-content approvals still block production use.
