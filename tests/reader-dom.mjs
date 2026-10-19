@@ -305,11 +305,11 @@ adapter.mount(prepared);
 adapter.mount(prepared);
 expect(registered.get("click")?.size===1,"reader remount duplicated root click handlers");
 expect(registered.get("keydown")?.size===1,"reader remount duplicated root keyboard handlers");
-const navNode={dataset:{readerNav:"next"}};
-const navTarget={tagName:"BUTTON",closest(selector){return selector==="[data-reader-nav]"?navNode:null;}};
 const dispatch=(type,event)=>{for(const handler of registered.get(type)??[])handler(event);};
-dispatch("click",{target:navTarget});
-expect(nextCount===1,"single navigation click moved two Mass cards after remount");
+// Navigation now uses the card's ArrowLeft/ArrowRight keyboard shortcut;
+// a remounted root must not install duplicate keyboard listeners.
+dispatch("keydown",{key:"ArrowRight",target:{tagName:"ARTICLE"},preventDefault(){}});
+expect(nextCount===1,"single keyboard navigation moved two Mass cards after remount");
 guidePopover.hidden=false;
 dispatch("keydown",{key:"ArrowRight",target:{tagName:"BUTTON"},preventDefault(){}});
 expect(nextCount===1,"keyboard advanced Mass beneath an open Guide");

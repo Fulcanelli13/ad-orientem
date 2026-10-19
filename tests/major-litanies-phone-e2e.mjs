@@ -184,11 +184,13 @@ try{
    assert.equal(state.starts,0);
    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ROG-R01",
     null,{timeout:10000});
-   const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
-   const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
+   assert.equal(await page.locator("#ao-r17-native-reader-preview [data-reader-nav]").count(),0);
+   const navigate=async dir=>{
+     await page.locator("#ao-r17-native-reader-preview .ao-prayer-card").focus();
+     await page.keyboard.press(dir==="previous"?"ArrowLeft":"ArrowRight");
+   };
    for(let i=1;i<6;i++){
-    const box=await next.boundingBox();assert.ok(box&&box.height>=44);
-    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+    await navigate("next");
     await page.waitForFunction(id=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id===id,
       "ROG-R0"+(i+1),{timeout:5000});
     if(i===2){
@@ -198,8 +200,7 @@ try{
       else assert.match(title,/Greater Litanies/);
     }
    }
-   const handoff=await next.boundingBox();assert.ok(handoff&&handoff.height>=44);
-   await page.touchscreen.tap(handoff.x+handoff.width/2,handoff.y+handoff.height/2);
+   await navigate("next");
    await page.waitForFunction(()=>{
      const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
      return (c?.sourceSectionId??c?.sectionId)==="AO.CARD.001";
@@ -214,8 +215,7 @@ try{
      title:"Introit",total:60,canonical:39,curated:true,first:"Introit",
    },"Greater Litanies R17 must enter sourced 60-card Introit presentation");
    assert.equal((await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim(),"Introit");
-   const bb=await back.boundingBox();assert.ok(bb&&bb.height>=44);
-   await page.touchscreen.tap(bb.x+bb.width/2,bb.y+bb.height/2);
+   await navigate("previous");
    await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id==="ROG-R06",
     null,{timeout:5000});
    if(votiveExpected){
@@ -231,8 +231,7 @@ try{
     for(const sectionId of expected){
       let reached=false;
       for(let tries=0;tries<10;tries++){
-        const box=await next.boundingBox();assert.ok(box&&box.height>=44);
-        await next.tap({timeout:5000});
+        await navigate("next");
         await page.waitForTimeout(120);
         const card=await page.evaluate(()=>{
           const c=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();

@@ -5,6 +5,12 @@ import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "@playwright/test";
 
+async function pressRiteKey(page,direction){
+  const card=page.locator("#ao-r17-native-reader-preview .ao-prayer-card");
+  await card.focus();
+  await page.keyboard.press(direction==="previous"?"ArrowLeft":"ArrowRight");
+}
+
 const repoRoot=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={
   ".html":"text/html; charset=utf-8",
@@ -157,13 +163,8 @@ async function exerciseRealShellSpecialRite(browser,spec){
     assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION",
       spec.kind+" lost data-ao-mass-reader-ui ownership marker");
 
-    const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
-    const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
-
     async function tapNext(){
-      const b=await next.boundingBox();
-      assert.ok(b && b.height>=44,spec.kind+" Next target is too small");
-      await page.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
+      await pressRiteKey(page,"next");
       await page.waitForTimeout(90);
     }
     async function advanceToId(target,max=16){
@@ -304,9 +305,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
       spec.kind+" real-shell handoff entered the wrong Mass surface"
     );
 
-    const bb=await back.boundingBox();
-    assert.ok(bb && bb.height>=44,spec.kind+" Back target is too small");
-    await page.touchscreen.tap(bb.x+bb.width/2,bb.y+bb.height/2);
+    await pressRiteKey(page,"previous");
     await page.waitForFunction(expected=>
       globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.id===expected,
       spec.handoffId,{timeout:5000});
@@ -433,10 +432,7 @@ async function exerciseRealShellGoodFriday(browser){
     assert.equal(end.atEnd,true);
     assert.equal(end.ordinaryMassGraphActive,false);
 
-    const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
-    const box=await next.boundingBox();
-    assert.ok(box && box.height>=44,"Good Friday Next target is too small");
-    await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+    await pressRiteKey(page,"next");
     await page.waitForTimeout(100);
     end=await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.getGoodFridayState());
     assert.equal(end.step.recordId,"GF-END-910","Good Friday end fabricated an Ordinary Mass handoff");
@@ -582,16 +578,8 @@ async function exerciseRealShellFollowingAction(browser,spec){
       assert.equal(audit.lastGospelCards,2,"canonical Last Gospel paragraphs remain auditable");
     }
 
-    const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
-    const back=page.locator("#ao-r17-native-reader-preview [data-reader-nav='previous']");
-    async function tap(button,label){
-      const b=await button.boundingBox();
-      assert.ok(b && b.height>=44,spec.kind+" "+label+" target is too small");
-      await page.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
-      await page.waitForTimeout(100);
-    }
-    async function tapNext(){return tap(next,"Next")}
-    async function tapBack(){return tap(back,"Back")}
+    async function tapNext(){await pressRiteKey(page,"next");await page.waitForTimeout(100)}
+    async function tapBack(){await pressRiteKey(page,"previous");await page.waitForTimeout(100)}
 
     const exit=await page.evaluate(({exitSourceSequence,kind})=>{
       const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
@@ -913,11 +901,8 @@ try{
   assert.ok(rootBox.x+rootBox.width<=390.5,"real-shell reader overflows phone width");
   assert.ok(rootBox.y+rootBox.height<=844.5,"real-shell reader overflows phone height");
 
-  const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
   const before=await page.locator("#ao-r17-native-reader-preview [data-role='progress']").textContent();
-  const box=await next.boundingBox();
-  assert.ok(box && box.height>=44,"real-shell Next target is too small");
-  await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+  await pressRiteKey(page,"next");
   await page.waitForFunction(previous=>{
     const text=document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent;
     return text && text!==previous;

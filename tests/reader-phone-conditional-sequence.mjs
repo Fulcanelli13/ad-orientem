@@ -49,9 +49,11 @@ try{
       if(!first||!second)return {error:"Expected two pre-Gospel cards"};
       api.showSequence(first.sequence);
       const before=api.getCurrentCard()?.title;
-      const next=document.querySelector('[data-reader-nav="next"]');
-      if(!next)return {error:"No real reader next control"};
-      next.click(); // Navigate through the actual button, not a model-only operation.
+      const card=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+      if(!card)return {error:"No real liturgical reader card"};
+      card.dispatchEvent(new KeyboardEvent("keydown",{
+        key:"ArrowRight",bubbles:true,cancelable:true,
+      })); // Exercise actual keyboard navigation, not a model-only shortcut.
       const after=api.getCurrentCard()?.title;
       const shell=document.querySelector("#ao-r17-native-reader-preview");
       const renderedTitle=shell?.querySelector('[data-role="section-title"]')?.textContent?.trim();
@@ -77,7 +79,7 @@ try{
     assert.deepEqual(result.cards.map(x=>x.blocks),[["AO.SM.B021"],["AO.SM.B022"]]);
     assert.equal(result.sourceParagraphs,result.cards.reduce((sum,x)=>sum+x.ids.length,0));
     assert.equal(result.before,"Gradual · Alleluia / Tract");
-    assert.equal(result.after,"Sequence","Native phone Next must navigate to the independently sourced Sequence");
+    assert.equal(result.after,"Sequence","Native phone ArrowRight must navigate to the independently sourced Sequence");
     assert.equal(result.renderedTitle,"Sequence");
     assert.equal(result.translationVisible,true,JSON.stringify(result));
     assert.match(result.visible,new RegExp("\\/ "+(optional?65:64)+"$"),

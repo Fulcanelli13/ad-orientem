@@ -1,0 +1,34 @@
+name: Annexed rites shared reader parity
+
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-dom.js"
+      - "src/mass/reader-native-preview.js"
+      - "tests/reader-annexed-rite-parity-phone.mjs"
+      - "package.json"
+      - ".github/workflows/annexed-reader-parity.yml"
+  workflow_dispatch:
+
+jobs:
+  annexed-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify annexed Missal Simple LIVE progress and ceremonial-card parity
+        run: npm run test:annexed-reader-phone
+      - name: Verify source-owned Rogations selected reader and processional access
+        run: npm run test:rogation-selected-r17-phone
+      - name: Preserve actual phone captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: annexed-reader-parity-phone
+          path: artifacts/annexed-reader-parity/*.png
+          if-no-files-found: ignore

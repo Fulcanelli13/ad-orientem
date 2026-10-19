@@ -552,6 +552,7 @@ button.ao-schola-control{cursor:pointer}
   font:700 7px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.08em;text-transform:uppercase
 }
 
+.ao-reader-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .ao-reader-nav{position:absolute;z-index:10;inset:0;pointer-events:none}
 .ao-reader-nav button{
   position:absolute;top:52%;width:44px;height:44px;border:0;border-radius:999px;
@@ -890,7 +891,6 @@ button.ao-schola-control{cursor:pointer}
   --ao-missal-column-gap:clamp(16px,3.4vw,48px);
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-schola-dock,
-.ao-reader-shell[data-mode="MISSAL"] .ao-progress-track,
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-progress,
 .ao-reader-shell[data-mode="MISSAL"] .ao-cinematic,
 .ao-reader-shell[data-mode="MISSAL"] .ao-faithful-paragraph-icons{display:none!important}
@@ -1032,6 +1032,21 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph[data-reading-active="true"]{
   opacity:1!important;color:#f7f8f4;transform:translateX(2px);text-shadow:0 0 26px rgba(225,238,228,.065)
 }
+
+/* A native annexed rite may carry text without an independently tracked
+   paragraph-focus event. The ordinary LIVE 18% opacity must never make its
+   whole prayer unreadable. This alters appearance only, not cue ownership. */
+#ao-r17-native-reader-preview[data-r17-state-owner$="_NATIVE"]
+  .ao-reader-shell[data-mode="LIVE"]
+  .ao-prayer-body:not(:has(.ao-reader-paragraph[data-reading-active="true"]))
+  .ao-reader-paragraph{
+    opacity:.94;color:#e7e9e4;text-shadow:none;transform:none
+  }
+#ao-r17-native-reader-preview[data-r17-state-owner$="_NATIVE"]
+  .ao-reader-shell[data-mode="LIVE"]
+  .ao-prayer-body:not(:has(.ao-reader-paragraph[data-reading-active="true"]))
+  .ao-reader-paragraph[data-kind="RUBRIC"]{opacity:.85}
+
 
 /* Rubrics are identifiable by their quiet inset and rule, not a repeated
    seven-pixel RUBRIC heading on every paragraph. Keep the complete source. */
@@ -1521,6 +1536,16 @@ export function projectCertifiedSolemnMinisterRubric(value){
   });
 }
 
+/** Source-only stage progress: never infer a percentage from an unnumbered rite. */
+export function parseReaderProgress(value){
+  const match=String(value??"").match(/(\d+)\s*\/\s*(\d+)/);
+  if(!match)return null;
+  const current=Number(match[1]),total=Number(match[2]);
+  if(!Number.isSafeInteger(current)||!Number.isSafeInteger(total)||
+      total<1||current<1||current>total)return null;
+  return Object.freeze({current,total,percent:current/total*100});
+}
+
 export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
   const momentTitle=String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "");
@@ -1794,7 +1819,7 @@ export function buildReaderShellMarkup(prepared = {}) {
       <span class="ao-priest-action-badge" data-role="priest-action-badge" data-active="false" data-major="false" aria-hidden="true"><span class="ao-icon-mask" data-icon-slot="priest-action-top" hidden></span></span>
     </div>
   </div>
-  <div class="ao-progress-track" aria-hidden="true"><span data-role="progress-track"></span></div>
+  <div class="ao-progress-track" data-role="reader-progressbar" role="progressbar" aria-label="Card progression" aria-valuemin="0" hidden><span data-role="progress-track"></span></div>
 
   <div class="ao-section-menu" data-role="section-menu" hidden></div>
   <aside class="ao-mass-prefs" data-role="mass-preferences" data-open="false" aria-label="Mass preferences">
@@ -1879,7 +1904,8 @@ export function buildReaderShellMarkup(prepared = {}) {
     </aside>
 
     <main class="ao-card-viewport">
-      <article class="ao-prayer-card" data-role="card" tabindex="0">
+      <span id="ao-reader-navigation-instructions" class="ao-reader-sr-only">Swipe sideways or use the left and right arrow keys to change liturgical cards. Scroll vertically to read. Use the section title to jump to a section.</span>
+      <article class="ao-prayer-card" data-role="card" tabindex="0" aria-keyshortcuts="ArrowLeft ArrowRight" aria-describedby="ao-reader-navigation-instructions">
         <h1 class="ao-prayer-title" data-role="card-title">${section}</h1>
         <p class="ao-rite-music-note" data-role="rite-music" hidden aria-live="off"></p>
         <p class="ao-organ-rule-note" data-role="organ-permission" hidden aria-live="off"></p>
@@ -1920,11 +1946,9 @@ export function buildReaderShellMarkup(prepared = {}) {
     <div class="ao-cinematic-inner"><div class="ao-cinematic-mark"><span class="ao-icon-mask ao-cinematic-icon" data-icon-slot="cinematic" hidden></span><span class="ao-cinematic-fallback" aria-hidden="true">✠</span></div><div class="ao-cinematic-title" data-role="cinematic-title"></div><div class="ao-cinematic-sub" data-role="cinematic-sub"></div></div>
   </div>
 
-  <nav class="ao-reader-nav" aria-label="Prayer card navigation">
-    <button type="button" data-reader-nav="previous" aria-label="Previous Mass card">‹</button>
-    <span class="ao-reader-progress" data-role="progress">—</span>
-    <button type="button" data-reader-nav="next" aria-label="Next Mass card">›</button>
-  </nav>
+  <div class="ao-reader-nav" aria-label="Liturgical card position">
+    <span class="ao-reader-progress" data-role="progress" aria-live="off">—</span>
+  </div>
   <aside class="ao-guide-popover" data-role="guide-popover" hidden></aside>
 </section>`;
 }
@@ -2119,8 +2143,6 @@ export function createReaderDomAdapter({
   let scholaFallbackTimer=0;
   let scholaTickerIdentity=null;
   let scholaTickerFinishedIdentity=null;
-  let suppressNavClickUntil=0;
-  let suppressNavClickDirection=null;
   let suppressModeClickUntil=0;
   let swipeStart=null;
   let wheelIntent={dir:0,amount:0,last:0};
@@ -2190,10 +2212,21 @@ export function createReaderDomAdapter({
 
   function syncProgress(){
     const track=root.querySelector('[data-role="progress-track"]');
-    if(!track)return;
-    const match=String(current?.progress??"").match(/(\d+)\s*\/\s*(\d+)/);
-    const pct=match ? Math.max(0,Math.min(100,(Number(match[1])/Math.max(1,Number(match[2])))*100)) : 0;
-    track.style.width=pct+"%";
+    const bar=root.querySelector('[data-role="reader-progressbar"]');
+    if(!track||!bar)return;
+    const data=parseReaderProgress(current?.progress);
+    bar.hidden=!data;
+    if(!data){
+      track.style.width="0%";
+      bar.removeAttribute("aria-valuenow");
+      bar.removeAttribute("aria-valuemax");
+      bar.removeAttribute("aria-valuetext");
+      return;
+    }
+    track.style.width=data.percent+"%";
+    bar.setAttribute("aria-valuenow",String(data.current));
+    bar.setAttribute("aria-valuemax",String(data.total));
+    bar.setAttribute("aria-valuetext",data.current+" of "+data.total);
   }
 
   function displayBell(nextBell){
@@ -2727,16 +2760,6 @@ export function createReaderDomAdapter({
         toggleScholaTranslation();
         return;
       }
-      const nav=event.target?.closest?.("[data-reader-nav]");
-      if(nav && Date.now()<suppressNavClickUntil && nav.dataset.readerNav===suppressNavClickDirection){return;}
-      if(nav?.dataset.readerNav==="previous"){
-        navigateBy(-1,"click");
-        return;
-      }
-      if(nav?.dataset.readerNav==="next"){
-        navigateBy(1,"click");
-        return;
-      }
       if(event.target?.closest?.('[data-rubric-source-link="true"]'))return;
       const translatable=event.target?.closest?.('[data-translate-toggle="true"]');
       if(translatable && mode!=="MISSAL"){
@@ -2752,24 +2775,6 @@ export function createReaderDomAdapter({
       if(rubric){toggleRubric(rubric);return;}
     };
     root.addEventListener?.("click",rootClickListener);
-    // The donor edge arrows are real phone controls. Own touch navigation on
-    // pointerdown: Playwright/Chromium and physical touchscreens both dispatch
-    // this before the compatibility click, so the latter can be suppressed
-    // deterministically without risking a lost touchend after card repaint.
-    for(const navButton of root.querySelectorAll?.("[data-reader-nav]") ?? []){
-      navButton.addEventListener?.("pointerdown",event=>{
-        if(event.pointerType!=="touch")return;
-        event.preventDefault?.();
-        event.stopPropagation?.();
-        suppressNavClickUntil=Date.now()+650;
-        suppressNavClickDirection=navButton.dataset.readerNav??null;
-        if(navButton.dataset.readerNav==="previous"){
-          navigateBy(-1,"pointer");
-        }else if(navButton.dataset.readerNav==="next"){
-          navigateBy(1,"pointer");
-        }
-      });
-    }
     const scrollCard=activeScrollCard();
     if(scrollCard?.addEventListener){
       scrollCard.addEventListener("scroll",()=>{
@@ -2851,8 +2856,8 @@ export function createReaderDomAdapter({
       else if(key==="ArrowLeft"){event.preventDefault?.();navigateBy(-1,"keyboard");}
     };
     root.addEventListener?.("keydown",rootKeydownListener);
-    // v1.80 Mass-preferences mode controls own touch on pointerdown for the
-    // same reason as the edge arrows: a physical tap must commit the switch
+    // The Mass-preferences mode controls own touch on pointerdown: a physical
+    // tap must commit the switch
     // even while the reader rebuilds beneath the preferences sheet.
     for(const modeButton of root.querySelectorAll?.("[data-reader-mode]") ?? []){
       modeButton.addEventListener?.("pointerdown",event=>{
