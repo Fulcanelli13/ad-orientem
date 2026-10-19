@@ -6,7 +6,7 @@ import { createMassReaderModel } from "./reader-model.js";
 import {loadMandatumSource, createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
-import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards } from "./reader-live-curated-cards.js";
+import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards, visibleMassCardTitle } from "./reader-live-curated-cards.js";
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
@@ -2544,8 +2544,8 @@ export async function mountNativeReaderPreview({
     const state=projectedState();
     reader.renderMoment({
       id:visibleCard.sectionId,
-      sectionTitle:visibleCard.title,
-      cardTitle:visibleCard.title,
+      sectionTitle:visibleMassCardTitle(visibleCard),
+      cardTitle:visibleMassCardTitle(visibleCard),
       cardUpdate:true,
       missalRubric:String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
         ? (()=>{
@@ -2638,7 +2638,7 @@ export async function mountNativeReaderPreview({
   function sectionItems(){
     return readerModel.cards
       .filter(visibleCardAllowed)
-      .map(card=>Object.freeze({id:card.sectionId,label:card.title}));
+      .map(card=>Object.freeze({id:card.sectionId,label:visibleMassCardTitle(card)}));
   }
 
   function focusCueAtReaderLine(cueId){
