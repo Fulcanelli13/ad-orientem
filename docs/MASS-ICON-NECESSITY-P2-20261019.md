@@ -25,6 +25,18 @@ Routine bows, altar kisses, paten crosses, most priest genuflections, turns alre
 
 Where posture, voice or an altar-side station is already visible, do not repeat the same information as a separate action icon. Non-observed priest station tracks must never receive a guessed pictogram.
 
+## Mandatory source-original and approved-bank gate (19 October)
+
+**Absolute rule: never create a new icon from a text description alone.** For each new icon, record at least one identifiable, inspectable **original photograph or historical illustration/drawing that actually depicts the exact ritual action**. Preserve its real source page, original image path and SHA-256 checksum, creator/attribution status, holding institution, licensing/permission evidence and the precise depicted action. Rubrics by themselves are **not** a picture, and an AI-generated study cannot serve as the original.
+
+Then cross-check the depicted gesture with *Missale Romanum* (1962), *Ritus servandus*, X.4–5 for the priest's own Communion: the celebrant consumes the divided Host while bent with elbows resting on the altar; when receiving from the chalice, he holds it in his right hand with the paten beneath in his left. [Ritus servandus](https://1962ordo.today/1962-rubrics/).
+
+Only then prepare an icon **by transformation from the original image**, matching the **actual user-approved Mass bank**, not an imagined "Catholic art" style. Compare anatomy, hands and vessels, priest's traditional vestments, viewpoint, framing, silhouettes, opacity, contour, colour restraint, detail density and legibility at 32 and 48 px. Named accepted masters for comparison: `priest_elevate_chalice_rich`, `priest_rail_after_rich`, `priest_incense_altar_rich`. Do not assume a colour-rich painting or a generic monochrome silhouette belongs to the approved family.
+
+**Reject both 19 October generated Communion infographic/mockup studies for production use.** They had no original reference photograph/drawing, no established image rights, no side-by-side family-verification proof and no user approval. They are not approved source illustrations and must never enter the active icon bank.
+
+The immutable release barrier and pending original picture entries are in `data/presentation/mass-icon-generation-provenance-20261019.v1.json`; their independent CI gate is `tests/mass-icon-generation-provenance.mjs`. The intended generated destination is `assets/generated/mass-icons/`, which remains empty unless an asset meets every gate. The user alone approves final artwork.
+
 ## First true generation brief: celebrant's own Communion (two images)
 
 1. **Priest receives the Sacred Host:** Roman priest at the altar, in 1962 ceremonial vestments, clearly consuming the consecrated Host; not holding the Host aloft, not giving Communion to a communicant, no lay figure at a rail.
