@@ -1,0 +1,453 @@
+{
+  "schema": "AO_PIUS_X_P1_FIRST24_FULL_PASSAGE_WITNESS_REVIEW_V1",
+  "date": "2026-10-19",
+  "owner_issue": "https://github.com/Fulcanelli13/ad-orientem/issues/1457",
+  "status": "MANUAL_DIGITAL_TRANSCRIPTION_COMPARISON_RESEARCH_ONLY",
+  "basis": "Source location and full Italian Q&A passages read from pinned digital transcription at 65d10046; not from original 1912 printed facsimile; no independent doctrinal validation or SPX historical authorship inferred.",
+  "source_witness": "https://github.com/gustavo-depaula/ember/tree/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it",
+  "scope": {
+    "family_ids": "SPX-001..SPX-024",
+    "candidate_source_qids_from": "data/learn/research/pius-x-p1-short-catechism-topical-review-20261019.v1.json",
+    "no_match_scope_caveat": "No direct question identified in initially screened QID candidate list; other sources and unselected 1912 QIDs may still address it."
+  },
+  "classification_counts": {
+    "DIRECT_CATECHISM_QUESTION": 10,
+    "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES": 7,
+    "RELATED_DOCTRINE_NOT_SAME_QUESTION": 5,
+    "PARTIAL_ANSWER_TO_BROADER_QUESTION": 2
+  },
+  "records": [
+    {
+      "id": "SPX-001",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q349",
+          "italian_section": "sacramento-eucaristia.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+        }
+      ],
+      "rationale": "1912 Q349 expressly asks whether the Mass is the sacrifice of the Cross; Q347–351 elaborate distinct parts of the answer.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-002",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q354",
+          "italian_section": "sacramento-eucaristia.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+        }
+      ],
+      "rationale": "1912 Q354 expressly asks the most fitting way to attend Mass; Q353 concerns the obligation rather than the manner.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-003",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "review_basis": "SOURCE_OWNER_ONLY_NEEDS_EXTERNAL_SOURCE_CHECK",
+      "candidate_references": [],
+      "rationale": "Rosary during Mass is not established by the abbreviated English index match; consult separate 1905 Catechism source directly.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-004",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "review_basis": "SOURCE_OWNER_ONLY_NEEDS_EXTERNAL_SOURCE_CHECK",
+      "candidate_references": [],
+      "rationale": "Chant priority belongs to Tra le sollecitudini; no direct 1912 QID was identified from the short index screening.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-005",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q328",
+          "italian_section": "sacramento-eucaristia.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+        }
+      ],
+      "rationale": "Q328 asks when bread and wine become Christ's Body and Blood; Q325, Q329 and Q330 give complementary distinctions.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-006",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q344",
+          "italian_section": "sacramento-eucaristia.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+        },
+        {
+          "qid": "PX1912-Q345",
+          "italian_section": "sacramento-eucaristia.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-eucaristia.md"
+        }
+      ],
+      "rationale": "Q344 addresses sacramental duration and Q345 effects, not specifically acts of thanksgiving after Communion.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-007",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q361",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        },
+        {
+          "qid": "PX1912-Q369",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        },
+        {
+          "qid": "PX1912-Q370",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        },
+        {
+          "qid": "PX1912-Q371",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        }
+      ],
+      "rationale": "Sorrow, purpose of amendment and occasions are present, but repeated falls as such are a distinct pastoral question.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-008",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q140",
+          "italian_section": "credo-remissione-peccati.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+        },
+        {
+          "qid": "PX1912-Q141",
+          "italian_section": "credo-remissione-peccati.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/credo-remissione-peccati.md"
+        }
+      ],
+      "rationale": "Q140 specifies voluntary actual sin and Q141 enumerates ways; neither directly settles an unwanted intrusive thought.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-009",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q270",
+          "italian_section": "sacramenti-in-generale.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramenti-in-generale.md"
+        }
+      ],
+      "rationale": "Q270 defines sanctifying grace and friendship with God; the SPX family asks a broader lived explanation.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-010",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "review_basis": "SOURCE_OWNER_ONLY_NEEDS_EXTERNAL_SOURCE_CHECK",
+      "candidate_references": [],
+      "rationale": "Peter/Judas comparative narrative belongs to Salzano; no direct short QID in this screened set.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-011",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "review_basis": "SOURCE_OWNER_ONLY_NEEDS_EXTERNAL_SOURCE_CHECK",
+      "candidate_references": [],
+      "rationale": "Pastoral response to lost faith is anchored to E supremi rather than an identified 1912 question.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-012",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "review_basis": "SOURCE_OWNER_ONLY_NEEDS_EXTERNAL_SOURCE_CHECK",
+      "candidate_references": [],
+      "rationale": "Adult catechesis is anchored to Acerbo nimis rather than an identified 1912 question.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-013",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q433",
+          "italian_section": "orazione.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+        }
+      ],
+      "rationale": "Q433 directly asks whether invoking Mary and saints distrusts Christ's sole mediation; Q430 supports Mary's intercession.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-014",
+      "classification": "RELATED_DOCTRINE_NOT_SAME_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q416",
+          "italian_section": "orazione.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+        },
+        {
+          "qid": "PX1912-Q419",
+          "italian_section": "orazione.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/orazione.md"
+        }
+      ],
+      "rationale": "Mental prayer and necessity of prayer are addressed; priestly meditation despite duties is treated by Haerent animo.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-015",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q356",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        },
+        {
+          "qid": "PX1912-Q357",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        },
+        {
+          "qid": "PX1912-Q380",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        }
+      ],
+      "rationale": "Christ institutes Penance and authorizes priestly ministry (Q356–357); Q380 concerns absolution.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-016",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q359",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        }
+      ],
+      "rationale": "Q359 directly explains how to examine conscience; Q358–360 specify preparation and assessment.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-017",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q365",
+          "italian_section": "sacramento-penitenza.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-penitenza.md"
+        }
+      ],
+      "rationale": "Q365 explicitly describes imperfect sorrow motivated by fear of penalties; Q361–366 provide distinctions.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-018",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q205",
+          "italian_section": "legge-comandamenti.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        }
+      ],
+      "rationale": "Q205 explicitly asks whether a person can be forgiven while capable but unwilling to make restitution.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-019",
+      "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q206",
+          "italian_section": "legge-comandamenti.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        },
+        {
+          "qid": "PX1912-Q208",
+          "italian_section": "legge-comandamenti.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        }
+      ],
+      "rationale": "Q206 mentions detraction and unjust injury to reputation, Q208 reparation; justified disclosure requires more detail than these answers alone.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-020",
+      "classification": "PARTIAL_ANSWER_TO_BROADER_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q193",
+          "italian_section": "legge-comandamenti.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        },
+        {
+          "qid": "PX1912-Q198",
+          "italian_section": "legge-comandamenti.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        },
+        {
+          "qid": "PX1912-Q199",
+          "italian_section": "legge-comandamenti.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        },
+        {
+          "qid": "PX1912-Q200",
+          "italian_section": "legge-comandamenti.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/legge-comandamenti.md"
+        }
+      ],
+      "rationale": "Q198–199 address bad example/scandal and Q200 enemies; the exact distinction between emotions of anger and deliberate hatred is not fully answered.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-021",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q295",
+          "italian_section": "sacramento-battesimo.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-battesimo.md"
+        },
+        {
+          "qid": "PX1912-Q296",
+          "italian_section": "sacramento-battesimo.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-battesimo.md"
+        }
+      ],
+      "rationale": "Q295–296 explicitly ask effects of Baptism and whether it transforms the person.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-022",
+      "classification": "DIRECT_CATECHISM_QUESTION",
+      "review_basis": "DIGITAL_ITALIAN_FULL_QUESTION_AND_ANSWER_READ",
+      "candidate_references": [
+        {
+          "qid": "PX1912-Q309",
+          "italian_section": "sacramento-cresima.md",
+          "pinned_transcription_url": "https://github.com/gustavo-depaula/ember/blob/65d10046c19b610a4307ef273a751ceeb3c4f153/content/books/pius-x-catechism/it/sacramento-cresima.md"
+        }
+      ],
+      "rationale": "Q309 expressly asks how Confirmation makes a Christian strong in faith and virtue.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-023",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "review_basis": "SOURCE_OWNER_ONLY_NEEDS_EXTERNAL_SOURCE_CHECK",
+      "candidate_references": [],
+      "rationale": "Spiritual Communion is identified in the earlier Salzano tradition; no candidate 1912 short QID located in this screening.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    },
+    {
+      "id": "SPX-024",
+      "classification": "NO_DIRECT_MATCH_IN_REVIEWED_CANDIDATES",
+      "review_basis": "SOURCE_OWNER_ONLY_NEEDS_EXTERNAL_SOURCE_CHECK",
+      "candidate_references": [],
+      "rationale": "Viaticum is distinct from Extreme Unction; no candidate 1912 short QID located in this screening.",
+      "classification_is_provisional": true,
+      "papal_autograph_attested": false,
+      "original_print_facsimile_collated": false,
+      "published_answer_approved": false
+    }
+  ],
+  "release_approval": "NONE"
+}
