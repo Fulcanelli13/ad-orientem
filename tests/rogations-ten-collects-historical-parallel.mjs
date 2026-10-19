@@ -53,7 +53,7 @@ for(let i=0;i<10;i++){
 const papal=map.entries[4];
 assert.ok(papal.englishVariantFlags.includes("EN_PAPAL_PLACEHOLDER_AND_TITLE_ORDER"));
 assert.ok(papal.frenchLatinOrEditionFlags.includes("HISTORICAL_PONTIFICI_NOSTRO_CORROBORATES_DONOR"));
-assert.match(collects[4].latin,/Pontifici nostro N\\./);
+assert.match(collects[4].latin,/Pontifici nostro N\./);
 assert.ok(map.entries[7].englishVariantFlags.includes("EN_GENERIC_SERVANTS_VS_LATIN_MASCULINE_FEMININE"));
 assert.ok(map.entries[8].englishVariantFlags.some(x=>x.includes("HISTORICAL_PREVENT")));
 assert.ok(map.entries[9].englishVariantFlags.includes("EN_ETC_ABBREVIATED_CLOSING_FORMULA"));
