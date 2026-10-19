@@ -1,0 +1,1018 @@
+{
+  "schema": "AO_PIUS_X_CONVERSATION_COVERAGE_EXPANSION_WAVE1_V1",
+  "date": "2026-10-19",
+  "status": "PROVISIONAL_NEW_SEEDS_NO_ANSWER_APPROVAL_OR_DEDUP",
+  "purpose": "Enlarge question-universe beyond 64 mostly doctrinal questions to biography, historically bounded papal crises, Modernism, apologetics, liturgical principles, pastoral method. Count seeds, not answerable intents.",
+  "counts": {
+    "new_idea_seeds": 48,
+    "existing_cohort": 64,
+    "raw_research_idea_worklist_total": 112,
+    "verified_new_distinct_intents": null,
+    "certified_answers": 0,
+    "by_domain": {
+      "PERSONAL_LIFE": 10,
+      "MODERNISM_AND_DOCTRINAL_CRISIS": 10,
+      "CHURCH_CRISIS_AND_GOVERNANCE": 8,
+      "APOLOGETICS_AND_FAITH_REASON": 8,
+      "SACRED_LITURGY_AND_SACRAMENTS": 6,
+      "PASTORAL_METHOD_AND_CHRISTIAN_LIFE": 6
+    }
+  },
+  "source_catalog": {
+    "BIO": {
+      "title": "Riese and the life of Giuseppe Sarto",
+      "url": "https://www.papapiox.it/biografia/",
+      "kind": "CURATED_SECONDARY_BIOGRAPHY",
+      "profile": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+    },
+    "MUSEO": {
+      "title": "Museo San Pio X family and childhood research",
+      "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+      "kind": "MUSEUM_HISTORIOGRAPHY",
+      "profile": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+    },
+    "ES": {
+      "title": "E supremi (1903)",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "kind": "PAPAL_ENCYCLICAL",
+      "profile": "HISTORICAL_PAPAL_DOCTRINE"
+    },
+    "PA": {
+      "title": "Pascendi dominici gregis (1907)",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "kind": "PAPAL_ENCYCLICAL",
+      "profile": "HISTORICAL_PAPAL_DOCTRINE"
+    },
+    "SA": {
+      "title": "Sacrorum antistitum (1910)",
+      "url": "https://www.vatican.va/content/pius-x/la/motu_proprio/documents/hf_p-x_motu-proprio_19100901_sacrorum-antistitum.html",
+      "kind": "PAPAL_MOTU_PROPRIO",
+      "profile": "HISTORICAL_PAPAL_DISCIPLINE"
+    },
+    "VN": {
+      "title": "Vehementer nos (1906)",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+      "kind": "PAPAL_ENCYCLICAL",
+      "profile": "HISTORICAL_CHURCH_STATE_CONFLICT"
+    },
+    "IF": {
+      "title": "Il fermo proposito (1905)",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "kind": "PAPAL_ENCYCLICAL",
+      "profile": "HISTORICAL_CATHOLIC_ACTION"
+    },
+    "AN": {
+      "title": "Acerbo nimis (1905)",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "kind": "PAPAL_ENCYCLICAL",
+      "profile": "PASTORAL_CATECHESIS"
+    },
+    "TL": {
+      "title": "Tra le sollecitudini (1903)",
+      "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "kind": "PAPAL_MOTU_PROPRIO",
+      "profile": "HISTORICAL_LITURGICAL_DISCIPLINE"
+    },
+    "HA": {
+      "title": "Haerent animo (1908)",
+      "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "kind": "PAPAL_APOSTOLIC_EXHORTATION",
+      "profile": "CLERGY_DIRECTED_SPIRITUAL_EXHORTATION"
+    },
+    "CAT": {
+      "title": "1905 Catechismo maggiore, Creed",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "kind": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "profile": "DOCTRINAL_WITH_EDITION_HOLD"
+    },
+    "SAC": {
+      "title": "1905 Catechismo maggiore, Sacraments",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "kind": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+      "profile": "DOCTRINAL_WITH_EDITION_HOLD"
+    }
+  },
+  "guardrails": [
+    "A document linked to a topic is a retrieval lead, not verified evidence that the document answers the exact proposed question.",
+    "Museum biographies document external historical facts, not Pope Pius X autobiographical testimony; first-person memories require actual authorial testimony.",
+    "Never manufacture the Pope's verdict on present-day Mass restrictions, Vatican II, current popes, contemporary ecclesial accusations, or particular people's faith.",
+    "Keep Pius X's anti-Modernist doctrinal documents distinct from simplistic application to particular theologians or people.",
+    "Time-bound ecclesiastical discipline (e.g. fasting regulations and Church-state laws) must not be presented as current.",
+    "Crosswalk these 48 new seeds against SPX-001..064 and the existing 1905/1912/Salzano sources before adding to count of distinct intentions."
+  ],
+  "next_review": "Locate exact passages (chapter/section/paragraph), classify direct/partial/related/none, then assess overlaps and decide whether each prompt is a standalone conversational intention or follow-up.",
+  "records": [
+    {
+      "id": "SPX-EXP-001",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "What was your family life in Riese like?",
+      "suggested_document": {
+        "title": "Museo San Pio X family and childhood research",
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "source_type": "MUSEUM_HISTORIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-002",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "How did your parents influence your early faith?",
+      "suggested_document": {
+        "title": "Museo San Pio X family and childhood research",
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "source_type": "MUSEUM_HISTORIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-003",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "What drew you toward the priesthood as a boy?",
+      "suggested_document": {
+        "title": "Museo San Pio X family and childhood research",
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "source_type": "MUSEUM_HISTORIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-004",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "What did you learn during your seminary years?",
+      "suggested_document": {
+        "title": "Riese and the life of Giuseppe Sarto",
+        "url": "https://www.papapiox.it/biografia/",
+        "source_type": "CURATED_SECONDARY_BIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-005",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "What did serving in Tombolo teach you about souls?",
+      "suggested_document": {
+        "title": "Riese and the life of Giuseppe Sarto",
+        "url": "https://www.papapiox.it/biografia/",
+        "source_type": "CURATED_SECONDARY_BIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-006",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "What was your work as parish priest in Salzano?",
+      "suggested_document": {
+        "title": "Riese and the life of Giuseppe Sarto",
+        "url": "https://www.papapiox.it/biografia/",
+        "source_type": "CURATED_SECONDARY_BIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-007",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "How did serving in the diocesan curia shape your ministry?",
+      "suggested_document": {
+        "title": "Riese and the life of Giuseppe Sarto",
+        "url": "https://www.papapiox.it/biografia/",
+        "source_type": "CURATED_SECONDARY_BIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-008",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "What challenges awaited you as Bishop of Mantua?",
+      "suggested_document": {
+        "title": "Riese and the life of Giuseppe Sarto",
+        "url": "https://www.papapiox.it/biografia/",
+        "source_type": "CURATED_SECONDARY_BIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-009",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "What did you seek to accomplish as Patriarch of Venice?",
+      "suggested_document": {
+        "title": "Riese and the life of Giuseppe Sarto",
+        "url": "https://www.papapiox.it/biografia/",
+        "source_type": "CURATED_SECONDARY_BIOGRAPHY",
+        "scope": "THIRD_PERSON_HISTORICAL_ATTESTATION_ONLY"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": true,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-010",
+      "domain": "PERSONAL_LIFE",
+      "question_en": "Why did you approach the papacy with such reluctance?",
+      "suggested_document": {
+        "title": "E supremi (1903)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-011",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "What exactly did you mean by Modernism?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-012",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "Why did you consider philosophical agnosticism dangerous to faith?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-013",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "Can religious feeling alone establish revealed truth?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-014",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "What distinguishes authentic doctrinal development from changing dogma?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-015",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "How should faith and scientific inquiry be reconciled?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-016",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "What concerns did you raise about methods of historical biblical criticism?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-017",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "Why did you criticise the Modernists' new apologetics?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-018",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "Why did you call Modernism a synthesis of heresies?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-019",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "What precautions did you require bishops and seminaries to take against Modernism?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-020",
+      "domain": "MODERNISM_AND_DOCTRINAL_CRISIS",
+      "question_en": "Why did you introduce the anti-Modernist oath?",
+      "suggested_document": {
+        "title": "Sacrorum antistitum (1910)",
+        "url": "https://www.vatican.va/content/pius-x/la/motu_proprio/documents/hf_p-x_motu-proprio_19100901_sacrorum-antistitum.html",
+        "source_type": "PAPAL_MOTU_PROPRIO",
+        "scope": "HISTORICAL_PAPAL_DISCIPLINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-021",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question_en": "How can the Church be renewed without breaking with her received faith?",
+      "suggested_document": {
+        "title": "E supremi (1903)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-022",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question_en": "What should Catholics do when false teaching spreads among clergy?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-023",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question_en": "How should bishops exercise responsibility for guarding doctrine?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-024",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question_en": "How did you respond to the separation of Church and State in France?",
+      "suggested_document": {
+        "title": "Vehementer nos (1906)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_CHURCH_STATE_CONFLICT"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-025",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question_en": "What principles should guide Catholics facing hostile state legislation?",
+      "suggested_document": {
+        "title": "Vehementer nos (1906)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_CHURCH_STATE_CONFLICT"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-026",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question_en": "How should Catholic lay associations relate to their bishops?",
+      "suggested_document": {
+        "title": "Il fermo proposito (1905)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_CATHOLIC_ACTION"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-027",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question_en": "What can ordinary Catholics do for the Church's public mission?",
+      "suggested_document": {
+        "title": "Il fermo proposito (1905)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_CATHOLIC_ACTION"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-028",
+      "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+      "question_en": "How can Catholics retain hope when society grows less religious?",
+      "suggested_document": {
+        "title": "E supremi (1903)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-029",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question_en": "Can human reason know that God exists?",
+      "suggested_document": {
+        "title": "1905 Catechismo maggiore, Creed",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "source_type": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+        "scope": "DOCTRINAL_WITH_EDITION_HOLD"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-030",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question_en": "Why is revelation more than an inward religious experience?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-031",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question_en": "Does sincerity make every religion equally true?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-032",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question_en": "Are miracles and prophecies merely religious symbols?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-033",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question_en": "When does scriptural historical criticism conflict with Catholic faith?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-034",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question_en": "Can the Church teach ancient dogmas in genuinely new circumstances?",
+      "suggested_document": {
+        "title": "Pascendi dominici gregis (1907)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-035",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question_en": "What identifies the visible Church founded by Christ?",
+      "suggested_document": {
+        "title": "1905 Catechismo maggiore, Creed",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "source_type": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+        "scope": "DOCTRINAL_WITH_EDITION_HOLD"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-036",
+      "domain": "APOLOGETICS_AND_FAITH_REASON",
+      "question_en": "Why is communion with the Roman Pontiff significant to Catholic unity?",
+      "suggested_document": {
+        "title": "1905 Catechismo maggiore, Creed",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+        "source_type": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+        "scope": "DOCTRINAL_WITH_EDITION_HOLD"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-037",
+      "domain": "SACRED_LITURGY_AND_SACRAMENTS",
+      "question_en": "What distinguishes genuinely sacred music from theatrical music?",
+      "suggested_document": {
+        "title": "Tra le sollecitudini (1903)",
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "source_type": "PAPAL_MOTU_PROPRIO",
+        "scope": "HISTORICAL_LITURGICAL_DISCIPLINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-038",
+      "domain": "SACRED_LITURGY_AND_SACRAMENTS",
+      "question_en": "Why was the dignity of music in church a pastoral concern?",
+      "suggested_document": {
+        "title": "Tra le sollecitudini (1903)",
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "source_type": "PAPAL_MOTU_PROPRIO",
+        "scope": "HISTORICAL_LITURGICAL_DISCIPLINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-039",
+      "domain": "SACRED_LITURGY_AND_SACRAMENTS",
+      "question_en": "What does participation in the Church's common prayer require?",
+      "suggested_document": {
+        "title": "Tra le sollecitudini (1903)",
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "source_type": "PAPAL_MOTU_PROPRIO",
+        "scope": "HISTORICAL_LITURGICAL_DISCIPLINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-040",
+      "domain": "SACRED_LITURGY_AND_SACRAMENTS",
+      "question_en": "What role should traditional chant have in solemn worship?",
+      "suggested_document": {
+        "title": "Tra le sollecitudini (1903)",
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "source_type": "PAPAL_MOTU_PROPRIO",
+        "scope": "HISTORICAL_LITURGICAL_DISCIPLINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-041",
+      "domain": "SACRED_LITURGY_AND_SACRAMENTS",
+      "question_en": "How should a Catholic prepare to receive the Eucharist reverently?",
+      "suggested_document": {
+        "title": "1905 Catechismo maggiore, Sacraments",
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "source_type": "PAPALLY_APPROVED_CATECHISM_DIGITAL_WITNESS",
+        "scope": "DOCTRINAL_WITH_EDITION_HOLD"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-042",
+      "domain": "SACRED_LITURGY_AND_SACRAMENTS",
+      "question_en": "How should children be prepared for their first Holy Communion?",
+      "suggested_document": {
+        "title": "Acerbo nimis (1905)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "PASTORAL_CATECHESIS"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-043",
+      "domain": "PASTORAL_METHOD_AND_CHRISTIAN_LIFE",
+      "question_en": "How can a priest teach an adult who knows almost nothing of the faith?",
+      "suggested_document": {
+        "title": "Acerbo nimis (1905)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "PASTORAL_CATECHESIS"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-044",
+      "domain": "PASTORAL_METHOD_AND_CHRISTIAN_LIFE",
+      "question_en": "How should Catholic parents respond when public schools provide no religious instruction?",
+      "suggested_document": {
+        "title": "Acerbo nimis (1905)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "PASTORAL_CATECHESIS"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-045",
+      "domain": "PASTORAL_METHOD_AND_CHRISTIAN_LIFE",
+      "question_en": "Can a priest's busy pastoral activity replace interior prayer?",
+      "suggested_document": {
+        "title": "Haerent animo (1908)",
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "source_type": "PAPAL_APOSTOLIC_EXHORTATION",
+        "scope": "CLERGY_DIRECTED_SPIRITUAL_EXHORTATION"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-046",
+      "domain": "PASTORAL_METHOD_AND_CHRISTIAN_LIFE",
+      "question_en": "What makes the example of a priest as important as his preaching?",
+      "suggested_document": {
+        "title": "Haerent animo (1908)",
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "source_type": "PAPAL_APOSTOLIC_EXHORTATION",
+        "scope": "CLERGY_DIRECTED_SPIRITUAL_EXHORTATION"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-047",
+      "domain": "PASTORAL_METHOD_AND_CHRISTIAN_LIFE",
+      "question_en": "How can laypeople contribute without replacing the work of pastors?",
+      "suggested_document": {
+        "title": "Il fermo proposito (1905)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_CATHOLIC_ACTION"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    },
+    {
+      "id": "SPX-EXP-048",
+      "domain": "PASTORAL_METHOD_AND_CHRISTIAN_LIFE",
+      "question_en": "How can one defend doctrine firmly while seeking the good of others?",
+      "suggested_document": {
+        "title": "E supremi (1903)",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "source_type": "PAPAL_ENCYCLICAL",
+        "scope": "HISTORICAL_PAPAL_DOCTRINE"
+      },
+      "source_state": "DOCUMENT_LOCATED_PASSAGE_NOT_YET_COLLATED_FOR_THIS_QUESTION",
+      "intent_state": "NEW_CANDIDATE_POSSIBLE_EXISTING_OVERLAP",
+      "source_authorship_review_needed": false,
+      "answer_sufficiency": "UNASSESSED",
+      "approved_distinct_intent": false,
+      "doctrinal_reviewed": false,
+      "certified_historical_first_person": false,
+      "visitor_dialogue_published": false
+    }
+  ]
+}
