@@ -60,7 +60,14 @@ export function assessMassTextPrint({prepared,model,guideRegistry=null,language=
      if(!nonempty(b.blockId)||byBlock.has(b.blockId))errors.push("Missing/duplicate source block "+b.blockId);
      byBlock.add(b.blockId);
      const absentSlot=Boolean(b.properSlot&&source.properSlots?.slots?.[b.properSlot]?.status==="NOT_APPLICABLE");
-     if(!b.stateOnly&&b.paragraphCount===0&&!absentSlot)
+     // Selected 1962 forms without incense may omit only the two
+     // exactly sourced conditional incensation blocks. Preserve block
+     // inventory in printed Missal without claiming that an omitted prayer
+     // was lost from the canonical text corpus.
+     const appointedIncenseOmission=b.omittedByRite==="1962_FORM_NO_INCENSE" &&
+       ["AO.SM.B013","AO.SM.B036"].includes(b.blockId) &&
+       ["LOW","MISSA_CANTATA_SIMPLE"].includes(prepared.session.resolvedMass.form);
+     if(!b.stateOnly&&b.paragraphCount===0&&!absentSlot&&!appointedIncenseOmission)
        errors.push("Source block has no text: "+b.blockId);
      if(b.firstParagraphIndex==null){
        if(b.paragraphCount)errors.push("Missing block offset "+b.blockId);

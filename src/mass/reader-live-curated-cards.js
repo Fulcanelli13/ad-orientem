@@ -127,14 +127,25 @@ function boundaryIndex(card,marker){
   const matches=(card.blocks??[]).filter(b=>b.blockId===id);
   if(matches.length!==1)throw new Error(sourceId(card)+": expected one source block "+id);
   const b=matches[0];
-  if(b.firstParagraphIndex==null||!b.paragraphCount)
+  if(b.firstParagraphIndex==null||!b.paragraphCount){
+    // Allow a form-selected omitted incensation block to end at its
+    // immediately preceding source prayer. Never fabricate a blank line.
+    if((id==="AO.SM.B013" &&
+        ["1962_FORM_NO_INCENSE","RITUS_XIII_2_REQUIEM"].includes(b.omittedByRite))||
+       (id==="AO.SM.B036"&&b.omittedByRite==="1962_FORM_NO_INCENSE")){
+      const before=(card.blocks??[]).slice(0,(card.blocks??[]).indexOf(b)).reverse()
+        .find(x=>x.firstParagraphIndex!=null&&x.paragraphCount>0);
+      if(before)return before.firstParagraphIndex+before.paragraphCount-1;
+    }
     throw new Error(sourceId(card)+": proposed cut has no prayer paragraph "+id);
+  }
   return b.firstParagraphIndex+b.paragraphCount-1;
 }
 function blocksInRange(card,first,last){
   const included=[];
   for(const meta of card.blocks??[]){
     if(meta.firstParagraphIndex==null||!meta.paragraphCount){
+      if(meta.omittedByRite)continue; // Exact omitted block stays on canonical source model.
       // Editorially blank placeholders stay in the nearest following
       // section, never inventing a display paragraph or ritual event.
       const next=(card.blocks??[]).find(x=>x.firstParagraphIndex!=null&&
@@ -207,7 +218,20 @@ function curated(card){
   ends.push(card.paragraphs.length-1);
   let previous=-1;
   return ends.map((last,i)=>{
-    if(last<=previous)throw new Error(sourceId(card)+": empty or reordered curated prayer group "+i);
+    if(last<=previous){
+      const omitted=sourceId(card)==="AO.CARD.010"&&i===3
+        ?(card.blocks??[]).find(b=>b.blockId==="AO.SM.B036"&&b.omittedByRite==="1962_FORM_NO_INCENSE")
+        :sourceId(card)==="AO.CARD.029"&&i===1
+        ?(card.blocks??[]).find(b=>b.blockId==="AO.SM.B092"&&b.omittedByRite==="RITUS_XIII_1_REQUIEM")
+        :null;
+      if(last===previous&&omitted)return Object.freeze({
+        title:omitted.blockId==="AO.SM.B036"?"Incensation omitted for this Mass":
+          "Requiem · No final blessing",
+        paragraphs:[],blocks:[{...omitted,firstParagraphIndex:null,paragraphCount:0}],
+        ordinal:i+1,stateOnly:true,omittedByRite:omitted.omittedByRite,
+      });
+      throw new Error(sourceId(card)+": empty or reordered curated prayer group "+i);
+    }
     const first=previous+1;
     const paragraphs=card.paragraphs.slice(first,last+1);
     const blocks=blocksInRange(card,first,last);
@@ -245,6 +269,8 @@ export function projectCuratedOrdinaryLiveCards(model){
         sequence:result.length+1,
         paragraphs:chunk.paragraphs,
         blocks:chunk.blocks,
+        stateOnly:chunk.stateOnly===true || (chunk.paragraphs.length===0 && sourceCard.stateOnly===true),
+        omittedByRite:chunk.omittedByRite??null,
         sourceSectionId:canonicalSourceId(sourceCard),
         sourceSequence:sourceCard.sourceSequence??sourceCard.guideSequence??sourceCard.sequence,
         guideSequence:sourceCard.guideSequence??sourceCard.sourceSequence??sourceCard.sequence,

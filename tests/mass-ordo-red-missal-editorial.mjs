@@ -160,8 +160,18 @@ for(const corpus of [low,sung]){
     properSlots,vernacularLanguage:lang,frenchOrdinary:french,
     actualForm:corpus.form==="LOW"?"LOW":"MISSA_CANTATA_SIMPLE"});
    for(const item of manifest.approvedCues){
-    if(!card.blocks.some(b=>b.blockId===check.get(item.id).blockId))continue;
+    const sourceBlock=card.blocks.find(b=>b.blockId===check.get(item.id).blockId);
+    if(!sourceBlock)continue;
     const p=card.paragraphs.find(x=>x.sourceCueIds?.includes(item.id));
+    // Source completeness is checked above against the immutable corpus.
+    // The 1962 reader must NOT display incensation prayers at a form
+    // where incense was not selected.
+    if(sourceBlock.omittedByRite==="1962_FORM_NO_INCENSE"){
+      assert.ok(["AO.SM.B013","AO.SM.B036"].includes(sourceBlock.blockId),
+        "Omitted source block outside permitted conditional incensation");
+      assert.equal(p,undefined,"Unappointed incense text leaked into reader");
+      continue;
+    }
     assert.ok(p,corpus.form+"/"+lang+": approved source cue not in reader "+item.id);
     assert.ok(!seenByLang[lang].has(item.id),corpus.form+"/"+lang+": duplicate projected cue "+item.id);
     seenByLang[lang].add(item.id);
@@ -180,8 +190,32 @@ for(const corpus of [low,sung]){
       corpus.form+" reader lost controlling Latin at "+item.id);
    }
   }
-  assert.equal(seenByLang[lang].size,approved.size,
-   corpus.form+"/"+lang+": not all approved source English edits projected in real reader");
+  const omittedApproved=[...approved.keys()].filter(id=>
+   corpus.blocks.some(b=>b.Block_ID==="AO.SM.B036"&&b.units?.some(u=>u.cue_id===id)));
+  assert.deepEqual(omittedApproved,["AO.SM.C0121","AO.SM.C0122"]);
+  assert.equal(seenByLang[lang].size,approved.size-omittedApproved.length,
+   corpus.form+"/"+lang+": appointed source-English reader coverage changed");
+ }
+}
+// Corrected incense prayers must still be shown in the form which actually
+// uses incense. Keep this bilingual source-to-presentation check independent
+// of the Low/simple no-incense omission.
+for(const lang of ["en","fr"]){
+ const card=buildReaderSectionCard({
+  corpus:sung,section:sections.sectionById("AO.CARD.010"),
+  properSlots,vernacularLanguage:lang,frenchOrdinary:french,
+  actualForm:"MISSA_CANTATA_INCENSE",
+ });
+ for(const cueId of ["AO.SM.C0121","AO.SM.C0122"]){
+  const p=card.paragraphs.find(x=>x.sourceCueIds?.includes(cueId));
+  assert.ok(p,"Appointed incensation must include "+cueId+"/"+lang);
+  const text=[p.primary,p.alternate,p.secondary].filter(Boolean).join("\n");
+  const comparison=lang==="en"?allCorrections.get(cueId).to:
+    french.byCue[cueId];
+  assert.ok(text.includes(comparison),
+   "Appointed incense line missing its "+lang+" version "+cueId);
+  assert.ok(text.includes(reviewRows.SUNG.find(x=>x.cueId===cueId).existingLatin),
+   "Source Latin missing from appointed incense prayer "+cueId+"/"+lang);
  }
 }
 const l=new Map(reviewRows.LOW.map(x=>[x.cueId,x]));

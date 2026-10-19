@@ -2295,6 +2295,12 @@ export async function mountNativeReaderPreview({
 
   function visibleCardAllowed(card){
     if(!card)return false;
+    // The source graph preserves an omitted rite's original indexed card,
+    // but no blank "omitted" screen belongs in linear Mass navigation or
+    // direct jumps. This protects the fixed 48/64 structural source map.
+    if(card.stateOnly===true &&
+       ["RITUS_XIII_1_REQUIEM","RITUS_XIII_2_REQUIEM","1962_FORM_NO_INCENSE"]
+         .includes(card.omittedByRite))return false;
     // This prayer survived only as a local/older practice; its C0235-C0241
     // source paragraphs remain auditable in the 65-card review, but are
     // never inserted into the ordinary faithful's swipe path by default.

@@ -59,6 +59,41 @@ assert.equal(state.priestPosition.station,"ROUTE_CONTROLLED");
 assert.equal(state.priestPosition.routeId,"ENTRANCE_ALTAR_INCENSATION");
 assert.equal(state.priestVoice.value,"SILENT");
 
+// Ritus XIII.2: incense at the entrance is omitted at Requiem, even
+// when this selected Sung Mass permits incense at the Offertory.
+for(const requiemSelect of [
+ {actualCelebration:{type:"REQUIEM"}},
+ {overlays:["REQUIEM"]},
+ {provenance:{isRequiem:true}}
+]){
+ const req=createReaderCueStateController({
+  registries,sungCorpus:sung,gestureMatrix,
+  prepared:{session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",...requiemSelect}}},
+ });
+ for(const cueId of ["AO.SM.C0040","AO.SM.C0041"]){
+  const row=req.project(cueId);
+  assert.equal(row.reason,"RITUS_XIII_2_REQUIEM_ENTRANCE_INCENSE_OMITTED");
+  assert.equal(row.priestAction,null);
+  assert.equal(row.priestPosition,null);
+  assert.equal(row.priestVoice,null);
+ }
+ for(const id of ["AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266"]){
+  const omitted=req.project(id);
+  assert.equal(omitted.reason,"RITUS_XIII_1_REQUIEM_FINAL_BLESSING_OMITTED");
+  assert.equal(omitted.priestAction,null);
+  assert.equal(omitted.gesture,null);
+  assert.equal(omitted.priestPosition,null);
+ }
+ assert.ok(req.project("AO.SM.C0262").reason!== "RITUS_XIII_1_REQUIEM_FINAL_BLESSING_OMITTED",
+   "Omitted final blessing also hid Placeat altar kiss");
+ assert.ok(req.project("AO.SM.C0269").reason!== "RITUS_XIII_1_REQUIEM_FINAL_BLESSING_OMITTED",
+   "Omitted final blessing also hid Last Gospel");
+ assert.equal(req.project("AO.SM.C0124").priestAction?.label,"RECEIVES INCENSE",
+  "Omitting initial Requiem incensation must not cancel permitted Offertory");
+}
+assert.equal(ctrl.project("AO.SM.C0041").priestAction?.label,"INCENSES ALTAR",
+ "Ordinary incensed Sung Mass lost legitimate entrance incensation");
+
 state=ctrl.project("AO.SM.C0068");
 assert.match(state.gesture.action,/Sign of the Cross/i);
 assert.equal(state.priestPosition.station,"ALTAR_CENTER");

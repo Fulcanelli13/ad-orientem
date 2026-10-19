@@ -268,6 +268,61 @@ export function buildReaderSectionCard({
   const paragraphs=[];
   const blockMeta=[];
   for(const block of blocks){
+    // Incense is not used at LOW or MISSA_CANTATA_SIMPLE. The source's
+    // two CONDITIONAL_1962 incensation blocks must not appear as prayers
+    // merely because the frozen donor holds their content. This is a
+    // selected-form gate, never a change to the underlying donor.
+    const knownNoIncenseForm=actualForm!=null &&
+      ["LOW","MISSA_CANTATA_SIMPLE"].includes(String(actualForm).toUpperCase());
+    if(knownNoIncenseForm &&
+       ["AO.SM.B013","AO.SM.B036"].includes(block.Block_ID)){
+      const expected=block.Block_ID==="AO.SM.B013"
+        ?["AO.SM.C0040","AO.SM.C0041"]
+        :["AO.SM.C0120","AO.SM.C0121","AO.SM.C0122","AO.SM.C0123","AO.SM.C0124"];
+      if(block.Branch_Status!=="CONDITIONAL_1962"||
+         block.units?.length!==expected.length ||
+         block.units.some((u,i)=>u.cue_id!==expected[i]))
+        throw new Error("NO_INCENSE_FORM_SOURCE_IDENTITY_MISMATCH");
+      blockMeta.push(Object.freeze({
+        blockId:block.Block_ID,title:block.Title,properSlot:block.Proper_Slot,
+        stateOnly:false,firstParagraphIndex:null,paragraphCount:0,
+        omittedByRite:"1962_FORM_NO_INCENSE",
+      }));
+      continue;
+    }
+    // XIII.2 suppresses the whole initial-incensation block at a
+    // Requiem. Offertory incensation is independently permitted and
+    // must remain available for the selected incensed form.
+    if(block.Block_ID==="AO.SM.B013" &&
+       omittedOrdinaryCues.includes("AO.SM.C0040") &&
+       omittedOrdinaryCues.includes("AO.SM.C0041")){
+      if(block.units?.length!==2 ||
+         block.units[0]?.cue_id!=="AO.SM.C0040" ||
+         block.units[1]?.cue_id!=="AO.SM.C0041")
+        throw new Error("REQUIEM_ENTRANCE_INCENSATION_SOURCE_IDENTITY_MISMATCH");
+      blockMeta.push(Object.freeze({
+        blockId:block.Block_ID,title:block.Title,properSlot:block.Proper_Slot,
+        stateOnly:false,firstParagraphIndex:null,paragraphCount:0,
+        omittedByRite:"RITUS_XIII_2_REQUIEM",
+      }));
+      continue;
+    }
+    // XIII.1 omits the final blessing completely at a Requiem.
+    // Placeat, altar kiss and Last Gospel remain in their original order.
+    if(block.Block_ID==="AO.SM.B092"&&
+       ["AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266"]
+         .every(id=>omittedOrdinaryCues.includes(id))){
+      const expected=["AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266"];
+      if(block.units?.length!==expected.length||
+         block.units.some((u,i)=>u.cue_id!==expected[i]))
+        throw new Error("REQUIEM_FINAL_BLESSING_SOURCE_IDENTITY_MISMATCH");
+      blockMeta.push(Object.freeze({
+        blockId:block.Block_ID,title:block.Title,properSlot:block.Proper_Slot,
+        stateOnly:false,firstParagraphIndex:null,paragraphCount:0,
+        omittedByRite:"RITUS_XIII_1_REQUIEM",
+      }));
+      continue;
+    }
     // XIII.1 omits the complete FIRST peace-prayer block at Requiem Masses.
     // Retain its non-rendered block metadata for original Missal section
     // ownership; never invent a blank prayer or renumber the other two.
@@ -309,7 +364,9 @@ export function buildReaderSectionCard({
     schema:"ao-reader-section-card-v1",
     sectionId:section.sectionId,
     sequence:section.sequence,
-    title:section.name,
+    title:blockMeta.some(b=>b.blockId==="AO.SM.B092"&&
+      b.omittedByRite==="RITUS_XIII_1_REQUIEM")
+      ?"Placeat tibi, sancta Trinitas":section.name,
     part:section.part,
     rubricKey:section.rubricKey,
     macroId:mid,

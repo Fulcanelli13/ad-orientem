@@ -49,7 +49,7 @@ const deadEn=withCertifiedSolemnMissalMinisters(mk(sources),{
 const deadFr=withCertifiedSolemnMissalMinisters(mk(sources),{
  formStateData:formState,cueState:dead,form:"SOLEMN",language:"fr"});
 const byId=(rows,id)=>rows.flatMap(x=>x.publishedMissalRubrics??[]).find(x=>x.id===id);
-for(const id of ["SMIN-006","SMIN-012","SMIN-013"]){
+for(const id of ["SMIN-001","SMIN-002","SMIN-006","SMIN-012","SMIN-013"]){
  assert.equal(byId(deadEn,id),undefined,id+" was not suppressed at Requiem");
  assert.equal(byId(deadFr,id),undefined,id+" French rubric leaks into Requiem");
  assert.ok(byId(ordinaryEn,id),"Ordinary Solemn Mass suppressed "+id);
@@ -59,7 +59,8 @@ for(const id of ["SMIN-004","SMIN-007","SMIN-009"]){
  assert.notEqual(byId(deadEn,id).displayText,byId(ordinaryEn,id).displayText);
  assert.notEqual(byId(deadFr,id).displayText,byId(ordinaryFr,id).displayText);
 }
-assert.equal(deadEn.flatMap(x=>x.publishedMissalRubrics??[]).length,16);
+assert.equal(deadEn.flatMap(x=>x.publishedMissalRubrics??[]).length,14);
+assert.ok(byId(deadEn,"SMIN-009"),"Requiem Offertory incense must remain permitted");
 for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"]){
  const rows=mk(sources);
  const projected=withCertifiedSolemnMissalMinisters(rows,{formStateData:formState,cueState:plain,form});
@@ -84,4 +85,4 @@ const norm=normalizeReaderMoment({paragraphs:v});
 assert.equal(norm.paragraphs[0].publishedMissalRubrics[0].id,"SMIN-004");
 assert.equal(norm.paragraphs[0].publishedMissalRubrics[0].observedNow,false);
 assert.ok(Object.isFrozen(v) && Object.isFrozen(v[0].publishedMissalRubrics));
-console.log("PASS 19 certified R18 Solemn minister Missal rubrics, bilingual EN/FR; 16 Requiem, no invented Low/Sung actor, once-per-range, no reader clocks or research promotion.");
+console.log("PASS 19 certified R18 Solemn minister Missal rubrics, bilingual EN/FR; 14 Requiem after XIII.2 initial incense exclusion, no invented Low/Sung actor, once-per-range, no reader clocks or research promotion.");
