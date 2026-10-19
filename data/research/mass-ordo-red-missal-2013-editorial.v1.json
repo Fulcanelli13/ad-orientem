@@ -1,6 +1,6 @@
 {
   "schema": "ao.mass.ordo-missae.red-missal.english-editorial.v1",
-  "status": "32_APPROVED_202_RETAINED_3_PARTIAL_15_CEREMONIAL_4_TEXT_SOURCE_HOLDS",
+  "status": "32_APPROVED_ENGLISH_209_REVIEWED_EQUIVALENT_INCLUDING_SEVEN_INDEPENDENT_WITNESSES_15_CEREMONIAL",
   "source": {
     "title": "Latin–English Booklet Missal for Praying the Traditional Mass",
     "publisher": "Coalition in Support of Ecclesia Dei",
@@ -2294,28 +2294,72 @@
       "status": "VISUALLY_COLLATED_EQUIVALENT_NO_CHANGE",
       "scope": "LAST_GOSPEL — Red printed p49. Gospel preface, Johannine text and Deo gratias reviewed; retained appropriate translated text. Last Gospel kneel word and its adjacent cue are source-corrected separately.",
       "latinSource": "Missale Romanum 1962 controls; Red Missal is the preferred English witness only."
-    }
-  ],
-  "partiallyReviewed": [
+    },
     {
       "cueId": "AO.SM.C0016",
-      "status": "PRIEST_CONFITEOR_ONLY_ABBREVIATED_IN_BOOKLET",
-      "bookletPdfPage": 14,
-      "note": "Red booklet abbreviates priest's Confiteor; the parallel ministers' text is not a complete verbatim witness for this cue"
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "bookletPdfPage": null,
+      "bookletPrintedPage": null,
+      "scope": "1962 priest's full Confiteor, invocation through et vobis fratres, corroborated in independent bilingual 1962 Missal and printed Ritus servandus.",
+      "latinSource": "https://catholon.com/missale-1962.html?lang=en ; https://novenaregina.com/missal",
+      "witnessAuthority": "independent_1962_missal_or_liturgical_comparison"
     },
     {
       "cueId": "AO.SM.C0017",
-      "status": "PRIEST_CONFITEOR_ONLY_ABBREVIATED_IN_BOOKLET",
-      "bookletPdfPage": 14,
-      "note": "Red booklet abbreviates priest's Confiteor; the parallel ministers' text is not a complete verbatim witness for this cue"
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "bookletPdfPage": null,
+      "bookletPrintedPage": null,
+      "scope": "1962 priest's triple mea culpa, present word for word in independent bilingual priest Confiteor.",
+      "latinSource": "https://novenaregina.com/missal ; https://novenaregina.com/missal",
+      "witnessAuthority": "independent_1962_missal_or_liturgical_comparison"
     },
     {
       "cueId": "AO.SM.C0018",
-      "status": "PRIEST_CONFITEOR_ONLY_ABBREVIATED_IN_BOOKLET",
-      "bookletPdfPage": 14,
-      "note": "Red booklet abbreviates priest's Confiteor; the parallel ministers' text is not a complete verbatim witness for this cue"
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "bookletPdfPage": null,
+      "bookletPrintedPage": null,
+      "scope": "1962 priest's complete conclusion et vos fratres orare pro me confirmed by separate full-text 1962 Ordinary.",
+      "latinSource": "https://catholon.com/missale-1962.html?lang=en ; https://novenaregina.com/missal",
+      "witnessAuthority": "independent_1962_missal_or_liturgical_comparison"
+    },
+    {
+      "cueId": "AO.SM.C0040",
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "bookletPdfPage": null,
+      "bookletPrintedPage": null,
+      "scope": "The original Latin Ab illo benedicáris, in cuius honóre cremáberis agrees with independently sourced 1962 rite; existing English 'May you be blessed by Him in whose honour you shall be burned' is a faithful translation. The printed Red booklet alone lacked this passage.",
+      "latinSource": "https://www.newliturgicalmovement.org/2024/02/blessing-incense.html ; https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1710-preparaci%C3%B3n.html",
+      "witnessAuthority": "independent_1962_missal_or_liturgical_comparison"
+    },
+    {
+      "cueId": "AO.SM.C0235",
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "bookletPdfPage": null,
+      "bookletPrintedPage": null,
+      "scope": "The optional local/older second Confiteor first sentence is the same Latin as the servers' et tibi pater Confiteor; English meaning agrees with the published 1962 Ordinary. This does not authorize reciting the optional Confiteor in the normative 1962 rite.",
+      "latinSource": "https://catholon.com/missale-1962.html?lang=en ; https://keepthefaith.org/wp-content/uploads/2024/03/Missal-of-1962-2001-Spring.pdf",
+      "witnessAuthority": "independent_1962_missal_or_liturgical_comparison"
+    },
+    {
+      "cueId": "AO.SM.C0236",
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "bookletPdfPage": null,
+      "bookletPrintedPage": null,
+      "scope": "Triple mea culpa is identical to the servers' Confiteor and independently established in the priest/server ordinary; its conditional second-Communion use is an older/customary overlay only.",
+      "latinSource": "https://novenaregina.com/missal ; https://keepthefaith.org/wp-content/uploads/2024/03/Missal-of-1962-2001-Spring.pdf",
+      "witnessAuthority": "independent_1962_missal_or_liturgical_comparison"
+    },
+    {
+      "cueId": "AO.SM.C0237",
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "bookletPdfPage": null,
+      "bookletPrintedPage": null,
+      "scope": "The optional second Confiteor conclusion contains et te pater and agrees in meaning with the printed server Confiteor; archaic 'thee, Father' is a permitted translation variant. Remains omitted from the 1962 normative Mass unless explicit local/custom selection.",
+      "latinSource": "https://catholon.com/missale-1962.html?lang=en ; https://keepthefaith.org/wp-content/uploads/2024/03/Missal-of-1962-2001-Spring.pdf",
+      "witnessAuthority": "independent_1962_missal_or_liturgical_comparison"
     }
   ],
+  "partiallyReviewed": [],
   "blockedReview": [],
   "wave5": {
     "name": "Offertory to Consecration source collation",
@@ -2559,26 +2603,102 @@
       "reason": "Bracketed action, posture, or silent commemoration; verify against 1962 rubrics and reader gesture registry, not English Missal prayer translation."
     }
   ],
-  "sourceHolds": [
+  "sourceHolds": [],
+  "independentWitnessClosure": [
+    {
+      "cueId": "AO.SM.C0016",
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "rationale": "1962 priest's full Confiteor, invocation through et vobis fratres, corroborated in independent bilingual 1962 Missal and printed Ritus servandus.",
+      "sources": [
+        "https://catholon.com/missale-1962.html?lang=en",
+        "https://novenaregina.com/missal"
+      ],
+      "witness": "independent complete 1962 priest Confiteor; Red Missal 2013 abbreviates this section",
+      "sourceComparison": "Latin role distinctions et vobis fratres / et vos fratres preserved. English source equivalent, no patch necessary."
+    },
+    {
+      "cueId": "AO.SM.C0017",
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "rationale": "1962 priest's triple mea culpa, present word for word in independent bilingual priest Confiteor.",
+      "sources": [
+        "https://novenaregina.com/missal",
+        "https://novenaregina.com/missal"
+      ],
+      "witness": "independent complete 1962 priest Confiteor; Red Missal 2013 abbreviates this section",
+      "sourceComparison": "Latin role distinctions et vobis fratres / et vos fratres preserved. English source equivalent, no patch necessary."
+    },
+    {
+      "cueId": "AO.SM.C0018",
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "rationale": "1962 priest's complete conclusion et vos fratres orare pro me confirmed by separate full-text 1962 Ordinary.",
+      "sources": [
+        "https://catholon.com/missale-1962.html?lang=en",
+        "https://novenaregina.com/missal"
+      ],
+      "witness": "independent complete 1962 priest Confiteor; Red Missal 2013 abbreviates this section",
+      "sourceComparison": "Latin role distinctions et vobis fratres / et vos fratres preserved. English source equivalent, no patch necessary."
+    },
     {
       "cueId": "AO.SM.C0040",
-      "status": "SOLEMN_INCENSATION_TEXT_NEEDS_DIFFERENT_PRINTED_WITNESS",
-      "reason": "Prayer Ab illo benedicaris lacks a complete matching printed witness in this booklet; defer source translation decision."
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "rationale": "The original Latin Ab illo benedicáris, in cuius honóre cremáberis agrees with independently sourced 1962 rite; existing English 'May you be blessed by Him in whose honour you shall be burned' is a faithful translation. The printed Red booklet alone lacked this passage.",
+      "sources": [
+        "https://www.newliturgicalmovement.org/2024/02/blessing-incense.html",
+        "https://www.liturgiapapal.org/index.php/recursos-lit%C3%BArgicos/misal/missale-1962/1710-preparaci%C3%B3n.html"
+      ],
+      "witness": "Independent rite and liturgical translation study for first incensation blessing",
+      "sourceComparison": "No English translation amendment; original donor, Latin and French left untouched."
     },
     {
       "cueId": "AO.SM.C0235",
-      "status": "OLDER_OPTIONAL_COMMUNION_CONFITEOR_NOT_NORMATIVE_1962",
-      "reason": "Booklet p45 sends reader to an earlier Confiteor and expressly notes this additional Communion Confiteor is omitted in the 1962 Missal. Text should be checked under local/older celebration option, never promoted into default."
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "rationale": "The optional local/older second Confiteor first sentence is the same Latin as the servers' et tibi pater Confiteor; English meaning agrees with the published 1962 Ordinary. This does not authorize reciting the optional Confiteor in the normative 1962 rite.",
+      "sources": [
+        "https://catholon.com/missale-1962.html?lang=en",
+        "https://keepthefaith.org/wp-content/uploads/2024/03/Missal-of-1962-2001-Spring.pdf"
+      ],
+      "witness": "1962 printed full server Confiteor and historical comparison documenting older/local second-Confiteor usage",
+      "sourceComparison": "No English translation amendment; original donor, Latin and French left untouched."
     },
     {
       "cueId": "AO.SM.C0236",
-      "status": "OLDER_OPTIONAL_COMMUNION_CONFITEOR_NOT_NORMATIVE_1962",
-      "reason": "Booklet p45 sends reader to an earlier Confiteor and expressly notes this additional Communion Confiteor is omitted in the 1962 Missal. Text should be checked under local/older celebration option, never promoted into default."
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "rationale": "Triple mea culpa is identical to the servers' Confiteor and independently established in the priest/server ordinary; its conditional second-Communion use is an older/customary overlay only.",
+      "sources": [
+        "https://novenaregina.com/missal",
+        "https://keepthefaith.org/wp-content/uploads/2024/03/Missal-of-1962-2001-Spring.pdf"
+      ],
+      "witness": "1962 printed full server Confiteor and historical comparison documenting older/local second-Confiteor usage",
+      "sourceComparison": "No English translation amendment; original donor, Latin and French left untouched."
     },
     {
       "cueId": "AO.SM.C0237",
-      "status": "OLDER_OPTIONAL_COMMUNION_CONFITEOR_NOT_NORMATIVE_1962",
-      "reason": "Booklet p45 sends reader to an earlier Confiteor and expressly notes this additional Communion Confiteor is omitted in the 1962 Missal. Text should be checked under local/older celebration option, never promoted into default."
+      "status": "SOURCE_CORROBORATED_EQUIVALENT_NO_CHANGE",
+      "rationale": "The optional second Confiteor conclusion contains et te pater and agrees in meaning with the printed server Confiteor; archaic 'thee, Father' is a permitted translation variant. Remains omitted from the 1962 normative Mass unless explicit local/custom selection.",
+      "sources": [
+        "https://catholon.com/missale-1962.html?lang=en",
+        "https://keepthefaith.org/wp-content/uploads/2024/03/Missal-of-1962-2001-Spring.pdf"
+      ],
+      "witness": "1962 printed full server Confiteor and historical comparison documenting older/local second-Confiteor usage",
+      "sourceComparison": "No English translation amendment; original donor, Latin and French left untouched."
     }
-  ]
+  ],
+  "wave8": {
+    "title": "Seven outstanding text-witness dispositions, all retained",
+    "remainingTextualSourceHolds": 0,
+    "independentlyVerified": 7,
+    "conditionalOlderCommunionConfiteorCues": [
+      "AO.SM.C0235",
+      "AO.SM.C0236",
+      "AO.SM.C0237"
+    ],
+    "fullPriestConfiteorCues": [
+      "AO.SM.C0016",
+      "AO.SM.C0017",
+      "AO.SM.C0018"
+    ],
+    "solemnIncenseBlessingCue": "AO.SM.C0040",
+    "norm1962Rule": "The additional Communion Confiteor is omitted from the 1962 ordinary; older/local variant remains opt-in only.",
+    "traceability": "Separate independent external sources retained per cue in independentWitnessClosure; do not imply that all seven passages appear fully printed in the 2013 Red Missal."
+  }
 }
