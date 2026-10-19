@@ -102,6 +102,28 @@
       "visual": "IN_SITU_OBJECT_COVERAGE_CANDIDATE; NOT_NEUTRAL_STUDIO",
       "priority": "IN_SITU_CONTEXT_ONLY_UNTIL_FRAMING_REVIEW",
       "caveat": "Architecture is part of in-situ wall-mounted ambry; crop cannot imply free-standing object. Attribution and share-alike required."
+    },
+    {
+      "object_id": "EQ10",
+      "object": "Holy-water bucket / aspersorium",
+      "source": "https://collections.musee-mccord-stewart.ca/en/objects/2250/no-title",
+      "accession": "M10979.1",
+      "identity": "Montreal holy-water aspersorium, silver, 1811, attributed to silversmith Pierre Huguet dit Latour.",
+      "rights": "MCCORD_COLLECTION_EXACT_IMAGE_MARKED_PUBLIC_DOMAIN_COMMERCIAL_REUSE_ALLOWED",
+      "visual": "MUSEUM_INDIVIDUAL_OBJECT_PAGE_ORIGINAL_IMAGE_QA_PENDING",
+      "priority": "OBJECT_AND_RIGHTS_MATCH",
+      "caveat": "Source specifically aspersorium, not generic incense bucket; museum web image visibly exists but complete isolation/full-resolution still to inspect."
+    },
+    {
+      "object_id": "EQ11",
+      "object": "Aspergillum",
+      "source": "https://collections.musee-mccord-stewart.ca/en/objects/2251/no-title",
+      "accession": "M10979.2",
+      "identity": "Quebec religious aspergillum, 1811, approximately 25cm, separate companion artifact to M10979.1.",
+      "rights": "MCCORD_COLLECTION_EXACT_IMAGE_MARKED_PUBLIC_DOMAIN_COMMERCIAL_REUSE_ALLOWED",
+      "visual": "MUSEUM_INDIVIDUAL_OBJECT_PAGE_ORIGINAL_IMAGE_QA_PENDING",
+      "priority": "OBJECT_AND_RIGHTS_MATCH",
+      "caveat": "The two companion artifacts MUST NOT be combined in one hero photograph; each has its own museum page with its own image."
     }
   ],
   "other_verified_research": [
@@ -134,6 +156,26 @@
       "rights": "WIKIMEDIA_PHOTOGRAPHER_PUBLIC_DOMAIN_DECLARATION_VERIFY_EXACT_FILE",
       "status": "REFERENCE_FALLBACK_ONLY",
       "reason": "Museum environment and no familiar red glass; not a satisfactory SN05 primary."
+    },
+    {
+      "object_ids": [
+        "SA03"
+      ],
+      "source": "https://repositorio.iaph.es/handle/11532/399146",
+      "identity": "Andalusian Catholic baptismal shell, IAPH photograph 2022",
+      "rights": "CC_BY_NC_SA_3_0_NONCOMMERCIAL_ONLY",
+      "status": "NOT_ELIGIBLE_FOR_COMMERCIAL_ATLAS",
+      "reason": "Object type and professional photograph identified, but noncommercial clause prevents free commercial reuse; maintain rights hold."
+    },
+    {
+      "object_ids": [
+        "SA03"
+      ],
+      "source": "https://museoamparo.com/colecciones/pieza/705/concha-bautismal",
+      "identity": "18th-century New Spanish silver baptismal shell, Museum Amparo collection",
+      "rights": "PUBLIC_IMAGE_REUSE_NOT_ESTABLISHED",
+      "status": "RIGHTS_HOLD",
+      "reason": "Excellent correct isolated object lead with photography rights not yet confirmed; no asset import."
     }
   ],
   "carry_forward_holds": [
