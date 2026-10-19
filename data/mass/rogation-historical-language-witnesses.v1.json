@@ -1,0 +1,168 @@
+{
+  "schema": "AO_ROGATION_HISTORICAL_LANGUAGE_WITNESSES_V1",
+  "date": "2026-10-19",
+  "purpose": "DISCOVER_EXISTING_EN_FR_BEFORE_ANY_NEW_TRANSLATION",
+  "status": "SOURCE_WITNESS_LOCATED_SEGMENTS_NOT_1962_READER_APPROVED",
+  "rigour": "The published web transcriptions have not been fully collated to their print facsimiles, nor verse-aligned to the edition-qualified 1962 procession; none is a canonical bilingual source.",
+  "sourceRowCount": 187,
+  "currentExactMatches": {
+    "ordinary": 22,
+    "prayWithoutOrdinary": 15,
+    "notExactToThoseOwners": 150
+  },
+  "notAnAdditionalCertifiedMatchCount": true,
+  "fullLitanySource": "data/presentation/reader-rogations.v1.json",
+  "missalWitness": "https://icksp.org.uk/newbrighton/wp-content/uploads/sites/2/2020/04/Rogations.pdf",
+  "historicalWitneses": [
+    {
+      "id": "HIST-EN-1883-LITANY-AND-PRAYERS",
+      "work": "The Catholic Prayer Book and Manual of Meditations, The Litany of the Saints",
+      "year": 1883,
+      "language": "en",
+      "sourceEdition": "1883_ENGLISH_HISTORICAL",
+      "exactRevision": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+      "page": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints",
+      "scope": {
+        "litany": {
+          "present": true,
+          "sourceSection": "Lord have mercy through threefold Kyrie before Our Father",
+          "issues": [
+            "RUN_ON_PARAGRAPHS",
+            "IMPLICIT_RESPONSE_WORDING",
+            "EDITION_VARIANT_SAINTS_AND_PETITIONS"
+          ]
+        },
+        "pater": {
+          "present": true,
+          "silent": true
+        },
+        "psalm69": {
+          "present": true,
+          "sourceHeading": "Psalm LXIX",
+          "segmentation": "ONE_PROSE_PARAGRAPH_WITH_ABBREVIATED_DOXOLOGY"
+        },
+        "suffrages": {
+          "present": true,
+          "sourceSection": "V. Save thy servants through V. O Lord hear my prayer",
+          "segmentation": "DIALOGUE_MOSTLY_RUN_ON"
+        },
+        "orations": {
+          "present": true,
+          "count": 10,
+          "sequence": "10 complete consecutive prayers after LET US PRAY",
+          "ids": [
+            "ROG-R05-O1",
+            "ROG-R05-O2",
+            "ROG-R05-O3",
+            "ROG-R05-O4",
+            "ROG-R05-O5",
+            "ROG-R05-O6",
+            "ROG-R05-O7",
+            "ROG-R05-O8",
+            "ROG-R05-O9",
+            "ROG-R05-O10"
+          ],
+          "status": "EXISTING_1883_ENGLISH_TEXT_NOT_VERIFIED_1962_PARALLEL"
+        },
+        "final": {
+          "present": true,
+          "issues": [
+            "HISTORICAL_DIALOGUE_SEQUENCE_DIFFERS_OR_SUPPLEMENTS_1961_WITNESS"
+          ]
+        }
+      },
+      "knownVersionVariations": [
+        "MISSING_AB_FLAGELLO_TERRAEMOTUS_FROM_DELIVERANCE_SEQUENCE",
+        "MISSING_A_PESTE_FAME_ET_BELLO_FROM_DELIVERANCE_SEQUENCE",
+        "MISSING_UT_OMNES_ERRANTES_ECCLESIAE_REVOCARI_PETITION"
+      ],
+      "release": "REVIEW_1883_PRINT_RIGHTS_LATIN_BOUNDARIES_VARIANTS; NEVER_AUTO_IMPORT"
+    },
+    {
+      "id": "HIST-FR-1862-CORNEILLE-LITANY-AND-PRAYERS",
+      "work": "Œuvres de Pierre Corneille, ed. Marty-Laveaux, tome IX",
+      "year": 1862,
+      "language": "fr",
+      "sourceEdition": "1862_FRENCH_HISTORICAL",
+      "exactRevision": "https://fr.wikisource.org/w/index.php?title=Œuvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_pénitentiaux&oldid=14794744",
+      "page": "https://fr.wikisource.org/wiki/%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux",
+      "scope": {
+        "litany": {
+          "present": true,
+          "sourceSection": "LES LITANIES DES SAINTS through French Kyrie before Notre Père",
+          "issues": [
+            "EDITION_VARIANT_SAINTS_AND_PETITIONS",
+            "TRANSCRIPTION_SUSPECT_READINGS"
+          ]
+        },
+        "pater": {
+          "present": true,
+          "silent": null,
+          "note": "French text just shows Notre Père qui etc; not an independently verified 1962 silent-performance rubric"
+        },
+        "psalm69": {
+          "present": true,
+          "sourceHeading": "psalmus lxix + psaume lxix",
+          "segmentation": "PROSE_PARALLEL_LATIN_FRENCH_PLUS_SEPARATE_FRENCH_VERSE_ADAPTATION",
+          "preferredForTextReview": "FRENCH_PROSE_PARALLEL_NOT_POETIC_ADAPTATION"
+        },
+        "suffrages": {
+          "present": true,
+          "segmentation": "LATIN_VR_THEN_FRENCH_VR",
+          "issues": [
+            "FRENCH_AND_LATIN_SEGMENTS_ARE_NOT_INTERLEAVED_ROW_BY_ROW"
+          ]
+        },
+        "orations": {
+          "present": true,
+          "count": 10,
+          "sequence": "Ten Latin collects followed by ten French prose collects, not paired in print",
+          "ids": [
+            "ROG-R05-O1",
+            "ROG-R05-O2",
+            "ROG-R05-O3",
+            "ROG-R05-O4",
+            "ROG-R05-O5",
+            "ROG-R05-O6",
+            "ROG-R05-O7",
+            "ROG-R05-O8",
+            "ROG-R05-O9",
+            "ROG-R05-O10"
+          ],
+          "status": "EXISTING_1862_FRENCH_PROSE_NOT_VERIFIED_1962_PARALLEL"
+        },
+        "final": {
+          "present": true,
+          "issues": [
+            "LATIN_AND_FRENCH_RESPONSES_SEPARATED",
+            "RITE_FORM_MAY_DIFFER"
+          ]
+        }
+      },
+      "knownVersionVariations": [
+        "ST_JOSEPH_ABSENT_IN_1862_FRENCH_SAINTS_LIST",
+        "UT_OMNES_ERRANTES_ECCLESIAE_REVOCARI_ABSENT_IN_1862_FRENCH_PETITIONS",
+        "SUSPECT_SAINT_JOHN_RIEZ_POUR_NOUS",
+        "SUSPECT_AVEZ_PITIE_DE_NOUS_INITIAL_PRAYER",
+        "FRENCH_PSALM_VERSE_ADAPTATION_NOT_EXACT_LITURGICAL_PROSE"
+      ],
+      "release": "REVIEW_1862_PRINT_RIGHTS_AND_SEGMENT_VERSIONS; NEVER_AUTO_IMPORT"
+    }
+  ],
+  "importantBoundaries": {
+    "canonicalRite": "1962 Roman Rogation procession with its 187 source rows; preserve intact",
+    "prayerReader": "src/pray/litany-source.js#extractLitanyProper intentionally stops before the appended Our Father/Psalm/collects",
+    "historicalSource": "Each underlying historical webpage continues beyond that intentional reader boundary. Do NOT count its appended content as absent.",
+    "rogaMassProper": "data/mass/rogation-proper-trilingual.v1.json IS A DIFFERENT TEXT_SCOPE",
+    "unverifiedLatin": true,
+    "englishFrenchContentCopiedIntoThisRegistry": false
+  },
+  "sourceReviewActions": [
+    "Confirm the English 1883 printed original pages and transcription accuracy/rights.",
+    "Collate the Latin 1962 procession invocation set and appendages row by row against the 1961 Liber witness and later source; capture inserted/omitted invocations.",
+    "Use existing English 1883 and French 1862 as SECONDARY comparison witnesses, never as automatic replacements for edition-specific 1962 wording.",
+    "Align all ten collects by their distinct Latin incipit and stable ROG-R05-O1 to O10; do not translate them again before evaluating available material.",
+    "Keep Psalm69 EN running-prose and FR prose/poetry distinct; inspect Vulgate verse numbering and original 1962 text before adopting any.",
+    "For unique saints and petitions absent in a witness, search another 1962-form English/French edition rather than guessing or synthesizing a translation."
+  ]
+}
