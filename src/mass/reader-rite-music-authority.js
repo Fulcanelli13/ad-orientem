@@ -1,0 +1,90 @@
+// 1962-use Mass music authority, not a microphone or playback engine.
+// Primary norm: SCR, De musica sacra et sacra liturgia (1958), §§16b, 27, 80–85.
+// No condition inferred from a Gregorian date or a priest's scroll position.
+const freeze=Object.freeze;
+const RESTRICTED_SEASONS=new Set(["ADVENT","LENT","PASSIONTIDE"]);
+const SEPTUAGESIMA=new Set(["SEPTUAGESIMA","SEXAGESIMA","QUINQUAGESIMA"]);
+
+function verdict(status,reason,paragraphs){
+  return freeze({schema:"ao-organ-permission-v1",status,reason,
+    authority:freeze(["De musica sacra et sacra liturgia (1958)",...paragraphs]),
+    actuallyPlaying:"UNKNOWN",notAnObservation:true});
+}
+
+/**
+ * The caller must supply a verified liturgical context from the Mass plan;
+ * no civil-calendar seasonal guessing or inferred local organ performance.
+ * kind: SOLO, ACCOMPANY_CHANT, OTHER_INSTRUMENTS
+ * moment: ORDINARY, PRIEST_CHANT, PRIEST_RESPONSE, CONSECRATION,
+ *         FINAL_BLESSING, HOLY_THURSDAY_GLORIA
+ * office: MASS, VESPERS, BENEDICTION, OTHER
+ * exceptionalFeastConfirmed: explicit clerically verified §83a exception
+ */
+export function resolve1962OrganPermission({
+  kind="SOLO",moment="ORDINARY",office="MASS",
+  season=null,requiem=false,septEmberFerial=false,
+  triduum=false,holyThursdayChrism=false,
+  holyThursdayGloria=false,easterVigilGloriaReached=false,
+  exceptionalFeastConfirmed=false
+}={}){
+  const use=String(kind).toUpperCase();
+  const action=String(moment).toUpperCase();
+  const service=String(office).toUpperCase();
+  const liturgicalSeason=String(season??"").toUpperCase();
+  if(!["SOLO","ACCOMPANY_CHANT","OTHER_INSTRUMENTS"].includes(use))
+    return verdict("REQUIRES_CONTEXT","UNKNOWN_INSTRUMENTAL_USE",["60–69"]);
+  if(["PRIEST_CHANT","PRIEST_RESPONSE"].includes(action))
+    return verdict("FORBIDDEN","NO_INSTRUMENTS_DURING_PRIEST_CHANT_AND_RITUAL_RESPONSES",["16b"]);
+  if(action==="CONSECRATION")
+    return verdict("FORBIDDEN","ABSOLUTE_CONSECRATION_SILENCE",["27e"]);
+  if(action==="FINAL_BLESSING")
+    return verdict("FORBIDDEN","NO_ORGAN_WHILE_PRIEST_GIVES_BLESSING",["27g"]);
+  const triduumException=Boolean(holyThursdayChrism || holyThursdayGloria) &&
+    use!=="OTHER_INSTRUMENTS";
+  if(triduum&&!easterVigilGloriaReached&&!triduumException)
+    return verdict("FORBIDDEN","SACRED_TRIDUUM_SILENCE",["84"]);
+  if(triduumException&&use!=="OTHER_INSTRUMENTS")
+    return verdict("PERMITTED_NOT_OBSERVED","HOLY_THURSDAY_GLORIA_OR_CHRISM_EXCEPTION",["83b","84"]);
+  if(service==="BENEDICTION")
+    return verdict("PERMITTED_NOT_OBSERVED","BENEDICTION_EXCEPTION_NO_OBSERVATION",["81"]);
+  const seasonalBan=RESTRICTED_SEASONS.has(liturgicalSeason)||Boolean(requiem)||Boolean(septEmberFerial);
+  if(seasonalBan && exceptionalFeastConfirmed)
+    return verdict("PERMITTED_NOT_OBSERVED","VERIFIED_EXCEPTION_FEAST_OR_EXTRAORDINARY_SOLEMNITY",["83a"]);
+  if(seasonalBan){
+    if(use==="ACCOMPANY_CHANT"&&["MASS","VESPERS"].includes(service))
+      return verdict("ACCOMPANIMENT_ONLY_NOT_OBSERVED","SONG_SUPPORT_EXCEPTION_NOT_SOLO_MUSIC",["81","83c"]);
+    return verdict("FORBIDDEN","SEASONAL_OR_REQUIEM_INSTRUMENT_RESTRICTION",["81"]);
+  }
+  if(SEPTUAGESIMA.has(liturgicalSeason)&&use==="OTHER_INSTRUMENTS")
+    return verdict("FORBIDDEN","SEPTUAGESIMA_OTHER_INSTRUMENT_RESTRICTION",["82"]);
+  if(!liturgicalSeason && !easterVigilGloriaReached)
+    return verdict("REQUIRES_CONTEXT","SEASON_NOT_VERIFIED",["80–85"]);
+  return verdict("PERMITTED_NOT_OBSERVED","POTENTIALLY_PERMITTED_NOT_A_CLAIM_OF_SOUND",["60","61","66"]);
+}
+
+/**
+ * Registry maps the native rite cards to their existing pinned chant source.
+ * It DOES NOT replace ordinary reader cues or invent words for processions.
+ * Source paths are dot-path selectors into a pinned JSON payload, not music text.
+ */
+export function resolveRiteMusicScene({registry,riteId,stageId,sourcePayload}={}){
+  if(registry?.schema!=="ao-mass-special-rite-music-events-v1")
+    return freeze({status:"UNAVAILABLE",reason:"RITE_MUSIC_REGISTRY_UNVERIFIED",events:freeze([])});
+  const rite=(registry.rites??[]).find(r=>r.id===riteId);
+  if(!rite)return freeze({status:"UNAVAILABLE",reason:"RITE_NOT_INDEXED",events:freeze([])});
+  const hits=(rite.events??[]).filter(x=>x.stageId===stageId);
+  const events=hits.map(e=>{
+    const sourceFound=e.sourcePaths.map(path=>{
+      const value=path.split(".").reduce((acc,key)=>acc?.[key],sourcePayload);
+      if(value==null)throw new Error("Missing pinned rite chant source "+riteId+":"+path);
+      return freeze({path,available:true});
+    });
+    return freeze({id:e.id,stageId:e.stageId,kind:e.kind,performers:e.performers,
+      status:e.kind==="SOURCE_HOLD"?"NOT_SPECIFIED":"EXPECTED_NOT_OBSERVED",
+      sourceFound:freeze(sourceFound),sourceFile:rite.sourceFile,
+      sourceOwner:e.sourceOwner,condition:e.condition,
+      endBoundary:e.endBoundary,actuallySinging:"UNKNOWN"});
+  });
+  return freeze({schema:"ao-special-rite-music-scene-v1",status:hits.length?"EXPECTED_NOT_OBSERVED":"NO_INDEXED_MUSIC",
+    riteId,stageId,lifecycle:rite.lifecycle,events:freeze(events)});
+}
