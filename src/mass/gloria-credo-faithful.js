@@ -110,7 +110,7 @@ export function projectGloriaCredoFaithfulCue({
       })
     : resolved;
   const gestureKey=gesture
-    ? R17_ICON_KEYS.gesture[gesture.type]??(gesture.type==="KNEEL"?"kneel":null)
+    ? R17_ICON_KEYS.gesture[gesture.type]??(gesture.type==="KNEEL"?R17_ICON_KEYS.posture.KNEEL:null)
     : null;
   return Object.freeze({
     cueId:key,phase,posture,postureIconKey:R17_ICON_KEYS.posture[posture]??null,

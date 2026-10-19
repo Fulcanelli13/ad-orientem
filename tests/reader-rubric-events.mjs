@@ -69,8 +69,10 @@ assert.deepEqual(blessingPrep.events.map(x=>x.label),[
 ]);
 
 const icon=iconKeysForReaderState({priestAction:gloria.primaryPriestAction});
-assert.equal(icon.priestActionIconKey,"head_bow",
-  "rubric overlay exact icon key was not preserved");
+assert.equal(icon.priestActionIconKey,null,
+  "reviewed head-bow artwork must be withheld without rewriting the rubric");
+assert.equal(gloria.primaryPriestAction.label,"BOWS HEAD",
+  "source-owned Gloria head-bow rubric was lost when artwork was rejected");
 
 assert.equal(frozenActions.items.length,77,
   "Campion overlay must not modify the frozen 77-row priest-action registry");

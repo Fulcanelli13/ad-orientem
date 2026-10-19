@@ -1,4 +1,5 @@
 import { R17_DONOR_PNG_ICON_KEYS } from "../src/mass/reader-icon-bank.js";
+import { R17_REVIEWED_POSTURE_ASSETS } from "../src/mass/reader-reviewed-posture-assets.js";
 import { extractDonorRichMaskUri } from "../src/mass/reader-dom.js";
 import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
@@ -12,6 +13,22 @@ import {
   auditHostIconBank,
 } from "../src/mass/reader-icons.js";
 
+// All newly approved presentation assets are real files and do not extend
+// the frozen 67-master donor contract.
+for(const [name,url] of Object.entries(R17_REVIEWED_POSTURE_ASSETS)){
+  assert.ok(url.startsWith("file:"),"approved browser asset not bundled: "+name);
+  const file=readFileSync(new URL(url));
+  assert.ok(file.length>100,"approved posture image missing: "+name);
+  assert.ok(!R17_FROZEN_ACTIVE_ICON_KEYS.includes(name),
+    "reviewed posture alias leaked into 67 exact donor masters");
+  if(name!=="review_posture_sit"&&name!=="review_faithful_bow"){
+    const svg=String(file);
+    assert.match(svg,/<svg[^>]*viewBox="[\d ]+"/,
+      "approved normalized SVG has malformed viewBox: "+name);
+    assert.doesNotMatch(svg,/\sviewbox=/,
+      "frozen bank's malformed lowercase viewbox was copied: "+name);
+  }
+}
 const required=auditHostIconBank({}).required;
 const bank=Object.fromEntries(required.map(key=>[key,"data:image/svg+xml;base64,"+Buffer.from("<svg/>").toString("base64")]));
 const audit=auditHostIconBank(bank);
@@ -35,7 +52,7 @@ let keys=iconKeysForReaderState({
   priestAction:{label:"ELEVATES HOST"},
   schola:{label:"Credo"},
 });
-assert.equal(keys.postureIconKey,"kneel");
+assert.equal(keys.postureIconKey,"review_posture_kneel");
 assert.equal(keys.gestureIconKey,"gospel_crosses");
 keys=iconKeysForReaderState({gesture:{owner:"GESTURE_MATRIX_SOT",
   label:"Customary bow may follow local practice",iconKey:null}});
@@ -63,7 +80,7 @@ keys=iconKeysForReaderState({
   priestPosition:{station:"FOOT_CENTER"},
 });
 assert.equal(keys.postureIconKey,R17_ICON_KEYS.posture.STAND);
-assert.equal(keys.gestureIconKey,"head_bow");
+assert.equal(keys.gestureIconKey,null,"head-bow illustrations were explicitly rejected by user");
 assert.equal(keys.priestVoiceIconKey,"priest_audible");
 assert.equal(keys.priestPositionIconKey,"priest_foot");
 assert.equal(keys.priestActionIconKey,null,"position-only state must remain action-art free");
@@ -87,7 +104,7 @@ assert.equal(keys.priestPositionIconKey,"priest_facing_people",
 
 
 keys=iconKeysForReaderState({priestAction:{label:"GENUFLECTS"}});
-assert.equal(keys.priestActionIconKey,"priest_genuflect");
+assert.equal(keys.priestActionIconKey,null,"priest genuflect donor is unreviewed for this owner");
 keys=iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES"}});
 assert.equal(keys.priestActionIconKey,"lavabo");
 keys=iconKeysForReaderState({priestAction:{label:"UNMAPPED SOURCE ACTION"}});
@@ -96,9 +113,9 @@ assert.equal(keys.priestActionIconKey,null,"unmapped action guessed an unrelated
 // Source-owned gesture matrix uses labels different from the 77-row
 // action inventory. They must still resolve to the exact donor bank.
 for(const [label,key] of [
-  ["BOWS HEAD","head_bow"],
-  ["BOWS SLIGHTLY","head_bow"],
-  ["BOWS OVER THE ALTAR","priest_profound_bow_rich"],
+  ["BOWS HEAD",null],
+  ["BOWS SLIGHTLY","bow"],
+  ["BOWS OVER THE ALTAR",null],
   ["RAISES EYES AND HANDS","priest_centre_arms_rich"],
   ["CROSSES WITH CHALICE","cross"],
   ["THREE CROSSES WITH PARTICLE","cross"],
@@ -142,8 +159,11 @@ const unmapped=primaryMatrix.filter(row=>{
   }}).priestActionIconKey;
   return !art || !resolve(art);
 });
-assert.deepEqual(unmapped.map(x=>x.cueId+":"+x.label),[],
-  "source priest gestures missing a real v1.80 icon or rubric binding");
+// Reviewed 19 October: unavailable *art* must not be fabricated to satisfy
+// the older blanket requirement that every priest gesture have an image.
+assert.equal(unmapped.length,17,"unexpected size of approved icon-quarantine set");
+assert.ok(unmapped.every(row=>["BOWS HEAD","BOWS OVER THE ALTAR","PROFOUND BOW"]
+  .includes(row.label)),"unreviewed priest action lost its exact image");
 
 
 const reviewed=JSON.parse(readFileSync(new URL("../data/presentation/mass-icon-user-selections-20261010.v1.json",import.meta.url),"utf8"));
@@ -264,4 +284,38 @@ assert.match(liveRenderer,
 assert.match(liveRenderer,
   /setText\(root,"priest-action",textValue\(current\.priestAction\)\)/,
   "withholding unapproved action art must not erase the priest's source action");
-console.log("reader icons: PASS — reviewed 19 Oct P0 semantic repairs, donor and cue ownership.");
+// P1: approved posture bank in a separate resolver namespace.
+for(const [posture,art] of Object.entries({
+  STAND:"review_posture_stand",
+  SIT:"review_posture_sit",
+  KNEEL:"review_posture_kneel",
+  GENUFLECT:"review_posture_genuflect",
+})){
+  assert.equal(iconKeysForReaderState({posture:{value:posture}}).postureIconKey,art,
+    posture+" failed to use user-preferred bank artwork");
+}
+assert.equal(iconKeysForReaderState({
+  gesture:{type:"BOW"},
+}).gestureIconKey,"review_faithful_bow");
+assert.equal(iconKeysForReaderState({
+  gesture:{owner:"GESTURE_MATRIX_SOT",iconKey:"bow",label:"Faithful bow"},
+}).gestureIconKey,"review_faithful_bow");
+for(const cue of [
+  {owner:"GESTURE_MATRIX_SOT",iconKey:"head_bow",label:"Bow head"},
+  {label:"Bow head"},
+  {type:"HEAD_BOW"},
+]){
+  assert.equal(iconKeysForReaderState({gesture:cue}).gestureIconKey,null,
+    "rejected head-bow art was reintroduced");
+}
+for(const action of [
+  {label:"BOWS HEAD",iconKey:"head_bow"},
+  {label:"BOWS PROFOUNDLY",iconKey:"priest_profound_bow_rich"},
+  {label:"PROFOUND BOW"},
+]){
+  assert.equal(iconKeysForReaderState({priestAction:action}).priestActionIconKey,
+    null,"rejected priest bow depiction returned");
+}
+assert.equal(iconKeysForReaderState({priestAction:{label:"BOWS SLIGHTLY"}})
+  .priestActionIconKey,"bow","reviewed priest bow image was assigned to faithful");
+console.log("reader icons: PASS — 19 October reviewed P0/P1 artwork and cue ownership.");

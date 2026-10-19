@@ -36,6 +36,16 @@ assert.notEqual(productionIcons,staleHostIcons,
 const productionAudit=auditHostIconBank(productionIcons);
 assert.equal(productionAudit.complete,true,"externalized frozen active icon bank is incomplete");
 assert.deepEqual(productionAudit.missing,[]);
+for(const name of [
+  "review_posture_stand","review_posture_sit","review_posture_kneel",
+  "review_posture_genuflect","review_faithful_bow",
+]){
+  assert.ok(String(productionIcons[name]??"").startsWith("file:"),
+    "19 October user-approved posture overlay missing from native production host: "+name);
+}
+assert.equal(Object.keys(productionIcons).length,
+  R17_FROZEN_ACTIVE_ICON_KEYS.length+5,
+  "reviewed icon overlay must contain exactly five aliases beyond donor masters");
 assert.deepEqual(productionAudit.required,[...R17_FROZEN_ACTIVE_ICON_KEYS]);
 assert.deepEqual(productionAudit.excluded,[...R17_FROZEN_EXCLUDED_ICON_KEYS]);
 assert.match(productionIcons.stand,/assets\/active\/mass-v46\/stand\.svg$/);
