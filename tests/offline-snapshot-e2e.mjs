@@ -170,9 +170,13 @@ try{
   "First-use offline Divine Mercy did not render French opening prayer");
  assert.match(await page.locator("#aoPray435930.open [data-ao-mercy-bead-navigation] .aoMercyBeadPosition").innerText(),/Prières initiales/i,
   "First-use offline Divine Mercy lost its French prayer counter");
- await page.locator("#aoPray435930.open [data-p435930-mercy-next]").first().evaluate(el=>el.click());
- assert.match(await page.locator("#aoPray435930.open .aoMercyControls span").innerText(),/Notre Père/i,
-  "First-use offline Divine Mercy did not advance");
+ // Since the bead-first UI replaced obsolete Previous/Next, the exact
+ // source-owned decade jump is the user's real navigation action.
+ await page.locator("#aoPray435930.open .aoMercyDecadeLink[data-decade='1']").first().evaluate(el=>el.click());
+ assert.match(await page.locator("#aoPray435930.open .aoMercyPrayer").innerText(),/Père éternel/i,
+  "First-use offline Divine Mercy did not jump to the first large bead");
+ assert.equal(await page.locator("#aoPray435930.open [data-ao-mercy-bead-navigation] > .aoDevoProgress").getAttribute("aria-valuenow"),"5",
+  "Direct decade selection lost canonical prayer-event position");
  assert.match(await page.locator("#aoPray435930.open .aoMercySource a").getAttribute("href"),
   /^https:\/\/www\.vaticannews\.va\/fr\//,
   "Offline Divine Mercy lost its source link");
