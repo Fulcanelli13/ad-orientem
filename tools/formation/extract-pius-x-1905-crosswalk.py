@@ -29,7 +29,7 @@ LONG_SECTIONS = (
 STOPWORDS = set("a ad al alla alle allo ai agli all anche che chi ci cio come con cosa cos e ed è era essi esse fa fanno fare gli ha hanno i il in io la le lo ma nel nella nell ne non o per perché poi quale quali quando quanto se si sia siano sono su sul sua sue suoi suo tra un una uno voi vi".split())
 SHORT_Q = re.compile(r"(?m)^\*\*(\d{1,3})\.\*\*\s*([^\r\n]+)")
 LONG_Q = re.compile(r"(?m)^\s*(\d{1,4})\.?\s+D\.\s*([^\n]+)")
-ANSWER = re.compile(r"(?m)^\s*R\.\s*",re.I)
+ANSWER = re.compile(r"(?m)^\s*(?:\(\*\)\s*)?R\.\s*",re.I)
 
 
 class PageText(HTMLParser):
