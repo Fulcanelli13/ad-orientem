@@ -146,7 +146,7 @@ try{
        const index=Number(card?.dataset.aoDevoIndex);
        const count=timeline?.querySelectorAll(".aoDevoStop").length||0;
        if(count>1&&index<count-1){
-         const next=timeline.querySelector('[data-ao-devo-sequence-move="1"]');
+         const next=timeline.querySelectorAll(".aoDevoStop")[index+1];
          if(!next||next.disabled)return false;
          next.click();return true;
        }
