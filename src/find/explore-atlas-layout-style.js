@@ -75,7 +75,9 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   background:#101c28e8;border:1px solid rgba(205,180,132,.35);
 }
 .aoHeritageSurface .aoHeritageWorldReset:before{
-  content:"◎";font:27px/1 Georgia,serif;color:#ddc99f;
+  content:"◎";display:block;flex:none;width:auto;height:auto;
+  border:0;border-radius:0;background:transparent;
+  font:27px/1 Georgia,serif;color:#ddc99f;
 }
 .aoHeritageSurface .aoHeritageNearby{
   right:16px;bottom:75px;min-height:44px;background:#0d1925eb;
@@ -109,8 +111,9 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
    border-radius:13px;background:#101922f7;box-shadow:0 18px 42px #000a;
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb{
-   order:-1;display:block;width:100%;min-height:0;margin:0 0 14px;
-   border-radius:8px;overflow:hidden;background:#101925;
+   order:-1;display:block;float:none;width:100%;max-width:100%;
+   min-height:0;margin:0 0 14px;border-radius:8px;
+   overflow:hidden;background:#101925;
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb img{
    display:block;width:100%;height:min(24dvh,210px);object-fit:cover;
@@ -150,7 +153,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
    align-items:flex-end;padding:0;justify-content:center;
  }
  .aoHeritageSurface .aoHeritagePreview{
-   display:grid;grid-template-columns:minmax(0,1fr) 106px;
+   position:relative;display:grid;grid-template-columns:110px minmax(0,1fr);
    align-items:start;column-gap:10px;row-gap:5px;
    width:100%;max-width:none;max-height:min(44dvh,355px);
    padding:10px 15px calc(13px + env(safe-area-inset-bottom));
@@ -158,24 +161,29 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
    background:#101923f8;border-top:1px solid rgba(201,174,117,.5);
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritageSheetHandle{grid-column:1/-1}
- .aoHeritageSurface .aoHeritagePreview .aoHeritageCardHeading{grid-column:1/2;grid-row:2}
+ .aoHeritageSurface .aoHeritagePreview .aoHeritageCardHeading{
+   grid-column:2;grid-row:2;padding-right:40px
+ }
+ .aoHeritageSurface .aoHeritagePreview .aoHeritageCardClose{
+   position:absolute;right:12px;top:19px;width:44px;min-width:44px;height:44px;min-height:44px;z-index:2
+ }
  .aoHeritageSurface .aoHeritagePreview h2{
-   grid-column:1/2;grid-row:3;margin:0;
+   grid-column:2;grid-row:3;margin:0;
    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
    overflow:hidden;font:500 19px/1.18 var(--ao-font-display,Georgia,serif)
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb{
-   grid-column:2;grid-row:2/5;width:106px;
+   grid-column:1;grid-row:2/5;float:none;max-width:none;width:110px;
    margin:0;overflow:hidden;border-radius:8px
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb img{
-   display:block;width:106px;height:117px;object-fit:cover
+   display:block;width:110px;height:136px;object-fit:cover
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb figcaption{
    display:none
  }
  .aoHeritageSurface .aoHeritagePreview .aoHeritageSynopsis{
-   grid-column:1;grid-row:4;margin:1px 0 3px;
+   grid-column:2;grid-row:4;margin:1px 0 3px;
    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
    overflow:hidden;font-size:13px;line-height:1.4
  }
@@ -196,8 +204,9 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  .aoHeritageSurface .aoFindHeader h1{font-size:15px}
  .aoHeritageSurface .aoFindHeader{gap:5px}
  .aoHeritageSurface .aoHeritageCategories button{font-size:10px;padding:7px 9px}
- .aoHeritageSurface .aoHeritagePreview{grid-template-columns:minmax(0,1fr) 78px;padding-inline:10px}
+ .aoHeritageSurface .aoHeritagePreview{grid-template-columns:83px minmax(0,1fr);padding-inline:10px}
  .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb,
- .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb img{width:78px}
+ .aoHeritageSurface .aoHeritagePreview .aoHeritagePlaceThumb img{width:83px}
+ .aoHeritageSurface .aoHeritagePreview .aoHeritageCardHeading{padding-right:34px}
 }
 `;
