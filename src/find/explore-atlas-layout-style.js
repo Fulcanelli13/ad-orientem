@@ -269,8 +269,29 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 }
 /* The primary institute emblems remain present as filters. Grouping modes
    and unverified-source disclaimers move into the explicit filter disclosure. */
-.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoExploreTlmFilters>.aoExploreQuickFilters{
-  display:none
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra{
+  position:absolute;right:0;top:0;z-index:14;background:#0c1925f2;
+  border:1px solid rgba(205,180,132,.36);border-radius:9px;
+  box-shadow:0 8px 25px #0008;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra>summary{
+  min-height:40px;display:flex;align-items:center;padding:7px 12px;
+  font:500 12px/1 var(--ao-font-ui,system-ui,sans-serif);color:#e6d7b7;
+  cursor:pointer;list-style:none
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra[open]{
+  min-width:min(350px,calc(100vw - 24px));max-width:calc(100vw - 24px);
+  padding:0 8px 10px;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoExploreQuickFilters{
+  display:flex;flex-wrap:wrap;gap:6px;max-height:35dvh;overflow:auto
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoAtlasTlmExtra .aoExploreQuickFilters button{
+  min-height:44px;background:#10202b;color:#ead9bc;border:1px solid rgba(205,180,132,.24);
+  border-radius:9px;padding:9px 11px
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip{
+  padding-right:77px
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoTlmProviderStrip{
   display:flex;align-items:center;gap:6px;min-width:0;padding:0;
@@ -328,20 +349,29 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   content:"◎";font:27px/1 Georgia,serif;color:#d9c390
 }
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend{
-  position:absolute;bottom:18px;left:14px;z-index:8;max-width:min(500px,80%);
-  margin:0;padding:5px;max-height:42px;overflow:hidden;
-  background:#0b1924e8;border:1px solid rgba(205,180,132,.22);
+  position:absolute;bottom:13px;left:14px;z-index:8;
+  max-width:min(450px,78%);margin:0;padding:0 9px;
+  max-height:min(54dvh,450px);overflow:auto;
+  background:#0b1924ed;border:1px solid rgba(205,180,132,.27);
   border-radius:9px;box-shadow:0 8px 24px #0007;
 }
-/* The full logo legend and credits remain in the DOM for explicit source
-   checking and future disclosure; avoid duplicated large badges by default. */
-.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend>span[data-group],
-.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend>small,
-.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapEmblemCredits{
-  display:none;
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend summary{
+  min-height:44px;display:flex;align-items:center;padding:8px 9px;cursor:pointer;
+  font:500 11px var(--ao-font-ui,system-ui,sans-serif);color:#e5d4b4
 }
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map]) .aoMapLegend:not([open])>*:not(summary){display:none}
 .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindExternalSource{
-  display:none;
+  position:absolute;z-index:8;right:13px;bottom:13px;
+  display:block;margin:0;padding:0 8px;max-width:min(235px,45%);
+  border-radius:9px;background:#0b1924ef;border:1px solid rgba(205,180,132,.27);
+  box-shadow:0 8px 24px #0007;
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindExternalSource summary{
+  min-height:44px;display:flex;align-items:center;cursor:pointer;
+  padding:7px 9px;font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#e1d1b3
+}
+.aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindExternalSource[open]{
+  max-width:min(400px,80%);max-height:50dvh;overflow:auto;padding-bottom:10px
 }
 @media(max-width:600px){
  .aoExploreSurface:has(.aoExploreTlmFilters):has(.aoFindBody[data-find-view=map])>.aoFindHeader{
