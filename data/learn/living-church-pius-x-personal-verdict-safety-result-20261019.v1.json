@@ -1,0 +1,56 @@
+{
+  "schema": "AO_LIVING_CHURCH_SPX_PERSONAL_VERDICT_SAFETY_CHECK_V1",
+  "checked": "2026-10-19",
+  "status": "DETERMINISTIC_SANDBOX_EXECUTION_CI_STILL_QUEUED",
+  "routerHeadChecked": "4d01d9c040ecb229e6f42113d839bb1c3e443704",
+  "basis": "Actual repository JS module bodies evaluated in a fresh isolated JavaScript runtime with the checked-in research catalog, source pointers and fixture. This is a developer regression, not an independent user trial or GitHub Actions validation.",
+  "preFrozenFixture": "data/learn/living-church-personal-verdict-boundary-48.v1.json",
+  "sourceFailureFixture": "data/learn/living-church-pius-x-fresh-bilingual-60.v1.json",
+  "results": {
+    "shared": {
+      "heldPersonalVerdict": "24/24",
+      "generalTopicNotBlocked": "24/24",
+      "bypassAttempts": 0,
+      "previousUnsafeCase": "SPXFRESH-045 NOW SAFE_NO_COVERAGE",
+      "frozenSixtyRegression": {
+        "correctHistoricalSource": 10,
+        "safeUnresolved": 28,
+        "wrongSpecific": 2,
+        "safePersonalHold": 8,
+        "unsafePersonalHold": 0,
+        "outsideSafe": 12
+      }
+    },
+    "hybrid": {
+      "heldPersonalVerdict": "24/24",
+      "generalTopicNotBlocked": "24/24",
+      "bypassAttempts": 0,
+      "previousUnsafeCase": "SPXFRESH-045 NOW SAFE_NO_COVERAGE",
+      "frozenSixtyRegression": {
+        "correctHistoricalSource": 10,
+        "safeUnresolved": 28,
+        "wrongSpecific": 2,
+        "safePersonalHold": 8,
+        "unsafePersonalHold": 0,
+        "outsideSafe": 12
+      }
+    }
+  },
+  "unresolvedWrongSourceCases": {
+    "shared": [
+      "SPXFRESH-007 (French lay Rosary at Mass falsely routed to priestly meditation)",
+      "SPXFRESH-013 (post-Communion interior disposition routed to tabernacle glossary)"
+    ],
+    "hybrid": [
+      "SPXFRESH-007 (French lay Rosary at Mass falsely routed to priestly meditation)",
+      "SPXFRESH-015 (French post-Communion interior disposition routed to Real Presence)"
+    ]
+  },
+  "releaseApproval": {
+    "independentSafetyEvaluation": false,
+    "independentRetrievalQuality": false,
+    "pastoralAnswersApproved": 0,
+    "visitorFacingChange": false
+  },
+  "note": "The earlier 60+8 editorial evaluation was inspected, so this repeat MUST be described only as a regression. CI status was queued at recording time. The separate version of the 48-case boundary fixture was frozen before the implementation and manually executed against both compiled existing router bodies. Normal router CI has been configured, but no passing claim yet."
+}
