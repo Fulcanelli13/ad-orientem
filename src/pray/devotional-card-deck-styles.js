@@ -190,9 +190,9 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930LitanyVerses{
  display:grid;gap:10px}
 #aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930LitanyLine{
- margin:0;font:400 1rem/1.67 var(--ao-font-liturgical,var(--ao-font-liturgical,"EB Garamond",Georgia,serif))}
+ margin:0;font:400 1rem/1.67 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)}
 #aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930WitnessParagraph{
- font:400 1rem/1.67 var(--ao-font-liturgical,var(--ao-font-liturgical,"EB Garamond",Georgia,serif));margin:0 0 14px}
+ font:400 1rem/1.67 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);margin:0 0 14px}
 #aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930ScriptureVerse{
  display:inline-block;margin:5px 3px 8px 0}
 #aoPray435930 .aoP435930DevotionalGuidedReader .aoDevoCardScroll .aoP435930ScriptureFlip{
@@ -409,7 +409,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 }
 #aoPray435930 .aoFolioReader .aoDevoStopTitle{display:none!important}
 #aoPray435930 .aoFolioReader .aoDevoStopNumber{
- font:500 12px/1.2 var(--ao-font-liturgical,var(--ao-font-liturgical,"EB Garamond",Georgia,serif))!important;
+ font:500 12px/1.2 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
  letter-spacing:0!important;
 }
 #aoPray435930 .aoFolioReader .aoDevoCardHead{
@@ -420,7 +420,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  display:none!important;
 }
 #aoPray435930 .aoFolioReader .aoDevoCardTitle{
- font:500 clamp(22px,5.8vw,29px)/1.15 var(--ao-font-display,var(--ao-font-liturgical,"EB Garamond",Georgia,serif))!important;
+ font:500 clamp(22px,5.8vw,29px)/1.15 var(--ao-font-display,"EB Garamond",Georgia,serif)!important;
  margin:0!important;
 }
 #aoPray435930 .aoFolioReader .aoDevoCardScroll{
