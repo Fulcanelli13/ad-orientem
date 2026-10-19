@@ -582,10 +582,10 @@ expect(html.includes("LIVE hierarchy: a persistent state gets one visual owner")
   "LIVE one-state/one-surface hierarchy correction disappeared");
 expect(html.includes('.ao-rail-left .ao-rail-item[data-channel="posture"]'),
   "persistent posture repeat suppression was removed");
-expect(html.includes('.ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.86}'),
-  "the post-focus near-line contrast hierarchy regressed");
-expect(html.includes('opacity:.62'),
-  "LIVE unfocused liturgical text reverted to unreadably dim donor presentation");
+expect(html.includes('.ao-reader-paragraph[data-active="true"] + .ao-reader-paragraph{opacity:.38}'),
+  "the approved 38% LIVE near-line contrast hierarchy regressed");
+expect(html.includes('.ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph{opacity:.18}'),
+  "the approved 18% LIVE distant-text muting was overwritten");
 expect(html.includes('.ao-priest-action-badge{display:none}'),
   "LIVE action icon duplication was reintroduced");
 expect(html.includes('content:"RUBRIC";display:block'),

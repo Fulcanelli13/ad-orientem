@@ -197,8 +197,12 @@ try{
       assert.equal(state.current,state.expected,"Reader navigated to wrong curated card "+title);
       assert.ok(state.paragraphs>0,"Blank curated prayer card "+title);
       assert.ok(state.scrollWidth<=state.clientWidth+3,"Horizontal overflow at "+title);
-      assert.ok(state.prayerOpacity>=.80,
-        "Inactive liturgical text still unreadably dim: "+title+" opacity "+state.prayerOpacity);
+      // Snapshot immediately after a card jump may precede its opening
+      // focus frame. Inactive text is intentionally 18% opacity; the actual
+      // 100/38/18 computed contrast and scroll handoff are enforced in
+      // reader-live-visual-focus-production-phone.mjs after animation settles.
+      assert.ok(state.prayerOpacity>=.16&&state.prayerOpacity<=1,
+        "Curated reader text became invisible: "+title+" opacity "+state.prayerOpacity);
       if(state.scholaTop!=null){
         assert.ok(state.readerBottom<=state.scholaTop+3,
           "Schola overlay still covers the real prayer reading viewport: "+title+
