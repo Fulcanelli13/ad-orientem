@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -391,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "CONTINUE_MODERN_REVIEW_ONLY_SKIP_REJECTED_LEGACY_SET",
+  "nextReview": "RECONCILE_REMAINING_MODERN_BANK_DONOR_ARTWORK_BEFORE_BATCH_09",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -1146,6 +1146,129 @@
         }
       ],
       "exclusionRegistry": "data/presentation/mass-icon-rejected-legacy-artwork-20261019.v1.json",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B08",
+      "label": "Modern vector studies A-P",
+      "status": "USER_REVIEW_COMPLETE",
+      "date": "2026-10-19",
+      "userStatement": "A, G and J can be kept in asset bank but should not be used anywhere. Keep K L and discard O P. The rest should be kept and used; for the doubles we will eventually compare them side by side on the final rounds.",
+      "sourceManifest": "ad_orientem_asset_bank_survey_batch08_16_manifest.json",
+      "decisions": [
+        {
+          "letter": "A",
+          "key": "ao_receive_host",
+          "sha256": "d51ee393d53168cbcef087a6e069a86c1260b5a84d71ce26d1a4a217d7a51d29",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "note": "Keep archived but exclude from automatic app bindings and new reviews"
+        },
+        {
+          "letter": "B",
+          "key": "ao_pray_audible",
+          "sha256": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "C",
+          "key": "ao_pray_silent",
+          "sha256": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "D",
+          "key": "ao_incensation",
+          "sha256": "5c8f30bffad11e645816c82154a92e8b5cc54b5a94c3c62e2921a11251ff34f6",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "E",
+          "key": "ao_blessing",
+          "sha256": "7b9666029a140671ff254325f527cb251e8d381e01601ab47de446a963c38953",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "F",
+          "key": "ao_place_on_altar",
+          "sha256": "38ad2c6f3cb317052b58116435def64664d6e206b5e1572828ab215733e62db4",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "G",
+          "key": "ao_elevation_host",
+          "sha256": "39d5083d36ea0632580d856ec49ed007b7f64a8558f0b70217fb6ffd58577a9a",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "note": "Keep archived but exclude from automatic app bindings and new reviews"
+        },
+        {
+          "letter": "H",
+          "key": "ao_elevation_chalice",
+          "sha256": "b0916c29748ca983200424db968cc5b9110a3ed2bcf610be8a3a4f7976f28d08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "I",
+          "key": "ao_drink_chalice",
+          "sha256": "91b7c5ca554826cd81f75afca2572a6e43a22c12cb6c0ce25b6b37d8d42d245a",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "J",
+          "key": "ao_communion_give_chalice",
+          "sha256": "89b8ebb2fb2b15aa24b3531a35d904de0e78896c6cd033afceb91c2875463a5d",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "note": "Keep archived but exclude from automatic app bindings and new reviews"
+        },
+        {
+          "letter": "K",
+          "key": "ao_purify_fingers",
+          "sha256": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Preferred purification vector over O/P; include in later duplicate head-to-head review only if needed"
+        },
+        {
+          "letter": "L",
+          "key": "ao_purify_chalice",
+          "sha256": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Preferred purification vector over O/P; include in later duplicate head-to-head review only if needed"
+        },
+        {
+          "letter": "M",
+          "key": "ea_priest_fraction_host",
+          "sha256": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "N",
+          "key": "ea_priest_commingling",
+          "sha256": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "O",
+          "key": "ea_priest_purifies_fingers",
+          "sha256": "d3f03b4ecdf69084d43f47fa1de697ed837448d6a9897800acb9aeff11c53dec",
+          "decision": "REJECT_ARTWORK",
+          "note": "Exclude exact physical artwork from review and app, retain source for provenance"
+        },
+        {
+          "letter": "P",
+          "key": "ea_priest_purifies_chalice",
+          "sha256": "12188d3484476c21046d28de7de64a5bef3277fc50139695c9cdfa30c988a59b",
+          "decision": "REJECT_ARTWORK",
+          "note": "Exclude exact physical artwork from review and app, retain source for provenance"
+        }
+      ],
       "runtimeMutationAllowed": false
     }
   ]
