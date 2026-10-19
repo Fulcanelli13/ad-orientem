@@ -32,6 +32,17 @@ assert.equal(soundRecords.size,7);
 assert.equal(inventory.ordinaryMass.find(x=>x.id==="BEFORE_FAITHFUL_COMMUNION").forms.LOW,
  "SOURCE_NOT_CERTIFIED_IN_MC_GRAPH_REVIEW_REQUIRED");
 assert.equal(index.get("MC-COM-185").forms.LOW,"UNAVAILABLE_UNCERTIFIED");
+const lowProfile=read("../data/mass/low-mass-profile.v1.json");
+assert.equal(inventory.lowMassSourceProfile,"data/mass/low-mass-profile.v1.json");
+assert.ok(lowProfile.acceptance.forbiddenOrUnavailableSourceMoments.includes("E60"));
+assert.equal(lowProfile.acceptance.oldPriestDNSDBellAsCommunionWarning,"FORBIDDEN");
+assert.equal(inventory.lowMassValidation.profileExcludedSourceMoment,"E60");
+assert.equal(inventory.lowMassValidation.legacyPriestDomineNonSumDignusBellAsCommunionWarning,"FORBIDDEN");
+assert.equal(inventory.lowMassValidation.sourceClockAtSanctus,"PUBLIC_TEXT");
+const low=read("../data/presentation/reader-text-low.v1.json");
+const lowSanctus=low.blocks.flatMap(b=>b.units??[]).find(u=>u.cue_id==="AO.SM.C0145");
+assert.equal(lowSanctus?.clock,"PUBLIC_TEXT",
+ "Low Mass Sanctus cannot inherit the Sung Schola clock");
 const srcRites=new Map(music.rites.map(x=>[x.id,x]));
 assert.equal(srcRites.size,10);
 assert.deepEqual(new Set(inventory.specialRites.map(x=>x.id)),new Set(srcRites.keys()));
