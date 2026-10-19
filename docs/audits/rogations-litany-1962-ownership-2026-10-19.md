@@ -285,3 +285,55 @@ is not an approved exact owner match. The next step is **verse- and
 collect-level alignment of these located sources** and selection
 under canonical wording/rights policy, *not* translating all 150.
 
+
+## 8. Ten-collect paragraph-level historical alignment (19 October)
+
+The existing 1883 English source and the 1862 French/Latin source have
+now been reconciled **collect by collect** to the canonical `ROG-R05-O1`
+through `ROG-R05-O10` IDs, without reauthoring or copying the prayers.
+The machine index is
+`data/mass/rogation-ten-collects-historical-parallel.v1.json`;
+`tests/rogations-ten-collects-historical-parallel.mjs` locks every
+source locator, ordinal position, Latin incipit and unapproved status.
+
+**Observed print/witness sequence:**
+- 1883 English *Catholic Prayer Book*, [Litany of the Saints](https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621),
+  ten consecutive distinct English paragraphs after `LET US PRAY`.
+  The Wikisource transcription is verified as a web witness, **not**
+  independently reconciled against the original 1883 printed scan.
+- 1862 Corneille / Marty-Laveaux, **printed p. 294**
+  ([djvu image/page 308](https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308)),
+  ten separate Latin collects; **printed p. 295**
+  ([djvu image/page 309](https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309)),
+  ten French prose counterparts, in the same order.
+
+| Source ID | Canonical Latin incipit | Core topic | Focus of source collation |
+| --- | --- | --- | --- |
+| ROG-R05-O1 | `Deus, cui proprium est` | Mercy and absolution | Parallel subject/order established |
+| ROG-R05-O2 | `Exaudi, quaesumus, Domine` | Confession, forgiveness, peace | Parallel subject/order established |
+| ROG-R05-O3 | `Ineffabilem nobis, Domine` | Deliverance from sins and punishments | French Latin transcription `pro bis` suspicious |
+| ROG-R05-O4 | `Deus, qui culpa offenderis` | Penance and averting punishment | French Latin transcription `rneremnr` suspicious |
+| ROG-R05-O5 | `Omnipotens sempiterne Deus, miserere` | Pope and his salvation | 1883 English `N., our Sovereign Pontiff` vs donor `Pontifici nostro N.`; 1862 Latin transcription `Oranipotens` suspicious |
+| ROG-R05-O6 | `Deus, a quo sancta desideria` | Peace unavailable from this world | Parallel subject/order established |
+| ROG-R05-O7 | `Ure igne Sancti Spiritus` | Chaste body, pure heart | Parallel subject/order established |
+| ROG-R05-O8 | `Fidelium, Deus, omnium conditor` | Departed faithful | Latin `famulorum famularumque` vs English generalized `servants` |
+| ROG-R05-O9 | `Actiones nostras, quaesumus` | Divine precedence and aid | Historical `prevent` / `prévenir` require contextual reading |
+| ROG-R05-O10 | `Omnipotens sempiterne Deus, qui vivorum` | Living/dead and intercession | 1883 English abbreviated `etc.` ending; 1862 Latin `miseris` vs donor `misereris` |
+
+These are **ten position-and-subject historical pairing results**,
+**not ten word-for-word-approved 1962 translations**. In particular,
+collect 10 has a shorter published English close than the canonical
+Latin, and the corresponding French prose uses an extended
+concluding formula. Do not silently fill an abbreviated witness
+from another language, adopt suspect printed words, import the entire
+19th-century Litany, or claim facsimile approval.
+
+**Updated outcome:** 10/10 historical English segments and 10/10
+historical French segments identified by canonical source ID; **0/10
+approved English, 0/10 approved French, 0/10 1962-Latin certified
+against an independent edition**. Existing 320-row annex census and
+150 Rogations non-exact-owner worklist **do not change**, because
+a historical witness is not yet an approved canonical translation
+owner. The next gate is original print/1962 collation and editorial
+decision by exact source row, starting with O5/O8/O9/O10.
+
