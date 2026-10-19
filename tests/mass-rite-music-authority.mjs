@@ -92,13 +92,14 @@ status({season:"LENT",kind:"SOLO",exceptionalFeastConfirmed:true},"PERMITTED_NOT
 status({season:"ORDINARY",septEmberFerial:true,kind:"SOLO"},"FORBIDDEN");
 status({season:"ORDINARY",requiem:true,kind:"SOLO"},"FORBIDDEN");
 status({season:"ORDINARY",requiem:true,kind:"ACCOMPANY_CHANT"},"ACCOMPANIMENT_ONLY_NOT_OBSERVED");
+status({season:"ORDINARY",requiem:true,exceptionalFeastConfirmed:true,kind:"SOLO"},"FORBIDDEN");
 status({season:"SEPTUAGESIMA",kind:"OTHER_INSTRUMENTS"},"FORBIDDEN");
 status({season:"SEPTUAGESIMA",kind:"SOLO"},"PERMITTED_NOT_OBSERVED");
 status({season:"LENT",triduum:true,holyThursdayGloria:true,kind:"SOLO"},"PERMITTED_NOT_OBSERVED");
 status({season:"LENT",triduum:true,holyThursdayChrism:true,kind:"SOLO"},"PERMITTED_NOT_OBSERVED");
 status({season:"LENT",triduum:true,kind:"SOLO"},"FORBIDDEN");
 status({season:"LENT",triduum:true,kind:"ACCOMPANY_CHANT"},"FORBIDDEN");
-status({season:"LENT",triduum:true,easterVigilGloriaReached:true,kind:"SOLO"},"FORBIDDEN");
+status({season:"LENT",triduum:true,easterVigilGloriaReached:true,kind:"SOLO"},"PERMITTED_NOT_OBSERVED");
 status({season:"ORDINARY",kind:"SOLO",moment:"CONSECRATION"},"FORBIDDEN");
 status({season:"ORDINARY",kind:"SOLO",moment:"PRIEST_CHANT"},"FORBIDDEN");
 status({season:"ORDINARY",kind:"SOLO",moment:"PRIEST_RESPONSE"},"FORBIDDEN");
