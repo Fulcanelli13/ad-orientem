@@ -166,13 +166,13 @@ export function createNativeScholaController(args={}){
     }
     return state();
   }
-  // A boundary expires an unobserved musical opportunity; it is never proof
-  // that an actual Schola was heard or finished. Ordinary priest cue focus
-  // does NOT synchronize the singer's phrase.
+  // A boundary expires a musical opportunity; it never proves that the
+  // choir was heard finishing. These sung exchanges, unlike priest scroll,
+  // delimit Offertory and Communion scenes in the 1958 instruction §27.
   function reachLiturgicalBoundary(cueId){
-    if(String(cueId)==="AO.SM.C0135" && activeTrackId==="OFFERTORY"){
-      return activate(null);
-    }
+    const id=String(cueId??"");
+    if(id==="AO.SM.C0135" && activeTrackId==="OFFERTORY")return activate(null);
+    if(id==="AO.SM.C0251" && activeTrackId==="COMMUNION")return activate(null);
     return state();
   }
 
@@ -201,6 +201,8 @@ export function createNativeScholaController(args={}){
       return activate(matches[0].id);
     }
     const card=cardOrSequence;
+    const sourceSection=String(card.sourceSectionId??card.sectionId??"");
+    const blockIds=new Set((card.blocks??[]).map(block=>String(block.blockId)));
     const matches=tracksForSourceCard(card);
     const current=activeTrackId?byId.get(activeTrackId):null;
     if(current&&matches.some(t=>t.id===current.id)){
@@ -216,11 +218,28 @@ export function createNativeScholaController(args={}){
     }
     if(matches.length)return activate(matches[0].id);
 
+    // The Introit belongs to the actual entrance, not its later printed
+    // Proper (B014). The first ordinary opening prayer cards are the
+    // earliest visible Mass scene; a pre-Mass rite retains exclusive
+    // ownership until its actual handoff to the opening Mass card.
+    if(sourceSection==="AO.CARD.001")return activate("INTROIT",{reset:false});
+
+    // 1958 §27(c): Communion is sung at the priest's reception when no
+    // faithful communicate, or during distribution if they do. The app
+    // cannot know either performance in advance. Beginning with B074,
+    // expose the *expected musical window*; never claim heard singing.
+    // Retain that window through reception, optional Confiteor, the
+    // faithful's Communion, ablutions and the later printed B085 Proper.
+    // The first public Postcommunion greeting closes it.
+    if(blockIds.has("AO.SM.B074"))return activate("COMMUNION",{reset:false});
+    if(activeTrackId==="COMMUNION" &&
+       ["AO.CARD.023","AO.CARD.024","AO.CARD.025","AO.CARD.026"].includes(sourceSection))
+      return state();
+
     // The choir's Offertory has a musical window extending across all five
     // curated Offertory cards, Orate fratres and the quiet Secret. The public
     // Secret conclusion (C0135), or leaving this section, ends the window.
     // Do not use the single printed B030 Proper card as its stop clock.
-    const sourceSection=String(card.sourceSectionId??card.sectionId??"");
     if(activeTrackId==="OFFERTORY" &&
        ["AO.CARD.010","AO.CARD.011"].includes(sourceSection))return state();
 

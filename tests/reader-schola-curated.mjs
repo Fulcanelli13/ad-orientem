@@ -64,9 +64,19 @@ const verify=(card,expected,message)=>{
   return projection;
 };
 
-verify(titled("At the Foot of the Altar · Opening and Psalm 42"),null,
-  "first preparatory stage must not activate the Introit early");
-verify(titled("Introit"),"INTROIT","Introit Proper should use its actual B014 card, not macro position 1");
+assert.equal(schola.project().trackId,null,
+  "Before the Mass/preceding-rite handoff the Schola must not claim an Introit");
+let introit=verify(titled("At the Foot of the Altar · Opening and Psalm 42"),"INTROIT",
+  "the Introit musical window must open at the entrance, not the later B014 printed card");
+assert.equal(introit.schola.musicStatus,"EXPECTED_NOT_OBSERVED");
+const introitFirst=introit.schola.segmentId;
+introit=verify(titled("Confiteor of the Celebrant"),"INTROIT",
+  "preparatory prayer must not make the entrance chant disappear");
+assert.equal(introit.schola.segmentId,introitFirst);
+introit=verify(titled("Introit"),"INTROIT",
+  "the printed B014 text should refer to the already-open musical window");
+assert.equal(introit.schola.segmentId,introitFirst,
+  "reading B014 restarted the independent entrance music clock");
 verify(cardForCue("AO.SM.C0044"),"KYRIE","Kyrie source cue");
 let state=verify(cardForCue("AO.SM.C0053"),null,
   "priest's Gloria intonation must not trigger Schola early");
@@ -114,8 +124,29 @@ state=verify(titled("Te igitur"),"SANCTUS_BENEDICTUS",
 assert.equal(state.index,before.index);
 verify(titled("Pater noster"),null,"old Sanctus should not persist into Pater noster");
 verify(titled("Agnus Dei"),"AGNUS_DEI","Agnus Dei correct cue vs old macro/card number");
+let communion=verify(titled("The Priest receives the Sacred Host"),"COMMUNION",
+  "the Communion music window begins at reception (B074), not at the later printed B085");
+assert.equal(communion.schola.musicStatus,"EXPECTED_NOT_OBSERVED");
+const communionFirst=communion.schola.segmentId;
+communion=verify(titled("The Priest receives the Precious Blood"),"COMMUNION",
+  "Communion window must persist across the celebrant's Communion");
+assert.equal(communion.schola.segmentId,communionFirst);
+for(const title of [
+  "Ecce Agnus Dei · Preparation of the Faithful",
+  "Ablutions",
+  "Communion Antiphon",
+]){
+  communion=verify(titled(title),"COMMUNION",
+    "the Communion scene must outlast the first Proper-bearing card: "+title);
+  assert.equal(communion.schola.segmentId,communionFirst,
+    "the Communion printed Proper/ablutions reset the musical phrase "+title);
+}
+assert.equal(schola.reachLiturgicalBoundary("AO.SM.C0249").trackId,"COMMUNION",
+  "printed B085 cannot claim a chant has finished");
+assert.equal(schola.reachLiturgicalBoundary("AO.SM.C0251").trackId,null,
+  "the public Postcommunion greeting must expire any still-expected Communion chant");
 verify(titled("Communion Antiphon"),"COMMUNION",
-  "Communion Proper must only start on the explicit B085 card");
+  "a direct jump to B085 must still offer the resolved Proper without an observed sound claim");
 verify(titled("Final Blessing"),null,"silent/priest-only final blessing must not activate choir");
 
 // Source-aware API also works for existing production 48 model.

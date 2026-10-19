@@ -33,6 +33,57 @@ try{
    await page.goto("http://127.0.0.1:4297/tests/fixtures/reader-phone-harness.html?production=1&aoLiveCards=65",
      {waitUntil:"networkidle",timeout:55000});
    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",{},{timeout:25000});
+   // The Introit can be expected at the Mass entrance well before the
+   // priest's printed B014 card. A later B014 read is not choir progress.
+   const opening=await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const foot=api.model.cards.find(card=>card.title.startsWith("At the Foot of the Altar"));
+     const introit=api.model.cards.find(card=>card.title==="Introit");
+     if(!foot||!introit)throw new Error("MASS_ENTRANCE_CARDS_MISSING");
+     api.showSequence(foot.sequence);
+     const beginning=api.getScholaState();
+     api.showSequence(introit.sequence);
+     return {beginning,afterProper:api.getScholaState()};
+   });
+   assert.equal(opening.beginning.trackId,"INTROIT",
+     "the first Mass card was not connected to the entrance chant");
+   assert.equal(opening.beginning.schola.musicStatus,"EXPECTED_NOT_OBSERVED");
+   assert.equal(opening.afterProper.trackId,"INTROIT");
+   assert.equal(opening.afterProper.schola.segmentId,opening.beginning.schola.segmentId,
+     "the B014 printed Introit reset the singing track");
+
+   // The Communion antiphon normally accompanies actual Communion, not
+   // the celebrant's later printed B085 reading after his ablutions.
+   const communion=await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const host=api.model.cards.find(card=>card.title==="The Priest receives the Sacred Host");
+     const blood=api.model.cards.find(card=>card.title==="The Priest receives the Precious Blood");
+     const faithful=api.model.cards.find(card=>card.title==="Ecce Agnus Dei · Preparation of the Faithful");
+     const ablutions=api.model.cards.find(card=>card.title==="Ablutions");
+     const printed=api.model.cards.find(card=>card.title==="Communion Antiphon");
+     if([host,blood,faithful,ablutions,printed].some(card=>!card))
+       throw new Error("COMMUNION_CARD_ANCHORS_MISSING");
+     api.showSequence(host.sequence);
+     const opened=api.getScholaState();
+     for(const card of [blood,faithful,ablutions,printed])
+       api.showSequence(card.sequence);
+     return {opened,printed:api.getScholaState()};
+   });
+   assert.equal(communion.opened.trackId,"COMMUNION",
+     "the Schola Communion scene did not open at the priest's reception");
+   assert.equal(communion.printed.trackId,"COMMUNION",
+     "Communion song did not persist through faithful distribution and ablutions");
+   assert.equal(communion.printed.schola.segmentId,communion.opened.schola.segmentId,
+     "reading B085 falsely restarted choir music");
+   await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const greeting=api.model.cards.find(card=>card.title.includes("Postcommunion"));
+     if(!greeting)throw new Error("POSTCOMMUNION_GREETING_CARD_MISSING");
+     api.showSequence(greeting.sequence);
+   });
+   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId),
+     null,"Communion music leaked into Postcommunion");
+
    // A card displaying the same sung words must keep the Schola's manual
    // controls available in a compact dock, without duplicating its lyrics.
    await page.evaluate(()=>{
