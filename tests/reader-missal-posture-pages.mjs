@@ -70,10 +70,10 @@ assert.equal(projected.cards[1].postureEntry.cueId,"AO.SM.C0109");
 assert.equal(projected.cards[1].blocks[0].blockId,"AO.SM.B030");
 assert.equal(projected.cards[1].blocks[0].firstParagraphIndex,0);
 assert.equal(projected.cards[1].blocks[0].paragraphCount,3);
-assert.ok(projected.cards[0].blocks.some(block=>block.omittedByRite==="SOURCE_ONLY"),
-  "Omitted source block remains traceable without a fake page");
-assert.equal(projected.cards[1].blocks.some(block=>block.omittedByRite),false,
-  "Omitted block must not be duplicated on a derived fragment");
+assert.ok(projected.cards[1].blocks.some(block=>block.omittedByRite==="SOURCE_ONLY"),
+  "Trailing omitted source block must stay with its preceding prayer text");
+assert.equal(projected.cards[0].blocks.some(block=>block.omittedByRite),false,
+  "Zero-text block must not jump backward to the first derived page");
 assert.equal(projected.nextCard("AO.MISSAL.010.1")?.sectionId,"AO.MISSAL.010.1.p2");
 assert.equal(projected.previousCard("AO.MISSAL.010.1.p2")?.sectionId,"AO.MISSAL.010.1");
 assert.equal(findReaderModeAnchorCard(projected,{
