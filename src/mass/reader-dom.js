@@ -1077,7 +1077,7 @@ button.ao-schola-control{cursor:pointer}
   .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"])
   .ao-reader-paragraph{opacity:.18}
 #ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"])
   .ao-reader-paragraph[data-active="true"]{opacity:1}
 #ao-r17-native-reader-preview[data-r17-curated-review="true"]
   .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body
@@ -1089,7 +1089,7 @@ button.ao-schola-control{cursor:pointer}
    Source cue ownership is unchanged; uncued Propers have their own visual
    marker, which supersedes a different currently source-active cue. */
 #ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-body[data-ao-visual-focus="uncued"]:has(.ao-reader-paragraph[data-active="true"])
   .ao-reader-paragraph[data-active="true"]:not([data-reading-active="true"]){
   opacity:.18;color:var(--ao-text);transform:none;text-shadow:none
 }
