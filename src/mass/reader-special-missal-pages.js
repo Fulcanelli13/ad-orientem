@@ -46,3 +46,12 @@ export function showSpecialRiteMissalPostureHint(host,hint,{language="en"}={}){
   button.setAttribute("aria-label",button.title);
   return true;
 }
+
+/** A French Missal must never display an English line as its French column.
+ * Several older rite payloads have only Latin; null is the honest fallback.
+ */
+export function specialRiteVernacular(row,{language="en"}={}){
+  const french=String(language).toLowerCase().startsWith("fr");
+  const source=french?(row?.french??row?.fr):(row?.vernacular??row?.english??row?.en);
+  return typeof source==="string"&&source.trim()?source:null;
+}
