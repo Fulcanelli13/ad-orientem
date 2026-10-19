@@ -64,7 +64,8 @@ assert.equal(e.get("EASTER_VIGIL_GLORIA").status,
  "GRAPH_SIGNAL_EXISTS_NATIVE_CUE_RECONCILIATION_PENDING");
 assert.equal(e.get("BENEDICTION").instrument,"ALTAR_BELL");
 assert.equal(e.get("TENEBRAE").status,"NO_BELL_AND_STREPITUS_NOT_MANDATORY");
-assert.ok(inventory.gaps.some(x=>x.startsWith("Low Mass conditional communion")));
+assert.ok(inventory.gaps.some(x=>x.includes("Low Mass")&&x.includes("MC-COM-185")),
+ "Low Mass Communion discrepancy must stay auditable regardless of editorial wording");
 for(const [key,url] of Object.entries(inventory.sources)){
  assert.ok(url.startsWith("https://") || existsSync(new URL("../"+url,import.meta.url)),
   key+" must cite a concrete online witness or exact repository path");
