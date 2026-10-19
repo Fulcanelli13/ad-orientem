@@ -11,6 +11,8 @@ export function historicalFocusCandidates(question,topics,language="en"){
  if(!query)return [];
  return topics.filter(t=>t.historicalIntent?.status==="DOCUMENTARY_TOPIC_ANCHORS_RESEARCH_ONLY")
   .filter(t=>{
+   const actor=t.historicalIntent.actorRequired?.[lang];
+   if(actor?.length&&!actor.some(x=>hasPhrase(query,fold(x))))return false;
    const sets=t.historicalIntent.facets?.[lang];
    return Array.isArray(sets)&&sets.length>=2&&sets.every(group=>Array.isArray(group)&&group.length>0
      &&group.some(term=>hasPhrase(query,fold(term))));
@@ -31,6 +33,10 @@ export function validateHistoricalFocus(topics){
     topic.historicalIntent.status!=="DOCUMENTARY_TOPIC_ANCHORS_RESEARCH_ONLY")
     throw Error("Historical anchor ownership violation: "+topic.id);
   for(const lang of ["en","fr"]){
+   const actor=topic.historicalIntent.actorRequired?.[lang];
+   if(actor&&( !Array.isArray(actor)||actor.length<2
+      ||actor.some(x=>typeof x!=="string"||!fold(x))))
+    throw Error("Invalid specific historical actor scope for "+topic.id+"/"+lang);
    const continuation=topic.historicalIntent.contextContinuation?.[lang];
    if(!Array.isArray(continuation)||continuation.length<2
       ||continuation.some(x=>typeof x!=="string"||!fold(x)))
