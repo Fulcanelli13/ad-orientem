@@ -1,7 +1,7 @@
 {
   "schema": "ao-rogation-187-vernacular-owner-census-v1",
   "date": "2026-10-19",
-  "status": "187_SOURCE_ROWS_OWNER_AND_HISTORICAL_PARALLEL_INDEXED_NOT_PUBLICATION_CERTIFIED",
+  "status": "187_SOURCE_ROWS_OWNER_AND_OLDER_NEWER_WITNESSES_FOUND_NOT_PUBLICATION_CERTIFIED",
   "owners": [
     "data/presentation/reader-text-sung.v1.json",
     "data/presentation/reader-text-low.v1.json",
@@ -24,13 +24,50 @@
       "historicalLitanyEnglishFrenchLineMappedUnapproved": 96,
       "historicalLitanyEnglishOnlyFrenchOmitted": 2,
       "historicalLitanyNeitherHistoricWitness": 3,
-      "sourceSpecificScriptureChantSearch": 3
+      "sourceSpecificScriptureChantSearch": 0,
+      "laterRitualOpeningEnFrCandidateUnapproved": 3
     },
     "confirmedGenuinelyMissingTranslations": null,
     "editoriallyApprovedEN": 0,
     "editoriallyApprovedFR": 0,
     "source1962FullyPrintCollated": false,
-    "pronouncedRows": 187
+    "pronouncedRows": 187,
+    "laterWitnessCandidateCoverage": {
+      "status": "FULL_RITE_EN_FR_WITNESSES_DISCOVERED_NO_RELEASE_APPROVAL",
+      "sourceScopeOnly": {
+        "ROG-R01": {
+          "english": "WELLER_1964_ROMAN_RITUAL_PART_II_3748_3761",
+          "french": "SAINT_CLEMENT_2020_PDF_0",
+          "minorIssue": "French opening printed short Gloria; PRAY fully owns this prayer"
+        },
+        "ROG-R02": {
+          "english": "WELLER_1964_ROMAN_RITUAL_PART_I_5146_5178",
+          "french": "SAINT_CLEMENT_2020_PDF_0_AND_1862_HISTORIC_INTRO",
+          "minorIssue": "Voice/response segmentation differs; no unconditional 1962 role endorsement"
+        },
+        "ROG-R03": {
+          "english": "WELLER_1964_ROMAN_RITUAL_PART_I_5179_5223",
+          "french": "SAINT_CLEMENT_2020_PDF_0_4",
+          "count": 112,
+          "fullyApproved": 0
+        },
+        "ROG-R04": {
+          "english": "WELLER_1964_ROMAN_RITUAL_PART_I_5223_5295",
+          "french": "SAINT_CLEMENT_2020_PDF_4_5",
+          "minorIssue": "Psalm Gloria and silent-Pater source role policies need 1962 certification"
+        },
+        "ROG-R05": {
+          "english": "WELLER_1964_ROMAN_RITUAL_PART_I_5298_5326",
+          "french": "SAINT_CLEMENT_2020_PDF_5_6",
+          "minorIssue": "Weller copyrighted; full collect conclusions and French/Latin wording require edition verification"
+        }
+      },
+      "englishRights": "COPYRIGHT_1964_PHILIP_T_WELLER_PERMISSION_REQUIRED",
+      "frenchRights": "2020_HOSTED_BILINGUAL_PROCESSION_COPYRIGHT_LICENSE_UNKNOWN",
+      "printed1962OfficialSourceFullyCertified": false,
+      "publicationApproved": false,
+      "missingTranslationCount": null
+    }
   },
   "stages": {
     "ROG-R01": {
@@ -82,7 +119,8 @@
     "Row-align 112 invocations, especially edition-missing petitions and response formulas.",
     "Search Bible/Psalter witnesses for Exsurge/Deus auribus before proposing any new translation.",
     "Review existing proper and prayer corpora; never conflate Rogation Mass Proper with procession.",
-    "Promote only individually reviewed effective EN/FR wording owners with provenance and CI/reader parity."
+    "Promote only individually reviewed effective EN/FR wording owners with provenance and CI/reader parity.",
+    "The complete French–Latin Greater Litany hosted 2020 by Saint-Clément Ottawa and the 1964 Weller English Roman Ritual provide all major source families; their presence eliminates blind translation discovery but not edition/right-to-reproduce review. Do not publish either verbatim without permission."
   ],
   "rows": [
     {
@@ -92,10 +130,11 @@
       "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
       "ordinaryCueIds": [],
       "prayIds": [],
-      "triage": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
-      "vernacularWitnessTier": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "triage": "LATER_RITUAL_OPENING_EN_FR_CANDIDATE_UNAPPROVED",
+      "vernacularWitnessTier": "LATER_RITUAL_OPENING_EN_FR_CANDIDATE_UNAPPROVED",
       "notes": [
-        "Exsurge Domine antiphon belongs to processional chant, not the unrelated historical penitential litany"
+        "Exsurge Domine antiphon belongs to processional chant, not the unrelated historical penitential litany",
+        "English Weller 1964 Roman Ritual Part II, lines 3753–3761; French Saint-Clément 2020 bilingual procession p. 1. The opening Gloria is truncated in the French booklet but has complete existing PRAY trilingual source."
       ],
       "publication": "REVIEW_PENDING_NOT_PROMOTED"
     },
@@ -106,10 +145,11 @@
       "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
       "ordinaryCueIds": [],
       "prayIds": [],
-      "triage": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
-      "vernacularWitnessTier": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "triage": "LATER_RITUAL_OPENING_EN_FR_CANDIDATE_UNAPPROVED",
+      "vernacularWitnessTier": "LATER_RITUAL_OPENING_EN_FR_CANDIDATE_UNAPPROVED",
       "notes": [
-        "Psalm 43(44) incipit; select specific Psalter and boundary"
+        "Psalm 43(44) incipit; select specific Psalter and boundary",
+        "English Weller 1964 Roman Ritual Part II, lines 3753–3761; French Saint-Clément 2020 bilingual procession p. 1. The opening Gloria is truncated in the French booklet but has complete existing PRAY trilingual source."
       ],
       "publication": "REVIEW_PENDING_NOT_PROMOTED"
     },
@@ -136,10 +176,11 @@
       "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
       "ordinaryCueIds": [],
       "prayIds": [],
-      "triage": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
-      "vernacularWitnessTier": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "triage": "LATER_RITUAL_OPENING_EN_FR_CANDIDATE_UNAPPROVED",
+      "vernacularWitnessTier": "LATER_RITUAL_OPENING_EN_FR_CANDIDATE_UNAPPROVED",
       "notes": [
-        "Exsurge Domine antiphon belongs to processional chant, not the unrelated historical penitential litany"
+        "Exsurge Domine antiphon belongs to processional chant, not the unrelated historical penitential litany",
+        "English Weller 1964 Roman Ritual Part II, lines 3753–3761; French Saint-Clément 2020 bilingual procession p. 1. The opening Gloria is truncated in the French booklet but has complete existing PRAY trilingual source."
       ],
       "publication": "REVIEW_PENDING_NOT_PROMOTED"
     },
