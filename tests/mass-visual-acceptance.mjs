@@ -889,6 +889,10 @@ try{
       scholaSharedActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='schola-shared']")?.dataset?.active??null,
       scholaSharedIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='schola-shared']")?.hidden??null,
       scholaDockActive:document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset?.active??null,
+      scholaDockShared:document.querySelector("#ao-r17-native-reader-preview .ao-schola-dock")?.dataset?.shared??null,
+      scholaLatinVisible:document.querySelector("#ao-r17-native-reader-preview .ao-schola-main [data-role='schola']")
+        ?getComputedStyle(document.querySelector("#ao-r17-native-reader-preview .ao-schola-main [data-role='schola']")).visibility:null,
+      scholaNextDisabled:document.querySelector("#ao-r17-native-reader-preview [data-schola-next]")?.disabled??null,
       activeParagraphs:document.querySelectorAll("#ao-r17-native-reader-preview .ao-reader-paragraph[data-active='true']").length,
       targetActive:document.querySelector(`#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='${id}']`)?.dataset?.active??null,
       gestureOwner:document.getElementById("ao-r17-native-reader-preview")?.dataset?.r17OwnerGesture??null,
@@ -976,7 +980,16 @@ try{
     "rejected priest BOWS HEAD image returned although exact source action remains");
   assert.equal(gloriaBow.scholaSharedActive,"true","shared Gloria text lost the v1.76 right-rail Schola indicator");
   assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
-  assert.equal(gloriaBow.scholaDockActive,"false","shared Gloria text duplicated itself in the Schola dock");
+  // The central Gloria remains the only Latin lyric surface; the compact
+  // dock now retains the *independent* Schola controls and translation access.
+  assert.equal(gloriaBow.scholaDockActive,"true",
+    "Shared Gloria must retain Schola manual controls");
+  assert.equal(gloriaBow.scholaDockShared,"true",
+    "Shared Gloria dock must use compact, nonduplicative presentation");
+  assert.equal(gloriaBow.scholaLatinVisible,"hidden",
+    "Gloria Latin was duplicated behind its central prayer text");
+  assert.equal(gloriaBow.scholaNextDisabled,false,
+    "Shared Gloria lost manual independent phrase correction");
   assert.equal(gloriaBow.targetActive,"true","Gloria bow cue is not the active focus paragraph");
   assert.equal(gloriaBow.anchorFlag,"true","Gloria bow rail/Latin anchor state diverged");
   assert.ok(gloriaBow.anchorWords.some(word=>/Iesu Christe|Jesu Christe|Jesus Christ|Jésus-Christ/i.test(word)),
