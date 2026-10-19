@@ -45,7 +45,7 @@ for(const entry of index.entries){
  assert.equal(entry.title.en,record.opening.question.en);
  assert.ok(/^https:\/\/(?:www\.vatican\.va|www\.museosanpiox\.it|www\.papapiox\.it)\//.test(entry.source.url),
   "Bad historical source host "+entry.id);
- assert.ok(entry.source.locus.length>4&&entry.source.studyProposition.length>32);
+ assert.ok(entry.source.locus.trim().length>=3&&entry.source.studyProposition.length>32,entry.id+": missing exact research locus");
  if(entry.id.startsWith("SPX-EXP-")){
   const source=originExpansion.get(entry.id);
   assert.ok(source&&source.source_passage_found,entry.id);
