@@ -80,6 +80,22 @@ const simpleCantataSpeakerModel=createMassReaderModel({
   resolvedMass:{...base,form:"MISSA_CANTATA_SIMPLE"},
   sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 });
+// Ritus servandus XIII.2 and normal incensation form ownership:
+// entrance incensation is entirely omitted in Requiem; Offertory remains
+// possible in incensed sung forms. LOW and unincensed Missa Cantata omit BOTH
+// conditional incense blocks without mutating the frozen source corpora.
+const hasTextCue=(m,id)=>m.cards.some(c=>c.paragraphs.some(p=>p.sourceCueIds?.includes(id)));
+for(const m of [lowModel,simpleCantataSpeakerModel]){
+ for(const cueId of ["AO.SM.C0040","AO.SM.C0041","AO.SM.C0120","AO.SM.C0121","AO.SM.C0122","AO.SM.C0123","AO.SM.C0124"])
+   assert.equal(hasTextCue(m,cueId),false,m.form+" showed a conditional incense prayer/direction");
+ for(const id of ["AO.SM.B013","AO.SM.B036"])
+   assert.equal(m.cards.flatMap(c=>c.blocks).find(b=>b.blockId===id)?.omittedByRite,
+     "1962_FORM_NO_INCENSE",m.form+" lost omitted-block source ownership");
+}
+for(const m of [model,solemnSpeakerModel]){
+ for(const cueId of ["AO.SM.C0040","AO.SM.C0041","AO.SM.C0122","AO.SM.C0124"])
+   assert.equal(hasTextCue(m,cueId),true,m.form+" lost an appointed incense cue");
+}
 const speakerFor=(m,id)=>m.cards.flatMap(c=>c.paragraphs).find(p=>
   p.id===id || p.sourceCueIds?.includes(id)
 )?.speakerRole;
@@ -147,6 +163,21 @@ assert.throws(()=>createMassReaderModel({
   resolvedMass:{...base,proper:null},sectionMap,lowCorpus:low,sungCorpus:sung
 }),/READY resolved Proper/);
 
+// At incensed Requiem, do not show the omitted entrance/Introit
+// incensation, but keep Offertory incensation where rubric permits.
+const incensedRequiemEntrModel=createMassReaderModel({
+  resolvedMass:{...base,overlays:["REQUIEM"]},
+  sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+});
+for(const id of ["AO.SM.C0040","AO.SM.C0041"])
+ assert.equal(hasTextCue(incensedRequiemEntrModel,id),false,
+   "Requiem displayed the forbidden entrance incensation "+id);
+for(const id of ["AO.SM.C0120","AO.SM.C0121","AO.SM.C0122","AO.SM.C0123","AO.SM.C0124"])
+ assert.equal(hasTextCue(incensedRequiemEntrModel,id),true,
+   "Requiem incorrectly suppressed permitted Offertory incensation "+id);
+assert.equal(incensedRequiemEntrModel.cards.flatMap(c=>c.blocks)
+ .find(b=>b.blockId==="AO.SM.B013")?.omittedByRite,
+ "RITUS_XIII_2_REQUIEM");
 const requiemModel=createMassReaderModel({
   resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 });
