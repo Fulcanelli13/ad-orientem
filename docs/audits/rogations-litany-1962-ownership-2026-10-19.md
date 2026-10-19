@@ -234,3 +234,54 @@ resolved through the existing Ordinary cue authority.
 CI tests for text-source ownership, rite-page projection and printed
 witness holds were updated. **Source certification of the full 1962
 edition, vernacular collation and physical visual acceptance remain open**.
+
+## 7. Existing English and French witnesses also contain the appended prayers
+
+An evidence-based continuation of the prior PRAY corpus discovery has
+recovered two **pre-existing whole-sequence vernacular witnesses**; we have
+**not** translated the remaining Rogation rows:
+
+- [1883 English *The Catholic Prayer Book and Manual of Meditations*](
+  https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints),
+  bounded around the oldid 12282621 transcription. After the Litany,
+  its page continues with **silent Our Father, Psalm LXIX, suffrages,
+  `LET US PRAY`, all ten concluding English collects and final prayers**.
+- [1862 French Corneille, *Œuvres*, tome IX](
+  https://fr.wikisource.org/wiki/Œuvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_pénitentiaux),
+  pinned oldid 14794744. Its page continues **beyond `Notre Père`**
+  into Psalm 69 (Latin/French prose and also a French poetic
+  paraphrase), Latin/French suffrages, **ten Latin collects followed
+  by ten French prose collects** and closing responses.
+
+**Crucial boundary correction:** The current
+`src/pray/litany-source.js#extractLitanyProper` deliberately stops
+before `Our Father` or `Notre Père`, because the PRAY *litany proper*
+is a deliberately narrower reading route. **The source publications
+themselves do not stop there.** Prior audit wording suggesting that
+the historical sources lacked the appended Psalm/ten collects was
+incorrect. The available material is now recorded by **scope and
+source edition** in
+`data/mass/rogation-historical-language-witnesses.v1.json`
+without copying unapproved translated passages.
+
+This is **not complete, approved 1962 bilingual parity**. The 1883
+English Litany lacks invocations/petitions in the 1961 photographed
+chant list (including the earthquake and pestilence/famine/war
+deliverances); the 1862 French historical Litany omits St Joseph
+and has suspect transcription readings. The English prose Psalm
+bundles verse boundaries, while the French page contains both a
+source-adjacent prose rendering and Corneille's poetic Psalm. The
+books differ from each other and from the 1962 edition; they also
+require print verification and rights review. **Do not auto-select
+the most complete-looking translation** and do not interpolate missing
+prayers.
+
+All ten *Rogations* concluding collects now have an **identified
+pre-existing EN witness and FR prose witness by sequence**, pending
+exact Latin-incpit/edition/wording collation. The counts remain
+**187 Latin source leaves, 22 exact Ordinary matches, 15 further
+PRAY matches and 150 other candidates**: historical-witness discovery
+is not an approved exact owner match. The next step is **verse- and
+collect-level alignment of these located sources** and selection
+under canonical wording/rights policy, *not* translating all 150.
+
