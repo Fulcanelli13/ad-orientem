@@ -1,0 +1,645 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_ONE_OBJECT_ONE_IMAGE_V7",
+  "date": "2026-10-19",
+  "policy_supersedes": "M6_COMPARE_FOUR_OR_FIVE_ALTERNATIVES_AS_DEFAULT",
+  "source_registry_unchanged": true,
+  "source_registry_objects": 170,
+  "source_registry_images": 112,
+  "selection_target": "ONE_HIGH_QUALITY_ISOLATED_PHOTOGRAPH_PER_CANONICAL_OBJECT",
+  "backup_target": "ZERO by default; one optional private fallback only when primary fails source rights or clarity",
+  "gates": [
+    "Subject: exact canonical physical object only. If a paten is requested, a chalice may not appear in the published hero photo.",
+    "No unrelated liturgical vessels, tools, hands, museum labels or surrounding display objects competing with the subject. Minor display supports are separately noted, not automatically approved.",
+    "Plain neutral/dark background strongly preferred. Visible edges, complete silhouette, natural light, sharpness and true material colour.",
+    "Catholic traditional Roman-rite identification checked; do not substitute Byzantine or Protestant, generic unlabeled linens or viaticum accessories.",
+    "Full image must portray the object itself, not an action or grouping unless canonical ID explicitly defines a matched set or scene.",
+    "Original file rights, photographer, exact Commons source and licence tracked. Photographic crop/derivative must retain original provenance and respect licence; never invent visual evidence.",
+    "One provisional assistant choice does not confer user aesthetic approval, liturgical certification or publication rights approval.",
+    "If no source satisfies the gate, leave the hero empty and retain a precise acquisition instruction rather than publishing the best bad option."
+  ],
+  "exceptions": [
+    "AL07 intentionally six matching candlesticks as one canonical set",
+    "AL16 three altar cards as one canonical set",
+    "AL17/AL18 are directional annotations on an authenticated altar image, not separate objects"
+  ],
+  "pilot_total": 30,
+  "provisional_hero_count": 15,
+  "needed_count": 15,
+  "selections": [
+    {
+      "object_id": "SN02",
+      "label": "Communion rail",
+      "canonical_glossary_id": "G186",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Research a verified single-object photograph before assigning a primary image.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SN04",
+      "label": "Sanctuary steps",
+      "canonical_glossary_id": "G181",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Research a verified single-object photograph before assigning a primary image.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SN05",
+      "label": "Sanctuary lamp",
+      "canonical_glossary_id": "G218",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B27-SN05-AUCKLAND-RED-CATHOLIC-LAMP",
+      "status": "PROVISIONAL_SINGLE_OBJECT_ORIGINAL_PIXEL_SCREEN_WALL_MOUNTED_RED_SANCTUARY_LAMP",
+      "background": "pale marble wall with no competing liturgical objects",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "One complete Catholic red-glass sanctuary lamp with visible interior flame and gold cross finial, photograph sharp and complete at 2722×4083 original resolution. It is wall-mounted, not a suspended chain lamp; acceptable as illustrative lamp form but must be labelled wall-mounted historical/current example rather than common hanging form.",
+      "qa_outstanding": "Some strong colour reflections on glass, modern wall-mounted white base; source photograph requires CC BY 4.0 attribution and adaptation disclosure. Human aesthetic and typology approval pending.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "creator": "Bjankuloski06 / Bojan Jankuloski (photographer)",
+        "licence": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Sanctuary_lamp,_Christ_the_King_Catholic_Church,_Auckland.jpg",
+        "original_width": 2722,
+        "original_height": 4083,
+        "original_sha256": "1370944b3f6b80b6b4766d9379506aef284dde45b880165b9fb18cbd591b52bc",
+        "source_church": "Christ the King Roman Catholic Church, Auckland, New Zealand"
+      },
+      "editorial_source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39227271648/artifacts/12174227862"
+    },
+    {
+      "object_id": "SN07",
+      "label": "Credence table",
+      "canonical_glossary_id": "G184",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Research a verified single-object photograph before assigning a primary image.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL01",
+      "label": "High altar",
+      "canonical_glossary_id": "G404",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Research a verified single-object photograph before assigning a primary image.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL03",
+      "label": "Tabernacle",
+      "canonical_glossary_id": "G080",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Research a verified single-object photograph before assigning a primary image.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL06",
+      "label": "Altar crucifix",
+      "canonical_glossary_id": "G079",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B20-AL06-MET-ALTAR-CRUCIFIX",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "plain pale gray/white museum backdrop",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "Complete single freestanding altar crucifix on a plain light backdrop; no Missal, other sacred object or church surroundings. Intricate rock crystal and silver gilt, 19th century.",
+      "qa_outstanding": "Recognizable single-object photograph, but silver/crystal on a light background reduces contrast and ornate material is historically atypical of an ordinary parish altar crucifix. Final full-pixel legibility and user approval pending.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "object_artist": "Reinhold Vasters (design attribution); NOT the photographer",
+        "photograph_creator_or_source": "Metropolitan Museum of Art Open Access",
+        "licence": "CC0 1.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Altar_crucifix_MET_88305.jpg",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "original_width": 1632,
+        "original_height": 1984
+      },
+      "editorial_source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39212103234"
+    },
+    {
+      "object_id": "AL07",
+      "label": "Six altar candlesticks",
+      "canonical_glossary_id": "G079",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "If canonically defined as six candlesticks, photograph six as ONE coherent matched set; do not use one candlestick and falsely label a set.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL08",
+      "label": "Individual altar candle",
+      "canonical_glossary_id": "G079",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Research a verified single-object photograph before assigning a primary image.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL10",
+      "label": "Altar gradine / candle shelf",
+      "canonical_glossary_id": "G079",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Research a verified single-object photograph before assigning a primary image.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL13",
+      "label": "Altar linen coverings",
+      "canonical_glossary_id": "G079",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Altar covering or three separate linen coverings require correctly identified source object or coherent set.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL14",
+      "label": "Consecrated altar stone",
+      "canonical_glossary_id": "G219",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "EXISTING-AL14",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "dark neutral",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "Single consecrated altar stone (Catholic sepulchrum), with five crosses and the central relic cavity indicated; one object occupies the frame on a dark, largely plain background.",
+      "qa_outstanding": "Historical altar stone, not a generic building slab. Verify the center marker/relic seal at original size. Photograph by ViennaUK, Commons CC BY-SA 4.0.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "creator": "ViennaUK",
+        "licence": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Altar_stone_Sint-Niklaaskerk_Mesen.jpg"
+      },
+      "editorial_source_evidence": "Individual Commons source verified and actual original-source thumbnail visually inspected in existing-source sprint CI #39207695390"
+    },
+    {
+      "object_id": "AL16",
+      "label": "Three altar cards",
+      "canonical_glossary_id": "G213",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "B19-AL16-LIVORNO-ENSEMBLE",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "subdued dark museum plinth",
+      "isolation": "ONE_DEFINED_THREE_CARD_ENSEMBLE",
+      "selection_rationale": "One coordinated three-piece altar-card ensemble: a larger central card and two smaller side cards. All three visible against dark museum display; no unrelated liturgical objects.",
+      "qa_outstanding": "Historic silver frames and reflections; not necessarily typical mid-twentieth-century cards. Inspect legibility before final approval.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "creator": "Sailko",
+        "licence": "CC BY 3.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Livorno%2C%20museo%20di%20santa%20giulia%2C%20cartegloria%20in%20argento%20del%201770.jpg",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "editorial_source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39210447414"
+    },
+    {
+      "object_id": "AL17",
+      "label": "Epistle side of altar",
+      "canonical_glossary_id": "G077",
+      "selection_mode": "ANNOTATION_EXCEPTION",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Correctly annotate the Epistle side on an authenticated altar source; direction has no separate independent physical object.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL18",
+      "label": "Gospel side of altar",
+      "canonical_glossary_id": "G078",
+      "selection_mode": "ANNOTATION_EXCEPTION",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Correctly annotate the Gospel side on an authenticated altar source; direction has no separate independent physical object.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL19",
+      "label": "Retable / reredos",
+      "canonical_glossary_id": "G418",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "Research a verified single-object photograph before assigning a primary image.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SV01",
+      "label": "Chalice",
+      "canonical_glossary_id": "G190",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B18-CLERMONT-CHALICE-BIAIS-RONDELET",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "light neutral",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "One Roman Catholic chalice, complete silhouette, quiet light-gray background. Museum pane/reflections warrant source-level final QA.",
+      "qa_outstanding": "Licensing verified; final crop/detail quality not yet approved.",
+      "explicitly_disqualified_hero_sources": [
+        {
+          "asset_id": "EXISTING-SV01",
+          "why": "Photograph contains two distinct sacred vessels, chalice and paten."
+        }
+      ],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SV02",
+      "label": "Paten",
+      "canonical_glossary_id": "G191",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B17-SV02-CLERMONT-STSAMSON-19C20C",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "neutral gray",
+      "isolation": "ONE_OBJECT_WITH_MINOR_DISPLAY_SUPPORT",
+      "selection_rationale": "One paten alone, no chalice. A small museum display support remains visible; it is not another liturgical object.",
+      "qa_outstanding": "Assess glare and display mount; original EXISTING-SV02 chalice+paten pair expressly banned as primary.",
+      "explicitly_disqualified_hero_sources": [
+        {
+          "asset_id": "EXISTING-SV02",
+          "why": "Photograph contains both chalice and paten. No paten primary image may show a chalice."
+        },
+        {
+          "asset_id": "M6B17-SV02-ABBEVILLE-POUSSIELGUE-1900",
+          "why": "Another liturgical vessel intrudes at upper left; not an isolated paten."
+        }
+      ],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SV03",
+      "label": "Ciborium",
+      "canonical_glossary_id": "G192",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "EXISTING-SV03",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "light neutral",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "Full covered ciborium photographed alone on plain light background.",
+      "qa_outstanding": "Grayscale archival specimen: acceptable provisional silhouette but colour image preferable after sourcing.",
+      "explicitly_disqualified_hero_sources": [
+        {
+          "asset_id": "M6B17-SV03-DOL-STSAMSON-CIBOIRE",
+          "why": "Adjacent chalice and prominent museum signage appear with the ciborium."
+        }
+      ],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SV13",
+      "label": "Communion paten / plate",
+      "canonical_glossary_id": "G191",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "EXISTING-SV13",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "light wood grain (acceptable, not ideal)",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "Single handled Communion paten photographed without a chalice, book, hand or second vessel. Distinct from the small paten used with the chalice.",
+      "qa_outstanding": "Warm wood-grain tabletop is more textured than ideal; clear complete form nevertheless. Photographer Abraham, Commons CC BY-SA 4.0.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "creator": "Abraham",
+        "licence": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Communion_paten_with_handle_%E2%80%93_Cieszyn_Poland.JPG"
+      },
+      "editorial_source_evidence": "Individual Commons source verified and actual original-source thumbnail visually inspected in existing-source sprint CI #39207695390"
+    },
+    {
+      "object_id": "LN01",
+      "label": "Corporal",
+      "canonical_glossary_id": "G187",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "B19-LN01-CORPORAL-GERMETE-1",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "dark brown sacristy table",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "Full, open, correctly identified Catholic corporal, photographed alone with a complete rectangular silhouette on a subdued sacristy-table background.",
+      "qa_outstanding": "Decorated white-on-white woven design and creases may not represent the plainest ordinary corporal. Inspect 100% original texture and object identification before publication.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "creator": "MF-Warburg",
+        "licence": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Korporale%20in%20cruce%20salus%20(1).jpg",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "editorial_source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39210447414"
+    },
+    {
+      "object_id": "LN02",
+      "label": "Purificator",
+      "canonical_glossary_id": "G188",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "B19-LN02-PURIFICATOR-CIESZYN-3",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "plain wood tabletop",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "Complete Catholic purificator neatly folded by itself, with no chalice, nearby linens, hands or labels. Simple wood background.",
+      "qa_outstanding": "Multicolour embroidered symbol rather than the typical simple small cross; historical/typological representation should be reviewed.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "creator": "Abraham",
+        "licence": "CC BY-SA 4.0",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Purificator%203%20Cieszyn%20Poland.JPG",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "editorial_source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39210447414"
+    },
+    {
+      "object_id": "LN03",
+      "label": "Pall for chalice",
+      "canonical_glossary_id": "G189",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B18-ABBEVILLE-PALL-IHS",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "muted dark",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "One clearly bounded square chalice pall with IHS on unobtrusive dark background.",
+      "qa_outstanding": "Assess final full-size texture detail; do not use old multi-textile collage.",
+      "explicitly_disqualified_hero_sources": [
+        {
+          "asset_id": "EXISTING-LN03",
+          "why": "Multi-textile collage, not one photographed pall."
+        }
+      ],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "LN04",
+      "label": "Burse",
+      "canonical_glossary_id": "G212",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B16-LN04-COOPER-HEWITT-19C",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "plain white",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "One corporal burse isolated against a nearly pure white background; visually cleaner than St Gallen's exhibit view.",
+      "qa_outstanding": "Historic museum specimen; verify exact licence notice at packaging; avoid viaticum carrying pouch.",
+      "explicitly_disqualified_hero_sources": [
+        {
+          "asset_id": "M6B3-LN04-MAASTRICHT-BURSE",
+          "why": "Maniple and other vestment pieces appear with the burse."
+        }
+      ],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "LN05",
+      "label": "Chalice veil",
+      "canonical_glossary_id": "G211",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B16-LN05-POLAND-CHRIST-COLUMN",
+      "status": "PROVISIONAL_SUBJECT_AND_BACKGROUND_SCREEN",
+      "background": "plain dark",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "One complete square chalice veil, well separated from its plain black surround.",
+      "qa_outstanding": "Shows unfolded textile, not the veil on the prepared chalice; in-use illustration is separate.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "EQ01",
+      "label": "Wine cruet",
+      "canonical_glossary_id": "G193",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "One wine cruet only, distinguishable from water by confirmed A/Latin vinum inscription or documented identification.",
+      "explicitly_disqualified_hero_sources": [
+        {
+          "asset_id": "EXISTING-EQ01",
+          "why": "Two cruets in same image; individual wine cruet unidentified."
+        }
+      ],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "EQ02",
+      "label": "Water cruet",
+      "canonical_glossary_id": "G193",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B27-EQ02-KRAKOW-GOTHIC-WATER-CRUET",
+      "status": "PROVISIONAL_SINGLE_OBJECT_ORIGINAL_PIXEL_HISTORIC_GOTHIC_CATHOLIC_WATER_CRUET",
+      "background": "neutral light grey and ivory museum background",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "One complete original late-Gothic Catholic Mass water cruet photographed individually at 1144×2448 pixels with its base, handle, spout and elaborate lid fully visible. The water/Mass identity is explicitly supported by National Museum in Warsaw catalogue source (Kraków, c.1500). Original pixel file and exact CC0 photo rights checked.",
+      "qa_outstanding": "This is a richly ornamented c.1500 historical example, NOT an ordinary 1962 Roman parish glass water cruet; must always be labelled historical. Modest 1144px width, highlights/reflections on metal. Human aesthetic, liturgical representativeness and publication acceptance remain pending.",
+      "explicitly_disqualified_hero_sources": [
+        {
+          "asset_id": "EXISTING-EQ02",
+          "why": "Two cruets in same image; individual water cruet unidentified."
+        }
+      ],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "creator": "Artinpl (photographer; not maker)",
+        "licence": "CC0 1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Krak%C3%B3w_Late_gothic_water_cruet.jpg",
+        "original_width": 1144,
+        "original_height": 2448,
+        "original_sha256": "4a81e964c56cf918a561c40c2635367f75dbb09e2d9659dd5e1f8875b7aa9e16",
+        "original_object_collection": "National Museum in Warsaw",
+        "original_object_period": "Kraków, circa 1500",
+        "publication_restriction": "HISTORICAL_EXEMPLAR_MUST_NOT_BE_LABELED_TYPICAL_1962_CRUET"
+      },
+      "editorial_source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39228230288/artifacts/12176546006"
+    },
+    {
+      "object_id": "EQ06",
+      "label": "Altar bell",
+      "canonical_glossary_id": null,
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": "M6B26-EQ06-CARCASSONNE-SINGLE-BELL",
+      "status": "PROVISIONAL_SINGLE_OBJECT_ORIGINAL_PIXEL_SCREEN_MUSEUM_BACKGROUND_CAVEAT",
+      "background": "subdued brown-black museum display; soft-focus exhibits and reflective glass shelf remain visible",
+      "isolation": "ONE_OBJECT",
+      "selection_rationale": "One complete nineteenth-century Roman Catholic altar bell with handle, gilt enamelled body and base unobstructed; isolated subject dominates frame. Photographer's complete 4000x6000 original visually checked, enamel edges legible at 100% scale. The glass-case background contains soft-focus unrelated exhibits and is not a neutral studio image; therefore assistant-provisional only.",
+      "qa_outstanding": "Museological backdrop with bright blurred label and glass reflection; moderate original-image noise and slight softness. Source image must be appropriately credited under CC BY-SA 4.0; human aesthetic rating and independent liturgical editorial signoff outstanding.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false,
+      "rights_record": {
+        "creator": "Tylwyth Eldar (photographer; bell maker not documented here)",
+        "licence": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Carcassonne_-_%C3%89glise_Saint-Vincent_-_Tr%C3%A9sor_25.jpg",
+        "object_collection": "Saint-Vincent church treasury, Carcassonne",
+        "heritage_reference": "Palissy PM11002445",
+        "original_width": 4000,
+        "original_height": 6000,
+        "original_sha256": "118dcfa18a750c6c2f3245dfa4013d138a9f45cb73625f3acaa59f8fac798cc7"
+      },
+      "editorial_source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39225455724/artifacts/12173950684"
+    },
+    {
+      "object_id": "BK01",
+      "label": "Roman Missal on altar",
+      "canonical_glossary_id": "G214",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "One Roman Missal clearly identifiable as a single book; an open missal on a stand is illustrative context, not the book-only primary.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "BK02",
+      "label": "Missal stand or cushion",
+      "canonical_glossary_id": "G215",
+      "selection_mode": "ONE_CLEAR_OBJECT",
+      "hero_asset_id": null,
+      "status": "NEEDS_SINGLE_OBJECT_IMAGE",
+      "background": null,
+      "isolation": null,
+      "selection_rationale": null,
+      "qa_outstanding": "One standalone missal stand/cushion with its full form visible; another book may not obscure the object.",
+      "explicitly_disqualified_hero_sources": [],
+      "user_approved": false,
+      "publication_approved": false
+    }
+  ],
+  "editorial_state": "RESEARCH_PROVISIONAL_NO_AUTO_APPROVAL",
+  "supersedes": "M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v6.json",
+  "last_evidence_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39228230288",
+  "newly_screened": {
+    "examined_existing_photographs": 12,
+    "new_provisionals": [
+      "AL14",
+      "SV13"
+    ],
+    "held_unselected": [
+      "SN05",
+      "SN07",
+      "AL03",
+      "LN01",
+      "LN02",
+      "EQ06",
+      "BK01",
+      "BK02",
+      "AL13",
+      "AL16"
+    ],
+    "reason": "Each held photograph contains a competing object, exhibit background, incorrect component count, obstructing prop, nonstandard historical form, or insufficient singular subject isolation. Hold applies only to a hero, not source provenance."
+  },
+  "sprint19": {
+    "preview_images_examined": 8,
+    "new_picks": [
+      "LN01",
+      "LN02",
+      "AL16"
+    ],
+    "missal_stand": "NOT_SELECTED; no suitable standalone object photograph",
+    "source_evidence": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39210447414"
+  },
+  "b20": {
+    "reviewed_licensed_photos": 3,
+    "new_provisional_heroes": [
+      "AL06"
+    ],
+    "deferred_provisional_sources": [
+      "M6B20-SN05-PUGIN-HARDMAN-LAMP",
+      "M6B20-SN05-COMGALL-LAMP"
+    ],
+    "bk02": "NO_HERO_LICENSE_CONFLICT",
+    "source_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39212103234",
+    "selection_rule": "One exact object, visually recognizable, no unrelated articles in frame, clean background."
+  },
+  "last_source_review": "M6_B27_EQ02_ORIGINAL_PIXEL_QA_20261019.v1.json"
+}
