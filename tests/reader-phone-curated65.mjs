@@ -399,6 +399,9 @@ try{
             quietOffertory:document.querySelector('[data-role="priest-quiet-offertory"]')?.hidden===false,
             bellCue:api.getNativeEventState()?.bell?.cueId??null,
             bellIconVisible:document.querySelector('[data-icon-slot="bell"]')?.hidden===false,
+            bellSoundState:document.querySelector('.ao-rail-right [data-channel="bell"]')?.dataset.soundState??null,
+            bellAccessible:document.querySelector('.ao-rail-right [data-channel="bell"]')?.getAttribute("aria-label")??null,
+            bellTiming:api.getNativeEventState()?.bell?.sourceTiming?.timingPrecision??null,
           });
         }
         return observed;
@@ -433,6 +436,15 @@ try{
             state.cueId+": bell leaked or was absent on the precise source cue");
           assert.equal(state.bellIconVisible,expected.bell,
             state.cueId+": approved bell icon did not match the actual sound cue");
+          if(expected.bell){
+            assert.equal(state.bellSoundState,"EXPECTED_NOT_OBSERVED",
+              state.cueId+": source focus falsely claimed an actually heard bell");
+            assert.match(state.bellAccessible??"",/Expected altar-bell moment, not detected/,
+              state.cueId+": bell icon failed to describe its observation limitations");
+            assert.ok(state.bellTiming?.length,
+              state.cueId+": no 1962 timing window attached to the icon");
+          }else assert.equal(state.bellSoundState,"NONE",
+            state.cueId+": bell sound-state leaked to a different cue");
         }
         if(expected.noGesture)assert.equal(state.gesture,null,
           state.cueId+": elevation gesture fired prematurely on formula");
