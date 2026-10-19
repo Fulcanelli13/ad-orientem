@@ -268,6 +268,28 @@ export function buildReaderSectionCard({
   const paragraphs=[];
   const blockMeta=[];
   for(const block of blocks){
+    // Incense is not used at LOW or MISSA_CANTATA_SIMPLE. The source's
+    // two CONDITIONAL_1962 incensation blocks must not appear as prayers
+    // merely because the frozen donor holds their content. This is a
+    // selected-form gate, never a change to the underlying donor.
+    const knownNoIncenseForm=actualForm!=null &&
+      ["LOW","MISSA_CANTATA_SIMPLE"].includes(String(actualForm).toUpperCase());
+    if(knownNoIncenseForm &&
+       ["AO.SM.B013","AO.SM.B036"].includes(block.Block_ID)){
+      const expected=block.Block_ID==="AO.SM.B013"
+        ?["AO.SM.C0040","AO.SM.C0041"]
+        :["AO.SM.C0120","AO.SM.C0121","AO.SM.C0122","AO.SM.C0123","AO.SM.C0124"];
+      if(block.Branch_Status!=="CONDITIONAL_1962"||
+         block.units?.length!==expected.length ||
+         block.units.some((u,i)=>u.cue_id!==expected[i]))
+        throw new Error("NO_INCENSE_FORM_SOURCE_IDENTITY_MISMATCH");
+      blockMeta.push(Object.freeze({
+        blockId:block.Block_ID,title:block.Title,properSlot:block.Proper_Slot,
+        stateOnly:false,firstParagraphIndex:null,paragraphCount:0,
+        omittedByRite:"1962_FORM_NO_INCENSE",
+      }));
+      continue;
+    }
     // XIII.2 suppresses the whole initial-incensation block at a
     // Requiem. Offertory incensation is independently permitted and
     // must remain available for the selected incensed form.
