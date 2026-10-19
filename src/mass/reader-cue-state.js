@@ -1,5 +1,5 @@
 import { validateReaderGestureMatrix } from "./reader-gesture-matrix.js";
-import { isRequiemAgnusBreastStrikeOmitted, isRequiemFirstPeacePrayerOmitted, isRequiemEntranceIncensationOmitted } from "./reader-requiem-conditions.js";
+import { isRequiemAgnusBreastStrikeOmitted, isRequiemFirstPeacePrayerOmitted, isRequiemEntranceIncensationOmitted, isRequiemFinalBlessingOmitted } from "./reader-requiem-conditions.js";
 import { ORDINARY_SUNG_GESTURE_ANCHORS } from "./faithful-gesture-cues.js";
 // R17 cue-scoped reader state projection.
 // Source-backed only: exact cue IDs from the certified Sung Mass blueprint.
@@ -398,9 +398,14 @@ export function createReaderCueStateController({
     // XIII.2: a Requiem omits the INITIAL incensation at the Introit,
     // not incensation at the Offertory. Suppress every action/route lane on
     // both omitted source cues; never infer motion from the next paragraph.
-    if(isRequiemEntranceIncensationOmitted(cueId,prepared,activeConditions))
+    const omittedRequiemCeremonyReason=
+      isRequiemEntranceIncensationOmitted(cueId,prepared,activeConditions)
+        ? "RITUS_XIII_2_REQUIEM_ENTRANCE_INCENSE_OMITTED" :
+      isRequiemFinalBlessingOmitted(cueId,prepared,activeConditions)
+        ? "RITUS_XIII_1_REQUIEM_FINAL_BLESSING_OMITTED" : null;
+    if(omittedRequiemCeremonyReason)
       return Object.freeze({
-        supported:true,reason:"RITUS_XIII_2_REQUIEM_ENTRANCE_INCENSE_OMITTED",cueId,
+        supported:true,reason:omittedRequiemCeremonyReason,cueId,
         gesture:null,response:null,priestPosition:null,priestVoice:null,
         priestAction:null,posture:null,postureTransition:false,
         ownership:Object.freeze({
