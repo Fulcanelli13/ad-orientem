@@ -1,7 +1,7 @@
 {
   "schema": "AO_MAGISTERIUM_SOURCE_PASSAGE_PILOT_V1",
   "created": "2026-10-19",
-  "status": "PASSAGE_LOCATORS_EXPANDED_NO_TEXT_COPIED",
+  "status": "LATIN_WITNESS_B3_LOCATORS_ONLY_NO_APPROVED_TEXT",
   "doctrineRegistry": "data/learn/magisterium-ultra-master-doctrines.v1.json",
   "documentRegistry": "data/learn/magisterium-ultra-master-documents.v1.json",
   "sourceHierarchy": [
@@ -39,9 +39,17 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Session IV first decree, opening",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session IV, decree on sacred books and traditions, opening; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P002",
@@ -56,7 +64,7 @@
       "crosswalkCandidate": {
         "modernNumber": 1642,
         "oldNumber": null,
-        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
@@ -78,9 +86,24 @@
           "witnessType": "EDITORIAL_TRANSLATION_INDEX",
           "checkedScope": "Online entry 1642 / printed Dz 877; not edition certification",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIII, chapter IV, De transubstantiatione; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1642; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P003",
@@ -94,7 +117,7 @@
       "crosswalkCandidate": {
         "modernNumber": 1651,
         "oldNumber": null,
-        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
@@ -109,14 +132,29 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Canon I on real, substantial presence",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIII, canon I concerning the Most Holy Eucharist; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1651; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P004",
       "documentId": "TRENT-XIV-1551",
-      "localLocator": "Session XIV, doctrine on Penance, opening and chapter II (pending exact paragraph review)",
+      "localLocator": "Session XIV, introduction and chapter II, distinction of Penance and Baptism",
       "doctrineIds": [
         "PENANCE_ABSOLUTION"
       ],
@@ -128,7 +166,7 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
@@ -140,9 +178,18 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Session XIV introduction and chapter II",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, doctrine on Penance, opening and chapter II (pending exact paragraph review); not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "editorialScopeNote": "Former broad locator retained; distinct chapter and canon locators record finer passage boundaries.",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P005",
@@ -156,10 +203,10 @@
       "crosswalkCandidate": {
         "modernNumber": 1743,
         "oldNumber": 940,
-        "sourceEvidence": "https://www.clerus.org/bibliaclerusonline/en/dxc.htm"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
@@ -178,9 +225,24 @@
           "witnessType": "EDITORIAL_TRANSLATION_INDEX",
           "checkedScope": "Online entry 1743 / Dz 940; not edition certification",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, doctrine on the Sacrifice of the Mass, chapter II; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1743; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P006",
@@ -211,7 +273,8 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P007",
@@ -220,15 +283,15 @@
       "doctrineIds": [
         "IMMACULATE_CONCEPTION"
       ],
-      "verifiedSourceUrl": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
-      "verifiedLanguage": "it",
+      "verifiedSourceUrl": "https://corpus-ineffabilis.org/corpus/",
+      "verifiedLanguage": "la",
       "crosswalkCandidate": {
         "modernNumber": 2803,
         "oldNumber": 1641,
         "sourceEvidence": "https://www.magisterium.com/docs/17f50f07-de81-4bf5-997c-f41ee830c033/ref/2803"
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
@@ -247,9 +310,17 @@
           "witnessType": "HISTORICAL_LATIN_DEFINITION_FOOTNOTE",
           "checkedScope": "Definition-only note 29; not complete Latin edition",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://corpus-ineffabilis.org/corpus/",
+          "language": "la",
+          "witnessType": "SCHOLARLY_PARALLEL_CORPUS_LATIN_VATICAN_LIBRARY_COLLABORATION",
+          "checkedScope": "Corpus Ineffabilis, Latin line/segment 216–224 (defining formula); exact underlying Latin print witness not yet confirmed",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P008",
@@ -266,7 +337,7 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
@@ -278,9 +349,17 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Session XXII chapter I",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, doctrine on the Sacrifice of the Mass, chapter I; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED"
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P009",
@@ -302,7 +381,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/666-sessio-iv-recipitur-vulgata-editio-bibliae-praescribiturque-lat/?idCode=1.1",
@@ -310,9 +389,17 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Different decree from Session IV's book-and-traditions list; do not conflate historical Vulgate decree with modern publication policy",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session IV, second decree: Vulgate authenticity and scriptural interpretation; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Different decree from Session IV's book-and-traditions list; do not conflate historical Vulgate decree with modern publication policy"
+      "editorialScopeNote": "Different decree from Session IV's book-and-traditions list; do not conflate historical Vulgate decree with modern publication policy",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P010",
@@ -334,7 +421,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/391-sessio-iv-recipiuntur-libris-sacris-et-de-traditionibus-recipiendis-lat/?idCode=1.4",
@@ -342,9 +429,17 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Separate scriptural book enumeration from the opening Tradition teaching",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session IV, first decree: books of the Old Testament, paragraph 2; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Separate scriptural book enumeration from the opening Tradition teaching"
+      "editorialScopeNote": "Separate scriptural book enumeration from the opening Tradition teaching",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P011",
@@ -358,7 +453,7 @@
       "crosswalkCandidate": {
         "modernNumber": 1640,
         "oldNumber": null,
-        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
@@ -366,7 +461,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -374,9 +469,24 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Latin paragraph at site 6; online concordance marks legacy 876b",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIII, chapter III, Real Presence before use of the sacrament; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1640; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Latin paragraph at site 6; online concordance marks legacy 876b"
+      "editorialScopeNote": "Latin paragraph at site 6; online concordance marks legacy 876b",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P012",
@@ -390,7 +500,7 @@
       "crosswalkCandidate": {
         "modernNumber": 1643,
         "oldNumber": 878,
-        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
@@ -398,7 +508,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -406,9 +516,24 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Chapter V adoration; distinguished from canon VI",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIII, chapter V, adoration due to the Eucharist; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1643; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Chapter V adoration; distinguished from canon VI"
+      "editorialScopeNote": "Chapter V adoration; distinguished from canon VI",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P013",
@@ -422,7 +547,7 @@
       "crosswalkCandidate": {
         "modernNumber": 1652,
         "oldNumber": 884,
-        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
@@ -430,7 +555,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -438,9 +563,24 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Canon against denying the substantial conversion",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIII, canon II on the conversion of the substances; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1652; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Canon against denying the substantial conversion"
+      "editorialScopeNote": "Canon against denying the substantial conversion",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P014",
@@ -455,7 +595,7 @@
       "crosswalkCandidate": {
         "modernNumber": 1653,
         "oldNumber": 885,
-        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
@@ -463,7 +603,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -471,9 +611,24 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Canon on whole Christ under each species and part",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIII, canon III on whole Christ under either species; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1653; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Canon on whole Christ under each species and part"
+      "editorialScopeNote": "Canon on whole Christ under each species and part",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P015",
@@ -488,7 +643,7 @@
       "crosswalkCandidate": {
         "modernNumber": 1656,
         "oldNumber": 888,
-        "sourceEvidence": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
       "primaryLatinChecked": true,
@@ -496,7 +651,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://rkdocumenten.nl/toondocument/679-sessio-xiii-decretum-de-ss-eucharistia-lat/",
@@ -504,9 +659,24 @@
           "witnessType": "HISTORICAL_LATIN_TRANSCRIPTION",
           "checkedScope": "Normative doctrinal defence of adoration/processions; not a 1962 Corpus Christi choreography rubric",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIII, canon VI on adoration and Eucharistic processions; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1656; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Normative doctrinal defence of adoration/processions; not a 1962 Corpus Christi choreography rubric"
+      "editorialScopeNote": "Normative doctrinal defence of adoration/processions; not a 1962 Corpus Christi choreography rubric",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P016",
@@ -521,15 +691,15 @@
       "crosswalkCandidate": {
         "modernNumber": 1745,
         "oldNumber": 942,
-        "sourceEvidence": "https://www.clerus.org/bibliaclerusonline/en/dxc.htm"
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
@@ -537,9 +707,24 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Historical doctrinal defence of the Roman Canon; not text-level approval of today's reader",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, chapter IV, the Canon of the Mass; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1745; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Historical doctrinal defence of the Roman Canon; not text-level approval of today's reader"
+      "editorialScopeNote": "Historical doctrinal defence of the Roman Canon; not text-level approval of today's reader",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P017",
@@ -553,16 +738,16 @@
       "verifiedLanguage": "en",
       "crosswalkCandidate": {
         "modernNumber": 1746,
-        "oldNumber": 943,
-        "sourceEvidence": "https://www.clerus.org/bibliaclerusonline/en/dxc.htm"
+        "oldNumber": null,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
@@ -570,9 +755,24 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Rationale for ceremonial signs; exact rules must come from the 1962 rubrics",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, chapter V, sacred ceremonies, vestments, signs and audible versus silent speech; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Online numbered excerpt candidate 1746; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Rationale for ceremonial signs; exact rules must come from the 1962 rubrics"
+      "editorialScopeNote": "Rationale for ceremonial signs; exact rules must come from the 1962 rubrics; removed unsupported Dz 943 pairing: digitized index shows no legacy number alongside 1746",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P018",
@@ -589,12 +789,12 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
@@ -602,9 +802,17 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Canon I distinct from chapter I",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon I: true and proper sacrifice; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Canon I distinct from chapter I"
+      "editorialScopeNote": "Canon I distinct from chapter I",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P019",
@@ -621,12 +829,12 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
@@ -634,9 +842,17 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Canon III distinct from chapter II; no Denzinger assignment without locating entry",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon III: propitiatory for living and dead; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Canon III distinct from chapter II; no Denzinger assignment without locating entry"
+      "editorialScopeNote": "Canon III distinct from chapter II; no Denzinger assignment without locating entry",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P020",
@@ -653,12 +869,12 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
@@ -666,9 +882,17 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Form ('I absolve thee') and contrition/confession/satisfaction treated separately",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, chapter III, form of absolution and acts of the penitent; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Form ('I absolve thee') and contrition/confession/satisfaction treated separately"
+      "editorialScopeNote": "Form ('I absolve thee') and contrition/confession/satisfaction treated separately",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P021",
@@ -685,12 +909,12 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
@@ -698,9 +922,17 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Distinguish perfect contrition plus sacramental desire from attrition",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, chapter IV, contrition and attrition; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Distinguish perfect contrition plus sacramental desire from attrition"
+      "editorialScopeNote": "Distinguish perfect contrition plus sacramental desire from attrition",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P022",
@@ -717,12 +949,12 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
@@ -730,9 +962,17 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Sacramental judicial absolution is not merely announcing forgiveness",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, chapter VI, minister of penance and absolution; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Sacramental judicial absolution is not merely announcing forgiveness"
+      "editorialScopeNote": "Sacramental judicial absolution is not merely announcing forgiveness",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P023",
@@ -749,12 +989,12 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
@@ -762,9 +1002,17 @@
           "witnessType": "HISTORICAL_ENGLISH_TRANSLATION",
           "checkedScope": "Canon IX directly addresses absolution",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon IX, sacramental absolution as judicial act; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Canon IX directly addresses absolution"
+      "editorialScopeNote": "Canon IX directly addresses absolution",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P024",
@@ -786,7 +1034,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
@@ -796,7 +1044,8 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Primacy/jurisdiction distinct from Chapter IV's conditions of infallible teaching"
+      "editorialScopeNote": "Primacy/jurisdiction distinct from Chapter IV's conditions of infallible teaching",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P025",
@@ -818,7 +1067,7 @@
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
@@ -828,7 +1077,8 @@
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Read the complete chapter and distinguish infallibility from every papal remark"
+      "editorialScopeNote": "Read the complete chapter and distinguish infallibility from every papal remark",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
     },
     {
       "passageId": "MG-P026",
@@ -845,12 +1095,12 @@
         "sourceEvidence": null
       },
       "textCopied": false,
-      "primaryLatinChecked": false,
+      "primaryLatinChecked": true,
       "exactCrosswalkStatus": "UNLOCATED",
       "theologicalClaimCertified": false,
       "publicationPermission": "NOT_CLEARED",
       "publisherFacingApproved": false,
-      "sourceTextVerificationLevel": "LOCATOR_CHECKED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
       "sourceWitnesses": [
         {
           "url": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
@@ -858,21 +1108,1437 @@
           "witnessType": "OFFICIAL_VATICAN_ITALIAN_TRANSLATION",
           "checkedScope": "Historical rationale precedes the definition; Italian Vatican translation, not original Latin",
           "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://corpus-ineffabilis.org/corpus/",
+          "language": "la",
+          "witnessType": "SCHOLARLY_PARALLEL_CORPUS_LATIN_VATICAN_LIBRARY_COLLABORATION",
+          "checkedScope": "Corpus Ineffabilis, Latin line/segment 209–216 (preparatory explanation); exact underlying Latin print witness not yet confirmed",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
         }
       ],
-      "editorialScopeNote": "Historical rationale precedes the definition; Italian Vatican translation, not original Latin"
+      "editorialScopeNote": "Historical rationale precedes the definition; Italian Vatican translation, not original Latin",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED"
+    },
+    {
+      "passageId": "MG-P027",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, chapter I — institution of the sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, chapter I — institution of the sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "John 20:22–23 and post-baptismal sin; distinct from chapter II.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P028",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, chapter II — Penance distinct from Baptism",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION",
+        "BAPTISM"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, chapter II — Penance distinct from Baptism; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Distinct fruits; forgiveness of sins after Baptism, sacramental tribunal.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P029",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, chapter V — integrity and secrecy of confession",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, chapter V — integrity and secrecy of confession; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "List of mortal sins and why secret confession is not a modern invention; historical context required.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P030",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, chapter VII — reservation of cases and jurisdiction",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, chapter VII — reservation of cases and jurisdiction; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Historical jurisdiction and reserved cases; never infer current faculties from 1551.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P031",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, chapter VIII — necessity and fruits of satisfaction",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, chapter VIII — necessity and fruits of satisfaction; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Temporal punishment and satisfaction distinct from absolution; preserve Catholic distinction.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P032",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon I — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1701,
+        "oldNumber": 911,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon I — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1701, legacy number 911; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P033",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon II — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION",
+        "BAPTISM"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1702,
+        "oldNumber": 912,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon II — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1702, legacy number 912; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P034",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon III — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1703,
+        "oldNumber": 913,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon III — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1703, legacy number 913; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P035",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon IV — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1704,
+        "oldNumber": 914,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon IV — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1704, legacy number 914; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P036",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon V — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1705,
+        "oldNumber": 915,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon V — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1705, legacy number 915; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P037",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon VI — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1706,
+        "oldNumber": 916,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon VI — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1706, legacy number 916; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P038",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon VII — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1707,
+        "oldNumber": 917,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon VII — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1707, legacy number 917; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P039",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon VIII — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1708,
+        "oldNumber": 918,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon VIII — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1708, legacy number 918; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P040",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon X — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1710,
+        "oldNumber": 920,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon X — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1710, legacy number 920; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P041",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon XI — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1711,
+        "oldNumber": 921,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon XI — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1711, legacy number 921; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P042",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon XII — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1712,
+        "oldNumber": 922,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon XII — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1712, legacy number 922; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P043",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon XIII — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1713,
+        "oldNumber": 923,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon XIII — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1713, legacy number 923; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P044",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon XIV — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1714,
+        "oldNumber": 924,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon XIV — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1714, legacy number 924; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P045",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, canon XV — sacrament of Penance",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1715,
+        "oldNumber": 925,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XIV, canon XV — sacrament of Penance; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1715, legacy number 925; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Separate condemnatory canon: scope and qualifications must be evaluated in relation to corresponding doctrinal chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P046",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, chapter III — Masses in honour of the saints",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "SAINTS_INTERCESSION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1744,
+        "oldNumber": 941,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, chapter III — Masses in honour of the saints; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1744, legacy number 941; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Sacrifice offered to God, not to saints; intercession distinct.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P047",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, chapter VI — priest's sacramental Communion and faithful's spiritual communion",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1747,
+        "oldNumber": 944,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, chapter VI — priest's sacramental Communion and faithful's spiritual communion; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1747, legacy number 944; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Does not assert faithful should never communicate; explicitly states council's desire they do.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P048",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, chapter VII — water mixed with chalice wine",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1748,
+        "oldNumber": 945,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, chapter VII — water mixed with chalice wine; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1748, legacy number 945; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Historical theological rationale; not standalone 1962 ceremonial timing rubric.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P049",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, chapter VIII — explaining Mass mysteries and historical vernacular rule",
+      "doctrineIds": [
+        "LITURGY_PRINCIPLES"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1749,
+        "oldNumber": 946,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, chapter VIII — explaining Mass mysteries and historical vernacular rule; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1749, legacy number 946; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Historical disciplinary prescription; do not present as current universal law.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P050",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon II — Sacrifice of the Mass",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1752,
+        "oldNumber": 949,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon II — Sacrifice of the Mass; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1752, legacy number 949; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P051",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon IV — Sacrifice of the Mass",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1754,
+        "oldNumber": 951,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon IV — Sacrifice of the Mass; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1754, legacy number 951; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P052",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon V — Sacrifice of the Mass",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "SAINTS_INTERCESSION"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1755,
+        "oldNumber": 952,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon V — Sacrifice of the Mass; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1755, legacy number 952; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P053",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon VI — Sacrifice of the Mass",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1756,
+        "oldNumber": 953,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon VI — Sacrifice of the Mass; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1756, legacy number 953; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P054",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon VII — Sacrifice of the Mass",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1757,
+        "oldNumber": 954,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon VII — Sacrifice of the Mass; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1757, legacy number 954; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P055",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon VIII — Sacrifice of the Mass",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1758,
+        "oldNumber": 955,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon VIII — Sacrifice of the Mass; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1758, legacy number 955; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P056",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, canon IX — Sacrifice of the Mass",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "LITURGY_PRINCIPLES"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1759,
+        "oldNumber": 956,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, canon IX — Sacrifice of the Mass; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1759, legacy number 956; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Canon on Mass sacrifice or its ceremonies; canon distinct from commentary chapter.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P057",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "localLocator": "Original Latin lines 1–9 — opening theological reasoning on Mary's preservation",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "verifiedSourceUrl": "https://corpus-ineffabilis.org/corpus/",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://corpus-ineffabilis.org/corpus/",
+          "language": "la",
+          "witnessType": "SCHOLARLY_PARALLEL_CORPUS_LATIN_VATICAN_LIBRARY_COLLABORATION",
+          "checkedScope": "Corpus Ineffabilis, Latin line/segment Original Latin lines 1–9 — opening theological reasoning on Mary's preservation; exact underlying Latin print witness not yet confirmed",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Opening theological rationale, not dogmatic defining formula; paragraph line tracking not historically authoritative.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P058",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "localLocator": "Original Latin lines 200–215 — ecclesial consultation and preparation to define",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "verifiedSourceUrl": "https://corpus-ineffabilis.org/corpus/",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://corpus-ineffabilis.org/corpus/",
+          "language": "la",
+          "witnessType": "SCHOLARLY_PARALLEL_CORPUS_LATIN_VATICAN_LIBRARY_COLLABORATION",
+          "checkedScope": "Corpus Ineffabilis, Latin line/segment Original Latin lines 200–215 — ecclesial consultation and preparation to define; exact underlying Latin print witness not yet confirmed",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Consultation is historical evidence of discernment, not equivalent to defined proposition.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P059",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "localLocator": "Original Latin lines 224–228 — reception warning after the definition",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "verifiedSourceUrl": "https://corpus-ineffabilis.org/corpus/",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://corpus-ineffabilis.org/corpus/",
+          "language": "la",
+          "witnessType": "SCHOLARLY_PARALLEL_CORPUS_LATIN_VATICAN_LIBRARY_COLLABORATION",
+          "checkedScope": "Corpus Ineffabilis, Latin line/segment Original Latin lines 224–228 — reception warning after the definition; exact underlying Latin print witness not yet confirmed",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Historical sanctions and exhortation distinct from the formal definition; current-law applicability not assumed.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P060",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, chapter I, concluding Old Testament typological argument (Malachi 1:11)",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1742,
+        "oldNumber": 939,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, chapter I, concluding Old Testament typological argument (Malachi 1:11); not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1742, legacy number 939; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Distinct argument inside chapter I; Denzinger online boundary 1742.",
+      "bridgeOwnersCandidateOnly": []
+    },
+    {
+      "passageId": "MG-P061",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, chapter II, concluding sacrifice for the departed",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE",
+        "PURGATORY"
+      ],
+      "verifiedSourceUrl": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1743,
+        "oldNumber": 940,
+        "sourceEvidence": "https://www.apotre.org/livres/enchiridion-symbolorum/6"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED",
+      "publisherFacingApproved": false,
+      "sourceTextVerificationLevel": "LATIN_LOCATOR_WITNESSED_NOT_CRITICAL_EDITION_COLLATED",
+      "sourceBibliographyStatus": "IDENTIFIABLE_ONLINE_WITNESS_NOT_TEXT_CRITICALLY_RECONCILED",
+      "sourceWitnesses": [
+        {
+          "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+          "language": "la",
+          "witnessType": "LATIN_HISTORICAL_TRANSCRIPTION_1738_PADUA_MANFRE",
+          "checkedScope": "1738 printed-edition transcription: Session XXII, chapter II, concluding sacrifice for the departed; not critical-edition certified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        },
+        {
+          "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+          "language": "la",
+          "witnessType": "DIGITAL_DENZINGER_NUMBERED_TRANSCRIPTION",
+          "checkedScope": "Numbered locator 1743, legacy number 940; online pairing only, precise edition not identified",
+          "editionAndRightsStatus": "NOT_CERTIFIED_FOR_REPRODUCTION"
+        }
+      ],
+      "editorialScopeNote": "Relevant to Requiem Mass theology; no assertion about precise Requiem rubrics.",
+      "bridgeOwnersCandidateOnly": []
     }
   ],
   "publicationAllowed": false,
   "metrics": {
-    "pilotPassageLocators": 26,
-    "exactModernNumberCandidates": 14,
+    "pilotPassageLocators": 61,
+    "exactModernNumberCandidates": 41,
     "authoritativeFullOriginalPassagesCertified": 0,
     "translationsRightsCleared": 0,
-    "originalLatinLocatorChecks": 13,
-    "additionalLocatorRecords": 18
+    "originalLatinLocatorChecks": 61,
+    "additionalLocatorRecords": 53,
+    "b3AddedLocatorRecords": 35,
+    "publicationReadyRecords": 0
   },
-  "researchBatch": "2026-10-19-B2",
+  "researchBatch": "2026-10-19-B3",
   "publishedQuoteCount": 0,
-  "editionVerifiedCrosswalks": 0
+  "editionVerifiedCrosswalks": 0,
+  "sourceMethodology": {
+    "councilLatin": {
+      "url": "https://la.wikisource.org/wiki/Concilium_Tridentinum",
+      "underlyingEdition": "Padua: Giovanni Manfrè, 1738 (as identified on Latin Wikisource)",
+      "status": "HISTORICAL_LATIN_TRANSCRIPTION_NOT_CRITICALLY_COLLATED"
+    },
+    "ineffabilisLatin": {
+      "url": "https://corpus-ineffabilis.org/corpus/",
+      "project": "University of Zurich Corpus Ineffabilis with Vatican Library collaboration",
+      "status": "FULL_LATIN_PARALLEL_CORPUS_LOCATED_LATIN_BASE_EDITION_UNCONFIRMED"
+    },
+    "concordanceIndex": {
+      "url": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+      "status": "NUMBERED_DIGITAL_TRANSCRIPTION_EDITION_NOT_YET_IDENTIFIED"
+    },
+    "digitalTextRights": "NOT_CLEARED",
+    "authoritativeSourceQuoteGate": "CLOSED",
+    "modernLawInference": "PROHIBITED"
+  }
 }
