@@ -118,3 +118,77 @@ const ambiguous=Object.freeze({...model,cards:Object.freeze([
 assert.equal(projectPostureAwareMissalCards(ambiguous,{cueState}).totalCards,1);
 assert.equal(projectPostureAwareMissalCards({...model,presentationMode:"LIVE"},{cueState}).presentationMode,"LIVE");
 console.log("PASS Missal posture page boundaries: source-owned, optional, bilingual, cue-anchored, no gesture events");
+
+ 
+// Integration: exercise the real 1962 Sung donor/Proper and R17 posture source
+// rather than certifying a page feature only with synthetic examples.
+import {readFileSync} from "node:fs";
+import {buildReaderModeModels} from "../src/mass/reader-mode-switch.js";
+import {createReaderCueStateController} from "../src/mass/reader-cue-state.js";
+const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
+const realData={
+  sectionMap:load("../data/presentation/reader-section-map.v0.13.1.json"),
+  lowCorpus:load("../data/presentation/reader-text-low.v1.json"),
+  sungCorpus:load("../data/presentation/reader-text-sung.v1.json"),
+  canonSourceMap:load("../data/presentation/reader-canon-source-map.v1.json"),
+  nuptialData:load("../data/presentation/reader-nuptial.v1.json"),
+  frenchOrdinary:load("../data/presentation/reader-french-ordinary.v1.json"),
+};
+const pair=(lat,en)=>({lat,en});
+const proper={
+  sourcePath:"Sancti/10-07",introit:pair("Introitus","Introit"),
+  collects:[pair("Collecta","Collect")],epistle:pair("Epistola","Epistle"),
+  gradual:pair("Graduale","Gradual"),alleluia_tract:pair("Alleluia","Alleluia"),
+  sequence:pair("",""),gospel:pair("Evangelium","Gospel"),
+  offertory:pair("Offertorium","Offertory"),secrets:[pair("Secreta","Secret")],
+  preface:pair("Praefatio","Preface"),communion:pair("Communio","Communion"),
+  postcommunions:[pair("Postcommunio","Postcommunion")],
+};
+const prepared={
+  session:{resolvedMass:{
+    schema:"ao-resolved-mass-v2",date:"2026-10-04",
+    form:"MISSA_CANTATA_INCENSE",presentationMode:"MISSAL",
+    actualCelebration:{id:"holy_rosary",type:"VOTIVE",title:"Holy Rosary"},
+    calendarCelebration:{id:"Tempora/Pent18-0",type:"CALENDAR"},
+    explicitlySelectedCelebration:true,
+    proper:{status:"READY",data:proper,sourcePath:"Sancti/10-07"},
+    overlays:["VOTIVE_PROPER"],precedingRites:[],followingActions:[],
+    distinctRite:null,
+  },plan:{kind:"MASS",precedingGraphs:[],followingGraphs:[],
+      overlayGraphs:["VOTIVE_PROPER"],normalLastGospel:true,blessingAllowed:true}},
+  readerPreferences:{mode:"MISSAL",language:"en",postureProfile:"FOLLOW_CONGREGATION",
+    gestureProfile:"GUIDED_1962"},
+};
+const names={gestures:"reader-gestures.v1.json",
+  responses:"reader-responses.v1.json",postures:"reader-postures.v1.json",
+  positions:"reader-priest-positions.v1.json",voices:"reader-priest-voices.v1.json",
+  actions:"reader-priest-actions.v1.json"};
+const registries=Object.fromEntries(Object.entries(names).map(([key,name])=>
+  [key,load("../data/presentation/"+name)]));
+const realCueState=createReaderCueStateController({
+  registries,sungCorpus:realData.sungCorpus,prepared,
+});
+const ordinary=buildReaderModeModels({prepared,data:realData,mode:"MISSAL"});
+const postureAware=buildReaderModeModels({
+  prepared,data:realData,mode:"MISSAL",postureCueState:realCueState,
+});
+const sourcePages=ordinary.presentationModel.cards;
+const posturalPages=postureAware.presentationModel.cards;
+assert.ok(posturalPages.length>sourcePages.length,
+  "Real Sung posture registry produced no additional Missal page boundaries");
+assert.deepEqual(posturalPages.flatMap(card=>card.paragraphs),
+  sourcePages.flatMap(card=>card.paragraphs),
+  "Real Sung posture projection lost/duplicated canonical bilingual lines");
+const find=(cards,cueId)=>cards.find(card=>card.paragraphs.some(row=>
+  (row.sourceCueIds??[]).includes(cueId)));
+const c6="AO.SM.C0106",c9="AO.SM.C0109";
+assert.equal(find(sourcePages,c6),find(sourcePages,c9),
+  "The expected original Offertory greeting/chant page changed");
+assert.notEqual(find(posturalPages,c6),find(posturalPages,c9),
+  "STAND to SIT at Offertory chant failed to create a Missal page");
+assert.equal(find(posturalPages,c6)?.nextPosture?.value,"SIT");
+assert.equal(find(posturalPages,c9)?.postureEntry?.cueId,c9);
+assert.equal(postureAware.sourceModel.totalCards,30);
+assert.equal(postureAware.sourceModel,postureAware.presentationModel.sourceAuthorityModel,
+  "Posture-aware pages altered canonical 30-card source authority");
+console.log("PASS real Sung Missal: STAND to SIT Offertory boundary; canonical texts/cards untouched");
