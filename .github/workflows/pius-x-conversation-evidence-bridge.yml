@@ -14,6 +14,9 @@ on:
       - 'data/learn/research/pius-x-batch50-part-*.v1.json'
       - 'data/learn/research/pius-x-batch50-production-manifest-20261019.v1.json'
       - 'data/learn/research/pius-x-batch2-*.v1.json'
+      - 'data/learn/research/pius-x-batch3-1905-prayer-*.v1.json'
+      - 'data/learn/research/pius-x-batch3-1905-production-manifest-20261019.v1.json'
+      - 'docs/research/PIUS-X-BATCH-3-CONVERSATIONS-20261019.md'
       - 'docs/research/PIUS-X-BATCH-2-CONVERSATIONS-20261019.md'
       - 'docs/research/PIUS-X-TEN-CONVERSATION-PILOT-20261019.md'
       - 'data/learn/research/pius-x-12case-paraphrases-followups-20261019.v1.json'
@@ -35,6 +38,7 @@ on:
       - 'tests/pius-x-ten-conversation-content-pilot.mjs'
       - 'tests/pius-x-batch50-content-acceptance.mjs'
       - 'tests/pius-x-batch2-production-acceptance.mjs'
+      - 'tests/pius-x-1905-batch3-content-acceptance.mjs'
       - 'tests/pius-x-pr1443-router-integration-diagnostic.mjs'
       - 'tests/pius-x-pr1443-184topic-bridge-acceptance.mjs'
       - 'tests/pius-x-pr1443-source-aware-48-regression.mjs'
@@ -56,6 +60,7 @@ jobs:
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
       - run: node tests/pius-x-batch50-content-acceptance.mjs
       - run: node tests/pius-x-batch2-production-acceptance.mjs
+      - run: node tests/pius-x-1905-batch3-content-acceptance.mjs
 
   long-1905-index-extraction:
     runs-on: ubuntu-latest
