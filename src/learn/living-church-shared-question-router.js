@@ -162,6 +162,20 @@ export function createSharedQuestionRouter(catalog,{historicalPointers=null}={})
     return frozen({kind:"no_coverage",reason:rule.id,sourceGap:rule.reason,originalQuestion:input,
       reference:rule.sourceRef,answerText:null,approvedReply:false});
 
+  // The priest's Postcommunion already belongs to the continuity-certified
+  // Mass Guide/Canon topic, not to the Pius X private-thanksgiving source.
+  if(liturgicalScope?.kind==="EXISTING_TOPIC_OWNER"){
+   const topic=catalog.topics.find(t=>t.id===liturgicalScope.topicId);
+   if(!topic||topic.character!=="canon"||topic.coverage!=="SOURCE_NAVIGATION_ONLY"
+     ||!topic.sourceRefs.some(r=>r.owner==="MASS_EXPLORER_PUBLISHED_GUIDE"))
+    return frozen({kind:"no_coverage",reason:"OFFICIAL_MASS_SOURCE_NOT_VERIFIED",
+      originalQuestion:input,approvedReply:false,answerText:null});
+   if(opts.chosenTopicId&&opts.chosenTopicId!==topic.id)
+    return frozen({kind:"no_coverage",reason:"EXPLICIT_TOPIC_SOURCE_SCOPE_CONFLICT",
+      originalQuestion:input,approvedReply:false,answerText:null});
+   return resolve(topic,input,{...fixed,matchEvidence:frozen({
+    basis:"DOCUMENTARY_LITURGICAL_SCOPE",scope:liturgicalScope.scope,score:null})});
+  }
   if(liturgicalScope?.kind==="SOURCE_OWNER"){
    const topic=catalog.topics.find(t=>t.sourceRefs.some(r=>
      r.owner==="PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1"&&r.ref===liturgicalScope.sourceId));
