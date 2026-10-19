@@ -43,7 +43,7 @@ for(const entry of m.published_new){
  }else assert.equal(s.pilgrimages.some(x=>x.destination_shrine_id===entry.shrine_id),false,"Parish/co-cathedral not automatic pilgrim journey");
 }
 assert.equal(m.published_new.filter(x=>x.pilgrimage_id).length,1);
-assert.equal(h.place_crosswalk.length,261);
+assert.equal(h.place_crosswalk.length,294);
 assert.equal(exploreMapFeatures(projected.byLens.shrines).length,257);
 assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,240);
 const heldIds=new Set(m.held.map(x=>x.candidate_id));
