@@ -89,14 +89,23 @@ function splitCard(card,config){
       paragraphs.push(...rows);
       blocks.push(Object.freeze({...meta,firstParagraphIndex,paragraphCount:rows.length}));
     }
-    if(!paragraphs.length && !blocks.some(x=>x.stateOnly)){
+    // A Requiem omits the 1962 final blessing. Preserve the fixed 48-step
+    // product navigation without fabricating blessing words or actions.
+    // Only this exact source-owned omitted block may produce a non-text step.
+    const omittedFinalBlessing=blocks.length===1 &&
+      blocks[0].blockId==="AO.SM.B092" &&
+      blocks[0].omittedByRite==="RITUS_XIII_1_REQUIEM" &&
+      group.suffix==="B" && sourceSectionId(card)==="AO.CARD.029";
+    if(!paragraphs.length && !blocks.some(x=>x.stateOnly) && !omittedFinalBlessing){
       throw new Error(sourceSectionId(card)+": SOURCE_FIRST_48 refusing blank presentation step "+group.suffix);
     }
     const sourceId=sourceSectionId(card);
     return freezeCard({
       ...card,
       sectionId:"AO.LIVE48."+sourceId.replace("AO.CARD.","")+"."+group.suffix,
-      title:group.title,
+      title:omittedFinalBlessing?"Requiem · No final blessing":group.title,
+      stateOnly:omittedFinalBlessing || Boolean(card.stateOnly&&!paragraphs.length),
+      omittedByRite:omittedFinalBlessing?"RITUS_XIII_1_REQUIEM":null,
       sequence:null,
       sourceSequence:card.sourceSequence??card.sequence,
       guideSequence:card.guideSequence??card.sourceSequence??card.sequence,
