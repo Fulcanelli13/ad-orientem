@@ -44,7 +44,7 @@ for(const row of m.published_new){
   assert.equal(s.pilgrimages.some(x=>x.destination_shrine_id===row.shrine_id),false,"Kumasi cathedral does not imply invented pilgrimage");
  }
 }
-assert.equal(h.place_crosswalk.length,261);
+assert.equal(h.place_crosswalk.length,294);
 assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257);
 assert.equal(exploreMapFeatures(projection.byLens.pilgrimages).length,240);
 // The historical ten R76 holds are an immutable audit; later independent site research resolves a subset.
