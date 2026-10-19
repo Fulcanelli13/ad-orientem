@@ -1,0 +1,433 @@
+{
+  "schema": "ao-mass-special-rite-music-events-v1",
+  "date": "2026-10-19",
+  "sources": [
+    {
+      "url": "https://adoremus.org/1958/09/instruction-on-sacred-music/",
+      "paragraphs": [
+        "15",
+        "16b",
+        "21",
+        "27",
+        "80–85"
+      ]
+    },
+    {
+      "url": "https://lms.org.uk/scholas-guide-sung-mass",
+      "topic": "Asperges/Introit handoff"
+    }
+  ],
+  "policy": {
+    "expectedNotHeard": true,
+    "choirScrollIndependent": true,
+    "organIndependent": true,
+    "noSyntheticChant": true,
+    "specialHandoffOnlyOnActualRite": true
+  },
+  "rites": [
+    {
+      "id": "ASPERGES",
+      "sourceFile": "data/presentation/reader-asperges.v1.json",
+      "lifecycle": "PRE_MASS",
+      "events": [
+        {
+          "id": "AO.MUS.ASP.ME",
+          "stageId": "ASP-R02",
+          "kind": "CHANT",
+          "performers": "SCHOLA_WITH_CELEBRANT_INTONATION",
+          "sourcePaths": [
+            "formulas.ORDINARY.antiphon",
+            "formulas.ORDINARY.psalm",
+            "formulas.ORDINARY.gloria"
+          ],
+          "condition": "ORDINARY",
+          "endBoundary": "ASPERGES_RITE_NOT_MASS_INTROIT",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.ASP.VIDI",
+          "stageId": "ASP-R02",
+          "kind": "CHANT",
+          "performers": "SCHOLA_WITH_CELEBRANT_INTONATION",
+          "sourcePaths": [
+            "formulas.PASCHAL.antiphon",
+            "formulas.PASCHAL.psalm",
+            "formulas.PASCHAL.gloria"
+          ],
+          "condition": "PASCHAL",
+          "endBoundary": "ASPERGES_RITE_NOT_MASS_INTROIT",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.ASP.DIALOGUE",
+          "stageId": "ASP-R04",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "versicles",
+            "prayer"
+          ],
+          "condition": "ANY",
+          "endBoundary": "END_ASPERGES_ORDINARY_HANDOFF",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    },
+    {
+      "id": "PALM",
+      "sourceFile": "data/presentation/reader-palm.v1.json",
+      "lifecycle": "PRE_MASS",
+      "events": [
+        {
+          "id": "AO.MUS.PALM.HOSANNA",
+          "stageId": "PALM-R01",
+          "kind": "CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "texts.openingAntiphon"
+          ],
+          "condition": "ANY",
+          "endBoundary": "BLESSING_BEGINNING",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.PALM.PUERI",
+          "stageId": "PALM-R02",
+          "kind": "CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "texts.puerI",
+            "texts.puerII"
+          ],
+          "condition": "ANY",
+          "endBoundary": "DISTRIBUTION",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.PALM.GLORIA_LAUS",
+          "stageId": "PALM-R04",
+          "kind": "PROCESSIONAL_CHANT",
+          "performers": "SCHOLA_AND_FAITHFUL",
+          "sourcePaths": [
+            "texts.gloriaLaus"
+          ],
+          "condition": "ANY",
+          "endBoundary": "PROCESSION_CHANT",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.PALM.INGREDIENTE",
+          "stageId": "PALM-R05",
+          "kind": "PROCESSIONAL_CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "texts.ingrediente"
+          ],
+          "condition": "ANY",
+          "endBoundary": "CHURCH_REENTRY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.PALM.RETURN_PRAYER",
+          "stageId": "PALM-R06",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "texts.finalPrayer",
+            "texts.finalConclusion"
+          ],
+          "condition": "ANY",
+          "endBoundary": "PRE_INTROIT",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    },
+    {
+      "id": "CANDLEMAS",
+      "sourceFile": "data/presentation/reader-candlemas.v1.json",
+      "lifecycle": "PRE_MASS",
+      "events": [
+        {
+          "id": "AO.MUS.CND.DISTRIBUTION",
+          "stageId": "CND-R03",
+          "kind": "CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "distribution.refrain",
+            "distribution.verses"
+          ],
+          "condition": "ANY",
+          "endBoundary": "DISTRIBUTION",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.CND.PROCESSION",
+          "stageId": "CND-R05",
+          "kind": "PROCESSIONAL_CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "procession.adorna",
+            "procession.responsum",
+            "procession.obtulerunt"
+          ],
+          "condition": "ANY",
+          "endBoundary": "PROCESSION",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.CND.RETURN",
+          "stageId": "CND-R06",
+          "kind": "PROCESSIONAL_CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "procession.obtuleruntVerse"
+          ],
+          "condition": "ANY",
+          "endBoundary": "CHURCH_REENTRY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    },
+    {
+      "id": "ROGATIONS",
+      "sourceFile": "data/presentation/reader-rogations.v1.json",
+      "lifecycle": "PRE_MASS",
+      "events": [
+        {
+          "id": "AO.MUS.ROG.EXSURGE",
+          "stageId": "ROG-R01",
+          "kind": "CHANT",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "opening.antiphon",
+            "opening.psalm",
+            "opening.repeat"
+          ],
+          "condition": "ANY",
+          "endBoundary": "OPENING",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.ROG.LITANY_OPEN",
+          "stageId": "ROG-R02",
+          "kind": "LITANY",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "litanyBeforeProcession"
+          ],
+          "condition": "ANY",
+          "endBoundary": "LITANY_OPENING",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.ROG.PROCESSION_LITANY",
+          "stageId": "ROG-R03",
+          "kind": "PROCESSIONAL_LITANY",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "processionLitany"
+          ],
+          "condition": "ANY",
+          "endBoundary": "PROCESSION",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.ROG.POST_LITANY",
+          "stageId": "ROG-R04",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "postLitany"
+          ],
+          "condition": "ANY",
+          "endBoundary": "POST_LITANY",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    },
+    {
+      "id": "CORPUS_CHRISTI",
+      "sourceFile": "data/presentation/reader-corpus-christi.v1.json",
+      "lifecycle": "POST_MASS_EXPLICIT",
+      "events": [
+        {
+          "id": "AO.MUS.CORPUS.PANGE",
+          "stageId": "CORPUS-R02",
+          "kind": "PROCESSIONAL_HYMN",
+          "performers": "SCHOLA_AND_FAITHFUL",
+          "sourcePaths": [
+            "pangeLingua"
+          ],
+          "condition": "ANY",
+          "endBoundary": "EXPOSITION_PROCESSION",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.CORPUS.TANTUM",
+          "stageId": "CORPUS-R04",
+          "kind": "HYMN",
+          "performers": "SCHOLA_AND_FAITHFUL",
+          "sourcePaths": [
+            "tantumErgo"
+          ],
+          "condition": "ANY",
+          "endBoundary": "BENEDICTION_PREPARATION",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.CORPUS.PRAYER",
+          "stageId": "CORPUS-R05",
+          "kind": "PRIEST_DIALOGUE_WITH_RESPONSES",
+          "performers": "CELEBRANT_AND_RESPONDENTS",
+          "sourcePaths": [
+            "benediction"
+          ],
+          "condition": "ANY",
+          "endBoundary": "BENEDICTION",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    },
+    {
+      "id": "HOLY_THURSDAY_POST",
+      "sourceFile": "data/presentation/reader-holy-thursday-post.v1.json",
+      "lifecycle": "POST_MASS_EXPLICIT",
+      "events": [
+        {
+          "id": "AO.MUS.HT.PANGE",
+          "stageId": "HT-R01",
+          "kind": "PROCESSIONAL_HYMN",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "pangeLingua"
+          ],
+          "condition": "ANY",
+          "endBoundary": "TRANSFER",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.HT.TANTUM",
+          "stageId": "HT-R03",
+          "kind": "HYMN",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "tantumErgo"
+          ],
+          "condition": "ANY",
+          "endBoundary": "REPOSITION",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.HT.STRIPPING",
+          "stageId": "HT-R05",
+          "kind": "ANTIPHON_PSALM",
+          "performers": "SCHOLA_OR_CANTORS",
+          "sourcePaths": [
+            "stripping.antiphon",
+            "stripping.psalm21Pian"
+          ],
+          "condition": "ANY",
+          "endBoundary": "ALTAR_STRIPPING",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    },
+    {
+      "id": "REQUIEM_ABSOLUTION",
+      "sourceFile": "data/presentation/reader-requiem-absolution.v1.json",
+      "lifecycle": "POST_MASS_EXPLICIT",
+      "events": [
+        {
+          "id": "AO.MUS.REQ.LIBERA",
+          "stageId": "ABS-R03",
+          "kind": "RESPONSORY",
+          "performers": "SCHOLA_AND_RESPONDENTS",
+          "sourcePaths": [
+            "liberaMe"
+          ],
+          "condition": "ANY",
+          "endBoundary": "ABSOLUTION_AT_BIER",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        },
+        {
+          "id": "AO.MUS.REQ.IN_PARADISUM",
+          "stageId": "ABS-R05",
+          "kind": "PROCESSIONAL_ANTIPHON",
+          "performers": "SCHOLA",
+          "sourcePaths": [
+            "departure.inParadisum",
+            "departure.chorusAngelorum"
+          ],
+          "condition": "OPTIONAL_BURIAL_FOLLOWING_ACTION",
+          "endBoundary": "DEPARTURE",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    },
+    {
+      "id": "GENERIC_PROCESSION",
+      "sourceFile": "data/presentation/reader-generic-procession.v1.json",
+      "lifecycle": "POST_MASS_EXPLICIT",
+      "events": [
+        {
+          "id": "AO.MUS.PROC.UNSPECIFIED",
+          "stageId": "PROC-R02",
+          "kind": "SOURCE_HOLD",
+          "performers": "UNRESOLVED",
+          "sourcePaths": [],
+          "condition": "ANY",
+          "endBoundary": "DO_NOT_INVENT_GENERIC_CHANT",
+          "observed": false,
+          "musicStatus": "EXPECTED_NOT_OBSERVED",
+          "sourceOwner": "EXISTING_NATIVE_RITE"
+        }
+      ]
+    }
+  ]
+}
