@@ -58,7 +58,7 @@
     "test:mass-complete-icon-atlas": "node tests/mass-complete-icon-atlas.mjs",
     "test:mass-icon-preliminary": "node tests/mass-icon-preliminary-assignments.mjs",
     "test:reader-icons": "node tests/reader-icons.mjs",
-    "test:reader-transients": "node tests/reader-transients.mjs && node tests/reader-live-exact-cues.mjs",
+    "test:reader-transients": "node tests/reader-transients.mjs && node tests/reader-live-exact-cues.mjs && node tests/mass-cross-rite-bell-cues-review.mjs",
     "test:reader-live-pre-gospel": "node tests/reader-live-pre-gospel.mjs",
     "test:reader-form-state": "node tests/reader-form-state-parity.mjs",
     "test:full-mass-preflight": "node tests/full-mass-preflight.mjs && node tests/observed-mass-source.mjs",
