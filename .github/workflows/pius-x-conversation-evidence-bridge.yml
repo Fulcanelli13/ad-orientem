@@ -139,7 +139,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git fetch --no-tags --depth=1 origin 'refs/pull/1443/head'
+          git fetch --no-tags --depth=1 origin '854325df75671882d378b510fcc1af33fc30ba65'
           test "$(git rev-parse FETCH_HEAD)" = "854325df75671882d378b510fcc1af33fc30ba65" || {
             echo 'PR #1443 changed; reconcile and repin this acceptance test' >&2
             exit 1
