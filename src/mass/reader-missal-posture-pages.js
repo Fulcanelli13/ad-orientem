@@ -6,13 +6,20 @@ const CUE=/^AO\.SM\.C\d{4}$/;
 
 function transitionAt(paragraph,cueState,preferences){
   if(!cueState?.supported)return null;
-  // MY_LOCAL without a separately confirmed local timeline must not pretend
-  // that the generic Sung source register describes this congregation.
-  if(String(preferences?.postureProfile??"").toUpperCase()==="MY_LOCAL")return null;
   const ids=(paragraph?.sourceCueIds??[]).map(String).filter(id=>CUE.test(id));
   // Never split inside one bilingual paragraph containing multiple cue IDs.
   if(ids.length!==1)return null;
-  const cueId=ids[0],source=cueState.project(cueId);
+  const cueId=ids[0];
+  if(String(preferences?.postureProfile??"").toUpperCase()==="MY_LOCAL"){
+    // Exact user-authored cue choices may create a page; unconfigured local
+    // changes and ambiguous section-wide overrides must not be invented.
+    const value=preferences?.localPostures?.[cueId];
+    return SUSTAINED.has(value)?Object.freeze({
+      cueId,value,sourcePostureId:null,owner:"MY_LOCAL_EXACT_CUE_POSTURE",
+      advisory:false,
+    }):null;
+  }
+  const source=cueState.project(cueId);
   const value=source?.posture?.value??source?.posture?.label;
   if(source?.supported!==true || source.postureTransition!==true ||
     !source.posture?.persistent || !SUSTAINED.has(value))return null;
