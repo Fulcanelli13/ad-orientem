@@ -6,7 +6,7 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {parseReaderProgress} from "../src/mass/reader-dom.js";
 
-assert.deepEqual(parseReaderProgress("3 / 9 · Palm Sunday"),{current:3,total:9,percent:100/3});
+assert.deepEqual(parseReaderProgress("3 / 9 · Palm Sunday"),{current:3,total:9,percent:3/9*100});
 assert.deepEqual(parseReaderProgress("34 / 67"),{current:34,total:67,percent:34/67*100});
 assert.equal(parseReaderProgress("Unknown"),null);
 assert.equal(parseReaderProgress("0 / 3"),null);
