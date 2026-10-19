@@ -985,6 +985,35 @@
       "objectIds": [
         "LN02"
       ]
+    },
+    {
+      "id": "objects.vestments",
+      "character": "sacristan",
+      "title": {
+        "en": "Sacred vestments",
+        "fr": "Les ornements sacrés"
+      },
+      "questionVariants": {
+        "en": [
+          "what are sacred vestments",
+          "what clothes does the priest wear at mass",
+          "what are the different priestly vestments",
+          "what do the priest's vestments look like"
+        ],
+        "fr": [
+          "que sont les ornements sacerdotaux",
+          "quels vêtements porte le prêtre à la messe"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "GLOSSARY_CONCEPTS_SOT_V1",
+          "ref": "G081",
+          "evidence": "SOURCE_BACKED_GLOSSARY"
+        }
+      ],
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false
     }
   ],
   "ambiguities": [
@@ -1024,7 +1053,7 @@
         ]
       },
       "candidates": [
-        "objects.chalice",
+        "objects.vestments",
         "mass.colors_meaning"
       ],
       "displayOptions": {
@@ -1097,7 +1126,7 @@
     }
   ],
   "pilotLimits": {
-    "topics": 32,
+    "topics": 33,
     "approvedConversationalAnswers": 0,
     "embeddingSearch": false,
     "deterministicKeywordVariantMatching": true,
