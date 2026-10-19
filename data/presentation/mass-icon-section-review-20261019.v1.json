@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -200,11 +200,13 @@
       "cueId": "AO.SM.C0053",
       "candidateId": "B",
       "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
-      "decision": "ACCEPT_VISUAL_MATCH",
-      "notes": "Use new 19 October chant depiction for priest intoning Gloria.",
+      "decision": "HOLD_AFTER_USER_REASSIGNMENT",
+      "notes": "Use new 19 October chant depiction for priest intoning Gloria. Subsequent user comment in Batch 5 redirects the priest-chant silhouette to Credo intonation. Do not assume it remains accepted for Gloria.",
       "semanticCueId": "AO.SM.C0053",
       "cueRange": null,
-      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW",
+      "priorDecision": "ACCEPT_VISUAL_MATCH",
+      "supersededBy": "PRIEST_INTONES_CREDO"
     },
     {
       "slot": "PRIEST_HEAD_BOWS_GLORIA",
@@ -292,6 +294,95 @@
       "semanticCueId": "AO.SM.C0088",
       "cueRange": null,
       "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_CREDOGENUFLECT",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_TURN",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_HOST",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_PATENCROSS",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_WINEWATER",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_CHALICE",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_CHALICECROSS",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_BODYBOW",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_RAISEHANDS",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_BLESSOBLATIONS",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_INCENSE",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_LAVABO",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_INTONES_CREDO",
+      "cueId": "AO.SM.C0089",
+      "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
+      "priorBatch4CandidateId": "B",
+      "decision": "REASSIGN_PREVIOUS_SELECTION_TO_CREDO",
+      "userComment": "Priest chants should be for the credo intonation",
+      "notes": "Actor PRIEST; not a Schola symbol; do not change chant ownership or runtime state.",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_GENUFLECTS_AT_INCARNATUS",
+      "cueId": "AO.SM.C0096",
+      "decision": "DEDICATED_PRIEST_ICON_REQUIRED",
+      "notes": "Do not reuse the faithful posture/genuflect silhouette automatically; new exact priest-specific image pending review.",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
     }
   ],
   "rules": [
@@ -300,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "CREDO_AND_OPENING_OFFERTORY_C0089_TO_C0129",
+  "nextReview": "ORATE_FRATRES_PREFACE_SANCTUS_CANON_OPENING_C0130_PLUS",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -481,6 +572,95 @@
           "slot": "PRIEST_KISSES_GOSPEL_BOOK",
           "cueId": "AO.SM.C0088",
           "decision": "HOLD"
+        }
+      ]
+    },
+    {
+      "id": "AO.SM.M09_TO_M10.CREDO_OFFERTORY",
+      "label": "Credo and Offertory",
+      "cueRange": [
+        "AO.SM.C0089",
+        "AO.SM.C0129"
+      ],
+      "status": "BATCH_5_ALL_CHOICES_HELD_WITH_EXPLICIT_USER_CORRECTIONS",
+      "userStatement": "Decisions: {\"credoGenuflect\":\"hold\",\"turn\":\"hold\",\"host\":\"hold\",\"patenCross\":\"hold\",\"wineWater\":\"hold\",\"chalice\":\"hold\",\"chaliceCross\":\"hold\",\"bodyBow\":\"hold\",\"raiseHands\":\"hold\",\"blessOblations\":\"hold\",\"incense\":\"hold\",\"lavabo\":\"hold\"}. Comments: Priest chants should be for the credo intonation.... priest genuflection should have its own icon",
+      "choices": [
+        {
+          "slot": "BATCH5_CREDOGENUFLECT",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_TURN",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_HOST",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_PATENCROSS",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_WINEWATER",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_CHALICE",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_CHALICECROSS",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_BODYBOW",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_RAISEHANDS",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_BLESSOBLATIONS",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_INCENSE",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_LAVABO",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        }
+      ],
+      "corrections": [
+        {
+          "slot": "PRIEST_INTONES_CREDO",
+          "cueId": "AO.SM.C0089",
+          "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
+          "priorBatch4CandidateId": "B",
+          "decision": "REASSIGN_PREVIOUS_SELECTION_TO_CREDO",
+          "userComment": "Priest chants should be for the credo intonation",
+          "notes": "Actor PRIEST; not a Schola symbol; do not change chant ownership or runtime state."
+        },
+        {
+          "slot": "PRIEST_GENUFLECTS_AT_INCARNATUS",
+          "cueId": "AO.SM.C0096",
+          "decision": "DEDICATED_PRIEST_ICON_REQUIRED",
+          "notes": "Do not reuse the faithful posture/genuflect silhouette automatically; new exact priest-specific image pending review."
         }
       ]
     }
