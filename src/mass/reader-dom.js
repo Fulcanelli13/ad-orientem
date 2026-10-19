@@ -3066,7 +3066,10 @@ export function createReaderDomAdapter({
     const postureRail=root.querySelector('.ao-rail-left [data-channel="posture"]');
     if(postureRail)postureRail.dataset.change=String(postureChangeVisible);
     setChannel(root,"attention",current.attention);
-    setChannel(root,"priest-action",current.priestAction);
+    // A priest action can be source-certain while its image is unapproved.
+    // Keep the source action and text; do not show an empty icon-only rail.
+    setChannel(root,"priest-action",
+      current.priestActionIconKey ? current.priestAction : null);
     setChannel(root,"sacred-minister",mode==="LIVE"?current.sacredMinister:null);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
