@@ -2479,7 +2479,7 @@ export async function mountNativeReaderPreview({
           : withPublishedCanonParagraphRubrics(
               visibleCard.paragraphs,ready.data?.rubricEvents??null,{
                 form:ready.prepared?.session?.resolvedMass?.form,
-              })),
+              }),{mode:readerModel?.presentationMode}),
       progress:visibleProgress(visibleCard),
       // Guide/Formation is an independent educational destination. The
       // published R17 1962 event registry, not an inherited 32-card Guide,
