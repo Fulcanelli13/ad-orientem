@@ -5,7 +5,9 @@
 const groupOf=row=>String(row?.liturgicalGroup??"").trim();
 const prayerGroup=group=>/^R17\.ORATION\.(?:COLLECT|POSTCOMMUNION)\.G\d+$/.test(group);
 
-export function withLiveReadingSections(card,paragraphs=card?.paragraphs??[]){
+export function withLiveReadingSections(card,paragraphs=card?.paragraphs??[],{mode="LIVE"}={}){
+  // Missal columns and Simple scrolling retain their existing geometry.
+  if(String(mode).toUpperCase()!=="LIVE")return paragraphs;
   const source=Array.isArray(card?.paragraphs)?card.paragraphs:[];
   if(!Array.isArray(paragraphs))throw new TypeError("Reader paragraphs required");
   if(source.length!==paragraphs.length)throw new Error("LIVE section projection changed source paragraph count");
