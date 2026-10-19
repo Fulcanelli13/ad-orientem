@@ -22,7 +22,8 @@
     "NO_DUPLICATE_CENTRAL_SCHOLA_TEXT_WHEN_SHARED",
     "ORGAN_STATE_INDEPENDENT_AND_PERMISSION_GATED",
     "SPEAKER_AND_CEREMONIAL_CUE_OWNERSHIP_UNCHANGED",
-    "NO_MUSIC_DURING_CONSECRATION"
+    "NO_MUSIC_DURING_CONSECRATION",
+    "SOURCE_FIRST_CANON14_INCLUDES_B061_NOT_A_NEW_SYNTHETIC_CARD"
   ],
   "statuses": [
     "NOT_APPLICABLE",
@@ -467,13 +468,13 @@
             "AO.SM.C0207"
           ],
           "cardSourceSections": [
-            "AO.CARD.018"
+            "AO.CANON.14"
           ],
           "choir": "NONE",
           "choirAction": "EXPIRE_UNRESOLVED_BENEDICTUS_WITHOUT_CLAIMING_HEARD_FINISH",
           "organ": "NO_UNOBSERVED_SOLO",
           "center": "PER_OMNIA_AND_AMEN",
-          "note": "Final Canon dialogue must not be obscured by a stale ticker"
+          "note": "The source-first canonical Canon.14 contains B060 and the B061 public conclusion; the 30-card witness groups the same event into AO.CARD.018. Do not duplicate the Amen."
         }
       ],
       "invariants": [
