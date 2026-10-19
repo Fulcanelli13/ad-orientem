@@ -178,18 +178,20 @@ try{
    const mercy=page.locator("#aoPray435930.open .aoMercyReader");
    assert.ok(await mercy.locator(".aoMercyPrayer").innerText().then(x=>x.length>15),
     "Divine Mercy prayer lost");
-   assert.equal(await mercy.locator(".aoMercyControls button").count(),2);
+   assert.equal(await mercy.locator(".aoMercyControls,[data-p435930-mercy-next],[data-p435930-mercy-prev]").count(),0,
+    "Direct prayer beads replace redundant Previous/Next buttons");
+   assert.equal(await mercy.locator(".aoMercyBeadNavigation > .aoDevoProgress").getAttribute("aria-valuenow"),"1");
    assert.equal(await mercy.locator(".aoMercyOptions button").count(),2);
    assert.equal(await mercy.locator(".aoMercySource a[href^='https://']").count(),1);
    const order=await mercy.evaluate(r=>{
-    const text=r.querySelector(".aoMercyPrayer"),nav=r.querySelector(".aoMercyControls"),
+    const text=r.querySelector(".aoMercyPrayer"),nav=r.querySelector(".aoMercyBeadNavigation"),
       options=r.querySelector(".aoMercyOptions");
-    return !!text&&!!nav&&!!options&&!!(text.compareDocumentPosition(nav)&Node.DOCUMENT_POSITION_FOLLOWING)
-      &&!!(nav.compareDocumentPosition(options)&Node.DOCUMENT_POSITION_FOLLOWING);
+    return !!text&&!!nav&&!!options&&!!(nav.compareDocumentPosition(text)&Node.DOCUMENT_POSITION_FOLLOWING)
+      &&!!(text.compareDocumentPosition(options)&Node.DOCUMENT_POSITION_FOLLOWING);
    });
-   assert.ok(order,"Divine Mercy settings should remain below the actual prayer and navigation");
-   await mercy.locator("[data-p435930-mercy-next]").click();
-   assert.match(await mercy.locator(".aoMercyControls").innerText(),/Our Father/);
+   assert.ok(order,"Bead strand must precede prayer; settings remain below");
+   assert.match(await mercy.locator('[data-ao-mercy-step="1"]').innerText(),/Our Father/,
+    "Our Father remains in the vertically scrolled opening card");
    assert.equal(await mercy.locator(".aoMercyDecadeLink").count(),5);
    assert.equal(await mercy.locator(".aoMercyBeadButton").count(),0,
     "Opening prayer should not invent an opening bead decade");
