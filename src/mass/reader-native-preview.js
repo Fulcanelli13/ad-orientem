@@ -76,6 +76,7 @@ import { createObservedPriestEntranceController, projectObservedPreMassPriestAct
 import { createObservedChalicePreparationController } from "./reader-priest-chalice-observation.js";
 import { createPlanAwareObjectiveRuntime } from "./reader-objective-runtime.js";
 import { createAspergesReaderController, loadAspergesReaderData, resolveAspergesRiteContext } from "./reader-asperges.js";
+import { projectRiteMusicBadge, loadRiteMusicRegistry } from "./reader-rite-music-presentation.js";
 import { createPalmReaderController, loadPalmReaderData } from "./reader-palm.js";
 import { createAshReaderController, loadAshReaderData } from "./reader-ash.js";
 import { createCandlemasReaderController, loadCandlemasReaderData } from "./reader-candlemas.js";
@@ -225,6 +226,8 @@ export async function prepareNativeReaderPreview({
   loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
+  riteMusicData=null,
+  loadRiteMusicData=loadRiteMusicRegistry,
   aspergesData=null,
   loadAspergesData=loadAspergesReaderData,
   palmData=null,
@@ -351,6 +354,12 @@ export async function prepareNativeReaderPreview({
     hasHolyThursdayPost ? (holyThursdayPostData ?? Promise.resolve(loadHolyThursdayPostData(prepared))) : null,
     hasGenericProcession ? (genericProcessionData ?? Promise.resolve(loadGenericProcessionData(prepared))) : null,
   ]);
+  // Supplementary music research may fail closed without blocking Mass text.
+  const hasRiteMusic=hasAsperges||hasPalm||hasCandlemas||hasRogations||
+    hasRequiemAbsolution||hasCorpusChristi||hasHolyThursdayPost||hasGenericProcession;
+  const loadedRiteMusic=hasRiteMusic
+    ? (riteMusicData ?? await Promise.resolve().then(()=>loadRiteMusicData(prepared)).catch(()=>null))
+    : null;
   const mandatumActive=prepared?.session?.resolvedMass?.provenance?.holyThursday?.mandatumPresent===true;
   const loadedMandatum=mandatumActive
     ? (mandatumSourceData ?? await Promise.resolve(loadMandatumData(prepared)))
@@ -492,7 +501,16 @@ export async function prepareNativeReaderPreview({
     prepared,curatedEligible,curatedIntroitEntry:explicitIntroitEntry,
     data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
-    requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime
+    requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime,
+    riteMusicRegistry:loadedRiteMusic,
+    riteMusicSources:Object.freeze({
+      ASPERGES:loadedAsperges?.payload??null,PALM:loadedPalm?.payload??null,
+      CANDLEMAS:loadedCandlemas?.payload??null,ROGATIONS:loadedRogations?.payload??null,
+      REQUIEM_ABSOLUTION:loadedRequiemAbsolution?.payload??null,
+      CORPUS_CHRISTI:loadedCorpusChristi?.payload??null,
+      HOLY_THURSDAY_POST:loadedHolyThursdayPost?.payload??null,
+      GENERIC_PROCESSION:loadedGenericProcession?.payload??null,
+    })
   });
 }
 
@@ -510,6 +528,8 @@ export async function mountNativeReaderPreview({
   loadFormStateData=loadReaderFormStateData,
   guideData=null,
   loadGuideData=loadGuideRegistry,
+  riteMusicData=null,
+  loadRiteMusicData=loadRiteMusicRegistry,
   aspergesData=null,
   loadAspergesData=loadAspergesReaderData,
   palmData=null,
@@ -546,6 +566,7 @@ export async function mountNativeReaderPreview({
   const ready=await prepareNativeReaderPreview({
     prepared,reviewCuratedCards:reviewEnabled,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
+    riteMusicData,loadRiteMusicData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
     candlemasData,loadCandlemasData,rogationsData,loadRogationsData,
     goodFridayData,loadGoodFridayData,
@@ -1754,6 +1775,13 @@ export async function mountNativeReaderPreview({
     return card ? guideForPresentationCard(ready.guide.registry,card) : null;
   }
 
+  function riteMusicAt(riteId,cardId,condition=null){
+    return projectRiteMusicBadge({
+      registry:ready.riteMusicRegistry,riteId,stageId:cardId,
+      sourcePayload:ready.riteMusicSources?.[riteId]??null,condition
+    });
+  }
+
   function aspergesMoment(){
     const state=ready.aspergesController?.project?.();
     const card=state?.card;
@@ -1791,6 +1819,7 @@ export async function mountNativeReaderPreview({
         priestPosition:null,
         priestVoice:null,
         schola:null,
+        riteMusic:riteMusicAt("ASPERGES",card.id,state.formulaState?.formula),
         guide:displayGuide ? {registryAvailable:true,text:displayGuide} : null,
       }),
     });
@@ -1873,6 +1902,7 @@ export async function mountNativeReaderPreview({
         // exact PALM-R03-01 heading can activate the three small crosses.
         gesture:null,
         response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        riteMusic:riteMusicAt(kind,card.id),
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
       }),
     });
@@ -1942,6 +1972,7 @@ export async function mountNativeReaderPreview({
             ? {label:state.posture}
             : null,
         gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        riteMusic:riteMusicAt("CANDLEMAS",card.id),
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
       }),
     });
@@ -2006,6 +2037,7 @@ export async function mountNativeReaderPreview({
           ? {label:card.posture}
           : null,
         gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        riteMusic:riteMusicAt("ROGATIONS",card.id),
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
       }),
     });
@@ -2074,6 +2106,10 @@ export async function mountNativeReaderPreview({
         paragraphs:Object.freeze(rows),
         progress:String(state.index+1)+" / "+String(state.total)+" · "+config.label,
         posture,gesture:null,response:null,bell:null,cinematic:null,priestPosition:null,priestVoice:null,schola:null,
+        riteMusic:riteMusicAt(kind==="CORPUS_CHRISTI_PROCESSION"?"CORPUS_CHRISTI":kind,
+          card.id??card.recordId,
+          kind==="REQUIEM_ABSOLUTION" && state.burialProcession===true
+            ? "OPTIONAL_BURIAL_FOLLOWING_ACTION" : null),
         guide:card.guide ? {registryAvailable:true,text:card.guide} : null,
       }),
     });
