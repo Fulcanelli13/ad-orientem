@@ -8,9 +8,9 @@ This pilot explicitly **does not** generate character answers, infer pastoral ad
 
 ## Deliverables
 
-- [Shared data registry](../../data/learn/living-church-shared-question-routing-pilot.v1.json): **33 bilingual topics** (13 Pius, 7 Canon, 13 Sacristan), each with source owner and exact source IDs; question variants are *editorial search phrases*, not historical quotations.
+- [Shared data registry](../../data/learn/living-church-shared-question-routing-pilot.v1.json): **33 bilingual topic candidates** (13 Pius, 7 Canon, 13 Sacristan), of which **30 have specific original source-navigation refs** and **3 Canon topics remain source gaps**; question variants are *editorial search phrases*, not historical quotations.
 - [Deterministic interpretation module](../../src/learn/living-church-shared-question-router.js): typed outputs for source-navigation, clarification, referral offer, no-coverage, and explicit accepted handoff. Pure JS; no network, language model or UI, safe for offline tests.
-- [Source integrity and route tests](../../tests/living-church-shared-question-router.mjs): map every Pius QID to both the 433-question indexes, and Sacristan G-number to original source-backed glossary records. Canon's navigational target is existing `learn.mass_explorer` only, **not** a certified new commentary.
+- [Source integrity and route tests](../../tests/living-church-shared-question-router.mjs): map every Pius QID to both the 433-question indexes, and Sacristan G-number to original source-backed glossary records. Four Canon topics point to exact existing Guide IDs: elevation `AO.CARD.015`, Roman Canon `AO.CARD.014`, Offertory `AO.CARD.010`, and Gospel `AO.CARD.007`. Three others are held: altar kiss, colours' meaning, general unidentified gestures. The route `learn.mass_explorer` alone is **not proof of topic coverage**.
 - [GitHub workflow](../../.github/workflows/living-church-shared-question-router.yml) for the data/module/test.
 
 ## Output contract
@@ -44,7 +44,7 @@ The first pilot references only currently existing source owners in `main`:
 2. `data/glossary/concepts-*.v1.json`: existing glossary concepts with `SOURCE_BACKED` definitions. Object IDs in `previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json` are still **P4 research-only**; links are optional pilot metadata.
 3. `src/learn/mass-explorer.js` and `src/learn/mass-moments-study.js`: route to the original published Guide. `mass-explorer-approved-studies.v1.json` presently reports `NO_APPROVED_STUDIES`, so **do not imply that the Canon's new commentary exists**.
 
-This is independent of draft **PR #1406** (Living Church P4 canonical Catechism referrals) and draft **PR #1419** (Pius X documentary voice); neither branch is modified here.
+The transfer contract also checks that the offered destination, original reference IDs and character match a genuinely source-navigable topic. Forged destination references cannot be accepted. This is independent of draft **PR #1406** (Living Church P4 canonical Catechism referrals) and draft **PR #1419** (Pius X documentary voice); neither branch is modified here.
 
 ## Integration gates
 
@@ -53,3 +53,5 @@ This is independent of draft **PR #1406** (Living Church P4 canonical Catechism 
 - **Character speech**: content is original-source-locked; natural Pius X conversational texture may be rendered later, with the exact substantive claims source-bound. Editorial handoff wording must not be presented as historical speech.
 - **Review UI**: connect only after reconciliation with P4's active scene state and the approved character sprites. Transfer acceptance must be explicit; no surprise change of character.
 - **Source-fidelity review** follows completed topic collection, prior to publishing or running open-ended AI answers.
+
+**Coverage gate correction:** An apparent character expert without a specific matching original source is *not* available for automatic referral. In particular, a question about why the priest kisses the altar is a held source gap in this pilot; an opening-Mass Guide reference that merely describes approaching the altar cannot be used as a justification for that specific explanation. Asking why liturgical colours vary similarly routes to a disambiguation with the Canon option shown as source-pending, not answer-ready.
