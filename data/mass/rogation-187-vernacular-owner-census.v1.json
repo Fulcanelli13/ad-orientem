@@ -1,0 +1,2739 @@
+{
+  "schema": "ao-rogation-187-vernacular-owner-census-v1",
+  "date": "2026-10-19",
+  "status": "187_SOURCE_ROWS_MAPPED_NOT_PUBLICATION_CERTIFIED",
+  "owners": [
+    "data/presentation/reader-text-sung.v1.json",
+    "data/presentation/reader-text-low.v1.json",
+    "src/pray/canonical-data.js",
+    "data/presentation/reader-rogations.v1.json"
+  ],
+  "historicalWitnesses": {
+    "english": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+    "french": "https://fr.wikisource.org/w/index.php?title=%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_p%C3%A9nitentiaux&oldid=14794744",
+    "chant": "https://icksp.org.uk/newbrighton/wp-content/uploads/sites/2/2020/04/Rogations.pdf"
+  },
+  "summary": {
+    "total": 187,
+    "exactOrdinaryLatin": 22,
+    "additionalExactPRAYLatin": 15,
+    "withoutExactLatinOwner": 150,
+    "classification": {
+      "exactCorpusCandidate": 37,
+      "historicalRowOrPositionCandidate": 46,
+      "historicalLitanyFamilyNotRowApproved": 101,
+      "sourceSpecificScriptureChantSearch": 3
+    },
+    "confirmedGenuinelyMissingTranslations": null,
+    "editoriallyApprovedEN": 0,
+    "editoriallyApprovedFR": 0,
+    "source1962FullyPrintCollated": false,
+    "pronouncedRows": 187
+  },
+  "stages": {
+    "ROG-R01": {
+      "rows": 4,
+      "ordinary": 0,
+      "additionalPRAY": 1,
+      "withoutExactOwner": 3
+    },
+    "ROG-R02": {
+      "rows": 18,
+      "ordinary": 6,
+      "additionalPRAY": 4,
+      "withoutExactOwner": 8
+    },
+    "ROG-R03": {
+      "rows": 112,
+      "ordinary": 4,
+      "additionalPRAY": 7,
+      "withoutExactOwner": 101
+    },
+    "ROG-R04": {
+      "rows": 35,
+      "ordinary": 6,
+      "additionalPRAY": 3,
+      "withoutExactOwner": 26
+    },
+    "ROG-R05": {
+      "rows": 18,
+      "ordinary": 6,
+      "additionalPRAY": 0,
+      "withoutExactOwner": 12
+    }
+  },
+  "known1962VsHistoricalDifferences": [
+    "ROG-R03-10",
+    "ROG-R03-74",
+    "ROG-R03-75",
+    "ROG-R03-81",
+    "ROG-R03-96"
+  ],
+  "twoJames": [
+    "ROG-R03-15",
+    "ROG-R03-18"
+  ],
+  "policy": "No parallel text copied; sources with shared or abbreviated wording need text-context and performance review. Exact Latin match is a wording candidate, not a verified translation or transfer of ceremonial ownership.",
+  "releaseRequirements": [
+    "Verify authoritative 1962 entire Latin ritual source and distinct role/timing.",
+    "Collate editions and original scans for historical EN/FR and confirm rights.",
+    "Row-align 112 invocations, especially edition-missing petitions and response formulas.",
+    "Search Bible/Psalter witnesses for Exsurge/Deus auribus before proposing any new translation.",
+    "Review existing proper and prayer corpora; never conflate Rogation Mass Proper with procession.",
+    "Promote only individually reviewed effective EN/FR wording owners with provenance and CI/reader parity."
+  ],
+  "rows": [
+    {
+      "rowId": "ROG-R01-A1",
+      "sourcePath": "opening.antiphon",
+      "stage": "ROG-R01",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "vernacularWitnessTier": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "notes": [
+        "Exsurge Domine antiphon belongs to processional chant, not the unrelated historical penitential litany"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R01-P",
+      "sourcePath": "opening.psalm",
+      "stage": "ROG-R01",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "vernacularWitnessTier": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "notes": [
+        "Psalm 43(44) incipit; select specific Psalter and boundary"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R01-G",
+      "sourcePath": "opening.gloria",
+      "stage": "ROG-R01",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "foundations_glory_be"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "EXISTING_PRAY_TRILINGUAL_GLO_RUBRIC_WITNESS",
+      "notes": [
+        "Source is full Gloria, matches PRAY foundations_glory_be; printed chant abbreviates Gloria/EUOUAE"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R01-A2",
+      "sourcePath": "opening.repeat",
+      "stage": "ROG-R01",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "vernacularWitnessTier": "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH",
+      "notes": [
+        "Exsurge Domine antiphon belongs to processional chant, not the unrelated historical penitential litany"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-1",
+      "sourcePath": "litanyBeforeProcession.0.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0044",
+        "AO.SM.C0045",
+        "AO.SM.C0046",
+        "AO.SM.C0050",
+        "AO.SM.C0051",
+        "AO.SM.C0052"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-2",
+      "sourcePath": "litanyBeforeProcession.1.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0044",
+        "AO.SM.C0045",
+        "AO.SM.C0046",
+        "AO.SM.C0050",
+        "AO.SM.C0051",
+        "AO.SM.C0052"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-3",
+      "sourcePath": "litanyBeforeProcession.2.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0047",
+        "AO.SM.C0048",
+        "AO.SM.C0049"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-4",
+      "sourcePath": "litanyBeforeProcession.3.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0047",
+        "AO.SM.C0048",
+        "AO.SM.C0049"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-5",
+      "sourcePath": "litanyBeforeProcession.4.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0044",
+        "AO.SM.C0045",
+        "AO.SM.C0046",
+        "AO.SM.C0050",
+        "AO.SM.C0051",
+        "AO.SM.C0052"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-6",
+      "sourcePath": "litanyBeforeProcession.5.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0044",
+        "AO.SM.C0045",
+        "AO.SM.C0046",
+        "AO.SM.C0050",
+        "AO.SM.C0051",
+        "AO.SM.C0052"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-7",
+      "sourcePath": "litanyBeforeProcession.6.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-8",
+      "sourcePath": "litanyBeforeProcession.7.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-9",
+      "sourcePath": "litanyBeforeProcession.8.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-10",
+      "sourcePath": "litanyBeforeProcession.9.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English shows cantor-response repetition; French collapses into one dialogue line"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-11",
+      "sourcePath": "litanyBeforeProcession.10.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English/French historical Litany joins God invocation and Miserere on one line; canonical stage splits voice role"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-12",
+      "sourcePath": "litanyBeforeProcession.11.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English/French historical Litany joins God invocation and Miserere on one line; canonical stage splits voice role"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-13",
+      "sourcePath": "litanyBeforeProcession.12.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English/French historical Litany joins God invocation and Miserere on one line; canonical stage splits voice role"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-14",
+      "sourcePath": "litanyBeforeProcession.13.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English/French historical Litany joins God invocation and Miserere on one line; canonical stage splits voice role"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-15",
+      "sourcePath": "litanyBeforeProcession.14.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English/French historical Litany joins God invocation and Miserere on one line; canonical stage splits voice role"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-16",
+      "sourcePath": "litanyBeforeProcession.15.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English/French historical Litany joins God invocation and Miserere on one line; canonical stage splits voice role"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-17",
+      "sourcePath": "litanyBeforeProcession.16.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English/French historical Litany joins God invocation and Miserere on one line; canonical stage splits voice role"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R02-18",
+      "sourcePath": "litanyBeforeProcession.17.1",
+      "stage": "ROG-R02",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_LITANY_INTRO_DIALOGUE",
+      "notes": [
+        "English/French historical Litany joins God invocation and Miserere on one line; canonical stage splits voice role"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-1",
+      "sourcePath": "processionLitany.0",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-2",
+      "sourcePath": "processionLitany.1",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-3",
+      "sourcePath": "processionLitany.2",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-4",
+      "sourcePath": "processionLitany.3",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-5",
+      "sourcePath": "processionLitany.4",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-6",
+      "sourcePath": "processionLitany.5",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-7",
+      "sourcePath": "processionLitany.6",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-8",
+      "sourcePath": "processionLitany.7",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-9",
+      "sourcePath": "processionLitany.8",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-10",
+      "sourcePath": "processionLitany.9",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [
+        "French 1862 omits Saint Joseph; 1883 English includes him"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-11",
+      "sourcePath": "processionLitany.10",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-12",
+      "sourcePath": "processionLitany.11",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-13",
+      "sourcePath": "processionLitany.12",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-14",
+      "sourcePath": "processionLitany.13",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-15",
+      "sourcePath": "processionLitany.14",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [
+        "First Saint James invocation; distinct location despite identical Latin"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-16",
+      "sourcePath": "processionLitany.15",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-17",
+      "sourcePath": "processionLitany.16",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-18",
+      "sourcePath": "processionLitany.17",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [
+        "Second Saint James invocation; do not collapse"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-19",
+      "sourcePath": "processionLitany.18",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-20",
+      "sourcePath": "processionLitany.19",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-21",
+      "sourcePath": "processionLitany.20",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-22",
+      "sourcePath": "processionLitany.21",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-23",
+      "sourcePath": "processionLitany.22",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-24",
+      "sourcePath": "processionLitany.23",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-25",
+      "sourcePath": "processionLitany.24",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-26",
+      "sourcePath": "processionLitany.25",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-27",
+      "sourcePath": "processionLitany.26",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-28",
+      "sourcePath": "processionLitany.27",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-29",
+      "sourcePath": "processionLitany.28",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-30",
+      "sourcePath": "processionLitany.29",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-31",
+      "sourcePath": "processionLitany.30",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-32",
+      "sourcePath": "processionLitany.31",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-33",
+      "sourcePath": "processionLitany.32",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-34",
+      "sourcePath": "processionLitany.33",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-35",
+      "sourcePath": "processionLitany.34",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-36",
+      "sourcePath": "processionLitany.35",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-37",
+      "sourcePath": "processionLitany.36",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-38",
+      "sourcePath": "processionLitany.37",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-39",
+      "sourcePath": "processionLitany.38",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-40",
+      "sourcePath": "processionLitany.39",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-41",
+      "sourcePath": "processionLitany.40",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-42",
+      "sourcePath": "processionLitany.41",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-43",
+      "sourcePath": "processionLitany.42",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-44",
+      "sourcePath": "processionLitany.43",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-45",
+      "sourcePath": "processionLitany.44",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-46",
+      "sourcePath": "processionLitany.45",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-47",
+      "sourcePath": "processionLitany.46",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-48",
+      "sourcePath": "processionLitany.47",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-49",
+      "sourcePath": "processionLitany.48",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-50",
+      "sourcePath": "processionLitany.49",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-51",
+      "sourcePath": "processionLitany.50",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-52",
+      "sourcePath": "processionLitany.51",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-53",
+      "sourcePath": "processionLitany.52",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-54",
+      "sourcePath": "processionLitany.53",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-55",
+      "sourcePath": "processionLitany.54",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-56",
+      "sourcePath": "processionLitany.55",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-57",
+      "sourcePath": "processionLitany.56",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-58",
+      "sourcePath": "processionLitany.57",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-59",
+      "sourcePath": "processionLitany.58",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-60",
+      "sourcePath": "processionLitany.59",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-61",
+      "sourcePath": "processionLitany.60",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-62",
+      "sourcePath": "processionLitany.61",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-63",
+      "sourcePath": "processionLitany.62",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-64",
+      "sourcePath": "processionLitany.63",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-65",
+      "sourcePath": "processionLitany.64",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-66",
+      "sourcePath": "processionLitany.65",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-67",
+      "sourcePath": "processionLitany.66",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-68",
+      "sourcePath": "processionLitany.67",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-69",
+      "sourcePath": "processionLitany.68",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-70",
+      "sourcePath": "processionLitany.69",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-71",
+      "sourcePath": "processionLitany.70",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-72",
+      "sourcePath": "processionLitany.71",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-73",
+      "sourcePath": "processionLitany.72",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-74",
+      "sourcePath": "processionLitany.73",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [
+        "Earthquake petition absent in English 1883 and French 1862"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-75",
+      "sourcePath": "processionLitany.74",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [
+        "Plague, famine and war petition absent in English 1883 and French 1862"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-76",
+      "sourcePath": "processionLitany.75",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-77",
+      "sourcePath": "processionLitany.76",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-78",
+      "sourcePath": "processionLitany.77",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-79",
+      "sourcePath": "processionLitany.78",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-80",
+      "sourcePath": "processionLitany.79",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-81",
+      "sourcePath": "processionLitany.80",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [
+        "French 1862 prose omits Cross and Passion petition, though its Latin does not"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-82",
+      "sourcePath": "processionLitany.81",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-83",
+      "sourcePath": "processionLitany.82",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-84",
+      "sourcePath": "processionLitany.83",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-85",
+      "sourcePath": "processionLitany.84",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-86",
+      "sourcePath": "processionLitany.85",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-87",
+      "sourcePath": "processionLitany.86",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "adoration_litany_blessed_sacrament"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-88",
+      "sourcePath": "processionLitany.87",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-89",
+      "sourcePath": "processionLitany.88",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-90",
+      "sourcePath": "processionLitany.89",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-91",
+      "sourcePath": "processionLitany.90",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-92",
+      "sourcePath": "processionLitany.91",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-93",
+      "sourcePath": "processionLitany.92",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-94",
+      "sourcePath": "processionLitany.93",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-95",
+      "sourcePath": "processionLitany.94",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-96",
+      "sourcePath": "processionLitany.95",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [
+        "Return erring persons / bring unbelievers to Gospel petition absent from both historical witnesses"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-97",
+      "sourcePath": "processionLitany.96",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-98",
+      "sourcePath": "processionLitany.97",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-99",
+      "sourcePath": "processionLitany.98",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-100",
+      "sourcePath": "processionLitany.99",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-101",
+      "sourcePath": "processionLitany.100",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-102",
+      "sourcePath": "processionLitany.101",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-103",
+      "sourcePath": "processionLitany.102",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-104",
+      "sourcePath": "processionLitany.103",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-105",
+      "sourcePath": "processionLitany.104",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "adoration_litany_blessed_sacrament",
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-106",
+      "sourcePath": "processionLitany.105",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "adoration_litany_blessed_sacrament",
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-107",
+      "sourcePath": "processionLitany.106",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0222",
+        "AO.SM.C0223"
+      ],
+      "prayIds": [
+        "adoration_litany_blessed_sacrament",
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-108",
+      "sourcePath": "processionLitany.107",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-109",
+      "sourcePath": "processionLitany.108",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-110",
+      "sourcePath": "processionLitany.109",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0044",
+        "AO.SM.C0045",
+        "AO.SM.C0046",
+        "AO.SM.C0050",
+        "AO.SM.C0051",
+        "AO.SM.C0052"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-111",
+      "sourcePath": "processionLitany.110",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0047",
+        "AO.SM.C0048",
+        "AO.SM.C0049"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R03-112",
+      "sourcePath": "processionLitany.111",
+      "stage": "ROG-R03",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0044",
+        "AO.SM.C0045",
+        "AO.SM.C0046",
+        "AO.SM.C0050",
+        "AO.SM.C0051",
+        "AO.SM.C0052"
+      ],
+      "prayIds": [
+        "devotion_litany_st_joseph",
+        "litany_loreto_1962",
+        "litany_loreto_current"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_LITANY_FAMILY_UNALIGNED_1962_VARIANTS",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PN",
+      "sourcePath": "postLitany.pater",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_POST_LITANY_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_POST_LITANY_DIALOGUE",
+      "notes": [
+        "English specifies silent Our Father; French gives abbreviated Notre Père"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-V",
+      "sourcePath": "postLitany.versicle",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_POST_LITANY_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_POST_LITANY_DIALOGUE",
+      "notes": [
+        "EN 1883 has this V/R; French 1862 at this location abbreviates Pater noster without the separate concluding V/R"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-R",
+      "sourcePath": "postLitany.response",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0210"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_POST_LITANY_DIALOGUE",
+      "notes": [
+        "EN 1883 has this V/R; French 1862 at this location abbreviates Pater noster without the separate concluding V/R"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PS1",
+      "sourcePath": "postLitany.psalm69.0",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_PSALM_VERSE",
+      "vernacularWitnessTier": "HISTORICAL_PSALM_VERSE",
+      "notes": [
+        "Historical verse present in EN prose and FR verse-aligned prose, not approved"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PS2",
+      "sourcePath": "postLitany.psalm69.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_PSALM_VERSE",
+      "vernacularWitnessTier": "HISTORICAL_PSALM_VERSE",
+      "notes": [
+        "Historical verse present in EN prose and FR verse-aligned prose, not approved"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PS3",
+      "sourcePath": "postLitany.psalm69.2",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_PSALM_VERSE",
+      "vernacularWitnessTier": "HISTORICAL_PSALM_VERSE",
+      "notes": [
+        "Historical verse present in EN prose and FR verse-aligned prose, not approved"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PS4",
+      "sourcePath": "postLitany.psalm69.3",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_PSALM_VERSE",
+      "vernacularWitnessTier": "HISTORICAL_PSALM_VERSE",
+      "notes": [
+        "Historical verse present in EN prose and FR verse-aligned prose, not approved"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PS5",
+      "sourcePath": "postLitany.psalm69.4",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_PSALM_VERSE",
+      "vernacularWitnessTier": "HISTORICAL_PSALM_VERSE",
+      "notes": [
+        "Historical verse present in EN prose and FR verse-aligned prose, not approved"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PS6",
+      "sourcePath": "postLitany.psalm69.5",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_PSALM_VERSE",
+      "vernacularWitnessTier": "HISTORICAL_PSALM_VERSE",
+      "notes": [
+        "Historical verse present in EN prose and FR verse-aligned prose, not approved"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PS7",
+      "sourcePath": "postLitany.psalm69.6",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_PSALM_VERSE",
+      "vernacularWitnessTier": "HISTORICAL_PSALM_VERSE",
+      "notes": [
+        "Historical verse present in EN prose and FR verse-aligned prose, not approved"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-PS8",
+      "sourcePath": "postLitany.psalm69.7",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "foundations_glory_be"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_PSALM_VERSE",
+      "notes": [
+        "1883/1862 historical doxology abbreviated; full PRAY foundations_glory_be candidate"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S1",
+      "sourcePath": "postLitany.suffrages.0.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S2",
+      "sourcePath": "postLitany.suffrages.1.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S3",
+      "sourcePath": "postLitany.suffrages.2.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S4",
+      "sourcePath": "postLitany.suffrages.3.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S5",
+      "sourcePath": "postLitany.suffrages.4.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S6",
+      "sourcePath": "postLitany.suffrages.5.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S7",
+      "sourcePath": "postLitany.suffrages.6.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S8",
+      "sourcePath": "postLitany.suffrages.7.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S9",
+      "sourcePath": "postLitany.suffrages.8.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "church_prayer_for_pope"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S10",
+      "sourcePath": "postLitany.suffrages.9.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S11",
+      "sourcePath": "postLitany.suffrages.10.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S12",
+      "sourcePath": "postLitany.suffrages.11.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S13",
+      "sourcePath": "postLitany.suffrages.12.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S14",
+      "sourcePath": "postLitany.suffrages.13.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S15",
+      "sourcePath": "postLitany.suffrages.14.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "PRAY_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [],
+      "prayIds": [
+        "dead_de_profundis"
+      ],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S16",
+      "sourcePath": "postLitany.suffrages.15.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0020",
+        "AO.SM.C0025",
+        "AO.SM.C0027",
+        "AO.SM.C0133",
+        "AO.SM.C0136",
+        "AO.SM.C0207",
+        "AO.SM.C0211",
+        "AO.SM.C0218",
+        "AO.SM.C0239",
+        "AO.SM.C0241",
+        "AO.SM.C0266"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S17",
+      "sourcePath": "postLitany.suffrages.16.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S18",
+      "sourcePath": "postLitany.suffrages.17.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S19",
+      "sourcePath": "postLitany.suffrages.18.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S20",
+      "sourcePath": "postLitany.suffrages.19.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_SUFFRAGES",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S21",
+      "sourcePath": "postLitany.suffrages.20.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0032"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S22",
+      "sourcePath": "postLitany.suffrages.21.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0033"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "EN and FR role-aligned historical suffrage, still edition/rights review"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S23",
+      "sourcePath": "postLitany.suffrages.22.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0034",
+        "AO.SM.C0070",
+        "AO.SM.C0082",
+        "AO.SM.C0106",
+        "AO.SM.C0137",
+        "AO.SM.C0251",
+        "AO.SM.C0257",
+        "AO.SM.C0267"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "The historical sources omit Dominus vobiscum pair here; ordinary owns exact formula"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R04-S24",
+      "sourcePath": "postLitany.suffrages.23.1",
+      "stage": "ROG-R04",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0035",
+        "AO.SM.C0071",
+        "AO.SM.C0083",
+        "AO.SM.C0107",
+        "AO.SM.C0138",
+        "AO.SM.C0220",
+        "AO.SM.C0252",
+        "AO.SM.C0258",
+        "AO.SM.C0268"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_SUFFRAGES",
+      "notes": [
+        "The historical sources omit Dominus vobiscum pair here; ordinary owns exact formula"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-OR",
+      "sourcePath": "postLitany.oremus",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0036",
+        "AO.SM.C0072",
+        "AO.SM.C0108",
+        "AO.SM.C0253"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_COLLECT_INVITATION",
+      "notes": [
+        "Ordinary C0036 reusable; do not duplicate formula text. English Let us pray, French Latin Oremus and French oraisons rubric"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O1",
+      "sourcePath": "postLitany.orations.0",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O2",
+      "sourcePath": "postLitany.orations.1",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O3",
+      "sourcePath": "postLitany.orations.2",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [
+        "FR_LATIN_PRO_BIS_SUSPECT"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O4",
+      "sourcePath": "postLitany.orations.3",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [
+        "FR_LATIN_RNEREMNR_SUSPECT"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O5",
+      "sourcePath": "postLitany.orations.4",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [
+        "EN_PAPAL_PLACEHOLDER_AND_TITLE_ORDER",
+        "FR_LATIN_ORANIPOTENS_SUSPECT",
+        "HISTORICAL_PONTIFICI_NOSTRO_CORROBORATES_DONOR"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O6",
+      "sourcePath": "postLitany.orations.5",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O7",
+      "sourcePath": "postLitany.orations.6",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O8",
+      "sourcePath": "postLitany.orations.7",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [
+        "EN_GENERIC_SERVANTS_VS_LATIN_MASCULINE_FEMININE",
+        "FR_FAMULORUM_FAMULARUMQUE_SOURCE"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O9",
+      "sourcePath": "postLitany.orations.8",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [
+        "EN_HISTORICAL_PREVENT_SENSE",
+        "FR_HISTORICAL_PREVENIR_SENSE"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-O10",
+      "sourcePath": "postLitany.orations.9",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR",
+      "notes": [
+        "EN_ETC_ABBREVIATED_CLOSING_FORMULA",
+        "FR_LATIN_MISERIS_VS_DONOR_MISERERIS",
+        "FR_PROSE_HAS_EXPANDED_CLOSING_FORMULA"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-F1",
+      "sourcePath": "postLitany.final.0.1",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0020",
+        "AO.SM.C0025",
+        "AO.SM.C0027",
+        "AO.SM.C0133",
+        "AO.SM.C0136",
+        "AO.SM.C0207",
+        "AO.SM.C0211",
+        "AO.SM.C0218",
+        "AO.SM.C0239",
+        "AO.SM.C0241",
+        "AO.SM.C0266"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_FINAL_DIALOGUE",
+      "notes": [
+        "1883 English and 1862 French final text exists; English has extra Domine exaudi pair at this point"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-F2",
+      "sourcePath": "postLitany.final.1.1",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0034",
+        "AO.SM.C0070",
+        "AO.SM.C0082",
+        "AO.SM.C0106",
+        "AO.SM.C0137",
+        "AO.SM.C0251",
+        "AO.SM.C0257",
+        "AO.SM.C0267"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "ORDINARY_PAIR_ABSENT_HISTORICALLY_AT_THIS_STAGE",
+      "notes": [
+        "Historical 1883/1862 appended collect endings omit this final Dominus/Et cum pair; do not transplant or duplicate"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-F3",
+      "sourcePath": "postLitany.final.2.1",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0035",
+        "AO.SM.C0071",
+        "AO.SM.C0083",
+        "AO.SM.C0107",
+        "AO.SM.C0138",
+        "AO.SM.C0220",
+        "AO.SM.C0252",
+        "AO.SM.C0258",
+        "AO.SM.C0268"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "ORDINARY_PAIR_ABSENT_HISTORICALLY_AT_THIS_STAGE",
+      "notes": [
+        "Historical 1883/1862 appended collect endings omit this final Dominus/Et cum pair; do not transplant or duplicate"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-F4",
+      "sourcePath": "postLitany.final.3.1",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_FINAL_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_FINAL_DIALOGUE",
+      "notes": [
+        "1883 English and 1862 French final text exists; English has extra Domine exaudi pair at this point"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-F5",
+      "sourcePath": "postLitany.final.4.1",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0020",
+        "AO.SM.C0025",
+        "AO.SM.C0027",
+        "AO.SM.C0133",
+        "AO.SM.C0136",
+        "AO.SM.C0207",
+        "AO.SM.C0211",
+        "AO.SM.C0218",
+        "AO.SM.C0239",
+        "AO.SM.C0241",
+        "AO.SM.C0266"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_FINAL_DIALOGUE",
+      "notes": [
+        "1883 English and 1862 French final text exists; English has extra Domine exaudi pair at this point"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-F6",
+      "sourcePath": "postLitany.final.5.1",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "NO_ORDINARY_OR_PRAY_EXACT_MATCH",
+      "ordinaryCueIds": [],
+      "prayIds": [],
+      "triage": "HISTORICAL_EN_FR_FINAL_DIALOGUE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_FINAL_DIALOGUE",
+      "notes": [
+        "1883 English and 1862 French final text exists; English has extra Domine exaudi pair at this point"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    },
+    {
+      "rowId": "ROG-R05-F7",
+      "sourcePath": "postLitany.final.6.1",
+      "stage": "ROG-R05",
+      "exactOwnerClass": "ORDINARY_FORMULA_EXACT_LATIN_CANDIDATE",
+      "ordinaryCueIds": [
+        "AO.SM.C0020",
+        "AO.SM.C0025",
+        "AO.SM.C0027",
+        "AO.SM.C0133",
+        "AO.SM.C0136",
+        "AO.SM.C0207",
+        "AO.SM.C0211",
+        "AO.SM.C0218",
+        "AO.SM.C0239",
+        "AO.SM.C0241",
+        "AO.SM.C0266"
+      ],
+      "prayIds": [],
+      "triage": "EXACT_OWNER_CANDIDATE",
+      "vernacularWitnessTier": "HISTORICAL_EN_FR_FINAL_DIALOGUE",
+      "notes": [
+        "1883 English and 1862 French final text exists; English has extra Domine exaudi pair at this point"
+      ],
+      "publication": "REVIEW_PENDING_NOT_PROMOTED"
+    }
+  ]
+}
