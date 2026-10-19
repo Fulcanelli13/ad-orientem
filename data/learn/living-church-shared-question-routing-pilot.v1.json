@@ -5826,6 +5826,41 @@
         "en": "Do you mean the vestments themselves, or what their colours signify?",
         "fr": "Parlez-vous des ornements eux-mêmes, ou de ce que signifient leurs couleurs ?"
       }
+    },
+    {
+      "id": "opening_prayer_unspecified",
+      "phrases": {
+        "en": [
+          "tell me about the prayer at the beginning of mass",
+          "what is the prayer at the start of mass",
+          "what does the priest say at the beginning of mass"
+        ],
+        "fr": [
+          "quelle est la prière au début de la messe",
+          "que dit le prêtre au commencement de la messe"
+        ]
+      },
+      "candidates": [
+        "mass.introit",
+        "mass.kyrie",
+        "mass.collect"
+      ],
+      "displayOptions": {
+        "en": [
+          "The entrance and preparatory prayers",
+          "The Kyrie sung near the beginning",
+          "The Collect prayed after the Gloria or Kyrie"
+        ],
+        "fr": [
+          "L'entrée et les prières préparatoires",
+          "Le Kyrie chanté au début",
+          "La collecte après le Gloria ou le Kyrie"
+        ]
+      },
+      "intro": {
+        "en": "Which prayer at the beginning of Mass do you mean?",
+        "fr": "De quelle prière du début de la Messe parlez-vous ?"
+      }
     }
   ],
   "blockedPatterns": [
@@ -5929,7 +5964,7 @@
     "curatedTopicRelationships": 77,
     "relationshipsAreDoctrinalImplications": false,
     "churchCrisisDossiersIndexed": 25,
-    "explicitAmbiguities": 5,
+    "explicitAmbiguities": 6,
     "naturalUserVariantsCalibrated": true,
     "naturalUserVariantsAreHistoricalSpeech": false,
     "unapprovedAdviceSafeguards": 5,
