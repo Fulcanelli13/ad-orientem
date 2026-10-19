@@ -454,19 +454,22 @@ try{
   }));
   assert.equal(inlineMonth.cells,42,"Month lost its 42-day six-week grid");
   assert.equal(inlineMonth.markers,42,"Month lost its liturgical rank/colour markers");
-  assert.deepEqual(inlineMonth.views,["calendar","major","temporale","sanctorale","practices"],
-    "Month omitted an essential discoverable view");
+  assert.deepEqual(inlineMonth.views,["calendar","temporale","sanctorale"],
+    "Month must expose only All, Temporale and Sanctorale filters");
   assert.ok(inlineMonth.overflow<=1,"Month clips its grid on a 390px phone");
   assert.equal(inlineMonth.active,"page","Today did not identify the Month tab");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalHybridMajorSection").count(),1,
+    "Major celebrations must appear beneath the grid");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalHybridPracticesSection").count(),1,
+    "Practices and customs must appear beneath the grid");
   await shot("02d-calendar-month");
-  for(const category of ["major","temporale","sanctorale","practices"]){
-    await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='"+category+"']").click();
-    await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='"+category+"']",
-      {state:"visible",timeout:5000});
-    assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='"+category+"'] [data-cal-month-index-date]").count()>=3,
-      "Month category has no date-linked content: "+category);
+  for(const category of ["temporale","sanctorale"]){
+    await page.locator("#ao-calendar-modular-root [data-cal-month-view='"+category+"']").click();
+    assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid").getAttribute("data-cal-month-filter"),category);
+    assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42,
+      "Cycle filter must preserve the same 42 clickable date squares");
   }
-  await shot("02g-calendar-month-categories");
+  await shot("02g-calendar-month-filters");
 
   await page.locator(todayTabs+" [data-home-calendar-today]").click();
   await page.waitForFunction(()=>document.querySelector(".homeScreen.aoTodayV2 [data-home-calendar-inline]")?.hidden===true,

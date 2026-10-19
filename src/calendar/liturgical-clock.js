@@ -264,7 +264,7 @@ export function renderLiturgicalClock({
  const currentMeaning=SEASON_GUIDE[activePeriod?.id]?.focus?.[fr?1:0]||"";
  const periodEnd=activeGroup?.end||year.end;
   return '<section class="aoClock" data-ao-liturgical-clock="v1" data-year-start="'+E(year.start)+'" aria-label="'+E(L(fr,"Liturgical Clock","Horloge liturgique"))+'">'
-  +'<div class="aoClockHeader"><div class="aoClockYearIdentity"><small>1962</small></div>'
+  +'<div class="aoClockHeader">'
   +'<div class="aoClockYearNav"><button type="button" data-cal-clock-year="-1" aria-label="'+E(L(fr,"Previous liturgical year","Année liturgique précédente"))+'">‹</button><strong>'+E(year.label)+'</strong><button type="button" data-cal-clock-year="1" aria-label="'+E(L(fr,"Next liturgical year","Année liturgique suivante"))+'">›</button></div>'
   +(todayDate>=year.start&&todayDate<=year.end?"":'<button type="button" class="aoClockReturnToday" data-cal-clock-today>'+E(L(fr,"Today","Aujourd’hui"))+'</button>')+'</div>'
   +'<div class="aoClockMain"><div class="aoClockDial" data-verified-days="'+daily.verified+'" data-total-days="'+daily.total+'" style="--ao-clock-daily-gradient:'+E(daily.gradient)+'"><div class="aoClockDailyTrack" aria-hidden="true"></div><svg viewBox="0 0 600 600" role="group" aria-label="'+E(L(fr,"Liturgical seasons and verified major celebrations","Temps liturgiques et grandes célébrations vérifiées"))+'">'
@@ -281,7 +281,7 @@ export function renderLiturgicalClock({
    +feasts.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(f=>'<button type="button" data-cal-clock-feast="'+E(f.date)+'"><small>'+E(shortDate(f.date,fr))+'</small><span>'+E(f.title)+'</span></button>').join("")+'</nav></details>':"")+'</div>'
   +(selection?detailHtml({selection,year,feasts,fr}):'<div class="aoClockContext"><button type="button" data-cal-clock-season="'+E(activeGroup?.id||"after-pentecost")+'"><strong>'+E(activeGroup?.[fr?"fr":"en"]||"")+'</strong><span>'+E(longDate(activeGroup?.start||year.start,fr))+' – '+E(longDate(periodEnd,fr))+'</span><small>'+E(currentMeaning)+'</small></button></div>')
   +(cards?'<nav class="aoClockUpcoming" aria-label="'+E(L(fr,"Next major feast dates","Prochaines grandes fêtes"))+'"><strong>'+E(L(fr,"Upcoming","À venir"))+'</strong><div>'+cards+'</div></nav>':"")
-  +'<details class="aoClockSources"><summary>'+E(L(fr,"1962 sources and verification","Sources et vérification de 1962"))+'</summary><p data-cal-year-colour-status>'+E(L(fr,"Daily colours from the verified 1962 calendar","Couleurs quotidiennes du calendrier 1962 vérifié"))+' · '+daily.verified+'/'+daily.total+'</p><p>'+E(L(fr,"Only resolved Mass colours are drawn in the thin outer band. Outlined feast landmarks are traditional calendar dates; their observed Mass is confirmed when opened.","Seules les couleurs des messes résolues figurent sur la couronne extérieure. Les repères évidés sont des dates du calendrier traditionnel ; la messe observée est confirmée à l’ouverture."))+'</p><a href="https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=607" target="_blank" rel="noopener noreferrer">'+E(L(fr,"1960 General Rubrics","Rubriques générales de 1960"))+' ↗</a></details>'
+  +'<details class="aoClockSources"><summary>'+E(L(fr,"About this calendar","À propos du calendrier"))+'</summary><p data-cal-year-colour-status>'+E(L(fr,"Daily colours from the verified 1962 calendar","Couleurs quotidiennes du calendrier 1962 vérifié"))+' · '+daily.verified+'/'+daily.total+'</p><p>'+E(L(fr,"Only resolved Mass colours are drawn in the thin outer band. Outlined feast landmarks are traditional calendar dates; their observed Mass is confirmed when opened.","Seules les couleurs des messes résolues figurent sur la couronne extérieure. Les repères évidés sont des dates du calendrier traditionnel ; la messe observée est confirmée à l’ouverture."))+'</p><a href="https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf#page=607" target="_blank" rel="noopener noreferrer">'+E(L(fr,"1960 General Rubrics","Rubriques générales de 1960"))+' ↗</a></details>'
   +'</section>';
 }
 export const liturgicalClockCss=[
@@ -405,5 +405,17 @@ export const liturgicalClockCss=[
 ".aoClockSources p{margin:4px 4px 8px}.aoClockSources a{color:var(--text)}",
 ".aoClockFeastMenu{margin:0 auto 5px!important}",
 "@media(max-width:560px){.aoClockContext strong{font-size:20px}.aoClockContext span{font-size:10px}.aoClockUpcoming>div{gap:0 10px!important}.aoClockUpcomingItem span{font-size:12px}}",
+
+
+/* The Year wheel owns the visual cycle; upcoming events are a vertical chronology. */
+".aoClockUpcoming{margin:14px auto 15px!important;padding:15px 0 0!important}",
+".aoClockUpcoming>strong{font:500 18px/1.3 var(--ao-font-display,\"EB Garamond\",Georgia,serif)!important;letter-spacing:0!important;text-transform:none!important;color:var(--text)!important}",
+".aoClockUpcoming>div{display:grid!important;grid-template-columns:1fr!important;gap:0!important;flex-wrap:nowrap!important;border-left:1px solid rgba(202,182,145,.33);margin:12px 0 0 8px!important}",
+".aoClockUpcoming .aoClockUpcomingItem{display:grid!important;grid-template-columns:72px minmax(0,1fr) 12px!important;align-items:center!important;gap:10px!important;position:relative;min-height:52px!important;padding:9px 8px 9px 18px!important;width:100%;text-align:left!important;border:0!important;border-radius:0!important;border-bottom:1px solid rgba(227,212,187,.09)!important;background:transparent!important}",
+".aoClockUpcoming .aoClockUpcomingItem:before{content:'';position:absolute;left:-5px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--liturgical);box-shadow:0 0 0 4px var(--bg)}",
+".aoClockUpcomingItem small{font:500 13px/1.3 var(--ao-font-ui,\"EB Garamond\",Georgia,serif)!important}",
+".aoClockUpcomingItem span{font:400 17px/1.3 var(--ao-font-display,\"EB Garamond\",Georgia,serif)!important;overflow-wrap:break-word}",
+".aoClockUpcomingItem i{font-style:normal;color:var(--muted);font-size:13px}",
+"@media(max-width:560px){.aoClockUpcoming>div{grid-template-columns:1fr!important}.aoClockUpcoming .aoClockUpcomingItem{grid-template-columns:59px minmax(0,1fr) 12px!important;gap:7px!important}.aoClockUpcomingItem span{font-size:16px!important}}",
 
 ].join("\n");

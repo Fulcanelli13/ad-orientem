@@ -154,12 +154,12 @@ try{
  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.setView?.("year"));
  await page.locator("#ao-calendar-modular-root [data-cal-view='year'].active").waitFor({timeout:8000});
  await page.locator("#ao-calendar-modular-root [data-cal-view='picker']").click();
- await page.locator("#ao-calendar-modular-root [data-cal-month-view='major']").click();
+ await page.locator("#ao-calendar-modular-root [data-cal-month-view='calendar']").click();
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().pickerMonthId),targetDate.slice(0,7),
    "Year-to-Month must use the selected feast's month, not a stale browsed month");
- await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").waitFor({timeout:8000});
+ await page.locator("#ao-calendar-modular-root .aoCalHybridMajorSection").waitFor({timeout:8000});
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().view),"picker");
- assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthView),"major");
+ assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthView),"calendar");
  // The Today control is a navigation action, not merely a month-grid scroll.
  await page.locator("#ao-calendar-modular-root [data-cal-today]").click();
  await page.locator("#ao-calendar-modular-root [data-cal-view='day'].active").waitFor({timeout:8000});
@@ -171,6 +171,8 @@ try{
  // for all original daily Proper sources before enabling download.
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-10-07")),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
+ await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:90000});
+ await page.locator("#ao-calendar-modular-root .aoCalV2MonthTools > summary").click();
  await page.locator("#ao-calendar-modular-root [data-cal-export-ics='2026-10']").waitFor({state:"visible",timeout:12000});
  try{
    await page.waitForFunction(()=>{
@@ -258,6 +260,7 @@ try{
  assert.match(await sources.textContent(),/General Roman Calendar|Calendrier romain général/);
  assert.equal(await sources.locator('a[href*="vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf"]').count(),1);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("picker")),true);
+ await page.locator("#ao-calendar-modular-root .aoCalV2MonthTools > summary").click();
  const input=page.locator("#ao-calendar-modular-root [data-cal-input]");
  await input.fill("19/03/2028");
  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.paint());
@@ -355,7 +358,7 @@ try{
 
  assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),"2027-04-05"),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("major")),true);
- await page.locator("#ao-calendar-modular-root [data-cal-month-index='major']").waitFor({state:"visible",timeout:12000});
+ await page.locator("#ao-calendar-modular-root .aoCalHybridMajorSection").waitFor({state:"visible",timeout:12000});
  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:45000});
  const transferred=await page.locator("#ao-calendar-modular-root [data-cal-month-index-date='2027-04-05']").textContent();
  assert.match(transferred||"",/Annunciation|Annonciation/i,"Transferred Annunciation absent from April's observed Major index");
@@ -364,9 +367,9 @@ try{
  await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setView("day"));
  assert.equal(await page.evaluate(id=>globalThis.AO_CALENDAR_APP_V1.select(id),"2027-08-15"),true);
  assert.equal(await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.setMonthView("sanctorale")),true);
- await page.locator("#ao-calendar-modular-root [data-cal-month-index='sanctorale']").waitFor({state:"visible",timeout:12000});
+ await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid[data-cal-month-filter='sanctorale']").waitFor({state:"visible",timeout:12000});
  await page.waitForFunction(()=>globalThis.AO_CALENDAR_APP_V1?.status?.().monthReady===true,null,{timeout:45000});
- const assumptionEntry=await page.locator("#ao-calendar-modular-root [data-cal-month-index-date='2027-08-15']").textContent();
+ const assumptionEntry=await page.locator("#ao-calendar-modular-root [data-cal-pick-date='2027-08-15'] .aoCalMonthName").textContent();
  assert.match(assumptionEntry||"",/Assumption|Assomption/i,"Sunday Assumption must remain Sanctorale by observed principal Mass");
  console.log("PASS Calendar 1962 source-oracle sample: 14 observed days and transferred April feast");
  // Real Calendar -> source-bound Scripture -> Calendar return on the canonical
