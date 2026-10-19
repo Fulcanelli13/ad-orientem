@@ -1798,6 +1798,8 @@ export async function mountNativeReaderPreview({
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
     reader.renderMoment(projected.moment);
+    previewNextRiteStage(projected.state.card,
+      ready.aspergesController.cards[projected.state.index+1]??null);
     root.dataset.r17NativeEvent="asperges";
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner="R20_ASPERGES_NATIVE";
@@ -1876,6 +1878,10 @@ export async function mountNativeReaderPreview({
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
     reader.renderMoment(projected.moment);
+    previewNextRiteStage(projected.state.card,
+      controller.cards[projected.state.index+1]??null,{
+        participating:kind==="PALM"&&projected.state.processionParticipant===true,
+      });
     syncRiteChoice(kind,projected.state);
     palmGospelCueVisible=null;
     root.dataset.r17NativeEvent=kind.toLowerCase();
@@ -1943,6 +1949,10 @@ export async function mountNativeReaderPreview({
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
     reader.renderMoment(projected.moment);
+    previewNextRiteStage(projected.state.card,
+      ready.candlemasController.cards[projected.state.index+1]??null,{
+        participating:projected.state.processionParticipant===true,
+      });
     syncRiteChoice("CANDLEMAS",projected.state);
     root.dataset.r17NativeEvent="candlemas";
     root.dataset.r17NativeCue="unresolved";
@@ -2007,6 +2017,9 @@ export async function mountNativeReaderPreview({
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
     reader.renderMoment(projected.moment);
+    const selection=prepared?.session?.resolvedMass?.provenance?.rogationSelection??{};
+    previewNextRiteStage(contextualRogationCard(projected.state.card,selection),
+      contextualRogationCard(ready.rogationsController.cards[projected.state.index+1]??null,selection));
     root.dataset.r17NativeEvent="rogations";
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner="R25_ROGATIONS_NATIVE";
@@ -2080,6 +2093,11 @@ export async function mountNativeReaderPreview({
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
     reader.renderMoment(projected.moment);
+    previewNextRiteStage(projected.state.card,
+      controller.cards?.[projected.state.index+1]??null,{
+        participating:projected.state.processionParticipant===true ||
+          projected.state.burialParticipant===true,
+      });
     syncRiteChoice(kind,projected.state);
     root.dataset.r17NativeEvent=kind.toLowerCase();
     root.dataset.r17NativeCue="unresolved";
