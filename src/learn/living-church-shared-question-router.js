@@ -71,12 +71,15 @@ export function createSharedQuestionRouter(catalog){
   const lang=opts.language==="fr"?"fr":"en";
   const history=opts.history||{visitedCharacters:[current],handoffCount:0};
   const payload=present(topic,lang);
+  const evidence=opts.matchEvidence||frozen({basis:"NOT_CLASSIFIED",score:null});
+  const needsConfirmation=!["EXACT_VARIANT","EXPLICIT_REFORMULATION_CHOICE"].includes(evidence.basis);
   if(topic.coverage==="SOURCE_GAP")
    return frozen({kind:"no_coverage",reason:"TOPIC_SOURCE_GAP",topic:payload,
     topicId:topic.id,originalQuestion:opts.originalQuestion||input,
     sourceGap:topic.sourceGapReason,answerText:null,approvedReply:false});
   const common={topicId:topic.id,language:lang,originalQuestion:opts.originalQuestion||input,
    sourceRefs:payload.sourceRefs,approvedReply:false,answerText:null,
+   matchEvidence:evidence,requiresQuestionConfirmation:needsConfirmation,
    explanation:"Research navigation only. No character answer is authored."};
   if(topic.character===current)
    return frozen({kind:"source_navigation",character:current,navigationRoute:catalog.owners[current].navigateTo,
@@ -111,11 +114,11 @@ export function createSharedQuestionRouter(catalog){
       reference:rule.sourceRef,answerText:null,approvedReply:false});
   if(opts.chosenTopicId){
    const chosen=byId.get(opts.chosenTopicId);if(!chosen)throw Error("Unrecognised chosen topic");
-   return resolve(chosen,input,fixed);
+   return resolve(chosen,input,{...fixed,matchEvidence:frozen({basis:"EXPLICIT_REFORMULATION_CHOICE",score:1})});
   }
   // Existing topic context can clarify short follow-ups without another dialogue turn.
   if(opts.context?.activeTopicId==="faith.real_presence"&&/\b(blood|sang|under (?:one|either) species|chaque espece)\b/i.test(accents(input)))
-   return resolve(byId.get("faith.whole_christ"),input,fixed);
+   return resolve(byId.get("faith.whole_christ"),input,{...fixed,matchEvidence:frozen({basis:"CONTEXT_FOLLOW_UP_RULE",score:null})});
   for(const rule of catalog.ambiguities){
    if(phrases(rule.phrases,lang).some(p=>similarity(input,[p])>.91))return clarify(rule,input,lang,fixed);
   }
@@ -130,7 +133,10 @@ export function createSharedQuestionRouter(catalog){
     clarification:lang==="fr"?"Quelle question voulez-vous poser ?":"Which of these questions did you mean?",
     options,answerText:null,approvedReply:false});
   }
-  return resolve(first.t,input,fixed);
+  const literal=phrases(first.t.questionVariants,lang).some(v=>norm(v)===norm(input));
+  return resolve(first.t,input,{...fixed,matchEvidence:frozen({
+   basis:literal?"EXACT_VARIANT":"LEXICAL_RANKED",
+   score:Number(first.score.toFixed(3))})});
  }
  function acceptHandoff(proposal,{accept=false,history={}}={}){
   const canonical=byId.get(proposal?.topicId);
