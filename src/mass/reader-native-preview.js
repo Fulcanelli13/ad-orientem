@@ -1158,11 +1158,11 @@ export async function mountNativeReaderPreview({
       });
     }
 
-    function showEasterVigil(){
+    function showEasterVigil({forceCardUpdate=false}={}){
       inVigil=true;
       stage="VIGIL_ACTIVE";
       const moment=easterVigilMoment();
-      if(moment)reader.renderMoment(moment);
+      if(moment)reader.renderMoment(forceCardUpdate?{...moment,cardUpdate:true}:moment);
       root.dataset.r17NativeRiteRecord=controller.project().step?.recordId??"none";
       root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
       root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
@@ -1231,7 +1231,7 @@ export async function mountNativeReaderPreview({
         disposeReadingFocus=()=>{};
         // Preserve the original stage (Vigil vs projected Vigil Mass)
         // and its exact reader/source position on every mode change.
-        if(inVigil)showEasterVigil();
+        if(inVigil)showEasterVigil({forceCardUpdate:true});
         else showVigilMass(currentMass);
         const scroll=host.querySelector?.(".ao-prayer-card");
         if(scroll)scroll.scrollTop=Math.min(top,Math.max(0,scroll.scrollHeight-scroll.clientHeight));
