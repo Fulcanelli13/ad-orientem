@@ -356,7 +356,7 @@ function hydrateMonthCell(id){
   cell.classList.toggle("sunday",data.sunday);
   cell.classList.toggle("major",Boolean(data.name)&&data.ready);
   cell.classList.toggle("projected",data.projected);
-  cell.setAttribute("aria-label",data.aria);
+  cell.setAttribute("aria-label",data.aria+(cell.classList.contains("hasPractice")?" · "+L("Traditional practice","Pratique traditionnelle"):""));
   const name=cell.querySelector?.(".aoCalMonthName");if(name)name.textContent=data.name;
 }
 function weekLabel(id){const ids=weekIds(id);return `${displayDate(ids[0])} – ${displayDate(ids[6])}`}
