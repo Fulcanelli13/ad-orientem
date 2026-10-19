@@ -33,6 +33,26 @@ try{
    await page.goto("http://127.0.0.1:4297/tests/fixtures/reader-phone-harness.html?production=1&aoLiveCards=65",
      {waitUntil:"networkidle",timeout:55000});
    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",{},{timeout:25000});
+   // A card displaying the same sung words must keep the Schola's manual
+   // controls available in a compact dock, without duplicating its lyrics.
+   await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const kyrie=api.model.cards.find(card=>card.title==="Kyrie");
+     if(!kyrie)throw new Error("KYRIE_SOURCE_CARD_MISSING");
+     api.showSequence(kyrie.sequence);
+   });
+   await page.waitForFunction(()=>
+     document.querySelector(".ao-schola-dock")?.dataset.shared==="true");
+   assert.equal(await page.locator(".ao-schola-dock").isVisible(),true,
+     "Shared central chant hid the Schola correction controls");
+   assert.equal(await page.locator(".ao-schola-main").isVisible(),false,
+     "Central Kyrie text was unnecessarily duplicated in the Schola dock");
+   assert.equal(await page.locator('[data-role="schola-status"]').textContent(),"EXPECTED",
+     "Unobserved Schola text was presented as confirmed singing");
+   await page.locator("[data-schola-next]").click();
+   await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.index===1);
+   const sharedAdvance=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title);
+   assert.equal(sharedAdvance,"Kyrie","Shared Schola manual correction moved the main Mass card");
    const chosen=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
      const sanctus=api.model.cards.find(card=>card.title==="Sanctus — Benedictus");
@@ -109,9 +129,17 @@ try{
    assert.equal((await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola.cueId)),
      "AO.SM.C0147","Delayed Benedictus barrier was not placed after Hosanna");
    const release=page.locator("[data-schola-release]");
-   // The model updates synchronously, the actual dock control only after
-   // the next reader requestAnimationFrame. Never mistake that handoff for
-   // a permanently missing observable action.
+   // The priest's printed Benedictus and the Schola's post-Chalice singing
+   // are NOT the same event. No release before either Consecration.
+   await page.waitForFunction(()=>document.querySelector("[data-schola-release]")?.hidden===true);
+   assert.equal(await release.isVisible(),false,
+     "A printed priest's Benedictus falsely released the polyphonic Schola");
+   await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const afterChalice=api.model.cards.find(card=>card.title==="Unde et memores");
+     if(!afterChalice)throw new Error("POST_CHALICE_SOURCE_CARD_MISSING");
+     api.showSequence(afterChalice.sequence);
+   });
    await page.waitForFunction(()=>document.querySelector("[data-schola-release]")?.hidden===false,
      null,{timeout:7000});
    assert.equal(await page.locator("[data-schola-next]").isDisabled(),true);
@@ -140,7 +168,7 @@ try{
    await page.screenshot({path:resolve(out,"live-schola-correction-"+width+".png"),animations:"disabled"});
   }finally{await ctx.close();}
  }
- console.log("PASS LIVE 64 Schola: independent tap next/previous, 320/390 phone layout, manual pause ownership, no Mass focus movement");
+ console.log("PASS LIVE Schola: manual phrase clock, no early Benedictus release, 320/390 phone layout, no Mass focus movement");
 }finally{
  await browser?.close();
  await new Promise(resolve=>server.close(resolve));
