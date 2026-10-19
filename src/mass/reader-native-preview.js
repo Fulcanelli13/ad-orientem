@@ -1356,6 +1356,7 @@ export async function mountNativeReaderPreview({
     });
   ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
   let riteChoice=null;
+  let psalmClericsChoice=null;
   let palmGospelCueVisible=null;
 
   function createRiteChoice(){
@@ -1374,6 +1375,21 @@ export async function mountNativeReaderPreview({
       '</span>';
     stage.append(panel);
     riteChoice=panel;
+    // Holy Thursday Psalm 21 is conditional on the presence of clerics
+    // *in choir*, not the number of lay people or whether Mass is sung.
+    const psalmPanel=doc.createElement("div");
+    psalmPanel.className="ao-rite-choice ao-rite-psalm-choice";
+    psalmPanel.dataset.role="rite-psalm-choice";
+    psalmPanel.setAttribute("role","group");
+    psalmPanel.setAttribute("aria-label","Clerics present for altar-stripping Psalm");
+    psalmPanel.innerHTML='<span class="ao-rite-choice-label">Clerics reciting Psalm?</span>'+
+      '<span class="ao-rite-choice-actions">'+
+      '<button type="button" data-psalm-clerics="unknown">Unknown</button>'+
+      '<button type="button" data-psalm-clerics="no">No</button>'+
+      '<button type="button" data-psalm-clerics="yes">Yes</button></span>';
+    psalmPanel.hidden=true;
+    stage.append(psalmPanel);
+    psalmClericsChoice=psalmPanel;
   }
 
   function syncRiteChoice(kind,state){
@@ -1409,6 +1425,15 @@ export async function mountNativeReaderPreview({
     }
   }
 
+  function syncPsalmClericsChoice(kind,state){
+    if(!psalmClericsChoice)return;
+    const eligible=kind==="HOLY_THURSDAY_POST"&&state?.card?.id==="HT-R05";
+    psalmClericsChoice.hidden=!eligible;
+    if(!eligible)return;
+    const selected=state.clericsPresent===null?"unknown":state.clericsPresent?"yes":"no";
+    for(const button of psalmClericsChoice.querySelectorAll("[data-psalm-clerics]"))
+      button.setAttribute("aria-pressed",String(button.dataset.psalmClerics===selected));
+  }
   function syncPalmGospelCue(){
     if(!inPalm || ready.palmController?.project?.().card?.id!=="PALM-R03")return;
     const card=host.querySelector?.(".ao-prayer-card");
@@ -1439,6 +1464,16 @@ export async function mountNativeReaderPreview({
   }
 
   function onRiteChoiceClick(event){
+    const psalmButton=event.target?.closest?.("[data-psalm-clerics]");
+    if(psalmButton && inHolyThursdayPost && psalmClericsChoice &&
+      psalmClericsChoice.contains(psalmButton) && !psalmClericsChoice.hidden){
+      event.stopPropagation?.();
+      const option=psalmButton.dataset.psalmClerics;
+      const selected=option==="unknown"?null:option==="yes";
+      ready.holyThursdayPostController.setClericsPresent(selected);
+      showHolyThursdayPost();
+      return;
+    }
     const button=event.target?.closest?.("[data-rite-participation]");
     if(!button||!riteChoice?.contains?.(button)||riteChoice.hidden)return;
     event.stopPropagation?.();
@@ -2138,6 +2173,7 @@ export async function mountNativeReaderPreview({
           projected.state.burialParticipant===true,
       });
     syncRiteChoice(kind,projected.state);
+    syncPsalmClericsChoice(kind,projected.state);
     root.dataset.r17NativeEvent=kind.toLowerCase();
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner=projected.config.owner;
@@ -2156,6 +2192,8 @@ export async function mountNativeReaderPreview({
       handoff:projected.state.handoff??null,
       objectState:projected.state.objectState??null,
       joiningState:projected.state.joiningState??null,
+      clericsPresent:projected.state.clericsPresent??null,
+      psalmPerformance:projected.state.psalmPerformance??null,
       processionActive:projected.state.processionActive??null,
       burialParticipant:kind==="REQUIEM_ABSOLUTION" ? projected.state.burialParticipant??false : null,
     });
@@ -3111,6 +3149,7 @@ export async function mountNativeReaderPreview({
     setCorpusChristiProcessionParticipant:value=>{if(!ready.corpusChristiController)return null;const result=ready.corpusChristiController.setProcessionParticipant(value);return inCorpusChristi ? showCorpusChristi() : result},
     setCorpusChristiSacramentalState:value=>{if(!ready.corpusChristiController)return null;const result=ready.corpusChristiController.setSacramentalState(value);return inCorpusChristi ? showCorpusChristi() : result},
     setHolyThursdayJoiningState:value=>{if(!ready.holyThursdayPostController)return null;const result=ready.holyThursdayPostController.setJoiningState(value);return inHolyThursdayPost ? showHolyThursdayPost() : result},
+    setHolyThursdayClericsPresent:value=>{if(!ready.holyThursdayPostController)return null;const result=ready.holyThursdayPostController.setClericsPresent(value);return inHolyThursdayPost ? showHolyThursdayPost() : result},
     setGenericProcessionParticipant:value=>{if(!ready.genericProcessionController)return null;const result=ready.genericProcessionController.setParticipating(value);return inGenericProcession ? showGenericProcession() : result},
     setRequiemBurialParticipant:value=>{if(!ready.requiemAbsolutionController)return null;const result=ready.requiemAbsolutionController.setBurialParticipant(value);return inRequiemAbsolution ? showRequiemAbsolution() : result},
     markActuallySprinkled:()=>{
