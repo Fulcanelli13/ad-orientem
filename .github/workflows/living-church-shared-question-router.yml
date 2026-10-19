@@ -6,6 +6,7 @@ on:
     paths:
       - data/learn/living-church-shared-question-routing-pilot.v1.json
       - data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+      - data/learn/living-church-pius-x-fresh-bilingual-60.v1.json
       - src/learn/living-church-shared-question-router.js
       - src/learn/living-church-historical-focus.js
       - src/learn/living-church-hybrid-question-router.js
@@ -17,6 +18,7 @@ on:
       - tests/living-church-hybrid-question-router.mjs
       - tests/living-church-shared-question-router.mjs
       - tests/living-church-historical-document-navigation.mjs
+      - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
       - tests/living-church-question-retrieval-probes.mjs
       - tests/living-church-routing-holdout.mjs
       - tests/living-church-fresh-question-probes.mjs
@@ -26,6 +28,7 @@ on:
     paths:
       - data/learn/living-church-shared-question-routing-pilot.v1.json
       - data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+      - data/learn/living-church-pius-x-fresh-bilingual-60.v1.json
       - src/learn/living-church-shared-question-router.js
       - src/learn/living-church-historical-focus.js
       - src/learn/living-church-hybrid-question-router.js
@@ -37,6 +40,7 @@ on:
       - tests/living-church-hybrid-question-router.mjs
       - tests/living-church-shared-question-router.mjs
       - tests/living-church-historical-document-navigation.mjs
+      - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
       - tests/living-church-question-retrieval-probes.mjs
       - tests/living-church-routing-holdout.mjs
       - tests/living-church-fresh-question-probes.mjs
@@ -61,9 +65,18 @@ jobs:
           node --check src/learn/living-church-evaluation-gate.js
           node tests/living-church-shared-question-router.mjs
           node tests/living-church-historical-document-navigation.mjs
+          node tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
           node tests/living-church-question-retrieval-probes.mjs
           node tests/living-church-routing-holdout.mjs
           node tests/living-church-fresh-question-probes.mjs
           node tests/living-church-hybrid-question-router.mjs
           node tests/living-church-embedding-candidate-router.mjs
           node tests/living-church-evaluation-gate.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-fresh-bilingual-60-plus-8-report
+          path: research-out/living-church-pius-x-fresh-60-plus-8-results.v1.json
+          if-no-files-found: warn
+          retention-days: 30
