@@ -1,0 +1,184 @@
+{
+  "schema": "AO_MAGISTERIUM_SOURCE_PASSAGE_PILOT_V1",
+  "created": "2026-10-19",
+  "status": "PASSAGE_LOCATORS_ONLY_NO_TEXT_COPIED",
+  "doctrineRegistry": "data/learn/magisterium-ultra-master-doctrines.v1.json",
+  "documentRegistry": "data/learn/magisterium-ultra-master-documents.v1.json",
+  "sourceHierarchy": [
+    "original_issued_document",
+    "verified_original_language_passage",
+    "independent_translation",
+    "denzinger_edition_specific_crosswalk"
+  ],
+  "records": [
+    {
+      "passageId": "MG-P001",
+      "documentId": "TRENT-IV-1546",
+      "localLocator": "Session IV, decree on sacred books and traditions, opening",
+      "doctrineIds": [
+        "APOSTOLIC_TRADITION",
+        "SCRIPTURE_CANON"
+      ],
+      "verifiedSourceUrl": "https://rkdocumenten.nl/toondocument/391-sessio-iv-recipiuntur-libris-sacris-et-de-traditionibus-recipiendis-lat/?idCode=1.4",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 1501,
+        "oldNumber": 783,
+        "sourceEvidence": "https://rkdocumenten.nl/toondocument/391-sessio-iv-recipiuntur-libris-sacris-et-de-traditionibus-recipiendis-lat/?idCode=1.4"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED"
+    },
+    {
+      "passageId": "MG-P002",
+      "documentId": "TRENT-XIII-1551",
+      "localLocator": "Session XIII, chapter IV, De transubstantiatione",
+      "doctrineIds": [
+        "TRANSUBSTANTIATION",
+        "EUCHARIST_REAL_PRESENCE"
+      ],
+      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": 1642,
+        "oldNumber": null,
+        "sourceEvidence": "https://d3scmnh0khw7n8.cloudfront.net/wp-content/uploads/2022/08/13144254/SH-EMofHC-Guidelines.pdf"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED"
+    },
+    {
+      "passageId": "MG-P003",
+      "documentId": "TRENT-XIII-1551",
+      "localLocator": "Session XIII, canon I concerning the Most Holy Eucharist",
+      "doctrineIds": [
+        "EUCHARIST_REAL_PRESENCE"
+      ],
+      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XIII/Sacrament_of_the_Eucharist",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": 1651,
+        "oldNumber": null,
+        "sourceEvidence": "https://d3scmnh0khw7n8.cloudfront.net/wp-content/uploads/2022/08/13144254/SH-EMofHC-Guidelines.pdf"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED"
+    },
+    {
+      "passageId": "MG-P004",
+      "documentId": "TRENT-XIV-1551",
+      "localLocator": "Session XIV, doctrine on Penance, opening and chapter II (pending exact paragraph review)",
+      "doctrineIds": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "verifiedSourceUrl": "https://www.papalencyclicals.net/councils/trent/the-complete-text.htm",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED"
+    },
+    {
+      "passageId": "MG-P005",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, doctrine on the Sacrifice of the Mass, chapter II",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": 1743,
+        "oldNumber": 940,
+        "sourceEvidence": "https://rkdocumenten.nl/denzinger/"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED"
+    },
+    {
+      "passageId": "MG-P006",
+      "documentId": "VATICAN-I-PASTOR-AETERNUS-1870",
+      "localLocator": "Chapter IV, final definition on ex cathedra teaching",
+      "doctrineIds": [
+        "PAPAL_INFALLIBILITY"
+      ],
+      "verifiedSourceUrl": "https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html",
+      "verifiedLanguage": "la",
+      "crosswalkCandidate": {
+        "modernNumber": 3074,
+        "oldNumber": 1839,
+        "sourceEvidence": "https://rkdocumenten.nl/denzinger/"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": true,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED"
+    },
+    {
+      "passageId": "MG-P007",
+      "documentId": "INEFFABILIS-DEUS-1854",
+      "localLocator": "Definition of the Immaculate Conception, opening 'declaramus, pronuntiamus et definimus' in original",
+      "doctrineIds": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "verifiedSourceUrl": "https://www.vatican.va/content/pius-ix/it/documents/18541208-costituzione-apostolica-ineffabilis-deus.html",
+      "verifiedLanguage": "it",
+      "crosswalkCandidate": {
+        "modernNumber": 2803,
+        "oldNumber": 1641,
+        "sourceEvidence": "https://www.magisterium.com/docs/17f50f07-de81-4bf5-997c-f41ee830c033/ref/2803"
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "CANDIDATE_NEEDS_EDITION_CONFIRMATION",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED"
+    },
+    {
+      "passageId": "MG-P008",
+      "documentId": "TRENT-XXII-1562",
+      "localLocator": "Session XXII, doctrine on the Sacrifice of the Mass, chapter I",
+      "doctrineIds": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "verifiedSourceUrl": "https://en.wikisource.org/wiki/Canons_and_Decrees_of_the_Council_of_Trent/Session_XXII/Sacrifice_of_the_Mass",
+      "verifiedLanguage": "en",
+      "crosswalkCandidate": {
+        "modernNumber": null,
+        "oldNumber": null,
+        "sourceEvidence": null
+      },
+      "textCopied": false,
+      "primaryLatinChecked": false,
+      "exactCrosswalkStatus": "UNLOCATED",
+      "theologicalClaimCertified": false,
+      "publicationPermission": "NOT_CLEARED"
+    }
+  ],
+  "publicationAllowed": false,
+  "metrics": {
+    "pilotPassageLocators": 8,
+    "exactModernNumberCandidates": 6,
+    "authoritativeFullOriginalPassagesCertified": 0,
+    "translationsRightsCleared": 0
+  }
+}
