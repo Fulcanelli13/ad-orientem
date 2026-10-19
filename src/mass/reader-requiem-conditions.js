@@ -18,6 +18,23 @@ export function isExplicitRequiemMass(prepared,conditions=null){
   ].some(x=>["REQUIEM","MASS_FOR_THE_DEAD"].includes(token(x)));
 }
 
+// Ritus servandus XIII.2: at a Requiem the INITIAL altar incensation
+// at the Introit is omitted, even in a form using incense at the Offertory.
+// These are exact fixed-Ordinary source identities; never globally disable
+// incense on a selected Requiem Mass.
+// https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/
+const OMITTED_REQUIEM_ENTRANCE_INCENSE_CUES=Object.freeze([
+  "AO.SM.C0040","AO.SM.C0041",
+]);
+export function requiemEntranceIncensationOmittedCuesForResolvedMass(resolvedMass){
+  return isExplicitRequiemMass({session:{resolvedMass}})
+    ? OMITTED_REQUIEM_ENTRANCE_INCENSE_CUES : Object.freeze([]);
+}
+export function isRequiemEntranceIncensationOmitted(cueId,prepared,conditions=null){
+  return OMITTED_REQUIEM_ENTRANCE_INCENSE_CUES.includes(String(cueId??""))
+    && isExplicitRequiemMass(prepared,conditions);
+}
+
 // Ritus servandus X.4 / XIII.1: at a Mass for the dead the celebrant does
 // not strike his breast at the three Agnus Dei invocations. Do not project
 // optional faithful strike prompts from the ordinary rite either.
