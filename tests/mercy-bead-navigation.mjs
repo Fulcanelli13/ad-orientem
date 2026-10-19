@@ -10,6 +10,16 @@ for(const withClosing of [false,true]){
  assert.equal(steps.length,withClosing?63:62);
  const chapters=mercyChapters(steps);
  assert.equal(chapters.length,withClosing?8:7);
+ const openingMarkup=mercyBeadNavHTML(steps,0);
+ assert.match(openingMarkup,/role="progressbar"/,"Prayer-position progress is missing");
+ assert.match(openingMarkup,/aria-label="Prayer position"/);
+ assert.ok(openingMarkup.includes('aria-valuenow="1"'));
+ assert.ok(openingMarkup.includes('aria-valuemax="'+steps.length+'"'));
+ assert.ok(openingMarkup.includes('aria-valuetext="Prayer 1 of '+steps.length+'"'));
+ assert.equal((openingMarkup.match(/role="progressbar"/g)||[]).length,1,"Only one visible bead progress owner");
+ const finalMarkup=mercyBeadNavHTML(steps,steps.length-1);
+ assert.ok(finalMarkup.includes('aria-valuenow="'+steps.length+'"'));
+ assert.ok(finalMarkup.includes('--ao-devo-progress:100%'));
  const opening=mercyBeadNavigationModel(steps,0);
  assert.equal(opening.phase,"opening");
  assert.equal(opening.beads.length,0);
@@ -33,6 +43,9 @@ for(const withClosing of [false,true]){
    assert.equal((html.match(/class="aoMercyBeadButton"/g)||[]).length,11);
    assert.equal((html.match(/class="aoMercyDecadeLink"/g)||[]).length,5);
    assert.ok(html.includes('data-p435930-mercy-jump="'+pos+'"'));
+   assert.ok(html.includes('aria-valuenow="'+(pos+1)+'"'));
+   assert.ok(html.includes('aria-valuetext="Prayer '+(pos+1)+' of '+steps.length+'"'));
+
    assert.ok(mercyStepText(steps[pos],"en")?.length>25);
   }
  }
@@ -43,6 +56,9 @@ for(const withClosing of [false,true]){
  const french=mercyBeadNavigationModel(steps,15,{french:true});
  assert.match(french.caption,/Dizaine II/);
  assert.match(mercyBeadNavHTML(steps,15,{french:true}),/Gros grain/);
+ assert.ok(mercyBeadNavHTML(steps,15,{french:true}).includes('aria-valuetext="Prière 16 sur '+steps.length+'"'));
+ assert.ok(mercyBeadNavHTML(steps,15,{french:true}).includes('aria-label="Position dans la prière"'));
+
 }
 assert.throws(()=>mercyBeadNavigationModel([],0),RangeError);
 assert.throws(()=>mercyBeadNavigationModel(divineMercySteps(),80),RangeError);
@@ -53,4 +69,10 @@ assert.ok(runtime.includes("updateMercyBeadNav(m,steps,i,{french:isFr()})"));
 assert.ok(runtime.includes("data-p435930-mercy-jump"));
 assert.ok(styles.includes(".aoMercyBeadButton[data-status=active]"));
 assert.ok(styles.includes(".aoDevoSequenceTimeline{display:none!important}"));
+assert.ok(styles.includes(".aoMercyBeadNavigation>.aoDevoProgress"),"Canonical Mercy bar must remain visible when chapter timeline is hidden");
+assert.ok(styles.includes("position:sticky;top:74px"),"Prayer progress must remain at hand during local scrolling");
+assert.doesNotMatch(runtime,/data-p435930-mercy-(?:prev|next)|aoMercyControls/,"Legacy bead arrows duplicate direct beads and prayer scrolling");
+assert.ok(runtime.includes("installSequentialDevotionalReader({"),"Source-owned chapter swipes lost");
+assert.ok(runtime.includes("updateMercyBeadNav(m,steps,i"),"Intra-decade prayer cursor must update while text scrolls");
+
 console.log("PASS Divine Mercy: 62/63 canonical steps, five large beads, fifty small beads, seven/eight chapters, Latin-free EN/FR visual navigation, no replacement owner");
