@@ -32,7 +32,7 @@ jobs:
           node-version: '22'
       - run: node tests/pius-x-conversation-intent-bridge.mjs
 
-  1905-index-extraction:
+  long-1905-index-extraction:
     runs-on: ubuntu-latest
     permissions:
       contents: read
