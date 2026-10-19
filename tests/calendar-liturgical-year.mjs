@@ -339,7 +339,7 @@ assert.match(browser, /data-cal-pick-date/);
 assert.match(browser, /L\("Month","Mois"\)/, "Calendar must expose Month as a top-level surface");
 assert.doesNotMatch(browser, /L\("Year index","Repères"\)/, "redundant Year Index returned as a top-level surface");
 assert.doesNotMatch(browser, /function indexSurface\(/, "obsolete Year Index implementation remains active");
-assert.match(browser, /MONTH_INDEX_VIEWS=new Set\(\["calendar","major","temporale","sanctorale","practices"\]\)/, "Month did not retain Calendar/Major/Temporale/Sanctorale/Practices projections");
+assert.match(browser, /MONTH_INDEX_VIEWS=new Set\(\["calendar","temporale","sanctorale"\]\)/, "Unified Month must retain the three source-cycle filters");
 assert.match(browser, /data-cal-month-view/, "Month secondary navigation is missing");
 assert.match(browser, /\["calendar",L\("All","Tout"\)\]/, "Unified Month All filter missing");
 assert.match(browser, /calendarPracticeMonthEntries/, "Month Practices stopped consuming shared Calendar Intelligence");
