@@ -188,6 +188,7 @@ export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPo
    ||base.reason==="TOPIC_SOURCE_GAP"
    ||base.reason==="HISTORICAL_SOURCE_POINTER_NOT_RESOLVED"
    ||base.reason==="UNSUPPORTED_PERSONAL_SPIRITUAL_VERDICT"
+   ||base.reason==="CONTEMPORARY_DISCIPLINE_NOT_IN_HISTORICAL_SOURCE"
    ||base.reason==="LAY_MASS_PRAYER_SOURCE_NOT_IDENTIFIED"
    ||base.reason==="POST_RECEPTION_SCOPE_UNSPECIFIED"
    ||base.reason==="LITURGICAL_POSTCOMMUNION_NOT_PRIVATE_THANKSGIVING"
