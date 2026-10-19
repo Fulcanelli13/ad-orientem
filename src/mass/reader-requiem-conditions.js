@@ -56,7 +56,7 @@ export function isRequiemFinalBlessingOmitted(cueId,prepared,conditions=null){
 export function requiemOffertoryIncensationVariantsForResolvedMass(resolvedMass){
  return isExplicitRequiemMass({session:{resolvedMass}})
   ? Object.freeze({"AO.SM.C0124":Object.freeze({
-      lat:"[ONLY THE CELEBRANT IS INCENSED]",
+      lat:"[Incensatur solus celebrans]",
       en:"[Only the celebrant is incensed]",
       fr:"[Seul le célébrant est encensé]",
     })})
