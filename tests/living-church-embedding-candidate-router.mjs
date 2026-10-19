@@ -104,5 +104,5 @@ assert.equal(withConsent.embeddingStatus,"UNVERIFIED_QUERY_EMBEDDING");
 assert.equal(remoteCalls,1);
 assert.throws(()=>createEmbeddingCandidateRouter({
  catalog,conceptRegistry:concepts,index:{...remoteIndex,model:{...remoteIndex.model,dimensions:12}},embedQuery
-}),/Invalid vector/);
+}),/Actual model metadata and dimensionality required/);
 console.log("PASS embedding adapter: 172-topic/2-language synthetic-index plumbing only; no real model, no doctrinal answer, remote consent required");
