@@ -189,7 +189,8 @@ export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPo
    ||base.matchEvidence?.basis==="EXACT_VARIANT"
    ||base.matchEvidence?.basis==="EXPLICIT_REFORMULATION_CHOICE"
    ||base.matchEvidence?.basis==="CONTEXT_FOLLOW_UP_RULE"
-   ||base.matchEvidence?.basis==="DOCUMENTARY_ANCHORED")
+   ||base.matchEvidence?.basis==="DOCUMENTARY_ANCHORED"
+   ||base.matchEvidence?.basis==="DOCUMENTARY_CONFIRMED_FOLLOWUP")
    return remember(base);
   const intent=cues(question);
   if(intent.personalMoral&&/\b(is that a sin|is it a sin|est ce un peche)\b/.test(intent.raw))
