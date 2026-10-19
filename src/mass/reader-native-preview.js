@@ -62,6 +62,7 @@ import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
+import { projectPriestQuietOffertory } from "./reader-offertory-quiet.js";
 import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
@@ -1671,6 +1672,12 @@ export async function mountNativeReaderPreview({
       observedPriestAction:priestLane,observation:observedPriestEvent
     });
     const priestVoice=observedPriest?.priestVoice??priestVoiceState.priestVoice;
+    const priestQuietOffertory=projectPriestQuietOffertory({
+      cueId:activeCueId,
+      sourceClock:sourceCueClocks.get(activeCueId)??null,
+      form,mode:readerModel?.presentationMode,
+      language:ready.prepared?.readerPreferences?.language??"en",
+    });
     const priestEntrance=priestEntranceState.project();
     const preMassPriestAction=projectObservedPreMassPriestAction({
       state:priestEntrance,activeCueId,
@@ -1768,6 +1775,7 @@ export async function mountNativeReaderPreview({
       cinematic,
       cinematicScene,
       priestVoice,
+      priestQuietOffertory,
       schola:visibleSchola,
       priestAction,
       priestEntrance,
