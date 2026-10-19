@@ -205,9 +205,27 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
     approvedReply:false,answerText:null};
   return {...out,matchEvidence:basis,approvedReply:false,answerText:null};
  }
+
+ function confirmSourceNavigation(proposal,{confirmQuestion=false}={}){
+  const topic=byId.get(proposal?.topicId);
+  if(proposal?.kind!=="source_navigation"||!topic
+   ||topic.coverage!=="SOURCE_NAVIGATION_ONLY"||!topic.sourceRefs.length
+   ||topic.character!==proposal.character
+   ||JSON.stringify(proposal.sourceRefs)!==JSON.stringify(topic.sourceRefs)
+   ||proposal.navigationRoute!==catalog.owners[topic.character].navigateTo)
+   return {kind:"invalid_navigation",reason:"UNVERIFIED_OR_FORGED_SOURCE_REFERENCE",answerText:null};
+  if(proposal.requiresQuestionConfirmation===true&&!confirmQuestion)
+   return {kind:"needs_question_confirmation",topicId:topic.id,
+    originalQuestion:proposal.originalQuestion,answerText:null};
+  return {kind:"confirmed_source_navigation",topicId:topic.id,
+   character:topic.character,originalQuestion:proposal.originalQuestion,
+   navigationRoute:catalog.owners[topic.character].navigateTo,
+   sourceRefs:topic.sourceRefs.map(x=>({...x})),
+   approvedReply:false,answerText:null,reviewOnly:true};
+ }
  return Object.freeze({version:HYBRID_QUESTION_RETRIEVAL_VERSION,
   status:"RESEARCH_ONLY_NO_EMBEDDINGS",
   topicCount:catalog.topics.length,conceptCount:glossary.length,
-  match,rank,acceptHandoff:(proposal,args)=>legacy.acceptHandoff(proposal,args),
+  match,rank,confirmSourceNavigation,acceptHandoff:(proposal,args)=>legacy.acceptHandoff(proposal,args),
   listTopics:legacy.listTopics});
 }
