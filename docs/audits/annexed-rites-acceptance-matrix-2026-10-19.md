@@ -19,7 +19,7 @@
 | Rogations/Greater Litanies | ROG, R25 | Latin prayers and complete, undoubled Litany | Not available in source-built pages | Complete V/R pairs and concluding orations | Conditional walking vs public supplications; INTROIT | Bilingual gap |
 | Requiem Absolution | ABS, R26 | Latin, with optional body/catafalque and burial hymn branch | Not available in source-built pages | Libera me refrain/responses; Kyrie/Pater, paired intercessions and whole oration/Amen on separate reading pages | Only if following action explicitly selected; burial hymn depends on actual body and procession | Bilingual and branch phone gap |
 | Corpus Christi | CORPUS, R27 | Source-pinned Latin Pange lingua, Tantum ergo, Benediction | **11/11** rows have original editorial EN/FR alongside unchanged Latin; not certified 1962 printed translations | *Pange lingua* on two two-stanza pages; Benediction V/R and Orémus/prayer/Amen independently | Explicit following action, omitted final blessing/Last Gospel plan; procession opt-in | Editorial approval and visual acceptance pending |
-| Holy Thursday translation | HT_POST, R31 | Source-pinned Latin Pange lingua, Tantum ergo, altar stripping | **6/21** rows have original editorial EN/FR hymn stanzas; **15** Psalm 21/antiphon rows remain Latin-only | *Pange lingua* split by complete stanzas; 13 Psalm 21 source lines grouped with antiphon only at opening and close | Movement only for joining participants; to post-Mass lifecycle | Full Psalm 21 EN/FR and visual acceptance pending |
+| Holy Thursday translation | HT_POST, R31 | Source-pinned Latin Pange lingua, Tantum ergo and altar stripping | **21/21 reference rows** have original source-locked editorial EN/FR; actual Psalm recitation extent conditional | Six hymn stanzas, 13 Psalm verse-groups + two antiphons; first-verse-only branch if no clerics | Movement only for joining; clerics present continue Psalm until altars stripped, otherwise celebrant first verse only | Rubrical branch and editorial visual acceptance pending |
 | Generic following procession | PROC, R29 | **Structural-only**, deliberately no feast-specific prayers | **None** until dedicated profile supplied | Structural stages only | Cannot infer procession from feast/date; participant opt-in, then lifecycle | Not full text-ready |
 | Good Friday (distinct rite) | GF, R28 | Source-pinned Latin Passion, solemn prayers, veneration and Communion | Separate editorial layer; incomplete | Fixed ceremony stage and formula/Passion ownership | Exact Flectamus/Levate, Passion-death pause, personal cross/Communion | Bilingual and full phone parity gap |
 | Easter Vigil (distinct composite) | EV, R33 (38 records) | New fire, candle, Lumen Christi, Exsultet, 4 prophecies, Litanies, font blessing, Vigil Mass | Some trilingual source rows; **Exsultet/new fire/candle/Lauds FR only editorial summary and excluded** | 12 Exsultet pages; four prophecy groups with canticles following; Litanies; 17 font segments | Source graph and separate FONT/BAPTISM branches; explicit handoff to Vigil Mass | Full FR and conditional baptism rite still incomplete |
@@ -131,19 +131,67 @@ The 1962 Latin source row remains byte-for-byte unchanged.
   EN/FR source-indexed text. The conditional procession/event timeline
   is unchanged. Source and phone QA verify no English fallback in
   French mode.
-- Holy Thursday: only the **six** hymn stanzas share these translations.
-  The **15 source rows** of Psalm 21 and its opening/closing antiphon
-  during the stripping of the altars remain **Latin-only**.
-  The display leaves the opposite column empty rather than inventing
-  psalm readings.
+- Holy Thursday was **6/21** bilingual rows in the first pass.
+  A subsequent source-collated Psalm 21 edition now supplies **21/21
+  Latin/EN/FR reference rows**, all uniquely source-locked and clearly
+  marked Ad Orientem original editorial translation. This does **not**
+  mean that all thirteen Psalm verse-groups are recited at every Mass;
+  the 1962 rubric governs what is actually said.
 - Tests: `tests/reader-eucharistic-hymn-text.mjs` compares both donor
   payloads stanza-by-stanza, checks every Latin row against its original,
   checks source event IDs, editorial translation status, exact Corpus
   prayer-source preservation, and rejects misaligned hymn stanzas.
-  The annex coverage matrix rejects unsourced Psalm translations.
+  A separate `tests/reader-holy-thursday-psalm.mjs` locks every Pian Psalm
+  source group and its aligned bilingual reading, confirms the first
+  complete Pian verse under the no-clerics option, and rejects
+  changes to Latin text without a full translation recollation.
   A 390px French phone test verifies translated Corpus processional
   hymn, Tantum ergo, and Benediction prayer through real stage navigation.
 
 Remaining acceptance is substantive editorial and visual review. A
 translation becoming available does **not** certify all rite rubrics,
 chant variations, historical facsimile accuracy, or publication rights.
+
+## Holy Thursday Psalm 21 source and conditional performance correction
+
+The primary source-translation donor was audited against
+[Propria's Holy Thursday Pian-Psalter parallel text](https://propria.org/wp-content/uploads/2019/04/propers-for-holy-thursday-ps.-21-from-pian-psalter.pdf).
+The performance rule was separately verified in the printed
+[post-1955 Holy Week Missal rubric (1965 bilingual excerpt, pp. 297–298)](https://archive.ccwatershed.org/pdfs/5183-holy-thursday-excerpt-1965-missal/download/),
+whose Latin reads **`Clerici, si adsunt, prosequuntur ... usque dum
+altarium denudatio peracta sit; alioquin ... primum tantum versum
+psalmi`**. The excerpt establishes the continuing 1962-use rubric;
+it is **not** attributed as the source of our French translation.
+
+**Crucial correction:** the old reader treated all thirteen Pian-Psalter
+verse-groups as the presumed liturgical recitation. In the actual rite:
+
+- When clerics are present, they continue the psalm **until stripping
+  has been completed**. The recitation is not timed and does not
+  necessarily reach the final verse.
+- When no clerics are present, the celebrant says the **antiphon and
+  first complete verse** before stripping the main altar. The antiphon
+  is repeated at the end. The existing donor's *first source row
+  contains more than the first biblical verse*, so this option displays
+  only the verified first verse rather than the entire first row.
+- When presence is unknown, the Missal presents the **full Psalm as
+  reference only** and explicitly disclaims any assertion that every
+  verse is being said. The user can select the observed case from a
+  small, three-way reader choice while within HT-R05; it does not
+  advance the ceremonial action.
+
+The full **13 source groups + twice-recited antiphon** now have
+**original, bilingual EN/FR editorial readings** aligned to the pinned
+Pian Latin. The *actual* Latin donor is unchanged and each source group
+has a fixed independent fingerprint to catch silent drift. The no-clerics
+presentation is **three source-owned rows**, with full reference
+retained separately and the original `HT-STRIP-010` event preserved.
+
+The dedicated unit QA tests both performance branches, full/short
+Missal pagination and translation conservation; the expanded 390px
+browser suite tests actual three-way user selection in the mounted
+native reader and Latin/French alignment.
+
+All source and translation acceptance here remains subject to
+a final editorial and visual review. This correction must not be
+described as a complete ready-for-store Holy Thursday rite.
