@@ -62,7 +62,7 @@
         "licenseEvidenceUrl"
       ],
       "fileRoot": "assets/references/mass-icon-originals/",
-      "rule": "An original image showing the actual ritual action is mandatory; a generated image, search thumbnail, artist prompt or rubric text is not an original picture. Preserve a documented copy and checksum of each original image. Unknown authorship requires explicit attribution status, never an invented name.",
+      "rule": "An original image showing the actual ritual action is mandatory; a generated image, search thumbnail, artist prompt or rubric text is not an original picture. Preserve a documented copy and checksum of each original image. Unknown authorship requires explicit attribution status, never an invented name. Research leads and images with restricted reproduction rights remain excluded from originalPictures until cleared; medieval iconographic precedent is not sufficient proof of 1962 hand positions.",
       "rights": "Before transforming or reproducing any source picture, require documented clearance, suitable license or permission; image visibility is not publishing permission."
     },
     "rubricWitness": {
@@ -117,7 +117,21 @@
       "userApproval": "PENDING",
       "familyReview": "PENDING",
       "asset": null,
-      "note": "Find and verify a real photograph or original documented drawing depicting the priest's own Communion before producing a new icon. Do not use imagery of the priest giving Communion."
+      "note": "Find and verify a real photograph or original documented drawing depicting the priest's own Communion before producing a new icon. Do not use imagery of the priest giving Communion.",
+      "researchLeads": [
+        {
+          "title": "Missal, MS G.16, folio 129v (late 14th century)",
+          "imageType": "HISTORICAL_ILLUSTRATION",
+          "originalHoldingInstitution": "The Morgan Library & Museum",
+          "catalogueUrl": "https://ica.themorgan.org/manuscript/page/57/76951",
+          "date": "1375–1399 (approximate, per catalogue)",
+          "imageRightsStatus": "RESTRICTED_UNCLEARED",
+          "rightsPolicyUrl": "https://www.themorgan.org/research/terms-and-conditions-reproductions",
+          "disposition": "RESEARCH_ONLY_NOT_TRANSFORMABLE",
+          "whyNotEligible": "Morgan requires reproduction permission and restricts cropped/altered use. 1962 rubrics must independently govern posture and exact hands. No local original picture has been licensed, verified, or recorded.",
+          "excerptDescription": "Medieval miniature shows priest inclined over altar taking Host to his mouth; provides actual historical pictorial precedent but not certified 1962 hand placement."
+        }
+      ]
     },
     {
       "id": "EA.PRIEST_COMMUNION_CHALICE",
@@ -142,7 +156,21 @@
       "userApproval": "PENDING",
       "familyReview": "PENDING",
       "asset": null,
-      "note": "Find and verify a real photograph or original documented drawing depicting the celebrant drinking from the chalice while supporting it with the paten."
+      "note": "Find and verify a real photograph or original documented drawing depicting the celebrant drinking from the chalice while supporting it with the paten.",
+      "researchLeads": [
+        {
+          "title": "Missal, MS G.16, folio 129v (late 14th century)",
+          "imageType": "HISTORICAL_ILLUSTRATION",
+          "originalHoldingInstitution": "The Morgan Library & Museum",
+          "catalogueUrl": "https://ica.themorgan.org/manuscript/page/57/76951",
+          "date": "1375–1399 (approximate, per catalogue)",
+          "imageRightsStatus": "RESTRICTED_UNCLEARED",
+          "rightsPolicyUrl": "https://www.themorgan.org/research/terms-and-conditions-reproductions",
+          "disposition": "RESEARCH_ONLY_NOT_TRANSFORMABLE",
+          "whyNotEligible": "Morgan requires reproduction permission and restricts cropped/altered use. 1962 rubrics must independently govern posture and exact hands. No local original picture has been licensed, verified, or recorded.",
+          "excerptDescription": "Medieval miniature shows priest drinking chalice with left hand, whereas 1962 Ritus servandus X.5 requires the chalice in the right and paten beneath in the left; cannot be copied literally."
+        }
+      ]
     }
   ],
   "excludedConcepts": [
