@@ -396,7 +396,7 @@ try{
             priestAction:state?.priestAction?.label??null,
             nativeCue:api.getNativeEventState()?.nativeCueId??null,
             quietOffertory:document.querySelector('[data-role="priest-quiet-offertory"]')?.hidden===false,
-            bellCue:state?.bell?.cueId??null,
+            bellCue:api.getNativeEventState()?.bell?.cueId??null,
             bellIconVisible:document.querySelector('[data-icon-slot="bell"]')?.hidden===false,
           });
         }
