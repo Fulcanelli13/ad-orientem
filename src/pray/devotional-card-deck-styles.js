@@ -66,15 +66,15 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 }
 #aoPray435930 .aoDevoStop{scroll-snap-align:center;display:grid;gap:2px;flex:0 0 max(112px,42%);padding:8px 9px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;color:var(--muted,#aeb2b8);background:var(--surface-1,#141a20);text-align:left;min-height:48px}
 #aoPray435930 .aoDevoStop.active{border-color:var(--liturgical,#d8bd7d);color:var(--text,#f1e7d7);background:color-mix(in srgb,var(--liturgical,#d8bd7d) 9%,var(--surface-1,#141a20))}
-#aoPray435930 .aoDevoStopNumber{font:600 10px/1.2 var(--ao-font-ui,"EB Garamond",var(--ao-font-liturgical,"EB Garamond",Georgia,serif));letter-spacing:.12em}
-#aoPray435930 .aoDevoStopTitle{font:500 12px/1.25 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)}
+#aoPray435930 .aoDevoStopNumber{font:600 13px/1.2 var(--ao-font-ui,"EB Garamond",Georgia,serif);letter-spacing:.12em}
+#aoPray435930 .aoDevoStopTitle{font:500 13px/1.25 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)}
 #aoPray435930 .aoDevoCardViewport{min-width:0;width:100%}
 #aoPray435930 .aoDevoCard[hidden]{display:none!important}
 #aoPray435930 .aoDevoCard{display:flex;flex-direction:column;min-width:0;animation:aoDevoCardEnter .24s ease both}
 #aoPray435930 .aoDevoCardHead{text-align:center;padding:15px 14px 12px;border-bottom:1px solid var(--border,rgba(255,255,255,.12))}
-#aoPray435930 .aoDevoCardNumber{font:600 10px/1.4 var(--ao-font-ui,"EB Garamond",var(--ao-font-liturgical,"EB Garamond",Georgia,serif));color:var(--muted,#aeb2b8);letter-spacing:.12em}
+#aoPray435930 .aoDevoCardNumber{font:600 13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:var(--muted,#aeb2b8);letter-spacing:.12em}
 #aoPray435930 .aoDevoCardTitle{font:500 clamp(23px,5.6vw,30px)/1.18 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);color:var(--text,#f1e7d7);margin:4px 0}
-#aoPray435930 .aoDevoCardLatin{font:italic 12px/1.45 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);color:var(--muted,#aeb2b8);margin:0}
+#aoPray435930 .aoDevoCardLatin{font:italic 13px/1.45 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);color:var(--muted,#aeb2b8);margin:0}
 #aoPray435930 .aoDevoCardScroll{height:min(55dvh,540px);min-height:min(320px,48dvh);overflow-y:auto;overscroll-behavior-y:contain;scrollbar-width:thin;padding:22px 14px 26dvh;box-sizing:border-box;display:flex;flex-direction:column;gap:22px}
 #aoPray435930 .aoP435930Mount[data-ao-pray-view="angelus"] .aoDevoCardScroll .aoP435930PrayerUnit{flex:0 0 auto;min-height:0;opacity:1!important;transform:none!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important}
 #aoPray435930 .aoDevoCardScroll .aoP435930PrayerUnit>small{display:none!important}
@@ -92,19 +92,19 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoDevoSequenceTimeline{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:5px!important;align-items:center;max-width:100%;width:100%;min-width:0;overflow:visible!important;position:sticky;top:74px;z-index:19;background:var(--bg,#080c12);padding:5px 2px!important;border-block:1px solid var(--border,rgba(255,255,255,.14))}
 #aoPray435930 .aoDevoSequenceTimeline .aoDevoStops{min-width:0;display:flex!important;overflow-x:auto!important;max-width:100%;padding:0!important}
 #aoPray435930 .aoDevoSequenceTimeline .aoDevoStop{flex:0 0 max(116px,42%)!important;min-height:54px;max-width:none;margin:0!important;display:grid!important;align-content:center}
-#aoPray435930 .aoDevoSequenceTimeline .aoDevoStopTitle{font:500 12px/1.22 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);white-space:normal}
-#aoPray435930 .aoDevoSequenceTimeline .aoDevoStopNumber{font:600 10px/1.1 var(--ao-font-ui,"EB Garamond",var(--ao-font-liturgical,"EB Garamond",Georgia,serif))}
+#aoPray435930 .aoDevoSequenceTimeline .aoDevoStopTitle{font:500 13px/1.22 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);white-space:normal}
+#aoPray435930 .aoDevoSequenceTimeline .aoDevoStopNumber{font:600 13px/1.1 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
 #aoPray435930 .aoP435930Stations .aoDevoCardScroll{padding:18px 16px 27dvh;display:block;min-height:min(350px,52dvh)}
 #aoPray435930 .aoP435930Stations .aoDevoCardScroll>*{margin-block:0 22px}
 #aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930GuideNow h2{display:none!important}
-#aoPray435930 .aoMercyStepType{display:block;margin:4px 14px;color:var(--muted,#aeb2b8);font:500 12px/1.4 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)}
+#aoPray435930 .aoMercyStepType{display:block;margin:4px 14px;color:var(--muted,#aeb2b8);font:500 13px/1.4 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)}
 #aoPray435930 .aoP435930Stations .aoDevoCardScroll .aoP435930Flip{max-width:100%;white-space:normal}
 #aoPray435930 .aoMercyReader .aoDevoCardScroll{gap:18px;padding:18px 14px 30dvh;min-height:min(350px,52dvh)}
 #aoPray435930 .aoMercyLine{display:block;flex:0 0 auto;min-width:0;margin:0!important;padding:18px 8px;border-bottom:1px solid var(--border,rgba(255,255,255,.10));background:transparent!important;box-shadow:none!important;transform:none!important;min-height:unset!important;border-radius:0!important;text-align:left}
 #aoPray435930 .aoMercyLine p{font:400 clamp(18px,4.5vw,22px)/1.62 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);margin:8px 0 0;color:var(--text,#f1e7d7)}
-#aoPray435930 .aoMercyLine small{font:600 11px/1.4 var(--ao-font-ui,"EB Garamond",var(--ao-font-liturgical,"EB Garamond",Georgia,serif));letter-spacing:.08em;color:var(--liturgical,#d8bd7d)}
+#aoPray435930 .aoMercyLine small{font:600 13px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);letter-spacing:.08em;color:var(--liturgical,#d8bd7d)}
 #aoPray435930 .aoMercyReader .aoMercyCurrentGroup{font:500 13px/1.5 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);color:var(--muted,#aeb2b8);margin:6px 0 10px}
-#aoPray435930 .aoMercyReader .aoMercyKicker{font-size:11px;margin:4px 0}
+#aoPray435930 .aoMercyReader .aoMercyKicker{font-size:13px;margin:4px 0}
 #aoPray435930 .aoMercyReader .aoDevoCardTitle{font-size:clamp(23px,5.6vw,30px)}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoMercyLine{transition:none!important}}
 
@@ -212,8 +212,8 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStops{display:flex;min-width:0;max-width:100%;gap:6px;overflow-x:auto;scrollbar-width:thin;scroll-snap-type:x proximity}
 #aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStop{flex:0 0 min(46%,180px);min-height:52px;padding:8px 10px;display:grid;gap:3px;scroll-snap-align:center;text-align:left;border:1px solid var(--border,rgba(255,255,255,.15));border-radius:9px;background:var(--surface-1,#141a20);color:var(--muted,#aeb2b8)}
 #aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStop[aria-current="step"]{border-color:var(--liturgical,#d8bd7d);color:var(--text,#f1e7d7)}
-#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStopNumber{font:600 10px/1.2 var(--ao-font-ui,"EB Garamond",var(--ao-font-liturgical,"EB Garamond",Georgia,serif));letter-spacing:.12em}
-#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStopTitle{font:500 12px/1.25 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);white-space:normal}
+#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStopNumber{font:600 13px/1.2 var(--ao-font-ui,"EB Garamond",Georgia,serif);letter-spacing:.12em}
+#aoPrayerBookRoot.open .aoRosaryNamedTimeline .aoDevoStopTitle{font:500 13px/1.25 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);white-space:normal}
 
 
 /* The canonical Rosary donor retains its prayer heading, flip, and bead
@@ -280,7 +280,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 #aoPray435930 .aoFolioReader .aoFolioOptions .aoP435930PrayerOptionsBody{display:grid;gap:13px}
 #aoPray435930 .aoFolioReader .aoFolioPostureNote{
  margin:3px 10px 10px;border:0;border-radius:8px;background:transparent;
- color:var(--muted,#b6ad9a);font:500 12px/1.45 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);
+ color:var(--muted,#b6ad9a);font:500 13px/1.45 var(--ao-font-liturgical,"EB Garamond",Georgia,serif);
 }
 #aoPray435930 .aoFolioReader .aoFolioPostureNote summary{
  display:flex;gap:8px;align-items:center;cursor:pointer;min-height:32px;list-style:none}
@@ -295,8 +295,8 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
  border-top:0;background:var(--bg,#080c12);
 }
 #aoPray435930 .aoFolioReader .aoDevoStop{flex-basis:max(105px,35%);min-height:44px;padding:7px 10px}
-#aoPray435930 .aoFolioReader .aoDevoStopNumber{font-size:10px}
-#aoPray435930 .aoFolioReader .aoDevoStopTitle{font-size:12px}
+#aoPray435930 .aoFolioReader .aoDevoStopNumber{font-size:13px}
+#aoPray435930 .aoFolioReader .aoDevoStopTitle{font-size:13px}
 #aoPray435930 .aoFolioReader .aoDevoCard{max-width:850px;margin-inline:auto;width:100%}
 #aoPray435930 .aoFolioReader .aoDevoCardHead{
  padding:22px 14px 16px;background:linear-gradient(180deg,rgba(210,170,103,.045),transparent);
@@ -409,7 +409,7 @@ export const DEVOTIONAL_CARD_DECK_CSS=String.raw`
 }
 #aoPray435930 .aoFolioReader .aoDevoStopTitle{display:none!important}
 #aoPray435930 .aoFolioReader .aoDevoStopNumber{
- font:500 12px/1.2 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
+ font:500 13px/1.2 var(--ao-font-liturgical,"EB Garamond",Georgia,serif)!important;
  letter-spacing:0!important;
 }
 #aoPray435930 .aoFolioReader .aoDevoCardHead{
