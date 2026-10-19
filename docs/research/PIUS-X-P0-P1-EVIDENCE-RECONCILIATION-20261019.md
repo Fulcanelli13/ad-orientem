@@ -423,3 +423,24 @@ The original **48 untouched editorial probes** were executed against the new cat
 A newly observed cross-topic error is `SPX-PILOT-01-F1`: the Pope's programme after his election (`E supremi`) misroutes to the Modernism topic (`Pascendi`). Three previously known errors also persist: generic prayer instead of the Rosary-at-Mass locus; generic sin instead of Sarto's teaching on temptation versus consent; Real Presence instead of post-Communion thanksgiving. All wrong inferred source navigations still require confirmation.
 
 This **fails source-retrieval acceptance** despite new coverage. The 48 probes are editor-authored, not representative visitors; the catalog was *not* fitted to the 48 evaluation utterances. Do not add those phrases as question variants to inflate the score. The correct subsequent step is source-aware question interpretation with an independent EN/FR holdout set and an explicit `correct source / abstention / wrong source` measurement. Do not infer that 9 successful source links means nine certified St Pius X answers.
+
+
+## Measured source-aware router regression — 48 previous queries (not independent)
+
+The existing Living Church owner (draft PR #1443) now implements two-facet bilingual original-source matching, a fail-closed external-source navigation contract, and **confirmed-only** historical follow-up continuity. The repeated 48-question suite ran against a pinned repository commit in [Actions run 39270927468](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39270927468). Updated exact measurements for the final guarded source-aware implementation are recorded in `data/learn/research/pius-x-source-aware-router-48-regression-result-20261019.v1.json`.
+
+| Outcome for 48 previously authored queries | Shared router | Hybrid router |
+| --- | ---: | ---: |
+| Correct original historical document | **25** | **26** |
+| No-coverage / safe unresolved | 15 | 14 |
+| Correct hold for unsupported personal-answer source | 8 | 8 |
+| **Wrong original source** | **0** | **0** |
+| Approved generated answers | 0 | 0 |
+
+A previously inspected error that conflated a layman's private prayer at Mass with priestly mental prayer was corrected by tightening the **source category**, not by copying the problematic visitor sentence into the matching variants. The regression harness now requires zero wrong-original-source proposals; it does not assert independent retrieval accuracy.
+
+The **earlier 184-topic pre-gating check** had 9 correct/4 wrong for the shared router and 1 correct/0 wrong for the hybrid; the subsequent test simulates confirmed follow-up context only after a correct first documentary source resolution, so the before/after totals are **engineering acceptance signals, not strict like-for-like population statistics**.
+
+Source URL destination is now returned with document locator and witness class, and a missing or changed pointer fails closed. However this is still a *research-only router*. No interactive visual novel was modified, no user-facing source opener was wired, and no historically voiced replies were approved or published.
+
+Next: evaluate the source-aware gate on a truly fresh, separately reviewed bilingual mixed-intent corpus and subsequently wire the approved consumer UI's document-opening action to the source owner. Remain strict about no invented childhood feelings, no individualized moral diagnosis, and no first-person claims from a papally approved dicastery decree.
