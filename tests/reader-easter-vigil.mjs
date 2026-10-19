@@ -24,6 +24,17 @@ assert.ok(payload.donor.lauds.lat.includes("Benedíctus"));
 
 let built=buildEasterVigilReader({graph,payload,fontMode:"IN_CHURCH",baptismPresent:false});
 assert.equal(built.sourceRecordCount,38);
+// Recovered donor had French scene summaries, not a translation of the full
+// new-fire prayer, Paschal candle ceremonies, Exsultet or Lauds.
+for(const id of ["EV-FIRE-010","EV-FIRE-020","EV-EXS-200"]){
+  const source=built.steps.find(step=>step.recordId===id).paragraphs[0];
+  assert.equal(source.french,null,id+" falsely labels a French précis as full prayer translation");
+  assert.match(source.frenchSourceStatus,/EDITORIAL_SUMMARY_NOT_PARALLEL/);
+  assert.ok(source.frenchEditorialSummary?.length>25);
+  assert.ok(source.english?.length>source.frenchEditorialSummary?.length,
+    "The editorial French source should be flagged, not silently presented as parallel");
+}
+
 assert.ok(built.steps.some(x=>x.recordId==="EV-FONT-420"));
 assert.ok(!built.steps.some(x=>x.recordId==="EV-FONT-410"));
 assert.ok(!built.steps.some(x=>x.recordId==="EV-FONT-440"));
@@ -169,6 +180,8 @@ assert.ok(vigilMass.cards.some(x=>x.sectionId==="SP.EASTER_VIGIL.15"),"Lauds ins
 const laudsIndex=vigilMass.cards.findIndex(x=>x.sectionId==="SP.EASTER_VIGIL.15");
 assert.equal((vigilMass.cards[laudsIndex-1].sourceSequence??vigilMass.cards[laudsIndex-1].sequence),26);
 assert.equal((vigilMass.cards[laudsIndex+1].sourceSequence??vigilMass.cards[laudsIndex+1].sequence),27);
+assert.equal(vigilMass.cards[laudsIndex].paragraphs[0].french,null,
+  "The Lauds summary is not a French translation of the Benedictus and psalm");
 assert.ok(vigilMass.cards.find(x=>(x.sourceSequence??x.sequence)===22).blocks.every(b=>b.blockId!=="AO.SM.B069"));
 assert.ok(vigilMass.cards.find(x=>(x.sourceSequence??x.sequence)===26).blocks.every(b=>b.blockId!=="AO.SM.B085"));
 
