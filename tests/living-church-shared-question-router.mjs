@@ -128,6 +128,11 @@ assert.equal(r.options[0].coverage,"SOURCE_NAVIGATION_ONLY");
 assert.equal(r.options[1].coverage,"SOURCE_GAP");
 r=match("What does that gesture mean?");
 assert.equal(r.kind,"clarify");assert.equal(r.requiresContext,true);assert.equal(r.options.length,0);
+r=match("Tell me about the prayer at the beginning of Mass.");
+assert.equal(r.kind,"clarify");assert.equal(r.ambiguityId,"opening_prayer_unspecified");
+assert.deepEqual(r.options.map(x=>x.topicId),["mass.introit","mass.kyrie","mass.collect"]);
+assert.equal(r.answerText,null);
+
 r=match("what happens to the bread at mass");
 assert.equal(r.kind,"source_navigation");assert.equal(r.character,"pius-x");assert.equal(r.topicId,"faith.real_presence");
 assert.deepEqual(r.sourceRefs.map(x=>x.ref),["PX1912-Q325","PX1912-Q329"]);assert.equal(r.answerText,null);
