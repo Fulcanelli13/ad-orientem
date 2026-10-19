@@ -220,7 +220,8 @@ assert.equal(cardForCue("AO.SM.C0131"),cardForCue("AO.SM.C0132"),
   "Orate fratres and Suscipiat response must share one card");
 assert.equal(cardForCue("AO.SM.C0147"),cardForCue("AO.SM.C0148"),
   "A single priestly Sanctus–Benedictus must not force another swipe");
-assert.equal(cardForCue("AO.SM.C0147")?.title,"Sanctus — Benedictus");
+assert.equal(cardForCue("AO.SM.C0147")?.title,"Sanctus",
+  "Concise visible heading must retain both Sanctus and Benedictus on one card");
 distinct("AO.SM.C0172","AO.SM.C0173","Host consecration formula must follow preparation");
 distinct("AO.SM.C0178","AO.SM.C0179","Chalice consecration formula must follow preparation");
 distinct("AO.SM.C0272","AO.SM.C0273","Et Verbum caro factum est must have its own card");

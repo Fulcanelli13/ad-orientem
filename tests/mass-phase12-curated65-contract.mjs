@@ -20,7 +20,8 @@ const added=Object.values(CURATED_LIVE_GROUPS).reduce((n,part)=>{
  return n+part.after.length;
 },0);
 assert.equal(39+added,64,"64-card single-Sanctus source-first LIVE product contract regressed");
-assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].titles,["Sanctus — Benedictus"]);
+assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].titles,["Sanctus"],
+  "Keep both Sanctus and Benedictus in one prayer card titled simply Sanctus");
 assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].after,[]);
 assert.ok(CURATED_LIVE_GROUPS["AO.CARD.024"].titles[0].includes("Second Confiteor"));
 assert.match(browser,/aoLiveCards=48/,"Production must retain explicit 48 rollback");

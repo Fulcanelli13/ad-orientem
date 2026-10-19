@@ -110,7 +110,7 @@ try{
    assert.equal(sharedAdvance,"Kyrie","Shared Schola manual correction moved the main Mass card");
    const chosen=await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
-     const sanctus=api.model.cards.find(card=>card.title==="Sanctus — Benedictus");
+     const sanctus=api.model.cards.find(card=>card.title==="Sanctus");
      const canon=api.model.cards.find(card=>card.title==="Te igitur");
      if(!sanctus||!canon)return {error:"SANCTUS_OR_CANON_CARD_MISSING"};
      // The Schola continues independently into the priest's silent Canon,
@@ -123,6 +123,8 @@ try{
    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState()?.trackId==="SANCTUS_BENEDICTUS");
    const dock=page.locator(".ao-schola-dock");
    await dock.waitFor({state:"visible"});
+   assert.equal((await dock.locator(".ao-schola-kicker").textContent())?.trim(),"SANCTUS",
+     "The independent Schola track must be displayed simply as Sanctus");
    const prev=page.locator("[data-schola-previous]");
    const next=page.locator("[data-schola-next]");
    assert.equal(await prev.count(),1);
@@ -170,7 +172,7 @@ try{
    await page.evaluate(()=>{
      const api=window.__AO_PHONE_PREVIEW;
      const preface=api.model.cards.find(c=>c.title==="Preface");
-     const sanctus=api.model.cards.find(c=>c.title==="Sanctus — Benedictus");
+     const sanctus=api.model.cards.find(c=>c.title==="Sanctus");
      const canon=api.model.cards.find(c=>c.title==="Te igitur");
      api.showSequence(preface.sequence);
      api.showSequence(sanctus.sequence);

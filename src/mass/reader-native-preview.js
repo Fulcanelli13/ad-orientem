@@ -6,7 +6,7 @@ import { createMassReaderModel } from "./reader-model.js";
 import {loadMandatumSource, createMandatumEventController} from "./reader-holy-thursday-mandatum-events.js";
 import { assessMassTextPrint, renderMassTextPrintHtml } from "./reader-print-booklet.js";
 import { projectSourceFirst48Presentation } from "./reader-live-product48.js";
-import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards } from "./reader-live-curated-cards.js";
+import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards, visibleMassCardTitle } from "./reader-live-curated-cards.js";
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
@@ -62,6 +62,7 @@ import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
 import { createReaderTransientController, partTransitionCinematic } from "./reader-transients.js";
+import { projectPriestQuietOffertory } from "./reader-offertory-quiet.js";
 import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
@@ -1671,6 +1672,12 @@ export async function mountNativeReaderPreview({
       observedPriestAction:priestLane,observation:observedPriestEvent
     });
     const priestVoice=observedPriest?.priestVoice??priestVoiceState.priestVoice;
+    const priestQuietOffertory=projectPriestQuietOffertory({
+      cueId:activeCueId,
+      sourceClock:sourceCueClocks.get(activeCueId)??null,
+      form,mode:readerModel?.presentationMode,
+      language:ready.prepared?.readerPreferences?.language??"en",
+    });
     const priestEntrance=priestEntranceState.project();
     const preMassPriestAction=projectObservedPreMassPriestAction({
       state:priestEntrance,activeCueId,
@@ -1768,6 +1775,7 @@ export async function mountNativeReaderPreview({
       cinematic,
       cinematicScene,
       priestVoice,
+      priestQuietOffertory,
       schola:visibleSchola,
       priestAction,
       priestEntrance,
@@ -2536,8 +2544,8 @@ export async function mountNativeReaderPreview({
     const state=projectedState();
     reader.renderMoment({
       id:visibleCard.sectionId,
-      sectionTitle:visibleCard.title,
-      cardTitle:visibleCard.title,
+      sectionTitle:visibleMassCardTitle(visibleCard),
+      cardTitle:visibleMassCardTitle(visibleCard),
       cardUpdate:true,
       missalRubric:String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
         ? (()=>{
@@ -2630,7 +2638,7 @@ export async function mountNativeReaderPreview({
   function sectionItems(){
     return readerModel.cards
       .filter(visibleCardAllowed)
-      .map(card=>Object.freeze({id:card.sectionId,label:card.title}));
+      .map(card=>Object.freeze({id:card.sectionId,label:visibleMassCardTitle(card)}));
   }
 
   function focusCueAtReaderLine(cueId){
@@ -2769,7 +2777,7 @@ export async function mountNativeReaderPreview({
     const state=projectedState();
     reader.renderMoment({
       id:current?.sectionId ?? "",
-      sectionTitle:current?.title ?? "",
+      sectionTitle:current ? visibleMassCardTitle(current) : "",
       cardUpdate:false,
       progress:current ? visibleProgress(current) : null,
       guide:null,

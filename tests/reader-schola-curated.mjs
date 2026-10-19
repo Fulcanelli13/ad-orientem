@@ -109,7 +109,7 @@ assert.equal(schola.reachLiturgicalBoundary("AO.SM.C0134").trackId,"OFFERTORY",
   "Private Secret text incorrectly cut off Offertory chant");
 assert.equal(schola.reachLiturgicalBoundary("AO.SM.C0135").trackId,null,
   "Secret's public conclusion must close Offertory music without claiming a heard ending");
-const whole=titled("Sanctus — Benedictus");
+const whole=titled("Sanctus");
 assert.ok(whole,"The celebrant's Sanctus and Benedictus must share one card");
 assert.ok(whole.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0145")));
 assert.ok(whole.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0148")));

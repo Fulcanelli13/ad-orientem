@@ -65,7 +65,7 @@ const {sourceModel,presentationModel:model}=buildReaderModeModels({
 assert.equal(sourceModel.totalCards,39);
 assert.equal(model.totalCards,64);
 assert.equal(model.cards.filter(card=>card.sourceSectionId==='AO.CARD.013').length,1);
-assert.equal(model.cards.find(card=>card.sourceSectionId==='AO.CARD.013')?.title,'Sanctus — Benedictus');
+assert.equal(model.cards.find(card=>card.sourceSectionId==='AO.CARD.013')?.title,'Sanctus');
 const sourceUnits=data.sungCorpus.blocks.flatMap(b=>b.units.map(u=>({
   ...u,blockId:b.Block_ID,
 })));
