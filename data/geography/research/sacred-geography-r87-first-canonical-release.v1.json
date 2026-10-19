@@ -1,0 +1,558 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R87_FIRST_CANONICAL_RELEASE_V1",
+  "date": "2026-10-19",
+  "status": "PROPOSED_VIA_PR",
+  "policy": "New Places require original Catholic site/competent authority identity plus exact mapped OSM feature or official point; OSM feature centroids are not entrances. No TLM or current opening-hours assertions. No venue-to-Place crosswalk from proximity.",
+  "baseline": {
+    "published_places": 261,
+    "source_records": 449
+  },
+  "published_new": [
+    {
+      "place_id": "place:NO:st-olav-cathedral-oslo",
+      "research_id": "AO-R80-DISC-005",
+      "country": "NO",
+      "name": "St Olav Catholic Cathedral — Oslo",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.katolsk.no/organisasjon/okb/Oslo/Olav/st-olav-domkirke-oslo",
+      "geo_source_url": "https://www.openstreetmap.org/way/112290722",
+      "geo_source_ref": "osm:way:112290722",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-005",
+        "AO-R87-GEO-R87-AO-R80-DISC-005"
+      ]
+    },
+    {
+      "place_id": "place:NO:st-olav-cathedral-trondheim",
+      "research_id": "AO-R81-DISC-008",
+      "country": "NO",
+      "name": "St Olav Catholic Cathedral — Trondheim",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.katolsk.no/organisasjon/mn/Trondheim/st-olav-domkirke-trondheim",
+      "geo_source_url": "https://www.openstreetmap.org/way/null",
+      "geo_source_ref": "osm:way:null",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-008",
+        "AO-R87-GEO-R87-AO-R81-DISC-008"
+      ]
+    },
+    {
+      "place_id": "place:NO:var-frue-cathedral-tromso",
+      "research_id": "AO-R81-DISC-009",
+      "country": "NO",
+      "name": "Our Lady's Catholic Cathedral — Tromsø",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.katolsk.no/organisasjon/nn/Tromso/var-frue-domkirke",
+      "geo_source_url": "https://www.katolsk.no/organisasjon/nn/Tromso/var-frue-domkirke",
+      "geo_source_ref": "norwegian_catholic_church:AO-R81-DISC-009",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-009",
+        "AO-R87-GEO-R87-AO-R81-DISC-009"
+      ]
+    },
+    {
+      "place_id": "place:EE:saints-peter-paul-cathedral-tallinn",
+      "research_id": "AO-R80-DISC-002",
+      "country": "EE",
+      "name": "Saints Peter and Paul Catholic Cathedral — Tallinn",
+      "place_type": "cathedral",
+      "identity_source_url": "https://katoliku.ee/kogudused/tallinna-puhade-apostlite-peetruse-ja-pauluse-kogudus/",
+      "geo_source_url": "https://www.openstreetmap.org/way/26885900",
+      "geo_source_ref": "osm:way:26885900",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-002",
+        "AO-R87-GEO-R87-AO-R80-DISC-002"
+      ]
+    },
+    {
+      "place_id": "place:FI:st-henry-cathedral-helsinki",
+      "research_id": "AO-R80-DISC-003",
+      "country": "FI",
+      "name": "St Henry Catholic Cathedral — Helsinki",
+      "place_type": "cathedral",
+      "identity_source_url": "https://henrik.katolinen.fi/en/contact-information/",
+      "geo_source_url": "https://www.openstreetmap.org/way/22467530",
+      "geo_source_ref": "osm:way:22467530",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-003",
+        "AO-R87-GEO-R87-AO-R80-DISC-003"
+      ]
+    },
+    {
+      "place_id": "place:SE:st-eric-cathedral-stockholm",
+      "research_id": "AO-R80-DISC-006",
+      "country": "SE",
+      "name": "St Eric Catholic Cathedral — Stockholm",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.katolskakyrkan.se/hitta-din-narmaste-kyrka-eller-forsamling/s-t-eriks-domkyrka-stockholm",
+      "geo_source_url": "https://www.openstreetmap.org/way/47160788",
+      "geo_source_ref": "osm:way:47160788",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-006",
+        "AO-R87-GEO-R87-AO-R80-DISC-006"
+      ]
+    },
+    {
+      "place_id": "place:IS:christ-king-cathedral-reykjavik",
+      "research_id": "AO-R80-DISC-004",
+      "country": "IS",
+      "name": "Christ the King Cathedral — Reykjavík",
+      "place_type": "cathedral",
+      "identity_source_url": "https://catholica.is/en/biskupsdaemid/",
+      "geo_source_url": "https://www.openstreetmap.org/way/93894747",
+      "geo_source_ref": "osm:way:93894747",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-004",
+        "AO-R87-GEO-R87-AO-R80-DISC-004"
+      ]
+    },
+    {
+      "place_id": "place:HK:immaculate-conception-cathedral-hong-kong",
+      "research_id": "AO-R80-DISC-014",
+      "country": "HK",
+      "name": "Cathedral of the Immaculate Conception — Hong Kong",
+      "place_type": "cathedral",
+      "identity_source_url": "https://heritage.catholic.org.hk/en/catholic_building/cathedral/index.html",
+      "geo_source_url": "https://www.openstreetmap.org/way/217522625",
+      "geo_source_ref": "osm:way:217522625",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-014",
+        "AO-R87-GEO-R87-AO-R80-DISC-014"
+      ]
+    },
+    {
+      "place_id": "place:JP:st-mary-cathedral-tokyo",
+      "research_id": "AO-R80-DISC-016",
+      "country": "JP",
+      "name": "St Mary's Catholic Cathedral — Tokyo",
+      "place_type": "cathedral",
+      "identity_source_url": "https://tokyo.catholic.jp/en/archdiocese/cathedral/",
+      "geo_source_url": "https://www.openstreetmap.org/way/120704384",
+      "geo_source_ref": "osm:way:120704384",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-016",
+        "AO-R87-GEO-R87-AO-R80-DISC-016"
+      ]
+    },
+    {
+      "place_id": "place:JP:urakami-cathedral-nagasaki",
+      "research_id": "AO-R81-DISC-042",
+      "country": "JP",
+      "name": "Urakami Catholic Cathedral — Nagasaki",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.nagasaki.catholic.jp/archives/13707",
+      "geo_source_url": "https://www.openstreetmap.org/way/280652259",
+      "geo_source_ref": "osm:way:280652259",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-042",
+        "AO-R87-GEO-R87-AO-R81-DISC-042"
+      ]
+    },
+    {
+      "place_id": "place:JP:oura-cathedral-nagasaki",
+      "research_id": "AO-R81-DISC-041",
+      "country": "JP",
+      "name": "Ōura Cathedral — Twenty-Six Martyrs Basilica",
+      "place_type": "basilica",
+      "identity_source_url": "https://whc.unesco.org/en/list/1495/maps/",
+      "geo_source_url": "https://www.openstreetmap.org/way/243003159",
+      "geo_source_ref": "osm:way:243003159",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-041",
+        "AO-R87-GEO-R87-AO-R81-DISC-041"
+      ]
+    },
+    {
+      "place_id": "place:ID:jakarta-cathedral",
+      "research_id": "AO-R80-DISC-015",
+      "country": "ID",
+      "name": "Jakarta Catholic Cathedral — Our Lady of the Assumption",
+      "place_type": "cathedral",
+      "identity_source_url": "https://katedraljakarta.or.id/",
+      "geo_source_url": "https://www.openstreetmap.org/way/97196698",
+      "geo_source_ref": "osm:way:97196698",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-015",
+        "AO-R87-GEO-R87-AO-R80-DISC-015"
+      ]
+    },
+    {
+      "place_id": "place:KE:holy-family-cathedral-basilica-nairobi",
+      "research_id": "AO-R80-DISC-010",
+      "country": "KE",
+      "name": "Holy Family Cathedral Basilica — Nairobi",
+      "place_type": "cathedral",
+      "identity_source_url": "https://archdioceseofnairobi.org/?p=7643",
+      "geo_source_url": "https://www.openstreetmap.org/way/101814681",
+      "geo_source_ref": "osm:way:101814681",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-010",
+        "AO-R87-GEO-R87-AO-R80-DISC-010"
+      ]
+    },
+    {
+      "place_id": "place:EC:basilica-voto-nacional-quito",
+      "research_id": "AO-R80-DISC-013",
+      "country": "EC",
+      "name": "Basílica del Voto Nacional — Quito",
+      "place_type": "basilica",
+      "identity_source_url": "https://www.basilicadelvotonacionalecuador.com/historia_patrimonio",
+      "geo_source_url": "https://www.openstreetmap.org/way/107938444",
+      "geo_source_ref": "osm:way:107938444",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-013",
+        "AO-R87-GEO-R87-AO-R80-DISC-013"
+      ]
+    },
+    {
+      "place_id": "place:IN:santhome-cathedral-basilica-chennai",
+      "research_id": "SG-INV-0590",
+      "country": "IN",
+      "name": "Santhome Cathedral Basilica — Shrine of St Thomas",
+      "place_type": "cathedral",
+      "identity_source_url": "https://archdioceseofmadrasmylapore.in/parishes/",
+      "geo_source_url": "https://www.openstreetmap.org/way/1115403900",
+      "geo_source_ref": "osm:way:1115403900",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-SG-INV-0590",
+        "AO-R87-GEO-R87-SG-INV-0590"
+      ]
+    },
+    {
+      "place_id": "place:IN:mount-mary-basilica-bandra",
+      "research_id": "AO-R82-DISC-022",
+      "country": "IN",
+      "name": "Basilica of Our Lady of the Mount — Bandra",
+      "place_type": "basilica",
+      "identity_source_url": "https://www.mountmarybasilicabandra.in/",
+      "geo_source_url": "https://www.openstreetmap.org/way/281241933",
+      "geo_source_ref": "osm:way:281241933",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R82-DISC-022",
+        "AO-R87-GEO-R87-AO-R82-DISC-022"
+      ]
+    },
+    {
+      "place_id": "place:IN:st-thomas-mount-shrine-chennai",
+      "research_id": "AO-R82-DISC-023",
+      "country": "IN",
+      "name": "St Thomas Mount National Shrine Basilica — Chennai",
+      "place_type": "shrine",
+      "identity_source_url": "https://stthomasmountbasilica.com/",
+      "geo_source_url": "https://www.openstreetmap.org/way/353687583",
+      "geo_source_ref": "osm:way:353687583",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R82-DISC-023",
+        "AO-R87-GEO-R87-AO-R82-DISC-023"
+      ]
+    },
+    {
+      "place_id": "place:PH:manila-cathedral-intramuros",
+      "research_id": "AO-R80-DISC-019",
+      "country": "PH",
+      "name": "Manila Cathedral Basilica — Immaculate Conception",
+      "place_type": "cathedral",
+      "identity_source_url": "https://rcam.org/history/",
+      "geo_source_url": "https://www.openstreetmap.org/way/331777144",
+      "geo_source_ref": "osm:way:331777144",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-019",
+        "AO-R87-GEO-R87-AO-R80-DISC-019"
+      ]
+    },
+    {
+      "place_id": "place:PH:quiapo-national-shrine-jesus-nazareno",
+      "research_id": "AO-R81-DISC-032",
+      "country": "PH",
+      "name": "Minor Basilica and National Shrine of Jesus Nazareno — Quiapo",
+      "place_type": "shrine",
+      "identity_source_url": "https://rcam.org/quiapo-church-officially-declared-as-national-shrine/",
+      "geo_source_url": "https://www.openstreetmap.org/way/27086772",
+      "geo_source_ref": "osm:way:27086772",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-032",
+        "AO-R87-GEO-R87-AO-R81-DISC-032"
+      ]
+    },
+    {
+      "place_id": "place:PH:santo-nino-tondo-minor-basilica",
+      "research_id": "AO-R80-DISC-020",
+      "country": "PH",
+      "name": "Minor Basilica of Santo Niño de Tondo",
+      "place_type": "basilica",
+      "identity_source_url": "https://rcam.org/declaration-of-minor-basilica-of-santo-nino-de-tondo-a-gift-and-a-mission-cardinal-advincula/",
+      "geo_source_url": "https://www.openstreetmap.org/way/32505820",
+      "geo_source_ref": "osm:way:32505820",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-020",
+        "AO-R87-GEO-R87-AO-R80-DISC-020"
+      ]
+    },
+    {
+      "place_id": "place:KR:jeoldusan-martyrs-shrine-seoul",
+      "research_id": "SG-INV-0624",
+      "country": "KR",
+      "name": "Jeoldusan Korean Martyrs' Shrine — Seoul",
+      "place_type": "shrine",
+      "identity_source_url": "https://www.jeoldusan.or.kr/main",
+      "geo_source_url": "https://www.openstreetmap.org/way/305380351",
+      "geo_source_ref": "osm:way:305380351",
+      "precision": "complex_anchor",
+      "source_ids": [
+        "AO-R87-SITE-R87-SG-INV-0624",
+        "AO-R87-GEO-R87-SG-INV-0624"
+      ]
+    },
+    {
+      "place_id": "place:GE:assumption-catholic-cathedral-tbilisi",
+      "research_id": "AO-R80-DISC-007",
+      "country": "GE",
+      "name": "Cathedral of the Assumption of the Virgin Mary — Tbilisi",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.tbcathedral.ge/en",
+      "geo_source_url": "https://www.openstreetmap.org/way/817688095",
+      "geo_source_ref": "osm:way:817688095",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-007",
+        "AO-R87-GEO-R87-AO-R80-DISC-007"
+      ]
+    },
+    {
+      "place_id": "place:KZ:our-lady-fatima-cathedral-karaganda",
+      "research_id": "AO-R82-DISC-002",
+      "country": "KZ",
+      "name": "Cathedral of Our Lady of Fatima — Karaganda",
+      "place_type": "cathedral",
+      "identity_source_url": "https://catholic-kazakhstan.org/prihody/kafedralnyj-sobor-karaganda/",
+      "geo_source_url": "https://www.openstreetmap.org/way/338659076",
+      "geo_source_ref": "osm:way:338659076",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R82-DISC-002",
+        "AO-R87-GEO-R87-AO-R82-DISC-002"
+      ]
+    },
+    {
+      "place_id": "place:QA:our-lady-rosary-church-doha",
+      "research_id": "AO-R81-DISC-031",
+      "country": "QA",
+      "name": "Our Lady of the Rosary Catholic Church — Doha",
+      "place_type": "church",
+      "identity_source_url": "https://qatarcatholicchurch.org/contact-us",
+      "geo_source_url": "https://www.openstreetmap.org/way/239713638",
+      "geo_source_ref": "osm:way:239713638",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-031",
+        "AO-R87-GEO-R87-AO-R81-DISC-031"
+      ]
+    },
+    {
+      "place_id": "place:LK:st-lucia-cathedral-colombo",
+      "research_id": "AO-R80-DISC-018",
+      "country": "LK",
+      "name": "St Lucia's Cathedral — Colombo",
+      "place_type": "cathedral",
+      "identity_source_url": "https://archdioceseofcolombo.lk/article/Priestly_Ordinations_2026/96",
+      "geo_source_url": "https://www.openstreetmap.org/node/4304782810",
+      "geo_source_ref": "osm:node:4304782810",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-018",
+        "AO-R87-GEO-R87-AO-R80-DISC-018"
+      ]
+    },
+    {
+      "place_id": "place:ES:covadonga-basilica",
+      "research_id": "AO-R81-DISC-048",
+      "country": "ES",
+      "name": "Basílica de Santa María la Real de Covadonga",
+      "place_type": "basilica",
+      "identity_source_url": "https://santuariodecovadonga.es/",
+      "geo_source_url": "https://www.openstreetmap.org/way/94842350",
+      "geo_source_ref": "osm:way:94842350",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-048",
+        "AO-R87-GEO-R87-AO-R81-DISC-048"
+      ]
+    },
+    {
+      "place_id": "place:ES:covadonga-santa-cueva",
+      "research_id": "AO-R81-DISC-049",
+      "country": "ES",
+      "name": "Santa Cueva de Covadonga — Marian Holy Cave",
+      "place_type": "chapel",
+      "identity_source_url": "https://santuariodecovadonga.es/",
+      "geo_source_url": "https://www.openstreetmap.org/way/362382526",
+      "geo_source_ref": "osm:way:362382526",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-049",
+        "AO-R87-GEO-R87-AO-R81-DISC-049"
+      ]
+    },
+    {
+      "place_id": "place:AE:st-joseph-cathedral-abu-dhabi",
+      "research_id": "AO-R80-DISC-022",
+      "country": "AE",
+      "name": "St Joseph's Catholic Cathedral — Abu Dhabi",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.avosa.org/parishes-2",
+      "geo_source_url": "https://www.openstreetmap.org/node/3926525194",
+      "geo_source_ref": "osm:node:3926525194",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R80-DISC-022",
+        "AO-R87-GEO-R87-AO-R80-DISC-022"
+      ]
+    },
+    {
+      "place_id": "place:DK:st-ansgar-cathedral-copenhagen",
+      "research_id": "AO-R81-DISC-001",
+      "country": "DK",
+      "name": "St Ansgar Catholic Cathedral — Copenhagen",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.katolsk.dk/kontakt/bispedoemmets-menigheder/domkirken-sankt-ansgars-kirke-02",
+      "geo_source_url": "https://www.openstreetmap.org/way/133986381",
+      "geo_source_ref": "osm:way:133986381",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-001",
+        "AO-R87-GEO-R87-AO-R81-DISC-001"
+      ]
+    },
+    {
+      "place_id": "place:BH:our-lady-arabia-cathedral-awali",
+      "research_id": "AO-R81-DISC-025",
+      "country": "BH",
+      "name": "Our Lady of Arabia Cathedral — Awali",
+      "place_type": "cathedral",
+      "identity_source_url": "https://bahraincathedral.com/contact-cola/",
+      "geo_source_url": "https://www.openstreetmap.org/way/1011051487",
+      "geo_source_ref": "osm:way:1011051487",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R81-DISC-025",
+        "AO-R87-GEO-R87-AO-R81-DISC-025"
+      ]
+    },
+    {
+      "place_id": "place:MU:saint-louis-cathedral-port-louis",
+      "research_id": "AO-R82-DISC-047",
+      "country": "MU",
+      "name": "Cathédrale Saint-Louis — Port-Louis",
+      "place_type": "cathedral",
+      "identity_source_url": "https://dioceseportlouis.org/paroisses-messes/cathedrale-saint-louis-port-louis/",
+      "geo_source_url": "https://www.openstreetmap.org/way/158575993",
+      "geo_source_ref": "osm:way:158575993",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R82-DISC-047",
+        "AO-R87-GEO-R87-AO-R82-DISC-047"
+      ]
+    },
+    {
+      "place_id": "place:US:baltimore-basilica-assumption",
+      "research_id": "SG-INV-0403",
+      "country": "US",
+      "name": "Basilica of the National Shrine of the Assumption — Baltimore",
+      "place_type": "basilica",
+      "identity_source_url": "https://americasfirstcathedral.org/visitthebasilica",
+      "geo_source_url": "https://www.openstreetmap.org/way/337697161",
+      "geo_source_ref": "osm:way:337697161",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-SG-INV-0403",
+        "AO-R87-GEO-R87-SG-INV-0403"
+      ]
+    },
+    {
+      "place_id": "place:MN:saints-peter-paul-cathedral-ulaanbaatar",
+      "research_id": "AO-R82-DISC-006",
+      "country": "MN",
+      "name": "Saints Peter and Paul Catholic Cathedral — Ulaanbaatar",
+      "place_type": "cathedral",
+      "identity_source_url": "https://catholicchurch-mongolia.mn/en/parishes/saints-peter-paul-cathedral/",
+      "geo_source_url": "https://www.openstreetmap.org/way/863231664",
+      "geo_source_ref": "osm:way:863231664",
+      "precision": "site",
+      "source_ids": [
+        "AO-R87-SITE-R87-AO-R82-DISC-006",
+        "AO-R87-GEO-R87-AO-R82-DISC-006"
+      ]
+    }
+  ],
+  "country_areas_added": [
+    "geo:country:NO",
+    "geo:country:EE",
+    "geo:country:FI",
+    "geo:country:SE",
+    "geo:country:IS",
+    "geo:country:HK",
+    "geo:country:ID",
+    "geo:country:KE",
+    "geo:country:EC",
+    "geo:country:KR",
+    "geo:country:GE",
+    "geo:country:KZ",
+    "geo:country:QA",
+    "geo:country:AE",
+    "geo:country:DK",
+    "geo:country:BH",
+    "geo:country:MN"
+  ],
+  "held": [
+    {
+      "research_id": "AO-R82-DISC-005",
+      "name": "Baku Immaculate Conception",
+      "reason": "Conflicting original custodian address versions"
+    },
+    {
+      "research_id": "SG-INV-0689",
+      "name": "Ozernoye Marian Sanctuary",
+      "reason": "Published GPS represents a sanctuary area, church point not verified"
+    },
+    {
+      "research_id": "AO-R81-DISC-054",
+      "name": "Bonaria basilica",
+      "reason": "Adjacent buildings need distinct geometry and custodian site matching"
+    },
+    {
+      "research_id": "AO-R81-DISC-055",
+      "name": "Bonaria old sanctuary",
+      "reason": "Adjacent buildings need distinct geometry and custodian site matching"
+    },
+    {
+      "research_id": "SG-INV-0215",
+      "name": "Niepokalanów St Maximilian Chapel",
+      "reason": "Distinct chapel footprint/entrance not yet independently verified"
+    },
+    {
+      "research_id": "AO-R82-DISC-075",
+      "name": "Haiti historical sanctuary",
+      "reason": "2010 destroyed building must not be mapped as currently open"
+    }
+  ]
+}
