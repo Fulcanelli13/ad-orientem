@@ -242,7 +242,7 @@ assert.equal(reviewMap.get("PX1912-Q359").precision,"PASTORAL_METHOD_ONLY");
 assert.equal(reviewMap.get("PX1912-Q363").precision,"CONTRAST_ONLY");
 const editions=await read("data/learn/magisterium-denzinger-edition-bibliography.v1.json");
 assert.equal(editions.schema,"AO_MAGISTERIUM_DENZINGER_EDITION_BIBLIOGRAPHY_V1");
-assert.equal(editions.editions.length,4);
+assert.equal(editions.editions.length,7);
 assert.equal(editions.metrics.printedEntryNumbersChecked,0);
 assert.equal(editions.metrics.approvedCrosswalks,0);
 for(const edition of editions.editions){
@@ -250,5 +250,49 @@ for(const edition of editions.editions){
  assert.equal(edition.editionEntryConcordanceChecked,false);
  assert.equal(edition.rightsCleared,false);
 }
+
+
+const italianPius=await read("data/learn/ltfaith-pius-x-it-witness-index.v1.json");
+const frenchPius=await read("data/learn/ltfaith-pius-x-1913-french-print-page-evidence.v1.json");
+const frenchPages=await read("data/learn/ltfaith-pius-x-fr-1913-scan-page-candidates.v1.json");
+const italianOriginal=await read("data/learn/ltfaith-pius-x-italian-1912-original-print-acquisition.v1.json");
+assert.equal(italianPius.questionCount,433);
+assert.equal(frenchPages.questionCount,433);
+assert.equal(frenchPius.verifiedPageSamples.length,70);
+assert.equal(italianOriginal.original1912PrintEditionLocatedAndVerified,false);
+assert.equal(b7qa.metrics.originalFrench1913QAPageImageVerified,5);
+assert.equal(b7qa.metrics.originalFrench1913PageCandidatesOnly,23);
+assert.equal(b7qa.metrics.pinnedItalianDigitalQALocations,28);
+assert.equal(b7qa.metrics.originalItalian1912PrintPhotosVerified,0);
+const italianByQ=new Map(italianPius.entries.map(x=>[x.q,x]));
+const frenchPhotoByQ=new Map(frenchPius.verifiedPageSamples.map(x=>[x.question,x]));
+const frenchCandidatesByQ=new Map(frenchPages.entries.map(x=>[x.q,x]));
+for(const q of b7qa.records){
+ const it=italianByQ.get(q.questionNumber);
+ const fr=frenchPhotoByQ.get(q.questionNumber);
+ const candidate=frenchCandidatesByQ.get(q.questionNumber);
+ assert.ok(it&&candidate,"Missing existing Pius source owner record for "+q.questionId);
+ assert.equal(q.originalItalianSourceOwner.canonicalIndex,"data/learn/ltfaith-pius-x-it-witness-index.v1.json");
+ assert.equal(q.originalItalianSourceOwner.sourceFileUrl,it.italianSourceFileUrl);
+ assert.equal(q.originalItalianSourceOwner.numberMatchedPinnedEnglish,true);
+ assert.equal(q.printFrench1913.sourcePdf,frenchPius.pdfUrl);
+ assert.equal(q.printFrench1913.pdfPageOneIndexed,fr?fr.pdfPageOneIndexed:candidate.pdfPageOneIndexedCandidates[0]);
+ assert.equal(q.printFrench1913.status,fr?
+  "FULL_QA_VISUALLY_PAGE_CONFIRMED_IN_1913_FRENCH_PRINT":
+  "OCR_NUMBER_HEADING_PAGE_CANDIDATE_ONLY_NOT_PAGE_PHOTOGRAPHICALLY_COLLATED");
+ assert.equal(q.printFrench1913.original1912ItalianPrintClaim,false);
+ assert.equal(q.printOriginalCollated,false);
+ assert.equal(q.publiclyUsable,false);
+}
+assert.equal(editions.metrics.bibliographicEditions,7);
+assert.equal(editions.metrics.scannedHistoricalLatinVolumesLocated,1);
+assert.equal(editions.metrics.editionVerifiedConcordances,0);
+const year1900=editions.editions.find(x=>x.id==="DZ_1900_LATIN_PRINT");
+assert.ok(year1900&&year1900.printedVolumeDigitized);
+assert.equal(year1900.editionEntryConcordanceChecked,false);
+assert.equal(bridges.b8CharacterSermonSourceGate.verifiedSermonPassagesInThisBranch,0);
+assert.equal(bridges.b8CharacterSermonSourceGate.approvedFirstPersonChanoineResponses,0);
+assert.equal(bridges.b8CatechismPrintReview.frenchPrintVerifiedQAsInBridge,5);
+assert.equal(bridges.b8CatechismPrintReview.original1912ItalianFacsimileVerifiedQAs,0);
 
 console.log("PASS Magisterium P0/P1: 83 distinct documents; 51 canonical doctrine subjects; 106 provisional links; 61 nonpublished source locators; no fabricated Denzinger crosswalks or new answers");
