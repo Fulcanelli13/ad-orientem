@@ -1,0 +1,21 @@
+name: Sacred geography R88 coverage matrix
+on:
+  pull_request:
+    paths:
+      - data/geography/research/sacred-geography-r88-country-category-coverage.v1.json
+      - tests/sacred-geography-r88-worldwide-coverage.mjs
+      - .github/workflows/sacred-geography-r88-country-coverage.yml
+  push:
+    branches: [main]
+    paths:
+      - data/geography/research/sacred-geography-r88-country-category-coverage.v1.json
+      - tests/sacred-geography-r88-worldwide-coverage.mjs
+jobs:
+  snapshot-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/sacred-geography-r88-worldwide-coverage.mjs
