@@ -263,7 +263,7 @@
     "test:mass-premass-local-orations": "node tests/mass-premass-local-orations-phone.mjs",
     "test:mass-ps113-editorial": "node tests/mass-2026-10-18-ps113-alleluia-english.mjs",
     "test:mass-icon-necessity": "node tests/mass-icon-necessity-policy.mjs",
-    "test:mass-icon-source": "node tests/mass-icon-generation-provenance.mjs && npm run test:mass-icon-originals && node tests/mass-icon-originals-schumacher1920.mjs",
+    "test:mass-icon-source": "node tests/mass-icon-generation-provenance.mjs && npm run test:mass-icon-originals && node tests/mass-icon-originals-schumacher1920.mjs && node tests/mass-icon-source-acquisition-p3.mjs",
     "test:mass-icon-originals": "node tests/mass-icon-originals-leclerc1661.mjs"
   },
   "devDependencies": {
