@@ -55,11 +55,11 @@ try{
    assert.equal(await page.locator('#aoPray435930 .aoTenebStageNav').evaluate(node=>getComputedStyle(node).position),"sticky",
       "Office progress and section jump must remain in the shared reading header");
    const ribbon=await page.locator('#aoPray435930 .aoTenebReaderRibbon').evaluate(node=>({
-     background:getComputedStyle(node).backgroundColor,
+     background:getComputedStyle(node).backgroundImage,
      display:getComputedStyle(node).display,
    }));
    assert.equal(ribbon.display,"flex","Tenebrae should share a compact reading ribbon");
-   assert.notEqual(ribbon.background,"rgba(0, 0, 0, 0)","Tenebrae ribbon must use the dark liturgical surface");
+   assert.match(ribbon.background,/linear-gradient/,"Tenebrae ribbon must use the dark gradient liturgical surface");
    const progress=page.locator('#aoPray435930 .aoTenebStageNav .aoDevoProgress');
    assert.equal(await progress.count(),1,"One shared Tenebrae progress track");
    assert.equal(await progress.getAttribute("aria-valuenow"),"1");
