@@ -12,8 +12,8 @@
     "gap_ids_with_specific_source_urls": 15,
     "gap_ids_with_exact_file_photo_license": 13,
     "gap_ids_with_no_specific_photographic_candidate": 19,
-    "new_supporting_reconciliations": 6,
-    "independent_source_urls_in_document": 21,
+    "new_supporting_reconciliations": 8,
+    "independent_source_urls_in_document": 23,
     "primary_assignments_added": 0,
     "publication_approvals_added": 0
   },
@@ -533,9 +533,41 @@
       "identification": "Medieval Catholic stone font and c.1490–1510 brass cover; photograph dated 1942",
       "rights": "CC_BY_4_0_EXACT_FILE_PHOTOGRAPH",
       "disposition": "CONTEXT_PRECEDENT_NOT_STANDALONE_FONT_COVER_HERO"
+    },
+    {
+      "object_id": "EQ01",
+      "priority": "PILOT_LICENSED_SINGLE_WINE_CRUET_LEAD",
+      "url": "https://commons.wikimedia.org/wiki/File:WLA_vanda_Cruet_for_the_Mass.jpg",
+      "title": "V&A museum silver-gilt Mass cruet with V on lid, possibly Spanish Netherlands, c.1540, accession 472-1879",
+      "identification": "Museum explicitly explains the applied V (vinum) implies Mass wine; authentic Catholic altar cruet, photo original 3000x4000.",
+      "photographer": "VeronikaB (Wikipedia Loves Art at V&A, February 2009)",
+      "rights": "CC_BY_2_5_EXACT_FILE_FLICKR_REVIEWED",
+      "disposition": "SINGLE_OBJECT_WINE_CRUET_CANDIDATE_AWAITING_PIXEL_AND_EDITORIAL_REVIEW",
+      "note": "Museum describes V as a suggestion rather than definitive documentary proof. It illustrates EQ01 as a specific historical wine cruet; should not stand in for modern matching 1962 service without being labelled."
+    },
+    {
+      "object_id": "EQ01/EQ02/EQ03",
+      "priority": "DIA_IMAGE_RIGHTS_HOLD_NOT_GENERAL_COPYRIGHT",
+      "url": "https://dia.org/collection/rights-reproduction",
+      "title": "DIA rights and reproduction policy for separately downloadable public-domain object images",
+      "identification": "DIA says many images of public-domain artworks are downloadable without fee, but an exact downloadable/public-domain photographic image for accession 53.320 has not been verified",
+      "rights": "PER_IMAGE_CLEARANCE_PENDING",
+      "disposition": "VERIFY_ON_OBJECT_PAGE_OR_REQUEST_LICENSE; DO_NOT_INFER_FROM_OBJECT_YEAR"
     }
   ],
   "unapproved": true,
   "public_release": false,
-  "canonical_registry_mutated": false
+  "canonical_registry_mutated": false,
+  "b24_review_summary": {
+    "highest_return": [
+      "EQ01 licensed V-marked standalone wine cruet: Commons photograph CC BY 2.5",
+      "EQ01/EQ02/equivalent paired tray museum record with physical A/V markings: rights hold",
+      "EQ16 Vasculum identified ablution vessel with exact-file CC BY-SA 3.0",
+      "SA10 full Catholic sick-call room arrangement exact-file CC BY-SA 4.0",
+      "SA11 historical viaticum carrier exact-file CC BY 3.0",
+      "EQ03 French Notre-Dame liturgical cruet tray photograph exact-file CC BY 4.0; tray not isolated"
+    ],
+    "publication_eligible_hero_images_confirmed": 0,
+    "review_needed": "No new pilot hero statuses approved; separate source provenance and image rights from full image isolation, 1962 type, and user visual rating."
+  }
 }
