@@ -84,6 +84,7 @@ import { createRogationsReaderController, contextualRogationCard, loadRogationsR
 import { createGoodFridayReaderController, loadGoodFridayReaderData } from "./reader-good-friday.js";
 import { installDistinctRiteReadingFocus } from "./reader-distinct-text-focus.js";
 import { createEasterVigilReaderController, loadEasterVigilReaderData, projectEasterVigilMassModel } from "./reader-easter-vigil.js";
+import { EASTER_VIGIL_PROPHECY_READINGS } from "./reader-easter-vigil-prophecy-index.js";
 import { createRequiemAbsolutionReaderController, loadRequiemAbsolutionReaderData } from "./reader-requiem-absolution.js";
 import { createCorpusChristiProcessionReaderController, loadCorpusChristiProcessionReaderData } from "./reader-corpus-christi.js";
 import { createHolyThursdayPostReaderController, loadHolyThursdayPostReaderData } from "./reader-holy-thursday-post.js";
@@ -256,7 +257,12 @@ export async function prepareNativeReaderPreview({
   if(!prepared?.session?.resolvedMass) throw new TypeError("Prepared R17 Mass session required");
   const plan=prepared?.session?.plan;
   if(plan?.kind==="DISTINCT_RITE" && plan?.rite==="GOOD_FRIDAY"){
-    const loadedGoodFriday=goodFridayData ?? await Promise.resolve(loadGoodFridayData(prepared));
+    // R28 bypasses the ordinary Mass preload; music metadata must be loaded
+    // here, without making supplementary research a prerequisite for prayer.
+    const [loadedGoodFriday,loadedRiteMusic]=await Promise.all([
+      goodFridayData ?? Promise.resolve(loadGoodFridayData(prepared)),
+      riteMusicData ?? Promise.resolve().then(()=>loadRiteMusicData(prepared)).catch(()=>null),
+    ]);
     const ctx=prepared?.session?.resolvedMass?.provenance?.goodFriday ?? {};
     const goodFridayController=createGoodFridayReaderController({
       graph:loadedGoodFriday?.graph,
@@ -269,13 +275,16 @@ export async function prepareNativeReaderPreview({
       prepared,
       distinctRite:"GOOD_FRIDAY",
       goodFridayController,
+      riteMusicRegistry:loadedRiteMusic,
+      riteMusicSource:loadedGoodFriday?.payload??null,
       model:null,
     });
   }
   if(plan?.kind==="COMPOSITE_DISTINCT_RITE" && plan?.rite==="EASTER_VIGIL"){
-    const [data,loadedEasterVigil]=await Promise.all([
+    const [data,loadedEasterVigil,loadedRiteMusic]=await Promise.all([
       presentationData ?? Promise.resolve(loadPresentationData(prepared)),
       easterVigilData ?? Promise.resolve(loadEasterVigilData(prepared)),
+      riteMusicData ?? Promise.resolve().then(()=>loadRiteMusicData(prepared)).catch(()=>null),
     ]);
     const resolved=prepared.session.resolvedMass;
     const ordinaryResolved=Object.freeze({
@@ -308,6 +317,13 @@ export async function prepareNativeReaderPreview({
       prepared,
       distinctRite:"EASTER_VIGIL",
       easterVigilController,
+      riteMusicRegistry:loadedRiteMusic,
+      // Prophecy canticles already have their own pinned source reader; this
+      // projection references those words and does not copy or translate them.
+      riteMusicSource:Object.freeze({
+        ...loadedEasterVigil.payload,prophecyCanticles:EASTER_VIGIL_PROPHECY_READINGS,
+      }),
+      riteMusicCondition:"FONT_MODE="+(ctx.fontMode??"IN_CHURCH"),
       model,
     });
   }
@@ -907,6 +923,10 @@ export async function mountNativeReaderPreview({
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
+        riteMusic:projectRiteMusicBadge({
+          registry:ready.riteMusicRegistry,riteId:"GOOD_FRIDAY",
+          stageId:step.recordId,sourcePayload:ready.riteMusicSource,
+        }),
         posture:sourcePosture ? Object.freeze({label:sourcePosture}) : null,
         postureIconKey:({KNEEL:"kneel",STAND:"stand",SIT:"sit"})[sourcePosture]??null,
         cinematicScene:projectGoodFridayDeathScene({
@@ -1094,6 +1114,11 @@ export async function mountNativeReaderPreview({
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Easter Vigil",
+        riteMusic:projectRiteMusicBadge({
+          registry:ready.riteMusicRegistry,riteId:"EASTER_VIGIL",
+          stageId:step.recordId,sourcePayload:ready.riteMusicSource,
+          condition:ready.riteMusicCondition,
+        }),
         posture:state.posture ? Object.freeze({label:state.posture}) : null,
         gesture:state.action ? Object.freeze({label:state.action}) : null,
         guide:null,

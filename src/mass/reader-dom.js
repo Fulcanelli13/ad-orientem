@@ -1588,8 +1588,12 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
   const schola = persist(moment.schola, previous.schola);
   // Special-rite musical metadata is separate from the ordinary Schola
   // performance clock. It never supplies lyrics, tempo, or inferred sound.
-  const riteMusic=moment.cardUpdate===false
-    ? (previous.riteMusic??null) : (moment.riteMusic??null);
+  // A distinct-rite step can change chant/silence without replacing its
+  // current prayer surface (e.g. each Ecce lignum kneel/rise state).
+  // Respect an explicitly supplied null even when cardUpdate is false.
+  const riteMusic=Object.prototype.hasOwnProperty.call(moment,"riteMusic")
+    ? (moment.riteMusic??null)
+    : moment.cardUpdate===false ? (previous.riteMusic??null) : null;
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
   const sharedScholaControls=moment.sharedScholaControls===true ||
     (moment.cardUpdate===false && previous.sharedScholaControls===true);
