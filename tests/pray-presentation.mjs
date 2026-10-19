@@ -97,7 +97,8 @@ assert.ok(devotionalUx.groupCapable.includes("pray.stations"));
 assert.ok(devotionalUx.swipeCapable.includes("programme.first_saturday"));
 
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
-const singleLibrary=runtime.slice(runtime.indexOf("function renderLibrary()"),runtime.indexOf("function renderStations()",runtime.indexOf("function renderLibrary()")));
+const libraryStart=runtime.indexOf("function renderLibrary()");
+const singleLibrary=runtime.slice(libraryStart,runtime.indexOf("\nfunction ",libraryStart+10));
 const directPrayer=runtime.slice(runtime.indexOf("function renderPrayerOnly("),runtime.indexOf("let prayerReturnView=",runtime.indexOf("function renderPrayerOnly(")));
 const libraryFocus=runtime.slice(runtime.indexOf("function installLibraryParagraphFocus("),runtime.indexOf("function render(){",runtime.indexOf("function installLibraryParagraphFocus(")));
 assert.ok(singleLibrary.includes('data-ao-library-card="single"'),"Prayer Library lost single-card identity");
