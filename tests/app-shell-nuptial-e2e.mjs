@@ -135,10 +135,8 @@ try{
   const firstTitle=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim();
   assert.ok(firstTitle&&firstTitle.length>0);
 
-  const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
-  const box=await next.boundingBox();
-  assert.ok(box&&box.height>=44);
-  await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
+  await page.locator("#ao-r17-native-reader-preview .ao-prayer-card").focus();
+  await page.keyboard.press("ArrowRight");
   await page.waitForFunction(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId==="AO.NUPTIAL.02");
 
   await page.evaluate(()=>globalThis.AO_R17_NATIVE_READER_PREVIEW.showSection("AO.NUPTIAL.03"));
