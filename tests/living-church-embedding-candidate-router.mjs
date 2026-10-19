@@ -6,7 +6,7 @@ const catalog=await read("data/learn/living-church-shared-question-routing-pilot
 const concepts=await read("data/learn/living-church-symbolic-concepts.v1.json");
 const noModel=createEmbeddingCandidateRouter({catalog,conceptRegistry:concepts});
 assert.equal(noModel.status,"EMBEDDINGS_NOT_CONFIGURED");
-const fallback=await noModel.match("What is a pall?");
+const fallback=await noModel.match("I cannot explain which unrecognised abstract concern this is");
 assert.equal(fallback.answerText,null);
 assert.equal(fallback.embeddingStatus,"INDEX_OR_MODEL_MISSING");
 const topics=catalog.topics.map(x=>x.id),N=topics.length;
