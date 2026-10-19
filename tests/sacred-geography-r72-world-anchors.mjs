@@ -21,8 +21,8 @@ assert.equal(release.schema,"AO_SACRED_GEOGRAPHY_R72_WORLD_ANCHORS_V1");
 assert.equal(release.sites.length,7);
 assert.deepEqual(new Set(release.sites.map(x=>x.country)),new Set(["IT","PT","HU","CN","PH","GT","PY"]));
 assert.equal(new Set(release.sites.map(x=>x.place_id)).size,7);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[261,257,240,449]);
-assert.equal(new Set(g.places.map(x=>x.place_id)).size,261);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[294,257,240,515]);
+assert.equal(new Set(g.places.map(x=>x.place_id)).size,g.places.length);
 assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,257);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
@@ -49,7 +49,7 @@ const profiles=buildExplorePlaceProfiles({
   novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},
   media:{approved:[],gallery:[]}
 },projected,{today:"2026-10-15"});
-assert.equal(profiles.length,261);
+assert.equal(profiles.length,g.places.length);
 for(const entry of release.sites){
  const place=g.places.find(x=>x.place_id===entry.place_id);
  assert.ok(place,"missing canonical site "+entry.place_id);
