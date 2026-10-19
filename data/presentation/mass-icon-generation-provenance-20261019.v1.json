@@ -120,6 +120,31 @@
       "note": "Find and verify a real photograph or original documented drawing depicting the priest's own Communion before producing a new icon. Do not use imagery of the priest giving Communion.",
       "researchLeads": [
         {
+          "id": "RIJKSMUSEUM_LECLERC_1661_PLATE29",
+          "priority": 1,
+          "type": "HISTORICAL_ILLUSTRATION",
+          "title": "Quand le P. communie",
+          "imageOriginalPath": null,
+          "sha256": null,
+          "artist": "Sébastien Leclerc I",
+          "catalogueNumber": "RP-P-OB-69.179",
+          "published": 1661,
+          "plate": 29,
+          "institution": "Rijksmuseum",
+          "work": "L. Mengin, Tableaux ... actions du prestre à la S. Messe (Metz, Claude Bouchard, 1661)",
+          "catalogueUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Priester-met-twee-misdienaars-voor-een-altaar--a94279fd154e2a5849c70568bf1ee28f",
+          "permanentId": "https://id.rijksmuseum.nl/200217641",
+          "rightsStatus": "PUBLIC_DOMAIN_CONFIRMED_ON_INSTITUTION_PAGE",
+          "pictureVisuallyInspected": false,
+          "exactHostVsChaliceState": "NOT_DETERMINED",
+          "rubricalHandPlacementStatus": "NOT_VERIFIED",
+          "approvedFamilyComparison": "NOT_STARTED",
+          "sourceImagesRetrieved": 0,
+          "provenanceSeries": "data/presentation/mass-icon-originals-leclerc1661.p3.json",
+          "disposition": "ORIGINAL_ARTWORK_CATALOGUED_NOT_APPROVED_AS_SPECIFIC_ICON_SOURCE",
+          "next": "Obtain actual Rijksmuseum image via its public IIIF/download, archive bytes+SHA-256 with original object number, inspect exact Host/chalice details, compare with 1962 Ritus servandus X.4/X.5 and donor bank."
+        },
+        {
           "type": "HISTORICAL_PHOTOGRAPH_SERIES",
           "id": "ROMANITAS_1944_80_LOW_MASS",
           "priority": 1,
@@ -210,6 +235,31 @@
       "note": "Find and verify a real photograph or original documented drawing depicting the celebrant drinking from the chalice while supporting it with the paten.",
       "researchLeads": [
         {
+          "id": "RIJKSMUSEUM_LECLERC_1661_PLATE29",
+          "priority": 1,
+          "type": "HISTORICAL_ILLUSTRATION",
+          "title": "Quand le P. communie",
+          "imageOriginalPath": null,
+          "sha256": null,
+          "artist": "Sébastien Leclerc I",
+          "catalogueNumber": "RP-P-OB-69.179",
+          "published": 1661,
+          "plate": 29,
+          "institution": "Rijksmuseum",
+          "work": "L. Mengin, Tableaux ... actions du prestre à la S. Messe (Metz, Claude Bouchard, 1661)",
+          "catalogueUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Priester-met-twee-misdienaars-voor-een-altaar--a94279fd154e2a5849c70568bf1ee28f",
+          "permanentId": "https://id.rijksmuseum.nl/200217641",
+          "rightsStatus": "PUBLIC_DOMAIN_CONFIRMED_ON_INSTITUTION_PAGE",
+          "pictureVisuallyInspected": false,
+          "exactHostVsChaliceState": "NOT_DETERMINED",
+          "rubricalHandPlacementStatus": "NOT_VERIFIED",
+          "approvedFamilyComparison": "NOT_STARTED",
+          "sourceImagesRetrieved": 0,
+          "provenanceSeries": "data/presentation/mass-icon-originals-leclerc1661.p3.json",
+          "disposition": "ORIGINAL_ARTWORK_CATALOGUED_NOT_APPROVED_AS_SPECIFIC_ICON_SOURCE",
+          "next": "Obtain actual Rijksmuseum image via its public IIIF/download, archive bytes+SHA-256 with original object number, inspect exact Host/chalice details, compare with 1962 Ritus servandus X.4/X.5 and donor bank."
+        },
+        {
           "type": "HISTORICAL_PHOTOGRAPH_SERIES",
           "id": "ROMANITAS_1944_80_LOW_MASS",
           "priority": 1,
@@ -284,6 +334,31 @@
     "date": "2026-10-19",
     "sourceSelection": "TRUE_ORIGINAL_FIRST",
     "leads": [
+      {
+        "id": "RIJKSMUSEUM_LECLERC_1661_PLATE29",
+        "priority": 1,
+        "type": "HISTORICAL_ILLUSTRATION",
+        "title": "Quand le P. communie",
+        "imageOriginalPath": null,
+        "sha256": null,
+        "artist": "Sébastien Leclerc I",
+        "catalogueNumber": "RP-P-OB-69.179",
+        "published": 1661,
+        "plate": 29,
+        "institution": "Rijksmuseum",
+        "work": "L. Mengin, Tableaux ... actions du prestre à la S. Messe (Metz, Claude Bouchard, 1661)",
+        "catalogueUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Priester-met-twee-misdienaars-voor-een-altaar--a94279fd154e2a5849c70568bf1ee28f",
+        "permanentId": "https://id.rijksmuseum.nl/200217641",
+        "rightsStatus": "PUBLIC_DOMAIN_CONFIRMED_ON_INSTITUTION_PAGE",
+        "pictureVisuallyInspected": false,
+        "exactHostVsChaliceState": "NOT_DETERMINED",
+        "rubricalHandPlacementStatus": "NOT_VERIFIED",
+        "approvedFamilyComparison": "NOT_STARTED",
+        "sourceImagesRetrieved": 0,
+        "provenanceSeries": "data/presentation/mass-icon-originals-leclerc1661.p3.json",
+        "disposition": "ORIGINAL_ARTWORK_CATALOGUED_NOT_APPROVED_AS_SPECIFIC_ICON_SOURCE",
+        "next": "Obtain actual Rijksmuseum image via its public IIIF/download, archive bytes+SHA-256 with original object number, inspect exact Host/chalice details, compare with 1962 Ritus servandus X.4/X.5 and donor bank."
+      },
       {
         "type": "HISTORICAL_PHOTOGRAPH_SERIES",
         "id": "ROMANITAS_1944_80_LOW_MASS",
@@ -360,6 +435,7 @@
       "Chalice in unsupported hand rather than 1962 rubrical handling",
       "Source photo missing production/editorial redistribution license",
       "Icon visually divergent from approved v4 bank"
-    ]
+    ],
+    "leclerc1661SourceIndex": "data/presentation/mass-icon-originals-leclerc1661.p3.json"
   }
 }
