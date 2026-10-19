@@ -72,9 +72,9 @@ assert.equal(exsPages.map(p=>p.rows[0].primary).slice(0,2).join(" "),
 const latParts=exsPages.map(p=>p.rows[0].primary);
 const englishParts=exsPages.map(p=>p.rows[0].secondary);
 assert.equal(latParts.slice(0,2).join(" ")+
-  "\\n\\n"+latParts.slice(2).join("\\n\\n"),exsEnglish[0].primary,
+  "\n\n"+latParts.slice(2).join("\n\n"),exsEnglish[0].primary,
   "Latin Exsultet must reconstruct exactly, including all punctuation and responses");
-assert.equal(englishParts.join("\\n\\n"),exsEnglish[0].secondary,
+assert.equal(englishParts.join("\n\n"),exsEnglish[0].secondary,
   "English Exsultet must reconstruct exactly, with no missing/duplicated sentences");
 assert.equal(exsPages[2].rows[0].primary.startsWith("℣. Dóminus vobíscum."),true);
 assert.equal(exsPages[2].rows[0].secondary.startsWith("℣. The Lord be with you."),true);
