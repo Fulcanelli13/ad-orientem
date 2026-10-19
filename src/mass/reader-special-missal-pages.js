@@ -63,7 +63,8 @@ export function specialRiteVernacular(row,{language="en"}={}){
 // remain intact until each source has a certified prayer subdivision.
 const GROUPED_RITES=new Set([
   "CND-R01","ASH-R01","ROG-R02","ROG-R03","ROG-R05",
-  "EV-LIT1-400","EV-LIT2-600","EV-FONT-420","EV-FONT-440","EV-EXS-200"
+  "EV-LIT1-400","EV-LIT2-600","EV-FONT-420","EV-FONT-440","EV-EXS-200",
+  "EV-LESS-01-READ","EV-LESS-02-READ","EV-LESS-03-READ","EV-LESS-04-READ"
 ]);
 function isCardGroup(id){return /^(?:CND-R01|ASH-R01|ROG-R02|ROG-R03|ROG-R05)$/.test(id)}
 function asId(row){return String(row?.id??"")}
@@ -147,6 +148,19 @@ export function projectSpecialRiteReadingPages(stageId,paragraphs,{mode="MISSAL"
     const after=rows.slice(prayers.length);
     if(prayers.length<2)return freezePages([rows],rows,id);
     groups=[...batchGroups(prayers.map(p=>[p]),2),...(after.length?[after]:[])];
+  }else if(/^EV-LESS-0[1-4]-READ$/.test(id)){
+    // Prophecies already have source-owned Latin Scripture paragraphs.
+    // Group up to three at a time, and place the appointed canticle after
+    // the whole lesson on its own page, in 1962 source order.
+    const canticleAt=rows.findIndex(row=>/-CIT$/.test(asId(row)));
+    const prose=canticleAt<0?rows:rows.slice(0,canticleAt);
+    const canticle=canticleAt<0?[]:rows.slice(canticleAt);
+    if(prose.length===0 || !prose.every(row=>/EV-PROP-\d+-T\d+$/.test(asId(row))))
+      throw new Error("SPECIAL_MISSAL_PROPHECY_SOURCE_ORDER:"+id);
+    if(canticle.length && (!/-CIT$/.test(asId(canticle[0])) ||
+      !canticle.slice(1).every(row=>/-CANT\d+$/.test(asId(row)))))
+      throw new Error("SPECIAL_MISSAL_CANTICLE_SOURCE_ORDER:"+id);
+    groups=[...batchGroups(prose.map(p=>[p]),3),...(canticle.length?[canticle]:[])];
   }else if(id==="EV-FONT-420"||id==="EV-FONT-440"){
     // The 17 distinct 1962 font-blessing segments remain whole even if
     // one source segment contains a very long multi-line prayer.
