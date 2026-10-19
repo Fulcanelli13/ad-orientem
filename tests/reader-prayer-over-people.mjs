@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createMassReaderModel } from "../src/mass/reader-model.js";
+import {projectGranularMissalCards} from "../src/mass/reader-missal-granularity.js";
 import { resolvePrayerOverPeopleInsertion } from "../src/mass/reader-prayer-over-people.js";
 import { makeResolvedMass, compileMassPlan } from "../src/mass/session-engine.js";
 import { projectSpecialStructure } from "../src/mass/reader-special-structure.js";
@@ -97,5 +98,24 @@ assert.equal(seg.renderable,true);
 assert.equal(seg.planOwned,true);
 assert.equal(seg.readerPayload,"PLAN_APPLIED_TO_ORDINARY_READER");
 assert.equal(projection.releaseSupport,true);
+
+// Actual compiled Lenten source must survive the 30-card MISSAL prayer
+// granularity, not merely remain in LIVE and the print-source model.
+const lentMissalSource=createMassReaderModel({
+  resolvedMass:{...resolved,presentationMode:"MISSAL"},
+  sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,
+});
+const lentMissal=projectGranularMissalCards(lentMissalSource);
+const page=lentMissal.cards.find(c=>c.sourceOwnedInsertion==="PRAYER_OVER_PEOPLE");
+assert.ok(page,"P0: generated Lenten Prayer over the People vanished in Missal");
+assert.equal(page.sourceSectionId,"AO.CARD.027");
+assert.equal(page.paragraphs.length,4);
+assert.deepEqual(page.paragraphs.map(p=>p.id),insertion.paragraphs.map(p=>p.id),
+  "Lenten Prayer over the People lost or reordered prayer/response text");
+assert.deepEqual(lentMissal.cards.flatMap(c=>c.paragraphs),
+  lentMissalSource.cards.flatMap(c=>c.paragraphs),
+  "Canonical 1962 Lenten Mass text was damaged by Missal pagination");
+assert.equal(lentMissalSource.totalCards,30,
+  "The Lenten display-only Missal page changed canonical Mass topology");
 
 console.log("Prayer over the People: PASS — source-owned oration is composed into Postcommunion with deferred C0256 exit and unchanged card topology.");
