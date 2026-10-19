@@ -120,6 +120,31 @@
       "note": "Find and verify a real photograph or original documented drawing depicting the priest's own Communion before producing a new icon. Do not use imagery of the priest giving Communion.",
       "researchLeads": [
         {
+          "id": "SCHUMACHER_1920_PRIEST_COMMUNION_P97",
+          "priority": 1,
+          "type": "HISTORICAL_ILLUSTRATION",
+          "artist": "Philipp Schumacher",
+          "title": "Kněžské přijímání / Priest Communion",
+          "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Komunii%C4%9Do_(Schumacher,_Katholisches_Religionsb%C3%BCchlein)_001.jpg",
+          "publication": "Wilhelm Pichler, Katholisches Religionsbüchlein, Vienna 1920, p. 97",
+          "rightsStatus": "DOCUMENTED_PUBLIC_DOMAIN_WIKIMEDIA_PD_MARK_AND_PD_SCAN",
+          "imageRightsStatus": "PUBLIC_DOMAIN",
+          "actualImageViewed": true,
+          "cataloguedOriginalImageSize": [
+            1265,
+            964
+          ],
+          "repositorySHA1": "3073f3c53d38c007a821d3fe1c3dc3fe8d103436",
+          "originalPicturePath": null,
+          "sha256": null,
+          "visualEvidence": "Priest inclined at high altar and hands raised near mouth, chalice on mensa. Actual Host, division, priest's elbows, and Communion action phase unclear.",
+          "ritus1962": "ONLY_PARTIAL_UNCERTAIN_HOST_CANDIDATE; NOT_A_CHALICE_COMMUNION_WITNESS",
+          "approvedBankStyle": "NOT_REVIEWED",
+          "sourceIndex": "data/presentation/mass-icon-originals-schumacher1920.p3.json",
+          "disposition": "PUBLIC_DOMAIN_VISUALLY_INSPECTED_REFERENCE_PARTIAL_CEREMONIAL_EVIDENCE_NOT_RELEASE_ELIGIBLE",
+          "next": "Retrieve real source image bytes and SHA256, then either validate Host gesture against Ritus Servandus X.4 or find more exact Host art. Chalice needs separate accurate original."
+        },
+        {
           "id": "RIJKSMUSEUM_LECLERC_1661_PLATE29",
           "priority": 1,
           "type": "HISTORICAL_ILLUSTRATION",
@@ -335,6 +360,31 @@
     "sourceSelection": "TRUE_ORIGINAL_FIRST",
     "leads": [
       {
+        "id": "SCHUMACHER_1920_PRIEST_COMMUNION_P97",
+        "priority": 1,
+        "type": "HISTORICAL_ILLUSTRATION",
+        "artist": "Philipp Schumacher",
+        "title": "Kněžské přijímání / Priest Communion",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Komunii%C4%9Do_(Schumacher,_Katholisches_Religionsb%C3%BCchlein)_001.jpg",
+        "publication": "Wilhelm Pichler, Katholisches Religionsbüchlein, Vienna 1920, p. 97",
+        "rightsStatus": "DOCUMENTED_PUBLIC_DOMAIN_WIKIMEDIA_PD_MARK_AND_PD_SCAN",
+        "imageRightsStatus": "PUBLIC_DOMAIN",
+        "actualImageViewed": true,
+        "cataloguedOriginalImageSize": [
+          1265,
+          964
+        ],
+        "repositorySHA1": "3073f3c53d38c007a821d3fe1c3dc3fe8d103436",
+        "originalPicturePath": null,
+        "sha256": null,
+        "visualEvidence": "Priest inclined at high altar and hands raised near mouth, chalice on mensa. Actual Host, division, priest's elbows, and Communion action phase unclear.",
+        "ritus1962": "ONLY_PARTIAL_UNCERTAIN_HOST_CANDIDATE; NOT_A_CHALICE_COMMUNION_WITNESS",
+        "approvedBankStyle": "NOT_REVIEWED",
+        "sourceIndex": "data/presentation/mass-icon-originals-schumacher1920.p3.json",
+        "disposition": "PUBLIC_DOMAIN_VISUALLY_INSPECTED_REFERENCE_PARTIAL_CEREMONIAL_EVIDENCE_NOT_RELEASE_ELIGIBLE",
+        "next": "Retrieve real source image bytes and SHA256, then either validate Host gesture against Ritus Servandus X.4 or find more exact Host art. Chalice needs separate accurate original."
+      },
+      {
         "id": "RIJKSMUSEUM_LECLERC_1661_PLATE29",
         "priority": 1,
         "type": "HISTORICAL_ILLUSTRATION",
@@ -436,6 +486,8 @@
       "Source photo missing production/editorial redistribution license",
       "Icon visually divergent from approved v4 bank"
     ],
-    "leclerc1661SourceIndex": "data/presentation/mass-icon-originals-leclerc1661.p3.json"
+    "leclerc1661SourceIndex": "data/presentation/mass-icon-originals-leclerc1661.p3.json",
+    "schumacher1920SourceIndex": "data/presentation/mass-icon-originals-schumacher1920.p3.json",
+    "imageAccessNote": "Full 1920 Wikimedia visual accessible and inspected via web media viewer, but download of original bytes into working container blocked in this run. Commons provided SHA-1 is cataloguing only, not a verified local SHA-256. Rijksmuseum Leclerc 1661 metadata also verified but digital image accession remained inaccessible."
   }
 }
