@@ -1,3 +1,5 @@
+import {projectExsultetSourceParagraphs} from "./reader-exsultet-pages.js";
+
 // Missal-only anticipation for already-source-owned special-rite stages.
 // Never split, skip or synthesize ceremonial events; navigation remains in
 // each rite's native controller. Omitted vernacular texts stay unclaimed.
@@ -61,7 +63,7 @@ export function specialRiteVernacular(row,{language="en"}={}){
 // remain intact until each source has a certified prayer subdivision.
 const GROUPED_RITES=new Set([
   "CND-R01","ASH-R01","ROG-R02","ROG-R03","ROG-R05",
-  "EV-LIT1-400","EV-LIT2-600","EV-FONT-420","EV-FONT-440"
+  "EV-LIT1-400","EV-LIT2-600","EV-FONT-420","EV-FONT-440","EV-EXS-200"
 ]);
 function isCardGroup(id){return /^(?:CND-R01|ASH-R01|ROG-R02|ROG-R03|ROG-R05)$/.test(id)}
 function asId(row){return String(row?.id??"")}
@@ -72,7 +74,7 @@ function freezePages(groups,sourceRows,stageId){
     throw new Error("SPECIAL_MISSAL_SOURCE_PARITY:"+stageId);
   if(sourceRows.length&&groups.some(x=>!x.length))throw new Error("SPECIAL_MISSAL_EMPTY_PAGE:"+stageId);
   return Object.freeze(groups.map((group,i)=>Object.freeze({
-    stageId,index:i,total:groups.length,
+    stageId,index:i,total:groups.length,sourceRowCount:sourceRows.length,
     rows:Object.freeze([...group]),
     sourceIds:Object.freeze(group.map(row=>asId(row))),
     firstSourceId:asId(group[0]),lastSourceId:asId(group.at(-1)),
@@ -104,6 +106,19 @@ export function projectSpecialRiteReadingPages(stageId,paragraphs,{mode="MISSAL"
   const id=String(stageId??"");
   if(String(mode).toUpperCase()!=="MISSAL" || !GROUPED_RITES.has(id) || !rows.length)
     return freezePages([rows],rows,id);
+  if(id==="EV-EXS-200"){
+    if(rows.length!==1||!String(rows[0]?.id??"").startsWith("EV-EXSULTET"))
+      throw new Error("EXSULTET_MISSAL_SOURCE_ROW_NOT_CERTIFIED");
+    const projection=projectExsultetSourceParagraphs(rows[0]);
+    // Split the fixed donor at its own paragraph headings, pairing English
+    // with the same Latin argument. The canonical single row stays untouched.
+    return Object.freeze(projection.paragraphs.map((paragraph,index)=>Object.freeze({
+      stageId:id,index,total:projection.paragraphs.length,sourceRowCount:rows.length,
+      rows:Object.freeze([paragraph]),sourceIds:Object.freeze([paragraph.sourceRowId]),
+      firstSourceId:paragraph.sourceRowId,lastSourceId:paragraph.sourceRowId,
+      sourceAlignmentVerified:projection.verified,displayOnly:true,
+    })));
+  }
   let groups=null;
   if(id==="CND-R01"||id==="ASH-R01"){
     // Introductory antiphon/versicles, then each complete Orémus + prayer
@@ -160,7 +175,7 @@ export function createSpecialRiteMissalPageCursor({mode="MISSAL"}={}){
       active=projectSpecialRiteReadingPages(key,sourceRows,{mode});
       pageIndex=enterFrom==="previous"?active.length-1:0;
       enterFrom="next";
-    }else if(!active || active.flatMap(p=>p.rows).length!==(sourceRows??[]).length){
+    }else if(!active || active[0]?.sourceRowCount!==(sourceRows??[]).length){
       active=projectSpecialRiteReadingPages(key,sourceRows,{mode});
       pageIndex=Math.min(pageIndex,active.length-1);
     }
