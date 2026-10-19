@@ -69,6 +69,26 @@ try{
         "ASH-R01","Ashes advanced before complete blessing orations");
       assert.equal(await rows(),3,"Ash blessing Orémus/prayer/Amen broken");
     }else{
+      const prophecy=await page.evaluate(()=>{
+        window.__AO_PHONE_PREVIEW.goToEasterVigilRecord("EV-LESS-01-READ");
+        const state=window.__AO_PHONE_PREVIEW.getEasterVigilState();
+        return {recordId:state.step.recordId,sourceRows:state.step.paragraphs.length};
+      });
+      assert.equal(prophecy.recordId,"EV-LESS-01-READ");
+      assert.equal(prophecy.sourceRows,14,
+        "Full Genesis prophecy source must retain fourteen text paragraphs");
+      assert.equal(await rows(),3,"Long Genesis prophecy was not divided into reading pages");
+      for(let i=1;i<5;i++){
+        await click();
+        assert.equal(await page.evaluate(()=>
+          window.__AO_PHONE_PREVIEW.getEasterVigilState().step.recordId),
+          "EV-LESS-01-READ","Genesis Missal page changed ceremony state");
+      }
+      assert.equal(await rows(),2,"Genesis final two source paragraphs were lost");
+      await click();
+      assert.notEqual(await page.evaluate(()=>
+        window.__AO_PHONE_PREVIEW.getEasterVigilState().step.recordId),
+        "EV-LESS-01-READ","Genesis prophecy never handed off to Oremus");
       const initial=await page.evaluate(()=>{
         window.__AO_PHONE_PREVIEW.goToEasterVigilRecord("EV-LIT1-400");
         return {
