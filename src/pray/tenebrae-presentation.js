@@ -35,6 +35,10 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
  const jumpMarkup=steps.length?'<div class="aoTenebStageNav"><nav class="aoTenebJump" aria-label="'+esc(L("Jump to a part of the Office","Aller à une partie de l’Office"))+'">'+
   jumps.map(([start,name],i)=>'<button type="button" data-p435930-tenebrae-jump="'+start+'" class="'+(index>=start&&(i===jumps.length-1||index<jumps[i+1][0])?"active":"")+'" aria-current="'+(index>=start&&(i===jumps.length-1||index<jumps[i+1][0])?"step":"false")+'">'+esc(name)+'</button>').join("")+'</nav>'+
   devotionalProgressMarkup({index,total:steps.length,language:loc,unit:"stage"})+'</div>':'';
+ // Shared liturgical-reader chrome, with an Office-owned Simple/Guided
+ // selector rather than the Mass's ceremonial LIVE state. A single language
+ // switch belongs to the ribbon, not to each individual prayer card.
+ const faceButton='<button type="button" class="aoTenebLanguageSwitch" data-p435930-tenebrae-face aria-pressed="'+(face==="latin")+'" aria-label="'+esc(L("Switch Latin and translation","Passer du latin à la traduction"))+'">'+esc(face==="latin"?L("English","Français"):"Latin")+' <span aria-hidden="true">↔</span></button>';
  const context=guided&&current&&guide.detail?
   '<aside class="aoTenebContext" aria-label="'+esc(L("Explanation of this passage","Explication de ce passage"))+'"><strong>'+esc(guide.title)+'</strong><p>'+esc(guide.detail)+'</p></aside>':'';
  let material="";
@@ -42,8 +46,7 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
  else if(!current)material='<div class="aoTenebEmpty" role="status">'+esc(L("Preparing the source texts…","Préparation des textes sources…"))+'</div>';
  else{
   material='<article class="aoTenebReading" tabindex="0" role="region" aria-label="'+esc(stepTitle(current,loc))+'" data-tenebrae-section="'+esc(current.id)+'">'+
-   '<div class="aoTenebReadingTop"><span>'+esc(hour==="MATINS"?L("Matins","Matines"):L("Lauds","Laudes"))+'</span>'+
-   '<button type="button" data-p435930-tenebrae-face aria-label="'+esc(L("Switch Latin and translation","Passer du latin à la traduction"))+'">'+esc(face==="latin"?L("English","Français"):"Latin")+' ↔</button></div>'+
+   '<div class="aoTenebReadingTop"><span>'+esc(hour==="MATINS"?L("Matins","Matines"):L("Lauds","Laudes"))+'</span><span class="aoTenebReadingCount">'+esc(L("Part","Partie"))+' '+(index+1)+' / '+steps.length+'</span></div>'+
    '<h3>'+esc(stepTitle(current,loc))+'</h3>'+context+
    '<div class="aoTenebPrayer" lang="'+(face==="latin"?"la":loc)+'">'+nl(face==="latin"?current.latin:current[loc])+'</div></article>';
  }
@@ -60,12 +63,19 @@ export function renderTenebraeBody({day=0,hour="MATINS",index=0,face="vernacular
   '<h3>'+esc(L("The lights and the strepitus","Les cierges et le strepitus"))+'</h3><p>'+esc(guide.ceremonial)+'</p>'+
   '<h3>'+esc(L("When are the offices prayed?","Quand prier ces offices ?"))+'</h3><p>'+esc(guide.timing)+'</p>'+
   '<p class="aoTenebRefs"><a href="'+TENEBRAE_GUIDE_LINKS.rubrics+'" target="_blank" rel="noopener noreferrer">'+esc(L("1960 rubrics §§144–145","Rubriques de 1960 §§144–145"))+'</a> · <a href="'+TENEBRAE_GUIDE_LINKS.history+'" target="_blank" rel="noopener noreferrer">'+esc(L("Historical account","Présentation historique"))+'</a> · <a href="'+TENEBRAE_GUIDE_LINKS.candles+'" target="_blank" rel="noopener noreferrer">'+esc(L("Candle history","Histoire des cierges"))+'</a></p></details>';
- return '<main class="aoP435930Body aoTenebBody" data-tenebrae-ready="'+Boolean(data)+'" data-tenebrae-mode="'+(guided?"guided":"simple")+'">'+
-  '<section class="aoTenebIntro"><small>TRIDUUM · BREVIARIUM ROMANUM 1961</small><h2>'+esc(L("Office of Tenebrae","Office des Ténèbres"))+'</h2><p>'+esc(L("The three days · Matins and Lauds","Les trois jours · Matines et Laudes"))+'</p></section>'+
+ return '<main class="aoP435930Body aoTenebBody" data-ao-liturgical-reader="tenebrae" data-tenebrae-ready="'+Boolean(data)+'" data-tenebrae-mode="'+(guided?"guided":"simple")+'">'+
+  '<header class="aoTenebReaderRibbon" aria-label="'+esc(L("Tenebrae reader","Lecteur des Ténèbres"))+'">'+
+    '<div class="aoTenebIntro"><small>TRIDUUM · BREVIARIUM ROMANUM 1961</small><h2>'+esc(L("Office of Tenebrae","Office des Ténèbres"))+'</h2><p>'+esc(L("The three days · Matins and Lauds","Les trois jours · Matines et Laudes"))+'</p></div>'+
+    faceButton+
+  '</header>'+
   about+
-  '<nav class="aoTenebDays" aria-label="'+esc(L("Select Holy Week day","Choisir le jour"))+'">'+days+'</nav>'+
-  '<div class="aoTenebHours" role="group" aria-label="'+esc(L("Select canonical hour","Choisir l’heure canoniale"))+'">'+hours+'</div>'+
-  '<div class="aoTenebMode" role="group" aria-label="'+esc(L("Reading mode","Mode de lecture"))+'">'+modeButtons+'</div>'+
+  '<div class="aoTenebReaderControls">'+
+    '<nav class="aoTenebDays" aria-label="'+esc(L("Select Holy Week day","Choisir le jour"))+'">'+days+'</nav>'+
+    '<div class="aoTenebReaderOptions">'+
+      '<div class="aoTenebHours" role="group" aria-label="'+esc(L("Select canonical hour","Choisir l’heure canoniale"))+'">'+hours+'</div>'+
+      '<div class="aoTenebMode" role="group" aria-label="'+esc(L("Reading mode","Mode de lecture"))+'">'+modeButtons+'</div>'+
+    '</div>'+
+  '</div>'+
   (guided?'<p class="aoTenebDayContext">'+esc(guide.day)+'</p>':'')+jumpMarkup+
   material+
   '<details class="aoTenebSource"><summary>'+esc(L("Liturgical edition and source","Édition liturgique et sources"))+'</summary><p>'+esc(edition)+'</p><p>'+esc(witness)+'</p><p>'+esc(guide.sourceWarning)+'</p><p>© 2026 Divinum Officium · MIT · <a href="https://github.com/DivinumOfficium/divinum-officium" target="_blank" rel="noopener noreferrer">Source</a></p></details></main>';
