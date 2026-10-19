@@ -1,0 +1,41 @@
+name: Living Church P1 original sanctuary acceptance
+
+on:
+  pull_request:
+    paths:
+      - "src/learn/living-church-context.js"
+      - "previews/visible-mass-3d/sanctuary-hotspot-pilot.html"
+      - "previews/visible-mass-3d/visible-mass-living-church-adapter.mjs"
+      - "tests/living-church-visible-mass-adapter.mjs"
+      - "tests/living-church-visible-mass-phone.mjs"
+      - ".github/workflows/living-church-visible-mass-p1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  exact-owner-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify P0 context and P1 adapter
+        run: |
+          node --check src/learn/living-church-context.js
+          node --check previews/visible-mass-3d/visible-mass-living-church-adapter.mjs
+          node tests/living-church-visible-mass-adapter.mjs
+          node tests/visible-mass-guided-folio.mjs
+      - name: Install browser test tooling
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Test existing 390px and 1280px sanctuary viewer with P1 context
+        run: node tests/living-church-visible-mass-phone.mjs
