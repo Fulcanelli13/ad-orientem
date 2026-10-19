@@ -62,7 +62,7 @@ export function specialRiteVernacular(row,{language="en"}={}){
 // Explicitly sourced prayer/response group boundaries. All other stages
 // remain intact until each source has a certified prayer subdivision.
 const GROUPED_RITES=new Set([
-  "CND-R01","ASH-R01","ROG-R02","ROG-R03","ROG-R05",
+  "ASP-R04","CND-R01","ASH-R01","ROG-R02","ROG-R03","ROG-R05",
   "EV-LIT1-400","EV-LIT2-600","EV-FONT-420","EV-FONT-440","EV-EXS-200",
   "EV-LESS-01-READ","EV-LESS-02-READ","EV-LESS-03-READ","EV-LESS-04-READ"
 ]);
@@ -121,7 +121,18 @@ export function projectSpecialRiteReadingPages(stageId,paragraphs,{mode="MISSAL"
     })));
   }
   let groups=null;
-  if(id==="CND-R01"||id==="ASH-R01"){
+  if(id==="ASP-R04"){
+    // Three exact celebrant/congregation dialogue pairs, then the intact
+    // Orémus + concluding collect + Amen. No duplicate or synthetic prayer.
+    if(rows.length!==9 ||
+      rows.slice(0,6).some((row,i)=>
+        row.kind!==(i%2===0?"VERSICLE":"RESPONSE")) ||
+      rows[6].id!=="ASP-050-OREMUS" ||
+      rows[7].id!=="ASP-050-PRAYER" ||
+      rows[8].id!=="ASP-050-AMEN")
+      throw new Error("ASPERGES_1962_SOURCE_DIALOGUE_REQUIRED");
+    groups=[rows.slice(0,6),rows.slice(6)];
+  }else if(id==="CND-R01"||id==="ASH-R01"){
     // Introductory antiphon/versicles, then each complete Orémus + prayer
     // + Amen. Each of the five Candlemas/four Ash orations stays whole.
     const head=rows.findIndex(row=>/-O(?:\d+)-INTRO$/.test(asId(row)));
