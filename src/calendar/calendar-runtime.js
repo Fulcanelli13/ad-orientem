@@ -1228,6 +1228,7 @@ function paint(){
    const previousRubricSourcesOpen=isSameDay?body.querySelector(".aoCalDaySources")?.open===true:false;
   // Preserve an intentionally expanded printing control through the same-day
   // background cache/source re-paints, without leaking it to another date.
+  const previousMonthToolsOpen=calendarView==="picker"&&body.querySelector(".aoCalV2MonthTools")?.open===true;
   const previousPrintOptions=isSameDay?body.querySelector(".aoCalV2PrintOptions"):null;
   const previousPrintOpen=previousPrintOptions?.open===true;
   const hadPrintSummaryFocus=Boolean(previousPrintOptions?.querySelector("summary")?.contains(globalThis.document?.activeElement));
@@ -1244,6 +1245,7 @@ function paint(){
     const print=body.querySelector(".aoCalV2PrintOptions");
     if(print){print.open=true;if(hadPrintSummaryFocus)print.querySelector("summary")?.focus?.({preventScroll:true})}
   }
+  if(previousMonthToolsOpen){const tools=body.querySelector(".aoCalV2MonthTools");if(tools)tools.open=true}
   if(editing){const input=body.querySelector("[data-cal-input]");if(input){input.value=value;input.focus({preventScroll:true});if(start!==null&&end!==null)input.setSelectionRange(start,end)}}
   r.dataset.aoCalendarOwner=VERSION;r.dataset.aoCalendarView=calendarView;r.dataset.aoCalendarPaintView=calendarView;r.dataset.aoCalendarPaintDate=selected;
   requestAnimationFrame(()=>centerSelectedDay(r));return true;
