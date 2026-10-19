@@ -58,9 +58,34 @@ assert.equal(ashes.length,5,"Four blessing orations must each stay whole");
 const litany=projectSpecialRiteReadingPages("EV-LIT1-400",source(vigil,"EV-LIT1-400").paragraphs);
 assert.equal(litany.length,4,"Forty-six pairs of first Litany source lines require four pages");
 assert.ok(litany.every(p=>p.rows.length%2===0),"Litany call and response separated");
-assert.equal(projectSpecialRiteReadingPages("EV-EXS-200",
-  source(vigil,"EV-EXS-200").paragraphs).length,1,
-  "Unsegmented Exsultet donor must not be broken at guessed words");
+const exsSource=source(vigil,"EV-EXS-200").paragraphs;
+const exsEnglish=exsSource.map(row=>({
+  ...row,primary:row.latin,secondary:row.english,
+}));
+const exsPages=projectSpecialRiteReadingPages("EV-EXS-200",exsEnglish);
+assert.equal(exsPages.length,12,
+  "Exsultet should follow the twelve paired Latin/English source passages");
+assert.equal(exsPages.map(p=>p.rows[0].primary).slice(0,2).join(" "),
+  exsEnglish[0].primary.split(" Quaprópter astántes")[0]+" Quaprópter astántes"+
+  exsEnglish[0].primary.split(" Quaprópter astántes")[1],
+  "Introductory Exsultet paragraphs must rejoin with no altered Latin");
+const latParts=exsPages.map(p=>p.rows[0].primary);
+const englishParts=exsPages.map(p=>p.rows[0].secondary);
+assert.equal(latParts.slice(0,2).join(" ")+
+  "\\n\\n"+latParts.slice(2).join("\\n\\n"),exsEnglish[0].primary,
+  "Latin Exsultet must reconstruct exactly, including all punctuation and responses");
+assert.equal(englishParts.join("\\n\\n"),exsEnglish[0].secondary,
+  "English Exsultet must reconstruct exactly, with no missing/duplicated sentences");
+assert.equal(exsPages[2].rows[0].primary.startsWith("℣. Dóminus vobíscum."),true);
+assert.equal(exsPages[2].rows[0].secondary.startsWith("℣. The Lord be with you."),true);
+assert.equal(projectSpecialRiteReadingPages("EV-EXS-200",exsEnglish,{mode:"LIVE"}).length,1,
+  "Exsultet LIVE still owns one unsplit canonical donor paragraph");
+const exsFrench=projectSpecialRiteReadingPages("EV-EXS-200",
+  exsSource.map(row=>({...row,primary:row.latin,secondary:null})));
+assert.equal(exsFrench.length,12);
+assert.ok(exsFrench.every(p=>p.rows[0].secondary===null),
+  "Do not manufacture French text from incomplete editorial Exsultet summary");
+assert.equal(exsPages[4].rows[0].primary.startsWith("Hæc nox est"),true);
 assert.equal(projectSpecialRiteReadingPages("CND-R02",[]).length,1,
   "A silent action stage needs one controller stage without fake text");
 
