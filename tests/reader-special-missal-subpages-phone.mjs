@@ -22,11 +22,14 @@ await new Promise((ok,reject)=>{server.once("error",reject);server.listen(4397,"
 let browser;
 try{
   browser=await chromium.launch({headless:true});
-  for(const rite of ["asperges","candlemas","ash","easter-vigil"]){
+  for(const rite of ["asperges","candlemas","ash","easter-vigil","corpus","requiem"]){
     const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
     const page=await context.newPage();
     const errors=[];page.on("pageerror",error=>errors.push(error.message));
-    const url="http://127.0.0.1:4397/tests/fixtures/reader-phone-harness.html?mode=MISSAL&lang=fr&rite="+rite;
+    const condition=rite==="corpus"?"following=corpus&date=2027-05-27&form=SOLEMN":
+      rite==="requiem"?"following=requiem&body=1&burial=1&date=2026-11-02&form=SOLEMN":
+      "rite="+rite;
+    const url="http://127.0.0.1:4397/tests/fixtures/reader-phone-harness.html?mode=MISSAL&lang=fr&"+condition;
     await page.goto(url,{waitUntil:"domcontentloaded",timeout:90000});
     await page.waitForFunction(()=>["true","error"].includes(document.documentElement.dataset.harnessReady),null,{timeout:60000});
     const state=await page.evaluate(()=>({
@@ -104,6 +107,86 @@ try{
       assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getAshState().card.id),
         "ASH-R01","Ashes advanced before complete blessing orations");
       assert.equal(await rows(),3,"Ash blessing Orémus/prayer/Amen broken");
+    }else if(rite==="corpus"||rite==="requiem"){
+      const expected=rite==="corpus"?"CORPUS_CHRISTI_PROCESSION":"REQUIEM_ABSOLUTION";
+      const stateName=rite==="corpus"?"getCorpusChristiState":"getRequiemAbsolutionState";
+      const start=await page.evaluate(owner=>{
+        const api=window.__AO_PHONE_PREVIEW;
+        let end=null;
+        for(const c of [...api.model.cards].reverse()){
+          if(api.showSequence(c.sequence)){end=c.sectionId;break}
+        }
+        return {end,source:!!(owner==="CORPUS_CHRISTI_PROCESSION"?
+          api.getCorpusChristiState():api.getRequiemAbsolutionState())};
+      },expected);
+      assert.ok(start.end&&start.source,rite+" did not mount Mass and conditional annex");
+      await click();
+      assert.equal(await page.evaluate(()=>
+        window.__AO_PHONE_PREVIEW.getNativeEventState()?.specialRite),
+        expected,rite+" annex did not begin from Mass lifecycle");
+      const stage=async()=>page.evaluate(key=>{
+        const p=window.__AO_PHONE_PREVIEW;
+        return (key==="corpus"?p.getCorpusChristiState():p.getRequiemAbsolutionState()).card.id;
+      },rite);
+      if(rite==="corpus"){
+        assert.equal(await stage(),"CORPUS-R01");
+        await click();
+        assert.equal(await stage(),"CORPUS-R02");
+        assert.equal(await rows(),2,"Pange lingua first two stanzas not printed");
+        await click();
+        assert.equal(await stage(),"CORPUS-R02",
+          "Turning a Corpus Christi chant page advanced the procession event");
+        assert.equal(await rows(),2,"Pange lingua last two stanzas not printed");
+        await click();
+        assert.equal(await stage(),"CORPUS-R03");
+        assert.notEqual(await page.evaluate(()=>
+          window.__AO_PHONE_PREVIEW.getCorpusChristiState().posture),
+          "PROCESSIONAL","Nonparticipant was forced into Corpus Christi procession");
+        await click();
+        assert.equal(await stage(),"CORPUS-R04");
+        await click();
+        assert.equal(await stage(),"CORPUS-R05");
+        assert.equal(await rows(),2,"Benediction versicle and response must stay together");
+        await click();
+        assert.equal(await stage(),"CORPUS-R05",
+          "Benediction oration page advanced its source action prematurely");
+        assert.equal(await rows(),3,"Orémus/collect/Amen must stay on one page");
+        await click();
+        assert.equal(await stage(),"CORPUS-R06");
+        await click("previous");
+        assert.equal(await stage(),"CORPUS-R05");
+        assert.equal(await rows(),3,
+          "Back navigation must reopen Benediction final oration");
+      }else{
+        assert.equal(await stage(),"ABS-R01");
+        await click();
+        assert.equal(await stage(),"ABS-R02");
+        await click();
+        assert.equal(await stage(),"ABS-R03");
+        assert.equal(await rows(),3);
+        await click();
+        assert.equal(await stage(),"ABS-R03",
+          "A Libera me Missal reading page advanced the Requiem source event");
+        assert.equal(await rows(),4);
+        await click();
+        assert.equal(await stage(),"ABS-R04");
+        assert.equal(await rows(),4,"Kyrie and Pater noster source text missing");
+        for(const expectedRows of [6,4,2]){
+          await click();
+          assert.equal(await stage(),"ABS-R04");
+          assert.equal(await rows(),expectedRows,
+            "Requiem absolution dialogue section was cut or repeated");
+        }
+        await click();
+        assert.equal(await stage(),"ABS-R05");
+        assert.notEqual(await page.evaluate(()=>
+          window.__AO_PHONE_PREVIEW.getRequiemAbsolutionState().posture),
+          "PROCESSIONAL","Burial flag must not silently enroll the lay participant");
+        await click("previous");
+        assert.equal(await stage(),"ABS-R04");
+        assert.equal(await rows(),2,
+          "Back navigation must reopen final Requiem absolution prayer");
+      }
     }else{
       const prophecy=await page.evaluate(()=>{
         window.__AO_PHONE_PREVIEW.goToEasterVigilRecord("EV-LESS-01-READ");
@@ -182,5 +265,5 @@ try{
     assert.equal(errors.length,0,rite+" generated a browser exception: "+errors.join(";"));
     await context.close();
   }
-  console.log("PASS 390px Missal special-rite browser pages: full Candlemas/Ash blessings and Easter Vigil 92-line Litany");
+  console.log("PASS 390px six-rite Missal browser: Asperges, Ash, Candlemas, Corpus, Requiem, Vigil source/page parity");
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
