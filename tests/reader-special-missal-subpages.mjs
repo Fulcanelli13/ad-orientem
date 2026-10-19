@@ -195,4 +195,17 @@ assert.equal(cursor.project("CND-R01",first).pageIndex,0);
 const live=createSpecialRiteMissalPageCursor({mode:"LIVE"});
 assert.equal(live.project("CND-R01",first).totalPages,1);
 assert.equal(live.turn("next"),false);
+assert.equal(live.setMode("MISSAL"),true);
+assert.equal(live.project("CND-R01",first).totalPages,6,
+  "LIVE to MISSAL toggle must build source-owned subpages at current rite stage");
+assert.equal(live.turn("next"),true);
+assert.equal(live.project("CND-R01",first).pageIndex,1);
+assert.equal(live.setMode("MISSAL"),false,"Repeated mode selection reset an in-progress prayer");
+assert.equal(live.project("CND-R01",first).pageIndex,1);
+assert.equal(live.setMode("SIMPLE"),true);
+assert.equal(live.project("CND-R01",first).totalPages,1);
+assert.equal(live.setMode("MISSAL"),true);
+assert.equal(live.project("CND-R01",first).pageIndex,0,
+  "Switching back into Missal must reopen the same ceremony's first display page");
+assert.throws(()=>live.setMode("RUBRIC"),/SPECIAL_MISSAL_CURSOR_MODE_INVALID/);
 console.log("PASS twenty-three real special-rite source groups; every canonical row survives and stage controller never advances inside a page");
