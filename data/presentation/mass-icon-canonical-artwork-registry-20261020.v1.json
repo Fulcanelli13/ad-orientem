@@ -1,0 +1,4659 @@
+{
+  "schema": "ao-mass-artwork-canonical-reconciliation-v1",
+  "version": "1.0.0",
+  "generatedDate": "2026-10-20",
+  "scope": "Mass-specific V4.6 donor bank, Mass-relevant core bank roles, modern 19 October candidate studies, reviewed/posture SVGs; excludes unrelated UI/module art",
+  "releaseStatus": "RESEARCH_REVIEW_ONLY_NOT_LIVE",
+  "sourceRefs": [
+    "main/assets/active/mass-v46/*.svg",
+    "reviews/icon-bank-review-20261019.html inventory",
+    "Ad_Orientem_Icon_Review_2026-10-19.json (user review)",
+    "data/presentation/mass-icon-user-selections-20261010.v1.json",
+    "data/presentation/mass-icon-section-review-20261019.v1.json",
+    "data/presentation/mass-icon-rejected-legacy-artwork-20261019.v1.json",
+    "PR #1460 original approved Communion pair"
+  ],
+  "rules": [
+    "An artwork may represent multiple cues when its depiction is ceremonially accurate; otherwise use concise text.",
+    "Hash-based dedup for V46 uses verified Git blob SHA-1; this is not SHA-256 and cannot prove cross-format visual identity.",
+    "Retain A-P in Final Comparison 01; variants depict distinguishable actions or perspectives; neither replaces the other automatically.",
+    "Older/rejected/reserve-only images must never be resurrected via semantic aliases or other filenames.",
+    "An icon's visual approval does not permit the app to change source-owned ritual actions, posture triggers, priest/faithful ownership, or liturgical-form variants.",
+    "The profile decides head/body/profound bow rubrics even when one approved visual is reused.",
+    "No reviewed icons are activated by this file. Missing modern SVG masters must be imported and inspected separately.",
+    "Some bank gallery paths no longer exist on main: do not assume availability until source paths are resolved.",
+    "Where later actions target one liturgical slot, preserve broader icon bank status unless user explicitly rejected the image.",
+    "Do not confuse 1962 priest Communion with giving a chalice to the laity or Host elevation with Offertory presentation."
+  ],
+  "summary": {
+    "massV46Filenames": 67,
+    "massV46DistinctBlobArtworks": 47,
+    "relevantBankGalleryEntries": 44,
+    "modernStudiesNamed": 35,
+    "finalComparisonIcons": 16,
+    "legacyPermanentlyRejected": 16,
+    "byStatus": {
+      "APPROVED_VISUAL": 52,
+      "UNREVIEWED": 39,
+      "REPURPOSED_OR_PROPOSED": 13,
+      "RESERVE_ONLY": 8,
+      "REJECTED": 15,
+      "HOLD": 1,
+      "REPLACED_IN_REVIEWED_SLOT": 2,
+      "REPLACEMENT_REQUESTED": 3,
+      "REPURPOSE_UNASSIGNED": 2
+    },
+    "records": 135,
+    "missingRepoArtworks": 31,
+    "distinctPhysicalContentStatus": "ONLY VERIFIED GIT BLOB DEDUP; modern archive hashes unconfirmed"
+  },
+  "artworks": [
+    {
+      "id": "AO.ICON.MASS.V46.b45c117dbf93",
+      "family": "mass-v46",
+      "repoContentSha": "b45c117dbf93c986e23d3e57dd3e8856a12fadf7",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/bells.svg"
+      ],
+      "aliases": [
+        "bells"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:bells",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "sound:bells"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.c9d7c4fdc920",
+      "family": "mass-v46",
+      "repoContentSha": "c9d7c4fdc920da1ed3a2a61a110f0888424135fb",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/blessing.svg"
+      ],
+      "aliases": [
+        "blessing"
+      ],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.32ec211d49bd",
+      "family": "mass-v46",
+      "repoContentSha": "32ec211d49bd717927209f9917b667e6339a66f8",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/bow.svg"
+      ],
+      "aliases": [
+        "bow"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:bow",
+          "target": "use for priest's bow",
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:bow"
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.d04e28667edb",
+      "family": "mass-v46",
+      "repoContentSha": "d04e28667edbf64e69ff1909c78c7977c97e1101",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/breast_strike.svg"
+      ],
+      "aliases": [
+        "breast_strike"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:breast_strike",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:breast_strike"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.14fc59f972ba",
+      "family": "mass-v46",
+      "repoContentSha": "14fc59f972bad9f3143e13b003be137aedef9688",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/canon.svg"
+      ],
+      "aliases": [
+        "canon"
+      ],
+      "sourceDecisionRefs": [
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:canon"
+        }
+      ],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.0b7a3b1ec90d",
+      "family": "mass-v46",
+      "repoContentSha": "0b7a3b1ec90dd8aa9764804dd3e3ac152c76824b",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/chalice_elevation.svg",
+        "assets/active/mass-v46/priest_elevation.svg"
+      ],
+      "aliases": [
+        "chalice_elevation",
+        "priest_elevation"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B06"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:chalice_elevation",
+          "target": "the icon is showing host elevation",
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_elevation",
+          "target": "icon shows host elevation",
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:elevate_host"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B06",
+          "decision": "REPURPOSE_AS_HOST_ELEVATION",
+          "letter": "E",
+          "comment": "E is host elevation",
+          "scope": null,
+          "assetId": "chalice_elevation",
+          "secondary": false
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.5e5e8e69408a",
+      "family": "mass-v46",
+      "repoContentSha": "5e5e8e69408a9a3d196b799c90beccbf0b3aa797",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/commingling.svg",
+        "assets/active/mass-v46/communion.svg",
+        "assets/active/mass-v46/fraction.svg"
+      ],
+      "aliases": [
+        "commingling",
+        "communion",
+        "fraction"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:fraction",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:commingling",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:communion",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.060bec5a4ee1",
+      "family": "mass-v46",
+      "repoContentSha": "060bec5a4ee1937bb55cd59370b0c81c6cbbc102",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/cross.svg",
+        "assets/active/mass-v46/gospel_crosses.svg"
+      ],
+      "aliases": [
+        "cross",
+        "gospel_crosses"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:cross",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:gospel_crosses",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:sign_of_cross"
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:gospel_crosses"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.c149452b5cd6",
+      "family": "mass-v46",
+      "repoContentSha": "c149452b5cd6032bee8673ad431523e9352a24da",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/epistle.svg",
+        "assets/active/mass-v46/gospel.svg"
+      ],
+      "aliases": [
+        "epistle",
+        "gospel"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "AO.ICONBANK.SURVEY.B06"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE",
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REJECT",
+          "galleryKey": "mass:epistle",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B06",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "letter": "H",
+          "comment": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "scope": null,
+          "assetId": "gospel",
+          "secondary": false
+        }
+      ],
+      "status": "RESERVE_ONLY"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.41b135fa57f8",
+      "family": "mass-v46",
+      "repoContentSha": "41b135fa57f85a1cd01a91c45402451202de1b48",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/faithful.svg"
+      ],
+      "aliases": [
+        "faithful"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:faithful",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:faithful"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.15ef2e571ad5",
+      "family": "mass-v46",
+      "repoContentSha": "15ef2e571ad55a886a9a6ba0cd5a25d9ac8a96ef",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/genuflect.svg",
+        "assets/active/mass-v46/priest_genuflect.svg"
+      ],
+      "aliases": [
+        "genuflect",
+        "priest_genuflect"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE",
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:genuflect",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_genuflect",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:genuflect"
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:genuflect"
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.1bb1d18decf0",
+      "family": "mass-v46",
+      "repoContentSha": "1bb1d18decf08f7e4d9e2ce9d580c9e70f9398be",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/hands_joined.svg"
+      ],
+      "aliases": [
+        "hands_joined"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:hands_joined",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:hands_joined"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.52896d946e91",
+      "family": "mass-v46",
+      "repoContentSha": "52896d946e913af296b674675703ec9e82faec7f",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/head_bow.svg"
+      ],
+      "aliases": [
+        "head_bow"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REJECT",
+          "galleryKey": "mass:head_bow",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:head_bow"
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.e2976db8d8d7",
+      "family": "mass-v46",
+      "repoContentSha": "e2976db8d8d7715b8c186f68b71c2f1daf07fba5",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/incense.svg",
+        "assets/active/mass-v46/priest_incense_altar.svg",
+        "assets/active/mass-v46/priest_incense_people.svg"
+      ],
+      "aliases": [
+        "incense",
+        "priest_incense_altar",
+        "priest_incense_people"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_incense_people",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_incense_altar",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.35af93b0d2f7",
+      "family": "mass-v46",
+      "repoContentSha": "35af93b0d2f73a9f6c547b3b067ab09e89226561",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/kneel.svg"
+      ],
+      "aliases": [
+        "kneel"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:kneel",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:kneel"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.2e6d364363bf",
+      "family": "mass-v46",
+      "repoContentSha": "2e6d364363bf3eda05189058896d7a64919a0dbe",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/lavabo.svg"
+      ],
+      "aliases": [
+        "lavabo"
+      ],
+      "sourceDecisionRefs": [
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B03"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:lavabo"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B03",
+          "decision": "HOLD",
+          "letter": "O",
+          "comment": "No approval/rejection or repurposing inferred.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/lavabo.svg",
+          "secondary": false
+        }
+      ],
+      "status": "HOLD"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.ce0ee18a3c3b",
+      "family": "mass-v46",
+      "repoContentSha": "ce0ee18a3c3b536e421f0fcaf4b0950f4d9a4346",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/listen.svg"
+      ],
+      "aliases": [
+        "listen"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:listen",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:listen"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.b35485de23ac",
+      "family": "mass-v46",
+      "repoContentSha": "b35485de23ac77a1927eb7055990b18d7722437f",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/preaching.svg",
+        "assets/active/mass-v46/priest_ambo_rich.svg"
+      ],
+      "aliases": [
+        "preaching",
+        "priest_ambo_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+        "AO.ICONBANK.SURVEY.B02.ALTERNATIVES"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:preaching",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_ambo_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:ambo"
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:preaching"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+          "decision": "ARTWORK_GOOD",
+          "letter": "F",
+          "comment": "Not certified for reading the Missal at the altar.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/preaching.svg",
+          "secondary": false
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+          "decision": "ARTWORK_GOOD",
+          "letter": "G",
+          "comment": "Not certified for reading the Missal at the altar.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/priest_ambo_rich.svg",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.658386ccd633",
+      "family": "mass-v46",
+      "repoContentSha": "658386ccd633b2033db7ed731aa1a0c73cbaffd0",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_ascending.svg"
+      ],
+      "aliases": [
+        "priest_ascending"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_ascending",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.014e5a821443",
+      "family": "mass-v46",
+      "repoContentSha": "014e5a821443d160dcc3dbc160dfedc2c8987f58",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_ascending_rich.svg"
+      ],
+      "aliases": [
+        "priest_ascending_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_ascending_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:ascending"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.4565dd7c08d9",
+      "family": "mass-v46",
+      "repoContentSha": "4565dd7c08d9ebdade059e419fedf2134f68b7f9",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_audible.svg"
+      ],
+      "aliases": [
+        "priest_audible"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_audible",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "sound:priest_audible"
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "A",
+          "pair": "1",
+          "topic": "Priest audible/speaking",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.ab39ab55df43",
+      "family": "mass-v46",
+      "repoContentSha": "ab39ab55df436f6caeac31d91abf6ba05887b881",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_blessing_rich.svg"
+      ],
+      "aliases": [
+        "priest_blessing_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_blessing_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "G",
+          "pair": "4",
+          "topic": "Blessing",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.0b8792b24947",
+      "family": "mass-v46",
+      "repoContentSha": "0b8792b249475fa7aa7e2ead3fd7bbaa5034fbcb",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_centre.svg"
+      ],
+      "aliases": [
+        "priest_centre"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_centre",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.4b7b45231002",
+      "family": "mass-v46",
+      "repoContentSha": "4b7b4523100213edab41d47056c20e99902d7e6a",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_centre_arms_rich.svg"
+      ],
+      "aliases": [
+        "priest_centre_arms_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_centre_arms_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "O",
+          "pair": "8",
+          "topic": "Credo intonation/priest orans",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.79ede15cb7cd",
+      "family": "mass-v46",
+      "repoContentSha": "79ede15cb7cd3cad371422fe907875608d2496d8",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_centre_hands_rich.svg",
+        "assets/active/mass-v46/priest_centre_rich.svg"
+      ],
+      "aliases": [
+        "priest_centre_hands_rich",
+        "priest_centre_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_centre_hands_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:centre"
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "C",
+          "pair": "2",
+          "topic": "Priest at altar centre",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.9dfacb811e6d",
+      "family": "mass-v46",
+      "repoContentSha": "9dfacb811e6d97ba3285be77c96e4af0d23d365d",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_chair.svg",
+        "assets/active/mass-v46/priest_sedilia.svg",
+        "assets/active/mass-v46/priest_sedilia_rising_rich.svg",
+        "assets/active/mass-v46/priest_sedilia_standing_rich.svg"
+      ],
+      "aliases": [
+        "priest_chair",
+        "priest_sedilia",
+        "priest_sedilia_rising_rich",
+        "priest_sedilia_standing_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "AO.ICONBANK.SURVEY.B03"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE",
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_chair",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_sedilia",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_sedilia_rising_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_sedilia_standing_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B03",
+          "decision": "REPLACE_BY_C",
+          "letter": "D",
+          "comment": "User prefers seated-priest depiction C in place of D. It does not depict the act of rising; when the motion matters, explain it with words and preserve the ceremonial state.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/priest_sedilia_rising_rich.svg",
+          "secondary": true
+        }
+      ],
+      "status": "REPLACED_IN_REVIEWED_SLOT"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.aa8d43d15849",
+      "family": "mass-v46",
+      "repoContentSha": "aa8d43d1584922b8a479fe14480def069d40f34a",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_communion_rich.svg",
+        "assets/active/mass-v46/priest_rail_rich.svg"
+      ],
+      "aliases": [
+        "priest_communion_rich",
+        "priest_rail_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "AO.ICONBANK.SURVEY.B06"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE",
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_communion_rich",
+          "target": "this is not the priest's communion",
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_rail_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B06",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "letter": "G",
+          "comment": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "scope": null,
+          "assetId": "priest_communion_rich",
+          "secondary": false
+        }
+      ],
+      "status": "RESERVE_ONLY"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.4b9537589c8a",
+      "family": "mass-v46",
+      "repoContentSha": "4b9537589c8a9f61b4982b9f32ecbde306c765fc",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_elevate_chalice_rich.svg"
+      ],
+      "aliases": [
+        "priest_elevate_chalice_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B03",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_elevate_chalice_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:elevate_chalice"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B03",
+          "decision": "POSSIBLE_REPLACEMENT",
+          "letter": "L",
+          "comment": "User said 'Maybe we should replace L.' It remains available pending comparison; not rejected.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+          "secondary": false
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "I",
+          "pair": "5",
+          "topic": "Chalice elevation",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.1a312e7791f1",
+      "family": "mass-v46",
+      "repoContentSha": "1a312e7791f19e47fa798ce9510f9d4dbeb9fb16",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_elevate_host_rich.svg"
+      ],
+      "aliases": [
+        "priest_elevate_host_rich"
+      ],
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B03"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B03",
+          "decision": "REPLACE_BY_M",
+          "letter": "K",
+          "comment": "User prefers Host-elevation icon M. Do not silently equate the distinct Offertory presentation of the unconsecrated Host with elevation of the consecrated Host or change the liturgical cue engine.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/priest_elevate_host_rich.svg",
+          "secondary": true
+        }
+      ],
+      "status": "REPLACED_IN_REVIEWED_SLOT"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.fdb2f87db96b",
+      "family": "mass-v46",
+      "repoContentSha": "fdb2f87db96bd63c579c1a2ed50cc02b83c55599",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_epistle_rich.svg"
+      ],
+      "aliases": [
+        "priest_epistle_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B02.ALTERNATIVES"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_epistle_rich",
+          "target": "Gosepel side",
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:epistle"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+          "decision": "ARTWORK_GOOD",
+          "letter": "E",
+          "comment": "Original donor name is misleading; this depicts Gospel side.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/priest_epistle_rich.svg",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.388f77b138d9",
+      "family": "mass-v46",
+      "repoContentSha": "388f77b138d926edfb8494d25b6310a21ab617c7",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_facing_people.svg",
+        "assets/active/mass-v46/priest_facing_people_rich.svg",
+        "assets/active/mass-v46/priest_turn_people_move_rich.svg",
+        "assets/active/mass-v46/priest_turn_people_rich.svg"
+      ],
+      "aliases": [
+        "priest_facing_people",
+        "priest_facing_people_rich",
+        "priest_turn_people_move_rich",
+        "priest_turn_people_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_facing_people",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_turn_people_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_facing_people_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_turn_people_move_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:facing_people"
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.442c089ef488",
+      "family": "mass-v46",
+      "repoContentSha": "442c089ef4885987cb6af90eea717d1f8e0c693b",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_foot.svg",
+        "assets/active/mass-v46/priest_foot_rich.svg"
+      ],
+      "aliases": [
+        "priest_foot",
+        "priest_foot_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_foot",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_foot_rich",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.3cbbd022eb89",
+      "family": "mass-v46",
+      "repoContentSha": "3cbbd022eb89dad25562279680b59da141ff0722",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_gospel_rich.svg"
+      ],
+      "aliases": [
+        "priest_gospel_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B02.ALTERNATIVES"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_gospel_rich",
+          "target": "epistle side",
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:gospel"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+          "decision": "ARTWORK_GOOD",
+          "letter": "D",
+          "comment": "Original donor name is misleading; this depicts Epistle side.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/priest_gospel_rich.svg",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.e8647b0ae790",
+      "family": "mass-v46",
+      "repoContentSha": "e8647b0ae7903ac622b2a7e1b1558967752c3ac0",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_incense_altar_rich.svg"
+      ],
+      "aliases": [
+        "priest_incense_altar_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_incense_altar_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:incense_altar"
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "E",
+          "pair": "3",
+          "topic": "Incensation",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.810187cc5f46",
+      "family": "mass-v46",
+      "repoContentSha": "810187cc5f46b359c540e175f7024a826fafc4ac",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_incense_people_rich.svg"
+      ],
+      "aliases": [
+        "priest_incense_people_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_incense_people_rich",
+          "target": null,
+          "note": "actually the priest does not technically incense people. its the servant who does"
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:incense_people"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.be0630ef8e39",
+      "family": "mass-v46",
+      "repoContentSha": "be0630ef8e39a930d656c1f563813066886f9be4",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_kiss_altar_rich.svg",
+        "assets/active/mass-v46/priest_profound_bow_rich.svg"
+      ],
+      "aliases": [
+        "priest_kiss_altar_rich",
+        "priest_profound_bow_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B06",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE",
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_kiss_altar_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_profound_bow_rich",
+          "target": "this is priest kissing the altat",
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:kiss_altar"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B06",
+          "decision": "PROPOSE_ALTAR_BOW_USE",
+          "letter": "F",
+          "comment": "F could be used as bow to altar",
+          "scope": null,
+          "assetId": "priest_profound_bow_rich",
+          "secondary": false
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "N",
+          "pair": "7",
+          "topic": "Bowing toward altar",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.0bd6e48b8f25",
+      "family": "mass-v46",
+      "repoContentSha": "0bd6e48b8f253709af8d1585322c6c8008e776dc",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_procession_rich.svg"
+      ],
+      "aliases": [
+        "priest_procession_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_procession_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:procession"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.6fc66744e13c",
+      "family": "mass-v46",
+      "repoContentSha": "6fc66744e13c90589bc18735119734f13f0a2613",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_rail.svg"
+      ],
+      "aliases": [
+        "priest_rail"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_rail",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.e05305b480e0",
+      "family": "mass-v46",
+      "repoContentSha": "e05305b480e0ac01a3729b1477d1a1bff566b406",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_rail_after_rich.svg"
+      ],
+      "aliases": [
+        "priest_rail_after_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B02.ALTERNATIVES"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_rail_after_rich",
+          "target": "this is priest giving communion to the faithful",
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:communion_rail"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+          "decision": "ARTWORK_GOOD",
+          "letter": "A",
+          "comment": "Not a generic priest-at-Communion-rail position.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/priest_rail_after_rich.svg",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.33e32a5bc036",
+      "family": "mass-v46",
+      "repoContentSha": "33e32a5bc0362a01649e55f33992e76202267f32",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_return_altar_rich.svg",
+        "assets/active/mass-v46/priest_turn_altar_move_rich.svg"
+      ],
+      "aliases": [
+        "priest_return_altar_rich",
+        "priest_turn_altar_move_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "GALLERY_20261019",
+        "AO.ICONBANK.SURVEY.B03"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE",
+        "ONE_PHYSICAL_ARTWORK_MULTIPLE_FILENAMES_DO_NOT_ASSIGN_BY_NAME"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_return_altar_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "mass:priest_turn_altar_move_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B03",
+          "decision": "REJECT_ARTWORK",
+          "letter": "E",
+          "comment": "Exclude this depiction from future matching; no deletion of the original file.",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/priest_return_altar_rich.svg",
+          "secondary": false
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.263369f48d00",
+      "family": "mass-v46",
+      "repoContentSha": "263369f48d0000ecd71006bafb6b0346e459d0e2",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_sedilia_rich.svg"
+      ],
+      "aliases": [
+        "priest_sedilia_rich"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:priest_sedilia_rich",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "priest:sedilia"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.db566a993699",
+      "family": "mass-v46",
+      "repoContentSha": "db566a9936993a5d49a4161ba9d5929d48c2300e",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/priest_silent.svg"
+      ],
+      "aliases": [
+        "priest_silent"
+      ],
+      "sourceDecisionRefs": [
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "sound:priest_silent"
+        }
+      ],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.1f147f9c52d0",
+      "family": "mass-v46",
+      "repoContentSha": "1f147f9c52d0c17396040451a18512576ddae4a3",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/profound_bow.svg"
+      ],
+      "aliases": [
+        "profound_bow"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010",
+        "AO.ICONBANK.SURVEY.B01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "MIXED_SEMANTIC_OR_CHRONOLOGICAL_REVIEW_DECISIONS_CHECK_ALIAS_SCOPE"
+      ],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:profound_bow",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:profound_bow"
+        },
+        {
+          "phase": "AO.ICONBANK.SURVEY.B01",
+          "decision": "REPURPOSE_TO_GENERAL_BOW",
+          "letter": "F",
+          "comment": "Use F as bow, we don't need to distinguish profound bow from bow",
+          "scope": null,
+          "assetId": "assets/active/mass-v46/profound_bow.svg",
+          "secondary": false
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.9f49780234ab",
+      "family": "mass-v46",
+      "repoContentSha": "9f49780234ab778c296cfae61b18bb6249b07923",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/response.svg"
+      ],
+      "aliases": [
+        "response"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:response",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "cue:response"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.3f5f357b4cdc",
+      "family": "mass-v46",
+      "repoContentSha": "3f5f357b4cdcc920d7273484c090f7ddc937712a",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/schola.svg"
+      ],
+      "aliases": [
+        "schola"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:schola",
+          "target": null,
+          "note": "in the app this icon appears very small... i don't know what's the issue"
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "sound:schola"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.c0db714e3d8a",
+      "family": "mass-v46",
+      "repoContentSha": "c0db714e3d8afe5ad4c0fe2f70406d7472783677",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/sit.svg"
+      ],
+      "aliases": [
+        "sit"
+      ],
+      "sourceDecisionRefs": [
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:sit"
+        }
+      ],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.MASS.V46.2c42e8b32b57",
+      "family": "mass-v46",
+      "repoContentSha": "2c42e8b32b5746df7330a807a08ef903a1446959",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/mass-v46/stand.svg"
+      ],
+      "aliases": [
+        "stand"
+      ],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "mass:stand",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "you:stand"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.BOAT_BEARER",
+      "family": "v4-bank",
+      "key": "ACTOR.BOAT_BEARER",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-boat-bearer.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.BOAT_BEARER"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.MASTER_OF_CEREMONIES",
+      "family": "v4-bank",
+      "key": "ACTOR.MASTER_OF_CEREMONIES",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-mc.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.MASTER_OF_CEREMONIES"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.PRIEST.CENTRE_AD_ORIENTEM",
+      "family": "v4-bank",
+      "key": "ACTOR.PRIEST.CENTRE_AD_ORIENTEM",
+      "repoContentSha": "a2ebdf0817f48670309d3b3293e81df36f87e81e",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-actors/ao-live-priest-centre.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.PRIEST.CENTRE_AD_ORIENTEM"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "bank:ACTOR.PRIEST.CENTRE_AD_ORIENTEM",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.PRIEST.EPISTLE_SIDE",
+      "family": "v4-bank",
+      "key": "ACTOR.PRIEST.EPISTLE_SIDE",
+      "repoContentSha": "1db0e74ddbc4e689c9ae2e7d1022823512f2067d",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-actors/ao-live-priest-epistle-side.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.PRIEST.EPISTLE_SIDE"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REJECT",
+          "galleryKey": "bank:ACTOR.PRIEST.EPISTLE_SIDE",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.PRIEST.FACING_PEOPLE",
+      "family": "v4-bank",
+      "key": "ACTOR.PRIEST.FACING_PEOPLE",
+      "repoContentSha": "6def905c60a69ba6ea48056cacf2e769b1877c89",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-actors/ao-live-priest-facing-people.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.PRIEST.FACING_PEOPLE"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REPURPOSE",
+          "galleryKey": "bank:ACTOR.PRIEST.FACING_PEOPLE",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REPURPOSED_OR_PROPOSED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.PRIEST.GOSPEL_SIDE",
+      "family": "v4-bank",
+      "key": "ACTOR.PRIEST.GOSPEL_SIDE",
+      "repoContentSha": "85f295713a5bc64ab8a164c2d4c2fcc70ffb03a7",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-actors/ao-live-priest-gospel-side.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.PRIEST.GOSPEL_SIDE"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REJECT",
+          "galleryKey": "bank:ACTOR.PRIEST.GOSPEL_SIDE",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.THURIFER",
+      "family": "v4-bank",
+      "key": "ACTOR.THURIFER",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-thurifer.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.THURIFER"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.SOUND.ALTAR_BELLS",
+      "family": "v4-bank",
+      "key": "SOUND.ALTAR_BELLS",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-audio/ao-live-bells.png"
+      ],
+      "galleryIds": [
+        "bank:SOUND.ALTAR_BELLS"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.SOUND.PRIEST.AUDIBLE",
+      "family": "v4-bank",
+      "key": "SOUND.PRIEST.AUDIBLE",
+      "repoContentSha": "828ab819080fa55b3bc4d85f7291abde50c2dcd9",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-audio/ao-live-priest-audible.png"
+      ],
+      "galleryIds": [
+        "bank:SOUND.PRIEST.AUDIBLE"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:SOUND.PRIEST.AUDIBLE",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.SOUND.PRIEST.SILENT",
+      "family": "v4-bank",
+      "key": "SOUND.PRIEST.SILENT",
+      "repoContentSha": "785d1109b26ef502a374d85815dbf7d1950aa59b",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-audio/ao-live-priest-silent.png"
+      ],
+      "galleryIds": [
+        "bank:SOUND.PRIEST.SILENT"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.SOUND.SCHOLA",
+      "family": "v4-bank",
+      "key": "SOUND.SCHOLA",
+      "repoContentSha": "713c5da61db59bab29666ef260d07c4a0746eef5",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-audio/ao-live-schola.png"
+      ],
+      "galleryIds": [
+        "bank:SOUND.SCHOLA"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:SOUND.SCHOLA",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.SOUND.SCHOLA.REST",
+      "family": "v4-bank",
+      "key": "SOUND.SCHOLA.REST",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-audio/ao-live-schola-rest.png"
+      ],
+      "galleryIds": [
+        "bank:SOUND.SCHOLA.REST"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.GESTURE.BREAST_STRIKE",
+      "family": "v4-bank",
+      "key": "GESTURE.BREAST_STRIKE",
+      "repoContentSha": "ae60981e6df9a1b5c4756e576d0dfada5183da96",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-gesture/ao-live-breast-strike.png"
+      ],
+      "galleryIds": [
+        "bank:GESTURE.BREAST_STRIKE"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:GESTURE.BREAST_STRIKE",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:ao-live-breast-strike"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.GESTURE.HANDS_JOINED",
+      "family": "v4-bank",
+      "key": "GESTURE.HANDS_JOINED",
+      "repoContentSha": "0989c3c27fac24884f07a7b67f897449fe57b623",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-gesture/ao-live-hands-joined.png"
+      ],
+      "galleryIds": [
+        "bank:GESTURE.HANDS_JOINED"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:GESTURE.HANDS_JOINED",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:ao-live-hands-joined"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.GESTURE.HEAD_BOW",
+      "family": "v4-bank",
+      "key": "GESTURE.HEAD_BOW",
+      "repoContentSha": "f19e9f3f4657ad8dd806b167504ba1231cdcce80",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-gesture/ao-live-head-bow.png"
+      ],
+      "galleryIds": [
+        "bank:GESTURE.HEAD_BOW"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "REJECT",
+          "galleryKey": "bank:GESTURE.HEAD_BOW",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:ao-live-head-bow"
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.BANK.GESTURE.PROFOUND_BOW",
+      "family": "v4-bank",
+      "key": "GESTURE.PROFOUND_BOW",
+      "repoContentSha": "51c6696a333517dbda093524197a15c02d7ceaef",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-gesture/ao-live-profound-bow.png"
+      ],
+      "galleryIds": [
+        "bank:GESTURE.PROFOUND_BOW"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:GESTURE.PROFOUND_BOW",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:ao-live-profound-bow"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.POSTURE.BOW",
+      "family": "v4-bank",
+      "key": "POSTURE.BOW",
+      "repoContentSha": "8bf31483e52b029cb0eafea23292a984d59b778c",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-posture/ao-live-bow.png"
+      ],
+      "galleryIds": [
+        "bank:POSTURE.BOW"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:POSTURE.BOW",
+          "target": null,
+          "note": "use for faithful bow (distinct from priest's bow)"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.POSTURE.GENUFLECT",
+      "family": "v4-bank",
+      "key": "POSTURE.GENUFLECT",
+      "repoContentSha": "d4d8cc06b680f3df174a6d48b084f79d4bf86d46",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-posture/ao-live-genuflect.svg"
+      ],
+      "galleryIds": [
+        "bank:POSTURE.GENUFLECT"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:POSTURE.GENUFLECT",
+          "target": null,
+          "note": "better icon if cropped properly"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.POSTURE.KNEEL",
+      "family": "v4-bank",
+      "key": "POSTURE.KNEEL",
+      "repoContentSha": "998da80b84b065f2699dbf7180ed6cb9e3a519cc",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-posture/ao-live-kneel.svg"
+      ],
+      "galleryIds": [
+        "bank:POSTURE.KNEEL"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:POSTURE.KNEEL",
+          "target": null,
+          "note": "better icon if cropper properly"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.POSTURE.SIT",
+      "family": "v4-bank",
+      "key": "POSTURE.SIT",
+      "repoContentSha": "0dbdcd5f4fb43a7e20766bbc2036dde09ac95064",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-posture/ao-live-sit.png"
+      ],
+      "galleryIds": [
+        "bank:POSTURE.SIT"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:POSTURE.SIT",
+          "target": null,
+          "note": "better than the other sit"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.POSTURE.STAND",
+      "family": "v4-bank",
+      "key": "POSTURE.STAND",
+      "repoContentSha": "f4cd907ac737e1ea2fa939b4bb18157468189370",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-posture/ao-live-stand.svg"
+      ],
+      "galleryIds": [
+        "bank:POSTURE.STAND"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:POSTURE.STAND",
+          "target": null,
+          "note": "if cropped properly this is the better stand icon"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTION.ENTRANCE_PROCESSION",
+      "family": "v4-bank",
+      "key": "ACTION.ENTRANCE_PROCESSION",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actions/ao-live-processional.png"
+      ],
+      "galleryIds": [
+        "bank:ACTION.ENTRANCE_PROCESSION"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTION.RECESSION",
+      "family": "v4-bank",
+      "key": "ACTION.RECESSION",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actions/ao-live-recessional.png"
+      ],
+      "galleryIds": [
+        "bank:ACTION.RECESSION"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTION.BLESSING",
+      "family": "v4-bank",
+      "key": "ACTION.BLESSING",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actions/ao-live-blessing.png"
+      ],
+      "galleryIds": [
+        "bank:ACTION.BLESSING"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTION.COMMUNION",
+      "family": "v4-bank",
+      "key": "ACTION.COMMUNION",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actions/ao-live-communion.png"
+      ],
+      "galleryIds": [
+        "bank:ACTION.COMMUNION"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTION.HOST_ELEVATION",
+      "family": "v4-bank",
+      "key": "ACTION.HOST_ELEVATION",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actions/ao-live-priest-elevation.png"
+      ],
+      "galleryIds": [
+        "bank:ACTION.HOST_ELEVATION"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTION.LAVABO",
+      "family": "v4-bank",
+      "key": "ACTION.LAVABO",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actions/ao-live-lavabo.png"
+      ],
+      "galleryIds": [
+        "bank:ACTION.LAVABO"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.CANDLE_BEARERS",
+      "family": "v4-bank",
+      "key": "ACTOR.CANDLE_BEARERS",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-candle-bearers.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.CANDLE_BEARERS"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.CANTOR",
+      "family": "v4-bank",
+      "key": "ACTOR.CANTOR",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-cantor.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.CANTOR"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.CROSS_BEARER",
+      "family": "v4-bank",
+      "key": "ACTOR.CROSS_BEARER",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-cross-bearer.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.CROSS_BEARER"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.DEACON",
+      "family": "v4-bank",
+      "key": "ACTOR.DEACON",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-deacon.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.DEACON"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.PRIEST.GENUFLECT",
+      "family": "v4-bank",
+      "key": "ACTOR.PRIEST.GENUFLECT",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-priest-genuflect.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.PRIEST.GENUFLECT"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.PRIEST.INCENSING_ALTAR",
+      "family": "v4-bank",
+      "key": "ACTOR.PRIEST.INCENSING_ALTAR",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-priest-incense-altar.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.PRIEST.INCENSING_ALTAR"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.PRIEST.INCENSING_PEOPLE",
+      "family": "v4-bank",
+      "key": "ACTOR.PRIEST.INCENSING_PEOPLE",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-priest-incense-people.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.PRIEST.INCENSING_PEOPLE"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.SERVER.GENERIC",
+      "family": "v4-bank",
+      "key": "ACTOR.SERVER.GENERIC",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-server.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.SERVER.GENERIC"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTOR.SUBDEACON",
+      "family": "v4-bank",
+      "key": "ACTOR.SUBDEACON",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-actors/ao-live-subdeacon.png"
+      ],
+      "galleryIds": [
+        "bank:ACTOR.SUBDEACON"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.CUE.HEAR",
+      "family": "v4-bank",
+      "key": "CUE.HEAR",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-cue/ao-live-hear.png"
+      ],
+      "galleryIds": [
+        "bank:CUE.HEAR"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.CUE.LOOK",
+      "family": "v4-bank",
+      "key": "CUE.LOOK",
+      "repoContentSha": "cd5cbace21072e824be6625a0c50b08459b94a48",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-cue/ao-live-look.png"
+      ],
+      "galleryIds": [
+        "bank:CUE.LOOK"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019",
+        "SELECTED_20261010"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:CUE.LOOK",
+          "target": null,
+          "note": null
+        },
+        {
+          "phase": "SELECTED_20261010",
+          "decision": "HISTORICAL_SELECTION",
+          "semanticKey": "other:ao-live-look"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.CUE.RESPONSE",
+      "family": "v4-bank",
+      "key": "CUE.RESPONSE",
+      "repoContentSha": "bfd57ae9b942c667eb6d137cee4cc1f48242c3e7",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-cue/ao-live-response.png"
+      ],
+      "galleryIds": [
+        "bank:CUE.RESPONSE"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "GALLERY_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "GALLERY_20261019",
+          "decision": "ACCEPT",
+          "galleryKey": "bank:CUE.RESPONSE",
+          "target": null,
+          "note": null
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.BANK.CUE.YOU",
+      "family": "v4-bank",
+      "key": "CUE.YOU",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/live-cue/ao-live-you.png"
+      ],
+      "galleryIds": [
+        "bank:CUE.YOU"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.POSITION.PRIEST.ASCENDING_STEPS",
+      "family": "v4-bank",
+      "key": "POSITION.PRIEST.ASCENDING_STEPS",
+      "repoContentSha": "60abe384c7232c2495f599e98ea2a93dc0dd717d",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-priest-position/ao-live-priest-ascending-steps.png"
+      ],
+      "galleryIds": [
+        "bank:POSITION.PRIEST.ASCENDING_STEPS"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.POSITION.PRIEST.COMMUNION_RAIL",
+      "family": "v4-bank",
+      "key": "POSITION.PRIEST.COMMUNION_RAIL",
+      "repoContentSha": "b84583944829a445df1efc4a120a81c7483fbdf3",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-priest-position/ao-live-priest-communion-rail.png"
+      ],
+      "galleryIds": [
+        "bank:POSITION.PRIEST.COMMUNION_RAIL"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.POSITION.PRIEST.FOOT_OF_ALTAR",
+      "family": "v4-bank",
+      "key": "POSITION.PRIEST.FOOT_OF_ALTAR",
+      "repoContentSha": "017a7bf38ae000a1dc0a3d3fd43fde25e05af75a",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/active/live-priest-position/ao-live-priest-foot-altar.png"
+      ],
+      "galleryIds": [
+        "bank:POSITION.PRIEST.FOOT_OF_ALTAR"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.BANK.ACTION.CROSS_VENERATION",
+      "family": "v4-bank",
+      "key": "ACTION.CROSS_VENERATION",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/active/special-days/ao-special-cross-veneration.png"
+      ],
+      "galleryIds": [
+        "bank:ACTION.CROSS_VENERATION"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "GALLERY_PATH_NOT_PRESENT_IN_CURRENT_MAIN"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STAGED.ao-reviewed-genuflect",
+      "family": "repo-approved-or-reviewed",
+      "key": "ao-reviewed-genuflect",
+      "repoContentSha": "bfc4edb1da4a88e7263c8619048f30bf102d77c0",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/approved/live-posture/ao-reviewed-genuflect.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STAGED.ao-reviewed-kneel",
+      "family": "repo-approved-or-reviewed",
+      "key": "ao-reviewed-kneel",
+      "repoContentSha": "80408c9777b031fd80230bff4ce15c45dbacf0e8",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/approved/live-posture/ao-reviewed-kneel.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STAGED.ao-reviewed-stand",
+      "family": "repo-approved-or-reviewed",
+      "key": "ao-reviewed-stand",
+      "repoContentSha": "0641c521d40b04af91b5a40a740bab4240aca17c",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/approved/live-posture/ao-reviewed-stand.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STAGED.finger-ablutions-post-communion",
+      "family": "repo-approved-or-reviewed",
+      "key": "finger-ablutions-post-communion",
+      "repoContentSha": "0114928f2ebf8049bed7c1b359bb2f08f46854a9",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/approved/mass/finger-ablutions-post-communion.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STAGED.finger-contact-post-consecration",
+      "family": "repo-approved-or-reviewed",
+      "key": "finger-contact-post-consecration",
+      "repoContentSha": "ea319e02bca8125f0d30f1d7ccea61fc78de9fe7",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/approved/mass/finger-contact-post-consecration.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STAGED.priest-epistle-side",
+      "family": "repo-approved-or-reviewed",
+      "key": "priest-epistle-side",
+      "repoContentSha": "d285158024693e6b0a5b2e03d91379e21a7c2e4d",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/review/mass-icon-candidates/priest-epistle-side.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "P0_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "P0_20261019",
+          "decision": "REJECTED",
+          "reason": "Explicit 19 Oct proposal rejection"
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STAGED.priest-eyes-hands-raised",
+      "family": "repo-approved-or-reviewed",
+      "key": "priest-eyes-hands-raised",
+      "repoContentSha": "b60f8c0664f110aaec8b1978c973c5dac2075101",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/review/mass-icon-candidates/priest-eyes-hands-raised.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "P0_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "P0_20261019",
+          "decision": "REJECTED",
+          "reason": "Explicit 19 Oct proposal rejection"
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STAGED.priest-gospel-side",
+      "family": "repo-approved-or-reviewed",
+      "key": "priest-gospel-side",
+      "repoContentSha": "4b1704d105d4bf0918f0770ee9c9de14192b7c22",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/review/mass-icon-candidates/priest-gospel-side.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "P0_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "P0_20261019",
+          "decision": "REJECTED",
+          "reason": "Explicit 19 Oct proposal rejection"
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STAGED.priest-hands-over-oblations",
+      "family": "repo-approved-or-reviewed",
+      "key": "priest-hands-over-oblations",
+      "repoContentSha": "f0387474acd241212d4b6925ff728ebcd61c7d1b",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "main",
+      "paths": [
+        "assets/review/mass-icon-candidates/priest-hands-over-oblations.svg"
+      ],
+      "aliases": [],
+      "sourceDecisionRefs": [
+        "P0_20261019"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "P0_20261019",
+          "decision": "REJECTED",
+          "reason": "Explicit 19 Oct proposal rejection"
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_elevation_host",
+      "family": "modern-20261019",
+      "key": "ao_elevation_host",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "letter": "G",
+          "comment": "Keep archived but exclude from automatic app bindings and new reviews",
+          "scope": null,
+          "assetId": "ao_elevation_host",
+          "secondary": false
+        }
+      ],
+      "status": "RESERVE_ONLY"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_elevation_chalice",
+      "family": "modern-20261019",
+      "key": "ao_elevation_chalice",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "H",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ao_elevation_chalice",
+          "secondary": false
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "J",
+          "pair": "5",
+          "topic": "Chalice elevation",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_adoration",
+      "family": "modern-20261019",
+      "key": "ao_adoration",
+      "repoContentSha": "585677c88c3c8b5c9b66d62ff97baf12607cdf1d",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/ao-adoration-20261019.svg"
+      ],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "M",
+          "pair": "7",
+          "topic": "Bowing toward altar",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_incensation",
+      "family": "modern-20261019",
+      "key": "ao_incensation",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "D",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ao_incensation",
+          "secondary": false
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "F",
+          "pair": "3",
+          "topic": "Incensation",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_read",
+      "family": "modern-20261019",
+      "key": "ao_read",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B02"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02",
+          "decision": "REQUEST_REPLACEMENT",
+          "letter": "J",
+          "comment": null,
+          "scope": null,
+          "assetId": "ao_read",
+          "secondary": false
+        }
+      ],
+      "status": "REPLACEMENT_REQUESTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_pray_audible",
+      "family": "modern-20261019",
+      "key": "ao_pray_audible",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "B",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ao_pray_audible",
+          "secondary": false
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "B",
+          "pair": "1",
+          "topic": "Priest audible/speaking",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_pray_silent",
+      "family": "modern-20261019",
+      "key": "ao_pray_silent",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "C",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ao_pray_silent",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_chant",
+      "family": "modern-20261019",
+      "key": "ao_chant",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "P",
+          "pair": "8",
+          "topic": "Credo intonation/priest orans",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_sign_of_cross",
+      "family": "modern-20261019",
+      "key": "ao_sign_of_cross",
+      "repoContentSha": "5ae036b2b5f3fa20471f55edafcbe6039bd0a75b",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
+      "paths": [
+        "assets/review/mass-icon-candidates/ao-sign-of-cross-20261019.svg"
+      ],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "SECTION_CUE_REVIEW"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "DECISION_NOT_RECONCILED_YET"
+      ],
+      "auditTrail": [
+        {
+          "phase": "SECTION_CUE_REVIEW",
+          "decision": "ACCEPT_VISUAL_MATCH",
+          "slot": "PRIEST_ACTION_SIGN_OF_CROSS",
+          "scope": "CUE_SPECIFIC",
+          "cueId": "AO.SM.C0001"
+        }
+      ],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_blessing",
+      "family": "modern-20261019",
+      "key": "ao_blessing",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "E",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ao_blessing",
+          "secondary": false
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "H",
+          "pair": "4",
+          "topic": "Blessing",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_communion_give_host",
+      "family": "modern-20261019",
+      "key": "ao_communion_give_host",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B02.ALTERNATIVES"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+          "decision": "REPURPOSE_UNASSIGNED",
+          "letter": "B",
+          "comment": "User requests repurposing; destination not specified; retain artwork.",
+          "scope": null,
+          "assetId": "ao_communion_give_host.svg",
+          "secondary": false
+        }
+      ],
+      "status": "REPURPOSE_UNASSIGNED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_communion_give_chalice",
+      "family": "modern-20261019",
+      "key": "ao_communion_give_chalice",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "letter": "J",
+          "comment": "Keep archived but exclude from automatic app bindings and new reviews",
+          "scope": null,
+          "assetId": "ao_communion_give_chalice",
+          "secondary": false
+        }
+      ],
+      "status": "RESERVE_ONLY"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_receive_host",
+      "family": "modern-20261019",
+      "key": "ao_receive_host",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "letter": "A",
+          "comment": "Keep archived but exclude from automatic app bindings and new reviews",
+          "scope": null,
+          "assetId": "ao_receive_host",
+          "secondary": false
+        }
+      ],
+      "status": "RESERVE_ONLY"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_drink_chalice",
+      "family": "modern-20261019",
+      "key": "ao_drink_chalice",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "I",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ao_drink_chalice",
+          "secondary": false
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "L",
+          "pair": "6",
+          "topic": "Priest's chalice Communion",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_purify_fingers",
+      "family": "modern-20261019",
+      "key": "ao_purify_fingers",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "K",
+          "comment": "Preferred purification vector over O/P; include in later duplicate head-to-head review only if needed",
+          "scope": null,
+          "assetId": "ao_purify_fingers",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_purify_chalice",
+      "family": "modern-20261019",
+      "key": "ao_purify_chalice",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "L",
+          "comment": "Preferred purification vector over O/P; include in later duplicate head-to-head review only if needed",
+          "scope": null,
+          "assetId": "ao_purify_chalice",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_place_on_altar",
+      "family": "modern-20261019",
+      "key": "ao_place_on_altar",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "F",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ao_place_on_altar",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_at_epistle_side",
+      "family": "modern-20261019",
+      "key": "ao_at_epistle_side",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B02"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02",
+          "decision": "REQUEST_REPLACEMENT",
+          "letter": "H",
+          "comment": null,
+          "scope": null,
+          "assetId": "ao_at_epistle_side",
+          "secondary": false
+        }
+      ],
+      "status": "REPLACEMENT_REQUESTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_at_gospel_side",
+      "family": "modern-20261019",
+      "key": "ao_at_gospel_side",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B02"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02",
+          "decision": "REQUEST_REPLACEMENT",
+          "letter": "I",
+          "comment": null,
+          "scope": null,
+          "assetId": "ao_at_gospel_side",
+          "secondary": false
+        }
+      ],
+      "status": "REPLACEMENT_REQUESTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_at_altar_centre",
+      "family": "modern-20261019",
+      "key": "ao_at_altar_centre",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "SECTION_CUE_REVIEW",
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "SECTION_CUE_REVIEW",
+          "decision": "ACCEPT_VISUAL_MATCH",
+          "slot": "PRIEST_ALTAR_CENTRE",
+          "scope": "CUE_SPECIFIC",
+          "cueId": "AO.SM.C0038"
+        },
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "D",
+          "pair": "2",
+          "topic": "Priest at altar centre",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ao_turn_to_people",
+      "family": "modern-20261019",
+      "key": "ao_turn_to_people",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "ad_orientem_21_individual_icons.zip",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B02.ALTERNATIVES"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+          "decision": "REPURPOSE_UNASSIGNED",
+          "letter": "C",
+          "comment": "User requests repurposing; destination not specified; retain artwork.",
+          "scope": null,
+          "assetId": "ao_turn_to_people.svg",
+          "secondary": false
+        }
+      ],
+      "status": "REPURPOSE_UNASSIGNED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_priest_communion_host",
+      "family": "modern-20261019",
+      "key": "ea_priest_communion_host",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/approved/mass-priest-communion/ea_priest_communion_host.svg"
+      ],
+      "sourceArchive": "PR #1460 approved Mass Communion pair",
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "EXISTS_ONLY_IN_UNMERGED_PR_1460",
+        "DECISION_NOT_RECONCILED_YET"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_priest_communion_chalice",
+      "family": "modern-20261019",
+      "key": "ea_priest_communion_chalice",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [
+        "assets/approved/mass-priest-communion/ea_priest_communion_chalice.svg"
+      ],
+      "sourceArchive": "PR #1460 approved Mass Communion pair",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.FINAL_COMPARISON.01"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "EXISTS_ONLY_IN_UNMERGED_PR_1460"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
+          "decision": "RETAIN_DISTINCT_ARTWORK",
+          "letter": "K",
+          "pair": "6",
+          "topic": "Priest's chalice Communion",
+          "scope": "ARTWORK_PRESERVATION_ONLY"
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_priest_fraction_host",
+      "family": "modern-20261019",
+      "key": "ea_priest_fraction_host",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 batch 2 SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "M",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ea_priest_fraction_host",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_priest_commingling",
+      "family": "modern-20261019",
+      "key": "ea_priest_commingling",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 batch 2 SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "letter": "N",
+          "comment": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass",
+          "scope": null,
+          "assetId": "ea_priest_commingling",
+          "secondary": false
+        }
+      ],
+      "status": "APPROVED_VISUAL"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_priest_purifies_fingers",
+      "family": "modern-20261019",
+      "key": "ea_priest_purifies_fingers",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 batch 2 SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "REJECT_ARTWORK",
+          "letter": "O",
+          "comment": "Exclude exact physical artwork from review and app, retain source for provenance",
+          "scope": null,
+          "assetId": "ea_priest_purifies_fingers",
+          "secondary": false
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_priest_purifies_chalice",
+      "family": "modern-20261019",
+      "key": "ea_priest_purifies_chalice",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 batch 2 SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B08"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B08",
+          "decision": "REJECT_ARTWORK",
+          "letter": "P",
+          "comment": "Exclude exact physical artwork from review and app, retain source for provenance",
+          "scope": null,
+          "assetId": "ea_priest_purifies_chalice",
+          "secondary": false
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_ash_wednesday_imposition",
+      "family": "modern-20261019",
+      "key": "ea_ash_wednesday_imposition",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 special-rites SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B06"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B06",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "letter": "A",
+          "comment": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "scope": null,
+          "assetId": "ea_ash_wednesday_imposition",
+          "secondary": false
+        }
+      ],
+      "status": "RESERVE_ONLY"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_candlemas_distribution",
+      "family": "modern-20261019",
+      "key": "ea_candlemas_distribution",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 special-rites SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B06"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B06",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "letter": "B",
+          "comment": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "scope": null,
+          "assetId": "ea_candlemas_distribution",
+          "secondary": false
+        }
+      ],
+      "status": "RESERVE_ONLY"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_good_friday_veneration",
+      "family": "modern-20261019",
+      "key": "ea_good_friday_veneration",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 special-rites SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B06"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B06",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "letter": "C",
+          "comment": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "scope": null,
+          "assetId": "ea_good_friday_veneration",
+          "secondary": false
+        }
+      ],
+      "status": "RESERVE_ONLY"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_easter_vigil_new_fire",
+      "family": "modern-20261019",
+      "key": "ea_easter_vigil_new_fire",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 special-rites SVG studies",
+      "sourceDecisionRefs": [],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "DECISION_NOT_RECONCILED_YET",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [],
+      "status": "UNREVIEWED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_palm_sunday_distribution",
+      "family": "modern-20261019",
+      "key": "ea_palm_sunday_distribution",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 special-rites SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B05"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B05",
+          "decision": "REJECT_ARTWORK",
+          "letter": "A",
+          "comment": null,
+          "scope": null,
+          "assetId": "ea_palm_sunday_distribution",
+          "secondary": false
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_holy_thursday_mandatum",
+      "family": "modern-20261019",
+      "key": "ea_holy_thursday_mandatum",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 special-rites SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B05"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B05",
+          "decision": "REJECT_ARTWORK",
+          "letter": "B",
+          "comment": null,
+          "scope": null,
+          "assetId": "ea_holy_thursday_mandatum",
+          "secondary": false
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_corpus_christi_procession",
+      "family": "modern-20261019",
+      "key": "ea_corpus_christi_procession",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 special-rites SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B05"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B05",
+          "decision": "REJECT_ARTWORK",
+          "letter": "C",
+          "comment": null,
+          "scope": null,
+          "assetId": "ea_corpus_christi_procession",
+          "secondary": false
+        }
+      ],
+      "status": "REJECTED"
+    },
+    {
+      "id": "AO.ICON.STUDY.20261019.ea_requiem_absolution",
+      "family": "modern-20261019",
+      "key": "ea_requiem_absolution",
+      "repoContentSha": null,
+      "hashType": null,
+      "verifiedIn": null,
+      "paths": [],
+      "sourceArchive": "2026-10-19 special-rites SVG studies",
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B05"
+      ],
+      "semanticUses": [],
+      "flags": [
+        "ARCHIVE_ARTWORK_NOT_VERIFIED_IN_REPOSITORY",
+        "ASSET_BYTES_NOT_PRESENT_IN_REVIEW_BRANCH"
+      ],
+      "auditTrail": [
+        {
+          "phase": "AO.ICONBANK.SURVEY.B05",
+          "decision": "REJECT_ARTWORK",
+          "letter": "D",
+          "comment": null,
+          "scope": null,
+          "assetId": "ea_requiem_absolution",
+          "secondary": false
+        }
+      ],
+      "status": "REJECTED"
+    }
+  ],
+  "excludedLegacy": [
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.A",
+      "family": "rejected-legacy",
+      "sha256": "7842dc479c5c06315b86eb520eba4a77e195e8c64e584f4d9715502e95fd4f30",
+      "legacyCssKey": "--icon-stand",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.B",
+      "family": "rejected-legacy",
+      "sha256": "5fb7ce8c54bfd9465598e4782c070e81e23af13e3ce96d0c2a1c59e74cace252",
+      "legacyCssKey": "--icon-kneel",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.C",
+      "family": "rejected-legacy",
+      "sha256": "4af736f7121861446a7c0d3a0eb8f906f0ec8c57e0c9d48b9666c04056bd5597",
+      "legacyCssKey": "--icon-sit",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.D",
+      "family": "rejected-legacy",
+      "sha256": "efb91ad0192ae7521885c6483614a693d137eb6bcae71bf52be318c013f6cb90",
+      "legacyCssKey": "--icon-bow",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.E",
+      "family": "rejected-legacy",
+      "sha256": "24e4e0fac1ac6555cac2cc8161fe4cc715c927b9dadd5029711afef0bb6d6598",
+      "legacyCssKey": "--icon-genuflect",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.F",
+      "family": "rejected-legacy",
+      "sha256": "3d55d381d8474144e5c008d89ffd6947b1e3b5b55342453d79236a1f1daa1990",
+      "legacyCssKey": "--icon-cross",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.G",
+      "family": "rejected-legacy",
+      "sha256": "b05a65b7923eb8f49177be24cd5b54dd53ec49baa4f9a3234ee6108949742e42",
+      "legacyCssKey": "--icon-response",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.H",
+      "family": "rejected-legacy",
+      "sha256": "66785d518e22a1c52039dbd4f34bba429c1d93966eff20b8c7e00bd7b83a2b6e",
+      "legacyCssKey": "--icon-audible",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.I",
+      "family": "rejected-legacy",
+      "sha256": "dabb523226b1db3c6812550e8dbf8597201a128332c887b8211ce6e0ba1dcd06",
+      "legacyCssKey": "--icon-low",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.J",
+      "family": "rejected-legacy",
+      "sha256": "1752ea53218afa38b8d61984ad2a783c6f7299d029f14d7aa80182dec9f398be",
+      "legacyCssKey": "--icon-foot",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.K",
+      "family": "rejected-legacy",
+      "sha256": "c2631c7f21a6fbef62b681b06c06515813509e397b3b9c0fe5f27d085fdae8ff",
+      "legacyCssKey": "--icon-altar",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.L",
+      "family": "rejected-legacy",
+      "sha256": "1d1d1795e993d8c4092d909145bf1d47ff11700f470293d1bf8161f2bf2ff0e4",
+      "legacyCssKey": "--icon-gospel",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.M",
+      "family": "rejected-legacy",
+      "sha256": "b940045d3328708e78b3c7f99ee7469c7e56b4a77adcbe53ca38baa70ab30a0b",
+      "legacyCssKey": "--icon-epistle",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.N",
+      "family": "rejected-legacy",
+      "sha256": "5366fb0eebae01d4d9bbbcc18bd9b342662123eb836968e4484016f8b46294eb",
+      "legacyCssKey": "--icon-people",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.O",
+      "family": "rejected-legacy",
+      "sha256": "9dc7c22f7cfad5f351eec3a763eabd8cf298a4beb577be1fde359bb01f4da8da",
+      "legacyCssKey": "--icon-rail",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    },
+    {
+      "id": "AO.ICON.LEGACY.REJECTED.P",
+      "family": "rejected-legacy",
+      "sha256": "a48750e23870736bdbd2d9f94a5030c086fbb52066d638d2d5b27bacb0562af3",
+      "legacyCssKey": "--icon-sedilia",
+      "status": "REJECTED",
+      "noDisplay": true,
+      "sourceDecisionRefs": [
+        "AO.ICONBANK.SURVEY.B07"
+      ]
+    }
+  ],
+  "finalComparison": {
+    "decision": "RETAIN_ALL_DISTINCT",
+    "items": [
+      {
+        "pair": "1",
+        "letter": "A",
+        "key": "priest_audible",
+        "topic": "Priest audible/speaking",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "1",
+        "letter": "B",
+        "key": "ao_pray_audible",
+        "topic": "Priest audible/speaking",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "2",
+        "letter": "C",
+        "key": "priest_centre_rich",
+        "topic": "Priest at altar centre",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "2",
+        "letter": "D",
+        "key": "ao_at_altar_centre",
+        "topic": "Priest at altar centre",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "3",
+        "letter": "E",
+        "key": "priest_incense_altar_rich",
+        "topic": "Incensation",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "3",
+        "letter": "F",
+        "key": "ao_incensation",
+        "topic": "Incensation",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "4",
+        "letter": "G",
+        "key": "priest_blessing_rich",
+        "topic": "Blessing",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "4",
+        "letter": "H",
+        "key": "ao_blessing",
+        "topic": "Blessing",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "5",
+        "letter": "I",
+        "key": "priest_elevate_chalice_rich",
+        "topic": "Chalice elevation",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "5",
+        "letter": "J",
+        "key": "ao_elevation_chalice",
+        "topic": "Chalice elevation",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "6",
+        "letter": "K",
+        "key": "ea_priest_communion_chalice",
+        "topic": "Priest's chalice Communion",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "6",
+        "letter": "L",
+        "key": "ao_drink_chalice",
+        "topic": "Priest's chalice Communion",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "7",
+        "letter": "M",
+        "key": "ao_adoration",
+        "topic": "Bowing toward altar",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "7",
+        "letter": "N",
+        "key": "priest_profound_bow_rich",
+        "topic": "Bowing toward altar",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "8",
+        "letter": "O",
+        "key": "priest_centre_arms_rich",
+        "topic": "Credo intonation/priest orans",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      },
+      {
+        "pair": "8",
+        "letter": "P",
+        "key": "ao_chant",
+        "topic": "Credo intonation/priest orans",
+        "decision": "RETAIN_DISTINCT_ARTWORK"
+      }
+    ]
+  },
+  "knownUnresolved": [
+    "Approvals of PR #1460 Communion pair are not yet merged into main.",
+    "Priest-specific genuflection remains required: no faithful-only icon substitute.",
+    "Exact generic priest-foot, facing-people and Communion-rail position assets remain unresolved for reviewed slots.",
+    "Head bow, body bow and profound bow remain separately timed rubric categories even when one icon is reused.",
+    "Exact Lavabo artwork and low-resolution info cue require separate quality check.",
+    "Some donor files have semantic aliases pointing at misleading depictions; preserve alias remapping rather than renaming source files.",
+    "Several modern SVG masters remain only in chat/archive, not checked into GitHub for runtime.",
+    "PR #1485 remains a draft registry proposal, not a production release.",
+    "CI/browser regression and palette/phone validations have not been rerun for these registry data changes."
+  ]
+}
