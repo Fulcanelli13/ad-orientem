@@ -204,7 +204,7 @@
         "sourceIndexReview": "CANDIDATE_QUESTION_NUMBERS_AND_STEMS_VERIFIED_NOT_ANSWER_CONTENT",
         "candidateQuestionRefs": [
           "PX1912-Q342",
-          "PX1912-Q335",
+          "PX1912-Q325",
           "PX1912-Q338"
         ]
       },
@@ -279,7 +279,7 @@
           "rhetoricalPattern": "CONCRETE_CATECHETICAL_DISTINCTION",
           "requiresOriginalSourceForSubstance": true,
           "questionCandidates": [
-            "PX1912-Q335",
+            "PX1912-Q325",
             "PX1912-Q338"
           ],
           "sourceBoundReview": {
@@ -293,13 +293,20 @@
               "CHILD-CATECHESIS-UNDERSTANDING-OVER-RECITATION"
             ],
             "evidenceIds": [
+              "PX1912-Q325",
               "PX1912-Q338",
-              "PX1912-Q335",
               "ACERBO-1905-13-14-26",
               "QUAM-1910-2-3"
             ],
             "claimReviewStatus": "SUBSTANTIVE_EDITORIAL_APPROVAL_PENDING",
-            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING"
+            "languageReviewStatus": "EN_FR_EDITORIAL_APPROVAL_PENDING",
+            "sourceCriticalUpdate": {
+              "date": "2026-10-19",
+              "reason": "Q325 specifically attests the Real Presence; Q335 is a historical mixed preparation rule that includes an obsolete fasting requirement. Keep Q335 caution, but no need to route this child's understanding question to obsolete discipline.",
+              "verifiedOriginalLanguageSource": "QUAM-1910-LA-DH-3531-3532",
+              "originalItalianCatechismCollated": false,
+              "contentOwnerApproval": false
+            }
           }
         },
         {
@@ -548,7 +555,7 @@
     "entryCount": 433,
     "evidenceGrade": "NUMBER_AND_QUESTION_STEM_VERIFIED_ONLY_NOT_CANONICAL_ANSWER_CERTIFICATION",
     "editionLimitation": "English witness is a modern structured study translation aligned to 1912 shorter Catechism, NOT a certified historical English-language edition. No original answer passage copied.",
-    "originalLanguageLimitation": "1912 Italian and 1913 French witness answer-level collation is not established by this source index. Do not call the bilingual reconstructed replies original words.",
+    "originalLanguageLimitation": "Vatican Latin Ad Diem and Acerbo, Italian 1912 approval letter, and the Latin Quam Singulari DH 3531–3532 checked. Original 1912 Italian 433 question texts and complete prepapal personal dialogue remain uncollated; see collation review.",
     "contentOwner": "ORIGINAL_CATECHISM_433_QUESTION_READER_AND_EDITORIAL_SOURCE_PIPELINE",
     "selectedReferences": "STANDALONE_INDEX_CANDIDATES_NOT_APPROVED_DOCTRINAL_REPLY_OR_EN_FR_PARAPHRASE",
     "p4SourceBridge": {
@@ -559,14 +566,19 @@
       "sourceIndexedNavigation": "nativeOpen('learn.catechism',{sourceRef:'PX1912-QNNN'}) checks canonical 433 index and opens existing catechism owner",
       "browserVerifiedPreviously": "PX1912-Q105 at phone+desktop on P4 browser suite",
       "theseThreeDialoguePathsBrowserVerified": false,
-      "nativeRouteIsDraft": true
+      "nativeRouteIsDraft": true,
+      "styleCurationDiffersFromCurrentP4": [
+        "PX1912-Q325 instead of PX1912-Q335 for child's comprehension of Real Presence; P4 source owner decides corresponding UI topic adjustments"
+      ]
     },
     "historicalDisciplineCaution": {
       "sourceRef": "PX1912-Q335",
       "reason": "The 1912 Catechism answer includes a midnight Eucharistic fast. This is historical discipline and must never be labelled the current Catholic fasting rule.",
       "runtimeConstraint": "NO_UNQUALIFIED_CURRENT_PRACTICE_SUMMARY_FROM_HISTORICAL_TEXT"
     },
-    "releaseGate": "EXACT_QUESTION_IDS_VERIFIED_IN_INDEX; CONTENT_EDITORIAL_AND_LIVE_DIALOGUE_APPROVAL_PENDING"
+    "releaseGate": "EXACT_QUESTION_IDS_VERIFIED_IN_INDEX; CONTENT_EDITORIAL_AND_LIVE_DIALOGUE_APPROVAL_PENDING",
+    "collationReviewPath": "data/learn/pius-x-original-language-collation.v1.json",
+    "translationHazard": "Vatican Italian online Ad Diem wording apparently reverses/omits Latin negation of Mary's power to produce grace; see collation review and content-owner PR #1406 note."
   },
   "editorialRevision": {
     "version": "SOURCE_BOUNDED_EN_FR_V2",
