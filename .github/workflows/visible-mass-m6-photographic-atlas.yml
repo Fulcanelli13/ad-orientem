@@ -23,6 +23,9 @@ on:
       - "previews/visible-mass-3d/M6_B19_ONE_OBJECT_CANDIDATES_20261019.v1.json"
       - "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v2.json"
       - "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v3.json"
+      - "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v4.json"
+      - "previews/visible-mass-3d/M6_B20_MISSAL_STAND_PHOTO_RIGHTS_HOLD_20261019.v1.json"
+      - "tests/visible-mass-m6-single-hero-b20-contract.mjs"
       - "tests/visible-mass-m6-photo-atlas-contract.mjs"
       - "tests/visible-mass-m6-atlas-review-browser.mjs"
       - "tools/build-visible-mass-m6-atlas-review.mjs"
@@ -44,6 +47,7 @@ jobs:
           node tests/visible-mass-m6-photo-atlas-contract.mjs
           node tests/visible-mass-m6-comparative-batch-contract.mjs
           node tests/visible-mass-m6-single-hero-b19-contract.mjs
+          node tests/visible-mass-m6-single-hero-b20-contract.mjs
       - name: Build standalone research review gallery
         run: node tools/build-visible-mass-m6-atlas-review.mjs
       - name: Validate self-contained data on file origin
