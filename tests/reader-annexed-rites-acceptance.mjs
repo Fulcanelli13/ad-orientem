@@ -64,10 +64,19 @@ for(const [name,graphKey,file,builder,controller,options,expectedCount,handoff] 
   const latinComplete=sourceRows>0;
   // Coverage is descriptive, not a false assertion that all rites have a
   // reviewed parallel translation. The matrix prints actual source columns.
-  if(name==="ASPERGES"){
-    assert.equal(frRows,sourceRows,"Asperges French text is not source-complete");
-    assert.equal(enRows,sourceRows,"Asperges English text is not source-complete");
-    assert.equal(projectSpecialRiteReadingPages("ASP-R04",cards[3].paragraphs).length,2);
+  if(name==="ASPERGES"||name==="CORPUS_CHRISTI_PROCESSION"){
+    assert.equal(frRows,sourceRows,name+" editorial French parallel text is incomplete");
+    assert.equal(enRows,sourceRows,name+" editorial English parallel text is incomplete");
+    if(name==="ASPERGES")assert.equal(
+      projectSpecialRiteReadingPages("ASP-R04",cards[3].paragraphs).length,2);
+  }else if(name==="HOLY_THURSDAY_POST"){
+    assert.equal(frRows,6,"Holy Thursday Pange lingua / Tantum ergo six stanzas lack French");
+    assert.equal(enRows,6,"Holy Thursday Pange lingua / Tantum ergo six stanzas lack English");
+    assert.equal(sourceRows,21,"Holy Thursday Psalm 21 source rows changed");
+    assert.ok(cards.find(c=>c.id==="HT-R05").paragraphs.every(row=>
+      !specialRiteVernacular(row,{language:"en"})&&
+      !specialRiteVernacular(row,{language:"fr"})),
+      "Do not fabricate Psalm 21 translations from the independently sourced hymn");
   }else{
     assert.equal(frRows,0,name+" appears to have unsourced French text");
     assert.equal(enRows,0,name+" appears to have unsourced English text");
