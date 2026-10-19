@@ -45,9 +45,36 @@ try{
    },{day,hour},{timeout:25000});
    assert.equal(await page.locator('#aoPray435930 .aoTenebReading').count(),1);
    assert.equal(await page.locator('#aoPray435930 .aoTenebReading[data-tenebrae-section]').getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1");
-   assert.equal(await page.locator('#aoPray435930 .aoTenebFooter span').textContent(),hour==="MATINS"?"1 / 32":"1 / 10");
-   await page.locator('#aoPray435930 [data-p435930-tenebrae-move="next"]').click();
-   assert.equal(await page.locator('#aoPray435930 .aoTenebReading').getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P2":"L.P2");
+   const progress=page.locator('#aoPray435930 .aoTenebStageNav .aoDevoProgress');
+   assert.equal(await progress.count(),1,"One shared Tenebrae progress track");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"1");
+   assert.equal(await progress.getAttribute("aria-valuemax"),hour==="MATINS"?"32":"10");
+   assert.equal(await page.locator('#aoPray435930 [data-p435930-tenebrae-move]').count(),0,
+      "No redundant Previous/Next buttons");
+   const reading=page.locator('#aoPray435930 .aoTenebReading');
+   const swipe=async(dx,dy)=>{
+    await page.locator('#aoPray435930 .aoTenebReading').evaluate((el,{dx,dy})=>{
+     const touch=(x,y)=>new Touch({identifier:1,target:el,clientX:x,clientY:y});
+     el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[touch(250,340)],changedTouches:[touch(250,340)]}));
+     el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[touch(250+dx,340+dy)]}));
+    },{dx,dy});
+   };
+   await swipe(8,-150);
+   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1",
+    "Vertical scroll must never advance the Office card");
+   await swipe(-160,8);
+   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P2":"L.P2",
+    "Horizontal swipe must advance exactly one source-owned step");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"2",
+    "Tenebrae progress did not follow stage change");
+   await page.locator('#aoPray435930 .aoTenebReading').focus();
+   await page.keyboard.press("ArrowLeft");
+   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P1":"L.P1",
+    "Keyboard left must return one step");
+   assert.equal(await progress.getAttribute("aria-valuenow"),"1");
+   await page.keyboard.press("ArrowRight");
+   assert.equal(await reading.getAttribute("data-tenebrae-section"),hour==="MATINS"?"M.N1.P2":"L.P2",
+    "Keyboard right must advance one step");
   }
  }
  await page.locator('#aoPray435930 [data-p435930-tenebrae-hour="MATINS"]').click();
