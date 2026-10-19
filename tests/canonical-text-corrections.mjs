@@ -106,6 +106,31 @@ for(const corpus of [low,sung]){
   assert.equal(corrected.canonicalCorrectionId,"RED-EN-2013-W6-01");
 }
 
+// Wave 7: the Last Gospel is one continuous English sentence around
+// the genuflection, yet retains its distinct 1962 source/gesture cues.
+for(const corpus of [low,sung]){
+  const block=corpus.blocks.find(b=>b.Block_ID==="AO.SM.B095");
+  assert.ok(block,"Last Gospel source block missing");
+  const get=id=>{
+    const raw=block.units.find(x=>x.cue_id===id);
+    assert.ok(raw,"Last Gospel cue missing "+id);
+    const effective=applyCanonicalTextCorrection("AO.SM.B095",raw);
+    assert.equal(effective.latin,raw.latin,"English-only edit altered Latin "+id);
+    return effective;
+  };
+  const john12=get("AO.SM.C0272").english;
+  assert.match(john12,/to them He gave power to become the sons of God/u);
+  assert.ok(!john12.includes("He gave them power to be made the sons of God"),
+    "Inherited English calque still appears");
+  const incarn=get("AO.SM.C0273"),following=get("AO.SM.C0274");
+  assert.match(incarn.english,/^AND THE WORD WAS MADE FLESH,$/u);
+  assert.match(following.english,/^and dwelt among us, and we saw His glory,/u);
+  assert.match(incarn.english+" "+following.english,
+    /^AND THE WORD WAS MADE FLESH, and dwelt among us,/u);
+  assert.equal(incarn.cue_id,"AO.SM.C0273",
+    "The word-triggering genuflection cue must not be merged");
+}
+
 assert.throws(
   ()=>applyCanonicalTextCorrection("AO.SM.BAD",{cue_id:"AO.SM.C0148",latin:"Benedíctus qui venit"}),
   /block ownership changed/

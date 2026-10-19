@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "status": "R17_CANONICAL_TEXT_CORRECTIONS",
   "authorityRule": "Apply after frozen donor ingestion and before any reader/display composition. No correction may create ritual state.",
   "donorPolicy": "Frozen donor hashes remain unchanged; this layer records adjudicated source corrections explicitly.",
@@ -410,6 +410,42 @@
       "reference": "Coalition in Support of Ecclesia Dei Latin–English Booklet Missal (2013), scanned PDF page 38, printed page 37, Supplices te rogamus.",
       "decision": "Remove comma wrongly separating dependent subject clause from 'may be filled' in the contiguous C0188–C0190 English sentence; align capitalization with traditional booklet; Latin crosses unchanged.",
       "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED"
+    },
+    {
+      "id": "RED-EN-2013-W7-01",
+      "blockId": "AO.SM.B095",
+      "cueId": "AO.SM.C0272",
+      "field": "english",
+      "from": "There was a man sent from God, whose name was John. This man came for a witness, to give testimony of the light,\nthat all men might believe through him. He was not the light, but was to give testimony of the light. That was the true light,\nwhich enlighteneth every man that cometh into this world. He was in the world, and the world was made by Him, and the world knew Him not.\nHe came unto His own, and His own received Him not. But as many as received Him, He gave them power to be made the sons of God,\nto them that believe in His name: who are born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.",
+      "to": "There was a man sent from God, whose name was John. This man came for a witness, to give testimony of the light,\nthat all men might believe through him. He was not the light, but was to give testimony of the light. That was the true light,\nwhich enlighteneth every man that cometh into this world. He was in the world, and the world was made by Him, and the world knew Him not.\nHe came unto His own, and His own received Him not. But as many as received Him, to them He gave power to become the sons of God;\nto them that believe in His name: who are born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin–English Booklet Missal 2013, Last Gospel, PDF page 50, printed page 49; compare original John 1:12–14 Latin on PDF page 49.",
+      "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED",
+      "decision": "Adopt more faithful Red relative-clause form of Latin dedit eis potestatem filios Dei fieri, without changing speaker identity."
+    },
+    {
+      "id": "RED-EN-2013-W7-02",
+      "blockId": "AO.SM.B095",
+      "cueId": "AO.SM.C0273",
+      "field": "english",
+      "from": "AND THE WORD WAS MADE FLESH.",
+      "to": "AND THE WORD WAS MADE FLESH,",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin–English Booklet Missal 2013, Last Gospel, PDF page 50, printed page 49; compare original John 1:12–14 Latin on PDF page 49.",
+      "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED",
+      "decision": "Restore printed comma between 'made flesh' and 'dwelt among us', preserving separate genuflection cue."
+    },
+    {
+      "id": "RED-EN-2013-W7-03",
+      "blockId": "AO.SM.B095",
+      "cueId": "AO.SM.C0274",
+      "field": "english",
+      "from": "And dwelt among us; and we saw his glory, the glory as of the Only-begotten of the Father, full of grace and truth.",
+      "to": "and dwelt among us, and we saw His glory, the glory as of the Only-begotten of the Father, full of grace and truth.",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "Coalition in Support of Ecclesia Dei, Latin–English Booklet Missal 2013, Last Gospel, PDF page 50, printed page 49; compare original John 1:12–14 Latin on PDF page 49.",
+      "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED",
+      "decision": "Restore continuation of the same printed sentence and capitalise His; preserve Latin text and cards."
     }
   ],
   "englishEditorialPolicy": "2013 Red Missal preferred English baseline; 1962 printed Latin retains normative authority; reviewed exact-cue adaptations only; preserve immutable donors."
