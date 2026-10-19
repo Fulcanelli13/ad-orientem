@@ -64,7 +64,8 @@ for(const [name,graphKey,file,builder,controller,options,expectedCount,handoff] 
   const latinComplete=sourceRows>0;
   // Coverage is descriptive, not a false assertion that all rites have a
   // reviewed parallel translation. The matrix prints actual source columns.
-  if(name==="ASPERGES"||name==="CORPUS_CHRISTI_PROCESSION"){
+  if(name==="ASPERGES"||name==="CORPUS_CHRISTI_PROCESSION"||
+    name==="REQUIEM_ABSOLUTION"){
     assert.equal(frRows,sourceRows,name+" editorial French parallel text is incomplete");
     assert.equal(enRows,sourceRows,name+" editorial English parallel text is incomplete");
     if(name==="ASPERGES")assert.equal(
