@@ -88,6 +88,40 @@ try{
       for(let i=0;i<3;i++)await click();
       assert.notEqual(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getEasterVigilState().step.recordId),
         "EV-LIT1-400","Easter Vigil failed to leave source Litany after final page");
+      // Full Exsultet is one canonical source row, projected onto twelve
+      // Missal-only reading pages. No passage, Amen or English/French
+      // translation may be manufactured, skipped, or duplicated.
+      await page.evaluate(()=>window.__AO_PHONE_PREVIEW.goToEasterVigilRecord("EV-EXS-200"));
+      assert.equal(await rows(),1,"First Exsultet paragraph page is not singular");
+      const firstExs=await page.locator(".ao-reader-paragraph").first().innerText();
+      assert.match(firstExs,/Exsúltet iam/);
+      const exsParagraphs=[firstExs];
+      for(let i=1;i<12;i++){
+        await click();
+        assert.equal(await page.evaluate(()=>
+          window.__AO_PHONE_PREVIEW.getEasterVigilState().step.recordId),"EV-EXS-200",
+          "Missal Exsultet page turn moved the canonical EV graph");
+        assert.equal(await rows(),1,"Exsultet page unexpectedly holds multiple source passages");
+        exsParagraphs.push(await page.locator(".ao-reader-paragraph").first().innerText());
+      }
+      assert.ok(exsParagraphs.some(t=>/Quaprópter astántes/.test(t)));
+      assert.ok(exsParagraphs.some(t=>/O felix culpa/.test(t)));
+      assert.ok(exsParagraphs.some(t=>/Per eúndem Dóminum/.test(t)));
+      assert.equal(new Set(exsParagraphs).size,12,"Duplicate Exsultet pages obscured source prayers");
+      // In French mode, source has no complete Exsultet translation. The
+      // editorial opening phrase may not masquerade as a bilingual text.
+      assert.equal(await page.locator(".ao-line-secondary").count(),0,
+        "Editorial French Exsultet summary displayed as complete prayer");
+      await click();
+      assert.equal(await page.evaluate(()=>
+        window.__AO_PHONE_PREVIEW.getEasterVigilState().step.recordId),"EV-EXS-210",
+        "Exsultet failed to advance to final canonical singing stage");
+      await click("previous");
+      assert.equal(await page.evaluate(()=>
+        window.__AO_PHONE_PREVIEW.getEasterVigilState().step.recordId),"EV-EXS-200");
+      assert.match(await page.locator(".ao-reader-paragraph").first().innerText(),
+        /Per eúndem Dóminum/,"Back arrow did not reopen the last Exsultet paragraph");
+
     }
     assert.equal(errors.length,0,rite+" generated a browser exception: "+errors.join(";"));
     await context.close();
