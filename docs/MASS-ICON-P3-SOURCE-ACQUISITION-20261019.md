@@ -30,3 +30,14 @@ The exact image still has to show the required 1962 gestures: the celebrant rece
 There must be a **side-by-side visual-family review** against user-approved rich priest art (`priest_elevate_chalice_rich`, `priest_rail_after_rich`, `priest_incense_altar_rich`) before any drawing is approved. A 1661 source is not itself the approved illustration style.
 
 **Verified 19 October 2026:** The GitHub Actions [source-capture run 39236948788](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39236948788) succeeded and archived the [actual CC0 original image and provenance](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39236948788/artifacts/12179522591). The JPEG is **657 × 1,045 pixels**, 167,545 bytes, with independently recomputed SHA-256 `968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf`. The ZIP was extracted and verified again in the model's local working container. This is a **temporary 90-day research archive**, not a permanent original checked into the app or a user-approved action icon. No new generated icons are approved or released.
+
+
+## Source-preview visual audit — 19 October 2026
+
+Both Cathopic records were inspected through their **watermarked 640-pixel previews**. Neither original was licensed, downloaded or transformed.
+
+**CTH49809 — retain as the priority chalice-photo lead.** Carlos Sierra's image visibly depicts a Roman-vested celebrant actually drinking from a chalice at the altar. Unlike elevation imagery, the action is appropriate. However, the **left-hand paten beneath the chalice is not clearly resolved**; verification against `Ritus servandus` X.5 remains blocked until a lawfully acquired full-resolution original is inspected.
+
+**CTH43758 — exclude from the exact Host icon shortlist.** Carlos Gaviria's picture shows a bearded priest in blue vesture bending toward fingers near his mouth, with no verified 1962 Roman setting, no clearly identified divided Host and no clear elbow support on the altar. The generic publication metadata "priest receiving communion" is insufficient evidence for `RECEIVES HOST`.
+
+Neither photograph is source-cleared, and even accurate original photography must be transformed **only into the user-approved Ad Orientem priest icon family's visual language**, not copied as a photorealistic thumbnail.
