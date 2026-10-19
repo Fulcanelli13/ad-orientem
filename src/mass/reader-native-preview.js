@@ -1118,9 +1118,9 @@ export async function mountNativeReaderPreview({
     function showEasterVigil(){
       inVigil=true;
       stage="VIGIL_ACTIVE";
-      const moment=easterVigilMoment();
-      if(moment)reader.renderMoment(moment);
       const source=controller.project();
+      const moment=easterVigilMoment();
+      if(moment)reader.renderMoment(presentationRitePage(source.step?.recordId??"none",moment));
       const nextStep=controller.built.steps[source.index+1]??null;
       previewNextRiteStage(source.step,
         nextStep?.surfaceKey!==source.step?.surfaceKey?nextStep:null);
@@ -1899,7 +1899,7 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(projected.state.card?.id,projected.moment));
     previewNextRiteStage(projected.state.card,
       controller.cards[projected.state.index+1]??null,{
         participating:kind==="PALM"&&projected.state.processionParticipant===true,
@@ -1970,7 +1970,7 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(projected.state.card?.id,projected.moment));
     previewNextRiteStage(projected.state.card,
       ready.candlemasController.cards[projected.state.index+1]??null,{
         participating:projected.state.processionParticipant===true,
@@ -2038,7 +2038,7 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(projected.state.card?.id,projected.moment));
     const selection=prepared?.session?.resolvedMass?.provenance?.rogationSelection??{};
     previewNextRiteStage(contextualRogationCard(projected.state.card,selection),
       contextualRogationCard(ready.rogationsController.cards[projected.state.index+1]??null,selection));
