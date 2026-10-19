@@ -96,7 +96,7 @@ export function resolveRiteMusicScene({registry,riteId,stageId,sourcePayload,con
       status:e.kind==="SOURCE_HOLD"?"NOT_SPECIFIED":"EXPECTED_NOT_OBSERVED",
       sourceFound:freeze(sourceFound),sourceFile:rite.sourceFile,
       sourceOwner:e.sourceOwner,condition:e.condition,
-      endBoundary:e.endBoundary,actuallySinging:"UNKNOWN"});
+      endBoundary:e.endBoundary,segmentScope:e.segmentScope??null,actuallySinging:"UNKNOWN"});
   });
   return freeze({schema:"ao-special-rite-music-scene-v1",
     status:!hits.length?"NO_INDEXED_MUSIC":
