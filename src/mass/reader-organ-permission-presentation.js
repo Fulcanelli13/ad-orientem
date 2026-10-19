@@ -9,6 +9,9 @@ const SEASONS=new Set([
 ]);
 
 function verifiedOrdinaryContext(resolvedMass){
+  // Low Mass has additional §29 positional restrictions. Do not project the
+  // sung-Mass permissions onto its card spans without that separate model.
+  if(resolvedMass?.form==="LOW")return null;
   // Existing resolved Requiem ownership is sufficient for the general
   // no-solo-organ rule; chant accompaniment is a distinct §83c question.
   const requiem=resolvedMass?.overlays?.includes("REQUIEM")===true;
@@ -128,10 +131,18 @@ export function project1962ReaderOrganNote({
   }
   const context=verifiedOrdinaryContext(resolvedMass);
   if(!context)return null;
-  const ownedGloria=(massCard.sourceSectionId??massCard.sectionId)==="AO.CARD.003";
+  // §83b permits organ from the *beginning* of Holy Thursday's evening
+  // Mass through the END of Gloria, not merely while Gloria is on-screen.
+  // Source-owned 001–003 are the opening, Kyrie and Gloria; never infer
+  // this from the civil date or a user's movement across cards.
+  const sourceSection=massCard.sourceSectionId??massCard.sectionId;
+  const earlyHolyThursday=["AO.CARD.001","AO.CARD.002","AO.CARD.003"]
+    .includes(sourceSection);
   const holyThursdayGloria=context.triduum===true &&
-    resolvedMass?.provenance?.organ1962?.holyThursdayMass===true && ownedGloria;
-  return verdictFor({...context,holyThursdayGloria},{
+    resolvedMass?.provenance?.organ1962?.holyThursdayMass===true && earlyHolyThursday;
+  const holyThursdayChrism=context.triduum===true &&
+    resolvedMass?.provenance?.organ1962?.holyThursdayChrism===true;
+  return verdictFor({...context,holyThursdayGloria,holyThursdayChrism},{
     scope:massCard.sectionId,
     reason:context.requiem
       ? "Office or Mass of the Dead; solo organ is prohibited, subject to chant-support rules"
