@@ -51,8 +51,10 @@ jobs:
       # Capture Mass first so an unrelated Pray/Home visual failure cannot hide
       # the definitive Mass acceptance evidence from this workflow.
       - run: node tests/mass-visual-acceptance.mjs
-      - run: node tests/app-visual-acceptance.mjs
+      # Explore captures before the broader app sweep, so source-backed map
+      # evidence is available even if an unrelated surface later fails.
       - run: node tests/explore-medallion-visual-acceptance.mjs
+      - run: node tests/app-visual-acceptance.mjs
       - run: node tests/catechism-guided-mode-e2e.mjs
       - run: node tests/nonmass-donor-reference-e2e.mjs
       - run: node tests/home-pray-single-reader-e2e.mjs
