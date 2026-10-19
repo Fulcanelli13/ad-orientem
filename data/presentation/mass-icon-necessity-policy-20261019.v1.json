@@ -430,6 +430,9 @@
       "TURNS TO MISSAL",
       "KISSES ALTAR"
     ],
-    "productionGate": "Artwork must be visibly accurate, review-approved, actor-specific and distinct from existing cues before activation."
+    "productionGate": "NO GEN WITHOUT ORIGINAL PICTURE. Require in-repo original image with verified hash, traceable source/attribution and image rights, ceremonial cross-check against Missale Romanum 1962, direct comparison to named user-approved bank masters at 32 and 48 px, and explicit user approval. Unsourced generated previews are ineligible.",
+    "provenanceRegistry": "data/presentation/mass-icon-generation-provenance-20261019.v1.json",
+    "sourceFirstMandatory": true,
+    "immediateCandidatesMeaning": "Priority for finding authentic original photo/drawing and exact 1962-rite proof; not permission to generate artwork before those sources are registered."
   }
 }
