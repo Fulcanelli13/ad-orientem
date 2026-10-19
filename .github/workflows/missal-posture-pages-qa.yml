@@ -6,6 +6,8 @@ on:
       - "src/mass/reader-missal-posture-pages.js"
       - "src/mass/reader-missal-integrity.js"
       - "src/mass/reader-special-missal-pages.js"
+      - "src/mass/reader-asperges.js"
+      - "data/presentation/reader-asperges.v1.json"
       - "src/mass/reader-exsultet-pages.js"
       - "src/mass/reader-missal-granularity.js"
       - "src/mass/reader-native-preview.js"
@@ -14,6 +16,8 @@ on:
       - "tests/reader-missal-posture-pages.mjs"
       - "tests/reader-special-missal-pages.mjs"
       - "tests/reader-special-missal-subpages.mjs"
+      - "tests/reader-asperges.mjs"
+      - "tests/reader-annexed-rites-acceptance.mjs"
       - "tests/reader-special-missal-subpages-phone.mjs"
       - "tests/reader-prayer-over-people.mjs"
       - "tests/reader-easter-vigil.mjs"
@@ -34,6 +38,10 @@ jobs:
         run: node tests/reader-missal-posture-pages.mjs
       - name: Verify real Lenten Prayer over the People survives Mass Missal
         run: node tests/reader-prayer-over-people.mjs
+      - name: Verify all annexed rites have source records, complete sections and correct handoffs
+        run: node tests/reader-annexed-rites-acceptance.mjs
+      - name: Verify complete Asperges and Vidi aquam 1962 bilingual seasonal text
+        run: node tests/reader-asperges.mjs
       - name: Verify intact special-rite prayer pages and unchanged event cursor
         run: node tests/reader-special-missal-subpages.mjs
       - name: Verify Easter Vigil real French/English source-line ownership
