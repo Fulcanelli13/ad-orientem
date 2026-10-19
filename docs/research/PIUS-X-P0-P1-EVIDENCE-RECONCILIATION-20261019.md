@@ -225,3 +225,15 @@ Review the high-score pairs **with the complete Italian question and answer in b
 A separate extension must bring Feast and Salzano textual content into those same **semantic** review contracts. The 218/219 feast discrepancy remains held; Salzano has 577 verified positional locators but its numbering is editorial. Neither can be treated as already semantically deduplicated.
 
 The governing progress indicator is **reviewed distinct user intentions with a usable historical evidence chain**, followed separately by complete-answer and voice approvals — never simply the sum of historical QIDs.
+
+
+### Exact normalized question-text overlap (automated, cross-edition)
+
+The first complete 1905–1912 extraction has now also generated SHA-256 normalized-question fingerprints for both editions and compared them directly. Latest completed acquisition returned:
+
+- **26** identical normalized Italian *question-text* pairs linking 1905 and the pinned 1912 digital transcription (26 distinct longer and 26 distinct shorter QIDs).
+- **561** longer questions with looser lexical candidates, containing these 26 exact overlaps; the other lexical suggestions are **not** necessarily identical questions.
+- **1** repeated normalized question-text group *within* the 1905 longer Catechism: **PX1905-Q915 and PX1905-Q922**. Their answers may differ.
+- **0** same-intent merges accepted and **0** source answers imported into production.
+
+These links are now in the 30-day GitHub Actions research artifact as `exact_question_text_crossedition_links` with two source manifests. A question-text identity does **not** authenticate the digital 1912 edition, establish identical *answers*, resolve semantic scope, or authorize avatar dialogue. The next limited review should compare the 26 exact-wording pairs' answers and source-era context before considering any join.
