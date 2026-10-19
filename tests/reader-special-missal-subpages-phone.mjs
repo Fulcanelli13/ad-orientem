@@ -22,7 +22,7 @@ await new Promise((ok,reject)=>{server.once("error",reject);server.listen(4397,"
 let browser;
 try{
   browser=await chromium.launch({headless:true});
-  for(const rite of ["candlemas","ash","easter-vigil"]){
+  for(const rite of ["asperges","candlemas","ash","easter-vigil"]){
     const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
     const page=await context.newPage();
     const errors=[];page.on("pageerror",error=>errors.push(error.message));
@@ -41,7 +41,43 @@ try{
       page.locator('.ao-reader-nav button[data-reader-nav="'+direction+'"]').click({force:true});
     const rows=async()=>page.locator(".ao-reader-paragraph").count();
 
-    if(rite==="candlemas"){
+    if(rite==="asperges"){
+      assert.equal(state.record,"ASP-R01");
+      await click(); // Antiphon/psalm/Gloria/repetition
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().card.id),
+        "ASP-R02");
+      assert.equal(await rows(),4);
+      const columns=await page.evaluate(()=>{
+        const rows=[...document.querySelectorAll(".ao-reader-paragraph")];
+        return rows.map(el=>({latin:el.querySelector(".ao-line-primary")?.textContent??"",
+          french:el.querySelector(".ao-line-secondary")?.textContent??""}));
+      });
+      assert.ok(columns.every(r=>r.latin.trim()&&r.french.trim()),
+        "Asperges bilingual French translation is missing from side-by-side reader");
+      assert.match(columns[0].latin,/Asperges me/);
+      await click(); // Personal sprinkling stage
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().card.id),
+        "ASP-R03");
+      await click(); // Six dialogue verses on first Missal page
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().card.id),
+        "ASP-R04");
+      assert.equal(await rows(),6);
+      await click(); // Subpage only: ceremony remains ASP-R04
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().card.id),
+        "ASP-R04","A Missal page turn advanced the original Asperges event");
+      assert.equal(await rows(),3,"The Orémus/collect/Amen subpage is incomplete");
+      assert.match(await page.locator(".ao-reader-paragraph").first().innerText(),/Orémus/);
+      assert.match(await page.locator(".ao-line-secondary").first().innerText(),/Prions/);
+      await click();
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().card.id),
+        "ASP-R05","The reader failed to hand off after final Asperges prayer");
+      assert.equal((await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState())).handoff,
+        "FOOT_CLUSTER");
+      await click("previous");
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getAspergesState().card.id),
+        "ASP-R04");
+      assert.equal(await rows(),3,"Back-navigation did not reopen Asperges final collect");
+    }else if(rite==="candlemas"){
       assert.equal(state.record,"CND-R01");
       assert.equal(await rows(),2,"Candlemas introductory versicle/response lost");
       for(let n=0;n<5;n++){
