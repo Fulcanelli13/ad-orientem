@@ -178,6 +178,25 @@ for(const id of ["AO.SM.C0120","AO.SM.C0121","AO.SM.C0122","AO.SM.C0123","AO.SM.
 assert.equal(incensedRequiemEntrModel.cards.flatMap(c=>c.blocks)
  .find(b=>b.blockId==="AO.SM.B013")?.omittedByRite,
  "RITUS_XIII_2_REQUIEM");
+for(const id of ["AO.SM.C0263","AO.SM.C0264","AO.SM.C0265","AO.SM.C0266"])
+ assert.equal(hasTextCue(incensedRequiemEntrModel,id),false,
+   "Requiem improperly displayed the final blessing "+id);
+for(const id of ["AO.SM.C0261","AO.SM.C0262","AO.SM.C0267","AO.SM.C0269"])
+ assert.equal(hasTextCue(incensedRequiemEntrModel,id),true,
+   "Requiem incorrectly omitted Placeat, altar kiss or Last Gospel "+id);
+assert.equal(incensedRequiemEntrModel.cards.flatMap(c=>c.blocks)
+ .find(b=>b.blockId==="AO.SM.B092")?.omittedByRite,
+ "RITUS_XIII_1_REQUIEM");
+const reqIncense=incensedRequiemEntrModel.cards.flatMap(c=>c.paragraphs)
+ .find(p=>p.sourceCueIds?.includes("AO.SM.C0124"));
+const ordinaryIncense=model.cards.flatMap(c=>c.paragraphs)
+ .find(p=>p.sourceCueIds?.includes("AO.SM.C0124"));
+assert.ok(reqIncense&&ordinaryIncense);
+assert.match([reqIncense.primary,reqIncense.alternate,reqIncense.secondary].join(" "),
+ /Only the celebrant is incensed/u);
+assert.match([ordinaryIncense.primary,ordinaryIncense.alternate,ordinaryIncense.secondary].join(" "),
+ /clergy and people are incensed/u);
+
 const requiemModel=createMassReaderModel({
   resolvedMass:{...base,overlays:["REQUIEM"]},sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
 });
