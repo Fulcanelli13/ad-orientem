@@ -41,7 +41,11 @@ for(const [engineName,engine] of Object.entries({
   assert.equal(r.kind,"source_navigation",engineName+": "+question+" produced "+r.kind);
   assert.equal(r.topicId,topic(num),engineName+": "+question+" routed to "+r.topicId);
   assert.equal(r.navigationRoute,"historical.external_document");
-  assert.equal(r.matchEvidence.basis,"DOCUMENTARY_ANCHORED");
+  // Source-owner liturgical routing supersedes generic documentary anchors
+  // for Rosary at Mass and post-reception thanksgiving; the original
+  // historical URL and source identity must remain identical.
+  assert.equal(r.matchEvidence.basis,
+    [2,4].includes(num)?"DOCUMENTARY_LITURGICAL_SCOPE":"DOCUMENTARY_ANCHORED");
   assert.equal(r.requiresQuestionConfirmation,true);
   assert.equal(r.documentNavigation.sourceRef,"SPX-PILOT-"+String(num).padStart(2,"0"));
   const p=originalMap.get(r.documentNavigation.sourceRef);
