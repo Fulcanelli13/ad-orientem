@@ -1,0 +1,239 @@
+# Ad Orientem — Mass annexed-rites acceptance matrix
+**19 October 2026 · PR #1441 · source-owned, draft, not released**
+
+## Acceptance definitions
+
+- **Source graph** = canonical 1962/recovered ceremony event chain; one event is not automatically one reading page.
+- **Latin witness** = printed or otherwise independently pinned Latin rite payload.
+- **EN/FR parallel** = actual text aligned to the Latin liturgical text; an editorial summary, introduction, or rubric in that language **does not** count.
+- **Missal page** = display-only section. Page turns must never advance a rite event before the final reading page.
+- **Completion** = all relevant Latin/vernacular text, personal and ministerial actors, alternate 1962 routes and Mass handoff independently verified on a phone. Structural integration alone is **not** completion.
+- All scores below are **coverage states, not aesthetic approval or an assertion of full printed-Missal collation**.
+
+| Celebration/annex | Canonical source | Latin & stages | EN/FR | Missal internal pages | Activation/handoff | Release disposition |
+|---|---|---|---|---|---|---|
+| Asperges / Vidi aquam | ASP (6 records), R20 | Full seasonal antiphon, psalm, Gloria policy, repetitions, 3 V/R, **Orémus**, collect, Amen | **Crosschecked editorial EN/FR** in all 13 ordinary (or 12 Passiontide) source rows; independent facsimile collation remains | Two internal pages for versicles and collect; chant retained in order | Only if preceding rite selected, to FOOT_CLUSTER; personal cross on actual sprinkling, no minister kneeling imposed | Automated phone gate, seasonal tests and editorial signoff required |
+| Palm Sunday | PALM, R22 | Latin blessing, distribution, Gospel, procession and return | Not available in source-built pages | Blessing prayer isolated from dialogue, procession cue and *Gloria laus* separately, conclusion V/R retained before concluding prayer; the long Gospel remains one sourced row | Participant state explicit; INTROIT with prescribed opening/Last Gospel variations | Bilingual and visual gaps |
+| Ash Wednesday | ASH, R23 | Latin blessing/distribution and four orations | Not available in source-built pages | Four whole orations separated | Recipient cue personal; INTROIT | Bilingual gap |
+| Candlemas | CND, R24 | Latin 5 orations, distribution, procession, candle state | Not available in source-built pages | Five whole orations separated | Blessing/reception and procession only from source; INTROIT | Bilingual gap |
+| Rogations/Greater Litanies | ROG, R25 | Latin prayers and complete, undoubled Litany | Not available in source-built pages | Complete V/R pairs and concluding orations | Conditional walking vs public supplications; INTROIT | Bilingual gap |
+| Requiem Absolution | ABS, R26 | Latin source with explicit body-present/absent oration, conditional burial hymn | **27/27** text rows have original fingerprint-locked editorial EN/FR in body+burial route; alternate no-body oration separately aligned | Libera me refrain/responses; Kyrie/Pater, paired intercessions and whole oration/Amen on separate reading pages | Only if following action explicitly selected; burial hymn depends on actual body and procession | Four conditional source branches, full editorial language and 390px acceptance tests added; editorial signoff pending |
+| Corpus Christi | CORPUS, R27 | Source-pinned Latin Pange lingua, Tantum ergo, Benediction | **11/11** rows have original editorial EN/FR alongside unchanged Latin; not certified 1962 printed translations | *Pange lingua* on two two-stanza pages; Benediction V/R and Orémus/prayer/Amen independently | Explicit following action, omitted final blessing/Last Gospel plan; procession opt-in | Editorial approval and visual acceptance pending |
+| Holy Thursday translation | HT_POST, R31 | Source-pinned Latin Pange lingua, Tantum ergo and altar stripping | **21/21 reference rows** have original source-locked editorial EN/FR; actual Psalm recitation extent conditional | Six hymn stanzas, 13 Psalm verse-groups + two antiphons; first-verse-only branch if no clerics | Movement only for joining; clerics present continue Psalm until altars stripped, otherwise celebrant first verse only | Rubrical branch and editorial visual acceptance pending |
+| Generic following procession | PROC, R29 | **Structural-only**, deliberately no feast-specific prayers | **None** until dedicated profile supplied | Structural stages only | Cannot infer procession from feast/date; participant opt-in, then lifecycle | Not full text-ready |
+| Good Friday (distinct rite) | GF, R28 | Source-pinned Latin Passion, solemn prayers, veneration and Communion | Separate editorial layer; incomplete | Fixed ceremony stage and formula/Passion ownership | Exact Flectamus/Levate, Passion-death pause, personal cross/Communion | Bilingual and full phone parity gap |
+| Easter Vigil (distinct composite) | EV, R33 (38 records) | New fire, candle, Lumen Christi, Exsultet, 4 prophecies, Litanies, font blessing, Vigil Mass | Some trilingual source rows; **Exsultet/new fire/candle/Lauds FR only editorial summary and excluded** | 12 Exsultet pages; four prophecy groups with canticles following; Litanies; 17 font segments | Source graph and separate FONT/BAPTISM branches; explicit handoff to Vigil Mass | Full FR and conditional baptism rite still incomplete |
+
+## Source facts and corrections completed in this pass
+
+The 1962 primary *Missale Romanum* printed source
+[clerus.org Appendix II](https://www.clerus.org/bibliaclerusonline/de/gmt.htm)
+specifies, for the Paschal *Vidi aquam*, **allelúia** after
+*Osténde nobis* and *Et salutáre*, but not after the later responses.
+The earlier R20 reader omitted both seasonal additions. It also omitted
+the separate spoken **Orémus** before *Exáudi nos*.
+Both are now represented by the original ASP-050 source event (no new
+ceremonial record). English wording has been crosschecked against
+[EWTN's 1962 ordinary](https://www.ewtn.com/catholicism/library/ordinary-of-the-tridentine-mass-11210);
+French wording against [Salve Regina's 1962 ordinary](https://salve-regina.com/index.php?title=Ordinaire_de_la_messe_traditionnelle_%28rite_de_1962%29)
+and the [Carpe Deum bilingual presentation](https://app.carpedeum.fr/ordinaires-de-messe/1/24).
+These are source-anchored editorial translations, not certified scans.
+The Passiontide *Gloria Patri* omission, Paschal antiphon and repeat,
+and seasonal control remain intact.
+
+Automated acceptance in `tests/reader-annexed-rites-acceptance.mjs`
+checks eight actual annexed-rite source graphs, every spoken source
+paragraph's graph ownership, stage order, Mass/lifecycle handoff,
+English/French row coverage, the conditional Requiem and generic
+procession branches, and participant-specific Corpus Christi and Holy
+Thursday movement. The distinct GF/EV pathways retain their own
+preexisting tests and source guards.
+
+A dedicated 390px browser test now checks Asperges's French column,
+complete `Orémus`/collect/response sequence, manual subdivision,
+and backward return to the final prayer. Existing mobile regression
+checks continue for Ash, Candlemas and Easter Vigil.
+
+## Release gates
+
+1. Pass dedicated `Missal posture-aware page QA`, including the
+   source matrix, seasonal Asperges tests, special-rite source text parity
+   and the four real phone scenarios.
+2. Pass R17 Mass convergence, reader language parity, required main gate,
+   special Mass/rite source focus, and Corpus/Requiem lifecycle gates.
+3. Review remaining untranslated annexes **without silently filling
+   text or claiming a complete bilingual booklet**.
+4. Retain the PR as a draft until source gaps and visual acceptance are
+   approved. No change to LIVE 48 cards, Simple 30 or canonical rite
+   event timelines is intended.
+
+This matrix is the authoritative *current known coverage ledger* only;
+do not promote an annex from structural to bilingual complete without
+real source rows and acceptance tests.
+
+## Next batch: display pages for Palm, Requiem, Corpus Christi and Holy Thursday
+
+Source-only pages are now divided without altering ceremonial stage IDs:
+- **Palm** blessing antiphon and dialogue precede the complete collect;
+  processional `Procedamus` response precedes the intact `Gloria laus`;
+  concluding dialogue precedes the complete final oration.
+- **Requiem Absolution** `Libera me` refrain and invocation-response
+  pairs are divided in source order; the silent `Pater noster`, five
+  concluding V/R pairs and oration/`Amen` are kept in exact source groups.
+  Conditional `In paradisum` is not automatically activated by a
+  Requiem Mass without the selected funeral/burial following action.
+- **Corpus Christi** `Pange lingua` is presented two whole stanzas at a
+  time. Benediction dialogue and `Orémus` / `Deus, qui nobis` / `Amen`
+  are separate Missal reading pages. The underlying placement/return of the
+  monstrance remains explicitly observed/source-owned.
+- **Holy Thursday** the four `Pange lingua` stanzas occupy two reading
+  pages; the existing 13 source lines of Psalm 21 during stripping of the
+  altars are paginated without truncating any stanza or repeating the
+  opening/closing antiphon.
+
+All changes are **display-only** and preserve the source graph, action
+timing, personal participation branches and canonical LIVE/SIMPLE modes.
+Tests now exercise exact paragraph object identity, stage event ownership
+and backward reopening of the previous stage's final page for 23
+source groups. The 390px browser suite has added actual Corpus/Requiem
+page turns and conditional procession checks. Latin-only remains
+Latin-only: this is not yet a complete certified bilingual annexed Missal.
+
+### A real regression caught and corrected
+
+An earlier projector tried to fall back to `row.english` despite an
+explicit `secondary: null` for a French Exsultet. It is now
+**fail-closed:** an explicitly absent vernacular column stays absent.
+This is checked by the source integrity gate as well as the French phone
+display acceptance.
+
+## Shared Eucharistic hymn and Benediction translation pass — 19 October
+
+The two real canonical Latin source payloads continue to own **all** of
+their text and their distinct ceremonial-event records. A single source-
+identified translation register at
+`src/mass/reader-eucharistic-hymn-text.js` supplies **six** stanza-
+matched, original Ad Orientem editorial EN/FR readings of
+`Pange lingua` (including `Tantum ergo` and `Genitori`).
+The 1962 Latin source row remains byte-for-byte unchanged.
+
+- Latin/French [Societas Laudis](https://www.societaslaudis.org/fr/hy_Pange_lingua_gloriosi/),
+  French crosscheck [Opus Dei Eucharistic adoration](https://opusdei.org/fr/prayers/section/?section1=154&section2=33),
+  Latin/English crosscheck [Gustavo Munhon](https://gustavomunhon.com/en/prayers/pange-lingua-sing-my-tongue).
+- Source-owned Corpus Benediction V/R and `Deus, qui nobis sub
+  Sacraménto` collect are paired with original EN/FR readings,
+  crosschecked against the [MSM French Benediction source](https://www.msm-france.com/cenacles/chants-et-prieres/).
+- Translation provenance is **AO original, source-crosschecked
+  editorial**. It is expressly **not** represented as the text of an
+  approved 1962 bilingual Missal or a licensed modern hymn setting.
+  Original lyrics were not copied from the modern witnesses.
+- Corpus Christi: **11/11** Latin liturgical rows now have matching
+  EN/FR source-indexed text. The conditional procession/event timeline
+  is unchanged. Source and phone QA verify no English fallback in
+  French mode.
+- Holy Thursday was **6/21** bilingual rows in the first pass.
+  A subsequent source-collated Psalm 21 edition now supplies **21/21
+  Latin/EN/FR reference rows**, all uniquely source-locked and clearly
+  marked Ad Orientem original editorial translation. This does **not**
+  mean that all thirteen Psalm verse-groups are recited at every Mass;
+  the 1962 rubric governs what is actually said.
+- Tests: `tests/reader-eucharistic-hymn-text.mjs` compares both donor
+  payloads stanza-by-stanza, checks every Latin row against its original,
+  checks source event IDs, editorial translation status, exact Corpus
+  prayer-source preservation, and rejects misaligned hymn stanzas.
+  A separate `tests/reader-holy-thursday-psalm.mjs` locks every Pian Psalm
+  source group and its aligned bilingual reading, confirms the first
+  complete Pian verse under the no-clerics option, and rejects
+  changes to Latin text without a full translation recollation.
+  A 390px French phone test verifies translated Corpus processional
+  hymn, Tantum ergo, and Benediction prayer through real stage navigation.
+
+Remaining acceptance is substantive editorial and visual review. A
+translation becoming available does **not** certify all rite rubrics,
+chant variations, historical facsimile accuracy, or publication rights.
+
+## Holy Thursday Psalm 21 source and conditional performance correction
+
+The primary source-translation donor was audited against
+[Propria's Holy Thursday Pian-Psalter parallel text](https://propria.org/wp-content/uploads/2019/04/propers-for-holy-thursday-ps.-21-from-pian-psalter.pdf).
+The performance rule was separately verified in the printed
+[post-1955 Holy Week Missal rubric (1965 bilingual excerpt, pp. 297–298)](https://archive.ccwatershed.org/pdfs/5183-holy-thursday-excerpt-1965-missal/download/),
+whose Latin reads **`Clerici, si adsunt, prosequuntur ... usque dum
+altarium denudatio peracta sit; alioquin ... primum tantum versum
+psalmi`**. The excerpt establishes the continuing 1962-use rubric;
+it is **not** attributed as the source of our French translation.
+
+**Crucial correction:** the old reader treated all thirteen Pian-Psalter
+verse-groups as the presumed liturgical recitation. In the actual rite:
+
+- When clerics are present, they continue the psalm **until stripping
+  has been completed**. The recitation is not timed and does not
+  necessarily reach the final verse.
+- When no clerics are present, the celebrant says the **antiphon and
+  first complete verse** before stripping the main altar. The antiphon
+  is repeated at the end. The existing donor's *first source row
+  contains more than the first biblical verse*, so this option displays
+  only the verified first verse rather than the entire first row.
+- When presence is unknown, the Missal presents the **full Psalm as
+  reference only** and explicitly disclaims any assertion that every
+  verse is being said. The user can select the observed case from a
+  small, three-way reader choice while within HT-R05; it does not
+  advance the ceremonial action.
+
+The full **13 source groups + twice-recited antiphon** now have
+**original, bilingual EN/FR editorial readings** aligned to the pinned
+Pian Latin. The *actual* Latin donor is unchanged and each source group
+has a fixed independent fingerprint to catch silent drift. The no-clerics
+presentation is **three source-owned rows**, with full reference
+retained separately and the original `HT-STRIP-010` event preserved.
+
+The dedicated unit QA tests both performance branches, full/short
+Missal pagination and translation conservation; the expanded 390px
+browser suite tests actual three-way user selection in the mounted
+native reader and Latin/French alignment.
+
+All source and translation acceptance here remains subject to
+a final editorial and visual review. This correction must not be
+described as a complete ready-for-store Holy Thursday rite.
+
+## Requiem Absolution bilingual source pass — 19 October
+
+The native Requiem following-action reader is now bilingual across all
+of its **27 displayed text rows** in the body-present/burial-procession
+route, with the **alternate no-body collect separately translated**
+rather than reusing the wrong oration.
+
+- The donor's **Latin remains in**
+  `data/presentation/reader-requiem-absolution.v1.json`;
+  `src/mass/reader-requiem-text.js` owns original editorial EN/FR only.
+  **Each of the 28 distinct Latin source variants** (27 rows plus the
+  alternate oration) has an independent source fingerprint. The repeated
+  `Libera me` refrain correctly shares a translation, while each
+  distinct response remains in place.
+- The English text was checked against historical
+  [1909 bilingual funeral service](https://en.wikisource.org/wiki/The_Service_of_High_Mass_for_the_Dead_on_the_Day_of_Burial)
+  and the English [1962 funeral proper](https://propria.org/wp-content/uploads/2021/07/propers-for-funeral-mass-mass-for-the-dead-on-the-day-of-death-or-burial-for-a-lay-person.pdf);
+  French responsory and processional wording checked against
+  [Absoute](https://fr.wikipedia.org/wiki/Absoute) and
+  [In Paradisum text](https://inparadisum.fr/textes-et-traductions/).
+  These are **original Ad Orientem editorial translations**, not
+  claims of official 1962 vernacular approval or verbatim reproduction.
+- The complete `Non intres` prayer, seven responsorial `Libera me`
+  lines, three Kyrie invocations, silent `Pater noster`, five V/R
+  pairs, both distinct `Deus cui proprium` / `Absolve` orations,
+  `Amen`, and the two departure antiphons `In paradisum` and
+  `Chorus angelorum` have individually paired EN/FR readings.
+- The four meaningful controller cases remain unchanged:
+  body + burial (27 rows); body but no burial (25 rows);
+  no body with or without burial requested (23 rows, no funeral-
+  procession antiphon). The **burial route is never inferred** from a
+  Requiem date, and personal walking posture still requires consent.
+- New `tests/reader-requiem-bilingual.mjs` source-fingerprint guard,
+  full four-way conditional test and original Mass event/cursor guard.
+  Source coverage now fails if any Requiem Latin row lacks aligned
+  EN/FR, and 390px French phone acceptance verifies prayer pages,
+  responses and departure antiphons.
+
+Source-provenance and personal-action review is still required. Requiem
+Absoute is a *separate following action* and its integration does
+not imply that every Requiem Mass concludes with one.

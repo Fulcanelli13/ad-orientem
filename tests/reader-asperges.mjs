@@ -57,6 +57,44 @@ assert.match(built.cards[1].paragraphs[0].latin,/Vidi aquam/);
 assert.match(built.cards[1].paragraphs[0].latin,/allelúia/);
 assert.equal(built.cards[1].paragraphs.some(x=>/Glória Patri/.test(x.latin)),true);
 
+// Exact printed 1962 dialogue and invitation, with independently sourced
+// editor-reviewed English/French columns. No source cue or stage added.
+const ordinary=buildAspergesPayload({graph,payload});
+const ordinaryRows=ordinary.cards.flatMap(c=>c.paragraphs);
+assert.equal(ordinaryRows.length,13,"1962 ordinary Asperges 4 chant + 9 versicle/prayer rows");
+assert.equal(ordinary.cards[3].paragraphs.length,9);
+assert.deepEqual(ordinary.cards[3].paragraphs.slice(6).map(p=>p.id),[
+  "ASP-050-OREMUS","ASP-050-PRAYER","ASP-050-AMEN"]);
+assert.equal(ordinary.cards[3].paragraphs[6].latin,"Orémus.");
+assert.equal(ordinary.cards[3].paragraphs[6].french,"Prions.");
+assert.ok(ordinaryRows.every(p=>p.latin?.trim()&&p.english?.trim()&&p.french?.trim()),
+  "An English or French Missal prayer row is missing source-crosschecked text");
+assert.ok(ordinaryRows.every(p=>p.sourceRecordId==="ASP-030"||p.sourceRecordId==="ASP-050"),
+  "Reader text invented an unowned Asperges source event");
+assert.equal(ordinaryRows.some(p=>/allelúia/i.test(p.latin)&&p.id.startsWith("ASP-050")),false,
+  "Paschal alleluia contaminated ordinary-season versicles");
+assert.ok(ordinary.cards[3].paragraphs.slice(0,6).every((p,i)=>
+  p.kind===(i%2===0?"VERSICLE":"RESPONSE")));
+const paschal=buildAspergesPayload({graph,payload,riteContext:{paschaltide:true}});
+assert.equal(paschal.cards[3].paragraphs.length,9);
+assert.equal(paschal.cards[1].paragraphs.length,4);
+assert.ok(paschal.cards[3].paragraphs.slice(0,2).every(p=>p.latin.endsWith("allelúia.")&&
+  p.english.endsWith("alleluia.")&&p.french.endsWith("alléluia.")),
+  "The two appointed Paschal alleluia endings were omitted");
+assert.ok(paschal.cards[3].paragraphs.slice(2,6).every(p=>!/allelúia/i.test(p.latin)),
+  "The Paschal alleluia was applied to later unaffected verses");
+assert.deepEqual(ordinary.cards.map(c=>c.sourceRecordIds),
+  paschal.cards.map(c=>c.sourceRecordIds),
+  "Changing Asperges seasonal formula modified source ceremonial topology");
+const brokenTranslations=structuredClone(payload);
+brokenTranslations.prayer.french="";
+assert.throws(()=>buildAspergesPayload({graph,payload:brokenTranslations}),
+  /ASPERGES_BILINGUAL_SOURCE_ROW_INCOMPLETE/);
+const brokenVersicles=structuredClone(payload);
+brokenVersicles.versicles[1].kind="VERSICLE";
+assert.throws(()=>buildAspergesPayload({graph,payload:brokenVersicles}),
+  /ASPERGES_1962_SIX_VERSE_RESPONSE_SOURCE_ORDER_REQUIRED/);
+
 const ctrl=createAspergesReaderController({graph,payload});
 let s=ctrl.project();
 assert.equal(s.card.id,"ASP-R01");

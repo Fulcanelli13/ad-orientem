@@ -3,6 +3,7 @@ import "./easter-vigil-prophecies-source.mjs";
 import {readFileSync} from "node:fs";
 import {createEasterVigilReaderController,buildEasterVigilReader,projectEasterVigilMassModel} from "../src/mass/reader-easter-vigil.js";
 import {createMassReaderModel} from "../src/mass/reader-model.js";
+import {specialRiteVernacular} from "../src/mass/reader-special-missal-pages.js";
 
 const load=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const core=load("../data/mass/special-days-core.v1.1.json");
@@ -23,6 +24,17 @@ assert.ok(payload.donor.lauds.lat.includes("Benedíctus"));
 
 let built=buildEasterVigilReader({graph,payload,fontMode:"IN_CHURCH",baptismPresent:false});
 assert.equal(built.sourceRecordCount,38);
+// Recovered donor had French scene summaries, not a translation of the full
+// new-fire prayer, Paschal candle ceremonies, Exsultet or Lauds.
+for(const id of ["EV-FIRE-010","EV-FIRE-020","EV-EXS-200"]){
+  const source=built.steps.find(step=>step.recordId===id).paragraphs[0];
+  assert.equal(source.french,null,id+" falsely labels a French précis as full prayer translation");
+  assert.match(source.frenchSourceStatus,/EDITORIAL_SUMMARY_NOT_PARALLEL/);
+  assert.ok(source.frenchEditorialSummary?.length>25);
+  assert.ok(source.english?.length>source.frenchEditorialSummary?.length,
+    "The editorial French source should be flagged, not silently presented as parallel");
+}
+
 assert.ok(built.steps.some(x=>x.recordId==="EV-FONT-420"));
 assert.ok(!built.steps.some(x=>x.recordId==="EV-FONT-410"));
 assert.ok(!built.steps.some(x=>x.recordId==="EV-FONT-440"));
@@ -38,6 +50,16 @@ assert.ok(inChurchFont.some(x=>x.latin.includes("Commíxtio Chrísmatis")));
 assert.ok(inChurchFont.every(x=>x.latin.length>5&&x.english.length>5&&x.french.length>5));
 assert.equal(new Set(inChurchFont.map(x=>x.id)).size,inChurchFont.length,"no duplicate blessing paragraphs");
 assert.ok(inChurchFont.some(x=>x.action==="LOWER_PASCHAL_CANDLE_INTO_WATER_AND_BREATHE_PSI"));
+for(const p of inChurchFont){
+  assert.equal(specialRiteVernacular(p,{language:"fr"}),p.french,
+    "Easter Vigil French Missal column replaced by English for "+p.id);
+  assert.equal(specialRiteVernacular(p,{language:"en"}),p.english,
+    "Easter Vigil English Missal column no longer matches source "+p.id);
+}
+assert.equal(specialRiteVernacular({
+  latin:"Orémus.",english:"Let us pray.",
+},{language:"fr"}),null,
+  "Source-incomplete French stage must never silently show English");
 assert.equal(payload.font1962.segments.length,17);
 assert.match(payload.font1962.status,/NOT_PRINTED_IMAGE_CERTIFIED/);
 const inChurchTransfer=built.steps.find(x=>x.recordId==="EV-FONT-450").paragraphs;
@@ -158,6 +180,8 @@ assert.ok(vigilMass.cards.some(x=>x.sectionId==="SP.EASTER_VIGIL.15"),"Lauds ins
 const laudsIndex=vigilMass.cards.findIndex(x=>x.sectionId==="SP.EASTER_VIGIL.15");
 assert.equal((vigilMass.cards[laudsIndex-1].sourceSequence??vigilMass.cards[laudsIndex-1].sequence),26);
 assert.equal((vigilMass.cards[laudsIndex+1].sourceSequence??vigilMass.cards[laudsIndex+1].sequence),27);
+assert.equal(vigilMass.cards[laudsIndex].paragraphs[0].french,null,
+  "The Lauds summary is not a French translation of the Benedictus and psalm");
 assert.ok(vigilMass.cards.find(x=>(x.sourceSequence??x.sequence)===22).blocks.every(b=>b.blockId!=="AO.SM.B069"));
 assert.ok(vigilMass.cards.find(x=>(x.sourceSequence??x.sequence)===26).blocks.every(b=>b.blockId!=="AO.SM.B085"));
 

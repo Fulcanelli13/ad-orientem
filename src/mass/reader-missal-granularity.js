@@ -1,3 +1,5 @@
+import {auditMissalGranularityIntegrity} from "./reader-missal-integrity.js";
+
 // Missal-only prayer-page granularity. These are source *block* boundaries,
 // not new liturgical events, gestures or translation owners. Formation P1 owns
 // meaning/history; the Missal reader only identifies what is being prayed.
@@ -201,6 +203,32 @@ function subsections(card,groups){
       ...previous,blocks:Object.freeze([...previous.blocks,...pendingEmptyBlocks]),
     });
   }
+
+  // Source-model insertions (particularly Lent's Prayer over the People)
+  // may append separately sourced prayers without a frozen AO.SM.B* block.
+  // Previous granularity rebuilt B-blocks alone and SILENTLY DELETED those
+  // paragraphs. Preserve each additional prayer as a distinct Missal-only
+  // reading page. No new canonical card, event, gesture or prayer is created.
+  const reconstructed=results.flatMap(page=>page.paragraphs??[]);
+  const original=card.paragraphs??[];
+  if(reconstructed.some((p,i)=>p!==original[i]))
+    throw new Error("MISSAL_SOURCE_PARAGRAPH_REORDERED:"+card.sectionId);
+  if(reconstructed.length<original.length){
+    const trailing=original.slice(reconstructed.length);
+    const isPrayerOverPeople=card.prayerOverPeople &&
+      trailing.length>0 && trailing.every(row=>/^R17\.POP\.010\./.test(String(row.id??"")));
+    if(!isPrayerOverPeople)
+      throw new Error("MISSAL_UNGROUPED_SOURCE_PARAGRAPHS_REQUIRE_ADJUDICATION:"+card.sectionId);
+    results.push(Object.freeze({
+      ...card,sectionId:"AO.MISSAL."+card.sectionId.slice(-3)+"."+(groups.length+1),
+      sourceSectionId:card.sectionId,sourceSequence:card.sequence,sequence:null,
+      title:"Prayer over the People",paragraphs:Object.freeze(trailing),
+      blocks:Object.freeze([]),eventIds:Object.freeze([]),
+      sourceEventIds:card.eventIds??Object.freeze([]),
+      missalPresentation:true,sourceOwnedInsertion:"PRAYER_OVER_PEOPLE",
+      provenance:Object.freeze({...card.provenance,displayOnly:true,canonicalTextMutation:false}),
+    }));
+  }
   return results;
 }
 export function projectGranularMissalCards(model){
@@ -220,7 +248,7 @@ export function projectGranularMissalCards(model){
     const card=byId.get(String(id));
     return card?final[card.sequence-1+delta]??null:null;
   };
-  return Object.freeze({...model,
+  const presented=Object.freeze({...model,
     schema:"ao-mass-reader-presentation-model-v1",
     structureOwner:"CANONICAL_MISSAL_PRAYER_BLOCK_PRESENTATION",
     sourceStructureOwner:model.structureOwner,
@@ -230,4 +258,6 @@ export function projectGranularMissalCards(model){
     previousCard:id=>neighbor(id,-1),nextCard:id=>neighbor(id,1),
     cardForEvent:undefined,sourceAuthorityModel:model,
   });
+  auditMissalGranularityIntegrity(model,presented);
+  return presented;
 }

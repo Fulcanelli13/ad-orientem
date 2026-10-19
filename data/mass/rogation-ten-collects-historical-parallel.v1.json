@@ -1,0 +1,366 @@
+{
+  "schema": "AO_ROGATIONS_TEN_COLLECTS_HISTORICAL_PARALLEL_V1",
+  "checkedOn": "2026-10-19",
+  "status": "ALL_TEN_EN_FR_HISTORICAL_POSITIONS_IDENTIFIED_UNAPPROVED",
+  "canonicalSource": "data/presentation/reader-rogations.v1.json#postLitany.orations",
+  "scope": "Rogation post-Litany ten collects, not the separately owned Rogation Mass Proper and not an overall 1962 translation certificate",
+  "sources": {
+    "english": {
+      "edition": "Patrick F. Moran, The Catholic Prayer Book and Manual of Meditations (Dublin: Browne & Nolan, 1883)",
+      "revision": "oldid=12282621",
+      "proof": "ten consecutive English paragraphs after 'LET US PRAY'",
+      "printFacsimileCheck": "PENDING_ORIGINAL_SCAN",
+      "rights": "PENDING_SPECIFIC_REUSE_ASSESSMENT"
+    },
+    "french": {
+      "edition": "Pierre Corneille, Œuvres, ed. Marty-Laveaux, tome IX, 1862",
+      "revision": "oldid=14794744; per-page transcription oldids 14998797/14998816",
+      "proof": "ten Latin paragraphs p. 294, ten French prose paragraphs p. 295, same sequence",
+      "printFacsimileCheck": "WIKISOURCE_PAGE_TRANSCRIPTIONS_MARKED_CORRECTED_NOT_INDEPENDENTLY_SIGNED_OFF",
+      "rights": "PENDING_SPECIFIC_REUSE_ASSESSMENT"
+    }
+  },
+  "count": {
+    "canonicalLatinCollects": 10,
+    "englishHistoricalSegmentsLocated": 10,
+    "frenchHistoricalSegmentsLocated": 10,
+    "pairedBySequenceAndSubject": 10,
+    "independently1962LatinCertified": 0,
+    "approvedEnglishTranslations": 0,
+    "approvedFrenchTranslations": 0,
+    "confirmedNewTranslationsNeeded": 0
+  },
+  "alignmentMethod": "Each canonical Latin incipit is checked for subject and ordinal position in the two separate dated source witnesses; French 1862 additionally has original Latin and French prose as consecutive ten-item sequences on print pp.294-295. Full punctuation, recension, Latin textual readings, source scans and rights remain outstanding.",
+  "specialCautions": [
+    "English 1883 'Prevent ... our actions' uses a historical sense of precede/anticipate; do not modernize without documented editorial authority.",
+    "Collect 5's English places N. before the title, French says 'notre pontife N.', and the amended canonical Latin says 'Pontifici nostro N.'. Distinguish semantic agreement from identical wording.",
+    "Collect 8's Latin 'famulorum famularumque' is explicitly two-sex; English 1883 uses broader servants language. This requires wording review.",
+    "Collect 10's English source abbreviates the doxological ending with 'etc.' whereas the canonical Latin and French witness give a longer close. Do not treat English as a complete, fully parallel prayer.",
+    "French Latin transcription p.294 contains suspicious 'Oranipotens', 'pro bis', 'rneremnr' and 'miseris' readings, possibly typographical/transcription variants: check physical facsimile against the binding edition, never copy those into the canon.",
+    "No publication from a 19th-century witness without comparing 1962 liturgical use, complete source scope and rights; metadata provides no source-authorized translation object."
+  ],
+  "entries": [
+    {
+      "rowId": "ROG-R05-O1",
+      "latinSourcePath": "postLitany.orations.0",
+      "latinIncipit": "Deus, cui proprium est misereri semper et parcere",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 1,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 345,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_1",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 1,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 108,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 108
+      },
+      "subject": "mercy and release from chains of sin",
+      "englishVariantFlags": [],
+      "frenchLatinOrEditionFlags": [],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O2",
+      "latinSourcePath": "postLitany.orations.1",
+      "latinIncipit": "Exaudi, quaesumus, Domine, supplicum preces",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 2,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 347,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_2",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 2,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 110,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 110
+      },
+      "subject": "pardon for confession and peace",
+      "englishVariantFlags": [],
+      "frenchLatinOrEditionFlags": [],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O3",
+      "latinSourcePath": "postLitany.orations.2",
+      "latinIncipit": "Ineffabilem nobis, Domine, misericordiam tuam",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 3,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 348,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_3",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 3,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 111,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 112
+      },
+      "subject": "removal of sins and deserved penalties",
+      "englishVariantFlags": [],
+      "frenchLatinOrEditionFlags": [
+        "FR_LATIN_PRO_BIS_SUSPECT"
+      ],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O4",
+      "latinSourcePath": "postLitany.orations.3",
+      "latinIncipit": "Deus, qui culpa offenderis, poenitentia placaris",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 4,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 350,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_4",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 4,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 113,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 113
+      },
+      "subject": "avert deserved punishments through repentance",
+      "englishVariantFlags": [],
+      "frenchLatinOrEditionFlags": [
+        "FR_LATIN_RNEREMNR_SUSPECT"
+      ],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O5",
+      "latinSourcePath": "postLitany.orations.4",
+      "latinIncipit": "Omnipotens sempiterne Deus, miserere famulo tuo Pontifici nostro N.",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 5,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 351,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_5",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 5,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 114,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 115
+      },
+      "subject": "intercession for the reigning Pope",
+      "englishVariantFlags": [
+        "EN_PAPAL_PLACEHOLDER_AND_TITLE_ORDER"
+      ],
+      "frenchLatinOrEditionFlags": [
+        "FR_LATIN_ORANIPOTENS_SUSPECT",
+        "HISTORICAL_PONTIFICI_NOSTRO_CORROBORATES_DONOR"
+      ],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O6",
+      "latinSourcePath": "postLitany.orations.5",
+      "latinIncipit": "Deus, a quo sancta desideria, recta consilia et justa sunt opera",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 6,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 352,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_6",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 6,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 115,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 116
+      },
+      "subject": "peace which the world cannot give",
+      "englishVariantFlags": [],
+      "frenchLatinOrEditionFlags": [],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O7",
+      "latinSourcePath": "postLitany.orations.6",
+      "latinIncipit": "Ure igne Sancti Spiritus renes nostros et cor nostrum",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 7,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 354,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_7",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 7,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 116,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 118
+      },
+      "subject": "purity of body and heart through the Holy Spirit",
+      "englishVariantFlags": [],
+      "frenchLatinOrEditionFlags": [],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O8",
+      "latinSourcePath": "postLitany.orations.7",
+      "latinIncipit": "Fidelium, Deus, omnium conditor et redemptor",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 8,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 355,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_8",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 8,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 118,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 119
+      },
+      "subject": "remission of the faithful departed",
+      "englishVariantFlags": [
+        "EN_GENERIC_SERVANTS_VS_LATIN_MASCULINE_FEMININE"
+      ],
+      "frenchLatinOrEditionFlags": [
+        "FR_FAMULORUM_FAMULARUMQUE_SOURCE"
+      ],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O9",
+      "latinSourcePath": "postLitany.orations.8",
+      "latinIncipit": "Actiones nostras, quaesumus, Domine, aspirando praeveni",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 9,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 357,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_9",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 9,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 119,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 121
+      },
+      "subject": "divine inspiration at the start and conclusion of actions",
+      "englishVariantFlags": [
+        "EN_HISTORICAL_PREVENT_SENSE"
+      ],
+      "frenchLatinOrEditionFlags": [
+        "FR_HISTORICAL_PREVENIR_SENSE"
+      ],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    },
+    {
+      "rowId": "ROG-R05-O10",
+      "latinSourcePath": "postLitany.orations.9",
+      "latinIncipit": "Omnipotens sempiterne Deus, qui vivorum dominaris simul et mortuorum",
+      "pairingStatus": "SEQUENCE_AND_SUBJECT_CONFIRMED_HISTORICAL_CANDIDATE",
+      "contentAdoptionStatus": "BLOCKED_EDITION_AND_RIGHTS_COLLATION",
+      "english": {
+        "witness": "EN-1883-CATHOLIC-PRAYER-BOOK",
+        "ordinal": 10,
+        "sourceUrl": "https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621",
+        "transcriptionLine": 358,
+        "sourceSpan": "CONCLUDING_COLLECT_PARAGRAPH_10",
+        "printedPage": null
+      },
+      "french": {
+        "witness": "FR-1862-CORNEILLE-MARTY-LAVEAUX",
+        "ordinal": 10,
+        "sourceUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/309",
+        "printPage": 295,
+        "djvuPage": 309,
+        "transcriptionLine": 120,
+        "parallelLatinUrl": "https://fr.wikisource.org/wiki/Page:Corneille,_Pierre_-_%C5%92uvres,_Marty-Laveaux,_1862,_tome_9.djvu/308",
+        "parallelLatinPrintPage": 294,
+        "parallelLatinTranscriptionLine": 122
+      },
+      "subject": "merciful pardon for living and departed with all saints' intercession",
+      "englishVariantFlags": [
+        "EN_ETC_ABBREVIATED_CLOSING_FORMULA"
+      ],
+      "frenchLatinOrEditionFlags": [
+        "FR_LATIN_MISERIS_VS_DONOR_MISERERIS",
+        "FR_PROSE_HAS_EXPANDED_CLOSING_FORMULA"
+      ],
+      "editorDecision": "FOUND_BOTH_WITNESSES_NO_COPY_NO_PROMOTION"
+    }
+  ]
+}

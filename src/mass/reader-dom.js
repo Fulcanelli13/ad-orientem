@@ -556,6 +556,18 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-nav button:hover,.ao-reader-nav button:focus-visible{opacity:.92;background:rgba(23,32,26,.90);color:#e8ece7;outline:none}
 .ao-reader-nav button[data-reader-nav="previous"]{left:max(49px,calc((100% - 1120px)/2 + 52px))}
 .ao-reader-nav button[data-reader-nav="next"]{right:max(49px,calc((100% - 1120px)/2 + 52px))}
+/* A quiet anticipatory page-turn cue; only a sourced sustained posture change
+   on the following Missal page activates it. Never an automatic movement. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-nav button[data-reader-nav="next"][data-next-posture]{
+  opacity:.64;color:#b9b1a0;
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-nav button[data-reader-nav="next"][data-next-posture]::after{
+  content:attr(data-next-posture);position:absolute;right:-4px;top:46px;
+  font:500 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.035em;white-space:nowrap;color:#a29e90;
+  pointer-events:none;text-transform:none;
+}
+
 .ao-reader-progress{
   position:absolute;z-index:1;left:50%;bottom:calc(13px + var(--ao-schola-reserve));transform:translateX(-50%);
   display:block;padding:2px 4px;border:0;background:transparent;box-shadow:none;
@@ -1105,6 +1117,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-rite-choice[hidden]{display:none}
 .ao-rite-choice-label{font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.02em}
 .ao-rite-choice-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ao-rite-psalm-choice .ao-rite-choice-actions{grid-template-columns:repeat(3,minmax(0,1fr))}
 .ao-rite-choice button{
   appearance:none;border:1px solid rgba(185,203,188,.16);border-radius:8px;
   min-height:44px;padding:7px 5px;background:rgba(255,255,255,.025);color:#c1cbc2;

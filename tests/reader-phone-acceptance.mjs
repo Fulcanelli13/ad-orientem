@@ -276,7 +276,7 @@ try{
     source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
     progress:document.querySelector('[data-role="progress"]')?.textContent??"",
   }));
-  assert.deepEqual(switched,{mode:"MISSAL",card:"AO.CARD.015",cue:"AO.SM.C0174",product:67,source:30,progress:"34 / 67"},
+  assert.deepEqual(switched,{mode:"MISSAL",card:"AO.CARD.015",cue:"AO.SM.C0174",product:68,source:30,progress:"35 / 68"},
     "SIMPLE -> MISSAL changed the canonical Host elevation anchor");
   assert.equal(await page.locator('.ao-missal-prayer-heading[data-source-block-id="AO.SM.B052"]').count(),1,
     "Missal lacks its in-text canonical prayer title at the Host Consecration");

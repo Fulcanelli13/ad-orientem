@@ -17,10 +17,22 @@ function row(id,text,kind="TEXT",sourceIds=[]){
   if(!value)throw new Error("Easter Vigil text missing for "+id);
   return freeze({id,kind,latin:value,sourceIds:freeze([...sourceIds])});
 }
+// These recovered French donor fields are short scene descriptions or
+// first-line excerpts, NOT complete translations of the lengthy Latin rite.
+// Keep them as editorial metadata but never in the French prayer column.
+const FRENCH_EDITORIAL_ONLY=new Set(["EV-FIRE","EV-CANDLE","EV-EXSULTET","EV-LAUDS"]);
 function bilingualRows(prefix,text,sourceIds=[]){
   const latin=clean(text?.lat), en=clean(text?.en), fr=clean(text?.fr);
   if(!latin)throw new Error("Easter Vigil Latin donor missing for "+prefix);
-  return freeze([freeze({id:prefix,kind:"TEXT",latin,vernacular:en,english:en,french:fr,sourceIds:freeze([...sourceIds])})]);
+  const editorialFrench=FRENCH_EDITORIAL_ONLY.has(prefix);
+  return freeze([freeze({
+    id:prefix,kind:"TEXT",latin,vernacular:en,english:en,
+    french:editorialFrench?null:fr,sourceIds:freeze([...sourceIds]),
+    ...(editorialFrench?{
+      frenchEditorialSummary:fr,
+      frenchSourceStatus:"EDITORIAL_SUMMARY_NOT_PARALLEL_PRAYER_TEXT",
+    }:{}),
+  })]);
 }
 
 // Each 1962 Litany invocation and baptismal-promise response is independently

@@ -1,3 +1,5 @@
+import {projectRequiemBilingualRow} from "./reader-requiem-text.js";
+
 // R25 native Requiem Absolution / funeral following-action reader.
 // This controller begins only after the Mass lifecycle hands off the explicit
 // REQUIEM_ABSOLUTION graph. It never mutates the preceding Requiem Mass.
@@ -7,7 +9,7 @@ function clean(v){const s=String(v??"").trim();return s||null}
 function row(id,kind,latin,sourceRecordId){
   const text=clean(latin);
   if(!text)throw new Error("Requiem Absolution text missing for "+id);
-  return freeze({id,kind,latin:text,sourceRecordId});
+  return projectRequiemBilingualRow(id,kind,text,sourceRecordId);
 }
 const REQUIRED=Object.freeze(["ABS-010","ABS-020","ABS-030","ABS-040","ABS-050"]);
 

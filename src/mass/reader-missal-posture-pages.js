@@ -1,0 +1,162 @@
+import {auditMissalPageIntegrity} from "./reader-missal-integrity.js";
+
+// Posture-aware MISSAL pagination is a presentation-only overlay.
+// Source cue timing comes exclusively from the existing R17 posture controller.
+// A card swipe does not itself assert an observed congregation movement.
+const SUSTAINED=new Set(["STAND","SIT","KNEEL"]);
+const CUE=/^AO\.SM\.C\d{4}$/;
+
+function transitionForCue(cueId,cueState,preferences){
+  if(!cueState?.supported || !CUE.test(String(cueId)))return null;
+  if(String(preferences?.postureProfile??"").toUpperCase()==="MY_LOCAL"){
+    // Exact user-authored cue choices may create a page; unconfigured local
+    // changes and ambiguous section-wide overrides must not be invented.
+    const value=preferences?.localPostures?.[cueId];
+    return SUSTAINED.has(value)?Object.freeze({
+      cueId,value,sourcePostureId:null,owner:"MY_LOCAL_EXACT_CUE_POSTURE",
+      advisory:false,
+    }):null;
+  }
+  const source=cueState.project(cueId);
+  const value=source?.posture?.value??source?.posture?.label;
+  if(source?.supported!==true || source.postureTransition!==true ||
+    !source.posture?.persistent || !SUSTAINED.has(value))return null;
+  return Object.freeze({
+    cueId,value,sourcePostureId:source.posture.sourcePostureId??null,
+    owner:"R17_SUNG_SOURCE_POSTURE_TRANSITION",
+    advisory:String(preferences?.postureProfile??"FOLLOW_CONGREGATION").toUpperCase()==="FOLLOW_CONGREGATION",
+  });
+}
+
+function transitionAt(paragraph,cueState,preferences){
+  const ids=(paragraph?.sourceCueIds??[]).map(String).filter(id=>CUE.test(id));
+  // Never split inside one bilingual paragraph containing multiple cue IDs.
+  if(ids.length!==1)return null;
+  return transitionForCue(ids[0],cueState,preferences);
+}
+
+function slicedBlocks(card,start,end){
+  const out=[];
+  const all=card.blocks??[];
+  for(let i=0;i<all.length;i++){
+    const block=all[i];
+    const at=block.firstParagraphIndex,count=block.paragraphCount??0;
+    if(at==null||count===0){
+      // Zero-text ritual blocks remain source-owned metadata. Keep each with
+      // the correct preceding visible paragraph, rather than attaching every
+      // omitted block to the first card and silently reordering ownership.
+      let anchor=0;
+      for(let j=i-1;j>=0;j--){
+        const previous=all[j];
+        if(previous.firstParagraphIndex!=null&&previous.paragraphCount>0){
+          anchor=previous.firstParagraphIndex+previous.paragraphCount-1;
+          break;
+        }
+      }
+      if(anchor>=start&&anchor<end)out.push(block);
+      continue;
+    }
+    const from=Math.max(start,at),until=Math.min(end,at+count);
+    if(until<=from)continue;
+    out.push(Object.freeze({
+      ...block,firstParagraphIndex:from-start,paragraphCount:until-from,
+      ...(from!==at||until!==at+count
+        ? {displayFragment:true,sourceBlockOffset:from-at} : {}),
+    }));
+  }
+  return Object.freeze(out);
+}
+
+function splitCard(card,cueState,preferences,postureRegistry){
+  const paragraphs=card.paragraphs??[];
+  if(paragraphs.length===0)return [{...card,postureEntry:null,
+    posturePageSourceCardId:card.sectionId}];
+  const boundaries=new Map();
+  for(let i=0;i<paragraphs.length;i++){
+    const entry=transitionAt(paragraphs[i],cueState,preferences);
+    if(entry)boundaries.set(i,entry);
+  }
+  // Some 1962 source cues precede substituted Proper text (e.g. B030).
+  // Only a registered BLOCK_START with an exact source cue may place a
+  // boundary at that block's actual first rendered paragraph. No text search,
+  // no relative paragraph or time estimates, and no VISIBLE_STATE anchors.
+  for(const block of card.blocks??[]){
+    const at=block.firstParagraphIndex;
+    if(!Number.isInteger(at)||at<0||at>=paragraphs.length)continue;
+    for(const anchor of postureRegistry?.items??[]){
+      if(anchor.anchorType!=="BLOCK_START"||anchor.anchorRef!==block.blockId||
+         !CUE.test(String(anchor.cueId??"")))continue;
+      const entry=transitionForCue(anchor.cueId,cueState,preferences);
+      if(entry && (entry.owner==="MY_LOCAL_EXACT_CUE_POSTURE" ||
+         entry.sourcePostureId===anchor.id) && !boundaries.has(at)){
+        boundaries.set(at,entry);
+      }
+    }
+  }
+  const atStart=boundaries.get(0)??null;
+  const cuts=[...boundaries.entries()]
+    .filter(([index])=>index>0)
+    .sort(([a],[b])=>a-b)
+    .map(([index,entry])=>({index,entry}));
+  if(!cuts.length)return [{...card,postureEntry:atStart,
+    posturePageSourceCardId:card.sectionId}];
+  const positions=[{index:0,entry:atStart},...cuts,{index:paragraphs.length,entry:null}];
+  const pieces=[];
+  for(let i=0;i<positions.length-1;i++){
+    const start=positions[i].index,end=positions[i+1].index;
+    if(end<=start)throw new Error("MISSAL_POSTURE_EMPTY_PAGE:"+card.sectionId);
+    const part=i===0?"":".p"+String(i+1);
+    pieces.push(Object.freeze({
+      ...card,
+      sectionId:String(card.sectionId)+part,
+      posturePageSourceCardId:card.sectionId,
+      title:i===0?card.title:String(card.title)+
+        (String(preferences?.language??"en").toLowerCase().startsWith("fr")?" · suite":" · continued"),
+      paragraphs:Object.freeze(paragraphs.slice(start,end)),
+      blocks:slicedBlocks(card,start,end),
+      sourceParagraphStart:start,sourceParagraphEnd:end,
+      postureEntry:positions[i].entry,
+      posturePage:true,
+      eventIds:Object.freeze([]),
+      provenance:Object.freeze({...card.provenance,displayOnly:true,canonicalTextMutation:false}),
+    }));
+  }
+  return pieces;
+}
+
+/**
+ * Split at a verified sustained R17 posture transition that begins a source
+ * paragraph. Preserve every paragraph, paired translation, source cue and
+ * canonical block owner. Brief gestures and unresolved observational anchors
+ * can never create a page. No clock advance and no LIVE card mutation.
+ */
+export function projectPostureAwareMissalCards(model,{cueState=null,preferences=null,postureRegistry=null}={}){
+  if(!model||!Array.isArray(model.cards))throw new TypeError("MISSAL model required");
+  if(String(model.presentationMode??"").toUpperCase()!=="MISSAL"||
+     !cueState?.supported)return model;
+  const pieces=model.cards.flatMap(card=>splitCard(card,cueState,preferences,postureRegistry));
+  // The next physical posture is an advisory reading cue, not an observed
+  // event. The user controls when to turn each bilingual page.
+  const final=Object.freeze(pieces.map((card,i)=>Object.freeze({
+    ...card,sequence:i+1,nextPosture:pieces[i+1]?.postureEntry??null,
+  })));
+  const byId=new Map(final.map(card=>[card.sectionId,card]));
+  const neighbor=(id,delta)=>{
+    const card=byId.get(String(id));
+    return card?final[card.sequence-1+delta]??null:null;
+  };
+  const result=Object.freeze({
+    ...model,
+    schema:"ao-mass-reader-presentation-model-v1",
+    structureOwner:"CANONICAL_MISSAL_POSTURE_AWARE_PRAYER_PAGES",
+    sourceStructureOwner:model.structureOwner,
+    sourceModelTotalCards:model.sourceModelTotalCards??model.totalCards,
+    cards:final,totalCards:final.length,
+    cardBySequence:n=>Number.isInteger(Number(n))?final[Number(n)-1]??null:null,
+    previousCard:id=>neighbor(id,-1),nextCard:id=>neighbor(id,1),
+    cardForEvent:undefined,
+    posturePageProjection:true,
+  });
+  auditMissalPageIntegrity(model,result);
+  return result;
+}

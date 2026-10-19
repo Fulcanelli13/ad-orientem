@@ -1,3 +1,7 @@
+import {makeEucharisticHymnRows}
+  from "./reader-eucharistic-hymn-text.js";
+import {buildHolyThursdayPsalmRows} from "./reader-holy-thursday-psalm.js";
+
 // R27 native Holy Thursday post-Mass reader.
 // Owns only the explicit HOLY_THURSDAY_POST following-action surface.
 // Mass ending deltas remain plan-owned and the recovered HT_POST graph owns state.
@@ -11,7 +15,7 @@ function row(id,kind,latin,sourceRecordId){
 }
 const REQUIRED=freeze(["HT-TRN-010","HT-TRN-020","HT-TRN-030","HT-TRN-040","HT-STRIP-010","HT-POST-900"]);
 
-export function buildHolyThursdayPostPayload({graph,payload}={}){
+export function buildHolyThursdayPostPayload({graph,payload,clericsPresent=null}={}){
   if(!Array.isArray(graph)||graph.length!==6)throw new Error("Certified six-record HT_POST graph required");
   if(payload?.schema!=="ao-r27-holy-thursday-post-payload-v1")throw new Error("Pinned Holy Thursday post-Mass payload required");
   const ids=new Set(graph.map(x=>x.id));
@@ -20,12 +24,13 @@ export function buildHolyThursdayPostPayload({graph,payload}={}){
   if((payload.tantumErgo??[]).length!==2)throw new Error("Holy Thursday requires Tantum ergo and Genitori");
   if((payload.stripping?.psalm21Pian??[]).length<10)throw new Error("Holy Thursday Pian Psalm 21 corpus is incomplete");
 
+  const psalm=buildHolyThursdayPsalmRows(payload.stripping,{clericsPresent});
   const cards=freeze([
     freeze({
       id:"HT-R01",title:"Translation of the Blessed Sacrament",
       sourceRecordIds:freeze(["HT-TRN-010"]),
       actorScope:"ALL_FAITHFUL",posture:"KNEEL",
-      paragraphs:freeze(payload.pangeLingua.map((x,i)=>row("HT-R01-"+String(i+1),"TEXT",x,"HT-TRN-010"))),
+      paragraphs:makeEucharisticHymnRows(payload.pangeLingua,{prefix:"HT-R01-",sourceRecordId:"HT-TRN-010"}),
       guide:"Kneel as the Blessed Sacrament passes. Pange lingua accompanies the translation to the altar of repose."
     }),
     freeze({
@@ -43,7 +48,7 @@ export function buildHolyThursdayPostPayload({graph,payload}={}){
       id:"HT-R03",title:"At the Altar of Repose",
       sourceRecordIds:freeze(["HT-TRN-030"]),
       actorScope:"ALL_FAITHFUL",posture:"KNEEL",
-      paragraphs:freeze(payload.tantumErgo.map((x,i)=>row("HT-R03-"+String(i+1),"TEXT",x,"HT-TRN-030"))),
+      paragraphs:makeEucharisticHymnRows(payload.tantumErgo,{prefix:"HT-R03-",sourceRecordId:"HT-TRN-030",startStanza:4}),
       guide:"At the altar of repose, kneel while Tantum ergo and Genitori are sung."
     }),
     freeze({
@@ -61,12 +66,15 @@ export function buildHolyThursdayPostPayload({graph,payload}={}){
       id:"HT-R05",title:"Stripping of the Altars",
       sourceRecordIds:freeze(["HT-STRIP-010"]),
       actorScope:"ALL_FAITHFUL",posture:"LOCAL_OR_INHERIT",
-      paragraphs:freeze([
-        row("HT-R05-A1","TEXT",payload.stripping?.antiphon,"HT-STRIP-010"),
-        ...(payload.stripping?.psalm21Pian??[]).map((x,i)=>row("HT-R05-P"+String(i+1),"TEXT",x,"HT-STRIP-010")),
-        row("HT-R05-A2","TEXT",payload.stripping?.repeatAntiphon,"HT-STRIP-010"),
-      ]),
-      guide:"Observe and pray during the stripping of the altars. No universal faithful posture is imposed by the recovered 1962 source."
+      paragraphs:psalm.rows,
+      psalmPerformance:psalm.performance,
+      psalmReferenceRows:psalm.referenceRows,
+      clericsPresent:psalm.clericsPresent,
+      guide:clericsPresent===false
+        ?"Without clerics in choir, the celebrant says only the antiphon and first Psalm verse; the antiphon is repeated after stripping. The complete Psalm is available as reference, not presumed recited."
+        :clericsPresent===true
+        ?"When clerics are present, they continue Psalm 21 only until the stripping of the altars is finished. Do not assume all verses will be reached. The celebrant repeats the antiphon."
+        :"The 1962 rubric depends on whether clerics are present: clerics continue Psalm 21 until the stripping ends; without clerics the celebrant says the antiphon and first verse only. This is the full Psalm reference, not a claim that all verses are recited."
     }),
     freeze({
       id:"HT-R06",title:"Holy Thursday Rites Complete",
@@ -76,11 +84,13 @@ export function buildHolyThursdayPostPayload({graph,payload}={}){
       guide:"The post-Mass rite is complete. Continue to the post-Mass lifecycle."
     }),
   ]);
-  return freeze({schema:"ao-r27-holy-thursday-post-reader-payload-v1",readerPayloadComplete:true,cards});
+  return freeze({schema:"ao-r27-holy-thursday-post-reader-payload-v1",readerPayloadComplete:true,
+    clericsPresent,psalmPerformance:psalm.performance,cards});
 }
 
 export function createHolyThursdayPostReaderController(args={}){
-  const built=buildHolyThursdayPostPayload(args);
+  let clericsPresent=args.clericsPresent??null;
+  let built=buildHolyThursdayPostPayload({...args,clericsPresent});
   let index=0;
   let joiningState="WAITING";
   function state(){
@@ -90,7 +100,8 @@ export function createHolyThursdayPostReaderController(args={}){
       schema:"ao-r27-holy-thursday-post-reader-state-v1",
       supported:true,index,total:built.cards.length,
       atStart:index===0,atEnd:index===built.cards.length-1,
-      card,joiningState,
+      card,joiningState,psalmPerformance:built.psalmPerformance,
+      clericsPresent:built.clericsPresent,
       posture:personal?.posture??card?.posture??null,
       action:personal?.action??null,
       handoff:card?.handoff??null,
@@ -99,6 +110,15 @@ export function createHolyThursdayPostReaderController(args={}){
   function next(){index=Math.min(index+1,built.cards.length-1);return state()}
   function previous(){index=Math.max(0,index-1);return state()}
   function goTo(cardId){const hit=built.cards.findIndex(x=>x.id===String(cardId));if(hit>=0)index=hit;return state()}
+  function setClericsPresent(value){
+    if(value!==null && typeof value!=="boolean")
+      throw new Error("HOLY_THURSDAY_CLERICS_FLAG_MUST_BE_EXPLICIT_BOOLEAN_OR_UNKNOWN");
+    if(value!==clericsPresent){
+      clericsPresent=value;
+      built=buildHolyThursdayPostPayload({...args,clericsPresent});
+    }
+    return state();
+  }
   function setJoiningState(value){
     const next=String(value??"").toUpperCase();
     if(!["WAITING","JOINING","NOT_JOINING"].includes(next))throw new Error("Unsupported Holy Thursday joining state: "+value);
@@ -106,7 +126,7 @@ export function createHolyThursdayPostReaderController(args={}){
   }
   return freeze({
     schema:"ao-r27-holy-thursday-post-reader-controller-v1",supported:true,cards:built.cards,
-    project:state,next,previous,goTo,setJoiningState
+    project:state,next,previous,goTo,setJoiningState,setClericsPresent
   });
 }
 

@@ -5,10 +5,10 @@
 
 function freeze(v){return Object.freeze(v)}
 function clean(v){const s=String(v??"").trim();return s||null}
-function row(id,kind,latin,sourceRecordId){
+function row(id,kind,latin,sourceRecordId,metadata=null){
   const text=clean(latin);
   if(!text)throw new Error("Rogations reader text missing for "+id);
-  return freeze({id,kind,latin:text,sourceRecordId});
+  return freeze({id,kind,latin:text,sourceRecordId,...(metadata??{})});
 }
 function pairRows(prefix,items,sourceRecordId){
   return items.map((item,index)=>row(prefix+String(index+1),item[0],item[1],sourceRecordId));
@@ -28,6 +28,7 @@ export function buildRogationsPayload({graph,payload}={}){
   for(const id of REQUIRED)if(!ids.has(id))throw new Error("Rogations graph missing "+id);
   if(payload?.authority?.rule?.includes("not doubled")!==true)throw new Error("1962 non-duplicated Litany rule missing");
   if(!Array.isArray(payload.processionLitany) || payload.processionLitany.length<100)throw new Error("Full Rogation Litany corpus required");
+  if(clean(payload.postLitany?.oremus)!=="Oremus.")throw new Error("Rogations collect invitation missing");
   if(!Array.isArray(payload.postLitany?.orations) || payload.postLitany.orations.length!==10)throw new Error("Rogations requires ten concluding orations");
 
   const o=payload.opening??{};
@@ -66,19 +67,26 @@ export function buildRogationsPayload({graph,payload}={}){
       sourceRecordIds:freeze(["ROG-PS-010"]),
       actorScope:"ALL_FAITHFUL",posture:"LOCAL_OR_STAND",
       paragraphs:freeze([
-        row("ROG-R04-PN","TEXT",p.pater,"ROG-PS-010"),
+        row("ROG-R04-PN","TEXT",p.pater,"ROG-PS-010",{
+          voice:"SILENT",voiceSource:"1961_LIBER_USUALIS_P839",
+          spokenVersicleFollows:"ROG-R04-V"
+        }),
         row("ROG-R04-V","VERSICLE",p.versicle,"ROG-PS-010"),
         row("ROG-R04-R","RESPONSE",p.response,"ROG-PS-010"),
         ...textRows("ROG-R04-PS",p.psalm69??[],"ROG-PS-010"),
         ...pairRows("ROG-R04-S",p.suffrages??[],"ROG-PS-010"),
       ]),
-      guide:"Join the responses according to the rite; posture follows the local processional arrangement."
+      guide:"After the Litany, the Pater noster is said silently. Join the following responses; posture follows the local processional arrangement."
     }),
     freeze({
       id:"ROG-R05",title:"Concluding Prayers",
       sourceRecordIds:freeze(["ROG-END-010"]),
       actorScope:"ALL_FAITHFUL",posture:"STAND_OR_LOCAL",
       paragraphs:freeze([
+        row("ROG-R05-OR","VERSICLE",p.oremus,"ROG-END-010",{
+          speaker:"CELEBRANT",voice:"AUDIBLE",
+          canonicalWordingCandidate:"AO.SM.C0036"
+        }),
         ...textRows("ROG-R05-O",p.orations??[],"ROG-END-010"),
         ...pairRows("ROG-R05-F",p.final??[],"ROG-END-010"),
       ]),

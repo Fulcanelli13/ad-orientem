@@ -10,6 +10,8 @@ import { projectCuratedOrdinaryLiveCards, projectCuratedIntroitEntryLiveCards } 
 import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent} from "./reader-priest-event-alignment.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
+import { projectPostureAwareMissalCards } from "./reader-missal-posture-pages.js";
+import {specialRiteNextPosture,showSpecialRiteMissalPostureHint,specialRiteVernacular,createSpecialRiteMissalPageCursor} from "./reader-special-missal-pages.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -604,6 +606,34 @@ export async function mountNativeReaderPreview({
   root.style.cssText="position:fixed;inset:0;z-index:2147483100;background:#080c12;";
   const host=doc.createElement("div");
   host.style.cssText="position:absolute;inset:0;";
+  const ritePageCursor=createSpecialRiteMissalPageCursor({
+    mode:prepared?.readerPreferences?.mode??"LIVE",
+  });
+  // A reading subpage is not another ceremony event. The existing rite
+  // controller advances only after its final display page was explicitly read.
+  function presentationRitePage(stageId,moment){
+    const page=ritePageCursor.project(stageId,moment?.paragraphs??[]);
+    if(!page.isExtraPage)return moment;
+    return Object.freeze({...moment,
+      id:String(moment.id)+".PAGE."+String(page.pageIndex+1),
+      paragraphs:page.paragraphs,cardUpdate:true,
+      progress:String(moment.progress??"")+" · "+
+        (String(prepared?.readerPreferences?.language??"en").startsWith("fr")?"Page ":"Page ")+
+        String(page.pageIndex+1)+" / "+String(page.totalPages),
+    });
+  }
+  function previewNextRiteStage(currentStage,nextStage,{participating=false}={}){
+    const language=prepared?.readerPreferences?.language??"en";
+    const active=ritePageCursor.snapshot();
+    const beforeFinalPage=active.pageIndex+1<active.totalPages;
+    const hint=specialRiteNextPosture({
+      current:currentStage,next:beforeFinalPage?null:nextStage,
+      mode:host.querySelector?.("[data-ao-reader-shell]")?.dataset.mode??
+        prepared?.readerPreferences?.mode??"LIVE",
+      participating,language,
+    });
+    return showSpecialRiteMissalPostureHint(host,hint,{language});
+  }
   const close=doc.createElement("button");
   close.type="button";
   close.textContent="×";
@@ -920,7 +950,9 @@ export async function mountNativeReaderPreview({
           id:row.id,
           kind:row.kind,
           primary:row.latin,
-          secondary:row.vernacular??row.english??null,
+          secondary:specialRiteVernacular(row,{language:prepared?.readerPreferences?.language??"en"}),
+          speakerRole:row.speaker??null,
+          speakerEvidence:row.speaker?"SOURCE_OWNED_DISTINCT_RITE":null,
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Good Friday",
@@ -968,6 +1000,9 @@ export async function mountNativeReaderPreview({
       const state=controller.project(),step=state.step;
       const moment=goodFridayMoment();
       if(moment)reader.renderMoment(moment);
+      const nextStep=controller.built.steps[state.index+1]??null;
+      previewNextRiteStage(step,
+        nextStep?.surfaceKey!==step?.surfaceKey?nextStep:null);
       if(step && step.surfaceKey!==shownSurface){
         const card=host.querySelector?.(".ao-prayer-card");
         if(card)card.scrollTop=0;
@@ -1098,6 +1133,7 @@ export async function mountNativeReaderPreview({
     let inVigil=true;
     let currentMass=null;
     let stage="VIGIL_ACTIVE";
+    let lastRenderedVigilPageId=null;
     let disposeReadingFocus=()=>{};
 
     function easterVigilMoment(){
@@ -1114,7 +1150,9 @@ export async function mountNativeReaderPreview({
           id:row.id,
           kind:row.kind,
           primary:row.latin,
-          secondary:row.vernacular??row.english??null,
+          secondary:specialRiteVernacular(row,{language:prepared?.readerPreferences?.language??"en"}),
+          speakerRole:row.speaker??null,
+          speakerEvidence:row.speaker?"SOURCE_OWNED_DISTINCT_RITE":null,
           sourceCueIds:Object.freeze([...(row.sourceIds??[])]),
         }))),
         progress:String(state.index+1)+" / "+String(state.total)+" · Easter Vigil",
@@ -1135,8 +1173,23 @@ export async function mountNativeReaderPreview({
     function showEasterVigil(){
       inVigil=true;
       stage="VIGIL_ACTIVE";
+      const source=controller.project();
       const moment=easterVigilMoment();
-      if(moment)reader.renderMoment(moment);
+      const displayed=moment?presentationRitePage(source.step?.recordId??"none",moment):null;
+      if(displayed){
+        reader.renderMoment(displayed);
+        // A new reading page must start at its first prayer, even if the
+        // preceding page was scrolled to its final line. Re-rendering a
+        // posture-only state on the SAME original surface preserves focus.
+        if(displayed.cardUpdate!==false && displayed.id!==lastRenderedVigilPageId){
+          const scroll=host.querySelector?.(".ao-prayer-card");
+          if(scroll)scroll.scrollTop=0;
+        }
+        lastRenderedVigilPageId=displayed.id;
+      }
+      const nextStep=controller.built.steps[source.index+1]??null;
+      previewNextRiteStage(source.step,
+        nextStep?.surfaceKey!==source.step?.surfaceKey?nextStep:null);
       root.dataset.r17NativeRiteRecord=controller.project().step?.recordId??"none";
       root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
       root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
@@ -1148,6 +1201,7 @@ export async function mountNativeReaderPreview({
       inVigil=false;
       stage="MASS_ACTIVE";
       currentMass=card;
+      previewNextRiteStage(null,null);
       reader.renderMoment({
         id:card.sectionId,
         sectionTitle:card.title,
@@ -1168,6 +1222,7 @@ export async function mountNativeReaderPreview({
 
     function moveEasterVigil(direction){
       if(inVigil){
+        if(ritePageCursor.turn(direction))return showEasterVigil();
         const state=controller.project();
         if(direction==="next"){
           if(state.atEnd && state.handoffToMass){
@@ -1235,7 +1290,7 @@ export async function mountNativeReaderPreview({
       getCompositeStage:()=>stage,
       next:()=>moveEasterVigil("next"),
       previous:()=>moveEasterVigil("previous"),
-      goToEasterVigilRecord:id=>{controller.goToRecord(id);return showEasterVigil();},
+      goToEasterVigilRecord:id=>{ritePageCursor.clear();controller.goToRecord(id);return showEasterVigil();},
       showVigilMassSequence:sequence=>showVigilMass(model.cardBySequence(sequence)),
       destroy:destroyEasterVigil,
     });
@@ -1351,8 +1406,14 @@ export async function mountNativeReaderPreview({
   let customStorage=null;
   try{customStorage=win.localStorage??null;}catch{}
   let customaryPrefs=readMassCustomaryPreferences(prepared.readerPreferences,customStorage);
+  if(String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL")
+    readerModel=projectPostureAwareMissalCards(readerModel,{
+      cueState:ready.cueState,preferences:customaryPrefs,
+      postureRegistry:ready.registries?.postures,
+    });
   ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
   let riteChoice=null;
+  let psalmClericsChoice=null;
   let palmGospelCueVisible=null;
 
   function createRiteChoice(){
@@ -1371,6 +1432,21 @@ export async function mountNativeReaderPreview({
       '</span>';
     stage.append(panel);
     riteChoice=panel;
+    // Holy Thursday Psalm 21 is conditional on the presence of clerics
+    // *in choir*, not the number of lay people or whether Mass is sung.
+    const psalmPanel=doc.createElement("div");
+    psalmPanel.className="ao-rite-choice ao-rite-psalm-choice";
+    psalmPanel.dataset.role="rite-psalm-choice";
+    psalmPanel.setAttribute("role","group");
+    psalmPanel.setAttribute("aria-label","Clerics present for altar-stripping Psalm");
+    psalmPanel.innerHTML='<span class="ao-rite-choice-label">Clerics reciting Psalm?</span>'+
+      '<span class="ao-rite-choice-actions">'+
+      '<button type="button" data-psalm-clerics="unknown">Unknown</button>'+
+      '<button type="button" data-psalm-clerics="no">No</button>'+
+      '<button type="button" data-psalm-clerics="yes">Yes</button></span>';
+    psalmPanel.hidden=true;
+    stage.append(psalmPanel);
+    psalmClericsChoice=psalmPanel;
   }
 
   function syncRiteChoice(kind,state){
@@ -1406,6 +1482,17 @@ export async function mountNativeReaderPreview({
     }
   }
 
+  function syncPsalmClericsChoice(kind,state){
+    if(!psalmClericsChoice)return;
+    const eligible=kind==="HOLY_THURSDAY_POST"&&state?.card?.id==="HT-R05";
+    psalmClericsChoice.hidden=!eligible;
+    const stage=psalmClericsChoice.closest(".ao-reader-stage");
+    if(stage)stage.dataset.riteChoice=String(eligible||!riteChoice?.hidden);
+    if(!eligible)return;
+    const selected=state.clericsPresent===null?"unknown":state.clericsPresent?"yes":"no";
+    for(const button of psalmClericsChoice.querySelectorAll("[data-psalm-clerics]"))
+      button.setAttribute("aria-pressed",String(button.dataset.psalmClerics===selected));
+  }
   function syncPalmGospelCue(){
     if(!inPalm || ready.palmController?.project?.().card?.id!=="PALM-R03")return;
     const card=host.querySelector?.(".ao-prayer-card");
@@ -1436,6 +1523,16 @@ export async function mountNativeReaderPreview({
   }
 
   function onRiteChoiceClick(event){
+    const psalmButton=event.target?.closest?.("[data-psalm-clerics]");
+    if(psalmButton && inHolyThursdayPost && psalmClericsChoice &&
+      psalmClericsChoice.contains(psalmButton) && !psalmClericsChoice.hidden){
+      event.stopPropagation?.();
+      const option=psalmButton.dataset.psalmClerics;
+      const selected=option==="unknown"?null:option==="yes";
+      ready.holyThursdayPostController.setClericsPresent(selected);
+      showHolyThursdayPost();
+      return;
+    }
     const button=event.target?.closest?.("[data-rite-participation]");
     if(!button||!riteChoice?.contains?.(button)||riteChoice.hidden)return;
     event.stopPropagation?.();
@@ -1828,6 +1925,8 @@ export async function mountNativeReaderPreview({
       id:row.id,
       kind:row.kind,
       primary:row.latin,
+      secondary:specialRiteVernacular(row,{language:prepared?.readerPreferences?.language??"en"}),
+      speakerRole:row.speaker??null,
       sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
     }));
     // Three R20 action/transition cards legitimately have no spoken prayer.
@@ -1867,7 +1966,9 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(projected.state.card?.id,projected.moment));
+    previewNextRiteStage(projected.state.card,
+      ready.aspergesController.cards[projected.state.index+1]??null);
     root.dataset.r17NativeEvent="asperges";
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner="R20_ASPERGES_NATIVE";
@@ -1952,7 +2053,11 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(projected.state.card?.id,projected.moment));
+    previewNextRiteStage(projected.state.card,
+      controller.cards[projected.state.index+1]??null,{
+        participating:kind==="PALM"&&projected.state.processionParticipant===true,
+      });
     syncRiteChoice(kind,projected.state);
     palmGospelCueVisible=null;
     root.dataset.r17NativeEvent=kind.toLowerCase();
@@ -2020,7 +2125,11 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(projected.state.card?.id,projected.moment));
+    previewNextRiteStage(projected.state.card,
+      ready.candlemasController.cards[projected.state.index+1]??null,{
+        participating:projected.state.processionParticipant===true,
+      });
     syncRiteChoice("CANDLEMAS",projected.state);
     root.dataset.r17NativeEvent="candlemas";
     root.dataset.r17NativeCue="unresolved";
@@ -2085,7 +2194,10 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(projected.state.card?.id,projected.moment));
+    const selection=prepared?.session?.resolvedMass?.provenance?.rogationSelection??{};
+    previewNextRiteStage(contextualRogationCard(projected.state.card,selection),
+      contextualRogationCard(ready.rogationsController.cards[projected.state.index+1]??null,selection));
     root.dataset.r17NativeEvent="rogations";
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner="R25_ROGATIONS_NATIVE";
@@ -2124,6 +2236,7 @@ export async function mountNativeReaderPreview({
     if(!config)throw new Error("Unknown following-action reader "+kind);
     const rows=kind==="GENERIC_PROCESSION" ? [] : (card.paragraphs??[]).map(row=>Object.freeze({
       id:row.id,kind:row.kind,primary:row.latin,
+      secondary:specialRiteVernacular(row,{language:prepared?.readerPreferences?.language??"en"}),
       sourceCueIds:Object.freeze([row.sourceRecordId].filter(Boolean)),
     }));
     let posture=null;
@@ -2166,8 +2279,15 @@ export async function mountNativeReaderPreview({
     activeCueId=null;
     clearEventCinematic({resetCue:true});
     transientGuard.begin();
-    reader.renderMoment(projected.moment);
+    reader.renderMoment(presentationRitePage(
+      projected.state.card?.id??projected.state.card?.recordId,projected.moment));
+    previewNextRiteStage(projected.state.card,
+      controller.cards?.[projected.state.index+1]??null,{
+        participating:projected.state.processionParticipant===true ||
+          projected.state.burialParticipant===true,
+      });
     syncRiteChoice(kind,projected.state);
+    syncPsalmClericsChoice(kind,projected.state);
     root.dataset.r17NativeEvent=kind.toLowerCase();
     root.dataset.r17NativeCue="unresolved";
     root.dataset.r17StateOwner=projected.config.owner;
@@ -2186,6 +2306,8 @@ export async function mountNativeReaderPreview({
       handoff:projected.state.handoff??null,
       objectState:projected.state.objectState??null,
       joiningState:projected.state.joiningState??null,
+      clericsPresent:projected.state.clericsPresent??null,
+      psalmPerformance:projected.state.psalmPerformance??null,
       processionActive:projected.state.processionActive??null,
       burialParticipant:kind==="REQUIEM_ABSOLUTION" ? projected.state.burialParticipant??false : null,
     });
@@ -2226,42 +2348,50 @@ export async function mountNativeReaderPreview({
       return showGenericProcession();
     }
     if(inHolyThursdayPost && ready.holyThursdayPostController){
+      if(ritePageCursor.turn("previous"))return showHolyThursdayPost();
       const state=ready.holyThursdayPostController.project();
       if(!state.atStart)ready.holyThursdayPostController.previous();
       return showHolyThursdayPost();
     }
     if(inCorpusChristi && ready.corpusChristiController){
+      if(ritePageCursor.turn("previous"))return showCorpusChristi();
       const state=ready.corpusChristiController.project();
       if(!state.atStart)ready.corpusChristiController.previous();
       return showCorpusChristi();
     }
     if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      if(ritePageCursor.turn("previous"))return showRequiemAbsolution();
       const state=ready.requiemAbsolutionController.project();
       if(!state.atStart)ready.requiemAbsolutionController.previous();
       return showRequiemAbsolution();
     }
     if(inLifecycle)return ready.lifecycleRuntime.snapshot();
     if(inRogations && ready.rogationsController){
+      if(ritePageCursor.turn("previous"))return showRogations();
       const state=ready.rogationsController.project();
       if(!state.atStart)ready.rogationsController.previous();
       return showRogations();
     }
     if(inCandlemas && ready.candlemasController){
+      if(ritePageCursor.turn("previous"))return showCandlemas();
       const state=ready.candlemasController.project();
       if(!state.atStart)ready.candlemasController.previous();
       return showCandlemas();
     }
     if(inPalm && ready.palmController){
+      if(ritePageCursor.turn("previous"))return showPalm();
       const state=ready.palmController.project();
       if(!state.atStart)ready.palmController.previous();
       return showPalm();
     }
     if(inAsh && ready.ashController){
+      if(ritePageCursor.turn("previous"))return showAsh();
       const state=ready.ashController.project();
       if(!state.atStart)ready.ashController.previous();
       return showAsh();
     }
     if(inAsperges && ready.aspergesController){
+      if(ritePageCursor.turn("previous"))return showAsperges();
       const state=ready.aspergesController.project();
       if(!state.atStart)ready.aspergesController.previous();
       return showAsperges();
@@ -2302,18 +2432,21 @@ export async function mountNativeReaderPreview({
       return showGenericProcession();
     }
     if(inHolyThursdayPost && ready.holyThursdayPostController){
+      if(ritePageCursor.turn("next"))return showHolyThursdayPost();
       const state=ready.holyThursdayPostController.project();
       if(state.atEnd){inHolyThursdayPost=false;return completeFollowingAction();}
       ready.holyThursdayPostController.next();
       return showHolyThursdayPost();
     }
     if(inCorpusChristi && ready.corpusChristiController){
+      if(ritePageCursor.turn("next"))return showCorpusChristi();
       const state=ready.corpusChristiController.project();
       if(state.atEnd){inCorpusChristi=false;return completeFollowingAction();}
       ready.corpusChristiController.next();
       return showCorpusChristi();
     }
     if(inRequiemAbsolution && ready.requiemAbsolutionController){
+      if(ritePageCursor.turn("next"))return showRequiemAbsolution();
       const state=ready.requiemAbsolutionController.project();
       if(state.atEnd){inRequiemAbsolution=false;return completeFollowingAction();}
       ready.requiemAbsolutionController.next();
@@ -2321,6 +2454,7 @@ export async function mountNativeReaderPreview({
     }
     if(inLifecycle)return lifecycleState(ready.lifecycleRuntime.advance());
     if(inRogations && ready.rogationsController){
+      if(ritePageCursor.turn("next"))return showRogations();
       const state=ready.rogationsController.project();
       if(state.atEnd){
         inRogations=false;
@@ -2330,6 +2464,7 @@ export async function mountNativeReaderPreview({
       return showRogations();
     }
     if(inCandlemas && ready.candlemasController){
+      if(ritePageCursor.turn("next"))return showCandlemas();
       const state=ready.candlemasController.project();
       if(state.atEnd){
         inCandlemas=false;
@@ -2339,6 +2474,7 @@ export async function mountNativeReaderPreview({
       return showCandlemas();
     }
     if(inPalm && ready.palmController){
+      if(ritePageCursor.turn("next"))return showPalm();
       const state=ready.palmController.project();
       if(state.atEnd){
         inPalm=false;
@@ -2348,6 +2484,7 @@ export async function mountNativeReaderPreview({
       return showPalm();
     }
     if(inAsh && ready.ashController){
+      if(ritePageCursor.turn("next"))return showAsh();
       const state=ready.ashController.project();
       if(state.atEnd){
         inAsh=false;
@@ -2357,6 +2494,7 @@ export async function mountNativeReaderPreview({
       return showAsh();
     }
     if(inAsperges && ready.aspergesController){
+      if(ritePageCursor.turn("next"))return showAsperges();
       const state=ready.aspergesController.project();
       if(state.atEnd){
         inAsperges=false;
@@ -2526,7 +2664,8 @@ export async function mountNativeReaderPreview({
     if((changed || !activeCueId) && String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"){
       const firstSourceCue=(visibleCard.paragraphs??[])
         .flatMap(paragraph=>paragraph.sourceCueIds??[])
-        .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)))??null;
+        .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)))??
+        visibleCard.postureEntry?.cueId??null;
       activeCueId=firstSourceCue;
       if(firstSourceCue)transientGuard.resolveCue(firstSourceCue);
     }
@@ -2543,7 +2682,8 @@ export async function mountNativeReaderPreview({
         ? (()=>{
           const first=(visibleCard.paragraphs??[])
             .flatMap(row=>row.sourceCueIds??[])
-            .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)));
+            .find(id=>/^AO\.SM\.C\d{4}$/.test(String(id)))??
+            visibleCard.postureEntry?.cueId??null;
           const sourced=first&&ready.cueState.supported
             ? ready.cueState.project(first):null;
           if(!sourced?.supported)return null;
@@ -2615,6 +2755,24 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
+    // Page-edge anticipation is advisory. A swipe never executes the cue.
+    const nextButton=host.querySelector?.('.ao-reader-nav button[data-reader-nav="next"]');
+    if(nextButton){
+      const incoming=String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL"
+        ? nextVisibleCard(card,"next")?.postureEntry:null;
+      const french=String(customaryPrefs?.language??prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr");
+      const label=incoming?({STAND:french?"Debout":"Stand",SIT:french?"Assis":"Sit",KNEEL:french?"À genoux":"Kneel"})[incoming.value]:null;
+      if(label){
+        const advisory=incoming.advisory?(french?" (selon l’usage)":" (customary)"):"";
+        nextButton.dataset.nextPosture=label;
+        nextButton.title=(french?"Page suivante · ":"Next page · ")+label+advisory;
+        nextButton.setAttribute("aria-label",nextButton.title);
+      }else{
+        delete nextButton.dataset.nextPosture;
+        nextButton.title="";
+        nextButton.setAttribute("aria-label",french?"Page suivante":"Next page");
+      }
+    }
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll){
       scroll.scrollTop=0;
@@ -2661,6 +2819,8 @@ export async function mountNativeReaderPreview({
       data:ready.data,
       mode:nextMode,
       reviewExpandedCards:ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
+      postureCueState:ready.cueState,posturePreferences:customaryPrefs,
+      postureRegistry:ready.registries?.postures,
     });
     sourceModel=rebuilt.sourceModel;
     // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
@@ -2675,13 +2835,20 @@ export async function mountNativeReaderPreview({
 
     current=anchored;
     reader?.setSections?.(sectionItems());
+    // The special-rite cursor tracks the displayed reader mode, not the
+    // initial launch mode. Reopen current rite source event at page one
+    // without advancing ceremony or fabricating a new source paragraph.
+    ritePageCursor.setMode(rebuilt.mode);
 
     clearEventCinematic({resetCue:true});
     armPartCinematic(null);
     transientGuard.begin();
 
-    const cueStillPresent=Boolean(desiredCue && (current.paragraphs??[]).some(paragraph=>
-      (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(desiredCue))
+    const cueStillPresent=Boolean(desiredCue && (
+      current.postureEntry?.cueId===desiredCue ||
+      (current.paragraphs??[]).some(paragraph=>
+        (paragraph?.sourceCueIds??[]).some(id=>String(id)===String(desiredCue))
+      )
     ));
     observedPriestEvent=null;
     activeCueId=cueStillPresent ? desiredCue : null;
@@ -2692,7 +2859,16 @@ export async function mountNativeReaderPreview({
     root.dataset.r17SourceModelCards=String(sourceModel.totalCards);
     root.dataset.r17PresentationModelCards=String(readerModel.totalCards);
 
-    if(!(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)){
+    if(inAsperges)showAsperges();
+    else if(inPalm)showPalm();
+    else if(inAsh)showAsh();
+    else if(inCandlemas)showCandlemas();
+    else if(inRogations)showRogations();
+    else if(inRequiemAbsolution)showRequiemAbsolution();
+    else if(inCorpusChristi)showCorpusChristi();
+    else if(inHolyThursdayPost)showHolyThursdayPost();
+    else if(inGenericProcession)showGenericProcession();
+    else if(!inLifecycle){
       showCard(current);
       // A two-column Missal changes page geometry, not source/cue identity.
       if(cueStillPresent){
@@ -2721,6 +2897,10 @@ export async function mountNativeReaderPreview({
     onPresentationModeChange:(mode)=>switchPresentationMode(mode),
     onCustomaryChange:change=>{
       customaryPrefs=updateMassCustomaryPreferences(customaryPrefs,change,customStorage);
+      // Profile changes rebuild Missal pages only; the canonical clock is unchanged.
+      if(["postureProfile","localPosture"].includes(change?.kind) && reader.getMode()==="MISSAL"){
+        switchPresentationMode("MISSAL");return;
+      }
       if(change?.kind==="sanctusPerformance"){
         ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
       }
@@ -3099,6 +3279,7 @@ export async function mountNativeReaderPreview({
     setCorpusChristiProcessionParticipant:value=>{if(!ready.corpusChristiController)return null;const result=ready.corpusChristiController.setProcessionParticipant(value);return inCorpusChristi ? showCorpusChristi() : result},
     setCorpusChristiSacramentalState:value=>{if(!ready.corpusChristiController)return null;const result=ready.corpusChristiController.setSacramentalState(value);return inCorpusChristi ? showCorpusChristi() : result},
     setHolyThursdayJoiningState:value=>{if(!ready.holyThursdayPostController)return null;const result=ready.holyThursdayPostController.setJoiningState(value);return inHolyThursdayPost ? showHolyThursdayPost() : result},
+    setHolyThursdayClericsPresent:value=>{if(!ready.holyThursdayPostController)return null;const result=ready.holyThursdayPostController.setClericsPresent(value);return inHolyThursdayPost ? showHolyThursdayPost() : result},
     setGenericProcessionParticipant:value=>{if(!ready.genericProcessionController)return null;const result=ready.genericProcessionController.setParticipating(value);return inGenericProcession ? showGenericProcession() : result},
     setRequiemBurialParticipant:value=>{if(!ready.requiemAbsolutionController)return null;const result=ready.requiemAbsolutionController.setBurialParticipant(value);return inRequiemAbsolution ? showRequiemAbsolution() : result},
     markActuallySprinkled:()=>{

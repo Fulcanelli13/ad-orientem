@@ -1,0 +1,132 @@
+name: Missal posture-aware page QA
+
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-missal-posture-pages.js"
+      - "src/mass/reader-missal-integrity.js"
+      - "src/mass/reader-special-missal-pages.js"
+      - "src/mass/reader-asperges.js"
+      - "src/mass/reader-eucharistic-hymn-text.js"
+      - "src/mass/reader-corpus-christi.js"
+      - "src/mass/reader-holy-thursday-post.js"
+      - "src/mass/reader-holy-thursday-psalm.js"
+      - "src/mass/reader-requiem-text.js"
+      - "src/mass/reader-requiem-absolution.js"
+      - "data/presentation/reader-asperges.v1.json"
+      - "src/mass/reader-exsultet-pages.js"
+      - "src/mass/reader-missal-granularity.js"
+      - "src/mass/reader-native-preview.js"
+      - "src/mass/reader-mode-switch.js"
+      - "src/mass/reader-dom.js"
+      - "tests/reader-missal-posture-pages.mjs"
+      - "tests/reader-special-missal-pages.mjs"
+      - "tests/reader-special-missal-subpages.mjs"
+      - "tests/reader-asperges.mjs"
+      - "tests/reader-annexed-rites-acceptance.mjs"
+      - "tests/annexed-text-owner-reconciliation.mjs"
+      - "tests/annexed-draft-translation-collisions.mjs"
+      - "tests/annexed-secondary-existing-owners.mjs"
+      - "tests/rogations-litany-112-source-owners.mjs"
+      - "tests/rogations-printed-witness-holds.mjs"
+      - "tests/rogations-historical-language-witness-scope.mjs"
+      - "tests/rogations-ten-collects-historical-parallel.mjs"
+      - "tests/rogations-psalm69-suffrages-historical-crosswalk.mjs"
+      - "tests/rogation-187-vernacular-owner-census.mjs"
+      - "tests/rogation-112-invocation-historical-parity.mjs"
+      - "tests/rogation-editorial-release-gate.mjs"
+      - "data/mass/rogation-editorial-release-gate.v1.json"
+      - "data/mass/rogation-112-invocations-historical-en-fr-crosswalk.v1.json"
+      - "data/mass/rogation-187-vernacular-owner-census.v1.json"
+      - "data/mass/rogation-psalm69-suffrages-historical-crosswalk.v1.json"
+      - "data/mass/rogation-ten-collects-historical-parallel.v1.json"
+      - "data/mass/rogation-historical-language-witnesses.v1.json"
+      - "data/mass/rogation-1961-print-witness-holds.v1.json"
+      - "tools/mass/reconcile-rogation-litany-1962.mjs"
+      - "tools/mass/reconcile-annexed-text-owners.mjs"
+      - "tools/mass/reconcile-annexed-translation-collisions.mjs"
+      - "tools/mass/reconcile-annexed-secondary-owners.mjs"
+      - "src/pray/canonical-data.js"
+      - "tests/reader-eucharistic-hymn-text.mjs"
+      - "tests/reader-holy-thursday-psalm.mjs"
+      - "tests/reader-requiem-bilingual.mjs"
+      - "tests/fixtures/reader-phone-harness.html"
+      - "tests/reader-special-missal-subpages-phone.mjs"
+      - "tests/reader-prayer-over-people.mjs"
+      - "tests/reader-easter-vigil.mjs"
+      - "tests/reader-mode-switch.mjs"
+      - ".github/workflows/missal-posture-pages-qa.yml"
+  workflow_dispatch:
+
+jobs:
+  posture-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify sourced posture page boundaries and bilingual preservation
+        run: node tests/reader-missal-posture-pages.mjs
+      - name: Verify real Lenten Prayer over the People survives Mass Missal
+        run: node tests/reader-prayer-over-people.mjs
+      - name: Verify all annexed rites have source records, complete sections and correct handoffs
+        run: node tests/reader-annexed-rites-acceptance.mjs
+      - name: Verify shared source-owned Eucharistic hymn and Corpus Benediction editorial translations
+        run: node tests/reader-eucharistic-hymn-text.mjs
+      - name: Reconcile annexed texts against existing canonical English/French owners before duplicate translation
+        run: node tests/annexed-text-owner-reconciliation.mjs
+      - name: Lock all 112 Rogation Litany invocations and governing 1962 non-doubling rule
+        run: node tests/rogations-litany-112-source-owners.mjs
+      - name: Verify printed Rogations witness discrepancies remain explicit 1962 source holds
+        run: node tests/rogations-printed-witness-holds.mjs
+      - name: Check existing historical English and French post-Litany prayer witness coverage
+        run: node tests/rogations-historical-language-witness-scope.mjs
+      - name: Validate ten collect Latin to historical English and French source positions
+        run: node tests/rogations-ten-collects-historical-parallel.mjs
+      - name: Check Rogation Psalm 69, abbreviated doxology, and 24 suffrage witness ownership
+        run: node tests/rogations-psalm69-suffrages-historical-crosswalk.mjs
+      - name: Validate 187 Rogation source-owner identities and full bilingual witness coverage ledger
+        run: node tests/rogation-187-vernacular-owner-census.mjs
+      - name: Check 112 historical Litany invocations and edition-qualified EN FR omissions
+        run: node tests/rogation-112-invocation-historical-parity.mjs
+      - name: Check source-qualified 187-row Rogation bilingual editorial release gate
+        run: node tests/rogation-editorial-release-gate.mjs
+      - name: Index existing PRAY litany and Scripture owner candidates without retranslating
+        run: node tests/annexed-secondary-existing-owners.mjs
+      - name: Compare provisional annex English/French wording against existing Ordinary owners
+        run: node tests/annexed-draft-translation-collisions.mjs
+      - name: Verify all conditional Requiem Absolution English/French source rows
+        run: node tests/reader-requiem-bilingual.mjs
+      - name: Verify Holy Thursday bilingual Psalm and clerics/no-clerics 1962 branch
+        run: node tests/reader-holy-thursday-psalm.mjs
+      - name: Verify complete Asperges and Vidi aquam 1962 bilingual seasonal text
+        run: node tests/reader-asperges.mjs
+      - name: Verify intact special-rite prayer pages and unchanged event cursor
+        run: node tests/reader-special-missal-subpages.mjs
+      - name: Verify Easter Vigil real French/English source-line ownership
+        run: node tests/reader-easter-vigil.mjs
+      - name: Verify source-owned special-rite page cues
+        run: node tests/reader-special-missal-pages.mjs
+      - name: Verify canonical mode-switch and card anchors unchanged
+        run: node tests/reader-mode-switch.mjs
+      - name: Verify Mass form/rite model invariants
+        run: node tests/reader-model.mjs
+      - name: Verify cue/posture ownership invariants
+        run: node tests/reader-cue-state.mjs
+
+  special-rite-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install browser test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Audit sourced special-rite Missal subpages on mobile
+        run: node tests/reader-special-missal-subpages-phone.mjs

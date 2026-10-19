@@ -13,6 +13,26 @@ The English 1883 *The Catholic Prayer Book and Manual of Meditations* and Pierre
 | status | uncollated historical transcription | limited facsimile spot-check; comprehensive French and Latin printed pages not collated |
 | offline distribution | **not approved** | **not approved** |
 
+## 19 October scope clarification — source edition is longer than the reader
+
+Both historical **source pages** continue after `Our Father`/
+`Notre Père`, through **Psalm LXIX, suffrages and all ten
+concluding collects**. The EN 1883 witness has ten English prose
+orations; the FR 1862 page prints ten Latin orations followed by
+ten French prose orations. `src/pray/litany-source.js` intentionally
+extracts only the *Litany proper* for its own reader: this is a
+**product presentation boundary, not the archival book's text boundary**.
+The 1862 source additionally includes both a source-adjacent prose
+translation of Psalm 69 and Corneille's poetic verse paraphrase; the
+latter is not a literal liturgical substitute.
+
+Provenance and candidate segment locators for the entire sequence now
+reside at `data/mass/rogation-historical-language-witnesses.v1.json`.
+Neither historical edition is 1962-certified, print-collated or
+automatically approved for offline distribution. This clarification
+does **not** enlarge the PRAY reader or make the historical Litany
+equivalent to the separate Rogation procession.
+
 ## Findings requiring print-page comparison
 1. The French transcribed invocation **“Saint Jean, riez pour nous.”** is suspect. It may be a web transcription error or may reproduce a printing error. **Do not silently change it** until the specific printed French page has been visually checked and a decision logged with page identifier.
 2. The French opening **“Jésus-Christ, avez pitié de nous.”** likewise requires comparison to the printed page; do not change to another reading based only on grammar.

@@ -4,6 +4,18 @@
 
 function freeze(value){return Object.freeze(value)}
 function clean(value){const s=String(value??"").trim();return s||null}
+function litRow({id,kind="TEXT",latin,english,french,sourceRecordId,speaker=null}){
+  if(!clean(latin)||!clean(english)||!clean(french))
+    throw new Error("ASPERGES_BILINGUAL_SOURCE_ROW_INCOMPLETE:"+id);
+  return freeze({id,kind,latin:clean(latin),english:clean(english),
+    french:clean(french),sourceRecordId,
+    ...(speaker?{speaker}:{}),
+    translationStatus:"SOURCE_CROSSCHECKED_EDITORIAL"});
+}
+function appendPaschalAlleluia(text,language){
+  const prefix=String(text??"").trim().replace(/[.,;:]$/,"");
+  return prefix+(language==="lat"?", allelúia.":language==="fr"?", alléluia.":", alleluia.");
+}
 
 
 // Sunday Asperges formula context is derived from explicit host seasonalMode when
@@ -56,6 +68,8 @@ export function resolveAspergesFormula({paschaltide=false,omitGloriaPatri=false}
 export function buildAspergesPayload({graph,payload,riteContext={}}={}){
   if(!Array.isArray(graph) || graph.length!==6)throw new Error("Certified six-record ASP graph required");
   if(payload?.schema!=="ao-r20-asperges-payload-v1")throw new Error("Pinned Asperges payload required");
+  if(payload?.source?.translations?.status!=="CROSSCHECKED_EDITORIAL_TRANSLATION_NOT_FACSIMILE_CERTIFIED")
+    throw new Error("ASPERGES_BILINGUAL_TRANSLATION_PROVENANCE_REQUIRED");
   const byId=new Map(graph.map(x=>[x.id,x]));
   for(const id of ["ASP-010","ASP-020","ASP-030","ASP-040","ASP-050","ASP-060"]){
     if(!byId.has(id))throw new Error("Asperges graph missing "+id);
@@ -66,36 +80,50 @@ export function buildAspergesPayload({graph,payload,riteContext={}}={}){
   if(!formula?.antiphon || !formula?.psalm)throw new Error("Asperges formula text incomplete");
 
   const chantRows=[
-    freeze({id:"ASP-030-A",kind:"TEXT",latin:clean(formula.antiphon),sourceRecordId:"ASP-030"}),
-    freeze({id:"ASP-030-P",kind:"TEXT",latin:clean(formula.psalm),sourceRecordId:"ASP-030"}),
+    litRow({id:"ASP-030-A",latin:formula.antiphon,english:formula.antiphonEn,
+      french:formula.antiphonFr,sourceRecordId:"ASP-030"}),
+    litRow({id:"ASP-030-P",latin:formula.psalm,english:formula.psalmEn,
+      french:formula.psalmFr,sourceRecordId:"ASP-030"}),
   ];
   if(!formulaState.omitGloriaPatri){
-    chantRows.push(freeze({id:"ASP-030-G",kind:"TEXT",latin:clean(formula.gloria),sourceRecordId:"ASP-030"}));
+    chantRows.push(litRow({id:"ASP-030-G",latin:formula.gloria,
+      english:formula.gloriaEn,french:formula.gloriaFr,sourceRecordId:"ASP-030"}));
   }
-  chantRows.push(freeze({id:"ASP-030-R",kind:"TEXT",latin:clean(formula.antiphon),sourceRecordId:"ASP-030"}));
+  chantRows.push(litRow({id:"ASP-030-R",latin:formula.antiphon,
+    english:formula.antiphonEn,french:formula.antiphonFr,sourceRecordId:"ASP-030"}));
 
-  const versicleRows=(payload.versicles??[]).map((x,index)=>freeze({
-    id:"ASP-050-"+String(index+1).padStart(2,"0"),
-    kind:String(x.kind??"TEXT").toUpperCase(),
-    latin:clean(x.latin),
-    sourceRecordId:"ASP-050",
-  }));
-  versicleRows.push(freeze({
-    id:"ASP-050-PRAYER",
-    kind:"TEXT",
-    latin:clean(payload.prayer?.latin),
-    sourceRecordId:"ASP-050",
-  }));
-  versicleRows.push(freeze({
-    id:"ASP-050-AMEN",
-    kind:"RESPONSE",
-    latin:clean(payload.prayer?.response),
-    sourceRecordId:"ASP-050",
-  }));
+  const verses=payload.versicles??[];
+  if(verses.length!==6 || verses.some((x,i)=>
+    String(x?.kind).toUpperCase()!==(i%2===0?"VERSICLE":"RESPONSE")))
+    throw new Error("ASPERGES_1962_SIX_VERSE_RESPONSE_SOURCE_ORDER_REQUIRED");
+  const versicleRows=verses.map((x,index)=>{
+    const paschal=Boolean(formulaState.paschaltide&&index<2);
+    return litRow({
+      id:"ASP-050-"+String(index+1).padStart(2,"0"),
+      kind:String(x.kind).toUpperCase(),
+      latin:paschal?appendPaschalAlleluia(x.latin,"lat"):x.latin,
+      english:paschal?appendPaschalAlleluia(x.english,"en"):x.english,
+      french:paschal?appendPaschalAlleluia(x.french,"fr"):x.french,
+      sourceRecordId:"ASP-050",speaker:index%2===0?"CELEBRANT":"CONGREGATION",
+    });
+  });
+  // Orémus is an independently audible and text-bearing invitation.
+  // Preserve its Latin and reviewed vernacular rather than hiding it in
+  // the prayer rubric or inventing a new Mass cue/event.
+  versicleRows.push(litRow({id:"ASP-050-OREMUS",kind:"VERSICLE",
+    latin:payload.prayer?.invitation,english:payload.prayer?.invitationEn,
+    french:payload.prayer?.invitationFr,sourceRecordId:"ASP-050",speaker:"CELEBRANT"}));
+  versicleRows.push(litRow({id:"ASP-050-PRAYER",
+    latin:payload.prayer?.latin,english:payload.prayer?.english,
+    french:payload.prayer?.french,sourceRecordId:"ASP-050",speaker:"CELEBRANT"}));
+  versicleRows.push(litRow({id:"ASP-050-AMEN",kind:"RESPONSE",
+    latin:payload.prayer?.response,english:payload.prayer?.responseEn,
+    french:payload.prayer?.responseFr,sourceRecordId:"ASP-050",speaker:"CONGREGATION"}));
 
   return freeze({
     schema:"ao-r20-asperges-reader-payload-v1",
     formulaState,
+    translationStatus:payload.source.translations.status,
     cards:freeze([
       freeze({
         id:"ASP-R01",title:"Sunday Aspersion",titleFr:"Aspersion dominicale",sourceRecordIds:freeze(["ASP-010"]),
