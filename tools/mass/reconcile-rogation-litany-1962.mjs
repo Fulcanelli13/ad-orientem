@@ -68,6 +68,40 @@ function detectMarker(latin){
   if(n.endsWith("exaudi nos domine"))return "EXAUDI_NOS_DOMINE";
   return "EXACT_TEXT_UNCLASSIFIED";
 }
+/**
+ * Decomposing a litany invocation into a repeated RESPONSE FORMULA and a
+ * unique petition/saint is *review metadata* only. No template is allowed to
+ * synthesize a sentence, alter case/agreement, or substitute a translation.
+ */
+const RESPONSE_FORMULA_OWNER_IDS=Object.freeze({
+ ORA_PRO_NOBIS:"ROG-LIT-FORMULA-ORA-PRO-NOBIS",
+ ORATE_PRO_NOBIS:"ROG-LIT-FORMULA-ORATE-PRO-NOBIS",
+ INTERCEDITE_PRO_NOBIS:"ROG-LIT-FORMULA-INTERCEDITE-PRO-NOBIS",
+ LIBERA_NOS_DOMINE:"ROG-LIT-FORMULA-LIBERA-NOS-DOMINE",
+ TE_ROGAMUS_AUDI_NOS:"ROG-LIT-FORMULA-TE-ROGAMUS-AUDI-NOS",
+ MISERERE_NOBIS:"ROG-LIT-FORMULA-MISERERE-NOBIS",
+ PARCE_NOBIS_DOMINE:"ROG-LIT-FORMULA-PARCE-NOBIS-DOMINE",
+ EXAUDI_NOS_DOMINE:"ROG-LIT-FORMULA-EXAUDI-NOS-DOMINE",
+});
+function reviewQueue(row){
+ if(row.ordinaryCueIds.length)return "EXACT_ORDINARY_WORDING_COLLATION";
+ if(row.prayPrayerIds.length)return "EXACT_PRAY_WORDING_AND_EDITION_COLLATION";
+ if(row.group==="SAINT_INVOCATIONS"||row.group==="PROPITIUS_ESTO"||
+    row.group==="LIBERA_NOS"||row.group==="TE_ROGAMUS"||
+    row.group==="AGNUS_DEI"||row.group==="CONCLUSION")
+   return row.responseFormula==="EXACT_TEXT_UNCLASSIFIED"?
+     "LITANY_UNTEMPLATED_INVOCATION_1962_WITNESS":
+     "LITANY_FORMULA_PLUS_UNIQUE_INVOCATION_WITNESS";
+ if(row.family==="PSALM_69"||row.family==="EXSURGE_OPENING")
+   return "SCRIPTURE_PSALTER_EDITION_AND_VERSE_COLLATION";
+ if(row.family==="TEN_CONCLUDING_COLLECTS")
+   return "TEN_RITE_SPECIFIC_COLLECTS_PRINT_COLLATION";
+ return "RITE_DIALOGUE_SUFFRAGE_AND_RESPONSE_PRINT_COLLATION";
+}
+function tally(rows,key){
+ return Object.fromEntries([...new Set(rows.map(x=>x[key]))].sort()
+   .map(v=>[v,rows.filter(x=>x[key]===v).length]));
+}
 export function buildRogationsLitanyOwnershipMatrix(){
   const data=read(ROGATION_SOURCE);
   const base=buildReconciliation();
@@ -93,6 +127,9 @@ export function buildRogationsLitanyOwnershipMatrix(){
       index,sequence:index+1,group:group.group,
       family:group.group==="SAINT_INVOCATIONS"?family(index):null,
       responseFormula:detectMarker(latin),
+      responseFormulaOwnerId:RESPONSE_FORMULA_OWNER_IDS[detectMarker(latin)]??null,
+      uniqueInvocationSourceOwner:ROGATION_SOURCE+"#processionLitany."+index,
+      formulaReuseStatus:"REVIEW_ONLY_NO_VERNACULAR_COMPOSITION",
       ordinaryCueIds:cueIds,prayPrayerIds:prayIds,
       draftTranslationPromotion:"BLOCKED_PENDING_OWNERSHIP_REVIEW",
       sourceStatus:"LATIN_DONOR_SOURCE_ONLY_NOT_FINAL_1962_PRINT_COLLATION",
@@ -103,6 +140,8 @@ export function buildRogationsLitanyOwnershipMatrix(){
       ownerDecision:cueIds.length?"CANDIDATE_CANONICAL_ORDINARY_WORDING":
         prayIds.length?"CANDIDATE_PRAY_WORDING_CHECK_EDITION":
         "UNRESOLVED_OTHER_SOURCE_FAMILIES_NOT_MISSING_TRANSLATION",
+      reviewQueue:reviewQueue({group:group.group,responseFormula:detectMarker(latin),
+        ordinaryCueIds:cueIds,prayPrayerIds:prayIds}),
     };
   });
   const count=label=>items.filter(x=>x.group===label).length;
@@ -132,6 +171,7 @@ export function buildRogationsLitanyOwnershipMatrix(){
         prayPrayerIds.length?"CANDIDATE_PRAY_WORDING_CHECK_EDITION":
         "UNRESOLVED_OTHER_SOURCE_FAMILIES_NOT_MISSING_TRANSLATION",
       draftTranslationPromotion:"BLOCKED_PENDING_OWNERSHIP_REVIEW",
+      reviewQueue:reviewQueue({family,ordinaryCueIds,prayPrayerIds}),
     });
   };
   const index=(prefix,length,pathPrefix,sourceRecordId,family,selector=i=>i)=>
@@ -206,6 +246,12 @@ export function buildRogationsLitanyOwnershipMatrix(){
         !x.ordinaryCueIds.length&&x.prayPrayerIds.length).length,
       fullSourceUnlinked:[...items,...extra].filter(x=>
         !x.ordinaryCueIds.length&&!x.prayPrayerIds.length).length,
+      reviewQueues:tally([...items,...extra],"reviewQueue"),
+      unlinkedReviewQueues:tally([...items,...extra].filter(x=>
+        !x.ordinaryCueIds.length&&!x.prayPrayerIds.length),"reviewQueue"),
+      invocationResponseFormulaCounts:tally(items,"responseFormula"),
+      linkedResponseOwnerCounts:tally(items.filter(x=>
+        x.responseFormulaOwnerId),"responseFormulaOwnerId"),
       editorialTranslationGaps:null,
       unresolvedReason:"Exact-match corpus ownership is not an exhaustive source comparison.",
     },
