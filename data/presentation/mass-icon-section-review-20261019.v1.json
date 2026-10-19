@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -52,6 +52,34 @@
       "decision": "RETAIN_PREVIOUS_APPROVAL",
       "condition": "opening prayers where selected customary/posture profile calls for kneeling",
       "comments": null
+    },
+    {
+      "slot": "PRIEST_ACTION_PROFOUND_BOW_CONFITEOR",
+      "semanticCueId": "AO.SM.C0016",
+      "candidate": "assets/review/mass-icon-candidates/ao-adoration-20261019.svg",
+      "sourceArchive": "ad_orientem_21_individual_icons.zip/ad_orientem_21_icons/svg/ao_adoration.svg",
+      "sha256": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "scope": "priest's profound bow in his Confiteor; acceptance limited to this depicted action",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW",
+      "comments": null
+    },
+    {
+      "slot": "PRIEST_ACTION_BREAST_STRIKE_CONFITEOR",
+      "semanticCueId": "AO.SM.C0017",
+      "candidate": "assets/active/mass-v46/breast_strike.svg",
+      "decision": "ACCEPT_REUSE",
+      "scope": "same semantic gesture artwork for priest and faithful while keeping separate actor-owned cues",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW",
+      "comments": null
+    },
+    {
+      "slot": "FAITHFUL_GESTURE_BREAST_STRIKE_CONFITEOR",
+      "semanticCueId": "AO.SM.C0022",
+      "candidate": "assets/active/mass-v46/breast_strike.svg",
+      "decision": "RETAIN_PREVIOUS_APPROVAL",
+      "scope": "three strikes at mea culpa in the ministers' Confiteor, with applicable customary profile",
+      "comments": null
     }
   ],
   "rules": [
@@ -60,5 +88,30 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "CONFITEOR_AT_FOOT_OF_ALTAR"
+  "nextReview": "MISEREATUR_INDULGENTIAM_AND_ASCENT",
+  "reviewedSections": [
+    {
+      "id": "AO.SM.M01",
+      "label": "Opening prayers at the foot of the altar",
+      "reviewScope": "opening station, In nomine Patris and faithful entering/opening posture",
+      "cueIds": [
+        "AO.SM.C0001"
+      ],
+      "status": "SECTION_1A_REVIEWED"
+    },
+    {
+      "id": "AO.SM.M01.CONFITEOR",
+      "label": "Confiteor at the foot of the altar",
+      "reviewScope": "priest profound bow at C0016; priest and faithful breast-strike at C0017/C0022",
+      "cueIds": [
+        "AO.SM.C0016",
+        "AO.SM.C0017",
+        "AO.SM.C0021",
+        "AO.SM.C0022"
+      ],
+      "status": "SECTION_2_REVIEWED",
+      "userStatement": "Priest profound bow: accept-A; Priest breast strike: reuse; Comments: None."
+    }
+  ],
+  "lastDecisionDate": "2026-10-19"
 }
