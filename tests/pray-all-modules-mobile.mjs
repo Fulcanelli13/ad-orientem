@@ -352,6 +352,45 @@ try{
    assert.equal(await disclosure.getAttribute("open"),"","Historical witness drawer cannot be opened on touch: "+route);
  }
 
+ // Swipe-first finite guides must not reintroduce button-controlled page travel.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.stations",{returnContext:null}));
+ const stationProgress=page.locator("#aoPray435930.open .aoP435930StationNavShell .aoDevoProgress");
+ assert.equal(await stationProgress.count(),1,"Stations require one shared progress track");
+ assert.equal(await stationProgress.getAttribute("aria-valuenow"),"1");
+ assert.equal(await stationProgress.getAttribute("aria-valuemax"),"14");
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-station-prev],[data-p435930-station-next]").count(),0);
+ const stationBody=page.locator("#aoPray435930.open .aoP435930Stations .aoDevoCardScroll");
+ const stationSwipe=async(dx,dy)=>stationBody.evaluate((el,{dx,dy})=>{
+  const touch=(x,y)=>new Touch({identifier:1,target:el,clientX:x,clientY:y});
+  el.dispatchEvent(new TouchEvent("touchstart",{bubbles:true,touches:[touch(255,340)],changedTouches:[touch(255,340)]}));
+  el.dispatchEvent(new TouchEvent("touchend",{bubbles:true,touches:[],changedTouches:[touch(255+dx,340+dy)]}));
+ },{dx,dy});
+ await stationSwipe(-5,-165);
+ assert.equal(await stationProgress.getAttribute("aria-valuenow"),"1","Vertical scroll must not advance stations");
+ await stationSwipe(-145,3);
+ assert.equal(await stationProgress.getAttribute("aria-valuenow"),"2","Horizontal swipe must advance one station");
+ assert.equal(await page.locator("#aoPray435930.open [data-ao-devo-card]").getAttribute("data-ao-devo-card"),"station-2");
+ await stationBody.focus();
+ await page.keyboard.press("ArrowLeft");
+ assert.equal(await stationProgress.getAttribute("aria-valuenow"),"1","Keyboard previous station failed");
+
+ for(const [route,owner,nextTitle] of [
+  ["pray.penitential_psalms","penitential","penitential-1"],
+  ["pray.forty_hours","fortyHours","forty-1"]
+ ]){
+  await page.evaluate(id=>globalThis.AO_PRAY_V435930.open(id,{returnContext:null}),route);
+  const reader="#aoPray435930.open [data-ao-devotional-owner='"+owner+"']";
+  const progress=page.locator(reader+" .aoDevoSequenceTimeline .aoDevoProgress");
+  await progress.waitFor({state:"visible",timeout:10000});
+  assert.equal(await progress.getAttribute("aria-valuenow"),"1",route+" must begin at stage one");
+  const buttons=owner==="penitential"?"[data-p435930-pen-prev],[data-p435930-pen-next]":
+   "[data-p435930-forty-prev],[data-p435930-forty-next]";
+  assert.equal(await page.locator(reader+" "+buttons).count(),0,route+" has redundant Previous/Next");
+  await page.locator(reader+" .aoDevoSequenceTimeline [data-ao-devo-chapter='1']").click();
+  assert.equal(await progress.getAttribute("aria-valuenow"),"2",route+" progress not bound to its canonical step");
+  assert.equal(await page.locator(reader+" [data-ao-devo-card]").getAttribute("data-ao-devo-card"),nextTitle);
+ }
+
  // Reach the lazy canonical Novena reader through the public module registry.
  // Every one of the sixteen original-source links must be accessible by touch.
  const novenaOpen=await page.evaluate(async()=>await globalThis.AO_MODULES.open("pray.novenas",{returnContext:null}));
