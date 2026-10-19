@@ -67,12 +67,20 @@ export function resolve1962OrganPermission({
  * It DOES NOT replace ordinary reader cues or invent words for processions.
  * Source paths are dot-path selectors into a pinned JSON payload, not music text.
  */
-export function resolveRiteMusicScene({registry,riteId,stageId,sourcePayload}={}){
+export function resolveRiteMusicScene({registry,riteId,stageId,sourcePayload,condition=null}={}){
   if(registry?.schema!=="ao-mass-special-rite-music-events-v1")
     return freeze({status:"UNAVAILABLE",reason:"RITE_MUSIC_REGISTRY_UNVERIFIED",events:freeze([])});
   const rite=(registry.rites??[]).find(r=>r.id===riteId);
   if(!rite)return freeze({status:"UNAVAILABLE",reason:"RITE_NOT_INDEXED",events:freeze([])});
-  const hits=(rite.events??[]).filter(x=>x.stageId===stageId);
+  const atStage=(rite.events??[]).filter(x=>x.stageId===stageId);
+  // Ordinary Asperges and Eastertide Vidi aquam cannot both sound. Nor may
+  // an optional burial procession be inferred simply from a Requiem.
+  const hits=atStage.filter(e=>e.condition==="ANY" ||
+    (condition!=null && e.condition===condition));
+  if(atStage.length && !hits.length){
+    return freeze({schema:"ao-special-rite-music-scene-v1",
+      status:"REQUIRES_CONTEXT",riteId,stageId,events:freeze([])});
+  }
   const events=hits.map(e=>{
     const sourceFound=e.sourcePaths.map(path=>{
       const value=path.split(".").reduce((acc,key)=>acc?.[key],sourcePayload);
@@ -85,6 +93,8 @@ export function resolveRiteMusicScene({registry,riteId,stageId,sourcePayload}={}
       sourceOwner:e.sourceOwner,condition:e.condition,
       endBoundary:e.endBoundary,actuallySinging:"UNKNOWN"});
   });
-  return freeze({schema:"ao-special-rite-music-scene-v1",status:hits.length?"EXPECTED_NOT_OBSERVED":"NO_INDEXED_MUSIC",
+  return freeze({schema:"ao-special-rite-music-scene-v1",
+    status:!hits.length?"NO_INDEXED_MUSIC":
+      hits.every(e=>e.kind==="SOURCE_HOLD")?"NOT_SPECIFIED":"EXPECTED_NOT_OBSERVED",
     riteId,stageId,lifecycle:rite.lifecycle,events:freeze(events)});
 }
