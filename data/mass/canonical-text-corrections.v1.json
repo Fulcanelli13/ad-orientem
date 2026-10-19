@@ -1,5 +1,5 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.0",
   "status": "R17_CANONICAL_TEXT_CORRECTIONS",
   "authorityRule": "Apply after frozen donor ingestion and before any reader/display composition. No correction may create ritual state.",
   "donorPolicy": "Frozen donor hashes remain unchanged; this layer records adjudicated source corrections explicitly.",
@@ -78,12 +78,12 @@
       "blockId": "AO.SM.B036",
       "cueId": "AO.SM.C0122",
       "field": "english",
-      "from": "Let my prayer, O Lord, like incense before You; the lifting up of my hands, like the evening sacrifice.",
-      "to": "Let my prayer rise before Thee as incense, O Lord; let the lifting up of my hands be as the evening sacrifice.",
+      "from": "Ps 140, 2–4\nLet my prayer, O Lord, like incense before You; the lifting up of my hands, like the evening sacrifice.\nO Lord, set a watch before my mouth, a guard at the door of my lips.\nLet not my heart incline to the evil of engaging in deeds of wickedness.",
+      "to": "Ps 140, 2–4\nLet my prayer rise before Thee as incense, O Lord; let the lifting up of my hands be as the evening sacrifice.\nO Lord, set a watch before my mouth, a guard at the door of my lips.\nLet not my heart incline to words of malice, to make excuses for sins.",
       "impact": "ENGLISH_EDITORIAL_ONLY",
-      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p. 25, PDF p. 26 (poetic translation); Latin Dirigatur oratio mea verified against same booklet PDF p. 25",
-      "decision": "Restore missing finite verb and use traditional Thou register; minimal, Latin-faithful editorial adaptation rather than verbatim booklet translation.",
-      "review": "VERIFIED_GRAMMAR_WITH_BOOKLET_PARALLEL"
+      "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p. 25, PDF p. 26 (poetic translation); Latin Dirigatur oratio mea verified against same booklet PDF p. 25; expanded comparison: Psalm 140:2–4, Latin verba malitiae and ad excusandas excusationes in peccatis; Red Missal scanned p.26/printed p.25.",
+      "decision": "Both opening missing-verb grammar and final verse wrong semantic omission repaired under one exact source-owned C0122 English correction. Preserve immutable donor, full Psalm source path and section identity.",
+      "review": "VERIFIED_SOURCE_LATIN_SEMANTIC_CORRECTION_AND_RED_PRINT_WITNESS"
     },
     {
       "id": "RED-EN-2013-004",
@@ -350,6 +350,54 @@
       "reference": "Coalition in Support of Ecclesia Dei, Latin-English Booklet Missal (2013), printed p.21 / PDF p.22",
       "review": "DIRECT_VISUAL_PRINTED_PAGE_COLLATED",
       "decision": "Restore natural clause punctuation and remove English repetition, preserving Latin simul adoratur and source cue IDs."
+    },
+    {
+      "id": "RED-EN-2013-W5-01",
+      "blockId": "AO.SM.B047",
+      "cueId": "AO.SM.C0150",
+      "field": "english",
+      "from": "Therefore, most merciful Father, through Jesus Christ thy Son our Lord, we humbly pray and beseech thee,",
+      "to": "Most merciful Father, we humbly pray and beseech Thee, through Jesus Christ Thy Son, our Lord,",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "2013 Coalition in Support of Ecclesia Dei Red Missal photographed PDF p.32 / printed p.31",
+      "review": "VISUALLY_COLLATED_LATIN_FAITHFUL_REDDER_ADAPTATION",
+      "decision": "Revise Te igitur address and petition to align with Red Missal while preserving the Latin Te igitur and unit boundaries."
+    },
+    {
+      "id": "RED-EN-2013-W5-02",
+      "blockId": "AO.SM.B047",
+      "cueId": "AO.SM.C0151",
+      "field": "english",
+      "from": "that thou wouldst accept and bless,",
+      "to": "to accept and bless",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "2013 Coalition in Support of Ecclesia Dei Red Missal photographed PDF p.32 / printed p.31",
+      "review": "VISUALLY_COLLATED_LATIN_FAITHFUL_REDDER_ADAPTATION",
+      "decision": "Revise Te igitur address and petition to align with Red Missal while preserving the Latin Te igitur and unit boundaries."
+    },
+    {
+      "id": "RED-EN-2013-W5-03",
+      "blockId": "AO.SM.B051",
+      "cueId": "AO.SM.C0163",
+      "field": "english",
+      "from": "Which offering do thou, O God, we beseech thee,",
+      "to": "Humbly we pray Thee, O God, be pleased to make this same offering",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "2013 Coalition in Support of Ecclesia Dei Red Missal photographed PDF p.34 / printed p.33",
+      "review": "VISUALLY_COLLATED_LATIN_FAITHFUL_REDDER_ADAPTATION",
+      "decision": "Revise Quam oblationem into natural English based on Red Missal, retain all essential Latin terms and existing crosses."
+    },
+    {
+      "id": "RED-EN-2013-W5-04",
+      "blockId": "AO.SM.B051",
+      "cueId": "AO.SM.C0164",
+      "field": "english",
+      "from": "make blessed, approved, ratified, reasonable and acceptable:",
+      "to": "wholly blessed, approved, ratified, reasonable and acceptable:",
+      "impact": "ENGLISH_EDITORIAL_ONLY",
+      "reference": "2013 Coalition in Support of Ecclesia Dei Red Missal photographed PDF p.34 / printed p.33",
+      "review": "VISUALLY_COLLATED_LATIN_FAITHFUL_REDDER_ADAPTATION",
+      "decision": "Revise Quam oblationem into natural English based on Red Missal, retain all essential Latin terms and existing crosses."
     }
   ],
   "englishEditorialPolicy": "2013 Red Missal preferred English baseline; 1962 printed Latin retains normative authority; reviewed exact-cue adaptations only; preserve immutable donors."

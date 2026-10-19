@@ -20,12 +20,12 @@ const [low,sung,french,sectionMap,manifest,corrections]=await Promise.all([
 ].map(load));
 const sections=createReaderSectionResolver(sectionMap);
 const approved=new Map(manifest.approvedCues.map(x=>[x.id,x]));
-assert.equal(approved.size,24);
+assert.equal(approved.size,28);
 const allCorrections=new Map(corrections.corrections.map(x=>[x.cueId,x]));
 const unchanged=new Set((manifest.reviewedWithoutTextChange??[]).map(x=>x.cueId));
 const partial=new Set((manifest.partiallyReviewed??[]).map(x=>x.cueId));
 const blocked=new Set((manifest.blockedReview??[]).map(x=>x.cueId));
-assert.equal(unchanged.size,65);
+assert.equal(unchanged.size,108);
 assert.equal(partial.size,3);
 assert.equal(blocked.size,0);
 for(const id of unchanged)assert.ok(!approved.has(id),"Approved and unchanged must be disjoint: "+id);
@@ -143,7 +143,7 @@ for(const row of reviewRows.SUNG){
 const output=path("artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
 await mkdir(dirname(output),{recursive:true});
 const review={schema:"ao.mass.ordo-missae.red-missal.editorial-worklist.v1",
- witness:manifest.source,status:"24_ENGLISH_CHANGES_65_REVIEWED_UNCHANGED_3_PARTIAL_0_BLOCKED_164_NOT_YET_COLLATED",
+ witness:manifest.source,status:"28_ENGLISH_CHANGES_108_REVIEWED_UNCHANGED_3_PARTIAL_0_BLOCKED_117_NOT_YET_COLLATED",
  sampleSize:256,formCount:2,approvedCount:approved.size,
  rows:reviewRows.SUNG,
  reviewedUnchanged:unchanged.size,partiallyReviewed:partial.size,
@@ -156,4 +156,4 @@ console.log("RED_MISSAL_SUMMARY="+JSON.stringify({sourceCues:256,lowCues:reviewR
  blocked:blocked.size,pending:256-approved.size-unchanged.size-partial.size-blocked.size,
  lowSungParity:"PASS",actualReaderEnglishFrench:"PASS"}));
 console.log("RED_MISSAL_ARTIFACT=artifacts/mass-ordo-red-missal/256-cue-editorial-worklist.json");
-console.log("PASS Red Missal editorial wave 4: 24 edits, 65 retained after visual collation, 3 partial, and 164 unreviewed");
+console.log("PASS Red Missal editorial wave 5: 28 edits, 108 retained after visual collation, 3 partial, and 117 unreviewed");
