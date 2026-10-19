@@ -42,7 +42,7 @@ function stats(rows){
  return {total:rows.length,...by};
 }
 const result={schema:'AO_PIUS_X_SOURCE_AWARE_BRIDGE_HELDOUT_48_V1',
- sourceRouterPR:1443,routerCommit:'f5bdf04a7f2e88cadebf959def6333308be2138d',
+ sourceRouterPR:1443,routerCommit:'66a0dbd041e7f3f8c8b57f317c5c21286fa8287d',
  fixture:'data/learn/research/pius-x-12case-paraphrases-followups-20261019.v1.json',
  bridgeStatus:'ACTUAL_SOURCE_AWARE_ROUTER_EXECUTION_RESEARCH_ONLY',catalogCount:184,
  methodology:'Original assistant-authored probes reused as REGRESSION (not an independent holdout after earlier four false routes were inspected). Simulated follow-ups inherit a source only when the original question accurately resolved and the user would have confirmed it. Route requires exact documentary source ID. No independence or production accuracy claim.',
