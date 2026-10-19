@@ -62,7 +62,7 @@
     "test:reader-live-pre-gospel": "node tests/reader-live-pre-gospel.mjs",
     "test:reader-form-state": "node tests/reader-form-state-parity.mjs",
     "test:full-mass-preflight": "node tests/full-mass-preflight.mjs && node tests/observed-mass-source.mjs",
-    "test:mass-icon-review": "node tests/mass-icon-gap-review.mjs && npm run test:mass-icon-necessity",
+    "test:mass-icon-review": "node tests/mass-icon-gap-review.mjs && npm run test:mass-icon-necessity && npm run test:mass-icon-source",
     "test:mass-integration-grid": "node tests/mass-form-special-integration.mjs",
     "test:observed-mass": "node tests/observed-mass-source.mjs",
     "test:full-mass-phone": "node tests/full-mass-preflight-phone-e2e.mjs",
@@ -262,7 +262,8 @@
     "test:mass-observed-local-orations": "node tests/mass-2026-10-18-observed-local-oration-e2e.mjs",
     "test:mass-premass-local-orations": "node tests/mass-premass-local-orations-phone.mjs",
     "test:mass-ps113-editorial": "node tests/mass-2026-10-18-ps113-alleluia-english.mjs",
-    "test:mass-icon-necessity": "node tests/mass-icon-necessity-policy.mjs"
+    "test:mass-icon-necessity": "node tests/mass-icon-necessity-policy.mjs",
+    "test:mass-icon-source": "node tests/mass-icon-generation-provenance.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
