@@ -490,3 +490,30 @@ assert.equal(conversationalGold.records.find(x=>x.pilot_case_id==='SPX-PILOT-10'
 assert.equal(conversationalGold.records.find(x=>x.pilot_case_id==='SPX-PILOT-11').followup.expected_behavior,'THIRD_PERSON_HISTORICAL_FALLBACK');
 assert.equal(conversationalGold.records.find(x=>x.pilot_case_id==='SPX-PILOT-12').followup.expected_behavior,'PASTORAL_GENERAL_FALLBACK_NOT_PERSONAL_DIAGNOSIS');
 console.log('Pius X conversation fixture: 36 variants + 12 followups source-bound, 16 risk probes, 0 runtime tests or approved answers');
+
+
+// Observed *actual* PR #1443 184-topic router output; this is intentionally
+// separate from the expected-answer gold fixture and never counts as replies.
+const bridgeObserved=JSON.parse(readFileSync(
+  'data/learn/research/pius-x-pr1443-184topic-bridge-measured-outcome-20261019.v1.json','utf8'));
+assert.equal(bridgeObserved.schema,'AO_PIUS_X_PR1443_184_TOPIC_ROUTER_BRIDGE_OBSERVED_V1');
+assert.equal(bridgeObserved.originalCatalogTopics,172);
+assert.equal(bridgeObserved.expandedCatalogTopics,184);
+assert.equal(bridgeObserved.addedSourceNavigablePassageTopics,10);
+assert.equal(bridgeObserved.addedUnsupportedSourceGapTopics,2);
+assert.equal(bridgeObserved.original.shared.wrongSpecificSource,3);
+assert.equal(bridgeObserved.original.hybrid.wrongSpecificSource,0);
+assert.deepEqual(bridgeObserved.bridged.shared,{
+ total:48,correctSpecificSource:9,safeUnresolved:27,safeHeld:8,wrongSpecificSource:4,
+ clarificationContainingExpected:0,generatedAnswers:0
+});
+assert.deepEqual(bridgeObserved.bridged.hybrid,{
+ total:48,correctSpecificSource:1,safeUnresolved:39,safeHeld:8,wrongSpecificSource:0,
+ clarificationContainingExpected:0,generatedAnswers:0
+});
+assert.equal(bridgeObserved.errorExamples.length,4);
+assert.deepEqual(bridgeObserved.errorExamples.map(e=>e.id),
+ ['SPX-PILOT-01-F1','SPX-PILOT-02-V3','SPX-PILOT-03-V2','SPX-PILOT-04-V2']);
+assert.equal(bridgeObserved.pendingAcceptance.correctSourceNavigationForBothRouters,false);
+assert.equal(bridgeObserved.pendingAcceptance.doctrinalAnswerPublication,false);
+console.log('Pius X real 184-topic baseline: shared 9/48 correct, 4 wrong-specific; hybrid 1/48 correct, 0 wrong; zero answers');
