@@ -14,10 +14,11 @@
     "plateWidthMm": 52,
     "rights": "PUBLIC_DOMAIN_AS_DESCRIBED_BY_RIJKSMUSEUM",
     "rightsEvidence": "https://www.rijksmuseum.nl/nl/collectie/object/Priester-met-twee-misdienaars-voor-een-altaar--a94279fd154e2a5849c70568bf1ee28f",
-    "rightsLimit": "The museum's public-domain statement applies to the historical work; retain the institution's exact downloaded reproduction metadata and checksum for the actual source image before it becomes an approved originalPicture."
+    "rightsLimit": "The museum's public-domain statement applies to the historical work; retain the institution's exact downloaded reproduction metadata and checksum for the actual source image before it becomes an approved originalPicture.",
+    "actualOriginalScanProof": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg"
   },
   "purpose": "Authentic illustrated Catholic Mass sequence, not a replacement icon family; exact 1962 ceremonial comparison required for each individual scene.",
-  "sourceStatus": "CATALOGUED_OFFICIAL_ORIGINAL_IMAGES_NOT_DOWNLOADED",
+  "sourceStatus": "MIXED_EXACT_PLATE29_VIEWED_CC0_REST_CATALOGUE_ONLY",
   "appUsage": "P3 research and source provenance only; no reader icons, assets, picture-derived generation or ceremony state changes.",
   "plates": [
     {
@@ -117,16 +118,55 @@
       "institutionId": "https://id.rijksmuseum.nl/200217641",
       "target": "PRIEST_OWN_COMMUNION_POTENTIAL",
       "depicts": "Celebrant's own Communion according to original title; visual moment and exact Host/Chalice handling unverified",
-      "readiness": "HIGH_PRIORITY_IMAGE_ACQUISITION_AND_RUBRICAL_INSPECTION",
+      "readiness": "EXACT_PUBLIC_DOMAIN_ORIGINAL_SCENE_VIEWED_NEEDS_LOCAL_BYTES_AND_RUBRICAL_DETAIL",
       "rightsStatus": "PUBLIC_DOMAIN_INSTITUTIONALLY_CATALOGUED",
       "originalImagePath": null,
       "sha256": null,
-      "actualImageViewed": false,
+      "actualImageViewed": true,
       "handPlacementVerified": false,
       "matches1962Rubrics": null,
       "approvedBankArtComparison": false,
       "userApproval": "PENDING",
-      "releaseEligible": false
+      "releaseEligible": false,
+      "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg",
+      "commonsOriginalURL": "https://upload.wikimedia.org/wikipedia/commons/0/09/Priester_met_twee_misdienaars_voor_een_altaar%2C_RP-P-OB-69.179.jpg",
+      "commonsCropSize": [
+        657,
+        1045
+      ],
+      "commonsCropBytesDescription": "164 KB according to Wikimedia file description, not locally verified",
+      "commonsUncroppedHistory": {
+        "date": "2024-05-10",
+        "dimensions": [
+          1686,
+          1843
+        ],
+        "description": "Earlier museum-scan rendition archived in Wikimedia Commons file history; not inspected separately"
+      },
+      "licenseEvidenceURL": "https://commons.wikimedia.org/wiki/File:Priester_met_twee_misdienaars_voor_een_altaar,_RP-P-OB-69.179.jpg",
+      "license": "CC0_1_0_WIKIMEDIA_COMMONS_CURRENT_SCAN",
+      "visualInspection": {
+        "date": "2026-10-19",
+        "method": "Official Rijksmuseum-object-specific digital scan displayed full size through Wikimedia Commons original-file media result",
+        "description": "Etching shows Roman priest at traditional altar leaning forward with head inclined close to hands near mouth/altar, chalice remains placed on the altar, one server kneels and another stands.",
+        "sourceCaption": "Quand le P. communie (engraved on plate 29)",
+        "canVerifyOwnCommunionContext": true,
+        "hostHalvesClearlyVisible": false,
+        "priestHandsFullyDecipherable": false,
+        "priestElbowsRestingOnMensaClearlyVisible": false,
+        "chaliceInPriestRightHand": false,
+        "patenInLeftHandClearlyVisible": false,
+        "witnessForHostAction": "POSE_CONTEXT_SUPPORT_ONLY_NOT_EXACT_1962_CONSUMPTION",
+        "witnessForChaliceAction": "NOT_A_CHALICE_DRINKING_WITNESS",
+        "owner": "PRIEST",
+        "other": {
+          "chaliceAtRestOnAltar": true,
+          "oneAcolyteKneeling": true,
+          "oneAcolyteStanding": true
+        }
+      },
+      "imageBytesLocallyVerified": false,
+      "downloadAttempts": "Web original viewed; working-container original-file transfer failed. Do not infer SHA-256 from Commons filename or metadata."
     },
     {
       "plate": 30,
