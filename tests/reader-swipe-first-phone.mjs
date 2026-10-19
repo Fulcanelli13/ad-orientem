@@ -72,7 +72,7 @@ try{
    const next=await card();
    assert.notEqual(next,initial,rite+" horizontal left swipe did not advance");
    assert.equal(await page.evaluate(()=>
-     document.querySelector("#ao-r17-native-reader-preview")?.dataset.aoLastNavInput),
+     document.querySelector("[data-ao-reader-shell]")?.parentElement?.dataset.aoLastNavInput),
      "swipe:next",rite+" did not use source-owned swipe navigation");
    await page.waitForTimeout(440);
    await swipe(true,false);
