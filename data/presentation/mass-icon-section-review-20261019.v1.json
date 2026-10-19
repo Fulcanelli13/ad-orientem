@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -391,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "BANK_SURVEY_B02_REPLACEMENT_ALTERNATIVES_FOR_B_D_H_I_J",
+  "nextReview": "BANK_SURVEY_BATCH03_16",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -780,6 +780,77 @@
         }
       ],
       "unmentionedPolicy": "All other Batch 2 candidates remain at their preceding approval or held state; silence does not constitute approval.",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+      "label": "Follow-up alternatives for Communion rail, facing people, Epistle/Gospel side, reading",
+      "status": "REVIEWED_WITH_UNASSIGNED_REPURPOSING",
+      "recordedDate": "2026-10-19",
+      "userStatement": "B and C should be repurposed.. the rest is good",
+      "decisions": [
+        {
+          "letter": "A",
+          "asset": "assets/active/mass-v46/priest_rail_after_rich.svg",
+          "target": "Communion distribution to faithful",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "ACCEPT_FOR_DISTRIBUTION_ACTION_ONLY",
+          "note": "Not a generic priest-at-Communion-rail position."
+        },
+        {
+          "letter": "B",
+          "asset": "ao_communion_give_host.svg",
+          "target": "COMMUNION DISTRIBUTION?",
+          "decision": "REPURPOSE_UNASSIGNED",
+          "semanticMatch": "DO_NOT_USE_FOR_COMMUNION_RAIL_POSITION",
+          "note": "User requests repurposing; destination not specified; retain artwork."
+        },
+        {
+          "letter": "C",
+          "asset": "ao_turn_to_people.svg",
+          "target": "FACING PEOPLE?",
+          "decision": "REPURPOSE_UNASSIGNED",
+          "semanticMatch": "DO_NOT_AUTO_ASSIGN_FACING_PEOPLE_POSITION",
+          "note": "User requests repurposing; destination not specified; retain artwork."
+        },
+        {
+          "letter": "D",
+          "asset": "assets/active/mass-v46/priest_gospel_rich.svg",
+          "target": "EPISTLE SIDE",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "KEEP_PREVIOUS_APPROVED_SEMANTIC_SWAP",
+          "note": "Original donor name is misleading; this depicts Epistle side."
+        },
+        {
+          "letter": "E",
+          "asset": "assets/active/mass-v46/priest_epistle_rich.svg",
+          "target": "GOSPEL SIDE",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "KEEP_PREVIOUS_APPROVED_SEMANTIC_SWAP",
+          "note": "Original donor name is misleading; this depicts Gospel side."
+        },
+        {
+          "letter": "F",
+          "asset": "assets/active/mass-v46/preaching.svg",
+          "target": "PREACHING / LECTERN",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "CONTEXT_LIMITED_PREACHING",
+          "note": "Not certified for reading the Missal at the altar."
+        },
+        {
+          "letter": "G",
+          "asset": "assets/active/mass-v46/priest_ambo_rich.svg",
+          "target": "PRIEST AT AMBO",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "CONTEXT_LIMITED_AMBO",
+          "note": "Not certified for reading the Missal at the altar."
+        }
+      ],
+      "unresolved": [
+        "An exact generic priest-at-Communion-rail position remains unresolved.",
+        "An exact priest-facing-people position remains unresolved.",
+        "A distinctive priest-reading-Missal-at-altar action remains unresolved."
+      ],
       "runtimeMutationAllowed": false
     }
   ]
