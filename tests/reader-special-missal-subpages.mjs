@@ -25,7 +25,7 @@ const source=(collection,id)=>collection.find(c=>c.id===id||c.recordId===id);
 const scenarios=[
   ["CND-R01",source(cand,"CND-R01").paragraphs,6],
   ["ASH-R01",source(ash,"ASH-R01").paragraphs,5],
-  ["ROG-R02",source(rog,"ROG-R02").paragraphs,2],
+  ["ROG-R02",source(rog,"ROG-R02").paragraphs,1],
   ["ROG-R03",source(rog,"ROG-R03").paragraphs,2],
   ["ROG-R05",source(rog,"ROG-R05").paragraphs,6],
   ["EV-LIT1-400",source(vigil,"EV-LIT1-400").paragraphs,2],
