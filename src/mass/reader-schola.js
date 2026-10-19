@@ -150,6 +150,7 @@ export function createNativeScholaController(args={}){
         trackId:track.id,segmentId:segment.id,cueId:segment.cueId,
         index,total:track.segments.length,complete,
         benedictusHold:hold,sanctusPerformance,
+        musicStatus:"EXPECTED_NOT_OBSERVED",
         owner:"R17_NATIVE_SCHOLA",
       }):null,
       ownership:segment?"R17_NATIVE_SCHOLA":"R17_EXACT_SCHOLA_NONE",
@@ -165,6 +166,16 @@ export function createNativeScholaController(args={}){
     }
     return state();
   }
+  // A boundary expires an unobserved musical opportunity; it is never proof
+  // that an actual Schola was heard or finished. Ordinary priest cue focus
+  // does NOT synchronize the singer's phrase.
+  function reachLiturgicalBoundary(cueId){
+    if(String(cueId)==="AO.SM.C0135" && activeTrackId==="OFFERTORY"){
+      return activate(null);
+    }
+    return state();
+  }
+
   // All navigable cards may represent one part of an original macro.
   // The DOM runtime must not apply historical 1..30 card-number lookup to
   // the 48- or curated 65-card presentation sequences. Instead resolve
@@ -204,6 +215,14 @@ export function createNativeScholaController(args={}){
       return state();
     }
     if(matches.length)return activate(matches[0].id);
+
+    // The choir's Offertory has a musical window extending across all five
+    // curated Offertory cards, Orate fratres and the quiet Secret. The public
+    // Secret conclusion (C0135), or leaving this section, ends the window.
+    // Do not use the single printed B030 Proper card as its stop clock.
+    const sourceSection=String(card.sourceSectionId??card.sectionId??"");
+    if(activeTrackId==="OFFERTORY" &&
+       ["AO.CARD.010","AO.CARD.011"].includes(sourceSection))return state();
 
     // The Benedictus may continue while the priest prays silently in
     // the Canon. Keep its independent Schola clock across those cards;
@@ -248,7 +267,7 @@ export function createNativeScholaController(args={}){
   return Object.freeze({
     schema:"ao-r17-native-schola-v1",supported:true,reason:null,
     tracks:built.tracks,project:state,activateForCard,syncCue,next,previous,finish,selectTrack,
-    setSanctusPerformance,releaseBenedictus,
+    setSanctusPerformance,releaseBenedictus,reachLiturgicalBoundary,
     trackIds:Object.freeze(built.tracks.map(t=>t.id)),
   });
 }

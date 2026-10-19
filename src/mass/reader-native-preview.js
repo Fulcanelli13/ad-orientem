@@ -1556,7 +1556,35 @@ export async function mountNativeReaderPreview({
           owner:focusedFaithful.source,persistent:true})
       : postureResolved.posture;
 
+
     const scholaProjection=ready.scholaState.project();
+    // Reading a Consecration card is a liturgical silence restriction,
+    // never evidence that the Schola was heard finishing. Preserve its
+    // independent underlying position for a possible post-Chalice Benedictus.
+    const consecrationSilence=Boolean((current?.blocks??[]).some(block=>
+      ["AO.SM.B052","AO.SM.B053"].includes(block.blockId)));
+    const lastChaliceCard=readerModel?.cards?.filter(card=>
+      (card.blocks??[]).some(block=>block.blockId==="AO.SM.B053")).at(-1);
+    const benedictusReleaseAllowed=Boolean(lastChaliceCard &&
+      Number(current?.sequence)>Number(lastChaliceCard.sequence));
+    const visibleSchola=consecrationSilence ? null :
+      scholaProjection.schola
+        ? Object.freeze({...scholaProjection.schola,benedictusReleaseAllowed})
+        : null;
+    // Duplication is a card/chant relationship, not proof that the priest's
+    // current paragraph and the choir's phrase clocks have synchronized.
+    // Keep the central sung text as the sole lyric surface throughout the
+    // entire matching Kyrie/Gloria/Credo/Sanctus/Agnus or Proper card.
+    const visibleTrack=ready.scholaState.tracks?.find(track=>
+      track.id===scholaProjection.trackId);
+    const visibleCueIds=new Set((current?.paragraphs??[])
+      .flatMap(paragraph=>paragraph.sourceCueIds??[]));
+    const visibleBlockIds=new Set((current?.blocks??[])
+      .map(block=>block.blockId));
+    const sameSungCard=Boolean(visibleSchola && visibleTrack && (
+      (visibleTrack.segments??[]).some(segment=>
+        segment.cueId && visibleCueIds.has(segment.cueId)) ||
+      (visibleTrack.canonicalBlockIds??[]).some(id=>visibleBlockIds.has(id))));
     const rubricAction=rubricProjection?.primaryPriestAction??null;
     const matrixAction=gestureMatrixProjection?.primaryPriestAction??null;
     // Matrix text wins, but the same-cue rubric retains an authoritative
@@ -1684,7 +1712,7 @@ export async function mountNativeReaderPreview({
       cinematic,
       cinematicScene,
       priestVoice,
-      schola:scholaProjection.schola,
+      schola:visibleSchola,
       priestAction,
       priestEntrance,
       independentlyObservedCanonStage:observedCanon,
@@ -1696,7 +1724,9 @@ export async function mountNativeReaderPreview({
       rubricStates:rubricProjection?.activeStates??Object.freeze({}),
       gestureMatrixPriest:gestureMatrixProjection?.priest??Object.freeze([]),
       gestureMatrixFaithful:gestureMatrixProjection?.faithful??Object.freeze([]),
-      sharedTextWithSchola:Boolean(scholaProjection.schola?.cueId && scholaProjection.schola.cueId===activeCueId),
+      sharedTextWithSchola:sameSungCard,
+      sharedScholaControls:String(readerModel?.presentationMode??"").toUpperCase()==="LIVE",
+      musicSilenceRequired:consecrationSilence,
       customary:Object.freeze({
         postureProfile:customaryPrefs.postureProfile,
         gestureProfile:customaryPrefs.gestureProfile,
@@ -2425,6 +2455,8 @@ export async function mountNativeReaderPreview({
       activeCueId=firstSourceCue;
       if(firstSourceCue)transientGuard.resolveCue(firstSourceCue);
     }
+    // Card navigation selects an *expected* musical scene, never an actual
+    // phrase. Only explicit Schola controls can advance the independent lane.
     ready.scholaState.activateForCard(visibleCard);
     const state=projectedState();
     reader.renderMoment({
@@ -2590,7 +2622,7 @@ export async function mountNativeReaderPreview({
       // A two-column Missal changes page geometry, not source/cue identity.
       if(cueStillPresent){
         activeCueId=desiredCue;
-        ready.scholaState.syncCue(desiredCue);
+        ready.scholaState.reachLiturgicalBoundary?.(desiredCue);
         transientGuard.resolveCue(desiredCue);
         focusCueAtReaderLine(desiredCue);
         root.dataset.r17NativeCue=desiredCue;
@@ -2633,6 +2665,13 @@ export async function mountNativeReaderPreview({
       return value;
     },
     onScholaRelease:()=>{
+      // The printed Benedictus appears before the Canon. The *sung* second
+      // half of a polyphonic setting may be released only after the Chalice
+      // Consecration, and still needs an explicit choir observation.
+      const lastChalice=readerModel.cards.filter(card=>
+        (card.blocks??[]).some(block=>block.blockId==="AO.SM.B053")).at(-1);
+      if(!lastChalice || Number(current?.sequence)<=Number(lastChalice.sequence))
+        return ready.scholaState.project();
       const value=ready.scholaState.releaseBenedictus?.();
       queue();return value;
     },
@@ -2765,7 +2804,10 @@ export async function mountNativeReaderPreview({
         }
         if(cueId)enteredCanonicalCueSequence=true;
         activeCueId=cueId;
-        ready.scholaState.syncCue(cueId);
+        // An independently sung chant is not synchronized to the priest's
+        // scroll or textual focus. The public Secret conclusion only closes
+        // the Offertory music window; it is not proof of heard completion.
+        ready.scholaState.reachLiturgicalBoundary?.(cueId);
         transientGuard.resolveCue(cueId);
         const transientProjection=cueId ? ready.transientState.project(cueId) : null;
         armEventCinematic(transientProjection?.cinematic??null,cueId);

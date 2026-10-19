@@ -433,12 +433,38 @@ const SHELL_STYLE = `
 .ao-schola-dock[data-collapsed="true"] .ao-schola-main,
 .ao-schola-dock[data-collapsed="true"] .ao-schola-translation,
 .ao-schola-dock[data-collapsed="true"] .ao-schola-meta{display:none}
+/* While central LIVE prayer already carries the sung words, keep Schola
+   navigation accessible without repeating those words in a second surface. */
+.ao-schola-dock[data-shared="true"]:not([data-collapsed="true"])[data-resized="false"]{
+  height:132px!important;min-height:132px;padding-bottom:7px
+}
+.ao-schola-dock[data-shared="true"]:not([data-collapsed="true"])[data-resized="true"]{
+  height:var(--ao-schola-height)!important;min-height:132px;padding-bottom:7px
+}
+.ao-schola-dock[data-shared="true"] .ao-schola-progress{display:none}
+.ao-schola-dock[data-shared="true"] .ao-schola-main{
+  height:38px;margin-top:2px;min-height:38px
+}
+.ao-schola-dock[data-shared="true"][data-show-translation="false"] [data-role="schola"]{
+  visibility:hidden
+}
+.ao-schola-dock[data-shared="true"][data-show-translation="false"] .ao-schola-main::after{
+  content:"TRANSLATE";position:absolute;left:4px;top:6px;
+  font:600 9px/1 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.12em;color:var(--ao-mass-accent-text)
+}
+.ao-schola-dock[data-shared="true"][data-show-translation="true"] .ao-schola-main{
+  height:46px;min-height:46px
+}
+.ao-schola-dock[data-shared="true"] .ao-schola-meta{margin-top:4px;gap:3px}
 .ao-schola-resize{position:absolute;top:0;left:25%;right:25%;height:10px;cursor:ns-resize;touch-action:none}
 .ao-schola-resize:before{content:"";position:absolute;left:50%;top:3px;width:34px;height:2px;border-radius:2px;background:color-mix(in srgb,var(--ao-mass-accent) 28%,transparent);transform:translateX(-50%)}
 .ao-schola-title{display:flex;align-items:center;gap:8px;min-height:21px;padding-right:54px}
 .ao-schola-title .ao-icon-mask{width:22px;height:22px;color:var(--ao-mass-accent-text)}
 .ao-schola-kicker{font:700 8.5px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.13em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
 .ao-schola-page{font:700 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--ao-mass-accent-text)}
+.ao-schola-status{font:600 8px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.06em;color:#9aa79b}
+.ao-schola-status[hidden]{display:none!important}
 .ao-schola-main{
   position:relative;height:58px;margin-top:6px;overflow:hidden;border-top:1px solid rgba(255,255,255,.045);
   border-bottom:1px solid rgba(255,255,255,.045);cursor:pointer;display:flex;align-items:center
@@ -1554,6 +1580,8 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
 
   const schola = persist(moment.schola, previous.schola);
   const sharedTextWithSchola = moment.sharedTextWithSchola === true;
+  const sharedScholaControls=moment.sharedScholaControls===true ||
+    (moment.cardUpdate===false && previous.sharedScholaControls===true);
   const guide = moment.guide?.registryAvailable === true && moment.guide?.text
     ? Object.freeze({
         text:String(moment.guide.text),
@@ -1597,7 +1625,9 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
     // suppress the control just because a *priest* paragraph contains the
     // same words as a Schola part that has NOT yet begun.
     scholaShared:sharedTextWithSchola && !schola?.benedictusHold && Boolean(textValue(schola)),
-    scholaVisible:(!sharedTextWithSchola || schola?.benedictusHold===true) && Boolean(textValue(schola)),
+    sharedScholaControls,
+    scholaVisible:(!sharedTextWithSchola || schola?.benedictusHold===true ||
+      sharedScholaControls) && Boolean(textValue(schola)),
     guide,
     priestPositionIconKey:moment.priestPositionIconKey ?? null,
     priestActionIconKey:moment.priestActionIconKey ?? null,
@@ -1815,7 +1845,7 @@ export function buildReaderShellMarkup(prepared = {}) {
 
   <div class="ao-schola-dock" data-channel="schola" data-active="false" data-collapsed="false" data-show-translation="false">
     <span class="ao-schola-resize" data-schola-resize aria-hidden="true"></span>
-    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-page" data-role="schola-page"></span></div>
+    <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
     <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span></div>
     <div class="ao-schola-meta">
@@ -2018,6 +2048,7 @@ export function createReaderDomAdapter({
   let sectionItems=Array.isArray(sections)?[...sections]:[];
   let selectedFaithfulRowId=null;
   let scholaCollapsed=false;
+  let scholaManuallyResized=false;
   let scholaHeight=(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches ? 166 : 150);
   let scholaExpandedHeight=scholaHeight;
   let scholaTranslationVisible=false;
@@ -2162,7 +2193,7 @@ export function createReaderDomAdapter({
       OFFERTORY:"OFFERTORY CHANT",
       SANCTUS_BENEDICTUS:"SANCTUS / BENEDICTUS",
       AGNUS_DEI:"AGNUS DEI",
-      COMMUNION:"COMMUNION HYMN",
+      COMMUNION:"COMMUNION ANTIPHON",
     })[String(trackId??"")] ?? "SCHOLA";
   }
 
@@ -2192,7 +2223,7 @@ export function createReaderDomAdapter({
       Boolean(source.benedictusHold) || Number(source.index)>=Number(source.total)-1;
     const release=root.querySelector("[data-schola-release]");
     if(release){
-      release.hidden=!source?.benedictusHold;
+      release.hidden=!source?.benedictusHold || source?.benedictusReleaseAllowed!==true;
       release.textContent=source?.sanctusPerformance==="POLYPHONIC"
         ? "BEGIN BENEDICTUS · AFTER CHALICE" : "BEGIN BENEDICTUS · WHEN HEARD";
     }
@@ -2222,15 +2253,10 @@ export function createReaderDomAdapter({
     scholaTickerFinishedIdentity=identity;
     const progress=root.querySelector('[data-role="schola-progress"]');
     if(progress)progress.style.width="100%";
+    // This is the end of a *text animation*, not the end of singing.
+    // Never call onScholaAdvance here. Only the Schola's explicit previous/
+    // next controls may move its phrase, independently of priestly scroll.
     scholaAnimation=null;scholaProgressRaf=0;scholaFallbackTimer=0;
-    if(scholaPaused||identity!==scholaTickerIdentity)return;
-    if(typeof onScholaAdvance==="function"){
-      const before=current?.schola;
-      const next=onScholaAdvance(before,current,prepared);
-      if(next?.schola?.segmentId===before?.segmentId && next?.complete){
-        scholaTickerIdentity=identity;
-      }
-    }
   }
 
   function startScholaTicker({force=false}={}){
@@ -2377,6 +2403,13 @@ export function createReaderDomAdapter({
           ? schola.english
           : (schola.latin??textValue(schola)))
       : null);
+    const status=root.querySelector('[data-role="schola-status"]');
+    if(status){
+      status.textContent=schola ? "EXPECTED" : "";
+      status.hidden=!schola;
+      status.setAttribute?.("aria-label","Schola text expected; actual singing not detected");
+    }
+    dock.dataset.musicStatus=schola?.musicStatus??"NOT_ACTIVE";
     const page=root.querySelector('[data-role="schola-page"]');
     if(page)page.textContent=schola?.total ? String((Number(schola.index)||0)+1)+" / "+String(schola.total) : "";
     const progress=root.querySelector('[data-role="schola-progress"]');
@@ -2406,11 +2439,15 @@ export function createReaderDomAdapter({
     const dock=root.querySelector(".ao-schola-dock");
     if(!dock)return;
     dock.dataset.collapsed=String(scholaCollapsed);
+    dock.dataset.shared=String(current?.scholaShared===true && current?.sharedScholaControls===true);
+    dock.dataset.resized=String(scholaManuallyResized);
     dock.style.setProperty?.("--ao-schola-height",scholaHeight+"px");
     const shell=root.querySelector("[data-ao-reader-shell]");
     const scholaActive=dock.dataset.active==="true";
     const scholaRelevant=Boolean(textValue(current?.schola)) && current?.scholaShared!==true;
-    const reserve=(scholaActive||scholaRelevant||scholaCollapsed) ? (scholaCollapsed ? 44 : scholaHeight) : 0;
+    const reserve=(scholaActive||scholaRelevant||scholaCollapsed)
+      ? (scholaCollapsed ? 44 :
+          dock.dataset.shared==="true" && !scholaManuallyResized ? 132 : scholaHeight) : 0;
     if(shell){
       shell.dataset.scholaVisible=String(scholaActive);
       shell.dataset.scholaRelevant=String(scholaRelevant);
@@ -2771,6 +2808,7 @@ export function createReaderDomAdapter({
       resize.addEventListener("pointermove",event=>{
         if(pointerId==null||event.pointerId!==pointerId)return;
         const next=Math.max(44,Math.min(180,startHeight+(startY-event.clientY)));
+        scholaManuallyResized=true;
         const mobile=Boolean(root.ownerDocument?.defaultView?.matchMedia?.("(max-width:760px)")?.matches);
         const expandedMinimum=mobile?158:128;
         scholaCollapsed=next<expandedMinimum-16;

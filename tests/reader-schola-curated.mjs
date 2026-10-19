@@ -83,6 +83,22 @@ state=verify(cardForCue("AO.SM.C0091"),"CREDO","first Credo Schola cue");
 assert.equal(state.schola.cueId,"AO.SM.C0091");
 verify(titled("Offertory · Invitation and Antiphon"),"OFFERTORY",
   "Offertory resolves the precise B030 Proper block");
+// One chant scene must survive the successive priestly offering prayers,
+// even though the B030 written proper only occurs on the first card.
+for(const title of [
+  "Offertory · Offering of the Bread and Chalice",
+  "Offertory · Humility and Invocation",
+  "Offertory · Incensation",
+  "Offertory · Lavabo and Offering to the Trinity",
+  "Orate, fratres · Prayer and Response",
+  "Secret Prayer and Conclusion",
+]){
+  verify(titled(title),"OFFERTORY","Offertory chant persisted across "+title);
+}
+assert.equal(schola.reachLiturgicalBoundary("AO.SM.C0134").trackId,"OFFERTORY",
+  "Private Secret text incorrectly cut off Offertory chant");
+assert.equal(schola.reachLiturgicalBoundary("AO.SM.C0135").trackId,null,
+  "Secret's public conclusion must close Offertory music without claiming a heard ending");
 const whole=titled("Sanctus — Benedictus");
 assert.ok(whole,"The celebrant's Sanctus and Benedictus must share one card");
 assert.ok(whole.paragraphs.some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0145")));
