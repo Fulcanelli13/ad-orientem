@@ -17,7 +17,7 @@ assert.equal(reader.petitionsDuplicated,false);
 assert.equal(reader.cards[2].paragraphs.length,112);
 assert.equal(reader.cards[5].handoff,"INTROIT");
 assert.equal(census.schema,"ao-rogation-187-vernacular-owner-census-v1");
-assert.equal(census.status,"187_SOURCE_ROWS_OWNER_AND_HISTORICAL_PARALLEL_INDEXED_NOT_PUBLICATION_CERTIFIED");
+assert.equal(census.status,"187_SOURCE_ROWS_OWNER_AND_OLDER_NEWER_WITNESSES_FOUND_NOT_PUBLICATION_CERTIFIED");
 assert.equal(census.rows.length,187);
 assert.equal(renderRows.length,187);
 assert.equal(new Set(census.rows.map(x=>x.rowId)).size,187);
@@ -34,7 +34,8 @@ assert.deepEqual(summary.classification,{
  historicalLitanyEnglishFrenchLineMappedUnapproved:96,
  historicalLitanyEnglishOnlyFrenchOmitted:2,
  historicalLitanyNeitherHistoricWitness:3,
- sourceSpecificScriptureChantSearch:3
+ sourceSpecificScriptureChantSearch:0,
+ laterRitualOpeningEnFrCandidateUnapproved:3
 });
 assert.equal(summary.confirmedGenuinelyMissingTranslations,null);
 assert.equal(census.historicalLitanyLineAlignment.totalNativeInvocations,112);
@@ -86,7 +87,7 @@ for(let i=0;i<census.rows.length;i++){
  "HISTORICAL_POST_LITANY_DIALOGUE","HISTORICAL_PSALM_VERSE",
  "HISTORICAL_SUFFRAGES","HISTORICAL_COLLECT_INVITATION",
  "HISTORICAL_EN_FR_TEN_COLLECTS_PAIR","HISTORICAL_EN_FR_FINAL_DIALOGUE",
- "SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH"].includes(row.triage),
+ "LATER_RITUAL_OPENING_EN_FR_CANDIDATE_UNAPPROVED"].includes(row.triage),
    "Unrecognised review queue "+row.rowId+" "+row.triage);
 }
 assert.deepEqual(census.stages,{
@@ -106,7 +107,13 @@ assert.equal(census.rows.find(x=>x.rowId==="ROG-R05-OR").ordinaryCueIds.includes
 assert.equal(census.rows.find(x=>x.rowId==="ROG-R04-R").ordinaryCueIds.includes("AO.SM.C0210"),true);
 assert.equal(census.rows.find(x=>x.rowId==="ROG-R05-F2").ordinaryCueIds.includes("AO.SM.C0034"),true);
 assert.equal(census.rows.find(x=>x.rowId==="ROG-R05-F3").ordinaryCueIds.includes("AO.SM.C0035"),true);
-assert.ok(census.rows.filter(x=>x.triage==="SCRIPTURE_CHANT_EN_FR_SOURCE_SEARCH")
-  .every(x=>x.stage==="ROG-R01"&&x.rowId!=="ROG-R01-G"));
+const openingCandidates=census.rows.filter(x=>
+  x.triage==="LATER_RITUAL_OPENING_EN_FR_CANDIDATE_UNAPPROVED");
+assert.deepEqual(openingCandidates.map(x=>x.rowId),
+ ["ROG-R01-A1","ROG-R01-P","ROG-R01-A2"]);
+assert.equal(summary.laterWitnessCandidateCoverage.publicationApproved,false);
+assert.equal(summary.laterWitnessCandidateCoverage.missingTranslationCount,null);
+assert.match(summary.laterWitnessCandidateCoverage.englishRights,/COPYRIGHT_1964/);
+assert.equal(summary.laterWitnessCandidateCoverage.sourceScopeOnly["ROG-R03"].count,112);
 assert.ok(census.releaseRequirements.some(x=>x.includes("never conflate")));
 console.log("PASS Rogations 187-row source ownership census, 96 EN/FR mapped Litany candidates, 2 EN-only and 3 in neither historical edition, 37 exact corpus candidates; no invented translation gaps.");
