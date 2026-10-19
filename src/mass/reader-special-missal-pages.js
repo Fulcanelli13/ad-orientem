@@ -243,17 +243,29 @@ export function projectSpecialRiteReadingPages(stageId,paragraphs,{mode="MISSAL"
  * advance. Previous at stage entry will reopen the prior stage's last page.
  */
 export function createSpecialRiteMissalPageCursor({mode="MISSAL"}={}){
+  let projectionMode=String(mode).toUpperCase();
   let stageId=null,active=null,pageIndex=0,enterFrom="next";
+  function setMode(nextMode){
+    const next=String(nextMode??"").toUpperCase();
+    if(!["MISSAL","SIMPLE","LIVE"].includes(next))
+      throw new Error("SPECIAL_MISSAL_CURSOR_MODE_INVALID:"+next);
+    if(next===projectionMode)return false;
+    projectionMode=next;
+    // Reopen the current ceremonial stage in the newly selected reader mode.
+    // Rebuild only the page projection, not its source controller/event clock.
+    stageId=null;active=null;pageIndex=0;enterFrom="next";
+    return true;
+  }
   function project(id,sourceRows){
     const key=String(id??"");
     const reset=stageId!==key;
     if(reset){
       stageId=key;
-      active=projectSpecialRiteReadingPages(key,sourceRows,{mode});
+      active=projectSpecialRiteReadingPages(key,sourceRows,{mode:projectionMode});
       pageIndex=enterFrom==="previous"?active.length-1:0;
       enterFrom="next";
     }else if(!active || active[0]?.sourceRowCount!==(sourceRows??[]).length){
-      active=projectSpecialRiteReadingPages(key,sourceRows,{mode});
+      active=projectSpecialRiteReadingPages(key,sourceRows,{mode:projectionMode});
       pageIndex=Math.min(pageIndex,active.length-1);
     }
     const page=active[pageIndex];
@@ -274,6 +286,6 @@ export function createSpecialRiteMissalPageCursor({mode="MISSAL"}={}){
     return false;
   }
   function clear(){stageId=null;active=null;pageIndex=0;enterFrom="next";}
-  return Object.freeze({project,turn,clear,
-    snapshot:()=>Object.freeze({stageId,pageIndex,totalPages:active?.length??0})});
+  return Object.freeze({project,turn,clear,setMode,
+    snapshot:()=>Object.freeze({stageId,pageIndex,totalPages:active?.length??0,mode:projectionMode})});
 }
