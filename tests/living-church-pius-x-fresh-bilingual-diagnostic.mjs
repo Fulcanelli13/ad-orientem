@@ -52,9 +52,9 @@ function group(rows){const sums={total:rows.length};
 const observations={schema:"AO_LIVING_CHURCH_PIUS_X_FRESH_60_OBSERVATIONS_V1",
  fixtureStatus:corpus.status,
  authoredBy:"Assistant editor; no independent user test sample",
- runKind:"FIRST_EXECUTION_OF_FROZEN_60_PLUS_8_PROMPTS",
- baselineRouterCommit:"2077725c6dcd44f4de73601f6816504c2ee18caa",
- meaning:"These are new author-curated questions not identical to the existing catalog or previous 48 evaluation utterances. They are NOT independent real visitor data.",
+ runKind:"REPEAT_REGRESSION_ON_PREVIOUSLY_INSPECTED_60_PLUS_8_PROMPTS",
+ firstFrozenFixtureCommit:"2077725c6dcd44f4de73601f6816504c2ee18caa",
+ meaning:"These were new in the original run 39272885295, but are now previously inspected regression prompts. Do not call current measurements fresh or independent visitor data.",
  results:{},records:{}};
 const ids=new Set();
 for(const [name,engine] of Object.entries(engines)){
@@ -109,11 +109,11 @@ for(const [name,engine] of Object.entries(engines)){
  observations.results[name]={allPrimary:group(rows),perLang,perKind,confirmedFollowups:group(followups),
    noGeneratedAnswers:true};
  observations.records[name]={primary:rows,followups};
- console.log("SPX_NEW_BILINGUAL_EVALUATION "+JSON.stringify({engine:name,...observations.results[name]}));
+ console.log("SPX_BILINGUAL_REPEATED_REGRESSION "+JSON.stringify({engine:name,...observations.results[name]}));
  for(const r of rows.filter(x=>["WRONG_SPECIFIC_OR_SCOPE","UNSAFE_HELD_PROPOSAL","UNSUPPORTED_OUTSIDE_PROPOSAL"].includes(x.classification)))
-  console.log("SPX_NEW_BILINGUAL_FAILURE "+JSON.stringify({engine:name,...r}));
+  console.log("SPX_BILINGUAL_REPEATED_REGRESSION_ERROR "+JSON.stringify({engine:name,...r}));
 }
 mkdirSync("research-out",{recursive:true});
 const path="research-out/living-church-pius-x-fresh-60-plus-8-results.v1.json";
 writeFileSync(path,JSON.stringify(observations,null,2)+"\n");
-console.log("SPX_NEW_BILINGUAL_REPORT "+path);
+console.log("SPX_BILINGUAL_REPEATED_REGRESSION_REPORT "+path);
