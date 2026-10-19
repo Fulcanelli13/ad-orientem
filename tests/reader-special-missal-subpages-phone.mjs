@@ -133,10 +133,16 @@ try{
         await click();
         assert.equal(await stage(),"CORPUS-R02");
         assert.equal(await rows(),2,"Pange lingua first two stanzas not printed");
+        assert.equal(await page.locator(".ao-line-secondary").count(),2,
+          "Corpus Christi French Missal did not render its first two approved editorial stanzas");
+        assert.match(await page.locator(".ao-line-secondary").first().innerText(),
+          /Chante, ô ma langue/,"Incorrect French Eucharistic stanza parallel");
         await click();
         assert.equal(await stage(),"CORPUS-R02",
           "Turning a Corpus Christi chant page advanced the procession event");
         assert.equal(await rows(),2,"Pange lingua last two stanzas not printed");
+        assert.equal(await page.locator(".ao-line-secondary").count(),2,
+          "Second Corpus Christi hymn page silently fell back to Latin only");
         await click();
         assert.equal(await stage(),"CORPUS-R03");
         assert.notEqual(await page.evaluate(()=>
@@ -144,6 +150,8 @@ try{
           "PROCESSIONAL","Nonparticipant was forced into Corpus Christi procession");
         await click();
         assert.equal(await stage(),"CORPUS-R04");
+        assert.equal(await page.locator(".ao-line-secondary").count(),2,
+          "Tantum ergo two approved editorial French stanzas missing");
         await click();
         assert.equal(await stage(),"CORPUS-R05");
         assert.equal(await rows(),2,"Benediction versicle and response must stay together");
@@ -151,6 +159,9 @@ try{
         assert.equal(await stage(),"CORPUS-R05",
           "Benediction oration page advanced its source action prematurely");
         assert.equal(await rows(),3,"Orémus/collect/Amen must stay on one page");
+        assert.equal(await page.locator(".ao-line-secondary").count(),3,
+          "Corpus Benediction French Orémus/collect/Amen were not rendered");
+        assert.match(await page.locator(".ao-line-secondary").first().innerText(),/Prions/);
         await click();
         assert.equal(await stage(),"CORPUS-R06");
         await click("previous");
