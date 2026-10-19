@@ -74,6 +74,25 @@ const T=Object.freeze([
     french:"La génération à venir parlera du Seigneur ; on annoncera sa justice à un peuple qui naîtra : « Voilà ce que le Seigneur a fait. »",
   }),
 ]);
+// Freeze EACH Latin donor group's code-unit fingerprint, not merely the
+// first and last incipits. If Latin source collation changes, corresponding
+// editorial translations must be reviewed before publication.
+const PINNED_LATIN_DIGESTS=Object.freeze([
+  "3d7e1cae","b786ec3e","55bf3ccf","45796770","8bf37bcd",
+  "0271f527","416ba726","af4c41a8","aaa4b3aa","cce47cf3",
+  "6333e365","4f338bbe","a849f500",
+]);
+function latinDigest(value){
+  let hash=0x811c9dc5;
+  for(const character of String(value??"")){
+    // Preserve the exact UTF-16 storage witness, including its accents.
+    for(let j=0;j<character.length;j++){
+      hash^=character.charCodeAt(j);
+      hash=Math.imul(hash,0x01000193)>>>0;
+    }
+  }
+  return hash.toString(16).padStart(8,"0");
+}
 const FIRST_LATIN="Deus meus, Deus meus, quare me dereliquísti? Longe abes a précibus, a verbis clamóris mei.";
 const FIRST_EN="My God, my God, why have You forsaken me? You are far from my pleas, from the words of my cry.";
 const FIRST_FR="Mon Dieu, mon Dieu, pourquoi m'avez-vous abandonné ? Vous êtes loin de mes supplications, des paroles de mon cri.";
@@ -87,7 +106,9 @@ export function buildHolyThursdayPsalmRows(stripping,{clericsPresent=null}={}){
     !Array.isArray(verses)||verses.length!==HOLY_THURSDAY_PSALM_SOURCE.verseGroups ||
     !String(verses[0]).startsWith(FIRST_LATIN) ||
     !String(verses[0]).includes("Deus meus, clamo per diem") ||
-    !String(verses.at(-1)).includes("Hæc fecit Dóminus"))
+    !String(verses.at(-1)).includes("Hæc fecit Dóminus") ||
+    latinDigest(latin)!=="754fdfed" ||
+    verses.some((verse,i)=>latinDigest(verse)!==PINNED_LATIN_DIGESTS[i]))
     throw new Error("HOLY_THURSDAY_PSALM_WITNESS_CHANGED_RECOLLATION_REQUIRED");
   const row=(id,kind,body,en,fr)=>Object.freeze({
     id,kind,latin:String(body).trim(),english:en,french:fr,
