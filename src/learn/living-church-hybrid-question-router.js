@@ -34,6 +34,24 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
   throw Error("Source-constrained symbolic concept registry required");
  const legacy=createSharedQuestionRouter(catalog);
  const byId=new Map(catalog.topics.map(t=>[t.id,t]));
+ const issuedDecisions=new WeakMap();
+ const remember=result=>{
+  if(!result||!["source_navigation","offer_handoff"].includes(result.kind))return result;
+  const canonical=byId.get(result.topicId);
+  const immutable=Object.freeze({...result,
+   sourceRefs:Object.freeze(canonical.sourceRefs.map(x=>Object.freeze({...x}))),
+   matchEvidence:result.matchEvidence?Object.freeze({...result.matchEvidence}):null,
+   requiresQuestionConfirmation:result.requiresQuestionConfirmation===true});
+  issuedDecisions.set(immutable,Object.freeze({
+   originalQuestion:immutable.originalQuestion,
+   topicId:canonical.id,
+   kind:immutable.kind,
+   needsConfirmation:immutable.requiresQuestionConfirmation,
+   original:immutable}));
+  return immutable;
+ };
+ const issued=proposal=>proposal&&issuedDecisions.get(proposal);
+
  const glossary=conceptRegistry.concepts.map(c=>{
   if(!c.id||!c.terms?.en?.length||!c.terms?.fr?.length||!Object.keys(c.targets||{}).length
     ||c.provenance!=="EDITORIAL_TOPIC_MATCHING_ONLY")
@@ -169,7 +187,7 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
    ||base.matchEvidence?.basis==="EXACT_VARIANT"
    ||base.matchEvidence?.basis==="EXPLICIT_REFORMULATION_CHOICE"
    ||base.matchEvidence?.basis==="CONTEXT_FOLLOW_UP_RULE")
-   return base;
+   return remember(base);
   const intent=cues(question);
   if(intent.personalMoral&&/\b(is that a sin|is it a sin|est ce un peche)\b/.test(intent.raw))
    return {kind:"no_coverage",reason:"UNSUPPORTED_PERSONAL_MORAL_APPLICATION",
@@ -201,20 +219,21 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
    lexicalScore:first.lex,conceptScore:first.semantic,concepts:first.concepts,
    model:HYBRID_QUESTION_RETRIEVAL_VERSION,usesEmbeddings:false};
   if(out.kind==="offer_handoff"||out.kind==="source_navigation")
-   return {...out,matchEvidence:basis,requiresQuestionConfirmation:true,
-    approvedReply:false,answerText:null};
-  return {...out,matchEvidence:basis,approvedReply:false,answerText:null};
+   return remember({...out,matchEvidence:basis,requiresQuestionConfirmation:true,
+    approvedReply:false,answerText:null});
+  return remember({...out,matchEvidence:basis,approvedReply:false,answerText:null});
  }
 
  function confirmSourceNavigation(proposal,{confirmQuestion=false}={}){
-  const topic=byId.get(proposal?.topicId);
-  if(proposal?.kind!=="source_navigation"||!topic
+  const decision=issued(proposal);
+  const topic=byId.get(decision?.topicId);
+  if(!decision||decision.kind!=="source_navigation"||!topic
    ||topic.coverage!=="SOURCE_NAVIGATION_ONLY"||!topic.sourceRefs.length
    ||topic.character!==proposal.character
    ||JSON.stringify(proposal.sourceRefs)!==JSON.stringify(topic.sourceRefs)
    ||proposal.navigationRoute!==catalog.owners[topic.character].navigateTo)
    return {kind:"invalid_navigation",reason:"UNVERIFIED_OR_FORGED_SOURCE_REFERENCE",answerText:null};
-  if(proposal.requiresQuestionConfirmation===true&&!confirmQuestion)
+  if(decision.needsConfirmation&&!confirmQuestion)
    return {kind:"needs_question_confirmation",topicId:topic.id,
     originalQuestion:proposal.originalQuestion,answerText:null};
   return {kind:"confirmed_source_navigation",topicId:topic.id,
@@ -223,9 +242,19 @@ export function createHybridQuestionRouter(catalog,conceptRegistry){
    sourceRefs:topic.sourceRefs.map(x=>({...x})),
    approvedReply:false,answerText:null,reviewOnly:true};
  }
- return Object.freeze({version:HYBRID_QUESTION_RETRIEVAL_VERSION,
+ function acceptIssuedHandoff(proposal,args={}){
+  const decision=issued(proposal);
+  if(!decision||decision.kind!=="offer_handoff")
+   return {kind:"invalid_handoff",reason:"UNISSUED_OR_FORGED_HANDOFF",answerText:null};
+  // Do not trust caller-modified confirmation flags, references or routing fields.
+  return legacy.acceptHandoff(decision.original,{
+   ...args,
+   confirmQuestion:decision.needsConfirmation?args.confirmQuestion===true:true
+  });
+ }
+  return Object.freeze({version:HYBRID_QUESTION_RETRIEVAL_VERSION,
   status:"RESEARCH_ONLY_NO_EMBEDDINGS",
   topicCount:catalog.topics.length,conceptCount:glossary.length,
-  match,rank,confirmSourceNavigation,acceptHandoff:(proposal,args)=>legacy.acceptHandoff(proposal,args),
+  match,rank,confirmSourceNavigation,acceptHandoff:acceptIssuedHandoff,
   listTopics:legacy.listTopics});
 }
