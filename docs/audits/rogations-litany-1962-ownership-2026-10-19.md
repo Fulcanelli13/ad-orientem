@@ -337,3 +337,65 @@ a historical witness is not yet an approved canonical translation
 owner. The next gate is original print/1962 collation and editorial
 decision by exact source row, starting with O5/O8/O9/O10.
 
+
+## 9. Psalm LXIX and post-Litany suffrages — historical EN/FR crosswalk
+
+The remaining **eight canonical Psalm 69 reader paragraphs** and
+**24 ordered suffrage dialogue rows** in stage `ROG-R04` have been
+reconciled against the **already-located 1883 English** Catholic Prayer
+Book and the **1862 French** Corneille/Marty-Laveaux text. The
+source-only row register is
+`data/mass/rogation-psalm69-suffrages-historical-crosswalk.v1.json`;
+the corresponding executable invariant is
+`tests/rogations-psalm69-suffrages-historical-crosswalk.mjs`.
+
+| Canonical rows | Existing witnesses located | Resolution |
+| --- | --- | --- |
+| `ROG-R04-PS1…7` | **7/7** English and **7/7** French historical prose parallels | Aligned by verse/meaning; English prose is one run-on paragraph, French is Latin/French verse-aligned. Not 1962 translation approval |
+| `ROG-R04-PS8` | Doxology in both editions, **abbreviated** after `Gloria Patri` | Full canonical Latin already matches the PRAY `foundations_glory_be` trilingual Latin exactly after accent/punctuation normalization; inspect this existing EN/FR owner candidate rather than finishing the historical abbreviations by inventing text |
+| `ROG-R04-S1…22` | **22/22** historical English and **22/22** historical French role-ordered suffrages | Both transcriptions contain the complete sequence, but English groups ten rows in one paragraph and the following twelve in another; role boundaries belong to the 1962 source, not formatting of the printed historical translation |
+| `ROG-R04-S23…24` | **Not in either 1883 or 1862 historical source at this stage** | The `Dominus vobiscum / Et cum spiritu tuo` exchange exists in the native Rogations source and already has Ordinary text-owner candidates `AO.SM.C0034` / `AO.SM.C0035`; do not remove, retranslate or graft event timing |
+
+Historical source loci: [1883 English Litany](https://en.wikisource.org/w/index.php?title=The_Catholic_Prayer_Book_and_Manual_of_Meditations/The_Litany_of_the_Saints&oldid=12282621)
+(`Psalm LXIX` and the following verses/suffrages),
+and [1862 French entire chapter](https://fr.wikisource.org/wiki/%C5%92uvres_de_P._Corneille_(Marty-Laveaux)/Tome_9/Les_sept_psaumes_pénitentiaux)
+(`psalmus lxix` French prose/Latin parallels, then Latin V/R, separate
+French poetic Psalm LXIX, then French V/R). The French **poetic
+paraphrase is excluded** from canonical Litany/Missal wording reuse.
+
+**Four editorial cautions to preserve:**
+
+1. Psalm LXIX is the **Vulgate Psalm 69**, generally numbered **Psalm
+   70** in Hebrew-based modern Psalters. Align each of its seven
+   substantive source paragraphs to the correct Latin recension, not
+   by a naive English Bible title.
+2. The 1883 English first sentence begins with the historical wording
+   “Incline unto my aid” rather than a mechanically direct rendering
+   of `Deus, in adjutorium meum intende`. It is a witness for
+   comparison, **not automatically the selected liturgical translation**.
+3. Both historical **Gloria/Sicut erat** passages are abbreviated with
+   “etc.”, while the canonical donor contains the entire Latin
+   doxology. The existing `foundations_glory_be` prayer is a
+   **complete trilingual exact-Latin candidate**, subject to the
+   original PRAY source-certification hold; do not represent
+   historical `etc.` as full parallel text.
+4. The 1862 Latin Wikisource line for `Esto nobis… turris
+   fortitudinis` reads **`fortifudinis`**, a suspect transcription.
+   Retain the canonical `fortitudinis` until original facsimile
+   collation. The historical source's omission of the concluding
+   `Dominus vobiscum` pair likewise **does not** prove it is absent
+   from the 1962 procession.
+
+**Disposition:** All **32** rows are accounted for in source-owner
+review; **29** have substantive historical EN/FR wording candidates
+(7 Psalm verses + 22 V/R rows), **one** has an abbreviated historical
+doxology plus an existing full PRAY owner candidate, and the last
+**two** have existing Ordinary cue owners. **Zero EN or FR rows
+promoted**, **zero new translations written**, **zero source events,
+roles, 112-invocation Litany rows or native source Latin changed**.
+The prior whole-rite exact-match ledger is unchanged (**187 Rogation
+source rows; 22 Ordinary + 15 PRAY exact matching occurrences; 150
+still without an exact owner from those two families**). Do not
+subtract 32 from the 150: the 32-row historical evidence is not
+equivalent to 32 newly approved owner identities.
+
