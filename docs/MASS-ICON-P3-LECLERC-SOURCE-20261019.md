@@ -31,6 +31,12 @@ The 1661 artwork is historical iconographic evidence, **not** an independent sou
 
 This source is complementary to the restricted Romanitas 1944 photo series, Carlos Sierra's Cathopic photograph, the in-copyright 1934 Subercaseaux lithograph, and the uncertain 1897 Lanslots book. It is a substantial improvement in provenance and rights evidence **but not yet a finished or visually audited picture**.
 
+## Rubrical correction — Schumacher is NOT proven to depict consuming the Host
+
+*Ritus servandus* X.4 requires two separate actions: (a) consuming both halves of the Host with elbows on the altar; (b) **after consumption**, rising, joining hands before the face and pausing in meditation. Schumacher's drawing clearly depicts **hands joined before the face**, but neither Host halves nor the actual act of consumption. Therefore, while its printed subject is "Priest Communion", the **closest identifiable pose may be post-consumption meditation**. It may be useful as Mass context or a rubric illustration, **not** as direct source evidence for the essential `RECEIVES HOST` action icon. Do not synthesize or assume the missing Host. The chalice on the mensa is not evidence of the celebrant drinking from it.
+
+Authority: https://1962ordo.today/1962-rubrics/ , *Ritus servandus* X.4, immediately following *Corpus Domini nostri Jesu Christi*.
+
 ## Second original image (full illustration inspected): Schumacher, 1920
 
 A distinctly stronger, **actually viewed** original is Philipp Schumacher's *Kněžské přijímání* (Priest Communion), published in Wilhelm Pichler's *Katholisches Religionsbüchlein für die unteren Klassen der Volksschule* (Vienna: Österreichischer Schulbücherverlag, 1920), **page 97**. Wikimedia Commons stores the 1,265 × 964 scan and describes the artist, source and **public-domain / mechanical scan** terms:
