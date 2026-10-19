@@ -1298,6 +1298,7 @@ export async function mountNativeReaderPreview({
   if(String(readerModel?.presentationMode??"").toUpperCase()==="MISSAL")
     readerModel=projectPostureAwareMissalCards(readerModel,{
       cueState:ready.cueState,preferences:customaryPrefs,
+      postureRegistry:ready.registries?.postures,
     });
   ready.scholaState.setSanctusPerformance?.(customaryPrefs.sanctusPerformance);
   let riteChoice=null;
@@ -2570,6 +2571,7 @@ export async function mountNativeReaderPreview({
       mode:nextMode,
       reviewExpandedCards:ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
       postureCueState:ready.cueState,posturePreferences:customaryPrefs,
+      postureRegistry:ready.registries?.postures,
     });
     sourceModel=rebuilt.sourceModel;
     // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
