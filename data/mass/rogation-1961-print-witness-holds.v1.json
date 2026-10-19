@@ -1,0 +1,176 @@
+{
+  "schema": "AO_ROGATION_1961_PRINT_WITNESS_HOLDS_V1",
+  "version": "2026-10-19",
+  "status": "TARGETED_PRINT_WITNESS_RECONCILIATION_PENDING_1962_EDITION",
+  "authority": {
+    "rubric": "Missale Romanum 1962, Rubricae generales 82-90",
+    "rubricUrl": "https://la.wikisource.org/wiki/Missale_Romanum_1962",
+    "norm": "Litany petitions are not doubled, even though the chant booklet retains an older instruction.",
+    "donor": "data/presentation/reader-rogations.v1.json",
+    "donorStage": "SIX_NATIVE_RITES_AND_186_SOURCE_TEXT_ROWS_PRESERVED",
+    "cantionalWitness": {
+      "edition": "The Liber Usualis, Solesmes, 1961",
+      "source": "https://icksp.org.uk/newbrighton/wp-content/uploads/sites/2/2020/04/Rogations.pdf",
+      "printedPages": [
+        835,
+        836,
+        837,
+        838,
+        839,
+        840
+      ],
+      "pdfPagesZeroIndexed": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "scope": "CHANT_AND_PROCESSION_TEXT_WITNESS_NOT_SUPREME_1962_RUBRICAL_AUTHORITY",
+      "limitations": "Targeted visible-page verification; not full individual-word certified 1962 Missal or edition-wide collation."
+    }
+  },
+  "sourcePageMap": [
+    {
+      "stage": "ROG-R01",
+      "sourceLeafCount": 4,
+      "first": "ROG-R01-A1",
+      "last": "ROG-R01-A2",
+      "printedPageStart": 835,
+      "printedPageEnd": 835
+    },
+    {
+      "stage": "ROG-R02",
+      "sourceLeafCount": 18,
+      "first": "ROG-R02-1",
+      "last": "ROG-R02-18",
+      "printedPageStart": 835,
+      "printedPageEnd": 835
+    },
+    {
+      "stage": "ROG-R03",
+      "sourceLeafCount": 112,
+      "first": "ROG-R03-1",
+      "last": "ROG-R03-112",
+      "printedPageStart": 836,
+      "printedPageEnd": 838,
+      "sourceIndexPageRanges": [
+        {
+          "indexStart": 0,
+          "indexEnd": 37,
+          "page": 836
+        },
+        {
+          "indexStart": 38,
+          "indexEnd": 89,
+          "page": 837
+        },
+        {
+          "indexStart": 90,
+          "indexEnd": 111,
+          "page": 838
+        }
+      ]
+    },
+    {
+      "stage": "ROG-R04",
+      "sourceLeafCount": 35,
+      "first": "ROG-R04-PN",
+      "last": "ROG-R04-S24",
+      "printedPageStart": 839,
+      "printedPageEnd": 840
+    },
+    {
+      "stage": "ROG-R05",
+      "sourceLeafCount": 17,
+      "first": "ROG-R05-O1",
+      "last": "ROG-R05-F7",
+      "printedPageStart": 840,
+      "printedPageEnd": 840
+    },
+    {
+      "stage": "ROG-R06",
+      "sourceLeafCount": 0,
+      "first": null,
+      "last": null,
+      "printedPageStart": 840,
+      "printedPageEnd": 840,
+      "note": "Printed 'AT MASS' handoff, distinct from independent reviewed Rogation Mass Proper"
+    }
+  ],
+  "holds": [
+    {
+      "id": "ROG-1961-PRINT-HOLD-01",
+      "issue": "PRINTED_OREMUS_ABSENT_FROM_RITE_READER",
+      "severity": "TEXTUAL_CUE_OMISSION",
+      "stage": "ROG-R05",
+      "sourceLocator": "postLitany.orations",
+      "afterSourceRowId": "ROG-R04-S24",
+      "beforeSourceRowId": "ROG-R05-O1",
+      "printLocator": "p. 840, 'Orémus.' immediately after Dominus vobiscum / Et cum spiritu tuo, before the first collect",
+      "printedLatin": "Oremus.",
+      "donorDisposition": "MISSING_IN_SOURCE_ROWS",
+      "expectedAction": "Check 1962 procession authority, add one source-owned Oremus cue at correct ceremony boundary without changing native six-event graph.",
+      "releaseDisposition": "BLOCKED_FOR_ACTUAL_RITE_TEXT_COMPLETENESS"
+    },
+    {
+      "id": "ROG-1961-PRINT-HOLD-02",
+      "issue": "SILENT_PATERNOSTER_NOT_REPRESENTED_IN_READER",
+      "severity": "AUDIBLE_SILENT_RUBRIC_OMISSION",
+      "stage": "ROG-R04",
+      "sourceLocator": "postLitany.pater",
+      "sourceRowId": "ROG-R04-PN",
+      "printLocator": "p. 839, 'Pater noster, in silence.'",
+      "printedLatin": "Pater noster.",
+      "witnessInstruction": "in silence",
+      "donorDisposition": "TEXT_PRESENT_BUT_VOICE_ROLE_METADATA_UNEXPRESSED",
+      "expectedAction": "Resolve rubrical applicability to 1962 and mark this Pater noster as silent, without changing other Pater noster recitations.",
+      "releaseDisposition": "BLOCKED_FOR_ACCURATE_VOICE_CUE"
+    },
+    {
+      "id": "ROG-1961-PRINT-HOLD-03",
+      "issue": "PRINT_WITNESS_HAS_PONTIFICI_NOSTRO",
+      "severity": "EDITION_VARIANT_NEEDS_ADJUDICATION",
+      "stage": "ROG-R05",
+      "sourceLocator": "postLitany.orations.4",
+      "sourceRowId": "ROG-R05-O5",
+      "printLocator": "p. 840, fifth collect (Omnipotens sempiterne Deus)",
+      "printedLatinFragment": "Pontifici nostro N.",
+      "donorLatinFragment": "Pontifici N.",
+      "independentSecondaryWitness": "https://la.wikisource.org/wiki/Litaniae_Sanctorum",
+      "conflictingSecondaryWitness": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1355",
+      "donorDisposition": "TEXT_DIFFERS_FROM_PHOTOGRAPHED_WITNESS; SECONDARY_EDITIONS_NOT_UNANIMOUS",
+      "expectedAction": "Adjudicate against edition-qualified 1962 procession source, do not blindly insert or delete 'nostro'.",
+      "releaseDisposition": "BLOCKED_FOR_EDITION_DECISION"
+    }
+  ],
+  "observations": [
+    {
+      "id": "ROG-1961-PRINT-PAGE-01",
+      "issue": "GLORIA_PATRi_PSALM_END_BOUNDARY",
+      "printed": "p. 839 prints Gloria Patri and Sicut erat as two numbered psalm lines (8,9)",
+      "donor": "postLitany.psalm69.7 stores both in one Latin source row",
+      "status": "TEXT_PRESENT_DIFFERENT_SEGMENTATION_NOT_MISSING_TRANSLATION",
+      "action": "Confirm display segmentation and source-boundary policy without splitting canon silently."
+    },
+    {
+      "id": "ROG-1961-PRINT-RUBRIC",
+      "issue": "INVOCATIONS_DUPLICATED_OLDER_NOTE",
+      "printed": "p. 835 says each invocation doubled if a procession takes place",
+      "bindingRule": "1962 Rubricae generales §82 says 'quae tamen non duplicantur'",
+      "status": "RESOLVED_1962_RUBRIC_TAKES_PRECEDENCE"
+    }
+  ],
+  "summary": {
+    "sourceRows": 186,
+    "litanyInvocations": 112,
+    "printedPagesInspected": 6,
+    "openDiscrepancies": 3,
+    "confirmed1962EditionWordingReplacements": 0,
+    "knownTranslationGaps": null,
+    "sourceRowsCertifiedAgainst1962Print": null,
+    "publicationAllowed": false,
+    "next": "Resolve three specific print holds with correct 1962 authority, then collate full Latin and edition-bound EN/FR witnesses; no fresh translation before canonical-owner search."
+  }
+}
