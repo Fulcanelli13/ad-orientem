@@ -1,0 +1,375 @@
+{
+  "schema": "ao-cross-rite-auditory-cues-review-v1",
+  "date": "2026-10-19",
+  "status": "RESEARCH_ONLY_NOT_RUNTIME_AUTHORITY",
+  "note": "Ownership registry for future review. The 1962 Mass event graph, published special-rite graphs, and observed Canon stage remain source of truth; nothing in this file activates icons, sound playback, or timers.",
+  "instruments": [
+    "ALTAR_BELL",
+    "CHURCH_BELLS",
+    "PROCESSIONAL_HAND_BELL",
+    "WOODEN_CLAPPER",
+    "STREPITUS_NOT_MANDATORY_1960"
+  ],
+  "rules": {
+    "actualSoundRequiresExplicitObservation": true,
+    "noMicrophoneInference": true,
+    "choirTimingNotPriestTiming": true,
+    "noNewMassCueIds": true,
+    "noSyntheticCardTransitions": true,
+    "consecratoryWordsNeverBell": true,
+    "triduumBellSilenceOverridesOrdinary": true,
+    "clapperNeverRenderedAsBellIcon": true,
+    "noChurchBellIconOnOrdinaryGloria": true,
+    "bellsDistinctFromOrgan": true,
+    "isolatedRitesNoMassInheritanceUnlessActualMassBegins": true,
+    "unknownLocalPracticesRemainUnresolved": true
+  },
+  "sources": {
+    "roman1962": "https://1962ordo.today/1962-rubrics/",
+    "toFari": "https://www.romanitaspress.com/the-altar-bell-part-2",
+    "holyThursday": "https://1962ordo.today/day/feria-v-cena-domini/",
+    "holySaturday": "https://1962ordo.today/day/sabbato-sancto-2/",
+    "benediction": "https://www.ccwatershed.org/wp-content/uploads/2021/03/ceremonies-of-the-roman-rite-described.pdf",
+    "tenebrae1960": "https://www.newliturgicalmovement.org/2009/04/compendium-of-1955-holy-week-revisions_07.html",
+    "tenebraeAuthority": "data/pray/tenebrae-source-registry.v1.json"
+  },
+  "ordinaryMass": [
+    {
+      "id": "SANCTUS",
+      "sourceCueId": "AO.SM.C0145",
+      "canonicalEventIds": [
+        "MC-SAN-020"
+      ],
+      "instrument": "ALTAR_BELL",
+      "window": "PRIEST_RECITES_SANCTUS",
+      "precision": "SUNG_SCHOLA_CLOCK_INDEPENDENT",
+      "law": "PRESCRIBED_WITH_LOCAL_PATTERN",
+      "soundStatus": "EXPECTED_NOT_HEARD",
+      "forms": {
+        "LOW": "CERTIFIED_MC_GRAPH",
+        "MISSA_CANTATA_SIMPLE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "MISSA_CANTATA_INCENSE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "SOLEMN": "CERTIFIED_MC_GRAPH"
+      },
+      "conditional": "NONE",
+      "enableAfterHolyWeekTransition": true,
+      "sources": [
+        "roman1962",
+        "toFari"
+      ]
+    },
+    {
+      "id": "BEFORE_CONSECRATION",
+      "sourceCueId": "AO.SM.C0161",
+      "canonicalEventIds": [
+        "MC-CAN-070"
+      ],
+      "instrument": "ALTAR_BELL",
+      "window": "SHORTLY_BEFORE_CONSECRATION",
+      "precision": "HANC_IGITUR_COMMON_ANCHOR_NOT_EXACT_WORD",
+      "law": "PRESCRIBED_WITH_FLEXIBLE_ANCHOR",
+      "soundStatus": "EXPECTED_NOT_HEARD",
+      "forms": {
+        "LOW": "CERTIFIED_MC_GRAPH",
+        "MISSA_CANTATA_SIMPLE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "MISSA_CANTATA_INCENSE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "SOLEMN": "CERTIFIED_MC_GRAPH"
+      },
+      "conditional": "NONE",
+      "enableAfterHolyWeekTransition": true,
+      "sources": [
+        "roman1962",
+        "toFari"
+      ]
+    },
+    {
+      "id": "HOST_ELEVATION",
+      "sourceCueId": "AO.SM.C0174",
+      "canonicalEventIds": [
+        "MC-CNS-030",
+        "MC-CNS-040"
+      ],
+      "instrument": "ALTAR_BELL",
+      "window": "GENUFLECTION_AND_ELEVATION_WINDOW",
+      "precision": "PRIEST_AND_SERVER_OBSERVATIONS_SEPARATE",
+      "law": "PRESCRIBED_ELEVATION_OPTIONAL_THREE_STROKE_DISTRIBUTION",
+      "soundStatus": "EXPECTED_NOT_HEARD",
+      "forms": {
+        "LOW": "CERTIFIED_MC_GRAPH",
+        "MISSA_CANTATA_SIMPLE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "MISSA_CANTATA_INCENSE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "SOLEMN": "CERTIFIED_MC_GRAPH"
+      },
+      "conditional": "NONE",
+      "enableAfterHolyWeekTransition": true,
+      "sources": [
+        "roman1962",
+        "toFari"
+      ]
+    },
+    {
+      "id": "CHALICE_ELEVATION",
+      "sourceCueId": "AO.SM.C0181",
+      "canonicalEventIds": [
+        "MC-CNS-100",
+        "MC-CNS-110"
+      ],
+      "instrument": "ALTAR_BELL",
+      "window": "GENUFLECTION_AND_ELEVATION_WINDOW",
+      "precision": "PRIEST_AND_SERVER_OBSERVATIONS_SEPARATE",
+      "law": "PRESCRIBED_ELEVATION_OPTIONAL_THREE_STROKE_DISTRIBUTION",
+      "soundStatus": "EXPECTED_NOT_HEARD",
+      "forms": {
+        "LOW": "CERTIFIED_MC_GRAPH",
+        "MISSA_CANTATA_SIMPLE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "MISSA_CANTATA_INCENSE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "SOLEMN": "CERTIFIED_MC_GRAPH"
+      },
+      "conditional": "NONE",
+      "enableAfterHolyWeekTransition": true,
+      "sources": [
+        "roman1962",
+        "toFari"
+      ]
+    },
+    {
+      "id": "BEFORE_FAITHFUL_COMMUNION",
+      "sourceCueId": "AO.SM.C0225",
+      "canonicalEventIds": [
+        "MC-COM-185"
+      ],
+      "instrument": "ALTAR_BELL",
+      "window": "SHORTLY_BEFORE_FAITHFUL_COMMUNION",
+      "precision": "CUSTOMARY_ONE_OR_THREE_STROKES_AT_DOMINE_NON_SUM_DIGNUS",
+      "law": "CONDITIONAL_ON_FAITHFUL_COMMUNION",
+      "soundStatus": "EXPECTED_NOT_HEARD",
+      "forms": {
+        "LOW": "SOURCE_NOT_CERTIFIED_IN_MC_GRAPH_REVIEW_REQUIRED",
+        "MISSA_CANTATA_SIMPLE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "MISSA_CANTATA_INCENSE": "SUPPORTED_TRANSIENT_PROJECTION",
+        "SOLEMN": "CERTIFIED_MC_GRAPH"
+      },
+      "conditional": "FAITHFUL_COMMUNICANTS_PRESENT",
+      "enableAfterHolyWeekTransition": true,
+      "sources": [
+        "roman1962",
+        "toFari"
+      ]
+    }
+  ],
+  "specialRites": [
+    {
+      "id": "ASPERGES",
+      "lifecycle": "PRE_MASS",
+      "sourceFile": "data/presentation/reader-asperges.v1.json",
+      "bellPolicy": "NO_UNIVERSAL_RITE_SPECIFIC_BELL",
+      "review": "Ordinary Mass bell cues only after explicit handoff",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": null,
+      "condition": null,
+      "sourceIds": [],
+      "sources": []
+    },
+    {
+      "id": "PALM",
+      "lifecycle": "PRE_MASS",
+      "sourceFile": "data/presentation/reader-palm.v1.json",
+      "bellPolicy": "NO_UNIVERSAL_RITE_SPECIFIC_BELL",
+      "review": "Palm blessing/procession add no independently certified bell; following Mass inherits ordinary cues except normal Gloria is omitted",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": null,
+      "condition": null,
+      "sourceIds": [],
+      "sources": []
+    },
+    {
+      "id": "CANDLEMAS",
+      "lifecycle": "PRE_MASS",
+      "sourceFile": "data/presentation/reader-candlemas.v1.json",
+      "bellPolicy": "NO_UNIVERSAL_RITE_SPECIFIC_BELL",
+      "review": "Candle blessing and procession do not imply bell; subsequent Mass inherits own bells",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": null,
+      "condition": null,
+      "sourceIds": [],
+      "sources": []
+    },
+    {
+      "id": "ROGATIONS",
+      "lifecycle": "PRE_MASS",
+      "sourceFile": "data/presentation/reader-rogations.v1.json",
+      "bellPolicy": "NO_UNIVERSAL_RITE_SPECIFIC_BELL",
+      "review": "Litanies and procession chant are not bell events",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": null,
+      "condition": null,
+      "sourceIds": [],
+      "sources": []
+    },
+    {
+      "id": "CORPUS_CHRISTI",
+      "lifecycle": "POST_MASS_EXPLICIT",
+      "sourceFile": "data/presentation/reader-corpus-christi.v1.json",
+      "bellPolicy": "PROCESSION_BELL_CUSTOM_UNRESOLVED",
+      "review": "Eucharistic procession bell or tintinnabulum may be local; do not invent ringing at each station. Benediction blessing is a separate candidate",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": "PROCESSIONAL_HAND_BELL",
+      "condition": "EXPLICIT_CORPUS_CHRISTI_PROCESSION_SELECTED",
+      "sourceIds": [],
+      "sources": []
+    },
+    {
+      "id": "HOLY_THURSDAY_POST",
+      "lifecycle": "POST_MASS_EXPLICIT",
+      "sourceFile": "data/presentation/reader-holy-thursday-post.v1.json",
+      "bellPolicy": "BELL_SILENCE_CLAPPER_LOCAL_CUSTOM",
+      "review": "Post-Gloria silence persists through procession to altar of repose and stripping. Crotalus signal possible by local practice but not silently added",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": "WOODEN_CLAPPER",
+      "condition": "HOLY_THURSDAY_AFTER_GLORIA",
+      "sourceIds": [],
+      "sources": [
+        "holyThursday"
+      ]
+    },
+    {
+      "id": "REQUIEM_ABSOLUTION",
+      "lifecycle": "POST_MASS_EXPLICIT",
+      "sourceFile": "data/presentation/reader-requiem-absolution.v1.json",
+      "bellPolicy": "NO_UNIVERSAL_RITE_SPECIFIC_BELL",
+      "review": "Requiem Mass inherits Mass bells with local rules; post-Mass absolution at bier/catafalque has no newly certified bell",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": null,
+      "condition": "POST_REQUIEM_ABSOLUTION_SELECTED",
+      "sourceIds": [],
+      "sources": []
+    },
+    {
+      "id": "GENERIC_PROCESSION",
+      "lifecycle": "POST_MASS_EXPLICIT",
+      "sourceFile": "data/presentation/reader-generic-procession.v1.json",
+      "bellPolicy": "NO_UNIVERSAL_RITE_SPECIFIC_BELL",
+      "review": "Generic following-action procession does not entail a bell",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": null,
+      "condition": null,
+      "sourceIds": [],
+      "sources": []
+    },
+    {
+      "id": "GOOD_FRIDAY",
+      "lifecycle": "DISTINCT_RITE",
+      "sourceFile": "data/presentation/reader-good-friday.v1.json",
+      "bellPolicy": "ALTAR_BELLS_SILENT_NO_CONSECRATION",
+      "review": "No Mass Consecration. Do not project MC-SAN/MC-CNS or fabricated Elevation of either Sacred Species; optional crotalus is separate custom",
+      "automaticNewBellCue": false,
+      "stageId": null,
+      "instrument": "WOODEN_CLAPPER",
+      "condition": "BETWEEN_HOLY_THURSDAY_AND_EASTER_VIGIL_GLORIA",
+      "sourceIds": [],
+      "sources": [
+        "holyThursday"
+      ]
+    },
+    {
+      "id": "EASTER_VIGIL",
+      "lifecycle": "COMPOSITE_DISTINCT_RITE",
+      "sourceFile": "data/presentation/reader-easter-vigil.v1.json",
+      "bellPolicy": "CHURCH_BELLS_RETURN_AT_GLORIA",
+      "review": "Pre-Gloria Holy Week silence; bells return when the celebrant begins the Vigil Mass Gloria, after the EV graph-to-Mass handoff. MC-0013 overlay ID is not automatically the same as native MC-GLR-010",
+      "automaticNewBellCue": false,
+      "stageId": "EV-MASS-OVERLAY-1962",
+      "instrument": "CHURCH_AND_ALTAR_BELLS",
+      "condition": "EASTER_VIGIL_GLORIA_ACTUALLY_BEGINS",
+      "sourceIds": [
+        "data/mass/special-days-core.v1.1.json#mass_overlays.EASTER_VIGIL.modify_mc.MC-0013.insert_signal"
+      ],
+      "sources": [
+        "holySaturday"
+      ]
+    }
+  ],
+  "additionalContexts": [
+    {
+      "id": "HOLY_THURSDAY_GLORIA",
+      "kind": "SPECIAL_MASS_OVERRIDE",
+      "instrument": "CHURCH_AND_ALTAR_BELLS",
+      "window": "AT_CELEBRANT_BEGINS_GLORIA",
+      "condition": "HOLY_THURSDAY_MASS_GLORIA",
+      "status": "SOURCED_NOT_RUNTIME_LINKED",
+      "sources": [
+        "holyThursday"
+      ],
+      "transition": "AFTER_GLORIA_ALTER_BELLS_OFF_WOODEN_CLAPPER_BY_CUSTOM",
+      "avoid": "NOT_ORDINARY_WEEKLY_GLORIA"
+    },
+    {
+      "id": "EASTER_VIGIL_GLORIA",
+      "kind": "SPECIAL_MASS_OVERRIDE",
+      "instrument": "CHURCH_AND_ALTAR_BELLS",
+      "window": "AT_MASS_GLORIA_AFTER_VIGIL_HANDOFF",
+      "condition": "EASTER_VIGIL_GLORIA",
+      "status": "GRAPH_SIGNAL_EXISTS_NATIVE_CUE_RECONCILIATION_PENDING",
+      "sources": [
+        "holySaturday"
+      ],
+      "graphSignal": "data/mass/special-days-core.v1.1.json#mass_overlays.EASTER_VIGIL.modify_mc.MC-0013.insert_signal",
+      "avoid": "NO_BELL_AT_VIGIL_FIRE_OR_PROPHECIES"
+    },
+    {
+      "id": "BENEDICTION",
+      "kind": "SEPARATE_EUCHARISTIC_RITE",
+      "instrument": "ALTAR_BELL",
+      "window": "BLESSING_WITH_MONSTRANCE_UNDER_HUMERAL_VEIL",
+      "condition": "BENEDICTION_ACTUALLY_PERFORMED",
+      "status": "HISTORICALLY_WITNESSED_NO_CANONICAL_AO_BELL_CUE_YET",
+      "sources": [
+        "benediction"
+      ],
+      "avoid": "NO_BELL_AT_EVERY_TANTUM_ERGO_VERSE_OR_ADORATION_CARD"
+    },
+    {
+      "id": "TENEBRAE",
+      "kind": "OFFICE_NOT_MASS",
+      "instrument": "NONE",
+      "window": "NO_PRESCRIBED_ALTAR_BELL",
+      "condition": "1960_1961_OFFICE",
+      "status": "NO_BELL_AND_STREPITUS_NOT_MANDATORY",
+      "sources": [
+        "tenebrae1960",
+        "tenebraeAuthority"
+      ],
+      "avoid": "NO_AUTOMATIC_PRE_1955_STREPITUS_OR_CANDELABRUM_ACTION"
+    },
+    {
+      "id": "REQUIEM_MASS",
+      "kind": "MASS_VARIANT",
+      "instrument": "ALTAR_BELL",
+      "window": "ORDINARY_MASS_SACRIFICE_WITH_REQUIEM_PROPER",
+      "condition": "MASS_OF_THE_DEAD",
+      "status": "INHERIT_ORDINARY_BELL_POLICY_SUBJECT_TO_FORM_AND_LOCAL_RULES",
+      "sources": [
+        "roman1962"
+      ],
+      "avoid": "NO_GLORIA_OF_MASS_AND_NO_POST_MASS_ABSOLUTION_BELL"
+    }
+  ],
+  "gaps": [
+    "Low Mass conditional communion warning MC-COM-185 is UNAVAILABLE_UNCERTIFIED in current graph even though historical rubric permits the signal: adjudicate against 1962 Low Mass authority rather than hard-coding absence.",
+    "Holy Thursday Gloria is not yet a separately owned native bell event; link the actual liturgical celebration to the sound silence transition before display.",
+    "Easter Vigil overlay contains CHURCH_BELLS_AT_GLORIA under legacy MC-0013; reconcile to current native Gloria, not a guessed cue.",
+    "Benediction blessing bell belongs to distinct Benediction rite, not a shared Mass card or Schola track; identify native blessing action before activation.",
+    "Holy Week clapper requires its own instrument asset and custom/rite authority; never substitute bells.svg.",
+    "Corpus Christi and other Eucharistic processions need explicit source and location custom confirmation before adding a separate processional bell.",
+    "Requiem Mass source inheritance and Low/Sung/Solemn branches need runtime parity; absolution after Mass is not a second Consecration.",
+    "Test when Blessed Sacrament exposed during parallel Low Mass as a distinct traditional rubrical exception before generalizing."
+  ]
+}
