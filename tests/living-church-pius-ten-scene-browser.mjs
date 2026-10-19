@@ -66,7 +66,7 @@ try{
   assert.match(await page.locator("#lc-stage .lc-dialogue").innerText(),/catéchétiques|conscience individuelle/);
   assert.equal(await page.locator("#lc-stage .lc-sprite").isHidden(),true);
   await page.screenshot({path:resolve(output,"pius-source-editorial-note-"+viewport.width+".png")});
-  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Other subjects"}).click();
+  await page.locator("#lc-stage .lc-actions").getByRole("button",{name:"Autres sujets"}).click();
   assert.equal(await page.locator("#lc-stage .lc-sprite").isHidden(),true);
   await page.locator("#lc-stage .lc-actions").getByRole("button",{name:/04 · SPX-PILOT-04/}).click();
   assert.match(await page.locator("#lc-stage .lc-dialogue").innerText(),/communion/i);
