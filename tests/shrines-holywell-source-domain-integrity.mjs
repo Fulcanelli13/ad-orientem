@@ -7,7 +7,7 @@ const sites=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const audit=read("data/shrines/research/holywell-source-url-drift-20261016.v1.json");
 const byId=new Map(reg.sources.map(x=>[x.id,x]));
 
-assert.equal(reg.sources.length,449);
+assert.equal(reg.sources.length,515);
 assert.equal(byId.size,reg.sources.length);
 assert.equal(audit.schema,"ao.shrines.source-url-drift-review.v1");
 assert.equal(audit.status,"SOURCE_OWNER_URL_REPAIR_NO_SHRINE_PLACE_ID_OR_FEAST_AUTHORITY_CHANGE");
@@ -46,4 +46,4 @@ assert(shrine.source_ids.includes("SHR-HOLYWELL-CONTACT"));
 assert(shrine.source_ids.includes("PIL-HOLYWELL-FEAST"));
 assert(shrine.source_ids.includes("PIL-HOLYWELL-LMS"));
 assert.equal(byId.get("SHR-HOLYWELL-PARISH").url,"https://www.stwinefridesholywell.co.uk/");
-console.log("PASS Holywell source-domain repair: 449 preserved source IDs, two official URLs, old host blocked, one unchanged physical shrine");
+console.log("PASS Holywell source-domain repair: 449 existing source IDs preserved plus 66 R87 Place evidence sources, two official URLs, old host blocked, one unchanged physical shrine");
