@@ -340,6 +340,11 @@ try{
         const api=window.__AO_PHONE_PREVIEW;
         const cues=[
           "AO.SM.C0071", // Collect: Et cum spiritu tuo
+          "AO.SM.C0108", // Offertory Oremus is PUBLIC
+          "AO.SM.C0110", // First Offertory prayer is PRIEST_PRIVATE
+          "AO.SM.C0130", // Orate fratres starts audibly again
+          "AO.SM.C0145", // Sanctus bell
+          "AO.SM.C0161", // Warning bell before Consecration
           "AO.SM.C0173", // Host: words of consecration
           "AO.SM.C0174", // Host: elevation
           "AO.SM.C0179", // Chalice: words of consecration
@@ -390,16 +395,24 @@ try{
             gesture:state?.gesture?.action??null,
             priestAction:state?.priestAction?.label??null,
             nativeCue:api.getNativeEventState()?.nativeCueId??null,
+            quietOffertory:document.querySelector('[data-role="priest-quiet-offertory"]')?.hidden===false,
+            bellCue:state?.bell?.cueId??null,
+            bellIconVisible:document.querySelector('[data-icon-slot="bell"]')?.hidden===false,
           });
         }
         return observed;
       });
       const gate={
         "AO.SM.C0071":{response:/Et cum spíritu tuo/},
-        "AO.SM.C0173":{noGesture:true},
-        "AO.SM.C0174":{action:/ELEVATES HOST/,gesture:/Sacred Host/},
-        "AO.SM.C0179":{noGesture:true},
-        "AO.SM.C0181":{action:/ELEVATES CHALICE/,gesture:/Chalice/},
+        "AO.SM.C0108":{quiet:false,bell:false},
+        "AO.SM.C0110":{quiet:true,bell:false},
+        "AO.SM.C0130":{quiet:false,bell:false},
+        "AO.SM.C0145":{quiet:false,bell:true},
+        "AO.SM.C0161":{quiet:false,bell:true},
+        "AO.SM.C0173":{noGesture:true,bell:false},
+        "AO.SM.C0174":{action:/ELEVATES HOST/,gesture:/Sacred Host/,bell:true},
+        "AO.SM.C0179":{noGesture:true,bell:false},
+        "AO.SM.C0181":{action:/ELEVATES CHALICE/,gesture:/Chalice/,bell:true},
         "AO.SM.C0265":{action:/BLESSES PEOPLE/,gesture:/Sign of the Cross/},
         "AO.SM.C0273":{action:/GENUFLECTS/,gesture:/Genuflect/},
       };
@@ -412,6 +425,14 @@ try{
           "User scroll could not place "+state.cueId+" into exact LIVE cue focus");
         const expected=gate[state.cueId];
         if(expected.response)assert.match(state.response??"",expected.response);
+        if(expected.quiet!==undefined)assert.equal(state.quietOffertory,expected.quiet,
+          state.cueId+": priest's quiet Offertory indicator must follow exact private source cue");
+        if(expected.bell!==undefined){
+          assert.equal(state.bellCue,expected.bell ? state.cueId : null,
+            state.cueId+": bell leaked or was absent on the precise source cue");
+          assert.equal(state.bellIconVisible,expected.bell,
+            state.cueId+": approved bell icon did not match the actual sound cue");
+        }
         if(expected.noGesture)assert.equal(state.gesture,null,
           state.cueId+": elevation gesture fired prematurely on formula");
         if(expected.action)assert.match(state.priestAction??"",expected.action);
