@@ -206,6 +206,18 @@ def run(out):
         print(f"LONG {slug}: {len(group)} exact source Q&A identifiers")
     if len(long)!=993:raise ValueError(f"Long expected 993 got {len(long)}")
     crosswalk=candidate_links(long,short)
+    # Exact normalized question-text matches are stricter than lexical
+    # similarity but remain insufficient to assert equal *answers*.
+    short_by_fingerprint=defaultdict(list)
+    for row in short:
+        short_by_fingerprint[digest(row["question"])].append(row["id"])
+    exact_pairs=[
+        {"long_id":row["id"],"short_id":sid,
+         "question_sha256":digest(row["question"]),
+         "classification":"SAME_NORMALIZED_QUESTION_TEXT_NOT_SEMANTICALLY_APPROVED"}
+        for row in long
+        for sid in short_by_fingerprint.get(digest(row["question"]),[])
+    ]
     report={
       "schema":"AO_PIUS_X_1905_1912_MACHINE_CANDIDATE_CROSSWALK_V1",
       "status":"RESEARCH_ONLY_NOT_SEMANTICALLY_ADJUDICATED",
@@ -216,7 +228,10 @@ def run(out):
                 "long_with_lexical_candidate":sum(bool(x["candidate_same_topic_qids"]) for x in crosswalk),
                 "long_without_lexical_candidate":sum(not x["candidate_same_topic_qids"] for x in crosswalk),
                 "exact_normalized_full_question_collisions_within_long":len(long)-len({norm(x["question"]) for x in long}),
-                "approved_semantic_merges":0},
+                "approved_semantic_merges":0,
+                "exact_normalized_crossedition_question_pairs":len(exact_pairs),
+                "long_questions_with_exact_short_question_text":len({x["long_id"] for x in exact_pairs}),
+                "short_questions_with_exact_long_question_text":len({x["short_id"] for x in exact_pairs})},
       "numbering_holds":[{"id":r["id"],"printed_number":r["printed_number"],
                           "positionally_assigned_number":r["n"],"hold":r["numbering_hold"],
                           "museum_url":MUSEUM+r["section"],
@@ -226,6 +241,9 @@ def run(out):
                                 "answer_sha256":digest(r["answer"]),"question_chars":len(r["question"]),
                                 "answer_chars":len(r["answer"]),"printed_number":r["printed_number"],
                                 "numbering_hold":r["numbering_hold"]} for r in long],
+      "short_question_manifest":[{"id":r["id"],"file":r["file"],"question_sha256":digest(r["question"]),
+                                  "answer_sha256":digest(r["answer"]),"question_chars":len(r["question"])} for r in short],
+      "exact_question_text_crossedition_links":exact_pairs,
       "crosswalk":crosswalk,
       "restrictions":["Score is lexical candidate, not theological same-intent judgment",
                       "Q-number authenticity is tied to museum HTML, not collated 1905 first-print scan",
@@ -246,6 +264,7 @@ def selftest():
     assert digest("PÉrchè Dio?")==digest("perche Dio")
     pairs=candidate_links([{"id":"PX1905-Q001","question":"Che cosa è la fede?"}],a)
     assert len(pairs)==1
+    assert digest("Perché noi preghiamo?")==digest("Perche, noi preghiamo?")
     # Reproduce the second printed Q950 at sequential position Q960.
     slug="parte-quinta-delle-virtu-principali-e-di-altre-cose-necessarie-a-sapersi-dal-cristiano/"
     fixture="".join(
