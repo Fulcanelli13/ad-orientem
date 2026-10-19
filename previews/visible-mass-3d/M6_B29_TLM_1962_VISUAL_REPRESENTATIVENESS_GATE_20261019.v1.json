@@ -29,7 +29,6 @@
     "2 REPRESENTATIVE_TLM_OBJECT_AND_CONFIGURATION",
     "3 ARCHITECTURAL_SETTING_CORRECT_HIGH_ALTAR_AND_NO_MISLEADING_POSTCONCILIAR_ADDITION",
     "4 OBJECT_COMPLETENESS_AND_VISUAL_CLARITY",
-    "5 EXACT_PHOTOGRAPH_REUSE_RIGHTS_AND_SOURCE_PROVENANCE",
     "6 PERIOD_AESTHETIC_CONSISTENCY_AND_PHOTOGRAPHIC_FINISH"
   ],
   "critical_logic": "An eligible museum object may be an authentic historical specimen without being the primary exemplar for a layman's view of the 1962 Traditional Latin Mass. CC0 photographic copyright never compensates for historical/type mismatch. Different legitimate parish practices do not become illicit because one illustration is preferred.",
@@ -270,5 +269,6 @@
     "all_historical_valid_sources_remain_in_research": true,
     "source_files_or_liturgical_readers_mutated": false,
     "previous_v8_selection_unchanged": true
-  }
+  },
+  "rights_hard_gate": "No source photograph may be shipped without exact-photo permission and attribution regardless of how high it ranks for TLM representativeness; licensing is an independent mandatory pass/fail gate, not a lower-weight preference."
 }
