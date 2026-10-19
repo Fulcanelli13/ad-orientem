@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-icon-section-review-v1",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "decisionDate": "2026-10-19",
   "reviewedSection": {
     "id": "AO.SM.M01",
@@ -391,7 +391,7 @@
     "Do not replace frozen v4.6 master icons.",
     "If a previously rejected physical image can serve another function, propose it there separately."
   ],
-  "nextReview": "RECONCILE_REMAINING_MODERN_BANK_DONOR_ARTWORK_BEFORE_BATCH_09",
+  "nextReview": "PROVENANCE_AND_RUNTIME_BINDING_GATES_AFTER_CANONICAL_REGISTRY",
   "reviewedSections": [
     {
       "id": "AO.SM.M01",
@@ -1270,6 +1270,131 @@
         }
       ],
       "runtimeMutationAllowed": false
+    }
+  ],
+  "finalComparisonReviews": [
+    {
+      "id": "AO.ICONBANK.FINAL_COMPARISON.01",
+      "date": "2026-10-19",
+      "reviewedIcons": 16,
+      "pairs": 8,
+      "userStatement": "well i think they can all stay as they are all depicting very distinct things",
+      "decision": "RETAIN_ALL_DISTINCT",
+      "notes": "Retaining both in a pair is not permission to map both to the same ritual cue. Respect previous rejected/reserve-only artwork and source-owned rubrics.",
+      "items": [
+        {
+          "pair": "1",
+          "letter": "A",
+          "key": "priest_audible",
+          "topic": "Priest audible/speaking",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "1",
+          "letter": "B",
+          "key": "ao_pray_audible",
+          "topic": "Priest audible/speaking",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "2",
+          "letter": "C",
+          "key": "priest_centre_rich",
+          "topic": "Priest at altar centre",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "2",
+          "letter": "D",
+          "key": "ao_at_altar_centre",
+          "topic": "Priest at altar centre",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "3",
+          "letter": "E",
+          "key": "priest_incense_altar_rich",
+          "topic": "Incensation",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "3",
+          "letter": "F",
+          "key": "ao_incensation",
+          "topic": "Incensation",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "4",
+          "letter": "G",
+          "key": "priest_blessing_rich",
+          "topic": "Blessing",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "4",
+          "letter": "H",
+          "key": "ao_blessing",
+          "topic": "Blessing",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "5",
+          "letter": "I",
+          "key": "priest_elevate_chalice_rich",
+          "topic": "Chalice elevation",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "5",
+          "letter": "J",
+          "key": "ao_elevation_chalice",
+          "topic": "Chalice elevation",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "6",
+          "letter": "K",
+          "key": "ea_priest_communion_chalice",
+          "topic": "Priest's chalice Communion",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "6",
+          "letter": "L",
+          "key": "ao_drink_chalice",
+          "topic": "Priest's chalice Communion",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "7",
+          "letter": "M",
+          "key": "ao_adoration",
+          "topic": "Bowing toward altar",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "7",
+          "letter": "N",
+          "key": "priest_profound_bow_rich",
+          "topic": "Bowing toward altar",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "8",
+          "letter": "O",
+          "key": "priest_centre_arms_rich",
+          "topic": "Credo intonation/priest orans",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "8",
+          "letter": "P",
+          "key": "ao_chant",
+          "topic": "Credo intonation/priest orans",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        }
+      ]
     }
   ]
 }
