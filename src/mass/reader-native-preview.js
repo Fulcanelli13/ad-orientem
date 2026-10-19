@@ -11,6 +11,7 @@ import {auditOrdinarySungPriestEventAlignment,projectObservedOrdinaryPriestEvent
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "./reader-mode-switch.js";
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { projectPostureAwareMissalCards } from "./reader-missal-posture-pages.js";
+import {specialRiteNextPosture,showSpecialRiteMissalPostureHint} from "./reader-special-missal-pages.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
 import { loadCanonicalReaderEvents, createNativeEventStateController, extractCanonicalEventId } from "./reader-event-state.js";
@@ -566,6 +567,16 @@ export async function mountNativeReaderPreview({
   root.style.cssText="position:fixed;inset:0;z-index:2147483100;background:#080c12;";
   const host=doc.createElement("div");
   host.style.cssText="position:absolute;inset:0;";
+  function previewNextRiteStage(currentStage,nextStage,{participating=false}={}){
+    const language=prepared?.readerPreferences?.language??"en";
+    const hint=specialRiteNextPosture({
+      current:currentStage,next:nextStage,
+      mode:host.querySelector?.("[data-ao-reader-shell]")?.dataset.mode??
+        prepared?.readerPreferences?.mode??"LIVE",
+      participating,language,
+    });
+    return showSpecialRiteMissalPostureHint(host,hint,{language});
+  }
   const close=doc.createElement("button");
   close.type="button";
   close.textContent="×";
@@ -923,6 +934,9 @@ export async function mountNativeReaderPreview({
       const state=controller.project(),step=state.step;
       const moment=goodFridayMoment();
       if(moment)reader.renderMoment(moment);
+      const nextStep=controller.built.steps[state.index+1]??null;
+      previewNextRiteStage(step,
+        nextStep?.surfaceKey!==step?.surfaceKey?nextStep:null);
       if(step && step.surfaceKey!==shownSurface){
         const card=host.querySelector?.(".ao-prayer-card");
         if(card)card.scrollTop=0;
@@ -1084,6 +1098,10 @@ export async function mountNativeReaderPreview({
       stage="VIGIL_ACTIVE";
       const moment=easterVigilMoment();
       if(moment)reader.renderMoment(moment);
+      const source=controller.project();
+      const nextStep=controller.built.steps[source.index+1]??null;
+      previewNextRiteStage(source.step,
+        nextStep?.surfaceKey!==source.step?.surfaceKey?nextStep:null);
       root.dataset.r17NativeRiteRecord=controller.project().step?.recordId??"none";
       root.dataset.r17CardOwner="R33_EASTER_VIGIL_COMPOSITE";
       root.dataset.r17StateOwner="R33_EASTER_VIGIL_GRAPH";
@@ -1095,6 +1113,7 @@ export async function mountNativeReaderPreview({
       inVigil=false;
       stage="MASS_ACTIVE";
       currentMass=card;
+      previewNextRiteStage(null,null);
       reader.renderMoment({
         id:card.sectionId,
         sectionTitle:card.title,
