@@ -56,6 +56,8 @@ for(const entry of manifest.originals){
  if(dimensions.width!==entry.expectedWidth||dimensions.height!==entry.expectedHeight)
    throw new Error("wrong source image dimensions "+JSON.stringify(dimensions));
  const sha256=createHash("sha256").update(data).digest("hex");
+ if(entry.expectedSHA256 && sha256!==entry.expectedSHA256)
+   throw new Error("original image checksum changed: "+entry.id);
  const sha1=createHash("sha1").update(data).digest("hex");
  const imagePath=resolve(dest,entry.imageFilename);
  await writeFile(imagePath,data,{flag:"wx",mode:0o644});
