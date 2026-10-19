@@ -10,6 +10,8 @@ const gloss=[...(await j("data/glossary/concepts-001-150.v1.json")).entries,
  ...(await j("data/glossary/concepts-151-300.v1.json")).entries,
  ...(await j("data/glossary/concepts-301-450.v1.json")).entries];
 const byGloss=new Map(gloss.map(x=>[x.id,x]));
+const guide=await j("data/presentation/guide-registry.v1.json");
+assert.equal(guide.status,"RECOVERED_CONTINUITY_CERTIFIED");
 const byEN=new Map(en.entries.map(x=>[x.q,x]));
 const byIT=new Map(it.entries.map(x=>[x.q,x]));
 assert.equal(registry.schema,"AO_LIVING_CHURCH_SHARED_QUESTION_ROUTING_PILOT_V1");
@@ -23,13 +25,19 @@ assert.equal(registry.policy.historicalSpeechClaim,false);
 assert.equal(registry.policy.explicitUserAcceptanceRequired,true);
 assert.equal(registry.pilotLimits.maxTransfersPerQuestion,1);
 assert.equal(registry.topics.length,33);
+assert.equal(registry.pilotLimits.sourceNavigableTopics,30);
+assert.equal(registry.pilotLimits.sourceGapTopics,3);
+assert.equal(registry.policy.referralRequiresExactRelevantSource,true);
+assert.equal(registry.policy.genericRouteIsNotEvidence,true);
 assert.deepEqual(Object.fromEntries(["pius-x","canon","sacristan"].map(k=>[k,registry.topics.filter(x=>x.character===k).length])),
  {"pius-x":13,canon:7,sacristan:13});
 const topics=new Set();
 for(const topic of registry.topics){
  assert.ok(!topics.has(topic.id),"duplicate "+topic.id);topics.add(topic.id);
  assert.equal(topic.approvedReply,false);
- assert.equal(topic.coverage,"SOURCE_NAVIGATION_ONLY");
+ assert.ok(["SOURCE_NAVIGATION_ONLY","SOURCE_GAP"].includes(topic.coverage));
+ if(topic.coverage==="SOURCE_GAP"){assert.equal(topic.sourceRefs.length,0);assert.ok(topic.sourceGapReason.length>50);}
+ else assert.ok(topic.sourceRefs.length>0);
  for(const language of ["en","fr"]){
   assert.ok(topic.title[language]);
   assert.ok(topic.questionVariants[language].length>=2);
@@ -43,8 +51,9 @@ for(const topic of registry.topics){
    const t=byGloss.get(source.ref);
    assert.equal(t?.definition_status,"SOURCE_BACKED",source.ref+" lacks linked glossary definition");
   }else if(source.owner==="MASS_EXPLORER_PUBLISHED_GUIDE"){
-   assert.equal(source.ref,"learn.mass_explorer");
-   assert.equal(source.evidence,"EXISTING_GUIDE_NAVIGATION_ONLY");
+   assert.match(source.ref,/^AO\\.CARD\\.\\d{3}$/);
+   assert.ok(guide.entries[source.ref]?.moment,"Guide moment unavailable "+source.ref);
+   assert.equal(source.evidence,"PUBLISHED_SUNG_GUIDE_TOPIC_VERIFIED");
   }else throw Error("Unrecognised source owner "+source.owner);
  }
 }
@@ -60,6 +69,8 @@ assert.equal(r.answerText,null);
 r=match("Why does the priest wear different colours?");
 assert.equal(r.kind,"clarify");assert.equal(r.ambiguityId,"different_colours");
 assert.deepEqual(r.options.map(x=>x.topicId),["objects.vestments","mass.colors_meaning"]);
+assert.equal(r.options[0].coverage,"SOURCE_NAVIGATION_ONLY");
+assert.equal(r.options[1].coverage,"SOURCE_GAP");
 r=match("What does that gesture mean?");
 assert.equal(r.kind,"clarify");assert.equal(r.requiresContext,true);assert.equal(r.options.length,0);
 r=match("what happens to the bread at mass");
@@ -84,11 +95,15 @@ assert.equal(transfer.answerText,null);
 assert.equal(router.acceptHandoff(r,{accept:true,history:transfer.history}).kind,"no_coverage");
 r=match("why does the priest kiss the altar",{currentCharacter:"sacristan"});
 assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");
-assert.equal(r.targetRoute,"learn.mass_explorer");
+assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"TOPIC_SOURCE_GAP");
+assert.equal(r.topicId,"mass.altar_reverence");
+r=match("what is the roman canon",{currentCharacter:"sacristan"});
+assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");
+assert.equal(r.targetRoute,"learn.mass_explorer");assert.equal(r.sourceRefs[0].ref,"AO.CARD.014");
 r=match("what about his Blood?",{context:{activeTopicId:"faith.real_presence"}});
 assert.equal(r.kind,"source_navigation");assert.equal(r.topicId,"faith.whole_christ");
 r=match("why does the priest raise the Host?",{chosenTopicId:"mass.elevation"});
-assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");
+assert.equal(r.kind,"offer_handoff");assert.equal(r.targetCharacter,"canon");assert.equal(r.sourceRefs[0].ref,"AO.CARD.015");
 r=match("is it wrong to seek more money for my family");
 assert.equal(r.kind,"no_coverage");assert.equal(r.reason,"family_livelihood_from_Q85");
 r=match("what is the current eucharistic fast");
@@ -99,8 +114,8 @@ assert.equal(r.answerText,null);
 assert.throws(()=>match("what is a pall",{currentCharacter:"invalid"}),/Unknown character/);
 assert.throws(()=>match("what is a pall",{chosenTopicId:"invented"}),/Unrecognised chosen topic/);
 const clone=structuredClone(registry);clone.topics[0].sourceRefs=[];
-assert.throws(()=>createSharedQuestionRouter(clone),/Unsafe question topic/);
+assert.throws(()=>createSharedQuestionRouter(clone),/Topic falsely claims evidence/);
 for(const c of ["pius-x","canon","sacristan"]){
  const src=router.listTopics({character:c});assert.ok(src.length>0);assert.ok(src.every(x=>x.approvedReply===false&&!x.answerText));
 }
-console.log("PASS Living Church shared routing: 33 source-indexed topics, bilingual matching, 3 clarification cases, 2 source gaps, explicit transfer, no loops and no invented answer");
+console.log("PASS Living Church shared routing: 33 topics, 30 original-source navigations, 3 held Canon gaps, bilingual clarification/referral, loop and editorial-answer gates");
