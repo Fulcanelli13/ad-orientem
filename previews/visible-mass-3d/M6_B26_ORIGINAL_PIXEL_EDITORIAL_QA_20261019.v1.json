@@ -1,0 +1,121 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_B26_ORIGINAL_PIXEL_EDITORIAL_QA_V1",
+  "date": "2026-10-19",
+  "status": "SOURCE_ORIGINAL_100_PERCENT_MANUAL_SCREEN_RESEARCH_NO_USER_PUBLICATION_APPROVAL",
+  "image_evidence_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39225455724",
+  "image_evidence_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39225455724/artifacts/12173950684",
+  "artifact_id": 12173950684,
+  "runner_status": "PASS_TECHNICAL_ACQUISITION_WITH_WIKIMEDIA_429",
+  "originals_requested": 6,
+  "originals_downloaded_and_visually_reviewed": 4,
+  "originals_not_downloaded": 2,
+  "source_image_analyzed_at_native_pixels": true,
+  "selected_provisional_object_ids": [
+    "EQ06"
+  ],
+  "reused_architectural_context_ids": [
+    "AL01",
+    "AL07"
+  ],
+  "photographer_rights_verified_on_exact_source_file_pages": true,
+  "original_file_evidence": [
+    {
+      "object_id": "EQ06",
+      "url": "https://commons.wikimedia.org/wiki/File:Carcassonne_-_%C3%89glise_Saint-Vincent_-_Tr%C3%A9sor_25.jpg",
+      "photographer": "Tylwyth Eldar",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "original_dimensions": [
+        4000,
+        6000
+      ],
+      "sha256": "118dcfa18a750c6c2f3245dfa4013d138a9f45cb73625f3acaa59f8fac798cc7",
+      "visual_resolution": "NATIVE_100_PERCENT_CROP_INSPECTED",
+      "focus": "ACCEPTABLE_ORNAMENT_AND_ENAMEL_EDGES_VISIBLE_AT_100_PERCENT_MODERATE_HIGH_ISO_NOISE",
+      "silhouette": "PASS_COMPLETE_SINGLE_BELL_DOMINANT",
+      "background": "CAVEAT_MUSEUM_MOUNT_REFLECTIVE_TABLE_AND_BRIGTH_LABEL_OUT_OF_FOCUS",
+      "typology": "PASS_CATHOLIC_19C_ALTAR_BELL",
+      "decision": "SELECT_ASSISTANT_PROVISIONAL_NOT_USER_APPROVED_NOT_PUBLISH",
+      "asset_id": "M6B26-EQ06-CARCASSONNE-SINGLE-BELL",
+      "note": "Technically sufficient standalone object portrait among source leads; museum background not studio-neutral; keep user rating 0/unset until explicit review."
+    },
+    {
+      "object_id": "AL01",
+      "url": "https://commons.wikimedia.org/wiki/File:Castelnau-d%27Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+      "photographer": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "original_dimensions": [
+        7360,
+        4912
+      ],
+      "sha256": "fe615df3bedb617e1e9d24c69174e3c713dc0a30a686dbef70b60ff199d4444d",
+      "visual_resolution": "NATIVE_100_PERCENT_ALTAR_CANDLESTICK_AND_CENTRE_CROP_INSPECTED",
+      "focus": "PASS_SIX_GILDED_CANDLESTICKS_AND_TABERNACLE_ARCHITECTURE_CLEAR",
+      "silhouette": "WHOLE_HIGH_ALTAR_AND_SANCTUARY_DECOR",
+      "background": "WALL_MURAL_SAINTS_GARDEN_PLANTS_IN_SCENE",
+      "typology": "FRENCH_CATHOLIC_1848_HIGH_ALTAR_AUTHENTIC",
+      "decision": "KEEP_FOR_AL01_AND_AL07_ARCHITECTURAL_CONTEXT_ONLY",
+      "note": "Exactly 3 candlesticks per side visible, but cannot become independently isolated set without whole altar context. Count one source image, two annotation opportunities."
+    },
+    {
+      "object_id": "AL03",
+      "url": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_S%C3%A3o_Sebasti%C3%A3o_Salvador_Tabernacle_2019-0168.jpg",
+      "photographer": "Paul R. Burley",
+      "license": "CC BY-SA 4.0",
+      "original_dimensions": [
+        4888,
+        3910
+      ],
+      "sha256": "016fa3837a320e2a857321f588a1ea2a32cd9bda31869cac938e8361b3e75617",
+      "visual_resolution": "NATIVE_100_PERCENT_CENTRE_CROP_INSPECTED",
+      "focus": "GOOD_STONE_SURFACE_TEXTURE_AND_PURPLE_CLOTH",
+      "silhouette": "TABERNACLE_FRONT_DOOR_NOT_VISIBLE_DUE_TO_PURPLE_VEIL",
+      "background": "FOUR_CANDLESTICKS_AND_SANCTUARY_MARBLE",
+      "typology": "CORRECT_CATHOLIC_TABERNACLE_BUT_COVERED",
+      "decision": "REJECT_UNVEILED_TABERNACLE_SINGLE_OBJECT_HERO; RETAIN_AL05_CONTEXT",
+      "note": "Source illustrates tabernacle veil/conopaeum in situ rather than complete exterior front of tabernacle."
+    },
+    {
+      "object_id": "SN02",
+      "url": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_S%C3%A3o_Sebasti%C3%A3o_Salvador_Altar_Rail_2019-0157.jpg",
+      "photographer": "Paul R. Burley",
+      "license": "CC BY-SA 4.0",
+      "original_dimensions": [
+        6240,
+        4160
+      ],
+      "sha256": "a09401382be9aaffc47995af6de7e6537eae914910e8496e6f5d9ade5befac2c",
+      "visual_resolution": "NATIVE_100_PERCENT_CENTRE_CROP_INSPECTED",
+      "focus": "PASS_STONE_BALUSTER_DETAILS_CLEAR",
+      "silhouette": "CROPPED_PART_OF_RAIL_WITH_NO_GATE_OR_ENDS",
+      "background": "DARK_PEWS_AND_FLOOR",
+      "typology": "CORRECT_CATHOLIC_COMMUNION_RAIL_DETAIL",
+      "decision": "REJECT_WHOLE_RAIL_HERO_RETAIN_DETAIL_ONLY",
+      "note": "A close-up of balustrade cannot substitute complete rail length and central gates."
+    }
+  ],
+  "incomplete": [
+    {
+      "object_id": "EQ01",
+      "reason": "Commons HTTP 429 source after four successful originals; stop not retry; previous 500px preview showed prominent museum clutter.",
+      "downloaded": false
+    },
+    {
+      "object_id": "SN05",
+      "reason": "Skipped automatically following Commons 429; previous 500px preview showed silver hanging sanctuary lamp without red glass.",
+      "downloaded": false
+    }
+  ],
+  "base_registry_original_images": 112,
+  "old_provisional_pilot_hero_count": 12,
+  "new_provisional_pilot_hero_count_after_selection": 13,
+  "held_pilot_subjects_not_false_completed": 15,
+  "annotation_exceptions": [
+    "AL17",
+    "AL18"
+  ],
+  "user_approved": false,
+  "publication_approved": false,
+  "app_media_changed": false,
+  "source_registry_170_unchanged": true
+}
