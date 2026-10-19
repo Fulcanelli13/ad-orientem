@@ -17,7 +17,8 @@ The 1905 book was prescribed under St Pius X; it must **not** be represented as 
 | Complete two-turn English/French exchanges | 100 |
 | Localized draft responses | 200 |
 | Potential adjacent/overlapping within-batch relations | 23 |
-| Potential relations with earlier waves | 10 |
+| Potential relations with earlier drafted waves | 8 |
+| Potential relations with earlier research ideas not yet drafted | 2 |
 | Independently certified answers or unique intents | 0 |
 | Released avatar answers | 0 |
 
@@ -1482,7 +1483,7 @@ The 1905 book was prescribed under St Pius X; it must **not** be represented as 
 
 1. Original Italian source questions were inspected within the museum's 1905 prayer section. Each proposed EN/FR response must still be independently checked sentence by sentence against the exact source answer and chapter context.
 2. Preserve the 1905 edition. Do not silently copy from the 1912 short Catechism, which differs in coverage and may contain later edits; any cross-edition relation is an unapproved hypothesis.
-3. Resolve 23 within-batch and 10 prior-wave potential relations. Source anchor IDs are identifiers, **not** proof of 50 distinct conversational intents.
+3. Resolve 23 within-batch and eight prior-draft plus two research-seed potential relations. Source anchor IDs are identifiers, **not** proof of 50 distinct conversational intents.
 4. Do not turn historical catechetical principles into individualized moral judgments, personal memories, claims about contemporary law, or first-person quotations of St Pius X.
 5. Send only approved, source-sentence checked and reviewed passages to the existing period-voice pipeline. The current visual novel remains restricted to its separate ten-family editorial test and does not automatically import this batch.
 
