@@ -8,9 +8,11 @@ on:
       - data/learn/living-church-pius-x-historical-passage-pointers.v1.json
       - data/learn/living-church-pius-x-fresh-bilingual-60.v1.json
       - data/learn/living-church-personal-verdict-boundary-48.v1.json
+      - data/learn/living-church-pius-x-liturgical-scope-26.v1.json
       - src/learn/living-church-shared-question-router.js
       - src/learn/living-church-historical-focus.js
       - src/learn/living-church-personal-verdict-gate.js
+      - src/learn/living-church-liturgical-source-scope.js
       - src/learn/living-church-hybrid-question-router.js
       - src/learn/living-church-embedding-candidate-router.js
       - src/learn/living-church-evaluation-gate.js
@@ -22,6 +24,7 @@ on:
       - tests/living-church-historical-document-navigation.mjs
       - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
       - tests/living-church-personal-verdict-safety.mjs
+      - tests/living-church-liturgical-source-scope.mjs
       - tests/living-church-question-retrieval-probes.mjs
       - tests/living-church-routing-holdout.mjs
       - tests/living-church-fresh-question-probes.mjs
@@ -33,9 +36,11 @@ on:
       - data/learn/living-church-pius-x-historical-passage-pointers.v1.json
       - data/learn/living-church-pius-x-fresh-bilingual-60.v1.json
       - data/learn/living-church-personal-verdict-boundary-48.v1.json
+      - data/learn/living-church-pius-x-liturgical-scope-26.v1.json
       - src/learn/living-church-shared-question-router.js
       - src/learn/living-church-historical-focus.js
       - src/learn/living-church-personal-verdict-gate.js
+      - src/learn/living-church-liturgical-source-scope.js
       - src/learn/living-church-hybrid-question-router.js
       - src/learn/living-church-embedding-candidate-router.js
       - src/learn/living-church-evaluation-gate.js
@@ -47,6 +52,7 @@ on:
       - tests/living-church-historical-document-navigation.mjs
       - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
       - tests/living-church-personal-verdict-safety.mjs
+      - tests/living-church-liturgical-source-scope.mjs
       - tests/living-church-question-retrieval-probes.mjs
       - tests/living-church-routing-holdout.mjs
       - tests/living-church-fresh-question-probes.mjs
@@ -67,12 +73,14 @@ jobs:
           node --check src/learn/living-church-shared-question-router.js
           node --check src/learn/living-church-historical-focus.js
           node --check src/learn/living-church-personal-verdict-gate.js
+          node --check src/learn/living-church-liturgical-source-scope.js
           node --check src/learn/living-church-hybrid-question-router.js
           node --check src/learn/living-church-embedding-candidate-router.js
           node --check src/learn/living-church-evaluation-gate.js
           node tests/living-church-shared-question-router.mjs
           node tests/living-church-historical-document-navigation.mjs
           node tests/living-church-personal-verdict-safety.mjs
+          node tests/living-church-liturgical-source-scope.mjs
           node tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
           node tests/living-church-question-retrieval-probes.mjs
           node tests/living-church-routing-holdout.mjs
