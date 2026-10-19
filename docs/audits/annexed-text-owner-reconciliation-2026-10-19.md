@@ -186,3 +186,32 @@ the focused PR gate.
 
 No new translations, new rite actions, gesture cues, or Mass reader
 card replacements are authorized by this pass.
+
+## Rogations high-volume source pass — 186/186 stable row owners
+
+A dedicated read-only [Rogations audit](./rogations-litany-1962-ownership-2026-10-19.md)
+now resolves **every one of 186 original Latin source rows** to its
+existing native reader paragraph ID and owner index, including the 112
+processional Litany invocations, 18 kneeling-cantor opening responses,
+Psalm 69, 24 suffrage rows, all 10 concluding orations and the final
+responses. None of these indexes creates additional text or certifies
+that existing English/French is correct.
+
+The source split is 63 saint invocations, 2 `Propitius esto`,
+21 deliverances, 18 `Te rogamus`, 3 `Agnus Dei` and 5 concluding
+invocations. Two identical `Sancte Jacobe` Latin strings are distinct
+source positions for the two apostles, **not a duplicate to delete**.
+
+**Important 1962 witness conflict:** a photographed [Liber Usualis
+Rogation extract, pp. 835–836](https://icksp.org.uk/newbrighton/wp-content/uploads/sites/2/2020/04/Rogations.pdf)
+prints an older instruction to double invocations, whereas **1962
+Rubricae generales §82** explicitly states `quae tamen non duplicantur`.
+The **1962 rubric controls**. The chant book is still useful for
+Gregorian chant order and the instruction to rise at `Sancta Maria`,
+not for adding a doubled processional Litany.
+
+Execute `node tools/mass/reconcile-rogation-litany-1962.mjs --write`
+for its derived, source-only owner report. Its regression gate
+`tests/rogations-litany-112-source-owners.mjs` checks exact
+reader/source Latin alignment, ID/card ownership and the non-doubling
+rule, not translation release.
