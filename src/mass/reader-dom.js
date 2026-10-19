@@ -170,7 +170,7 @@ const SHELL_STYLE = `
 
 /* App-dark missal chrome with a liturgical accent rather than green ownership. */
 .ao-reader-shell{--ao-missal-face:var(--ao-font-liturgical,"EB Garamond",Garamond,Baskerville,Georgia,serif);
-  --ao-missal-display:var(--ao-font-display,Cinzel,Baskerville,Georgia,serif)}
+  --ao-missal-display:var(--ao-font-brand,var(--font-display,Cinzel,Baskerville,Georgia,serif))}
 .ao-reader-shell{background:linear-gradient(180deg,color-mix(in srgb,var(--ao-mass-top) 35%,#080c12),color-mix(in srgb,var(--ao-mass-bottom) 26%,#080c12))}
 .ao-reader-shell .ao-reader-top-ribbon,.ao-reader-shell .ao-state-ribbon{background:color-mix(in srgb,var(--ao-mass-top) 40%,#080c12)}
 .ao-reader-shell .ao-reader-paragraph,

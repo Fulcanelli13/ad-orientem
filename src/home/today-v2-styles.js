@@ -3,13 +3,13 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .homeScreen.aoTodayV2{background:var(--bg,#080c12);color:var(--text,#eee9df);padding-bottom:max(112px,calc(78px + env(safe-area-inset-bottom,0px)))}
 .aoTodayV2Header{position:relative;background:var(--bg,#080c12)}
 .aoTodayV2Tabs{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--border,rgba(238,238,238,.12));background:var(--bg,#080c12);padding:0 8px}
-.aoTodayV2Tabs button,.aoTodayV2Tabs span{display:grid;place-items:center;min-height:47px;border:0;border-bottom:2px solid transparent;background:none;color:var(--muted,#9da3a2);font:700 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase;text-align:center}
+.aoTodayV2Tabs button,.aoTodayV2Tabs span{display:grid;place-items:center;min-height:47px;border:0;border-bottom:2px solid transparent;background:none;color:var(--muted,#9da3a2);font:700 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em;text-transform:uppercase;text-align:center}
 .aoTodayV2Tabs span{border-bottom-color:var(--liturgical,#929ba8);color:var(--text,#eee9df)}
 .aoTodayV2Tabs button:focus-visible{outline:2px solid var(--liturgical,#929ba8);outline-offset:-2px}
 .aoTodayV2 .dateRail{display:none!important}
-.aoTodayV2SelectedDayNotice{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;background:var(--surface-1,#101720);border-bottom:1px solid var(--border,rgba(238,238,238,.13));font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--text,#eee9df)}
+.aoTodayV2SelectedDayNotice{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;background:var(--surface-1,#101720);border-bottom:1px solid var(--border,rgba(238,238,238,.13));font:500 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--text,#eee9df)}
 .aoTodayV2SelectedDayNotice span{min-width:0;overflow-wrap:break-word}
-.aoTodayV2SelectedDayNotice button{flex:0 0 auto;min-height:44px;border:1px solid var(--border,rgba(238,238,238,.3));border-radius:7px;padding:7px 10px;background:transparent;color:var(--text,#eee9df);font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2SelectedDayNotice button{flex:0 0 auto;min-height:44px;border:1px solid var(--border,rgba(238,238,238,.3));border-radius:7px;padding:7px 10px;background:transparent;color:var(--text,#eee9df);font:600 13px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .aoTodayV2SelectedDayNotice button:focus-visible{outline:2px solid var(--liturgical,#929ba8);outline-offset:2px}
 @media(max-width:370px){.aoTodayV2SelectedDayNotice{gap:6px;padding-inline:9px}.aoTodayV2SelectedDayNotice button{padding-inline:7px}}
 .aoTodayV2 .dateNavigator{margin:0;padding:6px 13px;background:var(--bg,#080c12);border-bottom:1px solid var(--border,rgba(238,238,238,.08))}
@@ -22,13 +22,13 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2ArtSource{width:100%;height:100%;overflow:hidden}.aoTodayV2ArtSource>img,.aoTodayV2ArtSource>picture,.aoTodayV2ArtSource>figure{width:100%;height:100%;object-fit:cover;display:block}
 .aoTodayV2NoArt{height:100%;background:radial-gradient(ellipse at 50% 35%,var(--liturgical-soft,rgba(143,154,165,.1)),transparent 65%),var(--surface-1,#111924)}
 .aoTodayV2ArtOverlay{position:absolute;z-index:2;inset:18px 16px 18px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
-.aoTodayV2ArtOverlay .eyebrow{align-self:flex-start;color:var(--text,#eee9df);font-size:10px;letter-spacing:.12em;text-shadow:0 2px 8px #000}
+.aoTodayV2ArtOverlay .eyebrow{align-self:flex-start;color:var(--text,#eee9df);font-size:13px;letter-spacing:.12em;text-shadow:0 2px 8px #000}
 .aoTodayV2ArtOverlay h1{font:400 clamp(29px,7vw,39px)/1.08 var(--ao-font-display,Georgia,serif);color:var(--text,#eee9df);text-shadow:0 3px 11px #000;text-align:center;margin:0 7px;overflow-wrap:anywhere}
 .aoTodayV2HeroActions{padding:13px 18px 16px;background:var(--surface-1,#0b1119)}
-.aoTodayV2HeroActions .metaLine{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:7px;font-size:12px;color:var(--muted,#bcbec0)}
+.aoTodayV2HeroActions .metaLine{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:7px;font-size:13px;color:var(--muted,#bcbec0)}
 .aoTodayV2 .resumeCard{display:block;width:calc(100% - 32px);margin:12px 16px;background:var(--surface-2,#111a23);border:1px solid var(--liturgical-border,rgba(235,235,235,.2))}
 .aoTodayV2Mass{padding:10px 16px 18px!important;border-bottom:1px solid var(--border,rgba(238,238,238,.12))}
-.aoTodayV2Mass .sectionLabel{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#b2afa9);margin:0 0 8px}
+.aoTodayV2Mass .sectionLabel{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#b2afa9);margin:0 0 8px}
 .aoTodayV2Mass .phaseActions{display:grid;grid-template-columns:1fr 2fr 1fr;gap:8px}
 .aoTodayV2Mass .phaseButton{min-width:0;min-height:54px;border-radius:8px;padding:9px 5px!important}
 .aoTodayV2Mass .phaseButton.primary{background:var(--liturgical,#929ba8);color:var(--bg,#080c12);border-color:var(--liturgical,#929ba8)}
@@ -58,10 +58,10 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2 .aoTodayV2ArtMissing .aoTodayV2NoArt{background:radial-gradient(ellipse at 50% 25%,var(--liturgical-soft,rgba(143,154,165,.07)),transparent 65%),var(--surface-1,#101720)}
 }
 
-@media(max-width:370px){.aoTodayV2Art{height:225px}.aoTodayV2ArtOverlay h1{font-size:27px}.aoTodayV2Mass .phaseButton b{font-size:10px}}
+@media(max-width:370px){.aoTodayV2Art{height:225px}.aoTodayV2ArtOverlay h1{font-size:27px}.aoTodayV2Mass .phaseButton b{font-size:13px}}
 
 .aoTodayV2Tabs button[aria-current="page"]{border-bottom-color:var(--liturgical,#939fa8);color:var(--text,#eee9df)}
-.aoTodayExploreFoot{padding:0 18px 35px}.aoTodayExploreFoot button{min-height:58px;width:100%;text-align:left;border:0;border-top:1px solid var(--border,rgba(238,238,238,.12));padding:12px 2px;background:transparent;color:var(--text,#eee9df)}.aoTodayExploreFoot strong{display:block;font:400 17px var(--ao-font-display,Georgia,serif)}.aoTodayExploreFoot small{display:block;margin-top:4px;color:var(--muted,#a6abb5);font:400 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayExploreFoot{padding:0 18px 35px}.aoTodayExploreFoot button{min-height:58px;width:100%;text-align:left;border:0;border-top:1px solid var(--border,rgba(238,238,238,.12));padding:12px 2px;background:transparent;color:var(--text,#eee9df)}.aoTodayExploreFoot strong{display:block;font:400 17px var(--ao-font-display,Georgia,serif)}.aoTodayExploreFoot small{display:block;margin-top:4px;color:var(--muted,#a6abb5);font:400 13px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .aoTodayV2CalendarInline[hidden]{display:none!important}
 .aoTodayV2CalendarInline{width:100%;min-height:100px;padding:0 10px max(64px,calc(36px + env(safe-area-inset-bottom,0px)))}
 .aoTodayV2[data-ao-home-calendar-view="day"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="day"]>.aoTodayV2Below,.aoTodayV2[data-ao-home-calendar-view="picker"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="picker"]>.aoTodayV2Below,.aoTodayV2[data-ao-home-calendar-view="year"]>.dateNavigator,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Frontispiece,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Context,.aoTodayV2[data-ao-home-calendar-view="year"]>.aoTodayV2Below{display:none!important}
@@ -75,47 +75,47 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2 .aoTodayV2HeroActions{min-height:48px}
 .aoTodayV2 .aoTodayV2Mass{padding:12px 18px 18px!important}
 .aoTodayV2 .aoTodayV2PrimaryMass{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;min-height:54px;border-radius:10px;padding:10px 12px!important;background:var(--liturgical,#c6b692)!important;color:var(--liturgical-ink,var(--bg,#080c12))!important;text-align:center;border:1px solid var(--liturgical,#c6b692)!important}
-.aoTodayV2 .aoTodayV2PrimaryMass b{font:750 14px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2 .aoTodayV2PrimaryMass b{font:600 17px/1.3 var(--ao-font-ui,"EB Garamond",Georgia,serif);font-variant-caps:small-caps;letter-spacing:.04em}
 .aoTodayV2 .aoTodayV2PrimaryMass b,.aoTodayV2 .aoTodayV2PrimaryMass span{display:block!important;opacity:1!important;visibility:visible!important;color:var(--liturgical-ink,var(--bg,#080c12))!important;text-shadow:none!important;filter:none!important}
-.aoTodayV2 .aoTodayV2PrimaryMass span{font:600 11px/1.25 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2 .aoTodayV2PrimaryMass span{font:500 13px/1.35 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
 .aoTodayV2 .aoTodayV2SecondaryMass{display:flex;justify-content:center;gap:28px;margin-top:8px}
-.aoTodayV2 .aoTodayV2SecondaryMass button{min-height:40px;padding:7px 4px;color:var(--text-muted,var(--muted,#c4b7a0));border:0;background:transparent;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2 .aoTodayV2SecondaryMass button{min-height:44px;padding:7px 4px;color:var(--text-muted,var(--muted,#c4b7a0));border:0;background:transparent;font:400 16px/1.4 var(--ao-font-ui,"EB Garamond",Georgia,serif);font-variant-caps:normal;letter-spacing:0}
 .aoTodayV2Context{display:block;border-block:1px solid var(--border,rgba(230,230,230,.11));padding:8px 16px;background:var(--surface-1,#101720)}
 .aoTodayV2Context button{text-align:left;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:44px;border:0;color:inherit;background:transparent;padding:4px 8px}
 .aoTodayV2Context button strong{margin-left:auto}
 .aoTodayV2Context button span{font-size:20px;color:var(--liturgical,#c6b692)}
 .aoTodayV2Context button:focus-visible{outline:2px solid var(--liturgical,#c6b692);outline-offset:2px}
-.aoTodayV2Context small,.aoTodayV2SectionHead small{display:block;font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted,#aab0b4)}
+.aoTodayV2Context small,.aoTodayV2SectionHead small{display:block;font:700 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted,#aab0b4)}
 .aoTodayV2Context strong{font:400 17px/1.17 var(--ao-font-display,Georgia,serif);overflow-wrap:break-word}
-.aoTodayV2Context span{font:500 11px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4)}
+.aoTodayV2Context span{font:500 13px/1.2 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4)}
 .aoTodayV2Honoured{padding:18px 19px 8px;border-bottom:1px solid var(--border,rgba(235,235,235,.12));background:var(--surface-1,#101720)}
 .aoTodayV2HonouredHeading{margin:0 0 7px}
-.aoTodayV2HonouredHeading small{font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.11em;color:var(--text-muted,#aab0b4)}
+.aoTodayV2HonouredHeading small{font:700 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.11em;color:var(--text-muted,#aab0b4)}
 .aoTodayV2HonouredHeading h2{font:400 22px/1.2 var(--ao-font-display,Georgia,serif);margin:5px 0 0;color:var(--text,#eee9df)}
 .aoTodayV2ObservedRow{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px;padding:10px 0;width:100%;border:0;border-bottom:1px solid var(--border,rgba(235,235,235,.10));background:transparent;color:inherit;text-align:left}
 .aoTodayV2ObservedRow:last-child{border-bottom:0}
 .aoTodayV2ObservedRow span:first-child{min-width:0}
-.aoTodayV2ObservedRow small{display:block;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4);letter-spacing:.025em}
+.aoTodayV2ObservedRow small{display:block;font:600 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4);letter-spacing:.025em}
 .aoTodayV2ObservedRow strong{display:block;margin-top:4px;font:400 17px/1.25 var(--ao-font-display,Georgia,serif);overflow-wrap:anywhere}
-.aoTodayV2ObservedRow em{display:block;font:400 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);font-style:normal;color:var(--text-muted,#aab0b4);margin-top:3px}
+.aoTodayV2ObservedRow em{display:block;font:400 13px/1.35 var(--ao-font-ui,system-ui,sans-serif);font-style:normal;color:var(--text-muted,#aab0b4);margin-top:3px}
 .aoTodayV2Below{padding:2px 18px 34px}
 .aoTodayV2Zone{padding:23px 1px 22px;border-bottom:1px solid var(--border,rgba(235,235,235,.12))}
 .aoTodayV2SectionHead{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:14px}
 .aoTodayV2SectionHead h2{font:400 26px/1.12 var(--ao-font-display,Georgia,serif);margin:5px 0 0}
-.aoTodayV2SectionHead>button{background:none;border:0;color:var(--liturgical,#c4b79b);font:600 12px var(--ao-font-ui,system-ui,sans-serif);padding:8px 0;min-height:44px;white-space:nowrap}
+.aoTodayV2SectionHead>button{background:none;border:0;color:var(--liturgical,#c4b79b);font:600 13px var(--ao-font-ui,system-ui,sans-serif);padding:8px 0;min-height:44px;white-space:nowrap}
 .aoTodayV2PrayerFeature{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:10px;align-items:center;padding:13px 12px;min-height:90px;border-radius:10px;border:1px solid var(--border,rgba(235,235,235,.17));background:var(--surface-2,#111a23)}
 .aoTodayV2PrayerGlyph{width:40px;height:40px;border:1px solid var(--liturgical-border,rgba(210,200,175,.3));border-radius:50%;display:grid;place-items:center}
 .aoTodayV2PrayerGlyph:before{content:"";width:13px;height:22px;border:2px solid var(--liturgical,#c6b692);border-radius:50%;opacity:.75;transform:rotate(20deg)}
-.aoTodayV2PrayerFeature small{display:block;font:700 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.075em;color:var(--text-muted,#aab0b4)}
+.aoTodayV2PrayerFeature small{display:block;font:700 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.075em;color:var(--text-muted,#aab0b4)}
 .aoTodayV2PrayerFeature strong{display:block;font:400 19px/1.2 var(--ao-font-display,Georgia,serif);margin:3px 0}
-.aoTodayV2PrayerFeature span{display:block;font:400 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4)}
-.aoTodayV2PrayerFeature button{min-height:44px;padding:8px 13px;border:1px solid var(--liturgical-border,rgba(215,215,215,.45));border-radius:9px;color:var(--text,#eee9df);background:transparent;font:650 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2PrayerFeature span{display:block;font:400 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4)}
+.aoTodayV2PrayerFeature button{min-height:44px;padding:8px 13px;border:1px solid var(--liturgical-border,rgba(215,215,215,.45));border-radius:9px;color:var(--text,#eee9df);background:transparent;font:650 13px var(--ao-font-ui,system-ui,sans-serif)}
 .aoTodayV2PrayerShortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}
-.aoTodayV2PrayerShortcuts button{min-height:69px;padding:10px 4px;background:var(--surface-1,#0c131b);border:1px solid var(--border,rgba(235,235,235,.12));border-radius:9px;color:var(--text,#eee9df);font:600 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2PrayerShortcuts button{min-height:69px;padding:10px 4px;background:var(--surface-1,#0c131b);border:1px solid var(--border,rgba(235,235,235,.12));border-radius:9px;color:var(--text,#eee9df);font:600 13px var(--ao-font-ui,system-ui,sans-serif)}
 .aoTodayV2EditorialRow{display:grid;grid-template-columns:minmax(0,1fr) 26px;gap:13px;align-items:center;width:100%;min-height:72px;text-align:left;border:0;border-bottom:1px solid var(--border,rgba(235,235,235,.1));background:transparent;color:var(--text,#eee9df);padding:12px 0}
 .aoTodayV2EditorialRow:last-child{border-bottom:0}
 .aoTodayV2EditorialRow strong,.aoTodayV2Event strong{display:block;font:400 19px/1.2 var(--ao-font-display,Georgia,serif)}
-.aoTodayV2EditorialRow small,.aoTodayV2Event small{display:block;margin-top:5px;font:400 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4)}
+.aoTodayV2EditorialRow small,.aoTodayV2Event small{display:block;margin-top:5px;font:400 13px/1.3 var(--ao-font-ui,system-ui,sans-serif);color:var(--text-muted,#aab0b4)}
 .aoTodayV2Arrow{font:400 24px var(--ao-font-display,Georgia,serif);color:var(--liturgical,#c6b692)}
 .aoTodayV2Event{display:grid;grid-template-columns:70px minmax(0,1fr) 18px;gap:13px;align-items:center;min-height:76px;padding:11px 0;border:0;border-bottom:1px solid var(--border,rgba(235,235,235,.1));color:inherit;background:transparent;text-align:left;width:100%}
 .aoTodayV2Event:last-child{border-bottom:0}
