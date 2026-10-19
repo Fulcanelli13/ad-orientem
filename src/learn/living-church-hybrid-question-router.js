@@ -190,6 +190,7 @@ export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPo
    ||base.reason==="UNSUPPORTED_PERSONAL_SPIRITUAL_VERDICT"
    ||base.reason==="LAY_MASS_PRAYER_SOURCE_NOT_IDENTIFIED"
    ||base.reason==="POST_RECEPTION_SCOPE_UNSPECIFIED"
+   ||base.reason==="LITURGICAL_POSTCOMMUNION_NOT_PRIVATE_THANKSGIVING"
    ||base.reason==="HISTORICAL_SCOPE_OWNER_NOT_INDEXED"
    ||base.reason==="EXPLICIT_TOPIC_SOURCE_SCOPE_CONFLICT"
    ||base.matchEvidence?.basis==="EXACT_VARIANT"
