@@ -6,6 +6,7 @@ const voices=await load("../data/learn/pius-x-documentary-voice-style.v1.json");
 const pre=await load("../data/learn/pius-x-prepapal-style-batch2.v1.json");
 const review=await load("../data/learn/pius-x-unified-documentary-voice-review.v1.json");
 const collation=await load("../data/learn/pius-x-original-language-collation.v1.json");
+const personalBench=await load("../data/learn/pius-x-personal-voice-benchmark.v1.json");
 assert.equal(cases.schema,"AO_PIUS_X_STYLE_DIALOGUE_PATHS_V1");
 assert.equal(cases.owner,"STYLE_ONLY_REVIEW");
 assert.equal(cases.publication,"DRAFT_NOT_RUNTIME");
@@ -352,5 +353,53 @@ assert.ok(!communionTurn.questionCandidates.includes("PX1912-Q335"));
 assert.ok(communionTurn.sourceBoundReview.evidenceIds.includes("PX1912-Q325"));
 assert.ok(!communionTurn.sourceBoundReview.evidenceIds.includes("PX1912-Q335"));
 assert.equal(communionTurn.sourceBoundReview.sourceCriticalUpdate.contentOwnerApproval,false);
+
+
+/** Source-anchored Sarto personal voice: validate attribution boundaries, not prose aesthetics. */
+assert.equal(personalBench.schema,"AO_PIUS_X_PERSONAL_VOICE_BENCHMARK_V1");
+assert.equal(personalBench.publication,"DRAFT_NOT_RUNTIME");
+assert.equal(personalBench.runtimeImportAllowed,false);
+assert.equal(personalBench.releaseGates.runtimeImportAllowed,false);
+assert.equal(personalBench.releaseGates.historicalSourceReview,false);
+assert.equal(personalBench.releaseGates.doctrinalReview,false);
+assert.equal(personalBench.releaseGates.englishReview,false);
+assert.equal(personalBench.releaseGates.frenchReview,false);
+assert.equal(personalBench.sources.length,3);
+assert.equal(personalBench.patterns.length,3);
+assert.equal(personalBench.benchmarks.length,3);
+const sourceById=new Map(personalBench.sources.map(x=>[x.id,x]));
+assert.equal(sourceById.size,3);
+for(const original of personalBench.sources){
+ assert.match(original.url,/^https:\/\//);
+ assert.ok(original.date&&original.originalLanguage==="it");
+ assert.ok(original.limits&&original.attestedSubject);
+ assert.match(original.access,/PARTIAL|IMAGES_WITH_EDITIONAL_ENGLISH/);
+ assert.ok(!original.access.startsWith("COMPLETE_MANUSCRIPT"),"Do not falsely claim an uncollated full autograph");
+}
+const patternById=new Map(personalBench.patterns.map(x=>[x.id,x]));
+assert.equal(patternById.size,3);
+for(const p of personalBench.patterns){
+ assert.ok(p.rule&&p.negative&&p.evidenceIds.length>=1);
+ for(const evidence of p.evidenceIds)assert.ok(sourceById.has(evidence),"No source for "+p.id);
+}
+for(const b of personalBench.benchmarks){
+ assert.ok(patternById.has(b.patternId));
+ assert.equal(b.status,"C_LEVEL_EDUCATIONAL_RECONSTRUCTION_UNAPPROVED");
+ assert.equal(b.unsupportedHistoricalFirstPerson,false);
+ assert.equal(b.firstPersonRecollectionInvented,false);
+ assert.equal(b.approval.historical,false);
+ assert.equal(b.approval.doctrinal,false);
+ assert.equal(b.approval.english,false);
+ assert.equal(b.approval.french,false);
+ for(const id of b.sourceIds)assert.ok(sourceById.has(id));
+ for(const lang of ["en","fr"]){
+  assert.ok(b.visitor[lang]?.trim()&&b.reply[lang]?.trim());
+  assert.doesNotMatch(b.reply[lang],/\b(?:I remember|when I was|I once|je me souviens|quand j'étais)\b/i,
+   "Cannot invent autobiographical memories");
+ }
+ assert.ok(b.supportedElements.length&&b.constructedElements.length);
+}
+assert.match(personalBench.benchmarks[1].reply.en,/May God console you in your grief/);
+assert.doesNotMatch(personalBench.benchmarks[2].reply.en,/Why cover it\?/);
 
 console.log("PASS Pius X 3 bilingual x 3 exchanges in both languages, source-gated end-to-end scripted playback = 18 interactions, 9 unique style-only replies; pinned route references, original-source gate, approved sprite names, no fabricated quotations or new doctrinal corpus");
