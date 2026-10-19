@@ -120,6 +120,15 @@
       "note": "Find and verify a real photograph or original documented drawing depicting the priest's own Communion before producing a new icon. Do not use imagery of the priest giving Communion.",
       "researchLeads": [
         {
+          "id": "CTH43758",
+          "sourcePage": "https://cathopic.com/photo/43758-priest-receiving-communion-at-mass/",
+          "artist": "Carlos Gaviria",
+          "licenseState": "COPYRIGHT_INDIVIDUAL_LICENSE_REQUIRED",
+          "disposition": "EXCLUDE_FROM_1962_HOST_ICON_SOURCE_SHORTLIST",
+          "visualEvidence": "Watermarked 640px Cathopic image viewed 2026-10-19: bald bearded celebrant in blue vesture bends toward his fingers over the chalice; 1962 Roman liturgical setting, two Host halves and elbows-on-altar are not established.",
+          "doNotDownload": true
+        },
+        {
           "id": "SCHUMACHER_1920_PRIEST_COMMUNION_P97",
           "priority": 1,
           "type": "HISTORICAL_ILLUSTRATION",
@@ -508,7 +517,17 @@
         "path": null,
         "sha256": null,
         "disposition": "RESEARCH_LEAD_NOT_SOURCE_OR_PRODUCTION",
-        "next": "Obtain legitimate licensed copy, retain exact image and checksum, verify right hand on chalice and left hand with paten beneath, then compare with user-approved icon family."
+        "next": "Obtain legitimate licensed copy, retain exact image and checksum, verify right hand on chalice and left hand with paten beneath, then compare with user-approved icon family.",
+        "visualPreviewInspection": {
+          "date": "2026-10-19",
+          "evidence": "Watermarked 640px Cathopic image viewed 2026-10-19: celebrant in traditional Roman vestments physically drinks from a chalice at an altar; hand holding vessel evident, but paten beneath chalice in left hand is not sufficiently visible from this angle.",
+          "sourcePage": "https://cathopic.com/photo/49809-priest-drinks-the-most-precious-blood-of-jesus/",
+          "fullImageRightsAcquired": false,
+          "riteSpecificity": "TAGGED_TRADITIONAL_LATIN_MASS_AND_VISUALLY_CONSISTENT",
+          "chaliceDrinkingVisible": true,
+          "leftPatenSupportVerified": false,
+          "releaseApproved": false
+        }
       },
       {
         "type": "HISTORICAL_ILLUSTRATION",
