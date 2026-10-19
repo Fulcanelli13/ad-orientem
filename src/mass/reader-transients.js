@@ -25,12 +25,20 @@ export const CANON_ELEVATION_BELL_PHASES=Object.freeze({
       rubricEventId:"AO.RUB.C0174.01",status:"CONDITIONAL_THREE_RING_PATTERN"}),
     Object.freeze({moment:"ELEVATION",canonicalEventId:"MC-CNS-040",
       rubricEventId:"AO.RUB.C0174.02",status:"PRESCRIBED_ELEVATION_WINDOW"}),
+    Object.freeze({moment:"SECOND_GENUFLECTION",canonicalEventId:"MC-CNS-040",
+      rubricEventId:"AO.RUB.C0174.05",
+      status:"CONDITIONAL_THREE_RING_PATTERN_DISTRIBUTION",
+      additionalCanonicalSoundEvent:false}),
   ]),
   "AO.SM.C0181":Object.freeze([
     Object.freeze({moment:"FIRST_GENUFLECTION",canonicalEventId:"MC-CNS-100",
       rubricEventId:"AO.RUB.C0181.01",status:"CONDITIONAL_THREE_RING_PATTERN"}),
     Object.freeze({moment:"ELEVATION",canonicalEventId:"MC-CNS-110",
       rubricEventId:"AO.RUB.C0181.02",status:"PRESCRIBED_ELEVATION_WINDOW"}),
+    Object.freeze({moment:"SECOND_GENUFLECTION",canonicalEventId:"MC-CNS-110",
+      rubricEventId:"AO.RUB.C0181.05",
+      status:"CONDITIONAL_THREE_RING_PATTERN_DISTRIBUTION",
+      additionalCanonicalSoundEvent:false}),
   ]),
 });
 
@@ -141,15 +149,21 @@ export function validateReaderTransientBindings(events){
   // substage IDs without assigning any sound to the Consecration formula.
   for(const [cueId,phases] of Object.entries(CANON_ELEVATION_BELL_PHASES)){
     const binding=BELL_CUE_BINDINGS.find(item=>item.cueId===cueId);
-    if(!binding||phases.length!==2 ||
-      phases.some((phase,index)=>binding.canonicalEventIds[index]!==phase.canonicalEventId))
+    if(!binding||phases.length!==3 ||
+      binding.canonicalEventIds[0]!==phases[0].canonicalEventId ||
+      binding.canonicalEventIds[1]!==phases[1].canonicalEventId ||
+      phases[2].canonicalEventId!==phases[1].canonicalEventId ||
+      phases[2].additionalCanonicalSoundEvent!==false)
       throw Error("Canon bell phase mapping differs from certified sound events: "+cueId);
     for(const phase of phases){
       const event=index.get(phase.canonicalEventId);
       const sound=event&&altarBellEvents(event)[0];
       if(!sound || (phase.moment==="FIRST_GENUFLECTION" &&
         sound.legal_status!=="CEREMONIAL_IMPLEMENTATION_IF_THREE_RING_PATTERN") ||
-        (phase.moment==="ELEVATION" && sound.legal_status!=="PRESCRIBED"))
+        (phase.moment==="ELEVATION" && sound.legal_status!=="PRESCRIBED") ||
+        (phase.moment==="SECOND_GENUFLECTION" &&
+          (!sound.permitted_patterns?.includes("THREE_RINGS") ||
+           phase.status!=="CONDITIONAL_THREE_RING_PATTERN_DISTRIBUTION")))
         throw Error("Canon bell phase authority differs: "+phase.canonicalEventId);
     }
   }
