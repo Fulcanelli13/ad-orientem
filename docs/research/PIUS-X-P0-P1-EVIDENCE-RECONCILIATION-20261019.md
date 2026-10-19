@@ -34,6 +34,18 @@ Contents:
 
 Do **not** report 497 as the number of unique answerable questions. Nor should 433 existing source locators be presented as freshly mined material.
 
+
+## Initial topical screening (P1, not semantic deduplication)
+
+The companion file `data/learn/research/pius-x-p1-short-catechism-topical-review-20261019.v1.json` screens all 64 SPX topic-family titles against the existing shorter Catechism's **six-word English question stems**, and records **possible same-topic QIDs**, not proven same intents.
+
+- **54/64** family seeds have at least one plausible topical QID from this bounded screening.
+- **10/64** have no obvious match from these incomplete stems; this does not prove their subject is absent from the original 1912 Catechism or the papal corpus.
+- **0** same-intent merges or answer approvals have been made.
+- The next necessary operation is reading each complete Italian question and answer, then classifying `SAME_INTENT`, `BROADER`, `NARROWER`, or `FOLLOW_UP` with a reviewed explanation.
+
+This screening does **not** reduce the denominator from 497 to 443: overlapping *topics* can still contain genuinely distinct pastoral questions, and 433 numbered Catechism questions are not guaranteed to be 433 distinct user intents.
+
 ## P1 reviewed-intent workflow
 
 1. **Resolve exact 1912 source text first.** The English index stores short stems; use the canonical text owner and Italian section file before comparing question semantics. Never merge Qs solely on matching first six words.
