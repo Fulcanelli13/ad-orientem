@@ -237,3 +237,44 @@ The first complete 1905–1912 extraction has now also generated SHA-256 normali
 - **0** same-intent merges accepted and **0** source answers imported into production.
 
 These links are now in the 30-day GitHub Actions research artifact as `exact_question_text_crossedition_links` with two source manifests. A question-text identity does **not** authenticate the digital 1912 edition, establish identical *answers*, resolve semantic scope, or authorize avatar dialogue. The next limited review should compare the 26 exact-wording pairs' answers and source-era context before considering any join.
+
+
+## Second coverage wave: semantic review and neglected domains
+
+### The 26 cross-edition exact-worded pairs
+
+`data/learn/research/pius-x-26-exact-pairs-reviewed-20261019.v1.json` documents a complete question-and-answer passage comparison for all 26 automatically detected normalized Italian question-text matches. The reviewer found **26 research-level same-intention assessments**, but the answers contain materially different levels of detail, and **only one pair has an identical normalized answer fingerprint**. No merge is approved and both Q&A witnesses remain individually owned.
+
+Three examples of why this is a *semantic* review, not a blind copy:
+- **1905 Q35 / digital 1912 Q57, angels:** spiritual/intellectual nature versus guardian/ministerial function.
+- **1905 Q537 / digital 1912 Q271, sacramental grace:** both are about `grazia sacramentale`; they are **not** a short-edition answer to the distinct question of *actual grace versus sanctifying grace*.
+- **1905 Q628 / digital 1912 Q335, worthy Communion:** both mention the historical fast from midnight; this is edition-bound ecclesiastical discipline and requires contextual qualification for any present-day reply.
+
+A particularly dangerous **same-text, different-theological-intent** collision occurs inside the **1905 Catechism**: Q915 asks about *fortitude as a cardinal virtue*, Q922 asks about *fortitude as a gift of the Holy Ghost*. These are **not** the same question intent even though the normalized Italian question wording is identical.
+
+### Expansion beyond the original 64 themes
+
+`data/learn/research/pius-x-conversation-expansion-48-20261019.v1.json` adds **48 new question ideas**, spread across six intentionally underrepresented domains:
+
+| Research domain | New prompts |
+| --- | ---: |
+| Giuseppe Sarto's personal life, vocation and ministerial history | 10 |
+| Modernism and doctrinal crisis | 10 |
+| Church crisis and governance | 8 |
+| Apologetics and faith/reason | 8 |
+| Sacred liturgy and the sacraments | 6 |
+| Pastoral method and Christian life | 6 |
+| **Total** | **48** |
+
+Each prompt has a **document-level retrieval anchor**, not an asserted answer passage. Primary anchors include `Pascendi dominici gregis`, `E supremi`, `Acerbo nimis`, `Vehementer nos`, `Il fermo proposito`, `Tra le sollecitudini`, `Haerent animo`, `Sacrorum antistitum`, the 1905 Catechism, and biographical catalogues from the Museo / Fondazione Giuseppe Sarto. Papal writings and secondary biographical testimony are tracked separately.
+
+This makes **112 raw research conversation ideas** (64 old + 48 added). **It is not a count of 112 unique answerable questions**, since topical overlaps remain unreviewed and all 48 new prompts are pending source-passage collation. No first-person historical memory or modern-day papal judgment is certified.
+
+### Next certification sequence
+
+1. For the 48 newly proposed questions, locate and pin exact primary/secondary passages; mark `DIRECT`, `PARTIAL`, `RELATED`, or `NOT_SUPPORTED`, distinguishing *papal first-person testimony* from third-party biography.
+2. Adjudicate overlaps of those 48 prompts against existing `SPX-001..064`, the original 433 shorter Catechism QIDs, and the 993 long Catechism QIDs.
+3. Continue candidate semantic clustering beyond the 26 exact wording pairs, sampling top 1905↔1912 lexical similarities and recording *different-wording same-intent* and *similar-wording different-intent* cases.
+4. Separately add audience-specific follow-up paths, pastoral caution, and historical attribution for those intents that have substantial evidence. Do not publish new dialogue or change the existing conversation runtime until the release gate.
+
+The metrics that matter are **distinct conversational intentions grounded by specific evidence**, followed by answer sufficiency, doctrinal review, and historically responsible voice. Counting documents or question labels is only the research input.
