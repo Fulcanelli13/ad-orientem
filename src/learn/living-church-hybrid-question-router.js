@@ -27,12 +27,12 @@ const variants=(topic,lang)=>[...(topic.questionVariants?.[lang]||[]),topic.titl
 const topicSnap=(t,lang)=>({topicId:t.id,character:t.character,title:t.title[lang]||t.title.en,
  coverage:t.coverage,sourceRefs:t.sourceRefs.map(x=>({...x})),approvedReply:false,answerText:null});
 const round=v=>Number(v.toFixed(3));
-export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPointers=null}={}){
+export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPointers=null,sourceConceptRegistry=null}={}){
  if(conceptRegistry?.schema!=="AO_LIVING_CHURCH_SYMBOLIC_CONCEPTS_V1"
   ||conceptRegistry.status!=="RESEARCH_ONLY_NO_EMBEDDINGS"
   ||conceptRegistry.policy?.neverOverrideBlockedRules!==true)
   throw Error("Source-constrained symbolic concept registry required");
- const legacy=createSharedQuestionRouter(catalog,{historicalPointers});
+ const legacy=createSharedQuestionRouter(catalog,{historicalPointers,sourceConceptRegistry});
  const byId=new Map(catalog.topics.map(t=>[t.id,t]));
  const byHistoricalRef=new Map((historicalPointers?.records||[]).map(x=>[x.id,x]));
  const issuedDecisions=new WeakMap();
@@ -197,6 +197,7 @@ export function createHybridQuestionRouter(catalog,conceptRegistry,{historicalPo
    ||base.matchEvidence?.basis==="EXPLICIT_REFORMULATION_CHOICE"
    ||base.matchEvidence?.basis==="CONTEXT_FOLLOW_UP_RULE"
    ||base.matchEvidence?.basis==="DOCUMENTARY_LITURGICAL_SCOPE"
+   ||base.matchEvidence?.basis==="DOCUMENTARY_TWO_FACET_CONCEPT"
    ||base.matchEvidence?.basis==="DOCUMENTARY_ANCHORED"
    ||base.matchEvidence?.basis==="DOCUMENTARY_CONFIRMED_FOLLOWUP")
    return remember(base);
