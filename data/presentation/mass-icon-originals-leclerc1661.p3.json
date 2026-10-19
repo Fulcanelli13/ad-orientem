@@ -121,7 +121,7 @@
       "readiness": "EXACT_PUBLIC_DOMAIN_ORIGINAL_SCENE_VIEWED_NEEDS_LOCAL_BYTES_AND_RUBRICAL_DETAIL",
       "rightsStatus": "PUBLIC_DOMAIN_INSTITUTIONALLY_CATALOGUED",
       "originalImagePath": null,
-      "sha256": null,
+      "sha256": "968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf",
       "actualImageViewed": true,
       "handPlacementVerified": false,
       "matches1962Rubrics": null,
@@ -165,8 +165,23 @@
           "oneAcolyteStanding": true
         }
       },
-      "imageBytesLocallyVerified": false,
-      "downloadAttempts": "Web original viewed; working-container original-file transfer failed. Do not infer SHA-256 from Commons filename or metadata."
+      "imageBytesLocallyVerified": true,
+      "downloadAttempts": "Web original viewed; working-container original-file transfer failed. Do not infer SHA-256 from Commons filename or metadata.",
+      "verificationProof": {
+        "sha256": "968fd5bdb467c77ceeb7d4d771a1b7b120258bd40fc987b8ea3a3a4d84b633bf",
+        "sha1": null,
+        "bytes": 167545,
+        "width": 657,
+        "height": 1045,
+        "artifactId": 12179522591,
+        "artifactUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39236948788/artifacts/12179522591",
+        "runId": 39236948788,
+        "verifiedIn": "GitHub Actions Node 22 source capture and independently extracted original image in analysis runtime",
+        "date": "2026-10-19",
+        "status": "BITWISE_VERIFIED_RESEARCH_ARTIFACT_NOT_PRODUCTION_ORIGINAL",
+        "permanence": "TEMPORARY_90_DAY_ARTIFACT"
+      },
+      "binaryContentAccess": "Verified original is available as 90-day GitHub Actions artifact; it is not an approved or durable production asset."
     },
     {
       "plate": 30,
