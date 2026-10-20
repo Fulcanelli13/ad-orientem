@@ -3,7 +3,7 @@ import {readFileSync} from "node:fs";
 import {projectPilgrimageItems} from "../src/find/explore-projection.js";
 import {
   buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney,
-  renderPilgrimageJourneyPanel,
+  renderPilgrimageJourneyPanel,journeysForCanonicalPlace,
 } from "../src/find/pilgrimage-journey.js";
 
 const seed=JSON.parse(readFileSync(new URL("../data/shrines/shrines-pilgrimages-seed.v1.json",import.meta.url),"utf8"));
@@ -71,6 +71,23 @@ assert.equal(journeys.reduce((n,j)=>n+j.stageSiteAnchors.length,0),15);
 assert.equal(journeys.filter(j=>j.stageSiteAnchors.length>0).length,13);
 const holywell=journeys.find(j=>j.id==="route:GB:holywell-church-to-well");
 assert.equal(holywell.stageSiteAnchors.length,2);
+const holywellReverse=journeysForCanonicalPlace(journeys,"place:GB:holywell-st-winefride-church");
+assert.equal(holywellReverse.length,1);
+assert.equal(holywellReverse[0].routeId,"route:GB:holywell-church-to-well");
+assert.equal(holywellReverse[0].relation,"NAMED_STAGE");
+assert.equal(holywellReverse[0].ordinal,1);
+const pereLavalReverse=journeysForCanonicalPlace(journeys,"place:MU:pere-laval-sainte-croix");
+assert.deepEqual(pereLavalReverse.map(j=>j.routeId).sort(),
+ ["route:MU:pere-laval-saint-louis","route:MU:pere-laval-saint-joseph"]);
+assert.equal(new Set(pereLavalReverse.map(j=>j.routeId)).size,2,"No duplicate routes per Place");
+const walsinghamReverse=journeysForCanonicalPlace(journeys,"place:GB:walsingham-catholic-shrine");
+assert.equal(walsinghamReverse.length,1);
+assert.equal(walsinghamReverse[0].relation,"RELATED_SHRINE_NOT_TERMINUS",
+ "Walsingham Catholic Shrine must not be shown as 2026 Priory terminus");
+assert.equal(walsinghamReverse[0].ordinal,null);
+assert.equal(journeysForCanonicalPlace(journeys,"place:NONEXISTENT").length,0);
+assert.equal(journeysForCanonicalPlace(journeys,"").length,0);
+
 assert.equal(holywell.stageSiteAnchors[0].placeId,"place:GB:holywell-st-winefride-church");
 assert.equal(holywell.stageSiteAnchors[1].placeId,"place:GB:holywell-st-winefride");
 assert.ok(holywell.stageSiteAnchors[1].approximate);
