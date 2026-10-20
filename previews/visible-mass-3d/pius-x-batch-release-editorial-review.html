@@ -272,16 +272,6 @@ async function loadReview(file){
 function setLang(value){
  lang=value;document.documentElement.lang=value;
  $("en").setAttribute("aria-pressed",String(value==="en"));$("fr").setAttribute("aria-pressed",String(value==="fr"));
- for(const item of data.records){
-  const c=claimIndex.get(item.id);
-  if(!c)continue;
-  if(c.openingTurnId!==item.turnId||c.originalOpeningEN!==item.originalDraftEN||
-   c.originalOpeningFR!==item.originalDraftFR||c.sourceWitness!==item.originalDigitalWitness)
-   throw Error("Original-source data mismatch");
-  if(c.proposedEN&&c.changeSource==="NEW_BILINGUAL_EDITORIAL_PROPOSAL"){
-   item.auditEN=c.proposedEN;item.auditFR=c.proposedFR;
-  }
- }
  drawNav();render();
 }
 $("en").onclick=()=>setLang("en");$("fr").onclick=()=>setLang("fr");
@@ -311,6 +301,16 @@ $("file").onchange=e=>loadReview(e.target.files[0]);
  data.counts?.firstWave!==40||data.counts?.published!==0||
  !Array.isArray(data.records)||data.records.length!==100||data.waves.length!==4)
  throw Error("Unapproved or incomplete source-owner review registry");
+ for(const item of data.records){
+  const c=claimIndex.get(item.id);
+  if(!c)continue;
+  if(c.openingTurnId!==item.turnId||c.originalOpeningEN!==item.originalDraftEN||
+   c.originalOpeningFR!==item.originalDraftFR||c.sourceWitness!==item.originalDigitalWitness)
+   throw Error("Original-source data mismatch");
+  if(c.proposedEN&&c.changeSource==="NEW_BILINGUAL_EDITORIAL_PROPOSAL"){
+   item.auditEN=c.proposedEN;item.auditFR=c.proposedFR;
+  }
+ }
  drawNav();render();
  }catch(e){statusMessage("The research registry could not be verified: "+String(e.message))}
 })();
