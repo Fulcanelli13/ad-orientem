@@ -11,7 +11,7 @@ The complete Q567–Q666 bilingual Sacraments cohort now has **one evidence/refe
 
 Reconciled against the original 100-family source index and the three linked Italian digital-source review waves: **9** support-question-array corrections, **10** source-faithful EN/FR draft wording corrections, **48** turns with original-document Magisterium topic leads, **42** with **1911 Bannwart old-Dz OCR-number candidates**, and **22** with specific but **blocked** Chanoine topic referrals. All 200 have an opt-in colleague switch policy and initial original numbered-question source references; **0** original 1905 print-image facsimile, final modern Denzinger, source-sentence, translation, historical voice, Canon reply or release certifications.
 
-**52%?** No such global certification is implied by numeric evidence mapping. The 152 answer turns without a mapped Magisterium unit remain `UNASSESSED_NOT_NOT_APPLICABLE`, rather than being assigned guessed Dz numbers or falsely declared historically non-doctrinal.
+No global certification rate follows from these source-mapping counts. The 152 answer turns without a mapped Magisterium unit remain `UNASSESSED_NOT_NOT_APPLICABLE`, rather than being assigned guessed Dz numbers or falsely declared historically non-doctrinal.
 
 ## Corrected substantive source-faithfulness issues
 
