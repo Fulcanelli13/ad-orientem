@@ -26,11 +26,12 @@
   ],
   "total": 76,
   "counts": {
-    "DISCOVER_EXACT_ORIGINAL": 21,
-    "SOURCE_IDENTIFIED_QA": 18,
+    "DISCOVER_EXACT_ORIGINAL": 18,
+    "SOURCE_IDENTIFIED_QA": 21,
+    "PRADO_SOURCE_EMBARGO": 1,
     "CHURCH_OBJECTS": 3,
     "VERIFY_OPEN_COMMONS_FILE": 2,
-    "OTHER_INDEPENDENT_SOURCE": 8,
+    "OTHER_INDEPENDENT_SOURCE": 7,
     "ARCHIVE_PHOTO": 2,
     "PER_IMAGE_RIGHTS": 4,
     "ITALIAN_OBJECT_RECORDS": 2,
@@ -54,14 +55,24 @@
       "artworkId": "ART-aravaggio-he-acrifice-of-saac",
       "title": "The Sacrifice of Isaac",
       "artist": "Caravaggio",
-      "sourceUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sacrifice_of_Isaac-Caravaggio_(Uffizi).jpg",
       "reviewGate": "APPROVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "DISCOVER_EXACT_ORIGINAL",
-      "priority": 1,
-      "status": "RESEARCH_NO_OBJECT_SOURCE",
-      "next": "Locate the approved physical original and a legally reusable photographic file; do not substitute another painting"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Exact institutional original routed to Commons file; verify source image rights, physical object match in actual pixels, crop and mobile preview before production.",
+      "sourceObjectUrl": "https://www.uffizi.it/en/artworks/sacrifice-of-isaac",
+      "sourceEvidence": {
+        "verifiedCollection": "Gallerie degli Uffizi, Florence",
+        "accession": "1890 no. 4659",
+        "photoFilePage": "https://commons.wikimedia.org/wiki/File:Sacrifice_of_Isaac-Caravaggio_(Uffizi).jpg",
+        "exactPhysicalOriginalResearchCrosscheck": true,
+        "photoLicenseVerifiedFromOriginal": false,
+        "mobilePhotoQA": false,
+        "productionCertified": false
+      }
     },
     {
       "artworkId": "ART-aravaggio-nspiration-of-aint-atthew",
@@ -168,14 +179,24 @@
       "artworkId": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
       "title": "Miracles of Saint Francis of Paola",
       "artist": "Peter Paul Rubens",
-      "sourceUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "DISCOVER_EXACT_ORIGINAL",
-      "priority": 1,
-      "status": "RESEARCH_NO_OBJECT_SOURCE",
-      "next": "Locate the approved physical original and a legally reusable photographic file; do not substitute another painting"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Exact institutional original routed to Commons file; verify source image rights, physical object match in actual pixels, crop and mobile preview before production.",
+      "sourceObjectUrl": "https://www.getty.edu/art/collection/object/103RJK",
+      "sourceEvidence": {
+        "verifiedCollection": "J. Paul Getty Museum",
+        "accession": "91.PB.50",
+        "photoFilePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
+        "exactPhysicalOriginalResearchCrosscheck": true,
+        "photoLicenseVerifiedFromOriginal": false,
+        "mobilePhotoQA": false,
+        "productionCertified": false
+      }
     },
     {
       "artworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
@@ -564,10 +585,17 @@
       "reviewGate": "APPROVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "DISCOVER_EXACT_ORIGINAL",
-      "priority": 1,
-      "status": "RESEARCH_NO_OBJECT_SOURCE",
-      "next": "Locate the approved physical original and a legally reusable photographic file; do not substitute another painting"
+      "lane": "PRADO_SOURCE_EMBARGO",
+      "priority": 9,
+      "status": "HOLD_PRADO_SOURCE_POLICY",
+      "next": "Preserve approved Rubera original, block all Museo del Prado-derived photographic sourcing and mirrors. Do not replace painting without user's explicit editorial decision.",
+      "sourceObjectInstitution": "Museo del Prado",
+      "sourceEvidence": {
+        "sourceInstitution": "Museo del Prado",
+        "physicalObjectOriginalHeld": true,
+        "photoDownloadProhibited": true,
+        "approvalUnchanged": true
+      }
     },
     {
       "artworkId": "ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
@@ -977,14 +1005,24 @@
       "artworkId": "W14-006",
       "title": "The Miracles of Saint Francis Xavier (oil modello)",
       "artist": "Peter Paul Rubens",
-      "sourceUrl": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier,_Modello_-_Google_Art_Project.jpg",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "OTHER_INDEPENDENT_SOURCE",
-      "priority": 3,
-      "status": "DISCOVER_AND_VERIFY_IMAGE_LICENSE",
-      "next": "Exact physical work + independent photographic rights + full-resolution pixels required"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Exact institutional original routed to Commons file; verify source image rights, physical object match in actual pixels, crop and mobile preview before production.",
+      "sourceObjectUrl": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
+      "sourceEvidence": {
+        "verifiedCollection": "Kunsthistorisches Museum Vienna",
+        "accession": "GG 528",
+        "photoFilePage": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier,_Modello_-_Google_Art_Project.jpg",
+        "exactPhysicalOriginalResearchCrosscheck": true,
+        "photoLicenseVerifiedFromOriginal": false,
+        "mobilePhotoQA": false,
+        "productionCertified": false
+      }
     },
     {
       "artworkId": "W38-001",
@@ -1227,8 +1265,8 @@
     "technicalImageAcquisitions": 0,
     "productionReleased": 0
   },
-  "remainingUnroutedRecords": 58,
-  "discoveryTaskPolicy": "Full 76-record programme retained for provenance; 18 source-identified records bypass Commons discovery; 58 remain for actual source search.",
+  "remainingUnroutedRecords": 54,
+  "discoveryTaskPolicy": "76 original recovery records preserved: 21 now have exact source routes, one approved Prado-held original excluded, 54 remain for permissible source discovery.",
   "newSourceIdentityEvidence": {
     "asOf": "2026-10-20",
     "newMuseumCrosscheckedRecords": [
@@ -1240,5 +1278,6 @@
       "B01-MARK-RENI-GENOA"
     ],
     "scope": "PHOTO_ACQUISITION_NOT_PUBLICATION"
-  }
+  },
+  "pradoSourceHoldsInThisQueue": 1
 }
