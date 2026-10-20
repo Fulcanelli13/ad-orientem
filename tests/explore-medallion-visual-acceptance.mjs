@@ -133,7 +133,7 @@ try{
    // the journey still does NOT claim to know the walking path between them.
    await journey.locator('[data-explore-journey-select="route:GB:holywell-church-to-well"]').click();
    await page.waitForFunction(()=>document.querySelector("#ao-find-modular-root .aoJourneyDetail h3")
-      ?.textContent?.includes("Holywell"),null,{timeout:12000});
+      ?.textContent?.includes("St Winefride"),null,{timeout:12000});
    assert.equal(await journey.locator("[data-explore-journey-stage-focus]").count(),2);
    await page.waitForFunction(()=>document.querySelectorAll(
       "#ao-find-modular-root [data-journey-map-stage]").length===2,null,{timeout:12000});
