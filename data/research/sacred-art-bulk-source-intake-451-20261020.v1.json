@@ -14,18 +14,26 @@
     "sourceRightsClaimNotProof": true,
     "noAutomaticSubstitutions": true,
     "noAutomaticPublication": true,
-    "allMastersRequireIndependentIdentityRightsCropPhoneQa": true
+    "allMastersRequireIndependentIdentityRightsCropPhoneQa": true,
+    "preserveW64HistoricFives": true,
+    "historicFivesAreSeparateAuthorityNotNewApproval": true
   },
   "batchSize": 50,
   "estimatedBatches": 10,
   "counts": {
     "total": 451,
-    "approved": 107,
+    "latestApproved": 107,
+    "legacyFivesIn451": 77,
     "excluded": 68,
-    "editorialHold": 276,
-    "approvedMetCandidates": 17,
-    "approvedCommonsCandidates": 11,
-    "approvedWithoutSafeApi": 79
+    "editorialHold": 199,
+    "eligibleExactMet": 23,
+    "eligibleExactCommons": 36,
+    "eligibleOtherSource": 125,
+    "legacyFiveOutside451": [
+      "W40-010",
+      "W40-011",
+      "prado-rubens-defenders"
+    ]
   },
   "works": [
     {
@@ -97,14 +105,15 @@
       "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/3b512d00-0e07-47f9-944e-159058552dbf",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
         "RUBENS_APOSTLE_ANDREW_CARD_PHOTO_MARTYRDOM"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
@@ -273,14 +282,15 @@
       "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
         "MATTHIAS_SHARED_WITH_MATTHEW_CARD"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-eter-aul-ubens-aint-atthias-postolate",
@@ -439,12 +449,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luke_the_Evangelist%2C_by_Jan_Jansz_de_Stomme.jpg",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C34:franciscodezurbaran046jpg",
@@ -469,12 +480,13 @@
       "sourceUrl": "https://www.nationalgallery.org.uk/paintings/anthony-van-dyck-st-ambrose-barring-theodosius-from-milan-cathedral",
       "sourceClaim": "CC BY 3.0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": "16|W02-017|b7dcde9d1bdd85d0085bae1cb5859f59598062230664a24613eb41209cb976a7|W02-017-4d47fd645f0e4834.webp",
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:claudevignonsaintambrose6843minneapolisinstituteofartsjpg",
@@ -665,12 +677,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pompeo_batoni%2C_estasi_di_santa_teresa%2C_1743_circa.jpg",
       "sourceClaim": "CC BY 3.0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:francescounterpergersantateresadavilatiff",
@@ -743,12 +756,13 @@
       "sourceUrl": "https://archives.carmeldelisieux.fr/en/environnement-familial/tableaux-et-fusains/tableaux-de-celine-martin/",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "italy-0900119548",
@@ -789,12 +803,13 @@
       "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM75000591",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "paris-pm75001042-halle-sales",
@@ -803,12 +818,13 @@
       "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM75001042",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C34:marcoantoniofranceschiniilsfrancescodisalesneldesertojpg",
@@ -817,12 +833,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Marco_Antonio_Franceschini_-_Il_S._Francesco_di_Sales_nel_deserto.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:sanbasilioysanatanasioalonsosanchezcoellojpg",
@@ -831,12 +848,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Basilio_y_San_Atanasio%2C_Alonso_S%C3%A1nchez_Coello.jpg",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:rubensathanasiusjpg",
@@ -861,14 +879,15 @@
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/439120",
       "sourceClaim": "CC0 (museum official open access)",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "MET_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
         "SUBLEYRAS_BASIL_IDENTICAL_PHOTO_AS_SEPARATE_G28"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G30-004",
@@ -877,12 +896,13 @@
       "sourceUrl": "https://www.catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0070-00118_R03",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G17-003",
@@ -891,12 +911,13 @@
       "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-john-chrysostom/62f4944d-87c7-463d-855d-82333eac6316",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-artolom-steban-urillo-aint-sidore-of-eville",
@@ -905,12 +926,13 @@
       "sourceUrl": "",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G32-001",
@@ -919,12 +941,13 @@
       "sourceUrl": "https://wwwe.lib.cam.ac.uk/CUL/exhibitions/KJV/lastcharpter.html",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "louvre-crespi-inv259",
@@ -933,12 +956,13 @@
       "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010064462",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G20-002",
@@ -963,12 +987,13 @@
       "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500926537",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "zeri-45874-peter-damian",
@@ -1009,12 +1034,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Albertus_Magnus_-_Parish_of_Guayaquil.jpg",
       "sourceClaim": "CC BY-SA 3.0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G30-010",
@@ -1039,12 +1065,13 @@
       "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Petrus-Canisius-1521-97-Geestelijke-en-schrijver-te-Nijmegen--62669513b330202b4091495bd20e3939",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G20-003",
@@ -1085,12 +1112,13 @@
       "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/IM68006112",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "italy-banchero-0700031704",
@@ -1129,12 +1157,13 @@
       "sourceUrl": "https://www.francesconetti.com/en-gb/newpage7d1e8e8d",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-uan-orrea-de-ivar-aint-awrence-aint-ilary-two-sided-altarpiece-panel",
@@ -1191,12 +1220,13 @@
       "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060517",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W40-006",
@@ -1205,7 +1235,7 @@
       "sourceUrl": "https://www.museodelprado.es/coleccion/obra-de-arte/san-jose-con-el-nio-jesus/a659fbad-c561-42bc-8249-042be39f4a72",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
@@ -1213,7 +1243,8 @@
         "MURILLO_JOSEPH_PHOTO_ON_CAMILO_RECORD",
         "MURILLO_JOSEPH_PHOTO_ON_CAMILO_RECORD"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:guidoreni042jpg",
@@ -1239,12 +1270,13 @@
       "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010060771",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-uido-eni-rchangel-ichael-efeating-atan",
@@ -1271,12 +1303,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arc%C3%A1ngel_San_Rafael%2C_de_Alonso_Miguel_de_Tovar_(Ayuntamiento_de_Sevilla).jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W08-009",
@@ -1285,12 +1318,13 @@
       "sourceUrl": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-ierre-ignard-aint-ohn-the-aptist",
@@ -1315,12 +1349,13 @@
       "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C34:colognavenetachiesadisantamarianascenteilmiracolodellamulajp",
@@ -1329,14 +1364,15 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cologna_Veneta%2C_chiesa_di_Santa_Maria_Nascente_-_Il_miracolo_della_mula.jpg",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
         "CAVALLINO_ANTHONY_IMAGE_ON_COLOGNA_CHURCH_SOURCE"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W38-009",
@@ -1345,12 +1381,13 @@
       "sourceUrl": "https://www.museodelprado.es/en/the-collection/art-work/saint-anthony-of-padua/94869cf9-4d95-443f-9372-4ad05440f8da",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "sdma-48-3-pittoni-anthony",
@@ -1375,14 +1412,15 @@
       "sourceUrl": "https://clevelandart.org/art/1982.36",
       "sourceClaim": "CC0 (CMA open access)",
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
         "RESEARCH_CANDIDATE_NO_VERIFIED_PHOTO"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "sevilla-murillo-vision-san-antonio",
@@ -1439,14 +1477,15 @@
       "sourceUrl": "https://www.musee-orsay.fr/fr/oeuvres/jeanne-darc-ecoutant-les-voix-9256",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
         "STILKE_JOAN_MARTYRDOM_IMAGE_ON_CARRIERE_ARTWORK"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C35:headofjoanofarcinecstasyca1850byjeanaugustedominiqueingresmu",
@@ -1503,14 +1542,15 @@
       "sourceUrl": "https://collections-mba.nancy.fr/fr/notice/520-apotheose-de-saint-louis-4f4dd315-e13c-44cf-9b26-11f1d3009ce4",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
         "CABANEL_SAINT_LOUIS_PHOTO_ON_FRAGONARD_RECORD"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G27-002",
@@ -1519,14 +1559,15 @@
       "sourceUrl": "https://digitalarchive.rds.ie/items/show/3978",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
         "TIEPOLO_SAINT_PATRICK_IMAGE_ON_VALDRE_RECORD"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
@@ -1551,14 +1592,15 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antonio_Sicurezza-Charity_of_St_Laurence.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
         "STROZZI_LAWRENCE_PHOTO_ON_SICUREZZA_CARD"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-ean-aptiste-de-hampaigne-artyrdom-of-aint-awrence",
@@ -1583,14 +1625,15 @@
       "sourceUrl": "https://www.nga.gov/artworks/106362-martyrdom-of-saint-lawrence",
       "sourceClaim": "CC0",
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
         "RESEARCH_CANDIDATE_NO_VERIFIED_PHOTO"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G25-016",
@@ -1615,12 +1658,13 @@
       "sourceUrl": "https://www.google.com/search?q=site%3Amuseodelprado.es/en/the-collection/art-work%20P001478",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W02-015",
@@ -1629,14 +1673,15 @@
       "sourceUrl": "https://www.nationalgallery.org.uk/paintings/francisco-de-zurbaran-saint-francis-in-meditation",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": "55|W02-015|93519dbae8a83d8d00c27495575b23239491e7dfce81527658bb967d1e19afad|W02-015-20240a8bfddd0c38.webp",
       "hasReviewPreview": true,
       "assetHolds": [
         "CARAVAGGIO_FRANCIS_IMAGE_ON_ZURBARAN_RECORD"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C34:ambrosiusbensonsantodomingodeguzmanmuseodelpradomadridjpg",
@@ -1645,12 +1690,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Santo_Domingo_de_Guzman%2C_Museo_del_Prado%2C_Madrid.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W36-SNT-OT-13-5387d641cce6",
@@ -1659,12 +1705,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claudio_coello-santo_domingo.JPG",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-laudio-oello-aint-ominic-of-uzm-n",
@@ -1689,12 +1736,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W44-005",
@@ -1703,12 +1751,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan_rizi-san_benito_bendiciendo.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W44-006",
@@ -1717,12 +1766,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W14-006",
@@ -1731,12 +1781,13 @@
       "sourceUrl": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
@@ -1761,12 +1812,13 @@
       "sourceUrl": "https://www.khm.at/fileadmin/pdf_KHM/online-publikationen/2025/ansichtssache_28/KHM_PointOfView_28.pdf",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
@@ -1791,12 +1843,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "france-PM01002671-vianney",
@@ -1805,12 +1858,13 @@
       "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002671",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:eliseuviscontirecompensadesaosebastiaojpg",
@@ -1819,12 +1873,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eliseu_Visconti_-_Recompensa_de_S%C3%A3o_Sebasti%C3%A3o.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-eter-aul-ubens-aint-ebastian",
@@ -1833,14 +1888,15 @@
       "sourceUrl": "",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "BERLIN-RUBENS-798H",
@@ -1865,12 +1921,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:St_Nicholas_of_Bari_presents_the_Rovelli_students_to_Madonna_and_Child%2C_by_Moretto_da_Brescia.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "G17-010",
@@ -1879,12 +1936,13 @@
       "sourceUrl": "https://www.nga.gov/artworks/63264-martyrdom-and-last-communion-saint-lucy",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C35:saintagnesbycesaredandinijpg",
@@ -1893,12 +1951,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Agnes_by_Cesare_Dandini.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W38-001",
@@ -1907,12 +1966,13 @@
       "sourceUrl": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W42-NEW-002",
@@ -1921,12 +1981,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francesco_Furini_-_Saint_Agnes_of_Rome.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:cavalierarpinosantaceciliajpg",
@@ -1935,12 +1996,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavalier_Arpino_-_santa_cecilia.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:hippolytefourniersaintcecilejpg",
@@ -1949,12 +2011,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippolyte_Fournier_Saint_C%C3%A9cile.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-ietro-da-ortona-aint-ecilia",
@@ -1963,14 +2026,15 @@
       "sourceUrl": "https://www.nationalgallery.org.uk/paintings/pietro-da-cortona-saint-cecilia",
       "sourceClaim": null,
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C32:claudevignonstcatherinerefusestosacrificetotheidolsjpg",
@@ -1979,12 +2043,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude_Vignon_-_St_Catherine_refuses_to_sacrifice_to_the_idols.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-aravaggio-aint-atherine-of-lexandria",
@@ -2009,12 +2074,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gustave_Vanaise_-_Magdalene_in_Christ's_tomb.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "W40-012",
@@ -2023,12 +2089,13 @@
       "sourceUrl": "https://www.nationalgallery.org.uk/paintings/guido-reni-saint-mary-magdalene",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-uido-eni-aint-ary-agdalene",
@@ -2053,12 +2120,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sainte_Genevieve%2C_1821%2C_by_Elisabeth_Vigee_Le_Brun.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-abriel-ran-ois-oyen-iracle-des-rdents",
@@ -2099,12 +2167,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:San_Vicente_de_Paul_-_Juan_Nepomuceno.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-nthony-van-yck-aint-artin-ividing-is-loak",
@@ -2113,12 +2182,13 @@
       "sourceUrl": "https://www.wga.hu/html/d/dyck_van/3other/s_martin.html",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "C35:laeducaciondelavirgentheeducationofthevirginworkshopofvicent",
@@ -2127,12 +2197,13 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_Educaci%C3%B3n_de_la_Virgen_(The_Education_of_the_Virgin)%2C_Workshop_of_Vicent_L%C3%B3pez_Porta%C3%B1a.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-eter-aul-ubens-oly-amily-with-aint-nne",
@@ -2157,12 +2228,13 @@
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/436235",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "MET_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
@@ -2171,12 +2243,13 @@
       "sourceUrl": "",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "commons-morlete-sacred-heart-1759",
@@ -2215,12 +2288,13 @@
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/438434",
       "sourceClaim": "Public domain",
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "MET_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "met-437542",
@@ -2287,12 +2361,13 @@
       "sourceUrl": "https://clevelandart.org/art/1980.258",
       "sourceClaim": "CC0 (CMA open access)",
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "met-437849",
@@ -5068,12 +5143,13 @@
       "sourceUrl": "https://www.nga.gov/artworks/46185-adoration-of-the-shepherds",
       "sourceClaim": null,
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "met-769294",
@@ -5894,12 +5970,13 @@
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/438134",
       "sourceClaim": null,
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "MET_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "met-458974",
@@ -5950,12 +6027,13 @@
       "sourceUrl": "https://clevelandart.org/art/1961.219",
       "sourceClaim": null,
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "met-437273",
@@ -5978,12 +6056,13 @@
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/724811",
       "sourceClaim": null,
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "MET_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "nga-369",
@@ -6006,12 +6085,13 @@
       "sourceUrl": "https://www.nga.gov/artworks/12209-saint-lucy",
       "sourceClaim": null,
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "met-436050",
@@ -6272,12 +6352,13 @@
       "sourceUrl": "https://clevelandart.org/art/1953.156",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "cma-150389",
@@ -6286,12 +6367,13 @@
       "sourceUrl": "https://clevelandart.org/art/1981.18",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "cma-160143",
@@ -6300,12 +6382,13 @@
       "sourceUrl": "https://clevelandart.org/art/1998.10",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "cma-170814",
@@ -6328,12 +6411,13 @@
       "sourceUrl": "https://clevelandart.org/art/2019.168",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "NO_EXACT_OPEN_SOURCE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "met-439327",
@@ -6398,12 +6482,13 @@
       "sourceUrl": "https://www.metmuseum.org/art/collection/search/437458",
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
-      "reviewGate": "EDITORIAL_HOLD",
+      "reviewGate": "LEGACY_FIVE_PRESERVED",
       "provider": "MET_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
     },
     {
       "id": "met-459059",
