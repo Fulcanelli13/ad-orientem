@@ -91,7 +91,7 @@ for(const link of siteLinks.links){
     "Stage navigation must not imply certified walking geometry");
  }
 }
-assert.equal(siteLinks.links.filter(link=>link.site_relation==="RELATED_COMPLEX_ANCHOR").length,4);
+assert.equal(siteLinks.links.filter(link=>link.site_relation==="RELATED_COMPLEX_ANCHOR").length,5);
 const holywell=journeys.find(j=>j.id==="route:GB:holywell-church-to-well");
 assert.equal(holywell.stageSiteAnchors.length,2);
 const holywellReverse=journeysForCanonicalPlace(journeys,"place:GB:holywell-st-winefride-church");
