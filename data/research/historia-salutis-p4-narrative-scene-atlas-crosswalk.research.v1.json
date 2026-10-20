@@ -1,0 +1,4346 @@
+{
+  "schema": "ao.historia.p4.narrative-scene-atlas-crosswalk.research.v1",
+  "status": "RESEARCH_ONLY_PARTIAL_SCENE_AUDIT",
+  "createdOn": "2026-10-21",
+  "inputs": [
+    "data/explore/biblical-cinematic-studies-review.v1.json",
+    "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "data/explore/historia-salutis-p0-master-crosswalk.v1.json",
+    "data/research/historia-salutis-p4-scene-audit-batch-abraham-000-014.v1.json",
+    "data/research/historia-salutis-p4-scene-audit-batch-abraham-015-024.v1.json"
+  ],
+  "rules": {
+    "movementLinkMeans": "Scripture-reference overlap only; does not assert event identity or chronology",
+    "atlasLinks": "Existing canonical Atlas event keys and baseline relations preserved verbatim",
+    "covenantLinks": "Inherited only from P0 covenantTextAnchors",
+    "persons": "Populated only for completed scene audit rows; null means pending",
+    "geography": "Source label retained; audited findings shown only where available; no coordinates",
+    "genealogies": "Not inferred; Matthew and Luke genealogies remain separate"
+  },
+  "counts": {
+    "scenes": 183,
+    "auditedScenes": 25,
+    "sceneToMovementLinks": 57,
+    "sceneToAtlasLinks": 99
+  },
+  "scenes": [
+    {
+      "sceneKey": "biblical:scene:abraham:000",
+      "sceneIndex": 0,
+      "scriptureReference": "Genesis 12:1–5",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 12:1–9"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "atlasReference": "Genesis 12:1–9",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "Abram, the LORD; Sarai and Lot in departure verses",
+      "geography": {
+        "sourceLabel": "Haran · upper Mesopotamia",
+        "verifiedFinding": "Call location UNKNOWN; Haran is a named journey waypoint in Genesis 11:31–12:5, but the call's exact place is unresolved. The scene registry's Haran pin is too specific for Genesis 12:1.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:001",
+      "sceneIndex": 1,
+      "scriptureReference": "Genesis 12:4–5",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 12:1–9"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "atlasReference": "Genesis 12:1–9",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "Abram, Sarai, Lot; unnamed household/people",
+      "geography": {
+        "sourceLabel": "Haran · historical settlement",
+        "verifiedFinding": "Haran, named settlement of departure; exact house/gate unknown. Regional/site label only.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:002",
+      "sceneIndex": 2,
+      "scriptureReference": "Genesis 12:5–6",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 12:1–9"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "atlasReference": "Genesis 12:1–9",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "Abram, Sarai, Lot; unnamed people acquired in Haran",
+      "geography": {
+        "sourceLabel": "Syrian–Levantine corridor",
+        "verifiedFinding": "Canaan and Shechem are exact textual regions/toponym. Route between Haran and Shechem is not stated; no line/coordinates should be inferred.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:003",
+      "sceneIndex": 3,
+      "scriptureReference": "Genesis 12:6–7",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 12:1–9"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "atlasReference": "Genesis 12:1–9",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "Abram, the LORD",
+      "geography": {
+        "sourceLabel": "Shechem · city context",
+        "verifiedFinding": "Shechem/Oak of Moreh are exact biblical toponyms; altar's precise archaeological location UNKNOWN.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:004",
+      "sceneIndex": 4,
+      "scriptureReference": "Genesis 12:7",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 12:1–9"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "atlasReference": "Genesis 12:1–9",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "Abram, the LORD; Abram's descendants collectively (unnamed)",
+      "geography": {
+        "sourceLabel": "Shechem · historical city region",
+        "verifiedFinding": "Shechem named in the preceding clause/context; no independent point within Shechem is located.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:005",
+      "sceneIndex": 5,
+      "scriptureReference": "Genesis 12:8",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 12:1–9"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "atlasReference": "Genesis 12:1–9",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "Abram, the LORD",
+      "geography": {
+        "sourceLabel": "Bethel region · proposed identification",
+        "verifiedFinding": "Between Bethel and Ai: exact relative wording; modern identifications of both sites are disputed, so classify REGIONAL_RELATIVE / disputed anchors.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:006",
+      "sceneIndex": 6,
+      "scriptureReference": "Genesis 12:10–20",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Abram, Sarai, Pharaoh; Pharaoh's household/servants collectively",
+      "geography": {
+        "sourceLabel": "Egypt · regional focus",
+        "verifiedFinding": "Egypt REGION exact in text; no city, route, or palace site named. Regional, not point location.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:007",
+      "sceneIndex": 7,
+      "scriptureReference": "Genesis 13:1–4",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Abram, Lot, Sarai; household/possessions collectively; LORD in altar invocation",
+      "geography": {
+        "sourceLabel": "Bethel region",
+        "verifiedFinding": "Route mentions Negeb, Bethel and the earlier altar; broad route sequence, exact path and altar coordinates unknown.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:008",
+      "sceneIndex": 8,
+      "scriptureReference": "Genesis 13:5–13",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Abram, Lot, their herdsmen; Canaanites and Perizzites (v7); people of Sodom (v13)",
+      "geography": {
+        "sourceLabel": "Bethel · proposed location",
+        "verifiedFinding": "Bethel/Ai context is inherited from 13:3–4, but exact separation point is not named. Jordan plain and Sodom are textual regions/toponyms; Sodom site disputed/unknown.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:009",
+      "sceneIndex": 9,
+      "scriptureReference": "Genesis 13:10–13",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Lot; Sodom inhabitants; Abram is present in context",
+      "geography": {
+        "sourceLabel": "Dead Sea basin · site unidentified",
+        "verifiedFinding": "Jordan plain and Sodom are exact textual names; the city's archaeological identification is UNKNOWN/DISPUTED.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:010",
+      "sceneIndex": 10,
+      "scriptureReference": "Genesis 13:14–18",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "LORD, Abram; Lot referenced as departed",
+      "geography": {
+        "sourceLabel": "Hebron / Mamre · traditional association",
+        "verifiedFinding": "Oaks of Mamre near Hebron are biblical regional geography. Exact grove/tent/altar point is UNKNOWN; Hebron is a named nearby settlement.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:011",
+      "sceneIndex": 11,
+      "scriptureReference": "Genesis 14:13–16",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Abram; Lot; Mamre, Eshcol, Aner; named kings including Chedorlaomer; Abram's trained household men",
+      "geography": {
+        "sourceLabel": "Hebron · city context",
+        "verifiedFinding": "Textual route: Mamre/Hebron region → Dan → Hobah north of Damascus → return. Route geometry uncertain; do not draw a precise polyline.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:012",
+      "sceneIndex": 12,
+      "scriptureReference": "Genesis 14:17–20",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-14-18-20",
+          "atlasReference": "Genesis 14:18–20",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "Abram, Melchizedek, king of Sodom; named kings in preceding context",
+      "geography": {
+        "sourceLabel": "Jerusalem · traditional identification of Salem",
+        "verifiedFinding": "Valley of Shaveh exact textual name; Salem exact textual name. Salem=Jerusalem is traditional identification, not certain from these verses; classify disputed/traditional.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:013",
+      "sceneIndex": 13,
+      "scriptureReference": "Genesis 15:1–6",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 15:1–6"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-15-1-21",
+          "atlasReference": "Genesis 15:1–21",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": [
+            {
+              "id": "cv:abraham",
+              "evidenceStatus": "EXACT_EVENT"
+            }
+          ]
+        }
+      ],
+      "covenantIds": [
+        {
+          "id": "cv:abraham",
+          "evidenceStatus": "EXACT_EVENT"
+        }
+      ],
+      "persons": "Abram, the LORD; unnamed heir/descendants as promise referents",
+      "geography": {
+        "sourceLabel": "Canaan hill country · illustrative focus",
+        "verifiedFinding": "The text gives a vision, no physical setting. UNLOCATED, not Mamre by inference.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:014",
+      "sceneIndex": 14,
+      "scriptureReference": "Genesis 15:7–21",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 15:9–10",
+            "Genesis 15:13–14",
+            "Genesis 15:17–18"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-15-1-21",
+          "atlasReference": "Genesis 15:1–21",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": [
+            {
+              "id": "cv:abraham",
+              "evidenceStatus": "EXACT_EVENT"
+            }
+          ]
+        }
+      ],
+      "covenantIds": [
+        {
+          "id": "cv:abraham",
+          "evidenceStatus": "EXACT_EVENT"
+        }
+      ],
+      "persons": "Abram, the LORD; animals/birds specified in v9; descendants collectively",
+      "geography": {
+        "sourceLabel": "Mamre · traditional locality",
+        "verifiedFinding": "UNLOCATED: no place named in chapter. Mamre is an unsupported location assignment for this episode.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:015",
+      "sceneIndex": 15,
+      "scriptureReference": "Genesis 16:1–16",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Hagar; Angel of the Lord; Abram; Sarai; Ishmael (named prenatally)",
+      "geography": {
+        "sourceLabel": "Mamre · traditional locality",
+        "verifiedFinding": "Shur road/spring is textual but unidentified; household birth location not stated. Split route and birth; no Mamre point.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:016",
+      "sceneIndex": 16,
+      "scriptureReference": "Genesis 17:1–14",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M04",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 17:1–11"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "LORD, Abram/Abraham; household males collectively",
+      "geography": {
+        "sourceLabel": "Mamre · traditional locality",
+        "verifiedFinding": "No place named in 17:1–14. Mamre appears in 18:1, not here; classify unlocated.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:017",
+      "sceneIndex": 17,
+      "scriptureReference": "Genesis 18:1–15",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-18-1-8",
+          "atlasReference": "Genesis 18:1–8",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "LORD (narrative framing), Abraham, Sarah, three visitors/men; servants/bread preparation in collective terms",
+      "geography": {
+        "sourceLabel": "Mamre · traditional area",
+        "verifiedFinding": "Oaks of Mamre are text-exact region; exact trees/encampment unknown. Do not assert visitors' identities beyond textual/narrative identification.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:018",
+      "sceneIndex": 18,
+      "scriptureReference": "Genesis 18:16–33",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "LORD, Abraham; Sodom's inhabitants collectively",
+      "geography": {
+        "sourceLabel": "Mamre · traditional locality",
+        "verifiedFinding": "Mamre region as narrative context; no exact location for dialogue. Sodom itself is destination/topic, not scene location.",
+        "classification": "TEXTUAL_TOPOGRAPHIC_AREA",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:019",
+      "sceneIndex": 19,
+      "scriptureReference": "Genesis 19:1–29",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Two angels; Lot; Lot's household; men of Sodom; LORD; Abraham referenced in v29",
+      "geography": {
+        "sourceLabel": "Dead Sea basin · site unidentified",
+        "verifiedFinding": "Sodom is exact textual city name, but archaeological site UNKNOWN/DISPUTED; 'Dead Sea basin' is a regional proposal only.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:020",
+      "sceneIndex": 20,
+      "scriptureReference": "Genesis 20:1–18",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Abraham, Sarah, Abimelech, God; Abimelech's servants/household collectively",
+      "geography": {
+        "sourceLabel": "Gerar · location debated in the Negev",
+        "verifiedFinding": "Gerar named; modern location debated. Do not place a precise point in the Negev without source-specific support.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:021",
+      "sceneIndex": 21,
+      "scriptureReference": "Genesis 21:1–7",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M05",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 21:1–7"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-21-1-7",
+          "atlasReference": "Genesis 21:1–7",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "LORD, Abraham, Sarah, Isaac",
+      "geography": {
+        "sourceLabel": "Beersheba · city context",
+        "verifiedFinding": "Birth location UNKNOWN in 21:1–7; Beersheba city-context label is anachronistic if attached to this scene alone.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:022",
+      "sceneIndex": 22,
+      "scriptureReference": "Genesis 21:22–34",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Abraham, Abimelech, Phicol; servants/households collectively",
+      "geography": {
+        "sourceLabel": "Beersheba · city context",
+        "verifiedFinding": "Beersheba named; well's precise archaeological identity UNKNOWN. The episode follows Isaac's birth but is separated by the Hagar/Ishmael expulsion narrative (21:8–21).",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:023",
+      "sceneIndex": 23,
+      "scriptureReference": "Genesis 22:1–19",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M05",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Genesis 22:1–19"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-22-1-19",
+          "atlasReference": "Genesis 22:1–19",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": "God; Abraham; Isaac; two servants; angel of the LORD; ram",
+      "geography": {
+        "sourceLabel": "Moriah · traditionally associated region",
+        "verifiedFinding": "Land of Moriah exact in text; precise mountain unresolved. Jerusalem/Temple Mount is traditional identification and must be labeled as such.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:024",
+      "sceneIndex": 24,
+      "scriptureReference": "Genesis 23:1–20",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": "Sarah, Abraham, Ephron, sons of Heth collectively",
+      "geography": {
+        "sourceLabel": "Hebron · traditional site",
+        "verifiedFinding": "Machpelah near Mamre/Hebron is textual region; traditional tomb precinct at Hebron is not proof of the precise cave/field boundary.",
+        "classification": "TEXTUAL_TOPOGRAPHIC_AREA",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:025",
+      "sceneIndex": 25,
+      "scriptureReference": "Exodus 1:8–22",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M07",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 1:7–14",
+            "Exodus 1:22"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Goshen · eastern Nile Delta (approximate)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:026",
+      "sceneIndex": 26,
+      "scriptureReference": "Exodus 2:1–10",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-2-1-10",
+          "atlasReference": "Exodus 2:1–10",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Nile Valley · contextual reference",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:027",
+      "sceneIndex": 27,
+      "scriptureReference": "Exodus 2:11–22",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Midian · wide traditional region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:028",
+      "sceneIndex": 28,
+      "scriptureReference": "Exodus 3:1–15",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M07",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 3:1–8",
+            "Exodus 3:10–15"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-3-1-15",
+          "atlasReference": "Exodus 3:1–15",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jebel Musa · traditional Mount Sinai (contested)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:029",
+      "sceneIndex": 29,
+      "scriptureReference": "Exodus 4:18–31",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Goshen · eastern Nile Delta (approximate)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:030",
+      "sceneIndex": 30,
+      "scriptureReference": "Exodus 5:1–23",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Rameses · eastern Delta (hypothesis)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:031",
+      "sceneIndex": 31,
+      "scriptureReference": "Exodus 7:8–13",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Rameses · eastern Delta (hypothesis)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:032",
+      "sceneIndex": 32,
+      "scriptureReference": "Exodus 7:14–25",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M08",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 7:14–17",
+            "Exodus 7:20–21"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-7-14-25",
+          "atlasReference": "Exodus 7:14–25",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Nile Valley · contextual reference",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:033",
+      "sceneIndex": 33,
+      "scriptureReference": "Exodus 12:1–28",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M08",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 12:1–3",
+            "Exodus 12:5–8",
+            "Exodus 12:11–14",
+            "Exodus 12:21–23",
+            "Exodus 12:27–28"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-12-1-28",
+          "atlasReference": "Exodus 12:1–28",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Goshen · eastern Nile Delta (approximate)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:034",
+      "sceneIndex": 34,
+      "scriptureReference": "Exodus 12:31–42",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M09",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 12:31–33",
+            "Exodus 12:37–42"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-12-31-42",
+          "atlasReference": "Exodus 12:31–42",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Rameses · eastern Delta (hypothesis)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:035",
+      "sceneIndex": 35,
+      "scriptureReference": "Exodus 13:17–22",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Northern Suez isthmus · schematic focus only",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:036",
+      "sceneIndex": 36,
+      "scriptureReference": "Exodus 14:15–31",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M09",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 14:13–16",
+            "Exodus 14:19–23",
+            "Exodus 14:26–31"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-14-15-31",
+          "atlasReference": "Exodus 14:15–31",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Location not established",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:037",
+      "sceneIndex": 37,
+      "scriptureReference": "Exodus 15:1–21",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Location not established",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:038",
+      "sceneIndex": 38,
+      "scriptureReference": "Exodus 15:22–27",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sinai wilderness · broad uncertain region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:039",
+      "sceneIndex": 39,
+      "scriptureReference": "Exodus 16:1–36",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-16-1-36",
+          "atlasReference": "Exodus 16:1–36",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sinai wilderness · broad uncertain region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:040",
+      "sceneIndex": 40,
+      "scriptureReference": "Exodus 17:1–7",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sinai wilderness · broad uncertain region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:041",
+      "sceneIndex": 41,
+      "scriptureReference": "Exodus 17:8–16",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sinai wilderness · broad uncertain region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:042",
+      "sceneIndex": 42,
+      "scriptureReference": "Exodus 18:13–27",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sinai wilderness · broad uncertain region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:043",
+      "sceneIndex": 43,
+      "scriptureReference": "Exodus 19:1–15",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M10",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 19:1–8"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jebel Musa · traditional Mount Sinai (contested)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:044",
+      "sceneIndex": 44,
+      "scriptureReference": "Exodus 20:1–17",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M10",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 20:1–17"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-20-1-17",
+          "atlasReference": "Exodus 20:1–17",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jebel Musa · traditional Mount Sinai (contested)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:045",
+      "sceneIndex": 45,
+      "scriptureReference": "Exodus 24:1–18",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M10",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 24:3–8"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jebel Musa · traditional Mount Sinai (contested)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:046",
+      "sceneIndex": 46,
+      "scriptureReference": "Exodus 32:1–35",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M10",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Exodus 32:1–4",
+            "Exodus 32:7–14",
+            "Exodus 32:19–20",
+            "Exodus 32:30–34"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-32-1-35",
+          "atlasReference": "Exodus 32:1–35",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jebel Musa · traditional Mount Sinai (contested)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:047",
+      "sceneIndex": 47,
+      "scriptureReference": "Exodus 34:1–35",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jebel Musa · traditional Mount Sinai (contested)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:048",
+      "sceneIndex": 48,
+      "scriptureReference": "Exodus 40:1–38",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-40-1-38",
+          "atlasReference": "Exodus 40:1–38",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jebel Musa · traditional Mount Sinai (contested)",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:049",
+      "sceneIndex": 49,
+      "scriptureReference": "Numbers 10:11–36",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sinai wilderness · broad uncertain region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:050",
+      "sceneIndex": 50,
+      "scriptureReference": "Numbers 13:1–33",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Kadesh-Barnea · identification debated",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:051",
+      "sceneIndex": 51,
+      "scriptureReference": "Numbers 14:1–38",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Kadesh-Barnea · identification debated",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:052",
+      "sceneIndex": 52,
+      "scriptureReference": "Numbers 21:4–9",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Edom region · approximate",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:053",
+      "sceneIndex": 53,
+      "scriptureReference": "Numbers 22:1–24:25",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Plains of Moab · Jordan Valley context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:054",
+      "sceneIndex": 54,
+      "scriptureReference": "Deuteronomy 6:4–25",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Plains of Moab · Jordan Valley context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:055",
+      "sceneIndex": 55,
+      "scriptureReference": "Deuteronomy 34:1–8",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M11",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Deuteronomy 34:1–7"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:deuteronomy-34-1-6",
+          "atlasReference": "Deuteronomy 34:1–6",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Mount Nebo · traditional location",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:056",
+      "sceneIndex": 56,
+      "scriptureReference": "Joshua 3:1–17",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M11",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Joshua 3:7–8",
+            "Joshua 3:13–17"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:joshua-3-1-17",
+          "atlasReference": "Joshua 3:1–17",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jericho · settlement region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:057",
+      "sceneIndex": 57,
+      "scriptureReference": "Luke 1:26–38",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M18",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Luke 1:26–38"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:nazareth-e1",
+          "atlasReference": "Luke 1:26–38",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Nazareth · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:058",
+      "sceneIndex": 58,
+      "scriptureReference": "Matthew 1:18–25",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M19",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 1:18–25"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:nazareth-additional-001",
+          "atlasReference": "Matthew 1:18–25",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Nazareth · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:059",
+      "sceneIndex": 59,
+      "scriptureReference": "Luke 1:39–56",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:ein-karem-e1",
+          "atlasReference": "Luke 1:39–56",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Judean hill country / Ein Karem",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:060",
+      "sceneIndex": 60,
+      "scriptureReference": "Luke 1:57–80",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Judean hill country / Ein Karem tradition",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:061",
+      "sceneIndex": 61,
+      "scriptureReference": "Luke 2:1–20",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M19",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Luke 2:1–20"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethlehem-e1",
+          "atlasReference": "Luke 2:1–20",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethlehem · traditional site",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:062",
+      "sceneIndex": 62,
+      "scriptureReference": "Luke 2:21",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethlehem-additional-002",
+          "atlasReference": "Luke 2:21–21",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethlehem · traditional birthplace sanctuary",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:063",
+      "sceneIndex": 63,
+      "scriptureReference": "Matthew 2:1–12",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M19",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 2:1–12"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethlehem-e2",
+          "atlasReference": "Matthew 2:1–12",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethlehem · traditional birthplace sanctuary",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:064",
+      "sceneIndex": 64,
+      "scriptureReference": "Luke 2:22–38",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-temple-e1",
+          "atlasReference": "Luke 2:22–38",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · Temple precinct context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:065",
+      "sceneIndex": 65,
+      "scriptureReference": "Matthew 2:13–15",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:egypt-e1",
+          "atlasReference": "Matthew 2:13–15",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Egypt · region only, residence unknown",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:066",
+      "sceneIndex": 66,
+      "scriptureReference": "Matthew 2:19–23",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:egypt-e2",
+          "atlasReference": "Matthew 2:19–23",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Nazareth · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:067",
+      "sceneIndex": 67,
+      "scriptureReference": "Luke 2:39–52",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-temple-e2",
+          "atlasReference": "Luke 2:41–52",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        },
+        {
+          "atlasEventKey": "biblical:event:nazareth-additional-006",
+          "atlasReference": "Luke 2:51–52",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Nazareth",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:068",
+      "sceneIndex": 68,
+      "scriptureReference": "Luke 2:41–52",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-temple-e2",
+          "atlasReference": "Luke 2:41–52",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        },
+        {
+          "atlasEventKey": "biblical:event:nazareth-additional-006",
+          "atlasReference": "Luke 2:51–52",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · Temple Mount context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:069",
+      "sceneIndex": 69,
+      "scriptureReference": "Matthew 3:13–17",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M20",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 3:11–17"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:jordan-baptism-e1",
+          "atlasReference": "Matthew 3:13–17",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jordan valley · regional context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:070",
+      "sceneIndex": 70,
+      "scriptureReference": "Matthew 4:1–11",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:judean-wilderness-e1",
+          "atlasReference": "Matthew 4:1–11",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Judean wilderness · regional context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:071",
+      "sceneIndex": 71,
+      "scriptureReference": "John 1:29–34",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jordan Valley · exact baptism site disputed",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:072",
+      "sceneIndex": 72,
+      "scriptureReference": "John 1:35–51",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M20",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "John 1:35–51"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:jordan-east-bank-additional-008",
+          "atlasReference": "John 1:35–51",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jordan Valley · exact baptism site disputed",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:073",
+      "sceneIndex": 73,
+      "scriptureReference": "John 2:1–11",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:cana-e1",
+          "atlasReference": "John 2:1–11",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Galilee · location disputed",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:074",
+      "sceneIndex": 74,
+      "scriptureReference": "John 2:13–22",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-temple-e3",
+          "atlasReference": "John 2:13–22",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · Temple Mount context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:075",
+      "sceneIndex": 75,
+      "scriptureReference": "John 3:1–21",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · ancient city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:076",
+      "sceneIndex": 76,
+      "scriptureReference": "John 4:4–26",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:sychar-e1",
+          "atlasReference": "John 4:4–26",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Samaria / Sychar region · approximate",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:077",
+      "sceneIndex": 77,
+      "scriptureReference": "John 4:46–54",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:cana-miracle-02",
+          "atlasReference": "John 4:46–54",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Cana · Galilean region, village disputed",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:078",
+      "sceneIndex": 78,
+      "scriptureReference": "Mark 1:21–28",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:capernaum-e1",
+          "atlasReference": "Mark 1:21–28",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Capernaum · archaeological settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:079",
+      "sceneIndex": 79,
+      "scriptureReference": "Mark 1:29–31",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:capernaum-miracle-04",
+          "atlasReference": "Mark 1:29–31",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Capernaum · archaeological settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:080",
+      "sceneIndex": 80,
+      "scriptureReference": "Mark 2:1–12",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:capernaum-e2",
+          "atlasReference": "Mark 2:1–12",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Capernaum · archaeological settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:081",
+      "sceneIndex": 81,
+      "scriptureReference": "Matthew 8:5–13",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Capernaum · archaeological settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:082",
+      "sceneIndex": 82,
+      "scriptureReference": "Mark 2:13–17",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Capernaum · archaeological settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:083",
+      "sceneIndex": 83,
+      "scriptureReference": "Luke 5:1–11",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sea of Galilee · shore region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:084",
+      "sceneIndex": 84,
+      "scriptureReference": "Luke 6:12–16",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:beatitudes-additional-021",
+          "atlasReference": "Luke 6:12–16",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Galilee · no specific town",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:085",
+      "sceneIndex": 85,
+      "scriptureReference": "Matthew 5:1–12",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M21",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 5:1–12"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Galilean hills · traditional association",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:086",
+      "sceneIndex": 86,
+      "scriptureReference": "Matthew 6:5–15",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M21",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 6:9–15"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Galilee · no specific town",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:087",
+      "sceneIndex": 87,
+      "scriptureReference": "Luke 7:11–17",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:nain-e1",
+          "atlasReference": "Luke 7:11–17",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Nain · settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:088",
+      "sceneIndex": 88,
+      "scriptureReference": "Luke 7:36–50",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Galilee · no specific town",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:089",
+      "sceneIndex": 89,
+      "scriptureReference": "Mark 4:1–20",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sea of Galilee · lake region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:090",
+      "sceneIndex": 90,
+      "scriptureReference": "Mark 4:35–41",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:galilee-sea-e2",
+          "atlasReference": "Mark 4:35–41",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sea of Galilee · water region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:091",
+      "sceneIndex": 91,
+      "scriptureReference": "Mark 5:1–20",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Eastern Galilean shore · identification debated",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:092",
+      "sceneIndex": 92,
+      "scriptureReference": "Mark 5:21–43",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Capernaum · archaeological settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:093",
+      "sceneIndex": 93,
+      "scriptureReference": "Matthew 10:1–15",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Galilee · no specific town",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:094",
+      "sceneIndex": 94,
+      "scriptureReference": "Mark 6:17–29",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Location not established",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:095",
+      "sceneIndex": 95,
+      "scriptureReference": "Matthew 14:22–33",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:galilee-sea-e3",
+          "atlasReference": "Matthew 14:22–33",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sea of Galilee · lake region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:096",
+      "sceneIndex": 96,
+      "scriptureReference": "John 6:1–15",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:tabgha-e1",
+          "atlasReference": "John 6:1–15",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Tabgha · traditional shore",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:097",
+      "sceneIndex": 97,
+      "scriptureReference": "John 6:22–59",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M22",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "John 6:26–35",
+            "John 6:47–59"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:capernaum-e3",
+          "atlasReference": "John 6:24–59",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Capernaum · archaeological settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:098",
+      "sceneIndex": 98,
+      "scriptureReference": "Mark 7:24–30",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Tyre · historical city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:099",
+      "sceneIndex": 99,
+      "scriptureReference": "Mark 7:31–37",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sea of Galilee · lake region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:100",
+      "sceneIndex": 100,
+      "scriptureReference": "Matthew 15:32–39",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sea of Galilee · lake region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:101",
+      "sceneIndex": 101,
+      "scriptureReference": "Mark 8:22–26",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethsaida-miracle-25",
+          "atlasReference": "Mark 8:22–26",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethsaida · competing site identifications",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:102",
+      "sceneIndex": 102,
+      "scriptureReference": "Matthew 16:13–20",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M23",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 16:13–28"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:caesarea-philippi-e1",
+          "atlasReference": "Matthew 16:13–20",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Caesarea Philippi / Banias",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:103",
+      "sceneIndex": 103,
+      "scriptureReference": "Matthew 16:21–28",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M23",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 16:13–28"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:caesarea-philippi-additional-044",
+          "atlasReference": "Matthew 16:21–28",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Caesarea Philippi / Banias · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:104",
+      "sceneIndex": 104,
+      "scriptureReference": "Matthew 17:1–9",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M23",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 17:1–9"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:transfiguration-e1",
+          "atlasReference": "Matthew 17:1–8",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        },
+        {
+          "atlasEventKey": "biblical:event:transfiguration-additional-045",
+          "atlasReference": "Matthew 17:9–13",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Mount Tabor · traditional identification",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:105",
+      "sceneIndex": 105,
+      "scriptureReference": "Mark 9:14–29",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Galilee · no specific town",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:106",
+      "sceneIndex": 106,
+      "scriptureReference": "John 9:1–12",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:siloam-miracle-26",
+          "atlasReference": "John 9:1–12",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Pool of Siloam · archaeological context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:107",
+      "sceneIndex": 107,
+      "scriptureReference": "John 10:1–21",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · ancient city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:108",
+      "sceneIndex": 108,
+      "scriptureReference": "Luke 10:25–37",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Location not established",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:109",
+      "sceneIndex": 109,
+      "scriptureReference": "Luke 10:38–42",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethany-additional-057",
+          "atlasReference": "Luke 10:38–42",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethany / al-Eizariya · traditional identification",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:110",
+      "sceneIndex": 110,
+      "scriptureReference": "Luke 15:11–32",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Location not established",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:111",
+      "sceneIndex": 111,
+      "scriptureReference": "Luke 17:11–19",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Samaria · regional context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:112",
+      "sceneIndex": 112,
+      "scriptureReference": "Luke 19:1–10",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:jericho-e2",
+          "atlasReference": "Luke 19:1–10",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jericho · settlement region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:113",
+      "sceneIndex": 113,
+      "scriptureReference": "John 11:1–44",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M24",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "John 11:1–7",
+            "John 11:14–17",
+            "John 11:20–27",
+            "John 11:32–35",
+            "John 11:38–44"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethany-e1",
+          "atlasReference": "John 11:1–44",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethany · traditional village",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:114",
+      "sceneIndex": 114,
+      "scriptureReference": "John 12:1–8",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethany-e2",
+          "atlasReference": "John 12:1–8",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethany / al-Eizariya · traditional identification",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:115",
+      "sceneIndex": 115,
+      "scriptureReference": "Matthew 21:1–11",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M25",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 21:1–11"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethphage-e1",
+          "atlasReference": "Matthew 21:1–7",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethphage / Mount of Olives · tradition",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:116",
+      "sceneIndex": 116,
+      "scriptureReference": "Luke 19:41–44",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:olives-e1",
+          "atlasReference": "Luke 19:37–44",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Mount of Olives · traditional region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:117",
+      "sceneIndex": 117,
+      "scriptureReference": "Mark 11:15–19",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · Temple Mount context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:118",
+      "sceneIndex": 118,
+      "scriptureReference": "Mark 13:1–37",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Mount of Olives · traditional region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:119",
+      "sceneIndex": 119,
+      "scriptureReference": "Luke 22:14–20",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M26",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Luke 22:7–20"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:cenacle-e1",
+          "atlasReference": "Luke 22:7–20",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": [
+            {
+              "id": "cv:new-covenant-christ",
+              "evidenceStatus": "PASSAGE_WITHIN_EVENT"
+            }
+          ]
+        }
+      ],
+      "covenantIds": [
+        {
+          "id": "cv:new-covenant-christ",
+          "evidenceStatus": "PASSAGE_WITHIN_EVENT"
+        }
+      ],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:120",
+      "sceneIndex": 120,
+      "scriptureReference": "John 13:1–17",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:cenacle-e2",
+          "atlasReference": "John 13:1–17",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Upper Room / Cenacle · traditional site",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:121",
+      "sceneIndex": 121,
+      "scriptureReference": "John 13:31–35",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Upper Room / Cenacle · traditional site",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:122",
+      "sceneIndex": 122,
+      "scriptureReference": "John 17:1–26",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Upper Room / Cenacle · traditional site",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:123",
+      "sceneIndex": 123,
+      "scriptureReference": "Matthew 26:36–46",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M27",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 26:36–46"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:gethsemane-e1",
+          "atlasReference": "Matthew 26:36–46",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Gethsemane · traditional garden",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:124",
+      "sceneIndex": 124,
+      "scriptureReference": "Matthew 26:47–56",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M27",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Matthew 26:47–56"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:gethsemane-e2",
+          "atlasReference": "Matthew 26:47–56",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Gethsemane · traditional garden",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:125",
+      "sceneIndex": 125,
+      "scriptureReference": "Luke 22:54–62",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · ancient city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:126",
+      "sceneIndex": 126,
+      "scriptureReference": "John 18:28–40",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · ancient city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:127",
+      "sceneIndex": 127,
+      "scriptureReference": "John 19:1–16",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:jerusalem-trial-e3",
+          "atlasReference": "John 19:1–16",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · ancient city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:128",
+      "sceneIndex": 128,
+      "scriptureReference": "Luke 23:26–32",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Golgotha / Holy Sepulchre tradition",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:129",
+      "sceneIndex": 129,
+      "scriptureReference": "John 19:17–30",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M28",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "John 19:17–30"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:golgotha-e2",
+          "atlasReference": "John 19:17–30",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Golgotha · Holy Sepulchre tradition",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:130",
+      "sceneIndex": 130,
+      "scriptureReference": "John 19:38–42",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:christ-tomb-e1",
+          "atlasReference": "John 19:38–42",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Golgotha / Holy Sepulchre tradition",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:131",
+      "sceneIndex": 131,
+      "scriptureReference": "John 20:1–18",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M29",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "John 20:1–3",
+            "John 20:6–9",
+            "John 20:11–18"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:christ-tomb-e2",
+          "atlasReference": "John 20:1–18",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Holy Sepulchre · traditional tomb",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:132",
+      "sceneIndex": 132,
+      "scriptureReference": "John 20:3–10",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M29",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "John 20:1–3",
+            "John 20:6–9"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:christ-tomb-e2",
+          "atlasReference": "John 20:1–18",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Golgotha / Holy Sepulchre tradition",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:133",
+      "sceneIndex": 133,
+      "scriptureReference": "John 20:19–23",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M29",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "John 20:19–29"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:cenacle-e3",
+          "atlasReference": "John 20:19–29",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Upper Room / Cenacle · traditional site",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:134",
+      "sceneIndex": 134,
+      "scriptureReference": "John 20:24–29",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M29",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "John 20:19–29"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:cenacle-e3",
+          "atlasReference": "John 20:19–29",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Upper Room / Cenacle · traditional site",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:135",
+      "sceneIndex": 135,
+      "scriptureReference": "Luke 24:13–35",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:emmaus-e1",
+          "atlasReference": "Luke 24:13–35",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Emmaus · competing identifications",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:136",
+      "sceneIndex": 136,
+      "scriptureReference": "John 21:15–19",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Sea of Galilee · lake region",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:137",
+      "sceneIndex": 137,
+      "scriptureReference": "Acts 1:6–12",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M30",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 1:6–12"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:olives-e3",
+          "atlasReference": "Acts 1:6–12",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Mount of Olives · regional context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:138",
+      "sceneIndex": 138,
+      "scriptureReference": "Acts 9:1–9",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M32",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 9:1–11"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-9-1-22",
+          "atlasReference": "Acts 9:1–22",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Damascus region · not exact roadside location",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:139",
+      "sceneIndex": 139,
+      "scriptureReference": "Acts 9:10–19",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M32",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 9:1–11",
+            "Acts 9:17–22"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-9-1-22",
+          "atlasReference": "Acts 9:1–22",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Damascus · historic city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:140",
+      "sceneIndex": 140,
+      "scriptureReference": "Acts 9:20–25",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [
+        {
+          "movementId": "HS-M32",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 9:17–22"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-9-1-22",
+          "atlasReference": "Acts 9:1–22",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Damascus · historic city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:141",
+      "sceneIndex": 141,
+      "scriptureReference": "Acts 9:26–30",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-9-29-30",
+          "atlasReference": "Acts 9:29–30",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:142",
+      "sceneIndex": 142,
+      "scriptureReference": "Acts 11:19–26",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M33",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 11:19–26"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-11-19-26",
+          "atlasReference": "Acts 11:19–26",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Antioch on the Orontes",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:143",
+      "sceneIndex": 143,
+      "scriptureReference": "Acts 13:1–3",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M33",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 13:1–5"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Antioch on the Orontes",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:144",
+      "sceneIndex": 144,
+      "scriptureReference": "Acts 13:4",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M33",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 13:1–5"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Seleucia Pieria · ancient port",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:145",
+      "sceneIndex": 145,
+      "scriptureReference": "Acts 13:5",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M33",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 13:1–5"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Salamis, Cyprus · archaeological city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:146",
+      "sceneIndex": 146,
+      "scriptureReference": "Acts 13:4–12",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [
+        {
+          "movementId": "HS-M33",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 13:1–5"
+          ]
+        }
+      ],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Paphos · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:147",
+      "sceneIndex": 147,
+      "scriptureReference": "Acts 13:13–14",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Perga · archaeological city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:148",
+      "sceneIndex": 148,
+      "scriptureReference": "Acts 13:14–43",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Pisidian Antioch · archaeological context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:149",
+      "sceneIndex": 149,
+      "scriptureReference": "Acts 14:1–7",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Iconium / Konya · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:150",
+      "sceneIndex": 150,
+      "scriptureReference": "Acts 14:8–20",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-14-8-18",
+          "atlasReference": "Acts 14:8–18",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Lystra · ancient settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:151",
+      "sceneIndex": 151,
+      "scriptureReference": "Acts 14:20–28",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Derbe · competing settlement identifications",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:152",
+      "sceneIndex": 152,
+      "scriptureReference": "Acts 15:1–29",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M33",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 15:1–2",
+            "Acts 15:5–11",
+            "Acts 15:13–20",
+            "Acts 15:22–29"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-15-1-29",
+          "atlasReference": "Acts 15:1–29",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:153",
+      "sceneIndex": 153,
+      "scriptureReference": "Acts 15:36–41",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Antioch · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:154",
+      "sceneIndex": 154,
+      "scriptureReference": "Acts 16:1–5",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Lystra · proposed settlement area",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:155",
+      "sceneIndex": 155,
+      "scriptureReference": "Acts 16:6–10",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Troas · archaeological setting",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:156",
+      "sceneIndex": 156,
+      "scriptureReference": "Acts 16:8–12",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-16-11-15",
+          "atlasReference": "Acts 16:11–15",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Troas · departure city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:157",
+      "sceneIndex": 157,
+      "scriptureReference": "Acts 16:11–12",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-16-11-15",
+          "atlasReference": "Acts 16:11–15",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Neapolis / Kavala · port",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:158",
+      "sceneIndex": 158,
+      "scriptureReference": "Acts 16:11–15",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-16-11-15",
+          "atlasReference": "Acts 16:11–15",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Philippi · ancient settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:159",
+      "sceneIndex": 159,
+      "scriptureReference": "Acts 16:16–40",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Philippi · archaeological city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:160",
+      "sceneIndex": 160,
+      "scriptureReference": "Acts 17:1–9",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-17-1-9",
+          "atlasReference": "Acts 17:1–9",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Thessalonica · historic city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:161",
+      "sceneIndex": 161,
+      "scriptureReference": "Acts 17:10–15",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Berea / Veria · historic city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:162",
+      "sceneIndex": 162,
+      "scriptureReference": "Acts 17:16–34",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-17-16-34",
+          "atlasReference": "Acts 17:16–34",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Athens · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:163",
+      "sceneIndex": 163,
+      "scriptureReference": "Acts 18:1–18",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-18-1-18",
+          "atlasReference": "Acts 18:1–18",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Corinth · ancient settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:164",
+      "sceneIndex": 164,
+      "scriptureReference": "Acts 18:18–23",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-18-1-18",
+          "atlasReference": "Acts 18:1–18",
+          "baselineRelation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Antioch on the Orontes",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:165",
+      "sceneIndex": 165,
+      "scriptureReference": "Acts 18:23",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Pisidian Antioch · ancient city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:166",
+      "sceneIndex": 166,
+      "scriptureReference": "Acts 19:1–20",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-19-1-20",
+          "atlasReference": "Acts 19:1–20",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Ephesus · ancient city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:167",
+      "sceneIndex": 167,
+      "scriptureReference": "Acts 19:23–41",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Ephesus · archaeological city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:168",
+      "sceneIndex": 168,
+      "scriptureReference": "Acts 20:7–12",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-20-7-12",
+          "atlasReference": "Acts 20:7–12",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Troas · archaeological setting",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:169",
+      "sceneIndex": 169,
+      "scriptureReference": "Acts 20:17–38",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-20-17-38",
+          "atlasReference": "Acts 20:17–38",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Miletus · ancient settlement",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:170",
+      "sceneIndex": 170,
+      "scriptureReference": "Acts 21:1–6",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Tyre · historic city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:171",
+      "sceneIndex": 171,
+      "scriptureReference": "Acts 21:8–14",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Caesarea Maritima · archaeological city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:172",
+      "sceneIndex": 172,
+      "scriptureReference": "Acts 21:27–36",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:173",
+      "sceneIndex": 173,
+      "scriptureReference": "Acts 24:1–27",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Caesarea Maritima · archaeological city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:174",
+      "sceneIndex": 174,
+      "scriptureReference": "Acts 25:1–12",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Caesarea Maritima · archaeological city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:175",
+      "sceneIndex": 175,
+      "scriptureReference": "Acts 27:1–12",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Crete · island region, not vessel position",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:176",
+      "sceneIndex": 176,
+      "scriptureReference": "Acts 27:13–44",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-27-13-44",
+          "atlasReference": "Acts 27:13–44",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Central Mediterranean · indicative only",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:177",
+      "sceneIndex": 177,
+      "scriptureReference": "Acts 28:1–10",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Malta · island; beach/landing place debated",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:178",
+      "sceneIndex": 178,
+      "scriptureReference": "Acts 28:11–14",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Syracuse · historic city",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:179",
+      "sceneIndex": 179,
+      "scriptureReference": "Acts 28:13–14",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "movementLinks": [],
+      "atlasLinks": [],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Puteoli / Pozzuoli · port",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:180",
+      "sceneIndex": 180,
+      "scriptureReference": "Acts 28:16–31",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M34",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 28:23–31"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-28-16-31",
+          "atlasReference": "Acts 28:16–31",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Rome · city context",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:181",
+      "sceneIndex": 181,
+      "scriptureReference": "Matthew 2:16–18",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:event:bethlehem-additional-003",
+          "atlasReference": "Matthew 2:16–18",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Bethlehem and its district · biblical regional identification only",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:182",
+      "sceneIndex": 182,
+      "scriptureReference": "Acts 2:1–41",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "movementLinks": [
+        {
+          "movementId": "HS-M31",
+          "relation": "SCRIPTURE_REFERENCE_OVERLAP_RESEARCH_LINK",
+          "overlappingRefs": [
+            "Acts 2:1–8",
+            "Acts 2:11–18",
+            "Acts 2:21",
+            "Acts 2:37–41"
+          ]
+        }
+      ],
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:acts-2-1-41",
+          "atlasReference": "Acts 2:1–41",
+          "baselineRelation": "EXACT_REFERENCE",
+          "covenantIds": []
+        }
+      ],
+      "covenantIds": [],
+      "persons": null,
+      "geography": {
+        "sourceLabel": "Jerusalem · city context; the precise room is not identified by Acts 2",
+        "verifiedFinding": null,
+        "classification": "UNAUDITED_SOURCE_LABEL_ONLY",
+        "coordinate": null
+      },
+      "sceneAuditStatus": "NOT_YET_AUDITED"
+    }
+  ]
+}
