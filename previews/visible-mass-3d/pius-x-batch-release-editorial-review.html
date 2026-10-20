@@ -89,10 +89,13 @@ footer{padding:30px;color:var(--dim);font-size:12px;text-align:center}
 </section><div id="cards"></div></main></div><footer>Review owner PR #1458 · Style owner PR #1419 · Educational reconstruction, never a verbatim statement of St Pius X.</footer>
 <script>
 const EMBEDDED=null; /* The reproducible offline builder embeds the canonical review data here. */
+const EMBEDDED_AUDIT=null; /* Digital Italian claim audit is a separate unapproved evidence layer. */
 const DATAURL="../../data/learn/research/pius-x-100answer-editorial-release-triage-20261020.v1.json";
+const AUDITURL="../../data/learn/research/pius-x-first40-claim-italian-witness-review-20261020.v1.json";
 const $=id=>document.getElementById(id);
 const el=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=String(text);return e;};
-let data=null,lang="en",active="W1_REAL_PRESENCE";
+let data=null,lang="en",active="W1_REAL_PRESENCE",audit=null;
+const claimIndex=new Map();
 const decisions=new Map(),statuses=["NOT_REVIEWED","FOR_EXPERT_REVIEW","NEEDS_REVISION","HOLD"];
 const labels={FOR_EXPERT_REVIEW:["For expert review","À transmettre à l’expert"],NEEDS_REVISION:["Needs revision","À corriger"],HOLD:["Hold","Suspendre"],NOT_REVIEWED:["Not reviewed","Non examiné"]};
 const t=(en,fr)=>lang==="fr"?fr:en;
@@ -104,7 +107,8 @@ function save(id,state){const safe={...defaultDecision(),...state,checked:{...de
 function plainValue(item,state,l){
  if(state[l]!==null)return state[l];
  const variant=state.variant==="correction"&&item["correction"+l.toUpperCase()]?"correction":
-  state.variant==="period"&&item["period"+l.toUpperCase()]?"period":"originalDraft";
+  state.variant==="period"&&item["period"+l.toUpperCase()]?"period":
+  state.variant==="audit"&&item["audit"+l.toUpperCase()]?"audit":"originalDraft";
  const key=variant==="originalDraft"?"originalDraft"+l.toUpperCase():variant+l.toUpperCase();
  return item[key]||item["originalDraft"+l.toUpperCase()];
 }
@@ -134,6 +138,9 @@ function button(text,fn,klass=""){const b=el("button",klass,text);b.type="button
 function card(item){
  const d=get(item.id),art=el("article");art.dataset.qid=item.id;
  const meta=el("div","meta");meta.append(el("span","pill",item.id));
+ const claim=claimIndex.get(item.id)||null;
+ if(claim)meta.append(el("span","pill"+(claim.proposedEN?" hold":""),
+ claim.proposedEN?t("Source wording to review","Formulation à vérifier"):t("Preliminary meaning aligned","Sens préliminairement conforme")));
  if(item.lane!=="SOURCE_TRANSLATION_REVIEW")meta.append(el("span","pill hold",item.lane.replaceAll("_"," ")));
  art.append(meta);art.append(el("h3","question",t(item.questionEN,item.questionFR)));
  const source=el("section","review-source");
@@ -153,12 +160,24 @@ function card(item){
  if(item.outOfCharacterNote)details.append(el("div","warning",
  t("Editorial historical-law note (NOT St Pius X speech): ","Note historique éditoriale (PAS parole de saint Pie X) : ")+
  t(item.outOfCharacterNote.en,item.outOfCharacterNote.fr)));
- source.append(details);art.append(source);
+ source.append(details);
+ if(claim){
+   const auditbox=el("details");const auditTitle=el("summary","",t("Italian-source check · preliminary","Contrôle de la source italienne · provisoire"));
+   auditbox.append(auditTitle,el("div","tags",t("Source topics: ","Éléments tirés de la source : ")+claim.sourceSemanticAnchors.join(" · ")));
+   if(claim.flaggedReason)auditbox.append(el("div","flag",claim.flaggedReason));
+   if(claim.furtherContextHolds?.length)for(const caution of claim.furtherContextHolds)
+    auditbox.append(el("div","flag",caution));
+   if(claim.editorialHistoricalContextEN)auditbox.append(el("div","warning",t("EDITORIAL NOTE, not papal speech: ","NOTE ÉDITORIALE, non parole pontificale : ")+
+    t(claim.editorialHistoricalContextEN,claim.editorialHistoricalContextFR)));
+   if(claim.proposedEN)auditbox.append(el("p","micro",t("This research proposal is not expert-approved.","Cette proposition n'a pas reçu l'approbation d'un expert.")));
+   source.append(auditbox);
+ }
+ art.append(source);
  const marks=el("div","tags",item.reviewReasons.join(" · "));art.append(marks);
  const variantRow=el("div","mark-row");
- const variants=[["original",t("Original draft","Brouillon initial")],["correction",t("Source correction","Correction sourcée")],["period",t("Period-register option","Style d’époque")]];
+ const variants=[["original",t("Original draft","Brouillon initial")],["correction",t("Source correction","Correction sourcée")],["period",t("Period-register option","Style d’époque")],["audit",t("Italian-source proposal","Proposition fondée sur l’italien")]];
  for(const [id,name] of variants){
- if(id==="correction"&&!item.correctionEN||id==="period"&&!item.periodEN)continue;
+ if(id==="correction"&&!item.correctionEN||id==="period"&&!item.periodEN||id==="audit"&&!item.auditEN)continue;
  variantRow.append(button(name,()=>{save(item.id,{...get(item.id),variant:id,
  versions:{...(get(item.id).versions||{}),[get(item.id).variant]:{en:get(item.id).en,fr:get(item.id).fr}},
  en:(get(item.id).versions||{})[id]?.en??null,
@@ -231,12 +250,12 @@ function validateImport(payload){
  !Array.isArray(payload.decisions)||payload.decisions.length>100)throw Error("Unrecognized or unsafe review file");
  const fresh=new Map();
  for(const x of payload.decisions){
- if(!expected(x.id)||fresh.has(x.id)||!statuses.includes(x.status)||!["original","correction","period"].includes(x.variant)||
+ if(!expected(x.id)||fresh.has(x.id)||!statuses.includes(x.status)||!["original","correction","period","audit"].includes(x.variant)||
  typeof x.note!=="string"||x.note.length>20000||
  !x.checked||["source","en","fr","voice","historical"].some(k=>typeof x.checked[k]!=="boolean")||
  (x.en!==null&&typeof x.en!=="string")||(x.fr!==null&&typeof x.fr!=="string")||
  x.en?.length>20000||x.fr?.length>20000||!x.versions||typeof x.versions!=="object"||
- Object.keys(x.versions).some(k=>!["original","correction","period"].includes(k)||
+ Object.keys(x.versions).some(k=>!["original","correction","period","audit"].includes(k)||
  !x.versions[k]||["en","fr"].some(l=>x.versions[k][l]!==null&&typeof x.versions[k][l]!=="string")))
  throw Error("Invalid or duplicate decision");
  fresh.set(x.id,{status:x.status,variant:x.variant,checked:x.checked,en:x.en,fr:x.fr,versions:x.versions,note:x.note});
@@ -253,6 +272,16 @@ async function loadReview(file){
 function setLang(value){
  lang=value;document.documentElement.lang=value;
  $("en").setAttribute("aria-pressed",String(value==="en"));$("fr").setAttribute("aria-pressed",String(value==="fr"));
+ for(const item of data.records){
+  const c=claimIndex.get(item.id);
+  if(!c)continue;
+  if(c.openingTurnId!==item.turnId||c.originalOpeningEN!==item.originalDraftEN||
+   c.originalOpeningFR!==item.originalDraftFR||c.sourceWitness!==item.originalDigitalWitness)
+   throw Error("Original-source data mismatch");
+  if(c.proposedEN&&c.changeSource==="NEW_BILINGUAL_EDITORIAL_PROPOSAL"){
+   item.auditEN=c.proposedEN;item.auditFR=c.proposedFR;
+  }
+ }
  drawNav();render();
 }
 $("en").onclick=()=>setLang("en");$("fr").onclick=()=>setLang("fr");
@@ -266,6 +295,18 @@ $("file").onchange=e=>loadReview(e.target.files[0]);
  if(EMBEDDED){data=EMBEDDED;}
  else{const r=await fetch(DATAURL);if(!r.ok)throw Error("Research registry unavailable");
  data=await r.json();}
+ if(EMBEDDED_AUDIT){audit=EMBEDDED_AUDIT;}
+ else{const r=await fetch(AUDITURL);if(!r.ok)throw Error("Italian original witness audit missing");
+ audit=await r.json();}
+ if(audit.schema!=="AO_SPX_40_SOURCE_CLAIM_AUDIT_V1"||audit.counts?.audited!==40||
+ audit.counts?.eligibleForPublication!==0||audit.records?.length!==40||
+ audit.records.some(c=>c.attestation?.published!==false||
+ c.attestation?.humanTheologyApproval!==false||c.attestation?.humanBilingualApproval!==false))
+ throw Error("Unapproved or incomplete original Italian research audit");
+ for(const c of audit.records){
+  if(claimIndex.has(c.editorialQuestionId))throw Error("Duplicate source evidence");
+  claimIndex.set(c.editorialQuestionId,c);
+ }
  if(data.schema!=="AO_SPX_100ANSWER_EDITORIAL_RELEASE_TRIAGE_V1"||data.counts?.indexedOpeningTurnCandidates!==100||
  data.counts?.firstWave!==40||data.counts?.published!==0||
  !Array.isArray(data.records)||data.records.length!==100||data.waves.length!==4)
