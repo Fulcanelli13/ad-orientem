@@ -69,6 +69,29 @@ assert.equal(journeys.reduce((n,r)=>n+r.namedStages.length,0),64);
 assert.equal(journeys.filter(r=>r.namedStages.length>0).length,17);
 assert.equal(journeys.reduce((n,j)=>n+j.stageSiteAnchors.length,0),15);
 assert.equal(journeys.filter(j=>j.stageSiteAnchors.length>0).length,13);
+// Certify EVERY stage→canonical Place route, not merely the Holywell sample.
+// For each exact crosswalk, the bilingual timeline must expose the same
+// source-owned stage ID, and a separate numbered map-focus control.
+for(const link of siteLinks.links){
+ const routeId=link.stage_id.split("#")[0];
+ const journey=journeys.find(row=>row.id===routeId);
+ assert.ok(journey,"Referenced Journey does not exist: "+routeId);
+ const stage=journey.namedStages.find(row=>row.id===link.stage_id);
+ assert.ok(stage?.siteAnchor,"Source-backed stage link missing: "+link.stage_id);
+ assert.equal(stage.siteAnchor.placeId,link.canonical_place_id);
+ assert.ok(stage.siteAnchor.sourceUrl?.startsWith("https://"));
+ for(const lang of ["en","fr"]){
+  const html=renderPilgrimageJourneyPanel({routes:journeys,selectedId:routeId,language:lang});
+  const encoded=link.stage_id.replaceAll("&","&amp;").replaceAll('"',"&quot;");
+  assert.ok(html.includes('data-explore-journey-stage-place="'+encoded+'"'),
+    "Missing "+lang+" sacred-place profile control: "+link.stage_id);
+  assert.ok(html.includes('data-explore-journey-stage-focus="'+encoded+'"'),
+    "Missing "+lang+" numbered map-focus control: "+link.stage_id);
+  assert.match(html,/No route line|Aucun tracé/,
+    "Stage navigation must not imply certified walking geometry");
+ }
+}
+assert.equal(siteLinks.links.filter(link=>link.site_relation==="RELATED_COMPLEX_ANCHOR").length,4);
 const holywell=journeys.find(j=>j.id==="route:GB:holywell-church-to-well");
 assert.equal(holywell.stageSiteAnchors.length,2);
 const holywellReverse=journeysForCanonicalPlace(journeys,"place:GB:holywell-st-winefride-church");
