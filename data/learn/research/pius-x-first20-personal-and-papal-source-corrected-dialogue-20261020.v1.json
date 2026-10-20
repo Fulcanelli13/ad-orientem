@@ -20,7 +20,10 @@
     "intentOverlapPairs": 3,
     "directPapalAutographTranscripts": 0,
     "independentApproval": 0,
-    "published": 0
+    "published": 0,
+    "distinctVisitorIntentsInThisCohort": 17,
+    "primaryReviewEntries": 17,
+    "aliasRepliesNotSeparateEntrypoints": 3
   },
   "provenanceNotes": [
     {
@@ -89,7 +92,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-001",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-002",
@@ -125,7 +134,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-002",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-003",
@@ -160,7 +175,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-003",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-004",
@@ -195,7 +216,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-004",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-005",
@@ -230,7 +257,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-005",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-006",
@@ -265,7 +298,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-006",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-007",
@@ -300,7 +339,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-007",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-008",
@@ -335,7 +380,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-008",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-009",
@@ -370,7 +421,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-009",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-PILOT-01",
@@ -405,7 +462,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "CANONICAL_ENTRY_REVIEW_ONLY",
+        "primaryFamilyId": "SPX-PILOT-01",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-010",
@@ -440,7 +503,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "ALIAS_NO_DUPLICATE_ENTRY",
+        "primaryFamilyId": "SPX-PILOT-01",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-PILOT-07",
@@ -475,7 +544,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-PILOT-07",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-PILOT-08",
@@ -510,7 +585,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "CANONICAL_ENTRY_REVIEW_ONLY",
+        "primaryFamilyId": "SPX-PILOT-08",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-PILOT-09",
@@ -545,7 +626,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "CANONICAL_ENTRY_REVIEW_ONLY",
+        "primaryFamilyId": "SPX-PILOT-09",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-012",
@@ -580,7 +667,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "ALIAS_NO_DUPLICATE_ENTRY",
+        "primaryFamilyId": "SPX-PILOT-08",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-021",
@@ -615,7 +708,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-021",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-026",
@@ -650,7 +749,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-026",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-027",
@@ -685,7 +790,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-027",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-043",
@@ -720,7 +831,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "STANDALONE_REVIEW_ENTRY",
+        "primaryFamilyId": "SPX-EXP-043",
+        "userNavigation": "TOPIC_CHOICE",
+        "productionReady": false
+      }
     },
     {
       "id": "SPX-EXP-045",
@@ -755,7 +872,13 @@
         "production": false
       },
       "noCurrentDisciplineInstruction": true,
-      "noNewPrivatePapalAnecdotes": true
+      "noNewPrivatePapalAnecdotes": true,
+      "intentTreatment": {
+        "status": "ALIAS_NO_DUPLICATE_ENTRY",
+        "primaryFamilyId": "SPX-PILOT-09",
+        "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+        "productionReady": false
+      }
     }
   ]
 }
