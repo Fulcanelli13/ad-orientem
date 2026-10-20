@@ -85,7 +85,7 @@ try{
    });
    assert.ok(credits.present&&credits.links>0&&/OpenStreetMap/i.test(credits.text),
      "Map provider credits and source links must remain available: "+JSON.stringify(credits));
-   const rgb=(credits.background.match(/[\\d.]+/g)||[]).slice(0,3).map(Number);
+   const rgb=(credits.background.match(/[0-9.]+/g)||[]).slice(0,3).map(Number);
    assert.ok(rgb.length===3&&rgb.every(value=>value<100),
      "Attribution must use the dark atlas palette: "+JSON.stringify(credits));
    const guide=page.locator("#ao-find-modular-root .aoHeritageMapHint");
