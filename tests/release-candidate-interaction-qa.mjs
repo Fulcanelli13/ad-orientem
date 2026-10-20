@@ -214,21 +214,31 @@ try{
   assert.equal(massPrepareAvailable,true,"shared module registry unavailable for Around-Mass handoff");
 
   await page.locator("#aoPray435930 [data-p435930-handoff='mass.prepare']").click();
-  // Loading the Around-Mass handoff can initialize its route asynchronously;
-  // still require the Prayer folio to relinquish interaction ownership.
-  try{
-    await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:10000});
-  }catch(error){
-    const diagnostic=await page.evaluate(()=>({
-      prayerOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??null,
-      prayerView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
-      massModule:globalThis.AO_MODULES?.get?.("mass.prepare")??null,
-      shellActive:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
-      runtimeRoute:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
-      nativeMass:!!document.getElementById("ao-r17-native-reader-preview")?.isConnected,
-      massFolioVisible:!!document.querySelector(".aoFullMassPreflight,[data-ao-mass-preflight],[data-ao-mass-folio]"),
-    }));
-    throw new Error("First Friday Before-Mass handoff did not close the Pray folio: "+JSON.stringify(diagnostic),{cause:error});
+  // The source-owned Before Mass prayers may reuse the one PRAY folio,
+  // rather than dismiss and reopen it. Require a certified destination:
+  // either the old modal closes or the traditional reader owns mass.prepare.
+  await page.waitForFunction(()=>{
+    const root=document.getElementById("aoPray435930");
+    if(!root?.classList?.contains("open"))return true;
+    return root.querySelector(".aoP435930Mount")?.dataset?.aoPrayView==="traditional-pray"
+      &&globalThis.AOTraditionalPrayerBook?.getState?.()?.route==="mass.prepare";
+  },null,{timeout:10000});
+  const handoffPresentation=await page.evaluate(()=>({
+    prayerOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
+    prayerView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
+    canonicalPrayer:globalThis.AOTraditionalPrayerBook?.getState?.()?.route??null,
+    moduleTitle:globalThis.AO_MODULES?.get?.("mass.prepare")?.title??null,
+    legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+  }));
+  if(handoffPresentation.prayerOpen){
+    assert.equal(handoffPresentation.prayerView,"traditional-pray",
+      "Before Mass handoff must not leave the First Friday folio active");
+    assert.equal(handoffPresentation.canonicalPrayer,"mass.prepare",
+      "In-place handoff did not open canonical Before Mass prayers");
+    assert.match(handoffPresentation.moduleTitle||"",/Before Mass/,
+      "In-place handoff is not owned by the source-registered module");
+    assert.equal(handoffPresentation.legacyOpen,false,
+      "Before Mass must not show both modular and legacy Prayer readers");
   }
   const handoffState=await page.evaluate(()=>({
     route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
