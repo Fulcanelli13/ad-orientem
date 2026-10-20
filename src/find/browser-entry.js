@@ -659,7 +659,9 @@ export function createFindOwner(win=globalThis){
     if(!geo)return false;
     const map=mapHandle.map,phone=Number(win?.innerWidth||0)<800;
     const target={center:[geo.lng,geo.lat],
-      zoom:Math.max(12,Number(map.getZoom?.())||0),
+      // Holywell's church and well are both known, but collapse into one
+      // symbol at regional zoom. Focus an actual stage at local-site scale.
+      zoom:Math.max(14.8,Number(map.getZoom?.())||0),
       offset:phone?[0,-125]:[-175,0]};
     if(win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)
       map.jumpTo?.(target);
