@@ -86,8 +86,9 @@ try{
    flag:document.querySelector(".map-flag")?.getBoundingClientRect().toJSON(),
    canvas:document.querySelector("canvas.maplibregl-canvas")?.getBoundingClientRect().toJSON(),
  }));
- assert.ok(first.stage?.width>900 && first.flag?.top<300
-   && first.canvas?.width>900,"Desktop atlas must occupy its viewport: "+JSON.stringify(first));
+ console.log("Desktop geometry",JSON.stringify(first));
+ assert.ok(first.stage?.width>900&&first.stage?.height>650&&first.flag?.top<300
+   && first.canvas?.width>900&&first.canvas?.height>650,"Desktop atlas must occupy its viewport: "+JSON.stringify(first));
  await desktop.screenshot({path:resolve(output,"discover-1440.png")});
  await desktop.locator('[data-mode="regions"]').click();
  await desktop.locator("#legend").waitFor({state:"visible"});

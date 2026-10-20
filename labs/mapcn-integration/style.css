@@ -11,7 +11,7 @@ a{color:#dbc596;text-decoration:none}a:hover{text-decoration:underline}
 .modes button{border:1px solid #3b4956;padding:10px 18px;background:#111b27;color:#b8c6ca;border-radius:8px;white-space:nowrap;text-align:left;font-size:10px;letter-spacing:.08em}
 .modes strong{font-size:13px;color:#d7dacd;letter-spacing:0;padding-left:10px}
 .modes button[aria-selected=true]{border-color:#cfb683;background:#403b30;color:#e7c58e}.modes button[aria-selected=true] strong{color:#f6e9ce}
-.workspace{display:grid;grid-template-columns:minmax(300px,348px) minmax(0,1fr);flex:1;min-height:0;height:calc(100dvh - 185px)}
+.workspace{display:grid;grid-template-columns:minmax(300px,348px) minmax(0,1fr);grid-template-rows:minmax(0,1fr);flex:1;min-height:0;height:calc(100dvh - 185px)}
 .sidebar{background:#111a24;display:flex;flex-direction:column;min-height:0;border-right:1px solid #3a4350}
 .side-intro{padding:21px 23px 15px;border-bottom:1px solid #273644}.eyebrow{margin:0 0 9px}.side-intro h2{font:500 33px/1 "Cormorant Garamond",Georgia,serif;color:#f0e4d0;margin:0 0 7px}
 .side-intro>p:not(.eyebrow){font:13px/1.5 "DM Sans",sans-serif;color:#a5b1b7;margin:0 0 16px}
@@ -27,7 +27,7 @@ a{color:#dbc596;text-decoration:none}a:hover{text-decoration:underline}
 .place-row strong{display:block;font:500 19px/1.12 "Cormorant Garamond",serif}.place-row small{display:block;color:#9baab2;font-size:11px;margin-top:5px}
 .place-row .attest{display:block;margin-top:8px;color:#b9bdac;font-size:10px}.notice{margin:12px;padding:15px;border:1px solid #444b4d;border-radius:8px;color:#c3c1b6;font-size:12px;line-height:1.55}
 .side-foot{padding:13px 19px;border-top:1px solid #303d46;display:flex;flex-direction:column;gap:6px;line-height:1.45;font-size:10px;color:#94a6b0}.side-foot a{font-size:11px}
-.map-stage{min-height:0;position:relative;background:#0c1a24;overflow:hidden}#map{position:absolute;inset:0}
+.map-stage{min-height:0;height:100%;width:100%;position:relative;background:#0c1a24;overflow:hidden}#map{position:absolute;inset:0}
 .map-top{position:absolute;z-index:3;left:16px;right:16px;top:16px;pointer-events:none;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .map-flag{background:#101923ec;padding:10px 13px;display:flex;align-items:center;gap:8px;border-radius:7px;border:1px solid #53605066;box-shadow:0 8px 25px #0005;font-size:11px;color:#c4c7bd}
 .signal{width:7px;height:7px;border-radius:50%;background:#ba9e68}.map-toggle{display:flex;gap:7px;pointer-events:auto}
