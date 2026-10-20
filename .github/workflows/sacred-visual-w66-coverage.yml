@@ -24,7 +24,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   verify-source-demand-ledger:
@@ -54,22 +54,6 @@ jobs:
           path: artifacts/sacred-art-first-five/
           retention-days: 30
           if-no-files-found: warn
-      - name: Commit acquired approved originals as staged media on the existing art branch
-        if: github.event_name == 'pull_request' && github.head_ref == 'research/w60-sanctoral-art-physical-dedupe-20261015'
-        run: |
-          set -euo pipefail
-          if [[ ! -s artifacts/sacred-art-first-five/met-438724-champaigne-annunciation-original.jpg || ! -s artifacts/sacred-art-first-five/met-438724-source-evidence.json ]]; then
-            echo "::warning::No verified Met master staged; research gates remain green, nothing committed"
-            exit 0
-          fi
-          git fetch origin refs/heads/research/w60-sanctoral-art-physical-dedupe-20261015
-          git checkout -B stage-met-master FETCH_HEAD
-          mkdir -p assets/staged/sacred-art
-          cp artifacts/sacred-art-first-five/*.jpg assets/staged/sacred-art/
-          cp artifacts/sacred-art-first-five/*-source-evidence.json assets/staged/sacred-art/
-          git add assets/staged/sacred-art/
-          if ! git diff --cached --quiet; then
-            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Stage exact Met 438724 open-access master for technical QA; not production release'
-            git push origin HEAD:refs/heads/research/w60-sanctoral-art-physical-dedupe-20261015
-          fi
-
+      # Source pixels and provenance are retained as download-only CI artifacts.
+      # No Actions bot push: image bytes may enter a review branch only through
+      # an independently checked human-approved commit after crop, rights and QA.
