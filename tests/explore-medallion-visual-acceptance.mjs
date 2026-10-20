@@ -128,6 +128,22 @@ try{
    assert.ok((await journey.locator('.aoJourneyOfficialMap[href*="NGA-TAPUWAE-Route-Overview"]').count())===1,
      "Diocesan PDF remains a link-only publication, not copied geometry");
    await page.screenshot({path:resolve(out,"explore-"+width+"-journey-nga-tapuwae.png"),fullPage:false});
+   // Holywell has two independently sourced, geographically distinct sacred
+   // places already in the canonical registry. Buttons focus those pins;
+   // the journey still does NOT claim to know the walking path between them.
+   await journey.locator('[data-explore-journey-select="route:GB:holywell-church-to-well"]').click();
+   await page.waitForFunction(()=>document.querySelector("#ao-find-modular-root .aoJourneyDetail h3")
+      ?.textContent?.includes("Holywell"),null,{timeout:12000});
+   assert.equal(await journey.locator("[data-explore-journey-stage-focus]").count(),2);
+   await page.waitForFunction(()=>document.querySelectorAll(
+      "#ao-find-modular-root [data-journey-map-stage]").length===2,null,{timeout:12000});
+   const holywellStage=journey.locator('[data-explore-journey-stage-focus="route:GB:holywell-church-to-well#stage-1"]');
+   await holywellStage.click();
+   assert.equal(await holywellStage.getAttribute("aria-pressed"),"true");
+   assert.ok((await journey.locator(".aoJourneyNoLine").innerText()).includes("No route line"),
+     "Two matched canonical site anchors are not walking geometry");
+   await page.waitForTimeout(600);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-journey-holywell-site-markers.png"),fullPage:false});
    await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').click();
    await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
    await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
