@@ -544,6 +544,12 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   background:#d5bd8b;border:1px solid #d5bd8b;color:#0c1721;
   font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
 }
+.aoHeritageSurface .aoJourneyActions .aoJourneyOfficialMap{
+  display:flex;align-items:center;min-height:44px;padding:9px 13px;
+  border-radius:8px;border:1px solid rgba(205,180,133,.6);
+  text-decoration:underline;text-underline-offset:3px;color:#eadab7;
+  font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+}
 .aoHeritageSurface .aoJourneyActions button:first-child:not(:last-child){
   background:transparent;border-color:rgba(213,189,139,.49);color:#eadcc2;
 }
