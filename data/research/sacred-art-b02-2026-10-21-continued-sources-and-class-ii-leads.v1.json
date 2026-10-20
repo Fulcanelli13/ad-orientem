@@ -55,10 +55,15 @@
   },
   "batchTotals": {
     "targets": 8,
-    "physicalPaintingIdentitiesVerified": 8,
+    "physicalPaintingIdentitiesVerifiedOrReconfirmed": 8,
+    "newIdentityConfirmationsForPreviouslyUnverifiedTargets": 5,
+    "priorB01IdentitiesWithNewSourceRightsEvidence": 3,
     "physicalWorkCandidateLeadsDiscovered": 5,
     "newCanonicalCatalogueEntries": 0,
     "newImageSourceRoutes": 8,
+    "cumulativeVerifiedPhysicalIdentities": 14,
+    "cumulativeSourceRoutes": 14,
+    "cumulativeSpecificRightsEvidenceFindings": 14,
     "imageSpecificReuseEvidenceFound": 8,
     "rawFilesAcquired": 0,
     "ratingsChanged": 0,
@@ -139,7 +144,7 @@
       },
       "photoRights": {
         "status": "image-specific Public Domain Mark / PD-Art evidence located; exact NGI Creative Commons icon still not verified",
-        "terms": "Commons page identifies the exact artist, title, NGI.72 accession and declares the faithful reproduction PD-Art/PDM; Commons warns reuse may vary outside the United States.",
+        "terms": "Commons page identifies the artist, title and NGI.72 accession and declares the faithful reproduction PD-Art/PDM; Commons warns reuse may vary outside the United States. Its structured date says 1620–1623, conflicting with the NGI official 1624–1625 date; exact photographic identity awaits pixel comparison.",
         "commercialReuse": "provisional, jurisdiction review pending; source resolution is low",
         "evidenceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
         "officialAlternativeRightsPolicy": "https://www.nationalgallery.ie/explore-and-learn/creative-commons-download-artwork"
@@ -187,7 +192,7 @@
       },
       "subjectRelation": "Exact Gospel baptism. It is an oil sketch for a now-lost chapel decoration, not a monumental altarpiece.",
       "imageSource": {
-        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437457/2100489/main-image",
+        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437457/796664/main-image",
         "pixels": null
       },
       "photoRights": {
@@ -212,7 +217,7 @@
       },
       "subjectRelation": "Exact Rosary devotional iconography: the fifteen mysteries appear in separate scenes and the Virgin and Child below are enclosed by a rosary-like garland.",
       "imageSource": {
-        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437216/34347/main-image",
+        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/437216/796495/main-image",
         "pixels": null
       },
       "photoRights": {
@@ -237,7 +242,7 @@
       },
       "subjectRelation": "Exact Matthew 2:16–18 subject. Navez depicts the violence in the background and foregrounds the victims/families.",
       "imageSource": {
-        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/438462/426386/main-image",
+        "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/438462/2216963/main-image",
         "pixels": null
       },
       "photoRights": {
