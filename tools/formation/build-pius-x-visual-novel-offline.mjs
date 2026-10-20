@@ -52,7 +52,7 @@ let html=await readText('previews/visible-mass-3d/pius-x-conversation-paths-revi
 let helper=await readText('previews/visible-mass-3d/pius-x-20path-editorial-review.mjs');
 helper=helper.replace('export const PIUS_X_20PATH_REVIEW_VERSION','const PIUS_X_20PATH_REVIEW_VERSION')
  .replace('export async function createPiusX20PathReview','async function createPiusX20PathReview');
-if(/^\\s*export\\s/m.test(helper))throw Error('Unexpected further helper exports');
+if(helper.split(String.fromCharCode(10)).some(line=>line.trimStart().startsWith('export ')))throw Error('Unexpected further helper exports');
 const importLine='import {createPiusX20PathReview} from "./pius-x-20path-editorial-review.mjs";';
 if(!html.includes(importLine))throw Error('Review HTML import contract changed');
 const safeLiteral=x=>JSON.stringify(x).replace(/</g,'\\u003c');
