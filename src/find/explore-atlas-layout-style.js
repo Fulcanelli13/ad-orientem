@@ -738,4 +738,63 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   color:#b5a997;font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);margin:4px 0 0;
 }
 
+
+/* MapCN Store Locator visual grammar, source-bound to the existing atlas.
+   One map instance, one action owner. Rail is an overlay, not a new column
+   that shrinks map canvas or steals viewport height. */
+.aoHeritageSurface .aoMapcnDiscoverRail{
+ position:absolute;z-index:9;top:188px;bottom:13px;left:17px;
+ width:min(320px,calc(100% - 34px));min-height:0;display:flex;flex-direction:column;
+ border:1px solid rgba(201,174,121,.28);border-radius:13px;
+ background:#0d1721f5;color:#e5ddce;box-shadow:0 18px 42px #0008;
+ backdrop-filter:blur(10px);overflow:hidden;
+}
+.aoHeritageSurface .aoMapcnDiscoverHead{
+ flex:none;display:flex;align-items:center;justify-content:space-between;
+ padding:17px 15px 13px;gap:9px;border-bottom:1px solid #a18c6038;
+}
+.aoMapcnDiscoverHead small{color:#c9ad7b;letter-spacing:.12em;font:600 9px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoMapcnDiscoverHead h2{margin:5px 0 0;font:500 26px/1 var(--ao-font-display,Georgia,serif);color:#eee1ce}
+.aoMapcnDiscoverHead>strong{font:500 27px/1 var(--ao-font-display,Georgia,serif);color:#ccb07c}
+.aoHeritageSurface .aoMapcnDiscoverEntries{min-height:0;flex:1;overflow:auto;overscroll-behavior:contain;scrollbar-color:#6f654e transparent}
+.aoHeritageSurface .aoMapcnDiscoverItem{
+ display:flex;align-items:flex-start;gap:10px;text-align:left;color:#e4ddcf;
+ background:transparent;border:0;border-bottom:1px solid #a18c6026;
+ width:100%;min-height:80px;padding:12px 13px;cursor:pointer;
+}
+.aoHeritageSurface .aoMapcnDiscoverItem:hover,.aoHeritageSurface .aoMapcnDiscoverItem[aria-current=true]{
+ background:#23313b;
+}
+.aoHeritageSurface .aoMapcnDiscoverItem:focus-visible{outline:2px solid #d2b57e;outline-offset:-3px}
+.aoHeritageSurface .aoMapcnDiscoverItem>img,.aoHeritageSurface .aoMapcnDiscoverGlyph{
+ width:63px;height:66px;flex:none;border-radius:6px;object-fit:cover;
+ border:1px solid #bda47748;background:#1d2c36;
+}
+.aoHeritageSurface .aoMapcnDiscoverGlyph{display:grid;place-items:center;font:29px Georgia,serif;color:#bca47b}
+.aoHeritageSurface .aoMapcnDiscoverCopy{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.aoMapcnDiscoverCopy>small{color:#cdb78c;letter-spacing:.09em;font:600 9px var(--ao-font-ui,system-ui,sans-serif)}
+.aoMapcnDiscoverCopy>strong{font:500 18px/1.12 var(--ao-font-display,Georgia,serif);color:#f0e5d3}
+.aoMapcnDiscoverCopy>span,.aoMapcnDiscoverCopy>em{font:11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#9fb0b7;font-style:normal}
+.aoMapcnDiscoverCopy>em{color:#c7ab7a}
+.aoMapcnDiscoverArrow{flex:none;color:#d3b984;font-size:15px}
+.aoHeritageSurface .aoMapcnDiscoverFoot{flex:none;padding:8px 13px;border-top:1px solid #a18c6038}
+.aoMapcnDiscoverFoot button{display:block;width:100%;min-height:44px;color:#deca9e;border:1px solid #ac916749;border-radius:7px;background:#1a2a34;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}
+.aoMapcnDiscoverFoot span{display:block;padding:8px;color:#a3afb2;text-align:center;font-size:11px}
+@media(max-width:799px){
+ .aoHeritageSurface .aoMapcnDiscoverRail{
+   top:auto;left:0;right:0;bottom:0;width:100%;height:min(35dvh,310px);
+   border-radius:15px 15px 0 0;border-left:0;border-right:0;
+   background:#0f1b25f8;
+ }
+ .aoHeritageSurface .aoMapcnDiscoverHead{padding:9px 13px}
+ .aoMapcnDiscoverHead h2{font-size:21px}
+ .aoMapcnDiscoverHead>strong{font-size:24px}
+ .aoHeritageSurface .aoMapcnDiscoverItem{min-height:69px;padding:9px 11px}
+ .aoHeritageSurface .aoMapcnDiscoverItem>img,.aoHeritageSurface .aoMapcnDiscoverGlyph{width:49px;height:54px}
+ .aoMapcnDiscoverCopy>strong{font-size:17px}
+ .aoHeritageSurface .aoHeritageMapHint{display:none}
+ .aoHeritageSurface:has(.aoMapcnDiscoverRail) .aoHeritageNearby{bottom:calc(min(35dvh,310px) + 12px)}
+ .aoHeritageSurface:has(.aoFindSheetBackdrop[data-find-close-place]) .aoMapcnDiscoverRail{display:none}
+}
+
 `;

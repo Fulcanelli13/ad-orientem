@@ -1,3 +1,4 @@
+import {renderMapcnDiscoverRail} from "./mapcn-discover-rail.js";
 // Map-first Sacred Geography: one physical Place, one pin, short preview.
 // Full scholarly records remain accessible on explicit request.
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -161,6 +162,11 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   if(searching&&!vm.selectedPlace&&!vm.selected)html+=searchMatches(vm);
   else if(arr(vm.nearby).length)html+=nearbyPanel(vm);
   else html+='<p class="aoHeritageMapHint">'+L(vm.language,"Numbers zoom · icons open places","Chiffres : zoom · icônes : lieux")+'</p>';
+  // MapCN's Store Locator rail shares the active canonical map and its
+  // existing data-explore-open-place action. Hide it when a separate journey
+  // has ownership or when the legacy search overlay is active.
+  if(!vm.journeyOpen&&!searching&&!arr(vm.nearby).length&&!arr(vm.customCards).length&&!vm.filters?.highlightCustomId)
+    html+=renderMapcnDiscoverRail(vm);
   const customs=arr(vm.customCards);
   if(customs.length){
     html+='<div class="aoHeritageCustomStrip"><div class="aoHeritageStripHeading"><span>'+L(vm.language,"Living traditions","Traditions vivantes")+'</span>';
