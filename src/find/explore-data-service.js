@@ -33,6 +33,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   shrineSources:moduleUrl("../../data/shrines/source-registry.v1.json"),
   routeStageEvidence:moduleUrl("../../data/shrines/route-stage-evidence-20261020.v1.json"),
   routeGeometryReview:moduleUrl("../../data/shrines/route-geometry-review-20261020.v1.json"),
+  routeStageSiteLinks:moduleUrl("../../data/shrines/route-stage-canonical-site-links-20261020.v1.json"),
   novenaBridge:moduleUrl("../../data/customs/novena-context-links.v1.json"),
   novenaSot:moduleUrl("../../data/pray/novena-sot.v1.json"),
   approvedPlaceMedia:moduleUrl("../../data/geography/approved-place-media.v1.json"),
@@ -45,7 +46,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
 
 export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_SAINTS_CHANNEL}={}){
   const research=isResearchSaintsChannel(saintsChannel);
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,routeStageEvidence,routeGeometryReview]=await Promise.all([
+  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,routeStageEvidence,routeGeometryReview,routeStageSiteLinks]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
@@ -70,6 +71,7 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
     research?fetchJson(EXPLORE_DATA_URLS.saintsOwnerIndex,{fetchImpl,optional:true}):Promise.resolve(null),
     fetchJson(EXPLORE_DATA_URLS.routeStageEvidence,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.routeGeometryReview,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.routeStageSiteLinks,{fetchImpl,optional:true}),
   ]);
   return applySaintsReleaseBoundary({
     directory,
@@ -99,6 +101,8 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
         ?safeArray(routeStageEvidence?.routes):[],
       routeGeometryReview:routeGeometryReview?.schema==="AO_PILGRIMAGE_GEOMETRY_REVIEW_V1"
         ?safeArray(routeGeometryReview?.reviewed_routes):[],
+      routeStageSiteLinks:routeStageSiteLinks?.schema==="AO_PILGRIMAGE_STAGE_CANONICAL_SITE_LINKS_V1"
+        ?safeArray(routeStageSiteLinks?.links):[],
       temporalLinks:safeArray(shrines?.temporalLinks),
       sources:safeArray(shrineSources?.sources),
     }),
