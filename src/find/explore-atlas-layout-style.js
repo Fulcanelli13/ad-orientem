@@ -642,12 +642,12 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   outline:2px solid #d8bb84;outline-offset:2px;border-radius:4px;
 }
 
-/* Close controls use one icon owner. Before global SVG hydration, expose
-   a typographic fallback; once hydrated, hide only that fallback. */
-.aoExploreSurface .aoExploreCloseFallback{
-  font:400 24px/1 var(--ao-font-ui,system-ui,sans-serif);
+/* Icon contract: retain the canonical asset-bank mask as no-hydration fallback,
+   but hide it when the app-wide Tier-A icon system hydrates this button into SVG.
+   This prevents visually doubled close glyphs without discarding provenance. */
+.aoExploreSurface .aoUiIconOnly [data-ao-asset-id="ao-ui-close"]{
+  display:none!important;
 }
-.aoExploreSurface .aoUiIconOnly .aoExploreCloseFallback{display:none!important}
 
 /* D → C profile lifecycle: preserve Journey state and DOM under a Place
    sheet, but never draw two overlapping editorial folios at once. */
