@@ -32,6 +32,25 @@
       "commit": "bb02e2f710a1b823788fc730bec7d3fd4586818e",
       "families": 1,
       "status": "FR_DELTA_PREPARED_EN_ORIGINAL_INACCESSIBLE"
+    },
+    {
+      "batch": "B02",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b02-confession-source-deltas-20261021.v1.json",
+      "commit": "58293038fb07ec8c77b160207e2ed560cd606e86",
+      "families": 7,
+      "answerUnits": 14,
+      "wordingDeltaFamilies": 5,
+      "status": "SOURCE_MAPPED_HUMAN_REVIEW_PENDING",
+      "ids": [
+        "CHA-CSE-CSE131",
+        "CHA-CSE-CSE132",
+        "CHA-CSE-CSE133",
+        "CHA-CSE-CSE134",
+        "CHA-CSE-CSE135",
+        "CHA-CSE-CSE138",
+        "CHA-CSE-CSE139"
+      ]
     }
   ],
   "blocked": [
@@ -48,12 +67,13 @@
     }
   ],
   "active": {
-    "batch": "B02",
-    "task": "Select accessible unresolved Chanoine CSE specialist/source questions; preserve full bilingual source owners"
+    "batch": "B03",
+    "task": "Upgrade exact Pius X confession family evidence from LOCATED_NOT_SENTENCE_CERTIFIED, reusing B02 primary source readings"
   },
   "next": [
-    "Strengthen accessible bilingual Chanoine CSE families from existing specialist queue",
-    "Extend source-exact SPX claim/voice records for unresolved first-release material after checking prior audit coverage"
+    "SPX confession families with exact Q731/746/747/751/752/758/759/760 evidence",
+    "Chanoine remaining clinical-source claims CSE136/137: isolate doctrine from unverified psychology, remove or verify latter",
+    "Remaining original first-release priorities; reuse prior completed audits"
   ],
   "deduplication": "(kb, canonical familyId, turn, claim, source locator); retain duplicated conversation contexts, synchronize approved answer variants",
   "approvalsChanged": 0,
