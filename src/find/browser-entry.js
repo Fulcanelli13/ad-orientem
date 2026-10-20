@@ -647,10 +647,14 @@ export function createFindOwner(win=globalThis){
       projection.byLens?.pilgrimages,dataset.shrines?.sources,
       dataset.shrines?.routeStageEvidence);
     const active=selectedPilgrimageJourney(routes,state.journeySelectedId);
-    const geo=active?.destinationGeo;
+    // The Walsingham 2026 Priory endpoint differs from the canonical Catholic
+    // shrine. It has no surveyed stage coordinate. Center the broader related
+    // shrine AREA for context without labelling that marker the route endpoint.
+    const geo=active?.destinationGeo??active?.relatedShrineGeo;
     if(!geo)return false;
     const map=mapHandle.map,phone=Number(win?.innerWidth||0)<800;
-    const target={center:[geo.lng,geo.lat],zoom:Math.max(8.5,Number(map.getZoom?.())||0),
+    const zoomFloor=active?.destinationGeo?8.5:7.0;
+    const target={center:[geo.lng,geo.lat],zoom:Math.max(zoomFloor,Number(map.getZoom?.())||0),
       offset:phone?[0,-125]:[-175,0]};
     if(win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)
       map.jumpTo?.(target);
