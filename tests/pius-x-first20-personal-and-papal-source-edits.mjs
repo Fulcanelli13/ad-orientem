@@ -12,6 +12,9 @@ assert.equal(overlays.counts.revised,20);
 assert.equal(overlays.counts.documentaryBiography,9);
 assert.equal(overlays.counts.primaryPapalText,11);
 assert.equal(overlays.counts.intentOverlapPairs,3);
+assert.equal(overlays.counts.distinctVisitorIntentsInThisCohort,17);
+assert.equal(overlays.counts.primaryReviewEntries,17);
+assert.equal(overlays.counts.aliasRepliesNotSeparateEntrypoints,3);
 assert.equal(overlays.counts.independentApproval,0);
 assert.equal(overlays.counts.published,0);
 assert.equal(selection.actual,130);
@@ -45,6 +48,7 @@ for(const entry of overlays.records){
   assert.equal(entry.proposedDisplayRole,"PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION");
   assert.ok(entry.witness.url.includes("vatican.va"));
  }
+ assert.equal(entry.intentTreatment.productionReady,false);
  if(entry.sameVisitorIntentFamily){
   if(!duplicates.has(entry.sameVisitorIntentFamily))duplicates.set(entry.sameVisitorIntentFamily,[]);
   duplicates.get(entry.sameVisitorIntentFamily).push(entry.id);
@@ -55,6 +59,13 @@ assert.equal(owners.size,20);
 assert.equal([...owners.keys()].filter(x=>x.startsWith("SPX-EXP-00")).length,9);
 assert.equal([...duplicates].length,3);
 for(const [family,ids] of duplicates)assert.equal(ids.length,2,"must be exact pair "+family);
+for(const [group, ids] of duplicates){
+ const entries=ids.map(id=>overlays.records.find(x=>x.id===id));
+ assert.equal(entries.filter(e=>e.intentTreatment.status==="CANONICAL_ENTRY_REVIEW_ONLY").length,1);
+ assert.equal(entries.filter(e=>e.intentTreatment.status==="ALIAS_NO_DUPLICATE_ENTRY").length,1);
+ const canonical=entries.find(e=>e.intentTreatment.status==="CANONICAL_ENTRY_REVIEW_ONLY");
+ assert.ok(entries.every(e=>e.intentTreatment.primaryFamilyId===canonical.id));
+}
 assert.deepEqual(duplicates.get("ELECTION_RELUCTANCE_1903").sort(),["SPX-EXP-010","SPX-PILOT-01"]);
 assert.deepEqual(duplicates.get("ADULT_CATECHESIS_1905").sort(),["SPX-012","SPX-PILOT-08"]);
 assert.deepEqual(duplicates.get("PRIESTLY_MEDITATION_1908").sort(),["SPX-EXP-045","SPX-PILOT-09"]);
