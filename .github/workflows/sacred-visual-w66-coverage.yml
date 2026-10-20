@@ -81,7 +81,8 @@ jobs:
     timeout-minutes: 12
     strategy:
       fail-fast: false
-      max-parallel: 2
+      # Five concurrent 50-work source shards; throughput without overloading museum/Commons APIs.
+      max-parallel: 5
       matrix:
         shard: [0,1,2,3,4,5,6,7,8,9]
     steps:
@@ -126,7 +127,8 @@ jobs:
     timeout-minutes: 16
     strategy:
       fail-fast: false
-      max-parallel: 1
+      # Both 50/26-work metadata research shards run concurrently; rate-limit retries remain enabled.
+      max-parallel: 2
       matrix:
         shard: [0,1]
     steps:
