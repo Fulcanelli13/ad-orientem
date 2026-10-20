@@ -355,6 +355,7 @@ export function mountFullMassPreflight({
       folio.querySelector("[data-folio-host-actions]").append(target);
     }
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
+    const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},summary.readerLanguage,{form:summary.form});
     const folio=root.querySelector(".aoGuidedMassFolio");
     const word=(selector,en,frText)=>{
       const node=folio?.querySelector(selector);if(node)node.textContent=l(en,frText);
@@ -409,7 +410,7 @@ export function mountFullMassPreflight({
     folio.querySelector("[data-folio-back]").hidden=folioStep==="overview";
     folio.querySelector("[data-folio-next]").hidden=folioStep==="overview";
 
-    const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},summary.readerLanguage,{form:summary.form});
+
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
     const comparison=root.querySelector("[data-mass-calendar-actual-block]");
     if(comparison)comparison.hidden=!context.differs;
