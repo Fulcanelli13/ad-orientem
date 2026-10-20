@@ -266,7 +266,8 @@ export function mountFullMassPreflight({
         '<fieldset class="aoMassFolioOption"><legend data-folio-after-heading></legend>'+
         '<label><input type="radio" name="ao-folio-after" value="none" data-folio-after> <span data-folio-after-none></span></label>'+
         '<label><input type="radio" name="ao-folio-after" value="thanksgiving" data-folio-after> <span data-folio-after-thanksgiving></span></label></fieldset>'+
-        '</section><div class="aoMassFolioGuideActions" data-folio-actions>'+
+        '</section><div data-folio-essential-notice class="aoMassFolioEssentialNotice"></div>'+
+        '<div class="aoMassFolioGuideActions" data-folio-actions>'+
         '<button type="button" data-folio-back hidden></button><button type="button" data-folio-next hidden></button></div>'+
         '<div data-folio-host-actions></div></div>';
       root.prepend(folio);
@@ -287,7 +288,7 @@ export function mountFullMassPreflight({
       move("[data-full-mass-form-fieldset]","[data-folio-ceremony-controls]");
       move("[data-full-mass-reader-fieldset]","[data-folio-reader-controls]");
       move("[data-full-mass-rites]","[data-folio-rites-slot]");
-      move("[data-full-mass-note]","[data-folio-technical]");
+      move("[data-full-mass-note]","[data-folio-essential-notice]");
 
       root.addEventListener("click",e=>{
         const calendarButton=e.target?.closest?.("[data-mass-calendar-open]");
@@ -503,7 +504,9 @@ export function mountFullMassPreflight({
       l("Choose a permitted celebration with a complete Proper before starting. No text is substituted.",
         "Choisissez une célébration permise dont le propre est complet avant de commencer. Aucun texte n’est substitué.");
     root.querySelector("[data-full-mass-resolver]").hidden=Boolean(sourceGate.ready&&localReady&&summary.canStart);
-    root.querySelector("[data-full-mass-note]").textContent=
+    const essentialNote=root.querySelector("[data-full-mass-note]");
+    essentialNote.hidden=summary.kind!=="GOOD_FRIDAY";
+    essentialNote.textContent=
       summary.kind==="GOOD_FRIDAY"?
         l("Good Friday is a distinct liturgy, not Low or Sung Mass.","Le Vendredi saint possède un office distinct : ce n’est pas une messe basse ou chantée.") :
       l("This choice applies to this Mass only. Reader views (Missal, Simple, Live) are separate.",
