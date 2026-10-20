@@ -1,0 +1,266 @@
+{
+  "schema": "AO_PILGRIMAGE_STAGE_EVIDENCE_V1",
+  "review_date": "2026-10-20",
+  "publication": "SOURCE_NAMED_WAYPOINTS_NO_GEOMETRY",
+  "policy": "Named, ordered stops are transcribed from their cited organizer or diocesan pages. No geographic coordinates, path lines or navigational distance may be derived from the order alone. Edition-specific data never establishes future recurrence.",
+  "routes": [
+    {
+      "route_id": "route:FR:paray-pilgrim-path",
+      "edition": "2025-current",
+      "source_url": "https://sacrecoeur-paray.org/parcours-du-pelerin-fr/",
+      "source_class": "OFFICIAL_SHRINE",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:FR:paray-pilgrim-path#stage-1",
+          "ordinal": 1,
+          "name_en": "Basilica of the Sacred Heart",
+          "name_fr": "Basilique du Sacré-Cœur",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://sacrecoeur-paray.org/parcours-du-pelerin-fr/"
+        },
+        {
+          "waypoint_id": "route:FR:paray-pilgrim-path#stage-2",
+          "ordinal": 2,
+          "name_en": "Chapelle Saint-Jean",
+          "name_fr": "Chapelle Saint-Jean",
+          "role": "INTERMEDIATE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://sacrecoeur-paray.org/parcours-du-pelerin-fr/"
+        },
+        {
+          "waypoint_id": "route:FR:paray-pilgrim-path#stage-3",
+          "ordinal": 3,
+          "name_en": "Chapel of the Apparitions",
+          "name_fr": "Chapelle des Apparitions",
+          "role": "INTERMEDIATE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://sacrecoeur-paray.org/parcours-du-pelerin-fr/"
+        },
+        {
+          "waypoint_id": "route:FR:paray-pilgrim-path#stage-4",
+          "ordinal": 4,
+          "name_en": "Chapel of La Colombière",
+          "name_fr": "Chapelle La Colombière",
+          "role": "DESTINATION_STAGE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://sacrecoeur-paray.org/parcours-du-pelerin-fr/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:FR:paris-chartres-pentecost",
+      "edition": "2026",
+      "source_url": "https://www.nd-chretiente.com/pelerinage-chartres/pelerins-marcheurs/",
+      "source_class": "OFFICIAL_ORGANIZER",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:FR:paris-chartres-pentecost#stage-1",
+          "ordinal": 1,
+          "name_en": "Saint-Sulpice Church, Paris",
+          "name_fr": "Église Saint-Sulpice, Paris",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.nd-chretiente.com/pelerinage-chartres/pelerins-marcheurs/"
+        },
+        {
+          "waypoint_id": "route:FR:paris-chartres-pentecost#stage-2",
+          "ordinal": 2,
+          "name_en": "Choisel overnight camp",
+          "name_fr": "Bivouac de Choisel",
+          "role": "INTERMEDIATE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.nd-chretiente.com/pelerinage-chartres/pelerins-marcheurs/"
+        },
+        {
+          "waypoint_id": "route:FR:paris-chartres-pentecost#stage-3",
+          "ordinal": 3,
+          "name_en": "Gas overnight camp",
+          "name_fr": "Bivouac de Gas",
+          "role": "INTERMEDIATE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.nd-chretiente.com/pelerinage-chartres/pelerins-marcheurs/"
+        },
+        {
+          "waypoint_id": "route:FR:paris-chartres-pentecost#stage-4",
+          "ordinal": 4,
+          "name_en": "Notre-Dame Cathedral, Chartres",
+          "name_fr": "Cathédrale Notre-Dame de Chartres",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.nd-chretiente.com/pelerinage-chartres/pelerins-marcheurs/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:US:walk-to-mary",
+      "edition": "2027-announced",
+      "source_url": "https://walktomary.com/our-path/",
+      "source_class": "OFFICIAL_ORGANIZER",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": "https://www.google.com/maps/d/embed?ll=44.50775787430333%2C-87.9387949855585&mid=1Kf_rYIo3dg2Gltpn8sWmxkiJULpS6mY&z=11",
+      "waypoints": [
+        {
+          "waypoint_id": "route:US:walk-to-mary#stage-1",
+          "ordinal": 1,
+          "name_en": "Old St. Joseph Church / National Shrine of St. Joseph, De Pere",
+          "name_fr": "Old St. Joseph Church / National Shrine of St. Joseph, De Pere",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://walktomary.com/our-path/"
+        },
+        {
+          "waypoint_id": "route:US:walk-to-mary#stage-2",
+          "ordinal": 2,
+          "name_en": "St. Peter and Paul Parish, Green Bay",
+          "name_fr": "St. Peter and Paul Parish, Green Bay",
+          "role": "JOIN_IN",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://walktomary.com/our-path/"
+        },
+        {
+          "waypoint_id": "route:US:walk-to-mary#stage-3",
+          "ordinal": 3,
+          "name_en": "Holy Cross Parish, Green Bay",
+          "name_fr": "Holy Cross Parish, Green Bay",
+          "role": "JOIN_IN",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://walktomary.com/our-path/"
+        },
+        {
+          "waypoint_id": "route:US:walk-to-mary#stage-4",
+          "ordinal": 4,
+          "name_en": "National Shrine of Our Lady of Champion",
+          "name_fr": "National Shrine of Our Lady of Champion",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://walktomary.com/our-path/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:MU:pere-laval-saint-louis",
+      "edition": "2026",
+      "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
+      "source_class": "DIOCESAN_2026",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:MU:pere-laval-saint-louis#stage-1",
+          "ordinal": 1,
+          "name_en": "Saint Louis Cathedral, Port Louis",
+          "name_fr": "Cathédrale Saint-Louis, Port-Louis",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+        },
+        {
+          "waypoint_id": "route:MU:pere-laval-saint-louis#stage-2",
+          "ordinal": 2,
+          "name_en": "Tomb of Blessed Father Laval, Sainte-Croix",
+          "name_fr": "Caveau du Bienheureux Père Laval, Sainte-Croix",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:MU:pere-laval-saint-joseph",
+      "edition": "2026",
+      "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/",
+      "source_class": "DIOCESAN_2026",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:MU:pere-laval-saint-joseph#stage-1",
+          "ordinal": 1,
+          "name_en": "Saint Joseph Church, Terre Rouge",
+          "name_fr": "Église Saint-Joseph, Terre-Rouge",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+        },
+        {
+          "waypoint_id": "route:MU:pere-laval-saint-joseph#stage-2",
+          "ordinal": 2,
+          "name_en": "Tomb of Blessed Father Laval, Sainte-Croix",
+          "name_fr": "Caveau du Bienheureux Père Laval, Sainte-Croix",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:US:lake-george-auriesville-restoration",
+      "edition": "2026",
+      "source_url": "https://pilgrimage-for-restoration.org/arrival/check-in-thursday/",
+      "source_class": "OFFICIAL_ORGANIZER",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:US:lake-george-auriesville-restoration#stage-1",
+          "ordinal": 1,
+          "name_en": "Wood Park, Lake George Village",
+          "name_fr": "Wood Park, Lake George Village",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://pilgrimage-for-restoration.org/arrival/check-in-thursday/"
+        },
+        {
+          "waypoint_id": "route:US:lake-george-auriesville-restoration#stage-2",
+          "ordinal": 2,
+          "name_en": "Shrine of Our Lady of Martyrs, Auriesville",
+          "name_fr": "Shrine of Our Lady of Martyrs, Auriesville",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://pilgrimage-for-restoration.org/arrival/check-in-thursday/"
+        }
+      ]
+    }
+  ]
+}
