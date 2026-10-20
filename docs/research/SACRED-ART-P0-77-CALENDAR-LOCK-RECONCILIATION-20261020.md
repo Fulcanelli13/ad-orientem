@@ -2,6 +2,15 @@
 
 Research-only crosswalk of **77 dates** (53 Class I + 24 deliberately selected major Class II). Source branches and local library audit versions are recorded in the adjacent JSON. **No new paintings approved or published; all ratings and Prado media exclusions remain.**
 
+
+## Later 20 October Class I decision overlay — selection layer, not release
+
+The preceding 18/53 number is a **strict placement audit of 17 October**, **not the current 20 October date-choice completion rate**. A later user-decision preflight documents **53/53 date-level editorial artwork associations**: five explicit new primaries, thirty other recently approved date-specific choices, seventeen older approved date associations, and one Easter Vigil special set containing two illustrated Old Testament prophecies. Its source crosswalk has **15/53 selected catalogue previews** and **22/53 selections with source-object URLs** (21 unique URLs), and still **0** production-certified image masters.
+
+The non-destructive transcription is `data/research/sacred-art-class-i-53-current-date-decisions-overlay-20261020.v1.json`. It preserves 19 October Maíno, Champaigne, Minardi and other date selections, the October 17 artwork ratings and exclusions, and the Prado photography embargo. It **does not** override frozen artwork IDs or certify photographic reuse. Resolve source identities, rights and handset QA prior to promotion.
+
+Class II remains **13/24 strict 17 October** until an equally current choice overlay is reconciled. The older audit's 18/24 approved-or-related associations are not strict completion.
+
 ## Evidence correction
 
 The earlier statement that 40/53 Class I dates had a strict approved date link was incorrect: 40 distinct dates across the **full-year** dated-relation handoff were mistaken for 40 Class I dates. The 17 October strict placement audit gives **18/53 Class I** and **13/24 major Class II** with accepted direct/feast matches. A separate Class I intake has 19 dates with approved leads, illustrating why editorial source matches and final photo certification must be different fields.
