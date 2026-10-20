@@ -319,6 +319,21 @@
         "CHA-CSE-CSE037"
       ],
       "status": "SOURCE_PRECISION_AND_PASTORAL_APPLICATION_REVIEW_PENDING"
+    },
+    {
+      "batch": "B21",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b21-marriage-definition-20261021.v1.json",
+      "commit": "a3921ca9a90b739002afb5b97d0d5afe8214dc78",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE041",
+        "CHA-CSE-CSE042",
+        "CHA-CSE-CSE043",
+        "CHA-CSE-CSE044"
+      ],
+      "status": "SOURCE_MATCHED_CANONICAL_AND_BILINGUAL_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -340,17 +355,21 @@
     }
   ],
   "active": {
-    "batch": "B21",
-    "state": "SELECTING",
-    "ids": [
-      "CSE041",
-      "CSE042",
-      "CSE043",
-      "CSE044"
-    ],
-    "task": "Marriage definition, consent and natural institution; sterility versus antecedent perpetual impotence and fraud qualification."
+    "state": "CHECKPOINT_SAVED",
+    "lastCompletedBatch": "B21",
+    "nextBatch": "B22"
   },
   "next": [
+    {
+      "priority": 1,
+      "kb": "Chanoine",
+      "candidateIds": [
+        "CSE038",
+        "CSE039",
+        "CSE040"
+      ],
+      "action": "Read original composite records and specialist briefs first; exclude all completed family IDs. Check remaining modesty/occasion questions against exact existing sources; do not presume content or need for changes."
+    },
     {
       "priority": 2,
       "scope": "SPX first-balanced-release beyond existing first20",
@@ -362,15 +381,15 @@
   "publication": false,
   "denzingerMandatory": false,
   "progress": {
-    "conversationFamilyIdsWithResearchDeltas": 78,
+    "conversationFamilyIdsWithResearchDeltas": 82,
     "additionalMirrorFamilyIdsExamined": 3,
-    "totalDistinctFamilyIdsExaminedInSelectedResearch": 81,
-    "answerUnitsReviewed": 156,
-    "fullFamilyPacketsForHumanReview": 77,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 85,
+    "answerUnitsReviewed": 164,
+    "fullFamilyPacketsForHumanReview": 81,
     "partialFamilyPackets": 1,
     "humanCertified": 0,
     "published": 0,
-    "meaning": "77 complete packets can enter human review; source matching and research-context additions are not certification."
+    "meaning": "81 complete research packets can enter human certification review; no answer is certified or approved for publication."
   },
   "scheduling": {
     "created": false,
