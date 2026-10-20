@@ -1,4 +1,5 @@
 // A release-only, fail-closed selector. Research ledgers are deliberately not imported.
+import {isPradoHeldArtworkId,pradoProvenanceInMedia} from "./sacred-art-prado-source-holds.js";
 // Caller must supply the actual canonical 1962 Proper for the selected date.
 const sha = value => typeof value === "string" && /^[0-9a-f]{64}$/i.test(value);
 const localPath = value => typeof value === "string"
@@ -9,6 +10,9 @@ const exactString = value => typeof value === "string" && value.trim().length > 
 function qualifiedMedia(record) {
   const m=record?.media;
   return record?.status==="PRODUCTION_CERTIFIED"
+    && !isPradoHeldArtworkId(record?.artworkId)
+    && !pradoProvenanceInMedia(m)
+    && m?.nonPradoSourceVerified===true
     && m?.exactOriginalVerified===true
     && m?.publicReuseRightsVerified===true
     && m?.photoFileRightsVerified===true
