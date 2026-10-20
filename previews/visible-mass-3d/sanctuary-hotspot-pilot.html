@@ -862,8 +862,34 @@ async function guideInit(pilot){
    if(livingReview){
      try{
        const lc=await import("./visible-mass-living-church-adapter.mjs");
+       const nativeCatechismModule=await import("./living-church-catechism-native.mjs");
+       const nativeCatechism=nativeCatechismModule.createLivingChurchCatechismNativeOwner(window,{
+         sourceStatus:()=>({view:state.view,photoMode:state.photoMode,
+           selected:state.selected,question:state.question,
+           trailId:state.guide?.status()?.active??null}),
+         sourcePose:()=>({x:$("photo-viewport").scrollLeft,y:$("photo-viewport").scrollTop}),
+         restorePose:async pose=>{
+           if(state.view!=="church"||state.photoMode!=="still"||!pose||
+             !Number.isFinite(pose.x)||!Number.isFinite(pose.y))return {ok:false};
+           $("photo-viewport").scrollLeft=pose.x;
+           $("photo-viewport").scrollTop=pose.y;
+           return {ok:true};
+         }
+       });
+       const nativeMassModule=await import("./living-church-mass-native.mjs");
+       const nativeMass=nativeMassModule.createLivingChurchMassNativeOwner(window,{
+         sourceStatus:()=>({view:state.view,photoMode:state.photoMode}),
+         sourcePose:()=>({x:$("photo-viewport").scrollLeft,y:$("photo-viewport").scrollTop}),
+         restorePose:async pose=>{
+           if(state.view!=="church"||state.photoMode!=="still"||!pose||
+              !Number.isFinite(pose.x)||!Number.isFinite(pose.y))return {ok:false};
+           $("photo-viewport").scrollLeft=pose.x;
+           $("photo-viewport").scrollTop=pose.y;
+           return {ok:true};
+         }
+       });
        livingChurchContextP1=lc.createVisibleMassLivingChurchAdapter({
-         pilot,graph,reviewEnabled:()=>livingReview,
+         pilot,graph,reviewEnabled:()=>livingReview,nativeCatechism,nativeMass,
          sourceStatus:()=>({
            view:state.view,photoMode:state.photoMode,selected:state.selected,
            question:state.question,mode:state.experience,lang:state.studyLang,
@@ -882,6 +908,42 @@ async function guideInit(pilot){
        document.addEventListener("keyup",()=>queueMicrotask(syncLivingChurchP1));
        $("study-language").addEventListener("change",()=>queueMicrotask(syncLivingChurchP1));
        syncLivingChurchP1();
+        // P2 adds an optional visual-novel review stage. All original photo,
+        // hotspot, question, trail and answer owners remain unchanged.
+        try{
+          const vn=await import("./living-church-character-scene.mjs");
+          // Only an explicit editorial review URL reads the separate Formation
+          // owner's immutable draft JSON. A normal Living Church session
+          // never fetches or exposes this unapproved dialogue.
+          let piusReviewScript=null;
+          if(new URLSearchParams(location.search).get("aoPiusDraftReview")==="1"){
+            try{
+              const pinnedSource="https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/0b4de3b50d1cfb88ecfe30038dae493e6d2eeb13/data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json";
+              const response=await fetch(pinnedSource,{cache:"no-store",signal:AbortSignal.timeout(7000)});
+              if(!response.ok)throw Error("Source owner's pinned draft unavailable");
+              piusReviewScript=await response.json();
+            }catch(error){
+              console.warn("Optional Pius X editorial source bundle unavailable; original visual novel remains unchanged",error);
+            }
+          }
+          // New 20-path St Pius X review is separately opt-in. Load only pinned
+          // read-only JSON from Formation PR #1458, never arbitrary source code.
+          let pius20Review=null;
+          if(new URLSearchParams(location.search).get("aoPius20Review")==="1"){
+            try{
+              const bridge=await import("./living-church-pius20-source-bridge.mjs");
+              pius20Review=await bridge.loadLivingChurchPius20Review();
+            }catch(error){
+              console.warn("Pinned St Pius X 20-path editorial source unavailable; the existing scene remains usable",error);
+            }
+          }
+          window.AO_LIVING_CHURCH_P2=vn.mountLivingChurchVisualNovel({
+            win:window,context:livingChurchContextP1,piusReviewScript,pius20Review
+          });
+        }catch(sceneError){
+          console.warn("Living Church P2 scene unavailable; original P1 viewer remains usable",sceneError);
+        }
+
      }catch(error){
        livingChurchContextP1=null;
        console.warn("Optional Living Church context unavailable; original sanctuary remains usable",error);

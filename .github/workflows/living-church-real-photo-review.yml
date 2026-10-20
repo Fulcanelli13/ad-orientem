@@ -1,0 +1,41 @@
+name: Living Church real-photo visual review
+on:
+  pull_request:
+    paths:
+      - "tests/living-church-real-photo-visual.mjs"
+      - "previews/visible-mass-3d/living-church-character-scene.mjs"
+      - "previews/visible-mass-3d/assets/living-church/**"
+      - ".github/workflows/living-church-real-photo-review.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  genuine-photograph-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install browser tooling
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Capture original licensed photograph in actual visual-novel scene
+        id: photo
+        continue-on-error: true
+        run: node tests/living-church-real-photo-visual.mjs
+      - name: Retain captures for explicit human approval
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-church-original-brompton-photo
+          path: artifacts/living-church-p2-real-photo/*.png
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Report acceptance scope
+        if: always()
+        run: |
+          echo "Remote photo capture outcome: ${{ steps.photo.outcome }}"
+          echo "A captured photograph still requires manual aesthetic and source approval."
