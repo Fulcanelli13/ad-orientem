@@ -1,0 +1,395 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B11_REPRODUCTIVE_ETHICS_CLAIM_DELTAS_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "counts": {
+    "families": 3,
+    "answerUnits": 6,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE101",
+      "sourceQuestionId": "CSE101",
+      "canonicalOwner": "SEX-CORE-28",
+      "originalRecord": {
+        "source_question_id": "CSE101",
+        "conversation_id": "CHA-CSE-CSE101",
+        "canonical_topic_owner": "SEX-CORE-28",
+        "title": "If IVF gives an infertile couple a child, why is it wrong?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "If IVF gives an infertile couple a child, why is it wrong?",
+          "fr": "Si la FIV donne un enfant à un couple stérile, pourquoi serait-elle mauvaise ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "The desire for a child is good, but not every means of conception is morally permissible. Donum Vitae II.B.5 rejects even a hypothetical IVF procedure using only the spouses’ gametes and destroying no embryos, because laboratory fertilization replaces rather than assists the conjugal act. Existing and future children conceived through IVF retain their full dignity and must be welcomed with love.",
+          "fr": "Le désir d’avoir un enfant est bon, mais tous les moyens de concevoir ne sont pas moralement licites. Donum Vitae, II.B.5, rejette même l’hypothèse d’une FIV utilisant seulement les gamètes des époux sans destruction d’embryons, parce que la fécondation en laboratoire remplace l’acte conjugal au lieu de l’assister. Les enfants conçus par FIV conservent leur pleine dignité et doivent être accueillis avec amour."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The longing for a child can cause profound sorrow, and that deserves compassion. Yet the Church teaches that even when only the spouses' own gametes are used and no embryos are destroyed, laboratory fertilisation substitutes a technical act for the spouses' conjugal union rather than assisting that union (Donum Vitae II.B.5). We must explain the moral objection without ever reproaching a child: every person conceived by IVF has full dignity and deserves love and welcome.",
+          "fr": "Le désir d'un enfant peut s'accompagner d'une douleur profonde, digne de compassion. Pourtant, l'Église enseigne que même lorsqu'on emploie seulement les gamètes des époux et qu'aucun embryon n'est détruit, la fécondation en laboratoire substitue un acte technique à leur union conjugale au lieu de l'aider (Donum Vitae II.B.5). Expliquons l'objection morale sans jamais faire de reproche à l'enfant : toute personne conçue par FIV possède sa pleine dignité et mérite amour et accueil."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But why should the manner of conception matter if the child is loved and the parents are married?",
+          "fr": "Pourquoi le mode de conception devrait-il compter si l’enfant est aimé et que les parents sont mariés ?"
+        },
+        "original_source_followup_reply": {
+          "en": "The legitimate desire for a child does not make every means morally interchangeable. The Church permits technology that repairs infertility or assists the spouses' own act, but rejects producing the child through a procedure that replaces that act (Dignitas Personae §§12–16).",
+          "fr": "Le désir légitime d'un enfant ne rend pas tous les moyens moralement équivalents. L'Église admet la technique qui soigne l'infertilité ou aide l'acte des époux, mais refuse la production de l'enfant par un procédé qui remplace cet acte (Dignitas Personae, §§12–16)."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "The child’s value is beyond question, and the desire for a child is good. The Church’s objection concerns the means used to conceive: treating infertility so that marital union can bear fruit is different from producing conception through a procedure that takes its place. We must never turn that distinction into a reproach against the child.",
+          "fr": "La valeur de l’enfant est hors de cause, et le désir d’en avoir un est bon. L’objection de l’Église concerne les moyens : soigner l’infertilité pour que l’union conjugale porte du fruit diffère d’une procédure produisant la conception à sa place. Ne transformons jamais cette distinction en reproche adressé à l’enfant."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-070-104.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "DONUMV",
+              "locator": "II.B.5"
+            },
+            {
+              "registry_key": "DP",
+              "locator": "§§12–16"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "reproductive technology treatment"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CLINICAL_ETHICS_REVIEW",
+        "review_attention": [
+          "CLINICAL_ETHICS_REVIEW",
+          "SOURCE_SEMANTIC_CORRECTION_APPLIED_REQUIRES_EDITORIAL_APPROVAL"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+        "semantic_repair_trace": "research/chanoine/chanoine-cse-semantic-repair-proposals-12.v1.json#CSE101"
+      },
+      "proposedTurns": [
+        {
+          "en": "The desire for a child deserves compassion. Donum vitae II.B.5 rejects even IVF between spouses without embryo destruction: conception is separated from their conjugal act. Every child conceived through IVF must nevertheless be welcomed with love.",
+          "fr": "Le désir d’un enfant mérite compassion. Donum vitae II.B.5 rejette même la FIV entre époux sans destruction d’embryons : la conception est séparée de leur acte conjugal. Tout enfant conçu par FIV doit néanmoins être accueilli avec amour.",
+          "claims": [
+            {
+              "text": "Hypothetical simple case and child's welcome",
+              "refs": [
+                "DV-B5"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Medicine may assist the spouses’ act; it may not replace it.",
+          "fr": "La médecine peut aider l’acte des époux ; elle ne peut s’y substituer.",
+          "claims": [
+            {
+              "text": "Assistance versus substitution",
+              "refs": [
+                "DP12-13"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EXPLANATORY_PARAPHRASE_WITH_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE104",
+      "sourceQuestionId": "CSE104",
+      "canonicalOwner": "SEX-CORE-28",
+      "originalRecord": {
+        "source_question_id": "CSE104",
+        "conversation_id": "CHA-CSE-CSE104",
+        "canonical_topic_owner": "SEX-CORE-28",
+        "title": "Is altruistic surrogacy still wrong when nobody is exploited for money?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is altruistic surrogacy still wrong when nobody is exploited for money?",
+          "fr": "La gestation pour autrui altruiste reste-t-elle mauvaise lorsque personne n’est exploité pour de l’argent ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Catholic objections to surrogacy do not depend on payment or on proving exploitation in an individual case. Donum Vitae II.A.3 objects to the planned separation of gestation and parental responsibility and to the transfer of a child pursuant to an arrangement. The 2023 ASRM Ethics Committee, by contrast, defends gestational-carrier arrangements subject to informed consent, independent counsel and safeguards against coercion; the dispute concerns the arrangement’s moral nature even when safeguards work.",
+          "fr": "Les objections catholiques à la gestation pour autrui ne dépendent ni d’un paiement ni de la preuve d’une exploitation dans chaque cas. Donum Vitae, II.A.3, rejette la séparation organisée entre gestation et responsabilité parentale ainsi que la remise de l’enfant prévue par un accord. À l’inverse, le comité d’éthique de l’ASRM (2023) défend ces arrangements sous conditions de consentement éclairé, de conseil juridique indépendant et de prévention de la contrainte ; le désaccord porte sur la nature morale de l’arrangement même lorsque ces garanties fonctionnent."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The generosity of someone offering to carry a child may be genuine, and avoiding coercion is essential. Professional ethics guidance, including the ASRM's 2023 position, argues that informed consent and independent safeguards can make such arrangements acceptable. The Church's distinct objection does not depend only on payment or exploitation; it concerns the deliberate contractual separation of gestation, parenthood and the child's origin (Donum Vitae II.A.3). We should engage the rival argument fairly, without impugning the dignity or motives of anyone involved.",
+          "fr": "La générosité d'une femme proposant de porter un enfant peut être réelle, et il est essentiel d'éviter toute contrainte. Des recommandations professionnelles, notamment la position de l'ASRM en 2023, soutiennent que le consentement éclairé et des garanties indépendantes peuvent rendre ces arrangements acceptables. L'objection propre de l'Église ne dépend pas seulement de la rémunération ou de l'exploitation ; elle porte sur la séparation contractuelle voulue de la gestation, de la parentalité et de l'origine de l'enfant (Donum Vitae II.A.3). Examinons loyalement l'argument opposé sans dénigrer la dignité ni les motifs des personnes concernées."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But adoption also separates biological and social parenthood.",
+          "fr": "Mais l’adoption sépare elle aussi parentalité biologique et sociale."
+        },
+        "original_source_followup_reply": {
+          "en": "Adoption provides a family for a child already needing one; surrogacy makes the planned separation of gestation and parental upbringing part of how a child is brought into being. The intentions can both be generous, but these are morally different chosen acts.",
+          "fr": "L'adoption accueille un enfant ayant déjà besoin d'une famille ; la maternité de substitution prévoit dès la conception la séparation entre gestation et éducation parentale. Les intentions peuvent être généreuses dans les deux cas, mais les actes librement choisis diffèrent moralement."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Adoption ordinarily gives a home to a child who already needs one. Surrogacy, by contrast, plans from the outset a separation between gestation and parental upbringing. The generosity of the participants may be sincere, but the chosen arrangements are not therefore morally identical.",
+          "fr": "L’adoption donne ordinairement un foyer à un enfant qui en a déjà besoin. La gestation pour autrui, au contraire, prévoit dès l’origine une séparation entre gestation et éducation parentale. La générosité des personnes peut être sincère, mais les arrangements choisis ne deviennent pas pour autant moralement identiques."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-070-104.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "DONUMV",
+              "locator": "II.A.3"
+            },
+            {
+              "registry_key": "DI2024",
+              "locator": "§§48–50"
+            },
+            {
+              "registry_key": "ASRM_GC",
+              "locator": "2023 Ethics Committee opinion · Key Points, Counselling and Informed Consent, Conclusion"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CLINICAL_ETHICS_REVIEW",
+        "review_attention": [
+          "CLINICAL_ETHICS_REVIEW",
+          "SOURCE_SEMANTIC_CORRECTION_APPLIED_REQUIRES_EDITORIAL_APPROVAL"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+        "semantic_repair_trace": "research/chanoine/chanoine-cse-semantic-repair-proposals-12.v1.json#CSE104"
+      },
+      "proposedTurns": [
+        {
+          "en": "The Catholic objection concerns the separation of gestation and parenthood, even without payment. ASRM’s 2023 opinion instead permits gestational-carrier arrangements with safeguards, including informed consent, counselling and independent legal advice. These are different ethical positions.",
+          "fr": "L’objection catholique concerne la séparation entre gestation et parentalité, même sans rémunération. L’avis de l’ASRM de 2023 admet au contraire ces arrangements sous garanties, dont le consentement éclairé, un accompagnement et un conseil juridique indépendant. Ces positions éthiques diffèrent.",
+          "claims": [
+            {
+              "text": "Payment not a necessary condition of Catholic objection",
+              "refs": [
+                "DV-A3"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_AND_APPLICATION"
+            },
+            {
+              "text": "Rival professional position with conditions",
+              "refs": [
+                "ASRM2023"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Here adoption means giving an existing child a home. Planning a pregnancy with an agreement to surrender the child is a different chosen arrangement.",
+          "fr": "L’adoption désigne ici l’accueil d’un enfant déjà né. Prévoir une grossesse avec un accord de remise de l’enfant constitue un autre arrangement choisi.",
+          "claims": [
+            {
+              "text": "Ordinary child adoption versus planned surrender",
+              "refs": [
+                "DP13",
+                "DV-A3"
+              ],
+              "type": "APOLOGETICAL_COMPARISON_NOT_VERBATIM_QUOTATION"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EXPLANATORY_PARAPHRASE_WITH_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE110",
+      "sourceQuestionId": "CSE110",
+      "canonicalOwner": "SEX-CORE-29",
+      "originalRecord": {
+        "source_question_id": "CSE110",
+        "conversation_id": "CHA-CSE-CSE110",
+        "canonical_topic_owner": "SEX-CORE-29",
+        "title": "What should be done about embryos that have already been frozen?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What should be done about embryos that have already been frozen?",
+          "fr": "Que faire des embryons déjà congelés ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Dignitas Personae §19 rejects destroying existing frozen embryos for research and transferring them to other couples as an infertility treatment. It regards proposals for prenatal adoption intended only to save an embryo's life as praiseworthy in intention yet beset by serious difficulties. It explicitly recognizes an unresolved injustice, not an approved universal procedure for disposing of existing embryos.",
+          "fr": "Dignitas Personae (§19) rejette la destruction d'embryons congelés à des fins de recherche et leur transfert à d'autres couples comme traitement de l'infertilité. Il reconnaît que les projets d'adoption prénatale destinés seulement à sauver la vie sont louables dans leur intention, mais soulèvent de graves difficultés. Le document constate une injustice non résolue, sans approuver une solution générale."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The injustice of embryos already frozen does not admit an easy solution. Dignitas Personae §19 rejects their destruction for research and their transfer to other couples as an infertility treatment. It calls proposals for prenatal adoption intended to save life praiseworthy in purpose, but beset by grave unresolved difficulties. The Church has not supplied a universal approved solution; let us not pretend otherwise, and seek competent ethical advice.",
+          "fr": "L'injustice faite aux embryons déjà congelés n'admet pas de solution facile. Dignitas Personae, au §19, rejette leur destruction pour la recherche et leur transfert à d'autres couples comme traitement de l'infertilité. Elle juge louable l'intention de propositions d'adoption prénatale destinées à sauver leur vie, tout en relevant de graves difficultés non résolues. L'Église n'a pas fourni de solution universelle approuvée ; ne prétendons pas le contraire et cherchons un conseil éthique compétent."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Has the Church declared prenatal adoption of frozen embryos a settled solution?",
+          "fr": "L’Église a-t-elle déclaré que l’adoption prénatale d’embryons congelés était une solution établie ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. The relevant instruction recognises the wish to save life but also identifies serious unresolved difficulties. We should state that uncertainty, seek competent advice and never invent a magisterial approval.",
+          "fr": "Non. L’instruction pertinente reconnaît le désir de sauver des vies, mais relève aussi de graves difficultés non résolues. Il faut signaler cette incertitude, chercher un avis compétent et ne jamais inventer une approbation magistérielle."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "DP",
+              "locator": "§19"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "BIOETHICS_REVIEW",
+        "review_attention": [
+          "BIOETHICS_REVIEW",
+          "SOURCE_SEMANTIC_CORRECTION_APPLIED_REQUIRES_EDITORIAL_APPROVAL"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+        "semantic_repair_trace": "research/chanoine/chanoine-cse-semantic-repair-proposals-12.v1.json#CSE110"
+      },
+      "proposedTurns": [
+        {
+          "en": "Dignitas personae §19 rejects destructive research and transfer as infertility treatment. It praises the life-saving intention behind prenatal adoption but identifies serious problems; it supplies no approved procedure.",
+          "fr": "Dignitas personae §19 rejette la recherche destructrice et le transfert comme traitement de l’infertilité. Elle loue l’intention de sauver des vies par l’adoption prénatale, mais relève de graves difficultés ; elle ne fournit aucune procédure approuvée.",
+          "claims": [
+            {
+              "text": "Bounded account of paragraph 19",
+              "refs": [
+                "DP19"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "That instruction gives no approval. Its grave assessment must not be reduced to a practical recommendation. An individual case requires qualified Catholic bioethical advice.",
+          "fr": "Cette instruction ne donne aucune approbation. Son jugement grave ne doit pas être réduit à une recommandation pratique. Un cas particulier exige un conseil bioéthique catholique qualifié.",
+          "claims": [
+            {
+              "text": "No approval in this instruction",
+              "refs": [
+                "DP19"
+              ]
+            },
+            {
+              "text": "Referral",
+              "refs": [
+                "DP19"
+              ],
+              "type": "EDITORIAL_COUNSEL_NOT_SOURCE_QUOTATION"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EXPLANATORY_PARAPHRASE_WITH_MARKED_APPLICATION",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "DV-B5",
+      "work": "Donum vitae (1987), II.B.5, simple case and concluding paragraph",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+      "originalLanguageUrl": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_lt.html",
+      "exactLatinExcerpt": "permanet ratio technica moraliter illicita",
+      "supports": "Homologous IVF remains illicit even without destruction; child welcomed with love; Latin section heading Fecundatio homologa in vitro estne moraliter licita?"
+    },
+    {
+      "id": "DV-A3",
+      "work": "Donum vitae II.A.3 and definition note",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19870222_respect-for-human-life_en.html",
+      "supports": "Surrogate motherhood negative judgment; planned surrender definition does not require payment"
+    },
+    {
+      "id": "DP12-13",
+      "work": "Dignitas personae (2008), §§12–13",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "originalLanguageUrl": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_lt.html",
+      "supports": "Aid versus substitution; no empirical treatment-success claims"
+    },
+    {
+      "id": "DP13",
+      "work": "Dignitas personae §13, adoption paragraph",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "supports": "Home for children lacking parents; ordinary child adoption distinguished from proposal in §19"
+    },
+    {
+      "id": "DP19",
+      "work": "Dignitas personae §19, all five paragraphs, especially prenatal adoption and concluding appeal",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_en.html",
+      "originalLanguageUrl": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20081208_dignitas-personae_lt.html",
+      "exactLatinExcerpt": "condicionem iniustitiae de facto irreparabilis",
+      "supports": "Destructive proposals rejected; treatment transfer rejected; life-saving proposal laudable in intention yet grave difficulties; injustice described as in fact irresolvable. Not generic permission or a mere practical inconvenience."
+    },
+    {
+      "id": "ASRM2023",
+      "work": "ASRM Ethics Committee, Consideration of the gestational carrier (2023), Key points and Conclusion; Fertility and Sterility 119:583–588; DOI 10.1016/j.fertnstert.2023.01.015",
+      "url": "https://www.asrm.org/practice-guidance/ethics-opinions/consideration-of-the-gestational-carrier-an-ethics-committee-opinion-2023/",
+      "supports": "Rival view permits arrangements with psychological/medical/legal counselling and carrier control of medical decisions; compensation permitted subject to exploitation/inducement limits; this is not Catholic teaching"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "CSE101: retain existing substantive semantic repair, add exact II.B.5 rather than claim new doctrinal discovery; replace blanket permission for any treatment of infertility with bounded assistance/substitution principle",
+    "CSE104: retain fairly stated rival professional position; consent alone does not exhaust ASRM conditions. Ordinary adoption comparison is explanatory application, not magisterial quotation",
+    "CSE110: replace corpus-wide current assertion about all Church teaching with document-specific no-approval statement; do not soften concluding grave assessment to mere uncertainty; no invented approved solution or individualized procedure"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE101",
+        "CSE104",
+        "CSE110"
+      ],
+      "decision": "Shared document bundle, three distinct moral objects; retain. CSE104 ordinary child adoption is not CSE110 prenatal embryo adoption."
+    }
+  ],
+  "humanDecisions": [
+    "Catholic bioethicist must review CSE110 formulation and the force of the final paragraph; source matching is not certification",
+    "English/French review and Chanoine persona review remain pending"
+  ],
+  "newSubstantiveGaps": [],
+  "optionalSourceLimit": "Existing DI2024 and LBM pointers preserved in original record; not claimed verified here and not required for these bounded drafts.",
+  "continue": true
+}
