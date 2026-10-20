@@ -21,7 +21,8 @@
     "riteSpecificProfilesNotMerged": true,
     "bookPositionSeparateFromPriestStation": true,
     "missalTransitions": 3,
-    "supplementaryRitusCorrectedStationTransitions": 1
+    "supplementaryRitusCorrectedStationTransitions": 1,
+    "missalReturnRequiresIndependentObservation": true
   },
   "sourceTransitions": [
     {
@@ -636,6 +637,14 @@
       "rubric": "XI.1",
       "citation": "https://1962ordo.today/1962-rubrics/",
       "clarification": "Moves to Missal for Postcommunion after public greeting"
+    },
+    {
+      "cueId": "AO.SM.C0249",
+      "part": "Communion antiphon — priest",
+      "shouldStation": "ALTAR_EPISTLE_MISSAL",
+      "rubric": "XI.1",
+      "citation": "https://1962ordo.today/1962-rubrics/",
+      "clarification": "Only after independent MC-END-010 priest event; never from a swipe"
     }
   ],
   "blocks": [
@@ -1967,13 +1976,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -4778,26 +4789,26 @@
       "firstCue": "AO.SM.C0249",
       "lastCue": "AO.SM.C0250",
       "defaultEntry": {
-        "status": "AWAIT_INDEPENDENT_OBSERVATION",
-        "station": null,
-        "stationLabel": null,
-        "facing": null,
-        "routeId": null,
-        "activeFromCueId": "AO.SM.C0249",
-        "proposedIconAssetId": null,
-        "proposedIconExactUserName": null,
-        "renderPolicy": "KEEP_LAST_OBSERVED_OR_SHOW_UNKNOWN"
-      },
-      "defaultExit": {
-        "status": "RITUS_DIRECT_SUPPLEMENT_TO_POSITION_REGISTRY",
+        "status": "RITUS_DIRECT_SUPPLEMENT_OBSERVER_GATED",
         "station": "ALTAR_EPISTLE_MISSAL",
         "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
-        "activeFromCueId": "AO.SM.C0250",
+        "activeFromCueId": "AO.SM.C0249",
         "proposedIconAssetId": "v46_priest_gospel_rich",
         "proposedIconExactUserName": "Epistle side",
-        "renderPolicy": "SHOW_SOURCE_STATION_ONLY_WHEN_PHYSICAL_STATE_IS_GROUNDED"
+        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT"
+      },
+      "defaultExit": {
+        "status": "RITUS_DIRECT_SUPPLEMENT_OBSERVER_GATED",
+        "station": "ALTAR_EPISTLE_MISSAL",
+        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "facing": "MISSAL",
+        "routeId": null,
+        "activeFromCueId": "AO.SM.C0249",
+        "proposedIconAssetId": "v46_priest_gospel_rich",
+        "proposedIconExactUserName": "Epistle side",
+        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT"
       },
       "transitions": [
         {
@@ -4810,20 +4821,23 @@
       ],
       "status": "REQUIRES_INDEPENDENT_PRIEST_OBSERVATION",
       "bookEntry": {
-        "location": "GOSPEL_SIDE",
-        "changedAtCueId": "AO.SM.C0081",
-        "stationDistinctFromBook": true
+        "location": "EPISTLE_SIDE",
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": [
         {
-          "cueId": "AO.SM.C0250",
+          "cueId": "AO.SM.C0249",
           "station": "ALTAR_EPISTLE_MISSAL",
-          "source": "RITUS_1962_XI_1"
+          "source": "RITUS_1962_XI_1",
+          "observationGate": "MC-END-010"
         }
       ]
     },
@@ -4877,13 +4891,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -4930,13 +4946,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -4975,13 +4993,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -5028,13 +5048,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -5073,13 +5095,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -5126,13 +5150,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -5186,13 +5212,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -5239,13 +5267,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -5284,13 +5314,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     },
@@ -5329,13 +5361,15 @@
       "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "bookExit": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "supplementaryTransitions": []
     }
@@ -12612,23 +12646,25 @@
         "condition": null
       },
       "defaultTrack": {
-        "status": "AWAIT_INDEPENDENT_OBSERVATION",
-        "station": null,
-        "stationLabel": null,
-        "facing": null,
+        "status": "RITUS_DIRECT_SUPPLEMENT_OBSERVER_GATED",
+        "station": "ALTAR_EPISTLE_MISSAL",
+        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0249",
-        "proposedIconAssetId": null,
-        "proposedIconExactUserName": null,
-        "renderPolicy": "KEEP_LAST_OBSERVED_OR_SHOW_UNKNOWN"
+        "proposedIconAssetId": "v46_priest_gospel_rich",
+        "proposedIconExactUserName": "Epistle side",
+        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT"
       },
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
-        "location": "GOSPEL_SIDE",
-        "changedAtCueId": "AO.SM.C0081",
-        "stationDistinctFromBook": true
+        "location": "EPISTLE_SIDE",
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": true
     },
     {
       "cueId": "AO.SM.C0250",
@@ -12640,24 +12676,25 @@
       "unitType": "text",
       "sourceTransition": null,
       "defaultTrack": {
-        "status": "RITUS_DIRECT_SUPPLEMENT_TO_POSITION_REGISTRY",
+        "status": "RITUS_DIRECT_SUPPLEMENT_OBSERVER_GATED",
         "station": "ALTAR_EPISTLE_MISSAL",
         "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
-        "activeFromCueId": "AO.SM.C0250",
+        "activeFromCueId": "AO.SM.C0249",
         "proposedIconAssetId": "v46_priest_gospel_rich",
         "proposedIconExactUserName": "Epistle side",
-        "renderPolicy": "SHOW_SOURCE_STATION_ONLY_WHEN_PHYSICAL_STATE_IS_GROUNDED"
+        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT"
       },
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
-      "sourcePositionRegistryMissingTransition": true
+      "sourcePositionRegistryMissingTransition": false
     },
     {
       "cueId": "AO.SM.C0251",
@@ -12687,8 +12724,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -12720,8 +12758,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -12753,8 +12792,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
     },
@@ -12781,8 +12821,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
     },
@@ -12809,8 +12850,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
     },
@@ -12837,8 +12879,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
     },
@@ -12870,8 +12913,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -12898,8 +12942,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -12926,8 +12971,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -12954,8 +13000,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -12987,8 +13034,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -13015,8 +13063,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -13048,8 +13097,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -13076,8 +13126,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -13104,8 +13155,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -13137,8 +13189,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -13165,8 +13218,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": null
     },
@@ -13198,8 +13252,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     },
@@ -13226,8 +13281,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     },
@@ -13254,8 +13310,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     },
@@ -13282,8 +13339,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     },
@@ -13310,8 +13368,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     },
@@ -13338,8 +13397,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     },
@@ -13366,8 +13426,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     },
@@ -13394,8 +13455,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     },
@@ -13422,8 +13484,9 @@
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
         "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0250",
-        "stationDistinctFromBook": true
+        "changedAtCueId": "AO.SM.C0249",
+        "stationDistinctFromBook": true,
+        "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
     }
@@ -13447,8 +13510,8 @@
     },
     {
       "kind": "SOURCE_REGISTRY_POSITION_OMISSION",
-      "cueId": "AO.SM.C0250",
-      "note": "C0250 must restore Epistle-side Missal station at Communion antiphon; staged explicitly as source-backed correction without changing the older frozen 49-record registry."
+      "cueId": "AO.SM.C0249",
+      "note": "Priest Communion antiphon cue C0249 independently observed; source registry marks async but Ritus XI.1 supplies expected Epistle station. Require MC-END-010 observer gate; subsequent Schola cue C0250 is not a position trigger."
     },
     {
       "kind": "SEPARATE_MISSAL_STATE",
@@ -13473,24 +13536,26 @@
       "confidence": "SOURCE_DIRECT"
     },
     {
-      "cueId": "AO.SM.C0250",
+      "cueId": "AO.SM.C0249",
       "location": "EPISTLE_SIDE",
       "actor": "MINISTER",
-      "trigger": "Missal returned after ablutions, before Communion antiphon",
+      "trigger": "After ablutions: observed priest Communion-antiphon event MC-END-010",
       "authority": "RITUS_1962_XI_1",
-      "confidence": "SOURCE_DIRECT"
+      "confidence": "SOURCE_DIRECT",
+      "observationGate": "MC-END-010"
     }
   ],
   "supplementaryRitusPositionTransitions": [
     {
-      "cueId": "AO.SM.C0250",
+      "cueId": "AO.SM.C0249",
       "station": "ALTAR_EPISTLE_MISSAL",
       "facing": "MISSAL",
       "rubric": "XI.1",
       "authority": "1962_ROMAN_MISSAL_RITUS_SERVANDUS",
       "kind": "CORRECTION_OF_SOURCE_REGISTRY_OMISSION_ONLY",
-      "reason": "Following the ablutions the Missal is returned to the Epistle side and celebrant reads Communion antiphon before he returns to centre for Dominus vobiscum; source position registry had PRIEST_TRACK_ASYNC at C0249 but lacked the C0250 station return.",
-      "originalRegistryUnchanged": true
+      "reason": "After purification the Missal returns to the Epistle side, and priest recites the Communion antiphon; C0249 is an independent observed priest event, not inferred from reader scroll or schola C0250. The frozen position registry uses PRIEST_TRACK_ASYNC at C0249, so this source-based station is observer gated.",
+      "originalRegistryUnchanged": true,
+      "observationGate": "MC-END-010"
     }
   ],
   "formActorExceptions": [
