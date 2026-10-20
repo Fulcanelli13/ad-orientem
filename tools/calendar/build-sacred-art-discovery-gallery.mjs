@@ -50,9 +50,18 @@ let counter=0;
 const sections=works.map(w=>{
  const images=w.candidates.map((c,i)=>{
   const v=holdings.get(counter++);
-  return '<article><div class="image">'+(v.inline?
-   '<img src="'+v.inline+'" alt="Unverified Commons reproduction thumbnail" loading="lazy">':
-   '<p>No offline preview · '+esc(v.status)+'</p>')+'</div>'+
+  // The Commons API sometimes returns no usable thumbnail URL. Keep a safe,
+  // provenance-preserving, network-dependent exact Commons-file fallback.
+  const file=String(c.commonsTitle||"").replace(/^File:/i,"");
+  const remote=(c.image?.thumb&&/^https:\/\/upload\.wikimedia\.org\//.test(c.image.thumb))?
+   c.image.thumb:
+   file&&!/prado|museodelprado/i.test(file)?
+   "https://commons.wikimedia.org/wiki/Special:Redirect/file/"+encodeURIComponent(file)+"?width=320":null;
+  const preview=v.inline?
+   '<img src="'+v.inline+'" alt="Unverified Commons research thumbnail" loading="lazy">':
+   remote?'<img src="'+esc(remote)+'" alt="Unverified Commons source thumbnail; online connection required" loading="lazy">':
+   '<p>No preview · '+esc(v.status)+' · open Commons source below</p>';
+  return '<article><div class="image">'+preview+'</div>'+
    '<div class="label">Candidate '+(i+1)+' · '+esc(c.reviewLane)+' · '+esc(c.licenseClaim)+
    ' · '+esc(c.image?.width)+'×'+esc(c.image?.height)+'</div>'+
    '<a href="'+esc(c.filePage)+'" target="_blank" rel="noopener noreferrer">'+esc(c.commonsTitle)+'</a></article>';
@@ -69,6 +78,8 @@ const outcomes=jobs.map((job,k)=>({artworkId:job.work.artworkId,filePage:job.sou
 const counts={artworksWithNewFileLeads:works.length,screenedFileLeads:jobs.length,
  previewsEmbedded:outcomes.filter(x=>x.previewStatus==="EMBEDDED_RESEARCH_THUMBNAIL").length,
  previewsUnavailable:outcomes.filter(x=>x.previewStatus!=="EMBEDDED_RESEARCH_THUMBNAIL").length,
+ onlineCommonsFallbacks:outcomes.filter(x=>x.previewStatus!=="EMBEDDED_RESEARCH_THUMBNAIL").length,
+ previewFailureCodes:Object.fromEntries([...new Set(outcomes.map(x=>x.previewStatus))].map(code=>[code,outcomes.filter(x=>x.previewStatus===code).length])),
  certifiedPhotoMasters:0};
 await mkdir(out,{recursive:true});
 await writeFile(join(out,"source-thumbnail-gallery-status.json"),
@@ -89,7 +100,7 @@ const page='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="vie
  '</style><header><h1>34 paintings · source photographs reviewed together</h1>'+
  '<p>All '+jobs.length+' current Commons research candidates; best-ranked two shown for each painting, others expandable. '+
  'These thumbnails are NOT verified to depict the exact approved original. No licensing or release approvals granted.</p>'+
- '<p>Only download-free preview thumbnails are embedded. Sources are linked; missing images remain visible as review holds.</p>'+
+ '<p>Embedded thumbnails work offline when available. Otherwise exact Commons file previews require an internet connection. Source files remain linked, and preview failures stay recorded.</p>'+
  '</header><main>'+sections+'</main></html>';
-await writeFile(join(out,"34-paintings-all-source-thumbnails-offline.html"),page);
+await writeFile(join(out,"34-paintings-source-comparison-gallery.html"),page);
 console.log(JSON.stringify(counts));
