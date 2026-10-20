@@ -35,4 +35,16 @@ for(const a of manifest.files){
  assert.equal(R17_FINAL_APPROVED_MASS_ASSETS["final_"+a.id],url.href,
   "Host resolver cannot display exact approved original "+a.id);
 }
-console.log("Final approved-original Mass artwork PASS: 68 exact SHA256 matches (27 SVG, 41 PNG), zero changed names or rejected art.");
+const newlyImported=new Set(manifest.files.map(x=>x.id));
+const previouslyInstalled=lock.items.filter(a=>["approved","repurposed"].includes(a.status)&&
+ !a.rejected&&!newlyImported.has(a.id));
+assert.equal(previouslyInstalled.length,68,"Existing accepted images lost from final inventory");
+for(const asset of previouslyInstalled){
+ assert.ok(!rejected.has(asset.id),"Rejected legacy design resurfaced "+asset.id);
+ const path=asset.sourceUrl?.match(/\/(assets\/[^?#]+)$/)?.[1];
+ assert.ok(path&&path.startsWith("assets/"),"Existing source path unavailable for "+asset.id);
+ assert.ok(existsSync(new URL("../"+path,import.meta.url)),
+   "Previously approved source master missing from repo: "+asset.id);
+}
+assert.equal(manifest.files.length+previouslyInstalled.length,136);
+console.log("Final approved-original Mass artwork PASS: 136 approved sources present; 68 exact SHA256 matches (27 SVG, 41 PNG), zero changed names or rejected art.");
