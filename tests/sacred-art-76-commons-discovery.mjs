@@ -8,7 +8,7 @@ assert.equal(q.records.length,76);
 assert.deepEqual(q.batches.map(x=>x.count),[50,26]);
 assert.equal(q.stationObjectProgress.officialExactLinks,9);
 assert.equal(q.stationObjectProgress.wrongStationLinksRemaining,0);
-assert.equal(q.records.filter(x=>x.status==="MOVED_TO_EXACT_COMMONS_SOURCE_QA").length,12);
+assert.equal(q.records.filter(x=>x.status==="MOVED_TO_EXACT_COMMONS_SOURCE_QA").length,18);
 const example={artworkId:"TEST-ONLY",title:"The Dream of Saint Joseph",artist:"Philippe de Champaigne"};
 const meta={LicenseShortName:{value:"CC BY-SA 4.0"},Copyrighted:{value:"True"},Artist:{value:"Philippe de Champaigne"},ImageDescription:{value:"The Dream of Saint Joseph"}};
 const page={title:"File:Philippe de Champaigne - The Dream of Saint Joseph.jpg",imageinfo:[{width:3100,height:2400,mime:"image/jpeg",sha1:"a".repeat(40),
