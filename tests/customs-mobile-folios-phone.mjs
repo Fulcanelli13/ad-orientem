@@ -48,7 +48,7 @@ try{
       const ui=await page.evaluate(()=>{
         const sheet=document.querySelector(".aoExploreTraditionSheet"),lead=sheet?.querySelector(".aoExploreLead"),text=sheet?.querySelector(".aoExploreSections article p");
         const rect=sheet?.getBoundingClientRect(),computed=lead?getComputedStyle(lead):null;
-        return {selected:globalThis.AO_FIND_APP_V1.status().selectedId,
+        return {selected:sheet.getAttribute("data-explore-custom-id"),
           headings:[...sheet.querySelectorAll("header h2")].map(e=>e.textContent),
           text:sheet.textContent,
           sheetWidth:rect?.width,viewportWidth:innerWidth,
@@ -62,7 +62,7 @@ try{
           closeHeight:sheet.querySelector("header button")?.getBoundingClientRect().height,
         };
       });
-      assert.equal(ui.selected,"tradition:custom:"+guide.custom_id,"exact custom ID lost");
+      assert.equal(ui.selected,guide.custom_id,"exact canonical folio identity lost");
       const title=language==="fr"?guide.title_fr:guide.title_en;
       assert.ok(ui.headings.includes(title),guide.custom_id+" wrong localized title");
       assert.ok(ui.text.includes(language==="fr"?guide.description_fr:guide.description_en),guide.custom_id+" localized description missing");
@@ -92,7 +92,7 @@ try{
       const cta=page.locator('[data-cal-intelligence-route="find:traditions:ADVT-003"]');
       await cta.waitFor({state:"visible",timeout:20000});
       await cta.click();
-      await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().selectedId==="tradition:custom:ADVT-003",null,{timeout:20000});
+      await page.waitForSelector('.aoExploreTraditionSheet[data-explore-custom-id="ADVT-003"]',{state:"visible",timeout:20000});
       await page.locator(".aoExploreTraditionSheet").waitFor({state:"visible",timeout:12000});
       assert.match(await page.locator(".aoExploreTraditionSheet header h2").textContent(),/Las Posadas/);
       await page.locator(".aoExploreTraditionSheet").screenshot({path:resolve(dest,"en-390-calendar-to-las-posadas.png")});
