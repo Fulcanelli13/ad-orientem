@@ -128,6 +128,7 @@ export function renderPilgrimageJourneyPanel({
       const heading=stage.role==="START"
         ?label(language,"DOCUMENTED ORIGIN","DÉPART ATTESTÉ")
         :stage.role==="JOIN_IN"?label(language,"JOIN-IN POINT","POINT DE REJOINT")
+        :stage.role==="PASS_THROUGH"?label(language,"ROUTE PASSES THROUGH","LE PARCOURS PASSE PAR")
         :stage.role.startsWith("DESTINATION")?label(language,"DOCUMENTED DESTINATION / FINAL STAGE","DESTINATION / DERNIÈRE ÉTAPE")
         :label(language,"DOCUMENTED STAGE","ÉTAPE ATTESTÉE");
       html+='<li data-journey-named-stage="'+esc(stage.id)+'"><span class="aoJourneyNode" aria-hidden="true">'+
