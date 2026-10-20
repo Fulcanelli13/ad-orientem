@@ -718,8 +718,15 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
   } : api;
   return createMassEntryController({
     celebrationApi: actualApi,
-    readReaderPreferences: resolvedMass => ({...readerPreferences(),
-      mode:fullMassPreflight?.selectionFor?.(resolvedMass)?.readerMode??readerPreferences().mode}),
+    readReaderPreferences: resolvedMass => {
+      const selected=fullMassPreflight?.selectionFor?.(resolvedMass);
+      return {...readerPreferences(),
+        mode:selected?.readerMode??readerPreferences().mode,
+        language:selected?.readerLanguage??readerPreferences().language,
+        beforeMass:selected?.beforeMass??"none",
+        afterMass:selected?.afterMass??"none",
+      };
+    },
     resolveHostOptions: async (resolvedMass) => {
       const options=deriveHostOptions({
         resolvedMass,
@@ -828,6 +835,14 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          },
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
+         onOpenPrayerRoute:async route=>{
+           if(!["mass.prepare","mass.thanksgiving"].includes(route))return false;
+           const registry=globalThis.AO_MODULES;
+           if(typeof registry?.open!=="function")return false;
+           const result=await registry.open(route);
+           return result===true||result?.ok===true;
+         },
+
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
          getLocalOrationSummary:()=>state.localOrations?.status?.()??null,
          getCalendarState:()=>runtimeState(),
