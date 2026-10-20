@@ -13,6 +13,7 @@ on:
       - "data/research/sacred-art-open-source-recovery-76-20261020.v1.json"
       - "tests/sacred-art-open-source-recovery-76.mjs"
       - "tools/calendar/discover-sacred-art-76-open-sources.mjs"
+      - "tools/calendar/merge-sacred-art-76-discovery.mjs"
       - "tests/sacred-art-76-commons-discovery.mjs"
       - "tools/calendar/audit-staged-sacred-art-media.mjs"
       - "tests/sacred-art-integrated-source-qa.mjs"
@@ -149,6 +150,38 @@ jobs:
           retention-days: 21
           if-no-files-found: warn
 
+
+
+  # One machine-readable and visual exception queue for all 76 source leads:
+  # source candidates only, never a release decision.
+  integrated-source-discovery-76:
+    needs: [approved-source-discovery-76]
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retrieve both 50/26-work research shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sacred-art-76-open-source-discovery-*
+          path: artifacts/qa-discovery-76
+      - name: Merge 76 original-source candidates into one exception review
+        run: |
+          node --check tools/calendar/merge-sacred-art-76-discovery.mjs
+          node tools/calendar/merge-sacred-art-76-discovery.mjs
+      - name: Archive full 76-work ranked review with provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-76-consolidated-source-review
+          path: artifacts/qa-discovery-merged/
+          retention-days: 30
+          if-no-files-found: warn
 
   integrated-source-photo-qa:
     needs: [sacred-art-bulk-source-shards, official-nga-image-intake]
