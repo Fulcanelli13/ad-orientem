@@ -7,6 +7,17 @@ const load=p=>JSON.parse(readFileSync(new URL(p,root),"utf8"));
 const intake=load("data/research/sacred-art-class-i-53-release-intake-20261017.v1.json");
 const freeze=load("data/research/sacred-art-user-frozen-decisions-20261017.v1.json");
 const media=load("data/calendar/sacred-art-certified-media.v1.json");
+// The previously linked 'taken down from the cross' is Station XIII, not XII.
+const goodFriday=intake.dates.find(x=>x.date==="2026-04-03");
+const stationXII=goodFriday.unreleasedArtResearchLeads.find(x=>x.artworkId===
+  "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross");
+assert.equal(stationXII?.sourceUrl,
+  "https://chorusvenezia.org/en/visita/via-crucis-jesus-dies-on-the-cross/");
+assert.equal(stationXII?.productionReady,false,
+  "Correct collection object does not imply photograph rights or crop certification");
+const fullLeads=load("data/research/sacred-art-class-i-53-unrejected-research-leads-20261017.v1.json");
+assert(!JSON.stringify(fullLeads).includes("via-crucis-jesus-is-taken-down-from-the-cross/"),
+  "Station XIII source must not contaminate Station XII research");
 assert.equal(intake.dates.length,53);
 assert.equal(new Set(intake.dates.map(x=>x.date)).size,53);
 assert.equal(intake.counts.classIDates,53);
