@@ -39,12 +39,12 @@ for(const [file,blobSha] of [
   ["ea_priest_communion_chalice.svg","454674cb090de139ffaa20faa45fdd187ffc21a4"],
 ]){
   const bytes=readFileSync(new URL("../assets/approved/mass-priest-communion/"+file,import.meta.url));
-  const gitHeader=Buffer.from("blob "+bytes.length+"\\0".replace("\\0","\0"));
+  const gitHeader=Buffer.from("blob "+bytes.length+"\0");
   assert.equal(createHash("sha1").update(gitHeader).update(bytes).digest("hex"),blobSha,
     file+" differs from the previously accepted exact PR #1460 SVG");
   const svg=bytes.toString("utf8");
   assert.match(svg,/currentColor/);
-  assert.doesNotMatch(svg,/<(?:script|image|foreignObject)\\b/i);
+  assert.doesNotMatch(svg,/<(?:script|image|foreignObject)\b/i);
 }
 
 const reviewed={
