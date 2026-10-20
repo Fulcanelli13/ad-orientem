@@ -37,7 +37,8 @@ try{
     getResolvedMass:()=>globalThis.__observed?.effectiveResolvedMass(__legacyMass())??__legacyMass(),
     onOpenSourceProper:()=>globalThis.__observed?.open?.(),
     getSourceGate:()=>globalThis.__observed?.preparationGate?.()??{ready:true,reason:null},
-    getDefaultForm:()=>__formDefault,language:()=>__lang});
+    getDefaultForm:()=>__formDefault,language:()=>__lang,
+     onOpenPrayerRoute:route=>{globalThis.__openedPrayer=route;return true;}});
  });
 
  // Independent Mass source date: this must be available on *any* host Mass date
@@ -67,6 +68,7 @@ try{
  const picker=page.locator("[data-ao-observed-mass-picker]");
  assert.equal(await page.locator("[data-full-mass-source-slot] [data-ao-observed-mass-picker]").count(),1,
    "Different Proper picker is outside the unified Mass form/celebration module");
+ await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
  await page.locator('[data-full-mass-category="SOURCE_DATE"]').click();
  assert.equal(await picker.locator("details").evaluate(el=>el.open),true,
    "Other Proper category failed to open the source-day selector");
@@ -118,6 +120,8 @@ try{
  assert.equal(await page.locator("[data-full-mass-form]").count(),4);
  assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
  assert.equal(await page.locator('[data-full-mass-reader-mode][value="LIVE"]').isChecked(),true);
+ assert.equal(await page.locator(".aoGuidedMassFolio").count(),1,"One Guided Folio");
+ await page.locator('.aoMassFolioStepNav [data-folio-goto="reader"]').click();
  for(const mode of ["MISSAL","SIMPLE","LIVE"]){
   await page.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
   assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).readerMode,mode);
@@ -126,6 +130,7 @@ try{
 
  assert.equal(await page.locator('[data-full-mass-form][value="MISSA_CANTATA_INCENSE"]').isChecked(),true);
  assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-celebration-kind"),"CALENDAR");
+ await page.locator('.aoMassFolioStepNav [data-folio-goto="ceremony"]').click();
  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","SOLEMN","MISSA_CANTATA_INCENSE"]){
   await page.locator('[data-full-mass-form][value="'+form+'"]').check();
   const selected=await page.evaluate(()=>__full.selectionFor(__legacyMass()));
@@ -133,6 +138,15 @@ try{
   assert.equal(selected.explicitlyChosenForm,true);
   assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-mass-form"),form);
  }
+ await page.locator("[data-folio-language]").selectOption("fr");
+ assert.equal((await page.evaluate(()=>__full.selectionFor(__legacyMass()))).readerLanguage,"fr");
+ await page.locator("[data-folio-before][value=prepare]").check();
+ await page.locator("[data-folio-after][value=thanksgiving]").check();
+ assert.deepEqual(await page.evaluate(()=>{
+   const x=__full.selectionFor(__legacyMass());return {before:x.beforeMass,after:x.afterMass};
+ }),{before:"prepare",after:"thanksgiving"});
+ await page.locator("[data-folio-open-prayer='before']").click();
+ await page.waitForFunction(()=>globalThis.__openedPrayer==="mass.prepare");
  await page.locator("[data-full-mass-rites] summary").click();
  assert.equal(await page.locator('[data-full-mass-rite="ASPERGES"]').count(),1,
   "Sunday sung Mass must offer actual aspersion without imposing it");
