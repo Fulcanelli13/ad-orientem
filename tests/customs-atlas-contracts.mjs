@@ -34,8 +34,8 @@ for (const entry of negative.entries) {
   assert.equal(auditNegativeKnowledge(entry).length, 0, entry.custom_id);
 }
 
-assert.equal(atlas.customs.length, 16);
-assert.equal(atlas.attestations.length, 74);
+assert.equal(atlas.customs.length, 17);
+assert.equal(atlas.attestations.length, 75);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -48,9 +48,9 @@ const result = assertCustomsAtlasRegistry({
 });
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
-  customs: 16,
-  attestations: 74,
-  sources: 77,
+  customs: 17,
+  attestations: 75,
+  sources: 81,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
@@ -75,6 +75,21 @@ for (const [id,attestationId,sourceId] of [
   assert.ok(witness.source_ids.includes(sourceId));
   assert.equal(new Set(negative.entries.map(item => item.custom_id)).has(id), false);
 }
+
+const blaise=atlas.customs.find(item=>item.custom_id==="BLSS-001");
+const blaiseWitness=atlas.attestations.find(item=>item.attestation_id==="att:BLSS-001:ROMAN");
+assert.ok(blaise&&blaiseWitness,"St Blaise SOT-07 extension not admitted");
+assert.equal(blaise.custom_class,"TRADITIONAL_ROMAN_PRACTICE");
+assert.equal(blaise.calendar_trigger_hint.startsWith("03/02"),true);
+assert.equal(blaiseWitness.custom_id,"BLSS-001");
+assert.equal(blaiseWitness.geo_area_id,"geo:world");
+assert.equal(blaiseWitness.geographic_precision,"GLOBAL");
+assert.equal(blaiseWitness.map_policy,"NOT_MAPPED");
+assert.equal(blaiseWitness.place_id,null);
+for(const sourceId of ["ROMR-BLAISE-1956","SCHOLA-BLAISE-LATIN","BOOK-BLESSINGS-BLAISE","ORDO-BLAISE-1962"]){
+  assert.ok(blaiseWitness.source_ids.includes(sourceId),"St Blaise source missing: "+sourceId);
+}
+assert.ok(!negative.entries.some(item=>item.custom_id==="BLSS-001"));
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
 assert.equal(laghet.map_policy, "PLACE");
