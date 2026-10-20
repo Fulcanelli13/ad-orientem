@@ -57,21 +57,21 @@ const importLine='import {createPiusX20PathReview} from "./pius-x-20path-editori
 if(!html.includes(importLine))throw Error('Review HTML import contract changed');
 const safeLiteral=x=>JSON.stringify(x).replace(/</g,'\\u003c');
 html=html.replace(importLine,
- 'const EMBEDDED_SOURCE='+safeLiteral(embedded)+';\\n'+
- 'const EMBEDDED_SPRITES='+safeLiteral(sprites)+';\\n'+helper);
+ 'const EMBEDDED_SOURCE='+safeLiteral(embedded)+';\n'+
+ 'const EMBEDDED_SPRITES='+safeLiteral(sprites)+';\n'+helper);
 const externalRead=/const read=async path=>\{[\s\S]*?\n\};/;
 if(!externalRead.test(html))throw Error('HTTP source reader contract changed');
 html=html.replace(externalRead,
- 'const read=async path=>{\\n'+
- ' if(!Object.prototype.hasOwnProperty.call(EMBEDDED_SOURCE,path))throw Error("Unknown original source: "+path);\\n'+
- ' return EMBEDDED_SOURCE[path];\\n};');
+ 'const read=async path=>{\n'+
+ ' if(!Object.prototype.hasOwnProperty.call(EMBEDDED_SOURCE,path))throw Error("Unknown original source: "+path);\n'+
+ ' return EMBEDDED_SOURCE[path];\n};');
 const portraitExpression='img.decoding="async";img.src=entry.visual.portraitUrl;';
 if(!html.includes(portraitExpression))throw Error('Portrait loading changed');
 html=html.replace(portraitExpression,
  'img.decoding="async";img.src=EMBEDDED_SPRITES[entry.visual.pose]||entry.visual.portraitUrl;');
-if(html.includes(importLine)||html.includes('const read=async path=>{\\n if(!/^data'))throw Error('Unbundled dependency');
-html=html.replace('</title>','</title>\\n<meta name="robots" content="noindex,nofollow">');
-html='<!-- SOURCE-OWNED PRIVATE EDITORIAL PREVIEW: no publication, no historical verbatim speech. -->\\n'+html;
+if(html.includes(importLine)||html.includes('const read=async path=>{\n if(!/^data'))throw Error('Unbundled dependency');
+html=html.replace('</title>','</title>\n<meta name="robots" content="noindex,nofollow">');
+html='<!-- SOURCE-OWNED PRIVATE EDITORIAL PREVIEW: no publication, no historical verbatim speech. -->\n'+html;
 await mkdir(dirname(OUTPUT),{recursive:true});
 await writeFile(OUTPUT,html,'utf8');
 console.log(JSON.stringify({file:OUTPUT,bytes:Buffer.byteLength(html),sourceFiles:files.length,
