@@ -220,6 +220,144 @@
       ],
       "status": "SOURCE_LOCKED_REVIEW_PR",
       "family": "Easter domestic customs"
+    },
+    {
+      "custom_id": "ADVT-001",
+      "family": "Advent household customs",
+      "name": "Family Advent wreath and Sunday candle prayer",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "First Sunday of Advent; date owned by Calendar, no feast added",
+      "attestation_id": "att:ADVT-001:US",
+      "source_ids": [
+        "USCCB-ADVENT-WREATH-HOME"
+      ],
+      "controlling_proof": "USCCB documents a household Advent wreath and a family member leading home prayer; independent of Weiser's historical-origin assertions.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "ADVT-002",
+      "family": "Advent household customs",
+      "name": "Advent manger straw after acts of charity",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "Advent household preparation; Calendar owns liturgical dates",
+      "attestation_id": "att:ADVT-002:US",
+      "source_ids": [
+        "CATHCULTURE-ADVENT-MANGER-STRAW-2014"
+      ],
+      "controlling_proof": "The 2014 account specifically documents household straw added after good deeds; no evidence for universal French prevalence.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "ADVT-003",
+      "family": "Advent community customs",
+      "name": "Las Posadas — Holy Family lodging procession",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "16–24 December in communities that actually celebrate Posadas",
+      "attestation_id": "att:ADVT-003:MX",
+      "source_ids": [
+        "USCCB-POSADAS-DEC16"
+      ],
+      "controlling_proof": "USCCB identifies 16 December and Latin American communal singing and door-to-door reenactment.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "XMAS-001",
+      "family": "Christmas household customs",
+      "name": "Sharing opłatek on Polish Christmas Eve",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "24 December as customary domestic vigil, distinct from Mass",
+      "attestation_id": "att:XMAS-001:US",
+      "source_ids": [
+        "SJV-VERMONT-OPLATKI"
+      ],
+      "controlling_proof": "Parish documents wafers at family supper, home sharing, optional priestly blessing and distinction from Holy Communion.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "HTHU-001",
+      "family": "Holy Week lay devotions",
+      "name": "Holy Thursday visits to altars of repose",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "Holy Thursday, calculated from Easter by Calendar; locally open repositories only",
+      "attestation_id": "att:HTHU-001:US",
+      "source_ids": [
+        "CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"
+      ],
+      "controlling_proof": "Contemporary diocesan article confirms voluntary tradition, explains that fewer or more than seven churches may be visited.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "ROGA-001",
+      "family": "Rogation household customs",
+      "name": "Family Rogation walk and prayer for the harvest",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "Major Rogation 25 April and the three Minor Rogation days before Ascension; Calendar owns calculation",
+      "attestation_id": "att:ROGA-001:US",
+      "source_ids": [
+        "NEWLAND-ROGATION-FAMILY-1956"
+      ],
+      "controlling_proof": "Independent 1956 Catholic family source describes Rogation prayers and family procession for crops.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
     }
   ]
 }
