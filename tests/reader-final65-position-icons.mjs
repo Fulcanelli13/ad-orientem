@@ -29,6 +29,14 @@ for(const [lane,name] of bindings){
  }
 }
 assert.equal(certified,211);
+assert.equal(Object.values(FINAL_65_CUE_ICON_KEYS.priestVoice).filter(x=>x==="final_ao_chant").length,25,
+ "Exactly 25 source-owned sung priest voices must use the approved Chant SVG");
+for(const row of cross.rows.filter(x=>x.lane==="priest_voice")){
+ const raw=String(row.sourceEvent.voice||"");
+ if(/^SUNG\s*\/\s*(PUBLIC|CLEAR)(?:\s*\(MISSA CANTATA\))?$/i.test(raw))
+  assert.equal(row.assetId,"ao_chant","Sung priest voice still uses speaking icon: "+row.cueId);
+}
+
 const icon=(cueId,state={})=>iconKeysForReaderState({
  form:"MISSA_CANTATA_SIMPLE",...state,cueId,curated65FinalArt:true,
 });
@@ -96,6 +104,8 @@ const gospel={station:"ALTAR_GOSPEL_MISSAL",facing:"MISSAL",label:"AT GOSPEL SID
 const center={station:"ALTAR_CENTER",facing:"LITURGICAL_EAST",label:"AT CENTRE"};
 assert.equal(station("AO.SM.C0072",epic).priestPosition.station,"ALTAR_EPISTLE_MISSAL");
 assert.equal(station("AO.SM.C0072",epic).missalLocation,"EPISTLE_SIDE");
+assert.equal(station("AO.SM.C0112",center).priestPosition.station,"ALTAR_EPISTLE_MISSAL",
+ "Source Ultra Master: chalice water prepared Epistle-side even when Requiem cross omitted");
 assert.equal(station("AO.SM.C0113",epic).missalLocation,"GOSPEL_SIDE",
  "Chalice prepared Epistle-side though Missal remains Gospel-side");
 assert.equal(station("AO.SM.C0144",center).priestPosition.station,"ALTAR_CENTER");
@@ -114,6 +124,12 @@ const observed=station("AO.SM.C0249",{station:"PRIEST_TRACK_ASYNC"},
   "MISSA_CANTATA_SIMPLE","MC-END-010");
 assert.equal(observed.priestPosition.station,"ALTAR_EPISTLE_MISSAL");
 assert.equal(observed.missalLocation,"EPISTLE_SIDE");
+const afterAntiphon=station("AO.SM.C0250",{station:"PRIEST_TRACK_ASYNC"},
+  "MISSA_CANTATA_SIMPLE","MC-OBS-PC-TURN");
+assert.equal(afterAntiphon.priestPosition.station,"ALTAR_CENTER",
+ "Ultra Master return-to-centre cue must follow observed priest turn, not Schola or swipe");
+assert.equal(afterAntiphon.missalLocation,"EPISTLE_SIDE",
+ "Missal stays Epistle-side while priest turns back to centre");
 assert.equal(station("AO.SM.C0250",{station:"PRIEST_TRACK_ASYNC"}).missalLocation,null,
  "Schola cue cannot force priest book transition");
 assert.equal(station("AO.SM.C0269",gospel).missalLocation,null,
