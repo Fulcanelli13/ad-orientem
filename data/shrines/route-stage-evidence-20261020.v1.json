@@ -457,6 +457,427 @@
           "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026"
         }
       ]
+    },
+    {
+      "route_id": "route:FR:laghet-paillon-old-road",
+      "edition": "20 May 2024 deanery pilgrimage; path not named",
+      "source_url": "https://sanctuaire-laghet.fr/pelerinage-du-doyenne/",
+      "source_class": "OFFICIAL_SHRINE",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:FR:laghet-paillon-old-road#stage-1",
+          "ordinal": 1,
+          "name_en": "Parish church of La Trinité",
+          "name_fr": "Église de La Trinité",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://sanctuaire-laghet.fr/pelerinage-du-doyenne/"
+        },
+        {
+          "waypoint_id": "route:FR:laghet-paillon-old-road#stage-2",
+          "ordinal": 2,
+          "name_en": "Notre-Dame de Laghet Sanctuary",
+          "name_fr": "Sanctuaire Notre-Dame de Laghet",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://sanctuaire-laghet.fr/pelerinage-du-doyenne/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:FR:sainte-anne-chemin-nicolazic",
+      "edition": "Undated self-guided sanctuary pilgrimage; internal route not separately mapped",
+      "source_url": "https://www.sainteanne-sanctuaire.com/?id_geoloc=209&langue=fr&mode=organiser_un_pelerinage",
+      "source_class": "OFFICIAL_SHRINE",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:FR:sainte-anne-chemin-nicolazic#stage-1",
+          "ordinal": 1,
+          "name_en": "Maison Nicolazic, meeting point",
+          "name_fr": "Maison Nicolazic, lieu de rendez-vous",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.sainteanne-sanctuaire.com/?id_geoloc=209&langue=fr&mode=organiser_un_pelerinage"
+        },
+        {
+          "waypoint_id": "route:FR:sainte-anne-chemin-nicolazic#stage-2",
+          "ordinal": 2,
+          "name_en": "Sanctuary of Sainte-Anne-d'Auray (overall site)",
+          "name_fr": "Sanctuaire de Sainte-Anne-d'Auray (site global)",
+          "role": "DESTINATION_GENERAL",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.sainteanne-sanctuaire.com/?id_geoloc=209&langue=fr&mode=organiser_un_pelerinage"
+        }
+      ]
+    },
+    {
+      "route_id": "route:CA:canadian-martyrs-traditional",
+      "edition": "26 September 2026; St Ignace II is start; Crystal Beach is lunch site",
+      "source_url": "https://ontario.sspx.ca/en/events/canadian-martyrs-pilgrimage-2026-transmitting-faith-next-generation-60303",
+      "source_class": "OFFICIAL_ORGANIZER",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:CA:canadian-martyrs-traditional#stage-1",
+          "ordinal": 1,
+          "name_en": "St Ignace II, 1645 Rosemount Road",
+          "name_fr": "Saint-Ignace II, 1645 Rosemount Road",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://ontario.sspx.ca/en/events/canadian-martyrs-pilgrimage-2026-transmitting-faith-next-generation-60303"
+        },
+        {
+          "waypoint_id": "route:CA:canadian-martyrs-traditional#stage-2",
+          "ordinal": 2,
+          "name_en": "Crystal Beach Park, Victoria Harbour (lunch)",
+          "name_fr": "Parc Crystal Beach, Victoria Harbour (déjeuner)",
+          "role": "INTERMEDIATE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://ontario.sspx.ca/en/events/canadian-martyrs-pilgrimage-2026-transmitting-faith-next-generation-60303"
+        },
+        {
+          "waypoint_id": "route:CA:canadian-martyrs-traditional#stage-3",
+          "ordinal": 3,
+          "name_en": "Canadian Martyrs' Shrine (relic veneration)",
+          "name_fr": "Sanctuaire des Martyrs canadiens (vénération des reliques)",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://ontario.sspx.ca/en/events/canadian-martyrs-pilgrimage-2026-transmitting-faith-next-generation-60303"
+        }
+      ]
+    },
+    {
+      "route_id": "route:GB:ely-walsingham-lms",
+      "edition": "27–30 August 2026; concluding Mass at Priory grounds, NOT Roman Catholic Shrine",
+      "source_url": "https://www.lmschairman.org/2026/03/lms-walsingham-pilgrimage-booking-open.html",
+      "source_class": "OFFICIAL_ORGANIZER",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "destination_relation": "RELATED_SHRINE_NOT_EVENT_ENDPOINT",
+      "waypoints": [
+        {
+          "waypoint_id": "route:GB:ely-walsingham-lms#stage-1",
+          "ordinal": 1,
+          "name_en": "Ely, gathering and pilgrimage departure",
+          "name_fr": "Ely, rassemblement et départ du pèlerinage",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.lmschairman.org/2026/03/lms-walsingham-pilgrimage-booking-open.html"
+        },
+        {
+          "waypoint_id": "route:GB:ely-walsingham-lms#stage-2",
+          "ordinal": 2,
+          "name_en": "Stoke Ferry, pilgrimage campsite",
+          "name_fr": "Stoke Ferry, camp du pèlerinage",
+          "role": "INTERMEDIATE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.lmschairman.org/2026/03/lms-walsingham-pilgrimage-booking-open.html"
+        },
+        {
+          "waypoint_id": "route:GB:ely-walsingham-lms#stage-3",
+          "ordinal": 3,
+          "name_en": "Walsingham Priory grounds (final Mass near Holy House site)",
+          "name_fr": "Enclos du prieuré de Walsingham (messe finale près de l'ancienne Sainte Maison)",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.lmschairman.org/2026/03/lms-walsingham-pilgrimage-booking-open.html"
+        }
+      ]
+    },
+    {
+      "route_id": "route:GB:holywell-church-to-well",
+      "edition": "LMS annual first Sunday of July; rosary procession after High Mass",
+      "source_url": "https://lms.org.uk/pilgrimages",
+      "source_class": "OFFICIAL_ORGANIZER",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:GB:holywell-church-to-well#stage-1",
+          "ordinal": 1,
+          "name_en": "St Winefride's RC Parish Church, Holywell",
+          "name_fr": "Église paroissiale catholique Sainte-Winefride, Holywell",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://lms.org.uk/pilgrimages"
+        },
+        {
+          "waypoint_id": "route:GB:holywell-church-to-well#stage-2",
+          "ordinal": 2,
+          "name_en": "St Winefride's Well and Shrine, Holywell",
+          "name_fr": "Puits et sanctuaire Sainte-Winefride, Holywell",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://lms.org.uk/pilgrimages"
+        }
+      ]
+    },
+    {
+      "route_id": "route:NL:winthagen-maastricht-sterre-der-zee",
+      "edition": "3 October 2026; two documented reflection stops",
+      "source_url": "https://olv-sintpieter.nl/3-10-2026-pelgrims-voettocht-sterre-der-zee/",
+      "source_class": "OFFICIAL_PARISH",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:NL:winthagen-maastricht-sterre-der-zee#stage-1",
+          "ordinal": 1,
+          "name_en": "Sterre der Zee Chapel, Winthagen (departure and blessing)",
+          "name_fr": "Kapel Sterre der Zee, Winthagen (départ et bénédiction)",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://olv-sintpieter.nl/3-10-2026-pelgrims-voettocht-sterre-der-zee/"
+        },
+        {
+          "waypoint_id": "route:NL:winthagen-maastricht-sterre-der-zee#stage-2",
+          "ordinal": 2,
+          "name_en": "Parish Church, Schin op Geul (reflection stop)",
+          "name_fr": "Église paroissiale, Schin op Geul (halte de méditation)",
+          "role": "INTERMEDIATE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://olv-sintpieter.nl/3-10-2026-pelgrims-voettocht-sterre-der-zee/"
+        },
+        {
+          "waypoint_id": "route:NL:winthagen-maastricht-sterre-der-zee#stage-3",
+          "ordinal": 3,
+          "name_en": "St Gerlachus Church, Houthem (reflection stop)",
+          "name_fr": "Église Saint-Gerlach, Houthem (halte de méditation)",
+          "role": "INTERMEDIATE",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://olv-sintpieter.nl/3-10-2026-pelgrims-voettocht-sterre-der-zee/"
+        },
+        {
+          "waypoint_id": "route:NL:winthagen-maastricht-sterre-der-zee#stage-4",
+          "ordinal": 4,
+          "name_en": "Basilica of Our Lady Sterre der Zee, Maastricht",
+          "name_fr": "Basilique Notre-Dame Sterre der Zee, Maastricht",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://olv-sintpieter.nl/3-10-2026-pelgrims-voettocht-sterre-der-zee/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:MX:guadalajara-zapopan-romeria",
+      "edition": "12 October 2026, 292nd Romería; municipal published landmark sequence",
+      "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292",
+      "source_class": "MUNICIPAL_OFFICIAL",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-1",
+          "ordinal": 1,
+          "name_en": "Metropolitan Cathedral, Guadalajara",
+          "name_fr": "Catedral Metropolitana, Guadalajara",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-2",
+          "ordinal": 2,
+          "name_en": "Plaza de Armas",
+          "name_fr": "Plaza de Armas",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-3",
+          "ordinal": 3,
+          "name_en": "Exconvento del Carmen",
+          "name_fr": "Exconvento del Carmen",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-4",
+          "ordinal": 4,
+          "name_en": "Parque de la Revolución",
+          "name_fr": "Parque de la Revolución",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-5",
+          "ordinal": 5,
+          "name_en": "University of Guadalajara Rectory",
+          "name_fr": "Rectoría de la Universidad de Guadalajara",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-6",
+          "ordinal": 6,
+          "name_en": "Glorieta Colón",
+          "name_fr": "Glorieta Colón",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-7",
+          "ordinal": 7,
+          "name_en": "Punto São Paulo",
+          "name_fr": "Punto São Paulo",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-8",
+          "ordinal": 8,
+          "name_en": "Plaza Patria",
+          "name_fr": "Plaza Patria",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-9",
+          "ordinal": 9,
+          "name_en": "Arco de Zapopan",
+          "name_fr": "Arco de Zapopan",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        },
+        {
+          "waypoint_id": "route:MX:guadalajara-zapopan-romeria#stage-10",
+          "ordinal": 10,
+          "name_en": "Basilica of Our Lady of Zapopan",
+          "name_fr": "Basílica de Nuestra Señora de Zapopan",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292"
+        }
+      ]
+    },
+    {
+      "route_id": "route:PT:braga-cathedral-sameiro",
+      "edition": "Annual first Sunday in June, 7 a.m. cathedral departure; general annual custom",
+      "source_url": "https://santuariodosameiro.pt/santuario/pastoral-e-culto/peregrinacoes/",
+      "source_class": "OFFICIAL_SHRINE",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:PT:braga-cathedral-sameiro#stage-1",
+          "ordinal": 1,
+          "name_en": "Braga Cathedral",
+          "name_fr": "Sé Catedral de Braga",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://santuariodosameiro.pt/santuario/pastoral-e-culto/peregrinacoes/"
+        },
+        {
+          "waypoint_id": "route:PT:braga-cathedral-sameiro#stage-2",
+          "ordinal": 2,
+          "name_en": "Sanctuary of Our Lady of Sameiro",
+          "name_fr": "Santuário de Nossa Senhora do Sameiro",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://santuariodosameiro.pt/santuario/pastoral-e-culto/peregrinacoes/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:US:amsterdam-auriesville",
+      "edition": "17 October 2026 event; organizer page states only town of origin and destination",
+      "source_url": "https://www.ourladyofmartyrsshrine.org/featured-events",
+      "source_class": "OFFICIAL_SHRINE",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:US:amsterdam-auriesville#stage-1",
+          "ordinal": 1,
+          "name_en": "Amsterdam, New York (starting town; exact assembly point unverified)",
+          "name_fr": "Amsterdam, New York (ville de départ ; rassemblement non vérifié)",
+          "role": "START_GENERAL",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ourladyofmartyrsshrine.org/featured-events"
+        },
+        {
+          "waypoint_id": "route:US:amsterdam-auriesville#stage-2",
+          "ordinal": 2,
+          "name_en": "National Shrine of Our Lady of Martyrs, Auriesville",
+          "name_fr": "Sanctuaire national Notre-Dame-des-Martyrs, Auriesville",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ourladyofmartyrsshrine.org/featured-events"
+        }
+      ]
     }
   ]
 }
