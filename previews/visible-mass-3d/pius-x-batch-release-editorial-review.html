@@ -98,7 +98,7 @@ const labels={FOR_EXPERT_REVIEW:["For expert review","À transmettre à l’expe
 const t=(en,fr)=>lang==="fr"?fr:en;
 function statusMessage(message){$("message").textContent=message;}
 function expected(id){return data.records.find(x=>x.id===id)}
-function defaultDecision(){return {status:"NOT_REVIEWED",variant:"original",checked:{source:false,en:false,fr:false,voice:false,historical:false},en:null,fr:null,note:""}}
+function defaultDecision(){return {status:"NOT_REVIEWED",variant:"original",checked:{source:false,en:false,fr:false,voice:false,historical:false},en:null,fr:null,versions:{},note:""}}
 function get(id){return decisions.get(id)||defaultDecision()}
 function save(id,state){const safe={...defaultDecision(),...state,checked:{...defaultDecision().checked,...state.checked}};decisions.set(id,safe)}
 function plainValue(item,state,l){
@@ -139,21 +139,30 @@ function card(item){
  const source=el("section","review-source");
  const a=el("a","",t("Italian source — locate editorial question ","Texte italien — chercher la question ")+item.id.slice(-3));
  a.href=item.originalDigitalWitness;a.target="_blank";a.rel="noopener noreferrer";
- source.append(a,el("div","tags",item.supportedSourceQuestionIds.join(" · ")+
+ source.append(a);
+ const print=el("a","",t("1905 original print (unnumbered)","Imprimé de 1905 (sans numérotation)"));
+ print.href="https://it.wikisource.org/wiki/Indice:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu";
+ print.target="_blank";print.rel="noopener noreferrer";print.style.marginLeft="12px";
+ source.append(print,el("div","tags",item.supportedSourceQuestionIds.join(" · ")+
  " · "+t("Editorial numbering only","Numérotation éditoriale uniquement")));
  const details=el("details"),sum=el("summary","",t("View original draft and alternative wordings","Voir le brouillon initial et les variantes"));
  details.append(sum,el("div","raw",t("Original English: ","Texte anglais initial : ")+item.originalDraftEN),
  el("div","raw",t("Original French: ","Texte français initial : ")+item.originalDraftFR));
  if(item.correctionEN)details.append(el("div","raw","EN source correction: "+item.correctionEN),el("div","raw","FR source correction: "+item.correctionFR));
  if(item.periodEN)details.append(el("div","raw","EN period-register option: "+item.periodEN),el("div","raw","FR period-register option: "+item.periodFR));
- if(item.outOfCharacterNote)details.append(el("div","warning",t("The historical-law note belongs to the editor, never the character.","La note historique est éditoriale, jamais prononcée par le personnage.")));
+ if(item.outOfCharacterNote)details.append(el("div","warning",
+ t("Editorial historical-law note (NOT St Pius X speech): ","Note historique éditoriale (PAS parole de saint Pie X) : ")+
+ t(item.outOfCharacterNote.en,item.outOfCharacterNote.fr)));
  source.append(details);art.append(source);
  const marks=el("div","tags",item.reviewReasons.join(" · "));art.append(marks);
  const variantRow=el("div","mark-row");
  const variants=[["original",t("Original draft","Brouillon initial")],["correction",t("Source correction","Correction sourcée")],["period",t("Period-register option","Style d’époque")]];
  for(const [id,name] of variants){
  if(id==="correction"&&!item.correctionEN||id==="period"&&!item.periodEN)continue;
- variantRow.append(button(name,()=>{save(item.id,{...get(item.id),variant:id,en:null,fr:null});render()},get(item.id).variant===id?"selected":""));
+ variantRow.append(button(name,()=>{save(item.id,{...get(item.id),variant:id,
+ versions:{...(get(item.id).versions||{}),[get(item.id).variant]:{en:get(item.id).en,fr:get(item.id).fr}},
+ en:(get(item.id).versions||{})[id]?.en??null,
+ fr:(get(item.id).versions||{})[id]?.fr??null});render()},get(item.id).variant===id?"selected":""));
  }
  art.append(variantRow);
  const grid=el("div","review-grid");
@@ -225,9 +234,12 @@ function validateImport(payload){
  if(!expected(x.id)||fresh.has(x.id)||!statuses.includes(x.status)||!["original","correction","period"].includes(x.variant)||
  typeof x.note!=="string"||x.note.length>20000||
  !x.checked||["source","en","fr","voice","historical"].some(k=>typeof x.checked[k]!=="boolean")||
- (x.en!==null&&typeof x.en!=="string")||(x.fr!==null&&typeof x.fr!=="string"))
+ (x.en!==null&&typeof x.en!=="string")||(x.fr!==null&&typeof x.fr!=="string")||
+ x.en?.length>20000||x.fr?.length>20000||!x.versions||typeof x.versions!=="object"||
+ Object.keys(x.versions).some(k=>!["original","correction","period"].includes(k)||
+ !x.versions[k]||["en","fr"].some(l=>x.versions[k][l]!==null&&typeof x.versions[k][l]!=="string")))
  throw Error("Invalid or duplicate decision");
- fresh.set(x.id,{status:x.status,variant:x.variant,checked:x.checked,en:x.en,fr:x.fr,note:x.note});
+ fresh.set(x.id,{status:x.status,variant:x.variant,checked:x.checked,en:x.en,fr:x.fr,versions:x.versions,note:x.note});
  }
  return fresh;
 }
