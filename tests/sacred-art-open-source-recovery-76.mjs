@@ -14,13 +14,13 @@ assert.equal(open.length,58);
 assert.equal(queue.remainingUnroutedRecords,58);
 const stillQueued=queue.records.filter(x=>x.lane!=="SOURCE_IDENTIFIED_QA");
 assert.deepEqual(new Set(stillQueued.map(x=>x.artworkId)),new Set(open.map(x=>x.id)),
- "All 64 remaining unsourced originals must remain in the research queue, excluding the 12 source-routed Stations");
+ "All 58 remaining unsourced originals must be in research queue, excluding 18 exact-source routes");
 assert.equal(queue.records.length,76);
 assert.equal(queue.worksPerBatch,50);
 assert.deepEqual(queue.batches.map(x=>x.count),[50,26]);
 assert.equal(queue.counts.LICENSE_BLOCKED,16);
 assert.equal(queue.counts.SOURCE_IDENTIFIED_QA,18);
-assert.equal(queue.counts.DISCOVER_EXACT_ORIGINAL,23);
+assert.equal(queue.counts.DISCOVER_EXACT_ORIGINAL,21);
 assert.equal(queue.counts.PER_IMAGE_RIGHTS,4);
 assert.equal(queue.records.reduce((n,x)=>n+Number(x.lane==="LICENSE_BLOCKED"),0),16);
 const stations=queue.records.filter(x=>x.lane==="SOURCE_IDENTIFIED_QA"&&/an-olo-ia-rucis-tation-/.test(x.artworkId));
