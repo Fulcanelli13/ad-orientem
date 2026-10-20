@@ -15,7 +15,8 @@ assert.equal(review.stats.denzingerRequired,false);
 assert.equal(review.stats.approved,0);
 assert.equal(review.chapters.length,20);
 const seen=new Set();
-let revisions=0,canonMatches=0;
+let revisions=0,canonMatches=0,periodStyles=0,editorialHistoricalNotes=0;
+const poses=new Set();
 for(const chapter of review.chapters){
  assert.ok(chapter.en&&chapter.fr);
  assert.ok(chapter.entries.length>=2);
@@ -34,6 +35,22 @@ for(const chapter of review.chapters){
   assert.equal(item.sourceLabel.includes(id),true);
   assert.ok(item.choices.every(c=>c.id!==id&&c.en&&c.fr));
   assert.ok(item.cross.every(c=>c.id!==id&&c.en&&c.fr));
+  assert.equal(item.visual.published,false);
+  assert.equal(item.visual.historicalVoiceClassification,'EDUCATIONAL_RECONSTRUCTION_NOT_VERBATIM');
+  assert.equal(item.visual.portraitOwner,'PR#1402');
+  assert.equal(item.visual.periodStyleOwner,'PR#1419');
+  assert.ok(item.visual.portraitUrl.startsWith('https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/0a920793bcdf40cc053ad0aff31132ade8185a33/'));
+  poses.add(item.visual.pose);
+  if(item.periodVersion){
+   periodStyles++;
+   assert.equal(item.periodVersion.approved,false);
+   assert.ok(item.periodVersion.en&&item.periodVersion.fr);
+  }
+  if(item.editorialNote){
+   editorialHistoricalNotes++;
+   assert.equal(item.editorialNote.approved,false);
+   assert.equal(item.editorialNote.attributedToCharacter,false);
+  }
   if(item.proposedRevision){
    revisions++;
    assert.equal(item.proposedRevision.approved,false);
@@ -45,6 +62,9 @@ for(const chapter of review.chapters){
 assert.equal(seen.size,100);
 assert.equal(revisions,6); // Four other optional revisions are on legacy T2, not automatic next turns.
 assert.equal(canonMatches,5);
+assert.equal(periodStyles,5);
+assert.equal(editorialHistoricalNotes,1);
+assert.deepEqual([...poses].sort(),['explaining','grave','thoughtful','welcoming']);
 assert.equal((await review.inspect('PX1905-Q667')),null);
 const html=await readFile(new URL('../previews/visible-mass-3d/pius-x-conversation-paths-review.html',import.meta.url),'utf8');
 assert.ok(html.includes('pius-x-20path-editorial-review.mjs'));
@@ -52,5 +72,12 @@ assert.ok(html.includes('Original draft')&&html.includes('Proposed correction'))
 assert.ok(html.includes('Check a Chanoine follow-up'));
 assert.ok(html.includes('No verified answer'));
 assert.ok(html.includes('Denzinger references are optional'));
+assert.ok(html.includes('novel-portrait'));
+assert.ok(html.includes('novel-dialogue'));
+assert.ok(html.includes('Period-register draft'));
+assert.ok(html.includes('Historical editor'));
+assert.ok(html.includes('export-review'));
+assert.ok(html.includes('pius-x-conversation-editorial-notes.json'));
+assert.ok(html.includes('view-scene')&&html.includes('view-folio'));
 assert.ok(!html.includes('script src="https://'));
-console.log('SPX reviewer PASS: 20 chapters/100 source-owned questions, 6 visible opening-turn corrections, 4 narrow Canon probes, no Denzinger required, zero published.');
+console.log('SPX visual-novel reviewer PASS: 20 chapters, 100 sources, 4 portrait poses, 6 source corrections, 5 period diction candidates, 1 out-of-character note, 5 Canon leads; no Denzinger required, zero published.');
