@@ -1,0 +1,391 @@
+{
+  "schema": "ao.historia.p4.scene-audit.batch.v1",
+  "status": "RESEARCH_ONLY_NOT_PRODUCTION_CERTIFIED",
+  "createdOn": "2026-10-21",
+  "batch": "Abraham scenes indices 0–14 derived from source scenes array",
+  "inputs": [
+    "data/explore/biblical-cinematic-studies-review.v1.json (183-scene registry, source branch feature/biblical-atlas-current-main-convergence-20261012)",
+    "data/scripture/witness/cpdv-2009/Genesis.json",
+    "data/scripture/witness/cpdv-2009/Acts.json",
+    "data/explore/historia-salutis-p0-master-crosswalk.v1.json"
+  ],
+  "policy": {
+    "canonicalAtlasEventsUnchanged": true,
+    "coordinatesAdded": false,
+    "parallelOrTraditionalSiteNotPromotedToExact": true,
+    "baselineAtlasClassificationsPreserved": true,
+    "canonicalScriptureChanged": false
+  },
+  "reviewedSceneCount": 15,
+  "sceneKeys": [
+    "biblical:scene:abraham:000",
+    "biblical:scene:abraham:001",
+    "biblical:scene:abraham:002",
+    "biblical:scene:abraham:003",
+    "biblical:scene:abraham:004",
+    "biblical:scene:abraham:005",
+    "biblical:scene:abraham:006",
+    "biblical:scene:abraham:007",
+    "biblical:scene:abraham:008",
+    "biblical:scene:abraham:009",
+    "biblical:scene:abraham:010",
+    "biblical:scene:abraham:011",
+    "biblical:scene:abraham:012",
+    "biblical:scene:abraham:013",
+    "biblical:scene:abraham:014"
+  ],
+  "scenes": [
+    {
+      "sceneKey": "biblical:scene:abraham:000",
+      "index": 0,
+      "reference": "Genesis 12:1–5",
+      "title": "The call of Abram",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "reference": "Genesis 12:1–9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, the LORD; Sarai and Lot in departure verses",
+      "chronologyAndNarrativeFinding": "The CPDV Genesis account says Abram is called to leave (12:1–3), then narrates departure from Haran (12:4–5); Acts 7:2–4 places the divine appearance/call in Mesopotamia before the move to Haran. Do not assert that the call occurred at Haran or harmonize chronology. Genesis names Abram, the LORD, Sarai and Lot in this selected span; the household/people taken are collective, not individually named.",
+      "geography": {
+        "claim": "Call location UNKNOWN; Haran is a named journey waypoint in Genesis 11:31–12:5, but the call's exact place is unresolved. The scene registry's Haran pin is too specific for Genesis 12:1.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "evidence": "Tell Balata is commonly identified with ancient Shechem; UNESCO describes it as a Canaanite city-state site in the valley between Gerizim and Ebal. No relevance to call coordinates.",
+        "sources": [
+          "https://whc.unesco.org/en/tentativelists/6949/"
+        ]
+      },
+      "covenantAndGenealogy": "PROMISE_PRE_COVENANT: promise to Abram (Gen 12:1–3); not covenant enactment. Genealogy: Abram/Sarai/Lot relationships named, no descendant list in scene.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:001",
+      "index": 1,
+      "reference": "Genesis 12:4–5",
+      "title": "The covenant begins with a departure",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "reference": "Genesis 12:1–9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, Sarai, Lot; unnamed household/people",
+      "chronologyAndNarrativeFinding": "Genesis 12:4–5 records Abram's age, departure from Haran, and those accompanying him. No covenant rite occurs here; label as departure under promise. The departure is sequenced after the promise but the prior call location remains unresolved.",
+      "geography": {
+        "claim": "Haran, named settlement of departure; exact house/gate unknown. Regional/site label only.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "Harran is an attested ancient settlement; the event's departure point within it is not identifiable from text.",
+        "sources": [
+          "https://oracc.museum.upenn.edu/geonames/cbd/qpn/H.html"
+        ]
+      },
+      "covenantAndGenealogy": "Promise context (Gen 12:1–3); no covenant institution in 12:4–5. Abram/Sarai/Lot kinship is explicit.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:002",
+      "index": 2,
+      "reference": "Genesis 12:5–6",
+      "title": "The journey toward Canaan",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "reference": "Genesis 12:1–9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, Sarai, Lot; unnamed people acquired in Haran",
+      "chronologyAndNarrativeFinding": "Genesis 12:5–6 names Canaan and Shechem as route/arrival geography. It does not give intermediate route, distance, or itinerary. Scene chronology follows the Haran departure and entry to Canaan.",
+      "geography": {
+        "claim": "Canaan and Shechem are exact textual regions/toponym. Route between Haran and Shechem is not stated; no line/coordinates should be inferred.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "Shechem's Tell Balata identification has archaeological/heritage support; this does not fix the path or campsite.",
+        "sources": [
+          "https://whc.unesco.org/en/tentativelists/6949/"
+        ]
+      },
+      "covenantAndGenealogy": "Promise-to-land context (Gen 12:1–3); family group named but no genealogy developed.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:003",
+      "index": 3,
+      "reference": "Genesis 12:6–7",
+      "title": "The altar at Shechem",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "reference": "Genesis 12:1–9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, the LORD",
+      "chronologyAndNarrativeFinding": "Genesis 12:6–7 explicitly locates the altar episode at Shechem and the oak of Moreh and records the LORD's land promise. It does not identify a surviving altar footprint.",
+      "geography": {
+        "claim": "Shechem/Oak of Moreh are exact biblical toponyms; altar's precise archaeological location UNKNOWN.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "evidence": "UNESCO supports Tell Balata as Shechem at the broad settlement level; no source verifies this altar spot.",
+        "sources": [
+          "https://whc.unesco.org/en/tentativelists/6949/"
+        ]
+      },
+      "covenantAndGenealogy": "Direct promise-to-land link; Abrahamic covenant as a framework is retrospective, while formal covenant rite is Gen 15.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:004",
+      "index": 4,
+      "reference": "Genesis 12:7",
+      "title": "The promise of the land",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "reference": "Genesis 12:1–9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, the LORD; Abram's descendants collectively (unnamed)",
+      "chronologyAndNarrativeFinding": "Genesis 12:7 names Abram's descendants as recipients of the land promise. It follows arrival at Shechem and the altar in the same verse; not an independently described covenant ceremony.",
+      "geography": {
+        "claim": "Shechem named in the preceding clause/context; no independent point within Shechem is located.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "Shechem's broad identification is supported; promise's exact utterance spot cannot be located archaeologically.",
+        "sources": [
+          "https://whc.unesco.org/en/tentativelists/6949/"
+        ]
+      },
+      "covenantAndGenealogy": "Promise to descendants and land (Gen 12:7), precursor to the Gen 15 covenant; no individual genealogy beyond Abram.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:005",
+      "index": 5,
+      "reference": "Genesis 12:8",
+      "title": "Between Bethel and Ai",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-12-1-9",
+          "reference": "Genesis 12:1–9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, the LORD",
+      "chronologyAndNarrativeFinding": "Genesis 12:8 places Abram's tent between Bethel on the west and Ai on the east and describes an altar/invocation. This is a relative position, not a surveyed coordinate.",
+      "geography": {
+        "claim": "Between Bethel and Ai: exact relative wording; modern identifications of both sites are disputed, so classify REGIONAL_RELATIVE / disputed anchors.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "Bethel's location and Ai identification remain debated in scholarship; do not resolve with a map pin.",
+        "sources": [
+          "https://cris.haifa.ac.il/en/publications/reevaluating-bethel-5/"
+        ]
+      },
+      "covenantAndGenealogy": "Promise journey context; no new covenant or genealogy event.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:006",
+      "index": 6,
+      "reference": "Genesis 12:10–20",
+      "title": "A famine, a journey into Egypt",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Abram, Sarai, Pharaoh; Pharaoh's household/servants collectively",
+      "chronologyAndNarrativeFinding": "Genesis 12:10–20 narrates famine-driven descent to Egypt, Abram's instruction to Sarai, Pharaoh's taking of Sarai, plagues, and departure. It follows the Canaan altar scenes; Egypt is the only secure location at scene scale.",
+      "geography": {
+        "claim": "Egypt REGION exact in text; no city, route, or palace site named. Regional, not point location.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "Text gives country only; no external geographic source is needed to constrain it further.",
+        "sources": []
+      },
+      "covenantAndGenealogy": "No covenant enactment. Abram/Sarai marriage is implicit in the text; preserve Sarai's agency as an explicitly named participant.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:007",
+      "index": 7,
+      "reference": "Genesis 13:1–4",
+      "title": "The return to Canaan",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Abram, Lot, Sarai; household/possessions collectively; LORD in altar invocation",
+      "chronologyAndNarrativeFinding": "Genesis 13:1–4 narrates the return from Egypt by the Negeb to Bethel, to the earlier altar. It follows Pharaoh's expulsion of Abram's party (12:20); return and altar are text-explicit.",
+      "geography": {
+        "claim": "Route mentions Negeb, Bethel and the earlier altar; broad route sequence, exact path and altar coordinates unknown.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "Bethel identification debated; the earlier altar cannot be placed precisely.",
+        "sources": [
+          "https://cris.haifa.ac.il/en/publications/reevaluating-bethel-5/"
+        ]
+      },
+      "covenantAndGenealogy": "Promise context; explicit kin relation Abram/Lot, Sarai; no new covenant act.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:008",
+      "index": 8,
+      "reference": "Genesis 13:5–13",
+      "title": "Abram and Lot separate",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Abram, Lot, their herdsmen; Canaanites and Perizzites (v7); people of Sodom (v13)",
+      "chronologyAndNarrativeFinding": "Genesis 13:5–13 explains conflict from insufficient pasture, Abram's proposal, Lot's choice of Jordan plain, and Lot's move toward Sodom. It is the causal setup for the separation; vv10–13 overlap scene 009 and should be recognized, not double-counted as distinct Atlas event.",
+      "geography": {
+        "claim": "Bethel/Ai context is inherited from 13:3–4, but exact separation point is not named. Jordan plain and Sodom are textual regions/toponyms; Sodom site disputed/unknown.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "Sodom's location is not established; scholarly proposals remain disputed.",
+        "sources": [
+          "https://etsjets.org/wp-content/uploads/2010/08/files_JETS-PDFs_27_27-4_27-4-pp385-400_JETS.pdf"
+        ]
+      },
+      "covenantAndGenealogy": "Abram/Lot kinship explicit; land promise frames scene but no covenant enactment.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:009",
+      "index": 9,
+      "reference": "Genesis 13:10–13",
+      "title": "Lot moves toward Sodom",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Lot; Sodom inhabitants; Abram is present in context",
+      "chronologyAndNarrativeFinding": "Genesis 13:10–13 narrows to Lot's choice and movement toward Sodom; v13 describes its inhabitants. This is nested within, not subsequent to, scene 008; don't treat sequence as two separate events.",
+      "geography": {
+        "claim": "Jordan plain and Sodom are exact textual names; the city's archaeological identification is UNKNOWN/DISPUTED.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "evidence": "No confirmed location for Sodom; no coordinate asserted.",
+        "sources": [
+          "https://etsjets.org/wp-content/uploads/2010/08/files_JETS-PDFs_27_27-4_27-4-pp385-400_JETS.pdf"
+        ]
+      },
+      "covenantAndGenealogy": "Lot is Abram's kinsman (Gen 11:27; 12:5); no covenant enactment.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:010",
+      "index": 10,
+      "reference": "Genesis 13:14–18",
+      "title": "The oaks of Mamre",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "LORD, Abram; Lot referenced as departed",
+      "chronologyAndNarrativeFinding": "Genesis 13:14–18 follows Lot's choice; Abram is told to look over the land, then travels to the oaks of Mamre near Hebron and builds an altar. Abram, not Lot, is the scene's active subject after v14.",
+      "geography": {
+        "claim": "Oaks of Mamre near Hebron are biblical regional geography. Exact grove/tent/altar point is UNKNOWN; Hebron is a named nearby settlement.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "evidence": "Hebron has a long-standing traditional association with patriarchal narratives; UNESCO documents the traditional tomb precinct, which does not verify this encampment.",
+        "sources": [
+          "https://whc.unesco.org/en/list/1565/"
+        ]
+      },
+      "covenantAndGenealogy": "Promise of land/descendants renewed (13:14–17); link to Abrahamic covenant framework, not covenant rite. Abram/Lot separation explicit.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:011",
+      "index": 11,
+      "reference": "Genesis 14:13–16",
+      "title": "Abram rescues Lot",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Abram; Lot; Mamre, Eshcol, Aner; named kings including Chedorlaomer; Abram's trained household men",
+      "chronologyAndNarrativeFinding": "Genesis 14:13–16 locates Abram at the oaks of Mamre, then narrates pursuit north to Dan and onward to Hobah north of Damascus, then return with Lot and captives. This is a multi-location route scene; single-point Hebron label is misleading.",
+      "geography": {
+        "claim": "Textual route: Mamre/Hebron region → Dan → Hobah north of Damascus → return. Route geometry uncertain; do not draw a precise polyline.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "The biblical text supplies toponyms; modern identifications of Dan and Damascus are broad regional anchors, but the exact route is unverified.",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Lot/Abram kin relation; no covenant enactment. Named regional allies are people, not genealogy links.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:012",
+      "index": 12,
+      "reference": "Genesis 14:17–20",
+      "title": "Melchizedek, king of Salem",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-14-18-20",
+          "reference": "Genesis 14:18–20",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, Melchizedek, king of Sodom; named kings in preceding context",
+      "chronologyAndNarrativeFinding": "Genesis 14:17–20 has two linked moments: king of Sodom meets Abram at Valley of Shaveh (v17), then Melchizedek king of Salem brings bread and wine and blesses Abram (18–20). Preserve the split geography; scene registry starts at v17, Atlas candidate covers only 18–20.",
+      "geography": {
+        "claim": "Valley of Shaveh exact textual name; Salem exact textual name. Salem=Jerusalem is traditional identification, not certain from these verses; classify disputed/traditional.",
+        "classification": "TEXTUAL_REGION_OR_TOPONYM",
+        "evidence": "Salem is traditionally identified with Jerusalem; evidence is interpretive/traditional rather than site-specific proof.",
+        "sources": [
+          "https://www.bibleodyssey.org/articles/melchizedek/"
+        ]
+      },
+      "covenantAndGenealogy": "Melchizedek blesses Abram; P0 Abraham covenant framework is a thematic relationship, but no covenant ceremony. Genealogically, Melchizedek has no genealogy stated here.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:013",
+      "index": 13,
+      "reference": "Genesis 15:1–6",
+      "title": "The promise beneath the stars",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-15-1-21",
+          "reference": "Genesis 15:1–21",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, the LORD; unnamed heir/descendants as promise referents",
+      "chronologyAndNarrativeFinding": "Genesis 15:1–6 is a vision/dialogue: Abram's concern about heir, promise of a son and descendants, Abram's belief. It precedes covenant rite vv7–21, and must remain separate while cross-referenced.",
+      "geography": {
+        "claim": "The text gives a vision, no physical setting. UNLOCATED, not Mamre by inference.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "evidence": "No historical site claim is warranted by text.",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Abrahamic promise of descendants; v6 faith statement. Directly connected to cv:abraham but covenant rite follows in vv7–21.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:014",
+      "index": 14,
+      "reference": "Genesis 15:7–21",
+      "title": "The covenant is sealed",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-15-1-21",
+          "reference": "Genesis 15:1–21",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Abram, the LORD; animals/birds specified in v9; descendants collectively",
+      "chronologyAndNarrativeFinding": "Genesis 15:7–21 contains covenant-making signs, Abram's question, promise of land and descendants, and the smoking furnace/flaming torch passing between pieces. Location not stated.",
+      "geography": {
+        "claim": "UNLOCATED: no place named in chapter. Mamre is an unsupported location assignment for this episode.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "evidence": "No site-specific external evidence connects this covenant scene to Mamre or another point.",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Direct covenant event cv:abraham (Gen 15:1–21); land boundary and descendants, genealogical promise collective.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    }
+  ],
+  "openQuestions": [
+    "Genesis 12 call timing differs between Genesis 12:1–5 and Stephen's account in Acts 7:2–4; retain as intra-biblical chronological question, not a resolved Haran location.",
+    "Bethel/Ai identification remains debated; scene 005 is relative wording only.",
+    "Salem's identification with Jerusalem remains traditional/disputed; no point-level mapping.",
+    "No scene-specific archaeological evidence locates the Genesis 15 covenant rite."
+  ]
+}
