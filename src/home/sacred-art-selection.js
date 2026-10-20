@@ -30,6 +30,14 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
 
 /** Release entries must name exact LOCAL masters. No remote thumbnail fallback. */
 export const RELEASED_SACRED_ART_MASTERS = Object.freeze({});
+// Prado-linked paintings keep their editorial approvals but not permission to
+// acquire or publish any Prado-sourced photograph, including via Commons/mirrors.
+const pradoHeldApprovedArtworks=new Set([
+  "ART-eter-aul-ubens-doration-of-the-agi",
+  "ART-eter-aul-ubens-mmaculate-onception"
+]);
+const pradoSourceText=values=>values.some(v=>typeof v==="string"
+  && /(?:museodelprado|(?:^|[^a-z])prado(?:[^a-z]|$))/i.test(v));
 
 // 20 October 2026: never allow the earlier Home gallery to reintroduce
 // displaced artwork on these Class I days while exact approved masters are held.
@@ -39,8 +47,8 @@ export const RELEASED_SACRED_ART_MASTERS = Object.freeze({});
 // Minardi/Fontana 10 April and Maíno Prado P003018 23 May are selected
 // but held pending canonical art IDs / verified reuse-ready source images.
 const dateSpecific2026ReplacementHolds=new Set([
-  "2026-04-03", "2026-04-10", "2026-05-14",
-  "2026-05-23", "2026-05-27", "2026-06-04"
+  "2026-01-06", "2026-04-03", "2026-04-10", "2026-05-14",
+  "2026-05-23", "2026-05-27", "2026-06-04", "2026-12-08"
 ]);
 const historicProhibitedPaths=new Set([
   "sancti/03-25",
@@ -81,6 +89,9 @@ export function releasedClassIArtwork(state,masters=RELEASED_SACRED_ART_MASTERS)
   if(entry.gospelStart&&resolvedGospelRef(state)!==expectedGospelRef(entry.gospelStart))return null;
   const file=masters?.[entry.artworkId];
   if(!file||file.artworkId!==entry.artworkId||file.releaseGate!=="ALL_CHECKS_PASS")return null;
+  if(pradoHeldApprovedArtworks.has(entry.artworkId) || file.nonPradoSourceVerified!==true
+    || pradoSourceText([file.sourceUrl,file.credit,file.rightsEvidenceUrl,file.sourceInstitution,
+      file.originInstitution,file.sourceMuseum,file.physicalArtworkCollection,file.imageOrigin]))return null;
   if(!/^assets\/approved\/sacred-art\/[a-zA-Z0-9_.-]+\.webp$/.test(file.path||""))return null;
   if(!/^[a-f0-9]{64}$/i.test(file.sha256||""))return null;
   if(!/^https:\/\//.test(file.sourceUrl||""))return null;
