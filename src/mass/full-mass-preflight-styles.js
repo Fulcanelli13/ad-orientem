@@ -83,6 +83,11 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-full-mass-preflig
   ".aoMassSpecialReaderGuide .aoSpecialMassContext{background:transparent;margin:4px 0 10px}",
   "@media(max-width:370px){#ao-mass-flow-v1 .aoFullMassForms{grid-template-columns:1fr}#ao-mass-flow-v1 .aoFullMassReaderModes{grid-template-columns:repeat(3,minmax(0,1fr))}}",
 
+  /* Keep the full-height backdrop opaque: the old Home must not bleed through. */
+  "#ao-mass-flow-v1 .aoMassFlowBackdrop:has(.aoGuidedMassFolio){background:rgba(4,8,12,.98)!important}",
+  "#ao-mass-flow-v1 .aoMassFlow:has(.aoGuidedMassFolio){background:#080d12!important}",
+  "#ao-mass-flow-v1 .aoMassFlowBody:has(.aoGuidedMassFolio){background:#0b1017!important}",
+  "#ao-mass-flow-v1 .aoMassFlow:has(.aoGuidedMassFolio) .aoFullMassPreflight{margin-top:0!important}",
   /* Guided Folio D+: one Mass identity, one three-choice guide, one start authority. */
   "#ao-mass-flow-v1 .aoFullMassPreflight:has(.aoGuidedMassFolio){padding:0!important;border:1px solid rgba(177,169,150,.3);background:#0b1017!important;overflow:visible;margin:10px 0 14px!important}",
   "#ao-mass-flow-v1 .aoGuidedMassFolio{display:grid;grid-template-columns:minmax(220px,.88fr) minmax(0,1.25fr);gap:0;align-items:start;color:#eee9dd;font-family:var(--ao-font-body,'EB Garamond',Georgia,serif)}",
