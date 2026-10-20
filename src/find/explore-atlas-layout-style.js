@@ -428,4 +428,158 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  }
 }
 
+/* D: Pilgrimage journeys are a contextual lens OVER the same A/C map,
+   not a new page and never a pretend turn-by-turn routing engine. */
+.aoHeritageSurface .aoJourneyLaunch{
+  border-color:rgba(205,181,126,.6)!important;color:#ead8af!important;
+}
+.aoHeritageSurface .aoJourneyLaunch.active{
+  background:#d2b984!important;color:#09141e!important;
+}
+.aoHeritageSurface .aoJourneyPanel{
+  position:absolute;z-index:16;top:79px;right:18px;bottom:18px;
+  width:min(425px,36vw);box-sizing:border-box;
+  display:flex;flex-direction:column;min-height:0;overflow:hidden;
+  background:linear-gradient(160deg,rgba(19,30,41,.98),rgba(9,16,25,.99));
+  border:1px solid rgba(211,185,133,.35);border-radius:14px;
+  box-shadow:0 16px 55px rgba(0,0,0,.58);
+  color:#e7dfd1;font-family:var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoJourneyHeader{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;padding:19px 18px 7px;flex:none;
+}
+.aoHeritageSurface .aoJourneyHeader small{
+  font:600 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.14em;color:#d5bd90;
+}
+.aoHeritageSurface .aoJourneyHeader h2{
+  margin:5px 0 0;color:#f0e5d3;
+  font:500 29px/1.1 var(--ao-font-display,Georgia,serif);
+}
+.aoHeritageSurface .aoJourneyHeader>button{
+  border:1px solid rgba(211,185,133,.27);border-radius:50%;
+  width:44px;height:44px;min-height:44px;flex:none;
+  color:#decaa7;background:#121d29;font:26px/1 Georgia,serif;
+}
+.aoHeritageSurface .aoJourneyScope{
+  margin:0;padding:5px 18px 13px;color:#b9b5aa;
+  font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoJourneyRoutes{
+  display:flex;gap:8px;padding:1px 18px 15px;flex:none;
+  overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;
+  scrollbar-width:thin;scrollbar-color:#917d62 transparent;
+  border-bottom:1px solid rgba(211,185,133,.18);
+}
+.aoHeritageSurface .aoJourneyRoutes button{
+  flex:0 0 185px;text-align:left;scroll-snap-align:start;
+  min-height:98px;max-height:128px;padding:10px 12px;
+  display:flex;flex-direction:column;gap:8px;justify-content:flex-start;
+  background:rgba(11,23,35,.96);border:1px solid rgba(211,185,133,.21);
+  color:#ddd3c1;border-radius:9px;
+}
+.aoHeritageSurface .aoJourneyRoutes button.active{
+  border-color:#d3b987;background:rgba(62,53,39,.66);
+}
+.aoHeritageSurface .aoJourneyRoutes button small{
+  color:#cdb78e;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  font-variant-numeric:tabular-nums;
+}
+.aoHeritageSurface .aoJourneyRoutes button strong{
+  font:500 14px/1.3 var(--ao-font-body,Georgia,serif);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.aoHeritageSurface .aoJourneyDetail{
+  padding:20px 19px 25px;flex:1;min-height:0;overflow-y:auto;
+  overscroll-behavior-y:contain;
+}
+.aoHeritageSurface .aoJourneyType{
+  font:600 10px/1.1 var(--ao-font-ui,system-ui,sans-serif);
+  color:#d4b980;letter-spacing:.09em;text-transform:uppercase;
+}
+.aoHeritageSurface .aoJourneyDetail h3{
+  font:500 clamp(20px,2.2vw,26px)/1.2 var(--ao-font-display,Georgia,serif);
+  margin:9px 0 21px;color:#f0e6d9;
+}
+.aoHeritageSurface .aoJourneyAnchors{
+  list-style:none;margin:0;padding:0 0 0 6px;
+}
+.aoHeritageSurface .aoJourneyAnchors li{
+  position:relative;display:grid;grid-template-columns:26px minmax(0,1fr);
+  gap:13px;padding:0 0 31px;
+}
+.aoHeritageSurface .aoJourneyAnchors li:first-child:after{
+  content:"";position:absolute;left:13px;top:30px;bottom:5px;
+  border-left:1px dashed rgba(208,181,127,.55);
+}
+.aoHeritageSurface .aoJourneyAnchors li:last-child{padding-bottom:0}
+.aoHeritageSurface .aoJourneyNode{
+  display:grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  background:#142635;border:1px solid rgba(208,181,127,.55);
+  color:#d9c190;font-size:18px;
+}
+.aoHeritageSurface .aoJourneyAnchors small{
+  display:block;color:#c3ad86;
+  font:600 10px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.075em;
+}
+.aoHeritageSurface .aoJourneyAnchors strong{
+  display:block;margin-top:6px;font:500 17px/1.35 var(--ao-font-body,Georgia,serif);
+}
+.aoHeritageSurface .aoJourneyAnchors em{
+  display:block;margin-top:6px;font:400 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#b4b6b6;
+}
+.aoHeritageSurface .aoJourneyStages{
+  color:#dac9a7;margin:19px 0 3px;font:500 12px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoJourneyNoLine{
+  margin:17px 0;color:#bcb7ac;font:400 12px/1.53 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoJourneyActions{
+  display:flex;flex-wrap:wrap;gap:9px;margin:19px 0;
+}
+.aoHeritageSurface .aoJourneyActions button{
+  min-height:44px;padding:9px 13px;border-radius:8px;
+  background:#d5bd8b;border:1px solid #d5bd8b;color:#0c1721;
+  font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoJourneyActions button:first-child:not(:last-child){
+  background:transparent;border-color:rgba(213,189,139,.49);color:#eadcc2;
+}
+.aoHeritageSurface .aoJourneyEvidence{
+  display:grid;gap:8px;margin:18px 0 0;padding:15px 0 0;
+  border-top:1px solid rgba(205,180,133,.22);
+}
+.aoHeritageSurface .aoJourneyEvidence>strong{
+  font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.08em;color:#cfb884;text-transform:uppercase;
+}
+.aoHeritageSurface .aoJourneyEvidence a{
+  display:flex;align-items:center;min-height:44px;color:#e1d4b8;
+  font:400 13px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+  text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;
+}
+@media(max-width:799px){
+ .aoHeritageSurface .aoJourneyPanel{
+   top:auto;left:0;right:0;bottom:0;width:100%;
+   height:min(56dvh,505px);border-radius:17px 17px 0 0;
+   border-bottom:0;box-shadow:0 -14px 43px rgba(0,0,0,.55);
+   padding-bottom:env(safe-area-inset-bottom);
+ }
+ .aoHeritageSurface .aoJourneyHeader{padding:12px 15px 5px}
+ .aoHeritageSurface .aoJourneyHeader h2{font-size:24px}
+ .aoHeritageSurface .aoJourneyScope{padding:2px 15px 10px}
+ .aoHeritageSurface .aoJourneyRoutes{gap:7px;padding:0 14px 10px}
+ .aoHeritageSurface .aoJourneyRoutes button{flex-basis:162px;min-height:79px;max-height:94px;padding:8px 10px}
+ .aoHeritageSurface .aoJourneyRoutes button strong{font-size:13px;-webkit-line-clamp:2}
+ .aoHeritageSurface .aoJourneyDetail{padding:14px 16px 20px}
+ .aoHeritageSurface .aoJourneyDetail h3{font-size:21px;margin:7px 0 16px}
+ .aoHeritageSurface .aoJourneyAnchors strong{font-size:15px}
+}
+@media(max-width:360px){
+ .aoHeritageSurface .aoJourneyPanel{height:min(59dvh,490px)}
+ .aoHeritageSurface .aoJourneyRoutes button{flex-basis:150px}
+}
+
 `;
