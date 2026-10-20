@@ -9,6 +9,7 @@ import {
   projectExploreDataset,
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
+import {buildTimeMassBoard,validTimeMassDate} from "./mapcn-time-mass-board.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
 import { EXPLORE_ATLAS_LAYOUT_STYLE } from "./explore-atlas-layout-style.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
@@ -169,6 +170,11 @@ export function createFindOwner(win=globalThis){
     selectedPlaceId:null,
     displayLimit:24,
     mapcnDiscoverLimit:36,
+    timeMassOpen:false,
+    timeMassDate:localTodayIso(),
+    timeMassQuery:"",
+    timeMassEvidence:"ALL",
+    timeMassLimit:24,
     bibleAtlas:false,
     bibleIndex:0,
   };
@@ -311,6 +317,11 @@ export function createFindOwner(win=globalThis){
     // detaches its focused input. Retain focus, caret and page position so
     // users can type a complete query, including on mobile keyboards.
     const priorDiscoverScroll=node.querySelector?.(".aoMapcnDiscoverEntries")?.scrollTop??0;
+    const priorTimeMassScroll=node.querySelector?.(".aoTimeMassScroll")?.scrollTop??0;
+    const activeTimeMassSearch=node.querySelector?.("[data-explore-time-mass-query]");
+    const timeMassFocused=activeTimeMassSearch===win?.document?.activeElement;
+    const timeMassCaret=timeMassFocused?{start:activeTimeMassSearch.selectionStart,
+      end:activeTimeMassSearch.selectionEnd}:null;
     const activeSearch=node.querySelector?.("[data-find-query]");
     const searchFocus=preserveSearchFocus&&activeSearch===win?.document?.activeElement
       ? {
@@ -421,6 +432,11 @@ export function createFindOwner(win=globalThis){
       selectedId:state.selectedId,
       selectedOverride,
       displayLimit:state.displayLimit,
+      timeMass:state.lens==="heritage"&&state.timeMassOpen
+        ?buildTimeMassBoard({projection,asOf:localTodayIso(),
+          date:state.timeMassDate,query:state.timeMassQuery,
+          evidence:state.timeMassEvidence,limit:state.timeMassLimit,
+          language:language(win)}):null,
       placeProfiles,
       journeyOpen:state.lens==="heritage"&&state.journeyOpen,
       journeys,
@@ -471,6 +487,14 @@ export function createFindOwner(win=globalThis){
     }else node.innerHTML=rendered;
     const discoverEntries=node.querySelector?.(".aoMapcnDiscoverEntries");
     if(discoverEntries)discoverEntries.scrollTop=priorDiscoverScroll;
+    const newTimeMassScroll=node.querySelector?.(".aoTimeMassScroll");
+    if(newTimeMassScroll)newTimeMassScroll.scrollTop=priorTimeMassScroll;
+    if(timeMassFocused){
+      const next=node.querySelector?.("[data-explore-time-mass-query]");
+      next?.focus?.({preventScroll:true});
+      if(Number.isInteger(timeMassCaret?.start)&&Number.isInteger(timeMassCaret?.end))
+        try{next.setSelectionRange(timeMassCaret.start,timeMassCaret.end)}catch{}
+    }
     if(searchFocus){
       const next=node.querySelector?.("[data-find-query]");
       next?.focus?.({preventScroll:true});
@@ -586,6 +610,7 @@ export function createFindOwner(win=globalThis){
     if(options?.lens==="heritage"||EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
     if(state.lens==="heritage"){
       state.view="map";
+      state.timeMassOpen=options?.timeMass===true;
       if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
     }
     state.calendarKey=state.lens==="pilgrimages"&&typeof options?.calendarKey==="string"?options.calendarKey:null;
@@ -661,6 +686,7 @@ export function createFindOwner(win=globalThis){
     atlasScriptureReturn=null;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     state.bibleAtlas=false;state.bibleIndex=0;
+    state.timeMassOpen=false;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     nearbyResults=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
@@ -757,6 +783,7 @@ export function createFindOwner(win=globalThis){
         state.query=queryByLens.get(value)??"";
       }
       state.lens=value;state.calendarKey=null;nearbyResults=null;
+      state.timeMassOpen=false;
       if(value!=="heritage"){state.journeyOpen=false;journeyPreviousCategories=null;}
       if(value==="saints")state.view="list";
       else if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
@@ -1058,11 +1085,34 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();
       state.query="";state.heritageCategories=[...HERITAGE_CATEGORIES];
       state.journeyOpen=false;journeyPreviousCategories=null;
+      state.timeMassOpen=false;
       state.highlightCustomId=null;state.selectedId=null;
       state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
       nearbyResults=null;
       lastMapView=null;lastMapLens=null;
       void paint();return;
+    }
+    if(target?.closest?.("[data-explore-time-mass-toggle]")&&state.lens==="heritage"){
+      event.preventDefault?.();
+      state.timeMassOpen=!state.timeMassOpen;
+      if(state.timeMassOpen){
+        state.journeyOpen=false;journeyPreviousCategories=null;nearbyResults=null;
+        state.selectedId=null;state.selectedPlaceId=null;
+      }
+      void paint();return;
+    }
+    if(state.lens==="heritage"&&state.timeMassOpen){
+      if(target?.closest?.("[data-explore-time-mass-calendar]")){
+        event.preventDefault?.();
+        void handoff("calendar",()=>win?.AO_CALENDAR_APP_V1?.select?.(state.timeMassDate),
+          language(win)==="fr"?"Date du calendrier indisponible.":"Calendar date unavailable.");
+        return;
+      }
+      if(target?.closest?.("[data-explore-time-mass-more]")){
+        event.preventDefault?.();
+        state.timeMassLimit=Math.min(120,state.timeMassLimit+24);
+        void paint();return;
+      }
     }
     const nearButton=target?.closest?.("[data-heritage-nearby]");if(nearButton){event.preventDefault?.();locateNearby(nearButton);return;}
     if(target?.closest?.("[data-heritage-nearby-close]")){
@@ -1131,6 +1181,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();state.expandDetail=false;void paint({selectionOnly:true});return;
     }
     const openJourney=target?.closest?.("[data-explore-journey-open]");
+    if(openJourney)state.timeMassOpen=false;
     if(openJourney&&state.lens==="heritage"){
       event.preventDefault?.();
       if(!state.journeyOpen){
@@ -1179,6 +1230,7 @@ export function createFindOwner(win=globalThis){
       void paint({selectionOnly:true});return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
+    if(heritageCategory)state.timeMassOpen=false;
     if(heritageCategory&&state.lens==="heritage"){
       event.preventDefault?.();
       // Changing ordinary map subjects exits the D journey folio without
@@ -1203,6 +1255,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();state.selectedId="tradition:custom:"+state.highlightCustomId;state.expandDetail=false;void paint({selectionOnly:true});return;
     }
     const heritageCustom=target?.closest?.("[data-heritage-custom]");
+    if(heritageCustom)state.timeMassOpen=false;
     if(heritageCustom&&state.lens==="heritage"){
       event.preventDefault?.();
       const id=heritageCustom.dataset.heritageCustom;
@@ -1354,6 +1407,11 @@ export function createFindOwner(win=globalThis){
 
   function onInput(event){
     if(!openState)return;
+    const timeInput=event?.target?.closest?.("[data-explore-time-mass-query]");
+    if(timeInput&&state.lens==="heritage"&&state.timeMassOpen){
+      state.timeMassQuery=timeInput.value||"";
+      state.timeMassLimit=24;void paint();return;
+    }
     const input=event?.target?.closest?.("[data-find-query]");if(!input)return;
     state.query=input.value??"";nearbyResults=null;state.selectedId=null;state.selectedPlaceId=null;state.expandDetail=false;state.displayLimit=24;
     void paint({preserveSearchFocus:true});
@@ -1361,6 +1419,22 @@ export function createFindOwner(win=globalThis){
 
   function onChange(event){
     if(!openState)return;
+    if(state.lens==="heritage"&&state.timeMassOpen){
+      const dateField=event?.target?.closest?.("[data-explore-time-mass-date]");
+      if(dateField){
+        if(validTimeMassDate(dateField.value)){state.timeMassDate=dateField.value;void paint();}
+        else actionError(language(win)==="fr"?"Date invalide":"Invalid date");
+        return;
+      }
+      const statusField=event?.target?.closest?.("[data-explore-time-mass-evidence]");
+      if(statusField){
+        const allowed=["ALL","SOURCE_REVIEW_CURRENT","SOURCE_ATTESTED","REVIEW_DUE","RAW_UNCONFIRMED","LISTING_ONLY"];
+        if(allowed.includes(statusField.value)){
+          state.timeMassEvidence=statusField.value;state.timeMassLimit=24;void paint();
+        }
+        return;
+      }
+    }
     if(state.lens!=="traditions")return;
     const field=event?.target?.closest?.("[data-atlas-filter]");
     if(!field)return;
