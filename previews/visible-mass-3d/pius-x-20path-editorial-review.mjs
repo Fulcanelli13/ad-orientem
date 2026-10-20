@@ -10,7 +10,7 @@ const PATCH=BASE+"pius-x-source-bounded-bilingual-corrections-20261020.v1.json";
 const ELIG=BASE+"pius-x-chanoine-22-answer-aq04-aq05-eligibility-20261020.v1.json";
 const ORIGINAL_PRINT="https://it.wikisource.org/wiki/Indice:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu";
 const allowedDraftPath=p=>/^data\/learn\/research\/pius-x-batch(?:9-sacraments|10-eucharist)-[a-e]-20261020\.v1\.json$/.test(p);
-const qid=id=>/^PX1905-Q(?:5(?:6[7-9]|[7-9]\d)|6(?:[0-5]\d|66))$/.test(id);
+const qid=id=>/^PX1905-Q(?:5(?:6[7-9]|[7-9]\d)|6(?:[0-5]\d|6[0-6]))$/.test(id);
 const reject=why=>{throw new Error("SPX review refused: "+why)};
 export async function createPiusX20PathReview(read){
  if(typeof read!=="function")reject("source owner read function missing");
