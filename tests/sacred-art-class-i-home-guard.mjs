@@ -54,6 +54,7 @@ const good={
   sha256:"a".repeat(64),sourceUrl:"https://example.org/original-artwork",
   credit:"Philippe de Champaigne",reuse:"PUBLIC_DOMAIN",
   width:2400,height:1800,placementReviewed:"exact",
+  nonPradoSourceVerified:true,
   physicalOriginalVerified:true,imageBytesVerified:true,
   legalReuseVerified:true,cropReviewed:true,properAndGospelReviewed:true,
   alt:"The Annunciation by Philippe de Champaigne"
@@ -78,12 +79,24 @@ for(const bad of [
   {credit:""},
   {reuse:"UNKNOWN"},
   {width:200},
+  {nonPradoSourceVerified:false},
+  {sourceUrl:"https://commons.wikimedia.org/wiki/File:Prado_Painting.jpg"},
   {physicalOriginalVerified:false},
   {imageBytesVerified:false},
   {legalReuseVerified:false},
   {cropReviewed:false},
   {properAndGospelReviewed:false},
 ])assert.equal(releasedClassIArtwork(state,{[entry.artworkId]:{...good,...bad}}),null);
+for(const pradoDate of ["2026-01-06","2026-12-08"]){
+ const blocked=approvedClassIEntry(pradoDate);
+ const fakeState={...state,selectedDate:pradoDate,resolution:{...state.resolution,
+    day:{main:{id:blocked.principalId}},
+    proper:{status:"ready",data:{sourcePath:blocked.sourcePath,
+      gospel:{en:"Matthew 2:1"}}}}};
+ const fakeMaster={...good,artworkId:blocked.artworkId,placementReviewed:"feast"};
+ assert.equal(releasedClassIArtwork(fakeState,{[blocked.artworkId]:fakeMaster}),null,
+   "Prado-origin artwork remains excluded even if its source URL points at a mirror");
+}
 const approved=releasedClassIArtwork(state,masters);
 assert.equal(approved.artworkId,entry.artworkId);
 assert.match(releasedClassIArtworkMarkup(approved),/assets\/approved\/sacred-art\/champaigne-annunciation\.webp/);
@@ -92,8 +105,8 @@ assert.match(releasedClassIArtworkMarkup(approved),/data-ao-approved-artwork-id/
 // The historical v43 selector includes images by permanently excluded artists.
 // Fail closed even if the donor HTML hides its artist or file ID.
 const donor='<div class="aoPhase1HomeArt"><img src="historic.jpg"></div>';
-for(const date of ["2026-04-03","2026-04-10","2026-05-14",
-  "2026-05-23","2026-05-27","2026-06-04"])
+for(const date of ["2026-01-06","2026-04-03","2026-04-10","2026-05-14",
+  "2026-05-23","2026-05-27","2026-06-04","2026-12-08"])
   assert.equal(safeLegacyHomeArtMarkup({selectedDate:date,
     resolution:{proper:{data:{sourcePath:"Tempora/Pasc5-4"}}}},donor),"",
     "Old image must not replace a newly selected 2026 artwork on "+date);
