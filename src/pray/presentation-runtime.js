@@ -1614,7 +1614,7 @@ function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getM
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
 function history(records,label){return `<div class="aoP435930History"><h3>${esc(label)}</h3>${records.length?records.slice().reverse().map(r=>`<div><span>${esc(fmtDate(r.date))}</span><b class="${r.complete?'ok':'partial'}">${esc(r.complete?L('Reported complete','Déclaré accompli'):L('Incomplete / interrupted','Incomplet / interrompu'))}</b>${r.confessionDate?`<small>${esc(L('Confession','Confession'))}: ${esc(fmtDate(r.confessionDate))}</small>`:''}</div>`).join(''):`<p>${esc(L('No reports yet.','Aucune déclaration pour le moment.'))}</p>`}</div>`}
 function upsert(arr,rec){const i=arr.findIndex(x=>x.date===rec.date);if(i>=0)arr[i]=rec;else arr.push(rec);arr.sort((a,b)=>a.date.localeCompare(b.date));while(arr.length>36)arr.shift()}
-function handoff(id){externalResume=captureResume();close({silent:true,preserve:true});return BASE?.open?.(id,{returnContext:PRAY_CTX})}
+function handoff(id){const resume=captureResume();externalResume=resume;close({silent:true,preserve:true});return BASE?.open?.(id,{returnContext:PRAY_CTX,returnPrayerSnapshot:resume})}
 function devotionalMonthRegisterMarkup(kind,records,tracking,selectedDate){
  const saturday=kind==="saturday",needed=saturday?5:9;
  const report=monthlyDevotionalRegister(tracking?records:[],{needed,selectedDate});
@@ -1811,6 +1811,7 @@ function onPrayTouchEnd(e){
  horizontalStep(dx<0?1:-1);
 }
 function captureResume(){return {view,familyId,navStack:[...navStack],prayerReturnView,prayerId}}
+function restoreHandoff(snapshot){if(!snapshot||typeof snapshot.view!=="string")return false;externalResume=null;return reopenResume(snapshot)}
 function reopenResume(snapshot){
  if(!snapshot)return false;
  navStack=Array.isArray(snapshot.navStack)?[...snapshot.navStack]:[];view=snapshot.view||'home';familyId=snapshot.familyId||null;prayerReturnView=snapshot.prayerReturnView||null;prayerId=snapshot.prayerId||null;
@@ -2819,7 +2820,7 @@ function qa(){
  return {version:VERSION,pass:ids.length===48&&!!P('sacrament_act_of_contrition')&&!!P('litany_loreto_1962'),prayerRecords:ids.length,sourceRegistry:Object.keys(SOURCE_REGISTRY).length,missingProvenanceSignals:missingProv,immaculateHeartLanguages:{en:!!immaculate.en,fr:!!immaculate.fr,la:!!immaculate.la},confessionPersistence:'session-only',massRoutesIntercepted:false,angelusUsesCanonicalPaschalContext:true,internalNavigation:'stack',externalResume:true,dialogFocusTrap:true,stageScrollReset:true};
 }
 window.AO_PRAY_SOURCE_REGISTRY_V435930=SOURCE_REGISTRY;
-window.AO_PRAY_V435930={version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
+window.AO_PRAY_V435930={restoreHandoff,version:VERSION,uxContract:devotionalUxContract(),open,openFamily,close,state:()=>({...JSON.parse(JSON.stringify(S)),view,confessionStage:CONF.stage,confessionPath:CONF.path,confessionExaminationStep:CONF.examStep,benedictionStep:BEN.step,adorationMode:ADOR.mode,adorationPresence:adorationPresence()}),setRecitationMode,applySettingsPreferences,sources:SOURCE_REGISTRY,qa,clearSavedState(){S=cloneDefault();setAdorationPresence('reserved');save();return true}};
 })();
 
 
