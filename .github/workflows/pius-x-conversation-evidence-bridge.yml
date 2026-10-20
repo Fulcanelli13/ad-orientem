@@ -60,6 +60,8 @@ on:
       - 'data/learn/research/pius-x-100answer-editorial-release-triage-20261020.v1.json'
       - 'data/learn/research/pius-x-first40-claim-italian-witness-review-20261020.v1.json'
       - 'tests/pius-x-first40-italian-claim-review.mjs'
+      - 'tools/formation/build-pius-x-810-corpus-release-selection.mjs'
+      - 'tests/pius-x-full810-balanced130-corpus.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
       - 'tools/formation/build-pius-x-release-review.mjs'
       - 'tests/pius-x-100answer-editorial-release-triage.mjs'
@@ -365,5 +367,27 @@ jobs:
         with:
           name: SPX-40-Answer-Bilingual-Editorial-Batch
           path: artifacts/pius-x-release-review/SPX_40_Answer_Editorial_Batch_Review.html
+          if-no-files-found: warn
+          retention-days: 30
+
+  pius-x-full-corpus-candidate-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconcile all 810 original St Pius X draft families
+        run: node tools/formation/build-pius-x-810-corpus-release-selection.mjs
+      - name: Verify corpus ownership and the 130-candidate first-release shortlist
+        run: node tests/pius-x-full810-balanced130-corpus.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: SPX-Complete-810-Corpus-And-Balanced-First-Release
+          path: artifacts/pius-x-complete-corpus/
           if-no-files-found: warn
           retention-days: 30
