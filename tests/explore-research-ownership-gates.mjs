@@ -38,6 +38,9 @@ const postReviewAdmissions=[
  ["DOM-011","att:DOM-011:FR","AREA_CONTEXT"],
  ["DOM-013","att:DOM-013:FR","AREA_CONTEXT"],
  ["BLSS-001","att:BLSS-001:ROMAN","NOT_MAPPED"],
+ ["BLSS-002","att:BLSS-002:ROMAN","NOT_MAPPED"],
+ ["BLSS-003","att:BLSS-003:ROMAN","NOT_MAPPED"],
+ ["BLSS-004","att:BLSS-004:ROMAN","NOT_MAPPED"],
 ];
 for(const [id,attId,mapPolicy] of postReviewAdmissions){
  const custom=C.customs.find(c=>c.custom_id===id);

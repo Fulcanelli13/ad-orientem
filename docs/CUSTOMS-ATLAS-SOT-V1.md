@@ -54,7 +54,7 @@ The seed is intentionally not the full 63-row SOT-07 corpus. Rows depending only
 
 ### Domestic customary source-lock addition — 20 October 2026
 
-The current review-branch corpus contains **17 active customs, 75 attestations, and 81 registered sources**. It source-locks three original SOT-07 research IDs: `DOM-003` (holy water at home), `DOM-011` (Candlemas candle at home), and `DOM-013` (blessed branches at home), plus separately documented new extension `BLSS-001` (St Blaise's throat blessing). The inherited three use French `AREA_CONTEXT` attestations; the new ritual extension has a global-context `NOT_MAPPED` attestation. None creates a map pin. The initial 13-custom figures above describe the **initial** foundation, not the current branch total.
+The current review-branch corpus contains **20 active customs, 78 attestations, and 88 registered sources**. It source-locks three original SOT-07 research IDs: `DOM-003` (holy water at home), `DOM-011` (Candlemas candle at home), and `DOM-013` (blessed branches at home), plus separately documented new extension `BLSS-001` (St Blaise's throat blessing). The inherited three use French `AREA_CONTEXT` attestations; the new ritual extension has a global-context `NOT_MAPPED` attestation. None creates a map pin. The initial 13-custom figures above describe the **initial** foundation, not the current branch total.
 
 See `docs/CUSTOMS-BBG-SOURCE-LOCK-2026-10-20.md` for the direct-source table, Calendar handoff, historical prayer-book limitations, and the newly admitted St Blaise source-of-truth extension under its own fresh ID (see `data/customs/sot07-extensions.v1.json`). No negative-knowledge exceptions were removed.
 
@@ -93,3 +93,7 @@ Any future Directory ↔ Custom or Community ↔ Custom association needs its ow
 ## Next step
 
 The next corpus should be **Shrines & Pilgrimages**. Its first job is to assign canonical Place identities to source-backed `PLACE_PENDING` records such as Laghet and Lourdes, then add routes/events without moving their dates or ceremonial mechanics out of their current owners.
+
+### Feast-day blessings — 20 October 2026
+
+Three separately evidenced, **new** SOT-07 extensions are included as optional *non-map* customs: `BLSS-002` (Assumption herbs, flowers and fruits), `BLSS-003` (St John wine), and `BLSS-004` (Holy Saturday Easter foods). Their original Roman Ritual and Church/popular-piety sources are registered in `source-registry.v1.json`. None changes the Mass, reclassifies the feast, presumes availability, creates a physical pin, or authorises lay administration of priestly blessings. The original 63-row SOT-07 register remains unchanged. See `data/customs/sot07-extensions.v1.json` and `docs/CUSTOMS-FEAST-BLESSINGS-2026-10-20.md`.
