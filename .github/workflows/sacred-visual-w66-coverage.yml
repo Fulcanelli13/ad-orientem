@@ -10,6 +10,8 @@ on:
       - "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json"
       - "tools/calendar/acquire-sacred-art-bulk.mjs"
       - "tests/sacred-art-bulk-acquisition.mjs"
+      - "tools/calendar/acquire-sacred-art-nga.mjs"
+      - "tests/sacred-art-nga-open-access.mjs"
       - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
       - "tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs"
       - "data/research/sacred-visual-w68-2026-runtime-proper-and-151-atlas-artwork-crosswalk-20261015.v1.json"
@@ -83,5 +85,26 @@ jobs:
         with:
           name: sacred-art-source-batch-${{ matrix.shard }}
           path: artifacts/sacred-art-bulk/batch-*/
+          retention-days: 14
+          if-no-files-found: warn
+
+  official-nga-image-intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate selected NGA object identities, explicit image access, and source restrictions
+        run: node tests/sacred-art-nga-open-access.mjs
+      - name: Acquire NGA six-work official Open Access subset (no promotion)
+        run: node tools/calendar/acquire-sacred-art-nga.mjs
+      - name: Preserve NGA source bytes, hashes, and QA gallery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-nga-6-sources-for-qa
+          path: artifacts/sacred-art-nga-official/
           retention-days: 14
           if-no-files-found: warn
