@@ -410,6 +410,12 @@ export function mountFullMassPreflight({
 
     const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},language(),{form:summary.form});
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
+    // A real 1962 commemoration is an essential preparation datum, not
+    // optional technical metadata. Reveal the context whenever one is
+    // resolved, so the reader sees it before entering Mass.
+    const commemoration=root.querySelector("[data-mass-calendar-commemoration]");
+    const calendarDisclosure=root.querySelector("[data-folio-calendar-details]");
+    if(commemoration?.hidden===false&&calendarDisclosure)calendarDisclosure.open=true;
     const detailsLabel=root.querySelector("[data-mass-calendar-details-label]");
     if(detailsLabel)detailsLabel.textContent=fr?"Explorer le calendrier liturgique":"Explore the liturgical calendar";
     for(const button of root.querySelectorAll("[data-mass-calendar-view]")){
