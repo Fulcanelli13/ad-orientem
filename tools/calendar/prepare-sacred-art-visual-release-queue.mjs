@@ -41,7 +41,7 @@ export function buildReviewQueue(qa){
  }).sort((a,b)=>a.priority-b.priority||a.artworkId.localeCompare(b.artworkId));
  const groups=Object.fromEntries([...new Set(images.map(x=>x.lane))].map(lane=>[lane,images.filter(x=>x.lane===lane).length]));
  assert.equal(Object.values(groups).reduce((a,b)=>a+b,0),images.length);
- return {schema:"AO_SACRED_ART_93_VISUAL_RELEASE_REVIEW_QUEUE_V1",asOf:"2026-10-20",
+ return {schema:"AO_SACRED_ART_VISUAL_RELEASE_REVIEW_QUEUE_V1",asOf:"2026-10-20",
   sourceActionsRun:qa.linkedActionsRun||null,filesStaged:images.length,
   hardLocks:{noPradoOrMirrors:true,noPublicationWithoutCurator:true,noAutomatedRightsClearance:true,
    noRedefinitionOfExistingPaintingRating:true,noImageMasterPushedToRepository:true,
@@ -61,7 +61,7 @@ export function writeQueue({manifest="artifacts/qa-integrated/manifest.json",out
  writeFileSync(join(out,"visual-release-review-queue.html"),
   '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Ad Orientem · Sacred art curator gate</title>'+
   '<style>body{background:#090d13;color:#e1d8c7;font:15px Georgia;margin:25px}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #504d49;padding:9px;text-align:left}a{color:#aac6db}</style>'+
-  '<h1>Curator approval gate · 93 artwork source files</h1><p>NOT approved or published; a metadata triage for physical-original, rights, crop and mobile visual review.</p>'+
+  '<h1>Curator approval gate · '+result.filesStaged+' artwork source files</h1><p>NOT approved or published; a metadata triage for physical-original, rights, crop and mobile visual review.</p>'+
    headings+'<table><thead><tr><th>Original</th><th>Painter</th><th>Review lane</th><th>Resolution</th><th>Outstanding review</th><th>Source</th></tr></thead><tbody>'+rows+'</tbody></table></html>');
  console.log(JSON.stringify({imageFiles:result.filesStaged,groupCounts:result.groups,releaseCount:0}));
  return result;
