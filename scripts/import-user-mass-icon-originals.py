@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Strict import/verification of the 14 original user-supplied Mass icon PNGs.
-Run from the repository root with Python 3 (stdlib only).
+Run from the repository root with Python 3 (stdlib only). Supports both archive layouts.
   python scripts/import-user-mass-icon-originals.py /path/to/archive.zip --install
   python scripts/import-user-mass-icon-originals.py --verify-bank
 All originals remain review-only. This does not approve or activate artwork.
@@ -45,7 +45,11 @@ def run():
                 name = x["sourceFilename"]
                 if Path(name).name != name or "\\" in name:
                     raise ValueError("unsafe source name " + name)
-                raw = z.read("originals/" + name)
+                candidates = ["originals/" + name, (DEST / name).as_posix()]
+                available = [entry for entry in candidates if entry in z.namelist()]
+                if len(available) != 1:
+                    raise ValueError("expected exactly one archive member for " + name)
+                raw = z.read(available[0])
                 if (*hashes(raw), len(raw)) != (
                     x["sha256"], x["gitBlobSha1"], x["sizeBytes"]
                 ):
