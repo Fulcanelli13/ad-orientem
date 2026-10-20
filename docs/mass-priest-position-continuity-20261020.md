@@ -67,6 +67,10 @@ The optional sermon `AO.SM.B096.SYN` has a legacy bookkeeping sort number of 265
 
 Conditional rites and actors cannot be collapsed: at Solemn Mass the **subdeacon sings the Epistle** and **deacon sings the Gospel**; in Missa Cantata the Epistle may be sung by a minister or read/sung by the priest (Ritus VI.4–VI.8).
 
+## Last Gospel Missal exception
+
+The ordinary Last Gospel uses the Gospel-side reading station while the Missal remains at the Epistle side. If a **proper Last Gospel** is appointed, a source-backed conditional variant may require transferring the Missal to the Gospel side; this must be gated by the proper Gospel actually appointed, not by the generic `C0267` source cue. If the Last Gospel is omitted, no reading-station cue is displayed. These variants are documented in `conditionalBookOverlays`, not activated automatically in the ordinary track.
+
 ## Release safeguards
 
 The existing `reader-priest-positions.v1.json` (49 certified transitions) and 48-card LIVE model remain unchanged. The supplemental `C0249` source-backed correction is deliberately **observer-gated**. The names of approved assets, the rejected-art exclusion registry, and the source event IDs are untouched.
