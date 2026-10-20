@@ -958,6 +958,7 @@ export function createFindOwner(win=globalThis){
     if(worldButton&&state.lens==="heritage"){
       event.preventDefault?.();
       state.query="";state.heritageCategories=[...HERITAGE_CATEGORIES];
+      state.journeyOpen=false;journeyPreviousCategories=null;
       state.highlightCustomId=null;state.selectedId=null;
       state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
       nearbyResults=null;
@@ -1045,6 +1046,9 @@ export function createFindOwner(win=globalThis){
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
       event.preventDefault?.();
+      // Changing ordinary map subjects exits the D journey folio without
+      // preserving an obsolete route filter over an unrelated map category.
+      state.journeyOpen=false;journeyPreviousCategories=null;
       const value=heritageCategory.dataset.heritageCategory;
       if(value==="ALL")state.heritageCategories=[...HERITAGE_CATEGORIES];
       else if(HERITAGE_CATEGORIES.includes(value)){
