@@ -28,9 +28,9 @@ for(const [lane,name] of bindings){
   certified++;
  }
 }
-assert.equal(certified,212);
+assert.equal(certified,211);
 const icon=(cueId,state={})=>iconKeysForReaderState({
- ...state,cueId,curated65FinalArt:true,
+ form:"MISSA_CANTATA_SIMPLE",...state,cueId,curated65FinalArt:true,
 });
 for(const [cue,expected] of [
  ["AO.SM.C0110","priest_elevate_host_rich"],
@@ -64,7 +64,23 @@ assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER",facing:"P
   "Facing-people cannot override Foot Centre artwork veto");
 assert.equal(icon("AO.SM.C0265",{priestAction:{cueId:"AO.SM.C0265",label:"BLESSES PEOPLE"}}).priestActionIconKey,null,
   "Final blessing must not use Indulgentiam artwork");
-assert.equal(icon("AO.SM.C0144",{priestVoice:{cueId:"AO.SM.C0144",voice:"CLEAR SPOKEN"}}).priestVoiceIconKey,"priest_audible");
+assert.equal(icon("AO.SM.C0144",{priestVoice:{cueId:"AO.SM.C0144",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"final_ao_chant",
+  "Preface sung by priest requires user-approved Chant artwork, not audible-speech pictogram");
+assert.equal(icon("AO.SM.C0053",{priestVoice:{cueId:"AO.SM.C0053",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,"final_ao_chant");
+assert.equal(icon("AO.SM.C0259",{priestVoice:{cueId:"AO.SM.C0259",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,"final_ao_chant");
+assert.equal(icon("AO.SM.C0130",{priestVoice:{cueId:"AO.SM.C0130",voice:"AUDIBLE / ELEVATED"}}).priestVoiceIconKey,"priest_audible",
+  "Orate fratres is spoken and must not show Chant icon");
+assert.equal(icon("AO.SM.C0109",{priestVoice:{cueId:"AO.SM.C0109",voice:"SECRET OFFERTORY"}}).priestVoiceIconKey,"final_ao_pray_audible",
+  "Priest's Offertory antiphon recitation is not Schola chant");
+for(const id of ["AO.SM.C0075","AO.SM.C0082","AO.SM.C0086"]){
+ assert.equal(icon(id,{form:"SOLEMN",priestVoice:{cueId:id,voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
+ "Celebrant chant icon must not be displayed for deacon/subdeacon: "+id);
+}
+assert.equal(icon("AO.SM.C0075",{priestVoice:{cueId:"AO.SM.C0075",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"final_ao_chant");
+assert.equal(icon("AO.SM.C0053",{form:"LOW",priestVoice:{cueId:"AO.SM.C0053",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,null,
+ "Final 65 Sung resolver cannot leak priest Chant into Low Mass");
+assert.equal(iconKeysForReaderState({priestVoice:{value:"CHANTED"}}).priestVoiceIconKey,"priest_audible",
+ "Non-curated/Low reader audible fallback must never be the priest Chant icon");
 assert.equal(icon("AO.SM.C0001",{priestVoice:{cueId:"AO.SM.C0001",voice:"LOW VOICE"}}).priestVoiceIconKey,"final_ao_pray_audible",
   "Low voice must not be incorrectly described as silent");
 assert.equal(icon("AO.SM.C0174",{priestVoice:{cueId:"AO.SM.C0174",voice:"SILENT"}}).priestVoiceIconKey,"final_ao_pray_silent");
