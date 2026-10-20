@@ -32,7 +32,7 @@ const expectedDomains=Object.fromEntries(Object.entries(S.domains).map(([k,v])=>
 }]));
 assert.deepEqual(R.domain_inventory,expectedDomains);
 // R is the frozen editorial review, not a live count register. The following
-// fourteen source-locked CUSTOMS ATLAS identities were admitted after that review.
+// twenty source-locked CUSTOMS ATLAS identities were admitted after that review.
 const postReviewAdmissions=[
  ["DOM-003","att:DOM-003:FR","AREA_CONTEXT"],
  ["DOM-011","att:DOM-011:FR","AREA_CONTEXT"],
@@ -41,6 +41,12 @@ const postReviewAdmissions=[
  ["BLSS-002","att:BLSS-002:ROMAN","NOT_MAPPED"],
  ["BLSS-003","att:BLSS-003:ROMAN","NOT_MAPPED"],
  ["BLSS-004","att:BLSS-004:ROMAN","NOT_MAPPED"],
+ ["ADVT-001","att:ADVT-001:US","NOT_MAPPED"],
+ ["ADVT-002","att:ADVT-002:US","NOT_MAPPED"],
+ ["ADVT-003","att:ADVT-003:MX","NOT_MAPPED"],
+ ["XMAS-001","att:XMAS-001:US","NOT_MAPPED"],
+ ["HTHU-001","att:HTHU-001:US","NOT_MAPPED"],
+ ["ROGA-001","att:ROGA-001:US","NOT_MAPPED"],
  ["NDAY-001","att:NDAY-001:US","NOT_MAPPED"],
  ["PATR-001","att:PATR-001:FR","NOT_MAPPED"],
  ["MARI-001","att:MARI-001:FR","NOT_MAPPED"],

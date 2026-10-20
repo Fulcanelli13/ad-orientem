@@ -462,6 +462,108 @@
       "calendar_trigger_hint": "Holy Saturday (calculated from 1962 Easter by Calendar), with domestic use on Easter Sunday",
       "confidence": "HIGH",
       "guardrail": "No obligation, no universal standard basket contents or Holy Saturday schedule. Distinguish a minister's ritual blessing from family prayer before the Easter meal and do not displace the Easter Vigil."
+    },
+    {
+      "custom_id": "ADVT-001",
+      "family": "Advent household customs",
+      "name": "Family Advent wreath and Sunday candle prayer",
+      "canonical_statement": "The family Advent wreath, commonly made with four candles, accompanies prayer and Scripture during Advent; additional candles are traditionally lit on successive Sundays as the Nativity approaches.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Catholic family Advent practice, contemporary episcopal witness",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P0 SIX PR",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "First Sunday of Advent; date owned by Calendar, no feast added",
+      "confidence": "HIGH",
+      "guardrail": "Household devotion only, not an ancient universal Roman rubric. Church and home blessing texts differ across rites and periods; do not insert modern blessing text or priestly gestures into the 1962 Mass."
+    },
+    {
+      "custom_id": "ADVT-002",
+      "family": "Advent household customs",
+      "name": "Advent manger straw after acts of charity",
+      "canonical_statement": "In a traditional Advent household activity, family members place straw in an empty manger after an act of kindness or prayer, preparing symbolically for the placement of the Christ Child at Christmas.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Traditional attribution to French custom; independently documented in a Catholic US family in 2014",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P0 SIX PR",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Advent household preparation; Calendar owns liturgical dates",
+      "confidence": "HIGH",
+      "guardrail": "The French origin is a reported attribution, not certification of universal French practice. No in-app good-deed scoring, merit counting, sacramental or required custom."
+    },
+    {
+      "custom_id": "ADVT-003",
+      "family": "Advent community customs",
+      "name": "Las Posadas — Holy Family lodging procession",
+      "canonical_statement": "In Las Posadas, neighbours and families recall Mary and Joseph's search for lodging through songs and symbolic visits between houses, traditionally beginning on 16 December in Mexico and other Latin American Catholic communities.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Traditional Catholic Mexican and wider Latin American Advent practice; USCCB modern confirmation",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P0 SIX PR",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "16–24 December in communities that actually celebrate Posadas",
+      "confidence": "HIGH",
+      "guardrail": "Regional and optional, not a ninth-day 1962 Mass formulary, compulsory celebration, default parish procession, confirmed public route or permission for a priestly ritual."
+    },
+    {
+      "custom_id": "XMAS-001",
+      "family": "Christmas household customs",
+      "name": "Sharing opłatek on Polish Christmas Eve",
+      "canonical_statement": "Polish Catholic families may share thin unconsecrated opłatek wafers before Christmas Eve supper, exchanging wishes for peace and reconciliation. An optional blessing of the wafers by a priest is separate from the family sharing.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Polish Catholic heritage observed in families and a US parish",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P0 SIX PR",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "24 December as customary domestic vigil, distinct from Mass",
+      "confidence": "HIGH",
+      "guardrail": "Opłatek is not the Eucharist or consecrated host; no pretend Communion, required priestly home blessing, universal Christmas obligation or fabricated fixed 1962 liturgical formula."
+    },
+    {
+      "custom_id": "HTHU-001",
+      "family": "Holy Week lay devotions",
+      "name": "Holy Thursday visits to altars of repose",
+      "canonical_statement": "Some Catholics visit several churches after the Holy Thursday Mass to pray before the Blessed Sacrament reserved at the altar of repose; seven stops is a customary number, not a requirement.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Longstanding Catholic lay pilgrimage custom; 2026 diocesan press witness",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P0 SIX PR",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Holy Thursday, calculated from Easter by Calendar; locally open repositories only",
+      "confidence": "HIGH",
+      "guardrail": "Visits only to actually accessible churches; no inferred schedule, map route, obligatory seven stops, priestly ceremony or new event in the Mass reader."
+    },
+    {
+      "custom_id": "ROGA-001",
+      "family": "Rogation household customs",
+      "name": "Family Rogation walk and prayer for the harvest",
+      "canonical_statement": "A family may mark the Rogation days with a private prayerful walk, asking God to bless the work of farmers and the fruits of the earth, distinct from any priest-led Rogation procession or ministerial blessing.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "1956 independently documented Catholic family handbook practice",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P0 SIX PR",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Major Rogation 25 April and the three Minor Rogation days before Ascension; Calendar owns calculation",
+      "confidence": "HIGH",
+      "guardrail": "Domestic walk is voluntary and never an automatic liturgical procession; omit historical family's improvised blessings or ceremonial imitation. No rite, invented route, farm proximity requirement or 1962 rubric change."
     }
   ],
   "attestations": [
@@ -1850,6 +1952,102 @@
         "DPP-2001"
       ],
       "evidence_note": "The historical Roman Ritual contains specific food blessings; diocesan and Vatican popular-piety sources identify the optional regional household custom and Easter table. No parish/place or universal scheduling claim is implied.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:ADVT-001:US",
+      "custom_id": "ADVT-001",
+      "geo_area_id": "geo:country:US",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Catholic family Advent practice, contemporary episcopal witness",
+      "strength": "STRONG",
+      "source_ids": [
+        "USCCB-ADVENT-WREATH-HOME"
+      ],
+      "evidence_note": "WEI58-05-002. USCCB documents a household Advent wreath and a family member leading home prayer; independent of Weiser's historical-origin assertions.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:ADVT-002:US",
+      "custom_id": "ADVT-002",
+      "geo_area_id": "geo:country:US",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Traditional attribution to French custom; independently documented in a Catholic US family in 2014",
+      "strength": "STRONG",
+      "source_ids": [
+        "CATHCULTURE-ADVENT-MANGER-STRAW-2014"
+      ],
+      "evidence_note": "WEI58-05-005. The 2014 account specifically documents household straw added after good deeds; no evidence for universal French prevalence.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:ADVT-003:MX",
+      "custom_id": "ADVT-003",
+      "geo_area_id": "geo:country:MX",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Traditional Catholic Mexican and wider Latin American Advent practice; USCCB modern confirmation",
+      "strength": "STRONG",
+      "source_ids": [
+        "USCCB-POSADAS-DEC16"
+      ],
+      "evidence_note": "WEI58-05-011. USCCB identifies 16 December and Latin American communal singing and door-to-door reenactment.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:XMAS-001:US",
+      "custom_id": "XMAS-001",
+      "geo_area_id": "geo:country:US",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Polish Catholic heritage observed in families and a US parish",
+      "strength": "STRONG",
+      "source_ids": [
+        "SJV-VERMONT-OPLATKI"
+      ],
+      "evidence_note": "WEI58-06-009, WEI58-09-007. Parish documents wafers at family supper, home sharing, optional priestly blessing and distinction from Holy Communion.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:HTHU-001:US",
+      "custom_id": "HTHU-001",
+      "geo_area_id": "geo:country:US",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Longstanding Catholic lay pilgrimage custom; 2026 diocesan press witness",
+      "strength": "STRONG",
+      "source_ids": [
+        "CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"
+      ],
+      "evidence_note": "WEI58-15-015. Contemporary diocesan article confirms voluntary tradition, explains that fewer or more than seven churches may be visited.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:ROGA-001:US",
+      "custom_id": "ROGA-001",
+      "geo_area_id": "geo:country:US",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "1956 independently documented Catholic family handbook practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "NEWLAND-ROGATION-FAMILY-1956"
+      ],
+      "evidence_note": "WEI58-04-003. Independent 1956 Catholic family source describes Rogation prayers and family procession for crops.",
       "map_policy": "NOT_MAPPED",
       "confidence": "HIGH"
     }

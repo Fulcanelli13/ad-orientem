@@ -19,6 +19,7 @@ const geography=readJson("data/geography/seed-registry.v1.json");
 const phenomena=readJson("data/explore/sacred-phenomena-seed.v1.json");
 const customsSeed=readJson("data/customs/customs-atlas-seed.v1.json");
 const customSources=readJson("data/customs/source-registry.v1.json");
+const customGuidance=readJson("data/customs/customs-p0-guidance-en-fr.v1.json");
 const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
 const shrineSources=readJson("data/shrines/source-registry.v1.json");
 const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
@@ -71,7 +72,7 @@ const dataset={
   },
   geography:{geoAreas:geography.geoAreas,places:geography.places},
   sacredPhenomena:phenomena,
-  customs:{customs:customsSeed.customs,attestations:customsSeed.attestations,sources:customSources.sources},
+  customs:{customs:customsSeed.customs,attestations:customsSeed.attestations,sources:customSources.sources,guidance:customGuidance.entries},
   shrines:{
     shrines:shrineSeed.shrines,
     pilgrimages:shrineSeed.pilgrimages,
@@ -114,7 +115,7 @@ assert.deepEqual(projection.counts,{
   shrines:257,
   apparitions:33,
   relics:122,
-  traditions:104,
+  traditions:110,
   pilgrimages:240,
   saints:0, // Only six pilot profiles loaded in dedicated fixture.
 });
@@ -569,11 +570,11 @@ assert.deepEqual(atlasUngrounded.map(item=>item.place_id).sort(),[],"all exact-s
 
 
 const customsAtlasItems=projection.byLens.traditions;
-assert.equal(countCanonicalTraditions(customsAtlasItems),27,"27 customs remain independently canonical");
+assert.equal(countCanonicalTraditions(customsAtlasItems),33,"33 customs remain independently canonical");
 const practiceBrowse=groupTraditionsForBrowse(customsAtlasItems);
 assert.ok(practiceBrowse.some(item=>item.source_id==="BLSS-001"),"St Blaise must be discoverable as one canonical non-map tradition");
 assert.ok(customsAtlasItems.some(item=>item.raw?.custom?.custom_id==="BLSS-001"&&item.map_publishable===false),"St Blaise must not manufacture a map pin");
-assert.equal(practiceBrowse.length,27,"list should not turn 86 attestations and 18 novena context links into separate practices");
+assert.equal(practiceBrowse.length,33,"list should not turn 92 attestations and 18 novena context links into separate practices");
 assert.ok(practiceBrowse.every(item=>item.kind==="CANONICAL_CUSTOM"&&!item.map_publishable),"canonical practices are not map pins");
 assert.ok(practiceBrowse.every(item=>item.facts.every(fact=>fact.label!=="Class")),"geographically mixed legacy classification must not appear as exclusive nationality");
 assert.ok(customsAtlasItems.filter(item=>item.kind==="CUSTOM_ATTESTATION").every(item=>item.facts.every(fact=>fact.label!=="Class")),"place-specific evidence must not promote unreviewed national classification");
@@ -586,10 +587,10 @@ assert.ok(regionalPardons.attestation_examples.some(example=>example.place_id),"
 const holyWater=practiceBrowse.find(item=>item.source_id==="DOM-002");
 assert.equal(holyWater.attestation_examples.length,1,"one-locality customs remain one practice");
 const searchedContexts=groupTraditionsForBrowse(customsAtlasItems,{includeNovenaContext:true});
-assert.equal(searchedContexts.length,45,"18 novena contextual links should remain accessible through search/context");
-assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,27,"canonical practice identities must be unique");
+assert.equal(searchedContexts.length,51,"18 novena contextual links should remain accessible through search/context");
+assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,33,"canonical practice identities must be unique");
 const practiceVm=buildExploreViewModel({
-  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:27},
+  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:33},
   view:"list",filters:{},selectedId:"tradition:custom:DEV-007",expandDetail:true,
 });
 const practiceHtml=renderExploreToString(practiceVm);
@@ -597,7 +598,41 @@ assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
 assert.match(practiceHtml,/Documented examples.*36/);
 assert.match(practiceHtml,/data-explore-open-place=/,"examples must deep-link to canonical Places");
 assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navigation, not the default customs structure");
-assert.match(practiceHtml,/>27<\/strong><span>practices/,"list count must describe practices, not attestations");
+assert.match(practiceHtml,/>33<\/strong><span>practices/,"list count must describe practices, not attestations");
+
+
+for(const guide of customGuidance.entries){
+  const item=practiceBrowse.find(x=>x.source_id===guide.custom_id);
+  assert.ok(item,"Missing guidance owner in Explore: "+guide.custom_id);
+  assert.equal(item.item_id,"tradition:custom:"+guide.custom_id);
+  assert.equal(item.title_fr,guide.title_fr);
+  assert.equal(item.summary,guide.description_en);
+  assert.equal(item.summary_fr,guide.description_fr);
+  assert.equal(item.map_publishable,false);
+  assert.equal(item.attestation_examples.length,1);
+  assert.ok(item.source_links.some(x=>customSources.sources.some(y=>y.id===guide.source_ids[0]&&y.url===x.url)),"No source link "+guide.custom_id);
+  assert.ok(item.sections.some(x=>x.label==="Meaning"&&x.body===guide.meaning_en&&x.body_fr===guide.meaning_fr));
+  assert.ok(item.sections.some(x=>x.label==="Optional observance"&&x.body===guide.how_en&&x.body_fr===guide.how_fr));
+  assert.ok(item.sections.some(x=>x.label==="Pastoral context"&&x.body_fr===guide.caution_fr),"French caution must be visible");
+  for(const language of ["en","fr"]){
+    const vm=buildExploreViewModel({
+      language,items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:33},
+      view:"list",filters:{},selectedId:item.item_id,expandDetail:true,
+    });
+    const html=renderExploreToString(vm);
+    const title=language==="fr"?guide.title_fr:guide.title_en;
+    const summary=language==="fr"?guide.description_fr:guide.description_en;
+    const meaning=language==="fr"?guide.meaning_fr:guide.meaning_en;
+    const how=language==="fr"?guide.how_fr:guide.how_en;
+    assert.ok(html.includes(title.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing translated heading "+guide.custom_id);
+    assert.ok(html.includes(summary.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing full description "+guide.custom_id);
+    assert.ok(html.includes(meaning.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing meaning "+guide.custom_id);
+    assert.ok(html.includes(how.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing optional observance "+guide.custom_id);
+    assert.match(html,/<section class="aoFindSources"><small>SOURCES<\/small>/,"Canonical custom must show its source links");
+    assert.doesNotMatch(html,/data-explore-open-place="(?:geo:country|(?:place:))/,"Do not invent a national map pin");
+  }
+}
+assert.equal(customGuidance.entries.length,6);
 
 const atlasFacets=buildCustomsAtlasFacets(customsAtlasItems);
 assert.ok(atlasFacets.families.some(option=>option.value==="Sacred Heart"),"theme browsing must be independent of geography");
@@ -680,7 +715,7 @@ assert.ok(globalCustom.length<13,"the global pilgrimage custom cannot create a p
 assert.ok(globalCustom.every(item=>item.heritage_categories.includes("traditions")),"custom selection must not turn on other categories");
 assert.equal(projectHeritagePlaces(projection,{categories:[],query:""}).length,0,"empty map category filter must not show pins");
 const heritageCustoms=heritageCustomCards(practiceBrowse);
-assert.equal(heritageCustoms.length,27,"all canonical practices must be available without a geographical list");
+assert.equal(heritageCustoms.length,33,"all canonical practices must be available without a geographical list");
 assert.equal(heritageCustomCards(practiceBrowse,{enabled:false}).length,0);
 const heritageVm=buildExploreViewModel({
   language:"en",lens:"heritage",view:"map",items:heritagePlaces,
