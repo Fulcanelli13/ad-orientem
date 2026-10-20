@@ -1,0 +1,325 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B04_THOUGHTS_SOURCE_BOUNDARIES_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_WORDING_PROPOSALS_NO_OWNER_APPROVAL_CHANGE",
+  "counts": {
+    "families": 2,
+    "answerUnits": 4,
+    "removedUnsupportedClinicalClaimTypes": 2,
+    "published": 0,
+    "certified": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE136",
+      "sourceQuestionId": "CSE136",
+      "canonicalOwner": "SEX-CORE-40",
+      "originalRecord": {
+        "source_question_id": "CSE136",
+        "conversation_id": "CHA-CSE-CSE136",
+        "canonical_topic_owner": "SEX-CORE-40",
+        "title": "Should doubtful sexual thoughts always be confessed?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Should doubtful sexual thoughts always be confessed?",
+          "fr": "Faut-il toujours confesser des pensées sexuelles douteuses ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "No universal rule says every doubtful or intrusive thought must be confessed. The relevant question is whether there was sufficient awareness and voluntary consent; compulsively confessing every doubt can feed scrupulosity.",
+          "fr": "Aucune règle universelle n’exige de confesser toute pensée douteuse ou intrusive. La question pertinente est de savoir s’il y a eu conscience suffisante et consentement volontaire ; confesser compulsivement chaque doute peut nourrir le scrupule."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "No, not every doubtful or intrusive thought should be turned into a confession. The question is whether you knowingly and freely consented. Endless recounting of uncertainty can deepen scruples; seek the steady direction of one prudent confessor rather than repeatedly reopening doubtful matters.",
+          "fr": "Non, toute pensée douteuse ou importune ne doit pas devenir matière à confession. Il s’agit de savoir si vous avez consenti librement et en connaissance de cause. Revenir indéfiniment sur l’incertitude peut nourrir les scrupules ; suivez la direction stable d’un confesseur prudent plutôt que de rouvrir sans fin ces doutes."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Should I repeat doubtful thoughts at every Confession to be safe?",
+          "fr": "Dois-je répéter mes pensées douteuses à chaque confession par sécurité ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Not as a rule. Reassurance-seeking may worsen scruples. Follow the stable counsel of a prudent confessor rather than reopening uncertain memories whenever anxiety returns.",
+          "fr": "Pas en règle générale. La recherche continuelle d’assurance peut aggraver les scrupules. Suivez le conseil stable d’un confesseur prudent au lieu de rouvrir les souvenirs incertains à chaque angoisse."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST6",
+              "locator": "aa.1,4–8"
+            },
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Penance · Confession Q80; Sixth and Ninth Commandments QQ4–5"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "An unwanted thought is not by itself a deliberate choice. Mortal sin requires grave matter, full awareness and deliberate consent. If you are uncertain whether you sinned, say so rather than presenting the doubt as certainty.",
+          "fr": "Une pensée non voulue n’est pas par elle-même un choix délibéré. Le péché mortel exige une matière grave, une pleine connaissance et un consentement délibéré. Si vous doutez d’avoir péché, dites-le sans présenter le doute comme une certitude.",
+          "claims": [
+            {
+              "segment": "Unwanted thought distinguished from deliberate choice",
+              "refs": [
+                "PX700"
+              ],
+              "type": "MORAL_APPLICATION_NOT_CLINICAL_FINDING"
+            },
+            {
+              "segment": "Mortal sin conditions",
+              "refs": [
+                "PX700"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "segment": "Doubt stated as doubt",
+              "refs": [
+                "PX751"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "The Catechism does not require confession of a sin you are uncertain of having committed. If you mention it, explain the uncertainty. A prudent confessor can help you apply that distinction.",
+          "fr": "Le Catéchisme n’exige pas de confesser un péché que vous n’êtes pas certain d’avoir commis. Si vous le mentionnez, précisez votre incertitude. Un confesseur prudent peut vous aider à appliquer cette distinction.",
+          "claims": [
+            {
+              "segment": "No obligation from uncertain commission; disclose uncertainty",
+              "refs": [
+                "PX751"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "segment": "Seek prudent counsel",
+              "refs": [
+                "PX737"
+              ],
+              "type": "PASTORAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "removedOrNarrowed": [
+        "Reassurance-seeking may worsen scruples",
+        "Endless recounting of uncertainty can deepen scruples"
+      ],
+      "classification": "EXPLANATORY_PASTORAL_CHANOINE_NOT_SPX_SPEECH",
+      "sourceReadState": "DIGITAL_DOCTRINAL_PASSAGES_MATCHED_CLINICAL_CAUSAL_CLAIMS_REMOVED",
+      "humanTheology": false,
+      "humanLanguage": false,
+      "humanSafeguarding": false,
+      "publication": false,
+      "routing": {
+        "enabled": false,
+        "optInRequired": true
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE137",
+      "sourceQuestionId": "CSE137",
+      "canonicalOwner": "SEX-CORE-40",
+      "originalRecord": {
+        "source_question_id": "CSE137",
+        "conversation_id": "CHA-CSE-CSE137",
+        "canonical_topic_owner": "SEX-CORE-40",
+        "title": "How can a scrupulous person distinguish temptation from consent?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "How can a scrupulous person distinguish temptation from consent?",
+          "fr": "Comment une personne scrupuleuse peut-elle distinguer tentation et consentement ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Begin with a simple rule: what arrived uninvited is not yet consent. Consent requires a sufficiently deliberate choice to retain, enjoy or pursue the temptation.",
+          "fr": "Commencez par une règle simple : ce qui arrive sans être invité n’est pas encore un consentement. Le consentement exige un choix suffisamment délibéré de retenir, savourer ou poursuivre la tentation."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Remember first that what enters the mind uninvited is not already consent. Consent involves a sufficiently free decision to cultivate the temptation. A scrupulous person should rely on consistent guidance and avoid dissecting each passing thought in search of imagined certainty.",
+          "fr": "Rappelez-vous d’abord que ce qui entre dans l’esprit sans être voulu n’est pas déjà un consentement. Celui-ci exige une décision suffisamment libre d’entretenir la tentation. La personne scrupuleuse doit suivre un conseil constant et éviter de disséquer chaque pensée passagère à la recherche d’une certitude imaginaire."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Does a recurring intrusive thought prove that I consented?",
+          "fr": "Une pensée importune répétée prouve-t-elle mon consentement ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. Repetition does not create consent by itself. What matters is a sufficiently free decision; avoid combing through each mental event as though anxiety could establish guilt.",
+          "fr": "Non. La répétition ne crée pas par elle-même le consentement. Il faut une décision suffisamment libre ; n’examinez pas chaque événement mental comme si l’angoisse pouvait établir la culpabilité."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST6",
+              "locator": "aa.1,4–8"
+            },
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Sixth and Ninth Commandments QQ4–5; Penance · Confession Q80"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "A thought’s arrival or recurrence does not by itself establish consent. Ask whether there was a deliberate choice; mortal sin also requires grave matter and full awareness. Do not treat uncertainty as a known fault.",
+          "fr": "L’apparition ou le retour d’une pensée ne suffit pas à établir le consentement. Il faut un choix délibéré ; le péché mortel exige aussi une matière grave et une pleine connaissance. Ne traitez pas l’incertitude comme une faute certaine.",
+          "claims": [
+            {
+              "segment": "Recurrence does not logically establish deliberate choice",
+              "refs": [
+                "PX700"
+              ],
+              "type": "MORAL_INFERENCE_NOT_DIAGNOSIS_OR_CAUSAL_PSYCHOLOGY"
+            },
+            {
+              "segment": "Other mortal-sin conditions",
+              "refs": [
+                "PX700"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "segment": "Doubt versus certainty",
+              "refs": [
+                "PX751"
+              ],
+              "type": "FAITHFUL_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "No. Recurrence alone does not prove a deliberate choice. If you remain unsure, explain that uncertainty to your confessor; I cannot judge an individual act of consent from that fact alone.",
+          "fr": "Non. Le seul retour d’une pensée ne prouve pas un choix délibéré. Si vous restez incertain, expliquez ce doute au confesseur ; ce seul fait ne me permet pas de juger un acte individuel de consentement.",
+          "claims": [
+            {
+              "segment": "Recurrence alone not sufficient proof",
+              "refs": [
+                "PX700"
+              ],
+              "type": "MORAL_INFERENCE"
+            },
+            {
+              "segment": "Describe uncertainty",
+              "refs": [
+                "PX751"
+              ],
+              "type": "FAITHFUL_APPLICATION"
+            },
+            {
+              "segment": "Limit of character's judgment",
+              "refs": [],
+              "type": "EPISTEMIC_LIMIT_NOT_NEW_DOCTRINAL_CLAIM"
+            }
+          ]
+        }
+      ],
+      "removedOrNarrowed": [
+        "Avoid dissecting each thought in search of imagined certainty; narrowed from psychological advice to moral proof/consent distinction"
+      ],
+      "classification": "EXPLANATORY_PASTORAL_CHANOINE_NOT_SPX_SPEECH",
+      "sourceReadState": "DIGITAL_DOCTRINAL_PASSAGES_MATCHED_CLINICAL_CAUSAL_CLAIMS_REMOVED",
+      "humanTheology": false,
+      "humanLanguage": false,
+      "humanSafeguarding": false,
+      "publication": false,
+      "routing": {
+        "enabled": false,
+        "optInRequired": true
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "PX700",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §3; editorial Q700",
+      "incipitItalian": "Che cosa si richiede perché un peccato sia mortale?",
+      "exactItalianExcerpt": "materia grave, piena avvertenza, e perfetto consenso della volontà.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX737",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §5; editorial Q737",
+      "incipitItalian": "Che cosa si deve fare per correggere gli abiti cattivi?",
+      "exactItalianExcerpt": "avere un buon direttore stabile",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX751",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §6; editorial Q751",
+      "incipitItalian": "Se taluno non fosse certo di aver commesso un peccato, deve confessarsene?",
+      "exactItalianExcerpt": "non è obbligato a confessarsene",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    }
+  ],
+  "deduplication": [
+    {
+      "ids": [
+        "CSE136",
+        "CSE137"
+      ],
+      "decision": "Shared doctrinal foundation; retain obligation-to-confess versus consent-evidence intents. Do not merge without owner review."
+    }
+  ],
+  "newResearchGaps": [],
+  "deferredOptionalResearch": "If an owner later restores claims about compulsive reassurance or OCD treatment, obtain qualified clinical evidence then; no need to research those claims to retain these narrower doctrinal replies.",
+  "reviewRequirements": [
+    "Check that a doubt case does not become an individualized declaration of innocence or fitness for Communion",
+    "French/English semantic and pastoral review",
+    "Do not diagnose scrupulosity/OCD from a visitor's questions"
+  ],
+  "continue": true
+}
