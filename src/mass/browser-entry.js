@@ -286,13 +286,19 @@ function installReaderThanksgivingBridge(preview,prepared,{win=globalThis}={}){
     if(notice)notice.hidden=true;
     try{
       checkpointPersistedMass({preview});
-      await navigateReaderSurface("home");
+      // A cancellation at the app-shell's active-Mass leave gate must not
+      // start thanksgiving or clear the resumable reader.
+      const left=await navigateReaderSurface("home");
+      if(left===false)return;
       if(route){
         const result=await win?.AO_MODULES?.open?.(route,{
           depth:prepared?.readerPreferences?.afterMass==="full"?"full":"brief",
           language:fr?"fr":"en"
         });
         if(result!==true&&result?.ok!==true)throw Error("THANKSGIVING_PRAYERS_UNAVAILABLE");
+        // The visitor explicitly confirmed that Mass and associated rites
+        // concluded. This is not the same as an uncompleted voluntary exit.
+        clearPersistedActiveMass();
       }
       dismiss();
     }catch(error){
