@@ -189,8 +189,13 @@ try{
    await expandedPlace.waitFor({state:"visible",timeout:12000});
    assert.equal(await page.locator("#ao-find-modular-root .aoHeritageCardLayer:visible").count(),0,
      "The expanded Place must hide the underlying preview and its duplicate close control");
-   assert.equal(await expandedPlace.locator('header [data-find-close-place] [data-ao-asset-id="ao-ui-close"]').count(),0,
-     "Expanded Holywell Place must not double-render SVG and legacy close mask");
+   const holywellCloseState=await expandedPlace.locator('header button[data-find-close-place]').evaluate(button=>({
+     svgCount:button.querySelectorAll('svg.aoUiIcon').length,
+     fallbackCount:button.querySelectorAll('[data-ao-asset-id="ao-ui-close"]').length,
+     fallbackDisplay:getComputedStyle(button.querySelector('[data-ao-asset-id="ao-ui-close"]')).display,
+   }));
+   assert.deepEqual(holywellCloseState,{svgCount:1,fallbackCount:1,fallbackDisplay:"none"},
+     "Expanded Holywell close must hide legacy mask after canonical SVG hydration");
    assert.match(await expandedPlace.locator("header small").innerText(),/PILGRIMAGE PLACE/);
    await expandedPlace.locator("header [data-find-close-place]").click();
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
@@ -283,8 +288,13 @@ try{
    const visibleRouteRows=await reverseList.locator("[data-explore-place-journey]").evaluateAll(rows=>
      rows.every(row=>{const box=row.getBoundingClientRect();return box.height>=44&&box.top<innerHeight&&box.bottom>0;}));
    assert.ok(visibleRouteRows,"Both documented Père Laval pilgrimage choices need visible, usable 44px targets");
-   assert.equal(await lavalFull.locator('header [data-find-close-place] [data-ao-asset-id="ao-ui-close"]').count(),0,
-     "Global SVG hydration and legacy mask may not both render a close icon");
+   const lavalCloseState=await lavalFull.locator('header button[data-find-close-place]').evaluate(button=>({
+     svgCount:button.querySelectorAll('svg.aoUiIcon').length,
+     fallbackCount:button.querySelectorAll('[data-ao-asset-id="ao-ui-close"]').length,
+     fallbackDisplay:getComputedStyle(button.querySelector('[data-ao-asset-id="ao-ui-close"]')).display,
+   }));
+   assert.deepEqual(lavalCloseState,{svgCount:1,fallbackCount:1,fallbackDisplay:"none"},
+     "Hydrated close must show exactly one canonical Tier-A SVG, not the fallback mask");
    assert.equal(await lavalFull.locator('header button[data-find-close-place]').count(),1,
      "Expanded Place must contain exactly one close button");
    await page.screenshot({path:resolve(out,"explore-"+width+"-pere-laval-two-pilgrimages.png"),fullPage:false});
