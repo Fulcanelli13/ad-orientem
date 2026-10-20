@@ -16,7 +16,10 @@
     "noAutomaticPublication": true,
     "allMastersRequireIndependentIdentityRightsCropPhoneQa": true,
     "preserveW64HistoricFives": true,
-    "historicFivesAreSeparateAuthorityNotNewApproval": true
+    "historicFivesAreSeparateAuthorityNotNewApproval": true,
+    "excludePradoMediaIncludingThirdPartyMirrors": true,
+    "preservePradoArtworkEditorialSelections": true,
+    "noPradoRightsInvestigation": true
   },
   "batchSize": 50,
   "estimatedBatches": 10,
@@ -27,14 +30,18 @@
     "excluded": 68,
     "editorialHold": 199,
     "eligibleExactMet": 23,
-    "eligibleExactCommons": 36,
-    "eligibleOtherSource": 111,
+    "eligibleExactCommons": 35,
+    "eligibleOtherSource": 87,
     "legacyFiveOutside451": [
       "W40-010",
       "W40-011",
       "prado-rubens-defenders"
     ],
-    "eligibleExactCleveland": 14
+    "eligibleExactCleveland": 14,
+    "pradoAcquisitionHolds": 30,
+    "pradoHoldsAlreadyEditorialHold": 5,
+    "pradoHoldsApprovedOrHistoric": 25,
+    "pradoSourceHoldsApprovedExactCandidate": 1
   },
   "works": [
     {
@@ -114,7 +121,14 @@
         "RUBENS_APOSTLE_ANDREW_CARD_PHOTO_MARTYRDOM"
       ],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-eter-aul-ubens-artyrdom-of-aint-ndrew",
@@ -158,7 +172,14 @@
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "W01-001",
@@ -172,7 +193,14 @@
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "W38-006",
@@ -202,7 +230,14 @@
       "assetHolds": [
         "PHOTOGRAPH_OF_CIRCLE_OF_RIBERA_NOT_CATALOGUED_RIBERA_APOSTOLADO"
       ],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "W07-014",
@@ -260,7 +295,14 @@
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "prado-rubens-p001655",
@@ -274,7 +316,14 @@
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "W05-008",
@@ -291,7 +340,14 @@
         "MATTHIAS_SHARED_WITH_MATTHEW_CARD"
       ],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-eter-aul-ubens-aint-atthias-postolate",
@@ -307,7 +363,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "W05-012",
@@ -323,7 +386,14 @@
       "assetHolds": [
         "PHOTO_TO_OBJECT_UNVERIFIED_OR_MASTER_MISSING"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-usepe-de-ibera-aint-aul-postolate",
@@ -547,7 +617,14 @@
       "assetHolds": [
         "LANFRANCO_CORONATION_IMAGE_ON_ANONYMOUS_AUGUSTINE"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-hilippe-de-hampaigne-aint-ugustine",
@@ -593,7 +670,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "met-437722",
@@ -669,7 +753,14 @@
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "C32:pompeobatoniestasidisantateresa1743circajpg",
@@ -918,7 +1009,14 @@
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-artolom-steban-urillo-aint-sidore-of-eville",
@@ -1180,7 +1278,14 @@
       "assetHolds": [
         "WRONG_SAINT_HILARY_HERMIT_NOT_POITIERS"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "G29-001",
@@ -1245,7 +1350,14 @@
         "MURILLO_JOSEPH_PHOTO_ON_CAMILO_RECORD"
       ],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "C32:guidoreni042jpg",
@@ -1388,7 +1500,14 @@
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "sdma-48-3-pittoni-anthony",
@@ -1584,7 +1703,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 3
+      "sourceDestinationsCount": 3,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "C32:antoniosicurezzacharityofstlaurencejpg",
@@ -1650,7 +1776,14 @@
       "assetHolds": [
         "RESEARCH_CANDIDATE_NO_VERIFIED_PHOTO"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-nthony-van-yck-aint-rancis-in-cstasy",
@@ -1665,7 +1798,14 @@
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "W02-015",
@@ -1697,7 +1837,14 @@
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "W36-SNT-OT-13-5387d641cce6",
@@ -1728,7 +1875,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "W39-014",
@@ -2831,7 +2985,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 3
+      "sourceDestinationsCount": 3,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-ean-on-r-me-he-ge-of-ugustus-irth-of-hrist",
@@ -2928,7 +3089,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-itian-hrist-arrying-the-ross",
@@ -2944,7 +3112,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-nthony-van-yck-he-ance-hrust",
@@ -3251,7 +3426,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-urial-of-hrist-rado-assion-series",
@@ -3267,7 +3449,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 0
+      "sourceDestinationsCount": 0,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-eter-aul-ubens-mmaculate-onception",
@@ -3283,7 +3472,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-nthony-van-yck-amentation-of-hrist",
@@ -3587,7 +3783,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-ebastiano-icci-sther-before-hasuerus",
@@ -3651,7 +3854,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
@@ -3731,7 +3941,14 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "No Museo del Prado image acquisition, including replicas via Commons or mirrors. Existing editorial approval preserved.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      }
     },
     {
       "id": "ART-ustache-e-ueur-aint-aul-reaching-at-phesus",
