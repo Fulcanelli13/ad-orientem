@@ -1,0 +1,76 @@
+// Final user-approved Mass icon programme: 65-card curated LIVE only.
+// A normative source cue is a reference, not proof that the priest moved.
+// The 49 original station transitions remain with reader-cue-state.js.
+//
+// The physical celebrant's station, the place of the Missal, and the priest's
+// transient liturgical actions are independent dimensions of one source event.
+const FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+const CUE=/^AO\.SM\.C(\d{4})$/;
+const UNKNOWN=Object.freeze({
+  label:"POSITION NOT CONFIRMED",
+  station:"UNCONFIRMED",facing:null,routeId:null,
+  owner:"PRIEST_POSITION_AWAITS_OBSERVATION",persistent:true,
+});
+const IN_TRANSIT=Object.freeze({
+  label:"PRIEST MOVING",station:"IN_TRANSIT",facing:null,routeId:null,
+  owner:"PRIEST_ROUTE_NOT_STATION",persistent:true,
+});
+function number(cueId){
+  const m=String(cueId??"").match(CUE);
+  return m?Number(m[1]):null;
+}
+function locationAt(n,observedEventId){
+  if(n===null)return null;
+  if(n<81)return "EPISTLE_SIDE";
+  if(n<249)return "GOSPEL_SIDE";
+  // The priest's independent Communion-antiphon event, MC-END-010, must be
+  // observed. A Schola cue or a swipe through text cannot assert this transfer.
+  if(n===249||n===250)return observedEventId==="MC-END-010"?"EPISTLE_SIDE":null;
+  return "EPISTLE_SIDE";
+}
+const supplementPosition=Object.freeze({
+ label:"AT EPISTLE-SIDE MISSAL",station:"ALTAR_EPISTLE_MISSAL",
+ facing:"MISSAL",routeId:null,owner:"RITUS_XI_1_OBSERVED_MC_END_010",
+ cueId:"AO.SM.C0249",persistent:true,
+});
+const solemnGospelPosition=Object.freeze({
+ label:"AT EPISTLE SIDE",station:"ALTAR_EPISTLE_SIDE",
+ facing:"LITURGICAL_EAST",routeId:null,
+ owner:"RITUS_VI_5_SOLEMN_DEACON_PROCLAIMS_GOSPEL",persistent:true,
+});
+export function projectCurated65PriestStation({
+  cueId=null,sourcePosition=null,form=null,observedPriestEventId=null,
+  enabled=false,sermonPause=false,
+}={}){
+  if(enabled!==true||!FORMS.has(String(form??"")))return null;
+  const n=number(cueId);
+  if(sermonPause===true){
+    return Object.freeze({priestPosition:UNKNOWN,missalLocation:"GOSPEL_SIDE",
+      reason:"SERMON_PREACHER_AND_POSITION_REQUIRE_OBSERVATION"});
+  }
+  if(n===null)return null;
+  const missalLocation=locationAt(n,observedPriestEventId);
+  let position=sourcePosition;
+  let reason="SOURCE_49_TRANSITIONS_PERSISTENT";
+  if(n===249||n===250){
+    position=observedPriestEventId==="MC-END-010"?supplementPosition:UNKNOWN;
+    reason=observedPriestEventId==="MC-END-010"
+      ?"RITUS_XI_1_INDEPENDENTLY_OBSERVED":"COMMUNION_ANTIPHON_OBSERVATION_PENDING";
+  }else if(form==="SOLEMN"&&n>=75&&n<=78){
+    // Subdeacon delivers Epistle; no automatic placement of the celebrant.
+    position=UNKNOWN;reason="SOLEMN_EPISTLE_SUBDEACON_ACTOR_GUARD";
+  }else if(form==="SOLEMN"&&n>=82&&n<=88){
+    // Priest at Epistle side; deacon is the Gospel reader.
+    position=solemnGospelPosition;reason="SOLEMN_GOSPEL_DEACON_ACTOR_GUARD";
+  }else if(!sourcePosition||sourcePosition.station==="PRIEST_TRACK_ASYNC"){
+    position=UNKNOWN;reason="INDEPENDENT_POSITION_OBSERVER_REQUIRED";
+  }else if(sourcePosition.station==="ROUTE_CONTROLLED"){
+    position=IN_TRANSIT;reason="MOVEMENT_ROUTE_NOT_FIXED_STATION";
+  }
+  const priestPosition=Object.freeze({...position,
+    missalLocation,positionReferenceCueId:cueId,
+    locationConfidence:position===UNKNOWN?"UNCONFIRMED":
+      position===IN_TRANSIT?"IN_TRANSIT":"RUBRICAL_REFERENCE_NOT_GPS",
+  });
+  return Object.freeze({priestPosition,missalLocation,reason});
+}
