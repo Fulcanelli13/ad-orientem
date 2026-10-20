@@ -67,6 +67,27 @@ for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","nov
  const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
  assert.equal(R.distinct_place_links[kind],distinct,"unique Place count drifted for "+kind);
 }
+// The 10 October editorial snapshot is immutable. Reconcile only four later,
+// explicitly source-locked non-pin additions; do not rewrite the snapshot as if
+// it had been researched on that original date.
+const admittedAfterSnapshot=[
+  ["DOM-003","att:DOM-003:FR","AREA_CONTEXT"],
+  ["DOM-011","att:DOM-011:FR","AREA_CONTEXT"],
+  ["DOM-013","att:DOM-013:FR","AREA_CONTEXT"],
+  ["BLSS-001","att:BLSS-001:ROMAN","NOT_MAPPED"],
+];
+for(const [customId,attestationId,policy] of admittedAfterSnapshot){
+  const custom=C.customs.find(x=>x.custom_id===customId);
+  const att=C.attestations.find(x=>x.attestation_id===attestationId);
+  assert.ok(custom&&att,customId+" later admission missing");
+  assert.equal(att.custom_id,customId);
+  assert.equal(att.map_policy,policy);
+  assert.equal(att.place_id,null);
+}
+assert.equal(R.counts.canonical_customs+admittedAfterSnapshot.length,C.customs.length,
+  "canonical customs beyond the reviewed post-snapshot additions require reconciliation");
+assert.equal(R.counts.custom_attestations+admittedAfterSnapshot.length,C.attestations.length,
+  "custom attestations beyond reviewed post-snapshot additions require reconciliation");
 assert.match(R.map_policy_note,/not counts of publishable map pins/);
 assert.equal(R.counts.multicategory_heritage_places,multicategory);
 for(const [count,value] of Object.entries({
@@ -76,6 +97,7 @@ for(const [count,value] of Object.entries({
  novena_context_links:N.links.length,route_records:S.routes.length,
  directory_place_links:G.directoryPlaceLinks.length,
 })){
+ if(count==="canonical_customs"||count==="custom_attestations")continue; // earlier dated baseline accounted for above
  assert.equal(R.counts[count],value,"audit baseline "+count+" drifted");
 }
 const noRefs=R.place_crosswalk.filter(p=>!Object.keys(p.record_ids).length).map(p=>p.place_id);
@@ -87,8 +109,9 @@ assert.deepEqual(R.exception_queues.places_pending_coordinates,
  R.place_crosswalk.filter(p=>p.geo_source_status==="PENDING_COORDINATES").map(p=>p.place_id));
 assert.deepEqual(R.exception_queues.coordinates_without_source_url,
  R.place_crosswalk.filter(p=>p.geo_source_status==="COORDINATES_MISSING_SOURCE_URL").map(p=>p.place_id));
+const laterAttestationIds=new Set(admittedAfterSnapshot.map(x=>x[1]));
 assert.deepEqual(R.exception_queues.customs_without_exact_place,
- C.attestations.filter(p=>!p.place_id).map(p=>({
+ C.attestations.filter(p=>!p.place_id&&!laterAttestationIds.has(p.attestation_id)).map(p=>({
    id:p.attestation_id,map_policy:p.map_policy,geo_area_id:p.geo_area_id??null
  })));
 assert.deepEqual(R.exception_queues.novena_context_without_exact_place,

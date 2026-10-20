@@ -31,6 +31,22 @@ const expectedDomains=Object.fromEntries(Object.entries(S.domains).map(([k,v])=>
  claims:v.length,without_source_refs:v.filter(r=>!r.source_ids.length).length
 }]));
 assert.deepEqual(R.domain_inventory,expectedDomains);
+// R is the frozen editorial review, not a live count register. The following
+// four source-locked CUSTOMS ATLAS entries were admitted after that review.
+const postReviewAdmissions=[
+ ["DOM-003","att:DOM-003:FR","AREA_CONTEXT"],
+ ["DOM-011","att:DOM-011:FR","AREA_CONTEXT"],
+ ["DOM-013","att:DOM-013:FR","AREA_CONTEXT"],
+ ["BLSS-001","att:BLSS-001:ROMAN","NOT_MAPPED"],
+];
+for(const [id,attId,mapPolicy] of postReviewAdmissions){
+ const custom=C.customs.find(c=>c.custom_id===id);
+ const att=C.attestations.find(a=>a.attestation_id===attId);
+ assert.ok(custom&&att,"post-review custom not source-locked: "+id);
+ assert.equal(att.custom_id,id);
+ assert.equal(att.map_policy,mapPolicy);
+ assert.equal(att.place_id,null);
+}
 const x=R.summary;
 for(const [key,value] of Object.entries({
  customary_salvage_claims:claims.length,
@@ -48,6 +64,10 @@ for(const [key,value] of Object.entries({
  final60_lacking_original_custodian_source:F.cases_without_source_review,
  published_relic_site_claims:P.relics.length,
 })){
+ if(key==="published_customs"||key==="published_custom_attestations"){
+  assert.equal(x[key]+postReviewAdmissions.length,value,key+" drifted beyond approved post-review admissions");
+  continue;
+ }
  assert.equal(x[key],value,key+" drifted since review");
 }
 const knownCustomIds=new Set(C.customs.map(c=>c.custom_id));

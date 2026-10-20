@@ -1,0 +1,42 @@
+{
+  "schema": "AO_SOT07_CANONICAL_CUSTOM_EXTENSION_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-20",
+  "purpose": "Authorize new source-backed customary identities beyond the frozen original 63-row French-world SOT-07 research workbook without pretending they belonged to its original rows.",
+  "original_register": "Ad_Orientem_SOT-07_Traditional_Catholic_Customary_French_World_v1.xlsx",
+  "governance": [
+    "Original SOT-07 IDs remain immutable and are reused only for their original concepts.",
+    "Every extension requires direct ritual/source witnesses, a stable new ID, a defined lay use, and an explicit legal/historical/customary class.",
+    "Calendar owns the date and liturgical rank; the custom may explain a minister's blessing but does not implement priestly ritual.",
+    "Global Roman-rite source provenance never asserts that every church performs the custom; no map pin without place-specific proof.",
+    "Modern Book of Blessings requirements and pre-conciliar Roman Ritual requirements remain separate."
+  ],
+  "extensions": [
+    {
+      "custom_id": "BLSS-001",
+      "family": "Saints & sacramental blessings",
+      "name": "St Blaise — blessing of throats",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_CONTEXTUAL_PUBLICATION_DRAFT_PR",
+      "calendar_relation": "3 February; commemoration of St Blaise in the ordinary 1962 Roman calendar, independent of Mass/formulary selection",
+      "attestation_id": "att:BLSS-001:ROMAN",
+      "source_ids": [
+        "ROMR-BLAISE-1956",
+        "SCHOLA-BLAISE-LATIN",
+        "BOOK-BLESSINGS-BLAISE",
+        "ORDO-BLAISE-1962"
+      ],
+      "controlling_proof": "Latin/French traditional Roman Ritual transcription supported by independently published historical English ritual witness; current rite kept explicitly separate.",
+      "scope": "Lay participation and optional reception; no formula or directions to conduct blessings, no scheduling or parish availability assertion",
+      "guardrails": [
+        "NOT_A_FEAST_PROMOTION",
+        "NOT_A_MASS_VARIANT",
+        "NOT_AUTOMATIC_HEALING",
+        "NOT_A_CURRENT_INDULGENCE",
+        "NO_CANDLEMAS_CANDLE_EQUIVALENCE_FOR_TRADITIONAL_RITUAL",
+        "NOT_MAPPED"
+      ],
+      "status": "PUBLISHED_CONTEXT_PENDING_CI_AND_EDITORIAL_MERGE"
+    }
+  ]
+}
