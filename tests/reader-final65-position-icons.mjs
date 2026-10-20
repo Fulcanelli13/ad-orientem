@@ -28,7 +28,7 @@ for(const [lane,name] of bindings){
   certified++;
  }
 }
-assert.equal(certified,105);
+assert.equal(certified,212);
 const icon=(cueId,state={})=>iconKeysForReaderState({
  ...state,cueId,curated65FinalArt:true,
 });
@@ -42,21 +42,34 @@ for(const [cue,expected] of [
  assert.equal(icon(cue,{priestAction:{cueId:cue,label:"SOURCE_ACTION"}}).priestActionIconKey,
   expected,"Priest action mismatch "+cue);
 }
-for(const cue of ["AO.SM.C0181","AO.SM.C0232","AO.SM.C0234","AO.SM.C0247","AO.SM.C0248"]){
- assert.equal(icon(cue,{priestAction:{cueId:cue,label:"SOURCE_ACTION"}}).priestActionIconKey,null,
-  "Uninstalled original silently replaced "+cue);
+for(const [cue,exactKey] of [
+ ["AO.SM.C0181","final_ao_elevation_chalice"],
+ ["AO.SM.C0216","final_ea_priest_fraction_host"],
+ ["AO.SM.C0221","final_ea_priest_commingling"],
+ ["AO.SM.C0232","final_ea_priest_communion_host_original"],
+ ["AO.SM.C0234","final_ea_priest_communion_chalice_original"],
+ ["AO.SM.C0247","final_ao_purify_fingers"],
+ ["AO.SM.C0248","final_ao_purify_chalice"],
+]){
+ assert.equal(icon(cue,{priestAction:{cueId:cue,label:"SOURCE_ACTION"}}).priestActionIconKey,exactKey,
+  "Approved exact-source original no longer reached "+cue);
 }
 assert.equal(icon("AO.SM.C0055",{gesture:{cueId:"AO.SM.C0055",action:"Bow head"}}).gestureIconKey,"bow");
 assert.equal(icon("AO.SM.C0072",{priestPosition:{station:"ALTAR_EPISTLE_MISSAL"}}).priestPositionIconKey,"priest_gospel_rich");
 assert.equal(icon("AO.SM.C0144",{priestPosition:{station:"ALTAR_CENTER",missalLocation:"GOSPEL_SIDE"}}).priestPositionIconKey,"priest_centre_hands_rich");
 assert.equal(icon("AO.SM.C0086",{priestPosition:{station:"ALTAR_GOSPEL_MISSAL"}}).priestPositionIconKey,"priest_epistle_rich");
-assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,null,
-  "Rejected or uninstalled foot-of-altar illustration must not render");
+assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,"final_ref_112206",
+  "Must render exact user-approved foot-of-altar master");
 assert.equal(icon("AO.SM.C0265",{priestAction:{cueId:"AO.SM.C0265",label:"BLESSES PEOPLE"}}).priestActionIconKey,null,
   "Final blessing must not use Indulgentiam artwork");
 assert.equal(icon("AO.SM.C0144",{priestVoice:{cueId:"AO.SM.C0144",voice:"CLEAR SPOKEN"}}).priestVoiceIconKey,"priest_audible");
-assert.equal(icon("AO.SM.C0001",{priestVoice:{cueId:"AO.SM.C0001",voice:"LOW VOICE"}}).priestVoiceIconKey,null,
-  "Uninstalled quiet-prayer original must not be replaced by total silence");
+assert.equal(icon("AO.SM.C0001",{priestVoice:{cueId:"AO.SM.C0001",voice:"LOW VOICE"}}).priestVoiceIconKey,"final_ao_pray_audible",
+  "Low voice must not be incorrectly described as silent");
+assert.equal(icon("AO.SM.C0174",{priestVoice:{cueId:"AO.SM.C0174",voice:"SILENT"}}).priestVoiceIconKey,"final_ao_pray_silent");
+assert.equal(icon("AO.SM.C0265",{priestPosition:{station:"ALTAR_CENTER",facing:"PEOPLE"}}).priestPositionIconKey,"final_new_priest_facing",
+  "Approved hands-joined priest-facing-congregation original missing");
+assert.equal(icon("AO.SM.C0265",{response:{cueId:"AO.SM.C0265"}}).responseIconKey,"final_response");
+assert.equal(icon("AO.SM.C0144",{schola:{cueId:"AO.SM.C0144"}}).scholaIconKey,"final_schola");
 const station=(cueId,sourcePosition,form="MISSA_CANTATA_SIMPLE",observedPriestEventId=null)=>projectCurated65PriestStation({
  enabled:true,cueId,sourcePosition,form,observedPriestEventId,
 });
