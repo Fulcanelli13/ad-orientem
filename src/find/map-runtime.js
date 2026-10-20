@@ -592,14 +592,51 @@ export async function mountExploreMap(container,items,{
       map.on("mouseleave",layer,()=>{map.getCanvas().style.cursor=""});
     }
   });
+  const journeySiteMarkers=[];
+  const clearJourneySiteMarkers=()=>{
+    while(journeySiteMarkers.length){
+      try{journeySiteMarkers.pop().remove()}catch{}
+    }
+  };
   return Object.freeze({map,
+    // Overlay exact canonical sacred-place points only. These medallions
+    // identify named places, not line geometry or geocoded pilgrimage stages.
+    setJourneyStageAnchors(anchors=[],onActivate=()=>{}){
+      clearJourneySiteMarkers();
+      if(!maplibre?.Marker||!win?.document?.createElement)return 0;
+      const distinct=new Set();
+      for(const stage of (Array.isArray(anchors)?anchors:[]).slice(0,25)){
+        const id=String(stage?.id??"");
+        const lng=Number(stage?.lng),lat=Number(stage?.lat),number=Number(stage?.ordinal);
+        if(!id||distinct.has(id)||!Number.isFinite(lng)||!Number.isFinite(lat)
+          ||Math.abs(lng)>180||Math.abs(lat)>90||!Number.isInteger(number)
+          ||number<1||number>99||!stage?.sourceUrl||!stage?.placeId)continue;
+        distinct.add(id);
+        const medallion=win.document.createElement("button");
+        medallion.type="button";medallion.className="aoJourneyMapStageMarker";
+        medallion.textContent=String(number);
+        medallion.dataset.journeyMapStage=id;
+        medallion.setAttribute("aria-label",String(stage.name||stage.label||"Pilgrimage site"));
+        medallion.title=String(stage.name||stage.label||"Pilgrimage site");
+        medallion.addEventListener("click",event=>{
+          event.preventDefault();event.stopPropagation();
+          onActivate(id);
+        });
+        try{
+          const marker=new maplibre.Marker({element:medallion,anchor:"center"})
+            .setLngLat([lng,lat]).addTo(map);
+          journeySiteMarkers.push(marker);
+        }catch{}
+      }
+      return journeySiteMarkers.length;
+    },
     updateItems(nextItems){
       features=exploreMapFeatures(nextItems);
       const source=map.getSource?.("ao-explore-items");
       source?.setData?.({type:"FeatureCollection",features});
     },
     mapStatus:()=>visualStatus.status(),
-    destroy(){emblemOverlays?.dispose();visualStatus.dispose();try{map.remove()}catch{}}
+    destroy(){clearJourneySiteMarkers();emblemOverlays?.dispose();visualStatus.dispose();try{map.remove()}catch{}}
   });
 }
 
