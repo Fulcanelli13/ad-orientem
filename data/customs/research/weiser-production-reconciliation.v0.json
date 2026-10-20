@@ -1,6 +1,6 @@
 {
   "schema": "AO_WEISER_POST_EXTRACTION_EDITORIAL_GATE_V0",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "as_of": "2026-10-20",
   "status": "SELECTED_RECONCILIATION_QUEUE_ONLY_NOT_CANONICAL",
   "purpose": "Pilot crosswalk of high-signal Weiser feast customs after full book first pass. Not a comprehensive decision for all 568 records.",
@@ -11,7 +11,9 @@
     "observations": 568,
     "screened_chapters": 28,
     "publication_releases": 0,
-    "selected_priority_rows": 30
+    "selected_priority_rows": 30,
+    "source_corroborated_selected_rows": 9,
+    "selected_rows_not_yet_source_corroborated": 21
   },
   "active_app_baseline": {
     "main_canonical_customs_at_start": 17,
@@ -36,15 +38,19 @@
       "title": "French fête patronale with Mass and village celebrations",
       "cohort": "FRENCH_PRIORITY",
       "owner": "Customs Atlas / Calendar",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "FRANCE_LOCALITY_ATTESTATION",
         "PATRON_SAINT_CALENDAR_ID"
       ],
-      "editorial_note": "Fête patronale: distinguish local civil festival from actual 1962 patronal Mass rank."
+      "editorial_note": "Fête patronale: distinguish local civil festival from actual 1962 patronal Mass rank. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-23-006"
+      }
     },
     {
       "weiser_id": "WEI58-23-008",
@@ -53,15 +59,19 @@
       "title": "Personal baptismal patron name-day observance",
       "cohort": "FAMILY_PRIORITY",
       "owner": "Customs Atlas / Saints",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "1962_SAINT_ID",
         "PRACTICE_CURRENT_ATTESTATION"
       ],
-      "editorial_note": "Name-day celebration is not a second saint feast."
+      "editorial_note": "Name-day celebration is not a second saint feast. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-23-008"
+      }
     },
     {
       "weiser_id": "WEI58-24-005",
@@ -70,15 +80,19 @@
       "title": "French Assumption statue carried through towns",
       "cohort": "FRENCH_PRIORITY",
       "owner": "Calendar / Customs Atlas",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "FRENCH_REGIONAL_ATTESTATION",
         "1962_ASSUMPTION_CONTEXT"
       ],
-      "editorial_note": "French processional practice; no automatic liturgical procession from date alone."
+      "editorial_note": "French processional practice; no automatic liturgical procession from date alone. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-24-005"
+      }
     },
     {
       "weiser_id": "WEI58-24-008",
@@ -123,15 +137,19 @@
       "title": "Blessing fishing boats and sea on Assumption",
       "cohort": "PILGRIMAGE_BLESSING",
       "owner": "Customs Atlas / Explore",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "COASTAL_LOCAL_ATTESTATION",
         "RITUAL_WITNESS"
       ],
-      "editorial_note": "Assumption maritime blessings locally; don't promise parish availability."
+      "editorial_note": "Assumption maritime blessings locally; don't promise parish availability. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-24-014"
+      }
     },
     {
       "weiser_id": "WEI58-25-008",
@@ -264,16 +282,20 @@
       "title": "Polish Wypominki lists of departed names read at parish",
       "cohort": "REGIONAL_PRIORITY",
       "owner": "Calendar / Customs Atlas",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [
         "DEAD-003"
       ],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "POLISH_PARISH_DIRECT_ATTESTATION"
       ],
-      "editorial_note": "Wypominki named-intention lists read in church."
+      "editorial_note": "Wypominki named-intention lists read in church. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-26-019"
+      }
     },
     {
       "weiser_id": "WEI58-26-020",
@@ -383,14 +405,18 @@
       "title": "St Joseph table statue portions subsequently given to poor",
       "cohort": "CHARITY_PRIORITY",
       "owner": "Customs Atlas / Saints",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "ST_JOSEPH_TABLE_SOURCE"
       ],
-      "editorial_note": "Meal portions distributed to poor during Joseph's feast."
+      "editorial_note": "Meal portions distributed to poor during Joseph's feast. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-27-019"
+      }
     },
     {
       "weiser_id": "WEI58-27-023",
@@ -399,15 +425,19 @@
       "title": "Saint Anthony's Bread alms project from Toulon",
       "cohort": "FRENCH_PRIORITY",
       "owner": "Customs Atlas / Saints",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "TOULON_HISTORICAL_SOURCE",
         "PRACTICE_PRESENT_DAY_STATUS"
       ],
-      "editorial_note": "Saint Anthony's Bread charity was organised under that name at Toulon; the practice predates that 1890 institutionalisation."
+      "editorial_note": "Saint Anthony's Bread charity was organised under that name at Toulon; the practice predates that 1890 institutionalisation. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-27-023"
+      }
     },
     {
       "weiser_id": "WEI58-27-026",
@@ -481,15 +511,19 @@
       "title": "Vehicle blessings on St Christopher feast day",
       "cohort": "BLESSING_PRIORITY",
       "owner": "Customs Atlas / Saints",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "ROMAN_RITUAL_VEHICLE_BLESSING",
         "LOCAL_PARISH_SOURCE"
       ],
-      "editorial_note": "St Christopher-associated car blessing must not be treated as a guaranteed travel protection."
+      "editorial_note": "St Christopher-associated car blessing must not be treated as a guaranteed travel protection. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-28-011"
+      }
     },
     {
       "weiser_id": "WEI58-28-020",
@@ -498,14 +532,18 @@
       "title": "St Nicholas eve bishop-costumed visitor to children",
       "cohort": "HOUSEHOLD_PRIORITY",
       "owner": "Customs Atlas / Calendar",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "NICHOLAS_REGIONAL_FAMILY_SOURCE"
       ],
-      "editorial_note": "Saint Nicholas bishop visit with childhood catechesis."
+      "editorial_note": "Saint Nicholas bishop visit with childhood catechesis. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-28-020"
+      }
     },
     {
       "weiser_id": "WEI58-28-025",
