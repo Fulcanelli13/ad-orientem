@@ -38,10 +38,11 @@ export const RELEASED_SACRED_ART_MASTERS = Object.freeze({});
 // National object ID 0500220372A-12 (metadata CC BY; image rights NOT certified).
 // Minardi/Fontana 10 April and Maíno Prado P003018 23 May are selected
 // but held pending canonical art IDs / verified reuse-ready source images.
+const dateSpecific2026ReplacementHolds=new Set([
+  "2026-04-03", "2026-04-10", "2026-05-14",
+  "2026-05-23", "2026-05-27", "2026-06-04"
+]);
 const historicProhibitedPaths=new Set([
-  "tempora/quad6-5", "tempora/quad6-5r",
-  "tempora/pasc0-5", "tempora/pasc5-4", "tempora/pasc6-6",
-  "tempora/pasc7-3", "tempora/pent01-4",
   "sancti/03-25",
   "tempora/pasc7-0",
   "tempora/pent01-0",
@@ -104,6 +105,9 @@ export function releasedClassIArtworkMarkup(file){
 export function safeLegacyHomeArtMarkup(state,legacyMarkup,win=globalThis){
   const markup=String(legacyMarkup||"");
   if(!markup)return "";
+  // Date-specific replacements only apply to the 2026 curator decisions,
+  // never to the same Proper occurring in another liturgical year.
+  if(dateSpecific2026ReplacementHolds.has(state?.selectedDate))return "";
   if(prohibitedLegacyIds.test(markup)||prohibitedArtistNames.test(markup))return "";
   let path=state?.resolution?.proper?.data?.sourcePath||"";
   if(!path){
