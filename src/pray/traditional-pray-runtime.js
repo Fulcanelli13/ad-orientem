@@ -572,7 +572,11 @@ function open(route,opts={}){
   render();return true;
 }
 function back(){
-  if(S.route==="mass.prepare"){BASE_CLOSE({silent:true});return true;}
+  if(S.route==="mass.prepare"){
+    BASE_CLOSE({silent:true});
+    const receipt=OPEN_OPTS.returnPrayerSnapshot;
+    return receipt?Boolean(window.AO_PRAY_V435930?.restoreHandoff?.(receipt)):true;
+  }
   if(S.screen==="prayer"){S.screen="module";S.prayerId=null;return render()}
   if(S.route==="pray.nightly_examen"&&S.returnToDaily){S.route="pray.morning_evening";S.returnToDaily=false;return render()}
   // The list is a Back target only after the visitor actually switched from
