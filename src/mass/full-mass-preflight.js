@@ -350,6 +350,9 @@ export function mountFullMassPreflight({
         }
       });
       target.insertAdjacentElement("beforebegin",root);
+      // The original Start Mass button remains the sole authoritative entry.
+      // Move its entire host action group into the Folio, never clone it.
+      folio.querySelector("[data-folio-host-actions]").append(target);
     }
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
     const folio=root.querySelector(".aoGuidedMassFolio");
@@ -614,6 +617,6 @@ export function mountFullMassPreflight({
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
       optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep}),
-    dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();root?.remove();root=null;}
+    dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
   });
 }
