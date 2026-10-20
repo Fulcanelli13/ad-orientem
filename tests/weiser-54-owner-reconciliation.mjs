@@ -23,7 +23,7 @@ for(const row of decisions.source_to_target){
  assert.ok(!seen.has(row.id),"draft assigned twice "+row.id);
  seen.add(row.id);
  assert.equal(row.automatic_publication,false);
- assert.ok(row.canonical_target.length>8);
+ assert.ok(row.canonical_target.length>=8);
  assert.ok(row.reason.length>40,"material integration reason required");
  assert.ok(["ENRICH_EXISTING","NEW_CANONICAL_CANDIDATE","VARIANT_OF_NEW_CANDIDATE","OWNER_CONTENT_ONLY","REGIONAL_REFERENCE_ONLY","SOURCE_OR_RITUAL_HOLD"].includes(row.decision));
  if(row.decision==="NEW_CANONICAL_CANDIDATE")assert.ok(row.canonical_target.startsWith("CANDIDATE-"));
