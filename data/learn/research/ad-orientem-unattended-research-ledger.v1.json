@@ -246,6 +246,21 @@
         "CHA-CSE-CSE027"
       ],
       "status": "SOURCE_MATCHED_MORAL_THEOLOGY_AND_PASTORAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B16",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b16-premarital-source-precision-20261021.v1.json",
+      "commit": "5afeb66cb1de337d4d24d8a2ce258b1e7e3d8929",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE031",
+        "CHA-CSE-CSE032",
+        "CHA-CSE-CSE033",
+        "CHA-CSE-CSE034"
+      ],
+      "status": "SOURCE_MATCHED_MORAL_THEOLOGY_AND_LANGUAGE_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -267,25 +282,20 @@
     }
   ],
   "active": {
-    "batch": "B16",
+    "batch": "B17",
     "state": "QUEUED_NOT_RESEARCHED",
-    "task": "Chanoine CSE031/CSE032/CSE033/CSE034: premarital acts, engagement and kissing. Read original records; reuse q154 a4 only within bounds, read CIC1062 and exact Casti/Persona humana passages before drafting."
+    "ids": [
+      "CSE020",
+      "CSE021",
+      "CSE022",
+      "CSE028",
+      "CSE029"
+    ],
+    "task": "Read original drafts and specialist brief first; distinguish moral psychology and theological judgments from unsupported clinical population claims."
   },
   "next": [
     {
       "priority": 1,
-      "ids": [
-        "CSE031",
-        "CSE032",
-        "CSE033",
-        "CSE034"
-      ],
-      "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
-      "ownerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
-      "action": "B16 source collation not yet done; retain existing semantic repairs. Distinguish engagement promise from matrimonial consent; no individual guilt judgments."
-    },
-    {
-      "priority": 2,
       "ids": [
         "CSE020",
         "CSE021",
@@ -296,7 +306,7 @@
       "action": "Read actual owner drafts and specialist records first. Do not infer clinical generalizations about addiction/celibacy from moral sources or small qualitative studies."
     },
     {
-      "priority": 3,
+      "priority": 2,
       "scope": "SPX first-balanced-release beyond existing first20",
       "action": "Read generator/committed first40 membership first; no assumption missing130 artifact is canonical. Exclude all completed IDs/alias groups; prioritize unresolved original-language locators."
     }
@@ -306,11 +316,11 @@
   "publication": false,
   "denzingerMandatory": false,
   "progress": {
-    "conversationFamilyIdsWithResearchDeltas": 61,
+    "conversationFamilyIdsWithResearchDeltas": 65,
     "additionalMirrorFamilyIdsExamined": 3,
-    "totalDistinctFamilyIdsExaminedInSelectedResearch": 64,
-    "answerUnitsReviewed": 122,
-    "fullFamilyPacketsForHumanReview": 60,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 68,
+    "answerUnitsReviewed": 130,
+    "fullFamilyPacketsForHumanReview": 64,
     "partialFamilyPackets": 1,
     "humanCertified": 0,
     "published": 0,
