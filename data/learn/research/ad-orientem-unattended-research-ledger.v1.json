@@ -112,6 +112,38 @@
         "SPX-EXP-009"
       ],
       "status": "NARRATOR_SOURCE_QUALITY_DELTAS_AND_DATE_CORRECTION_FLAG"
+    },
+    {
+      "batch": "B07",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b07-marriage-source-precision-20261021.v1.json",
+      "commit": "d25668b039c1b543f36dd9e8c84c97b633a3fa14",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE045",
+        "CHA-CSE-CSE049",
+        "CHA-CSE-CSE050",
+        "CHA-CSE-CSE054"
+      ],
+      "status": "SPECIALIST_SOURCE_BOUNDARIES_PREPARED"
+    },
+    {
+      "batch": "B08",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b08-papal-language-locator-deltas-20261021.v1.json",
+      "commit": "cae0a95da93df2dae18b90ade38215f59bd360c9",
+      "families": 5,
+      "answerUnits": 10,
+      "ids": [
+        "SPX-PILOT-08",
+        "SPX-012",
+        "SPX-EXP-043",
+        "SPX-PILOT-09",
+        "SPX-EXP-045"
+      ],
+      "status": "LANGUAGE_SPECIFIC_LOCATORS_AND_PAPAL_SCOPE_REVIEW",
+      "aliasFamilies": 2
     }
   ],
   "blocked": [
@@ -133,8 +165,8 @@
     }
   ],
   "active": {
-    "batch": "B07",
-    "task": "Chanoine marriage specialist source distinctions: indissolubility, separation, coercion and headship"
+    "batch": "B09",
+    "task": "Continue source-backed Chanoine moral foundations; current batch count not a stop condition"
   },
   "next": [
     "CSE016/018 Donum veritatis exact authority and theological difficulty distinctions",
