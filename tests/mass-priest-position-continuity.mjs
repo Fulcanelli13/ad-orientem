@@ -9,7 +9,7 @@ const byId=new Map(lock.items.map(x=>[x.id,x]));
 const sourceUnits=source.blocks.flatMap(b=>b.units??[]);
 assert.equal(source.blocks.length,96);
 assert.equal(sourceUnits.length,280);
-assert.equal(sourceUnits.filter(x=>/^AO\\.SM\\.C\\d{4}$/.test(x.cue_id)).length,279);
+assert.equal(sourceUnits.filter(x=>/^AO\.SM\.C\d{4}$/.test(x.cue_id)).length,279);
 assert.equal(sourceUnits.filter(x=>x.cue_id==='AO.SM.B096.SYN').length,1);
 assert.equal(new Set(sourceUnits.map(x=>x.cue_id)).size,280);
 assert.equal(original.items.length,49);
