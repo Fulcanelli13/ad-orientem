@@ -179,6 +179,7 @@ try{
        emblemLayer:Boolean(map.getLayer?.("ao-explore-institution-emblems")),
        logoOverlays:logoOverlays.length,
        logoLoaded:[...logoOverlays].filter(img=>img.complete&&img.naturalWidth>0).length,
+       overlayDiagnostics:map.__aoInstitutionEmblemDiagnostics?.()??null,
        clusterCount:map.queryRenderedFeatures?.({layers:["ao-explore-clusters"]})?.length??0};
    });
    assert.ok(emblemReview.eligible===0||emblemReview.emblemLayer||emblemReview.logoLoaded>0,
