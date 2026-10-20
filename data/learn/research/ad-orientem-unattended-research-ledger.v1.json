@@ -348,6 +348,23 @@
         "CHA-CSE-CSE040"
       ],
       "status": "SOURCE_COLLATED_MORAL_AND_PASTORAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B23",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b23-marital-goods-duties-20261021.v1.json",
+      "commit": "ccd02a942c4e33d20738d0a7c2fb7ddbeed9918c",
+      "families": 6,
+      "answerUnits": 12,
+      "ids": [
+        "CHA-CSE-CSE046",
+        "CHA-CSE-CSE047",
+        "CHA-CSE-CSE048",
+        "CHA-CSE-CSE051",
+        "CHA-CSE-CSE052",
+        "CHA-CSE-CSE053"
+      ],
+      "status": "SOURCE_COLLATED_THEOLOGICAL_PASTORAL_AND_LANGUAGE_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -369,15 +386,13 @@
     }
   ],
   "active": {
-    "batch": "B23",
-    "state": "SOURCE_COLLATION",
-    "ids": [
-      "CSE046",
-      "CSE047",
-      "CSE048",
-      "CSE051",
-      "CSE052",
-      "CSE053"
+    "batch": "B24",
+    "state": "SELECTING_EXISTING_UNRESOLVED_SOURCE_HOLDS",
+    "candidateIds": [
+      "SPX-1905-E-624",
+      "SPX-1905-E-627",
+      "SPX-1905-E-639",
+      "SPX-1905-E-641"
     ]
   },
   "next": [
@@ -392,15 +407,15 @@
   "publication": false,
   "denzingerMandatory": false,
   "progress": {
-    "conversationFamilyIdsWithResearchDeltas": 85,
+    "conversationFamilyIdsWithResearchDeltas": 91,
     "additionalMirrorFamilyIdsExamined": 3,
-    "totalDistinctFamilyIdsExaminedInSelectedResearch": 88,
-    "answerUnitsReviewed": 170,
-    "fullFamilyPacketsForHumanReview": 84,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 94,
+    "answerUnitsReviewed": 182,
+    "fullFamilyPacketsForHumanReview": 90,
     "partialFamilyPackets": 1,
     "humanCertified": 0,
     "published": 0,
-    "meaning": "84 complete research packets may enter human review; none certified."
+    "meaning": "90 complete research packets available for human review, not certification or publication approval."
   },
   "scheduling": {
     "created": false,
