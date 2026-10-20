@@ -76,6 +76,12 @@ assert.equal(holywell.stageSiteAnchors[1].placeId,"place:GB:holywell-st-winefrid
 assert.ok(holywell.stageSiteAnchors[1].approximate);
 const holywellHtml=renderPilgrimageJourneyPanel({routes:journeys,selectedId:holywell.id});
 assert.equal((holywellHtml.match(/data-explore-journey-stage-focus=/g)||[]).length,2);
+assert.equal((holywellHtml.match(/data-explore-journey-stage-place=/g)||[]).length,2,
+ "Every existing canonical sacred-place anchor has one accessible profile link");
+assert.match(holywellHtml,/Explore sacred place: St Winefride/);
+assert.equal((renderPilgrimageJourneyPanel({routes:journeys,
+ selectedId:"route:GB:ely-walsingham-lms"}).match(/data-explore-journey-stage-place=/g)||[]).length,0,
+ "2026 Priory route cannot borrow the Catholic Shrine profile as a named stage");
 const saintLouis=journeys.find(j=>j.id==="route:MU:pere-laval-saint-louis");
 assert.equal(saintLouis.stageSiteAnchors[0].placeId,"place:MU:saint-louis-cathedral-port-louis");
 assert.equal(saintLouis.stageSiteAnchors[1].placeId,"place:MU:pere-laval-sainte-croix");
