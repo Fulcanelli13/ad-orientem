@@ -5,7 +5,7 @@
   "source_inventory": "data/customs/research/weiser-handbook-inventory.v0.json",
   "selected_queue": "data/customs/research/weiser-production-reconciliation.v0.json",
   "claim": "Evidence corroborates bounded facts, not a published custom or exact 1962 ritual text.",
-  "verified_count": 9,
+  "verified_count": 12,
   "publication_releases": 0,
   "source_records": [
     {
@@ -235,6 +235,82 @@
       "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
       "remaining_gates": [
         "Avoid fear/punishment customs in recommendations, no factual endorsement of miracle folklore."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-27-012",
+      "title": "Irish St Patrick ribbon crosses",
+      "claim_class": "HISTORICAL_IRISH_ST_PATRICK_CROSSES",
+      "geographic_scope": "Ireland, documented historical domestic and children’s feast custom",
+      "evidence_state": "INDEPENDENT_MUSEUM_AND_FOLKLORE_CORROBORATED",
+      "source_basis": "National Museum of Ireland and Irish National Folklore Collection",
+      "scope_verified": "17 March ribbon-and-card crosses, especially for children and girls, historically documented; faded from routine use and now a revival craft rather than universal living practice.",
+      "corroboration": [
+        {
+          "issuer": "National Museum of Ireland — St Patrick Folklife Collection",
+          "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Religion-and-Calendar-Customs/St-Patrick",
+          "contribution": "Museum explanation of Irish ribbon crosses and gendered variants"
+        },
+        {
+          "issuer": "National Folklore Collection UCD — Schools' Collection",
+          "url": "https://www.duchas.ie/en/cbes/4644827/4613040/4651174",
+          "contribution": "Recorded Irish historical oral testimony of ribbons and St Patrick crosses"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "HISTORICAL_HOME_CUSTOM_OPTIONAL_NOT_LITURGICAL_RITE",
+      "remaining_gates": [
+        "March 17 date from 1962 calendar; household craft is not prescribed worship",
+        "Flag historical period, not universal current usage."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-27-026",
+      "title": "St Anthony and lost objects",
+      "claim_class": "ANTHONY_PATRONAL_DEVOTION",
+      "geographic_scope": "Padua Franciscan devotional witness; international tradition",
+      "evidence_state": "INDEPENDENT_FRANCISCAN_INSTITUTIONAL_WITNESS",
+      "source_basis": "Basilica-related Franciscan prayer site and Saint Anthony shrine",
+      "scope_verified": "Catholics have traditionally sought St Anthony's intercession in relation to lost objects; the saint's narrative associated with a missing psalter is not established historical proof.",
+      "corroboration": [
+        {
+          "issuer": "Franciscan Province of St Anthony of Padua — Cher Saint Antoine",
+          "url": "https://chersaintantoine.org/fr/content/aide-moi-trouver",
+          "contribution": "Official Franciscan devotional prayer and explanatory introduction"
+        },
+        {
+          "issuer": "Ermitage St Antoine — Saint Antoine de Padoue",
+          "url": "https://st-antoine.org/fr/a-propos/saint-antoine-de-padoue/",
+          "contribution": "Franciscan explanation of custom; manuscript recovery narrated cautiously"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_SAINTS_OR_PRAY_OWNER_ONLY_NO_NEW_PRAYER_MODULE",
+      "remaining_gates": [
+        "Reconcile with existing Novena/Pray owners before adding",
+        "Do not assert guaranteed recovery or the historical psalter incident as fact."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-26-022",
+      "title": "All Souls bread almsgiving",
+      "claim_class": "POLISH_HISTORICAL_ALL_SOULS_BREAD_ALMS",
+      "geographic_scope": "Poland only in independently corroborated evidence; not a French practice certificate",
+      "evidence_state": "INDEPENDENT_ETHNOGRAPHIC_ATTESTATION_POLAND_ONLY",
+      "source_basis": "Published Polish Ethnographic Atlas research from 1969–1977 surveys",
+      "scope_verified": "Bread and baked goods given to poorer people outside churches or at cemeteries on All Souls' Day in surveyed Polish communities; historical charity, not a universal rule.",
+      "corroboration": [
+        {
+          "issuer": "Cyfrowe Archiwum Polskiego Atlasu Etnograficznego — map 43",
+          "url": "https://pae.us.edu.pl/index.php/items/show/4913",
+          "contribution": "Published field-survey map specifically documenting All Souls bread alms to poor people, 1969–1977"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "HISTORICAL_CONTEXT_OR_CHARITY_SUGGESTION_NOT_PRESCRIBED_LITURGY",
+      "remaining_gates": [
+        "French variants remain separately unverified",
+        "No inference that practice is common today or spiritually effective as payment."
       ]
     }
   ]
