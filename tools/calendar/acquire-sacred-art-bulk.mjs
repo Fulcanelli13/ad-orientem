@@ -128,6 +128,7 @@ async function commonsSource(row){
  for(const [k,v] of Object.entries({action:"query",format:"json",formatversion:"2",prop:"imageinfo",titles:raw,iiprop:"url|size|sha1|mime|extmetadata"}))q.searchParams.set(k,v);
  const page=(await (await request(q.toString())).json())?.query?.pages?.[0];
  assert(page&&!page.missing&&tidy(titleKey(page.title))===tidy(titleKey(raw)),"Commons file mismatch");
+ if(row.verifiedMuseumAccession)assert(page.title.includes(row.verifiedMuseumAccession),"Source filename does not identify exact museum accession");
  const info=page.imageinfo?.[0];
  if(commonsMetadataHasPradoProvenance(info?.extmetadata))throw Error("HOLD_PRADO_SOURCE_POLICY: Commons metadata identifies Prado provenance");
  assert(info&&["image/jpeg","image/png"].includes(info.mime),"Unsupported Commons format");
