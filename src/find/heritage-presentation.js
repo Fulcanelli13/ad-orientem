@@ -57,7 +57,7 @@ export function compactHeritagePlaceSheet(vm){
   if(area)html+='<span class="aoHeritageCardLocation">'+esc(area)+'</span>';
   html+='</div><button type="button" class="aoHeritageCardClose" data-find-close-place aria-label="'+L(vm.language,"Close place preview","Fermer l’aperçu du lieu")+'">×</button></div>';
   html+='<h2 class="aoHeritageCardTitle">'+esc(p.name)+'</h2>';
-  if(p.media)html+='<figure class="aoHeritagePlaceThumb" data-photo-orientation="'+esc(p.media.orientation)+'"><img loading="lazy" decoding="async" src="'+esc(p.media.asset_path)+'" alt="'+esc(vm.language==="fr"?p.media.alt_fr:p.media.alt_en)+'"><figcaption>'+esc(p.media.credit)+' · '+esc(p.media.license)+'</figcaption></figure>';
+  if(p.media)html+='<figure class="aoHeritagePlaceThumb" data-photo-orientation="'+esc(p.media.orientation)+'"><img loading="eager" fetchpriority="high" decoding="async" src="'+esc(p.media.asset_path)+'" alt="'+esc(vm.language==="fr"?p.media.alt_fr:p.media.alt_en)+'"><figcaption>'+esc(p.media.credit)+' · '+esc(p.media.license)+'</figcaption></figure>';
   if(synopsis)html+='<p class="aoHeritageSynopsis">'+esc(synopsis)+'</p>';
   else html+='<p class="aoHeritageCardEmpty">'+L(vm.language,"Explore the original records and sources associated with this place.","Consultez les documents et les sources associés à ce lieu.")+'</p>';
   if(arr(p.saints).length)html+='<p class="aoHeritageSaints">'+esc(L(vm.language,"Associated saints","Saints associés"))+' · '+esc(p.saints.slice(0,2).join(" · "))+'</p>';
