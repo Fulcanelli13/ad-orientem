@@ -116,6 +116,8 @@ try{
       onContinue:()=>{globalThis.__folioContinued=(globalThis.__folioContinued||0)+1;return true;}
     }));
     assert.equal(prep?.ok,true,"Direct Mass preparation prayer route missing: "+JSON.stringify(prep));
+    assert.equal(await direct.evaluate(()=>globalThis.AO_MODULES.list({domain:"pray"}).some(x=>String(x.id).startsWith("mass."))),false,
+      "Session-only Mass helper must not duplicate the Prayer catalogue");
     await direct.locator("#aoPray435930 [data-tp381-mass-continue]").waitFor({state:"visible",timeout:10000});
     assert.equal(await direct.locator("#aoPray435930 [data-tp381-mass-step]").count(),1,
       "Full Mass preparation should have multi-stage prayer navigation");
