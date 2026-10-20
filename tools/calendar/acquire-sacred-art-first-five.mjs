@@ -5,6 +5,7 @@
  * Run: node tools/calendar/acquire-sacred-art-first-five.mjs
  */
 import assert from "node:assert/strict";
+import {hasPradoProvenance,commonsMetadataHasPradoProvenance,PRADO_SOURCE_HOLD} from "./sacred-art-source-policy.mjs";
 import {readFileSync} from "node:fs";
 import {mkdir,writeFile} from "node:fs/promises";
 import {createHash} from "node:crypto";
@@ -115,6 +116,7 @@ async function acquireCommons(work) {
   assert(page && page.missing!==true,"No exact Commons file page");
   assert.equal(page.title.replaceAll("_"," "),work.commonsTitle.replaceAll("_"," "),"Commons title normalization mismatch");
   const info=page.imageinfo?.[0];
+  assert(!commonsMetadataHasPradoProvenance(info?.extmetadata),PRADO_SOURCE_HOLD+": metadata confirms Prado reproduction");
   assert(info && info.mime==="image/jpeg","Commons source is not an original JPEG");
   const license=String(info.extmetadata?.LicenseShortName?.value||"");
   const copyright=String(info.extmetadata?.Copyrighted?.value||"");
@@ -176,6 +178,10 @@ async function main() {
   await mkdir(outputDir,{recursive:true});
   const statuses=[];
   for(const work of batch.works) {
+    if(work.sourcePolicy?.status===PRADO_SOURCE_HOLD||hasPradoProvenance(work)){
+      statuses.push({artworkId:work.artworkId,stage:"HOLD",reason:PRADO_SOURCE_HOLD});
+      continue;
+    }
     if(work.provider==="MET_OPEN_ACCESS")statuses.push(await acquireMet(work));
     else if(work.provider==="WIKIMEDIA_COMMONS_PD_ART")statuses.push(await acquireCommons(work));
     else statuses.push({artworkId:work.artworkId,stage:"HOLD",reason:work.note});
