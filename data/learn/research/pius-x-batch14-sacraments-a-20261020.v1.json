@@ -1,0 +1,507 @@
+{
+  "schema": "AO_SPX_1905_BATCH14_PART_V1",
+  "part": "A",
+  "status": "UNAPPROVED_SOURCE_ANCHORED_BILINGUAL_DRAFT",
+  "records": [
+    {
+      "id": "SPX-1905-O-817",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q817",
+        "originalQuestionItalian": "Ha Gesù Cristo istituito immediatamente tutti i gradi dell’Ordine Sacro?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Did Christ directly institute every historical grade of Holy Orders?",
+            "fr": "Le Christ a-t-il directement institué tous les degrés historiques de l'Ordre ?"
+          },
+          "response": {
+            "en": "The 1905 text distinguishes Christ's direct institution of episcopacy and priesthood from the diaconate and lesser orders established through the Apostles. This is its historical presentation, not a complete modern treatment of the sacrament.",
+            "fr": "Le texte de 1905 distingue l'institution directe de l'épiscopat et du sacerdoce par le Christ du diaconat et des ordres inférieurs établis par les Apôtres. C'est une présentation historique, non un traité actuel complet."
+          },
+          "supports": [
+            "PX1905-Q817"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does this settle all later theological debates about the diaconate?",
+            "fr": "Cela tranche-t-il tous les débats théologiques ultérieurs sur le diaconat ?"
+          },
+          "response": {
+            "en": "No. The source's classification requires historical and doctrinal context; do not infer that the diaconate is merely an administrative office.",
+            "fr": "Non. La classification demande un contexte historique et doctrinal ; il ne faut pas en déduire que le diaconat est une simple fonction administrative."
+          },
+          "supports": [
+            "PX1905-Q817"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-818",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q818",
+        "originalQuestionItalian": "Quando Gesù Cristo ha istituito l’Ordine Sacerdotale?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "When does the Catechism locate the institution of the priesthood?",
+            "fr": "Quand le Catéchisme situe-t-il l'institution du sacerdoce ?"
+          },
+          "response": {
+            "en": "It points to the Last Supper, when Christ entrusted the Eucharist to the Apostles and their successors, and to the Resurrection, when He conferred authority to forgive and retain sins.",
+            "fr": "Il renvoie à la dernière Cène, où le Christ confia l'Eucharistie aux Apôtres et à leurs successeurs, et à la Résurrection, où Il leur donna le pouvoir de remettre et de retenir les péchés."
+          },
+          "supports": [
+            "PX1905-Q818"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Why mention both the Last Supper and Easter?",
+            "fr": "Pourquoi mentionner la Cène et Pâques ?"
+          },
+          "response": {
+            "en": "The text joins the priestly service of the Eucharist with the ministry of reconciliation.",
+            "fr": "Le texte associe le service sacerdotal de l'Eucharistie au ministère de la réconciliation."
+          },
+          "supports": [
+            "PX1905-Q818"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-819",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q819",
+        "originalQuestionItalian": "Chi è il ministro di questo sacramento?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Who confers the Sacrament of Holy Orders?",
+            "fr": "Qui confère le sacrement de l'Ordre ?"
+          },
+          "response": {
+            "en": "The Catechism names the bishop as the minister of Holy Orders.",
+            "fr": "Le Catéchisme nomme l'évêque comme ministre du sacrement de l'Ordre."
+          },
+          "supports": [
+            "PX1905-Q819"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Can anyone confer Holy Orders simply by appointing someone?",
+            "fr": "Peut-on conférer l'Ordre par une simple nomination ?"
+          },
+          "response": {
+            "en": "No. The text attributes conferral of the sacrament to a bishop, distinct from assigning a job or office.",
+            "fr": "Non. Le texte attribue la collation du sacrement à l'évêque, ce qui diffère d'une nomination à une fonction."
+          },
+          "supports": [
+            "PX1905-Q819"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-820",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q820",
+        "originalQuestionItalian": "È dunque grande la dignità del Sacerdozio cristiano?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the Catechism speak of the dignity of the priesthood?",
+            "fr": "Pourquoi le Catéchisme parle-t-il de la dignité du sacerdoce ?"
+          },
+          "response": {
+            "en": "Because Christ entrusts priests with ministry concerning His Eucharistic Body and His Mystical Body, the Church, for the salvation of souls.",
+            "fr": "Parce que le Christ confie aux prêtres un ministère concernant son Corps eucharistique et son Corps mystique, l'Église, pour le salut des âmes."
+          },
+          "supports": [
+            "PX1905-Q820"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does dignity imply a priest is personally incapable of wrongdoing?",
+            "fr": "Cette dignité signifie-t-elle qu'un prêtre ne peut personnellement commettre de faute ?"
+          },
+          "response": {
+            "en": "No. The passage describes the dignity and mission of an office, not a guarantee of personal impeccability.",
+            "fr": "Non. Le passage décrit la dignité et la mission d'un ministère, non une garantie d'impeccabilité personnelle."
+          },
+          "supports": [
+            "PX1905-Q820"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-821",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q821",
+        "originalQuestionItalian": "Il Sacerdozio cattolico è necessario nella Chiesa?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the Church need the Catholic priesthood?",
+            "fr": "Pourquoi l'Église a-t-elle besoin du sacerdoce catholique ?"
+          },
+          "response": {
+            "en": "The Catechism points to the offering of Mass, the sacraments and instruction in the faith, through which the faithful receive pastoral care.",
+            "fr": "Le Catéchisme mentionne l'offrande de la Messe, les sacrements et l'instruction de la foi, par lesquels les fidèles reçoivent l'aide pastorale."
+          },
+          "supports": [
+            "PX1905-Q821"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Would the Church be merely a gathering without sacramental ministry?",
+            "fr": "L'Église ne serait-elle qu'un rassemblement sans ministère sacramentel ?"
+          },
+          "response": {
+            "en": "The text insists that priestly ministry belongs to the Church as Christ instituted her.",
+            "fr": "Le texte insiste sur le fait que le ministère sacerdotal appartient à l'Église telle que le Christ l'a instituée."
+          },
+          "supports": [
+            "PX1905-Q821"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-822",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q822",
+        "originalQuestionItalian": "Dunque il Sacerdozio cattolico non cesserà mai sulla terra?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Does the Catechism expect the priesthood to endure?",
+            "fr": "Le Catéchisme prévoit-il que le sacerdoce perdurera ?"
+          },
+          "response": {
+            "en": "Yes. It invokes Christ's promise that the powers of hell will not prevail against His Church.",
+            "fr": "Oui. Il invoque la promesse du Christ selon laquelle les puissances de l'enfer ne prévaudront pas contre son Église."
+          },
+          "supports": [
+            "PX1905-Q822"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does that imply every priest or institution will always act well?",
+            "fr": "Cela signifie-t-il que chaque prêtre ou institution agira toujours bien ?"
+          },
+          "response": {
+            "en": "No. The promise concerns the endurance of the Church and her priestly ministry, not personal conduct in every circumstance.",
+            "fr": "Non. La promesse concerne la durée de l'Église et de son ministère sacerdotal, non toutes les conduites individuelles."
+          },
+          "supports": [
+            "PX1905-Q822"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-823",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q823",
+        "originalQuestionItalian": "È peccato disprezzare i sacerdoti?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "Why does the Catechism warn against contempt for priests?",
+            "fr": "Pourquoi le Catéchisme met-il en garde contre le mépris des prêtres ?"
+          },
+          "response": {
+            "en": "It connects contempt for Christ's ministers, precisely as ministers, with contempt for the One who sent them. Its strong moral language must not be taken to forbid reporting abuse or criticizing misconduct.",
+            "fr": "Il relie le mépris des ministres du Christ, en tant que tels, au mépris de Celui qui les a envoyés. Son langage moral sévère ne saurait interdire de signaler des abus ou de critiquer des fautes."
+          },
+          "supports": [
+            "PX1905-Q823"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "May Catholics still challenge a priest's wrongdoing?",
+            "fr": "Les catholiques peuvent-ils dénoncer les fautes d'un prêtre ?"
+          },
+          "response": {
+            "en": "Yes. Respect for sacred ministry does not excuse misconduct or suspend responsibilities to safeguard others.",
+            "fr": "Oui. Le respect du ministère sacré n'excuse aucune faute et ne supprime pas le devoir de protéger autrui."
+          },
+          "supports": [
+            "PX1905-Q823"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-824",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q824",
+        "originalQuestionItalian": "Quale deve essere il fine di chi abbraccia lo stato ecclesiastico?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What should motivate someone entering the clerical state?",
+            "fr": "Quel motif doit animer celui qui entre dans l'état ecclésiastique ?"
+          },
+          "response": {
+            "en": "The Catechism names the glory of God and the salvation of souls, rather than status or advantage.",
+            "fr": "Le Catéchisme nomme la gloire de Dieu et le salut des âmes, plutôt que le rang ou l'avantage personnel."
+          },
+          "supports": [
+            "PX1905-Q824"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Is prestige a sufficient reason to seek ordination?",
+            "fr": "Le prestige est-il une raison suffisante pour rechercher l'ordination ?"
+          },
+          "response": {
+            "en": "No. The stated objective is service of God and souls.",
+            "fr": "Non. La fin indiquée est le service de Dieu et des âmes."
+          },
+          "supports": [
+            "PX1905-Q824"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-825",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q825",
+        "originalQuestionItalian": "Che cosa è necessario per entrare nello stato ecclesiastico?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "What is first necessary for entering the clerical state?",
+            "fr": "Que faut-il d'abord pour entrer dans l'état ecclésiastique ?"
+          },
+          "response": {
+            "en": "The Catechism answers: a divine vocation.",
+            "fr": "Le Catéchisme répond : une vocation divine."
+          },
+          "supports": [
+            "PX1905-Q825"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Does merely wanting the title prove a vocation?",
+            "fr": "Désirer seulement le titre prouve-t-il une vocation ?"
+          },
+          "response": {
+            "en": "No. The next question recommends prayer, prudent counsel and examination of aptitude.",
+            "fr": "Non. La question suivante recommande la prière, un conseil prudent et l'examen des aptitudes."
+          },
+          "supports": [
+            "PX1905-Q825"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    },
+    {
+      "id": "SPX-1905-O-826",
+      "source": {
+        "edition": "1905_LONG_CATECHISM",
+        "questionId": "PX1905-Q826",
+        "originalQuestionItalian": "Che cosa si deve fare per conoscere se Dio chiama allo stato ecclesiastico?",
+        "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+        "section": "HOLY_ORDERS_VOCATION",
+        "witness": "MUSEO_SAN_PIO_X_DIGITAL_TRANSCRIPTION_UNCOLLATED",
+        "sourceClass": "PAPALLY_PRESCRIBED_CATECHISM_NOT_AUTOGRAPH"
+      },
+      "turns": [
+        {
+          "kind": "opening",
+          "question": {
+            "en": "How should someone discern a vocation to priesthood?",
+            "fr": "Comment discerner une vocation sacerdotale ?"
+          },
+          "response": {
+            "en": "The Catechism recommends fervent prayer, counsel from a bishop or prudent director, and honest examination of aptitude for study, ministry and its obligations.",
+            "fr": "Le Catéchisme recommande la prière fervente, le conseil de l'évêque ou d'un directeur prudent et un examen honnête des aptitudes aux études, au ministère et à ses obligations."
+          },
+          "supports": [
+            "PX1905-Q826"
+          ]
+        },
+        {
+          "kind": "followup",
+          "question": {
+            "en": "Can an app decide whether someone is called?",
+            "fr": "Une application peut-elle décider si quelqu'un est appelé ?"
+          },
+          "response": {
+            "en": "No. The discernment described requires pastoral guidance and responsible personal judgment.",
+            "fr": "Non. Le discernement décrit demande un accompagnement pastoral et un jugement personnel responsable."
+          },
+          "supports": [
+            "PX1905-Q826"
+          ]
+        }
+      ],
+      "release": {
+        "sourceSentenceVerified": false,
+        "theologyApproved": false,
+        "translationApproved": false,
+        "voiceApproved": false,
+        "production": false
+      },
+      "speaker": "EDUCATIONAL_DOCUMENTARY_PARAPHRASE"
+    }
+  ]
+}
