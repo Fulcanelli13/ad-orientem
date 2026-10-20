@@ -58,8 +58,10 @@ assert.equal(icon("AO.SM.C0055",{gesture:{cueId:"AO.SM.C0055",action:"Bow head"}
 assert.equal(icon("AO.SM.C0072",{priestPosition:{station:"ALTAR_EPISTLE_MISSAL"}}).priestPositionIconKey,"priest_gospel_rich");
 assert.equal(icon("AO.SM.C0144",{priestPosition:{station:"ALTAR_CENTER",missalLocation:"GOSPEL_SIDE"}}).priestPositionIconKey,"priest_centre_hands_rich");
 assert.equal(icon("AO.SM.C0086",{priestPosition:{station:"ALTAR_GOSPEL_MISSAL"}}).priestPositionIconKey,"priest_epistle_rich");
-assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,"final_ref_112206",
-  "Must render exact user-approved foot-of-altar master");
+assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,null,
+  "User vetoed Foot Centre pictogram: text-only, never ref_112206 or old rejected art");
+assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER",facing:"PEOPLE"}}).priestPositionIconKey,null,
+  "Facing-people cannot override Foot Centre artwork veto");
 assert.equal(icon("AO.SM.C0265",{priestAction:{cueId:"AO.SM.C0265",label:"BLESSES PEOPLE"}}).priestActionIconKey,null,
   "Final blessing must not use Indulgentiam artwork");
 assert.equal(icon("AO.SM.C0144",{priestVoice:{cueId:"AO.SM.C0144",voice:"CLEAR SPOKEN"}}).priestVoiceIconKey,"priest_audible");
