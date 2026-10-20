@@ -164,6 +164,28 @@ function placeSheet(vm){
   }
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
 
+  // Reciprocal navigation is restricted to independently documented canonical
+  // journey identities. It is not generated from nearby pins or name matching.
+  if(arr(vm.placeJourneys).length){
+    html+='<section class="aoExplorePlaceGroup aoExplorePlaceJourneys" data-explore-place-journeys>'+
+      '<h3>'+esc(L(vm.language,"Documented journeys associated with this place",
+        "Parcours attestés associés à ce lieu"))+'</h3>';
+    for(const journey of vm.placeJourneys){
+      const detail=journey.relation==="RELATED_SHRINE_NOT_TERMINUS"
+        ?L(vm.language,"Related Catholic shrine — NOT the pilgrimage terminus for this edition",
+          "Sanctuaire catholique associé — PAS le terminus de cette édition")
+        :journey.relation==="NAMED_STAGE"
+        ?L(vm.language,"Published stage "+journey.ordinal,"Étape attestée "+journey.ordinal)
+        :L(vm.language,"Linked pilgrimage destination place","Lieu de destination associé");
+      html+='<button type="button" class="aoExplorePlaceJourneyRow" data-explore-place-journey="'+esc(journey.routeId)+'">'+
+        '<strong>'+esc(journey.name)+'</strong>'+
+        '<small>'+esc(detail)+'</small><span aria-hidden="true">→</span></button>';
+    }
+    html+='<p>'+esc(L(vm.language,
+      "Published pilgrimage records; not live route navigation or current access information.",
+      "Parcours documentés ; ni navigation GPS ni informations d’accès en temps réel."))+'</p></section>';
+  }
+
   // Reader-first: only source-owned text and already linked devotions appear.
   // Chapter shortcuts scroll this Place sheet, never leave the application.
   const preferredCategory=arr(vm.filters?.heritageCategories).length===1?vm.filters.heritageCategories[0]:null;
@@ -274,27 +296,6 @@ function placeSheet(vm){
   }
   if(arr(profile.pilgrimages).length){
     html+='<section class="aoExplorePlaceGroup"><details class="aoPlaceAccordion"><summary>'+esc(L(vm.language,"PILGRIMAGES","PÈLERINAGES"))+' · '+arr(profile.pilgrimages).length+'</summary>'+placeRecordRows(profile.pilgrimages,vm.language)+'</details></section>';
-  }
-  // Reciprocal navigation is restricted to independently documented canonical
-  // journey identities. It is not generated from nearby pins or name matching.
-  if(arr(vm.placeJourneys).length){
-    html+='<section class="aoExplorePlaceGroup aoExplorePlaceJourneys" data-explore-place-journeys>'+
-      '<h3>'+esc(L(vm.language,"Documented journeys associated with this place",
-        "Parcours attestés associés à ce lieu"))+'</h3>';
-    for(const journey of vm.placeJourneys){
-      const detail=journey.relation==="RELATED_SHRINE_NOT_TERMINUS"
-        ?L(vm.language,"Related Catholic shrine — NOT the pilgrimage terminus for this edition",
-          "Sanctuaire catholique associé — PAS le terminus de cette édition")
-        :journey.relation==="NAMED_STAGE"
-        ?L(vm.language,"Published stage "+journey.ordinal,"Étape attestée "+journey.ordinal)
-        :L(vm.language,"Linked pilgrimage destination place","Lieu de destination associé");
-      html+='<button type="button" class="aoExplorePlaceJourneyRow" data-explore-place-journey="'+esc(journey.routeId)+'">'+
-        '<strong>'+esc(journey.name)+'</strong>'+
-        '<small>'+esc(detail)+'</small><span aria-hidden="true">→</span></button>';
-    }
-    html+='<p>'+esc(L(vm.language,
-      "Published pilgrimage records; not live route navigation or current access information.",
-      "Parcours documentés ; ni navigation GPS ni informations d’accès en temps réel."))+'</p></section>';
   }
 
   // Never show a giant empty TLM section on every shrine page. Exact
