@@ -57,6 +57,7 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidenc
           coordinates:null,status:"NAMED_UNMAPPED",
         }))):Object.freeze([]);
       const mappedStages=Object.freeze([]); // Not yet certified.
+      const relatedShrineNotEndpoint=evidence?.destination_relation==="RELATED_SHRINE_NOT_EVENT_ENDPOINT";
       const officialMapUrl=isHttp(evidence?.official_map_url)?tidy(evidence.official_map_url):null;
       const evidenceUrl=isHttp(evidence?.source_url)?tidy(evidence.source_url):null;
       const stages=Number(route.stage_count);
@@ -66,7 +67,13 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidenc
         origin:tidy(route.origin_label),
         destination:tidy(item?.raw?.shrine?.name)||tidy(item.subtitle)||tidy(item.title),
         destinationPlaceId:tidy(route.destination_place_id),
-        destinationGeo:geo,
+        // In a changed-edition route, the canonical Catholic shrine is not
+        // the actual 2026 final-day venue. Never center a supposedly exact
+        // journey endpoint on an unrelated shrine anchor.
+        destinationGeo:relatedShrineNotEndpoint?null:geo,
+        relatedShrineGeo:relatedShrineNotEndpoint?geo:null,
+        destinationRelation:relatedShrineNotEndpoint
+          ?"RELATED_SHRINE_NOT_EVENT_ENDPOINT":"CANONICAL_DESTINATION",
         pilgrimageId:tidy(item.source_id),
         overview:tidy(item.summary),
         overviewFr:tidy(item.summary_fr),
@@ -157,6 +164,12 @@ export function renderPilgrimageJourneyPanel({
   if(selected.namedStages.length)html+='<p class="aoJourneyStages">'+esc(label(language,
     selected.namedStages.length+" named stages from official evidence · no geolocated waypoint yet",
     selected.namedStages.length+" étapes nommées selon les sources officielles · aucun repère géolocalisé"))+'</p>';
+  if(selected.destinationRelation==="RELATED_SHRINE_NOT_EVENT_ENDPOINT"){
+    html+='<p class="aoJourneyNoLine aoJourneyEndpointWarning">'+
+      esc(label(language,
+        "The final stage is at a different site from the linked Catholic shrine. The shrine's map pin is NOT the pilgrimage endpoint for this edition.",
+        "L’étape finale se situe ailleurs que le sanctuaire catholique associé. Son repère sur la carte N’EST PAS le terminus de cette édition."))+'</p>';
+  }
   html+='<p class="aoJourneyNoLine">'+esc(label(language,
     "This is a documented pilgrimage, not turn-by-turn directions. No route line, distance or travel time is asserted.",
     "Ce pèlerinage est attesté, mais sans guidage GPS. Aucun tracé, distance ni durée ne sont affirmés."))+'</p>';
@@ -169,7 +182,9 @@ export function renderPilgrimageJourneyPanel({
       ?label(language,"Show sanctuary anchor","Voir le sanctuaire")
       :label(language,"Show destination","Voir la destination"))+'</button>';
   html+='<button type="button" data-explore-journey-destination="'+esc(selected.destinationPlaceId)+'">'+
-    esc(label(language,"Discover sacred place","Découvrir le lieu sacré"))+'</button></div>';
+    esc(selected.destinationRelation==="RELATED_SHRINE_NOT_EVENT_ENDPOINT"
+      ?label(language,"Explore related Catholic shrine","Découvrir le sanctuaire catholique associé")
+      :label(language,"Discover sacred place","Découvrir le lieu sacré"))+'</button></div>';
   if(selected.sources.length){
     html+='<div class="aoJourneyEvidence"><strong>'+esc(label(language,"Original sources","Sources originales"))+'</strong>';
     selected.sources.forEach(source=>{
