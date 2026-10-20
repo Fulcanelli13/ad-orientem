@@ -288,6 +288,180 @@
       "calendar_trigger_hint": "03/02, St Blaise commemoration in 1962 Roman calendar; Calendar owns calculation and precedence",
       "confidence": "HIGH",
       "guardrail": "Voluntary, not a Mass or a third-class feast in the ordinary 1962 calendar, not a promise of healing, and no app-provided or lay-invented priestly ceremony. The historical St Blaise candle blessing and modern Candlemas-candle provision must not be equated. Availability varies by parish."
+    },
+    {
+      "custom_id": "NDAY-001",
+      "family": "Home & family",
+      "name": "Baptismal patron's name day",
+      "canonical_statement": "Families may commemorate a person's baptismal patron on that saint's feast with prayer, the saint's life and a modest family meal, optionally attending Mass; this is a voluntary domestic celebration, not an additional liturgical feast.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Traditional Catholic family practice; 1962 Catholic household witness",
+      "decision": "KEEP — SOURCE-LOCKED SELECTIVE WEISER ADMISSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Saints",
+        "Learn"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Only display after a user chooses a patron and the relevant traditional saint feast. Never infer a patron from a first name, invent an obligation, or create a second feast."
+    },
+    {
+      "custom_id": "PATR-001",
+      "family": "Saints & patronal feasts",
+      "name": "French fête patronale / village patronal celebration",
+      "canonical_statement": "A French local church or village may observe its own patronal feast with Mass, procession and communal festivities; the particular date and form belong to the local place and are not universally scheduled.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Medieval roots; locally continuing example at Chantelle",
+      "decision": "KEEP — SOURCE-LOCKED SELECTIVE WEISER ADMISSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Learn",
+        "Saints"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "The documented Chantelle celebration after Ascension does not establish a national date, a 1962 Mass rank or automatic procession."
+    },
+    {
+      "custom_id": "MARI-001",
+      "family": "Marian feasts",
+      "name": "French Assumption Marian processions",
+      "canonical_statement": "In documented French localities the Assumption is celebrated with public Marian processions, sometimes carrying a statue of Our Lady. Participation is voluntary and dependent on an actual locally announced event.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Historical → documented 2026",
+      "decision": "KEEP — SOURCE-LOCKED SELECTIVE WEISER ADMISSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "15/08 — Assumption; regional context, never automatic ritual",
+      "confidence": "HIGH",
+      "guardrail": "The feast date is not a procession flag. Existing Mass and ceremonial reader remains exclusively responsible for an explicitly selected local rite."
+    },
+    {
+      "custom_id": "SJOS-001",
+      "family": "Saints & charity",
+      "name": "St Joseph's table and gifts to the poor",
+      "canonical_statement": "The Sicilian-rooted St Joseph table is a charitable feast custom involving a display or sharing of food and support for people in need, with documented modern parish celebrations around 19 March.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Sicilian tradition → 2026 US diocesan celebration",
+      "decision": "KEEP — SOURCE-LOCKED SELECTIVE WEISER ADMISSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Saints",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "19/03 — St Joseph feast; optional local family and parish practice",
+      "confidence": "HIGH",
+      "guardrail": "A domestic St Joseph table is not the celebration of a Mass or a lay-performed priestly blessing. Do not present specific pastries, miracle accounts or dates of transferred Masses as established."
+    },
+    {
+      "custom_id": "SANT-001",
+      "family": "Saints & charity",
+      "name": "St Anthony's Bread / Pain des pauvres",
+      "canonical_statement": "The Franciscan charitable practice of St Anthony's Bread supports people in need; its French revival is associated with Louise Bouffier of Toulon in 1890. Families may honour the saint with voluntary almsgiving.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Late nineteenth century France → continuing Franciscan charitable witness",
+      "decision": "KEEP — SOURCE-LOCKED SELECTIVE WEISER ADMISSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Saints",
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "13/06 — St Anthony of Padua; charity can be practised on any day",
+      "confidence": "HIGH",
+      "guardrail": "Almsgiving is not a payment for favours, fundraising functionality, or a guarantee of a miracle. No contact or money spending is required by the app."
+    },
+    {
+      "custom_id": "SCHR-001",
+      "family": "Saints & sacramental blessings",
+      "name": "St Christopher — vehicles and travellers' blessing",
+      "canonical_statement": "Some French parishes celebrate St Christopher and arrange a ministerial blessing of drivers, travellers and vehicles near 25 July; one 2026 parish example took place on 19 July.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Historical tradition → 2026 parish witness",
+      "decision": "KEEP — SOURCE-LOCKED SELECTIVE WEISER ADMISSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Saints",
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "25/07 — St Christopher commemoration; parish event date may differ",
+      "confidence": "HIGH",
+      "guardrail": "Optional and only if arranged locally; no guarantee of physical safety, no invented lay blessing formula, no universal parish offering."
+    },
+    {
+      "custom_id": "SNIC-001",
+      "family": "Home & family",
+      "name": "St Nicholas's visit and small gifts to children",
+      "canonical_statement": "In parts of Alsace and Lorraine, families and communities mark St Nicholas's 6 December feast with a costumed visitor, treats or modest gifts, and stories that can lead children toward the saint's Christian charity.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Regional tradition → documented contemporary Alsatian practice",
+      "decision": "KEEP — SOURCE-LOCKED SELECTIVE WEISER ADMISSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Saints",
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "06/12 — St Nicholas; regional household custom",
+      "confidence": "HIGH",
+      "guardrail": "The historical biography of Nicholas must be distinguished from later folklore. Exclude threatening costumed helpers and claims that gifts are liturgically required."
+    },
+    {
+      "custom_id": "BLSS-002",
+      "family": "Marian feast-day sacramentals",
+      "name": "Assumption — blessing of herbs, flowers and fruits",
+      "canonical_statement": "In parts of Catholic Europe, especially historically Germanic regions, herbs, flowers and the fruits of the earth are brought for a priestly blessing on the Assumption of the Blessed Virgin Mary (15 August). The Roman Ritual includes an appropriate traditional blessing, while local provision varies.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Medieval regional practice; received into historical Roman Ritual; observed in some places today",
+      "decision": "KEEP — SOURCE-LOCKED SOT-07 EXTENSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "15 August, Assumption; date and Mass rank owned by Calendar",
+      "confidence": "HIGH",
+      "guardrail": "Do not present as mandatory, universal, a guarantee of healing, or a magical protection. No Mass/ceremonial mechanics or ministerial blessing formula in lay guidance. Availability depends on local clergy."
+    },
+    {
+      "custom_id": "BLSS-003",
+      "family": "Saints & sacramental blessings",
+      "name": "St John the Evangelist — blessing of wine",
+      "canonical_statement": "A documented traditional Catholic custom on 27 December is to bring wine to be blessed by a priest in honour of St John the Evangelist. This custom is preserved in historical Roman Ritual material and local Catholic practice; the associated account of poisoned wine is traditional legend, not a proven historical episode.",
+      "custom_class": "TRADITIONAL_ROMAN_PRACTICE",
+      "period_label": "Historic Central European and Roman-rite devotional custom; locally continued",
+      "decision": "KEEP — SOURCE-LOCKED SOT-07 EXTENSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "27 December, feast of St John the Apostle and Evangelist in 1962 Roman calendar",
+      "confidence": "HIGH",
+      "guardrail": "No implication that wine is the Precious Blood, automatic protection, universal parish availability, medical treatment, compulsory drinking or an invitation to drink alcohol. Blessing is ministerial."
+    },
+    {
+      "custom_id": "BLSS-004",
+      "family": "Easter domestic customs",
+      "name": "Holy Saturday — blessing of Easter foods",
+      "canonical_statement": "In several Catholic regional traditions, especially Polish and other Central/Eastern European households, families bring eggs, bread and other Easter foods to be blessed by an authorised minister, often on Holy Saturday. The foods are subsequently shared at Easter; the historical Roman Ritual includes blessings of lamb, eggs and bread.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Pre-conciliar → present, regionally variable",
+      "decision": "KEEP — SOURCE-LOCKED SOT-07 EXTENSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Holy Saturday (calculated from 1962 Easter by Calendar), with domestic use on Easter Sunday",
+      "confidence": "HIGH",
+      "guardrail": "No obligation, no universal standard basket contents or Holy Saturday schedule. Distinguish a minister's ritual blessing from family prayer before the Easter meal and do not displace the Easter Vigil."
     }
   ],
   "attestations": [
@@ -1495,6 +1669,187 @@
         "ORDO-BLAISE-1962"
       ],
       "evidence_note": "A documented Roman ritual sacramental; global area marks broad Roman-rite status, not evidence that a particular parish or locality offers the blessing. The old and new ritual rules differ.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:NDAY-001:US",
+      "custom_id": "NDAY-001",
+      "geo_area_id": "geo:country:US",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Traditional Catholic family practice; 1962 Catholic household witness",
+      "strength": "STRONG",
+      "source_ids": [
+        "EWTN-MCLOUGHLIN-NAMEDAY"
+      ],
+      "evidence_note": "WEI58-23-008. Families may commemorate a person's baptismal patron on that saint's feast with prayer, the saint's life and a modest family meal, optionally attending Mass; this is a voluntary domestic celebration, not an additional liturgical feast.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:PATR-001:FR",
+      "custom_id": "PATR-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Medieval roots; locally continuing example at Chantelle",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-CHANTELLE-PATRONAL"
+      ],
+      "evidence_note": "WEI58-23-006. A French local church or village may observe its own patronal feast with Mass, procession and communal festivities; the particular date and form belong to the local place and are not universally scheduled.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:MARI-001:FR",
+      "custom_id": "MARI-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historical → documented 2026",
+      "strength": "STRONG",
+      "source_ids": [
+        "DIOCESE-PARIS-ASSOMPTION-2026"
+      ],
+      "evidence_note": "WEI58-24-005. In documented French localities the Assumption is celebrated with public Marian processions, sometimes carrying a statue of Our Lady. Participation is voluntary and dependent on an actual locally announced event.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:SJOS-001:US",
+      "custom_id": "SJOS-001",
+      "geo_area_id": "geo:country:US",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Sicilian tradition → 2026 US diocesan celebration",
+      "strength": "STRONG",
+      "source_ids": [
+        "BR-DIOCESE-STJOSEPH-2026"
+      ],
+      "evidence_note": "WEI58-27-019. The Sicilian-rooted St Joseph table is a charitable feast custom involving a display or sharing of food and support for people in need, with documented modern parish celebrations around 19 March.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:SANT-001:FR",
+      "custom_id": "SANT-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Late nineteenth century France → continuing Franciscan charitable witness",
+      "strength": "STRONG",
+      "source_ids": [
+        "ERMITAGE-ANTHONY-POOR-BREAD"
+      ],
+      "evidence_note": "WEI58-27-023. The Franciscan charitable practice of St Anthony's Bread supports people in need; its French revival is associated with Louise Bouffier of Toulon in 1890. Families may honour the saint with voluntary almsgiving.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:SCHR-001:FR",
+      "custom_id": "SCHR-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historical tradition → 2026 parish witness",
+      "strength": "STRONG",
+      "source_ids": [
+        "DIOCESE-LAVAL-CHRISTOPHER-2026"
+      ],
+      "evidence_note": "WEI58-28-011. Some French parishes celebrate St Christopher and arrange a ministerial blessing of drivers, travellers and vehicles near 25 July; one 2026 parish example took place on 19 July.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:SNIC-001:FR",
+      "custom_id": "SNIC-001",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Regional tradition → documented contemporary Alsatian practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "STRASBOURG-SAINT-NICOLAS-2022"
+      ],
+      "evidence_note": "WEI58-28-020. In parts of Alsace and Lorraine, families and communities mark St Nicholas's 6 December feast with a costumed visitor, treats or modest gifts, and stories that can lead children toward the saint's Christian charity.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DEAD-003:POLAND-WYPOMINKI-2025",
+      "custom_id": "DEAD-003",
+      "geo_area_id": "geo:country:PL",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Polish contemporary November devotional custom",
+      "strength": "STRONG",
+      "source_ids": [
+        "POLAND-WYPOMINKI-2025"
+      ],
+      "evidence_note": "Wypominki remembrance lists name the deceased for parish prayer and memorial intentions; this enriches DEAD-003 and does not create a second universal Souls feast.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BLSS-002:ROMAN",
+      "custom_id": "BLSS-002",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Historical Roman Ritual includes feast-specific blessing; regionally practised",
+      "strength": "STRONG",
+      "source_ids": [
+        "DPP-ASSUMPTION-HERBS-181",
+        "RIT-ASSUMPTION-WELLER",
+        "PARISH-ASSUMPTION-HERBS-NEWTON"
+      ],
+      "evidence_note": "The Roman rite has a traditional herb/fruit blessing for 15 August, specifically associated by the Vatican Directory with Germanic countries; a traditional Massachusetts parish independently documents local practice. World context describes the rite, not universal performance.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BLSS-003:ROMAN",
+      "custom_id": "BLSS-003",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Historical Roman blessing; ongoing in some traditional Roman-rite parishes",
+      "strength": "STRONG",
+      "source_ids": [
+        "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+        "UK-PARISH-STJOHN-WINE"
+      ],
+      "evidence_note": "Direct traditional-parish documentation and another Catholic parish's independent historical explanation support 27 December priestly blessing of wine, not a general medicinal or universal practice.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BLSS-004:ROMAN",
+      "custom_id": "BLSS-004",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Historical Roman Ritual forms; regionally rooted continuing Easter practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "RIT-EASTER-FOOD-WELLER",
+        "US-DIOCESE-EASTER-BASKETS",
+        "DPP-2001"
+      ],
+      "evidence_note": "The historical Roman Ritual contains specific food blessings; diocesan and Vatican popular-piety sources identify the optional regional household custom and Easter table. No parish/place or universal scheduling claim is implied.",
       "map_policy": "NOT_MAPPED",
       "confidence": "HIGH"
     }

@@ -141,7 +141,7 @@
     "directory:import:ibp": "node tools/directory/import-ibp.mjs",
     "test:find": "node tests/find-surface.mjs",
     "test:explore-geography": "node tests/explore-geography-contracts.mjs && node tests/sacred-geography-r89-first-coverage-release.mjs && node tests/heritage-place-reconciliation.mjs && node tests/sacred-geography-r90-coverage-first-release.mjs && node tests/sacred-geography-r91-coverage-first-release.mjs && node tests/sacred-geography-r92-verified-site-cohort.mjs && node tests/sacred-geography-r93-first-presence-release.mjs",
-    "test:customs-atlas": "node tests/customs-atlas-contracts.mjs && node tests/customs-blaise-calendar.mjs",
+    "test:customs-atlas": "node tests/customs-atlas-contracts.mjs && node tests/customs-blaise-calendar.mjs && node tests/customs-feast-blessings-calendar.mjs && npm run test:customs-weiser && node tests/customs-coordinated-integration.mjs",
     "test:shrines-pilgrimages": "node tests/shrines-pilgrimages-contracts.mjs",
     "directory:geocode": "node tools/directory/geocode-runtime-snapshots.mjs",
     "test:directory-geocoding": "node tests/directory-geocoding.mjs",
@@ -264,7 +264,8 @@
     "test:mass-ps113-editorial": "node tests/mass-2026-10-18-ps113-alleluia-english.mjs",
     "test:mass-icon-necessity": "node tests/mass-icon-necessity-policy.mjs",
     "test:mass-icon-source": "node tests/mass-icon-generation-provenance.mjs && npm run test:mass-icon-originals && node tests/mass-icon-originals-schumacher1920.mjs && node tests/mass-icon-source-acquisition-p3.mjs",
-    "test:mass-icon-originals": "node tests/mass-icon-originals-leclerc1661.mjs"
+    "test:mass-icon-originals": "node tests/mass-icon-originals-leclerc1661.mjs",
+    "test:customs-weiser": "node tests/customs-weiser-selective-release.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"

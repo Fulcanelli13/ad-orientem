@@ -67,7 +67,7 @@ for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","nov
  const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
  assert.equal(R.distinct_place_links[kind],distinct,"unique Place count drifted for "+kind);
 }
-// The 10 October editorial snapshot is immutable. Reconcile only four later,
+// The 10 October editorial snapshot is immutable. Reconcile fourteen later,
 // explicitly source-locked non-pin additions; do not rewrite the snapshot as if
 // it had been researched on that original date.
 const admittedAfterSnapshot=[
@@ -75,6 +75,16 @@ const admittedAfterSnapshot=[
   ["DOM-011","att:DOM-011:FR","AREA_CONTEXT"],
   ["DOM-013","att:DOM-013:FR","AREA_CONTEXT"],
   ["BLSS-001","att:BLSS-001:ROMAN","NOT_MAPPED"],
+  ["BLSS-002","att:BLSS-002:ROMAN","NOT_MAPPED"],
+  ["BLSS-003","att:BLSS-003:ROMAN","NOT_MAPPED"],
+  ["BLSS-004","att:BLSS-004:ROMAN","NOT_MAPPED"],
+  ["NDAY-001","att:NDAY-001:US","NOT_MAPPED"],
+  ["PATR-001","att:PATR-001:FR","NOT_MAPPED"],
+  ["MARI-001","att:MARI-001:FR","NOT_MAPPED"],
+  ["SJOS-001","att:SJOS-001:US","NOT_MAPPED"],
+  ["SANT-001","att:SANT-001:FR","NOT_MAPPED"],
+  ["SCHR-001","att:SCHR-001:FR","NOT_MAPPED"],
+  ["SNIC-001","att:SNIC-001:FR","NOT_MAPPED"],
 ];
 for(const [customId,attestationId,policy] of admittedAfterSnapshot){
   const custom=C.customs.find(x=>x.custom_id===customId);
@@ -86,7 +96,9 @@ for(const [customId,attestationId,policy] of admittedAfterSnapshot){
 }
 assert.equal(R.counts.canonical_customs+admittedAfterSnapshot.length,C.customs.length,
   "canonical customs beyond the reviewed post-snapshot additions require reconciliation");
-assert.equal(R.counts.custom_attestations+admittedAfterSnapshot.length,C.attestations.length,
+const postSnapshotAttestationEnrichments=["att:DEAD-003:POLAND-WYPOMINKI-2025"];
+for(const id of postSnapshotAttestationEnrichments)assert.ok(C.attestations.some(a=>a.attestation_id===id),id+" must remain attached to DEAD-003");
+assert.equal(R.counts.custom_attestations+admittedAfterSnapshot.length+postSnapshotAttestationEnrichments.length,C.attestations.length,
   "custom attestations beyond reviewed post-snapshot additions require reconciliation");
 assert.match(R.map_policy_note,/not counts of publishable map pins/);
 assert.equal(R.counts.multicategory_heritage_places,multicategory);
@@ -109,7 +121,7 @@ assert.deepEqual(R.exception_queues.places_pending_coordinates,
  R.place_crosswalk.filter(p=>p.geo_source_status==="PENDING_COORDINATES").map(p=>p.place_id));
 assert.deepEqual(R.exception_queues.coordinates_without_source_url,
  R.place_crosswalk.filter(p=>p.geo_source_status==="COORDINATES_MISSING_SOURCE_URL").map(p=>p.place_id));
-const laterAttestationIds=new Set(admittedAfterSnapshot.map(x=>x[1]));
+const laterAttestationIds=new Set([...admittedAfterSnapshot.map(x=>x[1]),...postSnapshotAttestationEnrichments]);
 assert.deepEqual(R.exception_queues.customs_without_exact_place,
  C.attestations.filter(p=>!p.place_id&&!laterAttestationIds.has(p.attestation_id)).map(p=>({
    id:p.attestation_id,map_policy:p.map_policy,geo_area_id:p.geo_area_id??null

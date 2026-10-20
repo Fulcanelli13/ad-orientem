@@ -34,8 +34,8 @@ for (const entry of negative.entries) {
   assert.equal(auditNegativeKnowledge(entry).length, 0, entry.custom_id);
 }
 
-assert.equal(atlas.customs.length, 17);
-assert.equal(atlas.attestations.length, 75);
+assert.equal(atlas.customs.length, 27);
+assert.equal(atlas.attestations.length, 86);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -48,9 +48,9 @@ const result = assertCustomsAtlasRegistry({
 });
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
-  customs: 17,
-  attestations: 75,
-  sources: 81,
+  customs: 27,
+  attestations: 86,
+  sources: 96,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
@@ -90,6 +90,24 @@ for(const sourceId of ["ROMR-BLAISE-1956","SCHOLA-BLAISE-LATIN","BOOK-BLESSINGS-
   assert.ok(blaiseWitness.source_ids.includes(sourceId),"St Blaise source missing: "+sourceId);
 }
 assert.ok(!negative.entries.some(item=>item.custom_id==="BLSS-001"));
+
+
+for(const [id,attId,sourceIds] of [
+ ["BLSS-002","att:BLSS-002:ROMAN",["DPP-ASSUMPTION-HERBS-181","RIT-ASSUMPTION-WELLER"]],
+ ["BLSS-003","att:BLSS-003:ROMAN",["RIT-STJOHN-WINE-1962-TRANSCRIPTION","UK-PARISH-STJOHN-WINE"]],
+ ["BLSS-004","att:BLSS-004:ROMAN",["RIT-EASTER-FOOD-WELLER","US-DIOCESE-EASTER-BASKETS","DPP-2001"]]
+]){
+ const custom=atlas.customs.find(x=>x.custom_id===id);
+ const att=atlas.attestations.find(x=>x.attestation_id===attId);
+ assert.ok(custom&&att,id+" missing feast blessing");
+ assert.equal(custom.publication_state,"PUBLISHED");
+ assert.equal(att.custom_id,id);
+ assert.equal(att.geo_area_id,"geo:world");
+ assert.equal(att.map_policy,"NOT_MAPPED");
+ assert.equal(att.place_id,null);
+ for(const source of sourceIds)assert.ok(att.source_ids.includes(source),id+" missing source "+source);
+ assert.ok(!negative.entries.some(x=>x.custom_id===id));
+}
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
 assert.equal(laghet.map_policy, "PLACE");

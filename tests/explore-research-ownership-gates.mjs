@@ -32,12 +32,22 @@ const expectedDomains=Object.fromEntries(Object.entries(S.domains).map(([k,v])=>
 }]));
 assert.deepEqual(R.domain_inventory,expectedDomains);
 // R is the frozen editorial review, not a live count register. The following
-// four source-locked CUSTOMS ATLAS entries were admitted after that review.
+// fourteen source-locked CUSTOMS ATLAS identities were admitted after that review.
 const postReviewAdmissions=[
  ["DOM-003","att:DOM-003:FR","AREA_CONTEXT"],
  ["DOM-011","att:DOM-011:FR","AREA_CONTEXT"],
  ["DOM-013","att:DOM-013:FR","AREA_CONTEXT"],
  ["BLSS-001","att:BLSS-001:ROMAN","NOT_MAPPED"],
+ ["BLSS-002","att:BLSS-002:ROMAN","NOT_MAPPED"],
+ ["BLSS-003","att:BLSS-003:ROMAN","NOT_MAPPED"],
+ ["BLSS-004","att:BLSS-004:ROMAN","NOT_MAPPED"],
+ ["NDAY-001","att:NDAY-001:US","NOT_MAPPED"],
+ ["PATR-001","att:PATR-001:FR","NOT_MAPPED"],
+ ["MARI-001","att:MARI-001:FR","NOT_MAPPED"],
+ ["SJOS-001","att:SJOS-001:US","NOT_MAPPED"],
+ ["SANT-001","att:SANT-001:FR","NOT_MAPPED"],
+ ["SCHR-001","att:SCHR-001:FR","NOT_MAPPED"],
+ ["SNIC-001","att:SNIC-001:FR","NOT_MAPPED"],
 ];
 for(const [id,attId,mapPolicy] of postReviewAdmissions){
  const custom=C.customs.find(c=>c.custom_id===id);
@@ -46,6 +56,11 @@ for(const [id,attId,mapPolicy] of postReviewAdmissions){
  assert.equal(att.custom_id,id);
  assert.equal(att.map_policy,mapPolicy);
  assert.equal(att.place_id,null);
+}
+const postReviewAttestationEnrichments=["att:DEAD-003:POLAND-WYPOMINKI-2025"];
+for(const id of postReviewAttestationEnrichments){
+ const att=C.attestations.find(a=>a.attestation_id===id);
+ assert.ok(att && att.custom_id==="DEAD-003" && att.place_id===null && att.map_policy==="NOT_MAPPED",id+" must enrich existing custom");
 }
 const x=R.summary;
 for(const [key,value] of Object.entries({
@@ -65,7 +80,7 @@ for(const [key,value] of Object.entries({
  published_relic_site_claims:P.relics.length,
 })){
  if(key==="published_customs"||key==="published_custom_attestations"){
-  assert.equal(x[key]+postReviewAdmissions.length,value,key+" drifted beyond approved post-review admissions");
+  assert.equal(x[key]+postReviewAdmissions.length+(key==="published_custom_attestations"?postReviewAttestationEnrichments.length:0),value,key+" drifted beyond approved post-review admissions");
   continue;
  }
  assert.equal(x[key],value,key+" drifted since review");

@@ -54,7 +54,7 @@ The seed is intentionally not the full 63-row SOT-07 corpus. Rows depending only
 
 ### Domestic customary source-lock addition — 20 October 2026
 
-The current review-branch corpus contains **17 active customs, 75 attestations, and 81 registered sources**. It source-locks three original SOT-07 research IDs: `DOM-003` (holy water at home), `DOM-011` (Candlemas candle at home), and `DOM-013` (blessed branches at home), plus separately documented new extension `BLSS-001` (St Blaise's throat blessing). The inherited three use French `AREA_CONTEXT` attestations; the new ritual extension has a global-context `NOT_MAPPED` attestation. None creates a map pin. The initial 13-custom figures above describe the **initial** foundation, not the current branch total.
+The original 20 October source-lock corpus contained **17 active customs, 75 attestations, and 81 registered sources**. It source-locks three original SOT-07 research IDs: `DOM-003` (holy water at home), `DOM-011` (Candlemas candle at home), and `DOM-013` (blessed branches at home), plus separately documented new extension `BLSS-001` (St Blaise's throat blessing). The inherited three use French `AREA_CONTEXT` attestations; the new ritual extension has a global-context `NOT_MAPPED` attestation. None creates a map pin. The initial 13-custom figures above describe the **initial** foundation, not the current branch total.
 
 See `docs/CUSTOMS-BBG-SOURCE-LOCK-2026-10-20.md` for the direct-source table, Calendar handoff, historical prayer-book limitations, and the newly admitted St Blaise source-of-truth extension under its own fresh ID (see `data/customs/sot07-extensions.v1.json`). No negative-knowledge exceptions were removed.
 
@@ -93,3 +93,13 @@ Any future Directory ↔ Custom or Community ↔ Custom association needs its ow
 ## Next step
 
 The next corpus should be **Shrines & Pilgrimages**. Its first job is to assign canonical Place identities to source-backed `PLACE_PENDING` records such as Laghet and Lourdes, then add routes/events without moving their dates or ceremonial mechanics out of their current owners.
+
+### Selective Weiser release branch — 20 October 2026
+
+The selective-source PR #1516 alone builds to **24 canonical customs, 83 attestations and 89 sources** from the main baseline, with seven new customs (`NDAY-001`, `PATR-001`, `MARI-001`, `SJOS-001`, `SANT-001`, `SCHR-001`, `SNIC-001`) and a Poland-specific evidence record enriching `DEAD-003` rather than duplicating the All Souls custom. Each new identity has a single non-pin independent source attestation. Calendar contributes four optional EN/FR date notices (19 March, 13 June, 25 July, 6 December). Name days and patronal feasts require a specific user patron/locality rather than a globally fixed notification; Assumption Marian processions remain an Atlas observation awaiting harmonisation with the separate still-open Assumption herbs PR #1512, without inserting a second competing Mass or Calendar card. No changes were made to the original 63 SOT-07 rows or protected negatives. Full ledger: `docs/CUSTOMS-WEISER-SELECTIVE-RELEASE-2026-10-20.md`.
+
+
+## Coordinated October 2026 release assembly
+
+The new coordinated integration branch combines the disjoint additions staged in PRs #1512 and #1516, based on the same 17-record main baseline. Its candidate totals are **27 customs / 86 attestations / 96 sources / 11 SOT-07 extensions**. The ten added canonical IDs retain their original identities; no additional Weiser editorial candidate has yet been added. The seven newly source-mapped regional customs, three optional feast blessings and Polish Wypominki enrichment remain source-scoped and non-map. Calendar contains four saint/custom notices, Assumption herbs, St John wine and Easter foods guidance folded into the existing Holy Saturday notice. This integration must pass all CI gates before merging; the source PRs remain unmerged.
+
