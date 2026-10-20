@@ -38,6 +38,7 @@ try{
   assert.equal(await q.locator('textarea[data-field="en"]').inputValue(),'Editorial review text; not a historical quotation.');
   await page.locator('nav button').nth(1).click();
   const q613=page.locator('article[data-qid="PX1905-Q613"]');
+  await q613.locator('details').last().locator('summary').click();
   assert.match(await q613.locator('details').last().innerText(),/living and immortal|Body Blood Soul Divinity/);
   await q613.getByRole('button',{name:'Italian-source proposal'}).click();
   assert.match(await q613.locator('textarea[data-field="en"]').inputValue(),/Because Christ is living and immortal/);
