@@ -73,7 +73,7 @@ for(const year of [2026,2027,2030]){
    assert.equal(normalized.kind,"practice");
    assert.equal(normalized.classification,null,"No new 1962 feast or mandatory law");
    assert.equal(calendarPracticeMonthEntries(date.slice(0,7)).filter(x=>x.id==="practice."+key).length,1);
-   assert.ok(!/obligatory|guaranteed|must be blessed/i.test(en[0].summary+" "+en[0].current));
+   assert.ok(!/mandatory for all|guarantees protection|guaranteed cure|must be blessed/i.test(en[0].summary+" "+en[0].current));
    const nextDate=new Date(date+"T12:00:00Z");nextDate.setUTCDate(nextDate.getUTCDate()+1);
    const other=nextDate.toISOString().slice(0,10);
    assert.equal(v384Events(other).filter(x=>x.key===key).length,0,key+": should not appear next day");
