@@ -132,6 +132,35 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidenc
   }
   return Object.freeze(result.sort((a,b)=>a.name.localeCompare(b.name)));
 }
+/** Reverse association by canonical IDs only.
+ * A Walsingham 2026 linked Catholic shrine is RELATED, not its Priory endpoint.
+ * Never use nearby coordinates, name similarity or generic shrine categories.
+ */
+export function journeysForCanonicalPlace(routes=[],placeId=null){
+  const id=tidy(placeId);
+  if(!id)return Object.freeze([]);
+  const related=[];
+  for(const route of arr(routes)){
+    if(!tidy(route?.id)||!arr(route?.sources).some(src=>isHttp(src?.url)))continue;
+    const atStages=arr(route?.namedStages).filter(s=>s?.siteAnchor?.placeId===id);
+    const atDestination=route.destinationPlaceId===id;
+    if(!atDestination&&!atStages.length)continue;
+    const relation=atDestination&&route.destinationRelation==="RELATED_SHRINE_NOT_EVENT_ENDPOINT"
+      ?"RELATED_SHRINE_NOT_TERMINUS"
+      :atStages.length?"NAMED_STAGE":"DESTINATION_PLACE";
+    related.push(Object.freeze({
+      routeId:route.id,
+      name:route.name,
+      edition:route.edition,
+      relation,
+      ordinal:atStages[0]?.ordinal??null,
+      stageCount:arr(route.namedStages).length,
+      sources:route.sources,
+    }));
+  }
+  return Object.freeze(related.sort((a,b)=>a.name.localeCompare(b.name)));
+}
+
 export function selectedPilgrimageJourney(routes=[],id=null){
   return arr(routes).find(row=>row.id===id)??arr(routes)[0]??null;
 }
