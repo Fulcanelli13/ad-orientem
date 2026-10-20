@@ -91,8 +91,11 @@ async function metSource(row){
  const metadataUrl="https://collectionapi.metmuseum.org/public/collection/v1/objects/"+id;
  const meta=await (await request(metadataUrl)).json();
  assert.equal(meta.objectID,id,"Museum object mismatch");
+ if(row.verifiedMuseumAccession)assert.equal(meta.accessionNumber,row.verifiedMuseumAccession,"Exact museum accession mismatch");
  assert.equal(meta.isPublicDomain,true,"Met not marked Open Access");
  assert(typeof meta.primaryImage==="string"&&new URL(meta.primaryImage).hostname==="images.metmuseum.org","Missing original image");
+ const agreement=metadataAgreement(row,meta.title,meta.artistDisplayName);
+ assert(agreement.titleAgreement||agreement.artistAgreement,"MET_SOURCE_WRONG_PHYSICAL_WORK: catalogue title AND artist conflict with museum object");
  const r=await request(meta.primaryImage,"image");
  assert((r.headers.get("content-type")||"").toLowerCase().includes("image/jpeg"),"Not original JPEG");
  const bytes=Buffer.from(await r.arrayBuffer());
