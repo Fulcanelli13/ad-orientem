@@ -13,24 +13,27 @@ assert.equal(shards.length,10);
 assert.equal(shards.slice(0,9).every(s=>s.length===50),true);
 assert.equal(shards[9].length,1);
 assert.deepEqual(shards.flat().map(x=>x.id),intake.works.map(x=>x.id),"No skip, reorder or duplicate across 50-work shards");
-assert.equal(intake.counts.approved,107);
+assert.equal(intake.counts.latestApproved,107);
+assert.equal(intake.counts.legacyFivesIn451,77);
 assert.equal(intake.counts.excluded,68);
-assert.equal(intake.counts.editorialHold,276);
-assert.equal(intake.counts.approvedMetCandidates,17);
-assert.equal(intake.counts.approvedCommonsCandidates,11);
+assert.equal(intake.counts.editorialHold,199);
+assert.equal(intake.counts.eligibleExactMet,23);
+assert.equal(intake.counts.eligibleExactCommons,36);
 assert.deepEqual(certified.media,[],"Bulk ingestion cannot silently certify release files");
 const accepted=new Set(freeze.approved.map(x=>x.artworkId));
 const rejected=new Set(freeze.rejected.map(x=>x.artworkId));
+const legacy=new Set(freeze.historicallyFiveIDsPreservedSeparately);
 const statuses=intake.works.map(x=>sourceGate(x));
-assert.equal(statuses.filter(x=>x==="MET").length,17);
-assert.equal(statuses.filter(x=>x==="COMMONS").length,11);
+assert.equal(statuses.filter(x=>x==="MET").length,23);
+assert.equal(statuses.filter(x=>x==="COMMONS").length,36);
 assert.equal(statuses.filter(x=>x==="HOLD_REJECTED").length,68);
-assert.equal(statuses.filter(x=>x==="HOLD_NOT_APPROVED").length,276);
-assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,79);
+assert.equal(statuses.filter(x=>x==="HOLD_NOT_APPROVED").length,199);
+assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,125);
 for(let i=0;i<intake.works.length;i++){
  const row=intake.works[i],gate=statuses[i];
  if(gate==="MET"||gate==="COMMONS")
-   assert(accepted.has(row.id)&&!rejected.has(row.id)&&row.reviewGate==="APPROVED",
+   assert((accepted.has(row.id)&&row.reviewGate==="APPROVED"||
+    legacy.has(row.id)&&row.reviewGate==="LEGACY_FIVE_PRESERVED")&&!rejected.has(row.id),
     "Unreviewed or rejected work must not be fetched");
  if(row.reviewGate==="EXCLUDED")assert(rejected.has(row.id));
  assert.equal(row.verifiedImageForRelease,undefined,"No release assertions in source intake");
@@ -44,4 +47,4 @@ assert(!script.includes("git push")&&!script.includes("assets/approved/sacred-ar
  "Bulk script cannot commit or deploy verified masters");
 assert(script.includes("sourceClaimsAreNotRightsEvidence:true"));
 assert(script.includes("phoneQaApproved:false"));
-console.log("PASS Sacred Art: 451 originals / 10×50 shards / 28 selected exact-source candidates; 68 rejects and 276 editorial holds fail closed; zero released");
+console.log("PASS Sacred Art: 451 original records / ten 50-work shards / 59 exact-source candidates from 107 current and 77 preserved historic fives; 68 rejects and 199 holds; zero released");
