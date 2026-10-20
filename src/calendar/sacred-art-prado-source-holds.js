@@ -30,7 +30,8 @@ export const PRADO_SOURCE_HELD_ARTWORK_IDS = Object.freeze([
   "ART-eter-aul-ubens-mmaculate-onception",
   "ART-acopo-intoretto-udith-and-olofernes",
   "ART-eter-aul-ubens-doration-of-the-agi",
-  "ART-artolom-steban-urillo-onversion-of-aint-aul"
+  "ART-artolom-steban-urillo-onversion-of-aint-aul",
+  "ART-os-de-ibera-acob-s-ream"
 ]);
 export const isPradoHeldArtworkId = id => PRADO_SOURCE_HELD_ARTWORK_IDS.includes(id);
 export const pradoProvenanceInMedia = media => {
