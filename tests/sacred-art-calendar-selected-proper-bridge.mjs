@@ -24,13 +24,13 @@ for(const bad of [
  const actual=selectedCalendarArtProper({selectedDate,resolution,scriptureContexts,...bad});
  assert.equal(actual,null,"Unverified or stale Proper must not select art");
 }
-const media={exactOriginalVerified:true,publicReuseRightsVerified:true,
+const media={exactOriginalVerified:true,publicReuseRightsVerified:true,nonPradoSourceVerified:true,
   photoFileRightsVerified:true,cropVerified:true,phoneVisualQaVerified:true,
   localFilePresent:true,path:"assets/approved/sacred-art/epiphany.webp",
   sha256:"a".repeat(64),attribution:"Museum original, open access",
   sourceUrl:"https://example.org/art",rightsEvidenceUrl:"https://example.org/rights",
   rightsBasis:"PUBLIC_DOMAIN"};
-const painting={artworkId:"ART-eter-aul-ubens-doration-of-the-agi",status:"PRODUCTION_CERTIFIED",media,
+const painting={artworkId:"TEST-INDEPENDENT-OPEN-ACCESS-ART",status:"PRODUCTION_CERTIFIED",media,
  placements:[{status:"CERTIFIED_EXACT_PLACEMENT",date:selectedDate,
   principalId:"sancti:01-06:1:w",role:"GOSPEL_SCENE",match:"GOSPEL_EXACT",
   gospelRef:"Matthew 2:1–12",priority:1}]};
@@ -39,6 +39,7 @@ const select=o=>certifiedSacredArtForCalendar({selectedDate,resolution,scripture
 assert.equal(select({releaseRecords:[]}),null);
 assert.equal(select({rejected:[painting.artworkId]}),null);
 assert.equal(select({releaseRecords:[{...painting,media:{...media,phoneVisualQaVerified:false}}]}),null);
+assert.equal(select({releaseRecords:[{...painting,artworkId:"ART-eter-aul-ubens-doration-of-the-agi"}],approved:["ART-eter-aul-ubens-doration-of-the-agi"]}),null,"Prado original must not be selected even via a third-party mirror");
 assert.equal(select({releaseRecords:[{...painting,placements:[{...painting.placements[0],gospelRef:"Luke 2:1–14"}]}]}),null);
 const picked=select();
 assert.equal(picked?.artworkId,painting.artworkId);
