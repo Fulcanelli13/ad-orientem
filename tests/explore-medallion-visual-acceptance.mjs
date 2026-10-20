@@ -160,6 +160,19 @@ try{
    const stagePlace=page.locator('#ao-find-modular-root .aoHeritagePreview[data-explore-place-owner="place:GB:holywell-st-winefride-church"]');
    await stagePlace.waitFor({state:"visible",timeout:12000});
    assert.equal(await journey.count(),1,"Opening a sacred place preserves the pilgrimage beneath it");
+   assert.equal(await journey.evaluate(el=>getComputedStyle(el).visibility),"hidden",
+     "A preserved Journey must not remain visually superimposed beneath the C Place folio");
+   if(mobile){
+     const noPhoto=await stagePlace.evaluate(el=>{
+       const title=el.querySelector(".aoHeritageCardTitle"),
+         empty=el.querySelector(".aoHeritageCardEmpty");
+       if(!empty||!title||el.querySelector(".aoHeritagePlaceThumb"))return null;
+       const t=title.getBoundingClientRect(),e=empty.getBoundingClientRect();
+       return {titleLeft:t.left,textLeft:e.left,textWidth:e.width};
+     });
+     assert.ok(noPhoto&&Math.abs(noPhoto.titleLeft-noPhoto.textLeft)<16&&noPhoto.textWidth>0.75*width,
+       "No-photo Place preview needs one legible mobile text column: "+JSON.stringify(noPhoto));
+   }
    assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
      document.querySelector("#ao-find-modular-root .maplibregl-canvas")),
      "Place preview may not remount the map");
@@ -172,6 +185,8 @@ try{
    assert.match(await expandedPlace.locator("header small").innerText(),/PILGRIMAGE PLACE/);
    await expandedPlace.locator("header [data-find-close-place]").click();
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
+   assert.equal(await journey.evaluate(el=>getComputedStyle(el).visibility),"visible",
+     "Closing the Place folio must reveal the exact same Journey");
    assert.equal(await journey.locator('[data-explore-journey-select="route:GB:holywell-church-to-well"]').getAttribute("aria-pressed"),"true");
    assert.equal(await journey.locator("[data-explore-journey-stage-place]").count(),2);
    assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
