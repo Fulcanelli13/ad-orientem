@@ -2,6 +2,7 @@ import { formatDisplayDate } from "../app/date-format.js";
 import { NOVENA_CORPUS_V4, NOVENA_START_KIND } from "../pray/novena-corpus-v4.js";
 import { addDaysIso, dateFromIso, isoDate } from "./liturgical-year.js";
 import { v384Events, v384Dates } from "./traditional-year-v384.js";
+import { calendarCustomProfileActions } from "./customs-profile-links.js";
 import { CALENDAR_DEVOTIONAL_REGISTRY_VERSION, DEVOTIONAL_PRACTICE_REGISTRY, NOVENA_TARGET_IDS, NOVENA_SOURCE_HOLDS, devotionalPracticeDefinition } from "./devotional-registry.js";
 
 export const CALENDAR_INTELLIGENCE_VERSION="calendar-intelligence-v2-complete-novenas";
@@ -622,7 +623,7 @@ function normalizeTraditionalEvent(event,date,{fr=false}={}){
     id:`practice.${event.key}`,date,key:event.key,kind:"practice",
     title:event.title,summary:event.summary,current:event.current,historical:event.historical,
     priority:Number(event.priority)||Number(def?.priority)||40,route:def?.route??action?.[0]??"today.calendar",
-    actions:Object.freeze([...(event.actions??[])]),
+    actions:Object.freeze([...(event.actions??[]),...calendarCustomProfileActions(event.key,{fr})]),
     tags:Object.freeze([...(def?.tags??legacyV384Tags(event.key))]),
     classification:def?.classification??null,
     sources:Object.freeze([...(def?.sources??[])]),
