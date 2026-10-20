@@ -197,7 +197,7 @@ assert.equal(iconKeysForReaderState({priestAction:{label:"ELEVATES HOST",owner:"
 assert.equal(iconKeysForReaderState({priestAction:{label:"ELEVATES CHALICE",owner:"GESTURE_MATRIX_SOT",iconKey:"priest_elevate_chalice_rich"}}).priestActionIconKey,
   "priest_elevate_chalice_rich","Chalice elevation lost its own selected art");
 assert.equal(iconKeysForReaderState({priestAction:{label:"OFFERS HOST"}}).priestActionIconKey,
-  "priest_elevate_host_rich","Host offering was incorrectly replaced by Host elevation");
+  null,"Offertory Host offering must not borrow the major Host elevation artwork");
 assert.equal(iconKeysForReaderState({priestAction:{label:"TURNS TO PEOPLE"}}).priestActionIconKey,
   "priest_facing_people","turning-to-people did not honor the review");
 assert.ok(reviewed.investigate.includes("priest:blessing"));
@@ -233,13 +233,17 @@ for(const [label,want] of [
   ["GIVES COMMUNION","priest_rail_after_rich"],
   ["ELEVATES CHALICE","priest_elevate_chalice_rich"],
   ["ELEVATES HOST","priest_elevation"],
-  ["OFFERS HOST","priest_elevate_host_rich"],
+  ["OFFERS HOST",null],
+  ["OFFERS CHALICE",null],
+  ["KISSES GOSPEL",null],
+  ["TURNS TO ALTAR",null],
+  ["INTONES CREDO","review_priest_credo_chant"],
   ["INCENSES PEOPLE",null],
   ["RECEIVES INCENSE",null],
   ["RECEIVES HOST",null],
-  ["RECEIVES CHALICE",null],
-  ["BREAKS HOST",null],
-  ["PLACES PARTICLE",null],
+  ["RECEIVES CHALICE","review_priest_receive_chalice"],
+  ["BREAKS HOST","review_priest_fraction_host"],
+  ["PLACES PARTICLE","review_priest_commingling"],
 ]){
   assert.equal(iconKeysForReaderState({priestAction:{label}}).priestActionIconKey,
     want,label+" projected a misleading or reversed icon");
@@ -249,8 +253,8 @@ for(const [label,iconKey,want] of [
   ["PROCLAIMS GOSPEL","priest_gospel_rich","priest_epistle_rich"],
   ["ELEVATES CHALICE","chalice_elevation","priest_elevate_chalice_rich"],
   ["GIVES COMMUNION","priest_communion_rich","priest_rail_after_rich"],
-  ["BREAKS HOST","fraction",null],
-  ["RECEIVES CHALICE","chalice_elevation",null],
+  ["BREAKS HOST","fraction","review_priest_fraction_host"],
+  ["RECEIVES CHALICE","chalice_elevation","review_priest_receive_chalice"],
   ["INCENSES PEOPLE","priest_incense_people_rich",null],
 ]){
   assert.equal(iconKeysForReaderState({priestAction:{
