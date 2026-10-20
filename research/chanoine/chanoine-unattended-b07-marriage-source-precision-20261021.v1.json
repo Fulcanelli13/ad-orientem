@@ -1,0 +1,616 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B07_MARRIAGE_SOURCE_PRECISION_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerCompositePath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "SOURCE_MATCHED_RESEARCH_PROPOSALS_SPECIALIST_REVIEW_REQUIRED",
+  "counts": {
+    "families": 4,
+    "answerUnits": 8,
+    "specialistReview": 4,
+    "humanCertified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE045",
+      "sourceQuestionId": "CSE045",
+      "canonicalOwner": "SEX-CORE-12",
+      "originalRecord": {
+        "source_question_id": "CSE045",
+        "conversation_id": "CHA-CSE-CSE045",
+        "canonical_topic_owner": "SEX-CORE-12",
+        "title": "What are the purposes and duties of Christian marriage, including headship and submission?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What are the purposes and duties of Christian marriage, including headship and submission?",
+          "fr": "Quelles sont les fins et les obligations du mariage chrétien, notamment l’autorité et la soumission ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Marriage joins faithful love, mutual help, the procreation and education of children, and distinct duties taught in Ephesians 5. Traditional papal teaching affirms the husband’s domestic primacy and the wife’s willing submission, while also upholding her freedom and dignity and the husband’s sacrificial duty. John Paul II explicitly teaches mutual subjection out of reverence for Christ, while Pius XI teaches the husband’s primacy; neither permits domination, and the distinction between their formulations cannot be ignored.",
+          "fr": "Le mariage unit l’amour fidèle, l’aide mutuelle, la procréation et l’éducation des enfants, ainsi que les devoirs distincts enseignés en Éphésiens 5. Les textes pontificaux traditionnels affirment la primauté domestique du mari et la soumission volontaire de l’épouse, tout en sauvegardant sa liberté et sa dignité et en imposant au mari le devoir de se sacrifier. Jean-Paul II enseigne expressément la soumission mutuelle dans la crainte du Christ, tandis que Pie XI affirme la primauté du mari ; aucun ne permet la domination et la différence de formulation ne peut être ignorée."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Christian marriage includes fidelity, mutual help, the procreation and education of children, and the duties Saint Paul teaches in Ephesians 5. Pius XI speaks of the husband's domestic primacy and the wife's willing submission while affirming her dignity and freedom; John Paul II stresses mutual subjection out of reverence for Christ. Their formulations do not simply say the same thing, and genuine theological work is needed to explain their relationship. Neither text allows a husband to dominate, coerce or humiliate his wife; his love must follow Christ's sacrificial example.",
+          "fr": "Le mariage chrétien comporte la fidélité, l'entraide, la procréation et l'éducation des enfants, ainsi que les devoirs enseignés par saint Paul en Éphésiens 5. Pie XI parle de la primauté domestique du mari et de la soumission volontaire de l'épouse tout en affirmant sa dignité et sa liberté ; Jean-Paul II souligne la soumission réciproque dans la crainte du Christ. Leurs formulations ne disent pas simplement la même chose, et leur articulation exige un véritable travail théologique. Aucun de ces textes ne permet au mari de dominer, de contraindre ou d'humilier son épouse ; il doit aimer à l'exemple du sacrifice du Christ."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Does mutual submission remove the husband's stated primacy, or can each principle describe a distinct dimension of one Christian household? How could such a reading avoid both domination and artificial harmonisation?",
+          "fr": "La soumission mutuelle supprime-t-elle la primauté expressément attribuée au mari, ou chaque principe peut-il décrire un aspect distinct du même foyer chrétien ? Comment éviter à la fois la domination et une harmonisation artificielle ?"
+        },
+        "original_source_followup_reply": {
+          "en": "*Casti connubii* explicitly affirms personal dignity, free action and the limits of spousal obedience, while *Mulieris dignitatem* grounds the reciprocity of subjection in Christ's sacrificial love and the Pauline imperative of Ephesians 5:21. Their emphasis differs and must not be presented as verbally identical. Determining whether a juridical asymmetry in family governance can stand with fully reciprocal submission requires further theological argument; it is not settled by erasing either original formulation. Abuse, humiliation and coercion are not justified by either text.",
+          "fr": "*Casti connubii* affirme explicitement la dignité personnelle, la liberté d'action et les limites de l'obéissance conjugale, tandis que *Mulieris dignitatem* fonde la réciprocité de la soumission dans l'amour sacrificiel du Christ et l'exhortation paulinienne d'Éphésiens 5,21. Leurs accents diffèrent et l'on ne saurait prétendre qu'ils s'expriment dans les mêmes termes. Déterminer comment une éventuelle asymétrie juridique de gouvernement familial s'accorde avec la soumission pleinement réciproque exige encore un argument théologique ; supprimer l'une des deux formulations ne résout rien. Ni l'un ni l'autre texte ne justifie les abus, l'humiliation ou la contrainte."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "We must not erase the difference between historical papal language about domestic primacy and later language of reciprocity. Both insist upon the wife’s dignity and the husband’s duty of sacrificial love; neither licenses coercion. Whether every proposed account of family governance reconciles the texts needs genuine theological examination.",
+          "fr": "N’effaçons pas la différence entre le langage pontifical ancien sur la primauté domestique et les formulations postérieures de réciprocité. Tous deux maintiennent la dignité de l’épouse et l’obligation d’amour sacrificiel du mari ; aucun n’autorise la contrainte. La conciliation de toutes les thèses sur l’autorité familiale demande un véritable examen théologique."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-035-064.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "SCRIPT_EPH5",
+              "locator": "5:21–33"
+            },
+            {
+              "registry_key": "CASTI",
+              "locator": "§§26–29"
+            },
+            {
+              "registry_key": "MULIERIS",
+              "locator": "§24"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "cann. 1057, 1135"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CANONICAL_AND_THEOLOGICAL_REVIEW",
+        "review_attention": [
+          "CANONICAL_AND_THEOLOGICAL_REVIEW",
+          "SOURCE_SEMANTIC_CORRECTION_APPLIED_REQUIRES_EDITORIAL_APPROVAL"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+        "semantic_repair_trace": "research/chanoine/chanoine-cse-semantic-repair-proposals-12.v1.json#CSE045"
+      },
+      "proposedTurns": [
+        {
+          "en": "Marriage joins the spouses’ good with the generation and education of children. Casti connubii affirms domestic primacy with explicit limits protecting the wife’s dignity; Mulieris dignitatem teaches reciprocal subjection in Christ. Their relation needs careful theological explanation.",
+          "fr": "Le mariage unit le bien des époux à la génération et à l’éducation des enfants. Casti connubii affirme une primauté domestique avec des limites explicites protégeant la dignité de l’épouse ; Mulieris dignitatem enseigne la soumission réciproque dans le Christ. Leur articulation demande une explication théologique attentive.",
+          "claims": [
+            {
+              "segment": "Spouses' good and offspring",
+              "refs": [
+                "CIC1055"
+              ]
+            },
+            {
+              "segment": "Primacy and dignity/obedience limits",
+              "refs": [
+                "CC26-29"
+              ]
+            },
+            {
+              "segment": "Mutual subjection",
+              "refs": [
+                "MD24"
+              ]
+            },
+            {
+              "segment": "Need comparative theological explanation",
+              "refs": [],
+              "type": "EDITORIAL_DECISION_NOT_CLAIM_OF_MAGISTERIAL_CONTRADICTION"
+            }
+          ]
+        },
+        {
+          "en": "Neither formulation permits arbitrary domination. Pius XI limits obedience by right reason and the wife’s dignity; John Paul II says subjection is mutual. I would not erase either wording or treat a proposed harmonisation as already certified.",
+          "fr": "Aucune formulation ne permet une domination arbitraire. Pie XI limite l’obéissance par la droite raison et la dignité de l’épouse ; Jean-Paul II affirme une soumission mutuelle. Je n’effacerais aucun de ces termes ni ne présenterais une harmonisation proposée comme déjà établie.",
+          "claims": [
+            {
+              "segment": "Limits versus reciprocity",
+              "refs": [
+                "CC26-29",
+                "MD24"
+              ]
+            },
+            {
+              "segment": "No unsupported harmonisation",
+              "refs": [],
+              "type": "EDITORIAL_CAUTION"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EDITORIAL_PARAPHRASE_NOT_PAPAL_SPEECH",
+      "humanTheology": false,
+      "humanCanonical": false,
+      "humanSafeguarding": false,
+      "humanLanguage": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE049",
+      "sourceQuestionId": "CSE049",
+      "canonicalOwner": "SEX-CORE-14",
+      "originalRecord": {
+        "source_question_id": "CSE049",
+        "conversation_id": "CHA-CSE-CSE049",
+        "canonical_topic_owner": "SEX-CORE-14",
+        "title": "Why must marriage be indissoluble?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Why must marriage be indissoluble?",
+          "fr": "Pourquoi le mariage doit-il être indissoluble ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "A valid, ratified and consummated sacramental marriage cannot be dissolved by any human power (CIC can. 1141). Serious danger can justify separation, and canon law recognizes narrowly defined dissolutions of some other marriage bonds. Loss of affection alone does not dissolve a marriage.",
+          "fr": "Un mariage sacramentel valide, ratifié et consommé ne peut être dissous par aucune puissance humaine (CIC, can. 1141). Un grave danger peut justifier la séparation et le droit canonique prévoit la dissolution très exceptionnelle de certains autres liens. La disparition de l'affection ne dissout pas en soi un mariage."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Our Lord taught that marriage is a permanent bond. A valid, ratified and consummated sacramental marriage cannot be dissolved by any human power (canon 1141), even when common life has failed. Serious danger may justify separation, and canon law treats some other kinds of bonds differently. The permanence of the bond must never be used to demand that someone remain in an abusive home.",
+          "fr": "Notre-Seigneur a enseigné la permanence du lien conjugal. Un mariage sacramentel valide, ratifié et consommé ne peut être dissous par aucune puissance humaine (canon 1141), même lorsque la vie commune a échoué. Un danger grave peut justifier une séparation, et le droit canon traite différemment certains autres liens. La permanence du lien ne saurait jamais servir à imposer à quelqu'un de demeurer dans un foyer violent."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "If the spouses could not foresee a radical and harmful change when they gave consent, why must the bond itself survive that change, even when they can no longer live together?",
+          "fr": "Si les époux ne pouvaient prévoir un changement radical et préjudiciable au moment de leur consentement, pourquoi le lien devrait-il subsister lorsque la vie commune n'est plus possible ?"
+        },
+        "original_source_followup_reply": {
+          "en": "CIC can. 1153 explicitly permits separation where a spouse or child faces grave mental or physical danger, including departure without awaiting a decree if delay poses danger. The duty to preserve a bond must never be confused with a requirement to endure abusive cohabitation.",
+          "fr": "Le CIC (can. 1153) permet expressément la séparation lorsqu'un époux ou un enfant subit un danger grave physique ou psychique, y compris sans attendre de décret si le retard est dangereux. Préserver le lien ne doit jamais être confondu avec l'obligation de subir une cohabitation violente."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "We must never confuse permanence of the bond with an order to remain in danger. Canon law recognises separation when a spouse or child faces grave harm. The first duty in such a case is safety; the different question of the bond’s legal status can then be considered properly.",
+          "fr": "Ne confondons jamais la permanence du lien avec l’obligation de rester en danger. Le droit canon reconnaît la séparation lorsque le conjoint ou l’enfant est gravement menacé. La première tâche est alors la sécurité ; la question distincte du statut juridique du lien sera examinée à sa place."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-035-064.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "SCR",
+              "locator": "Mt 19:3–9"
+            },
+            {
+              "registry_key": "CASTI",
+              "locator": "§§31–38, 87–90"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "cann. 1141–1153"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "marriage chapters"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "SPECIALIST_SAFEGUARDING_REVIEW",
+        "review_attention": [
+          "SPECIALIST_SAFEGUARDING_REVIEW",
+          "SOURCE_SEMANTIC_CORRECTION_APPLIED_REQUIRES_EDITORIAL_APPROVAL"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+        "semantic_repair_trace": "research/chanoine/chanoine-cse-semantic-repair-proposals-12.v1.json#CSE049"
+      },
+      "proposedTurns": [
+        {
+          "en": "A ratified and consummated marriage cannot be dissolved by human power or any cause except death. Separation can protect against grave danger without dissolving the bond.",
+          "fr": "Un mariage ratifié et consommé ne peut être dissous par une puissance humaine ni pour aucune cause, sauf la mort. Une séparation peut protéger d’un grave danger sans dissoudre le lien.",
+          "claims": [
+            {
+              "segment": "Indissolubility with death qualification",
+              "refs": [
+                "CIC1141"
+              ]
+            },
+            {
+              "segment": "Separation distinct",
+              "refs": [
+                "CIC1153"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Canon 1153 permits departure without waiting for a decree when delay is dangerous. This protects against danger; it does not decide whether the marriage bond is null or dissolved.",
+          "fr": "Le canon 1153 permet de partir sans attendre un décret lorsque le retard est dangereux. Cette protection ne décide pas si le lien est nul ou dissous.",
+          "claims": [
+            {
+              "segment": "Dangerous delay and own authority",
+              "refs": [
+                "CIC1153"
+              ]
+            },
+            {
+              "segment": "Bond distinction",
+              "refs": [
+                "CIC1141",
+                "CIC1153"
+              ],
+              "type": "FAITHFUL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EDITORIAL_PARAPHRASE_NOT_PAPAL_SPEECH",
+      "humanTheology": false,
+      "humanCanonical": false,
+      "humanSafeguarding": false,
+      "humanLanguage": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE050",
+      "sourceQuestionId": "CSE050",
+      "canonicalOwner": "SEX-CORE-14",
+      "originalRecord": {
+        "source_question_id": "CSE050",
+        "conversation_id": "CHA-CSE-CSE050",
+        "canonical_topic_owner": "SEX-CORE-14",
+        "title": "Why can’t someone remarry after a marriage has completely failed?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Why can’t someone remarry after a marriage has completely failed?",
+          "fr": "Pourquoi ne peut-on pas se remarier après l’échec complet d’un mariage ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "An irretrievably failed common life does not by itself dissolve marriage. If a prior valid bond subsists, civil divorce alone does not grant freedom to remarry (CIC can. 1085). Nullity and a narrowly permitted dissolution of certain non-consummated or non-sacramental bonds are different questions.",
+          "fr": "L'échec irrémédiable de la vie commune ne dissout pas en soi le mariage. Si un lien valide subsiste, le divorce civil ne confère pas la liberté de se remarier (CIC, can. 1085). Nullité et dissolution exceptionnellement permise de certains liens non consommés ou non sacramentels sont distinctes."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The failure of a household may be deeply painful, and separation or a civil remedy can be justified. But if a valid prior marriage bond subsists, civil divorce does not in itself make either spouse free to marry again (canon 1085). A declaration of nullity asks whether a valid bond ever arose; it is not the dissolution of a marriage found to have been valid. Canon law also recognises certain narrowly defined dissolutions, including some non-consummated or non-sacramental bonds. These questions require an actual canonical examination, not an assumption based only on how badly the marriage has failed.",
+          "fr": "L'échec d'un foyer peut être profondément douloureux, et une séparation ou un recours civil peut être justifié. Mais tant qu'un mariage antérieur valide subsiste, le divorce civil ne rend pas en lui-même les époux libres de contracter une nouvelle union (canon 1085). Une déclaration de nullité demande si un lien valide a jamais existé ; elle ne dissout pas un mariage reconnu valide. Le droit canon admet aussi, dans des conditions étroites, la dissolution de certains liens non consommés ou non sacramentels. Ces questions exigent un véritable examen canonique, et non une supposition fondée sur l'échec de la vie commune."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "If the Church can declare that a marriage was null after years of common life, how is that different in substance from granting a divorce?",
+          "fr": "Si l'Église peut déclarer nul un mariage après des années de vie commune, en quoi cela diffère-t-il, au fond, de l'octroi d'un divorce ?"
+        },
+        "original_source_followup_reply": {
+          "en": "No in principle: civil divorce terminates a marriage's civil legal status, but does not by itself dissolve a prior valid sacramental bond; a declaration of nullity judges that a valid bond never arose because an essential requirement was missing. Whether tribunals apply that distinction well in a particular case is a separate question.",
+          "fr": "Non en principe : le divorce civil met fin au statut juridique civil du mariage, mais ne dissout pas, de lui-même, un lien sacramentel valide ; une déclaration de nullité juge qu'aucun lien valide ne s'était formé faute d'une condition essentielle. La question de savoir si les tribunaux appliquent bien cette distinction dans un cas concret est distincte."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "A declaration of nullity does not dissolve a marriage found to be valid; it judges whether the bond arose at all when consent was exchanged. Civil divorce concerns a different legal act. That distinction must be real and faithfully applied, not a convenient verbal disguise for divorce.",
+          "fr": "La déclaration de nullité ne dissout pas un mariage reconnu valide ; elle juge si le lien a jamais existé au moment du consentement. Le divorce civil est un autre acte juridique. Cette distinction doit être réelle et fidèlement appliquée, non un habillage verbal du divorce."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-035-064.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "SCR",
+              "locator": "Mt 19:3–9"
+            },
+            {
+              "registry_key": "CASTI",
+              "locator": "§§31–38, 87–90"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "cann. 1055–1057; 1085; 1095–1107; 1141–1153"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "marriage chapters"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CANONICAL_AND_THEOLOGICAL_REVIEW",
+        "review_attention": [
+          "CANONICAL_AND_THEOLOGICAL_REVIEW",
+          "SPECIALIST_PRECISION_REPAIR_APPLIED_UNREVIEWED"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+        "semantic_repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE050"
+      },
+      "proposedTurns": [
+        {
+          "en": "A subsisting prior bond prevents a new marriage. Nullity asks whether a valid bond arose; narrowly permitted dissolutions concern different cases. Failure of common life alone settles neither question.",
+          "fr": "Un lien antérieur subsistant empêche un nouveau mariage. La nullité examine si un lien valide s’est formé ; les dissolutions étroitement permises concernent d’autres cas. L’échec de la vie commune ne tranche aucune de ces questions.",
+          "claims": [
+            {
+              "segment": "Prior bond",
+              "refs": [
+                "CIC1085"
+              ]
+            },
+            {
+              "segment": "Validity/consent and dissolution distinction",
+              "refs": [
+                "CIC1057",
+                "CIC1060",
+                "CIC1142-43"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Nullity judges that a valid bond did not arise; it does not dissolve a bond found valid. Freedom to marry must be established through the competent canonical process.",
+          "fr": "La nullité constate qu’un lien valide ne s’est pas formé ; elle ne dissout pas un lien reconnu valide. La liberté de se marier doit être établie par la procédure canonique compétente.",
+          "claims": [
+            {
+              "segment": "Nullity versus dissolution",
+              "refs": [
+                "CIC1057",
+                "CIC1060",
+                "CIC1085"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EDITORIAL_PARAPHRASE_NOT_PAPAL_SPEECH",
+      "humanTheology": false,
+      "humanCanonical": false,
+      "humanSafeguarding": false,
+      "humanLanguage": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE054",
+      "sourceQuestionId": "CSE054",
+      "canonicalOwner": "SEX-CORE-15",
+      "originalRecord": {
+        "source_question_id": "CSE054",
+        "conversation_id": "CHA-CSE-CSE054",
+        "canonical_topic_owner": "SEX-CORE-15",
+        "title": "Can sexual coercion exist within marriage?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Can sexual coercion exist within marriage?",
+          "fr": "La coercition sexuelle peut-elle exister dans le mariage ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Yes. Marriage creates conjugal rights and duties, but it does not abolish the spouse’s dignity or make coercion morally legitimate. Imposing sexual activity on a spouse is itself gravely unjust. A reciprocal conjugal obligation never entitles either spouse to force or intimidation.",
+          "fr": "Oui. Le mariage crée des droits et devoirs conjugaux, mais il n’abolit pas la dignité du conjoint et ne rend pas la contrainte moralement légitime. Imposer une activité sexuelle à son conjoint est en soi une grave injustice. Un devoir conjugal réciproque ne donne jamais droit à la force ni à l’intimidation."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Yes. Marriage cannot transform force into consent. Pressuring or compelling a spouse into sexual activity is a grave injustice, no matter what language someone uses about conjugal duties. The person harmed deserves safety and support; no pastoral counsel should require enduring violence.",
+          "fr": "Oui. Le mariage ne transforme pas la force en consentement. Faire pression sur son conjoint ou lui imposer une activité sexuelle est une grave injustice, quelles que soient les paroles invoquées sur les devoirs conjugaux. La personne lésée a droit à la sécurité et au soutien ; aucun conseil pastoral ne doit imposer de subir la violence."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Then does the marital obligation have any practical meaning?",
+          "fr": "Le devoir conjugal a-t-il alors encore un sens pratique ?"
+        },
+        "original_source_followup_reply": {
+          "en": "Yes. It means spouses should not treat sexuality as purely individual property or use refusal manipulatively. But a moral duty is fulfilled through free human action, not violence or domination.",
+          "fr": "Oui. Cela signifie que les époux ne doivent pas traiter la sexualité comme une propriété purement individuelle ni utiliser le refus comme moyen de manipulation. Mais un devoir moral s’accomplit par un acte humain libre, non par violence ou domination."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Conjugal duty is real precisely because marriage is a free covenant of mutual gift, not individual whim. But a duty cannot be discharged through violence. A spouse is never entitled to force or threaten the other; mutual respect gives the obligation its human meaning.",
+          "fr": "Le devoir conjugal est réel précisément parce que le mariage est une alliance libre de don mutuel, non un caprice individuel. Mais on ne remplit pas un devoir par la violence. Nul époux n’a le droit de contraindre ou menacer l’autre ; le respect réciproque donne son sens humain à l’obligation."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-035-064.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "ST64SUP",
+              "locator": "reciprocal obligations"
+            },
+            {
+              "registry_key": "HV",
+              "locator": "§13"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "can. 1153"
+            },
+            {
+              "registry_key": "LBM",
+              "locator": "chastity within marriage"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "SPECIALIST_SAFEGUARDING_REVIEW",
+        "review_attention": [
+          "SPECIALIST_SAFEGUARDING_REVIEW"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Yes. Humanae vitae rejects an act imposed without regard to a spouse’s condition and reasonable wishes. Conjugal obligations cannot justify force or intimidation; grave danger can justify separation.",
+          "fr": "Oui. Humanae vitae réprouve un acte imposé sans égard à l’état du conjoint ni à ses souhaits raisonnables. Les obligations conjugales ne justifient ni force ni intimidation ; un grave danger peut justifier une séparation.",
+          "claims": [
+            {
+              "segment": "Imposed act",
+              "refs": [
+                "HV13"
+              ]
+            },
+            {
+              "segment": "No force/intimidation and danger",
+              "refs": [
+                "HV13",
+                "CIC1153"
+              ],
+              "type": "FAITHFUL_MORAL_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Mutual duties are real, but must be governed by justice and charity. They do not give either spouse a licence to force the other.",
+          "fr": "Les devoirs réciproques sont réels, mais doivent être réglés par la justice et la charité. Ils ne donnent à aucun époux le droit de contraindre l’autre.",
+          "claims": [
+            {
+              "segment": "Reciprocal duty justice/charity",
+              "refs": [
+                "CC25"
+              ]
+            },
+            {
+              "segment": "No coercion",
+              "refs": [
+                "HV13"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EDITORIAL_PARAPHRASE_NOT_PAPAL_SPEECH",
+      "humanTheology": false,
+      "humanCanonical": false,
+      "humanSafeguarding": false,
+      "humanLanguage": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "CC25",
+      "work": "Pius XI, Casti connubii, §25",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "latin": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "supports": "Conjugal duties regulated by justice and charity"
+    },
+    {
+      "id": "CC26-29",
+      "work": "Same encyclical §§26–29",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "latin": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "exactLatinExcerpt": "uxoris promptam nec invitam subiectionem",
+      "supports": "Domestic primacy, voluntary submission; liberty, dignity, right-reason limits; variations in manner"
+    },
+    {
+      "id": "MD24",
+      "work": "John Paul II, Mulieris dignitatem, §24",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1988/documents/hf_jp-ii_apl_19880815_mulieris-dignitatem.html",
+      "latin": "https://www.vatican.va/content/john-paul-ii/la/apost_letters/1988/documents/hf_jp-ii_apl_19880815_mulieris-dignitatem.html",
+      "exactEnglishExcerpt": "not one-sided but mutual",
+      "supports": "Mutual subjection, sacrificial self-gift; no unilateral submission claim"
+    },
+    {
+      "id": "HV13",
+      "work": "Paul VI, Humanae vitae, §13",
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "latin": "https://www.vatican.va/content/paul-vi/la/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "exactLatinExcerpt": "usum matrimonii alteri coniugi impositum",
+      "supports": "Conjugal act imposed disregarding condition and just wishes contradicts moral order"
+    },
+    {
+      "id": "CIC1055",
+      "work": "1983 Codex Iuris Canonici, Liber IV",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "locator": "can.1055 §1",
+      "supports": "Spouses' good, generation and education",
+      "scope": "Latin Church. Human canonical reviewer required."
+    },
+    {
+      "id": "CIC1057",
+      "work": "1983 Codex Iuris Canonici, Liber IV",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "locator": "can.1057",
+      "supports": "Marriage made by valid consent; mutual irrevocable covenant",
+      "scope": "Latin Church. Human canonical reviewer required."
+    },
+    {
+      "id": "CIC1060",
+      "work": "1983 Codex Iuris Canonici, Liber IV",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "locator": "can.1060",
+      "supports": "Favour of law: validity upheld in doubt until contrary proved",
+      "scope": "Latin Church. Human canonical reviewer required."
+    },
+    {
+      "id": "CIC1085",
+      "work": "1983 Codex Iuris Canonici, Liber IV",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "locator": "can.1085 §§1–2",
+      "supports": "Prior bond bars new marriage; nullity or dissolution lawfully and certainly established first",
+      "scope": "Latin Church. Human canonical reviewer required."
+    },
+    {
+      "id": "CIC1141",
+      "work": "1983 Codex Iuris Canonici, Liber IV",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "locator": "can.1141",
+      "supports": "Ratified and consummated bond no human-power dissolution; death qualification",
+      "scope": "Latin Church. Human canonical reviewer required."
+    },
+    {
+      "id": "CIC1142-43",
+      "work": "1983 Codex Iuris Canonici, Liber IV",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "locator": "cann.1142–1143",
+      "supports": "Narrow different dissolution cases; no determination of a visitor's eligibility",
+      "scope": "Latin Church. Human canonical reviewer required."
+    },
+    {
+      "id": "CIC1153",
+      "work": "1983 Codex Iuris Canonici, Liber IV",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "locator": "can.1153 §§1–2",
+      "supports": "Grave physical/mental danger, intolerable life; own authority if delay dangerous; cessation/restoration governed by §2",
+      "scope": "Latin Church. Human canonical reviewer required."
+    }
+  ],
+  "incrementOverPriorSemanticRepair": "Preserve already applied earlier corrections as source-owned drafts; add precise source boundary maps and cumulative conditions, not another blanket 147-case audit.",
+  "criticalBoundaries": [
+    "CSE045 remains held for the relationship of historical domestic primacy and later mutual subjection; no doctrinal contradiction or harmonisation certified",
+    "CSE049 full can.1141 wording includes death; bond persistence must not imply mandatory dangerous cohabitation",
+    "CSE050 can.1085 §2 requires lawful certainty about prior nullity/dissolution before new marriage; a private assertion is insufficient",
+    "CSE054 replace undifferentiated 'pressuring' with source-specific imposed act disregarding condition/just wishes; no licence for coercion"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE049",
+        "CSE050"
+      ],
+      "decision": "Related owner SEX-CORE-14; retain bond/separation versus freedom-to-remarry/nullity intents"
+    }
+  ],
+  "deferred": [
+    "Qualified theological/canonical/safeguarding certification of four families; no new research-only row is permission to change civil/legal status",
+    "CSE045 comparative doctrine is a human editorial question, not an excuse to repeat source hunts indefinitely"
+  ],
+  "newSubstantiveGaps": [],
+  "publicationApprovalsChanged": 0,
+  "continue": true
+}
