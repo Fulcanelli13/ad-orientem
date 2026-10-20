@@ -92,4 +92,36 @@ assert.equal(latest.totals.combinedDraftTurnsInitiallyScreened,108);
 assert.equal(latest.totals.newTurnSupportCorrections,1);
 const flagged=latest.records.find(r=>r.questionId==='PX1905-Q632');
 assert.deepEqual(flagged.turns[1].screenedSourceQuestionIds,['PX1905-Q628','PX1905-Q633']);
-console.log('SPX bilingual pathways and source review PASS: 20 chapters, 50 tracks, 100 nodes, 33 links; 54 families/108 turns preliminarily reviewed; 0 certified');
+const last=read(path+'pius-x-46final-92turn-italian-review-20261020.v1.json');
+assert.equal(last.schema,'AO_SPX_46_LAST_FAMILIES_92_TURNS_DIGITAL_ITALIAN_SCREEN_V1');
+assert.equal(last.records.length,46);
+assert.equal(last.counts.newTurns,92);
+assert.equal(last.counts.newQIDSupportCorrections,3);
+assert.equal(last.counts.combinedDistinctSourceQuestionsPreliminarilyScreened,100);
+assert.equal(last.counts.combinedDraftTurnsPreliminarilyScreened,200);
+assert.equal(last.counts.independentFullSentenceSourceCertifications,0);
+assert.equal(last.counts.published,0);
+const screenedQids = new Set([...older.records.map(x=>x.openingQID),...latest.records.map(x=>x.questionId)]);
+for(const rec of last.records){
+ assert.ok(!screenedQids.has(rec.questionId),rec.questionId);
+ screenedQids.add(rec.questionId);
+ assert.equal(rec.turns.length,2);
+ assert.equal(rec.independentExpertApproval,false);
+ const owner=read(rec.originalSourceFile).records.find(x=>x.id===rec.familyId);
+ assert.ok(owner);
+ for(let i=0;i<2;i++){
+  const t=rec.turns[i],o=owner.turns[i];
+  assert.deepEqual([t.questionEN,t.questionFR,t.draftAnswerEN,t.draftAnswerFR],[o.question.en,o.question.fr,o.response.en,o.response.fr]);
+  assert.deepEqual(t.declaredSourceQuestionIds,o.supports);
+  assert.ok(t.screenedSourceQuestionIds.length);
+  assert.equal(t.sourceSentenceCertified,false);
+  assert.equal(t.periodHistoricalVoiceApproved,false);
+  assert.equal(t.denzingerClaimApproved,false);
+  assert.equal(t.chanoineFollowupApproved,false);
+  assert.equal(t.published,false);
+ }
+}
+assert.equal(screenedQids.size,100);
+const q652=last.records.find(r=>r.questionId==='PX1905-Q652');
+assert.ok(q652.historicalOrEditorialFlags.some(s=>s.includes('CHANGE_OR_DESTRUCTION')));
+console.log('SPX bilingual pathways and source-screen contract PASS: 20 chapters, 50 tracks, 100 nodes, 33 links; all 100 source-question families/200 turns preliminarily screened; 0 certified');
