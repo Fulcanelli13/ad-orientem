@@ -6,7 +6,6 @@ for(const year of [2026,2027,2030]){
  const cases=[
   {date:year+"-08-15",id:"assumption-herbs",other:year+"-08-16",title:/herbs|herbes/i},
   {date:year+"-12-27",id:"st-john-wine",other:year+"-12-28",title:/wine|vin/i},
-  {date:v384Dates(year).holySaturday,id:"easter-foods",other:v384Dates(year).easter,title:/Easter foods|aliments de Pâques/i},
  ];
  for(const x of cases){
   const en=v384Events(x.date).filter(y=>y.key===x.id);
@@ -29,5 +28,14 @@ for(const year of [2026,2027,2030]){
   const month=x.date.slice(0,7);
   assert.equal(calendarPracticeMonthEntries(month).filter(y=>y.id==="practice."+x.id).length,1);
  }
+ const holy=v384Dates(year).holySaturday;
+ const enHoly=v384Events(holy).find(x=>x.key==="holy-saturday");
+ const frHoly=v384Events(holy,{fr:true}).find(x=>x.key==="holy-saturday");
+ assert.ok(enHoly&&frHoly,"existing Holy Saturday practice must remain");
+ assert.match(enHoly.summary,/Easter foods.*priestly blessing/i);
+ assert.match(frHoly.summary,/aliments.*bénédiction sacerdotale/i);
+ assert.equal(v384Events(holy).filter(x=>x.key==="easter-foods").length,0,"Do not create redundant Holy Saturday practice cards");
+ assert.equal(calendarPracticeEvents(holy).filter(x=>x.key==="holy-saturday").length,1);
+ assert.equal(calendarPracticeMonthEntries(holy.slice(0,7)).filter(x=>x.id==="practice.holy-saturday").length,1);
 }
-console.log("PASS feast blessings: Assumption herbs, St John wine, Holy Saturday Easter foods — 1962 date owner intact");
+console.log("PASS feast blessings: Assumption herbs, St John wine, Easter food guidance inside existing Holy Saturday card — 1962 date owner intact");

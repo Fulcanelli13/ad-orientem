@@ -15,7 +15,8 @@ Source URLs and independent provenance are registered as seven distinct source r
 * BLSS-002: Herbs, flowers and fruits at the Assumption are especially attested in Germanic regions. The official Directory explicitly describes Christianisation of earlier rituals. Do not assert that the blessing is offered in every parish, or that herbs have miraculous medical properties.
 * BLSS-003: St John's poisoned-wine story is traditional legend. The wine itself is NOT Eucharistic consecrated wine. Explain only the tradition of bringing wine for a priest's blessing; do not direct drinking, treatment of illnesses or consumption by minors.
 * BLSS-004: Weller distinguishes blessings for lamb, eggs and bread; baskets and foods differ among families and countries. Blessing may occur on Holy Saturday where locally provided. The Easter Vigil, the Mass and the domestic prayer before Easter dinner are separate.
-* Dated cards in `src/calendar/traditional-year-v384.js` are bilingual and do not change the underlying 1962 feast day calculation.
+* Holy Saturday Easter foods are explicitly handled inside the **existing** `holy-saturday` practice card to avoid a second competing Holy Saturday card or disruption of Easter Vigil Scripture navigation.
+* Dated contextual guidance in `src/calendar/traditional-year-v384.js` are bilingual and do not change the underlying 1962 feast day calculation.
 * No custom receives a Place pin from the existence of a Roman Ritual blessing. All three attestations have `geo_area_id: geo:world`, `map_policy: NOT_MAPPED`, and null `place_id`; this is source context, not a worldwide claim of regular use.
 
 ## Source limitations
