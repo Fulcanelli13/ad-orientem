@@ -1,0 +1,551 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B15_VOLUNTARINESS_SOURCE_BOUNDARIES_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "counts": {
+    "families": 5,
+    "answerUnits": 10,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE023",
+      "sourceQuestionId": "CSE023",
+      "canonicalOwner": "SEX-CORE-05",
+      "originalRecord": {
+        "source_question_id": "CSE023",
+        "conversation_id": "CHA-CSE-CSE023",
+        "canonical_topic_owner": "SEX-CORE-05",
+        "title": "What is the difference between temptation and sin?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What is the difference between temptation and sin?",
+          "fr": "Quelle différence y a-t-il entre tentation et péché ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Temptation presents something attractive to the mind or appetite; sin requires culpable consent of the will. An unwanted thought, attraction or impulse is not automatically a sin.",
+          "fr": "La tentation présente quelque chose d’attirant à l’esprit ou à l’appétit ; le péché exige un consentement coupable de la volonté. Une pensée, une attirance ou une impulsion non voulue n’est pas automatiquement un péché."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Temptation is not identical with consent. A thought or impulse may present itself unbidden; sin involves a culpable act of the will. Do not confuse the first movement with a deliberate decision. Resist what is wrong, certainly, but do not invent guilt where no consent was given.",
+          "fr": "La tentation ne se confond pas avec le consentement. Une pensée ou une impulsion peut se présenter sans qu’on l’ait appelée ; le péché suppose un acte coupable de la volonté. Ne confondez pas le premier mouvement avec une décision délibérée. Résistez au mal, certes, mais n’inventez pas une faute là où il n’y a pas eu consentement."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "What if I am unsure whether I consented to a temptation?",
+          "fr": "Et si je ne sais pas si j’ai consenti à une tentation ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Uncertainty is not proof of consent. Look for a genuinely free decision rather than treating an unwanted impulse as a deliberate act. A person troubled by scruples should follow stable guidance from a confessor instead of repeatedly testing each thought.",
+          "fr": "L’incertitude ne prouve pas le consentement. Cherchez une décision réellement libre au lieu de traiter une impulsion non voulue comme un acte délibéré. Une personne tourmentée par les scrupules doit suivre le conseil stable d’un confesseur, sans éprouver sans cesse chacune de ses pensées."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Sixth and Ninth Commandments"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Temptation is not itself consent. An unchosen impulse must be distinguished from a culpable response of the will.",
+          "fr": "La tentation n’est pas elle-même un consentement. Une impulsion non choisie doit être distinguée d’une réponse coupable de la volonté.",
+          "claims": [
+            {
+              "text": "Bounded moral distinction",
+              "refs": [
+                "ST77-6"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Doubt alone does not establish consent. A confessor can help distinguish what occurred without inventing certainty.",
+          "fr": "Le doute seul n’établit pas le consentement. Un confesseur peut aider à discerner les faits sans inventer une certitude.",
+          "claims": [
+            {
+              "text": "No inferred consent solely from uncertainty, recurrence, reaction or shame",
+              "refs": [
+                "ST77-6"
+              ],
+              "type": "EDITORIAL_EVIDENCE_BOUNDARY_NOT_CLINICAL_TREATMENT"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PAPAL_SPEECH",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE024",
+      "sourceQuestionId": "CSE024",
+      "canonicalOwner": "SEX-CORE-05",
+      "originalRecord": {
+        "source_question_id": "CSE024",
+        "conversation_id": "CHA-CSE-CSE024",
+        "canonical_topic_owner": "SEX-CORE-05",
+        "title": "Are involuntary bodily sexual reactions sinful?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Are involuntary bodily sexual reactions sinful?",
+          "fr": "Les réactions sexuelles corporelles involontaires sont-elles pécheresses ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "No, not merely because they occur. Personal moral responsibility concerns what a person knowingly and voluntarily chooses, not a bodily response that happens without deliberate consent.",
+          "fr": "Non, pas du seul fait qu’elles se produisent. La responsabilité morale personnelle concerne ce qu’une personne choisit consciemment et volontairement, non une réaction corporelle qui survient sans consentement délibéré."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "An involuntary reaction of the body is not, by that fact alone, a sin. Moral responsibility concerns what we know and freely choose. You need not scrutinise an unchosen bodily response as though it were already a deliberate action; if the concern troubles you repeatedly, seek calm, consistent spiritual guidance.",
+          "fr": "Une réaction involontaire du corps n’est pas, de ce seul fait, un péché. La responsabilité morale concerne ce que nous connaissons et choisissons librement. Il n’est pas nécessaire d’examiner une réaction non voulue comme s’il s’agissait déjà d’un acte délibéré ; si cette inquiétude revient sans cesse, cherchez une direction spirituelle calme et constante."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "What if my body reacts even though I reject the thought?",
+          "fr": "Et si mon corps réagit alors que je rejette la pensée ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "A bodily reaction alone does not prove the will agreed. Our bodies can respond without a moral decision. You may calmly turn your attention elsewhere rather than searching the reaction for signs of guilt.",
+          "fr": "Une réaction corporelle ne prouve pas que la volonté a consenti. Le corps peut réagir sans décision morale. Vous pouvez tranquillement détourner votre attention au lieu de rechercher dans cette réaction des indices de culpabilité."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST6",
+              "locator": "aa.1–8"
+            },
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "A wholly involuntary bodily response is not itself a sinful choice.",
+          "fr": "Une réaction corporelle entièrement involontaire n’est pas en elle-même un choix coupable.",
+          "claims": [
+            {
+              "text": "Bounded moral distinction",
+              "refs": [
+                "ST6-1"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "The response alone does not establish consent of the will.",
+          "fr": "La réaction seule n’établit pas le consentement de la volonté.",
+          "claims": [
+            {
+              "text": "No inferred consent solely from uncertainty, recurrence, reaction or shame",
+              "refs": [
+                "ST6-1"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PAPAL_SPEECH",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE025",
+      "sourceQuestionId": "CSE025",
+      "canonicalOwner": "SEX-CORE-05",
+      "originalRecord": {
+        "source_question_id": "CSE025",
+        "conversation_id": "CHA-CSE-CSE025",
+        "canonical_topic_owner": "SEX-CORE-05",
+        "title": "Are unwanted sexual thoughts sinful?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Are unwanted sexual thoughts sinful?",
+          "fr": "Les pensées sexuelles non voulues sont-elles pécheresses ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Not simply because they enter the mind. The moral question is whether the person deliberately accepts, cultivates or enjoys the thought after recognizing its character.",
+          "fr": "Pas simplement parce qu’elles entrent dans l’esprit. La question morale est de savoir si la personne accepte, cultive ou savoure délibérément la pensée après en avoir reconnu le caractère."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "A disturbing thought may enter the mind without your invitation. Its arrival is not itself consent. What calls for moral examination is the deliberate choice to entertain it for illicit pleasure. Do not turn every fleeting thought into an accusation against yourself.",
+          "fr": "Une pensée troublante peut surgir sans que vous l’ayez invitée. Sa venue n’est pas un consentement. Ce qu’il faut examiner moralement, c’est le choix délibéré de l’entretenir pour un plaisir illicite. Ne transformez pas chaque pensée fugitive en accusation contre vous-même."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "If the same unwanted thought keeps returning, does repetition turn it into sin?",
+          "fr": "Si la même pensée importune revient sans cesse, finit-elle par devenir un péché ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Repetition by itself changes nothing if the thought remains uninvited and unaccepted. The question is still whether you knowingly chose to entertain it for illicit pleasure. Unwanted persistence should not be mistaken for consent.",
+          "fr": "La répétition ne change rien par elle-même si la pensée demeure non voulue et non acceptée. Il faut toujours se demander si vous avez consciemment choisi de l’entretenir pour un plaisir illicite. Sa persistance importune ne doit pas être confondue avec le consentement."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Sixth and Ninth Commandments"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "An unwanted thought is different from deliberately welcoming illicit pleasure.",
+          "fr": "Une pensée non voulue diffère de l’accueil délibéré d’un plaisir illicite.",
+          "claims": [
+            {
+              "text": "Bounded moral distinction",
+              "refs": [
+                "ST154-4"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Its repeated return alone does not establish that you chose to welcome it.",
+          "fr": "Son retour répété ne prouve pas à lui seul que vous avez choisi de l’accueillir.",
+          "claims": [
+            {
+              "text": "No inferred consent solely from uncertainty, recurrence, reaction or shame",
+              "refs": [
+                "ST154-4"
+              ],
+              "type": "EDITORIAL_EVIDENCE_BOUNDARY_NOT_CLINICAL_TREATMENT"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PAPAL_SPEECH",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE026",
+      "sourceQuestionId": "CSE026",
+      "canonicalOwner": "SEX-CORE-05",
+      "originalRecord": {
+        "source_question_id": "CSE026",
+        "conversation_id": "CHA-CSE-CSE026",
+        "canonical_topic_owner": "SEX-CORE-05",
+        "title": "When does a sexual thought become voluntary consent?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "When does a sexual thought become voluntary consent?",
+          "fr": "Quand une pensée sexuelle devient-elle un consentement volontaire ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "When the will, with sufficient awareness, chooses to retain, enjoy or pursue what was first presented involuntarily. Mere notice, surprise or passing attention is not the same as consent.",
+          "fr": "Lorsque la volonté, avec une conscience suffisante, choisit de retenir, de savourer ou de poursuivre ce qui s’est d’abord présenté involontairement. Le simple fait de remarquer, d’être surpris ou d’y prêter une attention passagère n’est pas identique au consentement."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The important distinction is between noticing a thought and freely deciding to cultivate it. Consent belongs to the will, with sufficient awareness. An instant of surprise, an unwanted recurrence or uncertainty about what happened is not proof of deliberate consent. Avoid interrogating every second of your mental life.",
+          "fr": "La distinction essentielle est celle qui sépare la perception d’une pensée du choix libre de la cultiver. Le consentement appartient à la volonté, avec une conscience suffisante. Un instant de surprise, un retour importun ou le doute sur ce qui s’est passé ne prouvent pas un consentement délibéré. Évitez d’interroger chaque seconde de votre vie intérieure."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Must I identify the precise instant at which an unwanted thought became voluntary?",
+          "fr": "Dois-je repérer l’instant précis où une pensée importune est devenue volontaire ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. Moral judgment does not require a second-by-second reconstruction of consciousness. Consider whether there was a sufficiently clear, free choice; where there was only confusion or intrusion, avoid manufacturing certainty of guilt.",
+          "fr": "Non. Le jugement moral n’exige pas une reconstitution seconde par seconde de la conscience. Demandez-vous s’il y a eu un choix suffisamment clair et libre ; s’il n’y avait que confusion ou intrusion, n’inventez pas une certitude de culpabilité."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST6",
+              "locator": "aa.1–8"
+            },
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Sixth and Ninth Commandments"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Noticing a thought is different from choosing to cultivate it. Voluntary action involves knowledge and an interior principle of action.",
+          "fr": "Percevoir une pensée diffère du choix de la cultiver. L’acte volontaire comporte connaissance et principe intérieur d’action.",
+          "claims": [
+            {
+              "text": "Bounded moral distinction",
+              "refs": [
+                "ST6-1"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "A doubtful recollection cannot supply a certainty it lacks. Seek sound guidance where the facts remain unclear.",
+          "fr": "Un souvenir douteux ne fournit pas une certitude qu’il n’a pas. Cherchez un conseil éclairé si les faits restent incertains.",
+          "claims": [
+            {
+              "text": "No inferred consent solely from uncertainty, recurrence, reaction or shame",
+              "refs": [
+                "ST6-1"
+              ],
+              "type": "EDITORIAL_EVIDENCE_BOUNDARY_NOT_CLINICAL_TREATMENT"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PAPAL_SPEECH",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE027",
+      "sourceQuestionId": "CSE027",
+      "canonicalOwner": "SEX-CORE-05",
+      "originalRecord": {
+        "source_question_id": "CSE027",
+        "conversation_id": "CHA-CSE-CSE027",
+        "canonical_topic_owner": "SEX-CORE-05",
+        "title": "Are erotic dreams or nocturnal emissions sinful?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Are erotic dreams or nocturnal emissions sinful?",
+          "fr": "Les rêves érotiques ou les pollutions nocturnes sont-ils pécheurs ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Not when they occur involuntarily during sleep. Moral responsibility requires a voluntary act; what happens without deliberate consent is not personal sin.",
+          "fr": "Non lorsqu’ils se produisent involontairement pendant le sommeil. La responsabilité morale exige un acte volontaire ; ce qui arrive sans consentement délibéré n’est pas un péché personnel."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "What happens involuntarily during sleep is not a personal moral choice. A dream or bodily occurrence, however unsettling on waking, must not be treated as a freely committed sin. Judge your waking decisions by their own circumstances, not by the mere fact of having slept and dreamed.",
+          "fr": "Ce qui survient involontairement pendant le sommeil n’est pas un choix moral personnel. Un rêve ou un phénomène corporel, même troublant au réveil, ne doit pas être traité comme un péché librement commis. Jugez vos décisions à l’état de veille selon leurs circonstances, et non d’après le simple fait d’avoir dormi et rêvé."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "What if I wake up ashamed of what I dreamed?",
+          "fr": "Et si je me réveille honteux de ce que j’ai rêvé ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Feelings on waking are not evidence of a freely committed sin during sleep. You need not recount involuntary dream details as deliberate acts. If something in your waking conduct worries you, that is a separate question to examine calmly.",
+          "fr": "Le sentiment éprouvé au réveil ne prouve pas qu’un péché libre a été commis pendant le sommeil. Vous n’avez pas à rapporter les détails involontaires d’un rêve comme des actes délibérés. Si votre conduite à l’état de veille vous inquiète, examinez-la séparément et paisiblement."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST6",
+              "locator": "aa.1–8"
+            },
+            {
+              "registry_key": "ST77",
+              "locator": "aa.1–7"
+            },
+            {
+              "registry_key": "ST154",
+              "locator": "a.5 · explicit judgment on nocturnal emissions and preceding voluntary causes"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "An involuntary occurrence during sleep is not itself a sin. Aquinas distinguishes it from a culpable cause freely chosen beforehand.",
+          "fr": "Un phénomène involontaire pendant le sommeil n’est pas en lui-même un péché. Saint Thomas le distingue d’une cause coupable librement choisie auparavant.",
+          "claims": [
+            {
+              "text": "Bounded moral distinction",
+              "refs": [
+                "ST154-5"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Shame on waking does not establish a sinful choice during sleep; any preceding voluntary conduct is a separate matter.",
+          "fr": "La honte au réveil ne prouve pas un choix coupable pendant le sommeil ; une conduite volontaire antérieure est une question distincte.",
+          "claims": [
+            {
+              "text": "No inferred consent solely from uncertainty, recurrence, reaction or shame",
+              "refs": [
+                "ST154-5"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_WITH_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "classification": "CHANOINE_EXPLANATION_NOT_PAPAL_SPEECH",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ST6-1",
+      "work": "Aquinas, Summa theologiae I–II q.6 a.1 corpus",
+      "url": "https://www.newadvent.org/summa/2006.htm#article1",
+      "language": "English Dominican translation, 1920 second revised edition",
+      "supports": "Voluntary action: intrinsic principle and knowledge of end; application does not diagnose bodily mechanisms"
+    },
+    {
+      "id": "ST77-6",
+      "work": "Same I–II q.77 a.6 corpus; a.7 corpus as boundary",
+      "url": "https://www.newadvent.org/summa/2077.htm#article6",
+      "exactEnglishExcerpt": "Sin consists essentially in an act of the free will",
+      "supports": "Passion distinguished from free will; antecedent versus consequent passions; voluntariness in cause and indirect voluntariness must not be erased"
+    },
+    {
+      "id": "ST154-4",
+      "work": "Same II–II q.154 a.4 corpus",
+      "url": "https://www.newadvent.org/summa/3154.htm#article4",
+      "supports": "Consent to illicit pleasure distinct from bare physical occurrence; not a rule that only bodily acts can sin"
+    },
+    {
+      "id": "ST154-5",
+      "work": "Same II–II q.154 a.5 corpus and ad2",
+      "url": "https://www.newadvent.org/summa/3154.htm#article5",
+      "exactEnglishExcerpt": "never a sin, but is sometimes the result of a previous sin",
+      "supports": "Involuntary sleep occurrence versus preceding culpable cause; historical physiological explanation is not adopted as current medicine"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "CSE023–026: qualify wholly involuntary; no blanket inference that every first movement or absence of perfect consent eliminates all possible venial fault, negligence or responsibility in cause",
+    "CSE023/026: remove unsupported categorical counselling method that moral judgment never requires temporal clarification; no mandatory second-by-second reconstruction prescribed either",
+    "CSE025: repetition alone is not consent, but do not infer from a one-line description that any individual has no negligence or chosen cause",
+    "CSE027: restore explicit in-itself versus culpable prior cause distinction; source's dated humoral physiology and spiritual causal speculation are not presented as current clinical facts"
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE023",
+        "CSE024",
+        "CSE025",
+        "CSE026",
+        "CSE027",
+        "CSE136",
+        "CSE137"
+      ],
+      "decision": "Shared voluntariness principle; retain different visitor intents, sleep/prior-cause distinction and scruple context. Reuse B04 guidance boundaries; no duplicated new families."
+    }
+  ],
+  "humanDecisions": [
+    "Moral theologian reviews first movements, imperfect voluntariness and indirect fault; these concise drafts do not settle individual culpability",
+    "Pastoral/safeguarding reviewer evaluates brevity and whether additional explanation is needed for distressed users",
+    "English/French and Chanoine voice review pending"
+  ],
+  "newSubstantiveGaps": [],
+  "originalLanguageLimit": "Latin not collated in this pass; retain exact work/article references and identified established English translation without claiming original-language signoff.",
+  "continue": true
+}
