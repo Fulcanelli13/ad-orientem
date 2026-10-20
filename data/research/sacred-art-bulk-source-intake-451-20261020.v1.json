@@ -19,7 +19,8 @@
     "historicFivesAreSeparateAuthorityNotNewApproval": true,
     "excludePradoMediaIncludingThirdPartyMirrors": true,
     "preservePradoArtworkEditorialSelections": true,
-    "noPradoRightsInvestigation": true
+    "noPradoRightsInvestigation": true,
+    "ngaImageRequiresPublishedImagesOpenaccessFlagOne": true
   },
   "batchSize": 50,
   "estimatedBatches": 10,
@@ -31,7 +32,7 @@
     "editorialHold": 199,
     "eligibleExactMet": 23,
     "eligibleExactCommons": 35,
-    "eligibleOtherSource": 87,
+    "eligibleOtherSource": 81,
     "legacyFiveOutside451": [
       "W40-010",
       "W40-011",
@@ -41,7 +42,8 @@
     "pradoAcquisitionHolds": 30,
     "pradoHoldsAlreadyEditorialHold": 5,
     "pradoHoldsApprovedOrHistoric": 25,
-    "pradoSourceHoldsApprovedExactCandidate": 1
+    "pradoSourceHoldsApprovedExactCandidate": 1,
+    "eligibleExactNga": 6
   },
   "works": [
     {
@@ -1753,7 +1755,7 @@
       "sourceClaim": "CC0",
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "NGA_OFFICIAL_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [
@@ -2092,7 +2094,7 @@
       "sourceClaim": "CC0",
       "reviewStatus": "UNREVIEWED",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "NGA_OFFICIAL_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
@@ -3681,7 +3683,7 @@
       "sourceClaim": "CC0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "NGA_OFFICIAL_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
@@ -3761,7 +3763,7 @@
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "NGA_OFFICIAL_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
@@ -5362,7 +5364,7 @@
       "sourceClaim": null,
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "NGA_OFFICIAL_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
@@ -6304,7 +6306,7 @@
       "sourceClaim": null,
       "reviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "NGA_OFFICIAL_OPEN_ACCESS_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
