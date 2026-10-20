@@ -10,7 +10,7 @@ const rejected=new Set(freeze.rejected.map(x=>x.artworkId));
 const works=intake.works.filter(x=>x.provider===NGA_PROVIDER);
 assert.equal(works.length,6);
 assert.equal(intake.counts.eligibleExactNga,6);
-assert.equal(intake.counts.eligibleOtherSource,81);
+assert.equal(intake.counts.eligibleOtherSource,76);
 const exactIDs=works.map(x=>ngoObjectId(x.sourceUrl));
 assert.deepEqual(new Set(exactIDs),new Set([106362,63264,46164,50298,46185,12209]));
 assert.equal(new Set(exactIDs).size,6);
