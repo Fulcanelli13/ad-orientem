@@ -88,7 +88,7 @@ function placeRecordRows(records,language){
   if(!list.length)return "";
   return '<div class="aoExplorePlaceRows">'+list.map(item=>
     '<button type="button" class="aoExplorePlaceRow" data-explore-place-item="'+esc(item.item_id)+'" data-explore-place-lens="'+esc(item.lens)+'">'
-    +'<span><small>'+esc(item.eyebrow||lensLabel(language,item.lens))+'</small><strong>'+esc(translatedTitle(item,language)||"")+'</strong></span>'
+    +'<span><small>'+esc((language==="fr"&&item.eyebrow_fr)||item.eyebrow||lensLabel(language,item.lens))+'</small><strong>'+esc(translatedTitle(item,language)||"")+'</strong></span>'
     +(item.status?'<i>'+esc(item.status)+'</i>':"")
     +'</button>'
   ).join("")+'</div>';
@@ -344,7 +344,7 @@ function compactExploreItemSheet(vm){
   const floatingOnMap=vm.view==="map";
   let html='<div class="aoFindSheetBackdrop'+(floatingOnMap?' aoExploreQuickPreviewLayer':'')+'" data-find-close-detail><section class="aoFindSheet aoExploreQuickPreview" role="dialog" aria-modal="'+String(!floatingOnMap)+'" aria-label="'+esc(title)+'" data-explore-preview="'+esc(item.item_id)+'">';
   html+='<div class="aoHeritageSheetHandle" aria-hidden="true"></div>';
-  html+='<header><div><small>'+esc(item.eyebrow||lensLabel(lang,item.lens))+'</small><h2>'+esc(title)+'</h2>';
+  html+='<header><div><small>'+esc((lang==="fr"&&item.eyebrow_fr)||item.eyebrow||lensLabel(lang,item.lens))+'</small><h2>'+esc(title)+'</h2>';
   if(area)html+='<p>'+esc(area)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(lang,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
   if(summary)html+='<p class="aoExplorePreviewSynopsis">'+esc(summary)+'</p>';
@@ -372,7 +372,7 @@ function compactExploreItemSheet(vm){
 function detailSheet(vm){
   const item=vm.selected;if(!item)return "";
   let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet'+(item.kind==="CANONICAL_CUSTOM"?' aoExploreTraditionSheet':'')+'" role="dialog" aria-modal="true"'+(item.kind==="CANONICAL_CUSTOM"?' data-explore-custom-id="'+esc(item.source_id)+'"':'')+'>';
-  html+='<header><div><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><h2>'+esc(translatedTitle(item,vm.language)||"")+'</h2>';
+  html+='<header><div><small>'+esc((vm.language==="fr"&&item.eyebrow_fr)||item.eyebrow||lensLabel(vm.language,item.lens))+'</small><h2>'+esc(translatedTitle(item,vm.language)||"")+'</h2>';
   const subtitle=vm.language==="fr"?(item.kind==="CANONICAL_CUSTOM"?item.subtitle_fr:item.subtitle_fr||item.subtitle):item.subtitle;
   if(subtitle)html+='<p>'+esc(subtitle)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
