@@ -40,7 +40,7 @@ try{
  assert.ok(await page.locator(".place-row[data-id]").count()>0,"Must show actual canonical records");
  assert.ok(await page.locator("#original[href*='store-locator']").count()===1);
  // Same loaded browser across all widths: capture actual breakpoints, not mockups.
- for(const width of [320,390,1440]){
+ for(const width of [320,390]){
   await page.setViewportSize({width,height:width<700?844:960});
   await page.waitForTimeout(1550);
   await page.waitForFunction(()=>{const r=document.querySelector(".map-stage")?.getBoundingClientRect();const f=document.querySelector(".map-flag")?.getBoundingClientRect();return r&&f&&r.top>=0&&r.top<innerHeight-200&&f.top>=0&&f.top<innerHeight-250;},null,{timeout:20000});
@@ -70,9 +70,31 @@ try{
  await page.locator('[data-mode="regions"]').click();
  assert.equal(await page.locator("#mode-title").textContent(),"Country coverage");
  assert.equal(await page.locator("#legend").isVisible(),true);
- await page.setViewportSize({width:1440,height:960});
- await page.waitForTimeout(1550);
- await page.screenshot({path:resolve(output,"choropleth-1440.png")});
+ // Desktop must be tested in a fresh viewport. Resizing a 320px MapLibre
+ // WebGL context directly to 1440px produces misleading blank captures.
+ const desktopContext=await browser.newContext({viewport:{width:1440,height:960},
+   deviceScaleFactor:1,hasTouch:false,locale:"en-GB"});
+ const desktop=await desktopContext.newPage();
+ const desktopErrors=[];
+ desktop.on("pageerror",e=>desktopErrors.push(String(e.message||e)));
+ await desktop.goto(origin+"/labs/mapcn-integration/",{waitUntil:"domcontentloaded",timeout:90000});
+ await desktop.waitForFunction(()=>/ready/i.test(document.querySelector("#map-status")?.textContent||""),
+   null,{timeout:110000});
+ await desktop.waitForTimeout(3000);
+ const first=await desktop.evaluate(()=>({
+   stage:document.querySelector(".map-stage")?.getBoundingClientRect().toJSON(),
+   flag:document.querySelector(".map-flag")?.getBoundingClientRect().toJSON(),
+   canvas:document.querySelector("canvas.maplibregl-canvas")?.getBoundingClientRect().toJSON(),
+ }));
+ assert.ok(first.stage?.width>900 && first.flag?.top<300
+   && first.canvas?.width>900,"Desktop atlas must occupy its viewport: "+JSON.stringify(first));
+ await desktop.screenshot({path:resolve(output,"discover-1440.png")});
+ await desktop.locator('[data-mode="regions"]').click();
+ await desktop.locator("#legend").waitFor({state:"visible"});
+ await desktop.waitForTimeout(2600);
+ await desktop.screenshot({path:resolve(output,"choropleth-1440.png")});
+ assert.deepEqual(desktopErrors,[],"No desktop JavaScript exceptions allowed");
+ await desktopContext.close();
  assert.deepEqual(errors,[],"No JavaScript page exceptions allowed");
  console.log(JSON.stringify({status:"PASS",captured:6,source:"REAL_EXPLORE_DATASET",widths:[320,390,1440]}));
  await context.close();
