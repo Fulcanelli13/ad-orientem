@@ -28,10 +28,10 @@ try{
  await mkdir(out,{recursive:true});
  for(const option of [
   {label:"ordinary64",query:"production=1",cards:65,visible:64,curated:"true"},
-  {label:"optional64",query:"production=1&secondConfiteor=1",cards:65,visible:65,curated:"true"},
+  {label:"optional65",query:"production=1&secondConfiteor=1",cards:65,visible:65,curated:"true"},
   {label:"rollback48",query:"production=1&aoLiveCards=48",cards:48,visible:48,curated:"false"},
   {label:"asperges64",query:"production=1&rite=asperges",cards:65,visible:64,curated:"true",rite:"ORDINARY"},
-  {label:"asperges64",query:"production=1&rite=asperges&secondConfiteor=1",cards:65,visible:65,curated:"true",rite:"ORDINARY"},
+  {label:"asperges65",query:"production=1&rite=asperges&secondConfiteor=1",cards:65,visible:65,curated:"true",rite:"ORDINARY"},
   {label:"asperges64-fr",query:"production=1&rite=asperges&lang=fr",cards:65,visible:64,curated:"true",rite:"ORDINARY",lang:"fr"},
   {label:"vidi-aquam64",query:"production=1&rite=asperges&date=2026-04-12",cards:65,visible:64,curated:"true",rite:"PASCHAL"},
   {label:"passiontide64",query:"production=1&rite=asperges&date=2026-03-22",cards:65,visible:64,curated:"true",rite:"ORDINARY",omitGloria:true},
