@@ -423,6 +423,7 @@ export function createFindOwner(win=globalThis){
       journeys,
       journeySelectedId:state.journeySelectedId,
       selectedPlaceId:state.selectedPlaceId,
+      selectedId:state.selectedId,
       expandPlace:state.expandPlace,
       expandDetail:state.expandDetail,
     });
@@ -561,6 +562,15 @@ export function createFindOwner(win=globalThis){
   }
 
   async function open(options={}){
+    // A Calendar handoff can select only an existing, source-backed canonical
+    // custom. The route payload alone cannot mint a practice or map pin.
+    const customId=options?.lens==="traditions"&&typeof options?.customId==="string"?options.customId:null;
+    if(options?.customId!=null&&(!customId||! /^[A-Z]{4}-[0-9]{3}$/.test(customId)))return false;
+    if(customId){
+      try{await ensureData()}catch{return false;}
+      if(!projection?.byLens?.traditions?.some(item=>
+        item?.raw?.custom?.custom_id===customId&&item.raw.custom.publication_state==="PUBLISHED"))return false;
+    }
     try{win?.AO_LEARN_APP_V1?.close?.()}catch{}
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
@@ -573,7 +583,12 @@ export function createFindOwner(win=globalThis){
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
-    state.expandPlace=false;state.expandDetail=false;
+    if(customId){
+      state.lens="traditions";state.view="list";state.query="";
+      state.atlasFamily="ANY";state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
+      state.displayLimit=24;state.selectedId="tradition:custom:"+customId;state.selectedPlaceId=null;
+    }
+    state.expandPlace=false;state.expandDetail=Boolean(customId&&options?.expandDetail);
     state.bibleAtlas=false;state.bibleIndex=0;
     const node=ensureRoot(win);if(!node)return false;
     openState=true;node.dataset.open="true";
