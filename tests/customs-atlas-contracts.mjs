@@ -34,8 +34,8 @@ for (const entry of negative.entries) {
   assert.equal(auditNegativeKnowledge(entry).length, 0, entry.custom_id);
 }
 
-assert.equal(atlas.customs.length, 13);
-assert.equal(atlas.attestations.length, 71);
+assert.equal(atlas.customs.length, 16);
+assert.equal(atlas.attestations.length, 74);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -48,15 +48,33 @@ const result = assertCustomsAtlasRegistry({
 });
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
-  customs: 13,
-  attestations: 71,
-  sources: 75,
+  customs: 16,
+  attestations: 74,
+  sources: 77,
   negativeKnowledge: 7,
 });
 assert.deepEqual(
   [...result.mapCandidates].sort(),
   ["att:DEV-009:LAGHET", "att:DEV-010:LOURDES", "att:DOM-006:PARAY", "att:DOM-007:PARAY", "att:DEV-007:SAINTE-ANNE-D-AURAY", "att:DEV-009:ALTOETTING", "att:DEV-010:MARIAZELL", "att:DEV-007:EINSIEDELN-ENGELWEIHE", "att:DEV-007:CHAMPION", "att:DEV-010:GUADALUPE-LA-CROSSE", "att:DEV-007:SAINTE-ANNE-BEAUPRE", "att:DEV-010:NOTRE-DAME-DU-CAP", "att:DEV-007:LORETO-VENUTA", "att:DEV-007:POMPEI-SUPPLICA", "att:DEV-007:JASNA-GORA", "att:DEV-007:KALWARIA-ASSUMPTION", "att:DEV-007:WALSINGHAM", "att:DEV-007:HOLYWELL-ST-WINEFRIDE", "att:DEV-007:ST-PETER-CHANEL-NZ", "att:DEV-007:UGWOGO-PERPETUAL-HELP", "att:DEV-007:NAMUGONGO-MARTYRS-DAY", "att:DEV-007:MUNYONYO-MARTYRS", "att:DEV-007:GUADALUPE-MX", "att:DEV-007:ZAPOPAN-ROMERIA", "att:DEV-007:APARECIDA", "att:DEV-007:CIRIO-NAZARE", "att:DEV-007:LAS-LAJAS", "att:DEV-007:CHIQUINQUIRA", "att:DEV-007:BANNEUX", "att:DEV-006:BEAURAING", "att:DEV-007:SVATA-HORA", "att:DEV-007:ST-WENCESLAS-BOLESLAV", "att:DEV-007:HEILOO-FIRST-SATURDAY", "att:DEV-007:MAASTRICHT-STERRE-DER-ZEE", "att:DEV-007:FATIMA-MAY13", "att:DEV-007:SAMEIRO", "att:DEV-006:NEUMANN-PHILADELPHIA", "att:DEV-010:MIRACULOUS-MEDAL-PHILADELPHIA", "att:DEV-006:CZESTOCHOWA-US-WALK", "att:DEV-006:SETON-SEA-SERVICES", "att:DEV-007:GROTTO-LOURDES-FEAST", "att:DEV-006:BERMONT-GREUX", "att:DEV-007:PONTMAIN-JAN17", "att:DEV-010:PONTMAIN-CANDLE", "att:DEV-006:PELLEVOISIN-ANNUAL", "att:DEAD-003:MONTLIGEON", "att:DEV-006:RUE-DU-BAC", "att:DEV-006:WIGRATZBAD", "att:DEV-007:MARIAHILF-AMBERG-BERGFEST", "att:DEV-007:NUSSDORF-LEONHARDIRITT", "att:DEV-007:FRIELINGSDORF-APOLLINARIS", "att:DEV-006:BETTBRUNN", "att:DEV-010:BETTBRUNN-VOTIVE-CANDLES", "att:DEV-007:MARIA-VESPERBILD-FATIMA", "att:DEV-006:AURIESVILLE-RESTORATION", "att:DEV-007:STOCKBRIDGE-DIVINE-MERCY", "att:DEV-006:LITCHFIELD-LOURDES", "att:DEV-007:FISKDALE-ST-ANNE-NOVENA"].sort(),
 );
+
+// Source-locked domestic customary admission: no invented map pins or legal obligations.
+for (const [id,attestationId,sourceId] of [
+  ["DOM-003","att:DOM-003:FR","MUCEM-BENITIER"],
+  ["DOM-011","att:DOM-011:FR","ECF-CHANDLEUR-HOME"],
+  ["DOM-013","att:DOM-013:FR","ECF-RAMEAUX-HOME"],
+]) {
+  const custom = atlas.customs.find(item => item.custom_id === id);
+  const witness = atlas.attestations.find(item => item.attestation_id === attestationId);
+  assert.ok(custom && witness, id + " missing from active atlas");
+  assert.equal(custom.publication_state, "PUBLISHED");
+  assert.equal(witness.custom_id, id);
+  assert.equal(witness.geo_area_id, "geo:country:FR");
+  assert.equal(witness.map_policy, "AREA_CONTEXT");
+  assert.equal(witness.place_id, null);
+  assert.ok(witness.source_ids.includes(sourceId));
+  assert.equal(new Set(negative.entries.map(item => item.custom_id)).has(id), false);
+}
 
 const laghet = atlas.attestations.find(item => item.attestation_id === "att:DEV-009:LAGHET");
 assert.equal(laghet.map_policy, "PLACE");
