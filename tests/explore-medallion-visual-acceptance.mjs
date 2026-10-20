@@ -151,6 +151,41 @@ try{
    });
    assert.ok(stageGap>=48,"Two distinct Holywell site medallions must be visually separated: "+stageGap);
    await page.screenshot({path:resolve(out,"explore-"+width+"-journey-holywell-site-markers.png"),fullPage:false});
+   // D-to-C round trip must preserve the same map and selected Journey.
+   // The stage number still focuses the map; its name opens the Place folio.
+   await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW=
+     document.querySelector("#ao-find-modular-root .maplibregl-canvas"));
+   assert.equal(await journey.locator("[data-explore-journey-stage-place]").count(),2);
+   await journey.locator('[data-explore-journey-stage-place="route:GB:holywell-church-to-well#stage-1"]').click();
+   const stagePlace=page.locator('#ao-find-modular-root .aoHeritagePreview[data-explore-place-owner="place:GB:holywell-st-winefride-church"]');
+   await stagePlace.waitFor({state:"visible",timeout:12000});
+   assert.equal(await journey.count(),1,"Opening a sacred place preserves the pilgrimage beneath it");
+   assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
+     document.querySelector("#ao-find-modular-root .maplibregl-canvas")),
+     "Place preview may not remount the map");
+   assert.match(await stagePlace.locator("[data-find-close-place]").getAttribute("aria-label"),
+     /Return to pilgrimage journey/);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-journey-holywell-place-preview.png"),fullPage:false});
+   await stagePlace.locator("[data-explore-expand-place]").click();
+   const expandedPlace=page.locator('#ao-find-modular-root .aoExplorePlaceSheet[data-explore-place-owner="place:GB:holywell-st-winefride-church"]');
+   await expandedPlace.waitFor({state:"visible",timeout:12000});
+   assert.match(await expandedPlace.locator("header small").innerText(),/PILGRIMAGE PLACE/);
+   await expandedPlace.locator("header [data-find-close-place]").click();
+   await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
+   assert.equal(await journey.locator('[data-explore-journey-select="route:GB:holywell-church-to-well"]').getAttribute("aria-pressed"),"true");
+   assert.equal(await journey.locator("[data-explore-journey-stage-place]").count(),2);
+   assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
+     document.querySelector("#ao-find-modular-root .maplibregl-canvas")),
+     "Returning from a Place must keep map canvas unchanged");
+   const shrineMarker=page.locator('[data-journey-map-stage="route:GB:holywell-church-to-well#stage-2"]');
+   await shrineMarker.click();
+   const shrinePlace=page.locator('#ao-find-modular-root .aoHeritagePreview[data-explore-place-owner="place:GB:holywell-st-winefride"]');
+   await shrinePlace.waitFor({state:"visible",timeout:12000});
+   await shrinePlace.locator("[data-find-close-place]").click();
+   assert.equal(await journey.locator('[data-explore-journey-select="route:GB:holywell-church-to-well"]').getAttribute("aria-pressed"),"true",
+     "Clicking a map-stage medallion must also return to the existing selected pilgrimage");
+   assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
+     document.querySelector("#ao-find-modular-root .maplibregl-canvas")));
    await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').click();
    await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
    await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
