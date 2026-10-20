@@ -6,6 +6,7 @@ import { installAppShellBridge } from "../app/browser-entry.js";
 import { createMassEntryController } from "./app-shell-bootstrap.js";
 import { mountRogationPreflight } from "./rogation-preflight.js";
 import { mountFullMassPreflight } from "./full-mass-preflight.js";
+import {experiencePrayerDepth} from "./full-mass-folio-options.js";
 import { mountObservedMassSourceSelector } from "./observed-mass-selector.js";
 import { mountObservedLocalOrationsPreflight } from "./observed-local-orations-preflight.js";
 import { projectObservedLocalOrations } from "./1962-observed-local-orations.js";
@@ -271,7 +272,7 @@ function installReaderCloseBridge(preview,prepared){
 // User-chosen post-Mass handoff. A voluntary exit prompts rather than
 // inferring completion from an arbitrary card or forcing thanksgiving early.
 function installReaderThanksgivingBridge(preview,prepared,{win=globalThis}={}){
-  if(prepared?.readerPreferences?.afterMass!=="thanksgiving")return null;
+  if(!["thanksgiving","full"].includes(prepared?.readerPreferences?.afterMass))return null;
   const root=preview?.root;
   const close=root?.querySelector?.("[data-reader-home], [aria-label='Close Mass reader']");
   const doc=close?.ownerDocument;
@@ -287,7 +288,10 @@ function installReaderThanksgivingBridge(preview,prepared,{win=globalThis}={}){
       checkpointPersistedMass({preview});
       await navigateReaderSurface("home");
       if(route){
-        const result=await win?.AO_MODULES?.open?.(route);
+        const result=await win?.AO_MODULES?.open?.(route,{
+          depth:prepared?.readerPreferences?.afterMass==="full"?"full":"brief",
+          language:fr?"fr":"en"
+        });
         if(result!==true&&result?.ok!==true)throw Error("THANKSGIVING_PRAYERS_UNAVAILABLE");
       }
       dismiss();
@@ -309,17 +313,17 @@ function installReaderThanksgivingBridge(preview,prepared,{win=globalThis}={}){
     dialog.setAttribute("role","dialog");
     dialog.setAttribute("aria-label",fr?"Après la Messe":"After Mass");
     dialog.style.cssText="position:absolute;z-index:95;top:68px;left:12px;right:12px;max-width:420px;margin:0 auto;padding:16px;background:#101923;color:#eee9df;border:1px solid #766c52;border-radius:10px;box-shadow:0 16px 40px #0009";
-    const h=doc.createElement("h3");h.textContent=fr?"Avant de quitter la Messe":"Before leaving Mass";
+    const h=doc.createElement("h3");h.textContent=fr?"La messe est-elle terminée ?":"Has Mass concluded?";
     h.style.cssText="font:500 21px/1.3 var(--ao-font-display,'EB Garamond',Georgia,serif);margin:0 0 10px";
     const p=doc.createElement("p");p.textContent=fr
-      ?"Souhaitez-vous ouvrir les prières d’action de grâces ?"
-      :"Would you like to open Thanksgiving prayers?";
+      ?"Ouvrez les prières d’action de grâces seulement après la fin réelle de la messe et des rites associés."
+      :"Open Thanksgiving only after Mass and its accompanying rites have actually ended.";
     p.style.cssText="font:400 15px/1.45 var(--ao-font-ui,'EB Garamond',Georgia,serif);margin:0 0 12px";
     const actions=doc.createElement("div");actions.style.cssText="display:grid;gap:8px";
     const thanks=doc.createElement("button");thanks.type="button";thanks.dataset.aoOpenThanksgiving="";
-    thanks.textContent=fr?"Ouvrir l’action de grâces":"Open Thanksgiving";
+    thanks.textContent=prepared?.readerPreferences?.afterMass==="full"?(fr?"Prières complètes":"Full Thanksgiving"):(fr?"Ouvrir l’action de grâces":"Open Thanksgiving");
     const home=doc.createElement("button");home.type="button";home.dataset.aoReturnHome="";
-    home.textContent=fr?"Retour à l’accueil":"Return Home";
+    home.textContent=fr?"Quitter sans action de grâces":"Leave without Thanksgiving";
     const cancel=doc.createElement("button");cancel.type="button";cancel.dataset.aoStayMass="";
     cancel.textContent=fr?"Rester dans la Messe":"Stay in Mass";
     for(const button of [thanks,home,cancel]){
@@ -882,6 +886,37 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
   if (globalThis.AO_R17_BROWSER_ENTRY?.installed) return globalThis.AO_R17_BROWSER_ENTRY;
   const state = { installed: false, polls: 0, controller: null, rogationPreflight: null, fullMassPreflight: null, fullMassCatalogue: null, observedSource: null, localOrations: null };
 
+  // Explicit Mass-prayer entry. The canonical R17 controller remains the sole
+  // source-authorized Start Mass owner; Prayer never reconstructs a Mass plan.
+  function currentFolioSelection(){
+    const base=celebrationApi()?.getResolvedMass?.();
+    if(!base)return null;
+    return state.fullMassPreflight?.selectionFor?.(
+      state.observedSource?.effectiveResolvedMass?.(base)??base)??null;
+  }
+  async function openFolioPrayer(route,{depth=null,language=null}={}){
+    if(!["mass.prepare","mass.thanksgiving"].includes(route))return false;
+    const selected=currentFolioSelection();
+    const moment=route==="mass.prepare"?"before":"after";
+    const selectedDepth=experiencePrayerDepth(moment,{
+      before:selected?.beforeMass??"none",after:selected?.afterMass??"none"
+    });
+    const actualDepth=depth??selectedDepth;
+    if(!actualDepth||!["brief","full"].includes(actualDepth))return false;
+    const registry=globalThis.AO_MODULES;
+    if(typeof registry?.open!=="function")return false;
+    const result=await registry.open(route,{
+      depth:actualDepth,
+      language:language??selected?.readerLanguage??"en",
+      ...(moment==="before"?{onContinue:async()=>{
+        if(!state.controller)throw Error("MASS_CONTROLLER_UNAVAILABLE");
+        return state.controller.enter();
+      }}:{})
+    });
+    return result===true||result?.ok===true;
+  }
+
+
   function tryInstall() {
     state.polls += 1;
     if (!celebrationApi()?.getResolvedMass || !runtime()?.store) {
@@ -908,13 +943,7 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          },
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
-         onOpenPrayerRoute:async route=>{
-           if(!["mass.prepare","mass.thanksgiving"].includes(route))return false;
-           const registry=globalThis.AO_MODULES;
-           if(typeof registry?.open!=="function")return false;
-           const result=await registry.open(route);
-           return result===true||result?.ok===true;
-         },
+         onOpenPrayerRoute:openFolioPrayer,
 
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
          getLocalOrationSummary:()=>state.localOrations?.status?.()??null,
@@ -995,7 +1024,15 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     event.stopImmediatePropagation();
     button.disabled = true;
     delete button.dataset.aoR17Error;
-    void state.controller.enter()
+    // The selected preparation is opened before R17, but can be skipped at
+    // any prayer card. Direct entry remains unchanged when "none" is chosen.
+    const before=currentFolioSelection();
+    const depth=experiencePrayerDepth("before",{before:before?.beforeMass??"none"});
+    const enter=depth
+      ?openFolioPrayer("mass.prepare",{depth,language:before?.readerLanguage})
+        .then(ok=>{if(!ok)throw Error("MASS_PREPARATION_PRAYERS_UNAVAILABLE")})
+      :state.controller.enter();
+    void Promise.resolve(enter)
       .catch((error) => showFailure(error, button))
       .finally(() => { if (button.isConnected) button.disabled = false; });
   }, true);
