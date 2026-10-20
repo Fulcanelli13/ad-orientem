@@ -37,6 +37,118 @@
         "NOT_MAPPED"
       ],
       "status": "PUBLISHED_CONTEXT_PENDING_CI_AND_EDITORIAL_MERGE"
+    },
+    {
+      "custom_id": "NDAY-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:NDAY-001:US",
+      "source_ids": [
+        "EWTN-MCLOUGHLIN-NAMEDAY"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "PATR-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:PATR-001:FR",
+      "source_ids": [
+        "ECF-CHANTELLE-PATRONAL"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "MARI-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:MARI-001:FR",
+      "source_ids": [
+        "DIOCESE-PARIS-ASSOMPTION-2026"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "SJOS-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:SJOS-001:US",
+      "source_ids": [
+        "BR-DIOCESE-STJOSEPH-2026"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "SANT-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:SANT-001:FR",
+      "source_ids": [
+        "ERMITAGE-ANTHONY-POOR-BREAD"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "SCHR-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:SCHR-001:FR",
+      "source_ids": [
+        "DIOCESE-LAVAL-CHRISTOPHER-2026"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "SNIC-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:SNIC-001:FR",
+      "source_ids": [
+        "STRASBOURG-SAINT-NICOLAS-2022"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
     }
   ]
 }
