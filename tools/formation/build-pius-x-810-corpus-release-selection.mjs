@@ -182,7 +182,7 @@ function pick(pool,count){
   const available=pool.candidates.filter(x=>!used.has(x.id)&&!usedQuestion.has(normalize(x.topic.en)));
   if(!available.length)break;
   available.sort((a,b)=>{
-   const penalize=x=>score(x)-(sectionCount.get(x.category+"|"+x.source.section)||0)*2-
+   const penalize=x=>score(x)+(pool.name==="BACKFILL"&&x.category==="PAPAL_TEACHING_AND_PASTORAL"?100:0)-(sectionCount.get(x.category+"|"+x.source.section)||0)*2-
     selected.filter(z=>z.category===x.category&&z.batch===x.batch).length;
    return penalize(b)-penalize(a)||a.id.localeCompare(b.id);
   });
