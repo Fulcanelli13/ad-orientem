@@ -51,9 +51,12 @@ on:
       - 'data/learn/research/pius-x-chanoine-22-answer-aq04-aq05-eligibility-20261020.v1.json'
       - 'data/learn/research/pius-x-eight-old-dz-number-print-facsimile-queue-20261020.v1.json'
       - 'data/learn/research/pius-x-denzinger-optional-release-policy-20261020.v1.json'
+      - 'data/learn/research/pius-x-historical-visual-novel-stage-20261020.v1.json'
+      - 'data/learn/research/pius-x-six-period-voice-candidates-20261020.v1.json'
       - 'previews/visible-mass-3d/pius-x-20path-editorial-review.mjs'
       - 'previews/visible-mass-3d/pius-x-conversation-paths-review.html'
       - 'tests/pius-x-20path-editorial-review.mjs'
+      - 'tests/pius-x-20path-visual-novel-browser.mjs'
       - 'tests/pius-x-print-canon-denzinger-release-gate.mjs'
       - 'tests/pius-x-200turn-three-way-crosswalk.mjs'
       - 'tests/pius-x-bilingual-dialogue-choices.mjs'
@@ -278,3 +281,25 @@ jobs:
           path: research-out/pius-x-pr1443-source-aware-heldout-48.v1.json
           if-no-files-found: warn
           retention-days: 30
+
+  pius-x-visual-novel-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Validate actual St Pius X visual-novel on phone and desktop
+        run: node tests/pius-x-20path-visual-novel-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-20path-visual-novel-review
+          path: artifacts/pius-x-20path-visual-novel/
+          if-no-files-found: warn
+          retention-days: 14
