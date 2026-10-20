@@ -9,12 +9,35 @@ import {
 const seed=JSON.parse(readFileSync(new URL("../data/shrines/shrines-pilgrimages-seed.v1.json",import.meta.url),"utf8"));
 const registry=JSON.parse(readFileSync(new URL("../data/shrines/source-registry.v1.json",import.meta.url),"utf8"));
 const geography=JSON.parse(readFileSync(new URL("../data/geography/seed-registry.v1.json",import.meta.url),"utf8"));
+const evidence=JSON.parse(readFileSync(new URL("../data/shrines/route-stage-evidence-20261020.v1.json",import.meta.url),"utf8"));
+assert.equal(evidence.schema,"AO_PILGRIMAGE_STAGE_EVIDENCE_V1");
 const projected=projectPilgrimageItems({
  pilgrimages:seed.pilgrimages,shrines:seed.shrines,
  routes:seed.routes,temporalLinks:seed.temporalLinks,
  places:geography.places,sources:registry.sources,
 });
-const journeys=buildPilgrimageJourneyCatalogue(projected,registry.sources);
+const journeys=buildPilgrimageJourneyCatalogue(projected,registry.sources,evidence.routes);
+assert.equal(evidence.routes.length,6,"First verified waypoint evidence batch covers six itineraries");
+assert.equal(evidence.routes.reduce((n,r)=>n+r.waypoints.length,0),18);
+const canonicalRoutes=new Map(seed.routes.map(row=>[row.route_id,row]));
+for(const entry of evidence.routes){
+ assert.ok(canonicalRoutes.has(entry.route_id),"Do not create noncanonical route identity");
+ assert.ok(/^https:\/\//.test(entry.source_url));
+ assert.equal(entry.stage_geometry_policy,"NAMED_STAGES_ONLY_NO_WALKING_LINE");
+ assert.deepEqual(entry.waypoints.map(w=>w.ordinal),
+   entry.waypoints.map((w,i)=>i+1),"Organizer stages must retain source order");
+ for(const waypoint of entry.waypoints){
+  assert.equal(waypoint.lat,null);
+  assert.equal(waypoint.lng,null);
+  assert.equal(waypoint.geometry_status,"NAMED_UNMAPPED");
+  assert.ok(waypoint.name_en&&waypoint.name_fr);
+  assert.equal(waypoint.source_url,entry.source_url);
+ }
+}
+assert.equal(journeys.reduce((n,r)=>n+r.namedStages.length,0),18);
+assert.equal(journeys.filter(r=>r.namedStages.length>0).length,6);
+assert.ok(journeys.every(j=>j.mappedStages.length===0),
+ "Named stages are not navigable geographic stops");
 assert.equal(seed.pilgrimages.length,240,"Do not confuse source destinations with mapped routes");
 assert.equal(seed.routes.length,20);
 assert.equal(journeys.length,20,"Show all 20 source-linked route identities, no inferred extras");
@@ -30,6 +53,10 @@ const chartres=journeys.find(row=>row.id==="route:FR:paris-chartres-pentecost");
 assert.ok(chartres);
 assert.equal(chartres.stageCount,3,"Reported source stage count is retained without invented points");
 assert.equal(chartres.stops.length,0);
+assert.deepEqual(chartres.namedStages.map(stage=>stage.name),[
+ "Saint-Sulpice Church, Paris","Choisel overnight camp","Gas overnight camp",
+ "Notre-Dame Cathedral, Chartres",
+]);
 const mauritius=journeys.find(row=>row.id==="route:MU:pere-laval-saint-louis");
 assert.ok(mauritius&&mauritius.origin.includes("Saint-Louis"));
 assert.equal(mauritius.destinationPlaceId,"place:MU:pere-laval-sainte-croix");
@@ -40,10 +67,24 @@ const fr=renderPilgrimageJourneyPanel({routes:journeys,selectedId:chartres.id,la
 assert.equal((en.match(/data-explore-journey-select=/g)||[]).length,20);
 assert.match(en,/documented routes/);
 assert.match(en,/Saint-Sulpice/);
-assert.match(en,/individual locations not yet mapped/);
+assert.match(en,/named stages from official evidence/);
+assert.match(en,/Choisel overnight camp/);
+assert.match(en,/Gas overnight camp/);
+assert.equal((en.match(/data-journey-named-stage=/g)||[]).length,4);
 assert.match(en,/data-explore-journey-destination=/);
 assert.match(fr,/parcours attestés/);
 assert.match(fr,/Sources originales/);
+assert.match(fr,/Bivouac de Choisel/);
+const paray=journeys.find(row=>row.id==="route:FR:paray-pilgrim-path");
+assert.equal(paray.namedStages.length,4);
+assert.equal(paray.namedStages[1].nameFr,"Chapelle Saint-Jean");
+const walk=journeys.find(row=>row.id==="route:US:walk-to-mary");
+assert.equal(walk.namedStages.length,4);
+assert.ok(walk.officialMapUrl?.startsWith("https://www.google.com/maps/d/embed?"));
+const walkHtml=renderPilgrimageJourneyPanel({routes:journeys,selectedId:walk.id});
+assert.match(walkHtml,/Official interactive route map/);
+assert.match(walkHtml,/St. Peter and Paul Parish/);
+assert.ok(journeys.every(j=>j.routeGeometry===null&&j.stops.length===0));
 assert.doesNotMatch(en,/(?:data-explore-journey-waypoint|route-polyline|turn-by-turn directions\s+available)/i);
 const poisoned=buildPilgrimageJourneyCatalogue([
  {lens:"pilgrimages",place_id:"place:a",map_publishable:true,
@@ -57,4 +98,4 @@ const poisoned=buildPilgrimageJourneyCatalogue([
 assert.equal(poisoned.length,1);
 assert.equal(poisoned[0].destinationGeo,null,"Null coordinate must not become a fabricated map point");
 assert.equal(poisoned[0].sources.length,0,"Do not fabricate source URLs");
-console.log("PASS D journey catalogue: 240 source pilgrimages, 20 routes, zero fabricated geometry, EN/FR + publisher evidence");
+console.log("PASS D journey catalogue: 240 pilgrimages, 20 routes, 18 named stages on 6 routes, zero fabricated geolocation, EN/FR + organizer sources");
