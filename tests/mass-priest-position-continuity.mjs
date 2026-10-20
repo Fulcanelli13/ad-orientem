@@ -67,4 +67,36 @@ for(const block of expanded.blocks){
  assert.equal(block.firstCue,rows[0].cueId);
  assert.equal(block.lastCue,rows.at(-1).cueId);
 }
+
+assert.equal(expanded.missalPositionTransitions.length,3);
+assert.deepEqual(expanded.missalPositionTransitions.map(x=>x.cueId),
+ ['AO.SM.C0001','AO.SM.C0081','AO.SM.C0249']);
+const cases=[
+ ['C0072','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE'],
+ ['C0109','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0113','ALTAR_EPISTLE_MISSAL','GOSPEL_SIDE'],
+ ['C0114','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0125','ALTAR_EPISTLE_SIDE','GOSPEL_SIDE'],
+ ['C0134','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0144','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0249','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE'],
+ ['C0250','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE'],
+ ['C0253','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE']
+];
+for(const [id,priest,book] of cases){
+ const x=cue(id);
+ assert.equal(x?.defaultTrack.station,priest,'Incorrect priest station at '+id);
+ assert.equal(x?.missal.location,book,'Incorrect Missal location at '+id);
+ assert.equal(x?.missal.stationDistinctFromBook,true,'Missal is not priest station at '+id);
+}
+for(const id of ['C0249','C0250']){
+ assert.equal(cue(id)?.defaultTrack.renderPolicy,
+   'SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT',
+   'Reader scrolling falsely triggered priest return to Epistle side '+id);
+ assert.equal(cue(id)?.missal.observationGate,'MC-END-010');
+}
+assert.equal(expanded.formActorExceptions.length,3);
+assert.ok(expanded.formActorExceptions.some(x=>x.form==='SOLEMN'&&x.cueId==='AO.SM.C0086'&&x.liturgicalActor==='DEACON'&&x.priestPosition==='ALTAR_EPISTLE_SIDE'),
+ 'Solemn Gospel is sung by deacon, not by celebrant at Gospel-side missal');
+
 console.log('1962 source priest-station continuity: 280/280 sung cues, 96/96 source blocks, 49/49 transitions; no art/position overrides.');
