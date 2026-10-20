@@ -10,17 +10,18 @@ const rejected=new Set(frozen.rejected.map(x=>x.artworkId));
 assert.equal(intake.works.length,451);
 const open=intake.works.filter(x=>["APPROVED","LEGACY_FIVE_PRESERVED"].includes(x.reviewGate)
   &&!x.sourcePolicy?.noFetch&&x.provider==="NO_EXACT_OPEN_SOURCE");
-assert.equal(open.length,58);
-assert.equal(queue.remainingUnroutedRecords,58);
-const stillQueued=queue.records.filter(x=>x.lane!=="SOURCE_IDENTIFIED_QA");
+assert.equal(open.length,54);
+assert.equal(queue.remainingUnroutedRecords,54);
+const stillQueued=queue.records.filter(x=>x.lane!=="SOURCE_IDENTIFIED_QA"&&x.lane!=="PRADO_SOURCE_EMBARGO");
 assert.deepEqual(new Set(stillQueued.map(x=>x.artworkId)),new Set(open.map(x=>x.id)),
- "All 58 remaining unsourced originals must be in research queue, excluding 18 exact-source routes");
+ "All 54 non-Prado unsourced original artworks remain in queue, excluding 21 exact-source routes and one Prado-held approval");
 assert.equal(queue.records.length,76);
 assert.equal(queue.worksPerBatch,50);
 assert.deepEqual(queue.batches.map(x=>x.count),[50,26]);
 assert.equal(queue.counts.LICENSE_BLOCKED,16);
-assert.equal(queue.counts.SOURCE_IDENTIFIED_QA,18);
-assert.equal(queue.counts.DISCOVER_EXACT_ORIGINAL,21);
+assert.equal(queue.counts.SOURCE_IDENTIFIED_QA,21);
+assert.equal(queue.counts.PRADO_SOURCE_EMBARGO,1);
+assert.equal(queue.counts.DISCOVER_EXACT_ORIGINAL,18);
 assert.equal(queue.counts.PER_IMAGE_RIGHTS,4);
 assert.equal(queue.records.reduce((n,x)=>n+Number(x.lane==="LICENSE_BLOCKED"),0),16);
 const stations=queue.records.filter(x=>x.lane==="SOURCE_IDENTIFIED_QA"&&/an-olo-ia-rucis-tation-/.test(x.artworkId));
@@ -42,4 +43,4 @@ for(const row of queue.records) {
 assert(queue.policy.noPradoImagesOrMirrors&&queue.policy.noPaidLicences&&queue.policy.noMuseumContact);
 assert(queue.policy.doNotUseNC_NDForCommercialApp);
 assert.deepEqual(load("data/calendar/sacred-art-certified-media.v1.json").media,[]);
-console.log("PASS: 76 non-Prado source tasks in 50 + 26 batches; 16 rights blocks; 12 Stations source-routed, six other paintings source-routed and 58 still unsourced; no publication");
+console.log("PASS: 76 non-Prado source tasks in 50 + 26 batches; 16 rights blocks; 21 new exact-source routes; one Prado-held original; 54 still unsourced; no publication");
