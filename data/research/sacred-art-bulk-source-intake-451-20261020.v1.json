@@ -31,8 +31,8 @@
     "excluded": 68,
     "editorialHold": 199,
     "eligibleExactMet": 23,
-    "eligibleExactCommons": 35,
-    "eligibleOtherSource": 81,
+    "eligibleExactCommons": 36,
+    "eligibleOtherSource": 80,
     "legacyFiveOutside451": [
       "W40-010",
       "W40-011",
@@ -43,7 +43,8 @@
     "pradoHoldsAlreadyEditorialHold": 5,
     "pradoHoldsApprovedOrHistoric": 25,
     "pradoSourceHoldsApprovedExactCandidate": 1,
-    "eligibleExactNga": 6
+    "eligibleExactNga": 6,
+    "newNonPradoOpenSourceExactLinks": 1
   },
   "works": [
     {
@@ -1163,16 +1164,28 @@
       "id": "G31-001",
       "title": "Petrus Canisius (1521–97), portrait miniature",
       "artist": "Anonymous Northern Netherlands",
-      "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Petrus-Canisius-1521-97-Geestelijke-en-schrijver-te-Nijmegen--62669513b330202b4091495bd20e3939",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petrus_Canisius_(1521-97)._Geestelijke_en_schrijver_te_Nijmegen,_SK-A-4423.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourceObjectUrl": "https://www.rijksmuseum.nl/en/collection/object/Petrus-Canisius-1521-97-Geestelijke-en-schrijver-te-Nijmegen--62669513b330202b4091495bd20e3939",
+      "verifiedMuseumAccession": "SK-A-4423",
+      "imageSourceVerification": {
+        "status": "OBJECT_ID_MATCH_WITH_OFFICIAL_RIJKSMUSEUM_AND_CC0_COMMONS",
+        "originalInstitution": "Rijksmuseum",
+        "verifiedAccession": "SK-A-4423",
+        "museumRightsEvidence": "https://www.rijksmuseum.nl/en/collection/object/Petrus-Canisius-1521-97-Geestelijke-en-schrijver-te-Nijmegen--62669513b330202b4091495bd20e3939",
+        "fileRightsEvidence": "https://commons.wikimedia.org/wiki/File:Petrus_Canisius_(1521-97)._Geestelijke_en_schrijver_te_Nijmegen,_SK-A-4423.jpg",
+        "candidateSourceResolution": "2998x3766",
+        "publicationCleared": false,
+        "independentPhoneQa": false
+      }
     },
     {
       "id": "G20-003",
