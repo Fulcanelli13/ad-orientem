@@ -23,19 +23,21 @@ const r87 = readJson("../data/geography/research/sacred-geography-r87-first-cano
 const r87NewAreaIds = new Set(r87.country_areas_added);
 const r89 = readJson("../data/geography/research/sacred-geography-r89-first-coverage-release.v1.json");
 const r89NewAreaIds = new Set(r89.country_areas_added);
+const r90 = readJson("../data/geography/research/sacred-geography-r90-coverage-first-release.v1.json");
+const r90NewAreaIds = new Set(r90.country_areas_added);
 
 assert.equal(contract.schema, EXPLORE_GEOGRAPHY_SCHEMA);
 assert.equal(contract.version, "1.0.0");
 assert.ok(contract.invariants.some(value => /proximity/i.test(value)));
 assert.ok(contract.invariants.some(value => /Directory venue/i.test(value)));
-assert.equal(seed.places.length,261+r87.published_new.length+r89.published_new.length);
+assert.equal(seed.places.length,261+r87.published_new.length+r89.published_new.length+r90.published_new.length);
 for(const entry of r87.published_new)assert.ok(seed.places.some(place=>place.place_id===entry.place_id),entry.place_id+" R87 Place missing");
 
 for (const area of seed.geoAreas) {
   assert.equal(auditGeoArea(area).length, 0, area.geo_area_id);
 }
 assert.deepEqual(
-  seed.geoAreas.filter(area => area.area_type === "country" && !r87NewAreaIds.has(area.geo_area_id) && !r89NewAreaIds.has(area.geo_area_id)).map(area => area.codes.iso_alpha2),
+  seed.geoAreas.filter(area => area.area_type === "country" && !r87NewAreaIds.has(area.geo_area_id) && !r89NewAreaIds.has(area.geo_area_id) && !r90NewAreaIds.has(area.geo_area_id)).map(area => area.codes.iso_alpha2),
   ["FR", "IE", "MU", "DE", "AT", "CH", "US", "CA", "IT", "PL", "GB", "AU", "NZ", "NG", "UG", "MX", "BR", "CO", "BE", "CZ", "NL", "PT", "RW", "IN", "LT", "NI", "VE", "AR", "EG", "VA", "ES", "PS", "JP", "GR", "SV", "LB", "PE", "LU", "HU", "MT", "HR", "LK", "PH", "DZ", "SN", "CI", "CL", "IL", "VN", "SG", "MA", "ZM", "BA", "CN", "GT", "PY", "HN", "CR", "MY", "SK", "DO", "CU", "SI", "LV", "UY", "MZ", "TT", "GH", "BZ", "PK"],
 );
 
@@ -76,7 +78,7 @@ for(const id of r76PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id
 const r77=readJson("../data/geography/research/sacred-geography-r77-essential-completeness.v1.json");
 const r77PublishedPlaces=new Set(r77.published_new.map(row=>row.place_id));
 for(const id of r77PublishedPlaces)assert.ok(seed.places.some(p=>p.place_id===id),id+" R77 Place lost");
-const laterPublishedPlaces=new Set([...r65PublishedPlaces,...r70PublishedPlaces,...r74PublishedPlaces,...r75PublishedPlaces,...r76PublishedPlaces,...r77PublishedPlaces,...r87.published_new.map(row=>row.place_id),...r89.published_new.map(row=>row.place_id)]);
+const laterPublishedPlaces=new Set([...r65PublishedPlaces,...r70PublishedPlaces,...r74PublishedPlaces,...r75PublishedPlaces,...r76PublishedPlaces,...r77PublishedPlaces,...r87.published_new.map(row=>row.place_id),...r89.published_new.map(row=>row.place_id),...r90.published_new.map(row=>row.place_id)]);
 assert.deepEqual(
   seed.places.filter(place=>!laterPublishedPlaces.has(place.place_id)).map(place => place.place_id).sort(),
   [

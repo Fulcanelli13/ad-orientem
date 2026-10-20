@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 306,
+    "places": 318,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 47,
+    "places_without_direct_claim": 59,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -32,6 +32,7 @@
       "place:AE:st-joseph-cathedral-abu-dhabi",
       "place:BB:st-patrick-catholic-cathedral-bridgetown",
       "place:BH:our-lady-arabia-cathedral-awali",
+      "place:BJ:immaculate-conception-basilica-ouidah",
       "place:BM:st-theresa-cathedral-hamilton",
       "place:DE:kevelaer-kerzenkapelle",
       "place:DK:st-ansgar-cathedral-copenhagen",
@@ -45,6 +46,7 @@
       "place:GD:immaculate-conception-cathedral-st-georges",
       "place:GE:assumption-catholic-cathedral-tbilisi",
       "place:GL:christ-the-king-catholic-church-nuuk",
+      "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
       "place:GY:immaculate-conception-cathedral-brickdam",
       "place:HK:immaculate-conception-cathedral-hong-kong",
       "place:ID:jakarta-cathedral",
@@ -52,6 +54,7 @@
       "place:IN:santhome-cathedral-basilica-chennai",
       "place:IN:st-thomas-mount-shrine-chennai",
       "place:IS:christ-king-cathedral-reykjavik",
+      "place:JO:memorial-moses-mount-nebo",
       "place:JP:oura-cathedral-nagasaki",
       "place:JP:st-mary-cathedral-tokyo",
       "place:JP:urakami-cathedral-nagasaki",
@@ -60,7 +63,9 @@
       "place:KW:holy-family-cocathedral-kuwait-city",
       "place:KW:our-lady-of-arabia-minor-basilica-ahmadi",
       "place:KZ:our-lady-fatima-cathedral-karaganda",
+      "place:LC:immaculate-conception-cathedral-basilica-castries",
       "place:LK:st-lucia-cathedral-colombo",
+      "place:MM:st-mary-cathedral-yangon",
       "place:MN:saints-peter-paul-cathedral-ulaanbaatar",
       "place:MU:saint-louis-cathedral-port-louis",
       "place:NC:cathedrale-saint-joseph-noumea",
@@ -68,14 +73,21 @@
       "place:NO:st-olav-cathedral-trondheim",
       "place:NO:var-frue-cathedral-tromso",
       "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "place:PF:notre-dame-cathedral-papeete",
       "place:PH:manila-cathedral-intramuros",
       "place:PH:quiapo-national-shrine-jesus-nazareno",
       "place:PH:santo-nino-tondo-minor-basilica",
       "place:QA:our-lady-rosary-church-doha",
       "place:SC:immaculate-conception-cathedral-victoria",
       "place:SE:st-eric-cathedral-stockholm",
+      "place:SR:saints-peter-paul-cathedral-paramaribo",
+      "place:TG:sacred-heart-cathedral-lome",
       "place:TH:assumption-cathedral-bangkok",
-      "place:US:baltimore-basilica-assumption"
+      "place:TO:st-anthony-padua-basilica-nukualofa",
+      "place:TZ:st-joseph-cathedral-dar-es-salaam",
+      "place:US:baltimore-basilica-assumption",
+      "place:UZ:sacred-heart-cathedral-tashkent",
+      "place:VU:sacred-heart-cathedral-port-vila"
     ],
     "customs_without_exact_place": [
       {
@@ -367,6 +379,12 @@
     {
       "place_id": "place:BH:our-lady-arabia-cathedral-awali",
       "display_name": "Our Lady of Arabia Cathedral — Awali",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "display_name": "Basilica of the Immaculate Conception, Ouidah",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -2064,6 +2082,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "display_name": "Dulce Nombre de Maria Cathedral-Basilica, Hagåtña",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:GY:immaculate-conception-cathedral-brickdam",
       "display_name": "Cathedral of the Immaculate Conception, Brickdam",
       "record_ids": {},
@@ -3011,6 +3035,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:JO:memorial-moses-mount-nebo",
+      "display_name": "Basilica of the Memorial of Moses, Mount Nebo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:JP:our-lady-akita-convent",
       "display_name": "Seitai Hoshikai — Our Lady of Akita Chapel",
       "record_ids": {
@@ -3098,6 +3128,12 @@
           "shrine:LB:shrine-of-our-lady-of-lebanon-harissa"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:LC:immaculate-conception-cathedral-basilica-castries",
+      "display_name": "Cathedral Basilica of the Immaculate Conception, Castries",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3225,6 +3261,12 @@
           "shrine:MA:eglise-notre-dame-de-lourdes-casablanca"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MM:st-mary-cathedral-yangon",
+      "display_name": "St Mary's Cathedral (Immaculate Conception), Yangon",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3506,6 +3548,12 @@
           "relic:PE:convento-santo-domingo-lima"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PF:notre-dame-cathedral-papeete",
+      "display_name": "Cathédrale Notre-Dame de l'Immaculée-Conception, Papeete",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3930,6 +3978,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:SR:saints-peter-paul-cathedral-paramaribo",
+      "display_name": "Cathedral Basilica of Saints Peter and Paul, Paramaribo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:SV:catedral-metropolitana-san-salvador",
       "display_name": "Catedral Metropolitana de San Salvador",
       "record_ids": {
@@ -3946,8 +4000,20 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:TG:sacred-heart-cathedral-lome",
+      "display_name": "Cathédrale du Sacré-Cœur, Lomé",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:TH:assumption-cathedral-bangkok",
       "display_name": "Assumption Cathedral, Bangkok",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:TO:st-anthony-padua-basilica-nukualofa",
+      "display_name": "Basilica of St Anthony of Padua, Nukuʻalofa",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -3962,6 +4028,12 @@
           "pilgrimage:TT:laventille-our-lady-fatima-shrine-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:TZ:st-joseph-cathedral-dar-es-salaam",
+      "display_name": "St Joseph's Cathedral, Dar es Salaam",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4343,6 +4415,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:UZ:sacred-heart-cathedral-tashkent",
+      "display_name": "Cathedral of the Sacred Heart of Jesus, Tashkent",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:VA:saint-peter-vatican",
       "display_name": "St Peter's Basilica — Vatican",
       "record_ids": {
@@ -4385,6 +4463,12 @@
           "pilgrimage:VN:our-lady-la-vang-national-shrine-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:VU:sacred-heart-cathedral-port-vila",
+      "display_name": "Cathédrale du Sacré-Cœur, Port-Vila",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4495,5 +4579,24 @@
     "scope": "12 site-specific Catholic Places with direct custodian/diocesan identity and named OSM church feature; no TLM assertions or heritage associations created.",
     "current_access": "Unknown and subject to recheck",
     "source_ledger": "data/geography/research/sacred-geography-r89-first-coverage-release.v1.json"
+  },
+  "georeference_tranche_20261020_r90": {
+    "release": "R90",
+    "release_manifest": "data/geography/research/sacred-geography-r90-coverage-first-release.v1.json",
+    "new_sites": [
+      "place:JO:memorial-moses-mount-nebo",
+      "place:MM:st-mary-cathedral-yangon",
+      "place:UZ:sacred-heart-cathedral-tashkent",
+      "place:BJ:immaculate-conception-basilica-ouidah",
+      "place:TG:sacred-heart-cathedral-lome",
+      "place:TZ:st-joseph-cathedral-dar-es-salaam",
+      "place:SR:saints-peter-paul-cathedral-paramaribo",
+      "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "place:PF:notre-dame-cathedral-papeete",
+      "place:TO:st-anthony-padua-basilica-nukualofa",
+      "place:VU:sacred-heart-cathedral-port-vila",
+      "place:LC:immaculate-conception-cathedral-basilica-castries"
+    ],
+    "rule": "Named church geometry and institutional identity only; do not infer TLM, relic, apparition or approved pilgrimage."
   }
 }
