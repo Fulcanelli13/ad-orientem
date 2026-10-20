@@ -15,7 +15,8 @@ const validGeo=(geo,mapped)=>Boolean(mapped&&geo&&
 
 /** One record per documented route identity, linked only by exact route ID.
  * Do not treat all 240 pilgrimage destinations as verified routes. */
-export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidence=[]){
+export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidence=[],geometryReview=[]){
+  const geometryMap=new Map(arr(geometryReview).filter(row=>tidy(row?.route_id)&&row?.geometry_ref===null&&row?.geometry_state==='NO_CERTIFIED_GEOMETRY'&&row?.rights_state==='NOT_CLEARED').map(row=>[tidy(row.route_id),row]));
   // Exact route ID, published ordered names, primary organizer URL only.
   // No point ever inherits a destination coordinate by proximity or role.
   const evidenceMap=new Map(arr(stageEvidence).filter(row=>
@@ -40,6 +41,9 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidenc
           approximate:Boolean(item.geo.approximate||item.geo.indicative_only)})
         :null;
       const evidence=evidenceMap.get(id);
+      const geometryEvidence=geometryMap.get(id);
+      const externalGuideUrl=isHttp(geometryEvidence?.external_guide_url)?tidy(geometryEvidence.external_guide_url):null;
+      const externalGuideLabel=tidy(geometryEvidence?.external_guide_label);
       const ordered=arr(evidence?.waypoints).filter((stage,index,all)=>
         stage?.geometry_status==="NAMED_UNMAPPED"&&
         stage?.lat===null&&stage?.lng===null&&
@@ -82,6 +86,11 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidenc
         stageCount,
         edition:tidy(evidence?.edition),
         namedStages,mappedStages,officialMapUrl,
+        routeModel:tidy(geometryEvidence?.route_model)||tidy(route.route_type),
+        geometryEvidenceStatus:tidy(geometryEvidence?.evidence_status),
+        geometryNoteEn:tidy(geometryEvidence?.note_en),
+        geometryNoteFr:tidy(geometryEvidence?.note_fr),
+        externalGuideUrl,externalGuideLabel,
         sources:Object.freeze(evidenceUrl&&!links.some(link=>link.url===evidenceUrl)
           ?[...links,Object.freeze({id:id+"-stages",title:"Official named stages",
             url:evidenceUrl,issuer:"Pilgrimage organizer"})]:links),
@@ -129,6 +138,9 @@ export function renderPilgrimageJourneyPanel({
     :selected.routeType==="WALKING"?label(language,"Walking pilgrimage","Pèlerinage à pied")
     :label(language,"Documented journey","Parcours attesté"))+'</div>';
   html+='<h3>'+esc(selected.name)+'</h3>';
+  if(selected.routeModel==='MULTIMODAL_REGIONAL')html+='<p class="aoJourneyNoLine aoJourneyModeWarning">'+esc(label(language,
+    'Regional itinerary: driving and ferry transfers. This is not a continuous walking track.',
+    'Parcours régional : trajets routiers et traversées en ferry, non un chemin pédestre continu.'))+'</p>';
   if(selected.destinationRelation==="RELATED_SHRINE_NOT_EVENT_ENDPOINT"){
     html+='<p class="aoJourneyNoLine aoJourneyEndpointWarning">'+
       esc(label(language,
@@ -174,6 +186,9 @@ export function renderPilgrimageJourneyPanel({
     "This is a documented pilgrimage, not turn-by-turn directions. No route line, distance or travel time is asserted.",
     "Ce pèlerinage est attesté, mais sans guidage GPS. Aucun tracé, distance ni durée ne sont affirmés."))+'</p>';
   html+='<div class="aoJourneyActions">';
+  if(selected.externalGuideUrl)html+='<a class="aoJourneyOfficialMap" href="'+esc(selected.externalGuideUrl)+
+    '" target="_blank" rel="noopener noreferrer">'+esc(label(language,
+      'Official route information ↗','Itinéraire publié par l’organisateur ↗'))+'</a>';
   if(selected.officialMapUrl)html+='<a class="aoJourneyOfficialMap" href="'+esc(selected.officialMapUrl)+
     '" target="_blank" rel="noopener noreferrer">'+
     esc(label(language,"Official interactive route map ↗","Carte officielle du parcours ↗"))+'</a>';
