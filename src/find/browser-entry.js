@@ -468,6 +468,13 @@ export function createFindOwner(win=globalThis){
       const scroller=node.querySelector?.(".aoFindSurface");
       if(scroller)scroller.scrollTop=searchFocus.scroll;
     }
+    // Repainting preserves the MapLibre canvas but replaces the route rail.
+    // Keep the chosen D card in view rather than resetting the carousel to 01.
+    if(state.journeyOpen){
+      node.querySelector?.(".aoJourneyRoutes button.active")?.scrollIntoView?.({
+        behavior:"instant",block:"nearest",inline:"center",
+      });
+    }
     node.dataset.open=openState?"true":"false";
     node.dataset.aoFindLoadState="ready";
     node.dataset.exploreLens=state.lens;
