@@ -22,16 +22,16 @@
   },
   "coverage": {
     "chapters_total": 28,
-    "first_pass_chapters": 15,
-    "first_pass_pages": "3–208",
-    "records": 255,
+    "first_pass_chapters": 17,
+    "first_pass_pages": "3–238",
+    "records": 313,
     "counts": {
-      "COVERED": 34,
-      "ENRICH": 27,
-      "CANDIDATE": 56,
-      "REGIONAL": 73,
-      "HISTORY_ONLY": 51,
-      "EXCLUDE": 14
+      "COVERED": 40,
+      "ENRICH": 35,
+      "CANDIDATE": 69,
+      "REGIONAL": 89,
+      "HISTORY_ONLY": 64,
+      "EXCLUDE": 16
     },
     "preliminary_reconciliation": true,
     "chapter_batches": [
@@ -48,6 +48,11 @@
       {
         "chapters": "13–15",
         "observations": 88,
+        "status": "FIRST_PASS"
+      },
+      {
+        "chapters": "16–17",
+        "observations": 58,
         "status": "FIRST_PASS"
       }
     ]
@@ -178,7 +183,7 @@
       "title": "Easter",
       "printed_start": 209,
       "printed_end": 226,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -186,7 +191,7 @@
       "title": "Easter Songs and Customs",
       "printed_start": 227,
       "printed_end": 238,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -5245,6 +5250,1108 @@
       },
       "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
       "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-001",
+      "chapter": 16,
+      "page": 210,
+      "title": "Pascha and Resurrection liturgical primacy",
+      "geo": "Catholic liturgical year",
+      "kind": "LITURGICAL_CONTEXT",
+      "triage": "COVERED",
+      "owner": "Calendar",
+      "existing_hint": "easter",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 210,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-002",
+      "chapter": 16,
+      "page": 211,
+      "title": "Standing for Regina Caeli in Eastertide",
+      "geo": "Roman Catholic devotional usage",
+      "kind": "SEASONAL_PRAYER",
+      "triage": "COVERED",
+      "owner": "Pray/Calendar",
+      "existing_hint": "regina-caeli",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 211,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-003",
+      "chapter": 16,
+      "page": 212,
+      "title": "Easter name and language etymology theories",
+      "geo": "Historical European linguistic evidence",
+      "kind": "ETYMOLOGY_HISTORY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 212,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-004",
+      "chapter": 16,
+      "page": 212,
+      "title": "Easter prisoner release and reconciliation",
+      "geo": "Late Antique and medieval Christian Europe",
+      "kind": "HISTORICAL_CHARITY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 212,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-005",
+      "chapter": 16,
+      "page": 212,
+      "title": "Surrexit Dominus vere Easter greeting",
+      "geo": "Early Latin Christian practice",
+      "kind": "SEASONAL_GREETING",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 212,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-006",
+      "chapter": 16,
+      "page": 213,
+      "title": "Polish wish of joyful Alleluia",
+      "geo": "Poland, western Slavs",
+      "kind": "SEASONAL_GREETING",
+      "triage": "REGIONAL",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 213,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-007",
+      "chapter": 16,
+      "page": 213,
+      "title": "Annual Easter communion precept in 1958",
+      "geo": "Roman Church 1958 discipline",
+      "kind": "HISTORICAL_DISCIPLINE",
+      "triage": "ENRICH",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 213,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-008",
+      "chapter": 16,
+      "page": 214,
+      "title": "Easter Vigil ancient night of illumination",
+      "geo": "Ancient Roman Church",
+      "kind": "LITURGICAL_HISTORY",
+      "triage": "COVERED",
+      "owner": "Mass/Special",
+      "existing_hint": "easter-vigil",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 214,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-009",
+      "chapter": 16,
+      "page": 215,
+      "title": "Baptismal catechumenal Vigil",
+      "geo": "Ancient Christian Church",
+      "kind": "INITIATION_HISTORY",
+      "triage": "ENRICH",
+      "owner": "Learn/Mass",
+      "existing_hint": "easter-vigil",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 215,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-010",
+      "chapter": 16,
+      "page": 216,
+      "title": "Restored Easter Vigil blessing of new fire",
+      "geo": "1955 Roman rite",
+      "kind": "LITURGICAL_RITE",
+      "triage": "COVERED",
+      "owner": "Mass/Special",
+      "existing_hint": "easter-vigil",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 216,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-011",
+      "chapter": 16,
+      "page": 216,
+      "title": "Earlier blessed bonfires in Irish missionary traditions",
+      "geo": "Ireland and Frankish Europe",
+      "kind": "HISTORICAL_FIRE_CUSTOM",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 216,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-012",
+      "chapter": 16,
+      "page": 216,
+      "title": "Medieval Elevatio from Holy Sepulchre",
+      "geo": "Central Europe",
+      "kind": "HISTORICAL_PARALITURGY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 216,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-013",
+      "chapter": 16,
+      "page": 217,
+      "title": "Domestic extinguishing fires before Easter Vigil",
+      "geo": "European regional Catholic households",
+      "kind": "DOMESTIC_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 217,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-014",
+      "chapter": 16,
+      "page": 217,
+      "title": "Bringing home blessed Easter fire by lantern",
+      "geo": "Some central European Catholic regions",
+      "kind": "DOMESTIC_SACRAMENTAL",
+      "triage": "CANDIDATE",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 217,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-015",
+      "chapter": 16,
+      "page": 217,
+      "title": "Burned firewood as lightning protection charm",
+      "geo": "European folk superstition",
+      "kind": "SUPERSTITION",
+      "triage": "EXCLUDE",
+      "owner": "Research",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 217,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-016",
+      "chapter": 16,
+      "page": 218,
+      "title": "Byzantine midnight Resurrection door procession",
+      "geo": "Eastern Catholic/Orthodox",
+      "kind": "OTHER_RITE_CONTEXT",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 218,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-017",
+      "chapter": 16,
+      "page": 218,
+      "title": "Easter Sunday Victimae paschali laudes sequence",
+      "geo": "Roman Mass",
+      "kind": "LITURGICAL_RITE",
+      "triage": "COVERED",
+      "owner": "Mass",
+      "existing_hint": "easter",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 218,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-018",
+      "chapter": 16,
+      "page": 219,
+      "title": "Visitatio sepulcri medieval Easter play",
+      "geo": "Medieval Latin Christian churches",
+      "kind": "HISTORICAL_DRAMA",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 219,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-019",
+      "chapter": 16,
+      "page": 220,
+      "title": "Easter sunrise gatherings and hilltop prayers",
+      "geo": "Europe, particularly Alpine Austria",
+      "kind": "REGIONAL_DEVOTION",
+      "triage": "REGIONAL",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 220,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-020",
+      "chapter": 16,
+      "page": 220,
+      "title": "Maltese running procession of Resurrection image",
+      "geo": "Malta, Weiser 1958",
+      "kind": "REGIONAL_PROCESSION",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Explore",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 220,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-021",
+      "chapter": 16,
+      "page": 220,
+      "title": "Easter new clothes as baptismal symbolism",
+      "geo": "Medieval Catholic Europe; later popular custom",
+      "kind": "FESTIVE_HOUSEHOLD",
+      "triage": "REGIONAL",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 220,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-022",
+      "chapter": 16,
+      "page": 221,
+      "title": "Easter walk with cross and prayer",
+      "geo": "Germany/Austria and rural Europe",
+      "kind": "FAMILY_OUTING",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 221,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-023",
+      "chapter": 16,
+      "page": 221,
+      "title": "Osterritt Easter horseback walk",
+      "geo": "Rural Germany and Austria",
+      "kind": "REGIONAL_PROCESSION",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 221,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-024",
+      "chapter": 16,
+      "page": 221,
+      "title": "Easter open house and family visits",
+      "geo": "European Catholic and wider Christian homes",
+      "kind": "FESTIVE_HOUSEHOLD",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 221,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-025",
+      "chapter": 16,
+      "page": 222,
+      "title": "Easter laughter preaching (risus paschalis) later suppressed",
+      "geo": "Medieval Western churches",
+      "kind": "SUPPRESSED_PARALITURGY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 222,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-026",
+      "chapter": 16,
+      "page": 222,
+      "title": "Easter Day bell-ringing throughout day",
+      "geo": "Poland Ukraine Russia; local",
+      "kind": "REGIONAL_PARISH",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 222,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-027",
+      "chapter": 16,
+      "page": 222,
+      "title": "Easter Octave and White Week garments",
+      "geo": "Historical Latin Christian liturgy",
+      "kind": "LITURGICAL_HISTORY",
+      "triage": "ENRICH",
+      "owner": "Calendar/Learn",
+      "existing_hint": "easter-octave",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 222,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-028",
+      "chapter": 16,
+      "page": 223,
+      "title": "Easter Monday Emmaus family walk",
+      "geo": "Germany Austria and other countries",
+      "kind": "FAMILY_PILGRIMAGE",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 223,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-029",
+      "chapter": 16,
+      "page": 223,
+      "title": "Easter Monday visit to grandparents",
+      "geo": "French Canada",
+      "kind": "FAMILY_CUSTOM",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 223,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-030",
+      "chapter": 16,
+      "page": 224,
+      "title": "Easter Thursday remembrance of deceased",
+      "geo": "Reported Catholic countries and parishes",
+      "kind": "REGIONAL_DEAD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": "DEAD-001",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 224,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-031",
+      "chapter": 16,
+      "page": 225,
+      "title": "Easter Friday pilgrimage to nearby shrine",
+      "geo": "Austria Germany and other Europe",
+      "kind": "REGIONAL_PILGRIMAGE",
+      "triage": "CANDIDATE",
+      "owner": "Explore/Calendar",
+      "existing_hint": "DEV-006",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 225,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-032",
+      "chapter": 16,
+      "page": 225,
+      "title": "Low Sunday in albis baptismal garments",
+      "geo": "Early western Church; Roman octave",
+      "kind": "LITURGICAL_CONTEXT",
+      "triage": "ENRICH",
+      "owner": "Calendar",
+      "existing_hint": "low-sunday",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 225,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-16-033",
+      "chapter": 16,
+      "page": 225,
+      "title": "Low Sunday First Communion procession with candles",
+      "geo": "European Catholic parishes",
+      "kind": "SACRAMENTAL_LOCAL",
+      "triage": "REGIONAL",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 225,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-001",
+      "chapter": 17,
+      "page": 227,
+      "title": "Easter Latin hymn tradition",
+      "geo": "Historical Western Christianity",
+      "kind": "HYMNOLOGY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 227,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-002",
+      "chapter": 17,
+      "page": 228,
+      "title": "Exultet at Easter Vigil",
+      "geo": "Roman rite",
+      "kind": "LITURGICAL_CHANT",
+      "triage": "COVERED",
+      "owner": "Mass/Special",
+      "existing_hint": "easter-vigil",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 228,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-003",
+      "chapter": 17,
+      "page": 230,
+      "title": "O filii et filiae Easter carol",
+      "geo": "French/Latin Catholic song history",
+      "kind": "CAROL_HISTORY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 230,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-004",
+      "chapter": 17,
+      "page": 231,
+      "title": "Easter folk hymn variants across Western Europe",
+      "geo": "European Christian mixed denominations",
+      "kind": "HYMNOLOGY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 231,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-005",
+      "chapter": 17,
+      "page": 232,
+      "title": "Easter oratorio and concert practice",
+      "geo": "Catholic and Protestant concert contexts",
+      "kind": "MUSIC_HISTORY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 232,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-006",
+      "chapter": 17,
+      "page": 233,
+      "title": "Lamb as Easter symbol of Christ",
+      "geo": "Catholic central/eastern Europe",
+      "kind": "LITURGICAL_SYMBOL",
+      "triage": "ENRICH",
+      "owner": "Learn",
+      "existing_hint": "easter",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 233,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-007",
+      "chapter": 17,
+      "page": 233,
+      "title": "Historical priestly blessing of Easter lamb",
+      "geo": "Roman sacramental history",
+      "kind": "MINISTERIAL_BLESSING",
+      "triage": "ENRICH",
+      "owner": "Customs",
+      "existing_hint": "BLSS-004 pending PR #1512",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 233,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-008",
+      "chapter": 17,
+      "page": 233,
+      "title": "Easter butter sugar pastry lamb tabletop figures",
+      "geo": "Poland and other Central/Eastern Europe",
+      "kind": "HOUSEHOLD_FOOD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 233,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-009",
+      "chapter": 17,
+      "page": 233,
+      "title": "Lucky Easter lamb sighting and devil-belief",
+      "geo": "European folklore",
+      "kind": "SUPERSTITION",
+      "triage": "EXCLUDE",
+      "owner": "Research",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 233,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-010",
+      "chapter": 17,
+      "page": 234,
+      "title": "Easter egg as symbol of tomb and new life",
+      "geo": "Historic Catholic Europe and Christian Asia",
+      "kind": "DOMESTIC_SYMBOL",
+      "triage": "CANDIDATE",
+      "owner": "Customs",
+      "existing_hint": "BLSS-004 pending PR #1512",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 234,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-011",
+      "chapter": 17,
+      "page": 234,
+      "title": "Historical Roman Ritual blessing of Easter eggs",
+      "geo": "Traditional Roman sacramentals",
+      "kind": "MINISTERIAL_BLESSING",
+      "triage": "ENRICH",
+      "owner": "Customs",
+      "existing_hint": "BLSS-004 pending PR #1512",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 234,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-012",
+      "chapter": 17,
+      "page": 234,
+      "title": "Egg gifts to children and household staff",
+      "geo": "Medieval and central/northern European households",
+      "kind": "FAMILY_GIFTS",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 234,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-013",
+      "chapter": 17,
+      "page": 234,
+      "title": "Regional red and dyed Easter eggs",
+      "geo": "Eastern Christianity and Central Europe",
+      "kind": "REGIONAL_EGG_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 234,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-014",
+      "chapter": 17,
+      "page": 235,
+      "title": "Ukrainian and Polish pysanky and krasanki eggs",
+      "geo": "Ukraine Poland, Slavic traditions",
+      "kind": "REGIONAL_EGG_ART",
+      "triage": "CANDIDATE",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 235,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-015",
+      "chapter": 17,
+      "page": 235,
+      "title": "Pysanky egg symbols of luck and health",
+      "geo": "Mixed pre-Christian folklore symbolism",
+      "kind": "FOLKLORE",
+      "triage": "HISTORY_ONLY",
+      "owner": "Research",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 235,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-016",
+      "chapter": 17,
+      "page": 235,
+      "title": "Easter egg games and egg rolling",
+      "geo": "European families",
+      "kind": "FAMILY_FOLK",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 235,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-017",
+      "chapter": 17,
+      "page": 235,
+      "title": "Easter egg hunts with bells or Easter bunny legends",
+      "geo": "France, Germany, Austria",
+      "kind": "CHILDREN_FOLKLORE",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 235,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-018",
+      "chapter": 17,
+      "page": 236,
+      "title": "Easter breakfast family sharing one blessed egg",
+      "geo": "Poland, Ukraine, Russia",
+      "kind": "FAMILY_SACRAMENTAL",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": "BLSS-004 pending PR #1512",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 236,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-019",
+      "chapter": 17,
+      "page": 236,
+      "title": "Easter lily as later adoption in churches and homes",
+      "geo": "US; horticultural origin outside Europe",
+      "kind": "SEASONAL_FLOWER",
+      "triage": "REGIONAL",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 236,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-020",
+      "chapter": 17,
+      "page": 237,
+      "title": "Easter rabbit as secular fertility folklore",
+      "geo": "Germany and later worldwide",
+      "kind": "NON_LITURGICAL_FOLK",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 237,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-021",
+      "chapter": 17,
+      "page": 237,
+      "title": "Historical blessing of Easter ham",
+      "geo": "Western medieval sacramental",
+      "kind": "MINISTERIAL_BLESSING",
+      "triage": "ENRICH",
+      "owner": "Customs",
+      "existing_hint": "BLSS-004 pending PR #1512",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 237,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-022",
+      "chapter": 17,
+      "page": 238,
+      "title": "Polish święconka family Easter food table",
+      "geo": "Poland and Ukraine, some other Central/Eastern Europe",
+      "kind": "DOMESTIC_FEAST",
+      "triage": "CANDIDATE",
+      "owner": "Customs",
+      "existing_hint": "BLSS-004 pending PR #1512",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 238,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-023",
+      "chapter": 17,
+      "page": 238,
+      "title": "Easter paska bread decorated with crosses",
+      "geo": "Ukraine, Poland, other Slavic homes",
+      "kind": "REGIONAL_EASTER_FOOD",
+      "triage": "CANDIDATE",
+      "owner": "Customs",
+      "existing_hint": "BLSS-004 pending PR #1512",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 238,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-024",
+      "chapter": 17,
+      "page": 238,
+      "title": "German Osterstollen and Austrian Easter cross loaf",
+      "geo": "German and Austrian regions",
+      "kind": "REGIONAL_EASTER_FOOD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 238,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-17-025",
+      "chapter": 17,
+      "page": 238,
+      "title": "Polish mazurki pastry and South German blessed cakes",
+      "geo": "Poland and South Germany",
+      "kind": "REGIONAL_FESTIVE_FOOD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 238,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED"
     }
   ],
   "reconciliation": [
@@ -5256,6 +6363,7 @@
     "2026-10-20 Christmas/Epiphany batch: Weiser independently discusses St John wine (BLSS-003 pending in PR #1512), DOM-001 parental New Year blessing, DOM-003 Epiphany water, DOM-004 home blessing and DOM-008 negative-knowledge. These are cross-reference observations, not novel canonical customs.",
     "Avoid importing source records referring to Catholic carols/music as new office/music modules or old pre-1958 canonical fasting as present-day obligations. Epiphany chalk must remain geographically contextual and blocked as universal.",
     "2026-10-20 Weiser chapters 13–15: 1958 ceremonies refer to 1955 restored Holy Week, not necessarily 1962 rubrics line-for-line. Palm, Holy Thursday, Good Friday, Easter Vigil already have authoritative Mass/Special Days owners. Historical Holy Sepulchre devotional arrangements must not be confused with Altar of Repose; both are separate from Mass rubrics.",
-    "Do not publish superstitious lucky water, buns, fertility rituals or 1958 fasting laws; regional procession narratives require community-specific attestation."
+    "Do not publish superstitious lucky water, buns, fertility rituals or 1958 fasting laws; regional procession narratives require community-specific attestation.",
+    "2026-10-20 Easter chapters: source traces Easter Vigil, Easter Octave, Low Sunday and seasonal customs; no new Easter Vigil or Mass flow. BLSS-004 belongs to unresolved PR #1512, while DEV-006 and DEAD-001 own pilgrimages and cemetery custom identities."
   ]
 }
