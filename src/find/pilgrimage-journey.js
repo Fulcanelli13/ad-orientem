@@ -15,7 +15,32 @@ const validGeo=(geo,mapped)=>Boolean(mapped&&geo&&
 
 /** One record per documented route identity, linked only by exact route ID.
  * Do not treat all 240 pilgrimage destinations as verified routes. */
-export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidence=[],geometryReview=[]){
+export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidence=[],geometryReview=[],siteLinks=[],canonicalPlaces=[]){
+  // Stage-to-map anchors must be explicit joins to source-attributed existing
+  // canonical sites. We never resolve stage prose into lat/lng by search.
+  const placeMap=new Map(arr(canonicalPlaces).filter(p=>tidy(p?.place_id))
+    .map(p=>[tidy(p.place_id),p]));
+  const siteLinkMap=new Map(arr(siteLinks)
+    .filter(link=>tidy(link?.stage_id)&&tidy(link?.canonical_place_id)
+      &&link.coordinate_source==="CANONICAL_GEOGRAPHY_ONLY"
+      &&["MATCHED_SITE","RELATED_COMPLEX_ANCHOR"].includes(link.site_relation))
+    .map(link=>[tidy(link.stage_id),link]));
+  const linkedAnchor=stage=>{
+    const link=siteLinkMap.get(tidy(stage?.waypoint_id));
+    const place=placeMap.get(tidy(link?.canonical_place_id));
+    if(!link||!place||!place.mappable||!place.geo||!isHttp(place.geo.source_url)
+      ||tidy(stage.name_en)!==tidy(link.original_stage_name))return null;
+    const prec=tidy(place.geo.precision);
+    if(prec!==link.locator_precision||!(
+      (link.site_relation==="MATCHED_SITE"&&prec==="site")
+      ||(link.site_relation==="RELATED_COMPLEX_ANCHOR"&&prec==="complex_anchor")
+    )||!validGeo(place.geo,true))return null;
+    // Contextual sanctuary points are NOT exact entrances or route line points.
+    return Object.freeze({placeId:tidy(place.place_id),
+      lat:Number(place.geo.lat),lng:Number(place.geo.lng),
+      precision:prec,approximate:prec!=="site",
+      label:tidy(place.name?.official),sourceUrl:tidy(place.geo.source_url)});
+  };
   const geometryMap=new Map(arr(geometryReview).filter(row=>tidy(row?.route_id)&&row?.geometry_ref===null&&row?.geometry_state==='NO_CERTIFIED_GEOMETRY'&&row?.rights_state==='NOT_CLEARED').map(row=>[tidy(row.route_id),row]));
   // Exact route ID, published ordered names, primary organizer URL only.
   // No point ever inherits a destination coordinate by proximity or role.
@@ -59,8 +84,13 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidenc
           role:tidy(stage.role),sourceUrl:tidy(stage.source_url),
           // Nominatim lookup, canonical Place and guessed path are NOT accepted.
           coordinates:null,status:"NAMED_UNMAPPED",
+          siteAnchor:linkedAnchor(stage),
         }))):Object.freeze([]);
-      const mappedStages=Object.freeze([]); // Not yet certified.
+      const mappedStages=Object.freeze([]); // No certified route waypoints.
+      // Only independently attributed sacred-place markers, NOT GPS routing.
+      const stageSiteAnchors=Object.freeze(namedStages.filter(s=>s.siteAnchor)
+        .map(s=>Object.freeze({id:s.id,ordinal:s.ordinal,name:s.name,
+          ...s.siteAnchor})));
       const relatedShrineNotEndpoint=evidence?.destination_relation==="RELATED_SHRINE_NOT_EVENT_ENDPOINT";
       const officialMapUrl=isHttp(evidence?.official_map_url)?tidy(evidence.official_map_url):null;
       const evidenceUrl=isHttp(evidence?.source_url)?tidy(evidence.source_url):null;
@@ -85,7 +115,7 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidenc
         state:tidy(route.route_state),
         stageCount,
         edition:tidy(evidence?.edition),
-        namedStages,mappedStages,officialMapUrl,
+        namedStages,mappedStages,stageSiteAnchors,officialMapUrl,
         routeModel:tidy(geometryEvidence?.route_model)||tidy(route.route_type),
         geometryEvidenceStatus:tidy(geometryEvidence?.evidence_status),
         geometryNoteEn:tidy(geometryEvidence?.note_en),
@@ -156,10 +186,16 @@ export function renderPilgrimageJourneyPanel({
         :stage.role==="PASS_THROUGH"?label(language,"ROUTE PASSES THROUGH","LE PARCOURS PASSE PAR")
         :stage.role.startsWith("DESTINATION")?label(language,"DOCUMENTED DESTINATION / FINAL STAGE","DESTINATION / DERNIÈRE ÉTAPE")
         :label(language,"DOCUMENTED STAGE","ÉTAPE ATTESTÉE");
-      html+='<li data-journey-named-stage="'+esc(stage.id)+'"><span class="aoJourneyNode" aria-hidden="true">'+
-        esc(String(index+1))+'</span><div><small>'+esc(heading)+' · '+esc(String(index+1))+
-        '/'+esc(String(selected.namedStages.length))+'</small><strong>'+
-        esc(language==="fr"?stage.nameFr:stage.name)+'</strong></div></li>';
+      html+='<li data-journey-named-stage="'+esc(stage.id)+'">'+
+        (stage.siteAnchor?'<button type="button" class="aoJourneyNode aoJourneyFocusButton" data-explore-journey-stage-focus="'+
+          esc(stage.id)+'" aria-label="'+esc(label(language,"Show mapped site: ","Voir le lieu cartographié : ")+
+          (language==="fr"?stage.nameFr:stage.name))+'">'+esc(String(index+1))+'</button>'
+          :'<span class="aoJourneyNode" aria-hidden="true">'+esc(String(index+1))+'</span>')+
+        '<div><small>'+esc(heading)+' · '+esc(String(index+1))+
+        '/'+esc(String(selected.namedStages.length))+
+        (stage.siteAnchor?' <span class="aoJourneyStageMapped">· '+esc(label(language,
+          "MAP SITE","LIEU SUR CARTE"))+'</span>':"")+
+        '</small><strong>'+esc(language==="fr"?stage.nameFr:stage.name)+'</strong></div></li>';
     });
   }else{
     html+='<li><span class="aoJourneyNode" aria-hidden="true">○</span><div><small>'+
@@ -180,8 +216,10 @@ export function renderPilgrimageJourneyPanel({
     selected.stageCount+" source-reported stages; individual locations not yet mapped",
     selected.stageCount+" étapes signalées par les sources ; emplacements non cartographiés"))+'</p>';
   if(selected.namedStages.length)html+='<p class="aoJourneyStages">'+esc(label(language,
-    selected.namedStages.length+" named stages from official evidence · no geolocated waypoint yet",
-    selected.namedStages.length+" étapes nommées selon les sources officielles · aucun repère géolocalisé"))+'</p>';
+    selected.namedStages.length+" organizer-named stages · "+selected.stageSiteAnchors.length+
+      " linked sacred-site markers · no certified walking path",
+    selected.namedStages.length+" étapes nommées · "+selected.stageSiteAnchors.length+
+      " lieux sacrés cartographiés · aucun chemin pédestre certifié"))+'</p>';
   html+='<p class="aoJourneyNoLine">'+esc(label(language,
     "This is a documented pilgrimage, not turn-by-turn directions. No route line, distance or travel time is asserted.",
     "Ce pèlerinage est attesté, mais sans guidage GPS. Aucun tracé, distance ni durée ne sont affirmés."))+'</p>';
