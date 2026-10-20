@@ -189,6 +189,8 @@ try{
    await expandedPlace.waitFor({state:"visible",timeout:12000});
    assert.equal(await page.locator("#ao-find-modular-root .aoHeritageCardLayer:visible").count(),0,
      "The expanded Place must hide the underlying preview and its duplicate close control");
+   assert.equal(await expandedPlace.locator('header [data-find-close-place] [data-ao-asset-id="ao-ui-close"]').count(),0,
+     "Expanded Holywell Place must not double-render SVG and legacy close mask");
    assert.match(await expandedPlace.locator("header small").innerText(),/PILGRIMAGE PLACE/);
    await expandedPlace.locator("header [data-find-close-place]").click();
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
@@ -281,20 +283,10 @@ try{
    const visibleRouteRows=await reverseList.locator("[data-explore-place-journey]").evaluateAll(rows=>
      rows.every(row=>{const box=row.getBoundingClientRect();return box.height>=44&&box.top<innerHeight&&box.bottom>0;}));
    assert.ok(visibleRouteRows,"Both documented Père Laval pilgrimage choices need visible, usable 44px targets");
-   if(width===390){
-     const closeDiagnostic=await page.evaluate(()=>{
-       const sheet=document.querySelector("#ao-find-modular-root .aoExplorePlaceSheet");
-       const summarise=el=>el?{tag:el.tagName,cls:el.className,outer:el.outerHTML.slice(0,360),
-         rect:(()=>{const r=el.getBoundingClientRect();return [r.x,r.y,r.width,r.height]})()}:null;
-       return {closeElements:[...document.querySelectorAll("#ao-find-modular-root [data-find-close-place]")]
-           .map(summarise),
-         closeIcons:[...document.querySelectorAll("#ao-find-modular-root [data-ao-asset-id=ao-ui-close]")].map(summarise),
-         points:[[348,185],[350,209]].map(([x,y])=>({x,y,
-           stack:document.elementsFromPoint(x,y).slice(0,8).map(summarise)})),
-         html:(sheet?.querySelector("header")?.outerHTML||"").slice(0,1300)};
-     });
-     console.log("R7 PLACE CLOSE DIAGNOSTICS",JSON.stringify(closeDiagnostic));
-   }
+   assert.equal(await lavalFull.locator('header [data-find-close-place] [data-ao-asset-id="ao-ui-close"]').count(),0,
+     "Global SVG hydration and legacy mask may not both render a close icon");
+   assert.equal(await lavalFull.locator('header button[data-find-close-place]').count(),1,
+     "Expanded Place must contain exactly one close button");
    await page.screenshot({path:resolve(out,"explore-"+width+"-pere-laval-two-pilgrimages.png"),fullPage:false});
    await lavalFull.locator('[data-explore-place-journey="route:MU:pere-laval-saint-joseph"]').click();
    await journey.waitFor({state:"visible",timeout:12000});
