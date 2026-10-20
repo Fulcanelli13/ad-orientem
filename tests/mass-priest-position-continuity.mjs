@@ -98,6 +98,7 @@ assert.deepEqual(expanded.missalPositionTransitions.map(x=>x.cueId),
 const cases=[
  ['C0072','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE'],
  ['C0109','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0112','ALTAR_EPISTLE_MISSAL','GOSPEL_SIDE'],
  ['C0113','ALTAR_EPISTLE_MISSAL','GOSPEL_SIDE'],
  ['C0114','ALTAR_CENTER','GOSPEL_SIDE'],
  ['C0125','ALTAR_EPISTLE_SIDE','GOSPEL_SIDE'],
@@ -123,6 +124,13 @@ assert.equal(expanded.formActorExceptions.length,3);
 assert.ok(expanded.formActorExceptions.some(x=>x.form==='SOLEMN'&&x.cueId==='AO.SM.C0086'&&x.liturgicalActor==='DEACON'&&x.priestPosition==='ALTAR_EPISTLE_SIDE'),
  'Solemn Gospel is sung by deacon, not by celebrant at Gospel-side missal');
 
+assert.ok(expanded.conditionalPositionOverlays.some(x=>
+ x.cueId==='AO.SM.C0250' && x.when==='MC-OBS-PC-TURN_EXPLICITLY_OBSERVED' &&
+ x.station==='ALTAR_CENTER' && x.missalPosition==='EPISTLE_SIDE'),
+ 'Observed priest return to centre and Epistle-side Missal must remain independent');
+assert.ok(expanded.supplementaryRitusPositionTransitions.some(x=>
+ x.cueId==='AO.SM.C0112' && x.station==='ALTAR_EPISTLE_MISSAL'),
+ 'Requiem water-cross omission may not erase Epistle-side chalice position');
 assert.equal(expanded.conditionalBookOverlays.length,2);
 assert.ok(expanded.conditionalBookOverlays.some(x=>x.condition==='PROPER_LAST_GOSPEL_APPOINTED'&&x.station==='GOSPEL_SIDE'));
 assert.equal(cue('C0267').missal.location,'EPISTLE_SIDE',
