@@ -44,8 +44,9 @@ const pradoSourceText=values=>values.some(v=>typeof v==="string"
 // Good Friday is Tiepolo San Polo Station XII, not Station VIII or XIII:
 // https://chorusvenezia.org/en/visita/via-crucis-jesus-dies-on-the-cross/
 // National object ID 0500220372A-12 (metadata CC BY; image rights NOT certified).
-// Minardi/Fontana 10 April and Maíno Prado P003018 23 May are selected
-// but held pending canonical art IDs / verified reuse-ready source images.
+// Minardi/Fontana 10 April remains pending canonical art identification.
+// Maíno Prado P003018 on 23 May remains the selected editorial painting,
+// but its reproduction is source-blocked, including Commons and mirrors.
 const dateSpecific2026ReplacementHolds=new Set([
   "2026-01-06", "2026-04-03", "2026-04-10", "2026-05-14",
   "2026-05-23", "2026-05-27", "2026-06-04", "2026-12-08"
