@@ -1,6 +1,6 @@
 {
   "schema": "AO_WEISER_EDITORIAL_CUSTOM_BRIEFS_BATCH01",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-20",
   "state": "DRAFT_ONLY_NO_APP_PUBLICATION",
   "input_corroboration": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
@@ -9,7 +9,8 @@
     "Retain original historical wording only as a source locator; all display text is independently drafted.",
     "Regional practice and ministerial ritual are clearly delimited; no unpublished legal or 1962 ceremonial claims.",
     "Calendar, Saints, Pray and existing Customs Atlas own the displayed surfaces; no parallel mini prayerbook.",
-    "Only independent source support allows a finished editorial draft; an app release still requires review and tests."
+    "Only independent source support allows a finished editorial draft; an app release still requires review and tests.",
+    "Each corroborated draft carries English and French description, meaning and voluntary observation copy; French titles alone are insufficient for release."
   ],
   "stats": {
     "editorial_drafts": 12,
@@ -56,7 +57,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Dans certaines communautés catholiques françaises, la fête patronale rassemble les fidèles autour de la messe et de réjouissances communes. Une procession ou une fête du village peut l'accompagner, selon les usages locaux.",
+      "spiritual_significance_fr": "La communauté honore son patron céleste par le culte rendu à Dieu et par la vie chrétienne partagée.",
+      "practical_observance_fr": "Consulter le programme de la paroisse, assister à la messe si possible et participer uniquement aux célébrations effectivement annoncées."
     },
     {
       "draft_id": "WEISER-CARD-23-008",
@@ -96,7 +100,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "La fête du saint patron de baptême est une occasion de prière et de réunion familiale. Les anciens manuels catholiques proposent de rappeler la vie du saint, d'assister à la messe si possible et de marquer modestement la journée.",
+      "spiritual_significance_fr": "Le saint patron offre un exemple personnel de sainteté lié à la vie baptismale.",
+      "practical_observance_fr": "Identifier son véritable patron puis, au jour de sa fête traditionnelle, prier, lire une courte biographie et partager un moment en famille."
     },
     {
       "draft_id": "WEISER-CARD-24-005",
@@ -136,7 +143,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "À l'Assomption, certaines paroisses françaises organisent une procession en l'honneur de Notre-Dame, parfois en portant son image dans les rues. Il s'agit d'une célébration locale, non d'un rite automatiquement ajouté à chaque messe.",
+      "spiritual_significance_fr": "Les fidèles honorent publiquement l'Assomption de Marie et demandent son intercession.",
+      "practical_observance_fr": "Assister à la messe puis à une procession mariale uniquement si la paroisse en a annoncé une."
     },
     {
       "draft_id": "WEISER-CARD-24-014",
@@ -171,7 +181,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Dans certaines localités maritimes françaises, l'Assomption comprend une procession et une bénédiction sacerdotale des bateaux de pêche. Yport fournit un exemple contemporain documenté.",
+      "spiritual_significance_fr": "Les familles de marins confient à Dieu leur travail, ses risques et leurs actions de grâce.",
+      "practical_observance_fr": "Participer à une célébration locale réellement annoncée ; la bénédiction appartient au prêtre et n'est pas donnée par l'application."
     },
     {
       "draft_id": "WEISER-CARD-26-019",
@@ -211,7 +224,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "En Pologne, les wypominki permettent aux familles de confier les noms de leurs défunts à la prière paroissiale. Ces noms peuvent être lus lors d'offices particuliers, selon les usages du lieu.",
+      "spiritual_significance_fr": "Prier pour les défunts est un acte de charité fondé sur l'espérance de la résurrection.",
+      "practical_observance_fr": "Se renseigner auprès d'une paroisse qui reçoit ces intentions, ou prier chez soi pour ses défunts à l'aide des prières déjà disponibles."
     },
     {
       "draft_id": "WEISER-CARD-27-019",
@@ -251,7 +267,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "D'origine sicilienne, la table de saint Joseph associe le partage de nourriture, l'hospitalité et l'aide aux personnes démunies. Certaines paroisses catholiques en organisent encore une forme charitable.",
+      "spiritual_significance_fr": "Le soin discret de saint Joseph pour la Sainte Famille inspire une générosité concrète envers le prochain.",
+      "practical_observance_fr": "Prier saint Joseph puis partager des aliments ou rendre un service à une personne dans le besoin, librement et selon ses moyens."
     },
     {
       "draft_id": "WEISER-CARD-27-023",
@@ -291,7 +310,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Le Pain des pauvres de saint Antoine est une œuvre de charité accomplie en l'honneur du saint. Une histoire franciscaine de cette tradition française la rattache à Louise Bouffier, à Toulon, en 1890.",
+      "spiritual_significance_fr": "La dévotion au saint doit porter des fruits de miséricorde, sans attente de faveur en échange d'une offrande.",
+      "practical_observance_fr": "Le jour de la fête de saint Antoine, prier et accomplir librement un petit acte de charité sans le traiter comme une transaction."
     },
     {
       "draft_id": "WEISER-CARD-28-011",
@@ -331,7 +353,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "À l'occasion de saint Christophe, certaines paroisses proposent une bénédiction sacerdotale aux voyageurs, conducteurs et parfois à leurs véhicules. Cette coutume demeure locale et non universelle.",
+      "spiritual_significance_fr": "Les chrétiens confient leurs déplacements à la Providence et se rappellent le devoir de prudence envers autrui.",
+      "practical_observance_fr": "Vérifier l'annonce de sa paroisse et, si la bénédiction y est proposée, y assister avec respect."
     },
     {
       "draft_id": "WEISER-CARD-28-020",
@@ -371,7 +396,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Dans certaines régions d'Alsace et de Lorraine, saint Nicolas est représenté par un visiteur vêtu en évêque ; des friandises et des récits de sa générosité accompagnent la fête. Certains détails relèvent du folklore local.",
+      "spiritual_significance_fr": "Cette fête peut initier les enfants à la charité chrétienne et au partage.",
+      "practical_observance_fr": "Raconter sobrement la vie du saint, prier et partager une petite attention ou un acte de générosité, sans faire peur aux enfants."
     },
     {
       "draft_id": "WEISER-CARD-27-012",
@@ -412,7 +440,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Les collections folkloriques irlandaises conservent le souvenir de petites croix de saint Patrick en ruban ou en carton, autrefois portées notamment par les enfants. Cette coutume historique n'est pas une pratique catholique universelle.",
+      "spiritual_significance_fr": "Une croix décorative peut rappeler la foi chrétienne et le témoignage du saint national.",
+      "practical_observance_fr": "À titre d'activité historique libre, confectionner une petite croix décorative puis découvrir un épisode de la vie de saint Patrick."
     },
     {
       "draft_id": "WEISER-CARD-27-026",
@@ -453,7 +484,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Une dévotion catholique ancienne consiste à demander l'intercession de saint Antoine de Padoue lorsqu'un objet est perdu. Des sources franciscaines attestent cet usage, mais les récits populaires sur son origine ne constituent pas tous des faits historiques établis.",
+      "spiritual_significance_fr": "Demander l'intercession d'un saint est un acte de prière et de confiance, non une garantie de retrouver l'objet.",
+      "practical_observance_fr": "Dire une courte prière personnelle à saint Antoine et poursuivre ses recherches avec bon sens, sans inventer de rituel."
     },
     {
       "draft_id": "WEISER-CARD-26-022",
@@ -489,7 +523,10 @@
       ],
       "date_ownership": "CALENDAR_RESOLVER_ONLY",
       "publication_state": "EDITORIAL_DRAFT_SOURCE_CORROBORATED_NOT_RELEASE_CERTIFIED",
-      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription"
+      "copyright_policy": "Original app-ready paraphrase; no extended Weiser transcription",
+      "description_fr": "Des archives ethnographiques polonaises attestent que l'on distribuait du pain ou des pâtisseries aux personnes pauvres à l'occasion de la commémoration des défunts. Il s'agit d'une coutume historique locale, non d'une obligation au 2 novembre.",
+      "spiritual_significance_fr": "La prière pour les morts et la générosité envers les vivants se rejoignent dans les œuvres de miséricorde.",
+      "practical_observance_fr": "Prier pour les âmes des défunts et, si cela convient, partager des aliments ou aider une personne dans le besoin."
     }
   ],
   "source_gate_backlog": [
