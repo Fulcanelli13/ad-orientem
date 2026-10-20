@@ -53,7 +53,7 @@ export function compactHeritagePlaceSheet(vm){
   let html='<div class="aoFindSheetBackdrop aoHeritageCardLayer" data-find-close-place><section class="aoFindSheet aoHeritagePreview'+(p.editorial_feature?' aoHeritageEditorialPreview':'')+'" role="dialog" aria-modal="false" aria-label="'+esc(p.name)+'" data-explore-place-owner="'+esc(p.place_id)+'">';
   html+='<button type="button" class="aoHeritageSheetHandle" data-explore-sheet-toggle aria-label="'+L(vm.language,"Open full place details","Ouvrir la fiche complète du lieu")+'"></button>';
   html+='<div class="aoHeritageCardHeading"><div class="aoHeritageCardIdentity">';
-  html+='<span class="aoHeritageCardKicker">'+(p.editorial_feature?L(vm.language,"IN FOCUS","À DÉCOUVRIR")+' · ':"")+esc(placeTypeLabel(vm.language,p.place_type))+'</span>';
+  html+='<span class="aoHeritageCardKicker">'+(vm.journeyOpen?L(vm.language,"PILGRIMAGE PLACE","LIEU DE PÈLERINAGE")+' · ':(p.editorial_feature?L(vm.language,"IN FOCUS","À DÉCOUVRIR")+' · ':""))+esc(placeTypeLabel(vm.language,p.place_type))+'</span>';
   if(area)html+='<span class="aoHeritageCardLocation">'+esc(area)+'</span>';
   html+='</div><button type="button" class="aoHeritageCardClose" data-find-close-place aria-label="'+(vm.journeyOpen?L(vm.language,"Return to pilgrimage journey","Retour au parcours de pèlerinage"):L(vm.language,"Close place preview","Fermer l’aperçu du lieu"))+'">×</button></div>';
   html+='<h2 class="aoHeritageCardTitle">'+esc(p.name)+'</h2>';
