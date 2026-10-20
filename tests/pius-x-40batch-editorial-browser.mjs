@@ -7,6 +7,9 @@ const root=resolve(fileURLToPath(new URL('..',import.meta.url)));
 const filepath=resolve(root,'artifacts/pius-x-release-review/SPX_40_Answer_Editorial_Batch_Review.html');
 const html=await readFile(filepath,'utf8');
 assert.ok(html.includes('const EMBEDDED={'));
+assert.ok(html.includes('const EMBEDDED_AUDIT={'));
+assert.ok(html.includes('AO_SPX_40_SOURCE_CLAIM_AUDIT_V1'));
+
 assert.ok(!html.includes('const EMBEDDED=null;'));
 assert.ok(html.includes('AO_SPX_100ANSWER_EDITORIAL_RELEASE_TRIAGE_V1'));
 const screenshots=resolve(root,'artifacts/pius-x-release-review');
@@ -33,6 +36,12 @@ try{
   await q.getByRole('button',{name:'Original draft'}).click();
   await q.getByRole('button',{name:'Period-register option'}).click();
   assert.equal(await q.locator('textarea[data-field="en"]').inputValue(),'Editorial review text; not a historical quotation.');
+  await page.locator('nav button').nth(1).click();
+  const q613=page.locator('article[data-qid="PX1905-Q613"]');
+  assert.match(await q613.locator('details').last().innerText(),/living and immortal|Body Blood Soul Divinity/);
+  await q613.getByRole('button',{name:'Italian-source proposal'}).click();
+  assert.match(await q613.locator('textarea[data-field="en"]').inputValue(),/Because Christ is living and immortal/);
+  await page.locator('nav button').first().click();
   await q.getByRole('button',{name:'For expert review'}).click();
   await q.locator('.notes').fill('Check the period wording against Italian original and theological meaning.');
   const [download]=await Promise.all([page.waitForEvent('download'),page.locator('#download').click()]);
