@@ -37,6 +37,8 @@ on:
       - 'data/learn/research/pius-x-1905-1912-calibration-crosswalk-20261019.v1.json'
       - 'data/learn/ltfaith-pius-x-it-witness-index.v1.json'
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
+      - 'data/learn/research/pius-x-triad-audit-*.v1.json'
+      - 'tests/pius-x-triad-links.mjs'
       - 'tests/pius-x-conversation-intent-bridge.mjs'
       - 'tests/pius-x-ten-conversation-content-pilot.mjs'
       - 'tests/pius-x-batch50-content-acceptance.mjs'
@@ -61,6 +63,7 @@ jobs:
         with:
           node-version: '22'
       - run: node tests/pius-x-conversation-intent-bridge.mjs
+      - run: node tests/pius-x-triad-links.mjs
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
       - run: node tests/pius-x-batch50-content-acceptance.mjs
       - run: node tests/pius-x-batch2-production-acceptance.mjs
