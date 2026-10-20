@@ -310,6 +310,7 @@ export function createFindOwner(win=globalThis){
     // Rebuilding the entire Explore surface after each search keystroke
     // detaches its focused input. Retain focus, caret and page position so
     // users can type a complete query, including on mobile keyboards.
+    const priorDiscoverScroll=node.querySelector?.(".aoMapcnDiscoverEntries")?.scrollTop??0;
     const activeSearch=node.querySelector?.("[data-find-query]");
     const searchFocus=preserveSearchFocus&&activeSearch===win?.document?.activeElement
       ? {
@@ -446,6 +447,10 @@ export function createFindOwner(win=globalThis){
       if(nextSearch&&mapBody)mapBody.append(nextSearch);
       surface.querySelectorAll(".aoFindSheetBackdrop").forEach(sheet=>sheet.remove());
       if(nextSheet)surface.append(nextSheet);
+      // Map pin → list and list → folio share one canonical place selection.
+      surface.querySelectorAll?.("[data-mapcn-discover-rail] [data-explore-open-place]")
+        .forEach(button=>button.setAttribute("aria-current",
+          String(button.dataset.exploreOpenPlace===state.selectedPlaceId)));
       node.dataset.aoFindLoadState="ready";
       return true;
     }
@@ -464,6 +469,8 @@ export function createFindOwner(win=globalThis){
         mapHandle.map.resize?.();
       }else node.innerHTML=rendered;
     }else node.innerHTML=rendered;
+    const discoverEntries=node.querySelector?.(".aoMapcnDiscoverEntries");
+    if(discoverEntries)discoverEntries.scrollTop=priorDiscoverScroll;
     if(searchFocus){
       const next=node.querySelector?.("[data-find-query]");
       next?.focus?.({preventScroll:true});

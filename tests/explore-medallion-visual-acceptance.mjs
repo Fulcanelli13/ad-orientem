@@ -108,6 +108,8 @@ try{
    assert.equal(originalCanvas,1,"One map canvas, shared with canonical Explore");
    await rail.locator("button[data-explore-open-place]").first().click();
    await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible",timeout:15000});
+   assert.equal(await rail.locator("button[data-explore-open-place]").first().getAttribute("aria-current"),"true",
+     "Selected Place should remain synchronized with its map rail row");
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
      "Opening a rail Place must preserve the existing map canvas");
    await page.locator("#ao-find-modular-root .aoHeritageCardClose").click();
