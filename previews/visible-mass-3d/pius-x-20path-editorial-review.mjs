@@ -8,13 +8,14 @@ const BASE="data/learn/research/";
 const NAV=BASE+"pius-x-20path-bilingual-choice-navigation-20261020.v1.json";
 const PATCH=BASE+"pius-x-source-bounded-bilingual-corrections-20261020.v1.json";
 const ELIG=BASE+"pius-x-chanoine-22-answer-aq04-aq05-eligibility-20261020.v1.json";
+const VISUAL=BASE+"pius-x-historical-visual-novel-stage-20261020.v1.json";
 const ORIGINAL_PRINT="https://it.wikisource.org/wiki/Indice:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu";
 const allowedDraftPath=p=>/^data\/learn\/research\/pius-x-batch(?:9-sacraments|10-eucharist)-[a-e]-20261020\.v1\.json$/.test(p);
 const qid=id=>/^PX1905-Q(?:5(?:6[7-9]|[7-9]\d)|6(?:[0-5]\d|6[0-6]))$/.test(id);
 const reject=why=>{throw new Error("SPX review refused: "+why)};
 export async function createPiusX20PathReview(read){
  if(typeof read!=="function")reject("source owner read function missing");
- const [nav,patch,elig]=await Promise.all([read(NAV),read(PATCH),read(ELIG)]);
+ const [nav,patch,elig,visual]=await Promise.all([read(NAV),read(PATCH),read(ELIG),read(VISUAL)]);
  if(nav?.schema!=="AO_SPX_20_BRANCHING_BILINGUAL_DIALOGUE_MENUS_V1"||
    nav?.counts?.chapters!==20||nav.counts.topicTracks!==50||
    nav.counts.mappedUniqueSourceQuestions!==100||nav.counts.certifiedPublication!==0||
@@ -27,6 +28,22 @@ export async function createPiusX20PathReview(read){
    elig?.counts?.routerHandoffApproved!==0||
    elig?.counts?.canonAvatarResponseApproved!==0||
    elig?.records?.length!==22)reject("revision or Chanoine approval bounds changed");
+ if(visual?.schema!=="AO_SPX_HISTORICAL_VISUAL_NOVEL_SCENE_V1"||
+  visual.publication!=="REVIEW_ONLY"||visual.counts?.portraits!==5||
+  visual.counts?.chapters!==20||visual.counts?.approvedCharacterReplies!==0||
+  visual.referencedOwners?.sprites?.commit!=="0a920793bcdf40cc053ad0aff31132ade8185a33"||
+  visual.referencedOwners?.style?.commit!=="b99bedc27b194c7391375911c01b283fd88e9702")
+  reject("visual character-owner provenance or release gate");
+ const poseIndex=new Map(visual.arcs.map(x=>[x.id,x.defaultPose]));
+ const overrides=new Map(visual.poseExceptions.map(x=>[x.qid,x.pose]));
+ if(poseIndex.size!==20||overrides.size!==7)reject("invalid source-owned visual cues");
+ for(const [key,asset] of Object.entries(visual.sprites)){
+  if(!["neutral","welcoming","explaining","thoughtful","grave"].includes(key)||
+    asset.pin!==visual.referencedOwners.sprites.commit||
+    !asset.url.startsWith("https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/"+asset.pin+
+    "/previews/visible-mass-3d/assets/living-church/pius_")||
+    !asset.url.endsWith("/pius_"+key+".webp"))reject("unapproved picture asset");
+ }
  const chapterIndex=new Map(nav.chapters.map(ch=>[ch.id,ch]));
  const nodes=new Map(nav.questionNavigation.map(q=>[q.questionId,q]));
  const patches=new Map(patch.records.map(p=>[p.turnId,p]));
@@ -72,7 +89,13 @@ export async function createPiusX20PathReview(read){
    category:c.linkNature}));
   const cross=chapterIndex.get(q.owningArcId).crossChapterOptions.map(c=>
     Object.freeze({id:c.sourceQuestionId,en:c.labelEN,fr:c.labelFR,category:"CROSS_TOPIC"}));
+  const pose=overrides.get(q.questionId)||poseIndex.get(q.owningArcId)||"neutral";
+  const picture=visual.sprites[pose];
+  if(!picture)reject("missing approved expression");
   return Object.freeze({id:q.questionId,arc:q.owningArcId,question:turn.question,
+   visual:Object.freeze({pose,portraitUrl:picture.url,approvedSourceSet:true,
+    historicalVoiceClassification:"EDUCATIONAL_RECONSTRUCTION_NOT_VERBATIM",
+    periodStyleOwner:"PR#1419",portraitOwner:"PR#1402",published:false}),
    answer:turn.response,sourceUrl:owned.source.url,printIndex:ORIGINAL_PRINT,
    sourceLabel:"1905 Catechismo maggiore · editorial locator "+id,
    originalNumberPrinted:false,
@@ -85,5 +108,6 @@ export async function createPiusX20PathReview(read){
   chapters:Object.freeze(chapters), inspect, getChapter:id=>chapters.find(x=>x.id===id)||null,
   stats:Object.freeze({chapters:20,questions:100,sourceOwnerTurns:200,revisions:10,
    narrowCanonCandidates:elig.counts.byStatus.MATCHED_NARROW_CONTENT_SUBJECT,
-   denzingerRequired:false,approved:0})});
+   denzingerRequired:false,approved:0,approvedExpressions:5,
+   periodVoiceHumanApproved:false})});
 }
