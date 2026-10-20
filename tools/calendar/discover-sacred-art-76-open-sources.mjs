@@ -112,19 +112,21 @@ export async function run(shard){
   assert(allowed.has(work.artworkId)&&!banned.has(work.artworkId),"Unapproved work");
   assert(!hasPradoProvenance({id:work.artworkId,sourceUrl:work.sourceUrl}),"Prado search prohibited");
   let pages=[],error=null;
-  try{pages=await commonsQuery(work);}
+  const alreadyRouted=work.lane==="SOURCE_IDENTIFIED_QA"&&work.status==="MOVED_TO_EXACT_COMMONS_SOURCE_QA";
+  if(!alreadyRouted)try{pages=await commonsQuery(work);}
   catch(e){error=String(e.message||e).slice(0,130);}
   const candidates=pages.map(page=>screenCandidate(work,page)).filter(Boolean)
     .sort((a,b)=>b.searchScore-a.searchScore).slice(0,4);
   result.push({artworkId:work.artworkId,title:work.title,artist:work.artist,sourceUrl:work.sourceUrl,
    lane:work.lane,priority:work.priority,query:searchTerms(work),
-   discoveryStatus:error?"HOLD_REQUEST_ERROR":candidates.length?"POTENTIAL_OPEN_LICENCE_MATCHES_FOR_QA":"HOLD_NO_EXACT_OPEN_CANDIDATE",
+   discoveryStatus:alreadyRouted?"SOURCE_ALREADY_IDENTIFIED_FOR_IMAGE_QA":error?"HOLD_REQUEST_ERROR":candidates.length?"POTENTIAL_OPEN_LICENCE_MATCHES_FOR_QA":"HOLD_NO_EXACT_OPEN_CANDIDATE",
    error,candidates,productionCertified:false,approvedArtworkIntact:true});
   await WAIT(350);
  }
  const folder=join(process.cwd(),"artifacts","sacred-art-76-discovery","shard-"+String(shard));
  await mkdir(folder,{recursive:true});
  const summary={schema:"AO_76_OPEN_COMMONS_DISCOVERY_V1",asOf:"2026-10-20",shard,
+  alreadyRoutedCount:result.filter(x=>x.discoveryStatus==="SOURCE_ALREADY_IDENTIFIED_FOR_IMAGE_QA").length,
   researchRecords:result.length,recordsWithCandidates:result.filter(x=>x.candidates.length).length,
   candidates:result.reduce((a,x)=>a+x.candidates.length,0),
   errors:result.filter(x=>x.error).length,pradoCandidatesAccepted:0,
