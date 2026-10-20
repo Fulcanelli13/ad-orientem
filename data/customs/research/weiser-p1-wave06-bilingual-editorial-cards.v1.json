@@ -1,0 +1,208 @@
+{
+  "schema": "AO_WEISER_P1_WAVE06_BILINGUAL_DRAFT_V1",
+  "as_of": "2026-10-20",
+  "status": "RESEARCH_ONLY",
+  "source": "data/customs/research/weiser-p1-wave06-final-dispositions.v1.json",
+  "audits": {
+    "bilingual_cards": 5,
+    "source_bounded_ids_covered": 6,
+    "source_bounded_ids_existing_owner_only": 2,
+    "app_publications": 0
+  },
+  "cards": [
+    {
+      "id": "W58-P1-B6-EPIPHANY_WATER",
+      "observations": [
+        "WEI58-12-007",
+        "WEI58-12-008"
+      ],
+      "printed_pages": [
+        {
+          "weiser_id": "WEI58-12-007",
+          "chapter": 12,
+          "page": 149
+        },
+        {
+          "weiser_id": "WEI58-12-008",
+          "chapter": 12,
+          "page": 149
+        }
+      ],
+      "title_en": "Epiphany water and the priestly blessing",
+      "title_fr": "L'eau de l'Épiphanie et sa bénédiction sacerdotale",
+      "occasion": "Epiphany vigil or season, where a priest actually uses the authorised ritual",
+      "scope": "Historical Latin Catholic sacramental with particular permissions and ritual-edition questions",
+      "existing_owner": "Existing Epiphany/Customs blessings owner, coordinate PR #1512; no ceremony in Mass reader",
+      "description_en": "The Roman Ritual preserves a special blessing of water associated with Epiphany. Where this rite is celebrated by a properly authorised priest, some of the blessed water may be made available for devotional use in the home. It is distinct from baptismal water and the Mass prayers of Epiphany.",
+      "description_fr": "Le Rituel romain conserve une bénédiction particulière de l'eau liée à l'Épiphanie. Là où elle est célébrée par un prêtre dûment autorisé, les fidèles peuvent recevoir de cette eau bénite pour l'usage pieux à la maison. Elle est distincte de l'eau baptismale et des prières de la messe de l'Épiphanie.",
+      "meaning_en": "The blessing recalls the manifestation of Christ and His baptism in the Jordan, inspiring a renewed commitment to baptismal life.",
+      "meaning_fr": "La bénédiction rappelle la manifestation du Christ et son baptême au Jourdain, invitant à renouveler la vie baptismale.",
+      "optional_observance_en": "Use the rite only through an authorised priest where offered; otherwise use ordinary holy water reverently and pray on Epiphany.",
+      "optional_observance_fr": "Recourir au rite uniquement auprès d'un prêtre autorisé, là où il est proposé ; autrement, user avec respect de l'eau bénite ordinaire et prier à l'Épiphanie.",
+      "caution": "The 1964 Weller translation is a historical ritual witness, not by itself a determination of the authorised local 1962 edition, requisite faculties or universal parish availability. Never show blessing prayers as lay instructions.",
+      "independent_evidence": [
+        {
+          "observation_id": "WEI58-12-007",
+          "source_url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1337",
+          "source_name": "Philip Weller 1964 Roman Ritual translated in Catholic Culture",
+          "verified_claim": "Historic Latin Roman Ritual Epiphany water blessing as sacramental; permission and edition must be independently checked for 1962 use."
+        },
+        {
+          "observation_id": "WEI58-12-008",
+          "source_url": "https://1962ordo.today/season/",
+          "source_name": "Traditional liturgical ordo commentary",
+          "verified_claim": "Epiphany water may be made available to the faithful after the locally conferred priestly blessing; this is not mandatory."
+        }
+      ],
+      "release_status": "BILINGUAL_RESEARCH_DRAFT_NO_APP_PUBLICATION"
+    },
+    {
+      "id": "W58-P1-B6-MARY_GARDEN",
+      "observations": [
+        "WEI58-13-011"
+      ],
+      "printed_pages": [
+        {
+          "weiser_id": "WEI58-13-011",
+          "chapter": 13,
+          "page": 162
+        }
+      ],
+      "title_en": "A little garden dedicated to Our Lady",
+      "title_fr": "Un petit jardin dédié à Notre-Dame",
+      "occasion": "Spring, May, or another suitable gardening season",
+      "scope": "Catholic household devotion; flowers' traditional Marian names vary by culture",
+      "existing_owner": "Calendar / Marian customs; reuse Saints and devotional Learn links",
+      "description_en": "In a Marian garden, a family grows flowers or fragrant herbs chosen to recall the Blessed Virgin. The arrangement may be as modest as a few plants in pots, with a small Marian image or inscription. Some traditional plant names and legends offer subjects for reflection, not historical facts to be accepted without evidence.",
+      "description_fr": "Dans un jardin marial, une famille cultive des fleurs ou des herbes parfumées qui rappellent la Sainte Vierge. Quelques pots et une petite image de Marie suffisent. Les noms et les légendes attachés aux plantes peuvent nourrir la méditation sans être présentés comme des faits historiques certains.",
+      "meaning_en": "The beauty of creation leads the mind toward gratitude and the virtues of Our Lady.",
+      "meaning_fr": "La beauté de la création invite à la reconnaissance et à la contemplation des vertus de Notre-Dame.",
+      "optional_observance_en": "Choose a few locally suitable plants, care for them and say a short Marian prayer when working in the garden.",
+      "optional_observance_fr": "Choisir quelques plantes adaptées au climat, en prendre soin et réciter une courte prière mariale en les cultivant.",
+      "caution": "No promise of medicinal or magical properties, and no pressure to purchase a statue or garden equipment. Avoid copying inherited Marian-flower legends as documentary fact.",
+      "independent_evidence": [
+        {
+          "observation_id": "WEI58-13-011",
+          "source_url": "https://www.catholicculture.org/commentary/annunciation-and-lent-celebrating-new-life-through-mary-garden/",
+          "source_name": "Jennifer Gregory Miller, Catholic Culture",
+          "verified_claim": "Practical contemporary Catholic Mary gardens with flowers and herbs; legends about exact plant origins not historically certified."
+        }
+      ],
+      "release_status": "BILINGUAL_RESEARCH_DRAFT_NO_APP_PUBLICATION"
+    },
+    {
+      "id": "W58-P1-B6-PASKA",
+      "observations": [
+        "WEI58-17-023"
+      ],
+      "printed_pages": [
+        {
+          "weiser_id": "WEI58-17-023",
+          "chapter": 17,
+          "page": 238
+        }
+      ],
+      "title_en": "Paska: a cross-marked Easter bread",
+      "title_fr": "La paska : un pain pascal orné d'une croix",
+      "occasion": "Easter, particularly in Ukrainian family traditions",
+      "scope": "Specific Ukrainian household food tradition documented in independent recipes",
+      "existing_owner": "Enrich existing Easter food blessing and regional family customs; no second Easter basket rite",
+      "description_en": "A traditional Ukrainian Easter bread called paska is often enriched for the feast and may be decorated with a cross made from the dough. It belongs to family celebrations of the Resurrection; in some communities Easter foods are brought separately to a priest for a blessing.",
+      "description_fr": "Le pain pascal ukrainien appelé paska est souvent préparé avec soin pour la fête et parfois orné d'une croix façonnée dans la pâte. Il accompagne les repas familiaux de la Résurrection ; dans certaines communautés, les aliments sont apportés séparément au prêtre pour être bénits.",
+      "meaning_en": "The festive bread recalls the joy of Easter and places the ordinary family table within Christian thanksgiving.",
+      "meaning_fr": "Ce pain de fête rappelle la joie de Pâques et inscrit la table familiale dans l'action de grâce chrétienne.",
+      "optional_observance_en": "Prepare or share a family Easter loaf if customary; any priestly blessing follows a real parish service, not an app-generated rite.",
+      "optional_observance_fr": "Préparer ou partager un pain pascal selon la coutume familiale ; une éventuelle bénédiction sacerdotale relève d'une cérémonie paroissiale réelle et non d'un rite généré par l'application.",
+      "caution": "Do not mistake Ukrainian paska bread for Russian sweet cheese paskha. The independent food recipe does not certify a particular 1962 liturgical formula.",
+      "independent_evidence": [
+        {
+          "observation_id": "WEI58-17-023",
+          "source_url": "https://www.catholicculture.org/culture/liturgicalyear/recipes/view.cfm?id=1547",
+          "source_name": "Kathy Cutler, Festive Bread Book (1982), republished Catholic Culture",
+          "verified_claim": "Ukrainian Paska Easter bread with cross-shaped decoration documented; no claim this is a universal 1962 blessed food ritual."
+        }
+      ],
+      "release_status": "BILINGUAL_RESEARCH_DRAFT_NO_APP_PUBLICATION"
+    },
+    {
+      "id": "W58-P1-B6-MARY_NATIVITY_SEEDS",
+      "observations": [
+        "WEI58-25-023"
+      ],
+      "printed_pages": [
+        {
+          "weiser_id": "WEI58-25-023",
+          "chapter": 25,
+          "page": 305
+        }
+      ],
+      "title_en": "Blessing seeds on the Nativity of Our Lady",
+      "title_fr": "La bénédiction des semences à la Nativité de Marie",
+      "occasion": "8 September, in local Polish Catholic blessing practice",
+      "scope": "Modern Polish Catholic blessings inventory, not proven as universal 1962 usage",
+      "existing_owner": "Existing Marian seasonal blessings / Calendar; no new priest script",
+      "description_en": "Polish Catholic liturgical resources include a blessing of seed grain for sowing on the Nativity of the Blessed Virgin Mary. The practice connects an agricultural season with gratitude and prayer for those who cultivate the soil.",
+      "description_fr": "Des ressources liturgiques catholiques polonaises mentionnent une bénédiction des grains destinés aux semailles à la fête de la Nativité de la Bienheureuse Vierge Marie. Cet usage relie les travaux agricoles à la reconnaissance et à la prière pour les cultivateurs.",
+      "meaning_en": "The seed suggests patient hope, dependence upon providence and the future fruitfulness of honest labour.",
+      "meaning_fr": "La semence évoque l'espérance patiente, la confiance en la Providence et les fruits à venir du travail honnête.",
+      "optional_observance_en": "If a local priest announces an appropriate blessing, bring seeds according to the parish's directions; otherwise pray for farmers and the harvest.",
+      "optional_observance_fr": "Si un prêtre annonce cette bénédiction, présenter les semences selon les indications paroissiales ; autrement, prier pour les agriculteurs et les récoltes.",
+      "caution": "Current Polish blessings inventory is not primary proof for historical French grape customs or the precise 1962 Rituale text, and no local ceremony should be presumed.",
+      "independent_evidence": [
+        {
+          "observation_id": "WEI58-25-023",
+          "source_url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+          "source_name": "Polish episcopal liturgy commission blessing index",
+          "verified_claim": "A modern Polish blessing of seeds and sowing grain on Nativity of the Blessed Virgin Mary appears in an official church inventory; no proof of the exact 1962 form."
+        }
+      ],
+      "release_status": "BILINGUAL_RESEARCH_DRAFT_NO_APP_PUBLICATION"
+    },
+    {
+      "id": "W58-P1-B6-ST_JOSEPH_FRITTERS",
+      "observations": [
+        "WEI58-27-018"
+      ],
+      "printed_pages": [
+        {
+          "weiser_id": "WEI58-27-018",
+          "chapter": 27,
+          "page": 324
+        }
+      ],
+      "title_en": "St Joseph's Day fritters",
+      "title_fr": "Les beignets de la Saint-Joseph",
+      "occasion": "19 March, especially Italian regional households",
+      "scope": "Italian fried sweets on the feast, with distinct Umbrian and Roman/Napolitan recipes",
+      "existing_owner": "Saints / Calendar existing St Joseph record; optional food tradition, not separate feast",
+      "description_en": "In parts of Italy, families prepare fritters or pastries for the feast of St Joseph. Umbrian rice fritters are one regional example, while Rome and Naples have other sweets associated with the same date. The recipes and local names differ.",
+      "description_fr": "Dans plusieurs régions d'Italie, on prépare des beignets ou des pâtisseries pour la fête de saint Joseph. Les beignets de riz ombriens en sont un exemple, tandis que Rome et Naples possèdent d'autres spécialités pour le même jour. Les recettes et leurs noms varient.",
+      "meaning_en": "A simple family treat can accompany thanksgiving for St Joseph's fatherly care and faithful work.",
+      "meaning_fr": "Une douceur partagée en famille peut accompagner l'action de grâce pour la sollicitude paternelle de saint Joseph et la fidélité de son travail.",
+      "optional_observance_en": "Share a locally familiar St Joseph pastry if desired, and say a prayer to the saint for families and workers.",
+      "optional_observance_fr": "Partager, si on le souhaite, une pâtisserie locale de la Saint-Joseph et prier le saint pour les familles et les travailleurs.",
+      "caution": "Do not treat Zeppole, Umbrian rice frittelle and every historical fritelli as the same recipe; no legendary origin story or universal obligation.",
+      "independent_evidence": [
+        {
+          "observation_id": "WEI58-27-018",
+          "source_url": "https://www.umbriatourism.it/it/w/le-frittelle-di-san-giuseppe",
+          "source_name": "Official Umbria Tourism",
+          "verified_claim": "Regional Italian St Joseph rice fritters eaten on March 19; Weiser's precise small-bread name may represent a variant not identical everywhere."
+        }
+      ],
+      "release_status": "BILINGUAL_RESEARCH_DRAFT_NO_APP_PUBLICATION"
+    }
+  ],
+  "existing_owner_only": [
+    {
+      "weiser_id": "WEI58-06-004",
+      "owner": "Mass / Christmas Calendar",
+      "reason": "Misa de Gallo is a regional/local name, not a new custom or different 1962 Mass formulary"
+    },
+    {
+      "weiser_id": "WEI58-27-008",
+      "owner": "Saints / Calendar",
+      "reason": "St Patrick feast 17 March already exists; only add cultural commentary if needed"
+    }
+  ]
+}
