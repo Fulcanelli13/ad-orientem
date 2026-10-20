@@ -2054,6 +2054,102 @@
       "codes": {
         "iso_alpha2": "SL"
       }
+    },
+    {
+      "geo_area_id": "geo:country:MH",
+      "name": {
+        "official": "Marshall Islands",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MH"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:WF",
+      "name": {
+        "official": "Wallis and Futuna",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "WF"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:WS",
+      "name": {
+        "official": "Samoa",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "WS"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:KI",
+      "name": {
+        "official": "Kiribati",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "KI"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LA",
+      "name": {
+        "official": "Laos",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LA"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:BD",
+      "name": {
+        "official": "Bangladesh",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BD"
+      }
     }
   ],
   "places": [
@@ -14591,6 +14687,228 @@
       "source_ids": [
         "AO-R91-SITE-R91-NEW-SL-001",
         "AO-R91-GEO-R91-NEW-SL-001"
+      ]
+    },
+    {
+      "place_id": "place:MH:cathedral-assumption-majuro",
+      "name": {
+        "official": "Cathedral of Our Lady of the Assumption, Majuro",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:MH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 7.10187,
+        "lng": 171.37815,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/259721827",
+        "source_ref": "osm:way:259721827",
+        "matched_country_code": "MH",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Majuro",
+        "region": null,
+        "country_code": "MH",
+        "country": "Marshall Islands",
+        "formatted": "Assumption Cathedral, Uliga, Majuro Atoll, Marshall Islands"
+      },
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-088",
+        "AO-R92-GEO-AO-R82-DISC-088"
+      ]
+    },
+    {
+      "place_id": "place:WF:cathedrale-assomption-mata-utu",
+      "name": {
+        "official": "Cathédrale Notre-Dame-de-l’Assomption, Mata-Utu",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:WF"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -13.28283,
+        "lng": -176.17339,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/259503104",
+        "source_ref": "osm:way:259503104",
+        "matched_country_code": "WF",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Mata-Utu",
+        "region": null,
+        "country_code": "WF",
+        "country": "Wallis and Futuna",
+        "formatted": "Mata-Utu, Wallis and Futuna"
+      },
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-096",
+        "AO-R92-GEO-AO-R82-DISC-096"
+      ]
+    },
+    {
+      "place_id": "place:WS:immaculate-conception-cathedral-mulivai-apia",
+      "name": {
+        "official": "Immaculate Conception Cathedral (Mulivai Cathedral), Apia",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:WS"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -13.83219,
+        "lng": -171.76645,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/187580849",
+        "source_ref": "osm:way:187580849",
+        "matched_country_code": "WS",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Apia",
+        "region": null,
+        "country_code": "WS",
+        "country": "Samoa",
+        "formatted": "Mulivai, Apia, Samoa"
+      },
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-092",
+        "AO-R92-GEO-AO-R82-DISC-092"
+      ]
+    },
+    {
+      "place_id": "place:KI:sacred-heart-cathedral-teaoraereke",
+      "name": {
+        "official": "Sacred Heart Cathedral, Teaoraereke",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:KI"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 1.33259,
+        "lng": 173.00722,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/90810971",
+        "source_ref": "osm:way:90810971",
+        "matched_country_code": "KI",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "South Tarawa",
+        "region": null,
+        "country_code": "KI",
+        "country": "Kiribati",
+        "formatted": "Teaoraereke, South Tarawa, Kiribati"
+      },
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-087",
+        "AO-R92-GEO-AO-R82-DISC-087"
+      ]
+    },
+    {
+      "place_id": "place:LA:sacred-heart-cathedral-vientiane",
+      "name": {
+        "official": "Sacred Heart Cathedral, Vientiane",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:LA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 17.96139,
+        "lng": 102.61194,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/40271886",
+        "source_ref": "osm:way:40271886",
+        "matched_country_code": "LA",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Vientiane",
+        "region": null,
+        "country_code": "LA",
+        "country": "Laos",
+        "formatted": "Rue de la Mission, Vientiane, Laos"
+      },
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-013",
+        "AO-R92-GEO-AO-R82-DISC-013"
+      ]
+    },
+    {
+      "place_id": "place:BD:holy-rosary-cathedral-chattogram",
+      "name": {
+        "official": "Cathedral of Our Lady of the Holy Rosary, Chattogram",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:BD"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 22.33241,
+        "lng": 91.8394,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/4384875575",
+        "source_ref": "osm:node:4384875575",
+        "matched_country_code": "BD",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Chattogram",
+        "region": null,
+        "country_code": "BD",
+        "country": "Bangladesh",
+        "formatted": "Bandel Road, Patherghata, Chattogram 4000, Bangladesh"
+      },
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-012",
+        "AO-R92-GEO-AO-R82-DISC-012"
       ]
     }
   ],
