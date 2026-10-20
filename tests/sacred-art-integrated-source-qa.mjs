@@ -26,4 +26,4 @@ const src=readFileSync(new URL("../tools/calendar/audit-staged-sacred-art-media.
 assert(!src.includes("git push")&&!src.includes("contents: write"));
 assert(src.includes("createHash")&&src.includes("readFileSync(file)"));
 assert(src.includes("exactOriginalIndependentlyVerified:false")&&src.includes("productionCertified:false"));
-console.log("PASS 88-image integrated QA contract; hash duplicates, photo rights, resolution and embargo remain fail-closed");
+console.log("PASS integrated source-image QA contract (fixture counts only; see current-run manifest for total); hash duplicates, photo rights, resolution and embargo remain fail-closed");
