@@ -134,9 +134,7 @@ export function renderPilgrimageJourneyPanel({
       html+='<li data-journey-named-stage="'+esc(stage.id)+'"><span class="aoJourneyNode" aria-hidden="true">'+
         esc(String(index+1))+'</span><div><small>'+esc(heading)+' · '+esc(String(index+1))+
         '/'+esc(String(selected.namedStages.length))+'</small><strong>'+
-        esc(language==="fr"?stage.nameFr:stage.name)+'</strong><em>'+
-        esc(label(language,"Named by organiser · not geolocated","Nommé par l’organisateur · non géolocalisé"))+
-        '</em></div></li>';
+        esc(language==="fr"?stage.nameFr:stage.name)+'</strong></div></li>';
     });
   }else{
     html+='<li><span class="aoJourneyNode" aria-hidden="true">○</span><div><small>'+
