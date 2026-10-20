@@ -102,6 +102,13 @@ const SHELL_STYLE = `
 .ao-state-cell[data-side="priest"] .ao-state-label{max-width:132px}
 .ao-state-kicker{font:700 7px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--ao-mass-accent-text)}
 .ao-state-copy{min-width:0;display:flex;flex-direction:column}
+.ao-priest-book-context{
+  max-width:142px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+  font:500 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.015em;color:var(--ao-muted)
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-book-context{display:none}
+
 .ao-state-label{
   max-width:142px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   font:600 10px/1.15 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.045em;color:#c9d1ca
@@ -1790,7 +1797,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     </button>
     <div class="ao-state-cell" data-side="priest">
       <span class="ao-icon-mask" data-icon-slot="priest-position" hidden></span>
-      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span><span class="ao-missal-state-detail" data-role="missal-priest-action" hidden></span></span>
+      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span><span class="ao-priest-book-context" data-role="priest-book-context" hidden></span><span class="ao-missal-state-detail" data-role="missal-priest-action" hidden></span></span>
       <span class="ao-priest-action-badge" data-role="priest-action-badge" data-active="false" data-major="false" aria-hidden="true"><span class="ao-icon-mask" data-icon-slot="priest-action-top" hidden></span></span>
     </div>
   </div>
@@ -3160,6 +3167,15 @@ export function createReaderDomAdapter({
     }
     setText(root,"progress",current.progress);
     setText(root,"priest-position",textValue(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition));
+    const bookContext=root.querySelector?.('[data-role="priest-book-context"]');
+    if(bookContext){
+      const side=mode==="LIVE" ? current.priestPosition?.missalLocation : null;
+      const text=side==="EPISTLE_SIDE"?"Missal · Epistle side":
+        side==="GOSPEL_SIDE"?"Missal · Gospel side":null;
+      bookContext.hidden=!text;
+      bookContext.textContent=text??"";
+      bookContext.title=text??"";
+    }
     setText(root,"priest-action",textValue(current.priestAction));
     setText(root,"sacred-minister",textValue(current.sacredMinister));
     setText(root,"posture",textValue(current.posture));
