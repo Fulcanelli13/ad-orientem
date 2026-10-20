@@ -22,6 +22,7 @@ import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atla
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
+import { buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney } from "./pilgrimage-journey.js";
 
 const VERSION="explore-v1";
 const ROOT_ID="ao-find-modular-root";
@@ -136,6 +137,7 @@ export function createFindOwner(win=globalThis){
   let lastMapView=null,lastMapLens=null;
   // Ephemeral ranked results only. Device location is never stored or persisted.
   let nearbyResults=null;
+  let journeyPreviousCategories=null;
   const queryByLens=new Map();
   const scrollGuard=createScrollTapGuard(win?.document,{
     contains:target=>Boolean(getRoot(win)?.contains?.(target)),
@@ -154,6 +156,7 @@ export function createFindOwner(win=globalThis){
     massType:"ANY",
     heritageCategories:[...HERITAGE_CATEGORIES],
     highlightCustomId:null,
+    journeyOpen:false,journeySelectedId:null,
     expandPlace:false,
     expandDetail:false,
     atlasFamily:"ANY",
@@ -392,6 +395,8 @@ export function createFindOwner(win=globalThis){
     const customCards=state.lens==="heritage"
       ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions")&&state.heritageCategories.length<HERITAGE_CATEGORIES.length,query:state.query}):[];
     const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
+    const journeys=preliminaryMode?[]:buildPilgrimageJourneyCatalogue(
+      projection?.byLens?.pilgrimages,data?.shrines?.sources);
     const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
       .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
@@ -412,6 +417,9 @@ export function createFindOwner(win=globalThis){
       selectedOverride,
       displayLimit:state.displayLimit,
       placeProfiles,
+      journeyOpen:state.lens==="heritage"&&state.journeyOpen,
+      journeys,
+      journeySelectedId:state.journeySelectedId,
       selectedPlaceId:state.selectedPlaceId,
       expandPlace:state.expandPlace,
       expandDetail:state.expandDetail,
@@ -625,6 +633,22 @@ export function createFindOwner(win=globalThis){
     return true;
   }
 
+  function focusJourneyDestination(){
+    if(!projection||!dataset||!mapHandle?.map)return false;
+    const routes=buildPilgrimageJourneyCatalogue(
+      projection.byLens?.pilgrimages,dataset.shrines?.sources);
+    const active=selectedPilgrimageJourney(routes,state.journeySelectedId);
+    const geo=active?.destinationGeo;
+    if(!geo)return false;
+    const map=mapHandle.map,phone=Number(win?.innerWidth||0)<800;
+    const target={center:[geo.lng,geo.lat],zoom:Math.max(8.5,Number(map.getZoom?.())||0),
+      offset:phone?[0,-125]:[-175,0]};
+    if(win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)
+      map.jumpTo?.(target);
+    else map.easeTo?.({...target,duration:450});
+    return true;
+  }
+
   function setFilter(key,value){
     const previousLens=state.lens;
     if(key==="view")state.view=value==="map"?"map":"list";
@@ -634,6 +658,7 @@ export function createFindOwner(win=globalThis){
         state.query=queryByLens.get(value)??"";
       }
       state.lens=value;state.calendarKey=null;nearbyResults=null;
+      if(value!=="heritage"){state.journeyOpen=false;journeyPreviousCategories=null;}
       if(value==="saints")state.view="list";
       else if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
     }else if(key==="saintScope"&&["profiles","historical","later","doctors"].includes(value)&&
@@ -983,6 +1008,39 @@ export function createFindOwner(win=globalThis){
     }
     if(target?.closest?.("[data-explore-collapse-detail]")){
       event.preventDefault?.();state.expandDetail=false;void paint({selectionOnly:true});return;
+    }
+    const openJourney=target?.closest?.("[data-explore-journey-open]");
+    if(openJourney&&state.lens==="heritage"){
+      event.preventDefault?.();
+      if(!state.journeyOpen){
+        journeyPreviousCategories=[...state.heritageCategories];
+        state.journeyOpen=true;state.heritageCategories=["pilgrimages"];
+        state.query="";state.selectedPlaceId=null;state.selectedId=null;
+        state.expandPlace=false;nearbyResults=null;
+      }
+      void paint();return;
+    }
+    if(target?.closest?.("[data-explore-journey-close]")&&state.lens==="heritage"){
+      event.preventDefault?.();state.journeyOpen=false;
+      state.heritageCategories=journeyPreviousCategories??[...HERITAGE_CATEGORIES];
+      journeyPreviousCategories=null;void paint();return;
+    }
+    const journeySelect=target?.closest?.("[data-explore-journey-select]");
+    if(journeySelect&&state.journeyOpen){
+      event.preventDefault?.();
+      state.journeySelectedId=journeySelect.dataset.exploreJourneySelect;
+      focusJourneyDestination();
+      void paint();return;
+    }
+    if(target?.closest?.("[data-explore-journey-focus]")&&state.journeyOpen){
+      event.preventDefault?.();focusJourneyDestination();return;
+    }
+    const journeyDestination=target?.closest?.("[data-explore-journey-destination]");
+    if(journeyDestination&&state.journeyOpen){
+      event.preventDefault?.();
+      state.selectedPlaceId=journeyDestination.dataset.exploreJourneyDestination||null;
+      state.selectedId=null;state.journeyOpen=false;journeyPreviousCategories=null;
+      void paint();return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
