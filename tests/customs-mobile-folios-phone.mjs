@@ -81,6 +81,22 @@ try{
       }
       measurements.push({language,width,id:guide.custom_id,font:ui.fontSize,sectionFont:ui.sectionFont,lineHeight:ui.lineHeight,sourceLinks:ui.sourceLinks,sheetWidth:ui.sheetWidth});
     }
+    // Tap the real seasonal Calendar button and verify exact identity.
+    if(width===390){
+      await page.evaluate(()=>globalThis.AO_FIND_APP_V1.close());
+      const opened=await page.evaluate(async()=>globalThis.AO_APP_SHELL_V1.navigate("calendar"));
+      assert.equal(opened?.ok,true,"Calendar destination not available");
+      await page.waitForFunction(()=>Boolean(globalThis.AO_CALENDAR_APP_V1?.select),null,{timeout:20000});
+      const selected=await page.evaluate(()=>globalThis.AO_CALENDAR_APP_V1.select("2026-12-16"));
+      assert.equal(selected,true,"Calendar could not select the Posadas source date");
+      const cta=page.locator('[data-cal-intelligence-route="find:traditions:ADVT-003"]');
+      await cta.waitFor({state:"visible",timeout:20000});
+      await cta.click();
+      await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().selectedId==="tradition:custom:ADVT-003",null,{timeout:20000});
+      await page.locator(".aoExploreTraditionSheet").waitFor({state:"visible",timeout:12000});
+      assert.match(await page.locator(".aoExploreTraditionSheet header h2").textContent(),/Las Posadas/);
+      await page.locator(".aoExploreTraditionSheet").screenshot({path:resolve(dest,"en-390-calendar-to-las-posadas.png")});
+    }
     assert.deepEqual(errors,[],"uncaught phone runtime errors: "+errors.join("\n"));
     await context.close();
   }
