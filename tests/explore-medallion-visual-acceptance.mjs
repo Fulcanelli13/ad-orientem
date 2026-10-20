@@ -201,6 +201,25 @@ try{
      "Clicking a map-stage medallion must also return to the existing selected pilgrimage");
    assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
      document.querySelector("#ao-find-modular-root .maplibregl-canvas")));
+   // The two Mauritius Père Laval routes share a canonical sanctuary but
+   // only Saint-Louis has a separately sourced departure point. A missing
+   // Terre-Rouge coordinate must never become an invented map marker.
+   await journey.locator('[data-explore-journey-select="route:MU:pere-laval-saint-louis"]').click();
+   await page.waitForFunction(()=>document.querySelector(".aoJourneyDetail h3")?.textContent?.includes("Saint-Louis"),
+     null,{timeout:12000});
+   assert.equal(await journey.locator("[data-explore-journey-stage-place]").count(),2);
+   assert.equal(await page.locator("#ao-find-modular-root [data-journey-map-stage]").count(),2);
+   await journey.locator('[data-explore-journey-stage-place="route:MU:pere-laval-saint-louis#stage-1"]').click();
+   const cathedralPlace=page.locator('#ao-find-modular-root .aoHeritagePreview[data-explore-place-owner="place:MU:saint-louis-cathedral-port-louis"]');
+   await cathedralPlace.waitFor({state:"visible",timeout:12000});
+   await cathedralPlace.locator("[data-find-close-place]").click();
+   assert.equal(await journey.locator('[data-explore-journey-select="route:MU:pere-laval-saint-louis"]').getAttribute("aria-pressed"),"true");
+   await journey.locator('[data-explore-journey-select="route:MU:pere-laval-saint-joseph"]').click();
+   await page.waitForFunction(()=>document.querySelector(".aoJourneyDetail h3")?.textContent?.includes("Saint-Joseph"),
+     null,{timeout:12000});
+   assert.equal(await journey.locator("[data-explore-journey-stage-place]").count(),1,
+     "Terre-Rouge departure has not been independently geocoded");
+   assert.equal(await page.locator("#ao-find-modular-root [data-journey-map-stage]").count(),1);
    await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').click();
    await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
    const chartresPlace=page.locator('#ao-find-modular-root .aoHeritagePreview[data-explore-place-owner="place:FR:chartres-notre-dame"]');
