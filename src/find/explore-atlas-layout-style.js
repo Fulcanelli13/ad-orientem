@@ -49,7 +49,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 }
 .aoHeritageSurface .aoHeritageCategories::-webkit-scrollbar{display:none}
 .aoHeritageSurface .aoHeritageCategories button{
-  min-height:35px;height:35px;padding:7px 11px;border-radius:100px;
+  min-height:44px;height:44px;padding:10px 11px;border-radius:100px;
   font:500 11px/1.1 var(--ao-font-ui,system-ui,sans-serif);
   background:#0b1723e8;border:1px solid rgba(204,178,125,.27);
   color:#e3d7bf;backdrop-filter:blur(10px);
