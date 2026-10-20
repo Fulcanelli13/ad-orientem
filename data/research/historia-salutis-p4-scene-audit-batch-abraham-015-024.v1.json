@@ -1,0 +1,245 @@
+{
+  "schema": "ao.historia.p4.scene-audit.batch.v1",
+  "status": "RESEARCH_ONLY_NOT_PRODUCTION_CERTIFIED",
+  "createdOn": "2026-10-21",
+  "batch": "Abraham scenes indices 15–24 derived from source scenes array",
+  "inputs": [
+    "data/explore/biblical-cinematic-studies-review.v1.json",
+    "data/scripture/witness/cpdv-2009/Genesis.json",
+    "data/explore/historia-salutis-p0-master-crosswalk.v1.json"
+  ],
+  "policy": {
+    "canonicalAtlasEventsUnchanged": true,
+    "coordinatesAdded": false,
+    "baselineAtlasClassificationsPreserved": true,
+    "canonicalScriptureChanged": false
+  },
+  "reviewedSceneCount": 10,
+  "sceneKeys": [
+    "biblical:scene:abraham:015",
+    "biblical:scene:abraham:016",
+    "biblical:scene:abraham:017",
+    "biblical:scene:abraham:018",
+    "biblical:scene:abraham:019",
+    "biblical:scene:abraham:020",
+    "biblical:scene:abraham:021",
+    "biblical:scene:abraham:022",
+    "biblical:scene:abraham:023",
+    "biblical:scene:abraham:024"
+  ],
+  "scenes": [
+    {
+      "sceneKey": "biblical:scene:abraham:015",
+      "index": 15,
+      "reference": "Genesis 16:1–16",
+      "title": "The birth of Ishmael",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Hagar; Angel of the Lord; Abram; Sarai; Ishmael (named prenatally)",
+      "chronologyAndNarrativeFinding": "The narrative explicitly places Hagar's flight by a spring on the way to Shur (16:7); after return, Ishmael is born. This is a sequence of wilderness encounter and household birth, not one fixed Mamre scene. The Angel of the Lord, Hagar, Abram and Sarai are named; Ishmael is named by the angel before birth.",
+      "geography": {
+        "claim": "Shur road/spring is textual but unidentified; household birth location not stated. Split route and birth; no Mamre point.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Abram's son by Hagar, explicitly named Ishmael; distinct from the Isaac line (Gen 16:11–16; compare Gen 17:18–21). No covenant rite occurs."
+        ]
+      },
+      "covenantAndGenealogy": "Abram's son by Hagar, explicitly named Ishmael; distinct from the Isaac line (Gen 16:11–16; compare Gen 17:18–21). No covenant rite occurs.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:016",
+      "index": 16,
+      "reference": "Genesis 17:1–14",
+      "title": "Abraham receives a new name",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "LORD, Abram/Abraham; household males collectively",
+      "chronologyAndNarrativeFinding": "Genesis 17:1–14 opens with the LORD appearing to Abram and renaming him Abraham; Sarai becomes Sarah in vv15–16, outside current selection. The selected unit includes covenant sign and household obligations, so the scene title should not imply only renaming.",
+      "geography": {
+        "claim": "No place named in 17:1–14. Mamre appears in 18:1, not here; classify unlocated.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Explicit covenant with Abraham and descendants (17:2–8), circumcision sign (17:9–14); Ishmael is included in household sign while covenant line is promised through Isaac in 17:19–21. Genealogy distinctions must remain."
+        ]
+      },
+      "covenantAndGenealogy": "Explicit covenant with Abraham and descendants (17:2–8), circumcision sign (17:9–14); Ishmael is included in household sign while covenant line is promised through Isaac in 17:19–21. Genealogy distinctions must remain.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:017",
+      "index": 17,
+      "reference": "Genesis 18:1–15",
+      "title": "Three visitors at Mamre",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-18-1-8",
+          "reference": "Genesis 18:1–8",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "LORD (narrative framing), Abraham, Sarah, three visitors/men; servants/bread preparation in collective terms",
+      "chronologyAndNarrativeFinding": "Genesis 18:1–15 identifies the scene as the oaks of Mamre; three men/visitors arrive, Abraham hosts, Sarah listens and laughs, and the birth promise is spoken. Registry overlaps Atlas only for 18:1–8, omitting the promise dialogue 9–15; preserve overlap classification rather than equating full scenes.",
+      "geography": {
+        "claim": "Oaks of Mamre are text-exact region; exact trees/encampment unknown. Do not assert visitors' identities beyond textual/narrative identification.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Promise of Sarah's son Isaac, covenant/genealogy sequence; explicit Sarah/Abraham parental promise, distinct from Ishmael."
+        ]
+      },
+      "covenantAndGenealogy": "Promise of Sarah's son Isaac, covenant/genealogy sequence; explicit Sarah/Abraham parental promise, distinct from Ishmael.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:018",
+      "index": 18,
+      "reference": "Genesis 18:16–33",
+      "title": "Abraham intercedes for Sodom",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "LORD, Abraham; Sodom's inhabitants collectively",
+      "chronologyAndNarrativeFinding": "Genesis 18:16–33 continues directly from the visitors' departure and Abraham's escort; the LORD's announcement and Abraham's intercession concern Sodom. Scene requires Mamre context for continuity, but no new physical site inside Mamre is pinpointed.",
+      "geography": {
+        "claim": "Mamre region as narrative context; no exact location for dialogue. Sodom itself is destination/topic, not scene location.",
+        "classification": "TEXTUAL_TOPOGRAPHIC_AREA",
+        "sources": [
+          "No genealogy event; Abraham is covenant recipient and intercedes for others (Gen 18:18–19)."
+        ]
+      },
+      "covenantAndGenealogy": "No genealogy event; Abraham is covenant recipient and intercedes for others (Gen 18:18–19).",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:019",
+      "index": 19,
+      "reference": "Genesis 19:1–29",
+      "title": "The destruction of Sodom",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Two angels; Lot; Lot's household; men of Sodom; LORD; Abraham referenced in v29",
+      "chronologyAndNarrativeFinding": "Genesis 19:1–29 narrates the two angels' arrival at Sodom, Lot's hospitality, departure and destruction; v29 links the rescue to God's remembrance of Abraham. The 'Dead Sea basin' is a regional inference from later biblical geography, not a coordinate in this passage.",
+      "geography": {
+        "claim": "Sodom is exact textual city name, but archaeological site UNKNOWN/DISPUTED; 'Dead Sea basin' is a regional proposal only.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Lot is Abraham's kinsman; rescue is explicitly linked to Abraham in 19:29. No formal covenant event."
+        ]
+      },
+      "covenantAndGenealogy": "Lot is Abraham's kinsman; rescue is explicitly linked to Abraham in 19:29. No formal covenant event.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:020",
+      "index": 20,
+      "reference": "Genesis 20:1–18",
+      "title": "Abraham and Abimelech",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Abraham, Sarah, Abimelech, God; Abimelech's servants/household collectively",
+      "chronologyAndNarrativeFinding": "Genesis 20:1–18 names Gerar and narrates Abraham/Sarah/Abimelech, the dream warning, Abimelech's rebuke and restitution, and healing through Abraham's prayer. The text gives Gerar but not its precise modern identification; retain debated regional status.",
+      "geography": {
+        "claim": "Gerar named; modern location debated. Do not place a precise point in the Negev without source-specific support.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Sarah is Abraham's wife; no conception/covenant here. Abraham prays for Abimelech's household; keep this distinct from Isaac's birth."
+        ]
+      },
+      "covenantAndGenealogy": "Sarah is Abraham's wife; no conception/covenant here. Abraham prays for Abimelech's household; keep this distinct from Isaac's birth.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:021",
+      "index": 21,
+      "reference": "Genesis 21:1–7",
+      "title": "The birth of Isaac",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-21-1-7",
+          "reference": "Genesis 21:1–7",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "LORD, Abraham, Sarah, Isaac",
+      "chronologyAndNarrativeFinding": "Genesis 21:1–7 records Isaac's birth and circumcision at eight days, fulfilling the promise. Beersheba is not mentioned in this passage: that city appears later (21:14, 31–33), so current scene city label is not supported by the cited verses.",
+      "geography": {
+        "claim": "Birth location UNKNOWN in 21:1–7; Beersheba city-context label is anachronistic if attached to this scene alone.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Direct fulfillment of Isaac promise and named Abraham/Sarah parentage; preserve Isaac as covenant line (Gen 17:19–21), while Ishmael remains separately named."
+        ]
+      },
+      "covenantAndGenealogy": "Direct fulfillment of Isaac promise and named Abraham/Sarah parentage; preserve Isaac as covenant line (Gen 17:19–21), while Ishmael remains separately named.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:022",
+      "index": 22,
+      "reference": "Genesis 21:22–34",
+      "title": "A well at Beersheba",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Abraham, Abimelech, Phicol; servants/households collectively",
+      "chronologyAndNarrativeFinding": "Genesis 21:22–34 names Abimelech, Phicol, Abraham, oath, and well at Beersheba; Abraham plants a tamarisk and invokes the LORD. The scene's title 'A well at Beersheba' is text-supported, though not one excavated well identified by these verses.",
+      "geography": {
+        "claim": "Beersheba named; well's precise archaeological identity UNKNOWN. The episode follows Isaac's birth but is separated by the Hagar/Ishmael expulsion narrative (21:8–21).",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Oath and well dispute; not the Abrahamic covenant enactment. Abraham's household/genealogy context includes Isaac and Ishmael, but neither is an actor in selected verses."
+        ]
+      },
+      "covenantAndGenealogy": "Oath and well dispute; not the Abrahamic covenant enactment. Abraham's household/genealogy context includes Isaac and Ishmael, but neither is an actor in selected verses.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:023",
+      "index": 23,
+      "reference": "Genesis 22:1–19",
+      "title": "The sacrifice of Isaac",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:genesis-22-1-19",
+          "reference": "Genesis 22:1–19",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "God; Abraham; Isaac; two servants; angel of the LORD; ram",
+      "chronologyAndNarrativeFinding": "Genesis 22:1–19 identifies the land of Moriah, but not a city or mountain peak. Abraham, Isaac, servants, and the angel of the LORD are textual actors; the ram is supplied, and Isaac lives. Jerusalem/Temple Mount association is later tradition, not explicit scene coordinate.",
+      "geography": {
+        "claim": "Land of Moriah exact in text; precise mountain unresolved. Jerusalem/Temple Mount is traditional identification and must be labeled as such.",
+        "classification": "DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Isaac is named covenant heir (Gen 17:19–21); the oath reiterates blessing/descendants (22:15–18). Avoid identifying this as a human sacrifice completed: text explicitly says the angel stops Abraham and a ram is offered."
+        ]
+      },
+      "covenantAndGenealogy": "Isaac is named covenant heir (Gen 17:19–21); the oath reiterates blessing/descendants (22:15–18). Avoid identifying this as a human sacrifice completed: text explicitly says the angel stops Abraham and a ram is offered.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:024",
+      "index": 24,
+      "reference": "Genesis 23:1–20",
+      "title": "The burial at Machpelah",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Sarah, Abraham, Ephron, sons of Heth collectively",
+      "chronologyAndNarrativeFinding": "Genesis 23:1–20 tells Sarah's death and Abraham's purchase of the field/cave of Machpelah from Ephron near Mamre, explicitly as a burial holding. This is a transaction/burial narrative, distinct from later patriarch burials.",
+      "geography": {
+        "claim": "Machpelah near Mamre/Hebron is textual region; traditional tomb precinct at Hebron is not proof of the precise cave/field boundary.",
+        "classification": "TEXTUAL_TOPOGRAPHIC_AREA",
+        "sources": [
+          "Sarah and Abraham are named spouses; burial purchase becomes family burial context. No covenant enactment, though land possession theme is consequential."
+        ]
+      },
+      "covenantAndGenealogy": "Sarah and Abraham are named spouses; burial purchase becomes family burial context. No covenant enactment, though land possession theme is consequential.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    }
+  ],
+  "openQuestions": [
+    "Gen 21:1–7 does not name Beersheba; registry location must remain unlocated absent additional textual evidence.",
+    "Moriah's modern point identification remains traditional and should not be encoded as exact.",
+    "Gerar's modern identification and the exact Machpelah cave boundary remain unresolved."
+  ]
+}
