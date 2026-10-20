@@ -32,11 +32,29 @@ for(const item of manifest.entries){
   assert.doesNotMatch(svg,/<(?:script|image|foreignObject)\b|(?:href|xlink:href)=["']https?:\/\//i,
     item.name+" introduced a non-vector/external dependency");
 }
+
+// PR #1460 approved originals are reconciled as exact Git blobs, not redrawn.
+for(const [file,blobSha] of [
+  ["ea_priest_communion_host.svg","f6abfdc771be3503b7e9ca5b413564fd2493a921"],
+  ["ea_priest_communion_chalice.svg","454674cb090de139ffaa20faa45fdd187ffc21a4"],
+]){
+  const bytes=readFileSync(new URL("../assets/approved/mass-priest-communion/"+file,import.meta.url));
+  const gitHeader=Buffer.from("blob "+bytes.length+"\\0".replace("\\0","\0"));
+  assert.equal(createHash("sha1").update(gitHeader).update(bytes).digest("hex"),blobSha,
+    file+" differs from the previously accepted exact PR #1460 SVG");
+  const svg=bytes.toString("utf8");
+  assert.match(svg,/currentColor/);
+  assert.doesNotMatch(svg,/<(?:script|image|foreignObject)\\b/i);
+}
+
 const reviewed={
   review_priest_credo_chant:"ao_chant.svg",
   review_priest_receive_chalice:"ao_drink_chalice.svg",
   review_priest_fraction_host:"ea_priest_fraction_host.svg",
   review_priest_commingling:"ea_priest_commingling.svg",
+  review_priest_receive_host:"ea_priest_communion_host.svg",
+  review_priest_purify_chalice:"ao_purify_chalice.svg",
+  review_priest_purify_fingers:"ao_purify_fingers.svg",
 };
 assert.deepEqual(Object.keys(R17_REVIEWED_ACTION_ASSETS).sort(),Object.keys(reviewed).sort());
 const host=resolveHostIconAssets({});
@@ -45,26 +63,27 @@ assert.equal(Object.keys(R17_FROZEN_ACTIVE_ICON_ASSETS).length,67);
 assert.equal(R17_FROZEN_ACTIVE_ICON_KEYS.length,67);
 for(const [key,filename] of Object.entries(reviewed)){
   const url=R17_REVIEWED_ACTION_ASSETS[key];
-  assert.ok(url.endsWith("/assets/review/mass-icon-candidates/recovered-20261020/"+filename));
+  const expectedBase=key==="review_priest_receive_host" ? "assets/approved/mass-priest-communion/" : "assets/review/mass-icon-candidates/recovered-20261020/";
+  assert.ok(url.endsWith("/"+expectedBase+filename),"Unexpected approved SVG source "+key);
   assert.equal(host[key],url);
   assert.equal(resolve(key),url);
   assert.ok(!R17_FROZEN_ACTIVE_ICON_KEYS.includes(key),
     key+" must not overwrite one of the 67 frozen master keys");
 }
-assert.equal(Object.keys(host).length,67+5+4,
-  "five approved postures and four reviewed actions are the only overlays");
+assert.equal(Object.keys(host).length,67+5+7,
+  "five approved postures and seven reviewed actions are the only overlays");
 const key=priestAction=>iconKeysForReaderState({priestAction}).priestActionIconKey;
 for(const [label,want] of [
   ["INTONES CREDO","review_priest_credo_chant"],
   ["RECEIVES CHALICE","review_priest_receive_chalice"],
   ["BREAKS HOST","review_priest_fraction_host"],
   ["PLACES PARTICLE","review_priest_commingling"],
+  ["RECEIVES HOST","review_priest_receive_host"],
   ["OFFERS HOST",null],
   ["OFFERS CHALICE",null],
   ["KISSES GOSPEL",null],
   ["TURNS TO ALTAR",null],
   ["GENUFLECTS",null],
-  ["RECEIVES HOST",null],
 ]){
   assert.equal(key({label}),want,"incorrect Mass action illustration: "+label);
 }
@@ -73,6 +92,7 @@ for(const [label,oldKey,want] of [
   ["RECEIVES CHALICE","chalice_elevation","review_priest_receive_chalice"],
   ["BREAKS HOST","fraction","review_priest_fraction_host"],
   ["PLACES PARTICLE","commingling","review_priest_commingling"],
+  ["RECEIVES HOST","communion","review_priest_receive_host"],
   ["OFFERS HOST","priest_elevate_host_rich",null],
   ["OFFERS CHALICE","priest_elevate_chalice_rich",null],
   ["KISSES GOSPEL","priest_gospel_rich",null],
@@ -81,6 +101,22 @@ for(const [label,oldKey,want] of [
   assert.equal(key({label,iconKey:oldKey,owner:"R17_V180_PRIEST_ACTION_SOURCE"}),want,
     "Legacy direct key bypassed reviewed policy: "+label);
 }
+
+for(const [cueId,want] of [
+  ["AO.SM.C0125",null], // Offertory Lavabo is HOLD, not post-Communion purification.
+  ["AO.SM.C0247","review_priest_purify_chalice"], // first ablution: wine in chalice
+  ["AO.SM.C0248","review_priest_purify_fingers"], // water/wine over fingers
+  ["AO.SM.C9999",null], // never guess artwork for unknown/synthetic cues
+]){
+  assert.equal(key({label:"WASHES / PURIFIES",cueId}),want,
+    "Confused Lavabo and post-Communion ablutions at "+cueId);
+}
+assert.equal(key({label:"WASHES / PURIFIES"}),null,
+  "Ambiguous generic purification label invented an icon");
+assert.equal(key({label:"WASHES / PURIFIES",cueId:"AO.SM.C0248",
+  iconKey:"lavabo",owner:"R17_V180_PRIEST_ACTION_SOURCE"}),
+  "review_priest_purify_fingers","Legacy lavabo art bypassed exact cue ownership");
+
 assert.equal(key({label:"INTONES GLORIA"}),"priest_centre_arms_rich",
   "Credo-accepted chanting art was incorrectly assigned to Gloria");
 assert.equal(key({label:"ELEVATES HOST"}),"priest_elevation",
@@ -89,4 +125,4 @@ assert.equal(key({label:"ELEVATES CHALICE"}),"priest_elevate_chalice_rich",
   "Approved earlier chalice elevation incorrectly replaced");
 assert.equal(key({label:"RAISES EYES AND HANDS",owner:"GESTURE_MATRIX_SOT",iconKey:null}),null,
   "Unbound matrix cue received invented fallback artwork");
-console.log("reviewed Mass actions: PASS — 13 recovered SVGs checksum-verified; 4 action replacements, 4 incorrect aliases suppressed; frozen 67 untouched.");
+console.log("reviewed Mass actions: PASS — 13 recovered SVGs plus priest Communion pair verified; 7 reviewed action aliases, 3 cue-specific ablution states, frozen 67 untouched.");
