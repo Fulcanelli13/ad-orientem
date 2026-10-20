@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-priest-genuflection-artwork-brief-v1",
   "date": "2026-10-20",
-  "status": "ARTWORK_REQUIRED_NOT_YET_DRAWN_OR_APPROVED",
+  "status": "DEFERRED_TEXT_CUES_NO_ARTWORK_APPROVED",
   "scope": "One reusable *priest-specific* silhouette for the 1962 Mass reader's priest genuflection action; not faithful kneeling.",
   "reviewAuthority": "User explicitly excluded misleading legacy genuflection and asked for a specific accurate priest pose. Review required before app binding.",
   "artworkRequirements": {
@@ -64,8 +64,14 @@
   "integrationPolicy": {
     "candidateAlias": "review_priest_genuflect",
     "runtimeCurrently": null,
-    "rule": "Do not bind until approved original vector is staged and visually accepted. No gameplay or celebratory animation.",
+    "rule": "Text-led priest genuflection cues remain the fallback. No artwork binding before new explicit visual approval. Do not substitute the faithful-genuflection icon or legacy priest donor.",
     "banAnyLegacyReplacement": true
   },
-  "decisionNeeded": "User approval of newly prepared one-artwork priest-specific genuflection image after it exists."
+  "decisionNeeded": "No image approval requested. New artwork production is paused.",
+  "latestEditorialDecision": {
+    "date": "2026-10-20",
+    "decision": "HOLD_NEW_PRIEST_GENUFLECTION_ARTWORK",
+    "basis": "User rejected the trial illustrations. No further artwork generation until a genuinely suitable candidate can be supported. Continue source-owned text labels and timing, without introducing a false priest or faithful icon.",
+    "noLiveBindingChanges": true
+  }
 }
