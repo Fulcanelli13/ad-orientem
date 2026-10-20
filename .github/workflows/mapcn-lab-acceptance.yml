@@ -1,0 +1,36 @@
+name: Explore MapCN integration laboratory
+on:
+  pull_request:
+    paths:
+      - "labs/mapcn-integration/**"
+      - "tests/mapcn-lab-*"
+      - ".github/workflows/mapcn-lab-acceptance.yml"
+  push:
+    branches:
+      - "lab/mapcn-four-layouts-readonly-20261020"
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --test tests/mapcn-lab-contract.mjs
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/mapcn-lab-browser.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mapcn-lab-screenshots
+          path: artifacts/mapcn-lab
+          if-no-files-found: warn
