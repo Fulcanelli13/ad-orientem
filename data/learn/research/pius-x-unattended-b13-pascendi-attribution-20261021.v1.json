@@ -1,0 +1,232 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B13_PASCENDI_ATTRIBUTION_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "formation/1457-pius-x-conversation-evidence",
+  "counts": {
+    "families": 1,
+    "answerUnits": 2,
+    "originalEditorialNotesPreserved": 1,
+    "certified": 0,
+    "published": 0
+  },
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "records": [
+    {
+      "familyId": "SPX-PILOT-07",
+      "originalRecord": {
+        "id": "SPX-PILOT-07",
+        "caseId": "SPX-PILOT-07",
+        "domain": "MODERNISM",
+        "sourceScope": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+        "sourceAttribution": "AUTHORED_PAPAL_ENCYCLICAL",
+        "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+        "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+        "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+        "spriteSuggestion": "grave",
+        "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+        "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+        "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+        "translationReview": {
+          "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+          "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+        },
+        "renderedByApp": false,
+        "publishable": false,
+        "prohibitedInference": "Do not label specific contemporary persons or all modern scholarship as Modernist without evidence.",
+        "turns": [
+          {
+            "id": "SPX-PILOT-07-T1",
+            "intent": "opening",
+            "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+            "language": {
+              "en": {
+                "visitor": "Why does Pascendi call Modernism a synthesis of heresies?",
+                "response": "Modernism is presented not as one isolated error, but as a connected system. By making religious sentiment the origin of faith and permitting dogma to change, it undermines the objective character of divine revelation."
+              },
+              "fr": {
+                "visitor": "Pourquoi Pascendi présente-t-elle le modernisme comme une synthèse des hérésies ?",
+                "response": "Le modernisme n’est pas présenté comme une erreur isolée, mais comme un système d’erreurs liées entre elles. En faisant du sentiment religieux l’origine de la foi et en admettant un dogme changeant, il ébranle le caractère objectif de la Révélation divine."
+              }
+            },
+            "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+            "sourceRef": "SPX-PILOT-07",
+            "citationLabel": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+            "sourceCheckedForSubstantiveClaims": false,
+            "unsupportedNewPastoralAdviceAllowed": false,
+            "editorialApproval": false,
+            "visitorRelease": false,
+            "continuationOf": null,
+            "avatarLineAllowed": true,
+            "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+            "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+            "sourceLanguageTranslationApproval": false,
+            "periodVoiceApproval": false,
+            "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+            "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
+          },
+          {
+            "id": "SPX-PILOT-07-T2",
+            "intent": "source_followup",
+            "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+            "language": {
+              "en": {
+                "visitor": "What is the problem with making faith only religious feeling?",
+                "response": "If faith is made to spring from religious sentiment alone, revelation and dogma are made to depend upon human consciousness rather than the truth revealed by God."
+              },
+              "fr": {
+                "visitor": "Quel problème pose la réduction de la foi au seul sentiment religieux ?",
+                "response": "Si l’on fait naître la foi du seul sentiment religieux, la Révélation et le dogme se trouvent subordonnés à la conscience humaine, au lieu de la vérité révélée par Dieu."
+              }
+            },
+            "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+            "sourceRef": "SPX-PILOT-07",
+            "citationLabel": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+            "sourceCheckedForSubstantiveClaims": false,
+            "unsupportedNewPastoralAdviceAllowed": false,
+            "editorialApproval": false,
+            "visitorRelease": false,
+            "continuationOf": "SPX-PILOT-07-T1",
+            "avatarLineAllowed": true,
+            "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+            "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+            "sourceLanguageTranslationApproval": false,
+            "periodVoiceApproval": false,
+            "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+            "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
+          },
+          {
+            "id": "SPX-PILOT-07-T3",
+            "intent": "misconception_correction",
+            "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+            "language": {
+              "en": {
+                "visitor": "Does that make every scholar of recent times a Modernist?",
+                "response": "The passage addresses a specified doctrinal system; it is not evidence for labelling every contemporary scholar, nor does it establish the views of any particular living person."
+              },
+              "fr": {
+                "visitor": "Tout savant de notre époque serait-il donc moderniste ?",
+                "response": "Le passage vise un système doctrinal déterminé ; il ne permet ni d’appliquer cette qualification à tout savant contemporain, ni d’attribuer une doctrine à une personne vivante particulière."
+              }
+            },
+            "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
+            "sourceRef": "SPX-PILOT-07",
+            "citationLabel": "Pascendi dominici gregis §§39–40, interpreted with §§6–8 and §§11–13",
+            "sourceCheckedForSubstantiveClaims": false,
+            "unsupportedNewPastoralAdviceAllowed": false,
+            "editorialApproval": false,
+            "visitorRelease": false,
+            "continuationOf": "SPX-PILOT-07-T1",
+            "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+            "spriteSuggestion": null,
+            "avatarLineAllowed": false,
+            "editorialReason": "The historic doctrinal analysis cannot establish beliefs of contemporary named persons.",
+            "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+            "sourceLanguageTranslationApproval": false,
+            "periodVoiceApproval": false,
+            "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
+          }
+        ],
+        "dialogueDrafts": 2,
+        "sourceEditorialNotes": 1,
+        "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+        "independentHistoricalCertification": false
+      },
+      "proposedTurns": [
+        {
+          "en": "The condemnation concerns a connected system: agnosticism, faith derived from religious sentiment, and dogmatic formulas subjected to changing experience. Taken together, these errors imperil revealed truth.",
+          "fr": "La condamnation vise un système lié : l’agnosticisme, la foi dérivée du sentiment religieux et les formules dogmatiques soumises à l’expérience changeante. Ensemble, ces erreurs menacent la vérité révélée.",
+          "claims": [
+            {
+              "text": "Interconnected system and judgment",
+              "refs": [
+                "PDG39"
+              ]
+            },
+            {
+              "text": "Components specified",
+              "refs": [
+                "PDG6-8",
+                "PDG11-13"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "In that system, religious consciousness becomes the rule even for the Church’s teaching. This is the error condemned, rather than every affection accompanying faith.",
+          "fr": "Dans ce système, la conscience religieuse devient la règle jusque pour l’enseignement de l’Église. Voilà l’erreur condamnée, plutôt que toute affection accompagnant la foi.",
+          "claims": [
+            {
+              "text": "Consciousness criterion",
+              "refs": [
+                "PDG8"
+              ]
+            },
+            {
+              "text": "Scope restriction",
+              "refs": [
+                "PDG8",
+                "PDG39"
+              ],
+              "type": "EDITORIAL_BOUNDARY_IN_RECONSTRUCTION_REQUIRES_THEOLOGICAL_REVIEW"
+            }
+          ]
+        }
+      ],
+      "classification": "DOCUMENT_BOUND_RECONSTRUCTION_NOT_VERBATIM_PAPAL_DIALOGUE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "PDG39",
+      "work": "Pascendi dominici gregis (8 September 1907), English §39",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "originalLocator": "In tota hac modernistarum doctrina exponenda; Ideo didactica fere ratione usi sumus",
+      "exactLatinExcerpt": "omnium haereseon conlectum",
+      "supports": "Synthesis judgment belongs to Pope's assessment of described connected system"
+    },
+    {
+      "id": "PDG6-8",
+      "work": "Same English §§6–8",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "originalLocator": "Iam, ut a philosopho exordiamur; Haec porro divini indigentia; Sed non hic philosophandi",
+      "supports": "Agnosticism and immanentist account are reported and condemned, not papal teaching on origin of Catholic faith"
+    },
+    {
+      "id": "PDG8",
+      "work": "Same English §8",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "originalLocator": "Hinc autem, Venerabiles Fratres, affirmatio illa modernistarum perabsurda",
+      "supports": "Religious consciousness/revelation identification and universal rule over authority"
+    },
+    {
+      "id": "PDG11-13",
+      "work": "Same English §§11–13",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "originalLocator": "Huc usque tamen; Sic igitur in modernistarum doctrina; Quocirca nulla confici ratione potest",
+      "supports": "Intellect not absent from reported system; dogmatic formulas treated as changing expressions of sentiment; embedded quotation of Gregory XVI at end is not a new personal statement by Pius X"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "Original religious-sentiment-alone sentence could suggest the reported Modernist system assigned no role to intellect; §§11–13 explicitly assign it an elaborating role. Revised distinction concerns source/criterion, not absolute absence of intellect",
+    "Replace unqualified permitting dogma to change with formulas subjected to changing religious experience; do not infer condemnation of every explanatory development",
+    "Preserve attribution layers: Pius reports opponents, then judges them; embedded Vatican I definitions and Gregory XVI quotation are not invented private papal utterances"
+  ],
+  "duplicates": [],
+  "humanDecisions": [
+    "Theologian reviews precise description of condemned system and boundary about affectivity",
+    "Historical voice and EN/FR certification pending; contemporary person labeling remains excluded by existing editorial note"
+  ],
+  "newSubstantiveGaps": [],
+  "continue": true
+}
