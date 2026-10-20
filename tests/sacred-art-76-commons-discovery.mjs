@@ -7,8 +7,8 @@ const intake=get("data/research/sacred-art-bulk-source-intake-451-20261020.v1.js
 assert.equal(q.records.length,76);
 assert.deepEqual(q.batches.map(x=>x.count),[50,26]);
 assert.equal(q.stationObjectProgress.officialExactLinks,9);
-assert.equal(q.stationObjectProgress.wrongStationLinksRemaining,3);
-assert.equal(q.records.filter(x=>x.status==="HOLD_EXACT_OBJECT_LINKED_PHOTO_RIGHTS_UNVERIFIED").length,9);
+assert.equal(q.stationObjectProgress.wrongStationLinksRemaining,0);
+assert.equal(q.records.filter(x=>x.status==="MOVED_TO_EXACT_COMMONS_SOURCE_QA").length,12);
 const example={artworkId:"TEST-ONLY",title:"The Dream of Saint Joseph",artist:"Philippe de Champaigne"};
 const meta={LicenseShortName:{value:"CC BY-SA 4.0"},Copyrighted:{value:"True"},Artist:{value:"Philippe de Champaigne"},ImageDescription:{value:"The Dream of Saint Joseph"}};
 const page={title:"File:Philippe de Champaigne - The Dream of Saint Joseph.jpg",imageinfo:[{width:3100,height:2400,mime:"image/jpeg",sha1:"a".repeat(40),
@@ -27,7 +27,7 @@ assert.equal(screenCandidate(example,{...page,imageinfo:[{...page.imageinfo[0],w
 assert.equal(metadataIsPrado(page,page.imageinfo[0].extmetadata),false);
 assert.equal(searchTerms(example),"Philippe de Champaigne The Dream of Saint Joseph");
 const station=q.records.find(x=>/an-olo-ia-rucis-tation-02-/.test(x.artworkId));
-assert(station?.sourceUrl.endsWith("via-crucis-jesus-carries-the-cross/"));
+assert(station?.sourceUrl.includes("VIA_CRUCIS_II_")&&station.sourceObjectUrl?.endsWith("via-crucis-jesus-carries-the-cross/"));
 assert(searchTerms(station).includes("Giandomenico Tiepolo San Polo 2"));
 assert(!renderGallery([{...example,artist:"Example",lane:"TEST",candidates:[candidate]}]).includes("<script>"));
 assert.equal(intake.works.filter(x=>x.sourceObjectEvidence?.source==="OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE").length,9);
