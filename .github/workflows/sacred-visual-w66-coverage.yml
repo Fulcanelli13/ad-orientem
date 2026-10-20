@@ -20,6 +20,9 @@ on:
       - "tools/calendar/build-sacred-art-34-batch-shortlist.mjs"
       - "tools/calendar/reconcile-sacred-art-34-object-evidence.mjs"
       - "tools/calendar/discover-sacred-art-29-wikimedia-object-ids.mjs"
+      - "tools/calendar/reconcile-sacred-art-29-institution-checks.mjs"
+      - "tests/sacred-art-29-institutional-crosswalk.mjs"
+      - "data/research/sacred-art-29-institution-crosscheck-20261020.v1.json"
       - "tools/calendar/reconcile-sacred-art-five-licensed-aliases.mjs"
       - "tests/sacred-art-34-object-evidence.mjs"
       - "tests/sacred-art-117-commons-metadata.mjs"
@@ -210,6 +213,9 @@ jobs:
           node tools/calendar/reconcile-sacred-art-34-object-evidence.mjs
           node --check tools/calendar/discover-sacred-art-29-wikimedia-object-ids.mjs
           node tools/calendar/discover-sacred-art-29-wikimedia-object-ids.mjs
+          node tests/sacred-art-29-institutional-crosswalk.mjs
+          node --check tools/calendar/reconcile-sacred-art-29-institution-checks.mjs
+          node tools/calendar/reconcile-sacred-art-29-institution-checks.mjs
           node --check tools/calendar/reconcile-sacred-art-five-licensed-aliases.mjs
           node tools/calendar/reconcile-sacred-art-five-licensed-aliases.mjs
       - name: Archive full 76-work ranked review with provenance
