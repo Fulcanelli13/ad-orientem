@@ -118,7 +118,7 @@ assert.deepEqual(R.exception_queues.places_pending_coordinates,
  R.place_crosswalk.filter(p=>p.geo_source_status==="PENDING_COORDINATES").map(p=>p.place_id));
 assert.deepEqual(R.exception_queues.coordinates_without_source_url,
  R.place_crosswalk.filter(p=>p.geo_source_status==="COORDINATES_MISSING_SOURCE_URL").map(p=>p.place_id));
-const laterAttestationIds=new Set(admittedAfterSnapshot.map(x=>x[1]));
+const laterAttestationIds=new Set([...admittedAfterSnapshot.map(x=>x[1]),...postSnapshotAttestationEnrichments]);
 assert.deepEqual(R.exception_queues.customs_without_exact_place,
  C.attestations.filter(p=>!p.place_id&&!laterAttestationIds.has(p.attestation_id)).map(p=>({
    id:p.attestation_id,map_policy:p.map_policy,geo_area_id:p.geo_area_id??null
