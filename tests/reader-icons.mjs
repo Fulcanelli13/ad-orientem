@@ -106,7 +106,7 @@ assert.equal(keys.priestPositionIconKey,"priest_facing_people",
 keys=iconKeysForReaderState({priestAction:{label:"GENUFLECTS"}});
 assert.equal(keys.priestActionIconKey,null,"priest genuflect donor is unreviewed for this owner");
 keys=iconKeysForReaderState({priestAction:{label:"WASHES / PURIFIES"}});
-assert.equal(keys.priestActionIconKey,"lavabo");
+assert.equal(keys.priestActionIconKey,null,"ambiguous Lavabo/ablutions label cannot select one universal artwork");
 keys=iconKeysForReaderState({priestAction:{label:"UNMAPPED SOURCE ACTION"}});
 assert.equal(keys.priestActionIconKey,null,"unmapped action guessed an unrelated icon");
 
@@ -240,7 +240,7 @@ for(const [label,want] of [
   ["INTONES CREDO","review_priest_credo_chant"],
   ["INCENSES PEOPLE",null],
   ["RECEIVES INCENSE",null],
-  ["RECEIVES HOST",null],
+  ["RECEIVES HOST","review_priest_receive_host"],
   ["RECEIVES CHALICE","review_priest_receive_chalice"],
   ["BREAKS HOST","review_priest_fraction_host"],
   ["PLACES PARTICLE","review_priest_commingling"],
