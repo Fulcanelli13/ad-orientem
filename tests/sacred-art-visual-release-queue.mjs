@@ -23,4 +23,4 @@ assert.deepEqual(queue.groups,{MUSEUM_OPEN_ACCESS_VISUAL_REVIEW:1,ATTRIBUTION_AN
 assert(queue.records.every(x=>!x.productionReleaseApproved&&!x.exactPaintingVisualMatchApproved&&!x.reproductionRightsForAppApproved));
 assert.equal(queue.releaseCount,0);
 assert.throws(()=>buildReviewQueue({images:sample,summary:{productionReleased:1}}),/Bad or published/);
-console.log("PASS: 93 artwork source release queue remains curated, museum Open Access prioritized and all actual publication blocked");
+console.log("PASS: artwork source release queue remains curated, museum Open Access prioritized and all actual publication blocked");
