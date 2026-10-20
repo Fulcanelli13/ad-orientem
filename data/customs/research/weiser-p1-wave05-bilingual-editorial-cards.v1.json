@@ -1,6 +1,6 @@
 {
   "schema": "AO_WEISER_P1_WAVE05_EDITORIAL_V1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "date": "2026-10-20",
   "state": "RESEARCH_EDITORIAL_ONLY_NOT_PUBLICATION",
   "source": "data/customs/research/weiser-p1-wave05-source-corroboration.v1.json",
@@ -15,7 +15,8 @@
     "Do not reproduce Weiser copyrighted paragraphs; retain exact printed page locator.",
     "One active calendar, rites, Saints, Pray and Customs owner; no duplicate new practices.",
     "No household liturgy, protective magic, false indulgence or universal claim from a local custom.",
-    "Do not publish texts from a witness whose support is limited to same author, different country, different object, or different day."
+    "Do not publish texts from a witness whose support is limited to same author, different country, different object, or different day.",
+    "Card validation checks field semantics, including that geographic scope and editorial cautions cannot be an app-owner label."
   ],
   "cards": [
     {
@@ -23,14 +24,14 @@
       "title_en": "The Advent manger of good deeds",
       "title_fr": "La crèche préparée par les bonnes actions",
       "occasion": "Advent; especially family preparations before Christmas",
-      "scope": "Children in some Catholic families place a little straw in an empty manger after doing a good deed or saying a prayer. The custom makes their preparation for the coming of the Christ Child visible, without measuring grace or turning charity into a competition.",
-      "description_en": "Dans certaines familles catholiques, les enfants déposent un peu de paille dans une mangeoire après une bonne action ou une prière. La coutume rend visible leur préparation à la venue de l'Enfant Jésus, sans mesurer la grâce ni transformer la charité en compétition.",
-      "description_fr": "The empty crib reminds everyone to make room for Christ through charity and conversion.",
-      "meaning_en": "La mangeoire vide rappelle qu'il faut faire place au Christ par la charité et la conversion.",
-      "meaning_fr": "As a freely chosen family custom, add a little straw after acts of kindness; pray together before placing the Child Jesus in the crib at Christmas.",
-      "optional_observance_en": "À titre de coutume familiale libre, ajouter un peu de paille après un geste de bonté et prier ensemble avant de déposer l'Enfant Jésus dans la crèche à Noël.",
-      "optional_observance_fr": "Traditional French attribution is not proof that every French region practised it; no obligation or in-app counting mechanism.",
-      "caution": "Calendar / Existing Nativity and household devotions",
+      "scope": "Catholic household Advent custom; French origin is a traditional attribution, not universal local practice",
+      "description_en": "Children in some Catholic families place a little straw in an empty manger after doing a good deed or saying a prayer. The custom makes their preparation for the coming of the Christ Child visible, without measuring grace or turning charity into a competition.",
+      "description_fr": "Dans certaines familles catholiques, les enfants déposent un peu de paille dans une mangeoire après une bonne action ou une prière. La coutume rend visible leur préparation à la venue de l'Enfant Jésus, sans mesurer la grâce ni transformer la charité en compétition.",
+      "meaning_en": "The empty crib reminds everyone to make room for Christ through charity and conversion.",
+      "meaning_fr": "La mangeoire vide rappelle qu'il faut faire place au Christ par la charité et la conversion.",
+      "optional_observance_en": "As a freely chosen family custom, add a little straw after acts of kindness; pray together before placing the Child Jesus in the crib at Christmas.",
+      "optional_observance_fr": "À titre de coutume familiale libre, ajouter un peu de paille après un geste de bonté et prier ensemble avant de déposer l'Enfant Jésus dans la crèche à Noël.",
+      "caution": "Traditional French attribution is not proof that every French region practised it; no obligation or in-app counting mechanism.",
       "weiser_locators": [
         {
           "id": "WEI58-05-005",
@@ -47,21 +48,22 @@
           "claim_limit": "Contemporary independent Catholic family firsthand practice, explicitly describes a French-origin custom in which children put straw in the manger after prayers and good deeds. French origin is a traditional attribution, not documented in modern France by this source."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Calendar / Existing Nativity and household devotions"
     },
     {
       "card_id": "W58-P1-B5-STEPHEN_CHARITY",
       "title_en": "Charity on St Stephen's Day",
       "title_fr": "La charité le jour de saint Étienne",
       "occasion": "26 December, feast of St Stephen",
-      "scope": "Some Catholic household guides suggest remembering St Stephen, the first martyr, by reading his account in the Acts of the Apostles and offering useful help or gifts to someone in need. This is a voluntary family expression of the saint's concern for the poor.",
-      "description_en": "Certains guides familiaux catholiques proposent d'honorer saint Étienne, premier martyr, en lisant son histoire dans les Actes des Apôtres et en rendant service à une personne dans le besoin. C'est une expression libre de charité familiale.",
-      "description_fr": "Stephen's witness joins service to others with fidelity to Christ even in suffering.",
-      "meaning_en": "Le témoignage d'Étienne unit le service du prochain à la fidélité au Christ jusque dans la souffrance.",
-      "meaning_fr": "Read Acts 6–7 and offer an act of practical kindness or charity without feeling obliged to buy anything.",
-      "optional_observance_en": "Lire les Actes 6–7 et offrir un geste concret de service ou de charité, sans obligation d'achat.",
-      "optional_observance_fr": "Keep the 26 December date with the 1962 Calendar owner and do not add a new obligatory almsgiving rite.",
-      "caution": "Calendar / Saints; optional household charity",
+      "scope": "Optional family charity inspired by the 26 December feast of St Stephen",
+      "description_en": "Some Catholic household guides suggest remembering St Stephen, the first martyr, by reading his account in the Acts of the Apostles and offering useful help or gifts to someone in need. This is a voluntary family expression of the saint's concern for the poor.",
+      "description_fr": "Certains guides familiaux catholiques proposent d'honorer saint Étienne, premier martyr, en lisant son histoire dans les Actes des Apôtres et en rendant service à une personne dans le besoin. C'est une expression libre de charité familiale.",
+      "meaning_en": "Stephen's witness joins service to others with fidelity to Christ even in suffering.",
+      "meaning_fr": "Le témoignage d'Étienne unit le service du prochain à la fidélité au Christ jusque dans la souffrance.",
+      "optional_observance_en": "Read Acts 6–7 and offer an act of practical kindness or charity without feeling obliged to buy anything.",
+      "optional_observance_fr": "Lire les Actes 6–7 et offrir un geste concret de service ou de charité, sans obligation d'achat.",
+      "caution": "Keep the 26 December date with the 1962 Calendar owner and do not add a new obligatory almsgiving rite.",
       "weiser_locators": [
         {
           "id": "WEI58-08-025",
@@ -78,21 +80,22 @@
           "claim_limit": "Catholic family guide instructs using 26 December as a time to read Acts 6–7 and give useful gifts to the poor. No requirement for money, purchase or novel St Stephen rite."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Calendar / Saints; optional household charity"
     },
     {
       "card_id": "W58-P1-B5-KUTIA",
       "title_en": "Kutia at a Ukrainian Christmas Eve table",
       "title_fr": "La koutia au repas ukrainien de la veille de Noël",
       "occasion": "Christmas Eve according to the household's tradition and calendar",
-      "scope": "In many Ukrainian families, Christmas Eve supper begins with kutia, a dish made with wheat, honey and poppy seeds. It is part of a broader family meal marked by prayer, remembrance and hospitality. Regional recipes vary.",
-      "description_en": "Dans de nombreuses familles ukrainiennes, le repas de la veille de Noël commence par la koutia, préparée avec du blé, du miel et des graines de pavot. Elle accompagne un repas familial marqué par la prière, le souvenir et l'hospitalité. Les recettes varient selon les régions.",
-      "description_fr": "Sharing a meal can express gratitude, charity and remembrance of those absent.",
-      "meaning_en": "Partager le repas peut exprimer la reconnaissance, la charité et le souvenir des absents.",
-      "meaning_fr": "Where this belongs to your heritage, prepare or share the dish and pray for family members and those in need.",
-      "optional_observance_en": "Si cette coutume appartient à votre tradition, préparer ou partager ce plat et prier pour les membres de la famille et les personnes dans le besoin.",
-      "optional_observance_fr": "No mandatory recipe; no fortune-telling, magic or suggestion that East-Slavic household traditions are 1962 Roman Mass rubrics.",
-      "caution": "Customs Atlas / historical regional household",
+      "scope": "Ukrainian and Ukrainian-diaspora Christmas Eve food custom; distinct from 1962 Roman liturgical observances",
+      "description_en": "In many Ukrainian families, Christmas Eve supper begins with kutia, a dish made with wheat, honey and poppy seeds. It is part of a broader family meal marked by prayer, remembrance and hospitality. Regional recipes vary.",
+      "description_fr": "Dans de nombreuses familles ukrainiennes, le repas de la veille de Noël commence par la koutia, préparée avec du blé, du miel et des graines de pavot. Elle accompagne un repas familial marqué par la prière, le souvenir et l'hospitalité. Les recettes varient selon les régions.",
+      "meaning_en": "Sharing a meal can express gratitude, charity and remembrance of those absent.",
+      "meaning_fr": "Partager le repas peut exprimer la reconnaissance, la charité et le souvenir des absents.",
+      "optional_observance_en": "Where this belongs to your heritage, prepare or share the dish and pray for family members and those in need.",
+      "optional_observance_fr": "Si cette coutume appartient à votre tradition, préparer ou partager ce plat et prier pour les membres de la famille et les personnes dans le besoin.",
+      "caution": "No mandatory recipe; no fortune-telling, magic or suggestion that East-Slavic household traditions are 1962 Roman Mass rubrics.",
       "weiser_locators": [
         {
           "id": "WEI58-09-002",
@@ -109,21 +112,22 @@
           "claim_limit": "First-person Ukrainian cultural account documents wheat-berry, honey and poppy seed dish in Christmas Eve family meal. Pagan divination and dead-spirit beliefs are reported historically only, never recommended."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Customs Atlas / historical regional household"
     },
     {
       "card_id": "W58-P1-B5-LENTEN_VEIL",
       "title_en": "The Lenten hunger cloth in church",
       "title_fr": "Le voile de Carême dans les églises",
       "occasion": "Lent, in churches where this historic custom is retained",
-      "scope": "A hunger cloth or Lenten veil was traditionally used in parts of Catholic Europe to cover the sanctuary or religious images during Lent. Some German churches continue to use historic veils or contemporary forms of this visual penitential custom.",
-      "description_en": "Dans certaines régions catholiques d'Europe, un grand voile de Carême masquait autrefois le sanctuaire ou des images religieuses. Certaines églises allemandes conservent des voiles anciens ou des formes contemporaines de cette pratique pénitentielle.",
-      "description_fr": "Removing familiar visual splendour can draw attention to repentance and Christ's Passion.",
-      "meaning_en": "La privation de certaines images habituelles peut inviter à la pénitence et à la méditation de la Passion du Christ.",
-      "meaning_fr": "If a local church uses such a veil, learn its meaning; make your own Lent a time of prayer and simplicity rather than attempting to alter a sanctuary.",
-      "optional_observance_en": "Si une église utilise un tel voile, en découvrir le sens ; vivre le Carême par la prière et la simplicité sans entreprendre de modifier le sanctuaire.",
-      "optional_observance_fr": "Do not conflate medieval sanctuary veils, modern Hunger Cloth art and 1962 Passiontide image veiling; clergy control any actual altar arrangement.",
-      "caution": "Learn / historical church custom, not an app ceremony",
+      "scope": "Catholic historical custom retained in selected German-speaking churches; church authority controls arrangement",
+      "description_en": "A hunger cloth or Lenten veil was traditionally used in parts of Catholic Europe to cover the sanctuary or religious images during Lent. Some German churches continue to use historic veils or contemporary forms of this visual penitential custom.",
+      "description_fr": "Dans certaines régions catholiques d'Europe, un grand voile de Carême masquait autrefois le sanctuaire ou des images religieuses. Certaines églises allemandes conservent des voiles anciens ou des formes contemporaines de cette pratique pénitentielle.",
+      "meaning_en": "Removing familiar visual splendour can draw attention to repentance and Christ's Passion.",
+      "meaning_fr": "La privation de certaines images habituelles peut inviter à la pénitence et à la méditation de la Passion du Christ.",
+      "optional_observance_en": "If a local church uses such a veil, learn its meaning; make your own Lent a time of prayer and simplicity rather than attempting to alter a sanctuary.",
+      "optional_observance_fr": "Si une église utilise un tel voile, en découvrir le sens ; vivre le Carême par la prière et la simplicité sans entreprendre de modifier le sanctuaire.",
+      "caution": "Do not conflate medieval sanctuary veils, modern Hunger Cloth art and 1962 Passiontide image veiling; clergy control any actual altar arrangement.",
       "weiser_locators": [
         {
           "id": "WEI58-14-009",
@@ -140,21 +144,22 @@
           "claim_limit": "Official Catholic source describes Fastentuch before altar in some churches, a Lenten visual penitential custom. Liturgical rubrics and placement are not fixed for all parishes."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Learn / historical church custom, not an app ceremony"
     },
     {
       "card_id": "W58-P1-B5-MOTHERING",
       "title_en": "Mothering Sunday and the simnel cake",
       "title_fr": "Le Mothering Sunday et le gâteau simnel",
       "occasion": "Fourth Sunday of Lent, historically in Britain",
-      "scope": "Historically, British Christians visited their 'mother church' on the fourth Sunday of Lent, a day that also allowed many families to reunite. In later forms, young people visited their mothers and brought a simnel fruitcake. The church visit and family cake are connected but distinct practices.",
-      "description_en": "En Grande-Bretagne, on visitait autrefois son « église mère » le quatrième dimanche de Carême. Ce jour favorisait aussi les retrouvailles familiales. Plus tard, des jeunes rendaient visite à leur mère avec un gâteau aux fruits appelé simnel. La visite à l'église et le gâteau restent deux usages distincts.",
-      "description_fr": "The custom recalls the Church as mother and the duty of gratitude toward one's family.",
-      "meaning_en": "La coutume rappelle l'Église comme mère et le devoir de reconnaissance envers sa famille.",
-      "meaning_fr": "Remember the church where you were baptised and pray for your mother or family; a family visit or shared cake is optional.",
-      "optional_observance_en": "Se souvenir de l'église de son baptême et prier pour sa mère ou sa famille ; une visite ou un gâteau partagé restent facultatifs.",
-      "optional_observance_fr": "British heritage practice, not a universal Laetare Sunday obligation or a change to the Roman rite.",
-      "caution": "Calendar / Customs Atlas; no duplicate feast",
+      "scope": "British family and church heritage; Fourth Sunday of Lent, not universal",
+      "description_en": "Historically, British Christians visited their 'mother church' on the fourth Sunday of Lent, a day that also allowed many families to reunite. In later forms, young people visited their mothers and brought a simnel fruitcake. The church visit and family cake are connected but distinct practices.",
+      "description_fr": "En Grande-Bretagne, on visitait autrefois son « église mère » le quatrième dimanche de Carême. Ce jour favorisait aussi les retrouvailles familiales. Plus tard, des jeunes rendaient visite à leur mère avec un gâteau aux fruits appelé simnel. La visite à l'église et le gâteau restent deux usages distincts.",
+      "meaning_en": "The custom recalls the Church as mother and the duty of gratitude toward one's family.",
+      "meaning_fr": "La coutume rappelle l'Église comme mère et le devoir de reconnaissance envers sa famille.",
+      "optional_observance_en": "Remember the church where you were baptised and pray for your mother or family; a family visit or shared cake is optional.",
+      "optional_observance_fr": "Se souvenir de l'église de son baptême et prier pour sa mère ou sa famille ; une visite ou un gâteau partagé restent facultatifs.",
+      "caution": "British heritage practice, not a universal Laetare Sunday obligation or a change to the Roman rite.",
       "weiser_locators": [
         {
           "id": "WEI58-14-012",
@@ -183,21 +188,22 @@
           "claim_limit": "British family custom associates mother-visiting and simnel cake with fourth Lent Sunday. The claim does not establish obligatory observance and overlaps Mothering Sunday mother-church visit without being identical."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Calendar / Customs Atlas; no duplicate feast"
     },
     {
       "card_id": "W58-P1-B5-HOT_CROSS",
       "title_en": "The Good Friday hot cross bun",
       "title_fr": "Le petit pain marqué d'une croix du Vendredi saint",
       "occasion": "Good Friday, especially in English historical custom",
-      "scope": "In England, spiced bread marked with a cross became associated with Good Friday. Historical records document the sale and eating of these buns by the eighteenth century, while the claim that they originated in a particular ancient abbey is less certain.",
-      "description_en": "En Angleterre, des petits pains épicés marqués d'une croix se sont associés au Vendredi saint. Des sources historiques attestent leur vente et leur consommation au XVIIIe siècle, alors que leur origine exacte dans une ancienne abbaye reste discutée.",
-      "description_fr": "The cross can recall Christ's Passion, although the bun is ordinary food and not a sacrament.",
-      "meaning_en": "La croix peut rappeler la Passion du Christ, mais le petit pain reste une nourriture ordinaire et non un sacrement.",
-      "meaning_fr": "If this belongs to your heritage, share a cross-marked bun without allowing festive food to displace prayer, fasting or attendance at the Good Friday liturgy.",
-      "optional_observance_en": "Si cette coutume fait partie de votre tradition, partager un petit pain marqué d'une croix sans laisser le repas supplanter la prière, la pénitence ou la liturgie du Vendredi saint.",
-      "optional_observance_fr": "Discard beliefs that the bun heals disease, never decays or protects a household; distinguish optional food from the binding discipline applicable locally.",
-      "caution": "Customs Atlas / Good Friday historical culture",
+      "scope": "English Good Friday food tradition with documented early modern examples",
+      "description_en": "In England, spiced bread marked with a cross became associated with Good Friday. Historical records document the sale and eating of these buns by the eighteenth century, while the claim that they originated in a particular ancient abbey is less certain.",
+      "description_fr": "En Angleterre, des petits pains épicés marqués d'une croix se sont associés au Vendredi saint. Des sources historiques attestent leur vente et leur consommation au XVIIIe siècle, alors que leur origine exacte dans une ancienne abbaye reste discutée.",
+      "meaning_en": "The cross can recall Christ's Passion, although the bun is ordinary food and not a sacrament.",
+      "meaning_fr": "La croix peut rappeler la Passion du Christ, mais le petit pain reste une nourriture ordinaire et non un sacrement.",
+      "optional_observance_en": "If this belongs to your heritage, share a cross-marked bun without allowing festive food to displace prayer, fasting or attendance at the Good Friday liturgy.",
+      "optional_observance_fr": "Si cette coutume fait partie de votre tradition, partager un petit pain marqué d'une croix sans laisser le repas supplanter la prière, la pénitence ou la liturgie du Vendredi saint.",
+      "caution": "Discard beliefs that the bun heals disease, never decays or protects a household; distinguish optional food from the binding discipline applicable locally.",
       "weiser_locators": [
         {
           "id": "WEI58-15-032",
@@ -214,21 +220,22 @@
           "claim_limit": "Documented English Good Friday eating and selling cross-marked spiced buns by eighteenth century. Ancient pagan origin, miraculous healing and protective charm claims remain unverified or rejected."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Customs Atlas / Good Friday historical culture"
     },
     {
       "card_id": "W58-P1-B5-EMMAUS",
       "title_en": "An Easter Monday Emmaus walk",
       "title_fr": "Une marche d'Emmaüs le lundi de Pâques",
       "occasion": "Easter Monday, especially in southern Germany and Austria",
-      "scope": "In parts of southern Germany and Austria, a traditional Easter Monday walk commemorates the disciples' encounter with the risen Christ on the road to Emmaus. Some families or parishes walk toward a church or shrine, with moments of prayer and Scripture.",
-      "description_en": "Dans certaines régions du sud de l'Allemagne et d'Autriche, une promenade du lundi de Pâques rappelle la rencontre des disciples avec le Christ ressuscité sur le chemin d'Emmaüs. Des familles ou paroisses marchent parfois vers une église ou un sanctuaire en priant.",
-      "description_fr": "The walk encourages recognition of the risen Lord in Scripture and ordinary companionship.",
-      "meaning_en": "La marche invite à reconnaître le Seigneur ressuscité dans l'Écriture et la rencontre fraternelle.",
-      "meaning_fr": "Read Luke 24:13–35, take a gentle walk with family or friends and pray together; a real local parish walk may be joined where one is offered.",
-      "optional_observance_en": "Lire Luc 24, 13–35, marcher paisiblement en famille ou avec des amis et prier ensemble ; participer à une marche paroissiale là où elle est proposée.",
-      "optional_observance_fr": "No invented church route, liturgical procession or assumption that the custom is observed universally.",
-      "caution": "Calendar / seasonal domestic custom",
+      "scope": "Regional Roman Catholic walks especially in Bavaria and Austria, optional",
+      "description_en": "In parts of southern Germany and Austria, a traditional Easter Monday walk commemorates the disciples' encounter with the risen Christ on the road to Emmaus. Some families or parishes walk toward a church or shrine, with moments of prayer and Scripture.",
+      "description_fr": "Dans certaines régions du sud de l'Allemagne et d'Autriche, une promenade du lundi de Pâques rappelle la rencontre des disciples avec le Christ ressuscité sur le chemin d'Emmaüs. Des familles ou paroisses marchent parfois vers une église ou un sanctuaire en priant.",
+      "meaning_en": "The walk encourages recognition of the risen Lord in Scripture and ordinary companionship.",
+      "meaning_fr": "La marche invite à reconnaître le Seigneur ressuscité dans l'Écriture et la rencontre fraternelle.",
+      "optional_observance_en": "Read Luke 24:13–35, take a gentle walk with family or friends and pray together; a real local parish walk may be joined where one is offered.",
+      "optional_observance_fr": "Lire Luc 24, 13–35, marcher paisiblement en famille ou avec des amis et prier ensemble ; participer à une marche paroissiale là où elle est proposée.",
+      "caution": "No invented church route, liturgical procession or assumption that the custom is observed universally.",
       "weiser_locators": [
         {
           "id": "WEI58-16-028",
@@ -245,21 +252,22 @@
           "claim_limit": "Catholic archdiocesan explanation specifically documents Bavarian/Austrian Easter Monday family or parish walks tied to Luke 24:13–35, sometimes concluding at church or shrine."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Calendar / seasonal domestic custom"
     },
     {
       "card_id": "W58-P1-B5-PYSANKY",
       "title_en": "Decorated Easter eggs of Poland and Ukraine",
       "title_fr": "Les œufs de Pâques décorés en Pologne et en Ukraine",
       "occasion": "Easter season, especially Polish and Ukrainian household cultures",
-      "scope": "In Poland and Ukraine, families decorate eggs as pisanki or pysanky, sometimes using wax-resist patterns. Museums document them as Easter art and family gifts, with numerous local designs and stories.",
-      "description_en": "En Pologne et en Ukraine, des familles décorent des œufs appelés pisanki ou pysanky, parfois à l'aide de motifs réalisés à la cire. Les musées témoignent de cet art pascal et de ses nombreux styles locaux.",
-      "description_fr": "Eggs can recall the new life associated with Easter, but painted patterns have varied cultural meanings.",
-      "meaning_en": "Les œufs peuvent rappeler la vie nouvelle de Pâques, mais les motifs peints possèdent des significations culturelles variées.",
-      "meaning_fr": "Decorate eggs together as a family Easter activity and connect the occasion with prayer and the Gospel of the Resurrection.",
-      "optional_observance_en": "Décorer des œufs en famille et relier cette activité à la prière et à l'Évangile de la Résurrection.",
-      "optional_observance_fr": "Do not endorse magical or divinatory claims; the museum evidence does not prove a specific 1962 food-blessing formula.",
-      "caution": "Customs Atlas / optional Easter family art",
+      "scope": "Polish and Ukrainian Easter egg-decorating heritage documented by museums",
+      "description_en": "In Poland and Ukraine, families decorate eggs as pisanki or pysanky, sometimes using wax-resist patterns. Museums document them as Easter art and family gifts, with numerous local designs and stories.",
+      "description_fr": "En Pologne et en Ukraine, des familles décorent des œufs appelés pisanki ou pysanky, parfois à l'aide de motifs réalisés à la cire. Les musées témoignent de cet art pascal et de ses nombreux styles locaux.",
+      "meaning_en": "Eggs can recall the new life associated with Easter, but painted patterns have varied cultural meanings.",
+      "meaning_fr": "Les œufs peuvent rappeler la vie nouvelle de Pâques, mais les motifs peints possèdent des significations culturelles variées.",
+      "optional_observance_en": "Decorate eggs together as a family Easter activity and connect the occasion with prayer and the Gospel of the Resurrection.",
+      "optional_observance_fr": "Décorer des œufs en famille et relier cette activité à la prière et à l'Évangile de la Résurrection.",
+      "caution": "Do not endorse magical or divinatory claims; the museum evidence does not prove a specific 1962 food-blessing formula.",
       "weiser_locators": [
         {
           "id": "WEI58-17-014",
@@ -276,21 +284,22 @@
           "claim_limit": "Museum documents named Polish and Ukrainian decorated eggs and Easter exchange, including wax-resist art. Does not validate symbolic lucky charms or mandatory Holy Saturday rites."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Customs Atlas / optional Easter family art"
     },
     {
       "card_id": "W58-P1-B5-ASSUMPTION_HERBS",
       "title_en": "Herb bouquets blessed on the Assumption",
       "title_fr": "Les bouquets d'herbes bénits à l'Assomption",
       "occasion": "15 August; certain German-speaking and Alpine localities",
-      "scope": "In parts of Catholic Europe, families prepare small bouquets of herbs and flowers for a blessing by a priest around the Assumption. A Bavarian parish reports local volunteers assembling such bouquets before the feast.",
-      "description_en": "Dans certaines régions catholiques d'Europe, les familles préparent des bouquets d'herbes et de fleurs pour les faire bénir par un prêtre à l'occasion de l'Assomption. Une paroisse bavaroise décrit la confection locale de ces bouquets avant la fête.",
-      "description_fr": "The plants express gratitude for the gifts of creation and a desire to ask God's blessing through Mary's feast.",
-      "meaning_en": "Les plantes expriment la reconnaissance pour les dons de la création et le désir de demander la bénédiction de Dieu lors de la fête de Marie.",
-      "meaning_fr": "Where a parish announces the traditional blessing, prepare a simple bouquet and present it to the priest; otherwise observe the Assumption through Mass and prayer.",
-      "optional_observance_en": "Là où une paroisse annonce cette bénédiction, préparer un simple bouquet et le présenter au prêtre ; ailleurs, célébrer l'Assomption par la messe et la prière.",
-      "optional_observance_fr": "PR #1512 already owns the integration proposal: enrichment only, no second canonical custom or home-performed blessing. No magical or medicinal claims.",
-      "caution": "Existing blessing owner in PR #1512 / Calendar",
+      "scope": "Bavarian Catholic communities, blessing announced locally; not every Assumption Mass",
+      "description_en": "In parts of Catholic Europe, families prepare small bouquets of herbs and flowers for a blessing by a priest around the Assumption. A Bavarian parish reports local volunteers assembling such bouquets before the feast.",
+      "description_fr": "Dans certaines régions catholiques d'Europe, les familles préparent des bouquets d'herbes et de fleurs pour les faire bénir par un prêtre à l'occasion de l'Assomption. Une paroisse bavaroise décrit la confection locale de ces bouquets avant la fête.",
+      "meaning_en": "The plants express gratitude for the gifts of creation and a desire to ask God's blessing through Mary's feast.",
+      "meaning_fr": "Les plantes expriment la reconnaissance pour les dons de la création et le désir de demander la bénédiction de Dieu lors de la fête de Marie.",
+      "optional_observance_en": "Where a parish announces the traditional blessing, prepare a simple bouquet and present it to the priest; otherwise observe the Assumption through Mass and prayer.",
+      "optional_observance_fr": "Là où une paroisse annonce cette bénédiction, préparer un simple bouquet et le présenter au prêtre ; ailleurs, célébrer l'Assomption par la messe et la prière.",
+      "caution": "PR #1512 already owns the integration proposal: enrichment only, no second canonical custom or home-performed blessing. No magical or medicinal claims.",
       "weiser_locators": [
         {
           "id": "WEI58-24-008",
@@ -313,21 +322,22 @@
           "claim_limit": "Official parish describes herbs tied into bouquets by women before the Assumption Mass and blessed locally; future diocese schedules likewise announce herb blessings. Magical healing or lightning protection claims are historical folklore, not Catholic guarantees."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Existing blessing owner in PR #1512 / Calendar"
     },
     {
       "card_id": "W58-P1-B5-ST_LUCIA",
       "title_en": "St Lucia's light and breakfast tradition",
       "title_fr": "La lumière et le petit déjeuner de sainte Lucie",
       "occasion": "13 December, particularly Swedish family and civic custom",
-      "scope": "In Sweden, the feast of St Lucia is marked by processions and family celebrations with white clothing, a symbolic candle crown, singing and saffron buns. It is part of Swedish cultural heritage associated with a Christian martyr, rather than a universal Catholic rite.",
-      "description_en": "En Suède, la fête de sainte Lucie s'accompagne de processions et de réunions familiales, de vêtements blancs, d'une couronne lumineuse, de chants et de brioches au safran. Cette tradition culturelle rappelle une martyre chrétienne sans constituer un rite catholique universel.",
-      "description_fr": "The light symbolism can help families recall Christ, the true light of the world, during Advent.",
-      "meaning_en": "Le symbole de la lumière peut aider les familles à se souvenir du Christ, véritable lumière du monde, pendant l'Avent.",
-      "meaning_fr": "Read a sound biography of St Lucy, pray briefly and share breakfast; if making a wreath, choose safe artificial lights.",
-      "optional_observance_en": "Lire une biographie fiable de sainte Lucie, prier brièvement et partager un petit déjeuner ; choisir des lumières artificielles pour une éventuelle couronne.",
-      "optional_observance_fr": "Swedish cultural tradition is not equivalent to a Catholic liturgical ceremony; the story about candles in Roman catacombs is devotional legend, not established historical proof.",
-      "caution": "Saints profile / regional cultural context",
+      "scope": "Swedish family and civic cultural tradition inspired by St Lucy, not a universal Catholic rite",
+      "description_en": "In Sweden, the feast of St Lucia is marked by processions and family celebrations with white clothing, a symbolic candle crown, singing and saffron buns. It is part of Swedish cultural heritage associated with a Christian martyr, rather than a universal Catholic rite.",
+      "description_fr": "En Suède, la fête de sainte Lucie s'accompagne de processions et de réunions familiales, de vêtements blancs, d'une couronne lumineuse, de chants et de brioches au safran. Cette tradition culturelle rappelle une martyre chrétienne sans constituer un rite catholique universel.",
+      "meaning_en": "The light symbolism can help families recall Christ, the true light of the world, during Advent.",
+      "meaning_fr": "Le symbole de la lumière peut aider les familles à se souvenir du Christ, véritable lumière du monde, pendant l'Avent.",
+      "optional_observance_en": "Read a sound biography of St Lucy, pray briefly and share breakfast; if making a wreath, choose safe artificial lights.",
+      "optional_observance_fr": "Lire une biographie fiable de sainte Lucie, prier brièvement et partager un petit déjeuner ; choisir des lumières artificielles pour une éventuelle couronne.",
+      "caution": "Swedish cultural tradition is not equivalent to a Catholic liturgical ceremony; the story about candles in Roman catacombs is devotional legend, not established historical proof.",
       "weiser_locators": [
         {
           "id": "WEI58-28-025",
@@ -344,7 +354,8 @@
           "claim_limit": "Tourism authority documents 13 December white robes, Lucia wreath, saffron buns and light symbolism; predominantly Swedish cultural usage, not specifically a Catholic rite nor true hagiographic account. Prefer LED crown."
         }
       ],
-      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED"
+      "editorial_status": "BILINGUAL_DRAFT_SOURCE_BOUNDED_NOT_APP_PUBLISHED",
+      "existing_owner": "Saints profile / regional cultural context"
     }
   ],
   "existing_context_enrichments": [
