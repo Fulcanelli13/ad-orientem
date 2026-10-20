@@ -1740,5 +1740,82 @@
         "PRIEST_GENUFLECTION"
       ]
     }
-  ]
+  ],
+  "reviewBranchRemediation": {
+    "date": "2026-10-20",
+    "branch": "review/20261019-mass-icon-sections",
+    "stage": "IMPLEMENTED_ON_DRAFT_BRANCH_NOT_MERGED",
+    "approvedArtSource": "assets/review/mass-icon-candidates/recovered-20261020/",
+    "replacements": [
+      {
+        "key": "ao_chant",
+        "cueId": "AO.SM.C0089",
+        "action": "INTONES CREDO",
+        "runtimeAlias": "review_priest_credo_chant"
+      },
+      {
+        "key": "ao_drink_chalice",
+        "cueId": "AO.SM.C0234",
+        "action": "RECEIVES CHALICE",
+        "runtimeAlias": "review_priest_receive_chalice"
+      },
+      {
+        "key": "ea_priest_fraction_host",
+        "cueId": "AO.SM.C0216",
+        "action": "BREAKS HOST",
+        "runtimeAlias": "review_priest_fraction_host"
+      },
+      {
+        "key": "ea_priest_commingling",
+        "cueId": "AO.SM.C0221",
+        "action": "PLACES PARTICLE",
+        "runtimeAlias": "review_priest_commingling"
+      }
+    ],
+    "preservedTextNoArtwork": [
+      {
+        "cueId": "AO.SM.C0110",
+        "action": "OFFERS HOST",
+        "reason": "The old art shows major elevation, not Offertory presentation"
+      },
+      {
+        "cueId": "AO.SM.C0114",
+        "action": "OFFERS CHALICE",
+        "reason": "The old art shows major elevation, not Offertory presentation"
+      },
+      {
+        "cueId": "AO.SM.C0088",
+        "action": "KISSES GOSPEL",
+        "reason": "The old picture was a priest-position illustration, not a kiss of the Gospel book"
+      },
+      {
+        "cueId": "AO.SM.C0131",
+        "action": "TURNS TO ALTAR",
+        "reason": "The old return-to-altar drawing was rejected"
+      }
+    ],
+    "stillOutstanding": [
+      "PRIEST_GENUFLECTION",
+      "PRIEST_COMMUNION_HOST_FROM_PR_1460",
+      "LAVABO_AND_POSTCOMMUNION_CUE_SPLIT",
+      "GENUINE_GOSPEL_TRIPLE_CROSS_ARTWORK",
+      "GOSPEL_SIDE_KISS",
+      "ALTAR_FOOT_STATION",
+      "INCENSATION_ACTOR",
+      "ADDITIONAL_ICON_QA"
+    ],
+    "testEvidence": {
+      "sourceResolver24Checks": "PASS",
+      "fullNodeTestSuite": "NOT_RUN",
+      "browserVisual": "NOT_RUN",
+      "CI": "NOT_REPORTED"
+    },
+    "scopeGuarantees": [
+      "No 67-master SVG overwritten",
+      "No source cue chronology or actor changes",
+      "Head-bow and priest-genuflection refusals preserved",
+      "Host and chalice major elevations retained",
+      "Do not merge without full repository test and mobile review"
+    ]
+  }
 }
