@@ -672,4 +672,43 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   }
 }
 
+/* C -> D: only source-owned canonical pilgrimages, not nearby guesses. */
+.aoHeritageSurface .aoHeritageJourneyLink{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:9px;min-height:44px;padding:10px 12px;
+  border:1px solid rgba(205,178,122,.48);border-radius:8px;
+  background:#1a2934;color:#e9d5ae;
+  font:600 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+  cursor:pointer;
+}
+.aoHeritageSurface .aoHeritageJourneyLink:focus-visible,
+.aoHeritageSurface .aoExplorePlaceJourneyRow:focus-visible{
+  outline:2px solid #e5c990;outline-offset:3px;
+}
+.aoHeritageSurface .aoExplorePlaceJourneys{
+  padding:16px 0;display:grid;gap:9px;
+}
+.aoHeritageSurface .aoExplorePlaceJourneys h3{
+  font:500 18px/1.3 var(--ao-font-display,Georgia,serif);
+  color:#eaddc5;margin:0 0 5px;
+}
+.aoHeritageSurface .aoExplorePlaceJourneyRow{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;
+  min-height:58px;width:100%;padding:12px 14px;
+  text-align:left;border-radius:9px;cursor:pointer;
+  border:1px solid rgba(205,178,122,.24);background:#13212d;color:#eadcc5;
+}
+.aoHeritageSurface .aoExplorePlaceJourneyRow strong{
+  display:block;grid-column:1;font:500 15px/1.3 var(--ao-font-body,Georgia,serif);
+}
+.aoHeritageSurface .aoExplorePlaceJourneyRow small{
+  grid-column:1;color:#baae9c;font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoExplorePlaceJourneyRow>span{
+  grid-column:2;grid-row:1/3;align-self:center;color:#d3bb8c;font-size:16px;
+}
+.aoHeritageSurface .aoExplorePlaceJourneys>p{
+  color:#b5a997;font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);margin:4px 0 0;
+}
+
 `;
