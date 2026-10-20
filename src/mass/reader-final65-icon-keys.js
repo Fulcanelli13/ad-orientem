@@ -245,7 +245,7 @@ export function finalCurated65IconKeys(state={}){
  const voiceCue=String(state.priestVoice?.cueId??currentCue);
  const form=token(state.form??state.celebrationForm);
  const inSung=["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(form);
- const number=Number(currentCue.match(/^AO\\.SM\\.C(\\d{4})$/)?.[1]??NaN);
+ const number=Number(currentCue.match(/^AO\.SM\.C(\d{4})$/)?.[1]??NaN);
  // Solemn Mass: the Epistle is sung by the subdeacon, the Gospel by
  // the deacon; do not display the celebrant chanting merely because the
  // public text advances. Those minister actors have independent cues.
