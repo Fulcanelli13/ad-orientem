@@ -143,6 +143,13 @@ try{
    assert.ok((await journey.locator(".aoJourneyNoLine").innerText()).includes("No route line"),
      "Two matched canonical site anchors are not walking geometry");
    await page.waitForTimeout(600);
+   const stageGap=await page.locator("[data-journey-map-stage]").evaluateAll(buttons=>{
+     if(buttons.length!==2)return -1;
+     const [a,b]=buttons.map(button=>button.getBoundingClientRect());
+     return Math.hypot(a.left+a.width/2-b.left-b.width/2,
+       a.top+a.height/2-b.top-b.height/2);
+   });
+   assert.ok(stageGap>=48,"Two distinct Holywell site medallions must be visually separated: "+stageGap);
    await page.screenshot({path:resolve(out,"explore-"+width+"-journey-holywell-site-markers.png"),fullPage:false});
    await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').click();
    await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
