@@ -31,27 +31,28 @@
     "excluded": 68,
     "editorialHold": 199,
     "eligibleExactMet": 22,
-    "eligibleExactCommons": 58,
-    "eligibleOtherSource": 58,
+    "eligibleExactCommons": 61,
+    "eligibleOtherSource": 54,
     "legacyFiveOutside451": [
       "W40-010",
       "W40-011",
       "prado-rubens-defenders"
     ],
     "eligibleExactCleveland": 14,
-    "pradoAcquisitionHolds": 30,
+    "pradoAcquisitionHolds": 31,
     "pradoHoldsAlreadyEditorialHold": 5,
-    "pradoHoldsApprovedOrHistoric": 25,
+    "pradoHoldsApprovedOrHistoric": 26,
     "pradoSourceHoldsApprovedExactCandidate": 1,
     "eligibleExactNga": 6,
-    "newNonPradoOpenSourceExactLinks": 23,
+    "newNonPradoOpenSourceExactLinks": 26,
     "sanPoloExactObjectLinksResolved": 9,
     "sanPoloOriginalWrongLinksUnresolved": 0,
     "sanPoloExactCommonsFilesRouted": 12,
     "sourcesWithExplicitOriginalPhotoRightsClaim": 12,
-    "eligibleExactAllNonPrado": 100,
+    "eligibleExactAllNonPrado": 103,
     "canonicalSourceDuplicateAliases": 1,
-    "approvedWorksSourceRoutesIncludingAliases": 101
+    "approvedWorksSourceRoutesIncludingAliases": 104,
+    "newPradoProvenanceReconciled": 1
   },
   "works": [
     {
@@ -2060,16 +2061,31 @@
       "id": "W14-006",
       "title": "The Miracles of Saint Francis Xavier (oil modello)",
       "artist": "Peter Paul Rubens",
-      "sourceUrl": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_miracles_of_St._Francis_Xavier,_Modello_-_Google_Art_Project.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourceObjectUrl": "https://artsandculture.google.com/asset/the-miracles-of-st-francis-xavier-modello-peter-paul-rubens/DQFycgfK_1VBHg",
+      "verifiedMuseumAccession": "GG 528",
+      "imageSourceVerification": {
+        "status": "ORIGINAL_OBJECT_CROSSCHECKED_AT_MUSEUM",
+        "museum": "Kunsthistorisches Museum Vienna",
+        "accession": "GG 528",
+        "officialObjectPage": "https://www.khm.at/en/artworks/",
+        "expectedSourcePixels": "4638x6545",
+        "note": "KHM modello GG 528; explicitly NOT the full altar painting GG 519. Preserve oil-sketch/modello identity.",
+        "rightsClaimMustBeCheckedFromFile": true,
+        "photoSelectionMatchVerified": false,
+        "humanCropReview": false,
+        "productionCertified": false,
+        "pradoProvenance": false
+      }
     },
     {
       "id": "ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
@@ -2551,16 +2567,31 @@
       "id": "ART-eter-aul-ubens-iracles-of-aint-rancis-of-aola",
       "title": "Miracles of Saint Francis of Paola",
       "artist": "Peter Paul Rubens",
-      "sourceUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Miracles_of_Saint_Francis_of_Paola_-_91.PB.50_-_J._Paul_Getty_Museum.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourceObjectUrl": "https://www.getty.edu/art/collection/object/103RJK",
+      "verifiedMuseumAccession": "91.PB.50",
+      "imageSourceVerification": {
+        "status": "ORIGINAL_OBJECT_CROSSCHECKED_AT_MUSEUM",
+        "museum": "J. Paul Getty Museum",
+        "accession": "91.PB.50",
+        "officialObjectPage": "https://www.getty.edu/art/collection/object/103RJK",
+        "expectedSourcePixels": "3140x4390",
+        "note": "Getty's original 1627–28 oil-on-panel modello; Commons image explicitly sourced from Getty's Open Content Program, subject to per-file CC0 check.",
+        "rightsClaimMustBeCheckedFromFile": true,
+        "photoSelectionMatchVerified": false,
+        "humanCropReview": false,
+        "productionCertified": false,
+        "pradoProvenance": false
+      }
     },
     {
       "id": "commons-morlete-sacred-heart-1759",
@@ -4127,17 +4158,32 @@
       "id": "ART-aravaggio-he-acrifice-of-saac",
       "title": "The Sacrifice of Isaac",
       "artist": "Caravaggio",
-      "sourceUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sacrifice_of_Isaac-Caravaggio_(Uffizi).jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectUrl": "https://www.uffizi.it/en/artworks/sacrifice-of-isaac",
+      "verifiedMuseumAccession": "1890 no. 4659",
+      "imageSourceVerification": {
+        "status": "ORIGINAL_OBJECT_CROSSCHECKED_AT_MUSEUM",
+        "museum": "Gallerie degli Uffizi, Florence",
+        "accession": "1890 no. 4659",
+        "officialObjectPage": "https://www.uffizi.it/en/artworks/sacrifice-of-isaac",
+        "expectedSourcePixels": "7972x6142",
+        "note": "1603 Uffizi original, not the alternate private-collection version. Commons file self-scanned, exact collection and dimensions match.",
+        "rightsClaimMustBeCheckedFromFile": true,
+        "photoSelectionMatchVerified": false,
+        "humanCropReview": false,
+        "productionCertified": false,
+        "pradoProvenance": false
+      }
     },
     {
       "id": "ART-os-de-ibera-acob-s-ream",
@@ -4151,9 +4197,18 @@
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
-        "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
+        "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
+        "ORIGINAL_IN_PRADO_SOURCE_EMBARGO"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "reason": "The original Ribera Jacob's Dream (1639) is held by Museo del Prado; do not source its reproduction or mirrored image. Existing approved artwork identity/rating remains unchanged.",
+        "scope": "SOURCE_ONLY",
+        "noFetch": true,
+        "noPromotion": true
+      },
+      "sourceObjectInstitution": "Museo del Prado"
     },
     {
       "id": "ART-ug-ne-elacroix-acob-restling-with-the-ngel",
