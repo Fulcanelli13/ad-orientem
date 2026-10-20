@@ -114,7 +114,7 @@ assert.deepEqual(projection.counts,{
   shrines:257,
   apparitions:33,
   relics:122,
-  traditions:93,
+  traditions:101,
   pilgrimages:240,
   saints:0, // Only six pilot profiles loaded in dedicated fixture.
 });
