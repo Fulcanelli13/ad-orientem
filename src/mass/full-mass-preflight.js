@@ -73,6 +73,45 @@ export function mountFullMassPreflight({
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
   let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
+  const donorSuppressed=new Map();
+  const suppressDonorDuplicates=()=>{
+    const panel=root?.parentElement;
+    if(!panel?.classList?.contains("aoMassFlowBody"))return;
+    const suppress=node=>{
+      if(!node||root.contains(node))return;
+      if(!donorSuppressed.has(node))donorSuppressed.set(node,{
+        hidden:node.hidden,display:node.style.display,
+        priority:node.style.getPropertyPriority("display"),
+      });
+      node.hidden=true;
+      node.style.setProperty("display","none","important");
+    };
+    // These are the old presentational owners, NOT the source resolver.
+    for(const node of panel.children){
+      if(node===root)continue;
+      if(node.matches?.(".aoPreflightHero,.aoReadiness,.aoPrototypeNote,.aoRubricStatus.ok,.aoBridgeNote.ok"))
+        suppress(node);
+      if(node.matches?.(".aoChoiceGrid")&&node.querySelector?.("[data-ao-follow]")){
+        suppress(node);
+        if(node.previousElementSibling?.matches?.(".aoFlowSection"))
+          suppress(node.previousElementSibling);
+      }
+    }
+    // The donor sometimes provides Back and Close as identical × icons.
+    const header=panel.parentElement;
+    if(header?.querySelector?.("[data-ao-close]")){
+      const back=[...header.querySelectorAll("[data-ao-back]")].find(node=>!root.contains(node));
+      if(back)suppress(back);
+    }
+  };
+  const restoreDonor=()=>{
+    for(const [node,old] of donorSuppressed){
+      node.hidden=old.hidden;
+      if(old.display)node.style.setProperty("display",old.display,old.priority);
+      else node.style.removeProperty("display");
+    }
+    donorSuppressed.clear();
+  };
   const flow=()=>doc.getElementById("ao-mass-flow-v1");
   const anchor=()=>flow()?.querySelector(".aoFlowActions")??flow()?.querySelector("[data-ao-start-live]")?.parentElement;
   const french=()=>String(experience.language??language()).startsWith("fr");
@@ -594,6 +633,7 @@ export function mountFullMassPreflight({
     root.dataset.aoChosenMassForm=summary.form;
     root.dataset.aoChosenReaderMode=summary.readerMode;
     root.dataset.aoProperReady=String(summary.canStart&&sourceGate.ready&&localReady);
+    suppressDonorDuplicates();
     return summary;
   }
   const onchange=()=>queueMicrotask(refresh);
@@ -628,6 +668,6 @@ export function mountFullMassPreflight({
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
       optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep}),
-    dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
+    dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();restoreDonor();{const actions=root?.querySelector?.(".aoFlowActions");if(actions)root.insertAdjacentElement("afterend",actions)}root?.remove();root=null;}
   });
 }
