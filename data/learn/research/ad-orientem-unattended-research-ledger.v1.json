@@ -304,6 +304,21 @@
         "SPX-1905-E-637"
       ],
       "status": "CHILD_PREPARATION_CONTEXT_AND_SOURCE_ATTRIBUTION_REVIEW_PENDING"
+    },
+    {
+      "batch": "B20",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b20-modesty-occasions-20261021.v1.json",
+      "commit": "f50fde8a4e89d89d2cba9b8b0b20ffdb4570fddf",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE030",
+        "CHA-CSE-CSE035",
+        "CHA-CSE-CSE036",
+        "CHA-CSE-CSE037"
+      ],
+      "status": "SOURCE_PRECISION_AND_PASTORAL_APPLICATION_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -325,15 +340,15 @@
     }
   ],
   "active": {
-    "batch": "B20",
+    "batch": "B21",
     "state": "SELECTING",
     "ids": [
-      "CSE030",
-      "CSE035",
-      "CSE036",
-      "CSE037"
+      "CSE041",
+      "CSE042",
+      "CSE043",
+      "CSE044"
     ],
-    "task": "Distinguish modesty, cohabitation, scandal and proximate occasions; read originals and precise sources, avoid universal predictions."
+    "task": "Marriage definition, consent and natural institution; sterility versus antecedent perpetual impotence and fraud qualification."
   },
   "next": [
     {
@@ -347,15 +362,15 @@
   "publication": false,
   "denzingerMandatory": false,
   "progress": {
-    "conversationFamilyIdsWithResearchDeltas": 74,
+    "conversationFamilyIdsWithResearchDeltas": 78,
     "additionalMirrorFamilyIdsExamined": 3,
-    "totalDistinctFamilyIdsExaminedInSelectedResearch": 77,
-    "answerUnitsReviewed": 148,
-    "fullFamilyPacketsForHumanReview": 73,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 81,
+    "answerUnitsReviewed": 156,
+    "fullFamilyPacketsForHumanReview": 77,
     "partialFamilyPackets": 1,
     "humanCertified": 0,
     "published": 0,
-    "meaning": "73 complete packets can enter human review; source matching and research-context additions are not certification."
+    "meaning": "77 complete packets can enter human review; source matching and research-context additions are not certification."
   },
   "scheduling": {
     "created": false,
