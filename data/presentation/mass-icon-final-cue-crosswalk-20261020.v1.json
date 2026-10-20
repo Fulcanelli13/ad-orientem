@@ -9,7 +9,9 @@
     "unmapped": "TEXT_ONLY_NOT_FALLBACK",
     "actorScoped": true,
     "conditionSourceOwned": true,
-    "readerUnmodified": true
+    "readerUnmodified": true,
+    "rawGalleryIdsNeverUsedAsRuntimeIds": true,
+    "lowVoiceVersusSilentDistinguished": true
   },
   "total": 414,
   "counts": {
@@ -81,7 +83,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -107,7 +112,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "7985d016fcebcf8ac4a9eec6d81814059bd0d0eb340b66df46a2f3a462078d28",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_kneel",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-kneel.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -133,7 +141,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -159,7 +170,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -185,7 +199,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "161eb1c501ebc661b9b987234cb41ac6df587562dd4f586e694401c7f8db5203",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "sit",
+      "assetPath": "assets/active/mass-v46/sit.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -211,7 +228,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -237,7 +257,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "161eb1c501ebc661b9b987234cb41ac6df587562dd4f586e694401c7f8db5203",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "sit",
+      "assetPath": "assets/active/mass-v46/sit.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -263,7 +286,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -289,7 +315,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -315,7 +344,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "161eb1c501ebc661b9b987234cb41ac6df587562dd4f586e694401c7f8db5203",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "sit",
+      "assetPath": "assets/active/mass-v46/sit.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -341,7 +373,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -367,7 +402,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "161eb1c501ebc661b9b987234cb41ac6df587562dd4f586e694401c7f8db5203",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "sit",
+      "assetPath": "assets/active/mass-v46/sit.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -393,7 +431,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -419,7 +460,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "161eb1c501ebc661b9b987234cb41ac6df587562dd4f586e694401c7f8db5203",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "sit",
+      "assetPath": "assets/active/mass-v46/sit.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -445,7 +489,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -471,7 +518,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "7985d016fcebcf8ac4a9eec6d81814059bd0d0eb340b66df46a2f3a462078d28",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_kneel",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-kneel.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -497,7 +547,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -523,7 +576,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -549,7 +605,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "7985d016fcebcf8ac4a9eec6d81814059bd0d0eb340b66df46a2f3a462078d28",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_kneel",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-kneel.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -575,7 +634,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "161eb1c501ebc661b9b987234cb41ac6df587562dd4f586e694401c7f8db5203",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "sit",
+      "assetPath": "assets/active/mass-v46/sit.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -601,7 +663,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -627,7 +692,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "7985d016fcebcf8ac4a9eec6d81814059bd0d0eb340b66df46a2f3a462078d28",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_kneel",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-kneel.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-postures.v1.json",
@@ -653,7 +721,10 @@
       "matchRule": "PERSISTENT_POSTURE",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -673,7 +744,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -693,7 +767,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -713,7 +790,10 @@
       "matchRule": "POSTURE_PROFILE_DEPENDENT",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -733,7 +813,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -753,7 +836,10 @@
       "matchRule": "NO_EXACT_APPROVED_IMAGE",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -773,7 +859,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -793,7 +882,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -813,7 +905,10 @@
       "matchRule": "LOCAL_CUSTOM_NOT_UNIVERSAL",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -833,7 +928,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -853,7 +951,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -873,7 +974,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -893,7 +997,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -913,7 +1020,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -933,7 +1043,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -953,7 +1066,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -973,7 +1089,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -993,7 +1112,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1013,7 +1135,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1033,7 +1158,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1053,7 +1181,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1073,7 +1204,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "gospel_crosses",
+      "assetPath": "assets/active/mass-v46/gospel_crosses.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1093,7 +1227,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1113,7 +1250,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1133,7 +1273,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1153,7 +1296,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1173,7 +1319,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1193,7 +1342,10 @@
       "matchRule": "CALENDAR_AND_POSTURE_RESOLVER",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1213,7 +1365,10 @@
       "matchRule": "TRANSIENT",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1233,7 +1388,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1253,7 +1411,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1273,7 +1434,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1293,7 +1457,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1313,7 +1480,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1333,7 +1503,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1353,7 +1526,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1373,7 +1549,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1393,7 +1572,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1413,7 +1595,10 @@
       "matchRule": "COMPOSITE_REVERENCE_TEXT",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1433,7 +1618,10 @@
       "matchRule": "COMPOSITE_REVERENCE_TEXT",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1453,7 +1641,10 @@
       "matchRule": "COMPOSITE_REVERENCE_TEXT",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1473,7 +1664,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1493,7 +1687,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1513,7 +1710,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1533,7 +1733,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1553,7 +1756,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1573,7 +1779,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1593,7 +1802,10 @@
       "matchRule": "NO_EXACT_APPROVED_IMAGE",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1613,7 +1825,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1633,7 +1848,10 @@
       "matchRule": "NO_EXACT_APPROVED_IMAGE",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1653,7 +1871,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1673,7 +1894,10 @@
       "matchRule": "COMPOSITE_REVERENCE_TEXT",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1693,7 +1917,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1713,7 +1940,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1733,7 +1963,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "breast_strike",
+      "assetPath": "assets/active/mass-v46/breast_strike.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1753,7 +1986,10 @@
       "matchRule": "HEAD_BOW_ART_REJECTED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1773,7 +2009,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "cross",
+      "assetPath": "assets/active/mass-v46/cross.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1793,7 +2032,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "gospel_crosses",
+      "assetPath": "assets/active/mass-v46/gospel_crosses.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1813,7 +2055,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "5f5e00a077ce7255e9692c50d8d5bfafe834306f435b4d87cb2c7b85b5000952",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_genuflect",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-genuflect.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-gestures.v1.json",
@@ -1833,7 +2078,10 @@
       "matchRule": "TRANSIENT",
       "availability": "REPO_APPROVED_POSTURE",
       "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "review_posture_stand",
+      "assetPath": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1851,7 +2099,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1869,7 +2120,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1887,7 +2141,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_ascending_rich",
+      "assetPath": "assets/active/mass-v46/priest_ascending_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1905,7 +2162,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_kiss_altar_rich",
+      "assetPath": "assets/active/mass-v46/priest_kiss_altar_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1923,7 +2183,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "5c8f30bffad11e645816c82154a92e8b5cc54b5a94c3c62e2921a11251ff34f6",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_incensation",
+      "assetPath": "assets/active/mass-final/ao_incensation.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1941,7 +2204,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_incense_altar_rich",
+      "assetPath": "assets/active/mass-v46/priest_incense_altar_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1959,7 +2225,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1977,7 +2246,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -1995,7 +2267,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2013,7 +2288,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2031,7 +2309,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2049,7 +2330,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2067,7 +2351,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2085,7 +2372,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2103,7 +2393,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2121,7 +2414,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9cb630b261f4ae9986510bcf5dd69715c37d0a7b1bdf8577b324510d08c8bc15",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_genuflect",
+      "assetPath": "assets/active/mass-final/new_priest_genuflect.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2139,7 +2435,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2157,7 +2456,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_elevate_host_rich",
+      "assetPath": "assets/active/mass-v46/priest_elevate_host_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2175,7 +2477,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2193,7 +2498,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_elevate_chalice_rich",
+      "assetPath": "assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2211,7 +2519,10 @@
       "matchRule": "CUE_SPECIFIC_ACTION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_adoration",
+      "assetPath": "assets/active/mass-final/ao_adoration.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2229,7 +2540,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "5c8f30bffad11e645816c82154a92e8b5cc54b5a94c3c62e2921a11251ff34f6",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_incensation",
+      "assetPath": "assets/active/mass-final/ao_incensation.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2247,7 +2561,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_incense_altar_rich",
+      "assetPath": "assets/active/mass-v46/priest_incense_altar_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2265,7 +2582,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_incense_altar_rich",
+      "assetPath": "assets/active/mass-v46/priest_incense_altar_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2283,7 +2603,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2301,7 +2624,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2319,7 +2645,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_kiss_altar_rich",
+      "assetPath": "assets/active/mass-v46/priest_kiss_altar_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2337,7 +2666,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2355,7 +2687,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2373,7 +2708,10 @@
       "matchRule": "CUE_SPECIFIC_ACTION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_adoration",
+      "assetPath": "assets/active/mass-final/ao_adoration.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2391,7 +2729,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_kiss_altar_rich",
+      "assetPath": "assets/active/mass-v46/priest_kiss_altar_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2409,7 +2750,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2427,7 +2771,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2445,7 +2792,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2463,7 +2813,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2481,7 +2834,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2499,7 +2855,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_elevation",
+      "assetPath": "assets/active/mass-v46/priest_elevation.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2517,7 +2876,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2535,7 +2897,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "b0916c29748ca983200424db968cc5b9110a3ed2bcf610be8a3a4f7976f28d08",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_elevation_chalice",
+      "assetPath": "assets/active/mass-final/ao_elevation_chalice.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2553,7 +2918,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2571,7 +2939,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2589,7 +2960,10 @@
       "matchRule": "CUE_SPECIFIC_ACTION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_adoration",
+      "assetPath": "assets/active/mass-final/ao_adoration.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2607,7 +2981,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_kiss_altar_rich",
+      "assetPath": "assets/active/mass-v46/priest_kiss_altar_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2625,7 +3002,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2643,7 +3023,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2661,7 +3044,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2679,7 +3065,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9cb630b261f4ae9986510bcf5dd69715c37d0a7b1bdf8577b324510d08c8bc15",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_genuflect",
+      "assetPath": "assets/active/mass-final/new_priest_genuflect.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2697,7 +3086,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2715,7 +3107,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9cb630b261f4ae9986510bcf5dd69715c37d0a7b1bdf8577b324510d08c8bc15",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_genuflect",
+      "assetPath": "assets/active/mass-final/new_priest_genuflect.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2733,7 +3128,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_sign_of_cross_vector",
+      "assetPath": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2751,7 +3149,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9cb630b261f4ae9986510bcf5dd69715c37d0a7b1bdf8577b324510d08c8bc15",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_genuflect",
+      "assetPath": "assets/active/mass-final/new_priest_genuflect.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2769,7 +3170,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ea_priest_fraction_host",
+      "assetPath": "assets/active/mass-final/ea_priest_fraction_host.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2787,7 +3191,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ea_priest_commingling",
+      "assetPath": "assets/active/mass-final/ea_priest_commingling.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2805,7 +3212,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2823,7 +3233,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2841,7 +3254,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2859,7 +3275,10 @@
       "matchRule": "CUE_SPECIFIC_ACTION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_adoration",
+      "assetPath": "assets/active/mass-final/ao_adoration.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2877,7 +3296,10 @@
       "matchRule": "CUE_SPECIFIC_ACTION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_adoration",
+      "assetPath": "assets/active/mass-final/ao_adoration.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2895,7 +3317,10 @@
       "matchRule": "CUE_SPECIFIC_ACTION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_adoration",
+      "assetPath": "assets/active/mass-final/ao_adoration.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2913,7 +3338,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2931,7 +3359,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2949,7 +3380,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2967,7 +3401,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "bf3cd28d3aa565f7122d7b9c4dd0c74793c60ccdd2b1de086e6a9a86839f4b5e",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ea_priest_communion_host_original",
+      "assetPath": "assets/active/mass-final/ea_priest_communion_host_original.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -2985,7 +3422,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "e0cbda7f6a20e763dcda40681ca5dadbb11150023edcbe10aacd128c46bee701",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ea_priest_communion_chalice_original",
+      "assetPath": "assets/active/mass-final/ea_priest_communion_chalice_original.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3003,7 +3443,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3021,7 +3464,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_rail_after_rich",
+      "assetPath": "assets/active/mass-v46/priest_rail_after_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3039,7 +3485,10 @@
       "matchRule": "CUE_SPECIFIC_ACTION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_purify_fingers",
+      "assetPath": "assets/active/mass-final/ao_purify_fingers.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3057,7 +3506,10 @@
       "matchRule": "CUE_SPECIFIC_ACTION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_purify_chalice",
+      "assetPath": "assets/active/mass-final/ao_purify_chalice.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3075,7 +3527,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3093,7 +3548,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3111,7 +3569,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3129,7 +3590,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3147,7 +3611,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3165,7 +3632,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3183,7 +3653,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3201,7 +3674,10 @@
       "matchRule": "NO_EXACT_ACTION_ART",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-actions.v1.json",
@@ -3219,7 +3695,10 @@
       "matchRule": "NAMED_ACTION_MATCH",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "9cb630b261f4ae9986510bcf5dd69715c37d0a7b1bdf8577b324510d08c8bc15",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_genuflect",
+      "assetPath": "assets/active/mass-final/new_priest_genuflect.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3239,7 +3718,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "bd6788d97eb1fe953cc00308e52aa15e3060f7633129a49313d804fa79198551",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ref_112206",
+      "assetPath": "assets/active/mass-final/ref_112206.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3259,7 +3741,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_ascending_rich",
+      "assetPath": "assets/active/mass-v46/priest_ascending_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3279,7 +3764,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3299,7 +3787,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3319,7 +3810,10 @@
       "matchRule": "STATION_UNRESOLVED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3339,7 +3833,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3359,7 +3856,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3379,7 +3879,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_sedilia_rich",
+      "assetPath": "assets/active/mass-v46/priest_sedilia_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3399,7 +3902,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3419,7 +3925,10 @@
       "matchRule": "FACE_PEOPLE_OVERRIDE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3439,7 +3948,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3459,7 +3971,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3479,7 +3994,10 @@
       "matchRule": "STATION_UNRESOLVED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3499,7 +4017,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3519,7 +4040,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3539,7 +4063,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_epistle_rich",
+      "assetPath": "assets/active/mass-v46/priest_epistle_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3559,7 +4086,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3579,7 +4109,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_sedilia_rich",
+      "assetPath": "assets/active/mass-v46/priest_sedilia_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3599,7 +4132,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3619,7 +4155,10 @@
       "matchRule": "FACE_PEOPLE_OVERRIDE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3639,7 +4178,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3659,7 +4201,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3679,7 +4224,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3699,7 +4247,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3719,7 +4270,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3739,7 +4293,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3759,7 +4316,10 @@
       "matchRule": "STATION_UNRESOLVED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3779,7 +4339,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3799,7 +4362,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3819,7 +4385,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3839,7 +4408,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3859,7 +4431,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3879,7 +4454,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3899,7 +4477,10 @@
       "matchRule": "FACE_PEOPLE_OVERRIDE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3919,7 +4500,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3939,7 +4523,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3959,7 +4546,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3979,7 +4569,10 @@
       "matchRule": "FACE_PEOPLE_OVERRIDE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -3999,7 +4592,10 @@
       "matchRule": "STATION_UNRESOLVED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4019,7 +4615,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4039,7 +4638,10 @@
       "matchRule": "STATION_UNRESOLVED",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4059,7 +4661,10 @@
       "matchRule": "FACE_PEOPLE_OVERRIDE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4079,7 +4684,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4099,7 +4707,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_gospel_rich",
+      "assetPath": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4119,7 +4730,10 @@
       "matchRule": "FACE_PEOPLE_OVERRIDE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4139,7 +4753,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4159,7 +4776,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_centre_hands_rich",
+      "assetPath": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4179,7 +4799,10 @@
       "matchRule": "FACE_PEOPLE_OVERRIDE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "new_priest_facing",
+      "assetPath": "assets/active/mass-final/new_priest_facing.png",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-positions.v1.json",
@@ -4199,7 +4822,10 @@
       "matchRule": "EXACT_STATION",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_epistle_rich",
+      "assetPath": "assets/active/mass-v46/priest_epistle_rich.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4212,13 +4838,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4237,7 +4866,10 @@
       "matchRule": "OTHER_ACTOR_OR_NONE",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4250,13 +4882,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4269,13 +4904,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4288,13 +4926,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4307,13 +4948,16 @@
         "scope": "EVENT_ONLY",
         "condition": "INCENSE_ENABLED"
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4332,7 +4976,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4351,7 +4998,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4364,13 +5014,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4389,7 +5042,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4408,7 +5064,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4421,13 +5080,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4440,13 +5102,16 @@
         "scope": "EVENT_ONLY",
         "condition": "SEDILIA_USED_AND_CHANT_CONTINUES"
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4459,13 +5124,16 @@
         "scope": "EVENT_ONLY",
         "condition": "SEDILIA_USED"
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4484,7 +5152,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4503,7 +5174,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4522,7 +5196,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4541,7 +5218,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4560,7 +5240,10 @@
       "matchRule": "OTHER_ACTOR_OR_NONE",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4573,13 +5256,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4598,7 +5284,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4617,7 +5306,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4636,7 +5328,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4655,7 +5350,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4674,7 +5372,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4693,7 +5394,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4706,13 +5410,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4731,7 +5438,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4750,7 +5460,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4763,13 +5476,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4782,13 +5498,16 @@
         "scope": "EVENT_ONLY",
         "condition": "SEDILIA_USED_AND_CHANT_CONTINUES"
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4801,13 +5520,16 @@
         "scope": "EVENT_ONLY",
         "condition": "SEDILIA_USED"
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4826,7 +5548,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4845,7 +5570,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4864,7 +5592,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4883,7 +5614,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4896,13 +5630,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4921,7 +5658,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4934,13 +5674,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4953,13 +5696,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4978,7 +5724,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -4991,13 +5740,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5016,7 +5768,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5029,13 +5784,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5048,13 +5806,16 @@
         "scope": "EVENT_ONLY",
         "condition": "INCENSE_ENABLED"
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5073,7 +5834,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5086,13 +5850,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5105,13 +5872,16 @@
         "scope": "EVENT_ONLY",
         "condition": "OMIT_GLORIA_PATRI_IN_REQUIEM_AND_PASCHALTIDE_PASSION_BRANCH_AS_PRESCRIBED"
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5124,13 +5894,16 @@
         "scope": "EVENT_ONLY",
         "condition": "OMIT_WITH_GLORIA_PATRI_BRANCH_WHEN_PRESCRIBED"
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5143,13 +5916,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5168,7 +5944,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5187,7 +5966,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5200,13 +5982,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5225,7 +6010,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5238,13 +6026,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5257,13 +6048,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5282,7 +6076,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5301,7 +6098,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5320,7 +6120,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5339,7 +6142,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5358,7 +6164,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5377,7 +6186,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5396,7 +6208,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5415,7 +6230,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5434,7 +6252,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5447,13 +6268,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5466,13 +6290,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5491,7 +6318,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5504,13 +6334,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5529,7 +6362,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5542,13 +6378,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5567,7 +6406,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5580,13 +6422,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5605,7 +6450,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5618,13 +6466,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5643,7 +6494,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5656,13 +6510,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5675,13 +6532,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5700,7 +6560,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5713,13 +6576,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5738,7 +6604,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5757,7 +6626,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5776,7 +6648,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5795,7 +6670,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5814,7 +6692,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5827,13 +6708,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5846,13 +6730,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5871,7 +6758,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5890,7 +6780,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5909,7 +6802,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5928,7 +6824,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5941,13 +6840,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5960,13 +6862,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -5979,13 +6884,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6004,7 +6912,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6017,13 +6928,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6036,13 +6950,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6055,13 +6972,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6074,13 +6994,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6099,7 +7022,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6118,7 +7044,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6137,7 +7066,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6156,7 +7088,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6175,7 +7110,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6194,7 +7132,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6207,13 +7148,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6226,13 +7170,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6245,13 +7192,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6270,7 +7220,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6289,7 +7242,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6308,7 +7264,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6327,7 +7286,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6346,7 +7308,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6365,7 +7330,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6384,7 +7352,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6403,7 +7374,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6422,7 +7396,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6435,13 +7412,16 @@
         "scope": "EVENT_ONLY",
         "condition": null
       },
-      "assetId": "ao_pray_silent",
-      "assetName": "Priest Silent",
+      "assetId": "ao_pray_audible",
+      "assetName": "Priest speaks low voice",
       "assetStatus": "approved",
-      "matchRule": "INVISIBLE_VOICE_CUE",
+      "matchRule": "LOW_OR_QUIET_VOICE_NOT_SILENCE",
       "availability": "ASSET_IMPORT_REQUIRED",
-      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_audible",
+      "assetPath": "assets/active/mass-final/ao_pray_audible.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6460,7 +7440,10 @@
       "matchRule": "INVISIBLE_VOICE_CUE",
       "availability": "ASSET_IMPORT_REQUIRED",
       "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "ao_pray_silent",
+      "assetPath": "assets/active/mass-final/ao_pray_silent.svg",
+      "needsSourceImport": true
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6479,7 +7462,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6498,7 +7484,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6517,7 +7506,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6536,7 +7528,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6555,7 +7550,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6574,7 +7572,10 @@
       "matchRule": "PRIEST_LISTEN_NO_SPEECH",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-priest-voices.v1.json",
@@ -6593,7 +7594,10 @@
       "matchRule": "EXACT",
       "availability": "REPO_V46_ORIGINAL",
       "sourceHash": null,
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "priest_audible",
+      "assetPath": "assets/active/mass-v46/priest_audible.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6613,7 +7617,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6633,7 +7640,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6653,7 +7663,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6673,7 +7686,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6693,7 +7709,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6713,7 +7732,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6733,7 +7755,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6753,7 +7778,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6773,7 +7801,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6793,7 +7824,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6813,7 +7847,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6833,7 +7870,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6853,7 +7893,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6873,7 +7916,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6893,7 +7939,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6913,7 +7962,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6933,7 +7985,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6953,7 +8008,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6973,7 +8031,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -6993,7 +8054,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -7013,7 +8077,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -7033,7 +8100,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-responses.v1.json",
@@ -7053,7 +8123,10 @@
       "matchRule": "PEOPLE_RESPONSE",
       "availability": "REPO_FROZEN_V46_ALIAS",
       "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
-      "reviewState": "MAPPED"
+      "reviewState": "MAPPED",
+      "runtimeAssetKey": "response",
+      "assetPath": "assets/active/mass-v46/response.svg",
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7084,7 +8157,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7115,7 +8191,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7146,7 +8225,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7177,7 +8259,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7208,7 +8293,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7239,7 +8327,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7270,7 +8361,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7302,7 +8396,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7334,7 +8431,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7366,7 +8466,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7397,7 +8500,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7428,7 +8534,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7459,7 +8568,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7489,7 +8601,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7519,7 +8634,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7549,7 +8667,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7579,7 +8700,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7609,7 +8733,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7639,7 +8766,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7670,7 +8800,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7701,7 +8834,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7731,7 +8867,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7762,7 +8901,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7792,7 +8934,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7822,7 +8967,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7853,7 +9001,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7885,7 +9036,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7917,7 +9071,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7948,7 +9105,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -7979,7 +9139,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8010,7 +9173,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8041,7 +9207,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8072,7 +9241,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8105,7 +9277,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8137,7 +9312,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8168,7 +9346,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8199,7 +9380,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8230,7 +9414,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8261,7 +9448,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8292,7 +9482,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8322,7 +9515,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8353,7 +9549,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8385,7 +9584,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8417,7 +9619,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8449,7 +9654,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8481,7 +9689,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8512,7 +9723,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8544,7 +9758,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8575,7 +9792,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8607,7 +9827,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8638,7 +9861,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8670,7 +9896,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8701,7 +9930,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8732,7 +9964,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8763,7 +9998,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8794,7 +10032,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     },
     {
       "sourceRegistry": "reader-rubric-events.v1.json",
@@ -8825,7 +10066,10 @@
       "matchRule": "RUBRIC_TEXT_SOURCE_ONLY",
       "availability": "TEXT_ONLY",
       "sourceHash": null,
-      "reviewState": "TEXT_OR_EXCEPTION"
+      "reviewState": "TEXT_OR_EXCEPTION",
+      "runtimeAssetKey": null,
+      "assetPath": null,
+      "needsSourceImport": false
     }
   ]
 }
