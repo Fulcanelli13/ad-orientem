@@ -1124,9 +1124,14 @@ export function createFindOwner(win=globalThis){
     const journeyDestination=target?.closest?.("[data-explore-journey-destination]");
     if(journeyDestination&&state.journeyOpen){
       event.preventDefault?.();
-      state.selectedPlaceId=journeyDestination.dataset.exploreJourneyDestination||null;
-      state.selectedId=null;state.journeyOpen=false;journeyPreviousCategories=null;
-      void paint();return;
+      const placeId=journeyDestination.dataset.exploreJourneyDestination||null;
+      if(!placeId||!dataset?.geography?.places?.some(p=>p.place_id===placeId))return;
+      state.selectedPlaceId=placeId;
+      state.selectedId=null;state.expandPlace=false;state.expandDetail=false;
+      // Destination/related shrine uses the same existing C folio as an
+      // individually linked stage: return to D without resetting its map,
+      // filter or selected route (including Walsingham's Priory exception).
+      void paint({selectionOnly:true});return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
