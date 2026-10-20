@@ -80,9 +80,19 @@ async function request(url,kind="json"){
  }
  throw Error("Source unavailable");
 }
-function metadataAgreement(row,title,artist){
+export function metadataAgreement(row,title,artist){
  const subject=tidy(row.title),other=tidy(title),x=tidy(row.artist),y=tidy(artist);
- return {titleComparable:!!other,titleAgreement:Boolean(subject&&other&&(subject===other||subject.includes(other)||other.includes(subject))),
+ const sourceCorrection=row.sourceIdentityCorrection;
+ // Official title variants do not alter the user's artwork selection.
+ // A manually recorded alias applies ONLY if both museum object ID and accession
+ // are locked to the corrected Met original; it cannot bless an arbitrary copy.
+ const documentedTitle=tidy(sourceCorrection?.actualMetTitle);
+ const documentedAliasMatch=Boolean(documentedTitle&&other===documentedTitle&&
+  row.verifiedMuseumAccession===sourceCorrection.correctMuseumAccession&&
+  Number(new URL(row.sourceUrl).pathname.match(/\/search\/(\d+)/)?.[1])===sourceCorrection.correctObjectId);
+ const exactOrPartial=Boolean(subject&&other&&(subject===other||subject.includes(other)||other.includes(subject)));
+ return {titleComparable:!!other,titleAgreement:exactOrPartial||documentedAliasMatch,
+  documentaryTitleAliasMatch:documentedAliasMatch,
   artistComparable:!!y,artistAgreement:Boolean(x&&y&&(x.includes(y)||y.includes(x)))};
 }
 async function metSource(row){
