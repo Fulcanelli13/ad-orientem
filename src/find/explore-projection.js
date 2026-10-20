@@ -239,7 +239,10 @@ export function projectShrineItems({shrines=[],places=[],placeRelationships=[],s
   }));
 }
 
-export function projectTraditionItems({customs=[],attestations=[],places=[],geoAreas=[],sources=[],novenaLinks=[],novenas=[]}={}){
+export function projectTraditionItems({customs=[],attestations=[],places=[],geoAreas=[],sources=[],guidance=[],novenaLinks=[],novenas=[]}={}){
+  // Editorial detail is keyed by existing canonical identity: no new attestation, Place or Mass rite.
+  const guideMap=new Map(arr(guidance).filter(g=>g?.custom_id&&g?.review_status==="STAGED_IN_DRAFT_BRANCH_NOT_MERGED")
+    .map(g=>[g.custom_id,g]));
   const customMap=new Map(arr(customs).map(custom=>[custom?.custom_id,custom]).filter(([id])=>id));
   const placeMap=new Map(arr(places).map(place=>[place?.place_id,place]).filter(([id])=>id));
   const areaMap=new Map(arr(geoAreas).map(area=>[area?.geo_area_id,area]).filter(([id])=>id));
@@ -247,6 +250,7 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
   const novenaMap=novenaRecordMap(novenas);
   return Object.freeze(arr(attestations).map(attestation=>{
     const custom=customMap.get(attestation?.custom_id)??{},place=placeMap.get(attestation?.place_id)??null,area=areaMap.get(attestation?.geo_area_id)??null;
+    const guide=custom?.custom_id&&custom.publication_state==="PUBLISHED"?guideMap.get(custom.custom_id)??null:null;
     const placeLabel=place?.name?.official??attestation?.place_name_hint??area?.name?.official??"";
     const mapped=attestation?.map_policy==="PLACE"&&isMapPublishablePlaceGeo(place?.geo,place?.address?.country_code);
     const geo=mapped?normalizeGeo(place.geo):null;
@@ -265,8 +269,11 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
       eyebrow:"TRADITION · "+String(attestation?.geographic_precision??"").replaceAll("_"," "),
       status:custom?.publication_state==="PUBLISHED"?"SOURCE-BACKED":"CONTEXT",
       title:custom?.name||attestation?.custom_id||"Tradition",
+      title_fr:guide?.title_fr??null,
       subtitle:placeLabel,
-      summary:custom?.canonical_statement??"",
+      summary:guide?.description_en??custom?.canonical_statement??"",
+      summary_fr:guide?.description_fr??null,
+      custom_guidance:guide,
       address:place?.address??null,
       geo,
       map_publishable:Boolean(mapped&&geo),
@@ -274,7 +281,7 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
       facts:freezeList(facts),
       sections:freezeList([
         attestation?.evidence_note?{label:"Attestation",title:placeLabel,body:attestation.evidence_note}:null,
-        custom?.guardrail?{label:"How Ad Orientem presents it",title:"",body:custom.guardrail}:null,
+        custom?.guardrail?{label:"How Ad Orientem presents it",label_fr:"Précautions",title:"",body:custom.guardrail,body_fr:guide?.caution_fr??null}:null,
         ...novenaSections(relatedNovenas,novenaMap),
       ].filter(Boolean)),
       source_links:sourceLinks(attestation?.source_ids,sourceMap),
@@ -283,7 +290,7 @@ export function projectTraditionItems({customs=[],attestations=[],places=[],geoA
         ...novenaActions(relatedNovenas,novenaMap),
       ]),
       note:"Geographic attestation only. It does not imply that every parish, shrine or TLM community in this area observes the custom.",
-      search_text:itemSearch([custom?.name,custom?.canonical_statement,custom?.family,placeLabel,addressLabel(place?.address),attestation?.evidence_note,relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id)))]),
+      search_text:itemSearch([custom?.name,custom?.canonical_statement,custom?.family,guide?.title_fr,guide?.description_en,guide?.description_fr,guide?.meaning_en,guide?.meaning_fr,placeLabel,addressLabel(place?.address),attestation?.evidence_note,relatedNovenas.map(link=>novenaTitle(novenaMap.get(link.novena_id)))]),
       raw:Object.freeze({custom,attestation,place,area}),
     });
   }));
@@ -472,7 +479,7 @@ export function projectExploreDataset(dataset={}){
   const geography=dataset?.geography??{},customs=dataset?.customs??{},shrines=dataset?.shrines??{},directory=dataset?.directory??{},novenas=dataset?.novenas??{},sacredPhenomena=dataset?.sacredPhenomena??{};
   const novenaSources=[...arr(customs?.sources),...arr(shrines?.sources),...arr(novenas?.sources)];
   const customTraditions=projectTraditionItems({
-    customs:customs?.customs,attestations:customs?.attestations,places:geography?.places,geoAreas:geography?.geoAreas,sources:customs?.sources,
+    customs:customs?.customs,attestations:customs?.attestations,places:geography?.places,geoAreas:geography?.geoAreas,sources:customs?.sources,guidance:customs?.guidance,
     novenaLinks:novenas?.links,novenas:novenas?.records,
   });
   const novenaTraditions=projectNovenaContextItems({
