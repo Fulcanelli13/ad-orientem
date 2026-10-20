@@ -1,6 +1,6 @@
 {
   "schema": "AO_WEISER_POST_EXTRACTION_EDITORIAL_GATE_V0",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "as_of": "2026-10-20",
   "status": "SELECTED_RECONCILIATION_QUEUE_ONLY_NOT_CANONICAL",
   "purpose": "Pilot crosswalk of high-signal Weiser feast customs after full book first pass. Not a comprehensive decision for all 568 records.",
@@ -12,8 +12,10 @@
     "screened_chapters": 28,
     "publication_releases": 0,
     "selected_priority_rows": 30,
-    "source_corroborated_selected_rows": 9,
-    "selected_rows_not_yet_source_corroborated": 21
+    "source_corroborated_selected_rows": 12,
+    "selected_rows_not_yet_source_corroborated": 18,
+    "verified_existing_owner_links": 4,
+    "open_pr_owner_links": 1
   },
   "active_app_baseline": {
     "main_canonical_customs_at_start": 17,
@@ -40,7 +42,7 @@
       "owner": "Customs Atlas / Calendar",
       "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "FRANCE_LOCALITY_ATTESTATION",
@@ -61,7 +63,7 @@
       "owner": "Customs Atlas / Saints",
       "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "1962_SAINT_ID",
@@ -82,7 +84,7 @@
       "owner": "Calendar / Customs Atlas",
       "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "FRENCH_REGIONAL_ATTESTATION",
@@ -111,7 +113,8 @@
         "PR_1512_RESOLUTION",
         "1962_RITUAL_SOURCE"
       ],
-      "editorial_note": "Assumption herbs already in unmerged blessing PR."
+      "editorial_note": "Assumption herbs already in unmerged blessing PR.",
+      "owner_link_status": "OPEN_PR_1512_UNMERGED_NOT_IN_MAIN"
     },
     {
       "weiser_id": "WEI58-24-013",
@@ -139,7 +142,7 @@
       "owner": "Customs Atlas / Explore",
       "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "COASTAL_LOCAL_ATTESTATION",
@@ -167,7 +170,8 @@
       "checks_needed": [
         "BILINGUAL_COPY_REVIEW"
       ],
-      "editorial_note": "Candlemas candles already owned by DOM-011."
+      "editorial_note": "Candlemas candles already owned by DOM-011.",
+      "owner_link_status": "VERIFIED_IN_MAIN_CUSTOMS_SEED"
     },
     {
       "weiser_id": "WEI58-25-012",
@@ -234,7 +238,8 @@
       "checks_needed": [
         "GEOGRAPHY_NOTE"
       ],
-      "editorial_note": "Cleaning and decorating family graves."
+      "editorial_note": "Cleaning and decorating family graves.",
+      "owner_link_status": "VERIFIED_IN_MAIN_CUSTOMS_SEED"
     },
     {
       "weiser_id": "WEI58-26-013",
@@ -253,7 +258,8 @@
       "checks_needed": [
         "HOUSEHOLD_PRACTICE_ATTESTATION"
       ],
-      "editorial_note": "Candlemas candle used in evening prayer for the departed."
+      "editorial_note": "Candlemas candle used in evening prayer for the departed.",
+      "owner_link_status": "VERIFIED_IN_MAIN_CUSTOMS_SEED"
     },
     {
       "weiser_id": "WEI58-26-014",
@@ -286,7 +292,7 @@
       "canonical_ids": [
         "DEAD-003"
       ],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "POLISH_PARISH_DIRECT_ATTESTATION"
@@ -322,15 +328,19 @@
       "title": "All Souls soul bread distributed to poor or children",
       "cohort": "FRENCH_PRIORITY",
       "owner": "Customs Atlas / Calendar",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "SOUL_BREAD_FRANCE_SECONDARY_SOURCE",
         "ALMSGIVING_CONTEXT"
       ],
-      "editorial_note": "Soul bread for poor in France and other countries."
+      "editorial_note": "Soul bread for poor in France and other countries.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-26-022"
+      }
     },
     {
       "weiser_id": "WEI58-26-029",
@@ -364,7 +374,8 @@
       "checks_needed": [
         "RITUAL_CONFORMITY"
       ],
-      "editorial_note": "St Blaise crossed candles already canonical."
+      "editorial_note": "St Blaise crossed candles already canonical.",
+      "owner_link_status": "VERIFIED_IN_MAIN_CUSTOMS_SEED"
     },
     {
       "weiser_id": "WEI58-27-012",
@@ -373,14 +384,18 @@
       "title": "Traditional ribbon crosses on girls' dresses for Patrick",
       "cohort": "REGIONAL_PRIORITY",
       "owner": "Customs Atlas / Saints",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "IRISH_PARISH_SOURCE"
       ],
-      "editorial_note": "St Patrick ribbon crosses as locally reported."
+      "editorial_note": "St Patrick ribbon crosses as locally reported.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-27-012"
+      }
     },
     {
       "weiser_id": "WEI58-27-018",
@@ -407,7 +422,7 @@
       "owner": "Customs Atlas / Saints",
       "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "ST_JOSEPH_TABLE_SOURCE"
@@ -427,7 +442,7 @@
       "owner": "Customs Atlas / Saints",
       "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "TOULON_HISTORICAL_SOURCE",
@@ -446,14 +461,18 @@
       "title": "Invocation of St Anthony for lost things",
       "cohort": "SAINTS_PRIORITY",
       "owner": "Saints / Customs Atlas",
-      "disposition": "SOURCE_LOCK_REQUIRED",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "WEISER_1958_ONLY",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "NOVENA_OWNER_RECONCILE"
       ],
-      "editorial_note": "St Anthony Tuesday devotions; don't duplicate prayer modules."
+      "editorial_note": "St Anthony Tuesday devotions; don't duplicate prayer modules.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-27-026"
+      }
     },
     {
       "weiser_id": "WEI58-27-031",
@@ -513,7 +532,7 @@
       "owner": "Customs Atlas / Saints",
       "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "ROMAN_RITUAL_VEHICLE_BLESSING",
@@ -534,7 +553,7 @@
       "owner": "Customs Atlas / Calendar",
       "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
       "canonical_ids": [],
-      "source_state": "INDEPENDENT_CATHOLIC_WITNESS",
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
       "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
       "checks_needed": [
         "NICHOLAS_REGIONAL_FAMILY_SOURCE"
