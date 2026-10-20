@@ -44,6 +44,23 @@ No new Place records, inferred coordinates, licence costs, organizer contact, du
 
 Browser acceptance now tests a full Holywell loop: a stage-name tap, compact Place preview, expanded profile, return to the same Journey and the same MapLibre canvas, and a second entry by map medallion into the distinct Well profile. Screenshots are captured on mobile and desktop.
 
+## R6 — Sacred Atlas → Journey: reciprocal Place links
+
+The C Sacred Atlas now offers a compact **Explore pilgrimage** shortcut when one documented route is associated with a selected Place. A Place with multiple canonical pilgrimages offers a **documented journeys** action that reveals all exact linked routes in the existing full Place profile. It does not choose a starting point arbitrarily.
+
+Route associations come solely from `journeysForCanonicalPlace`: either the exact canonical `destinationPlaceId` belonging to the route or the explicit named-stage → canonical-Place crosswalk published in R4. Every eligible route retains original source URLs. No nearby-search, guessed geography, name similarity, route line or additional pilgrimage identity can establish the link.
+
+Examples:
+- **Chartres Cathedral:** opens the documented Paris–Chartres Pentecost Journey directly from its profile.
+- **Centre Père Laval, Sainte-Croix:** shows both documented departures, from Saint-Louis Cathedral and Saint-Joseph Terre-Rouge, allowing deliberate selection.
+- **Walsingham Catholic Shrine:** displays the LMS 2026 pilgrimage only as a **related shrine**, explicitly **NOT the edition's terminus** at the Priory grounds.
+
+Switching into Journey clears the Place sheet and activates the established D rail over the **existing** A/C MapLibre instance. Route filters and selection remain intact; no extra map is mounted. The user can exit Journey explicitly to return to ordinary Atlas mode.
+
+Browser coverage at 320/390/1440px checks Place → Journey exact route selection and unchanged canvas, Chartres direct access, and the two-route Père Laval chooser. Pure unit tests confirm exact canonical associations, zero phantom routes and the Walsingham distinction.
+
+**No organizer contact or expenditure; no new map services or route geometry.**
+
 ## Next free improvements
 
 First use available internal source-backed site anchors and place editorial profiles. If later publicly downloadable geometry exists, verify that it is both edition-matched and redistributable under a free licence **without contacting anyone or spending money**. Otherwise leave the link-only/text-only experience in place and continue other release work.
