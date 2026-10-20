@@ -13,6 +13,14 @@ assert.equal(sourceUnits.filter(x=>/^AO\.SM\.C\d{4}$/.test(x.cue_id)).length,279
 assert.equal(sourceUnits.filter(x=>x.cue_id==='AO.SM.B096.SYN').length,1);
 assert.equal(new Set(sourceUnits.map(x=>x.cue_id)).size,280);
 assert.equal(original.items.length,49);
+for(const item of expanded.cues.filter(x=>x.defaultTrack.station==='FOOT_CENTER')){
+ assert.equal(item.defaultTrack.proposedIconAssetId,null,
+  'User-vetoed Foot Centre image must not survive in persistent station projection');
+ assert.equal(item.defaultTrack.proposedIconExactUserName,null);
+}
+assert.equal(expanded.cues[0].defaultTrack.station,'FOOT_CENTER',
+ 'Correct liturgical station text must survive icon suppression');
+
 assert.equal(expanded.cues.length,280);
 assert.equal(expanded.invariants.totalSungSourceCueRows,279);
 assert.equal(expanded.invariants.syntheticPauseRecords,1);
