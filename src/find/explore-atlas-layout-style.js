@@ -620,4 +620,26 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   letter-spacing:.045em;
 }
 
+/* Stage names open the already published Sacred Atlas place, while the
+   numbered control continues to focus the exact canonical site marker. */
+.aoHeritageSurface .aoJourneyStagePlaceLink{
+  box-sizing:border-box;display:flex;align-items:center;gap:9px;
+  min-height:44px;max-width:100%;margin:0 0 0 -4px;padding:5px 4px;
+  border:0;background:transparent;color:inherit;text-align:left;
+  font:inherit;cursor:pointer;
+}
+.aoHeritageSurface .aoJourneyStagePlaceLink strong{
+  margin:0;min-width:0;flex:1;color:#ede1ce;
+}
+.aoHeritageSurface .aoJourneyStagePlaceLink>span{
+  flex:none;color:#d8bb84;font:650 14px/1 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoHeritageSurface .aoJourneyStagePlaceLink:hover strong,
+.aoHeritageSurface .aoJourneyStagePlaceLink:focus-visible strong{
+  color:#f7ddb0;text-decoration:underline;text-underline-offset:3px;
+}
+.aoHeritageSurface .aoJourneyStagePlaceLink:focus-visible{
+  outline:2px solid #d8bb84;outline-offset:2px;border-radius:4px;
+}
+
 `;
