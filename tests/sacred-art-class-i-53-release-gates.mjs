@@ -23,7 +23,8 @@ const pradoEntries=intake.dates.flatMap(d=>d.unreleasedArtResearchLeads.filter(w
 assert.equal(pradoEntries.length,4,"Four Class I Prado-source leads stay in the editorial ledger but cannot be acquired");
 assert(pradoEntries.every(w=>w.sourcePolicy.noFetch===true && w.sourcePolicy.noPromotion===true));
 assert.equal(fullLeads.dates.flatMap(d=>d.proposedWorks).filter(w=>w.sourcePolicy?.status==="HOLD_PRADO_SOURCE_POLICY").length,4);
-assert.equal(PRADO_SOURCE_HELD_ARTWORK_IDS.length,30);
+assert.equal(PRADO_SOURCE_HELD_ARTWORK_IDS.length,31);
+assert(PRADO_SOURCE_HELD_ARTWORK_IDS.includes('ART-os-de-ibera-acob-s-ream'),"Previously unsourced Ribera Jacob's Dream is held independently of any file or mirror source");
 assert.equal(intake.dates.length,53);
 assert.equal(new Set(intake.dates.map(x=>x.date)).size,53);
 assert.equal(intake.counts.classIDates,53);
