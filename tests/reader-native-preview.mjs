@@ -592,7 +592,7 @@ assert.equal(ashReady.model.totalCards,30,"Ash prelude mutated Mass card identit
 
 // 1962 special-day preludes ending at the Introit omit the entire Foot cluster.
 // The revised 65-piece Mass projection contains four such display cards;
-// only the verified 60-piece subset may follow Palm, Ash, or Candlemas.
+// only the verified 61-piece subset may follow Palm, Ash, or Candlemas.
 for(const {kind,loaded,source,omitsLastGospel} of [
   {kind:"PALM",loaded:palmData,source:"palmData",omitsLastGospel:true},
   {kind:"ASH",loaded:ashData,source:"ashData",omitsLastGospel:false},
@@ -612,8 +612,8 @@ for(const {kind,loaded,source,omitsLastGospel} of [
   const selected=await prepareNativeReaderPreview(opts);
   assert.equal(selected.model.totalCards,39,kind+" changed canonical Sung text model");
   assert.equal(selected.curatedEligible,true,kind+" must qualify only for certified Introit handoff");
-  assert.equal(selected.presentationModel.totalCards,60,kind+" must omit four Foot display cards");
-  assert.equal(selected.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_INTROIT_60");
+  assert.equal(selected.presentationModel.totalCards,61,kind+" must omit four Foot display cards");
+  assert.equal(selected.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_INTROIT_61");
   assert.equal(selected.presentationModel.sourceModelTotalCards,39);
   assert.deepEqual(selected.presentationModel.suppressedOpeningTitles,[
     "At the Foot of the Altar · Opening and Psalm 42",
