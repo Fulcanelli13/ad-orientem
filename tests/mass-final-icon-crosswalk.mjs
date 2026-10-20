@@ -80,4 +80,41 @@ for(const row of crosswalk.rows.filter(x=>x.lane==='priest_voice')){
  if(/LOW|QUIET|SECRET/.test(voice) && !/SILENT|INAUDIBLE/.test(voice) && row.assetId)
   assert.notEqual(row.assetId,'ao_pray_silent','Low voice incorrectly made silent');
 }
+
+const semantics=read('../data/presentation/mass-icon-final-semantic-lexicon-20261020.v1.json');
+assert.equal(semantics.schema,'ao-mass-icon-semantic-lexicon-v1');
+for(const concept of semantics.concepts){
+  const asset=byId.get(concept.assetId);
+  assert.ok(asset,'Unknown concept target '+concept.assetId);
+  assert.equal(asset.name,concept.exactUserName,'Semantic lexicon changed a user name');
+  assert.equal(asset.rejected,false,'Rejected artwork leaked into semantic dictionary');
+}
+const semanticCount=concept=>crosswalk.rows.filter(r=>r.semanticConcept===concept).length;
+assert.equal(semanticCount('FAITHFUL_BOW_GENERIC'),23,
+  'Faithful head-bow labels no longer reconcile to user-approved Faithful Bow');
+assert.equal(semanticCount('BREAST_STRIKE_ANY_ACTOR'),8,
+  'Priest breast-strike cue count changed');
+assert.equal(semanticCount('PRIEST_PROFOUND_BOW'),1,
+  'Priest adoration bow was lost');
+assert.equal(crosswalk.counts.faithful_gesture.mapped,49);
+assert.equal(crosswalk.counts.priest_action.mapped,61);
+assert.equal(crosswalk.counts.priest_action.total,77);
+for(const r of crosswalk.rows.filter(r=>r.semanticConcept==='FAITHFUL_BOW_GENERIC')){
+  assert.equal(r.assetId,'v46_bow');
+  assert.equal(r.assetName,'Faithful Bow');
+  assert.equal(r.displayDetailFromSource,true,
+    'Exact head bow rubric text must qualify general bow artwork');
+}
+for(const cueId of ['AO.SM.C0124','AO.SM.C0125','AO.SM.C0088','AO.SM.C0204','AO.SM.C0242','AO.SM.C0265']){
+ const row=crosswalk.rows.find(r=>r.lane==='priest_action'&&r.cueId===cueId);
+ assert.equal(row?.assetId,null,'Cross-actor, object or rite mismatch silently reused art '+cueId);
+}
+for(const variant of semantics.sourceConditionalResolvers){
+ for(const branch of variant.branches){
+   const asset=byId.get(branch.assetId);
+   assert.ok(asset,'Unresolved conditional asset '+branch.assetId);
+   assert.equal(branch.name,asset.name,'Conditional branch changed user display name');
+ }
+}
+
 console.log('Mass final icon crosswalk: '+crosswalk.rows.length+' source rows verified against exact user names and rejections; no runtime changes.');
