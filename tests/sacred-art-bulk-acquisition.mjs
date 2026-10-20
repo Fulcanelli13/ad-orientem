@@ -27,6 +27,7 @@ assert.equal(intake.counts.pradoAcquisitionHolds,30);
 assert.equal(intake.counts.pradoHoldsApprovedOrHistoric,25);
 assert.deepEqual(certified.media,[],"Bulk ingestion cannot silently certify release files");
 assert.equal(commonsLicenseUsable("CC BY-SA 4.0","True"),true,"Attribution/share-alike allows technical staging");
+assert.equal(commonsLicenseUsable("CC0","True"),true,"Explicit CC0 licence is valid even when Commons marks it copyrighted");
 assert.equal(commonsLicenseUsable("CC BY 3.0","True"),true,"Copyrighted CC-licensed file may be staged");
 assert.equal(commonsLicenseUsable("Public domain","False"),true);
 assert.equal(commonsLicenseUsable("Public domain","True"),false,"Conflicting public-domain claim is held");
