@@ -4,6 +4,9 @@ on:
     paths:
       - "previews/visible-mass-3d/living-church-character-scene.mjs"
       - "previews/visible-mass-3d/living-church-pius-ten-review.mjs"
+      - "previews/visible-mass-3d/living-church-pius20-source-bridge.mjs"
+      - "previews/visible-mass-3d/living-church-pius20-scene.mjs"
+      - "tests/living-church-pius20-scene-browser.mjs"
       - "tests/living-church-pius-ten-review.mjs"
       - "tests/living-church-pius-ten-scene-browser.mjs"
       - "previews/visible-mass-3d/living-church-catechism-native.mjs"
@@ -49,6 +52,9 @@ jobs:
         run: |
           node --check previews/visible-mass-3d/living-church-character-scene.mjs
           node --check previews/visible-mass-3d/living-church-pius-ten-review.mjs
+          node --check previews/visible-mass-3d/living-church-pius20-source-bridge.mjs
+          node --check previews/visible-mass-3d/living-church-pius20-scene.mjs
+          node --check tests/living-church-pius20-scene-browser.mjs
           node tests/living-church-pius-ten-review.mjs
           node --check tests/living-church-character-scene.mjs
           node --check previews/visible-mass-3d/living-church-catechism-native.mjs
@@ -68,6 +74,32 @@ jobs:
           test "$(git rev-parse FETCH_HEAD)" = "0b4de3b50d1cfb88ecfe30038dae493e6d2eeb13"
           git show FETCH_HEAD:data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json > research-out/pius-x-ten-review-source.json
           node tests/living-church-pius-ten-review.mjs research-out/pius-x-ten-review-source.json
+      - name: Stage pinned 20-path St Pius X source owners (never duplicated into P2)
+        shell: bash
+        run: |
+          set -euo pipefail
+          PIN=6883412a1a5f56c0ff8602910d20024a3744ff33
+          git fetch --no-tags --depth=1 origin "$PIN"
+          test "$(git rev-parse FETCH_HEAD)" = "$PIN" || exit 1
+          mkdir -p research-out/pius20-pinned-source
+          for file in \
+            pius-x-20path-bilingual-choice-navigation-20261020.v1.json \
+            pius-x-source-bounded-bilingual-corrections-20261020.v1.json \
+            pius-x-chanoine-22-answer-aq04-aq05-eligibility-20261020.v1.json \
+            pius-x-historical-visual-novel-stage-20261020.v1.json \
+            pius-x-six-period-voice-candidates-20261020.v1.json
+          do
+            git show "FETCH_HEAD:data/learn/research/$file" > "research-out/pius20-pinned-source/$file"
+          done
+          for group in 9-sacraments 10-eucharist
+          do
+            for letter in a b c d e
+            do
+              file="pius-x-batch${group}-${letter}-20261020.v1.json"
+              git show "FETCH_HEAD:data/learn/research/$file" > "research-out/pius20-pinned-source/$file"
+            done
+          done
+          test "$(find research-out/pius20-pinned-source -name '*.json' | wc -l)" -eq 15
       - name: Install isolated browser tooling
         run: |
           npm install --no-save --no-package-lock --ignore-scripts @playwright/test@1.55.0
@@ -76,6 +108,8 @@ jobs:
         run: node tests/living-church-character-scene.mjs
       - name: Test source-owned Pius X conversation scene with original approved sprites
         run: node tests/living-church-pius-ten-scene-browser.mjs
+      - name: Test pinned SPX 20-paths inside original Living Church character scene
+        run: node tests/living-church-pius20-scene-browser.mjs
       - name: Preserve visual review screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -90,5 +124,13 @@ jobs:
         with:
           name: living-church-pius-ten-editorial-scenes
           path: artifacts/living-church-pius-review/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: living-church-pius20-original-scene-review
+          path: artifacts/living-church-pius20-review/*.png
           if-no-files-found: warn
           retention-days: 14
