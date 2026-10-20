@@ -49,7 +49,7 @@ Approved original asset **`ao_chant`**, exact saved name **Chant** (native `curr
 | Source C0196 briefly audible → low | text-only until finer source cue | No misleading permanently audible or chanted state |
 | Gloria/Credo/Sanctus simultaneous text | Priest voice and Schola voice are independent | Schola activity cannot synthesize priest chanting |
 
-The new compiled icon map contains 25 `final_ao_chant` bindings. In Low Mass a generic source `CHANTED` token, if it appears, must resolve as audible **speech** rather than to that Sung-only original.
+The new compiled icon map contains 25 `final_ao_chant` bindings. The same **form-aware, actor-guarded** voice distinction now applies to Sung **Simple and Missal** modes through `reader-icons.js`, not only curated 65-card LIVE. In Low Mass a generic source `CHANTED` token, if it appears, resolves as audible **speech** through the non-Sung branch rather than to that Sung-only original.
 
 ## Rubric reduction policy (icon-first, never cue-loss)
 
