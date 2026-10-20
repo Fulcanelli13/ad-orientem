@@ -642,4 +642,34 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   outline:2px solid #d8bb84;outline-offset:2px;border-radius:4px;
 }
 
+/* D → C profile lifecycle: preserve Journey state and DOM under a Place
+   sheet, but never draw two overlapping editorial folios at once. */
+.aoHeritageSurface:has(.aoJourneyPanel):has(.aoFindSheetBackdrop[data-find-close-place]) .aoJourneyPanel{
+  visibility:hidden;pointer-events:none;
+}
+.aoHeritageSurface:has(.aoJourneyPanel) .aoHeritageCardLayer .aoHeritagePreview{
+  background:#101923; /* opaque: no text bleed-through from the journey */
+}
+@media(max-width:799px){
+  /* A Place without approved photographic media needs one text column.
+     Do not leave its title in column 2 with an empty-media paragraph in 1. */
+  .aoHeritageSurface .aoHeritagePreview:not(:has(.aoHeritagePlaceThumb)){
+    grid-template-columns:minmax(0,1fr);row-gap:6px;
+  }
+  .aoHeritageSurface .aoHeritagePreview:not(:has(.aoHeritagePlaceThumb)) .aoHeritageCardHeading{
+    grid-column:1;grid-row:2;padding-right:48px;
+  }
+  .aoHeritageSurface .aoHeritagePreview:not(:has(.aoHeritagePlaceThumb)) .aoHeritageCardTitle{
+    grid-column:1;grid-row:3;margin:0;
+  }
+  .aoHeritageSurface .aoHeritagePreview:not(:has(.aoHeritagePlaceThumb)) .aoHeritageSynopsis,
+  .aoHeritageSurface .aoHeritagePreview:not(:has(.aoHeritagePlaceThumb)) .aoHeritageCardEmpty{
+    grid-column:1;grid-row:4;margin:0;
+    color:#c9beaa;font:400 13px/1.4 var(--ao-font-body,Georgia,serif);
+  }
+  .aoHeritageSurface .aoHeritagePreview:not(:has(.aoHeritagePlaceThumb)) .aoHeritagePreviewActions{
+    grid-column:1;grid-row:5;
+  }
+}
+
 `;
