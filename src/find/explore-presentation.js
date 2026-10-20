@@ -1,6 +1,7 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
+import { renderPilgrimageJourneyPanel } from "./pilgrimage-journey.js";
 import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
@@ -508,6 +509,9 @@ export function buildExploreViewModel({
   featuredPlaces=[],
   nearby=[],
   displayLimit=120,
+  journeyOpen=false,
+  journeys=[],
+  journeySelectedId=null,
 }={}){
   const list=arr(items);
   const selected=list.find(item=>item?.item_id===selectedId)??selectedOverride??null;
@@ -524,6 +528,9 @@ export function buildExploreViewModel({
     unavailableProviders:arr(unavailableProviders),
     view,
     filters,
+    journeyOpen:Boolean(journeyOpen),
+    journeys:Object.freeze(arr(journeys)),
+    journeySelectedId,
     saintsRelease,
     selected,
     selectedPlace,
@@ -539,7 +546,10 @@ export function buildExploreViewModel({
 }
 
 export function renderExploreToString(vm){
-  if(vm.lens==="heritage")return renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview:compactExploreItemSheet});
+  if(vm.lens==="heritage")return renderHeritageToString(vm,{
+    placeSheet,detailSheet,itemPreview:compactExploreItemSheet,
+    journeyPanel:renderPilgrimageJourneyPanel,
+  });
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.lens==="saints"?vm.items.length:(vm.counts?.[vm.lens]??vm.items.length));
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(vm.lens==="tlm"?L(vm.language,"Traditional Mass","Messe traditionnelle"):lensLabel(vm.language,vm.lens))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
