@@ -223,7 +223,8 @@ export const FINAL_65_CUE_ICON_KEYS=Object.freeze({
 }),
 });
 export const FINAL_65_PRIEST_POSITION_ICON_KEYS=Object.freeze({
-  "FOOT_CENTER": "final_ref_112206",
+  // User rejected Foot Centre artwork in live reader; keep position text only.
+  "FOOT_CENTER": null,
   "ALTAR_STEPS_ASCENDING": "priest_ascending_rich",
   "ALTAR_CENTER": "priest_centre_hands_rich",
   "ALTAR_EPISTLE_MISSAL": "priest_gospel_rich",
@@ -251,7 +252,7 @@ export function finalCurated65IconKeys(state={}){
   responseIconKey:state.response?"final_response":null,
   priestVoiceIconKey:state.priestVoice?FINAL_65_CUE_ICON_KEYS.priestVoice[voiceCue]??null:null,
   scholaIconKey:state.schola?"final_schola":null,
-  priestPositionIconKey:facesPeople?"final_new_priest_facing":FINAL_65_PRIEST_POSITION_ICON_KEYS[station]??null,
+  priestPositionIconKey:station==="FOOT_CENTER"?null:(facesPeople?"final_new_priest_facing":FINAL_65_PRIEST_POSITION_ICON_KEYS[station]??null),
   priestActionIconKey:state.priestAction?FINAL_65_CUE_ICON_KEYS.priestAction[actionCue]??null:null,
   bellIconKey:state.bell?"bells":null,
  });
