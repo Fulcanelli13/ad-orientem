@@ -13,7 +13,7 @@ const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=u
 const server=http.createServer(async(req,res)=>{
  try{
   const pathname=decodeURIComponent(new URL(req.url,"http://localhost").pathname);
-  const file=resolve(root,"."+pathname);
+  const file=pathname.endsWith("/")?resolve(root,"."+pathname,"index.html"):resolve(root,"."+pathname);
   if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403).end();return}
   const data=await readFile(file);
   res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});
