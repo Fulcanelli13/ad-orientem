@@ -51,6 +51,38 @@
         "CHA-CSE-CSE138",
         "CHA-CSE-CSE139"
       ]
+    },
+    {
+      "batch": "B03",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b03-confession-claim-review-20261021.v1.json",
+      "commit": "ed0d7554ead955a3217132c5d7999756a0cc16f5",
+      "families": 8,
+      "answerUnits": 16,
+      "ids": [
+        "SPX-1905-P-731",
+        "SPX-1905-P-734",
+        "SPX-1905-P-737",
+        "SPX-1905-P-746",
+        "SPX-1905-P-751",
+        "SPX-1905-P-752",
+        "SPX-1905-P-758",
+        "SPX-1905-P-759"
+      ],
+      "status": "PASSAGE_MAPS_AND_INFERENCE_FLAGS_READY_FOR_HUMAN_REVIEW"
+    },
+    {
+      "batch": "B04",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b04-thoughts-source-boundaries-20261021.v1.json",
+      "commit": "dcc16428056a7c309d7bda4d98a3e4cc3dd422ff",
+      "families": 2,
+      "answerUnits": 4,
+      "ids": [
+        "CHA-CSE-CSE136",
+        "CHA-CSE-CSE137"
+      ],
+      "status": "UNSUPPORTED_CLINICAL_CLAIMS_REMOVED_IN_PROPOSALS"
     }
   ],
   "blocked": [
@@ -67,13 +99,13 @@
     }
   ],
   "active": {
-    "batch": "B03",
-    "task": "Upgrade exact Pius X confession family evidence from LOCATED_NOT_SENTENCE_CERTIFIED, reusing B02 primary source readings"
+    "batch": "B05",
+    "task": "Chanoine CSE016/018 unresolved doctrinal specialist source precision"
   },
   "next": [
-    "SPX confession families with exact Q731/746/747/751/752/758/759/760 evidence",
-    "Chanoine remaining clinical-source claims CSE136/137: isolate doctrine from unverified psychology, remove or verify latter",
-    "Remaining original first-release priorities; reuse prior completed audits"
+    "CSE016/018 Donum veritatis exact authority and theological difficulty distinctions",
+    "Other source-specific specialist questions with accessible original sources",
+    "First-release SPX papal authenticity questions; no repeated full-corpus audit"
   ],
   "deduplication": "(kb, canonical familyId, turn, claim, source locator); retain duplicated conversation contexts, synchronize approved answer variants",
   "approvalsChanged": 0,
