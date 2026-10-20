@@ -217,12 +217,11 @@ try{
   // The source-owned Before Mass prayers may reuse the one PRAY folio,
   // rather than dismiss and reopen it. Require a certified destination:
   // either the old modal closes or the traditional reader owns mass.prepare.
-  await page.waitForFunction(()=>{
-    const root=document.getElementById("aoPray435930");
-    if(!root?.classList?.contains("open"))return true;
-    return root.querySelector(".aoP435930Mount")?.dataset?.aoPrayView==="traditional-pray"
-      &&globalThis.AO_TRADITIONAL_PRAY_V381?.state?.()?.route==="mass.prepare";
-  },null,{timeout:10000});
+  await page.waitForFunction(()=> 
+    document.getElementById("aoPray435930")?.classList?.contains("open") &&
+    document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="traditional-pray" &&
+    globalThis.AO_TRADITIONAL_PRAY_V381?.state?.()?.route==="mass.prepare",
+    null,{timeout:10000});
   const handoffPresentation=await page.evaluate(()=>({
     prayerOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
     prayerView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
@@ -257,9 +256,9 @@ try{
     assert.equal(await beforeMassBack.count(),1,
       "Canonical Before Mass reader has no way back to its caller");
     await beforeMassBack.click();
-    await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
   }
-  await page.evaluate(()=>globalThis.AO_V37_SHELL?.openDomain?.("pray"));
+  // The canonical Back must restore the initiating First Friday folio itself.
+  // Do not simulate a separate shell navigation that users never requested.
   await page.waitForFunction(()=>
     document.getElementById("aoPray435930")?.classList?.contains("open") &&
     document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="firstFriday" &&
