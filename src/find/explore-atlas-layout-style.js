@@ -588,4 +588,36 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  .aoHeritageSurface .aoJourneyRoutes button{flex-basis:150px}
 }
 
+/* Stage medallions link to individually sourced canonical sacred-place anchors.
+   Numbers encode ordinal in a DOCUMENTED itinerary, never turn-by-turn routing. */
+.aoHeritageSurface .aoJourneyMapStageMarker{
+  box-sizing:border-box;display:grid;place-items:center;
+  width:38px;height:38px;border-radius:50%;padding:0;
+  border:2px solid #ddc395;background:#182b3a;color:#f1e4c8;
+  box-shadow:0 0 0 4px rgba(8,15,24,.78),0 3px 13px rgba(0,0,0,.5);
+  font:700 15px/1 var(--ao-font-ui,system-ui,sans-serif);
+  font-variant-numeric:tabular-nums;cursor:pointer;
+}
+.aoHeritageSurface .aoJourneyMapStageMarker:hover,
+.aoHeritageSurface .aoJourneyMapStageMarker:focus-visible{
+  background:#d6bd87;color:#11202d;outline:2px solid #f4e9ce;
+  outline-offset:4px;
+}
+.aoHeritageSurface .aoJourneyFocusButton{
+  width:44px;height:44px;margin:-9px 0 -9px -9px;
+  background:#243746;border:1px solid #cdb782;color:#f0e1bd;
+  font:700 14px/1 var(--ao-font-ui,system-ui,sans-serif);
+  cursor:pointer;position:relative;z-index:1;
+}
+.aoHeritageSurface .aoJourneyFocusButton:hover,
+.aoHeritageSurface .aoJourneyFocusButton:focus-visible,
+.aoHeritageSurface .aoJourneyFocusButton[aria-pressed="true"]{
+  background:#d7bc85;color:#0c1b29;outline:2px solid #e4cfaa;
+  outline-offset:2px;
+}
+.aoHeritageSurface .aoJourneyStageMapped{
+  color:#dbc394;font-size:10px;white-space:nowrap;
+  letter-spacing:.045em;
+}
+
 `;
