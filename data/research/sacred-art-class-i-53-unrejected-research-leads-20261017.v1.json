@@ -48,7 +48,13 @@
           "note": null,
           "priority": 1,
           "previousUserDecision": "AESTHETICALLY_APPROVED",
-          "productionReady": false
+          "productionReady": false,
+          "sourcePolicy": {
+            "status": "HOLD_PRADO_SOURCE_POLICY",
+            "noFetch": true,
+            "noPromotion": true,
+            "approvedPaintingSelectionUnchanged": true
+          }
         }
       ],
       "noPublishedImage": true
@@ -813,7 +819,13 @@
           "note": "Child Christ and lamb; not literal adult John10:1–10 discourse. This is NOT rejected nga-195513 by Tanner.",
           "priority": 1,
           "previousUserDecision": "UNAPPROVED_EXTERNAL_CANDIDATE",
-          "productionReady": false
+          "productionReady": false,
+          "sourcePolicy": {
+            "status": "HOLD_PRADO_SOURCE_POLICY",
+            "noFetch": true,
+            "noPromotion": true,
+            "approvedPaintingSelectionUnchanged": true
+          }
         }
       ],
       "noPublishedImage": true
@@ -1020,7 +1032,13 @@
           "note": "Prado, c1635, further strong alternative.",
           "priority": 2,
           "previousUserDecision": "UNAPPROVED_EXTERNAL_CANDIDATE",
-          "productionReady": false
+          "productionReady": false,
+          "sourcePolicy": {
+            "status": "HOLD_PRADO_SOURCE_POLICY",
+            "noFetch": true,
+            "noPromotion": true,
+            "approvedPaintingSelectionUnchanged": true
+          }
         }
       ],
       "noPublishedImage": true
@@ -1282,7 +1300,13 @@
           "note": "Lk1 Annunciation; image of Immaculate Conception is feast-specific not identical Gospel scene.",
           "priority": 1,
           "previousUserDecision": "AESTHETICALLY_APPROVED",
-          "productionReady": false
+          "productionReady": false,
+          "sourcePolicy": {
+            "status": "HOLD_PRADO_SOURCE_POLICY",
+            "noFetch": true,
+            "noPromotion": true,
+            "approvedPaintingSelectionUnchanged": true
+          }
         },
         {
           "artworkId": "cma-135659",
@@ -1423,5 +1447,11 @@
       ],
       "noPublishedImage": true
     }
-  ]
+  ],
+  "pradoMediaExclusion": {
+    "effectiveDate": "2026-10-20",
+    "status": "HOLD_PRADO_SOURCE_POLICY",
+    "description": "Museo del Prado images, including Commons/mirror copies, are not candidates for further acquisition or production. Historical artwork identities and editorial selections remain unchanged.",
+    "sourcePolicyHoldsInThisLedger": 4
+  }
 }
