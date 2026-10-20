@@ -113,6 +113,10 @@ try{
     await page.waitForFunction(()=>{const img=document.querySelector(
       "#ao-find-modular-root .aoHeritagePreview .aoHeritagePlaceThumb img");
       return Boolean(img?.complete&&img.naturalWidth>0)},null,{timeout:15000});
+    await selectedImage.evaluate(img=>img.decode());
+    // Let the source-qualified geography focus and decoded hero paint before
+    // judging the C editorial layout.
+    await page.waitForTimeout(650);
    }
    await page.screenshot({path:resolve(out,"explore-"+width+"-selected-place.png"),fullPage:false});
    await page.locator("#ao-find-modular-root .aoHeritagePreview button[data-find-close-place]").click();
