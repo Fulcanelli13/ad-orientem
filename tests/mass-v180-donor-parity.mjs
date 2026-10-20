@@ -148,8 +148,10 @@ assert.match(iconMap,/ALTAR_GOSPEL_MISSAL:"priest_epistle_rich"/,
   "19 October Gospel-side physical artwork mapping missing");
 assert.match(iconMap,/ALTAR_EPISTLE_MISSAL:"priest_gospel_rich"/,
   "19 October Epistle-side physical artwork mapping missing");
-assert.match(iconMap,/FOOT_CENTER:"priest_foot"/,
-  "v1.77 top PRIEST summary lost the plain foot-of-altar pictogram");
+assert.match(iconMap,/FOOT_CENTER:null/,
+  "User rejected the Foot Centre illustration; the priest's position must remain text-only");
+assert.doesNotMatch(iconMap,/FOOT_CENTER:"priest_foot"/,
+  "Do not reinstate vetoed foot-of-altar donor artwork under donor parity");
 assert.match(iconMap,/priestActionIconKey:priestActionKey/,
   "rich v4.6 action art is no longer separately owned by the action channel");
 assert.match(nativePreview,/priestAction,bell,schola:scholaProjection\.schola/,
