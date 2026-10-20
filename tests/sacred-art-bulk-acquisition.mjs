@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {hasPradoProvenance,commonsMetadataHasPradoProvenance,PRADO_SOURCE_HOLD} from "../tools/calendar/sacred-art-source-policy.mjs";
 import {readFileSync} from "node:fs";
 import {BATCH_SIZE,makeBatches,sourceGate,parseImageDimensions,commonsLicenseUsable} from "../tools/calendar/acquire-sacred-art-bulk.mjs";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
@@ -18,9 +19,11 @@ assert.equal(intake.counts.legacyFivesIn451,77);
 assert.equal(intake.counts.excluded,68);
 assert.equal(intake.counts.editorialHold,199);
 assert.equal(intake.counts.eligibleExactMet,23);
-assert.equal(intake.counts.eligibleExactCommons,36);
+assert.equal(intake.counts.eligibleExactCommons,35);
 assert.equal(intake.counts.eligibleExactCleveland,14);
-assert.equal(intake.counts.eligibleOtherSource,111);
+assert.equal(intake.counts.eligibleOtherSource,87);
+assert.equal(intake.counts.pradoAcquisitionHolds,30);
+assert.equal(intake.counts.pradoHoldsApprovedOrHistoric,25);
 assert.deepEqual(certified.media,[],"Bulk ingestion cannot silently certify release files");
 assert.equal(commonsLicenseUsable("CC BY-SA 4.0","True"),true,"Attribution/share-alike allows technical staging");
 assert.equal(commonsLicenseUsable("CC BY 3.0","True"),true,"Copyrighted CC-licensed file may be staged");
@@ -31,12 +34,19 @@ const accepted=new Set(freeze.approved.map(x=>x.artworkId));
 const rejected=new Set(freeze.rejected.map(x=>x.artworkId));
 const legacy=new Set(freeze.historicallyFiveIDsPreservedSeparately);
 const statuses=intake.works.map(x=>sourceGate(x));
+assert(hasPradoProvenance({sourceUrl:"https://www.museodelprado.es/en/the-collection/art-work/example"}));
+assert(hasPradoProvenance({id:"prado-rubens-p001647",sourceUrl:"https://commons.wikimedia.org/wiki/File:Mirror.jpg"}));
+assert(commonsMetadataHasPradoProvenance({Credit:{value:'<a href="https://www.museodelprado.es">Museo del Prado</a>'}}));
+assert.equal(commonsMetadataHasPradoProvenance({Credit:{value:"National Gallery of Art"}}),false);
+assert.equal(sourceGate({...intake.works.find(x=>x.provider==="MET_OPEN_ACCESS_CANDIDATE"),sourcePolicy:{status:PRADO_SOURCE_HOLD}}),PRADO_SOURCE_HOLD);
+assert(intake.works.every((x,i)=>!(hasPradoProvenance(x)&&statuses[i]!==PRADO_SOURCE_HOLD)),"No Prado original can enter an acquisition shard");
 assert.equal(statuses.filter(x=>x==="MET").length,23);
-assert.equal(statuses.filter(x=>x==="COMMONS").length,36);
+assert.equal(statuses.filter(x=>x==="COMMONS").length,35);
 assert.equal(statuses.filter(x=>x==="CLEVELAND").length,14);
 assert.equal(statuses.filter(x=>x==="HOLD_REJECTED").length,68);
-assert.equal(statuses.filter(x=>x==="HOLD_NOT_APPROVED").length,199);
-assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,111);
+assert.equal(statuses.filter(x=>x==="HOLD_NOT_APPROVED").length,194);
+assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,87);
+assert.equal(statuses.filter(x=>x===PRADO_SOURCE_HOLD).length,30);
 for(let i=0;i<intake.works.length;i++){
  const row=intake.works[i],gate=statuses[i];
  if(gate==="MET"||gate==="COMMONS"||gate==="CLEVELAND")
@@ -55,4 +65,4 @@ assert(!script.includes("git push")&&!script.includes("assets/approved/sacred-ar
  "Bulk script cannot commit or deploy verified masters");
 assert(script.includes("sourceClaimsAreNotRightsEvidence:true"));
 assert(script.includes("phoneQaApproved:false"));
-console.log("PASS Sacred Art: 451 original records / ten 50-work shards / 73 exact-source candidates from 107 current and 77 preserved historic fives; 68 rejects and 199 holds; zero released");
+console.log("PASS Sacred Art: 451 original records / ten 50-work shards / 72 exact-source candidates; 30 Prado-source holds; 68 rejects and 199 holds; zero released");
