@@ -7,6 +7,9 @@ on:
       - "data/research/sacred-visual-w66-cross-module-938-visual-demand-preaudit-20261015.v1.json"
       - "tests/sacred-visual-w66-visual-demand-preaudit.mjs"
       - ".github/workflows/sacred-visual-w66-coverage.yml"
+      - "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json"
+      - "tools/calendar/acquire-sacred-art-bulk.mjs"
+      - "tests/sacred-art-bulk-acquisition.mjs"
       - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
       - "tests/sacred-visual-w67-runtime-source-assets-and-policy-holds.mjs"
       - "data/research/sacred-visual-w68-2026-runtime-proper-and-151-atlas-artwork-crosswalk-20261015.v1.json"
@@ -43,6 +46,7 @@ jobs:
           node tests/sacred-art-class-i-53-release-gates.mjs
           node tests/sacred-art-calendar-selected-proper-bridge.mjs
           node tests/sacred-art-first-five-open-master-intake.mjs
+          node tests/sacred-art-bulk-acquisition.mjs
       - name: Stage exact Open Access Met master (never publish automatically)
         continue-on-error: true
         run: node tools/calendar/acquire-sacred-art-first-five.mjs
@@ -57,3 +61,27 @@ jobs:
       # Source pixels and provenance are retained as download-only CI artifacts.
       # No Actions bot push: image bytes may enter a review branch only through
       # an independently checked human-approved commit after crop, rights and QA.
+
+  sacred-art-bulk-source-shards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Hold uncertified artwork and acquire exact-source approved originals
+        run: node tools/calendar/acquire-sacred-art-bulk.mjs ${{ matrix.shard }}
+      - name: Archive exact-image source files and QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-source-batch-${{ matrix.shard }}
+          path: artifacts/sacred-art-bulk/batch-*/
+          retention-days: 14
+          if-no-files-found: warn
