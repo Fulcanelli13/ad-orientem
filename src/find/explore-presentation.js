@@ -411,7 +411,7 @@ function detailSheet(vm){
   }
 
   html+=sourceLinks(item,vm.language);
-  html+='<footer><small>'+esc(item.note||L(vm.language,"Source-backed Explore record.","Fiche Explore sourcée."))+'</small>';
+  html+='<footer><small>'+esc((vm.language==="fr"&&item.note_fr)||item.note||L(vm.language,"Source-backed Explore record.","Fiche Explore sourcée."))+'</small>';
   if(item?.geo?.attribution)html+='<small class="aoFindGeoAttribution">'+esc(item.geo.attribution)+'</small>';
   html+='</footer></section></div>';
   return html;
