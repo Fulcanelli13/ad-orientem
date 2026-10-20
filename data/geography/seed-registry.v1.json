@@ -1494,6 +1494,182 @@
       "codes": {
         "iso_alpha2": "MN"
       }
+    },
+    {
+      "geo_area_id": "geo:country:FO",
+      "name": {
+        "official": "Faroe Islands",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "FO"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GL",
+      "name": {
+        "official": "Greenland",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GL"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:OM",
+      "name": {
+        "official": "Oman",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "OM"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:KW",
+      "name": {
+        "official": "Kuwait",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "KW"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:TH",
+      "name": {
+        "official": "Thailand",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "TH"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:BB",
+      "name": {
+        "official": "Barbados",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BB"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GD",
+      "name": {
+        "official": "Grenada",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GD"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SC",
+      "name": {
+        "official": "Seychelles",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SC"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:NC",
+      "name": {
+        "official": "New Caledonia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "NC"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GY",
+      "name": {
+        "official": "Guyana",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GY"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:BM",
+      "name": {
+        "official": "Bermuda",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BM"
+      }
     }
   ],
   "places": [
@@ -12675,6 +12851,474 @@
       "source_ids": [
         "AO-R87-SITE-R87-AO-R82-DISC-006",
         "AO-R87-GEO-R87-AO-R82-DISC-006"
+      ]
+    },
+    {
+      "place_id": "place:FO:mariukirkjan-torshavn",
+      "name": {
+        "official": "Mariukirkjan — St Mary's Catholic Church, Tórshavn",
+        "aliases": [
+          "St Mary's Catholic Church, Faroe Islands"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:FO"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 62.01438,
+        "lng": -6.77978,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/466897153",
+        "source_ref": "osm:way:466897153",
+        "matched_country_code": "FO",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Tórshavn",
+        "region": null,
+        "country_code": "FO",
+        "country": "Faroe Islands",
+        "formatted": "Mariukirkjan, Tórshavn, Faroe Islands"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-006",
+        "AO-R89-GEO-AO-R81-DISC-006"
+      ]
+    },
+    {
+      "place_id": "place:GL:christ-the-king-catholic-church-nuuk",
+      "name": {
+        "official": "Christ the King Catholic Church, Nuuk",
+        "aliases": [
+          "Krist Konge Kirke"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:GL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 64.17942,
+        "lng": -51.73179,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/253674855",
+        "source_ref": "osm:way:253674855",
+        "matched_country_code": "GL",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Nuuk",
+        "region": null,
+        "country_code": "GL",
+        "country": "Greenland",
+        "formatted": "Kutaa 1, 3900 Nuuk, Greenland"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-007",
+        "AO-R89-GEO-AO-R81-DISC-007"
+      ]
+    },
+    {
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "name": {
+        "official": "Saints Peter and Paul Catholic Church, Ruwi",
+        "aliases": [
+          "Sts. Peter and Paul Church, Muscat"
+        ]
+      },
+      "place_type": "church",
+      "geo_area_ids": [
+        "geo:country:OM"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 23.60649,
+        "lng": 58.53592,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/653760160",
+        "source_ref": "osm:way:653760160",
+        "matched_country_code": "OM",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Muscat (Ruwi)",
+        "region": null,
+        "country_code": "OM",
+        "country": "Oman",
+        "formatted": "Ruwi, Muscat, Oman"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-022",
+        "AO-R89-GEO-AO-R81-DISC-022"
+      ]
+    },
+    {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "name": {
+        "official": "Holy Family Catholic Co-Cathedral, Kuwait City",
+        "aliases": [
+          "Holy Family Cathedral, Kuwait"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:KW"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 29.36383,
+        "lng": 47.95989,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/154721740",
+        "source_ref": "osm:way:154721740",
+        "matched_country_code": "KW",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kuwait City",
+        "region": null,
+        "country_code": "KW",
+        "country": "Kuwait",
+        "formatted": "Kuwait City, Kuwait"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-027",
+        "AO-R89-GEO-AO-R81-DISC-027"
+      ]
+    },
+    {
+      "place_id": "place:KW:our-lady-of-arabia-minor-basilica-ahmadi",
+      "name": {
+        "official": "Minor Basilica of Our Lady of Arabia, Ahmadi",
+        "aliases": [
+          "Our Lady of Arabia Parish Church, Ahmadi"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:KW"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 29.0922,
+        "lng": 48.06752,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/337916298",
+        "source_ref": "osm:way:337916298",
+        "matched_country_code": "KW",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Ahmadi",
+        "region": null,
+        "country_code": "KW",
+        "country": "Kuwait",
+        "formatted": "Ahmadi, Kuwait"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-028",
+        "AO-R89-GEO-AO-R81-DISC-028"
+      ]
+    },
+    {
+      "place_id": "place:TH:assumption-cathedral-bangkok",
+      "name": {
+        "official": "Assumption Cathedral, Bangkok",
+        "aliases": [
+          "อาสนวิหารอัสสัมชัญ"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:TH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 13.72311,
+        "lng": 100.51516,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/32005418",
+        "source_ref": "osm:way:32005418",
+        "matched_country_code": "TH",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Bangkok",
+        "region": null,
+        "country_code": "TH",
+        "country": "Thailand",
+        "formatted": "Bang Rak, Bangkok, Thailand"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-008",
+        "AO-R89-GEO-AO-R82-DISC-008"
+      ]
+    },
+    {
+      "place_id": "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "name": {
+        "official": "St Patrick's Roman Catholic Cathedral, Bridgetown",
+        "aliases": [
+          "St Patrick's Cathedral, Barbados"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:BB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 13.09184,
+        "lng": -59.60897,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/385918684",
+        "source_ref": "osm:way:385918684",
+        "matched_country_code": "BB",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Bridgetown",
+        "region": null,
+        "country_code": "BB",
+        "country": "Barbados",
+        "formatted": "Jemmott's Lane, Bridgetown, Barbados"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-050",
+        "AO-R89-GEO-AO-R82-DISC-050"
+      ]
+    },
+    {
+      "place_id": "place:GD:immaculate-conception-cathedral-st-georges",
+      "name": {
+        "official": "Cathedral of the Immaculate Conception, St George's",
+        "aliases": [
+          "Grenada Immaculate Conception Catholic Cathedral"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:GD"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 12.05343,
+        "lng": -61.7521,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/383927620",
+        "source_ref": "osm:way:383927620",
+        "matched_country_code": "GD",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "St George's",
+        "region": null,
+        "country_code": "GD",
+        "country": "Grenada",
+        "formatted": "Church Street, St George's, Grenada"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-054",
+        "AO-R89-GEO-AO-R82-DISC-054"
+      ]
+    },
+    {
+      "place_id": "place:SC:immaculate-conception-cathedral-victoria",
+      "name": {
+        "official": "Cathedral of the Immaculate Conception, Victoria",
+        "aliases": [
+          "Cathédrale de l'Immaculée-Conception, Seychelles"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:SC"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -4.61978,
+        "lng": 55.45164,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/616378214",
+        "source_ref": "osm:way:616378214",
+        "matched_country_code": "SC",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Victoria",
+        "region": null,
+        "country_code": "SC",
+        "country": "Seychelles",
+        "formatted": "Victoria, Mahé, Seychelles"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-027",
+        "AO-R89-GEO-AO-R82-DISC-027"
+      ]
+    },
+    {
+      "place_id": "place:NC:cathedrale-saint-joseph-noumea",
+      "name": {
+        "official": "Cathédrale Saint-Joseph, Nouméa",
+        "aliases": [
+          "Nouméa Catholic Cathedral"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:NC"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -22.27278,
+        "lng": 166.44461,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/37794199",
+        "source_ref": "osm:way:37794199",
+        "matched_country_code": "NC",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Nouméa",
+        "region": null,
+        "country_code": "NC",
+        "country": "New Caledonia",
+        "formatted": "Nouméa, New Caledonia"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-090",
+        "AO-R89-GEO-AO-R82-DISC-090"
+      ]
+    },
+    {
+      "place_id": "place:GY:immaculate-conception-cathedral-brickdam",
+      "name": {
+        "official": "Cathedral of the Immaculate Conception, Brickdam",
+        "aliases": [
+          "Brickdam Cathedral, Georgetown"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:GY"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 6.80744,
+        "lng": -58.16201,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/222811604",
+        "source_ref": "osm:way:222811604",
+        "matched_country_code": "GY",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Georgetown",
+        "region": null,
+        "country_code": "GY",
+        "country": "Guyana",
+        "formatted": "Brickdam, Georgetown, Guyana"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-068",
+        "AO-R89-GEO-AO-R82-DISC-068"
+      ]
+    },
+    {
+      "place_id": "place:BM:st-theresa-cathedral-hamilton",
+      "name": {
+        "official": "Cathedral of St Theresa of Lisieux, Hamilton",
+        "aliases": [
+          "St Theresa's Cathedral, Bermuda"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:BM"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 32.29725,
+        "lng": -64.78482,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/909567101",
+        "source_ref": "osm:way:909567101",
+        "matched_country_code": "BM",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Hamilton",
+        "region": null,
+        "country_code": "BM",
+        "country": "Bermuda",
+        "formatted": "34 Cedar Avenue, Hamilton, Bermuda"
+      },
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-077",
+        "AO-R89-GEO-AO-R82-DISC-077"
       ]
     }
   ],
