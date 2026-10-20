@@ -108,6 +108,37 @@ try{
     const b=await direct.evaluate(()=>globalThis.AO_MODULES.open("pray.good_death",{returnContext:{surface:"calendar"}}));
     assert.equal(b?.ok,true,"Good Death did not open from direct module registry: "+JSON.stringify(b));
     assert.equal(await direct.evaluate(()=>globalThis.AO_PRAY_APP_V1?.status?.()?.readerLoaded),true);
+
+    // D+ Mass routes must be available on a fresh boot, using canonical
+    // prayers in both lengths without a second embedded prayer book.
+    const prep=await direct.evaluate(()=>globalThis.AO_MODULES.open("mass.prepare",{
+      depth:"full",language:"fr",
+      onContinue:()=>{globalThis.__folioContinued=(globalThis.__folioContinued||0)+1;return true;}
+    }));
+    assert.equal(prep?.ok,true,"Direct Mass preparation prayer route missing: "+JSON.stringify(prep));
+    await direct.locator("#aoPray435930 [data-tp381-mass-continue]").waitFor({state:"visible",timeout:10000});
+    assert.equal(await direct.locator("#aoPray435930 [data-tp381-mass-step]").count(),1,
+      "Full Mass preparation should have multi-stage prayer navigation");
+    assert.match(await direct.locator("#aoPray435930 .aoMassFolioPrayerNav").innerText(),/Passer à la messe/,
+      "Mass Folio's French session language did not reach Prayer");
+    await direct.locator("#aoPray435930 [data-tp381-mass-step='1']").click();
+    assert.equal(await direct.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.state().massStep),1);
+    await direct.locator("#aoPray435930 [data-tp381-mass-continue]").click();
+    await direct.waitForFunction(()=>globalThis.__folioContinued===1,null,{timeout:10000});
+    await direct.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList.contains("open"),null,{timeout:10000});
+
+    const thanks=await direct.evaluate(()=>globalThis.AO_MODULES.open("mass.thanksgiving",{
+      depth:"full",language:"en"
+    }));
+    assert.equal(thanks?.ok,true,"Full thanksgiving must resolve to canonical Prayer");
+    await direct.locator("#aoPray435930 [data-tp381-mass-finish]").waitFor({state:"visible",timeout:10000});
+    assert.match(await direct.locator("#aoPray435930 .aoMassFolioPrayerNav").innerText(),/1 \/ 4/,
+      "Full thanksgiving should retain all four canonical prayers");
+    await direct.locator("#aoPray435930 [data-tp381-mass-step='1']").click();
+    assert.equal(await direct.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.state().massStep),1);
+    await direct.locator("#aoPray435930 [data-tp381-mass-finish]").click();
+    await direct.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList.contains("open"),null,{timeout:10000});
+
   }finally{await direct.close();}
 
   console.log("PASS Prayer first-use module loading; Rosary/Novenas/traditional/focus runtime APIs and Home re-entry");
