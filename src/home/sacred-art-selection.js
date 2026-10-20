@@ -11,11 +11,13 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
   ["2026-03-19","ART-hilippe-de-hampaigne-he-ream-of-aint-oseph","GOSPEL_SCENE","Matthew 1:18","sancti:03-19:1:w","Sancti/03-19"],
   ["2026-03-25","ART-hilippe-de-hampaigne-he-nnunciation","GOSPEL_SCENE","Luke 1:26","sancti:03-25:1:w","Sancti/03-25"],
   ["2026-04-02","met-459131","FEAST_EUCHARIST",null,"tempora:Quad6-4r:1:w","Tempora/Quad6-4"],
-  ["2026-04-03","ART-nthony-van-yck-he-ance-hrust","PASSION_EVENT",null,"tempora:Quad6-5r:1:bv","Tempora/Quad6-5"],
+  ["2026-04-03","ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross","PASSION_EVENT",null,"tempora:Quad6-5r:1:bv","Tempora/Quad6-5"],
   ["2026-04-12","W07-014","GOSPEL_SCENE","John 20:19","tempora:Pasc1-0:1:w","Tempora/Pasc1-0"],
-  ["2026-05-14","ART-rtus-olffort-scension-ntwerp-osary-cycle","FEAST_EVENT",null,"tempora:Pasc5-4:1:w","Tempora/Pasc5-4"],
+  ["2026-05-14","met-436835","FEAST_EVENT",null,"tempora:Pasc5-4:1:w","Tempora/Pasc5-4"],
   ["2026-05-24","ART-ean-estout-entecost","FEAST_EVENT",null,"tempora:Pasc7-0:1:r","Tempora/Pasc7-0"],
+  ["2026-05-27","ART-hilippe-de-hampaigne-a-etite-ne","FEAST_EUCHARIST",null,"tempora:Pasc7-3:1:r","Tempora/Pasc7-3"],
   ["2026-05-31","cma-136507","FEAST_ICONOGRAPHY",null,"tempora:Pent01-0r:1:w","Tempora/Pent01-0"],
+  ["2026-06-04","met-438434","FEAST_EUCHARIST",null,"tempora:Pent01-4:1:w","Tempora/Pent01-4"],
   ["2026-06-12","ART-nthony-van-yck-he-ance-hrust","GOSPEL_SCENE","John 19:31","tempora:Pent02-5:1:w","Tempora/Pent02-5"],
   ["2026-06-29","met-442491","FEAST_PERSONS",null,"sancti:06-29:1:r","Sancti/06-29"],
   ["2026-07-01","ART-nthony-van-yck-he-ance-hrust","GOSPEL_SCENE","John 19:30","sancti:07-01:1:r","Sancti/07-01"],
@@ -29,7 +31,17 @@ export const APPROVED_CLASS_I_2026 = Object.freeze([
 /** Release entries must name exact LOCAL masters. No remote thumbnail fallback. */
 export const RELEASED_SACRED_ART_MASTERS = Object.freeze({});
 
+// 20 October 2026: never allow the earlier Home gallery to reintroduce
+// displaced artwork on these Class I days while exact approved masters are held.
+// Good Friday is Tiepolo San Polo Station XII, not Station VIII or XIII:
+// https://chorusvenezia.org/en/visita/via-crucis-jesus-dies-on-the-cross/
+// National object ID 0500220372A-12 (metadata CC BY; image rights NOT certified).
+// Minardi/Fontana 10 April and Maíno Prado P003018 23 May are selected
+// but held pending canonical art IDs / verified reuse-ready source images.
 const historicProhibitedPaths=new Set([
+  "tempora/quad6-5", "tempora/quad6-5r",
+  "tempora/pasc0-5", "tempora/pasc5-4", "tempora/pasc6-6",
+  "tempora/pasc7-3", "tempora/pent01-4",
   "sancti/03-25",
   "tempora/pasc7-0",
   "tempora/pent01-0",
