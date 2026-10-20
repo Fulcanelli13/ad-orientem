@@ -1,0 +1,259 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B12_IL_FERMO_CLAIM_DELTAS_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "formation/1457-pius-x-conversation-evidence",
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "counts": {
+    "families": 2,
+    "answerUnits": 4,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "SPX-EXP-026",
+      "originalRecord": {
+        "id": "SPX-EXP-026",
+        "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+        "question": {
+          "en": "How should Catholic lay associations relate to their bishops?",
+          "fr": "Quel rapport une association catholique doit-elle entretenir avec l'évêque ?"
+        },
+        "source": {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+          "locus": "§§18–22",
+          "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+          "screen": "PRIMARY_DIRECT",
+          "summary": "Association and pastoral works subordinated to local bishop and Church authority."
+        },
+        "turns": [
+          {
+            "kind": "opening",
+            "question": {
+              "en": "How should Catholic lay associations relate to their bishops?",
+              "fr": "Quel rapport une association catholique doit-elle entretenir avec l'évêque ?"
+            },
+            "response": {
+              "en": "Il fermo proposito situates Catholic associations and apostolic works under the guidance of Church authority, with pastoral responsibility belonging to the bishops.",
+              "fr": "Il fermo proposito situe les associations et œuvres apostoliques catholiques sous la conduite de l'autorité de l'Église, la responsabilité pastorale appartenant aux évêques."
+            }
+          },
+          {
+            "kind": "followup",
+            "question": {
+              "en": "Does organized lay action replace the pastor's mission?",
+              "fr": "L'action organisée des laïcs remplace-t-elle la mission des pasteurs ?"
+            },
+            "response": {
+              "en": "No. The document speaks of lay cooperation in the Church's work, not the abolition of pastoral oversight.",
+              "fr": "Non. Le document traite de la coopération des laïcs à l'œuvre de l'Église, non de la suppression de la conduite pastorale."
+            }
+          }
+        ],
+        "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+        "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+        "independentHistoricalApproval": false,
+        "independentVoiceApproval": false,
+        "independentTranslationApproval": false,
+        "published": false
+      },
+      "proposedTurns": [
+        {
+          "en": "Works directly assisting the Church’s spiritual ministry must be subject to the bishops. Other Catholic social works also require ecclesiastical guidance, while retaining reasonable freedom and responsibility in temporal affairs.",
+          "fr": "Les œuvres qui aident directement le ministère spirituel de l’Église doivent être soumises aux évêques. Les autres œuvres sociales catholiques ont aussi besoin de la direction ecclésiastique, tout en gardant une liberté raisonnable et leur responsabilité dans les affaires temporelles.",
+          "claims": [
+            {
+              "text": "Different relationships of pastoral works and temporal works to ecclesiastical authority",
+              "refs": [
+                "IFP22"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Their cooperation does not abolish pastoral authority; neither does it remove their proper responsibility in temporal matters.",
+          "fr": "Leur concours ne supprime pas l’autorité pastorale ; il ne leur enlève pas non plus leur responsabilité propre dans les affaires temporelles.",
+          "claims": [
+            {
+              "text": "Cooperation preserves authority and responsibility",
+              "refs": [
+                "IFP22"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "DOCUMENT_BOUND_RECONSTRUCTION_NOT_VERBATIM_PAPAL_DIALOGUE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-EXP-027",
+      "originalRecord": {
+        "id": "SPX-EXP-027",
+        "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+        "question": {
+          "en": "What can ordinary Catholics do for the Church's public mission?",
+          "fr": "Que peuvent faire les simples fidèles pour la mission publique de l'Église ?"
+        },
+        "source": {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+          "locus": "§§4–13",
+          "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+          "screen": "PRIMARY_DIRECT",
+          "summary": "Describes organized lay apostolate, charity, formation and Catholic social action."
+        },
+        "turns": [
+          {
+            "kind": "opening",
+            "question": {
+              "en": "What can ordinary Catholics do for the Church's public mission?",
+              "fr": "Que peuvent faire les simples fidèles pour la mission publique de l'Église ?"
+            },
+            "response": {
+              "en": "Il fermo proposito presents organised lay action as including works of charity, Christian formation and Catholic social endeavour. The faithful are not confined to passive spectatorship.",
+              "fr": "Il fermo proposito présente l'action organisée des laïcs comme comprenant les œuvres de charité, la formation chrétienne et l'activité sociale catholique. Les fidèles ne sont pas réduits au rôle de spectateurs."
+            }
+          },
+          {
+            "kind": "followup",
+            "question": {
+              "en": "Must charity be separated from Christian formation?",
+              "fr": "La charité doit-elle être séparée de la formation chrétienne ?"
+            },
+            "response": {
+              "en": "The document places both within a coherent apostolic undertaking: practical help and religious formation serve the same Christian mission.",
+              "fr": "Le document les place ensemble dans une œuvre apostolique cohérente : l'aide pratique et la formation religieuse servent la même mission chrétienne."
+            }
+          }
+        ],
+        "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+        "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+        "independentHistoricalApproval": false,
+        "independentVoiceApproval": false,
+        "independentTranslationApproval": false,
+        "published": false
+      },
+      "proposedTurns": [
+        {
+          "en": "Let the faithful spread revealed truth, practise the works of mercy and labour for the good of the people, especially workers and the poor.",
+          "fr": "Que les fidèles répandent la vérité révélée, pratiquent les œuvres de miséricorde et travaillent au bien du peuple, surtout des ouvriers et des pauvres.",
+          "claims": [
+            {
+              "text": "Truth and mercy",
+              "refs": [
+                "IFP3"
+              ]
+            },
+            {
+              "text": "Social needs and poor",
+              "refs": [
+                "IFP7-12"
+              ]
+            }
+          ]
+        },
+        {
+          "en": "Such zeal needs Christian formation and union with Christ. Practical works must be wisely fitted to the needs they seek to relieve.",
+          "fr": "Ce zèle exige une formation chrétienne et l’union au Christ. Les œuvres pratiques doivent répondre avec sagesse aux besoins qu’elles cherchent à soulager.",
+          "claims": [
+            {
+              "text": "Formation and grace",
+              "refs": [
+                "IFP11"
+              ]
+            },
+            {
+              "text": "Practical adaptation",
+              "refs": [
+                "IFP12"
+              ]
+            }
+          ]
+        }
+      ],
+      "classification": "DOCUMENT_BOUND_RECONSTRUCTION_NOT_VERBATIM_PAPAL_DIALOGUE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "IFP22",
+      "work": "Il fermo proposito (11 June 1905), English §22",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLocator": "Italian unnumbered paragraphs beginning Ci resta a toccare; Se bene si considerano; Ma anche le altre opere; Certo è che tali opere",
+      "exactItalianExcerpt": "si debbono muovere con la conveniente ragionevole libertà",
+      "supports": "Direct spiritual/pastoral works subordinate in every detail; other Catholic social works guided and reasonably free in temporal matters; not unrestricted lay autonomy"
+    },
+    {
+      "id": "IFP3",
+      "work": "Same, English §3",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLocator": "Vastissimo è il campo; Di leggieri si riconosce",
+      "supports": "Revealed truth, Christian virtues, spiritual and corporal mercy"
+    },
+    {
+      "id": "IFP7-12",
+      "work": "Same, English §§7 and 12",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLocator": "E poiché Ci fermiamo; Quelle opere devono essere",
+      "supports": "Workers/agricultural classes, moral and material interests, especially poorer classes"
+    },
+    {
+      "id": "IFP11",
+      "work": "Same, English §11",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLocator": "Anzitutto dov’essere; Solo quando avremo formato; E però quanti sono chiamati",
+      "supports": "Union with Christ, grace, faith and formation"
+    },
+    {
+      "id": "IFP12",
+      "work": "Same, English §12",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+      "originalLocator": "Importa inoltre ben definire; Quelle opere devono essere",
+      "supports": "Works suited to real needs and moral/material interests"
+    }
+  ],
+  "sourcePrecisionDeltas": [
+    "EXP026 opening: replace undifferentiated guidance formula with §22 distinction between direct pastoral works and temporal social works; reasonable freedom is neither opposition nor independence from Church teaching",
+    "EXP027: add §3, absent from original §§4–13 owner range, for precise revealed truth and mercy claim; §11 for formation, §12 for needs; no fabricated private testimony",
+    "English paragraph numbering is not printed on Italian page; preserve Italian incipits instead of pretending identical numbering"
+  ],
+  "translationDiscrepancy": {
+    "locator": "English §18 versus Italian paragraph Quei diritti civili sono parecchi",
+    "english": "Attributes the earlier norm to Leo XIII as its decreeing predecessor.",
+    "italian": "Names Pius IX as decreeing the norm and Leo XIII as subsequently following it.",
+    "italianExcerpt": "Pio IX e seguita poi",
+    "decision": "Use Italian witness for historical attribution if needed; these two drafts do not make that attribution. Flag translation discrepancy, not a new family or an independent history of non expedit."
+  },
+  "duplicates": [
+    {
+      "ids": [
+        "SPX-EXP-026",
+        "SPX-EXP-027"
+      ],
+      "decision": "Shared encyclical, distinct governance and works-of-apostolate intents; keep both."
+    }
+  ],
+  "humanDecisions": [
+    "Historical voice review of reconstruction; no quotation marks around draft prose",
+    "Evaluate 1905 Italian Catholic Action context before any contemporary application"
+  ],
+  "newSubstantiveGaps": [],
+  "preservation": "Existing first20 overlays and owner records retained; this additive delta changes no approvals or runtime.",
+  "continue": true
+}
