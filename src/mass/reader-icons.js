@@ -1,3 +1,4 @@
+import { finalCurated65IconKeys } from "./reader-final65-icon-keys.js";
 // Exact v1.80 / Asset Bank v4.6 semantic mapping for the native reader.
 // Presentation authority: uploaded definitive v1.80 donor, AO_V46_ASSETS + v1.30 mapping.
 // R17/R19 remains the state/liturgical owner; this file only resolves semantic art.
@@ -248,6 +249,9 @@ function gestureKey(gesture){
 }
 
 export function iconKeysForReaderState(state={}){
+  // The final approved bank is opt-in for the actual 65-card curated LIVE
+  // presentation. Do not change frozen/legacy/Low/special rite resolver rules.
+  if(state.curated65FinalArt===true)return finalCurated65IconKeys(state);
   const posture=token(state.posture?.value??state.posture?.label);
   const voice=token(state.priestVoice?.value??state.priestVoice?.label);
   const station=token(state.priestPosition?.station??state.priestPosition?.value);
