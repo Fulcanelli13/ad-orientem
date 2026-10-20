@@ -1,0 +1,200 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R92_VERIFIED_SITE_COHORT_V1",
+  "date": "2026-10-20",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "policy": "Publish independent physical Catholic identities using named map feature plus original institutional or explicitly classified secondary church evidence. Never convert Gregorian or modern Mass into a 1962 claim; OSM map references are not doorways or promises of access.",
+  "baseline": {
+    "places": 330,
+    "country_areas": 124,
+    "sources": 587,
+    "represented_jurisdictions": 122,
+    "unrepresented_jurisdictions": 128
+  },
+  "result": {
+    "places": 336,
+    "country_areas": 130,
+    "sources": 599,
+    "represented_jurisdictions": 128,
+    "unrepresented_jurisdictions": 122,
+    "new_places": 6,
+    "new_country_scopes": 6
+  },
+  "country_areas_added": [
+    "geo:country:BD",
+    "geo:country:KI",
+    "geo:country:LA",
+    "geo:country:MH",
+    "geo:country:WF",
+    "geo:country:WS"
+  ],
+  "published_new": [
+    {
+      "place_id": "place:MH:cathedral-assumption-majuro",
+      "research_id": "AO-R82-DISC-088",
+      "country": "MH",
+      "name": "Cathedral of Our Lady of the Assumption, Majuro",
+      "place_type": "cathedral",
+      "city": "Majuro",
+      "formatted": "Assumption Cathedral, Uliga, Majuro Atoll, Marshall Islands",
+      "lat": 7.10187,
+      "lng": 171.37815,
+      "geo_source_url": "https://www.openstreetmap.org/way/259721827",
+      "geo_source_ref": "osm:way:259721827",
+      "identity_source_url": "https://www.misacor-mscppi.org/about-us/directory",
+      "identity_source_issuer": "Missionaries of the Sacred Heart, Pacific Province",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Missionaries' official Northern District directory names Cathedral of Our Lady of Assumption Parish and its Prefect Apostolic. The named OSM cathedral way is distinct from the adjacent Assumption School.",
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-088",
+        "AO-R92-GEO-AO-R82-DISC-088"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:WF:cathedrale-assomption-mata-utu",
+      "research_id": "AO-R82-DISC-096",
+      "country": "WF",
+      "name": "Cathédrale Notre-Dame-de-l’Assomption, Mata-Utu",
+      "place_type": "cathedral",
+      "city": "Mata-Utu",
+      "formatted": "Mata-Utu, Wallis and Futuna",
+      "lat": -13.28283,
+      "lng": -176.17339,
+      "geo_source_url": "https://www.openstreetmap.org/way/259503104",
+      "geo_source_ref": "osm:way:259503104",
+      "identity_source_url": "https://wallis-futuna.travel/en/discover-our-islands/churches",
+      "identity_source_issuer": "Wallis and Futuna Tourism Office",
+      "identity_source_directness": "PRIMARY_INSTITUTIONAL",
+      "geometry_note": "Territorial tourism office identifies the current 1952–1959 volcanic-stone cathedral. Map way 259503104 is specifically tagged Catholic cathedral; not the historic first church.",
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-096",
+        "AO-R92-GEO-AO-R82-DISC-096"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:WS:immaculate-conception-cathedral-mulivai-apia",
+      "research_id": "AO-R82-DISC-092",
+      "country": "WS",
+      "name": "Immaculate Conception Cathedral (Mulivai Cathedral), Apia",
+      "place_type": "cathedral",
+      "city": "Apia",
+      "formatted": "Mulivai, Apia, Samoa",
+      "lat": -13.83219,
+      "lng": -171.76645,
+      "geo_source_url": "https://www.openstreetmap.org/way/187580849",
+      "geo_source_ref": "osm:way:187580849",
+      "identity_source_url": "https://tmatic.travel/en/view/story/immaculate-conception-of-mary-cathedral_2ocJrPf/en",
+      "identity_source_issuer": "Museum of Samoa audio-guide programme",
+      "identity_source_directness": "PRIMARY_INSTITUTIONAL",
+      "geometry_note": "Museum of Samoa historical guide identifies the new cathedral dedicated in 2014, replacing its earthquake-damaged predecessor; OSM named way 187580849 corresponds to the rebuilt cathedral rather than the older church.",
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-092",
+        "AO-R92-GEO-AO-R82-DISC-092"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:KI:sacred-heart-cathedral-teaoraereke",
+      "research_id": "AO-R82-DISC-087",
+      "country": "KI",
+      "name": "Sacred Heart Cathedral, Teaoraereke",
+      "place_type": "cathedral",
+      "city": "South Tarawa",
+      "formatted": "Teaoraereke, South Tarawa, Kiribati",
+      "lat": 1.33259,
+      "lng": 173.00722,
+      "geo_source_url": "https://www.openstreetmap.org/way/90810971",
+      "geo_source_ref": "osm:way:90810971",
+      "identity_source_url": "https://catholic-hierarchy.org/bishop/bmeak.html",
+      "identity_source_issuer": "Catholic-Hierarchy, episcopal biographical register",
+      "identity_source_directness": "SECONDARY",
+      "geometry_note": "Episcopal biography independently identifies Sacred Heart Cathedral in Teaoraereke; OSM church way 90810971 is explicitly tagged Roman Catholic cathedral. Original diocesan present-day contact page still requires recovery, therefore source directness is SECONDARY.",
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-087",
+        "AO-R92-GEO-AO-R82-DISC-087"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:LA:sacred-heart-cathedral-vientiane",
+      "research_id": "AO-R82-DISC-013",
+      "country": "LA",
+      "name": "Sacred Heart Cathedral, Vientiane",
+      "place_type": "cathedral",
+      "city": "Vientiane",
+      "formatted": "Rue de la Mission, Vientiane, Laos",
+      "lat": 17.96139,
+      "lng": 102.61194,
+      "geo_source_url": "https://www.openstreetmap.org/way/40271886",
+      "geo_source_ref": "osm:way:40271886",
+      "identity_source_url": "https://www.archivioradiovaticana.va/storico/2016/12/13/%E2%80%8E17_martyrs_beatified_in_laos/en-1278806",
+      "identity_source_issuer": "Vatican Radio",
+      "identity_source_directness": "PRIMARY_INSTITUTIONAL",
+      "geometry_note": "Vatican Radio directly reports beatification at Sacred Heart Cathedral in Vientiane (2016). Map way 40271886 is tagged as the named cathedral in open geographical linked data. No present-day public schedule asserted.",
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-013",
+        "AO-R92-GEO-AO-R82-DISC-013"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:BD:holy-rosary-cathedral-chattogram",
+      "research_id": "AO-R82-DISC-012",
+      "country": "BD",
+      "name": "Cathedral of Our Lady of the Holy Rosary, Chattogram",
+      "place_type": "cathedral",
+      "city": "Chattogram",
+      "formatted": "Bandel Road, Patherghata, Chattogram 4000, Bangladesh",
+      "lat": 22.33241,
+      "lng": 91.8394,
+      "geo_source_url": "https://www.openstreetmap.org/node/4384875575",
+      "geo_source_ref": "osm:node:4384875575",
+      "identity_source_url": "https://ctgdiocese.com/parishes/cathedral/",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Chattogram",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Archdiocese explicitly locates Cathedral of Our Lady of the Holy Rosary at Bandel Road in Patherghata; OSM node 4384875575 is the church location anchor recorded in the catalogue. Distinct from Dhaka's contested map feature.",
+      "source_ids": [
+        "AO-R92-SITE-AO-R82-DISC-012",
+        "AO-R92-GEO-AO-R82-DISC-012"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    }
+  ],
+  "held": [
+    {
+      "research_id": "AO-R82-DISC-081",
+      "country": "FJ",
+      "reason": "Archdiocesan cathedral verified in Suva, but mapped OSM church geometry not independently identified, and surrounding bank/school ways must not be misused."
+    },
+    {
+      "research_id": "AO-R82-DISC-071",
+      "country": "BS",
+      "reason": "Original cathedral parish verified in Nassau, but separate OSM church footprint not recovered; don't pin another Nassau building."
+    },
+    {
+      "research_id": "AO-R82-DISC-080",
+      "country": "CK",
+      "reason": "Rarotonga Diocese publishes a cathedral address but matching OSM way/node geometry not independently recovered."
+    },
+    {
+      "research_id": "AO-R82-DISC-052",
+      "country": "DM",
+      "reason": "Roseau Catholic cathedral is documented but renovation/access and footprint geometry still unresolved; keep previous HOLD."
+    },
+    {
+      "research_id": "AO-R82-DISC-011",
+      "country": "BD",
+      "reason": "Dhaka St Mary's cathedral ambiguous Baptist-tagged OSM way; publish only independently verified Chattogram Catholic cathedral."
+    }
+  ],
+  "tlm_venue_links_added": 0,
+  "related_shrine_records_added": 0,
+  "osm_license": "© OpenStreetMap contributors, ODbL 1.0"
+}
