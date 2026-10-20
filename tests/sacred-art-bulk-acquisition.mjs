@@ -19,9 +19,9 @@ assert.equal(intake.counts.legacyFivesIn451,77);
 assert.equal(intake.counts.excluded,68);
 assert.equal(intake.counts.editorialHold,199);
 assert.equal(intake.counts.eligibleExactMet,23);
-assert.equal(intake.counts.eligibleExactCommons,35);
+assert.equal(intake.counts.eligibleExactCommons,40);
 assert.equal(intake.counts.eligibleExactCleveland,14);
-assert.equal(intake.counts.eligibleOtherSource,81);
+assert.equal(intake.counts.eligibleOtherSource,76);
 assert.equal(intake.counts.eligibleExactNga,6);
 assert.equal(intake.counts.pradoAcquisitionHolds,30);
 assert.equal(intake.counts.pradoHoldsApprovedOrHistoric,25);
@@ -35,6 +35,22 @@ const accepted=new Set(freeze.approved.map(x=>x.artworkId));
 const rejected=new Set(freeze.rejected.map(x=>x.artworkId));
 const legacy=new Set(freeze.historicallyFiveIDsPreservedSeparately);
 const statuses=intake.works.map(x=>sourceGate(x));
+for(const [id,exact] of [
+ ["G31-001","SK-A-4423"],
+ ["W05-027","Santa Maria del Popolo"],
+ ["W07-007","Galleria Borghese"],
+ ["B01-MARK-MARATTA-THYSSEN","Maratta"],
+ ["W38-006","GG 9703"]
+]) {
+ const row=intake.works.find(x=>x.id===id);
+ assert(row?.provider==="COMMONS_EXACT_FILE_CANDIDATE"&&row.sourceUrl.includes("commons.wikimedia.org/wiki/File:"));
+ assert(sourceGate(row)==="COMMONS");
+ assert([row.sourceUrl,row.sourceObjectUrl,row.imageSourceVerification?.institution].join(" ").includes(exact),
+   "Institution or accession matching evidence missing: "+id);
+}
+assert(intake.works.some(x=>x.id==="W14-016"&&x.provider==="NO_EXACT_OPEN_SOURCE"
+  &&x.assetHolds.includes("VAN_DYCK_WORKSHOP_VERSUS_AUTOGRAPH")),
+  "Disputed workshop/autograph Judas Thaddeus must not be auto-acquired");
 assert(hasPradoProvenance({sourceUrl:"https://www.museodelprado.es/en/the-collection/art-work/example"}));
 assert(hasPradoProvenance({id:"prado-rubens-p001647",sourceUrl:"https://commons.wikimedia.org/wiki/File:Mirror.jpg"}));
 assert(commonsMetadataHasPradoProvenance({Credit:{value:'<a href="https://www.museodelprado.es">Museo del Prado</a>'}}));
@@ -42,11 +58,11 @@ assert.equal(commonsMetadataHasPradoProvenance({Credit:{value:"National Gallery 
 assert.equal(sourceGate({...intake.works.find(x=>x.provider==="MET_OPEN_ACCESS_CANDIDATE"),sourcePolicy:{status:PRADO_SOURCE_HOLD}}),PRADO_SOURCE_HOLD);
 assert(intake.works.every((x,i)=>!(hasPradoProvenance(x)&&statuses[i]!==PRADO_SOURCE_HOLD)),"No Prado original can enter an acquisition shard");
 assert.equal(statuses.filter(x=>x==="MET").length,23);
-assert.equal(statuses.filter(x=>x==="COMMONS").length,35);
+assert.equal(statuses.filter(x=>x==="COMMONS").length,40);
 assert.equal(statuses.filter(x=>x==="CLEVELAND").length,14);
 assert.equal(statuses.filter(x=>x==="HOLD_REJECTED").length,68);
 assert.equal(statuses.filter(x=>x==="HOLD_NOT_APPROVED").length,194);
-assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,81);
+assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,76);
 assert.equal(statuses.filter(x=>x==="HOLD_NGA_DEDICATED_BATCH").length,6);
 assert.equal(statuses.filter(x=>x===PRADO_SOURCE_HOLD).length,30);
 for(let i=0;i<intake.works.length;i++){
