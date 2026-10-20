@@ -40,6 +40,7 @@ export function sourceGate(row){
  if(row.provider==="MET_OPEN_ACCESS_CANDIDATE"&&/^https:\/\/www\.metmuseum\.org\/art\/collection\/search\/\d+(?:[/?#]|$)/.test(row.sourceUrl))return "MET";
  if(row.provider==="COMMONS_EXACT_FILE_CANDIDATE"&&/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(row.sourceUrl))return "COMMONS";
  if(row.provider==="CLEVELAND_CC0_CANDIDATE"&&/^https:\/\/(?:www\.)?clevelandart\.org\/art\/\d{4}\.\d+(?:[/?#]|$)/.test(row.sourceUrl))return "CLEVELAND";
+ if(row.provider==="CANONICAL_SOURCE_REUSE_ALIAS")return "HOLD_CANONICAL_ALIAS_REUSE";
  if(row.provider==="NGA_OFFICIAL_OPEN_ACCESS_CANDIDATE")return "HOLD_NGA_DEDICATED_BATCH";
  return "HOLD_NO_AUTHORIZED_SOURCE";
 }
