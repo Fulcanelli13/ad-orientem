@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 294,
+    "places": 306,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 35,
+    "places_without_direct_claim": 47,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -30,7 +30,9 @@
     "dangling_pilgrimage_shrine_references": [],
     "places_without_direct_claim": [
       "place:AE:st-joseph-cathedral-abu-dhabi",
+      "place:BB:st-patrick-catholic-cathedral-bridgetown",
       "place:BH:our-lady-arabia-cathedral-awali",
+      "place:BM:st-theresa-cathedral-hamilton",
       "place:DE:kevelaer-kerzenkapelle",
       "place:DK:st-ansgar-cathedral-copenhagen",
       "place:EC:basilica-voto-nacional-quito",
@@ -38,8 +40,12 @@
       "place:ES:covadonga-basilica",
       "place:ES:covadonga-santa-cueva",
       "place:FI:st-henry-cathedral-helsinki",
+      "place:FO:mariukirkjan-torshavn",
       "place:GB:holywell-st-winefride-church",
+      "place:GD:immaculate-conception-cathedral-st-georges",
       "place:GE:assumption-catholic-cathedral-tbilisi",
+      "place:GL:christ-the-king-catholic-church-nuuk",
+      "place:GY:immaculate-conception-cathedral-brickdam",
       "place:HK:immaculate-conception-cathedral-hong-kong",
       "place:ID:jakarta-cathedral",
       "place:IN:mount-mary-basilica-bandra",
@@ -51,18 +57,24 @@
       "place:JP:urakami-cathedral-nagasaki",
       "place:KE:holy-family-cathedral-basilica-nairobi",
       "place:KR:jeoldusan-martyrs-shrine-seoul",
+      "place:KW:holy-family-cocathedral-kuwait-city",
+      "place:KW:our-lady-of-arabia-minor-basilica-ahmadi",
       "place:KZ:our-lady-fatima-cathedral-karaganda",
       "place:LK:st-lucia-cathedral-colombo",
       "place:MN:saints-peter-paul-cathedral-ulaanbaatar",
       "place:MU:saint-louis-cathedral-port-louis",
+      "place:NC:cathedrale-saint-joseph-noumea",
       "place:NO:st-olav-cathedral-oslo",
       "place:NO:st-olav-cathedral-trondheim",
       "place:NO:var-frue-cathedral-tromso",
+      "place:OM:saints-peter-paul-catholic-church-ruwi",
       "place:PH:manila-cathedral-intramuros",
       "place:PH:quiapo-national-shrine-jesus-nazareno",
       "place:PH:santo-nino-tondo-minor-basilica",
       "place:QA:our-lady-rosary-church-doha",
+      "place:SC:immaculate-conception-cathedral-victoria",
       "place:SE:st-eric-cathedral-stockholm",
+      "place:TH:assumption-cathedral-bangkok",
       "place:US:baltimore-basilica-assumption"
     ],
     "customs_without_exact_place": [
@@ -293,6 +305,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "display_name": "St Patrick's Roman Catholic Cathedral, Bridgetown",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:BE:banneux",
       "display_name": "Sanctuaire de la Vierge des Pauvres — Banneux",
       "record_ids": {
@@ -349,6 +367,12 @@
     {
       "place_id": "place:BH:our-lady-arabia-cathedral-awali",
       "display_name": "Our Lady of Arabia Cathedral — Awali",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BM:st-theresa-cathedral-hamilton",
+      "display_name": "Cathedral of St Theresa of Lisieux, Hamilton",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -1104,6 +1128,12 @@
     {
       "place_id": "place:FI:st-henry-cathedral-helsinki",
       "display_name": "St Henry Catholic Cathedral — Helsinki",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FO:mariukirkjan-torshavn",
+      "display_name": "Mariukirkjan — St Mary's Catholic Church, Tórshavn",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -1977,6 +2007,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:GD:immaculate-conception-cathedral-st-georges",
+      "display_name": "Cathedral of the Immaculate Conception, St George's",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:GE:assumption-catholic-cathedral-tbilisi",
       "display_name": "Cathedral of the Assumption of the Virgin Mary — Tbilisi",
       "record_ids": {},
@@ -1990,6 +2026,12 @@
           "shrine:GH:kumasi-st-peter-cathedral-basilica"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GL:christ-the-king-catholic-church-nuuk",
+      "display_name": "Christ the King Catholic Church, Nuuk",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2019,6 +2061,12 @@
           "pilgrimage:GT:esquipulas-black-christ-basilica-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GY:immaculate-conception-cathedral-brickdam",
+      "display_name": "Cathedral of the Immaculate Conception, Brickdam",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3009,6 +3057,18 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "display_name": "Holy Family Catholic Co-Cathedral, Kuwait City",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:KW:our-lady-of-arabia-minor-basilica-ahmadi",
+      "display_name": "Minor Basilica of Our Lady of Arabia, Ahmadi",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:KZ:our-lady-fatima-cathedral-karaganda",
       "display_name": "Cathedral of Our Lady of Fatima — Karaganda",
       "record_ids": {},
@@ -3285,6 +3345,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:NC:cathedrale-saint-joseph-noumea",
+      "display_name": "Cathédrale Saint-Joseph, Nouméa",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:NG:nne-enyemaka-umuaka",
       "display_name": "Nne Enyemaka Shrine, Umuaka",
       "record_ids": {
@@ -3418,6 +3484,12 @@
           "route:NZ:nga-tapuwae-russell"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "display_name": "Saints Peter and Paul Catholic Church, Ruwi",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3790,6 +3862,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:SC:immaculate-conception-cathedral-victoria",
+      "display_name": "Cathedral of the Immaculate Conception, Victoria",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:SE:st-eric-cathedral-stockholm",
       "display_name": "St Eric Catholic Cathedral — Stockholm",
       "record_ids": {},
@@ -3865,6 +3943,12 @@
           "relic:SV:catedral-metropolitana-san-salvador"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:TH:assumption-cathedral-bangkok",
+      "display_name": "Assumption Cathedral, Bangkok",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4391,5 +4475,25 @@
       "place:PL:gietrzwald-basilica"
     ],
     "scope": "No additional asserted apparition or relic authenticity; no dates/routes or media."
+  },
+  "georeference_tranche_20261020_r89": {
+    "release": "R89",
+    "added_places": [
+      "place:FO:mariukirkjan-torshavn",
+      "place:GL:christ-the-king-catholic-church-nuuk",
+      "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "place:KW:holy-family-cocathedral-kuwait-city",
+      "place:KW:our-lady-of-arabia-minor-basilica-ahmadi",
+      "place:TH:assumption-cathedral-bangkok",
+      "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "place:GD:immaculate-conception-cathedral-st-georges",
+      "place:SC:immaculate-conception-cathedral-victoria",
+      "place:NC:cathedrale-saint-joseph-noumea",
+      "place:GY:immaculate-conception-cathedral-brickdam",
+      "place:BM:st-theresa-cathedral-hamilton"
+    ],
+    "scope": "12 site-specific Catholic Places with direct custodian/diocesan identity and named OSM church feature; no TLM assertions or heritage associations created.",
+    "current_access": "Unknown and subject to recheck",
+    "source_ledger": "data/geography/research/sacred-geography-r89-first-coverage-release.v1.json"
   }
 }
