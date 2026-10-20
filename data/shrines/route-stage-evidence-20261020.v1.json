@@ -261,6 +261,202 @@
           "source_url": "https://pilgrimage-for-restoration.org/arrival/check-in-thursday/"
         }
       ]
+    },
+    {
+      "route_id": "route:DE:preith-bettbrunn",
+      "edition": "Parish-described customary route; current walk edition not individually verified",
+      "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/",
+      "source_class": "OFFICIAL_PARISH",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-1",
+          "ordinal": 1,
+          "name_en": "St Brigida Parish Church, Preith",
+          "name_fr": "Pfarrkirche St. Brigida, Preith",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        },
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-2",
+          "ordinal": 2,
+          "name_en": "Buchenhüll forest",
+          "name_fr": "Buchenhüller Forst",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        },
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-3",
+          "ordinal": 3,
+          "name_en": "Inching",
+          "name_fr": "Inching",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        },
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-4",
+          "ordinal": 4,
+          "name_en": "Waltinger Schlag woodland",
+          "name_fr": "Waltinger Schlag",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        },
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-5",
+          "ordinal": 5,
+          "name_en": "Schambach Valley",
+          "name_fr": "Schambachtal",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        },
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-6",
+          "ordinal": 6,
+          "name_en": "Schelldorf",
+          "name_fr": "Schelldorf",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        },
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-7",
+          "ordinal": 7,
+          "name_en": "Appertshofen",
+          "name_fr": "Appertshofen",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        },
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-8",
+          "ordinal": 8,
+          "name_en": "Kösching Forest",
+          "name_fr": "Köschinger Forst",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        },
+        {
+          "waypoint_id": "route:DE:preith-bettbrunn#stage-9",
+          "ordinal": 9,
+          "name_en": "St Salvator Church, Bettbrunn",
+          "name_fr": "Kirche St. Salvator, Bettbrunn",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://preith.bistum-eichstaett.de/wallfahrt/"
+        }
+      ]
+    },
+    {
+      "route_id": "route:BR:belem-cathedral-nazare",
+      "edition": "11 October 2026 only; procession roads, not prayer stops",
+      "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026",
+      "source_class": "OFFICIAL_ORGANIZER",
+      "stage_geometry_policy": "NAMED_STAGES_ONLY_NO_WALKING_LINE",
+      "official_map_url": null,
+      "waypoints": [
+        {
+          "waypoint_id": "route:BR:belem-cathedral-nazare#stage-1",
+          "ordinal": 1,
+          "name_en": "Belém Metropolitan Cathedral",
+          "name_fr": "Catedral Metropolitana de Belém",
+          "role": "START",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026"
+        },
+        {
+          "waypoint_id": "route:BR:belem-cathedral-nazare#stage-2",
+          "ordinal": 2,
+          "name_en": "Padre Champagnat Street",
+          "name_fr": "Rua Padre Champagnat",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026"
+        },
+        {
+          "waypoint_id": "route:BR:belem-cathedral-nazare#stage-3",
+          "ordinal": 3,
+          "name_en": "Portugal Avenue",
+          "name_fr": "Avenida Portugal",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026"
+        },
+        {
+          "waypoint_id": "route:BR:belem-cathedral-nazare#stage-4",
+          "ordinal": 4,
+          "name_en": "Castilhos França Avenue",
+          "name_fr": "Castilhos França",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026"
+        },
+        {
+          "waypoint_id": "route:BR:belem-cathedral-nazare#stage-5",
+          "ordinal": 5,
+          "name_en": "Presidente Vargas Avenue",
+          "name_fr": "Avenida Presidente Vargas",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026"
+        },
+        {
+          "waypoint_id": "route:BR:belem-cathedral-nazare#stage-6",
+          "ordinal": 6,
+          "name_en": "Nazaré Avenue",
+          "name_fr": "Avenida Nazaré",
+          "role": "PASS_THROUGH",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026"
+        },
+        {
+          "waypoint_id": "route:BR:belem-cathedral-nazare#stage-7",
+          "ordinal": 7,
+          "name_en": "Basilica Sanctuary of Nazaré",
+          "name_fr": "Basílica Santuário de Nazaré",
+          "role": "DESTINATION",
+          "lat": null,
+          "lng": null,
+          "geometry_status": "NAMED_UNMAPPED",
+          "source_url": "https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026"
+        }
+      ]
     }
   ]
 }
