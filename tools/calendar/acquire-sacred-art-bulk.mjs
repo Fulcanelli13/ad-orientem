@@ -29,6 +29,7 @@ export function sourceGate(row){
  if(!newApproval&&!retainedFive)return "HOLD_NOT_APPROVED";
  if(row.provider==="MET_OPEN_ACCESS_CANDIDATE"&&/^https:\/\/www\.metmuseum\.org\/art\/collection\/search\/\d+(?:[/?#]|$)/.test(row.sourceUrl))return "MET";
  if(row.provider==="COMMONS_EXACT_FILE_CANDIDATE"&&/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(row.sourceUrl))return "COMMONS";
+ if(row.provider==="CLEVELAND_CC0_CANDIDATE"&&/^https:\/\/(?:www\.)?clevelandart\.org\/art\/\d{4}\.\d+(?:[/?#]|$)/.test(row.sourceUrl))return "CLEVELAND";
  return "HOLD_NO_AUTHORIZED_SOURCE";
 }
 export function parseImageDimensions(bytes,mime){
@@ -56,8 +57,8 @@ export function parseImageDimensions(bytes,mime){
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function request(url,kind="json"){
  const host=new URL(url).hostname;
- if(kind==="json")assert(["collectionapi.metmuseum.org","commons.wikimedia.org"].includes(host),"Untrusted metadata endpoint");
- else assert(["images.metmuseum.org","upload.wikimedia.org"].includes(host),"Untrusted image endpoint");
+ if(kind==="json")assert(["collectionapi.metmuseum.org","commons.wikimedia.org","openaccess-api.clevelandart.org"].includes(host),"Untrusted metadata endpoint");
+ else assert(["images.metmuseum.org","upload.wikimedia.org","openaccess-cdn.clevelandart.org"].includes(host),"Untrusted image endpoint");
  for(let attempt=0;attempt<3;attempt++){
    const res=await fetch(url,{signal:AbortSignal.timeout(25000),headers:{"user-agent":"AdOrientemSacredArtResearch/1.0 (https://github.com/Fulcanelli13/ad-orientem)"}});
    if([429,502,503,504].includes(res.status)&&attempt<2){await wait(800*(attempt+1));continue;}
@@ -87,6 +88,27 @@ async function metSource(row){
     originalTitle:meta.title,originalArtist:meta.artistDisplayName,objectUrl:row.sourceUrl,metadataUrl,imageUrl:meta.primaryImage,
     rights:"MET_OPEN_ACCESS_CC0",rightsUrl:"https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
     rightsObjectFlag:true,metadataAgreement:metadataAgreement(row,meta.title,meta.artistDisplayName)}};
+}
+async function clevelandSource(row){
+ const accession=new URL(row.sourceUrl).pathname.match(/^\/art\/(\d{4}\.\d+)\/?$/)?.[1];
+ assert(accession,"Invalid Cleveland exact accession number");
+ const metadataUrl="https://openaccess-api.clevelandart.org/api/artworks/"+accession;
+ const data=await (await request(metadataUrl)).json();
+ const meta=data?.data;
+ assert(meta&&meta.accession_number===accession,"Museum accession mismatch");
+ assert(meta.share_license_status==="CC0","Cleveland image not designated CC0");
+ assert(typeof meta.images?.print?.url==="string"&&new URL(meta.images.print.url).hostname==="openaccess-cdn.clevelandart.org",
+   "Missing official print-resolution image");
+ const imgResponse=await request(meta.images.print.url,"image");
+ assert((imgResponse.headers.get("content-type")||"").toLowerCase().includes("image/jpeg"),"Print reproduction not JPEG");
+ const bytes=Buffer.from(await imgResponse.arrayBuffer());
+ return {bytes,mime:"image/jpeg",source:{provider:"CLEVELAND_MUSEUM_CC0",
+   objectID:meta.id,accession,title:meta.title,
+   originalArtist:(meta.creators||[]).map(x=>x.description||x.name||"").filter(Boolean).join("; "),
+   objectUrl:row.sourceUrl,metadataUrl,imageUrl:meta.images.print.url,
+   rights:"CC0",rightsStatusFromMuseumAPI:meta.share_license_status,
+   rightsUrl:"https://www.clevelandart.org/open-access",
+   metadataAgreement:metadataAgreement(row,meta.title,(meta.creators||[]).map(x=>x.description||x.name||"").join("; "))}};
 }
 async function commonsSource(row){
  const raw=decodeURIComponent(new URL(row.sourceUrl).pathname.replace(/^\/wiki\//,"")).replaceAll("_"," ");
@@ -127,9 +149,9 @@ export async function runBatch(index){
      curatorAuthority:row.reviewGate==="LEGACY_FIVE_PRESERVED"?"W64_PREVIOUS_FIVE_RETAINED":"OCT17_CURRENT_APPROVAL",
      reviewSourceImageKey:row.preferredImageKey,sourceClaimsAreNotRightsEvidence:true,
      imageStaged:false,productionCertified:false,calendarPublished:false,cropReviewed:false,phoneQaApproved:false};
-   if(!["MET","COMMONS"].includes(gate)){results.push({...evidence,status:gate});continue;}
+   if(!["MET","COMMONS","CLEVELAND"].includes(gate)){results.push({...evidence,status:gate});continue;}
    try{
-     const img=gate==="MET"?await metSource(row):await commonsSource(row);
+     const img=gate==="MET"?await metSource(row):gate==="CLEVELAND"?await clevelandSource(row):await commonsSource(row);
      assert(img.bytes.length>=70000&&img.bytes.length<=35000000,"Original file outside permitted size");
      const dimensions=parseImageDimensions(img.bytes,img.mime);
      assert(dimensions.width>=1000&&dimensions.height>=700,"Image below minimum source resolution");
@@ -149,7 +171,7 @@ export async function runBatch(index){
  }
  const staged=results.filter(x=>x.imageStaged).length,held=results.length-staged;
  const summary={schema:"AO_SACRED_ART_BULK_ACQUISITION_RESULT_V1",batch:index+1,range:[index*BATCH_SIZE,Math.min((index+1)*BATCH_SIZE,INTAKE.works.length)-1],
-    evaluated:results.length,stagedForQA:staged,held,approvedSourceEligible:results.filter(x=>["MET","COMMONS"].includes(x.sourceGate)).length,
+    evaluated:results.length,stagedForQA:staged,held,approvedSourceEligible:results.filter(x=>["MET","COMMONS","CLEVELAND"].includes(x.sourceGate)).length,
     released:0,reviewRequired:true,results};
  await writeFile(join(folder,"results.json"),JSON.stringify(summary,null,2)+"\n");
  const thumbs=results.filter(x=>x.imageStaged).map(x=>'<article><img loading="lazy" src="'+escaped(x.technical.filename)+'" alt=""><h2>'+escaped(x.catalogTitle)+'</h2><p>'+escaped(x.catalogArtist)+' · '+escaped(x.artworkId)+'</p><small>'+escaped(x.technical.width+"×"+x.technical.height)+' · '+escaped(x.status)+'</small></article>').join("");
