@@ -6,21 +6,32 @@ const source=read('../data/presentation/reader-text-sung.v1.json');
 const expanded=read('../data/presentation/mass-priest-position-continuity-20261020.v1.json');
 const lock=read('../data/presentation/mass-icon-final-user-lock-20261020.v1.json');
 const byId=new Map(lock.items.map(x=>[x.id,x]));
-const sourceUnits=source.blocks.flatMap(b=>b.units??[]).sort((a,b)=>a.sort-b.sort);
+const sourceUnits=source.blocks.flatMap(b=>b.units??[]);
 assert.equal(source.blocks.length,96);
 assert.equal(sourceUnits.length,280);
+assert.equal(sourceUnits.filter(x=>/^AO\\.SM\\.C\\d{4}$/.test(x.cue_id)).length,279);
+assert.equal(sourceUnits.filter(x=>x.cue_id==='AO.SM.B096.SYN').length,1);
 assert.equal(new Set(sourceUnits.map(x=>x.cue_id)).size,280);
 assert.equal(original.items.length,49);
 assert.equal(expanded.cues.length,280);
+assert.equal(expanded.invariants.totalSungSourceCueRows,279);
+assert.equal(expanded.invariants.syntheticPauseRecords,1);
 assert.equal(expanded.blocks.length,96);
 assert.equal(expanded.sourceTransitions.length,49);
 assert.deepEqual(expanded.cues.map(x=>x.cueId),sourceUnits.map(x=>x.cue_id),
- 'Station projection has reordered or removed source cues');
+ 'Station projection has reordered or removed source units');
 assert.deepEqual(
  expanded.sourceTransitions.map(({cueId,station,facing,routeId,condition})=>({cueId,station,facing,routeId,condition})).sort((a,b)=>a.cueId.localeCompare(b.cueId)),
  original.items.map(({cueId,station,facing,routeId,condition})=>({cueId,station,facing,routeId,condition})).sort((a,b)=>a.cueId.localeCompare(b.cueId)),
  'Original sourced station event changed');
 const cue=id=>expanded.cues.find(c=>c.cueId==='AO.SM.'+id);
+const sermon=expanded.cues.find(x=>x.cueId==='AO.SM.B096.SYN');
+const i=expanded.cues.indexOf(sermon);
+assert.equal(expanded.cues[i-1].cueId,'AO.SM.C0088');
+assert.equal(expanded.cues[i+1].cueId,'AO.SM.C0089');
+assert.equal(sermon.missal.location,'GOSPEL_SIDE');
+assert.equal(sermon.defaultTrack.station,null);
+assert.equal(sermon.defaultTrack.renderPolicy,'SERMON_POSITION_ONLY_IF_INDEPENDENTLY_OBSERVED');
 const expected={
  C0042:'ALTAR_EPISTLE_MISSAL',
  C0072:'ALTAR_EPISTLE_MISSAL',
