@@ -61,6 +61,13 @@ assert(intake.works.every((x,i)=>!(hasPradoProvenance(x)&&statuses[i]!==PRADO_SO
 assert.equal(statuses.filter(x=>x==="MET").length,22);
 assert.equal(statuses.filter(x=>x==="HOLD_CANONICAL_ALIAS_REUSE").length,1);
 assert.equal(intake.works.find(x=>x.id==="met-438724").canonicalArtworkId,"ART-hilippe-de-hampaigne-he-nnunciation");
+const saintRosalia=intake.works.find(x=>x.id==="ART-nthony-van-yck-aint-osalia-nterceding-for-alermo");
+assert.equal(saintRosalia.sourceUrl,"https://www.metmuseum.org/art/collection/search/436257");
+assert.equal(saintRosalia.verifiedMuseumAccession,"71.41");
+assert.equal(saintRosalia.sourceIdentityCorrection?.wrongObjectId,436235);
+assert.equal(saintRosalia.sourceIdentityCorrection?.wrongArtist,"Joseph Siffred Duplessis");
+assert.equal(saintRosalia.sourceIdentityCorrection?.replacementPhotoNotYetHumanApproved,true);
+
 assert.equal(statuses.filter(x=>x==="COMMONS").length,58);
 assert.equal(statuses.filter(x=>x==="CLEVELAND").length,14);
 assert.equal(statuses.filter(x=>x==="HOLD_REJECTED").length,68);
@@ -93,5 +100,6 @@ const script=readFileSync(new URL("../tools/calendar/acquire-sacred-art-bulk.mjs
 assert(!script.includes("git push")&&!script.includes("assets/approved/sacred-art/"),
  "Bulk script cannot commit or deploy verified masters");
 assert(script.includes("sourceClaimsAreNotRightsEvidence:true"));
+assert(script.includes("MET_SOURCE_WRONG_PHYSICAL_WORK")&&script.includes("Exact museum accession mismatch"),"Met cannot stage an object where title and artist both disagree");
 assert(script.includes("phoneQaApproved:false"));
 console.log("PASS Sacred Art: 451 original records / ten 50-work shards / 72 exact-source candidates; 30 Prado-source holds; 68 rejects and 199 holds; zero released");
