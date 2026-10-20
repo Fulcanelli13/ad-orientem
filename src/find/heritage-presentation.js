@@ -55,7 +55,7 @@ export function compactHeritagePlaceSheet(vm){
   html+='<div class="aoHeritageCardHeading"><div class="aoHeritageCardIdentity">';
   html+='<span class="aoHeritageCardKicker">'+(p.editorial_feature?L(vm.language,"IN FOCUS","À DÉCOUVRIR")+' · ':"")+esc(placeTypeLabel(vm.language,p.place_type))+'</span>';
   if(area)html+='<span class="aoHeritageCardLocation">'+esc(area)+'</span>';
-  html+='</div><button type="button" class="aoHeritageCardClose" data-find-close-place aria-label="'+L(vm.language,"Close place preview","Fermer l’aperçu du lieu")+'">×</button></div>';
+  html+='</div><button type="button" class="aoHeritageCardClose" data-find-close-place aria-label="'+(vm.journeyOpen?L(vm.language,"Return to pilgrimage journey","Retour au parcours de pèlerinage"):L(vm.language,"Close place preview","Fermer l’aperçu du lieu"))+'">×</button></div>';
   html+='<h2 class="aoHeritageCardTitle">'+esc(p.name)+'</h2>';
   if(p.media)html+='<figure class="aoHeritagePlaceThumb" data-photo-orientation="'+esc(p.media.orientation)+'"><img loading="eager" fetchpriority="high" decoding="async" src="'+esc(p.media.asset_path)+'" alt="'+esc(vm.language==="fr"?p.media.alt_fr:p.media.alt_en)+'"><figcaption>'+esc(p.media.credit)+' · '+esc(p.media.license)+'</figcaption></figure>';
   if(synopsis)html+='<p class="aoHeritageSynopsis">'+esc(synopsis)+'</p>';
