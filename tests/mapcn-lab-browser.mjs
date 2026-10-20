@@ -33,7 +33,7 @@ try{
  await page.waitForFunction(()=>{
   const title=document.querySelector("#mode-title"),count=document.querySelector("#total");
   return title?.textContent==="Sacred places" && /^[1-9][0-9]*$/.test(count?.textContent||"");
- },{timeout:110000});
+ },null,{timeout:110000});
  await page.waitForFunction(()=>/ready/i.test(document.querySelector("#map-status")?.textContent||""),
   null,{timeout:110000});
  assert.ok(await page.locator("canvas.maplibregl-canvas").count()>0,"Must render an actual map canvas");
