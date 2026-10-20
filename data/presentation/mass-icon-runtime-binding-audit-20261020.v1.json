@@ -1770,6 +1770,27 @@
         "cueId": "AO.SM.C0221",
         "action": "PLACES PARTICLE",
         "runtimeAlias": "review_priest_commingling"
+      },
+      {
+        "key": "ea_priest_communion_host",
+        "cueId": "AO.SM.C0232",
+        "action": "RECEIVES HOST",
+        "runtimeAlias": "review_priest_receive_host",
+        "source": "PR #1460 exact approved bytes"
+      },
+      {
+        "key": "ao_purify_chalice",
+        "cueId": "AO.SM.C0247",
+        "action": "WASHES / PURIFIES",
+        "runtimeAlias": "review_priest_purify_chalice",
+        "source": "Post-Communion first ablution"
+      },
+      {
+        "key": "ao_purify_fingers",
+        "cueId": "AO.SM.C0248",
+        "action": "WASHES / PURIFIES",
+        "runtimeAlias": "review_priest_purify_fingers",
+        "source": "Post-Communion second ablution"
       }
     ],
     "preservedTextNoArtwork": [
@@ -1792,30 +1813,37 @@
         "cueId": "AO.SM.C0131",
         "action": "TURNS TO ALTAR",
         "reason": "The old return-to-altar drawing was rejected"
+      },
+      {
+        "cueId": "AO.SM.C0125",
+        "action": "WASHES / PURIFIES",
+        "reason": "Offertory Lavabo icon on hold; cannot borrow post-Communion purification"
       }
     ],
     "stillOutstanding": [
       "PRIEST_GENUFLECTION",
-      "PRIEST_COMMUNION_HOST_FROM_PR_1460",
-      "LAVABO_AND_POSTCOMMUNION_CUE_SPLIT",
       "GENUINE_GOSPEL_TRIPLE_CROSS_ARTWORK",
       "GOSPEL_SIDE_KISS",
       "ALTAR_FOOT_STATION",
       "INCENSATION_ACTOR",
-      "ADDITIONAL_ICON_QA"
+      "ADDITIONAL_ICON_QA",
+      "LAVABO_ARTWORK_ON_HOLD_NO_ICON",
+      "PRIEST_COMMUNION_CHALICE_ALTERNATE_APPROVED_BUT_NOT_SELECTED_FOR_THIS_CUE"
     ],
     "testEvidence": {
       "sourceResolver24Checks": "PASS",
       "fullNodeTestSuite": "NOT_RUN",
       "browserVisual": "NOT_RUN",
-      "CI": "NOT_REPORTED"
+      "CI": "NOT_REPORTED",
+      "priestActionAndAblutionSmoke": "14 PASS"
     },
     "scopeGuarantees": [
       "No 67-master SVG overwritten",
       "No source cue chronology or actor changes",
       "Head-bow and priest-genuflection refusals preserved",
       "Host and chalice major elevations retained",
-      "Do not merge without full repository test and mobile review"
+      "Do not merge without full repository test and mobile review",
+      "PR #1460 original chalice Communion art remains untouched and selectable later; no silent replacement of earlier approved chalice image."
     ]
   }
 }
