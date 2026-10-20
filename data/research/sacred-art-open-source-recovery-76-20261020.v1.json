@@ -26,11 +26,11 @@
   ],
   "total": 76,
   "counts": {
-    "DISCOVER_EXACT_ORIGINAL": 23,
-    "SOURCE_IDENTIFIED_QA": 12,
+    "DISCOVER_EXACT_ORIGINAL": 21,
+    "SOURCE_IDENTIFIED_QA": 18,
     "CHURCH_OBJECTS": 3,
     "VERIFY_OPEN_COMMONS_FILE": 2,
-    "OTHER_INDEPENDENT_SOURCE": 12,
+    "OTHER_INDEPENDENT_SOURCE": 8,
     "ARCHIVE_PHOTO": 2,
     "PER_IMAGE_RIGHTS": 4,
     "ITALIAN_OBJECT_RECORDS": 2,
@@ -67,14 +67,24 @@
       "artworkId": "ART-aravaggio-nspiration-of-aint-atthew",
       "title": "Inspiration of Saint Matthew",
       "artist": "Caravaggio",
-      "sourceUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Inspiration_of_Saint_Matthew-Caravaggio_(1602).jpg",
       "reviewGate": "APPROVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "DISCOVER_EXACT_ORIGINAL",
-      "priority": 1,
-      "status": "RESEARCH_NO_OBJECT_SOURCE",
-      "next": "Locate the approved physical original and a legally reusable photographic file; do not substitute another painting"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Now in existing exact-file acquisition; preserve original painting selection and independently verify bytes, source photo permissions, photographer attribution, crop and mobile visual QA.",
+      "sourceObjectUrl": null,
+      "sourceEvidence": {
+        "museum": "San Luigi dei Francesi, Contarelli Chapel, Rome",
+        "accession": null,
+        "exactCommonsFile": "https://commons.wikimedia.org/wiki/File:The_Inspiration_of_Saint_Matthew-Caravaggio_(1602).jpg",
+        "photographicRightsIndependentlyVerified": false,
+        "curatorPreferredImagePhotoMatchVerified": false,
+        "productionCertified": false,
+        "qualityHold": false
+      }
     },
     {
       "artworkId": "ART-artolom-steban-urillo-aint-sidore-of-eville",
@@ -589,14 +599,24 @@
       "artworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
       "title": "Archangel Michael Defeating Satan",
       "artist": "Guido Reni",
-      "sourceUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
       "reviewGate": "APPROVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "DISCOVER_EXACT_ORIGINAL",
-      "priority": 1,
-      "status": "RESEARCH_NO_OBJECT_SOURCE",
-      "next": "Locate the approved physical original and a legally reusable photographic file; do not substitute another painting"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Now in existing exact-file acquisition; preserve original painting selection and independently verify bytes, source photo permissions, photographer attribution, crop and mobile visual QA.",
+      "sourceObjectUrl": null,
+      "sourceEvidence": {
+        "museum": "Santa Maria della Concezione dei Cappuccini, Rome",
+        "accession": null,
+        "exactCommonsFile": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+        "photographicRightsIndependentlyVerified": false,
+        "curatorPreferredImagePhotoMatchVerified": false,
+        "productionCertified": false,
+        "qualityHold": false
+      }
     },
     {
       "artworkId": "ART-usepe-de-ibera-aint-aul-postolate",
@@ -706,14 +726,24 @@
       "artworkId": "B01-MARK-RENI-GENOA",
       "title": "Saint Mark the Evangelist — Palazzo Rosso",
       "artist": "Guido Reni",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_by_Guido_Reni_in_the_Gallery_of_Palazzo_Rosso_(Genoa)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_San_Marco_Evangelista.jpg",
       "reviewGate": "APPROVED",
       "sourceClaimNotProof": "CC BY-SA 3.0",
       "hasReviewPreview": true,
-      "lane": "OTHER_INDEPENDENT_SOURCE",
-      "priority": 3,
-      "status": "DISCOVER_AND_VERIFY_IMAGE_LICENSE",
-      "next": "Exact physical work + independent photographic rights + full-resolution pixels required"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Now in existing exact-file acquisition; preserve original painting selection and independently verify bytes, source photo permissions, photographer attribution, crop and mobile visual QA.",
+      "sourceObjectUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_by_Guido_Reni_in_the_Gallery_of_Palazzo_Rosso_(Genoa)",
+      "sourceEvidence": {
+        "museum": "Palazzo Rosso, Musei di Strada Nuova, Genoa",
+        "accession": null,
+        "exactCommonsFile": "https://commons.wikimedia.org/wiki/File:Guido_Reni_San_Marco_Evangelista.jpg",
+        "photographicRightsIndependentlyVerified": false,
+        "curatorPreferredImagePhotoMatchVerified": false,
+        "productionCertified": false,
+        "qualityHold": true
+      }
     },
     {
       "artworkId": "B02-HEART-MARY-MORLETE",
@@ -888,27 +918,47 @@
       "artworkId": "W07-014",
       "title": "The Incredulity of Saint Thomas",
       "artist": "Caravaggio",
-      "sourceUrl": "https://www.spsg.de/en/press-material-paintings",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas-Caravaggio_(1601-2).jpg",
       "reviewGate": "APPROVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "OTHER_INDEPENDENT_SOURCE",
-      "priority": 3,
-      "status": "DISCOVER_AND_VERIFY_IMAGE_LICENSE",
-      "next": "Exact physical work + independent photographic rights + full-resolution pixels required"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Now in existing exact-file acquisition; preserve original painting selection and independently verify bytes, source photo permissions, photographer attribution, crop and mobile visual QA.",
+      "sourceObjectUrl": "https://www.spsg.de/en/press-material-paintings",
+      "sourceEvidence": {
+        "museum": "Sanssouci Picture Gallery, Potsdam",
+        "accession": "GK I 5438",
+        "exactCommonsFile": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas-Caravaggio_(1601-2).jpg",
+        "photographicRightsIndependentlyVerified": false,
+        "curatorPreferredImagePhotoMatchVerified": false,
+        "productionCertified": false,
+        "qualityHold": false
+      }
     },
     {
       "artworkId": "W08-009",
       "title": "Saint John the Baptist in the Wilderness",
       "artist": "Caravaggio",
-      "sourceUrl": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_the_Baptist-Caravaggio_(Kansas_City).jpg",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "OTHER_INDEPENDENT_SOURCE",
-      "priority": 3,
-      "status": "DISCOVER_AND_VERIFY_IMAGE_LICENSE",
-      "next": "Exact physical work + independent photographic rights + full-resolution pixels required"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Now in existing exact-file acquisition; preserve original painting selection and independently verify bytes, source photo permissions, photographer attribution, crop and mobile visual QA.",
+      "sourceObjectUrl": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+      "sourceEvidence": {
+        "museum": "Nelson-Atkins Museum of Art, Kansas City",
+        "accession": "52-25",
+        "exactCommonsFile": "https://commons.wikimedia.org/wiki/File:John_the_Baptist-Caravaggio_(Kansas_City).jpg",
+        "photographicRightsIndependentlyVerified": false,
+        "curatorPreferredImagePhotoMatchVerified": false,
+        "productionCertified": false,
+        "qualityHold": false
+      }
     },
     {
       "artworkId": "W10-009",
@@ -940,14 +990,24 @@
       "artworkId": "W38-001",
       "title": "Saint Agnes",
       "artist": "Massimo Stanzione",
-      "sourceUrl": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
       "sourceClaimNotProof": "Public domain",
       "hasReviewPreview": true,
-      "lane": "OTHER_INDEPENDENT_SOURCE",
-      "priority": 3,
-      "status": "DISCOVER_AND_VERIFY_IMAGE_LICENSE",
-      "next": "Exact physical work + independent photographic rights + full-resolution pixels required"
+      "lane": "SOURCE_IDENTIFIED_QA",
+      "priority": 0,
+      "status": "MOVED_TO_EXACT_COMMONS_SOURCE_QA",
+      "next": "Now in existing exact-file acquisition; preserve original painting selection and independently verify bytes, source photo permissions, photographer attribution, crop and mobile visual QA.",
+      "sourceObjectUrl": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
+      "sourceEvidence": {
+        "museum": "Museu Nacional d'Art de Catalunya",
+        "accession": "065579-000",
+        "exactCommonsFile": "https://commons.wikimedia.org/wiki/File:Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg",
+        "photographicRightsIndependentlyVerified": false,
+        "curatorPreferredImagePhotoMatchVerified": false,
+        "productionCertified": false,
+        "qualityHold": false
+      }
     },
     {
       "artworkId": "ART-arlo-rivelli-aint-homas-quinas",
@@ -1167,6 +1227,18 @@
     "technicalImageAcquisitions": 0,
     "productionReleased": 0
   },
-  "remainingUnroutedRecords": 64,
-  "discoveryTaskPolicy": "Full programme covers 76; the 12 San Polo items are already routed to exact-source file QA and should be skipped by metadata discovery."
+  "remainingUnroutedRecords": 58,
+  "discoveryTaskPolicy": "Full 76-record programme retained for provenance; 18 source-identified records bypass Commons discovery; 58 remain for actual source search.",
+  "newSourceIdentityEvidence": {
+    "asOf": "2026-10-20",
+    "newMuseumCrosscheckedRecords": [
+      "W38-001",
+      "W08-009",
+      "ART-aravaggio-nspiration-of-aint-atthew",
+      "W07-014",
+      "ART-uido-eni-rchangel-ichael-efeating-atan",
+      "B01-MARK-RENI-GENOA"
+    ],
+    "scope": "PHOTO_ACQUISITION_NOT_PUBLICATION"
+  }
 }
