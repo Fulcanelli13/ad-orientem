@@ -164,6 +164,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
    top:120px;left:10px;max-width:calc(100% - 20px)
  }
  .aoHeritageSurface .aoHeritageWorldReset{top:116px;left:10px}
+ .aoHeritageSurface .aoHeritageMapHint{max-width:calc(100% - 136px)}
  .aoHeritageSurface .aoHeritageSearchResults{
    top:164px;left:10px;width:calc(100% - 20px);
  }
