@@ -83,6 +83,21 @@
         "CHA-CSE-CSE137"
       ],
       "status": "UNSUPPORTED_CLINICAL_CLAIMS_REMOVED_IN_PROPOSALS"
+    },
+    {
+      "batch": "B05",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b05-authority-conscience-20261021.v1.json",
+      "commit": "34d30f3d2cf7b9a39866bfea783b128952b26a33",
+      "families": 4,
+      "answerUnits": 8,
+      "ids": [
+        "CHA-CSE-CSE016",
+        "CHA-CSE-CSE017",
+        "CHA-CSE-CSE018",
+        "CHA-CSE-CSE019"
+      ],
+      "status": "SOURCE_AUTHORITY_AND_CONSCIENCE_DISTINCTIONS_PREPARED"
     }
   ],
   "blocked": [
@@ -99,8 +114,8 @@
     }
   ],
   "active": {
-    "batch": "B05",
-    "task": "Chanoine CSE016/018 unresolved doctrinal specialist source precision"
+    "batch": "B06",
+    "task": "Resolve genuine SPX first-release biography source discrepancy without repeating completed twenty-family audit"
   },
   "next": [
     "CSE016/018 Donum veritatis exact authority and theological difficulty distinctions",
