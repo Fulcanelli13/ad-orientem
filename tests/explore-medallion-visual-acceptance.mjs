@@ -99,8 +99,11 @@ try{
      "Journey uses one active mode marker, not a redundant pilgrimage chip");
    assert.ok(await journey.locator(".aoJourneyEvidence a[href^='https://']").count()>0,
      "D must link to original publisher evidence");
-   assert.equal(await journey.locator(".aoJourneyAnchors li").count(),2,
-     "D must not manufacture intermediate route coordinates from source stage count");
+   assert.equal(await journey.locator(".aoJourneyAnchors li").count(),4,
+     "D must show the four source-named Chartres anchors in official order");
+   assert.equal(await journey.locator("[data-journey-named-stage]").count(),4,
+     "Verified names stay text-only; no intermediate coordinates may be inferred");
+   assert.ok((await journey.locator(".aoJourneyNoLine").innerText()).includes("No route line"));
    await page.waitForTimeout(700);
    await page.screenshot({path:resolve(out,"explore-"+width+"-journey-chartres.png"),fullPage:false});
    await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
