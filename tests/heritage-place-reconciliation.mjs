@@ -67,7 +67,7 @@ for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","nov
  const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
  assert.equal(R.distinct_place_links[kind],distinct,"unique Place count drifted for "+kind);
 }
-// The 10 October editorial snapshot is immutable. Reconcile eleven later,
+// The 10 October editorial snapshot is immutable. Reconcile fourteen later,
 // explicitly source-locked non-pin additions; do not rewrite the snapshot as if
 // it had been researched on that original date.
 const admittedAfterSnapshot=[
@@ -75,6 +75,9 @@ const admittedAfterSnapshot=[
   ["DOM-011","att:DOM-011:FR","AREA_CONTEXT"],
   ["DOM-013","att:DOM-013:FR","AREA_CONTEXT"],
   ["BLSS-001","att:BLSS-001:ROMAN","NOT_MAPPED"],
+  ["BLSS-002","att:BLSS-002:ROMAN","NOT_MAPPED"],
+  ["BLSS-003","att:BLSS-003:ROMAN","NOT_MAPPED"],
+  ["BLSS-004","att:BLSS-004:ROMAN","NOT_MAPPED"],
   ["NDAY-001","att:NDAY-001:US","NOT_MAPPED"],
   ["PATR-001","att:PATR-001:FR","NOT_MAPPED"],
   ["MARI-001","att:MARI-001:FR","NOT_MAPPED"],
