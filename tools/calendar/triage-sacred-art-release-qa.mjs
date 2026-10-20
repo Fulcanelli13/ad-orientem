@@ -61,7 +61,7 @@ const rows=result.records.map((r,i)=>'<tr><td>'+String(i+1)+'</td><td>'+r.review
  '</td><td><a href="'+e(r.sourcePage)+'">Source</a></td></tr>').join("");
 writeFileSync(join(out,"release-triage.html"),'<meta charset="utf-8"><meta name="viewport" content="width=device-width">'+
  '<title>Ad Orientem · Release-screening queue</title><style>body{background:#090d13;color:#e8e0d0;font:15px Georgia,serif;margin:25px}h1{font-size:1.7rem}p{color:#baa}table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #454545;padding:8px;text-align:left}a{color:#becfdc}</style>'+
- '<h1>'+result.technicalImages+'-image technical QA to release</h1><p>'+result.clearOfAutomatedWarnings' images have no automatic warning; all images require independent identification, photo-rights, crop and handset QA. Nothing is publication-certified.</p>'+
+ '<h1>'+result.technicalImages+'-image technical QA to release</h1><p>'+result.clearOfAutomatedWarnings+' images have no automatic warning; all images require independent identification, photo-rights, crop and handset QA. Nothing is publication-certified.</p>'+
  '<table><tr><th>#</th><th>P</th><th>Painting</th><th>Artist</th><th>Source size</th><th>Rights</th><th>Human review checks</th><th>Source</th></tr>'+rows+'</table>');
 console.log(JSON.stringify({technicalImages:result.technicalImages,clearOfWarnings:result.clearOfAutomatedWarnings,
  flags:result.reviewDimensionCounts,reviewFirstPriority:result.exclusiveFirstPriorityCounts,published:result.productionApproved}));
