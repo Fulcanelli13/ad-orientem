@@ -397,7 +397,8 @@ export function createFindOwner(win=globalThis){
     const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const journeys=preliminaryMode?[]:buildPilgrimageJourneyCatalogue(
       projection?.byLens?.pilgrimages,data?.shrines?.sources,
-      data?.shrines?.routeStageEvidence,data?.shrines?.routeGeometryReview);
+      data?.shrines?.routeStageEvidence,data?.shrines?.routeGeometryReview,
+      data?.shrines?.routeStageSiteLinks,data?.geography?.places);
     const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
       .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
@@ -482,7 +483,7 @@ export function createFindOwner(win=globalThis){
     if(mapHandle&&state.view==="map"){
       lastMapView=mapViewport(mapHandle.map);lastMapLens=state.lens;
     }
-    if(reuseMap)return true;
+    if(reuseMap){syncJourneyMarkers();return true;}
     mapHandle?.destroy?.();mapHandle=null;
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
@@ -547,6 +548,7 @@ export function createFindOwner(win=globalThis){
           showMapRecovery(true);return true;
         }
         mapHandle=nextHandle;
+        syncJourneyMarkers();
       }catch(error){
         if(importTimer!==undefined)win.clearTimeout?.(importTimer);
         // A blocked CDN or failed module import must show the existing
@@ -641,12 +643,50 @@ export function createFindOwner(win=globalThis){
     return true;
   }
 
+  function journeyCatalogue(){
+    if(!projection||!dataset)return [];
+    return buildPilgrimageJourneyCatalogue(
+      projection.byLens?.pilgrimages,dataset.shrines?.sources,
+      dataset.shrines?.routeStageEvidence,dataset.shrines?.routeGeometryReview,
+      dataset.shrines?.routeStageSiteLinks,dataset.geography?.places);
+  }
+
+  function focusJourneyStage(stageId,{fromMap=false}={}){
+    if(!state.journeyOpen||!mapHandle?.map)return false;
+    const active=selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId);
+    const stage=active?.namedStages?.find(s=>s.id===stageId);
+    const geo=stage?.siteAnchor;
+    if(!geo)return false;
+    const map=mapHandle.map,phone=Number(win?.innerWidth||0)<800;
+    const target={center:[geo.lng,geo.lat],
+      zoom:Math.max(12,Number(map.getZoom?.())||0),
+      offset:phone?[0,-125]:[-175,0]};
+    if(win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)
+      map.jumpTo?.(target);
+    else map.easeTo?.({...target,duration:460});
+    const root=getRoot(win);
+    root?.querySelectorAll?.("[data-explore-journey-stage-focus]").forEach(button=>{
+      button.setAttribute("aria-pressed",String(button.dataset.exploreJourneyStageFocus===stageId));
+    });
+    if(fromMap){
+      const row=[...(root?.querySelectorAll?.("[data-journey-named-stage]")||[])]
+        .find(element=>element.dataset.journeyNamedStage===stageId);
+      row?.scrollIntoView?.({behavior:"smooth",block:"nearest",inline:"nearest"});
+    }
+    return true;
+  }
+
+  function syncJourneyMarkers(){
+    if(!mapHandle?.setJourneyStageAnchors)return;
+    const active=state.journeyOpen&&state.lens==="heritage"
+      ?selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId):null;
+    mapHandle.setJourneyStageAnchors(active?.stageSiteAnchors??[],
+      stageId=>focusJourneyStage(stageId,{fromMap:true}));
+  }
+
   function focusJourneyDestination(){
     if(!projection||!dataset||!mapHandle?.map)return false;
-    const routes=buildPilgrimageJourneyCatalogue(
-      projection.byLens?.pilgrimages,dataset.shrines?.sources,
-      dataset.shrines?.routeStageEvidence,dataset.shrines?.routeGeometryReview);
-    const active=selectedPilgrimageJourney(routes,state.journeySelectedId);
+    const active=selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId);
     // The Walsingham 2026 Priory endpoint differs from the canonical Catholic
     // shrine. It has no surveyed stage coordinate. Center the broader related
     // shrine AREA for context without labelling that marker the route endpoint.
@@ -1045,6 +1085,11 @@ export function createFindOwner(win=globalThis){
       state.journeySelectedId=journeySelect.dataset.exploreJourneySelect;
       focusJourneyDestination();
       void paint();return;
+    }
+    const stageFocus=target?.closest?.("[data-explore-journey-stage-focus]");
+    if(stageFocus&&state.journeyOpen){
+      event.preventDefault?.();
+      focusJourneyStage(stageFocus.dataset.exploreJourneyStageFocus);return;
     }
     if(target?.closest?.("[data-explore-journey-focus]")&&state.journeyOpen){
       event.preventDefault?.();focusJourneyDestination();return;
