@@ -57,6 +57,8 @@ on:
       - 'previews/visible-mass-3d/pius-x-conversation-paths-review.html'
       - 'tests/pius-x-20path-editorial-review.mjs'
       - 'tests/pius-x-20path-visual-novel-browser.mjs'
+      - 'tools/formation/build-pius-x-visual-novel-offline.mjs'
+      - 'tests/pius-x-visual-novel-standalone-html.mjs'
       - 'tests/pius-x-print-canon-denzinger-release-gate.mjs'
       - 'tests/pius-x-200turn-three-way-crosswalk.mjs'
       - 'tests/pius-x-bilingual-dialogue-choices.mjs'
@@ -303,3 +305,36 @@ jobs:
           path: artifacts/pius-x-20path-visual-novel/
           if-no-files-found: warn
           retention-days: 14
+
+  pius-x-offline-html-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pin exact five approved St Pius X portrait sprites
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '0a920793bcdf40cc053ad0aff31132ade8185a33'
+          test "$(git rev-parse FETCH_HEAD)" = '0a920793bcdf40cc053ad0aff31132ade8185a33' || exit 1
+          mkdir -p research-out/pius-x-approved-sprites
+          for file in manifest.json pius_neutral.webp pius_welcoming.webp pius_explaining.webp pius_thoughtful.webp pius_grave.webp
+          do
+            git show "FETCH_HEAD:previews/visible-mass-3d/assets/living-church/$file" > "research-out/pius-x-approved-sprites/$file"
+          done
+      - name: Produce original-source-owned offline HTML
+        run: node tools/formation/build-pius-x-visual-novel-offline.mjs
+      - name: Verify bundled questions, editorial guards, image hashes and module syntax
+        run: node tests/pius-x-visual-novel-standalone-html.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: St-Pius-X-Visual-Novel-Offline-Review
+          path: artifacts/pius-x-20path-visual-novel/St_Pius_X_Conversation_Review_Offline.html
+          if-no-files-found: warn
+          retention-days: 30
