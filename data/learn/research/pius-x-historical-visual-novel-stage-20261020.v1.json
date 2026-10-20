@@ -1,0 +1,248 @@
+{
+  "schema": "AO_SPX_HISTORICAL_VISUAL_NOVEL_SCENE_V1",
+  "asOf": "2026-10-20",
+  "publication": "REVIEW_ONLY",
+  "referencedOwners": {
+    "sprites": {
+      "pr": 1402,
+      "commit": "0a920793bcdf40cc053ad0aff31132ade8185a33",
+      "manifest": "previews/visible-mass-3d/assets/living-church/manifest.json",
+      "rightsStatus": "APPROVED_CHARACTER_PICTURES_BUT_RELEASE_RIGHTS_UNCERTIFIED"
+    },
+    "style": {
+      "pr": 1419,
+      "commit": "b99bedc27b194c7391375911c01b283fd88e9702",
+      "style": "data/learn/pius-x-documentary-voice-style.v1.json",
+      "unified": "data/learn/pius-x-unified-documentary-voice-review.v1.json",
+      "release": "STYLE_ONLY_NOT_RUNTIME_CERTIFIED"
+    },
+    "content": {
+      "pr": 1458,
+      "branch": "formation/1457-pius-x-conversation-evidence",
+      "source": "data/learn/research/pius-x-20path-bilingual-choice-navigation-20261020.v1.json"
+    }
+  },
+  "portrayal": {
+    "originalTextOwnership": "CONTENT_OWNER_UNMODIFIED",
+    "spokenWordsClassification": "EDUCATIONAL_RECONSTRUCTION_NEVER_VERBATIM_PAPAL_SPEECH",
+    "cadence": "Concise or expanded to fit original source; no arbitrary quota",
+    "register": "Cultivated restrained early twentieth-century Roman Catholic",
+    "en": "No thou/thee, forced paternal address, invented quotations or modern self-help",
+    "fr": "No automatically invented papal Nous or personal blessings",
+    "genericCharacters": "No fabricated personal anecdotes, jokes, first-person memoir, new spiritual advice, or claim to be a confessor",
+    "narrative": "A serious character portrait is a presentation device, not evidence of original utterance",
+    "sourceLine": "Printed 1905 Catechism is papally prescribed, questions in original edition are unnumbered",
+    "denzinger": "OPTIONAL_NOT_REQUIRED"
+  },
+  "sprites": {
+    "neutral": {
+      "url": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/0a920793bcdf40cc053ad0aff31132ade8185a33/previews/visible-mass-3d/assets/living-church/pius_neutral.webp",
+      "sourceFile": "previews/visible-mass-3d/assets/living-church/pius_neutral.webp",
+      "character": "pius-x",
+      "pin": "0a920793bcdf40cc053ad0aff31132ade8185a33"
+    },
+    "welcoming": {
+      "url": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/0a920793bcdf40cc053ad0aff31132ade8185a33/previews/visible-mass-3d/assets/living-church/pius_welcoming.webp",
+      "sourceFile": "previews/visible-mass-3d/assets/living-church/pius_welcoming.webp",
+      "character": "pius-x",
+      "pin": "0a920793bcdf40cc053ad0aff31132ade8185a33"
+    },
+    "explaining": {
+      "url": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/0a920793bcdf40cc053ad0aff31132ade8185a33/previews/visible-mass-3d/assets/living-church/pius_explaining.webp",
+      "sourceFile": "previews/visible-mass-3d/assets/living-church/pius_explaining.webp",
+      "character": "pius-x",
+      "pin": "0a920793bcdf40cc053ad0aff31132ade8185a33"
+    },
+    "thoughtful": {
+      "url": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/0a920793bcdf40cc053ad0aff31132ade8185a33/previews/visible-mass-3d/assets/living-church/pius_thoughtful.webp",
+      "sourceFile": "previews/visible-mass-3d/assets/living-church/pius_thoughtful.webp",
+      "character": "pius-x",
+      "pin": "0a920793bcdf40cc053ad0aff31132ade8185a33"
+    },
+    "grave": {
+      "url": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/0a920793bcdf40cc053ad0aff31132ade8185a33/previews/visible-mass-3d/assets/living-church/pius_grave.webp",
+      "sourceFile": "previews/visible-mass-3d/assets/living-church/pius_grave.webp",
+      "character": "pius-x",
+      "pin": "0a920793bcdf40cc053ad0aff31132ade8185a33"
+    }
+  },
+  "arcs": [
+    {
+      "id": "SPX-ARC-BAPTISM_PROMISES",
+      "defaultPose": "explaining",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-BAPTISM_SPONSORS",
+      "defaultPose": "welcoming",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-CONFIRMATION_MEANING",
+      "defaultPose": "explaining",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-CONFIRMATION_RITE",
+      "defaultPose": "explaining",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-CONFIRMATION_PREP",
+      "defaultPose": "thoughtful",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-EUCHARIST_CHRIST_PRESENT",
+      "defaultPose": "explaining",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-EUCHARIST_CONSECRATION",
+      "defaultPose": "thoughtful",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-EUCHARIST_SUBSTANCE_SPECIES",
+      "defaultPose": "explaining",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-EUCHARIST_WHOLE_CHRIST",
+      "defaultPose": "explaining",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-EUCHARIST_TABERNACLE_ADORATION",
+      "defaultPose": "thoughtful",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-EUCHARIST_INSTITUTION_FRUITS",
+      "defaultPose": "welcoming",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-COMMUNION_WORTHINESS",
+      "defaultPose": "grave",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-COMMUNION_FAST_HISTORICAL",
+      "defaultPose": "thoughtful",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-COMMUNION_REVERENCE",
+      "defaultPose": "welcoming",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-COMMUNION_PRECEPT_HISTORICAL",
+      "defaultPose": "thoughtful",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-COMMUNION_FREQUENCY",
+      "defaultPose": "welcoming",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-MASS_WHAT_IS_SACRIFICE",
+      "defaultPose": "explaining",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-MASS_CALVARY_RELATION",
+      "defaultPose": "grave",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-MASS_ENDS_AND_SAINTS",
+      "defaultPose": "explaining",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    },
+    {
+      "id": "SPX-ARC-MASS_HEARING_DEVOTION",
+      "defaultPose": "thoughtful",
+      "originalSourceTopic": "1905 Catechismo maggiore",
+      "approvedPoseSwitchByText": false
+    }
+  ],
+  "poseExceptions": [
+    {
+      "qid": "PX1905-Q630",
+      "pose": "grave",
+      "reason": "Communion in a state of mortal sin is serious"
+    },
+    {
+      "qid": "PX1905-Q631",
+      "pose": "grave",
+      "reason": "Mortal sin and confession scope"
+    },
+    {
+      "qid": "PX1905-Q632",
+      "pose": "grave",
+      "reason": "Unworthy Communion historically stated"
+    },
+    {
+      "qid": "PX1905-Q652",
+      "pose": "explaining",
+      "reason": "Sacrifice definition needs precision"
+    },
+    {
+      "qid": "PX1905-Q607",
+      "pose": "explaining",
+      "reason": "Technical doctrinal clarification"
+    },
+    {
+      "qid": "PX1905-Q657",
+      "pose": "explaining",
+      "reason": "Explain sacramental distinction, not dramatize Calvary"
+    },
+    {
+      "qid": "PX1905-Q658",
+      "pose": "thoughtful",
+      "reason": "Respond to reflection about relation between Calvary and Mass"
+    }
+  ],
+  "sourcePanelPolicy": {
+    "availableOnEveryAnswer": true,
+    "showOriginalEditionPageWhenKnown": true,
+    "neverLabelEditorialQuestionNumberAsOriginallyPrinted": true,
+    "showOriginalLanguageWitnessUrl": true,
+    "keepReviewerApprovalsAndCorrectionsOutOfCharacter": true
+  },
+  "handoffs": {
+    "canon": "CONSENT_AND_SOURCE_OWNER_ELIGIBILITY_ONLY",
+    "topicGap": "DO_NOT_INVENT_CHARACTER_REPLY",
+    "returnToPius": "PRESERVE_VISITED_QUESTION_TRAIL",
+    "mass": "DO_NOT_REPLACE_1962_LIVE_SIMPLE_MISSAL_READER"
+  },
+  "counts": {
+    "portraits": 5,
+    "chapters": 20,
+    "exceptions": 7,
+    "approvedCharacterReplies": 0,
+    "publicRuntimeIntegrations": 0
+  }
+}
