@@ -75,6 +75,31 @@ try{
    assert.ok(measures.mapHeight>=300,"Map is too short at "+width+": "+JSON.stringify(measures));
    assert.ok(measures.documentOverflow<=1,"Document overflow at "+width+": "+JSON.stringify(measures));
    assert.equal(measures.status,"ready","Cannot certify an empty/loading basemap at "+width);
+   // Keep OpenStreetMap/OpenFreeMap attribution visible and operable, but
+   // prevent the default bright strip from overpowering the dark atlas.
+   const credits=await page.evaluate(()=>{
+     const node=document.querySelector(".aoHeritageSurface .aoFindMap .maplibregl-ctrl-attrib");
+     const bg=node?getComputedStyle(node).backgroundColor:"";
+     return {present:Boolean(node),text:node?.textContent||"",background:bg,
+       links:node?.querySelectorAll("a[href]").length||0};
+   });
+   assert.ok(credits.present&&credits.links>0&&/OpenStreetMap/i.test(credits.text),
+     "Map provider credits and source links must remain available: "+JSON.stringify(credits));
+   const rgb=(credits.background.match(/[0-9.]+/g)||[]).slice(0,3).map(Number);
+   assert.ok(rgb.length===3&&rgb.every(value=>value<100),
+     "Attribution must use the dark atlas palette: "+JSON.stringify(credits));
+   const guide=page.locator("#ao-find-modular-root .aoHeritageMapHint");
+   await guide.waitFor({state:"visible"});
+   assert.match(await guide.innerText(),/Numbers zoom.*icons open places/i,
+     "Map onboarding must distinguish number clusters from place pins");
+   if(mobile){
+     const overlap=await page.evaluate(()=>{
+       const a=document.querySelector(".aoHeritageMapHint")?.getBoundingClientRect();
+       const b=document.querySelector(".aoHeritageNearby")?.getBoundingClientRect();
+       return a&&b?a.right>b.left&&a.left<b.right&&a.bottom>b.top&&a.top<b.bottom:false;
+     });
+     assert.equal(overlap,false,"Cluster guide must not obstruct Near me at "+width);
+   }
    await page.screenshot({path:resolve(out,"explore-"+width+"-overview.png"),fullPage:false});
 
    // D is a same-map journey folio: no new page and no manufactured route

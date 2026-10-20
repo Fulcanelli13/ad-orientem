@@ -37,6 +37,327 @@
         "NOT_MAPPED"
       ],
       "status": "PUBLISHED_CONTEXT_PENDING_CI_AND_EDITORIAL_MERGE"
+    },
+    {
+      "custom_id": "NDAY-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:NDAY-001:US",
+      "source_ids": [
+        "EWTN-MCLOUGHLIN-NAMEDAY"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "PATR-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:PATR-001:FR",
+      "source_ids": [
+        "ECF-CHANTELLE-PATRONAL"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "MARI-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:MARI-001:FR",
+      "source_ids": [
+        "DIOCESE-PARIS-ASSOMPTION-2026"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "SJOS-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:SJOS-001:US",
+      "source_ids": [
+        "BR-DIOCESE-STJOSEPH-2026"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "SANT-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:SANT-001:FR",
+      "source_ids": [
+        "ERMITAGE-ANTHONY-POOR-BREAD"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "SCHR-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:SCHR-001:FR",
+      "source_ids": [
+        "DIOCESE-LAVAL-CHRISTOPHER-2026"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "SNIC-001",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_SELECTIVE_EDITORIAL_RELEASE_PR_PENDING",
+      "attestation_id": "att:SNIC-001:FR",
+      "source_ids": [
+        "STRASBOURG-SAINT-NICOLAS-2022"
+      ],
+      "scope": "Optional source-backed regional or household custom; no universal feast obligation or automatic liturgical ceremony",
+      "guardrails": [
+        "NO_AUTOMATIC_MASS_RITE",
+        "NOT_MAPPED",
+        "NO_GLOBAL_AVAILABILITY_ASSUMPTION"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "BLSS-002",
+      "name": "Assumption blessing of herbs, flowers and fruits",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_CONTEXTUAL_PUBLICATION_REVIEW",
+      "calendar_relation": "15 August Assumption; local blessing separate from the Missal's 1962 feast",
+      "attestation_id": "att:BLSS-002:ROMAN",
+      "source_ids": [
+        "DPP-ASSUMPTION-HERBS-181",
+        "RIT-ASSUMPTION-WELLER",
+        "PARISH-ASSUMPTION-HERBS-NEWTON"
+      ],
+      "controlling_proof": "Vatican Directory §181 explicitly associates blessing of herbs with Germanic regions and the historical Roman Ritual; direct historical blessing and traditional parish practice additionally attested.",
+      "scope": "Optional local priestly blessing, brought plants and domestic significance; no liturgical action instructions.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MEDICAL_OR_MAGICAL_EFFECT",
+        "NOT_A_MASS_VARIANT"
+      ],
+      "status": "SOURCE_LOCKED_REVIEW_PR",
+      "family": "Marian feast-day sacramentals"
+    },
+    {
+      "custom_id": "BLSS-003",
+      "name": "St John the Evangelist's wine blessing",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_CONTEXTUAL_PUBLICATION_REVIEW",
+      "calendar_relation": "27 December, St John the Apostle and Evangelist; fixed date, distinct from Mass rubrics",
+      "attestation_id": "att:BLSS-003:ROMAN",
+      "source_ids": [
+        "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+        "UK-PARISH-STJOHN-WINE"
+      ],
+      "controlling_proof": "Traditional parish reproduction of the 1962 Roman Ritual blessing and independent Catholic parish historical testimony.",
+      "scope": "Lay awareness where available; not drinking advice or ritual text.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_HEALING_PROMISE",
+        "NO_COMPULSORY_DRINKING",
+        "LEGEND_NOT_HISTORICAL_PROOF",
+        "NOT_A_MASS_VARIANT"
+      ],
+      "status": "SOURCE_LOCKED_REVIEW_PR",
+      "family": "Saints & sacramental blessings"
+    },
+    {
+      "custom_id": "BLSS-004",
+      "name": "Blessing of Easter foods",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_CONTEXTUAL_PUBLICATION_REVIEW",
+      "calendar_relation": "Holy Saturday, derived from Calendar Easter; blessed Easter foods consumed in household on Easter Day",
+      "attestation_id": "att:BLSS-004:ROMAN",
+      "source_ids": [
+        "RIT-EASTER-FOOD-WELLER",
+        "US-DIOCESE-EASTER-BASKETS",
+        "DPP-2001"
+      ],
+      "controlling_proof": "Historical Weller Roman Ritual blessings of eggs, lamb and bread; official Vatican Directory §150 and diocesan 2026 description of regional practice.",
+      "scope": "Optional food blessing where offered, not a replacement for Holy Saturday and Easter services or the Easter meal prayer.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_FIXED_BASKET_CONTENTS",
+        "NO_PRESUMED_PARISH_SCHEDULE",
+        "NOT_A_MASS_VARIANT"
+      ],
+      "status": "SOURCE_LOCKED_REVIEW_PR",
+      "family": "Easter domestic customs"
+    },
+    {
+      "custom_id": "ADVT-001",
+      "family": "Advent household customs",
+      "name": "Family Advent wreath and Sunday candle prayer",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "First Sunday of Advent; date owned by Calendar, no feast added",
+      "attestation_id": "att:ADVT-001:US",
+      "source_ids": [
+        "USCCB-ADVENT-WREATH-HOME"
+      ],
+      "controlling_proof": "USCCB documents a household Advent wreath and a family member leading home prayer; independent of Weiser's historical-origin assertions.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "ADVT-002",
+      "family": "Advent household customs",
+      "name": "Advent manger straw after acts of charity",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "Advent household preparation; Calendar owns liturgical dates",
+      "attestation_id": "att:ADVT-002:US",
+      "source_ids": [
+        "CATHCULTURE-ADVENT-MANGER-STRAW-2014"
+      ],
+      "controlling_proof": "The 2014 account specifically documents household straw added after good deeds; no evidence for universal French prevalence.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "ADVT-003",
+      "family": "Advent community customs",
+      "name": "Las Posadas — Holy Family lodging procession",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "16–24 December in communities that actually celebrate Posadas",
+      "attestation_id": "att:ADVT-003:MX",
+      "source_ids": [
+        "USCCB-POSADAS-DEC16"
+      ],
+      "controlling_proof": "USCCB identifies 16 December and Latin American communal singing and door-to-door reenactment.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "XMAS-001",
+      "family": "Christmas household customs",
+      "name": "Sharing opłatek on Polish Christmas Eve",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "24 December as customary domestic vigil, distinct from Mass",
+      "attestation_id": "att:XMAS-001:US",
+      "source_ids": [
+        "SJV-VERMONT-OPLATKI"
+      ],
+      "controlling_proof": "Parish documents wafers at family supper, home sharing, optional priestly blessing and distinction from Holy Communion.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "HTHU-001",
+      "family": "Holy Week lay devotions",
+      "name": "Holy Thursday visits to altars of repose",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "Holy Thursday, calculated from Easter by Calendar; locally open repositories only",
+      "attestation_id": "att:HTHU-001:US",
+      "source_ids": [
+        "CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"
+      ],
+      "controlling_proof": "Contemporary diocesan article confirms voluntary tradition, explains that fewer or more than seven churches may be visited.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "ROGA-001",
+      "family": "Rogation household customs",
+      "name": "Family Rogation walk and prayer for the harvest",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P0_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "Major Rogation 25 April and the three Minor Rogation days before Ascension; Calendar owns calculation",
+      "attestation_id": "att:ROGA-001:US",
+      "source_ids": [
+        "NEWLAND-ROGATION-FAMILY-1956"
+      ],
+      "controlling_proof": "Independent 1956 Catholic family source describes Rogation prayers and family procession for crops.",
+      "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
     }
   ]
 }

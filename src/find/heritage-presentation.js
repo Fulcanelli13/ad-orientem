@@ -160,7 +160,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   // Hide search suggestions when an editorial place folio is open.
   if(searching&&!vm.selectedPlace&&!vm.selected)html+=searchMatches(vm);
   else if(arr(vm.nearby).length)html+=nearbyPanel(vm);
-  else html+='<p class="aoHeritageMapHint">'+L(vm.language,"Tap a marker to discover a place","Touchez un repère pour découvrir le lieu")+'</p>';
+  else html+='<p class="aoHeritageMapHint">'+L(vm.language,"Numbers zoom · icons open places","Chiffres : zoom · icônes : lieux")+'</p>';
   const customs=arr(vm.customCards);
   if(customs.length){
     html+='<div class="aoHeritageCustomStrip"><div class="aoHeritageStripHeading"><span>'+L(vm.language,"Living traditions","Traditions vivantes")+'</span>';
