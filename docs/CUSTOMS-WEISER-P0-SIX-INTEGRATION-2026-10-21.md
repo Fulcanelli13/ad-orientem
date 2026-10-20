@@ -23,7 +23,7 @@ Add six genuinely distinct traditional customs selected from the complete Weiser
 | `HTHU-001` | Holy Thursday visits to altars of repose | Chicago Catholic, 18 March 2026, `CHICAGO-CATHOLIC-HOLY-THURSDAY-2026` | **Enrich** the existing Holy Thursday notice, no second card, no invented seven-stop itinerary |
 | `ROGA-001` | Private family Rogation prayer walk | Mary Reed Newland 1956, `NEWLAND-ROGATION-FAMILY-1956` | **Enrich** the existing Rogation card, distinct from priest's procession |
 
-Full original EN/FR long descriptions, spiritual meanings, optional lay actions, source IDs and Weiser page locators are at `data/customs/customs-p0-guidance-en-fr.v1.json`. The shorter text in `src/calendar/traditional-year-v384.js` is what the existing Calendar UI currently consumes. No additional UI component is invented; longer Explore detail copy needs a later reader-adapter before it can appear verbatim.
+Full original EN/FR long descriptions, spiritual meanings, optional lay actions, source IDs and Weiser page locators are at `data/customs/customs-p0-guidance-en-fr.v1.json`. The shorter text in `src/calendar/traditional-year-v384.js` is what the existing Calendar UI consumes. The existing Explore data loader now reads the six-entry guidance registry and projects complete bilingual descriptions, meanings, optional observances and pastoral cautions into the **existing Customs Atlas expanded detail sheet**. No additional Explore surface or map pin is introduced. Without the optional guidance file, the original canonical summary remains available.
 
 ## Ownership and release boundaries
 
@@ -44,3 +44,9 @@ Run `npm run test:customs-atlas`, including the new `tests/customs-weiser-p0-six
 ## Next after this batch
 
 The five medium-priority Weiser candidates (Epiphany star singers, French galette, Corpus Christi route decoration, Easter Monday Emmaus walk and Marian gardens) remain unmerged. A future UI pass should allow the bilingual detail body for the six P0 customs to be read in the Calendar/Customs Atlas using the existing detail layout, rather than displaying isolated one-line practice descriptions.
+
+## Expanded detail acceptance
+
+The normal `loadExploreDataset` pipeline reads `data/customs/customs-p0-guidance-en-fr.v1.json` alongside the canonical Atlas and source registry. `projectExploreDataset` binds only a matching six-row scoped guidance entry to an existing published `custom_id`. `groupTraditionsForBrowse` retains one distinct practice identity per custom, and `renderExploreToString` displays original EN/FR meaning, suggested optional practice, cautions and the independent evidence links. The French detail uses a translated title and safeguards; no changed UI architecture or invented Place is involved.
+
+`tests/explore-surface.mjs` verifies both languages for all six full detail sheets and the 33-custom practice count, with source links and zero fabricated map pins. The original seven rejected records remain protected. The proposed merge order is still #1519 to main first, then retarget/rebase #1520 against the updated main and re-run required CI; **neither PR is merged by this implementation**.
