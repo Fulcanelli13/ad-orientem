@@ -660,7 +660,7 @@ const rogationCurated=await prepareNativeReaderPreview(rogationCuratedOptions);
 assert.equal(rogationCurated.curatedEligible,true,
   "certified Rogations -> Introit failed to reach curated LIVE");
 assert.equal(rogationCurated.model.totalCards,39);
-assert.equal(rogationCurated.presentationModel.totalCards,60);
+assert.equal(rogationCurated.presentationModel.totalCards,61);
 assert.equal(rogationCurated.presentationModel.cards[0].title,"Introit");
 assert.equal(rogationCurated.rogationsController.project().card.id,"ROG-R01");
 const rogationLegacy=await prepareNativeReaderPreview({
