@@ -249,6 +249,16 @@ try{
   assert.equal(handoffState.nativeReader,false,"Before Mass handoff mounted R17");
   assert.equal(handoffState.nativeRuntime,false,"Before Mass handoff started native Mass runtime");
 
+  // When the canonical preparation opens inside PRAY, take its real Back
+  // control before using the shell's Prayer return. This exercises the same
+  // user navigation instead of expecting an embedded reader to self-dismiss.
+  if(handoffPresentation.prayerOpen){
+    const beforeMassBack=page.locator("#aoPray435930 [data-tp381-back]");
+    assert.equal(await beforeMassBack.count(),1,
+      "Canonical Before Mass reader has no way back to its caller");
+    await beforeMassBack.click();
+    await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
+  }
   await page.evaluate(()=>globalThis.AO_V37_SHELL?.openDomain?.("pray"));
   await page.waitForFunction(()=>
     document.getElementById("aoPray435930")?.classList?.contains("open") &&
