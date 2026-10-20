@@ -129,6 +129,12 @@ export function renderPilgrimageJourneyPanel({
     :selected.routeType==="WALKING"?label(language,"Walking pilgrimage","Pèlerinage à pied")
     :label(language,"Documented journey","Parcours attesté"))+'</div>';
   html+='<h3>'+esc(selected.name)+'</h3>';
+  if(selected.destinationRelation==="RELATED_SHRINE_NOT_EVENT_ENDPOINT"){
+    html+='<p class="aoJourneyNoLine aoJourneyEndpointWarning">'+
+      esc(label(language,
+        "The final stage is at a different site from the linked Catholic shrine. The shrine's map pin is NOT the pilgrimage endpoint for this edition.",
+        "L’étape finale se situe ailleurs que le sanctuaire catholique associé. Son repère sur la carte N’EST PAS le terminus de cette édition."))+'</p>';
+  }
   html+='<ol class="aoJourneyAnchors">';
   if(selected.namedStages.length){
     selected.namedStages.forEach((stage,index)=>{
@@ -164,12 +170,6 @@ export function renderPilgrimageJourneyPanel({
   if(selected.namedStages.length)html+='<p class="aoJourneyStages">'+esc(label(language,
     selected.namedStages.length+" named stages from official evidence · no geolocated waypoint yet",
     selected.namedStages.length+" étapes nommées selon les sources officielles · aucun repère géolocalisé"))+'</p>';
-  if(selected.destinationRelation==="RELATED_SHRINE_NOT_EVENT_ENDPOINT"){
-    html+='<p class="aoJourneyNoLine aoJourneyEndpointWarning">'+
-      esc(label(language,
-        "The final stage is at a different site from the linked Catholic shrine. The shrine's map pin is NOT the pilgrimage endpoint for this edition.",
-        "L’étape finale se situe ailleurs que le sanctuaire catholique associé. Son repère sur la carte N’EST PAS le terminus de cette édition."))+'</p>';
-  }
   html+='<p class="aoJourneyNoLine">'+esc(label(language,
     "This is a documented pilgrimage, not turn-by-turn directions. No route line, distance or travel time is asserted.",
     "Ce pèlerinage est attesté, mais sans guidage GPS. Aucun tracé, distance ni durée ne sont affirmés."))+'</p>';
