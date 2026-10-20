@@ -14,6 +14,8 @@ on:
       - "tests/sacred-art-open-source-recovery-76.mjs"
       - "tools/calendar/discover-sacred-art-76-open-sources.mjs"
       - "tests/sacred-art-76-commons-discovery.mjs"
+      - "tools/calendar/audit-staged-sacred-art-media.mjs"
+      - "tests/sacred-art-integrated-source-qa.mjs"
       - "tools/calendar/acquire-sacred-art-nga.mjs"
       - "tests/sacred-art-nga-open-access.mjs"
       - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
@@ -55,6 +57,7 @@ jobs:
           node tests/sacred-art-bulk-acquisition.mjs
           node tests/sacred-art-open-source-recovery-76.mjs
           node tests/sacred-art-76-commons-discovery.mjs
+          node tests/sacred-art-integrated-source-qa.mjs
       - name: Stage exact Open Access Met master (never publish automatically)
         continue-on-error: true
         run: node tools/calendar/acquire-sacred-art-first-five.mjs
@@ -139,4 +142,40 @@ jobs:
           name: sacred-art-76-open-source-discovery-${{ matrix.shard }}
           path: artifacts/sacred-art-76-discovery/shard-${{ matrix.shard }}/
           retention-days: 21
+          if-no-files-found: warn
+
+
+  integrated-source-photo-qa:
+    needs: [sacred-art-bulk-source-shards, official-nga-image-intake]
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Retrieve source images from all ten current-run shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: sacred-art-source-batch-*
+          merge-multiple: true
+          path: artifacts/qa-merged-bulk
+      - name: Retrieve six primary NGA OA source images
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-nga-6-sources-for-qa
+          path: artifacts/qa-nga
+      - name: Verify actual SHA-256, dimensions, identity gates, duplicate bytes and low-resolution sources
+        run: |
+          node tests/sacred-art-integrated-source-qa.mjs
+          node tools/calendar/audit-staged-sacred-art-media.mjs
+      - name: Preserve unified reproducible manifest (no automatic publication)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-88-integrated-technical-qa
+          path: artifacts/qa-integrated/
+          retention-days: 30
           if-no-files-found: warn
