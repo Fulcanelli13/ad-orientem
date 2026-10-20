@@ -67,8 +67,12 @@ assert.equal(cue('priest_action','AO.SM.C0124')?.assetId,null,
  'Minister-incensing cue was assigned to an incorrect priest image');
 assert.equal(cue('priest_action','AO.SM.C0265')?.assetId,null,
  'Final blessing wrongly reused an indulgentiam image');
-assert.equal(cue('priest_position','AO.SM.C0001')?.assetId,'ref_112206',
- 'Rejected priest_foot artwork resurfaced');
+assert.equal(cue('priest_position','AO.SM.C0001')?.assetId,null,
+ 'User-rejected Foot Centre pictogram was reintroduced');
+assert.equal(cue('priest_position','AO.SM.C0001')?.sourceEvent.station,'FOOT_CENTER',
+ 'Removing artwork must not erase correct ceremonial position');
+assert.equal(cue('priest_position','AO.SM.C0001')?.semanticResolution,
+ 'EXPLICIT_USER_VETO_OF_FOOT_CENTRE_ARTWORK');
 for(const row of crosswalk.rows.filter(x=>x.lane==='priest_position')){
  if(row.sourceEvent.station?.includes('EPISTLE') && row.assetId)
   assert.equal(row.assetId,'v46_priest_gospel_rich','Epistle/Gospel physical artwork swapped back');
