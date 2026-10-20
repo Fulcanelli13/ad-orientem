@@ -98,6 +98,20 @@
         "CHA-CSE-CSE019"
       ],
       "status": "SOURCE_AUTHORITY_AND_CONSCIENCE_DISTINCTIONS_PREPARED"
+    },
+    {
+      "batch": "B06",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b06-biography-source-quality-20261021.v1.json",
+      "commit": "e0275c2c2313568aa0713512b94671ed3475562e",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "SPX-EXP-001",
+        "SPX-EXP-002",
+        "SPX-EXP-009"
+      ],
+      "status": "NARRATOR_SOURCE_QUALITY_DELTAS_AND_DATE_CORRECTION_FLAG"
     }
   ],
   "blocked": [
@@ -111,11 +125,16 @@
       "reason": "automation_update cloud creation rejected: executionEnvironment expected local. No schedule exists.",
       "requestedTime": "01:00 Indian/Mauritius (UTC+4), default chosen because user specified nightly without hour",
       "retryWhen": "Cloud scheduling capability becomes available; do not silently substitute local execution"
+    },
+    {
+      "id": "SARTO_FAMILY_COUNT",
+      "reason": "Museum genealogical page eleven births/list versus Casa Museo ten; archival count not verified",
+      "retryWhen": "Contemporaneous register or authoritative genealogical transcription available; nonnumeric answer may proceed"
     }
   ],
   "active": {
-    "batch": "B06",
-    "task": "Resolve genuine SPX first-release biography source discrepancy without repeating completed twenty-family audit"
+    "batch": "B07",
+    "task": "Chanoine marriage specialist source distinctions: indissolubility, separation, coercion and headship"
   },
   "next": [
     "CSE016/018 Donum veritatis exact authority and theological difficulty distinctions",
