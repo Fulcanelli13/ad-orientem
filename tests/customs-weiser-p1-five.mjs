@@ -33,6 +33,7 @@ for(const [id,country,ids] of specs){
  assert.equal(att[0].geo_area_id,`geo:country:${country}`);
  assert.equal(att[0].place_id,null);
  assert.equal(att[0].map_policy,"NOT_MAPPED");
+ assert.ok(guide.scope_en?.length>20&&guide.scope_fr?.length>20,"bilingual scope missing "+id);
  assert.deepEqual(att[0].source_ids,ids);
  assert.deepEqual(guide.source_ids,ids);
  assert.deepEqual(extension.source_ids,ids);

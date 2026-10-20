@@ -17,3 +17,7 @@ Each profile has a complete short original EN/FR folio, source IDs, Weiser chapt
 **Held claims:** No exact window candle/image claim from Weiser; no universal star singers, French charity school fees, medicinal Mary plant legend, inferred local procession, priestly blessing or event schedule. May 1 is an optional beginning-of-month devotional prompt, not a new liturgical feast. Calendar deep links target only published canonical IDs; the Mass reader and resolved 1962 feast ranks remain unchanged.
 
 Acceptance requires registry/source/owner tests, three-year EN/FR calendar handoffs, real browser folio capture at 320/390/768px, and human typography approval. Research PR #1513 remains separate and unmerged.
+
+## Mobile editorial visual correction (21 October)
+
+The first 33-folio archive passed automated checks but showed untranslated English family and period metadata on French phones, redundant single unlocated attestation tiles, and overlong tablet lines. This revision localises the customary heading and the new profiles’ concise regional scopes, eliminates duplicate fact/evidence panels for individual unlocated witnesses (retaining all source data and links), and constrains paragraph measure on larger viewports. The phone suite now checks these layout and translation gates.
