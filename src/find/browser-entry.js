@@ -678,12 +678,32 @@ export function createFindOwner(win=globalThis){
     return true;
   }
 
+  function openJourneyStagePlace(stageId){
+    if(!state.journeyOpen||state.lens!=="heritage"||!projection||!dataset)return false;
+    const active=selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId);
+    const stage=active?.namedStages?.find(row=>row.id===stageId);
+    const placeId=stage?.siteAnchor?.placeId;
+    // A sourced map anchor is not enough unless the existing Place profile
+    // can be opened by the same canonical identity. No fallback to a nearby
+    // sanctuary, reverse-geocoded result, or separate external page.
+    if(!placeId||!dataset.geography?.places?.some(p=>p.place_id===placeId))return false;
+    focusJourneyStage(stageId,{fromMap:true});
+    state.selectedPlaceId=placeId;
+    state.selectedId=null;
+    state.expandPlace=false;
+    state.expandDetail=false;
+    // Preserve both the MapLibre canvas and the currently selected Journey
+    // rail under a normal C Place sheet. Closing it returns to this itinerary.
+    void paint({selectionOnly:true});
+    return true;
+  }
+
   function syncJourneyMarkers(){
     if(!mapHandle?.setJourneyStageAnchors)return;
     const active=state.journeyOpen&&state.lens==="heritage"
       ?selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId):null;
     mapHandle.setJourneyStageAnchors(active?.stageSiteAnchors??[],
-      stageId=>focusJourneyStage(stageId,{fromMap:true}));
+      stageId=>openJourneyStagePlace(stageId));
   }
 
   function focusJourneyDestination(){
@@ -1087,6 +1107,11 @@ export function createFindOwner(win=globalThis){
       state.journeySelectedId=journeySelect.dataset.exploreJourneySelect;
       focusJourneyDestination();
       void paint();return;
+    }
+    const stagePlace=target?.closest?.("[data-explore-journey-stage-place]");
+    if(stagePlace&&state.journeyOpen){
+      event.preventDefault?.();
+      openJourneyStagePlace(stagePlace.dataset.exploreJourneyStagePlace);return;
     }
     const stageFocus=target?.closest?.("[data-explore-journey-stage-focus]");
     if(stageFocus&&state.journeyOpen){
