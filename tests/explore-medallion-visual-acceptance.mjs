@@ -106,6 +106,19 @@ try{
    assert.ok((await journey.locator(".aoJourneyNoLine").innerText()).includes("No route line"));
    await page.waitForTimeout(700);
    await page.screenshot({path:resolve(out,"explore-"+width+"-journey-chartres.png"),fullPage:false});
+   // 2026 Walsingham deliberately ends at Priory grounds, not the linked
+   // Roman Catholic Shrine. Review the warning and related-place CTA.
+   await journey.locator('[data-explore-journey-select="route:GB:ely-walsingham-lms"]').click();
+   await page.waitForFunction(()=>document.querySelector("#ao-find-modular-root .aoJourneyDetail h3")
+      ?.textContent?.includes("Ely to Walsingham"),null,{timeout:15000});
+   assert.equal(await journey.locator("[data-journey-named-stage]").count(),3);
+   await journey.locator(".aoJourneyEndpointWarning").waitFor({state:"visible"});
+   assert.ok((await journey.locator(".aoJourneyEndpointWarning").innerText()).includes("NOT the pilgrimage endpoint"));
+   assert.equal(await journey.locator("[data-explore-journey-focus]").count(),0,
+     "Never offer exact destination navigation to the wrong Catholic Shrine");
+   await page.waitForTimeout(500);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-journey-walsingham-2026.png"),fullPage:false});
+   await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').click();
    await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
    await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
    assert.equal(await journey.count(),0,"Discovering destination returns to the C editorial folio");
