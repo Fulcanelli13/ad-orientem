@@ -363,7 +363,8 @@ export function mountFullMassPreflight({
     word("[data-folio-date]",date,""+date);
     word("[data-folio-kind]",summary.kindLabel,summary.kindLabel);
     word("[data-folio-celebration]",displayTitle,displayTitle);
-    word("[data-folio-season]",l("Your Mass","Votre messe"),l("Your Mass","Votre messe"));
+    word("[data-folio-season]",[context.actual?.colour||context.calendar?.colour,context.season].filter(Boolean).join(" · "),
+      [context.actual?.colour||context.calendar?.colour,context.season].filter(Boolean).join(" · "));
     word("[data-folio-label-ceremony]",l("Ceremony","Cérémonie"),l("Ceremony","Cérémonie"));
     word("[data-folio-label-reader]",l("Follow","Lecture"),l("Follow","Lecture"));
     word("[data-folio-value-ceremony]",summary.formLabel,summary.formLabel);
@@ -408,8 +409,10 @@ export function mountFullMassPreflight({
     folio.querySelector("[data-folio-back]").hidden=folioStep==="overview";
     folio.querySelector("[data-folio-next]").hidden=folioStep==="overview";
 
-    const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},language(),{form:summary.form});
+    const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},summary.readerLanguage,{form:summary.form});
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
+    const comparison=root.querySelector("[data-mass-calendar-actual-block]");
+    if(comparison)comparison.hidden=!context.differs;
     // A real 1962 commemoration is an essential preparation datum, not
     // optional technical metadata. Reveal the context whenever one is
     // resolved, so the reader sees it before entering Mass.
@@ -459,6 +462,7 @@ export function mountFullMassPreflight({
         "Le propre du jour, du Requiem, de la messe votive ou nuptiale se choisit dans le sélecteur de célébration ci-dessus. Les textes, le rang et les adaptations autorisées doivent être résolus avant de commencer.") :
       l("Choose a permitted celebration with a complete Proper before starting. No text is substituted.",
         "Choisissez une célébration permise dont le propre est complet avant de commencer. Aucun texte n’est substitué.");
+    root.querySelector("[data-full-mass-resolver]").hidden=Boolean(sourceGate.ready&&localReady&&summary.canStart);
     root.querySelector("[data-full-mass-note]").textContent=
       summary.kind==="GOOD_FRIDAY"?
         l("Good Friday is a distinct liturgy, not Low or Sung Mass.","Le Vendredi saint possède un office distinct : ce n’est pas une messe basse ou chantée.") :
