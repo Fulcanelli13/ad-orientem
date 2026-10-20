@@ -261,6 +261,22 @@
         "CHA-CSE-CSE034"
       ],
       "status": "SOURCE_MATCHED_MORAL_THEOLOGY_AND_LANGUAGE_REVIEW_PENDING"
+    },
+    {
+      "batch": "B17",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b17-chastity-vocation-20261021.v1.json",
+      "commit": "8cc66a49628a23b681f4a437d4a0bfc53061b6bc",
+      "families": 5,
+      "answerUnits": 10,
+      "ids": [
+        "CHA-CSE-CSE020",
+        "CHA-CSE-CSE021",
+        "CHA-CSE-CSE022",
+        "CHA-CSE-CSE028",
+        "CHA-CSE-CSE029"
+      ],
+      "status": "SOURCE_MATCHED_THEOLOGY_AND_EMPIRICAL_SCOPE_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -282,29 +298,11 @@
     }
   ],
   "active": {
-    "batch": "B17",
-    "state": "QUEUED_NOT_RESEARCHED",
-    "ids": [
-      "CSE020",
-      "CSE021",
-      "CSE022",
-      "CSE028",
-      "CSE029"
-    ],
-    "task": "Read original drafts and specialist brief first; distinguish moral psychology and theological judgments from unsupported clinical population claims."
+    "batch": "B18",
+    "state": "SELECTING",
+    "task": "Remaining committed first40 SPX candidates; select original-language source claims beyond completed first20."
   },
   "next": [
-    {
-      "priority": 1,
-      "ids": [
-        "CSE020",
-        "CSE021",
-        "CSE022",
-        "CSE028",
-        "CSE029"
-      ],
-      "action": "Read actual owner drafts and specialist records first. Do not infer clinical generalizations about addiction/celibacy from moral sources or small qualitative studies."
-    },
     {
       "priority": 2,
       "scope": "SPX first-balanced-release beyond existing first20",
@@ -316,15 +314,15 @@
   "publication": false,
   "denzingerMandatory": false,
   "progress": {
-    "conversationFamilyIdsWithResearchDeltas": 65,
+    "conversationFamilyIdsWithResearchDeltas": 70,
     "additionalMirrorFamilyIdsExamined": 3,
-    "totalDistinctFamilyIdsExaminedInSelectedResearch": 68,
-    "answerUnitsReviewed": 130,
-    "fullFamilyPacketsForHumanReview": 64,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 73,
+    "answerUnitsReviewed": 140,
+    "fullFamilyPacketsForHumanReview": 69,
     "partialFamilyPackets": 1,
     "humanCertified": 0,
     "published": 0,
-    "meaning": "Improved includes source precision, evidence additions and preserved stronger-source variants, not necessarily rewriting every answer. 64 packets can enter human review; this is not a theological or publication readiness approval."
+    "meaning": "Improved includes source precision and evidence additions. 69 complete packets can enter human review; this is not theological or publication approval."
   },
   "scheduling": {
     "created": false,
