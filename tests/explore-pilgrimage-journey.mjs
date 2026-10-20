@@ -17,8 +17,8 @@ const projected=projectPilgrimageItems({
  places:geography.places,sources:registry.sources,
 });
 const journeys=buildPilgrimageJourneyCatalogue(projected,registry.sources,evidence.routes);
-assert.equal(evidence.routes.length,8,"First waypoint evidence batch covers eight itineraries");
-assert.equal(evidence.routes.reduce((n,r)=>n+r.waypoints.length,0),34);
+assert.equal(evidence.routes.length,17,"Official-stage evidence now covers 17 itinerary identities");
+assert.equal(evidence.routes.reduce((n,r)=>n+r.waypoints.length,0),64);
 const canonicalRoutes=new Map(seed.routes.map(row=>[row.route_id,row]));
 for(const entry of evidence.routes){
  assert.ok(canonicalRoutes.has(entry.route_id),"Do not create noncanonical route identity");
@@ -34,8 +34,8 @@ for(const entry of evidence.routes){
   assert.equal(waypoint.source_url,entry.source_url);
  }
 }
-assert.equal(journeys.reduce((n,r)=>n+r.namedStages.length,0),34);
-assert.equal(journeys.filter(r=>r.namedStages.length>0).length,8);
+assert.equal(journeys.reduce((n,r)=>n+r.namedStages.length,0),64);
+assert.equal(journeys.filter(r=>r.namedStages.length>0).length,17);
 assert.ok(journeys.every(j=>j.mappedStages.length===0),
  "Named stages are not navigable geographic stops");
 assert.equal(seed.pilgrimages.length,240,"Do not confuse source destinations with mapped routes");
@@ -94,6 +94,32 @@ assert.equal(belem.namedStages[3].role,"PASS_THROUGH");
 const belemHtml=renderPilgrimageJourneyPanel({routes:journeys,selectedId:belem.id});
 assert.match(belemHtml,/ROUTE PASSES THROUGH/);
 assert.match(belemHtml,/11 October 2026/);
+// Edition-specific source overrides must not manufacture a route endpoint.
+const walsingham=journeys.find(j=>j.id==="route:GB:ely-walsingham-lms");
+assert.equal(walsingham.destinationRelation,"RELATED_SHRINE_NOT_EVENT_ENDPOINT");
+assert.equal(walsingham.destinationGeo,null);
+assert.ok(walsingham.relatedShrineGeo,"Keep existing mapped Catholic shrine as a related place");
+assert.equal(walsingham.namedStages.at(-1).name,"Walsingham Priory grounds (final Mass near Holy House site)");
+const walsinghamHtml=renderPilgrimageJourneyPanel({routes:journeys,selectedId:walsingham.id});
+assert.match(walsinghamHtml,/NOT the pilgrimage endpoint/);
+assert.match(walsinghamHtml,/Explore related Catholic shrine/);
+assert.doesNotMatch(walsinghamHtml,/data-explore-journey-focus/);
+const martyrs=journeys.find(j=>j.id==="route:CA:canadian-martyrs-traditional");
+assert.equal(martyrs.namedStages[0].name,"St Ignace II, 1645 Rosemount Road");
+assert.equal(martyrs.namedStages[1].name,"Crystal Beach Park, Victoria Harbour (lunch)");
+assert.equal(martyrs.namedStages[2].role,"DESTINATION");
+const dutch=journeys.find(j=>j.id==="route:NL:winthagen-maastricht-sterre-der-zee");
+assert.equal(dutch.namedStages.length,4);
+assert.match(dutch.namedStages[2].name,/St Gerlachus/);
+const zapopan=journeys.find(j=>j.id==="route:MX:guadalajara-zapopan-romeria");
+assert.equal(zapopan.namedStages.length,10);
+assert.equal(zapopan.namedStages[8].name,"Arco de Zapopan");
+const remaining=journeys.filter(j=>!j.namedStages.length).map(j=>j.id).sort();
+assert.deepEqual(remaining,[
+ "route:NG:nne-enyemaka-rosary-procession",
+ "route:NZ:nga-tapuwae-russell",
+ "route:US:great-meadows-doylestown-czestochowa",
+].sort());
 assert.doesNotMatch(en,/(?:data-explore-journey-waypoint|route-polyline|turn-by-turn directions\s+available)/i);
 const poisoned=buildPilgrimageJourneyCatalogue([
  {lens:"pilgrimages",place_id:"place:a",map_publishable:true,
@@ -107,4 +133,4 @@ const poisoned=buildPilgrimageJourneyCatalogue([
 assert.equal(poisoned.length,1);
 assert.equal(poisoned[0].destinationGeo,null,"Null coordinate must not become a fabricated map point");
 assert.equal(poisoned[0].sources.length,0,"Do not fabricate source URLs");
-console.log("PASS D journey catalogue: 240 pilgrimages, 20 routes, 34 named stages on 8 routes, zero fabricated geolocation, EN/FR + organizer sources");
+console.log("PASS D journey catalogue: 240 pilgrimages, 20 routes, 64 named stages on 17 routes, zero fabricated geolocation, EN/FR + organizer sources");
