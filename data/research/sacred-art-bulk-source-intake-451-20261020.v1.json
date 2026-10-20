@@ -31,8 +31,8 @@
     "excluded": 68,
     "editorialHold": 199,
     "eligibleExactMet": 23,
-    "eligibleExactCommons": 52,
-    "eligibleOtherSource": 64,
+    "eligibleExactCommons": 58,
+    "eligibleOtherSource": 58,
     "legacyFiveOutside451": [
       "W40-010",
       "W40-011",
@@ -44,12 +44,12 @@
     "pradoHoldsApprovedOrHistoric": 25,
     "pradoSourceHoldsApprovedExactCandidate": 1,
     "eligibleExactNga": 6,
-    "newNonPradoOpenSourceExactLinks": 17,
+    "newNonPradoOpenSourceExactLinks": 23,
     "sanPoloExactObjectLinksResolved": 9,
     "sanPoloOriginalWrongLinksUnresolved": 0,
     "sanPoloExactCommonsFilesRouted": 12,
     "sourcesWithExplicitOriginalPhotoRightsClaim": 12,
-    "eligibleExactAllNonPrado": 95
+    "eligibleExactAllNonPrado": 101
   },
   "works": [
     {
@@ -272,15 +272,28 @@
       "id": "W07-014",
       "title": "The Incredulity of Saint Thomas",
       "artist": "Caravaggio",
-      "sourceUrl": "https://www.spsg.de/en/press-material-paintings",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Incredulity_of_Saint_Thomas-Caravaggio_(1601-2).jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": "7|W07-014|1dbb8185f9e878a8f59494c4af0b0d619f5eeabdc0d9fd2baab960754b0339f7|W07-014-d83e76537a75d620.webp",
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 3
+      "sourceDestinationsCount": 3,
+      "sourceObjectUrl": "https://www.spsg.de/en/press-material-paintings",
+      "imageSourceVerification": {
+        "status": "EXACT_PHYSICAL_ORIGINAL_CROSSCHECKED_COMMONS",
+        "verifiedDate": "2026-10-20",
+        "collection": "Sanssouci Picture Gallery, Potsdam",
+        "museumAccession": "GK I 5438",
+        "originalURL": "https://www.spsg.de/en/press-material-paintings",
+        "claimedFullSizePixels": "8550x6325",
+        "publicDomainPhotoClaim": "WIKIMEDIA_COMMONS_PD_ART_PENDING_INDEPENDENT_LEGAL_VERIFICATION",
+        "sourcePhotoMatchToCuratorPreview": false,
+        "photoQualityPhoneQA": false,
+        "productionCleared": false
+      }
     },
     {
       "id": "C34:saintmatthewbyvalentindeboulognejpg",
@@ -300,17 +313,30 @@
       "id": "ART-aravaggio-nspiration-of-aint-atthew",
       "title": "Inspiration of Saint Matthew",
       "artist": "Caravaggio",
-      "sourceUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Inspiration_of_Saint_Matthew-Caravaggio_(1602).jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourceObjectUrl": null,
+      "imageSourceVerification": {
+        "status": "EXACT_PHYSICAL_ORIGINAL_CROSSCHECKED_COMMONS",
+        "verifiedDate": "2026-10-20",
+        "collection": "San Luigi dei Francesi, Contarelli Chapel, Rome",
+        "museumAccession": null,
+        "originalURL": null,
+        "claimedFullSizePixels": "6911x10816",
+        "publicDomainPhotoClaim": "WIKIMEDIA_COMMONS_PD_ART_PENDING_INDEPENDENT_LEGAL_VERIFICATION",
+        "sourcePhotoMatchToCuratorPreview": false,
+        "photoQualityPhoneQA": false,
+        "productionCleared": false
+      }
     },
     {
       "id": "prado-rubens-p001651",
@@ -499,15 +525,29 @@
       "id": "B01-MARK-RENI-GENOA",
       "title": "Saint Mark the Evangelist — Palazzo Rosso",
       "artist": "Guido Reni",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_by_Guido_Reni_in_the_Gallery_of_Palazzo_Rosso_(Genoa)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_San_Marco_Evangelista.jpg",
       "sourceClaim": "CC BY-SA 3.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": "14|B01-MARK-RENI-GENOA|fd7adbc610f0d0c9c87f8d472d82a78348152ac5dba5fce9f35195f07607c3ab|B01-MARK-RENI-GENOA-550ed8219e6413ef.webp",
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourceObjectUrl": "https://commons.wikimedia.org/wiki/Category:Paintings_by_Guido_Reni_in_the_Gallery_of_Palazzo_Rosso_(Genoa)",
+      "imageSourceVerification": {
+        "status": "EXACT_PHYSICAL_ORIGINAL_CROSSCHECKED_COMMONS",
+        "verifiedDate": "2026-10-20",
+        "collection": "Palazzo Rosso, Musei di Strada Nuova, Genoa",
+        "museumAccession": null,
+        "originalURL": "https://commons.wikimedia.org/wiki/Category:Paintings_by_Guido_Reni_in_the_Gallery_of_Palazzo_Rosso_(Genoa)",
+        "claimedFullSizePixels": "1309x1435",
+        "publicDomainPhotoClaim": "WIKIMEDIA_COMMONS_PD_ART_PENDING_INDEPENDENT_LEGAL_VERIFICATION",
+        "sourcePhotoMatchToCuratorPreview": false,
+        "photoQualityPhoneQA": false,
+        "productionCleared": false,
+        "premiumResolutionHold": true
+      }
     },
     {
       "id": "B01-MARK-RENI-BJU",
@@ -1454,11 +1494,11 @@
       "id": "ART-uido-eni-rchangel-ichael-efeating-atan",
       "title": "Archangel Michael Defeating Satan",
       "artist": "Guido Reni",
-      "sourceUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": "45|ART-uido-eni-rchangel-ichael-efeating-atan|4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad|ART-uido-eni-rchangel-ichael-efeating-atan-a5b2f45a4aa02345.webp",
       "hasReviewPreview": true,
       "assetHolds": [
@@ -1466,7 +1506,20 @@
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED",
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 3
+      "sourceDestinationsCount": 3,
+      "sourceObjectUrl": null,
+      "imageSourceVerification": {
+        "status": "EXACT_PHYSICAL_ORIGINAL_CROSSCHECKED_COMMONS",
+        "verifiedDate": "2026-10-20",
+        "collection": "Santa Maria della Concezione dei Cappuccini, Rome",
+        "museumAccession": null,
+        "originalURL": null,
+        "claimedFullSizePixels": "1657x2441",
+        "publicDomainPhotoClaim": "WIKIMEDIA_COMMONS_PD_ART_PENDING_INDEPENDENT_LEGAL_VERIFICATION",
+        "sourcePhotoMatchToCuratorPreview": false,
+        "photoQualityPhoneQA": false,
+        "productionCleared": false
+      }
     },
     {
       "id": "C35:arcangelsanrafaeldealonsomigueldetovarayuntamientodesevillaj",
@@ -1487,16 +1540,29 @@
       "id": "W08-009",
       "title": "Saint John the Baptist in the Wilderness",
       "artist": "Caravaggio",
-      "sourceUrl": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_the_Baptist-Caravaggio_(Kansas_City).jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourceObjectUrl": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+      "imageSourceVerification": {
+        "status": "EXACT_PHYSICAL_ORIGINAL_CROSSCHECKED_COMMONS",
+        "verifiedDate": "2026-10-20",
+        "collection": "Nelson-Atkins Museum of Art, Kansas City",
+        "museumAccession": "52-25",
+        "originalURL": "https://customprints.nelson-atkins.org/detail/510324/caravaggio-saint-john-the-baptist-in-the-wilderness-1604",
+        "claimedFullSizePixels": "7382x9803",
+        "publicDomainPhotoClaim": "WIKIMEDIA_COMMONS_PD_ART_PENDING_INDEPENDENT_LEGAL_VERIFICATION",
+        "sourcePhotoMatchToCuratorPreview": false,
+        "photoQualityPhoneQA": false,
+        "productionCleared": false
+      }
     },
     {
       "id": "ART-ierre-ignard-aint-ohn-the-aptist",
@@ -2177,16 +2243,29 @@
       "id": "W38-001",
       "title": "Saint Agnes",
       "artist": "Massimo Stanzione",
-      "sourceUrl": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Massimo_Stanzione_-_Saint_Agnes_-_Google_Art_Project.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "UNREVIEWED",
       "reviewGate": "LEGACY_FIVE_PRESERVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
       "sourceDestinationsCount": 0,
-      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL"
+      "ratingAuthority": "W64_PREVIOUS_FIVE_NOT_NEW_APPROVAL",
+      "sourceObjectUrl": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
+      "imageSourceVerification": {
+        "status": "EXACT_PHYSICAL_ORIGINAL_CROSSCHECKED_COMMONS",
+        "verifiedDate": "2026-10-20",
+        "collection": "Museu Nacional d'Art de Catalunya",
+        "museumAccession": "065579-000",
+        "originalURL": "https://www.museunacional.cat/en/colleccio/saint-agnes/massimo-stanzione/065579-000",
+        "claimedFullSizePixels": "4414x4568",
+        "publicDomainPhotoClaim": "WIKIMEDIA_COMMONS_PD_ART_PENDING_INDEPENDENT_LEGAL_VERIFICATION",
+        "sourcePhotoMatchToCuratorPreview": false,
+        "photoQualityPhoneQA": false,
+        "productionCleared": false
+      }
     },
     {
       "id": "W42-NEW-002",
