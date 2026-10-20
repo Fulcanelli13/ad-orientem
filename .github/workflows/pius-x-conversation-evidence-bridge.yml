@@ -57,6 +57,11 @@ on:
       - 'previews/visible-mass-3d/pius-x-conversation-paths-review.html'
       - 'tests/pius-x-20path-editorial-review.mjs'
       - 'tests/pius-x-20path-visual-novel-browser.mjs'
+      - 'data/learn/research/pius-x-100answer-editorial-release-triage-20261020.v1.json'
+      - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
+      - 'tools/formation/build-pius-x-release-review.mjs'
+      - 'tests/pius-x-100answer-editorial-release-triage.mjs'
+      - 'tests/pius-x-40batch-editorial-browser.mjs'
       - 'tools/formation/build-pius-x-visual-novel-offline.mjs'
       - 'tests/pius-x-visual-novel-standalone-html.mjs'
       - 'tests/pius-x-print-canon-denzinger-release-gate.mjs'
@@ -117,6 +122,7 @@ jobs:
           done
       - run: node tests/pius-x-print-canon-denzinger-release-gate.mjs
       - run: node tests/pius-x-20path-editorial-review.mjs
+      - run: node tests/pius-x-100answer-editorial-release-triage.mjs
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
       - run: node tests/pius-x-batch50-content-acceptance.mjs
       - run: node tests/pius-x-batch2-production-acceptance.mjs
@@ -298,11 +304,22 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Validate actual St Pius X visual-novel on phone and desktop
         run: node tests/pius-x-20path-visual-novel-browser.mjs
+      - name: Build portable 40-answer editorial review batch
+        run: node tools/formation/build-pius-x-release-review.mjs
+      - name: Exercise batch review in actual mobile and desktop browser
+        run: node tests/pius-x-40batch-editorial-browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: pius-x-20path-visual-novel-review
           path: artifacts/pius-x-20path-visual-novel/
+          if-no-files-found: warn
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: spx-batch-review-browser-check
+          path: artifacts/pius-x-release-review/
           if-no-files-found: warn
           retention-days: 14
 
@@ -331,10 +348,19 @@ jobs:
         run: node tools/formation/build-pius-x-visual-novel-offline.mjs
       - name: Verify bundled questions, editorial guards, image hashes and module syntax
         run: node tests/pius-x-visual-novel-standalone-html.mjs
+      - name: Build source-owned 40-answer offline editorial review
+        run: node tools/formation/build-pius-x-release-review.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: St-Pius-X-Visual-Novel-Offline-Review
           path: artifacts/pius-x-20path-visual-novel/St_Pius_X_Conversation_Review_Offline.html
+          if-no-files-found: warn
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: SPX-40-Answer-Bilingual-Editorial-Batch
+          path: artifacts/pius-x-release-review/SPX_40_Answer_Editorial_Batch_Review.html
           if-no-files-found: warn
           retention-days: 30
