@@ -58,6 +58,8 @@ on:
       - 'tests/pius-x-20path-editorial-review.mjs'
       - 'tests/pius-x-20path-visual-novel-browser.mjs'
       - 'data/learn/research/pius-x-100answer-editorial-release-triage-20261020.v1.json'
+      - 'data/learn/research/pius-x-first40-claim-italian-witness-review-20261020.v1.json'
+      - 'tests/pius-x-first40-italian-claim-review.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
       - 'tools/formation/build-pius-x-release-review.mjs'
       - 'tests/pius-x-100answer-editorial-release-triage.mjs'
@@ -123,6 +125,7 @@ jobs:
       - run: node tests/pius-x-print-canon-denzinger-release-gate.mjs
       - run: node tests/pius-x-20path-editorial-review.mjs
       - run: node tests/pius-x-100answer-editorial-release-triage.mjs
+      - run: node tests/pius-x-first40-italian-claim-review.mjs
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
       - run: node tests/pius-x-batch50-content-acceptance.mjs
       - run: node tests/pius-x-batch2-production-acceptance.mjs
