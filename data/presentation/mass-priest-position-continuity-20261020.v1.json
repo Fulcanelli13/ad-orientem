@@ -27,7 +27,8 @@
     "syntheticPauseRecords": 1,
     "sourceBlockPresentationOrderNotNumericSort": true,
     "conditionalBookPositionOverlays": 2,
-    "footCentreRenderMode": "TEXT_ONLY_USER_OVERRIDE_2026_10_20"
+    "footCentreRenderMode": "TEXT_ONLY_USER_OVERRIDE_2026_10_20",
+    "ultraMasterPriestPositionReviewVersion": "2026-10-19-v1"
   },
   "sourceTransitions": [
     {
@@ -2263,14 +2264,14 @@
       "firstCue": "AO.SM.C0112",
       "lastCue": "AO.SM.C0113",
       "defaultEntry": {
-        "status": "SOURCE_PERSISTENT_STATION",
-        "station": "ALTAR_CENTER",
-        "stationLabel": "ALTAR_CENTER",
-        "facing": "LITURGICAL_EAST",
+        "status": "RITUS_DIRECT_SUPPLEMENT_TO_POSITION_REGISTRY",
+        "station": "ALTAR_EPISTLE_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
+        "facing": "MISSAL",
         "routeId": null,
-        "activeFromCueId": "AO.SM.C0107",
-        "proposedIconAssetId": "v46_priest_centre_hands_rich",
-        "proposedIconExactUserName": "Priest Centre of the altar",
+        "activeFromCueId": "AO.SM.C0112",
+        "proposedIconAssetId": "v46_priest_gospel_rich",
+        "proposedIconExactUserName": "Epistle side",
         "renderPolicy": "SHOW_SOURCE_STATION_ONLY_WHEN_PHYSICAL_STATE_IS_GROUNDED"
       },
       "defaultExit": {
@@ -2311,7 +2312,14 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "supplementaryTransitions": []
+      "supplementaryTransitions": [
+        {
+          "cueId": "AO.SM.C0112",
+          "station": "ALTAR_EPISTLE_MISSAL",
+          "source": "RITUS_1962_VII_4",
+          "observationGate": null
+        }
+      ]
     },
     {
       "blockId": "AO.SM.B033",
@@ -9096,14 +9104,14 @@
         "condition": "REQUIEM_OMITS_WATER_CROSS"
       },
       "defaultTrack": {
-        "status": "SOURCE_PERSISTENT_STATION",
-        "station": "ALTAR_CENTER",
-        "stationLabel": "ALTAR_CENTER",
-        "facing": "LITURGICAL_EAST",
+        "status": "RITUS_DIRECT_SUPPLEMENT_TO_POSITION_REGISTRY",
+        "station": "ALTAR_EPISTLE_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
+        "facing": "MISSAL",
         "routeId": null,
-        "activeFromCueId": "AO.SM.C0107",
-        "proposedIconAssetId": "v46_priest_centre_hands_rich",
-        "proposedIconExactUserName": "Priest Centre of the altar",
+        "activeFromCueId": "AO.SM.C0112",
+        "proposedIconAssetId": "v46_priest_gospel_rich",
+        "proposedIconExactUserName": "Epistle side",
         "renderPolicy": "SHOW_SOURCE_STATION_ONLY_WHEN_PHYSICAL_STATE_IS_GROUNDED"
       },
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
@@ -9112,8 +9120,8 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
-      "sourcePositionRegistryMissingTransition": false,
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": true,
       "syntheticReaderPause": false,
       "sourceUnitIsCanonicalCue": true
     },
@@ -14368,6 +14376,16 @@
       "kind": "USER_FOOT_CENTRE_ARTWORK_VETO",
       "cueId": "AO.SM.C0001",
       "note": "Preserve physical priest station FOOT_CENTER but never render any pictogram at this station. The previously used ref_112206 artwork is not selected; rejected legacy foot illustrations must not return."
+    },
+    {
+      "kind": "ULTRA_MASTER_C0112_POSITION_RECONCILIATION",
+      "cueId": "AO.SM.C0112",
+      "note": "Epistle station is unconditional; only Requiem blessing-of-water cross is conditional."
+    },
+    {
+      "kind": "ULTRA_MASTER_C0250_SEPARATE_RETURN_OBSERVATION",
+      "cueId": "AO.SM.C0250",
+      "note": "Observed MC-OBS-PC-TURN marks celebrant at centre and book still at Epistle; unobserved track remains pending."
     }
   ],
   "missalPositionTransitions": [
@@ -14408,6 +14426,16 @@
       "reason": "After purification the Missal returns to the Epistle side, and priest recites the Communion antiphon; C0249 is an independent observed priest event, not inferred from reader scroll or schola C0250. The frozen position registry uses PRIEST_TRACK_ASYNC at C0249, so this source-based station is observer gated.",
       "originalRegistryUnchanged": true,
       "observationGate": "MC-END-010"
+    },
+    {
+      "cueId": "AO.SM.C0112",
+      "station": "ALTAR_EPISTLE_MISSAL",
+      "facing": "MISSAL",
+      "rubric": "VII.4",
+      "authority": "1962_ROMAN_MISSAL_RITUS_SERVANDUS",
+      "kind": "CORRECTION_OF_POSITION_BRANCH_CONFLATED_WITH_WATER_CROSS_OMISSION",
+      "reason": "Water/cruet blessing at Epistle-side preparation: omit the cross in Requiem, not the priest's station. Ultra Master 19 Oct has Epistle-side priest at C0112; the frozen 49-record registry conditional incorrectly makes the station optional.",
+      "originalRegistryUnchanged": true
     }
   ],
   "formActorExceptions": [
@@ -14466,6 +14494,17 @@
       "sourceUrl": "https://1962ordo.today/1962-rubrics/",
       "scope": "CONDITIONAL",
       "note": "No Last Gospel means no Gospel-side reader action."
+    }
+  ],
+  "conditionalPositionOverlays": [
+    {
+      "cueId": "AO.SM.C0250",
+      "when": "MC-OBS-PC-TURN_EXPLICITLY_OBSERVED",
+      "station": "ALTAR_CENTER",
+      "facing": "PEOPLE",
+      "missalPosition": "EPISTLE_SIDE",
+      "source": "1962_RITUS_XI_1_AND_OBSERVED_PRIEST_EVENT",
+      "reason": "The Ultra Master names the return to centre; this happens after the independent priest Communion-antiphon at Epistle side. Neither the Schola clock nor a swipe establishes the return."
     }
   ]
 }
