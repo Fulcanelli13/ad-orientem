@@ -318,6 +318,23 @@ try{
   assert.equal(massEntry.active,"mass","Home Follow Mass did not activate the Mass destination");
   assert.equal(massEntry.preflightVisible,true,"Home Follow Mass did not open the celebration preflight");
   assert.equal(massEntry.nativeMounted,false,"fresh Mass entry bypassed preflight and mounted R17 immediately");
+  const preflightDonor=await page.evaluate(()=>{
+    const flow=document.querySelector("#ao-mass-flow-v1 .aoMassFlow");
+    const folio=flow?.querySelector("[data-ao-full-mass-preflight]");
+    const outline=e=>({tag:e.tagName,id:e.id,cls:String(e.className||"").slice(0,180),
+      data:Object.entries(e.dataset||{}).filter(([a])=>a.startsWith("ao")||a==="role").slice(0,9),
+      text:(e.textContent||"").trim().replace(/\\s+/g," ").slice(0,100),
+      display:getComputedStyle(e).display,visible:!!e.getClientRects().length,
+      parent:e.parentElement?.className||""});
+    return {flow:flow?outline(flow):null,
+      parents:folio?[folio.parentElement,folio.parentElement?.parentElement].filter(Boolean).map(outline):[],
+      siblings:folio?[...folio.parentElement.children].map(outline):[],
+      candidate:[...flow?.querySelectorAll?.("section,div,header,article,fieldset,h2,h3,button")||[]]
+        .filter(e=>e!==folio&&!folio?.contains(e)&&e.children.length<=5 &&
+         /MASS OF THE DAY|CONTENT READINESS|HOW DO YOU WANT TO FOLLOW|VOX|AD ORIENTEM MASS PREFLIGHT/.test((e.textContent||"").trim().replace(/\\s+/g," ").slice(0,110)))
+        .slice(0,35).map(outline)};
+  });
+  console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
   await shot("01b-mass-preflight");
   await page.locator("#ao-mass-flow-v1 [data-ao-close]").last().click();
   await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});
