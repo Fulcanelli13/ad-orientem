@@ -21,7 +21,7 @@ assert.equal(intake.counts.editorialHold,199);
 assert.equal(intake.counts.eligibleExactMet,23);
 assert.equal(intake.counts.eligibleExactCommons,52);
 assert.equal(intake.counts.eligibleExactCleveland,14);
-assert.equal(intake.counts.eligibleOtherSource,76);
+assert.equal(intake.counts.eligibleOtherSource,64);
 assert.equal(intake.counts.eligibleExactNga,6);
 assert.equal(intake.counts.pradoAcquisitionHolds,30);
 assert.equal(intake.counts.pradoHoldsApprovedOrHistoric,25);
@@ -59,13 +59,21 @@ assert.equal(commonsMetadataHasPradoProvenance({Credit:{value:"National Gallery 
 assert.equal(sourceGate({...intake.works.find(x=>x.provider==="MET_OPEN_ACCESS_CANDIDATE"),sourcePolicy:{status:PRADO_SOURCE_HOLD}}),PRADO_SOURCE_HOLD);
 assert(intake.works.every((x,i)=>!(hasPradoProvenance(x)&&statuses[i]!==PRADO_SOURCE_HOLD)),"No Prado original can enter an acquisition shard");
 assert.equal(statuses.filter(x=>x==="MET").length,23);
-assert.equal(statuses.filter(x=>x==="COMMONS").length,40);
+assert.equal(statuses.filter(x=>x==="COMMONS").length,52);
 assert.equal(statuses.filter(x=>x==="CLEVELAND").length,14);
 assert.equal(statuses.filter(x=>x==="HOLD_REJECTED").length,68);
 assert.equal(statuses.filter(x=>x==="HOLD_NOT_APPROVED").length,194);
-assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,76);
+assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,64);
 assert.equal(statuses.filter(x=>x==="HOLD_NGA_DEDICATED_BATCH").length,6);
 assert.equal(statuses.filter(x=>x===PRADO_SOURCE_HOLD).length,30);
+const originals=intake.works.filter(x=>x.verifiedStationRoman);
+assert.equal(originals.length,12);
+assert.equal(new Set(originals.map(x=>x.verifiedStationRoman)).size,12);
+assert(originals.every(x=>sourceGate(x)==="COMMONS"&&x.sourceUrl.includes("Chiesa_di_San_Polo_(Venice)_-_VIA_CRUCIS_")));
+assert(originals.every(x=>x.imageSourceVerification?.productionCertified===false
+  &&x.imageSourceVerification.photoRightsToConfirmFromOriginalFile===true));
+assert(intake.works.filter(x=>x.verifiedStationRoman).every(x=>!x.sourceUrl.includes("via-crucis-jesus-is-taken-down-from-the-cross")));
+
 for(let i=0;i<intake.works.length;i++){
  const row=intake.works[i],gate=statuses[i];
  if(gate==="MET"||gate==="COMMONS"||gate==="CLEVELAND")
