@@ -25,7 +25,8 @@
     "missalReturnRequiresIndependentObservation": true,
     "totalOriginalUnitRecords": 280,
     "syntheticPauseRecords": 1,
-    "sourceBlockPresentationOrderNotNumericSort": true
+    "sourceBlockPresentationOrderNotNumericSort": true,
+    "conditionalBookPositionOverlays": 2
   },
   "sourceTransitions": [
     {
@@ -14357,6 +14358,10 @@
       "kind": "SOURCE_SYNTHETIC_SERMON_PAUSE",
       "cueId": "AO.SM.B096.SYN",
       "note": "One synthetic pause lives between Gospel B026 and Credo B027; its sort=265 is a legacy bookkeeping value, not a liturgical sort position. Source has 279 real cues + 1 synthetic pause."
+    },
+    {
+      "kind": "LAST_GOSPEL_BOOK_VARIANT",
+      "note": "Ordinary default Missal remains Epistle side; proper Last Gospel uses conditional transfer. Do not conflate Last Gospel station with Missal's physical location."
     }
   ],
   "missalPositionTransitions": [
@@ -14432,6 +14437,29 @@
       "source": "RITUS_1962_VI_5",
       "defaultReaderPriestPositionOverride": false,
       "note": "The deacon proclaims Gospel; the priest does not stand at Gospel-side Missal to deliver deacon's text."
+    }
+  ],
+  "conditionalBookOverlays": [
+    {
+      "condition": "PROPER_LAST_GOSPEL_APPOINTED",
+      "startCueId": "AO.SM.C0267",
+      "station": "GOSPEL_SIDE",
+      "bookRole": "MISSAL_TRANSFERRED_FOR_PROPER_LAST_GOSPEL",
+      "authority": "O_CONNELL_1962_LOW_MASS_CEREMONIAL",
+      "sourceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/d-The%20Celebration%20of%20Mass-%20O%27Connel%201962_OCR.pdf",
+      "actor": "SERVER_OR_ASSIGNED_MINISTER",
+      "scope": "CONDITIONAL_AND_FORM_SPECIFIC",
+      "note": "When proper Last Gospel appointed, transfer Missal from Epistle to Gospel side; after Gospel it may be returned. Not applicable to the ordinary Last Gospel read from a Gospel card."
+    },
+    {
+      "condition": "LAST_GOSPEL_OMITTED",
+      "startCueId": "AO.SM.C0267",
+      "bookRole": "NONE",
+      "station": null,
+      "authority": "RITUS_1962_XII_5",
+      "sourceUrl": "https://1962ordo.today/1962-rubrics/",
+      "scope": "CONDITIONAL",
+      "note": "No Last Gospel means no Gospel-side reader action."
     }
   ]
 }
