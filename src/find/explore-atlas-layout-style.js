@@ -131,13 +131,13 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
    C becomes a compact, non-fullscreen discover folio over the bottom edge. */
 @media(max-width:799px){
  .aoHeritageSurface .aoFindHeader{
-   height:54px;min-height:54px;padding:6px 9px;
+   height:56px;min-height:56px;padding:6px 9px;
    gap:8px;grid-template-columns:40px minmax(0,1fr) auto auto;
  }
  .aoHeritageSurface .aoFindHeader h1{font-size:17px}
  .aoHeritageSurface .aoFindHeader>div:first-of-type small{display:none}
- .aoHeritageSurface .aoHeritageMassShortcut{height:38px;min-height:38px;padding:0 10px}
- .aoHeritageSurface .aoHeritageMore summary{height:38px;min-height:38px;padding:0 10px}
+ .aoHeritageSurface .aoHeritageMassShortcut{height:44px;min-height:44px;padding:0 10px}
+ .aoHeritageSurface .aoHeritageMore summary{height:44px;min-height:44px;padding:0 10px}
  .aoHeritageSurface .aoHeritageTools{
    top:65px;left:10px;width:calc(100% - 20px)
  }
