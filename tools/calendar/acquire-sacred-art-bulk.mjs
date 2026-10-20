@@ -12,6 +12,7 @@ const INTAKE=load("data/research/sacred-art-bulk-source-intake-451-20261020.v1.j
 const FREEZE=load("data/research/sacred-art-user-frozen-decisions-20261017.v1.json");
 const RELEASED=load("data/calendar/sacred-art-certified-media.v1.json");
 const approved=new Set(FREEZE.approved.map(x=>x.artworkId));
+const retainedFives=new Set(FREEZE.historicallyFiveIDsPreservedSeparately);
 const rejected=new Set(FREEZE.rejected.map(x=>x.artworkId));
 const sha256=bytes=>createHash("sha256").update(bytes).digest("hex");
 const escaped=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -23,7 +24,9 @@ export const BATCH_SIZE=50;
 export function makeBatches(rows=INTAKE.works){return Array.from({length:Math.ceil(rows.length/BATCH_SIZE)},(_,i)=>rows.slice(i*BATCH_SIZE,(i+1)*BATCH_SIZE));}
 export function sourceGate(row){
  if(rejected.has(row.id)||row.reviewGate==="EXCLUDED")return "HOLD_REJECTED";
- if(!approved.has(row.id)||row.reviewGate!=="APPROVED")return "HOLD_NOT_APPROVED";
+ const newApproval=approved.has(row.id)&&row.reviewGate==="APPROVED";
+ const retainedFive=retainedFives.has(row.id)&&row.reviewGate==="LEGACY_FIVE_PRESERVED";
+ if(!newApproval&&!retainedFive)return "HOLD_NOT_APPROVED";
  if(row.provider==="MET_OPEN_ACCESS_CANDIDATE"&&/^https:\/\/www\.metmuseum\.org\/art\/collection\/search\/\d+(?:[/?#]|$)/.test(row.sourceUrl))return "MET";
  if(row.provider==="COMMONS_EXACT_FILE_CANDIDATE"&&/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/i.test(row.sourceUrl))return "COMMONS";
  return "HOLD_NO_AUTHORIZED_SOURCE";
@@ -121,6 +124,7 @@ export async function runBatch(index){
    const gate=sourceGate(row);
    const evidence={artworkId:row.id,reviewGate:row.reviewGate,sourceGate:gate,provider:row.provider,
      catalogTitle:row.title,catalogArtist:row.artist,originalSourcePage:row.sourceUrl,
+     curatorAuthority:row.reviewGate==="LEGACY_FIVE_PRESERVED"?"W64_PREVIOUS_FIVE_RETAINED":"OCT17_CURRENT_APPROVAL",
      reviewSourceImageKey:row.preferredImageKey,sourceClaimsAreNotRightsEvidence:true,
      imageStaged:false,productionCertified:false,calendarPublished:false,cropReviewed:false,phoneQaApproved:false};
    if(!["MET","COMMONS"].includes(gate)){results.push({...evidence,status:gate});continue;}
