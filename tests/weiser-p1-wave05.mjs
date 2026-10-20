@@ -61,7 +61,13 @@ for(const card of cards.cards) {
     const min=key.startsWith("title_")?12:40;
     assert.ok(card[key]?.length > min,"missing copy "+key+" "+card.card_id);
   }
-  assert.ok(card.caution.length > 45);
+  assert.ok(card.caution.length > 70,"missing meaningful publication caution");
+  assert.ok(card.scope.length > 45,"missing geographic/historical scope");
+  assert.ok(card.existing_owner?.length > 20,"missing existing app owner");
+  assert.ok(/^(Calendar|Customs Atlas|Learn|Saints|Existing blessing)/.test(card.existing_owner),"owner must identify an existing app surface");
+  assert.ok(!/^(Calendar|Customs Atlas|Learn|Saints|Existing blessing)/.test(card.caution),"owner label appears in caution field");
+  assert.ok(card.description_en.length > 150 && card.description_fr.length > 150,"descriptions swapped or missing");
+  assert.ok(card.optional_observance_en.length > 75 && card.optional_observance_fr.length > 75,"optional observance missing");
   const locIds=new Set(card.weiser_locators.map(x=>x.id));
   assert.equal(locIds.size,card.weiser_locators.length);
   for(const loc of card.weiser_locators) {
