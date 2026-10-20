@@ -226,7 +226,7 @@ function curated(card){
   let previous=-1;
   return ends.map((last,i)=>{
     if(last<=previous){
-      const omitted=sourceId(card)==="AO.CARD.010"&&i===3
+      const omitted=sourceId(card)==="AO.CARD.010"&&i===4
         ?(card.blocks??[]).find(b=>b.blockId==="AO.SM.B036"&&b.omittedByRite==="1962_FORM_NO_INCENSE")
         :sourceId(card)==="AO.CARD.029"&&i===1
         ?(card.blocks??[]).find(b=>b.blockId==="AO.SM.B092"&&b.omittedByRite==="RITUS_XIII_1_REQUIEM")
