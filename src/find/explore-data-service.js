@@ -28,6 +28,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   saintsCalendarBridge:moduleUrl("../../data/saints/parallel-owner-identity-bridge-20261015.v1.json"),
   customs:moduleUrl("../../data/customs/customs-atlas-seed.v1.json"),
   customSources:moduleUrl("../../data/customs/source-registry.v1.json"),
+  customGuidance:moduleUrl("../../data/customs/customs-p0-guidance-en-fr.v1.json"),
   shrines:moduleUrl("../../data/shrines/shrines-pilgrimages-seed.v1.json"),
   sacredPhenomena:moduleUrl("../../data/explore/sacred-phenomena-seed.v1.json"),
   shrineSources:moduleUrl("../../data/shrines/source-registry.v1.json"),
@@ -43,11 +44,12 @@ export const EXPLORE_DATA_URLS=Object.freeze({
 
 export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_SAINTS_CHANNEL}={}){
   const research=isResearchSaintsChannel(saintsChannel);
-  const [directory,geography,customs,customSources,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex]=await Promise.all([
+  const [directory,geography,customs,customSources,customGuidance,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customSources,{fetchImpl}),
+    fetchJson(EXPLORE_DATA_URLS.customGuidance,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.shrines,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.shrineSources,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.novenaBridge,{fetchImpl}),
@@ -85,6 +87,7 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
       customs:safeArray(customs?.customs),
       attestations:safeArray(customs?.attestations),
       sources:safeArray(customSources?.sources),
+      guidance:customGuidance?.schema==="AO_CUSTOMS_P0_GUIDANCE_EN_FR_V1" && customGuidance?.publication==="DRAFT_ONLY" ? safeArray(customGuidance.entries) : [],
     }),
     sacredPhenomena:Object.freeze({apparitions:safeArray(sacredPhenomena?.apparitions),relics:safeArray(sacredPhenomena?.relics),norms:sacredPhenomena?.norms??null}),
     shrines:Object.freeze({
