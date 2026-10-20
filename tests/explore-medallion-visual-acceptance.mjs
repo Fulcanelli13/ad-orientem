@@ -132,8 +132,8 @@ try{
    await page.waitForFunction(()=>document.querySelector(".aoTimeMassSeason h3")?.textContent
      ?.includes("Christmas"),null,{timeout:10000});
    const boardFit=await timeMass.evaluate(el=>{const r=el.getBoundingClientRect();return {
-     top:r.top,bottom:r.bottom,width:r.width,height:r.height};});
-   assert.ok(boardFit.top>=0&&boardFit.bottom<=innerHeight+1&&boardFit.height>230,
+     top:r.top,bottom:r.bottom,width:r.width,height:r.height,vh:innerHeight};});
+   assert.ok(boardFit.top>=0&&boardFit.bottom<=boardFit.vh+1&&boardFit.height>230,
      "P3 panel must fit mobile and desktop: "+JSON.stringify(boardFit));
    await page.screenshot({path:resolve(out,"explore-"+width+"-time-mass.png"),fullPage:false});
    await timeMass.locator(".aoTimeMassHead [data-explore-time-mass-toggle]").click();
