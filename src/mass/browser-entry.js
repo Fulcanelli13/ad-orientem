@@ -268,43 +268,75 @@ function installReaderCloseBridge(preview,prepared){
   });
 }
 
-// Explicit post-Mass handoff. The reader never infers Mass completion from
-// a card or a timestamp: the faithful open thanksgiving when actually ready.
+// User-chosen post-Mass handoff. A voluntary exit prompts rather than
+// inferring completion from an arbitrary card or forcing thanksgiving early.
 function installReaderThanksgivingBridge(preview,prepared,{win=globalThis}={}){
   if(prepared?.readerPreferences?.afterMass!=="thanksgiving")return null;
-  const parent=preview?.root;
-  const close=parent?.querySelector?.("[data-reader-home], [aria-label='Close Mass reader']");
+  const root=preview?.root;
+  const close=root?.querySelector?.("[data-reader-home], [aria-label='Close Mass reader']");
   const doc=close?.ownerDocument;
-  if(!doc?.createElement||!close?.insertAdjacentElement)return null;
+  if(!doc?.createElement||!close?.addEventListener)return null;
   const fr=String(prepared?.readerPreferences?.language??"en").startsWith("fr");
-  const button=doc.createElement("button");button.type="button";
-  button.dataset.readerThanksgiving="";
-  button.className="aoReaderAfterMassPrayer";
-  button.textContent=fr?"Action de grâces après la Messe →":"Thanksgiving after Mass →";
-  button.style.cssText="min-height:44px;max-width:100%;padding:9px 12px;border-radius:7px;border:1px solid rgba(198,170,125,.35);background:#15201f;color:#e2d4b8;font:500 15px/1.3 var(--ao-font-ui,'EB Garamond',Georgia,serif);cursor:pointer";
-  // Use a nearby reader-owned control, never add a second global toolbar.
-  close.insertAdjacentElement("afterend",button);
-  let busy=false;
-  button.addEventListener("click",()=>{
+  let dialog=null,busy=false;
+  const dismiss=()=>{dialog?.remove?.();dialog=null};
+  async function go(route){
     if(busy)return;
-    busy=true;button.disabled=true;
-    checkpointPersistedMass({preview});
-    void Promise.resolve()
-      .then(()=>navigateReaderSurface("home"))
-      .then(()=>win?.AO_MODULES?.open?.("mass.thanksgiving"))
-      .then(result=>{
+    busy=true;const notice=dialog?.querySelector("[data-thanks-error]");
+    if(notice)notice.hidden=true;
+    try{
+      checkpointPersistedMass({preview});
+      await navigateReaderSurface("home");
+      if(route){
+        const result=await win?.AO_MODULES?.open?.(route);
         if(result!==true&&result?.ok!==true)throw Error("THANKSGIVING_PRAYERS_UNAVAILABLE");
-      })
-      .catch(error=>{
-        // Navigation or prayer failure must be visible, never a silent success.
-        const notice=doc.createElement("p");
-        notice.setAttribute("role","alert");
-        notice.textContent=fr?"Impossible d’ouvrir les prières d’action de grâces.":"Thanksgiving prayers could not be opened.";
-        (button.isConnected?button.parentElement:doc.body)?.append(notice);
-        try{win.console?.error?.(error)}catch{}
-      }).finally(()=>{busy=false;if(button.isConnected)button.disabled=false});
-  });
-  return Object.freeze({dispose:()=>button.remove()});
+      }
+      dismiss();
+    }catch(error){
+      if(notice?.isConnected){
+        notice.hidden=false;
+        notice.textContent=fr?"Impossible d’ouvrir cette destination.":"Could not open this destination.";
+      }
+      try{win.console?.error?.(error)}catch{}
+    }finally{busy=false}
+  }
+  const intercept=e=>{
+    // The existing Home button remains present. The user's explicit choice
+    // is offered before closing, never before a real end-of-Mass decision.
+    if(dialog)return;
+    e.preventDefault?.();e.stopImmediatePropagation?.();
+    dialog=doc.createElement("section");
+    dialog.className="aoReaderAfterMassChoice";
+    dialog.setAttribute("role","dialog");
+    dialog.setAttribute("aria-label",fr?"Après la Messe":"After Mass");
+    dialog.style.cssText="position:absolute;z-index:95;top:68px;left:12px;right:12px;max-width:420px;margin:0 auto;padding:16px;background:#101923;color:#eee9df;border:1px solid #766c52;border-radius:10px;box-shadow:0 16px 40px #0009";
+    const h=doc.createElement("h3");h.textContent=fr?"Avant de quitter la Messe":"Before leaving Mass";
+    h.style.cssText="font:500 21px/1.3 var(--ao-font-display,'EB Garamond',Georgia,serif);margin:0 0 10px";
+    const p=doc.createElement("p");p.textContent=fr
+      ?"Souhaitez-vous ouvrir les prières d’action de grâces ?"
+      :"Would you like to open Thanksgiving prayers?";
+    p.style.cssText="font:400 15px/1.45 var(--ao-font-ui,'EB Garamond',Georgia,serif);margin:0 0 12px";
+    const actions=doc.createElement("div");actions.style.cssText="display:grid;gap:8px";
+    const thanks=doc.createElement("button");thanks.type="button";thanks.dataset.aoOpenThanksgiving="";
+    thanks.textContent=fr?"Ouvrir l’action de grâces":"Open Thanksgiving";
+    const home=doc.createElement("button");home.type="button";home.dataset.aoReturnHome="";
+    home.textContent=fr?"Retour à l’accueil":"Return Home";
+    const cancel=doc.createElement("button");cancel.type="button";cancel.dataset.aoStayMass="";
+    cancel.textContent=fr?"Rester dans la Messe":"Stay in Mass";
+    for(const button of [thanks,home,cancel]){
+      button.style.cssText="min-height:44px;padding:9px 12px;border:1px solid #56616a;border-radius:8px;background:#18212a;color:#e8ddc5;font:500 15px/1.3 var(--ao-font-ui,'EB Garamond',Georgia,serif)";
+      actions.append(button);
+    }
+    thanks.style.background="#ded5c0";thanks.style.color="#141a20";
+    const error=doc.createElement("p");error.hidden=true;error.dataset.thanksError="";error.setAttribute("role","alert");
+    dialog.append(h,p,actions,error);
+    (root.querySelector("[data-ao-reader-shell]")??root).append(dialog);
+    thanks.addEventListener("click",()=>{void go("mass.thanksgiving")});
+    home.addEventListener("click",()=>{void go(null)});
+    cancel.addEventListener("click",dismiss);
+    thanks.focus?.();
+  };
+  close.addEventListener("click",intercept,true);
+  return Object.freeze({dispose(){close.removeEventListener("click",intercept,true);dismiss()}});
 }
 
 function massGlossaryTerms(preview){
@@ -667,8 +699,9 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   const restoredSection = resumeRecord?.readerPosition?.sectionId ?? null;
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
   installReaderCheckpoint(previewState.preview);
-  installReaderCloseBridge(previewState.preview,prepared);
+  // Intercept the voluntary exit before the generic Home owner handles it.
   installReaderThanksgivingBridge(previewState.preview,prepared);
+  installReaderCloseBridge(previewState.preview,prepared);
   installReaderParametersBridge(previewState.preview,prepared);
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
