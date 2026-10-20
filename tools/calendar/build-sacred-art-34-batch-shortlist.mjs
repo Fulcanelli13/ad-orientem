@@ -119,7 +119,7 @@ for(const r of out.records)lines.push([r.artworkId,r.title,r.artist,r.reviewBuck
  r.preliminaryFileForHumanObjectMatch?"NOT_VERIFIED_FOR_USE":"HOLD"].map(csv).join(","));
 writeFileSync(join(root,"batch-34-object-shortlist.csv"),lines.join("\n")+"\n");
 const cards=out.records.map((x,i)=>{
- const first=x.remainingFiles[0];
+ const first=x.remainingFiles.find(c=>c.eligibleForHumanSourceComparison)||null;
  return '<article data-name="'+esc((x.title+" "+x.artist).toLowerCase())+'"><header><strong>'+
   (i+1)+'. '+esc(x.title)+'</strong><p>'+esc(x.artist)+'</p></header>'+
   '<div class="picture">'+(first?
