@@ -11,12 +11,24 @@ const registry=JSON.parse(readFileSync(new URL("../data/shrines/source-registry.
 const geography=JSON.parse(readFileSync(new URL("../data/geography/seed-registry.v1.json",import.meta.url),"utf8"));
 const evidence=JSON.parse(readFileSync(new URL("../data/shrines/route-stage-evidence-20261020.v1.json",import.meta.url),"utf8"));
 assert.equal(evidence.schema,"AO_PILGRIMAGE_STAGE_EVIDENCE_V1");
+const geometry=JSON.parse(readFileSync(new URL("../data/shrines/route-geometry-review-20261020.v1.json",import.meta.url),"utf8"));
+assert.equal(geometry.schema,"AO_PILGRIMAGE_GEOMETRY_REVIEW_V1");
+assert.equal(geometry.reviewed_routes.length,20);
+assert.equal(new Set(geometry.reviewed_routes.map(r=>r.route_id)).size,20);
+assert.deepEqual(
+ new Set(geometry.reviewed_routes.map(r=>r.route_id)),
+ new Set(seed.routes.map(r=>r.route_id)),
+ "The rights ledger must match every canonical route and introduce no phantom itineraries");
+assert.ok(geometry.reviewed_routes.every(r=>r.geometry_ref===null&&
+ r.geometry_state==="NO_CERTIFIED_GEOMETRY"&&r.rights_state==="NOT_CLEARED"&&
+ r.edition_match==="NOT_CERTIFIED"&&r.canonical_waypoint_coordinates===0),
+ "A related GPX or historic map does not certify reusable, edition-matched route geometry");
 const projected=projectPilgrimageItems({
  pilgrimages:seed.pilgrimages,shrines:seed.shrines,
  routes:seed.routes,temporalLinks:seed.temporalLinks,
  places:geography.places,sources:registry.sources,
 });
-const journeys=buildPilgrimageJourneyCatalogue(projected,registry.sources,evidence.routes);
+const journeys=buildPilgrimageJourneyCatalogue(projected,registry.sources,evidence.routes,geometry.reviewed_routes);
 assert.equal(evidence.routes.length,17,"Official-stage evidence now covers 17 itinerary identities");
 assert.equal(evidence.routes.reduce((n,r)=>n+r.waypoints.length,0),64);
 const canonicalRoutes=new Map(seed.routes.map(row=>[row.route_id,row]));
@@ -41,6 +53,19 @@ assert.ok(journeys.every(j=>j.mappedStages.length===0),
 assert.equal(seed.pilgrimages.length,240,"Do not confuse source destinations with mapped routes");
 assert.equal(seed.routes.length,20);
 assert.equal(journeys.length,20,"Show all 20 source-linked route identities, no inferred extras");
+const nz=journeys.find(r=>r.id==="route:NZ:nga-tapuwae-russell");
+assert.equal(nz.routeModel,"MULTIMODAL_REGIONAL");
+assert.ok(nz.externalGuideUrl.endsWith(".pdf"));
+assert.equal(nz.namedStages.length,0,"A regional PDF must not become one synthetic walking route");
+assert.match(renderPilgrimageJourneyPanel({routes:journeys,selectedId:nz.id}),/driving and ferry transfers/);
+assert.match(renderPilgrimageJourneyPanel({routes:journeys,selectedId:nz.id}),/Official route information/);
+const nigeria=journeys.find(r=>r.id==="route:NG:nne-enyemaka-rosary-procession");
+assert.equal(nigeria.geometryEvidenceStatus,"HISTORICAL_VARIANTS_DIRECTION_CONFLICT");
+assert.equal(nigeria.namedStages.length,0);
+const walsinghamStatus=geometry.reviewed_routes.find(r=>r.route_id==="route:GB:ely-walsingham-lms");
+assert.equal(walsinghamStatus.evidence_status,"RELATED_DIFFERENT_ROUTE_GPX_AVAILABLE");
+assert.equal(walsinghamStatus.external_guide_url,null);
+assert.equal(walsinghamStatus.related_resources.length,2);
 assert.equal(new Set(journeys.map(j=>j.id)).size,20);
 assert.ok(journeys.every(j=>j.routeGeometry===null&&j.stops.length===0),
   "Published corpus has no verified route lines or intermediate stops");
