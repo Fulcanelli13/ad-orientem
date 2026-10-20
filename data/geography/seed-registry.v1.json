@@ -1670,6 +1670,198 @@
       "codes": {
         "iso_alpha2": "BM"
       }
+    },
+    {
+      "geo_area_id": "geo:country:JO",
+      "name": {
+        "official": "Jordan",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "JO"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:MM",
+      "name": {
+        "official": "Myanmar",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MM"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:UZ",
+      "name": {
+        "official": "Uzbekistan",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "UZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:BJ",
+      "name": {
+        "official": "Benin",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "BJ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:TG",
+      "name": {
+        "official": "Togo",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "TG"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:TZ",
+      "name": {
+        "official": "Tanzania",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "TZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SR",
+      "name": {
+        "official": "Suriname",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SR"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GU",
+      "name": {
+        "official": "Guam",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GU"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PF",
+      "name": {
+        "official": "French Polynesia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PF"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:TO",
+      "name": {
+        "official": "Tonga",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "TO"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:VU",
+      "name": {
+        "official": "Vanuatu",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "VU"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LC",
+      "name": {
+        "official": "Saint Lucia",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LC"
+      }
     }
   ],
   "places": [
@@ -13319,6 +13511,450 @@
       "source_ids": [
         "AO-R89-SITE-AO-R82-DISC-077",
         "AO-R89-GEO-AO-R82-DISC-077"
+      ]
+    },
+    {
+      "place_id": "place:JO:memorial-moses-mount-nebo",
+      "name": {
+        "official": "Basilica of the Memorial of Moses, Mount Nebo",
+        "aliases": []
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:JO"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 31.76797,
+        "lng": 35.72567,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/115677147",
+        "source_ref": "osm:way:115677147",
+        "matched_country_code": "JO",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Madaba",
+        "region": null,
+        "country_code": "JO",
+        "country": "Jordan",
+        "formatted": "Mount Nebo, Ras Siyagha, Madaba, Jordan"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R81-DISC-064",
+        "AO-R90-GEO-AO-R81-DISC-064"
+      ]
+    },
+    {
+      "place_id": "place:MM:st-mary-cathedral-yangon",
+      "name": {
+        "official": "St Mary's Cathedral (Immaculate Conception), Yangon",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:MM"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 16.77848,
+        "lng": 96.16554,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/395657539",
+        "source_ref": "osm:way:395657539",
+        "matched_country_code": "MM",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Yangon",
+        "region": null,
+        "country_code": "MM",
+        "country": "Myanmar",
+        "formatted": "372 Bo Aung Kyaw Street, Yangon, Myanmar"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-016",
+        "AO-R90-GEO-AO-R82-DISC-016"
+      ]
+    },
+    {
+      "place_id": "place:UZ:sacred-heart-cathedral-tashkent",
+      "name": {
+        "official": "Cathedral of the Sacred Heart of Jesus, Tashkent",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:UZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.3056,
+        "lng": 69.29599,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/node/12327792294",
+        "source_ref": "osm:node:12327792294",
+        "matched_country_code": "UZ",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Tashkent",
+        "region": null,
+        "country_code": "UZ",
+        "country": "Uzbekistan",
+        "formatted": "80/1 Mahtumquli Street, Tashkent, Uzbekistan"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-018",
+        "AO-R90-GEO-AO-R82-DISC-018"
+      ]
+    },
+    {
+      "place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "name": {
+        "official": "Basilica of the Immaculate Conception, Ouidah",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:BJ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 6.36063,
+        "lng": 2.08486,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/402951938",
+        "source_ref": "osm:way:402951938",
+        "matched_country_code": "BJ",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Ouidah",
+        "region": null,
+        "country_code": "BJ",
+        "country": "Benin",
+        "formatted": "Ouidah, Benin"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-035",
+        "AO-R90-GEO-AO-R82-DISC-035"
+      ]
+    },
+    {
+      "place_id": "place:TG:sacred-heart-cathedral-lome",
+      "name": {
+        "official": "Cathédrale du Sacré-Cœur, Lomé",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:TG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 6.12493,
+        "lng": 1.22639,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/49711568",
+        "source_ref": "osm:way:49711568",
+        "matched_country_code": "TG",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Lomé",
+        "region": null,
+        "country_code": "TG",
+        "country": "Togo",
+        "formatted": "Lomé, Togo"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-036",
+        "AO-R90-GEO-AO-R82-DISC-036"
+      ]
+    },
+    {
+      "place_id": "place:TZ:st-joseph-cathedral-dar-es-salaam",
+      "name": {
+        "official": "St Joseph's Cathedral, Dar es Salaam",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:TZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -6.8193,
+        "lng": 39.28799,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/688369839",
+        "source_ref": "osm:way:688369839",
+        "matched_country_code": "TZ",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Dar es Salaam",
+        "region": null,
+        "country_code": "TZ",
+        "country": "Tanzania",
+        "formatted": "Sokoine Drive, Dar es Salaam, Tanzania"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-031",
+        "AO-R90-GEO-AO-R82-DISC-031"
+      ]
+    },
+    {
+      "place_id": "place:SR:saints-peter-paul-cathedral-paramaribo",
+      "name": {
+        "official": "Cathedral Basilica of Saints Peter and Paul, Paramaribo",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:SR"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 5.82873,
+        "lng": -55.15394,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/191965158",
+        "source_ref": "osm:way:191965158",
+        "matched_country_code": "SR",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Paramaribo",
+        "region": null,
+        "country_code": "SR",
+        "country": "Suriname",
+        "formatted": "Henck Arronstraat 22-24, Paramaribo, Suriname"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-076",
+        "AO-R90-GEO-AO-R82-DISC-076"
+      ]
+    },
+    {
+      "place_id": "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "name": {
+        "official": "Dulce Nombre de Maria Cathedral-Basilica, Hagåtña",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:GU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 13.47418,
+        "lng": 144.75232,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/320402586",
+        "source_ref": "osm:way:320402586",
+        "matched_country_code": "GU",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Hagåtña",
+        "region": null,
+        "country_code": "GU",
+        "country": "Guam",
+        "formatted": "207 Archbishop FC Flores Street, Hagåtña, Guam"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-086",
+        "AO-R90-GEO-AO-R82-DISC-086"
+      ]
+    },
+    {
+      "place_id": "place:PF:notre-dame-cathedral-papeete",
+      "name": {
+        "official": "Cathédrale Notre-Dame de l'Immaculée-Conception, Papeete",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:PF"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -17.54027,
+        "lng": -149.567,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/32774088",
+        "source_ref": "osm:way:32774088",
+        "matched_country_code": "PF",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Papeete",
+        "region": null,
+        "country_code": "PF",
+        "country": "French Polynesia",
+        "formatted": "Place de la Cathédrale, Papeete, Tahiti, French Polynesia"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-083",
+        "AO-R90-GEO-AO-R82-DISC-083"
+      ]
+    },
+    {
+      "place_id": "place:TO:st-anthony-padua-basilica-nukualofa",
+      "name": {
+        "official": "Basilica of St Anthony of Padua, Nukuʻalofa",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:TO"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -21.13683,
+        "lng": -175.20186,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/339123017",
+        "source_ref": "osm:way:339123017",
+        "matched_country_code": "TO",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Nukuʻalofa",
+        "region": null,
+        "country_code": "TO",
+        "country": "Tonga",
+        "formatted": "Nukuʻalofa, Tongatapu, Tonga"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-095",
+        "AO-R90-GEO-AO-R82-DISC-095"
+      ]
+    },
+    {
+      "place_id": "place:VU:sacred-heart-cathedral-port-vila",
+      "name": {
+        "official": "Cathédrale du Sacré-Cœur, Port-Vila",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:VU"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -17.73465,
+        "lng": 168.31516,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/319762684",
+        "source_ref": "osm:way:319762684",
+        "matched_country_code": "VU",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Port-Vila",
+        "region": null,
+        "country_code": "VU",
+        "country": "Vanuatu",
+        "formatted": "Port-Vila, Vanuatu"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-097",
+        "AO-R90-GEO-AO-R82-DISC-097"
+      ]
+    },
+    {
+      "place_id": "place:LC:immaculate-conception-cathedral-basilica-castries",
+      "name": {
+        "official": "Cathedral Basilica of the Immaculate Conception, Castries",
+        "aliases": []
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:LC"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.00888,
+        "lng": -60.99012,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/255580407",
+        "source_ref": "osm:way:255580407",
+        "matched_country_code": "LC",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Castries",
+        "region": null,
+        "country_code": "LC",
+        "country": "Saint Lucia",
+        "formatted": "Micoud Street / Laborie Street, Castries, Saint Lucia"
+      },
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-055",
+        "AO-R90-GEO-AO-R82-DISC-055"
       ]
     }
   ],
