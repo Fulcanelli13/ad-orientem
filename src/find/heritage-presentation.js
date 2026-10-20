@@ -67,6 +67,15 @@ export function compactHeritagePlaceSheet(vm){
   html+='<div class="aoHeritagePreviewActions"><button type="button" data-explore-expand-place>'+L(vm.language,"Discover","Découvrir")+' <span aria-hidden="true">→</span></button>';
   const novena=arr(p.novenas).find(record=>record?.id);
   if(novena)html+='<button type="button" class="aoHeritagePrayAction" data-explore-open-novena="'+esc(novena.id)+'">'+L(vm.language,"Pray","Prier")+'</button>';
+  if(arr(vm.placeJourneys).length){
+    const related=arr(vm.placeJourneys),single=related.length===1;
+    const labelText=single
+      ?L(vm.language,"Explore pilgrimage","Explorer le pèlerinage")
+      :L(vm.language,related.length+" documented journeys",related.length+" parcours attestés");
+    html+='<button type="button" class="aoHeritageJourneyLink" '+
+      (single?'data-explore-place-journey="'+esc(related[0].routeId)+'"':
+        'data-explore-place-journey-list')+'>'+esc(labelText)+' <span aria-hidden="true">→</span></button>';
+  }
   if(p.directions_url)html+='<a href="'+esc(p.directions_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Visit","Visiter")+'</a>';
   html+='</div>';
   if(p.geo?.indicative_only||p.geo?.precision==="complex_anchor")html+='<p class="aoHeritagePrecision">'+L(vm.language,"Indicative site pin · not an entrance location","Repère de site indicatif · pas une entrée")+'</p>';
