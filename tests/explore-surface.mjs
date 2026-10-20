@@ -19,6 +19,7 @@ const geography=readJson("data/geography/seed-registry.v1.json");
 const phenomena=readJson("data/explore/sacred-phenomena-seed.v1.json");
 const customsSeed=readJson("data/customs/customs-atlas-seed.v1.json");
 const customSources=readJson("data/customs/source-registry.v1.json");
+const customGuidance=readJson("data/customs/customs-p0-guidance-en-fr.v1.json");
 const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
 const shrineSources=readJson("data/shrines/source-registry.v1.json");
 const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
@@ -71,7 +72,7 @@ const dataset={
   },
   geography:{geoAreas:geography.geoAreas,places:geography.places},
   sacredPhenomena:phenomena,
-  customs:{customs:customsSeed.customs,attestations:customsSeed.attestations,sources:customSources.sources},
+  customs:{customs:customsSeed.customs,attestations:customsSeed.attestations,sources:customSources.sources,guidance:customGuidance.entries},
   shrines:{
     shrines:shrineSeed.shrines,
     pilgrimages:shrineSeed.pilgrimages,
@@ -598,6 +599,39 @@ assert.match(practiceHtml,/Documented examples.*36/);
 assert.match(practiceHtml,/data-explore-open-place=/,"examples must deep-link to canonical Places");
 assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navigation, not the default customs structure");
 assert.match(practiceHtml,/>33<\/strong><span>practices/,"list count must describe practices, not attestations");
+
+
+for(const guide of customGuidance.entries){
+  const item=practiceBrowse.find(x=>x.source_id===guide.custom_id);
+  assert.ok(item,"Missing guidance owner in Explore: "+guide.custom_id);
+  assert.equal(item.item_id,"tradition:custom:"+guide.custom_id);
+  assert.equal(item.title_fr,guide.title_fr);
+  assert.equal(item.summary,guide.description_en);
+  assert.equal(item.summary_fr,guide.description_fr);
+  assert.equal(item.map_publishable,false);
+  assert.equal(item.attestation_examples.length,1);
+  assert.ok(item.source_links.some(x=>customSources.sources.some(y=>y.id===guide.source_ids[0]&&y.url===x.url)),"No source link "+guide.custom_id);
+  assert.ok(item.sections.some(x=>x.label==="Meaning"&&x.body===guide.meaning_en&&x.body_fr===guide.meaning_fr));
+  assert.ok(item.sections.some(x=>x.label==="Optional observance"&&x.body===guide.how_en&&x.body_fr===guide.how_fr));
+  for(const language of ["en","fr"]){
+    const vm=buildExploreViewModel({
+      language,items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:33},
+      view:"list",filters:{},selectedId:item.item_id,expandDetail:true,
+    });
+    const html=renderExploreToString(vm);
+    const title=language==="fr"?guide.title_fr:guide.title_en;
+    const summary=language==="fr"?guide.description_fr:guide.description_en;
+    const meaning=language==="fr"?guide.meaning_fr:guide.meaning_en;
+    const how=language==="fr"?guide.how_fr:guide.how_en;
+    assert.ok(html.includes(title.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing translated heading "+guide.custom_id);
+    assert.ok(html.includes(summary.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing full description "+guide.custom_id);
+    assert.ok(html.includes(meaning.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing meaning "+guide.custom_id);
+    assert.ok(html.includes(how.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing optional observance "+guide.custom_id);
+    assert.match(html,/Sources and geographic evidence|Sources et références géographiques/);
+    assert.doesNotMatch(html,/data-explore-open-place="(?:geo:country|(?:place:))/,"Do not invent a national map pin");
+  }
+}
+assert.equal(customGuidance.entries.length,6);
 
 const atlasFacets=buildCustomsAtlasFacets(customsAtlasItems);
 assert.ok(atlasFacets.families.some(option=>option.value==="Sacred Heart"),"theme browsing must be independent of geography");
