@@ -16,6 +16,7 @@ on:
       - "tests/sacred-art-76-commons-discovery.mjs"
       - "tools/calendar/audit-staged-sacred-art-media.mjs"
       - "tests/sacred-art-integrated-source-qa.mjs"
+      - "tools/calendar/triage-sacred-art-release-qa.mjs"
       - "tools/calendar/prepare-sacred-art-visual-release-queue.mjs"
       - "tests/sacred-art-visual-release-queue.mjs"
       - "tools/calendar/acquire-sacred-art-nga.mjs"
@@ -173,6 +174,7 @@ jobs:
         run: |
           node tests/sacred-art-integrated-source-qa.mjs
           node tools/calendar/audit-staged-sacred-art-media.mjs
+          node tools/calendar/triage-sacred-art-release-qa.mjs
           node tests/sacred-art-visual-release-queue.mjs
           node tools/calendar/prepare-sacred-art-visual-release-queue.mjs
       - name: Preserve unified reproducible manifest (no automatic publication)
@@ -182,4 +184,12 @@ jobs:
           name: sacred-art-integrated-current-technical-qa
           path: artifacts/qa-integrated/
           retention-days: 30
+      - name: Archive priority-ranked source-to-release hold ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-release-priority-qa
+          path: artifacts/qa-release-triage/
+          retention-days: 30
+          if-no-files-found: warn
           if-no-files-found: warn
