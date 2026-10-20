@@ -510,7 +510,11 @@ export async function mountExploreMap(container,items,{
       // copied into MapLibre canvas sprites. Show the SAME real emblems
       // using bounded, pointer-transparent DOM overlays at visible pins.
       emblemOverlays=installMassMapEmblemOverlays(map,maplibre,{
-        win,hasSprite:group=>loadedGroups.has(group),
+        // A fetched sprite does not count as a usable logo unless its layer
+        // actually exists. MapLibre may reject a symbol expression even after
+        // canvas registration succeeds.
+        win,hasSprite:group=>loadedGroups.has(group)
+          &&Boolean(map.getLayer?.(prefix+"-institution-emblems")),
       });
       const refreshEmblems=()=>{
         if(!map.getSource?.(sourceId)||!loadedGroups.size)return;
