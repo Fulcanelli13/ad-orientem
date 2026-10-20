@@ -19,6 +19,8 @@ assert.equal(intake.counts.excluded,68);
 assert.equal(intake.counts.editorialHold,199);
 assert.equal(intake.counts.eligibleExactMet,23);
 assert.equal(intake.counts.eligibleExactCommons,36);
+assert.equal(intake.counts.eligibleExactCleveland,14);
+assert.equal(intake.counts.eligibleOtherSource,111);
 assert.deepEqual(certified.media,[],"Bulk ingestion cannot silently certify release files");
 const accepted=new Set(freeze.approved.map(x=>x.artworkId));
 const rejected=new Set(freeze.rejected.map(x=>x.artworkId));
@@ -26,12 +28,13 @@ const legacy=new Set(freeze.historicallyFiveIDsPreservedSeparately);
 const statuses=intake.works.map(x=>sourceGate(x));
 assert.equal(statuses.filter(x=>x==="MET").length,23);
 assert.equal(statuses.filter(x=>x==="COMMONS").length,36);
+assert.equal(statuses.filter(x=>x==="CLEVELAND").length,14);
 assert.equal(statuses.filter(x=>x==="HOLD_REJECTED").length,68);
 assert.equal(statuses.filter(x=>x==="HOLD_NOT_APPROVED").length,199);
-assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,125);
+assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,111);
 for(let i=0;i<intake.works.length;i++){
  const row=intake.works[i],gate=statuses[i];
- if(gate==="MET"||gate==="COMMONS")
+ if(gate==="MET"||gate==="COMMONS"||gate==="CLEVELAND")
    assert((accepted.has(row.id)&&row.reviewGate==="APPROVED"||
     legacy.has(row.id)&&row.reviewGate==="LEGACY_FIVE_PRESERVED")&&!rejected.has(row.id),
     "Unreviewed or rejected work must not be fetched");
@@ -47,4 +50,4 @@ assert(!script.includes("git push")&&!script.includes("assets/approved/sacred-ar
  "Bulk script cannot commit or deploy verified masters");
 assert(script.includes("sourceClaimsAreNotRightsEvidence:true"));
 assert(script.includes("phoneQaApproved:false"));
-console.log("PASS Sacred Art: 451 original records / ten 50-work shards / 59 exact-source candidates from 107 current and 77 preserved historic fives; 68 rejects and 199 holds; zero released");
+console.log("PASS Sacred Art: 451 original records / ten 50-work shards / 73 exact-source candidates from 107 current and 77 preserved historic fives; 68 rejects and 199 holds; zero released");
