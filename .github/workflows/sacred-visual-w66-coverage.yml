@@ -12,6 +12,8 @@ on:
       - "tests/sacred-art-bulk-acquisition.mjs"
       - "data/research/sacred-art-open-source-recovery-76-20261020.v1.json"
       - "tests/sacred-art-open-source-recovery-76.mjs"
+      - "tools/calendar/discover-sacred-art-76-open-sources.mjs"
+      - "tests/sacred-art-76-commons-discovery.mjs"
       - "tools/calendar/acquire-sacred-art-nga.mjs"
       - "tests/sacred-art-nga-open-access.mjs"
       - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
@@ -52,6 +54,7 @@ jobs:
           node tests/sacred-art-first-five-open-master-intake.mjs
           node tests/sacred-art-bulk-acquisition.mjs
           node tests/sacred-art-open-source-recovery-76.mjs
+          node tests/sacred-art-76-commons-discovery.mjs
       - name: Stage exact Open Access Met master (never publish automatically)
         continue-on-error: true
         run: node tools/calendar/acquire-sacred-art-first-five.mjs
@@ -110,4 +113,30 @@ jobs:
           name: sacred-art-nga-6-sources-for-qa
           path: artifacts/sacred-art-nga-official/
           retention-days: 14
+          if-no-files-found: warn
+
+  approved-source-discovery-76:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        shard: [0,1]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify Commons licence, no-Prado and human identity restrictions
+        run: node tests/sacred-art-76-commons-discovery.mjs
+      - name: Discover Commons metadata for approved, still-unsourced artworks (no image downloads)
+        run: node tools/calendar/discover-sacred-art-76-open-sources.mjs ${{ matrix.shard }}
+      - name: Archive candidate evidence and internet-enabled review gallery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-76-open-source-discovery-${{ matrix.shard }}
+          path: artifacts/sacred-art-76-discovery/shard-${{ matrix.shard }}/
+          retention-days: 21
           if-no-files-found: warn
