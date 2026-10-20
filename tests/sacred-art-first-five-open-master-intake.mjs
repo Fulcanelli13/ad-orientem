@@ -22,15 +22,15 @@ assert.deepEqual({id:open[0].museumObjectId,accession:open[0].accession},{id:438
 assert.equal(open[0].sourceObjectUrl,"https://www.metmuseum.org/art/collection/search/438724");
 assert.equal(open[0].artworkId,"ART-hilippe-de-hampaigne-he-nnunciation");
 const commons=batch.works.filter(x=>x.provider==="WIKIMEDIA_COMMONS_PD_ART");
-assert.equal(commons.length,2,"Only the Rubens Prado and Wolffort Antwerp PD-Art files may be staged from Commons");
-assert.deepEqual(new Set(commons.map(x=>x.artworkId)),new Set([
-  "ART-eter-aul-ubens-doration-of-the-agi",
-  "ART-rtus-olffort-scension-ntwerp-osary-cycle"
-]));
+assert.equal(commons.length,1,"Only the Wolffort Antwerp PD-Art file may be staged from Commons after Prado exclusion");
+assert.deepEqual(new Set(commons.map(x=>x.artworkId)),new Set(["ART-rtus-olffort-scension-ntwerp-osary-cycle"]));
 assert(commons.every(x=>x.commonsTitle.startsWith("File:")&&x.sourceKind.includes("TECHNICAL_STAGING")));
 const pending=batch.works.filter(x=>!x.provider);
-assert.equal(pending.length,2,"Unusable Lanfranco/Restout masters stay on hold");
-assert(pending.every(x=>x.sourceKind.startsWith("PENDING")));
+assert.equal(pending.length,3,"Unusable Lanfranco/Restout masters and Prado-associated Rubens stay on hold");
+assert(pending.every(x=>x.sourceKind.startsWith("PENDING")||x.sourceKind==="HOLD_PRADO_SOURCE_POLICY"));
+const prado=pending.find(x=>x.artworkId==="ART-eter-aul-ubens-doration-of-the-agi");
+assert.equal(prado.sourcePolicy?.status,"HOLD_PRADO_SOURCE_POLICY");
+assert.equal(prado.provider,null);
 assert.equal(released.mediaReleaseCount,0);
 assert.deepEqual(released.media,[]);
-console.log("Sacred Art first five: 1 exact Met + 2 Commons PD-Art staged acquisitions, 2 holds; zero production releases: PASS");
+console.log("Sacred Art first five: 1 exact Met + 1 Commons PD-Art staged acquisitions, 3 holds (including Prado); zero production releases: PASS");
