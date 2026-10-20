@@ -276,7 +276,34 @@
         "CHA-CSE-CSE028",
         "CHA-CSE-CSE029"
       ],
-      "status": "SOURCE_MATCHED_THEOLOGY_AND_EMPIRICAL_SCOPE_REVIEW_PENDING"
+      "status": "SOURCE_MATCHED_THEOLOGY_AND_EMPIRICAL_SCOPE_REVIEW_PENDING",
+      "latestCorrectionCommit": "b573adb4a6b1b711b8ea0ef879fbb9d34efbc6a3"
+    },
+    {
+      "batch": "B18",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b18-communion-chronology-20261021.v1.json",
+      "commit": "6d98029e9659cbb777f6602ed8663c92055fc3bd",
+      "families": 2,
+      "answerUnits": 4,
+      "ids": [
+        "SPX-1905-E-649",
+        "SPX-1905-E-650"
+      ],
+      "status": "LATER_DECREE_CONTEXT_AND_MIRROR_ALIGNMENT_HUMAN_REVIEW_PENDING"
+    },
+    {
+      "batch": "B19",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b19-communion-knowledge-20261021.v1.json",
+      "commit": "0b59562423359c4dc39f41a3988cc93d6ab25bfc",
+      "families": 2,
+      "answerUnits": 4,
+      "ids": [
+        "SPX-1905-E-636",
+        "SPX-1905-E-637"
+      ],
+      "status": "CHILD_PREPARATION_CONTEXT_AND_SOURCE_ATTRIBUTION_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -298,9 +325,15 @@
     }
   ],
   "active": {
-    "batch": "B18",
+    "batch": "B20",
     "state": "SELECTING",
-    "task": "Remaining committed first40 SPX candidates; select original-language source claims beyond completed first20."
+    "ids": [
+      "CSE030",
+      "CSE035",
+      "CSE036",
+      "CSE037"
+    ],
+    "task": "Distinguish modesty, cohabitation, scandal and proximate occasions; read originals and precise sources, avoid universal predictions."
   },
   "next": [
     {
@@ -314,15 +347,15 @@
   "publication": false,
   "denzingerMandatory": false,
   "progress": {
-    "conversationFamilyIdsWithResearchDeltas": 70,
+    "conversationFamilyIdsWithResearchDeltas": 74,
     "additionalMirrorFamilyIdsExamined": 3,
-    "totalDistinctFamilyIdsExaminedInSelectedResearch": 73,
-    "answerUnitsReviewed": 140,
-    "fullFamilyPacketsForHumanReview": 69,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 77,
+    "answerUnitsReviewed": 148,
+    "fullFamilyPacketsForHumanReview": 73,
     "partialFamilyPackets": 1,
     "humanCertified": 0,
     "published": 0,
-    "meaning": "Improved includes source precision and evidence additions. 69 complete packets can enter human review; this is not theological or publication approval."
+    "meaning": "73 complete packets can enter human review; source matching and research-context additions are not certification."
   },
   "scheduling": {
     "created": false,
