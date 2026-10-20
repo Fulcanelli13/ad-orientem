@@ -217,6 +217,47 @@ try{
      "Explicit Journey close returns to the Atlas; Place sheet close does not");
 
    const search=page.locator("#ao-find-modular-root .aoHeritageSurface [data-find-query]");
+   // C -> D: enter from an ordinary Atlas Place preview, with Journey closed.
+   // The reverse link must choose the exact route and reuse the same map.
+   await search.fill("Chartres");
+   const chartresSearch=page.locator('#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place="place:FR:chartres-notre-dame"]');
+   await chartresSearch.waitFor({state:"visible",timeout:15000});
+   await chartresSearch.click();
+   const reverseChartres=page.locator('#ao-find-modular-root .aoHeritagePreview[data-explore-place-owner="place:FR:chartres-notre-dame"]');
+   await reverseChartres.waitFor({state:"visible",timeout:12000});
+   assert.equal(await reverseChartres.locator('[data-explore-place-journey="route:FR:paris-chartres-pentecost"]').count(),1);
+   assert.equal(await journey.count(),0);
+   await reverseChartres.locator('[data-explore-place-journey="route:FR:paris-chartres-pentecost"]').click();
+   await journey.waitFor({state:"visible",timeout:12000});
+   assert.equal(await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').getAttribute("aria-pressed"),"true");
+   assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
+     document.querySelector("#ao-find-modular-root .maplibregl-canvas")),
+     "Reverse Place→Journey selection must not create a second map");
+   await page.screenshot({path:resolve(out,"explore-"+width+"-chartres-place-to-journey.png"),fullPage:false});
+   await journey.locator("[data-explore-journey-close]").click();
+   assert.equal(await journey.count(),0);
+
+   // A destination with two documented departures must present both routes,
+   // never arbitrarily choose one when entering from its Sacred Atlas page.
+   await search.fill("Père Laval");
+   const lavalSearch=page.locator('#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place="place:MU:pere-laval-sainte-croix"]');
+   await lavalSearch.waitFor({state:"visible",timeout:15000});
+   await lavalSearch.click();
+   const lavalPreview=page.locator('#ao-find-modular-root .aoHeritagePreview[data-explore-place-owner="place:MU:pere-laval-sainte-croix"]');
+   await lavalPreview.waitFor({state:"visible",timeout:12000});
+   assert.equal(await lavalPreview.locator("[data-explore-place-journey-list]").count(),1);
+   await lavalPreview.locator("[data-explore-place-journey-list]").click();
+   const lavalFull=page.locator('#ao-find-modular-root .aoExplorePlaceSheet[data-explore-place-owner="place:MU:pere-laval-sainte-croix"]');
+   await lavalFull.waitFor({state:"visible",timeout:12000});
+   assert.equal(await lavalFull.locator("[data-explore-place-journey]").count(),2);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-pere-laval-two-pilgrimages.png"),fullPage:false});
+   await lavalFull.locator('[data-explore-place-journey="route:MU:pere-laval-saint-joseph"]').click();
+   await journey.waitFor({state:"visible",timeout:12000});
+   assert.equal(await journey.locator('[data-explore-journey-select="route:MU:pere-laval-saint-joseph"]').getAttribute("aria-pressed"),"true");
+   assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
+     document.querySelector("#ao-find-modular-root .maplibregl-canvas")));
+   await journey.locator("[data-explore-journey-close]").click();
+
    await search.fill("Lourdes");
    const result=page.locator("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]").first();
    await result.waitFor({state:"visible",timeout:15000});
