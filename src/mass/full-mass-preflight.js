@@ -5,7 +5,7 @@ import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
-import {normalizeFolioExperience,experiencePrayerRoute,mayOpenFolioPrayer} from "./full-mass-folio-options.js";
+import {normalizeFolioExperience,experiencePrayerRoute,experiencePrayerDepth,mayOpenFolioPrayer} from "./full-mass-folio-options.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -260,12 +260,14 @@ export function mountFullMassPreflight({
         '<select id="ao-folio-language" data-folio-language><option value="en">English</option><option value="fr">Français</option></select></div>'+
         '<fieldset class="aoMassFolioOption"><legend data-folio-before-heading></legend>'+
         '<label><input type="radio" name="ao-folio-before" value="none" data-folio-before> <span data-folio-before-none></span></label>'+
-        '<label><input type="radio" name="ao-folio-before" value="prepare" data-folio-before> <span data-folio-before-prepare></span></label>'+
+        '<label><input type="radio" name="ao-folio-before" value="prepare" data-folio-before> <span data-folio-before-prepare></span></label>'+ 
+        '<label><input type="radio" name="ao-folio-before" value="full" data-folio-before> <span data-folio-before-full></span></label>'+
         '<button type="button" data-folio-open-prayer="before" hidden></button></fieldset>'+
         '<div data-folio-rites-slot></div>'+
         '<fieldset class="aoMassFolioOption"><legend data-folio-after-heading></legend>'+
         '<label><input type="radio" name="ao-folio-after" value="none" data-folio-after> <span data-folio-after-none></span></label>'+
-        '<label><input type="radio" name="ao-folio-after" value="thanksgiving" data-folio-after> <span data-folio-after-thanksgiving></span></label></fieldset>'+
+        '<label><input type="radio" name="ao-folio-after" value="thanksgiving" data-folio-after> <span data-folio-after-thanksgiving></span></label>'+ 
+        '<label><input type="radio" name="ao-folio-after" value="full" data-folio-after> <span data-folio-after-full></span></label></fieldset>'+
         '</section><div data-folio-essential-notice class="aoMassFolioEssentialNotice"></div>'+
         '<div class="aoMassFolioGuideActions" data-folio-actions>'+
         '<button type="button" data-folio-back hidden></button><button type="button" data-folio-next hidden></button></div>'+
@@ -340,7 +342,10 @@ export function mountFullMassPreflight({
           const route=experiencePrayerRoute(moment);
           prayerOpening=true;
           const error=root.querySelector("[data-full-mass-category-error]");
-          Promise.resolve().then(()=>onOpenPrayerRoute?.(route))
+          Promise.resolve().then(()=>onOpenPrayerRoute?.(route,{
+            depth:experiencePrayerDepth(moment,selectedExperience()),
+            language:selectedExperience().language
+          }))
             .then(ok=>{if(ok===false||ok==null)throw Error("PRAYER_MODULE_UNAVAILABLE")})
             .catch(reason=>{if(error){error.hidden=false;error.textContent=String(reason?.message??reason)}})
             .finally(()=>{prayerOpening=false});
@@ -365,11 +370,11 @@ export function mountFullMassPreflight({
           refresh();return;
         }
         if(el?.matches?.("[data-folio-before]")){
-          if(["none","prepare"].includes(el.value))experience.before=el.value;
+          if(["none","prepare","full"].includes(el.value))experience.before=el.value;
           refresh();return;
         }
         if(el?.matches?.("[data-folio-after]")){
-          if(["none","thanksgiving"].includes(el.value))experience.after=el.value;
+          if(["none","thanksgiving","full"].includes(el.value))experience.after=el.value;
           refresh();return;
         }
         if(el?.matches?.("[data-full-mass-rite]")){
@@ -431,17 +436,19 @@ export function mountFullMassPreflight({
     word("[data-folio-language-heading]","Language","Langue");
     word("[data-folio-before-heading]","Before Mass","Avant la messe");
     word("[data-folio-before-none]","Go directly to Mass","Aller directement à la messe");
-    word("[data-folio-before-prepare]","Preparation prayers","Prières de préparation");
+    word("[data-folio-before-prepare]","Brief preparation prayers","Courtes prières de préparation");
+    word("[data-folio-before-full]","Full preparation before Mass","Préparation complète avant la messe");
     word("[data-folio-after-heading]","After Mass","Après la messe");
     word("[data-folio-after-none]","Finish after Mass","Terminer après la messe");
-    word("[data-folio-after-thanksgiving]","Thanksgiving prayers","Prières d’action de grâces");
+    word("[data-folio-after-thanksgiving]","Thanksgiving after Mass","Action de grâces après la messe");
+    word("[data-folio-after-full]","Full prayers after Mass","Prières complètes après la messe");
     word("[data-folio-open-prayer]","Open preparation prayers ↗","Ouvrir les prières de préparation ↗");
     word("[data-folio-back]","Back","Retour");
     word("[data-folio-next]",folioStep==="reader"?"Review Mass":"Continue",folioStep==="reader"?"Voir le résumé":"Continuer");
     folio.querySelector("[data-folio-language]").value=summary.readerLanguage;
     for(const item of folio.querySelectorAll("[data-folio-before]"))item.checked=item.value===summary.beforeMass;
     for(const item of folio.querySelectorAll("[data-folio-after]"))item.checked=item.value===summary.afterMass;
-    folio.querySelector("[data-folio-open-prayer]").hidden=summary.beforeMass!=="prepare";
+    folio.querySelector("[data-folio-open-prayer]").hidden=!mayOpenFolioPrayer("before",selectedExperience());
     for(const section of folio.querySelectorAll("[data-folio-panel]"))section.hidden=section.dataset.folioPanel!==folioStep;
     for(const nav of folio.querySelectorAll("[data-folio-goto]")){
       const active=nav.dataset.folioGoto===folioStep;
