@@ -1,41 +1,52 @@
-# Pilgrimage route evidence — R1 (20 October 2026)
+# Pilgrimage route evidence — R1/R2, 20 October 2026
 
-Status: **named stages published for eight of twenty documented routes; route geometry certified for zero**. Editorial candidate evidence only, not a GPS routing release.
+**Status: 17/20 documented route IDs with 64 published named-stage records; 0/20 routes with certified walking-line geometry.** All 240 underlying pilgrimage records and 20 canonical route identities are preserved.
 
-## Release boundary
-- Source registry: `data/shrines/shrines-pilgrimages-seed.v1.json` (240 pilgrimage records; 20 exact route IDs). All 20 canonical routes remain `DOCUMENTED_UNMAPPED`; do not change to `MAPPED`.
-- New linked evidence: `data/shrines/route-stage-evidence-20261020.v1.json` (eight route identities and 34 ordered names). Each entry has the exact route ID and an organizer or diocesan URL, edition context, and explicitly null latitude and longitude.
-- The D Journey timeline may show those **named** stages. It must not call them geolocated or navigable, place a pin at the destination's coordinate for a stage, estimate distances, or draw connecting polylines.
-- A route can gain renderable geometry only after direct KML/GPX/GeoJSON or cartographic evidence is obtained for the exact organizer route/edition and reuse rights are confirmed. A route planner's shortest path or straight line between buildings is **not** the pilgrimage.
+## Publication boundary
 
-## R1 evidence accepted
+- Canonical owners: `data/shrines/shrines-pilgrimages-seed.v1.json` and `data/shrines/source-registry.v1.json`. Named stages are a separate evidence overlay at `data/shrines/route-stage-evidence-20261020.v1.json`.
+- Each stage records source document, edition and ordinal; `lat=null`, `lng=null`, `geometry_status=NAMED_UNMAPPED`. Thus 64 named locations **do not** mean 64 map pins or a GPS route.
+- `PASS_THROUGH` marks streets, villages and forests passed through, not formal devotional stopping stations. The UI distinguishes source-reported stage count, organizer's meeting point, and true route terminus.
+- Route lines must await an organizer-released edition-specific GPX/KML/GeoJSON or independently reviewed line with license/publication rights. Straight-line joins, estimated walks and automatching to Google routing are forbidden.
 
-| Canonical route ID | Names | Organizer source | Evidence scope |
+## Current stage coverage
+
+| Route ID | Names | Primary published evidence | Edition / exception |
 | --- | ---: | --- | --- |
-| `route:FR:paray-pilgrim-path` | 4 | https://sacrecoeur-paray.org/parcours-du-pelerin-fr/ | Official order: Sacred Heart Basilica, Saint-Jean Chapel, Apparitions Chapel, La Colombière Chapel; on-site walking line not published |
-| `route:FR:paris-chartres-pentecost` | 4 | https://www.nd-chretiente.com/pelerinage-chartres/pelerins-marcheurs/ | Official 2026 context: Paris Saint-Sulpice, bivouac Choisel, bivouac Gas, Chartres Cathedral; four named places are **not** the same as the source's three journey days |
-| `route:US:walk-to-mary` | 4 | https://walktomary.com/our-path/ | Official published joining sequence at Old St Joseph, St Peter & Paul, Holy Cross, Our Lady of Champion; page now advertises 2027; organizer's embedded external map can be opened but has not been copied |
-| `route:MU:pere-laval-saint-louis` | 2 | https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/ | Diocese's 2026 departure at Saint-Louis Cathedral, arrival at Père Laval, Sainte-Croix |
-| `route:MU:pere-laval-saint-joseph` | 2 | https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/ | Diocese's 2026 departure at Saint-Joseph Terre-Rouge, arrival at Père Laval, Sainte-Croix |
-| `route:US:lake-george-auriesville-restoration` | 2 | https://pilgrimage-for-restoration.org/arrival/check-in-thursday/ | Organizer's 2026 Wood Park gathering and step-off, Auriesville shrine destination; camping/check-in details are edition-specific |
+| `route:FR:paray-pilgrim-path` | 4 | https://sacrecoeur-paray.org/parcours-du-pelerin-fr/ | Four on-site chapels; canonical shrine point does not geolocate La Colombière chapel |
+| `route:FR:paris-chartres-pentecost` | 4 | https://www.nd-chretiente.com/pelerinage-chartres/pelerins-marcheurs/ | Saint-Sulpice, Choisel and Gas bivouacs, Chartres; three days, four named anchors |
+| `route:US:walk-to-mary` | 4 | https://walktomary.com/our-path/ | Four named official joining points; external organizer's My Maps only, edition announced 2027 |
+| `route:MU:pere-laval-saint-louis` | 2 | https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/ | 2026 Saint-Louis Cathedral to Sainte-Croix |
+| `route:MU:pere-laval-saint-joseph` | 2 | https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/ | 2026 Saint-Joseph Terre-Rouge to Sainte-Croix |
+| `route:US:lake-george-auriesville-restoration` | 2 | https://pilgrimage-for-restoration.org/arrival/check-in-thursday/ | 2026 Lake George Wood Park departure and Auriesville endpoint |
+| `route:DE:preith-bettbrunn` | 9 | https://preith.bistum-eichstaett.de/wallfahrt/ | Includes seven forests, towns or areas passed through; none is automatically a prayer station |
+| `route:BR:belem-cathedral-nazare` | 7 | https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026 | 11 October 2026 Círio Cathedral–Basilica procession, ordered streets |
+| `route:FR:laghet-paillon-old-road` | 2 | https://sanctuaire-laghet.fr/pelerinage-du-doyenne/ | 20 May 2024, parish church of La Trinité to Laghet sanctuary; intermediate prayer halts unnamed |
+| `route:FR:sainte-anne-chemin-nicolazic` | 2 | https://www.sainteanne-sanctuaire.com/?id_geoloc=209&langue=fr&mode=organiser_un_pelerinage | Starts at Maison Nicolazic; broad sanctuary-site endpoint only, booklet needed for internal circuit |
+| `route:CA:canadian-martyrs-traditional` | 3 | https://ontario.sspx.ca/en/events/canadian-martyrs-pilgrimage-2026-transmitting-faith-next-generation-60303 | **26 September 2026:** St Ignace II at 1645 Rosemount Road is the actual start, Crystal Beach Park the lunch stop, Martyrs Shrine the relic-veneration finish. Canonical route name and origin corrected; later Mass at Sainte-Marie Park is a separate service, not a mandatory walking stop |
+| `route:GB:ely-walsingham-lms` | 3 | https://www.lmschairman.org/2026/03/lms-walsingham-pilgrimage-booking-open.html | **27–30 August 2026:** Ely, Stoke Ferry campsite, Walsingham **Priory grounds**. Concluding Mass no longer at Catholic Shrine. Linked Catholic Shrine remains a related Place, not mapped edition terminus |
+| `route:GB:holywell-church-to-well` | 2 | https://lms.org.uk/pilgrimages | LMS High Mass at St Winefride's RC parish church, followed by Rosary procession to the Well |
+| `route:NL:winthagen-maastricht-sterre-der-zee` | 4 | https://olv-sintpieter.nl/3-10-2026-pelgrims-voettocht-sterre-der-zee/ | **3 October 2026:** Winthagen chapel, Schin op Geul church, St Gerlachus church Houthem, Maastricht Basilica; intermediate reflection stops |
+| `route:MX:guadalajara-zapopan-romeria` | 10 | https://www.zapopan.gob.mx/v3/noticias/zapopan-prepara-el-plan-operativo-integral-para-recibir-la-romeria-292 | **12 October 2026:** municipal published sequence from Guadalajara Cathedral through Plaza de Armas, Exconvento del Carmen, Parque de la Revolución, Rectoría UDG, Glorieta Colón, Punto São Paulo, Plaza Patria, Arco de Zapopan to Basilica. Landmarks are pass-through, not prayer stations |
+| `route:PT:braga-cathedral-sameiro` | 2 | https://santuariodosameiro.pt/santuario/pastoral-e-culto/peregrinacoes/ | Annual archdiocesan first-Sunday-of-June Cathedral–Sameiro walk. Do **not** confuse with emigrants' annual Bom Jesus–Sameiro procession |
+| `route:US:amsterdam-auriesville` | 2 | https://www.ourladyofmartyrsshrine.org/featured-events | **17 October 2026:** official event identifies Amsterdam as starting town, NOT exact gathering point, and Auriesville Shrine as destination |
 
-| `route:DE:preith-bettbrunn` | 9 | https://preith.bistum-eichstaett.de/wallfahrt/ | Official parish account names Preith, Buchenhüller Forst, Inching, Waltinger Schlag, Schambachtal, Schelldorf, Appertshofen, Köschinger Forst and Bettbrunn; these are route pass-through areas, not announced prayer stations |
-| `route:BR:belem-cathedral-nazare` | 7 | https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026 | Organizer's 11 October 2026 Cathedral–Basilica street progression: Padre Champagnat, Portugal, Castilhos França, Presidente Vargas and Nazaré; published description is not a validated vector polyline |
+## Why three are held at zero ordered stages
 
-## Evidence not allowed to change stage geometry yet
-- Walk to Mary's official Google My Maps embed is **external**: https://www.google.com/maps/d/embed?ll=44.50775787430333%2C-87.9387949855585&mid=1Kf_rYIo3dg2Gltpn8sWmxkiJULpS6mY&z=11 . No rights or validated downloadable route artifact has been certified for republication.
-- Père Laval diocesan 2026 announcement names event departure locations and devotional animation zones. The more detailed published street-by-street pathway located in an older diocesan archival page concerns an earlier edition; do not present it as the 2026 route.
-- Walsingham 2026 requires reconciliation: Latin Mass Society's chairman announced on 31 March 2026 that its 2026 conclusion would be at **Walsingham Priory grounds** rather than the RC Shrine's previous Mass venue: https://www.lmschairman.org/2026/03/lms-walsingham-pilgrimage-booking-open.html . Existing route's canonical Catholic shrine destination and generic official source should not be silently rewritten; determine how to model route-specific ceremonial endpoint versus sanctuary destination before mapping it.
-- Paray's existing canonical destination coordinates locate the sanctuary, not the exact fourth-stage La Colombière chapel. UI must call the action 'Show sanctuary anchor', not 'Show final chapel'.
+1. `route:NG:nne-enyemaka-rosary-procession` — the FSSP source documents a recurring 30-km Rosary procession but does not publish identifiable start/finish waypoints or a prescribed directional path: https://www.fsspnigeria.org/pages/donate/associate-membership.php . The shrine coordinate cannot safely stand in for a walking loop.
+2. `route:NZ:nga-tapuwae-russell` — the Auckland Diocese provides a **regional** suggested journey through Hokianga, ferries and Russell, including multiple numbered local subroutes and mixed driving/ferry modes. The published PDF is https://www.aucklandcatholic.org.nz/wp-content/uploads/2024/08/NGA-TAPUWAE-Route-Overview-1.pdf . It should be modelled as a grouped itinerary by region/mode, not coerced into one continuous walk ending at the St Peter Chanel shrine.
+3. `route:US:great-meadows-doylestown-czestochowa` — the destination shrine confirms the pilgrimage identity but available official material has not established dated, named intermediate stops: https://czestochowa.us/en/ministries/6-pilgrimage . Request organizer route documentation before inventing stages.
 
-## Production gates for future geometry
-1. Exact published route or downloadable edition-specific GPX/KML/GeoJSON from the organizer, or an independently surveyed path with provenance and permission.
-2. Route identity and edition, accuracy/precision and geographic plausibility reviewed against named stages.
-3. Reproduction terms, attribution and publishing permission checked; for licensed OSM derivatives carry ODbL attribution/obligations.
-4. Only then populate a versioned `routeGeometry` reference, waypoint lat/lng values, and visible lines. Keep route status `DOCUMENTED_UNMAPPED` until all gates pass.
-5. Retain older journeys as historical editions. Never imply an obsolete route is safe/current for navigation.
+## Required reconciliations
 
-Remaining source-discovery queue: 12 routes without ordered named-stage evidence; 20 without app-owned certified walking line; all require 2026/2027 variant checks where applicable.
+- **Walsingham canonical venue vs route endpoint:** Canonical `place:GB:walsingham-catholic-shrine` remains the related Catholic sanctuary, while the 2026 pilgrimage terminus is the Priory grounds. The overlay sets `destination_relation=RELATED_SHRINE_NOT_EVENT_ENDPOINT`. UI suppresses an exact "Show destination" action, warns clearly, offers the linked shrine as a related Place, and can show the shrine's wider regional map context without claiming it is Priory grounds.
+- **Canadian Martyrs origin:** The canonical seed erroneously called Crystal Beach the start while the official 2026 schedule names St Ignace II as departure and Crystal Beach as a midday stop. Corrected the canonical route label and origin without changing its route ID or downstream linked place.
+- **Sainte Anne / Paray anchors:** Broad sanctuary marker is not every individual interior chapel. Do not conflate a source-published liturgical itinerary with geocoded architectural elements.
+- **Annual date scope:** Older published itineraries are historical evidence only, never live instructions. Sites with changing entry times, ferries, road closures or rights restrictions require current organizer confirmation before a navigable mode exists.
+- **Rights:** External Google My Maps embeddings are links, not sublicenses; Wikidata, official maps and OSM may have separate reproduction/license conditions. Never copy geometry directly without review.
 
-## UX gate
-`node tests/explore-pilgrimage-journey.mjs` checks exact route joins, all 34 names, zero guessed locations and source links. `tests/explore-medallion-visual-acceptance.mjs` must verify the ordered 4-stage Chartres timeline at mobile and desktop widths before the draft PR is eligible for a merge review.
+## Acceptance status
+
+`tests/explore-pilgrimage-journey.mjs` asserts all **20 IDs**, **64 names**, **17** source-backed entries, zero coordinates and zero fabricated paths, bilingual stages, pass-through semantics, Walsingham venue separation and canonical Canadian start correction. `tests/explore-medallion-visual-acceptance.mjs` captures Chartres plus 2026 Walsingham warnings on 320/390/1440 px views.
+
+**No walking polyline is published.** Work remaining: three route identities need better route-model evidence, and all 20 route geometries still require licensing and topological certification.
