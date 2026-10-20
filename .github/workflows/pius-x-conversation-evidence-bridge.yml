@@ -39,6 +39,8 @@ on:
       - 'data/learn/ltfaith-pius-x-en-witness-index.v1.json'
       - 'data/learn/research/pius-x-triad-audit-*.v1.json'
       - 'data/learn/research/pius-x-mass-eucharist-penance-26turn-evidence-20261020.v1.json'
+      - 'data/learn/research/pius-x-sacraments-100family-200turn-source-screen-20261020.v1.json'
+      - 'tests/pius-x-sacraments-100family-source-screen.mjs'
       - 'tests/pius-x-26turn-source-evidence.mjs'
       - 'tests/pius-x-triad-links.mjs'
       - 'tests/pius-x-conversation-intent-bridge.mjs'
@@ -67,6 +69,7 @@ jobs:
       - run: node tests/pius-x-conversation-intent-bridge.mjs
       - run: node tests/pius-x-triad-links.mjs
       - run: node tests/pius-x-26turn-source-evidence.mjs
+      - run: node tests/pius-x-sacraments-100family-source-screen.mjs
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
       - run: node tests/pius-x-batch50-content-acceptance.mjs
       - run: node tests/pius-x-batch2-production-acceptance.mjs
