@@ -1,0 +1,71 @@
+{
+  "schema": "ao-mass-priest-genuflection-artwork-brief-v1",
+  "date": "2026-10-20",
+  "status": "ARTWORK_REQUIRED_NOT_YET_DRAWN_OR_APPROVED",
+  "scope": "One reusable *priest-specific* silhouette for the 1962 Mass reader's priest genuflection action; not faithful kneeling.",
+  "reviewAuthority": "User explicitly excluded misleading legacy genuflection and asked for a specific accurate priest pose. Review required before app binding.",
+  "artworkRequirements": {
+    "style": "Accurate clean monochrome solid silhouette suitable for currentColor masks, transparent SVG, consistent with approved modern Mass icon family.",
+    "priest": "Roman Rite vested celebrant wearing traditional chasuble, alb and amice silhouette; no modern clerical costume or ordinary congregant proxy.",
+    "pose": "Genuflection: one knee touches ground and the other leg supports the descent. Avoid both knees on floor, which would mean kneeling rather than a genuflection.",
+    "orientation": "Neutral side/three-quarter view with priest's face towards liturgical action; avoid misleading Missal, Gospel book, Host or chalice in icon, since it must be reusable.",
+    "gestureSemantics": "This image shows the priest genuflecting; its precise altar/Gospel direction and timing are always described in event-owned text.",
+    "requirements": [
+      "Accurate anatomy and vested silhouette",
+      "Distinct from all 16 banned legacy icon image hashes",
+      "64/48/32px visual legibility",
+      "Transparent background; no bitmap filters",
+      "Sane SVG viewBox and currentColor",
+      "Faithful/minister/proper-form ownership unchanged"
+    ],
+    "exclusions": [
+      "Rejected legacy --icon-genuflect source",
+      "Faithful kneeling/posture variant reused as priest action",
+      "Any previously rejected priest genuflect donor",
+      "Ritually inaccurate knee pose",
+      "Additional text inside the pictogram"
+    ],
+    "awaiting": "Original vector artwork, aesthetic and rubrical visual review, then source SHA-256 and hash-based CI guard."
+  },
+  "cueUses": [
+    {
+      "cueId": "AO.SM.C0096",
+      "context": "Credo — Et incarnatus est",
+      "action": "GENUFLECTS",
+      "actor": "PRIEST",
+      "note": "Context of the Creed; follow source cue/proper form rather than drawing a one-off icon."
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "context": "Canon — Per ipsum before taking Host",
+      "action": "GENUFLECTS",
+      "actor": "PRIEST"
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "context": "Canon — Per ipsum after replacing Host",
+      "action": "GENUFLECTS",
+      "actor": "PRIEST"
+    },
+    {
+      "cueId": "AO.SM.C0215",
+      "context": "After Libera nos, before Fraction",
+      "action": "GENUFLECTS",
+      "actor": "PRIEST"
+    },
+    {
+      "cueId": "AO.SM.C0273",
+      "context": "Last Gospel — Et Verbum caro factum est",
+      "action": "GENUFLECTS",
+      "actor": "PRIEST",
+      "note": "Source describes orientation toward Gospel; shared pictogram cannot decide station."
+    }
+  ],
+  "integrationPolicy": {
+    "candidateAlias": "review_priest_genuflect",
+    "runtimeCurrently": null,
+    "rule": "Do not bind until approved original vector is staged and visually accepted. No gameplay or celebratory animation.",
+    "banAnyLegacyReplacement": true
+  },
+  "decisionNeeded": "User approval of newly prepared one-artwork priest-specific genuflection image after it exists."
+}
