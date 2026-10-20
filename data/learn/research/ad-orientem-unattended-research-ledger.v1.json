@@ -174,6 +174,20 @@
         "SPX-EXP-021"
       ],
       "status": "ANSELM_QUOTE_BOUNDARY_AND_LATIN_PASSAGE_MAPS"
+    },
+    {
+      "batch": "B11",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b11-reproductive-ethics-20261021.v1.json",
+      "commit": "e4ac80ebacd760701f1dcde84b26b8df66cd5e80",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "CHA-CSE-CSE101",
+        "CHA-CSE-CSE104",
+        "CHA-CSE-CSE110"
+      ],
+      "status": "SOURCE_MATCHED_PENDING_BIOETHICAL_AND_BILINGUAL_CERTIFICATION"
     }
   ],
   "blocked": [
@@ -195,13 +209,13 @@
     }
   ],
   "active": {
-    "batch": "B11",
-    "task": "Chanoine reproductive-ethics specialist claims: distinguish precise doctrinal prohibitions from unresolved proposals"
+    "batch": "B12",
+    "task": "Select remaining first-release St Pius X documentary claims after evidence reconciliation; skip already completed IDs and mirror aliases."
   },
   "next": [
-    "CSE016/018 Donum veritatis exact authority and theological difficulty distinctions",
-    "Other source-specific specialist questions with accessible original sources",
-    "First-release SPX papal authenticity questions; no repeated full-corpus audit"
+    "Remaining first-release SPX families excluding completed pilot/expansion aliases",
+    "Chanoine CSE reproductive ethics beyond CSE101/104/110 with precise existing source questions",
+    "Missing original English 360 asset remains blocked; do not reconstruct"
   ],
   "deduplication": "(kb, canonical familyId, turn, claim, source locator); retain duplicated conversation contexts, synchronize approved answer variants",
   "approvalsChanged": 0,
