@@ -15,7 +15,13 @@ const validGeo=(geo,mapped)=>Boolean(mapped&&geo&&
 
 /** One record per documented route identity, linked only by exact route ID.
  * Do not treat all 240 pilgrimage destinations as verified routes. */
-export function buildPilgrimageJourneyCatalogue(items=[],sources=[]){
+export function buildPilgrimageJourneyCatalogue(items=[],sources=[],stageEvidence=[]){
+  // Exact route ID, published ordered names, primary organizer URL only.
+  // No point ever inherits a destination coordinate by proximity or role.
+  const evidenceMap=new Map(arr(stageEvidence).filter(row=>
+    tidy(row?.route_id)&&arr(row?.waypoints).length>0&&isHttp(row?.source_url)
+    &&row?.stage_geometry_policy==="NAMED_STAGES_ONLY_NO_WALKING_LINE"
+  ).map(row=>[tidy(row.route_id),row]));
   const sourceMap=new Map(arr(sources).filter(x=>tidy(x?.id)&&isHttp(x?.url))
     .map(x=>[tidy(x.id),x]));
   const seen=new Set(),result=[];
@@ -33,6 +39,26 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[]){
         ?Object.freeze({lat:Number(item.geo.lat),lng:Number(item.geo.lng),
           approximate:Boolean(item.geo.approximate||item.geo.indicative_only)})
         :null;
+      const evidence=evidenceMap.get(id);
+      const ordered=arr(evidence?.waypoints).filter((stage,index,all)=>
+        stage?.geometry_status==="NAMED_UNMAPPED"&&
+        stage?.lat===null&&stage?.lng===null&&
+        tidy(stage?.waypoint_id)&&isHttp(stage?.source_url)&&
+        Number.isInteger(stage?.ordinal)&&stage.ordinal>0&&
+        tidy(stage?.name_en)&&tidy(stage?.name_fr)&&
+        all.findIndex(duplicate=>duplicate?.ordinal===stage.ordinal)===index
+      ).sort((a,b)=>a.ordinal-b.ordinal);
+      const namedStages=ordered.length===arr(evidence?.waypoints).length
+        ?Object.freeze(ordered.map(stage=>Object.freeze({
+          id:tidy(stage.waypoint_id),ordinal:stage.ordinal,
+          name:tidy(stage.name_en),nameFr:tidy(stage.name_fr),
+          role:tidy(stage.role),sourceUrl:tidy(stage.source_url),
+          // Nominatim lookup, canonical Place and guessed path are NOT accepted.
+          coordinates:null,status:"NAMED_UNMAPPED",
+        }))):Object.freeze([]);
+      const mappedStages=Object.freeze([]); // Not yet certified.
+      const officialMapUrl=isHttp(evidence?.official_map_url)?tidy(evidence.official_map_url):null;
+      const evidenceUrl=isHttp(evidence?.source_url)?tidy(evidence.source_url):null;
       const stages=Number(route.stage_count);
       const stageCount=route.stage_count!=null&&Number.isInteger(stages)&&stages>0?stages:null;
       result.push(Object.freeze({
@@ -47,7 +73,11 @@ export function buildPilgrimageJourneyCatalogue(items=[],sources=[]){
         routeType:tidy(route.route_type)||"UNKNOWN",
         state:tidy(route.route_state),
         stageCount,
-        sources:Object.freeze(links),
+        edition:tidy(evidence?.edition),
+        namedStages,mappedStages,officialMapUrl,
+        sources:Object.freeze(evidenceUrl&&!links.some(link=>link.url===evidenceUrl)
+          ?[...links,Object.freeze({id:id+"-stages",title:"Official named stages",
+            url:evidenceUrl,issuer:"Pilgrimage organizer"})]:links),
         // A source-reported number is never a navigable waypoint collection.
         routeGeometry:null,
         stops:Object.freeze([]),
@@ -93,22 +123,48 @@ export function renderPilgrimageJourneyPanel({
     :label(language,"Documented journey","Parcours attesté"))+'</div>';
   html+='<h3>'+esc(selected.name)+'</h3>';
   html+='<ol class="aoJourneyAnchors">';
-  html+='<li><span class="aoJourneyNode" aria-hidden="true">○</span><div><small>'+
-    esc(label(language,"DOCUMENTED ORIGIN · TEXT ONLY","DÉPART ATTESTÉ · TEXTE SEUL"))+'</small><strong>'+
-    esc(selected.origin||label(language,"Origin not recorded","Départ non renseigné"))+'</strong></div></li>';
-  html+='<li><span class="aoJourneyNode" aria-hidden="true">✦</span><div><small>'+
-    esc(label(language,"DOCUMENTED DESTINATION","DESTINATION ATTESTÉE"))+'</small><strong>'+
-    esc(selected.destination)+'</strong>'+
-    (selected.destinationGeo?.approximate?'<em>'+esc(label(language,
-      "Indicative pin · not a verified entrance","Repère indicatif · entrée non vérifiée"))+'</em>':"")+
-    '</div></li></ol>';
-  if(selected.stageCount)html+='<p class="aoJourneyStages">'+esc(label(language,
+  if(selected.namedStages.length){
+    selected.namedStages.forEach((stage,index)=>{
+      const heading=stage.role==="START"
+        ?label(language,"DOCUMENTED ORIGIN","DÉPART ATTESTÉ")
+        :stage.role==="JOIN_IN"?label(language,"JOIN-IN POINT","POINT DE REJOINT")
+        :stage.role.startsWith("DESTINATION")?label(language,"DOCUMENTED DESTINATION / FINAL STAGE","DESTINATION / DERNIÈRE ÉTAPE")
+        :label(language,"DOCUMENTED STAGE","ÉTAPE ATTESTÉE");
+      html+='<li data-journey-named-stage="'+esc(stage.id)+'"><span class="aoJourneyNode" aria-hidden="true">'+
+        esc(String(index+1))+'</span><div><small>'+esc(heading)+' · '+esc(String(index+1))+
+        '/'+esc(String(selected.namedStages.length))+'</small><strong>'+
+        esc(language==="fr"?stage.nameFr:stage.name)+'</strong><em>'+
+        esc(label(language,"Named by organiser · not geolocated","Nommé par l’organisateur · non géolocalisé"))+
+        '</em></div></li>';
+    });
+  }else{
+    html+='<li><span class="aoJourneyNode" aria-hidden="true">○</span><div><small>'+
+      esc(label(language,"DOCUMENTED ORIGIN · TEXT ONLY","DÉPART ATTESTÉ · TEXTE SEUL"))+'</small><strong>'+
+      esc(selected.origin||label(language,"Origin not recorded","Départ non renseigné"))+'</strong></div></li>';
+    html+='<li><span class="aoJourneyNode" aria-hidden="true">✦</span><div><small>'+
+      esc(label(language,"DOCUMENTED DESTINATION","DESTINATION ATTESTÉE"))+'</small><strong>'+
+      esc(selected.destination)+'</strong>'+
+      (selected.destinationGeo?.approximate?'<em>'+esc(label(language,
+        "Indicative pin · not a verified entrance","Repère indicatif · entrée non vérifiée"))+'</em>':"")+
+      '</div></li>';
+  }
+  html+='</ol>';
+  if(selected.edition)html+='<p class="aoJourneyStages">'+esc(label(language,
+    "Documented edition: "+selected.edition+" · route may vary between years",
+    "Édition attestée : "+selected.edition+" · parcours susceptible de changer selon l’année"))+'</p>';
+  if(selected.stageCount&&!selected.namedStages.length)html+='<p class="aoJourneyStages">'+esc(label(language,
     selected.stageCount+" source-reported stages; individual locations not yet mapped",
     selected.stageCount+" étapes signalées par les sources ; emplacements non cartographiés"))+'</p>';
+  if(selected.namedStages.length)html+='<p class="aoJourneyStages">'+esc(label(language,
+    selected.namedStages.length+" named stages from official evidence · no geolocated waypoint yet",
+    selected.namedStages.length+" étapes nommées selon les sources officielles · aucun repère géolocalisé"))+'</p>';
   html+='<p class="aoJourneyNoLine">'+esc(label(language,
     "This is a documented pilgrimage, not turn-by-turn directions. No route line, distance or travel time is asserted.",
     "Ce pèlerinage est attesté, mais sans guidage GPS. Aucun tracé, distance ni durée ne sont affirmés."))+'</p>';
   html+='<div class="aoJourneyActions">';
+  if(selected.officialMapUrl)html+='<a class="aoJourneyOfficialMap" href="'+esc(selected.officialMapUrl)+
+    '" target="_blank" rel="noopener noreferrer">'+
+    esc(label(language,"Official interactive route map ↗","Carte officielle du parcours ↗"))+'</a>';
   if(selected.destinationGeo)html+='<button type="button" data-explore-journey-focus>'+
     esc(label(language,"Show destination","Voir la destination"))+'</button>';
   html+='<button type="button" data-explore-journey-destination="'+esc(selected.destinationPlaceId)+'">'+
