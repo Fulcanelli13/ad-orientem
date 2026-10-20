@@ -1,0 +1,113 @@
+{
+  "schema": "ao.historia.p4.movement-literary-review.batch.v1",
+  "status": "RESEARCH_ONLY_PROPOSED",
+  "createdOn": "2026-10-21",
+  "inputs": [
+    "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "data/research/historia-salutis-v18-necessity-audit.v1.json",
+    "data/research/historia-salutis-v18-continuity-desk-pass.v1.json",
+    "data/scripture/witness/cpdv-2009/{John,Luke,Matthew}.json",
+    "data/scripture/witness/dr-challoner/{John,Luke,Matthew}.json",
+    "data/explore/biblical-pericope-comparative-full-master.v7.json"
+  ],
+  "reviewedMovementCount": 4,
+  "movements": [
+    {
+      "movementId": "HS-M24",
+      "decision": "RESTORE THE COMPLETE CAUSAL UNIT",
+      "sourceRefs": [
+        "John 11:1–44 (H58-04 A; proof split: 1–7, 14–17, 20–27, 32–35, 38–44)"
+      ],
+      "proposedRefs": [
+        "John 11:1–53"
+      ],
+      "findings": [
+        "The existing selection drops 11:8–13: Jesus' disciples question the return to Judea; Jesus speaks of Lazarus sleeping; they misunderstand; the narrator clarifies he means death. Without these, v14's 'plainly' has no immediately preceding misunderstanding, while v4 ('not unto death') followed by death can appear contradictory. Restore verses 8–13.",
+        "It also drops 11:18–19, which establish Bethany's proximity to Jerusalem and the visitors mourning; these set the witnesses and Jerusalem context for the sign. vv28–31 (Mary's call and the mourners following) are omitted before Mary's arrival in 32. For an intelligible scene with no unexplained crowd, restore the continuous unit rather than patching each gap.",
+        "The existing HS-CF-05 John 11:45–53 is well founded: after the sign, witnesses believe or report it, the council fears Roman intervention, Caiaphas speaks, and the council plans Jesus' death. It is the explicit causal bridge from this sign to the Passion and is present in both CPDV and Douay. Proposed full boundary John11:1–53, not treating this as a new Atlas event."
+      ],
+      "safeOmissions": [
+        "H58-01 to H58-03 and H58-05 are independent Bethany/Jericho stories classified C; they are not needed for Lazarus' episode. Preserve access through current citations only."
+      ],
+      "v7Evidence": [
+        "V7 has lectionary John11:1–45 and Life Bible John11:1–44; these support the narrative source scope and show the existing #1069 Atlas event endpoint at 45 differs from proposed 1–53. The council sequel is a distinct passage and needs its own narrative bridge."
+      ],
+      "status": "REVIEWED; expansion proposed"
+    },
+    {
+      "movementId": "HS-M25",
+      "decision": "CONFIRM MATTHEW PERICOPE; RETAIN ELISION NOTICE",
+      "sourceRefs": [
+        "Matthew 21:1–11 (H59-01 A)"
+      ],
+      "proposedRefs": [
+        "Matthew 21:1–11"
+      ],
+      "findings": [
+        "The opening locates Jesus at Bethphage/Mount of Olives, sends two disciples with a clear task, narrates fulfillment citation, entry, acclamation and the city's question. Verse 11 is an intelligible landing and does not require Matthew21:12–17 to close the entry scene.",
+        "Luke19:41–44 (H59-02 B/bridge-only) is a distinct lament after the entry in Luke; it is not a missing clause in Matthew and must not be inserted into Matthew's scene. If used, show it as a separately labeled parallel Gospel reference.",
+        "The next movement jumps from the entry to the Passover meal. That is a chronological ellipsis across the teaching and temple events of the intervening days; acceptable for the selected spine if the sequence is explicitly marked as selected episodes, not uninterrupted hours/days. Do not add unsourced connective prose."
+      ],
+      "safeOmissions": [
+        "Matthew21:12–17 and the subsequent temple teaching are not required to understand Matthew21:1–11. H59-02 Luke19:41–44 remains an optional context witness, not an obligatory continuation."
+      ],
+      "v7Evidence": [
+        "V7 has an exact full Matthew21:1–11 publisher reference (ABS_START); the lectionary entry for the Atlas event is Luke19:28–40, a parallel account, not verse equivalence. This supports retaining the complete Matthew passage and not merging Luke's sequence."
+      ],
+      "status": "REVIEWED; exact current boundary confirmed"
+    },
+    {
+      "movementId": "HS-M26",
+      "decision": "KEEP LUKE INSTITUTION ACCOUNT; ADD DISTINCT PARALLEL BRIDGE CANDIDATE",
+      "sourceRefs": [
+        "Luke 22:7–20 (H60-01 A)",
+        "John 14:16–17 (HS-CF-09 candidate)"
+      ],
+      "proposedRefs": [
+        "Luke 22:7–20",
+        "John 14:16–17 as a separately labeled parallel-source companion"
+      ],
+      "findings": [
+        "Luke22:7–20 is a complete unit: preparation, meal, Jesus' desire to eat Passover before suffering, blessing of cup, bread/body and cup/new covenant in his blood. Verse20 closes the institution sequence; preserve the whole prayer and institution words without trimming.",
+        "The title also promises Christ's final teaching, which this one Luke passage does not contain. The existing HS-CF-09 John14:16–17 is a two-verse promised-Paraclete source lead that supplies a link to Acts/Pentecost, but it belongs to John's distinct farewell discourse. It can be shown as a parallel reference, not placed into Luke's Last Supper quotation as if sequentially narrated there.",
+        "The following Matthew26:36 begins 'Then Jesus went with them to a garden.' Because the previous selected Scripture is Luke's account and ends at v20, the omitted Matthew26:30–35 contains the departure to the Mount of Olives and Peter's denial prediction. Add Matthew26:30–35 as a separately identified Matthew source passage immediately before Matthew26:36–46; do not conflate it with Luke22."
+      ],
+      "safeOmissions": [
+        "John13:31–38, 14:1–14, 15:1–17 and 17:1–26 (H61-01–04) are distinct long discourse/prayer selections. The 2-verse Paraclete promise is a candidate only; publication/editorial choice remains open. They are not required to complete Luke22:7–20."
+      ],
+      "v7Evidence": [
+        "V7 supports Luke22:7–20 as a selected published scope in more than one source family; another publisher selects Luke22:7–30 or 7–38. A provisional Missal record mis-maps the cenacle to John13:1–15 and is excluded from votes in P3. This is reference diversity, not grounds to extend Luke's institution unit."
+      ],
+      "status": "REVIEWED; bridge proposal, Gospel labeling and title alignment remain editorial"
+    },
+    {
+      "movementId": "HS-M27",
+      "decision": "RESTORE MATTHEW DEPARTURE/PETER PREDICTION; KEEP JUDAS OUTCOME AS DISTINCT COMPANION",
+      "sourceRefs": [
+        "Matthew 26:36–46; 26:47–56; 26:57–75; 27:1–2, 11–26 (H62-01/02, H63-01/02 A; original 27:1–26)",
+        "John 19:1–16 (H63-04 B)"
+      ],
+      "proposedRefs": [
+        "Matthew 26:30–75; 27:1–2, 11–26, with a clearly marked omitted Judas episode at 27:3–10; John 19:1–16 separately labeled as a parallel witness only"
+      ],
+      "findings": [
+        "Matthew26:36–46 preserves Jesus' full three prayers, submission and the disciples' sleeping; vv47–56 follows directly from 'the betrayer draws near', retaining betrayal, arrest, sword response and prophetic fulfillment. This dialogue/prayer sequence must remain whole.",
+        "The selected M26 Luke22:7–20 does not contain Matthew's departure to the Mount of Olives. Restore Matthew26:30–35 as a separate Matthew passage before 26:36: it includes the hymn/departure, Jesus' prediction that the disciples will be scandalized, Peter's denial prediction and their journey to Gethsemane. This gives 26:36's 'with them' its local antecedent without fusing Luke and Matthew.",
+        "Matthew26:57–75 forms the high-priest questioning and Peter's three denials, closing with his remembrance and bitter grief. 27:1–2 moves directly to morning and Pilate, but 27:3–10 (Judas' remorse, death and the field) is a separate consequence, not needed to understand Jesus' transfer to Pilate; preserve it as a companion passage, not a fabricated omission-free chronology.",
+        "27:11–26 is a complete Pilate judgment through scourging and handing Jesus over. John's 18:28–40 and 19:1–16 remain separate witnesses; John's order (scourging/crowning before the final handover) cannot be inserted into Matthew's questioning as a seamless sequence."
+      ],
+      "safeOmissions": [
+        "Matthew27:3–10 is safe to omit from this Jesus trial sequence only if marked as a distinct Judas outcome available in Scripture. John18:28–40 is classified D duplicate court process; John19:1–16 B bridge-only. Do not merge either into Matthew."
+      ],
+      "v7Evidence": [
+        "V7 has Life Bible Matt26:36–56 and ABS Matt26:36–46 plus lectionary/other publisher whole ranges spanning the Gethsemane/prisoner scene; and Matt27:11–26 selections. That evidence corroborates complete passage boundaries, not a particular cross-Gospel order or approval of our abridgment."
+      ],
+      "status": "REVIEWED; transition repair proposed"
+    }
+  ],
+  "guards": [
+    "Existing verse witnesses remain unmodified; proposals are not approval.",
+    "Exact, overlap and parallel citation relations are distinct.",
+    "Original v18 classifications and IDs are retained."
+  ]
+}
