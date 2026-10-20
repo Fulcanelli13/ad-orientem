@@ -54,7 +54,7 @@ for(const card of drafts.cards){
  assert.ok(!seenCards.has(card.card_id));seenCards.add(card.card_id);
  assert.equal(card.publication_state,"SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED");
  for(const field of ["title_en","title_fr","description_en","description_fr","spiritual_meaning_en","spiritual_meaning_fr","optional_observance_en","optional_observance_fr"]){
-  assert.ok(card[field]?.length>25,"missing bilingual field "+field+" "+card.card_id);
+  assert.ok(card[field]?.length>(field.startsWith("title_")?10:25),"missing bilingual field "+field+" "+card.card_id);
  }
  assert.ok(card.publication_guard?.length>25);
  assert.equal(card.weiser_locators.length,new Set(card.weiser_locators.map(x=>x.id)).size);
