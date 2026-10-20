@@ -214,7 +214,22 @@ try{
   assert.equal(massPrepareAvailable,true,"shared module registry unavailable for Around-Mass handoff");
 
   await page.locator("#aoPray435930 [data-p435930-handoff='mass.prepare']").click();
-  await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
+  // Loading the Around-Mass handoff can initialize its route asynchronously;
+  // still require the Prayer folio to relinquish interaction ownership.
+  try{
+    await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:10000});
+  }catch(error){
+    const diagnostic=await page.evaluate(()=>({
+      prayerOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??null,
+      prayerView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
+      massModule:globalThis.AO_MODULES?.get?.("mass.prepare")??null,
+      shellActive:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
+      runtimeRoute:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
+      nativeMass:!!document.getElementById("ao-r17-native-reader-preview")?.isConnected,
+      massFolioVisible:!!document.querySelector(".aoFullMassPreflight,[data-ao-mass-preflight],[data-ao-mass-folio]"),
+    }));
+    throw new Error("First Friday Before-Mass handoff did not close the Pray folio: "+JSON.stringify(diagnostic),{cause:error});
+  }
   const handoffState=await page.evaluate(()=>({
     route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
     nativeReader:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
