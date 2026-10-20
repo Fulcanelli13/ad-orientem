@@ -44,7 +44,9 @@
     "pradoHoldsApprovedOrHistoric": 25,
     "pradoSourceHoldsApprovedExactCandidate": 1,
     "eligibleExactNga": 6,
-    "newNonPradoOpenSourceExactLinks": 5
+    "newNonPradoOpenSourceExactLinks": 5,
+    "sanPoloExactObjectLinksResolved": 9,
+    "sanPoloOriginalWrongLinksUnresolved": 3
   },
   "works": [
     {
@@ -3288,13 +3290,21 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 1,
+        "source": "OFFICIAL_CHORUS_OBJECT_PAGE_NOT_YET_LOCATED",
+        "verifiedDate": "2026-10-20",
+        "oldWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
       "title": "San Polo Via Crucis — Station 02: Jesus Takes Up the Cross",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-carries-the-cross/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3304,13 +3314,23 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 2,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
       "title": "San Polo Via Crucis — Station 03: First Fall",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-falls-the-first-time/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3320,13 +3340,23 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 3,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
       "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-encounters-the-mother/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3336,13 +3366,23 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourceObjectEvidence": {
+        "exactStation": 4,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
       "title": "San Polo Via Crucis — Station 05: Simon of Cyrene Helps",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-helped-by-simon-of-cyrene/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3352,7 +3392,17 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 5,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
@@ -3368,13 +3418,21 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 6,
+        "source": "OFFICIAL_CHORUS_OBJECT_PAGE_NOT_YET_LOCATED",
+        "verifiedDate": "2026-10-20",
+        "oldWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
       "title": "San Polo Via Crucis — Station 07: Second Fall",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-falls-the-ii-time/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3384,13 +3442,23 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 7,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
       "title": "San Polo Via Crucis — Station 08: Jesus Addresses the Women of Jerusalem",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-consoles-the-pious-women/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3400,7 +3468,17 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 8,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
@@ -3416,13 +3494,21 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 9,
+        "source": "OFFICIAL_CHORUS_OBJECT_PAGE_NOT_YET_LOCATED",
+        "verifiedDate": "2026-10-20",
+        "oldWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
       "title": "San Polo Via Crucis — Station 10: Stripping of His Garments",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-undressed-and-watered-by-bitterness/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3432,13 +3518,23 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 10,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
       "title": "San Polo Via Crucis — Station 11: Nailing to the Cross",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-nailed-to-the-cross/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3448,13 +3544,23 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectEvidence": {
+        "exactStation": 11,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
       "title": "San Polo Via Crucis — Station 12: Death on the Cross",
       "artist": "Giandomenico Tiepolo",
-      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+      "sourceUrl": "https://chorusvenezia.org/en/visita/via-crucis-jesus-dies-on-the-cross/",
       "sourceClaim": "CC BY-SA 4.0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
@@ -3464,7 +3570,17 @@
       "assetHolds": [
         "OCT12_PROTECTED_NOT_SOURCE_PHOTO_CERTIFIED"
       ],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourceObjectEvidence": {
+        "exactStation": 12,
+        "source": "OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE",
+        "verifiedDate": "2026-10-20",
+        "publisher": "Chorus — Churches of the Patriarchate of Venice",
+        "originalWrongStationPage": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "photographReuseRights": "NOT_VERIFIED",
+        "technicalAcquisitionAllowed": false,
+        "mediaPromotionAllowed": false
+      }
     },
     {
       "id": "ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
