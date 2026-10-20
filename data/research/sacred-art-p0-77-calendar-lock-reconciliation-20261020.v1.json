@@ -1,7 +1,7 @@
 {
   "schema": "AO_SACRED_ART_P0_77_DATE_EDITORIAL_RELEASE_RECONCILIATION_V1",
   "asOf": "2026-10-20",
-  "status": "READ_ONLY_DATE_RECONCILIATION_NOT_NEW_CURATOR_APPROVAL_NOT_PRODUCTION_MEDIA",
+  "status": "P0_COMBINED_17OCT_STRICT_MATCH_AUDIT_PLUS_20OCT_CLASS_I_DATE_SELECTION_OVERLAY_NOT_A_RELEASE",
   "scope": "53 actual 2026 Class I observances and 24 designated major Class II dates, not all 76 Class II dates",
   "sources": {
     "oldCalendarAudit": "Library: Ad_Orientem_Sacred_Art_Calendar_First_Audit_2026-10-15.html",
@@ -41,7 +41,13 @@
       "notStrict": 35,
       "oldArtWithoutStrict": 26,
       "noOlderApproved": 9,
-      "photoCertified": 0
+      "photoCertified": 0,
+      "latestCurrentDateAssociations": 53,
+      "currentChoiceWithCataloguePreview": 15,
+      "currentChoiceWithSourceObjectURL": 22,
+      "currentUserDecisionPrimaryOrDateSpecific": 35,
+      "historicalAssociations": 17,
+      "specialVigilTwoIllustrations": 1
     },
     "MajorClassII": {
       "total": 24,
@@ -125,7 +131,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Circumcision",
+        "selectedArtist": "Tintoretto and workshop",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-01-04",
@@ -257,7 +274,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Adoration of the Magi",
+        "selectedArtist": "Peter Paul Rubens",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": true,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-01-11",
@@ -474,7 +502,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Penitent Magdalen",
+        "selectedArtist": "Georges de La Tour",
+        "iconographicRole": "PENITENTIAL_FEAST_THEME",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-02-22",
@@ -517,7 +556,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Christ in the Desert",
+        "selectedArtist": "Ivan Kramskoi",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-02-24",
@@ -608,7 +658,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Transfiguration",
+        "selectedArtist": "Raphael",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-03-08",
@@ -651,7 +712,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+        "selectedArtist": "AI-derived after Giacomo Cavedone",
+        "iconographicRole": "GOSPEL_EPISODE",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-03-15",
@@ -708,7 +780,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Miracle of Loaves and Fishes",
+        "selectedArtist": "Giovanni Lanfranco",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-03-19",
@@ -807,7 +890,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Dream of Saint Joseph",
+        "selectedArtist": "Philippe de Champaigne",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-03-22",
@@ -850,7 +944,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
+        "selectedArtist": "AI-derived after Lucas van Doetechum",
+        "iconographicRole": "GOSPEL_EPISODE",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-03-25",
@@ -1034,7 +1139,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Annunciation",
+        "selectedArtist": "Philippe de Champaigne",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-03-29",
@@ -1090,7 +1206,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Entry of Christ into Jerusalem",
+        "selectedArtist": "Anthony van Dyck",
+        "iconographicRole": "LITURGICAL_PROCESSION",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-03-30",
@@ -1141,7 +1268,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Anointing at Bethany",
+        "selectedArtist": "Peter Paul Rubens and Anthony van Dyck",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-03-31",
@@ -1188,7 +1326,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Taking of Christ",
+        "selectedArtist": "Caravaggio",
+        "iconographicRole": "PASSION_NARRATIVE_EXCERPT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-01",
@@ -1235,7 +1384,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Denial of Saint Peter",
+        "selectedArtist": "Caravaggio",
+        "iconographicRole": "PASSION_NARRATIVE_EXCERPT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-02",
@@ -1309,7 +1469,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Last Supper",
+        "selectedArtist": "Ugolino da Siena",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-03",
@@ -1384,7 +1555,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "San Polo Via Crucis — Station 12: Death on the Cross",
+        "selectedArtist": "Giandomenico Tiepolo",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-04",
@@ -1430,7 +1612,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Easter Vigil prophecy illustrations: God Creating the World; The Destruction of Pharaoh’s Host",
+        "selectedArtist": "James Tissot; John Martin",
+        "iconographicRole": "TWO_OF_FOUR_OT_PROPHECIES_USER_SUFFICIENT",
+        "editorialBasis": "SPECIAL_VIGIL_TWO_OT_ILLUSTRATIONS_ACCEPTED",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-05",
@@ -1484,7 +1677,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Holy Women at the Tomb",
+        "selectedArtist": "William-Adolphe Bouguereau",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-06",
@@ -1538,7 +1742,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Supper at Emmaus",
+        "selectedArtist": "Caravaggio",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-07",
@@ -1583,7 +1798,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Appearance of Christ to His Disciples",
+        "selectedArtist": "Anthony van Dyck",
+        "iconographicRole": "RELATED_RESURRECTION_APPEARANCE_NOT_EXACT_LUKE",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-08",
@@ -1637,7 +1863,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Second Miraculous Draught of Fishes — AI visual draft after James Tissot",
+        "selectedArtist": "AI-derived after James Tissot",
+        "iconographicRole": "GOSPEL_SUBJECT_REINTERPRETED",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-09",
@@ -1682,7 +1919,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Christ and St Mary Magdalen at the Tomb",
+        "selectedArtist": "Rembrandt",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-10",
@@ -1727,7 +1975,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Missione degli Apostoli",
+        "selectedArtist": "Tommaso Minardi (with workshop/Fontana association)",
+        "iconographicRole": "RELATED_GREAT_COMMISSION_THEME_NOT_EXACT_MATTHEW",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-11",
@@ -1772,7 +2031,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Peter and John Running to the Sepulchre",
+        "selectedArtist": "Eugène Burnand",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-12",
@@ -1829,7 +2099,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Incredulity of Saint Thomas",
+        "selectedArtist": "Caravaggio",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-04-25",
@@ -1988,7 +2269,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Saint Joseph the Carpenter",
+        "selectedArtist": "Georges de La Tour",
+        "iconographicRole": "FEAST_PERSON_AND_WORK",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-11",
@@ -2141,7 +2433,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Ascension of Christ",
+        "selectedArtist": "Hans Süss von Kulmbach",
+        "iconographicRole": "FEAST_EVENT_EXACT",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-23",
@@ -2188,7 +2491,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Pentecost",
+        "selectedArtist": "Juan Bautista Maíno",
+        "iconographicRole": "ANTICIPATORY_NEXT_DAY_EVENT",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": true,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-24",
@@ -2245,7 +2559,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Pentecost",
+        "selectedArtist": "Jean Restout",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-25",
@@ -2292,7 +2617,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Nicodemus",
+        "selectedArtist": "Henry Ossawa Tanner",
+        "iconographicRole": "RELATED_GOSPEL_CONTEXT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-26",
@@ -2339,7 +2675,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Parable of the Good Shepherd",
+        "selectedArtist": "16th-century Netherlandish; attribution to Pieter Bruegel disputed",
+        "iconographicRole": "GOSPEL_PARABLE_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-27",
@@ -2386,7 +2733,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "La Cène, dite La Petite Cène",
+        "selectedArtist": "Philippe de Champaigne",
+        "iconographicRole": "EUCHARISTIC_THEME_NOT_LITERAL_JOHN6",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-28",
@@ -2442,7 +2800,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Sending Out of the Twelve Disciples",
+        "selectedArtist": "Anonymous North Netherlandish",
+        "iconographicRole": "GOSPEL_EXACT_OR_PARALLEL_MISSION",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-29",
@@ -2489,7 +2858,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Christ Healing the Paralytic — AI visual draft after Johannes Wierix",
+        "selectedArtist": "AI-derived after Johannes Wierix",
+        "iconographicRole": "GOSPEL_SUBJECT_REINTERPRETED",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-30",
@@ -2536,7 +2916,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Jesus Restoring to Health Peter's Wife's Mother",
+        "selectedArtist": "John Bridges",
+        "iconographicRole": "GOSPEL_EPISODE",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-05-31",
@@ -2601,7 +2992,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Trinity",
+        "selectedArtist": "Laurent Girardin",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-06-04",
@@ -2671,7 +3073,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Virgin Adoring the Host",
+        "selectedArtist": "Jean-Auguste-Dominique Ingres",
+        "iconographicRole": "EUCHARISTIC_FEAST_THEME",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-06-12",
@@ -2744,7 +3157,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Lance Thrust",
+        "selectedArtist": "Anthony van Dyck",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-06-24",
@@ -2799,7 +3223,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Birth of Saint John the Baptist",
+        "selectedArtist": "Andrea Sacchi",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-06-29",
@@ -2913,7 +3348,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Saints Peter and Paul",
+        "selectedArtist": "Bartolomeo Manfredi",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-07-01",
@@ -2970,7 +3416,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Lance Thrust",
+        "selectedArtist": "Anthony van Dyck",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-07-02",
@@ -3200,7 +3657,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Assumption of the Virgin",
+        "selectedArtist": "Peter Paul Rubens",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-08-22",
@@ -3525,7 +3993,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Archangel Michael Defeating Satan",
+        "selectedArtist": "Guido Reni",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-10-07",
@@ -3621,7 +4100,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Salvator Mundi",
+        "selectedArtist": "Ambrosius Benson",
+        "iconographicRole": "CHRIST_THE_KING_FEAST_ICONOGRAPHY",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-10-28",
@@ -3706,7 +4196,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Paradise",
+        "selectedArtist": "Carlo Saraceni",
+        "iconographicRole": "ALL_SAINTS_FEAST_ICONOGRAPHY",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-11-02",
@@ -3758,7 +4259,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "An Angel Frees the Souls of Purgatory",
+        "selectedArtist": "Ludovico Carracci",
+        "iconographicRole": "ALL_SOULS_FEAST_ICONOGRAPHY",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-11-09",
@@ -3834,7 +4346,18 @@
         "productionApproved": false
       },
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
-      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
+      "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Great Day of His Wrath",
+        "selectedArtist": "John Martin",
+        "iconographicRole": "APOCALYPTIC_GOSPEL_THEME",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-11-30",
@@ -3939,7 +4462,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Family of Christ",
+        "selectedArtist": "Michael Willmann",
+        "iconographicRole": "ROOT_OF_JESSE_EPISTLE_THEME",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-12-08",
@@ -4050,7 +4584,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Immaculate Conception",
+        "selectedArtist": "Peter Paul Rubens",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": true,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-12-13",
@@ -4105,7 +4650,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Saint John the Baptist Interrogated about Christ",
+        "selectedArtist": "Bernardo Strozzi",
+        "iconographicRole": "GOSPEL_SUBJECT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-12-20",
@@ -4160,7 +4716,18 @@
         "productionApproved": false
       },
       "triageLane": "OLDER_ARTWORK_APPROVED_EXACT_FEAST_ROLE_NOT_RECONCILED",
-      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images"
+      "next": "Re-check prior approved painting against exact feast or Gospel subject; do not promote merely contextual images",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "La Prédication de saint Jean Baptiste",
+        "selectedArtist": "Giovanni Battista Gaulli",
+        "iconographicRole": "GOSPEL_SUBJECT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": false,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-12-21",
@@ -4282,7 +4849,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "The Dream of Saint Joseph",
+        "selectedArtist": "Philippe de Champaigne",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": true,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-12-25",
@@ -4364,7 +4942,18 @@
         "productionApproved": false
       },
       "triageLane": "STRICT_EDITORIAL_MATCH_MEDIA_HOLD",
-      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates"
+      "next": "Complete exact-source photo identity/rights, 1962 Proper, crop and app handset release gates",
+      "latestClassIDateSelection": {
+        "asOf": "2026-10-20",
+        "selectedArtworkTitle": "Adoration of the Shepherds",
+        "selectedArtist": "Carlo Dolci",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "knownCataloguePreview": false,
+        "sourceObjectDocumented": true,
+        "sourcePhotoBlocked": false,
+        "productionCertified": false
+      }
     },
     {
       "date": "2026-12-26",
@@ -4446,5 +5035,20 @@
       "triageLane": "NO_OLDER_APPROVED_MATCH_EXISTING_CORPUS_SEARCH",
       "next": "Reuse/reconcile frozen library first, then shortlist existing unrejected originals with exact feast or Gospel identity"
     }
-  ]
+  ],
+  "overlayPrecedence": {
+    "ClassI": {
+      "latestEditorialSource": "data/research/sacred-art-class-i-53-current-date-decisions-overlay-20261020.v1.json",
+      "asOf": "2026-10-20",
+      "all53DatesHaveEditorialArtworkOrAcceptedVigilIllustrations": true,
+      "supersedesPriorStrictPlacementForChoiceSelectionButNotUnderlyingScores": true,
+      "notPublicationCleared": true
+    },
+    "MajorClassII": {
+      "latestStrictComparison": "2026-10-17",
+      "thirteenStrictOf24": true,
+      "currentAdditionalDateSpecificUserOverlayNotReconciled": true
+    },
+    "noOverwriteToHistoricApprovedOrRejectedArtworkIDs": true
+  }
 }
