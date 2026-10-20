@@ -1,0 +1,62 @@
+{
+  "schema": "AO_UNATTENDED_RESEARCH_COORDINATION_LEDGER_V1",
+  "updated": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "role": "Progress and resume pointers only; original answer registries remain canonical",
+  "instruction": "SAVE_SELECT_RESEARCH_SAVE_CONTINUE; internal batch sizes do not stop execution",
+  "completionCriteria": "All eligible existing family answer claims source-collated or explicitly blocked/deferred; human certification remains separate",
+  "owners": {
+    "spx": {
+      "branch": "formation/1457-pius-x-conversation-evidence",
+      "path": "data/learn/research/"
+    },
+    "chanoine": {
+      "branch": "research/chanoine-cse-source-dialogue-20261019",
+      "path": "research/chanoine/"
+    }
+  },
+  "completed": [
+    {
+      "batch": "B01",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b01-claim-deltas-20261021.v1.json",
+      "commit": "238bb4635bce666cedc591ef80452a38b8be8f3c",
+      "families": 4,
+      "status": "HUMAN_CERTIFICATION_REVIEW_PENDING",
+      "mirrorsFlagged": 3
+    },
+    {
+      "batch": "B01",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b01-aq02-claim-delta-20261021.v1.json",
+      "commit": "bb02e2f710a1b823788fc730bec7d3fd4586818e",
+      "families": 1,
+      "status": "FR_DELTA_PREPARED_EN_ORIGINAL_INACCESSIBLE"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "CHA-MAIN-AQ02-English-parity",
+      "reason": "Original 360 English-answer library file inaccessible; do not reconstruct",
+      "retryWhen": "Original asset available with expected SHA256"
+    },
+    {
+      "id": "NIGHTLY_CLOUD_SCHEDULE",
+      "reason": "automation_update cloud creation rejected: executionEnvironment expected local. No schedule exists.",
+      "requestedTime": "01:00 Indian/Mauritius (UTC+4), default chosen because user specified nightly without hour",
+      "retryWhen": "Cloud scheduling capability becomes available; do not silently substitute local execution"
+    }
+  ],
+  "active": {
+    "batch": "B02",
+    "task": "Select accessible unresolved Chanoine CSE specialist/source questions; preserve full bilingual source owners"
+  },
+  "next": [
+    "Strengthen accessible bilingual Chanoine CSE families from existing specialist queue",
+    "Extend source-exact SPX claim/voice records for unresolved first-release material after checking prior audit coverage"
+  ],
+  "deduplication": "(kb, canonical familyId, turn, claim, source locator); retain duplicated conversation contexts, synchronize approved answer variants",
+  "approvalsChanged": 0,
+  "publication": false,
+  "denzingerMandatory": false
+}
