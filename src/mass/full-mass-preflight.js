@@ -5,6 +5,7 @@ import {normalizeMassForm,MASS_FORMS} from "./session-engine.js";
 import {availableOptionalMassRites,composeOptionalMassRites} from "./full-mass-optional-rites.js";
 import {specialMassPresentation,renderSpecialMassContext} from "./full-mass-special-presentation.js";
 import {massCalendarPreflightContext,fillMassCalendarPreflight} from "./calendar-preflight-context.js";
+import {normalizeFolioExperience,experiencePrayerRoute,mayOpenFolioPrayer} from "./full-mass-folio-options.js";
 
 const LABELS=Object.freeze({
   LOW:["Low Mass","Messe basse"],
@@ -66,13 +67,16 @@ export function mountFullMassPreflight({
   getCalendarState=()=>null,
   subscribeCalendarState=null,
   onOpenCalendar=null,
+  onOpenPrayerRoute=null,
 }={}){
   if(!doc?.createElement||typeof getResolvedMass!=="function")
     throw new TypeError("Full Mass preflight requires DOM and source-owning host");
   let root=null,selected=null,explicit=false,selectedMode=null,explicitMode=false,lastDate=null,lastCelebrationKey=null,riteOverrides={},disposed=false,observer=null;
+  let folioStep="overview",experience={before:"none",after:"none",language:null},prayerOpening=false;
   const flow=()=>doc.getElementById("ao-mass-flow-v1");
   const anchor=()=>flow()?.querySelector(".aoFlowActions")??flow()?.querySelector("[data-ao-start-live]")?.parentElement;
-  const french=()=>String(language()).startsWith("fr");
+  const french=()=>String(experience.language??language()).startsWith("fr");
+  const selectedExperience=()=>normalizeFolioExperience(experience,language());
   function activeForm(){
     try{return normalizeMassForm(explicit?selected:getDefaultForm());}
     catch{return "MISSA_CANTATA_INCENSE";}
@@ -85,7 +89,9 @@ export function mountFullMassPreflight({
   function selectionFor(legacy){
     const value=resolvedMassSummary(legacy,{form:activeForm(),language:language()});
     return Object.freeze({...value,explicitlyChosenForm:explicit,
-      readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode});
+      readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
+      readerLanguage:selectedExperience().language,
+      beforeMass:selectedExperience().before,afterMass:selectedExperience().after});
   }
   function openCategory(kind){
     if(kind==="SOURCE_DATE"){onOpenSourceProper();return true;}
@@ -118,7 +124,7 @@ export function mountFullMassPreflight({
     const date=String(legacy?.date??"");
     // A fresh selected date represents a new preflight: do not silently carry
     // an override into another Mass. In-session changes remain live.
-    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;}
+    if(lastDate!==null&&date!==lastDate){selected=null;explicit=false;selectedMode=null;explicitMode=false;folioStep="overview";}
     lastDate=date;
     const celebrationKey=[date,legacy?.celebrationId??"",legacy?.requestedCelebrationId??"",
       legacy?.celebrationType??"",legacy?.exceptionalProfile??""].join("|");
@@ -179,6 +185,71 @@ export function mountFullMassPreflight({
         '<details data-full-mass-rites class="aoFullMassOptional"><summary data-full-mass-rite-summary></summary>'+
         '<p data-full-mass-rite-intro></p><div data-full-mass-rite-list></div></details>'+
         '<p data-full-mass-note></p>';  
+
+      // One source-owned Folio; preserve existing selectable controls by
+      // moving their actual DOM nodes into the guided stages. No shadow form.
+      const folio=doc.createElement("div");
+      folio.className="aoGuidedMassFolio";
+      folio.innerHTML=
+        '<aside class="aoMassFolioIdentity"><small data-folio-date></small>'+
+        '<p class="aoMassFolioKicker" data-folio-kind></p><h2 data-folio-celebration></h2>'+
+        '<p class="aoMassFolioSeason" data-folio-season></p>'+
+        '<dl class="aoMassFolioSelections"><div><dt data-folio-label-ceremony></dt><dd data-folio-value-ceremony></dd></div>'+
+        '<div><dt data-folio-label-reader></dt><dd data-folio-value-reader></dd></div></dl>'+
+        '<details data-folio-calendar-details><summary data-folio-context-summary></summary>'+
+        '<div data-folio-technical></div></details></aside>'+
+        '<div class="aoMassFolioGuide">'+
+        '<div class="aoMassFolioGuideTop"><strong data-folio-guide-heading></strong>'+
+        '<button type="button" data-folio-overview-button data-folio-label-overview></button></div>'+
+        '<nav class="aoMassFolioStepNav" aria-label="Mass preparation">'+
+        '<button type="button" data-folio-goto="celebration">1 · <span data-folio-step-celebration></span></button>'+
+        '<button type="button" data-folio-goto="ceremony">2 · <span data-folio-step-ceremony></span></button>'+
+        '<button type="button" data-folio-goto="reader">3 · <span data-folio-step-reader></span></button></nav>'+
+        '<section data-folio-panel="overview" class="aoMassFolioPanel">'+
+        '<h3 data-folio-overview-heading></h3><p data-folio-overview-hint></p>'+
+        '<div class="aoMassFolioReadyLine" data-folio-overview-selections></div>'+
+        '<button type="button" data-folio-goto="celebration" class="aoMassFolioChange" data-folio-guide-start></button></section>'+
+        '<section data-folio-panel="celebration" class="aoMassFolioPanel" hidden>'+
+        '<h3 data-folio-celebration-heading></h3><p data-folio-celebration-intro></p>'+
+        '<div data-folio-celebration-controls></div></section>'+
+        '<section data-folio-panel="ceremony" class="aoMassFolioPanel" hidden>'+
+        '<h3 data-folio-ceremony-heading></h3><div data-folio-ceremony-controls></div></section>'+
+        '<section data-folio-panel="reader" class="aoMassFolioPanel" hidden>'+
+        '<h3 data-folio-reader-heading></h3><div data-folio-reader-controls></div></section>'+
+        '<section class="aoMassFolioExperience"><h3 data-folio-experience-heading></h3>'+
+        '<div class="aoMassFolioOption"><label data-folio-language-heading for="ao-folio-language"></label>'+
+        '<select id="ao-folio-language" data-folio-language><option value="en">English</option><option value="fr">Français</option></select></div>'+
+        '<fieldset class="aoMassFolioOption"><legend data-folio-before-heading></legend>'+
+        '<label><input type="radio" name="ao-folio-before" value="none" data-folio-before> <span data-folio-before-none></span></label>'+
+        '<label><input type="radio" name="ao-folio-before" value="prepare" data-folio-before> <span data-folio-before-prepare></span></label>'+
+        '<button type="button" data-folio-open-prayer="before" hidden></button></fieldset>'+
+        '<div data-folio-rites-slot></div>'+
+        '<fieldset class="aoMassFolioOption"><legend data-folio-after-heading></legend>'+
+        '<label><input type="radio" name="ao-folio-after" value="none" data-folio-after> <span data-folio-after-none></span></label>'+
+        '<label><input type="radio" name="ao-folio-after" value="thanksgiving" data-folio-after> <span data-folio-after-thanksgiving></span></label></fieldset>'+
+        '</section><div class="aoMassFolioGuideActions" data-folio-actions>'+
+        '<button type="button" data-folio-back hidden></button><button type="button" data-folio-next hidden></button></div>'+
+        '<div data-folio-host-actions></div></div>';
+      root.prepend(folio);
+      const move=(selector,slot)=>{
+        const source=root.querySelector(selector),destination=folio.querySelector(slot);
+        if(source&&destination)destination.append(source);
+      };
+      move("[data-mass-calendar-context]","[data-folio-technical]");
+      move("[data-mass-calendar-details]","[data-folio-technical]");
+      move("[data-full-mass-title]","[data-folio-celebration-controls]");
+      move("[data-full-mass-celebration]","[data-folio-celebration-controls]");
+      move("[data-full-mass-special]","[data-folio-celebration-controls]");
+      move("[data-full-mass-categories]","[data-folio-celebration-controls]");
+      move("[data-full-mass-source-slot]","[data-folio-celebration-controls]");
+      move("[data-full-mass-category-error]","[data-folio-celebration-controls]");
+      move("[data-full-mass-review]","[data-folio-celebration-controls]");
+      move("[data-full-mass-resolver]","[data-folio-celebration-controls]");
+      move("[data-full-mass-form-fieldset]","[data-folio-ceremony-controls]");
+      move("[data-full-mass-reader-fieldset]","[data-folio-reader-controls]");
+      move("[data-full-mass-rites]","[data-folio-rites-slot]");
+      move("[data-full-mass-note]","[data-folio-technical]");
+
       root.addEventListener("click",e=>{
         const calendarButton=e.target?.closest?.("[data-mass-calendar-open]");
         if(calendarButton){
@@ -209,6 +280,32 @@ export function mountFullMassPreflight({
             }});
           return;
         }
+        const stageButton=e.target?.closest?.("[data-folio-goto], [data-folio-overview-button], [data-folio-next], [data-folio-back]");
+        if(stageButton){
+          e.preventDefault();
+          if(stageButton.matches("[data-folio-overview-button]"))folioStep="overview";
+          else if(stageButton.matches("[data-folio-goto]"))folioStep=stageButton.dataset.folioGoto;
+          else if(stageButton.matches("[data-folio-back]")){
+            folioStep={celebration:"overview",ceremony:"celebration",reader:"ceremony"}[folioStep]??"overview";
+          }else{
+            folioStep={celebration:"ceremony",ceremony:"reader",reader:"overview"}[folioStep]??"overview";
+          }
+          refresh();return;
+        }
+        const prayerButton=e.target?.closest?.("[data-folio-open-prayer]");
+        if(prayerButton){
+          e.preventDefault();
+          const moment=prayerButton.dataset.folioOpenPrayer;
+          if(prayerOpening||!mayOpenFolioPrayer(moment,selectedExperience()))return;
+          const route=experiencePrayerRoute(moment);
+          prayerOpening=true;
+          const error=root.querySelector("[data-full-mass-category-error]");
+          Promise.resolve().then(()=>onOpenPrayerRoute?.(route))
+            .then(ok=>{if(ok===false||ok==null)throw Error("PRAYER_MODULE_UNAVAILABLE")})
+            .catch(reason=>{if(error){error.hidden=false;error.textContent=String(reason?.message??reason)}})
+            .finally(()=>{prayerOpening=false});
+          return;
+        }
         const button=e.target?.closest?.("[data-full-mass-category]");
         if(!button)return;
         e.preventDefault();
@@ -223,6 +320,18 @@ export function mountFullMassPreflight({
       });
       root.addEventListener("change",e=>{
         const el=e.target;
+        if(el?.matches?.("[data-folio-language]")){
+          if(["en","fr"].includes(el.value))experience.language=el.value;
+          refresh();return;
+        }
+        if(el?.matches?.("[data-folio-before]")){
+          if(["none","prepare"].includes(el.value))experience.before=el.value;
+          refresh();return;
+        }
+        if(el?.matches?.("[data-folio-after]")){
+          if(["none","thanksgiving"].includes(el.value))experience.after=el.value;
+          refresh();return;
+        }
         if(el?.matches?.("[data-full-mass-rite]")){
           const id=el.dataset.fullMassRite;
           const summary=selectionFor(getResolvedMass());
@@ -243,6 +352,59 @@ export function mountFullMassPreflight({
       target.insertAdjacentElement("beforebegin",root);
     }
     const fr=french(),summary=selectionFor(legacy),l=(en,frText)=>fr?frText:en;
+    const folio=root.querySelector(".aoGuidedMassFolio");
+    const word=(selector,en,frText)=>{
+      const node=folio?.querySelector(selector);if(node)node.textContent=l(en,frText);
+    };
+    const displayTitle=summary.actualTitle||summary.kindLabel;
+    word("[data-folio-date]",date,""+date);
+    word("[data-folio-kind]",summary.kindLabel,summary.kindLabel);
+    word("[data-folio-celebration]",displayTitle,displayTitle);
+    word("[data-folio-season]",l("Your Mass","Votre messe"),l("Your Mass","Votre messe"));
+    word("[data-folio-label-ceremony]",l("Ceremony","Cérémonie"),l("Ceremony","Cérémonie"));
+    word("[data-folio-label-reader]",l("Follow","Lecture"),l("Follow","Lecture"));
+    word("[data-folio-value-ceremony]",summary.formLabel,summary.formLabel);
+    word("[data-folio-value-reader]",summary.readerMode,summary.readerMode);
+    word("[data-folio-context-summary]","Calendar details","Détails du calendrier");
+    word("[data-folio-guide-heading]","Before Mass","Avant la messe");
+    word("[data-folio-label-overview]","Overview","Vue d’ensemble");
+    word("[data-folio-step-celebration]","Mass","Messe");
+    word("[data-folio-step-ceremony]","Ceremony","Cérémonie");
+    word("[data-folio-step-reader]","Reader","Lecture");
+    word("[data-folio-overview-heading]","Ready to begin","Prêt à commencer");
+    word("[data-folio-overview-hint]","Your usual selections are ready. Change only what is different today.",
+      "Vos choix habituels sont prêts. Ne modifiez que ce qui change aujourd’hui.");
+    word("[data-folio-overview-selections]",summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode,
+      summary.kindLabel+" · "+summary.formLabel+" · "+summary.readerMode);
+    word("[data-folio-guide-start]","Review choices","Revoir les choix");
+    word("[data-folio-celebration-heading]","Which Mass are you attending ?","Quelle messe allez-vous suivre ?");
+    word("[data-folio-celebration-intro]","Today's Mass is already selected. Change it only when a different Mass is actually celebrated.",
+      "La messe du jour est déjà sélectionnée. Changez-la seulement si une autre messe est célébrée.");
+    word("[data-folio-ceremony-heading]","How is the Mass celebrated?","Comment la messe est-elle célébrée ?");
+    word("[data-folio-reader-heading]","How would you like to follow?","Comment souhaitez-vous suivre ?");
+    word("[data-folio-experience-heading]","Your Mass experience","Votre expérience de la messe");
+    word("[data-folio-language-heading]","Language","Langue");
+    word("[data-folio-before-heading]","Before Mass","Avant la messe");
+    word("[data-folio-before-none]","Go directly to Mass","Aller directement à la messe");
+    word("[data-folio-before-prepare]","Preparation prayers","Prières de préparation");
+    word("[data-folio-after-heading]","After Mass","Après la messe");
+    word("[data-folio-after-none]","Finish after Mass","Terminer après la messe");
+    word("[data-folio-after-thanksgiving]","Thanksgiving prayers","Prières d’action de grâces");
+    word("[data-folio-open-prayer]","Open preparation prayers ↗","Ouvrir les prières de préparation ↗");
+    word("[data-folio-back]","Back","Retour");
+    word("[data-folio-next]",folioStep==="reader"?"Review Mass":"Continue",folioStep==="reader"?"Voir le résumé":"Continuer");
+    folio.querySelector("[data-folio-language]").value=summary.readerLanguage;
+    for(const item of folio.querySelectorAll("[data-folio-before]"))item.checked=item.value===summary.beforeMass;
+    for(const item of folio.querySelectorAll("[data-folio-after]"))item.checked=item.value===summary.afterMass;
+    folio.querySelector("[data-folio-open-prayer]").hidden=summary.beforeMass!=="prepare";
+    for(const section of folio.querySelectorAll("[data-folio-panel]"))section.hidden=section.dataset.folioPanel!==folioStep;
+    for(const nav of folio.querySelectorAll("[data-folio-goto]")){
+      const active=nav.dataset.folioGoto===folioStep;
+      nav.setAttribute("aria-current",active?"step":"false");
+    }
+    folio.querySelector("[data-folio-back]").hidden=folioStep==="overview";
+    folio.querySelector("[data-folio-next]").hidden=folioStep==="overview";
+
     const context=massCalendarPreflightContext(legacy,getCalendarState?.()??{},language(),{form:summary.form});
     fillMassCalendarPreflight(root.querySelector("[data-mass-calendar-context]"),context);
     const detailsLabel=root.querySelector("[data-mass-calendar-details-label]");
@@ -451,7 +613,7 @@ export function mountFullMassPreflight({
     status:()=>Object.freeze({visible:Boolean(root?.isConnected),explicitlyChosenForm:explicit,
       readerMode:activeReaderMode(),explicitlyChosenReaderMode:explicitMode,
       chosenForm:activeForm(),date:lastDate,kind:root?.dataset?.aoCelebrationKind??null,
-      optionalRiteOverrides:Object.freeze({...riteOverrides})}),
+      optionalRiteOverrides:Object.freeze({...riteOverrides}),experience:selectedExperience(),step:folioStep}),
     dispose(){disposed=true;try{unsubscribeCalendar?.()}catch{};doc.removeEventListener("change",onchange);doc.removeEventListener("click",onClick);observer?.disconnect();root?.remove();root=null;}
   });
 }
