@@ -371,7 +371,7 @@ function compactExploreItemSheet(vm){
 }
 function detailSheet(vm){
   const item=vm.selected;if(!item)return "";
-  let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet" role="dialog" aria-modal="true">';
+  let html='<div class="aoFindSheetBackdrop" data-find-close-detail><section class="aoFindSheet'+(item.kind==="CANONICAL_CUSTOM"?' aoExploreTraditionSheet':'')+'" role="dialog" aria-modal="true">';
   html+='<header><div><small>'+esc(item.eyebrow||lensLabel(vm.language,item.lens))+'</small><h2>'+esc(translatedTitle(item,vm.language)||"")+'</h2>';
   if(item.subtitle)html+='<p>'+esc(item.subtitle)+'</p>';
   html+='</div><button type="button" data-find-close-detail aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
