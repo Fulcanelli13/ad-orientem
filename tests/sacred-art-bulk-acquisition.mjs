@@ -46,7 +46,8 @@ assert.equal(statuses.filter(x=>x==="COMMONS").length,35);
 assert.equal(statuses.filter(x=>x==="CLEVELAND").length,14);
 assert.equal(statuses.filter(x=>x==="HOLD_REJECTED").length,68);
 assert.equal(statuses.filter(x=>x==="HOLD_NOT_APPROVED").length,194);
-assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,87);
+assert.equal(statuses.filter(x=>x==="HOLD_NO_AUTHORIZED_SOURCE").length,81);
+assert.equal(statuses.filter(x=>x==="HOLD_NGA_DEDICATED_BATCH").length,6);
 assert.equal(statuses.filter(x=>x===PRADO_SOURCE_HOLD).length,30);
 for(let i=0;i<intake.works.length;i++){
  const row=intake.works[i],gate=statuses[i];
