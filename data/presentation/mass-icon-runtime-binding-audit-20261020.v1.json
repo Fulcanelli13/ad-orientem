@@ -1,0 +1,1744 @@
+{
+  "schema": "ao-mass-icon-reader-binding-audit-v1",
+  "date": "2026-10-20",
+  "scope": "Static 1962 native reader icon resolver audit: no browser rendering or runtime mutation",
+  "inputRefs": [
+    "src/mass/reader-icons.js",
+    "data/mass/gesture-matrix.v1.json",
+    "data/presentation/reader-priest-actions.v1.json",
+    "data/presentation/reader-priest-positions.v1.json",
+    "assets/active/mass-v46/*.svg"
+  ],
+  "counts": {
+    "matrixGestureEvents": 142,
+    "legacyBound": 125,
+    "pending": 17,
+    "legacyBoundReferencingAliasedArt": 56,
+    "priestActions": 77,
+    "priestActionLabels": 35,
+    "priestPositionEvents": 49,
+    "distinctV46ArtworkBlobs": 47,
+    "v46FileNames": 67
+  },
+  "cautions": [
+    "Duplicate Git file hashes imply identical bytes only, not semantically equivalent ceremonies.",
+    "This is a static potential-resolution audit. Direct gesture-matrix ownership and action fallback must be evaluated by actual native runtime tests before a production claim.",
+    "Prior rejections apply to exact artwork, not every similar semantic name.",
+    "No approved icon is automatically activated by the review. Staged SVG masters remain distinct from app runtime binding."
+  ],
+  "aliasUsage": [
+    {
+      "names": [
+        "cross",
+        "gospel_crosses"
+      ],
+      "sourceGestureRecords": [
+        {
+          "cueId": "AO.SM.C0001",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0001",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0014",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0026",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0026",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0068",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0068",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0069",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0084",
+          "actor": "PRIEST",
+          "gesture": "GOSPEL_BOOK_AND_BODY_CROSSES",
+          "iconKey": "gospel_crosses"
+        },
+        {
+          "cueId": "AO.SM.C0084",
+          "actor": "FAITHFUL",
+          "gesture": "GOSPEL_SMALL_CROSSES",
+          "iconKey": "gospel_crosses"
+        },
+        {
+          "cueId": "AO.SM.C0104",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0104",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0105",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0111",
+          "actor": "PRIEST",
+          "gesture": "CROSS_WITH_PATEN",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0115",
+          "actor": "PRIEST",
+          "gesture": "CROSS_WITH_CHALICE",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0119",
+          "actor": "PRIEST",
+          "gesture": "BLESS_OFFERINGS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0148",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0148",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0152",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0164",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0165",
+          "actor": "PRIEST",
+          "gesture": "CROSS_OVER_HOST",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0166",
+          "actor": "PRIEST",
+          "gesture": "CROSS_OVER_CHALICE",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0171",
+          "actor": "PRIEST",
+          "gesture": "CROSS_OVER_HOST",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0177",
+          "actor": "PRIEST",
+          "gesture": "CROSS_OVER_CHALICE",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0184",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0185",
+          "actor": "PRIEST",
+          "gesture": "CROSS_HOST_AND_CHALICE",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0189",
+          "actor": "PRIEST",
+          "gesture": "CROSS_HOST_AND_CHALICE",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0190",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0200",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0202",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES_WITH_HOST",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0203",
+          "actor": "PRIEST",
+          "gesture": "TWO_CROSSES_WITH_HOST",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0213",
+          "actor": "PRIEST",
+          "gesture": "SIGN_WITH_PATEN",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0219",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES_WITH_PARTICLE",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0232",
+          "actor": "PRIEST",
+          "gesture": "SIGN_WITH_HOST",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0234",
+          "actor": "PRIEST",
+          "gesture": "SIGN_WITH_CHALICE",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0240",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0265",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "iconKey": "cross"
+        },
+        {
+          "cueId": "AO.SM.C0269",
+          "actor": "PRIEST",
+          "gesture": "GOSPEL_BOOK_AND_BODY_CROSSES",
+          "iconKey": "gospel_crosses"
+        },
+        {
+          "cueId": "AO.SM.C0269",
+          "actor": "FAITHFUL",
+          "gesture": "GOSPEL_SMALL_CROSSES",
+          "iconKey": "gospel_crosses"
+        }
+      ]
+    },
+    {
+      "names": [
+        "priest_kiss_altar_rich",
+        "priest_profound_bow_rich"
+      ],
+      "sourceGestureRecords": [
+        {
+          "cueId": "AO.SM.C0016",
+          "actor": "PRIEST",
+          "gesture": "PROFOUND_BOW",
+          "iconKey": "priest_profound_bow_rich"
+        },
+        {
+          "cueId": "AO.SM.C0038",
+          "actor": "PRIEST",
+          "gesture": "BODY_BOW",
+          "iconKey": "priest_profound_bow_rich"
+        },
+        {
+          "cueId": "AO.SM.C0039",
+          "actor": "PRIEST",
+          "gesture": "ALTAR_KISS",
+          "iconKey": "priest_kiss_altar_rich"
+        },
+        {
+          "cueId": "AO.SM.C0079",
+          "actor": "PRIEST",
+          "gesture": "PROFOUND_BOW",
+          "iconKey": "priest_profound_bow_rich"
+        },
+        {
+          "cueId": "AO.SM.C0129",
+          "actor": "PRIEST",
+          "gesture": "ALTAR_KISS",
+          "iconKey": "priest_kiss_altar_rich"
+        },
+        {
+          "cueId": "AO.SM.C0150",
+          "actor": "PRIEST",
+          "gesture": "PROFOUND_BOW",
+          "iconKey": "priest_profound_bow_rich"
+        },
+        {
+          "cueId": "AO.SM.C0151",
+          "actor": "PRIEST",
+          "gesture": "ALTAR_KISS",
+          "iconKey": "priest_kiss_altar_rich"
+        },
+        {
+          "cueId": "AO.SM.C0187",
+          "actor": "PRIEST",
+          "gesture": "PROFOUND_BOW",
+          "iconKey": "priest_profound_bow_rich"
+        },
+        {
+          "cueId": "AO.SM.C0188",
+          "actor": "PRIEST",
+          "gesture": "ALTAR_KISS",
+          "iconKey": "priest_kiss_altar_rich"
+        },
+        {
+          "cueId": "AO.SM.C0262",
+          "actor": "PRIEST",
+          "gesture": "ALTAR_KISS",
+          "iconKey": "priest_kiss_altar_rich"
+        }
+      ]
+    },
+    {
+      "names": [
+        "genuflect",
+        "priest_genuflect"
+      ],
+      "sourceGestureRecords": [
+        {
+          "cueId": "AO.SM.C0096",
+          "actor": "PRIEST",
+          "gesture": "GENUFLECT",
+          "iconKey": "genuflect"
+        },
+        {
+          "cueId": "AO.SM.C0174",
+          "actor": "PRIEST",
+          "gesture": "GENUFLECT",
+          "iconKey": "genuflect"
+        },
+        {
+          "cueId": "AO.SM.C0174",
+          "actor": "PRIEST",
+          "gesture": "GENUFLECT",
+          "iconKey": "genuflect"
+        },
+        {
+          "cueId": "AO.SM.C0181",
+          "actor": "PRIEST",
+          "gesture": "GENUFLECT",
+          "iconKey": "genuflect"
+        },
+        {
+          "cueId": "AO.SM.C0181",
+          "actor": "PRIEST",
+          "gesture": "GENUFLECT",
+          "iconKey": "genuflect"
+        },
+        {
+          "cueId": "AO.SM.C0273",
+          "actor": "PRIEST",
+          "gesture": "GENUFLECT",
+          "iconKey": "genuflect"
+        },
+        {
+          "cueId": "AO.SM.C0273",
+          "actor": "FAITHFUL",
+          "gesture": "GENUFLECT",
+          "iconKey": "genuflect"
+        }
+      ]
+    }
+  ],
+  "priorityFindings": [
+    {
+      "issue": "PRIEST_GENUFLECTION",
+      "severity": "P0",
+      "labels": [
+        "GENUFLECTS"
+      ],
+      "notes": "Five source actions are intentionally hidden by override; dedicated priest-specific icon explicitly required by user. Not the faithful genuflection artwork.",
+      "recommendation": "Stage approved priest genuflection after ceremonial review; keep cue timing untouched.",
+      "events": [
+        {
+          "cue": "AO.SM.C0096",
+          "label": "GENUFLECTS",
+          "currentlyEffective": null
+        },
+        {
+          "cue": "AO.SM.C0201",
+          "label": "GENUFLECTS",
+          "currentlyEffective": null
+        },
+        {
+          "cue": "AO.SM.C0205",
+          "label": "GENUFLECTS",
+          "currentlyEffective": null
+        },
+        {
+          "cue": "AO.SM.C0215",
+          "label": "GENUFLECTS",
+          "currentlyEffective": null
+        },
+        {
+          "cue": "AO.SM.C0273",
+          "label": "GENUFLECTS",
+          "currentlyEffective": null
+        }
+      ],
+      "impactedEventCount": 5
+    },
+    {
+      "issue": "GOSPEL_TRIPLE_CROSSES_ALIAS",
+      "severity": "P0",
+      "sourceKeys": [
+        "gospel_crosses",
+        "cross"
+      ],
+      "notes": "gospel_crosses and cross SVG names contain identical Git blob bytes; three small crosses are not visually differentiated.",
+      "recommendation": "Provide distinct physical Gospel small-crosses artwork or use exact text until verified.",
+      "events": [
+        {
+          "cue": "AO.SM.C0001",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0001",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0014",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0026",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0026",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0068",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0068",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0069",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0084",
+          "actor": "PRIEST",
+          "gesture": "GOSPEL_BOOK_AND_BODY_CROSSES",
+          "key": "gospel_crosses"
+        },
+        {
+          "cue": "AO.SM.C0084",
+          "actor": "FAITHFUL",
+          "gesture": "GOSPEL_SMALL_CROSSES",
+          "key": "gospel_crosses"
+        },
+        {
+          "cue": "AO.SM.C0104",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0104",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0105",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0111",
+          "actor": "PRIEST",
+          "gesture": "CROSS_WITH_PATEN",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0115",
+          "actor": "PRIEST",
+          "gesture": "CROSS_WITH_CHALICE",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0119",
+          "actor": "PRIEST",
+          "gesture": "BLESS_OFFERINGS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0148",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0148",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0152",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0164",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0165",
+          "actor": "PRIEST",
+          "gesture": "CROSS_OVER_HOST",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0166",
+          "actor": "PRIEST",
+          "gesture": "CROSS_OVER_CHALICE",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0171",
+          "actor": "PRIEST",
+          "gesture": "CROSS_OVER_HOST",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0177",
+          "actor": "PRIEST",
+          "gesture": "CROSS_OVER_CHALICE",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0184",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0185",
+          "actor": "PRIEST",
+          "gesture": "CROSS_HOST_AND_CHALICE",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0189",
+          "actor": "PRIEST",
+          "gesture": "CROSS_HOST_AND_CHALICE",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0190",
+          "actor": "PRIEST",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0200",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0202",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES_WITH_HOST",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0203",
+          "actor": "PRIEST",
+          "gesture": "TWO_CROSSES_WITH_HOST",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0213",
+          "actor": "PRIEST",
+          "gesture": "SIGN_WITH_PATEN",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0219",
+          "actor": "PRIEST",
+          "gesture": "THREE_CROSSES_WITH_PARTICLE",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0232",
+          "actor": "PRIEST",
+          "gesture": "SIGN_WITH_HOST",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0234",
+          "actor": "PRIEST",
+          "gesture": "SIGN_WITH_CHALICE",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0240",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0265",
+          "actor": "FAITHFUL",
+          "gesture": "SIGN_OF_CROSS",
+          "key": "cross"
+        },
+        {
+          "cue": "AO.SM.C0269",
+          "actor": "PRIEST",
+          "gesture": "GOSPEL_BOOK_AND_BODY_CROSSES",
+          "key": "gospel_crosses"
+        },
+        {
+          "cue": "AO.SM.C0269",
+          "actor": "FAITHFUL",
+          "gesture": "GOSPEL_SMALL_CROSSES",
+          "key": "gospel_crosses"
+        }
+      ],
+      "impactedEventCount": 39
+    },
+    {
+      "issue": "CREDO_INTONATION_OLD_ORANS",
+      "severity": "P1",
+      "labels": [
+        "INTONES CREDO"
+      ],
+      "notes": "User assigned ao_chant to Credo; resolver still uses priest_centre_arms_rich.",
+      "recommendation": "Bind accepted modern chanting icon only when its SVG master is staged and reviewed.",
+      "events": [
+        {
+          "cue": "AO.SM.C0089",
+          "label": "INTONES CREDO",
+          "currentlyEffective": "priest_centre_arms_rich"
+        }
+      ],
+      "impactedEventCount": 1
+    },
+    {
+      "issue": "PRIEST_TURNING_POSITION",
+      "severity": "P1",
+      "labels": [
+        "TURNS TO PEOPLE",
+        "TURNS TO ALTAR"
+      ],
+      "notes": "Turns-to-people uses ambiguous priest_facing_people; turns-to-altar uses rejected priest_return_altar_rich artwork.",
+      "recommendation": "Keep station/turn text where no approved exact icon; never re-use rejected art.",
+      "events": [
+        {
+          "cue": "AO.SM.C0070",
+          "label": "TURNS TO PEOPLE",
+          "currentlyEffective": "priest_facing_people"
+        },
+        {
+          "cue": "AO.SM.C0106",
+          "label": "TURNS TO PEOPLE",
+          "currentlyEffective": "priest_facing_people"
+        },
+        {
+          "cue": "AO.SM.C0130",
+          "label": "TURNS TO PEOPLE",
+          "currentlyEffective": "priest_facing_people"
+        },
+        {
+          "cue": "AO.SM.C0131",
+          "label": "TURNS TO ALTAR",
+          "currentlyEffective": "priest_return_altar_rich"
+        },
+        {
+          "cue": "AO.SM.C0250",
+          "label": "TURNS TO PEOPLE",
+          "currentlyEffective": "priest_facing_people"
+        },
+        {
+          "cue": "AO.SM.C0251",
+          "label": "TURNS TO PEOPLE",
+          "currentlyEffective": "priest_facing_people"
+        },
+        {
+          "cue": "AO.SM.C0256",
+          "label": "TURNS TO PEOPLE",
+          "currentlyEffective": "priest_facing_people"
+        },
+        {
+          "cue": "AO.SM.C0257",
+          "label": "TURNS TO PEOPLE",
+          "currentlyEffective": "priest_facing_people"
+        },
+        {
+          "cue": "AO.SM.C0259",
+          "label": "TURNS TO PEOPLE",
+          "currentlyEffective": "priest_facing_people"
+        }
+      ],
+      "impactedEventCount": 9
+    },
+    {
+      "issue": "GOSPEL_BOOK_KISS",
+      "severity": "P1",
+      "labels": [
+        "KISSES GOSPEL"
+      ],
+      "notes": "Currently uses a Gospel-side position pictogram, not kissing the Gospel book.",
+      "recommendation": "Show brief rubric text or later approve accurate artwork.",
+      "events": [
+        {
+          "cue": "AO.SM.C0088",
+          "label": "KISSES GOSPEL",
+          "currentlyEffective": "priest_epistle_rich"
+        }
+      ],
+      "impactedEventCount": 1
+    },
+    {
+      "issue": "OFFERTORY_NOT_CONSECRATION_ELEVATION",
+      "severity": "P1",
+      "labels": [
+        "OFFERS HOST",
+        "OFFERS CHALICE"
+      ],
+      "notes": "Both map to Host/Chalice elevation imagery, which represents a distinct phase of Mass.",
+      "recommendation": "Text describing paten/chalice offering; never use consecration elevation as a proxy.",
+      "events": [
+        {
+          "cue": "AO.SM.C0110",
+          "label": "OFFERS HOST",
+          "currentlyEffective": "priest_elevate_host_rich"
+        },
+        {
+          "cue": "AO.SM.C0114",
+          "label": "OFFERS CHALICE",
+          "currentlyEffective": "priest_elevate_chalice_rich"
+        }
+      ],
+      "impactedEventCount": 2
+    },
+    {
+      "issue": "BLESSES_INCENSE_ACTOR_GESTURE",
+      "severity": "P1",
+      "labels": [
+        "BLESSES INCENSE"
+      ],
+      "notes": "Uses incensation action artwork for a blessing gesture.",
+      "recommendation": "Reuse approved blessing icon where depiction fits, else rubric text. Preserve conditional incense form.",
+      "events": [
+        {
+          "cue": "AO.SM.C0040",
+          "label": "BLESSES INCENSE",
+          "currentlyEffective": "priest_incense_altar_rich"
+        },
+        {
+          "cue": "AO.SM.C0120",
+          "label": "BLESSES INCENSE",
+          "currentlyEffective": "priest_incense_altar_rich"
+        }
+      ],
+      "impactedEventCount": 2
+    },
+    {
+      "issue": "LAVABO_ABLUTIONS_SEMANTIC_SCOPE",
+      "severity": "P1",
+      "labels": [
+        "WASHES / PURIFIES"
+      ],
+      "notes": "Single label occurs at Offertory Lavabo and post-Communion ablutions; art must distinguish ceremony or use text.",
+      "recommendation": "Keep Lavabo on hold; use approved post-Communion purification where correct.",
+      "events": [
+        {
+          "cue": "AO.SM.C0125",
+          "label": "WASHES / PURIFIES",
+          "currentlyEffective": "lavabo"
+        },
+        {
+          "cue": "AO.SM.C0247",
+          "label": "WASHES / PURIFIES",
+          "currentlyEffective": "lavabo"
+        },
+        {
+          "cue": "AO.SM.C0248",
+          "label": "WASHES / PURIFIES",
+          "currentlyEffective": "lavabo"
+        }
+      ],
+      "impactedEventCount": 3
+    },
+    {
+      "issue": "HEAD_BOW_VISUAL_PENDING",
+      "severity": "P2",
+      "labels": [
+        "BOWS HEAD"
+      ],
+      "notes": "Existing rejected head-bow artwork suppressed; user expressed preference for accepted Adoration icon. Visual reuse requires final mapping decision, not a rubrical change.",
+      "recommendation": "Where preferred reuse Adoration art with separate textual degree of inclination.",
+      "events": [],
+      "impactedEventCount": 0
+    },
+    {
+      "issue": "PRIEST_SILENT_VOICE_CANDIDATE",
+      "severity": "P2",
+      "sourceKeys": [
+        "priest_silent"
+      ],
+      "notes": "A priest-silent image was rejected in a survey; exact identity of runtime priest_silent donor vs rejected image requires hash reconciliation.",
+      "recommendation": "Do not equate voices or reassign without exact identity; text/neutral rail if necessary.",
+      "events": [],
+      "impactedEventCount": 0
+    },
+    {
+      "issue": "PRIEST_AT_FOOT_POSITION",
+      "severity": "P1",
+      "stationKeys": [
+        "FOOT_CENTER"
+      ],
+      "notes": "Current station uses priest_foot artwork rejected for that slot.",
+      "recommendation": "Text or later selected exact position; no new generic illustration unless beneficial.",
+      "events": [
+        {
+          "cue": "AO.SM.C0001",
+          "station": "FOOT_CENTER"
+        }
+      ],
+      "impactedEventCount": 1
+    },
+    {
+      "issue": "PRIEST_ALTAR_CENTRE_POSITION",
+      "severity": "P2",
+      "stationKeys": [
+        "ALTAR_CENTER"
+      ],
+      "notes": "New ao_at_altar_centre was selected, but original modern SVG master has not been imported into GitHub.",
+      "recommendation": "Stage and verify before changing position key.",
+      "events": [
+        {
+          "cue": "AO.SM.C0038",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0040",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0053",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0277",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0070",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0071",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0079",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0081",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0089",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0279",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0106",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0107",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0114",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0120",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0121",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0128",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0130",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0131",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0235",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0238",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0242",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0247",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0251",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0252",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0257",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0261",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0263",
+          "station": "ALTAR_CENTER"
+        },
+        {
+          "cue": "AO.SM.C0265",
+          "station": "ALTAR_CENTER"
+        }
+      ],
+      "impactedEventCount": 28
+    }
+  ],
+  "priestActions": [
+    {
+      "cueId": "AO.SM.C0016",
+      "label": "PROFOUND BOW",
+      "condition": null,
+      "rawMappedKey": "priest_profound_bow_rich",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0017",
+      "label": "STRIKES BREAST",
+      "condition": null,
+      "rawMappedKey": "breast_strike",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "breast_strike",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0037",
+      "label": "ASCENDS ALTAR",
+      "condition": null,
+      "rawMappedKey": "priest_ascending_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_ascending_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0039",
+      "label": "KISSES ALTAR",
+      "condition": null,
+      "rawMappedKey": "priest_kiss_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_kiss_altar_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0040",
+      "label": "BLESSES INCENSE",
+      "condition": "INCENSE_ENABLED",
+      "rawMappedKey": "priest_incense_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_incense_altar_rich",
+      "detectedIssueCodes": [
+        "BLESSES_INCENSE_ACTOR_GESTURE"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0041",
+      "label": "INCENSES ALTAR",
+      "condition": "INCENSE_ENABLED",
+      "rawMappedKey": "priest_incense_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_incense_altar_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0053",
+      "label": "INTONES GLORIA",
+      "condition": null,
+      "rawMappedKey": "priest_centre_arms_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_centre_arms_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0070",
+      "label": "TURNS TO PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_facing_people",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_facing_people",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0071",
+      "label": "TURNS TO MISSAL",
+      "condition": null,
+      "rawMappedKey": "priest_epistle_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_gospel_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0072",
+      "label": "TURNS TO MISSAL",
+      "condition": null,
+      "rawMappedKey": "priest_epistle_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_gospel_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0075",
+      "label": "READS EPISTLE",
+      "condition": null,
+      "rawMappedKey": "priest_epistle_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_gospel_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0084",
+      "label": "SIGNS BOOK",
+      "condition": null,
+      "rawMappedKey": "gospel_crosses",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "gospel_crosses",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0086",
+      "label": "PROCLAIMS GOSPEL",
+      "condition": null,
+      "rawMappedKey": "priest_gospel_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_epistle_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0088",
+      "label": "KISSES GOSPEL",
+      "condition": null,
+      "rawMappedKey": "priest_gospel_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_epistle_rich",
+      "detectedIssueCodes": [
+        "GOSPEL_BOOK_KISS"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0089",
+      "label": "INTONES CREDO",
+      "condition": null,
+      "rawMappedKey": "priest_centre_arms_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_centre_arms_rich",
+      "detectedIssueCodes": [
+        "CREDO_INTONATION_OLD_ORANS"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0096",
+      "label": "GENUFLECTS",
+      "condition": null,
+      "rawMappedKey": "priest_genuflect",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": [
+        "PRIEST_GENUFLECTION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0106",
+      "label": "TURNS TO PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_facing_people",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_facing_people",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0110",
+      "label": "OFFERS HOST",
+      "condition": null,
+      "rawMappedKey": "priest_elevate_host_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_elevate_host_rich",
+      "detectedIssueCodes": [
+        "OFFERTORY_NOT_CONSECRATION_ELEVATION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0111",
+      "label": "SIGNS WITH PATEN",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0114",
+      "label": "OFFERS CHALICE",
+      "condition": null,
+      "rawMappedKey": "priest_elevate_chalice_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_elevate_chalice_rich",
+      "detectedIssueCodes": [
+        "OFFERTORY_NOT_CONSECRATION_ELEVATION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0116",
+      "label": "PROFOUND BOW",
+      "condition": null,
+      "rawMappedKey": "priest_profound_bow_rich",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0120",
+      "label": "BLESSES INCENSE",
+      "condition": "INCENSE_ENABLED",
+      "rawMappedKey": "priest_incense_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_incense_altar_rich",
+      "detectedIssueCodes": [
+        "BLESSES_INCENSE_ACTOR_GESTURE"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0121",
+      "label": "INCENSES ALTAR",
+      "condition": "INCENSE_ENABLED",
+      "rawMappedKey": "priest_incense_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_incense_altar_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0122",
+      "label": "INCENSES ALTAR",
+      "condition": "INCENSE_ENABLED",
+      "rawMappedKey": "priest_incense_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_incense_altar_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0124",
+      "label": "RECEIVES INCENSE",
+      "condition": "INCENSE_ENABLED",
+      "rawMappedKey": "priest_incense_people_rich",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0125",
+      "label": "WASHES / PURIFIES",
+      "condition": null,
+      "rawMappedKey": "lavabo",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "lavabo",
+      "detectedIssueCodes": [
+        "LAVABO_ABLUTIONS_SEMANTIC_SCOPE"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0129",
+      "label": "KISSES ALTAR",
+      "condition": null,
+      "rawMappedKey": "priest_kiss_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_kiss_altar_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0130",
+      "label": "TURNS TO PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_facing_people",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_facing_people",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0131",
+      "label": "TURNS TO ALTAR",
+      "condition": null,
+      "rawMappedKey": "priest_return_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_return_altar_rich",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0150",
+      "label": "PROFOUND BOW",
+      "condition": null,
+      "rawMappedKey": "priest_profound_bow_rich",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0151",
+      "label": "KISSES ALTAR",
+      "condition": null,
+      "rawMappedKey": "priest_kiss_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_kiss_altar_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "label": "THREE CROSSES",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "label": "THREE CROSSES",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "label": "SIGNS HOST",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "label": "SIGNS CHALICE",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "label": "SIGNS HOST",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "label": "ELEVATES HOST",
+      "condition": null,
+      "rawMappedKey": "priest_elevation",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_elevation",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "label": "SIGNS CHALICE",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0181",
+      "label": "ELEVATES CHALICE",
+      "condition": null,
+      "rawMappedKey": "priest_elevate_chalice_rich",
+      "reviewOverride": "priest_elevate_chalice_rich",
+      "effectiveCandidate": "priest_elevate_chalice_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "label": "THREE CROSSES",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "label": "SIGNS HOST",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "label": "PROFOUND BOW",
+      "condition": null,
+      "rawMappedKey": "priest_profound_bow_rich",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "label": "KISSES ALTAR",
+      "condition": null,
+      "rawMappedKey": "priest_kiss_altar_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_kiss_altar_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "label": "SIGNS HOST",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "label": "SIGNS HIMSELF",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "label": "STRIKES BREAST",
+      "condition": null,
+      "rawMappedKey": "breast_strike",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "breast_strike",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "label": "GENUFLECTS",
+      "condition": null,
+      "rawMappedKey": "priest_genuflect",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": [
+        "PRIEST_GENUFLECTION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "label": "MINOR ELEVATION",
+      "condition": null,
+      "rawMappedKey": "canon",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "canon",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "label": "GENUFLECTS",
+      "condition": null,
+      "rawMappedKey": "priest_genuflect",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": [
+        "PRIEST_GENUFLECTION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0213",
+      "label": "SIGNS HIMSELF",
+      "condition": null,
+      "rawMappedKey": "cross",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "cross",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0215",
+      "label": "GENUFLECTS",
+      "condition": null,
+      "rawMappedKey": "priest_genuflect",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": [
+        "PRIEST_GENUFLECTION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0216",
+      "label": "BREAKS HOST",
+      "condition": null,
+      "rawMappedKey": "fraction",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0221",
+      "label": "PLACES PARTICLE",
+      "condition": null,
+      "rawMappedKey": "commingling",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0222",
+      "label": "STRIKES BREAST",
+      "condition": null,
+      "rawMappedKey": "breast_strike",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "breast_strike",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0223",
+      "label": "STRIKES BREAST",
+      "condition": null,
+      "rawMappedKey": "breast_strike",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "breast_strike",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0224",
+      "label": "STRIKES BREAST",
+      "condition": null,
+      "rawMappedKey": "breast_strike",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "breast_strike",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0225",
+      "label": "PROFOUND BOW",
+      "condition": null,
+      "rawMappedKey": "priest_profound_bow_rich",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0226",
+      "label": "PROFOUND BOW",
+      "condition": null,
+      "rawMappedKey": "priest_profound_bow_rich",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0227",
+      "label": "PROFOUND BOW",
+      "condition": null,
+      "rawMappedKey": "priest_profound_bow_rich",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0229",
+      "label": "STRIKES BREAST",
+      "condition": null,
+      "rawMappedKey": "breast_strike",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "breast_strike",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0230",
+      "label": "STRIKES BREAST",
+      "condition": null,
+      "rawMappedKey": "breast_strike",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "breast_strike",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0231",
+      "label": "STRIKES BREAST",
+      "condition": null,
+      "rawMappedKey": "breast_strike",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "breast_strike",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0232",
+      "label": "RECEIVES HOST",
+      "condition": null,
+      "rawMappedKey": "communion",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0234",
+      "label": "RECEIVES CHALICE",
+      "condition": null,
+      "rawMappedKey": "chalice_elevation",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0242",
+      "label": "SHOWS SACRED HOST",
+      "condition": null,
+      "rawMappedKey": "priest_elevation",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_elevation",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0246",
+      "label": "GIVES COMMUNION",
+      "condition": null,
+      "rawMappedKey": "priest_communion_rich",
+      "reviewOverride": "priest_rail_after_rich",
+      "effectiveCandidate": "priest_rail_after_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0247",
+      "label": "WASHES / PURIFIES",
+      "condition": null,
+      "rawMappedKey": "lavabo",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "lavabo",
+      "detectedIssueCodes": [
+        "LAVABO_ABLUTIONS_SEMANTIC_SCOPE"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0248",
+      "label": "WASHES / PURIFIES",
+      "condition": null,
+      "rawMappedKey": "lavabo",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "lavabo",
+      "detectedIssueCodes": [
+        "LAVABO_ABLUTIONS_SEMANTIC_SCOPE"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0250",
+      "label": "TURNS TO PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_facing_people",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_facing_people",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0251",
+      "label": "TURNS TO PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_facing_people",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_facing_people",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0253",
+      "label": "TURNS TO MISSAL",
+      "condition": null,
+      "rawMappedKey": "priest_epistle_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_gospel_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0256",
+      "label": "TURNS TO PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_facing_people",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_facing_people",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0257",
+      "label": "TURNS TO PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_facing_people",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_facing_people",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0259",
+      "label": "TURNS TO PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_facing_people",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_facing_people",
+      "detectedIssueCodes": [
+        "PRIEST_TURNING_POSITION"
+      ]
+    },
+    {
+      "cueId": "AO.SM.C0265",
+      "label": "BLESSES PEOPLE",
+      "condition": null,
+      "rawMappedKey": "priest_blessing_rich",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "priest_blessing_rich",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0269",
+      "label": "SIGNS BOOK",
+      "condition": null,
+      "rawMappedKey": "gospel_crosses",
+      "reviewOverride": "NO_OVERRIDE",
+      "effectiveCandidate": "gospel_crosses",
+      "detectedIssueCodes": []
+    },
+    {
+      "cueId": "AO.SM.C0273",
+      "label": "GENUFLECTS",
+      "condition": null,
+      "rawMappedKey": "priest_genuflect",
+      "reviewOverride": null,
+      "effectiveCandidate": null,
+      "detectedIssueCodes": [
+        "PRIEST_GENUFLECTION"
+      ]
+    }
+  ]
+}

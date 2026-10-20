@@ -1,0 +1,1400 @@
+{
+  "schema": "ao-mass-icon-section-review-v1",
+  "version": "1.13.0",
+  "decisionDate": "2026-10-19",
+  "reviewedSection": {
+    "id": "AO.SM.M01",
+    "label": "Opening prayers at the foot of the altar",
+    "reviewScope": "opening station, In nomine Patris and faithful entering/opening posture",
+    "cueIds": [
+      "AO.SM.C0001"
+    ],
+    "status": "SECTION_1A_REVIEWED"
+  },
+  "authority": {
+    "reviewer": "user",
+    "statement": "Mass icon review — Section 1, opening prayers: A Priest at foot: reject; B Priest Sign of Cross: new; C Standing and D Kneeling: retain previously approved variants. Comments: None.",
+    "priestRubrics": "data/mass/gesture-matrix.v1.json",
+    "faithfulPostures": "data/presentation/reader-postures.v1.json",
+    "previousAssets": "assets/active/mass-v46/",
+    "currentRuntimeUnaffected": true
+  },
+  "decisions": [
+    {
+      "slot": "PRIEST_POSITION_FOOT_CENTER",
+      "semanticCueId": "AO.SM.C0001",
+      "candidate": "assets/active/mass-v46/priest_foot.svg",
+      "decision": "REJECT_FOR_SLOT",
+      "scope": "slot-specific only; do not delete donor artwork or globally reject other repurposing",
+      "comments": null
+    },
+    {
+      "slot": "PRIEST_ACTION_SIGN_OF_CROSS",
+      "semanticCueId": "AO.SM.C0001",
+      "candidate": "ao_sign_of_cross.svg",
+      "sourceArchive": "ad_orientem_21_individual_icons.zip/ad_orientem_21_icons/svg/ao_sign_of_cross.svg",
+      "sha256": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "scope": "priest action at opening Sign of Cross",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW",
+      "comments": null
+    },
+    {
+      "slot": "FAITHFUL_POSTURE_STAND",
+      "candidate": "assets/approved/live-posture/ao-reviewed-stand.svg",
+      "decision": "RETAIN_PREVIOUS_APPROVAL",
+      "condition": "entrance/procession where posture profile calls for standing",
+      "comments": null
+    },
+    {
+      "slot": "FAITHFUL_POSTURE_KNEEL",
+      "candidate": "assets/approved/live-posture/ao-reviewed-kneel.svg",
+      "decision": "RETAIN_PREVIOUS_APPROVAL",
+      "condition": "opening prayers where selected customary/posture profile calls for kneeling",
+      "comments": null
+    },
+    {
+      "slot": "PRIEST_ACTION_PROFOUND_BOW_CONFITEOR",
+      "semanticCueId": "AO.SM.C0016",
+      "candidate": "assets/review/mass-icon-candidates/ao-adoration-20261019.svg",
+      "sourceArchive": "ad_orientem_21_individual_icons.zip/ad_orientem_21_icons/svg/ao_adoration.svg",
+      "sha256": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "scope": "priest's profound bow in his Confiteor; acceptance limited to this depicted action",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW",
+      "comments": null
+    },
+    {
+      "slot": "PRIEST_ACTION_BREAST_STRIKE_CONFITEOR",
+      "semanticCueId": "AO.SM.C0017",
+      "candidate": "assets/active/mass-v46/breast_strike.svg",
+      "decision": "ACCEPT_REUSE",
+      "scope": "same semantic gesture artwork for priest and faithful while keeping separate actor-owned cues",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW",
+      "comments": null
+    },
+    {
+      "slot": "FAITHFUL_GESTURE_BREAST_STRIKE_CONFITEOR",
+      "semanticCueId": "AO.SM.C0022",
+      "candidate": "assets/active/mass-v46/breast_strike.svg",
+      "decision": "RETAIN_PREVIOUS_APPROVAL",
+      "scope": "three strikes at mea culpa in the ministers' Confiteor, with applicable customary profile",
+      "comments": null
+    },
+    {
+      "slot": "PRIEST_ASCENDS_ALTAR",
+      "semanticCueId": "AO.SM.C0037",
+      "cueRange": null,
+      "candidate": "priest_ascending_altar_steps.png",
+      "candidateId": "B",
+      "mediaType": "RASTER_STUDY",
+      "decision": "SELECTED_VISUAL_STUDY",
+      "condition": null,
+      "notes": "Do not relabel as vector; requires exact approved master before production",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_ALTAR_CENTRE",
+      "semanticCueId": "AO.SM.C0038",
+      "cueRange": null,
+      "candidate": "ao_at_altar_centre.svg",
+      "candidateId": "D",
+      "mediaType": "SVG_19OCT",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "condition": null,
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_BOW_OVER_ALTAR",
+      "semanticCueId": "AO.SM.C0038",
+      "cueRange": null,
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "HOLD",
+      "condition": null,
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_KISSES_ALTAR",
+      "semanticCueId": "AO.SM.C0039",
+      "cueRange": null,
+      "candidate": "priest_kissing_altar_silhouette.png",
+      "candidateId": "F",
+      "mediaType": "RASTER_STUDY",
+      "decision": "SELECTED_VISUAL_STUDY",
+      "condition": null,
+      "notes": "Do not relabel as vector; maintain distinct bow and altar-kiss cues",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_BLESSES_INCENSE",
+      "semanticCueId": "AO.SM.C0040",
+      "cueRange": null,
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "HOLD",
+      "condition": "INCENSE_ENABLED",
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_INCENSES_ALTAR",
+      "semanticCueId": "AO.SM.C0041",
+      "cueRange": null,
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "SEARCH_EXISTING_ASSET_BANK",
+      "condition": "INCENSE_ENABLED",
+      "notes": "Do not select K or substitute arbitrary illustration",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_POSITION_EPISTLE_SIDE",
+      "semanticCueId": "AO.SM.C0042",
+      "cueRange": null,
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "HOLD",
+      "condition": null,
+      "notes": "Protect reviewed Epistle/Gospel visual-semantic reversal",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_READS_INTROIT",
+      "semanticCueId": null,
+      "cueRange": [
+        "AO.SM.C0042",
+        "AO.SM.C0043"
+      ],
+      "candidate": null,
+      "candidateId": null,
+      "mediaType": null,
+      "decision": "HOLD",
+      "condition": null,
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "SCHOLA_CHANTS_INTROIT_KYRIE",
+      "semanticCueId": null,
+      "cueRange": [
+        "AO.SM.C0042",
+        "AO.SM.C0052"
+      ],
+      "candidate": "assets/active/mass-v46/schola.svg",
+      "candidateId": "R",
+      "mediaType": "FROZEN_BANK",
+      "decision": "ACCEPT_VISUAL_MATCH",
+      "condition": null,
+      "notes": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_INTONES_GLORIA",
+      "cueId": "AO.SM.C0053",
+      "candidateId": "B",
+      "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
+      "decision": "HOLD_AFTER_USER_REASSIGNMENT",
+      "notes": "Use new 19 October chant depiction for priest intoning Gloria. Subsequent user comment in Batch 5 redirects the priest-chant silhouette to Credo intonation. Do not assume it remains accepted for Gloria.",
+      "semanticCueId": "AO.SM.C0053",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW",
+      "priorDecision": "ACCEPT_VISUAL_MATCH",
+      "supersededBy": "PRIEST_INTONES_CREDO"
+    },
+    {
+      "slot": "PRIEST_HEAD_BOWS_GLORIA",
+      "cueRange": [
+        "AO.SM.C0058",
+        "AO.SM.C0067"
+      ],
+      "decision": "HOLD_IN_SELECTOR_WITH_USER_COMMENT",
+      "notes": "Explicit user comment: O (adoration) should be used whenever priest bows the head. O is same approved `ao_adoration.svg` previously selected for profound bow at C0016. Record broad reuse intention, not normative equivalence of profound/body/head bow or automatic runtime remapping.",
+      "semanticCueId": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "FAITHFUL_HEAD_OR_BODY_BOW_GLORIA",
+      "cueRange": [
+        "AO.SM.C0055",
+        "AO.SM.C0067"
+      ],
+      "candidate": "review_faithful_bow",
+      "decision": "REUSE_PREVIOUSLY_APPROVED",
+      "notes": "Scoped to the existing faithful customary profile; do not infer universal obligation.",
+      "semanticCueId": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_TURNS_TOWARD_PEOPLE_COLLECT",
+      "cueId": "AO.SM.C0070",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0070",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_COLLECT_HANDS_EXTENDED",
+      "cueId": "AO.SM.C0072",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0072",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_POSITION_EPISTLE_FOR_LESSON",
+      "cueId": "AO.SM.C0075",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0075",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "EPISTLE_READING_ACTION",
+      "cueId": "AO.SM.C0075",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0075",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_MUNDA_COR_MEUM_BOW",
+      "cueId": "AO.SM.C0079",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0079",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_GOSPEL_SIDE_POSITION",
+      "cueId": "AO.SM.C0082",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0082",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_PROCLAIMS_GOSPEL",
+      "cueId": "AO.SM.C0086",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0086",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_KISSES_GOSPEL_BOOK",
+      "cueId": "AO.SM.C0088",
+      "decision": "HOLD",
+      "semanticCueId": "AO.SM.C0088",
+      "cueRange": null,
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_CREDOGENUFLECT",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_TURN",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_HOST",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_PATENCROSS",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_WINEWATER",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_CHALICE",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_CHALICECROSS",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_BODYBOW",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_RAISEHANDS",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_BLESSOBLATIONS",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_INCENSE",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "BATCH5_LAVABO",
+      "decision": "HOLD",
+      "submittedChoice": "hold",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_INTONES_CREDO",
+      "cueId": "AO.SM.C0089",
+      "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
+      "priorBatch4CandidateId": "B",
+      "decision": "REASSIGN_PREVIOUS_SELECTION_TO_CREDO",
+      "userComment": "Priest chants should be for the credo intonation",
+      "notes": "Actor PRIEST; not a Schola symbol; do not change chant ownership or runtime state.",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    },
+    {
+      "slot": "PRIEST_GENUFLECTS_AT_INCARNATUS",
+      "cueId": "AO.SM.C0096",
+      "decision": "DEDICATED_PRIEST_ICON_REQUIRED",
+      "notes": "Do not reuse the faithful posture/genuflect silhouette automatically; new exact priest-specific image pending review.",
+      "runtimeActivation": "NOT_AUTHORIZED_BY_THIS_REVIEW"
+    }
+  ],
+  "rules": [
+    "Art approval and semantic cue assignment remain separate from production activation.",
+    "No modification to source-owned rubrics, posture rules, text, audio cues, or 1962 form applicability.",
+    "Do not replace frozen v4.6 master icons.",
+    "If a previously rejected physical image can serve another function, propose it there separately."
+  ],
+  "nextReview": "PROVENANCE_AND_RUNTIME_BINDING_GATES_AFTER_CANONICAL_REGISTRY",
+  "reviewedSections": [
+    {
+      "id": "AO.SM.M01",
+      "label": "Opening prayers at the foot of the altar",
+      "reviewScope": "opening station, In nomine Patris and faithful entering/opening posture",
+      "cueIds": [
+        "AO.SM.C0001"
+      ],
+      "status": "SECTION_1A_REVIEWED"
+    },
+    {
+      "id": "AO.SM.M01.CONFITEOR",
+      "label": "Confiteor at the foot of the altar",
+      "reviewScope": "priest profound bow at C0016; priest and faithful breast-strike at C0017/C0022",
+      "cueIds": [
+        "AO.SM.C0016",
+        "AO.SM.C0017",
+        "AO.SM.C0021",
+        "AO.SM.C0022"
+      ],
+      "status": "SECTION_2_REVIEWED",
+      "userStatement": "Priest profound bow: accept-A; Priest breast strike: reuse; Comments: None."
+    },
+    {
+      "id": "AO.SM.M01.ENDING_TO_M02",
+      "label": "After Confiteor through Kyrie",
+      "cueRange": [
+        "AO.SM.C0024",
+        "AO.SM.C0052"
+      ],
+      "status": "BATCH_3_REVIEWED_PARTIAL",
+      "userStatement": "Selections: {\"ascent\":\"B\",\"centre\":\"D\",\"bow\":\"hold\",\"kiss\":\"F\",\"bless\":\"hold\",\"incense\":\"search\",\"epistle\":\"hold\",\"reading\":\"hold\",\"schola\":\"R\"}; Comments: None",
+      "choices": [
+        {
+          "slot": "PRIEST_ASCENDS_ALTAR",
+          "cueId": "AO.SM.C0037",
+          "candidateId": "B",
+          "candidate": "priest_ascending_altar_steps.png",
+          "kind": "RASTER_STUDY",
+          "decision": "SELECTED_VISUAL_STUDY",
+          "notes": "Do not relabel as vector; requires exact approved master before production"
+        },
+        {
+          "slot": "PRIEST_ALTAR_CENTRE",
+          "cueId": "AO.SM.C0038",
+          "candidateId": "D",
+          "candidate": "ao_at_altar_centre.svg",
+          "kind": "SVG_19OCT",
+          "decision": "ACCEPT_VISUAL_MATCH"
+        },
+        {
+          "slot": "PRIEST_BOW_OVER_ALTAR",
+          "cueId": "AO.SM.C0038",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_KISSES_ALTAR",
+          "cueId": "AO.SM.C0039",
+          "candidateId": "F",
+          "candidate": "priest_kissing_altar_silhouette.png",
+          "kind": "RASTER_STUDY",
+          "decision": "SELECTED_VISUAL_STUDY",
+          "notes": "Do not relabel as vector; maintain distinct bow and altar-kiss cues"
+        },
+        {
+          "slot": "PRIEST_BLESSES_INCENSE",
+          "cueId": "AO.SM.C0040",
+          "decision": "HOLD",
+          "condition": "INCENSE_ENABLED"
+        },
+        {
+          "slot": "PRIEST_INCENSES_ALTAR",
+          "cueId": "AO.SM.C0041",
+          "decision": "SEARCH_EXISTING_ASSET_BANK",
+          "condition": "INCENSE_ENABLED",
+          "notes": "Do not select K or substitute arbitrary illustration"
+        },
+        {
+          "slot": "PRIEST_POSITION_EPISTLE_SIDE",
+          "cueId": "AO.SM.C0042",
+          "decision": "HOLD",
+          "notes": "Protect reviewed Epistle/Gospel visual-semantic reversal"
+        },
+        {
+          "slot": "PRIEST_READS_INTROIT",
+          "cueRange": [
+            "AO.SM.C0042",
+            "AO.SM.C0043"
+          ],
+          "decision": "HOLD"
+        },
+        {
+          "slot": "SCHOLA_CHANTS_INTROIT_KYRIE",
+          "cueRange": [
+            "AO.SM.C0042",
+            "AO.SM.C0052"
+          ],
+          "candidateId": "R",
+          "candidate": "assets/active/mass-v46/schola.svg",
+          "kind": "FROZEN_BANK",
+          "decision": "ACCEPT_VISUAL_MATCH"
+        }
+      ]
+    },
+    {
+      "id": "AO.SM.M03_TO_M07.GLORIA_TO_GOSPEL",
+      "label": "Gloria through Gospel",
+      "cueRange": [
+        "AO.SM.C0053",
+        "AO.SM.C0088"
+      ],
+      "status": "BATCH_4_REVIEWED_PARTIAL",
+      "userStatement": "Decisions: {\"gloria\":\"B\",\"priestBow\":\"hold\",\"faithfulBow\":\"reuse\",\"turn\":\"hold\",\"collect\":\"hold\",\"epistle\":\"hold\",\"reading\":\"hold\",\"munda\":\"hold\",\"gospelSide\":\"hold\",\"gospelRead\":\"hold\",\"gospelKiss\":\"hold\"}. Comments: O (adoration) should be used whenever priest bows the head",
+      "choices": [
+        {
+          "slot": "PRIEST_INTONES_GLORIA",
+          "cueId": "AO.SM.C0053",
+          "candidateId": "B",
+          "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
+          "decision": "ACCEPT_VISUAL_MATCH",
+          "notes": "Use new 19 October chant depiction for priest intoning Gloria."
+        },
+        {
+          "slot": "PRIEST_HEAD_BOWS_GLORIA",
+          "cueRange": [
+            "AO.SM.C0058",
+            "AO.SM.C0067"
+          ],
+          "decision": "HOLD_IN_SELECTOR_WITH_USER_COMMENT",
+          "notes": "Explicit user comment: O (adoration) should be used whenever priest bows the head. O is same approved `ao_adoration.svg` previously selected for profound bow at C0016. Record broad reuse intention, not normative equivalence of profound/body/head bow or automatic runtime remapping."
+        },
+        {
+          "slot": "FAITHFUL_HEAD_OR_BODY_BOW_GLORIA",
+          "cueRange": [
+            "AO.SM.C0055",
+            "AO.SM.C0067"
+          ],
+          "candidate": "review_faithful_bow",
+          "decision": "REUSE_PREVIOUSLY_APPROVED",
+          "notes": "Scoped to the existing faithful customary profile; do not infer universal obligation."
+        },
+        {
+          "slot": "PRIEST_TURNS_TOWARD_PEOPLE_COLLECT",
+          "cueId": "AO.SM.C0070",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_COLLECT_HANDS_EXTENDED",
+          "cueId": "AO.SM.C0072",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_POSITION_EPISTLE_FOR_LESSON",
+          "cueId": "AO.SM.C0075",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "EPISTLE_READING_ACTION",
+          "cueId": "AO.SM.C0075",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_MUNDA_COR_MEUM_BOW",
+          "cueId": "AO.SM.C0079",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_GOSPEL_SIDE_POSITION",
+          "cueId": "AO.SM.C0082",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_PROCLAIMS_GOSPEL",
+          "cueId": "AO.SM.C0086",
+          "decision": "HOLD"
+        },
+        {
+          "slot": "PRIEST_KISSES_GOSPEL_BOOK",
+          "cueId": "AO.SM.C0088",
+          "decision": "HOLD"
+        }
+      ]
+    },
+    {
+      "id": "AO.SM.M09_TO_M10.CREDO_OFFERTORY",
+      "label": "Credo and Offertory",
+      "cueRange": [
+        "AO.SM.C0089",
+        "AO.SM.C0129"
+      ],
+      "status": "BATCH_5_ALL_CHOICES_HELD_WITH_EXPLICIT_USER_CORRECTIONS",
+      "userStatement": "Decisions: {\"credoGenuflect\":\"hold\",\"turn\":\"hold\",\"host\":\"hold\",\"patenCross\":\"hold\",\"wineWater\":\"hold\",\"chalice\":\"hold\",\"chaliceCross\":\"hold\",\"bodyBow\":\"hold\",\"raiseHands\":\"hold\",\"blessOblations\":\"hold\",\"incense\":\"hold\",\"lavabo\":\"hold\"}. Comments: Priest chants should be for the credo intonation.... priest genuflection should have its own icon",
+      "choices": [
+        {
+          "slot": "BATCH5_CREDOGENUFLECT",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_TURN",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_HOST",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_PATENCROSS",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_WINEWATER",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_CHALICE",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_CHALICECROSS",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_BODYBOW",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_RAISEHANDS",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_BLESSOBLATIONS",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_INCENSE",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        },
+        {
+          "slot": "BATCH5_LAVABO",
+          "decision": "HOLD",
+          "submittedChoice": "hold"
+        }
+      ],
+      "corrections": [
+        {
+          "slot": "PRIEST_INTONES_CREDO",
+          "cueId": "AO.SM.C0089",
+          "candidate": "ad_orientem_21_individual_icons.zip/svg/ao_chant.svg",
+          "priorBatch4CandidateId": "B",
+          "decision": "REASSIGN_PREVIOUS_SELECTION_TO_CREDO",
+          "userComment": "Priest chants should be for the credo intonation",
+          "notes": "Actor PRIEST; not a Schola symbol; do not change chant ownership or runtime state."
+        },
+        {
+          "slot": "PRIEST_GENUFLECTS_AT_INCARNATUS",
+          "cueId": "AO.SM.C0096",
+          "decision": "DEDICATED_PRIEST_ICON_REQUIRED",
+          "notes": "Do not reuse the faithful posture/genuflect silhouette automatically; new exact priest-specific image pending review."
+        }
+      ]
+    }
+  ],
+  "lastDecisionDate": "2026-10-19",
+  "reviewedSectionStatus": "IN_PROGRESS",
+  "userArtworkPreferences": [
+    {
+      "id": "AO.ICON.19OCT.PRIEST_HEAD_BOW_ADORATION_REUSE",
+      "actor": "PRIEST",
+      "gesture": "HEAD_BOW",
+      "asset": "assets/review/mass-icon-candidates/ao-adoration-20261019.svg",
+      "sourceReviewCandidate": "O",
+      "decision": "USER_EXPLICIT_REUSE_PREFERENCE",
+      "instruction": "O (adoration) should be used whenever priest bows the head",
+      "priorUse": "PRIEST_ACTION_PROFOUND_BOW_CONFITEOR",
+      "caution": "Head bow and profound bow remain distinct rubrical gestures. Do not modify ritual data or override action ownership. No runtime activation in this draft.",
+      "commentOverridesDropdownHold": true
+    }
+  ],
+  "assetBankSurveys": [
+    {
+      "id": "AO.ICONBANK.SURVEY.B01",
+      "label": "Frozen V4 bank — posture, gesture, reader and sound cues",
+      "status": "REVIEWED_PARTIAL",
+      "recordedDate": "2026-10-19",
+      "decisions": [
+        {
+          "letter": "F",
+          "label": "Profound bow",
+          "bankId": "v4-profound",
+          "file": "assets/active/mass-v46/profound_bow.svg",
+          "action": "REPURPOSE_TO_GENERAL_BOW",
+          "userInstruction": "Use F as bow, we don't need to distinguish profound bow from bow",
+          "notes": "Visual assignment only; preserve source-owned distinctions in liturgical gesture data. Prior icon E bow has not been rejected."
+        },
+        {
+          "letter": "K",
+          "label": "You / faithful",
+          "bankId": "v4-you",
+          "action": "REJECT_ASSET",
+          "userInstruction": "Reject K",
+          "notes": "No automatic replacement and no removal of source files."
+        },
+        {
+          "letter": "N",
+          "label": "Priest silent",
+          "bankId": "v4-silent",
+          "action": "REJECT_ASSET",
+          "userInstruction": "Reject N",
+          "notes": "Actor/voice cue remains valid and may be rendered as text or replaced later; do not equate all past `priest_silent` assets by name until exact bank identity is resolved."
+        }
+      ],
+      "untouched": "All remaining Batch 1 icons retain prior decisions; L and P remain unreviewed",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B02",
+      "label": "Frozen V4 and 19 Oct priest positions/actions — 16 images",
+      "status": "PARTIAL_WITH_REPLACEMENT_REQUESTS",
+      "recordedDate": "2026-10-19",
+      "userStatement": "Reject A, C. B, D, H, I, J needs to be replaced.. next batch show me their alternatives",
+      "decisions": [
+        {
+          "letter": "A",
+          "candidate": "steps",
+          "assetOrigin": "FROZEN_V4",
+          "label": "Ascending steps",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "C",
+          "candidate": "altar",
+          "assetOrigin": "FROZEN_V4",
+          "label": "At altar",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "B",
+          "candidate": "rail",
+          "label": "Communion rail",
+          "assetOrigin": "FROZEN_V4",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        },
+        {
+          "letter": "D",
+          "candidate": "people",
+          "label": "Facing people",
+          "assetOrigin": "FROZEN_V4",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        },
+        {
+          "letter": "H",
+          "candidate": "ao_at_epistle_side",
+          "label": "At Epistle side",
+          "assetOrigin": "19_OCT_SVG",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        },
+        {
+          "letter": "I",
+          "candidate": "ao_at_gospel_side",
+          "label": "At Gospel side",
+          "assetOrigin": "19_OCT_SVG",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        },
+        {
+          "letter": "J",
+          "candidate": "ao_read",
+          "label": "Reads missal",
+          "assetOrigin": "19_OCT_SVG",
+          "decision": "REQUEST_REPLACEMENT",
+          "next": "REVIEW_ALTERNATIVES"
+        }
+      ],
+      "unmentionedPolicy": "All other Batch 2 candidates remain at their preceding approval or held state; silence does not constitute approval.",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B02.ALTERNATIVES",
+      "label": "Follow-up alternatives for Communion rail, facing people, Epistle/Gospel side, reading",
+      "status": "REVIEWED_WITH_UNASSIGNED_REPURPOSING",
+      "recordedDate": "2026-10-19",
+      "userStatement": "B and C should be repurposed.. the rest is good",
+      "decisions": [
+        {
+          "letter": "A",
+          "asset": "assets/active/mass-v46/priest_rail_after_rich.svg",
+          "target": "Communion distribution to faithful",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "ACCEPT_FOR_DISTRIBUTION_ACTION_ONLY",
+          "note": "Not a generic priest-at-Communion-rail position."
+        },
+        {
+          "letter": "B",
+          "asset": "ao_communion_give_host.svg",
+          "target": "COMMUNION DISTRIBUTION?",
+          "decision": "REPURPOSE_UNASSIGNED",
+          "semanticMatch": "DO_NOT_USE_FOR_COMMUNION_RAIL_POSITION",
+          "note": "User requests repurposing; destination not specified; retain artwork."
+        },
+        {
+          "letter": "C",
+          "asset": "ao_turn_to_people.svg",
+          "target": "FACING PEOPLE?",
+          "decision": "REPURPOSE_UNASSIGNED",
+          "semanticMatch": "DO_NOT_AUTO_ASSIGN_FACING_PEOPLE_POSITION",
+          "note": "User requests repurposing; destination not specified; retain artwork."
+        },
+        {
+          "letter": "D",
+          "asset": "assets/active/mass-v46/priest_gospel_rich.svg",
+          "target": "EPISTLE SIDE",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "KEEP_PREVIOUS_APPROVED_SEMANTIC_SWAP",
+          "note": "Original donor name is misleading; this depicts Epistle side."
+        },
+        {
+          "letter": "E",
+          "asset": "assets/active/mass-v46/priest_epistle_rich.svg",
+          "target": "GOSPEL SIDE",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "KEEP_PREVIOUS_APPROVED_SEMANTIC_SWAP",
+          "note": "Original donor name is misleading; this depicts Gospel side."
+        },
+        {
+          "letter": "F",
+          "asset": "assets/active/mass-v46/preaching.svg",
+          "target": "PREACHING / LECTERN",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "CONTEXT_LIMITED_PREACHING",
+          "note": "Not certified for reading the Missal at the altar."
+        },
+        {
+          "letter": "G",
+          "asset": "assets/active/mass-v46/priest_ambo_rich.svg",
+          "target": "PRIEST AT AMBO",
+          "decision": "ARTWORK_GOOD",
+          "semanticMatch": "CONTEXT_LIMITED_AMBO",
+          "note": "Not certified for reading the Missal at the altar."
+        }
+      ],
+      "unresolved": [
+        "An exact generic priest-at-Communion-rail position remains unresolved.",
+        "An exact priest-facing-people position remains unresolved.",
+        "A distinctive priest-reading-Missal-at-altar action remains unresolved."
+      ],
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B03",
+      "label": "Priest gestures, movements, elevation and ablutions — bank candidates A–P",
+      "status": "REVIEWED_PARTIAL",
+      "recordedDate": "2026-10-19",
+      "userStatement": "Reject E. Use C instead D. Use M instead of K... Maybe we should replace L. O is on hold...",
+      "decisions": [
+        {
+          "letter": "E",
+          "asset": "assets/active/mass-v46/priest_return_altar_rich.svg",
+          "label": "Turns back to altar",
+          "decision": "REJECT_ARTWORK",
+          "note": "Exclude this depiction from future matching; no deletion of the original file."
+        },
+        {
+          "letter": "D",
+          "asset": "assets/active/mass-v46/priest_sedilia_rising_rich.svg",
+          "label": "Rising from sedilia",
+          "decision": "REPLACE_BY_C",
+          "replacementLetter": "C",
+          "replacementAsset": "assets/active/mass-v46/priest_sedilia_rich.svg",
+          "note": "User prefers seated-priest depiction C in place of D. It does not depict the act of rising; when the motion matters, explain it with words and preserve the ceremonial state."
+        },
+        {
+          "letter": "K",
+          "asset": "assets/active/mass-v46/priest_elevate_host_rich.svg",
+          "label": "Host presentation",
+          "decision": "REPLACE_BY_M",
+          "replacementLetter": "M",
+          "replacementAsset": "assets/active/mass-v46/priest_elevation.svg",
+          "note": "User prefers Host-elevation icon M. Do not silently equate the distinct Offertory presentation of the unconsecrated Host with elevation of the consecrated Host or change the liturgical cue engine."
+        },
+        {
+          "letter": "L",
+          "asset": "assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+          "label": "Elevates chalice",
+          "decision": "POSSIBLE_REPLACEMENT",
+          "note": "User said 'Maybe we should replace L.' It remains available pending comparison; not rejected."
+        },
+        {
+          "letter": "O",
+          "asset": "assets/active/mass-v46/lavabo.svg",
+          "label": "Lavabo / handwashing",
+          "decision": "HOLD",
+          "note": "No approval/rejection or repurposing inferred."
+        }
+      ],
+      "unmentionedPolicy": "Every other Batch 3 image retains its previous state, without new approval or rejection. C and M are preferred artwork in place of D/K respectively, not new global rubrical permissions.",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B05",
+      "label": "Special rites, Communion and remaining bank icons",
+      "status": "REVIEWED_PARTIAL",
+      "recordedDate": "2026-10-19",
+      "userStatement": "Reject A, B, C, D. N is not low voice, its actually priest talking out loud... O is really looking low resolution next...",
+      "decisions": [
+        {
+          "letter": "A",
+          "key": "ea_palm_sunday_distribution",
+          "sha256": "332d2192d7dc05a96e2eea3692a00e96c97ab78313788032e3c039d77aa0689e",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "B",
+          "key": "ea_holy_thursday_mandatum",
+          "sha256": "533d0e025f78abafa3724fe0644c9e865de30bd5a5d727b251f0c7c7021ecdc5",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "C",
+          "key": "ea_corpus_christi_procession",
+          "sha256": "80c0e8c0fbd4bdbe8a370e8872d8f64a657964a01c613be1ddf2974441cd7651",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "D",
+          "key": "ea_requiem_absolution",
+          "sha256": "de66f57d6643b719f6ed81786a884478241e698fd949077c6873436353fe97f0",
+          "decision": "REJECT_ARTWORK"
+        },
+        {
+          "letter": "N",
+          "key": "low",
+          "source": "v4css",
+          "sha256": "f3e08e9a206346149baa19c31d94afb1f5fa7217c4b33e0d8cebc5814c1e55e1",
+          "decision": "REPURPOSE_AS_AUDIBLE_PRIEST_SPEECH",
+          "userComment": "N is not low voice, its actually priest talking out loud",
+          "semantic": "PRIEST_AUDIBLE",
+          "note": "Do not use for quiet/silent prayer; unrelated Batch 1 'Priest silent' remains rejected. Asset must not control voice timing."
+        },
+        {
+          "letter": "O",
+          "key": "info",
+          "source": "v4css",
+          "sha256": "1d0a4ae2ed6065e7a36957f1b2e133e54ce9ade342aec6bd2edd4a256ff68126",
+          "decision": "REDESIGN_FOR_RESOLUTION",
+          "userComment": "O is really looking low resolution",
+          "note": "Existing control remains available pending higher-quality vector; do not treat as an approved replacement."
+        }
+      ],
+      "unmentionedPolicy": "All other Batch 5 icons retain their previous status; no approval inferred",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B06",
+      "label": "Four special rites and remaining Mass donor variants",
+      "recordedDate": "2026-10-19",
+      "status": "PARTIALLY_REVIEWED_WITH_RESERVE_ASSETS",
+      "userStatement": "E is host elevation. F could be used as bow to altar. A,B,C,G,H are not bad per se; keep in bank but do not use, there are much better alternatives.",
+      "decisions": [
+        {
+          "letter": "A",
+          "key": "ea_ash_wednesday_imposition",
+          "semantic": "SPECIAL_RITE_ASH_WEDNESDAY",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "B",
+          "key": "ea_candlemas_distribution",
+          "semantic": "SPECIAL_RITE_CANDLEMAS",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "C",
+          "key": "ea_good_friday_veneration",
+          "semantic": "SPECIAL_RITE_GOOD_FRIDAY",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "E",
+          "key": "chalice_elevation",
+          "semantic": "HOST_ELEVATION",
+          "decision": "REPURPOSE_AS_HOST_ELEVATION",
+          "exactUserIntent": "E is host elevation",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "F",
+          "key": "priest_profound_bow_rich",
+          "semantic": "PRIEST_BOW_TO_ALTAR",
+          "decision": "PROPOSE_ALTAR_BOW_USE",
+          "exactUserIntent": "F could be used as bow to altar",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "G",
+          "key": "priest_communion_rich",
+          "semantic": "LEGACY_COMMUNION_SCENE",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        },
+        {
+          "letter": "H",
+          "key": "gospel",
+          "semantic": "MISSAL_READER_ALTERNATIVE",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "exactUserIntent": "Not bad; keep in bank, but do not use because better alternatives exist",
+          "runtimeBindingAllowed": false
+        }
+      ],
+      "untouched": "D and I–P retain their prior states; no new approvals. This does not overturn previously explicit user rejections of other physical artworks.",
+      "note": "V4 donor key chalice_elevation was previously identified as an image depicting the Host, not the chalice. F donor formerly suggested for altar kissing is now a proposed altar-bow visual; ritual action must remain separately identified.",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B07",
+      "label": "Historical CSS legacy donor alternatives A–P",
+      "status": "ALL_SIXTEEN_REJECTED_PERMANENT_EXCLUSION",
+      "recordedDate": "2026-10-19",
+      "userStatement": "reject all that shit. i never ever want to see them again",
+      "decisions": [
+        {
+          "letter": "A",
+          "key": "--icon-stand",
+          "sha256": "7842dc479c5c06315b86eb520eba4a77e195e8c64e584f4d9715502e95fd4f30",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "B",
+          "key": "--icon-kneel",
+          "sha256": "5fb7ce8c54bfd9465598e4782c070e81e23af13e3ce96d0c2a1c59e74cace252",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "C",
+          "key": "--icon-sit",
+          "sha256": "4af736f7121861446a7c0d3a0eb8f906f0ec8c57e0c9d48b9666c04056bd5597",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "D",
+          "key": "--icon-bow",
+          "sha256": "efb91ad0192ae7521885c6483614a693d137eb6bcae71bf52be318c013f6cb90",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "E",
+          "key": "--icon-genuflect",
+          "sha256": "24e4e0fac1ac6555cac2cc8161fe4cc715c927b9dadd5029711afef0bb6d6598",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "F",
+          "key": "--icon-cross",
+          "sha256": "3d55d381d8474144e5c008d89ffd6947b1e3b5b55342453d79236a1f1daa1990",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "G",
+          "key": "--icon-response",
+          "sha256": "b05a65b7923eb8f49177be24cd5b54dd53ec49baa4f9a3234ee6108949742e42",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "H",
+          "key": "--icon-audible",
+          "sha256": "66785d518e22a1c52039dbd4f34bba429c1d93966eff20b8c7e00bd7b83a2b6e",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "I",
+          "key": "--icon-low",
+          "sha256": "dabb523226b1db3c6812550e8dbf8597201a128332c887b8211ce6e0ba1dcd06",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "J",
+          "key": "--icon-foot",
+          "sha256": "1752ea53218afa38b8d61984ad2a783c6f7299d029f14d7aa80182dec9f398be",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "K",
+          "key": "--icon-altar",
+          "sha256": "c2631c7f21a6fbef62b681b06c06515813509e397b3b9c0fe5f27d085fdae8ff",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "L",
+          "key": "--icon-gospel",
+          "sha256": "1d1d1795e993d8c4092d909145bf1d47ff11700f470293d1bf8161f2bf2ff0e4",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "M",
+          "key": "--icon-epistle",
+          "sha256": "b940045d3328708e78b3c7f99ee7469c7e56b4a77adcbe53ca38baa70ab30a0b",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "N",
+          "key": "--icon-people",
+          "sha256": "5366fb0eebae01d4d9bbbcc18bd9b342662123eb836968e4484016f8b46294eb",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "O",
+          "key": "--icon-rail",
+          "sha256": "9dc7c22f7cfad5f351eec3a763eabd8cf298a4beb577be1fde359bb01f4da8da",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        },
+        {
+          "letter": "P",
+          "key": "--icon-sedilia",
+          "sha256": "a48750e23870736bdbd2d9f94a5030c086fbb52066d638d2d5b27bacb0562af3",
+          "decision": "REJECT_ARTWORK",
+          "excludeFromFutureReview": true
+        }
+      ],
+      "exclusionRegistry": "data/presentation/mass-icon-rejected-legacy-artwork-20261019.v1.json",
+      "runtimeMutationAllowed": false
+    },
+    {
+      "id": "AO.ICONBANK.SURVEY.B08",
+      "label": "Modern vector studies A-P",
+      "status": "USER_REVIEW_COMPLETE",
+      "date": "2026-10-19",
+      "userStatement": "A, G and J can be kept in asset bank but should not be used anywhere. Keep K L and discard O P. The rest should be kept and used; for the doubles we will eventually compare them side by side on the final rounds.",
+      "sourceManifest": "ad_orientem_asset_bank_survey_batch08_16_manifest.json",
+      "decisions": [
+        {
+          "letter": "A",
+          "key": "ao_receive_host",
+          "sha256": "d51ee393d53168cbcef087a6e069a86c1260b5a84d71ce26d1a4a217d7a51d29",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "note": "Keep archived but exclude from automatic app bindings and new reviews"
+        },
+        {
+          "letter": "B",
+          "key": "ao_pray_audible",
+          "sha256": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "C",
+          "key": "ao_pray_silent",
+          "sha256": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "D",
+          "key": "ao_incensation",
+          "sha256": "5c8f30bffad11e645816c82154a92e8b5cc54b5a94c3c62e2921a11251ff34f6",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "E",
+          "key": "ao_blessing",
+          "sha256": "7b9666029a140671ff254325f527cb251e8d381e01601ab47de446a963c38953",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "F",
+          "key": "ao_place_on_altar",
+          "sha256": "38ad2c6f3cb317052b58116435def64664d6e206b5e1572828ab215733e62db4",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "G",
+          "key": "ao_elevation_host",
+          "sha256": "39d5083d36ea0632580d856ec49ed007b7f64a8558f0b70217fb6ffd58577a9a",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "note": "Keep archived but exclude from automatic app bindings and new reviews"
+        },
+        {
+          "letter": "H",
+          "key": "ao_elevation_chalice",
+          "sha256": "b0916c29748ca983200424db968cc5b9110a3ed2bcf610be8a3a4f7976f28d08",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "I",
+          "key": "ao_drink_chalice",
+          "sha256": "91b7c5ca554826cd81f75afca2572a6e43a22c12cb6c0ce25b6b37d8d42d245a",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "J",
+          "key": "ao_communion_give_chalice",
+          "sha256": "89b8ebb2fb2b15aa24b3531a35d904de0e78896c6cd033afceb91c2875463a5d",
+          "decision": "RETAIN_IN_BANK_NOT_FOR_ACTIVE_USE",
+          "note": "Keep archived but exclude from automatic app bindings and new reviews"
+        },
+        {
+          "letter": "K",
+          "key": "ao_purify_fingers",
+          "sha256": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Preferred purification vector over O/P; include in later duplicate head-to-head review only if needed"
+        },
+        {
+          "letter": "L",
+          "key": "ao_purify_chalice",
+          "sha256": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Preferred purification vector over O/P; include in later duplicate head-to-head review only if needed"
+        },
+        {
+          "letter": "M",
+          "key": "ea_priest_fraction_host",
+          "sha256": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "N",
+          "key": "ea_priest_commingling",
+          "sha256": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa",
+          "decision": "APPROVE_FOR_POTENTIAL_ACTIVE_USE",
+          "note": "Final cue applicability still requires the correct actor and rubric; duplicated functions compared in final pass"
+        },
+        {
+          "letter": "O",
+          "key": "ea_priest_purifies_fingers",
+          "sha256": "d3f03b4ecdf69084d43f47fa1de697ed837448d6a9897800acb9aeff11c53dec",
+          "decision": "REJECT_ARTWORK",
+          "note": "Exclude exact physical artwork from review and app, retain source for provenance"
+        },
+        {
+          "letter": "P",
+          "key": "ea_priest_purifies_chalice",
+          "sha256": "12188d3484476c21046d28de7de64a5bef3277fc50139695c9cdfa30c988a59b",
+          "decision": "REJECT_ARTWORK",
+          "note": "Exclude exact physical artwork from review and app, retain source for provenance"
+        }
+      ],
+      "runtimeMutationAllowed": false
+    }
+  ],
+  "finalComparisonReviews": [
+    {
+      "id": "AO.ICONBANK.FINAL_COMPARISON.01",
+      "date": "2026-10-19",
+      "reviewedIcons": 16,
+      "pairs": 8,
+      "userStatement": "well i think they can all stay as they are all depicting very distinct things",
+      "decision": "RETAIN_ALL_DISTINCT",
+      "notes": "Retaining both in a pair is not permission to map both to the same ritual cue. Respect previous rejected/reserve-only artwork and source-owned rubrics.",
+      "items": [
+        {
+          "pair": "1",
+          "letter": "A",
+          "key": "priest_audible",
+          "topic": "Priest audible/speaking",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "1",
+          "letter": "B",
+          "key": "ao_pray_audible",
+          "topic": "Priest audible/speaking",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "2",
+          "letter": "C",
+          "key": "priest_centre_rich",
+          "topic": "Priest at altar centre",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "2",
+          "letter": "D",
+          "key": "ao_at_altar_centre",
+          "topic": "Priest at altar centre",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "3",
+          "letter": "E",
+          "key": "priest_incense_altar_rich",
+          "topic": "Incensation",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "3",
+          "letter": "F",
+          "key": "ao_incensation",
+          "topic": "Incensation",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "4",
+          "letter": "G",
+          "key": "priest_blessing_rich",
+          "topic": "Blessing",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "4",
+          "letter": "H",
+          "key": "ao_blessing",
+          "topic": "Blessing",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "5",
+          "letter": "I",
+          "key": "priest_elevate_chalice_rich",
+          "topic": "Chalice elevation",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "5",
+          "letter": "J",
+          "key": "ao_elevation_chalice",
+          "topic": "Chalice elevation",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "6",
+          "letter": "K",
+          "key": "ea_priest_communion_chalice",
+          "topic": "Priest's chalice Communion",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "6",
+          "letter": "L",
+          "key": "ao_drink_chalice",
+          "topic": "Priest's chalice Communion",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "7",
+          "letter": "M",
+          "key": "ao_adoration",
+          "topic": "Bowing toward altar",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "7",
+          "letter": "N",
+          "key": "priest_profound_bow_rich",
+          "topic": "Bowing toward altar",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "8",
+          "letter": "O",
+          "key": "priest_centre_arms_rich",
+          "topic": "Credo intonation/priest orans",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        },
+        {
+          "pair": "8",
+          "letter": "P",
+          "key": "ao_chant",
+          "topic": "Credo intonation/priest orans",
+          "decision": "RETAIN_DISTINCT_ARTWORK"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "schema": "ao-mass-icon-gesture-gap-triage-v1",
+  "version": "1.0.0",
+  "date": "2026-10-20",
+  "authority": "EDITORIAL_PROPOSAL_ONLY",
+  "source": "data/mass/gesture-matrix.v1.json",
+  "sourceCounts": {
+    "gestureEvents": 142,
+    "legacyBound": 125,
+    "legacyPending": 17
+  },
+  "summary": {
+    "REUSE": 3,
+    "TEXT": 7,
+    "REUSE_TEXT": 7,
+    "uniqueNewIconsRequiredByThese17DraftProposals": 0,
+    "note": "Editorial draft, not verified full reader coverage, not a claim all 125 existing bindings are correct."
+  },
+  "rules": [
+    "Approved icons may be reused for recurring gestures; many simple actions need words rather than unique artwork.",
+    "Faithful postures are profile-conditioned.",
+    "No new runtime binding or ceremonial-state change is authorized by this triage.",
+    "Major Host/Chalice elevations cannot stand in for the minor elevation without separate review.",
+    "Dedicated priest genuflection is an independent requirement and does not disappear merely because the 17 missing bindings can be triaged."
+  ],
+  "items": [
+    {
+      "sourceId": "GM.F.C0021.01",
+      "cueId": "AO.SM.C0021",
+      "actor": "FAITHFUL",
+      "gesture": "PROFOUND_BOW",
+      "label": "Profound bow / remain kneeling according profile",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE",
+      "proposedAsset": "approved faithful bow or kneel",
+      "editorialNote": "Profile decides profound bow vs remain kneeling; no new icon.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0023.01",
+      "cueId": "AO.SM.C0023",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain bowed / return after conclusion",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "TEXT",
+      "proposedAsset": null,
+      "editorialNote": "Remain bowed or return after conclusion; same posture, no new illustration.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0056.01",
+      "cueId": "AO.SM.C0056",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Customary bow may follow local practice; do not hard-code as universal.",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE",
+      "proposedAsset": "approved faithful bow",
+      "editorialNote": "Conditional customary practice; not universal.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0096.01",
+      "cueId": "AO.SM.C0096",
+      "actor": "FAITHFUL",
+      "gesture": "GENUFLECT",
+      "label": "Kneeling/genuflection here depends on sung/local calendar rule; Christmas and...",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE",
+      "proposedAsset": "assets/approved/live-posture/ao-reviewed-genuflect.svg",
+      "editorialNote": "Use approved faithful genuflection only under the applicable calendar/participation profile.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.P.C0117.01",
+      "cueId": "AO.SM.C0117",
+      "actor": "PRIEST",
+      "gesture": "RAISE_EYES_AND_HANDS",
+      "label": "RAISES EYES AND HANDS",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "TEXT",
+      "proposedAsset": null,
+      "editorialNote": "Raise eyes/hands in words; specific prior proposal rejected.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.P.C0155.01",
+      "cueId": "AO.SM.C0155",
+      "actor": "PRIEST",
+      "gesture": "MEMENTO_HANDS",
+      "label": "RAISES AND JOINS HANDS · BOWS HEAD",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE_TEXT",
+      "proposedAsset": "assets/active/mass-v46/hands_joined.svg",
+      "editorialNote": "Memento of living: general hands-joined artwork and words for silent intention.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.P.C0161.01",
+      "cueId": "AO.SM.C0161",
+      "actor": "PRIEST",
+      "gesture": "HANDS_OVER_OBLATIONS",
+      "label": "HANDS OVER OBLATIONS",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "TEXT",
+      "proposedAsset": null,
+      "editorialNote": "Hands over offerings: previous picture rejected; words instead.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.P.C0169.01",
+      "cueId": "AO.SM.C0169",
+      "actor": "PRIEST",
+      "gesture": "RAISE_EYES",
+      "label": "RAISES EYES",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "TEXT",
+      "proposedAsset": null,
+      "editorialNote": "Raise eyes: words are sufficient.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0173.01",
+      "cueId": "AO.SM.C0173",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE_TEXT",
+      "proposedAsset": "approved faithful bow",
+      "editorialNote": "Kneel, bow and look toward Sacred Host: existing posture and short text.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0174.01",
+      "cueId": "AO.SM.C0174",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Sacred Host",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE_TEXT",
+      "proposedAsset": "approved faithful bow",
+      "editorialNote": "Same as previous faithful cue; no new picture.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0179.01",
+      "cueId": "AO.SM.C0179",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain kneeling; bow reverently, then look up at the Chalice",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE_TEXT",
+      "proposedAsset": "approved faithful bow",
+      "editorialNote": "Remain kneeling, bow and look toward chalice: short text.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.P.C0193.01",
+      "cueId": "AO.SM.C0193",
+      "actor": "PRIEST",
+      "gesture": "MEMENTO_HANDS",
+      "label": "RAISES AND JOINS HANDS · EYES ON THE SACRAMENT",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE_TEXT",
+      "proposedAsset": "assets/active/mass-v46/hands_joined.svg",
+      "editorialNote": "Memento hand position and the Sacred Species; textual context.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.P.C0204.01",
+      "cueId": "AO.SM.C0204",
+      "actor": "PRIEST",
+      "gesture": "MINOR_ELEVATION",
+      "label": "ELEVATES HOST AND CHALICE SLIGHTLY",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "TEXT",
+      "proposedAsset": null,
+      "editorialNote": "Minor elevation is not major elevation; do not reuse full elevation icon without verification.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0235.01",
+      "cueId": "AO.SM.C0235",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain bowed / recollected",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE_TEXT",
+      "proposedAsset": "approved faithful bow",
+      "editorialNote": "Existing posture/gesture may be reused; recollection indicated in text.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0237.01",
+      "cueId": "AO.SM.C0237",
+      "actor": "FAITHFUL",
+      "gesture": "HEAD_OR_BODY_BOW",
+      "label": "Remain bowed / recollected",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "REUSE_TEXT",
+      "proposedAsset": "approved faithful bow",
+      "editorialNote": "No new gesture art required.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.F.C0242.01",
+      "cueId": "AO.SM.C0242",
+      "actor": "FAITHFUL",
+      "gesture": "REVERENT_ATTENTION",
+      "label": "Reverent attention to the Host",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "TEXT",
+      "proposedAsset": null,
+      "editorialNote": "Reverent attention to Host: words and current posture.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    },
+    {
+      "sourceId": "GM.P.C0263.01",
+      "cueId": "AO.SM.C0263",
+      "actor": "PRIEST",
+      "gesture": "RAISE_EYES_AND_HANDS",
+      "label": "RAISES EYES AND HANDS",
+      "sourceStatus": "PENDING_EXACT_MASTER",
+      "proposedTreatment": "TEXT",
+      "proposedAsset": null,
+      "editorialNote": "Raise eyes/hands: reuse text; specific drawn proposal previously rejected.",
+      "sourceRubricReviewed": false,
+      "runtimeBinding": "UNCHANGED"
+    }
+  ],
+  "independentPriorityGaps": [
+    {
+      "semantic": "PRIEST_GENUFLECTION",
+      "issue": "Dedicated priest icon explicitly requested at the Credo. Existing faithful genuflection artwork is not an automatic substitute.",
+      "status": "OPEN"
+    },
+    {
+      "semantic": "PRIEST_AT_FOOT",
+      "issue": "Existing illustration rejected for station. Text-first or exact replacement.",
+      "status": "OPEN"
+    },
+    {
+      "semantic": "PRIEST_FACING_PEOPLE",
+      "issue": "New image repurposed to another function; no replacement confirmed.",
+      "status": "OPEN"
+    },
+    {
+      "semantic": "PRIEST_AT_COMMUNION_RAIL",
+      "issue": "Distribution-specific artwork is not generic position art.",
+      "status": "OPEN"
+    },
+    {
+      "semantic": "INCENSATION_ACTOR",
+      "issue": "Differentiate priest and minister incensation and routes.",
+      "status": "OPEN"
+    },
+    {
+      "semantic": "LAVABO",
+      "issue": "Artwork remains on hold; post-Communion ablution is a separate action.",
+      "status": "OPEN"
+    },
+    {
+      "semantic": "BLURRY_INFO_CUE",
+      "issue": "Resolution problem reported in asset bank review.",
+      "status": "OPEN"
+    }
+  ]
+}

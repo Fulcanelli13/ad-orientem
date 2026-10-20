@@ -171,9 +171,18 @@ const R17_REVIEW_20261019_ACTION_OVERRIDES=Object.freeze({
   "INCENSES PEOPLE":null, // incense of congregation belongs to the minister
   "RECEIVES INCENSE":null, // candidate reused an inappropriate priest-incensing icon
   "RECEIVES HOST":null,    // old 'communion' = fraction = commingling image
-  "RECEIVES CHALICE":null, // old 'chalice_elevation' actually depicts the Host
-  "BREAKS HOST":null,
-  "PLACES PARTICLE":null,
+  // Exact modern artwork has now been recovered and hash-verified.
+  // Keep source-owned action/gesture timing and actor unchanged.
+  "RECEIVES CHALICE":"review_priest_receive_chalice",
+  "BREAKS HOST":"review_priest_fraction_host",
+  "PLACES PARTICLE":"review_priest_commingling",
+  "INTONES CREDO":"review_priest_credo_chant", // NOT a Gloria illustration
+  // Known incorrect donor illustrations: display the source rubric as text
+  // rather than portraying a different ceremony or resurrecting a rejection.
+  "OFFERS HOST":null,    // Offertory offering ≠ major Host elevation
+  "OFFERS CHALICE":null, // Offertory offering ≠ major Chalice elevation
+  "KISSES GOSPEL":null, // old position icon did not show kissing the book
+  "TURNS TO ALTAR":null, // old return-to-altar illustration was rejected
 });
 const R17_REVIEW_20261019_UNASSIGNED_ART=new Set([
   "priest_communion_rich","priest_rail_rich",

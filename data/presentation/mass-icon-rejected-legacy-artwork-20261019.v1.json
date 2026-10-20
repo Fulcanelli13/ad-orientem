@@ -1,0 +1,145 @@
+{
+  "schema": "ao-icon-artwork-exclusion-v1",
+  "version": "1.0.0",
+  "date": "2026-10-19",
+  "source": "User rejected every item in Batch 7 and explicitly requested never to see these artwork designs again.",
+  "sourceSet": "Historical 2026-09/10 prototype embedded CSS data:image URLs identified by --icon-{key}; NOT the current V4.6 approved bank artwork.",
+  "scope": "Exact physical image payload SHA-256, not a semantic action name. Do not reject approved replacement art for the same gesture.",
+  "disposition": "PERMANENTLY_REJECTED_FOR_SELECTION_AND_DISPLAY",
+  "rules": [
+    "Do not include any listed hash in future review contact sheets, candidate carousels, alternative searches, generated previews, Mass player bindings, or recommendations.",
+    "Check exact image-byte hash before presentation, even when filename/semantic name differs.",
+    "Retain existing source files for historical provenance unless deletion separately authorised; never surface their artwork to the user again.",
+    "Rejection of these legacy images does not revoke prior approvals of modern assets with different image hashes."
+  ],
+  "items": [
+    {
+      "batch": 7,
+      "letter": "A",
+      "legacyCssKey": "--icon-stand",
+      "sha256": "7842dc479c5c06315b86eb520eba4a77e195e8c64e584f4d9715502e95fd4f30",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "B",
+      "legacyCssKey": "--icon-kneel",
+      "sha256": "5fb7ce8c54bfd9465598e4782c070e81e23af13e3ce96d0c2a1c59e74cace252",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "C",
+      "legacyCssKey": "--icon-sit",
+      "sha256": "4af736f7121861446a7c0d3a0eb8f906f0ec8c57e0c9d48b9666c04056bd5597",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "D",
+      "legacyCssKey": "--icon-bow",
+      "sha256": "efb91ad0192ae7521885c6483614a693d137eb6bcae71bf52be318c013f6cb90",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "E",
+      "legacyCssKey": "--icon-genuflect",
+      "sha256": "24e4e0fac1ac6555cac2cc8161fe4cc715c927b9dadd5029711afef0bb6d6598",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "F",
+      "legacyCssKey": "--icon-cross",
+      "sha256": "3d55d381d8474144e5c008d89ffd6947b1e3b5b55342453d79236a1f1daa1990",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "G",
+      "legacyCssKey": "--icon-response",
+      "sha256": "b05a65b7923eb8f49177be24cd5b54dd53ec49baa4f9a3234ee6108949742e42",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "H",
+      "legacyCssKey": "--icon-audible",
+      "sha256": "66785d518e22a1c52039dbd4f34bba429c1d93966eff20b8c7e00bd7b83a2b6e",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "I",
+      "legacyCssKey": "--icon-low",
+      "sha256": "dabb523226b1db3c6812550e8dbf8597201a128332c887b8211ce6e0ba1dcd06",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "J",
+      "legacyCssKey": "--icon-foot",
+      "sha256": "1752ea53218afa38b8d61984ad2a783c6f7299d029f14d7aa80182dec9f398be",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "K",
+      "legacyCssKey": "--icon-altar",
+      "sha256": "c2631c7f21a6fbef62b681b06c06515813509e397b3b9c0fe5f27d085fdae8ff",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "L",
+      "legacyCssKey": "--icon-gospel",
+      "sha256": "1d1d1795e993d8c4092d909145bf1d47ff11700f470293d1bf8161f2bf2ff0e4",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "M",
+      "legacyCssKey": "--icon-epistle",
+      "sha256": "b940045d3328708e78b3c7f99ee7469c7e56b4a77adcbe53ca38baa70ab30a0b",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "N",
+      "legacyCssKey": "--icon-people",
+      "sha256": "5366fb0eebae01d4d9bbbcc18bd9b342662123eb836968e4484016f8b46294eb",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "O",
+      "legacyCssKey": "--icon-rail",
+      "sha256": "9dc7c22f7cfad5f351eec3a763eabd8cf298a4beb577be1fde359bb01f4da8da",
+      "decision": "REJECT",
+      "neverDisplay": true
+    },
+    {
+      "batch": 7,
+      "letter": "P",
+      "legacyCssKey": "--icon-sedilia",
+      "sha256": "a48750e23870736bdbd2d9f94a5030c086fbb52066d638d2d5b27bacb0562af3",
+      "decision": "REJECT",
+      "neverDisplay": true
+    }
+  ]
+}
