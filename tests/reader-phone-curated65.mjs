@@ -59,7 +59,7 @@ try{
         navPrev:!!root?.querySelector('[data-reader-nav="previous"]'),
       };
     });
-    assert.equal(summary.count,64,"Legacy review flag should activate the one-card Sanctus projection");
+    assert.equal(summary.count,65,"Legacy review flag should activate the one-card Sanctus projection");
     assert.equal(summary.canonical,39);
     assert.equal(summary.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
     assert.ok(summary.rootVisible && summary.navNext && summary.navPrev);
@@ -270,7 +270,7 @@ try{
       }
       return {visited,skipped,defects,finalProgress,optionalSeq:optional?.sequence??null};
     });
-    const expectedVisible=secondConfiteor?64:63;
+    const expectedVisible=secondConfiteor?65:64;
     assert.equal(walked.visited.length,expectedVisible,
       "The optional local Confiteor must not be shown by default");
     assert.deepEqual(walked.skipped,secondConfiteor?[]:["Second Confiteor · Optional Local Custom"]);
@@ -804,7 +804,7 @@ try{
           reset};
       },form);
       if(form==="SOLEMN"){
-        assert.equal(result.cards,64,"Solemn combined-Sanctus model regressed");
+        assert.equal(result.cards,65,"Solemn combined-Sanctus model regressed");
         assert.equal(result.scholaBefore,"GRADUAL");
         assert.equal(result.noEvidence,false);
         assert.equal(result.priestRead,true);
@@ -818,14 +818,14 @@ try{
         assert.equal(result.falseCelebrant,false,"Solemn Epistle lector became priest");
         assert.equal(result.falseGospel,false,"Solemn deacon Gospel became priest");
       }else if(form==="MISSA_CANTATA_SIMPLE"){
-        assert.equal(result.cards,64);
+        assert.equal(result.cards,65);
         assert.equal(result.lector,false);
         assert.equal(result.celebrant,true);
         assert.equal(result.priestCue,"AO.SM.C0075");
         assert.equal(result.scholaUnchanged,true);
         assert.equal(result.reset,null);
       }else{
-        assert.notEqual(result.cards,64,"Low Mass unexpectedly selected the Sung review");
+        assert.notEqual(result.cards,65,"Low Mass unexpectedly selected the Sung review");
         assert.equal(result.scholaAbsent,true);
         assert.equal(result.observes,false,
           "Low Mass accepted source-only Sung celebrant event");
@@ -834,7 +834,7 @@ try{
       await page.screenshot({path:resolve(out,"priest-dual-clock-"+form.toLowerCase()+".png")});
     }finally{await context.close()}
   }
-  console.log("Curated 65 phone: PASS — all 63/64 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and inline rubrics without Guide.");
+  console.log("Curated 65 phone: PASS — all 64/65 visible stages at 320/390/768px EN + 390px FR; source roles, text contrast, Schola nonoverlap and inline rubrics without Guide.");
 }finally{
   await browser?.close();
   await new Promise(done=>server.close(()=>done()));
