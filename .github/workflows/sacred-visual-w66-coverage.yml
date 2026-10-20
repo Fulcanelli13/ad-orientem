@@ -17,6 +17,7 @@ on:
       - "tools/calendar/screen-sacred-art-discovery-candidates.mjs"
       - "tools/calendar/build-sacred-art-discovery-gallery.mjs"
       - "tools/calendar/verify-sacred-art-117-commons-metadata.mjs"
+      - "tools/calendar/build-sacred-art-34-batch-shortlist.mjs"
       - "tests/sacred-art-117-commons-metadata.mjs"
       - "tools/calendar/build-sacred-art-volume-control.mjs"
       - "tests/sacred-art-76-commons-discovery.mjs"
@@ -198,6 +199,8 @@ jobs:
           node --check tools/calendar/verify-sacred-art-117-commons-metadata.mjs
           node tests/sacred-art-117-commons-metadata.mjs
           node tools/calendar/verify-sacred-art-117-commons-metadata.mjs
+          node --check tools/calendar/build-sacred-art-34-batch-shortlist.mjs
+          node tools/calendar/build-sacred-art-34-batch-shortlist.mjs
       - name: Archive full 76-work ranked review with provenance
         if: always()
         uses: actions/upload-artifact@v4
