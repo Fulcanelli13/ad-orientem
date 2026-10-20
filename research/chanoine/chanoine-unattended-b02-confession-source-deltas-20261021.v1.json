@@ -1,0 +1,976 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B02_V1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_OWNER_PRESERVING_DELTAS",
+  "sourceOwner": {
+    "branch": "research/chanoine-cse-source-dialogue-20261019",
+    "originalCommit": "2950192b62842680f16088c4807c55e78a68f62a",
+    "compositePath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+    "compositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+    "canonicalQASource": "src/learn/sexual-ethics-data/questions-101-150.js",
+    "canonicalQABlob": "be0ffc3f1b121a56cb76d3e8c7117edf198d7f02",
+    "canonicalTopicRegistry": "data/app/content-items-sexual-ethics.v1.json",
+    "topicRegistryBlob": "85a19bd522ae8c837f59bfa0ca8713d742782725"
+  },
+  "counts": {
+    "examinedFamilies": 7,
+    "answerUnits": 14,
+    "sourceMappedFamilies": 7,
+    "wordingDeltaFamilies": 5,
+    "retainedWithStrongerSources": 2,
+    "qualifiedSpecialistReviewFamilies": 3,
+    "readyForGeneralHumanReviewFamilies": 4,
+    "certified": 0,
+    "published": 0
+  },
+  "evidence": [
+    {
+      "id": "PX700",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §3; editorial Q700",
+      "incipitItalian": "Che cosa si richiede perché un peccato sia mortale?",
+      "exactItalianExcerpt": "materia grave, piena avvertenza, e perfetto consenso della volontà.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX731",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §5; editorial Q731",
+      "incipitItalian": "In che consiste il proponimento?",
+      "exactItalianExcerpt": "una volontà risoluta di non commettere mai più il peccato",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX734",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §5; editorial Q734",
+      "incipitItalian": "Che cosa vuol dire: il proponimento deve essere universale?",
+      "exactItalianExcerpt": "dobbiamo voler fuggire tutti i peccati mortali",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX735",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §5; editorial Q735",
+      "incipitItalian": "Che cosa vuol dire: il proponimento deve essere efficace?",
+      "exactItalianExcerpt": "di fuggire le occasioni pericolose di peccare",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX737",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §5; editorial Q737",
+      "incipitItalian": "Che cosa si deve fare per correggere gli abiti cattivi?",
+      "exactItalianExcerpt": "avere un buon direttore stabile",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX746",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §6; editorial Q746",
+      "incipitItalian": "Che vuol dire: l’accusa dev’essere intiera?",
+      "exactItalianExcerpt": "con le loro circostanze e nel loro numero tutti i peccati mortali",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX747",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §6; editorial Q747",
+      "incipitItalian": "Quali circostanze si devono manifestare, perché l’accusa sia intiera?",
+      "exactItalianExcerpt": "le circostanze che mutano la specie del peccato.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX751",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §6; editorial Q751",
+      "incipitItalian": "Se taluno non fosse certo di aver commesso un peccato, deve confessarsene?",
+      "exactItalianExcerpt": "non è obbligato a confessarsene",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX752",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §6; editorial Q752",
+      "incipitItalian": "Chi non ricorda precisamente il numero de’ suoi peccati, che cosa deve fare?",
+      "exactItalianExcerpt": "deve accusarne il numero approssimativo.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX758",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §6; editorial Q758",
+      "incipitItalian": "Che cosa vuol dire: l’accusa deve essere sincera?",
+      "exactItalianExcerpt": "senza scusarli, diminuirli o accrescerli.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX759",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §6; editorial Q759",
+      "incipitItalian": "Che vuol dire: la confessione deve essere prudente?",
+      "exactItalianExcerpt": "servirci dei termini più modesti",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "PX760",
+      "work": "1905 Compendio della dottrina cristiana; Catechismo maggiore",
+      "locator": "Parte IV, Capo VI §6; editorial Q760",
+      "incipitItalian": "Che cosa significa: la confessione deve essere breve?",
+      "exactItalianExcerpt": "non dobbiamo dire niente d’inutile al confessore.",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "parallelTranscription": "https://it.wikisource.org/wiki/Compendio_della_dottrina_cristiana/Catechismo_maggiore/Parte_quarta/Capo_VI",
+      "numbering": "EDITORIAL_NOT_PRINTED_QUESTION_NUMBER",
+      "method": "Digital Italian passages read; no new photographed-page certification"
+    },
+    {
+      "id": "CIC979",
+      "locator": "1983 Latin Code, can. 979",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "englishWitness": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
+      "exactLatinExcerpt": "cum prudentia et discretione",
+      "claim": "Prudent discreet questioning attentive to condition/age; no accomplice-name inquiry",
+      "scope": "Current Latin Church law, not Pius X's historical words"
+    },
+    {
+      "id": "CIC987",
+      "locator": "1983 Latin Code, can. 987",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "englishWitness": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
+      "exactLatinExcerpt": "propositum sese emendandi",
+      "claim": "Reject committed sins and turn to God with purpose of amendment"
+    },
+    {
+      "id": "CIC988",
+      "locator": "1983 Latin Code, can. 988 §1",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "englishWitness": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann959-997_en.html",
+      "exactLatinExcerpt": "in specie et numero",
+      "claim": "Known unconfessed grave post-baptismal sins after diligent examination; kind and number"
+    },
+    {
+      "id": "CIC916",
+      "locator": "1983 Latin Code, can. 916",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "exactLatinExcerpt": "nisi adsit gravis ratio",
+      "claim": "Grave reason AND no opportunity to confess; perfect contrition including prompt confession resolve"
+    }
+  ],
+  "records": [
+    {
+      "id": "CHA-CSE-CSE131",
+      "sourceQuestionId": "CSE131",
+      "canonicalOwner": "SEX-CORE-39",
+      "title": "How should sexual sins be confessed?",
+      "originalOwnerRecord": {
+        "source_question_id": "CSE131",
+        "conversation_id": "CHA-CSE-CSE131",
+        "canonical_topic_owner": "SEX-CORE-39",
+        "title": "How should sexual sins be confessed?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "How should sexual sins be confessed?",
+          "fr": "Comment confesser les péchés sexuels ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Confess the grave sins of which you are conscious, by kind and number as accurately as reasonably possible (CIC can. 988 §1). Mention circumstances that change the moral kind of the sin, but avoid graphic descriptions that are not necessary. Canon 979 also requires the confessor to question prudently and discreetly.",
+          "fr": "Confesser les péchés graves dont on a conscience, selon leur espèce et leur nombre aussi exactement que raisonnablement possible (CIC, can. 988 §1). Mentionner les circonstances qui changent l'espèce morale du péché, mais éviter les récits graphiques inutiles. Le canon 979 impose aussi au confesseur prudence et discrétion dans ses questions."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Confess honestly the grave sins you remember, by their moral kind and number as reasonably as you can. You need not supply a graphic narrative. A confessor must question with discretion, and you may ask whether a particular detail is actually necessary.",
+          "fr": "Confessez honnêtement les péchés graves dont vous vous souvenez, selon leur espèce morale et leur nombre autant que raisonnablement possible. Un récit graphique n’est pas nécessaire. Le confesseur doit interroger avec discrétion, et vous pouvez demander si un détail particulier est vraiment requis."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Must I recount every intimate detail to make a valid Confession?",
+          "fr": "Dois-je raconter chaque détail intime pour faire une confession valide ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. Confession calls for the kind and number of grave sins as reasonably known, plus relevant circumstances, not a graphic narrative. The confessor should ask only what is needed with prudence and discretion.",
+          "fr": "Non. La confession demande l’espèce et le nombre des péchés graves autant que raisonnablement connus, avec les circonstances pertinentes, non un récit graphique. Le confesseur doit demander seulement ce qui est nécessaire, avec prudence et discrétion."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CIC_PENANCE",
+              "locator": "can. 988 §1"
+            },
+            {
+              "registry_key": "CIC_PENANCE_MINISTER",
+              "locator": "can. 979 · prudence and discretion in questioning"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Penance: confession of mortal sins"
+            },
+            {
+              "registry_key": "ST18",
+              "locator": "aa.10–11"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CONFESSIONAL_PASTORAL_REVIEW",
+        "review_attention": [
+          "CONFESSIONAL_PASTORAL_REVIEW"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "claimMappings": [
+        [
+          {
+            "claim": "Grave sins by kind/number; circumstances changing kind",
+            "sources": [
+              "PX746",
+              "PX747",
+              "CIC988"
+            ]
+          },
+          {
+            "claim": "No graphic narrative; prudent questions",
+            "sources": [
+              "PX759",
+              "PX760",
+              "CIC979"
+            ]
+          }
+        ],
+        [
+          {
+            "claim": "Only necessary truthful particulars, not an exhaustive narrative",
+            "sources": [
+              "PX746",
+              "PX747",
+              "PX759",
+              "PX760",
+              "CIC979"
+            ]
+          }
+        ]
+      ],
+      "proposedMain": {
+        "en": "Confess known grave sins by kind and number, including circumstances that change their moral kind. Unnecessary graphic detail is not required. The priest must question prudently and discreetly.",
+        "fr": "Confessez les péchés graves connus selon l’espèce et le nombre, avec les circonstances qui en changent l’espèce morale. Les détails graphiques inutiles ne sont pas requis. Le prêtre doit interroger avec prudence et discrétion."
+      },
+      "proposedFollowup": {
+        "en": "No. Confession calls for the kind and number of grave sins as reasonably known, plus relevant circumstances, not a graphic narrative. The confessor should ask only what is needed with prudence and discretion.",
+        "fr": "Non. La confession demande l’espèce et le nombre des péchés graves autant que raisonnablement connus, avec les circonstances pertinentes, non un récit graphique. Le confesseur doit demander seulement ce qui est nécessaire, avec prudence et discrétion."
+      },
+      "delta": "Restore explicit circumstances qualification omitted in shortened main; preserve necessity/discretion",
+      "classification": "FICTIONAL_CHANOINE_EXPLANATORY_PARAPHRASE_AND_MARKED_PASTORAL_APPLICATION",
+      "authenticHistoricalQuotation": false,
+      "sourceReadState": "RESEARCH_PASSAGE_MATCHED",
+      "humanCertification": false,
+      "safeguardingApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false,
+      "reviewDisposition": "QUALIFIED_CONFESSIONAL_CANONICAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "CHA-CSE-CSE132",
+      "sourceQuestionId": "CSE132",
+      "canonicalOwner": "SEX-CORE-39",
+      "title": "What does confessing sins by “kind and number” mean?",
+      "originalOwnerRecord": {
+        "source_question_id": "CSE132",
+        "conversation_id": "CHA-CSE-CSE132",
+        "canonical_topic_owner": "SEX-CORE-39",
+        "title": "What does confessing sins by “kind and number” mean?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What does confessing sins by “kind and number” mean?",
+          "fr": "Que signifie confesser les péchés « selon l’espèce et le nombre » ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Kind identifies what moral sin was committed; number gives the frequency of unconfessed mortal sins as accurately as one reasonably can. It does not require impossible mathematical precision where memory cannot provide it.",
+          "fr": "L’espèce identifie le péché moral commis ; le nombre indique la fréquence des péchés mortels non confessés aussi exactement que raisonnablement possible. Cela n’exige pas une précision mathématique impossible lorsque la mémoire ne le permet pas."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "By 'kind' we mean identifying the sin sufficiently; by 'number', giving its frequency as accurately as memory reasonably permits. The sacrament is not a demand for impossible arithmetic or an intimate autobiography. Tell the truth simply.",
+          "fr": "Par « espèce », on entend identifier suffisamment le péché ; par « nombre », en indiquer la fréquence aussi exactement que la mémoire le permet raisonnablement. Le sacrement n’exige ni un calcul impossible ni une autobiographie intime. Dites simplement la vérité."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "What if I cannot remember an exact number?",
+          "fr": "Et si je ne me rappelle pas un nombre exact ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "State a reasonable estimate and be candid that it is approximate. Sincerity matters; the sacrament does not demand a number that memory cannot supply.",
+          "fr": "Donnez une estimation raisonnable et précisez franchement qu’elle est approximative. La sincérité compte ; le sacrement n’exige pas un chiffre que la mémoire ne peut fournir."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CIC_PENANCE",
+              "locator": "can. 988 §1"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Penance"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "claimMappings": [
+        [
+          {
+            "claim": "Kind and approximate number if genuinely forgotten",
+            "sources": [
+              "CIC988",
+              "PX752"
+            ]
+          }
+        ],
+        [
+          {
+            "claim": "State approximation honestly",
+            "sources": [
+              "PX752",
+              "PX758"
+            ]
+          }
+        ]
+      ],
+      "proposedMain": {
+        "en": "By 'kind' we mean identifying the sin sufficiently; by 'number', giving its frequency as accurately as memory reasonably permits. The sacrament is not a demand for impossible arithmetic or an intimate autobiography. Tell the truth simply.",
+        "fr": "Par « espèce », on entend identifier suffisamment le péché ; par « nombre », en indiquer la fréquence aussi exactement que la mémoire le permet raisonnablement. Le sacrement n’exige ni un calcul impossible ni une autobiographie intime. Dites simplement la vérité."
+      },
+      "proposedFollowup": {
+        "en": "State a reasonable estimate and be candid that it is approximate. Sincerity matters; the sacrament does not demand a number that memory cannot supply.",
+        "fr": "Donnez une estimation raisonnable et précisez franchement qu’elle est approximative. La sincérité compte ; le sacrement n’exige pas un chiffre que la mémoire ne peut fournir."
+      },
+      "delta": "Keep existing wording; replace generic PIUSX pointer with exact Q752 and distinguish explanation from quotation",
+      "classification": "FICTIONAL_CHANOINE_EXPLANATORY_PARAPHRASE_AND_MARKED_PASTORAL_APPLICATION",
+      "authenticHistoricalQuotation": false,
+      "sourceReadState": "RESEARCH_PASSAGE_MATCHED",
+      "humanCertification": false,
+      "safeguardingApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false,
+      "reviewDisposition": "READY_FOR_HUMAN_SOURCE_LANGUAGE_PERSONA_REVIEW"
+    },
+    {
+      "id": "CHA-CSE-CSE133",
+      "sourceQuestionId": "CSE133",
+      "canonicalOwner": "SEX-CORE-39",
+      "title": "Must embarrassing sexual details be given in Confession?",
+      "originalOwnerRecord": {
+        "source_question_id": "CSE133",
+        "conversation_id": "CHA-CSE-CSE133",
+        "canonical_topic_owner": "SEX-CORE-39",
+        "title": "Must embarrassing sexual details be given in Confession?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Must embarrassing sexual details be given in Confession?",
+          "fr": "Faut-il donner en confession des détails sexuels embarrassants ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Only what identifies the moral kind of a grave sin and any circumstance needed to distinguish it. Canon 988 requires kind and number, not an explicit narrative; canon 979 requires a confessor to question with prudence and discretion, attentive to the penitent's age and condition. A penitent may ask the confessor whether a particular detail is needed.",
+          "fr": "Seulement ce qui permet de préciser l'espèce du péché grave et les circonstances nécessaires pour la distinguer. Le canon 988 demande l'espèce et le nombre, non un récit explicite ; le canon 979 impose au confesseur prudence et discrétion, selon l'âge et la condition du pénitent. Celui-ci peut demander si une précision est réellement nécessaire."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "No one should compel you to give unnecessary explicit details. Identify the kind of any grave sin, and a circumstance only if it changes that moral kind; then let the confessor guide you discreetly. A penitent may always ask why a question matters.",
+          "fr": "Personne ne devrait vous contraindre à donner des détails explicites inutiles. Indiquez l’espèce d’un péché grave, et une circonstance seulement si elle en change l’espèce morale ; laissez ensuite le confesseur vous guider avec discrétion. Le pénitent peut toujours demander pourquoi une question importe."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "May I ask why a confessor needs a sensitive detail?",
+          "fr": "Puis-je demander pourquoi le confesseur a besoin d’un détail sensible ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Certainly. You can ask whether it changes the moral kind of a sin. Unnecessary explicit description is not required, and the confessor is bound to discretion.",
+          "fr": "Certainement. Vous pouvez demander s’il change l’espèce morale du péché. Une description explicite inutile n’est pas exigée, et le confesseur est tenu à la discrétion."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CIC_PENANCE",
+              "locator": "can. 988 §1"
+            },
+            {
+              "registry_key": "CIC_PENANCE_MINISTER",
+              "locator": "can. 979 · prudence and discretion in questioning"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Penance"
+            },
+            {
+              "registry_key": "ST18",
+              "locator": "aa.10–11"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CONFESSIONAL_PASTORAL_REVIEW",
+        "review_attention": [
+          "CONFESSIONAL_PASTORAL_REVIEW"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "claimMappings": [
+        [
+          {
+            "claim": "Necessary moral identification; prudent speech/questions",
+            "sources": [
+              "PX746",
+              "PX747",
+              "PX759",
+              "PX760",
+              "CIC979"
+            ]
+          }
+        ],
+        [
+          {
+            "claim": "May ask clarification of relevance",
+            "sources": [
+              "CIC979"
+            ],
+            "classification": "Pastoral application, not an express statutory right quoted from can. 979"
+          }
+        ]
+      ],
+      "proposedMain": {
+        "en": "Give what is necessary to identify the grave sin and its relevant circumstances, without an unnecessary explicit narrative. The priest must question prudently, attentive to your age and condition.",
+        "fr": "Donnez ce qui est nécessaire pour identifier le péché grave et ses circonstances pertinentes, sans récit explicite inutile. Le prêtre doit interroger avec prudence, en tenant compte de votre âge et de votre condition."
+      },
+      "proposedFollowup": {
+        "en": "Yes, you may ask why a sensitive question is relevant. Prudent questioning concerns the confession and your disposition; it is not confined solely to classifying the sin.",
+        "fr": "Oui, vous pouvez demander pourquoi une question sensible est pertinente. Un interrogatoire prudent concerne la confession et vos dispositions ; il ne se limite pas à classer le péché."
+      },
+      "delta": "Original 'circumstance only if' wording may improperly limit all prudent confessor questions to species-changing circumstances",
+      "classification": "FICTIONAL_CHANOINE_EXPLANATORY_PARAPHRASE_AND_MARKED_PASTORAL_APPLICATION",
+      "authenticHistoricalQuotation": false,
+      "sourceReadState": "RESEARCH_PASSAGE_MATCHED",
+      "humanCertification": false,
+      "safeguardingApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false,
+      "reviewDisposition": "QUALIFIED_CONFESSIONAL_CANONICAL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "CHA-CSE-CSE134",
+      "sourceQuestionId": "CSE134",
+      "canonicalOwner": "SEX-CORE-39",
+      "title": "How should habitual sins be counted?",
+      "originalOwnerRecord": {
+        "source_question_id": "CSE134",
+        "conversation_id": "CHA-CSE-CSE134",
+        "canonical_topic_owner": "SEX-CORE-39",
+        "title": "How should habitual sins be counted?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "How should habitual sins be counted?",
+          "fr": "Comment compter des péchés habituels ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Canon 988 requires the kind and number of grave sins after a diligent examination. If the exact count is genuinely forgotten, give an honest approximation or usual frequency over the period concerned; never invent numerical certainty. The practical estimation is an application of truthful confession, not an additional formula quoted verbatim in the canon.",
+          "fr": "Le canon 988 demande l'espèce et le nombre des péchés graves après un examen diligent. Si le nombre exact est réellement oublié, donner une estimation loyale ou une fréquence habituelle sur la période concernée, sans inventer de certitude chiffrée. Cette estimation applique le devoir de sincérité ; ce n'est pas une formule supplémentaire citée littéralement par le canon."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "If an exact count is genuinely forgotten, give an honest estimate or usual frequency over the period concerned. Canon law asks for a sincere account, not fictitious precision. Do not invent numbers merely to satisfy anxiety.",
+          "fr": "Si le nombre exact est réellement oublié, donnez une estimation honnête ou la fréquence habituelle pendant la période en cause. Le droit canon demande la sincérité, non une précision fictive. N’inventez pas des nombres pour apaiser l’angoisse."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Would an approximate count make my Confession dishonest?",
+          "fr": "Un nombre approximatif rendrait-il ma confession malhonnête ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No, when it is the best truthful account you can give. Explain the period and usual frequency if that helps; inventing exact numbers would be less truthful than admitting uncertainty.",
+          "fr": "Non, si c’est le récit le plus vrai que vous puissiez donner. Précisez la période et la fréquence habituelle si cela aide ; inventer des chiffres exacts serait moins vrai qu’avouer l’incertitude."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "PIUSX",
+              "locator": "Penance"
+            },
+            {
+              "registry_key": "CIC_PENANCE",
+              "locator": "can. 988 §1 · diligent examination, kind and number"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "claimMappings": [
+        [
+          {
+            "claim": "Approximate count, honesty",
+            "sources": [
+              "PX752",
+              "PX758",
+              "CIC988"
+            ]
+          }
+        ],
+        [
+          {
+            "claim": "Frequency over period as practical approximation",
+            "sources": [
+              "PX752",
+              "PX758"
+            ],
+            "classification": "Pastoral application, not verbatim canonical formula"
+          }
+        ]
+      ],
+      "proposedMain": {
+        "en": "If you genuinely cannot remember the exact number after examination, give an honest approximation. A usual frequency over a stated period may help; do not invent certainty.",
+        "fr": "Si, après examen, vous ne vous rappelez réellement pas le nombre exact, donnez une approximation honnête. Une fréquence habituelle sur une période précisée peut aider ; n’inventez pas de certitude."
+      },
+      "proposedFollowup": {
+        "en": "No, when it is the best truthful account you can give. Explain the period and usual frequency if that helps; inventing exact numbers would be less truthful than admitting uncertainty.",
+        "fr": "Non, si c’est le récit le plus vrai que vous puissiez donner. Précisez la période et la fréquence habituelle si cela aide ; inventer des chiffres exacts serait moins vrai qu’avouer l’incertitude."
+      },
+      "delta": "Q752 expressly supports approximation; period/frequency remains application rather than quotation from canon 988",
+      "classification": "FICTIONAL_CHANOINE_EXPLANATORY_PARAPHRASE_AND_MARKED_PASTORAL_APPLICATION",
+      "authenticHistoricalQuotation": false,
+      "sourceReadState": "RESEARCH_PASSAGE_MATCHED",
+      "humanCertification": false,
+      "safeguardingApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false,
+      "reviewDisposition": "READY_FOR_HUMAN_SOURCE_LANGUAGE_PERSONA_REVIEW"
+    },
+    {
+      "id": "CHA-CSE-CSE135",
+      "sourceQuestionId": "CSE135",
+      "canonicalOwner": "SEX-CORE-39",
+      "title": "What is a firm purpose of amendment when someone repeatedly falls?",
+      "originalOwnerRecord": {
+        "source_question_id": "CSE135",
+        "conversation_id": "CHA-CSE-CSE135",
+        "canonical_topic_owner": "SEX-CORE-39",
+        "title": "What is a firm purpose of amendment when someone repeatedly falls?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What is a firm purpose of amendment when someone repeatedly falls?",
+          "fr": "Qu’est-ce qu’un ferme propos d’amendement lorsqu’une personne retombe régulièrement ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "A firm purpose of amendment means presently intending to turn away from sin and to take reasonable steps against its occasions (CIC can. 987). It does not require certainty that no future fall can ever occur; repeated difficulty calls for honest confession and concrete means, not a promise about an unknowable future.",
+          "fr": "Le ferme propos exige de vouloir maintenant se détourner du péché et de prendre des moyens raisonnables contre ses occasions (CIC, can. 987). Il ne demande pas de garantir qu'aucune chute future ne surviendra ; des difficultés répétées appellent une confession sincère et des moyens concrets, non la promesse de connaître l'avenir."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "A firm purpose of amendment is a sincere intention now to renounce sin and take reasonable steps against its occasions. It is not a prophecy that you can never fall again. Repeated struggle requires honest repentance and practical measures, not an impossible guarantee about tomorrow.",
+          "fr": "Le ferme propos est l’intention sincère, maintenant, de renoncer au péché et de prendre des moyens raisonnables contre ses occasions. Ce n’est pas une prophétie que vous ne tomberez jamais plus. Une lutte répétée demande repentir loyal et mesures pratiques, non une garantie impossible pour demain."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "If I fear another fall, is my present purpose of amendment false?",
+          "fr": "Si je crains une nouvelle chute, mon ferme propos est-il faux ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Not necessarily. What matters is your sincere present intention and practical willingness to resist. Fear of weakness is not the same as choosing to continue the wrong.",
+          "fr": "Pas nécessairement. Ce qui importe est votre intention actuelle sincère et votre volonté pratique de résister. Craindre sa faiblesse ne revient pas à choisir de persévérer dans la faute."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CIC_PENANCE",
+              "locator": "can. 987"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Penance: contrition and purpose of amendment"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "claimMappings": [
+        [
+          {
+            "claim": "Universal present resolve and effective means",
+            "sources": [
+              "PX731",
+              "PX734",
+              "PX735",
+              "CIC987"
+            ]
+          }
+        ],
+        [
+          {
+            "claim": "Prediction of failure distinct from a decision to persist",
+            "sources": [
+              "PX731",
+              "CIC987"
+            ],
+            "classification": "Faithful pastoral distinction; no automatic absolution judgment"
+          }
+        ]
+      ],
+      "proposedMain": {
+        "en": "A firm purpose means sincerely resolving now to turn from every mortal sin and use the necessary means to avoid it. Fear of future weakness is not a decision to continue sinning.",
+        "fr": "Le ferme propos consiste à vouloir sincèrement, maintenant, se détourner de tout péché mortel et employer les moyens nécessaires pour l’éviter. Craindre sa faiblesse future n’est pas décider de continuer à pécher."
+      },
+      "proposedFollowup": {
+        "en": "Not necessarily. What matters is your sincere present intention and practical willingness to resist. Fear of weakness is not the same as choosing to continue the wrong.",
+        "fr": "Pas nécessairement. Ce qui importe est votre intention actuelle sincère et votre volonté pratique de résister. Craindre sa faiblesse ne revient pas à choisir de persévérer dans la faute."
+      },
+      "delta": "Preserve universal scope and necessary means; do not weaken purpose into merely token reasonable steps",
+      "classification": "FICTIONAL_CHANOINE_EXPLANATORY_PARAPHRASE_AND_MARKED_PASTORAL_APPLICATION",
+      "authenticHistoricalQuotation": false,
+      "sourceReadState": "RESEARCH_PASSAGE_MATCHED",
+      "humanCertification": false,
+      "safeguardingApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false,
+      "reviewDisposition": "READY_FOR_HUMAN_SOURCE_LANGUAGE_PERSONA_REVIEW"
+    },
+    {
+      "id": "CHA-CSE-CSE138",
+      "sourceQuestionId": "CSE138",
+      "canonicalOwner": "SEX-CORE-41",
+      "title": "How should someone respond to repeated falls without becoming lax or despairing?",
+      "originalOwnerRecord": {
+        "source_question_id": "CSE138",
+        "conversation_id": "CHA-CSE-CSE138",
+        "canonical_topic_owner": "SEX-CORE-41",
+        "title": "How should someone respond to repeated falls without becoming lax or despairing?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "How should someone respond to repeated falls without becoming lax or despairing?",
+          "fr": "Comment réagir à des chutes répétées sans devenir laxiste ni désespérer ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Keep both truths together: the sin should not be minimized, and repeated failure does not make conversion pointless. Confess sincerely, repair avoidable occasions, strengthen habits of prayer and discipline, and resume the struggle promptly after a fall.",
+          "fr": "Il faut tenir ensemble deux vérités : le péché ne doit pas être minimisé, et l’échec répété ne rend pas la conversion inutile. Confessez sincèrement, corrigez les occasions évitables, fortifiez les habitudes de prière et de discipline et reprenez rapidement le combat après une chute."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Do not make peace with sin, but do not make peace with despair either. Return to sincere confession where needed, change avoidable circumstances and practise small, steady acts of discipline. A fall is a reason to begin again, not proof that grace or effort is pointless.",
+          "fr": "Ne faites pas la paix avec le péché, mais ne la faites pas non plus avec le désespoir. Revenez à une confession sincère lorsqu’elle est nécessaire, changez les circonstances évitables et pratiquez de petits actes constants de discipline. Une chute est une raison de recommencer, non la preuve que la grâce ou l’effort sont inutiles."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Is it hypocritical to confess after falling into the same wrong again?",
+          "fr": "Est-il hypocrite de se confesser après être retombé dans la même faute ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Not if you sincerely repent and intend to take reasonable steps. Hypocrisy is pretending to reject what one has decided to continue; weakness amid a real struggle is different.",
+          "fr": "Non, si vous vous repentez sincèrement et entendez prendre des moyens raisonnables. L’hypocrisie consiste à feindre de rejeter ce qu’on a décidé de poursuivre ; la faiblesse dans une vraie lutte est différente."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "SACRA",
+              "locator": "§§58–62 (clerical-formation context)"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Penance · Confession QQ19–22"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "claimMappings": [
+        [
+          {
+            "claim": "Repentance, avoid occasions, prayer and stable guidance",
+            "sources": [
+              "PX731",
+              "PX735",
+              "PX737"
+            ]
+          }
+        ],
+        [
+          {
+            "claim": "Present repentance and resolve; repeated failure not by itself rejection",
+            "sources": [
+              "PX731",
+              "CIC987"
+            ],
+            "classification": "Pastoral inference from present disposition, not individual fitness verdict"
+          }
+        ]
+      ],
+      "proposedMain": {
+        "en": "Repent sincerely, avoid occasions of sin, pray and follow steady spiritual counsel. Return to confession with a real purpose of amendment; repeated weakness does not make that purpose pointless.",
+        "fr": "Repentez-vous sincèrement, évitez les occasions de péché, priez et suivez un conseil spirituel stable. Revenez à la confession avec un vrai ferme propos ; des faiblesses répétées ne le rendent pas inutile."
+      },
+      "proposedFollowup": {
+        "en": "A repeated fall does not by itself prove hypocrisy. The question is whether you now sincerely repent and resolve to amend; discuss that honestly with your confessor.",
+        "fr": "Une rechute ne prouve pas à elle seule l’hypocrisie. Il faut voir si vous vous repentez sincèrement maintenant et voulez vous amender ; parlez-en honnêtement au confesseur."
+      },
+      "delta": "Replace clerical-context Sacra lead with exact general catechetical source; avoid exhaustive definition of hypocrisy",
+      "classification": "FICTIONAL_CHANOINE_EXPLANATORY_PARAPHRASE_AND_MARKED_PASTORAL_APPLICATION",
+      "authenticHistoricalQuotation": false,
+      "sourceReadState": "RESEARCH_PASSAGE_MATCHED",
+      "humanCertification": false,
+      "safeguardingApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false,
+      "reviewDisposition": "READY_FOR_HUMAN_SOURCE_LANGUAGE_PERSONA_REVIEW"
+    },
+    {
+      "id": "CHA-CSE-CSE139",
+      "sourceQuestionId": "CSE139",
+      "canonicalOwner": "SEX-CORE-42",
+      "title": "When should someone refrain from Holy Communion after sexual sin?",
+      "originalOwnerRecord": {
+        "source_question_id": "CSE139",
+        "conversation_id": "CHA-CSE-CSE139",
+        "canonical_topic_owner": "SEX-CORE-42",
+        "title": "When should someone refrain from Holy Communion after sexual sin?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "When should someone refrain from Holy Communion after sexual sin?",
+          "fr": "Quand faut-il s’abstenir de la sainte Communion après un péché sexuel ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Under canon 916, a person conscious of grave sin must ordinarily receive sacramental confession before Holy Communion. Only when both a grave reason to receive and no opportunity to confess exist does the exception apply; it requires perfect contrition and a resolve to confess as soon as possible. An objectively grave act should not be confused with certainty about personal mortal culpability.",
+          "fr": "Selon le canon 916, une personne consciente d'un péché grave doit normalement se confesser avant la sainte communion. L'exception exige à la fois une raison grave de communier et l'absence de possibilité de se confesser ; elle requiert la contrition parfaite et la résolution de se confesser dès que possible. La gravité objective de l'acte ne doit pas être confondue avec une certitude sur la culpabilité mortelle personnelle."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "A Catholic conscious of grave sin must ordinarily confess before receiving Holy Communion. Canon law permits a narrow exception when there is a grave reason to receive and no opportunity for confession; it requires perfect contrition and the resolve to confess promptly. Do not confuse the objective gravity of an act with certainty about a person's full culpability.",
+          "fr": "Un catholique conscient d’un péché grave doit normalement se confesser avant de recevoir la sainte Communion. Le droit prévoit une exception étroite lorsqu’il existe une raison grave de communier sans possibilité de confession ; elle exige la contrition parfaite et le propos de se confesser au plus tôt. Ne confondez pas la gravité objective d’un acte avec une certitude sur la culpabilité entière d’une personne."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Should anxiety alone keep me away from Holy Communion?",
+          "fr": "La seule angoisse doit-elle m’empêcher de communier ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Anxiety is not itself the same as conscious grave sin. Apply the Church’s rule with appropriate counsel, especially if scruples recur; neither invent extra restrictions nor disregard a clearly known duty.",
+          "fr": "L’angoisse ne se confond pas avec la conscience d’un péché grave. Appliquez la règle de l’Église avec le conseil approprié, surtout si les scrupules reviennent ; n’inventez pas d’interdictions supplémentaires et ne négligez pas un devoir clairement connu."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-101-150.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CIC_EUCHARIST",
+              "locator": "can. 916"
+            },
+            {
+              "registry_key": "PIUSX",
+              "locator": "Holy Communion and Penance"
+            },
+            {
+              "registry_key": "ST76",
+              "locator": "aa.1–4"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "CANONICAL_REVIEW",
+        "review_attention": [
+          "CANONICAL_REVIEW"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "claimMappings": [
+        [
+          {
+            "claim": "Communion rule and cumulative exception",
+            "sources": [
+              "CIC916"
+            ]
+          },
+          {
+            "claim": "Gravity distinguished from full personal culpability",
+            "sources": [
+              "PX700"
+            ]
+          }
+        ],
+        [
+          {
+            "claim": "Anxiety alone is not proof of conscious grave sin",
+            "sources": [
+              "CIC916",
+              "PX700",
+              "PX751"
+            ],
+            "classification": "Pastoral application, not clinical assessment"
+          }
+        ]
+      ],
+      "proposedMain": {
+        "en": "A Catholic conscious of grave sin must ordinarily confess before receiving Holy Communion. Canon law permits a narrow exception when there is a grave reason to receive and no opportunity for confession; it requires perfect contrition and the resolve to confess promptly. Do not confuse the objective gravity of an act with certainty about a person's full culpability.",
+        "fr": "Un catholique conscient d’un péché grave doit normalement se confesser avant de recevoir la sainte Communion. Le droit prévoit une exception étroite lorsqu’il existe une raison grave de communier sans possibilité de confession ; elle exige la contrition parfaite et le propos de se confesser au plus tôt. Ne confondez pas la gravité objective d’un acte avec une certitude sur la culpabilité entière d’une personne."
+      },
+      "proposedFollowup": {
+        "en": "Anxiety is not itself the same as conscious grave sin. Apply the Church’s rule with appropriate counsel, especially if scruples recur; neither invent extra restrictions nor disregard a clearly known duty.",
+        "fr": "L’angoisse ne se confond pas avec la conscience d’un péché grave. Appliquez la règle de l’Église avec le conseil approprié, surtout si les scrupules reviennent ; n’inventez pas d’interdictions supplémentaires et ne négligez pas un devoir clairement connu."
+      },
+      "delta": "Existing main correctly states both exception conditions; support directly from Latin can.916 and Q700. No individual Communion determination.",
+      "classification": "FICTIONAL_CHANOINE_EXPLANATORY_PARAPHRASE_AND_MARKED_PASTORAL_APPLICATION",
+      "authenticHistoricalQuotation": false,
+      "sourceReadState": "RESEARCH_PASSAGE_MATCHED",
+      "humanCertification": false,
+      "safeguardingApproved": false,
+      "publicationApproved": false,
+      "routingEnabled": false,
+      "reviewDisposition": "QUALIFIED_CONFESSIONAL_CANONICAL_REVIEW_REQUIRED"
+    }
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE131",
+        "CSE133"
+      ],
+      "relation": "Overlapping necessity of detail; retain 131 procedural and 133 sensitive-question contexts; shared source bundle"
+    },
+    {
+      "ids": [
+        "CSE132",
+        "CSE134"
+      ],
+      "relation": "Approximation foundation versus habitual-frequency application; one doctrinal owner SEX-CORE-39, preserve both visitor intents"
+    },
+    {
+      "ids": [
+        "CSE135",
+        "CSE138"
+      ],
+      "relation": "Purpose of amendment versus repeated-fall application; crosslink source principle, no copied persona reply"
+    }
+  ],
+  "gaps": [
+    {
+      "type": "CLINICAL_CLAIM_NOT_VERIFIED",
+      "ids": [
+        "CSE136",
+        "CSE137"
+      ],
+      "reason": "Not included in seven mapped families. Claims about reassurance-seeking worsening scruples need clinical source review or removal; pastoral doctrinal distinctions have exact Pius X leads.",
+      "next": "Use Q700/751 for moral distinction; research clinical claims only if retained"
+    }
+  ],
+  "humanDecisions": [
+    "Approve necessity/discretion wording for CSE131/133 with safeguarding specialist",
+    "Approve application versus direct text distinction for approximate frequency",
+    "Confirm amendment scope and avoid a forecast of future behavior as absolution criterion",
+    "Canonical reviewer for CSE139: current Latin rule, not generic quotation of 1905 discipline"
+  ],
+  "sourceLimitations": [
+    "Digital text collation only; no fresh print-facsimile review",
+    "Legal norms apply to Latin Church; no personal canonical determination",
+    "Source quotation excerpt fragments preserved with precise locators, not attributed as Chanoine's archival speech"
+  ],
+  "noOriginalOwnerMutation": true,
+  "denzingerRequired": false,
+  "next": "Proceed to remaining unresolved cases; do not stop because B02 is saved"
+}
