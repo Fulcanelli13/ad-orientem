@@ -166,7 +166,9 @@ export function renderPilgrimageJourneyPanel({
     '" target="_blank" rel="noopener noreferrer">'+
     esc(label(language,"Official interactive route map ↗","Carte officielle du parcours ↗"))+'</a>';
   if(selected.destinationGeo)html+='<button type="button" data-explore-journey-focus>'+
-    esc(label(language,"Show destination","Voir la destination"))+'</button>';
+    esc(selected.routeType==="ON_SITE_PATH"
+      ?label(language,"Show sanctuary anchor","Voir le sanctuaire")
+      :label(language,"Show destination","Voir la destination"))+'</button>';
   html+='<button type="button" data-explore-journey-destination="'+esc(selected.destinationPlaceId)+'">'+
     esc(label(language,"Discover sacred place","Découvrir le lieu sacré"))+'</button></div>';
   if(selected.sources.length){
