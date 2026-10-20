@@ -26,6 +26,12 @@ export function installMassMapEmblemOverlays(map,maplibre,{
     let features;
     try{features=map.queryRenderedFeatures({layers:["ao-explore-points"]})||[]}
     catch{return}
+    diagnostics.lastRawCount=features.length;
+    diagnostics.lastSample=features.slice(0,5).map(feature=>({
+      lens:feature?.properties?.lens,group:feature?.properties?.provider_group,
+      sprite:hasSprite(String(feature?.properties?.provider_group||"").toUpperCase()),
+      coords:Array.isArray(feature?.geometry?.coordinates),
+    }));
     const targets=new Map();
     for(const feature of features){
       if(targets.size>=MAX_VISIBLE_EMBLEMS)break;
