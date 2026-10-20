@@ -10,35 +10,36 @@ const rejected=new Set(frozen.rejected.map(x=>x.artworkId));
 assert.equal(intake.works.length,451);
 const open=intake.works.filter(x=>["APPROVED","LEGACY_FIVE_PRESERVED"].includes(x.reviewGate)
   &&!x.sourcePolicy?.noFetch&&x.provider==="NO_EXACT_OPEN_SOURCE");
-assert.equal(open.length,76);
-assert.deepEqual(new Set(queue.records.map(x=>x.artworkId)),new Set(open.map(x=>x.id)),
- "Every remaining approved original must appear exactly once in recovery tasks");
+assert.equal(open.length,64);
+assert.equal(queue.remainingUnroutedRecords,64);
+const stillQueued=queue.records.filter(x=>x.lane!=="SOURCE_IDENTIFIED_QA");
+assert.deepEqual(new Set(stillQueued.map(x=>x.artworkId)),new Set(open.map(x=>x.id)),
+ "All 64 remaining unsourced originals must remain in the research queue, excluding the 12 source-routed Stations");
 assert.equal(queue.records.length,76);
 assert.equal(queue.worksPerBatch,50);
 assert.deepEqual(queue.batches.map(x=>x.count),[50,26]);
 assert.equal(queue.counts.LICENSE_BLOCKED,16);
-assert.equal(queue.counts.STATION_EXACTNESS,12);
+assert.equal(queue.counts.SOURCE_IDENTIFIED_QA,12);
 assert.equal(queue.counts.DISCOVER_EXACT_ORIGINAL,23);
 assert.equal(queue.counts.PER_IMAGE_RIGHTS,4);
 assert.equal(queue.records.reduce((n,x)=>n+Number(x.lane==="LICENSE_BLOCKED"),0),16);
-assert.equal(queue.records.filter(x=>x.status==="HOLD_WRONG_STATION_OBJECT_URL").length,3);
-assert(queue.records.filter(x=>x.status==="HOLD_WRONG_STATION_OBJECT_URL")
- .every(x=>x.sourceUrl.endsWith("via-crucis-jesus-is-taken-down-from-the-cross/")),
- "Wrong Station XIII link must never be presented as matching another Station");
-assert.equal(queue.records.filter(x=>x.status==="HOLD_EXACT_OBJECT_LINKED_PHOTO_RIGHTS_UNVERIFIED").length,9);
-assert.equal(queue.stationObjectProgress.officialExactLinks,9);
-const stations=queue.records.filter(x=>x.lane==="STATION_EXACTNESS");
+const stations=queue.records.filter(x=>x.lane==="SOURCE_IDENTIFIED_QA");
 assert.equal(stations.length,12);
-assert.equal(new Set(stations.filter(x=>x.sourceEvidence?.exactStation).map(x=>x.sourceUrl)).size,9);
-assert(stations.every(x=>!x.sourceEvidence||x.sourceEvidence.imageRights==="UNVERIFIED"));
+assert.equal(queue.stationObjectProgress.exactCommonsPhotoCandidates,12);
+assert.equal(queue.stationObjectProgress.wrongStationLinksRemaining,0);
+assert.equal(new Set(stations.map(x=>x.sourceEvidence?.exactStation)).size,12);
+assert(stations.every(x=>x.status==="MOVED_TO_EXACT_COMMONS_SOURCE_QA"
+  &&x.sourceUrl.includes("commons.wikimedia.org/wiki/File:Chiesa_di_San_Polo_")
+  &&x.sourceEvidence.publicationCertified===false));
+assert.equal(stations.filter(x=>x.sourceObjectUrl).length,9);
 for(const row of queue.records) {
  assert(!rejected.has(row.artworkId),"Rejected original entered queue");
  assert(approved.has(row.artworkId)||legacy.has(row.artworkId),
   "Unapproved original entered queue");
  assert(!/prado|museodelprado/i.test(row.artworkId+" "+row.sourceUrl));
- assert(row.lane&&row.status&&row.next&&row.priority);
+ assert(row.lane&&row.status&&row.next&&Number.isInteger(row.priority));
 }
 assert(queue.policy.noPradoImagesOrMirrors&&queue.policy.noPaidLicences&&queue.policy.noMuseumContact);
 assert(queue.policy.doNotUseNC_NDForCommercialApp);
 assert.deepEqual(load("data/calendar/sacred-art-certified-media.v1.json").media,[]);
-console.log("PASS: 76 non-Prado source tasks in 50 + 26 batches; 16 rights blocks; 9 Stations corrected; 3 wrong links still held; no publication");
+console.log("PASS: 76 non-Prado source tasks in 50 + 26 batches; 16 rights blocks; 12 Stations source-routed and 64 still unsourced; no publication");
