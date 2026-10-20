@@ -358,7 +358,7 @@ export function projectCuratedIntroitEntryLiveCards(curated){
     }),
   })));
   const expectedVisible=curated.totalCards-omitted.length;
-  if(![60,61,62].includes(expectedVisible)||cards.length!==expectedVisible||
+  if(![61,62,63].includes(expectedVisible)||cards.length!==expectedVisible||
      cards[0].title!=="Introit")
     throw new Error("CURATED_INTROIT_ENTRY_EXPECTED_SOURCE_STEPS");
   const lookup=new Map(cards.map(c=>[c.sectionId,c]));
