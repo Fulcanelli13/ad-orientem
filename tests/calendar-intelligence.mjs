@@ -285,7 +285,10 @@ const calendarBrowser=calendarDeferred?readFileSync("src/calendar/calendar-runti
 if(calendarDeferred)assert.match(calendarLoader,/ensureCalendarRuntime/,"Calendar facade lost its guarded runtime import");
 assert.match(calendarBrowser,/route\.startsWith\("find:"\)/,"Calendar semantic Explore routes are not handled by the app shell");
 assert.match(calendarBrowser,/route\.slice\(5\)\.split\(":"\)/,"Calendar route no longer parses the optional semantic pilgrimage event filter");
-assert.match(calendarBrowser,/AO_FIND_APP_V1\?\.open\?\.\(\{lens:lens\|\|"pilgrimages",view:"map",calendarKey:calendarKey\|\|null,query:""\}\)/,"Calendar semantic Explore route must open the requested mapped lens with a calendar-event filter");
+assert.match(calendarBrowser,/AO_FIND_APP_V1\?\.open\?\.\(\{/,"Calendar must open the canonical Explore owner");
+assert.match(calendarBrowser,/view:customId\?"list":"map"/,"Only a real custom identity should open a reading view; pilgrimage maps stay mapped");
+assert.match(calendarBrowser,/calendarKey:customId\?null:key\|\|null/,"Semantic pilgrimages keep their calendar-event filter");
+assert.match(calendarBrowser,/customId,expandDetail:Boolean\(customId\)/,"Customs must open the exact full bilingual folio");
 
 const home=readFileSync("src/home/enrichers.js","utf8");
 const homeBrowser=readFileSync("src/home/browser-entry.js","utf8");

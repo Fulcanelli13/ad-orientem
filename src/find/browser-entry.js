@@ -98,6 +98,7 @@ function installStyle(win){
     ".aoFindSchedules article{border-top:1px solid rgba(217,197,154,.12);padding:10px 0}.aoFindSchedules article small{display:block;margin-bottom:4px}.aoFindSchedules p{white-space:pre-line;color:#c0b6a3;font-size:13px}",
     ".aoExploreAddress{margin:15px 0;padding:12px;border:1px solid rgba(217,197,154,.1);border-radius:12px}.aoExploreAddress p{margin:5px 0 0;color:#c5baa6}",
     ".aoTraditionEvidence{margin:16px 0;border:1px solid rgba(217,197,154,.16);border-radius:12px;padding:12px 14px}.aoTraditionEvidence summary{cursor:pointer;min-height:32px;color:#e2d0aa;font:650 13px var(--ao-font-ui,system-ui,sans-serif)}.aoTraditionEvidence article{border-top:1px solid rgba(217,197,154,.12);padding:12px 0}.aoTraditionEvidence article strong{display:block;font-size:13px}.aoTraditionEvidence article small{display:block;color:#9e937f;margin:5px 0}.aoTraditionEvidence article p{line-height:1.45;color:#c7baa5;font-size:13px}.aoTraditionEvidence article button{min-height:44px;padding:8px 12px;border:1px solid rgba(217,197,154,.25);border-radius:999px;background:transparent;color:#e5d4b2;cursor:pointer}",
+    ".aoExploreTraditionSheet{max-height:calc(100dvh - 20px);padding:24px 20px calc(25px + env(safe-area-inset-bottom));border-top-color:rgba(217,197,154,.42);background:linear-gradient(180deg,#151d26 0,#0b121a 225px,#0a1119 100%)}.aoExploreTraditionSheet header small{color:#c4a976;letter-spacing:.12em}.aoExploreTraditionSheet header h2{font:400 clamp(23px,5.8vw,32px)/1.19 var(--ao-font-display,Georgia,serif);color:#f1e5d0;overflow-wrap:break-word}.aoExploreTraditionSheet>.aoExploreLead{font:400 15px/1.68 var(--ao-font-body,Georgia,serif);color:#dbcfb9;letter-spacing:.005em;margin:16px 0 18px}.aoExploreTraditionSheet .aoExploreSections{margin-top:19px}.aoExploreTraditionSheet .aoExploreSections article{padding:16px 0 18px;border-color:rgba(217,197,154,.19)}.aoExploreTraditionSheet .aoExploreSections article small{color:#c7ad82;font:650 11px/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.1em;text-transform:uppercase}.aoExploreTraditionSheet .aoExploreSections article p{font:400 15px/1.67 var(--ao-font-body,Georgia,serif);color:#ded1bc;overflow-wrap:break-word}.aoExploreTraditionSheet .aoTraditionEvidence summary{min-height:44px;display:flex;align-items:center;font-size:14px}.aoExploreTraditionSheet .aoTraditionEvidence article p{font-size:14px;line-height:1.6}.aoExploreTraditionSheet .aoFindSources a{overflow-wrap:anywhere;max-width:100%;white-space:normal;line-height:1.4}.aoExploreTraditionSheet .aoFindFacts strong{font-size:14px;line-height:1.4;overflow-wrap:anywhere}@media(max-width:520px){.aoExploreTraditionSheet{padding:20px 16px calc(28px + env(safe-area-inset-bottom));border-radius:18px 18px 0 0}.aoExploreTraditionSheet>.aoExploreLead,.aoExploreTraditionSheet .aoExploreSections article p{font-size:15px;line-height:1.65}}",
     ".aoFindActions{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.aoFindActions a,.aoFindActions button,.aoFindSources a{display:inline-flex;align-items:center;min-height:var(--ao-control-h,44px);border:1px solid rgba(217,197,154,.2);border-radius:var(--ao-pill-radius,999px);padding:9px 12px;color:#e7d8b8;text-decoration:none;font:650 var(--ao-type-ui-sm,12px) var(--ao-font-ui,system-ui,sans-serif);background:transparent;cursor:pointer}",
     ".aoFindSources{margin:15px 0}.aoFindSources>div{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.aoFindSheet footer{color:#8f846e;font:500 var(--ao-type-ui-xs,11px)/1.4 var(--ao-font-ui,system-ui,sans-serif);margin-top:14px}.aoFindGeoAttribution{display:block;margin-top:6px;opacity:.82}",
     ".aoExplorePlaceGroup{margin:16px 0;padding-top:13px;border-top:1px solid rgba(217,197,154,.1)}.aoExplorePlaceGroup>small{display:block;font:650 var(--ao-type-ui-xs,11px)/1.2 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.1em;color:#b7a57d;margin-bottom:9px}.aoExplorePlaceGroup>p{color:#bdb29f;line-height:1.45;font-size:13px}.aoExplorePlaceGroup>article{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid rgba(217,197,154,.07)}.aoExplorePlaceGroup>article:first-of-type{border-top:0}.aoExplorePlaceGroup>article button{min-height:38px;flex:none;border:1px solid rgba(217,197,154,.27);border-radius:999px;background:#111c25;color:#e5d5b5;padding:7px 10px;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}.aoExplorePlaceGroup>article>div{min-width:0}.aoExplorePlaceGroup>article>div p{font-size:11px;line-height:1.4;color:#a59d90;margin:5px 0}.aoExplorePlaceGroup>article strong{font-size:13px;font-weight:500}.aoExplorePlaceGroup>article span{color:#a99e89;font:600 11px sans-serif;white-space:nowrap}.aoExplorePlaceRows{display:grid;gap:7px}.aoExplorePlaceRow{width:100%;display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;border:1px solid rgba(217,197,154,.12);background:#101923;color:#e9e4d9;border-radius:12px;padding:11px}.aoExplorePlaceRow span{min-width:0}.aoExplorePlaceRow small{display:block;color:#a99570;font:650 var(--ao-type-ui-xs,11px)/1.1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.07em}.aoExplorePlaceRow strong{display:block;margin-top:4px;font-size:13px;font-weight:500}.aoExplorePlaceRow i{font:600 var(--ao-type-ui-xs,11px) var(--ao-font-ui,system-ui,sans-serif);color:#887e6d;font-style:normal;text-align:right}",
@@ -423,6 +424,7 @@ export function createFindOwner(win=globalThis){
       journeys,
       journeySelectedId:state.journeySelectedId,
       selectedPlaceId:state.selectedPlaceId,
+      selectedId:state.selectedId,
       expandPlace:state.expandPlace,
       expandDetail:state.expandDetail,
     });
@@ -561,6 +563,15 @@ export function createFindOwner(win=globalThis){
   }
 
   async function open(options={}){
+    // A Calendar handoff can select only an existing, source-backed canonical
+    // custom. The route payload alone cannot mint a practice or map pin.
+    const customId=options?.lens==="traditions"&&typeof options?.customId==="string"?options.customId:null;
+    if(options?.customId!=null&&(!customId||! /^[A-Z]{4}-[0-9]{3}$/.test(customId)))return false;
+    if(customId){
+      try{await ensureData()}catch{return false;}
+      if(!projection?.byLens?.traditions?.some(item=>
+        item?.raw?.custom?.custom_id===customId&&item.raw.custom.publication_state==="PUBLISHED"))return false;
+    }
     try{win?.AO_LEARN_APP_V1?.close?.()}catch{}
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
@@ -573,7 +584,12 @@ export function createFindOwner(win=globalThis){
     if(options?.view==="map"||options?.view==="list")state.view=options.view;
     if(typeof options?.query==="string")state.query=options.query;
     if(typeof options?.placeId==="string")state.selectedPlaceId=options.placeId;
-    state.expandPlace=false;state.expandDetail=false;
+    if(customId){
+      state.lens="traditions";state.view="list";state.query="";
+      state.atlasFamily="ANY";state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
+      state.displayLimit=24;state.selectedId="tradition:custom:"+customId;state.selectedPlaceId=null;
+    }
+    state.expandPlace=false;state.expandDetail=Boolean(customId&&options?.expandDetail);
     state.bibleAtlas=false;state.bibleIndex=0;
     const node=ensureRoot(win);if(!node)return false;
     openState=true;node.dataset.open="true";

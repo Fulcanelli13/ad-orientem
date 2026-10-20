@@ -10,6 +10,8 @@ on:
       - "tests/explore-surface.mjs"
       - "tests/explore-reachability-phone.mjs"
       - "tests/explore-layout-phone.mjs"
+      - "tests/customs-mobile-folios-phone.mjs"
+      - "tests/customs-calendar-profile-handoff.mjs"
       - "tests/explore-mass-map-visual.mjs"
       - "tests/explore-place-preview-r54.mjs"
       - "tests/preliminary-world-mass-map-r49.mjs"
@@ -67,8 +69,17 @@ jobs:
         run: node tests/explore-reachability-phone.mjs
       - name: Four-width Explore geometry and map-card audit
         run: node tests/explore-layout-phone.mjs
+      - name: Source-backed Customs Atlas bilingual folio legibility on real phone
+        run: node tests/customs-mobile-folios-phone.mjs
       - name: Traditional Mass map screenshots and first-screen acceptance
         run: node tests/explore-mass-map-visual.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: customs-bilingual-mobile-folios
+          path: artifacts/customs-mobile-folios/
+          retention-days: 30
+          if-no-files-found: warn
       - uses: actions/upload-artifact@v4
         if: always()
         with:
