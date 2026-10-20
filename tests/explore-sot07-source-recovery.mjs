@@ -20,6 +20,7 @@ assert.equal(S.schema,"AO_SOT07_FULL_CUSTOMARY_CROSSWALK_REVIEW_V1");
 assert.equal(S.status,"RESEARCH_RECOVERED_REVIEW_ONLY_NO_AUTOMATIC_PUBLICATION");
 assert.equal(S.source_sheet,"01_CUSTOMARY_REGISTER");
 assert.equal(S.rows.length,63,"63 original SOT07 row identities must be recovered");
+assert.equal(S.as_of,"2026-10-20","SOT-07 recovery status must be dated after the three admitted originals");
 assert.equal(new Set(S.rows.map(x=>x.original_custom_id)).size,63,"SOT07 original IDs duplicated");
 assert.deepEqual(S.rows.map(x=>x.row_number),Array.from({length:63},(_,i)=>i+5));
 assert.ok(S.rows.every(x=>x.workbook_source_ids.length>0),"a research row lost all original bibliographic provenance");
@@ -29,7 +30,7 @@ const published=new Set(P.customs.map(x=>x.custom_id));
 const held=new Set(N.entries.filter(x=>x.decision==="HOLD").map(x=>x.custom_id));
 const rejected=new Set(N.entries.filter(x=>x.decision==="REJECT").map(x=>x.custom_id));
 assert.deepEqual(S.counts,{
- total:63,published:13,hold:3,reject:4,cross_module_or_review:43
+ total:63,published:16,hold:3,reject:4,cross_module_or_review:40
 });
 for(const row of S.rows){
  const expected=published.has(row.original_custom_id)?"PUBLISHED_CANONICAL":
@@ -92,4 +93,4 @@ const holywellWell=G.places.find(p=>p.place_id==="place:GB:holywell-st-winefride
 assert.notEqual(holywellChurch.geo.lat,holywellWell.geo.lat,"Church was falsely collapsed into Holy Well");
 for(const id of ["place:DE:kevelaer-kerzenkapelle","place:GB:holywell-st-winefride-church"])
  assert.ok(R.exception_queues.places_without_direct_claim.includes(id),"contextual site acquired an inferred sacred-record identity");
-console.log("PASS SOT-07: 63 original rows, 13 live, seven blocked, 43 separate-owner reviews; SOT-07G: 53 families, 135 attestations, 117 sources; nine provenance-locked Places");
+console.log("PASS SOT-07: 63 original rows, 16 published, seven blocked, 40 separate-owner reviews; SOT-07G: 53 families, 135 attestations, 117 sources; nine provenance-locked Places");
