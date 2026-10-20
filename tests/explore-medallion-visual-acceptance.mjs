@@ -207,6 +207,20 @@ try{
    });
    assert.ok(closer.ready,"Zoomable institute map unavailable");
    await page.waitForTimeout(1200);
+   // Wikimedia-hosted institute images can outlive the MapLibre idle event.
+   // Wait for a decoded image instead of equating a positioned DOM emblem
+   // overlay with a fully painted crest. This is a strict visual gate.
+   await page.waitForFunction(()=>{
+     const map=globalThis.__AO_EXPLORE_VISUAL_REVIEW_MAP;
+     if(!map?.getLayer?.("ao-explore-points"))return false;
+     const points=map.queryRenderedFeatures?.({layers:["ao-explore-points"]})||[];
+     const eligible=points.some(p=>["FSSP","ICKSP","IBP","SSPX","DIOCESAN"].includes(
+       String(p.properties?.provider_group||"")));
+     if(!eligible)return true;
+     if(map.getLayer?.("ao-explore-institution-emblems"))return true;
+     return [...document.querySelectorAll(".aoExploreInstitutionMapPin img")]
+       .some(img=>img.complete&&img.naturalWidth>0);
+   },null,{timeout:18000,polling:250});
    const emblemReview=await page.evaluate(()=>{
      const map=globalThis.__AO_EXPLORE_VISUAL_REVIEW_MAP;
      const points=map.queryRenderedFeatures?.({layers:["ao-explore-points"]})||[];
