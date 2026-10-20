@@ -1,0 +1,405 @@
+{
+  "schema": "AO_WEISER_P1_WAVE03_BILINGUAL_EDITORIAL_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-20",
+  "status": "EDITORIAL_DRAFT_NOT_APP_PUBLICATION",
+  "source_ledger": "data/customs/research/weiser-p1-wave03-source-corroboration.v1.json",
+  "totals": {
+    "bilingual_summary_cards": 10,
+    "independently_bounded_source_observations": 12,
+    "partial_source_observations_held": 5,
+    "app_publications": 0
+  },
+  "cards": [
+    {
+      "card_id": "W58-P1-B3-ADVENT-WREATH",
+      "title_en": "The family Advent wreath",
+      "title_fr": "La couronne de l’Avent en famille",
+      "occasion": "The four Sundays of Advent",
+      "documented_scope": "Catholic household use; adopted devotional form rather than an original ancient Roman rite",
+      "existing_app_owner": "Calendar / family customs, not the 1962 Mass reader",
+      "description_en": "A ring of evergreen branches with four candles can accompany a family's Advent prayers. One more candle is lighted each Sunday, marking the approach of Christmas and the expectation of Christ's coming.",
+      "description_fr": "Une couronne de feuillage portant quatre bougies peut accompagner la prière familiale durant l'Avent. Chaque dimanche, une bougie supplémentaire est allumée pour marquer l'approche de Noël et l'attente du Christ.",
+      "spiritual_meaning_en": "Its growing light reminds the household of hope and preparation for the Saviour.",
+      "spiritual_meaning_fr": "Sa lumière grandissante rappelle l'espérance et la préparation à la venue du Sauveur.",
+      "optional_observance_en": "Light the appropriate candle during a short family prayer or Scripture reading, using a safe candle arrangement. The devotion is optional; do not imply the Church prescribes it at a 1962 Mass.",
+      "optional_observance_fr": "Allumer la bougie correspondante pendant une brève prière ou lecture de l'Écriture, en veillant à la sécurité. Cette dévotion est libre et ne constitue pas une rubrique de la messe de 1962.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-05-002",
+          "chapter": 5,
+          "printed_page": 55,
+          "title": "Family Advent wreath"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-WREATH",
+          "issuer": "United States Conference of Catholic Bishops",
+          "url": "https://www.usccb.org/prayers/blessing-advent-wreath",
+          "bounded_claim": "Modern Catholic household wreath and family prayer in Advent, optional; original Protestant historical origin is not independently verified here."
+        }
+      ],
+      "publication_guard": "The USCCB verifies accepted Catholic household practice; its source does not settle Weiser's historical claim about Protestant origins.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-NATIVITY-PRAYER",
+      "title_en": "Praying together at the Christmas crib",
+      "title_fr": "Prier en famille devant la crèche",
+      "occasion": "During Advent and Christmas Eve",
+      "documented_scope": "Roman Catholic domestic devotion; local crèche customs differ",
+      "existing_app_owner": "Calendar / Learn; reuse existing prayers",
+      "description_en": "The family crèche offers a place for children and adults to contemplate the Nativity. Catholic guidance recommends gathering before the crib to hear the birth narrative, sing a carol and pray together.",
+      "description_fr": "La crèche familiale invite enfants et adultes à contempler la Nativité. Les directives catholiques encouragent à s'y réunir pour entendre le récit de la naissance de Jésus, chanter un cantique et prier ensemble.",
+      "spiritual_meaning_en": "It brings the Gospel account of Bethlehem into the ordinary life of the home.",
+      "spiritual_meaning_fr": "Elle fait entrer le récit évangélique de Bethléem dans la vie ordinaire du foyer.",
+      "optional_observance_en": "Read Luke 2 together, pray in thanksgiving and, if customary in the family, place the figure of the Christ Child in the crib at Christmas.",
+      "optional_observance_fr": "Lire ensemble Luc 2, rendre grâce et, si tel est l'usage de la famille, placer la figure de l'Enfant Jésus dans la crèche à Noël.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-06-007",
+          "chapter": 6,
+          "printed_page": 74,
+          "title": "Christmas Eve family prayer before crib"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-CRIB",
+          "issuer": "Holy See — Directory on Popular Piety and the Liturgy, n. 109",
+          "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+          "bounded_claim": "Family Christmas Eve Nativity-crib prayers including Luke's account and carols, not a required 1962 pre-Mass ceremony."
+        }
+      ],
+      "publication_guard": "Household prayer is not an extra liturgical ceremony; alpine diorama details and other geographical claims remain separate.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-IRISH-CANDLE",
+      "title_en": "The Irish Christmas candle",
+      "title_fr": "La bougie de Noël dans les foyers irlandais",
+      "occasion": "Christmas Eve and Christmas night; some places retained candles for more days",
+      "documented_scope": "Historical Irish households, including documented Cork and Kerry localities",
+      "existing_app_owner": "Customs Atlas, Irish historical/regional example",
+      "description_en": "Irish folklore archives describe households lighting a candle on Christmas Eve, often at a window as a sign of welcome and remembrance. Some families associated Christmas candles with prayers for relatives who had died.",
+      "description_fr": "Les archives folkloriques irlandaises décrivent des familles allumant une bougie la veille de Noël, souvent à la fenêtre en signe d'accueil et de souvenir. Certaines y associaient la prière pour les proches défunts.",
+      "spiritual_meaning_en": "The small light can recall Christ's birth, hospitality and prayer for loved ones.",
+      "spiritual_meaning_fr": "Cette lumière peut rappeler la naissance du Christ, l'hospitalité et la prière pour ceux que l'on aime.",
+      "optional_observance_en": "As an optional family remembrance, place a safe light near a window and pray for relatives and for travellers; use an LED candle when safer.",
+      "optional_observance_fr": "À titre de souvenir familial facultatif, placer une lumière sans danger près d'une fenêtre et prier pour les proches et les voyageurs ; préférer une bougie électrique si nécessaire.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-08-004",
+          "chapter": 8,
+          "printed_page": 96,
+          "title": "Irish home Christmas candle and prayer for living and departed"
+        },
+        {
+          "id": "WEI58-08-008",
+          "chapter": 8,
+          "printed_page": 97,
+          "title": "Christmas window candles as welcome"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-IRISH_CANDLE",
+          "issuer": "National Museum of Ireland — Christmas in years gone by; National Folklore Collection UCD",
+          "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y",
+          "bounded_claim": "Irish household candles remembering the departed; local folk archive separately documents Christmas Eve window candle for hospitality. Folklore of guaranteed blessings/returning spirits is not promoted."
+        }
+      ],
+      "publication_guard": "Do not promote folkloric beliefs in automatic protection, the return of spirits or documented migration of this custom to the United States.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-EPIPHANY-PROCLAMATION",
+      "title_en": "Proclaiming the date of Easter at Epiphany",
+      "title_fr": "L’annonce de la date de Pâques à l’Épiphanie",
+      "occasion": "6 January in the 1962 Roman calendar; current calendars vary by jurisdiction",
+      "documented_scope": "Historical Latin ecclesiastical custom; the USCCB verifies modern use",
+      "existing_app_owner": "Calendar / Learn; reuse authoritative date calculation",
+      "description_en": "In an older Church custom, the date of Easter and the year's principal movable feasts are announced at Epiphany, reminding the faithful that the Resurrection orders the whole liturgical year.",
+      "description_fr": "Selon un ancien usage de l'Église, on annonce à l'Épiphanie la date de Pâques et des principales fêtes mobiles de l'année, rappelant que la Résurrection structure toute l'année liturgique.",
+      "spiritual_meaning_en": "The feast of Christ's manifestation points toward His Paschal mystery, the centre of Christian worship.",
+      "spiritual_meaning_fr": "La manifestation du Christ oriente vers son mystère pascal, centre du culte chrétien.",
+      "optional_observance_en": "Explore the year's feast dates in Ad Orientem's traditional Calendar; attend the proclamation only where a parish actually uses it.",
+      "optional_observance_fr": "Consulter les dates de l'année dans le calendrier traditionnel d'Ad Orientem ; assister à la proclamation uniquement là où une paroisse la pratique.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-12-005",
+          "chapter": 12,
+          "printed_page": 148,
+          "title": "Annual Epiphany announcement of Easter and movable feasts"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-EPIPH_PROCL",
+          "issuer": "United States Conference of Catholic Bishops",
+          "url": "https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/christmas/announcement-of-easter-and-the-moveable-feasts",
+          "bounded_claim": "Custom of solemnly announcing movable feasts on Epiphany, linked to Easter's centrality; source gives contemporary text, not certified 1962 use."
+        }
+      ],
+      "publication_guard": "No copied modern formula presented as the correct 1962 proclamation, and no second feast-date engine.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-PALMS-AT-HOME",
+      "title_en": "Keeping and shaping blessed Palm Sunday branches",
+      "title_fr": "Garder et disposer les rameaux bénits",
+      "occasion": "Palm Sunday and the following days of Holy Week",
+      "documented_scope": "French Catholic regional branches and a separately documented modern household cross-making activity",
+      "existing_app_owner": "Existing DOM-013 / Calendar",
+      "description_en": "Catholics often take blessed branches home after Palm Sunday. Depending on locality they may be palm, olive, box or other greenery. Some families shape simple crosses from the fronds to recall Christ's entry into Jerusalem and His approaching Passion.",
+      "description_fr": "Après le dimanche des Rameaux, les fidèles rapportent chez eux des branches bénites, de palmier, d'olivier, de buis ou d'autres végétaux selon les régions. Certaines familles en forment une petite croix pour évoquer l'entrée de Jésus à Jérusalem et sa Passion.",
+      "spiritual_meaning_en": "The branches witness to faith in Christ, rather than serving as protective talismans.",
+      "spiritual_meaning_fr": "Les rameaux témoignent de la foi au Christ et ne sont pas des talismans protecteurs.",
+      "optional_observance_en": "Keep a blessed branch reverently near a crucifix; a small decorative palm cross is optional. Participate first in the Church's procession where it is celebrated.",
+      "optional_observance_fr": "Conserver avec respect un rameau bénit près d'un crucifix ; une petite croix décorative en palme est facultative. Participer d'abord à la procession de l'Église là où elle a lieu.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-15-006",
+          "chapter": 15,
+          "printed_page": 191,
+          "title": "Palm Sunday willow olive box yew substitution"
+        },
+        {
+          "id": "WEI58-15-007",
+          "chapter": 15,
+          "printed_page": 191,
+          "title": "Palm bouquet woven into crosses"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-PALM_FRONDS",
+          "issuer": "Église catholique en France — Semaine Sainte et Pâques",
+          "url": "https://eglise.catholique.fr/espace-presse/dossiers-de-presse/368505-semaine-sainte-et-paques/",
+          "bounded_claim": "French Catholic use of buis, olive, laurel or palm according to region, blessed by priest and brought home; no magical protection."
+        },
+        {
+          "witness_id": "W58B3-PALM_CROSS",
+          "issuer": "Catholic Culture — Blessed Palms in the Home",
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1035",
+          "bounded_claim": "Modern Catholic household devotional practice making crosses from blessed Palm Sunday fronds; historical exact weaving and Weiser's geographic scope remain unverified."
+        }
+      ],
+      "publication_guard": "The blessing belongs to the minister; home crafts are not mandated, and magical uses are excluded. This is an enrichment of existing DOM-013, not a new canonical custom.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-POPAYAN-HOLYWEEK",
+      "title_en": "The Holy Week processions of Popayán",
+      "title_fr": "Les processions de la Semaine sainte à Popayán",
+      "occasion": "Holy Week in the Colombian city of Popayán",
+      "documented_scope": "Specific UNESCO-documented Catholic community in Colombia",
+      "existing_app_owner": "Customs Atlas / Explore geographical historical context",
+      "description_en": "In Popayán, Holy Week processions carry richly decorated religious images recalling episodes of the Passion, the burial of Christ and the Resurrection. The local community preserves the customs, processional floats and associated craftsmanship.",
+      "description_fr": "À Popayán, les processions de la Semaine sainte portent des images religieuses ornées rappelant la Passion, la mise au tombeau du Christ et la Résurrection. La communauté conserve les chars, les gestes et l'artisanat qui accompagnent ces cérémonies.",
+      "spiritual_meaning_en": "The visible story of Christ's Passion fosters recollection, communal prayer and transmission between generations.",
+      "spiritual_meaning_fr": "Le récit visible de la Passion encourage le recueillement, la prière commune et la transmission entre générations.",
+      "optional_observance_en": "When in a participating locality, consult the authentic programme and attend respectfully; otherwise meditate on the Gospel account of the Passion.",
+      "optional_observance_fr": "Dans une localité où cette tradition existe, consulter le programme officiel et participer avec respect ; autrement, méditer le récit évangélique de la Passion.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-15-025",
+          "chapter": 15,
+          "printed_page": 201,
+          "title": "Spanish and Latin American Calvary and entombment processions"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-HOLYWEEK_POPAYAN",
+          "issuer": "UNESCO Intangible Cultural Heritage — Popayán Holy Week processions",
+          "url": "https://ich.unesco.org/en/RL/holy-week-processions-in-popayan-00259",
+          "bounded_claim": "Longstanding local Holy Week processions in Popayán, Colombia, including Laying in the Tomb. No evidence of identical celebration in every Spanish or Latin American church."
+        }
+      ],
+      "publication_guard": "UNESCO verifies Popayán; it does not prove identical customs across all Spain or Latin America or add them to the Mass reader.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-ANDALUSIAN-PENITENTS",
+      "title_en": "Penitents and confraternities in Spanish Holy Week",
+      "title_fr": "Pénitents et confréries de la Semaine sainte espagnole",
+      "occasion": "Holy Week, particularly Andalusian processions",
+      "documented_scope": "Andalusia, Spain; role and costume differ among brotherhoods",
+      "existing_app_owner": "Customs Atlas / Learn regional historical context",
+      "description_en": "In Andalusian Holy Week, confraternities accompany processional images of Christ and Our Lady. Many members wear tunics and pointed penitential hoods known as capirotes, taking part in an organised act of public devotion.",
+      "description_fr": "Pendant la Semaine sainte andalouse, des confréries accompagnent les images du Christ et de Notre-Dame en procession. De nombreux membres portent des tuniques et des capuchons pénitentiels pointus, les capirotes, dans le cadre d'une dévotion publique organisée.",
+      "spiritual_meaning_en": "The penitential clothing belongs to a specific Spanish Christian confraternity tradition.",
+      "spiritual_meaning_fr": "Ce vêtement pénitentiel appartient à une tradition précise des confréries chrétiennes espagnoles.",
+      "optional_observance_en": "Where the practice is local and properly organised, join or attend reverently; it is not a costume or rite the app asks worshippers to reproduce.",
+      "optional_observance_fr": "Là où la tradition est organisée localement, y participer ou y assister avec respect ; l'application ne demande pas de reproduire le costume ou le rite.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-15-028",
+          "chapter": 15,
+          "printed_page": 203,
+          "title": "Hooded Holy Week confraternity processions"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-ANDALUSIAN_HOODS",
+          "issuer": "Turismo de Andalucía — Términos de Semana Santa",
+          "url": "https://www.andalucia.org/eventos/semana-santa/terminos-de-semana-santa/",
+          "bounded_claim": "Local Andalusian Semana Santa brotherhoods with nazareno, tunic and capirote; this is a public confraternity tradition, not a Roman Mass rubric."
+        }
+      ],
+      "publication_guard": "Regional culture is not a universal Roman ceremonial rubric; no inferred identity with unrelated modern costume movements.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-EASTER-EGGS",
+      "title_en": "Easter eggs as a sign of new life",
+      "title_fr": "Les œufs de Pâques, signe de vie nouvelle",
+      "occasion": "Easter and its family celebrations",
+      "documented_scope": "Christian seasonal symbolic custom; specific historical Roman Ritual egg blessing requires separate authentication",
+      "existing_app_owner": "Calendar / Customs Atlas, no new Holy Saturday rite",
+      "description_en": "Eggs appear in many Easter household traditions as a symbol of life and renewal. Church guidance recognises the blessing of eggs among Easter popular devotions, while the exact practices vary by place.",
+      "description_fr": "Dans diverses traditions familiales de Pâques, les œufs figurent la vie et le renouveau. Les directives de l'Église mentionnent leur bénédiction parmi les dévotions pascales, avec des usages variables selon les lieux.",
+      "spiritual_meaning_en": "The symbol can point toward the new life Christ has opened through His Resurrection.",
+      "spiritual_meaning_fr": "Ce symbole peut rappeler la vie nouvelle ouverte par la Résurrection du Christ.",
+      "optional_observance_en": "Share or decorate eggs with family in the Easter season; if a parish offers a proper priestly food blessing, attend according to its practice.",
+      "optional_observance_fr": "Partager ou décorer des œufs en famille au temps pascal ; si la paroisse propose une bénédiction sacerdotale des aliments, y participer selon son usage.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-17-010",
+          "chapter": 17,
+          "printed_page": 234,
+          "title": "Easter egg as symbol of tomb and new life"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-EASTER_EGG",
+          "issuer": "Holy See — Directory on Popular Piety and the Liturgy, n. 150",
+          "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+          "bounded_claim": "Easter eggs symbolize life in Christian popular piety; the Vatican documents egg blessings. Specific imagery of the tomb and historical 1962 Roman Ritual text not authenticated."
+        }
+      ],
+      "publication_guard": "No claim that a current Easter-egg blessing proves the precise 1962 Rituale Romanum formula; no separate rite in app.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-VENI-CREATOR",
+      "title_en": "Singing Veni Creator at Pentecost",
+      "title_fr": "Chanter le Veni Creator à la Pentecôte",
+      "occasion": "Pentecost and appropriate invocations of the Holy Spirit",
+      "documented_scope": "Universal Catholic hymn evidence for Pentecost; other particular ceremonies depend on proper source",
+      "existing_app_owner": "Existing Pray / Pentecost Learn, no music module",
+      "description_en": "The hymn Veni Creator Spiritus invokes the Holy Spirit's light and gifts. Pope John Paul II explicitly cited it as the Church's prayer at Pentecost.",
+      "description_fr": "L'hymne Veni Creator Spiritus invoque la lumière et les dons du Saint-Esprit. Saint Jean-Paul II l'a expressément évoquée comme prière de l'Église à la Pentecôte.",
+      "spiritual_meaning_en": "The faithful ask the Holy Spirit to renew their hearts and guide the Church.",
+      "spiritual_meaning_fr": "Les fidèles demandent au Saint-Esprit de renouveler leurs cœurs et de conduire l'Église.",
+      "optional_observance_en": "Recite or sing the hymn if its existing text is available in a properly sourced prayer module; otherwise use the app's Pentecost prayers.",
+      "optional_observance_fr": "Réciter ou chanter l'hymne si son texte authentifié se trouve déjà dans les prières ; autrement, utiliser les prières de Pentecôte de l'application.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-19-009",
+          "chapter": 19,
+          "printed_page": 250,
+          "title": "Veni Creator sung for retreats councils and important undertakings"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-VENI_CREATOR",
+          "issuer": "Holy See — John Paul II, First Vespers of Pentecost, 29 May 2004",
+          "url": "https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040529_vigil-pentecost.html",
+          "bounded_claim": "The hymn Veni Creator Spiritus is directly attested for Pentecost prayer; this source does not establish all Weiser-described councils and retreats usages."
+        }
+      ],
+      "publication_guard": "Do not invent hymn text or assume the source proves every historical retreat and council usage.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    },
+    {
+      "card_id": "W58-P1-B3-CORPUS-WINDOWS",
+      "title_en": "Decorating for the Corpus Christi procession",
+      "title_fr": "Orner les fenêtres pour la Fête-Dieu",
+      "occasion": "Corpus Christi, where a Eucharistic procession is locally organised",
+      "documented_scope": "Catholic popular practice documented in a Holy See directory; decoration varies locally",
+      "existing_app_owner": "Customs Atlas / Calendar feast-day context, separate from procession state",
+      "description_en": "Catholic communities sometimes decorate the streets and windows along a Eucharistic processional route with flowers. These offerings frame a public act of reverence for Christ present in the Blessed Sacrament.",
+      "description_fr": "Des communautés catholiques fleurissent parfois les rues et les fenêtres le long du passage de la procession eucharistique. Ces ornements accompagnent un acte public de révérence envers le Christ présent dans le Saint-Sacrement.",
+      "spiritual_meaning_en": "The house and street decorations help direct attention to the Eucharistic Lord rather than to a competition of displays.",
+      "spiritual_meaning_fr": "Les ornements des maisons et des rues invitent à tourner le regard vers le Seigneur eucharistique, et non à rivaliser de décorations.",
+      "optional_observance_en": "If a procession passes your home, offer simple suitable flowers or join the parish's decoration work after asking its organisers.",
+      "optional_observance_fr": "Si une procession passe devant chez soi, disposer sobrement des fleurs ou aider l'équipe paroissiale avec l'accord des organisateurs.",
+      "weiser_locators": [
+        {
+          "id": "WEI58-21-007",
+          "chapter": 21,
+          "printed_page": 262,
+          "title": "Procession route windows decorated with candles and sacred images"
+        }
+      ],
+      "independent_witnesses": [
+        {
+          "witness_id": "W58B3-CORPUS_WINDOWS",
+          "issuer": "Holy See — Directory on Popular Piety and the Liturgy, n. 162",
+          "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+          "bounded_claim": "Decorating streets and windows with flowers accompanying Eucharistic processions. It does not independently verify Weiser's exact candles-and-images detail."
+        }
+      ],
+      "publication_guard": "This source documents flowers, not specifically Weiser's candles and sacred images. No presumed procession in the 1962 reader.",
+      "publication_state": "SOURCE_CORROBORATED_EDITORIAL_DRAFT_NOT_RELEASED",
+      "copyright_policy": "Independent English and French paraphrases of factual traditions only"
+    }
+  ],
+  "held_partial_claims": [
+    {
+      "witness_id": "W58B3-MALTA_RUNNING",
+      "observations": [
+        "WEI58-16-020"
+      ],
+      "reason": "Easter Sunday local processions with image of the Risen Christ are independently attested; this notice does not establish their exact running choreography.",
+      "release_state": "HOLD"
+    },
+    {
+      "witness_id": "W58B3-ROGATION_FIELDS",
+      "observations": [
+        "WEI58-04-002"
+      ],
+      "reason": "Documented local priestly agricultural-equipment, livestock and seed blessing; NOT a witness to the exact priestly sprinkling of fields in the Weiser row.",
+      "release_state": "HOLD"
+    },
+    {
+      "witness_id": "W58B3-SHROVE_CONFESSION",
+      "observations": [
+        "WEI58-13-003"
+      ],
+      "reason": "Confession as Lenten preparation documented, but no independent Shrove Tuesday date-specific practice or mandate.",
+      "release_state": "HOLD"
+    },
+    {
+      "witness_id": "W58B3-IRISH_TO_AMERICA",
+      "observations": [
+        "WEI58-06-001"
+      ],
+      "reason": "Irish Christmas candle use is independently attested in County Cork; migration or historical adoption of the custom in America is not proved.",
+      "release_state": "HOLD"
+    },
+    {
+      "witness_id": "W58B3-ROMAN_EASTER_EGG_RITE",
+      "observations": [
+        "WEI58-17-011"
+      ],
+      "reason": "Church acknowledges egg blessing as popular piety, but does not certify the text, edition, minister or 1962 availability of the Roman Ritual rite.",
+      "release_state": "HOLD"
+    }
+  ]
+}
