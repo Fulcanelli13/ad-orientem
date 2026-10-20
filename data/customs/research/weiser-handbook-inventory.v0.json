@@ -22,18 +22,30 @@
   },
   "coverage": {
     "chapters_total": 28,
-    "first_pass_chapters": 5,
-    "first_pass_pages": "3–59",
-    "records": 45,
+    "first_pass_chapters": 12,
+    "first_pass_pages": "3–153",
+    "records": 167,
     "counts": {
-      "COVERED": 11,
-      "ENRICH": 7,
-      "CANDIDATE": 8,
-      "REGIONAL": 12,
-      "HISTORY_ONLY": 5,
-      "EXCLUDE": 2
+      "COVERED": 17,
+      "ENRICH": 20,
+      "CANDIDATE": 36,
+      "REGIONAL": 52,
+      "HISTORY_ONLY": 32,
+      "EXCLUDE": 10
     },
-    "preliminary_reconciliation": true
+    "preliminary_reconciliation": true,
+    "chapter_batches": [
+      {
+        "chapters": "1–5",
+        "observations": 45,
+        "status": "FIRST_PASS"
+      },
+      {
+        "chapters": "6–12",
+        "observations": 122,
+        "status": "FIRST_PASS"
+      }
+    ]
   },
   "chapters": [
     {
@@ -81,7 +93,7 @@
       "title": "Feast of the Nativity",
       "printed_start": 60,
       "printed_end": 76,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -89,7 +101,7 @@
       "title": "Christmas Hymns and Carols",
       "printed_start": 77,
       "printed_end": 93,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -97,7 +109,7 @@
       "title": "Christmas Symbols and Customs",
       "printed_start": 94,
       "printed_end": 115,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -105,7 +117,7 @@
       "title": "Christmas Foods",
       "printed_start": 116,
       "printed_end": 120,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -113,7 +125,7 @@
       "title": "Christmas Week",
       "printed_start": 121,
       "printed_end": 134,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -121,7 +133,7 @@
       "title": "Feast of the Circumcision",
       "printed_start": 135,
       "printed_end": 140,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -129,7 +141,7 @@
       "title": "Feast of the Epiphany",
       "printed_start": 141,
       "printed_end": 153,
-      "review": "QUEUED",
+      "review": "FIRST_PASS",
       "part": "II"
     },
     {
@@ -1116,6 +1128,2446 @@
       },
       "source_pass": "DIRECT_FIRST_PASS",
       "release_state": "RESEARCH_NOT_PUBLISHED"
+    },
+    {
+      "id": "WEI58-06-001",
+      "chapter": 6,
+      "page": 66,
+      "title": "Irish window lights brought into American Christmas observance",
+      "geo": "Ireland and Irish diaspora",
+      "kind": "HOUSEHOLD",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 66,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Separate Christmas welcome/devotion from universal obligation"
+    },
+    {
+      "id": "WEI58-06-002",
+      "chapter": 6,
+      "page": 69,
+      "title": "Traditional Christmas Eve joyful fast",
+      "geo": "Central European Catholic practice (1958)",
+      "kind": "HISTORICAL_DISCIPLINE",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 69,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "1958 fasting law and local adjustment not automatically valid today"
+    },
+    {
+      "id": "WEI58-06-003",
+      "chapter": 6,
+      "page": 70,
+      "title": "Three Nativity Mass formularies",
+      "geo": "Roman rite",
+      "kind": "LITURGY",
+      "triage": "COVERED",
+      "owner": "Mass/Calendar",
+      "existing_hint": "three-christmas-masses",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 70,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Do not create new customary Mass cards"
+    },
+    {
+      "id": "WEI58-06-004",
+      "chapter": 6,
+      "page": 71,
+      "title": "Misa de Gallo Christmas night Mass name",
+      "geo": "Spanish-speaking Catholic regions",
+      "kind": "LITURGICAL_NAME",
+      "triage": "ENRICH",
+      "owner": "Mass/Calendar",
+      "existing_hint": "three-christmas-masses",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 71,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not proof every Mass begins exactly at midnight"
+    },
+    {
+      "id": "WEI58-06-005",
+      "chapter": 6,
+      "page": 72,
+      "title": "Midnight Nativity birth-hour legend",
+      "geo": "Medieval Western lore",
+      "kind": "LEGEND",
+      "triage": "HISTORY_ONLY",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 72,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser states no historical evidence of midnight birth hour"
+    },
+    {
+      "id": "WEI58-06-006",
+      "chapter": 6,
+      "page": 73,
+      "title": "Christmas Eve devotional fish or meatless meal",
+      "geo": "Central and Northern Europe",
+      "kind": "HOUSEHOLD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 73,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Pre-1958 abstinence norm no longer universally obligatory"
+    },
+    {
+      "id": "WEI58-06-007",
+      "chapter": 6,
+      "page": 74,
+      "title": "Christmas Eve family prayer before crib",
+      "geo": "Central and Northern European Catholic homes",
+      "kind": "HOUSEHOLD",
+      "triage": "ENRICH",
+      "owner": "Calendar/Learn",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 74,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Family prayer before gifts; avoid new prayer module"
+    },
+    {
+      "id": "WEI58-06-008",
+      "chapter": 6,
+      "page": 74,
+      "title": "Christkind gifts announced by bell",
+      "geo": "German/Austrian/central European Catholic homes",
+      "kind": "HOUSEHOLD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 74,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Popular children's custom, not universal doctrine"
+    },
+    {
+      "id": "WEI58-06-009",
+      "chapter": 6,
+      "page": 74,
+      "title": "Opłatki shared with kiss and Christmas greeting",
+      "geo": "Polish, Lithuanian and other Slavic homes",
+      "kind": "HOUSEHOLD",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 74,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Sometimes priest-blessed; never equate wafer with Eucharistic host"
+    },
+    {
+      "id": "WEI58-06-010",
+      "chapter": 6,
+      "page": 74,
+      "title": "Straw or hay under Christmas Eve tablecloth",
+      "geo": "Slavic, Lithuanian, Hungarian households",
+      "kind": "HOUSEHOLD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 74,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Recalls the manger, with separate pre-Christian agrarian layers"
+    },
+    {
+      "id": "WEI58-06-011",
+      "chapter": 6,
+      "page": 74,
+      "title": "Christmas Eve household reconciliation and completion of tasks",
+      "geo": "European households",
+      "kind": "HOUSEHOLD",
+      "triage": "CANDIDATE",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 74,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Present as historical practice of completing work, not obligation"
+    },
+    {
+      "id": "WEI58-06-012",
+      "chapter": 6,
+      "page": 75,
+      "title": "Extra fodder for livestock and grain for birds at Christmas",
+      "geo": "Northern and Central Europe/Scandinavia",
+      "kind": "CHARITY_TO_CREATION",
+      "triage": "CANDIDATE",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 75,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Source associates it with Saint Francis; don't assert universal custom"
+    },
+    {
+      "id": "WEI58-06-013",
+      "chapter": 6,
+      "page": 75,
+      "title": "Alpine lantern walk and mountain Christmas fires en route to Mass",
+      "geo": "Austrian/Alpine Catholic valleys",
+      "kind": "PROCESSION",
+      "triage": "REGIONAL",
+      "owner": "Customs/Explore",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 75,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Climate-specific and not a fixed universal liturgical ceremony"
+    },
+    {
+      "id": "WEI58-06-014",
+      "chapter": 6,
+      "page": 76,
+      "title": "Christ Child figure placed in crib after Christmas Mass",
+      "geo": "Bethlehem and portions of Central Europe",
+      "kind": "PARISH_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Calendar/Learn",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 76,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Bethlehem shrine rite and local analogues not general Roman Missal rubrics"
+    },
+    {
+      "id": "WEI58-06-015",
+      "chapter": 6,
+      "page": 76,
+      "title": "French family réveillon after Midnight Mass",
+      "geo": "France",
+      "kind": "FAMILY_FEAST",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 76,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Post-Mass communal meal; not a liturgical service"
+    },
+    {
+      "id": "WEI58-06-016",
+      "chapter": 6,
+      "page": 76,
+      "title": "Spanish musical street celebrations after Midnight Mass",
+      "geo": "Spain",
+      "kind": "REGIONAL_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 76,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not a prescribed Church procession"
+    },
+    {
+      "id": "WEI58-07-001",
+      "chapter": 7,
+      "page": 79,
+      "title": "Franciscan devotional carols spread from Italy",
+      "geo": "Italy and subsequent Europe",
+      "kind": "CAROL_HISTORY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 79,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser distinguishes Francis' Latin hymn from unverified Italian carols ascribed to him"
+    },
+    {
+      "id": "WEI58-07-002",
+      "chapter": 7,
+      "page": 80,
+      "title": "Dominican-inspired German Christmas carols and In dulci jubilo",
+      "geo": "German-speaking lands",
+      "kind": "CAROL_HISTORY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 80,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not a request to introduce an Office or music module"
+    },
+    {
+      "id": "WEI58-07-003",
+      "chapter": 7,
+      "page": 82,
+      "title": "St Jean de Brébeuf's Huron Christmas carol Jesous Ahatonnia",
+      "geo": "Huron mission / French Canada",
+      "kind": "MISSION_HISTORY",
+      "triage": "ENRICH",
+      "owner": "Saints/Learn",
+      "existing_hint": "saint:jean-de-brebeuf",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 82,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Preserve indigenous language attribution; do not reproduce hymn lyrics"
+    },
+    {
+      "id": "WEI58-07-004",
+      "chapter": 7,
+      "page": 85,
+      "title": "Alpine household carol composition and hearth singing",
+      "geo": "Austria and Bavaria",
+      "kind": "FAMILY_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 85,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Distinct from liturgical chant prescriptions"
+    },
+    {
+      "id": "WEI58-07-005",
+      "chapter": 7,
+      "page": 85,
+      "title": "Traditional carol Stille Nacht at Christmas gatherings",
+      "geo": "Salzburg/Austria, later global",
+      "kind": "CAROL_HISTORY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 85,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Origin legend must be marked legend, not treated as proven detail"
+    },
+    {
+      "id": "WEI58-07-006",
+      "chapter": 7,
+      "page": 86,
+      "title": "Carol singing while travelling to Christmas worship",
+      "geo": "Early missionary North America",
+      "kind": "COMMUNITY_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 86,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Specific historical missionary example, not universal"
+    },
+    {
+      "id": "WEI58-07-007",
+      "chapter": 7,
+      "page": 87,
+      "title": "French Canadian La guignolée collection for the poor",
+      "geo": "French Canada",
+      "kind": "CHARITY_PROCESSION",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 87,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "House-to-house carols, food and clothing for poor, often before Christmas or New Year"
+    },
+    {
+      "id": "WEI58-07-008",
+      "chapter": 7,
+      "page": 87,
+      "title": "Polish Kolednicy Christmas star and Nativity drama rounds",
+      "geo": "Poland and Slavic regions",
+      "kind": "REGIONAL_CUSTOM",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 87,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Children or youth groups; Magi/Nativity dramatization"
+    },
+    {
+      "id": "WEI58-07-009",
+      "chapter": 7,
+      "page": 87,
+      "title": "Hungarian Bethlehem house-to-house singing",
+      "geo": "Hungary",
+      "kind": "REGIONAL_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 87,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not a sacramental rite"
+    },
+    {
+      "id": "WEI58-07-010",
+      "chapter": 7,
+      "page": 89,
+      "title": "French and English Noël refrain carols",
+      "geo": "France and English-speaking lands",
+      "kind": "CAROL_HISTORY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 89,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Distinct from Mass chant and not new prayer body"
+    },
+    {
+      "id": "WEI58-07-011",
+      "chapter": 7,
+      "page": 91,
+      "title": "Historical in-church Christmas dance carols",
+      "geo": "Seville, York, parts of France",
+      "kind": "DISCONTINUED_PARISH_CUSTOM",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 91,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser describes bans and variation; never recommend as current ritual"
+    },
+    {
+      "id": "WEI58-07-012",
+      "chapter": 7,
+      "page": 92,
+      "title": "Kindelwiegen cradle-rocking Christ-child figure",
+      "geo": "Germany/Austria and Tyrol",
+      "kind": "REGIONAL_DEVOTION",
+      "triage": "REGIONAL",
+      "owner": "Customs/Learn",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 92,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Reported church practice later restricted; domestic variants distinct"
+    },
+    {
+      "id": "WEI58-07-013",
+      "chapter": 7,
+      "page": 93,
+      "title": "Tyrolean Christmas yodelling by crib",
+      "geo": "Austrian Tyrol",
+      "kind": "REGIONAL_FOLK_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 93,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Historical devotional musical folklore; avoid new music module"
+    },
+    {
+      "id": "WEI58-08-001",
+      "chapter": 8,
+      "page": 94,
+      "title": "Saint Francis Greccio crib commemoration",
+      "geo": "Greccio, Italy (1223)",
+      "kind": "HISTORICAL_DEVOTION",
+      "triage": "COVERED",
+      "owner": "Learn/Saints",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 94,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Historical provenance of the crib; no invented reenactment"
+    },
+    {
+      "id": "WEI58-08-002",
+      "chapter": 8,
+      "page": 96,
+      "title": "Large Alpine Nativity dioramas constructed in Advent",
+      "geo": "Alpine central Europe",
+      "kind": "HOUSEHOLD_ART",
+      "triage": "ENRICH",
+      "owner": "Customs/Learn",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 96,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Regional large scenes, not a universal requirement"
+    },
+    {
+      "id": "WEI58-08-003",
+      "chapter": 8,
+      "page": 96,
+      "title": "Moravian putz Nativity landscapes and visits",
+      "geo": "German Moravian / Pennsylvania",
+      "kind": "NON_CATHOLIC_PARALLEL",
+      "triage": "HISTORY_ONLY",
+      "owner": "Research archive",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 96,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Explicitly Moravian Protestant parallel; do not misclassify as Roman Catholic"
+    },
+    {
+      "id": "WEI58-08-004",
+      "chapter": 8,
+      "page": 96,
+      "title": "Irish home Christmas candle and prayer for living and departed",
+      "geo": "Ireland",
+      "kind": "HOUSEHOLD_DEVOTION",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 96,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Christmas Eve candle and family intercession"
+    },
+    {
+      "id": "WEI58-08-005",
+      "chapter": 8,
+      "page": 97,
+      "title": "Priest-blessed Christmas candle displayed at meal",
+      "geo": "Polish/Ukrainian/Russian homes",
+      "kind": "BLESSING_CUSTOM",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 97,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Historical local example; not every Christmas candle is ritually blessed"
+    },
+    {
+      "id": "WEI58-08-006",
+      "chapter": 8,
+      "page": 97,
+      "title": "Three joined candles of Christmas Trinity symbol",
+      "geo": "England and France",
+      "kind": "HOUSEHOLD_SYMBOL",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 97,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Local symbolic variant"
+    },
+    {
+      "id": "WEI58-08-007",
+      "chapter": 8,
+      "page": 97,
+      "title": "Christmas pyramid of candles and evergreens",
+      "geo": "Germany",
+      "kind": "HOUSEHOLD_SYMBOL",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 97,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Distinct from later Christmas tree"
+    },
+    {
+      "id": "WEI58-08-008",
+      "chapter": 8,
+      "page": 97,
+      "title": "Christmas window candles as welcome",
+      "geo": "Ireland and diaspora",
+      "kind": "HOUSEHOLD_DEVOTION",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 97,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Irish roots later adopted in US"
+    },
+    {
+      "id": "WEI58-08-009",
+      "chapter": 8,
+      "page": 98,
+      "title": "Ceremonial Yule log in family hearth",
+      "geo": "European localities",
+      "kind": "FOLK_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 98,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not in itself a Christian liturgical sacramental"
+    },
+    {
+      "id": "WEI58-08-010",
+      "chapter": 8,
+      "page": 99,
+      "title": "Paradise tree with apples from Adam and Eve plays",
+      "geo": "German-speaking medieval regions",
+      "kind": "HISTORICAL_SYMBOL",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 99,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser presents origin hypothesis, not a definitive universal history"
+    },
+    {
+      "id": "WEI58-08-011",
+      "chapter": 8,
+      "page": 100,
+      "title": "Christmas tree devotional symbolism",
+      "geo": "Germany and later Europe",
+      "kind": "ADOPTED_CUSTOM",
+      "triage": "ENRICH",
+      "owner": "Learn",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 100,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Separate from specific contested origin account; no obligatory custom"
+    },
+    {
+      "id": "WEI58-08-012",
+      "chapter": 8,
+      "page": 102,
+      "title": "Public decorated Christmas tree",
+      "geo": "United States then Europe",
+      "kind": "CIVIC_CUSTOM",
+      "triage": "HISTORY_ONLY",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 102,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Purely historical civic background"
+    },
+    {
+      "id": "WEI58-08-013",
+      "chapter": 8,
+      "page": 103,
+      "title": "Christmas tree attributed to St Boniface or Luther",
+      "geo": "European legend",
+      "kind": "UNVERIFIED_LEGEND",
+      "triage": "EXCLUDE",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 103,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser explicitly denies historical foundation for these origin legends"
+    },
+    {
+      "id": "WEI58-08-014",
+      "chapter": 8,
+      "page": 104,
+      "title": "Holly used to recall Passion and Nativity",
+      "geo": "Northern Europe/England",
+      "kind": "HOUSEHOLD_SYMBOL",
+      "triage": "REGIONAL",
+      "owner": "Learn/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 104,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Symbolic meanings only, not blessed sacred matter"
+    },
+    {
+      "id": "WEI58-08-015",
+      "chapter": 8,
+      "page": 104,
+      "title": "Mistletoe kissing and good-luck claims",
+      "geo": "England with pre-Christian associations",
+      "kind": "FOLKLORE",
+      "triage": "HISTORY_ONLY",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 104,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not Catholic sacramental; good-luck claims excluded"
+    },
+    {
+      "id": "WEI58-08-016",
+      "chapter": 8,
+      "page": 105,
+      "title": "Holly kept as charm against lightning or witchcraft",
+      "geo": "Germanic/English folklore",
+      "kind": "SUPERSTITION",
+      "triage": "EXCLUDE",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 105,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "No amulet/guaranteed protection advice"
+    },
+    {
+      "id": "WEI58-08-017",
+      "chapter": 8,
+      "page": 106,
+      "title": "Laurel wreath and victory symbolism at Christmas",
+      "geo": "Roman Catholic regions, Ireland/England diaspora",
+      "kind": "SEASONAL_DECORATION",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 106,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser describes Christian reinterpretation"
+    },
+    {
+      "id": "WEI58-08-018",
+      "chapter": 8,
+      "page": 106,
+      "title": "Rosemary tied to Holy Family flight legend",
+      "geo": "Western Europe",
+      "kind": "FOLKLORE_LEGEND",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 106,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Explicit legend; not authenticated episode from the Gospels"
+    },
+    {
+      "id": "WEI58-08-019",
+      "chapter": 8,
+      "page": 106,
+      "title": "St Barbara's December 4 cherry blossom branches",
+      "geo": "Czech, Slovak, Austrian homes",
+      "kind": "FEAST_DAY_HOUSEHOLD",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 106,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Decorative branch; marriage prediction treated as superstition"
+    },
+    {
+      "id": "WEI58-08-020",
+      "chapter": 8,
+      "page": 107,
+      "title": "Flowering Barbara branch promises good marriage",
+      "geo": "Central European folklore",
+      "kind": "SUPERSTITION",
+      "triage": "EXCLUDE",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 107,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "No fortune-telling material"
+    },
+    {
+      "id": "WEI58-08-021",
+      "chapter": 8,
+      "page": 107,
+      "title": "Mexican poinsettia at Christmas",
+      "geo": "Mexico and diaspora",
+      "kind": "SEASONAL_SYMBOL",
+      "triage": "REGIONAL",
+      "owner": "Learn/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 107,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Popular legend of poor child's offering distinct from history"
+    },
+    {
+      "id": "WEI58-08-022",
+      "chapter": 8,
+      "page": 108,
+      "title": "Christmas religious greeting cards",
+      "geo": "Britain/Americas and wider",
+      "kind": "HOUSEHOLD_CULTURE",
+      "triage": "REGIONAL",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 108,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Visual iconography may vary by climate; not prayer module"
+    },
+    {
+      "id": "WEI58-08-023",
+      "chapter": 8,
+      "page": 109,
+      "title": "Medieval Nativity mystery drama later removed from liturgy",
+      "geo": "European medieval churches",
+      "kind": "HISTORICAL_CEREMONIAL",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 109,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser records ecclesiastical suppressions; no authority to perform in Mass"
+    },
+    {
+      "id": "WEI58-08-024",
+      "chapter": 8,
+      "page": 110,
+      "title": "Nativity children's gifts for the poor at Boston parish crib",
+      "geo": "Holy Trinity Catholic parish, Boston (1851)",
+      "kind": "PARISH_CHARITY",
+      "triage": "REGIONAL",
+      "owner": "Learn/Customs",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 110,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Direct historic anecdote, not claim it survives now"
+    },
+    {
+      "id": "WEI58-08-025",
+      "chapter": 8,
+      "page": 111,
+      "title": "St Stephen Boxing Day alms to poor",
+      "geo": "Medieval English Catholic churches",
+      "kind": "CHARITY_CUSTOM",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 111,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Alms-box charity history, distinguish secular modern gift routine"
+    },
+    {
+      "id": "WEI58-08-026",
+      "chapter": 8,
+      "page": 111,
+      "title": "Christ Child gift-bearer and prayer before opening gifts",
+      "geo": "Germany/Austria/France/Canada/Spain/Latin America",
+      "kind": "FAMILY_CUSTOM",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Learn",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 111,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Christmas Gospel/crib prayer; not a new feast office"
+    },
+    {
+      "id": "WEI58-08-027",
+      "chapter": 8,
+      "page": 112,
+      "title": "Epiphany Befana gifts",
+      "geo": "Italy",
+      "kind": "REGIONAL_FOLKLORE",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 112,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Folkloric gift-bearer, not historical Gospel person"
+    },
+    {
+      "id": "WEI58-08-028",
+      "chapter": 8,
+      "page": 113,
+      "title": "St Nicholas Eve visit carried in Dutch diaspora",
+      "geo": "Netherlands / New York",
+      "kind": "SAINTS_FAMILY_CUSTOM",
+      "triage": "CANDIDATE",
+      "owner": "Saints/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 113,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Separate St Nicholas from commercial Santa image"
+    },
+    {
+      "id": "WEI58-08-029",
+      "chapter": 8,
+      "page": 114,
+      "title": "Thor as source of modern Santa Claus",
+      "geo": "Weiser's asserted folklore genealogy",
+      "kind": "DISPUTED_HYPOTHESIS",
+      "triage": "HISTORY_ONLY",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 114,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not sufficiently established to present as fact"
+    },
+    {
+      "id": "WEI58-09-001",
+      "chapter": 9,
+      "page": 116,
+      "title": "Ukrainian Christmas wheat sheaf Didukh forefather emblem",
+      "geo": "Ukraine",
+      "kind": "AGRARIAN_HOUSEHOLD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 116,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Mixed Christian and pre-Christian harvest layers"
+    },
+    {
+      "id": "WEI58-09-002",
+      "chapter": 9,
+      "page": 117,
+      "title": "Ukrainian kutia wheat and honey Christmas Eve meal",
+      "geo": "Ukraine",
+      "kind": "CHRISTMAS_MEAL",
+      "triage": "CANDIDATE",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 117,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Separate symbolic meal from older ceiling-throw fertility action"
+    },
+    {
+      "id": "WEI58-09-003",
+      "chapter": 9,
+      "page": 117,
+      "title": "Throwing kutia to ceiling to determine fortune",
+      "geo": "Ukrainian pre-Christian agrarian folklore",
+      "kind": "SUPERSTITION",
+      "triage": "EXCLUDE",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 117,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Never as endorsed blessing or predictive practice"
+    },
+    {
+      "id": "WEI58-09-004",
+      "chapter": 9,
+      "page": 117,
+      "title": "Polish grain and straw at Christmas Eve family shrine",
+      "geo": "Poland",
+      "kind": "AGRARIAN_HOUSEHOLD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 117,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Regional symbol, not prescribed house altar"
+    },
+    {
+      "id": "WEI58-09-005",
+      "chapter": 9,
+      "page": 117,
+      "title": "Irish Christmas Eve cakes Night of Cakes",
+      "geo": "Ireland/England/Scotland",
+      "kind": "REGIONAL_FOOD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 117,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser documents family cakes"
+    },
+    {
+      "id": "WEI58-09-006",
+      "chapter": 9,
+      "page": 117,
+      "title": "French Pain calendau Christmas loaf share with poor",
+      "geo": "Provence/southern France",
+      "kind": "CHARITY_FOOD",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 117,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "First portion distributed as alms; exact local attestation desirable"
+    },
+    {
+      "id": "WEI58-09-007",
+      "chapter": 9,
+      "page": 118,
+      "title": "Slavic opłatki priest-blessed wafer at Christmas Eve dinner",
+      "geo": "Polish/Lithuanian/Slavic homes",
+      "kind": "BLESSING_FOOD",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 118,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not Eucharistic bread; cross-reference chapter 6 duplicate practice"
+    },
+    {
+      "id": "WEI58-09-008",
+      "chapter": 9,
+      "page": 118,
+      "title": "German Christstollen and regional Christmas breads",
+      "geo": "Germany",
+      "kind": "FESTIVE_FOOD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 118,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Culinary folklore, not a blessing"
+    },
+    {
+      "id": "WEI58-09-009",
+      "chapter": 9,
+      "page": 118,
+      "title": "Greek Christmas bread marked with cross",
+      "geo": "Greece / Eastern Christian tradition",
+      "kind": "NON_ROMAN_PARALLEL",
+      "triage": "HISTORY_ONLY",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 118,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Respect Eastern rite distinctions"
+    },
+    {
+      "id": "WEI58-09-010",
+      "chapter": 9,
+      "page": 119,
+      "title": "Spanish almond pastry and Latin American buñuelos",
+      "geo": "Spain/Portugal/Italy/Latin America",
+      "kind": "FESTIVE_FOOD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 119,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Historical descriptive inventory, no recipe module"
+    },
+    {
+      "id": "WEI58-09-011",
+      "chapter": 9,
+      "page": 119,
+      "title": "French Canadian Christmas beignes and sucre à la crème",
+      "geo": "French Canada",
+      "kind": "FESTIVE_FOOD",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 119,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Regional festive dishes"
+    },
+    {
+      "id": "WEI58-09-012",
+      "chapter": 9,
+      "page": 119,
+      "title": "Christmas feast dinner following period of preparation",
+      "geo": "European Catholic families",
+      "kind": "FAMILY_FEAST",
+      "triage": "ENRICH",
+      "owner": "Calendar/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 119,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "1958 fast and abstinence assertions not current universal law"
+    },
+    {
+      "id": "WEI58-09-013",
+      "chapter": 9,
+      "page": 120,
+      "title": "English pre-Reformation manger-shaped mince pies",
+      "geo": "England before Reformation",
+      "kind": "HISTORICAL_FOOD_SYMBOL",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 120,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Distinguish old manger symbolism from modern secular mince pie"
+    },
+    {
+      "id": "WEI58-09-014",
+      "chapter": 9,
+      "page": 120,
+      "title": "English wassail and festive drinking",
+      "geo": "England",
+      "kind": "SECULAR_FOLKLORE",
+      "triage": "HISTORY_ONLY",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 120,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not a sacramental blessing or alcohol recommendation"
+    },
+    {
+      "id": "WEI58-10-001",
+      "chapter": 10,
+      "page": 121,
+      "title": "Christmas octave and companions of Christ feasts",
+      "geo": "Roman Catholic 1958 calendrical background",
+      "kind": "LITURGICAL_CONTEXT",
+      "triage": "COVERED",
+      "owner": "Calendar",
+      "existing_hint": "Christmas octave",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 121,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Rank and old transfer rubrics independently verify against 1962"
+    },
+    {
+      "id": "WEI58-10-002",
+      "chapter": 10,
+      "page": 123,
+      "title": "Twelve Christmas nights as devotional domestic evenings",
+      "geo": "Central and Eastern Europe",
+      "kind": "HOUSEHOLD_DEVOTION",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 123,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Rosary/carols; avoid recurring automation or Office module"
+    },
+    {
+      "id": "WEI58-10-003",
+      "chapter": 10,
+      "page": 123,
+      "title": "Polish Święte Wieczory Holy Evenings",
+      "geo": "Poland",
+      "kind": "HOUSEHOLD_DEVOTION",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 123,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Nightly prayers and seasonal rest"
+    },
+    {
+      "id": "WEI58-10-004",
+      "chapter": 10,
+      "page": 124,
+      "title": "Polish szopka and children's nativity dramatizations",
+      "geo": "Poland",
+      "kind": "COMMUNITY_DRAMA",
+      "triage": "REGIONAL",
+      "owner": "Customs/Learn",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 124,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Mixed religious and secular performance"
+    },
+    {
+      "id": "WEI58-10-005",
+      "chapter": 10,
+      "page": 124,
+      "title": "Hungarian Bethlehem house visitation play",
+      "geo": "Hungary",
+      "kind": "COMMUNITY_DEVOTION",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 124,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "House-to-house crib representations"
+    },
+    {
+      "id": "WEI58-10-006",
+      "chapter": 10,
+      "page": 124,
+      "title": "Roman Ara Coeli Santo Bambino children's devotions",
+      "geo": "Rome, Italy",
+      "kind": "SHRINE_DEVOTION",
+      "triage": "CANDIDATE",
+      "owner": "Explore/Saints",
+      "existing_hint": "DOM-010",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 124,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Historical shrine practice; do not infer current hours"
+    },
+    {
+      "id": "WEI58-10-007",
+      "chapter": 10,
+      "page": 125,
+      "title": "Perchten fearful masks and fertility magic",
+      "geo": "Central and Eastern Europe",
+      "kind": "PRECHRISTIAN_FOLKLORE",
+      "triage": "EXCLUDE",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 125,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not endorsed Catholic piety"
+    },
+    {
+      "id": "WEI58-10-008",
+      "chapter": 10,
+      "page": 126,
+      "title": "Feast of Fools inside churches",
+      "geo": "Medieval France / later suppressed",
+      "kind": "SUPPRESSED_CEREMONIAL",
+      "triage": "HISTORY_ONLY",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 126,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Explicit ecclesiastical rejection; not an app practice"
+    },
+    {
+      "id": "WEI58-10-009",
+      "chapter": 10,
+      "page": 127,
+      "title": "Feast of the Ass dramatization",
+      "geo": "Medieval France; disappeared",
+      "kind": "HISTORICAL_DRAMA",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 127,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "No modern liturgical instructions"
+    },
+    {
+      "id": "WEI58-10-010",
+      "chapter": 10,
+      "page": 129,
+      "title": "St Stephen blessing of horses",
+      "geo": "Rural Catholic Europe, December 26",
+      "kind": "MINISTERIAL_BLESSING",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 129,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Priestly animal blessing; regional and independently source-check rite"
+    },
+    {
+      "id": "WEI58-10-011",
+      "chapter": 10,
+      "page": 129,
+      "title": "St Stephen decorated horses and rider procession",
+      "geo": "Rural Europe / Sweden",
+      "kind": "REGIONAL_PROCESSION",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 129,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Separate priestly blessing from outdoor folklore"
+    },
+    {
+      "id": "WEI58-10-012",
+      "chapter": 10,
+      "page": 130,
+      "title": "St Stephen blessing hay and oats",
+      "geo": "Poland and Central Europe",
+      "kind": "MINISTERIAL_BLESSING",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 130,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Do not equate fertility tossing rites with Church blessing"
+    },
+    {
+      "id": "WEI58-10-013",
+      "chapter": 10,
+      "page": 130,
+      "title": "St John Evangelist wine blessing Johannesminne",
+      "geo": "Central European Catholic regions, Dec 27",
+      "kind": "MINISTERIAL_BLESSING",
+      "triage": "ENRICH",
+      "owner": "Customs/Calendar",
+      "existing_hint": "BLSS-003 pending PR #1512",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 130,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Existing proposal; Weiser independently corroborates historical Roman Ritual"
+    },
+    {
+      "id": "WEI58-10-014",
+      "chapter": 10,
+      "page": 130,
+      "title": "St John wine in wedding, journey and dying customs",
+      "geo": "Central Europe",
+      "kind": "DOMESTIC_SACRAMENTAL_FOLK",
+      "triage": "HISTORY_ONLY",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 130,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Historical uses only; no drinking/health guarantees"
+    },
+    {
+      "id": "WEI58-10-015",
+      "chapter": 10,
+      "page": 131,
+      "title": "John or Joan first lights Christmas candles",
+      "geo": "Several Catholic regions",
+      "kind": "NAMEDAY_FAMILY",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 131,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Local family privilege, not universal custom"
+    },
+    {
+      "id": "WEI58-10-016",
+      "chapter": 10,
+      "page": 132,
+      "title": "Holy Innocents feast as mournful commemoration",
+      "geo": "Roman 1958 Rite",
+      "kind": "LITURGICAL_CONTEXT",
+      "triage": "COVERED",
+      "owner": "Calendar",
+      "existing_hint": "Holy Innocents",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 132,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Calendar reforms and rank independently verify"
+    },
+    {
+      "id": "WEI58-10-017",
+      "chapter": 10,
+      "page": 133,
+      "title": "Holy Innocents boy bishop tradition",
+      "geo": "Medieval European choir schools",
+      "kind": "HISTORICAL_SCHOOL_CUSTOM",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 133,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Later shifted to St Nicholas and altered; not current rite"
+    },
+    {
+      "id": "WEI58-10-018",
+      "chapter": 10,
+      "page": 133,
+      "title": "Holy Innocents junior novices enjoy leadership privilege",
+      "geo": "Historic convents/monasteries",
+      "kind": "RELIGIOUS_COMMUNITY_FOLK",
+      "triage": "REGIONAL",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 133,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Monastic custom, not domestic universal"
+    },
+    {
+      "id": "WEI58-10-019",
+      "chapter": 10,
+      "page": 134,
+      "title": "Holy Innocents ghost-child baptism legend",
+      "geo": "Germanic folklore",
+      "kind": "SUPERSTITION",
+      "triage": "EXCLUDE",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 134,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Reject as doctrinally unsound"
+    },
+    {
+      "id": "WEI58-10-020",
+      "chapter": 10,
+      "page": 134,
+      "title": "Holy Innocents fertility spanking",
+      "geo": "Central European folklore",
+      "kind": "SUPERSTITION",
+      "triage": "EXCLUDE",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 134,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Do not recommend"
+    },
+    {
+      "id": "WEI58-11-001",
+      "chapter": 11,
+      "page": 135,
+      "title": "January 1 Circumcision and Christmas Octave title",
+      "geo": "Roman 1958 liturgical calendar",
+      "kind": "LITURGICAL_CONTEXT",
+      "triage": "COVERED",
+      "owner": "Calendar",
+      "existing_hint": "January 1",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 135,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Preserve 1962 identity distinct from modern Mary Mother of God solemnity"
+    },
+    {
+      "id": "WEI58-11-002",
+      "chapter": 11,
+      "page": 136,
+      "title": "Ancient penitential processions against Jan 1 excess",
+      "geo": "Gaul/Spain/Rome historic",
+      "kind": "HISTORICAL_DISCIPLINE",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 136,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Early anti-pagan discipline not current fast"
+    },
+    {
+      "id": "WEI58-11-003",
+      "chapter": 11,
+      "page": 137,
+      "title": "Christmas octave day gathered prayer",
+      "geo": "Roman history",
+      "kind": "LITURGY",
+      "triage": "ENRICH",
+      "owner": "Calendar",
+      "existing_hint": "January 1",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 137,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "No additional invented feast"
+    },
+    {
+      "id": "WEI58-11-004",
+      "chapter": 11,
+      "page": 138,
+      "title": "Holy Name devotion associated with Circumcision",
+      "geo": "Latin Catholic",
+      "kind": "DEVOTION",
+      "triage": "ENRICH",
+      "owner": "Calendar/Learn",
+      "existing_hint": "Holy Name",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 138,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Honor Jesus' Name; exact 1962 observance owner"
+    },
+    {
+      "id": "WEI58-11-005",
+      "chapter": 11,
+      "page": 139,
+      "title": "Te Deum and thanksgiving at year end",
+      "geo": "Roman Catholic local church",
+      "kind": "THANKSGIVING",
+      "triage": "ENRICH",
+      "owner": "Calendar/Pray",
+      "existing_hint": "year-end Te Deum",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 139,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Separate historical/current indulgence rules"
+    },
+    {
+      "id": "WEI58-11-006",
+      "chapter": 11,
+      "page": 139,
+      "title": "New Year rosary around midnight",
+      "geo": "Central European Catholic rural households",
+      "kind": "FAMILY_DEVOTION",
+      "triage": "CANDIDATE",
+      "owner": "Learn/Calendar",
+      "existing_hint": "pray.rosary",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 139,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Optional family prayer, no new module"
+    },
+    {
+      "id": "WEI58-11-007",
+      "chapter": 11,
+      "page": 139,
+      "title": "Father blesses family on Jan 1",
+      "geo": "France and French Canada",
+      "kind": "PARENTAL_BLESSING",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Learn",
+      "existing_hint": "DOM-001",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 139,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Existing original SOT-07 candidate: consolidate, don't mint new custom"
+    },
+    {
+      "id": "WEI58-11-008",
+      "chapter": 11,
+      "page": 139,
+      "title": "Church bells and tower carols for New Year",
+      "geo": "Alpine Germany/Austria",
+      "kind": "PARISH_FOLK",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 139,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "No new Office/music module"
+    },
+    {
+      "id": "WEI58-11-009",
+      "chapter": 11,
+      "page": 140,
+      "title": "Sylvester Night twelve grapes at midnight",
+      "geo": "Spanish-speaking regions",
+      "kind": "CIVIC_FOLK",
+      "triage": "HISTORY_ONLY",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 140,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not a Church blessing/feast rite"
+    },
+    {
+      "id": "WEI58-11-010",
+      "chapter": 11,
+      "page": 140,
+      "title": "Sylvester Night casting lead and divination",
+      "geo": "Central European superstition",
+      "kind": "SUPERSTITION",
+      "triage": "EXCLUDE",
+      "owner": "Editorial",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 140,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "No fortune-telling instructions"
+    },
+    {
+      "id": "WEI58-11-011",
+      "chapter": 11,
+      "page": 140,
+      "title": "French New Year étrennes presents",
+      "geo": "France",
+      "kind": "CIVIC_FAMILY_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 140,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser distinguishes national date from Italian/Spanish Epiphany gifts"
+    },
+    {
+      "id": "WEI58-12-001",
+      "chapter": 12,
+      "page": 141,
+      "title": "Epiphany January 6 manifestation",
+      "geo": "1962 Roman calendar",
+      "kind": "LITURGY",
+      "triage": "COVERED",
+      "owner": "Calendar",
+      "existing_hint": "Epiphany",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 141,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": null
+    },
+    {
+      "id": "WEI58-12-002",
+      "chapter": 12,
+      "page": 144,
+      "title": "Epiphany baptism and divine-light themes in Eastern churches",
+      "geo": "Eastern Catholic and Orthodox",
+      "kind": "EASTERN_RITE_CONTEXT",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 144,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Do not map Greek custom as Roman 1962 obligation"
+    },
+    {
+      "id": "WEI58-12-003",
+      "chapter": 12,
+      "page": 144,
+      "title": "1955 Latin feast Baptism of Christ Jan 13",
+      "geo": "Preconciliar Roman rite 1958",
+      "kind": "LITURGICAL_CONTEXT",
+      "triage": "ENRICH",
+      "owner": "Calendar",
+      "existing_hint": "Jan 13 Baptism",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 144,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Check 1962 calendar resolution"
+    },
+    {
+      "id": "WEI58-12-004",
+      "chapter": 12,
+      "page": 147,
+      "title": "Popular Three Kings veneration and pilgrimage to Cologne",
+      "geo": "Cologne, Europe",
+      "kind": "SHRINE_DEVOTION",
+      "triage": "REGIONAL",
+      "owner": "Explore/Saints",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 147,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Relic identity requires custody/authenticity research; Weiser describes legend"
+    },
+    {
+      "id": "WEI58-12-005",
+      "chapter": 12,
+      "page": 148,
+      "title": "Annual Epiphany announcement of Easter and movable feasts",
+      "geo": "Historic cathedrals / Roman tradition",
+      "kind": "CALENDAR_PROCLAMATION",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Learn",
+      "existing_hint": "Epiphany",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 148,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not a universal parish obligation"
+    },
+    {
+      "id": "WEI58-12-006",
+      "chapter": 12,
+      "page": 149,
+      "title": "Eastern solemn river blessings on Epiphany",
+      "geo": "Jordan, Egypt, Orthodox/Greek Rite",
+      "kind": "EASTERN_RITE_CONTEXT",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 149,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Not Roman 1962 parish practice"
+    },
+    {
+      "id": "WEI58-12-007",
+      "chapter": 12,
+      "page": 149,
+      "title": "Latin Roman Ritual Epiphany water blessing",
+      "geo": "Latin Roman rite, historical",
+      "kind": "MINISTERIAL_BLESSING",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": "DOM-003",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 149,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Weiser says rite for Vigil of Epiphany; check 1962 text independently"
+    },
+    {
+      "id": "WEI58-12-008",
+      "chapter": 12,
+      "page": 149,
+      "title": "Epiphany water taken home by faithful",
+      "geo": "Latin Roman rite, locally practiced",
+      "kind": "HOUSEHOLD_SACRAMENTAL",
+      "triage": "ENRICH",
+      "owner": "Customs/Learn",
+      "existing_hint": "DOM-003",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 149,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Existing home holy water, not separate water invent"
+    },
+    {
+      "id": "WEI58-12-009",
+      "chapter": 12,
+      "page": 150,
+      "title": "Priestly Epiphany home blessing",
+      "geo": "Latin Roman rite, locally offered",
+      "kind": "MINISTERIAL_BLESSING",
+      "triage": "ENRICH",
+      "owner": "Customs/Learn",
+      "existing_hint": "DOM-004",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 150,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Existing SOT-07 original candidate; priest only"
+    },
+    {
+      "id": "WEI58-12-010",
+      "chapter": 12,
+      "page": 150,
+      "title": "Epiphany chalk blessing and Magi initials on door",
+      "geo": "Documented ritual/local practice; non-universal",
+      "kind": "REGIONAL_SACRAMENTAL",
+      "triage": "HISTORY_ONLY",
+      "owner": "Negative knowledge",
+      "existing_hint": "DOM-008 HOLD: reject universal chalk",
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 150,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Never reopen rejection or claim nationwide practice from ritual's existence"
+    },
+    {
+      "id": "WEI58-12-011",
+      "chapter": 12,
+      "page": 150,
+      "title": "Historical Office of the Star Magi drama later removed from liturgy",
+      "geo": "France/medieval Europe",
+      "kind": "SUPPRESSED_LITURGICAL_DRAMA",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 150,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "No new Missal ceremony"
+    },
+    {
+      "id": "WEI58-12-012",
+      "chapter": 12,
+      "page": 150,
+      "title": "Milan 1336 Magi procession with gifts at crib",
+      "geo": "Milan historic",
+      "kind": "PROCESSIONAL_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 150,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Independent modern attestation needed"
+    },
+    {
+      "id": "WEI58-12-013",
+      "chapter": 12,
+      "page": 151,
+      "title": "German/Austrian Sternsingen star house carols",
+      "geo": "German-speaking regions and Slavic neighbors",
+      "kind": "HOUSEHOLD_VISIT",
+      "triage": "CANDIDATE",
+      "owner": "Customs/Calendar",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 151,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "No claim all contemporary parishes offer visits"
+    },
+    {
+      "id": "WEI58-12-014",
+      "chapter": 12,
+      "page": 151,
+      "title": "Portuguese Os Reis Epiphany carol",
+      "geo": "Portugal",
+      "kind": "CAROL_HISTORY",
+      "triage": "HISTORY_ONLY",
+      "owner": "Learn",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 151,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Don't reproduce copyrighted transcription"
+    },
+    {
+      "id": "WEI58-12-015",
+      "chapter": 12,
+      "page": 152,
+      "title": "Italian Befana Epiphany gifts",
+      "geo": "Italy",
+      "kind": "REGIONAL_FOLKLORE",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 152,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Folklore character, not saint"
+    },
+    {
+      "id": "WEI58-12-016",
+      "chapter": 12,
+      "page": 152,
+      "title": "Spanish and Latin American Magi gifts in children's shoes",
+      "geo": "Spain and Latin America",
+      "kind": "HOUSEHOLD_CUSTOM",
+      "triage": "REGIONAL",
+      "owner": "Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 152,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Regional; date and practice vary"
+    },
+    {
+      "id": "WEI58-12-017",
+      "chapter": 12,
+      "page": 152,
+      "title": "French Galette des Rois with bean or coin",
+      "geo": "France, England, Germany, Austria, Canada",
+      "kind": "EPIPHANY_FOOD",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 152,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Avoid presenting small choking objects as procedural instructions"
+    },
+    {
+      "id": "WEI58-12-018",
+      "chapter": 12,
+      "page": 153,
+      "title": "French Epiphany cake share reserved for poor",
+      "geo": "France",
+      "kind": "CHARITY_FOOD",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 153,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Historical alms practice tied to Kings' cake"
+    },
+    {
+      "id": "WEI58-12-019",
+      "chapter": 12,
+      "page": 153,
+      "title": "French Magi cake donations for education of poor child",
+      "geo": "France historic",
+      "kind": "CHARITY_FOOD",
+      "triage": "CANDIDATE",
+      "owner": "Calendar/Customs",
+      "existing_hint": null,
+      "evidence": {
+        "book": "WEISER-HANDBOOK-1958",
+        "printed_page": 153,
+        "primary_web_text": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+        "extra_excerpt": null
+      },
+      "source_pass": "DIRECT_BOOK_TEXT_REVIEW",
+      "release_state": "RESEARCH_NOT_PUBLISHED",
+      "interpretive_note": "Highly local Weiser claim; needs independent attestation"
     }
   ],
   "reconciliation": [
@@ -1123,6 +3575,8 @@
     "Existing mass, pray, special-days and calendar owners take precedence.",
     "Keep all SOT-07 negative-knowledge holds, law/indulgence validation and place-pin restrictions.",
     "Crosscheck any candidate against the 1962 Calendar and geographical evidence prior to publication.",
-    "PR #1512 independently proposes BLSS-002/003/004; this research batch does not duplicate them."
+    "PR #1512 independently proposes BLSS-002/003/004; this research batch does not duplicate them.",
+    "2026-10-20 Christmas/Epiphany batch: Weiser independently discusses St John wine (BLSS-003 pending in PR #1512), DOM-001 parental New Year blessing, DOM-003 Epiphany water, DOM-004 home blessing and DOM-008 negative-knowledge. These are cross-reference observations, not novel canonical customs.",
+    "Avoid importing source records referring to Catholic carols/music as new office/music modules or old pre-1958 canonical fasting as present-day obligations. Epiphany chalk must remain geographically contextual and blocked as universal."
   ]
 }
