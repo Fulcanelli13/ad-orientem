@@ -53,7 +53,12 @@ for(const [a,b] of [['C0107','C0109'],['C0131','C0134'],['C0134','C0144']]){
 }
 const routeCues=expanded.cues.filter(c=>c.defaultTrack.status==='MOVING_ALONG_AUTHORIZED_ROUTE');
 const asyncCues=expanded.cues.filter(c=>c.defaultTrack.status==='AWAIT_INDEPENDENT_OBSERVATION');
-assert.ok(routeCues.length>0,'No transit states retained');
+// Both incensation routes are conditional; the default non-incense reference
+// track must not assert movement. Preserve the source routes in the registry.
+assert.ok(expanded.sourceTransitions.some(x=>x.station==='ROUTE_CONTROLLED'),
+  'Sourced incensation routes were removed');
+assert.equal(routeCues.length,0,
+  'Optional incense procession was invented in the default non-incense track');
 assert.ok(asyncCues.length>0,'An asynchronous priest state was falsely treated as visible');
 for(const row of [...routeCues,...asyncCues]){
  assert.equal(row.defaultTrack.proposedIconAssetId,null,
