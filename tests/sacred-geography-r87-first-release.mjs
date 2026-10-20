@@ -11,9 +11,10 @@ const heritage = load("../data/explore/heritage-place-reconciliation.review.v1.j
 assert.equal(release.schema,"AO_SACRED_GEOGRAPHY_R87_FIRST_CANONICAL_RELEASE_V1");
 assert.equal(release.published_new.length,33);
 const r89 = load("../data/geography/research/sacred-geography-r89-first-coverage-release.v1.json");
-assert.equal(geography.places.length,294+r89.published_new.length);
-assert.equal(sources.sources.length,515+r89.published_new.length*2);
-assert.equal(geography.geoAreas.length,89+r89.country_areas_added.length);
+const r90 = load("../data/geography/research/sacred-geography-r90-coverage-first-release.v1.json");
+assert.equal(geography.places.length,294+r89.published_new.length+r90.published_new.length);
+assert.equal(sources.sources.length,515+r89.published_new.length*2+r90.published_new.length*2);
+assert.equal(geography.geoAreas.length,89+r89.country_areas_added.length+r90.country_areas_added.length);
 assert.equal(release.country_areas_added.length,17);
 assert.equal(new Set(release.published_new.map(row=>row.place_id)).size,33);
 assert.equal(new Set(release.published_new.map(row=>row.country)).size,24);
@@ -21,7 +22,7 @@ assert.equal(new Set(geography.places.map(x=>x.place_id)).size,geography.places.
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,sources.sources.length);
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...shrineCorpus,sources:sources.sources,places:geography.places}).pass,true);
-assert.equal(heritage.place_crosswalk.length,294+r89.published_new.length);
+assert.equal(heritage.place_crosswalk.length,294+r89.published_new.length+r90.published_new.length);
 assert.deepEqual(new Set(geography.places.map(p=>p.place_id)),new Set(heritage.place_crosswalk.map(r=>r.place_id)),"R87 must extend independent review crosswalk without removing old Places");
 const siteById = new Map(geography.places.map(p=>[p.place_id,p]));
 const sourceById = new Map(sources.sources.map(s=>[s.id,s]));
