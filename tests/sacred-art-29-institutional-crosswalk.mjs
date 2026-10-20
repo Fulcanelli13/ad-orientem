@@ -23,7 +23,9 @@ assert.equal(sources.criticalIdentityConflicts[lan.artworkId].incorrectMetAccess
 assert.equal(sources.criticalIdentityConflicts[zur.artworkId].suspectNGAccession,"NG230");
 assert.equal(sources.researchScope.stillWithoutPrimaryInstitutionLink,2);
 const script=readFileSync(new URL("../tools/calendar/reconcile-sacred-art-29-institution-checks.mjs",import.meta.url),"utf8");
-for(const lock of ["assert.equal(counts.flaggedWrongObjectOrVersion,2)",
+for(const lock of ["baselineInstitutionReferences:27",
+ "knownWrongPhotoHold:knownWrongPhoto",
+ "CURRENT_COMMONS_DISCOVERY_TEMPORARILY_UNAVAILABLE_NOT_APPROVAL_LOSS",
  "wikidataNeverOverrulesMuseum:false",
  "candidatePhotographComparedToKnownPhysicalOriginal:false",
  "rightsIndependentEvidenceCertified:false","productionEligible:false"]){
