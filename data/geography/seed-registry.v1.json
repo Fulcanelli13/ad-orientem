@@ -2150,6 +2150,182 @@
       "codes": {
         "iso_alpha2": "BD"
       }
+    },
+    {
+      "geo_area_id": "geo:country:CD",
+      "name": {
+        "official": "Democratic Republic of the Congo",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CD"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CM",
+      "name": {
+        "official": "Cameroon",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CM"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SB",
+      "name": {
+        "official": "Solomon Islands",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SB"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:NP",
+      "name": {
+        "official": "Nepal",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "NP"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SZ",
+      "name": {
+        "official": "Eswatini",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SZ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:MW",
+      "name": {
+        "official": "Malawi",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MW"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:KN",
+      "name": {
+        "official": "Saint Kitts and Nevis",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "KN"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CK",
+      "name": {
+        "official": "Cook Islands",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CK"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:AS",
+      "name": {
+        "official": "American Samoa",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "AS"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:FJ",
+      "name": {
+        "official": "Fiji",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "FJ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:PG",
+      "name": {
+        "official": "Papua New Guinea",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "PG"
+      }
     }
   ],
   "places": [
@@ -14909,6 +15085,406 @@
       "source_ids": [
         "AO-R92-SITE-AO-R82-DISC-012",
         "AO-R92-GEO-AO-R82-DISC-012"
+      ]
+    },
+    {
+      "place_id": "place:CD:notre-dame-du-congo-cathedral-kinshasa",
+      "name": {
+        "official": "Cathédrale Notre-Dame du Congo, Kinshasa",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:CD"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -4.32384,
+        "lng": 15.29463,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/4714383",
+        "source_ref": "osm:way:4714383",
+        "matched_country_code": "CD",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kinshasa",
+        "region": null,
+        "country_code": "CD",
+        "country": "Democratic Republic of the Congo",
+        "formatted": "Kinshasa, Democratic Republic of the Congo"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-042",
+        "AO-R93-GEO-AO-R82-DISC-042"
+      ]
+    },
+    {
+      "place_id": "place:CM:notre-dame-des-victoires-cathedral-yaounde",
+      "name": {
+        "official": "Cathédrale Notre-Dame-des-Victoires, Yaoundé",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:CM"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 3.86325,
+        "lng": 11.52106,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/188702599",
+        "source_ref": "osm:way:188702599",
+        "matched_country_code": "CM",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Yaoundé",
+        "region": null,
+        "country_code": "CM",
+        "country": "Cameroon",
+        "formatted": "Yaoundé, Cameroon"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-044",
+        "AO-R93-GEO-AO-R82-DISC-044"
+      ]
+    },
+    {
+      "place_id": "place:SB:holy-cross-cathedral-honiara",
+      "name": {
+        "official": "Holy Cross Cathedral, Honiara",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:SB"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -9.43624,
+        "lng": 159.96342,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/271790885",
+        "source_ref": "osm:way:271790885",
+        "matched_country_code": "SB",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Honiara",
+        "region": null,
+        "country_code": "SB",
+        "country": "Solomon Islands",
+        "formatted": "Honiara, Solomon Islands"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R93-NEW-SB-001",
+        "AO-R93-GEO-AO-R93-NEW-SB-001"
+      ]
+    },
+    {
+      "place_id": "place:NP:assumption-cathedral-lalitpur",
+      "name": {
+        "official": "Cathedral of the Assumption of the Blessed Virgin Mary, Lalitpur",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:NP"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 27.67273,
+        "lng": 85.30654,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/206956852",
+        "source_ref": "osm:way:206956852",
+        "matched_country_code": "NP",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Lalitpur",
+        "region": null,
+        "country_code": "NP",
+        "country": "Nepal",
+        "formatted": "Jawalakhel, Lalitpur, Kathmandu Valley, Nepal"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-010",
+        "AO-R93-GEO-AO-R82-DISC-010"
+      ]
+    },
+    {
+      "place_id": "place:SZ:our-lady-assumption-cathedral-manzini",
+      "name": {
+        "official": "Cathedral of Our Lady of the Assumption, Manzini",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:SZ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -26.5005625,
+        "lng": 31.3775625,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/africa/4946.htm",
+        "source_ref": "olc:5G5HF9XH+Q2",
+        "matched_country_code": "SZ",
+        "verified_at": "2026-10-20"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Manzini",
+        "region": null,
+        "country_code": "SZ",
+        "country": "Eswatini",
+        "formatted": "Sandlane Street, Manzini, Eswatini"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-033",
+        "AO-R93-GEO-AO-R82-DISC-033"
+      ]
+    },
+    {
+      "place_id": "place:MW:maula-cathedral-lilongwe",
+      "name": {
+        "official": "Maula Cathedral of Our Lady Queen of Africa, Lilongwe",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:MW"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -13.9796875,
+        "lng": 33.7624375,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/africa/5250",
+        "source_ref": "olc:5GRM2QC6+4X",
+        "matched_country_code": "MW",
+        "verified_at": "2026-10-20"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Lilongwe",
+        "region": null,
+        "country_code": "MW",
+        "country": "Malawi",
+        "formatted": "Maula, Lilongwe, Malawi"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-046",
+        "AO-R93-GEO-AO-R82-DISC-046"
+      ]
+    },
+    {
+      "place_id": "place:KN:immaculate-conception-cocathedral-basseterre",
+      "name": {
+        "official": "Immaculate Conception Co-Cathedral, Basseterre",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:KN"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 17.2963125,
+        "lng": -62.7215625,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/centralamerica/1520",
+        "source_ref": "olc:779V77WH+G9",
+        "matched_country_code": "KN",
+        "verified_at": "2026-10-20"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Basseterre",
+        "region": null,
+        "country_code": "KN",
+        "country": "Saint Kitts and Nevis",
+        "formatted": "East Independence Square, Basseterre, Saint Kitts and Nevis"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-058",
+        "AO-R93-GEO-AO-R82-DISC-058"
+      ]
+    },
+    {
+      "place_id": "place:CK:st-joseph-cathedral-avarua",
+      "name": {
+        "official": "St Joseph's Cathedral, Avarua, Rarotonga",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:CK"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -21.2050625,
+        "lng": -159.7804375,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/oceania/2285",
+        "source_ref": "olc:53C2Q6V9+XR",
+        "matched_country_code": "CK",
+        "verified_at": "2026-10-20"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Avarua",
+        "region": null,
+        "country_code": "CK",
+        "country": "Cook Islands",
+        "formatted": "Avarua, Rarotonga, Cook Islands"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-080",
+        "AO-R93-GEO-AO-R82-DISC-080"
+      ]
+    },
+    {
+      "place_id": "place:AS:holy-family-cathedral-tafuna",
+      "name": {
+        "official": "Holy Family Cathedral, Tafuna",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:AS"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -14.3309375,
+        "lng": -170.7343125,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/oceania/1548",
+        "source_ref": "olc:52QFM798+J7",
+        "matched_country_code": "AS",
+        "verified_at": "2026-10-20"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Tafuna",
+        "region": null,
+        "country_code": "AS",
+        "country": "American Samoa",
+        "formatted": "Fatuoaiga, Tafuna, American Samoa"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-078",
+        "AO-R93-GEO-AO-R82-DISC-078"
+      ]
+    },
+    {
+      "place_id": "place:FJ:sacred-heart-cathedral-suva",
+      "name": {
+        "official": "Sacred Heart Cathedral, Suva",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:FJ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -18.1399375,
+        "lng": 178.4251875,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/oceania/2288",
+        "source_ref": "olc:5VHWVC6G+23",
+        "matched_country_code": "FJ",
+        "verified_at": "2026-10-20"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Suva",
+        "region": null,
+        "country_code": "FJ",
+        "country": "Fiji",
+        "formatted": "35 Pratt Street, Suva, Fiji"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-081",
+        "AO-R93-GEO-AO-R82-DISC-081"
+      ]
+    },
+    {
+      "place_id": "place:PG:holy-cross-procathedral-vanimo",
+      "name": {
+        "official": "Holy Cross Pro-Cathedral, Vanimo",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:PG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -2.6830625,
+        "lng": 141.3031875,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://gcatholic.org/churches/oceania/2920",
+        "source_ref": "olc:6R938883+Q7",
+        "matched_country_code": "PG",
+        "verified_at": "2026-10-20"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Vanimo",
+        "region": null,
+        "country_code": "PG",
+        "country": "Papua New Guinea",
+        "formatted": "Vanimo, Papua New Guinea"
+      },
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-099",
+        "AO-R93-GEO-AO-R82-DISC-099"
       ]
     }
   ],
