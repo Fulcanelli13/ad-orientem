@@ -411,6 +411,57 @@
       "calendar_trigger_hint": "06/12 — St Nicholas; regional household custom",
       "confidence": "HIGH",
       "guardrail": "The historical biography of Nicholas must be distinguished from later folklore. Exclude threatening costumed helpers and claims that gifts are liturgically required."
+    },
+    {
+      "custom_id": "BLSS-002",
+      "family": "Marian feast-day sacramentals",
+      "name": "Assumption — blessing of herbs, flowers and fruits",
+      "canonical_statement": "In parts of Catholic Europe, especially historically Germanic regions, herbs, flowers and the fruits of the earth are brought for a priestly blessing on the Assumption of the Blessed Virgin Mary (15 August). The Roman Ritual includes an appropriate traditional blessing, while local provision varies.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Medieval regional practice; received into historical Roman Ritual; observed in some places today",
+      "decision": "KEEP — SOURCE-LOCKED SOT-07 EXTENSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "15 August, Assumption; date and Mass rank owned by Calendar",
+      "confidence": "HIGH",
+      "guardrail": "Do not present as mandatory, universal, a guarantee of healing, or a magical protection. No Mass/ceremonial mechanics or ministerial blessing formula in lay guidance. Availability depends on local clergy."
+    },
+    {
+      "custom_id": "BLSS-003",
+      "family": "Saints & sacramental blessings",
+      "name": "St John the Evangelist — blessing of wine",
+      "canonical_statement": "A documented traditional Catholic custom on 27 December is to bring wine to be blessed by a priest in honour of St John the Evangelist. This custom is preserved in historical Roman Ritual material and local Catholic practice; the associated account of poisoned wine is traditional legend, not a proven historical episode.",
+      "custom_class": "TRADITIONAL_ROMAN_PRACTICE",
+      "period_label": "Historic Central European and Roman-rite devotional custom; locally continued",
+      "decision": "KEEP — SOURCE-LOCKED SOT-07 EXTENSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "27 December, feast of St John the Apostle and Evangelist in 1962 Roman calendar",
+      "confidence": "HIGH",
+      "guardrail": "No implication that wine is the Precious Blood, automatic protection, universal parish availability, medical treatment, compulsory drinking or an invitation to drink alcohol. Blessing is ministerial."
+    },
+    {
+      "custom_id": "BLSS-004",
+      "family": "Easter domestic customs",
+      "name": "Holy Saturday — blessing of Easter foods",
+      "canonical_statement": "In several Catholic regional traditions, especially Polish and other Central/Eastern European households, families bring eggs, bread and other Easter foods to be blessed by an authorised minister, often on Holy Saturday. The foods are subsequently shared at Easter; the historical Roman Ritual includes blessings of lamb, eggs and bread.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Pre-conciliar → present, regionally variable",
+      "decision": "KEEP — SOURCE-LOCKED SOT-07 EXTENSION",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Holy Saturday (calculated from 1962 Easter by Calendar), with domestic use on Easter Sunday",
+      "confidence": "HIGH",
+      "guardrail": "No obligation, no universal standard basket contents or Holy Saturday schedule. Distinguish a minister's ritual blessing from family prayer before the Easter meal and do not displace the Easter Vigil."
     }
   ],
   "attestations": [
@@ -1746,6 +1797,59 @@
         "POLAND-WYPOMINKI-2025"
       ],
       "evidence_note": "Wypominki remembrance lists name the deceased for parish prayer and memorial intentions; this enriches DEAD-003 and does not create a second universal Souls feast.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BLSS-002:ROMAN",
+      "custom_id": "BLSS-002",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Historical Roman Ritual includes feast-specific blessing; regionally practised",
+      "strength": "STRONG",
+      "source_ids": [
+        "DPP-ASSUMPTION-HERBS-181",
+        "RIT-ASSUMPTION-WELLER",
+        "PARISH-ASSUMPTION-HERBS-NEWTON"
+      ],
+      "evidence_note": "The Roman rite has a traditional herb/fruit blessing for 15 August, specifically associated by the Vatican Directory with Germanic countries; a traditional Massachusetts parish independently documents local practice. World context describes the rite, not universal performance.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BLSS-003:ROMAN",
+      "custom_id": "BLSS-003",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Historical Roman blessing; ongoing in some traditional Roman-rite parishes",
+      "strength": "STRONG",
+      "source_ids": [
+        "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+        "UK-PARISH-STJOHN-WINE"
+      ],
+      "evidence_note": "Direct traditional-parish documentation and another Catholic parish's independent historical explanation support 27 December priestly blessing of wine, not a general medicinal or universal practice.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BLSS-004:ROMAN",
+      "custom_id": "BLSS-004",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Historical Roman Ritual forms; regionally rooted continuing Easter practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "RIT-EASTER-FOOD-WELLER",
+        "US-DIOCESE-EASTER-BASKETS",
+        "DPP-2001"
+      ],
+      "evidence_note": "The historical Roman Ritual contains specific food blessings; diocesan and Vatican popular-piety sources identify the optional regional household custom and Easter table. No parish/place or universal scheduling claim is implied.",
       "map_policy": "NOT_MAPPED",
       "confidence": "HIGH"
     }
