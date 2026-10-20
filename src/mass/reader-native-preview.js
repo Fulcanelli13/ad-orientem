@@ -1809,7 +1809,8 @@ export async function mountNativeReaderPreview({
     const iconKeys=iconKeysForReaderState({
       priestPosition,posture,gesture,response,priestVoice,
       priestAction,bell,schola:scholaProjection.schola,
-      cueId:activeCueId,curated65FinalArt:finalCurated65
+      cueId:activeCueId,curated65FinalArt:finalCurated65,
+      form
     });
     return Object.freeze({
       priestPosition,
