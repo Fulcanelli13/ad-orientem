@@ -43,11 +43,12 @@ async function worldSource(){
   const byName=new Map([...s.model.countryNames.entries()].map(([k,v])=>[v.toLowerCase(),k]));
   const features=arr(world.features).map(f=>{
    const prop=f.properties||{};
-   const candidate=[prop.ISO_A2_EH,prop.ISO_A2,prop.ISO_A2_EH,prop.ISO_A2_EH,prop.WB_A2].map(x=>String(x||"").toUpperCase()).find(x=>count.has(x));
+   const candidate=[prop.ISO_A2_EH,prop.ISO_A2,prop.WB_A2].map(x=>String(x||"").toUpperCase()).find(x=>s.model.countryNames.has(x));
    const country=candidate||(byName.get(String(prop.NAME_LONG||"").toLowerCase())||"");
    const n=count.get(country)||0;
    return {...f,properties:{...prop,aoCount:n,aoCountry:country||String(prop.NAME_LONG||prop.ADMIN||"Unknown")}};
   });
+  s.countryFeatures=features;
   s.map.addSource("lab-countries",{type:"geojson",data:{type:"FeatureCollection",features}});
   addLayer("lab-country-fill","fill","lab-countries",{
    "fill-color":["step",["get","aoCount"],"#25313c",1,"#506a64",6,"#728774",21,"#bfa975",61,"#e2c58b"],
@@ -163,7 +164,11 @@ function applyMap(){
  s.map.getSource("lab-density").setData(data);
  for(const name of ["lab-clusters","lab-cluster-label","lab-pins"])s.map.setLayoutProperty(name,"visibility",s.mode==="density"||s.mode==="regions"?"none":"visible");
  s.map.setLayoutProperty("lab-heat","visibility",s.mode==="density"?"visible":"none");
- if(s.countryReady)for(const name of ["lab-country-fill","lab-country-outline"])s.map.setLayoutProperty(name,"visibility",s.mode==="regions"?"visible":"none");
+ if(s.countryReady){
+  const counts=countryCounts(filtered);
+  s.map.getSource("lab-countries")?.setData({type:"FeatureCollection",features:s.countryFeatures.map(f=>({...f,properties:{...f.properties,aoCount:counts.get(f.properties.aoCountry)||0}}))});
+  for(const name of ["lab-country-fill","lab-country-outline"])s.map.setLayoutProperty(name,"visibility",s.mode==="regions"?"visible":"none");
+ }
  const show=s.mode==="density"||s.mode==="regions"||s.mode==="time";
  $("#legend").hidden=!show;
  $("#legend").innerHTML=legendContent(s.mode);
