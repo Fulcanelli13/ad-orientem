@@ -1,0 +1,568 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B10_E_SUPREMI_ATTRIBUTION_REVIEW_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "formation/1457-pius-x-conversation-evidence",
+  "status": "RESEARCH_ONLY_SOURCE_AUTHENTICITY_AND_LANGUAGE_DELTAS",
+  "counts": {
+    "families": 3,
+    "answerUnits": 6,
+    "characterAnswerUnits": 5,
+    "editorialAnswerUnits": 1,
+    "priorPilotEditorialNotesPreserved": 1,
+    "distinctIntents": 2,
+    "aliases": 1,
+    "certified": 0,
+    "published": 0
+  },
+  "increment": "Existing first20 spotcheck reused. New Latin incipit maps and Anselm quote boundary prevent embellished private papal memories.",
+  "records": [
+    {
+      "familyId": "SPX-PILOT-01",
+      "sourceOwnerPath": "data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json",
+      "sourceOwnerBlob": "70ae36cde6fc992f90e8688c18b86fadfed95380",
+      "originalRecord": {
+        "id": "SPX-PILOT-01",
+        "caseId": "SPX-PILOT-01",
+        "domain": "PERSONAL_HISTORY",
+        "sourceScope": "E supremi §§1–4",
+        "sourceAttribution": "AUTHORED_PAPAL_FIRST_PERSON",
+        "sourceUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "primarySourceOwner": "data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+        "historicalWitnessVerifiedInLinkedOnlineCopy": true,
+        "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION_NOT_HISTORICAL_UTTERANCE",
+        "spriteSuggestion": "thoughtful",
+        "voiceOwnerReview": "PR_1419_STYLE_ONLY_UNREVIEWED",
+        "theologicalReview": "PENDING_INDEPENDENT_HUMAN",
+        "sourceLevelReview": "SOURCE_BOUND_CONTENT_EDITORIAL_ONLY",
+        "translationReview": {
+          "en": "DRAFT_MODERN_ENGLISH_ADAPTATION",
+          "fr": "DRAFT_MODERN_FRENCH_ADAPTATION"
+        },
+        "renderedByApp": false,
+        "publishable": false,
+        "prohibitedInference": "A first-person paraphrase is possible, but the cited letter cannot substantiate every anecdote from the conclave.",
+        "turns": [
+          {
+            "id": "SPX-PILOT-01-T1",
+            "intent": "opening",
+            "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+            "language": {
+              "en": {
+                "visitor": "Did you welcome the papal election?",
+                "response": "When the burden of the pontificate was placed upon me, I resisted it with tears. I knew my unworthiness, and feared the responsibility of succeeding Leo XIII. At last I submitted to the will of God."
+              },
+              "fr": {
+                "visitor": "Avez-vous accueilli volontiers votre élection au pontificat ?",
+                "response": "Lorsque le poids du pontificat m’a été imposé, j’y ai résisté avec des larmes. Je connaissais mon indignité et je redoutais la responsabilité de succéder à Léon XIII. Enfin, je me suis soumis à la volonté de Dieu."
+              }
+            },
+            "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+            "sourceRef": "SPX-PILOT-01",
+            "citationLabel": "E supremi §§1–4",
+            "sourceCheckedForSubstantiveClaims": false,
+            "unsupportedNewPastoralAdviceAllowed": false,
+            "editorialApproval": false,
+            "visitorRelease": false,
+            "continuationOf": null,
+            "avatarLineAllowed": true,
+            "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+            "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+            "sourceLanguageTranslationApproval": false,
+            "periodVoiceApproval": false,
+            "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+            "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
+          },
+          {
+            "id": "SPX-PILOT-01-T2",
+            "intent": "source_followup",
+            "speaker": "PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+            "language": {
+              "en": {
+                "visitor": "What purpose did you set for your pontificate?",
+                "response": "To restore all things in Christ: that was the purpose I set before my pontificate."
+              },
+              "fr": {
+                "visitor": "Quel but vous êtes-vous proposé pour votre pontificat ?",
+                "response": "Tout restaurer dans le Christ : tel était le but que je donnais à mon pontificat."
+              }
+            },
+            "quotationLevel": "B_SOURCE_BOUNDED_PARAPHRASE_WITH_C_CONNECTIVE_NOT_AUTHENTIC_SPEECH",
+            "sourceRef": "SPX-PILOT-01",
+            "citationLabel": "E supremi §§1–4",
+            "sourceCheckedForSubstantiveClaims": false,
+            "unsupportedNewPastoralAdviceAllowed": false,
+            "editorialApproval": false,
+            "visitorRelease": false,
+            "continuationOf": "SPX-PILOT-01-T1",
+            "avatarLineAllowed": true,
+            "editorialDisplaySurface": "PIUS_X_SOURCE_BOUNDED_DIALOGUE",
+            "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+            "sourceLanguageTranslationApproval": false,
+            "periodVoiceApproval": false,
+            "voiceEditReview": "SOURCE_FIRST_PERIOD_REGISTER_DRAFT_UNAPPROVED",
+            "voiceEditBasis": "Removed editorial-document narration or artificial elaboration; retained original document propositions and conservative verbal connective."
+          },
+          {
+            "id": "SPX-PILOT-01-T3",
+            "intent": "misconception_correction",
+            "speaker": "DOCUMENTARY_EDITORIAL_NOTE_NOT_PIUS_X",
+            "language": {
+              "en": {
+                "visitor": "So you formally refused the election at the conclave?",
+                "response": "The opening paragraphs of E supremi describe the reluctance to accept the pontificate. They do not establish the precise formal proceedings or words spoken at the conclave."
+              },
+              "fr": {
+                "visitor": "Vous avez donc formellement refusé votre élection pendant le conclave ?",
+                "response": "Les premiers paragraphes d’E supremi décrivent la réticence à accepter le pontificat. Ils ne permettent pas d’établir avec précision les actes officiels ou les paroles prononcées pendant le conclave."
+              }
+            },
+            "quotationLevel": "C_EDITORIAL_SOURCE_BOUNDARY_NOT_CHARACTER_SPEECH",
+            "sourceRef": "SPX-PILOT-01",
+            "citationLabel": "E supremi §§1–4",
+            "sourceCheckedForSubstantiveClaims": false,
+            "unsupportedNewPastoralAdviceAllowed": false,
+            "editorialApproval": false,
+            "visitorRelease": false,
+            "continuationOf": "SPX-PILOT-01-T1",
+            "editorialDisplaySurface": "OUT_OF_CHARACTER_SOURCE_NOTE",
+            "spriteSuggestion": null,
+            "avatarLineAllowed": false,
+            "editorialReason": "Do not fabricate dialogue about conclave's unrecorded procedural acts.",
+            "primaryTextSpotCheck": "PRELIMINARY_SOURCE_TO_SENTENCE_EDITORIAL_COMPARISON_NOT_INDEPENDENT_CERTIFICATION",
+            "sourceLanguageTranslationApproval": false,
+            "periodVoiceApproval": false,
+            "voiceEditReview": "EDITORIAL_NOTE_EXCLUDED_FROM_CHARACTER_VOICE"
+          }
+        ],
+        "dialogueDrafts": 2,
+        "sourceEditorialNotes": 1,
+        "primaryWitnessSourceComparison": "PRELIMINARY_COMPLETED_WITH_ISSUER_AND_GENRE_LIMITS",
+        "independentHistoricalCertification": false
+      },
+      "priorOverlay": {
+        "id": "SPX-PILOT-01",
+        "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+        "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+        "originalOwner": "data/learn/research/pius-x-ten-conversation-content-pilot-20261019.v1.json",
+        "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+        "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+        "witness": {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "passage": "Opening and §§1–4",
+          "editorialComparisonDate": "2026-10-20",
+          "checkedInAccessiblePublicSource": true,
+          "originalLanguageBilingualLineSignoff": false,
+          "noVerbatimPapalQuoteAsserted": true
+        },
+        "proposedDraft": {
+          "en": "The prospect of the pontificate filled me with distress. In my first encyclical I acknowledged the tears with which I resisted that burden, my sense of unworthiness and the weight of succeeding Leo XIII. Once called to the office, I resolved to rely on God's strength and to restore all things in Christ.",
+          "fr": "La perspective du pontificat me remplissait d'angoisse. Dans ma première encyclique, j'ai évoqué les larmes avec lesquelles je résistais à cette charge, mon sentiment d'indignité et le poids de succéder à Léon XIII. Appelé finalement à cette fonction, je résolus de m'appuyer sur la force de Dieu pour tout restaurer dans le Christ."
+        },
+        "boundaries": [
+          "AUTHOR_FIRST_PERSON_IN_PUBLISHED_LETTER_NOT_CONCLAVE_TRANSCRIPT"
+        ],
+        "sameVisitorIntentFamily": "ELECTION_RELUCTANCE_1903",
+        "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+        "approval": {
+          "italianOrLatinFullWitnessCollated": false,
+          "humanTheology": false,
+          "english": false,
+          "french": false,
+          "historicalVoice": false,
+          "production": false
+        },
+        "noCurrentDisciplineInstruction": true,
+        "noNewPrivatePapalAnecdotes": true,
+        "intentTreatment": {
+          "status": "CANONICAL_ENTRY_REVIEW_ONLY",
+          "primaryFamilyId": "SPX-PILOT-01",
+          "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+          "productionReady": false
+        }
+      },
+      "proposedTurns": [
+        {
+          "en": "We shrank from the burden of the pontificate with tears, conscious of Our littleness and of the responsibility of succeeding Leo XIII.",
+          "fr": "Nous redoutions avec des larmes la charge du pontificat, conscients de Notre petitesse et de la responsabilité de succéder à Léon XIII.",
+          "claims": [
+            {
+              "segment": "Tears/reluctance",
+              "refs": [
+                "ES1"
+              ]
+            },
+            {
+              "segment": "Unworthiness/succession",
+              "refs": [
+                "ES2"
+              ]
+            }
+          ],
+          "classification": "DOCUMENT_BOUND_FIRST_PERSON_PARAPHRASE_NOT_VERBATIM_SPEECH"
+        },
+        {
+          "en": "Our declared purpose was to restore all things in Christ, relying on the strength of God.",
+          "fr": "Notre dessein déclaré était de tout restaurer dans le Christ, en Nous appuyant sur la force de Dieu.",
+          "claims": [
+            {
+              "segment": "Entire answer",
+              "refs": [
+                "ES4"
+              ]
+            }
+          ],
+          "classification": "DOCUMENT_BOUND_FIRST_PERSON_PARAPHRASE_NOT_VERBATIM_SPEECH"
+        }
+      ],
+      "sourceReadState": "LATIN_ITALIAN_AND_ENGLISH_PASSAGES_PRELIMINARILY_MATCHED",
+      "humanOriginalLanguage": false,
+      "humanTheology": false,
+      "humanTranslation": false,
+      "historicalVoiceApproved": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-EXP-010",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+      "sourceOwnerBlob": "48ea6905f56e5fff5463350a2e9368cbac1703bd",
+      "originalRecord": {
+        "id": "SPX-EXP-010",
+        "domain": "PERSONAL_LIFE",
+        "question": {
+          "en": "Why did you approach the papacy with such reluctance?",
+          "fr": "Pourquoi avez-vous hésité à accepter la papauté ?"
+        },
+        "source": {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "locus": "opening §§1–2",
+          "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+          "screen": "PRIMARY_DIRECT",
+          "summary": "Pius X himself discusses grief, resistance and acceptance of the pontificate; first-person papal document."
+        },
+        "turns": [
+          {
+            "kind": "opening",
+            "question": {
+              "en": "Why did you approach the papacy with such reluctance?",
+              "fr": "Pourquoi avez-vous hésité à accepter la papauté ?"
+            },
+            "response": {
+              "en": "In E supremi, the acceptance of the pontificate is described as a grave burden met with distress and a sense of unworthiness. The account ends with submission to God's will.",
+              "fr": "Dans E supremi, l'acceptation du pontificat apparaît comme une lourde charge accueillie dans la douleur et le sentiment d'indignité. Le récit se conclut par la soumission à la volonté de Dieu."
+            }
+          },
+          {
+            "kind": "followup",
+            "question": {
+              "en": "Does that document record every detail of the conclave?",
+              "fr": "Ce texte rapporte-t-il tous les détails du conclave ?"
+            },
+            "response": {
+              "en": "No. Its opening establishes the Pope's publicly expressed disposition, not a transcript of private proceedings or unrecorded conversations.",
+              "fr": "Non. Son ouverture atteste les sentiments publiquement exprimés par le pape, non un procès-verbal des délibérations privées ni des conversations non rapportées."
+            }
+          }
+        ],
+        "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+        "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+        "independentHistoricalApproval": false,
+        "independentVoiceApproval": false,
+        "independentTranslationApproval": false,
+        "published": false
+      },
+      "priorOverlay": {
+        "id": "SPX-EXP-010",
+        "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+        "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+        "originalOwner": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+        "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+        "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+        "witness": {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "passage": "Opening §§1–4",
+          "editorialComparisonDate": "2026-10-20",
+          "checkedInAccessiblePublicSource": true,
+          "originalLanguageBilingualLineSignoff": false,
+          "noVerbatimPapalQuoteAsserted": true
+        },
+        "proposedDraft": {
+          "en": "I did not approach the supreme pontificate as an honor sought. As I later wrote in E supremi, I shrank from its responsibility and thought myself unworthy, especially after Leo XIII. I accepted the charge in submission to Providence, taking as my programme the restoration of all things in Christ.",
+          "fr": "Je ne me suis pas présenté au souverain pontificat comme à un honneur recherché. Comme je l'ai écrit ensuite dans E supremi, cette responsabilité m'effrayait et je me jugeais indigne, surtout après Léon XIII. Je reçus cette charge en me soumettant à la Providence, avec le programme de tout restaurer dans le Christ."
+        },
+        "boundaries": [
+          "SAME_HISTORICAL_EVENT_AS_SPX_PILOT_01_NO_DUPLICATE_RELEASE"
+        ],
+        "sameVisitorIntentFamily": "ELECTION_RELUCTANCE_1903",
+        "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+        "approval": {
+          "italianOrLatinFullWitnessCollated": false,
+          "humanTheology": false,
+          "english": false,
+          "french": false,
+          "historicalVoice": false,
+          "production": false
+        },
+        "noCurrentDisciplineInstruction": true,
+        "noNewPrivatePapalAnecdotes": true,
+        "intentTreatment": {
+          "status": "ALIAS_NO_DUPLICATE_ENTRY",
+          "primaryFamilyId": "SPX-PILOT-01",
+          "userNavigation": "RELATED_FOLLOWUP_ONLY_UNLESS_CANONICAL_ANSWER_FALLS_BACK",
+          "productionReady": false
+        }
+      },
+      "proposedTurns": [
+        {
+          "en": "The responsibility of the pontificate was formidable. In Our first encyclical We spoke of tears, of Our unworthiness and of succeeding Leo XIII.",
+          "fr": "La responsabilité du pontificat était redoutable. Dans Notre première encyclique, Nous avons parlé des larmes, de Notre indignité et de la succession de Léon XIII.",
+          "claims": [
+            {
+              "segment": "Entire answer",
+              "refs": [
+                "ES1",
+                "ES2"
+              ]
+            }
+          ],
+          "classification": "DOCUMENT_BOUND_FIRST_PERSON_PARAPHRASE_NOT_VERBATIM_SPEECH"
+        },
+        {
+          "en": "This letter records the Pope’s public account of his disposition; it is not a transcript of conclave proceedings or private conversations.",
+          "fr": "Cette lettre donne le récit public des dispositions du pape ; elle n’est pas un procès-verbal du conclave ni de conversations privées.",
+          "claims": [
+            {
+              "segment": "Source boundary",
+              "refs": [
+                "ES1"
+              ],
+              "classification": "EDITORIAL_SOURCE_LIMIT"
+            }
+          ],
+          "classification": "EDITORIAL_SOURCE_BOUNDARY",
+          "speaker": "DOCUMENTARY_EDITOR_NOT_PIUS_X",
+          "avatarAllowed": false
+        }
+      ],
+      "sourceReadState": "LATIN_ITALIAN_AND_ENGLISH_PASSAGES_PRELIMINARILY_MATCHED",
+      "humanOriginalLanguage": false,
+      "humanTheology": false,
+      "humanTranslation": false,
+      "historicalVoiceApproved": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "SPX-EXP-021",
+      "sourceOwnerPath": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+      "sourceOwnerBlob": "48ea6905f56e5fff5463350a2e9368cbac1703bd",
+      "originalRecord": {
+        "id": "SPX-EXP-021",
+        "domain": "CHURCH_CRISIS_AND_GOVERNANCE",
+        "question": {
+          "en": "How can the Church be renewed without breaking with her received faith?",
+          "fr": "Comment renouveler l'Église sans abandonner sa foi reçue ?"
+        },
+        "source": {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "locus": "§§8–10",
+          "witness": "PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM",
+          "screen": "PRIMARY_DIRECT",
+          "summary": "Develops restoration in Christ, spiritual renewal, mission and formation of souls."
+        },
+        "turns": [
+          {
+            "kind": "opening",
+            "question": {
+              "en": "How can the Church be renewed without breaking with her received faith?",
+              "fr": "Comment renouveler l'Église sans abandonner sa foi reçue ?"
+            },
+            "response": {
+              "en": "E supremi places renewal under the purpose of restoring all things in Christ. Its emphasis falls upon conversion, the formation of souls and the Church's mission, not abandoning revealed teaching.",
+              "fr": "E supremi place le renouvellement sous le dessein de tout restaurer dans le Christ. Il insiste sur la conversion, la formation des âmes et la mission de l'Église, non sur l'abandon de l'enseignement révélé."
+            }
+          },
+          {
+            "kind": "followup",
+            "question": {
+              "en": "Is renewal there reduced to changing institutions?",
+              "fr": "Le renouvellement s'y réduit-il à modifier des institutions ?"
+            },
+            "response": {
+              "en": "No. Its primary end is spiritual and Christ-centred; practical means are judged by the service they render to that end.",
+              "fr": "Non. Sa fin première est spirituelle et centrée sur le Christ ; les moyens pratiques sont considérés selon le service qu'ils rendent à cette fin."
+            }
+          }
+        ],
+        "sourceEvidenceState": "SOURCE_PASSAGE_LOCATED_SUBJECT_MATCH_RESEARCH_ONLY",
+        "editorialReview": "UNREVIEWED_BILINGUAL_BATCH_DRAFT",
+        "independentHistoricalApproval": false,
+        "independentVoiceApproval": false,
+        "independentTranslationApproval": false,
+        "published": false
+      },
+      "priorOverlay": {
+        "id": "SPX-EXP-021",
+        "chapter": "FIRST_BALANCED_RELEASE_BLOCK",
+        "priority": "PRIORITY_1_SOURCE_AND_VOICE_EDIT",
+        "originalOwner": "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+        "proposedDisplayRole": "PIUS_X_DOCUMENT_BOUND_RECONSTRUCTION",
+        "factualSourceClass": "AUTHORED_PAPAL_PRIMARY_TEXT",
+        "witness": {
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "passage": "E supremi §§4 and 8–9",
+          "editorialComparisonDate": "2026-10-20",
+          "checkedInAccessiblePublicSource": true,
+          "originalLanguageBilingualLineSignoff": false,
+          "noVerbatimPapalQuoteAsserted": true
+        },
+        "proposedDraft": {
+          "en": "To renew the Church is not to abandon the faith entrusted to her. In E supremi the aim is to restore all things in Christ: to lead souls back to Him and, through Him, to God. The Church serves that renewal by guarding His doctrine and bringing His grace to men.",
+          "fr": "Renouveler l'Église ne signifie pas abandonner la foi qui lui est confiée. Dans E supremi, il s'agit de tout restaurer dans le Christ : de ramener les âmes à Lui et, par Lui, à Dieu. L'Église sert ce renouvellement en gardant sa doctrine et en dispensant sa grâce."
+        },
+        "boundaries": [
+          "DOCUMENT_PROGRAM_NOT_GENERAL_WARRANT_FOR_EVERY_MODERN_REFORM"
+        ],
+        "sameVisitorIntentFamily": null,
+        "evidenceStatus": "PUBLIC_WITNESS_PASSAGE_SPOTCHECKED_NOT_INDEPENDENTLY_CERTIFIED",
+        "approval": {
+          "italianOrLatinFullWitnessCollated": false,
+          "humanTheology": false,
+          "english": false,
+          "french": false,
+          "historicalVoice": false,
+          "production": false
+        },
+        "noCurrentDisciplineInstruction": true,
+        "noNewPrivatePapalAnecdotes": true,
+        "intentTreatment": {
+          "status": "STANDALONE_REVIEW_ENTRY",
+          "primaryFamilyId": "SPX-EXP-021",
+          "userNavigation": "TOPIC_CHOICE",
+          "productionReady": false
+        }
+      },
+      "proposedTurns": [
+        {
+          "en": "Restoration in Christ means leading men back to God through Jesus Christ and through the Church to which He entrusted His teaching and grace.",
+          "fr": "Tout restaurer dans le Christ signifie ramener les hommes à Dieu par Jésus-Christ et par l’Église à laquelle Il a confié son enseignement et sa grâce.",
+          "claims": [
+            {
+              "segment": "Restoration",
+              "refs": [
+                "ES4",
+                "ES8"
+              ]
+            },
+            {
+              "segment": "Church teaching/grace",
+              "refs": [
+                "ES9"
+              ]
+            }
+          ],
+          "classification": "FAITHFUL_PAPAL_DOCUMENT_PARAPHRASE"
+        },
+        {
+          "en": "It is not merely an alteration of institutions. The work is to bring men to Christ through His Church.",
+          "fr": "Il ne s’agit pas seulement de modifier des institutions. L’œuvre consiste à conduire les hommes au Christ par son Église.",
+          "claims": [
+            {
+              "segment": "Christ/Church goal",
+              "refs": [
+                "ES8",
+                "ES9"
+              ]
+            },
+            {
+              "segment": "Not merely institutions",
+              "refs": [
+                "ES8",
+                "ES9"
+              ],
+              "classification": "FAITHFUL_EXPLANATORY_INFERENCE"
+            }
+          ],
+          "classification": "FAITHFUL_PAPAL_DOCUMENT_PARAPHRASE_WITH_MARKED_INFERENCE"
+        }
+      ],
+      "sourceReadState": "LATIN_ITALIAN_AND_ENGLISH_PASSAGES_PRELIMINARILY_MATCHED",
+      "humanOriginalLanguage": false,
+      "humanTheology": false,
+      "humanTranslation": false,
+      "historicalVoiceApproved": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ES1",
+      "work": "Pius X, E supremi (4 October 1903)",
+      "urlEN": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlLatin": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlItalian": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "locatorEN": "Opening §1",
+      "locatorLatin": "Incipit E supremi apostolatus cathedra, first two sentences",
+      "exactLatinExcerpt": "quibus Nos lacrymis magnisque precibus",
+      "supports": "Pius X's own framing establishes reluctance/tears",
+      "embeddedQuotationWarning": "Later Testantur... passage explicitly quotes Anselm about Canterbury. Do not treat his pallor, groans or detailed scene as independent Pius X conclave testimony."
+    },
+    {
+      "id": "ES2",
+      "work": "Same encyclical",
+      "urlEN": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlLatin": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlItalian": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "locatorEN": "§2",
+      "locatorLatin": "Nec plane repugnandi... Praeterquam enim...",
+      "supports": "Conscious unworthiness and succession to Leo XIII"
+    },
+    {
+      "id": "ES4",
+      "work": "Same encyclical",
+      "urlEN": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlLatin": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlItalian": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "locatorEN": "§4",
+      "locatorLatin": "Attamen, quoniam numini divino placuit...",
+      "exactLatinExcerpt": "instaurare omnia in Christo",
+      "supports": "Programme and reliance on God's strength"
+    },
+    {
+      "id": "ES8",
+      "work": "Same encyclical",
+      "urlEN": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlLatin": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlItalian": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "locatorEN": "§8",
+      "locatorLatin": "Verum haec ipsa, Venerabiles Fratres...",
+      "supports": "Return to God through Christ"
+    },
+    {
+      "id": "ES9",
+      "work": "Same encyclical",
+      "urlEN": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlLatin": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "urlItalian": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "locatorEN": "§9",
+      "locatorLatin": "Porro qua iter nobis ad Christum pateat...",
+      "supports": "Through Church entrusted doctrine, precepts and grace"
+    }
+  ],
+  "duplicateDecision": {
+    "primary": "SPX-PILOT-01",
+    "alias": "SPX-EXP-010",
+    "intent": "ELECTION_RELUCTANCE_1903",
+    "action": "Retain prior alias decision; preserve canonical IDs and same source bundle"
+  },
+  "editorialBoundaries": [
+    "Papal document's authored first person supports a document-bound paraphrase, not a new historical utterance",
+    "Anselm's embedded account is distinguishable from Pius X's own first-person framing",
+    "No broad warrant for modern institutional programmes inferred from the 1903 purpose",
+    "Election date correction remains B06 source-quality evidence; no undocumented conclave dialogue"
+  ],
+  "newSubstantiveGaps": [],
+  "denzingerRequired": false,
+  "continue": true
+}
