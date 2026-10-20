@@ -129,6 +129,11 @@ async function commonsSource(row){
  const page=(await (await request(q.toString())).json())?.query?.pages?.[0];
  assert(page&&!page.missing&&tidy(titleKey(page.title))===tidy(titleKey(raw)),"Commons file mismatch");
  if(row.verifiedMuseumAccession)assert(page.title.includes(row.verifiedMuseumAccession),"Source filename does not identify exact museum accession");
+ if(row.verifiedStationRoman){
+   const stationPage="Chiesa di San Polo (Venice) - VIA CRUCIS "+row.verifiedStationRoman+" - ";
+   assert(page.title.startsWith("File:"+stationPage),"Incorrect San Polo Station or medium; exact painting file required");
+   assert(!/etching|engraving|Fortuny|after Tiepolo/i.test(page.title),"San Polo original painting cannot be replaced with print or etching");
+ }
  const info=page.imageinfo?.[0];
  if(commonsMetadataHasPradoProvenance(info?.extmetadata))throw Error("HOLD_PRADO_SOURCE_POLICY: Commons metadata identifies Prado provenance");
  assert(info&&["image/jpeg","image/png"].includes(info.mime),"Unsupported Commons format");
