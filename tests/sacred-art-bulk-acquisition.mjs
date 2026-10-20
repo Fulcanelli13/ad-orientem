@@ -19,7 +19,7 @@ assert.equal(intake.counts.legacyFivesIn451,77);
 assert.equal(intake.counts.excluded,68);
 assert.equal(intake.counts.editorialHold,199);
 assert.equal(intake.counts.eligibleExactMet,23);
-assert.equal(intake.counts.eligibleExactCommons,40);
+assert.equal(intake.counts.eligibleExactCommons,52);
 assert.equal(intake.counts.eligibleExactCleveland,14);
 assert.equal(intake.counts.eligibleOtherSource,76);
 assert.equal(intake.counts.eligibleExactNga,6);
